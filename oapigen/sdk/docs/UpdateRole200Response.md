@@ -26,6 +26,8 @@ Name | Type | Description | Notes
 **TaskPermissions** | Pointer to [**[]UpdateRole200ResponseAllOfTaskPermissionsInner**](UpdateRole200ResponseAllOfTaskPermissionsInner.md) |  | [optional] 
 **GlobalTaskSetAccess** | Pointer to **string** |  | [optional] 
 **TaskSetPermissions** | Pointer to [**[]UpdateRole200ResponseAllOfTaskSetPermissionsInner**](UpdateRole200ResponseAllOfTaskSetPermissionsInner.md) |  | [optional] 
+**GlobalClusterTypeAccess** | Pointer to **string** |  | [optional] 
+**ClusterTypePermissions** | Pointer to [**[]UpdateRole200ResponseAllOfClusterTypePermissionsInner**](UpdateRole200ResponseAllOfClusterTypePermissionsInner.md) |  | [optional] 
 **Success** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -596,6 +598,56 @@ SetTaskSetPermissions sets TaskSetPermissions field to given value.
 `func (o *UpdateRole200Response) HasTaskSetPermissions() bool`
 
 HasTaskSetPermissions returns a boolean if a field has been set.
+
+### GetGlobalClusterTypeAccess
+
+`func (o *UpdateRole200Response) GetGlobalClusterTypeAccess() string`
+
+GetGlobalClusterTypeAccess returns the GlobalClusterTypeAccess field if non-nil, zero value otherwise.
+
+### GetGlobalClusterTypeAccessOk
+
+`func (o *UpdateRole200Response) GetGlobalClusterTypeAccessOk() (*string, bool)`
+
+GetGlobalClusterTypeAccessOk returns a tuple with the GlobalClusterTypeAccess field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGlobalClusterTypeAccess
+
+`func (o *UpdateRole200Response) SetGlobalClusterTypeAccess(v string)`
+
+SetGlobalClusterTypeAccess sets GlobalClusterTypeAccess field to given value.
+
+### HasGlobalClusterTypeAccess
+
+`func (o *UpdateRole200Response) HasGlobalClusterTypeAccess() bool`
+
+HasGlobalClusterTypeAccess returns a boolean if a field has been set.
+
+### GetClusterTypePermissions
+
+`func (o *UpdateRole200Response) GetClusterTypePermissions() []UpdateRole200ResponseAllOfClusterTypePermissionsInner`
+
+GetClusterTypePermissions returns the ClusterTypePermissions field if non-nil, zero value otherwise.
+
+### GetClusterTypePermissionsOk
+
+`func (o *UpdateRole200Response) GetClusterTypePermissionsOk() (*[]UpdateRole200ResponseAllOfClusterTypePermissionsInner, bool)`
+
+GetClusterTypePermissionsOk returns a tuple with the ClusterTypePermissions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClusterTypePermissions
+
+`func (o *UpdateRole200Response) SetClusterTypePermissions(v []UpdateRole200ResponseAllOfClusterTypePermissionsInner)`
+
+SetClusterTypePermissions sets ClusterTypePermissions field to given value.
+
+### HasClusterTypePermissions
+
+`func (o *UpdateRole200Response) HasClusterTypePermissions() bool`
+
+HasClusterTypePermissions returns a boolean if a field has been set.
 
 ### GetSuccess
 

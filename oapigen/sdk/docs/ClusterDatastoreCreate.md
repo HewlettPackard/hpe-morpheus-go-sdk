@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **Tenants** | Pointer to [**[]ClusterDatastoreCreateTenantsInner**](ClusterDatastoreCreateTenantsInner.md) |  | [optional] 
 **ResourcePermissions** | Pointer to [**ClusterDatastoreCreateResourcePermissions**](ClusterDatastoreCreateResourcePermissions.md) |  | [optional] 
 **Datastores** | Pointer to **[]map[string]interface{}** |  | [optional] 
+**HeartbeatTarget** | Pointer to **bool** | Heartbeat Target | [optional] 
 
 ## Methods
 
@@ -283,6 +284,31 @@ SetDatastores sets Datastores field to given value.
 `func (o *ClusterDatastoreCreate) HasDatastores() bool`
 
 HasDatastores returns a boolean if a field has been set.
+
+### GetHeartbeatTarget
+
+`func (o *ClusterDatastoreCreate) GetHeartbeatTarget() bool`
+
+GetHeartbeatTarget returns the HeartbeatTarget field if non-nil, zero value otherwise.
+
+### GetHeartbeatTargetOk
+
+`func (o *ClusterDatastoreCreate) GetHeartbeatTargetOk() (*bool, bool)`
+
+GetHeartbeatTargetOk returns a tuple with the HeartbeatTarget field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHeartbeatTarget
+
+`func (o *ClusterDatastoreCreate) SetHeartbeatTarget(v bool)`
+
+SetHeartbeatTarget sets HeartbeatTarget field to given value.
+
+### HasHeartbeatTarget
+
+`func (o *ClusterDatastoreCreate) HasHeartbeatTarget() bool`
+
+HasHeartbeatTarget returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

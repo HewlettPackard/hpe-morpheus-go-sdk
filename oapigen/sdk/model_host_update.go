@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.10
+API version: 8.1.1
 Contact: dev@morpheusdata.com
 */
 
@@ -55,6 +55,7 @@ type HostUpdate struct {
 	GuestConsolePort *string `json:"guestConsolePort,omitempty"`
 	// Can turn off guest console preferences on server in favor of hypervisor console
 	GuestConsolePreferred *bool                  `json:"guestConsolePreferred,omitempty"`
+	Config                *HostUpdateConfig      `json:"config,omitempty"`
 	AdditionalProperties  map[string]interface{} `json:",remain"`
 }
 
@@ -712,6 +713,38 @@ func (o *HostUpdate) SetGuestConsolePreferred(v bool) {
 	o.GuestConsolePreferred = &v
 }
 
+// GetConfig returns the Config field value if set, zero value otherwise.
+func (o *HostUpdate) GetConfig() HostUpdateConfig {
+	if o == nil || IsNil(o.Config) {
+		var ret HostUpdateConfig
+		return ret
+	}
+	return *o.Config
+}
+
+// GetConfigOk returns a tuple with the Config field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *HostUpdate) GetConfigOk() (*HostUpdateConfig, bool) {
+	if o == nil || IsNil(o.Config) {
+		return nil, false
+	}
+	return o.Config, true
+}
+
+// IsSetConfig returns a boolean if a field has been set.
+func (o *HostUpdate) IsSetConfig() bool {
+	if o != nil && !IsNil(o.Config) {
+		return true
+	}
+
+	return false
+}
+
+// SetConfig gets a reference to the given HostUpdateConfig and assigns it to the Config field.
+func (o *HostUpdate) SetConfig(v HostUpdateConfig) {
+	o.Config = &v
+}
+
 func (o HostUpdate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -778,6 +811,9 @@ func (o HostUpdate) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.GuestConsolePreferred) {
 		toSerialize["guestConsolePreferred"] = o.GuestConsolePreferred
+	}
+	if !IsNil(o.Config) {
+		toSerialize["config"] = o.Config
 	}
 
 	for key, value := range o.AdditionalProperties {

@@ -51,6 +51,7 @@ Name | Type | Description | Notes
 **StorageTypes** | Pointer to [**[]ListProvisionTypes200ResponseAllOfProvisionTypesInnerStorageTypesInner**](ListProvisionTypes200ResponseAllOfProvisionTypesInnerStorageTypesInner.md) |  | [optional] 
 **RootStorageTypes** | Pointer to [**[]ListProvisionTypes200ResponseAllOfProvisionTypesInnerRootStorageTypesInner**](ListProvisionTypes200ResponseAllOfProvisionTypesInnerRootStorageTypesInner.md) |  | [optional] 
 **ControllerTypes** | Pointer to [**[]ListProvisionTypes200ResponseAllOfProvisionTypesInnerControllerTypesInner**](ListProvisionTypes200ResponseAllOfProvisionTypesInnerControllerTypesInner.md) |  | [optional] 
+**StorageProfiles** | Pointer to [**[]ListProvisionTypes200ResponseAllOfProvisionTypesInnerStorageProfilesInner**](ListProvisionTypes200ResponseAllOfProvisionTypesInnerStorageProfilesInner.md) |  | [optional] 
 
 ## Methods
 
@@ -1356,6 +1357,41 @@ HasControllerTypes returns a boolean if a field has been set.
 `func (o *ProvisionType) UnsetControllerTypes()`
 
 UnsetControllerTypes ensures that no value is present for ControllerTypes, not even an explicit nil
+### GetStorageProfiles
+
+`func (o *ProvisionType) GetStorageProfiles() []ListProvisionTypes200ResponseAllOfProvisionTypesInnerStorageProfilesInner`
+
+GetStorageProfiles returns the StorageProfiles field if non-nil, zero value otherwise.
+
+### GetStorageProfilesOk
+
+`func (o *ProvisionType) GetStorageProfilesOk() (*[]ListProvisionTypes200ResponseAllOfProvisionTypesInnerStorageProfilesInner, bool)`
+
+GetStorageProfilesOk returns a tuple with the StorageProfiles field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStorageProfiles
+
+`func (o *ProvisionType) SetStorageProfiles(v []ListProvisionTypes200ResponseAllOfProvisionTypesInnerStorageProfilesInner)`
+
+SetStorageProfiles sets StorageProfiles field to given value.
+
+### HasStorageProfiles
+
+`func (o *ProvisionType) HasStorageProfiles() bool`
+
+HasStorageProfiles returns a boolean if a field has been set.
+
+### SetStorageProfilesNil
+
+`func (o *ProvisionType) SetStorageProfilesNil(b bool)`
+
+ SetStorageProfilesNil sets the value for StorageProfiles to be an explicit nil
+
+### UnsetStorageProfiles
+`func (o *ProvisionType) UnsetStorageProfiles()`
+
+UnsetStorageProfiles ensures that no value is present for StorageProfiles, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

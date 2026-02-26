@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CustomOptions** | Pointer to **map[string]interface{}** | Custom Option Type settings object containing name value pairs. | [optional] 
+**UserData** | Pointer to **NullableString** | User Data. Allows for override of cloud-init based user-data yaml or custom scripts | [optional] 
 
 ## Methods
 
@@ -50,6 +51,41 @@ SetCustomOptions sets CustomOptions field to given value.
 
 HasCustomOptions returns a boolean if a field has been set.
 
+### GetUserData
+
+`func (o *InstanceUpdateConfig) GetUserData() string`
+
+GetUserData returns the UserData field if non-nil, zero value otherwise.
+
+### GetUserDataOk
+
+`func (o *InstanceUpdateConfig) GetUserDataOk() (*string, bool)`
+
+GetUserDataOk returns a tuple with the UserData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserData
+
+`func (o *InstanceUpdateConfig) SetUserData(v string)`
+
+SetUserData sets UserData field to given value.
+
+### HasUserData
+
+`func (o *InstanceUpdateConfig) HasUserData() bool`
+
+HasUserData returns a boolean if a field has been set.
+
+### SetUserDataNil
+
+`func (o *InstanceUpdateConfig) SetUserDataNil(b bool)`
+
+ SetUserDataNil sets the value for UserData to be an explicit nil
+
+### UnsetUserData
+`func (o *InstanceUpdateConfig) UnsetUserData()`
+
+UnsetUserData ensures that no value is present for UserData, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

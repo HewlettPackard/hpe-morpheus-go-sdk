@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.10
+API version: 8.1.1
 Contact: dev@morpheusdata.com
 */
 
@@ -20,21 +20,21 @@ var _ MappedNullable = &CloudsConfigHVM{}
 
 // CloudsConfigHVM struct for CloudsConfigHVM
 type CloudsConfigHVM struct {
-	ApplianceUrl               NullableString                `json:"applianceUrl,omitempty"`
-	DatacenterName             NullableString                `json:"datacenterName,omitempty"`
-	ExternalId                 NullableString                `json:"externalId,omitempty"`
-	InventoryLevel             NullableString                `json:"inventoryLevel,omitempty"`
-	ConsoleKeymap              NullableString                `json:"consoleKeymap,omitempty"`
-	BackupMode                 NullableString                `json:"backupMode,omitempty"`
-	CertificateProvider        NullableString                `json:"certificateProvider,omitempty"`
-	ConfigCmdbDiscovery        *bool                         `json:"configCmdbDiscovery,omitempty"`
-	EnableNetworkTypeSelection NullableString                `json:"enableNetworkTypeSelection,omitempty"`
-	KubeUrl                    NullableString                `json:"kubeUrl,omitempty"`
-	NetworkServer              *CloudsConfigHVMNetworkServer `json:"networkServer,omitempty"`
-	NetworkServerId            *string                       `json:"networkServer.id,omitempty"`
-	ReplicationMode            NullableString                `json:"replicationMode,omitempty"`
-	SecurityServer             NullableString                `json:"securityServer,omitempty"`
-	AdditionalProperties       map[string]interface{}        `json:",remain"`
+	ApplianceUrl               NullableString                                         `json:"applianceUrl,omitempty"`
+	DatacenterName             NullableString                                         `json:"datacenterName,omitempty"`
+	ExternalId                 NullableString                                         `json:"externalId,omitempty"`
+	InventoryLevel             NullableString                                         `json:"inventoryLevel,omitempty"`
+	ConsoleKeymap              NullableString                                         `json:"consoleKeymap,omitempty"`
+	BackupMode                 NullableString                                         `json:"backupMode,omitempty"`
+	CertificateProvider        NullableString                                         `json:"certificateProvider,omitempty"`
+	ConfigCmdbDiscovery        *bool                                                  `json:"configCmdbDiscovery,omitempty"`
+	EnableNetworkTypeSelection NullableString                                         `json:"enableNetworkTypeSelection,omitempty"`
+	KubeUrl                    NullableString                                         `json:"kubeUrl,omitempty"`
+	NetworkServer              *AddClouds200ResponseAllOfZoneConfigAnyOfNetworkServer `json:"networkServer,omitempty"`
+	NetworkServerId            *string                                                `json:"networkServer.id,omitempty"`
+	ReplicationMode            NullableString                                         `json:"replicationMode,omitempty"`
+	SecurityServer             NullableString                                         `json:"securityServer,omitempty"`
+	AdditionalProperties       map[string]interface{}                                 `json:",remain"`
 }
 
 type _CloudsConfigHVM CloudsConfigHVM
@@ -476,9 +476,9 @@ func (o *CloudsConfigHVM) UnsetKubeUrl() {
 }
 
 // GetNetworkServer returns the NetworkServer field value if set, zero value otherwise.
-func (o *CloudsConfigHVM) GetNetworkServer() CloudsConfigHVMNetworkServer {
+func (o *CloudsConfigHVM) GetNetworkServer() AddClouds200ResponseAllOfZoneConfigAnyOfNetworkServer {
 	if o == nil || IsNil(o.NetworkServer) {
-		var ret CloudsConfigHVMNetworkServer
+		var ret AddClouds200ResponseAllOfZoneConfigAnyOfNetworkServer
 		return ret
 	}
 	return *o.NetworkServer
@@ -486,7 +486,7 @@ func (o *CloudsConfigHVM) GetNetworkServer() CloudsConfigHVMNetworkServer {
 
 // GetNetworkServerOk returns a tuple with the NetworkServer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CloudsConfigHVM) GetNetworkServerOk() (*CloudsConfigHVMNetworkServer, bool) {
+func (o *CloudsConfigHVM) GetNetworkServerOk() (*AddClouds200ResponseAllOfZoneConfigAnyOfNetworkServer, bool) {
 	if o == nil || IsNil(o.NetworkServer) {
 		return nil, false
 	}
@@ -502,8 +502,8 @@ func (o *CloudsConfigHVM) IsSetNetworkServer() bool {
 	return false
 }
 
-// SetNetworkServer gets a reference to the given CloudsConfigHVMNetworkServer and assigns it to the NetworkServer field.
-func (o *CloudsConfigHVM) SetNetworkServer(v CloudsConfigHVMNetworkServer) {
+// SetNetworkServer gets a reference to the given AddClouds200ResponseAllOfZoneConfigAnyOfNetworkServer and assigns it to the NetworkServer field.
+func (o *CloudsConfigHVM) SetNetworkServer(v AddClouds200ResponseAllOfZoneConfigAnyOfNetworkServer) {
 	o.NetworkServer = &v
 }
 

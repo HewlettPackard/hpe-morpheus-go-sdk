@@ -81,6 +81,10 @@ Name | Type | Description | Notes
 **InstanceThreshold** | Pointer to **map[string]interface{}** |  | [optional] 
 **IsBusy** | Pointer to **bool** |  | [optional] 
 **Apps** | Pointer to **[]map[string]interface{}** |  | [optional] 
+**CurrentLoadBalancerInstances** | Pointer to **[]map[string]interface{}** |  | [optional] 
+**CurrentLoadBalancerContainersIn** | Pointer to **int32** |  | [optional] 
+**CurrentLoadBalancerContainersOut** | Pointer to **int32** |  | [optional] 
+**LastDeploy** | Pointer to **map[string]interface{}** |  | [optional] 
 **ContainerDetails** | Pointer to [**[]InstanceContainer1**](InstanceContainer1.md) |  | [optional] 
 
 ## Methods
@@ -2247,6 +2251,116 @@ HasApps returns a boolean if a field has been set.
 `func (o *AddInstance200ResponseAllOfOneOfInstance) UnsetApps()`
 
 UnsetApps ensures that no value is present for Apps, not even an explicit nil
+### GetCurrentLoadBalancerInstances
+
+`func (o *AddInstance200ResponseAllOfOneOfInstance) GetCurrentLoadBalancerInstances() []map[string]interface{}`
+
+GetCurrentLoadBalancerInstances returns the CurrentLoadBalancerInstances field if non-nil, zero value otherwise.
+
+### GetCurrentLoadBalancerInstancesOk
+
+`func (o *AddInstance200ResponseAllOfOneOfInstance) GetCurrentLoadBalancerInstancesOk() (*[]map[string]interface{}, bool)`
+
+GetCurrentLoadBalancerInstancesOk returns a tuple with the CurrentLoadBalancerInstances field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCurrentLoadBalancerInstances
+
+`func (o *AddInstance200ResponseAllOfOneOfInstance) SetCurrentLoadBalancerInstances(v []map[string]interface{})`
+
+SetCurrentLoadBalancerInstances sets CurrentLoadBalancerInstances field to given value.
+
+### HasCurrentLoadBalancerInstances
+
+`func (o *AddInstance200ResponseAllOfOneOfInstance) HasCurrentLoadBalancerInstances() bool`
+
+HasCurrentLoadBalancerInstances returns a boolean if a field has been set.
+
+### SetCurrentLoadBalancerInstancesNil
+
+`func (o *AddInstance200ResponseAllOfOneOfInstance) SetCurrentLoadBalancerInstancesNil(b bool)`
+
+ SetCurrentLoadBalancerInstancesNil sets the value for CurrentLoadBalancerInstances to be an explicit nil
+
+### UnsetCurrentLoadBalancerInstances
+`func (o *AddInstance200ResponseAllOfOneOfInstance) UnsetCurrentLoadBalancerInstances()`
+
+UnsetCurrentLoadBalancerInstances ensures that no value is present for CurrentLoadBalancerInstances, not even an explicit nil
+### GetCurrentLoadBalancerContainersIn
+
+`func (o *AddInstance200ResponseAllOfOneOfInstance) GetCurrentLoadBalancerContainersIn() int32`
+
+GetCurrentLoadBalancerContainersIn returns the CurrentLoadBalancerContainersIn field if non-nil, zero value otherwise.
+
+### GetCurrentLoadBalancerContainersInOk
+
+`func (o *AddInstance200ResponseAllOfOneOfInstance) GetCurrentLoadBalancerContainersInOk() (*int32, bool)`
+
+GetCurrentLoadBalancerContainersInOk returns a tuple with the CurrentLoadBalancerContainersIn field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCurrentLoadBalancerContainersIn
+
+`func (o *AddInstance200ResponseAllOfOneOfInstance) SetCurrentLoadBalancerContainersIn(v int32)`
+
+SetCurrentLoadBalancerContainersIn sets CurrentLoadBalancerContainersIn field to given value.
+
+### HasCurrentLoadBalancerContainersIn
+
+`func (o *AddInstance200ResponseAllOfOneOfInstance) HasCurrentLoadBalancerContainersIn() bool`
+
+HasCurrentLoadBalancerContainersIn returns a boolean if a field has been set.
+
+### GetCurrentLoadBalancerContainersOut
+
+`func (o *AddInstance200ResponseAllOfOneOfInstance) GetCurrentLoadBalancerContainersOut() int32`
+
+GetCurrentLoadBalancerContainersOut returns the CurrentLoadBalancerContainersOut field if non-nil, zero value otherwise.
+
+### GetCurrentLoadBalancerContainersOutOk
+
+`func (o *AddInstance200ResponseAllOfOneOfInstance) GetCurrentLoadBalancerContainersOutOk() (*int32, bool)`
+
+GetCurrentLoadBalancerContainersOutOk returns a tuple with the CurrentLoadBalancerContainersOut field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCurrentLoadBalancerContainersOut
+
+`func (o *AddInstance200ResponseAllOfOneOfInstance) SetCurrentLoadBalancerContainersOut(v int32)`
+
+SetCurrentLoadBalancerContainersOut sets CurrentLoadBalancerContainersOut field to given value.
+
+### HasCurrentLoadBalancerContainersOut
+
+`func (o *AddInstance200ResponseAllOfOneOfInstance) HasCurrentLoadBalancerContainersOut() bool`
+
+HasCurrentLoadBalancerContainersOut returns a boolean if a field has been set.
+
+### GetLastDeploy
+
+`func (o *AddInstance200ResponseAllOfOneOfInstance) GetLastDeploy() map[string]interface{}`
+
+GetLastDeploy returns the LastDeploy field if non-nil, zero value otherwise.
+
+### GetLastDeployOk
+
+`func (o *AddInstance200ResponseAllOfOneOfInstance) GetLastDeployOk() (*map[string]interface{}, bool)`
+
+GetLastDeployOk returns a tuple with the LastDeploy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastDeploy
+
+`func (o *AddInstance200ResponseAllOfOneOfInstance) SetLastDeploy(v map[string]interface{})`
+
+SetLastDeploy sets LastDeploy field to given value.
+
+### HasLastDeploy
+
+`func (o *AddInstance200ResponseAllOfOneOfInstance) HasLastDeploy() bool`
+
+HasLastDeploy returns a boolean if a field has been set.
+
 ### GetContainerDetails
 
 `func (o *AddInstance200ResponseAllOfOneOfInstance) GetContainerDetails() []InstanceContainer1`

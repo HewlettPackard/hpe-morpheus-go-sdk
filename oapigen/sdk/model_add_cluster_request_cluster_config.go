@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.10
+API version: 8.1.1
 Contact: dev@morpheusdata.com
 */
 
@@ -20,6 +20,8 @@ var _ MappedNullable = &AddClusterRequestClusterConfig{}
 
 // AddClusterRequestClusterConfig Additional configuration for specific cluster types
 type AddClusterRequestClusterConfig struct {
+	// Dynamic Placement
+	DynamicPlacementMode *string                                          `json:"dynamicPlacementMode,omitempty"`
 	TemplateParameter    *AddClusterRequestClusterConfigTemplateParameter `json:"templateParameter,omitempty"`
 	AdditionalProperties map[string]interface{}                           `json:",remain"`
 }
@@ -41,6 +43,38 @@ func NewAddClusterRequestClusterConfig() *AddClusterRequestClusterConfig {
 func NewAddClusterRequestClusterConfigWithDefaults() *AddClusterRequestClusterConfig {
 	this := AddClusterRequestClusterConfig{}
 	return &this
+}
+
+// GetDynamicPlacementMode returns the DynamicPlacementMode field value if set, zero value otherwise.
+func (o *AddClusterRequestClusterConfig) GetDynamicPlacementMode() string {
+	if o == nil || IsNil(o.DynamicPlacementMode) {
+		var ret string
+		return ret
+	}
+	return *o.DynamicPlacementMode
+}
+
+// GetDynamicPlacementModeOk returns a tuple with the DynamicPlacementMode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddClusterRequestClusterConfig) GetDynamicPlacementModeOk() (*string, bool) {
+	if o == nil || IsNil(o.DynamicPlacementMode) {
+		return nil, false
+	}
+	return o.DynamicPlacementMode, true
+}
+
+// IsSetDynamicPlacementMode returns a boolean if a field has been set.
+func (o *AddClusterRequestClusterConfig) IsSetDynamicPlacementMode() bool {
+	if o != nil && !IsNil(o.DynamicPlacementMode) {
+		return true
+	}
+
+	return false
+}
+
+// SetDynamicPlacementMode gets a reference to the given string and assigns it to the DynamicPlacementMode field.
+func (o *AddClusterRequestClusterConfig) SetDynamicPlacementMode(v string) {
+	o.DynamicPlacementMode = &v
 }
 
 // GetTemplateParameter returns the TemplateParameter field value if set, zero value otherwise.
@@ -85,6 +119,9 @@ func (o AddClusterRequestClusterConfig) MarshalJSON() ([]byte, error) {
 
 func (o AddClusterRequestClusterConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.DynamicPlacementMode) {
+		toSerialize["dynamicPlacementMode"] = o.DynamicPlacementMode
+	}
 	if !IsNil(o.TemplateParameter) {
 		toSerialize["templateParameter"] = o.TemplateParameter
 	}

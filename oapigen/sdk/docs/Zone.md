@@ -11,9 +11,9 @@ Name | Type | Description | Notes
 **Code** | Pointer to **string** |  | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
 **Location** | Pointer to **NullableString** |  | [optional] 
-**Owner** | Pointer to [**AddClouds200ResponseAllOfZoneOwner**](AddClouds200ResponseAllOfZoneOwner.md) |  | [optional] 
+**Owner** | Pointer to [**ZoneOwner**](ZoneOwner.md) |  | [optional] 
 **AccountId** | Pointer to **int64** |  | [optional] 
-**Account** | Pointer to [**AddClouds200ResponseAllOfZoneAccount**](AddClouds200ResponseAllOfZoneAccount.md) |  | [optional] 
+**Account** | Pointer to [**ZoneAccount**](ZoneAccount.md) |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **CostStatusDate** | Pointer to **NullableTime** |  | [optional] 
 **CostLastSyncDuration** | Pointer to **NullableInt64** |  | [optional] 
 **CostLastSync** | Pointer to **NullableTime** |  | [optional] 
-**ZoneType** | Pointer to [**AddClouds200ResponseAllOfZoneZoneType**](AddClouds200ResponseAllOfZoneZoneType.md) |  | [optional] 
+**ZoneType** | Pointer to [**ZoneZoneType**](ZoneZoneType.md) |  | [optional] 
 **ZoneTypeId** | Pointer to **int64** |  | [optional] 
 **GuidanceMode** | Pointer to **NullableString** |  | [optional] 
 **StorageMode** | Pointer to **string** |  | [optional] 
@@ -40,7 +40,7 @@ Name | Type | Description | Notes
 **Timezone** | Pointer to **NullableString** |  | [optional] 
 **ApiProxy** | Pointer to **NullableString** |  | [optional] 
 **ProvisioningProxy** | Pointer to **NullableString** |  | [optional] 
-**NetworkDomain** | Pointer to [**AddClouds200ResponseAllOfZoneNetworkDomain**](AddClouds200ResponseAllOfZoneNetworkDomain.md) |  | [optional] 
+**NetworkDomain** | Pointer to [**ZoneNetworkDomain**](ZoneNetworkDomain.md) |  | [optional] 
 **DomainName** | Pointer to **string** |  | [optional] 
 **RegionCode** | Pointer to **NullableString** |  | [optional] 
 **AutoRecoverPowerState** | Pointer to **bool** |  | [optional] 
@@ -51,8 +51,8 @@ Name | Type | Description | Notes
 **DefaultSecurityGroupSyncActive** | Pointer to **bool** |  | [optional] 
 **DefaultPoolSyncActive** | Pointer to **bool** |  | [optional] 
 **DefaultPlanSyncActive** | Pointer to **bool** |  | [optional] 
-**Config** | Pointer to [**AddClouds200ResponseAllOfZoneConfig**](AddClouds200ResponseAllOfZoneConfig.md) |  | [optional] 
-**Credential** | Pointer to [**AddClouds200ResponseAllOfZoneCredential**](AddClouds200ResponseAllOfZoneCredential.md) |  | [optional] 
+**Config** | Pointer to [**ZoneConfig**](ZoneConfig.md) |  | [optional] 
+**Credential** | Pointer to [**ZoneCredential**](ZoneCredential.md) |  | [optional] 
 **ImagePath** | Pointer to **NullableString** | Logo image URL | [optional] 
 **DarkImagePath** | Pointer to **NullableString** | Dark logo image URL | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
@@ -60,10 +60,10 @@ Name | Type | Description | Notes
 **LastSync** | Pointer to **NullableTime** |  | [optional] 
 **LastSyncDuration** | Pointer to **NullableInt64** |  | [optional] 
 **NextRunDate** | Pointer to **NullableTime** |  | [optional] 
-**Groups** | Pointer to [**[]AddClouds200ResponseAllOfZoneGroupsInner**](AddClouds200ResponseAllOfZoneGroupsInner.md) |  | [optional] 
-**SecurityServer** | Pointer to [**AddClouds200ResponseAllOfZoneSecurityServer**](AddClouds200ResponseAllOfZoneSecurityServer.md) |  | [optional] 
-**NetworkServer** | Pointer to [**AddClouds200ResponseAllOfZoneNetworkServer**](AddClouds200ResponseAllOfZoneNetworkServer.md) |  | [optional] 
-**Stats** | Pointer to [**AddClouds200ResponseAllOfZoneStats**](AddClouds200ResponseAllOfZoneStats.md) |  | [optional] 
+**Groups** | Pointer to [**[]ZoneGroupsInner**](ZoneGroupsInner.md) |  | [optional] 
+**SecurityServer** | Pointer to [**ZoneSecurityServer**](ZoneSecurityServer.md) |  | [optional] 
+**NetworkServer** | Pointer to [**ZoneNetworkServer**](ZoneNetworkServer.md) |  | [optional] 
+**Stats** | Pointer to [**ZoneStats**](ZoneStats.md) |  | [optional] 
 **ServerCount** | Pointer to **int64** |  | [optional] 
 
 ## Methods
@@ -282,20 +282,20 @@ HasLocation returns a boolean if a field has been set.
 UnsetLocation ensures that no value is present for Location, not even an explicit nil
 ### GetOwner
 
-`func (o *Zone) GetOwner() AddClouds200ResponseAllOfZoneOwner`
+`func (o *Zone) GetOwner() ZoneOwner`
 
 GetOwner returns the Owner field if non-nil, zero value otherwise.
 
 ### GetOwnerOk
 
-`func (o *Zone) GetOwnerOk() (*AddClouds200ResponseAllOfZoneOwner, bool)`
+`func (o *Zone) GetOwnerOk() (*ZoneOwner, bool)`
 
 GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOwner
 
-`func (o *Zone) SetOwner(v AddClouds200ResponseAllOfZoneOwner)`
+`func (o *Zone) SetOwner(v ZoneOwner)`
 
 SetOwner sets Owner field to given value.
 
@@ -332,20 +332,20 @@ HasAccountId returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *Zone) GetAccount() AddClouds200ResponseAllOfZoneAccount`
+`func (o *Zone) GetAccount() ZoneAccount`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *Zone) GetAccountOk() (*AddClouds200ResponseAllOfZoneAccount, bool)`
+`func (o *Zone) GetAccountOk() (*ZoneAccount, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *Zone) SetAccount(v AddClouds200ResponseAllOfZoneAccount)`
+`func (o *Zone) SetAccount(v ZoneAccount)`
 
 SetAccount sets Account field to given value.
 
@@ -677,20 +677,20 @@ HasCostLastSync returns a boolean if a field has been set.
 UnsetCostLastSync ensures that no value is present for CostLastSync, not even an explicit nil
 ### GetZoneType
 
-`func (o *Zone) GetZoneType() AddClouds200ResponseAllOfZoneZoneType`
+`func (o *Zone) GetZoneType() ZoneZoneType`
 
 GetZoneType returns the ZoneType field if non-nil, zero value otherwise.
 
 ### GetZoneTypeOk
 
-`func (o *Zone) GetZoneTypeOk() (*AddClouds200ResponseAllOfZoneZoneType, bool)`
+`func (o *Zone) GetZoneTypeOk() (*ZoneZoneType, bool)`
 
 GetZoneTypeOk returns a tuple with the ZoneType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZoneType
 
-`func (o *Zone) SetZoneType(v AddClouds200ResponseAllOfZoneZoneType)`
+`func (o *Zone) SetZoneType(v ZoneZoneType)`
 
 SetZoneType sets ZoneType field to given value.
 
@@ -1167,20 +1167,20 @@ HasProvisioningProxy returns a boolean if a field has been set.
 UnsetProvisioningProxy ensures that no value is present for ProvisioningProxy, not even an explicit nil
 ### GetNetworkDomain
 
-`func (o *Zone) GetNetworkDomain() AddClouds200ResponseAllOfZoneNetworkDomain`
+`func (o *Zone) GetNetworkDomain() ZoneNetworkDomain`
 
 GetNetworkDomain returns the NetworkDomain field if non-nil, zero value otherwise.
 
 ### GetNetworkDomainOk
 
-`func (o *Zone) GetNetworkDomainOk() (*AddClouds200ResponseAllOfZoneNetworkDomain, bool)`
+`func (o *Zone) GetNetworkDomainOk() (*ZoneNetworkDomain, bool)`
 
 GetNetworkDomainOk returns a tuple with the NetworkDomain field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkDomain
 
-`func (o *Zone) SetNetworkDomain(v AddClouds200ResponseAllOfZoneNetworkDomain)`
+`func (o *Zone) SetNetworkDomain(v ZoneNetworkDomain)`
 
 SetNetworkDomain sets NetworkDomain field to given value.
 
@@ -1452,20 +1452,20 @@ HasDefaultPlanSyncActive returns a boolean if a field has been set.
 
 ### GetConfig
 
-`func (o *Zone) GetConfig() AddClouds200ResponseAllOfZoneConfig`
+`func (o *Zone) GetConfig() ZoneConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *Zone) GetConfigOk() (*AddClouds200ResponseAllOfZoneConfig, bool)`
+`func (o *Zone) GetConfigOk() (*ZoneConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *Zone) SetConfig(v AddClouds200ResponseAllOfZoneConfig)`
+`func (o *Zone) SetConfig(v ZoneConfig)`
 
 SetConfig sets Config field to given value.
 
@@ -1477,20 +1477,20 @@ HasConfig returns a boolean if a field has been set.
 
 ### GetCredential
 
-`func (o *Zone) GetCredential() AddClouds200ResponseAllOfZoneCredential`
+`func (o *Zone) GetCredential() ZoneCredential`
 
 GetCredential returns the Credential field if non-nil, zero value otherwise.
 
 ### GetCredentialOk
 
-`func (o *Zone) GetCredentialOk() (*AddClouds200ResponseAllOfZoneCredential, bool)`
+`func (o *Zone) GetCredentialOk() (*ZoneCredential, bool)`
 
 GetCredentialOk returns a tuple with the Credential field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCredential
 
-`func (o *Zone) SetCredential(v AddClouds200ResponseAllOfZoneCredential)`
+`func (o *Zone) SetCredential(v ZoneCredential)`
 
 SetCredential sets Credential field to given value.
 
@@ -1727,20 +1727,20 @@ HasNextRunDate returns a boolean if a field has been set.
 UnsetNextRunDate ensures that no value is present for NextRunDate, not even an explicit nil
 ### GetGroups
 
-`func (o *Zone) GetGroups() []AddClouds200ResponseAllOfZoneGroupsInner`
+`func (o *Zone) GetGroups() []ZoneGroupsInner`
 
 GetGroups returns the Groups field if non-nil, zero value otherwise.
 
 ### GetGroupsOk
 
-`func (o *Zone) GetGroupsOk() (*[]AddClouds200ResponseAllOfZoneGroupsInner, bool)`
+`func (o *Zone) GetGroupsOk() (*[]ZoneGroupsInner, bool)`
 
 GetGroupsOk returns a tuple with the Groups field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGroups
 
-`func (o *Zone) SetGroups(v []AddClouds200ResponseAllOfZoneGroupsInner)`
+`func (o *Zone) SetGroups(v []ZoneGroupsInner)`
 
 SetGroups sets Groups field to given value.
 
@@ -1752,20 +1752,20 @@ HasGroups returns a boolean if a field has been set.
 
 ### GetSecurityServer
 
-`func (o *Zone) GetSecurityServer() AddClouds200ResponseAllOfZoneSecurityServer`
+`func (o *Zone) GetSecurityServer() ZoneSecurityServer`
 
 GetSecurityServer returns the SecurityServer field if non-nil, zero value otherwise.
 
 ### GetSecurityServerOk
 
-`func (o *Zone) GetSecurityServerOk() (*AddClouds200ResponseAllOfZoneSecurityServer, bool)`
+`func (o *Zone) GetSecurityServerOk() (*ZoneSecurityServer, bool)`
 
 GetSecurityServerOk returns a tuple with the SecurityServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSecurityServer
 
-`func (o *Zone) SetSecurityServer(v AddClouds200ResponseAllOfZoneSecurityServer)`
+`func (o *Zone) SetSecurityServer(v ZoneSecurityServer)`
 
 SetSecurityServer sets SecurityServer field to given value.
 
@@ -1777,20 +1777,20 @@ HasSecurityServer returns a boolean if a field has been set.
 
 ### GetNetworkServer
 
-`func (o *Zone) GetNetworkServer() AddClouds200ResponseAllOfZoneNetworkServer`
+`func (o *Zone) GetNetworkServer() ZoneNetworkServer`
 
 GetNetworkServer returns the NetworkServer field if non-nil, zero value otherwise.
 
 ### GetNetworkServerOk
 
-`func (o *Zone) GetNetworkServerOk() (*AddClouds200ResponseAllOfZoneNetworkServer, bool)`
+`func (o *Zone) GetNetworkServerOk() (*ZoneNetworkServer, bool)`
 
 GetNetworkServerOk returns a tuple with the NetworkServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkServer
 
-`func (o *Zone) SetNetworkServer(v AddClouds200ResponseAllOfZoneNetworkServer)`
+`func (o *Zone) SetNetworkServer(v ZoneNetworkServer)`
 
 SetNetworkServer sets NetworkServer field to given value.
 
@@ -1802,20 +1802,20 @@ HasNetworkServer returns a boolean if a field has been set.
 
 ### GetStats
 
-`func (o *Zone) GetStats() AddClouds200ResponseAllOfZoneStats`
+`func (o *Zone) GetStats() ZoneStats`
 
 GetStats returns the Stats field if non-nil, zero value otherwise.
 
 ### GetStatsOk
 
-`func (o *Zone) GetStatsOk() (*AddClouds200ResponseAllOfZoneStats, bool)`
+`func (o *Zone) GetStatsOk() (*ZoneStats, bool)`
 
 GetStatsOk returns a tuple with the Stats field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStats
 
-`func (o *Zone) SetStats(v AddClouds200ResponseAllOfZoneStats)`
+`func (o *Zone) SetStats(v ZoneStats)`
 
 SetStats sets Stats field to given value.
 

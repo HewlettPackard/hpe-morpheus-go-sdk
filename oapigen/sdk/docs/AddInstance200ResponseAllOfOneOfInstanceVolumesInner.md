@@ -20,6 +20,8 @@ Name | Type | Description | Notes
 **StorageType** | Pointer to **int64** |  | [optional] 
 **UnitNumber** | Pointer to **string** |  | [optional] 
 **ControllerMountPoint** | Pointer to **string** |  | [optional] 
+**CreateForMultiAttach** | Pointer to **bool** |  | [optional] 
+**StorageProfile** | Pointer to **string** | Storage Profile Code for the volume storage profile assignment. eg. &#x60;\&quot;kvm-cache-none\&quot;&#x60; or &#x60;\&quot;kvm-cache-directsync\&quot;&#x60;. Use &#x60;/api/provision-types?code&#x3D;kvm&#x60; to see the available &#x60;storageProfiles&#x60; for HVM and KVM. | [optional] 
 
 ## Methods
 
@@ -439,6 +441,56 @@ SetControllerMountPoint sets ControllerMountPoint field to given value.
 `func (o *AddInstance200ResponseAllOfOneOfInstanceVolumesInner) HasControllerMountPoint() bool`
 
 HasControllerMountPoint returns a boolean if a field has been set.
+
+### GetCreateForMultiAttach
+
+`func (o *AddInstance200ResponseAllOfOneOfInstanceVolumesInner) GetCreateForMultiAttach() bool`
+
+GetCreateForMultiAttach returns the CreateForMultiAttach field if non-nil, zero value otherwise.
+
+### GetCreateForMultiAttachOk
+
+`func (o *AddInstance200ResponseAllOfOneOfInstanceVolumesInner) GetCreateForMultiAttachOk() (*bool, bool)`
+
+GetCreateForMultiAttachOk returns a tuple with the CreateForMultiAttach field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreateForMultiAttach
+
+`func (o *AddInstance200ResponseAllOfOneOfInstanceVolumesInner) SetCreateForMultiAttach(v bool)`
+
+SetCreateForMultiAttach sets CreateForMultiAttach field to given value.
+
+### HasCreateForMultiAttach
+
+`func (o *AddInstance200ResponseAllOfOneOfInstanceVolumesInner) HasCreateForMultiAttach() bool`
+
+HasCreateForMultiAttach returns a boolean if a field has been set.
+
+### GetStorageProfile
+
+`func (o *AddInstance200ResponseAllOfOneOfInstanceVolumesInner) GetStorageProfile() string`
+
+GetStorageProfile returns the StorageProfile field if non-nil, zero value otherwise.
+
+### GetStorageProfileOk
+
+`func (o *AddInstance200ResponseAllOfOneOfInstanceVolumesInner) GetStorageProfileOk() (*string, bool)`
+
+GetStorageProfileOk returns a tuple with the StorageProfile field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStorageProfile
+
+`func (o *AddInstance200ResponseAllOfOneOfInstanceVolumesInner) SetStorageProfile(v string)`
+
+SetStorageProfile sets StorageProfile field to given value.
+
+### HasStorageProfile
+
+`func (o *AddInstance200ResponseAllOfOneOfInstanceVolumesInner) HasStorageProfile() bool`
+
+HasStorageProfile returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

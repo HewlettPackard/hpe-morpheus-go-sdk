@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **PublicIpType** | Pointer to **string** | Public IP | [optional] 
 **InstanceProfile** | Pointer to **string** | IAM Profile | [optional] 
 **KmsKeyId** | Pointer to **string** | KMS Key ID | [optional] 
+**UserData** | Pointer to **string** | User Data. Allows for override of cloud-init based user-data yaml or custom scripts | [optional] 
 
 ## Methods
 
@@ -699,6 +700,31 @@ SetKmsKeyId sets KmsKeyId field to given value.
 `func (o *CatalogItemTypeInstanceScribeConfig) HasKmsKeyId() bool`
 
 HasKmsKeyId returns a boolean if a field has been set.
+
+### GetUserData
+
+`func (o *CatalogItemTypeInstanceScribeConfig) GetUserData() string`
+
+GetUserData returns the UserData field if non-nil, zero value otherwise.
+
+### GetUserDataOk
+
+`func (o *CatalogItemTypeInstanceScribeConfig) GetUserDataOk() (*string, bool)`
+
+GetUserDataOk returns a tuple with the UserData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserData
+
+`func (o *CatalogItemTypeInstanceScribeConfig) SetUserData(v string)`
+
+SetUserData sets UserData field to given value.
+
+### HasUserData
+
+`func (o *CatalogItemTypeInstanceScribeConfig) HasUserData() bool`
+
+HasUserData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

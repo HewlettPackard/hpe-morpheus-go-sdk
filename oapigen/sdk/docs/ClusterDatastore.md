@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **Online** | Pointer to **bool** |  | [optional] 
 **AllowRead** | Pointer to **bool** |  | [optional] 
 **AllowProvision** | Pointer to **bool** |  | [optional] 
+**HeartbeatTarget** | Pointer to **bool** | Heartbeat Target | [optional] 
 **RefType** | Pointer to **string** |  | [optional] 
 **RefId** | Pointer to **int64** |  | [optional] 
 **ExternalId** | Pointer to **string** |  | [optional] 
@@ -478,6 +479,31 @@ SetAllowProvision sets AllowProvision field to given value.
 `func (o *ClusterDatastore) HasAllowProvision() bool`
 
 HasAllowProvision returns a boolean if a field has been set.
+
+### GetHeartbeatTarget
+
+`func (o *ClusterDatastore) GetHeartbeatTarget() bool`
+
+GetHeartbeatTarget returns the HeartbeatTarget field if non-nil, zero value otherwise.
+
+### GetHeartbeatTargetOk
+
+`func (o *ClusterDatastore) GetHeartbeatTargetOk() (*bool, bool)`
+
+GetHeartbeatTargetOk returns a tuple with the HeartbeatTarget field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHeartbeatTarget
+
+`func (o *ClusterDatastore) SetHeartbeatTarget(v bool)`
+
+SetHeartbeatTarget sets HeartbeatTarget field to given value.
+
+### HasHeartbeatTarget
+
+`func (o *ClusterDatastore) HasHeartbeatTarget() bool`
+
+HasHeartbeatTarget returns a boolean if a field has been set.
 
 ### GetRefType
 

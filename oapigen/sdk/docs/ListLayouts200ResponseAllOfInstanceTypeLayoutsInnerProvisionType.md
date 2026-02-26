@@ -51,6 +51,7 @@ Name | Type | Description | Notes
 **StorageTypes** | Pointer to [**[]ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner**](ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner.md) |  | [optional] 
 **RootStorageTypes** | Pointer to [**[]ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeRootStorageTypesInner**](ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeRootStorageTypesInner.md) |  | [optional] 
 **ControllerTypes** | Pointer to [**[]ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeControllerTypesInner**](ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeControllerTypesInner.md) |  | [optional] 
+**StorageProfiles** | Pointer to [**[]ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInner**](ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInner.md) |  | [optional] 
 
 ## Methods
 
@@ -1356,6 +1357,41 @@ HasControllerTypes returns a boolean if a field has been set.
 `func (o *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) UnsetControllerTypes()`
 
 UnsetControllerTypes ensures that no value is present for ControllerTypes, not even an explicit nil
+### GetStorageProfiles
+
+`func (o *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) GetStorageProfiles() []ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInner`
+
+GetStorageProfiles returns the StorageProfiles field if non-nil, zero value otherwise.
+
+### GetStorageProfilesOk
+
+`func (o *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) GetStorageProfilesOk() (*[]ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInner, bool)`
+
+GetStorageProfilesOk returns a tuple with the StorageProfiles field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStorageProfiles
+
+`func (o *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) SetStorageProfiles(v []ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInner)`
+
+SetStorageProfiles sets StorageProfiles field to given value.
+
+### HasStorageProfiles
+
+`func (o *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) HasStorageProfiles() bool`
+
+HasStorageProfiles returns a boolean if a field has been set.
+
+### SetStorageProfilesNil
+
+`func (o *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) SetStorageProfilesNil(b bool)`
+
+ SetStorageProfilesNil sets the value for StorageProfiles to be an explicit nil
+
+### UnsetStorageProfiles
+`func (o *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) UnsetStorageProfiles()`
+
+UnsetStorageProfiles ensures that no value is present for StorageProfiles, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

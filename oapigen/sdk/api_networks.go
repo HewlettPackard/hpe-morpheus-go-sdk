@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.10
+API version: 8.1.1
 Contact: dev@morpheusdata.com
 */
 
@@ -409,6 +409,7 @@ type ApiListNetworksRequest struct {
 	allLabels  *string
 	zoneId     *int64
 	cidr       *string
+	clusterId  *int64
 }
 
 // Filter by name
@@ -444,6 +445,12 @@ func (r ApiListNetworksRequest) ZoneId(zoneId int64) ApiListNetworksRequest {
 // Filter by cidr, matches beginning of value.
 func (r ApiListNetworksRequest) Cidr(cidr string) ApiListNetworksRequest {
 	r.cidr = &cidr
+	return r
+}
+
+// The Cluster ID for filtering.
+func (r ApiListNetworksRequest) ClusterId(clusterId int64) ApiListNetworksRequest {
+	r.clusterId = &clusterId
 	return r
 }
 
@@ -505,6 +512,9 @@ func (a *NetworksAPIService) ListNetworksExecute(r ApiListNetworksRequest) (*Lis
 	}
 	if r.cidr != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "cidr", r.cidr, "form", "")
+	}
+	if r.clusterId != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "clusterId", r.clusterId, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

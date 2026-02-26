@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.10
+API version: 8.1.1
 Contact: dev@morpheusdata.com
 */
 
@@ -156,7 +156,7 @@ func (a *HostsAPIService) AddBaremetalHostExecute(r ApiAddBaremetalHostRequest) 
 type ApiGetHostRequest struct {
 	ctx        context.Context
 	ApiService *HostsAPIService
-	id         int64
+	id         GetHostIdParameter
 }
 
 func (r ApiGetHostRequest) Execute() (*GetHost200Response, *http.Response, error) {
@@ -169,10 +169,10 @@ GetHost Get a Specific Host
 This endpoint retrieves a specific host.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id Morpheus ID of the Object being referenced
+	@param id The `id` or `uuid` to identify the server record.
 	@return ApiGetHostRequest
 */
-func (a *HostsAPIService) GetHost(ctx context.Context, id int64) ApiGetHostRequest {
+func (a *HostsAPIService) GetHost(ctx context.Context, id GetHostIdParameter) ApiGetHostRequest {
 	return ApiGetHostRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -285,6 +285,7 @@ type ApiListHostsRequest struct {
 	zoneId            *int64
 	siteId            *int64
 	clusterId         *int64
+	parentServerId    *int64
 	managed           *bool
 	serverType        *string
 	powerState        *string
@@ -294,6 +295,7 @@ type ApiListHostsRequest struct {
 	bareMetalHost     *bool
 	status            *string
 	agentInstalled    *bool
+	guestAgentStatus  *string
 	max               *int64
 	offset            *int64
 	lastUpdated       *time.Time
@@ -304,6 +306,7 @@ type ApiListHostsRequest struct {
 	externalId        *string
 	internalId        *string
 	externalUniquelId *string
+	stats             *string
 }
 
 // Filter by name
@@ -333,6 +336,12 @@ func (r ApiListHostsRequest) SiteId(siteId int64) ApiListHostsRequest {
 // The Cluster ID(s) for filtering. Accepts multiple values.
 func (r ApiListHostsRequest) ClusterId(clusterId int64) ApiListHostsRequest {
 	r.clusterId = &clusterId
+	return r
+}
+
+// The Parent Server (Hypervisor) ID for Filtering
+func (r ApiListHostsRequest) ParentServerId(parentServerId int64) ApiListHostsRequest {
+	r.parentServerId = &parentServerId
 	return r
 }
 
@@ -387,6 +396,12 @@ func (r ApiListHostsRequest) Status(status string) ApiListHostsRequest {
 // Filter by agent installed (true)
 func (r ApiListHostsRequest) AgentInstalled(agentInstalled bool) ApiListHostsRequest {
 	r.agentInstalled = &agentInstalled
+	return r
+}
+
+// Filter by Guest Agent Status.
+func (r ApiListHostsRequest) GuestAgentStatus(guestAgentStatus string) ApiListHostsRequest {
+	r.guestAgentStatus = &guestAgentStatus
 	return r
 }
 
@@ -450,6 +465,12 @@ func (r ApiListHostsRequest) ExternalUniquelId(externalUniquelId string) ApiList
 	return r
 }
 
+// This can be used to exclude the &#x60;stats&#x60; object in the response by passing &#x60;false&#x60; which can increase performance when returning a large number of servers.
+func (r ApiListHostsRequest) Stats(stats string) ApiListHostsRequest {
+	r.stats = &stats
+	return r
+}
+
 func (r ApiListHostsRequest) Execute() (*ListHosts200Response, *http.Response, error) {
 	return r.ApiService.ListHostsExecute(r)
 }
@@ -506,6 +527,9 @@ func (a *HostsAPIService) ListHostsExecute(r ApiListHostsRequest) (*ListHosts200
 	if r.clusterId != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "clusterId", r.clusterId, "form", "")
 	}
+	if r.parentServerId != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "parentServerId", r.parentServerId, "form", "")
+	}
 	if r.managed != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "managed", r.managed, "form", "")
 	}
@@ -532,6 +556,9 @@ func (a *HostsAPIService) ListHostsExecute(r ApiListHostsRequest) (*ListHosts200
 	}
 	if r.agentInstalled != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "agentInstalled", r.agentInstalled, "form", "")
+	}
+	if r.guestAgentStatus != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "guestAgentStatus", r.guestAgentStatus, "form", "")
 	}
 	if r.max != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "max", r.max, "form", "")
@@ -568,6 +595,9 @@ func (a *HostsAPIService) ListHostsExecute(r ApiListHostsRequest) (*ListHosts200
 	}
 	if r.externalUniquelId != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "externalUniquelId", r.externalUniquelId, "form", "")
+	}
+	if r.stats != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "stats", r.stats, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -646,7 +676,7 @@ func (a *HostsAPIService) ListHostsExecute(r ApiListHostsRequest) (*ListHosts200
 type ApiRemoveHostRequest struct {
 	ctx                context.Context
 	ApiService         *HostsAPIService
-	id                 int64
+	id                 UpdateHostIdParameter
 	removeResources    *string
 	removeInstances    *string
 	preserveVolumes    *string
@@ -701,10 +731,10 @@ RemoveHost Delete a Host
 Will delete a host asynchronously.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id Morpheus ID of the Object being referenced
+	@param id The `id` or `uuid` to identify the server record.
 	@return ApiRemoveHostRequest
 */
-func (a *HostsAPIService) RemoveHost(ctx context.Context, id int64) ApiRemoveHostRequest {
+func (a *HostsAPIService) RemoveHost(ctx context.Context, id UpdateHostIdParameter) ApiRemoveHostRequest {
 	return ApiRemoveHostRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -848,7 +878,7 @@ func (a *HostsAPIService) RemoveHostExecute(r ApiRemoveHostRequest) (*RemoveGrou
 type ApiStopHostRequest struct {
 	ctx        context.Context
 	ApiService *HostsAPIService
-	id         int64
+	id         UpdateHostIdParameter
 }
 
 func (r ApiStopHostRequest) Execute() (*StopHost200Response, *http.Response, error) {
@@ -861,10 +891,10 @@ StopHost Stop a Host
 This will stop a host.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id Morpheus ID of the Object being referenced
+	@param id The `id` or `uuid` to identify the server record.
 	@return ApiStopHostRequest
 */
-func (a *HostsAPIService) StopHost(ctx context.Context, id int64) ApiStopHostRequest {
+func (a *HostsAPIService) StopHost(ctx context.Context, id UpdateHostIdParameter) ApiStopHostRequest {
 	return ApiStopHostRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -972,7 +1002,7 @@ func (a *HostsAPIService) StopHostExecute(r ApiStopHostRequest) (*StopHost200Res
 type ApiUpdateHostRequest struct {
 	ctx               context.Context
 	ApiService        *HostsAPIService
-	id                int64
+	id                UpdateHostIdParameter
 	updateHostRequest *UpdateHostRequest
 }
 
@@ -991,10 +1021,10 @@ UpdateHost Updating a Host
 Updating a Host
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id Morpheus ID of the Object being referenced
+	@param id The `id` or `uuid` to identify the server record.
 	@return ApiUpdateHostRequest
 */
-func (a *HostsAPIService) UpdateHost(ctx context.Context, id int64) ApiUpdateHostRequest {
+func (a *HostsAPIService) UpdateHost(ctx context.Context, id UpdateHostIdParameter) ApiUpdateHostRequest {
 	return ApiUpdateHostRequest{
 		ApiService: a,
 		ctx:        ctx,

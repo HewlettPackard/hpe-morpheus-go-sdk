@@ -100,7 +100,7 @@ import (
 )
 
 func main() {
-	id := int64(1) // int64 | Morpheus ID of the Object being referenced
+	id := openapiclient.getHost_id_parameter{Int64: new(int64)} // GetHostIdParameter | The `id` or `uuid` to identify the server record.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -120,7 +120,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int64** | Morpheus ID of the Object being referenced | 
+**id** | [**GetHostIdParameter**](.md) | The &#x60;id&#x60; or &#x60;uuid&#x60; to identify the server record. | 
 
 ### Other Parameters
 
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ## ListHosts
 
-> ListHosts200Response ListHosts(ctx).Name(name).Phrase(phrase).ZoneId(zoneId).SiteId(siteId).ClusterId(clusterId).Managed(managed).ServerType(serverType).PowerState(powerState).Ip(ip).Vm(vm).VmHypervisor(vmHypervisor).BareMetalHost(bareMetalHost).Status(status).AgentInstalled(agentInstalled).Max(max).Offset(offset).LastUpdated(lastUpdated).CreatedBy(createdBy).TagsName(tagsName).Metadata(metadata).Uuid(uuid).ExternalId(externalId).InternalId(internalId).ExternalUniquelId(externalUniquelId).Execute()
+> ListHosts200Response ListHosts(ctx).Name(name).Phrase(phrase).ZoneId(zoneId).SiteId(siteId).ClusterId(clusterId).ParentServerId(parentServerId).Managed(managed).ServerType(serverType).PowerState(powerState).Ip(ip).Vm(vm).VmHypervisor(vmHypervisor).BareMetalHost(bareMetalHost).Status(status).AgentInstalled(agentInstalled).GuestAgentStatus(guestAgentStatus).Max(max).Offset(offset).LastUpdated(lastUpdated).CreatedBy(createdBy).TagsName(tagsName).Metadata(metadata).Uuid(uuid).ExternalId(externalId).InternalId(internalId).ExternalUniquelId(externalUniquelId).Stats(stats).Execute()
 
 Get All Hosts
 
@@ -176,6 +176,7 @@ func main() {
 	zoneId := int64(3) // int64 | The Cloud ID (Zone ID) for Filtering (optional)
 	siteId := int64(7) // int64 | The Group ID (Site ID) for Filtering (optional)
 	clusterId := int64(135) // int64 | The Cluster ID(s) for filtering. Accepts multiple values. (optional)
+	parentServerId := int64(36) // int64 | The Parent Server (Hypervisor) ID for Filtering (optional)
 	managed := false // bool | Filter by managed (true) or unmanaged (false) (optional)
 	serverType := "vmwareHypervisor" // string | Filter by server type code (optional)
 	powerState := "off" // string | Filter by power status (optional)
@@ -185,6 +186,7 @@ func main() {
 	bareMetalHost := false // bool | Filter to show only Baremetal Servers (optional)
 	status := "status_example" // string | Filter by status (optional)
 	agentInstalled := true // bool | Filter by agent installed (true) (optional)
+	guestAgentStatus := "connected" // string | Filter by Guest Agent Status. (optional)
 	max := int64(789) // int64 | Maximum number of records to return (optional) (default to 25)
 	offset := int64(789) // int64 | Offset records, the number of records to skip, for paginating requests (optional) (default to 0)
 	lastUpdated := time.Now() // time.Time | Date filter, restricts query to only load resources updated more recently than the date specified (ISO 8601) (optional)
@@ -195,10 +197,11 @@ func main() {
 	externalId := "externalId_example" // string | Filter by External ID (optional)
 	internalId := "internalId_example" // string | Filter by Internal ID (optional)
 	externalUniquelId := "externalUniquelId_example" // string | Filter by External Unique ID (optional)
+	stats := "stats_example" // string | This can be used to exclude the `stats` object in the response by passing `false` which can increase performance when returning a large number of servers. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.HostsAPI.ListHosts(context.Background()).Name(name).Phrase(phrase).ZoneId(zoneId).SiteId(siteId).ClusterId(clusterId).Managed(managed).ServerType(serverType).PowerState(powerState).Ip(ip).Vm(vm).VmHypervisor(vmHypervisor).BareMetalHost(bareMetalHost).Status(status).AgentInstalled(agentInstalled).Max(max).Offset(offset).LastUpdated(lastUpdated).CreatedBy(createdBy).TagsName(tagsName).Metadata(metadata).Uuid(uuid).ExternalId(externalId).InternalId(internalId).ExternalUniquelId(externalUniquelId).Execute()
+	resp, r, err := apiClient.HostsAPI.ListHosts(context.Background()).Name(name).Phrase(phrase).ZoneId(zoneId).SiteId(siteId).ClusterId(clusterId).ParentServerId(parentServerId).Managed(managed).ServerType(serverType).PowerState(powerState).Ip(ip).Vm(vm).VmHypervisor(vmHypervisor).BareMetalHost(bareMetalHost).Status(status).AgentInstalled(agentInstalled).GuestAgentStatus(guestAgentStatus).Max(max).Offset(offset).LastUpdated(lastUpdated).CreatedBy(createdBy).TagsName(tagsName).Metadata(metadata).Uuid(uuid).ExternalId(externalId).InternalId(internalId).ExternalUniquelId(externalUniquelId).Stats(stats).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `HostsAPI.ListHosts``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -224,6 +227,7 @@ Name | Type | Description  | Notes
  **zoneId** | **int64** | The Cloud ID (Zone ID) for Filtering | 
  **siteId** | **int64** | The Group ID (Site ID) for Filtering | 
  **clusterId** | **int64** | The Cluster ID(s) for filtering. Accepts multiple values. | 
+ **parentServerId** | **int64** | The Parent Server (Hypervisor) ID for Filtering | 
  **managed** | **bool** | Filter by managed (true) or unmanaged (false) | 
  **serverType** | **string** | Filter by server type code | 
  **powerState** | **string** | Filter by power status | 
@@ -233,6 +237,7 @@ Name | Type | Description  | Notes
  **bareMetalHost** | **bool** | Filter to show only Baremetal Servers | 
  **status** | **string** | Filter by status | 
  **agentInstalled** | **bool** | Filter by agent installed (true) | 
+ **guestAgentStatus** | **string** | Filter by Guest Agent Status. | 
  **max** | **int64** | Maximum number of records to return | [default to 25]
  **offset** | **int64** | Offset records, the number of records to skip, for paginating requests | [default to 0]
  **lastUpdated** | **time.Time** | Date filter, restricts query to only load resources updated more recently than the date specified (ISO 8601) | 
@@ -243,6 +248,7 @@ Name | Type | Description  | Notes
  **externalId** | **string** | Filter by External ID | 
  **internalId** | **string** | Filter by Internal ID | 
  **externalUniquelId** | **string** | Filter by External Unique ID | 
+ **stats** | **string** | This can be used to exclude the &#x60;stats&#x60; object in the response by passing &#x60;false&#x60; which can increase performance when returning a large number of servers. | 
 
 ### Return type
 
@@ -283,7 +289,7 @@ import (
 )
 
 func main() {
-	id := int64(1) // int64 | Morpheus ID of the Object being referenced
+	id := openapiclient.updateHost_id_parameter{Int64: new(int64)} // UpdateHostIdParameter | The `id` or `uuid` to identify the server record.
 	removeResources := "off" // string | Remove Resources (optional) (default to "on")
 	removeInstances := "on" // string | Remove Instances (optional) (default to "off")
 	preserveVolumes := "on" // string | Preserve Volumes (optional) (default to "off")
@@ -309,7 +315,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int64** | Morpheus ID of the Object being referenced | 
+**id** | [**UpdateHostIdParameter**](.md) | The &#x60;id&#x60; or &#x60;uuid&#x60; to identify the server record. | 
 
 ### Other Parameters
 
@@ -365,7 +371,7 @@ import (
 )
 
 func main() {
-	id := int64(1) // int64 | Morpheus ID of the Object being referenced
+	id := openapiclient.updateHost_id_parameter{Int64: new(int64)} // UpdateHostIdParameter | The `id` or `uuid` to identify the server record.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -385,7 +391,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int64** | Morpheus ID of the Object being referenced | 
+**id** | [**UpdateHostIdParameter**](.md) | The &#x60;id&#x60; or &#x60;uuid&#x60; to identify the server record. | 
 
 ### Other Parameters
 
@@ -435,7 +441,7 @@ import (
 )
 
 func main() {
-	id := int64(1) // int64 | Morpheus ID of the Object being referenced
+	id := openapiclient.updateHost_id_parameter{Int64: new(int64)} // UpdateHostIdParameter | The `id` or `uuid` to identify the server record.
 	updateHostRequest := *openapiclient.NewUpdateHostRequest() // UpdateHostRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -456,7 +462,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int64** | Morpheus ID of the Object being referenced | 
+**id** | [**UpdateHostIdParameter**](.md) | The &#x60;id&#x60; or &#x60;uuid&#x60; to identify the server record. | 
 
 ### Other Parameters
 

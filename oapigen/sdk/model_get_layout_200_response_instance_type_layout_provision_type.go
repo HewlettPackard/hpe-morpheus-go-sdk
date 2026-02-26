@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.10
+API version: 8.1.1
 Contact: dev@morpheusdata.com
 */
 
@@ -67,6 +67,7 @@ type GetLayout200ResponseInstanceTypeLayoutProvisionType struct {
 	StorageTypes          []GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner      `json:"storageTypes,omitempty"`
 	RootStorageTypes      []GetLayout200ResponseInstanceTypeLayoutProvisionTypeRootStorageTypesInner  `json:"rootStorageTypes,omitempty"`
 	ControllerTypes       []GetLayout200ResponseInstanceTypeLayoutProvisionTypeControllerTypesInner   `json:"controllerTypes,omitempty"`
+	StorageProfiles       []GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageProfilesInner   `json:"storageProfiles,omitempty"`
 	AdditionalProperties  map[string]interface{}                                                      `json:",remain"`
 }
 
@@ -1654,6 +1655,39 @@ func (o *GetLayout200ResponseInstanceTypeLayoutProvisionType) SetControllerTypes
 	o.ControllerTypes = v
 }
 
+// GetStorageProfiles returns the StorageProfiles field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GetLayout200ResponseInstanceTypeLayoutProvisionType) GetStorageProfiles() []GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageProfilesInner {
+	if o == nil {
+		var ret []GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageProfilesInner
+		return ret
+	}
+	return o.StorageProfiles
+}
+
+// GetStorageProfilesOk returns a tuple with the StorageProfiles field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GetLayout200ResponseInstanceTypeLayoutProvisionType) GetStorageProfilesOk() ([]GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageProfilesInner, bool) {
+	if o == nil || IsNil(o.StorageProfiles) {
+		return nil, false
+	}
+	return o.StorageProfiles, true
+}
+
+// IsSetStorageProfiles returns a boolean if a field has been set.
+func (o *GetLayout200ResponseInstanceTypeLayoutProvisionType) IsSetStorageProfiles() bool {
+	if o != nil && !IsNil(o.StorageProfiles) {
+		return true
+	}
+
+	return false
+}
+
+// SetStorageProfiles gets a reference to the given []GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageProfilesInner and assigns it to the StorageProfiles field.
+func (o *GetLayout200ResponseInstanceTypeLayoutProvisionType) SetStorageProfiles(v []GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageProfilesInner) {
+	o.StorageProfiles = v
+}
+
 func (o GetLayout200ResponseInstanceTypeLayoutProvisionType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -1804,6 +1838,9 @@ func (o GetLayout200ResponseInstanceTypeLayoutProvisionType) ToMap() (map[string
 	}
 	if o.ControllerTypes != nil {
 		toSerialize["controllerTypes"] = o.ControllerTypes
+	}
+	if o.StorageProfiles != nil {
+		toSerialize["storageProfiles"] = o.StorageProfiles
 	}
 
 	for key, value := range o.AdditionalProperties {

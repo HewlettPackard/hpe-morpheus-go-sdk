@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **Ports** | Pointer to [**[]AddInstanceRequestPortsInner**](AddInstanceRequestPortsInner.md) | The ports parameter is for port configuration.  The layout may have default ports, which are defined in node types, that are always configured. This parameter will be for additional custom ports to be opened.  | [optional] 
 **TaskSetId** | Pointer to **int64** | The Workflow ID to execute. | [optional] 
 **TaskSetName** | Pointer to **string** | The Workflow Name to execute. | [optional] 
+**ServerUUIDs** | Pointer to **[]string** | Server UUIDs is an optional array of uuid string values to assign to the new servers being provisioned for this instance. | [optional] 
 
 ## Methods
 
@@ -439,6 +440,31 @@ SetTaskSetName sets TaskSetName field to given value.
 `func (o *AddInstanceRequest) HasTaskSetName() bool`
 
 HasTaskSetName returns a boolean if a field has been set.
+
+### GetServerUUIDs
+
+`func (o *AddInstanceRequest) GetServerUUIDs() []string`
+
+GetServerUUIDs returns the ServerUUIDs field if non-nil, zero value otherwise.
+
+### GetServerUUIDsOk
+
+`func (o *AddInstanceRequest) GetServerUUIDsOk() (*[]string, bool)`
+
+GetServerUUIDsOk returns a tuple with the ServerUUIDs field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetServerUUIDs
+
+`func (o *AddInstanceRequest) SetServerUUIDs(v []string)`
+
+SetServerUUIDs sets ServerUUIDs field to given value.
+
+### HasServerUUIDs
+
+`func (o *AddInstanceRequest) HasServerUUIDs() bool`
+
+HasServerUUIDs returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

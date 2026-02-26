@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.10
+API version: 8.1.1
 Contact: dev@morpheusdata.com
 */
 
@@ -27,7 +27,7 @@ type ClusterCreate struct {
 	Description *string `json:"description,omitempty"`
 	// Array of strings (keywords). This will override labels passed under the `server` object.
 	Labels []string             `json:"labels,omitempty"`
-	Group  ClusterCreateGroup   `json:"group"`
+	Group  *ClusterCreateGroup  `json:"group,omitempty"`
 	Cloud  ClusterCreateCloud   `json:"cloud"`
 	Config *ClusterCreateConfig `json:"config,omitempty"`
 	Layout ClusterCreateLayout  `json:"layout"`
@@ -45,11 +45,10 @@ type _ClusterCreate ClusterCreate
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewClusterCreate(type_ ClusterCreateType, name string, group ClusterCreateGroup, cloud ClusterCreateCloud, layout ClusterCreateLayout, server ClusterCreateServer) *ClusterCreate {
+func NewClusterCreate(type_ ClusterCreateType, name string, cloud ClusterCreateCloud, layout ClusterCreateLayout, server ClusterCreateServer) *ClusterCreate {
 	this := ClusterCreate{}
 	this.Type = type_
 	this.Name = name
-	this.Group = group
 	this.Cloud = cloud
 	this.Layout = layout
 	this.Server = server
@@ -180,28 +179,36 @@ func (o *ClusterCreate) SetLabels(v []string) {
 	o.Labels = v
 }
 
-// GetGroup returns the Group field value
+// GetGroup returns the Group field value if set, zero value otherwise.
 func (o *ClusterCreate) GetGroup() ClusterCreateGroup {
-	if o == nil {
+	if o == nil || IsNil(o.Group) {
 		var ret ClusterCreateGroup
 		return ret
 	}
-
-	return o.Group
+	return *o.Group
 }
 
-// GetGroupOk returns a tuple with the Group field value
+// GetGroupOk returns a tuple with the Group field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClusterCreate) GetGroupOk() (*ClusterCreateGroup, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Group) {
 		return nil, false
 	}
-	return &o.Group, true
+	return o.Group, true
 }
 
-// SetGroup sets field value
+// IsSetGroup returns a boolean if a field has been set.
+func (o *ClusterCreate) IsSetGroup() bool {
+	if o != nil && !IsNil(o.Group) {
+		return true
+	}
+
+	return false
+}
+
+// SetGroup gets a reference to the given ClusterCreateGroup and assigns it to the Group field.
 func (o *ClusterCreate) SetGroup(v ClusterCreateGroup) {
-	o.Group = v
+	o.Group = &v
 }
 
 // GetCloud returns the Cloud field value
@@ -390,7 +397,9 @@ func (o ClusterCreate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Labels) {
 		toSerialize["labels"] = o.Labels
 	}
-	toSerialize["group"] = o.Group
+	if !IsNil(o.Group) {
+		toSerialize["group"] = o.Group
+	}
 	toSerialize["cloud"] = o.Cloud
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config

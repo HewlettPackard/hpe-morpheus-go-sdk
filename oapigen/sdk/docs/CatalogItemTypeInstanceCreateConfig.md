@@ -4,25 +4,25 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Group** | [**CatalogItemTypeInstanceCreateConfigGroup**](CatalogItemTypeInstanceCreateConfigGroup.md) |  | 
-**Cloud** | [**CatalogItemTypeInstanceCreateConfigCloud**](CatalogItemTypeInstanceCreateConfigCloud.md) |  | 
+**Group** | [**InstanceConfigObject1Group**](InstanceConfigObject1Group.md) |  | 
+**Cloud** | [**InstanceConfigObject1Cloud**](InstanceConfigObject1Cloud.md) |  | 
 **Type** | **string** | The type of instance by code we want to fetch. | 
 **Name** | **string** | Name of the instance to be created. | 
-**Config** | [**CatalogItemTypeInstanceCreateConfigConfig**](CatalogItemTypeInstanceCreateConfigConfig.md) |  | 
-**Volumes** | [**[]CatalogItemTypeInstanceCreateConfigVolumesInner**](CatalogItemTypeInstanceCreateConfigVolumesInner.md) | The (optional) volumes parameter is for LV configuration, can create additional LVs at provision It should be passed as an array of | 
+**Config** | [**InstanceConfigObject1Config**](InstanceConfigObject1Config.md) |  | 
+**Volumes** | [**[]InstanceConfigObject1VolumesInner**](InstanceConfigObject1VolumesInner.md) | The (optional) volumes parameter is for LV configuration, can create additional LVs at provision It should be passed as an array of | 
 **HostName** | Pointer to **string** | Hostname of the instance to be created.  Can be the same as the instance name. | [optional] 
 **Environment** | Pointer to **string** | Environment code | [optional] 
-**Layout** | [**CatalogItemTypeInstanceCreateConfigLayout**](CatalogItemTypeInstanceCreateConfigLayout.md) |  | 
-**Plan** | [**CatalogItemTypeInstanceCreateConfigPlan**](CatalogItemTypeInstanceCreateConfigPlan.md) |  | 
+**Layout** | [**InstanceConfigObject1Layout**](InstanceConfigObject1Layout.md) |  | 
+**Plan** | [**InstanceConfigObject1Plan**](InstanceConfigObject1Plan.md) |  | 
 **Version** | Pointer to **string** | Version of the layout to create. | [optional] 
-**Evars** | Pointer to [**[]CatalogItemTypeInstanceCreateConfigEvarsInner**](CatalogItemTypeInstanceCreateConfigEvarsInner.md) | Environment Variables, an array of objects that have name and value. | [optional] 
-**ServicePlanOptions** | Pointer to [**CatalogItemTypeInstanceCreateConfigServicePlanOptions**](CatalogItemTypeInstanceCreateConfigServicePlanOptions.md) |  | [optional] 
-**SecurityGroups** | Pointer to [**[]CatalogItemTypeInstanceCreateConfigSecurityGroupsInner**](CatalogItemTypeInstanceCreateConfigSecurityGroupsInner.md) | Key for security group configuration. It should be passed as an array of objects containing the id of the security group to assign the instance to. | [optional] 
+**Evars** | Pointer to [**[]InstanceConfigObject1EvarsInner**](InstanceConfigObject1EvarsInner.md) | Environment Variables, an array of objects that have name and value. | [optional] 
+**ServicePlanOptions** | Pointer to [**InstanceConfigObject1ServicePlanOptions**](InstanceConfigObject1ServicePlanOptions.md) |  | [optional] 
+**SecurityGroups** | Pointer to [**[]InstanceConfigObject1SecurityGroupsInner**](InstanceConfigObject1SecurityGroupsInner.md) | Key for security group configuration. It should be passed as an array of objects containing the id of the security group to assign the instance to. | [optional] 
 **NetworkInterfaces** | Pointer to [**[]InstancesNetworkInterfaces4**](InstancesNetworkInterfaces4.md) | The networkInterfaces parameter is for network configuration.  The Options API &#x60;/api/options/zoneNetworkOptions?zoneId&#x3D;5&amp;provisionTypeId&#x3D;10&#x60; can be used to see which options are available.  | [optional] 
 **Labels** | Pointer to **[]string** | Array of strings (keywords). | [optional] 
-**Tags** | Pointer to [**[]CatalogItemTypeInstanceCreateConfigTagsInner**](CatalogItemTypeInstanceCreateConfigTagsInner.md) | Metadata tags, Array of objects having a name and value. | [optional] 
-**Metadata** | Pointer to [**[]CatalogItemTypeInstanceCreateConfigMetadataInner**](CatalogItemTypeInstanceCreateConfigMetadataInner.md) | Alias for &#x60;tags&#x60;. | [optional] 
-**Ports** | Pointer to [**[]CatalogItemTypeInstanceCreateConfigPortsInner**](CatalogItemTypeInstanceCreateConfigPortsInner.md) | The ports parameter is for port configuration.  The layout may have default ports, which are defined in node types, that are always configured. This parameter will be for additional custom ports to be opened.  | [optional] 
+**Tags** | Pointer to [**[]InstanceConfigObject1TagsInner**](InstanceConfigObject1TagsInner.md) | Metadata tags, Array of objects having a name and value. | [optional] 
+**Metadata** | Pointer to [**[]InstanceConfigObject1MetadataInner**](InstanceConfigObject1MetadataInner.md) | Alias for &#x60;tags&#x60;. | [optional] 
+**Ports** | Pointer to [**[]InstanceConfigObject1PortsInner**](InstanceConfigObject1PortsInner.md) | The ports parameter is for port configuration.  The layout may have default ports, which are defined in node types, that are always configured. This parameter will be for additional custom ports to be opened.  | [optional] 
 **TaskSetId** | Pointer to **int64** | The Workflow ID to execute. | [optional] 
 **TaskSetName** | Pointer to **string** | The Workflow Name to execute. | [optional] 
 
@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 
 ### NewCatalogItemTypeInstanceCreateConfig
 
-`func NewCatalogItemTypeInstanceCreateConfig(group CatalogItemTypeInstanceCreateConfigGroup, cloud CatalogItemTypeInstanceCreateConfigCloud, type_ string, name string, config CatalogItemTypeInstanceCreateConfigConfig, volumes []CatalogItemTypeInstanceCreateConfigVolumesInner, layout CatalogItemTypeInstanceCreateConfigLayout, plan CatalogItemTypeInstanceCreateConfigPlan, ) *CatalogItemTypeInstanceCreateConfig`
+`func NewCatalogItemTypeInstanceCreateConfig(group InstanceConfigObject1Group, cloud InstanceConfigObject1Cloud, type_ string, name string, config InstanceConfigObject1Config, volumes []InstanceConfigObject1VolumesInner, layout InstanceConfigObject1Layout, plan InstanceConfigObject1Plan, ) *CatalogItemTypeInstanceCreateConfig`
 
 NewCatalogItemTypeInstanceCreateConfig instantiates a new CatalogItemTypeInstanceCreateConfig object
 This constructor will assign default values to properties that have it defined,
@@ -47,40 +47,40 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetGroup
 
-`func (o *CatalogItemTypeInstanceCreateConfig) GetGroup() CatalogItemTypeInstanceCreateConfigGroup`
+`func (o *CatalogItemTypeInstanceCreateConfig) GetGroup() InstanceConfigObject1Group`
 
 GetGroup returns the Group field if non-nil, zero value otherwise.
 
 ### GetGroupOk
 
-`func (o *CatalogItemTypeInstanceCreateConfig) GetGroupOk() (*CatalogItemTypeInstanceCreateConfigGroup, bool)`
+`func (o *CatalogItemTypeInstanceCreateConfig) GetGroupOk() (*InstanceConfigObject1Group, bool)`
 
 GetGroupOk returns a tuple with the Group field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGroup
 
-`func (o *CatalogItemTypeInstanceCreateConfig) SetGroup(v CatalogItemTypeInstanceCreateConfigGroup)`
+`func (o *CatalogItemTypeInstanceCreateConfig) SetGroup(v InstanceConfigObject1Group)`
 
 SetGroup sets Group field to given value.
 
 
 ### GetCloud
 
-`func (o *CatalogItemTypeInstanceCreateConfig) GetCloud() CatalogItemTypeInstanceCreateConfigCloud`
+`func (o *CatalogItemTypeInstanceCreateConfig) GetCloud() InstanceConfigObject1Cloud`
 
 GetCloud returns the Cloud field if non-nil, zero value otherwise.
 
 ### GetCloudOk
 
-`func (o *CatalogItemTypeInstanceCreateConfig) GetCloudOk() (*CatalogItemTypeInstanceCreateConfigCloud, bool)`
+`func (o *CatalogItemTypeInstanceCreateConfig) GetCloudOk() (*InstanceConfigObject1Cloud, bool)`
 
 GetCloudOk returns a tuple with the Cloud field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCloud
 
-`func (o *CatalogItemTypeInstanceCreateConfig) SetCloud(v CatalogItemTypeInstanceCreateConfigCloud)`
+`func (o *CatalogItemTypeInstanceCreateConfig) SetCloud(v InstanceConfigObject1Cloud)`
 
 SetCloud sets Cloud field to given value.
 
@@ -127,40 +127,40 @@ SetName sets Name field to given value.
 
 ### GetConfig
 
-`func (o *CatalogItemTypeInstanceCreateConfig) GetConfig() CatalogItemTypeInstanceCreateConfigConfig`
+`func (o *CatalogItemTypeInstanceCreateConfig) GetConfig() InstanceConfigObject1Config`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *CatalogItemTypeInstanceCreateConfig) GetConfigOk() (*CatalogItemTypeInstanceCreateConfigConfig, bool)`
+`func (o *CatalogItemTypeInstanceCreateConfig) GetConfigOk() (*InstanceConfigObject1Config, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *CatalogItemTypeInstanceCreateConfig) SetConfig(v CatalogItemTypeInstanceCreateConfigConfig)`
+`func (o *CatalogItemTypeInstanceCreateConfig) SetConfig(v InstanceConfigObject1Config)`
 
 SetConfig sets Config field to given value.
 
 
 ### GetVolumes
 
-`func (o *CatalogItemTypeInstanceCreateConfig) GetVolumes() []CatalogItemTypeInstanceCreateConfigVolumesInner`
+`func (o *CatalogItemTypeInstanceCreateConfig) GetVolumes() []InstanceConfigObject1VolumesInner`
 
 GetVolumes returns the Volumes field if non-nil, zero value otherwise.
 
 ### GetVolumesOk
 
-`func (o *CatalogItemTypeInstanceCreateConfig) GetVolumesOk() (*[]CatalogItemTypeInstanceCreateConfigVolumesInner, bool)`
+`func (o *CatalogItemTypeInstanceCreateConfig) GetVolumesOk() (*[]InstanceConfigObject1VolumesInner, bool)`
 
 GetVolumesOk returns a tuple with the Volumes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVolumes
 
-`func (o *CatalogItemTypeInstanceCreateConfig) SetVolumes(v []CatalogItemTypeInstanceCreateConfigVolumesInner)`
+`func (o *CatalogItemTypeInstanceCreateConfig) SetVolumes(v []InstanceConfigObject1VolumesInner)`
 
 SetVolumes sets Volumes field to given value.
 
@@ -217,40 +217,40 @@ HasEnvironment returns a boolean if a field has been set.
 
 ### GetLayout
 
-`func (o *CatalogItemTypeInstanceCreateConfig) GetLayout() CatalogItemTypeInstanceCreateConfigLayout`
+`func (o *CatalogItemTypeInstanceCreateConfig) GetLayout() InstanceConfigObject1Layout`
 
 GetLayout returns the Layout field if non-nil, zero value otherwise.
 
 ### GetLayoutOk
 
-`func (o *CatalogItemTypeInstanceCreateConfig) GetLayoutOk() (*CatalogItemTypeInstanceCreateConfigLayout, bool)`
+`func (o *CatalogItemTypeInstanceCreateConfig) GetLayoutOk() (*InstanceConfigObject1Layout, bool)`
 
 GetLayoutOk returns a tuple with the Layout field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLayout
 
-`func (o *CatalogItemTypeInstanceCreateConfig) SetLayout(v CatalogItemTypeInstanceCreateConfigLayout)`
+`func (o *CatalogItemTypeInstanceCreateConfig) SetLayout(v InstanceConfigObject1Layout)`
 
 SetLayout sets Layout field to given value.
 
 
 ### GetPlan
 
-`func (o *CatalogItemTypeInstanceCreateConfig) GetPlan() CatalogItemTypeInstanceCreateConfigPlan`
+`func (o *CatalogItemTypeInstanceCreateConfig) GetPlan() InstanceConfigObject1Plan`
 
 GetPlan returns the Plan field if non-nil, zero value otherwise.
 
 ### GetPlanOk
 
-`func (o *CatalogItemTypeInstanceCreateConfig) GetPlanOk() (*CatalogItemTypeInstanceCreateConfigPlan, bool)`
+`func (o *CatalogItemTypeInstanceCreateConfig) GetPlanOk() (*InstanceConfigObject1Plan, bool)`
 
 GetPlanOk returns a tuple with the Plan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlan
 
-`func (o *CatalogItemTypeInstanceCreateConfig) SetPlan(v CatalogItemTypeInstanceCreateConfigPlan)`
+`func (o *CatalogItemTypeInstanceCreateConfig) SetPlan(v InstanceConfigObject1Plan)`
 
 SetPlan sets Plan field to given value.
 
@@ -282,20 +282,20 @@ HasVersion returns a boolean if a field has been set.
 
 ### GetEvars
 
-`func (o *CatalogItemTypeInstanceCreateConfig) GetEvars() []CatalogItemTypeInstanceCreateConfigEvarsInner`
+`func (o *CatalogItemTypeInstanceCreateConfig) GetEvars() []InstanceConfigObject1EvarsInner`
 
 GetEvars returns the Evars field if non-nil, zero value otherwise.
 
 ### GetEvarsOk
 
-`func (o *CatalogItemTypeInstanceCreateConfig) GetEvarsOk() (*[]CatalogItemTypeInstanceCreateConfigEvarsInner, bool)`
+`func (o *CatalogItemTypeInstanceCreateConfig) GetEvarsOk() (*[]InstanceConfigObject1EvarsInner, bool)`
 
 GetEvarsOk returns a tuple with the Evars field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEvars
 
-`func (o *CatalogItemTypeInstanceCreateConfig) SetEvars(v []CatalogItemTypeInstanceCreateConfigEvarsInner)`
+`func (o *CatalogItemTypeInstanceCreateConfig) SetEvars(v []InstanceConfigObject1EvarsInner)`
 
 SetEvars sets Evars field to given value.
 
@@ -307,20 +307,20 @@ HasEvars returns a boolean if a field has been set.
 
 ### GetServicePlanOptions
 
-`func (o *CatalogItemTypeInstanceCreateConfig) GetServicePlanOptions() CatalogItemTypeInstanceCreateConfigServicePlanOptions`
+`func (o *CatalogItemTypeInstanceCreateConfig) GetServicePlanOptions() InstanceConfigObject1ServicePlanOptions`
 
 GetServicePlanOptions returns the ServicePlanOptions field if non-nil, zero value otherwise.
 
 ### GetServicePlanOptionsOk
 
-`func (o *CatalogItemTypeInstanceCreateConfig) GetServicePlanOptionsOk() (*CatalogItemTypeInstanceCreateConfigServicePlanOptions, bool)`
+`func (o *CatalogItemTypeInstanceCreateConfig) GetServicePlanOptionsOk() (*InstanceConfigObject1ServicePlanOptions, bool)`
 
 GetServicePlanOptionsOk returns a tuple with the ServicePlanOptions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServicePlanOptions
 
-`func (o *CatalogItemTypeInstanceCreateConfig) SetServicePlanOptions(v CatalogItemTypeInstanceCreateConfigServicePlanOptions)`
+`func (o *CatalogItemTypeInstanceCreateConfig) SetServicePlanOptions(v InstanceConfigObject1ServicePlanOptions)`
 
 SetServicePlanOptions sets ServicePlanOptions field to given value.
 
@@ -332,20 +332,20 @@ HasServicePlanOptions returns a boolean if a field has been set.
 
 ### GetSecurityGroups
 
-`func (o *CatalogItemTypeInstanceCreateConfig) GetSecurityGroups() []CatalogItemTypeInstanceCreateConfigSecurityGroupsInner`
+`func (o *CatalogItemTypeInstanceCreateConfig) GetSecurityGroups() []InstanceConfigObject1SecurityGroupsInner`
 
 GetSecurityGroups returns the SecurityGroups field if non-nil, zero value otherwise.
 
 ### GetSecurityGroupsOk
 
-`func (o *CatalogItemTypeInstanceCreateConfig) GetSecurityGroupsOk() (*[]CatalogItemTypeInstanceCreateConfigSecurityGroupsInner, bool)`
+`func (o *CatalogItemTypeInstanceCreateConfig) GetSecurityGroupsOk() (*[]InstanceConfigObject1SecurityGroupsInner, bool)`
 
 GetSecurityGroupsOk returns a tuple with the SecurityGroups field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSecurityGroups
 
-`func (o *CatalogItemTypeInstanceCreateConfig) SetSecurityGroups(v []CatalogItemTypeInstanceCreateConfigSecurityGroupsInner)`
+`func (o *CatalogItemTypeInstanceCreateConfig) SetSecurityGroups(v []InstanceConfigObject1SecurityGroupsInner)`
 
 SetSecurityGroups sets SecurityGroups field to given value.
 
@@ -355,16 +355,6 @@ SetSecurityGroups sets SecurityGroups field to given value.
 
 HasSecurityGroups returns a boolean if a field has been set.
 
-### SetSecurityGroupsNil
-
-`func (o *CatalogItemTypeInstanceCreateConfig) SetSecurityGroupsNil(b bool)`
-
- SetSecurityGroupsNil sets the value for SecurityGroups to be an explicit nil
-
-### UnsetSecurityGroups
-`func (o *CatalogItemTypeInstanceCreateConfig) UnsetSecurityGroups()`
-
-UnsetSecurityGroups ensures that no value is present for SecurityGroups, not even an explicit nil
 ### GetNetworkInterfaces
 
 `func (o *CatalogItemTypeInstanceCreateConfig) GetNetworkInterfaces() []InstancesNetworkInterfaces4`
@@ -417,20 +407,20 @@ HasLabels returns a boolean if a field has been set.
 
 ### GetTags
 
-`func (o *CatalogItemTypeInstanceCreateConfig) GetTags() []CatalogItemTypeInstanceCreateConfigTagsInner`
+`func (o *CatalogItemTypeInstanceCreateConfig) GetTags() []InstanceConfigObject1TagsInner`
 
 GetTags returns the Tags field if non-nil, zero value otherwise.
 
 ### GetTagsOk
 
-`func (o *CatalogItemTypeInstanceCreateConfig) GetTagsOk() (*[]CatalogItemTypeInstanceCreateConfigTagsInner, bool)`
+`func (o *CatalogItemTypeInstanceCreateConfig) GetTagsOk() (*[]InstanceConfigObject1TagsInner, bool)`
 
 GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTags
 
-`func (o *CatalogItemTypeInstanceCreateConfig) SetTags(v []CatalogItemTypeInstanceCreateConfigTagsInner)`
+`func (o *CatalogItemTypeInstanceCreateConfig) SetTags(v []InstanceConfigObject1TagsInner)`
 
 SetTags sets Tags field to given value.
 
@@ -442,20 +432,20 @@ HasTags returns a boolean if a field has been set.
 
 ### GetMetadata
 
-`func (o *CatalogItemTypeInstanceCreateConfig) GetMetadata() []CatalogItemTypeInstanceCreateConfigMetadataInner`
+`func (o *CatalogItemTypeInstanceCreateConfig) GetMetadata() []InstanceConfigObject1MetadataInner`
 
 GetMetadata returns the Metadata field if non-nil, zero value otherwise.
 
 ### GetMetadataOk
 
-`func (o *CatalogItemTypeInstanceCreateConfig) GetMetadataOk() (*[]CatalogItemTypeInstanceCreateConfigMetadataInner, bool)`
+`func (o *CatalogItemTypeInstanceCreateConfig) GetMetadataOk() (*[]InstanceConfigObject1MetadataInner, bool)`
 
 GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetadata
 
-`func (o *CatalogItemTypeInstanceCreateConfig) SetMetadata(v []CatalogItemTypeInstanceCreateConfigMetadataInner)`
+`func (o *CatalogItemTypeInstanceCreateConfig) SetMetadata(v []InstanceConfigObject1MetadataInner)`
 
 SetMetadata sets Metadata field to given value.
 
@@ -467,20 +457,20 @@ HasMetadata returns a boolean if a field has been set.
 
 ### GetPorts
 
-`func (o *CatalogItemTypeInstanceCreateConfig) GetPorts() []CatalogItemTypeInstanceCreateConfigPortsInner`
+`func (o *CatalogItemTypeInstanceCreateConfig) GetPorts() []InstanceConfigObject1PortsInner`
 
 GetPorts returns the Ports field if non-nil, zero value otherwise.
 
 ### GetPortsOk
 
-`func (o *CatalogItemTypeInstanceCreateConfig) GetPortsOk() (*[]CatalogItemTypeInstanceCreateConfigPortsInner, bool)`
+`func (o *CatalogItemTypeInstanceCreateConfig) GetPortsOk() (*[]InstanceConfigObject1PortsInner, bool)`
 
 GetPortsOk returns a tuple with the Ports field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPorts
 
-`func (o *CatalogItemTypeInstanceCreateConfig) SetPorts(v []CatalogItemTypeInstanceCreateConfigPortsInner)`
+`func (o *CatalogItemTypeInstanceCreateConfig) SetPorts(v []InstanceConfigObject1PortsInner)`
 
 SetPorts sets Ports field to given value.
 

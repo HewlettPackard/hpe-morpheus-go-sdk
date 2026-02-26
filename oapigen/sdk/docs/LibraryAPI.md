@@ -924,7 +924,7 @@ Name | Type | Description  | Notes
 
 ## RemoveVirtualImage
 
-> RemoveGroups200Response RemoveVirtualImage(ctx, virtualImageId).Execute()
+> RemoveGroups200Response RemoveVirtualImage(ctx, virtualImageId).RemoveFromCloud(removeFromCloud).Execute()
 
 Delete a Virtual Image
 
@@ -944,10 +944,11 @@ import (
 
 func main() {
 	virtualImageId := int64(4) // int64 | Virtual Image ID
+	removeFromCloud := true // bool | Include removeFromCloud=true to delete the image location files from all clouds. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.LibraryAPI.RemoveVirtualImage(context.Background(), virtualImageId).Execute()
+	resp, r, err := apiClient.LibraryAPI.RemoveVirtualImage(context.Background(), virtualImageId).RemoveFromCloud(removeFromCloud).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `LibraryAPI.RemoveVirtualImage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -973,6 +974,7 @@ Other parameters are passed through a pointer to a apiRemoveVirtualImageRequest 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **removeFromCloud** | **bool** | Include removeFromCloud&#x3D;true to delete the image location files from all clouds. | 
 
 ### Return type
 

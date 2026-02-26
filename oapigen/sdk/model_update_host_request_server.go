@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.10
+API version: 8.1.1
 Contact: dev@morpheusdata.com
 */
 
@@ -54,8 +54,9 @@ type UpdateHostRequestServer struct {
 	// The port the guest console is being accessed from
 	GuestConsolePort *string `json:"guestConsolePort,omitempty"`
 	// Can turn off guest console preferences on server in favor of hypervisor console
-	GuestConsolePreferred *bool                  `json:"guestConsolePreferred,omitempty"`
-	AdditionalProperties  map[string]interface{} `json:",remain"`
+	GuestConsolePreferred *bool                          `json:"guestConsolePreferred,omitempty"`
+	Config                *UpdateHostRequestServerConfig `json:"config,omitempty"`
+	AdditionalProperties  map[string]interface{}         `json:",remain"`
 }
 
 type _UpdateHostRequestServer UpdateHostRequestServer
@@ -712,6 +713,38 @@ func (o *UpdateHostRequestServer) SetGuestConsolePreferred(v bool) {
 	o.GuestConsolePreferred = &v
 }
 
+// GetConfig returns the Config field value if set, zero value otherwise.
+func (o *UpdateHostRequestServer) GetConfig() UpdateHostRequestServerConfig {
+	if o == nil || IsNil(o.Config) {
+		var ret UpdateHostRequestServerConfig
+		return ret
+	}
+	return *o.Config
+}
+
+// GetConfigOk returns a tuple with the Config field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateHostRequestServer) GetConfigOk() (*UpdateHostRequestServerConfig, bool) {
+	if o == nil || IsNil(o.Config) {
+		return nil, false
+	}
+	return o.Config, true
+}
+
+// IsSetConfig returns a boolean if a field has been set.
+func (o *UpdateHostRequestServer) IsSetConfig() bool {
+	if o != nil && !IsNil(o.Config) {
+		return true
+	}
+
+	return false
+}
+
+// SetConfig gets a reference to the given UpdateHostRequestServerConfig and assigns it to the Config field.
+func (o *UpdateHostRequestServer) SetConfig(v UpdateHostRequestServerConfig) {
+	o.Config = &v
+}
+
 func (o UpdateHostRequestServer) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -778,6 +811,9 @@ func (o UpdateHostRequestServer) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.GuestConsolePreferred) {
 		toSerialize["guestConsolePreferred"] = o.GuestConsolePreferred
+	}
+	if !IsNil(o.Config) {
+		toSerialize["config"] = o.Config
 	}
 
 	for key, value := range o.AdditionalProperties {

@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.10
+API version: 8.1.1
 Contact: dev@morpheusdata.com
 */
 
@@ -21,85 +21,89 @@ var _ MappedNullable = &AddInstance200ResponseAllOfOneOfInstance{}
 
 // AddInstance200ResponseAllOfOneOfInstance struct for AddInstance200ResponseAllOfOneOfInstance
 type AddInstance200ResponseAllOfOneOfInstance struct {
-	Id                   *int64                                                        `json:"id,omitempty"`
-	Uuid                 *string                                                       `json:"uuid,omitempty"`
-	AccountId            *int64                                                        `json:"accountId,omitempty"`
-	Tenant               *AddInstance200ResponseAllOfOneOfInstanceTenant               `json:"tenant,omitempty"`
-	InstanceType         *AddInstance200ResponseAllOfOneOfInstanceInstanceType         `json:"instanceType,omitempty"`
-	Group                *AddInstance200ResponseAllOfOneOfInstanceGroup                `json:"group,omitempty"`
-	Cloud                *AddInstance200ResponseAllOfOneOfInstanceCloud                `json:"cloud,omitempty"`
-	Cluster              *AddInstance200ResponseAllOfOneOfInstanceCluster              `json:"cluster,omitempty"`
-	Containers           []int64                                                       `json:"containers,omitempty"`
-	Servers              []int64                                                       `json:"servers,omitempty"`
-	ConnectionInfo       []AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner `json:"connectionInfo,omitempty"`
-	Layout               *AddInstance200ResponseAllOfOneOfInstanceLayout               `json:"layout,omitempty"`
-	Plan                 *AddInstance200ResponseAllOfOneOfInstancePlan                 `json:"plan,omitempty"`
-	Name                 *string                                                       `json:"name,omitempty"`
-	DisplayName          *string                                                       `json:"displayName,omitempty"`
-	Description          NullableString                                                `json:"description,omitempty"`
-	Environment          NullableString                                                `json:"environment,omitempty"`
-	Config               *AddInstance200ResponseAllOfOneOfInstanceConfig               `json:"config,omitempty"`
-	ConfigGroup          NullableString                                                `json:"configGroup,omitempty"`
-	ConfigId             NullableString                                                `json:"configId,omitempty"`
-	ConfigRole           NullableString                                                `json:"configRole,omitempty"`
-	Volumes              []AddInstance200ResponseAllOfOneOfInstanceVolumesInner        `json:"volumes,omitempty"`
-	Controllers          []AddInstance200ResponseAllOfOneOfInstanceControllersInner    `json:"controllers,omitempty"`
-	Interfaces           []AddInstance200ResponseAllOfOneOfInstanceInterfacesInner     `json:"interfaces,omitempty"`
-	CustomOptions        map[string]interface{}                                        `json:"customOptions,omitempty"`
-	InstanceVersion      *string                                                       `json:"instanceVersion,omitempty"`
-	Labels               []string                                                      `json:"labels,omitempty"`
-	Tags                 []AddInstance200ResponseAllOfOneOfInstanceTagsInner           `json:"tags,omitempty"`
-	Evars                []AddInstance200ResponseAllOfOneOfInstanceEvarsInner          `json:"evars,omitempty"`
-	MaxMemory            *int64                                                        `json:"maxMemory,omitempty"`
-	MaxStorage           *int64                                                        `json:"maxStorage,omitempty"`
-	MaxCores             *int64                                                        `json:"maxCores,omitempty"`
-	CoresPerSocket       NullableInt64                                                 `json:"coresPerSocket,omitempty"`
-	MaxCpu               NullableInt64                                                 `json:"maxCpu,omitempty"`
-	HourlyCost           *float32                                                      `json:"hourlyCost,omitempty"`
-	HourlyPrice          *float32                                                      `json:"hourlyPrice,omitempty"`
-	InstancePrice        *AddInstance200ResponseAllOfOneOfInstanceInstancePrice        `json:"instancePrice,omitempty"`
-	DateCreated          *time.Time                                                    `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                                    `json:"lastUpdated,omitempty"`
-	HostName             *string                                                       `json:"hostName,omitempty"`
-	DomainName           NullableString                                                `json:"domainName,omitempty"`
-	EnvironmentPrefix    NullableString                                                `json:"environmentPrefix,omitempty"`
-	FirewallEnabled      *bool                                                         `json:"firewallEnabled,omitempty"`
-	NetworkLevel         *string                                                       `json:"networkLevel,omitempty"`
-	AutoScale            *bool                                                         `json:"autoScale,omitempty"`
-	InstanceContext      NullableString                                                `json:"instanceContext,omitempty"`
-	CurrentDeployId      NullableString                                                `json:"currentDeployId,omitempty"`
-	Locked               *bool                                                         `json:"locked,omitempty"`
-	Status               *string                                                       `json:"status,omitempty"`
-	StatusMessage        NullableString                                                `json:"statusMessage,omitempty"`
-	ErrorMessage         NullableString                                                `json:"errorMessage,omitempty"`
-	StatusDate           *time.Time                                                    `json:"statusDate,omitempty"`
-	StatusPercent        NullableString                                                `json:"statusPercent,omitempty"`
-	StatusEta            NullableString                                                `json:"statusEta,omitempty"`
-	UserStatus           NullableString                                                `json:"userStatus,omitempty"`
-	ExpireDays           *int64                                                        `json:"expireDays,omitempty"`
-	RenewDays            *int64                                                        `json:"renewDays,omitempty"`
-	ExpireCount          *int64                                                        `json:"expireCount,omitempty"`
-	ExpireDate           *time.Time                                                    `json:"expireDate,omitempty"`
-	ExpireWarningDate    *time.Time                                                    `json:"expireWarningDate,omitempty"`
-	ExpireWarningSent    *bool                                                         `json:"expireWarningSent,omitempty"`
-	ShutdownDays         *int64                                                        `json:"shutdownDays,omitempty"`
-	ShutdownRenewDays    *int64                                                        `json:"shutdownRenewDays,omitempty"`
-	ShutdownCount        *int64                                                        `json:"shutdownCount,omitempty"`
-	ShutdownDate         *time.Time                                                    `json:"shutdownDate,omitempty"`
-	ShutdownWarningDate  *time.Time                                                    `json:"shutdownWarningDate,omitempty"`
-	ShutdownWarningSent  *bool                                                         `json:"shutdownWarningSent,omitempty"`
-	RemovalDate          NullableTime                                                  `json:"removalDate,omitempty"`
-	CreatedBy            *AddInstance200ResponseAllOfOneOfInstanceCreatedBy            `json:"createdBy,omitempty"`
-	Owner                *AddInstance200ResponseAllOfOneOfInstanceOwner                `json:"owner,omitempty"`
-	Notes                NullableString                                                `json:"notes,omitempty"`
-	Stats                *AddInstance200ResponseAllOfOneOfInstanceStats                `json:"stats,omitempty"`
-	PowerSchedule        NullableString                                                `json:"powerSchedule,omitempty"`
-	IsScalable           *bool                                                         `json:"isScalable,omitempty"`
-	InstanceThreshold    map[string]interface{}                                        `json:"instanceThreshold,omitempty"`
-	IsBusy               *bool                                                         `json:"isBusy,omitempty"`
-	Apps                 []map[string]interface{}                                      `json:"apps,omitempty"`
-	ContainerDetails     []InstanceContainer1                                          `json:"containerDetails,omitempty"`
-	AdditionalProperties map[string]interface{}                                        `json:",remain"`
+	Id                               *int64                                                        `json:"id,omitempty"`
+	Uuid                             *string                                                       `json:"uuid,omitempty"`
+	AccountId                        *int64                                                        `json:"accountId,omitempty"`
+	Tenant                           *AddInstance200ResponseAllOfOneOfInstanceTenant               `json:"tenant,omitempty"`
+	InstanceType                     *AddInstance200ResponseAllOfOneOfInstanceInstanceType         `json:"instanceType,omitempty"`
+	Group                            *AddInstance200ResponseAllOfOneOfInstanceGroup                `json:"group,omitempty"`
+	Cloud                            *AddInstance200ResponseAllOfOneOfInstanceCloud                `json:"cloud,omitempty"`
+	Cluster                          *AddInstance200ResponseAllOfOneOfInstanceCluster              `json:"cluster,omitempty"`
+	Containers                       []int64                                                       `json:"containers,omitempty"`
+	Servers                          []int64                                                       `json:"servers,omitempty"`
+	ConnectionInfo                   []AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner `json:"connectionInfo,omitempty"`
+	Layout                           *AddInstance200ResponseAllOfOneOfInstanceLayout               `json:"layout,omitempty"`
+	Plan                             *AddInstance200ResponseAllOfOneOfInstancePlan                 `json:"plan,omitempty"`
+	Name                             *string                                                       `json:"name,omitempty"`
+	DisplayName                      *string                                                       `json:"displayName,omitempty"`
+	Description                      NullableString                                                `json:"description,omitempty"`
+	Environment                      NullableString                                                `json:"environment,omitempty"`
+	Config                           *AddInstance200ResponseAllOfOneOfInstanceConfig               `json:"config,omitempty"`
+	ConfigGroup                      NullableString                                                `json:"configGroup,omitempty"`
+	ConfigId                         NullableString                                                `json:"configId,omitempty"`
+	ConfigRole                       NullableString                                                `json:"configRole,omitempty"`
+	Volumes                          []AddInstance200ResponseAllOfOneOfInstanceVolumesInner        `json:"volumes,omitempty"`
+	Controllers                      []AddInstance200ResponseAllOfOneOfInstanceControllersInner    `json:"controllers,omitempty"`
+	Interfaces                       []AddInstance200ResponseAllOfOneOfInstanceInterfacesInner     `json:"interfaces,omitempty"`
+	CustomOptions                    map[string]interface{}                                        `json:"customOptions,omitempty"`
+	InstanceVersion                  *string                                                       `json:"instanceVersion,omitempty"`
+	Labels                           []string                                                      `json:"labels,omitempty"`
+	Tags                             []AddInstance200ResponseAllOfOneOfInstanceTagsInner           `json:"tags,omitempty"`
+	Evars                            []AddInstance200ResponseAllOfOneOfInstanceEvarsInner          `json:"evars,omitempty"`
+	MaxMemory                        *int64                                                        `json:"maxMemory,omitempty"`
+	MaxStorage                       *int64                                                        `json:"maxStorage,omitempty"`
+	MaxCores                         *int64                                                        `json:"maxCores,omitempty"`
+	CoresPerSocket                   NullableInt64                                                 `json:"coresPerSocket,omitempty"`
+	MaxCpu                           NullableInt64                                                 `json:"maxCpu,omitempty"`
+	HourlyCost                       *float32                                                      `json:"hourlyCost,omitempty"`
+	HourlyPrice                      *float32                                                      `json:"hourlyPrice,omitempty"`
+	InstancePrice                    *AddInstance200ResponseAllOfOneOfInstanceInstancePrice        `json:"instancePrice,omitempty"`
+	DateCreated                      *time.Time                                                    `json:"dateCreated,omitempty"`
+	LastUpdated                      *time.Time                                                    `json:"lastUpdated,omitempty"`
+	HostName                         *string                                                       `json:"hostName,omitempty"`
+	DomainName                       NullableString                                                `json:"domainName,omitempty"`
+	EnvironmentPrefix                NullableString                                                `json:"environmentPrefix,omitempty"`
+	FirewallEnabled                  *bool                                                         `json:"firewallEnabled,omitempty"`
+	NetworkLevel                     *string                                                       `json:"networkLevel,omitempty"`
+	AutoScale                        *bool                                                         `json:"autoScale,omitempty"`
+	InstanceContext                  NullableString                                                `json:"instanceContext,omitempty"`
+	CurrentDeployId                  NullableString                                                `json:"currentDeployId,omitempty"`
+	Locked                           *bool                                                         `json:"locked,omitempty"`
+	Status                           *string                                                       `json:"status,omitempty"`
+	StatusMessage                    NullableString                                                `json:"statusMessage,omitempty"`
+	ErrorMessage                     NullableString                                                `json:"errorMessage,omitempty"`
+	StatusDate                       *time.Time                                                    `json:"statusDate,omitempty"`
+	StatusPercent                    NullableString                                                `json:"statusPercent,omitempty"`
+	StatusEta                        NullableString                                                `json:"statusEta,omitempty"`
+	UserStatus                       NullableString                                                `json:"userStatus,omitempty"`
+	ExpireDays                       *int64                                                        `json:"expireDays,omitempty"`
+	RenewDays                        *int64                                                        `json:"renewDays,omitempty"`
+	ExpireCount                      *int64                                                        `json:"expireCount,omitempty"`
+	ExpireDate                       *time.Time                                                    `json:"expireDate,omitempty"`
+	ExpireWarningDate                *time.Time                                                    `json:"expireWarningDate,omitempty"`
+	ExpireWarningSent                *bool                                                         `json:"expireWarningSent,omitempty"`
+	ShutdownDays                     *int64                                                        `json:"shutdownDays,omitempty"`
+	ShutdownRenewDays                *int64                                                        `json:"shutdownRenewDays,omitempty"`
+	ShutdownCount                    *int64                                                        `json:"shutdownCount,omitempty"`
+	ShutdownDate                     *time.Time                                                    `json:"shutdownDate,omitempty"`
+	ShutdownWarningDate              *time.Time                                                    `json:"shutdownWarningDate,omitempty"`
+	ShutdownWarningSent              *bool                                                         `json:"shutdownWarningSent,omitempty"`
+	RemovalDate                      NullableTime                                                  `json:"removalDate,omitempty"`
+	CreatedBy                        *AddInstance200ResponseAllOfOneOfInstanceCreatedBy            `json:"createdBy,omitempty"`
+	Owner                            *AddInstance200ResponseAllOfOneOfInstanceOwner                `json:"owner,omitempty"`
+	Notes                            NullableString                                                `json:"notes,omitempty"`
+	Stats                            *AddInstance200ResponseAllOfOneOfInstanceStats                `json:"stats,omitempty"`
+	PowerSchedule                    NullableString                                                `json:"powerSchedule,omitempty"`
+	IsScalable                       *bool                                                         `json:"isScalable,omitempty"`
+	InstanceThreshold                map[string]interface{}                                        `json:"instanceThreshold,omitempty"`
+	IsBusy                           *bool                                                         `json:"isBusy,omitempty"`
+	Apps                             []map[string]interface{}                                      `json:"apps,omitempty"`
+	CurrentLoadBalancerInstances     []map[string]interface{}                                      `json:"currentLoadBalancerInstances,omitempty"`
+	CurrentLoadBalancerContainersIn  *int32                                                        `json:"currentLoadBalancerContainersIn,omitempty"`
+	CurrentLoadBalancerContainersOut *int32                                                        `json:"currentLoadBalancerContainersOut,omitempty"`
+	LastDeploy                       *map[string]interface{}                                       `json:"lastDeploy,omitempty"`
+	ContainerDetails                 []InstanceContainer1                                          `json:"containerDetails,omitempty"`
+	AdditionalProperties             map[string]interface{}                                        `json:",remain"`
 }
 
 type _AddInstance200ResponseAllOfOneOfInstance AddInstance200ResponseAllOfOneOfInstance
@@ -2797,6 +2801,135 @@ func (o *AddInstance200ResponseAllOfOneOfInstance) SetApps(v []map[string]interf
 	o.Apps = v
 }
 
+// GetCurrentLoadBalancerInstances returns the CurrentLoadBalancerInstances field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetCurrentLoadBalancerInstances() []map[string]interface{} {
+	if o == nil {
+		var ret []map[string]interface{}
+		return ret
+	}
+	return o.CurrentLoadBalancerInstances
+}
+
+// GetCurrentLoadBalancerInstancesOk returns a tuple with the CurrentLoadBalancerInstances field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetCurrentLoadBalancerInstancesOk() ([]map[string]interface{}, bool) {
+	if o == nil || IsNil(o.CurrentLoadBalancerInstances) {
+		return nil, false
+	}
+	return o.CurrentLoadBalancerInstances, true
+}
+
+// IsSetCurrentLoadBalancerInstances returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetCurrentLoadBalancerInstances() bool {
+	if o != nil && !IsNil(o.CurrentLoadBalancerInstances) {
+		return true
+	}
+
+	return false
+}
+
+// SetCurrentLoadBalancerInstances gets a reference to the given []map[string]interface{} and assigns it to the CurrentLoadBalancerInstances field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetCurrentLoadBalancerInstances(v []map[string]interface{}) {
+	o.CurrentLoadBalancerInstances = v
+}
+
+// GetCurrentLoadBalancerContainersIn returns the CurrentLoadBalancerContainersIn field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetCurrentLoadBalancerContainersIn() int32 {
+	if o == nil || IsNil(o.CurrentLoadBalancerContainersIn) {
+		var ret int32
+		return ret
+	}
+	return *o.CurrentLoadBalancerContainersIn
+}
+
+// GetCurrentLoadBalancerContainersInOk returns a tuple with the CurrentLoadBalancerContainersIn field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetCurrentLoadBalancerContainersInOk() (*int32, bool) {
+	if o == nil || IsNil(o.CurrentLoadBalancerContainersIn) {
+		return nil, false
+	}
+	return o.CurrentLoadBalancerContainersIn, true
+}
+
+// IsSetCurrentLoadBalancerContainersIn returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetCurrentLoadBalancerContainersIn() bool {
+	if o != nil && !IsNil(o.CurrentLoadBalancerContainersIn) {
+		return true
+	}
+
+	return false
+}
+
+// SetCurrentLoadBalancerContainersIn gets a reference to the given int32 and assigns it to the CurrentLoadBalancerContainersIn field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetCurrentLoadBalancerContainersIn(v int32) {
+	o.CurrentLoadBalancerContainersIn = &v
+}
+
+// GetCurrentLoadBalancerContainersOut returns the CurrentLoadBalancerContainersOut field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetCurrentLoadBalancerContainersOut() int32 {
+	if o == nil || IsNil(o.CurrentLoadBalancerContainersOut) {
+		var ret int32
+		return ret
+	}
+	return *o.CurrentLoadBalancerContainersOut
+}
+
+// GetCurrentLoadBalancerContainersOutOk returns a tuple with the CurrentLoadBalancerContainersOut field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetCurrentLoadBalancerContainersOutOk() (*int32, bool) {
+	if o == nil || IsNil(o.CurrentLoadBalancerContainersOut) {
+		return nil, false
+	}
+	return o.CurrentLoadBalancerContainersOut, true
+}
+
+// IsSetCurrentLoadBalancerContainersOut returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetCurrentLoadBalancerContainersOut() bool {
+	if o != nil && !IsNil(o.CurrentLoadBalancerContainersOut) {
+		return true
+	}
+
+	return false
+}
+
+// SetCurrentLoadBalancerContainersOut gets a reference to the given int32 and assigns it to the CurrentLoadBalancerContainersOut field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetCurrentLoadBalancerContainersOut(v int32) {
+	o.CurrentLoadBalancerContainersOut = &v
+}
+
+// GetLastDeploy returns the LastDeploy field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetLastDeploy() map[string]interface{} {
+	if o == nil || IsNil(o.LastDeploy) {
+		var ret map[string]interface{}
+		return ret
+	}
+	return *o.LastDeploy
+}
+
+// GetLastDeployOk returns a tuple with the LastDeploy field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetLastDeployOk() (*map[string]interface{}, bool) {
+	if o == nil || IsNil(o.LastDeploy) {
+		return nil, false
+	}
+	return o.LastDeploy, true
+}
+
+// IsSetLastDeploy returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetLastDeploy() bool {
+	if o != nil && !IsNil(o.LastDeploy) {
+		return true
+	}
+
+	return false
+}
+
+// SetLastDeploy gets a reference to the given map[string]interface{} and assigns it to the LastDeploy field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetLastDeploy(v map[string]interface{}) {
+	o.LastDeploy = &v
+}
+
 // GetContainerDetails returns the ContainerDetails field value if set, zero value otherwise.
 func (o *AddInstance200ResponseAllOfOneOfInstance) GetContainerDetails() []InstanceContainer1 {
 	if o == nil || IsNil(o.ContainerDetails) {
@@ -3069,6 +3202,18 @@ func (o AddInstance200ResponseAllOfOneOfInstance) ToMap() (map[string]interface{
 	}
 	if o.Apps != nil {
 		toSerialize["apps"] = o.Apps
+	}
+	if o.CurrentLoadBalancerInstances != nil {
+		toSerialize["currentLoadBalancerInstances"] = o.CurrentLoadBalancerInstances
+	}
+	if !IsNil(o.CurrentLoadBalancerContainersIn) {
+		toSerialize["currentLoadBalancerContainersIn"] = o.CurrentLoadBalancerContainersIn
+	}
+	if !IsNil(o.CurrentLoadBalancerContainersOut) {
+		toSerialize["currentLoadBalancerContainersOut"] = o.CurrentLoadBalancerContainersOut
+	}
+	if !IsNil(o.LastDeploy) {
+		toSerialize["lastDeploy"] = o.LastDeploy
 	}
 	if !IsNil(o.ContainerDetails) {
 		toSerialize["containerDetails"] = o.ContainerDetails

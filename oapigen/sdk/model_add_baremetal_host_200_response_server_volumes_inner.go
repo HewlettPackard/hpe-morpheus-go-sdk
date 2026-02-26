@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.10
+API version: 8.1.1
 Contact: dev@morpheusdata.com
 */
 
@@ -76,9 +76,13 @@ type AddBaremetalHost200ResponseServerVolumesInner struct {
 	ImageType            *string                                                  `json:"imageType,omitempty"`
 	Online               *bool                                                    `json:"online,omitempty"`
 	RawData              *string                                                  `json:"rawData,omitempty"`
-	Account              *AddBaremetalHost200ResponseServerVolumesInnerAccount    `json:"account,omitempty"`
-	Owner                *AddBaremetalHost200ResponseServerVolumesInnerOwner      `json:"owner,omitempty"`
-	AdditionalProperties map[string]interface{}                                   `json:",remain"`
+	CreateForMultiAttach *bool                                                    `json:"createForMultiAttach,omitempty"`
+	IsMultiAttach        *bool                                                    `json:"isMultiAttach,omitempty"`
+	// Storage Profile Code for the volume storage profile assignment. eg. `\"kvm-cache-none\"` or `\"kvm-cache-directsync\"`. Use `/api/provision-types?code=kvm` to see the available `storageProfiles` for HVM and KVM.
+	StorageProfile       NullableString                                        `json:"storageProfile,omitempty"`
+	Account              *AddBaremetalHost200ResponseServerVolumesInnerAccount `json:"account,omitempty"`
+	Owner                *AddBaremetalHost200ResponseServerVolumesInnerOwner   `json:"owner,omitempty"`
+	AdditionalProperties map[string]interface{}                                `json:",remain"`
 }
 
 type _AddBaremetalHost200ResponseServerVolumesInner AddBaremetalHost200ResponseServerVolumesInner
@@ -2090,6 +2094,113 @@ func (o *AddBaremetalHost200ResponseServerVolumesInner) SetRawData(v string) {
 	o.RawData = &v
 }
 
+// GetCreateForMultiAttach returns the CreateForMultiAttach field value if set, zero value otherwise.
+func (o *AddBaremetalHost200ResponseServerVolumesInner) GetCreateForMultiAttach() bool {
+	if o == nil || IsNil(o.CreateForMultiAttach) {
+		var ret bool
+		return ret
+	}
+	return *o.CreateForMultiAttach
+}
+
+// GetCreateForMultiAttachOk returns a tuple with the CreateForMultiAttach field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddBaremetalHost200ResponseServerVolumesInner) GetCreateForMultiAttachOk() (*bool, bool) {
+	if o == nil || IsNil(o.CreateForMultiAttach) {
+		return nil, false
+	}
+	return o.CreateForMultiAttach, true
+}
+
+// IsSetCreateForMultiAttach returns a boolean if a field has been set.
+func (o *AddBaremetalHost200ResponseServerVolumesInner) IsSetCreateForMultiAttach() bool {
+	if o != nil && !IsNil(o.CreateForMultiAttach) {
+		return true
+	}
+
+	return false
+}
+
+// SetCreateForMultiAttach gets a reference to the given bool and assigns it to the CreateForMultiAttach field.
+func (o *AddBaremetalHost200ResponseServerVolumesInner) SetCreateForMultiAttach(v bool) {
+	o.CreateForMultiAttach = &v
+}
+
+// GetIsMultiAttach returns the IsMultiAttach field value if set, zero value otherwise.
+func (o *AddBaremetalHost200ResponseServerVolumesInner) GetIsMultiAttach() bool {
+	if o == nil || IsNil(o.IsMultiAttach) {
+		var ret bool
+		return ret
+	}
+	return *o.IsMultiAttach
+}
+
+// GetIsMultiAttachOk returns a tuple with the IsMultiAttach field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddBaremetalHost200ResponseServerVolumesInner) GetIsMultiAttachOk() (*bool, bool) {
+	if o == nil || IsNil(o.IsMultiAttach) {
+		return nil, false
+	}
+	return o.IsMultiAttach, true
+}
+
+// IsSetIsMultiAttach returns a boolean if a field has been set.
+func (o *AddBaremetalHost200ResponseServerVolumesInner) IsSetIsMultiAttach() bool {
+	if o != nil && !IsNil(o.IsMultiAttach) {
+		return true
+	}
+
+	return false
+}
+
+// SetIsMultiAttach gets a reference to the given bool and assigns it to the IsMultiAttach field.
+func (o *AddBaremetalHost200ResponseServerVolumesInner) SetIsMultiAttach(v bool) {
+	o.IsMultiAttach = &v
+}
+
+// GetStorageProfile returns the StorageProfile field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *AddBaremetalHost200ResponseServerVolumesInner) GetStorageProfile() string {
+	if o == nil || IsNil(o.StorageProfile.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.StorageProfile.Get()
+}
+
+// GetStorageProfileOk returns a tuple with the StorageProfile field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *AddBaremetalHost200ResponseServerVolumesInner) GetStorageProfileOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.StorageProfile.Get(), o.StorageProfile.IsSet()
+}
+
+// IsSetStorageProfile returns a boolean if a field has been set.
+func (o *AddBaremetalHost200ResponseServerVolumesInner) IsSetStorageProfile() bool {
+	if o != nil && o.StorageProfile.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetStorageProfile gets a reference to the given NullableString and assigns it to the StorageProfile field.
+func (o *AddBaremetalHost200ResponseServerVolumesInner) SetStorageProfile(v string) {
+	o.StorageProfile.Set(&v)
+}
+
+// SetStorageProfileNil sets the value for StorageProfile to be an explicit nil
+func (o *AddBaremetalHost200ResponseServerVolumesInner) SetStorageProfileNil() {
+	o.StorageProfile.Set(nil)
+}
+
+// UnsetStorageProfile ensures that no value is present for StorageProfile, not even an explicit nil
+func (o *AddBaremetalHost200ResponseServerVolumesInner) UnsetStorageProfile() {
+	o.StorageProfile.Unset()
+}
+
 // GetAccount returns the Account field value if set, zero value otherwise.
 func (o *AddBaremetalHost200ResponseServerVolumesInner) GetAccount() AddBaremetalHost200ResponseServerVolumesInnerAccount {
 	if o == nil || IsNil(o.Account) {
@@ -2331,6 +2442,15 @@ func (o AddBaremetalHost200ResponseServerVolumesInner) ToMap() (map[string]inter
 	}
 	if !IsNil(o.RawData) {
 		toSerialize["rawData"] = o.RawData
+	}
+	if !IsNil(o.CreateForMultiAttach) {
+		toSerialize["createForMultiAttach"] = o.CreateForMultiAttach
+	}
+	if !IsNil(o.IsMultiAttach) {
+		toSerialize["isMultiAttach"] = o.IsMultiAttach
+	}
+	if o.StorageProfile.IsSet() {
+		toSerialize["storageProfile"] = o.StorageProfile.Get()
 	}
 	if !IsNil(o.Account) {
 		toSerialize["account"] = o.Account

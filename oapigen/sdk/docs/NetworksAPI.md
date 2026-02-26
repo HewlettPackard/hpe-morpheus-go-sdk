@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 
 ## ListNetworks
 
-> ListNetworks200Response ListNetworks(ctx).Name(name).Phrase(phrase).Labels(labels).AllLabels(allLabels).ZoneId(zoneId).Cidr(cidr).Execute()
+> ListNetworks200Response ListNetworks(ctx).Name(name).Phrase(phrase).Labels(labels).AllLabels(allLabels).ZoneId(zoneId).Cidr(cidr).ClusterId(clusterId).Execute()
 
 Get All Networks
 
@@ -245,10 +245,11 @@ func main() {
 	allLabels := "allLabels_example" // string | Filter by label(s), matches records that contain all of the specified labels (optional)
 	zoneId := int64(3) // int64 | The Cloud ID (Zone ID) for Filtering (optional)
 	cidr := "cidr_example" // string | Filter by cidr, matches beginning of value. (optional)
+	clusterId := int64(135) // int64 | The Cluster ID for filtering. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.NetworksAPI.ListNetworks(context.Background()).Name(name).Phrase(phrase).Labels(labels).AllLabels(allLabels).ZoneId(zoneId).Cidr(cidr).Execute()
+	resp, r, err := apiClient.NetworksAPI.ListNetworks(context.Background()).Name(name).Phrase(phrase).Labels(labels).AllLabels(allLabels).ZoneId(zoneId).Cidr(cidr).ClusterId(clusterId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `NetworksAPI.ListNetworks``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -275,6 +276,7 @@ Name | Type | Description  | Notes
  **allLabels** | **string** | Filter by label(s), matches records that contain all of the specified labels | 
  **zoneId** | **int64** | The Cloud ID (Zone ID) for Filtering | 
  **cidr** | **string** | Filter by cidr, matches beginning of value. | 
+ **clusterId** | **int64** | The Cluster ID for filtering. | 
 
 ### Return type
 

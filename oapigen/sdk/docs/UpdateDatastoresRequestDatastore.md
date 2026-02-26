@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Active** | Pointer to **bool** | Activate &#x60;true&#x60; or disable &#x60;false&#x60; the datastore | [optional] 
+**HeartbeatTarget** | Pointer to **bool** | Heartbeat Target | [optional] 
 **Visibility** | Pointer to **string** | Setting &#x60;private&#x60; or &#x60;public&#x60; | [optional] [default to "private"]
 **TenantPermissions** | Pointer to [**UpdateDatastoresRequestDatastoreTenantPermissions**](UpdateDatastoresRequestDatastoreTenantPermissions.md) |  | [optional] 
 **ResourcePermissions** | Pointer to [**UpdateDatastoresRequestDatastoreResourcePermissions**](UpdateDatastoresRequestDatastoreResourcePermissions.md) |  | [optional] 
@@ -52,6 +53,31 @@ SetActive sets Active field to given value.
 `func (o *UpdateDatastoresRequestDatastore) HasActive() bool`
 
 HasActive returns a boolean if a field has been set.
+
+### GetHeartbeatTarget
+
+`func (o *UpdateDatastoresRequestDatastore) GetHeartbeatTarget() bool`
+
+GetHeartbeatTarget returns the HeartbeatTarget field if non-nil, zero value otherwise.
+
+### GetHeartbeatTargetOk
+
+`func (o *UpdateDatastoresRequestDatastore) GetHeartbeatTargetOk() (*bool, bool)`
+
+GetHeartbeatTargetOk returns a tuple with the HeartbeatTarget field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHeartbeatTarget
+
+`func (o *UpdateDatastoresRequestDatastore) SetHeartbeatTarget(v bool)`
+
+SetHeartbeatTarget sets HeartbeatTarget field to given value.
+
+### HasHeartbeatTarget
+
+`func (o *UpdateDatastoresRequestDatastore) HasHeartbeatTarget() bool`
+
+HasHeartbeatTarget returns a boolean if a field has been set.
 
 ### GetVisibility
 

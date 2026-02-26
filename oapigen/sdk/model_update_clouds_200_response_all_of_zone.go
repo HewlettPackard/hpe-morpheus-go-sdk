@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.10
+API version: 8.1.1
 Contact: dev@morpheusdata.com
 */
 
@@ -21,70 +21,70 @@ var _ MappedNullable = &UpdateClouds200ResponseAllOfZone{}
 
 // UpdateClouds200ResponseAllOfZone struct for UpdateClouds200ResponseAllOfZone
 type UpdateClouds200ResponseAllOfZone struct {
-	Id                             *int64                                      `json:"id,omitempty"`
-	Uuid                           *string                                     `json:"uuid,omitempty"`
-	ExternalId                     NullableString                              `json:"externalId,omitempty"`
-	Name                           *string                                     `json:"name,omitempty"`
-	Code                           *string                                     `json:"code,omitempty"`
-	Labels                         []string                                    `json:"labels,omitempty"`
-	Location                       NullableString                              `json:"location,omitempty"`
-	Owner                          *AddClouds200ResponseAllOfZoneOwner         `json:"owner,omitempty"`
-	AccountId                      *int64                                      `json:"accountId,omitempty"`
-	Account                        *AddClouds200ResponseAllOfZoneAccount       `json:"account,omitempty"`
-	Visibility                     *string                                     `json:"visibility,omitempty"`
-	Enabled                        *bool                                       `json:"enabled,omitempty"`
-	Status                         *string                                     `json:"status,omitempty"`
-	StatusMessage                  NullableString                              `json:"statusMessage,omitempty"`
-	StatusDate                     NullableTime                                `json:"statusDate,omitempty"`
-	CostStatus                     NullableString                              `json:"costStatus,omitempty"`
-	CostStatusMessage              NullableString                              `json:"costStatusMessage,omitempty"`
-	CostStatusDate                 NullableTime                                `json:"costStatusDate,omitempty"`
-	CostLastSyncDuration           NullableInt64                               `json:"costLastSyncDuration,omitempty"`
-	CostLastSync                   NullableTime                                `json:"costLastSync,omitempty"`
-	ZoneType                       *AddClouds200ResponseAllOfZoneZoneType      `json:"zoneType,omitempty"`
-	ZoneTypeId                     *int64                                      `json:"zoneTypeId,omitempty"`
-	GuidanceMode                   NullableString                              `json:"guidanceMode,omitempty"`
-	StorageMode                    *string                                     `json:"storageMode,omitempty"`
-	AgentMode                      *string                                     `json:"agentMode,omitempty"`
-	UserDataLinux                  NullableString                              `json:"userDataLinux,omitempty"`
-	UserDataWindows                NullableString                              `json:"userDataWindows,omitempty"`
-	ConsoleKeymap                  NullableString                              `json:"consoleKeymap,omitempty"`
-	ContainerMode                  *string                                     `json:"containerMode,omitempty"`
-	CostingMode                    NullableString                              `json:"costingMode,omitempty"`
-	ServiceVersion                 NullableString                              `json:"serviceVersion,omitempty"`
-	SecurityMode                   *string                                     `json:"securityMode,omitempty"`
-	InventoryLevel                 *string                                     `json:"inventoryLevel,omitempty"`
-	Timezone                       NullableString                              `json:"timezone,omitempty"`
-	ApiProxy                       NullableString                              `json:"apiProxy,omitempty"`
-	ProvisioningProxy              NullableString                              `json:"provisioningProxy,omitempty"`
-	NetworkDomain                  *AddClouds200ResponseAllOfZoneNetworkDomain `json:"networkDomain,omitempty"`
-	DomainName                     *string                                     `json:"domainName,omitempty"`
-	RegionCode                     NullableString                              `json:"regionCode,omitempty"`
-	AutoRecoverPowerState          *bool                                       `json:"autoRecoverPowerState,omitempty"`
-	ScalePriority                  *int64                                      `json:"scalePriority,omitempty"`
-	DefaultDatastoreSyncActive     *bool                                       `json:"defaultDatastoreSyncActive,omitempty"`
-	DefaultNetworkSyncActive       *bool                                       `json:"defaultNetworkSyncActive,omitempty"`
-	DefaultFolderSyncActive        *bool                                       `json:"defaultFolderSyncActive,omitempty"`
-	DefaultSecurityGroupSyncActive *bool                                       `json:"defaultSecurityGroupSyncActive,omitempty"`
-	DefaultPoolSyncActive          *bool                                       `json:"defaultPoolSyncActive,omitempty"`
-	DefaultPlanSyncActive          *bool                                       `json:"defaultPlanSyncActive,omitempty"`
-	Config                         *AddClouds200ResponseAllOfZoneConfig        `json:"config,omitempty"`
-	Credential                     *AddClouds200ResponseAllOfZoneCredential    `json:"credential,omitempty"`
+	Id                             *int64                                         `json:"id,omitempty"`
+	Uuid                           *string                                        `json:"uuid,omitempty"`
+	ExternalId                     NullableString                                 `json:"externalId,omitempty"`
+	Name                           *string                                        `json:"name,omitempty"`
+	Code                           *string                                        `json:"code,omitempty"`
+	Labels                         []string                                       `json:"labels,omitempty"`
+	Location                       NullableString                                 `json:"location,omitempty"`
+	Owner                          *UpdateClouds200ResponseAllOfZoneOwner         `json:"owner,omitempty"`
+	AccountId                      *int64                                         `json:"accountId,omitempty"`
+	Account                        *UpdateClouds200ResponseAllOfZoneAccount       `json:"account,omitempty"`
+	Visibility                     *string                                        `json:"visibility,omitempty"`
+	Enabled                        *bool                                          `json:"enabled,omitempty"`
+	Status                         *string                                        `json:"status,omitempty"`
+	StatusMessage                  NullableString                                 `json:"statusMessage,omitempty"`
+	StatusDate                     NullableTime                                   `json:"statusDate,omitempty"`
+	CostStatus                     NullableString                                 `json:"costStatus,omitempty"`
+	CostStatusMessage              NullableString                                 `json:"costStatusMessage,omitempty"`
+	CostStatusDate                 NullableTime                                   `json:"costStatusDate,omitempty"`
+	CostLastSyncDuration           NullableInt64                                  `json:"costLastSyncDuration,omitempty"`
+	CostLastSync                   NullableTime                                   `json:"costLastSync,omitempty"`
+	ZoneType                       *UpdateClouds200ResponseAllOfZoneZoneType      `json:"zoneType,omitempty"`
+	ZoneTypeId                     *int64                                         `json:"zoneTypeId,omitempty"`
+	GuidanceMode                   NullableString                                 `json:"guidanceMode,omitempty"`
+	StorageMode                    *string                                        `json:"storageMode,omitempty"`
+	AgentMode                      *string                                        `json:"agentMode,omitempty"`
+	UserDataLinux                  NullableString                                 `json:"userDataLinux,omitempty"`
+	UserDataWindows                NullableString                                 `json:"userDataWindows,omitempty"`
+	ConsoleKeymap                  NullableString                                 `json:"consoleKeymap,omitempty"`
+	ContainerMode                  *string                                        `json:"containerMode,omitempty"`
+	CostingMode                    NullableString                                 `json:"costingMode,omitempty"`
+	ServiceVersion                 NullableString                                 `json:"serviceVersion,omitempty"`
+	SecurityMode                   *string                                        `json:"securityMode,omitempty"`
+	InventoryLevel                 *string                                        `json:"inventoryLevel,omitempty"`
+	Timezone                       NullableString                                 `json:"timezone,omitempty"`
+	ApiProxy                       NullableString                                 `json:"apiProxy,omitempty"`
+	ProvisioningProxy              NullableString                                 `json:"provisioningProxy,omitempty"`
+	NetworkDomain                  *UpdateClouds200ResponseAllOfZoneNetworkDomain `json:"networkDomain,omitempty"`
+	DomainName                     *string                                        `json:"domainName,omitempty"`
+	RegionCode                     NullableString                                 `json:"regionCode,omitempty"`
+	AutoRecoverPowerState          *bool                                          `json:"autoRecoverPowerState,omitempty"`
+	ScalePriority                  *int64                                         `json:"scalePriority,omitempty"`
+	DefaultDatastoreSyncActive     *bool                                          `json:"defaultDatastoreSyncActive,omitempty"`
+	DefaultNetworkSyncActive       *bool                                          `json:"defaultNetworkSyncActive,omitempty"`
+	DefaultFolderSyncActive        *bool                                          `json:"defaultFolderSyncActive,omitempty"`
+	DefaultSecurityGroupSyncActive *bool                                          `json:"defaultSecurityGroupSyncActive,omitempty"`
+	DefaultPoolSyncActive          *bool                                          `json:"defaultPoolSyncActive,omitempty"`
+	DefaultPlanSyncActive          *bool                                          `json:"defaultPlanSyncActive,omitempty"`
+	Config                         *UpdateClouds200ResponseAllOfZoneConfig        `json:"config,omitempty"`
+	Credential                     *UpdateClouds200ResponseAllOfZoneCredential    `json:"credential,omitempty"`
 	// Logo image URL
 	ImagePath NullableString `json:"imagePath,omitempty"`
 	// Dark logo image URL
-	DarkImagePath        NullableString                               `json:"darkImagePath,omitempty"`
-	DateCreated          *time.Time                                   `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                   `json:"lastUpdated,omitempty"`
-	LastSync             NullableTime                                 `json:"lastSync,omitempty"`
-	LastSyncDuration     NullableInt64                                `json:"lastSyncDuration,omitempty"`
-	NextRunDate          NullableTime                                 `json:"nextRunDate,omitempty"`
-	Groups               []AddClouds200ResponseAllOfZoneGroupsInner   `json:"groups,omitempty"`
-	SecurityServer       *AddClouds200ResponseAllOfZoneSecurityServer `json:"securityServer,omitempty"`
-	NetworkServer        *AddClouds200ResponseAllOfZoneNetworkServer  `json:"networkServer,omitempty"`
-	Stats                *AddClouds200ResponseAllOfZoneStats          `json:"stats,omitempty"`
-	ServerCount          *int64                                       `json:"serverCount,omitempty"`
-	AdditionalProperties map[string]interface{}                       `json:",remain"`
+	DarkImagePath        NullableString                                  `json:"darkImagePath,omitempty"`
+	DateCreated          *time.Time                                      `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                      `json:"lastUpdated,omitempty"`
+	LastSync             NullableTime                                    `json:"lastSync,omitempty"`
+	LastSyncDuration     NullableInt64                                   `json:"lastSyncDuration,omitempty"`
+	NextRunDate          NullableTime                                    `json:"nextRunDate,omitempty"`
+	Groups               []UpdateClouds200ResponseAllOfZoneGroupsInner   `json:"groups,omitempty"`
+	SecurityServer       *UpdateClouds200ResponseAllOfZoneSecurityServer `json:"securityServer,omitempty"`
+	NetworkServer        *UpdateClouds200ResponseAllOfZoneNetworkServer  `json:"networkServer,omitempty"`
+	Stats                *UpdateClouds200ResponseAllOfZoneStats          `json:"stats,omitempty"`
+	ServerCount          *int64                                          `json:"serverCount,omitempty"`
+	AdditionalProperties map[string]interface{}                          `json:",remain"`
 }
 
 type _UpdateClouds200ResponseAllOfZone UpdateClouds200ResponseAllOfZone
@@ -353,9 +353,9 @@ func (o *UpdateClouds200ResponseAllOfZone) UnsetLocation() {
 }
 
 // GetOwner returns the Owner field value if set, zero value otherwise.
-func (o *UpdateClouds200ResponseAllOfZone) GetOwner() AddClouds200ResponseAllOfZoneOwner {
+func (o *UpdateClouds200ResponseAllOfZone) GetOwner() UpdateClouds200ResponseAllOfZoneOwner {
 	if o == nil || IsNil(o.Owner) {
-		var ret AddClouds200ResponseAllOfZoneOwner
+		var ret UpdateClouds200ResponseAllOfZoneOwner
 		return ret
 	}
 	return *o.Owner
@@ -363,7 +363,7 @@ func (o *UpdateClouds200ResponseAllOfZone) GetOwner() AddClouds200ResponseAllOfZ
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateClouds200ResponseAllOfZone) GetOwnerOk() (*AddClouds200ResponseAllOfZoneOwner, bool) {
+func (o *UpdateClouds200ResponseAllOfZone) GetOwnerOk() (*UpdateClouds200ResponseAllOfZoneOwner, bool) {
 	if o == nil || IsNil(o.Owner) {
 		return nil, false
 	}
@@ -379,8 +379,8 @@ func (o *UpdateClouds200ResponseAllOfZone) IsSetOwner() bool {
 	return false
 }
 
-// SetOwner gets a reference to the given AddClouds200ResponseAllOfZoneOwner and assigns it to the Owner field.
-func (o *UpdateClouds200ResponseAllOfZone) SetOwner(v AddClouds200ResponseAllOfZoneOwner) {
+// SetOwner gets a reference to the given UpdateClouds200ResponseAllOfZoneOwner and assigns it to the Owner field.
+func (o *UpdateClouds200ResponseAllOfZone) SetOwner(v UpdateClouds200ResponseAllOfZoneOwner) {
 	o.Owner = &v
 }
 
@@ -417,9 +417,9 @@ func (o *UpdateClouds200ResponseAllOfZone) SetAccountId(v int64) {
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *UpdateClouds200ResponseAllOfZone) GetAccount() AddClouds200ResponseAllOfZoneAccount {
+func (o *UpdateClouds200ResponseAllOfZone) GetAccount() UpdateClouds200ResponseAllOfZoneAccount {
 	if o == nil || IsNil(o.Account) {
-		var ret AddClouds200ResponseAllOfZoneAccount
+		var ret UpdateClouds200ResponseAllOfZoneAccount
 		return ret
 	}
 	return *o.Account
@@ -427,7 +427,7 @@ func (o *UpdateClouds200ResponseAllOfZone) GetAccount() AddClouds200ResponseAllO
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateClouds200ResponseAllOfZone) GetAccountOk() (*AddClouds200ResponseAllOfZoneAccount, bool) {
+func (o *UpdateClouds200ResponseAllOfZone) GetAccountOk() (*UpdateClouds200ResponseAllOfZoneAccount, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -443,8 +443,8 @@ func (o *UpdateClouds200ResponseAllOfZone) IsSetAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given AddClouds200ResponseAllOfZoneAccount and assigns it to the Account field.
-func (o *UpdateClouds200ResponseAllOfZone) SetAccount(v AddClouds200ResponseAllOfZoneAccount) {
+// SetAccount gets a reference to the given UpdateClouds200ResponseAllOfZoneAccount and assigns it to the Account field.
+func (o *UpdateClouds200ResponseAllOfZone) SetAccount(v UpdateClouds200ResponseAllOfZoneAccount) {
 	o.Account = &v
 }
 
@@ -846,9 +846,9 @@ func (o *UpdateClouds200ResponseAllOfZone) UnsetCostLastSync() {
 }
 
 // GetZoneType returns the ZoneType field value if set, zero value otherwise.
-func (o *UpdateClouds200ResponseAllOfZone) GetZoneType() AddClouds200ResponseAllOfZoneZoneType {
+func (o *UpdateClouds200ResponseAllOfZone) GetZoneType() UpdateClouds200ResponseAllOfZoneZoneType {
 	if o == nil || IsNil(o.ZoneType) {
-		var ret AddClouds200ResponseAllOfZoneZoneType
+		var ret UpdateClouds200ResponseAllOfZoneZoneType
 		return ret
 	}
 	return *o.ZoneType
@@ -856,7 +856,7 @@ func (o *UpdateClouds200ResponseAllOfZone) GetZoneType() AddClouds200ResponseAll
 
 // GetZoneTypeOk returns a tuple with the ZoneType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateClouds200ResponseAllOfZone) GetZoneTypeOk() (*AddClouds200ResponseAllOfZoneZoneType, bool) {
+func (o *UpdateClouds200ResponseAllOfZone) GetZoneTypeOk() (*UpdateClouds200ResponseAllOfZoneZoneType, bool) {
 	if o == nil || IsNil(o.ZoneType) {
 		return nil, false
 	}
@@ -872,8 +872,8 @@ func (o *UpdateClouds200ResponseAllOfZone) IsSetZoneType() bool {
 	return false
 }
 
-// SetZoneType gets a reference to the given AddClouds200ResponseAllOfZoneZoneType and assigns it to the ZoneType field.
-func (o *UpdateClouds200ResponseAllOfZone) SetZoneType(v AddClouds200ResponseAllOfZoneZoneType) {
+// SetZoneType gets a reference to the given UpdateClouds200ResponseAllOfZoneZoneType and assigns it to the ZoneType field.
+func (o *UpdateClouds200ResponseAllOfZone) SetZoneType(v UpdateClouds200ResponseAllOfZoneZoneType) {
 	o.ZoneType = &v
 }
 
@@ -1457,9 +1457,9 @@ func (o *UpdateClouds200ResponseAllOfZone) UnsetProvisioningProxy() {
 }
 
 // GetNetworkDomain returns the NetworkDomain field value if set, zero value otherwise.
-func (o *UpdateClouds200ResponseAllOfZone) GetNetworkDomain() AddClouds200ResponseAllOfZoneNetworkDomain {
+func (o *UpdateClouds200ResponseAllOfZone) GetNetworkDomain() UpdateClouds200ResponseAllOfZoneNetworkDomain {
 	if o == nil || IsNil(o.NetworkDomain) {
-		var ret AddClouds200ResponseAllOfZoneNetworkDomain
+		var ret UpdateClouds200ResponseAllOfZoneNetworkDomain
 		return ret
 	}
 	return *o.NetworkDomain
@@ -1467,7 +1467,7 @@ func (o *UpdateClouds200ResponseAllOfZone) GetNetworkDomain() AddClouds200Respon
 
 // GetNetworkDomainOk returns a tuple with the NetworkDomain field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateClouds200ResponseAllOfZone) GetNetworkDomainOk() (*AddClouds200ResponseAllOfZoneNetworkDomain, bool) {
+func (o *UpdateClouds200ResponseAllOfZone) GetNetworkDomainOk() (*UpdateClouds200ResponseAllOfZoneNetworkDomain, bool) {
 	if o == nil || IsNil(o.NetworkDomain) {
 		return nil, false
 	}
@@ -1483,8 +1483,8 @@ func (o *UpdateClouds200ResponseAllOfZone) IsSetNetworkDomain() bool {
 	return false
 }
 
-// SetNetworkDomain gets a reference to the given AddClouds200ResponseAllOfZoneNetworkDomain and assigns it to the NetworkDomain field.
-func (o *UpdateClouds200ResponseAllOfZone) SetNetworkDomain(v AddClouds200ResponseAllOfZoneNetworkDomain) {
+// SetNetworkDomain gets a reference to the given UpdateClouds200ResponseAllOfZoneNetworkDomain and assigns it to the NetworkDomain field.
+func (o *UpdateClouds200ResponseAllOfZone) SetNetworkDomain(v UpdateClouds200ResponseAllOfZoneNetworkDomain) {
 	o.NetworkDomain = &v
 }
 
@@ -1820,9 +1820,9 @@ func (o *UpdateClouds200ResponseAllOfZone) SetDefaultPlanSyncActive(v bool) {
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
-func (o *UpdateClouds200ResponseAllOfZone) GetConfig() AddClouds200ResponseAllOfZoneConfig {
+func (o *UpdateClouds200ResponseAllOfZone) GetConfig() UpdateClouds200ResponseAllOfZoneConfig {
 	if o == nil || IsNil(o.Config) {
-		var ret AddClouds200ResponseAllOfZoneConfig
+		var ret UpdateClouds200ResponseAllOfZoneConfig
 		return ret
 	}
 	return *o.Config
@@ -1830,7 +1830,7 @@ func (o *UpdateClouds200ResponseAllOfZone) GetConfig() AddClouds200ResponseAllOf
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateClouds200ResponseAllOfZone) GetConfigOk() (*AddClouds200ResponseAllOfZoneConfig, bool) {
+func (o *UpdateClouds200ResponseAllOfZone) GetConfigOk() (*UpdateClouds200ResponseAllOfZoneConfig, bool) {
 	if o == nil || IsNil(o.Config) {
 		return nil, false
 	}
@@ -1846,15 +1846,15 @@ func (o *UpdateClouds200ResponseAllOfZone) IsSetConfig() bool {
 	return false
 }
 
-// SetConfig gets a reference to the given AddClouds200ResponseAllOfZoneConfig and assigns it to the Config field.
-func (o *UpdateClouds200ResponseAllOfZone) SetConfig(v AddClouds200ResponseAllOfZoneConfig) {
+// SetConfig gets a reference to the given UpdateClouds200ResponseAllOfZoneConfig and assigns it to the Config field.
+func (o *UpdateClouds200ResponseAllOfZone) SetConfig(v UpdateClouds200ResponseAllOfZoneConfig) {
 	o.Config = &v
 }
 
 // GetCredential returns the Credential field value if set, zero value otherwise.
-func (o *UpdateClouds200ResponseAllOfZone) GetCredential() AddClouds200ResponseAllOfZoneCredential {
+func (o *UpdateClouds200ResponseAllOfZone) GetCredential() UpdateClouds200ResponseAllOfZoneCredential {
 	if o == nil || IsNil(o.Credential) {
-		var ret AddClouds200ResponseAllOfZoneCredential
+		var ret UpdateClouds200ResponseAllOfZoneCredential
 		return ret
 	}
 	return *o.Credential
@@ -1862,7 +1862,7 @@ func (o *UpdateClouds200ResponseAllOfZone) GetCredential() AddClouds200ResponseA
 
 // GetCredentialOk returns a tuple with the Credential field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateClouds200ResponseAllOfZone) GetCredentialOk() (*AddClouds200ResponseAllOfZoneCredential, bool) {
+func (o *UpdateClouds200ResponseAllOfZone) GetCredentialOk() (*UpdateClouds200ResponseAllOfZoneCredential, bool) {
 	if o == nil || IsNil(o.Credential) {
 		return nil, false
 	}
@@ -1878,8 +1878,8 @@ func (o *UpdateClouds200ResponseAllOfZone) IsSetCredential() bool {
 	return false
 }
 
-// SetCredential gets a reference to the given AddClouds200ResponseAllOfZoneCredential and assigns it to the Credential field.
-func (o *UpdateClouds200ResponseAllOfZone) SetCredential(v AddClouds200ResponseAllOfZoneCredential) {
+// SetCredential gets a reference to the given UpdateClouds200ResponseAllOfZoneCredential and assigns it to the Credential field.
+func (o *UpdateClouds200ResponseAllOfZone) SetCredential(v UpdateClouds200ResponseAllOfZoneCredential) {
 	o.Credential = &v
 }
 
@@ -2163,9 +2163,9 @@ func (o *UpdateClouds200ResponseAllOfZone) UnsetNextRunDate() {
 }
 
 // GetGroups returns the Groups field value if set, zero value otherwise.
-func (o *UpdateClouds200ResponseAllOfZone) GetGroups() []AddClouds200ResponseAllOfZoneGroupsInner {
+func (o *UpdateClouds200ResponseAllOfZone) GetGroups() []UpdateClouds200ResponseAllOfZoneGroupsInner {
 	if o == nil || IsNil(o.Groups) {
-		var ret []AddClouds200ResponseAllOfZoneGroupsInner
+		var ret []UpdateClouds200ResponseAllOfZoneGroupsInner
 		return ret
 	}
 	return o.Groups
@@ -2173,7 +2173,7 @@ func (o *UpdateClouds200ResponseAllOfZone) GetGroups() []AddClouds200ResponseAll
 
 // GetGroupsOk returns a tuple with the Groups field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateClouds200ResponseAllOfZone) GetGroupsOk() ([]AddClouds200ResponseAllOfZoneGroupsInner, bool) {
+func (o *UpdateClouds200ResponseAllOfZone) GetGroupsOk() ([]UpdateClouds200ResponseAllOfZoneGroupsInner, bool) {
 	if o == nil || IsNil(o.Groups) {
 		return nil, false
 	}
@@ -2189,15 +2189,15 @@ func (o *UpdateClouds200ResponseAllOfZone) IsSetGroups() bool {
 	return false
 }
 
-// SetGroups gets a reference to the given []AddClouds200ResponseAllOfZoneGroupsInner and assigns it to the Groups field.
-func (o *UpdateClouds200ResponseAllOfZone) SetGroups(v []AddClouds200ResponseAllOfZoneGroupsInner) {
+// SetGroups gets a reference to the given []UpdateClouds200ResponseAllOfZoneGroupsInner and assigns it to the Groups field.
+func (o *UpdateClouds200ResponseAllOfZone) SetGroups(v []UpdateClouds200ResponseAllOfZoneGroupsInner) {
 	o.Groups = v
 }
 
 // GetSecurityServer returns the SecurityServer field value if set, zero value otherwise.
-func (o *UpdateClouds200ResponseAllOfZone) GetSecurityServer() AddClouds200ResponseAllOfZoneSecurityServer {
+func (o *UpdateClouds200ResponseAllOfZone) GetSecurityServer() UpdateClouds200ResponseAllOfZoneSecurityServer {
 	if o == nil || IsNil(o.SecurityServer) {
-		var ret AddClouds200ResponseAllOfZoneSecurityServer
+		var ret UpdateClouds200ResponseAllOfZoneSecurityServer
 		return ret
 	}
 	return *o.SecurityServer
@@ -2205,7 +2205,7 @@ func (o *UpdateClouds200ResponseAllOfZone) GetSecurityServer() AddClouds200Respo
 
 // GetSecurityServerOk returns a tuple with the SecurityServer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateClouds200ResponseAllOfZone) GetSecurityServerOk() (*AddClouds200ResponseAllOfZoneSecurityServer, bool) {
+func (o *UpdateClouds200ResponseAllOfZone) GetSecurityServerOk() (*UpdateClouds200ResponseAllOfZoneSecurityServer, bool) {
 	if o == nil || IsNil(o.SecurityServer) {
 		return nil, false
 	}
@@ -2221,15 +2221,15 @@ func (o *UpdateClouds200ResponseAllOfZone) IsSetSecurityServer() bool {
 	return false
 }
 
-// SetSecurityServer gets a reference to the given AddClouds200ResponseAllOfZoneSecurityServer and assigns it to the SecurityServer field.
-func (o *UpdateClouds200ResponseAllOfZone) SetSecurityServer(v AddClouds200ResponseAllOfZoneSecurityServer) {
+// SetSecurityServer gets a reference to the given UpdateClouds200ResponseAllOfZoneSecurityServer and assigns it to the SecurityServer field.
+func (o *UpdateClouds200ResponseAllOfZone) SetSecurityServer(v UpdateClouds200ResponseAllOfZoneSecurityServer) {
 	o.SecurityServer = &v
 }
 
 // GetNetworkServer returns the NetworkServer field value if set, zero value otherwise.
-func (o *UpdateClouds200ResponseAllOfZone) GetNetworkServer() AddClouds200ResponseAllOfZoneNetworkServer {
+func (o *UpdateClouds200ResponseAllOfZone) GetNetworkServer() UpdateClouds200ResponseAllOfZoneNetworkServer {
 	if o == nil || IsNil(o.NetworkServer) {
-		var ret AddClouds200ResponseAllOfZoneNetworkServer
+		var ret UpdateClouds200ResponseAllOfZoneNetworkServer
 		return ret
 	}
 	return *o.NetworkServer
@@ -2237,7 +2237,7 @@ func (o *UpdateClouds200ResponseAllOfZone) GetNetworkServer() AddClouds200Respon
 
 // GetNetworkServerOk returns a tuple with the NetworkServer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateClouds200ResponseAllOfZone) GetNetworkServerOk() (*AddClouds200ResponseAllOfZoneNetworkServer, bool) {
+func (o *UpdateClouds200ResponseAllOfZone) GetNetworkServerOk() (*UpdateClouds200ResponseAllOfZoneNetworkServer, bool) {
 	if o == nil || IsNil(o.NetworkServer) {
 		return nil, false
 	}
@@ -2253,15 +2253,15 @@ func (o *UpdateClouds200ResponseAllOfZone) IsSetNetworkServer() bool {
 	return false
 }
 
-// SetNetworkServer gets a reference to the given AddClouds200ResponseAllOfZoneNetworkServer and assigns it to the NetworkServer field.
-func (o *UpdateClouds200ResponseAllOfZone) SetNetworkServer(v AddClouds200ResponseAllOfZoneNetworkServer) {
+// SetNetworkServer gets a reference to the given UpdateClouds200ResponseAllOfZoneNetworkServer and assigns it to the NetworkServer field.
+func (o *UpdateClouds200ResponseAllOfZone) SetNetworkServer(v UpdateClouds200ResponseAllOfZoneNetworkServer) {
 	o.NetworkServer = &v
 }
 
 // GetStats returns the Stats field value if set, zero value otherwise.
-func (o *UpdateClouds200ResponseAllOfZone) GetStats() AddClouds200ResponseAllOfZoneStats {
+func (o *UpdateClouds200ResponseAllOfZone) GetStats() UpdateClouds200ResponseAllOfZoneStats {
 	if o == nil || IsNil(o.Stats) {
-		var ret AddClouds200ResponseAllOfZoneStats
+		var ret UpdateClouds200ResponseAllOfZoneStats
 		return ret
 	}
 	return *o.Stats
@@ -2269,7 +2269,7 @@ func (o *UpdateClouds200ResponseAllOfZone) GetStats() AddClouds200ResponseAllOfZ
 
 // GetStatsOk returns a tuple with the Stats field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateClouds200ResponseAllOfZone) GetStatsOk() (*AddClouds200ResponseAllOfZoneStats, bool) {
+func (o *UpdateClouds200ResponseAllOfZone) GetStatsOk() (*UpdateClouds200ResponseAllOfZoneStats, bool) {
 	if o == nil || IsNil(o.Stats) {
 		return nil, false
 	}
@@ -2285,8 +2285,8 @@ func (o *UpdateClouds200ResponseAllOfZone) IsSetStats() bool {
 	return false
 }
 
-// SetStats gets a reference to the given AddClouds200ResponseAllOfZoneStats and assigns it to the Stats field.
-func (o *UpdateClouds200ResponseAllOfZone) SetStats(v AddClouds200ResponseAllOfZoneStats) {
+// SetStats gets a reference to the given UpdateClouds200ResponseAllOfZoneStats and assigns it to the Stats field.
+func (o *UpdateClouds200ResponseAllOfZone) SetStats(v UpdateClouds200ResponseAllOfZoneStats) {
 	o.Stats = &v
 }
 

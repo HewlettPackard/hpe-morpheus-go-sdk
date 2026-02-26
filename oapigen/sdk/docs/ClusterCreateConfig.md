@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**DynamicPlacementMode** | Pointer to **string** | Dynamic Placement | [optional] 
 **TemplateParameter** | Pointer to [**ClusterCreateConfigTemplateParameter**](ClusterCreateConfigTemplateParameter.md) |  | [optional] 
 
 ## Methods
@@ -24,6 +25,31 @@ will change when the set of required properties is changed
 NewClusterCreateConfigWithDefaults instantiates a new ClusterCreateConfig object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetDynamicPlacementMode
+
+`func (o *ClusterCreateConfig) GetDynamicPlacementMode() string`
+
+GetDynamicPlacementMode returns the DynamicPlacementMode field if non-nil, zero value otherwise.
+
+### GetDynamicPlacementModeOk
+
+`func (o *ClusterCreateConfig) GetDynamicPlacementModeOk() (*string, bool)`
+
+GetDynamicPlacementModeOk returns a tuple with the DynamicPlacementMode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDynamicPlacementMode
+
+`func (o *ClusterCreateConfig) SetDynamicPlacementMode(v string)`
+
+SetDynamicPlacementMode sets DynamicPlacementMode field to given value.
+
+### HasDynamicPlacementMode
+
+`func (o *ClusterCreateConfig) HasDynamicPlacementMode() bool`
+
+HasDynamicPlacementMode returns a boolean if a field has been set.
 
 ### GetTemplateParameter
 

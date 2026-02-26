@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Name** | **string** | Name of the cluster to be created | 
 **Description** | Pointer to **string** | Description of the cluster to be created | [optional] 
 **Labels** | Pointer to **[]string** | Array of strings (keywords). This will override labels passed under the &#x60;server&#x60; object. | [optional] 
-**Group** | [**AddClusterRequestClusterGroup**](AddClusterRequestClusterGroup.md) |  | 
+**Group** | Pointer to [**AddClusterRequestClusterGroup**](AddClusterRequestClusterGroup.md) |  | [optional] 
 **Cloud** | [**AddClusterRequestClusterCloud**](AddClusterRequestClusterCloud.md) |  | 
 **Config** | Pointer to [**AddClusterRequestClusterConfig**](AddClusterRequestClusterConfig.md) |  | [optional] 
 **Layout** | [**AddClusterRequestClusterLayout**](AddClusterRequestClusterLayout.md) |  | 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewAddClusterRequestCluster
 
-`func NewAddClusterRequestCluster(type_ AddClusterRequestClusterType, name string, group AddClusterRequestClusterGroup, cloud AddClusterRequestClusterCloud, layout AddClusterRequestClusterLayout, server AddClusterRequestClusterServer, ) *AddClusterRequestCluster`
+`func NewAddClusterRequestCluster(type_ AddClusterRequestClusterType, name string, cloud AddClusterRequestClusterCloud, layout AddClusterRequestClusterLayout, server AddClusterRequestClusterServer, ) *AddClusterRequestCluster`
 
 NewAddClusterRequestCluster instantiates a new AddClusterRequestCluster object
 This constructor will assign default values to properties that have it defined,
@@ -144,6 +144,11 @@ and a boolean to check if the value has been set.
 
 SetGroup sets Group field to given value.
 
+### HasGroup
+
+`func (o *AddClusterRequestCluster) HasGroup() bool`
+
+HasGroup returns a boolean if a field has been set.
 
 ### GetCloud
 

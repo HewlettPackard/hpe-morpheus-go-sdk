@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.10
+API version: 8.1.1
 Contact: dev@morpheusdata.com
 */
 
@@ -20,22 +20,25 @@ var _ MappedNullable = &ListInstances200ResponseAllOfInstancesInnerVolumesInner{
 
 // ListInstances200ResponseAllOfInstancesInnerVolumesInner struct for ListInstances200ResponseAllOfInstancesInnerVolumesInner
 type ListInstances200ResponseAllOfInstancesInnerVolumesInner struct {
-	ControllerId         NullableInt64          `json:"controllerId,omitempty"`
-	DatastoreId          NullableString         `json:"datastoreId,omitempty"`
-	DisplayOrder         *int64                 `json:"displayOrder,omitempty"`
-	Id                   *int64                 `json:"id,omitempty"`
-	Uuid                 *string                `json:"uuid,omitempty"`
-	MaxIOPS              NullableString         `json:"maxIOPS,omitempty"`
-	MaxStorage           *int64                 `json:"maxStorage,omitempty"`
-	Name                 *string                `json:"name,omitempty"`
-	ShortName            *string                `json:"shortName,omitempty"`
-	Resizeable           *bool                  `json:"resizeable,omitempty"`
-	PlanResizable        *bool                  `json:"planResizable,omitempty"`
-	RootVolume           *bool                  `json:"rootVolume,omitempty"`
-	Size                 *int64                 `json:"size,omitempty"`
-	StorageType          *int64                 `json:"storageType,omitempty"`
-	UnitNumber           NullableString         `json:"unitNumber,omitempty"`
-	ControllerMountPoint NullableString         `json:"controllerMountPoint,omitempty"`
+	ControllerId         NullableInt64  `json:"controllerId,omitempty"`
+	DatastoreId          NullableString `json:"datastoreId,omitempty"`
+	DisplayOrder         *int64         `json:"displayOrder,omitempty"`
+	Id                   *int64         `json:"id,omitempty"`
+	Uuid                 *string        `json:"uuid,omitempty"`
+	MaxIOPS              NullableString `json:"maxIOPS,omitempty"`
+	MaxStorage           *int64         `json:"maxStorage,omitempty"`
+	Name                 *string        `json:"name,omitempty"`
+	ShortName            *string        `json:"shortName,omitempty"`
+	Resizeable           *bool          `json:"resizeable,omitempty"`
+	PlanResizable        *bool          `json:"planResizable,omitempty"`
+	RootVolume           *bool          `json:"rootVolume,omitempty"`
+	Size                 *int64         `json:"size,omitempty"`
+	StorageType          *int64         `json:"storageType,omitempty"`
+	UnitNumber           NullableString `json:"unitNumber,omitempty"`
+	ControllerMountPoint NullableString `json:"controllerMountPoint,omitempty"`
+	CreateForMultiAttach *bool          `json:"createForMultiAttach,omitempty"`
+	// Storage Profile Code for the volume storage profile assignment. eg. `\"kvm-cache-none\"` or `\"kvm-cache-directsync\"`. Use `/api/provision-types?code=kvm` to see the available `storageProfiles` for HVM and KVM.
+	StorageProfile       NullableString         `json:"storageProfile,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -625,6 +628,81 @@ func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) UnsetControlle
 	o.ControllerMountPoint.Unset()
 }
 
+// GetCreateForMultiAttach returns the CreateForMultiAttach field value if set, zero value otherwise.
+func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) GetCreateForMultiAttach() bool {
+	if o == nil || IsNil(o.CreateForMultiAttach) {
+		var ret bool
+		return ret
+	}
+	return *o.CreateForMultiAttach
+}
+
+// GetCreateForMultiAttachOk returns a tuple with the CreateForMultiAttach field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) GetCreateForMultiAttachOk() (*bool, bool) {
+	if o == nil || IsNil(o.CreateForMultiAttach) {
+		return nil, false
+	}
+	return o.CreateForMultiAttach, true
+}
+
+// IsSetCreateForMultiAttach returns a boolean if a field has been set.
+func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) IsSetCreateForMultiAttach() bool {
+	if o != nil && !IsNil(o.CreateForMultiAttach) {
+		return true
+	}
+
+	return false
+}
+
+// SetCreateForMultiAttach gets a reference to the given bool and assigns it to the CreateForMultiAttach field.
+func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) SetCreateForMultiAttach(v bool) {
+	o.CreateForMultiAttach = &v
+}
+
+// GetStorageProfile returns the StorageProfile field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) GetStorageProfile() string {
+	if o == nil || IsNil(o.StorageProfile.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.StorageProfile.Get()
+}
+
+// GetStorageProfileOk returns a tuple with the StorageProfile field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) GetStorageProfileOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.StorageProfile.Get(), o.StorageProfile.IsSet()
+}
+
+// IsSetStorageProfile returns a boolean if a field has been set.
+func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) IsSetStorageProfile() bool {
+	if o != nil && o.StorageProfile.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetStorageProfile gets a reference to the given NullableString and assigns it to the StorageProfile field.
+func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) SetStorageProfile(v string) {
+	o.StorageProfile.Set(&v)
+}
+
+// SetStorageProfileNil sets the value for StorageProfile to be an explicit nil
+func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) SetStorageProfileNil() {
+	o.StorageProfile.Set(nil)
+}
+
+// UnsetStorageProfile ensures that no value is present for StorageProfile, not even an explicit nil
+func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) UnsetStorageProfile() {
+	o.StorageProfile.Unset()
+}
+
 func (o ListInstances200ResponseAllOfInstancesInnerVolumesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -682,6 +760,12 @@ func (o ListInstances200ResponseAllOfInstancesInnerVolumesInner) ToMap() (map[st
 	}
 	if o.ControllerMountPoint.IsSet() {
 		toSerialize["controllerMountPoint"] = o.ControllerMountPoint.Get()
+	}
+	if !IsNil(o.CreateForMultiAttach) {
+		toSerialize["createForMultiAttach"] = o.CreateForMultiAttach
+	}
+	if o.StorageProfile.IsSet() {
+		toSerialize["storageProfile"] = o.StorageProfile.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

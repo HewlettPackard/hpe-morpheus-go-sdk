@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.10
+API version: 8.1.1
 Contact: dev@morpheusdata.com
 */
 
@@ -42,6 +42,8 @@ type UpdateRole200Response struct {
 	TaskPermissions             []UpdateRole200ResponseAllOfTaskPermissionsInner            `json:"taskPermissions,omitempty"`
 	GlobalTaskSetAccess         *string                                                     `json:"globalTaskSetAccess,omitempty"`
 	TaskSetPermissions          []UpdateRole200ResponseAllOfTaskSetPermissionsInner         `json:"taskSetPermissions,omitempty"`
+	GlobalClusterTypeAccess     *string                                                     `json:"globalClusterTypeAccess,omitempty"`
+	ClusterTypePermissions      []UpdateRole200ResponseAllOfClusterTypePermissionsInner     `json:"clusterTypePermissions,omitempty"`
 	Success                     *bool                                                       `json:"success,omitempty"`
 	AdditionalProperties        map[string]interface{}                                      `json:",remain"`
 }
@@ -769,6 +771,70 @@ func (o *UpdateRole200Response) SetTaskSetPermissions(v []UpdateRole200ResponseA
 	o.TaskSetPermissions = v
 }
 
+// GetGlobalClusterTypeAccess returns the GlobalClusterTypeAccess field value if set, zero value otherwise.
+func (o *UpdateRole200Response) GetGlobalClusterTypeAccess() string {
+	if o == nil || IsNil(o.GlobalClusterTypeAccess) {
+		var ret string
+		return ret
+	}
+	return *o.GlobalClusterTypeAccess
+}
+
+// GetGlobalClusterTypeAccessOk returns a tuple with the GlobalClusterTypeAccess field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateRole200Response) GetGlobalClusterTypeAccessOk() (*string, bool) {
+	if o == nil || IsNil(o.GlobalClusterTypeAccess) {
+		return nil, false
+	}
+	return o.GlobalClusterTypeAccess, true
+}
+
+// IsSetGlobalClusterTypeAccess returns a boolean if a field has been set.
+func (o *UpdateRole200Response) IsSetGlobalClusterTypeAccess() bool {
+	if o != nil && !IsNil(o.GlobalClusterTypeAccess) {
+		return true
+	}
+
+	return false
+}
+
+// SetGlobalClusterTypeAccess gets a reference to the given string and assigns it to the GlobalClusterTypeAccess field.
+func (o *UpdateRole200Response) SetGlobalClusterTypeAccess(v string) {
+	o.GlobalClusterTypeAccess = &v
+}
+
+// GetClusterTypePermissions returns the ClusterTypePermissions field value if set, zero value otherwise.
+func (o *UpdateRole200Response) GetClusterTypePermissions() []UpdateRole200ResponseAllOfClusterTypePermissionsInner {
+	if o == nil || IsNil(o.ClusterTypePermissions) {
+		var ret []UpdateRole200ResponseAllOfClusterTypePermissionsInner
+		return ret
+	}
+	return o.ClusterTypePermissions
+}
+
+// GetClusterTypePermissionsOk returns a tuple with the ClusterTypePermissions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateRole200Response) GetClusterTypePermissionsOk() ([]UpdateRole200ResponseAllOfClusterTypePermissionsInner, bool) {
+	if o == nil || IsNil(o.ClusterTypePermissions) {
+		return nil, false
+	}
+	return o.ClusterTypePermissions, true
+}
+
+// IsSetClusterTypePermissions returns a boolean if a field has been set.
+func (o *UpdateRole200Response) IsSetClusterTypePermissions() bool {
+	if o != nil && !IsNil(o.ClusterTypePermissions) {
+		return true
+	}
+
+	return false
+}
+
+// SetClusterTypePermissions gets a reference to the given []UpdateRole200ResponseAllOfClusterTypePermissionsInner and assigns it to the ClusterTypePermissions field.
+func (o *UpdateRole200Response) SetClusterTypePermissions(v []UpdateRole200ResponseAllOfClusterTypePermissionsInner) {
+	o.ClusterTypePermissions = v
+}
+
 // GetSuccess returns the Success field value if set, zero value otherwise.
 func (o *UpdateRole200Response) GetSuccess() bool {
 	if o == nil || IsNil(o.Success) {
@@ -876,6 +942,12 @@ func (o UpdateRole200Response) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.TaskSetPermissions) {
 		toSerialize["taskSetPermissions"] = o.TaskSetPermissions
+	}
+	if !IsNil(o.GlobalClusterTypeAccess) {
+		toSerialize["globalClusterTypeAccess"] = o.GlobalClusterTypeAccess
+	}
+	if !IsNil(o.ClusterTypePermissions) {
+		toSerialize["clusterTypePermissions"] = o.ClusterTypePermissions
 	}
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success

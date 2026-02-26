@@ -33,6 +33,8 @@ Name | Type | Description | Notes
 **TaskPermissions** | Pointer to [**[]AddRolesRequestRoleTaskPermissionsInner**](AddRolesRequestRoleTaskPermissionsInner.md) | Set the access level for the specified tasks | [optional] 
 **GlobalTaskSetAccess** | Pointer to **string** | Set the default access level for workflows (taskSets) | [optional] 
 **TaskSetPermissions** | Pointer to [**[]AddRolesRequestRoleTaskSetPermissionsInner**](AddRolesRequestRoleTaskSetPermissionsInner.md) | Set the access level for the specified workflows (taskSets) | [optional] 
+**GlobalClusterTypeAccess** | Pointer to **string** | Set the default access level for cluster types | [optional] 
+**ClusterTypePermissions** | Pointer to [**[]AddRolesRequestRoleClusterTypePermissionsInner**](AddRolesRequestRoleClusterTypePermissionsInner.md) | Set the access level for the specified cluster types | [optional] 
 **Owner** | Pointer to **int64** | Set the role owner (tenant) by ID. *Only available to master tenant* | [optional] 
 
 ## Methods
@@ -803,6 +805,56 @@ SetTaskSetPermissions sets TaskSetPermissions field to given value.
 `func (o *AddRolesRequestRole) HasTaskSetPermissions() bool`
 
 HasTaskSetPermissions returns a boolean if a field has been set.
+
+### GetGlobalClusterTypeAccess
+
+`func (o *AddRolesRequestRole) GetGlobalClusterTypeAccess() string`
+
+GetGlobalClusterTypeAccess returns the GlobalClusterTypeAccess field if non-nil, zero value otherwise.
+
+### GetGlobalClusterTypeAccessOk
+
+`func (o *AddRolesRequestRole) GetGlobalClusterTypeAccessOk() (*string, bool)`
+
+GetGlobalClusterTypeAccessOk returns a tuple with the GlobalClusterTypeAccess field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGlobalClusterTypeAccess
+
+`func (o *AddRolesRequestRole) SetGlobalClusterTypeAccess(v string)`
+
+SetGlobalClusterTypeAccess sets GlobalClusterTypeAccess field to given value.
+
+### HasGlobalClusterTypeAccess
+
+`func (o *AddRolesRequestRole) HasGlobalClusterTypeAccess() bool`
+
+HasGlobalClusterTypeAccess returns a boolean if a field has been set.
+
+### GetClusterTypePermissions
+
+`func (o *AddRolesRequestRole) GetClusterTypePermissions() []AddRolesRequestRoleClusterTypePermissionsInner`
+
+GetClusterTypePermissions returns the ClusterTypePermissions field if non-nil, zero value otherwise.
+
+### GetClusterTypePermissionsOk
+
+`func (o *AddRolesRequestRole) GetClusterTypePermissionsOk() (*[]AddRolesRequestRoleClusterTypePermissionsInner, bool)`
+
+GetClusterTypePermissionsOk returns a tuple with the ClusterTypePermissions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClusterTypePermissions
+
+`func (o *AddRolesRequestRole) SetClusterTypePermissions(v []AddRolesRequestRoleClusterTypePermissionsInner)`
+
+SetClusterTypePermissions sets ClusterTypePermissions field to given value.
+
+### HasClusterTypePermissions
+
+`func (o *AddRolesRequestRole) HasClusterTypePermissions() bool`
+
+HasClusterTypePermissions returns a boolean if a field has been set.
 
 ### GetOwner
 

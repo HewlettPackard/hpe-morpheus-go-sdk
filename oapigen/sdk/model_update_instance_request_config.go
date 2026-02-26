@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.10
+API version: 8.1.1
 Contact: dev@morpheusdata.com
 */
 
@@ -21,7 +21,9 @@ var _ MappedNullable = &UpdateInstanceRequestConfig{}
 // UpdateInstanceRequestConfig struct for UpdateInstanceRequestConfig
 type UpdateInstanceRequestConfig struct {
 	// Custom Option Type settings object containing name value pairs.
-	CustomOptions        map[string]interface{} `json:"customOptions,omitempty"`
+	CustomOptions map[string]interface{} `json:"customOptions,omitempty"`
+	// User Data. Allows for override of cloud-init based user-data yaml or custom scripts
+	UserData             NullableString         `json:"userData,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -76,6 +78,49 @@ func (o *UpdateInstanceRequestConfig) SetCustomOptions(v map[string]interface{})
 	o.CustomOptions = v
 }
 
+// GetUserData returns the UserData field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *UpdateInstanceRequestConfig) GetUserData() string {
+	if o == nil || IsNil(o.UserData.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.UserData.Get()
+}
+
+// GetUserDataOk returns a tuple with the UserData field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *UpdateInstanceRequestConfig) GetUserDataOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.UserData.Get(), o.UserData.IsSet()
+}
+
+// IsSetUserData returns a boolean if a field has been set.
+func (o *UpdateInstanceRequestConfig) IsSetUserData() bool {
+	if o != nil && o.UserData.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetUserData gets a reference to the given NullableString and assigns it to the UserData field.
+func (o *UpdateInstanceRequestConfig) SetUserData(v string) {
+	o.UserData.Set(&v)
+}
+
+// SetUserDataNil sets the value for UserData to be an explicit nil
+func (o *UpdateInstanceRequestConfig) SetUserDataNil() {
+	o.UserData.Set(nil)
+}
+
+// UnsetUserData ensures that no value is present for UserData, not even an explicit nil
+func (o *UpdateInstanceRequestConfig) UnsetUserData() {
+	o.UserData.Unset()
+}
+
 func (o UpdateInstanceRequestConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -88,6 +133,9 @@ func (o UpdateInstanceRequestConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.CustomOptions) {
 		toSerialize["customOptions"] = o.CustomOptions
+	}
+	if o.UserData.IsSet() {
+		toSerialize["userData"] = o.UserData.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.10
+API version: 8.1.1
 Contact: dev@morpheusdata.com
 */
 
@@ -486,7 +486,7 @@ type ApiGetInstanceRequest struct {
 	details    *bool
 }
 
-// Include details&#x3D;false to exclude extra details about the instance, ie. containerDetails. Available in api version 5.2.8/5.3.2.
+// Include details&#x3D;false to exclude extra details about the instance and its container(s) and server(s), ie. instancePrice, apps, powerSchedule, isScalable, instanceThreshold, containerDetails.server.
 func (r ApiGetInstanceRequest) Details(details bool) ApiGetInstanceRequest {
 	r.details = &details
 	return r
@@ -750,6 +750,8 @@ type ApiListInstancesRequest struct {
 	zoneId          *int64
 	siteId          *int64
 	planId          *int64
+	serverId        *int64
+	parentServerId  *int64
 	instanceType    *string
 	lastUpdated     *time.Time
 	createdBy       *int64
@@ -811,6 +813,18 @@ func (r ApiListInstancesRequest) SiteId(siteId int64) ApiListInstancesRequest {
 // The Plan ID for Filtering
 func (r ApiListInstancesRequest) PlanId(planId int64) ApiListInstancesRequest {
 	r.planId = &planId
+	return r
+}
+
+// The Server ID for Filtering
+func (r ApiListInstancesRequest) ServerId(serverId int64) ApiListInstancesRequest {
+	r.serverId = &serverId
+	return r
+}
+
+// The Parent Server (Hypervisor) ID for Filtering
+func (r ApiListInstancesRequest) ParentServerId(parentServerId int64) ApiListInstancesRequest {
+	r.parentServerId = &parentServerId
 	return r
 }
 
@@ -928,7 +942,7 @@ func (r ApiListInstancesRequest) TagsName(tagsName string) ApiListInstancesReque
 	return r
 }
 
-// Include details&#x3D;true to return more details about the instance, ie. containerDetails. Available in api version 5.2.8/5.3.2.
+// Include details&#x3D;true to return more details about the instance and its container(s) and server(s), ie. instancePrice, apps, powerSchedule, isScalable, instanceThreshold, containerDetails.server.
 func (r ApiListInstancesRequest) Details(details bool) ApiListInstancesRequest {
 	r.details = &details
 	return r
@@ -1001,6 +1015,12 @@ func (a *InstancesAPIService) ListInstancesExecute(r ApiListInstancesRequest) (*
 	}
 	if r.planId != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "planId", r.planId, "form", "")
+	}
+	if r.serverId != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "serverId", r.serverId, "form", "")
+	}
+	if r.parentServerId != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "parentServerId", r.parentServerId, "form", "")
 	}
 	if r.instanceType != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "instanceType", r.instanceType, "form", "")

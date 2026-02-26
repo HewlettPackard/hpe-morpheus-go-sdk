@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.10
+API version: 8.1.1
 Contact: dev@morpheusdata.com
 */
 
@@ -13,751 +13,147 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
+
+	"gopkg.in/validator.v2"
 )
 
-// checks if the CatalogItemTypeInstanceCreateConfig type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &CatalogItemTypeInstanceCreateConfig{}
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
 
-// CatalogItemTypeInstanceCreateConfig struct for CatalogItemTypeInstanceCreateConfig
+// CatalogItemTypeInstanceCreateConfig - struct for CatalogItemTypeInstanceCreateConfig
 type CatalogItemTypeInstanceCreateConfig struct {
-	Group CatalogItemTypeInstanceCreateConfigGroup `json:"group"`
-	Cloud CatalogItemTypeInstanceCreateConfigCloud `json:"cloud"`
-	// The type of instance by code we want to fetch.
-	Type string `json:"type"`
-	// Name of the instance to be created.
-	Name   string                                    `json:"name"`
-	Config CatalogItemTypeInstanceCreateConfigConfig `json:"config"`
-	// The (optional) volumes parameter is for LV configuration, can create additional LVs at provision It should be passed as an array of
-	Volumes []CatalogItemTypeInstanceCreateConfigVolumesInner `json:"volumes"`
-	// Hostname of the instance to be created.  Can be the same as the instance name.
-	HostName *string `json:"hostName,omitempty"`
-	// Environment code
-	Environment *string                                   `json:"environment,omitempty"`
-	Layout      CatalogItemTypeInstanceCreateConfigLayout `json:"layout"`
-	Plan        CatalogItemTypeInstanceCreateConfigPlan   `json:"plan"`
-	// Version of the layout to create.
-	Version *string `json:"version,omitempty"`
-	// Environment Variables, an array of objects that have name and value.
-	Evars              []CatalogItemTypeInstanceCreateConfigEvarsInner        `json:"evars,omitempty"`
-	ServicePlanOptions *CatalogItemTypeInstanceCreateConfigServicePlanOptions `json:"servicePlanOptions,omitempty"`
-	// Key for security group configuration. It should be passed as an array of objects containing the id of the security group to assign the instance to.
-	SecurityGroups []CatalogItemTypeInstanceCreateConfigSecurityGroupsInner `json:"securityGroups,omitempty"`
-	// The networkInterfaces parameter is for network configuration.  The Options API `/api/options/zoneNetworkOptions?zoneId=5&provisionTypeId=10` can be used to see which options are available.
-	NetworkInterfaces []InstancesNetworkInterfaces4 `json:"networkInterfaces,omitempty"`
-	// Array of strings (keywords).
-	Labels []string `json:"labels,omitempty"`
-	// Metadata tags, Array of objects having a name and value.
-	Tags []CatalogItemTypeInstanceCreateConfigTagsInner `json:"tags,omitempty"`
-	// Alias for `tags`.
-	Metadata []CatalogItemTypeInstanceCreateConfigMetadataInner `json:"metadata,omitempty"`
-	// The ports parameter is for port configuration.  The layout may have default ports, which are defined in node types, that are always configured. This parameter will be for additional custom ports to be opened.
-	Ports []CatalogItemTypeInstanceCreateConfigPortsInner `json:"ports,omitempty"`
-	// The Workflow ID to execute.
-	TaskSetId *int64 `json:"taskSetId,omitempty"`
-	// The Workflow Name to execute.
-	TaskSetName          *string                `json:"taskSetName,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	InstanceConfigObject1 *InstanceConfigObject1
+	String                *string
 }
 
-type _CatalogItemTypeInstanceCreateConfig CatalogItemTypeInstanceCreateConfig
-
-// NewCatalogItemTypeInstanceCreateConfig instantiates a new CatalogItemTypeInstanceCreateConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCatalogItemTypeInstanceCreateConfig(group CatalogItemTypeInstanceCreateConfigGroup, cloud CatalogItemTypeInstanceCreateConfigCloud, type_ string, name string, config CatalogItemTypeInstanceCreateConfigConfig, volumes []CatalogItemTypeInstanceCreateConfigVolumesInner, layout CatalogItemTypeInstanceCreateConfigLayout, plan CatalogItemTypeInstanceCreateConfigPlan) *CatalogItemTypeInstanceCreateConfig {
-	this := CatalogItemTypeInstanceCreateConfig{}
-	this.Group = group
-	this.Cloud = cloud
-	this.Type = type_
-	this.Name = name
-	this.Config = config
-	this.Volumes = volumes
-	this.Layout = layout
-	this.Plan = plan
-	return &this
-}
-
-// NewCatalogItemTypeInstanceCreateConfigWithDefaults instantiates a new CatalogItemTypeInstanceCreateConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewCatalogItemTypeInstanceCreateConfigWithDefaults() *CatalogItemTypeInstanceCreateConfig {
-	this := CatalogItemTypeInstanceCreateConfig{}
-	return &this
-}
-
-// GetGroup returns the Group field value
-func (o *CatalogItemTypeInstanceCreateConfig) GetGroup() CatalogItemTypeInstanceCreateConfigGroup {
-	if o == nil {
-		var ret CatalogItemTypeInstanceCreateConfigGroup
-		return ret
-	}
-
-	return o.Group
-}
-
-// GetGroupOk returns a tuple with the Group field value
-// and a boolean to check if the value has been set.
-func (o *CatalogItemTypeInstanceCreateConfig) GetGroupOk() (*CatalogItemTypeInstanceCreateConfigGroup, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Group, true
-}
-
-// SetGroup sets field value
-func (o *CatalogItemTypeInstanceCreateConfig) SetGroup(v CatalogItemTypeInstanceCreateConfigGroup) {
-	o.Group = v
-}
-
-// GetCloud returns the Cloud field value
-func (o *CatalogItemTypeInstanceCreateConfig) GetCloud() CatalogItemTypeInstanceCreateConfigCloud {
-	if o == nil {
-		var ret CatalogItemTypeInstanceCreateConfigCloud
-		return ret
-	}
-
-	return o.Cloud
-}
-
-// GetCloudOk returns a tuple with the Cloud field value
-// and a boolean to check if the value has been set.
-func (o *CatalogItemTypeInstanceCreateConfig) GetCloudOk() (*CatalogItemTypeInstanceCreateConfigCloud, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Cloud, true
-}
-
-// SetCloud sets field value
-func (o *CatalogItemTypeInstanceCreateConfig) SetCloud(v CatalogItemTypeInstanceCreateConfigCloud) {
-	o.Cloud = v
-}
-
-// GetType returns the Type field value
-func (o *CatalogItemTypeInstanceCreateConfig) GetType() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Type
-}
-
-// GetTypeOk returns a tuple with the Type field value
-// and a boolean to check if the value has been set.
-func (o *CatalogItemTypeInstanceCreateConfig) GetTypeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Type, true
-}
-
-// SetType sets field value
-func (o *CatalogItemTypeInstanceCreateConfig) SetType(v string) {
-	o.Type = v
-}
-
-// GetName returns the Name field value
-func (o *CatalogItemTypeInstanceCreateConfig) GetName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value
-// and a boolean to check if the value has been set.
-func (o *CatalogItemTypeInstanceCreateConfig) GetNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Name, true
-}
-
-// SetName sets field value
-func (o *CatalogItemTypeInstanceCreateConfig) SetName(v string) {
-	o.Name = v
-}
-
-// GetConfig returns the Config field value
-func (o *CatalogItemTypeInstanceCreateConfig) GetConfig() CatalogItemTypeInstanceCreateConfigConfig {
-	if o == nil {
-		var ret CatalogItemTypeInstanceCreateConfigConfig
-		return ret
-	}
-
-	return o.Config
-}
-
-// GetConfigOk returns a tuple with the Config field value
-// and a boolean to check if the value has been set.
-func (o *CatalogItemTypeInstanceCreateConfig) GetConfigOk() (*CatalogItemTypeInstanceCreateConfigConfig, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Config, true
-}
-
-// SetConfig sets field value
-func (o *CatalogItemTypeInstanceCreateConfig) SetConfig(v CatalogItemTypeInstanceCreateConfigConfig) {
-	o.Config = v
-}
-
-// GetVolumes returns the Volumes field value
-func (o *CatalogItemTypeInstanceCreateConfig) GetVolumes() []CatalogItemTypeInstanceCreateConfigVolumesInner {
-	if o == nil {
-		var ret []CatalogItemTypeInstanceCreateConfigVolumesInner
-		return ret
-	}
-
-	return o.Volumes
-}
-
-// GetVolumesOk returns a tuple with the Volumes field value
-// and a boolean to check if the value has been set.
-func (o *CatalogItemTypeInstanceCreateConfig) GetVolumesOk() ([]CatalogItemTypeInstanceCreateConfigVolumesInner, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Volumes, true
-}
-
-// SetVolumes sets field value
-func (o *CatalogItemTypeInstanceCreateConfig) SetVolumes(v []CatalogItemTypeInstanceCreateConfigVolumesInner) {
-	o.Volumes = v
-}
-
-// GetHostName returns the HostName field value if set, zero value otherwise.
-func (o *CatalogItemTypeInstanceCreateConfig) GetHostName() string {
-	if o == nil || IsNil(o.HostName) {
-		var ret string
-		return ret
-	}
-	return *o.HostName
-}
-
-// GetHostNameOk returns a tuple with the HostName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CatalogItemTypeInstanceCreateConfig) GetHostNameOk() (*string, bool) {
-	if o == nil || IsNil(o.HostName) {
-		return nil, false
-	}
-	return o.HostName, true
-}
-
-// IsSetHostName returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceCreateConfig) IsSetHostName() bool {
-	if o != nil && !IsNil(o.HostName) {
-		return true
-	}
-
-	return false
-}
-
-// SetHostName gets a reference to the given string and assigns it to the HostName field.
-func (o *CatalogItemTypeInstanceCreateConfig) SetHostName(v string) {
-	o.HostName = &v
-}
-
-// GetEnvironment returns the Environment field value if set, zero value otherwise.
-func (o *CatalogItemTypeInstanceCreateConfig) GetEnvironment() string {
-	if o == nil || IsNil(o.Environment) {
-		var ret string
-		return ret
-	}
-	return *o.Environment
-}
-
-// GetEnvironmentOk returns a tuple with the Environment field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CatalogItemTypeInstanceCreateConfig) GetEnvironmentOk() (*string, bool) {
-	if o == nil || IsNil(o.Environment) {
-		return nil, false
-	}
-	return o.Environment, true
-}
-
-// IsSetEnvironment returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceCreateConfig) IsSetEnvironment() bool {
-	if o != nil && !IsNil(o.Environment) {
-		return true
-	}
-
-	return false
-}
-
-// SetEnvironment gets a reference to the given string and assigns it to the Environment field.
-func (o *CatalogItemTypeInstanceCreateConfig) SetEnvironment(v string) {
-	o.Environment = &v
-}
-
-// GetLayout returns the Layout field value
-func (o *CatalogItemTypeInstanceCreateConfig) GetLayout() CatalogItemTypeInstanceCreateConfigLayout {
-	if o == nil {
-		var ret CatalogItemTypeInstanceCreateConfigLayout
-		return ret
-	}
-
-	return o.Layout
-}
-
-// GetLayoutOk returns a tuple with the Layout field value
-// and a boolean to check if the value has been set.
-func (o *CatalogItemTypeInstanceCreateConfig) GetLayoutOk() (*CatalogItemTypeInstanceCreateConfigLayout, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Layout, true
-}
-
-// SetLayout sets field value
-func (o *CatalogItemTypeInstanceCreateConfig) SetLayout(v CatalogItemTypeInstanceCreateConfigLayout) {
-	o.Layout = v
-}
-
-// GetPlan returns the Plan field value
-func (o *CatalogItemTypeInstanceCreateConfig) GetPlan() CatalogItemTypeInstanceCreateConfigPlan {
-	if o == nil {
-		var ret CatalogItemTypeInstanceCreateConfigPlan
-		return ret
-	}
-
-	return o.Plan
-}
-
-// GetPlanOk returns a tuple with the Plan field value
-// and a boolean to check if the value has been set.
-func (o *CatalogItemTypeInstanceCreateConfig) GetPlanOk() (*CatalogItemTypeInstanceCreateConfigPlan, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Plan, true
-}
-
-// SetPlan sets field value
-func (o *CatalogItemTypeInstanceCreateConfig) SetPlan(v CatalogItemTypeInstanceCreateConfigPlan) {
-	o.Plan = v
-}
-
-// GetVersion returns the Version field value if set, zero value otherwise.
-func (o *CatalogItemTypeInstanceCreateConfig) GetVersion() string {
-	if o == nil || IsNil(o.Version) {
-		var ret string
-		return ret
-	}
-	return *o.Version
-}
-
-// GetVersionOk returns a tuple with the Version field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CatalogItemTypeInstanceCreateConfig) GetVersionOk() (*string, bool) {
-	if o == nil || IsNil(o.Version) {
-		return nil, false
-	}
-	return o.Version, true
-}
-
-// IsSetVersion returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceCreateConfig) IsSetVersion() bool {
-	if o != nil && !IsNil(o.Version) {
-		return true
-	}
-
-	return false
-}
-
-// SetVersion gets a reference to the given string and assigns it to the Version field.
-func (o *CatalogItemTypeInstanceCreateConfig) SetVersion(v string) {
-	o.Version = &v
-}
-
-// GetEvars returns the Evars field value if set, zero value otherwise.
-func (o *CatalogItemTypeInstanceCreateConfig) GetEvars() []CatalogItemTypeInstanceCreateConfigEvarsInner {
-	if o == nil || IsNil(o.Evars) {
-		var ret []CatalogItemTypeInstanceCreateConfigEvarsInner
-		return ret
-	}
-	return o.Evars
-}
-
-// GetEvarsOk returns a tuple with the Evars field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CatalogItemTypeInstanceCreateConfig) GetEvarsOk() ([]CatalogItemTypeInstanceCreateConfigEvarsInner, bool) {
-	if o == nil || IsNil(o.Evars) {
-		return nil, false
-	}
-	return o.Evars, true
-}
-
-// IsSetEvars returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceCreateConfig) IsSetEvars() bool {
-	if o != nil && !IsNil(o.Evars) {
-		return true
-	}
-
-	return false
-}
-
-// SetEvars gets a reference to the given []CatalogItemTypeInstanceCreateConfigEvarsInner and assigns it to the Evars field.
-func (o *CatalogItemTypeInstanceCreateConfig) SetEvars(v []CatalogItemTypeInstanceCreateConfigEvarsInner) {
-	o.Evars = v
-}
-
-// GetServicePlanOptions returns the ServicePlanOptions field value if set, zero value otherwise.
-func (o *CatalogItemTypeInstanceCreateConfig) GetServicePlanOptions() CatalogItemTypeInstanceCreateConfigServicePlanOptions {
-	if o == nil || IsNil(o.ServicePlanOptions) {
-		var ret CatalogItemTypeInstanceCreateConfigServicePlanOptions
-		return ret
-	}
-	return *o.ServicePlanOptions
-}
-
-// GetServicePlanOptionsOk returns a tuple with the ServicePlanOptions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CatalogItemTypeInstanceCreateConfig) GetServicePlanOptionsOk() (*CatalogItemTypeInstanceCreateConfigServicePlanOptions, bool) {
-	if o == nil || IsNil(o.ServicePlanOptions) {
-		return nil, false
-	}
-	return o.ServicePlanOptions, true
-}
-
-// IsSetServicePlanOptions returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceCreateConfig) IsSetServicePlanOptions() bool {
-	if o != nil && !IsNil(o.ServicePlanOptions) {
-		return true
-	}
-
-	return false
-}
-
-// SetServicePlanOptions gets a reference to the given CatalogItemTypeInstanceCreateConfigServicePlanOptions and assigns it to the ServicePlanOptions field.
-func (o *CatalogItemTypeInstanceCreateConfig) SetServicePlanOptions(v CatalogItemTypeInstanceCreateConfigServicePlanOptions) {
-	o.ServicePlanOptions = &v
-}
-
-// GetSecurityGroups returns the SecurityGroups field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CatalogItemTypeInstanceCreateConfig) GetSecurityGroups() []CatalogItemTypeInstanceCreateConfigSecurityGroupsInner {
-	if o == nil {
-		var ret []CatalogItemTypeInstanceCreateConfigSecurityGroupsInner
-		return ret
-	}
-	return o.SecurityGroups
-}
-
-// GetSecurityGroupsOk returns a tuple with the SecurityGroups field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CatalogItemTypeInstanceCreateConfig) GetSecurityGroupsOk() ([]CatalogItemTypeInstanceCreateConfigSecurityGroupsInner, bool) {
-	if o == nil || IsNil(o.SecurityGroups) {
-		return nil, false
-	}
-	return o.SecurityGroups, true
-}
-
-// IsSetSecurityGroups returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceCreateConfig) IsSetSecurityGroups() bool {
-	if o != nil && !IsNil(o.SecurityGroups) {
-		return true
-	}
-
-	return false
-}
-
-// SetSecurityGroups gets a reference to the given []CatalogItemTypeInstanceCreateConfigSecurityGroupsInner and assigns it to the SecurityGroups field.
-func (o *CatalogItemTypeInstanceCreateConfig) SetSecurityGroups(v []CatalogItemTypeInstanceCreateConfigSecurityGroupsInner) {
-	o.SecurityGroups = v
-}
-
-// GetNetworkInterfaces returns the NetworkInterfaces field value if set, zero value otherwise.
-func (o *CatalogItemTypeInstanceCreateConfig) GetNetworkInterfaces() []InstancesNetworkInterfaces4 {
-	if o == nil || IsNil(o.NetworkInterfaces) {
-		var ret []InstancesNetworkInterfaces4
-		return ret
-	}
-	return o.NetworkInterfaces
-}
-
-// GetNetworkInterfacesOk returns a tuple with the NetworkInterfaces field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CatalogItemTypeInstanceCreateConfig) GetNetworkInterfacesOk() ([]InstancesNetworkInterfaces4, bool) {
-	if o == nil || IsNil(o.NetworkInterfaces) {
-		return nil, false
-	}
-	return o.NetworkInterfaces, true
-}
-
-// IsSetNetworkInterfaces returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceCreateConfig) IsSetNetworkInterfaces() bool {
-	if o != nil && !IsNil(o.NetworkInterfaces) {
-		return true
-	}
-
-	return false
-}
-
-// SetNetworkInterfaces gets a reference to the given []InstancesNetworkInterfaces4 and assigns it to the NetworkInterfaces field.
-func (o *CatalogItemTypeInstanceCreateConfig) SetNetworkInterfaces(v []InstancesNetworkInterfaces4) {
-	o.NetworkInterfaces = v
-}
-
-// GetLabels returns the Labels field value if set, zero value otherwise.
-func (o *CatalogItemTypeInstanceCreateConfig) GetLabels() []string {
-	if o == nil || IsNil(o.Labels) {
-		var ret []string
-		return ret
-	}
-	return o.Labels
-}
-
-// GetLabelsOk returns a tuple with the Labels field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CatalogItemTypeInstanceCreateConfig) GetLabelsOk() ([]string, bool) {
-	if o == nil || IsNil(o.Labels) {
-		return nil, false
-	}
-	return o.Labels, true
-}
-
-// IsSetLabels returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceCreateConfig) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
-}
-
-// SetLabels gets a reference to the given []string and assigns it to the Labels field.
-func (o *CatalogItemTypeInstanceCreateConfig) SetLabels(v []string) {
-	o.Labels = v
-}
-
-// GetTags returns the Tags field value if set, zero value otherwise.
-func (o *CatalogItemTypeInstanceCreateConfig) GetTags() []CatalogItemTypeInstanceCreateConfigTagsInner {
-	if o == nil || IsNil(o.Tags) {
-		var ret []CatalogItemTypeInstanceCreateConfigTagsInner
-		return ret
+// InstanceConfigObject1AsCatalogItemTypeInstanceCreateConfig is a convenience function that returns InstanceConfigObject1 wrapped in CatalogItemTypeInstanceCreateConfig
+func InstanceConfigObject1AsCatalogItemTypeInstanceCreateConfig(v *InstanceConfigObject1) CatalogItemTypeInstanceCreateConfig {
+	return CatalogItemTypeInstanceCreateConfig{
+		InstanceConfigObject1: v,
 	}
-	return o.Tags
 }
 
-// GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CatalogItemTypeInstanceCreateConfig) GetTagsOk() ([]CatalogItemTypeInstanceCreateConfigTagsInner, bool) {
-	if o == nil || IsNil(o.Tags) {
-		return nil, false
+// stringAsCatalogItemTypeInstanceCreateConfig is a convenience function that returns string wrapped in CatalogItemTypeInstanceCreateConfig
+func StringAsCatalogItemTypeInstanceCreateConfig(v *string) CatalogItemTypeInstanceCreateConfig {
+	return CatalogItemTypeInstanceCreateConfig{
+		String: v,
 	}
-	return o.Tags, true
 }
 
-// IsSetTags returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceCreateConfig) IsSetTags() bool {
-	if o != nil && !IsNil(o.Tags) {
-		return true
+func (dst *CatalogItemTypeInstanceCreateConfig) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &CatalogItemTypeInstanceCreateConfig{}
 	}
-
-	return false
-}
 
-// SetTags gets a reference to the given []CatalogItemTypeInstanceCreateConfigTagsInner and assigns it to the Tags field.
-func (o *CatalogItemTypeInstanceCreateConfig) SetTags(v []CatalogItemTypeInstanceCreateConfigTagsInner) {
-	o.Tags = v
-}
+	mapstructDecode(data, &dst.InstanceConfigObject1)
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *CatalogItemTypeInstanceCreateConfig) GetMetadata() []CatalogItemTypeInstanceCreateConfigMetadataInner {
-	if o == nil || IsNil(o.Metadata) {
-		var ret []CatalogItemTypeInstanceCreateConfigMetadataInner
-		return ret
+	if IsEmpty(dst.InstanceConfigObject1) {
+		dst.InstanceConfigObject1 = nil
 	}
-	return o.Metadata
-}
 
-// GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CatalogItemTypeInstanceCreateConfig) GetMetadataOk() ([]CatalogItemTypeInstanceCreateConfigMetadataInner, bool) {
-	if o == nil || IsNil(o.Metadata) {
-		return nil, false
-	}
-	return o.Metadata, true
-}
+	mapstructDecode(data, &dst.String)
 
-// IsSetMetadata returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceCreateConfig) IsSetMetadata() bool {
-	if o != nil && !IsNil(o.Metadata) {
-		return true
+	if IsEmpty(dst.String) {
+		dst.String = nil
 	}
-
-	return false
-}
-
-// SetMetadata gets a reference to the given []CatalogItemTypeInstanceCreateConfigMetadataInner and assigns it to the Metadata field.
-func (o *CatalogItemTypeInstanceCreateConfig) SetMetadata(v []CatalogItemTypeInstanceCreateConfigMetadataInner) {
-	o.Metadata = v
-}
 
-// GetPorts returns the Ports field value if set, zero value otherwise.
-func (o *CatalogItemTypeInstanceCreateConfig) GetPorts() []CatalogItemTypeInstanceCreateConfigPortsInner {
-	if o == nil || IsNil(o.Ports) {
-		var ret []CatalogItemTypeInstanceCreateConfigPortsInner
-		return ret
-	}
-	return o.Ports
+	return dst, nil
 }
 
-// GetPortsOk returns a tuple with the Ports field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CatalogItemTypeInstanceCreateConfig) GetPortsOk() ([]CatalogItemTypeInstanceCreateConfigPortsInner, bool) {
-	if o == nil || IsNil(o.Ports) {
-		return nil, false
+// Unmarshal JSON data into one of the pointers in the struct
+func (dst *CatalogItemTypeInstanceCreateConfig) UnmarshalJSON(data []byte) error {
+	var err error
+	match := 0
+	// try to unmarshal data into InstanceConfigObject1
+	err = newStrictDecoder(data).Decode(&dst.InstanceConfigObject1)
+	if err == nil {
+		jsonInstanceConfigObject1, _ := json.Marshal(dst.InstanceConfigObject1)
+		if string(jsonInstanceConfigObject1) == "{}" { // empty struct
+			dst.InstanceConfigObject1 = nil
+		} else {
+			if err = validator.Validate(dst.InstanceConfigObject1); err != nil {
+				dst.InstanceConfigObject1 = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.InstanceConfigObject1 = nil
 	}
-	return o.Ports, true
-}
 
-// IsSetPorts returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceCreateConfig) IsSetPorts() bool {
-	if o != nil && !IsNil(o.Ports) {
-		return true
+	// try to unmarshal data into String
+	err = newStrictDecoder(data).Decode(&dst.String)
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			if err = validator.Validate(dst.String); err != nil {
+				dst.String = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.String = nil
 	}
-
-	return false
-}
 
-// SetPorts gets a reference to the given []CatalogItemTypeInstanceCreateConfigPortsInner and assigns it to the Ports field.
-func (o *CatalogItemTypeInstanceCreateConfig) SetPorts(v []CatalogItemTypeInstanceCreateConfigPortsInner) {
-	o.Ports = v
-}
+	if match > 1 { // more than 1 match
+		// reset to nil
+		dst.InstanceConfigObject1 = nil
+		dst.String = nil
 
-// GetTaskSetId returns the TaskSetId field value if set, zero value otherwise.
-func (o *CatalogItemTypeInstanceCreateConfig) GetTaskSetId() int64 {
-	if o == nil || IsNil(o.TaskSetId) {
-		var ret int64
-		return ret
+		return NewResponseValidationError("data matches more than one schema in oneOf(CatalogItemTypeInstanceCreateConfig)")
+	} else if match == 1 {
+		return nil // exactly one match
+	} else { // no match
+		return NewResponseValidationError("data failed to match schemas in oneOf(CatalogItemTypeInstanceCreateConfig)")
 	}
-	return *o.TaskSetId
 }
 
-// GetTaskSetIdOk returns a tuple with the TaskSetId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CatalogItemTypeInstanceCreateConfig) GetTaskSetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.TaskSetId) {
-		return nil, false
+// Marshal data from the first non-nil pointers in the struct to JSON
+func (src CatalogItemTypeInstanceCreateConfig) MarshalJSON() ([]byte, error) {
+	if src.InstanceConfigObject1 != nil {
+		return json.Marshal(&src.InstanceConfigObject1)
 	}
-	return o.TaskSetId, true
-}
 
-// IsSetTaskSetId returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceCreateConfig) IsSetTaskSetId() bool {
-	if o != nil && !IsNil(o.TaskSetId) {
-		return true
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
-
-	return false
-}
 
-// SetTaskSetId gets a reference to the given int64 and assigns it to the TaskSetId field.
-func (o *CatalogItemTypeInstanceCreateConfig) SetTaskSetId(v int64) {
-	o.TaskSetId = &v
+	return nil, nil // no data in oneOf schemas
 }
 
-// GetTaskSetName returns the TaskSetName field value if set, zero value otherwise.
-func (o *CatalogItemTypeInstanceCreateConfig) GetTaskSetName() string {
-	if o == nil || IsNil(o.TaskSetName) {
-		var ret string
-		return ret
+// Get the actual instance
+func (obj *CatalogItemTypeInstanceCreateConfig) GetActualInstance() interface{} {
+	if obj == nil {
+		return nil
 	}
-	return *o.TaskSetName
-}
-
-// GetTaskSetNameOk returns a tuple with the TaskSetName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CatalogItemTypeInstanceCreateConfig) GetTaskSetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.TaskSetName) {
-		return nil, false
+	if obj.InstanceConfigObject1 != nil {
+		return obj.InstanceConfigObject1
 	}
-	return o.TaskSetName, true
-}
 
-// IsSetTaskSetName returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceCreateConfig) IsSetTaskSetName() bool {
-	if o != nil && !IsNil(o.TaskSetName) {
-		return true
+	if obj.String != nil {
+		return obj.String
 	}
-
-	return false
-}
-
-// SetTaskSetName gets a reference to the given string and assigns it to the TaskSetName field.
-func (o *CatalogItemTypeInstanceCreateConfig) SetTaskSetName(v string) {
-	o.TaskSetName = &v
-}
 
-func (o CatalogItemTypeInstanceCreateConfig) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
+	// all schemas are nil
+	return nil
 }
 
-func (o CatalogItemTypeInstanceCreateConfig) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["group"] = o.Group
-	toSerialize["cloud"] = o.Cloud
-	toSerialize["type"] = o.Type
-	toSerialize["name"] = o.Name
-	toSerialize["config"] = o.Config
-	toSerialize["volumes"] = o.Volumes
-	if !IsNil(o.HostName) {
-		toSerialize["hostName"] = o.HostName
-	}
-	if !IsNil(o.Environment) {
-		toSerialize["environment"] = o.Environment
-	}
-	toSerialize["layout"] = o.Layout
-	toSerialize["plan"] = o.Plan
-	if !IsNil(o.Version) {
-		toSerialize["version"] = o.Version
-	}
-	if !IsNil(o.Evars) {
-		toSerialize["evars"] = o.Evars
-	}
-	if !IsNil(o.ServicePlanOptions) {
-		toSerialize["servicePlanOptions"] = o.ServicePlanOptions
-	}
-	if o.SecurityGroups != nil {
-		toSerialize["securityGroups"] = o.SecurityGroups
-	}
-	if !IsNil(o.NetworkInterfaces) {
-		toSerialize["networkInterfaces"] = o.NetworkInterfaces
-	}
-	if !IsNil(o.Labels) {
-		toSerialize["labels"] = o.Labels
-	}
-	if !IsNil(o.Tags) {
-		toSerialize["tags"] = o.Tags
-	}
-	if !IsNil(o.Metadata) {
-		toSerialize["metadata"] = o.Metadata
-	}
-	if !IsNil(o.Ports) {
-		toSerialize["ports"] = o.Ports
-	}
-	if !IsNil(o.TaskSetId) {
-		toSerialize["taskSetId"] = o.TaskSetId
-	}
-	if !IsNil(o.TaskSetName) {
-		toSerialize["taskSetName"] = o.TaskSetName
+// Get the actual instance value
+func (obj CatalogItemTypeInstanceCreateConfig) GetActualInstanceValue() interface{} {
+	if obj.InstanceConfigObject1 != nil {
+		return *obj.InstanceConfigObject1
 	}
 
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
+	if obj.String != nil {
+		return *obj.String
 	}
 
-	return toSerialize, nil
+	// all schemas are nil
+	return nil
 }
 
 type NullableCatalogItemTypeInstanceCreateConfig struct {
@@ -804,9 +200,3 @@ func (v NullableCatalogItemTypeInstanceCreateConfig) UnmarshalMapstructure(data 
 
 	return v, nil
 }
-
-func (o *CatalogItemTypeInstanceCreateConfig) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
-}
-
-// - model_simple.mustache

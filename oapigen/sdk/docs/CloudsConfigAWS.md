@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **ApplianceUrl** | Pointer to **string** |  | [optional] 
 **DatacenterName** | Pointer to **string** |  | [optional] 
 **NetworkServerId** | Pointer to **string** |  | [optional] 
-**NetworkServer** | Pointer to [**CloudsConfigAWSNetworkServer**](CloudsConfigAWSNetworkServer.md) |  | [optional] 
+**NetworkServer** | Pointer to [**AddClouds200ResponseAllOfZoneConfigAnyOf2NetworkServer**](AddClouds200ResponseAllOfZoneConfigAnyOf2NetworkServer.md) |  | [optional] 
 **SecurityServer** | Pointer to **NullableString** |  | [optional] 
 **CertificateProvider** | Pointer to **string** |  | [optional] 
 **BackupMode** | Pointer to **string** |  | [optional] 
@@ -567,20 +567,20 @@ HasNetworkServerId returns a boolean if a field has been set.
 
 ### GetNetworkServer
 
-`func (o *CloudsConfigAWS) GetNetworkServer() CloudsConfigAWSNetworkServer`
+`func (o *CloudsConfigAWS) GetNetworkServer() AddClouds200ResponseAllOfZoneConfigAnyOf2NetworkServer`
 
 GetNetworkServer returns the NetworkServer field if non-nil, zero value otherwise.
 
 ### GetNetworkServerOk
 
-`func (o *CloudsConfigAWS) GetNetworkServerOk() (*CloudsConfigAWSNetworkServer, bool)`
+`func (o *CloudsConfigAWS) GetNetworkServerOk() (*AddClouds200ResponseAllOfZoneConfigAnyOf2NetworkServer, bool)`
 
 GetNetworkServerOk returns a tuple with the NetworkServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkServer
 
-`func (o *CloudsConfigAWS) SetNetworkServer(v CloudsConfigAWSNetworkServer)`
+`func (o *CloudsConfigAWS) SetNetworkServer(v AddClouds200ResponseAllOfZoneConfigAnyOf2NetworkServer)`
 
 SetNetworkServer sets NetworkServer field to given value.
 

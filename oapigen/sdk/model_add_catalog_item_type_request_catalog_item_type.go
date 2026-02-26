@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.10
+API version: 8.1.1
 Contact: dev@morpheusdata.com
 */
 
@@ -23,29 +23,29 @@ var _ fmt.Stringer
 
 // AddCatalogItemTypeRequestCatalogItemType - struct for AddCatalogItemTypeRequestCatalogItemType
 type AddCatalogItemTypeRequestCatalogItemType struct {
-	AddCatalogItemTypeRequestCatalogItemTypeOneOf  *AddCatalogItemTypeRequestCatalogItemTypeOneOf
-	AddCatalogItemTypeRequestCatalogItemTypeOneOf1 *AddCatalogItemTypeRequestCatalogItemTypeOneOf1
-	AddCatalogItemTypeRequestCatalogItemTypeOneOf2 *AddCatalogItemTypeRequestCatalogItemTypeOneOf2
+	BlueprintCatalogItemType *BlueprintCatalogItemType
+	InstanceCatalogItemType  *InstanceCatalogItemType
+	WorkflowCatalogItemType  *WorkflowCatalogItemType
 }
 
-// AddCatalogItemTypeRequestCatalogItemTypeOneOfAsAddCatalogItemTypeRequestCatalogItemType is a convenience function that returns AddCatalogItemTypeRequestCatalogItemTypeOneOf wrapped in AddCatalogItemTypeRequestCatalogItemType
-func AddCatalogItemTypeRequestCatalogItemTypeOneOfAsAddCatalogItemTypeRequestCatalogItemType(v *AddCatalogItemTypeRequestCatalogItemTypeOneOf) AddCatalogItemTypeRequestCatalogItemType {
+// BlueprintCatalogItemTypeAsAddCatalogItemTypeRequestCatalogItemType is a convenience function that returns BlueprintCatalogItemType wrapped in AddCatalogItemTypeRequestCatalogItemType
+func BlueprintCatalogItemTypeAsAddCatalogItemTypeRequestCatalogItemType(v *BlueprintCatalogItemType) AddCatalogItemTypeRequestCatalogItemType {
 	return AddCatalogItemTypeRequestCatalogItemType{
-		AddCatalogItemTypeRequestCatalogItemTypeOneOf: v,
+		BlueprintCatalogItemType: v,
 	}
 }
 
-// AddCatalogItemTypeRequestCatalogItemTypeOneOf1AsAddCatalogItemTypeRequestCatalogItemType is a convenience function that returns AddCatalogItemTypeRequestCatalogItemTypeOneOf1 wrapped in AddCatalogItemTypeRequestCatalogItemType
-func AddCatalogItemTypeRequestCatalogItemTypeOneOf1AsAddCatalogItemTypeRequestCatalogItemType(v *AddCatalogItemTypeRequestCatalogItemTypeOneOf1) AddCatalogItemTypeRequestCatalogItemType {
+// InstanceCatalogItemTypeAsAddCatalogItemTypeRequestCatalogItemType is a convenience function that returns InstanceCatalogItemType wrapped in AddCatalogItemTypeRequestCatalogItemType
+func InstanceCatalogItemTypeAsAddCatalogItemTypeRequestCatalogItemType(v *InstanceCatalogItemType) AddCatalogItemTypeRequestCatalogItemType {
 	return AddCatalogItemTypeRequestCatalogItemType{
-		AddCatalogItemTypeRequestCatalogItemTypeOneOf1: v,
+		InstanceCatalogItemType: v,
 	}
 }
 
-// AddCatalogItemTypeRequestCatalogItemTypeOneOf2AsAddCatalogItemTypeRequestCatalogItemType is a convenience function that returns AddCatalogItemTypeRequestCatalogItemTypeOneOf2 wrapped in AddCatalogItemTypeRequestCatalogItemType
-func AddCatalogItemTypeRequestCatalogItemTypeOneOf2AsAddCatalogItemTypeRequestCatalogItemType(v *AddCatalogItemTypeRequestCatalogItemTypeOneOf2) AddCatalogItemTypeRequestCatalogItemType {
+// WorkflowCatalogItemTypeAsAddCatalogItemTypeRequestCatalogItemType is a convenience function that returns WorkflowCatalogItemType wrapped in AddCatalogItemTypeRequestCatalogItemType
+func WorkflowCatalogItemTypeAsAddCatalogItemTypeRequestCatalogItemType(v *WorkflowCatalogItemType) AddCatalogItemTypeRequestCatalogItemType {
 	return AddCatalogItemTypeRequestCatalogItemType{
-		AddCatalogItemTypeRequestCatalogItemTypeOneOf2: v,
+		WorkflowCatalogItemType: v,
 	}
 }
 
@@ -54,22 +54,22 @@ func (dst *AddCatalogItemTypeRequestCatalogItemType) UnmarshalMapstructure(data 
 		dst = &AddCatalogItemTypeRequestCatalogItemType{}
 	}
 
-	mapstructDecode(data, &dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf)
+	mapstructDecode(data, &dst.BlueprintCatalogItemType)
 
-	if IsEmpty(dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf) {
-		dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf = nil
+	if IsEmpty(dst.BlueprintCatalogItemType) {
+		dst.BlueprintCatalogItemType = nil
 	}
 
-	mapstructDecode(data, &dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf1)
+	mapstructDecode(data, &dst.InstanceCatalogItemType)
 
-	if IsEmpty(dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf1) {
-		dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf1 = nil
+	if IsEmpty(dst.InstanceCatalogItemType) {
+		dst.InstanceCatalogItemType = nil
 	}
 
-	mapstructDecode(data, &dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf2)
+	mapstructDecode(data, &dst.WorkflowCatalogItemType)
 
-	if IsEmpty(dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf2) {
-		dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf2 = nil
+	if IsEmpty(dst.WorkflowCatalogItemType) {
+		dst.WorkflowCatalogItemType = nil
 	}
 
 	return dst, nil
@@ -79,62 +79,62 @@ func (dst *AddCatalogItemTypeRequestCatalogItemType) UnmarshalMapstructure(data 
 func (dst *AddCatalogItemTypeRequestCatalogItemType) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
-	// try to unmarshal data into AddCatalogItemTypeRequestCatalogItemTypeOneOf
-	err = newStrictDecoder(data).Decode(&dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf)
+	// try to unmarshal data into BlueprintCatalogItemType
+	err = newStrictDecoder(data).Decode(&dst.BlueprintCatalogItemType)
 	if err == nil {
-		jsonAddCatalogItemTypeRequestCatalogItemTypeOneOf, _ := json.Marshal(dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf)
-		if string(jsonAddCatalogItemTypeRequestCatalogItemTypeOneOf) == "{}" { // empty struct
-			dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf = nil
+		jsonBlueprintCatalogItemType, _ := json.Marshal(dst.BlueprintCatalogItemType)
+		if string(jsonBlueprintCatalogItemType) == "{}" { // empty struct
+			dst.BlueprintCatalogItemType = nil
 		} else {
-			if err = validator.Validate(dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf); err != nil {
-				dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf = nil
+			if err = validator.Validate(dst.BlueprintCatalogItemType); err != nil {
+				dst.BlueprintCatalogItemType = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf = nil
+		dst.BlueprintCatalogItemType = nil
 	}
 
-	// try to unmarshal data into AddCatalogItemTypeRequestCatalogItemTypeOneOf1
-	err = newStrictDecoder(data).Decode(&dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf1)
+	// try to unmarshal data into InstanceCatalogItemType
+	err = newStrictDecoder(data).Decode(&dst.InstanceCatalogItemType)
 	if err == nil {
-		jsonAddCatalogItemTypeRequestCatalogItemTypeOneOf1, _ := json.Marshal(dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf1)
-		if string(jsonAddCatalogItemTypeRequestCatalogItemTypeOneOf1) == "{}" { // empty struct
-			dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf1 = nil
+		jsonInstanceCatalogItemType, _ := json.Marshal(dst.InstanceCatalogItemType)
+		if string(jsonInstanceCatalogItemType) == "{}" { // empty struct
+			dst.InstanceCatalogItemType = nil
 		} else {
-			if err = validator.Validate(dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf1); err != nil {
-				dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf1 = nil
+			if err = validator.Validate(dst.InstanceCatalogItemType); err != nil {
+				dst.InstanceCatalogItemType = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf1 = nil
+		dst.InstanceCatalogItemType = nil
 	}
 
-	// try to unmarshal data into AddCatalogItemTypeRequestCatalogItemTypeOneOf2
-	err = newStrictDecoder(data).Decode(&dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf2)
+	// try to unmarshal data into WorkflowCatalogItemType
+	err = newStrictDecoder(data).Decode(&dst.WorkflowCatalogItemType)
 	if err == nil {
-		jsonAddCatalogItemTypeRequestCatalogItemTypeOneOf2, _ := json.Marshal(dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf2)
-		if string(jsonAddCatalogItemTypeRequestCatalogItemTypeOneOf2) == "{}" { // empty struct
-			dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf2 = nil
+		jsonWorkflowCatalogItemType, _ := json.Marshal(dst.WorkflowCatalogItemType)
+		if string(jsonWorkflowCatalogItemType) == "{}" { // empty struct
+			dst.WorkflowCatalogItemType = nil
 		} else {
-			if err = validator.Validate(dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf2); err != nil {
-				dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf2 = nil
+			if err = validator.Validate(dst.WorkflowCatalogItemType); err != nil {
+				dst.WorkflowCatalogItemType = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf2 = nil
+		dst.WorkflowCatalogItemType = nil
 	}
 
 	if match > 1 { // more than 1 match
 		// reset to nil
-		dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf = nil
-		dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf1 = nil
-		dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf2 = nil
+		dst.BlueprintCatalogItemType = nil
+		dst.InstanceCatalogItemType = nil
+		dst.WorkflowCatalogItemType = nil
 
 		return NewResponseValidationError("data matches more than one schema in oneOf(AddCatalogItemTypeRequestCatalogItemType)")
 	} else if match == 1 {
@@ -146,16 +146,16 @@ func (dst *AddCatalogItemTypeRequestCatalogItemType) UnmarshalJSON(data []byte) 
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src AddCatalogItemTypeRequestCatalogItemType) MarshalJSON() ([]byte, error) {
-	if src.AddCatalogItemTypeRequestCatalogItemTypeOneOf != nil {
-		return json.Marshal(&src.AddCatalogItemTypeRequestCatalogItemTypeOneOf)
+	if src.BlueprintCatalogItemType != nil {
+		return json.Marshal(&src.BlueprintCatalogItemType)
 	}
 
-	if src.AddCatalogItemTypeRequestCatalogItemTypeOneOf1 != nil {
-		return json.Marshal(&src.AddCatalogItemTypeRequestCatalogItemTypeOneOf1)
+	if src.InstanceCatalogItemType != nil {
+		return json.Marshal(&src.InstanceCatalogItemType)
 	}
 
-	if src.AddCatalogItemTypeRequestCatalogItemTypeOneOf2 != nil {
-		return json.Marshal(&src.AddCatalogItemTypeRequestCatalogItemTypeOneOf2)
+	if src.WorkflowCatalogItemType != nil {
+		return json.Marshal(&src.WorkflowCatalogItemType)
 	}
 
 	return nil, nil // no data in oneOf schemas
@@ -166,16 +166,16 @@ func (obj *AddCatalogItemTypeRequestCatalogItemType) GetActualInstance() interfa
 	if obj == nil {
 		return nil
 	}
-	if obj.AddCatalogItemTypeRequestCatalogItemTypeOneOf != nil {
-		return obj.AddCatalogItemTypeRequestCatalogItemTypeOneOf
+	if obj.BlueprintCatalogItemType != nil {
+		return obj.BlueprintCatalogItemType
 	}
 
-	if obj.AddCatalogItemTypeRequestCatalogItemTypeOneOf1 != nil {
-		return obj.AddCatalogItemTypeRequestCatalogItemTypeOneOf1
+	if obj.InstanceCatalogItemType != nil {
+		return obj.InstanceCatalogItemType
 	}
 
-	if obj.AddCatalogItemTypeRequestCatalogItemTypeOneOf2 != nil {
-		return obj.AddCatalogItemTypeRequestCatalogItemTypeOneOf2
+	if obj.WorkflowCatalogItemType != nil {
+		return obj.WorkflowCatalogItemType
 	}
 
 	// all schemas are nil
@@ -184,16 +184,16 @@ func (obj *AddCatalogItemTypeRequestCatalogItemType) GetActualInstance() interfa
 
 // Get the actual instance value
 func (obj AddCatalogItemTypeRequestCatalogItemType) GetActualInstanceValue() interface{} {
-	if obj.AddCatalogItemTypeRequestCatalogItemTypeOneOf != nil {
-		return *obj.AddCatalogItemTypeRequestCatalogItemTypeOneOf
+	if obj.BlueprintCatalogItemType != nil {
+		return *obj.BlueprintCatalogItemType
 	}
 
-	if obj.AddCatalogItemTypeRequestCatalogItemTypeOneOf1 != nil {
-		return *obj.AddCatalogItemTypeRequestCatalogItemTypeOneOf1
+	if obj.InstanceCatalogItemType != nil {
+		return *obj.InstanceCatalogItemType
 	}
 
-	if obj.AddCatalogItemTypeRequestCatalogItemTypeOneOf2 != nil {
-		return *obj.AddCatalogItemTypeRequestCatalogItemTypeOneOf2
+	if obj.WorkflowCatalogItemType != nil {
+		return *obj.WorkflowCatalogItemType
 	}
 
 	// all schemas are nil

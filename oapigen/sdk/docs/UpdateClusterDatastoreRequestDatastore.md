@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Active** | Pointer to **bool** | Datastore active | [optional] [default to true]
 **Permissions** | Pointer to [**UpdateClusterDatastoreRequestDatastorePermissions**](UpdateClusterDatastoreRequestDatastorePermissions.md) |  | [optional] 
 **Visibility** | Pointer to **string** | Visibility for datastore | [optional] [default to "private"]
+**HeartbeatTarget** | Pointer to **bool** | Heartbeat Target | [optional] 
 
 ## Methods
 
@@ -101,6 +102,31 @@ SetVisibility sets Visibility field to given value.
 `func (o *UpdateClusterDatastoreRequestDatastore) HasVisibility() bool`
 
 HasVisibility returns a boolean if a field has been set.
+
+### GetHeartbeatTarget
+
+`func (o *UpdateClusterDatastoreRequestDatastore) GetHeartbeatTarget() bool`
+
+GetHeartbeatTarget returns the HeartbeatTarget field if non-nil, zero value otherwise.
+
+### GetHeartbeatTargetOk
+
+`func (o *UpdateClusterDatastoreRequestDatastore) GetHeartbeatTargetOk() (*bool, bool)`
+
+GetHeartbeatTargetOk returns a tuple with the HeartbeatTarget field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHeartbeatTarget
+
+`func (o *UpdateClusterDatastoreRequestDatastore) SetHeartbeatTarget(v bool)`
+
+SetHeartbeatTarget sets HeartbeatTarget field to given value.
+
+### HasHeartbeatTarget
+
+`func (o *UpdateClusterDatastoreRequestDatastore) HasHeartbeatTarget() bool`
+
+HasHeartbeatTarget returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

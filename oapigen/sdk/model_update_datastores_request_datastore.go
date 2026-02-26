@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.10
+API version: 8.1.1
 Contact: dev@morpheusdata.com
 */
 
@@ -22,6 +22,8 @@ var _ MappedNullable = &UpdateDatastoresRequestDatastore{}
 type UpdateDatastoresRequestDatastore struct {
 	// Activate `true` or disable `false` the datastore
 	Active *bool `json:"active,omitempty"`
+	// Heartbeat Target
+	HeartbeatTarget *bool `json:"heartbeatTarget,omitempty"`
 	// Setting `private` or `public`
 	Visibility           *string                                              `json:"visibility,omitempty"`
 	TenantPermissions    *UpdateDatastoresRequestDatastoreTenantPermissions   `json:"tenantPermissions,omitempty"`
@@ -82,6 +84,38 @@ func (o *UpdateDatastoresRequestDatastore) IsSetActive() bool {
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *UpdateDatastoresRequestDatastore) SetActive(v bool) {
 	o.Active = &v
+}
+
+// GetHeartbeatTarget returns the HeartbeatTarget field value if set, zero value otherwise.
+func (o *UpdateDatastoresRequestDatastore) GetHeartbeatTarget() bool {
+	if o == nil || IsNil(o.HeartbeatTarget) {
+		var ret bool
+		return ret
+	}
+	return *o.HeartbeatTarget
+}
+
+// GetHeartbeatTargetOk returns a tuple with the HeartbeatTarget field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateDatastoresRequestDatastore) GetHeartbeatTargetOk() (*bool, bool) {
+	if o == nil || IsNil(o.HeartbeatTarget) {
+		return nil, false
+	}
+	return o.HeartbeatTarget, true
+}
+
+// IsSetHeartbeatTarget returns a boolean if a field has been set.
+func (o *UpdateDatastoresRequestDatastore) IsSetHeartbeatTarget() bool {
+	if o != nil && !IsNil(o.HeartbeatTarget) {
+		return true
+	}
+
+	return false
+}
+
+// SetHeartbeatTarget gets a reference to the given bool and assigns it to the HeartbeatTarget field.
+func (o *UpdateDatastoresRequestDatastore) SetHeartbeatTarget(v bool) {
+	o.HeartbeatTarget = &v
 }
 
 // GetVisibility returns the Visibility field value if set, zero value otherwise.
@@ -192,6 +226,9 @@ func (o UpdateDatastoresRequestDatastore) ToMap() (map[string]interface{}, error
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Active) {
 		toSerialize["active"] = o.Active
+	}
+	if !IsNil(o.HeartbeatTarget) {
+		toSerialize["heartbeatTarget"] = o.HeartbeatTarget
 	}
 	if !IsNil(o.Visibility) {
 		toSerialize["visibility"] = o.Visibility

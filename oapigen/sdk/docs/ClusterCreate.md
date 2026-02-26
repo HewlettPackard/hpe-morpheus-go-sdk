@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Name** | **string** | Name of the cluster to be created | 
 **Description** | Pointer to **string** | Description of the cluster to be created | [optional] 
 **Labels** | Pointer to **[]string** | Array of strings (keywords). This will override labels passed under the &#x60;server&#x60; object. | [optional] 
-**Group** | [**ClusterCreateGroup**](ClusterCreateGroup.md) |  | 
+**Group** | Pointer to [**ClusterCreateGroup**](ClusterCreateGroup.md) |  | [optional] 
 **Cloud** | [**ClusterCreateCloud**](ClusterCreateCloud.md) |  | 
 **Config** | Pointer to [**ClusterCreateConfig**](ClusterCreateConfig.md) |  | [optional] 
 **Layout** | [**ClusterCreateLayout**](ClusterCreateLayout.md) |  | 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewClusterCreate
 
-`func NewClusterCreate(type_ ClusterCreateType, name string, group ClusterCreateGroup, cloud ClusterCreateCloud, layout ClusterCreateLayout, server ClusterCreateServer, ) *ClusterCreate`
+`func NewClusterCreate(type_ ClusterCreateType, name string, cloud ClusterCreateCloud, layout ClusterCreateLayout, server ClusterCreateServer, ) *ClusterCreate`
 
 NewClusterCreate instantiates a new ClusterCreate object
 This constructor will assign default values to properties that have it defined,
@@ -144,6 +144,11 @@ and a boolean to check if the value has been set.
 
 SetGroup sets Group field to given value.
 
+### HasGroup
+
+`func (o *ClusterCreate) HasGroup() bool`
+
+HasGroup returns a boolean if a field has been set.
 
 ### GetCloud
 

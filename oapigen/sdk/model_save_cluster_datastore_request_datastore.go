@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.10
+API version: 8.1.1
 Contact: dev@morpheusdata.com
 */
 
@@ -20,17 +20,19 @@ var _ MappedNullable = &SaveClusterDatastoreRequestDatastore{}
 
 // SaveClusterDatastoreRequestDatastore struct for SaveClusterDatastoreRequestDatastore
 type SaveClusterDatastoreRequestDatastore struct {
-	Name                 *string                                                  `json:"name,omitempty"`
-	DatastoreType        *SaveClusterDatastoreRequestDatastoreDatastoreType       `json:"datastoreType,omitempty"`
-	StorageServer        *SaveClusterDatastoreRequestDatastoreStorageServer       `json:"storageServer,omitempty"`
-	Visibility           *string                                                  `json:"visibility,omitempty"`
-	Active               *bool                                                    `json:"active,omitempty"`
-	DefaultStore         *bool                                                    `json:"defaultStore,omitempty"`
-	Config               *SaveClusterDatastoreRequestDatastoreConfig              `json:"config,omitempty"`
-	Tenants              []SaveClusterDatastoreRequestDatastoreTenantsInner       `json:"tenants,omitempty"`
-	ResourcePermissions  *SaveClusterDatastoreRequestDatastoreResourcePermissions `json:"resourcePermissions,omitempty"`
-	Datastores           []map[string]interface{}                                 `json:"datastores,omitempty"`
-	AdditionalProperties map[string]interface{}                                   `json:",remain"`
+	Name                *string                                                  `json:"name,omitempty"`
+	DatastoreType       *SaveClusterDatastoreRequestDatastoreDatastoreType       `json:"datastoreType,omitempty"`
+	StorageServer       *SaveClusterDatastoreRequestDatastoreStorageServer       `json:"storageServer,omitempty"`
+	Visibility          *string                                                  `json:"visibility,omitempty"`
+	Active              *bool                                                    `json:"active,omitempty"`
+	DefaultStore        *bool                                                    `json:"defaultStore,omitempty"`
+	Config              *SaveClusterDatastoreRequestDatastoreConfig              `json:"config,omitempty"`
+	Tenants             []SaveClusterDatastoreRequestDatastoreTenantsInner       `json:"tenants,omitempty"`
+	ResourcePermissions *SaveClusterDatastoreRequestDatastoreResourcePermissions `json:"resourcePermissions,omitempty"`
+	Datastores          []map[string]interface{}                                 `json:"datastores,omitempty"`
+	// Heartbeat Target
+	HeartbeatTarget      *bool                  `json:"heartbeatTarget,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _SaveClusterDatastoreRequestDatastore SaveClusterDatastoreRequestDatastore
@@ -372,6 +374,38 @@ func (o *SaveClusterDatastoreRequestDatastore) SetDatastores(v []map[string]inte
 	o.Datastores = v
 }
 
+// GetHeartbeatTarget returns the HeartbeatTarget field value if set, zero value otherwise.
+func (o *SaveClusterDatastoreRequestDatastore) GetHeartbeatTarget() bool {
+	if o == nil || IsNil(o.HeartbeatTarget) {
+		var ret bool
+		return ret
+	}
+	return *o.HeartbeatTarget
+}
+
+// GetHeartbeatTargetOk returns a tuple with the HeartbeatTarget field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SaveClusterDatastoreRequestDatastore) GetHeartbeatTargetOk() (*bool, bool) {
+	if o == nil || IsNil(o.HeartbeatTarget) {
+		return nil, false
+	}
+	return o.HeartbeatTarget, true
+}
+
+// IsSetHeartbeatTarget returns a boolean if a field has been set.
+func (o *SaveClusterDatastoreRequestDatastore) IsSetHeartbeatTarget() bool {
+	if o != nil && !IsNil(o.HeartbeatTarget) {
+		return true
+	}
+
+	return false
+}
+
+// SetHeartbeatTarget gets a reference to the given bool and assigns it to the HeartbeatTarget field.
+func (o *SaveClusterDatastoreRequestDatastore) SetHeartbeatTarget(v bool) {
+	o.HeartbeatTarget = &v
+}
+
 func (o SaveClusterDatastoreRequestDatastore) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -411,6 +445,9 @@ func (o SaveClusterDatastoreRequestDatastore) ToMap() (map[string]interface{}, e
 	}
 	if !IsNil(o.Datastores) {
 		toSerialize["datastores"] = o.Datastores
+	}
+	if !IsNil(o.HeartbeatTarget) {
+		toSerialize["heartbeatTarget"] = o.HeartbeatTarget
 	}
 
 	for key, value := range o.AdditionalProperties {

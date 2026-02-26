@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.10
+API version: 8.1.1
 Contact: dev@morpheusdata.com
 */
 
@@ -20,10 +20,23 @@ var _ MappedNullable = &ServerBaremetalCreateServerConfig{}
 
 // ServerBaremetalCreateServerConfig struct for ServerBaremetalCreateServerConfig
 type ServerBaremetalCreateServerConfig struct {
-	IloIpAddress         *string                `json:"iloIpAddress,omitempty"`
-	IloUsername          *string                `json:"iloUsername,omitempty"`
-	IloPassword          *string                `json:"iloPassword,omitempty"`
-	MacAddress           *string                `json:"macAddress,omitempty"`
+	IloIpAddress   *string `json:"iloIpAddress,omitempty"`
+	IloUsername    *string `json:"iloUsername,omitempty"`
+	IloPassword    *string `json:"iloPassword,omitempty"`
+	MacAddress     *string `json:"macAddress,omitempty"`
+	ResourcePoolId *int32  `json:"resourcePoolId,omitempty"`
+	// Set to 'true' if the server is pre-provisioned (brownfield)
+	PreProvisioned *bool `json:"preProvisioned,omitempty"`
+	// Set to 'true' if preProvisioned is 'true' and the server has a Windows OS installed
+	WindowsOS *bool `json:"windowsOS,omitempty"`
+	// The IP address of the OS installed on the server. Required if preProvisioned is 'true'.
+	OsIpAddress *string `json:"osIpAddress,omitempty"`
+	// The username to access the OS installed on the server. Required if preProvisioned is 'true'.
+	OsUsername *string `json:"osUsername,omitempty"`
+	// The password to access the OS installed on the server. Required if preProvisioned is 'true'.
+	OsPassword *string `json:"osPassword,omitempty"`
+	// ID of the SSH Key Pair needed to access the OS installed on the server. Required if preProvisioned is 'true' and the OS is Linux and password authentication is disabled.
+	OsSSHKeyId           *int32                 `json:"osSSHKeyId,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -174,6 +187,230 @@ func (o *ServerBaremetalCreateServerConfig) SetMacAddress(v string) {
 	o.MacAddress = &v
 }
 
+// GetResourcePoolId returns the ResourcePoolId field value if set, zero value otherwise.
+func (o *ServerBaremetalCreateServerConfig) GetResourcePoolId() int32 {
+	if o == nil || IsNil(o.ResourcePoolId) {
+		var ret int32
+		return ret
+	}
+	return *o.ResourcePoolId
+}
+
+// GetResourcePoolIdOk returns a tuple with the ResourcePoolId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ServerBaremetalCreateServerConfig) GetResourcePoolIdOk() (*int32, bool) {
+	if o == nil || IsNil(o.ResourcePoolId) {
+		return nil, false
+	}
+	return o.ResourcePoolId, true
+}
+
+// IsSetResourcePoolId returns a boolean if a field has been set.
+func (o *ServerBaremetalCreateServerConfig) IsSetResourcePoolId() bool {
+	if o != nil && !IsNil(o.ResourcePoolId) {
+		return true
+	}
+
+	return false
+}
+
+// SetResourcePoolId gets a reference to the given int32 and assigns it to the ResourcePoolId field.
+func (o *ServerBaremetalCreateServerConfig) SetResourcePoolId(v int32) {
+	o.ResourcePoolId = &v
+}
+
+// GetPreProvisioned returns the PreProvisioned field value if set, zero value otherwise.
+func (o *ServerBaremetalCreateServerConfig) GetPreProvisioned() bool {
+	if o == nil || IsNil(o.PreProvisioned) {
+		var ret bool
+		return ret
+	}
+	return *o.PreProvisioned
+}
+
+// GetPreProvisionedOk returns a tuple with the PreProvisioned field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ServerBaremetalCreateServerConfig) GetPreProvisionedOk() (*bool, bool) {
+	if o == nil || IsNil(o.PreProvisioned) {
+		return nil, false
+	}
+	return o.PreProvisioned, true
+}
+
+// IsSetPreProvisioned returns a boolean if a field has been set.
+func (o *ServerBaremetalCreateServerConfig) IsSetPreProvisioned() bool {
+	if o != nil && !IsNil(o.PreProvisioned) {
+		return true
+	}
+
+	return false
+}
+
+// SetPreProvisioned gets a reference to the given bool and assigns it to the PreProvisioned field.
+func (o *ServerBaremetalCreateServerConfig) SetPreProvisioned(v bool) {
+	o.PreProvisioned = &v
+}
+
+// GetWindowsOS returns the WindowsOS field value if set, zero value otherwise.
+func (o *ServerBaremetalCreateServerConfig) GetWindowsOS() bool {
+	if o == nil || IsNil(o.WindowsOS) {
+		var ret bool
+		return ret
+	}
+	return *o.WindowsOS
+}
+
+// GetWindowsOSOk returns a tuple with the WindowsOS field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ServerBaremetalCreateServerConfig) GetWindowsOSOk() (*bool, bool) {
+	if o == nil || IsNil(o.WindowsOS) {
+		return nil, false
+	}
+	return o.WindowsOS, true
+}
+
+// IsSetWindowsOS returns a boolean if a field has been set.
+func (o *ServerBaremetalCreateServerConfig) IsSetWindowsOS() bool {
+	if o != nil && !IsNil(o.WindowsOS) {
+		return true
+	}
+
+	return false
+}
+
+// SetWindowsOS gets a reference to the given bool and assigns it to the WindowsOS field.
+func (o *ServerBaremetalCreateServerConfig) SetWindowsOS(v bool) {
+	o.WindowsOS = &v
+}
+
+// GetOsIpAddress returns the OsIpAddress field value if set, zero value otherwise.
+func (o *ServerBaremetalCreateServerConfig) GetOsIpAddress() string {
+	if o == nil || IsNil(o.OsIpAddress) {
+		var ret string
+		return ret
+	}
+	return *o.OsIpAddress
+}
+
+// GetOsIpAddressOk returns a tuple with the OsIpAddress field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ServerBaremetalCreateServerConfig) GetOsIpAddressOk() (*string, bool) {
+	if o == nil || IsNil(o.OsIpAddress) {
+		return nil, false
+	}
+	return o.OsIpAddress, true
+}
+
+// IsSetOsIpAddress returns a boolean if a field has been set.
+func (o *ServerBaremetalCreateServerConfig) IsSetOsIpAddress() bool {
+	if o != nil && !IsNil(o.OsIpAddress) {
+		return true
+	}
+
+	return false
+}
+
+// SetOsIpAddress gets a reference to the given string and assigns it to the OsIpAddress field.
+func (o *ServerBaremetalCreateServerConfig) SetOsIpAddress(v string) {
+	o.OsIpAddress = &v
+}
+
+// GetOsUsername returns the OsUsername field value if set, zero value otherwise.
+func (o *ServerBaremetalCreateServerConfig) GetOsUsername() string {
+	if o == nil || IsNil(o.OsUsername) {
+		var ret string
+		return ret
+	}
+	return *o.OsUsername
+}
+
+// GetOsUsernameOk returns a tuple with the OsUsername field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ServerBaremetalCreateServerConfig) GetOsUsernameOk() (*string, bool) {
+	if o == nil || IsNil(o.OsUsername) {
+		return nil, false
+	}
+	return o.OsUsername, true
+}
+
+// IsSetOsUsername returns a boolean if a field has been set.
+func (o *ServerBaremetalCreateServerConfig) IsSetOsUsername() bool {
+	if o != nil && !IsNil(o.OsUsername) {
+		return true
+	}
+
+	return false
+}
+
+// SetOsUsername gets a reference to the given string and assigns it to the OsUsername field.
+func (o *ServerBaremetalCreateServerConfig) SetOsUsername(v string) {
+	o.OsUsername = &v
+}
+
+// GetOsPassword returns the OsPassword field value if set, zero value otherwise.
+func (o *ServerBaremetalCreateServerConfig) GetOsPassword() string {
+	if o == nil || IsNil(o.OsPassword) {
+		var ret string
+		return ret
+	}
+	return *o.OsPassword
+}
+
+// GetOsPasswordOk returns a tuple with the OsPassword field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ServerBaremetalCreateServerConfig) GetOsPasswordOk() (*string, bool) {
+	if o == nil || IsNil(o.OsPassword) {
+		return nil, false
+	}
+	return o.OsPassword, true
+}
+
+// IsSetOsPassword returns a boolean if a field has been set.
+func (o *ServerBaremetalCreateServerConfig) IsSetOsPassword() bool {
+	if o != nil && !IsNil(o.OsPassword) {
+		return true
+	}
+
+	return false
+}
+
+// SetOsPassword gets a reference to the given string and assigns it to the OsPassword field.
+func (o *ServerBaremetalCreateServerConfig) SetOsPassword(v string) {
+	o.OsPassword = &v
+}
+
+// GetOsSSHKeyId returns the OsSSHKeyId field value if set, zero value otherwise.
+func (o *ServerBaremetalCreateServerConfig) GetOsSSHKeyId() int32 {
+	if o == nil || IsNil(o.OsSSHKeyId) {
+		var ret int32
+		return ret
+	}
+	return *o.OsSSHKeyId
+}
+
+// GetOsSSHKeyIdOk returns a tuple with the OsSSHKeyId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ServerBaremetalCreateServerConfig) GetOsSSHKeyIdOk() (*int32, bool) {
+	if o == nil || IsNil(o.OsSSHKeyId) {
+		return nil, false
+	}
+	return o.OsSSHKeyId, true
+}
+
+// IsSetOsSSHKeyId returns a boolean if a field has been set.
+func (o *ServerBaremetalCreateServerConfig) IsSetOsSSHKeyId() bool {
+	if o != nil && !IsNil(o.OsSSHKeyId) {
+		return true
+	}
+
+	return false
+}
+
+// SetOsSSHKeyId gets a reference to the given int32 and assigns it to the OsSSHKeyId field.
+func (o *ServerBaremetalCreateServerConfig) SetOsSSHKeyId(v int32) {
+	o.OsSSHKeyId = &v
+}
+
 func (o ServerBaremetalCreateServerConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -195,6 +432,27 @@ func (o ServerBaremetalCreateServerConfig) ToMap() (map[string]interface{}, erro
 	}
 	if !IsNil(o.MacAddress) {
 		toSerialize["macAddress"] = o.MacAddress
+	}
+	if !IsNil(o.ResourcePoolId) {
+		toSerialize["resourcePoolId"] = o.ResourcePoolId
+	}
+	if !IsNil(o.PreProvisioned) {
+		toSerialize["preProvisioned"] = o.PreProvisioned
+	}
+	if !IsNil(o.WindowsOS) {
+		toSerialize["windowsOS"] = o.WindowsOS
+	}
+	if !IsNil(o.OsIpAddress) {
+		toSerialize["osIpAddress"] = o.OsIpAddress
+	}
+	if !IsNil(o.OsUsername) {
+		toSerialize["osUsername"] = o.OsUsername
+	}
+	if !IsNil(o.OsPassword) {
+		toSerialize["osPassword"] = o.OsPassword
+	}
+	if !IsNil(o.OsSSHKeyId) {
+		toSerialize["osSSHKeyId"] = o.OsSSHKeyId
 	}
 
 	for key, value := range o.AdditionalProperties {

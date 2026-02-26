@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **PublicIpType** | Pointer to **string** | Public IP | [optional] 
 **InstanceProfile** | Pointer to **string** | IAM Profile | [optional] 
 **KmsKeyId** | Pointer to **string** | KMS Key ID | [optional] 
+**UserData** | Pointer to **string** | User Data. Allows for override of cloud-init based user-data yaml or custom scripts | [optional] 
 **PoolProviderType** | Pointer to **string** | The type of pool provider to use for this instance, must be \&quot;mvm\&quot; | [optional] [default to "mvm"]
 **KvmHostId** | Pointer to **int64** | The ID of the KVM host to provision the instance on | [optional] 
 
@@ -701,6 +702,31 @@ SetKmsKeyId sets KmsKeyId field to given value.
 `func (o *InstanceCreateConfig) HasKmsKeyId() bool`
 
 HasKmsKeyId returns a boolean if a field has been set.
+
+### GetUserData
+
+`func (o *InstanceCreateConfig) GetUserData() string`
+
+GetUserData returns the UserData field if non-nil, zero value otherwise.
+
+### GetUserDataOk
+
+`func (o *InstanceCreateConfig) GetUserDataOk() (*string, bool)`
+
+GetUserDataOk returns a tuple with the UserData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserData
+
+`func (o *InstanceCreateConfig) SetUserData(v string)`
+
+SetUserData sets UserData field to given value.
+
+### HasUserData
+
+`func (o *InstanceCreateConfig) HasUserData() bool`
+
+HasUserData returns a boolean if a field has been set.
 
 ### GetPoolProviderType
 

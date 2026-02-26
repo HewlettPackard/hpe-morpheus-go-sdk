@@ -60,6 +60,9 @@ Name | Type | Description | Notes
 **ImageType** | Pointer to **string** |  | [optional] 
 **Online** | Pointer to **bool** |  | [optional] 
 **RawData** | Pointer to **string** |  | [optional] 
+**CreateForMultiAttach** | Pointer to **bool** |  | [optional] 
+**IsMultiAttach** | Pointer to **bool** |  | [optional] 
+**StorageProfile** | Pointer to **NullableString** | Storage Profile Code for the volume storage profile assignment. eg. &#x60;\&quot;kvm-cache-none\&quot;&#x60; or &#x60;\&quot;kvm-cache-directsync\&quot;&#x60;. Use &#x60;/api/provision-types?code&#x3D;kvm&#x60; to see the available &#x60;storageProfiles&#x60; for HVM and KVM. | [optional] 
 **Account** | Pointer to [**AddBaremetalHost200ResponseServerVolumesInnerAccount**](AddBaremetalHost200ResponseServerVolumesInnerAccount.md) |  | [optional] 
 **Owner** | Pointer to [**AddBaremetalHost200ResponseServerVolumesInnerOwner**](AddBaremetalHost200ResponseServerVolumesInnerOwner.md) |  | [optional] 
 
@@ -1662,6 +1665,91 @@ SetRawData sets RawData field to given value.
 
 HasRawData returns a boolean if a field has been set.
 
+### GetCreateForMultiAttach
+
+`func (o *AddBaremetalHost200ResponseServerVolumesInner) GetCreateForMultiAttach() bool`
+
+GetCreateForMultiAttach returns the CreateForMultiAttach field if non-nil, zero value otherwise.
+
+### GetCreateForMultiAttachOk
+
+`func (o *AddBaremetalHost200ResponseServerVolumesInner) GetCreateForMultiAttachOk() (*bool, bool)`
+
+GetCreateForMultiAttachOk returns a tuple with the CreateForMultiAttach field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreateForMultiAttach
+
+`func (o *AddBaremetalHost200ResponseServerVolumesInner) SetCreateForMultiAttach(v bool)`
+
+SetCreateForMultiAttach sets CreateForMultiAttach field to given value.
+
+### HasCreateForMultiAttach
+
+`func (o *AddBaremetalHost200ResponseServerVolumesInner) HasCreateForMultiAttach() bool`
+
+HasCreateForMultiAttach returns a boolean if a field has been set.
+
+### GetIsMultiAttach
+
+`func (o *AddBaremetalHost200ResponseServerVolumesInner) GetIsMultiAttach() bool`
+
+GetIsMultiAttach returns the IsMultiAttach field if non-nil, zero value otherwise.
+
+### GetIsMultiAttachOk
+
+`func (o *AddBaremetalHost200ResponseServerVolumesInner) GetIsMultiAttachOk() (*bool, bool)`
+
+GetIsMultiAttachOk returns a tuple with the IsMultiAttach field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsMultiAttach
+
+`func (o *AddBaremetalHost200ResponseServerVolumesInner) SetIsMultiAttach(v bool)`
+
+SetIsMultiAttach sets IsMultiAttach field to given value.
+
+### HasIsMultiAttach
+
+`func (o *AddBaremetalHost200ResponseServerVolumesInner) HasIsMultiAttach() bool`
+
+HasIsMultiAttach returns a boolean if a field has been set.
+
+### GetStorageProfile
+
+`func (o *AddBaremetalHost200ResponseServerVolumesInner) GetStorageProfile() string`
+
+GetStorageProfile returns the StorageProfile field if non-nil, zero value otherwise.
+
+### GetStorageProfileOk
+
+`func (o *AddBaremetalHost200ResponseServerVolumesInner) GetStorageProfileOk() (*string, bool)`
+
+GetStorageProfileOk returns a tuple with the StorageProfile field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStorageProfile
+
+`func (o *AddBaremetalHost200ResponseServerVolumesInner) SetStorageProfile(v string)`
+
+SetStorageProfile sets StorageProfile field to given value.
+
+### HasStorageProfile
+
+`func (o *AddBaremetalHost200ResponseServerVolumesInner) HasStorageProfile() bool`
+
+HasStorageProfile returns a boolean if a field has been set.
+
+### SetStorageProfileNil
+
+`func (o *AddBaremetalHost200ResponseServerVolumesInner) SetStorageProfileNil(b bool)`
+
+ SetStorageProfileNil sets the value for StorageProfile to be an explicit nil
+
+### UnsetStorageProfile
+`func (o *AddBaremetalHost200ResponseServerVolumesInner) UnsetStorageProfile()`
+
+UnsetStorageProfile ensures that no value is present for StorageProfile, not even an explicit nil
 ### GetAccount
 
 `func (o *AddBaremetalHost200ResponseServerVolumesInner) GetAccount() AddBaremetalHost200ResponseServerVolumesInnerAccount`

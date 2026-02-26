@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.10
+API version: 8.1.1
 Contact: dev@morpheusdata.com
 */
 
@@ -49,7 +49,9 @@ type InstanceCreate struct {
 	// The Workflow ID to execute.
 	TaskSetId *int64 `json:"taskSetId,omitempty"`
 	// The Workflow Name to execute.
-	TaskSetName          *string                `json:"taskSetName,omitempty"`
+	TaskSetName *string `json:"taskSetName,omitempty"`
+	// Server UUIDs is an optional array of uuid string values to assign to the new servers being provisioned for this instance.
+	ServerUUIDs          []string               `json:"serverUUIDs,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -579,6 +581,38 @@ func (o *InstanceCreate) SetTaskSetName(v string) {
 	o.TaskSetName = &v
 }
 
+// GetServerUUIDs returns the ServerUUIDs field value if set, zero value otherwise.
+func (o *InstanceCreate) GetServerUUIDs() []string {
+	if o == nil || IsNil(o.ServerUUIDs) {
+		var ret []string
+		return ret
+	}
+	return o.ServerUUIDs
+}
+
+// GetServerUUIDsOk returns a tuple with the ServerUUIDs field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InstanceCreate) GetServerUUIDsOk() ([]string, bool) {
+	if o == nil || IsNil(o.ServerUUIDs) {
+		return nil, false
+	}
+	return o.ServerUUIDs, true
+}
+
+// IsSetServerUUIDs returns a boolean if a field has been set.
+func (o *InstanceCreate) IsSetServerUUIDs() bool {
+	if o != nil && !IsNil(o.ServerUUIDs) {
+		return true
+	}
+
+	return false
+}
+
+// SetServerUUIDs gets a reference to the given []string and assigns it to the ServerUUIDs field.
+func (o *InstanceCreate) SetServerUUIDs(v []string) {
+	o.ServerUUIDs = v
+}
+
 func (o InstanceCreate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -632,6 +666,9 @@ func (o InstanceCreate) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.TaskSetName) {
 		toSerialize["taskSetName"] = o.TaskSetName
+	}
+	if !IsNil(o.ServerUUIDs) {
+		toSerialize["serverUUIDs"] = o.ServerUUIDs
 	}
 
 	for key, value := range o.AdditionalProperties {

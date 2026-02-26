@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.10
+API version: 8.1.1
 Contact: dev@morpheusdata.com
 */
 
@@ -20,38 +20,38 @@ var _ MappedNullable = &CloudsConfigAWS{}
 
 // CloudsConfigAWS struct for CloudsConfigAWS
 type CloudsConfigAWS struct {
-	Endpoint             *string                       `json:"endpoint,omitempty"`
-	AccessKey            *string                       `json:"accessKey,omitempty"`
-	SecretKey            *string                       `json:"secretKey,omitempty"`
-	UseHostCredentials   *string                       `json:"useHostCredentials,omitempty"`
-	StsAssumeRole        *string                       `json:"stsAssumeRole,omitempty"`
-	IsVpc                *string                       `json:"isVpc,omitempty"`
-	Vpc                  *string                       `json:"vpc,omitempty"`
-	ImageStoreId         *string                       `json:"imageStoreId,omitempty"`
-	EbsEncryption        *string                       `json:"ebsEncryption,omitempty"`
-	CostingReport        *string                       `json:"costingReport,omitempty"`
-	CostingFolder        *string                       `json:"costingFolder,omitempty"`
-	CostingBucket        *string                       `json:"costingBucket,omitempty"`
-	CostingBucketName    *string                       `json:"costingBucketName,omitempty"`
-	CostingRegion        *string                       `json:"costingRegion,omitempty"`
-	CostingAccessKey     *string                       `json:"costingAccessKey,omitempty"`
-	CostingSecretKey     NullableString                `json:"costingSecretKey,omitempty"`
-	CostingReportName    *string                       `json:"costingReportName,omitempty"`
-	ApplianceUrl         *string                       `json:"applianceUrl,omitempty"`
-	DatacenterName       *string                       `json:"datacenterName,omitempty"`
-	NetworkServerId      *string                       `json:"networkServer.id,omitempty"`
-	NetworkServer        *CloudsConfigAWSNetworkServer `json:"networkServer,omitempty"`
-	SecurityServer       NullableString                `json:"securityServer,omitempty"`
-	CertificateProvider  *string                       `json:"certificateProvider,omitempty"`
-	BackupMode           *string                       `json:"backupMode,omitempty"`
-	ReplicationMode      *string                       `json:"replicationMode,omitempty"`
-	DnsIntegrationId     *string                       `json:"dnsIntegrationId,omitempty"`
-	ServiceRegistryId    *string                       `json:"serviceRegistryId,omitempty"`
-	ConfigManagementId   *string                       `json:"configManagementId,omitempty"`
-	ConfigCmdbDiscovery  *bool                         `json:"configCmdbDiscovery,omitempty"`
-	SecretKeyHash        *string                       `json:"secretKeyHash,omitempty"`
-	CostingSecretKeyHash NullableString                `json:"costingSecretKeyHash,omitempty"`
-	AdditionalProperties map[string]interface{}        `json:",remain"`
+	Endpoint             *string                                                 `json:"endpoint,omitempty"`
+	AccessKey            *string                                                 `json:"accessKey,omitempty"`
+	SecretKey            *string                                                 `json:"secretKey,omitempty"`
+	UseHostCredentials   *string                                                 `json:"useHostCredentials,omitempty"`
+	StsAssumeRole        *string                                                 `json:"stsAssumeRole,omitempty"`
+	IsVpc                *string                                                 `json:"isVpc,omitempty"`
+	Vpc                  *string                                                 `json:"vpc,omitempty"`
+	ImageStoreId         *string                                                 `json:"imageStoreId,omitempty"`
+	EbsEncryption        *string                                                 `json:"ebsEncryption,omitempty"`
+	CostingReport        *string                                                 `json:"costingReport,omitempty"`
+	CostingFolder        *string                                                 `json:"costingFolder,omitempty"`
+	CostingBucket        *string                                                 `json:"costingBucket,omitempty"`
+	CostingBucketName    *string                                                 `json:"costingBucketName,omitempty"`
+	CostingRegion        *string                                                 `json:"costingRegion,omitempty"`
+	CostingAccessKey     *string                                                 `json:"costingAccessKey,omitempty"`
+	CostingSecretKey     NullableString                                          `json:"costingSecretKey,omitempty"`
+	CostingReportName    *string                                                 `json:"costingReportName,omitempty"`
+	ApplianceUrl         *string                                                 `json:"applianceUrl,omitempty"`
+	DatacenterName       *string                                                 `json:"datacenterName,omitempty"`
+	NetworkServerId      *string                                                 `json:"networkServer.id,omitempty"`
+	NetworkServer        *AddClouds200ResponseAllOfZoneConfigAnyOf2NetworkServer `json:"networkServer,omitempty"`
+	SecurityServer       NullableString                                          `json:"securityServer,omitempty"`
+	CertificateProvider  *string                                                 `json:"certificateProvider,omitempty"`
+	BackupMode           *string                                                 `json:"backupMode,omitempty"`
+	ReplicationMode      *string                                                 `json:"replicationMode,omitempty"`
+	DnsIntegrationId     *string                                                 `json:"dnsIntegrationId,omitempty"`
+	ServiceRegistryId    *string                                                 `json:"serviceRegistryId,omitempty"`
+	ConfigManagementId   *string                                                 `json:"configManagementId,omitempty"`
+	ConfigCmdbDiscovery  *bool                                                   `json:"configCmdbDiscovery,omitempty"`
+	SecretKeyHash        *string                                                 `json:"secretKeyHash,omitempty"`
+	CostingSecretKeyHash NullableString                                          `json:"costingSecretKeyHash,omitempty"`
+	AdditionalProperties map[string]interface{}                                  `json:",remain"`
 }
 
 type _CloudsConfigAWS CloudsConfigAWS
@@ -725,9 +725,9 @@ func (o *CloudsConfigAWS) SetNetworkServerId(v string) {
 }
 
 // GetNetworkServer returns the NetworkServer field value if set, zero value otherwise.
-func (o *CloudsConfigAWS) GetNetworkServer() CloudsConfigAWSNetworkServer {
+func (o *CloudsConfigAWS) GetNetworkServer() AddClouds200ResponseAllOfZoneConfigAnyOf2NetworkServer {
 	if o == nil || IsNil(o.NetworkServer) {
-		var ret CloudsConfigAWSNetworkServer
+		var ret AddClouds200ResponseAllOfZoneConfigAnyOf2NetworkServer
 		return ret
 	}
 	return *o.NetworkServer
@@ -735,7 +735,7 @@ func (o *CloudsConfigAWS) GetNetworkServer() CloudsConfigAWSNetworkServer {
 
 // GetNetworkServerOk returns a tuple with the NetworkServer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CloudsConfigAWS) GetNetworkServerOk() (*CloudsConfigAWSNetworkServer, bool) {
+func (o *CloudsConfigAWS) GetNetworkServerOk() (*AddClouds200ResponseAllOfZoneConfigAnyOf2NetworkServer, bool) {
 	if o == nil || IsNil(o.NetworkServer) {
 		return nil, false
 	}
@@ -751,8 +751,8 @@ func (o *CloudsConfigAWS) IsSetNetworkServer() bool {
 	return false
 }
 
-// SetNetworkServer gets a reference to the given CloudsConfigAWSNetworkServer and assigns it to the NetworkServer field.
-func (o *CloudsConfigAWS) SetNetworkServer(v CloudsConfigAWSNetworkServer) {
+// SetNetworkServer gets a reference to the given AddClouds200ResponseAllOfZoneConfigAnyOf2NetworkServer and assigns it to the NetworkServer field.
+func (o *CloudsConfigAWS) SetNetworkServer(v AddClouds200ResponseAllOfZoneConfigAnyOf2NetworkServer) {
 	o.NetworkServer = &v
 }
 

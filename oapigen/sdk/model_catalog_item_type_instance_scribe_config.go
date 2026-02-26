@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.10
+API version: 8.1.1
 Contact: dev@morpheusdata.com
 */
 
@@ -23,9 +23,9 @@ var _ fmt.Stringer
 type CatalogItemTypeInstanceScribeConfig struct {
 	AmazonInstanceConfiguration2      *AmazonInstanceConfiguration2
 	AzureInstanceConfiguration2       *AzureInstanceConfiguration2
+	GenericInstanceConfiguration2     *GenericInstanceConfiguration2
 	GoogleCloudInstanceConfiguration2 *GoogleCloudInstanceConfiguration2
 	VMWareInstanceConfiguration2      *VMWareInstanceConfiguration2
-	MapmapOfStringAny                 *map[string]interface{}
 }
 
 func (dst *CatalogItemTypeInstanceScribeConfig) UnmarshalMapstructure(data any) (any, error) {
@@ -45,6 +45,12 @@ func (dst *CatalogItemTypeInstanceScribeConfig) UnmarshalMapstructure(data any) 
 		dst.AzureInstanceConfiguration2 = nil
 	}
 
+	mapstructDecode(data, &dst.GenericInstanceConfiguration2)
+
+	if IsEmpty(dst.GenericInstanceConfiguration2) {
+		dst.GenericInstanceConfiguration2 = nil
+	}
+
 	mapstructDecode(data, &dst.GoogleCloudInstanceConfiguration2)
 
 	if IsEmpty(dst.GoogleCloudInstanceConfiguration2) {
@@ -55,12 +61,6 @@ func (dst *CatalogItemTypeInstanceScribeConfig) UnmarshalMapstructure(data any) 
 
 	if IsEmpty(dst.VMWareInstanceConfiguration2) {
 		dst.VMWareInstanceConfiguration2 = nil
-	}
-
-	mapstructDecode(data, &dst.MapmapOfStringAny)
-
-	if IsEmpty(dst.MapmapOfStringAny) {
-		dst.MapmapOfStringAny = nil
 	}
 
 	return dst, nil
@@ -95,6 +95,19 @@ func (dst *CatalogItemTypeInstanceScribeConfig) UnmarshalJSON(data []byte) error
 		dst.AzureInstanceConfiguration2 = nil
 	}
 
+	// try to unmarshal JSON data into GenericInstanceConfiguration2
+	err = json.Unmarshal(data, &dst.GenericInstanceConfiguration2)
+	if err == nil {
+		jsonGenericInstanceConfiguration2, _ := json.Marshal(dst.GenericInstanceConfiguration2)
+		if string(jsonGenericInstanceConfiguration2) == "{}" { // empty struct
+			dst.GenericInstanceConfiguration2 = nil
+		} else {
+			return nil // data stored in dst.GenericInstanceConfiguration2, return on the first match
+		}
+	} else {
+		dst.GenericInstanceConfiguration2 = nil
+	}
+
 	// try to unmarshal JSON data into GoogleCloudInstanceConfiguration2
 	err = json.Unmarshal(data, &dst.GoogleCloudInstanceConfiguration2)
 	if err == nil {
@@ -121,19 +134,6 @@ func (dst *CatalogItemTypeInstanceScribeConfig) UnmarshalJSON(data []byte) error
 		dst.VMWareInstanceConfiguration2 = nil
 	}
 
-	// try to unmarshal JSON data into MapmapOfStringAny
-	err = json.Unmarshal(data, &dst.MapmapOfStringAny)
-	if err == nil {
-		jsonMapmapOfStringAny, _ := json.Marshal(dst.MapmapOfStringAny)
-		if string(jsonMapmapOfStringAny) == "{}" { // empty struct
-			dst.MapmapOfStringAny = nil
-		} else {
-			return nil // data stored in dst.MapmapOfStringAny, return on the first match
-		}
-	} else {
-		dst.MapmapOfStringAny = nil
-	}
-
 	return NewResponseValidationError("data failed to match schemas in anyOf(CatalogItemTypeInstanceScribeConfig)")
 }
 
@@ -147,16 +147,16 @@ func (src CatalogItemTypeInstanceScribeConfig) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.AzureInstanceConfiguration2)
 	}
 
+	if src.GenericInstanceConfiguration2 != nil {
+		return json.Marshal(&src.GenericInstanceConfiguration2)
+	}
+
 	if src.GoogleCloudInstanceConfiguration2 != nil {
 		return json.Marshal(&src.GoogleCloudInstanceConfiguration2)
 	}
 
 	if src.VMWareInstanceConfiguration2 != nil {
 		return json.Marshal(&src.VMWareInstanceConfiguration2)
-	}
-
-	if src.MapmapOfStringAny != nil {
-		return json.Marshal(&src.MapmapOfStringAny)
 	}
 
 	return nil, nil // no data in anyOf schemas

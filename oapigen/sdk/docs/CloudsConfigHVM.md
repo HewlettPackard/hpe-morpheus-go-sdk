@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **ConfigCmdbDiscovery** | Pointer to **bool** |  | [optional] 
 **EnableNetworkTypeSelection** | Pointer to **NullableString** |  | [optional] 
 **KubeUrl** | Pointer to **NullableString** |  | [optional] 
-**NetworkServer** | Pointer to [**CloudsConfigHVMNetworkServer**](CloudsConfigHVMNetworkServer.md) |  | [optional] 
+**NetworkServer** | Pointer to [**AddClouds200ResponseAllOfZoneConfigAnyOfNetworkServer**](AddClouds200ResponseAllOfZoneConfigAnyOfNetworkServer.md) |  | [optional] 
 **NetworkServerId** | Pointer to **string** |  | [optional] 
 **ReplicationMode** | Pointer to **NullableString** |  | [optional] 
 **SecurityServer** | Pointer to **NullableString** |  | [optional] 
@@ -380,20 +380,20 @@ HasKubeUrl returns a boolean if a field has been set.
 UnsetKubeUrl ensures that no value is present for KubeUrl, not even an explicit nil
 ### GetNetworkServer
 
-`func (o *CloudsConfigHVM) GetNetworkServer() CloudsConfigHVMNetworkServer`
+`func (o *CloudsConfigHVM) GetNetworkServer() AddClouds200ResponseAllOfZoneConfigAnyOfNetworkServer`
 
 GetNetworkServer returns the NetworkServer field if non-nil, zero value otherwise.
 
 ### GetNetworkServerOk
 
-`func (o *CloudsConfigHVM) GetNetworkServerOk() (*CloudsConfigHVMNetworkServer, bool)`
+`func (o *CloudsConfigHVM) GetNetworkServerOk() (*AddClouds200ResponseAllOfZoneConfigAnyOfNetworkServer, bool)`
 
 GetNetworkServerOk returns a tuple with the NetworkServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkServer
 
-`func (o *CloudsConfigHVM) SetNetworkServer(v CloudsConfigHVMNetworkServer)`
+`func (o *CloudsConfigHVM) SetNetworkServer(v AddClouds200ResponseAllOfZoneConfigAnyOfNetworkServer)`
 
 SetNetworkServer sets NetworkServer field to given value.
 

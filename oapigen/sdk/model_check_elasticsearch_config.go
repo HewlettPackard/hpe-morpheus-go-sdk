@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.10
+API version: 8.1.1
 Contact: dev@morpheusdata.com
 */
 
@@ -23,22 +23,12 @@ type CheckElasticsearchConfig struct {
 	// Hostname or IP address of the Elasticsearch server
 	EsHost string `json:"esHost"`
 	// Port to connect to the HTTP service
-	EsPort            string  `json:"esPort"`
-	CheckUser         *string `json:"checkUser,omitempty"`
-	TextCheckOn       *string `json:"textCheckOn,omitempty"`
-	CheckPassword     *string `json:"checkPassword,omitempty"`
-	WebTextMatch      *string `json:"webTextMatch,omitempty"`
-	CheckPasswordHash *string `json:"checkPasswordHash,omitempty"`
-	// Set to on to turn on tunneling
-	TunnelOn *string `json:"tunnelOn,omitempty"`
-	// Hostname or IP address of the proxy host
-	SshHost *string `json:"sshHost,omitempty"`
-	// Port for SSH on the proxy host, defaults to 22
-	SshPort *int64 `json:"sshPort,omitempty"`
-	// SSH user on the proxy host to login as
-	SshUser *string `json:"sshUser,omitempty"`
-	// Password for user, if not using key based authentication
-	SshPassword          *string                `json:"sshPassword,omitempty"`
+	EsPort               string                 `json:"esPort"`
+	CheckUser            *string                `json:"checkUser,omitempty"`
+	TextCheckOn          *string                `json:"textCheckOn,omitempty"`
+	CheckPassword        *string                `json:"checkPassword,omitempty"`
+	WebTextMatch         *string                `json:"webTextMatch,omitempty"`
+	CheckPasswordHash    *string                `json:"checkPasswordHash,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -52,8 +42,6 @@ func NewCheckElasticsearchConfig(esHost string, esPort string) *CheckElasticsear
 	this := CheckElasticsearchConfig{}
 	this.EsHost = esHost
 	this.EsPort = esPort
-	var tunnelOn string = "off"
-	this.TunnelOn = &tunnelOn
 	return &this
 }
 
@@ -62,8 +50,6 @@ func NewCheckElasticsearchConfig(esHost string, esPort string) *CheckElasticsear
 // but it doesn't guarantee that properties required by API are set
 func NewCheckElasticsearchConfigWithDefaults() *CheckElasticsearchConfig {
 	this := CheckElasticsearchConfig{}
-	var tunnelOn string = "off"
-	this.TunnelOn = &tunnelOn
 	return &this
 }
 
@@ -275,166 +261,6 @@ func (o *CheckElasticsearchConfig) SetCheckPasswordHash(v string) {
 	o.CheckPasswordHash = &v
 }
 
-// GetTunnelOn returns the TunnelOn field value if set, zero value otherwise.
-func (o *CheckElasticsearchConfig) GetTunnelOn() string {
-	if o == nil || IsNil(o.TunnelOn) {
-		var ret string
-		return ret
-	}
-	return *o.TunnelOn
-}
-
-// GetTunnelOnOk returns a tuple with the TunnelOn field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CheckElasticsearchConfig) GetTunnelOnOk() (*string, bool) {
-	if o == nil || IsNil(o.TunnelOn) {
-		return nil, false
-	}
-	return o.TunnelOn, true
-}
-
-// IsSetTunnelOn returns a boolean if a field has been set.
-func (o *CheckElasticsearchConfig) IsSetTunnelOn() bool {
-	if o != nil && !IsNil(o.TunnelOn) {
-		return true
-	}
-
-	return false
-}
-
-// SetTunnelOn gets a reference to the given string and assigns it to the TunnelOn field.
-func (o *CheckElasticsearchConfig) SetTunnelOn(v string) {
-	o.TunnelOn = &v
-}
-
-// GetSshHost returns the SshHost field value if set, zero value otherwise.
-func (o *CheckElasticsearchConfig) GetSshHost() string {
-	if o == nil || IsNil(o.SshHost) {
-		var ret string
-		return ret
-	}
-	return *o.SshHost
-}
-
-// GetSshHostOk returns a tuple with the SshHost field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CheckElasticsearchConfig) GetSshHostOk() (*string, bool) {
-	if o == nil || IsNil(o.SshHost) {
-		return nil, false
-	}
-	return o.SshHost, true
-}
-
-// IsSetSshHost returns a boolean if a field has been set.
-func (o *CheckElasticsearchConfig) IsSetSshHost() bool {
-	if o != nil && !IsNil(o.SshHost) {
-		return true
-	}
-
-	return false
-}
-
-// SetSshHost gets a reference to the given string and assigns it to the SshHost field.
-func (o *CheckElasticsearchConfig) SetSshHost(v string) {
-	o.SshHost = &v
-}
-
-// GetSshPort returns the SshPort field value if set, zero value otherwise.
-func (o *CheckElasticsearchConfig) GetSshPort() int64 {
-	if o == nil || IsNil(o.SshPort) {
-		var ret int64
-		return ret
-	}
-	return *o.SshPort
-}
-
-// GetSshPortOk returns a tuple with the SshPort field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CheckElasticsearchConfig) GetSshPortOk() (*int64, bool) {
-	if o == nil || IsNil(o.SshPort) {
-		return nil, false
-	}
-	return o.SshPort, true
-}
-
-// IsSetSshPort returns a boolean if a field has been set.
-func (o *CheckElasticsearchConfig) IsSetSshPort() bool {
-	if o != nil && !IsNil(o.SshPort) {
-		return true
-	}
-
-	return false
-}
-
-// SetSshPort gets a reference to the given int64 and assigns it to the SshPort field.
-func (o *CheckElasticsearchConfig) SetSshPort(v int64) {
-	o.SshPort = &v
-}
-
-// GetSshUser returns the SshUser field value if set, zero value otherwise.
-func (o *CheckElasticsearchConfig) GetSshUser() string {
-	if o == nil || IsNil(o.SshUser) {
-		var ret string
-		return ret
-	}
-	return *o.SshUser
-}
-
-// GetSshUserOk returns a tuple with the SshUser field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CheckElasticsearchConfig) GetSshUserOk() (*string, bool) {
-	if o == nil || IsNil(o.SshUser) {
-		return nil, false
-	}
-	return o.SshUser, true
-}
-
-// IsSetSshUser returns a boolean if a field has been set.
-func (o *CheckElasticsearchConfig) IsSetSshUser() bool {
-	if o != nil && !IsNil(o.SshUser) {
-		return true
-	}
-
-	return false
-}
-
-// SetSshUser gets a reference to the given string and assigns it to the SshUser field.
-func (o *CheckElasticsearchConfig) SetSshUser(v string) {
-	o.SshUser = &v
-}
-
-// GetSshPassword returns the SshPassword field value if set, zero value otherwise.
-func (o *CheckElasticsearchConfig) GetSshPassword() string {
-	if o == nil || IsNil(o.SshPassword) {
-		var ret string
-		return ret
-	}
-	return *o.SshPassword
-}
-
-// GetSshPasswordOk returns a tuple with the SshPassword field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CheckElasticsearchConfig) GetSshPasswordOk() (*string, bool) {
-	if o == nil || IsNil(o.SshPassword) {
-		return nil, false
-	}
-	return o.SshPassword, true
-}
-
-// IsSetSshPassword returns a boolean if a field has been set.
-func (o *CheckElasticsearchConfig) IsSetSshPassword() bool {
-	if o != nil && !IsNil(o.SshPassword) {
-		return true
-	}
-
-	return false
-}
-
-// SetSshPassword gets a reference to the given string and assigns it to the SshPassword field.
-func (o *CheckElasticsearchConfig) SetSshPassword(v string) {
-	o.SshPassword = &v
-}
-
 func (o CheckElasticsearchConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -461,21 +287,6 @@ func (o CheckElasticsearchConfig) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.CheckPasswordHash) {
 		toSerialize["checkPasswordHash"] = o.CheckPasswordHash
-	}
-	if !IsNil(o.TunnelOn) {
-		toSerialize["tunnelOn"] = o.TunnelOn
-	}
-	if !IsNil(o.SshHost) {
-		toSerialize["sshHost"] = o.SshHost
-	}
-	if !IsNil(o.SshPort) {
-		toSerialize["sshPort"] = o.SshPort
-	}
-	if !IsNil(o.SshUser) {
-		toSerialize["sshUser"] = o.SshUser
-	}
-	if !IsNil(o.SshPassword) {
-		toSerialize["sshPassword"] = o.SshPassword
 	}
 
 	for key, value := range o.AdditionalProperties {

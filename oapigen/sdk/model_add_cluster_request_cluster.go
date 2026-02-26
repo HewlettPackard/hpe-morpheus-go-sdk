@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.10
+API version: 8.1.1
 Contact: dev@morpheusdata.com
 */
 
@@ -27,7 +27,7 @@ type AddClusterRequestCluster struct {
 	Description *string `json:"description,omitempty"`
 	// Array of strings (keywords). This will override labels passed under the `server` object.
 	Labels []string                        `json:"labels,omitempty"`
-	Group  AddClusterRequestClusterGroup   `json:"group"`
+	Group  *AddClusterRequestClusterGroup  `json:"group,omitempty"`
 	Cloud  AddClusterRequestClusterCloud   `json:"cloud"`
 	Config *AddClusterRequestClusterConfig `json:"config,omitempty"`
 	Layout AddClusterRequestClusterLayout  `json:"layout"`
@@ -45,11 +45,10 @@ type _AddClusterRequestCluster AddClusterRequestCluster
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddClusterRequestCluster(type_ AddClusterRequestClusterType, name string, group AddClusterRequestClusterGroup, cloud AddClusterRequestClusterCloud, layout AddClusterRequestClusterLayout, server AddClusterRequestClusterServer) *AddClusterRequestCluster {
+func NewAddClusterRequestCluster(type_ AddClusterRequestClusterType, name string, cloud AddClusterRequestClusterCloud, layout AddClusterRequestClusterLayout, server AddClusterRequestClusterServer) *AddClusterRequestCluster {
 	this := AddClusterRequestCluster{}
 	this.Type = type_
 	this.Name = name
-	this.Group = group
 	this.Cloud = cloud
 	this.Layout = layout
 	this.Server = server
@@ -180,28 +179,36 @@ func (o *AddClusterRequestCluster) SetLabels(v []string) {
 	o.Labels = v
 }
 
-// GetGroup returns the Group field value
+// GetGroup returns the Group field value if set, zero value otherwise.
 func (o *AddClusterRequestCluster) GetGroup() AddClusterRequestClusterGroup {
-	if o == nil {
+	if o == nil || IsNil(o.Group) {
 		var ret AddClusterRequestClusterGroup
 		return ret
 	}
-
-	return o.Group
+	return *o.Group
 }
 
-// GetGroupOk returns a tuple with the Group field value
+// GetGroupOk returns a tuple with the Group field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddClusterRequestCluster) GetGroupOk() (*AddClusterRequestClusterGroup, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Group) {
 		return nil, false
 	}
-	return &o.Group, true
+	return o.Group, true
 }
 
-// SetGroup sets field value
+// IsSetGroup returns a boolean if a field has been set.
+func (o *AddClusterRequestCluster) IsSetGroup() bool {
+	if o != nil && !IsNil(o.Group) {
+		return true
+	}
+
+	return false
+}
+
+// SetGroup gets a reference to the given AddClusterRequestClusterGroup and assigns it to the Group field.
 func (o *AddClusterRequestCluster) SetGroup(v AddClusterRequestClusterGroup) {
-	o.Group = v
+	o.Group = &v
 }
 
 // GetCloud returns the Cloud field value
@@ -390,7 +397,9 @@ func (o AddClusterRequestCluster) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Labels) {
 		toSerialize["labels"] = o.Labels
 	}
-	toSerialize["group"] = o.Group
+	if !IsNil(o.Group) {
+		toSerialize["group"] = o.Group
+	}
 	toSerialize["cloud"] = o.Cloud
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config

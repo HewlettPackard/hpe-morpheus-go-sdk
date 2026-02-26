@@ -60,6 +60,9 @@ Name | Type | Description | Notes
 **ImageType** | Pointer to **string** |  | [optional] 
 **Online** | Pointer to **bool** |  | [optional] 
 **RawData** | Pointer to **string** |  | [optional] 
+**CreateForMultiAttach** | Pointer to **bool** |  | [optional] 
+**IsMultiAttach** | Pointer to **bool** |  | [optional] 
+**StorageProfile** | Pointer to **NullableString** | Storage Profile Code for the volume storage profile assignment. eg. &#x60;\&quot;kvm-cache-none\&quot;&#x60; or &#x60;\&quot;kvm-cache-directsync\&quot;&#x60;. Use &#x60;/api/provision-types?code&#x3D;kvm&#x60; to see the available &#x60;storageProfiles&#x60; for HVM and KVM. | [optional] 
 **Account** | Pointer to [**StorageVolumeAccount**](StorageVolumeAccount.md) |  | [optional] 
 **Owner** | Pointer to [**StorageVolumeOwner**](StorageVolumeOwner.md) |  | [optional] 
 
@@ -1662,6 +1665,91 @@ SetRawData sets RawData field to given value.
 
 HasRawData returns a boolean if a field has been set.
 
+### GetCreateForMultiAttach
+
+`func (o *StorageVolume) GetCreateForMultiAttach() bool`
+
+GetCreateForMultiAttach returns the CreateForMultiAttach field if non-nil, zero value otherwise.
+
+### GetCreateForMultiAttachOk
+
+`func (o *StorageVolume) GetCreateForMultiAttachOk() (*bool, bool)`
+
+GetCreateForMultiAttachOk returns a tuple with the CreateForMultiAttach field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreateForMultiAttach
+
+`func (o *StorageVolume) SetCreateForMultiAttach(v bool)`
+
+SetCreateForMultiAttach sets CreateForMultiAttach field to given value.
+
+### HasCreateForMultiAttach
+
+`func (o *StorageVolume) HasCreateForMultiAttach() bool`
+
+HasCreateForMultiAttach returns a boolean if a field has been set.
+
+### GetIsMultiAttach
+
+`func (o *StorageVolume) GetIsMultiAttach() bool`
+
+GetIsMultiAttach returns the IsMultiAttach field if non-nil, zero value otherwise.
+
+### GetIsMultiAttachOk
+
+`func (o *StorageVolume) GetIsMultiAttachOk() (*bool, bool)`
+
+GetIsMultiAttachOk returns a tuple with the IsMultiAttach field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsMultiAttach
+
+`func (o *StorageVolume) SetIsMultiAttach(v bool)`
+
+SetIsMultiAttach sets IsMultiAttach field to given value.
+
+### HasIsMultiAttach
+
+`func (o *StorageVolume) HasIsMultiAttach() bool`
+
+HasIsMultiAttach returns a boolean if a field has been set.
+
+### GetStorageProfile
+
+`func (o *StorageVolume) GetStorageProfile() string`
+
+GetStorageProfile returns the StorageProfile field if non-nil, zero value otherwise.
+
+### GetStorageProfileOk
+
+`func (o *StorageVolume) GetStorageProfileOk() (*string, bool)`
+
+GetStorageProfileOk returns a tuple with the StorageProfile field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStorageProfile
+
+`func (o *StorageVolume) SetStorageProfile(v string)`
+
+SetStorageProfile sets StorageProfile field to given value.
+
+### HasStorageProfile
+
+`func (o *StorageVolume) HasStorageProfile() bool`
+
+HasStorageProfile returns a boolean if a field has been set.
+
+### SetStorageProfileNil
+
+`func (o *StorageVolume) SetStorageProfileNil(b bool)`
+
+ SetStorageProfileNil sets the value for StorageProfile to be an explicit nil
+
+### UnsetStorageProfile
+`func (o *StorageVolume) UnsetStorageProfile()`
+
+UnsetStorageProfile ensures that no value is present for StorageProfile, not even an explicit nil
 ### GetAccount
 
 `func (o *StorageVolume) GetAccount() StorageVolumeAccount`

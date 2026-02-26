@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.10
+API version: 8.1.1
 Contact: dev@morpheusdata.com
 */
 
@@ -20,7 +20,7 @@ var _ MappedNullable = &InstancesNetworkInterfaces5{}
 
 // InstancesNetworkInterfaces5 struct for InstancesNetworkInterfaces5
 type InstancesNetworkInterfaces5 struct {
-	Network InstancesNetworkInterfaces5Network `json:"network"`
+	Network InstancesNetworkInterfaces1Network `json:"network"`
 	// The id of type of the network interface.
 	NetworkInterfaceTypeId *int64 `json:"networkInterfaceTypeId,omitempty"`
 	// The mode for determining ip address. Can be 'static', 'dhcp' or empty string.
@@ -32,7 +32,7 @@ type InstancesNetworkInterfaces5 struct {
 	// The interface id. Applicable when resizing and you want to identify an interface to update that already exists.
 	Id *int64 `json:"id,omitempty"`
 	// The nested networkInterfaces can be used to define child virtual network interfaces. The Options API `/api/options/zoneNetworkOptions?zoneId=5&provisionTypeId=10` can be used to see which types support this (`hasVirtualInvirtualInterfaces = true` and list of available `virtualInterfaces` will be defined.
-	NetworkInterfaces    []InstancesNetworkInterfaces5NetworkInterfacesInner `json:"networkInterfaces,omitempty"`
+	NetworkInterfaces    []InstancesNetworkInterfaces1NetworkInterfacesInner `json:"networkInterfaces,omitempty"`
 	AdditionalProperties map[string]interface{}                              `json:",remain"`
 }
 
@@ -42,7 +42,7 @@ type _InstancesNetworkInterfaces5 InstancesNetworkInterfaces5
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInstancesNetworkInterfaces5(network InstancesNetworkInterfaces5Network) *InstancesNetworkInterfaces5 {
+func NewInstancesNetworkInterfaces5(network InstancesNetworkInterfaces1Network) *InstancesNetworkInterfaces5 {
 	this := InstancesNetworkInterfaces5{}
 	this.Network = network
 	var ipMode string = ""
@@ -61,9 +61,9 @@ func NewInstancesNetworkInterfaces5WithDefaults() *InstancesNetworkInterfaces5 {
 }
 
 // GetNetwork returns the Network field value
-func (o *InstancesNetworkInterfaces5) GetNetwork() InstancesNetworkInterfaces5Network {
+func (o *InstancesNetworkInterfaces5) GetNetwork() InstancesNetworkInterfaces1Network {
 	if o == nil {
-		var ret InstancesNetworkInterfaces5Network
+		var ret InstancesNetworkInterfaces1Network
 		return ret
 	}
 
@@ -72,7 +72,7 @@ func (o *InstancesNetworkInterfaces5) GetNetwork() InstancesNetworkInterfaces5Ne
 
 // GetNetworkOk returns a tuple with the Network field value
 // and a boolean to check if the value has been set.
-func (o *InstancesNetworkInterfaces5) GetNetworkOk() (*InstancesNetworkInterfaces5Network, bool) {
+func (o *InstancesNetworkInterfaces5) GetNetworkOk() (*InstancesNetworkInterfaces1Network, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -80,7 +80,7 @@ func (o *InstancesNetworkInterfaces5) GetNetworkOk() (*InstancesNetworkInterface
 }
 
 // SetNetwork sets field value
-func (o *InstancesNetworkInterfaces5) SetNetwork(v InstancesNetworkInterfaces5Network) {
+func (o *InstancesNetworkInterfaces5) SetNetwork(v InstancesNetworkInterfaces1Network) {
 	o.Network = v
 }
 
@@ -245,9 +245,9 @@ func (o *InstancesNetworkInterfaces5) SetId(v int64) {
 }
 
 // GetNetworkInterfaces returns the NetworkInterfaces field value if set, zero value otherwise.
-func (o *InstancesNetworkInterfaces5) GetNetworkInterfaces() []InstancesNetworkInterfaces5NetworkInterfacesInner {
+func (o *InstancesNetworkInterfaces5) GetNetworkInterfaces() []InstancesNetworkInterfaces1NetworkInterfacesInner {
 	if o == nil || IsNil(o.NetworkInterfaces) {
-		var ret []InstancesNetworkInterfaces5NetworkInterfacesInner
+		var ret []InstancesNetworkInterfaces1NetworkInterfacesInner
 		return ret
 	}
 	return o.NetworkInterfaces
@@ -255,7 +255,7 @@ func (o *InstancesNetworkInterfaces5) GetNetworkInterfaces() []InstancesNetworkI
 
 // GetNetworkInterfacesOk returns a tuple with the NetworkInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstancesNetworkInterfaces5) GetNetworkInterfacesOk() ([]InstancesNetworkInterfaces5NetworkInterfacesInner, bool) {
+func (o *InstancesNetworkInterfaces5) GetNetworkInterfacesOk() ([]InstancesNetworkInterfaces1NetworkInterfacesInner, bool) {
 	if o == nil || IsNil(o.NetworkInterfaces) {
 		return nil, false
 	}
@@ -271,8 +271,8 @@ func (o *InstancesNetworkInterfaces5) IsSetNetworkInterfaces() bool {
 	return false
 }
 
-// SetNetworkInterfaces gets a reference to the given []InstancesNetworkInterfaces5NetworkInterfacesInner and assigns it to the NetworkInterfaces field.
-func (o *InstancesNetworkInterfaces5) SetNetworkInterfaces(v []InstancesNetworkInterfaces5NetworkInterfacesInner) {
+// SetNetworkInterfaces gets a reference to the given []InstancesNetworkInterfaces1NetworkInterfacesInner and assigns it to the NetworkInterfaces field.
+func (o *InstancesNetworkInterfaces5) SetNetworkInterfaces(v []InstancesNetworkInterfaces1NetworkInterfacesInner) {
 	o.NetworkInterfaces = v
 }
 

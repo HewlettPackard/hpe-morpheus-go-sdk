@@ -16,15 +16,15 @@ Name | Type | Description | Notes
 **Enabled** | Pointer to **bool** | Can be used to enable / disable the catalog item type. | [optional] [default to true]
 **Featured** | Pointer to **bool** | Can be used to feature the catalog item type. | [optional] [default to false]
 **AllowQuantity** | Pointer to **bool** | Can users order more than one of this item at a time. | [optional] [default to false]
-**Config** | [**AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig.md) |  | 
+**Config** | [**InstanceCatalogItemTypeConfig**](InstanceCatalogItemTypeConfig.md) |  | 
 **InstanceSpec** | Pointer to **string** | The instance &#x60;config&#x60; specification as a string in the JSON format. | [optional] 
 **FormType** | Pointer to **string** | Form Type determines if the configuration options come from a Form (form) or a list of Inputs (optionTypes). | [optional] [default to "optionTypes"]
-**Form** | Pointer to [**AddCatalogItemTypeRequestCatalogItemTypeOneOf2Form**](AddCatalogItemTypeRequestCatalogItemTypeOneOf2Form.md) |  | [optional] 
+**Form** | Pointer to [**WorkflowCatalogItemTypeForm**](WorkflowCatalogItemTypeForm.md) |  | [optional] 
 **OptionTypes** | Pointer to **[]int64** | Array of option type IDs. Only applies to formType &#39;optionTypes&#39;. | [optional] 
 **Content** | Pointer to **string** | Documentation content for this Catalog Item. Markdown-formatted text is accepted and displayed appropriately when the item is ordered from the Service Catalog. A new Catalog Item-type Wiki entry will also be added containing this information. | [optional] 
-**Blueprint** | [**AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint**](AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint.md) |  | 
+**Blueprint** | [**BlueprintCatalogItemTypeBlueprint**](BlueprintCatalogItemTypeBlueprint.md) |  | 
 **AppSpec** | Pointer to **string** | The appSpec for blueprint type catalog items is a string in the Scribe YAML format with fields | [optional] 
-**Workflow** | [**AddCatalogItemTypeRequestCatalogItemTypeOneOf2Workflow**](AddCatalogItemTypeRequestCatalogItemTypeOneOf2Workflow.md) |  | 
+**Workflow** | [**WorkflowCatalogItemTypeWorkflow**](WorkflowCatalogItemTypeWorkflow.md) |  | 
 **Context** | Pointer to **string** | Context for running the workflow, determines if a target resource must be selected. | [optional] 
 **WorkflowConfig** | Pointer to **string** | Configuration object that contains settings for the workflow. | [optional] 
 
@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 
 ### NewAddCatalogItemTypeRequestCatalogItemType
 
-`func NewAddCatalogItemTypeRequestCatalogItemType(config AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig, blueprint AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint, workflow AddCatalogItemTypeRequestCatalogItemTypeOneOf2Workflow, ) *AddCatalogItemTypeRequestCatalogItemType`
+`func NewAddCatalogItemTypeRequestCatalogItemType(config InstanceCatalogItemTypeConfig, blueprint BlueprintCatalogItemTypeBlueprint, workflow WorkflowCatalogItemTypeWorkflow, ) *AddCatalogItemTypeRequestCatalogItemType`
 
 NewAddCatalogItemTypeRequestCatalogItemType instantiates a new AddCatalogItemTypeRequestCatalogItemType object
 This constructor will assign default values to properties that have it defined,
@@ -349,20 +349,20 @@ HasAllowQuantity returns a boolean if a field has been set.
 
 ### GetConfig
 
-`func (o *AddCatalogItemTypeRequestCatalogItemType) GetConfig() AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig`
+`func (o *AddCatalogItemTypeRequestCatalogItemType) GetConfig() InstanceCatalogItemTypeConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *AddCatalogItemTypeRequestCatalogItemType) GetConfigOk() (*AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig, bool)`
+`func (o *AddCatalogItemTypeRequestCatalogItemType) GetConfigOk() (*InstanceCatalogItemTypeConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *AddCatalogItemTypeRequestCatalogItemType) SetConfig(v AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig)`
+`func (o *AddCatalogItemTypeRequestCatalogItemType) SetConfig(v InstanceCatalogItemTypeConfig)`
 
 SetConfig sets Config field to given value.
 
@@ -419,20 +419,20 @@ HasFormType returns a boolean if a field has been set.
 
 ### GetForm
 
-`func (o *AddCatalogItemTypeRequestCatalogItemType) GetForm() AddCatalogItemTypeRequestCatalogItemTypeOneOf2Form`
+`func (o *AddCatalogItemTypeRequestCatalogItemType) GetForm() WorkflowCatalogItemTypeForm`
 
 GetForm returns the Form field if non-nil, zero value otherwise.
 
 ### GetFormOk
 
-`func (o *AddCatalogItemTypeRequestCatalogItemType) GetFormOk() (*AddCatalogItemTypeRequestCatalogItemTypeOneOf2Form, bool)`
+`func (o *AddCatalogItemTypeRequestCatalogItemType) GetFormOk() (*WorkflowCatalogItemTypeForm, bool)`
 
 GetFormOk returns a tuple with the Form field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetForm
 
-`func (o *AddCatalogItemTypeRequestCatalogItemType) SetForm(v AddCatalogItemTypeRequestCatalogItemTypeOneOf2Form)`
+`func (o *AddCatalogItemTypeRequestCatalogItemType) SetForm(v WorkflowCatalogItemTypeForm)`
 
 SetForm sets Form field to given value.
 
@@ -494,20 +494,20 @@ HasContent returns a boolean if a field has been set.
 
 ### GetBlueprint
 
-`func (o *AddCatalogItemTypeRequestCatalogItemType) GetBlueprint() AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint`
+`func (o *AddCatalogItemTypeRequestCatalogItemType) GetBlueprint() BlueprintCatalogItemTypeBlueprint`
 
 GetBlueprint returns the Blueprint field if non-nil, zero value otherwise.
 
 ### GetBlueprintOk
 
-`func (o *AddCatalogItemTypeRequestCatalogItemType) GetBlueprintOk() (*AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint, bool)`
+`func (o *AddCatalogItemTypeRequestCatalogItemType) GetBlueprintOk() (*BlueprintCatalogItemTypeBlueprint, bool)`
 
 GetBlueprintOk returns a tuple with the Blueprint field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBlueprint
 
-`func (o *AddCatalogItemTypeRequestCatalogItemType) SetBlueprint(v AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint)`
+`func (o *AddCatalogItemTypeRequestCatalogItemType) SetBlueprint(v BlueprintCatalogItemTypeBlueprint)`
 
 SetBlueprint sets Blueprint field to given value.
 
@@ -539,20 +539,20 @@ HasAppSpec returns a boolean if a field has been set.
 
 ### GetWorkflow
 
-`func (o *AddCatalogItemTypeRequestCatalogItemType) GetWorkflow() AddCatalogItemTypeRequestCatalogItemTypeOneOf2Workflow`
+`func (o *AddCatalogItemTypeRequestCatalogItemType) GetWorkflow() WorkflowCatalogItemTypeWorkflow`
 
 GetWorkflow returns the Workflow field if non-nil, zero value otherwise.
 
 ### GetWorkflowOk
 
-`func (o *AddCatalogItemTypeRequestCatalogItemType) GetWorkflowOk() (*AddCatalogItemTypeRequestCatalogItemTypeOneOf2Workflow, bool)`
+`func (o *AddCatalogItemTypeRequestCatalogItemType) GetWorkflowOk() (*WorkflowCatalogItemTypeWorkflow, bool)`
 
 GetWorkflowOk returns a tuple with the Workflow field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWorkflow
 
-`func (o *AddCatalogItemTypeRequestCatalogItemType) SetWorkflow(v AddCatalogItemTypeRequestCatalogItemTypeOneOf2Workflow)`
+`func (o *AddCatalogItemTypeRequestCatalogItemType) SetWorkflow(v WorkflowCatalogItemTypeWorkflow)`
 
 SetWorkflow sets Workflow field to given value.
 

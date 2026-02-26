@@ -17,10 +17,6 @@ Name | Type | Description | Notes
 **Authpassword** | Pointer to **string** |  | [optional] 
 **Priv** | Pointer to **string** | Privacy protocol | [optional] 
 **Privpassword** | Pointer to **string** |  | [optional] 
-**SshHost** | Pointer to **string** | Hostname or IP address of the proxy host | [optional] 
-**SshPort** | Pointer to **int64** | Port for SSH on the proxy host, defaults to 22 | [optional] 
-**SshUser** | Pointer to **string** | SSH user on the proxy host to login as | [optional] 
-**SshPassword** | Pointer to **string** | Password for user, if not using key based authentication | [optional] 
 
 ## Methods
 
@@ -355,106 +351,6 @@ SetPrivpassword sets Privpassword field to given value.
 `func (o *SNMPConfig) HasPrivpassword() bool`
 
 HasPrivpassword returns a boolean if a field has been set.
-
-### GetSshHost
-
-`func (o *SNMPConfig) GetSshHost() string`
-
-GetSshHost returns the SshHost field if non-nil, zero value otherwise.
-
-### GetSshHostOk
-
-`func (o *SNMPConfig) GetSshHostOk() (*string, bool)`
-
-GetSshHostOk returns a tuple with the SshHost field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSshHost
-
-`func (o *SNMPConfig) SetSshHost(v string)`
-
-SetSshHost sets SshHost field to given value.
-
-### HasSshHost
-
-`func (o *SNMPConfig) HasSshHost() bool`
-
-HasSshHost returns a boolean if a field has been set.
-
-### GetSshPort
-
-`func (o *SNMPConfig) GetSshPort() int64`
-
-GetSshPort returns the SshPort field if non-nil, zero value otherwise.
-
-### GetSshPortOk
-
-`func (o *SNMPConfig) GetSshPortOk() (*int64, bool)`
-
-GetSshPortOk returns a tuple with the SshPort field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSshPort
-
-`func (o *SNMPConfig) SetSshPort(v int64)`
-
-SetSshPort sets SshPort field to given value.
-
-### HasSshPort
-
-`func (o *SNMPConfig) HasSshPort() bool`
-
-HasSshPort returns a boolean if a field has been set.
-
-### GetSshUser
-
-`func (o *SNMPConfig) GetSshUser() string`
-
-GetSshUser returns the SshUser field if non-nil, zero value otherwise.
-
-### GetSshUserOk
-
-`func (o *SNMPConfig) GetSshUserOk() (*string, bool)`
-
-GetSshUserOk returns a tuple with the SshUser field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSshUser
-
-`func (o *SNMPConfig) SetSshUser(v string)`
-
-SetSshUser sets SshUser field to given value.
-
-### HasSshUser
-
-`func (o *SNMPConfig) HasSshUser() bool`
-
-HasSshUser returns a boolean if a field has been set.
-
-### GetSshPassword
-
-`func (o *SNMPConfig) GetSshPassword() string`
-
-GetSshPassword returns the SshPassword field if non-nil, zero value otherwise.
-
-### GetSshPasswordOk
-
-`func (o *SNMPConfig) GetSshPasswordOk() (*string, bool)`
-
-GetSshPasswordOk returns a tuple with the SshPassword field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSshPassword
-
-`func (o *SNMPConfig) SetSshPassword(v string)`
-
-SetSshPassword sets SshPassword field to given value.
-
-### HasSshPassword
-
-`func (o *SNMPConfig) HasSshPassword() bool`
-
-HasSshPassword returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

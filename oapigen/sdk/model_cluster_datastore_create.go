@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.10
+API version: 8.1.1
 Contact: dev@morpheusdata.com
 */
 
@@ -20,17 +20,19 @@ var _ MappedNullable = &ClusterDatastoreCreate{}
 
 // ClusterDatastoreCreate struct for ClusterDatastoreCreate
 type ClusterDatastoreCreate struct {
-	Name                 *string                                    `json:"name,omitempty"`
-	DatastoreType        *ClusterDatastoreCreateDatastoreType       `json:"datastoreType,omitempty"`
-	StorageServer        *ClusterDatastoreCreateStorageServer       `json:"storageServer,omitempty"`
-	Visibility           *string                                    `json:"visibility,omitempty"`
-	Active               *bool                                      `json:"active,omitempty"`
-	DefaultStore         *bool                                      `json:"defaultStore,omitempty"`
-	Config               *ClusterDatastoreCreateConfig              `json:"config,omitempty"`
-	Tenants              []ClusterDatastoreCreateTenantsInner       `json:"tenants,omitempty"`
-	ResourcePermissions  *ClusterDatastoreCreateResourcePermissions `json:"resourcePermissions,omitempty"`
-	Datastores           []map[string]interface{}                   `json:"datastores,omitempty"`
-	AdditionalProperties map[string]interface{}                     `json:",remain"`
+	Name                *string                                    `json:"name,omitempty"`
+	DatastoreType       *ClusterDatastoreCreateDatastoreType       `json:"datastoreType,omitempty"`
+	StorageServer       *ClusterDatastoreCreateStorageServer       `json:"storageServer,omitempty"`
+	Visibility          *string                                    `json:"visibility,omitempty"`
+	Active              *bool                                      `json:"active,omitempty"`
+	DefaultStore        *bool                                      `json:"defaultStore,omitempty"`
+	Config              *ClusterDatastoreCreateConfig              `json:"config,omitempty"`
+	Tenants             []ClusterDatastoreCreateTenantsInner       `json:"tenants,omitempty"`
+	ResourcePermissions *ClusterDatastoreCreateResourcePermissions `json:"resourcePermissions,omitempty"`
+	Datastores          []map[string]interface{}                   `json:"datastores,omitempty"`
+	// Heartbeat Target
+	HeartbeatTarget      *bool                  `json:"heartbeatTarget,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ClusterDatastoreCreate ClusterDatastoreCreate
@@ -372,6 +374,38 @@ func (o *ClusterDatastoreCreate) SetDatastores(v []map[string]interface{}) {
 	o.Datastores = v
 }
 
+// GetHeartbeatTarget returns the HeartbeatTarget field value if set, zero value otherwise.
+func (o *ClusterDatastoreCreate) GetHeartbeatTarget() bool {
+	if o == nil || IsNil(o.HeartbeatTarget) {
+		var ret bool
+		return ret
+	}
+	return *o.HeartbeatTarget
+}
+
+// GetHeartbeatTargetOk returns a tuple with the HeartbeatTarget field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClusterDatastoreCreate) GetHeartbeatTargetOk() (*bool, bool) {
+	if o == nil || IsNil(o.HeartbeatTarget) {
+		return nil, false
+	}
+	return o.HeartbeatTarget, true
+}
+
+// IsSetHeartbeatTarget returns a boolean if a field has been set.
+func (o *ClusterDatastoreCreate) IsSetHeartbeatTarget() bool {
+	if o != nil && !IsNil(o.HeartbeatTarget) {
+		return true
+	}
+
+	return false
+}
+
+// SetHeartbeatTarget gets a reference to the given bool and assigns it to the HeartbeatTarget field.
+func (o *ClusterDatastoreCreate) SetHeartbeatTarget(v bool) {
+	o.HeartbeatTarget = &v
+}
+
 func (o ClusterDatastoreCreate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -411,6 +445,9 @@ func (o ClusterDatastoreCreate) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Datastores) {
 		toSerialize["datastores"] = o.Datastores
+	}
+	if !IsNil(o.HeartbeatTarget) {
+		toSerialize["heartbeatTarget"] = o.HeartbeatTarget
 	}
 
 	for key, value := range o.AdditionalProperties {

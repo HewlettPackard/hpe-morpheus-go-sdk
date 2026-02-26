@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.10
+API version: 8.1.1
 Contact: dev@morpheusdata.com
 */
 
@@ -1973,9 +1973,16 @@ func (a *LibraryAPIService) ListVirtualImagesExecute(r ApiListVirtualImagesReque
 }
 
 type ApiRemoveVirtualImageRequest struct {
-	ctx            context.Context
-	ApiService     *LibraryAPIService
-	virtualImageId int64
+	ctx             context.Context
+	ApiService      *LibraryAPIService
+	virtualImageId  int64
+	removeFromCloud *bool
+}
+
+// Include removeFromCloud&#x3D;true to delete the image location files from all clouds.
+func (r ApiRemoveVirtualImageRequest) RemoveFromCloud(removeFromCloud bool) ApiRemoveVirtualImageRequest {
+	r.removeFromCloud = &removeFromCloud
+	return r
 }
 
 func (r ApiRemoveVirtualImageRequest) Execute() (*RemoveGroups200Response, *http.Response, error) {
@@ -1985,7 +1992,7 @@ func (r ApiRemoveVirtualImageRequest) Execute() (*RemoveGroups200Response, *http
 /*
 RemoveVirtualImage Delete a Virtual Image
 
-Will delete a virtual image and any associated files, use removeFromCloud=true to also delete image locations from all clouds.
+Will delete a virtual image and any associated files, use removeFromCloud=true to delete the image location files from all clouds.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param virtualImageId Virtual Image ID
@@ -2022,6 +2029,9 @@ func (a *LibraryAPIService) RemoveVirtualImageExecute(r ApiRemoveVirtualImageReq
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.removeFromCloud != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "removeFromCloud", r.removeFromCloud, "form", "")
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

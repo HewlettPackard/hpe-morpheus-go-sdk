@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.10
+API version: 8.1.1
 Contact: dev@morpheusdata.com
 */
 
@@ -20,23 +20,13 @@ var _ MappedNullable = &CheckConfigAnyOf{}
 
 // CheckConfigAnyOf struct for CheckConfigAnyOf
 type CheckConfigAnyOf struct {
-	ContainerName     string         `json:"containerName"`
-	ExternalId        NullableString `json:"externalId,omitempty"`
-	CheckUser         *string        `json:"checkUser,omitempty"`
-	TextCheckOn       *string        `json:"textCheckOn,omitempty"`
-	CheckPassword     *string        `json:"checkPassword,omitempty"`
-	WebTextMatch      *string        `json:"webTextMatch,omitempty"`
-	CheckPasswordHash *string        `json:"checkPasswordHash,omitempty"`
-	// Set to on to turn on tunneling
-	TunnelOn *string `json:"tunnelOn,omitempty"`
-	// Hostname or IP address of the proxy host
-	SshHost *string `json:"sshHost,omitempty"`
-	// Port for SSH on the proxy host, defaults to 22
-	SshPort *int64 `json:"sshPort,omitempty"`
-	// SSH user on the proxy host to login as
-	SshUser *string `json:"sshUser,omitempty"`
-	// Password for user, if not using key based authentication
-	SshPassword          *string                `json:"sshPassword,omitempty"`
+	ContainerName        string                 `json:"containerName"`
+	ExternalId           NullableString         `json:"externalId,omitempty"`
+	CheckUser            *string                `json:"checkUser,omitempty"`
+	TextCheckOn          *string                `json:"textCheckOn,omitempty"`
+	CheckPassword        *string                `json:"checkPassword,omitempty"`
+	WebTextMatch         *string                `json:"webTextMatch,omitempty"`
+	CheckPasswordHash    *string                `json:"checkPasswordHash,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -49,8 +39,6 @@ type _CheckConfigAnyOf CheckConfigAnyOf
 func NewCheckConfigAnyOf(containerName string) *CheckConfigAnyOf {
 	this := CheckConfigAnyOf{}
 	this.ContainerName = containerName
-	var tunnelOn string = "off"
-	this.TunnelOn = &tunnelOn
 	return &this
 }
 
@@ -59,8 +47,6 @@ func NewCheckConfigAnyOf(containerName string) *CheckConfigAnyOf {
 // but it doesn't guarantee that properties required by API are set
 func NewCheckConfigAnyOfWithDefaults() *CheckConfigAnyOf {
 	this := CheckConfigAnyOf{}
-	var tunnelOn string = "off"
-	this.TunnelOn = &tunnelOn
 	return &this
 }
 
@@ -291,166 +277,6 @@ func (o *CheckConfigAnyOf) SetCheckPasswordHash(v string) {
 	o.CheckPasswordHash = &v
 }
 
-// GetTunnelOn returns the TunnelOn field value if set, zero value otherwise.
-func (o *CheckConfigAnyOf) GetTunnelOn() string {
-	if o == nil || IsNil(o.TunnelOn) {
-		var ret string
-		return ret
-	}
-	return *o.TunnelOn
-}
-
-// GetTunnelOnOk returns a tuple with the TunnelOn field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CheckConfigAnyOf) GetTunnelOnOk() (*string, bool) {
-	if o == nil || IsNil(o.TunnelOn) {
-		return nil, false
-	}
-	return o.TunnelOn, true
-}
-
-// IsSetTunnelOn returns a boolean if a field has been set.
-func (o *CheckConfigAnyOf) IsSetTunnelOn() bool {
-	if o != nil && !IsNil(o.TunnelOn) {
-		return true
-	}
-
-	return false
-}
-
-// SetTunnelOn gets a reference to the given string and assigns it to the TunnelOn field.
-func (o *CheckConfigAnyOf) SetTunnelOn(v string) {
-	o.TunnelOn = &v
-}
-
-// GetSshHost returns the SshHost field value if set, zero value otherwise.
-func (o *CheckConfigAnyOf) GetSshHost() string {
-	if o == nil || IsNil(o.SshHost) {
-		var ret string
-		return ret
-	}
-	return *o.SshHost
-}
-
-// GetSshHostOk returns a tuple with the SshHost field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CheckConfigAnyOf) GetSshHostOk() (*string, bool) {
-	if o == nil || IsNil(o.SshHost) {
-		return nil, false
-	}
-	return o.SshHost, true
-}
-
-// IsSetSshHost returns a boolean if a field has been set.
-func (o *CheckConfigAnyOf) IsSetSshHost() bool {
-	if o != nil && !IsNil(o.SshHost) {
-		return true
-	}
-
-	return false
-}
-
-// SetSshHost gets a reference to the given string and assigns it to the SshHost field.
-func (o *CheckConfigAnyOf) SetSshHost(v string) {
-	o.SshHost = &v
-}
-
-// GetSshPort returns the SshPort field value if set, zero value otherwise.
-func (o *CheckConfigAnyOf) GetSshPort() int64 {
-	if o == nil || IsNil(o.SshPort) {
-		var ret int64
-		return ret
-	}
-	return *o.SshPort
-}
-
-// GetSshPortOk returns a tuple with the SshPort field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CheckConfigAnyOf) GetSshPortOk() (*int64, bool) {
-	if o == nil || IsNil(o.SshPort) {
-		return nil, false
-	}
-	return o.SshPort, true
-}
-
-// IsSetSshPort returns a boolean if a field has been set.
-func (o *CheckConfigAnyOf) IsSetSshPort() bool {
-	if o != nil && !IsNil(o.SshPort) {
-		return true
-	}
-
-	return false
-}
-
-// SetSshPort gets a reference to the given int64 and assigns it to the SshPort field.
-func (o *CheckConfigAnyOf) SetSshPort(v int64) {
-	o.SshPort = &v
-}
-
-// GetSshUser returns the SshUser field value if set, zero value otherwise.
-func (o *CheckConfigAnyOf) GetSshUser() string {
-	if o == nil || IsNil(o.SshUser) {
-		var ret string
-		return ret
-	}
-	return *o.SshUser
-}
-
-// GetSshUserOk returns a tuple with the SshUser field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CheckConfigAnyOf) GetSshUserOk() (*string, bool) {
-	if o == nil || IsNil(o.SshUser) {
-		return nil, false
-	}
-	return o.SshUser, true
-}
-
-// IsSetSshUser returns a boolean if a field has been set.
-func (o *CheckConfigAnyOf) IsSetSshUser() bool {
-	if o != nil && !IsNil(o.SshUser) {
-		return true
-	}
-
-	return false
-}
-
-// SetSshUser gets a reference to the given string and assigns it to the SshUser field.
-func (o *CheckConfigAnyOf) SetSshUser(v string) {
-	o.SshUser = &v
-}
-
-// GetSshPassword returns the SshPassword field value if set, zero value otherwise.
-func (o *CheckConfigAnyOf) GetSshPassword() string {
-	if o == nil || IsNil(o.SshPassword) {
-		var ret string
-		return ret
-	}
-	return *o.SshPassword
-}
-
-// GetSshPasswordOk returns a tuple with the SshPassword field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CheckConfigAnyOf) GetSshPasswordOk() (*string, bool) {
-	if o == nil || IsNil(o.SshPassword) {
-		return nil, false
-	}
-	return o.SshPassword, true
-}
-
-// IsSetSshPassword returns a boolean if a field has been set.
-func (o *CheckConfigAnyOf) IsSetSshPassword() bool {
-	if o != nil && !IsNil(o.SshPassword) {
-		return true
-	}
-
-	return false
-}
-
-// SetSshPassword gets a reference to the given string and assigns it to the SshPassword field.
-func (o *CheckConfigAnyOf) SetSshPassword(v string) {
-	o.SshPassword = &v
-}
-
 func (o CheckConfigAnyOf) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -479,21 +305,6 @@ func (o CheckConfigAnyOf) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.CheckPasswordHash) {
 		toSerialize["checkPasswordHash"] = o.CheckPasswordHash
-	}
-	if !IsNil(o.TunnelOn) {
-		toSerialize["tunnelOn"] = o.TunnelOn
-	}
-	if !IsNil(o.SshHost) {
-		toSerialize["sshHost"] = o.SshHost
-	}
-	if !IsNil(o.SshPort) {
-		toSerialize["sshPort"] = o.SshPort
-	}
-	if !IsNil(o.SshUser) {
-		toSerialize["sshUser"] = o.SshUser
-	}
-	if !IsNil(o.SshPassword) {
-		toSerialize["sshPassword"] = o.SshPassword
 	}
 
 	for key, value := range o.AdditionalProperties {

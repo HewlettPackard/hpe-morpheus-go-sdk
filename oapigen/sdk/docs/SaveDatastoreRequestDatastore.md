@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **TenantPermissions** | Pointer to [**SaveDatastoreRequestDatastoreTenantPermissions**](SaveDatastoreRequestDatastoreTenantPermissions.md) |  | [optional] 
 **ResourcePermissions** | Pointer to [**SaveDatastoreRequestDatastoreResourcePermissions**](SaveDatastoreRequestDatastoreResourcePermissions.md) |  | [optional] 
 **Datastores** | Pointer to **[]map[string]interface{}** | List of datastores associated with this datastore, for use with vSphere clouds. | [optional] 
+**HeartbeatTarget** | Pointer to **bool** | Heartbeat Target | [optional] 
 
 ## Methods
 
@@ -310,6 +311,31 @@ SetDatastores sets Datastores field to given value.
 `func (o *SaveDatastoreRequestDatastore) HasDatastores() bool`
 
 HasDatastores returns a boolean if a field has been set.
+
+### GetHeartbeatTarget
+
+`func (o *SaveDatastoreRequestDatastore) GetHeartbeatTarget() bool`
+
+GetHeartbeatTarget returns the HeartbeatTarget field if non-nil, zero value otherwise.
+
+### GetHeartbeatTargetOk
+
+`func (o *SaveDatastoreRequestDatastore) GetHeartbeatTargetOk() (*bool, bool)`
+
+GetHeartbeatTargetOk returns a tuple with the HeartbeatTarget field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHeartbeatTarget
+
+`func (o *SaveDatastoreRequestDatastore) SetHeartbeatTarget(v bool)`
+
+SetHeartbeatTarget sets HeartbeatTarget field to given value.
+
+### HasHeartbeatTarget
+
+`func (o *SaveDatastoreRequestDatastore) HasHeartbeatTarget() bool`
+
+HasHeartbeatTarget returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

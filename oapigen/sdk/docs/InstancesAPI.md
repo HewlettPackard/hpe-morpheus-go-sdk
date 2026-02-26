@@ -255,7 +255,7 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	details := true // bool | Include details=false to exclude extra details about the instance, ie. containerDetails. Available in api version 5.2.8/5.3.2. (optional) (default to true)
+	details := true // bool | Include details=false to exclude extra details about the instance and its container(s) and server(s), ie. instancePrice, apps, powerSchedule, isScalable, instanceThreshold, containerDetails.server. (optional) (default to true)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -285,7 +285,7 @@ Other parameters are passed through a pointer to a apiGetInstanceRequest struct 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **details** | **bool** | Include details&#x3D;false to exclude extra details about the instance, ie. containerDetails. Available in api version 5.2.8/5.3.2. | [default to true]
+ **details** | **bool** | Include details&#x3D;false to exclude extra details about the instance and its container(s) and server(s), ie. instancePrice, apps, powerSchedule, isScalable, instanceThreshold, containerDetails.server. | [default to true]
 
 ### Return type
 
@@ -377,7 +377,7 @@ Name | Type | Description  | Notes
 
 ## ListInstances
 
-> ListInstances200Response ListInstances(ctx).Max(max).Offset(offset).Name(name).Phrase(phrase).ZoneId(zoneId).SiteId(siteId).PlanId(planId).InstanceType(instanceType).LastUpdated(lastUpdated).CreatedBy(createdBy).AgentInstalled(agentInstalled).Status(status).Environment(environment).ShowDeleted(showDeleted).Deleted(deleted).ExpireDate(expireDate).ExpireDateMin(expireDateMin).ExpireDays(expireDays).ExpireDaysMin(expireDaysMin).ShutdownDate(shutdownDate).ShutdownDateMin(shutdownDateMin).ShutdownDays(shutdownDays).ShutdownDaysMin(shutdownDaysMin).Labels(labels).AllLabels(allLabels).TagsName(tagsName).Details(details).Execute()
+> ListInstances200Response ListInstances(ctx).Max(max).Offset(offset).Name(name).Phrase(phrase).ZoneId(zoneId).SiteId(siteId).PlanId(planId).ServerId(serverId).ParentServerId(parentServerId).InstanceType(instanceType).LastUpdated(lastUpdated).CreatedBy(createdBy).AgentInstalled(agentInstalled).Status(status).Environment(environment).ShowDeleted(showDeleted).Deleted(deleted).ExpireDate(expireDate).ExpireDateMin(expireDateMin).ExpireDays(expireDays).ExpireDaysMin(expireDaysMin).ShutdownDate(shutdownDate).ShutdownDateMin(shutdownDateMin).ShutdownDays(shutdownDays).ShutdownDaysMin(shutdownDaysMin).Labels(labels).AllLabels(allLabels).TagsName(tagsName).Details(details).Execute()
 
 Get All Instances
 
@@ -404,6 +404,8 @@ func main() {
 	zoneId := int64(3) // int64 | The Cloud ID (Zone ID) for Filtering (optional)
 	siteId := int64(7) // int64 | The Group ID (Site ID) for Filtering (optional)
 	planId := int64(1) // int64 | The Plan ID for Filtering (optional)
+	serverId := int64(97) // int64 | The Server ID for Filtering (optional)
+	parentServerId := int64(36) // int64 | The Parent Server (Hypervisor) ID for Filtering (optional)
 	instanceType := "ubuntu" // string | The Instance Type Code for Filtering (optional)
 	lastUpdated := time.Now() // time.Time | Date filter, restricts query to only load resources updated more recently than the date specified (ISO 8601) (optional)
 	createdBy := int64(63) // int64 | The User ID for Filtering (optional)
@@ -423,11 +425,11 @@ func main() {
 	labels := "labels_example" // string | Filter by label(s), matches records that contain any of the specified labels (optional)
 	allLabels := "allLabels_example" // string | Filter by label(s), matches records that contain all of the specified labels (optional)
 	tagsName := "value" // string | Filter by tags (metadata). This allows filtering by a tag name and value(s)  (optional)
-	details := true // bool | Include details=true to return more details about the instance, ie. containerDetails. Available in api version 5.2.8/5.3.2. (optional) (default to false)
+	details := true // bool | Include details=true to return more details about the instance and its container(s) and server(s), ie. instancePrice, apps, powerSchedule, isScalable, instanceThreshold, containerDetails.server. (optional) (default to false)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.InstancesAPI.ListInstances(context.Background()).Max(max).Offset(offset).Name(name).Phrase(phrase).ZoneId(zoneId).SiteId(siteId).PlanId(planId).InstanceType(instanceType).LastUpdated(lastUpdated).CreatedBy(createdBy).AgentInstalled(agentInstalled).Status(status).Environment(environment).ShowDeleted(showDeleted).Deleted(deleted).ExpireDate(expireDate).ExpireDateMin(expireDateMin).ExpireDays(expireDays).ExpireDaysMin(expireDaysMin).ShutdownDate(shutdownDate).ShutdownDateMin(shutdownDateMin).ShutdownDays(shutdownDays).ShutdownDaysMin(shutdownDaysMin).Labels(labels).AllLabels(allLabels).TagsName(tagsName).Details(details).Execute()
+	resp, r, err := apiClient.InstancesAPI.ListInstances(context.Background()).Max(max).Offset(offset).Name(name).Phrase(phrase).ZoneId(zoneId).SiteId(siteId).PlanId(planId).ServerId(serverId).ParentServerId(parentServerId).InstanceType(instanceType).LastUpdated(lastUpdated).CreatedBy(createdBy).AgentInstalled(agentInstalled).Status(status).Environment(environment).ShowDeleted(showDeleted).Deleted(deleted).ExpireDate(expireDate).ExpireDateMin(expireDateMin).ExpireDays(expireDays).ExpireDaysMin(expireDaysMin).ShutdownDate(shutdownDate).ShutdownDateMin(shutdownDateMin).ShutdownDays(shutdownDays).ShutdownDaysMin(shutdownDaysMin).Labels(labels).AllLabels(allLabels).TagsName(tagsName).Details(details).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `InstancesAPI.ListInstances``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -455,6 +457,8 @@ Name | Type | Description  | Notes
  **zoneId** | **int64** | The Cloud ID (Zone ID) for Filtering | 
  **siteId** | **int64** | The Group ID (Site ID) for Filtering | 
  **planId** | **int64** | The Plan ID for Filtering | 
+ **serverId** | **int64** | The Server ID for Filtering | 
+ **parentServerId** | **int64** | The Parent Server (Hypervisor) ID for Filtering | 
  **instanceType** | **string** | The Instance Type Code for Filtering | 
  **lastUpdated** | **time.Time** | Date filter, restricts query to only load resources updated more recently than the date specified (ISO 8601) | 
  **createdBy** | **int64** | The User ID for Filtering | 
@@ -474,7 +478,7 @@ Name | Type | Description  | Notes
  **labels** | **string** | Filter by label(s), matches records that contain any of the specified labels | 
  **allLabels** | **string** | Filter by label(s), matches records that contain all of the specified labels | 
  **tagsName** | **string** | Filter by tags (metadata). This allows filtering by a tag name and value(s)  | 
- **details** | **bool** | Include details&#x3D;true to return more details about the instance, ie. containerDetails. Available in api version 5.2.8/5.3.2. | [default to false]
+ **details** | **bool** | Include details&#x3D;true to return more details about the instance and its container(s) and server(s), ie. instancePrice, apps, powerSchedule, isScalable, instanceThreshold, containerDetails.server. | [default to false]
 
 ### Return type
 

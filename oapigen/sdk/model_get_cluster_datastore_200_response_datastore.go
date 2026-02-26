@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.10
+API version: 8.1.1
 Contact: dev@morpheusdata.com
 */
 
@@ -20,22 +20,24 @@ var _ MappedNullable = &GetClusterDatastore200ResponseDatastore{}
 
 // GetClusterDatastore200ResponseDatastore struct for GetClusterDatastore200ResponseDatastore
 type GetClusterDatastore200ResponseDatastore struct {
-	Id                   *int64                                                      `json:"id,omitempty"`
-	Name                 *string                                                     `json:"name,omitempty"`
-	Code                 NullableString                                              `json:"code,omitempty"`
-	DatastoreType        *GetClusterDatastore200ResponseDatastoreDatastoreType       `json:"datastoreType,omitempty"`
-	StorageServer        *GetClusterDatastore200ResponseDatastoreStorageServer       `json:"storageServer,omitempty"`
-	Type                 *string                                                     `json:"type,omitempty"`
-	Visibility           *string                                                     `json:"visibility,omitempty"`
-	StorageSize          NullableInt64                                               `json:"storageSize,omitempty"`
-	FreeSpace            NullableInt64                                               `json:"freeSpace,omitempty"`
-	DrsEnabled           *bool                                                       `json:"drsEnabled,omitempty"`
-	Active               *bool                                                       `json:"active,omitempty"`
-	AllowWrite           *bool                                                       `json:"allowWrite,omitempty"`
-	DefaultStore         *bool                                                       `json:"defaultStore,omitempty"`
-	Online               *bool                                                       `json:"online,omitempty"`
-	AllowRead            *bool                                                       `json:"allowRead,omitempty"`
-	AllowProvision       *bool                                                       `json:"allowProvision,omitempty"`
+	Id             *int64                                                `json:"id,omitempty"`
+	Name           *string                                               `json:"name,omitempty"`
+	Code           NullableString                                        `json:"code,omitempty"`
+	DatastoreType  *GetClusterDatastore200ResponseDatastoreDatastoreType `json:"datastoreType,omitempty"`
+	StorageServer  *GetClusterDatastore200ResponseDatastoreStorageServer `json:"storageServer,omitempty"`
+	Type           *string                                               `json:"type,omitempty"`
+	Visibility     *string                                               `json:"visibility,omitempty"`
+	StorageSize    NullableInt64                                         `json:"storageSize,omitempty"`
+	FreeSpace      NullableInt64                                         `json:"freeSpace,omitempty"`
+	DrsEnabled     *bool                                                 `json:"drsEnabled,omitempty"`
+	Active         *bool                                                 `json:"active,omitempty"`
+	AllowWrite     *bool                                                 `json:"allowWrite,omitempty"`
+	DefaultStore   *bool                                                 `json:"defaultStore,omitempty"`
+	Online         *bool                                                 `json:"online,omitempty"`
+	AllowRead      *bool                                                 `json:"allowRead,omitempty"`
+	AllowProvision *bool                                                 `json:"allowProvision,omitempty"`
+	// Heartbeat Target
+	HeartbeatTarget      *bool                                                       `json:"heartbeatTarget,omitempty"`
 	RefType              *string                                                     `json:"refType,omitempty"`
 	RefId                *int64                                                      `json:"refId,omitempty"`
 	ExternalId           *string                                                     `json:"externalId,omitempty"`
@@ -612,6 +614,38 @@ func (o *GetClusterDatastore200ResponseDatastore) SetAllowProvision(v bool) {
 	o.AllowProvision = &v
 }
 
+// GetHeartbeatTarget returns the HeartbeatTarget field value if set, zero value otherwise.
+func (o *GetClusterDatastore200ResponseDatastore) GetHeartbeatTarget() bool {
+	if o == nil || IsNil(o.HeartbeatTarget) {
+		var ret bool
+		return ret
+	}
+	return *o.HeartbeatTarget
+}
+
+// GetHeartbeatTargetOk returns a tuple with the HeartbeatTarget field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetClusterDatastore200ResponseDatastore) GetHeartbeatTargetOk() (*bool, bool) {
+	if o == nil || IsNil(o.HeartbeatTarget) {
+		return nil, false
+	}
+	return o.HeartbeatTarget, true
+}
+
+// IsSetHeartbeatTarget returns a boolean if a field has been set.
+func (o *GetClusterDatastore200ResponseDatastore) IsSetHeartbeatTarget() bool {
+	if o != nil && !IsNil(o.HeartbeatTarget) {
+		return true
+	}
+
+	return false
+}
+
+// SetHeartbeatTarget gets a reference to the given bool and assigns it to the HeartbeatTarget field.
+func (o *GetClusterDatastore200ResponseDatastore) SetHeartbeatTarget(v bool) {
+	o.HeartbeatTarget = &v
+}
+
 // GetRefType returns the RefType field value if set, zero value otherwise.
 func (o *GetClusterDatastore200ResponseDatastore) GetRefType() string {
 	if o == nil || IsNil(o.RefType) {
@@ -957,6 +991,9 @@ func (o GetClusterDatastore200ResponseDatastore) ToMap() (map[string]interface{}
 	}
 	if !IsNil(o.AllowProvision) {
 		toSerialize["allowProvision"] = o.AllowProvision
+	}
+	if !IsNil(o.HeartbeatTarget) {
+		toSerialize["heartbeatTarget"] = o.HeartbeatTarget
 	}
 	if !IsNil(o.RefType) {
 		toSerialize["refType"] = o.RefType
