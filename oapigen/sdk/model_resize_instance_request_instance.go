@@ -20,6 +20,8 @@ var _ MappedNullable = &ResizeInstanceRequestInstance{}
 
 // ResizeInstanceRequestInstance The map containing the id of the service plan you wish to apply to the containers in this instance.
 type ResizeInstanceRequestInstance struct {
+	// The id of the instance to resize.
+	Id                   *int64                             `json:"id,omitempty"`
 	Plan                 *ResizeInstanceRequestInstancePlan `json:"plan,omitempty"`
 	AdditionalProperties map[string]interface{}             `json:",remain"`
 }
@@ -41,6 +43,38 @@ func NewResizeInstanceRequestInstance() *ResizeInstanceRequestInstance {
 func NewResizeInstanceRequestInstanceWithDefaults() *ResizeInstanceRequestInstance {
 	this := ResizeInstanceRequestInstance{}
 	return &this
+}
+
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *ResizeInstanceRequestInstance) GetId() int64 {
+	if o == nil || IsNil(o.Id) {
+		var ret int64
+		return ret
+	}
+	return *o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ResizeInstanceRequestInstance) GetIdOk() (*int64, bool) {
+	if o == nil || IsNil(o.Id) {
+		return nil, false
+	}
+	return o.Id, true
+}
+
+// IsSetId returns a boolean if a field has been set.
+func (o *ResizeInstanceRequestInstance) IsSetId() bool {
+	if o != nil && !IsNil(o.Id) {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *ResizeInstanceRequestInstance) SetId(v int64) {
+	o.Id = &v
 }
 
 // GetPlan returns the Plan field value if set, zero value otherwise.
@@ -85,6 +119,9 @@ func (o ResizeInstanceRequestInstance) MarshalJSON() ([]byte, error) {
 
 func (o ResizeInstanceRequestInstance) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
+	}
 	if !IsNil(o.Plan) {
 		toSerialize["plan"] = o.Plan
 	}
