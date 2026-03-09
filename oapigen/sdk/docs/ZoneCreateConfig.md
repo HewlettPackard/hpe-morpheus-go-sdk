@@ -21,6 +21,26 @@ Name | Type | Description | Notes
 **CmdbConfig** | Pointer to **string** | The CMDB configuration for this cloud to use for syncing with the CMDB. | [optional] 
 **ChangeManagementConfig** | Pointer to **string** | The change management configuration for this cloud to use for syncing with the change management system. | [optional] 
 **NetworkMode** | Pointer to **string** | Whether to use public or private IP addresses for provisioning and managing instances in this cloud. | [optional] 
+**ApiProxy** | Pointer to **string** | The API proxy to use for API calls to the cloud. | [optional] 
+**Region** | Pointer to **string** | The AWS region to use for this cloud. | [optional] 
+**Credentials** | Pointer to **string** | The credentials to use for this cloud. | [optional] 
+**CostingBucket** | Pointer to **string** | The S3 bucket to use for storing costing reports. | [optional] 
+**CostingFolder** | Pointer to **string** | The folder within the S3 bucket to use for storing costing reports. | [optional] 
+**CostingReportName** | Pointer to **string** | The name of the costing report to generate. | [optional] 
+**CostingKey** | Pointer to **string** | The AWS access key to use for generating costing reports. | [optional] 
+**CostingSecret** | Pointer to **string** | The AWS secret key to use for generating costing reports. | [optional] 
+**Domain** | Pointer to **string** | The domain to use for this cloud. | [optional] 
+**Timezone** | Pointer to **string** | The timezone to use for this cloud. | [optional] 
+**SecurityServer** | Pointer to **string** | The security server to use for this cloud, or &#39;off&#39; to not use a security server. | [optional] 
+**Guidance** | Pointer to **string** | Optional guidance field if you want to put more info there | [optional] 
+**Costing** | Pointer to **string** | Whether to enable costing for this cloud or not. | [optional] 
+**ConfigCmdbDiscovery** | Pointer to **string** | The CMDB discovery configuration to use for this cloud. | [optional] 
+**Logo** | Pointer to **string** | The logo to use for this cloud. | [optional] 
+**DarkModeLogo** | Pointer to **string** | The logo to use for this cloud in dark mode. | [optional] 
+**Proxy** | Pointer to **string** | The proxy to use for this cloud. | [optional] 
+**BypassProxyForCloud** | Pointer to **string** | Whether to bypass the proxy for API calls to the cloud or not. | [optional] 
+**NoProxy** | Pointer to **string** | A comma separated list of hosts to bypass the proxy for when making API calls to the cloud. | [optional] 
+**UserDataLinux** | Pointer to **string** | The user data script to use for provisioning instances in this cloud. | [optional] 
 **SubscriberId** | Pointer to **string** | Azure subscriber id | [optional] 
 **TenantId** | Pointer to **string** | Azure tenant id | [optional] 
 **ClientId** | Pointer to **string** | Azure client id | [optional] 
@@ -480,6 +500,506 @@ SetNetworkMode sets NetworkMode field to given value.
 `func (o *ZoneCreateConfig) HasNetworkMode() bool`
 
 HasNetworkMode returns a boolean if a field has been set.
+
+### GetApiProxy
+
+`func (o *ZoneCreateConfig) GetApiProxy() string`
+
+GetApiProxy returns the ApiProxy field if non-nil, zero value otherwise.
+
+### GetApiProxyOk
+
+`func (o *ZoneCreateConfig) GetApiProxyOk() (*string, bool)`
+
+GetApiProxyOk returns a tuple with the ApiProxy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApiProxy
+
+`func (o *ZoneCreateConfig) SetApiProxy(v string)`
+
+SetApiProxy sets ApiProxy field to given value.
+
+### HasApiProxy
+
+`func (o *ZoneCreateConfig) HasApiProxy() bool`
+
+HasApiProxy returns a boolean if a field has been set.
+
+### GetRegion
+
+`func (o *ZoneCreateConfig) GetRegion() string`
+
+GetRegion returns the Region field if non-nil, zero value otherwise.
+
+### GetRegionOk
+
+`func (o *ZoneCreateConfig) GetRegionOk() (*string, bool)`
+
+GetRegionOk returns a tuple with the Region field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRegion
+
+`func (o *ZoneCreateConfig) SetRegion(v string)`
+
+SetRegion sets Region field to given value.
+
+### HasRegion
+
+`func (o *ZoneCreateConfig) HasRegion() bool`
+
+HasRegion returns a boolean if a field has been set.
+
+### GetCredentials
+
+`func (o *ZoneCreateConfig) GetCredentials() string`
+
+GetCredentials returns the Credentials field if non-nil, zero value otherwise.
+
+### GetCredentialsOk
+
+`func (o *ZoneCreateConfig) GetCredentialsOk() (*string, bool)`
+
+GetCredentialsOk returns a tuple with the Credentials field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCredentials
+
+`func (o *ZoneCreateConfig) SetCredentials(v string)`
+
+SetCredentials sets Credentials field to given value.
+
+### HasCredentials
+
+`func (o *ZoneCreateConfig) HasCredentials() bool`
+
+HasCredentials returns a boolean if a field has been set.
+
+### GetCostingBucket
+
+`func (o *ZoneCreateConfig) GetCostingBucket() string`
+
+GetCostingBucket returns the CostingBucket field if non-nil, zero value otherwise.
+
+### GetCostingBucketOk
+
+`func (o *ZoneCreateConfig) GetCostingBucketOk() (*string, bool)`
+
+GetCostingBucketOk returns a tuple with the CostingBucket field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCostingBucket
+
+`func (o *ZoneCreateConfig) SetCostingBucket(v string)`
+
+SetCostingBucket sets CostingBucket field to given value.
+
+### HasCostingBucket
+
+`func (o *ZoneCreateConfig) HasCostingBucket() bool`
+
+HasCostingBucket returns a boolean if a field has been set.
+
+### GetCostingFolder
+
+`func (o *ZoneCreateConfig) GetCostingFolder() string`
+
+GetCostingFolder returns the CostingFolder field if non-nil, zero value otherwise.
+
+### GetCostingFolderOk
+
+`func (o *ZoneCreateConfig) GetCostingFolderOk() (*string, bool)`
+
+GetCostingFolderOk returns a tuple with the CostingFolder field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCostingFolder
+
+`func (o *ZoneCreateConfig) SetCostingFolder(v string)`
+
+SetCostingFolder sets CostingFolder field to given value.
+
+### HasCostingFolder
+
+`func (o *ZoneCreateConfig) HasCostingFolder() bool`
+
+HasCostingFolder returns a boolean if a field has been set.
+
+### GetCostingReportName
+
+`func (o *ZoneCreateConfig) GetCostingReportName() string`
+
+GetCostingReportName returns the CostingReportName field if non-nil, zero value otherwise.
+
+### GetCostingReportNameOk
+
+`func (o *ZoneCreateConfig) GetCostingReportNameOk() (*string, bool)`
+
+GetCostingReportNameOk returns a tuple with the CostingReportName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCostingReportName
+
+`func (o *ZoneCreateConfig) SetCostingReportName(v string)`
+
+SetCostingReportName sets CostingReportName field to given value.
+
+### HasCostingReportName
+
+`func (o *ZoneCreateConfig) HasCostingReportName() bool`
+
+HasCostingReportName returns a boolean if a field has been set.
+
+### GetCostingKey
+
+`func (o *ZoneCreateConfig) GetCostingKey() string`
+
+GetCostingKey returns the CostingKey field if non-nil, zero value otherwise.
+
+### GetCostingKeyOk
+
+`func (o *ZoneCreateConfig) GetCostingKeyOk() (*string, bool)`
+
+GetCostingKeyOk returns a tuple with the CostingKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCostingKey
+
+`func (o *ZoneCreateConfig) SetCostingKey(v string)`
+
+SetCostingKey sets CostingKey field to given value.
+
+### HasCostingKey
+
+`func (o *ZoneCreateConfig) HasCostingKey() bool`
+
+HasCostingKey returns a boolean if a field has been set.
+
+### GetCostingSecret
+
+`func (o *ZoneCreateConfig) GetCostingSecret() string`
+
+GetCostingSecret returns the CostingSecret field if non-nil, zero value otherwise.
+
+### GetCostingSecretOk
+
+`func (o *ZoneCreateConfig) GetCostingSecretOk() (*string, bool)`
+
+GetCostingSecretOk returns a tuple with the CostingSecret field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCostingSecret
+
+`func (o *ZoneCreateConfig) SetCostingSecret(v string)`
+
+SetCostingSecret sets CostingSecret field to given value.
+
+### HasCostingSecret
+
+`func (o *ZoneCreateConfig) HasCostingSecret() bool`
+
+HasCostingSecret returns a boolean if a field has been set.
+
+### GetDomain
+
+`func (o *ZoneCreateConfig) GetDomain() string`
+
+GetDomain returns the Domain field if non-nil, zero value otherwise.
+
+### GetDomainOk
+
+`func (o *ZoneCreateConfig) GetDomainOk() (*string, bool)`
+
+GetDomainOk returns a tuple with the Domain field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDomain
+
+`func (o *ZoneCreateConfig) SetDomain(v string)`
+
+SetDomain sets Domain field to given value.
+
+### HasDomain
+
+`func (o *ZoneCreateConfig) HasDomain() bool`
+
+HasDomain returns a boolean if a field has been set.
+
+### GetTimezone
+
+`func (o *ZoneCreateConfig) GetTimezone() string`
+
+GetTimezone returns the Timezone field if non-nil, zero value otherwise.
+
+### GetTimezoneOk
+
+`func (o *ZoneCreateConfig) GetTimezoneOk() (*string, bool)`
+
+GetTimezoneOk returns a tuple with the Timezone field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTimezone
+
+`func (o *ZoneCreateConfig) SetTimezone(v string)`
+
+SetTimezone sets Timezone field to given value.
+
+### HasTimezone
+
+`func (o *ZoneCreateConfig) HasTimezone() bool`
+
+HasTimezone returns a boolean if a field has been set.
+
+### GetSecurityServer
+
+`func (o *ZoneCreateConfig) GetSecurityServer() string`
+
+GetSecurityServer returns the SecurityServer field if non-nil, zero value otherwise.
+
+### GetSecurityServerOk
+
+`func (o *ZoneCreateConfig) GetSecurityServerOk() (*string, bool)`
+
+GetSecurityServerOk returns a tuple with the SecurityServer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSecurityServer
+
+`func (o *ZoneCreateConfig) SetSecurityServer(v string)`
+
+SetSecurityServer sets SecurityServer field to given value.
+
+### HasSecurityServer
+
+`func (o *ZoneCreateConfig) HasSecurityServer() bool`
+
+HasSecurityServer returns a boolean if a field has been set.
+
+### GetGuidance
+
+`func (o *ZoneCreateConfig) GetGuidance() string`
+
+GetGuidance returns the Guidance field if non-nil, zero value otherwise.
+
+### GetGuidanceOk
+
+`func (o *ZoneCreateConfig) GetGuidanceOk() (*string, bool)`
+
+GetGuidanceOk returns a tuple with the Guidance field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGuidance
+
+`func (o *ZoneCreateConfig) SetGuidance(v string)`
+
+SetGuidance sets Guidance field to given value.
+
+### HasGuidance
+
+`func (o *ZoneCreateConfig) HasGuidance() bool`
+
+HasGuidance returns a boolean if a field has been set.
+
+### GetCosting
+
+`func (o *ZoneCreateConfig) GetCosting() string`
+
+GetCosting returns the Costing field if non-nil, zero value otherwise.
+
+### GetCostingOk
+
+`func (o *ZoneCreateConfig) GetCostingOk() (*string, bool)`
+
+GetCostingOk returns a tuple with the Costing field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCosting
+
+`func (o *ZoneCreateConfig) SetCosting(v string)`
+
+SetCosting sets Costing field to given value.
+
+### HasCosting
+
+`func (o *ZoneCreateConfig) HasCosting() bool`
+
+HasCosting returns a boolean if a field has been set.
+
+### GetConfigCmdbDiscovery
+
+`func (o *ZoneCreateConfig) GetConfigCmdbDiscovery() string`
+
+GetConfigCmdbDiscovery returns the ConfigCmdbDiscovery field if non-nil, zero value otherwise.
+
+### GetConfigCmdbDiscoveryOk
+
+`func (o *ZoneCreateConfig) GetConfigCmdbDiscoveryOk() (*string, bool)`
+
+GetConfigCmdbDiscoveryOk returns a tuple with the ConfigCmdbDiscovery field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConfigCmdbDiscovery
+
+`func (o *ZoneCreateConfig) SetConfigCmdbDiscovery(v string)`
+
+SetConfigCmdbDiscovery sets ConfigCmdbDiscovery field to given value.
+
+### HasConfigCmdbDiscovery
+
+`func (o *ZoneCreateConfig) HasConfigCmdbDiscovery() bool`
+
+HasConfigCmdbDiscovery returns a boolean if a field has been set.
+
+### GetLogo
+
+`func (o *ZoneCreateConfig) GetLogo() string`
+
+GetLogo returns the Logo field if non-nil, zero value otherwise.
+
+### GetLogoOk
+
+`func (o *ZoneCreateConfig) GetLogoOk() (*string, bool)`
+
+GetLogoOk returns a tuple with the Logo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLogo
+
+`func (o *ZoneCreateConfig) SetLogo(v string)`
+
+SetLogo sets Logo field to given value.
+
+### HasLogo
+
+`func (o *ZoneCreateConfig) HasLogo() bool`
+
+HasLogo returns a boolean if a field has been set.
+
+### GetDarkModeLogo
+
+`func (o *ZoneCreateConfig) GetDarkModeLogo() string`
+
+GetDarkModeLogo returns the DarkModeLogo field if non-nil, zero value otherwise.
+
+### GetDarkModeLogoOk
+
+`func (o *ZoneCreateConfig) GetDarkModeLogoOk() (*string, bool)`
+
+GetDarkModeLogoOk returns a tuple with the DarkModeLogo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDarkModeLogo
+
+`func (o *ZoneCreateConfig) SetDarkModeLogo(v string)`
+
+SetDarkModeLogo sets DarkModeLogo field to given value.
+
+### HasDarkModeLogo
+
+`func (o *ZoneCreateConfig) HasDarkModeLogo() bool`
+
+HasDarkModeLogo returns a boolean if a field has been set.
+
+### GetProxy
+
+`func (o *ZoneCreateConfig) GetProxy() string`
+
+GetProxy returns the Proxy field if non-nil, zero value otherwise.
+
+### GetProxyOk
+
+`func (o *ZoneCreateConfig) GetProxyOk() (*string, bool)`
+
+GetProxyOk returns a tuple with the Proxy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProxy
+
+`func (o *ZoneCreateConfig) SetProxy(v string)`
+
+SetProxy sets Proxy field to given value.
+
+### HasProxy
+
+`func (o *ZoneCreateConfig) HasProxy() bool`
+
+HasProxy returns a boolean if a field has been set.
+
+### GetBypassProxyForCloud
+
+`func (o *ZoneCreateConfig) GetBypassProxyForCloud() string`
+
+GetBypassProxyForCloud returns the BypassProxyForCloud field if non-nil, zero value otherwise.
+
+### GetBypassProxyForCloudOk
+
+`func (o *ZoneCreateConfig) GetBypassProxyForCloudOk() (*string, bool)`
+
+GetBypassProxyForCloudOk returns a tuple with the BypassProxyForCloud field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBypassProxyForCloud
+
+`func (o *ZoneCreateConfig) SetBypassProxyForCloud(v string)`
+
+SetBypassProxyForCloud sets BypassProxyForCloud field to given value.
+
+### HasBypassProxyForCloud
+
+`func (o *ZoneCreateConfig) HasBypassProxyForCloud() bool`
+
+HasBypassProxyForCloud returns a boolean if a field has been set.
+
+### GetNoProxy
+
+`func (o *ZoneCreateConfig) GetNoProxy() string`
+
+GetNoProxy returns the NoProxy field if non-nil, zero value otherwise.
+
+### GetNoProxyOk
+
+`func (o *ZoneCreateConfig) GetNoProxyOk() (*string, bool)`
+
+GetNoProxyOk returns a tuple with the NoProxy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNoProxy
+
+`func (o *ZoneCreateConfig) SetNoProxy(v string)`
+
+SetNoProxy sets NoProxy field to given value.
+
+### HasNoProxy
+
+`func (o *ZoneCreateConfig) HasNoProxy() bool`
+
+HasNoProxy returns a boolean if a field has been set.
+
+### GetUserDataLinux
+
+`func (o *ZoneCreateConfig) GetUserDataLinux() string`
+
+GetUserDataLinux returns the UserDataLinux field if non-nil, zero value otherwise.
+
+### GetUserDataLinuxOk
+
+`func (o *ZoneCreateConfig) GetUserDataLinuxOk() (*string, bool)`
+
+GetUserDataLinuxOk returns a tuple with the UserDataLinux field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserDataLinux
+
+`func (o *ZoneCreateConfig) SetUserDataLinux(v string)`
+
+SetUserDataLinux sets UserDataLinux field to given value.
+
+### HasUserDataLinux
+
+`func (o *ZoneCreateConfig) HasUserDataLinux() bool`
+
+HasUserDataLinux returns a boolean if a field has been set.
 
 ### GetSubscriberId
 
