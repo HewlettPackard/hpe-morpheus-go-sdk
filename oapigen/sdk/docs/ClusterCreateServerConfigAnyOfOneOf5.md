@@ -4,15 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CpuArch** | Pointer to **string** |  | [optional] 
-**CpuModel** | Pointer to **string** |  | [optional] 
-**DynamicPlacementMode** | Pointer to **string** |  | [optional] 
-**PowerPolicy** | Pointer to **string** |  | [optional] 
-**StorageInterfaceName** | Pointer to **string** |  | [optional] 
-**ComputeInterfaceName** | Pointer to **string** |  | [optional] 
-**ComputeVlans** | Pointer to **string** |  | [optional] 
-**OverlayInterfaceName** | Pointer to **string** |  | [optional] 
+**PodCidr** | Pointer to **string** |  | [optional] 
+**ServiceCidr** | Pointer to **string** |  | [optional] 
+**NodeCount** | Pointer to **int64** |  | [optional] 
 **CreateUser** | Pointer to **bool** |  | [optional] 
+**DefaultRepoAccount** | Pointer to **NullableInt32** | Default Repo Account is the repository to be used when pulling images.  Default behavior is to be anonymous, which does have limits on allowed image pulls from public Docker Repos. | [optional] 
+**ImageServer** | Pointer to **string** | Act as Image Server. Set to on to use the Default Repo Account to pull images. | [optional] 
 
 ## Methods
 
@@ -33,205 +30,80 @@ NewClusterCreateServerConfigAnyOfOneOf5WithDefaults instantiates a new ClusterCr
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetCpuArch
+### GetPodCidr
 
-`func (o *ClusterCreateServerConfigAnyOfOneOf5) GetCpuArch() string`
+`func (o *ClusterCreateServerConfigAnyOfOneOf5) GetPodCidr() string`
 
-GetCpuArch returns the CpuArch field if non-nil, zero value otherwise.
+GetPodCidr returns the PodCidr field if non-nil, zero value otherwise.
 
-### GetCpuArchOk
+### GetPodCidrOk
 
-`func (o *ClusterCreateServerConfigAnyOfOneOf5) GetCpuArchOk() (*string, bool)`
+`func (o *ClusterCreateServerConfigAnyOfOneOf5) GetPodCidrOk() (*string, bool)`
 
-GetCpuArchOk returns a tuple with the CpuArch field if it's non-nil, zero value otherwise
+GetPodCidrOk returns a tuple with the PodCidr field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCpuArch
+### SetPodCidr
 
-`func (o *ClusterCreateServerConfigAnyOfOneOf5) SetCpuArch(v string)`
+`func (o *ClusterCreateServerConfigAnyOfOneOf5) SetPodCidr(v string)`
 
-SetCpuArch sets CpuArch field to given value.
+SetPodCidr sets PodCidr field to given value.
 
-### HasCpuArch
+### HasPodCidr
 
-`func (o *ClusterCreateServerConfigAnyOfOneOf5) HasCpuArch() bool`
+`func (o *ClusterCreateServerConfigAnyOfOneOf5) HasPodCidr() bool`
 
-HasCpuArch returns a boolean if a field has been set.
+HasPodCidr returns a boolean if a field has been set.
 
-### GetCpuModel
+### GetServiceCidr
 
-`func (o *ClusterCreateServerConfigAnyOfOneOf5) GetCpuModel() string`
+`func (o *ClusterCreateServerConfigAnyOfOneOf5) GetServiceCidr() string`
 
-GetCpuModel returns the CpuModel field if non-nil, zero value otherwise.
+GetServiceCidr returns the ServiceCidr field if non-nil, zero value otherwise.
 
-### GetCpuModelOk
+### GetServiceCidrOk
 
-`func (o *ClusterCreateServerConfigAnyOfOneOf5) GetCpuModelOk() (*string, bool)`
+`func (o *ClusterCreateServerConfigAnyOfOneOf5) GetServiceCidrOk() (*string, bool)`
 
-GetCpuModelOk returns a tuple with the CpuModel field if it's non-nil, zero value otherwise
+GetServiceCidrOk returns a tuple with the ServiceCidr field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCpuModel
+### SetServiceCidr
 
-`func (o *ClusterCreateServerConfigAnyOfOneOf5) SetCpuModel(v string)`
+`func (o *ClusterCreateServerConfigAnyOfOneOf5) SetServiceCidr(v string)`
 
-SetCpuModel sets CpuModel field to given value.
+SetServiceCidr sets ServiceCidr field to given value.
 
-### HasCpuModel
+### HasServiceCidr
 
-`func (o *ClusterCreateServerConfigAnyOfOneOf5) HasCpuModel() bool`
+`func (o *ClusterCreateServerConfigAnyOfOneOf5) HasServiceCidr() bool`
 
-HasCpuModel returns a boolean if a field has been set.
+HasServiceCidr returns a boolean if a field has been set.
 
-### GetDynamicPlacementMode
+### GetNodeCount
 
-`func (o *ClusterCreateServerConfigAnyOfOneOf5) GetDynamicPlacementMode() string`
+`func (o *ClusterCreateServerConfigAnyOfOneOf5) GetNodeCount() int64`
 
-GetDynamicPlacementMode returns the DynamicPlacementMode field if non-nil, zero value otherwise.
+GetNodeCount returns the NodeCount field if non-nil, zero value otherwise.
 
-### GetDynamicPlacementModeOk
+### GetNodeCountOk
 
-`func (o *ClusterCreateServerConfigAnyOfOneOf5) GetDynamicPlacementModeOk() (*string, bool)`
+`func (o *ClusterCreateServerConfigAnyOfOneOf5) GetNodeCountOk() (*int64, bool)`
 
-GetDynamicPlacementModeOk returns a tuple with the DynamicPlacementMode field if it's non-nil, zero value otherwise
+GetNodeCountOk returns a tuple with the NodeCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDynamicPlacementMode
+### SetNodeCount
 
-`func (o *ClusterCreateServerConfigAnyOfOneOf5) SetDynamicPlacementMode(v string)`
+`func (o *ClusterCreateServerConfigAnyOfOneOf5) SetNodeCount(v int64)`
 
-SetDynamicPlacementMode sets DynamicPlacementMode field to given value.
+SetNodeCount sets NodeCount field to given value.
 
-### HasDynamicPlacementMode
+### HasNodeCount
 
-`func (o *ClusterCreateServerConfigAnyOfOneOf5) HasDynamicPlacementMode() bool`
+`func (o *ClusterCreateServerConfigAnyOfOneOf5) HasNodeCount() bool`
 
-HasDynamicPlacementMode returns a boolean if a field has been set.
-
-### GetPowerPolicy
-
-`func (o *ClusterCreateServerConfigAnyOfOneOf5) GetPowerPolicy() string`
-
-GetPowerPolicy returns the PowerPolicy field if non-nil, zero value otherwise.
-
-### GetPowerPolicyOk
-
-`func (o *ClusterCreateServerConfigAnyOfOneOf5) GetPowerPolicyOk() (*string, bool)`
-
-GetPowerPolicyOk returns a tuple with the PowerPolicy field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPowerPolicy
-
-`func (o *ClusterCreateServerConfigAnyOfOneOf5) SetPowerPolicy(v string)`
-
-SetPowerPolicy sets PowerPolicy field to given value.
-
-### HasPowerPolicy
-
-`func (o *ClusterCreateServerConfigAnyOfOneOf5) HasPowerPolicy() bool`
-
-HasPowerPolicy returns a boolean if a field has been set.
-
-### GetStorageInterfaceName
-
-`func (o *ClusterCreateServerConfigAnyOfOneOf5) GetStorageInterfaceName() string`
-
-GetStorageInterfaceName returns the StorageInterfaceName field if non-nil, zero value otherwise.
-
-### GetStorageInterfaceNameOk
-
-`func (o *ClusterCreateServerConfigAnyOfOneOf5) GetStorageInterfaceNameOk() (*string, bool)`
-
-GetStorageInterfaceNameOk returns a tuple with the StorageInterfaceName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetStorageInterfaceName
-
-`func (o *ClusterCreateServerConfigAnyOfOneOf5) SetStorageInterfaceName(v string)`
-
-SetStorageInterfaceName sets StorageInterfaceName field to given value.
-
-### HasStorageInterfaceName
-
-`func (o *ClusterCreateServerConfigAnyOfOneOf5) HasStorageInterfaceName() bool`
-
-HasStorageInterfaceName returns a boolean if a field has been set.
-
-### GetComputeInterfaceName
-
-`func (o *ClusterCreateServerConfigAnyOfOneOf5) GetComputeInterfaceName() string`
-
-GetComputeInterfaceName returns the ComputeInterfaceName field if non-nil, zero value otherwise.
-
-### GetComputeInterfaceNameOk
-
-`func (o *ClusterCreateServerConfigAnyOfOneOf5) GetComputeInterfaceNameOk() (*string, bool)`
-
-GetComputeInterfaceNameOk returns a tuple with the ComputeInterfaceName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetComputeInterfaceName
-
-`func (o *ClusterCreateServerConfigAnyOfOneOf5) SetComputeInterfaceName(v string)`
-
-SetComputeInterfaceName sets ComputeInterfaceName field to given value.
-
-### HasComputeInterfaceName
-
-`func (o *ClusterCreateServerConfigAnyOfOneOf5) HasComputeInterfaceName() bool`
-
-HasComputeInterfaceName returns a boolean if a field has been set.
-
-### GetComputeVlans
-
-`func (o *ClusterCreateServerConfigAnyOfOneOf5) GetComputeVlans() string`
-
-GetComputeVlans returns the ComputeVlans field if non-nil, zero value otherwise.
-
-### GetComputeVlansOk
-
-`func (o *ClusterCreateServerConfigAnyOfOneOf5) GetComputeVlansOk() (*string, bool)`
-
-GetComputeVlansOk returns a tuple with the ComputeVlans field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetComputeVlans
-
-`func (o *ClusterCreateServerConfigAnyOfOneOf5) SetComputeVlans(v string)`
-
-SetComputeVlans sets ComputeVlans field to given value.
-
-### HasComputeVlans
-
-`func (o *ClusterCreateServerConfigAnyOfOneOf5) HasComputeVlans() bool`
-
-HasComputeVlans returns a boolean if a field has been set.
-
-### GetOverlayInterfaceName
-
-`func (o *ClusterCreateServerConfigAnyOfOneOf5) GetOverlayInterfaceName() string`
-
-GetOverlayInterfaceName returns the OverlayInterfaceName field if non-nil, zero value otherwise.
-
-### GetOverlayInterfaceNameOk
-
-`func (o *ClusterCreateServerConfigAnyOfOneOf5) GetOverlayInterfaceNameOk() (*string, bool)`
-
-GetOverlayInterfaceNameOk returns a tuple with the OverlayInterfaceName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOverlayInterfaceName
-
-`func (o *ClusterCreateServerConfigAnyOfOneOf5) SetOverlayInterfaceName(v string)`
-
-SetOverlayInterfaceName sets OverlayInterfaceName field to given value.
-
-### HasOverlayInterfaceName
-
-`func (o *ClusterCreateServerConfigAnyOfOneOf5) HasOverlayInterfaceName() bool`
-
-HasOverlayInterfaceName returns a boolean if a field has been set.
+HasNodeCount returns a boolean if a field has been set.
 
 ### GetCreateUser
 
@@ -257,6 +129,66 @@ SetCreateUser sets CreateUser field to given value.
 `func (o *ClusterCreateServerConfigAnyOfOneOf5) HasCreateUser() bool`
 
 HasCreateUser returns a boolean if a field has been set.
+
+### GetDefaultRepoAccount
+
+`func (o *ClusterCreateServerConfigAnyOfOneOf5) GetDefaultRepoAccount() int32`
+
+GetDefaultRepoAccount returns the DefaultRepoAccount field if non-nil, zero value otherwise.
+
+### GetDefaultRepoAccountOk
+
+`func (o *ClusterCreateServerConfigAnyOfOneOf5) GetDefaultRepoAccountOk() (*int32, bool)`
+
+GetDefaultRepoAccountOk returns a tuple with the DefaultRepoAccount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDefaultRepoAccount
+
+`func (o *ClusterCreateServerConfigAnyOfOneOf5) SetDefaultRepoAccount(v int32)`
+
+SetDefaultRepoAccount sets DefaultRepoAccount field to given value.
+
+### HasDefaultRepoAccount
+
+`func (o *ClusterCreateServerConfigAnyOfOneOf5) HasDefaultRepoAccount() bool`
+
+HasDefaultRepoAccount returns a boolean if a field has been set.
+
+### SetDefaultRepoAccountNil
+
+`func (o *ClusterCreateServerConfigAnyOfOneOf5) SetDefaultRepoAccountNil(b bool)`
+
+ SetDefaultRepoAccountNil sets the value for DefaultRepoAccount to be an explicit nil
+
+### UnsetDefaultRepoAccount
+`func (o *ClusterCreateServerConfigAnyOfOneOf5) UnsetDefaultRepoAccount()`
+
+UnsetDefaultRepoAccount ensures that no value is present for DefaultRepoAccount, not even an explicit nil
+### GetImageServer
+
+`func (o *ClusterCreateServerConfigAnyOfOneOf5) GetImageServer() string`
+
+GetImageServer returns the ImageServer field if non-nil, zero value otherwise.
+
+### GetImageServerOk
+
+`func (o *ClusterCreateServerConfigAnyOfOneOf5) GetImageServerOk() (*string, bool)`
+
+GetImageServerOk returns a tuple with the ImageServer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImageServer
+
+`func (o *ClusterCreateServerConfigAnyOfOneOf5) SetImageServer(v string)`
+
+SetImageServer sets ImageServer field to given value.
+
+### HasImageServer
+
+`func (o *ClusterCreateServerConfigAnyOfOneOf5) HasImageServer() bool`
+
+HasImageServer returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

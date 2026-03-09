@@ -18,17 +18,16 @@ import (
 // checks if the ClusterCreateServerConfigAnyOfOneOf5 type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ClusterCreateServerConfigAnyOfOneOf5{}
 
-// ClusterCreateServerConfigAnyOfOneOf5 Configuration for HVM cluster servers
+// ClusterCreateServerConfigAnyOfOneOf5 Configuration for HKS cluster provisioning on a HVM cluster.
 type ClusterCreateServerConfigAnyOfOneOf5 struct {
-	CpuArch              *string                `json:"cpuArch,omitempty"`
-	CpuModel             *string                `json:"cpuModel,omitempty"`
-	DynamicPlacementMode *string                `json:"dynamicPlacementMode,omitempty"`
-	PowerPolicy          *string                `json:"powerPolicy,omitempty"`
-	StorageInterfaceName *string                `json:"storageInterfaceName,omitempty"`
-	ComputeInterfaceName *string                `json:"computeInterfaceName,omitempty"`
-	ComputeVlans         *string                `json:"computeVlans,omitempty"`
-	OverlayInterfaceName *string                `json:"overlayInterfaceName,omitempty"`
-	CreateUser           *bool                  `json:"createUser,omitempty"`
+	PodCidr     *string `json:"podCidr,omitempty"`
+	ServiceCidr *string `json:"serviceCidr,omitempty"`
+	NodeCount   *int64  `json:"nodeCount,omitempty"`
+	CreateUser  *bool   `json:"createUser,omitempty"`
+	// Default Repo Account is the repository to be used when pulling images.  Default behavior is to be anonymous, which does have limits on allowed image pulls from public Docker Repos.
+	DefaultRepoAccount NullableInt32 `json:"defaultRepoAccount,omitempty"`
+	// Act as Image Server. Set to on to use the Default Repo Account to pull images.
+	ImageServer          *string                `json:"imageServer,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -51,260 +50,100 @@ func NewClusterCreateServerConfigAnyOfOneOf5WithDefaults() *ClusterCreateServerC
 	return &this
 }
 
-// GetCpuArch returns the CpuArch field value if set, zero value otherwise.
-func (o *ClusterCreateServerConfigAnyOfOneOf5) GetCpuArch() string {
-	if o == nil || IsNil(o.CpuArch) {
+// GetPodCidr returns the PodCidr field value if set, zero value otherwise.
+func (o *ClusterCreateServerConfigAnyOfOneOf5) GetPodCidr() string {
+	if o == nil || IsNil(o.PodCidr) {
 		var ret string
 		return ret
 	}
-	return *o.CpuArch
+	return *o.PodCidr
 }
 
-// GetCpuArchOk returns a tuple with the CpuArch field value if set, nil otherwise
+// GetPodCidrOk returns a tuple with the PodCidr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClusterCreateServerConfigAnyOfOneOf5) GetCpuArchOk() (*string, bool) {
-	if o == nil || IsNil(o.CpuArch) {
+func (o *ClusterCreateServerConfigAnyOfOneOf5) GetPodCidrOk() (*string, bool) {
+	if o == nil || IsNil(o.PodCidr) {
 		return nil, false
 	}
-	return o.CpuArch, true
+	return o.PodCidr, true
 }
 
-// IsSetCpuArch returns a boolean if a field has been set.
-func (o *ClusterCreateServerConfigAnyOfOneOf5) IsSetCpuArch() bool {
-	if o != nil && !IsNil(o.CpuArch) {
+// IsSetPodCidr returns a boolean if a field has been set.
+func (o *ClusterCreateServerConfigAnyOfOneOf5) IsSetPodCidr() bool {
+	if o != nil && !IsNil(o.PodCidr) {
 		return true
 	}
 
 	return false
 }
 
-// SetCpuArch gets a reference to the given string and assigns it to the CpuArch field.
-func (o *ClusterCreateServerConfigAnyOfOneOf5) SetCpuArch(v string) {
-	o.CpuArch = &v
+// SetPodCidr gets a reference to the given string and assigns it to the PodCidr field.
+func (o *ClusterCreateServerConfigAnyOfOneOf5) SetPodCidr(v string) {
+	o.PodCidr = &v
 }
 
-// GetCpuModel returns the CpuModel field value if set, zero value otherwise.
-func (o *ClusterCreateServerConfigAnyOfOneOf5) GetCpuModel() string {
-	if o == nil || IsNil(o.CpuModel) {
+// GetServiceCidr returns the ServiceCidr field value if set, zero value otherwise.
+func (o *ClusterCreateServerConfigAnyOfOneOf5) GetServiceCidr() string {
+	if o == nil || IsNil(o.ServiceCidr) {
 		var ret string
 		return ret
 	}
-	return *o.CpuModel
+	return *o.ServiceCidr
 }
 
-// GetCpuModelOk returns a tuple with the CpuModel field value if set, nil otherwise
+// GetServiceCidrOk returns a tuple with the ServiceCidr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClusterCreateServerConfigAnyOfOneOf5) GetCpuModelOk() (*string, bool) {
-	if o == nil || IsNil(o.CpuModel) {
+func (o *ClusterCreateServerConfigAnyOfOneOf5) GetServiceCidrOk() (*string, bool) {
+	if o == nil || IsNil(o.ServiceCidr) {
 		return nil, false
 	}
-	return o.CpuModel, true
+	return o.ServiceCidr, true
 }
 
-// IsSetCpuModel returns a boolean if a field has been set.
-func (o *ClusterCreateServerConfigAnyOfOneOf5) IsSetCpuModel() bool {
-	if o != nil && !IsNil(o.CpuModel) {
+// IsSetServiceCidr returns a boolean if a field has been set.
+func (o *ClusterCreateServerConfigAnyOfOneOf5) IsSetServiceCidr() bool {
+	if o != nil && !IsNil(o.ServiceCidr) {
 		return true
 	}
 
 	return false
 }
 
-// SetCpuModel gets a reference to the given string and assigns it to the CpuModel field.
-func (o *ClusterCreateServerConfigAnyOfOneOf5) SetCpuModel(v string) {
-	o.CpuModel = &v
+// SetServiceCidr gets a reference to the given string and assigns it to the ServiceCidr field.
+func (o *ClusterCreateServerConfigAnyOfOneOf5) SetServiceCidr(v string) {
+	o.ServiceCidr = &v
 }
 
-// GetDynamicPlacementMode returns the DynamicPlacementMode field value if set, zero value otherwise.
-func (o *ClusterCreateServerConfigAnyOfOneOf5) GetDynamicPlacementMode() string {
-	if o == nil || IsNil(o.DynamicPlacementMode) {
-		var ret string
+// GetNodeCount returns the NodeCount field value if set, zero value otherwise.
+func (o *ClusterCreateServerConfigAnyOfOneOf5) GetNodeCount() int64 {
+	if o == nil || IsNil(o.NodeCount) {
+		var ret int64
 		return ret
 	}
-	return *o.DynamicPlacementMode
+	return *o.NodeCount
 }
 
-// GetDynamicPlacementModeOk returns a tuple with the DynamicPlacementMode field value if set, nil otherwise
+// GetNodeCountOk returns a tuple with the NodeCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClusterCreateServerConfigAnyOfOneOf5) GetDynamicPlacementModeOk() (*string, bool) {
-	if o == nil || IsNil(o.DynamicPlacementMode) {
+func (o *ClusterCreateServerConfigAnyOfOneOf5) GetNodeCountOk() (*int64, bool) {
+	if o == nil || IsNil(o.NodeCount) {
 		return nil, false
 	}
-	return o.DynamicPlacementMode, true
+	return o.NodeCount, true
 }
 
-// IsSetDynamicPlacementMode returns a boolean if a field has been set.
-func (o *ClusterCreateServerConfigAnyOfOneOf5) IsSetDynamicPlacementMode() bool {
-	if o != nil && !IsNil(o.DynamicPlacementMode) {
+// IsSetNodeCount returns a boolean if a field has been set.
+func (o *ClusterCreateServerConfigAnyOfOneOf5) IsSetNodeCount() bool {
+	if o != nil && !IsNil(o.NodeCount) {
 		return true
 	}
 
 	return false
 }
 
-// SetDynamicPlacementMode gets a reference to the given string and assigns it to the DynamicPlacementMode field.
-func (o *ClusterCreateServerConfigAnyOfOneOf5) SetDynamicPlacementMode(v string) {
-	o.DynamicPlacementMode = &v
-}
-
-// GetPowerPolicy returns the PowerPolicy field value if set, zero value otherwise.
-func (o *ClusterCreateServerConfigAnyOfOneOf5) GetPowerPolicy() string {
-	if o == nil || IsNil(o.PowerPolicy) {
-		var ret string
-		return ret
-	}
-	return *o.PowerPolicy
-}
-
-// GetPowerPolicyOk returns a tuple with the PowerPolicy field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClusterCreateServerConfigAnyOfOneOf5) GetPowerPolicyOk() (*string, bool) {
-	if o == nil || IsNil(o.PowerPolicy) {
-		return nil, false
-	}
-	return o.PowerPolicy, true
-}
-
-// IsSetPowerPolicy returns a boolean if a field has been set.
-func (o *ClusterCreateServerConfigAnyOfOneOf5) IsSetPowerPolicy() bool {
-	if o != nil && !IsNil(o.PowerPolicy) {
-		return true
-	}
-
-	return false
-}
-
-// SetPowerPolicy gets a reference to the given string and assigns it to the PowerPolicy field.
-func (o *ClusterCreateServerConfigAnyOfOneOf5) SetPowerPolicy(v string) {
-	o.PowerPolicy = &v
-}
-
-// GetStorageInterfaceName returns the StorageInterfaceName field value if set, zero value otherwise.
-func (o *ClusterCreateServerConfigAnyOfOneOf5) GetStorageInterfaceName() string {
-	if o == nil || IsNil(o.StorageInterfaceName) {
-		var ret string
-		return ret
-	}
-	return *o.StorageInterfaceName
-}
-
-// GetStorageInterfaceNameOk returns a tuple with the StorageInterfaceName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClusterCreateServerConfigAnyOfOneOf5) GetStorageInterfaceNameOk() (*string, bool) {
-	if o == nil || IsNil(o.StorageInterfaceName) {
-		return nil, false
-	}
-	return o.StorageInterfaceName, true
-}
-
-// IsSetStorageInterfaceName returns a boolean if a field has been set.
-func (o *ClusterCreateServerConfigAnyOfOneOf5) IsSetStorageInterfaceName() bool {
-	if o != nil && !IsNil(o.StorageInterfaceName) {
-		return true
-	}
-
-	return false
-}
-
-// SetStorageInterfaceName gets a reference to the given string and assigns it to the StorageInterfaceName field.
-func (o *ClusterCreateServerConfigAnyOfOneOf5) SetStorageInterfaceName(v string) {
-	o.StorageInterfaceName = &v
-}
-
-// GetComputeInterfaceName returns the ComputeInterfaceName field value if set, zero value otherwise.
-func (o *ClusterCreateServerConfigAnyOfOneOf5) GetComputeInterfaceName() string {
-	if o == nil || IsNil(o.ComputeInterfaceName) {
-		var ret string
-		return ret
-	}
-	return *o.ComputeInterfaceName
-}
-
-// GetComputeInterfaceNameOk returns a tuple with the ComputeInterfaceName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClusterCreateServerConfigAnyOfOneOf5) GetComputeInterfaceNameOk() (*string, bool) {
-	if o == nil || IsNil(o.ComputeInterfaceName) {
-		return nil, false
-	}
-	return o.ComputeInterfaceName, true
-}
-
-// IsSetComputeInterfaceName returns a boolean if a field has been set.
-func (o *ClusterCreateServerConfigAnyOfOneOf5) IsSetComputeInterfaceName() bool {
-	if o != nil && !IsNil(o.ComputeInterfaceName) {
-		return true
-	}
-
-	return false
-}
-
-// SetComputeInterfaceName gets a reference to the given string and assigns it to the ComputeInterfaceName field.
-func (o *ClusterCreateServerConfigAnyOfOneOf5) SetComputeInterfaceName(v string) {
-	o.ComputeInterfaceName = &v
-}
-
-// GetComputeVlans returns the ComputeVlans field value if set, zero value otherwise.
-func (o *ClusterCreateServerConfigAnyOfOneOf5) GetComputeVlans() string {
-	if o == nil || IsNil(o.ComputeVlans) {
-		var ret string
-		return ret
-	}
-	return *o.ComputeVlans
-}
-
-// GetComputeVlansOk returns a tuple with the ComputeVlans field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClusterCreateServerConfigAnyOfOneOf5) GetComputeVlansOk() (*string, bool) {
-	if o == nil || IsNil(o.ComputeVlans) {
-		return nil, false
-	}
-	return o.ComputeVlans, true
-}
-
-// IsSetComputeVlans returns a boolean if a field has been set.
-func (o *ClusterCreateServerConfigAnyOfOneOf5) IsSetComputeVlans() bool {
-	if o != nil && !IsNil(o.ComputeVlans) {
-		return true
-	}
-
-	return false
-}
-
-// SetComputeVlans gets a reference to the given string and assigns it to the ComputeVlans field.
-func (o *ClusterCreateServerConfigAnyOfOneOf5) SetComputeVlans(v string) {
-	o.ComputeVlans = &v
-}
-
-// GetOverlayInterfaceName returns the OverlayInterfaceName field value if set, zero value otherwise.
-func (o *ClusterCreateServerConfigAnyOfOneOf5) GetOverlayInterfaceName() string {
-	if o == nil || IsNil(o.OverlayInterfaceName) {
-		var ret string
-		return ret
-	}
-	return *o.OverlayInterfaceName
-}
-
-// GetOverlayInterfaceNameOk returns a tuple with the OverlayInterfaceName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClusterCreateServerConfigAnyOfOneOf5) GetOverlayInterfaceNameOk() (*string, bool) {
-	if o == nil || IsNil(o.OverlayInterfaceName) {
-		return nil, false
-	}
-	return o.OverlayInterfaceName, true
-}
-
-// IsSetOverlayInterfaceName returns a boolean if a field has been set.
-func (o *ClusterCreateServerConfigAnyOfOneOf5) IsSetOverlayInterfaceName() bool {
-	if o != nil && !IsNil(o.OverlayInterfaceName) {
-		return true
-	}
-
-	return false
-}
-
-// SetOverlayInterfaceName gets a reference to the given string and assigns it to the OverlayInterfaceName field.
-func (o *ClusterCreateServerConfigAnyOfOneOf5) SetOverlayInterfaceName(v string) {
-	o.OverlayInterfaceName = &v
+// SetNodeCount gets a reference to the given int64 and assigns it to the NodeCount field.
+func (o *ClusterCreateServerConfigAnyOfOneOf5) SetNodeCount(v int64) {
+	o.NodeCount = &v
 }
 
 // GetCreateUser returns the CreateUser field value if set, zero value otherwise.
@@ -339,6 +178,81 @@ func (o *ClusterCreateServerConfigAnyOfOneOf5) SetCreateUser(v bool) {
 	o.CreateUser = &v
 }
 
+// GetDefaultRepoAccount returns the DefaultRepoAccount field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ClusterCreateServerConfigAnyOfOneOf5) GetDefaultRepoAccount() int32 {
+	if o == nil || IsNil(o.DefaultRepoAccount.Get()) {
+		var ret int32
+		return ret
+	}
+	return *o.DefaultRepoAccount.Get()
+}
+
+// GetDefaultRepoAccountOk returns a tuple with the DefaultRepoAccount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ClusterCreateServerConfigAnyOfOneOf5) GetDefaultRepoAccountOk() (*int32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.DefaultRepoAccount.Get(), o.DefaultRepoAccount.IsSet()
+}
+
+// IsSetDefaultRepoAccount returns a boolean if a field has been set.
+func (o *ClusterCreateServerConfigAnyOfOneOf5) IsSetDefaultRepoAccount() bool {
+	if o != nil && o.DefaultRepoAccount.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetDefaultRepoAccount gets a reference to the given NullableInt32 and assigns it to the DefaultRepoAccount field.
+func (o *ClusterCreateServerConfigAnyOfOneOf5) SetDefaultRepoAccount(v int32) {
+	o.DefaultRepoAccount.Set(&v)
+}
+
+// SetDefaultRepoAccountNil sets the value for DefaultRepoAccount to be an explicit nil
+func (o *ClusterCreateServerConfigAnyOfOneOf5) SetDefaultRepoAccountNil() {
+	o.DefaultRepoAccount.Set(nil)
+}
+
+// UnsetDefaultRepoAccount ensures that no value is present for DefaultRepoAccount, not even an explicit nil
+func (o *ClusterCreateServerConfigAnyOfOneOf5) UnsetDefaultRepoAccount() {
+	o.DefaultRepoAccount.Unset()
+}
+
+// GetImageServer returns the ImageServer field value if set, zero value otherwise.
+func (o *ClusterCreateServerConfigAnyOfOneOf5) GetImageServer() string {
+	if o == nil || IsNil(o.ImageServer) {
+		var ret string
+		return ret
+	}
+	return *o.ImageServer
+}
+
+// GetImageServerOk returns a tuple with the ImageServer field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClusterCreateServerConfigAnyOfOneOf5) GetImageServerOk() (*string, bool) {
+	if o == nil || IsNil(o.ImageServer) {
+		return nil, false
+	}
+	return o.ImageServer, true
+}
+
+// IsSetImageServer returns a boolean if a field has been set.
+func (o *ClusterCreateServerConfigAnyOfOneOf5) IsSetImageServer() bool {
+	if o != nil && !IsNil(o.ImageServer) {
+		return true
+	}
+
+	return false
+}
+
+// SetImageServer gets a reference to the given string and assigns it to the ImageServer field.
+func (o *ClusterCreateServerConfigAnyOfOneOf5) SetImageServer(v string) {
+	o.ImageServer = &v
+}
+
 func (o ClusterCreateServerConfigAnyOfOneOf5) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -349,32 +263,23 @@ func (o ClusterCreateServerConfigAnyOfOneOf5) MarshalJSON() ([]byte, error) {
 
 func (o ClusterCreateServerConfigAnyOfOneOf5) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.CpuArch) {
-		toSerialize["cpuArch"] = o.CpuArch
+	if !IsNil(o.PodCidr) {
+		toSerialize["podCidr"] = o.PodCidr
 	}
-	if !IsNil(o.CpuModel) {
-		toSerialize["cpuModel"] = o.CpuModel
+	if !IsNil(o.ServiceCidr) {
+		toSerialize["serviceCidr"] = o.ServiceCidr
 	}
-	if !IsNil(o.DynamicPlacementMode) {
-		toSerialize["dynamicPlacementMode"] = o.DynamicPlacementMode
-	}
-	if !IsNil(o.PowerPolicy) {
-		toSerialize["powerPolicy"] = o.PowerPolicy
-	}
-	if !IsNil(o.StorageInterfaceName) {
-		toSerialize["storageInterfaceName"] = o.StorageInterfaceName
-	}
-	if !IsNil(o.ComputeInterfaceName) {
-		toSerialize["computeInterfaceName"] = o.ComputeInterfaceName
-	}
-	if !IsNil(o.ComputeVlans) {
-		toSerialize["computeVlans"] = o.ComputeVlans
-	}
-	if !IsNil(o.OverlayInterfaceName) {
-		toSerialize["overlayInterfaceName"] = o.OverlayInterfaceName
+	if !IsNil(o.NodeCount) {
+		toSerialize["nodeCount"] = o.NodeCount
 	}
 	if !IsNil(o.CreateUser) {
 		toSerialize["createUser"] = o.CreateUser
+	}
+	if o.DefaultRepoAccount.IsSet() {
+		toSerialize["defaultRepoAccount"] = o.DefaultRepoAccount.Get()
+	}
+	if !IsNil(o.ImageServer) {
+		toSerialize["imageServer"] = o.ImageServer
 	}
 
 	for key, value := range o.AdditionalProperties {

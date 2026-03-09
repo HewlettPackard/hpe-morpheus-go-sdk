@@ -15,11 +15,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the ClusterServerCreateConfigVsphere type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ClusterServerCreateConfigVsphere{}
+// checks if the AddClusterRequestClusterServerConfigAnyOfOneOf7 type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddClusterRequestClusterServerConfigAnyOfOneOf7{}
 
-// ClusterServerCreateConfigVsphere Configuration for VMware cluster servers
-type ClusterServerCreateConfigVsphere struct {
+// AddClusterRequestClusterServerConfigAnyOfOneOf7 Configuration for VMware cluster servers
+type AddClusterRequestClusterServerConfigAnyOfOneOf7 struct {
 	// Number of workers or hosts
 	NodeCount      *int64  `json:"nodeCount,omitempty"`
 	PodCidr        *string `json:"podCidr,omitempty"`
@@ -33,27 +33,27 @@ type ClusterServerCreateConfigVsphere struct {
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
-type _ClusterServerCreateConfigVsphere ClusterServerCreateConfigVsphere
+type _AddClusterRequestClusterServerConfigAnyOfOneOf7 AddClusterRequestClusterServerConfigAnyOfOneOf7
 
-// NewClusterServerCreateConfigVsphere instantiates a new ClusterServerCreateConfigVsphere object
+// NewAddClusterRequestClusterServerConfigAnyOfOneOf7 instantiates a new AddClusterRequestClusterServerConfigAnyOfOneOf7 object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewClusterServerCreateConfigVsphere() *ClusterServerCreateConfigVsphere {
-	this := ClusterServerCreateConfigVsphere{}
+func NewAddClusterRequestClusterServerConfigAnyOfOneOf7() *AddClusterRequestClusterServerConfigAnyOfOneOf7 {
+	this := AddClusterRequestClusterServerConfigAnyOfOneOf7{}
 	return &this
 }
 
-// NewClusterServerCreateConfigVsphereWithDefaults instantiates a new ClusterServerCreateConfigVsphere object
+// NewAddClusterRequestClusterServerConfigAnyOfOneOf7WithDefaults instantiates a new AddClusterRequestClusterServerConfigAnyOfOneOf7 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewClusterServerCreateConfigVsphereWithDefaults() *ClusterServerCreateConfigVsphere {
-	this := ClusterServerCreateConfigVsphere{}
+func NewAddClusterRequestClusterServerConfigAnyOfOneOf7WithDefaults() *AddClusterRequestClusterServerConfigAnyOfOneOf7 {
+	this := AddClusterRequestClusterServerConfigAnyOfOneOf7{}
 	return &this
 }
 
 // GetNodeCount returns the NodeCount field value if set, zero value otherwise.
-func (o *ClusterServerCreateConfigVsphere) GetNodeCount() int64 {
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf7) GetNodeCount() int64 {
 	if o == nil || IsNil(o.NodeCount) {
 		var ret int64
 		return ret
@@ -63,7 +63,7 @@ func (o *ClusterServerCreateConfigVsphere) GetNodeCount() int64 {
 
 // GetNodeCountOk returns a tuple with the NodeCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClusterServerCreateConfigVsphere) GetNodeCountOk() (*int64, bool) {
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf7) GetNodeCountOk() (*int64, bool) {
 	if o == nil || IsNil(o.NodeCount) {
 		return nil, false
 	}
@@ -71,7 +71,7 @@ func (o *ClusterServerCreateConfigVsphere) GetNodeCountOk() (*int64, bool) {
 }
 
 // IsSetNodeCount returns a boolean if a field has been set.
-func (o *ClusterServerCreateConfigVsphere) IsSetNodeCount() bool {
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf7) IsSetNodeCount() bool {
 	if o != nil && !IsNil(o.NodeCount) {
 		return true
 	}
@@ -80,12 +80,12 @@ func (o *ClusterServerCreateConfigVsphere) IsSetNodeCount() bool {
 }
 
 // SetNodeCount gets a reference to the given int64 and assigns it to the NodeCount field.
-func (o *ClusterServerCreateConfigVsphere) SetNodeCount(v int64) {
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf7) SetNodeCount(v int64) {
 	o.NodeCount = &v
 }
 
 // GetPodCidr returns the PodCidr field value if set, zero value otherwise.
-func (o *ClusterServerCreateConfigVsphere) GetPodCidr() string {
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf7) GetPodCidr() string {
 	if o == nil || IsNil(o.PodCidr) {
 		var ret string
 		return ret
@@ -95,7 +95,7 @@ func (o *ClusterServerCreateConfigVsphere) GetPodCidr() string {
 
 // GetPodCidrOk returns a tuple with the PodCidr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClusterServerCreateConfigVsphere) GetPodCidrOk() (*string, bool) {
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf7) GetPodCidrOk() (*string, bool) {
 	if o == nil || IsNil(o.PodCidr) {
 		return nil, false
 	}
@@ -103,7 +103,7 @@ func (o *ClusterServerCreateConfigVsphere) GetPodCidrOk() (*string, bool) {
 }
 
 // IsSetPodCidr returns a boolean if a field has been set.
-func (o *ClusterServerCreateConfigVsphere) IsSetPodCidr() bool {
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf7) IsSetPodCidr() bool {
 	if o != nil && !IsNil(o.PodCidr) {
 		return true
 	}
@@ -112,12 +112,12 @@ func (o *ClusterServerCreateConfigVsphere) IsSetPodCidr() bool {
 }
 
 // SetPodCidr gets a reference to the given string and assigns it to the PodCidr field.
-func (o *ClusterServerCreateConfigVsphere) SetPodCidr(v string) {
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf7) SetPodCidr(v string) {
 	o.PodCidr = &v
 }
 
 // GetVmwareFolderId returns the VmwareFolderId field value if set, zero value otherwise.
-func (o *ClusterServerCreateConfigVsphere) GetVmwareFolderId() string {
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf7) GetVmwareFolderId() string {
 	if o == nil || IsNil(o.VmwareFolderId) {
 		var ret string
 		return ret
@@ -127,7 +127,7 @@ func (o *ClusterServerCreateConfigVsphere) GetVmwareFolderId() string {
 
 // GetVmwareFolderIdOk returns a tuple with the VmwareFolderId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClusterServerCreateConfigVsphere) GetVmwareFolderIdOk() (*string, bool) {
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf7) GetVmwareFolderIdOk() (*string, bool) {
 	if o == nil || IsNil(o.VmwareFolderId) {
 		return nil, false
 	}
@@ -135,7 +135,7 @@ func (o *ClusterServerCreateConfigVsphere) GetVmwareFolderIdOk() (*string, bool)
 }
 
 // IsSetVmwareFolderId returns a boolean if a field has been set.
-func (o *ClusterServerCreateConfigVsphere) IsSetVmwareFolderId() bool {
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf7) IsSetVmwareFolderId() bool {
 	if o != nil && !IsNil(o.VmwareFolderId) {
 		return true
 	}
@@ -144,12 +144,12 @@ func (o *ClusterServerCreateConfigVsphere) IsSetVmwareFolderId() bool {
 }
 
 // SetVmwareFolderId gets a reference to the given string and assigns it to the VmwareFolderId field.
-func (o *ClusterServerCreateConfigVsphere) SetVmwareFolderId(v string) {
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf7) SetVmwareFolderId(v string) {
 	o.VmwareFolderId = &v
 }
 
 // GetServiceCidr returns the ServiceCidr field value if set, zero value otherwise.
-func (o *ClusterServerCreateConfigVsphere) GetServiceCidr() string {
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf7) GetServiceCidr() string {
 	if o == nil || IsNil(o.ServiceCidr) {
 		var ret string
 		return ret
@@ -159,7 +159,7 @@ func (o *ClusterServerCreateConfigVsphere) GetServiceCidr() string {
 
 // GetServiceCidrOk returns a tuple with the ServiceCidr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClusterServerCreateConfigVsphere) GetServiceCidrOk() (*string, bool) {
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf7) GetServiceCidrOk() (*string, bool) {
 	if o == nil || IsNil(o.ServiceCidr) {
 		return nil, false
 	}
@@ -167,7 +167,7 @@ func (o *ClusterServerCreateConfigVsphere) GetServiceCidrOk() (*string, bool) {
 }
 
 // IsSetServiceCidr returns a boolean if a field has been set.
-func (o *ClusterServerCreateConfigVsphere) IsSetServiceCidr() bool {
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf7) IsSetServiceCidr() bool {
 	if o != nil && !IsNil(o.ServiceCidr) {
 		return true
 	}
@@ -176,12 +176,12 @@ func (o *ClusterServerCreateConfigVsphere) IsSetServiceCidr() bool {
 }
 
 // SetServiceCidr gets a reference to the given string and assigns it to the ServiceCidr field.
-func (o *ClusterServerCreateConfigVsphere) SetServiceCidr(v string) {
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf7) SetServiceCidr(v string) {
 	o.ServiceCidr = &v
 }
 
 // GetCreateUser returns the CreateUser field value if set, zero value otherwise.
-func (o *ClusterServerCreateConfigVsphere) GetCreateUser() bool {
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf7) GetCreateUser() bool {
 	if o == nil || IsNil(o.CreateUser) {
 		var ret bool
 		return ret
@@ -191,7 +191,7 @@ func (o *ClusterServerCreateConfigVsphere) GetCreateUser() bool {
 
 // GetCreateUserOk returns a tuple with the CreateUser field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClusterServerCreateConfigVsphere) GetCreateUserOk() (*bool, bool) {
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf7) GetCreateUserOk() (*bool, bool) {
 	if o == nil || IsNil(o.CreateUser) {
 		return nil, false
 	}
@@ -199,7 +199,7 @@ func (o *ClusterServerCreateConfigVsphere) GetCreateUserOk() (*bool, bool) {
 }
 
 // IsSetCreateUser returns a boolean if a field has been set.
-func (o *ClusterServerCreateConfigVsphere) IsSetCreateUser() bool {
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf7) IsSetCreateUser() bool {
 	if o != nil && !IsNil(o.CreateUser) {
 		return true
 	}
@@ -208,12 +208,12 @@ func (o *ClusterServerCreateConfigVsphere) IsSetCreateUser() bool {
 }
 
 // SetCreateUser gets a reference to the given bool and assigns it to the CreateUser field.
-func (o *ClusterServerCreateConfigVsphere) SetCreateUser(v bool) {
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf7) SetCreateUser(v bool) {
 	o.CreateUser = &v
 }
 
 // GetDefaultRepoAccount returns the DefaultRepoAccount field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ClusterServerCreateConfigVsphere) GetDefaultRepoAccount() int32 {
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf7) GetDefaultRepoAccount() int32 {
 	if o == nil || IsNil(o.DefaultRepoAccount.Get()) {
 		var ret int32
 		return ret
@@ -224,7 +224,7 @@ func (o *ClusterServerCreateConfigVsphere) GetDefaultRepoAccount() int32 {
 // GetDefaultRepoAccountOk returns a tuple with the DefaultRepoAccount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ClusterServerCreateConfigVsphere) GetDefaultRepoAccountOk() (*int32, bool) {
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf7) GetDefaultRepoAccountOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -232,7 +232,7 @@ func (o *ClusterServerCreateConfigVsphere) GetDefaultRepoAccountOk() (*int32, bo
 }
 
 // IsSetDefaultRepoAccount returns a boolean if a field has been set.
-func (o *ClusterServerCreateConfigVsphere) IsSetDefaultRepoAccount() bool {
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf7) IsSetDefaultRepoAccount() bool {
 	if o != nil && o.DefaultRepoAccount.IsSet() {
 		return true
 	}
@@ -241,22 +241,22 @@ func (o *ClusterServerCreateConfigVsphere) IsSetDefaultRepoAccount() bool {
 }
 
 // SetDefaultRepoAccount gets a reference to the given NullableInt32 and assigns it to the DefaultRepoAccount field.
-func (o *ClusterServerCreateConfigVsphere) SetDefaultRepoAccount(v int32) {
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf7) SetDefaultRepoAccount(v int32) {
 	o.DefaultRepoAccount.Set(&v)
 }
 
 // SetDefaultRepoAccountNil sets the value for DefaultRepoAccount to be an explicit nil
-func (o *ClusterServerCreateConfigVsphere) SetDefaultRepoAccountNil() {
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf7) SetDefaultRepoAccountNil() {
 	o.DefaultRepoAccount.Set(nil)
 }
 
 // UnsetDefaultRepoAccount ensures that no value is present for DefaultRepoAccount, not even an explicit nil
-func (o *ClusterServerCreateConfigVsphere) UnsetDefaultRepoAccount() {
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf7) UnsetDefaultRepoAccount() {
 	o.DefaultRepoAccount.Unset()
 }
 
 // GetImageServer returns the ImageServer field value if set, zero value otherwise.
-func (o *ClusterServerCreateConfigVsphere) GetImageServer() string {
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf7) GetImageServer() string {
 	if o == nil || IsNil(o.ImageServer) {
 		var ret string
 		return ret
@@ -266,7 +266,7 @@ func (o *ClusterServerCreateConfigVsphere) GetImageServer() string {
 
 // GetImageServerOk returns a tuple with the ImageServer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClusterServerCreateConfigVsphere) GetImageServerOk() (*string, bool) {
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf7) GetImageServerOk() (*string, bool) {
 	if o == nil || IsNil(o.ImageServer) {
 		return nil, false
 	}
@@ -274,7 +274,7 @@ func (o *ClusterServerCreateConfigVsphere) GetImageServerOk() (*string, bool) {
 }
 
 // IsSetImageServer returns a boolean if a field has been set.
-func (o *ClusterServerCreateConfigVsphere) IsSetImageServer() bool {
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf7) IsSetImageServer() bool {
 	if o != nil && !IsNil(o.ImageServer) {
 		return true
 	}
@@ -283,11 +283,11 @@ func (o *ClusterServerCreateConfigVsphere) IsSetImageServer() bool {
 }
 
 // SetImageServer gets a reference to the given string and assigns it to the ImageServer field.
-func (o *ClusterServerCreateConfigVsphere) SetImageServer(v string) {
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf7) SetImageServer(v string) {
 	o.ImageServer = &v
 }
 
-func (o ClusterServerCreateConfigVsphere) MarshalJSON() ([]byte, error) {
+func (o AddClusterRequestClusterServerConfigAnyOfOneOf7) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -295,7 +295,7 @@ func (o ClusterServerCreateConfigVsphere) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o ClusterServerCreateConfigVsphere) ToMap() (map[string]interface{}, error) {
+func (o AddClusterRequestClusterServerConfigAnyOfOneOf7) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.NodeCount) {
 		toSerialize["nodeCount"] = o.NodeCount
@@ -326,43 +326,43 @@ func (o ClusterServerCreateConfigVsphere) ToMap() (map[string]interface{}, error
 	return toSerialize, nil
 }
 
-type NullableClusterServerCreateConfigVsphere struct {
-	value *ClusterServerCreateConfigVsphere
+type NullableAddClusterRequestClusterServerConfigAnyOfOneOf7 struct {
+	value *AddClusterRequestClusterServerConfigAnyOfOneOf7
 	isSet bool
 }
 
-func (v NullableClusterServerCreateConfigVsphere) Get() *ClusterServerCreateConfigVsphere {
+func (v NullableAddClusterRequestClusterServerConfigAnyOfOneOf7) Get() *AddClusterRequestClusterServerConfigAnyOfOneOf7 {
 	return v.value
 }
 
-func (v *NullableClusterServerCreateConfigVsphere) Set(val *ClusterServerCreateConfigVsphere) {
+func (v *NullableAddClusterRequestClusterServerConfigAnyOfOneOf7) Set(val *AddClusterRequestClusterServerConfigAnyOfOneOf7) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableClusterServerCreateConfigVsphere) IsSet() bool {
+func (v NullableAddClusterRequestClusterServerConfigAnyOfOneOf7) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableClusterServerCreateConfigVsphere) Unset() {
+func (v *NullableAddClusterRequestClusterServerConfigAnyOfOneOf7) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableClusterServerCreateConfigVsphere(val *ClusterServerCreateConfigVsphere) *NullableClusterServerCreateConfigVsphere {
-	return &NullableClusterServerCreateConfigVsphere{value: val, isSet: true}
+func NewNullableAddClusterRequestClusterServerConfigAnyOfOneOf7(val *AddClusterRequestClusterServerConfigAnyOfOneOf7) *NullableAddClusterRequestClusterServerConfigAnyOfOneOf7 {
+	return &NullableAddClusterRequestClusterServerConfigAnyOfOneOf7{value: val, isSet: true}
 }
 
-func (v NullableClusterServerCreateConfigVsphere) MarshalJSON() ([]byte, error) {
+func (v NullableAddClusterRequestClusterServerConfigAnyOfOneOf7) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableClusterServerCreateConfigVsphere) UnmarshalJSON(src []byte) error {
+func (v *NullableAddClusterRequestClusterServerConfigAnyOfOneOf7) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
 
-func (v NullableClusterServerCreateConfigVsphere) UnmarshalMapstructure(data any) (any, error) {
+func (v NullableAddClusterRequestClusterServerConfigAnyOfOneOf7) UnmarshalMapstructure(data any) (any, error) {
 	if err := mapstructDecode(data, &v.value); err != nil {
 		return nil, err
 	}
@@ -371,7 +371,7 @@ func (v NullableClusterServerCreateConfigVsphere) UnmarshalMapstructure(data any
 	return v, nil
 }
 
-func (o *ClusterServerCreateConfigVsphere) UnmarshalJSON(data []byte) (err error) {
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf7) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }
 
