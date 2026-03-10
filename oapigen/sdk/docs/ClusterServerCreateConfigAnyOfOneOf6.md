@@ -4,11 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**NodeCount** | Pointer to **int64** | Number of workers or hosts | [optional] 
-**PodCidr** | Pointer to **string** |  | [optional] 
-**VmwareFolderId** | Pointer to **string** |  | [optional] 
-**ServiceCidr** | Pointer to **string** |  | [optional] 
+**CpuArch** | Pointer to **string** |  | [optional] 
+**CpuModel** | Pointer to **string** |  | [optional] 
+**DynamicPlacementMode** | Pointer to **string** |  | [optional] 
+**PowerPolicy** | Pointer to **string** |  | [optional] 
+**StorageInterfaceName** | Pointer to **string** |  | [optional] 
+**ComputeInterfaceName** | Pointer to **string** |  | [optional] 
+**ComputeVlans** | Pointer to **string** |  | [optional] 
+**OverlayInterfaceName** | Pointer to **string** |  | [optional] 
 **CreateUser** | Pointer to **bool** |  | [optional] 
+**DefaultRepoAccount** | Pointer to **NullableInt32** | Default Repo Account is the repository to be used when pulling images.  Default behavior is to be anonymous, which does have limits on allowed image pulls from public Docker Repos. | [optional] 
+**ImageServer** | Pointer to **string** | Act as Image Server. Set to on to use the Default Repo Account to pull images. | [optional] 
 
 ## Methods
 
@@ -29,105 +35,205 @@ NewClusterServerCreateConfigAnyOfOneOf6WithDefaults instantiates a new ClusterSe
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetNodeCount
+### GetCpuArch
 
-`func (o *ClusterServerCreateConfigAnyOfOneOf6) GetNodeCount() int64`
+`func (o *ClusterServerCreateConfigAnyOfOneOf6) GetCpuArch() string`
 
-GetNodeCount returns the NodeCount field if non-nil, zero value otherwise.
+GetCpuArch returns the CpuArch field if non-nil, zero value otherwise.
 
-### GetNodeCountOk
+### GetCpuArchOk
 
-`func (o *ClusterServerCreateConfigAnyOfOneOf6) GetNodeCountOk() (*int64, bool)`
+`func (o *ClusterServerCreateConfigAnyOfOneOf6) GetCpuArchOk() (*string, bool)`
 
-GetNodeCountOk returns a tuple with the NodeCount field if it's non-nil, zero value otherwise
+GetCpuArchOk returns a tuple with the CpuArch field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetNodeCount
+### SetCpuArch
 
-`func (o *ClusterServerCreateConfigAnyOfOneOf6) SetNodeCount(v int64)`
+`func (o *ClusterServerCreateConfigAnyOfOneOf6) SetCpuArch(v string)`
 
-SetNodeCount sets NodeCount field to given value.
+SetCpuArch sets CpuArch field to given value.
 
-### HasNodeCount
+### HasCpuArch
 
-`func (o *ClusterServerCreateConfigAnyOfOneOf6) HasNodeCount() bool`
+`func (o *ClusterServerCreateConfigAnyOfOneOf6) HasCpuArch() bool`
 
-HasNodeCount returns a boolean if a field has been set.
+HasCpuArch returns a boolean if a field has been set.
 
-### GetPodCidr
+### GetCpuModel
 
-`func (o *ClusterServerCreateConfigAnyOfOneOf6) GetPodCidr() string`
+`func (o *ClusterServerCreateConfigAnyOfOneOf6) GetCpuModel() string`
 
-GetPodCidr returns the PodCidr field if non-nil, zero value otherwise.
+GetCpuModel returns the CpuModel field if non-nil, zero value otherwise.
 
-### GetPodCidrOk
+### GetCpuModelOk
 
-`func (o *ClusterServerCreateConfigAnyOfOneOf6) GetPodCidrOk() (*string, bool)`
+`func (o *ClusterServerCreateConfigAnyOfOneOf6) GetCpuModelOk() (*string, bool)`
 
-GetPodCidrOk returns a tuple with the PodCidr field if it's non-nil, zero value otherwise
+GetCpuModelOk returns a tuple with the CpuModel field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPodCidr
+### SetCpuModel
 
-`func (o *ClusterServerCreateConfigAnyOfOneOf6) SetPodCidr(v string)`
+`func (o *ClusterServerCreateConfigAnyOfOneOf6) SetCpuModel(v string)`
 
-SetPodCidr sets PodCidr field to given value.
+SetCpuModel sets CpuModel field to given value.
 
-### HasPodCidr
+### HasCpuModel
 
-`func (o *ClusterServerCreateConfigAnyOfOneOf6) HasPodCidr() bool`
+`func (o *ClusterServerCreateConfigAnyOfOneOf6) HasCpuModel() bool`
 
-HasPodCidr returns a boolean if a field has been set.
+HasCpuModel returns a boolean if a field has been set.
 
-### GetVmwareFolderId
+### GetDynamicPlacementMode
 
-`func (o *ClusterServerCreateConfigAnyOfOneOf6) GetVmwareFolderId() string`
+`func (o *ClusterServerCreateConfigAnyOfOneOf6) GetDynamicPlacementMode() string`
 
-GetVmwareFolderId returns the VmwareFolderId field if non-nil, zero value otherwise.
+GetDynamicPlacementMode returns the DynamicPlacementMode field if non-nil, zero value otherwise.
 
-### GetVmwareFolderIdOk
+### GetDynamicPlacementModeOk
 
-`func (o *ClusterServerCreateConfigAnyOfOneOf6) GetVmwareFolderIdOk() (*string, bool)`
+`func (o *ClusterServerCreateConfigAnyOfOneOf6) GetDynamicPlacementModeOk() (*string, bool)`
 
-GetVmwareFolderIdOk returns a tuple with the VmwareFolderId field if it's non-nil, zero value otherwise
+GetDynamicPlacementModeOk returns a tuple with the DynamicPlacementMode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetVmwareFolderId
+### SetDynamicPlacementMode
 
-`func (o *ClusterServerCreateConfigAnyOfOneOf6) SetVmwareFolderId(v string)`
+`func (o *ClusterServerCreateConfigAnyOfOneOf6) SetDynamicPlacementMode(v string)`
 
-SetVmwareFolderId sets VmwareFolderId field to given value.
+SetDynamicPlacementMode sets DynamicPlacementMode field to given value.
 
-### HasVmwareFolderId
+### HasDynamicPlacementMode
 
-`func (o *ClusterServerCreateConfigAnyOfOneOf6) HasVmwareFolderId() bool`
+`func (o *ClusterServerCreateConfigAnyOfOneOf6) HasDynamicPlacementMode() bool`
 
-HasVmwareFolderId returns a boolean if a field has been set.
+HasDynamicPlacementMode returns a boolean if a field has been set.
 
-### GetServiceCidr
+### GetPowerPolicy
 
-`func (o *ClusterServerCreateConfigAnyOfOneOf6) GetServiceCidr() string`
+`func (o *ClusterServerCreateConfigAnyOfOneOf6) GetPowerPolicy() string`
 
-GetServiceCidr returns the ServiceCidr field if non-nil, zero value otherwise.
+GetPowerPolicy returns the PowerPolicy field if non-nil, zero value otherwise.
 
-### GetServiceCidrOk
+### GetPowerPolicyOk
 
-`func (o *ClusterServerCreateConfigAnyOfOneOf6) GetServiceCidrOk() (*string, bool)`
+`func (o *ClusterServerCreateConfigAnyOfOneOf6) GetPowerPolicyOk() (*string, bool)`
 
-GetServiceCidrOk returns a tuple with the ServiceCidr field if it's non-nil, zero value otherwise
+GetPowerPolicyOk returns a tuple with the PowerPolicy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceCidr
+### SetPowerPolicy
 
-`func (o *ClusterServerCreateConfigAnyOfOneOf6) SetServiceCidr(v string)`
+`func (o *ClusterServerCreateConfigAnyOfOneOf6) SetPowerPolicy(v string)`
 
-SetServiceCidr sets ServiceCidr field to given value.
+SetPowerPolicy sets PowerPolicy field to given value.
 
-### HasServiceCidr
+### HasPowerPolicy
 
-`func (o *ClusterServerCreateConfigAnyOfOneOf6) HasServiceCidr() bool`
+`func (o *ClusterServerCreateConfigAnyOfOneOf6) HasPowerPolicy() bool`
 
-HasServiceCidr returns a boolean if a field has been set.
+HasPowerPolicy returns a boolean if a field has been set.
+
+### GetStorageInterfaceName
+
+`func (o *ClusterServerCreateConfigAnyOfOneOf6) GetStorageInterfaceName() string`
+
+GetStorageInterfaceName returns the StorageInterfaceName field if non-nil, zero value otherwise.
+
+### GetStorageInterfaceNameOk
+
+`func (o *ClusterServerCreateConfigAnyOfOneOf6) GetStorageInterfaceNameOk() (*string, bool)`
+
+GetStorageInterfaceNameOk returns a tuple with the StorageInterfaceName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStorageInterfaceName
+
+`func (o *ClusterServerCreateConfigAnyOfOneOf6) SetStorageInterfaceName(v string)`
+
+SetStorageInterfaceName sets StorageInterfaceName field to given value.
+
+### HasStorageInterfaceName
+
+`func (o *ClusterServerCreateConfigAnyOfOneOf6) HasStorageInterfaceName() bool`
+
+HasStorageInterfaceName returns a boolean if a field has been set.
+
+### GetComputeInterfaceName
+
+`func (o *ClusterServerCreateConfigAnyOfOneOf6) GetComputeInterfaceName() string`
+
+GetComputeInterfaceName returns the ComputeInterfaceName field if non-nil, zero value otherwise.
+
+### GetComputeInterfaceNameOk
+
+`func (o *ClusterServerCreateConfigAnyOfOneOf6) GetComputeInterfaceNameOk() (*string, bool)`
+
+GetComputeInterfaceNameOk returns a tuple with the ComputeInterfaceName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeInterfaceName
+
+`func (o *ClusterServerCreateConfigAnyOfOneOf6) SetComputeInterfaceName(v string)`
+
+SetComputeInterfaceName sets ComputeInterfaceName field to given value.
+
+### HasComputeInterfaceName
+
+`func (o *ClusterServerCreateConfigAnyOfOneOf6) HasComputeInterfaceName() bool`
+
+HasComputeInterfaceName returns a boolean if a field has been set.
+
+### GetComputeVlans
+
+`func (o *ClusterServerCreateConfigAnyOfOneOf6) GetComputeVlans() string`
+
+GetComputeVlans returns the ComputeVlans field if non-nil, zero value otherwise.
+
+### GetComputeVlansOk
+
+`func (o *ClusterServerCreateConfigAnyOfOneOf6) GetComputeVlansOk() (*string, bool)`
+
+GetComputeVlansOk returns a tuple with the ComputeVlans field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeVlans
+
+`func (o *ClusterServerCreateConfigAnyOfOneOf6) SetComputeVlans(v string)`
+
+SetComputeVlans sets ComputeVlans field to given value.
+
+### HasComputeVlans
+
+`func (o *ClusterServerCreateConfigAnyOfOneOf6) HasComputeVlans() bool`
+
+HasComputeVlans returns a boolean if a field has been set.
+
+### GetOverlayInterfaceName
+
+`func (o *ClusterServerCreateConfigAnyOfOneOf6) GetOverlayInterfaceName() string`
+
+GetOverlayInterfaceName returns the OverlayInterfaceName field if non-nil, zero value otherwise.
+
+### GetOverlayInterfaceNameOk
+
+`func (o *ClusterServerCreateConfigAnyOfOneOf6) GetOverlayInterfaceNameOk() (*string, bool)`
+
+GetOverlayInterfaceNameOk returns a tuple with the OverlayInterfaceName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOverlayInterfaceName
+
+`func (o *ClusterServerCreateConfigAnyOfOneOf6) SetOverlayInterfaceName(v string)`
+
+SetOverlayInterfaceName sets OverlayInterfaceName field to given value.
+
+### HasOverlayInterfaceName
+
+`func (o *ClusterServerCreateConfigAnyOfOneOf6) HasOverlayInterfaceName() bool`
+
+HasOverlayInterfaceName returns a boolean if a field has been set.
 
 ### GetCreateUser
 
@@ -153,6 +259,66 @@ SetCreateUser sets CreateUser field to given value.
 `func (o *ClusterServerCreateConfigAnyOfOneOf6) HasCreateUser() bool`
 
 HasCreateUser returns a boolean if a field has been set.
+
+### GetDefaultRepoAccount
+
+`func (o *ClusterServerCreateConfigAnyOfOneOf6) GetDefaultRepoAccount() int32`
+
+GetDefaultRepoAccount returns the DefaultRepoAccount field if non-nil, zero value otherwise.
+
+### GetDefaultRepoAccountOk
+
+`func (o *ClusterServerCreateConfigAnyOfOneOf6) GetDefaultRepoAccountOk() (*int32, bool)`
+
+GetDefaultRepoAccountOk returns a tuple with the DefaultRepoAccount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDefaultRepoAccount
+
+`func (o *ClusterServerCreateConfigAnyOfOneOf6) SetDefaultRepoAccount(v int32)`
+
+SetDefaultRepoAccount sets DefaultRepoAccount field to given value.
+
+### HasDefaultRepoAccount
+
+`func (o *ClusterServerCreateConfigAnyOfOneOf6) HasDefaultRepoAccount() bool`
+
+HasDefaultRepoAccount returns a boolean if a field has been set.
+
+### SetDefaultRepoAccountNil
+
+`func (o *ClusterServerCreateConfigAnyOfOneOf6) SetDefaultRepoAccountNil(b bool)`
+
+ SetDefaultRepoAccountNil sets the value for DefaultRepoAccount to be an explicit nil
+
+### UnsetDefaultRepoAccount
+`func (o *ClusterServerCreateConfigAnyOfOneOf6) UnsetDefaultRepoAccount()`
+
+UnsetDefaultRepoAccount ensures that no value is present for DefaultRepoAccount, not even an explicit nil
+### GetImageServer
+
+`func (o *ClusterServerCreateConfigAnyOfOneOf6) GetImageServer() string`
+
+GetImageServer returns the ImageServer field if non-nil, zero value otherwise.
+
+### GetImageServerOk
+
+`func (o *ClusterServerCreateConfigAnyOfOneOf6) GetImageServerOk() (*string, bool)`
+
+GetImageServerOk returns a tuple with the ImageServer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImageServer
+
+`func (o *ClusterServerCreateConfigAnyOfOneOf6) SetImageServer(v string)`
+
+SetImageServer sets ImageServer field to given value.
+
+### HasImageServer
+
+`func (o *ClusterServerCreateConfigAnyOfOneOf6) HasImageServer() bool`
+
+HasImageServer returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

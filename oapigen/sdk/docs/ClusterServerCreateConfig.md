@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DefaultRepoAccount** | Pointer to **NullableInt32** | Default Repo Account is the repository to be used when pulling images.  Default behavior is to be anonymous, which does have limits on allowed image pulls from public Docker Repos. | [optional] 
-**ImageServer** | Pointer to **string** | Act as Image Server. Set to on to use the Default Repo Account to pull images. | [optional] 
 **NodeCount** | Pointer to **int64** | Number of workers or hosts | [optional] 
 **CreateUser** | Pointer to **bool** |  | [optional] 
+**DefaultRepoAccount** | Pointer to **int32** | Default Repo Account is the repository to be used when pulling images.  Default behavior is to be anonymous, which does have limits on allowed image pulls from public Docker Repos. | [optional] 
+**ImageServer** | Pointer to **string** | Act as Image Server. Set to on to use the Default Repo Account to pull images. | [optional] 
 **Controller** | Pointer to [**ClusterServerCreateConfigAnyOfOneOf2Controller**](ClusterServerCreateConfigAnyOfOneOf2Controller.md) |  | [optional] 
 **Worker** | Pointer to [**ClusterServerCreateConfigAnyOfOneOf3Worker**](ClusterServerCreateConfigAnyOfOneOf3Worker.md) |  | [optional] 
 **PublicIpType** | Pointer to **string** |  | [optional] 
@@ -44,66 +44,6 @@ will change when the set of required properties is changed
 NewClusterServerCreateConfigWithDefaults instantiates a new ClusterServerCreateConfig object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetDefaultRepoAccount
-
-`func (o *ClusterServerCreateConfig) GetDefaultRepoAccount() int32`
-
-GetDefaultRepoAccount returns the DefaultRepoAccount field if non-nil, zero value otherwise.
-
-### GetDefaultRepoAccountOk
-
-`func (o *ClusterServerCreateConfig) GetDefaultRepoAccountOk() (*int32, bool)`
-
-GetDefaultRepoAccountOk returns a tuple with the DefaultRepoAccount field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDefaultRepoAccount
-
-`func (o *ClusterServerCreateConfig) SetDefaultRepoAccount(v int32)`
-
-SetDefaultRepoAccount sets DefaultRepoAccount field to given value.
-
-### HasDefaultRepoAccount
-
-`func (o *ClusterServerCreateConfig) HasDefaultRepoAccount() bool`
-
-HasDefaultRepoAccount returns a boolean if a field has been set.
-
-### SetDefaultRepoAccountNil
-
-`func (o *ClusterServerCreateConfig) SetDefaultRepoAccountNil(b bool)`
-
- SetDefaultRepoAccountNil sets the value for DefaultRepoAccount to be an explicit nil
-
-### UnsetDefaultRepoAccount
-`func (o *ClusterServerCreateConfig) UnsetDefaultRepoAccount()`
-
-UnsetDefaultRepoAccount ensures that no value is present for DefaultRepoAccount, not even an explicit nil
-### GetImageServer
-
-`func (o *ClusterServerCreateConfig) GetImageServer() string`
-
-GetImageServer returns the ImageServer field if non-nil, zero value otherwise.
-
-### GetImageServerOk
-
-`func (o *ClusterServerCreateConfig) GetImageServerOk() (*string, bool)`
-
-GetImageServerOk returns a tuple with the ImageServer field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetImageServer
-
-`func (o *ClusterServerCreateConfig) SetImageServer(v string)`
-
-SetImageServer sets ImageServer field to given value.
-
-### HasImageServer
-
-`func (o *ClusterServerCreateConfig) HasImageServer() bool`
-
-HasImageServer returns a boolean if a field has been set.
 
 ### GetNodeCount
 
@@ -154,6 +94,56 @@ SetCreateUser sets CreateUser field to given value.
 `func (o *ClusterServerCreateConfig) HasCreateUser() bool`
 
 HasCreateUser returns a boolean if a field has been set.
+
+### GetDefaultRepoAccount
+
+`func (o *ClusterServerCreateConfig) GetDefaultRepoAccount() int32`
+
+GetDefaultRepoAccount returns the DefaultRepoAccount field if non-nil, zero value otherwise.
+
+### GetDefaultRepoAccountOk
+
+`func (o *ClusterServerCreateConfig) GetDefaultRepoAccountOk() (*int32, bool)`
+
+GetDefaultRepoAccountOk returns a tuple with the DefaultRepoAccount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDefaultRepoAccount
+
+`func (o *ClusterServerCreateConfig) SetDefaultRepoAccount(v int32)`
+
+SetDefaultRepoAccount sets DefaultRepoAccount field to given value.
+
+### HasDefaultRepoAccount
+
+`func (o *ClusterServerCreateConfig) HasDefaultRepoAccount() bool`
+
+HasDefaultRepoAccount returns a boolean if a field has been set.
+
+### GetImageServer
+
+`func (o *ClusterServerCreateConfig) GetImageServer() string`
+
+GetImageServer returns the ImageServer field if non-nil, zero value otherwise.
+
+### GetImageServerOk
+
+`func (o *ClusterServerCreateConfig) GetImageServerOk() (*string, bool)`
+
+GetImageServerOk returns a tuple with the ImageServer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImageServer
+
+`func (o *ClusterServerCreateConfig) SetImageServer(v string)`
+
+SetImageServer sets ImageServer field to given value.
+
+### HasImageServer
+
+`func (o *ClusterServerCreateConfig) HasImageServer() bool`
+
+HasImageServer returns a boolean if a field has been set.
 
 ### GetController
 

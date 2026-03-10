@@ -20,10 +20,13 @@ var _ MappedNullable = &ClusterServerCreateConfigHKS{}
 
 // ClusterServerCreateConfigHKS Configuration for HKS cluster servers
 type ClusterServerCreateConfigHKS struct {
-	PodCidr              *string                `json:"podCidr,omitempty"`
-	ServiceCidr          *string                `json:"serviceCidr,omitempty"`
-	NodeCount            *int64                 `json:"nodeCount,omitempty"`
-	CreateUser           *bool                  `json:"createUser,omitempty"`
+	PodCidr     *string `json:"podCidr,omitempty"`
+	ServiceCidr *string `json:"serviceCidr,omitempty"`
+	CreateUser  *bool   `json:"createUser,omitempty"`
+	// Default Repo Account is the repository to be used when pulling images.  Default behavior is to be anonymous, which does have limits on allowed image pulls from public Docker Repos.
+	DefaultRepoAccount NullableInt32 `json:"defaultRepoAccount,omitempty"`
+	// Act as Image Server. Set to on to use the Default Repo Account to pull images.
+	ImageServer          *string                `json:"imageServer,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -110,38 +113,6 @@ func (o *ClusterServerCreateConfigHKS) SetServiceCidr(v string) {
 	o.ServiceCidr = &v
 }
 
-// GetNodeCount returns the NodeCount field value if set, zero value otherwise.
-func (o *ClusterServerCreateConfigHKS) GetNodeCount() int64 {
-	if o == nil || IsNil(o.NodeCount) {
-		var ret int64
-		return ret
-	}
-	return *o.NodeCount
-}
-
-// GetNodeCountOk returns a tuple with the NodeCount field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClusterServerCreateConfigHKS) GetNodeCountOk() (*int64, bool) {
-	if o == nil || IsNil(o.NodeCount) {
-		return nil, false
-	}
-	return o.NodeCount, true
-}
-
-// IsSetNodeCount returns a boolean if a field has been set.
-func (o *ClusterServerCreateConfigHKS) IsSetNodeCount() bool {
-	if o != nil && !IsNil(o.NodeCount) {
-		return true
-	}
-
-	return false
-}
-
-// SetNodeCount gets a reference to the given int64 and assigns it to the NodeCount field.
-func (o *ClusterServerCreateConfigHKS) SetNodeCount(v int64) {
-	o.NodeCount = &v
-}
-
 // GetCreateUser returns the CreateUser field value if set, zero value otherwise.
 func (o *ClusterServerCreateConfigHKS) GetCreateUser() bool {
 	if o == nil || IsNil(o.CreateUser) {
@@ -174,6 +145,81 @@ func (o *ClusterServerCreateConfigHKS) SetCreateUser(v bool) {
 	o.CreateUser = &v
 }
 
+// GetDefaultRepoAccount returns the DefaultRepoAccount field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ClusterServerCreateConfigHKS) GetDefaultRepoAccount() int32 {
+	if o == nil || IsNil(o.DefaultRepoAccount.Get()) {
+		var ret int32
+		return ret
+	}
+	return *o.DefaultRepoAccount.Get()
+}
+
+// GetDefaultRepoAccountOk returns a tuple with the DefaultRepoAccount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ClusterServerCreateConfigHKS) GetDefaultRepoAccountOk() (*int32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.DefaultRepoAccount.Get(), o.DefaultRepoAccount.IsSet()
+}
+
+// IsSetDefaultRepoAccount returns a boolean if a field has been set.
+func (o *ClusterServerCreateConfigHKS) IsSetDefaultRepoAccount() bool {
+	if o != nil && o.DefaultRepoAccount.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetDefaultRepoAccount gets a reference to the given NullableInt32 and assigns it to the DefaultRepoAccount field.
+func (o *ClusterServerCreateConfigHKS) SetDefaultRepoAccount(v int32) {
+	o.DefaultRepoAccount.Set(&v)
+}
+
+// SetDefaultRepoAccountNil sets the value for DefaultRepoAccount to be an explicit nil
+func (o *ClusterServerCreateConfigHKS) SetDefaultRepoAccountNil() {
+	o.DefaultRepoAccount.Set(nil)
+}
+
+// UnsetDefaultRepoAccount ensures that no value is present for DefaultRepoAccount, not even an explicit nil
+func (o *ClusterServerCreateConfigHKS) UnsetDefaultRepoAccount() {
+	o.DefaultRepoAccount.Unset()
+}
+
+// GetImageServer returns the ImageServer field value if set, zero value otherwise.
+func (o *ClusterServerCreateConfigHKS) GetImageServer() string {
+	if o == nil || IsNil(o.ImageServer) {
+		var ret string
+		return ret
+	}
+	return *o.ImageServer
+}
+
+// GetImageServerOk returns a tuple with the ImageServer field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClusterServerCreateConfigHKS) GetImageServerOk() (*string, bool) {
+	if o == nil || IsNil(o.ImageServer) {
+		return nil, false
+	}
+	return o.ImageServer, true
+}
+
+// IsSetImageServer returns a boolean if a field has been set.
+func (o *ClusterServerCreateConfigHKS) IsSetImageServer() bool {
+	if o != nil && !IsNil(o.ImageServer) {
+		return true
+	}
+
+	return false
+}
+
+// SetImageServer gets a reference to the given string and assigns it to the ImageServer field.
+func (o *ClusterServerCreateConfigHKS) SetImageServer(v string) {
+	o.ImageServer = &v
+}
+
 func (o ClusterServerCreateConfigHKS) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -190,11 +236,14 @@ func (o ClusterServerCreateConfigHKS) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ServiceCidr) {
 		toSerialize["serviceCidr"] = o.ServiceCidr
 	}
-	if !IsNil(o.NodeCount) {
-		toSerialize["nodeCount"] = o.NodeCount
-	}
 	if !IsNil(o.CreateUser) {
 		toSerialize["createUser"] = o.CreateUser
+	}
+	if o.DefaultRepoAccount.IsSet() {
+		toSerialize["defaultRepoAccount"] = o.DefaultRepoAccount.Get()
+	}
+	if !IsNil(o.ImageServer) {
+		toSerialize["imageServer"] = o.ImageServer
 	}
 
 	for key, value := range o.AdditionalProperties {

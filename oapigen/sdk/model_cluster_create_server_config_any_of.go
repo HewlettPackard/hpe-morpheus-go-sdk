@@ -30,6 +30,7 @@ type ClusterCreateServerConfigAnyOf struct {
 	ClusterCreateServerConfigAnyOfOneOf4 *ClusterCreateServerConfigAnyOfOneOf4
 	ClusterCreateServerConfigAnyOfOneOf5 *ClusterCreateServerConfigAnyOfOneOf5
 	ClusterCreateServerConfigAnyOfOneOf6 *ClusterCreateServerConfigAnyOfOneOf6
+	ClusterCreateServerConfigAnyOfOneOf7 *ClusterCreateServerConfigAnyOfOneOf7
 }
 
 // ClusterCreateServerConfigAnyOfOneOfAsClusterCreateServerConfigAnyOf is a convenience function that returns ClusterCreateServerConfigAnyOfOneOf wrapped in ClusterCreateServerConfigAnyOf
@@ -81,6 +82,13 @@ func ClusterCreateServerConfigAnyOfOneOf6AsClusterCreateServerConfigAnyOf(v *Clu
 	}
 }
 
+// ClusterCreateServerConfigAnyOfOneOf7AsClusterCreateServerConfigAnyOf is a convenience function that returns ClusterCreateServerConfigAnyOfOneOf7 wrapped in ClusterCreateServerConfigAnyOf
+func ClusterCreateServerConfigAnyOfOneOf7AsClusterCreateServerConfigAnyOf(v *ClusterCreateServerConfigAnyOfOneOf7) ClusterCreateServerConfigAnyOf {
+	return ClusterCreateServerConfigAnyOf{
+		ClusterCreateServerConfigAnyOfOneOf7: v,
+	}
+}
+
 func (dst *ClusterCreateServerConfigAnyOf) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &ClusterCreateServerConfigAnyOf{}
@@ -126,6 +134,12 @@ func (dst *ClusterCreateServerConfigAnyOf) UnmarshalMapstructure(data any) (any,
 
 	if IsEmpty(dst.ClusterCreateServerConfigAnyOfOneOf6) {
 		dst.ClusterCreateServerConfigAnyOfOneOf6 = nil
+	}
+
+	mapstructDecode(data, &dst.ClusterCreateServerConfigAnyOfOneOf7)
+
+	if IsEmpty(dst.ClusterCreateServerConfigAnyOfOneOf7) {
+		dst.ClusterCreateServerConfigAnyOfOneOf7 = nil
 	}
 
 	return dst, nil
@@ -254,6 +268,23 @@ func (dst *ClusterCreateServerConfigAnyOf) UnmarshalJSON(data []byte) error {
 		dst.ClusterCreateServerConfigAnyOfOneOf6 = nil
 	}
 
+	// try to unmarshal data into ClusterCreateServerConfigAnyOfOneOf7
+	err = newStrictDecoder(data).Decode(&dst.ClusterCreateServerConfigAnyOfOneOf7)
+	if err == nil {
+		jsonClusterCreateServerConfigAnyOfOneOf7, _ := json.Marshal(dst.ClusterCreateServerConfigAnyOfOneOf7)
+		if string(jsonClusterCreateServerConfigAnyOfOneOf7) == "{}" { // empty struct
+			dst.ClusterCreateServerConfigAnyOfOneOf7 = nil
+		} else {
+			if err = validator.Validate(dst.ClusterCreateServerConfigAnyOfOneOf7); err != nil {
+				dst.ClusterCreateServerConfigAnyOfOneOf7 = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.ClusterCreateServerConfigAnyOfOneOf7 = nil
+	}
+
 	if match > 1 { // more than 1 match
 		// reset to nil
 		dst.ClusterCreateServerConfigAnyOfOneOf = nil
@@ -263,6 +294,7 @@ func (dst *ClusterCreateServerConfigAnyOf) UnmarshalJSON(data []byte) error {
 		dst.ClusterCreateServerConfigAnyOfOneOf4 = nil
 		dst.ClusterCreateServerConfigAnyOfOneOf5 = nil
 		dst.ClusterCreateServerConfigAnyOfOneOf6 = nil
+		dst.ClusterCreateServerConfigAnyOfOneOf7 = nil
 
 		return NewResponseValidationError("data matches more than one schema in oneOf(ClusterCreateServerConfigAnyOf)")
 	} else if match == 1 {
@@ -302,6 +334,10 @@ func (src ClusterCreateServerConfigAnyOf) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.ClusterCreateServerConfigAnyOfOneOf6)
 	}
 
+	if src.ClusterCreateServerConfigAnyOfOneOf7 != nil {
+		return json.Marshal(&src.ClusterCreateServerConfigAnyOfOneOf7)
+	}
+
 	return nil, nil // no data in oneOf schemas
 }
 
@@ -338,6 +374,10 @@ func (obj *ClusterCreateServerConfigAnyOf) GetActualInstance() interface{} {
 		return obj.ClusterCreateServerConfigAnyOfOneOf6
 	}
 
+	if obj.ClusterCreateServerConfigAnyOfOneOf7 != nil {
+		return obj.ClusterCreateServerConfigAnyOfOneOf7
+	}
+
 	// all schemas are nil
 	return nil
 }
@@ -370,6 +410,10 @@ func (obj ClusterCreateServerConfigAnyOf) GetActualInstanceValue() interface{} {
 
 	if obj.ClusterCreateServerConfigAnyOfOneOf6 != nil {
 		return *obj.ClusterCreateServerConfigAnyOfOneOf6
+	}
+
+	if obj.ClusterCreateServerConfigAnyOfOneOf7 != nil {
+		return *obj.ClusterCreateServerConfigAnyOfOneOf7
 	}
 
 	// all schemas are nil

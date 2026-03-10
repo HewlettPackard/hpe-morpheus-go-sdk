@@ -20,13 +20,17 @@ var _ MappedNullable = &ClusterServerCreateConfigGKE{}
 
 // ClusterServerCreateConfigGKE Configuration for Google Kuberenetes Engine cluster servers
 type ClusterServerCreateConfigGKE struct {
-	GoogleZoneId         *int64                              `json:"googleZoneId,omitempty"`
-	Worker               *ClusterServerCreateConfigGKEWorker `json:"worker,omitempty"`
-	Channel              *string                             `json:"channel,omitempty"`
-	ControlPlaneVersion  *string                             `json:"controlPlaneVersion,omitempty"`
-	NodeCount            *int64                              `json:"nodeCount,omitempty"`
-	CreateUser           *bool                               `json:"createUser,omitempty"`
-	AdditionalProperties map[string]interface{}              `json:",remain"`
+	GoogleZoneId        *int64                              `json:"googleZoneId,omitempty"`
+	Worker              *ClusterServerCreateConfigGKEWorker `json:"worker,omitempty"`
+	Channel             *string                             `json:"channel,omitempty"`
+	ControlPlaneVersion *string                             `json:"controlPlaneVersion,omitempty"`
+	NodeCount           *int64                              `json:"nodeCount,omitempty"`
+	CreateUser          *bool                               `json:"createUser,omitempty"`
+	// Default Repo Account is the repository to be used when pulling images.  Default behavior is to be anonymous, which does have limits on allowed image pulls from public Docker Repos.
+	DefaultRepoAccount NullableInt32 `json:"defaultRepoAccount,omitempty"`
+	// Act as Image Server. Set to on to use the Default Repo Account to pull images.
+	ImageServer          *string                `json:"imageServer,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ClusterServerCreateConfigGKE ClusterServerCreateConfigGKE
@@ -240,6 +244,81 @@ func (o *ClusterServerCreateConfigGKE) SetCreateUser(v bool) {
 	o.CreateUser = &v
 }
 
+// GetDefaultRepoAccount returns the DefaultRepoAccount field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ClusterServerCreateConfigGKE) GetDefaultRepoAccount() int32 {
+	if o == nil || IsNil(o.DefaultRepoAccount.Get()) {
+		var ret int32
+		return ret
+	}
+	return *o.DefaultRepoAccount.Get()
+}
+
+// GetDefaultRepoAccountOk returns a tuple with the DefaultRepoAccount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ClusterServerCreateConfigGKE) GetDefaultRepoAccountOk() (*int32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.DefaultRepoAccount.Get(), o.DefaultRepoAccount.IsSet()
+}
+
+// IsSetDefaultRepoAccount returns a boolean if a field has been set.
+func (o *ClusterServerCreateConfigGKE) IsSetDefaultRepoAccount() bool {
+	if o != nil && o.DefaultRepoAccount.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetDefaultRepoAccount gets a reference to the given NullableInt32 and assigns it to the DefaultRepoAccount field.
+func (o *ClusterServerCreateConfigGKE) SetDefaultRepoAccount(v int32) {
+	o.DefaultRepoAccount.Set(&v)
+}
+
+// SetDefaultRepoAccountNil sets the value for DefaultRepoAccount to be an explicit nil
+func (o *ClusterServerCreateConfigGKE) SetDefaultRepoAccountNil() {
+	o.DefaultRepoAccount.Set(nil)
+}
+
+// UnsetDefaultRepoAccount ensures that no value is present for DefaultRepoAccount, not even an explicit nil
+func (o *ClusterServerCreateConfigGKE) UnsetDefaultRepoAccount() {
+	o.DefaultRepoAccount.Unset()
+}
+
+// GetImageServer returns the ImageServer field value if set, zero value otherwise.
+func (o *ClusterServerCreateConfigGKE) GetImageServer() string {
+	if o == nil || IsNil(o.ImageServer) {
+		var ret string
+		return ret
+	}
+	return *o.ImageServer
+}
+
+// GetImageServerOk returns a tuple with the ImageServer field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClusterServerCreateConfigGKE) GetImageServerOk() (*string, bool) {
+	if o == nil || IsNil(o.ImageServer) {
+		return nil, false
+	}
+	return o.ImageServer, true
+}
+
+// IsSetImageServer returns a boolean if a field has been set.
+func (o *ClusterServerCreateConfigGKE) IsSetImageServer() bool {
+	if o != nil && !IsNil(o.ImageServer) {
+		return true
+	}
+
+	return false
+}
+
+// SetImageServer gets a reference to the given string and assigns it to the ImageServer field.
+func (o *ClusterServerCreateConfigGKE) SetImageServer(v string) {
+	o.ImageServer = &v
+}
+
 func (o ClusterServerCreateConfigGKE) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -267,6 +346,12 @@ func (o ClusterServerCreateConfigGKE) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.CreateUser) {
 		toSerialize["createUser"] = o.CreateUser
+	}
+	if o.DefaultRepoAccount.IsSet() {
+		toSerialize["defaultRepoAccount"] = o.DefaultRepoAccount.Get()
+	}
+	if !IsNil(o.ImageServer) {
+		toSerialize["imageServer"] = o.ImageServer
 	}
 
 	for key, value := range o.AdditionalProperties {
