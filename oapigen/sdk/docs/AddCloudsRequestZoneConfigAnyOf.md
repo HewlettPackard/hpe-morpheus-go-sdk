@@ -21,6 +21,26 @@ Name | Type | Description | Notes
 **CmdbConfig** | Pointer to **string** | The CMDB configuration for this cloud to use for syncing with the CMDB. | [optional] 
 **ChangeManagementConfig** | Pointer to **string** | The change management configuration for this cloud to use for syncing with the change management system. | [optional] 
 **NetworkMode** | Pointer to **NullableString** | Whether to use public or private IP addresses for provisioning and managing instances in this cloud. | [optional] 
+**ApiProxy** | Pointer to **NullableString** | The API proxy to use for API calls to the cloud. | [optional] 
+**Region** | Pointer to **string** | The AWS region to use for this cloud. | [optional] 
+**Credentials** | Pointer to **string** | The credentials to use for this cloud. | [optional] 
+**CostingBucket** | Pointer to **string** | The S3 bucket to use for storing costing reports. | [optional] 
+**CostingFolder** | Pointer to **NullableString** | The folder within the S3 bucket to use for storing costing reports. | [optional] 
+**CostingReportName** | Pointer to **NullableString** | The name of the costing report to generate. | [optional] 
+**CostingKey** | Pointer to **NullableString** | The AWS access key to use for generating costing reports. | [optional] 
+**CostingSecret** | Pointer to **NullableString** | The AWS secret key to use for generating costing reports. | [optional] 
+**Domain** | Pointer to **string** | The domain to use for this cloud. | [optional] 
+**Timezone** | Pointer to **string** | The timezone to use for this cloud. | [optional] 
+**SecurityServer** | Pointer to **string** | The security server to use for this cloud, or &#39;off&#39; to not use a security server. | [optional] 
+**Guidance** | Pointer to **string** | Optional guidance field if you want to put more info there | [optional] 
+**Costing** | Pointer to **string** | Whether to enable costing for this cloud or not. | [optional] 
+**ConfigCmdbDiscovery** | Pointer to **string** | The CMDB discovery configuration to use for this cloud. | [optional] 
+**Logo** | Pointer to **NullableString** | The logo to use for this cloud. | [optional] 
+**DarkModeLogo** | Pointer to **NullableString** | The logo to use for this cloud in dark mode. | [optional] 
+**Proxy** | Pointer to **string** | The proxy to use for this cloud. | [optional] 
+**BypassProxyForCloud** | Pointer to **string** | Whether to bypass the proxy for API calls to the cloud or not. | [optional] 
+**NoProxy** | Pointer to **string** | A comma separated list of hosts to bypass the proxy for when making API calls to the cloud. | [optional] 
+**UserDataLinux** | Pointer to **string** | The user data script to use for provisioning instances in this cloud. | [optional] 
 
 ## Methods
 
@@ -481,6 +501,576 @@ HasNetworkMode returns a boolean if a field has been set.
 `func (o *AddCloudsRequestZoneConfigAnyOf) UnsetNetworkMode()`
 
 UnsetNetworkMode ensures that no value is present for NetworkMode, not even an explicit nil
+### GetApiProxy
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetApiProxy() string`
+
+GetApiProxy returns the ApiProxy field if non-nil, zero value otherwise.
+
+### GetApiProxyOk
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetApiProxyOk() (*string, bool)`
+
+GetApiProxyOk returns a tuple with the ApiProxy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApiProxy
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) SetApiProxy(v string)`
+
+SetApiProxy sets ApiProxy field to given value.
+
+### HasApiProxy
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) HasApiProxy() bool`
+
+HasApiProxy returns a boolean if a field has been set.
+
+### SetApiProxyNil
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) SetApiProxyNil(b bool)`
+
+ SetApiProxyNil sets the value for ApiProxy to be an explicit nil
+
+### UnsetApiProxy
+`func (o *AddCloudsRequestZoneConfigAnyOf) UnsetApiProxy()`
+
+UnsetApiProxy ensures that no value is present for ApiProxy, not even an explicit nil
+### GetRegion
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetRegion() string`
+
+GetRegion returns the Region field if non-nil, zero value otherwise.
+
+### GetRegionOk
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetRegionOk() (*string, bool)`
+
+GetRegionOk returns a tuple with the Region field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRegion
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) SetRegion(v string)`
+
+SetRegion sets Region field to given value.
+
+### HasRegion
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) HasRegion() bool`
+
+HasRegion returns a boolean if a field has been set.
+
+### GetCredentials
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetCredentials() string`
+
+GetCredentials returns the Credentials field if non-nil, zero value otherwise.
+
+### GetCredentialsOk
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetCredentialsOk() (*string, bool)`
+
+GetCredentialsOk returns a tuple with the Credentials field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCredentials
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) SetCredentials(v string)`
+
+SetCredentials sets Credentials field to given value.
+
+### HasCredentials
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) HasCredentials() bool`
+
+HasCredentials returns a boolean if a field has been set.
+
+### GetCostingBucket
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetCostingBucket() string`
+
+GetCostingBucket returns the CostingBucket field if non-nil, zero value otherwise.
+
+### GetCostingBucketOk
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetCostingBucketOk() (*string, bool)`
+
+GetCostingBucketOk returns a tuple with the CostingBucket field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCostingBucket
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) SetCostingBucket(v string)`
+
+SetCostingBucket sets CostingBucket field to given value.
+
+### HasCostingBucket
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) HasCostingBucket() bool`
+
+HasCostingBucket returns a boolean if a field has been set.
+
+### GetCostingFolder
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetCostingFolder() string`
+
+GetCostingFolder returns the CostingFolder field if non-nil, zero value otherwise.
+
+### GetCostingFolderOk
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetCostingFolderOk() (*string, bool)`
+
+GetCostingFolderOk returns a tuple with the CostingFolder field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCostingFolder
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) SetCostingFolder(v string)`
+
+SetCostingFolder sets CostingFolder field to given value.
+
+### HasCostingFolder
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) HasCostingFolder() bool`
+
+HasCostingFolder returns a boolean if a field has been set.
+
+### SetCostingFolderNil
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) SetCostingFolderNil(b bool)`
+
+ SetCostingFolderNil sets the value for CostingFolder to be an explicit nil
+
+### UnsetCostingFolder
+`func (o *AddCloudsRequestZoneConfigAnyOf) UnsetCostingFolder()`
+
+UnsetCostingFolder ensures that no value is present for CostingFolder, not even an explicit nil
+### GetCostingReportName
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetCostingReportName() string`
+
+GetCostingReportName returns the CostingReportName field if non-nil, zero value otherwise.
+
+### GetCostingReportNameOk
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetCostingReportNameOk() (*string, bool)`
+
+GetCostingReportNameOk returns a tuple with the CostingReportName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCostingReportName
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) SetCostingReportName(v string)`
+
+SetCostingReportName sets CostingReportName field to given value.
+
+### HasCostingReportName
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) HasCostingReportName() bool`
+
+HasCostingReportName returns a boolean if a field has been set.
+
+### SetCostingReportNameNil
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) SetCostingReportNameNil(b bool)`
+
+ SetCostingReportNameNil sets the value for CostingReportName to be an explicit nil
+
+### UnsetCostingReportName
+`func (o *AddCloudsRequestZoneConfigAnyOf) UnsetCostingReportName()`
+
+UnsetCostingReportName ensures that no value is present for CostingReportName, not even an explicit nil
+### GetCostingKey
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetCostingKey() string`
+
+GetCostingKey returns the CostingKey field if non-nil, zero value otherwise.
+
+### GetCostingKeyOk
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetCostingKeyOk() (*string, bool)`
+
+GetCostingKeyOk returns a tuple with the CostingKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCostingKey
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) SetCostingKey(v string)`
+
+SetCostingKey sets CostingKey field to given value.
+
+### HasCostingKey
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) HasCostingKey() bool`
+
+HasCostingKey returns a boolean if a field has been set.
+
+### SetCostingKeyNil
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) SetCostingKeyNil(b bool)`
+
+ SetCostingKeyNil sets the value for CostingKey to be an explicit nil
+
+### UnsetCostingKey
+`func (o *AddCloudsRequestZoneConfigAnyOf) UnsetCostingKey()`
+
+UnsetCostingKey ensures that no value is present for CostingKey, not even an explicit nil
+### GetCostingSecret
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetCostingSecret() string`
+
+GetCostingSecret returns the CostingSecret field if non-nil, zero value otherwise.
+
+### GetCostingSecretOk
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetCostingSecretOk() (*string, bool)`
+
+GetCostingSecretOk returns a tuple with the CostingSecret field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCostingSecret
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) SetCostingSecret(v string)`
+
+SetCostingSecret sets CostingSecret field to given value.
+
+### HasCostingSecret
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) HasCostingSecret() bool`
+
+HasCostingSecret returns a boolean if a field has been set.
+
+### SetCostingSecretNil
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) SetCostingSecretNil(b bool)`
+
+ SetCostingSecretNil sets the value for CostingSecret to be an explicit nil
+
+### UnsetCostingSecret
+`func (o *AddCloudsRequestZoneConfigAnyOf) UnsetCostingSecret()`
+
+UnsetCostingSecret ensures that no value is present for CostingSecret, not even an explicit nil
+### GetDomain
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetDomain() string`
+
+GetDomain returns the Domain field if non-nil, zero value otherwise.
+
+### GetDomainOk
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetDomainOk() (*string, bool)`
+
+GetDomainOk returns a tuple with the Domain field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDomain
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) SetDomain(v string)`
+
+SetDomain sets Domain field to given value.
+
+### HasDomain
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) HasDomain() bool`
+
+HasDomain returns a boolean if a field has been set.
+
+### GetTimezone
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetTimezone() string`
+
+GetTimezone returns the Timezone field if non-nil, zero value otherwise.
+
+### GetTimezoneOk
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetTimezoneOk() (*string, bool)`
+
+GetTimezoneOk returns a tuple with the Timezone field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTimezone
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) SetTimezone(v string)`
+
+SetTimezone sets Timezone field to given value.
+
+### HasTimezone
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) HasTimezone() bool`
+
+HasTimezone returns a boolean if a field has been set.
+
+### GetSecurityServer
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetSecurityServer() string`
+
+GetSecurityServer returns the SecurityServer field if non-nil, zero value otherwise.
+
+### GetSecurityServerOk
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetSecurityServerOk() (*string, bool)`
+
+GetSecurityServerOk returns a tuple with the SecurityServer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSecurityServer
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) SetSecurityServer(v string)`
+
+SetSecurityServer sets SecurityServer field to given value.
+
+### HasSecurityServer
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) HasSecurityServer() bool`
+
+HasSecurityServer returns a boolean if a field has been set.
+
+### GetGuidance
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetGuidance() string`
+
+GetGuidance returns the Guidance field if non-nil, zero value otherwise.
+
+### GetGuidanceOk
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetGuidanceOk() (*string, bool)`
+
+GetGuidanceOk returns a tuple with the Guidance field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGuidance
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) SetGuidance(v string)`
+
+SetGuidance sets Guidance field to given value.
+
+### HasGuidance
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) HasGuidance() bool`
+
+HasGuidance returns a boolean if a field has been set.
+
+### GetCosting
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetCosting() string`
+
+GetCosting returns the Costing field if non-nil, zero value otherwise.
+
+### GetCostingOk
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetCostingOk() (*string, bool)`
+
+GetCostingOk returns a tuple with the Costing field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCosting
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) SetCosting(v string)`
+
+SetCosting sets Costing field to given value.
+
+### HasCosting
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) HasCosting() bool`
+
+HasCosting returns a boolean if a field has been set.
+
+### GetConfigCmdbDiscovery
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetConfigCmdbDiscovery() string`
+
+GetConfigCmdbDiscovery returns the ConfigCmdbDiscovery field if non-nil, zero value otherwise.
+
+### GetConfigCmdbDiscoveryOk
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetConfigCmdbDiscoveryOk() (*string, bool)`
+
+GetConfigCmdbDiscoveryOk returns a tuple with the ConfigCmdbDiscovery field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConfigCmdbDiscovery
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) SetConfigCmdbDiscovery(v string)`
+
+SetConfigCmdbDiscovery sets ConfigCmdbDiscovery field to given value.
+
+### HasConfigCmdbDiscovery
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) HasConfigCmdbDiscovery() bool`
+
+HasConfigCmdbDiscovery returns a boolean if a field has been set.
+
+### GetLogo
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetLogo() string`
+
+GetLogo returns the Logo field if non-nil, zero value otherwise.
+
+### GetLogoOk
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetLogoOk() (*string, bool)`
+
+GetLogoOk returns a tuple with the Logo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLogo
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) SetLogo(v string)`
+
+SetLogo sets Logo field to given value.
+
+### HasLogo
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) HasLogo() bool`
+
+HasLogo returns a boolean if a field has been set.
+
+### SetLogoNil
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) SetLogoNil(b bool)`
+
+ SetLogoNil sets the value for Logo to be an explicit nil
+
+### UnsetLogo
+`func (o *AddCloudsRequestZoneConfigAnyOf) UnsetLogo()`
+
+UnsetLogo ensures that no value is present for Logo, not even an explicit nil
+### GetDarkModeLogo
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetDarkModeLogo() string`
+
+GetDarkModeLogo returns the DarkModeLogo field if non-nil, zero value otherwise.
+
+### GetDarkModeLogoOk
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetDarkModeLogoOk() (*string, bool)`
+
+GetDarkModeLogoOk returns a tuple with the DarkModeLogo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDarkModeLogo
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) SetDarkModeLogo(v string)`
+
+SetDarkModeLogo sets DarkModeLogo field to given value.
+
+### HasDarkModeLogo
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) HasDarkModeLogo() bool`
+
+HasDarkModeLogo returns a boolean if a field has been set.
+
+### SetDarkModeLogoNil
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) SetDarkModeLogoNil(b bool)`
+
+ SetDarkModeLogoNil sets the value for DarkModeLogo to be an explicit nil
+
+### UnsetDarkModeLogo
+`func (o *AddCloudsRequestZoneConfigAnyOf) UnsetDarkModeLogo()`
+
+UnsetDarkModeLogo ensures that no value is present for DarkModeLogo, not even an explicit nil
+### GetProxy
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetProxy() string`
+
+GetProxy returns the Proxy field if non-nil, zero value otherwise.
+
+### GetProxyOk
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetProxyOk() (*string, bool)`
+
+GetProxyOk returns a tuple with the Proxy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProxy
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) SetProxy(v string)`
+
+SetProxy sets Proxy field to given value.
+
+### HasProxy
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) HasProxy() bool`
+
+HasProxy returns a boolean if a field has been set.
+
+### GetBypassProxyForCloud
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetBypassProxyForCloud() string`
+
+GetBypassProxyForCloud returns the BypassProxyForCloud field if non-nil, zero value otherwise.
+
+### GetBypassProxyForCloudOk
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetBypassProxyForCloudOk() (*string, bool)`
+
+GetBypassProxyForCloudOk returns a tuple with the BypassProxyForCloud field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBypassProxyForCloud
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) SetBypassProxyForCloud(v string)`
+
+SetBypassProxyForCloud sets BypassProxyForCloud field to given value.
+
+### HasBypassProxyForCloud
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) HasBypassProxyForCloud() bool`
+
+HasBypassProxyForCloud returns a boolean if a field has been set.
+
+### GetNoProxy
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetNoProxy() string`
+
+GetNoProxy returns the NoProxy field if non-nil, zero value otherwise.
+
+### GetNoProxyOk
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetNoProxyOk() (*string, bool)`
+
+GetNoProxyOk returns a tuple with the NoProxy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNoProxy
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) SetNoProxy(v string)`
+
+SetNoProxy sets NoProxy field to given value.
+
+### HasNoProxy
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) HasNoProxy() bool`
+
+HasNoProxy returns a boolean if a field has been set.
+
+### GetUserDataLinux
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetUserDataLinux() string`
+
+GetUserDataLinux returns the UserDataLinux field if non-nil, zero value otherwise.
+
+### GetUserDataLinuxOk
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetUserDataLinuxOk() (*string, bool)`
+
+GetUserDataLinuxOk returns a tuple with the UserDataLinux field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserDataLinux
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) SetUserDataLinux(v string)`
+
+SetUserDataLinux sets UserDataLinux field to given value.
+
+### HasUserDataLinux
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) HasUserDataLinux() bool`
+
+HasUserDataLinux returns a boolean if a field has been set.
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
