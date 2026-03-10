@@ -15,13 +15,14 @@ import (
 	"encoding/json"
 )
 
-// checks if the AddClusterRequestClusterServerConfigAnyOfOneOf4 type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &AddClusterRequestClusterServerConfigAnyOfOneOf4{}
+// checks if the ClusterServerCreateConfigHKSHVM type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ClusterServerCreateConfigHKSHVM{}
 
-// AddClusterRequestClusterServerConfigAnyOfOneOf4 Configuration for HKS cluster servers
-type AddClusterRequestClusterServerConfigAnyOfOneOf4 struct {
+// ClusterServerCreateConfigHKSHVM Configuration for HKS cluster provisioning on a HVM cluster.
+type ClusterServerCreateConfigHKSHVM struct {
 	PodCidr     *string `json:"podCidr,omitempty"`
 	ServiceCidr *string `json:"serviceCidr,omitempty"`
+	NodeCount   *int64  `json:"nodeCount,omitempty"`
 	CreateUser  *bool   `json:"createUser,omitempty"`
 	// Default Repo Account is the repository to be used when pulling images.  Default behavior is to be anonymous, which does have limits on allowed image pulls from public Docker Repos.
 	DefaultRepoAccount NullableInt32 `json:"defaultRepoAccount,omitempty"`
@@ -30,27 +31,27 @@ type AddClusterRequestClusterServerConfigAnyOfOneOf4 struct {
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
-type _AddClusterRequestClusterServerConfigAnyOfOneOf4 AddClusterRequestClusterServerConfigAnyOfOneOf4
+type _ClusterServerCreateConfigHKSHVM ClusterServerCreateConfigHKSHVM
 
-// NewAddClusterRequestClusterServerConfigAnyOfOneOf4 instantiates a new AddClusterRequestClusterServerConfigAnyOfOneOf4 object
+// NewClusterServerCreateConfigHKSHVM instantiates a new ClusterServerCreateConfigHKSHVM object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddClusterRequestClusterServerConfigAnyOfOneOf4() *AddClusterRequestClusterServerConfigAnyOfOneOf4 {
-	this := AddClusterRequestClusterServerConfigAnyOfOneOf4{}
+func NewClusterServerCreateConfigHKSHVM() *ClusterServerCreateConfigHKSHVM {
+	this := ClusterServerCreateConfigHKSHVM{}
 	return &this
 }
 
-// NewAddClusterRequestClusterServerConfigAnyOfOneOf4WithDefaults instantiates a new AddClusterRequestClusterServerConfigAnyOfOneOf4 object
+// NewClusterServerCreateConfigHKSHVMWithDefaults instantiates a new ClusterServerCreateConfigHKSHVM object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewAddClusterRequestClusterServerConfigAnyOfOneOf4WithDefaults() *AddClusterRequestClusterServerConfigAnyOfOneOf4 {
-	this := AddClusterRequestClusterServerConfigAnyOfOneOf4{}
+func NewClusterServerCreateConfigHKSHVMWithDefaults() *ClusterServerCreateConfigHKSHVM {
+	this := ClusterServerCreateConfigHKSHVM{}
 	return &this
 }
 
 // GetPodCidr returns the PodCidr field value if set, zero value otherwise.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) GetPodCidr() string {
+func (o *ClusterServerCreateConfigHKSHVM) GetPodCidr() string {
 	if o == nil || IsNil(o.PodCidr) {
 		var ret string
 		return ret
@@ -60,7 +61,7 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) GetPodCidr() string {
 
 // GetPodCidrOk returns a tuple with the PodCidr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) GetPodCidrOk() (*string, bool) {
+func (o *ClusterServerCreateConfigHKSHVM) GetPodCidrOk() (*string, bool) {
 	if o == nil || IsNil(o.PodCidr) {
 		return nil, false
 	}
@@ -68,7 +69,7 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) GetPodCidrOk() (*strin
 }
 
 // IsSetPodCidr returns a boolean if a field has been set.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) IsSetPodCidr() bool {
+func (o *ClusterServerCreateConfigHKSHVM) IsSetPodCidr() bool {
 	if o != nil && !IsNil(o.PodCidr) {
 		return true
 	}
@@ -77,12 +78,12 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) IsSetPodCidr() bool {
 }
 
 // SetPodCidr gets a reference to the given string and assigns it to the PodCidr field.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) SetPodCidr(v string) {
+func (o *ClusterServerCreateConfigHKSHVM) SetPodCidr(v string) {
 	o.PodCidr = &v
 }
 
 // GetServiceCidr returns the ServiceCidr field value if set, zero value otherwise.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) GetServiceCidr() string {
+func (o *ClusterServerCreateConfigHKSHVM) GetServiceCidr() string {
 	if o == nil || IsNil(o.ServiceCidr) {
 		var ret string
 		return ret
@@ -92,7 +93,7 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) GetServiceCidr() strin
 
 // GetServiceCidrOk returns a tuple with the ServiceCidr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) GetServiceCidrOk() (*string, bool) {
+func (o *ClusterServerCreateConfigHKSHVM) GetServiceCidrOk() (*string, bool) {
 	if o == nil || IsNil(o.ServiceCidr) {
 		return nil, false
 	}
@@ -100,7 +101,7 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) GetServiceCidrOk() (*s
 }
 
 // IsSetServiceCidr returns a boolean if a field has been set.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) IsSetServiceCidr() bool {
+func (o *ClusterServerCreateConfigHKSHVM) IsSetServiceCidr() bool {
 	if o != nil && !IsNil(o.ServiceCidr) {
 		return true
 	}
@@ -109,12 +110,44 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) IsSetServiceCidr() boo
 }
 
 // SetServiceCidr gets a reference to the given string and assigns it to the ServiceCidr field.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) SetServiceCidr(v string) {
+func (o *ClusterServerCreateConfigHKSHVM) SetServiceCidr(v string) {
 	o.ServiceCidr = &v
 }
 
+// GetNodeCount returns the NodeCount field value if set, zero value otherwise.
+func (o *ClusterServerCreateConfigHKSHVM) GetNodeCount() int64 {
+	if o == nil || IsNil(o.NodeCount) {
+		var ret int64
+		return ret
+	}
+	return *o.NodeCount
+}
+
+// GetNodeCountOk returns a tuple with the NodeCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClusterServerCreateConfigHKSHVM) GetNodeCountOk() (*int64, bool) {
+	if o == nil || IsNil(o.NodeCount) {
+		return nil, false
+	}
+	return o.NodeCount, true
+}
+
+// IsSetNodeCount returns a boolean if a field has been set.
+func (o *ClusterServerCreateConfigHKSHVM) IsSetNodeCount() bool {
+	if o != nil && !IsNil(o.NodeCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetNodeCount gets a reference to the given int64 and assigns it to the NodeCount field.
+func (o *ClusterServerCreateConfigHKSHVM) SetNodeCount(v int64) {
+	o.NodeCount = &v
+}
+
 // GetCreateUser returns the CreateUser field value if set, zero value otherwise.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) GetCreateUser() bool {
+func (o *ClusterServerCreateConfigHKSHVM) GetCreateUser() bool {
 	if o == nil || IsNil(o.CreateUser) {
 		var ret bool
 		return ret
@@ -124,7 +157,7 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) GetCreateUser() bool {
 
 // GetCreateUserOk returns a tuple with the CreateUser field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) GetCreateUserOk() (*bool, bool) {
+func (o *ClusterServerCreateConfigHKSHVM) GetCreateUserOk() (*bool, bool) {
 	if o == nil || IsNil(o.CreateUser) {
 		return nil, false
 	}
@@ -132,7 +165,7 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) GetCreateUserOk() (*bo
 }
 
 // IsSetCreateUser returns a boolean if a field has been set.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) IsSetCreateUser() bool {
+func (o *ClusterServerCreateConfigHKSHVM) IsSetCreateUser() bool {
 	if o != nil && !IsNil(o.CreateUser) {
 		return true
 	}
@@ -141,12 +174,12 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) IsSetCreateUser() bool
 }
 
 // SetCreateUser gets a reference to the given bool and assigns it to the CreateUser field.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) SetCreateUser(v bool) {
+func (o *ClusterServerCreateConfigHKSHVM) SetCreateUser(v bool) {
 	o.CreateUser = &v
 }
 
 // GetDefaultRepoAccount returns the DefaultRepoAccount field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) GetDefaultRepoAccount() int32 {
+func (o *ClusterServerCreateConfigHKSHVM) GetDefaultRepoAccount() int32 {
 	if o == nil || IsNil(o.DefaultRepoAccount.Get()) {
 		var ret int32
 		return ret
@@ -157,7 +190,7 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) GetDefaultRepoAccount(
 // GetDefaultRepoAccountOk returns a tuple with the DefaultRepoAccount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) GetDefaultRepoAccountOk() (*int32, bool) {
+func (o *ClusterServerCreateConfigHKSHVM) GetDefaultRepoAccountOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -165,7 +198,7 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) GetDefaultRepoAccountO
 }
 
 // IsSetDefaultRepoAccount returns a boolean if a field has been set.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) IsSetDefaultRepoAccount() bool {
+func (o *ClusterServerCreateConfigHKSHVM) IsSetDefaultRepoAccount() bool {
 	if o != nil && o.DefaultRepoAccount.IsSet() {
 		return true
 	}
@@ -174,22 +207,22 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) IsSetDefaultRepoAccoun
 }
 
 // SetDefaultRepoAccount gets a reference to the given NullableInt32 and assigns it to the DefaultRepoAccount field.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) SetDefaultRepoAccount(v int32) {
+func (o *ClusterServerCreateConfigHKSHVM) SetDefaultRepoAccount(v int32) {
 	o.DefaultRepoAccount.Set(&v)
 }
 
 // SetDefaultRepoAccountNil sets the value for DefaultRepoAccount to be an explicit nil
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) SetDefaultRepoAccountNil() {
+func (o *ClusterServerCreateConfigHKSHVM) SetDefaultRepoAccountNil() {
 	o.DefaultRepoAccount.Set(nil)
 }
 
 // UnsetDefaultRepoAccount ensures that no value is present for DefaultRepoAccount, not even an explicit nil
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) UnsetDefaultRepoAccount() {
+func (o *ClusterServerCreateConfigHKSHVM) UnsetDefaultRepoAccount() {
 	o.DefaultRepoAccount.Unset()
 }
 
 // GetImageServer returns the ImageServer field value if set, zero value otherwise.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) GetImageServer() string {
+func (o *ClusterServerCreateConfigHKSHVM) GetImageServer() string {
 	if o == nil || IsNil(o.ImageServer) {
 		var ret string
 		return ret
@@ -199,7 +232,7 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) GetImageServer() strin
 
 // GetImageServerOk returns a tuple with the ImageServer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) GetImageServerOk() (*string, bool) {
+func (o *ClusterServerCreateConfigHKSHVM) GetImageServerOk() (*string, bool) {
 	if o == nil || IsNil(o.ImageServer) {
 		return nil, false
 	}
@@ -207,7 +240,7 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) GetImageServerOk() (*s
 }
 
 // IsSetImageServer returns a boolean if a field has been set.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) IsSetImageServer() bool {
+func (o *ClusterServerCreateConfigHKSHVM) IsSetImageServer() bool {
 	if o != nil && !IsNil(o.ImageServer) {
 		return true
 	}
@@ -216,11 +249,11 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) IsSetImageServer() boo
 }
 
 // SetImageServer gets a reference to the given string and assigns it to the ImageServer field.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) SetImageServer(v string) {
+func (o *ClusterServerCreateConfigHKSHVM) SetImageServer(v string) {
 	o.ImageServer = &v
 }
 
-func (o AddClusterRequestClusterServerConfigAnyOfOneOf4) MarshalJSON() ([]byte, error) {
+func (o ClusterServerCreateConfigHKSHVM) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -228,13 +261,16 @@ func (o AddClusterRequestClusterServerConfigAnyOfOneOf4) MarshalJSON() ([]byte, 
 	return json.Marshal(toSerialize)
 }
 
-func (o AddClusterRequestClusterServerConfigAnyOfOneOf4) ToMap() (map[string]interface{}, error) {
+func (o ClusterServerCreateConfigHKSHVM) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.PodCidr) {
 		toSerialize["podCidr"] = o.PodCidr
 	}
 	if !IsNil(o.ServiceCidr) {
 		toSerialize["serviceCidr"] = o.ServiceCidr
+	}
+	if !IsNil(o.NodeCount) {
+		toSerialize["nodeCount"] = o.NodeCount
 	}
 	if !IsNil(o.CreateUser) {
 		toSerialize["createUser"] = o.CreateUser
@@ -253,43 +289,43 @@ func (o AddClusterRequestClusterServerConfigAnyOfOneOf4) ToMap() (map[string]int
 	return toSerialize, nil
 }
 
-type NullableAddClusterRequestClusterServerConfigAnyOfOneOf4 struct {
-	value *AddClusterRequestClusterServerConfigAnyOfOneOf4
+type NullableClusterServerCreateConfigHKSHVM struct {
+	value *ClusterServerCreateConfigHKSHVM
 	isSet bool
 }
 
-func (v NullableAddClusterRequestClusterServerConfigAnyOfOneOf4) Get() *AddClusterRequestClusterServerConfigAnyOfOneOf4 {
+func (v NullableClusterServerCreateConfigHKSHVM) Get() *ClusterServerCreateConfigHKSHVM {
 	return v.value
 }
 
-func (v *NullableAddClusterRequestClusterServerConfigAnyOfOneOf4) Set(val *AddClusterRequestClusterServerConfigAnyOfOneOf4) {
+func (v *NullableClusterServerCreateConfigHKSHVM) Set(val *ClusterServerCreateConfigHKSHVM) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableAddClusterRequestClusterServerConfigAnyOfOneOf4) IsSet() bool {
+func (v NullableClusterServerCreateConfigHKSHVM) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableAddClusterRequestClusterServerConfigAnyOfOneOf4) Unset() {
+func (v *NullableClusterServerCreateConfigHKSHVM) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableAddClusterRequestClusterServerConfigAnyOfOneOf4(val *AddClusterRequestClusterServerConfigAnyOfOneOf4) *NullableAddClusterRequestClusterServerConfigAnyOfOneOf4 {
-	return &NullableAddClusterRequestClusterServerConfigAnyOfOneOf4{value: val, isSet: true}
+func NewNullableClusterServerCreateConfigHKSHVM(val *ClusterServerCreateConfigHKSHVM) *NullableClusterServerCreateConfigHKSHVM {
+	return &NullableClusterServerCreateConfigHKSHVM{value: val, isSet: true}
 }
 
-func (v NullableAddClusterRequestClusterServerConfigAnyOfOneOf4) MarshalJSON() ([]byte, error) {
+func (v NullableClusterServerCreateConfigHKSHVM) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableAddClusterRequestClusterServerConfigAnyOfOneOf4) UnmarshalJSON(src []byte) error {
+func (v *NullableClusterServerCreateConfigHKSHVM) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
 
-func (v NullableAddClusterRequestClusterServerConfigAnyOfOneOf4) UnmarshalMapstructure(data any) (any, error) {
+func (v NullableClusterServerCreateConfigHKSHVM) UnmarshalMapstructure(data any) (any, error) {
 	if err := mapstructDecode(data, &v.value); err != nil {
 		return nil, err
 	}
@@ -298,7 +334,7 @@ func (v NullableAddClusterRequestClusterServerConfigAnyOfOneOf4) UnmarshalMapstr
 	return v, nil
 }
 
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) UnmarshalJSON(data []byte) (err error) {
+func (o *ClusterServerCreateConfigHKSHVM) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }
 

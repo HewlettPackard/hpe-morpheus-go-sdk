@@ -30,6 +30,7 @@ type AddClusterRequestClusterServerConfigAnyOf struct {
 	AddClusterRequestClusterServerConfigAnyOfOneOf4 *AddClusterRequestClusterServerConfigAnyOfOneOf4
 	AddClusterRequestClusterServerConfigAnyOfOneOf5 *AddClusterRequestClusterServerConfigAnyOfOneOf5
 	AddClusterRequestClusterServerConfigAnyOfOneOf6 *AddClusterRequestClusterServerConfigAnyOfOneOf6
+	AddClusterRequestClusterServerConfigAnyOfOneOf7 *AddClusterRequestClusterServerConfigAnyOfOneOf7
 }
 
 // AddClusterRequestClusterServerConfigAnyOfOneOfAsAddClusterRequestClusterServerConfigAnyOf is a convenience function that returns AddClusterRequestClusterServerConfigAnyOfOneOf wrapped in AddClusterRequestClusterServerConfigAnyOf
@@ -81,6 +82,13 @@ func AddClusterRequestClusterServerConfigAnyOfOneOf6AsAddClusterRequestClusterSe
 	}
 }
 
+// AddClusterRequestClusterServerConfigAnyOfOneOf7AsAddClusterRequestClusterServerConfigAnyOf is a convenience function that returns AddClusterRequestClusterServerConfigAnyOfOneOf7 wrapped in AddClusterRequestClusterServerConfigAnyOf
+func AddClusterRequestClusterServerConfigAnyOfOneOf7AsAddClusterRequestClusterServerConfigAnyOf(v *AddClusterRequestClusterServerConfigAnyOfOneOf7) AddClusterRequestClusterServerConfigAnyOf {
+	return AddClusterRequestClusterServerConfigAnyOf{
+		AddClusterRequestClusterServerConfigAnyOfOneOf7: v,
+	}
+}
+
 func (dst *AddClusterRequestClusterServerConfigAnyOf) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &AddClusterRequestClusterServerConfigAnyOf{}
@@ -126,6 +134,12 @@ func (dst *AddClusterRequestClusterServerConfigAnyOf) UnmarshalMapstructure(data
 
 	if IsEmpty(dst.AddClusterRequestClusterServerConfigAnyOfOneOf6) {
 		dst.AddClusterRequestClusterServerConfigAnyOfOneOf6 = nil
+	}
+
+	mapstructDecode(data, &dst.AddClusterRequestClusterServerConfigAnyOfOneOf7)
+
+	if IsEmpty(dst.AddClusterRequestClusterServerConfigAnyOfOneOf7) {
+		dst.AddClusterRequestClusterServerConfigAnyOfOneOf7 = nil
 	}
 
 	return dst, nil
@@ -254,6 +268,23 @@ func (dst *AddClusterRequestClusterServerConfigAnyOf) UnmarshalJSON(data []byte)
 		dst.AddClusterRequestClusterServerConfigAnyOfOneOf6 = nil
 	}
 
+	// try to unmarshal data into AddClusterRequestClusterServerConfigAnyOfOneOf7
+	err = newStrictDecoder(data).Decode(&dst.AddClusterRequestClusterServerConfigAnyOfOneOf7)
+	if err == nil {
+		jsonAddClusterRequestClusterServerConfigAnyOfOneOf7, _ := json.Marshal(dst.AddClusterRequestClusterServerConfigAnyOfOneOf7)
+		if string(jsonAddClusterRequestClusterServerConfigAnyOfOneOf7) == "{}" { // empty struct
+			dst.AddClusterRequestClusterServerConfigAnyOfOneOf7 = nil
+		} else {
+			if err = validator.Validate(dst.AddClusterRequestClusterServerConfigAnyOfOneOf7); err != nil {
+				dst.AddClusterRequestClusterServerConfigAnyOfOneOf7 = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.AddClusterRequestClusterServerConfigAnyOfOneOf7 = nil
+	}
+
 	if match > 1 { // more than 1 match
 		// reset to nil
 		dst.AddClusterRequestClusterServerConfigAnyOfOneOf = nil
@@ -263,6 +294,7 @@ func (dst *AddClusterRequestClusterServerConfigAnyOf) UnmarshalJSON(data []byte)
 		dst.AddClusterRequestClusterServerConfigAnyOfOneOf4 = nil
 		dst.AddClusterRequestClusterServerConfigAnyOfOneOf5 = nil
 		dst.AddClusterRequestClusterServerConfigAnyOfOneOf6 = nil
+		dst.AddClusterRequestClusterServerConfigAnyOfOneOf7 = nil
 
 		return NewResponseValidationError("data matches more than one schema in oneOf(AddClusterRequestClusterServerConfigAnyOf)")
 	} else if match == 1 {
@@ -302,6 +334,10 @@ func (src AddClusterRequestClusterServerConfigAnyOf) MarshalJSON() ([]byte, erro
 		return json.Marshal(&src.AddClusterRequestClusterServerConfigAnyOfOneOf6)
 	}
 
+	if src.AddClusterRequestClusterServerConfigAnyOfOneOf7 != nil {
+		return json.Marshal(&src.AddClusterRequestClusterServerConfigAnyOfOneOf7)
+	}
+
 	return nil, nil // no data in oneOf schemas
 }
 
@@ -338,6 +374,10 @@ func (obj *AddClusterRequestClusterServerConfigAnyOf) GetActualInstance() interf
 		return obj.AddClusterRequestClusterServerConfigAnyOfOneOf6
 	}
 
+	if obj.AddClusterRequestClusterServerConfigAnyOfOneOf7 != nil {
+		return obj.AddClusterRequestClusterServerConfigAnyOfOneOf7
+	}
+
 	// all schemas are nil
 	return nil
 }
@@ -370,6 +410,10 @@ func (obj AddClusterRequestClusterServerConfigAnyOf) GetActualInstanceValue() in
 
 	if obj.AddClusterRequestClusterServerConfigAnyOfOneOf6 != nil {
 		return *obj.AddClusterRequestClusterServerConfigAnyOfOneOf6
+	}
+
+	if obj.AddClusterRequestClusterServerConfigAnyOfOneOf7 != nil {
+		return *obj.AddClusterRequestClusterServerConfigAnyOfOneOf7
 	}
 
 	// all schemas are nil
