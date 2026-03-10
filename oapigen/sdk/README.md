@@ -126,6 +126,7 @@ Class | Method | HTTP request | Description
 *GroupsAPI* | [**ListGroups**](docs/GroupsAPI.md#listgroups) | **Get** /api/groups | Retrieves all Groups
 *GroupsAPI* | [**RemoveGroups**](docs/GroupsAPI.md#removegroups) | **Delete** /api/groups/{id} | Deletes a Group
 *GroupsAPI* | [**UpdateGroups**](docs/GroupsAPI.md#updategroups) | **Put** /api/groups/{id} | Updates a Group
+*GroupsAPI* | [**UpdateGroupsZones**](docs/GroupsAPI.md#updategroupszones) | **Put** /api/groups/{id}/update-zones | Updates a Group&#39;s Zones
 *HostsAPI* | [**AddBaremetalHost**](docs/HostsAPI.md#addbaremetalhost) | **Post** /api/servers | Add a Baremetal Host
 *HostsAPI* | [**GetHost**](docs/HostsAPI.md#gethost) | **Get** /api/servers/{id} | Get a Specific Host
 *HostsAPI* | [**ListHosts**](docs/HostsAPI.md#listhosts) | **Get** /api/servers | Get All Hosts
@@ -2497,6 +2498,8 @@ Class | Method | HTTP request | Description
  - [UpdateGroupsRequest](docs/UpdateGroupsRequest.md)
  - [UpdateGroupsRequestGroup](docs/UpdateGroupsRequestGroup.md)
  - [UpdateGroupsRequestGroupConfig](docs/UpdateGroupsRequestGroupConfig.md)
+ - [UpdateGroupsZonesRequest](docs/UpdateGroupsZonesRequest.md)
+ - [UpdateGroupsZonesRequestGroup](docs/UpdateGroupsZonesRequestGroup.md)
  - [UpdateHostIdParameter](docs/UpdateHostIdParameter.md)
  - [UpdateHostRequest](docs/UpdateHostRequest.md)
  - [UpdateHostRequestServer](docs/UpdateHostRequestServer.md)
