@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**ListGroups**](GroupsAPI.md#ListGroups) | **Get** /api/groups | Retrieves all Groups
 [**RemoveGroups**](GroupsAPI.md#RemoveGroups) | **Delete** /api/groups/{id} | Deletes a Group
 [**UpdateGroups**](GroupsAPI.md#UpdateGroups) | **Put** /api/groups/{id} | Updates a Group
+[**UpdateGroupsZones**](GroupsAPI.md#UpdateGroupsZones) | **Put** /api/groups/{id}/update-zones | Updates a Group&#39;s Zones
 
 
 
@@ -353,6 +354,78 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UpdateGroups200Response**](UpdateGroups200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateGroupsZones
+
+> RemoveGroups200Response UpdateGroupsZones(ctx, id).UpdateGroupsZonesRequest(updateGroupsZonesRequest).Execute()
+
+Updates a Group's Zones
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-go-sdk/sdk"
+)
+
+func main() {
+	id := int64(1) // int64 | Morpheus ID of the Object being referenced
+	updateGroupsZonesRequest := *openapiclient.NewUpdateGroupsZonesRequest(*openapiclient.NewUpdateGroupsZonesRequestGroup([]map[string]interface{}{map[string]interface{}(123)})) // UpdateGroupsZonesRequest |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.GroupsAPI.UpdateGroupsZones(context.Background(), id).UpdateGroupsZonesRequest(updateGroupsZonesRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `GroupsAPI.UpdateGroupsZones``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateGroupsZones`: RemoveGroups200Response
+	fmt.Fprintf(os.Stdout, "Response from `GroupsAPI.UpdateGroupsZones`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int64** | Morpheus ID of the Object being referenced | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateGroupsZonesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **updateGroupsZonesRequest** | [**UpdateGroupsZonesRequest**](UpdateGroupsZonesRequest.md) |  | 
+
+### Return type
+
+[**RemoveGroups200Response**](RemoveGroups200Response.md)
 
 ### Authorization
 

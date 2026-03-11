@@ -2355,6 +2355,8 @@ docs/UpdateGroups200ResponseGroup.md
 docs/UpdateGroupsRequest.md
 docs/UpdateGroupsRequestGroup.md
 docs/UpdateGroupsRequestGroupConfig.md
+docs/UpdateGroupsZonesRequest.md
+docs/UpdateGroupsZonesRequestGroup.md
 docs/UpdateHostIdParameter.md
 docs/UpdateHostRequest.md
 docs/UpdateHostRequestServer.md
@@ -4943,6 +4945,8 @@ model_update_groups_200_response_group.go
 model_update_groups_request.go
 model_update_groups_request_group.go
 model_update_groups_request_group_config.go
+model_update_groups_zones_request.go
+model_update_groups_zones_request_group.go
 model_update_host_id_parameter.go
 model_update_host_request.go
 model_update_host_request_server.go

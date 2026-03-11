@@ -10,6 +10,7 @@ includePaths:
   - /api/environments/{id}
   - /api/groups
   - /api/groups/{id}
+  - /api/groups/{id}/update-zones
   - /api/instances
   - /api/instances/{id}
   - /api/instances/{id}/envs
