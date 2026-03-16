@@ -5,11 +5,15 @@ All URIs are relative to *https://CHANGEME*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**AddCluster**](ClustersAPI.md#AddCluster) | **Post** /api/clusters | Create a Cluster
+[**AddClusterWorker**](ClustersAPI.md#AddClusterWorker) | **Post** /api/clusters/{clusterId}/servers | Add Worker
+[**DeleteCluster**](ClustersAPI.md#DeleteCluster) | **Delete** /api/clusters/{clusterId} | Delete a Cluster
 [**DeleteClusterDatastore**](ClustersAPI.md#DeleteClusterDatastore) | **Delete** /api/clusters/{clusterId}/datastores/{id} | Delete a Cluster Datastore
+[**GetCluster**](ClustersAPI.md#GetCluster) | **Get** /api/clusters/{clusterId} | Get a Specific Cluster
 [**GetClusterDatastore**](ClustersAPI.md#GetClusterDatastore) | **Get** /api/clusters/{clusterId}/datastores/{id} | Get a Specific Cluster Datastore
 [**ListClusterDatastores**](ClustersAPI.md#ListClusterDatastores) | **Get** /api/clusters/{clusterId}/datastores | Get Cluster Datastores
 [**ListClusters**](ClustersAPI.md#ListClusters) | **Get** /api/clusters | Get All Clusters
 [**SaveClusterDatastore**](ClustersAPI.md#SaveClusterDatastore) | **Post** /api/clusters/{clusterId}/datastores | Create a Cluster Datastore
+[**UpdateCluster**](ClustersAPI.md#UpdateCluster) | **Put** /api/clusters/{clusterId} | Update Cluster
 [**UpdateClusterDatastore**](ClustersAPI.md#UpdateClusterDatastore) | **Put** /api/clusters/{clusterId}/datastores/{id} | Update Cluster Datastore
 
 
@@ -80,6 +84,160 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## AddClusterWorker
+
+> AddClusterWorker200Response AddClusterWorker(ctx, clusterId).AddClusterWorkerRequest(addClusterWorkerRequest).Execute()
+
+Add Worker
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-go-sdk/sdk"
+)
+
+func main() {
+	clusterId := int64(5) // int64 | The ID of the cluster
+	addClusterWorkerRequest := *openapiclient.NewAddClusterWorkerRequest() // AddClusterWorkerRequest |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ClustersAPI.AddClusterWorker(context.Background(), clusterId).AddClusterWorkerRequest(addClusterWorkerRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ClustersAPI.AddClusterWorker``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AddClusterWorker`: AddClusterWorker200Response
+	fmt.Fprintf(os.Stdout, "Response from `ClustersAPI.AddClusterWorker`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**clusterId** | **int64** | The ID of the cluster | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiAddClusterWorkerRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **addClusterWorkerRequest** | [**AddClusterWorkerRequest**](AddClusterWorkerRequest.md) |  | 
+
+### Return type
+
+[**AddClusterWorker200Response**](AddClusterWorker200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteCluster
+
+> DeleteCluster200Response DeleteCluster(ctx, clusterId).RemoveInstances(removeInstances).RemoveResources(removeResources).PreserveVolumes(preserveVolumes).ReleaseFloatingIps(releaseFloatingIps).ReleaseEIPs(releaseEIPs).Force(force).Execute()
+
+Delete a Cluster
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-go-sdk/sdk"
+)
+
+func main() {
+	clusterId := int64(5) // int64 | The ID of the cluster
+	removeInstances := "on" // string | Remove Instances (optional) (default to "off")
+	removeResources := "off" // string | Remove Resources (optional) (default to "on")
+	preserveVolumes := "on" // string | Preserve Volumes (optional) (default to "off")
+	releaseFloatingIps := "off" // string | Release Floating IPs (optional) (default to "on")
+	releaseEIPs := "off" // string | Alias for releaseFloatingIps (optional) (default to "on")
+	force := "on" // string | Force Delete (optional) (default to "off")
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ClustersAPI.DeleteCluster(context.Background(), clusterId).RemoveInstances(removeInstances).RemoveResources(removeResources).PreserveVolumes(preserveVolumes).ReleaseFloatingIps(releaseFloatingIps).ReleaseEIPs(releaseEIPs).Force(force).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ClustersAPI.DeleteCluster``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `DeleteCluster`: DeleteCluster200Response
+	fmt.Fprintf(os.Stdout, "Response from `ClustersAPI.DeleteCluster`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**clusterId** | **int64** | The ID of the cluster | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteClusterRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **removeInstances** | **string** | Remove Instances | [default to &quot;off&quot;]
+ **removeResources** | **string** | Remove Resources | [default to &quot;on&quot;]
+ **preserveVolumes** | **string** | Preserve Volumes | [default to &quot;off&quot;]
+ **releaseFloatingIps** | **string** | Release Floating IPs | [default to &quot;on&quot;]
+ **releaseEIPs** | **string** | Alias for releaseFloatingIps | [default to &quot;on&quot;]
+ **force** | **string** | Force Delete | [default to &quot;off&quot;]
+
+### Return type
+
+[**DeleteCluster200Response**](DeleteCluster200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## DeleteClusterDatastore
 
 > DeleteClusterDatastore200Response DeleteClusterDatastore(ctx, clusterId, id).Execute()
@@ -138,6 +296,78 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**DeleteClusterDatastore200Response**](DeleteClusterDatastore200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetCluster
+
+> GetCluster200Response GetCluster(ctx, clusterId).Stats(stats).Execute()
+
+Get a Specific Cluster
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-go-sdk/sdk"
+)
+
+func main() {
+	clusterId := int64(5) // int64 | The ID of the cluster
+	stats := true // bool | This can be used to include the cluster `stats` object in the response by passing `true`. This object includes usage information that varies by cluster type. For example for HVM it may include `cephStats` and `pacemakerStats`. (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ClustersAPI.GetCluster(context.Background(), clusterId).Stats(stats).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ClustersAPI.GetCluster``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCluster`: GetCluster200Response
+	fmt.Fprintf(os.Stdout, "Response from `ClustersAPI.GetCluster`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**clusterId** | **int64** | The ID of the cluster | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetClusterRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **stats** | **bool** | This can be used to include the cluster &#x60;stats&#x60; object in the response by passing &#x60;true&#x60;. This object includes usage information that varies by cluster type. For example for HVM it may include &#x60;cephStats&#x60; and &#x60;pacemakerStats&#x60;. | 
+
+### Return type
+
+[**GetCluster200Response**](GetCluster200Response.md)
 
 ### Authorization
 
@@ -453,6 +683,78 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SaveClusterDatastore200Response**](SaveClusterDatastore200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateCluster
+
+> UpdateCluster200Response UpdateCluster(ctx, clusterId).UpdateClusterRequest(updateClusterRequest).Execute()
+
+Update Cluster
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-go-sdk/sdk"
+)
+
+func main() {
+	clusterId := int64(5) // int64 | The ID of the cluster
+	updateClusterRequest := *openapiclient.NewUpdateClusterRequest() // UpdateClusterRequest |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ClustersAPI.UpdateCluster(context.Background(), clusterId).UpdateClusterRequest(updateClusterRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ClustersAPI.UpdateCluster``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCluster`: UpdateCluster200Response
+	fmt.Fprintf(os.Stdout, "Response from `ClustersAPI.UpdateCluster`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**clusterId** | **int64** | The ID of the cluster | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateClusterRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **updateClusterRequest** | [**UpdateClusterRequest**](UpdateClusterRequest.md) |  | 
+
+### Return type
+
+[**UpdateCluster200Response**](UpdateCluster200Response.md)
 
 ### Authorization
 

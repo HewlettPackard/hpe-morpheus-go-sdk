@@ -1,9 +1,9 @@
 includePaths:
   - /api/clusters
+  - /api/clusters/{clusterId}
   - /api/clusters/{clusterId}/datastores
   - /api/clusters/{clusterId}/datastores/{id}
-  - /api/clusters/{id}
-  - /api/clusters/{id}/servers
+  - /api/clusters/{clusterId}/servers
   - /api/data-stores
   - /api/data-stores/{id}
   - /api/environments

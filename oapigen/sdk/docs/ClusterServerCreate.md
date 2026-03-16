@@ -4,31 +4,31 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Config** | [**ClusterServerCreateConfig**](ClusterServerCreateConfig.md) |  | 
-**ServerType** | Pointer to [**ClusterServerCreateServerType**](ClusterServerCreateServerType.md) |  | [optional] 
+**Config** | [**AddClusterWorkerRequestServerConfig**](AddClusterWorkerRequestServerConfig.md) |  | 
+**ServerType** | Pointer to [**AddClusterWorkerRequestServerServerType**](AddClusterWorkerRequestServerServerType.md) |  | [optional] 
 **Name** | **string** | Name to be used for host(s) created in the cluster | 
-**Plan** | [**ClusterServerCreatePlan**](ClusterServerCreatePlan.md) |  | 
-**ServicePlanOptions** | Pointer to [**ClusterServerCreateServicePlanOptions**](ClusterServerCreateServicePlanOptions.md) |  | [optional] 
-**Volumes** | Pointer to [**[]ClusterServerCreateVolumesInner**](ClusterServerCreateVolumesInner.md) | The (optional) volumes parameter is for LV configuration, can create additional LVs at provision It should be passed as an array of Objects | [optional] 
-**NetworkInterfaces** | Pointer to [**[]ClusterServerCreateNetworkInterfacesInner**](ClusterServerCreateNetworkInterfacesInner.md) | The networkInterfaces parameter is for network configuration.  The Options API /api/options/zoneNetworkOptions can be used to see which options are available.  It should be passed as an array of Objects with the following attributes  | [optional] 
+**Plan** | [**AddClusterWorkerRequestServerPlan**](AddClusterWorkerRequestServerPlan.md) |  | 
+**ServicePlanOptions** | Pointer to [**AddClusterWorkerRequestServerServicePlanOptions**](AddClusterWorkerRequestServerServicePlanOptions.md) |  | [optional] 
+**Volumes** | Pointer to [**[]AddClusterWorkerRequestServerVolumesInner**](AddClusterWorkerRequestServerVolumesInner.md) | The (optional) volumes parameter is for LV configuration, can create additional LVs at provision It should be passed as an array of Objects | [optional] 
+**NetworkInterfaces** | Pointer to [**[]AddClusterWorkerRequestServerNetworkInterfacesInner**](AddClusterWorkerRequestServerNetworkInterfacesInner.md) | The networkInterfaces parameter is for network configuration.  The Options API /api/options/zoneNetworkOptions can be used to see which options are available.  It should be passed as an array of Objects with the following attributes  | [optional] 
 **SecurityGroups** | Pointer to **[]string** | Key for security group configuration. | [optional] 
 **Visibility** | Pointer to **string** | Visibility for server host | [optional] [default to "private"]
-**UserGroup** | Pointer to [**ClusterServerCreateUserGroup**](ClusterServerCreateUserGroup.md) |  | [optional] 
+**UserGroup** | Pointer to [**AddClusterWorkerRequestServerUserGroup**](AddClusterWorkerRequestServerUserGroup.md) |  | [optional] 
 **NetworkDomain** | Pointer to **NullableString** | Network domain | [optional] 
 **Hostname** | Pointer to **NullableString** | Hostname for server host | [optional] 
 **NodeCount** | Pointer to **int64** | Number of workers or hosts | [optional] 
-**Tags** | Pointer to [**[]ClusterServerCreateTagsInner**](ClusterServerCreateTagsInner.md) | Metadata tags, Array of objects having a name and value. | [optional] 
+**Tags** | Pointer to [**[]AddClusterWorkerRequestServerTagsInner**](AddClusterWorkerRequestServerTagsInner.md) | Metadata tags, Array of objects having a name and value. | [optional] 
 **Labels** | Pointer to **[]string** | Array of strings (keywords). This will set labels on the server and also on the cluster as well by default. | [optional] 
-**SshHosts** | Pointer to [**[]ClusterServerCreateSshHostsInner**](ClusterServerCreateSshHostsInner.md) | Array of Host IPs and Names. This is used in conjunction with sshUsername and sshPassword/sshKeyPair to add existing hosts such as with HPE VM clusters. | [optional] 
+**SshHosts** | Pointer to [**[]AddClusterWorkerRequestServerSshHostsInner**](AddClusterWorkerRequestServerSshHostsInner.md) | Array of Host IPs and Names. This is used in conjunction with sshUsername and sshPassword/sshKeyPair to add existing hosts such as with HPE VM clusters. | [optional] 
 **SshUsername** | Pointer to **string** | SSH Username | [optional] 
 **SshPassword** | Pointer to **NullableString** | SSH Password | [optional] 
-**SshKeyPair** | Pointer to [**ClusterServerCreateSshKeyPair**](ClusterServerCreateSshKeyPair.md) |  | [optional] 
+**SshKeyPair** | Pointer to [**AddClusterWorkerRequestServerSshKeyPair**](AddClusterWorkerRequestServerSshKeyPair.md) |  | [optional] 
 
 ## Methods
 
 ### NewClusterServerCreate
 
-`func NewClusterServerCreate(config ClusterServerCreateConfig, name string, plan ClusterServerCreatePlan, ) *ClusterServerCreate`
+`func NewClusterServerCreate(config AddClusterWorkerRequestServerConfig, name string, plan AddClusterWorkerRequestServerPlan, ) *ClusterServerCreate`
 
 NewClusterServerCreate instantiates a new ClusterServerCreate object
 This constructor will assign default values to properties that have it defined,
@@ -45,40 +45,40 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetConfig
 
-`func (o *ClusterServerCreate) GetConfig() ClusterServerCreateConfig`
+`func (o *ClusterServerCreate) GetConfig() AddClusterWorkerRequestServerConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *ClusterServerCreate) GetConfigOk() (*ClusterServerCreateConfig, bool)`
+`func (o *ClusterServerCreate) GetConfigOk() (*AddClusterWorkerRequestServerConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *ClusterServerCreate) SetConfig(v ClusterServerCreateConfig)`
+`func (o *ClusterServerCreate) SetConfig(v AddClusterWorkerRequestServerConfig)`
 
 SetConfig sets Config field to given value.
 
 
 ### GetServerType
 
-`func (o *ClusterServerCreate) GetServerType() ClusterServerCreateServerType`
+`func (o *ClusterServerCreate) GetServerType() AddClusterWorkerRequestServerServerType`
 
 GetServerType returns the ServerType field if non-nil, zero value otherwise.
 
 ### GetServerTypeOk
 
-`func (o *ClusterServerCreate) GetServerTypeOk() (*ClusterServerCreateServerType, bool)`
+`func (o *ClusterServerCreate) GetServerTypeOk() (*AddClusterWorkerRequestServerServerType, bool)`
 
 GetServerTypeOk returns a tuple with the ServerType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServerType
 
-`func (o *ClusterServerCreate) SetServerType(v ClusterServerCreateServerType)`
+`func (o *ClusterServerCreate) SetServerType(v AddClusterWorkerRequestServerServerType)`
 
 SetServerType sets ServerType field to given value.
 
@@ -110,40 +110,40 @@ SetName sets Name field to given value.
 
 ### GetPlan
 
-`func (o *ClusterServerCreate) GetPlan() ClusterServerCreatePlan`
+`func (o *ClusterServerCreate) GetPlan() AddClusterWorkerRequestServerPlan`
 
 GetPlan returns the Plan field if non-nil, zero value otherwise.
 
 ### GetPlanOk
 
-`func (o *ClusterServerCreate) GetPlanOk() (*ClusterServerCreatePlan, bool)`
+`func (o *ClusterServerCreate) GetPlanOk() (*AddClusterWorkerRequestServerPlan, bool)`
 
 GetPlanOk returns a tuple with the Plan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlan
 
-`func (o *ClusterServerCreate) SetPlan(v ClusterServerCreatePlan)`
+`func (o *ClusterServerCreate) SetPlan(v AddClusterWorkerRequestServerPlan)`
 
 SetPlan sets Plan field to given value.
 
 
 ### GetServicePlanOptions
 
-`func (o *ClusterServerCreate) GetServicePlanOptions() ClusterServerCreateServicePlanOptions`
+`func (o *ClusterServerCreate) GetServicePlanOptions() AddClusterWorkerRequestServerServicePlanOptions`
 
 GetServicePlanOptions returns the ServicePlanOptions field if non-nil, zero value otherwise.
 
 ### GetServicePlanOptionsOk
 
-`func (o *ClusterServerCreate) GetServicePlanOptionsOk() (*ClusterServerCreateServicePlanOptions, bool)`
+`func (o *ClusterServerCreate) GetServicePlanOptionsOk() (*AddClusterWorkerRequestServerServicePlanOptions, bool)`
 
 GetServicePlanOptionsOk returns a tuple with the ServicePlanOptions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServicePlanOptions
 
-`func (o *ClusterServerCreate) SetServicePlanOptions(v ClusterServerCreateServicePlanOptions)`
+`func (o *ClusterServerCreate) SetServicePlanOptions(v AddClusterWorkerRequestServerServicePlanOptions)`
 
 SetServicePlanOptions sets ServicePlanOptions field to given value.
 
@@ -155,20 +155,20 @@ HasServicePlanOptions returns a boolean if a field has been set.
 
 ### GetVolumes
 
-`func (o *ClusterServerCreate) GetVolumes() []ClusterServerCreateVolumesInner`
+`func (o *ClusterServerCreate) GetVolumes() []AddClusterWorkerRequestServerVolumesInner`
 
 GetVolumes returns the Volumes field if non-nil, zero value otherwise.
 
 ### GetVolumesOk
 
-`func (o *ClusterServerCreate) GetVolumesOk() (*[]ClusterServerCreateVolumesInner, bool)`
+`func (o *ClusterServerCreate) GetVolumesOk() (*[]AddClusterWorkerRequestServerVolumesInner, bool)`
 
 GetVolumesOk returns a tuple with the Volumes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVolumes
 
-`func (o *ClusterServerCreate) SetVolumes(v []ClusterServerCreateVolumesInner)`
+`func (o *ClusterServerCreate) SetVolumes(v []AddClusterWorkerRequestServerVolumesInner)`
 
 SetVolumes sets Volumes field to given value.
 
@@ -180,20 +180,20 @@ HasVolumes returns a boolean if a field has been set.
 
 ### GetNetworkInterfaces
 
-`func (o *ClusterServerCreate) GetNetworkInterfaces() []ClusterServerCreateNetworkInterfacesInner`
+`func (o *ClusterServerCreate) GetNetworkInterfaces() []AddClusterWorkerRequestServerNetworkInterfacesInner`
 
 GetNetworkInterfaces returns the NetworkInterfaces field if non-nil, zero value otherwise.
 
 ### GetNetworkInterfacesOk
 
-`func (o *ClusterServerCreate) GetNetworkInterfacesOk() (*[]ClusterServerCreateNetworkInterfacesInner, bool)`
+`func (o *ClusterServerCreate) GetNetworkInterfacesOk() (*[]AddClusterWorkerRequestServerNetworkInterfacesInner, bool)`
 
 GetNetworkInterfacesOk returns a tuple with the NetworkInterfaces field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkInterfaces
 
-`func (o *ClusterServerCreate) SetNetworkInterfaces(v []ClusterServerCreateNetworkInterfacesInner)`
+`func (o *ClusterServerCreate) SetNetworkInterfaces(v []AddClusterWorkerRequestServerNetworkInterfacesInner)`
 
 SetNetworkInterfaces sets NetworkInterfaces field to given value.
 
@@ -255,20 +255,20 @@ HasVisibility returns a boolean if a field has been set.
 
 ### GetUserGroup
 
-`func (o *ClusterServerCreate) GetUserGroup() ClusterServerCreateUserGroup`
+`func (o *ClusterServerCreate) GetUserGroup() AddClusterWorkerRequestServerUserGroup`
 
 GetUserGroup returns the UserGroup field if non-nil, zero value otherwise.
 
 ### GetUserGroupOk
 
-`func (o *ClusterServerCreate) GetUserGroupOk() (*ClusterServerCreateUserGroup, bool)`
+`func (o *ClusterServerCreate) GetUserGroupOk() (*AddClusterWorkerRequestServerUserGroup, bool)`
 
 GetUserGroupOk returns a tuple with the UserGroup field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUserGroup
 
-`func (o *ClusterServerCreate) SetUserGroup(v ClusterServerCreateUserGroup)`
+`func (o *ClusterServerCreate) SetUserGroup(v AddClusterWorkerRequestServerUserGroup)`
 
 SetUserGroup sets UserGroup field to given value.
 
@@ -375,20 +375,20 @@ HasNodeCount returns a boolean if a field has been set.
 
 ### GetTags
 
-`func (o *ClusterServerCreate) GetTags() []ClusterServerCreateTagsInner`
+`func (o *ClusterServerCreate) GetTags() []AddClusterWorkerRequestServerTagsInner`
 
 GetTags returns the Tags field if non-nil, zero value otherwise.
 
 ### GetTagsOk
 
-`func (o *ClusterServerCreate) GetTagsOk() (*[]ClusterServerCreateTagsInner, bool)`
+`func (o *ClusterServerCreate) GetTagsOk() (*[]AddClusterWorkerRequestServerTagsInner, bool)`
 
 GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTags
 
-`func (o *ClusterServerCreate) SetTags(v []ClusterServerCreateTagsInner)`
+`func (o *ClusterServerCreate) SetTags(v []AddClusterWorkerRequestServerTagsInner)`
 
 SetTags sets Tags field to given value.
 
@@ -425,20 +425,20 @@ HasLabels returns a boolean if a field has been set.
 
 ### GetSshHosts
 
-`func (o *ClusterServerCreate) GetSshHosts() []ClusterServerCreateSshHostsInner`
+`func (o *ClusterServerCreate) GetSshHosts() []AddClusterWorkerRequestServerSshHostsInner`
 
 GetSshHosts returns the SshHosts field if non-nil, zero value otherwise.
 
 ### GetSshHostsOk
 
-`func (o *ClusterServerCreate) GetSshHostsOk() (*[]ClusterServerCreateSshHostsInner, bool)`
+`func (o *ClusterServerCreate) GetSshHostsOk() (*[]AddClusterWorkerRequestServerSshHostsInner, bool)`
 
 GetSshHostsOk returns a tuple with the SshHosts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSshHosts
 
-`func (o *ClusterServerCreate) SetSshHosts(v []ClusterServerCreateSshHostsInner)`
+`func (o *ClusterServerCreate) SetSshHosts(v []AddClusterWorkerRequestServerSshHostsInner)`
 
 SetSshHosts sets SshHosts field to given value.
 
@@ -510,20 +510,20 @@ HasSshPassword returns a boolean if a field has been set.
 UnsetSshPassword ensures that no value is present for SshPassword, not even an explicit nil
 ### GetSshKeyPair
 
-`func (o *ClusterServerCreate) GetSshKeyPair() ClusterServerCreateSshKeyPair`
+`func (o *ClusterServerCreate) GetSshKeyPair() AddClusterWorkerRequestServerSshKeyPair`
 
 GetSshKeyPair returns the SshKeyPair field if non-nil, zero value otherwise.
 
 ### GetSshKeyPairOk
 
-`func (o *ClusterServerCreate) GetSshKeyPairOk() (*ClusterServerCreateSshKeyPair, bool)`
+`func (o *ClusterServerCreate) GetSshKeyPairOk() (*AddClusterWorkerRequestServerSshKeyPair, bool)`
 
 GetSshKeyPairOk returns a tuple with the SshKeyPair field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSshKeyPair
 
-`func (o *ClusterServerCreate) SetSshKeyPair(v ClusterServerCreateSshKeyPair)`
+`func (o *ClusterServerCreate) SetSshKeyPair(v AddClusterWorkerRequestServerSshKeyPair)`
 
 SetSshKeyPair sets SshKeyPair field to given value.
 
