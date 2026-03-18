@@ -4,12 +4,84 @@ All URIs are relative to *https://CHANGEME*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**ActivateServicePlans**](ServicePlansAPI.md#ActivateServicePlans) | **Put** /api/service-plans/{id}/activate | Activates a Service Plan
 [**AddServicePlans**](ServicePlansAPI.md#AddServicePlans) | **Post** /api/service-plans | Creates a Service Plan
+[**DeactivateServicePlans**](ServicePlansAPI.md#DeactivateServicePlans) | **Put** /api/service-plans/{id}/deactivate | Deactivates a Service Plan
 [**GetServicePlans**](ServicePlansAPI.md#GetServicePlans) | **Get** /api/service-plans/{id} | Retrieves a Specific Service Plan
 [**ListServicePlans**](ServicePlansAPI.md#ListServicePlans) | **Get** /api/service-plans | Retrieves all Service Plans
 [**RemoveServicePlans**](ServicePlansAPI.md#RemoveServicePlans) | **Delete** /api/service-plans/{id} | Deletes a Service Plan
 [**UpdateServicePlans**](ServicePlansAPI.md#UpdateServicePlans) | **Put** /api/service-plans/{id} | Updates a Service Plan
 
+
+
+## ActivateServicePlans
+
+> RemoveExecuteSchedules200Response ActivateServicePlans(ctx, id).Execute()
+
+Activates a Service Plan
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-go-sdk/sdk"
+)
+
+func main() {
+	id := int64(1) // int64 | Morpheus ID of the Object being referenced
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ServicePlansAPI.ActivateServicePlans(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ServicePlansAPI.ActivateServicePlans``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ActivateServicePlans`: RemoveExecuteSchedules200Response
+	fmt.Fprintf(os.Stdout, "Response from `ServicePlansAPI.ActivateServicePlans`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int64** | Morpheus ID of the Object being referenced | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiActivateServicePlansRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**RemoveExecuteSchedules200Response**](RemoveExecuteSchedules200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## AddServicePlans
@@ -71,6 +143,76 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeactivateServicePlans
+
+> RemoveExecuteSchedules200Response DeactivateServicePlans(ctx, id).Execute()
+
+Deactivates a Service Plan
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-go-sdk/sdk"
+)
+
+func main() {
+	id := int64(1) // int64 | Morpheus ID of the Object being referenced
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ServicePlansAPI.DeactivateServicePlans(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ServicePlansAPI.DeactivateServicePlans``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `DeactivateServicePlans`: RemoveExecuteSchedules200Response
+	fmt.Fprintf(os.Stdout, "Response from `ServicePlansAPI.DeactivateServicePlans`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int64** | Morpheus ID of the Object being referenced | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeactivateServicePlansRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**RemoveExecuteSchedules200Response**](RemoveExecuteSchedules200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -232,7 +374,7 @@ Name | Type | Description  | Notes
 
 ## RemoveServicePlans
 
-> RemoveGroups200Response RemoveServicePlans(ctx, id).Execute()
+> RemoveExecuteSchedules200Response RemoveServicePlans(ctx, id).Execute()
 
 Deletes a Service Plan
 
@@ -260,7 +402,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ServicePlansAPI.RemoveServicePlans``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `RemoveServicePlans`: RemoveGroups200Response
+	// response from `RemoveServicePlans`: RemoveExecuteSchedules200Response
 	fmt.Fprintf(os.Stdout, "Response from `ServicePlansAPI.RemoveServicePlans`: %v\n", resp)
 }
 ```
@@ -284,7 +426,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RemoveGroups200Response**](RemoveGroups200Response.md)
+[**RemoveExecuteSchedules200Response**](RemoveExecuteSchedules200Response.md)
 
 ### Authorization
 

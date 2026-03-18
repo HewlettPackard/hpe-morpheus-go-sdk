@@ -5,19 +5,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
-**Account** | Pointer to [**CheckAccount**](CheckAccount.md) |  | [optional] 
+**Account** | Pointer to [**AddChecks200ResponseAllOfCheckAccount**](AddChecks200ResponseAllOfCheckAccount.md) |  | [optional] 
 **Active** | Pointer to **bool** |  | [optional] 
 **ApiKey** | Pointer to **string** |  | [optional] 
 **Availability** | Pointer to **float32** |  | [optional] 
 **CheckAgent** | Pointer to **NullableString** |  | [optional] 
 **CheckInterval** | Pointer to **NullableInt64** |  | [optional] 
 **CheckSpec** | Pointer to **NullableString** |  | [optional] 
-**CheckType** | Pointer to [**CheckCheckType**](CheckCheckType.md) |  | [optional] 
-**Config** | Pointer to [**CheckConfig**](CheckConfig.md) |  | [optional] 
-**Container** | Pointer to [**CheckContainer**](CheckContainer.md) |  | [optional] 
+**CheckType** | Pointer to [**AddChecks200ResponseAllOfCheckCheckType**](AddChecks200ResponseAllOfCheckCheckType.md) |  | [optional] 
+**Config** | Pointer to [**AddChecks200ResponseAllOfCheckConfig**](AddChecks200ResponseAllOfCheckConfig.md) |  | [optional] 
+**Container** | Pointer to [**AddChecks200ResponseAllOfCheckContainer**](AddChecks200ResponseAllOfCheckContainer.md) |  | [optional] 
 **CreateIncident** | Pointer to **bool** |  | [optional] 
 **Muted** | Pointer to **bool** |  | [optional] 
-**CreatedBy** | Pointer to [**CheckCreatedBy**](CheckCreatedBy.md) |  | [optional] 
+**CreatedBy** | Pointer to [**AddChecks200ResponseAllOfCheckCreatedBy**](AddChecks200ResponseAllOfCheckCreatedBy.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **Description** | Pointer to **NullableString** |  | [optional] 
 **EndDate** | Pointer to **NullableTime** |  | [optional] 
@@ -88,20 +88,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *Check) GetAccount() CheckAccount`
+`func (o *Check) GetAccount() AddChecks200ResponseAllOfCheckAccount`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *Check) GetAccountOk() (*CheckAccount, bool)`
+`func (o *Check) GetAccountOk() (*AddChecks200ResponseAllOfCheckAccount, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *Check) SetAccount(v CheckAccount)`
+`func (o *Check) SetAccount(v AddChecks200ResponseAllOfCheckAccount)`
 
 SetAccount sets Account field to given value.
 
@@ -293,20 +293,20 @@ HasCheckSpec returns a boolean if a field has been set.
 UnsetCheckSpec ensures that no value is present for CheckSpec, not even an explicit nil
 ### GetCheckType
 
-`func (o *Check) GetCheckType() CheckCheckType`
+`func (o *Check) GetCheckType() AddChecks200ResponseAllOfCheckCheckType`
 
 GetCheckType returns the CheckType field if non-nil, zero value otherwise.
 
 ### GetCheckTypeOk
 
-`func (o *Check) GetCheckTypeOk() (*CheckCheckType, bool)`
+`func (o *Check) GetCheckTypeOk() (*AddChecks200ResponseAllOfCheckCheckType, bool)`
 
 GetCheckTypeOk returns a tuple with the CheckType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCheckType
 
-`func (o *Check) SetCheckType(v CheckCheckType)`
+`func (o *Check) SetCheckType(v AddChecks200ResponseAllOfCheckCheckType)`
 
 SetCheckType sets CheckType field to given value.
 
@@ -318,20 +318,20 @@ HasCheckType returns a boolean if a field has been set.
 
 ### GetConfig
 
-`func (o *Check) GetConfig() CheckConfig`
+`func (o *Check) GetConfig() AddChecks200ResponseAllOfCheckConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *Check) GetConfigOk() (*CheckConfig, bool)`
+`func (o *Check) GetConfigOk() (*AddChecks200ResponseAllOfCheckConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *Check) SetConfig(v CheckConfig)`
+`func (o *Check) SetConfig(v AddChecks200ResponseAllOfCheckConfig)`
 
 SetConfig sets Config field to given value.
 
@@ -343,20 +343,20 @@ HasConfig returns a boolean if a field has been set.
 
 ### GetContainer
 
-`func (o *Check) GetContainer() CheckContainer`
+`func (o *Check) GetContainer() AddChecks200ResponseAllOfCheckContainer`
 
 GetContainer returns the Container field if non-nil, zero value otherwise.
 
 ### GetContainerOk
 
-`func (o *Check) GetContainerOk() (*CheckContainer, bool)`
+`func (o *Check) GetContainerOk() (*AddChecks200ResponseAllOfCheckContainer, bool)`
 
 GetContainerOk returns a tuple with the Container field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetContainer
 
-`func (o *Check) SetContainer(v CheckContainer)`
+`func (o *Check) SetContainer(v AddChecks200ResponseAllOfCheckContainer)`
 
 SetContainer sets Container field to given value.
 
@@ -418,20 +418,20 @@ HasMuted returns a boolean if a field has been set.
 
 ### GetCreatedBy
 
-`func (o *Check) GetCreatedBy() CheckCreatedBy`
+`func (o *Check) GetCreatedBy() AddChecks200ResponseAllOfCheckCreatedBy`
 
 GetCreatedBy returns the CreatedBy field if non-nil, zero value otherwise.
 
 ### GetCreatedByOk
 
-`func (o *Check) GetCreatedByOk() (*CheckCreatedBy, bool)`
+`func (o *Check) GetCreatedByOk() (*AddChecks200ResponseAllOfCheckCreatedBy, bool)`
 
 GetCreatedByOk returns a tuple with the CreatedBy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreatedBy
 
-`func (o *Check) SetCreatedBy(v CheckCreatedBy)`
+`func (o *Check) SetCreatedBy(v AddChecks200ResponseAllOfCheckCreatedBy)`
 
 SetCreatedBy sets CreatedBy field to given value.
 

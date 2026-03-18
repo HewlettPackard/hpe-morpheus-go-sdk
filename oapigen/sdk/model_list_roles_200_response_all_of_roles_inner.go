@@ -36,7 +36,7 @@ type ListRoles200ResponseAllOfRolesInner struct {
 	ParentRoleId         NullableString                                     `json:"parentRoleId,omitempty"`
 	Diverged             *bool                                              `json:"diverged,omitempty"`
 	OwnerId              *int64                                             `json:"ownerId,omitempty"`
-	Owner                *ListRoles200ResponseAllOfRolesInnerOwner          `json:"owner,omitempty"`
+	Owner                NullableListRoles200ResponseAllOfRolesInnerOwner   `json:"owner,omitempty"`
 	DefaultPersona       *ListRoles200ResponseAllOfRolesInnerDefaultPersona `json:"defaultPersona,omitempty"`
 	DateCreated          *time.Time                                         `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                         `json:"lastUpdated,omitempty"`
@@ -479,36 +479,47 @@ func (o *ListRoles200ResponseAllOfRolesInner) SetOwnerId(v int64) {
 	o.OwnerId = &v
 }
 
-// GetOwner returns the Owner field value if set, zero value otherwise.
+// GetOwner returns the Owner field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListRoles200ResponseAllOfRolesInner) GetOwner() ListRoles200ResponseAllOfRolesInnerOwner {
-	if o == nil || IsNil(o.Owner) {
+	if o == nil || IsNil(o.Owner.Get()) {
 		var ret ListRoles200ResponseAllOfRolesInnerOwner
 		return ret
 	}
-	return *o.Owner
+	return *o.Owner.Get()
 }
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListRoles200ResponseAllOfRolesInner) GetOwnerOk() (*ListRoles200ResponseAllOfRolesInnerOwner, bool) {
-	if o == nil || IsNil(o.Owner) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Owner, true
+	return o.Owner.Get(), o.Owner.IsSet()
 }
 
 // IsSetOwner returns a boolean if a field has been set.
 func (o *ListRoles200ResponseAllOfRolesInner) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
+	if o != nil && o.Owner.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetOwner gets a reference to the given ListRoles200ResponseAllOfRolesInnerOwner and assigns it to the Owner field.
+// SetOwner gets a reference to the given NullableListRoles200ResponseAllOfRolesInnerOwner and assigns it to the Owner field.
 func (o *ListRoles200ResponseAllOfRolesInner) SetOwner(v ListRoles200ResponseAllOfRolesInnerOwner) {
-	o.Owner = &v
+	o.Owner.Set(&v)
+}
+
+// SetOwnerNil sets the value for Owner to be an explicit nil
+func (o *ListRoles200ResponseAllOfRolesInner) SetOwnerNil() {
+	o.Owner.Set(nil)
+}
+
+// UnsetOwner ensures that no value is present for Owner, not even an explicit nil
+func (o *ListRoles200ResponseAllOfRolesInner) UnsetOwner() {
+	o.Owner.Unset()
 }
 
 // GetDefaultPersona returns the DefaultPersona field value if set, zero value otherwise.
@@ -653,8 +664,8 @@ func (o ListRoles200ResponseAllOfRolesInner) ToMap() (map[string]interface{}, er
 	if !IsNil(o.OwnerId) {
 		toSerialize["ownerId"] = o.OwnerId
 	}
-	if !IsNil(o.Owner) {
-		toSerialize["owner"] = o.Owner
+	if o.Owner.IsSet() {
+		toSerialize["owner"] = o.Owner.Get()
 	}
 	if !IsNil(o.DefaultPersona) {
 		toSerialize["defaultPersona"] = o.DefaultPersona

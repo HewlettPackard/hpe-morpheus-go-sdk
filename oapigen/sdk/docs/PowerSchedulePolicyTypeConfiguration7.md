@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PowerScheduleType** | Pointer to **string** |  | [optional] 
+**PowerScheduleType** | **string** |  | 
 **PowerSchedule** | Pointer to **string** |  | [optional] 
 **PowerScheduleHideFixed** | Pointer to **bool** |  | [optional] 
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 
 ### NewPowerSchedulePolicyTypeConfiguration7
 
-`func NewPowerSchedulePolicyTypeConfiguration7() *PowerSchedulePolicyTypeConfiguration7`
+`func NewPowerSchedulePolicyTypeConfiguration7(powerScheduleType string, ) *PowerSchedulePolicyTypeConfiguration7`
 
 NewPowerSchedulePolicyTypeConfiguration7 instantiates a new PowerSchedulePolicyTypeConfiguration7 object
 This constructor will assign default values to properties that have it defined,
@@ -46,11 +46,6 @@ and a boolean to check if the value has been set.
 
 SetPowerScheduleType sets PowerScheduleType field to given value.
 
-### HasPowerScheduleType
-
-`func (o *PowerSchedulePolicyTypeConfiguration7) HasPowerScheduleType() bool`
-
-HasPowerScheduleType returns a boolean if a field has been set.
 
 ### GetPowerSchedule
 

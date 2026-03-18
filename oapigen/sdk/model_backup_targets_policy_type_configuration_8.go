@@ -18,9 +18,9 @@ import (
 // checks if the BackupTargetsPolicyTypeConfiguration8 type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &BackupTargetsPolicyTypeConfiguration8{}
 
-// BackupTargetsPolicyTypeConfiguration8 Configuration settings for the following policy types: - Backup Targets
+// BackupTargetsPolicyTypeConfiguration8 - Backup Targets
 type BackupTargetsPolicyTypeConfiguration8 struct {
-	BackupStorageIds     []int64                `json:"backupStorageIds,omitempty"`
+	BackupStorageIds     []string               `json:"backupStorageIds"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -30,8 +30,9 @@ type _BackupTargetsPolicyTypeConfiguration8 BackupTargetsPolicyTypeConfiguration
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBackupTargetsPolicyTypeConfiguration8() *BackupTargetsPolicyTypeConfiguration8 {
+func NewBackupTargetsPolicyTypeConfiguration8(backupStorageIds []string) *BackupTargetsPolicyTypeConfiguration8 {
 	this := BackupTargetsPolicyTypeConfiguration8{}
+	this.BackupStorageIds = backupStorageIds
 	return &this
 }
 
@@ -43,35 +44,27 @@ func NewBackupTargetsPolicyTypeConfiguration8WithDefaults() *BackupTargetsPolicy
 	return &this
 }
 
-// GetBackupStorageIds returns the BackupStorageIds field value if set, zero value otherwise.
-func (o *BackupTargetsPolicyTypeConfiguration8) GetBackupStorageIds() []int64 {
-	if o == nil || IsNil(o.BackupStorageIds) {
-		var ret []int64
+// GetBackupStorageIds returns the BackupStorageIds field value
+func (o *BackupTargetsPolicyTypeConfiguration8) GetBackupStorageIds() []string {
+	if o == nil {
+		var ret []string
 		return ret
 	}
+
 	return o.BackupStorageIds
 }
 
-// GetBackupStorageIdsOk returns a tuple with the BackupStorageIds field value if set, nil otherwise
+// GetBackupStorageIdsOk returns a tuple with the BackupStorageIds field value
 // and a boolean to check if the value has been set.
-func (o *BackupTargetsPolicyTypeConfiguration8) GetBackupStorageIdsOk() ([]int64, bool) {
-	if o == nil || IsNil(o.BackupStorageIds) {
+func (o *BackupTargetsPolicyTypeConfiguration8) GetBackupStorageIdsOk() ([]string, bool) {
+	if o == nil {
 		return nil, false
 	}
 	return o.BackupStorageIds, true
 }
 
-// IsSetBackupStorageIds returns a boolean if a field has been set.
-func (o *BackupTargetsPolicyTypeConfiguration8) IsSetBackupStorageIds() bool {
-	if o != nil && !IsNil(o.BackupStorageIds) {
-		return true
-	}
-
-	return false
-}
-
-// SetBackupStorageIds gets a reference to the given []int64 and assigns it to the BackupStorageIds field.
-func (o *BackupTargetsPolicyTypeConfiguration8) SetBackupStorageIds(v []int64) {
+// SetBackupStorageIds sets field value
+func (o *BackupTargetsPolicyTypeConfiguration8) SetBackupStorageIds(v []string) {
 	o.BackupStorageIds = v
 }
 
@@ -85,9 +78,7 @@ func (o BackupTargetsPolicyTypeConfiguration8) MarshalJSON() ([]byte, error) {
 
 func (o BackupTargetsPolicyTypeConfiguration8) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.BackupStorageIds) {
-		toSerialize["backupStorageIds"] = o.BackupStorageIds
-	}
+	toSerialize["backupStorageIds"] = o.BackupStorageIds
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value

@@ -18,9 +18,9 @@ import (
 // checks if the MaxCoresPolicyTypeConfiguration7 type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MaxCoresPolicyTypeConfiguration7{}
 
-// MaxCoresPolicyTypeConfiguration7 Configuration settings for the following policy types: - Max Cores
+// MaxCoresPolicyTypeConfiguration7 - Max Cores
 type MaxCoresPolicyTypeConfiguration7 struct {
-	MaxCores             *string                `json:"maxCores,omitempty"`
+	MaxCores             string                 `json:"maxCores"`
 	ExcludeContainers    *string                `json:"excludeContainers,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
@@ -31,8 +31,9 @@ type _MaxCoresPolicyTypeConfiguration7 MaxCoresPolicyTypeConfiguration7
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMaxCoresPolicyTypeConfiguration7() *MaxCoresPolicyTypeConfiguration7 {
+func NewMaxCoresPolicyTypeConfiguration7(maxCores string) *MaxCoresPolicyTypeConfiguration7 {
 	this := MaxCoresPolicyTypeConfiguration7{}
+	this.MaxCores = maxCores
 	var excludeContainers string = "off"
 	this.ExcludeContainers = &excludeContainers
 	return &this
@@ -48,36 +49,28 @@ func NewMaxCoresPolicyTypeConfiguration7WithDefaults() *MaxCoresPolicyTypeConfig
 	return &this
 }
 
-// GetMaxCores returns the MaxCores field value if set, zero value otherwise.
+// GetMaxCores returns the MaxCores field value
 func (o *MaxCoresPolicyTypeConfiguration7) GetMaxCores() string {
-	if o == nil || IsNil(o.MaxCores) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.MaxCores
+
+	return o.MaxCores
 }
 
-// GetMaxCoresOk returns a tuple with the MaxCores field value if set, nil otherwise
+// GetMaxCoresOk returns a tuple with the MaxCores field value
 // and a boolean to check if the value has been set.
 func (o *MaxCoresPolicyTypeConfiguration7) GetMaxCoresOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxCores) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MaxCores, true
+	return &o.MaxCores, true
 }
 
-// IsSetMaxCores returns a boolean if a field has been set.
-func (o *MaxCoresPolicyTypeConfiguration7) IsSetMaxCores() bool {
-	if o != nil && !IsNil(o.MaxCores) {
-		return true
-	}
-
-	return false
-}
-
-// SetMaxCores gets a reference to the given string and assigns it to the MaxCores field.
+// SetMaxCores sets field value
 func (o *MaxCoresPolicyTypeConfiguration7) SetMaxCores(v string) {
-	o.MaxCores = &v
+	o.MaxCores = v
 }
 
 // GetExcludeContainers returns the ExcludeContainers field value if set, zero value otherwise.
@@ -122,9 +115,7 @@ func (o MaxCoresPolicyTypeConfiguration7) MarshalJSON() ([]byte, error) {
 
 func (o MaxCoresPolicyTypeConfiguration7) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MaxCores) {
-		toSerialize["maxCores"] = o.MaxCores
-	}
+	toSerialize["maxCores"] = o.MaxCores
 	if !IsNil(o.ExcludeContainers) {
 		toSerialize["excludeContainers"] = o.ExcludeContainers
 	}

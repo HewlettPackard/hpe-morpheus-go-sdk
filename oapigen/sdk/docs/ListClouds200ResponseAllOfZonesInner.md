@@ -11,9 +11,9 @@ Name | Type | Description | Notes
 **Code** | Pointer to **string** |  | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
 **Location** | Pointer to **NullableString** |  | [optional] 
-**Owner** | Pointer to [**ListClouds200ResponseAllOfZonesInnerOwner**](ListClouds200ResponseAllOfZonesInnerOwner.md) |  | [optional] 
+**Owner** | Pointer to [**NullableListClouds200ResponseAllOfZonesInnerOwner**](ListClouds200ResponseAllOfZonesInnerOwner.md) |  | [optional] 
 **AccountId** | Pointer to **int64** |  | [optional] 
-**Account** | Pointer to [**ListClouds200ResponseAllOfZonesInnerAccount**](ListClouds200ResponseAllOfZonesInnerAccount.md) |  | [optional] 
+**Account** | Pointer to [**NullableListClouds200ResponseAllOfZonesInnerAccount**](ListClouds200ResponseAllOfZonesInnerAccount.md) |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
@@ -305,6 +305,16 @@ SetOwner sets Owner field to given value.
 
 HasOwner returns a boolean if a field has been set.
 
+### SetOwnerNil
+
+`func (o *ListClouds200ResponseAllOfZonesInner) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *ListClouds200ResponseAllOfZonesInner) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetAccountId
 
 `func (o *ListClouds200ResponseAllOfZonesInner) GetAccountId() int64`
@@ -355,6 +365,16 @@ SetAccount sets Account field to given value.
 
 HasAccount returns a boolean if a field has been set.
 
+### SetAccountNil
+
+`func (o *ListClouds200ResponseAllOfZonesInner) SetAccountNil(b bool)`
+
+ SetAccountNil sets the value for Account to be an explicit nil
+
+### UnsetAccount
+`func (o *ListClouds200ResponseAllOfZonesInner) UnsetAccount()`
+
+UnsetAccount ensures that no value is present for Account, not even an explicit nil
 ### GetVisibility
 
 `func (o *ListClouds200ResponseAllOfZonesInner) GetVisibility() string`

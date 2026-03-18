@@ -52,7 +52,7 @@ type ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner struct {
 	FormConfig           map[string]interface{}                                                      `json:"formConfig,omitempty"`
 	OptionTypes          []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
 	CreatedBy            NullableString                                                              `json:"createdBy,omitempty"`
-	Owner                *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOwner             `json:"owner,omitempty"`
+	Owner                NullableListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOwner      `json:"owner,omitempty"`
 	DateCreated          *time.Time                                                                  `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                                  `json:"lastUpdated,omitempty"`
 	AdditionalProperties map[string]interface{}                                                      `json:",remain"`
@@ -1002,36 +1002,47 @@ func (o *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner) UnsetCreated
 	o.CreatedBy.Unset()
 }
 
-// GetOwner returns the Owner field value if set, zero value otherwise.
+// GetOwner returns the Owner field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner) GetOwner() ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOwner {
-	if o == nil || IsNil(o.Owner) {
+	if o == nil || IsNil(o.Owner.Get()) {
 		var ret ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOwner
 		return ret
 	}
-	return *o.Owner
+	return *o.Owner.Get()
 }
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner) GetOwnerOk() (*ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOwner, bool) {
-	if o == nil || IsNil(o.Owner) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Owner, true
+	return o.Owner.Get(), o.Owner.IsSet()
 }
 
 // IsSetOwner returns a boolean if a field has been set.
 func (o *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
+	if o != nil && o.Owner.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetOwner gets a reference to the given ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOwner and assigns it to the Owner field.
+// SetOwner gets a reference to the given NullableListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOwner and assigns it to the Owner field.
 func (o *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner) SetOwner(v ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOwner) {
-	o.Owner = &v
+	o.Owner.Set(&v)
+}
+
+// SetOwnerNil sets the value for Owner to be an explicit nil
+func (o *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner) SetOwnerNil() {
+	o.Owner.Set(nil)
+}
+
+// UnsetOwner ensures that no value is present for Owner, not even an explicit nil
+func (o *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner) UnsetOwner() {
+	o.Owner.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -1186,8 +1197,8 @@ func (o ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner) ToMap() (map[
 	if o.CreatedBy.IsSet() {
 		toSerialize["createdBy"] = o.CreatedBy.Get()
 	}
-	if !IsNil(o.Owner) {
-		toSerialize["owner"] = o.Owner
+	if o.Owner.IsSet() {
+		toSerialize["owner"] = o.Owner.Get()
 	}
 	if !IsNil(o.DateCreated) {
 		toSerialize["dateCreated"] = o.DateCreated

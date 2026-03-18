@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **ServicePlanOptions** | Pointer to **map[string]interface{}** | Map of custom options depending on selected service plan. | [optional] 
 **SecurityGroups** | Pointer to **[]map[string]interface{}** | Key for security group configuration. It should be passed as an array of objects containing the id of the security group to assign the instance to. | [optional] 
 **Volumes** | Pointer to [**[]InstanceCreateVolumesInner**](InstanceCreateVolumesInner.md) | The (optional) volumes parameter is for LV configuration, can create additional LVs at provision It should be passed as an array of | [optional] 
-**NetworkInterfaces** | Pointer to [**[]InstancesNetworkInterfaces5**](InstancesNetworkInterfaces5.md) | The networkInterfaces parameter is for network configuration.  The Options API &#x60;/api/options/zoneNetworkOptions?zoneId&#x3D;5&amp;provisionTypeId&#x3D;10&#x60; can be used to see which options are available.  | [optional] 
+**NetworkInterfaces** | Pointer to [**[]InstancesNetworkInterfaces6**](InstancesNetworkInterfaces6.md) | The networkInterfaces parameter is for network configuration.  The Options API &#x60;/api/options/zoneNetworkOptions?zoneId&#x3D;5&amp;provisionTypeId&#x3D;10&#x60; can be used to see which options are available.  | [optional] 
 **Config** | [**InstanceCreateConfig**](InstanceCreateConfig.md) |  | 
 **Labels** | Pointer to **[]string** | Array of strings (keywords). | [optional] 
 **Tags** | Pointer to [**[]InstanceCreateTagsInner**](InstanceCreateTagsInner.md) | Metadata tags, Array of objects having a name and value. | [optional] 
@@ -248,20 +248,20 @@ HasVolumes returns a boolean if a field has been set.
 
 ### GetNetworkInterfaces
 
-`func (o *InstanceCreate) GetNetworkInterfaces() []InstancesNetworkInterfaces5`
+`func (o *InstanceCreate) GetNetworkInterfaces() []InstancesNetworkInterfaces6`
 
 GetNetworkInterfaces returns the NetworkInterfaces field if non-nil, zero value otherwise.
 
 ### GetNetworkInterfacesOk
 
-`func (o *InstanceCreate) GetNetworkInterfacesOk() (*[]InstancesNetworkInterfaces5, bool)`
+`func (o *InstanceCreate) GetNetworkInterfacesOk() (*[]InstancesNetworkInterfaces6, bool)`
 
 GetNetworkInterfacesOk returns a tuple with the NetworkInterfaces field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkInterfaces
 
-`func (o *InstanceCreate) SetNetworkInterfaces(v []InstancesNetworkInterfaces5)`
+`func (o *InstanceCreate) SetNetworkInterfaces(v []InstancesNetworkInterfaces6)`
 
 SetNetworkInterfaces sets NetworkInterfaces field to given value.
 

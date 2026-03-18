@@ -18,9 +18,9 @@ import (
 // checks if the RouterQuotaPolicyTypeConfiguration7 type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &RouterQuotaPolicyTypeConfiguration7{}
 
-// RouterQuotaPolicyTypeConfiguration7 Configuration settings for the following policy types: - Router Quota
+// RouterQuotaPolicyTypeConfiguration7 - Router Quota
 type RouterQuotaPolicyTypeConfiguration7 struct {
-	MaxRouters           *string                `json:"maxRouters,omitempty"`
+	MaxRouters           string                 `json:"maxRouters"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -30,8 +30,9 @@ type _RouterQuotaPolicyTypeConfiguration7 RouterQuotaPolicyTypeConfiguration7
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRouterQuotaPolicyTypeConfiguration7() *RouterQuotaPolicyTypeConfiguration7 {
+func NewRouterQuotaPolicyTypeConfiguration7(maxRouters string) *RouterQuotaPolicyTypeConfiguration7 {
 	this := RouterQuotaPolicyTypeConfiguration7{}
+	this.MaxRouters = maxRouters
 	return &this
 }
 
@@ -43,36 +44,28 @@ func NewRouterQuotaPolicyTypeConfiguration7WithDefaults() *RouterQuotaPolicyType
 	return &this
 }
 
-// GetMaxRouters returns the MaxRouters field value if set, zero value otherwise.
+// GetMaxRouters returns the MaxRouters field value
 func (o *RouterQuotaPolicyTypeConfiguration7) GetMaxRouters() string {
-	if o == nil || IsNil(o.MaxRouters) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.MaxRouters
+
+	return o.MaxRouters
 }
 
-// GetMaxRoutersOk returns a tuple with the MaxRouters field value if set, nil otherwise
+// GetMaxRoutersOk returns a tuple with the MaxRouters field value
 // and a boolean to check if the value has been set.
 func (o *RouterQuotaPolicyTypeConfiguration7) GetMaxRoutersOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxRouters) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MaxRouters, true
+	return &o.MaxRouters, true
 }
 
-// IsSetMaxRouters returns a boolean if a field has been set.
-func (o *RouterQuotaPolicyTypeConfiguration7) IsSetMaxRouters() bool {
-	if o != nil && !IsNil(o.MaxRouters) {
-		return true
-	}
-
-	return false
-}
-
-// SetMaxRouters gets a reference to the given string and assigns it to the MaxRouters field.
+// SetMaxRouters sets field value
 func (o *RouterQuotaPolicyTypeConfiguration7) SetMaxRouters(v string) {
-	o.MaxRouters = &v
+	o.MaxRouters = v
 }
 
 func (o RouterQuotaPolicyTypeConfiguration7) MarshalJSON() ([]byte, error) {
@@ -85,9 +78,7 @@ func (o RouterQuotaPolicyTypeConfiguration7) MarshalJSON() ([]byte, error) {
 
 func (o RouterQuotaPolicyTypeConfiguration7) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MaxRouters) {
-		toSerialize["maxRouters"] = o.MaxRouters
-	}
+	toSerialize["maxRouters"] = o.MaxRouters
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value

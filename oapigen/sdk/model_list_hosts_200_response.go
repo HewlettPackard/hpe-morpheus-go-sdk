@@ -23,7 +23,7 @@ type ListHosts200Response struct {
 	Servers              []ListHosts200ResponseAllOfServersInner `json:"servers,omitempty"`
 	Stats                map[string]interface{}                  `json:"stats,omitempty"`
 	Multitenant          *bool                                   `json:"multitenant,omitempty"`
-	Meta                 *ListClouds200ResponseAllOfMeta         `json:"meta,omitempty"`
+	Meta                 *ListAlerts200ResponseAllOfMeta         `json:"meta,omitempty"`
 	AdditionalProperties map[string]interface{}                  `json:",remain"`
 }
 
@@ -143,9 +143,9 @@ func (o *ListHosts200Response) SetMultitenant(v bool) {
 }
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListHosts200Response) GetMeta() ListClouds200ResponseAllOfMeta {
+func (o *ListHosts200Response) GetMeta() ListAlerts200ResponseAllOfMeta {
 	if o == nil || IsNil(o.Meta) {
-		var ret ListClouds200ResponseAllOfMeta
+		var ret ListAlerts200ResponseAllOfMeta
 		return ret
 	}
 	return *o.Meta
@@ -153,7 +153,7 @@ func (o *ListHosts200Response) GetMeta() ListClouds200ResponseAllOfMeta {
 
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListHosts200Response) GetMetaOk() (*ListClouds200ResponseAllOfMeta, bool) {
+func (o *ListHosts200Response) GetMetaOk() (*ListAlerts200ResponseAllOfMeta, bool) {
 	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
@@ -169,8 +169,8 @@ func (o *ListHosts200Response) IsSetMeta() bool {
 	return false
 }
 
-// SetMeta gets a reference to the given ListClouds200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListHosts200Response) SetMeta(v ListClouds200ResponseAllOfMeta) {
+// SetMeta gets a reference to the given ListAlerts200ResponseAllOfMeta and assigns it to the Meta field.
+func (o *ListHosts200Response) SetMeta(v ListAlerts200ResponseAllOfMeta) {
 	o.Meta = &v
 }
 

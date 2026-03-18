@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaxMemory** | Pointer to [**MaxMemoryPolicyTypeConfiguration8MaxMemory**](MaxMemoryPolicyTypeConfiguration8MaxMemory.md) |  | [optional] 
-**ExcludeContainers** | Pointer to **string** | Set to on to exclude containers | [optional] [default to "off"]
+**MaxMemory** | **string** |  | 
+**ExcludeContainers** | Pointer to **string** |  | [optional] [default to "off"]
 
 ## Methods
 
 ### NewMaxMemoryPolicyTypeConfiguration8
 
-`func NewMaxMemoryPolicyTypeConfiguration8() *MaxMemoryPolicyTypeConfiguration8`
+`func NewMaxMemoryPolicyTypeConfiguration8(maxMemory string, ) *MaxMemoryPolicyTypeConfiguration8`
 
 NewMaxMemoryPolicyTypeConfiguration8 instantiates a new MaxMemoryPolicyTypeConfiguration8 object
 This constructor will assign default values to properties that have it defined,
@@ -28,28 +28,23 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMaxMemory
 
-`func (o *MaxMemoryPolicyTypeConfiguration8) GetMaxMemory() MaxMemoryPolicyTypeConfiguration8MaxMemory`
+`func (o *MaxMemoryPolicyTypeConfiguration8) GetMaxMemory() string`
 
 GetMaxMemory returns the MaxMemory field if non-nil, zero value otherwise.
 
 ### GetMaxMemoryOk
 
-`func (o *MaxMemoryPolicyTypeConfiguration8) GetMaxMemoryOk() (*MaxMemoryPolicyTypeConfiguration8MaxMemory, bool)`
+`func (o *MaxMemoryPolicyTypeConfiguration8) GetMaxMemoryOk() (*string, bool)`
 
 GetMaxMemoryOk returns a tuple with the MaxMemory field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxMemory
 
-`func (o *MaxMemoryPolicyTypeConfiguration8) SetMaxMemory(v MaxMemoryPolicyTypeConfiguration8MaxMemory)`
+`func (o *MaxMemoryPolicyTypeConfiguration8) SetMaxMemory(v string)`
 
 SetMaxMemory sets MaxMemory field to given value.
 
-### HasMaxMemory
-
-`func (o *MaxMemoryPolicyTypeConfiguration8) HasMaxMemory() bool`
-
-HasMaxMemory returns a boolean if a field has been set.
 
 ### GetExcludeContainers
 

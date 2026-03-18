@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**KeyPattern** | Pointer to **string** |  | [optional] 
+**KeyPattern** | **string** |  | 
 **Read** | Pointer to **bool** |  | [optional] 
 **Write** | Pointer to **bool** |  | [optional] 
 **Update** | Pointer to **bool** |  | [optional] 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewCypherAccessPolicyTypeConfiguration8
 
-`func NewCypherAccessPolicyTypeConfiguration8() *CypherAccessPolicyTypeConfiguration8`
+`func NewCypherAccessPolicyTypeConfiguration8(keyPattern string, ) *CypherAccessPolicyTypeConfiguration8`
 
 NewCypherAccessPolicyTypeConfiguration8 instantiates a new CypherAccessPolicyTypeConfiguration8 object
 This constructor will assign default values to properties that have it defined,
@@ -49,11 +49,6 @@ and a boolean to check if the value has been set.
 
 SetKeyPattern sets KeyPattern field to given value.
 
-### HasKeyPattern
-
-`func (o *CypherAccessPolicyTypeConfiguration8) HasKeyPattern() bool`
-
-HasKeyPattern returns a boolean if a field has been set.
 
 ### GetRead
 

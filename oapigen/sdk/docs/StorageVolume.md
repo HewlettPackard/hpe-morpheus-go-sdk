@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **NullableString** |  | [optional] 
-**Controller** | Pointer to [**StorageVolumeController**](StorageVolumeController.md) |  | [optional] 
+**Controller** | Pointer to [**AddStorageVolumes200ResponseAllOfStorageVolumeController**](AddStorageVolumes200ResponseAllOfStorageVolumeController.md) |  | [optional] 
 **ControllerId** | Pointer to **NullableInt64** |  | [optional] 
 **ControllerMountPoint** | Pointer to **NullableString** |  | [optional] 
 **Resizeable** | Pointer to **NullableBool** |  | [optional] 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **RefId** | Pointer to **int64** |  | [optional] 
 **DiskMode** | Pointer to **string** |  | [optional] 
 **DiskType** | Pointer to **string** |  | [optional] 
-**Type** | Pointer to [**StorageVolumeType**](StorageVolumeType.md) |  | [optional] 
+**Type** | Pointer to [**AddStorageVolumes200ResponseAllOfStorageVolumeType**](AddStorageVolumes200ResponseAllOfStorageVolumeType.md) |  | [optional] 
 **TypeId** | Pointer to **int64** |  | [optional] 
 **Category** | Pointer to **string** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
@@ -37,9 +37,9 @@ Name | Type | Description | Notes
 **ReadOnly** | Pointer to **bool** |  | [optional] 
 **Removable** | Pointer to **bool** |  | [optional] 
 **PoolName** | Pointer to **string** |  | [optional] 
-**Zone** | Pointer to [**StorageVolumeZone**](StorageVolumeZone.md) |  | [optional] 
+**Zone** | Pointer to [**AddStorageVolumes200ResponseAllOfStorageVolumeZone**](AddStorageVolumes200ResponseAllOfStorageVolumeZone.md) |  | [optional] 
 **ZoneId** | Pointer to **int64** |  | [optional] 
-**Datastore** | Pointer to [**StorageVolumeDatastore**](StorageVolumeDatastore.md) |  | [optional] 
+**Datastore** | Pointer to [**AddStorageVolumes200ResponseAllOfStorageVolumeDatastore**](AddStorageVolumes200ResponseAllOfStorageVolumeDatastore.md) |  | [optional] 
 **DatastoreId** | Pointer to **NullableInt64** |  | [optional] 
 **DatastoreOption** | Pointer to **string** |  | [optional] 
 **StorageGroup** | Pointer to **NullableString** |  | [optional] 
@@ -63,8 +63,8 @@ Name | Type | Description | Notes
 **CreateForMultiAttach** | Pointer to **bool** |  | [optional] 
 **IsMultiAttach** | Pointer to **bool** |  | [optional] 
 **StorageProfile** | Pointer to **NullableString** | Storage Profile Code for the volume storage profile assignment. eg. &#x60;\&quot;kvm-cache-none\&quot;&#x60; or &#x60;\&quot;kvm-cache-directsync\&quot;&#x60;. Use &#x60;/api/provision-types?code&#x3D;kvm&#x60; to see the available &#x60;storageProfiles&#x60; for HVM and KVM. | [optional] 
-**Account** | Pointer to [**StorageVolumeAccount**](StorageVolumeAccount.md) |  | [optional] 
-**Owner** | Pointer to [**StorageVolumeOwner**](StorageVolumeOwner.md) |  | [optional] 
+**Account** | Pointer to [**AddStorageVolumes200ResponseAllOfStorageVolumeAccount**](AddStorageVolumes200ResponseAllOfStorageVolumeAccount.md) |  | [optional] 
+**Owner** | Pointer to [**AddStorageVolumes200ResponseAllOfStorageVolumeOwner**](AddStorageVolumes200ResponseAllOfStorageVolumeOwner.md) |  | [optional] 
 
 ## Methods
 
@@ -172,20 +172,20 @@ HasDescription returns a boolean if a field has been set.
 UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetController
 
-`func (o *StorageVolume) GetController() StorageVolumeController`
+`func (o *StorageVolume) GetController() AddStorageVolumes200ResponseAllOfStorageVolumeController`
 
 GetController returns the Controller field if non-nil, zero value otherwise.
 
 ### GetControllerOk
 
-`func (o *StorageVolume) GetControllerOk() (*StorageVolumeController, bool)`
+`func (o *StorageVolume) GetControllerOk() (*AddStorageVolumes200ResponseAllOfStorageVolumeController, bool)`
 
 GetControllerOk returns a tuple with the Controller field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetController
 
-`func (o *StorageVolume) SetController(v StorageVolumeController)`
+`func (o *StorageVolume) SetController(v AddStorageVolumes200ResponseAllOfStorageVolumeController)`
 
 SetController sets Controller field to given value.
 
@@ -587,20 +587,20 @@ HasDiskType returns a boolean if a field has been set.
 
 ### GetType
 
-`func (o *StorageVolume) GetType() StorageVolumeType`
+`func (o *StorageVolume) GetType() AddStorageVolumes200ResponseAllOfStorageVolumeType`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *StorageVolume) GetTypeOk() (*StorageVolumeType, bool)`
+`func (o *StorageVolume) GetTypeOk() (*AddStorageVolumes200ResponseAllOfStorageVolumeType, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *StorageVolume) SetType(v StorageVolumeType)`
+`func (o *StorageVolume) SetType(v AddStorageVolumes200ResponseAllOfStorageVolumeType)`
 
 SetType sets Type field to given value.
 
@@ -982,20 +982,20 @@ HasPoolName returns a boolean if a field has been set.
 
 ### GetZone
 
-`func (o *StorageVolume) GetZone() StorageVolumeZone`
+`func (o *StorageVolume) GetZone() AddStorageVolumes200ResponseAllOfStorageVolumeZone`
 
 GetZone returns the Zone field if non-nil, zero value otherwise.
 
 ### GetZoneOk
 
-`func (o *StorageVolume) GetZoneOk() (*StorageVolumeZone, bool)`
+`func (o *StorageVolume) GetZoneOk() (*AddStorageVolumes200ResponseAllOfStorageVolumeZone, bool)`
 
 GetZoneOk returns a tuple with the Zone field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZone
 
-`func (o *StorageVolume) SetZone(v StorageVolumeZone)`
+`func (o *StorageVolume) SetZone(v AddStorageVolumes200ResponseAllOfStorageVolumeZone)`
 
 SetZone sets Zone field to given value.
 
@@ -1032,20 +1032,20 @@ HasZoneId returns a boolean if a field has been set.
 
 ### GetDatastore
 
-`func (o *StorageVolume) GetDatastore() StorageVolumeDatastore`
+`func (o *StorageVolume) GetDatastore() AddStorageVolumes200ResponseAllOfStorageVolumeDatastore`
 
 GetDatastore returns the Datastore field if non-nil, zero value otherwise.
 
 ### GetDatastoreOk
 
-`func (o *StorageVolume) GetDatastoreOk() (*StorageVolumeDatastore, bool)`
+`func (o *StorageVolume) GetDatastoreOk() (*AddStorageVolumes200ResponseAllOfStorageVolumeDatastore, bool)`
 
 GetDatastoreOk returns a tuple with the Datastore field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDatastore
 
-`func (o *StorageVolume) SetDatastore(v StorageVolumeDatastore)`
+`func (o *StorageVolume) SetDatastore(v AddStorageVolumes200ResponseAllOfStorageVolumeDatastore)`
 
 SetDatastore sets Datastore field to given value.
 
@@ -1752,20 +1752,20 @@ HasStorageProfile returns a boolean if a field has been set.
 UnsetStorageProfile ensures that no value is present for StorageProfile, not even an explicit nil
 ### GetAccount
 
-`func (o *StorageVolume) GetAccount() StorageVolumeAccount`
+`func (o *StorageVolume) GetAccount() AddStorageVolumes200ResponseAllOfStorageVolumeAccount`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *StorageVolume) GetAccountOk() (*StorageVolumeAccount, bool)`
+`func (o *StorageVolume) GetAccountOk() (*AddStorageVolumes200ResponseAllOfStorageVolumeAccount, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *StorageVolume) SetAccount(v StorageVolumeAccount)`
+`func (o *StorageVolume) SetAccount(v AddStorageVolumes200ResponseAllOfStorageVolumeAccount)`
 
 SetAccount sets Account field to given value.
 
@@ -1777,20 +1777,20 @@ HasAccount returns a boolean if a field has been set.
 
 ### GetOwner
 
-`func (o *StorageVolume) GetOwner() StorageVolumeOwner`
+`func (o *StorageVolume) GetOwner() AddStorageVolumes200ResponseAllOfStorageVolumeOwner`
 
 GetOwner returns the Owner field if non-nil, zero value otherwise.
 
 ### GetOwnerOk
 
-`func (o *StorageVolume) GetOwnerOk() (*StorageVolumeOwner, bool)`
+`func (o *StorageVolume) GetOwnerOk() (*AddStorageVolumes200ResponseAllOfStorageVolumeOwner, bool)`
 
 GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOwner
 
-`func (o *StorageVolume) SetOwner(v StorageVolumeOwner)`
+`func (o *StorageVolume) SetOwner(v AddStorageVolumes200ResponseAllOfStorageVolumeOwner)`
 
 SetOwner sets Owner field to given value.
 

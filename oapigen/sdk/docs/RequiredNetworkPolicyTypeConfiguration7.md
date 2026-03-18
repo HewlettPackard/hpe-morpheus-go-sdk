@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**RequiredNetworks** | Pointer to **[]int64** | Array of network IDs that are required | [optional] 
+**RequiredNetworks** | **[]int64** |  | 
 
 ## Methods
 
 ### NewRequiredNetworkPolicyTypeConfiguration7
 
-`func NewRequiredNetworkPolicyTypeConfiguration7() *RequiredNetworkPolicyTypeConfiguration7`
+`func NewRequiredNetworkPolicyTypeConfiguration7(requiredNetworks []int64, ) *RequiredNetworkPolicyTypeConfiguration7`
 
 NewRequiredNetworkPolicyTypeConfiguration7 instantiates a new RequiredNetworkPolicyTypeConfiguration7 object
 This constructor will assign default values to properties that have it defined,
@@ -44,11 +44,6 @@ and a boolean to check if the value has been set.
 
 SetRequiredNetworks sets RequiredNetworks field to given value.
 
-### HasRequiredNetworks
-
-`func (o *RequiredNetworkPolicyTypeConfiguration7) HasRequiredNetworks() bool`
-
-HasRequiredNetworks returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

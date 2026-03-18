@@ -24,9 +24,9 @@ type ListInstances200ResponseAllOfInstancesInner struct {
 	Id                               *int64                                                           `json:"id,omitempty"`
 	Uuid                             *string                                                          `json:"uuid,omitempty"`
 	AccountId                        *int64                                                           `json:"accountId,omitempty"`
-	Tenant                           *ListInstances200ResponseAllOfInstancesInnerTenant               `json:"tenant,omitempty"`
+	Tenant                           NullableListInstances200ResponseAllOfInstancesInnerTenant        `json:"tenant,omitempty"`
 	InstanceType                     *ListInstances200ResponseAllOfInstancesInnerInstanceType         `json:"instanceType,omitempty"`
-	Group                            *ListInstances200ResponseAllOfInstancesInnerGroup                `json:"group,omitempty"`
+	Group                            NullableListInstances200ResponseAllOfInstancesInnerGroup         `json:"group,omitempty"`
 	Cloud                            *ListInstances200ResponseAllOfInstancesInnerCloud                `json:"cloud,omitempty"`
 	Cluster                          *ListInstances200ResponseAllOfInstancesInnerCluster              `json:"cluster,omitempty"`
 	Containers                       []int64                                                          `json:"containers,omitempty"`
@@ -221,36 +221,47 @@ func (o *ListInstances200ResponseAllOfInstancesInner) SetAccountId(v int64) {
 	o.AccountId = &v
 }
 
-// GetTenant returns the Tenant field value if set, zero value otherwise.
+// GetTenant returns the Tenant field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListInstances200ResponseAllOfInstancesInner) GetTenant() ListInstances200ResponseAllOfInstancesInnerTenant {
-	if o == nil || IsNil(o.Tenant) {
+	if o == nil || IsNil(o.Tenant.Get()) {
 		var ret ListInstances200ResponseAllOfInstancesInnerTenant
 		return ret
 	}
-	return *o.Tenant
+	return *o.Tenant.Get()
 }
 
 // GetTenantOk returns a tuple with the Tenant field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListInstances200ResponseAllOfInstancesInner) GetTenantOk() (*ListInstances200ResponseAllOfInstancesInnerTenant, bool) {
-	if o == nil || IsNil(o.Tenant) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Tenant, true
+	return o.Tenant.Get(), o.Tenant.IsSet()
 }
 
 // IsSetTenant returns a boolean if a field has been set.
 func (o *ListInstances200ResponseAllOfInstancesInner) IsSetTenant() bool {
-	if o != nil && !IsNil(o.Tenant) {
+	if o != nil && o.Tenant.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTenant gets a reference to the given ListInstances200ResponseAllOfInstancesInnerTenant and assigns it to the Tenant field.
+// SetTenant gets a reference to the given NullableListInstances200ResponseAllOfInstancesInnerTenant and assigns it to the Tenant field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetTenant(v ListInstances200ResponseAllOfInstancesInnerTenant) {
-	o.Tenant = &v
+	o.Tenant.Set(&v)
+}
+
+// SetTenantNil sets the value for Tenant to be an explicit nil
+func (o *ListInstances200ResponseAllOfInstancesInner) SetTenantNil() {
+	o.Tenant.Set(nil)
+}
+
+// UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
+func (o *ListInstances200ResponseAllOfInstancesInner) UnsetTenant() {
+	o.Tenant.Unset()
 }
 
 // GetInstanceType returns the InstanceType field value if set, zero value otherwise.
@@ -285,36 +296,47 @@ func (o *ListInstances200ResponseAllOfInstancesInner) SetInstanceType(v ListInst
 	o.InstanceType = &v
 }
 
-// GetGroup returns the Group field value if set, zero value otherwise.
+// GetGroup returns the Group field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListInstances200ResponseAllOfInstancesInner) GetGroup() ListInstances200ResponseAllOfInstancesInnerGroup {
-	if o == nil || IsNil(o.Group) {
+	if o == nil || IsNil(o.Group.Get()) {
 		var ret ListInstances200ResponseAllOfInstancesInnerGroup
 		return ret
 	}
-	return *o.Group
+	return *o.Group.Get()
 }
 
 // GetGroupOk returns a tuple with the Group field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListInstances200ResponseAllOfInstancesInner) GetGroupOk() (*ListInstances200ResponseAllOfInstancesInnerGroup, bool) {
-	if o == nil || IsNil(o.Group) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Group, true
+	return o.Group.Get(), o.Group.IsSet()
 }
 
 // IsSetGroup returns a boolean if a field has been set.
 func (o *ListInstances200ResponseAllOfInstancesInner) IsSetGroup() bool {
-	if o != nil && !IsNil(o.Group) {
+	if o != nil && o.Group.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetGroup gets a reference to the given ListInstances200ResponseAllOfInstancesInnerGroup and assigns it to the Group field.
+// SetGroup gets a reference to the given NullableListInstances200ResponseAllOfInstancesInnerGroup and assigns it to the Group field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetGroup(v ListInstances200ResponseAllOfInstancesInnerGroup) {
-	o.Group = &v
+	o.Group.Set(&v)
+}
+
+// SetGroupNil sets the value for Group to be an explicit nil
+func (o *ListInstances200ResponseAllOfInstancesInner) SetGroupNil() {
+	o.Group.Set(nil)
+}
+
+// UnsetGroup ensures that no value is present for Group, not even an explicit nil
+func (o *ListInstances200ResponseAllOfInstancesInner) UnsetGroup() {
+	o.Group.Unset()
 }
 
 // GetCloud returns the Cloud field value if set, zero value otherwise.
@@ -2981,14 +3003,14 @@ func (o ListInstances200ResponseAllOfInstancesInner) ToMap() (map[string]interfa
 	if !IsNil(o.AccountId) {
 		toSerialize["accountId"] = o.AccountId
 	}
-	if !IsNil(o.Tenant) {
-		toSerialize["tenant"] = o.Tenant
+	if o.Tenant.IsSet() {
+		toSerialize["tenant"] = o.Tenant.Get()
 	}
 	if !IsNil(o.InstanceType) {
 		toSerialize["instanceType"] = o.InstanceType
 	}
-	if !IsNil(o.Group) {
-		toSerialize["group"] = o.Group
+	if o.Group.IsSet() {
+		toSerialize["group"] = o.Group.Get()
 	}
 	if !IsNil(o.Cloud) {
 		toSerialize["cloud"] = o.Cloud

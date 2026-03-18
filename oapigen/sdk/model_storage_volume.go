@@ -20,69 +20,69 @@ var _ MappedNullable = &StorageVolume{}
 
 // StorageVolume struct for StorageVolume
 type StorageVolume struct {
-	Id                   *int64                   `json:"id,omitempty"`
-	Name                 *string                  `json:"name,omitempty"`
-	Description          NullableString           `json:"description,omitempty"`
-	Controller           *StorageVolumeController `json:"controller,omitempty"`
-	ControllerId         NullableInt64            `json:"controllerId,omitempty"`
-	ControllerMountPoint NullableString           `json:"controllerMountPoint,omitempty"`
-	Resizeable           NullableBool             `json:"resizeable,omitempty"`
-	RootVolume           *bool                    `json:"rootVolume,omitempty"`
-	UnitNumber           NullableString           `json:"unitNumber,omitempty"`
-	DeviceName           *string                  `json:"deviceName,omitempty"`
-	DeviceDisplayName    *string                  `json:"deviceDisplayName,omitempty"`
-	VolumeName           *string                  `json:"volumeName,omitempty"`
-	VolumePath           *string                  `json:"volumePath,omitempty"`
-	VolumeType           *string                  `json:"volumeType,omitempty"`
-	RefType              *string                  `json:"refType,omitempty"`
-	RefId                *int64                   `json:"refId,omitempty"`
-	DiskMode             *string                  `json:"diskMode,omitempty"`
-	DiskType             *string                  `json:"diskType,omitempty"`
-	Type                 *StorageVolumeType       `json:"type,omitempty"`
-	TypeId               *int64                   `json:"typeId,omitempty"`
-	Category             *string                  `json:"category,omitempty"`
-	Status               *string                  `json:"status,omitempty"`
-	StatusMessage        NullableString           `json:"statusMessage,omitempty"`
-	ConfigurableIOPS     *bool                    `json:"configurableIOPS,omitempty"`
-	MaxStorage           *int64                   `json:"maxStorage,omitempty"`
-	UsedStorage          *int64                   `json:"usedStorage,omitempty"`
-	DisplayOrder         *int64                   `json:"displayOrder,omitempty"`
-	MaxIOPS              NullableString           `json:"maxIOPS,omitempty"`
-	Uuid                 *string                  `json:"uuid,omitempty"`
-	Active               *bool                    `json:"active,omitempty"`
-	ReadOnly             *bool                    `json:"readOnly,omitempty"`
-	Removable            *bool                    `json:"removable,omitempty"`
-	PoolName             *string                  `json:"poolName,omitempty"`
-	Zone                 *StorageVolumeZone       `json:"zone,omitempty"`
-	ZoneId               *int64                   `json:"zoneId,omitempty"`
-	Datastore            *StorageVolumeDatastore  `json:"datastore,omitempty"`
-	DatastoreId          NullableInt64            `json:"datastoreId,omitempty"`
-	DatastoreOption      *string                  `json:"datastoreOption,omitempty"`
-	StorageGroup         NullableString           `json:"storageGroup,omitempty"`
-	Namespace            NullableString           `json:"namespace,omitempty"`
-	StorageServer        map[string]interface{}   `json:"storageServer,omitempty"`
-	Source               *string                  `json:"source,omitempty"`
-	UniqueId             NullableString           `json:"uniqueId,omitempty"`
-	InternalId           NullableString           `json:"internalId,omitempty"`
-	ExternalId           *string                  `json:"externalId,omitempty"`
-	ProvisionType        NullableString           `json:"provisionType,omitempty"`
-	CopyType             NullableString           `json:"copyType,omitempty"`
-	FiberWwn             NullableString           `json:"fiberWwn,omitempty"`
-	FileName             NullableString           `json:"fileName,omitempty"`
-	ClaimName            NullableString           `json:"claimName,omitempty"`
-	SharePath            NullableString           `json:"sharePath,omitempty"`
-	SourceId             *string                  `json:"sourceId,omitempty"`
-	SourceImage          *string                  `json:"sourceImage,omitempty"`
-	ImageType            *string                  `json:"imageType,omitempty"`
-	Online               *bool                    `json:"online,omitempty"`
-	RawData              *string                  `json:"rawData,omitempty"`
-	CreateForMultiAttach *bool                    `json:"createForMultiAttach,omitempty"`
-	IsMultiAttach        *bool                    `json:"isMultiAttach,omitempty"`
+	Id                   *int64                                                    `json:"id,omitempty"`
+	Name                 *string                                                   `json:"name,omitempty"`
+	Description          NullableString                                            `json:"description,omitempty"`
+	Controller           *AddStorageVolumes200ResponseAllOfStorageVolumeController `json:"controller,omitempty"`
+	ControllerId         NullableInt64                                             `json:"controllerId,omitempty"`
+	ControllerMountPoint NullableString                                            `json:"controllerMountPoint,omitempty"`
+	Resizeable           NullableBool                                              `json:"resizeable,omitempty"`
+	RootVolume           *bool                                                     `json:"rootVolume,omitempty"`
+	UnitNumber           NullableString                                            `json:"unitNumber,omitempty"`
+	DeviceName           *string                                                   `json:"deviceName,omitempty"`
+	DeviceDisplayName    *string                                                   `json:"deviceDisplayName,omitempty"`
+	VolumeName           *string                                                   `json:"volumeName,omitempty"`
+	VolumePath           *string                                                   `json:"volumePath,omitempty"`
+	VolumeType           *string                                                   `json:"volumeType,omitempty"`
+	RefType              *string                                                   `json:"refType,omitempty"`
+	RefId                *int64                                                    `json:"refId,omitempty"`
+	DiskMode             *string                                                   `json:"diskMode,omitempty"`
+	DiskType             *string                                                   `json:"diskType,omitempty"`
+	Type                 *AddStorageVolumes200ResponseAllOfStorageVolumeType       `json:"type,omitempty"`
+	TypeId               *int64                                                    `json:"typeId,omitempty"`
+	Category             *string                                                   `json:"category,omitempty"`
+	Status               *string                                                   `json:"status,omitempty"`
+	StatusMessage        NullableString                                            `json:"statusMessage,omitempty"`
+	ConfigurableIOPS     *bool                                                     `json:"configurableIOPS,omitempty"`
+	MaxStorage           *int64                                                    `json:"maxStorage,omitempty"`
+	UsedStorage          *int64                                                    `json:"usedStorage,omitempty"`
+	DisplayOrder         *int64                                                    `json:"displayOrder,omitempty"`
+	MaxIOPS              NullableString                                            `json:"maxIOPS,omitempty"`
+	Uuid                 *string                                                   `json:"uuid,omitempty"`
+	Active               *bool                                                     `json:"active,omitempty"`
+	ReadOnly             *bool                                                     `json:"readOnly,omitempty"`
+	Removable            *bool                                                     `json:"removable,omitempty"`
+	PoolName             *string                                                   `json:"poolName,omitempty"`
+	Zone                 *AddStorageVolumes200ResponseAllOfStorageVolumeZone       `json:"zone,omitempty"`
+	ZoneId               *int64                                                    `json:"zoneId,omitempty"`
+	Datastore            *AddStorageVolumes200ResponseAllOfStorageVolumeDatastore  `json:"datastore,omitempty"`
+	DatastoreId          NullableInt64                                             `json:"datastoreId,omitempty"`
+	DatastoreOption      *string                                                   `json:"datastoreOption,omitempty"`
+	StorageGroup         NullableString                                            `json:"storageGroup,omitempty"`
+	Namespace            NullableString                                            `json:"namespace,omitempty"`
+	StorageServer        map[string]interface{}                                    `json:"storageServer,omitempty"`
+	Source               *string                                                   `json:"source,omitempty"`
+	UniqueId             NullableString                                            `json:"uniqueId,omitempty"`
+	InternalId           NullableString                                            `json:"internalId,omitempty"`
+	ExternalId           *string                                                   `json:"externalId,omitempty"`
+	ProvisionType        NullableString                                            `json:"provisionType,omitempty"`
+	CopyType             NullableString                                            `json:"copyType,omitempty"`
+	FiberWwn             NullableString                                            `json:"fiberWwn,omitempty"`
+	FileName             NullableString                                            `json:"fileName,omitempty"`
+	ClaimName            NullableString                                            `json:"claimName,omitempty"`
+	SharePath            NullableString                                            `json:"sharePath,omitempty"`
+	SourceId             *string                                                   `json:"sourceId,omitempty"`
+	SourceImage          *string                                                   `json:"sourceImage,omitempty"`
+	ImageType            *string                                                   `json:"imageType,omitempty"`
+	Online               *bool                                                     `json:"online,omitempty"`
+	RawData              *string                                                   `json:"rawData,omitempty"`
+	CreateForMultiAttach *bool                                                     `json:"createForMultiAttach,omitempty"`
+	IsMultiAttach        *bool                                                     `json:"isMultiAttach,omitempty"`
 	// Storage Profile Code for the volume storage profile assignment. eg. `\"kvm-cache-none\"` or `\"kvm-cache-directsync\"`. Use `/api/provision-types?code=kvm` to see the available `storageProfiles` for HVM and KVM.
-	StorageProfile       NullableString         `json:"storageProfile,omitempty"`
-	Account              *StorageVolumeAccount  `json:"account,omitempty"`
-	Owner                *StorageVolumeOwner    `json:"owner,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	StorageProfile       NullableString                                         `json:"storageProfile,omitempty"`
+	Account              *AddStorageVolumes200ResponseAllOfStorageVolumeAccount `json:"account,omitempty"`
+	Owner                *AddStorageVolumes200ResponseAllOfStorageVolumeOwner   `json:"owner,omitempty"`
+	AdditionalProperties map[string]interface{}                                 `json:",remain"`
 }
 
 type _StorageVolume StorageVolume
@@ -212,9 +212,9 @@ func (o *StorageVolume) UnsetDescription() {
 }
 
 // GetController returns the Controller field value if set, zero value otherwise.
-func (o *StorageVolume) GetController() StorageVolumeController {
+func (o *StorageVolume) GetController() AddStorageVolumes200ResponseAllOfStorageVolumeController {
 	if o == nil || IsNil(o.Controller) {
-		var ret StorageVolumeController
+		var ret AddStorageVolumes200ResponseAllOfStorageVolumeController
 		return ret
 	}
 	return *o.Controller
@@ -222,7 +222,7 @@ func (o *StorageVolume) GetController() StorageVolumeController {
 
 // GetControllerOk returns a tuple with the Controller field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StorageVolume) GetControllerOk() (*StorageVolumeController, bool) {
+func (o *StorageVolume) GetControllerOk() (*AddStorageVolumes200ResponseAllOfStorageVolumeController, bool) {
 	if o == nil || IsNil(o.Controller) {
 		return nil, false
 	}
@@ -238,8 +238,8 @@ func (o *StorageVolume) IsSetController() bool {
 	return false
 }
 
-// SetController gets a reference to the given StorageVolumeController and assigns it to the Controller field.
-func (o *StorageVolume) SetController(v StorageVolumeController) {
+// SetController gets a reference to the given AddStorageVolumes200ResponseAllOfStorageVolumeController and assigns it to the Controller field.
+func (o *StorageVolume) SetController(v AddStorageVolumes200ResponseAllOfStorageVolumeController) {
 	o.Controller = &v
 }
 
@@ -736,9 +736,9 @@ func (o *StorageVolume) SetDiskType(v string) {
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *StorageVolume) GetType() StorageVolumeType {
+func (o *StorageVolume) GetType() AddStorageVolumes200ResponseAllOfStorageVolumeType {
 	if o == nil || IsNil(o.Type) {
-		var ret StorageVolumeType
+		var ret AddStorageVolumes200ResponseAllOfStorageVolumeType
 		return ret
 	}
 	return *o.Type
@@ -746,7 +746,7 @@ func (o *StorageVolume) GetType() StorageVolumeType {
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StorageVolume) GetTypeOk() (*StorageVolumeType, bool) {
+func (o *StorageVolume) GetTypeOk() (*AddStorageVolumes200ResponseAllOfStorageVolumeType, bool) {
 	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
@@ -762,8 +762,8 @@ func (o *StorageVolume) IsSetType() bool {
 	return false
 }
 
-// SetType gets a reference to the given StorageVolumeType and assigns it to the Type field.
-func (o *StorageVolume) SetType(v StorageVolumeType) {
+// SetType gets a reference to the given AddStorageVolumes200ResponseAllOfStorageVolumeType and assigns it to the Type field.
+func (o *StorageVolume) SetType(v AddStorageVolumes200ResponseAllOfStorageVolumeType) {
 	o.Type = &v
 }
 
@@ -1238,9 +1238,9 @@ func (o *StorageVolume) SetPoolName(v string) {
 }
 
 // GetZone returns the Zone field value if set, zero value otherwise.
-func (o *StorageVolume) GetZone() StorageVolumeZone {
+func (o *StorageVolume) GetZone() AddStorageVolumes200ResponseAllOfStorageVolumeZone {
 	if o == nil || IsNil(o.Zone) {
-		var ret StorageVolumeZone
+		var ret AddStorageVolumes200ResponseAllOfStorageVolumeZone
 		return ret
 	}
 	return *o.Zone
@@ -1248,7 +1248,7 @@ func (o *StorageVolume) GetZone() StorageVolumeZone {
 
 // GetZoneOk returns a tuple with the Zone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StorageVolume) GetZoneOk() (*StorageVolumeZone, bool) {
+func (o *StorageVolume) GetZoneOk() (*AddStorageVolumes200ResponseAllOfStorageVolumeZone, bool) {
 	if o == nil || IsNil(o.Zone) {
 		return nil, false
 	}
@@ -1264,8 +1264,8 @@ func (o *StorageVolume) IsSetZone() bool {
 	return false
 }
 
-// SetZone gets a reference to the given StorageVolumeZone and assigns it to the Zone field.
-func (o *StorageVolume) SetZone(v StorageVolumeZone) {
+// SetZone gets a reference to the given AddStorageVolumes200ResponseAllOfStorageVolumeZone and assigns it to the Zone field.
+func (o *StorageVolume) SetZone(v AddStorageVolumes200ResponseAllOfStorageVolumeZone) {
 	o.Zone = &v
 }
 
@@ -1302,9 +1302,9 @@ func (o *StorageVolume) SetZoneId(v int64) {
 }
 
 // GetDatastore returns the Datastore field value if set, zero value otherwise.
-func (o *StorageVolume) GetDatastore() StorageVolumeDatastore {
+func (o *StorageVolume) GetDatastore() AddStorageVolumes200ResponseAllOfStorageVolumeDatastore {
 	if o == nil || IsNil(o.Datastore) {
-		var ret StorageVolumeDatastore
+		var ret AddStorageVolumes200ResponseAllOfStorageVolumeDatastore
 		return ret
 	}
 	return *o.Datastore
@@ -1312,7 +1312,7 @@ func (o *StorageVolume) GetDatastore() StorageVolumeDatastore {
 
 // GetDatastoreOk returns a tuple with the Datastore field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StorageVolume) GetDatastoreOk() (*StorageVolumeDatastore, bool) {
+func (o *StorageVolume) GetDatastoreOk() (*AddStorageVolumes200ResponseAllOfStorageVolumeDatastore, bool) {
 	if o == nil || IsNil(o.Datastore) {
 		return nil, false
 	}
@@ -1328,8 +1328,8 @@ func (o *StorageVolume) IsSetDatastore() bool {
 	return false
 }
 
-// SetDatastore gets a reference to the given StorageVolumeDatastore and assigns it to the Datastore field.
-func (o *StorageVolume) SetDatastore(v StorageVolumeDatastore) {
+// SetDatastore gets a reference to the given AddStorageVolumes200ResponseAllOfStorageVolumeDatastore and assigns it to the Datastore field.
+func (o *StorageVolume) SetDatastore(v AddStorageVolumes200ResponseAllOfStorageVolumeDatastore) {
 	o.Datastore = &v
 }
 
@@ -2202,9 +2202,9 @@ func (o *StorageVolume) UnsetStorageProfile() {
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *StorageVolume) GetAccount() StorageVolumeAccount {
+func (o *StorageVolume) GetAccount() AddStorageVolumes200ResponseAllOfStorageVolumeAccount {
 	if o == nil || IsNil(o.Account) {
-		var ret StorageVolumeAccount
+		var ret AddStorageVolumes200ResponseAllOfStorageVolumeAccount
 		return ret
 	}
 	return *o.Account
@@ -2212,7 +2212,7 @@ func (o *StorageVolume) GetAccount() StorageVolumeAccount {
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StorageVolume) GetAccountOk() (*StorageVolumeAccount, bool) {
+func (o *StorageVolume) GetAccountOk() (*AddStorageVolumes200ResponseAllOfStorageVolumeAccount, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -2228,15 +2228,15 @@ func (o *StorageVolume) IsSetAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given StorageVolumeAccount and assigns it to the Account field.
-func (o *StorageVolume) SetAccount(v StorageVolumeAccount) {
+// SetAccount gets a reference to the given AddStorageVolumes200ResponseAllOfStorageVolumeAccount and assigns it to the Account field.
+func (o *StorageVolume) SetAccount(v AddStorageVolumes200ResponseAllOfStorageVolumeAccount) {
 	o.Account = &v
 }
 
 // GetOwner returns the Owner field value if set, zero value otherwise.
-func (o *StorageVolume) GetOwner() StorageVolumeOwner {
+func (o *StorageVolume) GetOwner() AddStorageVolumes200ResponseAllOfStorageVolumeOwner {
 	if o == nil || IsNil(o.Owner) {
-		var ret StorageVolumeOwner
+		var ret AddStorageVolumes200ResponseAllOfStorageVolumeOwner
 		return ret
 	}
 	return *o.Owner
@@ -2244,7 +2244,7 @@ func (o *StorageVolume) GetOwner() StorageVolumeOwner {
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StorageVolume) GetOwnerOk() (*StorageVolumeOwner, bool) {
+func (o *StorageVolume) GetOwnerOk() (*AddStorageVolumes200ResponseAllOfStorageVolumeOwner, bool) {
 	if o == nil || IsNil(o.Owner) {
 		return nil, false
 	}
@@ -2260,8 +2260,8 @@ func (o *StorageVolume) IsSetOwner() bool {
 	return false
 }
 
-// SetOwner gets a reference to the given StorageVolumeOwner and assigns it to the Owner field.
-func (o *StorageVolume) SetOwner(v StorageVolumeOwner) {
+// SetOwner gets a reference to the given AddStorageVolumes200ResponseAllOfStorageVolumeOwner and assigns it to the Owner field.
+func (o *StorageVolume) SetOwner(v AddStorageVolumes200ResponseAllOfStorageVolumeOwner) {
 	o.Owner = &v
 }
 

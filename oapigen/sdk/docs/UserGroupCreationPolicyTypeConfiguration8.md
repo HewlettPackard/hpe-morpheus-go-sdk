@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**UserGroup** | Pointer to **string** |  | [optional] 
+**UserGroup** | **string** |  | 
 
 ## Methods
 
 ### NewUserGroupCreationPolicyTypeConfiguration8
 
-`func NewUserGroupCreationPolicyTypeConfiguration8() *UserGroupCreationPolicyTypeConfiguration8`
+`func NewUserGroupCreationPolicyTypeConfiguration8(userGroup string, ) *UserGroupCreationPolicyTypeConfiguration8`
 
 NewUserGroupCreationPolicyTypeConfiguration8 instantiates a new UserGroupCreationPolicyTypeConfiguration8 object
 This constructor will assign default values to properties that have it defined,
@@ -44,11 +44,6 @@ and a boolean to check if the value has been set.
 
 SetUserGroup sets UserGroup field to given value.
 
-### HasUserGroup
-
-`func (o *UserGroupCreationPolicyTypeConfiguration8) HasUserGroup() bool`
-
-HasUserGroup returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

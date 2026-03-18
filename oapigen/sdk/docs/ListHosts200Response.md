@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Servers** | Pointer to [**[]ListHosts200ResponseAllOfServersInner**](ListHosts200ResponseAllOfServersInner.md) |  | [optional] 
 **Stats** | Pointer to **map[string]interface{}** |  | [optional] 
 **Multitenant** | Pointer to **bool** |  | [optional] 
-**Meta** | Pointer to [**ListClouds200ResponseAllOfMeta**](ListClouds200ResponseAllOfMeta.md) |  | [optional] 
+**Meta** | Pointer to [**ListAlerts200ResponseAllOfMeta**](ListAlerts200ResponseAllOfMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -105,20 +105,20 @@ HasMultitenant returns a boolean if a field has been set.
 
 ### GetMeta
 
-`func (o *ListHosts200Response) GetMeta() ListClouds200ResponseAllOfMeta`
+`func (o *ListHosts200Response) GetMeta() ListAlerts200ResponseAllOfMeta`
 
 GetMeta returns the Meta field if non-nil, zero value otherwise.
 
 ### GetMetaOk
 
-`func (o *ListHosts200Response) GetMetaOk() (*ListClouds200ResponseAllOfMeta, bool)`
+`func (o *ListHosts200Response) GetMetaOk() (*ListAlerts200ResponseAllOfMeta, bool)`
 
 GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMeta
 
-`func (o *ListHosts200Response) SetMeta(v ListClouds200ResponseAllOfMeta)`
+`func (o *ListHosts200Response) SetMeta(v ListAlerts200ResponseAllOfMeta)`
 
 SetMeta sets Meta field to given value.
 

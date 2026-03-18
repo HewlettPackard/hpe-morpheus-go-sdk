@@ -20,7 +20,7 @@ var _ MappedNullable = &InstanceCreateNetwork{}
 
 // InstanceCreateNetwork struct for InstanceCreateNetwork
 type InstanceCreateNetwork struct {
-	Network InstancesNetworkInterfaces2Network `json:"network"`
+	Network InstancesNetworkInterfaces3Network `json:"network"`
 	// The id of type of the network interface.
 	NetworkInterfaceTypeId *int64 `json:"networkInterfaceTypeId,omitempty"`
 	// The mode for determining ip address. Can be 'static', 'dhcp' or empty string.
@@ -32,7 +32,7 @@ type InstanceCreateNetwork struct {
 	// The interface id. Applicable when resizing and you want to identify an interface to update that already exists.
 	Id *int64 `json:"id,omitempty"`
 	// The nested networkInterfaces can be used to define child virtual network interfaces. The Options API `/api/options/zoneNetworkOptions?zoneId=5&provisionTypeId=10` can be used to see which types support this (`hasVirtualInvirtualInterfaces = true` and list of available `virtualInterfaces` will be defined.
-	NetworkInterfaces    []InstancesNetworkInterfaces2NetworkInterfacesInner `json:"networkInterfaces,omitempty"`
+	NetworkInterfaces    []InstancesNetworkInterfaces3NetworkInterfacesInner `json:"networkInterfaces,omitempty"`
 	AdditionalProperties map[string]interface{}                              `json:",remain"`
 }
 
@@ -42,7 +42,7 @@ type _InstanceCreateNetwork InstanceCreateNetwork
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInstanceCreateNetwork(network InstancesNetworkInterfaces2Network) *InstanceCreateNetwork {
+func NewInstanceCreateNetwork(network InstancesNetworkInterfaces3Network) *InstanceCreateNetwork {
 	this := InstanceCreateNetwork{}
 	this.Network = network
 	var ipMode string = ""
@@ -61,9 +61,9 @@ func NewInstanceCreateNetworkWithDefaults() *InstanceCreateNetwork {
 }
 
 // GetNetwork returns the Network field value
-func (o *InstanceCreateNetwork) GetNetwork() InstancesNetworkInterfaces2Network {
+func (o *InstanceCreateNetwork) GetNetwork() InstancesNetworkInterfaces3Network {
 	if o == nil {
-		var ret InstancesNetworkInterfaces2Network
+		var ret InstancesNetworkInterfaces3Network
 		return ret
 	}
 
@@ -72,7 +72,7 @@ func (o *InstanceCreateNetwork) GetNetwork() InstancesNetworkInterfaces2Network 
 
 // GetNetworkOk returns a tuple with the Network field value
 // and a boolean to check if the value has been set.
-func (o *InstanceCreateNetwork) GetNetworkOk() (*InstancesNetworkInterfaces2Network, bool) {
+func (o *InstanceCreateNetwork) GetNetworkOk() (*InstancesNetworkInterfaces3Network, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -80,7 +80,7 @@ func (o *InstanceCreateNetwork) GetNetworkOk() (*InstancesNetworkInterfaces2Netw
 }
 
 // SetNetwork sets field value
-func (o *InstanceCreateNetwork) SetNetwork(v InstancesNetworkInterfaces2Network) {
+func (o *InstanceCreateNetwork) SetNetwork(v InstancesNetworkInterfaces3Network) {
 	o.Network = v
 }
 
@@ -245,9 +245,9 @@ func (o *InstanceCreateNetwork) SetId(v int64) {
 }
 
 // GetNetworkInterfaces returns the NetworkInterfaces field value if set, zero value otherwise.
-func (o *InstanceCreateNetwork) GetNetworkInterfaces() []InstancesNetworkInterfaces2NetworkInterfacesInner {
+func (o *InstanceCreateNetwork) GetNetworkInterfaces() []InstancesNetworkInterfaces3NetworkInterfacesInner {
 	if o == nil || IsNil(o.NetworkInterfaces) {
-		var ret []InstancesNetworkInterfaces2NetworkInterfacesInner
+		var ret []InstancesNetworkInterfaces3NetworkInterfacesInner
 		return ret
 	}
 	return o.NetworkInterfaces
@@ -255,7 +255,7 @@ func (o *InstanceCreateNetwork) GetNetworkInterfaces() []InstancesNetworkInterfa
 
 // GetNetworkInterfacesOk returns a tuple with the NetworkInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceCreateNetwork) GetNetworkInterfacesOk() ([]InstancesNetworkInterfaces2NetworkInterfacesInner, bool) {
+func (o *InstanceCreateNetwork) GetNetworkInterfacesOk() ([]InstancesNetworkInterfaces3NetworkInterfacesInner, bool) {
 	if o == nil || IsNil(o.NetworkInterfaces) {
 		return nil, false
 	}
@@ -271,8 +271,8 @@ func (o *InstanceCreateNetwork) IsSetNetworkInterfaces() bool {
 	return false
 }
 
-// SetNetworkInterfaces gets a reference to the given []InstancesNetworkInterfaces2NetworkInterfacesInner and assigns it to the NetworkInterfaces field.
-func (o *InstanceCreateNetwork) SetNetworkInterfaces(v []InstancesNetworkInterfaces2NetworkInterfacesInner) {
+// SetNetworkInterfaces gets a reference to the given []InstancesNetworkInterfaces3NetworkInterfacesInner and assigns it to the NetworkInterfaces field.
+func (o *InstanceCreateNetwork) SetNetworkInterfaces(v []InstancesNetworkInterfaces3NetworkInterfacesInner) {
 	o.NetworkInterfaces = v
 }
 

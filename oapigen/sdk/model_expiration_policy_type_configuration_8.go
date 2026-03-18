@@ -18,9 +18,9 @@ import (
 // checks if the ExpirationPolicyTypeConfiguration8 type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ExpirationPolicyTypeConfiguration8{}
 
-// ExpirationPolicyTypeConfiguration8 Configuration settings for the following policy types: - Expiration
+// ExpirationPolicyTypeConfiguration8 - Expiration
 type ExpirationPolicyTypeConfiguration8 struct {
-	LifecycleType                     *string                `json:"lifecycleType,omitempty"`
+	LifecycleType                     string                 `json:"lifecycleType"`
 	LifecycleAge                      *string                `json:"lifecycleAge,omitempty"`
 	LifecycleRenewal                  *string                `json:"lifecycleRenewal,omitempty"`
 	LifecycleNotify                   *string                `json:"lifecycleNotify,omitempty"`
@@ -29,10 +29,10 @@ type ExpirationPolicyTypeConfiguration8 struct {
 	LifecycleAllowExtend              *string                `json:"lifecycleAllowExtend,omitempty"`
 	LifecycleExtensionsBeforeApproval *string                `json:"lifecycleExtensionsBeforeApproval,omitempty"`
 	AccountIntegrationId              *string                `json:"accountIntegrationId,omitempty"`
-	LifecycleHideFixed                *bool                  `json:"lifecycleHideFixed,omitempty"`
 	LifecycleWorkflowId               *string                `json:"lifecycleWorkflowId,omitempty"`
 	FlowId                            *string                `json:"flowId,omitempty"`
 	WorkflowType                      *string                `json:"workflowType,omitempty"`
+	LifecycleHideFixed                *bool                  `json:"lifecycleHideFixed,omitempty"`
 	AdditionalProperties              map[string]interface{} `json:",remain"`
 }
 
@@ -42,8 +42,9 @@ type _ExpirationPolicyTypeConfiguration8 ExpirationPolicyTypeConfiguration8
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewExpirationPolicyTypeConfiguration8() *ExpirationPolicyTypeConfiguration8 {
+func NewExpirationPolicyTypeConfiguration8(lifecycleType string) *ExpirationPolicyTypeConfiguration8 {
 	this := ExpirationPolicyTypeConfiguration8{}
+	this.LifecycleType = lifecycleType
 	var lifecycleAutoRenew string = "off"
 	this.LifecycleAutoRenew = &lifecycleAutoRenew
 	var lifecycleAllowExtend string = "off"
@@ -63,36 +64,28 @@ func NewExpirationPolicyTypeConfiguration8WithDefaults() *ExpirationPolicyTypeCo
 	return &this
 }
 
-// GetLifecycleType returns the LifecycleType field value if set, zero value otherwise.
+// GetLifecycleType returns the LifecycleType field value
 func (o *ExpirationPolicyTypeConfiguration8) GetLifecycleType() string {
-	if o == nil || IsNil(o.LifecycleType) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.LifecycleType
+
+	return o.LifecycleType
 }
 
-// GetLifecycleTypeOk returns a tuple with the LifecycleType field value if set, nil otherwise
+// GetLifecycleTypeOk returns a tuple with the LifecycleType field value
 // and a boolean to check if the value has been set.
 func (o *ExpirationPolicyTypeConfiguration8) GetLifecycleTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.LifecycleType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LifecycleType, true
+	return &o.LifecycleType, true
 }
 
-// IsSetLifecycleType returns a boolean if a field has been set.
-func (o *ExpirationPolicyTypeConfiguration8) IsSetLifecycleType() bool {
-	if o != nil && !IsNil(o.LifecycleType) {
-		return true
-	}
-
-	return false
-}
-
-// SetLifecycleType gets a reference to the given string and assigns it to the LifecycleType field.
+// SetLifecycleType sets field value
 func (o *ExpirationPolicyTypeConfiguration8) SetLifecycleType(v string) {
-	o.LifecycleType = &v
+	o.LifecycleType = v
 }
 
 // GetLifecycleAge returns the LifecycleAge field value if set, zero value otherwise.
@@ -351,38 +344,6 @@ func (o *ExpirationPolicyTypeConfiguration8) SetAccountIntegrationId(v string) {
 	o.AccountIntegrationId = &v
 }
 
-// GetLifecycleHideFixed returns the LifecycleHideFixed field value if set, zero value otherwise.
-func (o *ExpirationPolicyTypeConfiguration8) GetLifecycleHideFixed() bool {
-	if o == nil || IsNil(o.LifecycleHideFixed) {
-		var ret bool
-		return ret
-	}
-	return *o.LifecycleHideFixed
-}
-
-// GetLifecycleHideFixedOk returns a tuple with the LifecycleHideFixed field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ExpirationPolicyTypeConfiguration8) GetLifecycleHideFixedOk() (*bool, bool) {
-	if o == nil || IsNil(o.LifecycleHideFixed) {
-		return nil, false
-	}
-	return o.LifecycleHideFixed, true
-}
-
-// IsSetLifecycleHideFixed returns a boolean if a field has been set.
-func (o *ExpirationPolicyTypeConfiguration8) IsSetLifecycleHideFixed() bool {
-	if o != nil && !IsNil(o.LifecycleHideFixed) {
-		return true
-	}
-
-	return false
-}
-
-// SetLifecycleHideFixed gets a reference to the given bool and assigns it to the LifecycleHideFixed field.
-func (o *ExpirationPolicyTypeConfiguration8) SetLifecycleHideFixed(v bool) {
-	o.LifecycleHideFixed = &v
-}
-
 // GetLifecycleWorkflowId returns the LifecycleWorkflowId field value if set, zero value otherwise.
 func (o *ExpirationPolicyTypeConfiguration8) GetLifecycleWorkflowId() string {
 	if o == nil || IsNil(o.LifecycleWorkflowId) {
@@ -479,6 +440,38 @@ func (o *ExpirationPolicyTypeConfiguration8) SetWorkflowType(v string) {
 	o.WorkflowType = &v
 }
 
+// GetLifecycleHideFixed returns the LifecycleHideFixed field value if set, zero value otherwise.
+func (o *ExpirationPolicyTypeConfiguration8) GetLifecycleHideFixed() bool {
+	if o == nil || IsNil(o.LifecycleHideFixed) {
+		var ret bool
+		return ret
+	}
+	return *o.LifecycleHideFixed
+}
+
+// GetLifecycleHideFixedOk returns a tuple with the LifecycleHideFixed field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ExpirationPolicyTypeConfiguration8) GetLifecycleHideFixedOk() (*bool, bool) {
+	if o == nil || IsNil(o.LifecycleHideFixed) {
+		return nil, false
+	}
+	return o.LifecycleHideFixed, true
+}
+
+// IsSetLifecycleHideFixed returns a boolean if a field has been set.
+func (o *ExpirationPolicyTypeConfiguration8) IsSetLifecycleHideFixed() bool {
+	if o != nil && !IsNil(o.LifecycleHideFixed) {
+		return true
+	}
+
+	return false
+}
+
+// SetLifecycleHideFixed gets a reference to the given bool and assigns it to the LifecycleHideFixed field.
+func (o *ExpirationPolicyTypeConfiguration8) SetLifecycleHideFixed(v bool) {
+	o.LifecycleHideFixed = &v
+}
+
 func (o ExpirationPolicyTypeConfiguration8) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -489,9 +482,7 @@ func (o ExpirationPolicyTypeConfiguration8) MarshalJSON() ([]byte, error) {
 
 func (o ExpirationPolicyTypeConfiguration8) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.LifecycleType) {
-		toSerialize["lifecycleType"] = o.LifecycleType
-	}
+	toSerialize["lifecycleType"] = o.LifecycleType
 	if !IsNil(o.LifecycleAge) {
 		toSerialize["lifecycleAge"] = o.LifecycleAge
 	}
@@ -516,9 +507,6 @@ func (o ExpirationPolicyTypeConfiguration8) ToMap() (map[string]interface{}, err
 	if !IsNil(o.AccountIntegrationId) {
 		toSerialize["accountIntegrationId"] = o.AccountIntegrationId
 	}
-	if !IsNil(o.LifecycleHideFixed) {
-		toSerialize["lifecycleHideFixed"] = o.LifecycleHideFixed
-	}
 	if !IsNil(o.LifecycleWorkflowId) {
 		toSerialize["lifecycleWorkflowId"] = o.LifecycleWorkflowId
 	}
@@ -527,6 +515,9 @@ func (o ExpirationPolicyTypeConfiguration8) ToMap() (map[string]interface{}, err
 	}
 	if !IsNil(o.WorkflowType) {
 		toSerialize["workflowType"] = o.WorkflowType
+	}
+	if !IsNil(o.LifecycleHideFixed) {
+		toSerialize["lifecycleHideFixed"] = o.LifecycleHideFixed
 	}
 
 	for key, value := range o.AdditionalProperties {

@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**HostNamingType** | Pointer to **string** |  | [optional] 
+**HostNamingType** | **string** |  | 
 **HostNamingPattern** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
 ### NewHostnamePolicyTypeConfiguration7
 
-`func NewHostnamePolicyTypeConfiguration7() *HostnamePolicyTypeConfiguration7`
+`func NewHostnamePolicyTypeConfiguration7(hostNamingType string, ) *HostnamePolicyTypeConfiguration7`
 
 NewHostnamePolicyTypeConfiguration7 instantiates a new HostnamePolicyTypeConfiguration7 object
 This constructor will assign default values to properties that have it defined,
@@ -45,11 +45,6 @@ and a boolean to check if the value has been set.
 
 SetHostNamingType sets HostNamingType field to given value.
 
-### HasHostNamingType
-
-`func (o *HostnamePolicyTypeConfiguration7) HasHostNamingType() bool`
-
-HasHostNamingType returns a boolean if a field has been set.
 
 ### GetHostNamingPattern
 

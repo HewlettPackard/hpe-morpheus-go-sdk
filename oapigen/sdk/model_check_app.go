@@ -21,32 +21,32 @@ var _ MappedNullable = &CheckApp{}
 
 // CheckApp struct for CheckApp
 type CheckApp struct {
-	Id                   *int64                 `json:"id,omitempty"`
-	Account              *CheckAppAccount       `json:"account,omitempty"`
-	Active               *bool                  `json:"active,omitempty"`
-	App                  *CheckAppApp           `json:"app,omitempty"`
-	Name                 *string                `json:"name,omitempty"`
-	Description          NullableString         `json:"description,omitempty"`
-	InUptime             *bool                  `json:"inUptime,omitempty"`
-	LastCheckStatus      NullableString         `json:"lastCheckStatus,omitempty"`
-	LastWarningDate      NullableTime           `json:"lastWarningDate,omitempty"`
-	LastErrorDate        NullableTime           `json:"lastErrorDate,omitempty"`
-	LastSuccessDate      NullableTime           `json:"lastSuccessDate,omitempty"`
-	LastRunDate          NullableTime           `json:"lastRunDate,omitempty"`
-	LastError            NullableString         `json:"lastError,omitempty"`
-	LastTimer            *int64                 `json:"lastTimer,omitempty"`
-	Health               *int64                 `json:"health,omitempty"`
-	History              NullableString         `json:"history,omitempty"`
-	Severity             *string                `json:"severity,omitempty"`
-	CreateIncident       *bool                  `json:"createIncident,omitempty"`
-	Muted                *bool                  `json:"muted,omitempty"`
-	CreatedBy            *CheckAppCreatedBy     `json:"createdBy,omitempty"`
-	DateCreated          *time.Time             `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time             `json:"lastUpdated,omitempty"`
-	Availability         NullableString         `json:"availability,omitempty"`
-	Checks               []int64                `json:"checks,omitempty"`
-	CheckGroups          []int64                `json:"checkGroups,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Id                   *int64                                         `json:"id,omitempty"`
+	Account              *AddCheckApps200ResponseAllOfCheckAppAccount   `json:"account,omitempty"`
+	Active               *bool                                          `json:"active,omitempty"`
+	App                  *AddCheckApps200ResponseAllOfCheckAppApp       `json:"app,omitempty"`
+	Name                 *string                                        `json:"name,omitempty"`
+	Description          NullableString                                 `json:"description,omitempty"`
+	InUptime             *bool                                          `json:"inUptime,omitempty"`
+	LastCheckStatus      NullableString                                 `json:"lastCheckStatus,omitempty"`
+	LastWarningDate      NullableTime                                   `json:"lastWarningDate,omitempty"`
+	LastErrorDate        NullableTime                                   `json:"lastErrorDate,omitempty"`
+	LastSuccessDate      NullableTime                                   `json:"lastSuccessDate,omitempty"`
+	LastRunDate          NullableTime                                   `json:"lastRunDate,omitempty"`
+	LastError            NullableString                                 `json:"lastError,omitempty"`
+	LastTimer            *int64                                         `json:"lastTimer,omitempty"`
+	Health               *int64                                         `json:"health,omitempty"`
+	History              NullableString                                 `json:"history,omitempty"`
+	Severity             *string                                        `json:"severity,omitempty"`
+	CreateIncident       *bool                                          `json:"createIncident,omitempty"`
+	Muted                *bool                                          `json:"muted,omitempty"`
+	CreatedBy            *AddCheckApps200ResponseAllOfCheckAppCreatedBy `json:"createdBy,omitempty"`
+	DateCreated          *time.Time                                     `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                     `json:"lastUpdated,omitempty"`
+	Availability         NullableString                                 `json:"availability,omitempty"`
+	Checks               []int64                                        `json:"checks,omitempty"`
+	CheckGroups          []int64                                        `json:"checkGroups,omitempty"`
+	AdditionalProperties map[string]interface{}                         `json:",remain"`
 }
 
 type _CheckApp CheckApp
@@ -101,9 +101,9 @@ func (o *CheckApp) SetId(v int64) {
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *CheckApp) GetAccount() CheckAppAccount {
+func (o *CheckApp) GetAccount() AddCheckApps200ResponseAllOfCheckAppAccount {
 	if o == nil || IsNil(o.Account) {
-		var ret CheckAppAccount
+		var ret AddCheckApps200ResponseAllOfCheckAppAccount
 		return ret
 	}
 	return *o.Account
@@ -111,7 +111,7 @@ func (o *CheckApp) GetAccount() CheckAppAccount {
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CheckApp) GetAccountOk() (*CheckAppAccount, bool) {
+func (o *CheckApp) GetAccountOk() (*AddCheckApps200ResponseAllOfCheckAppAccount, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -127,8 +127,8 @@ func (o *CheckApp) IsSetAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given CheckAppAccount and assigns it to the Account field.
-func (o *CheckApp) SetAccount(v CheckAppAccount) {
+// SetAccount gets a reference to the given AddCheckApps200ResponseAllOfCheckAppAccount and assigns it to the Account field.
+func (o *CheckApp) SetAccount(v AddCheckApps200ResponseAllOfCheckAppAccount) {
 	o.Account = &v
 }
 
@@ -165,9 +165,9 @@ func (o *CheckApp) SetActive(v bool) {
 }
 
 // GetApp returns the App field value if set, zero value otherwise.
-func (o *CheckApp) GetApp() CheckAppApp {
+func (o *CheckApp) GetApp() AddCheckApps200ResponseAllOfCheckAppApp {
 	if o == nil || IsNil(o.App) {
-		var ret CheckAppApp
+		var ret AddCheckApps200ResponseAllOfCheckAppApp
 		return ret
 	}
 	return *o.App
@@ -175,7 +175,7 @@ func (o *CheckApp) GetApp() CheckAppApp {
 
 // GetAppOk returns a tuple with the App field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CheckApp) GetAppOk() (*CheckAppApp, bool) {
+func (o *CheckApp) GetAppOk() (*AddCheckApps200ResponseAllOfCheckAppApp, bool) {
 	if o == nil || IsNil(o.App) {
 		return nil, false
 	}
@@ -191,8 +191,8 @@ func (o *CheckApp) IsSetApp() bool {
 	return false
 }
 
-// SetApp gets a reference to the given CheckAppApp and assigns it to the App field.
-func (o *CheckApp) SetApp(v CheckAppApp) {
+// SetApp gets a reference to the given AddCheckApps200ResponseAllOfCheckAppApp and assigns it to the App field.
+func (o *CheckApp) SetApp(v AddCheckApps200ResponseAllOfCheckAppApp) {
 	o.App = &v
 }
 
@@ -765,9 +765,9 @@ func (o *CheckApp) SetMuted(v bool) {
 }
 
 // GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
-func (o *CheckApp) GetCreatedBy() CheckAppCreatedBy {
+func (o *CheckApp) GetCreatedBy() AddCheckApps200ResponseAllOfCheckAppCreatedBy {
 	if o == nil || IsNil(o.CreatedBy) {
-		var ret CheckAppCreatedBy
+		var ret AddCheckApps200ResponseAllOfCheckAppCreatedBy
 		return ret
 	}
 	return *o.CreatedBy
@@ -775,7 +775,7 @@ func (o *CheckApp) GetCreatedBy() CheckAppCreatedBy {
 
 // GetCreatedByOk returns a tuple with the CreatedBy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CheckApp) GetCreatedByOk() (*CheckAppCreatedBy, bool) {
+func (o *CheckApp) GetCreatedByOk() (*AddCheckApps200ResponseAllOfCheckAppCreatedBy, bool) {
 	if o == nil || IsNil(o.CreatedBy) {
 		return nil, false
 	}
@@ -791,8 +791,8 @@ func (o *CheckApp) IsSetCreatedBy() bool {
 	return false
 }
 
-// SetCreatedBy gets a reference to the given CheckAppCreatedBy and assigns it to the CreatedBy field.
-func (o *CheckApp) SetCreatedBy(v CheckAppCreatedBy) {
+// SetCreatedBy gets a reference to the given AddCheckApps200ResponseAllOfCheckAppCreatedBy and assigns it to the CreatedBy field.
+func (o *CheckApp) SetCreatedBy(v AddCheckApps200ResponseAllOfCheckAppCreatedBy) {
 	o.CreatedBy = &v
 }
 

@@ -11,9 +11,9 @@ Name | Type | Description | Notes
 **Code** | Pointer to **string** |  | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
 **Location** | Pointer to **NullableString** |  | [optional] 
-**Owner** | Pointer to [**ZoneOwner**](ZoneOwner.md) |  | [optional] 
+**Owner** | Pointer to [**NullableZoneOwner**](ZoneOwner.md) |  | [optional] 
 **AccountId** | Pointer to **int64** |  | [optional] 
-**Account** | Pointer to [**ZoneAccount**](ZoneAccount.md) |  | [optional] 
+**Account** | Pointer to [**NullableZoneAccount**](ZoneAccount.md) |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
@@ -305,6 +305,16 @@ SetOwner sets Owner field to given value.
 
 HasOwner returns a boolean if a field has been set.
 
+### SetOwnerNil
+
+`func (o *Zone) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *Zone) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetAccountId
 
 `func (o *Zone) GetAccountId() int64`
@@ -355,6 +365,16 @@ SetAccount sets Account field to given value.
 
 HasAccount returns a boolean if a field has been set.
 
+### SetAccountNil
+
+`func (o *Zone) SetAccountNil(b bool)`
+
+ SetAccountNil sets the value for Account to be an explicit nil
+
+### UnsetAccount
+`func (o *Zone) UnsetAccount()`
+
+UnsetAccount ensures that no value is present for Account, not even an explicit nil
 ### GetVisibility
 
 `func (o *Zone) GetVisibility() string`

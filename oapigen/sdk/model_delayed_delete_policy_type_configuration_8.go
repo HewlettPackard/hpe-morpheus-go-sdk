@@ -18,9 +18,9 @@ import (
 // checks if the DelayedDeletePolicyTypeConfiguration8 type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &DelayedDeletePolicyTypeConfiguration8{}
 
-// DelayedDeletePolicyTypeConfiguration8 Configuration settings for the following policy types: - Delayed Delete
+// DelayedDeletePolicyTypeConfiguration8 - Delayed Delete
 type DelayedDeletePolicyTypeConfiguration8 struct {
-	RemovalAge           *string                `json:"removalAge,omitempty"`
+	RemovalAge           string                 `json:"removalAge"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -30,8 +30,9 @@ type _DelayedDeletePolicyTypeConfiguration8 DelayedDeletePolicyTypeConfiguration
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDelayedDeletePolicyTypeConfiguration8() *DelayedDeletePolicyTypeConfiguration8 {
+func NewDelayedDeletePolicyTypeConfiguration8(removalAge string) *DelayedDeletePolicyTypeConfiguration8 {
 	this := DelayedDeletePolicyTypeConfiguration8{}
+	this.RemovalAge = removalAge
 	return &this
 }
 
@@ -43,36 +44,28 @@ func NewDelayedDeletePolicyTypeConfiguration8WithDefaults() *DelayedDeletePolicy
 	return &this
 }
 
-// GetRemovalAge returns the RemovalAge field value if set, zero value otherwise.
+// GetRemovalAge returns the RemovalAge field value
 func (o *DelayedDeletePolicyTypeConfiguration8) GetRemovalAge() string {
-	if o == nil || IsNil(o.RemovalAge) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.RemovalAge
+
+	return o.RemovalAge
 }
 
-// GetRemovalAgeOk returns a tuple with the RemovalAge field value if set, nil otherwise
+// GetRemovalAgeOk returns a tuple with the RemovalAge field value
 // and a boolean to check if the value has been set.
 func (o *DelayedDeletePolicyTypeConfiguration8) GetRemovalAgeOk() (*string, bool) {
-	if o == nil || IsNil(o.RemovalAge) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RemovalAge, true
+	return &o.RemovalAge, true
 }
 
-// IsSetRemovalAge returns a boolean if a field has been set.
-func (o *DelayedDeletePolicyTypeConfiguration8) IsSetRemovalAge() bool {
-	if o != nil && !IsNil(o.RemovalAge) {
-		return true
-	}
-
-	return false
-}
-
-// SetRemovalAge gets a reference to the given string and assigns it to the RemovalAge field.
+// SetRemovalAge sets field value
 func (o *DelayedDeletePolicyTypeConfiguration8) SetRemovalAge(v string) {
-	o.RemovalAge = &v
+	o.RemovalAge = v
 }
 
 func (o DelayedDeletePolicyTypeConfiguration8) MarshalJSON() ([]byte, error) {
@@ -85,9 +78,7 @@ func (o DelayedDeletePolicyTypeConfiguration8) MarshalJSON() ([]byte, error) {
 
 func (o DelayedDeletePolicyTypeConfiguration8) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.RemovalAge) {
-		toSerialize["removalAge"] = o.RemovalAge
-	}
+	toSerialize["removalAge"] = o.RemovalAge
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value

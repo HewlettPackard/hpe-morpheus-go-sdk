@@ -20,34 +20,34 @@ var _ MappedNullable = &ListHosts200ResponseAllOfServersInnerInterfacesInner{}
 
 // ListHosts200ResponseAllOfServersInnerInterfacesInner struct for ListHosts200ResponseAllOfServersInnerInterfacesInner
 type ListHosts200ResponseAllOfServersInnerInterfacesInner struct {
-	Id                   *int64                                                             `json:"id,omitempty"`
-	RefType              NullableString                                                     `json:"refType,omitempty"`
-	RefId                NullableString                                                     `json:"refId,omitempty"`
-	Name                 *string                                                            `json:"name,omitempty"`
-	InternalId           NullableString                                                     `json:"internalId,omitempty"`
-	ExternalId           NullableString                                                     `json:"externalId,omitempty"`
-	UniqueId             NullableString                                                     `json:"uniqueId,omitempty"`
-	PublicIpAddress      NullableString                                                     `json:"publicIpAddress,omitempty"`
-	PublicIpv6Address    NullableString                                                     `json:"publicIpv6Address,omitempty"`
-	IpAddress            *string                                                            `json:"ipAddress,omitempty"`
-	Ipv6Address          NullableString                                                     `json:"ipv6Address,omitempty"`
-	IpSubnet             NullableString                                                     `json:"ipSubnet,omitempty"`
-	Ipv6Subnet           NullableString                                                     `json:"ipv6Subnet,omitempty"`
-	Description          NullableString                                                     `json:"description,omitempty"`
-	Dhcp                 *bool                                                              `json:"dhcp,omitempty"`
-	Active               *bool                                                              `json:"active,omitempty"`
-	PoolAssigned         *bool                                                              `json:"poolAssigned,omitempty"`
-	PrimaryInterface     *bool                                                              `json:"primaryInterface,omitempty"`
-	Network              *ListHosts200ResponseAllOfServersInnerInterfacesInnerNetwork       `json:"network,omitempty"`
-	Subnet               NullableString                                                     `json:"subnet,omitempty"`
-	NetworkGroup         NullableString                                                     `json:"networkGroup,omitempty"`
-	NetworkPosition      NullableString                                                     `json:"networkPosition,omitempty"`
-	NetworkPool          *ListHosts200ResponseAllOfServersInnerInterfacesInnerNetworkPool   `json:"networkPool,omitempty"`
-	NetworkDomain        *ListHosts200ResponseAllOfServersInnerInterfacesInnerNetworkDomain `json:"networkDomain,omitempty"`
-	Type                 *ListHosts200ResponseAllOfServersInnerInterfacesInnerType          `json:"type,omitempty"`
-	IpMode               NullableString                                                     `json:"ipMode,omitempty"`
-	MacAddress           NullableString                                                     `json:"macAddress,omitempty"`
-	AdditionalProperties map[string]interface{}                                             `json:",remain"`
+	Id                   *int64                                                              `json:"id,omitempty"`
+	RefType              NullableString                                                      `json:"refType,omitempty"`
+	RefId                NullableString                                                      `json:"refId,omitempty"`
+	Name                 *string                                                             `json:"name,omitempty"`
+	InternalId           NullableString                                                      `json:"internalId,omitempty"`
+	ExternalId           NullableString                                                      `json:"externalId,omitempty"`
+	UniqueId             NullableString                                                      `json:"uniqueId,omitempty"`
+	PublicIpAddress      NullableString                                                      `json:"publicIpAddress,omitempty"`
+	PublicIpv6Address    NullableString                                                      `json:"publicIpv6Address,omitempty"`
+	IpAddress            *string                                                             `json:"ipAddress,omitempty"`
+	Ipv6Address          NullableString                                                      `json:"ipv6Address,omitempty"`
+	IpSubnet             NullableString                                                      `json:"ipSubnet,omitempty"`
+	Ipv6Subnet           NullableString                                                      `json:"ipv6Subnet,omitempty"`
+	Description          NullableString                                                      `json:"description,omitempty"`
+	Dhcp                 *bool                                                               `json:"dhcp,omitempty"`
+	Active               *bool                                                               `json:"active,omitempty"`
+	PoolAssigned         *bool                                                               `json:"poolAssigned,omitempty"`
+	PrimaryInterface     *bool                                                               `json:"primaryInterface,omitempty"`
+	Network              NullableListHosts200ResponseAllOfServersInnerInterfacesInnerNetwork `json:"network,omitempty"`
+	Subnet               NullableString                                                      `json:"subnet,omitempty"`
+	NetworkGroup         NullableString                                                      `json:"networkGroup,omitempty"`
+	NetworkPosition      NullableString                                                      `json:"networkPosition,omitempty"`
+	NetworkPool          *ListHosts200ResponseAllOfServersInnerInterfacesInnerNetworkPool    `json:"networkPool,omitempty"`
+	NetworkDomain        *ListHosts200ResponseAllOfServersInnerInterfacesInnerNetworkDomain  `json:"networkDomain,omitempty"`
+	Type                 *ListHosts200ResponseAllOfServersInnerInterfacesInnerType           `json:"type,omitempty"`
+	IpMode               NullableString                                                      `json:"ipMode,omitempty"`
+	MacAddress           NullableString                                                      `json:"macAddress,omitempty"`
+	AdditionalProperties map[string]interface{}                                              `json:",remain"`
 }
 
 type _ListHosts200ResponseAllOfServersInnerInterfacesInner ListHosts200ResponseAllOfServersInnerInterfacesInner
@@ -766,36 +766,47 @@ func (o *ListHosts200ResponseAllOfServersInnerInterfacesInner) SetPrimaryInterfa
 	o.PrimaryInterface = &v
 }
 
-// GetNetwork returns the Network field value if set, zero value otherwise.
+// GetNetwork returns the Network field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListHosts200ResponseAllOfServersInnerInterfacesInner) GetNetwork() ListHosts200ResponseAllOfServersInnerInterfacesInnerNetwork {
-	if o == nil || IsNil(o.Network) {
+	if o == nil || IsNil(o.Network.Get()) {
 		var ret ListHosts200ResponseAllOfServersInnerInterfacesInnerNetwork
 		return ret
 	}
-	return *o.Network
+	return *o.Network.Get()
 }
 
 // GetNetworkOk returns a tuple with the Network field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListHosts200ResponseAllOfServersInnerInterfacesInner) GetNetworkOk() (*ListHosts200ResponseAllOfServersInnerInterfacesInnerNetwork, bool) {
-	if o == nil || IsNil(o.Network) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Network, true
+	return o.Network.Get(), o.Network.IsSet()
 }
 
 // IsSetNetwork returns a boolean if a field has been set.
 func (o *ListHosts200ResponseAllOfServersInnerInterfacesInner) IsSetNetwork() bool {
-	if o != nil && !IsNil(o.Network) {
+	if o != nil && o.Network.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetNetwork gets a reference to the given ListHosts200ResponseAllOfServersInnerInterfacesInnerNetwork and assigns it to the Network field.
+// SetNetwork gets a reference to the given NullableListHosts200ResponseAllOfServersInnerInterfacesInnerNetwork and assigns it to the Network field.
 func (o *ListHosts200ResponseAllOfServersInnerInterfacesInner) SetNetwork(v ListHosts200ResponseAllOfServersInnerInterfacesInnerNetwork) {
-	o.Network = &v
+	o.Network.Set(&v)
+}
+
+// SetNetworkNil sets the value for Network to be an explicit nil
+func (o *ListHosts200ResponseAllOfServersInnerInterfacesInner) SetNetworkNil() {
+	o.Network.Set(nil)
+}
+
+// UnsetNetwork ensures that no value is present for Network, not even an explicit nil
+func (o *ListHosts200ResponseAllOfServersInnerInterfacesInner) UnsetNetwork() {
+	o.Network.Unset()
 }
 
 // GetSubnet returns the Subnet field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1173,8 +1184,8 @@ func (o ListHosts200ResponseAllOfServersInnerInterfacesInner) ToMap() (map[strin
 	if !IsNil(o.PrimaryInterface) {
 		toSerialize["primaryInterface"] = o.PrimaryInterface
 	}
-	if !IsNil(o.Network) {
-		toSerialize["network"] = o.Network
+	if o.Network.IsSet() {
+		toSerialize["network"] = o.Network.Get()
 	}
 	if o.Subnet.IsSet() {
 		toSerialize["subnet"] = o.Subnet.Get()

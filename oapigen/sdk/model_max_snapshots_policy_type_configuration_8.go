@@ -20,7 +20,7 @@ var _ MappedNullable = &MaxSnapshotsPolicyTypeConfiguration8{}
 
 // MaxSnapshotsPolicyTypeConfiguration8 - Max Snapshots
 type MaxSnapshotsPolicyTypeConfiguration8 struct {
-	MaxSnapshots         *string                `json:"maxSnapshots,omitempty"`
+	MaxSnapshots         string                 `json:"maxSnapshots"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -30,8 +30,9 @@ type _MaxSnapshotsPolicyTypeConfiguration8 MaxSnapshotsPolicyTypeConfiguration8
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMaxSnapshotsPolicyTypeConfiguration8() *MaxSnapshotsPolicyTypeConfiguration8 {
+func NewMaxSnapshotsPolicyTypeConfiguration8(maxSnapshots string) *MaxSnapshotsPolicyTypeConfiguration8 {
 	this := MaxSnapshotsPolicyTypeConfiguration8{}
+	this.MaxSnapshots = maxSnapshots
 	return &this
 }
 
@@ -43,36 +44,28 @@ func NewMaxSnapshotsPolicyTypeConfiguration8WithDefaults() *MaxSnapshotsPolicyTy
 	return &this
 }
 
-// GetMaxSnapshots returns the MaxSnapshots field value if set, zero value otherwise.
+// GetMaxSnapshots returns the MaxSnapshots field value
 func (o *MaxSnapshotsPolicyTypeConfiguration8) GetMaxSnapshots() string {
-	if o == nil || IsNil(o.MaxSnapshots) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.MaxSnapshots
+
+	return o.MaxSnapshots
 }
 
-// GetMaxSnapshotsOk returns a tuple with the MaxSnapshots field value if set, nil otherwise
+// GetMaxSnapshotsOk returns a tuple with the MaxSnapshots field value
 // and a boolean to check if the value has been set.
 func (o *MaxSnapshotsPolicyTypeConfiguration8) GetMaxSnapshotsOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxSnapshots) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MaxSnapshots, true
+	return &o.MaxSnapshots, true
 }
 
-// IsSetMaxSnapshots returns a boolean if a field has been set.
-func (o *MaxSnapshotsPolicyTypeConfiguration8) IsSetMaxSnapshots() bool {
-	if o != nil && !IsNil(o.MaxSnapshots) {
-		return true
-	}
-
-	return false
-}
-
-// SetMaxSnapshots gets a reference to the given string and assigns it to the MaxSnapshots field.
+// SetMaxSnapshots sets field value
 func (o *MaxSnapshotsPolicyTypeConfiguration8) SetMaxSnapshots(v string) {
-	o.MaxSnapshots = &v
+	o.MaxSnapshots = v
 }
 
 func (o MaxSnapshotsPolicyTypeConfiguration8) MarshalJSON() ([]byte, error) {
@@ -85,9 +78,7 @@ func (o MaxSnapshotsPolicyTypeConfiguration8) MarshalJSON() ([]byte, error) {
 
 func (o MaxSnapshotsPolicyTypeConfiguration8) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MaxSnapshots) {
-		toSerialize["maxSnapshots"] = o.MaxSnapshots
-	}
+	toSerialize["maxSnapshots"] = o.MaxSnapshots
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value

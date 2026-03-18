@@ -18,9 +18,9 @@ import (
 // checks if the HostnamePolicyTypeConfiguration7 type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &HostnamePolicyTypeConfiguration7{}
 
-// HostnamePolicyTypeConfiguration7 Configuration settings for the following policy types: - Hostname
+// HostnamePolicyTypeConfiguration7 - Hostname
 type HostnamePolicyTypeConfiguration7 struct {
-	HostNamingType       *string                `json:"hostNamingType,omitempty"`
+	HostNamingType       string                 `json:"hostNamingType"`
 	HostNamingPattern    *string                `json:"hostNamingPattern,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
@@ -31,8 +31,9 @@ type _HostnamePolicyTypeConfiguration7 HostnamePolicyTypeConfiguration7
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewHostnamePolicyTypeConfiguration7() *HostnamePolicyTypeConfiguration7 {
+func NewHostnamePolicyTypeConfiguration7(hostNamingType string) *HostnamePolicyTypeConfiguration7 {
 	this := HostnamePolicyTypeConfiguration7{}
+	this.HostNamingType = hostNamingType
 	return &this
 }
 
@@ -44,36 +45,28 @@ func NewHostnamePolicyTypeConfiguration7WithDefaults() *HostnamePolicyTypeConfig
 	return &this
 }
 
-// GetHostNamingType returns the HostNamingType field value if set, zero value otherwise.
+// GetHostNamingType returns the HostNamingType field value
 func (o *HostnamePolicyTypeConfiguration7) GetHostNamingType() string {
-	if o == nil || IsNil(o.HostNamingType) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.HostNamingType
+
+	return o.HostNamingType
 }
 
-// GetHostNamingTypeOk returns a tuple with the HostNamingType field value if set, nil otherwise
+// GetHostNamingTypeOk returns a tuple with the HostNamingType field value
 // and a boolean to check if the value has been set.
 func (o *HostnamePolicyTypeConfiguration7) GetHostNamingTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.HostNamingType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.HostNamingType, true
+	return &o.HostNamingType, true
 }
 
-// IsSetHostNamingType returns a boolean if a field has been set.
-func (o *HostnamePolicyTypeConfiguration7) IsSetHostNamingType() bool {
-	if o != nil && !IsNil(o.HostNamingType) {
-		return true
-	}
-
-	return false
-}
-
-// SetHostNamingType gets a reference to the given string and assigns it to the HostNamingType field.
+// SetHostNamingType sets field value
 func (o *HostnamePolicyTypeConfiguration7) SetHostNamingType(v string) {
-	o.HostNamingType = &v
+	o.HostNamingType = v
 }
 
 // GetHostNamingPattern returns the HostNamingPattern field value if set, zero value otherwise.
@@ -118,9 +111,7 @@ func (o HostnamePolicyTypeConfiguration7) MarshalJSON() ([]byte, error) {
 
 func (o HostnamePolicyTypeConfiguration7) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.HostNamingType) {
-		toSerialize["hostNamingType"] = o.HostNamingType
-	}
+	toSerialize["hostNamingType"] = o.HostNamingType
 	if !IsNil(o.HostNamingPattern) {
 		toSerialize["hostNamingPattern"] = o.HostNamingPattern
 	}

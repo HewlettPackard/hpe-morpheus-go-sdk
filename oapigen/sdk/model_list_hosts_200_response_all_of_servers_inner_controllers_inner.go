@@ -20,12 +20,12 @@ var _ MappedNullable = &ListHosts200ResponseAllOfServersInnerControllersInner{}
 
 // ListHosts200ResponseAllOfServersInnerControllersInner struct for ListHosts200ResponseAllOfServersInnerControllersInner
 type ListHosts200ResponseAllOfServersInnerControllersInner struct {
-	Id                   *int64                                                        `json:"id,omitempty"`
-	Name                 *string                                                       `json:"name,omitempty"`
-	Type                 *AddInstance200ResponseAllOfOneOfInstanceControllersInnerType `json:"type,omitempty"`
-	MaxDevices           *int64                                                        `json:"maxDevices,omitempty"`
-	ReservedUnitNumber   *int64                                                        `json:"reservedUnitNumber,omitempty"`
-	AdditionalProperties map[string]interface{}                                        `json:",remain"`
+	Id                   *int64                                                           `json:"id,omitempty"`
+	Name                 *string                                                          `json:"name,omitempty"`
+	Type                 *ListInstances200ResponseAllOfInstancesInnerControllersInnerType `json:"type,omitempty"`
+	MaxDevices           *int64                                                           `json:"maxDevices,omitempty"`
+	ReservedUnitNumber   *int64                                                           `json:"reservedUnitNumber,omitempty"`
+	AdditionalProperties map[string]interface{}                                           `json:",remain"`
 }
 
 type _ListHosts200ResponseAllOfServersInnerControllersInner ListHosts200ResponseAllOfServersInnerControllersInner
@@ -112,9 +112,9 @@ func (o *ListHosts200ResponseAllOfServersInnerControllersInner) SetName(v string
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *ListHosts200ResponseAllOfServersInnerControllersInner) GetType() AddInstance200ResponseAllOfOneOfInstanceControllersInnerType {
+func (o *ListHosts200ResponseAllOfServersInnerControllersInner) GetType() ListInstances200ResponseAllOfInstancesInnerControllersInnerType {
 	if o == nil || IsNil(o.Type) {
-		var ret AddInstance200ResponseAllOfOneOfInstanceControllersInnerType
+		var ret ListInstances200ResponseAllOfInstancesInnerControllersInnerType
 		return ret
 	}
 	return *o.Type
@@ -122,7 +122,7 @@ func (o *ListHosts200ResponseAllOfServersInnerControllersInner) GetType() AddIns
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListHosts200ResponseAllOfServersInnerControllersInner) GetTypeOk() (*AddInstance200ResponseAllOfOneOfInstanceControllersInnerType, bool) {
+func (o *ListHosts200ResponseAllOfServersInnerControllersInner) GetTypeOk() (*ListInstances200ResponseAllOfInstancesInnerControllersInnerType, bool) {
 	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
@@ -138,8 +138,8 @@ func (o *ListHosts200ResponseAllOfServersInnerControllersInner) IsSetType() bool
 	return false
 }
 
-// SetType gets a reference to the given AddInstance200ResponseAllOfOneOfInstanceControllersInnerType and assigns it to the Type field.
-func (o *ListHosts200ResponseAllOfServersInnerControllersInner) SetType(v AddInstance200ResponseAllOfOneOfInstanceControllersInnerType) {
+// SetType gets a reference to the given ListInstances200ResponseAllOfInstancesInnerControllersInnerType and assigns it to the Type field.
+func (o *ListHosts200ResponseAllOfServersInnerControllersInner) SetType(v ListInstances200ResponseAllOfInstancesInnerControllersInnerType) {
 	o.Type = &v
 }
 

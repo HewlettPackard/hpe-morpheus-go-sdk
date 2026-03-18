@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **All** | Pointer to **bool** | Pass &#x60;true&#x60; to allow access all groups | [optional] [default to true]
-**Sites** | Pointer to [**[]UpdateDatastoresRequestDatastoreResourcePermissionsSitesInner**](UpdateDatastoresRequestDatastoreResourcePermissionsSitesInner.md) | Array of groups that are allowed access | [optional] 
+**Sites** | Pointer to [**[]UpdateCloudFoldersRequestFolderResourcePermissionsSitesInner**](UpdateCloudFoldersRequestFolderResourcePermissionsSitesInner.md) | Array of groups that are allowed access | [optional] 
 **AllPlans** | Pointer to **bool** | Pass true to allow access all plans | [optional] [default to true]
-**Plans** | Pointer to [**[]UpdateDatastoresRequestDatastoreResourcePermissionsPlansInner**](UpdateDatastoresRequestDatastoreResourcePermissionsPlansInner.md) | Array of plans that are allowed access | [optional] 
+**Plans** | Pointer to [**[]UpdateCloudFoldersRequestFolderResourcePermissionsPlansInner**](UpdateCloudFoldersRequestFolderResourcePermissionsPlansInner.md) | Array of plans that are allowed access | [optional] 
 
 ## Methods
 
@@ -55,20 +55,20 @@ HasAll returns a boolean if a field has been set.
 
 ### GetSites
 
-`func (o *UpdateDatastoresRequestDatastoreResourcePermissions) GetSites() []UpdateDatastoresRequestDatastoreResourcePermissionsSitesInner`
+`func (o *UpdateDatastoresRequestDatastoreResourcePermissions) GetSites() []UpdateCloudFoldersRequestFolderResourcePermissionsSitesInner`
 
 GetSites returns the Sites field if non-nil, zero value otherwise.
 
 ### GetSitesOk
 
-`func (o *UpdateDatastoresRequestDatastoreResourcePermissions) GetSitesOk() (*[]UpdateDatastoresRequestDatastoreResourcePermissionsSitesInner, bool)`
+`func (o *UpdateDatastoresRequestDatastoreResourcePermissions) GetSitesOk() (*[]UpdateCloudFoldersRequestFolderResourcePermissionsSitesInner, bool)`
 
 GetSitesOk returns a tuple with the Sites field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSites
 
-`func (o *UpdateDatastoresRequestDatastoreResourcePermissions) SetSites(v []UpdateDatastoresRequestDatastoreResourcePermissionsSitesInner)`
+`func (o *UpdateDatastoresRequestDatastoreResourcePermissions) SetSites(v []UpdateCloudFoldersRequestFolderResourcePermissionsSitesInner)`
 
 SetSites sets Sites field to given value.
 
@@ -105,20 +105,20 @@ HasAllPlans returns a boolean if a field has been set.
 
 ### GetPlans
 
-`func (o *UpdateDatastoresRequestDatastoreResourcePermissions) GetPlans() []UpdateDatastoresRequestDatastoreResourcePermissionsPlansInner`
+`func (o *UpdateDatastoresRequestDatastoreResourcePermissions) GetPlans() []UpdateCloudFoldersRequestFolderResourcePermissionsPlansInner`
 
 GetPlans returns the Plans field if non-nil, zero value otherwise.
 
 ### GetPlansOk
 
-`func (o *UpdateDatastoresRequestDatastoreResourcePermissions) GetPlansOk() (*[]UpdateDatastoresRequestDatastoreResourcePermissionsPlansInner, bool)`
+`func (o *UpdateDatastoresRequestDatastoreResourcePermissions) GetPlansOk() (*[]UpdateCloudFoldersRequestFolderResourcePermissionsPlansInner, bool)`
 
 GetPlansOk returns a tuple with the Plans field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlans
 
-`func (o *UpdateDatastoresRequestDatastoreResourcePermissions) SetPlans(v []UpdateDatastoresRequestDatastoreResourcePermissionsPlansInner)`
+`func (o *UpdateDatastoresRequestDatastoreResourcePermissions) SetPlans(v []UpdateCloudFoldersRequestFolderResourcePermissionsPlansInner)`
 
 SetPlans sets Plans field to given value.
 

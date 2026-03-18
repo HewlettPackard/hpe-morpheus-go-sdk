@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
-**Account** | Pointer to [**CheckGroupAccount**](CheckGroupAccount.md) |  | [optional] 
-**Instance** | Pointer to [**CheckGroupInstance**](CheckGroupInstance.md) |  | [optional] 
+**Account** | Pointer to [**AddCheckGroups200ResponseAllOfCheckGroupAccount**](AddCheckGroups200ResponseAllOfCheckGroupAccount.md) |  | [optional] 
+**Instance** | Pointer to [**AddCheckGroups200ResponseAllOfCheckGroupInstance**](AddCheckGroups200ResponseAllOfCheckGroupInstance.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **NullableString** |  | [optional] 
 **InUptime** | Pointer to **bool** |  | [optional] 
@@ -25,11 +25,11 @@ Name | Type | Description | Notes
 **Severity** | Pointer to **string** |  | [optional] 
 **CreateIncident** | Pointer to **bool** |  | [optional] 
 **Muted** | Pointer to **bool** |  | [optional] 
-**CreatedBy** | Pointer to [**CheckGroupCreatedBy**](CheckGroupCreatedBy.md) |  | [optional] 
+**CreatedBy** | Pointer to [**AddCheckGroups200ResponseAllOfCheckGroupCreatedBy**](AddCheckGroups200ResponseAllOfCheckGroupCreatedBy.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 **Availability** | Pointer to **NullableFloat32** |  | [optional] 
-**CheckType** | Pointer to [**CheckGroupCheckType**](CheckGroupCheckType.md) |  | [optional] 
+**CheckType** | Pointer to [**AddCheckGroups200ResponseAllOfCheckGroupCheckType**](AddCheckGroups200ResponseAllOfCheckGroupCheckType.md) |  | [optional] 
 **Checks** | Pointer to **[]int64** |  | [optional] 
 
 ## Methods
@@ -78,20 +78,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *CheckGroup) GetAccount() CheckGroupAccount`
+`func (o *CheckGroup) GetAccount() AddCheckGroups200ResponseAllOfCheckGroupAccount`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *CheckGroup) GetAccountOk() (*CheckGroupAccount, bool)`
+`func (o *CheckGroup) GetAccountOk() (*AddCheckGroups200ResponseAllOfCheckGroupAccount, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *CheckGroup) SetAccount(v CheckGroupAccount)`
+`func (o *CheckGroup) SetAccount(v AddCheckGroups200ResponseAllOfCheckGroupAccount)`
 
 SetAccount sets Account field to given value.
 
@@ -103,20 +103,20 @@ HasAccount returns a boolean if a field has been set.
 
 ### GetInstance
 
-`func (o *CheckGroup) GetInstance() CheckGroupInstance`
+`func (o *CheckGroup) GetInstance() AddCheckGroups200ResponseAllOfCheckGroupInstance`
 
 GetInstance returns the Instance field if non-nil, zero value otherwise.
 
 ### GetInstanceOk
 
-`func (o *CheckGroup) GetInstanceOk() (*CheckGroupInstance, bool)`
+`func (o *CheckGroup) GetInstanceOk() (*AddCheckGroups200ResponseAllOfCheckGroupInstance, bool)`
 
 GetInstanceOk returns a tuple with the Instance field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInstance
 
-`func (o *CheckGroup) SetInstance(v CheckGroupInstance)`
+`func (o *CheckGroup) SetInstance(v AddCheckGroups200ResponseAllOfCheckGroupInstance)`
 
 SetInstance sets Instance field to given value.
 
@@ -668,20 +668,20 @@ HasMuted returns a boolean if a field has been set.
 
 ### GetCreatedBy
 
-`func (o *CheckGroup) GetCreatedBy() CheckGroupCreatedBy`
+`func (o *CheckGroup) GetCreatedBy() AddCheckGroups200ResponseAllOfCheckGroupCreatedBy`
 
 GetCreatedBy returns the CreatedBy field if non-nil, zero value otherwise.
 
 ### GetCreatedByOk
 
-`func (o *CheckGroup) GetCreatedByOk() (*CheckGroupCreatedBy, bool)`
+`func (o *CheckGroup) GetCreatedByOk() (*AddCheckGroups200ResponseAllOfCheckGroupCreatedBy, bool)`
 
 GetCreatedByOk returns a tuple with the CreatedBy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreatedBy
 
-`func (o *CheckGroup) SetCreatedBy(v CheckGroupCreatedBy)`
+`func (o *CheckGroup) SetCreatedBy(v AddCheckGroups200ResponseAllOfCheckGroupCreatedBy)`
 
 SetCreatedBy sets CreatedBy field to given value.
 
@@ -778,20 +778,20 @@ HasAvailability returns a boolean if a field has been set.
 UnsetAvailability ensures that no value is present for Availability, not even an explicit nil
 ### GetCheckType
 
-`func (o *CheckGroup) GetCheckType() CheckGroupCheckType`
+`func (o *CheckGroup) GetCheckType() AddCheckGroups200ResponseAllOfCheckGroupCheckType`
 
 GetCheckType returns the CheckType field if non-nil, zero value otherwise.
 
 ### GetCheckTypeOk
 
-`func (o *CheckGroup) GetCheckTypeOk() (*CheckGroupCheckType, bool)`
+`func (o *CheckGroup) GetCheckTypeOk() (*AddCheckGroups200ResponseAllOfCheckGroupCheckType, bool)`
 
 GetCheckTypeOk returns a tuple with the CheckType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCheckType
 
-`func (o *CheckGroup) SetCheckType(v CheckGroupCheckType)`
+`func (o *CheckGroup) SetCheckType(v AddCheckGroups200ResponseAllOfCheckGroupCheckType)`
 
 SetCheckType sets CheckType field to given value.
 

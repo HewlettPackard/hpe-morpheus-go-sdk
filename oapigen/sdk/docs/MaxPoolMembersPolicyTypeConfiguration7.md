@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaxPoolMembers** | Pointer to **string** |  | [optional] 
+**MaxPoolMembers** | **string** |  | 
 
 ## Methods
 
 ### NewMaxPoolMembersPolicyTypeConfiguration7
 
-`func NewMaxPoolMembersPolicyTypeConfiguration7() *MaxPoolMembersPolicyTypeConfiguration7`
+`func NewMaxPoolMembersPolicyTypeConfiguration7(maxPoolMembers string, ) *MaxPoolMembersPolicyTypeConfiguration7`
 
 NewMaxPoolMembersPolicyTypeConfiguration7 instantiates a new MaxPoolMembersPolicyTypeConfiguration7 object
 This constructor will assign default values to properties that have it defined,
@@ -44,11 +44,6 @@ and a boolean to check if the value has been set.
 
 SetMaxPoolMembers sets MaxPoolMembers field to given value.
 
-### HasMaxPoolMembers
-
-`func (o *MaxPoolMembersPolicyTypeConfiguration7) HasMaxPoolMembers() bool`
-
-HasMaxPoolMembers returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Strict** | Pointer to **bool** |  | [optional] 
+**Strict** | **bool** |  | 
 **Key** | Pointer to **string** |  | [optional] 
 **ValueListId** | Pointer to **string** |  | [optional] 
 **Value** | Pointer to **string** |  | [optional] 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 
 ### NewTagsPolicyTypeConfiguration8
 
-`func NewTagsPolicyTypeConfiguration8() *TagsPolicyTypeConfiguration8`
+`func NewTagsPolicyTypeConfiguration8(strict bool, ) *TagsPolicyTypeConfiguration8`
 
 NewTagsPolicyTypeConfiguration8 instantiates a new TagsPolicyTypeConfiguration8 object
 This constructor will assign default values to properties that have it defined,
@@ -47,11 +47,6 @@ and a boolean to check if the value has been set.
 
 SetStrict sets Strict field to given value.
 
-### HasStrict
-
-`func (o *TagsPolicyTypeConfiguration8) HasStrict() bool`
-
-HasStrict returns a boolean if a field has been set.
 
 ### GetKey
 

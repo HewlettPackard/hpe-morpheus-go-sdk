@@ -20,10 +20,21 @@ var _ MappedNullable = &StorageVolumeType{}
 
 // StorageVolumeType struct for StorageVolumeType
 type StorageVolumeType struct {
-	Id                   *int64                 `json:"id,omitempty"`
-	Code                 *string                `json:"code,omitempty"`
-	Name                 *string                `json:"name,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Id                   *int64                                                              `json:"id,omitempty"`
+	Code                 *string                                                             `json:"code,omitempty"`
+	Name                 *string                                                             `json:"name,omitempty"`
+	Description          *string                                                             `json:"description,omitempty"`
+	DisplayOrder         *int64                                                              `json:"displayOrder,omitempty"`
+	DefaultType          *bool                                                               `json:"defaultType,omitempty"`
+	CustomLabel          *bool                                                               `json:"customLabel,omitempty"`
+	CustomSize           *bool                                                               `json:"customSize,omitempty"`
+	CustomSizeOptions    NullableString                                                      `json:"customSizeOptions,omitempty"`
+	ConfigurableIOPS     *bool                                                               `json:"configurableIOPS,omitempty"`
+	HasDatastore         *bool                                                               `json:"hasDatastore,omitempty"`
+	Category             *string                                                             `json:"category,omitempty"`
+	Enabled              *bool                                                               `json:"enabled,omitempty"`
+	OptionTypes          []GetStorageVolumeTypes200ResponseStorageVolumeTypeOptionTypesInner `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}                                              `json:",remain"`
 }
 
 type _StorageVolumeType StorageVolumeType
@@ -141,6 +152,370 @@ func (o *StorageVolumeType) SetName(v string) {
 	o.Name = &v
 }
 
+// GetDescription returns the Description field value if set, zero value otherwise.
+func (o *StorageVolumeType) GetDescription() string {
+	if o == nil || IsNil(o.Description) {
+		var ret string
+		return ret
+	}
+	return *o.Description
+}
+
+// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StorageVolumeType) GetDescriptionOk() (*string, bool) {
+	if o == nil || IsNil(o.Description) {
+		return nil, false
+	}
+	return o.Description, true
+}
+
+// IsSetDescription returns a boolean if a field has been set.
+func (o *StorageVolumeType) IsSetDescription() bool {
+	if o != nil && !IsNil(o.Description) {
+		return true
+	}
+
+	return false
+}
+
+// SetDescription gets a reference to the given string and assigns it to the Description field.
+func (o *StorageVolumeType) SetDescription(v string) {
+	o.Description = &v
+}
+
+// GetDisplayOrder returns the DisplayOrder field value if set, zero value otherwise.
+func (o *StorageVolumeType) GetDisplayOrder() int64 {
+	if o == nil || IsNil(o.DisplayOrder) {
+		var ret int64
+		return ret
+	}
+	return *o.DisplayOrder
+}
+
+// GetDisplayOrderOk returns a tuple with the DisplayOrder field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StorageVolumeType) GetDisplayOrderOk() (*int64, bool) {
+	if o == nil || IsNil(o.DisplayOrder) {
+		return nil, false
+	}
+	return o.DisplayOrder, true
+}
+
+// IsSetDisplayOrder returns a boolean if a field has been set.
+func (o *StorageVolumeType) IsSetDisplayOrder() bool {
+	if o != nil && !IsNil(o.DisplayOrder) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplayOrder gets a reference to the given int64 and assigns it to the DisplayOrder field.
+func (o *StorageVolumeType) SetDisplayOrder(v int64) {
+	o.DisplayOrder = &v
+}
+
+// GetDefaultType returns the DefaultType field value if set, zero value otherwise.
+func (o *StorageVolumeType) GetDefaultType() bool {
+	if o == nil || IsNil(o.DefaultType) {
+		var ret bool
+		return ret
+	}
+	return *o.DefaultType
+}
+
+// GetDefaultTypeOk returns a tuple with the DefaultType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StorageVolumeType) GetDefaultTypeOk() (*bool, bool) {
+	if o == nil || IsNil(o.DefaultType) {
+		return nil, false
+	}
+	return o.DefaultType, true
+}
+
+// IsSetDefaultType returns a boolean if a field has been set.
+func (o *StorageVolumeType) IsSetDefaultType() bool {
+	if o != nil && !IsNil(o.DefaultType) {
+		return true
+	}
+
+	return false
+}
+
+// SetDefaultType gets a reference to the given bool and assigns it to the DefaultType field.
+func (o *StorageVolumeType) SetDefaultType(v bool) {
+	o.DefaultType = &v
+}
+
+// GetCustomLabel returns the CustomLabel field value if set, zero value otherwise.
+func (o *StorageVolumeType) GetCustomLabel() bool {
+	if o == nil || IsNil(o.CustomLabel) {
+		var ret bool
+		return ret
+	}
+	return *o.CustomLabel
+}
+
+// GetCustomLabelOk returns a tuple with the CustomLabel field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StorageVolumeType) GetCustomLabelOk() (*bool, bool) {
+	if o == nil || IsNil(o.CustomLabel) {
+		return nil, false
+	}
+	return o.CustomLabel, true
+}
+
+// IsSetCustomLabel returns a boolean if a field has been set.
+func (o *StorageVolumeType) IsSetCustomLabel() bool {
+	if o != nil && !IsNil(o.CustomLabel) {
+		return true
+	}
+
+	return false
+}
+
+// SetCustomLabel gets a reference to the given bool and assigns it to the CustomLabel field.
+func (o *StorageVolumeType) SetCustomLabel(v bool) {
+	o.CustomLabel = &v
+}
+
+// GetCustomSize returns the CustomSize field value if set, zero value otherwise.
+func (o *StorageVolumeType) GetCustomSize() bool {
+	if o == nil || IsNil(o.CustomSize) {
+		var ret bool
+		return ret
+	}
+	return *o.CustomSize
+}
+
+// GetCustomSizeOk returns a tuple with the CustomSize field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StorageVolumeType) GetCustomSizeOk() (*bool, bool) {
+	if o == nil || IsNil(o.CustomSize) {
+		return nil, false
+	}
+	return o.CustomSize, true
+}
+
+// IsSetCustomSize returns a boolean if a field has been set.
+func (o *StorageVolumeType) IsSetCustomSize() bool {
+	if o != nil && !IsNil(o.CustomSize) {
+		return true
+	}
+
+	return false
+}
+
+// SetCustomSize gets a reference to the given bool and assigns it to the CustomSize field.
+func (o *StorageVolumeType) SetCustomSize(v bool) {
+	o.CustomSize = &v
+}
+
+// GetCustomSizeOptions returns the CustomSizeOptions field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *StorageVolumeType) GetCustomSizeOptions() string {
+	if o == nil || IsNil(o.CustomSizeOptions.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.CustomSizeOptions.Get()
+}
+
+// GetCustomSizeOptionsOk returns a tuple with the CustomSizeOptions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *StorageVolumeType) GetCustomSizeOptionsOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.CustomSizeOptions.Get(), o.CustomSizeOptions.IsSet()
+}
+
+// IsSetCustomSizeOptions returns a boolean if a field has been set.
+func (o *StorageVolumeType) IsSetCustomSizeOptions() bool {
+	if o != nil && o.CustomSizeOptions.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetCustomSizeOptions gets a reference to the given NullableString and assigns it to the CustomSizeOptions field.
+func (o *StorageVolumeType) SetCustomSizeOptions(v string) {
+	o.CustomSizeOptions.Set(&v)
+}
+
+// SetCustomSizeOptionsNil sets the value for CustomSizeOptions to be an explicit nil
+func (o *StorageVolumeType) SetCustomSizeOptionsNil() {
+	o.CustomSizeOptions.Set(nil)
+}
+
+// UnsetCustomSizeOptions ensures that no value is present for CustomSizeOptions, not even an explicit nil
+func (o *StorageVolumeType) UnsetCustomSizeOptions() {
+	o.CustomSizeOptions.Unset()
+}
+
+// GetConfigurableIOPS returns the ConfigurableIOPS field value if set, zero value otherwise.
+func (o *StorageVolumeType) GetConfigurableIOPS() bool {
+	if o == nil || IsNil(o.ConfigurableIOPS) {
+		var ret bool
+		return ret
+	}
+	return *o.ConfigurableIOPS
+}
+
+// GetConfigurableIOPSOk returns a tuple with the ConfigurableIOPS field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StorageVolumeType) GetConfigurableIOPSOk() (*bool, bool) {
+	if o == nil || IsNil(o.ConfigurableIOPS) {
+		return nil, false
+	}
+	return o.ConfigurableIOPS, true
+}
+
+// IsSetConfigurableIOPS returns a boolean if a field has been set.
+func (o *StorageVolumeType) IsSetConfigurableIOPS() bool {
+	if o != nil && !IsNil(o.ConfigurableIOPS) {
+		return true
+	}
+
+	return false
+}
+
+// SetConfigurableIOPS gets a reference to the given bool and assigns it to the ConfigurableIOPS field.
+func (o *StorageVolumeType) SetConfigurableIOPS(v bool) {
+	o.ConfigurableIOPS = &v
+}
+
+// GetHasDatastore returns the HasDatastore field value if set, zero value otherwise.
+func (o *StorageVolumeType) GetHasDatastore() bool {
+	if o == nil || IsNil(o.HasDatastore) {
+		var ret bool
+		return ret
+	}
+	return *o.HasDatastore
+}
+
+// GetHasDatastoreOk returns a tuple with the HasDatastore field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StorageVolumeType) GetHasDatastoreOk() (*bool, bool) {
+	if o == nil || IsNil(o.HasDatastore) {
+		return nil, false
+	}
+	return o.HasDatastore, true
+}
+
+// IsSetHasDatastore returns a boolean if a field has been set.
+func (o *StorageVolumeType) IsSetHasDatastore() bool {
+	if o != nil && !IsNil(o.HasDatastore) {
+		return true
+	}
+
+	return false
+}
+
+// SetHasDatastore gets a reference to the given bool and assigns it to the HasDatastore field.
+func (o *StorageVolumeType) SetHasDatastore(v bool) {
+	o.HasDatastore = &v
+}
+
+// GetCategory returns the Category field value if set, zero value otherwise.
+func (o *StorageVolumeType) GetCategory() string {
+	if o == nil || IsNil(o.Category) {
+		var ret string
+		return ret
+	}
+	return *o.Category
+}
+
+// GetCategoryOk returns a tuple with the Category field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StorageVolumeType) GetCategoryOk() (*string, bool) {
+	if o == nil || IsNil(o.Category) {
+		return nil, false
+	}
+	return o.Category, true
+}
+
+// IsSetCategory returns a boolean if a field has been set.
+func (o *StorageVolumeType) IsSetCategory() bool {
+	if o != nil && !IsNil(o.Category) {
+		return true
+	}
+
+	return false
+}
+
+// SetCategory gets a reference to the given string and assigns it to the Category field.
+func (o *StorageVolumeType) SetCategory(v string) {
+	o.Category = &v
+}
+
+// GetEnabled returns the Enabled field value if set, zero value otherwise.
+func (o *StorageVolumeType) GetEnabled() bool {
+	if o == nil || IsNil(o.Enabled) {
+		var ret bool
+		return ret
+	}
+	return *o.Enabled
+}
+
+// GetEnabledOk returns a tuple with the Enabled field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StorageVolumeType) GetEnabledOk() (*bool, bool) {
+	if o == nil || IsNil(o.Enabled) {
+		return nil, false
+	}
+	return o.Enabled, true
+}
+
+// IsSetEnabled returns a boolean if a field has been set.
+func (o *StorageVolumeType) IsSetEnabled() bool {
+	if o != nil && !IsNil(o.Enabled) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
+func (o *StorageVolumeType) SetEnabled(v bool) {
+	o.Enabled = &v
+}
+
+// GetOptionTypes returns the OptionTypes field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *StorageVolumeType) GetOptionTypes() []GetStorageVolumeTypes200ResponseStorageVolumeTypeOptionTypesInner {
+	if o == nil {
+		var ret []GetStorageVolumeTypes200ResponseStorageVolumeTypeOptionTypesInner
+		return ret
+	}
+	return o.OptionTypes
+}
+
+// GetOptionTypesOk returns a tuple with the OptionTypes field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *StorageVolumeType) GetOptionTypesOk() ([]GetStorageVolumeTypes200ResponseStorageVolumeTypeOptionTypesInner, bool) {
+	if o == nil || IsNil(o.OptionTypes) {
+		return nil, false
+	}
+	return o.OptionTypes, true
+}
+
+// IsSetOptionTypes returns a boolean if a field has been set.
+func (o *StorageVolumeType) IsSetOptionTypes() bool {
+	if o != nil && !IsNil(o.OptionTypes) {
+		return true
+	}
+
+	return false
+}
+
+// SetOptionTypes gets a reference to the given []GetStorageVolumeTypes200ResponseStorageVolumeTypeOptionTypesInner and assigns it to the OptionTypes field.
+func (o *StorageVolumeType) SetOptionTypes(v []GetStorageVolumeTypes200ResponseStorageVolumeTypeOptionTypesInner) {
+	o.OptionTypes = v
+}
+
 func (o StorageVolumeType) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -159,6 +534,39 @@ func (o StorageVolumeType) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.DisplayOrder) {
+		toSerialize["displayOrder"] = o.DisplayOrder
+	}
+	if !IsNil(o.DefaultType) {
+		toSerialize["defaultType"] = o.DefaultType
+	}
+	if !IsNil(o.CustomLabel) {
+		toSerialize["customLabel"] = o.CustomLabel
+	}
+	if !IsNil(o.CustomSize) {
+		toSerialize["customSize"] = o.CustomSize
+	}
+	if o.CustomSizeOptions.IsSet() {
+		toSerialize["customSizeOptions"] = o.CustomSizeOptions.Get()
+	}
+	if !IsNil(o.ConfigurableIOPS) {
+		toSerialize["configurableIOPS"] = o.ConfigurableIOPS
+	}
+	if !IsNil(o.HasDatastore) {
+		toSerialize["hasDatastore"] = o.HasDatastore
+	}
+	if !IsNil(o.Category) {
+		toSerialize["category"] = o.Category
+	}
+	if !IsNil(o.Enabled) {
+		toSerialize["enabled"] = o.Enabled
+	}
+	if o.OptionTypes != nil {
+		toSerialize["optionTypes"] = o.OptionTypes
 	}
 
 	for key, value := range o.AdditionalProperties {

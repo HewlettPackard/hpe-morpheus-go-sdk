@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **All** | Pointer to **bool** |  | [optional] 
-**Sites** | Pointer to [**[]ResourcePermissionsSitesInner**](ResourcePermissionsSitesInner.md) |  | [optional] 
+**Sites** | Pointer to [**[]ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsSitesInner**](ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsSitesInner.md) |  | [optional] 
 **AllPlans** | Pointer to **bool** |  | [optional] 
-**Plans** | Pointer to [**[]ResourcePermissionsPlansInner**](ResourcePermissionsPlansInner.md) |  | [optional] 
+**Plans** | Pointer to [**[]ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsPlansInner**](ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsPlansInner.md) |  | [optional] 
 
 ## Methods
 
@@ -55,20 +55,20 @@ HasAll returns a boolean if a field has been set.
 
 ### GetSites
 
-`func (o *ResourcePermissions) GetSites() []ResourcePermissionsSitesInner`
+`func (o *ResourcePermissions) GetSites() []ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsSitesInner`
 
 GetSites returns the Sites field if non-nil, zero value otherwise.
 
 ### GetSitesOk
 
-`func (o *ResourcePermissions) GetSitesOk() (*[]ResourcePermissionsSitesInner, bool)`
+`func (o *ResourcePermissions) GetSitesOk() (*[]ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsSitesInner, bool)`
 
 GetSitesOk returns a tuple with the Sites field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSites
 
-`func (o *ResourcePermissions) SetSites(v []ResourcePermissionsSitesInner)`
+`func (o *ResourcePermissions) SetSites(v []ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsSitesInner)`
 
 SetSites sets Sites field to given value.
 
@@ -115,20 +115,20 @@ HasAllPlans returns a boolean if a field has been set.
 
 ### GetPlans
 
-`func (o *ResourcePermissions) GetPlans() []ResourcePermissionsPlansInner`
+`func (o *ResourcePermissions) GetPlans() []ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsPlansInner`
 
 GetPlans returns the Plans field if non-nil, zero value otherwise.
 
 ### GetPlansOk
 
-`func (o *ResourcePermissions) GetPlansOk() (*[]ResourcePermissionsPlansInner, bool)`
+`func (o *ResourcePermissions) GetPlansOk() (*[]ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsPlansInner, bool)`
 
 GetPlansOk returns a tuple with the Plans field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlans
 
-`func (o *ResourcePermissions) SetPlans(v []ResourcePermissionsPlansInner)`
+`func (o *ResourcePermissions) SetPlans(v []ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsPlansInner)`
 
 SetPlans sets Plans field to given value.
 

@@ -20,38 +20,38 @@ var _ MappedNullable = &CatalogItemTypeInstanceScribe{}
 
 // CatalogItemTypeInstanceScribe struct for CatalogItemTypeInstanceScribe
 type CatalogItemTypeInstanceScribe struct {
-	Group CatalogItemTypeInstanceScribeGroup `json:"group"`
-	Cloud CatalogItemTypeInstanceScribeCloud `json:"cloud"`
+	Group InstanceConfigObject1Group `json:"group"`
+	Cloud InstanceConfigObject1Cloud `json:"cloud"`
 	// The type of instance by code we want to fetch.
 	Type string `json:"type"`
 	// Name of the instance to be created.
-	Name   string                              `json:"name"`
-	Config CatalogItemTypeInstanceScribeConfig `json:"config"`
+	Name   string                      `json:"name"`
+	Config InstanceConfigObject1Config `json:"config"`
 	// The (optional) volumes parameter is for LV configuration, can create additional LVs at provision It should be passed as an array of
-	Volumes []CatalogItemTypeInstanceScribeVolumesInner `json:"volumes"`
+	Volumes []InstanceConfigObject1VolumesInner `json:"volumes"`
 	// Hostname of the instance to be created.  Can be the same as the instance name.
 	HostName *string `json:"hostName,omitempty"`
 	// Environment code
-	Environment *string                             `json:"environment,omitempty"`
-	Layout      CatalogItemTypeInstanceScribeLayout `json:"layout"`
-	Plan        CatalogItemTypeInstanceScribePlan   `json:"plan"`
+	Environment *string                     `json:"environment,omitempty"`
+	Layout      InstanceConfigObject1Layout `json:"layout"`
+	Plan        InstanceConfigObject1Plan   `json:"plan"`
 	// Version of the layout to create.
 	Version *string `json:"version,omitempty"`
 	// Environment Variables, an array of objects that have name and value.
-	Evars              []CatalogItemTypeInstanceScribeEvarsInner        `json:"evars,omitempty"`
-	ServicePlanOptions *CatalogItemTypeInstanceScribeServicePlanOptions `json:"servicePlanOptions,omitempty"`
+	Evars              []InstanceConfigObject1EvarsInner        `json:"evars,omitempty"`
+	ServicePlanOptions *InstanceConfigObject1ServicePlanOptions `json:"servicePlanOptions,omitempty"`
 	// Key for security group configuration. It should be passed as an array of objects containing the id of the security group to assign the instance to.
-	SecurityGroups []CatalogItemTypeInstanceScribeSecurityGroupsInner `json:"securityGroups,omitempty"`
+	SecurityGroups []InstanceConfigObject1SecurityGroupsInner `json:"securityGroups,omitempty"`
 	// The networkInterfaces parameter is for network configuration.  The Options API `/api/options/zoneNetworkOptions?zoneId=5&provisionTypeId=10` can be used to see which options are available.
-	NetworkInterfaces []InstancesNetworkInterfaces3 `json:"networkInterfaces,omitempty"`
+	NetworkInterfaces []InstancesNetworkInterfaces1 `json:"networkInterfaces,omitempty"`
 	// Array of strings (keywords).
 	Labels []string `json:"labels,omitempty"`
 	// Metadata tags, Array of objects having a name and value.
-	Tags []CatalogItemTypeInstanceScribeTagsInner `json:"tags,omitempty"`
+	Tags []InstanceConfigObject1TagsInner `json:"tags,omitempty"`
 	// Alias for `tags`.
-	Metadata []CatalogItemTypeInstanceScribeMetadataInner `json:"metadata,omitempty"`
+	Metadata []InstanceConfigObject1MetadataInner `json:"metadata,omitempty"`
 	// The ports parameter is for port configuration.  The layout may have default ports, which are defined in node types, that are always configured. This parameter will be for additional custom ports to be opened.
-	Ports []CatalogItemTypeInstanceScribePortsInner `json:"ports,omitempty"`
+	Ports []InstanceConfigObject1PortsInner `json:"ports,omitempty"`
 	// The Workflow ID to execute.
 	TaskSetId *int64 `json:"taskSetId,omitempty"`
 	// The Workflow Name to execute.
@@ -65,7 +65,7 @@ type _CatalogItemTypeInstanceScribe CatalogItemTypeInstanceScribe
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCatalogItemTypeInstanceScribe(group CatalogItemTypeInstanceScribeGroup, cloud CatalogItemTypeInstanceScribeCloud, type_ string, name string, config CatalogItemTypeInstanceScribeConfig, volumes []CatalogItemTypeInstanceScribeVolumesInner, layout CatalogItemTypeInstanceScribeLayout, plan CatalogItemTypeInstanceScribePlan) *CatalogItemTypeInstanceScribe {
+func NewCatalogItemTypeInstanceScribe(group InstanceConfigObject1Group, cloud InstanceConfigObject1Cloud, type_ string, name string, config InstanceConfigObject1Config, volumes []InstanceConfigObject1VolumesInner, layout InstanceConfigObject1Layout, plan InstanceConfigObject1Plan) *CatalogItemTypeInstanceScribe {
 	this := CatalogItemTypeInstanceScribe{}
 	this.Group = group
 	this.Cloud = cloud
@@ -87,9 +87,9 @@ func NewCatalogItemTypeInstanceScribeWithDefaults() *CatalogItemTypeInstanceScri
 }
 
 // GetGroup returns the Group field value
-func (o *CatalogItemTypeInstanceScribe) GetGroup() CatalogItemTypeInstanceScribeGroup {
+func (o *CatalogItemTypeInstanceScribe) GetGroup() InstanceConfigObject1Group {
 	if o == nil {
-		var ret CatalogItemTypeInstanceScribeGroup
+		var ret InstanceConfigObject1Group
 		return ret
 	}
 
@@ -98,7 +98,7 @@ func (o *CatalogItemTypeInstanceScribe) GetGroup() CatalogItemTypeInstanceScribe
 
 // GetGroupOk returns a tuple with the Group field value
 // and a boolean to check if the value has been set.
-func (o *CatalogItemTypeInstanceScribe) GetGroupOk() (*CatalogItemTypeInstanceScribeGroup, bool) {
+func (o *CatalogItemTypeInstanceScribe) GetGroupOk() (*InstanceConfigObject1Group, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -106,14 +106,14 @@ func (o *CatalogItemTypeInstanceScribe) GetGroupOk() (*CatalogItemTypeInstanceSc
 }
 
 // SetGroup sets field value
-func (o *CatalogItemTypeInstanceScribe) SetGroup(v CatalogItemTypeInstanceScribeGroup) {
+func (o *CatalogItemTypeInstanceScribe) SetGroup(v InstanceConfigObject1Group) {
 	o.Group = v
 }
 
 // GetCloud returns the Cloud field value
-func (o *CatalogItemTypeInstanceScribe) GetCloud() CatalogItemTypeInstanceScribeCloud {
+func (o *CatalogItemTypeInstanceScribe) GetCloud() InstanceConfigObject1Cloud {
 	if o == nil {
-		var ret CatalogItemTypeInstanceScribeCloud
+		var ret InstanceConfigObject1Cloud
 		return ret
 	}
 
@@ -122,7 +122,7 @@ func (o *CatalogItemTypeInstanceScribe) GetCloud() CatalogItemTypeInstanceScribe
 
 // GetCloudOk returns a tuple with the Cloud field value
 // and a boolean to check if the value has been set.
-func (o *CatalogItemTypeInstanceScribe) GetCloudOk() (*CatalogItemTypeInstanceScribeCloud, bool) {
+func (o *CatalogItemTypeInstanceScribe) GetCloudOk() (*InstanceConfigObject1Cloud, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -130,7 +130,7 @@ func (o *CatalogItemTypeInstanceScribe) GetCloudOk() (*CatalogItemTypeInstanceSc
 }
 
 // SetCloud sets field value
-func (o *CatalogItemTypeInstanceScribe) SetCloud(v CatalogItemTypeInstanceScribeCloud) {
+func (o *CatalogItemTypeInstanceScribe) SetCloud(v InstanceConfigObject1Cloud) {
 	o.Cloud = v
 }
 
@@ -183,9 +183,9 @@ func (o *CatalogItemTypeInstanceScribe) SetName(v string) {
 }
 
 // GetConfig returns the Config field value
-func (o *CatalogItemTypeInstanceScribe) GetConfig() CatalogItemTypeInstanceScribeConfig {
+func (o *CatalogItemTypeInstanceScribe) GetConfig() InstanceConfigObject1Config {
 	if o == nil {
-		var ret CatalogItemTypeInstanceScribeConfig
+		var ret InstanceConfigObject1Config
 		return ret
 	}
 
@@ -194,7 +194,7 @@ func (o *CatalogItemTypeInstanceScribe) GetConfig() CatalogItemTypeInstanceScrib
 
 // GetConfigOk returns a tuple with the Config field value
 // and a boolean to check if the value has been set.
-func (o *CatalogItemTypeInstanceScribe) GetConfigOk() (*CatalogItemTypeInstanceScribeConfig, bool) {
+func (o *CatalogItemTypeInstanceScribe) GetConfigOk() (*InstanceConfigObject1Config, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -202,14 +202,14 @@ func (o *CatalogItemTypeInstanceScribe) GetConfigOk() (*CatalogItemTypeInstanceS
 }
 
 // SetConfig sets field value
-func (o *CatalogItemTypeInstanceScribe) SetConfig(v CatalogItemTypeInstanceScribeConfig) {
+func (o *CatalogItemTypeInstanceScribe) SetConfig(v InstanceConfigObject1Config) {
 	o.Config = v
 }
 
 // GetVolumes returns the Volumes field value
-func (o *CatalogItemTypeInstanceScribe) GetVolumes() []CatalogItemTypeInstanceScribeVolumesInner {
+func (o *CatalogItemTypeInstanceScribe) GetVolumes() []InstanceConfigObject1VolumesInner {
 	if o == nil {
-		var ret []CatalogItemTypeInstanceScribeVolumesInner
+		var ret []InstanceConfigObject1VolumesInner
 		return ret
 	}
 
@@ -218,7 +218,7 @@ func (o *CatalogItemTypeInstanceScribe) GetVolumes() []CatalogItemTypeInstanceSc
 
 // GetVolumesOk returns a tuple with the Volumes field value
 // and a boolean to check if the value has been set.
-func (o *CatalogItemTypeInstanceScribe) GetVolumesOk() ([]CatalogItemTypeInstanceScribeVolumesInner, bool) {
+func (o *CatalogItemTypeInstanceScribe) GetVolumesOk() ([]InstanceConfigObject1VolumesInner, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -226,7 +226,7 @@ func (o *CatalogItemTypeInstanceScribe) GetVolumesOk() ([]CatalogItemTypeInstanc
 }
 
 // SetVolumes sets field value
-func (o *CatalogItemTypeInstanceScribe) SetVolumes(v []CatalogItemTypeInstanceScribeVolumesInner) {
+func (o *CatalogItemTypeInstanceScribe) SetVolumes(v []InstanceConfigObject1VolumesInner) {
 	o.Volumes = v
 }
 
@@ -295,9 +295,9 @@ func (o *CatalogItemTypeInstanceScribe) SetEnvironment(v string) {
 }
 
 // GetLayout returns the Layout field value
-func (o *CatalogItemTypeInstanceScribe) GetLayout() CatalogItemTypeInstanceScribeLayout {
+func (o *CatalogItemTypeInstanceScribe) GetLayout() InstanceConfigObject1Layout {
 	if o == nil {
-		var ret CatalogItemTypeInstanceScribeLayout
+		var ret InstanceConfigObject1Layout
 		return ret
 	}
 
@@ -306,7 +306,7 @@ func (o *CatalogItemTypeInstanceScribe) GetLayout() CatalogItemTypeInstanceScrib
 
 // GetLayoutOk returns a tuple with the Layout field value
 // and a boolean to check if the value has been set.
-func (o *CatalogItemTypeInstanceScribe) GetLayoutOk() (*CatalogItemTypeInstanceScribeLayout, bool) {
+func (o *CatalogItemTypeInstanceScribe) GetLayoutOk() (*InstanceConfigObject1Layout, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -314,14 +314,14 @@ func (o *CatalogItemTypeInstanceScribe) GetLayoutOk() (*CatalogItemTypeInstanceS
 }
 
 // SetLayout sets field value
-func (o *CatalogItemTypeInstanceScribe) SetLayout(v CatalogItemTypeInstanceScribeLayout) {
+func (o *CatalogItemTypeInstanceScribe) SetLayout(v InstanceConfigObject1Layout) {
 	o.Layout = v
 }
 
 // GetPlan returns the Plan field value
-func (o *CatalogItemTypeInstanceScribe) GetPlan() CatalogItemTypeInstanceScribePlan {
+func (o *CatalogItemTypeInstanceScribe) GetPlan() InstanceConfigObject1Plan {
 	if o == nil {
-		var ret CatalogItemTypeInstanceScribePlan
+		var ret InstanceConfigObject1Plan
 		return ret
 	}
 
@@ -330,7 +330,7 @@ func (o *CatalogItemTypeInstanceScribe) GetPlan() CatalogItemTypeInstanceScribeP
 
 // GetPlanOk returns a tuple with the Plan field value
 // and a boolean to check if the value has been set.
-func (o *CatalogItemTypeInstanceScribe) GetPlanOk() (*CatalogItemTypeInstanceScribePlan, bool) {
+func (o *CatalogItemTypeInstanceScribe) GetPlanOk() (*InstanceConfigObject1Plan, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -338,7 +338,7 @@ func (o *CatalogItemTypeInstanceScribe) GetPlanOk() (*CatalogItemTypeInstanceScr
 }
 
 // SetPlan sets field value
-func (o *CatalogItemTypeInstanceScribe) SetPlan(v CatalogItemTypeInstanceScribePlan) {
+func (o *CatalogItemTypeInstanceScribe) SetPlan(v InstanceConfigObject1Plan) {
 	o.Plan = v
 }
 
@@ -375,9 +375,9 @@ func (o *CatalogItemTypeInstanceScribe) SetVersion(v string) {
 }
 
 // GetEvars returns the Evars field value if set, zero value otherwise.
-func (o *CatalogItemTypeInstanceScribe) GetEvars() []CatalogItemTypeInstanceScribeEvarsInner {
+func (o *CatalogItemTypeInstanceScribe) GetEvars() []InstanceConfigObject1EvarsInner {
 	if o == nil || IsNil(o.Evars) {
-		var ret []CatalogItemTypeInstanceScribeEvarsInner
+		var ret []InstanceConfigObject1EvarsInner
 		return ret
 	}
 	return o.Evars
@@ -385,7 +385,7 @@ func (o *CatalogItemTypeInstanceScribe) GetEvars() []CatalogItemTypeInstanceScri
 
 // GetEvarsOk returns a tuple with the Evars field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CatalogItemTypeInstanceScribe) GetEvarsOk() ([]CatalogItemTypeInstanceScribeEvarsInner, bool) {
+func (o *CatalogItemTypeInstanceScribe) GetEvarsOk() ([]InstanceConfigObject1EvarsInner, bool) {
 	if o == nil || IsNil(o.Evars) {
 		return nil, false
 	}
@@ -401,15 +401,15 @@ func (o *CatalogItemTypeInstanceScribe) IsSetEvars() bool {
 	return false
 }
 
-// SetEvars gets a reference to the given []CatalogItemTypeInstanceScribeEvarsInner and assigns it to the Evars field.
-func (o *CatalogItemTypeInstanceScribe) SetEvars(v []CatalogItemTypeInstanceScribeEvarsInner) {
+// SetEvars gets a reference to the given []InstanceConfigObject1EvarsInner and assigns it to the Evars field.
+func (o *CatalogItemTypeInstanceScribe) SetEvars(v []InstanceConfigObject1EvarsInner) {
 	o.Evars = v
 }
 
 // GetServicePlanOptions returns the ServicePlanOptions field value if set, zero value otherwise.
-func (o *CatalogItemTypeInstanceScribe) GetServicePlanOptions() CatalogItemTypeInstanceScribeServicePlanOptions {
+func (o *CatalogItemTypeInstanceScribe) GetServicePlanOptions() InstanceConfigObject1ServicePlanOptions {
 	if o == nil || IsNil(o.ServicePlanOptions) {
-		var ret CatalogItemTypeInstanceScribeServicePlanOptions
+		var ret InstanceConfigObject1ServicePlanOptions
 		return ret
 	}
 	return *o.ServicePlanOptions
@@ -417,7 +417,7 @@ func (o *CatalogItemTypeInstanceScribe) GetServicePlanOptions() CatalogItemTypeI
 
 // GetServicePlanOptionsOk returns a tuple with the ServicePlanOptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CatalogItemTypeInstanceScribe) GetServicePlanOptionsOk() (*CatalogItemTypeInstanceScribeServicePlanOptions, bool) {
+func (o *CatalogItemTypeInstanceScribe) GetServicePlanOptionsOk() (*InstanceConfigObject1ServicePlanOptions, bool) {
 	if o == nil || IsNil(o.ServicePlanOptions) {
 		return nil, false
 	}
@@ -433,15 +433,15 @@ func (o *CatalogItemTypeInstanceScribe) IsSetServicePlanOptions() bool {
 	return false
 }
 
-// SetServicePlanOptions gets a reference to the given CatalogItemTypeInstanceScribeServicePlanOptions and assigns it to the ServicePlanOptions field.
-func (o *CatalogItemTypeInstanceScribe) SetServicePlanOptions(v CatalogItemTypeInstanceScribeServicePlanOptions) {
+// SetServicePlanOptions gets a reference to the given InstanceConfigObject1ServicePlanOptions and assigns it to the ServicePlanOptions field.
+func (o *CatalogItemTypeInstanceScribe) SetServicePlanOptions(v InstanceConfigObject1ServicePlanOptions) {
 	o.ServicePlanOptions = &v
 }
 
 // GetSecurityGroups returns the SecurityGroups field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CatalogItemTypeInstanceScribe) GetSecurityGroups() []CatalogItemTypeInstanceScribeSecurityGroupsInner {
+func (o *CatalogItemTypeInstanceScribe) GetSecurityGroups() []InstanceConfigObject1SecurityGroupsInner {
 	if o == nil {
-		var ret []CatalogItemTypeInstanceScribeSecurityGroupsInner
+		var ret []InstanceConfigObject1SecurityGroupsInner
 		return ret
 	}
 	return o.SecurityGroups
@@ -450,7 +450,7 @@ func (o *CatalogItemTypeInstanceScribe) GetSecurityGroups() []CatalogItemTypeIns
 // GetSecurityGroupsOk returns a tuple with the SecurityGroups field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CatalogItemTypeInstanceScribe) GetSecurityGroupsOk() ([]CatalogItemTypeInstanceScribeSecurityGroupsInner, bool) {
+func (o *CatalogItemTypeInstanceScribe) GetSecurityGroupsOk() ([]InstanceConfigObject1SecurityGroupsInner, bool) {
 	if o == nil || IsNil(o.SecurityGroups) {
 		return nil, false
 	}
@@ -466,15 +466,15 @@ func (o *CatalogItemTypeInstanceScribe) IsSetSecurityGroups() bool {
 	return false
 }
 
-// SetSecurityGroups gets a reference to the given []CatalogItemTypeInstanceScribeSecurityGroupsInner and assigns it to the SecurityGroups field.
-func (o *CatalogItemTypeInstanceScribe) SetSecurityGroups(v []CatalogItemTypeInstanceScribeSecurityGroupsInner) {
+// SetSecurityGroups gets a reference to the given []InstanceConfigObject1SecurityGroupsInner and assigns it to the SecurityGroups field.
+func (o *CatalogItemTypeInstanceScribe) SetSecurityGroups(v []InstanceConfigObject1SecurityGroupsInner) {
 	o.SecurityGroups = v
 }
 
 // GetNetworkInterfaces returns the NetworkInterfaces field value if set, zero value otherwise.
-func (o *CatalogItemTypeInstanceScribe) GetNetworkInterfaces() []InstancesNetworkInterfaces3 {
+func (o *CatalogItemTypeInstanceScribe) GetNetworkInterfaces() []InstancesNetworkInterfaces1 {
 	if o == nil || IsNil(o.NetworkInterfaces) {
-		var ret []InstancesNetworkInterfaces3
+		var ret []InstancesNetworkInterfaces1
 		return ret
 	}
 	return o.NetworkInterfaces
@@ -482,7 +482,7 @@ func (o *CatalogItemTypeInstanceScribe) GetNetworkInterfaces() []InstancesNetwor
 
 // GetNetworkInterfacesOk returns a tuple with the NetworkInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CatalogItemTypeInstanceScribe) GetNetworkInterfacesOk() ([]InstancesNetworkInterfaces3, bool) {
+func (o *CatalogItemTypeInstanceScribe) GetNetworkInterfacesOk() ([]InstancesNetworkInterfaces1, bool) {
 	if o == nil || IsNil(o.NetworkInterfaces) {
 		return nil, false
 	}
@@ -498,8 +498,8 @@ func (o *CatalogItemTypeInstanceScribe) IsSetNetworkInterfaces() bool {
 	return false
 }
 
-// SetNetworkInterfaces gets a reference to the given []InstancesNetworkInterfaces3 and assigns it to the NetworkInterfaces field.
-func (o *CatalogItemTypeInstanceScribe) SetNetworkInterfaces(v []InstancesNetworkInterfaces3) {
+// SetNetworkInterfaces gets a reference to the given []InstancesNetworkInterfaces1 and assigns it to the NetworkInterfaces field.
+func (o *CatalogItemTypeInstanceScribe) SetNetworkInterfaces(v []InstancesNetworkInterfaces1) {
 	o.NetworkInterfaces = v
 }
 
@@ -536,9 +536,9 @@ func (o *CatalogItemTypeInstanceScribe) SetLabels(v []string) {
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise.
-func (o *CatalogItemTypeInstanceScribe) GetTags() []CatalogItemTypeInstanceScribeTagsInner {
+func (o *CatalogItemTypeInstanceScribe) GetTags() []InstanceConfigObject1TagsInner {
 	if o == nil || IsNil(o.Tags) {
-		var ret []CatalogItemTypeInstanceScribeTagsInner
+		var ret []InstanceConfigObject1TagsInner
 		return ret
 	}
 	return o.Tags
@@ -546,7 +546,7 @@ func (o *CatalogItemTypeInstanceScribe) GetTags() []CatalogItemTypeInstanceScrib
 
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CatalogItemTypeInstanceScribe) GetTagsOk() ([]CatalogItemTypeInstanceScribeTagsInner, bool) {
+func (o *CatalogItemTypeInstanceScribe) GetTagsOk() ([]InstanceConfigObject1TagsInner, bool) {
 	if o == nil || IsNil(o.Tags) {
 		return nil, false
 	}
@@ -562,15 +562,15 @@ func (o *CatalogItemTypeInstanceScribe) IsSetTags() bool {
 	return false
 }
 
-// SetTags gets a reference to the given []CatalogItemTypeInstanceScribeTagsInner and assigns it to the Tags field.
-func (o *CatalogItemTypeInstanceScribe) SetTags(v []CatalogItemTypeInstanceScribeTagsInner) {
+// SetTags gets a reference to the given []InstanceConfigObject1TagsInner and assigns it to the Tags field.
+func (o *CatalogItemTypeInstanceScribe) SetTags(v []InstanceConfigObject1TagsInner) {
 	o.Tags = v
 }
 
 // GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *CatalogItemTypeInstanceScribe) GetMetadata() []CatalogItemTypeInstanceScribeMetadataInner {
+func (o *CatalogItemTypeInstanceScribe) GetMetadata() []InstanceConfigObject1MetadataInner {
 	if o == nil || IsNil(o.Metadata) {
-		var ret []CatalogItemTypeInstanceScribeMetadataInner
+		var ret []InstanceConfigObject1MetadataInner
 		return ret
 	}
 	return o.Metadata
@@ -578,7 +578,7 @@ func (o *CatalogItemTypeInstanceScribe) GetMetadata() []CatalogItemTypeInstanceS
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CatalogItemTypeInstanceScribe) GetMetadataOk() ([]CatalogItemTypeInstanceScribeMetadataInner, bool) {
+func (o *CatalogItemTypeInstanceScribe) GetMetadataOk() ([]InstanceConfigObject1MetadataInner, bool) {
 	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
@@ -594,15 +594,15 @@ func (o *CatalogItemTypeInstanceScribe) IsSetMetadata() bool {
 	return false
 }
 
-// SetMetadata gets a reference to the given []CatalogItemTypeInstanceScribeMetadataInner and assigns it to the Metadata field.
-func (o *CatalogItemTypeInstanceScribe) SetMetadata(v []CatalogItemTypeInstanceScribeMetadataInner) {
+// SetMetadata gets a reference to the given []InstanceConfigObject1MetadataInner and assigns it to the Metadata field.
+func (o *CatalogItemTypeInstanceScribe) SetMetadata(v []InstanceConfigObject1MetadataInner) {
 	o.Metadata = v
 }
 
 // GetPorts returns the Ports field value if set, zero value otherwise.
-func (o *CatalogItemTypeInstanceScribe) GetPorts() []CatalogItemTypeInstanceScribePortsInner {
+func (o *CatalogItemTypeInstanceScribe) GetPorts() []InstanceConfigObject1PortsInner {
 	if o == nil || IsNil(o.Ports) {
-		var ret []CatalogItemTypeInstanceScribePortsInner
+		var ret []InstanceConfigObject1PortsInner
 		return ret
 	}
 	return o.Ports
@@ -610,7 +610,7 @@ func (o *CatalogItemTypeInstanceScribe) GetPorts() []CatalogItemTypeInstanceScri
 
 // GetPortsOk returns a tuple with the Ports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CatalogItemTypeInstanceScribe) GetPortsOk() ([]CatalogItemTypeInstanceScribePortsInner, bool) {
+func (o *CatalogItemTypeInstanceScribe) GetPortsOk() ([]InstanceConfigObject1PortsInner, bool) {
 	if o == nil || IsNil(o.Ports) {
 		return nil, false
 	}
@@ -626,8 +626,8 @@ func (o *CatalogItemTypeInstanceScribe) IsSetPorts() bool {
 	return false
 }
 
-// SetPorts gets a reference to the given []CatalogItemTypeInstanceScribePortsInner and assigns it to the Ports field.
-func (o *CatalogItemTypeInstanceScribe) SetPorts(v []CatalogItemTypeInstanceScribePortsInner) {
+// SetPorts gets a reference to the given []InstanceConfigObject1PortsInner and assigns it to the Ports field.
+func (o *CatalogItemTypeInstanceScribe) SetPorts(v []InstanceConfigObject1PortsInner) {
 	o.Ports = v
 }
 

@@ -20,9 +20,9 @@ var _ MappedNullable = &UpdateUser200Response{}
 
 // UpdateUser200Response struct for UpdateUser200Response
 type UpdateUser200Response struct {
-	User                 *UpdateUser200ResponseAllOfUser `json:"user,omitempty"`
-	Success              *bool                           `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}          `json:",remain"`
+	User                 *AddUser200ResponseAllOfUser `json:"user,omitempty"`
+	Success              *bool                        `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}       `json:",remain"`
 }
 
 type _UpdateUser200Response UpdateUser200Response
@@ -45,9 +45,9 @@ func NewUpdateUser200ResponseWithDefaults() *UpdateUser200Response {
 }
 
 // GetUser returns the User field value if set, zero value otherwise.
-func (o *UpdateUser200Response) GetUser() UpdateUser200ResponseAllOfUser {
+func (o *UpdateUser200Response) GetUser() AddUser200ResponseAllOfUser {
 	if o == nil || IsNil(o.User) {
-		var ret UpdateUser200ResponseAllOfUser
+		var ret AddUser200ResponseAllOfUser
 		return ret
 	}
 	return *o.User
@@ -55,7 +55,7 @@ func (o *UpdateUser200Response) GetUser() UpdateUser200ResponseAllOfUser {
 
 // GetUserOk returns a tuple with the User field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateUser200Response) GetUserOk() (*UpdateUser200ResponseAllOfUser, bool) {
+func (o *UpdateUser200Response) GetUserOk() (*AddUser200ResponseAllOfUser, bool) {
 	if o == nil || IsNil(o.User) {
 		return nil, false
 	}
@@ -71,8 +71,8 @@ func (o *UpdateUser200Response) IsSetUser() bool {
 	return false
 }
 
-// SetUser gets a reference to the given UpdateUser200ResponseAllOfUser and assigns it to the User field.
-func (o *UpdateUser200Response) SetUser(v UpdateUser200ResponseAllOfUser) {
+// SetUser gets a reference to the given AddUser200ResponseAllOfUser and assigns it to the User field.
+func (o *UpdateUser200Response) SetUser(v AddUser200ResponseAllOfUser) {
 	o.User = &v
 }
 

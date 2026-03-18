@@ -17,8 +17,8 @@ Name | Type | Description | Notes
 **EachUser** | Pointer to **NullableBool** |  | [optional] 
 **Config** | Pointer to [**UpdatePolicies200ResponseAllOfPolicyConfig**](UpdatePolicies200ResponseAllOfPolicyConfig.md) |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**Owner** | Pointer to [**UpdatePolicies200ResponseAllOfPolicyOwner**](UpdatePolicies200ResponseAllOfPolicyOwner.md) |  | [optional] 
-**Accounts** | Pointer to [**[]AddPolicies200ResponseAllOfPolicyAccountsInner**](AddPolicies200ResponseAllOfPolicyAccountsInner.md) |  | [optional] 
+**Owner** | Pointer to [**NullableUpdatePolicies200ResponseAllOfPolicyOwner**](UpdatePolicies200ResponseAllOfPolicyOwner.md) |  | [optional] 
+**Accounts** | Pointer to [**[]ListPolicies200ResponseAllOfPoliciesInnerAccountsInner**](ListPolicies200ResponseAllOfPoliciesInnerAccountsInner.md) |  | [optional] 
 
 ## Methods
 
@@ -429,22 +429,32 @@ SetOwner sets Owner field to given value.
 
 HasOwner returns a boolean if a field has been set.
 
+### SetOwnerNil
+
+`func (o *UpdatePolicies200ResponseAllOfPolicy) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *UpdatePolicies200ResponseAllOfPolicy) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetAccounts
 
-`func (o *UpdatePolicies200ResponseAllOfPolicy) GetAccounts() []AddPolicies200ResponseAllOfPolicyAccountsInner`
+`func (o *UpdatePolicies200ResponseAllOfPolicy) GetAccounts() []ListPolicies200ResponseAllOfPoliciesInnerAccountsInner`
 
 GetAccounts returns the Accounts field if non-nil, zero value otherwise.
 
 ### GetAccountsOk
 
-`func (o *UpdatePolicies200ResponseAllOfPolicy) GetAccountsOk() (*[]AddPolicies200ResponseAllOfPolicyAccountsInner, bool)`
+`func (o *UpdatePolicies200ResponseAllOfPolicy) GetAccountsOk() (*[]ListPolicies200ResponseAllOfPoliciesInnerAccountsInner, bool)`
 
 GetAccountsOk returns a tuple with the Accounts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccounts
 
-`func (o *UpdatePolicies200ResponseAllOfPolicy) SetAccounts(v []AddPolicies200ResponseAllOfPolicyAccountsInner)`
+`func (o *UpdatePolicies200ResponseAllOfPolicy) SetAccounts(v []ListPolicies200ResponseAllOfPoliciesInnerAccountsInner)`
 
 SetAccounts sets Accounts field to given value.
 
@@ -454,6 +464,16 @@ SetAccounts sets Accounts field to given value.
 
 HasAccounts returns a boolean if a field has been set.
 
+### SetAccountsNil
+
+`func (o *UpdatePolicies200ResponseAllOfPolicy) SetAccountsNil(b bool)`
+
+ SetAccountsNil sets the value for Accounts to be an explicit nil
+
+### UnsetAccounts
+`func (o *UpdatePolicies200ResponseAllOfPolicy) UnsetAccounts()`
+
+UnsetAccounts ensures that no value is present for Accounts, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

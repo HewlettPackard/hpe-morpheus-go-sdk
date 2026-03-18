@@ -21,7 +21,7 @@ var _ MappedNullable = &ListLayoutsForInstanceType200Response{}
 // ListLayoutsForInstanceType200Response struct for ListLayoutsForInstanceType200Response
 type ListLayoutsForInstanceType200Response struct {
 	InstanceTypeLayouts  []ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInner `json:"instanceTypeLayouts,omitempty"`
-	Meta                 *ListClouds200ResponseAllOfMeta                                      `json:"meta,omitempty"`
+	Meta                 *ListAlerts200ResponseAllOfMeta                                      `json:"meta,omitempty"`
 	AdditionalProperties map[string]interface{}                                               `json:",remain"`
 }
 
@@ -77,9 +77,9 @@ func (o *ListLayoutsForInstanceType200Response) SetInstanceTypeLayouts(v []ListL
 }
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListLayoutsForInstanceType200Response) GetMeta() ListClouds200ResponseAllOfMeta {
+func (o *ListLayoutsForInstanceType200Response) GetMeta() ListAlerts200ResponseAllOfMeta {
 	if o == nil || IsNil(o.Meta) {
-		var ret ListClouds200ResponseAllOfMeta
+		var ret ListAlerts200ResponseAllOfMeta
 		return ret
 	}
 	return *o.Meta
@@ -87,7 +87,7 @@ func (o *ListLayoutsForInstanceType200Response) GetMeta() ListClouds200ResponseA
 
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListLayoutsForInstanceType200Response) GetMetaOk() (*ListClouds200ResponseAllOfMeta, bool) {
+func (o *ListLayoutsForInstanceType200Response) GetMetaOk() (*ListAlerts200ResponseAllOfMeta, bool) {
 	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
@@ -103,8 +103,8 @@ func (o *ListLayoutsForInstanceType200Response) IsSetMeta() bool {
 	return false
 }
 
-// SetMeta gets a reference to the given ListClouds200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListLayoutsForInstanceType200Response) SetMeta(v ListClouds200ResponseAllOfMeta) {
+// SetMeta gets a reference to the given ListAlerts200ResponseAllOfMeta and assigns it to the Meta field.
+func (o *ListLayoutsForInstanceType200Response) SetMeta(v ListAlerts200ResponseAllOfMeta) {
 	o.Meta = &v
 }
 

@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **ParentRoleId** | Pointer to **NullableString** |  | [optional] 
 **Diverged** | Pointer to **bool** |  | [optional] 
 **OwnerId** | Pointer to **int64** |  | [optional] 
-**Owner** | Pointer to [**ListRoles200ResponseAllOfRolesInnerOwner**](ListRoles200ResponseAllOfRolesInnerOwner.md) |  | [optional] 
+**Owner** | Pointer to [**NullableListRoles200ResponseAllOfRolesInnerOwner**](ListRoles200ResponseAllOfRolesInnerOwner.md) |  | [optional] 
 **DefaultPersona** | Pointer to [**ListRoles200ResponseAllOfRolesInnerDefaultPersona**](ListRoles200ResponseAllOfRolesInnerDefaultPersona.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
@@ -395,6 +395,16 @@ SetOwner sets Owner field to given value.
 
 HasOwner returns a boolean if a field has been set.
 
+### SetOwnerNil
+
+`func (o *ListRoles200ResponseAllOfRolesInner) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *ListRoles200ResponseAllOfRolesInner) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetDefaultPersona
 
 `func (o *ListRoles200ResponseAllOfRolesInner) GetDefaultPersona() ListRoles200ResponseAllOfRolesInnerDefaultPersona`

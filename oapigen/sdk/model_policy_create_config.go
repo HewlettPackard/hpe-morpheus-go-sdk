@@ -21,38 +21,38 @@ var _ fmt.Stringer
 
 // PolicyCreateConfig A map of config values. The expected values vary by policy type. See `Retrieves all Policy Types` endpoint for `fieldName`(s) of required options.
 type PolicyCreateConfig struct {
-	ApprovePolicyTypeConfiguration7                         *ApprovePolicyTypeConfiguration7
-	BackupCreationPolicyTypeConfiguration7                  *BackupCreationPolicyTypeConfiguration7
-	BackupTargetsPolicyTypeConfiguration7                   *BackupTargetsPolicyTypeConfiguration7
-	BudgetPolicyTypeConfiguration7                          *BudgetPolicyTypeConfiguration7
-	ClusterResourceNamePolicyTypeConfiguration7             *ClusterResourceNamePolicyTypeConfiguration7
-	CypherAccessPolicyTypeConfiguration7                    *CypherAccessPolicyTypeConfiguration7
-	DelayedDeletePolicyTypeConfiguration7                   *DelayedDeletePolicyTypeConfiguration7
-	ExpirationPolicyTypeConfiguration7                      *ExpirationPolicyTypeConfiguration7
-	FileShareStorageQuotaPolicyTypeConfiguration2           *FileShareStorageQuotaPolicyTypeConfiguration2
-	HostnamePolicyTypeConfiguration7                        *HostnamePolicyTypeConfiguration7
-	InstanceNamePolicyTypeConfiguration7                    *InstanceNamePolicyTypeConfiguration7
-	MaxContainersPolicyTypeConfiguration7                   *MaxContainersPolicyTypeConfiguration7
-	MaxCoresPolicyTypeConfiguration7                        *MaxCoresPolicyTypeConfiguration7
-	MaxHostsPolicyTypeConfiguration7                        *MaxHostsPolicyTypeConfiguration7
-	MaxLoadBalancerPoolsPolicyTypeConfiguration7            *MaxLoadBalancerPoolsPolicyTypeConfiguration7
-	MaxMemoryPolicyTypeConfiguration7                       *MaxMemoryPolicyTypeConfiguration7
-	MaxPoolMembersPolicyTypeConfiguration7                  *MaxPoolMembersPolicyTypeConfiguration7
-	MaxSnapshotsPolicyTypeConfiguration7                    *MaxSnapshotsPolicyTypeConfiguration7
-	MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration7 *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration7
-	MaxVMsPolicyTypeConfiguration7                          *MaxVMsPolicyTypeConfiguration7
-	MaxVirtualServersPolicyTypeConfiguration7               *MaxVirtualServersPolicyTypeConfiguration7
-	MessageOfTheDayPolicyTypeConfiguration7                 *MessageOfTheDayPolicyTypeConfiguration7
-	NetworkQuotaPolicyTypeConfiguration7                    *NetworkQuotaPolicyTypeConfiguration7
-	PowerSchedulePolicyTypeConfiguration7                   *PowerSchedulePolicyTypeConfiguration7
-	RequiredNetworkPolicyTypeConfiguration7                 *RequiredNetworkPolicyTypeConfiguration7
-	RouterQuotaPolicyTypeConfiguration7                     *RouterQuotaPolicyTypeConfiguration7
-	ShutdownPolicyTypeConfiguration7                        *ShutdownPolicyTypeConfiguration7
-	StorageServerStorageQuotaPolicyTypeConfiguration7       *StorageServerStorageQuotaPolicyTypeConfiguration7
-	TagsPolicyTypeConfiguration7                            *TagsPolicyTypeConfiguration7
-	UserCreationPolicyTypeConfiguration7                    *UserCreationPolicyTypeConfiguration7
-	UserGroupCreationPolicyTypeConfiguration7               *UserGroupCreationPolicyTypeConfiguration7
-	WorkflowPolicyTypeConfiguration7                        *WorkflowPolicyTypeConfiguration7
+	ApprovePolicyTypeConfiguration15                         *ApprovePolicyTypeConfiguration15
+	BackupCreationPolicyTypeConfiguration15                  *BackupCreationPolicyTypeConfiguration15
+	BackupTargetsPolicyTypeConfiguration15                   *BackupTargetsPolicyTypeConfiguration15
+	BudgetPolicyTypeConfiguration15                          *BudgetPolicyTypeConfiguration15
+	ClusterResourceNamePolicyTypeConfiguration15             *ClusterResourceNamePolicyTypeConfiguration15
+	CypherAccessPolicyTypeConfiguration15                    *CypherAccessPolicyTypeConfiguration15
+	DelayedDeletePolicyTypeConfiguration15                   *DelayedDeletePolicyTypeConfiguration15
+	ExpirationPolicyTypeConfiguration15                      *ExpirationPolicyTypeConfiguration15
+	FileShareStorageQuotaPolicyTypeConfiguration2            *FileShareStorageQuotaPolicyTypeConfiguration2
+	HostnamePolicyTypeConfiguration15                        *HostnamePolicyTypeConfiguration15
+	InstanceNamePolicyTypeConfiguration15                    *InstanceNamePolicyTypeConfiguration15
+	MaxContainersPolicyTypeConfiguration15                   *MaxContainersPolicyTypeConfiguration15
+	MaxCoresPolicyTypeConfiguration15                        *MaxCoresPolicyTypeConfiguration15
+	MaxHostsPolicyTypeConfiguration15                        *MaxHostsPolicyTypeConfiguration15
+	MaxLoadBalancerPoolsPolicyTypeConfiguration15            *MaxLoadBalancerPoolsPolicyTypeConfiguration15
+	MaxMemoryPolicyTypeConfiguration15                       *MaxMemoryPolicyTypeConfiguration15
+	MaxPoolMembersPolicyTypeConfiguration15                  *MaxPoolMembersPolicyTypeConfiguration15
+	MaxSnapshotsPolicyTypeConfiguration15                    *MaxSnapshotsPolicyTypeConfiguration15
+	MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration15 *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration15
+	MaxVMsPolicyTypeConfiguration15                          *MaxVMsPolicyTypeConfiguration15
+	MaxVirtualServersPolicyTypeConfiguration15               *MaxVirtualServersPolicyTypeConfiguration15
+	MessageOfTheDayPolicyTypeConfiguration15                 *MessageOfTheDayPolicyTypeConfiguration15
+	NetworkQuotaPolicyTypeConfiguration15                    *NetworkQuotaPolicyTypeConfiguration15
+	PowerSchedulePolicyTypeConfiguration15                   *PowerSchedulePolicyTypeConfiguration15
+	RequiredNetworkPolicyTypeConfiguration15                 *RequiredNetworkPolicyTypeConfiguration15
+	RouterQuotaPolicyTypeConfiguration15                     *RouterQuotaPolicyTypeConfiguration15
+	ShutdownPolicyTypeConfiguration15                        *ShutdownPolicyTypeConfiguration15
+	StorageServerStorageQuotaPolicyTypeConfiguration15       *StorageServerStorageQuotaPolicyTypeConfiguration15
+	TagsPolicyTypeConfiguration15                            *TagsPolicyTypeConfiguration15
+	UserCreationPolicyTypeConfiguration15                    *UserCreationPolicyTypeConfiguration15
+	UserGroupCreationPolicyTypeConfiguration15               *UserGroupCreationPolicyTypeConfiguration15
+	WorkflowPolicyTypeConfiguration15                        *WorkflowPolicyTypeConfiguration15
 }
 
 func (dst *PolicyCreateConfig) UnmarshalMapstructure(data any) (any, error) {
@@ -60,52 +60,52 @@ func (dst *PolicyCreateConfig) UnmarshalMapstructure(data any) (any, error) {
 		dst = &PolicyCreateConfig{}
 	}
 
-	mapstructDecode(data, &dst.ApprovePolicyTypeConfiguration7)
+	mapstructDecode(data, &dst.ApprovePolicyTypeConfiguration15)
 
-	if IsEmpty(dst.ApprovePolicyTypeConfiguration7) {
-		dst.ApprovePolicyTypeConfiguration7 = nil
+	if IsEmpty(dst.ApprovePolicyTypeConfiguration15) {
+		dst.ApprovePolicyTypeConfiguration15 = nil
 	}
 
-	mapstructDecode(data, &dst.BackupCreationPolicyTypeConfiguration7)
+	mapstructDecode(data, &dst.BackupCreationPolicyTypeConfiguration15)
 
-	if IsEmpty(dst.BackupCreationPolicyTypeConfiguration7) {
-		dst.BackupCreationPolicyTypeConfiguration7 = nil
+	if IsEmpty(dst.BackupCreationPolicyTypeConfiguration15) {
+		dst.BackupCreationPolicyTypeConfiguration15 = nil
 	}
 
-	mapstructDecode(data, &dst.BackupTargetsPolicyTypeConfiguration7)
+	mapstructDecode(data, &dst.BackupTargetsPolicyTypeConfiguration15)
 
-	if IsEmpty(dst.BackupTargetsPolicyTypeConfiguration7) {
-		dst.BackupTargetsPolicyTypeConfiguration7 = nil
+	if IsEmpty(dst.BackupTargetsPolicyTypeConfiguration15) {
+		dst.BackupTargetsPolicyTypeConfiguration15 = nil
 	}
 
-	mapstructDecode(data, &dst.BudgetPolicyTypeConfiguration7)
+	mapstructDecode(data, &dst.BudgetPolicyTypeConfiguration15)
 
-	if IsEmpty(dst.BudgetPolicyTypeConfiguration7) {
-		dst.BudgetPolicyTypeConfiguration7 = nil
+	if IsEmpty(dst.BudgetPolicyTypeConfiguration15) {
+		dst.BudgetPolicyTypeConfiguration15 = nil
 	}
 
-	mapstructDecode(data, &dst.ClusterResourceNamePolicyTypeConfiguration7)
+	mapstructDecode(data, &dst.ClusterResourceNamePolicyTypeConfiguration15)
 
-	if IsEmpty(dst.ClusterResourceNamePolicyTypeConfiguration7) {
-		dst.ClusterResourceNamePolicyTypeConfiguration7 = nil
+	if IsEmpty(dst.ClusterResourceNamePolicyTypeConfiguration15) {
+		dst.ClusterResourceNamePolicyTypeConfiguration15 = nil
 	}
 
-	mapstructDecode(data, &dst.CypherAccessPolicyTypeConfiguration7)
+	mapstructDecode(data, &dst.CypherAccessPolicyTypeConfiguration15)
 
-	if IsEmpty(dst.CypherAccessPolicyTypeConfiguration7) {
-		dst.CypherAccessPolicyTypeConfiguration7 = nil
+	if IsEmpty(dst.CypherAccessPolicyTypeConfiguration15) {
+		dst.CypherAccessPolicyTypeConfiguration15 = nil
 	}
 
-	mapstructDecode(data, &dst.DelayedDeletePolicyTypeConfiguration7)
+	mapstructDecode(data, &dst.DelayedDeletePolicyTypeConfiguration15)
 
-	if IsEmpty(dst.DelayedDeletePolicyTypeConfiguration7) {
-		dst.DelayedDeletePolicyTypeConfiguration7 = nil
+	if IsEmpty(dst.DelayedDeletePolicyTypeConfiguration15) {
+		dst.DelayedDeletePolicyTypeConfiguration15 = nil
 	}
 
-	mapstructDecode(data, &dst.ExpirationPolicyTypeConfiguration7)
+	mapstructDecode(data, &dst.ExpirationPolicyTypeConfiguration15)
 
-	if IsEmpty(dst.ExpirationPolicyTypeConfiguration7) {
-		dst.ExpirationPolicyTypeConfiguration7 = nil
+	if IsEmpty(dst.ExpirationPolicyTypeConfiguration15) {
+		dst.ExpirationPolicyTypeConfiguration15 = nil
 	}
 
 	mapstructDecode(data, &dst.FileShareStorageQuotaPolicyTypeConfiguration2)
@@ -114,142 +114,142 @@ func (dst *PolicyCreateConfig) UnmarshalMapstructure(data any) (any, error) {
 		dst.FileShareStorageQuotaPolicyTypeConfiguration2 = nil
 	}
 
-	mapstructDecode(data, &dst.HostnamePolicyTypeConfiguration7)
+	mapstructDecode(data, &dst.HostnamePolicyTypeConfiguration15)
 
-	if IsEmpty(dst.HostnamePolicyTypeConfiguration7) {
-		dst.HostnamePolicyTypeConfiguration7 = nil
+	if IsEmpty(dst.HostnamePolicyTypeConfiguration15) {
+		dst.HostnamePolicyTypeConfiguration15 = nil
 	}
 
-	mapstructDecode(data, &dst.InstanceNamePolicyTypeConfiguration7)
+	mapstructDecode(data, &dst.InstanceNamePolicyTypeConfiguration15)
 
-	if IsEmpty(dst.InstanceNamePolicyTypeConfiguration7) {
-		dst.InstanceNamePolicyTypeConfiguration7 = nil
+	if IsEmpty(dst.InstanceNamePolicyTypeConfiguration15) {
+		dst.InstanceNamePolicyTypeConfiguration15 = nil
 	}
 
-	mapstructDecode(data, &dst.MaxContainersPolicyTypeConfiguration7)
+	mapstructDecode(data, &dst.MaxContainersPolicyTypeConfiguration15)
 
-	if IsEmpty(dst.MaxContainersPolicyTypeConfiguration7) {
-		dst.MaxContainersPolicyTypeConfiguration7 = nil
+	if IsEmpty(dst.MaxContainersPolicyTypeConfiguration15) {
+		dst.MaxContainersPolicyTypeConfiguration15 = nil
 	}
 
-	mapstructDecode(data, &dst.MaxCoresPolicyTypeConfiguration7)
+	mapstructDecode(data, &dst.MaxCoresPolicyTypeConfiguration15)
 
-	if IsEmpty(dst.MaxCoresPolicyTypeConfiguration7) {
-		dst.MaxCoresPolicyTypeConfiguration7 = nil
+	if IsEmpty(dst.MaxCoresPolicyTypeConfiguration15) {
+		dst.MaxCoresPolicyTypeConfiguration15 = nil
 	}
 
-	mapstructDecode(data, &dst.MaxHostsPolicyTypeConfiguration7)
+	mapstructDecode(data, &dst.MaxHostsPolicyTypeConfiguration15)
 
-	if IsEmpty(dst.MaxHostsPolicyTypeConfiguration7) {
-		dst.MaxHostsPolicyTypeConfiguration7 = nil
+	if IsEmpty(dst.MaxHostsPolicyTypeConfiguration15) {
+		dst.MaxHostsPolicyTypeConfiguration15 = nil
 	}
 
-	mapstructDecode(data, &dst.MaxLoadBalancerPoolsPolicyTypeConfiguration7)
+	mapstructDecode(data, &dst.MaxLoadBalancerPoolsPolicyTypeConfiguration15)
 
-	if IsEmpty(dst.MaxLoadBalancerPoolsPolicyTypeConfiguration7) {
-		dst.MaxLoadBalancerPoolsPolicyTypeConfiguration7 = nil
+	if IsEmpty(dst.MaxLoadBalancerPoolsPolicyTypeConfiguration15) {
+		dst.MaxLoadBalancerPoolsPolicyTypeConfiguration15 = nil
 	}
 
-	mapstructDecode(data, &dst.MaxMemoryPolicyTypeConfiguration7)
+	mapstructDecode(data, &dst.MaxMemoryPolicyTypeConfiguration15)
 
-	if IsEmpty(dst.MaxMemoryPolicyTypeConfiguration7) {
-		dst.MaxMemoryPolicyTypeConfiguration7 = nil
+	if IsEmpty(dst.MaxMemoryPolicyTypeConfiguration15) {
+		dst.MaxMemoryPolicyTypeConfiguration15 = nil
 	}
 
-	mapstructDecode(data, &dst.MaxPoolMembersPolicyTypeConfiguration7)
+	mapstructDecode(data, &dst.MaxPoolMembersPolicyTypeConfiguration15)
 
-	if IsEmpty(dst.MaxPoolMembersPolicyTypeConfiguration7) {
-		dst.MaxPoolMembersPolicyTypeConfiguration7 = nil
+	if IsEmpty(dst.MaxPoolMembersPolicyTypeConfiguration15) {
+		dst.MaxPoolMembersPolicyTypeConfiguration15 = nil
 	}
 
-	mapstructDecode(data, &dst.MaxSnapshotsPolicyTypeConfiguration7)
+	mapstructDecode(data, &dst.MaxSnapshotsPolicyTypeConfiguration15)
 
-	if IsEmpty(dst.MaxSnapshotsPolicyTypeConfiguration7) {
-		dst.MaxSnapshotsPolicyTypeConfiguration7 = nil
+	if IsEmpty(dst.MaxSnapshotsPolicyTypeConfiguration15) {
+		dst.MaxSnapshotsPolicyTypeConfiguration15 = nil
 	}
 
-	mapstructDecode(data, &dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration7)
+	mapstructDecode(data, &dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration15)
 
-	if IsEmpty(dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration7) {
-		dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration7 = nil
+	if IsEmpty(dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration15) {
+		dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration15 = nil
 	}
 
-	mapstructDecode(data, &dst.MaxVMsPolicyTypeConfiguration7)
+	mapstructDecode(data, &dst.MaxVMsPolicyTypeConfiguration15)
 
-	if IsEmpty(dst.MaxVMsPolicyTypeConfiguration7) {
-		dst.MaxVMsPolicyTypeConfiguration7 = nil
+	if IsEmpty(dst.MaxVMsPolicyTypeConfiguration15) {
+		dst.MaxVMsPolicyTypeConfiguration15 = nil
 	}
 
-	mapstructDecode(data, &dst.MaxVirtualServersPolicyTypeConfiguration7)
+	mapstructDecode(data, &dst.MaxVirtualServersPolicyTypeConfiguration15)
 
-	if IsEmpty(dst.MaxVirtualServersPolicyTypeConfiguration7) {
-		dst.MaxVirtualServersPolicyTypeConfiguration7 = nil
+	if IsEmpty(dst.MaxVirtualServersPolicyTypeConfiguration15) {
+		dst.MaxVirtualServersPolicyTypeConfiguration15 = nil
 	}
 
-	mapstructDecode(data, &dst.MessageOfTheDayPolicyTypeConfiguration7)
+	mapstructDecode(data, &dst.MessageOfTheDayPolicyTypeConfiguration15)
 
-	if IsEmpty(dst.MessageOfTheDayPolicyTypeConfiguration7) {
-		dst.MessageOfTheDayPolicyTypeConfiguration7 = nil
+	if IsEmpty(dst.MessageOfTheDayPolicyTypeConfiguration15) {
+		dst.MessageOfTheDayPolicyTypeConfiguration15 = nil
 	}
 
-	mapstructDecode(data, &dst.NetworkQuotaPolicyTypeConfiguration7)
+	mapstructDecode(data, &dst.NetworkQuotaPolicyTypeConfiguration15)
 
-	if IsEmpty(dst.NetworkQuotaPolicyTypeConfiguration7) {
-		dst.NetworkQuotaPolicyTypeConfiguration7 = nil
+	if IsEmpty(dst.NetworkQuotaPolicyTypeConfiguration15) {
+		dst.NetworkQuotaPolicyTypeConfiguration15 = nil
 	}
 
-	mapstructDecode(data, &dst.PowerSchedulePolicyTypeConfiguration7)
+	mapstructDecode(data, &dst.PowerSchedulePolicyTypeConfiguration15)
 
-	if IsEmpty(dst.PowerSchedulePolicyTypeConfiguration7) {
-		dst.PowerSchedulePolicyTypeConfiguration7 = nil
+	if IsEmpty(dst.PowerSchedulePolicyTypeConfiguration15) {
+		dst.PowerSchedulePolicyTypeConfiguration15 = nil
 	}
 
-	mapstructDecode(data, &dst.RequiredNetworkPolicyTypeConfiguration7)
+	mapstructDecode(data, &dst.RequiredNetworkPolicyTypeConfiguration15)
 
-	if IsEmpty(dst.RequiredNetworkPolicyTypeConfiguration7) {
-		dst.RequiredNetworkPolicyTypeConfiguration7 = nil
+	if IsEmpty(dst.RequiredNetworkPolicyTypeConfiguration15) {
+		dst.RequiredNetworkPolicyTypeConfiguration15 = nil
 	}
 
-	mapstructDecode(data, &dst.RouterQuotaPolicyTypeConfiguration7)
+	mapstructDecode(data, &dst.RouterQuotaPolicyTypeConfiguration15)
 
-	if IsEmpty(dst.RouterQuotaPolicyTypeConfiguration7) {
-		dst.RouterQuotaPolicyTypeConfiguration7 = nil
+	if IsEmpty(dst.RouterQuotaPolicyTypeConfiguration15) {
+		dst.RouterQuotaPolicyTypeConfiguration15 = nil
 	}
 
-	mapstructDecode(data, &dst.ShutdownPolicyTypeConfiguration7)
+	mapstructDecode(data, &dst.ShutdownPolicyTypeConfiguration15)
 
-	if IsEmpty(dst.ShutdownPolicyTypeConfiguration7) {
-		dst.ShutdownPolicyTypeConfiguration7 = nil
+	if IsEmpty(dst.ShutdownPolicyTypeConfiguration15) {
+		dst.ShutdownPolicyTypeConfiguration15 = nil
 	}
 
-	mapstructDecode(data, &dst.StorageServerStorageQuotaPolicyTypeConfiguration7)
+	mapstructDecode(data, &dst.StorageServerStorageQuotaPolicyTypeConfiguration15)
 
-	if IsEmpty(dst.StorageServerStorageQuotaPolicyTypeConfiguration7) {
-		dst.StorageServerStorageQuotaPolicyTypeConfiguration7 = nil
+	if IsEmpty(dst.StorageServerStorageQuotaPolicyTypeConfiguration15) {
+		dst.StorageServerStorageQuotaPolicyTypeConfiguration15 = nil
 	}
 
-	mapstructDecode(data, &dst.TagsPolicyTypeConfiguration7)
+	mapstructDecode(data, &dst.TagsPolicyTypeConfiguration15)
 
-	if IsEmpty(dst.TagsPolicyTypeConfiguration7) {
-		dst.TagsPolicyTypeConfiguration7 = nil
+	if IsEmpty(dst.TagsPolicyTypeConfiguration15) {
+		dst.TagsPolicyTypeConfiguration15 = nil
 	}
 
-	mapstructDecode(data, &dst.UserCreationPolicyTypeConfiguration7)
+	mapstructDecode(data, &dst.UserCreationPolicyTypeConfiguration15)
 
-	if IsEmpty(dst.UserCreationPolicyTypeConfiguration7) {
-		dst.UserCreationPolicyTypeConfiguration7 = nil
+	if IsEmpty(dst.UserCreationPolicyTypeConfiguration15) {
+		dst.UserCreationPolicyTypeConfiguration15 = nil
 	}
 
-	mapstructDecode(data, &dst.UserGroupCreationPolicyTypeConfiguration7)
+	mapstructDecode(data, &dst.UserGroupCreationPolicyTypeConfiguration15)
 
-	if IsEmpty(dst.UserGroupCreationPolicyTypeConfiguration7) {
-		dst.UserGroupCreationPolicyTypeConfiguration7 = nil
+	if IsEmpty(dst.UserGroupCreationPolicyTypeConfiguration15) {
+		dst.UserGroupCreationPolicyTypeConfiguration15 = nil
 	}
 
-	mapstructDecode(data, &dst.WorkflowPolicyTypeConfiguration7)
+	mapstructDecode(data, &dst.WorkflowPolicyTypeConfiguration15)
 
-	if IsEmpty(dst.WorkflowPolicyTypeConfiguration7) {
-		dst.WorkflowPolicyTypeConfiguration7 = nil
+	if IsEmpty(dst.WorkflowPolicyTypeConfiguration15) {
+		dst.WorkflowPolicyTypeConfiguration15 = nil
 	}
 
 	return dst, nil
@@ -258,108 +258,108 @@ func (dst *PolicyCreateConfig) UnmarshalMapstructure(data any) (any, error) {
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *PolicyCreateConfig) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into ApprovePolicyTypeConfiguration7
-	err = json.Unmarshal(data, &dst.ApprovePolicyTypeConfiguration7)
+	// try to unmarshal JSON data into ApprovePolicyTypeConfiguration15
+	err = json.Unmarshal(data, &dst.ApprovePolicyTypeConfiguration15)
 	if err == nil {
-		jsonApprovePolicyTypeConfiguration7, _ := json.Marshal(dst.ApprovePolicyTypeConfiguration7)
-		if string(jsonApprovePolicyTypeConfiguration7) == "{}" { // empty struct
-			dst.ApprovePolicyTypeConfiguration7 = nil
+		jsonApprovePolicyTypeConfiguration15, _ := json.Marshal(dst.ApprovePolicyTypeConfiguration15)
+		if string(jsonApprovePolicyTypeConfiguration15) == "{}" { // empty struct
+			dst.ApprovePolicyTypeConfiguration15 = nil
 		} else {
-			return nil // data stored in dst.ApprovePolicyTypeConfiguration7, return on the first match
+			return nil // data stored in dst.ApprovePolicyTypeConfiguration15, return on the first match
 		}
 	} else {
-		dst.ApprovePolicyTypeConfiguration7 = nil
+		dst.ApprovePolicyTypeConfiguration15 = nil
 	}
 
-	// try to unmarshal JSON data into BackupCreationPolicyTypeConfiguration7
-	err = json.Unmarshal(data, &dst.BackupCreationPolicyTypeConfiguration7)
+	// try to unmarshal JSON data into BackupCreationPolicyTypeConfiguration15
+	err = json.Unmarshal(data, &dst.BackupCreationPolicyTypeConfiguration15)
 	if err == nil {
-		jsonBackupCreationPolicyTypeConfiguration7, _ := json.Marshal(dst.BackupCreationPolicyTypeConfiguration7)
-		if string(jsonBackupCreationPolicyTypeConfiguration7) == "{}" { // empty struct
-			dst.BackupCreationPolicyTypeConfiguration7 = nil
+		jsonBackupCreationPolicyTypeConfiguration15, _ := json.Marshal(dst.BackupCreationPolicyTypeConfiguration15)
+		if string(jsonBackupCreationPolicyTypeConfiguration15) == "{}" { // empty struct
+			dst.BackupCreationPolicyTypeConfiguration15 = nil
 		} else {
-			return nil // data stored in dst.BackupCreationPolicyTypeConfiguration7, return on the first match
+			return nil // data stored in dst.BackupCreationPolicyTypeConfiguration15, return on the first match
 		}
 	} else {
-		dst.BackupCreationPolicyTypeConfiguration7 = nil
+		dst.BackupCreationPolicyTypeConfiguration15 = nil
 	}
 
-	// try to unmarshal JSON data into BackupTargetsPolicyTypeConfiguration7
-	err = json.Unmarshal(data, &dst.BackupTargetsPolicyTypeConfiguration7)
+	// try to unmarshal JSON data into BackupTargetsPolicyTypeConfiguration15
+	err = json.Unmarshal(data, &dst.BackupTargetsPolicyTypeConfiguration15)
 	if err == nil {
-		jsonBackupTargetsPolicyTypeConfiguration7, _ := json.Marshal(dst.BackupTargetsPolicyTypeConfiguration7)
-		if string(jsonBackupTargetsPolicyTypeConfiguration7) == "{}" { // empty struct
-			dst.BackupTargetsPolicyTypeConfiguration7 = nil
+		jsonBackupTargetsPolicyTypeConfiguration15, _ := json.Marshal(dst.BackupTargetsPolicyTypeConfiguration15)
+		if string(jsonBackupTargetsPolicyTypeConfiguration15) == "{}" { // empty struct
+			dst.BackupTargetsPolicyTypeConfiguration15 = nil
 		} else {
-			return nil // data stored in dst.BackupTargetsPolicyTypeConfiguration7, return on the first match
+			return nil // data stored in dst.BackupTargetsPolicyTypeConfiguration15, return on the first match
 		}
 	} else {
-		dst.BackupTargetsPolicyTypeConfiguration7 = nil
+		dst.BackupTargetsPolicyTypeConfiguration15 = nil
 	}
 
-	// try to unmarshal JSON data into BudgetPolicyTypeConfiguration7
-	err = json.Unmarshal(data, &dst.BudgetPolicyTypeConfiguration7)
+	// try to unmarshal JSON data into BudgetPolicyTypeConfiguration15
+	err = json.Unmarshal(data, &dst.BudgetPolicyTypeConfiguration15)
 	if err == nil {
-		jsonBudgetPolicyTypeConfiguration7, _ := json.Marshal(dst.BudgetPolicyTypeConfiguration7)
-		if string(jsonBudgetPolicyTypeConfiguration7) == "{}" { // empty struct
-			dst.BudgetPolicyTypeConfiguration7 = nil
+		jsonBudgetPolicyTypeConfiguration15, _ := json.Marshal(dst.BudgetPolicyTypeConfiguration15)
+		if string(jsonBudgetPolicyTypeConfiguration15) == "{}" { // empty struct
+			dst.BudgetPolicyTypeConfiguration15 = nil
 		} else {
-			return nil // data stored in dst.BudgetPolicyTypeConfiguration7, return on the first match
+			return nil // data stored in dst.BudgetPolicyTypeConfiguration15, return on the first match
 		}
 	} else {
-		dst.BudgetPolicyTypeConfiguration7 = nil
+		dst.BudgetPolicyTypeConfiguration15 = nil
 	}
 
-	// try to unmarshal JSON data into ClusterResourceNamePolicyTypeConfiguration7
-	err = json.Unmarshal(data, &dst.ClusterResourceNamePolicyTypeConfiguration7)
+	// try to unmarshal JSON data into ClusterResourceNamePolicyTypeConfiguration15
+	err = json.Unmarshal(data, &dst.ClusterResourceNamePolicyTypeConfiguration15)
 	if err == nil {
-		jsonClusterResourceNamePolicyTypeConfiguration7, _ := json.Marshal(dst.ClusterResourceNamePolicyTypeConfiguration7)
-		if string(jsonClusterResourceNamePolicyTypeConfiguration7) == "{}" { // empty struct
-			dst.ClusterResourceNamePolicyTypeConfiguration7 = nil
+		jsonClusterResourceNamePolicyTypeConfiguration15, _ := json.Marshal(dst.ClusterResourceNamePolicyTypeConfiguration15)
+		if string(jsonClusterResourceNamePolicyTypeConfiguration15) == "{}" { // empty struct
+			dst.ClusterResourceNamePolicyTypeConfiguration15 = nil
 		} else {
-			return nil // data stored in dst.ClusterResourceNamePolicyTypeConfiguration7, return on the first match
+			return nil // data stored in dst.ClusterResourceNamePolicyTypeConfiguration15, return on the first match
 		}
 	} else {
-		dst.ClusterResourceNamePolicyTypeConfiguration7 = nil
+		dst.ClusterResourceNamePolicyTypeConfiguration15 = nil
 	}
 
-	// try to unmarshal JSON data into CypherAccessPolicyTypeConfiguration7
-	err = json.Unmarshal(data, &dst.CypherAccessPolicyTypeConfiguration7)
+	// try to unmarshal JSON data into CypherAccessPolicyTypeConfiguration15
+	err = json.Unmarshal(data, &dst.CypherAccessPolicyTypeConfiguration15)
 	if err == nil {
-		jsonCypherAccessPolicyTypeConfiguration7, _ := json.Marshal(dst.CypherAccessPolicyTypeConfiguration7)
-		if string(jsonCypherAccessPolicyTypeConfiguration7) == "{}" { // empty struct
-			dst.CypherAccessPolicyTypeConfiguration7 = nil
+		jsonCypherAccessPolicyTypeConfiguration15, _ := json.Marshal(dst.CypherAccessPolicyTypeConfiguration15)
+		if string(jsonCypherAccessPolicyTypeConfiguration15) == "{}" { // empty struct
+			dst.CypherAccessPolicyTypeConfiguration15 = nil
 		} else {
-			return nil // data stored in dst.CypherAccessPolicyTypeConfiguration7, return on the first match
+			return nil // data stored in dst.CypherAccessPolicyTypeConfiguration15, return on the first match
 		}
 	} else {
-		dst.CypherAccessPolicyTypeConfiguration7 = nil
+		dst.CypherAccessPolicyTypeConfiguration15 = nil
 	}
 
-	// try to unmarshal JSON data into DelayedDeletePolicyTypeConfiguration7
-	err = json.Unmarshal(data, &dst.DelayedDeletePolicyTypeConfiguration7)
+	// try to unmarshal JSON data into DelayedDeletePolicyTypeConfiguration15
+	err = json.Unmarshal(data, &dst.DelayedDeletePolicyTypeConfiguration15)
 	if err == nil {
-		jsonDelayedDeletePolicyTypeConfiguration7, _ := json.Marshal(dst.DelayedDeletePolicyTypeConfiguration7)
-		if string(jsonDelayedDeletePolicyTypeConfiguration7) == "{}" { // empty struct
-			dst.DelayedDeletePolicyTypeConfiguration7 = nil
+		jsonDelayedDeletePolicyTypeConfiguration15, _ := json.Marshal(dst.DelayedDeletePolicyTypeConfiguration15)
+		if string(jsonDelayedDeletePolicyTypeConfiguration15) == "{}" { // empty struct
+			dst.DelayedDeletePolicyTypeConfiguration15 = nil
 		} else {
-			return nil // data stored in dst.DelayedDeletePolicyTypeConfiguration7, return on the first match
+			return nil // data stored in dst.DelayedDeletePolicyTypeConfiguration15, return on the first match
 		}
 	} else {
-		dst.DelayedDeletePolicyTypeConfiguration7 = nil
+		dst.DelayedDeletePolicyTypeConfiguration15 = nil
 	}
 
-	// try to unmarshal JSON data into ExpirationPolicyTypeConfiguration7
-	err = json.Unmarshal(data, &dst.ExpirationPolicyTypeConfiguration7)
+	// try to unmarshal JSON data into ExpirationPolicyTypeConfiguration15
+	err = json.Unmarshal(data, &dst.ExpirationPolicyTypeConfiguration15)
 	if err == nil {
-		jsonExpirationPolicyTypeConfiguration7, _ := json.Marshal(dst.ExpirationPolicyTypeConfiguration7)
-		if string(jsonExpirationPolicyTypeConfiguration7) == "{}" { // empty struct
-			dst.ExpirationPolicyTypeConfiguration7 = nil
+		jsonExpirationPolicyTypeConfiguration15, _ := json.Marshal(dst.ExpirationPolicyTypeConfiguration15)
+		if string(jsonExpirationPolicyTypeConfiguration15) == "{}" { // empty struct
+			dst.ExpirationPolicyTypeConfiguration15 = nil
 		} else {
-			return nil // data stored in dst.ExpirationPolicyTypeConfiguration7, return on the first match
+			return nil // data stored in dst.ExpirationPolicyTypeConfiguration15, return on the first match
 		}
 	} else {
-		dst.ExpirationPolicyTypeConfiguration7 = nil
+		dst.ExpirationPolicyTypeConfiguration15 = nil
 	}
 
 	// try to unmarshal JSON data into FileShareStorageQuotaPolicyTypeConfiguration2
@@ -375,303 +375,303 @@ func (dst *PolicyCreateConfig) UnmarshalJSON(data []byte) error {
 		dst.FileShareStorageQuotaPolicyTypeConfiguration2 = nil
 	}
 
-	// try to unmarshal JSON data into HostnamePolicyTypeConfiguration7
-	err = json.Unmarshal(data, &dst.HostnamePolicyTypeConfiguration7)
+	// try to unmarshal JSON data into HostnamePolicyTypeConfiguration15
+	err = json.Unmarshal(data, &dst.HostnamePolicyTypeConfiguration15)
 	if err == nil {
-		jsonHostnamePolicyTypeConfiguration7, _ := json.Marshal(dst.HostnamePolicyTypeConfiguration7)
-		if string(jsonHostnamePolicyTypeConfiguration7) == "{}" { // empty struct
-			dst.HostnamePolicyTypeConfiguration7 = nil
+		jsonHostnamePolicyTypeConfiguration15, _ := json.Marshal(dst.HostnamePolicyTypeConfiguration15)
+		if string(jsonHostnamePolicyTypeConfiguration15) == "{}" { // empty struct
+			dst.HostnamePolicyTypeConfiguration15 = nil
 		} else {
-			return nil // data stored in dst.HostnamePolicyTypeConfiguration7, return on the first match
+			return nil // data stored in dst.HostnamePolicyTypeConfiguration15, return on the first match
 		}
 	} else {
-		dst.HostnamePolicyTypeConfiguration7 = nil
+		dst.HostnamePolicyTypeConfiguration15 = nil
 	}
 
-	// try to unmarshal JSON data into InstanceNamePolicyTypeConfiguration7
-	err = json.Unmarshal(data, &dst.InstanceNamePolicyTypeConfiguration7)
+	// try to unmarshal JSON data into InstanceNamePolicyTypeConfiguration15
+	err = json.Unmarshal(data, &dst.InstanceNamePolicyTypeConfiguration15)
 	if err == nil {
-		jsonInstanceNamePolicyTypeConfiguration7, _ := json.Marshal(dst.InstanceNamePolicyTypeConfiguration7)
-		if string(jsonInstanceNamePolicyTypeConfiguration7) == "{}" { // empty struct
-			dst.InstanceNamePolicyTypeConfiguration7 = nil
+		jsonInstanceNamePolicyTypeConfiguration15, _ := json.Marshal(dst.InstanceNamePolicyTypeConfiguration15)
+		if string(jsonInstanceNamePolicyTypeConfiguration15) == "{}" { // empty struct
+			dst.InstanceNamePolicyTypeConfiguration15 = nil
 		} else {
-			return nil // data stored in dst.InstanceNamePolicyTypeConfiguration7, return on the first match
+			return nil // data stored in dst.InstanceNamePolicyTypeConfiguration15, return on the first match
 		}
 	} else {
-		dst.InstanceNamePolicyTypeConfiguration7 = nil
+		dst.InstanceNamePolicyTypeConfiguration15 = nil
 	}
 
-	// try to unmarshal JSON data into MaxContainersPolicyTypeConfiguration7
-	err = json.Unmarshal(data, &dst.MaxContainersPolicyTypeConfiguration7)
+	// try to unmarshal JSON data into MaxContainersPolicyTypeConfiguration15
+	err = json.Unmarshal(data, &dst.MaxContainersPolicyTypeConfiguration15)
 	if err == nil {
-		jsonMaxContainersPolicyTypeConfiguration7, _ := json.Marshal(dst.MaxContainersPolicyTypeConfiguration7)
-		if string(jsonMaxContainersPolicyTypeConfiguration7) == "{}" { // empty struct
-			dst.MaxContainersPolicyTypeConfiguration7 = nil
+		jsonMaxContainersPolicyTypeConfiguration15, _ := json.Marshal(dst.MaxContainersPolicyTypeConfiguration15)
+		if string(jsonMaxContainersPolicyTypeConfiguration15) == "{}" { // empty struct
+			dst.MaxContainersPolicyTypeConfiguration15 = nil
 		} else {
-			return nil // data stored in dst.MaxContainersPolicyTypeConfiguration7, return on the first match
+			return nil // data stored in dst.MaxContainersPolicyTypeConfiguration15, return on the first match
 		}
 	} else {
-		dst.MaxContainersPolicyTypeConfiguration7 = nil
+		dst.MaxContainersPolicyTypeConfiguration15 = nil
 	}
 
-	// try to unmarshal JSON data into MaxCoresPolicyTypeConfiguration7
-	err = json.Unmarshal(data, &dst.MaxCoresPolicyTypeConfiguration7)
+	// try to unmarshal JSON data into MaxCoresPolicyTypeConfiguration15
+	err = json.Unmarshal(data, &dst.MaxCoresPolicyTypeConfiguration15)
 	if err == nil {
-		jsonMaxCoresPolicyTypeConfiguration7, _ := json.Marshal(dst.MaxCoresPolicyTypeConfiguration7)
-		if string(jsonMaxCoresPolicyTypeConfiguration7) == "{}" { // empty struct
-			dst.MaxCoresPolicyTypeConfiguration7 = nil
+		jsonMaxCoresPolicyTypeConfiguration15, _ := json.Marshal(dst.MaxCoresPolicyTypeConfiguration15)
+		if string(jsonMaxCoresPolicyTypeConfiguration15) == "{}" { // empty struct
+			dst.MaxCoresPolicyTypeConfiguration15 = nil
 		} else {
-			return nil // data stored in dst.MaxCoresPolicyTypeConfiguration7, return on the first match
+			return nil // data stored in dst.MaxCoresPolicyTypeConfiguration15, return on the first match
 		}
 	} else {
-		dst.MaxCoresPolicyTypeConfiguration7 = nil
+		dst.MaxCoresPolicyTypeConfiguration15 = nil
 	}
 
-	// try to unmarshal JSON data into MaxHostsPolicyTypeConfiguration7
-	err = json.Unmarshal(data, &dst.MaxHostsPolicyTypeConfiguration7)
+	// try to unmarshal JSON data into MaxHostsPolicyTypeConfiguration15
+	err = json.Unmarshal(data, &dst.MaxHostsPolicyTypeConfiguration15)
 	if err == nil {
-		jsonMaxHostsPolicyTypeConfiguration7, _ := json.Marshal(dst.MaxHostsPolicyTypeConfiguration7)
-		if string(jsonMaxHostsPolicyTypeConfiguration7) == "{}" { // empty struct
-			dst.MaxHostsPolicyTypeConfiguration7 = nil
+		jsonMaxHostsPolicyTypeConfiguration15, _ := json.Marshal(dst.MaxHostsPolicyTypeConfiguration15)
+		if string(jsonMaxHostsPolicyTypeConfiguration15) == "{}" { // empty struct
+			dst.MaxHostsPolicyTypeConfiguration15 = nil
 		} else {
-			return nil // data stored in dst.MaxHostsPolicyTypeConfiguration7, return on the first match
+			return nil // data stored in dst.MaxHostsPolicyTypeConfiguration15, return on the first match
 		}
 	} else {
-		dst.MaxHostsPolicyTypeConfiguration7 = nil
+		dst.MaxHostsPolicyTypeConfiguration15 = nil
 	}
 
-	// try to unmarshal JSON data into MaxLoadBalancerPoolsPolicyTypeConfiguration7
-	err = json.Unmarshal(data, &dst.MaxLoadBalancerPoolsPolicyTypeConfiguration7)
+	// try to unmarshal JSON data into MaxLoadBalancerPoolsPolicyTypeConfiguration15
+	err = json.Unmarshal(data, &dst.MaxLoadBalancerPoolsPolicyTypeConfiguration15)
 	if err == nil {
-		jsonMaxLoadBalancerPoolsPolicyTypeConfiguration7, _ := json.Marshal(dst.MaxLoadBalancerPoolsPolicyTypeConfiguration7)
-		if string(jsonMaxLoadBalancerPoolsPolicyTypeConfiguration7) == "{}" { // empty struct
-			dst.MaxLoadBalancerPoolsPolicyTypeConfiguration7 = nil
+		jsonMaxLoadBalancerPoolsPolicyTypeConfiguration15, _ := json.Marshal(dst.MaxLoadBalancerPoolsPolicyTypeConfiguration15)
+		if string(jsonMaxLoadBalancerPoolsPolicyTypeConfiguration15) == "{}" { // empty struct
+			dst.MaxLoadBalancerPoolsPolicyTypeConfiguration15 = nil
 		} else {
-			return nil // data stored in dst.MaxLoadBalancerPoolsPolicyTypeConfiguration7, return on the first match
+			return nil // data stored in dst.MaxLoadBalancerPoolsPolicyTypeConfiguration15, return on the first match
 		}
 	} else {
-		dst.MaxLoadBalancerPoolsPolicyTypeConfiguration7 = nil
+		dst.MaxLoadBalancerPoolsPolicyTypeConfiguration15 = nil
 	}
 
-	// try to unmarshal JSON data into MaxMemoryPolicyTypeConfiguration7
-	err = json.Unmarshal(data, &dst.MaxMemoryPolicyTypeConfiguration7)
+	// try to unmarshal JSON data into MaxMemoryPolicyTypeConfiguration15
+	err = json.Unmarshal(data, &dst.MaxMemoryPolicyTypeConfiguration15)
 	if err == nil {
-		jsonMaxMemoryPolicyTypeConfiguration7, _ := json.Marshal(dst.MaxMemoryPolicyTypeConfiguration7)
-		if string(jsonMaxMemoryPolicyTypeConfiguration7) == "{}" { // empty struct
-			dst.MaxMemoryPolicyTypeConfiguration7 = nil
+		jsonMaxMemoryPolicyTypeConfiguration15, _ := json.Marshal(dst.MaxMemoryPolicyTypeConfiguration15)
+		if string(jsonMaxMemoryPolicyTypeConfiguration15) == "{}" { // empty struct
+			dst.MaxMemoryPolicyTypeConfiguration15 = nil
 		} else {
-			return nil // data stored in dst.MaxMemoryPolicyTypeConfiguration7, return on the first match
+			return nil // data stored in dst.MaxMemoryPolicyTypeConfiguration15, return on the first match
 		}
 	} else {
-		dst.MaxMemoryPolicyTypeConfiguration7 = nil
+		dst.MaxMemoryPolicyTypeConfiguration15 = nil
 	}
 
-	// try to unmarshal JSON data into MaxPoolMembersPolicyTypeConfiguration7
-	err = json.Unmarshal(data, &dst.MaxPoolMembersPolicyTypeConfiguration7)
+	// try to unmarshal JSON data into MaxPoolMembersPolicyTypeConfiguration15
+	err = json.Unmarshal(data, &dst.MaxPoolMembersPolicyTypeConfiguration15)
 	if err == nil {
-		jsonMaxPoolMembersPolicyTypeConfiguration7, _ := json.Marshal(dst.MaxPoolMembersPolicyTypeConfiguration7)
-		if string(jsonMaxPoolMembersPolicyTypeConfiguration7) == "{}" { // empty struct
-			dst.MaxPoolMembersPolicyTypeConfiguration7 = nil
+		jsonMaxPoolMembersPolicyTypeConfiguration15, _ := json.Marshal(dst.MaxPoolMembersPolicyTypeConfiguration15)
+		if string(jsonMaxPoolMembersPolicyTypeConfiguration15) == "{}" { // empty struct
+			dst.MaxPoolMembersPolicyTypeConfiguration15 = nil
 		} else {
-			return nil // data stored in dst.MaxPoolMembersPolicyTypeConfiguration7, return on the first match
+			return nil // data stored in dst.MaxPoolMembersPolicyTypeConfiguration15, return on the first match
 		}
 	} else {
-		dst.MaxPoolMembersPolicyTypeConfiguration7 = nil
+		dst.MaxPoolMembersPolicyTypeConfiguration15 = nil
 	}
 
-	// try to unmarshal JSON data into MaxSnapshotsPolicyTypeConfiguration7
-	err = json.Unmarshal(data, &dst.MaxSnapshotsPolicyTypeConfiguration7)
+	// try to unmarshal JSON data into MaxSnapshotsPolicyTypeConfiguration15
+	err = json.Unmarshal(data, &dst.MaxSnapshotsPolicyTypeConfiguration15)
 	if err == nil {
-		jsonMaxSnapshotsPolicyTypeConfiguration7, _ := json.Marshal(dst.MaxSnapshotsPolicyTypeConfiguration7)
-		if string(jsonMaxSnapshotsPolicyTypeConfiguration7) == "{}" { // empty struct
-			dst.MaxSnapshotsPolicyTypeConfiguration7 = nil
+		jsonMaxSnapshotsPolicyTypeConfiguration15, _ := json.Marshal(dst.MaxSnapshotsPolicyTypeConfiguration15)
+		if string(jsonMaxSnapshotsPolicyTypeConfiguration15) == "{}" { // empty struct
+			dst.MaxSnapshotsPolicyTypeConfiguration15 = nil
 		} else {
-			return nil // data stored in dst.MaxSnapshotsPolicyTypeConfiguration7, return on the first match
+			return nil // data stored in dst.MaxSnapshotsPolicyTypeConfiguration15, return on the first match
 		}
 	} else {
-		dst.MaxSnapshotsPolicyTypeConfiguration7 = nil
+		dst.MaxSnapshotsPolicyTypeConfiguration15 = nil
 	}
 
-	// try to unmarshal JSON data into MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration7
-	err = json.Unmarshal(data, &dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration7)
+	// try to unmarshal JSON data into MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration15
+	err = json.Unmarshal(data, &dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration15)
 	if err == nil {
-		jsonMaxStorageAndObjectStorageQuotaPolicyTypeConfiguration7, _ := json.Marshal(dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration7)
-		if string(jsonMaxStorageAndObjectStorageQuotaPolicyTypeConfiguration7) == "{}" { // empty struct
-			dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration7 = nil
+		jsonMaxStorageAndObjectStorageQuotaPolicyTypeConfiguration15, _ := json.Marshal(dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration15)
+		if string(jsonMaxStorageAndObjectStorageQuotaPolicyTypeConfiguration15) == "{}" { // empty struct
+			dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration15 = nil
 		} else {
-			return nil // data stored in dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration7, return on the first match
+			return nil // data stored in dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration15, return on the first match
 		}
 	} else {
-		dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration7 = nil
+		dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration15 = nil
 	}
 
-	// try to unmarshal JSON data into MaxVMsPolicyTypeConfiguration7
-	err = json.Unmarshal(data, &dst.MaxVMsPolicyTypeConfiguration7)
+	// try to unmarshal JSON data into MaxVMsPolicyTypeConfiguration15
+	err = json.Unmarshal(data, &dst.MaxVMsPolicyTypeConfiguration15)
 	if err == nil {
-		jsonMaxVMsPolicyTypeConfiguration7, _ := json.Marshal(dst.MaxVMsPolicyTypeConfiguration7)
-		if string(jsonMaxVMsPolicyTypeConfiguration7) == "{}" { // empty struct
-			dst.MaxVMsPolicyTypeConfiguration7 = nil
+		jsonMaxVMsPolicyTypeConfiguration15, _ := json.Marshal(dst.MaxVMsPolicyTypeConfiguration15)
+		if string(jsonMaxVMsPolicyTypeConfiguration15) == "{}" { // empty struct
+			dst.MaxVMsPolicyTypeConfiguration15 = nil
 		} else {
-			return nil // data stored in dst.MaxVMsPolicyTypeConfiguration7, return on the first match
+			return nil // data stored in dst.MaxVMsPolicyTypeConfiguration15, return on the first match
 		}
 	} else {
-		dst.MaxVMsPolicyTypeConfiguration7 = nil
+		dst.MaxVMsPolicyTypeConfiguration15 = nil
 	}
 
-	// try to unmarshal JSON data into MaxVirtualServersPolicyTypeConfiguration7
-	err = json.Unmarshal(data, &dst.MaxVirtualServersPolicyTypeConfiguration7)
+	// try to unmarshal JSON data into MaxVirtualServersPolicyTypeConfiguration15
+	err = json.Unmarshal(data, &dst.MaxVirtualServersPolicyTypeConfiguration15)
 	if err == nil {
-		jsonMaxVirtualServersPolicyTypeConfiguration7, _ := json.Marshal(dst.MaxVirtualServersPolicyTypeConfiguration7)
-		if string(jsonMaxVirtualServersPolicyTypeConfiguration7) == "{}" { // empty struct
-			dst.MaxVirtualServersPolicyTypeConfiguration7 = nil
+		jsonMaxVirtualServersPolicyTypeConfiguration15, _ := json.Marshal(dst.MaxVirtualServersPolicyTypeConfiguration15)
+		if string(jsonMaxVirtualServersPolicyTypeConfiguration15) == "{}" { // empty struct
+			dst.MaxVirtualServersPolicyTypeConfiguration15 = nil
 		} else {
-			return nil // data stored in dst.MaxVirtualServersPolicyTypeConfiguration7, return on the first match
+			return nil // data stored in dst.MaxVirtualServersPolicyTypeConfiguration15, return on the first match
 		}
 	} else {
-		dst.MaxVirtualServersPolicyTypeConfiguration7 = nil
+		dst.MaxVirtualServersPolicyTypeConfiguration15 = nil
 	}
 
-	// try to unmarshal JSON data into MessageOfTheDayPolicyTypeConfiguration7
-	err = json.Unmarshal(data, &dst.MessageOfTheDayPolicyTypeConfiguration7)
+	// try to unmarshal JSON data into MessageOfTheDayPolicyTypeConfiguration15
+	err = json.Unmarshal(data, &dst.MessageOfTheDayPolicyTypeConfiguration15)
 	if err == nil {
-		jsonMessageOfTheDayPolicyTypeConfiguration7, _ := json.Marshal(dst.MessageOfTheDayPolicyTypeConfiguration7)
-		if string(jsonMessageOfTheDayPolicyTypeConfiguration7) == "{}" { // empty struct
-			dst.MessageOfTheDayPolicyTypeConfiguration7 = nil
+		jsonMessageOfTheDayPolicyTypeConfiguration15, _ := json.Marshal(dst.MessageOfTheDayPolicyTypeConfiguration15)
+		if string(jsonMessageOfTheDayPolicyTypeConfiguration15) == "{}" { // empty struct
+			dst.MessageOfTheDayPolicyTypeConfiguration15 = nil
 		} else {
-			return nil // data stored in dst.MessageOfTheDayPolicyTypeConfiguration7, return on the first match
+			return nil // data stored in dst.MessageOfTheDayPolicyTypeConfiguration15, return on the first match
 		}
 	} else {
-		dst.MessageOfTheDayPolicyTypeConfiguration7 = nil
+		dst.MessageOfTheDayPolicyTypeConfiguration15 = nil
 	}
 
-	// try to unmarshal JSON data into NetworkQuotaPolicyTypeConfiguration7
-	err = json.Unmarshal(data, &dst.NetworkQuotaPolicyTypeConfiguration7)
+	// try to unmarshal JSON data into NetworkQuotaPolicyTypeConfiguration15
+	err = json.Unmarshal(data, &dst.NetworkQuotaPolicyTypeConfiguration15)
 	if err == nil {
-		jsonNetworkQuotaPolicyTypeConfiguration7, _ := json.Marshal(dst.NetworkQuotaPolicyTypeConfiguration7)
-		if string(jsonNetworkQuotaPolicyTypeConfiguration7) == "{}" { // empty struct
-			dst.NetworkQuotaPolicyTypeConfiguration7 = nil
+		jsonNetworkQuotaPolicyTypeConfiguration15, _ := json.Marshal(dst.NetworkQuotaPolicyTypeConfiguration15)
+		if string(jsonNetworkQuotaPolicyTypeConfiguration15) == "{}" { // empty struct
+			dst.NetworkQuotaPolicyTypeConfiguration15 = nil
 		} else {
-			return nil // data stored in dst.NetworkQuotaPolicyTypeConfiguration7, return on the first match
+			return nil // data stored in dst.NetworkQuotaPolicyTypeConfiguration15, return on the first match
 		}
 	} else {
-		dst.NetworkQuotaPolicyTypeConfiguration7 = nil
+		dst.NetworkQuotaPolicyTypeConfiguration15 = nil
 	}
 
-	// try to unmarshal JSON data into PowerSchedulePolicyTypeConfiguration7
-	err = json.Unmarshal(data, &dst.PowerSchedulePolicyTypeConfiguration7)
+	// try to unmarshal JSON data into PowerSchedulePolicyTypeConfiguration15
+	err = json.Unmarshal(data, &dst.PowerSchedulePolicyTypeConfiguration15)
 	if err == nil {
-		jsonPowerSchedulePolicyTypeConfiguration7, _ := json.Marshal(dst.PowerSchedulePolicyTypeConfiguration7)
-		if string(jsonPowerSchedulePolicyTypeConfiguration7) == "{}" { // empty struct
-			dst.PowerSchedulePolicyTypeConfiguration7 = nil
+		jsonPowerSchedulePolicyTypeConfiguration15, _ := json.Marshal(dst.PowerSchedulePolicyTypeConfiguration15)
+		if string(jsonPowerSchedulePolicyTypeConfiguration15) == "{}" { // empty struct
+			dst.PowerSchedulePolicyTypeConfiguration15 = nil
 		} else {
-			return nil // data stored in dst.PowerSchedulePolicyTypeConfiguration7, return on the first match
+			return nil // data stored in dst.PowerSchedulePolicyTypeConfiguration15, return on the first match
 		}
 	} else {
-		dst.PowerSchedulePolicyTypeConfiguration7 = nil
+		dst.PowerSchedulePolicyTypeConfiguration15 = nil
 	}
 
-	// try to unmarshal JSON data into RequiredNetworkPolicyTypeConfiguration7
-	err = json.Unmarshal(data, &dst.RequiredNetworkPolicyTypeConfiguration7)
+	// try to unmarshal JSON data into RequiredNetworkPolicyTypeConfiguration15
+	err = json.Unmarshal(data, &dst.RequiredNetworkPolicyTypeConfiguration15)
 	if err == nil {
-		jsonRequiredNetworkPolicyTypeConfiguration7, _ := json.Marshal(dst.RequiredNetworkPolicyTypeConfiguration7)
-		if string(jsonRequiredNetworkPolicyTypeConfiguration7) == "{}" { // empty struct
-			dst.RequiredNetworkPolicyTypeConfiguration7 = nil
+		jsonRequiredNetworkPolicyTypeConfiguration15, _ := json.Marshal(dst.RequiredNetworkPolicyTypeConfiguration15)
+		if string(jsonRequiredNetworkPolicyTypeConfiguration15) == "{}" { // empty struct
+			dst.RequiredNetworkPolicyTypeConfiguration15 = nil
 		} else {
-			return nil // data stored in dst.RequiredNetworkPolicyTypeConfiguration7, return on the first match
+			return nil // data stored in dst.RequiredNetworkPolicyTypeConfiguration15, return on the first match
 		}
 	} else {
-		dst.RequiredNetworkPolicyTypeConfiguration7 = nil
+		dst.RequiredNetworkPolicyTypeConfiguration15 = nil
 	}
 
-	// try to unmarshal JSON data into RouterQuotaPolicyTypeConfiguration7
-	err = json.Unmarshal(data, &dst.RouterQuotaPolicyTypeConfiguration7)
+	// try to unmarshal JSON data into RouterQuotaPolicyTypeConfiguration15
+	err = json.Unmarshal(data, &dst.RouterQuotaPolicyTypeConfiguration15)
 	if err == nil {
-		jsonRouterQuotaPolicyTypeConfiguration7, _ := json.Marshal(dst.RouterQuotaPolicyTypeConfiguration7)
-		if string(jsonRouterQuotaPolicyTypeConfiguration7) == "{}" { // empty struct
-			dst.RouterQuotaPolicyTypeConfiguration7 = nil
+		jsonRouterQuotaPolicyTypeConfiguration15, _ := json.Marshal(dst.RouterQuotaPolicyTypeConfiguration15)
+		if string(jsonRouterQuotaPolicyTypeConfiguration15) == "{}" { // empty struct
+			dst.RouterQuotaPolicyTypeConfiguration15 = nil
 		} else {
-			return nil // data stored in dst.RouterQuotaPolicyTypeConfiguration7, return on the first match
+			return nil // data stored in dst.RouterQuotaPolicyTypeConfiguration15, return on the first match
 		}
 	} else {
-		dst.RouterQuotaPolicyTypeConfiguration7 = nil
+		dst.RouterQuotaPolicyTypeConfiguration15 = nil
 	}
 
-	// try to unmarshal JSON data into ShutdownPolicyTypeConfiguration7
-	err = json.Unmarshal(data, &dst.ShutdownPolicyTypeConfiguration7)
+	// try to unmarshal JSON data into ShutdownPolicyTypeConfiguration15
+	err = json.Unmarshal(data, &dst.ShutdownPolicyTypeConfiguration15)
 	if err == nil {
-		jsonShutdownPolicyTypeConfiguration7, _ := json.Marshal(dst.ShutdownPolicyTypeConfiguration7)
-		if string(jsonShutdownPolicyTypeConfiguration7) == "{}" { // empty struct
-			dst.ShutdownPolicyTypeConfiguration7 = nil
+		jsonShutdownPolicyTypeConfiguration15, _ := json.Marshal(dst.ShutdownPolicyTypeConfiguration15)
+		if string(jsonShutdownPolicyTypeConfiguration15) == "{}" { // empty struct
+			dst.ShutdownPolicyTypeConfiguration15 = nil
 		} else {
-			return nil // data stored in dst.ShutdownPolicyTypeConfiguration7, return on the first match
+			return nil // data stored in dst.ShutdownPolicyTypeConfiguration15, return on the first match
 		}
 	} else {
-		dst.ShutdownPolicyTypeConfiguration7 = nil
+		dst.ShutdownPolicyTypeConfiguration15 = nil
 	}
 
-	// try to unmarshal JSON data into StorageServerStorageQuotaPolicyTypeConfiguration7
-	err = json.Unmarshal(data, &dst.StorageServerStorageQuotaPolicyTypeConfiguration7)
+	// try to unmarshal JSON data into StorageServerStorageQuotaPolicyTypeConfiguration15
+	err = json.Unmarshal(data, &dst.StorageServerStorageQuotaPolicyTypeConfiguration15)
 	if err == nil {
-		jsonStorageServerStorageQuotaPolicyTypeConfiguration7, _ := json.Marshal(dst.StorageServerStorageQuotaPolicyTypeConfiguration7)
-		if string(jsonStorageServerStorageQuotaPolicyTypeConfiguration7) == "{}" { // empty struct
-			dst.StorageServerStorageQuotaPolicyTypeConfiguration7 = nil
+		jsonStorageServerStorageQuotaPolicyTypeConfiguration15, _ := json.Marshal(dst.StorageServerStorageQuotaPolicyTypeConfiguration15)
+		if string(jsonStorageServerStorageQuotaPolicyTypeConfiguration15) == "{}" { // empty struct
+			dst.StorageServerStorageQuotaPolicyTypeConfiguration15 = nil
 		} else {
-			return nil // data stored in dst.StorageServerStorageQuotaPolicyTypeConfiguration7, return on the first match
+			return nil // data stored in dst.StorageServerStorageQuotaPolicyTypeConfiguration15, return on the first match
 		}
 	} else {
-		dst.StorageServerStorageQuotaPolicyTypeConfiguration7 = nil
+		dst.StorageServerStorageQuotaPolicyTypeConfiguration15 = nil
 	}
 
-	// try to unmarshal JSON data into TagsPolicyTypeConfiguration7
-	err = json.Unmarshal(data, &dst.TagsPolicyTypeConfiguration7)
+	// try to unmarshal JSON data into TagsPolicyTypeConfiguration15
+	err = json.Unmarshal(data, &dst.TagsPolicyTypeConfiguration15)
 	if err == nil {
-		jsonTagsPolicyTypeConfiguration7, _ := json.Marshal(dst.TagsPolicyTypeConfiguration7)
-		if string(jsonTagsPolicyTypeConfiguration7) == "{}" { // empty struct
-			dst.TagsPolicyTypeConfiguration7 = nil
+		jsonTagsPolicyTypeConfiguration15, _ := json.Marshal(dst.TagsPolicyTypeConfiguration15)
+		if string(jsonTagsPolicyTypeConfiguration15) == "{}" { // empty struct
+			dst.TagsPolicyTypeConfiguration15 = nil
 		} else {
-			return nil // data stored in dst.TagsPolicyTypeConfiguration7, return on the first match
+			return nil // data stored in dst.TagsPolicyTypeConfiguration15, return on the first match
 		}
 	} else {
-		dst.TagsPolicyTypeConfiguration7 = nil
+		dst.TagsPolicyTypeConfiguration15 = nil
 	}
 
-	// try to unmarshal JSON data into UserCreationPolicyTypeConfiguration7
-	err = json.Unmarshal(data, &dst.UserCreationPolicyTypeConfiguration7)
+	// try to unmarshal JSON data into UserCreationPolicyTypeConfiguration15
+	err = json.Unmarshal(data, &dst.UserCreationPolicyTypeConfiguration15)
 	if err == nil {
-		jsonUserCreationPolicyTypeConfiguration7, _ := json.Marshal(dst.UserCreationPolicyTypeConfiguration7)
-		if string(jsonUserCreationPolicyTypeConfiguration7) == "{}" { // empty struct
-			dst.UserCreationPolicyTypeConfiguration7 = nil
+		jsonUserCreationPolicyTypeConfiguration15, _ := json.Marshal(dst.UserCreationPolicyTypeConfiguration15)
+		if string(jsonUserCreationPolicyTypeConfiguration15) == "{}" { // empty struct
+			dst.UserCreationPolicyTypeConfiguration15 = nil
 		} else {
-			return nil // data stored in dst.UserCreationPolicyTypeConfiguration7, return on the first match
+			return nil // data stored in dst.UserCreationPolicyTypeConfiguration15, return on the first match
 		}
 	} else {
-		dst.UserCreationPolicyTypeConfiguration7 = nil
+		dst.UserCreationPolicyTypeConfiguration15 = nil
 	}
 
-	// try to unmarshal JSON data into UserGroupCreationPolicyTypeConfiguration7
-	err = json.Unmarshal(data, &dst.UserGroupCreationPolicyTypeConfiguration7)
+	// try to unmarshal JSON data into UserGroupCreationPolicyTypeConfiguration15
+	err = json.Unmarshal(data, &dst.UserGroupCreationPolicyTypeConfiguration15)
 	if err == nil {
-		jsonUserGroupCreationPolicyTypeConfiguration7, _ := json.Marshal(dst.UserGroupCreationPolicyTypeConfiguration7)
-		if string(jsonUserGroupCreationPolicyTypeConfiguration7) == "{}" { // empty struct
-			dst.UserGroupCreationPolicyTypeConfiguration7 = nil
+		jsonUserGroupCreationPolicyTypeConfiguration15, _ := json.Marshal(dst.UserGroupCreationPolicyTypeConfiguration15)
+		if string(jsonUserGroupCreationPolicyTypeConfiguration15) == "{}" { // empty struct
+			dst.UserGroupCreationPolicyTypeConfiguration15 = nil
 		} else {
-			return nil // data stored in dst.UserGroupCreationPolicyTypeConfiguration7, return on the first match
+			return nil // data stored in dst.UserGroupCreationPolicyTypeConfiguration15, return on the first match
 		}
 	} else {
-		dst.UserGroupCreationPolicyTypeConfiguration7 = nil
+		dst.UserGroupCreationPolicyTypeConfiguration15 = nil
 	}
 
-	// try to unmarshal JSON data into WorkflowPolicyTypeConfiguration7
-	err = json.Unmarshal(data, &dst.WorkflowPolicyTypeConfiguration7)
+	// try to unmarshal JSON data into WorkflowPolicyTypeConfiguration15
+	err = json.Unmarshal(data, &dst.WorkflowPolicyTypeConfiguration15)
 	if err == nil {
-		jsonWorkflowPolicyTypeConfiguration7, _ := json.Marshal(dst.WorkflowPolicyTypeConfiguration7)
-		if string(jsonWorkflowPolicyTypeConfiguration7) == "{}" { // empty struct
-			dst.WorkflowPolicyTypeConfiguration7 = nil
+		jsonWorkflowPolicyTypeConfiguration15, _ := json.Marshal(dst.WorkflowPolicyTypeConfiguration15)
+		if string(jsonWorkflowPolicyTypeConfiguration15) == "{}" { // empty struct
+			dst.WorkflowPolicyTypeConfiguration15 = nil
 		} else {
-			return nil // data stored in dst.WorkflowPolicyTypeConfiguration7, return on the first match
+			return nil // data stored in dst.WorkflowPolicyTypeConfiguration15, return on the first match
 		}
 	} else {
-		dst.WorkflowPolicyTypeConfiguration7 = nil
+		dst.WorkflowPolicyTypeConfiguration15 = nil
 	}
 
 	return NewResponseValidationError("data failed to match schemas in anyOf(PolicyCreateConfig)")
@@ -679,132 +679,132 @@ func (dst *PolicyCreateConfig) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src PolicyCreateConfig) MarshalJSON() ([]byte, error) {
-	if src.ApprovePolicyTypeConfiguration7 != nil {
-		return json.Marshal(&src.ApprovePolicyTypeConfiguration7)
+	if src.ApprovePolicyTypeConfiguration15 != nil {
+		return json.Marshal(&src.ApprovePolicyTypeConfiguration15)
 	}
 
-	if src.BackupCreationPolicyTypeConfiguration7 != nil {
-		return json.Marshal(&src.BackupCreationPolicyTypeConfiguration7)
+	if src.BackupCreationPolicyTypeConfiguration15 != nil {
+		return json.Marshal(&src.BackupCreationPolicyTypeConfiguration15)
 	}
 
-	if src.BackupTargetsPolicyTypeConfiguration7 != nil {
-		return json.Marshal(&src.BackupTargetsPolicyTypeConfiguration7)
+	if src.BackupTargetsPolicyTypeConfiguration15 != nil {
+		return json.Marshal(&src.BackupTargetsPolicyTypeConfiguration15)
 	}
 
-	if src.BudgetPolicyTypeConfiguration7 != nil {
-		return json.Marshal(&src.BudgetPolicyTypeConfiguration7)
+	if src.BudgetPolicyTypeConfiguration15 != nil {
+		return json.Marshal(&src.BudgetPolicyTypeConfiguration15)
 	}
 
-	if src.ClusterResourceNamePolicyTypeConfiguration7 != nil {
-		return json.Marshal(&src.ClusterResourceNamePolicyTypeConfiguration7)
+	if src.ClusterResourceNamePolicyTypeConfiguration15 != nil {
+		return json.Marshal(&src.ClusterResourceNamePolicyTypeConfiguration15)
 	}
 
-	if src.CypherAccessPolicyTypeConfiguration7 != nil {
-		return json.Marshal(&src.CypherAccessPolicyTypeConfiguration7)
+	if src.CypherAccessPolicyTypeConfiguration15 != nil {
+		return json.Marshal(&src.CypherAccessPolicyTypeConfiguration15)
 	}
 
-	if src.DelayedDeletePolicyTypeConfiguration7 != nil {
-		return json.Marshal(&src.DelayedDeletePolicyTypeConfiguration7)
+	if src.DelayedDeletePolicyTypeConfiguration15 != nil {
+		return json.Marshal(&src.DelayedDeletePolicyTypeConfiguration15)
 	}
 
-	if src.ExpirationPolicyTypeConfiguration7 != nil {
-		return json.Marshal(&src.ExpirationPolicyTypeConfiguration7)
+	if src.ExpirationPolicyTypeConfiguration15 != nil {
+		return json.Marshal(&src.ExpirationPolicyTypeConfiguration15)
 	}
 
 	if src.FileShareStorageQuotaPolicyTypeConfiguration2 != nil {
 		return json.Marshal(&src.FileShareStorageQuotaPolicyTypeConfiguration2)
 	}
 
-	if src.HostnamePolicyTypeConfiguration7 != nil {
-		return json.Marshal(&src.HostnamePolicyTypeConfiguration7)
+	if src.HostnamePolicyTypeConfiguration15 != nil {
+		return json.Marshal(&src.HostnamePolicyTypeConfiguration15)
 	}
 
-	if src.InstanceNamePolicyTypeConfiguration7 != nil {
-		return json.Marshal(&src.InstanceNamePolicyTypeConfiguration7)
+	if src.InstanceNamePolicyTypeConfiguration15 != nil {
+		return json.Marshal(&src.InstanceNamePolicyTypeConfiguration15)
 	}
 
-	if src.MaxContainersPolicyTypeConfiguration7 != nil {
-		return json.Marshal(&src.MaxContainersPolicyTypeConfiguration7)
+	if src.MaxContainersPolicyTypeConfiguration15 != nil {
+		return json.Marshal(&src.MaxContainersPolicyTypeConfiguration15)
 	}
 
-	if src.MaxCoresPolicyTypeConfiguration7 != nil {
-		return json.Marshal(&src.MaxCoresPolicyTypeConfiguration7)
+	if src.MaxCoresPolicyTypeConfiguration15 != nil {
+		return json.Marshal(&src.MaxCoresPolicyTypeConfiguration15)
 	}
 
-	if src.MaxHostsPolicyTypeConfiguration7 != nil {
-		return json.Marshal(&src.MaxHostsPolicyTypeConfiguration7)
+	if src.MaxHostsPolicyTypeConfiguration15 != nil {
+		return json.Marshal(&src.MaxHostsPolicyTypeConfiguration15)
 	}
 
-	if src.MaxLoadBalancerPoolsPolicyTypeConfiguration7 != nil {
-		return json.Marshal(&src.MaxLoadBalancerPoolsPolicyTypeConfiguration7)
+	if src.MaxLoadBalancerPoolsPolicyTypeConfiguration15 != nil {
+		return json.Marshal(&src.MaxLoadBalancerPoolsPolicyTypeConfiguration15)
 	}
 
-	if src.MaxMemoryPolicyTypeConfiguration7 != nil {
-		return json.Marshal(&src.MaxMemoryPolicyTypeConfiguration7)
+	if src.MaxMemoryPolicyTypeConfiguration15 != nil {
+		return json.Marshal(&src.MaxMemoryPolicyTypeConfiguration15)
 	}
 
-	if src.MaxPoolMembersPolicyTypeConfiguration7 != nil {
-		return json.Marshal(&src.MaxPoolMembersPolicyTypeConfiguration7)
+	if src.MaxPoolMembersPolicyTypeConfiguration15 != nil {
+		return json.Marshal(&src.MaxPoolMembersPolicyTypeConfiguration15)
 	}
 
-	if src.MaxSnapshotsPolicyTypeConfiguration7 != nil {
-		return json.Marshal(&src.MaxSnapshotsPolicyTypeConfiguration7)
+	if src.MaxSnapshotsPolicyTypeConfiguration15 != nil {
+		return json.Marshal(&src.MaxSnapshotsPolicyTypeConfiguration15)
 	}
 
-	if src.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration7 != nil {
-		return json.Marshal(&src.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration7)
+	if src.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration15 != nil {
+		return json.Marshal(&src.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration15)
 	}
 
-	if src.MaxVMsPolicyTypeConfiguration7 != nil {
-		return json.Marshal(&src.MaxVMsPolicyTypeConfiguration7)
+	if src.MaxVMsPolicyTypeConfiguration15 != nil {
+		return json.Marshal(&src.MaxVMsPolicyTypeConfiguration15)
 	}
 
-	if src.MaxVirtualServersPolicyTypeConfiguration7 != nil {
-		return json.Marshal(&src.MaxVirtualServersPolicyTypeConfiguration7)
+	if src.MaxVirtualServersPolicyTypeConfiguration15 != nil {
+		return json.Marshal(&src.MaxVirtualServersPolicyTypeConfiguration15)
 	}
 
-	if src.MessageOfTheDayPolicyTypeConfiguration7 != nil {
-		return json.Marshal(&src.MessageOfTheDayPolicyTypeConfiguration7)
+	if src.MessageOfTheDayPolicyTypeConfiguration15 != nil {
+		return json.Marshal(&src.MessageOfTheDayPolicyTypeConfiguration15)
 	}
 
-	if src.NetworkQuotaPolicyTypeConfiguration7 != nil {
-		return json.Marshal(&src.NetworkQuotaPolicyTypeConfiguration7)
+	if src.NetworkQuotaPolicyTypeConfiguration15 != nil {
+		return json.Marshal(&src.NetworkQuotaPolicyTypeConfiguration15)
 	}
 
-	if src.PowerSchedulePolicyTypeConfiguration7 != nil {
-		return json.Marshal(&src.PowerSchedulePolicyTypeConfiguration7)
+	if src.PowerSchedulePolicyTypeConfiguration15 != nil {
+		return json.Marshal(&src.PowerSchedulePolicyTypeConfiguration15)
 	}
 
-	if src.RequiredNetworkPolicyTypeConfiguration7 != nil {
-		return json.Marshal(&src.RequiredNetworkPolicyTypeConfiguration7)
+	if src.RequiredNetworkPolicyTypeConfiguration15 != nil {
+		return json.Marshal(&src.RequiredNetworkPolicyTypeConfiguration15)
 	}
 
-	if src.RouterQuotaPolicyTypeConfiguration7 != nil {
-		return json.Marshal(&src.RouterQuotaPolicyTypeConfiguration7)
+	if src.RouterQuotaPolicyTypeConfiguration15 != nil {
+		return json.Marshal(&src.RouterQuotaPolicyTypeConfiguration15)
 	}
 
-	if src.ShutdownPolicyTypeConfiguration7 != nil {
-		return json.Marshal(&src.ShutdownPolicyTypeConfiguration7)
+	if src.ShutdownPolicyTypeConfiguration15 != nil {
+		return json.Marshal(&src.ShutdownPolicyTypeConfiguration15)
 	}
 
-	if src.StorageServerStorageQuotaPolicyTypeConfiguration7 != nil {
-		return json.Marshal(&src.StorageServerStorageQuotaPolicyTypeConfiguration7)
+	if src.StorageServerStorageQuotaPolicyTypeConfiguration15 != nil {
+		return json.Marshal(&src.StorageServerStorageQuotaPolicyTypeConfiguration15)
 	}
 
-	if src.TagsPolicyTypeConfiguration7 != nil {
-		return json.Marshal(&src.TagsPolicyTypeConfiguration7)
+	if src.TagsPolicyTypeConfiguration15 != nil {
+		return json.Marshal(&src.TagsPolicyTypeConfiguration15)
 	}
 
-	if src.UserCreationPolicyTypeConfiguration7 != nil {
-		return json.Marshal(&src.UserCreationPolicyTypeConfiguration7)
+	if src.UserCreationPolicyTypeConfiguration15 != nil {
+		return json.Marshal(&src.UserCreationPolicyTypeConfiguration15)
 	}
 
-	if src.UserGroupCreationPolicyTypeConfiguration7 != nil {
-		return json.Marshal(&src.UserGroupCreationPolicyTypeConfiguration7)
+	if src.UserGroupCreationPolicyTypeConfiguration15 != nil {
+		return json.Marshal(&src.UserGroupCreationPolicyTypeConfiguration15)
 	}
 
-	if src.WorkflowPolicyTypeConfiguration7 != nil {
-		return json.Marshal(&src.WorkflowPolicyTypeConfiguration7)
+	if src.WorkflowPolicyTypeConfiguration15 != nil {
+		return json.Marshal(&src.WorkflowPolicyTypeConfiguration15)
 	}
 
 	return nil, nil // no data in anyOf schemas

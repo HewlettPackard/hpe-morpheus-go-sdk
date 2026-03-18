@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
-**Account** | Pointer to [**ListEnvironments200ResponseAllOfEnvironmentsInnerAccount**](ListEnvironments200ResponseAllOfEnvironmentsInnerAccount.md) |  | [optional] 
+**Account** | Pointer to [**NullableListEnvironments200ResponseAllOfEnvironmentsInnerAccount**](ListEnvironments200ResponseAllOfEnvironmentsInnerAccount.md) |  | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -84,6 +84,16 @@ SetAccount sets Account field to given value.
 
 HasAccount returns a boolean if a field has been set.
 
+### SetAccountNil
+
+`func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) SetAccountNil(b bool)`
+
+ SetAccountNil sets the value for Account to be an explicit nil
+
+### UnsetAccount
+`func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) UnsetAccount()`
+
+UnsetAccount ensures that no value is present for Account, not even an explicit nil
 ### GetCode
 
 `func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) GetCode() string`

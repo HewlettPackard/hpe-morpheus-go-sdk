@@ -20,21 +20,21 @@ var _ MappedNullable = &ClusterServerCreate{}
 
 // ClusterServerCreate struct for ClusterServerCreate
 type ClusterServerCreate struct {
-	Config     ClusterServerCreateConfig      `json:"config"`
-	ServerType *ClusterServerCreateServerType `json:"serverType,omitempty"`
+	Config     AddClusterWorkerRequestServerConfig      `json:"config"`
+	ServerType *AddClusterWorkerRequestServerServerType `json:"serverType,omitempty"`
 	// Name to be used for host(s) created in the cluster
-	Name               string                                 `json:"name"`
-	Plan               ClusterServerCreatePlan                `json:"plan"`
-	ServicePlanOptions *ClusterServerCreateServicePlanOptions `json:"servicePlanOptions,omitempty"`
+	Name               string                                           `json:"name"`
+	Plan               AddClusterWorkerRequestServerPlan                `json:"plan"`
+	ServicePlanOptions *AddClusterWorkerRequestServerServicePlanOptions `json:"servicePlanOptions,omitempty"`
 	// The (optional) volumes parameter is for LV configuration, can create additional LVs at provision It should be passed as an array of Objects
-	Volumes []ClusterServerCreateVolumesInner `json:"volumes,omitempty"`
+	Volumes []AddClusterWorkerRequestServerVolumesInner `json:"volumes,omitempty"`
 	// The networkInterfaces parameter is for network configuration.  The Options API /api/options/zoneNetworkOptions can be used to see which options are available.  It should be passed as an array of Objects with the following attributes
-	NetworkInterfaces []ClusterServerCreateNetworkInterfacesInner `json:"networkInterfaces,omitempty"`
+	NetworkInterfaces []AddClusterWorkerRequestServerNetworkInterfacesInner `json:"networkInterfaces,omitempty"`
 	// Key for security group configuration.
 	SecurityGroups []string `json:"securityGroups,omitempty"`
 	// Visibility for server host
-	Visibility *string                       `json:"visibility,omitempty"`
-	UserGroup  *ClusterServerCreateUserGroup `json:"userGroup,omitempty"`
+	Visibility *string                                 `json:"visibility,omitempty"`
+	UserGroup  *AddClusterWorkerRequestServerUserGroup `json:"userGroup,omitempty"`
 	// Network domain
 	NetworkDomain NullableString `json:"networkDomain,omitempty"`
 	// Hostname for server host
@@ -42,17 +42,17 @@ type ClusterServerCreate struct {
 	// Number of workers or hosts
 	NodeCount *int64 `json:"nodeCount,omitempty"`
 	// Metadata tags, Array of objects having a name and value.
-	Tags []ClusterServerCreateTagsInner `json:"tags,omitempty"`
+	Tags []AddClusterWorkerRequestServerTagsInner `json:"tags,omitempty"`
 	// Array of strings (keywords). This will set labels on the server and also on the cluster as well by default.
 	Labels []string `json:"labels,omitempty"`
 	// Array of Host IPs and Names. This is used in conjunction with sshUsername and sshPassword/sshKeyPair to add existing hosts such as with HPE VM clusters.
-	SshHosts []ClusterServerCreateSshHostsInner `json:"sshHosts,omitempty"`
+	SshHosts []AddClusterWorkerRequestServerSshHostsInner `json:"sshHosts,omitempty"`
 	// SSH Username
 	SshUsername *string `json:"sshUsername,omitempty"`
 	// SSH Password
-	SshPassword          NullableString                 `json:"sshPassword,omitempty"`
-	SshKeyPair           *ClusterServerCreateSshKeyPair `json:"sshKeyPair,omitempty"`
-	AdditionalProperties map[string]interface{}         `json:",remain"`
+	SshPassword          NullableString                           `json:"sshPassword,omitempty"`
+	SshKeyPair           *AddClusterWorkerRequestServerSshKeyPair `json:"sshKeyPair,omitempty"`
+	AdditionalProperties map[string]interface{}                   `json:",remain"`
 }
 
 type _ClusterServerCreate ClusterServerCreate
@@ -61,7 +61,7 @@ type _ClusterServerCreate ClusterServerCreate
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewClusterServerCreate(config ClusterServerCreateConfig, name string, plan ClusterServerCreatePlan) *ClusterServerCreate {
+func NewClusterServerCreate(config AddClusterWorkerRequestServerConfig, name string, plan AddClusterWorkerRequestServerPlan) *ClusterServerCreate {
 	this := ClusterServerCreate{}
 	this.Config = config
 	this.Name = name
@@ -82,9 +82,9 @@ func NewClusterServerCreateWithDefaults() *ClusterServerCreate {
 }
 
 // GetConfig returns the Config field value
-func (o *ClusterServerCreate) GetConfig() ClusterServerCreateConfig {
+func (o *ClusterServerCreate) GetConfig() AddClusterWorkerRequestServerConfig {
 	if o == nil {
-		var ret ClusterServerCreateConfig
+		var ret AddClusterWorkerRequestServerConfig
 		return ret
 	}
 
@@ -93,7 +93,7 @@ func (o *ClusterServerCreate) GetConfig() ClusterServerCreateConfig {
 
 // GetConfigOk returns a tuple with the Config field value
 // and a boolean to check if the value has been set.
-func (o *ClusterServerCreate) GetConfigOk() (*ClusterServerCreateConfig, bool) {
+func (o *ClusterServerCreate) GetConfigOk() (*AddClusterWorkerRequestServerConfig, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -101,14 +101,14 @@ func (o *ClusterServerCreate) GetConfigOk() (*ClusterServerCreateConfig, bool) {
 }
 
 // SetConfig sets field value
-func (o *ClusterServerCreate) SetConfig(v ClusterServerCreateConfig) {
+func (o *ClusterServerCreate) SetConfig(v AddClusterWorkerRequestServerConfig) {
 	o.Config = v
 }
 
 // GetServerType returns the ServerType field value if set, zero value otherwise.
-func (o *ClusterServerCreate) GetServerType() ClusterServerCreateServerType {
+func (o *ClusterServerCreate) GetServerType() AddClusterWorkerRequestServerServerType {
 	if o == nil || IsNil(o.ServerType) {
-		var ret ClusterServerCreateServerType
+		var ret AddClusterWorkerRequestServerServerType
 		return ret
 	}
 	return *o.ServerType
@@ -116,7 +116,7 @@ func (o *ClusterServerCreate) GetServerType() ClusterServerCreateServerType {
 
 // GetServerTypeOk returns a tuple with the ServerType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClusterServerCreate) GetServerTypeOk() (*ClusterServerCreateServerType, bool) {
+func (o *ClusterServerCreate) GetServerTypeOk() (*AddClusterWorkerRequestServerServerType, bool) {
 	if o == nil || IsNil(o.ServerType) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *ClusterServerCreate) IsSetServerType() bool {
 	return false
 }
 
-// SetServerType gets a reference to the given ClusterServerCreateServerType and assigns it to the ServerType field.
-func (o *ClusterServerCreate) SetServerType(v ClusterServerCreateServerType) {
+// SetServerType gets a reference to the given AddClusterWorkerRequestServerServerType and assigns it to the ServerType field.
+func (o *ClusterServerCreate) SetServerType(v AddClusterWorkerRequestServerServerType) {
 	o.ServerType = &v
 }
 
@@ -162,9 +162,9 @@ func (o *ClusterServerCreate) SetName(v string) {
 }
 
 // GetPlan returns the Plan field value
-func (o *ClusterServerCreate) GetPlan() ClusterServerCreatePlan {
+func (o *ClusterServerCreate) GetPlan() AddClusterWorkerRequestServerPlan {
 	if o == nil {
-		var ret ClusterServerCreatePlan
+		var ret AddClusterWorkerRequestServerPlan
 		return ret
 	}
 
@@ -173,7 +173,7 @@ func (o *ClusterServerCreate) GetPlan() ClusterServerCreatePlan {
 
 // GetPlanOk returns a tuple with the Plan field value
 // and a boolean to check if the value has been set.
-func (o *ClusterServerCreate) GetPlanOk() (*ClusterServerCreatePlan, bool) {
+func (o *ClusterServerCreate) GetPlanOk() (*AddClusterWorkerRequestServerPlan, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -181,14 +181,14 @@ func (o *ClusterServerCreate) GetPlanOk() (*ClusterServerCreatePlan, bool) {
 }
 
 // SetPlan sets field value
-func (o *ClusterServerCreate) SetPlan(v ClusterServerCreatePlan) {
+func (o *ClusterServerCreate) SetPlan(v AddClusterWorkerRequestServerPlan) {
 	o.Plan = v
 }
 
 // GetServicePlanOptions returns the ServicePlanOptions field value if set, zero value otherwise.
-func (o *ClusterServerCreate) GetServicePlanOptions() ClusterServerCreateServicePlanOptions {
+func (o *ClusterServerCreate) GetServicePlanOptions() AddClusterWorkerRequestServerServicePlanOptions {
 	if o == nil || IsNil(o.ServicePlanOptions) {
-		var ret ClusterServerCreateServicePlanOptions
+		var ret AddClusterWorkerRequestServerServicePlanOptions
 		return ret
 	}
 	return *o.ServicePlanOptions
@@ -196,7 +196,7 @@ func (o *ClusterServerCreate) GetServicePlanOptions() ClusterServerCreateService
 
 // GetServicePlanOptionsOk returns a tuple with the ServicePlanOptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClusterServerCreate) GetServicePlanOptionsOk() (*ClusterServerCreateServicePlanOptions, bool) {
+func (o *ClusterServerCreate) GetServicePlanOptionsOk() (*AddClusterWorkerRequestServerServicePlanOptions, bool) {
 	if o == nil || IsNil(o.ServicePlanOptions) {
 		return nil, false
 	}
@@ -212,15 +212,15 @@ func (o *ClusterServerCreate) IsSetServicePlanOptions() bool {
 	return false
 }
 
-// SetServicePlanOptions gets a reference to the given ClusterServerCreateServicePlanOptions and assigns it to the ServicePlanOptions field.
-func (o *ClusterServerCreate) SetServicePlanOptions(v ClusterServerCreateServicePlanOptions) {
+// SetServicePlanOptions gets a reference to the given AddClusterWorkerRequestServerServicePlanOptions and assigns it to the ServicePlanOptions field.
+func (o *ClusterServerCreate) SetServicePlanOptions(v AddClusterWorkerRequestServerServicePlanOptions) {
 	o.ServicePlanOptions = &v
 }
 
 // GetVolumes returns the Volumes field value if set, zero value otherwise.
-func (o *ClusterServerCreate) GetVolumes() []ClusterServerCreateVolumesInner {
+func (o *ClusterServerCreate) GetVolumes() []AddClusterWorkerRequestServerVolumesInner {
 	if o == nil || IsNil(o.Volumes) {
-		var ret []ClusterServerCreateVolumesInner
+		var ret []AddClusterWorkerRequestServerVolumesInner
 		return ret
 	}
 	return o.Volumes
@@ -228,7 +228,7 @@ func (o *ClusterServerCreate) GetVolumes() []ClusterServerCreateVolumesInner {
 
 // GetVolumesOk returns a tuple with the Volumes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClusterServerCreate) GetVolumesOk() ([]ClusterServerCreateVolumesInner, bool) {
+func (o *ClusterServerCreate) GetVolumesOk() ([]AddClusterWorkerRequestServerVolumesInner, bool) {
 	if o == nil || IsNil(o.Volumes) {
 		return nil, false
 	}
@@ -244,15 +244,15 @@ func (o *ClusterServerCreate) IsSetVolumes() bool {
 	return false
 }
 
-// SetVolumes gets a reference to the given []ClusterServerCreateVolumesInner and assigns it to the Volumes field.
-func (o *ClusterServerCreate) SetVolumes(v []ClusterServerCreateVolumesInner) {
+// SetVolumes gets a reference to the given []AddClusterWorkerRequestServerVolumesInner and assigns it to the Volumes field.
+func (o *ClusterServerCreate) SetVolumes(v []AddClusterWorkerRequestServerVolumesInner) {
 	o.Volumes = v
 }
 
 // GetNetworkInterfaces returns the NetworkInterfaces field value if set, zero value otherwise.
-func (o *ClusterServerCreate) GetNetworkInterfaces() []ClusterServerCreateNetworkInterfacesInner {
+func (o *ClusterServerCreate) GetNetworkInterfaces() []AddClusterWorkerRequestServerNetworkInterfacesInner {
 	if o == nil || IsNil(o.NetworkInterfaces) {
-		var ret []ClusterServerCreateNetworkInterfacesInner
+		var ret []AddClusterWorkerRequestServerNetworkInterfacesInner
 		return ret
 	}
 	return o.NetworkInterfaces
@@ -260,7 +260,7 @@ func (o *ClusterServerCreate) GetNetworkInterfaces() []ClusterServerCreateNetwor
 
 // GetNetworkInterfacesOk returns a tuple with the NetworkInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClusterServerCreate) GetNetworkInterfacesOk() ([]ClusterServerCreateNetworkInterfacesInner, bool) {
+func (o *ClusterServerCreate) GetNetworkInterfacesOk() ([]AddClusterWorkerRequestServerNetworkInterfacesInner, bool) {
 	if o == nil || IsNil(o.NetworkInterfaces) {
 		return nil, false
 	}
@@ -276,8 +276,8 @@ func (o *ClusterServerCreate) IsSetNetworkInterfaces() bool {
 	return false
 }
 
-// SetNetworkInterfaces gets a reference to the given []ClusterServerCreateNetworkInterfacesInner and assigns it to the NetworkInterfaces field.
-func (o *ClusterServerCreate) SetNetworkInterfaces(v []ClusterServerCreateNetworkInterfacesInner) {
+// SetNetworkInterfaces gets a reference to the given []AddClusterWorkerRequestServerNetworkInterfacesInner and assigns it to the NetworkInterfaces field.
+func (o *ClusterServerCreate) SetNetworkInterfaces(v []AddClusterWorkerRequestServerNetworkInterfacesInner) {
 	o.NetworkInterfaces = v
 }
 
@@ -346,9 +346,9 @@ func (o *ClusterServerCreate) SetVisibility(v string) {
 }
 
 // GetUserGroup returns the UserGroup field value if set, zero value otherwise.
-func (o *ClusterServerCreate) GetUserGroup() ClusterServerCreateUserGroup {
+func (o *ClusterServerCreate) GetUserGroup() AddClusterWorkerRequestServerUserGroup {
 	if o == nil || IsNil(o.UserGroup) {
-		var ret ClusterServerCreateUserGroup
+		var ret AddClusterWorkerRequestServerUserGroup
 		return ret
 	}
 	return *o.UserGroup
@@ -356,7 +356,7 @@ func (o *ClusterServerCreate) GetUserGroup() ClusterServerCreateUserGroup {
 
 // GetUserGroupOk returns a tuple with the UserGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClusterServerCreate) GetUserGroupOk() (*ClusterServerCreateUserGroup, bool) {
+func (o *ClusterServerCreate) GetUserGroupOk() (*AddClusterWorkerRequestServerUserGroup, bool) {
 	if o == nil || IsNil(o.UserGroup) {
 		return nil, false
 	}
@@ -372,8 +372,8 @@ func (o *ClusterServerCreate) IsSetUserGroup() bool {
 	return false
 }
 
-// SetUserGroup gets a reference to the given ClusterServerCreateUserGroup and assigns it to the UserGroup field.
-func (o *ClusterServerCreate) SetUserGroup(v ClusterServerCreateUserGroup) {
+// SetUserGroup gets a reference to the given AddClusterWorkerRequestServerUserGroup and assigns it to the UserGroup field.
+func (o *ClusterServerCreate) SetUserGroup(v AddClusterWorkerRequestServerUserGroup) {
 	o.UserGroup = &v
 }
 
@@ -496,9 +496,9 @@ func (o *ClusterServerCreate) SetNodeCount(v int64) {
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise.
-func (o *ClusterServerCreate) GetTags() []ClusterServerCreateTagsInner {
+func (o *ClusterServerCreate) GetTags() []AddClusterWorkerRequestServerTagsInner {
 	if o == nil || IsNil(o.Tags) {
-		var ret []ClusterServerCreateTagsInner
+		var ret []AddClusterWorkerRequestServerTagsInner
 		return ret
 	}
 	return o.Tags
@@ -506,7 +506,7 @@ func (o *ClusterServerCreate) GetTags() []ClusterServerCreateTagsInner {
 
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClusterServerCreate) GetTagsOk() ([]ClusterServerCreateTagsInner, bool) {
+func (o *ClusterServerCreate) GetTagsOk() ([]AddClusterWorkerRequestServerTagsInner, bool) {
 	if o == nil || IsNil(o.Tags) {
 		return nil, false
 	}
@@ -522,8 +522,8 @@ func (o *ClusterServerCreate) IsSetTags() bool {
 	return false
 }
 
-// SetTags gets a reference to the given []ClusterServerCreateTagsInner and assigns it to the Tags field.
-func (o *ClusterServerCreate) SetTags(v []ClusterServerCreateTagsInner) {
+// SetTags gets a reference to the given []AddClusterWorkerRequestServerTagsInner and assigns it to the Tags field.
+func (o *ClusterServerCreate) SetTags(v []AddClusterWorkerRequestServerTagsInner) {
 	o.Tags = v
 }
 
@@ -560,9 +560,9 @@ func (o *ClusterServerCreate) SetLabels(v []string) {
 }
 
 // GetSshHosts returns the SshHosts field value if set, zero value otherwise.
-func (o *ClusterServerCreate) GetSshHosts() []ClusterServerCreateSshHostsInner {
+func (o *ClusterServerCreate) GetSshHosts() []AddClusterWorkerRequestServerSshHostsInner {
 	if o == nil || IsNil(o.SshHosts) {
-		var ret []ClusterServerCreateSshHostsInner
+		var ret []AddClusterWorkerRequestServerSshHostsInner
 		return ret
 	}
 	return o.SshHosts
@@ -570,7 +570,7 @@ func (o *ClusterServerCreate) GetSshHosts() []ClusterServerCreateSshHostsInner {
 
 // GetSshHostsOk returns a tuple with the SshHosts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClusterServerCreate) GetSshHostsOk() ([]ClusterServerCreateSshHostsInner, bool) {
+func (o *ClusterServerCreate) GetSshHostsOk() ([]AddClusterWorkerRequestServerSshHostsInner, bool) {
 	if o == nil || IsNil(o.SshHosts) {
 		return nil, false
 	}
@@ -586,8 +586,8 @@ func (o *ClusterServerCreate) IsSetSshHosts() bool {
 	return false
 }
 
-// SetSshHosts gets a reference to the given []ClusterServerCreateSshHostsInner and assigns it to the SshHosts field.
-func (o *ClusterServerCreate) SetSshHosts(v []ClusterServerCreateSshHostsInner) {
+// SetSshHosts gets a reference to the given []AddClusterWorkerRequestServerSshHostsInner and assigns it to the SshHosts field.
+func (o *ClusterServerCreate) SetSshHosts(v []AddClusterWorkerRequestServerSshHostsInner) {
 	o.SshHosts = v
 }
 
@@ -667,9 +667,9 @@ func (o *ClusterServerCreate) UnsetSshPassword() {
 }
 
 // GetSshKeyPair returns the SshKeyPair field value if set, zero value otherwise.
-func (o *ClusterServerCreate) GetSshKeyPair() ClusterServerCreateSshKeyPair {
+func (o *ClusterServerCreate) GetSshKeyPair() AddClusterWorkerRequestServerSshKeyPair {
 	if o == nil || IsNil(o.SshKeyPair) {
-		var ret ClusterServerCreateSshKeyPair
+		var ret AddClusterWorkerRequestServerSshKeyPair
 		return ret
 	}
 	return *o.SshKeyPair
@@ -677,7 +677,7 @@ func (o *ClusterServerCreate) GetSshKeyPair() ClusterServerCreateSshKeyPair {
 
 // GetSshKeyPairOk returns a tuple with the SshKeyPair field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClusterServerCreate) GetSshKeyPairOk() (*ClusterServerCreateSshKeyPair, bool) {
+func (o *ClusterServerCreate) GetSshKeyPairOk() (*AddClusterWorkerRequestServerSshKeyPair, bool) {
 	if o == nil || IsNil(o.SshKeyPair) {
 		return nil, false
 	}
@@ -693,8 +693,8 @@ func (o *ClusterServerCreate) IsSetSshKeyPair() bool {
 	return false
 }
 
-// SetSshKeyPair gets a reference to the given ClusterServerCreateSshKeyPair and assigns it to the SshKeyPair field.
-func (o *ClusterServerCreate) SetSshKeyPair(v ClusterServerCreateSshKeyPair) {
+// SetSshKeyPair gets a reference to the given AddClusterWorkerRequestServerSshKeyPair and assigns it to the SshKeyPair field.
+func (o *ClusterServerCreate) SetSshKeyPair(v AddClusterWorkerRequestServerSshKeyPair) {
 	o.SshKeyPair = &v
 }
 

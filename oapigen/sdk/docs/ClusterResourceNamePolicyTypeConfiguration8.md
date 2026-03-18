@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ServerNamingType** | Pointer to **string** |  | [optional] 
+**ServerNamingType** | **string** |  | 
 **ServerNamingPattern** | Pointer to **string** |  | [optional] 
 **ServerNamingConflict** | Pointer to **bool** |  | [optional] 
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 
 ### NewClusterResourceNamePolicyTypeConfiguration8
 
-`func NewClusterResourceNamePolicyTypeConfiguration8() *ClusterResourceNamePolicyTypeConfiguration8`
+`func NewClusterResourceNamePolicyTypeConfiguration8(serverNamingType string, ) *ClusterResourceNamePolicyTypeConfiguration8`
 
 NewClusterResourceNamePolicyTypeConfiguration8 instantiates a new ClusterResourceNamePolicyTypeConfiguration8 object
 This constructor will assign default values to properties that have it defined,
@@ -46,11 +46,6 @@ and a boolean to check if the value has been set.
 
 SetServerNamingType sets ServerNamingType field to given value.
 
-### HasServerNamingType
-
-`func (o *ClusterResourceNamePolicyTypeConfiguration8) HasServerNamingType() bool`
-
-HasServerNamingType returns a boolean if a field has been set.
 
 ### GetServerNamingPattern
 

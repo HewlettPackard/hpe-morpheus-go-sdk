@@ -20,8 +20,8 @@ var _ MappedNullable = &GetInstance200ResponseInstanceConfigLayout{}
 
 // GetInstance200ResponseInstanceConfigLayout struct for GetInstance200ResponseInstanceConfigLayout
 type GetInstance200ResponseInstanceConfigLayout struct {
-	Id                   *int64                 `json:"id,omitempty"`
 	Code                 *string                `json:"code,omitempty"`
+	Id                   *int64                 `json:"id,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -42,38 +42,6 @@ func NewGetInstance200ResponseInstanceConfigLayout() *GetInstance200ResponseInst
 func NewGetInstance200ResponseInstanceConfigLayoutWithDefaults() *GetInstance200ResponseInstanceConfigLayout {
 	this := GetInstance200ResponseInstanceConfigLayout{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GetInstance200ResponseInstanceConfigLayout) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetInstance200ResponseInstanceConfigLayout) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// IsSetId returns a boolean if a field has been set.
-func (o *GetInstance200ResponseInstanceConfigLayout) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *GetInstance200ResponseInstanceConfigLayout) SetId(v int64) {
-	o.Id = &v
 }
 
 // GetCode returns the Code field value if set, zero value otherwise.
@@ -108,6 +76,38 @@ func (o *GetInstance200ResponseInstanceConfigLayout) SetCode(v string) {
 	o.Code = &v
 }
 
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *GetInstance200ResponseInstanceConfigLayout) GetId() int64 {
+	if o == nil || IsNil(o.Id) {
+		var ret int64
+		return ret
+	}
+	return *o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetInstance200ResponseInstanceConfigLayout) GetIdOk() (*int64, bool) {
+	if o == nil || IsNil(o.Id) {
+		return nil, false
+	}
+	return o.Id, true
+}
+
+// IsSetId returns a boolean if a field has been set.
+func (o *GetInstance200ResponseInstanceConfigLayout) IsSetId() bool {
+	if o != nil && !IsNil(o.Id) {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *GetInstance200ResponseInstanceConfigLayout) SetId(v int64) {
+	o.Id = &v
+}
+
 func (o GetInstance200ResponseInstanceConfigLayout) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -118,11 +118,11 @@ func (o GetInstance200ResponseInstanceConfigLayout) MarshalJSON() ([]byte, error
 
 func (o GetInstance200ResponseInstanceConfigLayout) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Id) {
-		toSerialize["id"] = o.Id
-	}
 	if !IsNil(o.Code) {
 		toSerialize["code"] = o.Code
+	}
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
 	}
 
 	for key, value := range o.AdditionalProperties {

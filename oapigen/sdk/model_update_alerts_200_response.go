@@ -20,9 +20,9 @@ var _ MappedNullable = &UpdateAlerts200Response{}
 
 // UpdateAlerts200Response struct for UpdateAlerts200Response
 type UpdateAlerts200Response struct {
-	Success              *bool                              `json:"success,omitempty"`
-	Alert                *UpdateAlerts200ResponseAllOfAlert `json:"alert,omitempty"`
-	AdditionalProperties map[string]interface{}             `json:",remain"`
+	Success              *bool                           `json:"success,omitempty"`
+	Alert                *GetAlerts200ResponseAllOfAlert `json:"alert,omitempty"`
+	AdditionalProperties map[string]interface{}          `json:",remain"`
 }
 
 type _UpdateAlerts200Response UpdateAlerts200Response
@@ -77,9 +77,9 @@ func (o *UpdateAlerts200Response) SetSuccess(v bool) {
 }
 
 // GetAlert returns the Alert field value if set, zero value otherwise.
-func (o *UpdateAlerts200Response) GetAlert() UpdateAlerts200ResponseAllOfAlert {
+func (o *UpdateAlerts200Response) GetAlert() GetAlerts200ResponseAllOfAlert {
 	if o == nil || IsNil(o.Alert) {
-		var ret UpdateAlerts200ResponseAllOfAlert
+		var ret GetAlerts200ResponseAllOfAlert
 		return ret
 	}
 	return *o.Alert
@@ -87,7 +87,7 @@ func (o *UpdateAlerts200Response) GetAlert() UpdateAlerts200ResponseAllOfAlert {
 
 // GetAlertOk returns a tuple with the Alert field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateAlerts200Response) GetAlertOk() (*UpdateAlerts200ResponseAllOfAlert, bool) {
+func (o *UpdateAlerts200Response) GetAlertOk() (*GetAlerts200ResponseAllOfAlert, bool) {
 	if o == nil || IsNil(o.Alert) {
 		return nil, false
 	}
@@ -103,8 +103,8 @@ func (o *UpdateAlerts200Response) IsSetAlert() bool {
 	return false
 }
 
-// SetAlert gets a reference to the given UpdateAlerts200ResponseAllOfAlert and assigns it to the Alert field.
-func (o *UpdateAlerts200Response) SetAlert(v UpdateAlerts200ResponseAllOfAlert) {
+// SetAlert gets a reference to the given GetAlerts200ResponseAllOfAlert and assigns it to the Alert field.
+func (o *UpdateAlerts200Response) SetAlert(v GetAlerts200ResponseAllOfAlert) {
 	o.Alert = &v
 }
 

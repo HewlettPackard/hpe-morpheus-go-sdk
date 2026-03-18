@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaxPrice** | Pointer to **float32** |  | [optional] 
+**MaxPrice** | **float32** |  | 
 **MaxPriceCurrency** | Pointer to **string** |  | [optional] 
 **MaxPriceUnit** | Pointer to **string** |  | [optional] 
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 
 ### NewBudgetPolicyTypeConfiguration7
 
-`func NewBudgetPolicyTypeConfiguration7() *BudgetPolicyTypeConfiguration7`
+`func NewBudgetPolicyTypeConfiguration7(maxPrice float32, ) *BudgetPolicyTypeConfiguration7`
 
 NewBudgetPolicyTypeConfiguration7 instantiates a new BudgetPolicyTypeConfiguration7 object
 This constructor will assign default values to properties that have it defined,
@@ -46,11 +46,6 @@ and a boolean to check if the value has been set.
 
 SetMaxPrice sets MaxPrice field to given value.
 
-### HasMaxPrice
-
-`func (o *BudgetPolicyTypeConfiguration7) HasMaxPrice() bool`
-
-HasMaxPrice returns a boolean if a field has been set.
 
 ### GetMaxPriceCurrency
 

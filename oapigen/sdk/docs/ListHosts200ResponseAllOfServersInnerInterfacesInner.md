@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **Active** | Pointer to **bool** |  | [optional] 
 **PoolAssigned** | Pointer to **bool** |  | [optional] 
 **PrimaryInterface** | Pointer to **bool** |  | [optional] 
-**Network** | Pointer to [**ListHosts200ResponseAllOfServersInnerInterfacesInnerNetwork**](ListHosts200ResponseAllOfServersInnerInterfacesInnerNetwork.md) |  | [optional] 
+**Network** | Pointer to [**NullableListHosts200ResponseAllOfServersInnerInterfacesInnerNetwork**](ListHosts200ResponseAllOfServersInnerInterfacesInnerNetwork.md) |  | [optional] 
 **Subnet** | Pointer to **NullableString** |  | [optional] 
 **NetworkGroup** | Pointer to **NullableString** |  | [optional] 
 **NetworkPosition** | Pointer to **NullableString** |  | [optional] 
@@ -636,6 +636,16 @@ SetNetwork sets Network field to given value.
 
 HasNetwork returns a boolean if a field has been set.
 
+### SetNetworkNil
+
+`func (o *ListHosts200ResponseAllOfServersInnerInterfacesInner) SetNetworkNil(b bool)`
+
+ SetNetworkNil sets the value for Network to be an explicit nil
+
+### UnsetNetwork
+`func (o *ListHosts200ResponseAllOfServersInnerInterfacesInner) UnsetNetwork()`
+
+UnsetNetwork ensures that no value is present for Network, not even an explicit nil
 ### GetSubnet
 
 `func (o *ListHosts200ResponseAllOfServersInnerInterfacesInner) GetSubnet() string`

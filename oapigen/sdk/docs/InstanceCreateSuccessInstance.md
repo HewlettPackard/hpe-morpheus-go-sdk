@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **Uuid** | Pointer to **string** |  | [optional] 
 **AccountId** | Pointer to **int64** |  | [optional] 
-**Tenant** | Pointer to [**InstanceCreateSuccessInstanceTenant**](InstanceCreateSuccessInstanceTenant.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableInstanceCreateSuccessInstanceTenant**](InstanceCreateSuccessInstanceTenant.md) |  | [optional] 
 **InstanceType** | Pointer to [**InstanceCreateSuccessInstanceInstanceType**](InstanceCreateSuccessInstanceInstanceType.md) |  | [optional] 
-**Group** | Pointer to [**InstanceCreateSuccessInstanceGroup**](InstanceCreateSuccessInstanceGroup.md) |  | [optional] 
+**Group** | Pointer to [**NullableInstanceCreateSuccessInstanceGroup**](InstanceCreateSuccessInstanceGroup.md) |  | [optional] 
 **Cloud** | Pointer to [**InstanceCreateSuccessInstanceCloud**](InstanceCreateSuccessInstanceCloud.md) |  | [optional] 
 **Cluster** | Pointer to [**InstanceCreateSuccessInstanceCluster**](InstanceCreateSuccessInstanceCluster.md) |  | [optional] 
 **Containers** | Pointer to **[]int64** |  | [optional] 
@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **ConfigId** | Pointer to **NullableString** |  | [optional] 
 **ConfigRole** | Pointer to **NullableString** |  | [optional] 
 **Volumes** | Pointer to [**[]AddInstance200ResponseAllOfOneOfInstanceVolumesInner**](AddInstance200ResponseAllOfOneOfInstanceVolumesInner.md) |  | [optional] 
-**Controllers** | Pointer to [**[]AddInstance200ResponseAllOfOneOfInstanceControllersInner**](AddInstance200ResponseAllOfOneOfInstanceControllersInner.md) |  | [optional] 
+**Controllers** | Pointer to [**[]ListInstances200ResponseAllOfInstancesInnerControllersInner**](ListInstances200ResponseAllOfInstancesInnerControllersInner.md) |  | [optional] 
 **Interfaces** | Pointer to [**[]AddInstance200ResponseAllOfOneOfInstanceInterfacesInner**](AddInstance200ResponseAllOfOneOfInstanceInterfacesInner.md) |  | [optional] 
 **CustomOptions** | Pointer to **map[string]interface{}** |  | [optional] 
 **InstanceVersion** | Pointer to **string** |  | [optional] 
@@ -206,6 +206,16 @@ SetTenant sets Tenant field to given value.
 
 HasTenant returns a boolean if a field has been set.
 
+### SetTenantNil
+
+`func (o *InstanceCreateSuccessInstance) SetTenantNil(b bool)`
+
+ SetTenantNil sets the value for Tenant to be an explicit nil
+
+### UnsetTenant
+`func (o *InstanceCreateSuccessInstance) UnsetTenant()`
+
+UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
 ### GetInstanceType
 
 `func (o *InstanceCreateSuccessInstance) GetInstanceType() InstanceCreateSuccessInstanceInstanceType`
@@ -256,6 +266,16 @@ SetGroup sets Group field to given value.
 
 HasGroup returns a boolean if a field has been set.
 
+### SetGroupNil
+
+`func (o *InstanceCreateSuccessInstance) SetGroupNil(b bool)`
+
+ SetGroupNil sets the value for Group to be an explicit nil
+
+### UnsetGroup
+`func (o *InstanceCreateSuccessInstance) UnsetGroup()`
+
+UnsetGroup ensures that no value is present for Group, not even an explicit nil
 ### GetCloud
 
 `func (o *InstanceCreateSuccessInstance) GetCloud() InstanceCreateSuccessInstanceCloud`
@@ -708,20 +728,20 @@ HasVolumes returns a boolean if a field has been set.
 
 ### GetControllers
 
-`func (o *InstanceCreateSuccessInstance) GetControllers() []AddInstance200ResponseAllOfOneOfInstanceControllersInner`
+`func (o *InstanceCreateSuccessInstance) GetControllers() []ListInstances200ResponseAllOfInstancesInnerControllersInner`
 
 GetControllers returns the Controllers field if non-nil, zero value otherwise.
 
 ### GetControllersOk
 
-`func (o *InstanceCreateSuccessInstance) GetControllersOk() (*[]AddInstance200ResponseAllOfOneOfInstanceControllersInner, bool)`
+`func (o *InstanceCreateSuccessInstance) GetControllersOk() (*[]ListInstances200ResponseAllOfInstancesInnerControllersInner, bool)`
 
 GetControllersOk returns a tuple with the Controllers field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetControllers
 
-`func (o *InstanceCreateSuccessInstance) SetControllers(v []AddInstance200ResponseAllOfOneOfInstanceControllersInner)`
+`func (o *InstanceCreateSuccessInstance) SetControllers(v []ListInstances200ResponseAllOfInstancesInnerControllersInner)`
 
 SetControllers sets Controllers field to given value.
 

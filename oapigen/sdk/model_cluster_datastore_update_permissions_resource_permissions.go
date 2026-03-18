@@ -23,12 +23,12 @@ type ClusterDatastoreUpdatePermissionsResourcePermissions struct {
 	// Pass true to allow access to all groups
 	All *bool `json:"all,omitempty"`
 	// Array of groups that are allowed access
-	Sites []ClusterUpdatePermissionsResourcePermissionsSitesInner `json:"sites,omitempty"`
+	Sites []UpdateClusterPermissionsRequestPermissionsResourcePermissionsSitesInner `json:"sites,omitempty"`
 	// Pass true to allow access to all plans
 	AllPlans *bool `json:"allPlans,omitempty"`
 	// Array of plans that are allowed access
-	Plans                []ClusterUpdatePermissionsResourcePermissionsPlansInner `json:"plans,omitempty"`
-	AdditionalProperties map[string]interface{}                                  `json:",remain"`
+	Plans                []UpdateClusterPermissionsRequestPermissionsResourcePermissionsPlansInner `json:"plans,omitempty"`
+	AdditionalProperties map[string]interface{}                                                    `json:",remain"`
 }
 
 type _ClusterDatastoreUpdatePermissionsResourcePermissions ClusterDatastoreUpdatePermissionsResourcePermissions
@@ -83,9 +83,9 @@ func (o *ClusterDatastoreUpdatePermissionsResourcePermissions) SetAll(v bool) {
 }
 
 // GetSites returns the Sites field value if set, zero value otherwise.
-func (o *ClusterDatastoreUpdatePermissionsResourcePermissions) GetSites() []ClusterUpdatePermissionsResourcePermissionsSitesInner {
+func (o *ClusterDatastoreUpdatePermissionsResourcePermissions) GetSites() []UpdateClusterPermissionsRequestPermissionsResourcePermissionsSitesInner {
 	if o == nil || IsNil(o.Sites) {
-		var ret []ClusterUpdatePermissionsResourcePermissionsSitesInner
+		var ret []UpdateClusterPermissionsRequestPermissionsResourcePermissionsSitesInner
 		return ret
 	}
 	return o.Sites
@@ -93,7 +93,7 @@ func (o *ClusterDatastoreUpdatePermissionsResourcePermissions) GetSites() []Clus
 
 // GetSitesOk returns a tuple with the Sites field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClusterDatastoreUpdatePermissionsResourcePermissions) GetSitesOk() ([]ClusterUpdatePermissionsResourcePermissionsSitesInner, bool) {
+func (o *ClusterDatastoreUpdatePermissionsResourcePermissions) GetSitesOk() ([]UpdateClusterPermissionsRequestPermissionsResourcePermissionsSitesInner, bool) {
 	if o == nil || IsNil(o.Sites) {
 		return nil, false
 	}
@@ -109,8 +109,8 @@ func (o *ClusterDatastoreUpdatePermissionsResourcePermissions) IsSetSites() bool
 	return false
 }
 
-// SetSites gets a reference to the given []ClusterUpdatePermissionsResourcePermissionsSitesInner and assigns it to the Sites field.
-func (o *ClusterDatastoreUpdatePermissionsResourcePermissions) SetSites(v []ClusterUpdatePermissionsResourcePermissionsSitesInner) {
+// SetSites gets a reference to the given []UpdateClusterPermissionsRequestPermissionsResourcePermissionsSitesInner and assigns it to the Sites field.
+func (o *ClusterDatastoreUpdatePermissionsResourcePermissions) SetSites(v []UpdateClusterPermissionsRequestPermissionsResourcePermissionsSitesInner) {
 	o.Sites = v
 }
 
@@ -147,9 +147,9 @@ func (o *ClusterDatastoreUpdatePermissionsResourcePermissions) SetAllPlans(v boo
 }
 
 // GetPlans returns the Plans field value if set, zero value otherwise.
-func (o *ClusterDatastoreUpdatePermissionsResourcePermissions) GetPlans() []ClusterUpdatePermissionsResourcePermissionsPlansInner {
+func (o *ClusterDatastoreUpdatePermissionsResourcePermissions) GetPlans() []UpdateClusterPermissionsRequestPermissionsResourcePermissionsPlansInner {
 	if o == nil || IsNil(o.Plans) {
-		var ret []ClusterUpdatePermissionsResourcePermissionsPlansInner
+		var ret []UpdateClusterPermissionsRequestPermissionsResourcePermissionsPlansInner
 		return ret
 	}
 	return o.Plans
@@ -157,7 +157,7 @@ func (o *ClusterDatastoreUpdatePermissionsResourcePermissions) GetPlans() []Clus
 
 // GetPlansOk returns a tuple with the Plans field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClusterDatastoreUpdatePermissionsResourcePermissions) GetPlansOk() ([]ClusterUpdatePermissionsResourcePermissionsPlansInner, bool) {
+func (o *ClusterDatastoreUpdatePermissionsResourcePermissions) GetPlansOk() ([]UpdateClusterPermissionsRequestPermissionsResourcePermissionsPlansInner, bool) {
 	if o == nil || IsNil(o.Plans) {
 		return nil, false
 	}
@@ -173,8 +173,8 @@ func (o *ClusterDatastoreUpdatePermissionsResourcePermissions) IsSetPlans() bool
 	return false
 }
 
-// SetPlans gets a reference to the given []ClusterUpdatePermissionsResourcePermissionsPlansInner and assigns it to the Plans field.
-func (o *ClusterDatastoreUpdatePermissionsResourcePermissions) SetPlans(v []ClusterUpdatePermissionsResourcePermissionsPlansInner) {
+// SetPlans gets a reference to the given []UpdateClusterPermissionsRequestPermissionsResourcePermissionsPlansInner and assigns it to the Plans field.
+func (o *ClusterDatastoreUpdatePermissionsResourcePermissions) SetPlans(v []UpdateClusterPermissionsRequestPermissionsResourcePermissionsPlansInner) {
 	o.Plans = v
 }
 

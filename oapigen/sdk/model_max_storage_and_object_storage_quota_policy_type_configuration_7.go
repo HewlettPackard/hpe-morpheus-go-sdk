@@ -18,9 +18,9 @@ import (
 // checks if the MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration7 type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration7{}
 
-// MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration7 Configuration settings for the following policy types: - Max Storage - Object Storage Quota
+// MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration7 - Max Storage - Object Storage Quota - File Share Storage Quota
 type MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration7 struct {
-	MaxStorage           *string                `json:"maxStorage,omitempty"`
+	MaxStorage           string                 `json:"maxStorage"`
 	ExcludeContainers    *string                `json:"excludeContainers,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
@@ -31,8 +31,9 @@ type _MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration7 MaxStorageAndObjec
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMaxStorageAndObjectStorageQuotaPolicyTypeConfiguration7() *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration7 {
+func NewMaxStorageAndObjectStorageQuotaPolicyTypeConfiguration7(maxStorage string) *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration7 {
 	this := MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration7{}
+	this.MaxStorage = maxStorage
 	var excludeContainers string = "off"
 	this.ExcludeContainers = &excludeContainers
 	return &this
@@ -48,36 +49,28 @@ func NewMaxStorageAndObjectStorageQuotaPolicyTypeConfiguration7WithDefaults() *M
 	return &this
 }
 
-// GetMaxStorage returns the MaxStorage field value if set, zero value otherwise.
+// GetMaxStorage returns the MaxStorage field value
 func (o *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration7) GetMaxStorage() string {
-	if o == nil || IsNil(o.MaxStorage) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.MaxStorage
+
+	return o.MaxStorage
 }
 
-// GetMaxStorageOk returns a tuple with the MaxStorage field value if set, nil otherwise
+// GetMaxStorageOk returns a tuple with the MaxStorage field value
 // and a boolean to check if the value has been set.
 func (o *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration7) GetMaxStorageOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxStorage) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MaxStorage, true
+	return &o.MaxStorage, true
 }
 
-// IsSetMaxStorage returns a boolean if a field has been set.
-func (o *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration7) IsSetMaxStorage() bool {
-	if o != nil && !IsNil(o.MaxStorage) {
-		return true
-	}
-
-	return false
-}
-
-// SetMaxStorage gets a reference to the given string and assigns it to the MaxStorage field.
+// SetMaxStorage sets field value
 func (o *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration7) SetMaxStorage(v string) {
-	o.MaxStorage = &v
+	o.MaxStorage = v
 }
 
 // GetExcludeContainers returns the ExcludeContainers field value if set, zero value otherwise.
@@ -122,9 +115,7 @@ func (o MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration7) MarshalJSON() (
 
 func (o MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration7) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MaxStorage) {
-		toSerialize["maxStorage"] = o.MaxStorage
-	}
+	toSerialize["maxStorage"] = o.MaxStorage
 	if !IsNil(o.ExcludeContainers) {
 		toSerialize["excludeContainers"] = o.ExcludeContainers
 	}
