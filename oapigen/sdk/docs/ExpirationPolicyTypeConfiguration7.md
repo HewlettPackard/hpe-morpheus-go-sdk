@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LifecycleType** | Pointer to **string** |  | [optional] 
+**LifecycleType** | **string** |  | 
 **LifecycleAge** | Pointer to **string** |  | [optional] 
 **LifecycleRenewal** | Pointer to **string** |  | [optional] 
 **LifecycleNotify** | Pointer to **string** |  | [optional] 
@@ -13,16 +13,16 @@ Name | Type | Description | Notes
 **LifecycleAllowExtend** | Pointer to **string** |  | [optional] [default to "off"]
 **LifecycleExtensionsBeforeApproval** | Pointer to **string** |  | [optional] 
 **AccountIntegrationId** | Pointer to **string** |  | [optional] 
-**LifecycleHideFixed** | Pointer to **bool** |  | [optional] 
 **LifecycleWorkflowId** | Pointer to **string** |  | [optional] 
 **FlowId** | Pointer to **string** |  | [optional] 
 **WorkflowType** | Pointer to **string** |  | [optional] 
+**LifecycleHideFixed** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
 ### NewExpirationPolicyTypeConfiguration7
 
-`func NewExpirationPolicyTypeConfiguration7() *ExpirationPolicyTypeConfiguration7`
+`func NewExpirationPolicyTypeConfiguration7(lifecycleType string, ) *ExpirationPolicyTypeConfiguration7`
 
 NewExpirationPolicyTypeConfiguration7 instantiates a new ExpirationPolicyTypeConfiguration7 object
 This constructor will assign default values to properties that have it defined,
@@ -56,11 +56,6 @@ and a boolean to check if the value has been set.
 
 SetLifecycleType sets LifecycleType field to given value.
 
-### HasLifecycleType
-
-`func (o *ExpirationPolicyTypeConfiguration7) HasLifecycleType() bool`
-
-HasLifecycleType returns a boolean if a field has been set.
 
 ### GetLifecycleAge
 
@@ -262,31 +257,6 @@ SetAccountIntegrationId sets AccountIntegrationId field to given value.
 
 HasAccountIntegrationId returns a boolean if a field has been set.
 
-### GetLifecycleHideFixed
-
-`func (o *ExpirationPolicyTypeConfiguration7) GetLifecycleHideFixed() bool`
-
-GetLifecycleHideFixed returns the LifecycleHideFixed field if non-nil, zero value otherwise.
-
-### GetLifecycleHideFixedOk
-
-`func (o *ExpirationPolicyTypeConfiguration7) GetLifecycleHideFixedOk() (*bool, bool)`
-
-GetLifecycleHideFixedOk returns a tuple with the LifecycleHideFixed field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLifecycleHideFixed
-
-`func (o *ExpirationPolicyTypeConfiguration7) SetLifecycleHideFixed(v bool)`
-
-SetLifecycleHideFixed sets LifecycleHideFixed field to given value.
-
-### HasLifecycleHideFixed
-
-`func (o *ExpirationPolicyTypeConfiguration7) HasLifecycleHideFixed() bool`
-
-HasLifecycleHideFixed returns a boolean if a field has been set.
-
 ### GetLifecycleWorkflowId
 
 `func (o *ExpirationPolicyTypeConfiguration7) GetLifecycleWorkflowId() string`
@@ -361,6 +331,31 @@ SetWorkflowType sets WorkflowType field to given value.
 `func (o *ExpirationPolicyTypeConfiguration7) HasWorkflowType() bool`
 
 HasWorkflowType returns a boolean if a field has been set.
+
+### GetLifecycleHideFixed
+
+`func (o *ExpirationPolicyTypeConfiguration7) GetLifecycleHideFixed() bool`
+
+GetLifecycleHideFixed returns the LifecycleHideFixed field if non-nil, zero value otherwise.
+
+### GetLifecycleHideFixedOk
+
+`func (o *ExpirationPolicyTypeConfiguration7) GetLifecycleHideFixedOk() (*bool, bool)`
+
+GetLifecycleHideFixedOk returns a tuple with the LifecycleHideFixed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLifecycleHideFixed
+
+`func (o *ExpirationPolicyTypeConfiguration7) SetLifecycleHideFixed(v bool)`
+
+SetLifecycleHideFixed sets LifecycleHideFixed field to given value.
+
+### HasLifecycleHideFixed
+
+`func (o *ExpirationPolicyTypeConfiguration7) HasLifecycleHideFixed() bool`
+
+HasLifecycleHideFixed returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

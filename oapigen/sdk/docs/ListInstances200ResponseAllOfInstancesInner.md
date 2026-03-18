@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **Uuid** | Pointer to **string** |  | [optional] 
 **AccountId** | Pointer to **int64** |  | [optional] 
-**Tenant** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerTenant**](ListInstances200ResponseAllOfInstancesInnerTenant.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableListInstances200ResponseAllOfInstancesInnerTenant**](ListInstances200ResponseAllOfInstancesInnerTenant.md) |  | [optional] 
 **InstanceType** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerInstanceType**](ListInstances200ResponseAllOfInstancesInnerInstanceType.md) |  | [optional] 
-**Group** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerGroup**](ListInstances200ResponseAllOfInstancesInnerGroup.md) |  | [optional] 
+**Group** | Pointer to [**NullableListInstances200ResponseAllOfInstancesInnerGroup**](ListInstances200ResponseAllOfInstancesInnerGroup.md) |  | [optional] 
 **Cloud** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerCloud**](ListInstances200ResponseAllOfInstancesInnerCloud.md) |  | [optional] 
 **Cluster** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerCluster**](ListInstances200ResponseAllOfInstancesInnerCluster.md) |  | [optional] 
 **Containers** | Pointer to **[]int64** |  | [optional] 
@@ -206,6 +206,16 @@ SetTenant sets Tenant field to given value.
 
 HasTenant returns a boolean if a field has been set.
 
+### SetTenantNil
+
+`func (o *ListInstances200ResponseAllOfInstancesInner) SetTenantNil(b bool)`
+
+ SetTenantNil sets the value for Tenant to be an explicit nil
+
+### UnsetTenant
+`func (o *ListInstances200ResponseAllOfInstancesInner) UnsetTenant()`
+
+UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
 ### GetInstanceType
 
 `func (o *ListInstances200ResponseAllOfInstancesInner) GetInstanceType() ListInstances200ResponseAllOfInstancesInnerInstanceType`
@@ -256,6 +266,16 @@ SetGroup sets Group field to given value.
 
 HasGroup returns a boolean if a field has been set.
 
+### SetGroupNil
+
+`func (o *ListInstances200ResponseAllOfInstancesInner) SetGroupNil(b bool)`
+
+ SetGroupNil sets the value for Group to be an explicit nil
+
+### UnsetGroup
+`func (o *ListInstances200ResponseAllOfInstancesInner) UnsetGroup()`
+
+UnsetGroup ensures that no value is present for Group, not even an explicit nil
 ### GetCloud
 
 `func (o *ListInstances200ResponseAllOfInstancesInner) GetCloud() ListInstances200ResponseAllOfInstancesInnerCloud`

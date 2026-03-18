@@ -21,86 +21,86 @@ var _ MappedNullable = &ListHosts200ResponseAllOfServersInner{}
 
 // ListHosts200ResponseAllOfServersInner struct for ListHosts200ResponseAllOfServersInner
 type ListHosts200ResponseAllOfServersInner struct {
-	Id                       *int64                                                  `json:"id,omitempty"`
-	Uuid                     *string                                                 `json:"uuid,omitempty"`
-	ExternalId               NullableString                                          `json:"externalId,omitempty"`
-	InternalId               NullableString                                          `json:"internalId,omitempty"`
-	ExternalUniqueId         NullableString                                          `json:"externalUniqueId,omitempty"`
-	Name                     *string                                                 `json:"name,omitempty"`
-	ExternalName             *string                                                 `json:"externalName,omitempty"`
-	Hostname                 *string                                                 `json:"hostname,omitempty"`
-	ParentServer             *ListHosts200ResponseAllOfServersInnerParentServer      `json:"parentServer,omitempty"`
-	AccountId                *int64                                                  `json:"accountId,omitempty"`
-	Account                  *ListHosts200ResponseAllOfServersInnerAccount           `json:"account,omitempty"`
-	Owner                    *ListHosts200ResponseAllOfServersInnerOwner             `json:"owner,omitempty"`
-	Zone                     *ListHosts200ResponseAllOfServersInnerZone              `json:"zone,omitempty"`
-	Plan                     *ListHosts200ResponseAllOfServersInnerPlan              `json:"plan,omitempty"`
-	ComputeServerType        *ListHosts200ResponseAllOfServersInnerComputeServerType `json:"computeServerType,omitempty"`
-	Visibility               *string                                                 `json:"visibility,omitempty"`
-	Description              NullableString                                          `json:"description,omitempty"`
-	ZoneId                   *int64                                                  `json:"zoneId,omitempty"`
-	SiteId                   *int64                                                  `json:"siteId,omitempty"`
-	ResourcePoolId           NullableInt64                                           `json:"resourcePoolId,omitempty"`
-	FolderId                 NullableInt64                                           `json:"folderId,omitempty"`
-	SshHost                  NullableString                                          `json:"sshHost,omitempty"`
-	SshPort                  *int64                                                  `json:"sshPort,omitempty"`
-	ExternalIp               NullableString                                          `json:"externalIp,omitempty"`
-	InternalIp               NullableString                                          `json:"internalIp,omitempty"`
-	VolumeId                 NullableString                                          `json:"volumeId,omitempty"`
-	Platform                 NullableString                                          `json:"platform,omitempty"`
-	PlatformVersion          NullableString                                          `json:"platformVersion,omitempty"`
-	SshUsername              NullableString                                          `json:"sshUsername,omitempty"`
-	SshPassword              NullableString                                          `json:"sshPassword,omitempty"`
-	SshPasswordHash          NullableString                                          `json:"sshPasswordHash,omitempty"`
-	SshKeyPair               *ListHosts200ResponseAllOfServersInnerSshKeyPair        `json:"sshKeyPair,omitempty"`
-	OsDevice                 *string                                                 `json:"osDevice,omitempty"`
-	OsType                   *string                                                 `json:"osType,omitempty"`
-	DataDevice               *string                                                 `json:"dataDevice,omitempty"`
-	LvmEnabled               *bool                                                   `json:"lvmEnabled,omitempty"`
-	ApiKey                   *string                                                 `json:"apiKey,omitempty"`
-	SoftwareRaid             *bool                                                   `json:"softwareRaid,omitempty"`
-	DateCreated              *time.Time                                              `json:"dateCreated,omitempty"`
-	LastUpdated              *time.Time                                              `json:"lastUpdated,omitempty"`
-	Stats                    *ListHosts200ResponseAllOfServersInnerStats             `json:"stats,omitempty"`
-	Status                   *string                                                 `json:"status,omitempty"`
-	StatusMessage            NullableString                                          `json:"statusMessage,omitempty"`
-	ErrorMessage             NullableString                                          `json:"errorMessage,omitempty"`
-	StatusDate               NullableTime                                            `json:"statusDate,omitempty"`
-	StatusPercent            NullableString                                          `json:"statusPercent,omitempty"`
-	StatusEta                NullableString                                          `json:"statusEta,omitempty"`
-	PowerState               *string                                                 `json:"powerState,omitempty"`
-	AgentInstalled           *bool                                                   `json:"agentInstalled,omitempty"`
-	LastAgentUpdate          NullableString                                          `json:"lastAgentUpdate,omitempty"`
-	AgentVersion             NullableString                                          `json:"agentVersion,omitempty"`
-	MaxCores                 *int64                                                  `json:"maxCores,omitempty"`
-	CoresPerSocket           NullableInt64                                           `json:"coresPerSocket,omitempty"`
-	MaxMemory                *int64                                                  `json:"maxMemory,omitempty"`
-	MaxStorage               *int64                                                  `json:"maxStorage,omitempty"`
-	MaxCpu                   NullableInt64                                           `json:"maxCpu,omitempty"`
-	MaxGpus                  NullableInt64                                           `json:"maxGpus,omitempty"`
-	ManageInternalFirewall   *bool                                                   `json:"manageInternalFirewall,omitempty"`
-	EnableLogs               *bool                                                   `json:"enableLogs,omitempty"`
-	HourlyCost               *float32                                                `json:"hourlyCost,omitempty"`
-	HourlyPrice              *float32                                                `json:"hourlyPrice,omitempty"`
-	SourceImage              *ListHosts200ResponseAllOfServersInnerSourceImage       `json:"sourceImage,omitempty"`
-	ServerOs                 *ListHosts200ResponseAllOfServersInnerServerOs          `json:"serverOs,omitempty"`
-	Volumes                  []ListHosts200ResponseAllOfServersInnerVolumesInner     `json:"volumes,omitempty"`
-	Controllers              []ListHosts200ResponseAllOfServersInnerControllersInner `json:"controllers,omitempty"`
-	Interfaces               []ListHosts200ResponseAllOfServersInnerInterfacesInner  `json:"interfaces,omitempty"`
-	Labels                   []map[string]interface{}                                `json:"labels,omitempty"`
-	Tags                     []map[string]interface{}                                `json:"tags,omitempty"`
-	Enabled                  *bool                                                   `json:"enabled,omitempty"`
-	TagCompliant             NullableString                                          `json:"tagCompliant,omitempty"`
-	Containers               []int64                                                 `json:"containers,omitempty"`
-	Config                   *ListHosts200ResponseAllOfServersInnerConfig            `json:"config,omitempty"`
-	Instance                 *ListHosts200ResponseAllOfServersInnerInstance          `json:"instance,omitempty"`
-	GuestConsolePreferred    *bool                                                   `json:"guestConsolePreferred,omitempty"`
-	GuestConsoleType         NullableString                                          `json:"guestConsoleType,omitempty"`
-	GuestConsoleUsername     NullableString                                          `json:"guestConsoleUsername,omitempty"`
-	GuestConsolePassword     NullableString                                          `json:"guestConsolePassword,omitempty"`
-	GuestConsolePasswordHash NullableString                                          `json:"guestConsolePasswordHash,omitempty"`
-	GuestConsolePort         NullableString                                          `json:"guestConsolePort,omitempty"`
-	AdditionalProperties     map[string]interface{}                                  `json:",remain"`
+	Id                       *int64                                                    `json:"id,omitempty"`
+	Uuid                     *string                                                   `json:"uuid,omitempty"`
+	ExternalId               NullableString                                            `json:"externalId,omitempty"`
+	InternalId               NullableString                                            `json:"internalId,omitempty"`
+	ExternalUniqueId         NullableString                                            `json:"externalUniqueId,omitempty"`
+	Name                     *string                                                   `json:"name,omitempty"`
+	ExternalName             *string                                                   `json:"externalName,omitempty"`
+	Hostname                 *string                                                   `json:"hostname,omitempty"`
+	ParentServer             NullableListHosts200ResponseAllOfServersInnerParentServer `json:"parentServer,omitempty"`
+	AccountId                *int64                                                    `json:"accountId,omitempty"`
+	Account                  NullableListHosts200ResponseAllOfServersInnerAccount      `json:"account,omitempty"`
+	Owner                    *ListHosts200ResponseAllOfServersInnerOwner               `json:"owner,omitempty"`
+	Zone                     NullableListHosts200ResponseAllOfServersInnerZone         `json:"zone,omitempty"`
+	Plan                     *ListHosts200ResponseAllOfServersInnerPlan                `json:"plan,omitempty"`
+	ComputeServerType        *ListHosts200ResponseAllOfServersInnerComputeServerType   `json:"computeServerType,omitempty"`
+	Visibility               *string                                                   `json:"visibility,omitempty"`
+	Description              NullableString                                            `json:"description,omitempty"`
+	ZoneId                   *int64                                                    `json:"zoneId,omitempty"`
+	SiteId                   *int64                                                    `json:"siteId,omitempty"`
+	ResourcePoolId           NullableInt64                                             `json:"resourcePoolId,omitempty"`
+	FolderId                 NullableInt64                                             `json:"folderId,omitempty"`
+	SshHost                  NullableString                                            `json:"sshHost,omitempty"`
+	SshPort                  *int64                                                    `json:"sshPort,omitempty"`
+	ExternalIp               NullableString                                            `json:"externalIp,omitempty"`
+	InternalIp               NullableString                                            `json:"internalIp,omitempty"`
+	VolumeId                 NullableString                                            `json:"volumeId,omitempty"`
+	Platform                 NullableString                                            `json:"platform,omitempty"`
+	PlatformVersion          NullableString                                            `json:"platformVersion,omitempty"`
+	SshUsername              NullableString                                            `json:"sshUsername,omitempty"`
+	SshPassword              NullableString                                            `json:"sshPassword,omitempty"`
+	SshPasswordHash          NullableString                                            `json:"sshPasswordHash,omitempty"`
+	SshKeyPair               *ListHosts200ResponseAllOfServersInnerSshKeyPair          `json:"sshKeyPair,omitempty"`
+	OsDevice                 *string                                                   `json:"osDevice,omitempty"`
+	OsType                   *string                                                   `json:"osType,omitempty"`
+	DataDevice               *string                                                   `json:"dataDevice,omitempty"`
+	LvmEnabled               *bool                                                     `json:"lvmEnabled,omitempty"`
+	ApiKey                   *string                                                   `json:"apiKey,omitempty"`
+	SoftwareRaid             *bool                                                     `json:"softwareRaid,omitempty"`
+	DateCreated              *time.Time                                                `json:"dateCreated,omitempty"`
+	LastUpdated              *time.Time                                                `json:"lastUpdated,omitempty"`
+	Stats                    *ListHosts200ResponseAllOfServersInnerStats               `json:"stats,omitempty"`
+	Status                   *string                                                   `json:"status,omitempty"`
+	StatusMessage            NullableString                                            `json:"statusMessage,omitempty"`
+	ErrorMessage             NullableString                                            `json:"errorMessage,omitempty"`
+	StatusDate               NullableTime                                              `json:"statusDate,omitempty"`
+	StatusPercent            NullableString                                            `json:"statusPercent,omitempty"`
+	StatusEta                NullableString                                            `json:"statusEta,omitempty"`
+	PowerState               *string                                                   `json:"powerState,omitempty"`
+	AgentInstalled           *bool                                                     `json:"agentInstalled,omitempty"`
+	LastAgentUpdate          NullableString                                            `json:"lastAgentUpdate,omitempty"`
+	AgentVersion             NullableString                                            `json:"agentVersion,omitempty"`
+	MaxCores                 *int64                                                    `json:"maxCores,omitempty"`
+	CoresPerSocket           NullableInt64                                             `json:"coresPerSocket,omitempty"`
+	MaxMemory                *int64                                                    `json:"maxMemory,omitempty"`
+	MaxStorage               *int64                                                    `json:"maxStorage,omitempty"`
+	MaxCpu                   NullableInt64                                             `json:"maxCpu,omitempty"`
+	MaxGpus                  NullableInt64                                             `json:"maxGpus,omitempty"`
+	ManageInternalFirewall   *bool                                                     `json:"manageInternalFirewall,omitempty"`
+	EnableLogs               *bool                                                     `json:"enableLogs,omitempty"`
+	HourlyCost               *float32                                                  `json:"hourlyCost,omitempty"`
+	HourlyPrice              *float32                                                  `json:"hourlyPrice,omitempty"`
+	SourceImage              *ListHosts200ResponseAllOfServersInnerSourceImage         `json:"sourceImage,omitempty"`
+	ServerOs                 *ListHosts200ResponseAllOfServersInnerServerOs            `json:"serverOs,omitempty"`
+	Volumes                  []ListHosts200ResponseAllOfServersInnerVolumesInner       `json:"volumes,omitempty"`
+	Controllers              []ListHosts200ResponseAllOfServersInnerControllersInner   `json:"controllers,omitempty"`
+	Interfaces               []ListHosts200ResponseAllOfServersInnerInterfacesInner    `json:"interfaces,omitempty"`
+	Labels                   []map[string]interface{}                                  `json:"labels,omitempty"`
+	Tags                     []map[string]interface{}                                  `json:"tags,omitempty"`
+	Enabled                  *bool                                                     `json:"enabled,omitempty"`
+	TagCompliant             NullableString                                            `json:"tagCompliant,omitempty"`
+	Containers               []int64                                                   `json:"containers,omitempty"`
+	Config                   *ListHosts200ResponseAllOfServersInnerConfig              `json:"config,omitempty"`
+	Instance                 *ListHosts200ResponseAllOfServersInnerInstance            `json:"instance,omitempty"`
+	GuestConsolePreferred    *bool                                                     `json:"guestConsolePreferred,omitempty"`
+	GuestConsoleType         NullableString                                            `json:"guestConsoleType,omitempty"`
+	GuestConsoleUsername     NullableString                                            `json:"guestConsoleUsername,omitempty"`
+	GuestConsolePassword     NullableString                                            `json:"guestConsolePassword,omitempty"`
+	GuestConsolePasswordHash NullableString                                            `json:"guestConsolePasswordHash,omitempty"`
+	GuestConsolePort         NullableString                                            `json:"guestConsolePort,omitempty"`
+	AdditionalProperties     map[string]interface{}                                    `json:",remain"`
 }
 
 type _ListHosts200ResponseAllOfServersInner ListHosts200ResponseAllOfServersInner
@@ -411,36 +411,47 @@ func (o *ListHosts200ResponseAllOfServersInner) SetHostname(v string) {
 	o.Hostname = &v
 }
 
-// GetParentServer returns the ParentServer field value if set, zero value otherwise.
+// GetParentServer returns the ParentServer field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListHosts200ResponseAllOfServersInner) GetParentServer() ListHosts200ResponseAllOfServersInnerParentServer {
-	if o == nil || IsNil(o.ParentServer) {
+	if o == nil || IsNil(o.ParentServer.Get()) {
 		var ret ListHosts200ResponseAllOfServersInnerParentServer
 		return ret
 	}
-	return *o.ParentServer
+	return *o.ParentServer.Get()
 }
 
 // GetParentServerOk returns a tuple with the ParentServer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListHosts200ResponseAllOfServersInner) GetParentServerOk() (*ListHosts200ResponseAllOfServersInnerParentServer, bool) {
-	if o == nil || IsNil(o.ParentServer) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ParentServer, true
+	return o.ParentServer.Get(), o.ParentServer.IsSet()
 }
 
 // IsSetParentServer returns a boolean if a field has been set.
 func (o *ListHosts200ResponseAllOfServersInner) IsSetParentServer() bool {
-	if o != nil && !IsNil(o.ParentServer) {
+	if o != nil && o.ParentServer.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetParentServer gets a reference to the given ListHosts200ResponseAllOfServersInnerParentServer and assigns it to the ParentServer field.
+// SetParentServer gets a reference to the given NullableListHosts200ResponseAllOfServersInnerParentServer and assigns it to the ParentServer field.
 func (o *ListHosts200ResponseAllOfServersInner) SetParentServer(v ListHosts200ResponseAllOfServersInnerParentServer) {
-	o.ParentServer = &v
+	o.ParentServer.Set(&v)
+}
+
+// SetParentServerNil sets the value for ParentServer to be an explicit nil
+func (o *ListHosts200ResponseAllOfServersInner) SetParentServerNil() {
+	o.ParentServer.Set(nil)
+}
+
+// UnsetParentServer ensures that no value is present for ParentServer, not even an explicit nil
+func (o *ListHosts200ResponseAllOfServersInner) UnsetParentServer() {
+	o.ParentServer.Unset()
 }
 
 // GetAccountId returns the AccountId field value if set, zero value otherwise.
@@ -475,36 +486,47 @@ func (o *ListHosts200ResponseAllOfServersInner) SetAccountId(v int64) {
 	o.AccountId = &v
 }
 
-// GetAccount returns the Account field value if set, zero value otherwise.
+// GetAccount returns the Account field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListHosts200ResponseAllOfServersInner) GetAccount() ListHosts200ResponseAllOfServersInnerAccount {
-	if o == nil || IsNil(o.Account) {
+	if o == nil || IsNil(o.Account.Get()) {
 		var ret ListHosts200ResponseAllOfServersInnerAccount
 		return ret
 	}
-	return *o.Account
+	return *o.Account.Get()
 }
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListHosts200ResponseAllOfServersInner) GetAccountOk() (*ListHosts200ResponseAllOfServersInnerAccount, bool) {
-	if o == nil || IsNil(o.Account) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Account, true
+	return o.Account.Get(), o.Account.IsSet()
 }
 
 // IsSetAccount returns a boolean if a field has been set.
 func (o *ListHosts200ResponseAllOfServersInner) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
+	if o != nil && o.Account.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAccount gets a reference to the given ListHosts200ResponseAllOfServersInnerAccount and assigns it to the Account field.
+// SetAccount gets a reference to the given NullableListHosts200ResponseAllOfServersInnerAccount and assigns it to the Account field.
 func (o *ListHosts200ResponseAllOfServersInner) SetAccount(v ListHosts200ResponseAllOfServersInnerAccount) {
-	o.Account = &v
+	o.Account.Set(&v)
+}
+
+// SetAccountNil sets the value for Account to be an explicit nil
+func (o *ListHosts200ResponseAllOfServersInner) SetAccountNil() {
+	o.Account.Set(nil)
+}
+
+// UnsetAccount ensures that no value is present for Account, not even an explicit nil
+func (o *ListHosts200ResponseAllOfServersInner) UnsetAccount() {
+	o.Account.Unset()
 }
 
 // GetOwner returns the Owner field value if set, zero value otherwise.
@@ -539,36 +561,47 @@ func (o *ListHosts200ResponseAllOfServersInner) SetOwner(v ListHosts200ResponseA
 	o.Owner = &v
 }
 
-// GetZone returns the Zone field value if set, zero value otherwise.
+// GetZone returns the Zone field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListHosts200ResponseAllOfServersInner) GetZone() ListHosts200ResponseAllOfServersInnerZone {
-	if o == nil || IsNil(o.Zone) {
+	if o == nil || IsNil(o.Zone.Get()) {
 		var ret ListHosts200ResponseAllOfServersInnerZone
 		return ret
 	}
-	return *o.Zone
+	return *o.Zone.Get()
 }
 
 // GetZoneOk returns a tuple with the Zone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListHosts200ResponseAllOfServersInner) GetZoneOk() (*ListHosts200ResponseAllOfServersInnerZone, bool) {
-	if o == nil || IsNil(o.Zone) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Zone, true
+	return o.Zone.Get(), o.Zone.IsSet()
 }
 
 // IsSetZone returns a boolean if a field has been set.
 func (o *ListHosts200ResponseAllOfServersInner) IsSetZone() bool {
-	if o != nil && !IsNil(o.Zone) {
+	if o != nil && o.Zone.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetZone gets a reference to the given ListHosts200ResponseAllOfServersInnerZone and assigns it to the Zone field.
+// SetZone gets a reference to the given NullableListHosts200ResponseAllOfServersInnerZone and assigns it to the Zone field.
 func (o *ListHosts200ResponseAllOfServersInner) SetZone(v ListHosts200ResponseAllOfServersInnerZone) {
-	o.Zone = &v
+	o.Zone.Set(&v)
+}
+
+// SetZoneNil sets the value for Zone to be an explicit nil
+func (o *ListHosts200ResponseAllOfServersInner) SetZoneNil() {
+	o.Zone.Set(nil)
+}
+
+// UnsetZone ensures that no value is present for Zone, not even an explicit nil
+func (o *ListHosts200ResponseAllOfServersInner) UnsetZone() {
+	o.Zone.Unset()
 }
 
 // GetPlan returns the Plan field value if set, zero value otherwise.
@@ -3027,20 +3060,20 @@ func (o ListHosts200ResponseAllOfServersInner) ToMap() (map[string]interface{}, 
 	if !IsNil(o.Hostname) {
 		toSerialize["hostname"] = o.Hostname
 	}
-	if !IsNil(o.ParentServer) {
-		toSerialize["parentServer"] = o.ParentServer
+	if o.ParentServer.IsSet() {
+		toSerialize["parentServer"] = o.ParentServer.Get()
 	}
 	if !IsNil(o.AccountId) {
 		toSerialize["accountId"] = o.AccountId
 	}
-	if !IsNil(o.Account) {
-		toSerialize["account"] = o.Account
+	if o.Account.IsSet() {
+		toSerialize["account"] = o.Account.Get()
 	}
 	if !IsNil(o.Owner) {
 		toSerialize["owner"] = o.Owner
 	}
-	if !IsNil(o.Zone) {
-		toSerialize["zone"] = o.Zone
+	if o.Zone.IsSet() {
+		toSerialize["zone"] = o.Zone.Get()
 	}
 	if !IsNil(o.Plan) {
 		toSerialize["plan"] = o.Plan

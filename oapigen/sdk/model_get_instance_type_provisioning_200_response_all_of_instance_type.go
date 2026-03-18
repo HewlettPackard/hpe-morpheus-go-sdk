@@ -21,7 +21,7 @@ var _ MappedNullable = &GetInstanceTypeProvisioning200ResponseAllOfInstanceType{
 // GetInstanceTypeProvisioning200ResponseAllOfInstanceType struct for GetInstanceTypeProvisioning200ResponseAllOfInstanceType
 type GetInstanceTypeProvisioning200ResponseAllOfInstanceType struct {
 	Id                   *int64                                                                            `json:"id,omitempty"`
-	Account              *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeAccount                   `json:"account,omitempty"`
+	Account              NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeAccount            `json:"account,omitempty"`
 	Name                 *string                                                                           `json:"name,omitempty"`
 	Labels               []string                                                                          `json:"labels,omitempty"`
 	Code                 *string                                                                           `json:"code,omitempty"`
@@ -105,36 +105,47 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetId(v int64)
 	o.Id = &v
 }
 
-// GetAccount returns the Account field value if set, zero value otherwise.
+// GetAccount returns the Account field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetAccount() GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeAccount {
-	if o == nil || IsNil(o.Account) {
+	if o == nil || IsNil(o.Account.Get()) {
 		var ret GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeAccount
 		return ret
 	}
-	return *o.Account
+	return *o.Account.Get()
 }
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetAccountOk() (*GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeAccount, bool) {
-	if o == nil || IsNil(o.Account) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Account, true
+	return o.Account.Get(), o.Account.IsSet()
 }
 
 // IsSetAccount returns a boolean if a field has been set.
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
+	if o != nil && o.Account.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAccount gets a reference to the given GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeAccount and assigns it to the Account field.
+// SetAccount gets a reference to the given NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeAccount and assigns it to the Account field.
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetAccount(v GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeAccount) {
-	o.Account = &v
+	o.Account.Set(&v)
+}
+
+// SetAccountNil sets the value for Account to be an explicit nil
+func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetAccountNil() {
+	o.Account.Set(nil)
+}
+
+// UnsetAccount ensures that no value is present for Account, not even an explicit nil
+func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) UnsetAccount() {
+	o.Account.Unset()
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -1106,8 +1117,8 @@ func (o GetInstanceTypeProvisioning200ResponseAllOfInstanceType) ToMap() (map[st
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !IsNil(o.Account) {
-		toSerialize["account"] = o.Account
+	if o.Account.IsSet() {
+		toSerialize["account"] = o.Account.Get()
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name

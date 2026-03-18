@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Type** | Pointer to [**AddInstance200ResponseAllOfOneOfInstanceControllersInnerType**](AddInstance200ResponseAllOfOneOfInstanceControllersInnerType.md) |  | [optional] 
+**Type** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerControllersInnerType**](ListInstances200ResponseAllOfInstancesInnerControllersInnerType.md) |  | [optional] 
 **MaxDevices** | Pointer to **int64** |  | [optional] 
 **ReservedUnitNumber** | Pointer to **int64** |  | [optional] 
 
@@ -81,20 +81,20 @@ HasName returns a boolean if a field has been set.
 
 ### GetType
 
-`func (o *ListHosts200ResponseAllOfServersInnerControllersInner) GetType() AddInstance200ResponseAllOfOneOfInstanceControllersInnerType`
+`func (o *ListHosts200ResponseAllOfServersInnerControllersInner) GetType() ListInstances200ResponseAllOfInstancesInnerControllersInnerType`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *ListHosts200ResponseAllOfServersInnerControllersInner) GetTypeOk() (*AddInstance200ResponseAllOfOneOfInstanceControllersInnerType, bool)`
+`func (o *ListHosts200ResponseAllOfServersInnerControllersInner) GetTypeOk() (*ListInstances200ResponseAllOfInstancesInnerControllersInnerType, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *ListHosts200ResponseAllOfServersInnerControllersInner) SetType(v AddInstance200ResponseAllOfOneOfInstanceControllersInnerType)`
+`func (o *ListHosts200ResponseAllOfServersInnerControllersInner) SetType(v ListInstances200ResponseAllOfInstancesInnerControllersInnerType)`
 
 SetType sets Type field to given value.
 

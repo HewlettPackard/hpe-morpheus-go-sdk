@@ -23,12 +23,12 @@ type UpdateDatastoresRequestDatastoreResourcePermissions struct {
 	// Pass `true` to allow access all groups
 	All *bool `json:"all,omitempty"`
 	// Array of groups that are allowed access
-	Sites []UpdateDatastoresRequestDatastoreResourcePermissionsSitesInner `json:"sites,omitempty"`
+	Sites []UpdateCloudFoldersRequestFolderResourcePermissionsSitesInner `json:"sites,omitempty"`
 	// Pass true to allow access all plans
 	AllPlans *bool `json:"allPlans,omitempty"`
 	// Array of plans that are allowed access
-	Plans                []UpdateDatastoresRequestDatastoreResourcePermissionsPlansInner `json:"plans,omitempty"`
-	AdditionalProperties map[string]interface{}                                          `json:",remain"`
+	Plans                []UpdateCloudFoldersRequestFolderResourcePermissionsPlansInner `json:"plans,omitempty"`
+	AdditionalProperties map[string]interface{}                                         `json:",remain"`
 }
 
 type _UpdateDatastoresRequestDatastoreResourcePermissions UpdateDatastoresRequestDatastoreResourcePermissions
@@ -91,9 +91,9 @@ func (o *UpdateDatastoresRequestDatastoreResourcePermissions) SetAll(v bool) {
 }
 
 // GetSites returns the Sites field value if set, zero value otherwise.
-func (o *UpdateDatastoresRequestDatastoreResourcePermissions) GetSites() []UpdateDatastoresRequestDatastoreResourcePermissionsSitesInner {
+func (o *UpdateDatastoresRequestDatastoreResourcePermissions) GetSites() []UpdateCloudFoldersRequestFolderResourcePermissionsSitesInner {
 	if o == nil || IsNil(o.Sites) {
-		var ret []UpdateDatastoresRequestDatastoreResourcePermissionsSitesInner
+		var ret []UpdateCloudFoldersRequestFolderResourcePermissionsSitesInner
 		return ret
 	}
 	return o.Sites
@@ -101,7 +101,7 @@ func (o *UpdateDatastoresRequestDatastoreResourcePermissions) GetSites() []Updat
 
 // GetSitesOk returns a tuple with the Sites field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateDatastoresRequestDatastoreResourcePermissions) GetSitesOk() ([]UpdateDatastoresRequestDatastoreResourcePermissionsSitesInner, bool) {
+func (o *UpdateDatastoresRequestDatastoreResourcePermissions) GetSitesOk() ([]UpdateCloudFoldersRequestFolderResourcePermissionsSitesInner, bool) {
 	if o == nil || IsNil(o.Sites) {
 		return nil, false
 	}
@@ -117,8 +117,8 @@ func (o *UpdateDatastoresRequestDatastoreResourcePermissions) IsSetSites() bool 
 	return false
 }
 
-// SetSites gets a reference to the given []UpdateDatastoresRequestDatastoreResourcePermissionsSitesInner and assigns it to the Sites field.
-func (o *UpdateDatastoresRequestDatastoreResourcePermissions) SetSites(v []UpdateDatastoresRequestDatastoreResourcePermissionsSitesInner) {
+// SetSites gets a reference to the given []UpdateCloudFoldersRequestFolderResourcePermissionsSitesInner and assigns it to the Sites field.
+func (o *UpdateDatastoresRequestDatastoreResourcePermissions) SetSites(v []UpdateCloudFoldersRequestFolderResourcePermissionsSitesInner) {
 	o.Sites = v
 }
 
@@ -155,9 +155,9 @@ func (o *UpdateDatastoresRequestDatastoreResourcePermissions) SetAllPlans(v bool
 }
 
 // GetPlans returns the Plans field value if set, zero value otherwise.
-func (o *UpdateDatastoresRequestDatastoreResourcePermissions) GetPlans() []UpdateDatastoresRequestDatastoreResourcePermissionsPlansInner {
+func (o *UpdateDatastoresRequestDatastoreResourcePermissions) GetPlans() []UpdateCloudFoldersRequestFolderResourcePermissionsPlansInner {
 	if o == nil || IsNil(o.Plans) {
-		var ret []UpdateDatastoresRequestDatastoreResourcePermissionsPlansInner
+		var ret []UpdateCloudFoldersRequestFolderResourcePermissionsPlansInner
 		return ret
 	}
 	return o.Plans
@@ -165,7 +165,7 @@ func (o *UpdateDatastoresRequestDatastoreResourcePermissions) GetPlans() []Updat
 
 // GetPlansOk returns a tuple with the Plans field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateDatastoresRequestDatastoreResourcePermissions) GetPlansOk() ([]UpdateDatastoresRequestDatastoreResourcePermissionsPlansInner, bool) {
+func (o *UpdateDatastoresRequestDatastoreResourcePermissions) GetPlansOk() ([]UpdateCloudFoldersRequestFolderResourcePermissionsPlansInner, bool) {
 	if o == nil || IsNil(o.Plans) {
 		return nil, false
 	}
@@ -181,8 +181,8 @@ func (o *UpdateDatastoresRequestDatastoreResourcePermissions) IsSetPlans() bool 
 	return false
 }
 
-// SetPlans gets a reference to the given []UpdateDatastoresRequestDatastoreResourcePermissionsPlansInner and assigns it to the Plans field.
-func (o *UpdateDatastoresRequestDatastoreResourcePermissions) SetPlans(v []UpdateDatastoresRequestDatastoreResourcePermissionsPlansInner) {
+// SetPlans gets a reference to the given []UpdateCloudFoldersRequestFolderResourcePermissionsPlansInner and assigns it to the Plans field.
+func (o *UpdateDatastoresRequestDatastoreResourcePermissions) SetPlans(v []UpdateCloudFoldersRequestFolderResourcePermissionsPlansInner) {
 	o.Plans = v
 }
 

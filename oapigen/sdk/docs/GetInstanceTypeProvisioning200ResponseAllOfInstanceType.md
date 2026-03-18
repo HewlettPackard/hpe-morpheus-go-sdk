@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
-**Account** | Pointer to [**GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeAccount**](GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeAccount.md) |  | [optional] 
+**Account** | Pointer to [**NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeAccount**](GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeAccount.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
@@ -103,6 +103,16 @@ SetAccount sets Account field to given value.
 
 HasAccount returns a boolean if a field has been set.
 
+### SetAccountNil
+
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetAccountNil(b bool)`
+
+ SetAccountNil sets the value for Account to be an explicit nil
+
+### UnsetAccount
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) UnsetAccount()`
+
+UnsetAccount ensures that no value is present for Account, not even an explicit nil
 ### GetName
 
 `func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetName() string`

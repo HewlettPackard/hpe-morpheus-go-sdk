@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaxVirtualServers** | Pointer to **string** |  | [optional] 
+**MaxVirtualServers** | **string** |  | 
 
 ## Methods
 
 ### NewMaxVirtualServersPolicyTypeConfiguration7
 
-`func NewMaxVirtualServersPolicyTypeConfiguration7() *MaxVirtualServersPolicyTypeConfiguration7`
+`func NewMaxVirtualServersPolicyTypeConfiguration7(maxVirtualServers string, ) *MaxVirtualServersPolicyTypeConfiguration7`
 
 NewMaxVirtualServersPolicyTypeConfiguration7 instantiates a new MaxVirtualServersPolicyTypeConfiguration7 object
 This constructor will assign default values to properties that have it defined,
@@ -44,11 +44,6 @@ and a boolean to check if the value has been set.
 
 SetMaxVirtualServers sets MaxVirtualServers field to given value.
 
-### HasMaxVirtualServers
-
-`func (o *MaxVirtualServersPolicyTypeConfiguration7) HasMaxVirtualServers() bool`
-
-HasMaxVirtualServers returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

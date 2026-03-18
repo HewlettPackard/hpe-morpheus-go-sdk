@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**StorageServerId** | Pointer to **string** |  | [optional] 
+**StorageServerId** | **string** |  | 
 **MaxStorage** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
 ### NewStorageServerStorageQuotaPolicyTypeConfiguration7
 
-`func NewStorageServerStorageQuotaPolicyTypeConfiguration7() *StorageServerStorageQuotaPolicyTypeConfiguration7`
+`func NewStorageServerStorageQuotaPolicyTypeConfiguration7(storageServerId string, ) *StorageServerStorageQuotaPolicyTypeConfiguration7`
 
 NewStorageServerStorageQuotaPolicyTypeConfiguration7 instantiates a new StorageServerStorageQuotaPolicyTypeConfiguration7 object
 This constructor will assign default values to properties that have it defined,
@@ -45,11 +45,6 @@ and a boolean to check if the value has been set.
 
 SetStorageServerId sets StorageServerId field to given value.
 
-### HasStorageServerId
-
-`func (o *StorageServerStorageQuotaPolicyTypeConfiguration7) HasStorageServerId() bool`
-
-HasStorageServerId returns a boolean if a field has been set.
 
 ### GetMaxStorage
 

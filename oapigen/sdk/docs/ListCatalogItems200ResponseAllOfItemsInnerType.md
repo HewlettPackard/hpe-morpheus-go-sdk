@@ -1,0 +1,108 @@
+# ListCatalogItems200ResponseAllOfItemsInnerType
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Id** | Pointer to **int64** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
+**Type** | Pointer to **string** |  | [optional] 
+
+## Methods
+
+### NewListCatalogItems200ResponseAllOfItemsInnerType
+
+`func NewListCatalogItems200ResponseAllOfItemsInnerType() *ListCatalogItems200ResponseAllOfItemsInnerType`
+
+NewListCatalogItems200ResponseAllOfItemsInnerType instantiates a new ListCatalogItems200ResponseAllOfItemsInnerType object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewListCatalogItems200ResponseAllOfItemsInnerTypeWithDefaults
+
+`func NewListCatalogItems200ResponseAllOfItemsInnerTypeWithDefaults() *ListCatalogItems200ResponseAllOfItemsInnerType`
+
+NewListCatalogItems200ResponseAllOfItemsInnerTypeWithDefaults instantiates a new ListCatalogItems200ResponseAllOfItemsInnerType object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetId
+
+`func (o *ListCatalogItems200ResponseAllOfItemsInnerType) GetId() int64`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *ListCatalogItems200ResponseAllOfItemsInnerType) GetIdOk() (*int64, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *ListCatalogItems200ResponseAllOfItemsInnerType) SetId(v int64)`
+
+SetId sets Id field to given value.
+
+### HasId
+
+`func (o *ListCatalogItems200ResponseAllOfItemsInnerType) HasId() bool`
+
+HasId returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *ListCatalogItems200ResponseAllOfItemsInnerType) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *ListCatalogItems200ResponseAllOfItemsInnerType) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *ListCatalogItems200ResponseAllOfItemsInnerType) SetName(v string)`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *ListCatalogItems200ResponseAllOfItemsInnerType) HasName() bool`
+
+HasName returns a boolean if a field has been set.
+
+### GetType
+
+`func (o *ListCatalogItems200ResponseAllOfItemsInnerType) GetType() string`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *ListCatalogItems200ResponseAllOfItemsInnerType) GetTypeOk() (*string, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *ListCatalogItems200ResponseAllOfItemsInnerType) SetType(v string)`
+
+SetType sets Type field to given value.
+
+### HasType
+
+`func (o *ListCatalogItems200ResponseAllOfItemsInnerType) HasType() bool`
+
+HasType returns a boolean if a field has been set.
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **Evars** | Pointer to [**[]InstanceConfigObject1EvarsInner**](InstanceConfigObject1EvarsInner.md) | Environment Variables, an array of objects that have name and value. | [optional] 
 **ServicePlanOptions** | Pointer to [**InstanceConfigObject1ServicePlanOptions**](InstanceConfigObject1ServicePlanOptions.md) |  | [optional] 
 **SecurityGroups** | Pointer to [**[]InstanceConfigObject1SecurityGroupsInner**](InstanceConfigObject1SecurityGroupsInner.md) | Key for security group configuration. It should be passed as an array of objects containing the id of the security group to assign the instance to. | [optional] 
-**NetworkInterfaces** | Pointer to [**[]InstancesNetworkInterfaces4**](InstancesNetworkInterfaces4.md) | The networkInterfaces parameter is for network configuration.  The Options API &#x60;/api/options/zoneNetworkOptions?zoneId&#x3D;5&amp;provisionTypeId&#x3D;10&#x60; can be used to see which options are available.  | [optional] 
+**NetworkInterfaces** | Pointer to [**[]InstancesNetworkInterfaces1**](InstancesNetworkInterfaces1.md) | The networkInterfaces parameter is for network configuration.  The Options API &#x60;/api/options/zoneNetworkOptions?zoneId&#x3D;5&amp;provisionTypeId&#x3D;10&#x60; can be used to see which options are available.  | [optional] 
 **Labels** | Pointer to **[]string** | Array of strings (keywords). | [optional] 
 **Tags** | Pointer to [**[]InstanceConfigObject1TagsInner**](InstanceConfigObject1TagsInner.md) | Metadata tags, Array of objects having a name and value. | [optional] 
 **Metadata** | Pointer to [**[]InstanceConfigObject1MetadataInner**](InstanceConfigObject1MetadataInner.md) | Alias for &#x60;tags&#x60;. | [optional] 
@@ -367,20 +367,20 @@ HasSecurityGroups returns a boolean if a field has been set.
 UnsetSecurityGroups ensures that no value is present for SecurityGroups, not even an explicit nil
 ### GetNetworkInterfaces
 
-`func (o *InstanceConfigObject1) GetNetworkInterfaces() []InstancesNetworkInterfaces4`
+`func (o *InstanceConfigObject1) GetNetworkInterfaces() []InstancesNetworkInterfaces1`
 
 GetNetworkInterfaces returns the NetworkInterfaces field if non-nil, zero value otherwise.
 
 ### GetNetworkInterfacesOk
 
-`func (o *InstanceConfigObject1) GetNetworkInterfacesOk() (*[]InstancesNetworkInterfaces4, bool)`
+`func (o *InstanceConfigObject1) GetNetworkInterfacesOk() (*[]InstancesNetworkInterfaces1, bool)`
 
 GetNetworkInterfacesOk returns a tuple with the NetworkInterfaces field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkInterfaces
 
-`func (o *InstanceConfigObject1) SetNetworkInterfaces(v []InstancesNetworkInterfaces4)`
+`func (o *InstanceConfigObject1) SetNetworkInterfaces(v []InstancesNetworkInterfaces1)`
 
 SetNetworkInterfaces sets NetworkInterfaces field to given value.
 

@@ -18,9 +18,9 @@ import (
 // checks if the MaxHostsPolicyTypeConfiguration8 type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MaxHostsPolicyTypeConfiguration8{}
 
-// MaxHostsPolicyTypeConfiguration8 Configuration settings for the following policy types: - Max Hosts
+// MaxHostsPolicyTypeConfiguration8 - Max Hosts
 type MaxHostsPolicyTypeConfiguration8 struct {
-	MaxHosts             *string                `json:"maxHosts,omitempty"`
+	MaxHosts             string                 `json:"maxHosts"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -30,8 +30,9 @@ type _MaxHostsPolicyTypeConfiguration8 MaxHostsPolicyTypeConfiguration8
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMaxHostsPolicyTypeConfiguration8() *MaxHostsPolicyTypeConfiguration8 {
+func NewMaxHostsPolicyTypeConfiguration8(maxHosts string) *MaxHostsPolicyTypeConfiguration8 {
 	this := MaxHostsPolicyTypeConfiguration8{}
+	this.MaxHosts = maxHosts
 	return &this
 }
 
@@ -43,36 +44,28 @@ func NewMaxHostsPolicyTypeConfiguration8WithDefaults() *MaxHostsPolicyTypeConfig
 	return &this
 }
 
-// GetMaxHosts returns the MaxHosts field value if set, zero value otherwise.
+// GetMaxHosts returns the MaxHosts field value
 func (o *MaxHostsPolicyTypeConfiguration8) GetMaxHosts() string {
-	if o == nil || IsNil(o.MaxHosts) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.MaxHosts
+
+	return o.MaxHosts
 }
 
-// GetMaxHostsOk returns a tuple with the MaxHosts field value if set, nil otherwise
+// GetMaxHostsOk returns a tuple with the MaxHosts field value
 // and a boolean to check if the value has been set.
 func (o *MaxHostsPolicyTypeConfiguration8) GetMaxHostsOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxHosts) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MaxHosts, true
+	return &o.MaxHosts, true
 }
 
-// IsSetMaxHosts returns a boolean if a field has been set.
-func (o *MaxHostsPolicyTypeConfiguration8) IsSetMaxHosts() bool {
-	if o != nil && !IsNil(o.MaxHosts) {
-		return true
-	}
-
-	return false
-}
-
-// SetMaxHosts gets a reference to the given string and assigns it to the MaxHosts field.
+// SetMaxHosts sets field value
 func (o *MaxHostsPolicyTypeConfiguration8) SetMaxHosts(v string) {
-	o.MaxHosts = &v
+	o.MaxHosts = v
 }
 
 func (o MaxHostsPolicyTypeConfiguration8) MarshalJSON() ([]byte, error) {
@@ -85,9 +78,7 @@ func (o MaxHostsPolicyTypeConfiguration8) MarshalJSON() ([]byte, error) {
 
 func (o MaxHostsPolicyTypeConfiguration8) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MaxHosts) {
-		toSerialize["maxHosts"] = o.MaxHosts
-	}
+	toSerialize["maxHosts"] = o.MaxHosts
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value

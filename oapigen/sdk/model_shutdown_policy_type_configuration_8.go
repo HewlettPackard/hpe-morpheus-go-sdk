@@ -18,9 +18,9 @@ import (
 // checks if the ShutdownPolicyTypeConfiguration8 type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ShutdownPolicyTypeConfiguration8{}
 
-// ShutdownPolicyTypeConfiguration8 Configuration settings for the following policy types: - Shutdown
+// ShutdownPolicyTypeConfiguration8 - Shutdown
 type ShutdownPolicyTypeConfiguration8 struct {
-	ShutdownType                     *string                `json:"shutdownType,omitempty"`
+	ShutdownType                     string                 `json:"shutdownType"`
 	ShutdownAge                      *string                `json:"shutdownAge,omitempty"`
 	ShutdownRenewal                  *string                `json:"shutdownRenewal,omitempty"`
 	ShutdownNotify                   *string                `json:"shutdownNotify,omitempty"`
@@ -42,8 +42,9 @@ type _ShutdownPolicyTypeConfiguration8 ShutdownPolicyTypeConfiguration8
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewShutdownPolicyTypeConfiguration8() *ShutdownPolicyTypeConfiguration8 {
+func NewShutdownPolicyTypeConfiguration8(shutdownType string) *ShutdownPolicyTypeConfiguration8 {
 	this := ShutdownPolicyTypeConfiguration8{}
+	this.ShutdownType = shutdownType
 	var shutdownAutoRenew string = "off"
 	this.ShutdownAutoRenew = &shutdownAutoRenew
 	var shutdownAllowExtend string = "off"
@@ -63,36 +64,28 @@ func NewShutdownPolicyTypeConfiguration8WithDefaults() *ShutdownPolicyTypeConfig
 	return &this
 }
 
-// GetShutdownType returns the ShutdownType field value if set, zero value otherwise.
+// GetShutdownType returns the ShutdownType field value
 func (o *ShutdownPolicyTypeConfiguration8) GetShutdownType() string {
-	if o == nil || IsNil(o.ShutdownType) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.ShutdownType
+
+	return o.ShutdownType
 }
 
-// GetShutdownTypeOk returns a tuple with the ShutdownType field value if set, nil otherwise
+// GetShutdownTypeOk returns a tuple with the ShutdownType field value
 // and a boolean to check if the value has been set.
 func (o *ShutdownPolicyTypeConfiguration8) GetShutdownTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.ShutdownType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ShutdownType, true
+	return &o.ShutdownType, true
 }
 
-// IsSetShutdownType returns a boolean if a field has been set.
-func (o *ShutdownPolicyTypeConfiguration8) IsSetShutdownType() bool {
-	if o != nil && !IsNil(o.ShutdownType) {
-		return true
-	}
-
-	return false
-}
-
-// SetShutdownType gets a reference to the given string and assigns it to the ShutdownType field.
+// SetShutdownType sets field value
 func (o *ShutdownPolicyTypeConfiguration8) SetShutdownType(v string) {
-	o.ShutdownType = &v
+	o.ShutdownType = v
 }
 
 // GetShutdownAge returns the ShutdownAge field value if set, zero value otherwise.
@@ -489,9 +482,7 @@ func (o ShutdownPolicyTypeConfiguration8) MarshalJSON() ([]byte, error) {
 
 func (o ShutdownPolicyTypeConfiguration8) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ShutdownType) {
-		toSerialize["shutdownType"] = o.ShutdownType
-	}
+	toSerialize["shutdownType"] = o.ShutdownType
 	if !IsNil(o.ShutdownAge) {
 		toSerialize["shutdownAge"] = o.ShutdownAge
 	}

@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **Uuid** | Pointer to **string** |  | [optional] 
 **AccountId** | Pointer to **int64** |  | [optional] 
-**Tenant** | Pointer to [**GetInstance200ResponseInstanceTenant**](GetInstance200ResponseInstanceTenant.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableGetInstance200ResponseInstanceTenant**](GetInstance200ResponseInstanceTenant.md) |  | [optional] 
 **InstanceType** | Pointer to [**GetInstance200ResponseInstanceInstanceType**](GetInstance200ResponseInstanceInstanceType.md) |  | [optional] 
-**Group** | Pointer to [**GetInstance200ResponseInstanceGroup**](GetInstance200ResponseInstanceGroup.md) |  | [optional] 
+**Group** | Pointer to [**NullableGetInstance200ResponseInstanceGroup**](GetInstance200ResponseInstanceGroup.md) |  | [optional] 
 **Cloud** | Pointer to [**GetInstance200ResponseInstanceCloud**](GetInstance200ResponseInstanceCloud.md) |  | [optional] 
 **Cluster** | Pointer to [**GetInstance200ResponseInstanceCluster**](GetInstance200ResponseInstanceCluster.md) |  | [optional] 
 **Containers** | Pointer to **[]int64** |  | [optional] 
@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **ConfigId** | Pointer to **NullableString** |  | [optional] 
 **ConfigRole** | Pointer to **NullableString** |  | [optional] 
 **Volumes** | Pointer to [**[]AddInstance200ResponseAllOfOneOfInstanceVolumesInner**](AddInstance200ResponseAllOfOneOfInstanceVolumesInner.md) |  | [optional] 
-**Controllers** | Pointer to [**[]AddInstance200ResponseAllOfOneOfInstanceControllersInner**](AddInstance200ResponseAllOfOneOfInstanceControllersInner.md) |  | [optional] 
+**Controllers** | Pointer to [**[]ListInstances200ResponseAllOfInstancesInnerControllersInner**](ListInstances200ResponseAllOfInstancesInnerControllersInner.md) |  | [optional] 
 **Interfaces** | Pointer to [**[]AddInstance200ResponseAllOfOneOfInstanceInterfacesInner**](AddInstance200ResponseAllOfOneOfInstanceInterfacesInner.md) |  | [optional] 
 **CustomOptions** | Pointer to **map[string]interface{}** |  | [optional] 
 **InstanceVersion** | Pointer to **string** |  | [optional] 
@@ -206,6 +206,16 @@ SetTenant sets Tenant field to given value.
 
 HasTenant returns a boolean if a field has been set.
 
+### SetTenantNil
+
+`func (o *GetInstance200ResponseInstance) SetTenantNil(b bool)`
+
+ SetTenantNil sets the value for Tenant to be an explicit nil
+
+### UnsetTenant
+`func (o *GetInstance200ResponseInstance) UnsetTenant()`
+
+UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
 ### GetInstanceType
 
 `func (o *GetInstance200ResponseInstance) GetInstanceType() GetInstance200ResponseInstanceInstanceType`
@@ -256,6 +266,16 @@ SetGroup sets Group field to given value.
 
 HasGroup returns a boolean if a field has been set.
 
+### SetGroupNil
+
+`func (o *GetInstance200ResponseInstance) SetGroupNil(b bool)`
+
+ SetGroupNil sets the value for Group to be an explicit nil
+
+### UnsetGroup
+`func (o *GetInstance200ResponseInstance) UnsetGroup()`
+
+UnsetGroup ensures that no value is present for Group, not even an explicit nil
 ### GetCloud
 
 `func (o *GetInstance200ResponseInstance) GetCloud() GetInstance200ResponseInstanceCloud`
@@ -708,20 +728,20 @@ HasVolumes returns a boolean if a field has been set.
 
 ### GetControllers
 
-`func (o *GetInstance200ResponseInstance) GetControllers() []AddInstance200ResponseAllOfOneOfInstanceControllersInner`
+`func (o *GetInstance200ResponseInstance) GetControllers() []ListInstances200ResponseAllOfInstancesInnerControllersInner`
 
 GetControllers returns the Controllers field if non-nil, zero value otherwise.
 
 ### GetControllersOk
 
-`func (o *GetInstance200ResponseInstance) GetControllersOk() (*[]AddInstance200ResponseAllOfOneOfInstanceControllersInner, bool)`
+`func (o *GetInstance200ResponseInstance) GetControllersOk() (*[]ListInstances200ResponseAllOfInstancesInnerControllersInner, bool)`
 
 GetControllersOk returns a tuple with the Controllers field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetControllers
 
-`func (o *GetInstance200ResponseInstance) SetControllers(v []AddInstance200ResponseAllOfOneOfInstanceControllersInner)`
+`func (o *GetInstance200ResponseInstance) SetControllers(v []ListInstances200ResponseAllOfInstancesInnerControllersInner)`
 
 SetControllers sets Controllers field to given value.
 

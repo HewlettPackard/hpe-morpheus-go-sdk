@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **NullableString** | A description for the virtual image | [optional] 
 **Labels** | Pointer to **[]string** | Array of label strings, can be used for filtering. | [optional] 
 **OwnerId** | Pointer to **int64** | Owner of the image | [optional] 
-**Tenant** | Pointer to [**ListVirtualImages200ResponseAllOfVirtualImagesInnerTenant**](ListVirtualImages200ResponseAllOfVirtualImagesInnerTenant.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableListVirtualImages200ResponseAllOfVirtualImagesInnerTenant**](ListVirtualImages200ResponseAllOfVirtualImagesInnerTenant.md) |  | [optional] 
 **ImageType** | Pointer to **string** | Code of image type. eg. vmware, ami, etc. | [optional] 
 **UserUploaded** | Pointer to **bool** | Is uploaded by an user? | [optional] 
 **UserDefined** | Pointer to **bool** | Is defined by an user? | [optional] 
@@ -230,6 +230,16 @@ SetTenant sets Tenant field to given value.
 
 HasTenant returns a boolean if a field has been set.
 
+### SetTenantNil
+
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetTenantNil(b bool)`
+
+ SetTenantNil sets the value for Tenant to be an explicit nil
+
+### UnsetTenant
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnsetTenant()`
+
+UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
 ### GetImageType
 
 `func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetImageType() string`

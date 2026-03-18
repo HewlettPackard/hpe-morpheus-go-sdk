@@ -1,0 +1,56 @@
+# UpdateLoadBalancerPoolRequest
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**LoadBalancerPool** | Pointer to [**UpdateLoadBalancerPoolRequestLoadBalancerPool**](UpdateLoadBalancerPoolRequestLoadBalancerPool.md) |  | [optional] 
+
+## Methods
+
+### NewUpdateLoadBalancerPoolRequest
+
+`func NewUpdateLoadBalancerPoolRequest() *UpdateLoadBalancerPoolRequest`
+
+NewUpdateLoadBalancerPoolRequest instantiates a new UpdateLoadBalancerPoolRequest object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewUpdateLoadBalancerPoolRequestWithDefaults
+
+`func NewUpdateLoadBalancerPoolRequestWithDefaults() *UpdateLoadBalancerPoolRequest`
+
+NewUpdateLoadBalancerPoolRequestWithDefaults instantiates a new UpdateLoadBalancerPoolRequest object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetLoadBalancerPool
+
+`func (o *UpdateLoadBalancerPoolRequest) GetLoadBalancerPool() UpdateLoadBalancerPoolRequestLoadBalancerPool`
+
+GetLoadBalancerPool returns the LoadBalancerPool field if non-nil, zero value otherwise.
+
+### GetLoadBalancerPoolOk
+
+`func (o *UpdateLoadBalancerPoolRequest) GetLoadBalancerPoolOk() (*UpdateLoadBalancerPoolRequestLoadBalancerPool, bool)`
+
+GetLoadBalancerPoolOk returns a tuple with the LoadBalancerPool field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLoadBalancerPool
+
+`func (o *UpdateLoadBalancerPoolRequest) SetLoadBalancerPool(v UpdateLoadBalancerPoolRequestLoadBalancerPool)`
+
+SetLoadBalancerPool sets LoadBalancerPool field to given value.
+
+### HasLoadBalancerPool
+
+`func (o *UpdateLoadBalancerPoolRequest) HasLoadBalancerPool() bool`
+
+HasLoadBalancerPool returns a boolean if a field has been set.
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

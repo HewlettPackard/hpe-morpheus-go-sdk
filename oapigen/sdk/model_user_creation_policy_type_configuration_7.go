@@ -18,9 +18,9 @@ import (
 // checks if the UserCreationPolicyTypeConfiguration7 type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &UserCreationPolicyTypeConfiguration7{}
 
-// UserCreationPolicyTypeConfiguration7 Configuration settings for the following policy types: - User Creation
+// UserCreationPolicyTypeConfiguration7 - User Creation
 type UserCreationPolicyTypeConfiguration7 struct {
-	CreateUserType       *string                `json:"createUserType,omitempty"`
+	CreateUserType       string                 `json:"createUserType"`
 	CreateUser           *bool                  `json:"createUser,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
@@ -31,8 +31,9 @@ type _UserCreationPolicyTypeConfiguration7 UserCreationPolicyTypeConfiguration7
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUserCreationPolicyTypeConfiguration7() *UserCreationPolicyTypeConfiguration7 {
+func NewUserCreationPolicyTypeConfiguration7(createUserType string) *UserCreationPolicyTypeConfiguration7 {
 	this := UserCreationPolicyTypeConfiguration7{}
+	this.CreateUserType = createUserType
 	return &this
 }
 
@@ -44,36 +45,28 @@ func NewUserCreationPolicyTypeConfiguration7WithDefaults() *UserCreationPolicyTy
 	return &this
 }
 
-// GetCreateUserType returns the CreateUserType field value if set, zero value otherwise.
+// GetCreateUserType returns the CreateUserType field value
 func (o *UserCreationPolicyTypeConfiguration7) GetCreateUserType() string {
-	if o == nil || IsNil(o.CreateUserType) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.CreateUserType
+
+	return o.CreateUserType
 }
 
-// GetCreateUserTypeOk returns a tuple with the CreateUserType field value if set, nil otherwise
+// GetCreateUserTypeOk returns a tuple with the CreateUserType field value
 // and a boolean to check if the value has been set.
 func (o *UserCreationPolicyTypeConfiguration7) GetCreateUserTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.CreateUserType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CreateUserType, true
+	return &o.CreateUserType, true
 }
 
-// IsSetCreateUserType returns a boolean if a field has been set.
-func (o *UserCreationPolicyTypeConfiguration7) IsSetCreateUserType() bool {
-	if o != nil && !IsNil(o.CreateUserType) {
-		return true
-	}
-
-	return false
-}
-
-// SetCreateUserType gets a reference to the given string and assigns it to the CreateUserType field.
+// SetCreateUserType sets field value
 func (o *UserCreationPolicyTypeConfiguration7) SetCreateUserType(v string) {
-	o.CreateUserType = &v
+	o.CreateUserType = v
 }
 
 // GetCreateUser returns the CreateUser field value if set, zero value otherwise.
@@ -118,9 +111,7 @@ func (o UserCreationPolicyTypeConfiguration7) MarshalJSON() ([]byte, error) {
 
 func (o UserCreationPolicyTypeConfiguration7) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.CreateUserType) {
-		toSerialize["createUserType"] = o.CreateUserType
-	}
+	toSerialize["createUserType"] = o.CreateUserType
 	if !IsNil(o.CreateUser) {
 		toSerialize["createUser"] = o.CreateUser
 	}

@@ -1,0 +1,103 @@
+# BudgetPolicyTypeConfiguration11
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**MaxPrice** | **float32** |  | 
+**MaxPriceCurrency** | Pointer to **string** |  | [optional] 
+**MaxPriceUnit** | Pointer to **string** |  | [optional] 
+
+## Methods
+
+### NewBudgetPolicyTypeConfiguration11
+
+`func NewBudgetPolicyTypeConfiguration11(maxPrice float32, ) *BudgetPolicyTypeConfiguration11`
+
+NewBudgetPolicyTypeConfiguration11 instantiates a new BudgetPolicyTypeConfiguration11 object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewBudgetPolicyTypeConfiguration11WithDefaults
+
+`func NewBudgetPolicyTypeConfiguration11WithDefaults() *BudgetPolicyTypeConfiguration11`
+
+NewBudgetPolicyTypeConfiguration11WithDefaults instantiates a new BudgetPolicyTypeConfiguration11 object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetMaxPrice
+
+`func (o *BudgetPolicyTypeConfiguration11) GetMaxPrice() float32`
+
+GetMaxPrice returns the MaxPrice field if non-nil, zero value otherwise.
+
+### GetMaxPriceOk
+
+`func (o *BudgetPolicyTypeConfiguration11) GetMaxPriceOk() (*float32, bool)`
+
+GetMaxPriceOk returns a tuple with the MaxPrice field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaxPrice
+
+`func (o *BudgetPolicyTypeConfiguration11) SetMaxPrice(v float32)`
+
+SetMaxPrice sets MaxPrice field to given value.
+
+
+### GetMaxPriceCurrency
+
+`func (o *BudgetPolicyTypeConfiguration11) GetMaxPriceCurrency() string`
+
+GetMaxPriceCurrency returns the MaxPriceCurrency field if non-nil, zero value otherwise.
+
+### GetMaxPriceCurrencyOk
+
+`func (o *BudgetPolicyTypeConfiguration11) GetMaxPriceCurrencyOk() (*string, bool)`
+
+GetMaxPriceCurrencyOk returns a tuple with the MaxPriceCurrency field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaxPriceCurrency
+
+`func (o *BudgetPolicyTypeConfiguration11) SetMaxPriceCurrency(v string)`
+
+SetMaxPriceCurrency sets MaxPriceCurrency field to given value.
+
+### HasMaxPriceCurrency
+
+`func (o *BudgetPolicyTypeConfiguration11) HasMaxPriceCurrency() bool`
+
+HasMaxPriceCurrency returns a boolean if a field has been set.
+
+### GetMaxPriceUnit
+
+`func (o *BudgetPolicyTypeConfiguration11) GetMaxPriceUnit() string`
+
+GetMaxPriceUnit returns the MaxPriceUnit field if non-nil, zero value otherwise.
+
+### GetMaxPriceUnitOk
+
+`func (o *BudgetPolicyTypeConfiguration11) GetMaxPriceUnitOk() (*string, bool)`
+
+GetMaxPriceUnitOk returns a tuple with the MaxPriceUnit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaxPriceUnit
+
+`func (o *BudgetPolicyTypeConfiguration11) SetMaxPriceUnit(v string)`
+
+SetMaxPriceUnit sets MaxPriceUnit field to given value.
+
+### HasMaxPriceUnit
+
+`func (o *BudgetPolicyTypeConfiguration11) HasMaxPriceUnit() bool`
+
+HasMaxPriceUnit returns a boolean if a field has been set.
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

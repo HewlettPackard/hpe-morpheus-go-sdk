@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**RemovalAge** | Pointer to **string** |  | [optional] 
+**RemovalAge** | **string** |  | 
 
 ## Methods
 
 ### NewDelayedDeletePolicyTypeConfiguration8
 
-`func NewDelayedDeletePolicyTypeConfiguration8() *DelayedDeletePolicyTypeConfiguration8`
+`func NewDelayedDeletePolicyTypeConfiguration8(removalAge string, ) *DelayedDeletePolicyTypeConfiguration8`
 
 NewDelayedDeletePolicyTypeConfiguration8 instantiates a new DelayedDeletePolicyTypeConfiguration8 object
 This constructor will assign default values to properties that have it defined,
@@ -44,11 +44,6 @@ and a boolean to check if the value has been set.
 
 SetRemovalAge sets RemovalAge field to given value.
 
-### HasRemovalAge
-
-`func (o *DelayedDeletePolicyTypeConfiguration8) HasRemovalAge() bool`
-
-HasRemovalAge returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -33,29 +33,29 @@ type CatalogItemType struct {
 	Enabled     *bool          `json:"enabled,omitempty"`
 	Featured    *bool          `json:"featured,omitempty"`
 	// Can users order more than one of this item at a time.
-	AllowQuantity *bool                    `json:"allowQuantity,omitempty"`
-	IconPath      *string                  `json:"iconPath,omitempty"`
-	ImagePath     *string                  `json:"imagePath,omitempty"`
-	DarkImagePath *string                  `json:"darkImagePath,omitempty"`
-	Visibility    *string                  `json:"visibility,omitempty"`
-	LayoutCode    NullableString           `json:"layoutCode,omitempty"`
-	Blueprint     map[string]interface{}   `json:"blueprint,omitempty"`
-	AppSpec       NullableString           `json:"appSpec,omitempty"`
-	Config        map[string]interface{}   `json:"config,omitempty"`
-	InstanceSpec  NullableString           `json:"instanceSpec,omitempty"`
-	Workflow      *CatalogItemTypeWorkflow `json:"workflow,omitempty"`
-	Content       NullableString           `json:"content,omitempty"`
-	FormType      *string                  `json:"formType,omitempty"`
+	AllowQuantity *bool                                                 `json:"allowQuantity,omitempty"`
+	IconPath      *string                                               `json:"iconPath,omitempty"`
+	ImagePath     *string                                               `json:"imagePath,omitempty"`
+	DarkImagePath *string                                               `json:"darkImagePath,omitempty"`
+	Visibility    *string                                               `json:"visibility,omitempty"`
+	LayoutCode    NullableString                                        `json:"layoutCode,omitempty"`
+	Blueprint     map[string]interface{}                                `json:"blueprint,omitempty"`
+	AppSpec       NullableString                                        `json:"appSpec,omitempty"`
+	Config        map[string]interface{}                                `json:"config,omitempty"`
+	InstanceSpec  NullableString                                        `json:"instanceSpec,omitempty"`
+	Workflow      *GetCatalogItemType200ResponseCatalogItemTypeWorkflow `json:"workflow,omitempty"`
+	Content       NullableString                                        `json:"content,omitempty"`
+	FormType      *string                                               `json:"formType,omitempty"`
 	// Form object that contains input options and/or field groups
 	Form map[string]interface{} `json:"form,omitempty"`
 	// Form config object
-	FormConfig           map[string]interface{}            `json:"formConfig,omitempty"`
-	OptionTypes          []CatalogItemTypeOptionTypesInner `json:"optionTypes,omitempty"`
-	CreatedBy            NullableString                    `json:"createdBy,omitempty"`
-	Owner                *CatalogItemTypeOwner             `json:"owner,omitempty"`
-	DateCreated          *time.Time                        `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                        `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}            `json:",remain"`
+	FormConfig           map[string]interface{}                                         `json:"formConfig,omitempty"`
+	OptionTypes          []GetCatalogItemType200ResponseCatalogItemTypeOptionTypesInner `json:"optionTypes,omitempty"`
+	CreatedBy            NullableString                                                 `json:"createdBy,omitempty"`
+	Owner                *GetCatalogItemType200ResponseCatalogItemTypeOwner             `json:"owner,omitempty"`
+	DateCreated          *time.Time                                                     `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                     `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}                                         `json:",remain"`
 }
 
 type _CatalogItemType CatalogItemType
@@ -754,9 +754,9 @@ func (o *CatalogItemType) UnsetInstanceSpec() {
 }
 
 // GetWorkflow returns the Workflow field value if set, zero value otherwise.
-func (o *CatalogItemType) GetWorkflow() CatalogItemTypeWorkflow {
+func (o *CatalogItemType) GetWorkflow() GetCatalogItemType200ResponseCatalogItemTypeWorkflow {
 	if o == nil || IsNil(o.Workflow) {
-		var ret CatalogItemTypeWorkflow
+		var ret GetCatalogItemType200ResponseCatalogItemTypeWorkflow
 		return ret
 	}
 	return *o.Workflow
@@ -764,7 +764,7 @@ func (o *CatalogItemType) GetWorkflow() CatalogItemTypeWorkflow {
 
 // GetWorkflowOk returns a tuple with the Workflow field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CatalogItemType) GetWorkflowOk() (*CatalogItemTypeWorkflow, bool) {
+func (o *CatalogItemType) GetWorkflowOk() (*GetCatalogItemType200ResponseCatalogItemTypeWorkflow, bool) {
 	if o == nil || IsNil(o.Workflow) {
 		return nil, false
 	}
@@ -780,8 +780,8 @@ func (o *CatalogItemType) IsSetWorkflow() bool {
 	return false
 }
 
-// SetWorkflow gets a reference to the given CatalogItemTypeWorkflow and assigns it to the Workflow field.
-func (o *CatalogItemType) SetWorkflow(v CatalogItemTypeWorkflow) {
+// SetWorkflow gets a reference to the given GetCatalogItemType200ResponseCatalogItemTypeWorkflow and assigns it to the Workflow field.
+func (o *CatalogItemType) SetWorkflow(v GetCatalogItemType200ResponseCatalogItemTypeWorkflow) {
 	o.Workflow = &v
 }
 
@@ -927,9 +927,9 @@ func (o *CatalogItemType) SetFormConfig(v map[string]interface{}) {
 }
 
 // GetOptionTypes returns the OptionTypes field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CatalogItemType) GetOptionTypes() []CatalogItemTypeOptionTypesInner {
+func (o *CatalogItemType) GetOptionTypes() []GetCatalogItemType200ResponseCatalogItemTypeOptionTypesInner {
 	if o == nil {
-		var ret []CatalogItemTypeOptionTypesInner
+		var ret []GetCatalogItemType200ResponseCatalogItemTypeOptionTypesInner
 		return ret
 	}
 	return o.OptionTypes
@@ -938,7 +938,7 @@ func (o *CatalogItemType) GetOptionTypes() []CatalogItemTypeOptionTypesInner {
 // GetOptionTypesOk returns a tuple with the OptionTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CatalogItemType) GetOptionTypesOk() ([]CatalogItemTypeOptionTypesInner, bool) {
+func (o *CatalogItemType) GetOptionTypesOk() ([]GetCatalogItemType200ResponseCatalogItemTypeOptionTypesInner, bool) {
 	if o == nil || IsNil(o.OptionTypes) {
 		return nil, false
 	}
@@ -954,8 +954,8 @@ func (o *CatalogItemType) IsSetOptionTypes() bool {
 	return false
 }
 
-// SetOptionTypes gets a reference to the given []CatalogItemTypeOptionTypesInner and assigns it to the OptionTypes field.
-func (o *CatalogItemType) SetOptionTypes(v []CatalogItemTypeOptionTypesInner) {
+// SetOptionTypes gets a reference to the given []GetCatalogItemType200ResponseCatalogItemTypeOptionTypesInner and assigns it to the OptionTypes field.
+func (o *CatalogItemType) SetOptionTypes(v []GetCatalogItemType200ResponseCatalogItemTypeOptionTypesInner) {
 	o.OptionTypes = v
 }
 
@@ -1003,9 +1003,9 @@ func (o *CatalogItemType) UnsetCreatedBy() {
 }
 
 // GetOwner returns the Owner field value if set, zero value otherwise.
-func (o *CatalogItemType) GetOwner() CatalogItemTypeOwner {
+func (o *CatalogItemType) GetOwner() GetCatalogItemType200ResponseCatalogItemTypeOwner {
 	if o == nil || IsNil(o.Owner) {
-		var ret CatalogItemTypeOwner
+		var ret GetCatalogItemType200ResponseCatalogItemTypeOwner
 		return ret
 	}
 	return *o.Owner
@@ -1013,7 +1013,7 @@ func (o *CatalogItemType) GetOwner() CatalogItemTypeOwner {
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CatalogItemType) GetOwnerOk() (*CatalogItemTypeOwner, bool) {
+func (o *CatalogItemType) GetOwnerOk() (*GetCatalogItemType200ResponseCatalogItemTypeOwner, bool) {
 	if o == nil || IsNil(o.Owner) {
 		return nil, false
 	}
@@ -1029,8 +1029,8 @@ func (o *CatalogItemType) IsSetOwner() bool {
 	return false
 }
 
-// SetOwner gets a reference to the given CatalogItemTypeOwner and assigns it to the Owner field.
-func (o *CatalogItemType) SetOwner(v CatalogItemTypeOwner) {
+// SetOwner gets a reference to the given GetCatalogItemType200ResponseCatalogItemTypeOwner and assigns it to the Owner field.
+func (o *CatalogItemType) SetOwner(v GetCatalogItemType200ResponseCatalogItemTypeOwner) {
 	o.Owner = &v
 }
 

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Zone** | Pointer to [**ListCloudDatastores200ResponseAllOfDatastoresInnerZone**](ListCloudDatastores200ResponseAllOfDatastoresInnerZone.md) |  | [optional] 
+**Zone** | Pointer to [**NullableListCloudDatastores200ResponseAllOfDatastoresInnerZone**](ListCloudDatastores200ResponseAllOfDatastoresInnerZone.md) |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **FreeSpace** | Pointer to **int64** |  | [optional] 
 **Online** | Pointer to **bool** |  | [optional] 
@@ -109,6 +109,16 @@ SetZone sets Zone field to given value.
 
 HasZone returns a boolean if a field has been set.
 
+### SetZoneNil
+
+`func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) SetZoneNil(b bool)`
+
+ SetZoneNil sets the value for Zone to be an explicit nil
+
+### UnsetZone
+`func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) UnsetZone()`
+
+UnsetZone ensures that no value is present for Zone, not even an explicit nil
 ### GetType
 
 `func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) GetType() string`

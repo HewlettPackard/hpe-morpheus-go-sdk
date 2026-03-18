@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **DefaultValue** | Pointer to **NullableString** |  | [optional] 
 **OptionSource** | Pointer to **NullableString** |  | [optional] 
 **OptionSourceType** | Pointer to **NullableString** |  | [optional] 
-**OptionList** | Pointer to [**GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerOptionTypesInnerOptionList**](GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerOptionTypesInnerOptionList.md) |  | [optional] 
+**OptionList** | Pointer to [**ListClusterTypes200ResponseAllOfClusterTypesInnerOptionTypesInnerOptionList**](ListClusterTypes200ResponseAllOfClusterTypesInnerOptionTypesInnerOptionList.md) |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **Advanced** | Pointer to **bool** |  | [optional] 
 **Required** | Pointer to **bool** |  | [optional] 
@@ -742,20 +742,20 @@ HasOptionSourceType returns a boolean if a field has been set.
 UnsetOptionSourceType ensures that no value is present for OptionSourceType, not even an explicit nil
 ### GetOptionList
 
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerOptionTypesInner) GetOptionList() GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerOptionTypesInnerOptionList`
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerOptionTypesInner) GetOptionList() ListClusterTypes200ResponseAllOfClusterTypesInnerOptionTypesInnerOptionList`
 
 GetOptionList returns the OptionList field if non-nil, zero value otherwise.
 
 ### GetOptionListOk
 
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerOptionTypesInner) GetOptionListOk() (*GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerOptionTypesInnerOptionList, bool)`
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerOptionTypesInner) GetOptionListOk() (*ListClusterTypes200ResponseAllOfClusterTypesInnerOptionTypesInnerOptionList, bool)`
 
 GetOptionListOk returns a tuple with the OptionList field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOptionList
 
-`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerOptionTypesInner) SetOptionList(v GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerOptionTypesInnerOptionList)`
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerOptionTypesInner) SetOptionList(v ListClusterTypes200ResponseAllOfClusterTypesInnerOptionTypesInnerOptionList)`
 
 SetOptionList sets OptionList field to given value.
 

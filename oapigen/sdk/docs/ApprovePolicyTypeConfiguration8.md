@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AccountIntegrationId** | Pointer to **string** |  | [optional] 
+**AccountIntegrationId** | **string** |  | 
 **WorkflowId** | Pointer to **string** |  | [optional] 
 **FlowId** | Pointer to **string** |  | [optional] 
 **WorkflowType** | Pointer to **string** |  | [optional] 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 
 ### NewApprovePolicyTypeConfiguration8
 
-`func NewApprovePolicyTypeConfiguration8() *ApprovePolicyTypeConfiguration8`
+`func NewApprovePolicyTypeConfiguration8(accountIntegrationId string, ) *ApprovePolicyTypeConfiguration8`
 
 NewApprovePolicyTypeConfiguration8 instantiates a new ApprovePolicyTypeConfiguration8 object
 This constructor will assign default values to properties that have it defined,
@@ -47,11 +47,6 @@ and a boolean to check if the value has been set.
 
 SetAccountIntegrationId sets AccountIntegrationId field to given value.
 
-### HasAccountIntegrationId
-
-`func (o *ApprovePolicyTypeConfiguration8) HasAccountIntegrationId() bool`
-
-HasAccountIntegrationId returns a boolean if a field has been set.
 
 ### GetWorkflowId
 

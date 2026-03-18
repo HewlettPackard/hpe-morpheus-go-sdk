@@ -23,14 +23,14 @@ var _ fmt.Stringer
 
 // CatalogItemTypeInstanceCreateConfig - struct for CatalogItemTypeInstanceCreateConfig
 type CatalogItemTypeInstanceCreateConfig struct {
-	InstanceConfigObject1 *InstanceConfigObject1
+	InstanceConfigObject2 *InstanceConfigObject2
 	String                *string
 }
 
-// InstanceConfigObject1AsCatalogItemTypeInstanceCreateConfig is a convenience function that returns InstanceConfigObject1 wrapped in CatalogItemTypeInstanceCreateConfig
-func InstanceConfigObject1AsCatalogItemTypeInstanceCreateConfig(v *InstanceConfigObject1) CatalogItemTypeInstanceCreateConfig {
+// InstanceConfigObject2AsCatalogItemTypeInstanceCreateConfig is a convenience function that returns InstanceConfigObject2 wrapped in CatalogItemTypeInstanceCreateConfig
+func InstanceConfigObject2AsCatalogItemTypeInstanceCreateConfig(v *InstanceConfigObject2) CatalogItemTypeInstanceCreateConfig {
 	return CatalogItemTypeInstanceCreateConfig{
-		InstanceConfigObject1: v,
+		InstanceConfigObject2: v,
 	}
 }
 
@@ -46,10 +46,10 @@ func (dst *CatalogItemTypeInstanceCreateConfig) UnmarshalMapstructure(data any) 
 		dst = &CatalogItemTypeInstanceCreateConfig{}
 	}
 
-	mapstructDecode(data, &dst.InstanceConfigObject1)
+	mapstructDecode(data, &dst.InstanceConfigObject2)
 
-	if IsEmpty(dst.InstanceConfigObject1) {
-		dst.InstanceConfigObject1 = nil
+	if IsEmpty(dst.InstanceConfigObject2) {
+		dst.InstanceConfigObject2 = nil
 	}
 
 	mapstructDecode(data, &dst.String)
@@ -65,21 +65,21 @@ func (dst *CatalogItemTypeInstanceCreateConfig) UnmarshalMapstructure(data any) 
 func (dst *CatalogItemTypeInstanceCreateConfig) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
-	// try to unmarshal data into InstanceConfigObject1
-	err = newStrictDecoder(data).Decode(&dst.InstanceConfigObject1)
+	// try to unmarshal data into InstanceConfigObject2
+	err = newStrictDecoder(data).Decode(&dst.InstanceConfigObject2)
 	if err == nil {
-		jsonInstanceConfigObject1, _ := json.Marshal(dst.InstanceConfigObject1)
-		if string(jsonInstanceConfigObject1) == "{}" { // empty struct
-			dst.InstanceConfigObject1 = nil
+		jsonInstanceConfigObject2, _ := json.Marshal(dst.InstanceConfigObject2)
+		if string(jsonInstanceConfigObject2) == "{}" { // empty struct
+			dst.InstanceConfigObject2 = nil
 		} else {
-			if err = validator.Validate(dst.InstanceConfigObject1); err != nil {
-				dst.InstanceConfigObject1 = nil
+			if err = validator.Validate(dst.InstanceConfigObject2); err != nil {
+				dst.InstanceConfigObject2 = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.InstanceConfigObject1 = nil
+		dst.InstanceConfigObject2 = nil
 	}
 
 	// try to unmarshal data into String
@@ -101,7 +101,7 @@ func (dst *CatalogItemTypeInstanceCreateConfig) UnmarshalJSON(data []byte) error
 
 	if match > 1 { // more than 1 match
 		// reset to nil
-		dst.InstanceConfigObject1 = nil
+		dst.InstanceConfigObject2 = nil
 		dst.String = nil
 
 		return NewResponseValidationError("data matches more than one schema in oneOf(CatalogItemTypeInstanceCreateConfig)")
@@ -114,8 +114,8 @@ func (dst *CatalogItemTypeInstanceCreateConfig) UnmarshalJSON(data []byte) error
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src CatalogItemTypeInstanceCreateConfig) MarshalJSON() ([]byte, error) {
-	if src.InstanceConfigObject1 != nil {
-		return json.Marshal(&src.InstanceConfigObject1)
+	if src.InstanceConfigObject2 != nil {
+		return json.Marshal(&src.InstanceConfigObject2)
 	}
 
 	if src.String != nil {
@@ -130,8 +130,8 @@ func (obj *CatalogItemTypeInstanceCreateConfig) GetActualInstance() interface{} 
 	if obj == nil {
 		return nil
 	}
-	if obj.InstanceConfigObject1 != nil {
-		return obj.InstanceConfigObject1
+	if obj.InstanceConfigObject2 != nil {
+		return obj.InstanceConfigObject2
 	}
 
 	if obj.String != nil {
@@ -144,8 +144,8 @@ func (obj *CatalogItemTypeInstanceCreateConfig) GetActualInstance() interface{} 
 
 // Get the actual instance value
 func (obj CatalogItemTypeInstanceCreateConfig) GetActualInstanceValue() interface{} {
-	if obj.InstanceConfigObject1 != nil {
-		return *obj.InstanceConfigObject1
+	if obj.InstanceConfigObject2 != nil {
+		return *obj.InstanceConfigObject2
 	}
 
 	if obj.String != nil {

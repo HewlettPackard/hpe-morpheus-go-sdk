@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**NamingType** | Pointer to **string** |  | [optional] 
+**NamingType** | **string** |  | 
 **NamingPattern** | Pointer to **string** |  | [optional] 
 **NamingConflict** | Pointer to **bool** |  | [optional] 
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 
 ### NewInstanceNamePolicyTypeConfiguration7
 
-`func NewInstanceNamePolicyTypeConfiguration7() *InstanceNamePolicyTypeConfiguration7`
+`func NewInstanceNamePolicyTypeConfiguration7(namingType string, ) *InstanceNamePolicyTypeConfiguration7`
 
 NewInstanceNamePolicyTypeConfiguration7 instantiates a new InstanceNamePolicyTypeConfiguration7 object
 This constructor will assign default values to properties that have it defined,
@@ -46,11 +46,6 @@ and a boolean to check if the value has been set.
 
 SetNamingType sets NamingType field to given value.
 
-### HasNamingType
-
-`func (o *InstanceNamePolicyTypeConfiguration7) HasNamingType() bool`
-
-HasNamingType returns a boolean if a field has been set.
 
 ### GetNamingPattern
 

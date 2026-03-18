@@ -65,12 +65,12 @@ type ListClusters200ResponseAllOfClustersInner struct {
 	CreatedBy             *ListClusters200ResponseAllOfClustersInnerCreatedBy     `json:"createdBy,omitempty"`
 	UserGroup             NullableString                                          `json:"userGroup,omitempty"`
 	Layout                *ListClusters200ResponseAllOfClustersInnerLayout        `json:"layout,omitempty"`
-	Owner                 *ListClusters200ResponseAllOfClustersInnerOwner         `json:"owner,omitempty"`
+	Owner                 NullableListClusters200ResponseAllOfClustersInnerOwner  `json:"owner,omitempty"`
 	Servers               []ListClusters200ResponseAllOfClustersInnerServersInner `json:"servers,omitempty"`
 	Accounts              []map[string]interface{}                                `json:"accounts,omitempty"`
 	Integrations          []map[string]interface{}                                `json:"integrations,omitempty"`
-	Site                  *ListClusters200ResponseAllOfClustersInnerSite          `json:"site,omitempty"`
-	Type                  *ListClusters200ResponseAllOfClustersInnerType          `json:"type,omitempty"`
+	Site                  NullableListClusters200ResponseAllOfClustersInnerSite   `json:"site,omitempty"`
+	Type                  NullableListClusters200ResponseAllOfClustersInnerType   `json:"type,omitempty"`
 	Zone                  *ListClusters200ResponseAllOfClustersInnerZone          `json:"zone,omitempty"`
 	WorkerStats           *ListClusters200ResponseAllOfClustersInnerWorkerStats   `json:"workerStats,omitempty"`
 	Config                map[string]interface{}                                  `json:"config,omitempty"`
@@ -1713,36 +1713,47 @@ func (o *ListClusters200ResponseAllOfClustersInner) SetLayout(v ListClusters200R
 	o.Layout = &v
 }
 
-// GetOwner returns the Owner field value if set, zero value otherwise.
+// GetOwner returns the Owner field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusters200ResponseAllOfClustersInner) GetOwner() ListClusters200ResponseAllOfClustersInnerOwner {
-	if o == nil || IsNil(o.Owner) {
+	if o == nil || IsNil(o.Owner.Get()) {
 		var ret ListClusters200ResponseAllOfClustersInnerOwner
 		return ret
 	}
-	return *o.Owner
+	return *o.Owner.Get()
 }
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusters200ResponseAllOfClustersInner) GetOwnerOk() (*ListClusters200ResponseAllOfClustersInnerOwner, bool) {
-	if o == nil || IsNil(o.Owner) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Owner, true
+	return o.Owner.Get(), o.Owner.IsSet()
 }
 
 // IsSetOwner returns a boolean if a field has been set.
 func (o *ListClusters200ResponseAllOfClustersInner) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
+	if o != nil && o.Owner.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetOwner gets a reference to the given ListClusters200ResponseAllOfClustersInnerOwner and assigns it to the Owner field.
+// SetOwner gets a reference to the given NullableListClusters200ResponseAllOfClustersInnerOwner and assigns it to the Owner field.
 func (o *ListClusters200ResponseAllOfClustersInner) SetOwner(v ListClusters200ResponseAllOfClustersInnerOwner) {
-	o.Owner = &v
+	o.Owner.Set(&v)
+}
+
+// SetOwnerNil sets the value for Owner to be an explicit nil
+func (o *ListClusters200ResponseAllOfClustersInner) SetOwnerNil() {
+	o.Owner.Set(nil)
+}
+
+// UnsetOwner ensures that no value is present for Owner, not even an explicit nil
+func (o *ListClusters200ResponseAllOfClustersInner) UnsetOwner() {
+	o.Owner.Unset()
 }
 
 // GetServers returns the Servers field value if set, zero value otherwise.
@@ -1841,68 +1852,90 @@ func (o *ListClusters200ResponseAllOfClustersInner) SetIntegrations(v []map[stri
 	o.Integrations = v
 }
 
-// GetSite returns the Site field value if set, zero value otherwise.
+// GetSite returns the Site field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusters200ResponseAllOfClustersInner) GetSite() ListClusters200ResponseAllOfClustersInnerSite {
-	if o == nil || IsNil(o.Site) {
+	if o == nil || IsNil(o.Site.Get()) {
 		var ret ListClusters200ResponseAllOfClustersInnerSite
 		return ret
 	}
-	return *o.Site
+	return *o.Site.Get()
 }
 
 // GetSiteOk returns a tuple with the Site field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusters200ResponseAllOfClustersInner) GetSiteOk() (*ListClusters200ResponseAllOfClustersInnerSite, bool) {
-	if o == nil || IsNil(o.Site) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Site, true
+	return o.Site.Get(), o.Site.IsSet()
 }
 
 // IsSetSite returns a boolean if a field has been set.
 func (o *ListClusters200ResponseAllOfClustersInner) IsSetSite() bool {
-	if o != nil && !IsNil(o.Site) {
+	if o != nil && o.Site.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSite gets a reference to the given ListClusters200ResponseAllOfClustersInnerSite and assigns it to the Site field.
+// SetSite gets a reference to the given NullableListClusters200ResponseAllOfClustersInnerSite and assigns it to the Site field.
 func (o *ListClusters200ResponseAllOfClustersInner) SetSite(v ListClusters200ResponseAllOfClustersInnerSite) {
-	o.Site = &v
+	o.Site.Set(&v)
 }
 
-// GetType returns the Type field value if set, zero value otherwise.
+// SetSiteNil sets the value for Site to be an explicit nil
+func (o *ListClusters200ResponseAllOfClustersInner) SetSiteNil() {
+	o.Site.Set(nil)
+}
+
+// UnsetSite ensures that no value is present for Site, not even an explicit nil
+func (o *ListClusters200ResponseAllOfClustersInner) UnsetSite() {
+	o.Site.Unset()
+}
+
+// GetType returns the Type field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListClusters200ResponseAllOfClustersInner) GetType() ListClusters200ResponseAllOfClustersInnerType {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || IsNil(o.Type.Get()) {
 		var ret ListClusters200ResponseAllOfClustersInnerType
 		return ret
 	}
-	return *o.Type
+	return *o.Type.Get()
 }
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListClusters200ResponseAllOfClustersInner) GetTypeOk() (*ListClusters200ResponseAllOfClustersInnerType, bool) {
-	if o == nil || IsNil(o.Type) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Type, true
+	return o.Type.Get(), o.Type.IsSet()
 }
 
 // IsSetType returns a boolean if a field has been set.
 func (o *ListClusters200ResponseAllOfClustersInner) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
+	if o != nil && o.Type.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetType gets a reference to the given ListClusters200ResponseAllOfClustersInnerType and assigns it to the Type field.
+// SetType gets a reference to the given NullableListClusters200ResponseAllOfClustersInnerType and assigns it to the Type field.
 func (o *ListClusters200ResponseAllOfClustersInner) SetType(v ListClusters200ResponseAllOfClustersInnerType) {
-	o.Type = &v
+	o.Type.Set(&v)
+}
+
+// SetTypeNil sets the value for Type to be an explicit nil
+func (o *ListClusters200ResponseAllOfClustersInner) SetTypeNil() {
+	o.Type.Set(nil)
+}
+
+// UnsetType ensures that no value is present for Type, not even an explicit nil
+func (o *ListClusters200ResponseAllOfClustersInner) UnsetType() {
+	o.Type.Unset()
 }
 
 // GetZone returns the Zone field value if set, zero value otherwise.
@@ -2143,8 +2176,8 @@ func (o ListClusters200ResponseAllOfClustersInner) ToMap() (map[string]interface
 	if !IsNil(o.Layout) {
 		toSerialize["layout"] = o.Layout
 	}
-	if !IsNil(o.Owner) {
-		toSerialize["owner"] = o.Owner
+	if o.Owner.IsSet() {
+		toSerialize["owner"] = o.Owner.Get()
 	}
 	if !IsNil(o.Servers) {
 		toSerialize["servers"] = o.Servers
@@ -2155,11 +2188,11 @@ func (o ListClusters200ResponseAllOfClustersInner) ToMap() (map[string]interface
 	if !IsNil(o.Integrations) {
 		toSerialize["integrations"] = o.Integrations
 	}
-	if !IsNil(o.Site) {
-		toSerialize["site"] = o.Site
+	if o.Site.IsSet() {
+		toSerialize["site"] = o.Site.Get()
 	}
-	if !IsNil(o.Type) {
-		toSerialize["type"] = o.Type
+	if o.Type.IsSet() {
+		toSerialize["type"] = o.Type.Get()
 	}
 	if !IsNil(o.Zone) {
 		toSerialize["zone"] = o.Zone

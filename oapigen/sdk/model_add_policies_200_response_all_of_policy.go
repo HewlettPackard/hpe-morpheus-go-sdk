@@ -20,22 +20,22 @@ var _ MappedNullable = &AddPolicies200ResponseAllOfPolicy{}
 
 // AddPolicies200ResponseAllOfPolicy struct for AddPolicies200ResponseAllOfPolicy
 type AddPolicies200ResponseAllOfPolicy struct {
-	Id                   *int64                                           `json:"id,omitempty"`
-	Name                 *string                                          `json:"name,omitempty"`
-	Description          NullableString                                   `json:"description,omitempty"`
-	PolicyType           *AddPolicies200ResponseAllOfPolicyPolicyType     `json:"policyType,omitempty"`
-	Zone                 *AddPolicies200ResponseAllOfPolicyZone           `json:"zone,omitempty"`
-	Site                 *AddPolicies200ResponseAllOfPolicySite           `json:"site,omitempty"`
-	User                 *AddPolicies200ResponseAllOfPolicyUser           `json:"user,omitempty"`
-	Role                 *AddPolicies200ResponseAllOfPolicyRole           `json:"role,omitempty"`
-	RefType              NullableString                                   `json:"refType,omitempty"`
-	RefId                NullableInt64                                    `json:"refId,omitempty"`
-	EachUser             NullableBool                                     `json:"eachUser,omitempty"`
-	Config               *AddPolicies200ResponseAllOfPolicyConfig         `json:"config,omitempty"`
-	Enabled              *bool                                            `json:"enabled,omitempty"`
-	Owner                *AddPolicies200ResponseAllOfPolicyOwner          `json:"owner,omitempty"`
-	Accounts             []AddPolicies200ResponseAllOfPolicyAccountsInner `json:"accounts,omitempty"`
-	AdditionalProperties map[string]interface{}                           `json:",remain"`
+	Id                   *int64                                                   `json:"id,omitempty"`
+	Name                 *string                                                  `json:"name,omitempty"`
+	Description          NullableString                                           `json:"description,omitempty"`
+	PolicyType           *AddPolicies200ResponseAllOfPolicyPolicyType             `json:"policyType,omitempty"`
+	Zone                 *AddPolicies200ResponseAllOfPolicyZone                   `json:"zone,omitempty"`
+	Site                 *AddPolicies200ResponseAllOfPolicySite                   `json:"site,omitempty"`
+	User                 *AddPolicies200ResponseAllOfPolicyUser                   `json:"user,omitempty"`
+	Role                 *AddPolicies200ResponseAllOfPolicyRole                   `json:"role,omitempty"`
+	RefType              NullableString                                           `json:"refType,omitempty"`
+	RefId                NullableInt64                                            `json:"refId,omitempty"`
+	EachUser             NullableBool                                             `json:"eachUser,omitempty"`
+	Config               *AddPolicies200ResponseAllOfPolicyConfig                 `json:"config,omitempty"`
+	Enabled              *bool                                                    `json:"enabled,omitempty"`
+	Owner                NullableAddPolicies200ResponseAllOfPolicyOwner           `json:"owner,omitempty"`
+	Accounts             []ListPolicies200ResponseAllOfPoliciesInnerAccountsInner `json:"accounts,omitempty"`
+	AdditionalProperties map[string]interface{}                                   `json:",remain"`
 }
 
 type _AddPolicies200ResponseAllOfPolicy AddPolicies200ResponseAllOfPolicy
@@ -517,42 +517,53 @@ func (o *AddPolicies200ResponseAllOfPolicy) SetEnabled(v bool) {
 	o.Enabled = &v
 }
 
-// GetOwner returns the Owner field value if set, zero value otherwise.
+// GetOwner returns the Owner field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddPolicies200ResponseAllOfPolicy) GetOwner() AddPolicies200ResponseAllOfPolicyOwner {
-	if o == nil || IsNil(o.Owner) {
+	if o == nil || IsNil(o.Owner.Get()) {
 		var ret AddPolicies200ResponseAllOfPolicyOwner
 		return ret
 	}
-	return *o.Owner
+	return *o.Owner.Get()
 }
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddPolicies200ResponseAllOfPolicy) GetOwnerOk() (*AddPolicies200ResponseAllOfPolicyOwner, bool) {
-	if o == nil || IsNil(o.Owner) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Owner, true
+	return o.Owner.Get(), o.Owner.IsSet()
 }
 
 // IsSetOwner returns a boolean if a field has been set.
 func (o *AddPolicies200ResponseAllOfPolicy) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
+	if o != nil && o.Owner.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetOwner gets a reference to the given AddPolicies200ResponseAllOfPolicyOwner and assigns it to the Owner field.
+// SetOwner gets a reference to the given NullableAddPolicies200ResponseAllOfPolicyOwner and assigns it to the Owner field.
 func (o *AddPolicies200ResponseAllOfPolicy) SetOwner(v AddPolicies200ResponseAllOfPolicyOwner) {
-	o.Owner = &v
+	o.Owner.Set(&v)
 }
 
-// GetAccounts returns the Accounts field value if set, zero value otherwise.
-func (o *AddPolicies200ResponseAllOfPolicy) GetAccounts() []AddPolicies200ResponseAllOfPolicyAccountsInner {
-	if o == nil || IsNil(o.Accounts) {
-		var ret []AddPolicies200ResponseAllOfPolicyAccountsInner
+// SetOwnerNil sets the value for Owner to be an explicit nil
+func (o *AddPolicies200ResponseAllOfPolicy) SetOwnerNil() {
+	o.Owner.Set(nil)
+}
+
+// UnsetOwner ensures that no value is present for Owner, not even an explicit nil
+func (o *AddPolicies200ResponseAllOfPolicy) UnsetOwner() {
+	o.Owner.Unset()
+}
+
+// GetAccounts returns the Accounts field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *AddPolicies200ResponseAllOfPolicy) GetAccounts() []ListPolicies200ResponseAllOfPoliciesInnerAccountsInner {
+	if o == nil {
+		var ret []ListPolicies200ResponseAllOfPoliciesInnerAccountsInner
 		return ret
 	}
 	return o.Accounts
@@ -560,7 +571,8 @@ func (o *AddPolicies200ResponseAllOfPolicy) GetAccounts() []AddPolicies200Respon
 
 // GetAccountsOk returns a tuple with the Accounts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddPolicies200ResponseAllOfPolicy) GetAccountsOk() ([]AddPolicies200ResponseAllOfPolicyAccountsInner, bool) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *AddPolicies200ResponseAllOfPolicy) GetAccountsOk() ([]ListPolicies200ResponseAllOfPoliciesInnerAccountsInner, bool) {
 	if o == nil || IsNil(o.Accounts) {
 		return nil, false
 	}
@@ -576,8 +588,8 @@ func (o *AddPolicies200ResponseAllOfPolicy) IsSetAccounts() bool {
 	return false
 }
 
-// SetAccounts gets a reference to the given []AddPolicies200ResponseAllOfPolicyAccountsInner and assigns it to the Accounts field.
-func (o *AddPolicies200ResponseAllOfPolicy) SetAccounts(v []AddPolicies200ResponseAllOfPolicyAccountsInner) {
+// SetAccounts gets a reference to the given []ListPolicies200ResponseAllOfPoliciesInnerAccountsInner and assigns it to the Accounts field.
+func (o *AddPolicies200ResponseAllOfPolicy) SetAccounts(v []ListPolicies200ResponseAllOfPoliciesInnerAccountsInner) {
 	o.Accounts = v
 }
 
@@ -630,10 +642,10 @@ func (o AddPolicies200ResponseAllOfPolicy) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}
-	if !IsNil(o.Owner) {
-		toSerialize["owner"] = o.Owner
+	if o.Owner.IsSet() {
+		toSerialize["owner"] = o.Owner.Get()
 	}
-	if !IsNil(o.Accounts) {
+	if o.Accounts != nil {
 		toSerialize["accounts"] = o.Accounts
 	}
 

@@ -18,9 +18,9 @@ import (
 // checks if the MaxVirtualServersPolicyTypeConfiguration7 type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MaxVirtualServersPolicyTypeConfiguration7{}
 
-// MaxVirtualServersPolicyTypeConfiguration7 Configuration settings for the following policy types: - Max Virtual Servers
+// MaxVirtualServersPolicyTypeConfiguration7 - Max Virtual Servers
 type MaxVirtualServersPolicyTypeConfiguration7 struct {
-	MaxVirtualServers    *string                `json:"maxVirtualServers,omitempty"`
+	MaxVirtualServers    string                 `json:"maxVirtualServers"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -30,8 +30,9 @@ type _MaxVirtualServersPolicyTypeConfiguration7 MaxVirtualServersPolicyTypeConfi
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMaxVirtualServersPolicyTypeConfiguration7() *MaxVirtualServersPolicyTypeConfiguration7 {
+func NewMaxVirtualServersPolicyTypeConfiguration7(maxVirtualServers string) *MaxVirtualServersPolicyTypeConfiguration7 {
 	this := MaxVirtualServersPolicyTypeConfiguration7{}
+	this.MaxVirtualServers = maxVirtualServers
 	return &this
 }
 
@@ -43,36 +44,28 @@ func NewMaxVirtualServersPolicyTypeConfiguration7WithDefaults() *MaxVirtualServe
 	return &this
 }
 
-// GetMaxVirtualServers returns the MaxVirtualServers field value if set, zero value otherwise.
+// GetMaxVirtualServers returns the MaxVirtualServers field value
 func (o *MaxVirtualServersPolicyTypeConfiguration7) GetMaxVirtualServers() string {
-	if o == nil || IsNil(o.MaxVirtualServers) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.MaxVirtualServers
+
+	return o.MaxVirtualServers
 }
 
-// GetMaxVirtualServersOk returns a tuple with the MaxVirtualServers field value if set, nil otherwise
+// GetMaxVirtualServersOk returns a tuple with the MaxVirtualServers field value
 // and a boolean to check if the value has been set.
 func (o *MaxVirtualServersPolicyTypeConfiguration7) GetMaxVirtualServersOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxVirtualServers) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MaxVirtualServers, true
+	return &o.MaxVirtualServers, true
 }
 
-// IsSetMaxVirtualServers returns a boolean if a field has been set.
-func (o *MaxVirtualServersPolicyTypeConfiguration7) IsSetMaxVirtualServers() bool {
-	if o != nil && !IsNil(o.MaxVirtualServers) {
-		return true
-	}
-
-	return false
-}
-
-// SetMaxVirtualServers gets a reference to the given string and assigns it to the MaxVirtualServers field.
+// SetMaxVirtualServers sets field value
 func (o *MaxVirtualServersPolicyTypeConfiguration7) SetMaxVirtualServers(v string) {
-	o.MaxVirtualServers = &v
+	o.MaxVirtualServers = v
 }
 
 func (o MaxVirtualServersPolicyTypeConfiguration7) MarshalJSON() ([]byte, error) {
@@ -85,9 +78,7 @@ func (o MaxVirtualServersPolicyTypeConfiguration7) MarshalJSON() ([]byte, error)
 
 func (o MaxVirtualServersPolicyTypeConfiguration7) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MaxVirtualServers) {
-		toSerialize["maxVirtualServers"] = o.MaxVirtualServers
-	}
+	toSerialize["maxVirtualServers"] = o.MaxVirtualServers
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value

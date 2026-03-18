@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaxNetworks** | Pointer to **string** |  | [optional] 
+**MaxNetworks** | **string** |  | 
 
 ## Methods
 
 ### NewNetworkQuotaPolicyTypeConfiguration7
 
-`func NewNetworkQuotaPolicyTypeConfiguration7() *NetworkQuotaPolicyTypeConfiguration7`
+`func NewNetworkQuotaPolicyTypeConfiguration7(maxNetworks string, ) *NetworkQuotaPolicyTypeConfiguration7`
 
 NewNetworkQuotaPolicyTypeConfiguration7 instantiates a new NetworkQuotaPolicyTypeConfiguration7 object
 This constructor will assign default values to properties that have it defined,
@@ -44,11 +44,6 @@ and a boolean to check if the value has been set.
 
 SetMaxNetworks sets MaxNetworks field to given value.
 
-### HasMaxNetworks
-
-`func (o *NetworkQuotaPolicyTypeConfiguration7) HasMaxNetworks() bool`
-
-HasMaxNetworks returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

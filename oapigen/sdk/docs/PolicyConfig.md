@@ -51,10 +51,10 @@ Name | Type | Description | Notes
 **MaxVirtualServers** | **string** |  | 
 **MaxVms** | **string** |  | 
 **MotdTitle** | Pointer to **string** |  | [optional] 
-**Motd** | [**MessageOfTheDayPolicyTypeConfiguration6Motd**](MessageOfTheDayPolicyTypeConfiguration6Motd.md) |  | 
+**Motd** | [**MessageOfTheDayPolicyTypeConfiguration14Motd**](MessageOfTheDayPolicyTypeConfiguration14Motd.md) |  | 
 **MotdMessage** | Pointer to **string** |  | [optional] 
 **MotdType** | Pointer to **string** |  | [optional] 
-**MotdFullPage** | Pointer to [**MessageOfTheDayPolicyTypeConfiguration6MotdFullPage**](MessageOfTheDayPolicyTypeConfiguration6MotdFullPage.md) |  | [optional] 
+**MotdFullPage** | Pointer to [**MessageOfTheDayPolicyTypeConfiguration14MotdFullPage**](MessageOfTheDayPolicyTypeConfiguration14MotdFullPage.md) |  | [optional] 
 **MotdDate** | Pointer to **string** |  | [optional] 
 **MaxNetworks** | **string** |  | 
 **PowerScheduleType** | **string** |  | 
@@ -85,7 +85,7 @@ Name | Type | Description | Notes
 
 ### NewPolicyConfig
 
-`func NewPolicyConfig(accountIntegrationId string, workflowId string, createBackupType string, backupStorageIds []string, maxPrice float32, serverNamingType string, keyPattern string, removalAge string, lifecycleType string, hostNamingType string, namingType string, maxContainers string, maxCores string, maxHosts string, maxPools string, maxMemory string, maxPoolMembers string, maxSnapshots string, maxStorage string, maxVirtualServers string, maxVms string, motd MessageOfTheDayPolicyTypeConfiguration6Motd, maxNetworks string, powerScheduleType string, maxRouters string, requiredNetworks []int64, shutdownType string, storageServerId string, strict bool, createUserType string, userGroup string, ) *PolicyConfig`
+`func NewPolicyConfig(accountIntegrationId string, workflowId string, createBackupType string, backupStorageIds []string, maxPrice float32, serverNamingType string, keyPattern string, removalAge string, lifecycleType string, hostNamingType string, namingType string, maxContainers string, maxCores string, maxHosts string, maxPools string, maxMemory string, maxPoolMembers string, maxSnapshots string, maxStorage string, maxVirtualServers string, maxVms string, motd MessageOfTheDayPolicyTypeConfiguration14Motd, maxNetworks string, powerScheduleType string, maxRouters string, requiredNetworks []int64, shutdownType string, storageServerId string, strict bool, createUserType string, userGroup string, ) *PolicyConfig`
 
 NewPolicyConfig instantiates a new PolicyConfig object
 This constructor will assign default values to properties that have it defined,
@@ -1172,20 +1172,20 @@ HasMotdTitle returns a boolean if a field has been set.
 
 ### GetMotd
 
-`func (o *PolicyConfig) GetMotd() MessageOfTheDayPolicyTypeConfiguration6Motd`
+`func (o *PolicyConfig) GetMotd() MessageOfTheDayPolicyTypeConfiguration14Motd`
 
 GetMotd returns the Motd field if non-nil, zero value otherwise.
 
 ### GetMotdOk
 
-`func (o *PolicyConfig) GetMotdOk() (*MessageOfTheDayPolicyTypeConfiguration6Motd, bool)`
+`func (o *PolicyConfig) GetMotdOk() (*MessageOfTheDayPolicyTypeConfiguration14Motd, bool)`
 
 GetMotdOk returns a tuple with the Motd field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMotd
 
-`func (o *PolicyConfig) SetMotd(v MessageOfTheDayPolicyTypeConfiguration6Motd)`
+`func (o *PolicyConfig) SetMotd(v MessageOfTheDayPolicyTypeConfiguration14Motd)`
 
 SetMotd sets Motd field to given value.
 
@@ -1242,20 +1242,20 @@ HasMotdType returns a boolean if a field has been set.
 
 ### GetMotdFullPage
 
-`func (o *PolicyConfig) GetMotdFullPage() MessageOfTheDayPolicyTypeConfiguration6MotdFullPage`
+`func (o *PolicyConfig) GetMotdFullPage() MessageOfTheDayPolicyTypeConfiguration14MotdFullPage`
 
 GetMotdFullPage returns the MotdFullPage field if non-nil, zero value otherwise.
 
 ### GetMotdFullPageOk
 
-`func (o *PolicyConfig) GetMotdFullPageOk() (*MessageOfTheDayPolicyTypeConfiguration6MotdFullPage, bool)`
+`func (o *PolicyConfig) GetMotdFullPageOk() (*MessageOfTheDayPolicyTypeConfiguration14MotdFullPage, bool)`
 
 GetMotdFullPageOk returns a tuple with the MotdFullPage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMotdFullPage
 
-`func (o *PolicyConfig) SetMotdFullPage(v MessageOfTheDayPolicyTypeConfiguration6MotdFullPage)`
+`func (o *PolicyConfig) SetMotdFullPage(v MessageOfTheDayPolicyTypeConfiguration14MotdFullPage)`
 
 SetMotdFullPage sets MotdFullPage field to given value.
 

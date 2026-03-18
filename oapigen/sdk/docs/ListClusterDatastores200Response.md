@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Datastores** | Pointer to [**[]ListClusterDatastores200ResponseAllOfDatastoresInner**](ListClusterDatastores200ResponseAllOfDatastoresInner.md) |  | [optional] 
-**Meta** | Pointer to [**ListClouds200ResponseAllOfMeta**](ListClouds200ResponseAllOfMeta.md) |  | [optional] 
+**Meta** | Pointer to [**ListAlerts200ResponseAllOfMeta**](ListAlerts200ResponseAllOfMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasDatastores returns a boolean if a field has been set.
 
 ### GetMeta
 
-`func (o *ListClusterDatastores200Response) GetMeta() ListClouds200ResponseAllOfMeta`
+`func (o *ListClusterDatastores200Response) GetMeta() ListAlerts200ResponseAllOfMeta`
 
 GetMeta returns the Meta field if non-nil, zero value otherwise.
 
 ### GetMetaOk
 
-`func (o *ListClusterDatastores200Response) GetMetaOk() (*ListClouds200ResponseAllOfMeta, bool)`
+`func (o *ListClusterDatastores200Response) GetMetaOk() (*ListAlerts200ResponseAllOfMeta, bool)`
 
 GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMeta
 
-`func (o *ListClusterDatastores200Response) SetMeta(v ListClouds200ResponseAllOfMeta)`
+`func (o *ListClusterDatastores200Response) SetMeta(v ListAlerts200ResponseAllOfMeta)`
 
 SetMeta sets Meta field to given value.
 

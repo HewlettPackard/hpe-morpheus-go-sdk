@@ -12,11 +12,11 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **ExternalName** | Pointer to **string** |  | [optional] 
 **Hostname** | Pointer to **string** |  | [optional] 
-**ParentServer** | Pointer to [**ListHosts200ResponseAllOfServersInnerParentServer**](ListHosts200ResponseAllOfServersInnerParentServer.md) |  | [optional] 
+**ParentServer** | Pointer to [**NullableListHosts200ResponseAllOfServersInnerParentServer**](ListHosts200ResponseAllOfServersInnerParentServer.md) |  | [optional] 
 **AccountId** | Pointer to **int64** |  | [optional] 
-**Account** | Pointer to [**ListHosts200ResponseAllOfServersInnerAccount**](ListHosts200ResponseAllOfServersInnerAccount.md) |  | [optional] 
+**Account** | Pointer to [**NullableListHosts200ResponseAllOfServersInnerAccount**](ListHosts200ResponseAllOfServersInnerAccount.md) |  | [optional] 
 **Owner** | Pointer to [**ListHosts200ResponseAllOfServersInnerOwner**](ListHosts200ResponseAllOfServersInnerOwner.md) |  | [optional] 
-**Zone** | Pointer to [**ListHosts200ResponseAllOfServersInnerZone**](ListHosts200ResponseAllOfServersInnerZone.md) |  | [optional] 
+**Zone** | Pointer to [**NullableListHosts200ResponseAllOfServersInnerZone**](ListHosts200ResponseAllOfServersInnerZone.md) |  | [optional] 
 **Plan** | Pointer to [**ListHosts200ResponseAllOfServersInnerPlan**](ListHosts200ResponseAllOfServersInnerPlan.md) |  | [optional] 
 **ComputeServerType** | Pointer to [**ListHosts200ResponseAllOfServersInnerComputeServerType**](ListHosts200ResponseAllOfServersInnerComputeServerType.md) |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
@@ -358,6 +358,16 @@ SetParentServer sets ParentServer field to given value.
 
 HasParentServer returns a boolean if a field has been set.
 
+### SetParentServerNil
+
+`func (o *ListHosts200ResponseAllOfServersInner) SetParentServerNil(b bool)`
+
+ SetParentServerNil sets the value for ParentServer to be an explicit nil
+
+### UnsetParentServer
+`func (o *ListHosts200ResponseAllOfServersInner) UnsetParentServer()`
+
+UnsetParentServer ensures that no value is present for ParentServer, not even an explicit nil
 ### GetAccountId
 
 `func (o *ListHosts200ResponseAllOfServersInner) GetAccountId() int64`
@@ -408,6 +418,16 @@ SetAccount sets Account field to given value.
 
 HasAccount returns a boolean if a field has been set.
 
+### SetAccountNil
+
+`func (o *ListHosts200ResponseAllOfServersInner) SetAccountNil(b bool)`
+
+ SetAccountNil sets the value for Account to be an explicit nil
+
+### UnsetAccount
+`func (o *ListHosts200ResponseAllOfServersInner) UnsetAccount()`
+
+UnsetAccount ensures that no value is present for Account, not even an explicit nil
 ### GetOwner
 
 `func (o *ListHosts200ResponseAllOfServersInner) GetOwner() ListHosts200ResponseAllOfServersInnerOwner`
@@ -458,6 +478,16 @@ SetZone sets Zone field to given value.
 
 HasZone returns a boolean if a field has been set.
 
+### SetZoneNil
+
+`func (o *ListHosts200ResponseAllOfServersInner) SetZoneNil(b bool)`
+
+ SetZoneNil sets the value for Zone to be an explicit nil
+
+### UnsetZone
+`func (o *ListHosts200ResponseAllOfServersInner) UnsetZone()`
+
+UnsetZone ensures that no value is present for Zone, not even an explicit nil
 ### GetPlan
 
 `func (o *ListHosts200ResponseAllOfServersInner) GetPlan() ListHosts200ResponseAllOfServersInnerPlan`

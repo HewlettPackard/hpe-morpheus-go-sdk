@@ -51,12 +51,12 @@ Name | Type | Description | Notes
 **CreatedBy** | Pointer to [**AddCluster200ResponseAllOfClusterCreatedBy**](AddCluster200ResponseAllOfClusterCreatedBy.md) |  | [optional] 
 **UserGroup** | Pointer to **NullableString** |  | [optional] 
 **Layout** | Pointer to [**AddCluster200ResponseAllOfClusterLayout**](AddCluster200ResponseAllOfClusterLayout.md) |  | [optional] 
-**Owner** | Pointer to [**AddCluster200ResponseAllOfClusterOwner**](AddCluster200ResponseAllOfClusterOwner.md) |  | [optional] 
+**Owner** | Pointer to [**NullableAddCluster200ResponseAllOfClusterOwner**](AddCluster200ResponseAllOfClusterOwner.md) |  | [optional] 
 **Servers** | Pointer to [**[]AddCluster200ResponseAllOfClusterServersInner**](AddCluster200ResponseAllOfClusterServersInner.md) |  | [optional] 
 **Accounts** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **Integrations** | Pointer to **[]map[string]interface{}** |  | [optional] 
-**Site** | Pointer to [**AddCluster200ResponseAllOfClusterSite**](AddCluster200ResponseAllOfClusterSite.md) |  | [optional] 
-**Type** | Pointer to [**AddCluster200ResponseAllOfClusterType**](AddCluster200ResponseAllOfClusterType.md) |  | [optional] 
+**Site** | Pointer to [**NullableAddCluster200ResponseAllOfClusterSite**](AddCluster200ResponseAllOfClusterSite.md) |  | [optional] 
+**Type** | Pointer to [**NullableAddCluster200ResponseAllOfClusterType**](AddCluster200ResponseAllOfClusterType.md) |  | [optional] 
 **Zone** | Pointer to [**AddCluster200ResponseAllOfClusterZone**](AddCluster200ResponseAllOfClusterZone.md) |  | [optional] 
 **WorkerStats** | Pointer to [**AddCluster200ResponseAllOfClusterWorkerStats**](AddCluster200ResponseAllOfClusterWorkerStats.md) |  | [optional] 
 **ContainersCount** | Pointer to **int64** |  | [optional] 
@@ -1599,6 +1599,16 @@ SetOwner sets Owner field to given value.
 
 HasOwner returns a boolean if a field has been set.
 
+### SetOwnerNil
+
+`func (o *AddCluster200ResponseAllOfCluster) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *AddCluster200ResponseAllOfCluster) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetServers
 
 `func (o *AddCluster200ResponseAllOfCluster) GetServers() []AddCluster200ResponseAllOfClusterServersInner`
@@ -1699,6 +1709,16 @@ SetSite sets Site field to given value.
 
 HasSite returns a boolean if a field has been set.
 
+### SetSiteNil
+
+`func (o *AddCluster200ResponseAllOfCluster) SetSiteNil(b bool)`
+
+ SetSiteNil sets the value for Site to be an explicit nil
+
+### UnsetSite
+`func (o *AddCluster200ResponseAllOfCluster) UnsetSite()`
+
+UnsetSite ensures that no value is present for Site, not even an explicit nil
 ### GetType
 
 `func (o *AddCluster200ResponseAllOfCluster) GetType() AddCluster200ResponseAllOfClusterType`
@@ -1724,6 +1744,16 @@ SetType sets Type field to given value.
 
 HasType returns a boolean if a field has been set.
 
+### SetTypeNil
+
+`func (o *AddCluster200ResponseAllOfCluster) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *AddCluster200ResponseAllOfCluster) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetZone
 
 `func (o *AddCluster200ResponseAllOfCluster) GetZone() AddCluster200ResponseAllOfClusterZone`

@@ -21,44 +21,44 @@ var _ MappedNullable = &Check{}
 
 // Check struct for Check
 type Check struct {
-	Id                   *int64                 `json:"id,omitempty"`
-	Account              *CheckAccount          `json:"account,omitempty"`
-	Active               *bool                  `json:"active,omitempty"`
-	ApiKey               *string                `json:"apiKey,omitempty"`
-	Availability         *float32               `json:"availability,omitempty"`
-	CheckAgent           NullableString         `json:"checkAgent,omitempty"`
-	CheckInterval        NullableInt64          `json:"checkInterval,omitempty"`
-	CheckSpec            NullableString         `json:"checkSpec,omitempty"`
-	CheckType            *CheckCheckType        `json:"checkType,omitempty"`
-	Config               *CheckConfig           `json:"config,omitempty"`
-	Container            *CheckContainer        `json:"container,omitempty"`
-	CreateIncident       *bool                  `json:"createIncident,omitempty"`
-	Muted                *bool                  `json:"muted,omitempty"`
-	CreatedBy            *CheckCreatedBy        `json:"createdBy,omitempty"`
-	DateCreated          *time.Time             `json:"dateCreated,omitempty"`
-	Description          NullableString         `json:"description,omitempty"`
-	EndDate              NullableTime           `json:"endDate,omitempty"`
-	Health               *int64                 `json:"health,omitempty"`
-	InUptime             *bool                  `json:"inUptime,omitempty"`
-	LastBoxStats         NullableString         `json:"lastBoxStats,omitempty"`
-	LastCheckStatus      NullableString         `json:"lastCheckStatus,omitempty"`
-	LastError            NullableString         `json:"lastError,omitempty"`
-	LastErrorDate        NullableTime           `json:"lastErrorDate,omitempty"`
-	LastMessage          NullableString         `json:"lastMessage,omitempty"`
-	LastMetric           NullableString         `json:"lastMetric,omitempty"`
-	LastRunDate          NullableTime           `json:"lastRunDate,omitempty"`
-	LastStats            NullableString         `json:"lastStats,omitempty"`
-	LastSuccessDate      NullableTime           `json:"lastSuccessDate,omitempty"`
-	LastTimer            NullableInt64          `json:"lastTimer,omitempty"`
-	LastUpdated          NullableTime           `json:"lastUpdated,omitempty"`
-	LastWarningDate      NullableTime           `json:"lastWarningDate,omitempty"`
-	Name                 *string                `json:"name,omitempty"`
-	NextRunDate          NullableTime           `json:"nextRunDate,omitempty"`
-	OutageTime           *int64                 `json:"outageTime,omitempty"`
-	Severity             *string                `json:"severity,omitempty"`
-	StartDate            NullableTime           `json:"startDate,omitempty"`
-	Deleted              *bool                  `json:"deleted,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Id                   *int64                                   `json:"id,omitempty"`
+	Account              *AddChecks200ResponseAllOfCheckAccount   `json:"account,omitempty"`
+	Active               *bool                                    `json:"active,omitempty"`
+	ApiKey               *string                                  `json:"apiKey,omitempty"`
+	Availability         *float32                                 `json:"availability,omitempty"`
+	CheckAgent           NullableString                           `json:"checkAgent,omitempty"`
+	CheckInterval        NullableInt64                            `json:"checkInterval,omitempty"`
+	CheckSpec            NullableString                           `json:"checkSpec,omitempty"`
+	CheckType            *AddChecks200ResponseAllOfCheckCheckType `json:"checkType,omitempty"`
+	Config               *AddChecks200ResponseAllOfCheckConfig    `json:"config,omitempty"`
+	Container            *AddChecks200ResponseAllOfCheckContainer `json:"container,omitempty"`
+	CreateIncident       *bool                                    `json:"createIncident,omitempty"`
+	Muted                *bool                                    `json:"muted,omitempty"`
+	CreatedBy            *AddChecks200ResponseAllOfCheckCreatedBy `json:"createdBy,omitempty"`
+	DateCreated          *time.Time                               `json:"dateCreated,omitempty"`
+	Description          NullableString                           `json:"description,omitempty"`
+	EndDate              NullableTime                             `json:"endDate,omitempty"`
+	Health               *int64                                   `json:"health,omitempty"`
+	InUptime             *bool                                    `json:"inUptime,omitempty"`
+	LastBoxStats         NullableString                           `json:"lastBoxStats,omitempty"`
+	LastCheckStatus      NullableString                           `json:"lastCheckStatus,omitempty"`
+	LastError            NullableString                           `json:"lastError,omitempty"`
+	LastErrorDate        NullableTime                             `json:"lastErrorDate,omitempty"`
+	LastMessage          NullableString                           `json:"lastMessage,omitempty"`
+	LastMetric           NullableString                           `json:"lastMetric,omitempty"`
+	LastRunDate          NullableTime                             `json:"lastRunDate,omitempty"`
+	LastStats            NullableString                           `json:"lastStats,omitempty"`
+	LastSuccessDate      NullableTime                             `json:"lastSuccessDate,omitempty"`
+	LastTimer            NullableInt64                            `json:"lastTimer,omitempty"`
+	LastUpdated          NullableTime                             `json:"lastUpdated,omitempty"`
+	LastWarningDate      NullableTime                             `json:"lastWarningDate,omitempty"`
+	Name                 *string                                  `json:"name,omitempty"`
+	NextRunDate          NullableTime                             `json:"nextRunDate,omitempty"`
+	OutageTime           *int64                                   `json:"outageTime,omitempty"`
+	Severity             *string                                  `json:"severity,omitempty"`
+	StartDate            NullableTime                             `json:"startDate,omitempty"`
+	Deleted              *bool                                    `json:"deleted,omitempty"`
+	AdditionalProperties map[string]interface{}                   `json:",remain"`
 }
 
 type _Check Check
@@ -113,9 +113,9 @@ func (o *Check) SetId(v int64) {
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *Check) GetAccount() CheckAccount {
+func (o *Check) GetAccount() AddChecks200ResponseAllOfCheckAccount {
 	if o == nil || IsNil(o.Account) {
-		var ret CheckAccount
+		var ret AddChecks200ResponseAllOfCheckAccount
 		return ret
 	}
 	return *o.Account
@@ -123,7 +123,7 @@ func (o *Check) GetAccount() CheckAccount {
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Check) GetAccountOk() (*CheckAccount, bool) {
+func (o *Check) GetAccountOk() (*AddChecks200ResponseAllOfCheckAccount, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -139,8 +139,8 @@ func (o *Check) IsSetAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given CheckAccount and assigns it to the Account field.
-func (o *Check) SetAccount(v CheckAccount) {
+// SetAccount gets a reference to the given AddChecks200ResponseAllOfCheckAccount and assigns it to the Account field.
+func (o *Check) SetAccount(v AddChecks200ResponseAllOfCheckAccount) {
 	o.Account = &v
 }
 
@@ -370,9 +370,9 @@ func (o *Check) UnsetCheckSpec() {
 }
 
 // GetCheckType returns the CheckType field value if set, zero value otherwise.
-func (o *Check) GetCheckType() CheckCheckType {
+func (o *Check) GetCheckType() AddChecks200ResponseAllOfCheckCheckType {
 	if o == nil || IsNil(o.CheckType) {
-		var ret CheckCheckType
+		var ret AddChecks200ResponseAllOfCheckCheckType
 		return ret
 	}
 	return *o.CheckType
@@ -380,7 +380,7 @@ func (o *Check) GetCheckType() CheckCheckType {
 
 // GetCheckTypeOk returns a tuple with the CheckType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Check) GetCheckTypeOk() (*CheckCheckType, bool) {
+func (o *Check) GetCheckTypeOk() (*AddChecks200ResponseAllOfCheckCheckType, bool) {
 	if o == nil || IsNil(o.CheckType) {
 		return nil, false
 	}
@@ -396,15 +396,15 @@ func (o *Check) IsSetCheckType() bool {
 	return false
 }
 
-// SetCheckType gets a reference to the given CheckCheckType and assigns it to the CheckType field.
-func (o *Check) SetCheckType(v CheckCheckType) {
+// SetCheckType gets a reference to the given AddChecks200ResponseAllOfCheckCheckType and assigns it to the CheckType field.
+func (o *Check) SetCheckType(v AddChecks200ResponseAllOfCheckCheckType) {
 	o.CheckType = &v
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
-func (o *Check) GetConfig() CheckConfig {
+func (o *Check) GetConfig() AddChecks200ResponseAllOfCheckConfig {
 	if o == nil || IsNil(o.Config) {
-		var ret CheckConfig
+		var ret AddChecks200ResponseAllOfCheckConfig
 		return ret
 	}
 	return *o.Config
@@ -412,7 +412,7 @@ func (o *Check) GetConfig() CheckConfig {
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Check) GetConfigOk() (*CheckConfig, bool) {
+func (o *Check) GetConfigOk() (*AddChecks200ResponseAllOfCheckConfig, bool) {
 	if o == nil || IsNil(o.Config) {
 		return nil, false
 	}
@@ -428,15 +428,15 @@ func (o *Check) IsSetConfig() bool {
 	return false
 }
 
-// SetConfig gets a reference to the given CheckConfig and assigns it to the Config field.
-func (o *Check) SetConfig(v CheckConfig) {
+// SetConfig gets a reference to the given AddChecks200ResponseAllOfCheckConfig and assigns it to the Config field.
+func (o *Check) SetConfig(v AddChecks200ResponseAllOfCheckConfig) {
 	o.Config = &v
 }
 
 // GetContainer returns the Container field value if set, zero value otherwise.
-func (o *Check) GetContainer() CheckContainer {
+func (o *Check) GetContainer() AddChecks200ResponseAllOfCheckContainer {
 	if o == nil || IsNil(o.Container) {
-		var ret CheckContainer
+		var ret AddChecks200ResponseAllOfCheckContainer
 		return ret
 	}
 	return *o.Container
@@ -444,7 +444,7 @@ func (o *Check) GetContainer() CheckContainer {
 
 // GetContainerOk returns a tuple with the Container field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Check) GetContainerOk() (*CheckContainer, bool) {
+func (o *Check) GetContainerOk() (*AddChecks200ResponseAllOfCheckContainer, bool) {
 	if o == nil || IsNil(o.Container) {
 		return nil, false
 	}
@@ -460,8 +460,8 @@ func (o *Check) IsSetContainer() bool {
 	return false
 }
 
-// SetContainer gets a reference to the given CheckContainer and assigns it to the Container field.
-func (o *Check) SetContainer(v CheckContainer) {
+// SetContainer gets a reference to the given AddChecks200ResponseAllOfCheckContainer and assigns it to the Container field.
+func (o *Check) SetContainer(v AddChecks200ResponseAllOfCheckContainer) {
 	o.Container = &v
 }
 
@@ -530,9 +530,9 @@ func (o *Check) SetMuted(v bool) {
 }
 
 // GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
-func (o *Check) GetCreatedBy() CheckCreatedBy {
+func (o *Check) GetCreatedBy() AddChecks200ResponseAllOfCheckCreatedBy {
 	if o == nil || IsNil(o.CreatedBy) {
-		var ret CheckCreatedBy
+		var ret AddChecks200ResponseAllOfCheckCreatedBy
 		return ret
 	}
 	return *o.CreatedBy
@@ -540,7 +540,7 @@ func (o *Check) GetCreatedBy() CheckCreatedBy {
 
 // GetCreatedByOk returns a tuple with the CreatedBy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Check) GetCreatedByOk() (*CheckCreatedBy, bool) {
+func (o *Check) GetCreatedByOk() (*AddChecks200ResponseAllOfCheckCreatedBy, bool) {
 	if o == nil || IsNil(o.CreatedBy) {
 		return nil, false
 	}
@@ -556,8 +556,8 @@ func (o *Check) IsSetCreatedBy() bool {
 	return false
 }
 
-// SetCreatedBy gets a reference to the given CheckCreatedBy and assigns it to the CreatedBy field.
-func (o *Check) SetCreatedBy(v CheckCreatedBy) {
+// SetCreatedBy gets a reference to the given AddChecks200ResponseAllOfCheckCreatedBy and assigns it to the CreatedBy field.
+func (o *Check) SetCreatedBy(v AddChecks200ResponseAllOfCheckCreatedBy) {
 	o.CreatedBy = &v
 }
 

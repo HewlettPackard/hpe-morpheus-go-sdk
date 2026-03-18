@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **EachUser** | Pointer to **NullableBool** |  | [optional] 
 **Config** | Pointer to [**ListPolicies200ResponseAllOfPoliciesInnerConfig**](ListPolicies200ResponseAllOfPoliciesInnerConfig.md) |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**Owner** | Pointer to [**ListPolicies200ResponseAllOfPoliciesInnerOwner**](ListPolicies200ResponseAllOfPoliciesInnerOwner.md) |  | [optional] 
+**Owner** | Pointer to [**NullableListPolicies200ResponseAllOfPoliciesInnerOwner**](ListPolicies200ResponseAllOfPoliciesInnerOwner.md) |  | [optional] 
 **Accounts** | Pointer to [**[]ListPolicies200ResponseAllOfPoliciesInnerAccountsInner**](ListPolicies200ResponseAllOfPoliciesInnerAccountsInner.md) |  | [optional] 
 
 ## Methods
@@ -429,6 +429,16 @@ SetOwner sets Owner field to given value.
 
 HasOwner returns a boolean if a field has been set.
 
+### SetOwnerNil
+
+`func (o *ListPolicies200ResponseAllOfPoliciesInner) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *ListPolicies200ResponseAllOfPoliciesInner) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetAccounts
 
 `func (o *ListPolicies200ResponseAllOfPoliciesInner) GetAccounts() []ListPolicies200ResponseAllOfPoliciesInnerAccountsInner`
@@ -454,6 +464,16 @@ SetAccounts sets Accounts field to given value.
 
 HasAccounts returns a boolean if a field has been set.
 
+### SetAccountsNil
+
+`func (o *ListPolicies200ResponseAllOfPoliciesInner) SetAccountsNil(b bool)`
+
+ SetAccountsNil sets the value for Accounts to be an explicit nil
+
+### UnsetAccounts
+`func (o *ListPolicies200ResponseAllOfPoliciesInner) UnsetAccounts()`
+
+UnsetAccounts ensures that no value is present for Accounts, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

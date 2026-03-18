@@ -43,7 +43,7 @@ type InstanceConfigObject1 struct {
 	// Key for security group configuration. It should be passed as an array of objects containing the id of the security group to assign the instance to.
 	SecurityGroups []InstanceConfigObject1SecurityGroupsInner `json:"securityGroups,omitempty"`
 	// The networkInterfaces parameter is for network configuration.  The Options API `/api/options/zoneNetworkOptions?zoneId=5&provisionTypeId=10` can be used to see which options are available.
-	NetworkInterfaces []InstancesNetworkInterfaces4 `json:"networkInterfaces,omitempty"`
+	NetworkInterfaces []InstancesNetworkInterfaces1 `json:"networkInterfaces,omitempty"`
 	// Array of strings (keywords).
 	Labels []string `json:"labels,omitempty"`
 	// Metadata tags, Array of objects having a name and value.
@@ -472,9 +472,9 @@ func (o *InstanceConfigObject1) SetSecurityGroups(v []InstanceConfigObject1Secur
 }
 
 // GetNetworkInterfaces returns the NetworkInterfaces field value if set, zero value otherwise.
-func (o *InstanceConfigObject1) GetNetworkInterfaces() []InstancesNetworkInterfaces4 {
+func (o *InstanceConfigObject1) GetNetworkInterfaces() []InstancesNetworkInterfaces1 {
 	if o == nil || IsNil(o.NetworkInterfaces) {
-		var ret []InstancesNetworkInterfaces4
+		var ret []InstancesNetworkInterfaces1
 		return ret
 	}
 	return o.NetworkInterfaces
@@ -482,7 +482,7 @@ func (o *InstanceConfigObject1) GetNetworkInterfaces() []InstancesNetworkInterfa
 
 // GetNetworkInterfacesOk returns a tuple with the NetworkInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceConfigObject1) GetNetworkInterfacesOk() ([]InstancesNetworkInterfaces4, bool) {
+func (o *InstanceConfigObject1) GetNetworkInterfacesOk() ([]InstancesNetworkInterfaces1, bool) {
 	if o == nil || IsNil(o.NetworkInterfaces) {
 		return nil, false
 	}
@@ -498,8 +498,8 @@ func (o *InstanceConfigObject1) IsSetNetworkInterfaces() bool {
 	return false
 }
 
-// SetNetworkInterfaces gets a reference to the given []InstancesNetworkInterfaces4 and assigns it to the NetworkInterfaces field.
-func (o *InstanceConfigObject1) SetNetworkInterfaces(v []InstancesNetworkInterfaces4) {
+// SetNetworkInterfaces gets a reference to the given []InstancesNetworkInterfaces1 and assigns it to the NetworkInterfaces field.
+func (o *InstanceConfigObject1) SetNetworkInterfaces(v []InstancesNetworkInterfaces1) {
 	o.NetworkInterfaces = v
 }
 

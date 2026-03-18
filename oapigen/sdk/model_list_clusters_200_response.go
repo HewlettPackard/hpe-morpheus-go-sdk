@@ -21,7 +21,7 @@ var _ MappedNullable = &ListClusters200Response{}
 // ListClusters200Response struct for ListClusters200Response
 type ListClusters200Response struct {
 	Clusters             []ListClusters200ResponseAllOfClustersInner `json:"clusters,omitempty"`
-	Meta                 *ListClouds200ResponseAllOfMeta             `json:"meta,omitempty"`
+	Meta                 *ListAlerts200ResponseAllOfMeta             `json:"meta,omitempty"`
 	AdditionalProperties map[string]interface{}                      `json:",remain"`
 }
 
@@ -77,9 +77,9 @@ func (o *ListClusters200Response) SetClusters(v []ListClusters200ResponseAllOfCl
 }
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListClusters200Response) GetMeta() ListClouds200ResponseAllOfMeta {
+func (o *ListClusters200Response) GetMeta() ListAlerts200ResponseAllOfMeta {
 	if o == nil || IsNil(o.Meta) {
-		var ret ListClouds200ResponseAllOfMeta
+		var ret ListAlerts200ResponseAllOfMeta
 		return ret
 	}
 	return *o.Meta
@@ -87,7 +87,7 @@ func (o *ListClusters200Response) GetMeta() ListClouds200ResponseAllOfMeta {
 
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListClusters200Response) GetMetaOk() (*ListClouds200ResponseAllOfMeta, bool) {
+func (o *ListClusters200Response) GetMetaOk() (*ListAlerts200ResponseAllOfMeta, bool) {
 	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
@@ -103,8 +103,8 @@ func (o *ListClusters200Response) IsSetMeta() bool {
 	return false
 }
 
-// SetMeta gets a reference to the given ListClouds200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListClusters200Response) SetMeta(v ListClouds200ResponseAllOfMeta) {
+// SetMeta gets a reference to the given ListAlerts200ResponseAllOfMeta and assigns it to the Meta field.
+func (o *ListClusters200Response) SetMeta(v ListAlerts200ResponseAllOfMeta) {
 	o.Meta = &v
 }
 

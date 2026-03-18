@@ -45,13 +45,13 @@ Name | Type | Description | Notes
 **ExcludeContainers** | Pointer to **bool** |  | [optional] 
 **MaxHosts** | Pointer to **string** |  | [optional] 
 **MaxPools** | Pointer to **string** |  | [optional] 
-**MaxMemory** | Pointer to [**MaxMemoryPolicyTypeConfiguration8MaxMemory**](MaxMemoryPolicyTypeConfiguration8MaxMemory.md) |  | [optional] 
+**MaxMemory** | Pointer to [**MaxMemoryPolicyTypeConfiguration16MaxMemory**](MaxMemoryPolicyTypeConfiguration16MaxMemory.md) |  | [optional] 
 **MaxPoolMembers** | Pointer to **string** |  | [optional] 
 **MaxSnapshots** | Pointer to **string** |  | [optional] 
 **MaxVirtualServers** | Pointer to **string** |  | [optional] 
 **MaxVms** | Pointer to **string** |  | [optional] 
 **MotdTitle** | Pointer to **string** |  | [optional] 
-**Motd** | Pointer to [**MessageOfTheDayPolicyTypeConfiguration8Motd**](MessageOfTheDayPolicyTypeConfiguration8Motd.md) |  | [optional] 
+**Motd** | Pointer to [**MessageOfTheDayPolicyTypeConfiguration16Motd**](MessageOfTheDayPolicyTypeConfiguration16Motd.md) |  | [optional] 
 **MotdMessage** | Pointer to **string** |  | [optional] 
 **MotdType** | Pointer to **string** |  | [optional] 
 **MotdFullPage** | Pointer to **bool** |  | [optional] 
@@ -1127,20 +1127,20 @@ HasMaxPools returns a boolean if a field has been set.
 
 ### GetMaxMemory
 
-`func (o *PolicyUpdateConfig) GetMaxMemory() MaxMemoryPolicyTypeConfiguration8MaxMemory`
+`func (o *PolicyUpdateConfig) GetMaxMemory() MaxMemoryPolicyTypeConfiguration16MaxMemory`
 
 GetMaxMemory returns the MaxMemory field if non-nil, zero value otherwise.
 
 ### GetMaxMemoryOk
 
-`func (o *PolicyUpdateConfig) GetMaxMemoryOk() (*MaxMemoryPolicyTypeConfiguration8MaxMemory, bool)`
+`func (o *PolicyUpdateConfig) GetMaxMemoryOk() (*MaxMemoryPolicyTypeConfiguration16MaxMemory, bool)`
 
 GetMaxMemoryOk returns a tuple with the MaxMemory field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxMemory
 
-`func (o *PolicyUpdateConfig) SetMaxMemory(v MaxMemoryPolicyTypeConfiguration8MaxMemory)`
+`func (o *PolicyUpdateConfig) SetMaxMemory(v MaxMemoryPolicyTypeConfiguration16MaxMemory)`
 
 SetMaxMemory sets MaxMemory field to given value.
 
@@ -1277,20 +1277,20 @@ HasMotdTitle returns a boolean if a field has been set.
 
 ### GetMotd
 
-`func (o *PolicyUpdateConfig) GetMotd() MessageOfTheDayPolicyTypeConfiguration8Motd`
+`func (o *PolicyUpdateConfig) GetMotd() MessageOfTheDayPolicyTypeConfiguration16Motd`
 
 GetMotd returns the Motd field if non-nil, zero value otherwise.
 
 ### GetMotdOk
 
-`func (o *PolicyUpdateConfig) GetMotdOk() (*MessageOfTheDayPolicyTypeConfiguration8Motd, bool)`
+`func (o *PolicyUpdateConfig) GetMotdOk() (*MessageOfTheDayPolicyTypeConfiguration16Motd, bool)`
 
 GetMotdOk returns a tuple with the Motd field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMotd
 
-`func (o *PolicyUpdateConfig) SetMotd(v MessageOfTheDayPolicyTypeConfiguration8Motd)`
+`func (o *PolicyUpdateConfig) SetMotd(v MessageOfTheDayPolicyTypeConfiguration16Motd)`
 
 SetMotd sets Motd field to given value.
 

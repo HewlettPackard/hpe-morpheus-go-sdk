@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 
 ## RemoveGroups
 
-> RemoveGroups200Response RemoveGroups(ctx, id).Execute()
+> RemoveExecuteSchedules200Response RemoveGroups(ctx, id).Execute()
 
 Deletes a Group
 
@@ -257,7 +257,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `GroupsAPI.RemoveGroups``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `RemoveGroups`: RemoveGroups200Response
+	// response from `RemoveGroups`: RemoveExecuteSchedules200Response
 	fmt.Fprintf(os.Stdout, "Response from `GroupsAPI.RemoveGroups`: %v\n", resp)
 }
 ```
@@ -281,7 +281,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RemoveGroups200Response**](RemoveGroups200Response.md)
+[**RemoveExecuteSchedules200Response**](RemoveExecuteSchedules200Response.md)
 
 ### Authorization
 
@@ -371,7 +371,7 @@ Name | Type | Description  | Notes
 
 ## UpdateGroupsZones
 
-> RemoveGroups200Response UpdateGroupsZones(ctx, id).UpdateGroupsZonesRequest(updateGroupsZonesRequest).Execute()
+> RemoveExecuteSchedules200Response UpdateGroupsZones(ctx, id).UpdateGroupsZonesRequest(updateGroupsZonesRequest).Execute()
 
 Updates a Group's Zones
 
@@ -400,7 +400,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `GroupsAPI.UpdateGroupsZones``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `UpdateGroupsZones`: RemoveGroups200Response
+	// response from `UpdateGroupsZones`: RemoveExecuteSchedules200Response
 	fmt.Fprintf(os.Stdout, "Response from `GroupsAPI.UpdateGroupsZones`: %v\n", resp)
 }
 ```
@@ -425,7 +425,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RemoveGroups200Response**](RemoveGroups200Response.md)
+[**RemoveExecuteSchedules200Response**](RemoveExecuteSchedules200Response.md)
 
 ### Authorization
 

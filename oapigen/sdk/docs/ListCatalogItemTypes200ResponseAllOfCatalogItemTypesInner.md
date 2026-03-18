@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 **FormConfig** | Pointer to **map[string]interface{}** | Form config object | [optional] 
 **OptionTypes** | Pointer to [**[]ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner**](ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner.md) |  | [optional] 
 **CreatedBy** | Pointer to **NullableString** |  | [optional] 
-**Owner** | Pointer to [**ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOwner**](ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOwner.md) |  | [optional] 
+**Owner** | Pointer to [**NullableListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOwner**](ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOwner.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 
@@ -858,6 +858,16 @@ SetOwner sets Owner field to given value.
 
 HasOwner returns a boolean if a field has been set.
 
+### SetOwnerNil
+
+`func (o *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetDateCreated
 
 `func (o *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner) GetDateCreated() time.Time`

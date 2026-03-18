@@ -29,8 +29,8 @@ type ListVirtualImages200ResponseAllOfVirtualImagesInner struct {
 	// Array of label strings, can be used for filtering.
 	Labels []string `json:"labels,omitempty"`
 	// Owner of the image
-	OwnerId *int64                                                     `json:"ownerId,omitempty"`
-	Tenant  *ListVirtualImages200ResponseAllOfVirtualImagesInnerTenant `json:"tenant,omitempty"`
+	OwnerId *int64                                                            `json:"ownerId,omitempty"`
+	Tenant  NullableListVirtualImages200ResponseAllOfVirtualImagesInnerTenant `json:"tenant,omitempty"`
 	// Code of image type. eg. vmware, ami, etc.
 	ImageType *string `json:"imageType,omitempty"`
 	// Is uploaded by an user?
@@ -289,36 +289,47 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetOwnerId(v int64
 	o.OwnerId = &v
 }
 
-// GetTenant returns the Tenant field value if set, zero value otherwise.
+// GetTenant returns the Tenant field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetTenant() ListVirtualImages200ResponseAllOfVirtualImagesInnerTenant {
-	if o == nil || IsNil(o.Tenant) {
+	if o == nil || IsNil(o.Tenant.Get()) {
 		var ret ListVirtualImages200ResponseAllOfVirtualImagesInnerTenant
 		return ret
 	}
-	return *o.Tenant
+	return *o.Tenant.Get()
 }
 
 // GetTenantOk returns a tuple with the Tenant field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetTenantOk() (*ListVirtualImages200ResponseAllOfVirtualImagesInnerTenant, bool) {
-	if o == nil || IsNil(o.Tenant) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Tenant, true
+	return o.Tenant.Get(), o.Tenant.IsSet()
 }
 
 // IsSetTenant returns a boolean if a field has been set.
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) IsSetTenant() bool {
-	if o != nil && !IsNil(o.Tenant) {
+	if o != nil && o.Tenant.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTenant gets a reference to the given ListVirtualImages200ResponseAllOfVirtualImagesInnerTenant and assigns it to the Tenant field.
+// SetTenant gets a reference to the given NullableListVirtualImages200ResponseAllOfVirtualImagesInnerTenant and assigns it to the Tenant field.
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetTenant(v ListVirtualImages200ResponseAllOfVirtualImagesInnerTenant) {
-	o.Tenant = &v
+	o.Tenant.Set(&v)
+}
+
+// SetTenantNil sets the value for Tenant to be an explicit nil
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetTenantNil() {
+	o.Tenant.Set(nil)
+}
+
+// UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnsetTenant() {
+	o.Tenant.Unset()
 }
 
 // GetImageType returns the ImageType field value if set, zero value otherwise.
@@ -1780,8 +1791,8 @@ func (o ListVirtualImages200ResponseAllOfVirtualImagesInner) ToMap() (map[string
 	if !IsNil(o.OwnerId) {
 		toSerialize["ownerId"] = o.OwnerId
 	}
-	if !IsNil(o.Tenant) {
-		toSerialize["tenant"] = o.Tenant
+	if o.Tenant.IsSet() {
+		toSerialize["tenant"] = o.Tenant.Get()
 	}
 	if !IsNil(o.ImageType) {
 		toSerialize["imageType"] = o.ImageType

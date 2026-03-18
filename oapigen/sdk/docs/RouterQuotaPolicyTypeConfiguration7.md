@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaxRouters** | Pointer to **string** |  | [optional] 
+**MaxRouters** | **string** |  | 
 
 ## Methods
 
 ### NewRouterQuotaPolicyTypeConfiguration7
 
-`func NewRouterQuotaPolicyTypeConfiguration7() *RouterQuotaPolicyTypeConfiguration7`
+`func NewRouterQuotaPolicyTypeConfiguration7(maxRouters string, ) *RouterQuotaPolicyTypeConfiguration7`
 
 NewRouterQuotaPolicyTypeConfiguration7 instantiates a new RouterQuotaPolicyTypeConfiguration7 object
 This constructor will assign default values to properties that have it defined,
@@ -44,11 +44,6 @@ and a boolean to check if the value has been set.
 
 SetMaxRouters sets MaxRouters field to given value.
 
-### HasMaxRouters
-
-`func (o *RouterQuotaPolicyTypeConfiguration7) HasMaxRouters() bool`
-
-HasMaxRouters returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

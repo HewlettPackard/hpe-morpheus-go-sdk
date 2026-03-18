@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **InstanceTypes** | Pointer to [**[]ListInstanceTypes200ResponseAllOfInstanceTypesInner**](ListInstanceTypes200ResponseAllOfInstanceTypesInner.md) |  | [optional] 
-**Meta** | Pointer to [**ListClouds200ResponseAllOfMeta**](ListClouds200ResponseAllOfMeta.md) |  | [optional] 
+**Meta** | Pointer to [**ListInstanceTypes200ResponseAllOfMeta**](ListInstanceTypes200ResponseAllOfMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasInstanceTypes returns a boolean if a field has been set.
 
 ### GetMeta
 
-`func (o *ListInstanceTypes200Response) GetMeta() ListClouds200ResponseAllOfMeta`
+`func (o *ListInstanceTypes200Response) GetMeta() ListInstanceTypes200ResponseAllOfMeta`
 
 GetMeta returns the Meta field if non-nil, zero value otherwise.
 
 ### GetMetaOk
 
-`func (o *ListInstanceTypes200Response) GetMetaOk() (*ListClouds200ResponseAllOfMeta, bool)`
+`func (o *ListInstanceTypes200Response) GetMetaOk() (*ListInstanceTypes200ResponseAllOfMeta, bool)`
 
 GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMeta
 
-`func (o *ListInstanceTypes200Response) SetMeta(v ListClouds200ResponseAllOfMeta)`
+`func (o *ListInstanceTypes200Response) SetMeta(v ListInstanceTypes200ResponseAllOfMeta)`
 
 SetMeta sets Meta field to given value.
 

@@ -48,12 +48,12 @@ Name | Type | Description | Notes
 **CreatedBy** | Pointer to [**ListClusters200ResponseAllOfClustersInnerCreatedBy**](ListClusters200ResponseAllOfClustersInnerCreatedBy.md) |  | [optional] 
 **UserGroup** | Pointer to **NullableString** |  | [optional] 
 **Layout** | Pointer to [**ListClusters200ResponseAllOfClustersInnerLayout**](ListClusters200ResponseAllOfClustersInnerLayout.md) |  | [optional] 
-**Owner** | Pointer to [**ListClusters200ResponseAllOfClustersInnerOwner**](ListClusters200ResponseAllOfClustersInnerOwner.md) |  | [optional] 
+**Owner** | Pointer to [**NullableListClusters200ResponseAllOfClustersInnerOwner**](ListClusters200ResponseAllOfClustersInnerOwner.md) |  | [optional] 
 **Servers** | Pointer to [**[]ListClusters200ResponseAllOfClustersInnerServersInner**](ListClusters200ResponseAllOfClustersInnerServersInner.md) |  | [optional] 
 **Accounts** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **Integrations** | Pointer to **[]map[string]interface{}** |  | [optional] 
-**Site** | Pointer to [**ListClusters200ResponseAllOfClustersInnerSite**](ListClusters200ResponseAllOfClustersInnerSite.md) |  | [optional] 
-**Type** | Pointer to [**ListClusters200ResponseAllOfClustersInnerType**](ListClusters200ResponseAllOfClustersInnerType.md) |  | [optional] 
+**Site** | Pointer to [**NullableListClusters200ResponseAllOfClustersInnerSite**](ListClusters200ResponseAllOfClustersInnerSite.md) |  | [optional] 
+**Type** | Pointer to [**NullableListClusters200ResponseAllOfClustersInnerType**](ListClusters200ResponseAllOfClustersInnerType.md) |  | [optional] 
 **Zone** | Pointer to [**ListClusters200ResponseAllOfClustersInnerZone**](ListClusters200ResponseAllOfClustersInnerZone.md) |  | [optional] 
 **WorkerStats** | Pointer to [**ListClusters200ResponseAllOfClustersInnerWorkerStats**](ListClusters200ResponseAllOfClustersInnerWorkerStats.md) |  | [optional] 
 **Config** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -1392,6 +1392,16 @@ SetOwner sets Owner field to given value.
 
 HasOwner returns a boolean if a field has been set.
 
+### SetOwnerNil
+
+`func (o *ListClusters200ResponseAllOfClustersInner) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *ListClusters200ResponseAllOfClustersInner) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetServers
 
 `func (o *ListClusters200ResponseAllOfClustersInner) GetServers() []ListClusters200ResponseAllOfClustersInnerServersInner`
@@ -1492,6 +1502,16 @@ SetSite sets Site field to given value.
 
 HasSite returns a boolean if a field has been set.
 
+### SetSiteNil
+
+`func (o *ListClusters200ResponseAllOfClustersInner) SetSiteNil(b bool)`
+
+ SetSiteNil sets the value for Site to be an explicit nil
+
+### UnsetSite
+`func (o *ListClusters200ResponseAllOfClustersInner) UnsetSite()`
+
+UnsetSite ensures that no value is present for Site, not even an explicit nil
 ### GetType
 
 `func (o *ListClusters200ResponseAllOfClustersInner) GetType() ListClusters200ResponseAllOfClustersInnerType`
@@ -1517,6 +1537,16 @@ SetType sets Type field to given value.
 
 HasType returns a boolean if a field has been set.
 
+### SetTypeNil
+
+`func (o *ListClusters200ResponseAllOfClustersInner) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *ListClusters200ResponseAllOfClustersInner) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetZone
 
 `func (o *ListClusters200ResponseAllOfClustersInner) GetZone() ListClusters200ResponseAllOfClustersInnerZone`

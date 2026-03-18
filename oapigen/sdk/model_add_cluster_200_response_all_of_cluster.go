@@ -71,12 +71,12 @@ type AddCluster200ResponseAllOfCluster struct {
 	CreatedBy            *AddCluster200ResponseAllOfClusterCreatedBy     `json:"createdBy,omitempty"`
 	UserGroup            NullableString                                  `json:"userGroup,omitempty"`
 	Layout               *AddCluster200ResponseAllOfClusterLayout        `json:"layout,omitempty"`
-	Owner                *AddCluster200ResponseAllOfClusterOwner         `json:"owner,omitempty"`
+	Owner                NullableAddCluster200ResponseAllOfClusterOwner  `json:"owner,omitempty"`
 	Servers              []AddCluster200ResponseAllOfClusterServersInner `json:"servers,omitempty"`
 	Accounts             []map[string]interface{}                        `json:"accounts,omitempty"`
 	Integrations         []map[string]interface{}                        `json:"integrations,omitempty"`
-	Site                 *AddCluster200ResponseAllOfClusterSite          `json:"site,omitempty"`
-	Type                 *AddCluster200ResponseAllOfClusterType          `json:"type,omitempty"`
+	Site                 NullableAddCluster200ResponseAllOfClusterSite   `json:"site,omitempty"`
+	Type                 NullableAddCluster200ResponseAllOfClusterType   `json:"type,omitempty"`
 	Zone                 *AddCluster200ResponseAllOfClusterZone          `json:"zone,omitempty"`
 	WorkerStats          *AddCluster200ResponseAllOfClusterWorkerStats   `json:"workerStats,omitempty"`
 	ContainersCount      *int64                                          `json:"containersCount,omitempty"`
@@ -1950,36 +1950,47 @@ func (o *AddCluster200ResponseAllOfCluster) SetLayout(v AddCluster200ResponseAll
 	o.Layout = &v
 }
 
-// GetOwner returns the Owner field value if set, zero value otherwise.
+// GetOwner returns the Owner field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddCluster200ResponseAllOfCluster) GetOwner() AddCluster200ResponseAllOfClusterOwner {
-	if o == nil || IsNil(o.Owner) {
+	if o == nil || IsNil(o.Owner.Get()) {
 		var ret AddCluster200ResponseAllOfClusterOwner
 		return ret
 	}
-	return *o.Owner
+	return *o.Owner.Get()
 }
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddCluster200ResponseAllOfCluster) GetOwnerOk() (*AddCluster200ResponseAllOfClusterOwner, bool) {
-	if o == nil || IsNil(o.Owner) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Owner, true
+	return o.Owner.Get(), o.Owner.IsSet()
 }
 
 // IsSetOwner returns a boolean if a field has been set.
 func (o *AddCluster200ResponseAllOfCluster) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
+	if o != nil && o.Owner.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetOwner gets a reference to the given AddCluster200ResponseAllOfClusterOwner and assigns it to the Owner field.
+// SetOwner gets a reference to the given NullableAddCluster200ResponseAllOfClusterOwner and assigns it to the Owner field.
 func (o *AddCluster200ResponseAllOfCluster) SetOwner(v AddCluster200ResponseAllOfClusterOwner) {
-	o.Owner = &v
+	o.Owner.Set(&v)
+}
+
+// SetOwnerNil sets the value for Owner to be an explicit nil
+func (o *AddCluster200ResponseAllOfCluster) SetOwnerNil() {
+	o.Owner.Set(nil)
+}
+
+// UnsetOwner ensures that no value is present for Owner, not even an explicit nil
+func (o *AddCluster200ResponseAllOfCluster) UnsetOwner() {
+	o.Owner.Unset()
 }
 
 // GetServers returns the Servers field value if set, zero value otherwise.
@@ -2078,68 +2089,90 @@ func (o *AddCluster200ResponseAllOfCluster) SetIntegrations(v []map[string]inter
 	o.Integrations = v
 }
 
-// GetSite returns the Site field value if set, zero value otherwise.
+// GetSite returns the Site field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddCluster200ResponseAllOfCluster) GetSite() AddCluster200ResponseAllOfClusterSite {
-	if o == nil || IsNil(o.Site) {
+	if o == nil || IsNil(o.Site.Get()) {
 		var ret AddCluster200ResponseAllOfClusterSite
 		return ret
 	}
-	return *o.Site
+	return *o.Site.Get()
 }
 
 // GetSiteOk returns a tuple with the Site field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddCluster200ResponseAllOfCluster) GetSiteOk() (*AddCluster200ResponseAllOfClusterSite, bool) {
-	if o == nil || IsNil(o.Site) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Site, true
+	return o.Site.Get(), o.Site.IsSet()
 }
 
 // IsSetSite returns a boolean if a field has been set.
 func (o *AddCluster200ResponseAllOfCluster) IsSetSite() bool {
-	if o != nil && !IsNil(o.Site) {
+	if o != nil && o.Site.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSite gets a reference to the given AddCluster200ResponseAllOfClusterSite and assigns it to the Site field.
+// SetSite gets a reference to the given NullableAddCluster200ResponseAllOfClusterSite and assigns it to the Site field.
 func (o *AddCluster200ResponseAllOfCluster) SetSite(v AddCluster200ResponseAllOfClusterSite) {
-	o.Site = &v
+	o.Site.Set(&v)
 }
 
-// GetType returns the Type field value if set, zero value otherwise.
+// SetSiteNil sets the value for Site to be an explicit nil
+func (o *AddCluster200ResponseAllOfCluster) SetSiteNil() {
+	o.Site.Set(nil)
+}
+
+// UnsetSite ensures that no value is present for Site, not even an explicit nil
+func (o *AddCluster200ResponseAllOfCluster) UnsetSite() {
+	o.Site.Unset()
+}
+
+// GetType returns the Type field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddCluster200ResponseAllOfCluster) GetType() AddCluster200ResponseAllOfClusterType {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || IsNil(o.Type.Get()) {
 		var ret AddCluster200ResponseAllOfClusterType
 		return ret
 	}
-	return *o.Type
+	return *o.Type.Get()
 }
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddCluster200ResponseAllOfCluster) GetTypeOk() (*AddCluster200ResponseAllOfClusterType, bool) {
-	if o == nil || IsNil(o.Type) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Type, true
+	return o.Type.Get(), o.Type.IsSet()
 }
 
 // IsSetType returns a boolean if a field has been set.
 func (o *AddCluster200ResponseAllOfCluster) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
+	if o != nil && o.Type.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetType gets a reference to the given AddCluster200ResponseAllOfClusterType and assigns it to the Type field.
+// SetType gets a reference to the given NullableAddCluster200ResponseAllOfClusterType and assigns it to the Type field.
 func (o *AddCluster200ResponseAllOfCluster) SetType(v AddCluster200ResponseAllOfClusterType) {
-	o.Type = &v
+	o.Type.Set(&v)
+}
+
+// SetTypeNil sets the value for Type to be an explicit nil
+func (o *AddCluster200ResponseAllOfCluster) SetTypeNil() {
+	o.Type.Set(nil)
+}
+
+// UnsetType ensures that no value is present for Type, not even an explicit nil
+func (o *AddCluster200ResponseAllOfCluster) UnsetType() {
+	o.Type.Unset()
 }
 
 // GetZone returns the Zone field value if set, zero value otherwise.
@@ -2677,8 +2710,8 @@ func (o AddCluster200ResponseAllOfCluster) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Layout) {
 		toSerialize["layout"] = o.Layout
 	}
-	if !IsNil(o.Owner) {
-		toSerialize["owner"] = o.Owner
+	if o.Owner.IsSet() {
+		toSerialize["owner"] = o.Owner.Get()
 	}
 	if !IsNil(o.Servers) {
 		toSerialize["servers"] = o.Servers
@@ -2689,11 +2722,11 @@ func (o AddCluster200ResponseAllOfCluster) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Integrations) {
 		toSerialize["integrations"] = o.Integrations
 	}
-	if !IsNil(o.Site) {
-		toSerialize["site"] = o.Site
+	if o.Site.IsSet() {
+		toSerialize["site"] = o.Site.Get()
 	}
-	if !IsNil(o.Type) {
-		toSerialize["type"] = o.Type
+	if o.Type.IsSet() {
+		toSerialize["type"] = o.Type.Get()
 	}
 	if !IsNil(o.Zone) {
 		toSerialize["zone"] = o.Zone

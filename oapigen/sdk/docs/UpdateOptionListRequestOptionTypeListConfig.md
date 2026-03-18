@@ -1,0 +1,56 @@
+# UpdateOptionListRequestOptionTypeListConfig
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**SourceHeaders** | Pointer to [**[]UpdateOptionListRequestOptionTypeListConfigSourceHeadersInner**](UpdateOptionListRequestOptionTypeListConfigSourceHeadersInner.md) |  | [optional] 
+
+## Methods
+
+### NewUpdateOptionListRequestOptionTypeListConfig
+
+`func NewUpdateOptionListRequestOptionTypeListConfig() *UpdateOptionListRequestOptionTypeListConfig`
+
+NewUpdateOptionListRequestOptionTypeListConfig instantiates a new UpdateOptionListRequestOptionTypeListConfig object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewUpdateOptionListRequestOptionTypeListConfigWithDefaults
+
+`func NewUpdateOptionListRequestOptionTypeListConfigWithDefaults() *UpdateOptionListRequestOptionTypeListConfig`
+
+NewUpdateOptionListRequestOptionTypeListConfigWithDefaults instantiates a new UpdateOptionListRequestOptionTypeListConfig object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetSourceHeaders
+
+`func (o *UpdateOptionListRequestOptionTypeListConfig) GetSourceHeaders() []UpdateOptionListRequestOptionTypeListConfigSourceHeadersInner`
+
+GetSourceHeaders returns the SourceHeaders field if non-nil, zero value otherwise.
+
+### GetSourceHeadersOk
+
+`func (o *UpdateOptionListRequestOptionTypeListConfig) GetSourceHeadersOk() (*[]UpdateOptionListRequestOptionTypeListConfigSourceHeadersInner, bool)`
+
+GetSourceHeadersOk returns a tuple with the SourceHeaders field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSourceHeaders
+
+`func (o *UpdateOptionListRequestOptionTypeListConfig) SetSourceHeaders(v []UpdateOptionListRequestOptionTypeListConfigSourceHeadersInner)`
+
+SetSourceHeaders sets SourceHeaders field to given value.
+
+### HasSourceHeaders
+
+`func (o *UpdateOptionListRequestOptionTypeListConfig) HasSourceHeaders() bool`
+
+HasSourceHeaders returns a boolean if a field has been set.
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

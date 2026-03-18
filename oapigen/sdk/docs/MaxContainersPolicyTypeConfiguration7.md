@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaxContainers** | Pointer to **string** |  | [optional] 
+**MaxContainers** | **string** |  | 
 
 ## Methods
 
 ### NewMaxContainersPolicyTypeConfiguration7
 
-`func NewMaxContainersPolicyTypeConfiguration7() *MaxContainersPolicyTypeConfiguration7`
+`func NewMaxContainersPolicyTypeConfiguration7(maxContainers string, ) *MaxContainersPolicyTypeConfiguration7`
 
 NewMaxContainersPolicyTypeConfiguration7 instantiates a new MaxContainersPolicyTypeConfiguration7 object
 This constructor will assign default values to properties that have it defined,
@@ -44,11 +44,6 @@ and a boolean to check if the value has been set.
 
 SetMaxContainers sets MaxContainers field to given value.
 
-### HasMaxContainers
-
-`func (o *MaxContainersPolicyTypeConfiguration7) HasMaxContainers() bool`
-
-HasMaxContainers returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

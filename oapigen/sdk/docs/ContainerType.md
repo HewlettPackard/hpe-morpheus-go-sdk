@@ -5,18 +5,18 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int32** |  | [optional] 
-**Account** | Pointer to [**ContainerTypeAccount**](ContainerTypeAccount.md) |  | [optional] 
+**Account** | Pointer to [**AddNodeType200ResponseAllOfContainerTypeAccount**](AddNodeType200ResponseAllOfContainerTypeAccount.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
 **ShortName** | Pointer to **string** |  | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
 **ContainerVersion** | Pointer to **string** |  | [optional] 
-**ProvisionType** | Pointer to [**ContainerTypeProvisionType**](ContainerTypeProvisionType.md) |  | [optional] 
-**VirtualImage** | Pointer to [**ContainerTypeVirtualImage**](ContainerTypeVirtualImage.md) |  | [optional] 
-**OsType** | Pointer to [**ContainerTypeOsType**](ContainerTypeOsType.md) |  | [optional] 
+**ProvisionType** | Pointer to [**AddNodeType200ResponseAllOfContainerTypeProvisionType**](AddNodeType200ResponseAllOfContainerTypeProvisionType.md) |  | [optional] 
+**VirtualImage** | Pointer to [**AddNodeType200ResponseAllOfContainerTypeVirtualImage**](AddNodeType200ResponseAllOfContainerTypeVirtualImage.md) |  | [optional] 
+**OsType** | Pointer to [**AddNodeType200ResponseAllOfContainerTypeOsType**](AddNodeType200ResponseAllOfContainerTypeOsType.md) |  | [optional] 
 **Category** | Pointer to **NullableString** |  | [optional] 
 **Config** | Pointer to **map[string]interface{}** |  | [optional] 
-**ContainerPorts** | Pointer to [**[]ContainerTypeContainerPortsInner**](ContainerTypeContainerPortsInner.md) |  | [optional] 
+**ContainerPorts** | Pointer to [**[]AddNodeType200ResponseAllOfContainerTypeContainerPortsInner**](AddNodeType200ResponseAllOfContainerTypeContainerPortsInner.md) |  | [optional] 
 **ContainerScripts** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **ContainerTemplates** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **EnvironmentVariables** | Pointer to **[]map[string]interface{}** |  | [optional] 
@@ -67,20 +67,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *ContainerType) GetAccount() ContainerTypeAccount`
+`func (o *ContainerType) GetAccount() AddNodeType200ResponseAllOfContainerTypeAccount`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *ContainerType) GetAccountOk() (*ContainerTypeAccount, bool)`
+`func (o *ContainerType) GetAccountOk() (*AddNodeType200ResponseAllOfContainerTypeAccount, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *ContainerType) SetAccount(v ContainerTypeAccount)`
+`func (o *ContainerType) SetAccount(v AddNodeType200ResponseAllOfContainerTypeAccount)`
 
 SetAccount sets Account field to given value.
 
@@ -217,20 +217,20 @@ HasContainerVersion returns a boolean if a field has been set.
 
 ### GetProvisionType
 
-`func (o *ContainerType) GetProvisionType() ContainerTypeProvisionType`
+`func (o *ContainerType) GetProvisionType() AddNodeType200ResponseAllOfContainerTypeProvisionType`
 
 GetProvisionType returns the ProvisionType field if non-nil, zero value otherwise.
 
 ### GetProvisionTypeOk
 
-`func (o *ContainerType) GetProvisionTypeOk() (*ContainerTypeProvisionType, bool)`
+`func (o *ContainerType) GetProvisionTypeOk() (*AddNodeType200ResponseAllOfContainerTypeProvisionType, bool)`
 
 GetProvisionTypeOk returns a tuple with the ProvisionType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProvisionType
 
-`func (o *ContainerType) SetProvisionType(v ContainerTypeProvisionType)`
+`func (o *ContainerType) SetProvisionType(v AddNodeType200ResponseAllOfContainerTypeProvisionType)`
 
 SetProvisionType sets ProvisionType field to given value.
 
@@ -242,20 +242,20 @@ HasProvisionType returns a boolean if a field has been set.
 
 ### GetVirtualImage
 
-`func (o *ContainerType) GetVirtualImage() ContainerTypeVirtualImage`
+`func (o *ContainerType) GetVirtualImage() AddNodeType200ResponseAllOfContainerTypeVirtualImage`
 
 GetVirtualImage returns the VirtualImage field if non-nil, zero value otherwise.
 
 ### GetVirtualImageOk
 
-`func (o *ContainerType) GetVirtualImageOk() (*ContainerTypeVirtualImage, bool)`
+`func (o *ContainerType) GetVirtualImageOk() (*AddNodeType200ResponseAllOfContainerTypeVirtualImage, bool)`
 
 GetVirtualImageOk returns a tuple with the VirtualImage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVirtualImage
 
-`func (o *ContainerType) SetVirtualImage(v ContainerTypeVirtualImage)`
+`func (o *ContainerType) SetVirtualImage(v AddNodeType200ResponseAllOfContainerTypeVirtualImage)`
 
 SetVirtualImage sets VirtualImage field to given value.
 
@@ -267,20 +267,20 @@ HasVirtualImage returns a boolean if a field has been set.
 
 ### GetOsType
 
-`func (o *ContainerType) GetOsType() ContainerTypeOsType`
+`func (o *ContainerType) GetOsType() AddNodeType200ResponseAllOfContainerTypeOsType`
 
 GetOsType returns the OsType field if non-nil, zero value otherwise.
 
 ### GetOsTypeOk
 
-`func (o *ContainerType) GetOsTypeOk() (*ContainerTypeOsType, bool)`
+`func (o *ContainerType) GetOsTypeOk() (*AddNodeType200ResponseAllOfContainerTypeOsType, bool)`
 
 GetOsTypeOk returns a tuple with the OsType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOsType
 
-`func (o *ContainerType) SetOsType(v ContainerTypeOsType)`
+`func (o *ContainerType) SetOsType(v AddNodeType200ResponseAllOfContainerTypeOsType)`
 
 SetOsType sets OsType field to given value.
 
@@ -362,20 +362,20 @@ HasConfig returns a boolean if a field has been set.
 UnsetConfig ensures that no value is present for Config, not even an explicit nil
 ### GetContainerPorts
 
-`func (o *ContainerType) GetContainerPorts() []ContainerTypeContainerPortsInner`
+`func (o *ContainerType) GetContainerPorts() []AddNodeType200ResponseAllOfContainerTypeContainerPortsInner`
 
 GetContainerPorts returns the ContainerPorts field if non-nil, zero value otherwise.
 
 ### GetContainerPortsOk
 
-`func (o *ContainerType) GetContainerPortsOk() (*[]ContainerTypeContainerPortsInner, bool)`
+`func (o *ContainerType) GetContainerPortsOk() (*[]AddNodeType200ResponseAllOfContainerTypeContainerPortsInner, bool)`
 
 GetContainerPortsOk returns a tuple with the ContainerPorts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetContainerPorts
 
-`func (o *ContainerType) SetContainerPorts(v []ContainerTypeContainerPortsInner)`
+`func (o *ContainerType) SetContainerPorts(v []AddNodeType200ResponseAllOfContainerTypeContainerPortsInner)`
 
 SetContainerPorts sets ContainerPorts field to given value.
 

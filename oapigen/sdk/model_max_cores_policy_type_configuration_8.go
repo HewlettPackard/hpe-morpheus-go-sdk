@@ -18,10 +18,10 @@ import (
 // checks if the MaxCoresPolicyTypeConfiguration8 type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MaxCoresPolicyTypeConfiguration8{}
 
-// MaxCoresPolicyTypeConfiguration8 Configuration settings for the following policy types: - Max Cores
+// MaxCoresPolicyTypeConfiguration8 - Max Cores
 type MaxCoresPolicyTypeConfiguration8 struct {
-	MaxCores             *string                `json:"maxCores,omitempty"`
-	ExcludeContainers    *bool                  `json:"excludeContainers,omitempty"`
+	MaxCores             string                 `json:"maxCores"`
+	ExcludeContainers    *string                `json:"excludeContainers,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -31,8 +31,11 @@ type _MaxCoresPolicyTypeConfiguration8 MaxCoresPolicyTypeConfiguration8
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMaxCoresPolicyTypeConfiguration8() *MaxCoresPolicyTypeConfiguration8 {
+func NewMaxCoresPolicyTypeConfiguration8(maxCores string) *MaxCoresPolicyTypeConfiguration8 {
 	this := MaxCoresPolicyTypeConfiguration8{}
+	this.MaxCores = maxCores
+	var excludeContainers string = "off"
+	this.ExcludeContainers = &excludeContainers
 	return &this
 }
 
@@ -41,45 +44,39 @@ func NewMaxCoresPolicyTypeConfiguration8() *MaxCoresPolicyTypeConfiguration8 {
 // but it doesn't guarantee that properties required by API are set
 func NewMaxCoresPolicyTypeConfiguration8WithDefaults() *MaxCoresPolicyTypeConfiguration8 {
 	this := MaxCoresPolicyTypeConfiguration8{}
+	var excludeContainers string = "off"
+	this.ExcludeContainers = &excludeContainers
 	return &this
 }
 
-// GetMaxCores returns the MaxCores field value if set, zero value otherwise.
+// GetMaxCores returns the MaxCores field value
 func (o *MaxCoresPolicyTypeConfiguration8) GetMaxCores() string {
-	if o == nil || IsNil(o.MaxCores) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.MaxCores
+
+	return o.MaxCores
 }
 
-// GetMaxCoresOk returns a tuple with the MaxCores field value if set, nil otherwise
+// GetMaxCoresOk returns a tuple with the MaxCores field value
 // and a boolean to check if the value has been set.
 func (o *MaxCoresPolicyTypeConfiguration8) GetMaxCoresOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxCores) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MaxCores, true
+	return &o.MaxCores, true
 }
 
-// IsSetMaxCores returns a boolean if a field has been set.
-func (o *MaxCoresPolicyTypeConfiguration8) IsSetMaxCores() bool {
-	if o != nil && !IsNil(o.MaxCores) {
-		return true
-	}
-
-	return false
-}
-
-// SetMaxCores gets a reference to the given string and assigns it to the MaxCores field.
+// SetMaxCores sets field value
 func (o *MaxCoresPolicyTypeConfiguration8) SetMaxCores(v string) {
-	o.MaxCores = &v
+	o.MaxCores = v
 }
 
 // GetExcludeContainers returns the ExcludeContainers field value if set, zero value otherwise.
-func (o *MaxCoresPolicyTypeConfiguration8) GetExcludeContainers() bool {
+func (o *MaxCoresPolicyTypeConfiguration8) GetExcludeContainers() string {
 	if o == nil || IsNil(o.ExcludeContainers) {
-		var ret bool
+		var ret string
 		return ret
 	}
 	return *o.ExcludeContainers
@@ -87,7 +84,7 @@ func (o *MaxCoresPolicyTypeConfiguration8) GetExcludeContainers() bool {
 
 // GetExcludeContainersOk returns a tuple with the ExcludeContainers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MaxCoresPolicyTypeConfiguration8) GetExcludeContainersOk() (*bool, bool) {
+func (o *MaxCoresPolicyTypeConfiguration8) GetExcludeContainersOk() (*string, bool) {
 	if o == nil || IsNil(o.ExcludeContainers) {
 		return nil, false
 	}
@@ -103,8 +100,8 @@ func (o *MaxCoresPolicyTypeConfiguration8) IsSetExcludeContainers() bool {
 	return false
 }
 
-// SetExcludeContainers gets a reference to the given bool and assigns it to the ExcludeContainers field.
-func (o *MaxCoresPolicyTypeConfiguration8) SetExcludeContainers(v bool) {
+// SetExcludeContainers gets a reference to the given string and assigns it to the ExcludeContainers field.
+func (o *MaxCoresPolicyTypeConfiguration8) SetExcludeContainers(v string) {
 	o.ExcludeContainers = &v
 }
 
@@ -118,9 +115,7 @@ func (o MaxCoresPolicyTypeConfiguration8) MarshalJSON() ([]byte, error) {
 
 func (o MaxCoresPolicyTypeConfiguration8) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MaxCores) {
-		toSerialize["maxCores"] = o.MaxCores
-	}
+	toSerialize["maxCores"] = o.MaxCores
 	if !IsNil(o.ExcludeContainers) {
 		toSerialize["excludeContainers"] = o.ExcludeContainers
 	}

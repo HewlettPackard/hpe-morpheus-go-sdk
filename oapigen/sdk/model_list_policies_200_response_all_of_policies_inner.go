@@ -33,7 +33,7 @@ type ListPolicies200ResponseAllOfPoliciesInner struct {
 	EachUser             NullableBool                                             `json:"eachUser,omitempty"`
 	Config               *ListPolicies200ResponseAllOfPoliciesInnerConfig         `json:"config,omitempty"`
 	Enabled              *bool                                                    `json:"enabled,omitempty"`
-	Owner                *ListPolicies200ResponseAllOfPoliciesInnerOwner          `json:"owner,omitempty"`
+	Owner                NullableListPolicies200ResponseAllOfPoliciesInnerOwner   `json:"owner,omitempty"`
 	Accounts             []ListPolicies200ResponseAllOfPoliciesInnerAccountsInner `json:"accounts,omitempty"`
 	AdditionalProperties map[string]interface{}                                   `json:",remain"`
 }
@@ -517,41 +517,52 @@ func (o *ListPolicies200ResponseAllOfPoliciesInner) SetEnabled(v bool) {
 	o.Enabled = &v
 }
 
-// GetOwner returns the Owner field value if set, zero value otherwise.
+// GetOwner returns the Owner field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListPolicies200ResponseAllOfPoliciesInner) GetOwner() ListPolicies200ResponseAllOfPoliciesInnerOwner {
-	if o == nil || IsNil(o.Owner) {
+	if o == nil || IsNil(o.Owner.Get()) {
 		var ret ListPolicies200ResponseAllOfPoliciesInnerOwner
 		return ret
 	}
-	return *o.Owner
+	return *o.Owner.Get()
 }
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListPolicies200ResponseAllOfPoliciesInner) GetOwnerOk() (*ListPolicies200ResponseAllOfPoliciesInnerOwner, bool) {
-	if o == nil || IsNil(o.Owner) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Owner, true
+	return o.Owner.Get(), o.Owner.IsSet()
 }
 
 // IsSetOwner returns a boolean if a field has been set.
 func (o *ListPolicies200ResponseAllOfPoliciesInner) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
+	if o != nil && o.Owner.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetOwner gets a reference to the given ListPolicies200ResponseAllOfPoliciesInnerOwner and assigns it to the Owner field.
+// SetOwner gets a reference to the given NullableListPolicies200ResponseAllOfPoliciesInnerOwner and assigns it to the Owner field.
 func (o *ListPolicies200ResponseAllOfPoliciesInner) SetOwner(v ListPolicies200ResponseAllOfPoliciesInnerOwner) {
-	o.Owner = &v
+	o.Owner.Set(&v)
 }
 
-// GetAccounts returns the Accounts field value if set, zero value otherwise.
+// SetOwnerNil sets the value for Owner to be an explicit nil
+func (o *ListPolicies200ResponseAllOfPoliciesInner) SetOwnerNil() {
+	o.Owner.Set(nil)
+}
+
+// UnsetOwner ensures that no value is present for Owner, not even an explicit nil
+func (o *ListPolicies200ResponseAllOfPoliciesInner) UnsetOwner() {
+	o.Owner.Unset()
+}
+
+// GetAccounts returns the Accounts field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListPolicies200ResponseAllOfPoliciesInner) GetAccounts() []ListPolicies200ResponseAllOfPoliciesInnerAccountsInner {
-	if o == nil || IsNil(o.Accounts) {
+	if o == nil {
 		var ret []ListPolicies200ResponseAllOfPoliciesInnerAccountsInner
 		return ret
 	}
@@ -560,6 +571,7 @@ func (o *ListPolicies200ResponseAllOfPoliciesInner) GetAccounts() []ListPolicies
 
 // GetAccountsOk returns a tuple with the Accounts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListPolicies200ResponseAllOfPoliciesInner) GetAccountsOk() ([]ListPolicies200ResponseAllOfPoliciesInnerAccountsInner, bool) {
 	if o == nil || IsNil(o.Accounts) {
 		return nil, false
@@ -630,10 +642,10 @@ func (o ListPolicies200ResponseAllOfPoliciesInner) ToMap() (map[string]interface
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}
-	if !IsNil(o.Owner) {
-		toSerialize["owner"] = o.Owner
+	if o.Owner.IsSet() {
+		toSerialize["owner"] = o.Owner.Get()
 	}
-	if !IsNil(o.Accounts) {
+	if o.Accounts != nil {
 		toSerialize["accounts"] = o.Accounts
 	}
 

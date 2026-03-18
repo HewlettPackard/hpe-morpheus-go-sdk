@@ -20,32 +20,32 @@ var _ MappedNullable = &NetworkType{}
 
 // NetworkType struct for NetworkType
 type NetworkType struct {
-	Id                     *int64                             `json:"id,omitempty"`
-	Code                   *string                            `json:"code,omitempty"`
-	Name                   *string                            `json:"name,omitempty"`
-	Description            NullableString                     `json:"description,omitempty"`
-	Category               NullableString                     `json:"category,omitempty"`
-	ExternalType           NullableString                     `json:"externalType,omitempty"`
-	Creatable              *bool                              `json:"creatable,omitempty"`
-	Overlay                *bool                              `json:"overlay,omitempty"`
-	NameEditable           *bool                              `json:"nameEditable,omitempty"`
-	CidrRequired           *bool                              `json:"cidrRequired,omitempty"`
-	CidrEditable           *bool                              `json:"cidrEditable,omitempty"`
-	DhcpServerEditable     *bool                              `json:"dhcpServerEditable,omitempty"`
-	DnsEditable            *bool                              `json:"dnsEditable,omitempty"`
-	GatewayEditable        *bool                              `json:"gatewayEditable,omitempty"`
-	VlanIdEditable         *bool                              `json:"vlanIdEditable,omitempty"`
-	StaticOverrideEditable *bool                              `json:"staticOverrideEditable,omitempty"`
-	NetworkDomainEditable  *bool                              `json:"networkDomainEditable,omitempty"`
-	CanAssignPool          *bool                              `json:"canAssignPool,omitempty"`
-	Deletable              *bool                              `json:"deletable,omitempty"`
-	HasNetworkServer       *bool                              `json:"hasNetworkServer,omitempty"`
-	HasCidr                *bool                              `json:"hasCidr,omitempty"`
-	HasStaticRoutes        *bool                              `json:"hasStaticRoutes,omitempty"`
-	HasFloatingIps         *bool                              `json:"hasFloatingIps,omitempty"`
-	OptionTypes            []NetworkTypeOptionTypesInner      `json:"optionTypes,omitempty"`
-	RouteOptionTypes       []NetworkTypeRouteOptionTypesInner `json:"routeOptionTypes,omitempty"`
-	AdditionalProperties   map[string]interface{}             `json:",remain"`
+	Id                     *int64                                                                   `json:"id,omitempty"`
+	Code                   *string                                                                  `json:"code,omitempty"`
+	Name                   *string                                                                  `json:"name,omitempty"`
+	Description            NullableString                                                           `json:"description,omitempty"`
+	Category               NullableString                                                           `json:"category,omitempty"`
+	ExternalType           NullableString                                                           `json:"externalType,omitempty"`
+	Creatable              *bool                                                                    `json:"creatable,omitempty"`
+	Overlay                *bool                                                                    `json:"overlay,omitempty"`
+	NameEditable           *bool                                                                    `json:"nameEditable,omitempty"`
+	CidrRequired           *bool                                                                    `json:"cidrRequired,omitempty"`
+	CidrEditable           *bool                                                                    `json:"cidrEditable,omitempty"`
+	DhcpServerEditable     *bool                                                                    `json:"dhcpServerEditable,omitempty"`
+	DnsEditable            *bool                                                                    `json:"dnsEditable,omitempty"`
+	GatewayEditable        *bool                                                                    `json:"gatewayEditable,omitempty"`
+	VlanIdEditable         *bool                                                                    `json:"vlanIdEditable,omitempty"`
+	StaticOverrideEditable *bool                                                                    `json:"staticOverrideEditable,omitempty"`
+	NetworkDomainEditable  *bool                                                                    `json:"networkDomainEditable,omitempty"`
+	CanAssignPool          *bool                                                                    `json:"canAssignPool,omitempty"`
+	Deletable              *bool                                                                    `json:"deletable,omitempty"`
+	HasNetworkServer       *bool                                                                    `json:"hasNetworkServer,omitempty"`
+	HasCidr                *bool                                                                    `json:"hasCidr,omitempty"`
+	HasStaticRoutes        *bool                                                                    `json:"hasStaticRoutes,omitempty"`
+	HasFloatingIps         *bool                                                                    `json:"hasFloatingIps,omitempty"`
+	OptionTypes            []ListNetworkTypes200ResponseAllOfNetworkTypesInnerOptionTypesInner      `json:"optionTypes,omitempty"`
+	RouteOptionTypes       []ListNetworkTypes200ResponseAllOfNetworkTypesInnerRouteOptionTypesInner `json:"routeOptionTypes,omitempty"`
+	AdditionalProperties   map[string]interface{}                                                   `json:",remain"`
 }
 
 type _NetworkType NetworkType
@@ -837,9 +837,9 @@ func (o *NetworkType) SetHasFloatingIps(v bool) {
 }
 
 // GetOptionTypes returns the OptionTypes field value if set, zero value otherwise.
-func (o *NetworkType) GetOptionTypes() []NetworkTypeOptionTypesInner {
+func (o *NetworkType) GetOptionTypes() []ListNetworkTypes200ResponseAllOfNetworkTypesInnerOptionTypesInner {
 	if o == nil || IsNil(o.OptionTypes) {
-		var ret []NetworkTypeOptionTypesInner
+		var ret []ListNetworkTypes200ResponseAllOfNetworkTypesInnerOptionTypesInner
 		return ret
 	}
 	return o.OptionTypes
@@ -847,7 +847,7 @@ func (o *NetworkType) GetOptionTypes() []NetworkTypeOptionTypesInner {
 
 // GetOptionTypesOk returns a tuple with the OptionTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NetworkType) GetOptionTypesOk() ([]NetworkTypeOptionTypesInner, bool) {
+func (o *NetworkType) GetOptionTypesOk() ([]ListNetworkTypes200ResponseAllOfNetworkTypesInnerOptionTypesInner, bool) {
 	if o == nil || IsNil(o.OptionTypes) {
 		return nil, false
 	}
@@ -863,15 +863,15 @@ func (o *NetworkType) IsSetOptionTypes() bool {
 	return false
 }
 
-// SetOptionTypes gets a reference to the given []NetworkTypeOptionTypesInner and assigns it to the OptionTypes field.
-func (o *NetworkType) SetOptionTypes(v []NetworkTypeOptionTypesInner) {
+// SetOptionTypes gets a reference to the given []ListNetworkTypes200ResponseAllOfNetworkTypesInnerOptionTypesInner and assigns it to the OptionTypes field.
+func (o *NetworkType) SetOptionTypes(v []ListNetworkTypes200ResponseAllOfNetworkTypesInnerOptionTypesInner) {
 	o.OptionTypes = v
 }
 
 // GetRouteOptionTypes returns the RouteOptionTypes field value if set, zero value otherwise.
-func (o *NetworkType) GetRouteOptionTypes() []NetworkTypeRouteOptionTypesInner {
+func (o *NetworkType) GetRouteOptionTypes() []ListNetworkTypes200ResponseAllOfNetworkTypesInnerRouteOptionTypesInner {
 	if o == nil || IsNil(o.RouteOptionTypes) {
-		var ret []NetworkTypeRouteOptionTypesInner
+		var ret []ListNetworkTypes200ResponseAllOfNetworkTypesInnerRouteOptionTypesInner
 		return ret
 	}
 	return o.RouteOptionTypes
@@ -879,7 +879,7 @@ func (o *NetworkType) GetRouteOptionTypes() []NetworkTypeRouteOptionTypesInner {
 
 // GetRouteOptionTypesOk returns a tuple with the RouteOptionTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NetworkType) GetRouteOptionTypesOk() ([]NetworkTypeRouteOptionTypesInner, bool) {
+func (o *NetworkType) GetRouteOptionTypesOk() ([]ListNetworkTypes200ResponseAllOfNetworkTypesInnerRouteOptionTypesInner, bool) {
 	if o == nil || IsNil(o.RouteOptionTypes) {
 		return nil, false
 	}
@@ -895,8 +895,8 @@ func (o *NetworkType) IsSetRouteOptionTypes() bool {
 	return false
 }
 
-// SetRouteOptionTypes gets a reference to the given []NetworkTypeRouteOptionTypesInner and assigns it to the RouteOptionTypes field.
-func (o *NetworkType) SetRouteOptionTypes(v []NetworkTypeRouteOptionTypesInner) {
+// SetRouteOptionTypes gets a reference to the given []ListNetworkTypes200ResponseAllOfNetworkTypesInnerRouteOptionTypesInner and assigns it to the RouteOptionTypes field.
+func (o *NetworkType) SetRouteOptionTypes(v []ListNetworkTypes200ResponseAllOfNetworkTypesInnerRouteOptionTypesInner) {
 	o.RouteOptionTypes = v
 }
 

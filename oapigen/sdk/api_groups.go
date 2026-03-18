@@ -117,7 +117,7 @@ func (a *GroupsAPIService) AddGroupsExecute(r ApiAddGroupsRequest) (*AddGroups20
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v UpdateAlerts4XXResponse
+			var v ListAlerts4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -128,7 +128,7 @@ func (a *GroupsAPIService) AddGroupsExecute(r ApiAddGroupsRequest) (*AddGroups20
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v UpdateAlerts5XXResponse
+			var v ListAlerts5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -241,7 +241,7 @@ func (a *GroupsAPIService) GetGroupsExecute(r ApiGetGroupsRequest) (*GetGroups20
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v UpdateAlerts4XXResponse
+			var v ListAlerts4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -252,7 +252,7 @@ func (a *GroupsAPIService) GetGroupsExecute(r ApiGetGroupsRequest) (*GetGroups20
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v UpdateAlerts5XXResponse
+			var v ListAlerts5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -443,7 +443,7 @@ func (a *GroupsAPIService) ListGroupsExecute(r ApiListGroupsRequest) (*ListGroup
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v UpdateAlerts4XXResponse
+			var v ListAlerts4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -454,7 +454,7 @@ func (a *GroupsAPIService) ListGroupsExecute(r ApiListGroupsRequest) (*ListGroup
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v UpdateAlerts5XXResponse
+			var v ListAlerts5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -484,7 +484,7 @@ type ApiRemoveGroupsRequest struct {
 	id         int64
 }
 
-func (r ApiRemoveGroupsRequest) Execute() (*RemoveGroups200Response, *http.Response, error) {
+func (r ApiRemoveGroupsRequest) Execute() (*RemoveExecuteSchedules200Response, *http.Response, error) {
 	return r.ApiService.RemoveGroupsExecute(r)
 }
 
@@ -507,13 +507,13 @@ func (a *GroupsAPIService) RemoveGroups(ctx context.Context, id int64) ApiRemove
 
 // Execute executes the request
 //
-//	@return RemoveGroups200Response
-func (a *GroupsAPIService) RemoveGroupsExecute(r ApiRemoveGroupsRequest) (*RemoveGroups200Response, *http.Response, error) {
+//	@return RemoveExecuteSchedules200Response
+func (a *GroupsAPIService) RemoveGroupsExecute(r ApiRemoveGroupsRequest) (*RemoveExecuteSchedules200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *RemoveGroups200Response
+		localVarReturnValue *RemoveExecuteSchedules200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsAPIService.RemoveGroups")
@@ -567,7 +567,7 @@ func (a *GroupsAPIService) RemoveGroupsExecute(r ApiRemoveGroupsRequest) (*Remov
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v UpdateAlerts4XXResponse
+			var v ListAlerts4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -578,7 +578,7 @@ func (a *GroupsAPIService) RemoveGroupsExecute(r ApiRemoveGroupsRequest) (*Remov
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v UpdateAlerts5XXResponse
+			var v ListAlerts5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -699,7 +699,7 @@ func (a *GroupsAPIService) UpdateGroupsExecute(r ApiUpdateGroupsRequest) (*Updat
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v UpdateAlerts4XXResponse
+			var v ListAlerts4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -710,7 +710,7 @@ func (a *GroupsAPIService) UpdateGroupsExecute(r ApiUpdateGroupsRequest) (*Updat
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v UpdateAlerts5XXResponse
+			var v ListAlerts5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -746,7 +746,7 @@ func (r ApiUpdateGroupsZonesRequest) UpdateGroupsZonesRequest(updateGroupsZonesR
 	return r
 }
 
-func (r ApiUpdateGroupsZonesRequest) Execute() (*RemoveGroups200Response, *http.Response, error) {
+func (r ApiUpdateGroupsZonesRequest) Execute() (*RemoveExecuteSchedules200Response, *http.Response, error) {
 	return r.ApiService.UpdateGroupsZonesExecute(r)
 }
 
@@ -769,13 +769,13 @@ func (a *GroupsAPIService) UpdateGroupsZones(ctx context.Context, id int64) ApiU
 
 // Execute executes the request
 //
-//	@return RemoveGroups200Response
-func (a *GroupsAPIService) UpdateGroupsZonesExecute(r ApiUpdateGroupsZonesRequest) (*RemoveGroups200Response, *http.Response, error) {
+//	@return RemoveExecuteSchedules200Response
+func (a *GroupsAPIService) UpdateGroupsZonesExecute(r ApiUpdateGroupsZonesRequest) (*RemoveExecuteSchedules200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *RemoveGroups200Response
+		localVarReturnValue *RemoveExecuteSchedules200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsAPIService.UpdateGroupsZones")
@@ -831,7 +831,7 @@ func (a *GroupsAPIService) UpdateGroupsZonesExecute(r ApiUpdateGroupsZonesReques
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v UpdateAlerts4XXResponse
+			var v ListAlerts4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -842,7 +842,7 @@ func (a *GroupsAPIService) UpdateGroupsZonesExecute(r ApiUpdateGroupsZonesReques
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v UpdateAlerts5XXResponse
+			var v ListAlerts5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err

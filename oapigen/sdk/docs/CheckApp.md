@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
-**Account** | Pointer to [**CheckAppAccount**](CheckAppAccount.md) |  | [optional] 
+**Account** | Pointer to [**AddCheckApps200ResponseAllOfCheckAppAccount**](AddCheckApps200ResponseAllOfCheckAppAccount.md) |  | [optional] 
 **Active** | Pointer to **bool** |  | [optional] 
-**App** | Pointer to [**CheckAppApp**](CheckAppApp.md) |  | [optional] 
+**App** | Pointer to [**AddCheckApps200ResponseAllOfCheckAppApp**](AddCheckApps200ResponseAllOfCheckAppApp.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **NullableString** |  | [optional] 
 **InUptime** | Pointer to **bool** |  | [optional] 
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **Severity** | Pointer to **string** |  | [optional] 
 **CreateIncident** | Pointer to **bool** |  | [optional] 
 **Muted** | Pointer to **bool** |  | [optional] 
-**CreatedBy** | Pointer to [**CheckAppCreatedBy**](CheckAppCreatedBy.md) |  | [optional] 
+**CreatedBy** | Pointer to [**AddCheckApps200ResponseAllOfCheckAppCreatedBy**](AddCheckApps200ResponseAllOfCheckAppCreatedBy.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 **Availability** | Pointer to **NullableString** |  | [optional] 
@@ -76,20 +76,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *CheckApp) GetAccount() CheckAppAccount`
+`func (o *CheckApp) GetAccount() AddCheckApps200ResponseAllOfCheckAppAccount`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *CheckApp) GetAccountOk() (*CheckAppAccount, bool)`
+`func (o *CheckApp) GetAccountOk() (*AddCheckApps200ResponseAllOfCheckAppAccount, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *CheckApp) SetAccount(v CheckAppAccount)`
+`func (o *CheckApp) SetAccount(v AddCheckApps200ResponseAllOfCheckAppAccount)`
 
 SetAccount sets Account field to given value.
 
@@ -126,20 +126,20 @@ HasActive returns a boolean if a field has been set.
 
 ### GetApp
 
-`func (o *CheckApp) GetApp() CheckAppApp`
+`func (o *CheckApp) GetApp() AddCheckApps200ResponseAllOfCheckAppApp`
 
 GetApp returns the App field if non-nil, zero value otherwise.
 
 ### GetAppOk
 
-`func (o *CheckApp) GetAppOk() (*CheckAppApp, bool)`
+`func (o *CheckApp) GetAppOk() (*AddCheckApps200ResponseAllOfCheckAppApp, bool)`
 
 GetAppOk returns a tuple with the App field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetApp
 
-`func (o *CheckApp) SetApp(v CheckAppApp)`
+`func (o *CheckApp) SetApp(v AddCheckApps200ResponseAllOfCheckAppApp)`
 
 SetApp sets App field to given value.
 
@@ -606,20 +606,20 @@ HasMuted returns a boolean if a field has been set.
 
 ### GetCreatedBy
 
-`func (o *CheckApp) GetCreatedBy() CheckAppCreatedBy`
+`func (o *CheckApp) GetCreatedBy() AddCheckApps200ResponseAllOfCheckAppCreatedBy`
 
 GetCreatedBy returns the CreatedBy field if non-nil, zero value otherwise.
 
 ### GetCreatedByOk
 
-`func (o *CheckApp) GetCreatedByOk() (*CheckAppCreatedBy, bool)`
+`func (o *CheckApp) GetCreatedByOk() (*AddCheckApps200ResponseAllOfCheckAppCreatedBy, bool)`
 
 GetCreatedByOk returns a tuple with the CreatedBy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreatedBy
 
-`func (o *CheckApp) SetCreatedBy(v CheckAppCreatedBy)`
+`func (o *CheckApp) SetCreatedBy(v AddCheckApps200ResponseAllOfCheckAppCreatedBy)`
 
 SetCreatedBy sets CreatedBy field to given value.
 

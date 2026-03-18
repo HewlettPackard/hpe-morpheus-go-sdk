@@ -24,9 +24,9 @@ type AddInstance200ResponseAllOfOneOfInstance struct {
 	Id                               *int64                                                        `json:"id,omitempty"`
 	Uuid                             *string                                                       `json:"uuid,omitempty"`
 	AccountId                        *int64                                                        `json:"accountId,omitempty"`
-	Tenant                           *AddInstance200ResponseAllOfOneOfInstanceTenant               `json:"tenant,omitempty"`
+	Tenant                           NullableAddInstance200ResponseAllOfOneOfInstanceTenant        `json:"tenant,omitempty"`
 	InstanceType                     *AddInstance200ResponseAllOfOneOfInstanceInstanceType         `json:"instanceType,omitempty"`
-	Group                            *AddInstance200ResponseAllOfOneOfInstanceGroup                `json:"group,omitempty"`
+	Group                            NullableAddInstance200ResponseAllOfOneOfInstanceGroup         `json:"group,omitempty"`
 	Cloud                            *AddInstance200ResponseAllOfOneOfInstanceCloud                `json:"cloud,omitempty"`
 	Cluster                          *AddInstance200ResponseAllOfOneOfInstanceCluster              `json:"cluster,omitempty"`
 	Containers                       []int64                                                       `json:"containers,omitempty"`
@@ -43,7 +43,7 @@ type AddInstance200ResponseAllOfOneOfInstance struct {
 	ConfigId                         NullableString                                                `json:"configId,omitempty"`
 	ConfigRole                       NullableString                                                `json:"configRole,omitempty"`
 	Volumes                          []AddInstance200ResponseAllOfOneOfInstanceVolumesInner        `json:"volumes,omitempty"`
-	Controllers                      []AddInstance200ResponseAllOfOneOfInstanceControllersInner    `json:"controllers,omitempty"`
+	Controllers                      []ListInstances200ResponseAllOfInstancesInnerControllersInner `json:"controllers,omitempty"`
 	Interfaces                       []AddInstance200ResponseAllOfOneOfInstanceInterfacesInner     `json:"interfaces,omitempty"`
 	CustomOptions                    map[string]interface{}                                        `json:"customOptions,omitempty"`
 	InstanceVersion                  *string                                                       `json:"instanceVersion,omitempty"`
@@ -221,36 +221,47 @@ func (o *AddInstance200ResponseAllOfOneOfInstance) SetAccountId(v int64) {
 	o.AccountId = &v
 }
 
-// GetTenant returns the Tenant field value if set, zero value otherwise.
+// GetTenant returns the Tenant field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddInstance200ResponseAllOfOneOfInstance) GetTenant() AddInstance200ResponseAllOfOneOfInstanceTenant {
-	if o == nil || IsNil(o.Tenant) {
+	if o == nil || IsNil(o.Tenant.Get()) {
 		var ret AddInstance200ResponseAllOfOneOfInstanceTenant
 		return ret
 	}
-	return *o.Tenant
+	return *o.Tenant.Get()
 }
 
 // GetTenantOk returns a tuple with the Tenant field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddInstance200ResponseAllOfOneOfInstance) GetTenantOk() (*AddInstance200ResponseAllOfOneOfInstanceTenant, bool) {
-	if o == nil || IsNil(o.Tenant) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Tenant, true
+	return o.Tenant.Get(), o.Tenant.IsSet()
 }
 
 // IsSetTenant returns a boolean if a field has been set.
 func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetTenant() bool {
-	if o != nil && !IsNil(o.Tenant) {
+	if o != nil && o.Tenant.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTenant gets a reference to the given AddInstance200ResponseAllOfOneOfInstanceTenant and assigns it to the Tenant field.
+// SetTenant gets a reference to the given NullableAddInstance200ResponseAllOfOneOfInstanceTenant and assigns it to the Tenant field.
 func (o *AddInstance200ResponseAllOfOneOfInstance) SetTenant(v AddInstance200ResponseAllOfOneOfInstanceTenant) {
-	o.Tenant = &v
+	o.Tenant.Set(&v)
+}
+
+// SetTenantNil sets the value for Tenant to be an explicit nil
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetTenantNil() {
+	o.Tenant.Set(nil)
+}
+
+// UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
+func (o *AddInstance200ResponseAllOfOneOfInstance) UnsetTenant() {
+	o.Tenant.Unset()
 }
 
 // GetInstanceType returns the InstanceType field value if set, zero value otherwise.
@@ -285,36 +296,47 @@ func (o *AddInstance200ResponseAllOfOneOfInstance) SetInstanceType(v AddInstance
 	o.InstanceType = &v
 }
 
-// GetGroup returns the Group field value if set, zero value otherwise.
+// GetGroup returns the Group field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddInstance200ResponseAllOfOneOfInstance) GetGroup() AddInstance200ResponseAllOfOneOfInstanceGroup {
-	if o == nil || IsNil(o.Group) {
+	if o == nil || IsNil(o.Group.Get()) {
 		var ret AddInstance200ResponseAllOfOneOfInstanceGroup
 		return ret
 	}
-	return *o.Group
+	return *o.Group.Get()
 }
 
 // GetGroupOk returns a tuple with the Group field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddInstance200ResponseAllOfOneOfInstance) GetGroupOk() (*AddInstance200ResponseAllOfOneOfInstanceGroup, bool) {
-	if o == nil || IsNil(o.Group) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Group, true
+	return o.Group.Get(), o.Group.IsSet()
 }
 
 // IsSetGroup returns a boolean if a field has been set.
 func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetGroup() bool {
-	if o != nil && !IsNil(o.Group) {
+	if o != nil && o.Group.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetGroup gets a reference to the given AddInstance200ResponseAllOfOneOfInstanceGroup and assigns it to the Group field.
+// SetGroup gets a reference to the given NullableAddInstance200ResponseAllOfOneOfInstanceGroup and assigns it to the Group field.
 func (o *AddInstance200ResponseAllOfOneOfInstance) SetGroup(v AddInstance200ResponseAllOfOneOfInstanceGroup) {
-	o.Group = &v
+	o.Group.Set(&v)
+}
+
+// SetGroupNil sets the value for Group to be an explicit nil
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetGroupNil() {
+	o.Group.Set(nil)
+}
+
+// UnsetGroup ensures that no value is present for Group, not even an explicit nil
+func (o *AddInstance200ResponseAllOfOneOfInstance) UnsetGroup() {
+	o.Group.Unset()
 }
 
 // GetCloud returns the Cloud field value if set, zero value otherwise.
@@ -885,9 +907,9 @@ func (o *AddInstance200ResponseAllOfOneOfInstance) SetVolumes(v []AddInstance200
 }
 
 // GetControllers returns the Controllers field value if set, zero value otherwise.
-func (o *AddInstance200ResponseAllOfOneOfInstance) GetControllers() []AddInstance200ResponseAllOfOneOfInstanceControllersInner {
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetControllers() []ListInstances200ResponseAllOfInstancesInnerControllersInner {
 	if o == nil || IsNil(o.Controllers) {
-		var ret []AddInstance200ResponseAllOfOneOfInstanceControllersInner
+		var ret []ListInstances200ResponseAllOfInstancesInnerControllersInner
 		return ret
 	}
 	return o.Controllers
@@ -895,7 +917,7 @@ func (o *AddInstance200ResponseAllOfOneOfInstance) GetControllers() []AddInstanc
 
 // GetControllersOk returns a tuple with the Controllers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstance) GetControllersOk() ([]AddInstance200ResponseAllOfOneOfInstanceControllersInner, bool) {
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetControllersOk() ([]ListInstances200ResponseAllOfInstancesInnerControllersInner, bool) {
 	if o == nil || IsNil(o.Controllers) {
 		return nil, false
 	}
@@ -911,8 +933,8 @@ func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetControllers() bool {
 	return false
 }
 
-// SetControllers gets a reference to the given []AddInstance200ResponseAllOfOneOfInstanceControllersInner and assigns it to the Controllers field.
-func (o *AddInstance200ResponseAllOfOneOfInstance) SetControllers(v []AddInstance200ResponseAllOfOneOfInstanceControllersInner) {
+// SetControllers gets a reference to the given []ListInstances200ResponseAllOfInstancesInnerControllersInner and assigns it to the Controllers field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetControllers(v []ListInstances200ResponseAllOfInstancesInnerControllersInner) {
 	o.Controllers = v
 }
 
@@ -2981,14 +3003,14 @@ func (o AddInstance200ResponseAllOfOneOfInstance) ToMap() (map[string]interface{
 	if !IsNil(o.AccountId) {
 		toSerialize["accountId"] = o.AccountId
 	}
-	if !IsNil(o.Tenant) {
-		toSerialize["tenant"] = o.Tenant
+	if o.Tenant.IsSet() {
+		toSerialize["tenant"] = o.Tenant.Get()
 	}
 	if !IsNil(o.InstanceType) {
 		toSerialize["instanceType"] = o.InstanceType
 	}
-	if !IsNil(o.Group) {
-		toSerialize["group"] = o.Group
+	if o.Group.IsSet() {
+		toSerialize["group"] = o.Group.Get()
 	}
 	if !IsNil(o.Cloud) {
 		toSerialize["cloud"] = o.Cloud

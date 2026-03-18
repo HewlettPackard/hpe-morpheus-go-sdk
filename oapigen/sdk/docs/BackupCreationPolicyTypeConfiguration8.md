@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CreateBackupType** | Pointer to **string** |  | [optional] 
+**CreateBackupType** | **string** |  | 
 **CreateBackup** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
 ### NewBackupCreationPolicyTypeConfiguration8
 
-`func NewBackupCreationPolicyTypeConfiguration8() *BackupCreationPolicyTypeConfiguration8`
+`func NewBackupCreationPolicyTypeConfiguration8(createBackupType string, ) *BackupCreationPolicyTypeConfiguration8`
 
 NewBackupCreationPolicyTypeConfiguration8 instantiates a new BackupCreationPolicyTypeConfiguration8 object
 This constructor will assign default values to properties that have it defined,
@@ -45,11 +45,6 @@ and a boolean to check if the value has been set.
 
 SetCreateBackupType sets CreateBackupType field to given value.
 
-### HasCreateBackupType
-
-`func (o *BackupCreationPolicyTypeConfiguration8) HasCreateBackupType() bool`
-
-HasCreateBackupType returns a boolean if a field has been set.
 
 ### GetCreateBackup
 

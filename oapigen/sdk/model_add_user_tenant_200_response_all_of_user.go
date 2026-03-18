@@ -38,7 +38,7 @@ type AddUserTenant200ResponseAllOfUser struct {
 	LoginAttempts        *int64                                           `json:"loginAttempts,omitempty"`
 	LastLoginDate        *time.Time                                       `json:"lastLoginDate,omitempty"`
 	Roles                []AddUserTenant200ResponseAllOfUserRolesInner    `json:"roles,omitempty"`
-	Account              *AddUserTenant200ResponseAllOfUserAccount        `json:"account,omitempty"`
+	Account              NullableAddUserTenant200ResponseAllOfUserAccount `json:"account,omitempty"`
 	LinuxUsername        NullableString                                   `json:"linuxUsername,omitempty"`
 	LinuxPassword        NullableString                                   `json:"linuxPassword,omitempty"`
 	LinuxKeyPairId       NullableInt64                                    `json:"linuxKeyPairId,omitempty"`
@@ -614,36 +614,47 @@ func (o *AddUserTenant200ResponseAllOfUser) SetRoles(v []AddUserTenant200Respons
 	o.Roles = v
 }
 
-// GetAccount returns the Account field value if set, zero value otherwise.
+// GetAccount returns the Account field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddUserTenant200ResponseAllOfUser) GetAccount() AddUserTenant200ResponseAllOfUserAccount {
-	if o == nil || IsNil(o.Account) {
+	if o == nil || IsNil(o.Account.Get()) {
 		var ret AddUserTenant200ResponseAllOfUserAccount
 		return ret
 	}
-	return *o.Account
+	return *o.Account.Get()
 }
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddUserTenant200ResponseAllOfUser) GetAccountOk() (*AddUserTenant200ResponseAllOfUserAccount, bool) {
-	if o == nil || IsNil(o.Account) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Account, true
+	return o.Account.Get(), o.Account.IsSet()
 }
 
 // IsSetAccount returns a boolean if a field has been set.
 func (o *AddUserTenant200ResponseAllOfUser) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
+	if o != nil && o.Account.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAccount gets a reference to the given AddUserTenant200ResponseAllOfUserAccount and assigns it to the Account field.
+// SetAccount gets a reference to the given NullableAddUserTenant200ResponseAllOfUserAccount and assigns it to the Account field.
 func (o *AddUserTenant200ResponseAllOfUser) SetAccount(v AddUserTenant200ResponseAllOfUserAccount) {
-	o.Account = &v
+	o.Account.Set(&v)
+}
+
+// SetAccountNil sets the value for Account to be an explicit nil
+func (o *AddUserTenant200ResponseAllOfUser) SetAccountNil() {
+	o.Account.Set(nil)
+}
+
+// UnsetAccount ensures that no value is present for Account, not even an explicit nil
+func (o *AddUserTenant200ResponseAllOfUser) UnsetAccount() {
+	o.Account.Unset()
 }
 
 // GetLinuxUsername returns the LinuxUsername field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1050,8 +1061,8 @@ func (o AddUserTenant200ResponseAllOfUser) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Roles) {
 		toSerialize["roles"] = o.Roles
 	}
-	if !IsNil(o.Account) {
-		toSerialize["account"] = o.Account
+	if o.Account.IsSet() {
+		toSerialize["account"] = o.Account.Get()
 	}
 	if o.LinuxUsername.IsSet() {
 		toSerialize["linuxUsername"] = o.LinuxUsername.Get()

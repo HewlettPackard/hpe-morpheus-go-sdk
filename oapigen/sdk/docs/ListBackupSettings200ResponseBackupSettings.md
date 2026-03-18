@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **BackupsEnabled** | Pointer to **bool** |  | [optional] 
 **CreateBackups** | Pointer to **bool** |  | [optional] 
 **BackupAppliance** | Pointer to **bool** |  | [optional] 
-**DefaultStorageBucket** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultStorageBucket**](ListBackupSettings200ResponseBackupSettingsDefaultStorageBucket.md) |  | [optional] 
+**DefaultStorageBucket** | Pointer to [**NullableListBackupSettings200ResponseBackupSettingsDefaultStorageBucket**](ListBackupSettings200ResponseBackupSettingsDefaultStorageBucket.md) |  | [optional] 
 **DefaultSchedule** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
 **RetentionCount** | Pointer to **int64** |  | [optional] 
 
@@ -130,6 +130,16 @@ SetDefaultStorageBucket sets DefaultStorageBucket field to given value.
 
 HasDefaultStorageBucket returns a boolean if a field has been set.
 
+### SetDefaultStorageBucketNil
+
+`func (o *ListBackupSettings200ResponseBackupSettings) SetDefaultStorageBucketNil(b bool)`
+
+ SetDefaultStorageBucketNil sets the value for DefaultStorageBucket to be an explicit nil
+
+### UnsetDefaultStorageBucket
+`func (o *ListBackupSettings200ResponseBackupSettings) UnsetDefaultStorageBucket()`
+
+UnsetDefaultStorageBucket ensures that no value is present for DefaultStorageBucket, not even an explicit nil
 ### GetDefaultSchedule
 
 `func (o *ListBackupSettings200ResponseBackupSettings) GetDefaultSchedule() ListBackupSettings200ResponseBackupSettingsDefaultSchedule`

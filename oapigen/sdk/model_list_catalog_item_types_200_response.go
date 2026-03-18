@@ -21,7 +21,7 @@ var _ MappedNullable = &ListCatalogItemTypes200Response{}
 // ListCatalogItemTypes200Response struct for ListCatalogItemTypes200Response
 type ListCatalogItemTypes200Response struct {
 	CatalogItemTypes     []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner `json:"catalogItemTypes,omitempty"`
-	Meta                 *ListCatalogItemTypes200ResponseAllOfMeta                   `json:"meta,omitempty"`
+	Meta                 *ListAlerts200ResponseAllOfMeta                             `json:"meta,omitempty"`
 	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
@@ -77,9 +77,9 @@ func (o *ListCatalogItemTypes200Response) SetCatalogItemTypes(v []ListCatalogIte
 }
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListCatalogItemTypes200Response) GetMeta() ListCatalogItemTypes200ResponseAllOfMeta {
+func (o *ListCatalogItemTypes200Response) GetMeta() ListAlerts200ResponseAllOfMeta {
 	if o == nil || IsNil(o.Meta) {
-		var ret ListCatalogItemTypes200ResponseAllOfMeta
+		var ret ListAlerts200ResponseAllOfMeta
 		return ret
 	}
 	return *o.Meta
@@ -87,7 +87,7 @@ func (o *ListCatalogItemTypes200Response) GetMeta() ListCatalogItemTypes200Respo
 
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListCatalogItemTypes200Response) GetMetaOk() (*ListCatalogItemTypes200ResponseAllOfMeta, bool) {
+func (o *ListCatalogItemTypes200Response) GetMetaOk() (*ListAlerts200ResponseAllOfMeta, bool) {
 	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
@@ -103,8 +103,8 @@ func (o *ListCatalogItemTypes200Response) IsSetMeta() bool {
 	return false
 }
 
-// SetMeta gets a reference to the given ListCatalogItemTypes200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListCatalogItemTypes200Response) SetMeta(v ListCatalogItemTypes200ResponseAllOfMeta) {
+// SetMeta gets a reference to the given ListAlerts200ResponseAllOfMeta and assigns it to the Meta field.
+func (o *ListCatalogItemTypes200Response) SetMeta(v ListAlerts200ResponseAllOfMeta) {
 	o.Meta = &v
 }
 

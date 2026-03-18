@@ -18,9 +18,9 @@ import (
 // checks if the BackupCreationPolicyTypeConfiguration8 type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &BackupCreationPolicyTypeConfiguration8{}
 
-// BackupCreationPolicyTypeConfiguration8 Configuration settings for the following policy types: - Backup Creation
+// BackupCreationPolicyTypeConfiguration8 - Backup Creation
 type BackupCreationPolicyTypeConfiguration8 struct {
-	CreateBackupType     *string                `json:"createBackupType,omitempty"`
+	CreateBackupType     string                 `json:"createBackupType"`
 	CreateBackup         *bool                  `json:"createBackup,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
@@ -31,8 +31,9 @@ type _BackupCreationPolicyTypeConfiguration8 BackupCreationPolicyTypeConfigurati
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBackupCreationPolicyTypeConfiguration8() *BackupCreationPolicyTypeConfiguration8 {
+func NewBackupCreationPolicyTypeConfiguration8(createBackupType string) *BackupCreationPolicyTypeConfiguration8 {
 	this := BackupCreationPolicyTypeConfiguration8{}
+	this.CreateBackupType = createBackupType
 	return &this
 }
 
@@ -44,36 +45,28 @@ func NewBackupCreationPolicyTypeConfiguration8WithDefaults() *BackupCreationPoli
 	return &this
 }
 
-// GetCreateBackupType returns the CreateBackupType field value if set, zero value otherwise.
+// GetCreateBackupType returns the CreateBackupType field value
 func (o *BackupCreationPolicyTypeConfiguration8) GetCreateBackupType() string {
-	if o == nil || IsNil(o.CreateBackupType) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.CreateBackupType
+
+	return o.CreateBackupType
 }
 
-// GetCreateBackupTypeOk returns a tuple with the CreateBackupType field value if set, nil otherwise
+// GetCreateBackupTypeOk returns a tuple with the CreateBackupType field value
 // and a boolean to check if the value has been set.
 func (o *BackupCreationPolicyTypeConfiguration8) GetCreateBackupTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.CreateBackupType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CreateBackupType, true
+	return &o.CreateBackupType, true
 }
 
-// IsSetCreateBackupType returns a boolean if a field has been set.
-func (o *BackupCreationPolicyTypeConfiguration8) IsSetCreateBackupType() bool {
-	if o != nil && !IsNil(o.CreateBackupType) {
-		return true
-	}
-
-	return false
-}
-
-// SetCreateBackupType gets a reference to the given string and assigns it to the CreateBackupType field.
+// SetCreateBackupType sets field value
 func (o *BackupCreationPolicyTypeConfiguration8) SetCreateBackupType(v string) {
-	o.CreateBackupType = &v
+	o.CreateBackupType = v
 }
 
 // GetCreateBackup returns the CreateBackup field value if set, zero value otherwise.
@@ -118,9 +111,7 @@ func (o BackupCreationPolicyTypeConfiguration8) MarshalJSON() ([]byte, error) {
 
 func (o BackupCreationPolicyTypeConfiguration8) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.CreateBackupType) {
-		toSerialize["createBackupType"] = o.CreateBackupType
-	}
+	toSerialize["createBackupType"] = o.CreateBackupType
 	if !IsNil(o.CreateBackup) {
 		toSerialize["createBackup"] = o.CreateBackup
 	}

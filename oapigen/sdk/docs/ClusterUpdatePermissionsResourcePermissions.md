@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **All** | Pointer to **bool** | Pass true to allow access to all groups | [optional] 
-**Sites** | Pointer to [**[]ClusterUpdatePermissionsResourcePermissionsSitesInner**](ClusterUpdatePermissionsResourcePermissionsSitesInner.md) | Array of groups that are allowed access | [optional] 
+**Sites** | Pointer to [**[]UpdateClusterPermissionsRequestPermissionsResourcePermissionsSitesInner**](UpdateClusterPermissionsRequestPermissionsResourcePermissionsSitesInner.md) | Array of groups that are allowed access | [optional] 
 **AllPlans** | Pointer to **bool** | Pass true to allow access to all plans | [optional] 
-**Plans** | Pointer to [**[]ClusterUpdatePermissionsResourcePermissionsPlansInner**](ClusterUpdatePermissionsResourcePermissionsPlansInner.md) | Array of plans that are allowed access | [optional] 
+**Plans** | Pointer to [**[]UpdateClusterPermissionsRequestPermissionsResourcePermissionsPlansInner**](UpdateClusterPermissionsRequestPermissionsResourcePermissionsPlansInner.md) | Array of plans that are allowed access | [optional] 
 
 ## Methods
 
@@ -55,20 +55,20 @@ HasAll returns a boolean if a field has been set.
 
 ### GetSites
 
-`func (o *ClusterUpdatePermissionsResourcePermissions) GetSites() []ClusterUpdatePermissionsResourcePermissionsSitesInner`
+`func (o *ClusterUpdatePermissionsResourcePermissions) GetSites() []UpdateClusterPermissionsRequestPermissionsResourcePermissionsSitesInner`
 
 GetSites returns the Sites field if non-nil, zero value otherwise.
 
 ### GetSitesOk
 
-`func (o *ClusterUpdatePermissionsResourcePermissions) GetSitesOk() (*[]ClusterUpdatePermissionsResourcePermissionsSitesInner, bool)`
+`func (o *ClusterUpdatePermissionsResourcePermissions) GetSitesOk() (*[]UpdateClusterPermissionsRequestPermissionsResourcePermissionsSitesInner, bool)`
 
 GetSitesOk returns a tuple with the Sites field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSites
 
-`func (o *ClusterUpdatePermissionsResourcePermissions) SetSites(v []ClusterUpdatePermissionsResourcePermissionsSitesInner)`
+`func (o *ClusterUpdatePermissionsResourcePermissions) SetSites(v []UpdateClusterPermissionsRequestPermissionsResourcePermissionsSitesInner)`
 
 SetSites sets Sites field to given value.
 
@@ -105,20 +105,20 @@ HasAllPlans returns a boolean if a field has been set.
 
 ### GetPlans
 
-`func (o *ClusterUpdatePermissionsResourcePermissions) GetPlans() []ClusterUpdatePermissionsResourcePermissionsPlansInner`
+`func (o *ClusterUpdatePermissionsResourcePermissions) GetPlans() []UpdateClusterPermissionsRequestPermissionsResourcePermissionsPlansInner`
 
 GetPlans returns the Plans field if non-nil, zero value otherwise.
 
 ### GetPlansOk
 
-`func (o *ClusterUpdatePermissionsResourcePermissions) GetPlansOk() (*[]ClusterUpdatePermissionsResourcePermissionsPlansInner, bool)`
+`func (o *ClusterUpdatePermissionsResourcePermissions) GetPlansOk() (*[]UpdateClusterPermissionsRequestPermissionsResourcePermissionsPlansInner, bool)`
 
 GetPlansOk returns a tuple with the Plans field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlans
 
-`func (o *ClusterUpdatePermissionsResourcePermissions) SetPlans(v []ClusterUpdatePermissionsResourcePermissionsPlansInner)`
+`func (o *ClusterUpdatePermissionsResourcePermissions) SetPlans(v []UpdateClusterPermissionsRequestPermissionsResourcePermissionsPlansInner)`
 
 SetPlans sets Plans field to given value.
 

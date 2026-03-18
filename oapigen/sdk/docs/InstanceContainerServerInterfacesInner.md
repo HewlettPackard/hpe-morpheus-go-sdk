@@ -13,9 +13,9 @@ Name | Type | Description | Notes
 **Active** | Pointer to **bool** |  | [optional] 
 **PoolAssigned** | Pointer to **bool** |  | [optional] 
 **PrimaryInterface** | Pointer to **bool** |  | [optional] 
-**Network** | Pointer to [**InstanceContainerServerInterfacesInnerNetwork**](InstanceContainerServerInterfacesInnerNetwork.md) |  | [optional] 
-**NetworkGroup** | Pointer to [**InstanceContainerServerInterfacesInnerNetworkGroup**](InstanceContainerServerInterfacesInnerNetworkGroup.md) |  | [optional] 
-**NetworkPool** | Pointer to [**InstanceContainerServerInterfacesInnerNetworkPool**](InstanceContainerServerInterfacesInnerNetworkPool.md) |  | [optional] 
+**Network** | Pointer to [**NullableInstanceContainerServerInterfacesInnerNetwork**](InstanceContainerServerInterfacesInnerNetwork.md) |  | [optional] 
+**NetworkGroup** | Pointer to [**NullableInstanceContainerServerInterfacesInnerNetworkGroup**](InstanceContainerServerInterfacesInnerNetworkGroup.md) |  | [optional] 
+**NetworkPool** | Pointer to [**NullableInstanceContainerServerInterfacesInnerNetworkPool**](InstanceContainerServerInterfacesInnerNetworkPool.md) |  | [optional] 
 **IpMode** | Pointer to **string** |  | [optional] 
 **MacAddress** | Pointer to **string** |  | [optional] 
 **Interfaces** | Pointer to [**[]InstanceContainerServerInstancesInnerInner**](InstanceContainerServerInstancesInnerInner.md) |  | [optional] 
@@ -289,6 +289,16 @@ SetNetwork sets Network field to given value.
 
 HasNetwork returns a boolean if a field has been set.
 
+### SetNetworkNil
+
+`func (o *InstanceContainerServerInterfacesInner) SetNetworkNil(b bool)`
+
+ SetNetworkNil sets the value for Network to be an explicit nil
+
+### UnsetNetwork
+`func (o *InstanceContainerServerInterfacesInner) UnsetNetwork()`
+
+UnsetNetwork ensures that no value is present for Network, not even an explicit nil
 ### GetNetworkGroup
 
 `func (o *InstanceContainerServerInterfacesInner) GetNetworkGroup() InstanceContainerServerInterfacesInnerNetworkGroup`
@@ -314,6 +324,16 @@ SetNetworkGroup sets NetworkGroup field to given value.
 
 HasNetworkGroup returns a boolean if a field has been set.
 
+### SetNetworkGroupNil
+
+`func (o *InstanceContainerServerInterfacesInner) SetNetworkGroupNil(b bool)`
+
+ SetNetworkGroupNil sets the value for NetworkGroup to be an explicit nil
+
+### UnsetNetworkGroup
+`func (o *InstanceContainerServerInterfacesInner) UnsetNetworkGroup()`
+
+UnsetNetworkGroup ensures that no value is present for NetworkGroup, not even an explicit nil
 ### GetNetworkPool
 
 `func (o *InstanceContainerServerInterfacesInner) GetNetworkPool() InstanceContainerServerInterfacesInnerNetworkPool`
@@ -339,6 +359,16 @@ SetNetworkPool sets NetworkPool field to given value.
 
 HasNetworkPool returns a boolean if a field has been set.
 
+### SetNetworkPoolNil
+
+`func (o *InstanceContainerServerInterfacesInner) SetNetworkPoolNil(b bool)`
+
+ SetNetworkPoolNil sets the value for NetworkPool to be an explicit nil
+
+### UnsetNetworkPool
+`func (o *InstanceContainerServerInterfacesInner) UnsetNetworkPool()`
+
+UnsetNetworkPool ensures that no value is present for NetworkPool, not even an explicit nil
 ### GetIpMode
 
 `func (o *InstanceContainerServerInterfacesInner) GetIpMode() string`

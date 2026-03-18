@@ -18,9 +18,9 @@ import (
 // checks if the UserGroupCreationPolicyTypeConfiguration7 type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &UserGroupCreationPolicyTypeConfiguration7{}
 
-// UserGroupCreationPolicyTypeConfiguration7 Configuration settings for the following policy types: - User Group Creation
+// UserGroupCreationPolicyTypeConfiguration7 - User Group Creation
 type UserGroupCreationPolicyTypeConfiguration7 struct {
-	UserGroup            *string                `json:"userGroup,omitempty"`
+	UserGroup            string                 `json:"userGroup"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -30,8 +30,9 @@ type _UserGroupCreationPolicyTypeConfiguration7 UserGroupCreationPolicyTypeConfi
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUserGroupCreationPolicyTypeConfiguration7() *UserGroupCreationPolicyTypeConfiguration7 {
+func NewUserGroupCreationPolicyTypeConfiguration7(userGroup string) *UserGroupCreationPolicyTypeConfiguration7 {
 	this := UserGroupCreationPolicyTypeConfiguration7{}
+	this.UserGroup = userGroup
 	return &this
 }
 
@@ -43,36 +44,28 @@ func NewUserGroupCreationPolicyTypeConfiguration7WithDefaults() *UserGroupCreati
 	return &this
 }
 
-// GetUserGroup returns the UserGroup field value if set, zero value otherwise.
+// GetUserGroup returns the UserGroup field value
 func (o *UserGroupCreationPolicyTypeConfiguration7) GetUserGroup() string {
-	if o == nil || IsNil(o.UserGroup) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.UserGroup
+
+	return o.UserGroup
 }
 
-// GetUserGroupOk returns a tuple with the UserGroup field value if set, nil otherwise
+// GetUserGroupOk returns a tuple with the UserGroup field value
 // and a boolean to check if the value has been set.
 func (o *UserGroupCreationPolicyTypeConfiguration7) GetUserGroupOk() (*string, bool) {
-	if o == nil || IsNil(o.UserGroup) {
+	if o == nil {
 		return nil, false
 	}
-	return o.UserGroup, true
+	return &o.UserGroup, true
 }
 
-// IsSetUserGroup returns a boolean if a field has been set.
-func (o *UserGroupCreationPolicyTypeConfiguration7) IsSetUserGroup() bool {
-	if o != nil && !IsNil(o.UserGroup) {
-		return true
-	}
-
-	return false
-}
-
-// SetUserGroup gets a reference to the given string and assigns it to the UserGroup field.
+// SetUserGroup sets field value
 func (o *UserGroupCreationPolicyTypeConfiguration7) SetUserGroup(v string) {
-	o.UserGroup = &v
+	o.UserGroup = v
 }
 
 func (o UserGroupCreationPolicyTypeConfiguration7) MarshalJSON() ([]byte, error) {
@@ -85,9 +78,7 @@ func (o UserGroupCreationPolicyTypeConfiguration7) MarshalJSON() ([]byte, error)
 
 func (o UserGroupCreationPolicyTypeConfiguration7) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.UserGroup) {
-		toSerialize["userGroup"] = o.UserGroup
-	}
+	toSerialize["userGroup"] = o.UserGroup
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value

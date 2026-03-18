@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CatalogItemTypes** | Pointer to [**[]ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner**](ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner.md) |  | [optional] 
-**Meta** | Pointer to [**ListCatalogItemTypes200ResponseAllOfMeta**](ListCatalogItemTypes200ResponseAllOfMeta.md) |  | [optional] 
+**Meta** | Pointer to [**ListAlerts200ResponseAllOfMeta**](ListAlerts200ResponseAllOfMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasCatalogItemTypes returns a boolean if a field has been set.
 
 ### GetMeta
 
-`func (o *ListCatalogItemTypes200Response) GetMeta() ListCatalogItemTypes200ResponseAllOfMeta`
+`func (o *ListCatalogItemTypes200Response) GetMeta() ListAlerts200ResponseAllOfMeta`
 
 GetMeta returns the Meta field if non-nil, zero value otherwise.
 
 ### GetMetaOk
 
-`func (o *ListCatalogItemTypes200Response) GetMetaOk() (*ListCatalogItemTypes200ResponseAllOfMeta, bool)`
+`func (o *ListCatalogItemTypes200Response) GetMetaOk() (*ListAlerts200ResponseAllOfMeta, bool)`
 
 GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMeta
 
-`func (o *ListCatalogItemTypes200Response) SetMeta(v ListCatalogItemTypes200ResponseAllOfMeta)`
+`func (o *ListCatalogItemTypes200Response) SetMeta(v ListAlerts200ResponseAllOfMeta)`
 
 SetMeta sets Meta field to given value.
 

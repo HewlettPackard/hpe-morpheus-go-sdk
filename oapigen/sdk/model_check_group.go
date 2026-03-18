@@ -21,34 +21,34 @@ var _ MappedNullable = &CheckGroup{}
 
 // CheckGroup struct for CheckGroup
 type CheckGroup struct {
-	Id                   *int64                 `json:"id,omitempty"`
-	Account              *CheckGroupAccount     `json:"account,omitempty"`
-	Instance             *CheckGroupInstance    `json:"instance,omitempty"`
-	Name                 *string                `json:"name,omitempty"`
-	Description          NullableString         `json:"description,omitempty"`
-	InUptime             *bool                  `json:"inUptime,omitempty"`
-	LastCheckStatus      NullableString         `json:"lastCheckStatus,omitempty"`
-	LastWarningDate      NullableTime           `json:"lastWarningDate,omitempty"`
-	LastErrorDate        NullableTime           `json:"lastErrorDate,omitempty"`
-	LastSuccessDate      NullableTime           `json:"lastSuccessDate,omitempty"`
-	LastRunDate          NullableTime           `json:"lastRunDate,omitempty"`
-	LastError            NullableString         `json:"lastError,omitempty"`
-	OutageTime           *int64                 `json:"outageTime,omitempty"`
-	LastTimer            *int64                 `json:"lastTimer,omitempty"`
-	Health               *int64                 `json:"health,omitempty"`
-	History              NullableString         `json:"history,omitempty"`
-	MinHappy             *int64                 `json:"minHappy,omitempty"`
-	LastMetric           NullableString         `json:"lastMetric,omitempty"`
-	Severity             *string                `json:"severity,omitempty"`
-	CreateIncident       *bool                  `json:"createIncident,omitempty"`
-	Muted                *bool                  `json:"muted,omitempty"`
-	CreatedBy            *CheckGroupCreatedBy   `json:"createdBy,omitempty"`
-	DateCreated          *time.Time             `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time             `json:"lastUpdated,omitempty"`
-	Availability         NullableFloat32        `json:"availability,omitempty"`
-	CheckType            *CheckGroupCheckType   `json:"checkType,omitempty"`
-	Checks               []int64                `json:"checks,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Id                   *int64                                             `json:"id,omitempty"`
+	Account              *AddCheckGroups200ResponseAllOfCheckGroupAccount   `json:"account,omitempty"`
+	Instance             *AddCheckGroups200ResponseAllOfCheckGroupInstance  `json:"instance,omitempty"`
+	Name                 *string                                            `json:"name,omitempty"`
+	Description          NullableString                                     `json:"description,omitempty"`
+	InUptime             *bool                                              `json:"inUptime,omitempty"`
+	LastCheckStatus      NullableString                                     `json:"lastCheckStatus,omitempty"`
+	LastWarningDate      NullableTime                                       `json:"lastWarningDate,omitempty"`
+	LastErrorDate        NullableTime                                       `json:"lastErrorDate,omitempty"`
+	LastSuccessDate      NullableTime                                       `json:"lastSuccessDate,omitempty"`
+	LastRunDate          NullableTime                                       `json:"lastRunDate,omitempty"`
+	LastError            NullableString                                     `json:"lastError,omitempty"`
+	OutageTime           *int64                                             `json:"outageTime,omitempty"`
+	LastTimer            *int64                                             `json:"lastTimer,omitempty"`
+	Health               *int64                                             `json:"health,omitempty"`
+	History              NullableString                                     `json:"history,omitempty"`
+	MinHappy             *int64                                             `json:"minHappy,omitempty"`
+	LastMetric           NullableString                                     `json:"lastMetric,omitempty"`
+	Severity             *string                                            `json:"severity,omitempty"`
+	CreateIncident       *bool                                              `json:"createIncident,omitempty"`
+	Muted                *bool                                              `json:"muted,omitempty"`
+	CreatedBy            *AddCheckGroups200ResponseAllOfCheckGroupCreatedBy `json:"createdBy,omitempty"`
+	DateCreated          *time.Time                                         `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                         `json:"lastUpdated,omitempty"`
+	Availability         NullableFloat32                                    `json:"availability,omitempty"`
+	CheckType            *AddCheckGroups200ResponseAllOfCheckGroupCheckType `json:"checkType,omitempty"`
+	Checks               []int64                                            `json:"checks,omitempty"`
+	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
 
 type _CheckGroup CheckGroup
@@ -103,9 +103,9 @@ func (o *CheckGroup) SetId(v int64) {
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *CheckGroup) GetAccount() CheckGroupAccount {
+func (o *CheckGroup) GetAccount() AddCheckGroups200ResponseAllOfCheckGroupAccount {
 	if o == nil || IsNil(o.Account) {
-		var ret CheckGroupAccount
+		var ret AddCheckGroups200ResponseAllOfCheckGroupAccount
 		return ret
 	}
 	return *o.Account
@@ -113,7 +113,7 @@ func (o *CheckGroup) GetAccount() CheckGroupAccount {
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CheckGroup) GetAccountOk() (*CheckGroupAccount, bool) {
+func (o *CheckGroup) GetAccountOk() (*AddCheckGroups200ResponseAllOfCheckGroupAccount, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -129,15 +129,15 @@ func (o *CheckGroup) IsSetAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given CheckGroupAccount and assigns it to the Account field.
-func (o *CheckGroup) SetAccount(v CheckGroupAccount) {
+// SetAccount gets a reference to the given AddCheckGroups200ResponseAllOfCheckGroupAccount and assigns it to the Account field.
+func (o *CheckGroup) SetAccount(v AddCheckGroups200ResponseAllOfCheckGroupAccount) {
 	o.Account = &v
 }
 
 // GetInstance returns the Instance field value if set, zero value otherwise.
-func (o *CheckGroup) GetInstance() CheckGroupInstance {
+func (o *CheckGroup) GetInstance() AddCheckGroups200ResponseAllOfCheckGroupInstance {
 	if o == nil || IsNil(o.Instance) {
-		var ret CheckGroupInstance
+		var ret AddCheckGroups200ResponseAllOfCheckGroupInstance
 		return ret
 	}
 	return *o.Instance
@@ -145,7 +145,7 @@ func (o *CheckGroup) GetInstance() CheckGroupInstance {
 
 // GetInstanceOk returns a tuple with the Instance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CheckGroup) GetInstanceOk() (*CheckGroupInstance, bool) {
+func (o *CheckGroup) GetInstanceOk() (*AddCheckGroups200ResponseAllOfCheckGroupInstance, bool) {
 	if o == nil || IsNil(o.Instance) {
 		return nil, false
 	}
@@ -161,8 +161,8 @@ func (o *CheckGroup) IsSetInstance() bool {
 	return false
 }
 
-// SetInstance gets a reference to the given CheckGroupInstance and assigns it to the Instance field.
-func (o *CheckGroup) SetInstance(v CheckGroupInstance) {
+// SetInstance gets a reference to the given AddCheckGroups200ResponseAllOfCheckGroupInstance and assigns it to the Instance field.
+func (o *CheckGroup) SetInstance(v AddCheckGroups200ResponseAllOfCheckGroupInstance) {
 	o.Instance = &v
 }
 
@@ -842,9 +842,9 @@ func (o *CheckGroup) SetMuted(v bool) {
 }
 
 // GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
-func (o *CheckGroup) GetCreatedBy() CheckGroupCreatedBy {
+func (o *CheckGroup) GetCreatedBy() AddCheckGroups200ResponseAllOfCheckGroupCreatedBy {
 	if o == nil || IsNil(o.CreatedBy) {
-		var ret CheckGroupCreatedBy
+		var ret AddCheckGroups200ResponseAllOfCheckGroupCreatedBy
 		return ret
 	}
 	return *o.CreatedBy
@@ -852,7 +852,7 @@ func (o *CheckGroup) GetCreatedBy() CheckGroupCreatedBy {
 
 // GetCreatedByOk returns a tuple with the CreatedBy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CheckGroup) GetCreatedByOk() (*CheckGroupCreatedBy, bool) {
+func (o *CheckGroup) GetCreatedByOk() (*AddCheckGroups200ResponseAllOfCheckGroupCreatedBy, bool) {
 	if o == nil || IsNil(o.CreatedBy) {
 		return nil, false
 	}
@@ -868,8 +868,8 @@ func (o *CheckGroup) IsSetCreatedBy() bool {
 	return false
 }
 
-// SetCreatedBy gets a reference to the given CheckGroupCreatedBy and assigns it to the CreatedBy field.
-func (o *CheckGroup) SetCreatedBy(v CheckGroupCreatedBy) {
+// SetCreatedBy gets a reference to the given AddCheckGroups200ResponseAllOfCheckGroupCreatedBy and assigns it to the CreatedBy field.
+func (o *CheckGroup) SetCreatedBy(v AddCheckGroups200ResponseAllOfCheckGroupCreatedBy) {
 	o.CreatedBy = &v
 }
 
@@ -981,9 +981,9 @@ func (o *CheckGroup) UnsetAvailability() {
 }
 
 // GetCheckType returns the CheckType field value if set, zero value otherwise.
-func (o *CheckGroup) GetCheckType() CheckGroupCheckType {
+func (o *CheckGroup) GetCheckType() AddCheckGroups200ResponseAllOfCheckGroupCheckType {
 	if o == nil || IsNil(o.CheckType) {
-		var ret CheckGroupCheckType
+		var ret AddCheckGroups200ResponseAllOfCheckGroupCheckType
 		return ret
 	}
 	return *o.CheckType
@@ -991,7 +991,7 @@ func (o *CheckGroup) GetCheckType() CheckGroupCheckType {
 
 // GetCheckTypeOk returns a tuple with the CheckType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CheckGroup) GetCheckTypeOk() (*CheckGroupCheckType, bool) {
+func (o *CheckGroup) GetCheckTypeOk() (*AddCheckGroups200ResponseAllOfCheckGroupCheckType, bool) {
 	if o == nil || IsNil(o.CheckType) {
 		return nil, false
 	}
@@ -1007,8 +1007,8 @@ func (o *CheckGroup) IsSetCheckType() bool {
 	return false
 }
 
-// SetCheckType gets a reference to the given CheckGroupCheckType and assigns it to the CheckType field.
-func (o *CheckGroup) SetCheckType(v CheckGroupCheckType) {
+// SetCheckType gets a reference to the given AddCheckGroups200ResponseAllOfCheckGroupCheckType and assigns it to the CheckType field.
+func (o *CheckGroup) SetCheckType(v AddCheckGroups200ResponseAllOfCheckGroupCheckType) {
 	o.CheckType = &v
 }
 

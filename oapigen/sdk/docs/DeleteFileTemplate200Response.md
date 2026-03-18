@@ -1,0 +1,56 @@
+# DeleteFileTemplate200Response
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Success** | Pointer to **bool** |  | [optional] 
+
+## Methods
+
+### NewDeleteFileTemplate200Response
+
+`func NewDeleteFileTemplate200Response() *DeleteFileTemplate200Response`
+
+NewDeleteFileTemplate200Response instantiates a new DeleteFileTemplate200Response object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewDeleteFileTemplate200ResponseWithDefaults
+
+`func NewDeleteFileTemplate200ResponseWithDefaults() *DeleteFileTemplate200Response`
+
+NewDeleteFileTemplate200ResponseWithDefaults instantiates a new DeleteFileTemplate200Response object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetSuccess
+
+`func (o *DeleteFileTemplate200Response) GetSuccess() bool`
+
+GetSuccess returns the Success field if non-nil, zero value otherwise.
+
+### GetSuccessOk
+
+`func (o *DeleteFileTemplate200Response) GetSuccessOk() (*bool, bool)`
+
+GetSuccessOk returns a tuple with the Success field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSuccess
+
+`func (o *DeleteFileTemplate200Response) SetSuccess(v bool)`
+
+SetSuccess sets Success field to given value.
+
+### HasSuccess
+
+`func (o *DeleteFileTemplate200Response) HasSuccess() bool`
+
+HasSuccess returns a boolean if a field has been set.
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

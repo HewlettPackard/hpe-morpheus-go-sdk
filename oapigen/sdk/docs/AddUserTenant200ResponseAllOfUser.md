@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **LoginAttempts** | Pointer to **int64** |  | [optional] 
 **LastLoginDate** | Pointer to **time.Time** |  | [optional] 
 **Roles** | Pointer to [**[]AddUserTenant200ResponseAllOfUserRolesInner**](AddUserTenant200ResponseAllOfUserRolesInner.md) |  | [optional] 
-**Account** | Pointer to [**AddUserTenant200ResponseAllOfUserAccount**](AddUserTenant200ResponseAllOfUserAccount.md) |  | [optional] 
+**Account** | Pointer to [**NullableAddUserTenant200ResponseAllOfUserAccount**](AddUserTenant200ResponseAllOfUserAccount.md) |  | [optional] 
 **LinuxUsername** | Pointer to **NullableString** |  | [optional] 
 **LinuxPassword** | Pointer to **NullableString** |  | [optional] 
 **LinuxKeyPairId** | Pointer to **NullableInt64** |  | [optional] 
@@ -501,6 +501,16 @@ SetAccount sets Account field to given value.
 
 HasAccount returns a boolean if a field has been set.
 
+### SetAccountNil
+
+`func (o *AddUserTenant200ResponseAllOfUser) SetAccountNil(b bool)`
+
+ SetAccountNil sets the value for Account to be an explicit nil
+
+### UnsetAccount
+`func (o *AddUserTenant200ResponseAllOfUser) UnsetAccount()`
+
+UnsetAccount ensures that no value is present for Account, not even an explicit nil
 ### GetLinuxUsername
 
 `func (o *AddUserTenant200ResponseAllOfUser) GetLinuxUsername() string`

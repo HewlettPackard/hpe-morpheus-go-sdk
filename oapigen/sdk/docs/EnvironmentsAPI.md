@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**GetEnvironments**](EnvironmentsAPI.md#GetEnvironments) | **Get** /api/environments/{id} | Get a Specific Environment
 [**ListEnvironments**](EnvironmentsAPI.md#ListEnvironments) | **Get** /api/environments | List All Environments
 [**UpdateEnvironments**](EnvironmentsAPI.md#UpdateEnvironments) | **Put** /api/environments/{id} | Update Environment
+[**UpdateEnvironmentsActive**](EnvironmentsAPI.md#UpdateEnvironmentsActive) | **Put** /api/environments/{id}/toggle-active | Toggle Active State of Environment
 
 
 
@@ -361,6 +362,78 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateEnvironmentsActive
+
+> UpdateEnvironmentsActive200Response UpdateEnvironmentsActive(ctx, id).Active(active).Execute()
+
+Toggle Active State of Environment
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-go-sdk/sdk"
+)
+
+func main() {
+	id := int64(1) // int64 | Morpheus ID of the Object being referenced
+	active := false // bool | True or False flag for Active (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.EnvironmentsAPI.UpdateEnvironmentsActive(context.Background(), id).Active(active).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `EnvironmentsAPI.UpdateEnvironmentsActive``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateEnvironmentsActive`: UpdateEnvironmentsActive200Response
+	fmt.Fprintf(os.Stdout, "Response from `EnvironmentsAPI.UpdateEnvironmentsActive`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int64** | Morpheus ID of the Object being referenced | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateEnvironmentsActiveRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **active** | **bool** | True or False flag for Active | 
+
+### Return type
+
+[**UpdateEnvironmentsActive200Response**](UpdateEnvironmentsActive200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
