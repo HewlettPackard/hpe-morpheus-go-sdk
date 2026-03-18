@@ -1,0 +1,330 @@
+# UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Id** | Pointer to **int64** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
+**ExternalId** | Pointer to **string** |  | [optional] 
+**IacId** | Pointer to **NullableString** |  | [optional] 
+**Zone** | Pointer to [**UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInnerZone**](UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInnerZone.md) |  | [optional] 
+**ZonePool** | Pointer to [**UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInnerZonePool**](UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInnerZonePool.md) |  | [optional] 
+**Status** | Pointer to **string** |  | [optional] 
+**Priority** | Pointer to **NullableString** |  | [optional] 
+**GroupLayer** | Pointer to **NullableString** |  | [optional] 
+
+## Methods
+
+### NewUpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner
+
+`func NewUpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner() *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner`
+
+NewUpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner instantiates a new UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewUpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInnerWithDefaults
+
+`func NewUpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInnerWithDefaults() *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner`
+
+NewUpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInnerWithDefaults instantiates a new UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetId
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) GetId() int64`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) GetIdOk() (*int64, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) SetId(v int64)`
+
+SetId sets Id field to given value.
+
+### HasId
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) HasId() bool`
+
+HasId returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) SetName(v string)`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) HasName() bool`
+
+HasName returns a boolean if a field has been set.
+
+### GetDescription
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
+
+### SetDescriptionNil
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
+### GetExternalId
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) GetExternalId() string`
+
+GetExternalId returns the ExternalId field if non-nil, zero value otherwise.
+
+### GetExternalIdOk
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) GetExternalIdOk() (*string, bool)`
+
+GetExternalIdOk returns a tuple with the ExternalId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExternalId
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) SetExternalId(v string)`
+
+SetExternalId sets ExternalId field to given value.
+
+### HasExternalId
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) HasExternalId() bool`
+
+HasExternalId returns a boolean if a field has been set.
+
+### GetIacId
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) GetIacId() string`
+
+GetIacId returns the IacId field if non-nil, zero value otherwise.
+
+### GetIacIdOk
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) GetIacIdOk() (*string, bool)`
+
+GetIacIdOk returns a tuple with the IacId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIacId
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) SetIacId(v string)`
+
+SetIacId sets IacId field to given value.
+
+### HasIacId
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) HasIacId() bool`
+
+HasIacId returns a boolean if a field has been set.
+
+### SetIacIdNil
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) SetIacIdNil(b bool)`
+
+ SetIacIdNil sets the value for IacId to be an explicit nil
+
+### UnsetIacId
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) UnsetIacId()`
+
+UnsetIacId ensures that no value is present for IacId, not even an explicit nil
+### GetZone
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) GetZone() UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInnerZone`
+
+GetZone returns the Zone field if non-nil, zero value otherwise.
+
+### GetZoneOk
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) GetZoneOk() (*UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInnerZone, bool)`
+
+GetZoneOk returns a tuple with the Zone field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetZone
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) SetZone(v UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInnerZone)`
+
+SetZone sets Zone field to given value.
+
+### HasZone
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) HasZone() bool`
+
+HasZone returns a boolean if a field has been set.
+
+### GetZonePool
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) GetZonePool() UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInnerZonePool`
+
+GetZonePool returns the ZonePool field if non-nil, zero value otherwise.
+
+### GetZonePoolOk
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) GetZonePoolOk() (*UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInnerZonePool, bool)`
+
+GetZonePoolOk returns a tuple with the ZonePool field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetZonePool
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) SetZonePool(v UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInnerZonePool)`
+
+SetZonePool sets ZonePool field to given value.
+
+### HasZonePool
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) HasZonePool() bool`
+
+HasZonePool returns a boolean if a field has been set.
+
+### GetStatus
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) GetStatus() string`
+
+GetStatus returns the Status field if non-nil, zero value otherwise.
+
+### GetStatusOk
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) GetStatusOk() (*string, bool)`
+
+GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatus
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) SetStatus(v string)`
+
+SetStatus sets Status field to given value.
+
+### HasStatus
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) HasStatus() bool`
+
+HasStatus returns a boolean if a field has been set.
+
+### GetPriority
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) GetPriority() string`
+
+GetPriority returns the Priority field if non-nil, zero value otherwise.
+
+### GetPriorityOk
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) GetPriorityOk() (*string, bool)`
+
+GetPriorityOk returns a tuple with the Priority field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPriority
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) SetPriority(v string)`
+
+SetPriority sets Priority field to given value.
+
+### HasPriority
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) HasPriority() bool`
+
+HasPriority returns a boolean if a field has been set.
+
+### SetPriorityNil
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) SetPriorityNil(b bool)`
+
+ SetPriorityNil sets the value for Priority to be an explicit nil
+
+### UnsetPriority
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) UnsetPriority()`
+
+UnsetPriority ensures that no value is present for Priority, not even an explicit nil
+### GetGroupLayer
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) GetGroupLayer() string`
+
+GetGroupLayer returns the GroupLayer field if non-nil, zero value otherwise.
+
+### GetGroupLayerOk
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) GetGroupLayerOk() (*string, bool)`
+
+GetGroupLayerOk returns a tuple with the GroupLayer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGroupLayer
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) SetGroupLayer(v string)`
+
+SetGroupLayer sets GroupLayer field to given value.
+
+### HasGroupLayer
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) HasGroupLayer() bool`
+
+HasGroupLayer returns a boolean if a field has been set.
+
+### SetGroupLayerNil
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) SetGroupLayerNil(b bool)`
+
+ SetGroupLayerNil sets the value for GroupLayer to be an explicit nil
+
+### UnsetGroupLayer
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfLocationsInner) UnsetGroupLayer()`
+
+UnsetGroupLayer ensures that no value is present for GroupLayer, not even an explicit nil
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

@@ -1,0 +1,82 @@
+# ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Account
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Id** | Pointer to **int64** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
+
+## Methods
+
+### NewListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Account
+
+`func NewListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Account() *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Account`
+
+NewListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Account instantiates a new ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Account object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2AccountWithDefaults
+
+`func NewListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2AccountWithDefaults() *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Account`
+
+NewListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2AccountWithDefaults instantiates a new ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Account object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetId
+
+`func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Account) GetId() int64`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Account) GetIdOk() (*int64, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Account) SetId(v int64)`
+
+SetId sets Id field to given value.
+
+### HasId
+
+`func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Account) HasId() bool`
+
+HasId returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Account) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Account) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Account) SetName(v string)`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Account) HasName() bool`
+
+HasName returns a boolean if a field has been set.
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

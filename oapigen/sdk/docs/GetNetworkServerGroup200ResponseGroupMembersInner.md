@@ -1,0 +1,366 @@
+# GetNetworkServerGroup200ResponseGroupMembersInner
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Id** | Pointer to **int64** |  | [optional] 
+**Category** | Pointer to **string** |  | [optional] 
+**Type** | Pointer to **string** |  | [optional] 
+**MemberName** | Pointer to **NullableString** |  | [optional] 
+**MemberType** | Pointer to **NullableString** |  | [optional] 
+**MemberValue** | Pointer to **NullableString** |  | [optional] 
+**MemberExpression** | Pointer to **NullableString** |  | [optional] 
+**DisplayOrder** | Pointer to **int64** |  | [optional] 
+**InternalId** | Pointer to **NullableString** |  | [optional] 
+**ExternalId** | Pointer to **string** |  | [optional] 
+**Members** | Pointer to **[]map[string]interface{}** |  | [optional] 
+
+## Methods
+
+### NewGetNetworkServerGroup200ResponseGroupMembersInner
+
+`func NewGetNetworkServerGroup200ResponseGroupMembersInner() *GetNetworkServerGroup200ResponseGroupMembersInner`
+
+NewGetNetworkServerGroup200ResponseGroupMembersInner instantiates a new GetNetworkServerGroup200ResponseGroupMembersInner object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewGetNetworkServerGroup200ResponseGroupMembersInnerWithDefaults
+
+`func NewGetNetworkServerGroup200ResponseGroupMembersInnerWithDefaults() *GetNetworkServerGroup200ResponseGroupMembersInner`
+
+NewGetNetworkServerGroup200ResponseGroupMembersInnerWithDefaults instantiates a new GetNetworkServerGroup200ResponseGroupMembersInner object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetId
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) GetId() int64`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) GetIdOk() (*int64, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) SetId(v int64)`
+
+SetId sets Id field to given value.
+
+### HasId
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) HasId() bool`
+
+HasId returns a boolean if a field has been set.
+
+### GetCategory
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) GetCategory() string`
+
+GetCategory returns the Category field if non-nil, zero value otherwise.
+
+### GetCategoryOk
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) GetCategoryOk() (*string, bool)`
+
+GetCategoryOk returns a tuple with the Category field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCategory
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) SetCategory(v string)`
+
+SetCategory sets Category field to given value.
+
+### HasCategory
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) HasCategory() bool`
+
+HasCategory returns a boolean if a field has been set.
+
+### GetType
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) GetType() string`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) GetTypeOk() (*string, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) SetType(v string)`
+
+SetType sets Type field to given value.
+
+### HasType
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) HasType() bool`
+
+HasType returns a boolean if a field has been set.
+
+### GetMemberName
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) GetMemberName() string`
+
+GetMemberName returns the MemberName field if non-nil, zero value otherwise.
+
+### GetMemberNameOk
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) GetMemberNameOk() (*string, bool)`
+
+GetMemberNameOk returns a tuple with the MemberName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMemberName
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) SetMemberName(v string)`
+
+SetMemberName sets MemberName field to given value.
+
+### HasMemberName
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) HasMemberName() bool`
+
+HasMemberName returns a boolean if a field has been set.
+
+### SetMemberNameNil
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) SetMemberNameNil(b bool)`
+
+ SetMemberNameNil sets the value for MemberName to be an explicit nil
+
+### UnsetMemberName
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) UnsetMemberName()`
+
+UnsetMemberName ensures that no value is present for MemberName, not even an explicit nil
+### GetMemberType
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) GetMemberType() string`
+
+GetMemberType returns the MemberType field if non-nil, zero value otherwise.
+
+### GetMemberTypeOk
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) GetMemberTypeOk() (*string, bool)`
+
+GetMemberTypeOk returns a tuple with the MemberType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMemberType
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) SetMemberType(v string)`
+
+SetMemberType sets MemberType field to given value.
+
+### HasMemberType
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) HasMemberType() bool`
+
+HasMemberType returns a boolean if a field has been set.
+
+### SetMemberTypeNil
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) SetMemberTypeNil(b bool)`
+
+ SetMemberTypeNil sets the value for MemberType to be an explicit nil
+
+### UnsetMemberType
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) UnsetMemberType()`
+
+UnsetMemberType ensures that no value is present for MemberType, not even an explicit nil
+### GetMemberValue
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) GetMemberValue() string`
+
+GetMemberValue returns the MemberValue field if non-nil, zero value otherwise.
+
+### GetMemberValueOk
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) GetMemberValueOk() (*string, bool)`
+
+GetMemberValueOk returns a tuple with the MemberValue field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMemberValue
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) SetMemberValue(v string)`
+
+SetMemberValue sets MemberValue field to given value.
+
+### HasMemberValue
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) HasMemberValue() bool`
+
+HasMemberValue returns a boolean if a field has been set.
+
+### SetMemberValueNil
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) SetMemberValueNil(b bool)`
+
+ SetMemberValueNil sets the value for MemberValue to be an explicit nil
+
+### UnsetMemberValue
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) UnsetMemberValue()`
+
+UnsetMemberValue ensures that no value is present for MemberValue, not even an explicit nil
+### GetMemberExpression
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) GetMemberExpression() string`
+
+GetMemberExpression returns the MemberExpression field if non-nil, zero value otherwise.
+
+### GetMemberExpressionOk
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) GetMemberExpressionOk() (*string, bool)`
+
+GetMemberExpressionOk returns a tuple with the MemberExpression field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMemberExpression
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) SetMemberExpression(v string)`
+
+SetMemberExpression sets MemberExpression field to given value.
+
+### HasMemberExpression
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) HasMemberExpression() bool`
+
+HasMemberExpression returns a boolean if a field has been set.
+
+### SetMemberExpressionNil
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) SetMemberExpressionNil(b bool)`
+
+ SetMemberExpressionNil sets the value for MemberExpression to be an explicit nil
+
+### UnsetMemberExpression
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) UnsetMemberExpression()`
+
+UnsetMemberExpression ensures that no value is present for MemberExpression, not even an explicit nil
+### GetDisplayOrder
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) GetDisplayOrder() int64`
+
+GetDisplayOrder returns the DisplayOrder field if non-nil, zero value otherwise.
+
+### GetDisplayOrderOk
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) GetDisplayOrderOk() (*int64, bool)`
+
+GetDisplayOrderOk returns a tuple with the DisplayOrder field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayOrder
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) SetDisplayOrder(v int64)`
+
+SetDisplayOrder sets DisplayOrder field to given value.
+
+### HasDisplayOrder
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) HasDisplayOrder() bool`
+
+HasDisplayOrder returns a boolean if a field has been set.
+
+### GetInternalId
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) GetInternalId() string`
+
+GetInternalId returns the InternalId field if non-nil, zero value otherwise.
+
+### GetInternalIdOk
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) GetInternalIdOk() (*string, bool)`
+
+GetInternalIdOk returns a tuple with the InternalId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInternalId
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) SetInternalId(v string)`
+
+SetInternalId sets InternalId field to given value.
+
+### HasInternalId
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) HasInternalId() bool`
+
+HasInternalId returns a boolean if a field has been set.
+
+### SetInternalIdNil
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) SetInternalIdNil(b bool)`
+
+ SetInternalIdNil sets the value for InternalId to be an explicit nil
+
+### UnsetInternalId
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) UnsetInternalId()`
+
+UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
+### GetExternalId
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) GetExternalId() string`
+
+GetExternalId returns the ExternalId field if non-nil, zero value otherwise.
+
+### GetExternalIdOk
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) GetExternalIdOk() (*string, bool)`
+
+GetExternalIdOk returns a tuple with the ExternalId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExternalId
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) SetExternalId(v string)`
+
+SetExternalId sets ExternalId field to given value.
+
+### HasExternalId
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) HasExternalId() bool`
+
+HasExternalId returns a boolean if a field has been set.
+
+### GetMembers
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) GetMembers() []map[string]interface{}`
+
+GetMembers returns the Members field if non-nil, zero value otherwise.
+
+### GetMembersOk
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) GetMembersOk() (*[]map[string]interface{}, bool)`
+
+GetMembersOk returns a tuple with the Members field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMembers
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) SetMembers(v []map[string]interface{})`
+
+SetMembers sets Members field to given value.
+
+### HasMembers
+
+`func (o *GetNetworkServerGroup200ResponseGroupMembersInner) HasMembers() bool`
+
+HasMembers returns a boolean if a field has been set.
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

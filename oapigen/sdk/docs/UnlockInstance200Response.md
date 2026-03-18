@@ -1,0 +1,56 @@
+# UnlockInstance200Response
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Success** | Pointer to **bool** |  | [optional] 
+
+## Methods
+
+### NewUnlockInstance200Response
+
+`func NewUnlockInstance200Response() *UnlockInstance200Response`
+
+NewUnlockInstance200Response instantiates a new UnlockInstance200Response object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewUnlockInstance200ResponseWithDefaults
+
+`func NewUnlockInstance200ResponseWithDefaults() *UnlockInstance200Response`
+
+NewUnlockInstance200ResponseWithDefaults instantiates a new UnlockInstance200Response object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetSuccess
+
+`func (o *UnlockInstance200Response) GetSuccess() bool`
+
+GetSuccess returns the Success field if non-nil, zero value otherwise.
+
+### GetSuccessOk
+
+`func (o *UnlockInstance200Response) GetSuccessOk() (*bool, bool)`
+
+GetSuccessOk returns a tuple with the Success field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSuccess
+
+`func (o *UnlockInstance200Response) SetSuccess(v bool)`
+
+SetSuccess sets Success field to given value.
+
+### HasSuccess
+
+`func (o *UnlockInstance200Response) HasSuccess() bool`
+
+HasSuccess returns a boolean if a field has been set.
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

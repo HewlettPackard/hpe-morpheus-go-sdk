@@ -1,0 +1,258 @@
+# ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**DefaultStore** | Pointer to **bool** |  | [optional] 
+**AllPlans** | Pointer to **bool** |  | [optional] 
+**DefaultTarget** | Pointer to **bool** |  | [optional] 
+**CanManage** | Pointer to **bool** |  | [optional] 
+**All** | Pointer to **bool** |  | [optional] 
+**Account** | Pointer to [**ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionAccount**](ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionAccount.md) |  | [optional] 
+**Sites** | Pointer to [**[]ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionSitesInner**](ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionSitesInner.md) |  | [optional] 
+**Plans** | Pointer to [**[]ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionPlansInner**](ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionPlansInner.md) |  | [optional] 
+
+## Methods
+
+### NewListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission
+
+`func NewListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission() *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission`
+
+NewListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission instantiates a new ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionWithDefaults
+
+`func NewListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionWithDefaults() *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission`
+
+NewListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionWithDefaults instantiates a new ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetDefaultStore
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetDefaultStore() bool`
+
+GetDefaultStore returns the DefaultStore field if non-nil, zero value otherwise.
+
+### GetDefaultStoreOk
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetDefaultStoreOk() (*bool, bool)`
+
+GetDefaultStoreOk returns a tuple with the DefaultStore field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDefaultStore
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) SetDefaultStore(v bool)`
+
+SetDefaultStore sets DefaultStore field to given value.
+
+### HasDefaultStore
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) HasDefaultStore() bool`
+
+HasDefaultStore returns a boolean if a field has been set.
+
+### GetAllPlans
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetAllPlans() bool`
+
+GetAllPlans returns the AllPlans field if non-nil, zero value otherwise.
+
+### GetAllPlansOk
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetAllPlansOk() (*bool, bool)`
+
+GetAllPlansOk returns a tuple with the AllPlans field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllPlans
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) SetAllPlans(v bool)`
+
+SetAllPlans sets AllPlans field to given value.
+
+### HasAllPlans
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) HasAllPlans() bool`
+
+HasAllPlans returns a boolean if a field has been set.
+
+### GetDefaultTarget
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetDefaultTarget() bool`
+
+GetDefaultTarget returns the DefaultTarget field if non-nil, zero value otherwise.
+
+### GetDefaultTargetOk
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetDefaultTargetOk() (*bool, bool)`
+
+GetDefaultTargetOk returns a tuple with the DefaultTarget field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDefaultTarget
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) SetDefaultTarget(v bool)`
+
+SetDefaultTarget sets DefaultTarget field to given value.
+
+### HasDefaultTarget
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) HasDefaultTarget() bool`
+
+HasDefaultTarget returns a boolean if a field has been set.
+
+### GetCanManage
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetCanManage() bool`
+
+GetCanManage returns the CanManage field if non-nil, zero value otherwise.
+
+### GetCanManageOk
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetCanManageOk() (*bool, bool)`
+
+GetCanManageOk returns a tuple with the CanManage field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCanManage
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) SetCanManage(v bool)`
+
+SetCanManage sets CanManage field to given value.
+
+### HasCanManage
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) HasCanManage() bool`
+
+HasCanManage returns a boolean if a field has been set.
+
+### GetAll
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetAll() bool`
+
+GetAll returns the All field if non-nil, zero value otherwise.
+
+### GetAllOk
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetAllOk() (*bool, bool)`
+
+GetAllOk returns a tuple with the All field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAll
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) SetAll(v bool)`
+
+SetAll sets All field to given value.
+
+### HasAll
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) HasAll() bool`
+
+HasAll returns a boolean if a field has been set.
+
+### GetAccount
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetAccount() ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionAccount`
+
+GetAccount returns the Account field if non-nil, zero value otherwise.
+
+### GetAccountOk
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetAccountOk() (*ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionAccount, bool)`
+
+GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAccount
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) SetAccount(v ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionAccount)`
+
+SetAccount sets Account field to given value.
+
+### HasAccount
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) HasAccount() bool`
+
+HasAccount returns a boolean if a field has been set.
+
+### GetSites
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetSites() []ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionSitesInner`
+
+GetSites returns the Sites field if non-nil, zero value otherwise.
+
+### GetSitesOk
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetSitesOk() (*[]ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionSitesInner, bool)`
+
+GetSitesOk returns a tuple with the Sites field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSites
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) SetSites(v []ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionSitesInner)`
+
+SetSites sets Sites field to given value.
+
+### HasSites
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) HasSites() bool`
+
+HasSites returns a boolean if a field has been set.
+
+### SetSitesNil
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) SetSitesNil(b bool)`
+
+ SetSitesNil sets the value for Sites to be an explicit nil
+
+### UnsetSites
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) UnsetSites()`
+
+UnsetSites ensures that no value is present for Sites, not even an explicit nil
+### GetPlans
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetPlans() []ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionPlansInner`
+
+GetPlans returns the Plans field if non-nil, zero value otherwise.
+
+### GetPlansOk
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetPlansOk() (*[]ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionPlansInner, bool)`
+
+GetPlansOk returns a tuple with the Plans field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPlans
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) SetPlans(v []ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionPlansInner)`
+
+SetPlans sets Plans field to given value.
+
+### HasPlans
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) HasPlans() bool`
+
+HasPlans returns a boolean if a field has been set.
+
+### SetPlansNil
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) SetPlansNil(b bool)`
+
+ SetPlansNil sets the value for Plans to be an explicit nil
+
+### UnsetPlans
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) UnsetPlans()`
+
+UnsetPlans ensures that no value is present for Plans, not even an explicit nil
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
