@@ -14334,7 +14334,7 @@ type ApiReleaseNetworkFloatingIpRequest struct {
 	id         int64
 }
 
-func (r ApiReleaseNetworkFloatingIpRequest) Execute() (*ContainersDetachFloatingIp200Response, *http.Response, error) {
+func (r ApiReleaseNetworkFloatingIpRequest) Execute() (*ReleaseNetworkFloatingIp200Response, *http.Response, error) {
 	return r.ApiService.ReleaseNetworkFloatingIpExecute(r)
 }
 
@@ -14357,13 +14357,13 @@ func (a *NetworksAPIService) ReleaseNetworkFloatingIp(ctx context.Context, id in
 
 // Execute executes the request
 //
-//	@return ContainersDetachFloatingIp200Response
-func (a *NetworksAPIService) ReleaseNetworkFloatingIpExecute(r ApiReleaseNetworkFloatingIpRequest) (*ContainersDetachFloatingIp200Response, *http.Response, error) {
+//	@return ReleaseNetworkFloatingIp200Response
+func (a *NetworksAPIService) ReleaseNetworkFloatingIpExecute(r ApiReleaseNetworkFloatingIpRequest) (*ReleaseNetworkFloatingIp200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *ContainersDetachFloatingIp200Response
+		localVarReturnValue *ReleaseNetworkFloatingIp200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.ReleaseNetworkFloatingIp")

@@ -20,8 +20,8 @@ var _ MappedNullable = &InstanceSnapshot{}
 
 // InstanceSnapshot struct for InstanceSnapshot
 type InstanceSnapshot struct {
-	Snapshot             *SnapshotHostRequestSnapshot `json:"snapshot,omitempty"`
-	AdditionalProperties map[string]interface{}       `json:",remain"`
+	Snapshot             *InstanceSnapshotSnapshot `json:"snapshot,omitempty"`
+	AdditionalProperties map[string]interface{}    `json:",remain"`
 }
 
 type _InstanceSnapshot InstanceSnapshot
@@ -44,9 +44,9 @@ func NewInstanceSnapshotWithDefaults() *InstanceSnapshot {
 }
 
 // GetSnapshot returns the Snapshot field value if set, zero value otherwise.
-func (o *InstanceSnapshot) GetSnapshot() SnapshotHostRequestSnapshot {
+func (o *InstanceSnapshot) GetSnapshot() InstanceSnapshotSnapshot {
 	if o == nil || IsNil(o.Snapshot) {
-		var ret SnapshotHostRequestSnapshot
+		var ret InstanceSnapshotSnapshot
 		return ret
 	}
 	return *o.Snapshot
@@ -54,7 +54,7 @@ func (o *InstanceSnapshot) GetSnapshot() SnapshotHostRequestSnapshot {
 
 // GetSnapshotOk returns a tuple with the Snapshot field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceSnapshot) GetSnapshotOk() (*SnapshotHostRequestSnapshot, bool) {
+func (o *InstanceSnapshot) GetSnapshotOk() (*InstanceSnapshotSnapshot, bool) {
 	if o == nil || IsNil(o.Snapshot) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *InstanceSnapshot) IsSetSnapshot() bool {
 	return false
 }
 
-// SetSnapshot gets a reference to the given SnapshotHostRequestSnapshot and assigns it to the Snapshot field.
-func (o *InstanceSnapshot) SetSnapshot(v SnapshotHostRequestSnapshot) {
+// SetSnapshot gets a reference to the given InstanceSnapshotSnapshot and assigns it to the Snapshot field.
+func (o *InstanceSnapshot) SetSnapshot(v InstanceSnapshotSnapshot) {
 	o.Snapshot = &v
 }
 

@@ -20,8 +20,8 @@ var _ MappedNullable = &GetOsTypeImage200Response{}
 
 // GetOsTypeImage200Response struct for GetOsTypeImage200Response
 type GetOsTypeImage200Response struct {
-	OsType               *GetOsTypeImage200ResponseOsType `json:"osType,omitempty"`
-	AdditionalProperties map[string]interface{}           `json:",remain"`
+	OsTypeImage          *GetOsTypeImage200ResponseOsTypeImage `json:"osTypeImage,omitempty"`
+	AdditionalProperties map[string]interface{}                `json:",remain"`
 }
 
 type _GetOsTypeImage200Response GetOsTypeImage200Response
@@ -43,36 +43,36 @@ func NewGetOsTypeImage200ResponseWithDefaults() *GetOsTypeImage200Response {
 	return &this
 }
 
-// GetOsType returns the OsType field value if set, zero value otherwise.
-func (o *GetOsTypeImage200Response) GetOsType() GetOsTypeImage200ResponseOsType {
-	if o == nil || IsNil(o.OsType) {
-		var ret GetOsTypeImage200ResponseOsType
+// GetOsTypeImage returns the OsTypeImage field value if set, zero value otherwise.
+func (o *GetOsTypeImage200Response) GetOsTypeImage() GetOsTypeImage200ResponseOsTypeImage {
+	if o == nil || IsNil(o.OsTypeImage) {
+		var ret GetOsTypeImage200ResponseOsTypeImage
 		return ret
 	}
-	return *o.OsType
+	return *o.OsTypeImage
 }
 
-// GetOsTypeOk returns a tuple with the OsType field value if set, nil otherwise
+// GetOsTypeImageOk returns a tuple with the OsTypeImage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetOsTypeImage200Response) GetOsTypeOk() (*GetOsTypeImage200ResponseOsType, bool) {
-	if o == nil || IsNil(o.OsType) {
+func (o *GetOsTypeImage200Response) GetOsTypeImageOk() (*GetOsTypeImage200ResponseOsTypeImage, bool) {
+	if o == nil || IsNil(o.OsTypeImage) {
 		return nil, false
 	}
-	return o.OsType, true
+	return o.OsTypeImage, true
 }
 
-// IsSetOsType returns a boolean if a field has been set.
-func (o *GetOsTypeImage200Response) IsSetOsType() bool {
-	if o != nil && !IsNil(o.OsType) {
+// IsSetOsTypeImage returns a boolean if a field has been set.
+func (o *GetOsTypeImage200Response) IsSetOsTypeImage() bool {
+	if o != nil && !IsNil(o.OsTypeImage) {
 		return true
 	}
 
 	return false
 }
 
-// SetOsType gets a reference to the given GetOsTypeImage200ResponseOsType and assigns it to the OsType field.
-func (o *GetOsTypeImage200Response) SetOsType(v GetOsTypeImage200ResponseOsType) {
-	o.OsType = &v
+// SetOsTypeImage gets a reference to the given GetOsTypeImage200ResponseOsTypeImage and assigns it to the OsTypeImage field.
+func (o *GetOsTypeImage200Response) SetOsTypeImage(v GetOsTypeImage200ResponseOsTypeImage) {
+	o.OsTypeImage = &v
 }
 
 func (o GetOsTypeImage200Response) MarshalJSON() ([]byte, error) {
@@ -85,8 +85,8 @@ func (o GetOsTypeImage200Response) MarshalJSON() ([]byte, error) {
 
 func (o GetOsTypeImage200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.OsType) {
-		toSerialize["osType"] = o.OsType
+	if !IsNil(o.OsTypeImage) {
+		toSerialize["osTypeImage"] = o.OsTypeImage
 	}
 
 	for key, value := range o.AdditionalProperties {
