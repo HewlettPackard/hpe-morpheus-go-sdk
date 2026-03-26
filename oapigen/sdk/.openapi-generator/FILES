@@ -3771,7 +3771,7 @@ docs/GetOsType200Response.md
 docs/GetOsType200ResponseOsType.md
 docs/GetOsType200ResponseOsTypeImagesInner.md
 docs/GetOsTypeImage200Response.md
-docs/GetOsTypeImage200ResponseOsType.md
+docs/GetOsTypeImage200ResponseOsTypeImage.md
 docs/GetPlugin200Response.md
 docs/GetPlugin200ResponseAllOfPlugin.md
 docs/GetPlugin200ResponseAllOfPluginOptionTypesInner.md
@@ -4515,6 +4515,7 @@ docs/InstanceServicePlanRootStorageTypesInner.md
 docs/InstanceServicePlanStorageType.md
 docs/InstanceServicePlanStorageTypesInner.md
 docs/InstanceSnapshot.md
+docs/InstanceSnapshotSnapshot.md
 docs/InstanceSnapshots.md
 docs/InstanceSnapshotsSnapshotsInner.md
 docs/InstanceSnapshotsSnapshotsInnerSnapshotFilesInner.md
@@ -6791,6 +6792,7 @@ docs/RefreshLoadBalancer200Response.md
 docs/RefreshNetworkServer200Response.md
 docs/RefreshStateInstance200Response.md
 docs/Reindex200Response.md
+docs/ReleaseNetworkFloatingIp200Response.md
 docs/RemoveAppInstance200Response.md
 docs/RemoveAppInstanceRequest.md
 docs/RemoveExecuteSchedules200Response.md
@@ -12617,7 +12619,7 @@ model_get_os_type_200_response.go
 model_get_os_type_200_response_os_type.go
 model_get_os_type_200_response_os_type_images_inner.go
 model_get_os_type_image_200_response.go
-model_get_os_type_image_200_response_os_type.go
+model_get_os_type_image_200_response_os_type_image.go
 model_get_plugin_200_response.go
 model_get_plugin_200_response_all_of_plugin.go
 model_get_plugin_200_response_all_of_plugin_option_types_inner.go
@@ -13356,6 +13358,7 @@ model_instance_service_plan_root_storage_types_inner.go
 model_instance_service_plan_storage_type.go
 model_instance_service_plan_storage_types_inner.go
 model_instance_snapshot.go
+model_instance_snapshot_snapshot.go
 model_instance_snapshots.go
 model_instance_snapshots_snapshots_inner.go
 model_instance_snapshots_snapshots_inner_snapshot_files_inner.go
@@ -15598,6 +15601,7 @@ model_refresh_load_balancer_200_response.go
 model_refresh_network_server_200_response.go
 model_refresh_state_instance_200_response.go
 model_reindex_200_response.go
+model_release_network_floating_ip_200_response.go
 model_remove_app_instance_200_response.go
 model_remove_app_instance_request.go
 model_remove_execute_schedules_200_response.go

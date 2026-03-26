@@ -15,11 +15,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the GetOsTypeImage200ResponseOsType type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GetOsTypeImage200ResponseOsType{}
+// checks if the GetOsTypeImage200ResponseOsTypeImage type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GetOsTypeImage200ResponseOsTypeImage{}
 
-// GetOsTypeImage200ResponseOsType struct for GetOsTypeImage200ResponseOsType
-type GetOsTypeImage200ResponseOsType struct {
+// GetOsTypeImage200ResponseOsTypeImage struct for GetOsTypeImage200ResponseOsTypeImage
+type GetOsTypeImage200ResponseOsTypeImage struct {
 	Id *int64 `json:"id,omitempty"`
 	// The id of the virtual image.
 	VirtualImageId *int64 `json:"virtualImageId,omitempty"`
@@ -36,27 +36,27 @@ type GetOsTypeImage200ResponseOsType struct {
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
-type _GetOsTypeImage200ResponseOsType GetOsTypeImage200ResponseOsType
+type _GetOsTypeImage200ResponseOsTypeImage GetOsTypeImage200ResponseOsTypeImage
 
-// NewGetOsTypeImage200ResponseOsType instantiates a new GetOsTypeImage200ResponseOsType object
+// NewGetOsTypeImage200ResponseOsTypeImage instantiates a new GetOsTypeImage200ResponseOsTypeImage object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGetOsTypeImage200ResponseOsType() *GetOsTypeImage200ResponseOsType {
-	this := GetOsTypeImage200ResponseOsType{}
+func NewGetOsTypeImage200ResponseOsTypeImage() *GetOsTypeImage200ResponseOsTypeImage {
+	this := GetOsTypeImage200ResponseOsTypeImage{}
 	return &this
 }
 
-// NewGetOsTypeImage200ResponseOsTypeWithDefaults instantiates a new GetOsTypeImage200ResponseOsType object
+// NewGetOsTypeImage200ResponseOsTypeImageWithDefaults instantiates a new GetOsTypeImage200ResponseOsTypeImage object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewGetOsTypeImage200ResponseOsTypeWithDefaults() *GetOsTypeImage200ResponseOsType {
-	this := GetOsTypeImage200ResponseOsType{}
+func NewGetOsTypeImage200ResponseOsTypeImageWithDefaults() *GetOsTypeImage200ResponseOsTypeImage {
+	this := GetOsTypeImage200ResponseOsTypeImage{}
 	return &this
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *GetOsTypeImage200ResponseOsType) GetId() int64 {
+func (o *GetOsTypeImage200ResponseOsTypeImage) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
 		var ret int64
 		return ret
@@ -66,7 +66,7 @@ func (o *GetOsTypeImage200ResponseOsType) GetId() int64 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetOsTypeImage200ResponseOsType) GetIdOk() (*int64, bool) {
+func (o *GetOsTypeImage200ResponseOsTypeImage) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -74,7 +74,7 @@ func (o *GetOsTypeImage200ResponseOsType) GetIdOk() (*int64, bool) {
 }
 
 // IsSetId returns a boolean if a field has been set.
-func (o *GetOsTypeImage200ResponseOsType) IsSetId() bool {
+func (o *GetOsTypeImage200ResponseOsTypeImage) IsSetId() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -83,12 +83,12 @@ func (o *GetOsTypeImage200ResponseOsType) IsSetId() bool {
 }
 
 // SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *GetOsTypeImage200ResponseOsType) SetId(v int64) {
+func (o *GetOsTypeImage200ResponseOsTypeImage) SetId(v int64) {
 	o.Id = &v
 }
 
 // GetVirtualImageId returns the VirtualImageId field value if set, zero value otherwise.
-func (o *GetOsTypeImage200ResponseOsType) GetVirtualImageId() int64 {
+func (o *GetOsTypeImage200ResponseOsTypeImage) GetVirtualImageId() int64 {
 	if o == nil || IsNil(o.VirtualImageId) {
 		var ret int64
 		return ret
@@ -98,7 +98,7 @@ func (o *GetOsTypeImage200ResponseOsType) GetVirtualImageId() int64 {
 
 // GetVirtualImageIdOk returns a tuple with the VirtualImageId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetOsTypeImage200ResponseOsType) GetVirtualImageIdOk() (*int64, bool) {
+func (o *GetOsTypeImage200ResponseOsTypeImage) GetVirtualImageIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.VirtualImageId) {
 		return nil, false
 	}
@@ -106,7 +106,7 @@ func (o *GetOsTypeImage200ResponseOsType) GetVirtualImageIdOk() (*int64, bool) {
 }
 
 // IsSetVirtualImageId returns a boolean if a field has been set.
-func (o *GetOsTypeImage200ResponseOsType) IsSetVirtualImageId() bool {
+func (o *GetOsTypeImage200ResponseOsTypeImage) IsSetVirtualImageId() bool {
 	if o != nil && !IsNil(o.VirtualImageId) {
 		return true
 	}
@@ -115,12 +115,12 @@ func (o *GetOsTypeImage200ResponseOsType) IsSetVirtualImageId() bool {
 }
 
 // SetVirtualImageId gets a reference to the given int64 and assigns it to the VirtualImageId field.
-func (o *GetOsTypeImage200ResponseOsType) SetVirtualImageId(v int64) {
+func (o *GetOsTypeImage200ResponseOsTypeImage) SetVirtualImageId(v int64) {
 	o.VirtualImageId = &v
 }
 
 // GetVirtualImageName returns the VirtualImageName field value if set, zero value otherwise.
-func (o *GetOsTypeImage200ResponseOsType) GetVirtualImageName() string {
+func (o *GetOsTypeImage200ResponseOsTypeImage) GetVirtualImageName() string {
 	if o == nil || IsNil(o.VirtualImageName) {
 		var ret string
 		return ret
@@ -130,7 +130,7 @@ func (o *GetOsTypeImage200ResponseOsType) GetVirtualImageName() string {
 
 // GetVirtualImageNameOk returns a tuple with the VirtualImageName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetOsTypeImage200ResponseOsType) GetVirtualImageNameOk() (*string, bool) {
+func (o *GetOsTypeImage200ResponseOsTypeImage) GetVirtualImageNameOk() (*string, bool) {
 	if o == nil || IsNil(o.VirtualImageName) {
 		return nil, false
 	}
@@ -138,7 +138,7 @@ func (o *GetOsTypeImage200ResponseOsType) GetVirtualImageNameOk() (*string, bool
 }
 
 // IsSetVirtualImageName returns a boolean if a field has been set.
-func (o *GetOsTypeImage200ResponseOsType) IsSetVirtualImageName() bool {
+func (o *GetOsTypeImage200ResponseOsTypeImage) IsSetVirtualImageName() bool {
 	if o != nil && !IsNil(o.VirtualImageName) {
 		return true
 	}
@@ -147,12 +147,12 @@ func (o *GetOsTypeImage200ResponseOsType) IsSetVirtualImageName() bool {
 }
 
 // SetVirtualImageName gets a reference to the given string and assigns it to the VirtualImageName field.
-func (o *GetOsTypeImage200ResponseOsType) SetVirtualImageName(v string) {
+func (o *GetOsTypeImage200ResponseOsTypeImage) SetVirtualImageName(v string) {
 	o.VirtualImageName = &v
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GetOsTypeImage200ResponseOsType) GetAccount() int64 {
+func (o *GetOsTypeImage200ResponseOsTypeImage) GetAccount() int64 {
 	if o == nil || IsNil(o.Account.Get()) {
 		var ret int64
 		return ret
@@ -163,7 +163,7 @@ func (o *GetOsTypeImage200ResponseOsType) GetAccount() int64 {
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GetOsTypeImage200ResponseOsType) GetAccountOk() (*int64, bool) {
+func (o *GetOsTypeImage200ResponseOsTypeImage) GetAccountOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -171,7 +171,7 @@ func (o *GetOsTypeImage200ResponseOsType) GetAccountOk() (*int64, bool) {
 }
 
 // IsSetAccount returns a boolean if a field has been set.
-func (o *GetOsTypeImage200ResponseOsType) IsSetAccount() bool {
+func (o *GetOsTypeImage200ResponseOsTypeImage) IsSetAccount() bool {
 	if o != nil && o.Account.IsSet() {
 		return true
 	}
@@ -180,22 +180,22 @@ func (o *GetOsTypeImage200ResponseOsType) IsSetAccount() bool {
 }
 
 // SetAccount gets a reference to the given NullableInt64 and assigns it to the Account field.
-func (o *GetOsTypeImage200ResponseOsType) SetAccount(v int64) {
+func (o *GetOsTypeImage200ResponseOsTypeImage) SetAccount(v int64) {
 	o.Account.Set(&v)
 }
 
 // SetAccountNil sets the value for Account to be an explicit nil
-func (o *GetOsTypeImage200ResponseOsType) SetAccountNil() {
+func (o *GetOsTypeImage200ResponseOsTypeImage) SetAccountNil() {
 	o.Account.Set(nil)
 }
 
 // UnsetAccount ensures that no value is present for Account, not even an explicit nil
-func (o *GetOsTypeImage200ResponseOsType) UnsetAccount() {
+func (o *GetOsTypeImage200ResponseOsTypeImage) UnsetAccount() {
 	o.Account.Unset()
 }
 
 // GetProvisionType returns the ProvisionType field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GetOsTypeImage200ResponseOsType) GetProvisionType() int64 {
+func (o *GetOsTypeImage200ResponseOsTypeImage) GetProvisionType() int64 {
 	if o == nil || IsNil(o.ProvisionType.Get()) {
 		var ret int64
 		return ret
@@ -206,7 +206,7 @@ func (o *GetOsTypeImage200ResponseOsType) GetProvisionType() int64 {
 // GetProvisionTypeOk returns a tuple with the ProvisionType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GetOsTypeImage200ResponseOsType) GetProvisionTypeOk() (*int64, bool) {
+func (o *GetOsTypeImage200ResponseOsTypeImage) GetProvisionTypeOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -214,7 +214,7 @@ func (o *GetOsTypeImage200ResponseOsType) GetProvisionTypeOk() (*int64, bool) {
 }
 
 // IsSetProvisionType returns a boolean if a field has been set.
-func (o *GetOsTypeImage200ResponseOsType) IsSetProvisionType() bool {
+func (o *GetOsTypeImage200ResponseOsTypeImage) IsSetProvisionType() bool {
 	if o != nil && o.ProvisionType.IsSet() {
 		return true
 	}
@@ -223,22 +223,22 @@ func (o *GetOsTypeImage200ResponseOsType) IsSetProvisionType() bool {
 }
 
 // SetProvisionType gets a reference to the given NullableInt64 and assigns it to the ProvisionType field.
-func (o *GetOsTypeImage200ResponseOsType) SetProvisionType(v int64) {
+func (o *GetOsTypeImage200ResponseOsTypeImage) SetProvisionType(v int64) {
 	o.ProvisionType.Set(&v)
 }
 
 // SetProvisionTypeNil sets the value for ProvisionType to be an explicit nil
-func (o *GetOsTypeImage200ResponseOsType) SetProvisionTypeNil() {
+func (o *GetOsTypeImage200ResponseOsTypeImage) SetProvisionTypeNil() {
 	o.ProvisionType.Set(nil)
 }
 
 // UnsetProvisionType ensures that no value is present for ProvisionType, not even an explicit nil
-func (o *GetOsTypeImage200ResponseOsType) UnsetProvisionType() {
+func (o *GetOsTypeImage200ResponseOsTypeImage) UnsetProvisionType() {
 	o.ProvisionType.Unset()
 }
 
 // GetComputeZoneType returns the ComputeZoneType field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GetOsTypeImage200ResponseOsType) GetComputeZoneType() int64 {
+func (o *GetOsTypeImage200ResponseOsTypeImage) GetComputeZoneType() int64 {
 	if o == nil || IsNil(o.ComputeZoneType.Get()) {
 		var ret int64
 		return ret
@@ -249,7 +249,7 @@ func (o *GetOsTypeImage200ResponseOsType) GetComputeZoneType() int64 {
 // GetComputeZoneTypeOk returns a tuple with the ComputeZoneType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GetOsTypeImage200ResponseOsType) GetComputeZoneTypeOk() (*int64, bool) {
+func (o *GetOsTypeImage200ResponseOsTypeImage) GetComputeZoneTypeOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -257,7 +257,7 @@ func (o *GetOsTypeImage200ResponseOsType) GetComputeZoneTypeOk() (*int64, bool) 
 }
 
 // IsSetComputeZoneType returns a boolean if a field has been set.
-func (o *GetOsTypeImage200ResponseOsType) IsSetComputeZoneType() bool {
+func (o *GetOsTypeImage200ResponseOsTypeImage) IsSetComputeZoneType() bool {
 	if o != nil && o.ComputeZoneType.IsSet() {
 		return true
 	}
@@ -266,22 +266,22 @@ func (o *GetOsTypeImage200ResponseOsType) IsSetComputeZoneType() bool {
 }
 
 // SetComputeZoneType gets a reference to the given NullableInt64 and assigns it to the ComputeZoneType field.
-func (o *GetOsTypeImage200ResponseOsType) SetComputeZoneType(v int64) {
+func (o *GetOsTypeImage200ResponseOsTypeImage) SetComputeZoneType(v int64) {
 	o.ComputeZoneType.Set(&v)
 }
 
 // SetComputeZoneTypeNil sets the value for ComputeZoneType to be an explicit nil
-func (o *GetOsTypeImage200ResponseOsType) SetComputeZoneTypeNil() {
+func (o *GetOsTypeImage200ResponseOsTypeImage) SetComputeZoneTypeNil() {
 	o.ComputeZoneType.Set(nil)
 }
 
 // UnsetComputeZoneType ensures that no value is present for ComputeZoneType, not even an explicit nil
-func (o *GetOsTypeImage200ResponseOsType) UnsetComputeZoneType() {
+func (o *GetOsTypeImage200ResponseOsTypeImage) UnsetComputeZoneType() {
 	o.ComputeZoneType.Unset()
 }
 
 // GetZone returns the Zone field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GetOsTypeImage200ResponseOsType) GetZone() int64 {
+func (o *GetOsTypeImage200ResponseOsTypeImage) GetZone() int64 {
 	if o == nil || IsNil(o.Zone.Get()) {
 		var ret int64
 		return ret
@@ -292,7 +292,7 @@ func (o *GetOsTypeImage200ResponseOsType) GetZone() int64 {
 // GetZoneOk returns a tuple with the Zone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GetOsTypeImage200ResponseOsType) GetZoneOk() (*int64, bool) {
+func (o *GetOsTypeImage200ResponseOsTypeImage) GetZoneOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -300,7 +300,7 @@ func (o *GetOsTypeImage200ResponseOsType) GetZoneOk() (*int64, bool) {
 }
 
 // IsSetZone returns a boolean if a field has been set.
-func (o *GetOsTypeImage200ResponseOsType) IsSetZone() bool {
+func (o *GetOsTypeImage200ResponseOsTypeImage) IsSetZone() bool {
 	if o != nil && o.Zone.IsSet() {
 		return true
 	}
@@ -309,21 +309,21 @@ func (o *GetOsTypeImage200ResponseOsType) IsSetZone() bool {
 }
 
 // SetZone gets a reference to the given NullableInt64 and assigns it to the Zone field.
-func (o *GetOsTypeImage200ResponseOsType) SetZone(v int64) {
+func (o *GetOsTypeImage200ResponseOsTypeImage) SetZone(v int64) {
 	o.Zone.Set(&v)
 }
 
 // SetZoneNil sets the value for Zone to be an explicit nil
-func (o *GetOsTypeImage200ResponseOsType) SetZoneNil() {
+func (o *GetOsTypeImage200ResponseOsTypeImage) SetZoneNil() {
 	o.Zone.Set(nil)
 }
 
 // UnsetZone ensures that no value is present for Zone, not even an explicit nil
-func (o *GetOsTypeImage200ResponseOsType) UnsetZone() {
+func (o *GetOsTypeImage200ResponseOsTypeImage) UnsetZone() {
 	o.Zone.Unset()
 }
 
-func (o GetOsTypeImage200ResponseOsType) MarshalJSON() ([]byte, error) {
+func (o GetOsTypeImage200ResponseOsTypeImage) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -331,7 +331,7 @@ func (o GetOsTypeImage200ResponseOsType) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o GetOsTypeImage200ResponseOsType) ToMap() (map[string]interface{}, error) {
+func (o GetOsTypeImage200ResponseOsTypeImage) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
@@ -362,43 +362,43 @@ func (o GetOsTypeImage200ResponseOsType) ToMap() (map[string]interface{}, error)
 	return toSerialize, nil
 }
 
-type NullableGetOsTypeImage200ResponseOsType struct {
-	value *GetOsTypeImage200ResponseOsType
+type NullableGetOsTypeImage200ResponseOsTypeImage struct {
+	value *GetOsTypeImage200ResponseOsTypeImage
 	isSet bool
 }
 
-func (v NullableGetOsTypeImage200ResponseOsType) Get() *GetOsTypeImage200ResponseOsType {
+func (v NullableGetOsTypeImage200ResponseOsTypeImage) Get() *GetOsTypeImage200ResponseOsTypeImage {
 	return v.value
 }
 
-func (v *NullableGetOsTypeImage200ResponseOsType) Set(val *GetOsTypeImage200ResponseOsType) {
+func (v *NullableGetOsTypeImage200ResponseOsTypeImage) Set(val *GetOsTypeImage200ResponseOsTypeImage) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableGetOsTypeImage200ResponseOsType) IsSet() bool {
+func (v NullableGetOsTypeImage200ResponseOsTypeImage) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableGetOsTypeImage200ResponseOsType) Unset() {
+func (v *NullableGetOsTypeImage200ResponseOsTypeImage) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableGetOsTypeImage200ResponseOsType(val *GetOsTypeImage200ResponseOsType) *NullableGetOsTypeImage200ResponseOsType {
-	return &NullableGetOsTypeImage200ResponseOsType{value: val, isSet: true}
+func NewNullableGetOsTypeImage200ResponseOsTypeImage(val *GetOsTypeImage200ResponseOsTypeImage) *NullableGetOsTypeImage200ResponseOsTypeImage {
+	return &NullableGetOsTypeImage200ResponseOsTypeImage{value: val, isSet: true}
 }
 
-func (v NullableGetOsTypeImage200ResponseOsType) MarshalJSON() ([]byte, error) {
+func (v NullableGetOsTypeImage200ResponseOsTypeImage) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableGetOsTypeImage200ResponseOsType) UnmarshalJSON(src []byte) error {
+func (v *NullableGetOsTypeImage200ResponseOsTypeImage) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
 
-func (v NullableGetOsTypeImage200ResponseOsType) UnmarshalMapstructure(data any) (any, error) {
+func (v NullableGetOsTypeImage200ResponseOsTypeImage) UnmarshalMapstructure(data any) (any, error) {
 	if err := mapstructDecode(data, &v.value); err != nil {
 		return nil, err
 	}
@@ -407,7 +407,7 @@ func (v NullableGetOsTypeImage200ResponseOsType) UnmarshalMapstructure(data any)
 	return v, nil
 }
 
-func (o *GetOsTypeImage200ResponseOsType) UnmarshalJSON(data []byte) (err error) {
+func (o *GetOsTypeImage200ResponseOsTypeImage) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }
 
