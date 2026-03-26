@@ -170823,19 +170823,23 @@ paths:
                   properties: &ref_1778
                     osType:
                       type: integer
+                      format: int64
                       description: id of osType
                     virtualImage:
                       type: integer
+                      format: int64
                       description: id of virtualImage
                     provisionType:
                       type:
                         - integer
                         - 'null'
+                      format: int64
                       description: id of provisionType
                     zone:
                       type:
                         - integer
                         - 'null'
+                      format: int64
                       description: id of cloud/zone
             examples:
               OsTypeImage Request:

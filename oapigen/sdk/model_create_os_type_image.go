@@ -21,13 +21,13 @@ var _ MappedNullable = &CreateOsTypeImage{}
 // CreateOsTypeImage struct for CreateOsTypeImage
 type CreateOsTypeImage struct {
 	// id of osType
-	OsType int32 `json:"osType"`
+	OsType int64 `json:"osType"`
 	// id of virtualImage
-	VirtualImage int32 `json:"virtualImage"`
+	VirtualImage int64 `json:"virtualImage"`
 	// id of provisionType
-	ProvisionType NullableInt32 `json:"provisionType,omitempty"`
+	ProvisionType NullableInt64 `json:"provisionType,omitempty"`
 	// id of cloud/zone
-	Zone                 NullableInt32          `json:"zone,omitempty"`
+	Zone                 NullableInt64          `json:"zone,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -37,7 +37,7 @@ type _CreateOsTypeImage CreateOsTypeImage
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCreateOsTypeImage(osType int32, virtualImage int32) *CreateOsTypeImage {
+func NewCreateOsTypeImage(osType int64, virtualImage int64) *CreateOsTypeImage {
 	this := CreateOsTypeImage{}
 	this.OsType = osType
 	this.VirtualImage = virtualImage
@@ -53,9 +53,9 @@ func NewCreateOsTypeImageWithDefaults() *CreateOsTypeImage {
 }
 
 // GetOsType returns the OsType field value
-func (o *CreateOsTypeImage) GetOsType() int32 {
+func (o *CreateOsTypeImage) GetOsType() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -64,7 +64,7 @@ func (o *CreateOsTypeImage) GetOsType() int32 {
 
 // GetOsTypeOk returns a tuple with the OsType field value
 // and a boolean to check if the value has been set.
-func (o *CreateOsTypeImage) GetOsTypeOk() (*int32, bool) {
+func (o *CreateOsTypeImage) GetOsTypeOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -72,14 +72,14 @@ func (o *CreateOsTypeImage) GetOsTypeOk() (*int32, bool) {
 }
 
 // SetOsType sets field value
-func (o *CreateOsTypeImage) SetOsType(v int32) {
+func (o *CreateOsTypeImage) SetOsType(v int64) {
 	o.OsType = v
 }
 
 // GetVirtualImage returns the VirtualImage field value
-func (o *CreateOsTypeImage) GetVirtualImage() int32 {
+func (o *CreateOsTypeImage) GetVirtualImage() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -88,7 +88,7 @@ func (o *CreateOsTypeImage) GetVirtualImage() int32 {
 
 // GetVirtualImageOk returns a tuple with the VirtualImage field value
 // and a boolean to check if the value has been set.
-func (o *CreateOsTypeImage) GetVirtualImageOk() (*int32, bool) {
+func (o *CreateOsTypeImage) GetVirtualImageOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -96,14 +96,14 @@ func (o *CreateOsTypeImage) GetVirtualImageOk() (*int32, bool) {
 }
 
 // SetVirtualImage sets field value
-func (o *CreateOsTypeImage) SetVirtualImage(v int32) {
+func (o *CreateOsTypeImage) SetVirtualImage(v int64) {
 	o.VirtualImage = v
 }
 
 // GetProvisionType returns the ProvisionType field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CreateOsTypeImage) GetProvisionType() int32 {
+func (o *CreateOsTypeImage) GetProvisionType() int64 {
 	if o == nil || IsNil(o.ProvisionType.Get()) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ProvisionType.Get()
@@ -112,7 +112,7 @@ func (o *CreateOsTypeImage) GetProvisionType() int32 {
 // GetProvisionTypeOk returns a tuple with the ProvisionType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CreateOsTypeImage) GetProvisionTypeOk() (*int32, bool) {
+func (o *CreateOsTypeImage) GetProvisionTypeOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -128,8 +128,8 @@ func (o *CreateOsTypeImage) IsSetProvisionType() bool {
 	return false
 }
 
-// SetProvisionType gets a reference to the given NullableInt32 and assigns it to the ProvisionType field.
-func (o *CreateOsTypeImage) SetProvisionType(v int32) {
+// SetProvisionType gets a reference to the given NullableInt64 and assigns it to the ProvisionType field.
+func (o *CreateOsTypeImage) SetProvisionType(v int64) {
 	o.ProvisionType.Set(&v)
 }
 
@@ -144,9 +144,9 @@ func (o *CreateOsTypeImage) UnsetProvisionType() {
 }
 
 // GetZone returns the Zone field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CreateOsTypeImage) GetZone() int32 {
+func (o *CreateOsTypeImage) GetZone() int64 {
 	if o == nil || IsNil(o.Zone.Get()) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Zone.Get()
@@ -155,7 +155,7 @@ func (o *CreateOsTypeImage) GetZone() int32 {
 // GetZoneOk returns a tuple with the Zone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CreateOsTypeImage) GetZoneOk() (*int32, bool) {
+func (o *CreateOsTypeImage) GetZoneOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -171,8 +171,8 @@ func (o *CreateOsTypeImage) IsSetZone() bool {
 	return false
 }
 
-// SetZone gets a reference to the given NullableInt32 and assigns it to the Zone field.
-func (o *CreateOsTypeImage) SetZone(v int32) {
+// SetZone gets a reference to the given NullableInt64 and assigns it to the Zone field.
+func (o *CreateOsTypeImage) SetZone(v int64) {
 	o.Zone.Set(&v)
 }
 
