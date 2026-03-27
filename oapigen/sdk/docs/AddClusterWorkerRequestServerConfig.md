@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **NodeCount** | Pointer to **int64** | Number of workers or hosts | [optional] 
 **CreateUser** | Pointer to **bool** |  | [optional] 
-**DefaultRepoAccount** | Pointer to **int32** | Default Repo Account is the repository to be used when pulling images.  Default behavior is to be anonymous, which does have limits on allowed image pulls from public Docker Repos. | [optional] 
+**DefaultRepoAccount** | Pointer to **int64** | Default Repo Account is the repository to be used when pulling images.  Default behavior is to be anonymous, which does have limits on allowed image pulls from public Docker Repos. | [optional] 
 **ImageServer** | Pointer to **string** | Act as Image Server. Set to on to use the Default Repo Account to pull images. | [optional] 
 **Controller** | Pointer to [**AddClusterWorkerRequestServerConfigAnyOfOneOf2Controller**](AddClusterWorkerRequestServerConfigAnyOfOneOf2Controller.md) |  | [optional] 
 **Worker** | Pointer to [**AddClusterWorkerRequestServerConfigAnyOfOneOf3Worker**](AddClusterWorkerRequestServerConfigAnyOfOneOf3Worker.md) |  | [optional] 
@@ -16,10 +16,12 @@ Name | Type | Description | Notes
 **ControlPlaneVersion** | Pointer to **string** |  | [optional] 
 **PodCidr** | Pointer to **string** |  | [optional] 
 **ServiceCidr** | Pointer to **string** |  | [optional] 
+**ResourcePoolId** | Pointer to **int64** |  | [optional] 
 **CpuArch** | Pointer to **string** |  | [optional] 
 **CpuModel** | Pointer to **string** |  | [optional] 
-**DynamicPlacementMode** | Pointer to **string** |  | [optional] 
+**DynamicPlacementMode** | Pointer to **string** | When enabled, Dynamic Placement will automatically balance VMs across cluster hosts based on resource utilization. When disabled, VMs will only migrate to a new host if they are pinned to a specific host or failed over and not running on the preferred host. | [optional] 
 **PowerPolicy** | Pointer to **string** |  | [optional] 
+**VcpuPlacementMode** | Pointer to **string** |  | [optional] 
 **StorageInterfaceName** | Pointer to **string** |  | [optional] 
 **ComputeInterfaceName** | Pointer to **string** |  | [optional] 
 **ComputeVlans** | Pointer to **string** |  | [optional] 
@@ -97,20 +99,20 @@ HasCreateUser returns a boolean if a field has been set.
 
 ### GetDefaultRepoAccount
 
-`func (o *AddClusterWorkerRequestServerConfig) GetDefaultRepoAccount() int32`
+`func (o *AddClusterWorkerRequestServerConfig) GetDefaultRepoAccount() int64`
 
 GetDefaultRepoAccount returns the DefaultRepoAccount field if non-nil, zero value otherwise.
 
 ### GetDefaultRepoAccountOk
 
-`func (o *AddClusterWorkerRequestServerConfig) GetDefaultRepoAccountOk() (*int32, bool)`
+`func (o *AddClusterWorkerRequestServerConfig) GetDefaultRepoAccountOk() (*int64, bool)`
 
 GetDefaultRepoAccountOk returns a tuple with the DefaultRepoAccount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDefaultRepoAccount
 
-`func (o *AddClusterWorkerRequestServerConfig) SetDefaultRepoAccount(v int32)`
+`func (o *AddClusterWorkerRequestServerConfig) SetDefaultRepoAccount(v int64)`
 
 SetDefaultRepoAccount sets DefaultRepoAccount field to given value.
 
@@ -345,6 +347,31 @@ SetServiceCidr sets ServiceCidr field to given value.
 
 HasServiceCidr returns a boolean if a field has been set.
 
+### GetResourcePoolId
+
+`func (o *AddClusterWorkerRequestServerConfig) GetResourcePoolId() int64`
+
+GetResourcePoolId returns the ResourcePoolId field if non-nil, zero value otherwise.
+
+### GetResourcePoolIdOk
+
+`func (o *AddClusterWorkerRequestServerConfig) GetResourcePoolIdOk() (*int64, bool)`
+
+GetResourcePoolIdOk returns a tuple with the ResourcePoolId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResourcePoolId
+
+`func (o *AddClusterWorkerRequestServerConfig) SetResourcePoolId(v int64)`
+
+SetResourcePoolId sets ResourcePoolId field to given value.
+
+### HasResourcePoolId
+
+`func (o *AddClusterWorkerRequestServerConfig) HasResourcePoolId() bool`
+
+HasResourcePoolId returns a boolean if a field has been set.
+
 ### GetCpuArch
 
 `func (o *AddClusterWorkerRequestServerConfig) GetCpuArch() string`
@@ -444,6 +471,31 @@ SetPowerPolicy sets PowerPolicy field to given value.
 `func (o *AddClusterWorkerRequestServerConfig) HasPowerPolicy() bool`
 
 HasPowerPolicy returns a boolean if a field has been set.
+
+### GetVcpuPlacementMode
+
+`func (o *AddClusterWorkerRequestServerConfig) GetVcpuPlacementMode() string`
+
+GetVcpuPlacementMode returns the VcpuPlacementMode field if non-nil, zero value otherwise.
+
+### GetVcpuPlacementModeOk
+
+`func (o *AddClusterWorkerRequestServerConfig) GetVcpuPlacementModeOk() (*string, bool)`
+
+GetVcpuPlacementModeOk returns a tuple with the VcpuPlacementMode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVcpuPlacementMode
+
+`func (o *AddClusterWorkerRequestServerConfig) SetVcpuPlacementMode(v string)`
+
+SetVcpuPlacementMode sets VcpuPlacementMode field to given value.
+
+### HasVcpuPlacementMode
+
+`func (o *AddClusterWorkerRequestServerConfig) HasVcpuPlacementMode() bool`
+
+HasVcpuPlacementMode returns a boolean if a field has been set.
 
 ### GetStorageInterfaceName
 

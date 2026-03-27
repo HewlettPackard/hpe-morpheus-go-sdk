@@ -4,11 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ResourcePoolId** | Pointer to **int64** |  | [optional] 
 **PodCidr** | Pointer to **string** |  | [optional] 
 **ServiceCidr** | Pointer to **string** |  | [optional] 
 **NodeCount** | Pointer to **int64** |  | [optional] 
 **CreateUser** | Pointer to **bool** |  | [optional] 
-**DefaultRepoAccount** | Pointer to **NullableInt32** | Default Repo Account is the repository to be used when pulling images.  Default behavior is to be anonymous, which does have limits on allowed image pulls from public Docker Repos. | [optional] 
+**DefaultRepoAccount** | Pointer to **NullableInt64** | Default Repo Account is the repository to be used when pulling images.  Default behavior is to be anonymous, which does have limits on allowed image pulls from public Docker Repos. | [optional] 
 **ImageServer** | Pointer to **string** | Act as Image Server. Set to on to use the Default Repo Account to pull images. | [optional] 
 
 ## Methods
@@ -29,6 +30,31 @@ will change when the set of required properties is changed
 NewAddClusterWorkerRequestServerConfigAnyOfOneOf5WithDefaults instantiates a new AddClusterWorkerRequestServerConfigAnyOfOneOf5 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetResourcePoolId
+
+`func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf5) GetResourcePoolId() int64`
+
+GetResourcePoolId returns the ResourcePoolId field if non-nil, zero value otherwise.
+
+### GetResourcePoolIdOk
+
+`func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf5) GetResourcePoolIdOk() (*int64, bool)`
+
+GetResourcePoolIdOk returns a tuple with the ResourcePoolId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResourcePoolId
+
+`func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf5) SetResourcePoolId(v int64)`
+
+SetResourcePoolId sets ResourcePoolId field to given value.
+
+### HasResourcePoolId
+
+`func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf5) HasResourcePoolId() bool`
+
+HasResourcePoolId returns a boolean if a field has been set.
 
 ### GetPodCidr
 
@@ -132,20 +158,20 @@ HasCreateUser returns a boolean if a field has been set.
 
 ### GetDefaultRepoAccount
 
-`func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf5) GetDefaultRepoAccount() int32`
+`func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf5) GetDefaultRepoAccount() int64`
 
 GetDefaultRepoAccount returns the DefaultRepoAccount field if non-nil, zero value otherwise.
 
 ### GetDefaultRepoAccountOk
 
-`func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf5) GetDefaultRepoAccountOk() (*int32, bool)`
+`func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf5) GetDefaultRepoAccountOk() (*int64, bool)`
 
 GetDefaultRepoAccountOk returns a tuple with the DefaultRepoAccount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDefaultRepoAccount
 
-`func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf5) SetDefaultRepoAccount(v int32)`
+`func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf5) SetDefaultRepoAccount(v int64)`
 
 SetDefaultRepoAccount sets DefaultRepoAccount field to given value.
 

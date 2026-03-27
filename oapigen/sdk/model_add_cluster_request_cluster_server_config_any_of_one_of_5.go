@@ -20,12 +20,13 @@ var _ MappedNullable = &AddClusterRequestClusterServerConfigAnyOfOneOf5{}
 
 // AddClusterRequestClusterServerConfigAnyOfOneOf5 Configuration for HKS cluster provisioning on a HVM cluster.
 type AddClusterRequestClusterServerConfigAnyOfOneOf5 struct {
-	PodCidr     *string `json:"podCidr,omitempty"`
-	ServiceCidr *string `json:"serviceCidr,omitempty"`
-	NodeCount   *int64  `json:"nodeCount,omitempty"`
-	CreateUser  *bool   `json:"createUser,omitempty"`
+	ResourcePoolId *int64  `json:"resourcePoolId,omitempty"`
+	PodCidr        *string `json:"podCidr,omitempty"`
+	ServiceCidr    *string `json:"serviceCidr,omitempty"`
+	NodeCount      *int64  `json:"nodeCount,omitempty"`
+	CreateUser     *bool   `json:"createUser,omitempty"`
 	// Default Repo Account is the repository to be used when pulling images.  Default behavior is to be anonymous, which does have limits on allowed image pulls from public Docker Repos.
-	DefaultRepoAccount NullableInt32 `json:"defaultRepoAccount,omitempty"`
+	DefaultRepoAccount NullableInt64 `json:"defaultRepoAccount,omitempty"`
 	// Act as Image Server. Set to on to use the Default Repo Account to pull images.
 	ImageServer          *string                `json:"imageServer,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
@@ -48,6 +49,38 @@ func NewAddClusterRequestClusterServerConfigAnyOfOneOf5() *AddClusterRequestClus
 func NewAddClusterRequestClusterServerConfigAnyOfOneOf5WithDefaults() *AddClusterRequestClusterServerConfigAnyOfOneOf5 {
 	this := AddClusterRequestClusterServerConfigAnyOfOneOf5{}
 	return &this
+}
+
+// GetResourcePoolId returns the ResourcePoolId field value if set, zero value otherwise.
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf5) GetResourcePoolId() int64 {
+	if o == nil || IsNil(o.ResourcePoolId) {
+		var ret int64
+		return ret
+	}
+	return *o.ResourcePoolId
+}
+
+// GetResourcePoolIdOk returns a tuple with the ResourcePoolId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf5) GetResourcePoolIdOk() (*int64, bool) {
+	if o == nil || IsNil(o.ResourcePoolId) {
+		return nil, false
+	}
+	return o.ResourcePoolId, true
+}
+
+// IsSetResourcePoolId returns a boolean if a field has been set.
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf5) IsSetResourcePoolId() bool {
+	if o != nil && !IsNil(o.ResourcePoolId) {
+		return true
+	}
+
+	return false
+}
+
+// SetResourcePoolId gets a reference to the given int64 and assigns it to the ResourcePoolId field.
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf5) SetResourcePoolId(v int64) {
+	o.ResourcePoolId = &v
 }
 
 // GetPodCidr returns the PodCidr field value if set, zero value otherwise.
@@ -179,9 +212,9 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf5) SetCreateUser(v bool) 
 }
 
 // GetDefaultRepoAccount returns the DefaultRepoAccount field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf5) GetDefaultRepoAccount() int32 {
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf5) GetDefaultRepoAccount() int64 {
 	if o == nil || IsNil(o.DefaultRepoAccount.Get()) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.DefaultRepoAccount.Get()
@@ -190,7 +223,7 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf5) GetDefaultRepoAccount(
 // GetDefaultRepoAccountOk returns a tuple with the DefaultRepoAccount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf5) GetDefaultRepoAccountOk() (*int32, bool) {
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf5) GetDefaultRepoAccountOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -206,8 +239,8 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf5) IsSetDefaultRepoAccoun
 	return false
 }
 
-// SetDefaultRepoAccount gets a reference to the given NullableInt32 and assigns it to the DefaultRepoAccount field.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf5) SetDefaultRepoAccount(v int32) {
+// SetDefaultRepoAccount gets a reference to the given NullableInt64 and assigns it to the DefaultRepoAccount field.
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf5) SetDefaultRepoAccount(v int64) {
 	o.DefaultRepoAccount.Set(&v)
 }
 
@@ -263,6 +296,9 @@ func (o AddClusterRequestClusterServerConfigAnyOfOneOf5) MarshalJSON() ([]byte, 
 
 func (o AddClusterRequestClusterServerConfigAnyOfOneOf5) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.ResourcePoolId) {
+		toSerialize["resourcePoolId"] = o.ResourcePoolId
+	}
 	if !IsNil(o.PodCidr) {
 		toSerialize["podCidr"] = o.PodCidr
 	}

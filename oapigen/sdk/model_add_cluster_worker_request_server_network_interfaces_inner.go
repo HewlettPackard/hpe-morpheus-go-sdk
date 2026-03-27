@@ -24,7 +24,9 @@ type AddClusterWorkerRequestServerNetworkInterfacesInner struct {
 	// The id of type of the network interface.
 	NetworkInterfaceTypeId *int64 `json:"networkInterfaceTypeId,omitempty"`
 	// The ip address. Not applicable when using DHCP or IP Pools.
-	IpAddress            *string                `json:"ipAddress,omitempty"`
+	IpAddress *string `json:"ipAddress,omitempty"`
+	// The mode for determining ip address. Can be 'static', 'dhcp' or empty string.
+	IpMode               *string                `json:"ipMode,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -37,6 +39,8 @@ type _AddClusterWorkerRequestServerNetworkInterfacesInner AddClusterWorkerReques
 func NewAddClusterWorkerRequestServerNetworkInterfacesInner(network AddClusterWorkerRequestServerNetworkInterfacesInnerNetwork) *AddClusterWorkerRequestServerNetworkInterfacesInner {
 	this := AddClusterWorkerRequestServerNetworkInterfacesInner{}
 	this.Network = network
+	var ipMode string = ""
+	this.IpMode = &ipMode
 	return &this
 }
 
@@ -45,6 +49,8 @@ func NewAddClusterWorkerRequestServerNetworkInterfacesInner(network AddClusterWo
 // but it doesn't guarantee that properties required by API are set
 func NewAddClusterWorkerRequestServerNetworkInterfacesInnerWithDefaults() *AddClusterWorkerRequestServerNetworkInterfacesInner {
 	this := AddClusterWorkerRequestServerNetworkInterfacesInner{}
+	var ipMode string = ""
+	this.IpMode = &ipMode
 	return &this
 }
 
@@ -136,6 +142,38 @@ func (o *AddClusterWorkerRequestServerNetworkInterfacesInner) SetIpAddress(v str
 	o.IpAddress = &v
 }
 
+// GetIpMode returns the IpMode field value if set, zero value otherwise.
+func (o *AddClusterWorkerRequestServerNetworkInterfacesInner) GetIpMode() string {
+	if o == nil || IsNil(o.IpMode) {
+		var ret string
+		return ret
+	}
+	return *o.IpMode
+}
+
+// GetIpModeOk returns a tuple with the IpMode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddClusterWorkerRequestServerNetworkInterfacesInner) GetIpModeOk() (*string, bool) {
+	if o == nil || IsNil(o.IpMode) {
+		return nil, false
+	}
+	return o.IpMode, true
+}
+
+// IsSetIpMode returns a boolean if a field has been set.
+func (o *AddClusterWorkerRequestServerNetworkInterfacesInner) IsSetIpMode() bool {
+	if o != nil && !IsNil(o.IpMode) {
+		return true
+	}
+
+	return false
+}
+
+// SetIpMode gets a reference to the given string and assigns it to the IpMode field.
+func (o *AddClusterWorkerRequestServerNetworkInterfacesInner) SetIpMode(v string) {
+	o.IpMode = &v
+}
+
 func (o AddClusterWorkerRequestServerNetworkInterfacesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -152,6 +190,9 @@ func (o AddClusterWorkerRequestServerNetworkInterfacesInner) ToMap() (map[string
 	}
 	if !IsNil(o.IpAddress) {
 		toSerialize["ipAddress"] = o.IpAddress
+	}
+	if !IsNil(o.IpMode) {
+		toSerialize["ipMode"] = o.IpMode
 	}
 
 	for key, value := range o.AdditionalProperties {

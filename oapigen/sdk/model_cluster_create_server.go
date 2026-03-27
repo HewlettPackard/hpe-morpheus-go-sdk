@@ -28,6 +28,7 @@ type ClusterCreateServer struct {
 	ServicePlanOptions *ClusterCreateServerServicePlanOptions `json:"servicePlanOptions,omitempty"`
 	// The (optional) volumes parameter is for LV configuration, can create additional LVs at provision It should be passed as an array of Objects
 	Volumes []ClusterCreateServerVolumesInner `json:"volumes,omitempty"`
+	Network *ClusterCreateServerNetwork       `json:"network,omitempty"`
 	// The networkInterfaces parameter is for network configuration.  The Options API /api/options/zoneNetworkOptions can be used to see which options are available.  It should be passed as an array of Objects with the following attributes
 	NetworkInterfaces []ClusterCreateServerNetworkInterfacesInner `json:"networkInterfaces,omitempty"`
 	// Key for security group configuration.
@@ -47,11 +48,19 @@ type ClusterCreateServer struct {
 	Labels []string `json:"labels,omitempty"`
 	// Array of Host IPs and Names. This is used in conjunction with sshUsername and sshPassword/sshKeyPair to add existing hosts such as with HPE VM clusters.
 	SshHosts []ClusterCreateServerSshHostsInner `json:"sshHosts,omitempty"`
+	// A string consisting of comma-separated master host IP addresses.
+	SshMasterHosts *string `json:"sshMasterHosts,omitempty"`
+	// A string consisting of comma-separated worker host IP addresses.
+	SshWorkerHosts *string `json:"sshWorkerHosts,omitempty"`
+	// The port which the worker's SSH server is listening on.
+	SshPort *int64 `json:"sshPort,omitempty"`
 	// SSH Username
 	SshUsername *string `json:"sshUsername,omitempty"`
 	// SSH Password
 	SshPassword          NullableString                 `json:"sshPassword,omitempty"`
 	SshKeyPair           *ClusterCreateServerSshKeyPair `json:"sshKeyPair,omitempty"`
+	DataDevice           *string                        `json:"dataDevice,omitempty"`
+	LvmEnabled           *bool                          `json:"lvmEnabled,omitempty"`
 	AdditionalProperties map[string]interface{}         `json:",remain"`
 }
 
@@ -247,6 +256,38 @@ func (o *ClusterCreateServer) IsSetVolumes() bool {
 // SetVolumes gets a reference to the given []ClusterCreateServerVolumesInner and assigns it to the Volumes field.
 func (o *ClusterCreateServer) SetVolumes(v []ClusterCreateServerVolumesInner) {
 	o.Volumes = v
+}
+
+// GetNetwork returns the Network field value if set, zero value otherwise.
+func (o *ClusterCreateServer) GetNetwork() ClusterCreateServerNetwork {
+	if o == nil || IsNil(o.Network) {
+		var ret ClusterCreateServerNetwork
+		return ret
+	}
+	return *o.Network
+}
+
+// GetNetworkOk returns a tuple with the Network field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClusterCreateServer) GetNetworkOk() (*ClusterCreateServerNetwork, bool) {
+	if o == nil || IsNil(o.Network) {
+		return nil, false
+	}
+	return o.Network, true
+}
+
+// IsSetNetwork returns a boolean if a field has been set.
+func (o *ClusterCreateServer) IsSetNetwork() bool {
+	if o != nil && !IsNil(o.Network) {
+		return true
+	}
+
+	return false
+}
+
+// SetNetwork gets a reference to the given ClusterCreateServerNetwork and assigns it to the Network field.
+func (o *ClusterCreateServer) SetNetwork(v ClusterCreateServerNetwork) {
+	o.Network = &v
 }
 
 // GetNetworkInterfaces returns the NetworkInterfaces field value if set, zero value otherwise.
@@ -591,6 +632,102 @@ func (o *ClusterCreateServer) SetSshHosts(v []ClusterCreateServerSshHostsInner) 
 	o.SshHosts = v
 }
 
+// GetSshMasterHosts returns the SshMasterHosts field value if set, zero value otherwise.
+func (o *ClusterCreateServer) GetSshMasterHosts() string {
+	if o == nil || IsNil(o.SshMasterHosts) {
+		var ret string
+		return ret
+	}
+	return *o.SshMasterHosts
+}
+
+// GetSshMasterHostsOk returns a tuple with the SshMasterHosts field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClusterCreateServer) GetSshMasterHostsOk() (*string, bool) {
+	if o == nil || IsNil(o.SshMasterHosts) {
+		return nil, false
+	}
+	return o.SshMasterHosts, true
+}
+
+// IsSetSshMasterHosts returns a boolean if a field has been set.
+func (o *ClusterCreateServer) IsSetSshMasterHosts() bool {
+	if o != nil && !IsNil(o.SshMasterHosts) {
+		return true
+	}
+
+	return false
+}
+
+// SetSshMasterHosts gets a reference to the given string and assigns it to the SshMasterHosts field.
+func (o *ClusterCreateServer) SetSshMasterHosts(v string) {
+	o.SshMasterHosts = &v
+}
+
+// GetSshWorkerHosts returns the SshWorkerHosts field value if set, zero value otherwise.
+func (o *ClusterCreateServer) GetSshWorkerHosts() string {
+	if o == nil || IsNil(o.SshWorkerHosts) {
+		var ret string
+		return ret
+	}
+	return *o.SshWorkerHosts
+}
+
+// GetSshWorkerHostsOk returns a tuple with the SshWorkerHosts field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClusterCreateServer) GetSshWorkerHostsOk() (*string, bool) {
+	if o == nil || IsNil(o.SshWorkerHosts) {
+		return nil, false
+	}
+	return o.SshWorkerHosts, true
+}
+
+// IsSetSshWorkerHosts returns a boolean if a field has been set.
+func (o *ClusterCreateServer) IsSetSshWorkerHosts() bool {
+	if o != nil && !IsNil(o.SshWorkerHosts) {
+		return true
+	}
+
+	return false
+}
+
+// SetSshWorkerHosts gets a reference to the given string and assigns it to the SshWorkerHosts field.
+func (o *ClusterCreateServer) SetSshWorkerHosts(v string) {
+	o.SshWorkerHosts = &v
+}
+
+// GetSshPort returns the SshPort field value if set, zero value otherwise.
+func (o *ClusterCreateServer) GetSshPort() int64 {
+	if o == nil || IsNil(o.SshPort) {
+		var ret int64
+		return ret
+	}
+	return *o.SshPort
+}
+
+// GetSshPortOk returns a tuple with the SshPort field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClusterCreateServer) GetSshPortOk() (*int64, bool) {
+	if o == nil || IsNil(o.SshPort) {
+		return nil, false
+	}
+	return o.SshPort, true
+}
+
+// IsSetSshPort returns a boolean if a field has been set.
+func (o *ClusterCreateServer) IsSetSshPort() bool {
+	if o != nil && !IsNil(o.SshPort) {
+		return true
+	}
+
+	return false
+}
+
+// SetSshPort gets a reference to the given int64 and assigns it to the SshPort field.
+func (o *ClusterCreateServer) SetSshPort(v int64) {
+	o.SshPort = &v
+}
+
 // GetSshUsername returns the SshUsername field value if set, zero value otherwise.
 func (o *ClusterCreateServer) GetSshUsername() string {
 	if o == nil || IsNil(o.SshUsername) {
@@ -698,6 +835,70 @@ func (o *ClusterCreateServer) SetSshKeyPair(v ClusterCreateServerSshKeyPair) {
 	o.SshKeyPair = &v
 }
 
+// GetDataDevice returns the DataDevice field value if set, zero value otherwise.
+func (o *ClusterCreateServer) GetDataDevice() string {
+	if o == nil || IsNil(o.DataDevice) {
+		var ret string
+		return ret
+	}
+	return *o.DataDevice
+}
+
+// GetDataDeviceOk returns a tuple with the DataDevice field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClusterCreateServer) GetDataDeviceOk() (*string, bool) {
+	if o == nil || IsNil(o.DataDevice) {
+		return nil, false
+	}
+	return o.DataDevice, true
+}
+
+// IsSetDataDevice returns a boolean if a field has been set.
+func (o *ClusterCreateServer) IsSetDataDevice() bool {
+	if o != nil && !IsNil(o.DataDevice) {
+		return true
+	}
+
+	return false
+}
+
+// SetDataDevice gets a reference to the given string and assigns it to the DataDevice field.
+func (o *ClusterCreateServer) SetDataDevice(v string) {
+	o.DataDevice = &v
+}
+
+// GetLvmEnabled returns the LvmEnabled field value if set, zero value otherwise.
+func (o *ClusterCreateServer) GetLvmEnabled() bool {
+	if o == nil || IsNil(o.LvmEnabled) {
+		var ret bool
+		return ret
+	}
+	return *o.LvmEnabled
+}
+
+// GetLvmEnabledOk returns a tuple with the LvmEnabled field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClusterCreateServer) GetLvmEnabledOk() (*bool, bool) {
+	if o == nil || IsNil(o.LvmEnabled) {
+		return nil, false
+	}
+	return o.LvmEnabled, true
+}
+
+// IsSetLvmEnabled returns a boolean if a field has been set.
+func (o *ClusterCreateServer) IsSetLvmEnabled() bool {
+	if o != nil && !IsNil(o.LvmEnabled) {
+		return true
+	}
+
+	return false
+}
+
+// SetLvmEnabled gets a reference to the given bool and assigns it to the LvmEnabled field.
+func (o *ClusterCreateServer) SetLvmEnabled(v bool) {
+	o.LvmEnabled = &v
+}
+
 func (o ClusterCreateServer) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -719,6 +920,9 @@ func (o ClusterCreateServer) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Volumes) {
 		toSerialize["volumes"] = o.Volumes
+	}
+	if !IsNil(o.Network) {
+		toSerialize["network"] = o.Network
 	}
 	if !IsNil(o.NetworkInterfaces) {
 		toSerialize["networkInterfaces"] = o.NetworkInterfaces
@@ -750,6 +954,15 @@ func (o ClusterCreateServer) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SshHosts) {
 		toSerialize["sshHosts"] = o.SshHosts
 	}
+	if !IsNil(o.SshMasterHosts) {
+		toSerialize["sshMasterHosts"] = o.SshMasterHosts
+	}
+	if !IsNil(o.SshWorkerHosts) {
+		toSerialize["sshWorkerHosts"] = o.SshWorkerHosts
+	}
+	if !IsNil(o.SshPort) {
+		toSerialize["sshPort"] = o.SshPort
+	}
 	if !IsNil(o.SshUsername) {
 		toSerialize["sshUsername"] = o.SshUsername
 	}
@@ -758,6 +971,12 @@ func (o ClusterCreateServer) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.SshKeyPair) {
 		toSerialize["sshKeyPair"] = o.SshKeyPair
+	}
+	if !IsNil(o.DataDevice) {
+		toSerialize["dataDevice"] = o.DataDevice
+	}
+	if !IsNil(o.LvmEnabled) {
+		toSerialize["lvmEnabled"] = o.LvmEnabled
 	}
 
 	for key, value := range o.AdditionalProperties {
