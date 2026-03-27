@@ -6,15 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CpuArch** | Pointer to **string** |  | [optional] 
 **CpuModel** | Pointer to **string** |  | [optional] 
-**DynamicPlacementMode** | Pointer to **string** |  | [optional] 
+**DynamicPlacementMode** | Pointer to **string** | When enabled, Dynamic Placement will automatically balance VMs across cluster hosts based on resource utilization. When disabled, VMs will only migrate to a new host if they are pinned to a specific host or failed over and not running on the preferred host. | [optional] 
 **PowerPolicy** | Pointer to **string** |  | [optional] 
+**VcpuPlacementMode** | Pointer to **string** |  | [optional] 
 **StorageInterfaceName** | Pointer to **string** |  | [optional] 
 **ComputeInterfaceName** | Pointer to **string** |  | [optional] 
 **ComputeVlans** | Pointer to **string** |  | [optional] 
 **OverlayInterfaceName** | Pointer to **string** |  | [optional] 
 **CreateUser** | Pointer to **bool** |  | [optional] 
-**DefaultRepoAccount** | Pointer to **NullableInt32** | Default Repo Account is the repository to be used when pulling images.  Default behavior is to be anonymous, which does have limits on allowed image pulls from public Docker Repos. | [optional] 
-**ImageServer** | Pointer to **string** | Act as Image Server. Set to on to use the Default Repo Account to pull images. | [optional] 
 
 ## Methods
 
@@ -134,6 +133,31 @@ SetPowerPolicy sets PowerPolicy field to given value.
 `func (o *ClusterServerCreateConfigHVM) HasPowerPolicy() bool`
 
 HasPowerPolicy returns a boolean if a field has been set.
+
+### GetVcpuPlacementMode
+
+`func (o *ClusterServerCreateConfigHVM) GetVcpuPlacementMode() string`
+
+GetVcpuPlacementMode returns the VcpuPlacementMode field if non-nil, zero value otherwise.
+
+### GetVcpuPlacementModeOk
+
+`func (o *ClusterServerCreateConfigHVM) GetVcpuPlacementModeOk() (*string, bool)`
+
+GetVcpuPlacementModeOk returns a tuple with the VcpuPlacementMode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVcpuPlacementMode
+
+`func (o *ClusterServerCreateConfigHVM) SetVcpuPlacementMode(v string)`
+
+SetVcpuPlacementMode sets VcpuPlacementMode field to given value.
+
+### HasVcpuPlacementMode
+
+`func (o *ClusterServerCreateConfigHVM) HasVcpuPlacementMode() bool`
+
+HasVcpuPlacementMode returns a boolean if a field has been set.
 
 ### GetStorageInterfaceName
 
@@ -259,66 +283,6 @@ SetCreateUser sets CreateUser field to given value.
 `func (o *ClusterServerCreateConfigHVM) HasCreateUser() bool`
 
 HasCreateUser returns a boolean if a field has been set.
-
-### GetDefaultRepoAccount
-
-`func (o *ClusterServerCreateConfigHVM) GetDefaultRepoAccount() int32`
-
-GetDefaultRepoAccount returns the DefaultRepoAccount field if non-nil, zero value otherwise.
-
-### GetDefaultRepoAccountOk
-
-`func (o *ClusterServerCreateConfigHVM) GetDefaultRepoAccountOk() (*int32, bool)`
-
-GetDefaultRepoAccountOk returns a tuple with the DefaultRepoAccount field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDefaultRepoAccount
-
-`func (o *ClusterServerCreateConfigHVM) SetDefaultRepoAccount(v int32)`
-
-SetDefaultRepoAccount sets DefaultRepoAccount field to given value.
-
-### HasDefaultRepoAccount
-
-`func (o *ClusterServerCreateConfigHVM) HasDefaultRepoAccount() bool`
-
-HasDefaultRepoAccount returns a boolean if a field has been set.
-
-### SetDefaultRepoAccountNil
-
-`func (o *ClusterServerCreateConfigHVM) SetDefaultRepoAccountNil(b bool)`
-
- SetDefaultRepoAccountNil sets the value for DefaultRepoAccount to be an explicit nil
-
-### UnsetDefaultRepoAccount
-`func (o *ClusterServerCreateConfigHVM) UnsetDefaultRepoAccount()`
-
-UnsetDefaultRepoAccount ensures that no value is present for DefaultRepoAccount, not even an explicit nil
-### GetImageServer
-
-`func (o *ClusterServerCreateConfigHVM) GetImageServer() string`
-
-GetImageServer returns the ImageServer field if non-nil, zero value otherwise.
-
-### GetImageServerOk
-
-`func (o *ClusterServerCreateConfigHVM) GetImageServerOk() (*string, bool)`
-
-GetImageServerOk returns a tuple with the ImageServer field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetImageServer
-
-`func (o *ClusterServerCreateConfigHVM) SetImageServer(v string)`
-
-SetImageServer sets ImageServer field to given value.
-
-### HasImageServer
-
-`func (o *ClusterServerCreateConfigHVM) HasImageServer() bool`
-
-HasImageServer returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

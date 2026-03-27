@@ -24,7 +24,7 @@ type AddClusterRequestClusterServerConfigAnyOfOneOf4 struct {
 	ServiceCidr *string `json:"serviceCidr,omitempty"`
 	CreateUser  *bool   `json:"createUser,omitempty"`
 	// Default Repo Account is the repository to be used when pulling images.  Default behavior is to be anonymous, which does have limits on allowed image pulls from public Docker Repos.
-	DefaultRepoAccount NullableInt32 `json:"defaultRepoAccount,omitempty"`
+	DefaultRepoAccount NullableInt64 `json:"defaultRepoAccount,omitempty"`
 	// Act as Image Server. Set to on to use the Default Repo Account to pull images.
 	ImageServer          *string                `json:"imageServer,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
@@ -146,9 +146,9 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) SetCreateUser(v bool) 
 }
 
 // GetDefaultRepoAccount returns the DefaultRepoAccount field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) GetDefaultRepoAccount() int32 {
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) GetDefaultRepoAccount() int64 {
 	if o == nil || IsNil(o.DefaultRepoAccount.Get()) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.DefaultRepoAccount.Get()
@@ -157,7 +157,7 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) GetDefaultRepoAccount(
 // GetDefaultRepoAccountOk returns a tuple with the DefaultRepoAccount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) GetDefaultRepoAccountOk() (*int32, bool) {
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) GetDefaultRepoAccountOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -173,8 +173,8 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) IsSetDefaultRepoAccoun
 	return false
 }
 
-// SetDefaultRepoAccount gets a reference to the given NullableInt32 and assigns it to the DefaultRepoAccount field.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) SetDefaultRepoAccount(v int32) {
+// SetDefaultRepoAccount gets a reference to the given NullableInt64 and assigns it to the DefaultRepoAccount field.
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf4) SetDefaultRepoAccount(v int64) {
 	o.DefaultRepoAccount.Set(&v)
 }
 

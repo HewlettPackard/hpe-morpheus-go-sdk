@@ -23,14 +23,14 @@ var _ fmt.Stringer
 
 // AddClusterWorkerRequestServerNetworkInterfacesInnerNetworkId - struct for AddClusterWorkerRequestServerNetworkInterfacesInnerNetworkId
 type AddClusterWorkerRequestServerNetworkInterfacesInnerNetworkId struct {
-	Int32  *int32
+	Int64  *int64
 	String *string
 }
 
-// int32AsAddClusterWorkerRequestServerNetworkInterfacesInnerNetworkId is a convenience function that returns int32 wrapped in AddClusterWorkerRequestServerNetworkInterfacesInnerNetworkId
-func Int32AsAddClusterWorkerRequestServerNetworkInterfacesInnerNetworkId(v *int32) AddClusterWorkerRequestServerNetworkInterfacesInnerNetworkId {
+// int64AsAddClusterWorkerRequestServerNetworkInterfacesInnerNetworkId is a convenience function that returns int64 wrapped in AddClusterWorkerRequestServerNetworkInterfacesInnerNetworkId
+func Int64AsAddClusterWorkerRequestServerNetworkInterfacesInnerNetworkId(v *int64) AddClusterWorkerRequestServerNetworkInterfacesInnerNetworkId {
 	return AddClusterWorkerRequestServerNetworkInterfacesInnerNetworkId{
-		Int32: v,
+		Int64: v,
 	}
 }
 
@@ -46,10 +46,10 @@ func (dst *AddClusterWorkerRequestServerNetworkInterfacesInnerNetworkId) Unmarsh
 		dst = &AddClusterWorkerRequestServerNetworkInterfacesInnerNetworkId{}
 	}
 
-	mapstructDecode(data, &dst.Int32)
+	mapstructDecode(data, &dst.Int64)
 
-	if IsEmpty(dst.Int32) {
-		dst.Int32 = nil
+	if IsEmpty(dst.Int64) {
+		dst.Int64 = nil
 	}
 
 	mapstructDecode(data, &dst.String)
@@ -65,21 +65,21 @@ func (dst *AddClusterWorkerRequestServerNetworkInterfacesInnerNetworkId) Unmarsh
 func (dst *AddClusterWorkerRequestServerNetworkInterfacesInnerNetworkId) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
-	// try to unmarshal data into Int32
-	err = newStrictDecoder(data).Decode(&dst.Int32)
+	// try to unmarshal data into Int64
+	err = newStrictDecoder(data).Decode(&dst.Int64)
 	if err == nil {
-		jsonInt32, _ := json.Marshal(dst.Int32)
-		if string(jsonInt32) == "{}" { // empty struct
-			dst.Int32 = nil
+		jsonInt64, _ := json.Marshal(dst.Int64)
+		if string(jsonInt64) == "{}" { // empty struct
+			dst.Int64 = nil
 		} else {
-			if err = validator.Validate(dst.Int32); err != nil {
-				dst.Int32 = nil
+			if err = validator.Validate(dst.Int64); err != nil {
+				dst.Int64 = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.Int32 = nil
+		dst.Int64 = nil
 	}
 
 	// try to unmarshal data into String
@@ -101,7 +101,7 @@ func (dst *AddClusterWorkerRequestServerNetworkInterfacesInnerNetworkId) Unmarsh
 
 	if match > 1 { // more than 1 match
 		// reset to nil
-		dst.Int32 = nil
+		dst.Int64 = nil
 		dst.String = nil
 
 		return NewResponseValidationError("data matches more than one schema in oneOf(AddClusterWorkerRequestServerNetworkInterfacesInnerNetworkId)")
@@ -114,8 +114,8 @@ func (dst *AddClusterWorkerRequestServerNetworkInterfacesInnerNetworkId) Unmarsh
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src AddClusterWorkerRequestServerNetworkInterfacesInnerNetworkId) MarshalJSON() ([]byte, error) {
-	if src.Int32 != nil {
-		return json.Marshal(&src.Int32)
+	if src.Int64 != nil {
+		return json.Marshal(&src.Int64)
 	}
 
 	if src.String != nil {
@@ -130,8 +130,8 @@ func (obj *AddClusterWorkerRequestServerNetworkInterfacesInnerNetworkId) GetActu
 	if obj == nil {
 		return nil
 	}
-	if obj.Int32 != nil {
-		return obj.Int32
+	if obj.Int64 != nil {
+		return obj.Int64
 	}
 
 	if obj.String != nil {
@@ -144,8 +144,8 @@ func (obj *AddClusterWorkerRequestServerNetworkInterfacesInnerNetworkId) GetActu
 
 // Get the actual instance value
 func (obj AddClusterWorkerRequestServerNetworkInterfacesInnerNetworkId) GetActualInstanceValue() interface{} {
-	if obj.Int32 != nil {
-		return *obj.Int32
+	if obj.Int64 != nil {
+		return *obj.Int64
 	}
 
 	if obj.String != nil {

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **PublicIpType** | Pointer to **string** |  | [optional] 
 **NodeCount** | Pointer to **int64** |  | [optional] 
 **CreateUser** | Pointer to **bool** |  | [optional] 
-**DefaultRepoAccount** | Pointer to **NullableInt32** | Default Repo Account is the repository to be used when pulling images.  Default behavior is to be anonymous, which does have limits on allowed image pulls from public Docker Repos. | [optional] 
+**DefaultRepoAccount** | Pointer to **NullableInt64** | Default Repo Account is the repository to be used when pulling images.  Default behavior is to be anonymous, which does have limits on allowed image pulls from public Docker Repos. | [optional] 
 **ImageServer** | Pointer to **string** | Act as Image Server. Set to on to use the Default Repo Account to pull images. | [optional] 
 
 ## Methods
@@ -158,20 +158,20 @@ HasCreateUser returns a boolean if a field has been set.
 
 ### GetDefaultRepoAccount
 
-`func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2) GetDefaultRepoAccount() int32`
+`func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2) GetDefaultRepoAccount() int64`
 
 GetDefaultRepoAccount returns the DefaultRepoAccount field if non-nil, zero value otherwise.
 
 ### GetDefaultRepoAccountOk
 
-`func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2) GetDefaultRepoAccountOk() (*int32, bool)`
+`func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2) GetDefaultRepoAccountOk() (*int64, bool)`
 
 GetDefaultRepoAccountOk returns a tuple with the DefaultRepoAccount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDefaultRepoAccount
 
-`func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2) SetDefaultRepoAccount(v int32)`
+`func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2) SetDefaultRepoAccount(v int64)`
 
 SetDefaultRepoAccount sets DefaultRepoAccount field to given value.
 

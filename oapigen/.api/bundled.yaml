@@ -42908,6 +42908,7 @@ paths:
                                       type:
                                         - integer
                                         - 'null'
+                                      format: int64
                                       description: Default Repo Account is the repository to be used when pulling images.  Default behavior is to be anonymous, which does have limits on allowed image pulls from public Docker Repos.
                                     imageServer: &ref_154
                                       type: string
@@ -43022,6 +43023,9 @@ paths:
                                 - description: Configuration for HKS cluster provisioning on a HVM cluster.
                                   type: object
                                   properties: &ref_1504
+                                    resourcePoolId:
+                                      type: integer
+                                      format: int64
                                     podCidr:
                                       type: string
                                     serviceCidr:
@@ -43041,6 +43045,7 @@ paths:
                                     cpuModel:
                                       type: string
                                     dynamicPlacementMode:
+                                      description: When enabled, Dynamic Placement will automatically balance VMs across cluster hosts based on resource utilization. When disabled, VMs will only migrate to a new host if they are pinned to a specific host or failed over and not running on the preferred host.
                                       type: string
                                       enum:
                                         - 'on'
@@ -43050,6 +43055,11 @@ paths:
                                       enum:
                                         - balanced
                                         - performance
+                                    vcpuPlacementMode:
+                                      type: string
+                                      enum:
+                                        - unmanaged
+                                        - auto
                                     storageInterfaceName:
                                       type: string
                                     computeInterfaceName:
@@ -43060,8 +43070,6 @@ paths:
                                       type: string
                                     createUser:
                                       type: boolean
-                                    defaultRepoAccount: *ref_153
-                                    imageServer: *ref_154
                                 - description: Configuration for VMware cluster servers
                                   type: object
                                   properties: &ref_1506
@@ -43148,6 +43156,14 @@ paths:
                                   - string
                                   - 'null'
                                 description: The ID of the specific datastore. Auto selection can be specified as auto or `autoCluster` (for clusters).
+                        network:
+                          type: object
+                          required:
+                            - name
+                          properties:
+                            name:
+                              type: string
+                              description: The primary management interface name to establish a management bridge (i.e. eth0,ens192,bond0,etc)
                         networkInterfaces:
                           type: array
                           description: |
@@ -43171,6 +43187,7 @@ paths:
                                       - type: string
                                         description: A network group can be specified instead by prefixing its ID with `networkGroup-`.
                                       - type: integer
+                                        format: int64
                                         description: Network ID
                               networkInterfaceTypeId:
                                 type: integer
@@ -43179,6 +43196,14 @@ paths:
                               ipAddress:
                                 type: string
                                 description: The ip address. Not applicable when using DHCP or IP Pools.
+                              ipMode:
+                                type: string
+                                description: The mode for determining ip address. Can be 'static', 'dhcp' or empty string.
+                                enum:
+                                  - ''
+                                  - static
+                                  - dhcp
+                                default: ''
                         securityGroups:
                           type: array
                           description: Key for security group configuration.
@@ -43237,6 +43262,18 @@ paths:
                               name:
                                 type: string
                                 description: Host Name
+                        sshMasterHosts:
+                          type: string
+                          description: A string consisting of comma-separated master host IP addresses.
+                          example: 127.0.0.1,127.0.0.2,127.0.0.3
+                        sshWorkerHosts:
+                          type: string
+                          description: A string consisting of comma-separated worker host IP addresses.
+                          example: 127.0.0.1,127.0.0.2,127.0.0.3
+                        sshPort:
+                          type: integer
+                          format: int64
+                          description: The port which the worker's SSH server is listening on.
                         sshUsername:
                           type: string
                           description: SSH Username
@@ -43251,12 +43288,16 @@ paths:
                           type:
                             - object
                             - 'null'
-                          description: SSH Key.  See `/api/options/privateKeyPairs` for available private key pairs.
+                          description: SSH Key. sshUsername is also required if using an SSH key. See `/api/options/privateKeyPairs` for available private key pairs.
                           properties:
                             id:
                               type: integer
                               format: int64
-                              description: Key Pair ID
+                              description: Key Pair ID.
+                        dataDevice:
+                          type: string
+                        lvmEnabled:
+                          type: boolean
                     autoRecoverPowerState:
                       type: boolean
                       description: Automatically Power on VMs

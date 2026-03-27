@@ -20,19 +20,17 @@ var _ MappedNullable = &AddClusterRequestClusterServerConfigAnyOfOneOf6{}
 
 // AddClusterRequestClusterServerConfigAnyOfOneOf6 Configuration for HVM cluster servers
 type AddClusterRequestClusterServerConfigAnyOfOneOf6 struct {
-	CpuArch              *string `json:"cpuArch,omitempty"`
-	CpuModel             *string `json:"cpuModel,omitempty"`
-	DynamicPlacementMode *string `json:"dynamicPlacementMode,omitempty"`
-	PowerPolicy          *string `json:"powerPolicy,omitempty"`
-	StorageInterfaceName *string `json:"storageInterfaceName,omitempty"`
-	ComputeInterfaceName *string `json:"computeInterfaceName,omitempty"`
-	ComputeVlans         *string `json:"computeVlans,omitempty"`
-	OverlayInterfaceName *string `json:"overlayInterfaceName,omitempty"`
-	CreateUser           *bool   `json:"createUser,omitempty"`
-	// Default Repo Account is the repository to be used when pulling images.  Default behavior is to be anonymous, which does have limits on allowed image pulls from public Docker Repos.
-	DefaultRepoAccount NullableInt32 `json:"defaultRepoAccount,omitempty"`
-	// Act as Image Server. Set to on to use the Default Repo Account to pull images.
-	ImageServer          *string                `json:"imageServer,omitempty"`
+	CpuArch  *string `json:"cpuArch,omitempty"`
+	CpuModel *string `json:"cpuModel,omitempty"`
+	// When enabled, Dynamic Placement will automatically balance VMs across cluster hosts based on resource utilization. When disabled, VMs will only migrate to a new host if they are pinned to a specific host or failed over and not running on the preferred host.
+	DynamicPlacementMode *string                `json:"dynamicPlacementMode,omitempty"`
+	PowerPolicy          *string                `json:"powerPolicy,omitempty"`
+	VcpuPlacementMode    *string                `json:"vcpuPlacementMode,omitempty"`
+	StorageInterfaceName *string                `json:"storageInterfaceName,omitempty"`
+	ComputeInterfaceName *string                `json:"computeInterfaceName,omitempty"`
+	ComputeVlans         *string                `json:"computeVlans,omitempty"`
+	OverlayInterfaceName *string                `json:"overlayInterfaceName,omitempty"`
+	CreateUser           *bool                  `json:"createUser,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -181,6 +179,38 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf6) IsSetPowerPolicy() boo
 // SetPowerPolicy gets a reference to the given string and assigns it to the PowerPolicy field.
 func (o *AddClusterRequestClusterServerConfigAnyOfOneOf6) SetPowerPolicy(v string) {
 	o.PowerPolicy = &v
+}
+
+// GetVcpuPlacementMode returns the VcpuPlacementMode field value if set, zero value otherwise.
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf6) GetVcpuPlacementMode() string {
+	if o == nil || IsNil(o.VcpuPlacementMode) {
+		var ret string
+		return ret
+	}
+	return *o.VcpuPlacementMode
+}
+
+// GetVcpuPlacementModeOk returns a tuple with the VcpuPlacementMode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf6) GetVcpuPlacementModeOk() (*string, bool) {
+	if o == nil || IsNil(o.VcpuPlacementMode) {
+		return nil, false
+	}
+	return o.VcpuPlacementMode, true
+}
+
+// IsSetVcpuPlacementMode returns a boolean if a field has been set.
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf6) IsSetVcpuPlacementMode() bool {
+	if o != nil && !IsNil(o.VcpuPlacementMode) {
+		return true
+	}
+
+	return false
+}
+
+// SetVcpuPlacementMode gets a reference to the given string and assigns it to the VcpuPlacementMode field.
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf6) SetVcpuPlacementMode(v string) {
+	o.VcpuPlacementMode = &v
 }
 
 // GetStorageInterfaceName returns the StorageInterfaceName field value if set, zero value otherwise.
@@ -343,81 +373,6 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf6) SetCreateUser(v bool) 
 	o.CreateUser = &v
 }
 
-// GetDefaultRepoAccount returns the DefaultRepoAccount field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf6) GetDefaultRepoAccount() int32 {
-	if o == nil || IsNil(o.DefaultRepoAccount.Get()) {
-		var ret int32
-		return ret
-	}
-	return *o.DefaultRepoAccount.Get()
-}
-
-// GetDefaultRepoAccountOk returns a tuple with the DefaultRepoAccount field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf6) GetDefaultRepoAccountOk() (*int32, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.DefaultRepoAccount.Get(), o.DefaultRepoAccount.IsSet()
-}
-
-// IsSetDefaultRepoAccount returns a boolean if a field has been set.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf6) IsSetDefaultRepoAccount() bool {
-	if o != nil && o.DefaultRepoAccount.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetDefaultRepoAccount gets a reference to the given NullableInt32 and assigns it to the DefaultRepoAccount field.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf6) SetDefaultRepoAccount(v int32) {
-	o.DefaultRepoAccount.Set(&v)
-}
-
-// SetDefaultRepoAccountNil sets the value for DefaultRepoAccount to be an explicit nil
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf6) SetDefaultRepoAccountNil() {
-	o.DefaultRepoAccount.Set(nil)
-}
-
-// UnsetDefaultRepoAccount ensures that no value is present for DefaultRepoAccount, not even an explicit nil
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf6) UnsetDefaultRepoAccount() {
-	o.DefaultRepoAccount.Unset()
-}
-
-// GetImageServer returns the ImageServer field value if set, zero value otherwise.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf6) GetImageServer() string {
-	if o == nil || IsNil(o.ImageServer) {
-		var ret string
-		return ret
-	}
-	return *o.ImageServer
-}
-
-// GetImageServerOk returns a tuple with the ImageServer field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf6) GetImageServerOk() (*string, bool) {
-	if o == nil || IsNil(o.ImageServer) {
-		return nil, false
-	}
-	return o.ImageServer, true
-}
-
-// IsSetImageServer returns a boolean if a field has been set.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf6) IsSetImageServer() bool {
-	if o != nil && !IsNil(o.ImageServer) {
-		return true
-	}
-
-	return false
-}
-
-// SetImageServer gets a reference to the given string and assigns it to the ImageServer field.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf6) SetImageServer(v string) {
-	o.ImageServer = &v
-}
-
 func (o AddClusterRequestClusterServerConfigAnyOfOneOf6) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -440,6 +395,9 @@ func (o AddClusterRequestClusterServerConfigAnyOfOneOf6) ToMap() (map[string]int
 	if !IsNil(o.PowerPolicy) {
 		toSerialize["powerPolicy"] = o.PowerPolicy
 	}
+	if !IsNil(o.VcpuPlacementMode) {
+		toSerialize["vcpuPlacementMode"] = o.VcpuPlacementMode
+	}
 	if !IsNil(o.StorageInterfaceName) {
 		toSerialize["storageInterfaceName"] = o.StorageInterfaceName
 	}
@@ -454,12 +412,6 @@ func (o AddClusterRequestClusterServerConfigAnyOfOneOf6) ToMap() (map[string]int
 	}
 	if !IsNil(o.CreateUser) {
 		toSerialize["createUser"] = o.CreateUser
-	}
-	if o.DefaultRepoAccount.IsSet() {
-		toSerialize["defaultRepoAccount"] = o.DefaultRepoAccount.Get()
-	}
-	if !IsNil(o.ImageServer) {
-		toSerialize["imageServer"] = o.ImageServer
 	}
 
 	for key, value := range o.AdditionalProperties {

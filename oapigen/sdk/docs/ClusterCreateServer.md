@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Plan** | [**ClusterCreateServerPlan**](ClusterCreateServerPlan.md) |  | 
 **ServicePlanOptions** | Pointer to [**ClusterCreateServerServicePlanOptions**](ClusterCreateServerServicePlanOptions.md) |  | [optional] 
 **Volumes** | Pointer to [**[]ClusterCreateServerVolumesInner**](ClusterCreateServerVolumesInner.md) | The (optional) volumes parameter is for LV configuration, can create additional LVs at provision It should be passed as an array of Objects | [optional] 
+**Network** | Pointer to [**ClusterCreateServerNetwork**](ClusterCreateServerNetwork.md) |  | [optional] 
 **NetworkInterfaces** | Pointer to [**[]ClusterCreateServerNetworkInterfacesInner**](ClusterCreateServerNetworkInterfacesInner.md) | The networkInterfaces parameter is for network configuration.  The Options API /api/options/zoneNetworkOptions can be used to see which options are available.  It should be passed as an array of Objects with the following attributes  | [optional] 
 **SecurityGroups** | Pointer to **[]string** | Key for security group configuration. | [optional] 
 **Visibility** | Pointer to **string** | Visibility for server host | [optional] [default to "private"]
@@ -20,9 +21,14 @@ Name | Type | Description | Notes
 **Tags** | Pointer to [**[]ClusterCreateServerTagsInner**](ClusterCreateServerTagsInner.md) | Metadata tags, Array of objects having a name and value. | [optional] 
 **Labels** | Pointer to **[]string** | Array of strings (keywords). This will set labels on the server and also on the cluster as well by default. | [optional] 
 **SshHosts** | Pointer to [**[]ClusterCreateServerSshHostsInner**](ClusterCreateServerSshHostsInner.md) | Array of Host IPs and Names. This is used in conjunction with sshUsername and sshPassword/sshKeyPair to add existing hosts such as with HPE VM clusters. | [optional] 
+**SshMasterHosts** | Pointer to **string** | A string consisting of comma-separated master host IP addresses. | [optional] 
+**SshWorkerHosts** | Pointer to **string** | A string consisting of comma-separated worker host IP addresses. | [optional] 
+**SshPort** | Pointer to **int64** | The port which the worker&#39;s SSH server is listening on. | [optional] 
 **SshUsername** | Pointer to **string** | SSH Username | [optional] 
 **SshPassword** | Pointer to **NullableString** | SSH Password | [optional] 
 **SshKeyPair** | Pointer to [**ClusterCreateServerSshKeyPair**](ClusterCreateServerSshKeyPair.md) |  | [optional] 
+**DataDevice** | Pointer to **string** |  | [optional] 
+**LvmEnabled** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -177,6 +183,31 @@ SetVolumes sets Volumes field to given value.
 `func (o *ClusterCreateServer) HasVolumes() bool`
 
 HasVolumes returns a boolean if a field has been set.
+
+### GetNetwork
+
+`func (o *ClusterCreateServer) GetNetwork() ClusterCreateServerNetwork`
+
+GetNetwork returns the Network field if non-nil, zero value otherwise.
+
+### GetNetworkOk
+
+`func (o *ClusterCreateServer) GetNetworkOk() (*ClusterCreateServerNetwork, bool)`
+
+GetNetworkOk returns a tuple with the Network field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNetwork
+
+`func (o *ClusterCreateServer) SetNetwork(v ClusterCreateServerNetwork)`
+
+SetNetwork sets Network field to given value.
+
+### HasNetwork
+
+`func (o *ClusterCreateServer) HasNetwork() bool`
+
+HasNetwork returns a boolean if a field has been set.
 
 ### GetNetworkInterfaces
 
@@ -448,6 +479,81 @@ SetSshHosts sets SshHosts field to given value.
 
 HasSshHosts returns a boolean if a field has been set.
 
+### GetSshMasterHosts
+
+`func (o *ClusterCreateServer) GetSshMasterHosts() string`
+
+GetSshMasterHosts returns the SshMasterHosts field if non-nil, zero value otherwise.
+
+### GetSshMasterHostsOk
+
+`func (o *ClusterCreateServer) GetSshMasterHostsOk() (*string, bool)`
+
+GetSshMasterHostsOk returns a tuple with the SshMasterHosts field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSshMasterHosts
+
+`func (o *ClusterCreateServer) SetSshMasterHosts(v string)`
+
+SetSshMasterHosts sets SshMasterHosts field to given value.
+
+### HasSshMasterHosts
+
+`func (o *ClusterCreateServer) HasSshMasterHosts() bool`
+
+HasSshMasterHosts returns a boolean if a field has been set.
+
+### GetSshWorkerHosts
+
+`func (o *ClusterCreateServer) GetSshWorkerHosts() string`
+
+GetSshWorkerHosts returns the SshWorkerHosts field if non-nil, zero value otherwise.
+
+### GetSshWorkerHostsOk
+
+`func (o *ClusterCreateServer) GetSshWorkerHostsOk() (*string, bool)`
+
+GetSshWorkerHostsOk returns a tuple with the SshWorkerHosts field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSshWorkerHosts
+
+`func (o *ClusterCreateServer) SetSshWorkerHosts(v string)`
+
+SetSshWorkerHosts sets SshWorkerHosts field to given value.
+
+### HasSshWorkerHosts
+
+`func (o *ClusterCreateServer) HasSshWorkerHosts() bool`
+
+HasSshWorkerHosts returns a boolean if a field has been set.
+
+### GetSshPort
+
+`func (o *ClusterCreateServer) GetSshPort() int64`
+
+GetSshPort returns the SshPort field if non-nil, zero value otherwise.
+
+### GetSshPortOk
+
+`func (o *ClusterCreateServer) GetSshPortOk() (*int64, bool)`
+
+GetSshPortOk returns a tuple with the SshPort field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSshPort
+
+`func (o *ClusterCreateServer) SetSshPort(v int64)`
+
+SetSshPort sets SshPort field to given value.
+
+### HasSshPort
+
+`func (o *ClusterCreateServer) HasSshPort() bool`
+
+HasSshPort returns a boolean if a field has been set.
+
 ### GetSshUsername
 
 `func (o *ClusterCreateServer) GetSshUsername() string`
@@ -532,6 +638,56 @@ SetSshKeyPair sets SshKeyPair field to given value.
 `func (o *ClusterCreateServer) HasSshKeyPair() bool`
 
 HasSshKeyPair returns a boolean if a field has been set.
+
+### GetDataDevice
+
+`func (o *ClusterCreateServer) GetDataDevice() string`
+
+GetDataDevice returns the DataDevice field if non-nil, zero value otherwise.
+
+### GetDataDeviceOk
+
+`func (o *ClusterCreateServer) GetDataDeviceOk() (*string, bool)`
+
+GetDataDeviceOk returns a tuple with the DataDevice field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDataDevice
+
+`func (o *ClusterCreateServer) SetDataDevice(v string)`
+
+SetDataDevice sets DataDevice field to given value.
+
+### HasDataDevice
+
+`func (o *ClusterCreateServer) HasDataDevice() bool`
+
+HasDataDevice returns a boolean if a field has been set.
+
+### GetLvmEnabled
+
+`func (o *ClusterCreateServer) GetLvmEnabled() bool`
+
+GetLvmEnabled returns the LvmEnabled field if non-nil, zero value otherwise.
+
+### GetLvmEnabledOk
+
+`func (o *ClusterCreateServer) GetLvmEnabledOk() (*bool, bool)`
+
+GetLvmEnabledOk returns a tuple with the LvmEnabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLvmEnabled
+
+`func (o *ClusterCreateServer) SetLvmEnabled(v bool)`
+
+SetLvmEnabled sets LvmEnabled field to given value.
+
+### HasLvmEnabled
+
+`func (o *ClusterCreateServer) HasLvmEnabled() bool`
+
+HasLvmEnabled returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

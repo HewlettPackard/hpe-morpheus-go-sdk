@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int64** | Key Pair ID | [optional] 
+**Id** | Pointer to **int64** | Key Pair ID. | [optional] 
 
 ## Methods
 

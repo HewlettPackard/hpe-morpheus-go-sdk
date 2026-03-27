@@ -18,9 +18,9 @@ import (
 // checks if the ClusterCreateServerSshKeyPair type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ClusterCreateServerSshKeyPair{}
 
-// ClusterCreateServerSshKeyPair SSH Key.  See `/api/options/privateKeyPairs` for available private key pairs.
+// ClusterCreateServerSshKeyPair SSH Key. sshUsername is also required if using an SSH key. See `/api/options/privateKeyPairs` for available private key pairs.
 type ClusterCreateServerSshKeyPair struct {
-	// Key Pair ID
+	// Key Pair ID.
 	Id                   *int64                 `json:"id,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
