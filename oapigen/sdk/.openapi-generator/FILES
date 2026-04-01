@@ -4518,7 +4518,6 @@ docs/InstanceServicePlanRootStorageTypesInner.md
 docs/InstanceServicePlanStorageType.md
 docs/InstanceServicePlanStorageTypesInner.md
 docs/InstanceSnapshot.md
-docs/InstanceSnapshotSnapshot.md
 docs/InstanceSnapshots.md
 docs/InstanceSnapshotsSnapshotsInner.md
 docs/InstanceSnapshotsSnapshotsInnerSnapshotFilesInner.md
@@ -6795,7 +6794,6 @@ docs/RefreshLoadBalancer200Response.md
 docs/RefreshNetworkServer200Response.md
 docs/RefreshStateInstance200Response.md
 docs/Reindex200Response.md
-docs/ReleaseNetworkFloatingIp200Response.md
 docs/RemoveAppInstance200Response.md
 docs/RemoveAppInstanceRequest.md
 docs/RemoveExecuteSchedules200Response.md
@@ -13364,7 +13362,6 @@ model_instance_service_plan_root_storage_types_inner.go
 model_instance_service_plan_storage_type.go
 model_instance_service_plan_storage_types_inner.go
 model_instance_snapshot.go
-model_instance_snapshot_snapshot.go
 model_instance_snapshots.go
 model_instance_snapshots_snapshots_inner.go
 model_instance_snapshots_snapshots_inner_snapshot_files_inner.go
@@ -15607,7 +15604,6 @@ model_refresh_load_balancer_200_response.go
 model_refresh_network_server_200_response.go
 model_refresh_state_instance_200_response.go
 model_reindex_200_response.go
-model_release_network_floating_ip_200_response.go
 model_remove_app_instance_200_response.go
 model_remove_app_instance_request.go
 model_remove_execute_schedules_200_response.go

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Snapshot** | Pointer to [**InstanceSnapshotSnapshot**](InstanceSnapshotSnapshot.md) |  | [optional] 
+**Snapshot** | Pointer to [**SnapshotHostRequestSnapshot**](SnapshotHostRequestSnapshot.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetSnapshot
 
-`func (o *InstanceSnapshot) GetSnapshot() InstanceSnapshotSnapshot`
+`func (o *InstanceSnapshot) GetSnapshot() SnapshotHostRequestSnapshot`
 
 GetSnapshot returns the Snapshot field if non-nil, zero value otherwise.
 
 ### GetSnapshotOk
 
-`func (o *InstanceSnapshot) GetSnapshotOk() (*InstanceSnapshotSnapshot, bool)`
+`func (o *InstanceSnapshot) GetSnapshotOk() (*SnapshotHostRequestSnapshot, bool)`
 
 GetSnapshotOk returns a tuple with the Snapshot field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSnapshot
 
-`func (o *InstanceSnapshot) SetSnapshot(v InstanceSnapshotSnapshot)`
+`func (o *InstanceSnapshot) SetSnapshot(v SnapshotHostRequestSnapshot)`
 
 SetSnapshot sets Snapshot field to given value.
 

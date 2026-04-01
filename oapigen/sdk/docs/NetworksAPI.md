@@ -7485,7 +7485,7 @@ Name | Type | Description  | Notes
 
 ## ReleaseNetworkFloatingIp
 
-> ReleaseNetworkFloatingIp200Response ReleaseNetworkFloatingIp(ctx, id).Execute()
+> ContainersDetachFloatingIp200Response ReleaseNetworkFloatingIp(ctx, id).Execute()
 
 Release a Floating IP
 
@@ -7513,7 +7513,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `NetworksAPI.ReleaseNetworkFloatingIp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ReleaseNetworkFloatingIp`: ReleaseNetworkFloatingIp200Response
+	// response from `ReleaseNetworkFloatingIp`: ContainersDetachFloatingIp200Response
 	fmt.Fprintf(os.Stdout, "Response from `NetworksAPI.ReleaseNetworkFloatingIp`: %v\n", resp)
 }
 ```
@@ -7537,7 +7537,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ReleaseNetworkFloatingIp200Response**](ReleaseNetworkFloatingIp200Response.md)
+[**ContainersDetachFloatingIp200Response**](ContainersDetachFloatingIp200Response.md)
 
 ### Authorization
 
