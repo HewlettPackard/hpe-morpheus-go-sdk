@@ -20,7 +20,8 @@ var _ MappedNullable = &ListOsTypes200ResponseAllOfOsTypesInner{}
 
 // ListOsTypes200ResponseAllOfOsTypesInner struct for ListOsTypes200ResponseAllOfOsTypesInner
 type ListOsTypes200ResponseAllOfOsTypesInner struct {
-	Id *int64 `json:"id,omitempty"`
+	Id   *int64  `json:"id,omitempty"`
+	Code *string `json:"code,omitempty"`
 	// The name of the osType.
 	Name *string `json:"name,omitempty"`
 	// The description of the osType.
@@ -98,6 +99,38 @@ func (o *ListOsTypes200ResponseAllOfOsTypesInner) IsSetId() bool {
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListOsTypes200ResponseAllOfOsTypesInner) SetId(v int64) {
 	o.Id = &v
+}
+
+// GetCode returns the Code field value if set, zero value otherwise.
+func (o *ListOsTypes200ResponseAllOfOsTypesInner) GetCode() string {
+	if o == nil || IsNil(o.Code) {
+		var ret string
+		return ret
+	}
+	return *o.Code
+}
+
+// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ListOsTypes200ResponseAllOfOsTypesInner) GetCodeOk() (*string, bool) {
+	if o == nil || IsNil(o.Code) {
+		return nil, false
+	}
+	return o.Code, true
+}
+
+// IsSetCode returns a boolean if a field has been set.
+func (o *ListOsTypes200ResponseAllOfOsTypesInner) IsSetCode() bool {
+	if o != nil && !IsNil(o.Code) {
+		return true
+	}
+
+	return false
+}
+
+// SetCode gets a reference to the given string and assigns it to the Code field.
+func (o *ListOsTypes200ResponseAllOfOsTypesInner) SetCode(v string) {
+	o.Code = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -617,6 +650,9 @@ func (o ListOsTypes200ResponseAllOfOsTypesInner) ToMap() (map[string]interface{}
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
+	}
+	if !IsNil(o.Code) {
+		toSerialize["code"] = o.Code
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
