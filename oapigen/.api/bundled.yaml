@@ -170250,6 +170250,8 @@ paths:
                             id:
                               type: integer
                               format: int64
+                            code:
+                              type: string
                             name:
                               type: string
                               description: |
