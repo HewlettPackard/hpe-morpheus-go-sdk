@@ -69,6 +69,7 @@ type Option struct {
 		AddOn                      string `json:"addon"`
 		AddOnPosition              string `json:"addonPosition"`
 		AllowDuplicates            bool   `json:"allowDuplicates"`
+		AllowReadonly              bool   `json:"allowReadonly"`
 		AsObject                   bool   `json:"asObject"`
 		CanPeek                    bool   `json:"canPeek"`
 		CloudCodeField             string `json:"cloudCodeField"`
