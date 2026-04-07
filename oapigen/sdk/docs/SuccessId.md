@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Success** | Pointer to **bool** |  | [optional] 
-**Id** | Pointer to **NullableInt32** |  | [optional] 
+**Id** | Pointer to **NullableInt64** |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasSuccess returns a boolean if a field has been set.
 
 ### GetId
 
-`func (o *SuccessId) GetId() int32`
+`func (o *SuccessId) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *SuccessId) GetIdOk() (*int32, bool)`
+`func (o *SuccessId) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *SuccessId) SetId(v int32)`
+`func (o *SuccessId) SetId(v int64)`
 
 SetId sets Id field to given value.
 

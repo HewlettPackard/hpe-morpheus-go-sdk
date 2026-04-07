@@ -40198,6 +40198,7 @@ paths:
                     type:
                       - integer
                       - 'null'
+                    format: int64
               examples:
                 Cluster Layout Response:
                   value:
@@ -170266,6 +170267,18 @@ paths:
                               type: string
                               description: |
                                 The platform of the osType. 
+                            owner:
+                              oneOf:
+                                - type: string
+                                - type: object
+                                  properties:
+                                    id:
+                                      type: integer
+                                      format: int64
+                                    name:
+                                      type: string
+                              description: |
+                                The owner  of the osType.
                             category:
                               type:
                                 - string

@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** | The name of the osType.  | [optional] 
 **Description** | Pointer to **NullableString** | The description of the osType.   | [optional] 
 **Platform** | Pointer to **string** | The platform of the osType.   | [optional] 
+**Owner** | Pointer to [**GetOsType200ResponseOsTypeOwner**](GetOsType200ResponseOsTypeOwner.md) |  | [optional] 
 **Category** | Pointer to **NullableString** | The category of the osType.  | [optional] 
 **Vendor** | Pointer to **NullableString** | The vendor of the osType.  | [optional] 
 **OsName** | Pointer to **NullableString** | The osName of the osType.  | [optional] 
@@ -173,6 +174,31 @@ SetPlatform sets Platform field to given value.
 `func (o *OsType) HasPlatform() bool`
 
 HasPlatform returns a boolean if a field has been set.
+
+### GetOwner
+
+`func (o *OsType) GetOwner() GetOsType200ResponseOsTypeOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *OsType) GetOwnerOk() (*GetOsType200ResponseOsTypeOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *OsType) SetOwner(v GetOsType200ResponseOsTypeOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *OsType) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
 
 ### GetCategory
 
