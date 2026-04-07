@@ -90,6 +90,8 @@ type Option struct {
 		GroupId                    string `json:"groupId"`
 		GroupField                 string `json:"groupField"`
 		GroupFieldType             string `json:"groupFieldType"`
+		ImageField                 string `json:"imageField"`
+		ImageId                    string `json:"imageId"`
 		InstanceTypeCode           string `json:"instanceTypeCode"`
 		InstanceTypeFieldCode      string `json:"instanceTypeFieldCode"`
 		InstanceTypeFieldType      string `json:"instanceTypeFieldType"`
@@ -113,6 +115,7 @@ type Option struct {
 		ShowPricing                bool   `json:"showPricing"`
 		Step                       int64  `json:"step"`
 		Rows                       int64  `json:"rows"`
+		VirtualImageFieldType      string `json:"virtualImageFieldType"`
 	} `json:"config"`
 	DisplayOrder          int64       `json:"displayOrder"`
 	WrapperClass          interface{} `json:"wrapperClass"`
