@@ -138,11 +138,19 @@ func (client *Client) FindResourcePoolByName(cloudId int64, name string) (*Respo
 		return resp, err
 	}
 	listResult := resp.Result.(*ListResourcePoolsResult)
-	resourcePoolCount := len(*listResult.ResourcePools)
+	// Go through listResult and find any entries with the matching name. Check the length of this new list
+	// if the list has more than one entry return an error
+	var matchingPools []ResourcePool
+	for _, pool := range *listResult.ResourcePools {
+		if pool.Name == name {
+			matchingPools = append(matchingPools, pool)
+		}
+	}
+	resourcePoolCount := len(matchingPools)
 	if resourcePoolCount != 1 {
 		return resp, fmt.Errorf("found %d resourcePools for %v", resourcePoolCount, name)
 	}
-	firstRecord := (*listResult.ResourcePools)[0]
+	firstRecord := matchingPools[0]
 	resourcePoolID := firstRecord.ID
 	return client.GetResourcePool(cloudId, resourcePoolID, &Request{})
 }
