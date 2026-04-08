@@ -27,7 +27,8 @@ type OsType struct {
 	// The description of the osType.
 	Description NullableString `json:"description,omitempty"`
 	// The platform of the osType.
-	Platform *string `json:"platform,omitempty"`
+	Platform *string                          `json:"platform,omitempty"`
+	Owner    *GetOsType200ResponseOsTypeOwner `json:"owner,omitempty"`
 	// The category of the osType.
 	Category NullableString `json:"category,omitempty"`
 	// The vendor of the osType.
@@ -238,6 +239,38 @@ func (o *OsType) IsSetPlatform() bool {
 // SetPlatform gets a reference to the given string and assigns it to the Platform field.
 func (o *OsType) SetPlatform(v string) {
 	o.Platform = &v
+}
+
+// GetOwner returns the Owner field value if set, zero value otherwise.
+func (o *OsType) GetOwner() GetOsType200ResponseOsTypeOwner {
+	if o == nil || IsNil(o.Owner) {
+		var ret GetOsType200ResponseOsTypeOwner
+		return ret
+	}
+	return *o.Owner
+}
+
+// GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OsType) GetOwnerOk() (*GetOsType200ResponseOsTypeOwner, bool) {
+	if o == nil || IsNil(o.Owner) {
+		return nil, false
+	}
+	return o.Owner, true
+}
+
+// IsSetOwner returns a boolean if a field has been set.
+func (o *OsType) IsSetOwner() bool {
+	if o != nil && !IsNil(o.Owner) {
+		return true
+	}
+
+	return false
+}
+
+// SetOwner gets a reference to the given GetOsType200ResponseOsTypeOwner and assigns it to the Owner field.
+func (o *OsType) SetOwner(v GetOsType200ResponseOsTypeOwner) {
+	o.Owner = &v
 }
 
 // GetCategory returns the Category field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -662,6 +695,9 @@ func (o OsType) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Platform) {
 		toSerialize["platform"] = o.Platform
+	}
+	if !IsNil(o.Owner) {
+		toSerialize["owner"] = o.Owner
 	}
 	if o.Category.IsSet() {
 		toSerialize["category"] = o.Category.Get()
