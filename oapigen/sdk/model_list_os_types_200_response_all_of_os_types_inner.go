@@ -27,7 +27,8 @@ type ListOsTypes200ResponseAllOfOsTypesInner struct {
 	// The description of the osType.
 	Description NullableString `json:"description,omitempty"`
 	// The platform of the osType.
-	Platform *string `json:"platform,omitempty"`
+	Platform *string                                       `json:"platform,omitempty"`
+	Owner    *ListOsTypes200ResponseAllOfOsTypesInnerOwner `json:"owner,omitempty"`
 	// The category of the osType.
 	Category NullableString `json:"category,omitempty"`
 	// The vendor of the osType.
@@ -238,6 +239,38 @@ func (o *ListOsTypes200ResponseAllOfOsTypesInner) IsSetPlatform() bool {
 // SetPlatform gets a reference to the given string and assigns it to the Platform field.
 func (o *ListOsTypes200ResponseAllOfOsTypesInner) SetPlatform(v string) {
 	o.Platform = &v
+}
+
+// GetOwner returns the Owner field value if set, zero value otherwise.
+func (o *ListOsTypes200ResponseAllOfOsTypesInner) GetOwner() ListOsTypes200ResponseAllOfOsTypesInnerOwner {
+	if o == nil || IsNil(o.Owner) {
+		var ret ListOsTypes200ResponseAllOfOsTypesInnerOwner
+		return ret
+	}
+	return *o.Owner
+}
+
+// GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ListOsTypes200ResponseAllOfOsTypesInner) GetOwnerOk() (*ListOsTypes200ResponseAllOfOsTypesInnerOwner, bool) {
+	if o == nil || IsNil(o.Owner) {
+		return nil, false
+	}
+	return o.Owner, true
+}
+
+// IsSetOwner returns a boolean if a field has been set.
+func (o *ListOsTypes200ResponseAllOfOsTypesInner) IsSetOwner() bool {
+	if o != nil && !IsNil(o.Owner) {
+		return true
+	}
+
+	return false
+}
+
+// SetOwner gets a reference to the given ListOsTypes200ResponseAllOfOsTypesInnerOwner and assigns it to the Owner field.
+func (o *ListOsTypes200ResponseAllOfOsTypesInner) SetOwner(v ListOsTypes200ResponseAllOfOsTypesInnerOwner) {
+	o.Owner = &v
 }
 
 // GetCategory returns the Category field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -662,6 +695,9 @@ func (o ListOsTypes200ResponseAllOfOsTypesInner) ToMap() (map[string]interface{}
 	}
 	if !IsNil(o.Platform) {
 		toSerialize["platform"] = o.Platform
+	}
+	if !IsNil(o.Owner) {
+		toSerialize["owner"] = o.Owner
 	}
 	if o.Category.IsSet() {
 		toSerialize["category"] = o.Category.Get()
