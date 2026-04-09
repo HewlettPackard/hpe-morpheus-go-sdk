@@ -32,7 +32,7 @@ type InstanceCreate struct {
 	// Map of custom options depending on selected service plan.
 	ServicePlanOptions map[string]interface{} `json:"servicePlanOptions,omitempty"`
 	// Key for security group configuration. It should be passed as an array of objects containing the id of the security group to assign the instance to.
-	SecurityGroups []map[string]interface{} `json:"securityGroups,omitempty"`
+	SecurityGroups []InstanceCreateSecurityGroupsInner `json:"securityGroups,omitempty"`
 	// The (optional) volumes parameter is for LV configuration, can create additional LVs at provision It should be passed as an array of
 	Volumes []InstanceCreateVolumesInner `json:"volumes,omitempty"`
 	// The networkInterfaces parameter is for network configuration.  The Options API `/api/options/zoneNetworkOptions?zoneId=5&provisionTypeId=10` can be used to see which options are available.
@@ -269,9 +269,9 @@ func (o *InstanceCreate) SetServicePlanOptions(v map[string]interface{}) {
 }
 
 // GetSecurityGroups returns the SecurityGroups field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *InstanceCreate) GetSecurityGroups() []map[string]interface{} {
+func (o *InstanceCreate) GetSecurityGroups() []InstanceCreateSecurityGroupsInner {
 	if o == nil {
-		var ret []map[string]interface{}
+		var ret []InstanceCreateSecurityGroupsInner
 		return ret
 	}
 	return o.SecurityGroups
@@ -280,7 +280,7 @@ func (o *InstanceCreate) GetSecurityGroups() []map[string]interface{} {
 // GetSecurityGroupsOk returns a tuple with the SecurityGroups field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *InstanceCreate) GetSecurityGroupsOk() ([]map[string]interface{}, bool) {
+func (o *InstanceCreate) GetSecurityGroupsOk() ([]InstanceCreateSecurityGroupsInner, bool) {
 	if o == nil || IsNil(o.SecurityGroups) {
 		return nil, false
 	}
@@ -296,8 +296,8 @@ func (o *InstanceCreate) IsSetSecurityGroups() bool {
 	return false
 }
 
-// SetSecurityGroups gets a reference to the given []map[string]interface{} and assigns it to the SecurityGroups field.
-func (o *InstanceCreate) SetSecurityGroups(v []map[string]interface{}) {
+// SetSecurityGroups gets a reference to the given []InstanceCreateSecurityGroupsInner and assigns it to the SecurityGroups field.
+func (o *InstanceCreate) SetSecurityGroups(v []InstanceCreateSecurityGroupsInner) {
 	o.SecurityGroups = v
 }
 

@@ -714,6 +714,7 @@ docs/AddInstanceRequestInstancePlan.md
 docs/AddInstanceRequestInstanceSite.md
 docs/AddInstanceRequestMetadataInner.md
 docs/AddInstanceRequestPortsInner.md
+docs/AddInstanceRequestSecurityGroupsInner.md
 docs/AddInstanceRequestTagsInner.md
 docs/AddInstanceRequestVolumesInner.md
 docs/AddInstanceRequestVolumesInnerDatastoreId.md
@@ -4437,6 +4438,7 @@ docs/InstanceCreateInstanceSite.md
 docs/InstanceCreateMetadataInner.md
 docs/InstanceCreateNetwork.md
 docs/InstanceCreatePortsInner.md
+docs/InstanceCreateSecurityGroupsInner.md
 docs/InstanceCreateSuccess.md
 docs/InstanceCreateSuccessInstance.md
 docs/InstanceCreateSuccessInstanceCloud.md
@@ -9601,6 +9603,7 @@ model_add_instance_request_instance_plan.go
 model_add_instance_request_instance_site.go
 model_add_instance_request_metadata_inner.go
 model_add_instance_request_ports_inner.go
+model_add_instance_request_security_groups_inner.go
 model_add_instance_request_tags_inner.go
 model_add_instance_request_volumes_inner.go
 model_add_instance_request_volumes_inner_datastore_id.go
@@ -13287,6 +13290,7 @@ model_instance_create_instance_site.go
 model_instance_create_metadata_inner.go
 model_instance_create_network.go
 model_instance_create_ports_inner.go
+model_instance_create_security_groups_inner.go
 model_instance_create_success.go
 model_instance_create_success_instance.go
 model_instance_create_success_instance_cloud.go

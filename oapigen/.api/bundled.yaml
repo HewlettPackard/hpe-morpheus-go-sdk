@@ -19332,6 +19332,12 @@ paths:
                                             - 'null'
                                           description: Skipping Agent installation will result in a lack of logging and guest operating system statistics. Automation scripts may also be adversely affected.
                                           default: false
+                                        createUser:
+                                          type:
+                                            - boolean
+                                            - 'null'
+                                          description: Create user
+                                          default: false
                                         isEC2:
                                           type: string
                                           description: Amazon Cloud Type
@@ -19352,6 +19358,9 @@ paths:
                                         kmsKeyId:
                                           type: string
                                           description: KMS Key ID
+                                        resourcePoolId:
+                                          type: string
+                                          description: Resource Pool ID
                                     - title: Generic Instance Configuration
                                       type: object
                                       additionalProperties: true
@@ -76461,7 +76470,7 @@ paths:
                                 createUser:
                                   type: boolean
                                 isEC2:
-                                  type: boolean
+                                  type: string
                                 isVpcSelectable:
                                   type: boolean
                                 noAgent:
@@ -76547,6 +76556,22 @@ paths:
                                       type: string
                                 type:
                                   type: string
+                                kmsKeyId:
+                                  type:
+                                    - string
+                                    - 'null'
+                                instanceProfile:
+                                  type:
+                                    - string
+                                    - 'null'
+                                availabilityId:
+                                  type:
+                                    - string
+                                    - 'null'
+                                publicIpType:
+                                  type:
+                                    - string
+                                    - 'null'
                                 instanceContext:
                                   type: string
                                 memoryDisplay:
@@ -77603,7 +77628,7 @@ paths:
                         environment: demo
                         config:
                           createUser: true
-                          isEC2: false
+                          isEC2: 'false'
                           isVpcSelectable: true
                           noAgent: false
                           smbiosAssetTag: null
@@ -77825,7 +77850,7 @@ paths:
                           poolProviderType: null
                           isVpcSelectable: false
                           instanceProfile: null
-                          isEC2: false
+                          isEC2: 'false'
                           resourcePoolId: 129
                           availabilityId: null
                           publicIpType: elasticIp
@@ -78049,7 +78074,7 @@ paths:
                           alibabaSecurityGroup: 45872
                           isVpcSelectable: true
                           internetAccess: elasticIp
-                          isEC2: false
+                          isEC2: 'false'
                           resourcePoolId: 4549
                           createUser: false
                           expose: []
@@ -78308,6 +78333,9 @@ paths:
                   description: Key for security group configuration. It should be passed as an array of objects containing the id of the security group to assign the instance to.
                   items:
                     type: object
+                    properties:
+                      id:
+                        type: string
                 volumes:
                   type: array
                   description: The (optional) volumes parameter is for LV configuration, can create additional LVs at provision It should be passed as an array of
@@ -79392,7 +79420,7 @@ paths:
                         poolProviderType: null
                         isVpcSelectable: false
                         instanceProfile: null
-                        isEC2: false
+                        isEC2: 'false'
                         resourcePoolId: 129
                         availabilityId: null
                         publicIpType: elasticIp

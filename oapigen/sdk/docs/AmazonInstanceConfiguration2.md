@@ -5,12 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **NoAgent** | Pointer to **NullableBool** | Skipping Agent installation will result in a lack of logging and guest operating system statistics. Automation scripts may also be adversely affected. | [optional] [default to false]
+**CreateUser** | Pointer to **NullableBool** | Create user | [optional] [default to false]
 **IsEC2** | Pointer to **string** | Amazon Cloud Type | [optional] [default to "false"]
 **AvailabilityId** | Pointer to **string** | Amazon Zone | [optional] 
 **SecurityId** | Pointer to **string** | Security Group | [optional] 
 **PublicIpType** | Pointer to **string** | Public IP | [optional] 
 **InstanceProfile** | Pointer to **string** | IAM Profile | [optional] 
 **KmsKeyId** | Pointer to **string** | KMS Key ID | [optional] 
+**ResourcePoolId** | Pointer to **string** | Resource Pool ID | [optional] 
 
 ## Methods
 
@@ -66,6 +68,41 @@ HasNoAgent returns a boolean if a field has been set.
 `func (o *AmazonInstanceConfiguration2) UnsetNoAgent()`
 
 UnsetNoAgent ensures that no value is present for NoAgent, not even an explicit nil
+### GetCreateUser
+
+`func (o *AmazonInstanceConfiguration2) GetCreateUser() bool`
+
+GetCreateUser returns the CreateUser field if non-nil, zero value otherwise.
+
+### GetCreateUserOk
+
+`func (o *AmazonInstanceConfiguration2) GetCreateUserOk() (*bool, bool)`
+
+GetCreateUserOk returns a tuple with the CreateUser field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreateUser
+
+`func (o *AmazonInstanceConfiguration2) SetCreateUser(v bool)`
+
+SetCreateUser sets CreateUser field to given value.
+
+### HasCreateUser
+
+`func (o *AmazonInstanceConfiguration2) HasCreateUser() bool`
+
+HasCreateUser returns a boolean if a field has been set.
+
+### SetCreateUserNil
+
+`func (o *AmazonInstanceConfiguration2) SetCreateUserNil(b bool)`
+
+ SetCreateUserNil sets the value for CreateUser to be an explicit nil
+
+### UnsetCreateUser
+`func (o *AmazonInstanceConfiguration2) UnsetCreateUser()`
+
+UnsetCreateUser ensures that no value is present for CreateUser, not even an explicit nil
 ### GetIsEC2
 
 `func (o *AmazonInstanceConfiguration2) GetIsEC2() string`
@@ -215,6 +252,31 @@ SetKmsKeyId sets KmsKeyId field to given value.
 `func (o *AmazonInstanceConfiguration2) HasKmsKeyId() bool`
 
 HasKmsKeyId returns a boolean if a field has been set.
+
+### GetResourcePoolId
+
+`func (o *AmazonInstanceConfiguration2) GetResourcePoolId() string`
+
+GetResourcePoolId returns the ResourcePoolId field if non-nil, zero value otherwise.
+
+### GetResourcePoolIdOk
+
+`func (o *AmazonInstanceConfiguration2) GetResourcePoolIdOk() (*string, bool)`
+
+GetResourcePoolIdOk returns a tuple with the ResourcePoolId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResourcePoolId
+
+`func (o *AmazonInstanceConfiguration2) SetResourcePoolId(v string)`
+
+SetResourcePoolId sets ResourcePoolId field to given value.
+
+### HasResourcePoolId
+
+`func (o *AmazonInstanceConfiguration2) HasResourcePoolId() bool`
+
+HasResourcePoolId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -22,6 +22,8 @@ var _ MappedNullable = &AmazonInstanceConfiguration3{}
 type AmazonInstanceConfiguration3 struct {
 	// Skipping Agent installation will result in a lack of logging and guest operating system statistics. Automation scripts may also be adversely affected.
 	NoAgent NullableBool `json:"noAgent,omitempty"`
+	// Create user
+	CreateUser NullableBool `json:"createUser,omitempty"`
 	// Amazon Cloud Type
 	IsEC2 *string `json:"isEC2,omitempty"`
 	// Amazon Zone
@@ -33,7 +35,9 @@ type AmazonInstanceConfiguration3 struct {
 	// IAM Profile
 	InstanceProfile *string `json:"instanceProfile,omitempty"`
 	// KMS Key ID
-	KmsKeyId             *string                `json:"kmsKeyId,omitempty"`
+	KmsKeyId *string `json:"kmsKeyId,omitempty"`
+	// Resource Pool ID
+	ResourcePoolId       *string                `json:"resourcePoolId,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -47,6 +51,8 @@ func NewAmazonInstanceConfiguration3() *AmazonInstanceConfiguration3 {
 	this := AmazonInstanceConfiguration3{}
 	var noAgent bool = false
 	this.NoAgent = *NewNullableBool(&noAgent)
+	var createUser bool = false
+	this.CreateUser = *NewNullableBool(&createUser)
 	var isEC2 string = "false"
 	this.IsEC2 = &isEC2
 	return &this
@@ -59,6 +65,8 @@ func NewAmazonInstanceConfiguration3WithDefaults() *AmazonInstanceConfiguration3
 	this := AmazonInstanceConfiguration3{}
 	var noAgent bool = false
 	this.NoAgent = *NewNullableBool(&noAgent)
+	var createUser bool = false
+	this.CreateUser = *NewNullableBool(&createUser)
 	var isEC2 string = "false"
 	this.IsEC2 = &isEC2
 	return &this
@@ -105,6 +113,49 @@ func (o *AmazonInstanceConfiguration3) SetNoAgentNil() {
 // UnsetNoAgent ensures that no value is present for NoAgent, not even an explicit nil
 func (o *AmazonInstanceConfiguration3) UnsetNoAgent() {
 	o.NoAgent.Unset()
+}
+
+// GetCreateUser returns the CreateUser field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *AmazonInstanceConfiguration3) GetCreateUser() bool {
+	if o == nil || IsNil(o.CreateUser.Get()) {
+		var ret bool
+		return ret
+	}
+	return *o.CreateUser.Get()
+}
+
+// GetCreateUserOk returns a tuple with the CreateUser field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *AmazonInstanceConfiguration3) GetCreateUserOk() (*bool, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.CreateUser.Get(), o.CreateUser.IsSet()
+}
+
+// IsSetCreateUser returns a boolean if a field has been set.
+func (o *AmazonInstanceConfiguration3) IsSetCreateUser() bool {
+	if o != nil && o.CreateUser.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetCreateUser gets a reference to the given NullableBool and assigns it to the CreateUser field.
+func (o *AmazonInstanceConfiguration3) SetCreateUser(v bool) {
+	o.CreateUser.Set(&v)
+}
+
+// SetCreateUserNil sets the value for CreateUser to be an explicit nil
+func (o *AmazonInstanceConfiguration3) SetCreateUserNil() {
+	o.CreateUser.Set(nil)
+}
+
+// UnsetCreateUser ensures that no value is present for CreateUser, not even an explicit nil
+func (o *AmazonInstanceConfiguration3) UnsetCreateUser() {
+	o.CreateUser.Unset()
 }
 
 // GetIsEC2 returns the IsEC2 field value if set, zero value otherwise.
@@ -299,6 +350,38 @@ func (o *AmazonInstanceConfiguration3) SetKmsKeyId(v string) {
 	o.KmsKeyId = &v
 }
 
+// GetResourcePoolId returns the ResourcePoolId field value if set, zero value otherwise.
+func (o *AmazonInstanceConfiguration3) GetResourcePoolId() string {
+	if o == nil || IsNil(o.ResourcePoolId) {
+		var ret string
+		return ret
+	}
+	return *o.ResourcePoolId
+}
+
+// GetResourcePoolIdOk returns a tuple with the ResourcePoolId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AmazonInstanceConfiguration3) GetResourcePoolIdOk() (*string, bool) {
+	if o == nil || IsNil(o.ResourcePoolId) {
+		return nil, false
+	}
+	return o.ResourcePoolId, true
+}
+
+// IsSetResourcePoolId returns a boolean if a field has been set.
+func (o *AmazonInstanceConfiguration3) IsSetResourcePoolId() bool {
+	if o != nil && !IsNil(o.ResourcePoolId) {
+		return true
+	}
+
+	return false
+}
+
+// SetResourcePoolId gets a reference to the given string and assigns it to the ResourcePoolId field.
+func (o *AmazonInstanceConfiguration3) SetResourcePoolId(v string) {
+	o.ResourcePoolId = &v
+}
+
 func (o AmazonInstanceConfiguration3) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -311,6 +394,9 @@ func (o AmazonInstanceConfiguration3) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.NoAgent.IsSet() {
 		toSerialize["noAgent"] = o.NoAgent.Get()
+	}
+	if o.CreateUser.IsSet() {
+		toSerialize["createUser"] = o.CreateUser.Get()
 	}
 	if !IsNil(o.IsEC2) {
 		toSerialize["isEC2"] = o.IsEC2
@@ -329,6 +415,9 @@ func (o AmazonInstanceConfiguration3) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.KmsKeyId) {
 		toSerialize["kmsKeyId"] = o.KmsKeyId
+	}
+	if !IsNil(o.ResourcePoolId) {
+		toSerialize["resourcePoolId"] = o.ResourcePoolId
 	}
 
 	for key, value := range o.AdditionalProperties {
