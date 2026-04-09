@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Copies** | Pointer to **int64** | Number of copies to provision. | [optional] [default to 1]
 **LayoutSize** | Pointer to **int64** | Apply a multiply factor of containers/vms within the instance. | [optional] [default to 1]
 **ServicePlanOptions** | Pointer to **map[string]interface{}** | Map of custom options depending on selected service plan. | [optional] 
-**SecurityGroups** | Pointer to **[]map[string]interface{}** | Key for security group configuration. It should be passed as an array of objects containing the id of the security group to assign the instance to. | [optional] 
+**SecurityGroups** | Pointer to [**[]AddInstanceRequestSecurityGroupsInner**](AddInstanceRequestSecurityGroupsInner.md) | Key for security group configuration. It should be passed as an array of objects containing the id of the security group to assign the instance to. | [optional] 
 **Volumes** | Pointer to [**[]AddInstanceRequestVolumesInner**](AddInstanceRequestVolumesInner.md) | The (optional) volumes parameter is for LV configuration, can create additional LVs at provision It should be passed as an array of | [optional] 
 **NetworkInterfaces** | Pointer to [**[]InstancesNetworkInterfaces2**](InstancesNetworkInterfaces2.md) | The networkInterfaces parameter is for network configuration.  The Options API &#x60;/api/options/zoneNetworkOptions?zoneId&#x3D;5&amp;provisionTypeId&#x3D;10&#x60; can be used to see which options are available.  | [optional] 
 **Config** | [**AddInstanceRequestConfig**](AddInstanceRequestConfig.md) |  | 
@@ -188,20 +188,20 @@ HasServicePlanOptions returns a boolean if a field has been set.
 
 ### GetSecurityGroups
 
-`func (o *AddInstanceRequest) GetSecurityGroups() []map[string]interface{}`
+`func (o *AddInstanceRequest) GetSecurityGroups() []AddInstanceRequestSecurityGroupsInner`
 
 GetSecurityGroups returns the SecurityGroups field if non-nil, zero value otherwise.
 
 ### GetSecurityGroupsOk
 
-`func (o *AddInstanceRequest) GetSecurityGroupsOk() (*[]map[string]interface{}, bool)`
+`func (o *AddInstanceRequest) GetSecurityGroupsOk() (*[]AddInstanceRequestSecurityGroupsInner, bool)`
 
 GetSecurityGroupsOk returns a tuple with the SecurityGroups field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSecurityGroups
 
-`func (o *AddInstanceRequest) SetSecurityGroups(v []map[string]interface{})`
+`func (o *AddInstanceRequest) SetSecurityGroups(v []AddInstanceRequestSecurityGroupsInner)`
 
 SetSecurityGroups sets SecurityGroups field to given value.
 

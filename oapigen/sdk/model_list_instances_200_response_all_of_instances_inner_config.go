@@ -21,7 +21,7 @@ var _ MappedNullable = &ListInstances200ResponseAllOfInstancesInnerConfig{}
 // ListInstances200ResponseAllOfInstancesInnerConfig struct for ListInstances200ResponseAllOfInstancesInnerConfig
 type ListInstances200ResponseAllOfInstancesInnerConfig struct {
 	CreateUser           *bool                                                                  `json:"createUser,omitempty"`
-	IsEC2                *bool                                                                  `json:"isEC2,omitempty"`
+	IsEC2                *string                                                                `json:"isEC2,omitempty"`
 	IsVpcSelectable      *bool                                                                  `json:"isVpcSelectable,omitempty"`
 	NoAgent              *ListInstances200ResponseAllOfInstancesInnerConfigNoAgent              `json:"noAgent,omitempty"`
 	SecurityGroups       []ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner `json:"securityGroups,omitempty"`
@@ -42,6 +42,10 @@ type ListInstances200ResponseAllOfInstancesInnerConfig struct {
 	EnvironmentPrefix    NullableString                                                         `json:"environmentPrefix,omitempty"`
 	Layout               *ListInstances200ResponseAllOfInstancesInnerConfigLayout               `json:"layout,omitempty"`
 	Type                 *string                                                                `json:"type,omitempty"`
+	KmsKeyId             NullableString                                                         `json:"kmsKeyId,omitempty"`
+	InstanceProfile      NullableString                                                         `json:"instanceProfile,omitempty"`
+	AvailabilityId       NullableString                                                         `json:"availabilityId,omitempty"`
+	PublicIpType         NullableString                                                         `json:"publicIpType,omitempty"`
 	InstanceContext      *string                                                                `json:"instanceContext,omitempty"`
 	MemoryDisplay        *string                                                                `json:"memoryDisplay,omitempty"`
 	Expose               []int64                                                                `json:"expose,omitempty"`
@@ -105,9 +109,9 @@ func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetCreateUser(v bool
 }
 
 // GetIsEC2 returns the IsEC2 field value if set, zero value otherwise.
-func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetIsEC2() bool {
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetIsEC2() string {
 	if o == nil || IsNil(o.IsEC2) {
-		var ret bool
+		var ret string
 		return ret
 	}
 	return *o.IsEC2
@@ -115,7 +119,7 @@ func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetIsEC2() bool {
 
 // GetIsEC2Ok returns a tuple with the IsEC2 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetIsEC2Ok() (*bool, bool) {
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetIsEC2Ok() (*string, bool) {
 	if o == nil || IsNil(o.IsEC2) {
 		return nil, false
 	}
@@ -131,8 +135,8 @@ func (o *ListInstances200ResponseAllOfInstancesInnerConfig) IsSetIsEC2() bool {
 	return false
 }
 
-// SetIsEC2 gets a reference to the given bool and assigns it to the IsEC2 field.
-func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetIsEC2(v bool) {
+// SetIsEC2 gets a reference to the given string and assigns it to the IsEC2 field.
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetIsEC2(v string) {
 	o.IsEC2 = &v
 }
 
@@ -831,6 +835,178 @@ func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetType(v string) {
 	o.Type = &v
 }
 
+// GetKmsKeyId returns the KmsKeyId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetKmsKeyId() string {
+	if o == nil || IsNil(o.KmsKeyId.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.KmsKeyId.Get()
+}
+
+// GetKmsKeyIdOk returns a tuple with the KmsKeyId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetKmsKeyIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.KmsKeyId.Get(), o.KmsKeyId.IsSet()
+}
+
+// IsSetKmsKeyId returns a boolean if a field has been set.
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) IsSetKmsKeyId() bool {
+	if o != nil && o.KmsKeyId.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetKmsKeyId gets a reference to the given NullableString and assigns it to the KmsKeyId field.
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetKmsKeyId(v string) {
+	o.KmsKeyId.Set(&v)
+}
+
+// SetKmsKeyIdNil sets the value for KmsKeyId to be an explicit nil
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetKmsKeyIdNil() {
+	o.KmsKeyId.Set(nil)
+}
+
+// UnsetKmsKeyId ensures that no value is present for KmsKeyId, not even an explicit nil
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) UnsetKmsKeyId() {
+	o.KmsKeyId.Unset()
+}
+
+// GetInstanceProfile returns the InstanceProfile field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetInstanceProfile() string {
+	if o == nil || IsNil(o.InstanceProfile.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.InstanceProfile.Get()
+}
+
+// GetInstanceProfileOk returns a tuple with the InstanceProfile field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetInstanceProfileOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.InstanceProfile.Get(), o.InstanceProfile.IsSet()
+}
+
+// IsSetInstanceProfile returns a boolean if a field has been set.
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) IsSetInstanceProfile() bool {
+	if o != nil && o.InstanceProfile.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetInstanceProfile gets a reference to the given NullableString and assigns it to the InstanceProfile field.
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetInstanceProfile(v string) {
+	o.InstanceProfile.Set(&v)
+}
+
+// SetInstanceProfileNil sets the value for InstanceProfile to be an explicit nil
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetInstanceProfileNil() {
+	o.InstanceProfile.Set(nil)
+}
+
+// UnsetInstanceProfile ensures that no value is present for InstanceProfile, not even an explicit nil
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) UnsetInstanceProfile() {
+	o.InstanceProfile.Unset()
+}
+
+// GetAvailabilityId returns the AvailabilityId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetAvailabilityId() string {
+	if o == nil || IsNil(o.AvailabilityId.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.AvailabilityId.Get()
+}
+
+// GetAvailabilityIdOk returns a tuple with the AvailabilityId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetAvailabilityIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.AvailabilityId.Get(), o.AvailabilityId.IsSet()
+}
+
+// IsSetAvailabilityId returns a boolean if a field has been set.
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) IsSetAvailabilityId() bool {
+	if o != nil && o.AvailabilityId.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetAvailabilityId gets a reference to the given NullableString and assigns it to the AvailabilityId field.
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetAvailabilityId(v string) {
+	o.AvailabilityId.Set(&v)
+}
+
+// SetAvailabilityIdNil sets the value for AvailabilityId to be an explicit nil
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetAvailabilityIdNil() {
+	o.AvailabilityId.Set(nil)
+}
+
+// UnsetAvailabilityId ensures that no value is present for AvailabilityId, not even an explicit nil
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) UnsetAvailabilityId() {
+	o.AvailabilityId.Unset()
+}
+
+// GetPublicIpType returns the PublicIpType field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetPublicIpType() string {
+	if o == nil || IsNil(o.PublicIpType.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.PublicIpType.Get()
+}
+
+// GetPublicIpTypeOk returns a tuple with the PublicIpType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetPublicIpTypeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.PublicIpType.Get(), o.PublicIpType.IsSet()
+}
+
+// IsSetPublicIpType returns a boolean if a field has been set.
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) IsSetPublicIpType() bool {
+	if o != nil && o.PublicIpType.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetPublicIpType gets a reference to the given NullableString and assigns it to the PublicIpType field.
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetPublicIpType(v string) {
+	o.PublicIpType.Set(&v)
+}
+
+// SetPublicIpTypeNil sets the value for PublicIpType to be an explicit nil
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetPublicIpTypeNil() {
+	o.PublicIpType.Set(nil)
+}
+
+// UnsetPublicIpType ensures that no value is present for PublicIpType, not even an explicit nil
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) UnsetPublicIpType() {
+	o.PublicIpType.Unset()
+}
+
 // GetInstanceContext returns the InstanceContext field value if set, zero value otherwise.
 func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetInstanceContext() string {
 	if o == nil || IsNil(o.InstanceContext) {
@@ -1163,6 +1339,18 @@ func (o ListInstances200ResponseAllOfInstancesInnerConfig) ToMap() (map[string]i
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
+	}
+	if o.KmsKeyId.IsSet() {
+		toSerialize["kmsKeyId"] = o.KmsKeyId.Get()
+	}
+	if o.InstanceProfile.IsSet() {
+		toSerialize["instanceProfile"] = o.InstanceProfile.Get()
+	}
+	if o.AvailabilityId.IsSet() {
+		toSerialize["availabilityId"] = o.AvailabilityId.Get()
+	}
+	if o.PublicIpType.IsSet() {
+		toSerialize["publicIpType"] = o.PublicIpType.Get()
 	}
 	if !IsNil(o.InstanceContext) {
 		toSerialize["instanceContext"] = o.InstanceContext

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ResourcePoolId** | Pointer to **string** | id of the resource group to be used, can be prefixed with &#x60;pool-&#x60;. A resource pool group can be specified instead by prefixing its ID with &#x60;poolGroup-&#x60;. | [optional] 
+**ResourcePoolId** | Pointer to **string** | Resource Pool ID | [optional] 
 **AvailabilityOptions** | Pointer to **string** | Availability Options | [optional] 
 **AvailabilitySet** | Pointer to **string** | Availability Set | [optional] 
 **AvailabilityZone** | Pointer to **int64** | Availability Zone | [optional] 

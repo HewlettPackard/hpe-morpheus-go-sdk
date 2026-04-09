@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CreateUser** | Pointer to **bool** |  | [optional] 
-**IsEC2** | Pointer to **bool** |  | [optional] 
+**IsEC2** | Pointer to **string** |  | [optional] 
 **IsVpcSelectable** | Pointer to **bool** |  | [optional] 
 **NoAgent** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerConfigNoAgent**](ListInstances200ResponseAllOfInstancesInnerConfigNoAgent.md) |  | [optional] 
 **SecurityGroups** | Pointer to [**[]ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner**](ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner.md) |  | [optional] 
@@ -26,6 +26,10 @@ Name | Type | Description | Notes
 **EnvironmentPrefix** | Pointer to **NullableString** |  | [optional] 
 **Layout** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerConfigLayout**](ListInstances200ResponseAllOfInstancesInnerConfigLayout.md) |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
+**KmsKeyId** | Pointer to **NullableString** |  | [optional] 
+**InstanceProfile** | Pointer to **NullableString** |  | [optional] 
+**AvailabilityId** | Pointer to **NullableString** |  | [optional] 
+**PublicIpType** | Pointer to **NullableString** |  | [optional] 
 **InstanceContext** | Pointer to **string** |  | [optional] 
 **MemoryDisplay** | Pointer to **string** |  | [optional] 
 **Expose** | Pointer to **[]int64** |  | [optional] 
@@ -81,20 +85,20 @@ HasCreateUser returns a boolean if a field has been set.
 
 ### GetIsEC2
 
-`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetIsEC2() bool`
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetIsEC2() string`
 
 GetIsEC2 returns the IsEC2 field if non-nil, zero value otherwise.
 
 ### GetIsEC2Ok
 
-`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetIsEC2Ok() (*bool, bool)`
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetIsEC2Ok() (*string, bool)`
 
 GetIsEC2Ok returns a tuple with the IsEC2 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIsEC2
 
-`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetIsEC2(v bool)`
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetIsEC2(v string)`
 
 SetIsEC2 sets IsEC2 field to given value.
 
@@ -654,6 +658,146 @@ SetType sets Type field to given value.
 
 HasType returns a boolean if a field has been set.
 
+### GetKmsKeyId
+
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetKmsKeyId() string`
+
+GetKmsKeyId returns the KmsKeyId field if non-nil, zero value otherwise.
+
+### GetKmsKeyIdOk
+
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetKmsKeyIdOk() (*string, bool)`
+
+GetKmsKeyIdOk returns a tuple with the KmsKeyId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetKmsKeyId
+
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetKmsKeyId(v string)`
+
+SetKmsKeyId sets KmsKeyId field to given value.
+
+### HasKmsKeyId
+
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) HasKmsKeyId() bool`
+
+HasKmsKeyId returns a boolean if a field has been set.
+
+### SetKmsKeyIdNil
+
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetKmsKeyIdNil(b bool)`
+
+ SetKmsKeyIdNil sets the value for KmsKeyId to be an explicit nil
+
+### UnsetKmsKeyId
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) UnsetKmsKeyId()`
+
+UnsetKmsKeyId ensures that no value is present for KmsKeyId, not even an explicit nil
+### GetInstanceProfile
+
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetInstanceProfile() string`
+
+GetInstanceProfile returns the InstanceProfile field if non-nil, zero value otherwise.
+
+### GetInstanceProfileOk
+
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetInstanceProfileOk() (*string, bool)`
+
+GetInstanceProfileOk returns a tuple with the InstanceProfile field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInstanceProfile
+
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetInstanceProfile(v string)`
+
+SetInstanceProfile sets InstanceProfile field to given value.
+
+### HasInstanceProfile
+
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) HasInstanceProfile() bool`
+
+HasInstanceProfile returns a boolean if a field has been set.
+
+### SetInstanceProfileNil
+
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetInstanceProfileNil(b bool)`
+
+ SetInstanceProfileNil sets the value for InstanceProfile to be an explicit nil
+
+### UnsetInstanceProfile
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) UnsetInstanceProfile()`
+
+UnsetInstanceProfile ensures that no value is present for InstanceProfile, not even an explicit nil
+### GetAvailabilityId
+
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetAvailabilityId() string`
+
+GetAvailabilityId returns the AvailabilityId field if non-nil, zero value otherwise.
+
+### GetAvailabilityIdOk
+
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetAvailabilityIdOk() (*string, bool)`
+
+GetAvailabilityIdOk returns a tuple with the AvailabilityId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAvailabilityId
+
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetAvailabilityId(v string)`
+
+SetAvailabilityId sets AvailabilityId field to given value.
+
+### HasAvailabilityId
+
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) HasAvailabilityId() bool`
+
+HasAvailabilityId returns a boolean if a field has been set.
+
+### SetAvailabilityIdNil
+
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetAvailabilityIdNil(b bool)`
+
+ SetAvailabilityIdNil sets the value for AvailabilityId to be an explicit nil
+
+### UnsetAvailabilityId
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) UnsetAvailabilityId()`
+
+UnsetAvailabilityId ensures that no value is present for AvailabilityId, not even an explicit nil
+### GetPublicIpType
+
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetPublicIpType() string`
+
+GetPublicIpType returns the PublicIpType field if non-nil, zero value otherwise.
+
+### GetPublicIpTypeOk
+
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetPublicIpTypeOk() (*string, bool)`
+
+GetPublicIpTypeOk returns a tuple with the PublicIpType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPublicIpType
+
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetPublicIpType(v string)`
+
+SetPublicIpType sets PublicIpType field to given value.
+
+### HasPublicIpType
+
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) HasPublicIpType() bool`
+
+HasPublicIpType returns a boolean if a field has been set.
+
+### SetPublicIpTypeNil
+
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetPublicIpTypeNil(b bool)`
+
+ SetPublicIpTypeNil sets the value for PublicIpType to be an explicit nil
+
+### UnsetPublicIpType
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) UnsetPublicIpType()`
+
+UnsetPublicIpType ensures that no value is present for PublicIpType, not even an explicit nil
 ### GetInstanceContext
 
 `func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetInstanceContext() string`
