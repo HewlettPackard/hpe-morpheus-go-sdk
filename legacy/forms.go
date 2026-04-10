@@ -95,6 +95,7 @@ type Option struct {
 		InstanceTypeCode           string `json:"instanceTypeCode"`
 		InstanceTypeFieldCode      string `json:"instanceTypeFieldCode"`
 		InstanceTypeFieldType      string `json:"instanceTypeFieldType"`
+		KeyPlaceholder             string `json:"keyPlaceholder"`
 		Lang                       string `json:"lang"`
 		LayoutId                   string `json:"layoutId"`
 		LayoutField                string `json:"layoutField"`
@@ -115,6 +116,7 @@ type Option struct {
 		ShowPricing                bool   `json:"showPricing"`
 		Step                       int64  `json:"step"`
 		Rows                       int64  `json:"rows"`
+		ValuePlaceholder           string `json:"valuePlaceholder"`
 		VirtualImageFieldType      string `json:"virtualImageFieldType"`
 	} `json:"config"`
 	DisplayOrder          int64       `json:"displayOrder"`
