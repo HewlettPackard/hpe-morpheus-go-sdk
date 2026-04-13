@@ -4,13 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Type** | Pointer to **string** | Load Balancer Type Code | [optional] 
 **Name** | Pointer to **string** | Name | [optional] 
 **Description** | Pointer to **string** | Description | [optional] 
 **NetworkServerId** | Pointer to **int64** | Network Server ID | [optional] 
-**Config** | Pointer to **map[string]interface{}** | Configuration object with parameters that vary by load balancer type. | [optional] 
+**Site** | Pointer to [**CreateLoadBalancerRequestLoadBalancerSite**](CreateLoadBalancerRequestLoadBalancerSite.md) |  | [optional] 
+**Zone** | Pointer to [**CreateLoadBalancerRequestLoadBalancerZone**](CreateLoadBalancerRequestLoadBalancerZone.md) |  | [optional] 
+**Config** | Pointer to [**CreateLoadBalancerRequestLoadBalancerConfig**](CreateLoadBalancerRequestLoadBalancerConfig.md) |  | [optional] 
 **Visibility** | Pointer to **string** | private or public | [optional] [default to "public"]
 **Tenants** | Pointer to [**[]CreateLoadBalancerRequestLoadBalancerTenantsInner**](CreateLoadBalancerRequestLoadBalancerTenantsInner.md) | Array of tenant account ids that are allowed access | [optional] 
-**ResourcePermission** | Pointer to [**CreateLoadBalancerRequestLoadBalancerResourcePermission**](CreateLoadBalancerRequestLoadBalancerResourcePermission.md) |  | [optional] 
+**ResourcePermissions** | Pointer to [**CreateLoadBalancerRequestLoadBalancerResourcePermissions**](CreateLoadBalancerRequestLoadBalancerResourcePermissions.md) |  | [optional] 
 
 ## Methods
 
@@ -30,6 +33,31 @@ will change when the set of required properties is changed
 NewCreateLoadBalancerRequestLoadBalancerWithDefaults instantiates a new CreateLoadBalancerRequestLoadBalancer object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetType
+
+`func (o *CreateLoadBalancerRequestLoadBalancer) GetType() string`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *CreateLoadBalancerRequestLoadBalancer) GetTypeOk() (*string, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *CreateLoadBalancerRequestLoadBalancer) SetType(v string)`
+
+SetType sets Type field to given value.
+
+### HasType
+
+`func (o *CreateLoadBalancerRequestLoadBalancer) HasType() bool`
+
+HasType returns a boolean if a field has been set.
 
 ### GetName
 
@@ -106,22 +134,72 @@ SetNetworkServerId sets NetworkServerId field to given value.
 
 HasNetworkServerId returns a boolean if a field has been set.
 
+### GetSite
+
+`func (o *CreateLoadBalancerRequestLoadBalancer) GetSite() CreateLoadBalancerRequestLoadBalancerSite`
+
+GetSite returns the Site field if non-nil, zero value otherwise.
+
+### GetSiteOk
+
+`func (o *CreateLoadBalancerRequestLoadBalancer) GetSiteOk() (*CreateLoadBalancerRequestLoadBalancerSite, bool)`
+
+GetSiteOk returns a tuple with the Site field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSite
+
+`func (o *CreateLoadBalancerRequestLoadBalancer) SetSite(v CreateLoadBalancerRequestLoadBalancerSite)`
+
+SetSite sets Site field to given value.
+
+### HasSite
+
+`func (o *CreateLoadBalancerRequestLoadBalancer) HasSite() bool`
+
+HasSite returns a boolean if a field has been set.
+
+### GetZone
+
+`func (o *CreateLoadBalancerRequestLoadBalancer) GetZone() CreateLoadBalancerRequestLoadBalancerZone`
+
+GetZone returns the Zone field if non-nil, zero value otherwise.
+
+### GetZoneOk
+
+`func (o *CreateLoadBalancerRequestLoadBalancer) GetZoneOk() (*CreateLoadBalancerRequestLoadBalancerZone, bool)`
+
+GetZoneOk returns a tuple with the Zone field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetZone
+
+`func (o *CreateLoadBalancerRequestLoadBalancer) SetZone(v CreateLoadBalancerRequestLoadBalancerZone)`
+
+SetZone sets Zone field to given value.
+
+### HasZone
+
+`func (o *CreateLoadBalancerRequestLoadBalancer) HasZone() bool`
+
+HasZone returns a boolean if a field has been set.
+
 ### GetConfig
 
-`func (o *CreateLoadBalancerRequestLoadBalancer) GetConfig() map[string]interface{}`
+`func (o *CreateLoadBalancerRequestLoadBalancer) GetConfig() CreateLoadBalancerRequestLoadBalancerConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *CreateLoadBalancerRequestLoadBalancer) GetConfigOk() (*map[string]interface{}, bool)`
+`func (o *CreateLoadBalancerRequestLoadBalancer) GetConfigOk() (*CreateLoadBalancerRequestLoadBalancerConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *CreateLoadBalancerRequestLoadBalancer) SetConfig(v map[string]interface{})`
+`func (o *CreateLoadBalancerRequestLoadBalancer) SetConfig(v CreateLoadBalancerRequestLoadBalancerConfig)`
 
 SetConfig sets Config field to given value.
 
@@ -181,30 +259,30 @@ SetTenants sets Tenants field to given value.
 
 HasTenants returns a boolean if a field has been set.
 
-### GetResourcePermission
+### GetResourcePermissions
 
-`func (o *CreateLoadBalancerRequestLoadBalancer) GetResourcePermission() CreateLoadBalancerRequestLoadBalancerResourcePermission`
+`func (o *CreateLoadBalancerRequestLoadBalancer) GetResourcePermissions() CreateLoadBalancerRequestLoadBalancerResourcePermissions`
 
-GetResourcePermission returns the ResourcePermission field if non-nil, zero value otherwise.
+GetResourcePermissions returns the ResourcePermissions field if non-nil, zero value otherwise.
 
-### GetResourcePermissionOk
+### GetResourcePermissionsOk
 
-`func (o *CreateLoadBalancerRequestLoadBalancer) GetResourcePermissionOk() (*CreateLoadBalancerRequestLoadBalancerResourcePermission, bool)`
+`func (o *CreateLoadBalancerRequestLoadBalancer) GetResourcePermissionsOk() (*CreateLoadBalancerRequestLoadBalancerResourcePermissions, bool)`
 
-GetResourcePermissionOk returns a tuple with the ResourcePermission field if it's non-nil, zero value otherwise
+GetResourcePermissionsOk returns a tuple with the ResourcePermissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetResourcePermission
+### SetResourcePermissions
 
-`func (o *CreateLoadBalancerRequestLoadBalancer) SetResourcePermission(v CreateLoadBalancerRequestLoadBalancerResourcePermission)`
+`func (o *CreateLoadBalancerRequestLoadBalancer) SetResourcePermissions(v CreateLoadBalancerRequestLoadBalancerResourcePermissions)`
 
-SetResourcePermission sets ResourcePermission field to given value.
+SetResourcePermissions sets ResourcePermissions field to given value.
 
-### HasResourcePermission
+### HasResourcePermissions
 
-`func (o *CreateLoadBalancerRequestLoadBalancer) HasResourcePermission() bool`
+`func (o *CreateLoadBalancerRequestLoadBalancer) HasResourcePermissions() bool`
 
-HasResourcePermission returns a boolean if a field has been set.
+HasResourcePermissions returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

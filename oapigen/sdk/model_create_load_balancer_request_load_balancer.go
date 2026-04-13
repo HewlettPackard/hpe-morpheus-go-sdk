@@ -20,20 +20,23 @@ var _ MappedNullable = &CreateLoadBalancerRequestLoadBalancer{}
 
 // CreateLoadBalancerRequestLoadBalancer struct for CreateLoadBalancerRequestLoadBalancer
 type CreateLoadBalancerRequestLoadBalancer struct {
+	// Load Balancer Type Code
+	Type *string `json:"type,omitempty"`
 	// Name
 	Name *string `json:"name,omitempty"`
 	// Description
 	Description *string `json:"description,omitempty"`
 	// Network Server ID
-	NetworkServerId *int64 `json:"networkServerId,omitempty"`
-	// Configuration object with parameters that vary by load balancer type.
-	Config map[string]interface{} `json:"config,omitempty"`
+	NetworkServerId *int64                                       `json:"networkServerId,omitempty"`
+	Site            *CreateLoadBalancerRequestLoadBalancerSite   `json:"site,omitempty"`
+	Zone            *CreateLoadBalancerRequestLoadBalancerZone   `json:"zone,omitempty"`
+	Config          *CreateLoadBalancerRequestLoadBalancerConfig `json:"config,omitempty"`
 	// private or public
 	Visibility *string `json:"visibility,omitempty"`
 	// Array of tenant account ids that are allowed access
-	Tenants              []CreateLoadBalancerRequestLoadBalancerTenantsInner      `json:"tenants,omitempty"`
-	ResourcePermission   *CreateLoadBalancerRequestLoadBalancerResourcePermission `json:"resourcePermission,omitempty"`
-	AdditionalProperties map[string]interface{}                                   `json:",remain"`
+	Tenants              []CreateLoadBalancerRequestLoadBalancerTenantsInner       `json:"tenants,omitempty"`
+	ResourcePermissions  *CreateLoadBalancerRequestLoadBalancerResourcePermissions `json:"resourcePermissions,omitempty"`
+	AdditionalProperties map[string]interface{}                                    `json:",remain"`
 }
 
 type _CreateLoadBalancerRequestLoadBalancer CreateLoadBalancerRequestLoadBalancer
@@ -57,6 +60,38 @@ func NewCreateLoadBalancerRequestLoadBalancerWithDefaults() *CreateLoadBalancerR
 	var visibility string = "public"
 	this.Visibility = &visibility
 	return &this
+}
+
+// GetType returns the Type field value if set, zero value otherwise.
+func (o *CreateLoadBalancerRequestLoadBalancer) GetType() string {
+	if o == nil || IsNil(o.Type) {
+		var ret string
+		return ret
+	}
+	return *o.Type
+}
+
+// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateLoadBalancerRequestLoadBalancer) GetTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.Type) {
+		return nil, false
+	}
+	return o.Type, true
+}
+
+// IsSetType returns a boolean if a field has been set.
+func (o *CreateLoadBalancerRequestLoadBalancer) IsSetType() bool {
+	if o != nil && !IsNil(o.Type) {
+		return true
+	}
+
+	return false
+}
+
+// SetType gets a reference to the given string and assigns it to the Type field.
+func (o *CreateLoadBalancerRequestLoadBalancer) SetType(v string) {
+	o.Type = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -155,20 +190,84 @@ func (o *CreateLoadBalancerRequestLoadBalancer) SetNetworkServerId(v int64) {
 	o.NetworkServerId = &v
 }
 
-// GetConfig returns the Config field value if set, zero value otherwise.
-func (o *CreateLoadBalancerRequestLoadBalancer) GetConfig() map[string]interface{} {
-	if o == nil || IsNil(o.Config) {
-		var ret map[string]interface{}
+// GetSite returns the Site field value if set, zero value otherwise.
+func (o *CreateLoadBalancerRequestLoadBalancer) GetSite() CreateLoadBalancerRequestLoadBalancerSite {
+	if o == nil || IsNil(o.Site) {
+		var ret CreateLoadBalancerRequestLoadBalancerSite
 		return ret
 	}
-	return o.Config
+	return *o.Site
+}
+
+// GetSiteOk returns a tuple with the Site field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateLoadBalancerRequestLoadBalancer) GetSiteOk() (*CreateLoadBalancerRequestLoadBalancerSite, bool) {
+	if o == nil || IsNil(o.Site) {
+		return nil, false
+	}
+	return o.Site, true
+}
+
+// IsSetSite returns a boolean if a field has been set.
+func (o *CreateLoadBalancerRequestLoadBalancer) IsSetSite() bool {
+	if o != nil && !IsNil(o.Site) {
+		return true
+	}
+
+	return false
+}
+
+// SetSite gets a reference to the given CreateLoadBalancerRequestLoadBalancerSite and assigns it to the Site field.
+func (o *CreateLoadBalancerRequestLoadBalancer) SetSite(v CreateLoadBalancerRequestLoadBalancerSite) {
+	o.Site = &v
+}
+
+// GetZone returns the Zone field value if set, zero value otherwise.
+func (o *CreateLoadBalancerRequestLoadBalancer) GetZone() CreateLoadBalancerRequestLoadBalancerZone {
+	if o == nil || IsNil(o.Zone) {
+		var ret CreateLoadBalancerRequestLoadBalancerZone
+		return ret
+	}
+	return *o.Zone
+}
+
+// GetZoneOk returns a tuple with the Zone field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateLoadBalancerRequestLoadBalancer) GetZoneOk() (*CreateLoadBalancerRequestLoadBalancerZone, bool) {
+	if o == nil || IsNil(o.Zone) {
+		return nil, false
+	}
+	return o.Zone, true
+}
+
+// IsSetZone returns a boolean if a field has been set.
+func (o *CreateLoadBalancerRequestLoadBalancer) IsSetZone() bool {
+	if o != nil && !IsNil(o.Zone) {
+		return true
+	}
+
+	return false
+}
+
+// SetZone gets a reference to the given CreateLoadBalancerRequestLoadBalancerZone and assigns it to the Zone field.
+func (o *CreateLoadBalancerRequestLoadBalancer) SetZone(v CreateLoadBalancerRequestLoadBalancerZone) {
+	o.Zone = &v
+}
+
+// GetConfig returns the Config field value if set, zero value otherwise.
+func (o *CreateLoadBalancerRequestLoadBalancer) GetConfig() CreateLoadBalancerRequestLoadBalancerConfig {
+	if o == nil || IsNil(o.Config) {
+		var ret CreateLoadBalancerRequestLoadBalancerConfig
+		return ret
+	}
+	return *o.Config
 }
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateLoadBalancerRequestLoadBalancer) GetConfigOk() (map[string]interface{}, bool) {
+func (o *CreateLoadBalancerRequestLoadBalancer) GetConfigOk() (*CreateLoadBalancerRequestLoadBalancerConfig, bool) {
 	if o == nil || IsNil(o.Config) {
-		return map[string]interface{}{}, false
+		return nil, false
 	}
 	return o.Config, true
 }
@@ -182,9 +281,9 @@ func (o *CreateLoadBalancerRequestLoadBalancer) IsSetConfig() bool {
 	return false
 }
 
-// SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
-func (o *CreateLoadBalancerRequestLoadBalancer) SetConfig(v map[string]interface{}) {
-	o.Config = v
+// SetConfig gets a reference to the given CreateLoadBalancerRequestLoadBalancerConfig and assigns it to the Config field.
+func (o *CreateLoadBalancerRequestLoadBalancer) SetConfig(v CreateLoadBalancerRequestLoadBalancerConfig) {
+	o.Config = &v
 }
 
 // GetVisibility returns the Visibility field value if set, zero value otherwise.
@@ -251,36 +350,36 @@ func (o *CreateLoadBalancerRequestLoadBalancer) SetTenants(v []CreateLoadBalance
 	o.Tenants = v
 }
 
-// GetResourcePermission returns the ResourcePermission field value if set, zero value otherwise.
-func (o *CreateLoadBalancerRequestLoadBalancer) GetResourcePermission() CreateLoadBalancerRequestLoadBalancerResourcePermission {
-	if o == nil || IsNil(o.ResourcePermission) {
-		var ret CreateLoadBalancerRequestLoadBalancerResourcePermission
+// GetResourcePermissions returns the ResourcePermissions field value if set, zero value otherwise.
+func (o *CreateLoadBalancerRequestLoadBalancer) GetResourcePermissions() CreateLoadBalancerRequestLoadBalancerResourcePermissions {
+	if o == nil || IsNil(o.ResourcePermissions) {
+		var ret CreateLoadBalancerRequestLoadBalancerResourcePermissions
 		return ret
 	}
-	return *o.ResourcePermission
+	return *o.ResourcePermissions
 }
 
-// GetResourcePermissionOk returns a tuple with the ResourcePermission field value if set, nil otherwise
+// GetResourcePermissionsOk returns a tuple with the ResourcePermissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateLoadBalancerRequestLoadBalancer) GetResourcePermissionOk() (*CreateLoadBalancerRequestLoadBalancerResourcePermission, bool) {
-	if o == nil || IsNil(o.ResourcePermission) {
+func (o *CreateLoadBalancerRequestLoadBalancer) GetResourcePermissionsOk() (*CreateLoadBalancerRequestLoadBalancerResourcePermissions, bool) {
+	if o == nil || IsNil(o.ResourcePermissions) {
 		return nil, false
 	}
-	return o.ResourcePermission, true
+	return o.ResourcePermissions, true
 }
 
-// IsSetResourcePermission returns a boolean if a field has been set.
-func (o *CreateLoadBalancerRequestLoadBalancer) IsSetResourcePermission() bool {
-	if o != nil && !IsNil(o.ResourcePermission) {
+// IsSetResourcePermissions returns a boolean if a field has been set.
+func (o *CreateLoadBalancerRequestLoadBalancer) IsSetResourcePermissions() bool {
+	if o != nil && !IsNil(o.ResourcePermissions) {
 		return true
 	}
 
 	return false
 }
 
-// SetResourcePermission gets a reference to the given CreateLoadBalancerRequestLoadBalancerResourcePermission and assigns it to the ResourcePermission field.
-func (o *CreateLoadBalancerRequestLoadBalancer) SetResourcePermission(v CreateLoadBalancerRequestLoadBalancerResourcePermission) {
-	o.ResourcePermission = &v
+// SetResourcePermissions gets a reference to the given CreateLoadBalancerRequestLoadBalancerResourcePermissions and assigns it to the ResourcePermissions field.
+func (o *CreateLoadBalancerRequestLoadBalancer) SetResourcePermissions(v CreateLoadBalancerRequestLoadBalancerResourcePermissions) {
+	o.ResourcePermissions = &v
 }
 
 func (o CreateLoadBalancerRequestLoadBalancer) MarshalJSON() ([]byte, error) {
@@ -293,6 +392,9 @@ func (o CreateLoadBalancerRequestLoadBalancer) MarshalJSON() ([]byte, error) {
 
 func (o CreateLoadBalancerRequestLoadBalancer) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Type) {
+		toSerialize["type"] = o.Type
+	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
@@ -301,6 +403,12 @@ func (o CreateLoadBalancerRequestLoadBalancer) ToMap() (map[string]interface{}, 
 	}
 	if !IsNil(o.NetworkServerId) {
 		toSerialize["networkServerId"] = o.NetworkServerId
+	}
+	if !IsNil(o.Site) {
+		toSerialize["site"] = o.Site
+	}
+	if !IsNil(o.Zone) {
+		toSerialize["zone"] = o.Zone
 	}
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
@@ -311,8 +419,8 @@ func (o CreateLoadBalancerRequestLoadBalancer) ToMap() (map[string]interface{}, 
 	if !IsNil(o.Tenants) {
 		toSerialize["tenants"] = o.Tenants
 	}
-	if !IsNil(o.ResourcePermission) {
-		toSerialize["resourcePermission"] = o.ResourcePermission
+	if !IsNil(o.ResourcePermissions) {
+		toSerialize["resourcePermissions"] = o.ResourcePermissions
 	}
 
 	for key, value := range o.AdditionalProperties {
