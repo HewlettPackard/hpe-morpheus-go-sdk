@@ -4,13 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Type** | Pointer to **string** | Load Balancer Type Code | [optional] 
 **Name** | Pointer to **string** | Name | [optional] 
 **Description** | Pointer to **string** | Description | [optional] 
 **NetworkServerId** | Pointer to **int64** | Network Server ID | [optional] 
-**Config** | Pointer to **map[string]interface{}** | Configuration object with parameters that vary by load balancer type. | [optional] 
+**Site** | Pointer to [**LoadBalancerCreateSite**](LoadBalancerCreateSite.md) |  | [optional] 
+**Zone** | Pointer to [**LoadBalancerCreateZone**](LoadBalancerCreateZone.md) |  | [optional] 
+**Config** | Pointer to [**LoadBalancerCreateConfig**](LoadBalancerCreateConfig.md) |  | [optional] 
 **Visibility** | Pointer to **string** | private or public | [optional] [default to "public"]
 **Tenants** | Pointer to [**[]LoadBalancerCreateTenantsInner**](LoadBalancerCreateTenantsInner.md) | Array of tenant account ids that are allowed access | [optional] 
-**ResourcePermission** | Pointer to [**LoadBalancerCreateResourcePermission**](LoadBalancerCreateResourcePermission.md) |  | [optional] 
+**ResourcePermissions** | Pointer to [**LoadBalancerCreateResourcePermissions**](LoadBalancerCreateResourcePermissions.md) |  | [optional] 
 
 ## Methods
 
@@ -30,6 +33,31 @@ will change when the set of required properties is changed
 NewLoadBalancerCreateWithDefaults instantiates a new LoadBalancerCreate object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetType
+
+`func (o *LoadBalancerCreate) GetType() string`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *LoadBalancerCreate) GetTypeOk() (*string, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *LoadBalancerCreate) SetType(v string)`
+
+SetType sets Type field to given value.
+
+### HasType
+
+`func (o *LoadBalancerCreate) HasType() bool`
+
+HasType returns a boolean if a field has been set.
 
 ### GetName
 
@@ -106,22 +134,72 @@ SetNetworkServerId sets NetworkServerId field to given value.
 
 HasNetworkServerId returns a boolean if a field has been set.
 
+### GetSite
+
+`func (o *LoadBalancerCreate) GetSite() LoadBalancerCreateSite`
+
+GetSite returns the Site field if non-nil, zero value otherwise.
+
+### GetSiteOk
+
+`func (o *LoadBalancerCreate) GetSiteOk() (*LoadBalancerCreateSite, bool)`
+
+GetSiteOk returns a tuple with the Site field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSite
+
+`func (o *LoadBalancerCreate) SetSite(v LoadBalancerCreateSite)`
+
+SetSite sets Site field to given value.
+
+### HasSite
+
+`func (o *LoadBalancerCreate) HasSite() bool`
+
+HasSite returns a boolean if a field has been set.
+
+### GetZone
+
+`func (o *LoadBalancerCreate) GetZone() LoadBalancerCreateZone`
+
+GetZone returns the Zone field if non-nil, zero value otherwise.
+
+### GetZoneOk
+
+`func (o *LoadBalancerCreate) GetZoneOk() (*LoadBalancerCreateZone, bool)`
+
+GetZoneOk returns a tuple with the Zone field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetZone
+
+`func (o *LoadBalancerCreate) SetZone(v LoadBalancerCreateZone)`
+
+SetZone sets Zone field to given value.
+
+### HasZone
+
+`func (o *LoadBalancerCreate) HasZone() bool`
+
+HasZone returns a boolean if a field has been set.
+
 ### GetConfig
 
-`func (o *LoadBalancerCreate) GetConfig() map[string]interface{}`
+`func (o *LoadBalancerCreate) GetConfig() LoadBalancerCreateConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *LoadBalancerCreate) GetConfigOk() (*map[string]interface{}, bool)`
+`func (o *LoadBalancerCreate) GetConfigOk() (*LoadBalancerCreateConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *LoadBalancerCreate) SetConfig(v map[string]interface{})`
+`func (o *LoadBalancerCreate) SetConfig(v LoadBalancerCreateConfig)`
 
 SetConfig sets Config field to given value.
 
@@ -181,30 +259,30 @@ SetTenants sets Tenants field to given value.
 
 HasTenants returns a boolean if a field has been set.
 
-### GetResourcePermission
+### GetResourcePermissions
 
-`func (o *LoadBalancerCreate) GetResourcePermission() LoadBalancerCreateResourcePermission`
+`func (o *LoadBalancerCreate) GetResourcePermissions() LoadBalancerCreateResourcePermissions`
 
-GetResourcePermission returns the ResourcePermission field if non-nil, zero value otherwise.
+GetResourcePermissions returns the ResourcePermissions field if non-nil, zero value otherwise.
 
-### GetResourcePermissionOk
+### GetResourcePermissionsOk
 
-`func (o *LoadBalancerCreate) GetResourcePermissionOk() (*LoadBalancerCreateResourcePermission, bool)`
+`func (o *LoadBalancerCreate) GetResourcePermissionsOk() (*LoadBalancerCreateResourcePermissions, bool)`
 
-GetResourcePermissionOk returns a tuple with the ResourcePermission field if it's non-nil, zero value otherwise
+GetResourcePermissionsOk returns a tuple with the ResourcePermissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetResourcePermission
+### SetResourcePermissions
 
-`func (o *LoadBalancerCreate) SetResourcePermission(v LoadBalancerCreateResourcePermission)`
+`func (o *LoadBalancerCreate) SetResourcePermissions(v LoadBalancerCreateResourcePermissions)`
 
-SetResourcePermission sets ResourcePermission field to given value.
+SetResourcePermissions sets ResourcePermissions field to given value.
 
-### HasResourcePermission
+### HasResourcePermissions
 
-`func (o *LoadBalancerCreate) HasResourcePermission() bool`
+`func (o *LoadBalancerCreate) HasResourcePermissions() bool`
 
-HasResourcePermission returns a boolean if a field has been set.
+HasResourcePermissions returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

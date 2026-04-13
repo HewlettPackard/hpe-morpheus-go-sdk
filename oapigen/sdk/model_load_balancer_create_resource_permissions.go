@@ -15,11 +15,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the LoadBalancerCreateResourcePermission type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &LoadBalancerCreateResourcePermission{}
+// checks if the LoadBalancerCreateResourcePermissions type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &LoadBalancerCreateResourcePermissions{}
 
-// LoadBalancerCreateResourcePermission struct for LoadBalancerCreateResourcePermission
-type LoadBalancerCreateResourcePermission struct {
+// LoadBalancerCreateResourcePermissions struct for LoadBalancerCreateResourcePermissions
+type LoadBalancerCreateResourcePermissions struct {
 	// Pass true to allow access to all groups
 	All *bool `json:"all,omitempty"`
 	// Array of groups that are allowed access
@@ -27,27 +27,27 @@ type LoadBalancerCreateResourcePermission struct {
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
-type _LoadBalancerCreateResourcePermission LoadBalancerCreateResourcePermission
+type _LoadBalancerCreateResourcePermissions LoadBalancerCreateResourcePermissions
 
-// NewLoadBalancerCreateResourcePermission instantiates a new LoadBalancerCreateResourcePermission object
+// NewLoadBalancerCreateResourcePermissions instantiates a new LoadBalancerCreateResourcePermissions object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLoadBalancerCreateResourcePermission() *LoadBalancerCreateResourcePermission {
-	this := LoadBalancerCreateResourcePermission{}
+func NewLoadBalancerCreateResourcePermissions() *LoadBalancerCreateResourcePermissions {
+	this := LoadBalancerCreateResourcePermissions{}
 	return &this
 }
 
-// NewLoadBalancerCreateResourcePermissionWithDefaults instantiates a new LoadBalancerCreateResourcePermission object
+// NewLoadBalancerCreateResourcePermissionsWithDefaults instantiates a new LoadBalancerCreateResourcePermissions object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewLoadBalancerCreateResourcePermissionWithDefaults() *LoadBalancerCreateResourcePermission {
-	this := LoadBalancerCreateResourcePermission{}
+func NewLoadBalancerCreateResourcePermissionsWithDefaults() *LoadBalancerCreateResourcePermissions {
+	this := LoadBalancerCreateResourcePermissions{}
 	return &this
 }
 
 // GetAll returns the All field value if set, zero value otherwise.
-func (o *LoadBalancerCreateResourcePermission) GetAll() bool {
+func (o *LoadBalancerCreateResourcePermissions) GetAll() bool {
 	if o == nil || IsNil(o.All) {
 		var ret bool
 		return ret
@@ -57,7 +57,7 @@ func (o *LoadBalancerCreateResourcePermission) GetAll() bool {
 
 // GetAllOk returns a tuple with the All field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoadBalancerCreateResourcePermission) GetAllOk() (*bool, bool) {
+func (o *LoadBalancerCreateResourcePermissions) GetAllOk() (*bool, bool) {
 	if o == nil || IsNil(o.All) {
 		return nil, false
 	}
@@ -65,7 +65,7 @@ func (o *LoadBalancerCreateResourcePermission) GetAllOk() (*bool, bool) {
 }
 
 // IsSetAll returns a boolean if a field has been set.
-func (o *LoadBalancerCreateResourcePermission) IsSetAll() bool {
+func (o *LoadBalancerCreateResourcePermissions) IsSetAll() bool {
 	if o != nil && !IsNil(o.All) {
 		return true
 	}
@@ -74,12 +74,12 @@ func (o *LoadBalancerCreateResourcePermission) IsSetAll() bool {
 }
 
 // SetAll gets a reference to the given bool and assigns it to the All field.
-func (o *LoadBalancerCreateResourcePermission) SetAll(v bool) {
+func (o *LoadBalancerCreateResourcePermissions) SetAll(v bool) {
 	o.All = &v
 }
 
 // GetSites returns the Sites field value if set, zero value otherwise.
-func (o *LoadBalancerCreateResourcePermission) GetSites() []int64 {
+func (o *LoadBalancerCreateResourcePermissions) GetSites() []int64 {
 	if o == nil || IsNil(o.Sites) {
 		var ret []int64
 		return ret
@@ -89,7 +89,7 @@ func (o *LoadBalancerCreateResourcePermission) GetSites() []int64 {
 
 // GetSitesOk returns a tuple with the Sites field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoadBalancerCreateResourcePermission) GetSitesOk() ([]int64, bool) {
+func (o *LoadBalancerCreateResourcePermissions) GetSitesOk() ([]int64, bool) {
 	if o == nil || IsNil(o.Sites) {
 		return nil, false
 	}
@@ -97,7 +97,7 @@ func (o *LoadBalancerCreateResourcePermission) GetSitesOk() ([]int64, bool) {
 }
 
 // IsSetSites returns a boolean if a field has been set.
-func (o *LoadBalancerCreateResourcePermission) IsSetSites() bool {
+func (o *LoadBalancerCreateResourcePermissions) IsSetSites() bool {
 	if o != nil && !IsNil(o.Sites) {
 		return true
 	}
@@ -106,11 +106,11 @@ func (o *LoadBalancerCreateResourcePermission) IsSetSites() bool {
 }
 
 // SetSites gets a reference to the given []int64 and assigns it to the Sites field.
-func (o *LoadBalancerCreateResourcePermission) SetSites(v []int64) {
+func (o *LoadBalancerCreateResourcePermissions) SetSites(v []int64) {
 	o.Sites = v
 }
 
-func (o LoadBalancerCreateResourcePermission) MarshalJSON() ([]byte, error) {
+func (o LoadBalancerCreateResourcePermissions) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -118,7 +118,7 @@ func (o LoadBalancerCreateResourcePermission) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o LoadBalancerCreateResourcePermission) ToMap() (map[string]interface{}, error) {
+func (o LoadBalancerCreateResourcePermissions) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.All) {
 		toSerialize["all"] = o.All
@@ -134,43 +134,43 @@ func (o LoadBalancerCreateResourcePermission) ToMap() (map[string]interface{}, e
 	return toSerialize, nil
 }
 
-type NullableLoadBalancerCreateResourcePermission struct {
-	value *LoadBalancerCreateResourcePermission
+type NullableLoadBalancerCreateResourcePermissions struct {
+	value *LoadBalancerCreateResourcePermissions
 	isSet bool
 }
 
-func (v NullableLoadBalancerCreateResourcePermission) Get() *LoadBalancerCreateResourcePermission {
+func (v NullableLoadBalancerCreateResourcePermissions) Get() *LoadBalancerCreateResourcePermissions {
 	return v.value
 }
 
-func (v *NullableLoadBalancerCreateResourcePermission) Set(val *LoadBalancerCreateResourcePermission) {
+func (v *NullableLoadBalancerCreateResourcePermissions) Set(val *LoadBalancerCreateResourcePermissions) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableLoadBalancerCreateResourcePermission) IsSet() bool {
+func (v NullableLoadBalancerCreateResourcePermissions) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableLoadBalancerCreateResourcePermission) Unset() {
+func (v *NullableLoadBalancerCreateResourcePermissions) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableLoadBalancerCreateResourcePermission(val *LoadBalancerCreateResourcePermission) *NullableLoadBalancerCreateResourcePermission {
-	return &NullableLoadBalancerCreateResourcePermission{value: val, isSet: true}
+func NewNullableLoadBalancerCreateResourcePermissions(val *LoadBalancerCreateResourcePermissions) *NullableLoadBalancerCreateResourcePermissions {
+	return &NullableLoadBalancerCreateResourcePermissions{value: val, isSet: true}
 }
 
-func (v NullableLoadBalancerCreateResourcePermission) MarshalJSON() ([]byte, error) {
+func (v NullableLoadBalancerCreateResourcePermissions) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableLoadBalancerCreateResourcePermission) UnmarshalJSON(src []byte) error {
+func (v *NullableLoadBalancerCreateResourcePermissions) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
 
-func (v NullableLoadBalancerCreateResourcePermission) UnmarshalMapstructure(data any) (any, error) {
+func (v NullableLoadBalancerCreateResourcePermissions) UnmarshalMapstructure(data any) (any, error) {
 	if err := mapstructDecode(data, &v.value); err != nil {
 		return nil, err
 	}
@@ -179,7 +179,7 @@ func (v NullableLoadBalancerCreateResourcePermission) UnmarshalMapstructure(data
 	return v, nil
 }
 
-func (o *LoadBalancerCreateResourcePermission) UnmarshalJSON(data []byte) (err error) {
+func (o *LoadBalancerCreateResourcePermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }
 
