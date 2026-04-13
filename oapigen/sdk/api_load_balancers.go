@@ -42,8 +42,6 @@ func (r ApiCreateLoadBalancerRequest) Execute() (*CreateLoadBalancer200Response,
 /*
 CreateLoadBalancer Create a Load Balancer
 
-# Available for NSX load balancers only
-
 Use this command to create a load balancer.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -4015,8 +4013,6 @@ func (r ApiUpdateLoadBalancerRequest) Execute() (*CreateLoadBalancer200Response,
 
 /*
 UpdateLoadBalancer Update a Load Balancer
-
-# Available for NSX load balancers only
 
 Use this command to update an existing load balancer.
 

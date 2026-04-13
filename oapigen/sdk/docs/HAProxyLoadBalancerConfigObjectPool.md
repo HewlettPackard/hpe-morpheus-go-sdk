@@ -1,52 +1,52 @@
-# LoadBalancerCreateTenantsInner
+# HAProxyLoadBalancerConfigObjectPool
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int64** |  | [optional] 
+**Id** | Pointer to **string** | Resource Pool ID | [optional] 
 
 ## Methods
 
-### NewLoadBalancerCreateTenantsInner
+### NewHAProxyLoadBalancerConfigObjectPool
 
-`func NewLoadBalancerCreateTenantsInner() *LoadBalancerCreateTenantsInner`
+`func NewHAProxyLoadBalancerConfigObjectPool() *HAProxyLoadBalancerConfigObjectPool`
 
-NewLoadBalancerCreateTenantsInner instantiates a new LoadBalancerCreateTenantsInner object
+NewHAProxyLoadBalancerConfigObjectPool instantiates a new HAProxyLoadBalancerConfigObjectPool object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewLoadBalancerCreateTenantsInnerWithDefaults
+### NewHAProxyLoadBalancerConfigObjectPoolWithDefaults
 
-`func NewLoadBalancerCreateTenantsInnerWithDefaults() *LoadBalancerCreateTenantsInner`
+`func NewHAProxyLoadBalancerConfigObjectPoolWithDefaults() *HAProxyLoadBalancerConfigObjectPool`
 
-NewLoadBalancerCreateTenantsInnerWithDefaults instantiates a new LoadBalancerCreateTenantsInner object
+NewHAProxyLoadBalancerConfigObjectPoolWithDefaults instantiates a new HAProxyLoadBalancerConfigObjectPool object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *LoadBalancerCreateTenantsInner) GetId() int64`
+`func (o *HAProxyLoadBalancerConfigObjectPool) GetId() string`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *LoadBalancerCreateTenantsInner) GetIdOk() (*int64, bool)`
+`func (o *HAProxyLoadBalancerConfigObjectPool) GetIdOk() (*string, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *LoadBalancerCreateTenantsInner) SetId(v int64)`
+`func (o *HAProxyLoadBalancerConfigObjectPool) SetId(v string)`
 
 SetId sets Id field to given value.
 
 ### HasId
 
-`func (o *LoadBalancerCreateTenantsInner) HasId() bool`
+`func (o *HAProxyLoadBalancerConfigObjectPool) HasId() bool`
 
 HasId returns a boolean if a field has been set.
 

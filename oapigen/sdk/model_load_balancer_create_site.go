@@ -15,36 +15,37 @@ import (
 	"encoding/json"
 )
 
-// checks if the LoadBalancerCreateTenantsInner type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &LoadBalancerCreateTenantsInner{}
+// checks if the LoadBalancerCreateSite type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &LoadBalancerCreateSite{}
 
-// LoadBalancerCreateTenantsInner struct for LoadBalancerCreateTenantsInner
-type LoadBalancerCreateTenantsInner struct {
+// LoadBalancerCreateSite Group/Site reference
+type LoadBalancerCreateSite struct {
+	// Group/Site ID
 	Id                   *int64                 `json:"id,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
-type _LoadBalancerCreateTenantsInner LoadBalancerCreateTenantsInner
+type _LoadBalancerCreateSite LoadBalancerCreateSite
 
-// NewLoadBalancerCreateTenantsInner instantiates a new LoadBalancerCreateTenantsInner object
+// NewLoadBalancerCreateSite instantiates a new LoadBalancerCreateSite object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLoadBalancerCreateTenantsInner() *LoadBalancerCreateTenantsInner {
-	this := LoadBalancerCreateTenantsInner{}
+func NewLoadBalancerCreateSite() *LoadBalancerCreateSite {
+	this := LoadBalancerCreateSite{}
 	return &this
 }
 
-// NewLoadBalancerCreateTenantsInnerWithDefaults instantiates a new LoadBalancerCreateTenantsInner object
+// NewLoadBalancerCreateSiteWithDefaults instantiates a new LoadBalancerCreateSite object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewLoadBalancerCreateTenantsInnerWithDefaults() *LoadBalancerCreateTenantsInner {
-	this := LoadBalancerCreateTenantsInner{}
+func NewLoadBalancerCreateSiteWithDefaults() *LoadBalancerCreateSite {
+	this := LoadBalancerCreateSite{}
 	return &this
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *LoadBalancerCreateTenantsInner) GetId() int64 {
+func (o *LoadBalancerCreateSite) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
 		var ret int64
 		return ret
@@ -54,7 +55,7 @@ func (o *LoadBalancerCreateTenantsInner) GetId() int64 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoadBalancerCreateTenantsInner) GetIdOk() (*int64, bool) {
+func (o *LoadBalancerCreateSite) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -62,7 +63,7 @@ func (o *LoadBalancerCreateTenantsInner) GetIdOk() (*int64, bool) {
 }
 
 // IsSetId returns a boolean if a field has been set.
-func (o *LoadBalancerCreateTenantsInner) IsSetId() bool {
+func (o *LoadBalancerCreateSite) IsSetId() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -71,11 +72,11 @@ func (o *LoadBalancerCreateTenantsInner) IsSetId() bool {
 }
 
 // SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *LoadBalancerCreateTenantsInner) SetId(v int64) {
+func (o *LoadBalancerCreateSite) SetId(v int64) {
 	o.Id = &v
 }
 
-func (o LoadBalancerCreateTenantsInner) MarshalJSON() ([]byte, error) {
+func (o LoadBalancerCreateSite) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -83,7 +84,7 @@ func (o LoadBalancerCreateTenantsInner) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o LoadBalancerCreateTenantsInner) ToMap() (map[string]interface{}, error) {
+func (o LoadBalancerCreateSite) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
@@ -96,43 +97,43 @@ func (o LoadBalancerCreateTenantsInner) ToMap() (map[string]interface{}, error) 
 	return toSerialize, nil
 }
 
-type NullableLoadBalancerCreateTenantsInner struct {
-	value *LoadBalancerCreateTenantsInner
+type NullableLoadBalancerCreateSite struct {
+	value *LoadBalancerCreateSite
 	isSet bool
 }
 
-func (v NullableLoadBalancerCreateTenantsInner) Get() *LoadBalancerCreateTenantsInner {
+func (v NullableLoadBalancerCreateSite) Get() *LoadBalancerCreateSite {
 	return v.value
 }
 
-func (v *NullableLoadBalancerCreateTenantsInner) Set(val *LoadBalancerCreateTenantsInner) {
+func (v *NullableLoadBalancerCreateSite) Set(val *LoadBalancerCreateSite) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableLoadBalancerCreateTenantsInner) IsSet() bool {
+func (v NullableLoadBalancerCreateSite) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableLoadBalancerCreateTenantsInner) Unset() {
+func (v *NullableLoadBalancerCreateSite) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableLoadBalancerCreateTenantsInner(val *LoadBalancerCreateTenantsInner) *NullableLoadBalancerCreateTenantsInner {
-	return &NullableLoadBalancerCreateTenantsInner{value: val, isSet: true}
+func NewNullableLoadBalancerCreateSite(val *LoadBalancerCreateSite) *NullableLoadBalancerCreateSite {
+	return &NullableLoadBalancerCreateSite{value: val, isSet: true}
 }
 
-func (v NullableLoadBalancerCreateTenantsInner) MarshalJSON() ([]byte, error) {
+func (v NullableLoadBalancerCreateSite) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableLoadBalancerCreateTenantsInner) UnmarshalJSON(src []byte) error {
+func (v *NullableLoadBalancerCreateSite) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
 
-func (v NullableLoadBalancerCreateTenantsInner) UnmarshalMapstructure(data any) (any, error) {
+func (v NullableLoadBalancerCreateSite) UnmarshalMapstructure(data any) (any, error) {
 	if err := mapstructDecode(data, &v.value); err != nil {
 		return nil, err
 	}
@@ -141,7 +142,7 @@ func (v NullableLoadBalancerCreateTenantsInner) UnmarshalMapstructure(data any) 
 	return v, nil
 }
 
-func (o *LoadBalancerCreateTenantsInner) UnmarshalJSON(data []byte) (err error) {
+func (o *LoadBalancerCreateSite) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }
 
