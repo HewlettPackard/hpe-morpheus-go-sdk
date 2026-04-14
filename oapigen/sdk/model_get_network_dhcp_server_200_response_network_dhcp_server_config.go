@@ -13,159 +13,81 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
-// checks if the GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig{}
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
 
-// GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig struct for GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig
+// GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig Configuration object with parameters that vary by type.
 type GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig struct {
-	EdgeCluster          *string                `json:"edgeCluster,omitempty"`
-	PreferredEdgeNode1   *string                `json:"preferredEdgeNode1,omitempty"`
-	PreferredEdgeNode2   *string                `json:"preferredEdgeNode2,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	NSXDHCPServerConfiguration *NSXDHCPServerConfiguration
+	MapmapOfStringAny          *map[string]interface{}
 }
 
-type _GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig
-
-// NewGetNetworkDhcpServer200ResponseNetworkDhcpServerConfig instantiates a new GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetNetworkDhcpServer200ResponseNetworkDhcpServerConfig() *GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig {
-	this := GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig{}
-	return &this
-}
-
-// NewGetNetworkDhcpServer200ResponseNetworkDhcpServerConfigWithDefaults instantiates a new GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetNetworkDhcpServer200ResponseNetworkDhcpServerConfigWithDefaults() *GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig {
-	this := GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig{}
-	return &this
-}
-
-// GetEdgeCluster returns the EdgeCluster field value if set, zero value otherwise.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig) GetEdgeCluster() string {
-	if o == nil || IsNil(o.EdgeCluster) {
-		var ret string
-		return ret
-	}
-	return *o.EdgeCluster
-}
-
-// GetEdgeClusterOk returns a tuple with the EdgeCluster field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig) GetEdgeClusterOk() (*string, bool) {
-	if o == nil || IsNil(o.EdgeCluster) {
-		return nil, false
-	}
-	return o.EdgeCluster, true
-}
-
-// IsSetEdgeCluster returns a boolean if a field has been set.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig) IsSetEdgeCluster() bool {
-	if o != nil && !IsNil(o.EdgeCluster) {
-		return true
+func (dst *GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig{}
 	}
 
-	return false
-}
+	mapstructDecode(data, &dst.NSXDHCPServerConfiguration)
 
-// SetEdgeCluster gets a reference to the given string and assigns it to the EdgeCluster field.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig) SetEdgeCluster(v string) {
-	o.EdgeCluster = &v
-}
-
-// GetPreferredEdgeNode1 returns the PreferredEdgeNode1 field value if set, zero value otherwise.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig) GetPreferredEdgeNode1() string {
-	if o == nil || IsNil(o.PreferredEdgeNode1) {
-		var ret string
-		return ret
-	}
-	return *o.PreferredEdgeNode1
-}
-
-// GetPreferredEdgeNode1Ok returns a tuple with the PreferredEdgeNode1 field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig) GetPreferredEdgeNode1Ok() (*string, bool) {
-	if o == nil || IsNil(o.PreferredEdgeNode1) {
-		return nil, false
-	}
-	return o.PreferredEdgeNode1, true
-}
-
-// IsSetPreferredEdgeNode1 returns a boolean if a field has been set.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig) IsSetPreferredEdgeNode1() bool {
-	if o != nil && !IsNil(o.PreferredEdgeNode1) {
-		return true
+	if IsEmpty(dst.NSXDHCPServerConfiguration) {
+		dst.NSXDHCPServerConfiguration = nil
 	}
 
-	return false
+	mapstructDecode(data, &dst.MapmapOfStringAny)
+
+	if IsEmpty(dst.MapmapOfStringAny) {
+		dst.MapmapOfStringAny = nil
+	}
+
+	return dst, nil
 }
 
-// SetPreferredEdgeNode1 gets a reference to the given string and assigns it to the PreferredEdgeNode1 field.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig) SetPreferredEdgeNode1(v string) {
-	o.PreferredEdgeNode1 = &v
+// Unmarshal JSON data into any of the pointers in the struct
+func (dst *GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig) UnmarshalJSON(data []byte) error {
+	var err error
+	// try to unmarshal JSON data into NSXDHCPServerConfiguration
+	err = json.Unmarshal(data, &dst.NSXDHCPServerConfiguration)
+	if err == nil {
+		jsonNSXDHCPServerConfiguration, _ := json.Marshal(dst.NSXDHCPServerConfiguration)
+		if string(jsonNSXDHCPServerConfiguration) == "{}" { // empty struct
+			dst.NSXDHCPServerConfiguration = nil
+		} else {
+			return nil // data stored in dst.NSXDHCPServerConfiguration, return on the first match
+		}
+	} else {
+		dst.NSXDHCPServerConfiguration = nil
+	}
+
+	// try to unmarshal JSON data into MapmapOfStringAny
+	err = json.Unmarshal(data, &dst.MapmapOfStringAny)
+	if err == nil {
+		jsonMapmapOfStringAny, _ := json.Marshal(dst.MapmapOfStringAny)
+		if string(jsonMapmapOfStringAny) == "{}" { // empty struct
+			dst.MapmapOfStringAny = nil
+		} else {
+			return nil // data stored in dst.MapmapOfStringAny, return on the first match
+		}
+	} else {
+		dst.MapmapOfStringAny = nil
+	}
+
+	return NewResponseValidationError("data failed to match schemas in anyOf(GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig)")
 }
 
-// GetPreferredEdgeNode2 returns the PreferredEdgeNode2 field value if set, zero value otherwise.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig) GetPreferredEdgeNode2() string {
-	if o == nil || IsNil(o.PreferredEdgeNode2) {
-		var ret string
-		return ret
-	}
-	return *o.PreferredEdgeNode2
-}
-
-// GetPreferredEdgeNode2Ok returns a tuple with the PreferredEdgeNode2 field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig) GetPreferredEdgeNode2Ok() (*string, bool) {
-	if o == nil || IsNil(o.PreferredEdgeNode2) {
-		return nil, false
-	}
-	return o.PreferredEdgeNode2, true
-}
-
-// IsSetPreferredEdgeNode2 returns a boolean if a field has been set.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig) IsSetPreferredEdgeNode2() bool {
-	if o != nil && !IsNil(o.PreferredEdgeNode2) {
-		return true
+// Marshal data from the first non-nil pointers in the struct to JSON
+func (src GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig) MarshalJSON() ([]byte, error) {
+	if src.NSXDHCPServerConfiguration != nil {
+		return json.Marshal(&src.NSXDHCPServerConfiguration)
 	}
 
-	return false
-}
-
-// SetPreferredEdgeNode2 gets a reference to the given string and assigns it to the PreferredEdgeNode2 field.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig) SetPreferredEdgeNode2(v string) {
-	o.PreferredEdgeNode2 = &v
-}
-
-func (o GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	if !IsNil(o.EdgeCluster) {
-		toSerialize["edgeCluster"] = o.EdgeCluster
-	}
-	if !IsNil(o.PreferredEdgeNode1) {
-		toSerialize["preferredEdgeNode1"] = o.PreferredEdgeNode1
-	}
-	if !IsNil(o.PreferredEdgeNode2) {
-		toSerialize["preferredEdgeNode2"] = o.PreferredEdgeNode2
+	if src.MapmapOfStringAny != nil {
+		return json.Marshal(&src.MapmapOfStringAny)
 	}
 
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
-	return toSerialize, nil
+	return nil, nil // no data in anyOf schemas
 }
 
 type NullableGetNetworkDhcpServer200ResponseNetworkDhcpServerConfig struct {
@@ -212,9 +134,3 @@ func (v NullableGetNetworkDhcpServer200ResponseNetworkDhcpServerConfig) Unmarsha
 
 	return v, nil
 }
-
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
-}
-
-// - model_simple.mustache

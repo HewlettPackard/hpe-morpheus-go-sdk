@@ -6339,6 +6339,8 @@ docs/NFSDatastoreConfiguration.md
 docs/NFSDatastoreConfiguration1.md
 docs/NFSDatastoreConfiguration2.md
 docs/NFSDatastoreConfiguration3.md
+docs/NSXDHCPServerConfiguration.md
+docs/NSXDHCPServerConfiguration1.md
 docs/NSXNetworkServer.md
 docs/NSXNetworkServerConfig.md
 docs/NSXNetworkServerCredential.md
@@ -6371,6 +6373,7 @@ docs/NetworkCreateType.md
 docs/NetworkCreateZone.md
 docs/NetworkCreateZonePool.md
 docs/NetworkDhcpRelayCreate.md
+docs/NetworkDhcpServerConfigNSX.md
 docs/NetworkDhcpServerCreate.md
 docs/NetworkDhcpServerCreateConfig.md
 docs/NetworkDomain.md
@@ -15201,6 +15204,7 @@ model_network_create_type.go
 model_network_create_zone.go
 model_network_create_zone_pool.go
 model_network_dhcp_relay_create.go
+model_network_dhcp_server_config_nsx.go
 model_network_dhcp_server_create.go
 model_network_dhcp_server_create_config.go
 model_network_domain.go
@@ -15347,6 +15351,8 @@ model_nfs_datastore_configuration.go
 model_nfs_datastore_configuration_1.go
 model_nfs_datastore_configuration_2.go
 model_nfs_datastore_configuration_3.go
+model_nsx_dhcp_server_configuration.go
+model_nsx_dhcp_server_configuration_1.go
 model_nsx_network_server.go
 model_nsx_network_server_config.go
 model_nsx_network_server_credential.go
