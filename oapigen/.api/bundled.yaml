@@ -100512,7 +100512,8 @@ paths:
           description: Load Balancer ID
           required: true
           schema: &ref_493
-            type: number
+            type: integer
+            format: int64
           example: 4
       responses:
         '200':
@@ -100582,7 +100583,7 @@ paths:
                         properties:
                           id:
                             type: integer
-                            format: int32
+                            format: int64
                     resourcePermission:
                       type: object
                       properties:

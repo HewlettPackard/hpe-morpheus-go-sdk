@@ -155,7 +155,7 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerExecute(r ApiCreateLoadBalan
 type ApiCreateLoadBalancerMonitorRequest struct {
 	ctx                              context.Context
 	ApiService                       *LoadBalancersAPIService
-	loadBalancerId                   float32
+	loadBalancerId                   int64
 	createLoadBalancerMonitorRequest *CreateLoadBalancerMonitorRequest
 }
 
@@ -179,7 +179,7 @@ This endpoint allows creating a Load Balancer Monitor. Configuration options var
 	@param loadBalancerId Load Balancer ID
 	@return ApiCreateLoadBalancerMonitorRequest
 */
-func (a *LoadBalancersAPIService) CreateLoadBalancerMonitor(ctx context.Context, loadBalancerId float32) ApiCreateLoadBalancerMonitorRequest {
+func (a *LoadBalancersAPIService) CreateLoadBalancerMonitor(ctx context.Context, loadBalancerId int64) ApiCreateLoadBalancerMonitorRequest {
 	return ApiCreateLoadBalancerMonitorRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -289,7 +289,7 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerMonitorExecute(r ApiCreateLo
 type ApiCreateLoadBalancerPoolRequest struct {
 	ctx                           context.Context
 	ApiService                    *LoadBalancersAPIService
-	loadBalancerId                float32
+	loadBalancerId                int64
 	createLoadBalancerPoolRequest *CreateLoadBalancerPoolRequest
 }
 
@@ -313,7 +313,7 @@ This endpoint allows creating a Load Balancer Pool. Configuration options vary b
 	@param loadBalancerId Load Balancer ID
 	@return ApiCreateLoadBalancerPoolRequest
 */
-func (a *LoadBalancersAPIService) CreateLoadBalancerPool(ctx context.Context, loadBalancerId float32) ApiCreateLoadBalancerPoolRequest {
+func (a *LoadBalancersAPIService) CreateLoadBalancerPool(ctx context.Context, loadBalancerId int64) ApiCreateLoadBalancerPoolRequest {
 	return ApiCreateLoadBalancerPoolRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -557,7 +557,7 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerPoolNodeExecute(r ApiCreateL
 type ApiCreateLoadBalancerProfileRequest struct {
 	ctx                              context.Context
 	ApiService                       *LoadBalancersAPIService
-	loadBalancerId                   float32
+	loadBalancerId                   int64
 	createLoadBalancerProfileRequest *CreateLoadBalancerProfileRequest
 }
 
@@ -581,7 +581,7 @@ This endpoint allows creating a Load Balancer Profile. Configuration options var
 	@param loadBalancerId Load Balancer ID
 	@return ApiCreateLoadBalancerProfileRequest
 */
-func (a *LoadBalancersAPIService) CreateLoadBalancerProfile(ctx context.Context, loadBalancerId float32) ApiCreateLoadBalancerProfileRequest {
+func (a *LoadBalancersAPIService) CreateLoadBalancerProfile(ctx context.Context, loadBalancerId int64) ApiCreateLoadBalancerProfileRequest {
 	return ApiCreateLoadBalancerProfileRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -691,7 +691,7 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerProfileExecute(r ApiCreateLo
 type ApiCreateLoadBalancerVirtualServerRequest struct {
 	ctx                                    context.Context
 	ApiService                             *LoadBalancersAPIService
-	loadBalancerId                         float32
+	loadBalancerId                         int64
 	createLoadBalancerVirtualServerRequest *CreateLoadBalancerVirtualServerRequest
 }
 
@@ -715,7 +715,7 @@ This endpoint allows creating a Load Balancer Virtual Server. Configuration opti
 	@param loadBalancerId Load Balancer ID
 	@return ApiCreateLoadBalancerVirtualServerRequest
 */
-func (a *LoadBalancersAPIService) CreateLoadBalancerVirtualServer(ctx context.Context, loadBalancerId float32) ApiCreateLoadBalancerVirtualServerRequest {
+func (a *LoadBalancersAPIService) CreateLoadBalancerVirtualServer(ctx context.Context, loadBalancerId int64) ApiCreateLoadBalancerVirtualServerRequest {
 	return ApiCreateLoadBalancerVirtualServerRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -825,7 +825,7 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerVirtualServerExecute(r ApiCr
 type ApiDeleteLoadBalancerRequest struct {
 	ctx            context.Context
 	ApiService     *LoadBalancersAPIService
-	loadBalancerId float32
+	loadBalancerId int64
 }
 
 func (r ApiDeleteLoadBalancerRequest) Execute() (*DeleteLoadBalancer200Response, *http.Response, error) {
@@ -841,7 +841,7 @@ Will delete a Load Balancer from the system and make it no longer usable.
 	@param loadBalancerId Load Balancer ID
 	@return ApiDeleteLoadBalancerRequest
 */
-func (a *LoadBalancersAPIService) DeleteLoadBalancer(ctx context.Context, loadBalancerId float32) ApiDeleteLoadBalancerRequest {
+func (a *LoadBalancersAPIService) DeleteLoadBalancer(ctx context.Context, loadBalancerId int64) ApiDeleteLoadBalancerRequest {
 	return ApiDeleteLoadBalancerRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -949,7 +949,7 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerExecute(r ApiDeleteLoadBalan
 type ApiDeleteLoadBalancerMonitorRequest struct {
 	ctx            context.Context
 	ApiService     *LoadBalancersAPIService
-	loadBalancerId float32
+	loadBalancerId int64
 	id             int64
 }
 
@@ -967,7 +967,7 @@ Will delete a Load Balancer Monitor from the system and make it no longer usable
 	@param id Morpheus ID of the Object being referenced
 	@return ApiDeleteLoadBalancerMonitorRequest
 */
-func (a *LoadBalancersAPIService) DeleteLoadBalancerMonitor(ctx context.Context, loadBalancerId float32, id int64) ApiDeleteLoadBalancerMonitorRequest {
+func (a *LoadBalancersAPIService) DeleteLoadBalancerMonitor(ctx context.Context, loadBalancerId int64, id int64) ApiDeleteLoadBalancerMonitorRequest {
 	return ApiDeleteLoadBalancerMonitorRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -1077,7 +1077,7 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerMonitorExecute(r ApiDeleteLo
 type ApiDeleteLoadBalancerPoolRequest struct {
 	ctx            context.Context
 	ApiService     *LoadBalancersAPIService
-	loadBalancerId float32
+	loadBalancerId int64
 	id             int64
 }
 
@@ -1095,7 +1095,7 @@ Will delete a Load Balancer Pool from the system and make it no longer usable.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiDeleteLoadBalancerPoolRequest
 */
-func (a *LoadBalancersAPIService) DeleteLoadBalancerPool(ctx context.Context, loadBalancerId float32, id int64) ApiDeleteLoadBalancerPoolRequest {
+func (a *LoadBalancersAPIService) DeleteLoadBalancerPool(ctx context.Context, loadBalancerId int64, id int64) ApiDeleteLoadBalancerPoolRequest {
 	return ApiDeleteLoadBalancerPoolRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -1333,7 +1333,7 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerPoolNodeExecute(r ApiDeleteL
 type ApiDeleteLoadBalancerProfileRequest struct {
 	ctx            context.Context
 	ApiService     *LoadBalancersAPIService
-	loadBalancerId float32
+	loadBalancerId int64
 	id             int64
 }
 
@@ -1351,7 +1351,7 @@ Will delete a Load Balancer Profile from the system and make it no longer usable
 	@param id Morpheus ID of the Object being referenced
 	@return ApiDeleteLoadBalancerProfileRequest
 */
-func (a *LoadBalancersAPIService) DeleteLoadBalancerProfile(ctx context.Context, loadBalancerId float32, id int64) ApiDeleteLoadBalancerProfileRequest {
+func (a *LoadBalancersAPIService) DeleteLoadBalancerProfile(ctx context.Context, loadBalancerId int64, id int64) ApiDeleteLoadBalancerProfileRequest {
 	return ApiDeleteLoadBalancerProfileRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -1461,7 +1461,7 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerProfileExecute(r ApiDeleteLo
 type ApiDeleteLoadBalancerVirtualServerRequest struct {
 	ctx            context.Context
 	ApiService     *LoadBalancersAPIService
-	loadBalancerId float32
+	loadBalancerId int64
 	id             int64
 }
 
@@ -1479,7 +1479,7 @@ Will delete a Load Balancer Virtual Server from the system and make it no longer
 	@param id Morpheus ID of the Object being referenced
 	@return ApiDeleteLoadBalancerVirtualServerRequest
 */
-func (a *LoadBalancersAPIService) DeleteLoadBalancerVirtualServer(ctx context.Context, loadBalancerId float32, id int64) ApiDeleteLoadBalancerVirtualServerRequest {
+func (a *LoadBalancersAPIService) DeleteLoadBalancerVirtualServer(ctx context.Context, loadBalancerId int64, id int64) ApiDeleteLoadBalancerVirtualServerRequest {
 	return ApiDeleteLoadBalancerVirtualServerRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -1589,7 +1589,7 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerVirtualServerExecute(r ApiDe
 type ApiGetLoadBalancerRequest struct {
 	ctx            context.Context
 	ApiService     *LoadBalancersAPIService
-	loadBalancerId float32
+	loadBalancerId int64
 }
 
 func (r ApiGetLoadBalancerRequest) Execute() (*GetLoadBalancer200Response, *http.Response, error) {
@@ -1605,7 +1605,7 @@ This endpoint retrieves a specific Load Balancer.
 	@param loadBalancerId Load Balancer ID
 	@return ApiGetLoadBalancerRequest
 */
-func (a *LoadBalancersAPIService) GetLoadBalancer(ctx context.Context, loadBalancerId float32) ApiGetLoadBalancerRequest {
+func (a *LoadBalancersAPIService) GetLoadBalancer(ctx context.Context, loadBalancerId int64) ApiGetLoadBalancerRequest {
 	return ApiGetLoadBalancerRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -1713,7 +1713,7 @@ func (a *LoadBalancersAPIService) GetLoadBalancerExecute(r ApiGetLoadBalancerReq
 type ApiGetLoadBalancerMonitorRequest struct {
 	ctx            context.Context
 	ApiService     *LoadBalancersAPIService
-	loadBalancerId float32
+	loadBalancerId int64
 	id             int64
 }
 
@@ -1731,7 +1731,7 @@ This endpoint retrieves a specific Load Balancer Monitor.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiGetLoadBalancerMonitorRequest
 */
-func (a *LoadBalancersAPIService) GetLoadBalancerMonitor(ctx context.Context, loadBalancerId float32, id int64) ApiGetLoadBalancerMonitorRequest {
+func (a *LoadBalancersAPIService) GetLoadBalancerMonitor(ctx context.Context, loadBalancerId int64, id int64) ApiGetLoadBalancerMonitorRequest {
 	return ApiGetLoadBalancerMonitorRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -1841,7 +1841,7 @@ func (a *LoadBalancersAPIService) GetLoadBalancerMonitorExecute(r ApiGetLoadBala
 type ApiGetLoadBalancerPoolRequest struct {
 	ctx            context.Context
 	ApiService     *LoadBalancersAPIService
-	loadBalancerId float32
+	loadBalancerId int64
 	id             int64
 }
 
@@ -1859,7 +1859,7 @@ This endpoint retrieves a specific Load Balancer Pool.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiGetLoadBalancerPoolRequest
 */
-func (a *LoadBalancersAPIService) GetLoadBalancerPool(ctx context.Context, loadBalancerId float32, id int64) ApiGetLoadBalancerPoolRequest {
+func (a *LoadBalancersAPIService) GetLoadBalancerPool(ctx context.Context, loadBalancerId int64, id int64) ApiGetLoadBalancerPoolRequest {
 	return ApiGetLoadBalancerPoolRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -2097,7 +2097,7 @@ func (a *LoadBalancersAPIService) GetLoadBalancerPoolNodeExecute(r ApiGetLoadBal
 type ApiGetLoadBalancerProfileRequest struct {
 	ctx            context.Context
 	ApiService     *LoadBalancersAPIService
-	loadBalancerId float32
+	loadBalancerId int64
 	id             int64
 }
 
@@ -2115,7 +2115,7 @@ This endpoint retrieves a specific Load Balancer Profile.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiGetLoadBalancerProfileRequest
 */
-func (a *LoadBalancersAPIService) GetLoadBalancerProfile(ctx context.Context, loadBalancerId float32, id int64) ApiGetLoadBalancerProfileRequest {
+func (a *LoadBalancersAPIService) GetLoadBalancerProfile(ctx context.Context, loadBalancerId int64, id int64) ApiGetLoadBalancerProfileRequest {
 	return ApiGetLoadBalancerProfileRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -2349,7 +2349,7 @@ func (a *LoadBalancersAPIService) GetLoadBalancerTypeExecute(r ApiGetLoadBalance
 type ApiGetLoadBalancerVirtualServerRequest struct {
 	ctx            context.Context
 	ApiService     *LoadBalancersAPIService
-	loadBalancerId float32
+	loadBalancerId int64
 	id             int64
 }
 
@@ -2367,7 +2367,7 @@ This endpoint retrieves a specific Load Balancer Virtual Server.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiGetLoadBalancerVirtualServerRequest
 */
-func (a *LoadBalancersAPIService) GetLoadBalancerVirtualServer(ctx context.Context, loadBalancerId float32, id int64) ApiGetLoadBalancerVirtualServerRequest {
+func (a *LoadBalancersAPIService) GetLoadBalancerVirtualServer(ctx context.Context, loadBalancerId int64, id int64) ApiGetLoadBalancerVirtualServerRequest {
 	return ApiGetLoadBalancerVirtualServerRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -2477,7 +2477,7 @@ func (a *LoadBalancersAPIService) GetLoadBalancerVirtualServerExecute(r ApiGetLo
 type ApiListLoadBalancerMonitorsRequest struct {
 	ctx            context.Context
 	ApiService     *LoadBalancersAPIService
-	loadBalancerId float32
+	loadBalancerId int64
 	max            *int64
 	offset         *int64
 	sort           *string
@@ -2535,7 +2535,7 @@ This endpoint retrieves all load balancer monitors associated with a specified l
 	@param loadBalancerId Load Balancer ID
 	@return ApiListLoadBalancerMonitorsRequest
 */
-func (a *LoadBalancersAPIService) ListLoadBalancerMonitors(ctx context.Context, loadBalancerId float32) ApiListLoadBalancerMonitorsRequest {
+func (a *LoadBalancersAPIService) ListLoadBalancerMonitors(ctx context.Context, loadBalancerId int64) ApiListLoadBalancerMonitorsRequest {
 	return ApiListLoadBalancerMonitorsRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -2859,7 +2859,7 @@ func (a *LoadBalancersAPIService) ListLoadBalancerPoolNodesExecute(r ApiListLoad
 type ApiListLoadBalancerPoolsRequest struct {
 	ctx            context.Context
 	ApiService     *LoadBalancersAPIService
-	loadBalancerId float32
+	loadBalancerId int64
 	max            *int64
 	offset         *int64
 	sort           *string
@@ -2917,7 +2917,7 @@ This endpoint retrieves all load balancer pools associated with a specified load
 	@param loadBalancerId Load Balancer ID
 	@return ApiListLoadBalancerPoolsRequest
 */
-func (a *LoadBalancersAPIService) ListLoadBalancerPools(ctx context.Context, loadBalancerId float32) ApiListLoadBalancerPoolsRequest {
+func (a *LoadBalancersAPIService) ListLoadBalancerPools(ctx context.Context, loadBalancerId int64) ApiListLoadBalancerPoolsRequest {
 	return ApiListLoadBalancerPoolsRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -3055,7 +3055,7 @@ func (a *LoadBalancersAPIService) ListLoadBalancerPoolsExecute(r ApiListLoadBala
 type ApiListLoadBalancerProfilesRequest struct {
 	ctx            context.Context
 	ApiService     *LoadBalancersAPIService
-	loadBalancerId float32
+	loadBalancerId int64
 	max            *int64
 	offset         *int64
 	sort           *string
@@ -3113,7 +3113,7 @@ This endpoint retrieves all load balancer profiles associated with a specified l
 	@param loadBalancerId Load Balancer ID
 	@return ApiListLoadBalancerProfilesRequest
 */
-func (a *LoadBalancersAPIService) ListLoadBalancerProfiles(ctx context.Context, loadBalancerId float32) ApiListLoadBalancerProfilesRequest {
+func (a *LoadBalancersAPIService) ListLoadBalancerProfiles(ctx context.Context, loadBalancerId int64) ApiListLoadBalancerProfilesRequest {
 	return ApiListLoadBalancerProfilesRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -3466,7 +3466,7 @@ func (a *LoadBalancersAPIService) ListLoadBalancerTypesExecute(r ApiListLoadBala
 type ApiListLoadBalancerVirtualServersRequest struct {
 	ctx            context.Context
 	ApiService     *LoadBalancersAPIService
-	loadBalancerId float32
+	loadBalancerId int64
 	max            *int64
 	offset         *int64
 	sort           *string
@@ -3538,7 +3538,7 @@ This endpoint retrieves load balancer virtual servers associated with a specifie
 	@param loadBalancerId Load Balancer ID
 	@return ApiListLoadBalancerVirtualServersRequest
 */
-func (a *LoadBalancersAPIService) ListLoadBalancerVirtualServers(ctx context.Context, loadBalancerId float32) ApiListLoadBalancerVirtualServersRequest {
+func (a *LoadBalancersAPIService) ListLoadBalancerVirtualServers(ctx context.Context, loadBalancerId int64) ApiListLoadBalancerVirtualServersRequest {
 	return ApiListLoadBalancerVirtualServersRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -3874,7 +3874,7 @@ func (a *LoadBalancersAPIService) ListLoadBalancersExecute(r ApiListLoadBalancer
 type ApiRefreshLoadBalancerRequest struct {
 	ctx            context.Context
 	ApiService     *LoadBalancersAPIService
-	loadBalancerId float32
+	loadBalancerId int64
 }
 
 func (r ApiRefreshLoadBalancerRequest) Execute() (*RefreshLoadBalancer200Response, *http.Response, error) {
@@ -3890,7 +3890,7 @@ Will refresh a Load Balancer.
 	@param loadBalancerId Load Balancer ID
 	@return ApiRefreshLoadBalancerRequest
 */
-func (a *LoadBalancersAPIService) RefreshLoadBalancer(ctx context.Context, loadBalancerId float32) ApiRefreshLoadBalancerRequest {
+func (a *LoadBalancersAPIService) RefreshLoadBalancer(ctx context.Context, loadBalancerId int64) ApiRefreshLoadBalancerRequest {
 	return ApiRefreshLoadBalancerRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -3998,7 +3998,7 @@ func (a *LoadBalancersAPIService) RefreshLoadBalancerExecute(r ApiRefreshLoadBal
 type ApiUpdateLoadBalancerRequest struct {
 	ctx                       context.Context
 	ApiService                *LoadBalancersAPIService
-	loadBalancerId            float32
+	loadBalancerId            int64
 	updateLoadBalancerRequest *UpdateLoadBalancerRequest
 }
 
@@ -4020,7 +4020,7 @@ Use this command to update an existing load balancer.
 	@param loadBalancerId Load Balancer ID
 	@return ApiUpdateLoadBalancerRequest
 */
-func (a *LoadBalancersAPIService) UpdateLoadBalancer(ctx context.Context, loadBalancerId float32) ApiUpdateLoadBalancerRequest {
+func (a *LoadBalancersAPIService) UpdateLoadBalancer(ctx context.Context, loadBalancerId int64) ApiUpdateLoadBalancerRequest {
 	return ApiUpdateLoadBalancerRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -4130,7 +4130,7 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerExecute(r ApiUpdateLoadBalan
 type ApiUpdateLoadBalancerMonitorRequest struct {
 	ctx                              context.Context
 	ApiService                       *LoadBalancersAPIService
-	loadBalancerId                   float32
+	loadBalancerId                   int64
 	id                               int64
 	updateLoadBalancerMonitorRequest *UpdateLoadBalancerMonitorRequest
 }
@@ -4156,7 +4156,7 @@ This endpoint allows updating a Load Balancer Monitor. Configuration options var
 	@param id Morpheus ID of the Object being referenced
 	@return ApiUpdateLoadBalancerMonitorRequest
 */
-func (a *LoadBalancersAPIService) UpdateLoadBalancerMonitor(ctx context.Context, loadBalancerId float32, id int64) ApiUpdateLoadBalancerMonitorRequest {
+func (a *LoadBalancersAPIService) UpdateLoadBalancerMonitor(ctx context.Context, loadBalancerId int64, id int64) ApiUpdateLoadBalancerMonitorRequest {
 	return ApiUpdateLoadBalancerMonitorRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -4268,7 +4268,7 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerMonitorExecute(r ApiUpdateLo
 type ApiUpdateLoadBalancerPoolRequest struct {
 	ctx                           context.Context
 	ApiService                    *LoadBalancersAPIService
-	loadBalancerId                float32
+	loadBalancerId                int64
 	id                            int64
 	updateLoadBalancerPoolRequest *UpdateLoadBalancerPoolRequest
 }
@@ -4292,7 +4292,7 @@ Use this command to update an existing load balancer pool.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiUpdateLoadBalancerPoolRequest
 */
-func (a *LoadBalancersAPIService) UpdateLoadBalancerPool(ctx context.Context, loadBalancerId float32, id int64) ApiUpdateLoadBalancerPoolRequest {
+func (a *LoadBalancersAPIService) UpdateLoadBalancerPool(ctx context.Context, loadBalancerId int64, id int64) ApiUpdateLoadBalancerPoolRequest {
 	return ApiUpdateLoadBalancerPoolRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -4540,7 +4540,7 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerPoolNodeExecute(r ApiUpdateL
 type ApiUpdateLoadBalancerProfileRequest struct {
 	ctx                              context.Context
 	ApiService                       *LoadBalancersAPIService
-	loadBalancerId                   float32
+	loadBalancerId                   int64
 	id                               int64
 	updateLoadBalancerProfileRequest *UpdateLoadBalancerProfileRequest
 }
@@ -4564,7 +4564,7 @@ Use this command to update an existing load balancer Profile.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiUpdateLoadBalancerProfileRequest
 */
-func (a *LoadBalancersAPIService) UpdateLoadBalancerProfile(ctx context.Context, loadBalancerId float32, id int64) ApiUpdateLoadBalancerProfileRequest {
+func (a *LoadBalancersAPIService) UpdateLoadBalancerProfile(ctx context.Context, loadBalancerId int64, id int64) ApiUpdateLoadBalancerProfileRequest {
 	return ApiUpdateLoadBalancerProfileRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -4676,7 +4676,7 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerProfileExecute(r ApiUpdateLo
 type ApiUpdateLoadBalancerVirtualServerRequest struct {
 	ctx                                    context.Context
 	ApiService                             *LoadBalancersAPIService
-	loadBalancerId                         float32
+	loadBalancerId                         int64
 	id                                     int64
 	updateLoadBalancerVirtualServerRequest *UpdateLoadBalancerVirtualServerRequest
 }
@@ -4700,7 +4700,7 @@ Use this command to update an existing load balancer virtual server.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiUpdateLoadBalancerVirtualServerRequest
 */
-func (a *LoadBalancersAPIService) UpdateLoadBalancerVirtualServer(ctx context.Context, loadBalancerId float32, id int64) ApiUpdateLoadBalancerVirtualServerRequest {
+func (a *LoadBalancersAPIService) UpdateLoadBalancerVirtualServer(ctx context.Context, loadBalancerId int64, id int64) ApiUpdateLoadBalancerVirtualServerRequest {
 	return ApiUpdateLoadBalancerVirtualServerRequest{
 		ApiService:     a,
 		ctx:            ctx,

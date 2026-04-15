@@ -127,7 +127,7 @@ import (
 )
 
 func main() {
-	loadBalancerId := float32(4) // float32 | Load Balancer ID
+	loadBalancerId := int64(4) // int64 | Load Balancer ID
 	createLoadBalancerMonitorRequest := *openapiclient.NewCreateLoadBalancerMonitorRequest() // CreateLoadBalancerMonitorRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -148,7 +148,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**loadBalancerId** | **float32** | Load Balancer ID | 
+**loadBalancerId** | **int64** | Load Balancer ID | 
 
 ### Other Parameters
 
@@ -199,7 +199,7 @@ import (
 )
 
 func main() {
-	loadBalancerId := float32(4) // float32 | Load Balancer ID
+	loadBalancerId := int64(4) // int64 | Load Balancer ID
 	createLoadBalancerPoolRequest := *openapiclient.NewCreateLoadBalancerPoolRequest() // CreateLoadBalancerPoolRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -220,7 +220,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**loadBalancerId** | **float32** | Load Balancer ID | 
+**loadBalancerId** | **int64** | Load Balancer ID | 
 
 ### Other Parameters
 
@@ -343,7 +343,7 @@ import (
 )
 
 func main() {
-	loadBalancerId := float32(4) // float32 | Load Balancer ID
+	loadBalancerId := int64(4) // int64 | Load Balancer ID
 	createLoadBalancerProfileRequest := *openapiclient.NewCreateLoadBalancerProfileRequest() // CreateLoadBalancerProfileRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -364,7 +364,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**loadBalancerId** | **float32** | Load Balancer ID | 
+**loadBalancerId** | **int64** | Load Balancer ID | 
 
 ### Other Parameters
 
@@ -415,7 +415,7 @@ import (
 )
 
 func main() {
-	loadBalancerId := float32(4) // float32 | Load Balancer ID
+	loadBalancerId := int64(4) // int64 | Load Balancer ID
 	createLoadBalancerVirtualServerRequest := *openapiclient.NewCreateLoadBalancerVirtualServerRequest() // CreateLoadBalancerVirtualServerRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -436,7 +436,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**loadBalancerId** | **float32** | Load Balancer ID | 
+**loadBalancerId** | **int64** | Load Balancer ID | 
 
 ### Other Parameters
 
@@ -487,7 +487,7 @@ import (
 )
 
 func main() {
-	loadBalancerId := float32(4) // float32 | Load Balancer ID
+	loadBalancerId := int64(4) // int64 | Load Balancer ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -507,7 +507,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**loadBalancerId** | **float32** | Load Balancer ID | 
+**loadBalancerId** | **int64** | Load Balancer ID | 
 
 ### Other Parameters
 
@@ -557,7 +557,7 @@ import (
 )
 
 func main() {
-	loadBalancerId := float32(4) // float32 | Load Balancer ID
+	loadBalancerId := int64(4) // int64 | Load Balancer ID
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 
 	configuration := openapiclient.NewConfiguration()
@@ -578,7 +578,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**loadBalancerId** | **float32** | Load Balancer ID | 
+**loadBalancerId** | **int64** | Load Balancer ID | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -630,7 +630,7 @@ import (
 )
 
 func main() {
-	loadBalancerId := float32(4) // float32 | Load Balancer ID
+	loadBalancerId := int64(4) // int64 | Load Balancer ID
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 
 	configuration := openapiclient.NewConfiguration()
@@ -651,7 +651,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**loadBalancerId** | **float32** | Load Balancer ID | 
+**loadBalancerId** | **int64** | Load Balancer ID | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -776,7 +776,7 @@ import (
 )
 
 func main() {
-	loadBalancerId := float32(4) // float32 | Load Balancer ID
+	loadBalancerId := int64(4) // int64 | Load Balancer ID
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 
 	configuration := openapiclient.NewConfiguration()
@@ -797,7 +797,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**loadBalancerId** | **float32** | Load Balancer ID | 
+**loadBalancerId** | **int64** | Load Balancer ID | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -849,7 +849,7 @@ import (
 )
 
 func main() {
-	loadBalancerId := float32(4) // float32 | Load Balancer ID
+	loadBalancerId := int64(4) // int64 | Load Balancer ID
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 
 	configuration := openapiclient.NewConfiguration()
@@ -870,7 +870,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**loadBalancerId** | **float32** | Load Balancer ID | 
+**loadBalancerId** | **int64** | Load Balancer ID | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -922,7 +922,7 @@ import (
 )
 
 func main() {
-	loadBalancerId := float32(4) // float32 | Load Balancer ID
+	loadBalancerId := int64(4) // int64 | Load Balancer ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -942,7 +942,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**loadBalancerId** | **float32** | Load Balancer ID | 
+**loadBalancerId** | **int64** | Load Balancer ID | 
 
 ### Other Parameters
 
@@ -992,7 +992,7 @@ import (
 )
 
 func main() {
-	loadBalancerId := float32(4) // float32 | Load Balancer ID
+	loadBalancerId := int64(4) // int64 | Load Balancer ID
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 
 	configuration := openapiclient.NewConfiguration()
@@ -1013,7 +1013,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**loadBalancerId** | **float32** | Load Balancer ID | 
+**loadBalancerId** | **int64** | Load Balancer ID | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -1065,7 +1065,7 @@ import (
 )
 
 func main() {
-	loadBalancerId := float32(4) // float32 | Load Balancer ID
+	loadBalancerId := int64(4) // int64 | Load Balancer ID
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 
 	configuration := openapiclient.NewConfiguration()
@@ -1086,7 +1086,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**loadBalancerId** | **float32** | Load Balancer ID | 
+**loadBalancerId** | **int64** | Load Balancer ID | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -1211,7 +1211,7 @@ import (
 )
 
 func main() {
-	loadBalancerId := float32(4) // float32 | Load Balancer ID
+	loadBalancerId := int64(4) // int64 | Load Balancer ID
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 
 	configuration := openapiclient.NewConfiguration()
@@ -1232,7 +1232,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**loadBalancerId** | **float32** | Load Balancer ID | 
+**loadBalancerId** | **int64** | Load Balancer ID | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -1354,7 +1354,7 @@ import (
 )
 
 func main() {
-	loadBalancerId := float32(4) // float32 | Load Balancer ID
+	loadBalancerId := int64(4) // int64 | Load Balancer ID
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 
 	configuration := openapiclient.NewConfiguration()
@@ -1375,7 +1375,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**loadBalancerId** | **float32** | Load Balancer ID | 
+**loadBalancerId** | **int64** | Load Balancer ID | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -1427,7 +1427,7 @@ import (
 )
 
 func main() {
-	loadBalancerId := float32(4) // float32 | Load Balancer ID
+	loadBalancerId := int64(4) // int64 | Load Balancer ID
 	max := int64(789) // int64 | Maximum number of records to return (optional) (default to 25)
 	offset := int64(789) // int64 | Offset records, the number of records to skip, for paginating requests (optional) (default to 0)
 	sort := "sort_example" // string | Sort order, the name of the property to sort by (optional) (default to "name")
@@ -1453,7 +1453,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**loadBalancerId** | **float32** | Load Balancer ID | 
+**loadBalancerId** | **int64** | Load Balancer ID | 
 
 ### Other Parameters
 
@@ -1589,7 +1589,7 @@ import (
 )
 
 func main() {
-	loadBalancerId := float32(4) // float32 | Load Balancer ID
+	loadBalancerId := int64(4) // int64 | Load Balancer ID
 	max := int64(789) // int64 | Maximum number of records to return (optional) (default to 25)
 	offset := int64(789) // int64 | Offset records, the number of records to skip, for paginating requests (optional) (default to 0)
 	sort := "sort_example" // string | Sort order, the name of the property to sort by (optional) (default to "name")
@@ -1615,7 +1615,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**loadBalancerId** | **float32** | Load Balancer ID | 
+**loadBalancerId** | **int64** | Load Balancer ID | 
 
 ### Other Parameters
 
@@ -1671,7 +1671,7 @@ import (
 )
 
 func main() {
-	loadBalancerId := float32(4) // float32 | Load Balancer ID
+	loadBalancerId := int64(4) // int64 | Load Balancer ID
 	max := int64(789) // int64 | Maximum number of records to return (optional) (default to 25)
 	offset := int64(789) // int64 | Offset records, the number of records to skip, for paginating requests (optional) (default to 0)
 	sort := "sort_example" // string | Sort order, the name of the property to sort by (optional) (default to "name")
@@ -1697,7 +1697,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**loadBalancerId** | **float32** | Load Balancer ID | 
+**loadBalancerId** | **int64** | Load Balancer ID | 
 
 ### Other Parameters
 
@@ -1833,7 +1833,7 @@ import (
 )
 
 func main() {
-	loadBalancerId := float32(4) // float32 | Load Balancer ID
+	loadBalancerId := int64(4) // int64 | Load Balancer ID
 	max := int64(789) // int64 | Maximum number of records to return (optional) (default to 25)
 	offset := int64(789) // int64 | Offset records, the number of records to skip, for paginating requests (optional) (default to 0)
 	sort := "sort_example" // string | Sort order, the name of the property to sort by (optional) (default to "name")
@@ -1861,7 +1861,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**loadBalancerId** | **float32** | Load Balancer ID | 
+**loadBalancerId** | **int64** | Load Balancer ID | 
 
 ### Other Parameters
 
@@ -1995,7 +1995,7 @@ import (
 )
 
 func main() {
-	loadBalancerId := float32(4) // float32 | Load Balancer ID
+	loadBalancerId := int64(4) // int64 | Load Balancer ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2015,7 +2015,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**loadBalancerId** | **float32** | Load Balancer ID | 
+**loadBalancerId** | **int64** | Load Balancer ID | 
 
 ### Other Parameters
 
@@ -2065,7 +2065,7 @@ import (
 )
 
 func main() {
-	loadBalancerId := float32(4) // float32 | Load Balancer ID
+	loadBalancerId := int64(4) // int64 | Load Balancer ID
 	updateLoadBalancerRequest := *openapiclient.NewUpdateLoadBalancerRequest() // UpdateLoadBalancerRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -2086,7 +2086,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**loadBalancerId** | **float32** | Load Balancer ID | 
+**loadBalancerId** | **int64** | Load Balancer ID | 
 
 ### Other Parameters
 
@@ -2137,7 +2137,7 @@ import (
 )
 
 func main() {
-	loadBalancerId := float32(4) // float32 | Load Balancer ID
+	loadBalancerId := int64(4) // int64 | Load Balancer ID
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 	updateLoadBalancerMonitorRequest := *openapiclient.NewUpdateLoadBalancerMonitorRequest() // UpdateLoadBalancerMonitorRequest |  (optional)
 
@@ -2159,7 +2159,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**loadBalancerId** | **float32** | Load Balancer ID | 
+**loadBalancerId** | **int64** | Load Balancer ID | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -2212,7 +2212,7 @@ import (
 )
 
 func main() {
-	loadBalancerId := float32(4) // float32 | Load Balancer ID
+	loadBalancerId := int64(4) // int64 | Load Balancer ID
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 	updateLoadBalancerPoolRequest := *openapiclient.NewUpdateLoadBalancerPoolRequest() // UpdateLoadBalancerPoolRequest |  (optional)
 
@@ -2234,7 +2234,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**loadBalancerId** | **float32** | Load Balancer ID | 
+**loadBalancerId** | **int64** | Load Balancer ID | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -2362,7 +2362,7 @@ import (
 )
 
 func main() {
-	loadBalancerId := float32(4) // float32 | Load Balancer ID
+	loadBalancerId := int64(4) // int64 | Load Balancer ID
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 	updateLoadBalancerProfileRequest := *openapiclient.NewUpdateLoadBalancerProfileRequest() // UpdateLoadBalancerProfileRequest |  (optional)
 
@@ -2384,7 +2384,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**loadBalancerId** | **float32** | Load Balancer ID | 
+**loadBalancerId** | **int64** | Load Balancer ID | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -2437,7 +2437,7 @@ import (
 )
 
 func main() {
-	loadBalancerId := float32(4) // float32 | Load Balancer ID
+	loadBalancerId := int64(4) // int64 | Load Balancer ID
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 	updateLoadBalancerVirtualServerRequest := *openapiclient.NewUpdateLoadBalancerVirtualServerRequest() // UpdateLoadBalancerVirtualServerRequest |  (optional)
 
@@ -2459,7 +2459,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**loadBalancerId** | **float32** | Load Balancer ID | 
+**loadBalancerId** | **int64** | Load Balancer ID | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
