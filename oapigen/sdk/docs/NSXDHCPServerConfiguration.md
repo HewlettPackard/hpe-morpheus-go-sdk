@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**EdgeCluster** | Pointer to **string** | Edge Cluster | [optional] 
-**PreferredEdgeNode1** | Pointer to **string** | Active Edge Node Options obtained by calling option source with :optionSource &#x3D; nsxtEdgeNodes and networkServerId param | [optional] 
-**PreferredEdgeNode2** | Pointer to **string** | Standby Edge Node Options obtained by calling option source with optionSource &#x3D; nsxtEdgeNodes and networkServerId param | [optional] 
+**EdgeCluster** | Pointer to **NullableString** | Edge Cluster | [optional] 
+**PreferredEdgeNode1** | Pointer to **NullableString** | Active Edge Node Options obtained by calling option source with :optionSource &#x3D; nsxtEdgeNodes and networkServerId param | [optional] 
+**PreferredEdgeNode2** | Pointer to **NullableString** | Standby Edge Node Options obtained by calling option source with optionSource &#x3D; nsxtEdgeNodes and networkServerId param | [optional] 
 
 ## Methods
 
@@ -52,6 +52,16 @@ SetEdgeCluster sets EdgeCluster field to given value.
 
 HasEdgeCluster returns a boolean if a field has been set.
 
+### SetEdgeClusterNil
+
+`func (o *NSXDHCPServerConfiguration) SetEdgeClusterNil(b bool)`
+
+ SetEdgeClusterNil sets the value for EdgeCluster to be an explicit nil
+
+### UnsetEdgeCluster
+`func (o *NSXDHCPServerConfiguration) UnsetEdgeCluster()`
+
+UnsetEdgeCluster ensures that no value is present for EdgeCluster, not even an explicit nil
 ### GetPreferredEdgeNode1
 
 `func (o *NSXDHCPServerConfiguration) GetPreferredEdgeNode1() string`
@@ -77,6 +87,16 @@ SetPreferredEdgeNode1 sets PreferredEdgeNode1 field to given value.
 
 HasPreferredEdgeNode1 returns a boolean if a field has been set.
 
+### SetPreferredEdgeNode1Nil
+
+`func (o *NSXDHCPServerConfiguration) SetPreferredEdgeNode1Nil(b bool)`
+
+ SetPreferredEdgeNode1Nil sets the value for PreferredEdgeNode1 to be an explicit nil
+
+### UnsetPreferredEdgeNode1
+`func (o *NSXDHCPServerConfiguration) UnsetPreferredEdgeNode1()`
+
+UnsetPreferredEdgeNode1 ensures that no value is present for PreferredEdgeNode1, not even an explicit nil
 ### GetPreferredEdgeNode2
 
 `func (o *NSXDHCPServerConfiguration) GetPreferredEdgeNode2() string`
@@ -102,6 +122,16 @@ SetPreferredEdgeNode2 sets PreferredEdgeNode2 field to given value.
 
 HasPreferredEdgeNode2 returns a boolean if a field has been set.
 
+### SetPreferredEdgeNode2Nil
+
+`func (o *NSXDHCPServerConfiguration) SetPreferredEdgeNode2Nil(b bool)`
+
+ SetPreferredEdgeNode2Nil sets the value for PreferredEdgeNode2 to be an explicit nil
+
+### UnsetPreferredEdgeNode2
+`func (o *NSXDHCPServerConfiguration) UnsetPreferredEdgeNode2()`
+
+UnsetPreferredEdgeNode2 ensures that no value is present for PreferredEdgeNode2, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
