@@ -20,7 +20,7 @@ var _ MappedNullable = &LoadBalancerUpdateTenantsInner{}
 
 // LoadBalancerUpdateTenantsInner struct for LoadBalancerUpdateTenantsInner
 type LoadBalancerUpdateTenantsInner struct {
-	Id                   *int32                 `json:"id,omitempty"`
+	Id                   *int64                 `json:"id,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -44,9 +44,9 @@ func NewLoadBalancerUpdateTenantsInnerWithDefaults() *LoadBalancerUpdateTenantsI
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *LoadBalancerUpdateTenantsInner) GetId() int32 {
+func (o *LoadBalancerUpdateTenantsInner) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -54,7 +54,7 @@ func (o *LoadBalancerUpdateTenantsInner) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoadBalancerUpdateTenantsInner) GetIdOk() (*int32, bool) {
+func (o *LoadBalancerUpdateTenantsInner) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *LoadBalancerUpdateTenantsInner) IsSetId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *LoadBalancerUpdateTenantsInner) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *LoadBalancerUpdateTenantsInner) SetId(v int64) {
 	o.Id = &v
 }
 
