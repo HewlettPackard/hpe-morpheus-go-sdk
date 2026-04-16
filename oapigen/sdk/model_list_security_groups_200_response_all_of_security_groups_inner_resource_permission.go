@@ -20,15 +20,15 @@ var _ MappedNullable = &ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRes
 
 // ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission struct for ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission
 type ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission struct {
-	DefaultStore         *bool                                                                               `json:"defaultStore,omitempty"`
-	AllPlans             *bool                                                                               `json:"allPlans,omitempty"`
-	DefaultTarget        *bool                                                                               `json:"defaultTarget,omitempty"`
-	CanManage            *bool                                                                               `json:"canManage,omitempty"`
-	All                  *bool                                                                               `json:"all,omitempty"`
-	Account              *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionAccount     `json:"account,omitempty"`
-	Sites                []ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionSitesInner `json:"sites,omitempty"`
-	Plans                []ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionPlansInner `json:"plans,omitempty"`
-	AdditionalProperties map[string]interface{}                                                              `json:",remain"`
+	DefaultStore         *bool                                                                       `json:"defaultStore,omitempty"`
+	DefaultTarget        *bool                                                                       `json:"defaultTarget,omitempty"`
+	CanManage            *bool                                                                       `json:"canManage,omitempty"`
+	All                  *bool                                                                       `json:"all,omitempty"`
+	Account              *ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsAccount     `json:"account,omitempty"`
+	Sites                []ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsSitesInner `json:"sites,omitempty"`
+	AllPlans             *bool                                                                       `json:"allPlans,omitempty"`
+	Plans                []ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsPlansInner `json:"plans,omitempty"`
+	AdditionalProperties map[string]interface{}                                                      `json:",remain"`
 }
 
 type _ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission
@@ -80,38 +80,6 @@ func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission
 // SetDefaultStore gets a reference to the given bool and assigns it to the DefaultStore field.
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) SetDefaultStore(v bool) {
 	o.DefaultStore = &v
-}
-
-// GetAllPlans returns the AllPlans field value if set, zero value otherwise.
-func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetAllPlans() bool {
-	if o == nil || IsNil(o.AllPlans) {
-		var ret bool
-		return ret
-	}
-	return *o.AllPlans
-}
-
-// GetAllPlansOk returns a tuple with the AllPlans field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetAllPlansOk() (*bool, bool) {
-	if o == nil || IsNil(o.AllPlans) {
-		return nil, false
-	}
-	return o.AllPlans, true
-}
-
-// IsSetAllPlans returns a boolean if a field has been set.
-func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) IsSetAllPlans() bool {
-	if o != nil && !IsNil(o.AllPlans) {
-		return true
-	}
-
-	return false
-}
-
-// SetAllPlans gets a reference to the given bool and assigns it to the AllPlans field.
-func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) SetAllPlans(v bool) {
-	o.AllPlans = &v
 }
 
 // GetDefaultTarget returns the DefaultTarget field value if set, zero value otherwise.
@@ -211,9 +179,9 @@ func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetAccount() ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionAccount {
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetAccount() ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsAccount {
 	if o == nil || IsNil(o.Account) {
-		var ret ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionAccount
+		var ret ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsAccount
 		return ret
 	}
 	return *o.Account
@@ -221,7 +189,7 @@ func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetAccountOk() (*ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionAccount, bool) {
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetAccountOk() (*ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsAccount, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -237,15 +205,15 @@ func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission
 	return false
 }
 
-// SetAccount gets a reference to the given ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionAccount and assigns it to the Account field.
-func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) SetAccount(v ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionAccount) {
+// SetAccount gets a reference to the given ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsAccount and assigns it to the Account field.
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) SetAccount(v ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsAccount) {
 	o.Account = &v
 }
 
 // GetSites returns the Sites field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetSites() []ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionSitesInner {
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetSites() []ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsSitesInner {
 	if o == nil {
-		var ret []ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionSitesInner
+		var ret []ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsSitesInner
 		return ret
 	}
 	return o.Sites
@@ -254,7 +222,7 @@ func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission
 // GetSitesOk returns a tuple with the Sites field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetSitesOk() ([]ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionSitesInner, bool) {
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetSitesOk() ([]ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsSitesInner, bool) {
 	if o == nil || IsNil(o.Sites) {
 		return nil, false
 	}
@@ -270,15 +238,47 @@ func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission
 	return false
 }
 
-// SetSites gets a reference to the given []ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionSitesInner and assigns it to the Sites field.
-func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) SetSites(v []ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionSitesInner) {
+// SetSites gets a reference to the given []ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsSitesInner and assigns it to the Sites field.
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) SetSites(v []ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsSitesInner) {
 	o.Sites = v
 }
 
+// GetAllPlans returns the AllPlans field value if set, zero value otherwise.
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetAllPlans() bool {
+	if o == nil || IsNil(o.AllPlans) {
+		var ret bool
+		return ret
+	}
+	return *o.AllPlans
+}
+
+// GetAllPlansOk returns a tuple with the AllPlans field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetAllPlansOk() (*bool, bool) {
+	if o == nil || IsNil(o.AllPlans) {
+		return nil, false
+	}
+	return o.AllPlans, true
+}
+
+// IsSetAllPlans returns a boolean if a field has been set.
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) IsSetAllPlans() bool {
+	if o != nil && !IsNil(o.AllPlans) {
+		return true
+	}
+
+	return false
+}
+
+// SetAllPlans gets a reference to the given bool and assigns it to the AllPlans field.
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) SetAllPlans(v bool) {
+	o.AllPlans = &v
+}
+
 // GetPlans returns the Plans field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetPlans() []ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionPlansInner {
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetPlans() []ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsPlansInner {
 	if o == nil {
-		var ret []ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionPlansInner
+		var ret []ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsPlansInner
 		return ret
 	}
 	return o.Plans
@@ -287,7 +287,7 @@ func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission
 // GetPlansOk returns a tuple with the Plans field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetPlansOk() ([]ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionPlansInner, bool) {
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetPlansOk() ([]ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsPlansInner, bool) {
 	if o == nil || IsNil(o.Plans) {
 		return nil, false
 	}
@@ -303,8 +303,8 @@ func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission
 	return false
 }
 
-// SetPlans gets a reference to the given []ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionPlansInner and assigns it to the Plans field.
-func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) SetPlans(v []ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionPlansInner) {
+// SetPlans gets a reference to the given []ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsPlansInner and assigns it to the Plans field.
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) SetPlans(v []ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsPlansInner) {
 	o.Plans = v
 }
 
@@ -321,9 +321,6 @@ func (o ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission)
 	if !IsNil(o.DefaultStore) {
 		toSerialize["defaultStore"] = o.DefaultStore
 	}
-	if !IsNil(o.AllPlans) {
-		toSerialize["allPlans"] = o.AllPlans
-	}
 	if !IsNil(o.DefaultTarget) {
 		toSerialize["defaultTarget"] = o.DefaultTarget
 	}
@@ -338,6 +335,9 @@ func (o ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission)
 	}
 	if o.Sites != nil {
 		toSerialize["sites"] = o.Sites
+	}
+	if !IsNil(o.AllPlans) {
+		toSerialize["allPlans"] = o.AllPlans
 	}
 	if o.Plans != nil {
 		toSerialize["plans"] = o.Plans

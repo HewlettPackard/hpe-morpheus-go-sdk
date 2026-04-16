@@ -4,7 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**DefaultStore** | Pointer to **bool** |  | [optional] 
+**DefaultTarget** | Pointer to **bool** |  | [optional] 
+**CanManage** | Pointer to **bool** |  | [optional] 
 **All** | Pointer to **bool** |  | [optional] 
+**Account** | Pointer to [**ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsAccount**](ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsAccount.md) |  | [optional] 
 **Sites** | Pointer to [**[]ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsSitesInner**](ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsSitesInner.md) |  | [optional] 
 **AllPlans** | Pointer to **bool** |  | [optional] 
 **Plans** | Pointer to [**[]ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsPlansInner**](ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsPlansInner.md) |  | [optional] 
@@ -27,6 +31,81 @@ will change when the set of required properties is changed
 NewAddCloudResourcePool200ResponseResourcePoolAllOfResourcePermissionWithDefaults instantiates a new AddCloudResourcePool200ResponseResourcePoolAllOfResourcePermission object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetDefaultStore
+
+`func (o *AddCloudResourcePool200ResponseResourcePoolAllOfResourcePermission) GetDefaultStore() bool`
+
+GetDefaultStore returns the DefaultStore field if non-nil, zero value otherwise.
+
+### GetDefaultStoreOk
+
+`func (o *AddCloudResourcePool200ResponseResourcePoolAllOfResourcePermission) GetDefaultStoreOk() (*bool, bool)`
+
+GetDefaultStoreOk returns a tuple with the DefaultStore field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDefaultStore
+
+`func (o *AddCloudResourcePool200ResponseResourcePoolAllOfResourcePermission) SetDefaultStore(v bool)`
+
+SetDefaultStore sets DefaultStore field to given value.
+
+### HasDefaultStore
+
+`func (o *AddCloudResourcePool200ResponseResourcePoolAllOfResourcePermission) HasDefaultStore() bool`
+
+HasDefaultStore returns a boolean if a field has been set.
+
+### GetDefaultTarget
+
+`func (o *AddCloudResourcePool200ResponseResourcePoolAllOfResourcePermission) GetDefaultTarget() bool`
+
+GetDefaultTarget returns the DefaultTarget field if non-nil, zero value otherwise.
+
+### GetDefaultTargetOk
+
+`func (o *AddCloudResourcePool200ResponseResourcePoolAllOfResourcePermission) GetDefaultTargetOk() (*bool, bool)`
+
+GetDefaultTargetOk returns a tuple with the DefaultTarget field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDefaultTarget
+
+`func (o *AddCloudResourcePool200ResponseResourcePoolAllOfResourcePermission) SetDefaultTarget(v bool)`
+
+SetDefaultTarget sets DefaultTarget field to given value.
+
+### HasDefaultTarget
+
+`func (o *AddCloudResourcePool200ResponseResourcePoolAllOfResourcePermission) HasDefaultTarget() bool`
+
+HasDefaultTarget returns a boolean if a field has been set.
+
+### GetCanManage
+
+`func (o *AddCloudResourcePool200ResponseResourcePoolAllOfResourcePermission) GetCanManage() bool`
+
+GetCanManage returns the CanManage field if non-nil, zero value otherwise.
+
+### GetCanManageOk
+
+`func (o *AddCloudResourcePool200ResponseResourcePoolAllOfResourcePermission) GetCanManageOk() (*bool, bool)`
+
+GetCanManageOk returns a tuple with the CanManage field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCanManage
+
+`func (o *AddCloudResourcePool200ResponseResourcePoolAllOfResourcePermission) SetCanManage(v bool)`
+
+SetCanManage sets CanManage field to given value.
+
+### HasCanManage
+
+`func (o *AddCloudResourcePool200ResponseResourcePoolAllOfResourcePermission) HasCanManage() bool`
+
+HasCanManage returns a boolean if a field has been set.
 
 ### GetAll
 
@@ -52,6 +131,31 @@ SetAll sets All field to given value.
 `func (o *AddCloudResourcePool200ResponseResourcePoolAllOfResourcePermission) HasAll() bool`
 
 HasAll returns a boolean if a field has been set.
+
+### GetAccount
+
+`func (o *AddCloudResourcePool200ResponseResourcePoolAllOfResourcePermission) GetAccount() ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsAccount`
+
+GetAccount returns the Account field if non-nil, zero value otherwise.
+
+### GetAccountOk
+
+`func (o *AddCloudResourcePool200ResponseResourcePoolAllOfResourcePermission) GetAccountOk() (*ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsAccount, bool)`
+
+GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAccount
+
+`func (o *AddCloudResourcePool200ResponseResourcePoolAllOfResourcePermission) SetAccount(v ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsAccount)`
+
+SetAccount sets Account field to given value.
+
+### HasAccount
+
+`func (o *AddCloudResourcePool200ResponseResourcePoolAllOfResourcePermission) HasAccount() bool`
+
+HasAccount returns a boolean if a field has been set.
 
 ### GetSites
 

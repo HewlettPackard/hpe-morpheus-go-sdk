@@ -20,7 +20,11 @@ var _ MappedNullable = &CreateLoadBalancer200ResponseLoadBalancerResourcePermiss
 
 // CreateLoadBalancer200ResponseLoadBalancerResourcePermission struct for CreateLoadBalancer200ResponseLoadBalancerResourcePermission
 type CreateLoadBalancer200ResponseLoadBalancerResourcePermission struct {
+	DefaultStore         *bool                                                                   `json:"defaultStore,omitempty"`
+	DefaultTarget        *bool                                                                   `json:"defaultTarget,omitempty"`
+	CanManage            *bool                                                                   `json:"canManage,omitempty"`
 	All                  *bool                                                                   `json:"all,omitempty"`
+	Account              *CreateLoadBalancer200ResponseLoadBalancerResourcePermissionAccount     `json:"account,omitempty"`
 	Sites                []CreateLoadBalancer200ResponseLoadBalancerResourcePermissionSitesInner `json:"sites,omitempty"`
 	AllPlans             *bool                                                                   `json:"allPlans,omitempty"`
 	Plans                []CreateLoadBalancer200ResponseLoadBalancerResourcePermissionPlansInner `json:"plans,omitempty"`
@@ -44,6 +48,102 @@ func NewCreateLoadBalancer200ResponseLoadBalancerResourcePermission() *CreateLoa
 func NewCreateLoadBalancer200ResponseLoadBalancerResourcePermissionWithDefaults() *CreateLoadBalancer200ResponseLoadBalancerResourcePermission {
 	this := CreateLoadBalancer200ResponseLoadBalancerResourcePermission{}
 	return &this
+}
+
+// GetDefaultStore returns the DefaultStore field value if set, zero value otherwise.
+func (o *CreateLoadBalancer200ResponseLoadBalancerResourcePermission) GetDefaultStore() bool {
+	if o == nil || IsNil(o.DefaultStore) {
+		var ret bool
+		return ret
+	}
+	return *o.DefaultStore
+}
+
+// GetDefaultStoreOk returns a tuple with the DefaultStore field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateLoadBalancer200ResponseLoadBalancerResourcePermission) GetDefaultStoreOk() (*bool, bool) {
+	if o == nil || IsNil(o.DefaultStore) {
+		return nil, false
+	}
+	return o.DefaultStore, true
+}
+
+// IsSetDefaultStore returns a boolean if a field has been set.
+func (o *CreateLoadBalancer200ResponseLoadBalancerResourcePermission) IsSetDefaultStore() bool {
+	if o != nil && !IsNil(o.DefaultStore) {
+		return true
+	}
+
+	return false
+}
+
+// SetDefaultStore gets a reference to the given bool and assigns it to the DefaultStore field.
+func (o *CreateLoadBalancer200ResponseLoadBalancerResourcePermission) SetDefaultStore(v bool) {
+	o.DefaultStore = &v
+}
+
+// GetDefaultTarget returns the DefaultTarget field value if set, zero value otherwise.
+func (o *CreateLoadBalancer200ResponseLoadBalancerResourcePermission) GetDefaultTarget() bool {
+	if o == nil || IsNil(o.DefaultTarget) {
+		var ret bool
+		return ret
+	}
+	return *o.DefaultTarget
+}
+
+// GetDefaultTargetOk returns a tuple with the DefaultTarget field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateLoadBalancer200ResponseLoadBalancerResourcePermission) GetDefaultTargetOk() (*bool, bool) {
+	if o == nil || IsNil(o.DefaultTarget) {
+		return nil, false
+	}
+	return o.DefaultTarget, true
+}
+
+// IsSetDefaultTarget returns a boolean if a field has been set.
+func (o *CreateLoadBalancer200ResponseLoadBalancerResourcePermission) IsSetDefaultTarget() bool {
+	if o != nil && !IsNil(o.DefaultTarget) {
+		return true
+	}
+
+	return false
+}
+
+// SetDefaultTarget gets a reference to the given bool and assigns it to the DefaultTarget field.
+func (o *CreateLoadBalancer200ResponseLoadBalancerResourcePermission) SetDefaultTarget(v bool) {
+	o.DefaultTarget = &v
+}
+
+// GetCanManage returns the CanManage field value if set, zero value otherwise.
+func (o *CreateLoadBalancer200ResponseLoadBalancerResourcePermission) GetCanManage() bool {
+	if o == nil || IsNil(o.CanManage) {
+		var ret bool
+		return ret
+	}
+	return *o.CanManage
+}
+
+// GetCanManageOk returns a tuple with the CanManage field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateLoadBalancer200ResponseLoadBalancerResourcePermission) GetCanManageOk() (*bool, bool) {
+	if o == nil || IsNil(o.CanManage) {
+		return nil, false
+	}
+	return o.CanManage, true
+}
+
+// IsSetCanManage returns a boolean if a field has been set.
+func (o *CreateLoadBalancer200ResponseLoadBalancerResourcePermission) IsSetCanManage() bool {
+	if o != nil && !IsNil(o.CanManage) {
+		return true
+	}
+
+	return false
+}
+
+// SetCanManage gets a reference to the given bool and assigns it to the CanManage field.
+func (o *CreateLoadBalancer200ResponseLoadBalancerResourcePermission) SetCanManage(v bool) {
+	o.CanManage = &v
 }
 
 // GetAll returns the All field value if set, zero value otherwise.
@@ -76,6 +176,38 @@ func (o *CreateLoadBalancer200ResponseLoadBalancerResourcePermission) IsSetAll()
 // SetAll gets a reference to the given bool and assigns it to the All field.
 func (o *CreateLoadBalancer200ResponseLoadBalancerResourcePermission) SetAll(v bool) {
 	o.All = &v
+}
+
+// GetAccount returns the Account field value if set, zero value otherwise.
+func (o *CreateLoadBalancer200ResponseLoadBalancerResourcePermission) GetAccount() CreateLoadBalancer200ResponseLoadBalancerResourcePermissionAccount {
+	if o == nil || IsNil(o.Account) {
+		var ret CreateLoadBalancer200ResponseLoadBalancerResourcePermissionAccount
+		return ret
+	}
+	return *o.Account
+}
+
+// GetAccountOk returns a tuple with the Account field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateLoadBalancer200ResponseLoadBalancerResourcePermission) GetAccountOk() (*CreateLoadBalancer200ResponseLoadBalancerResourcePermissionAccount, bool) {
+	if o == nil || IsNil(o.Account) {
+		return nil, false
+	}
+	return o.Account, true
+}
+
+// IsSetAccount returns a boolean if a field has been set.
+func (o *CreateLoadBalancer200ResponseLoadBalancerResourcePermission) IsSetAccount() bool {
+	if o != nil && !IsNil(o.Account) {
+		return true
+	}
+
+	return false
+}
+
+// SetAccount gets a reference to the given CreateLoadBalancer200ResponseLoadBalancerResourcePermissionAccount and assigns it to the Account field.
+func (o *CreateLoadBalancer200ResponseLoadBalancerResourcePermission) SetAccount(v CreateLoadBalancer200ResponseLoadBalancerResourcePermissionAccount) {
+	o.Account = &v
 }
 
 // GetSites returns the Sites field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -186,8 +318,20 @@ func (o CreateLoadBalancer200ResponseLoadBalancerResourcePermission) MarshalJSON
 
 func (o CreateLoadBalancer200ResponseLoadBalancerResourcePermission) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.DefaultStore) {
+		toSerialize["defaultStore"] = o.DefaultStore
+	}
+	if !IsNil(o.DefaultTarget) {
+		toSerialize["defaultTarget"] = o.DefaultTarget
+	}
+	if !IsNil(o.CanManage) {
+		toSerialize["canManage"] = o.CanManage
+	}
 	if !IsNil(o.All) {
 		toSerialize["all"] = o.All
+	}
+	if !IsNil(o.Account) {
+		toSerialize["account"] = o.Account
 	}
 	if o.Sites != nil {
 		toSerialize["sites"] = o.Sites

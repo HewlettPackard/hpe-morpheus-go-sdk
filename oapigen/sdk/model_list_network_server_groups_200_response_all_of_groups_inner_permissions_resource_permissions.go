@@ -20,7 +20,11 @@ var _ MappedNullable = &ListNetworkServerGroups200ResponseAllOfGroupsInnerPermis
 
 // ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePermissions struct for ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePermissions
 type ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePermissions struct {
+	DefaultStore         *bool                                                                       `json:"defaultStore,omitempty"`
+	DefaultTarget        *bool                                                                       `json:"defaultTarget,omitempty"`
+	CanManage            *bool                                                                       `json:"canManage,omitempty"`
 	All                  *bool                                                                       `json:"all,omitempty"`
+	Account              *ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsAccount     `json:"account,omitempty"`
 	Sites                []ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsSitesInner `json:"sites,omitempty"`
 	AllPlans             *bool                                                                       `json:"allPlans,omitempty"`
 	Plans                []ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsPlansInner `json:"plans,omitempty"`
@@ -44,6 +48,102 @@ func NewListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePer
 func NewListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePermissionsWithDefaults() *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePermissions {
 	this := ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePermissions{}
 	return &this
+}
+
+// GetDefaultStore returns the DefaultStore field value if set, zero value otherwise.
+func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePermissions) GetDefaultStore() bool {
+	if o == nil || IsNil(o.DefaultStore) {
+		var ret bool
+		return ret
+	}
+	return *o.DefaultStore
+}
+
+// GetDefaultStoreOk returns a tuple with the DefaultStore field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePermissions) GetDefaultStoreOk() (*bool, bool) {
+	if o == nil || IsNil(o.DefaultStore) {
+		return nil, false
+	}
+	return o.DefaultStore, true
+}
+
+// IsSetDefaultStore returns a boolean if a field has been set.
+func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePermissions) IsSetDefaultStore() bool {
+	if o != nil && !IsNil(o.DefaultStore) {
+		return true
+	}
+
+	return false
+}
+
+// SetDefaultStore gets a reference to the given bool and assigns it to the DefaultStore field.
+func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePermissions) SetDefaultStore(v bool) {
+	o.DefaultStore = &v
+}
+
+// GetDefaultTarget returns the DefaultTarget field value if set, zero value otherwise.
+func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePermissions) GetDefaultTarget() bool {
+	if o == nil || IsNil(o.DefaultTarget) {
+		var ret bool
+		return ret
+	}
+	return *o.DefaultTarget
+}
+
+// GetDefaultTargetOk returns a tuple with the DefaultTarget field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePermissions) GetDefaultTargetOk() (*bool, bool) {
+	if o == nil || IsNil(o.DefaultTarget) {
+		return nil, false
+	}
+	return o.DefaultTarget, true
+}
+
+// IsSetDefaultTarget returns a boolean if a field has been set.
+func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePermissions) IsSetDefaultTarget() bool {
+	if o != nil && !IsNil(o.DefaultTarget) {
+		return true
+	}
+
+	return false
+}
+
+// SetDefaultTarget gets a reference to the given bool and assigns it to the DefaultTarget field.
+func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePermissions) SetDefaultTarget(v bool) {
+	o.DefaultTarget = &v
+}
+
+// GetCanManage returns the CanManage field value if set, zero value otherwise.
+func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePermissions) GetCanManage() bool {
+	if o == nil || IsNil(o.CanManage) {
+		var ret bool
+		return ret
+	}
+	return *o.CanManage
+}
+
+// GetCanManageOk returns a tuple with the CanManage field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePermissions) GetCanManageOk() (*bool, bool) {
+	if o == nil || IsNil(o.CanManage) {
+		return nil, false
+	}
+	return o.CanManage, true
+}
+
+// IsSetCanManage returns a boolean if a field has been set.
+func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePermissions) IsSetCanManage() bool {
+	if o != nil && !IsNil(o.CanManage) {
+		return true
+	}
+
+	return false
+}
+
+// SetCanManage gets a reference to the given bool and assigns it to the CanManage field.
+func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePermissions) SetCanManage(v bool) {
+	o.CanManage = &v
 }
 
 // GetAll returns the All field value if set, zero value otherwise.
@@ -76,6 +176,38 @@ func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePe
 // SetAll gets a reference to the given bool and assigns it to the All field.
 func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePermissions) SetAll(v bool) {
 	o.All = &v
+}
+
+// GetAccount returns the Account field value if set, zero value otherwise.
+func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePermissions) GetAccount() ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsAccount {
+	if o == nil || IsNil(o.Account) {
+		var ret ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsAccount
+		return ret
+	}
+	return *o.Account
+}
+
+// GetAccountOk returns a tuple with the Account field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePermissions) GetAccountOk() (*ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsAccount, bool) {
+	if o == nil || IsNil(o.Account) {
+		return nil, false
+	}
+	return o.Account, true
+}
+
+// IsSetAccount returns a boolean if a field has been set.
+func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePermissions) IsSetAccount() bool {
+	if o != nil && !IsNil(o.Account) {
+		return true
+	}
+
+	return false
+}
+
+// SetAccount gets a reference to the given ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsAccount and assigns it to the Account field.
+func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePermissions) SetAccount(v ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsAccount) {
+	o.Account = &v
 }
 
 // GetSites returns the Sites field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -186,8 +318,20 @@ func (o ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePer
 
 func (o ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePermissions) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.DefaultStore) {
+		toSerialize["defaultStore"] = o.DefaultStore
+	}
+	if !IsNil(o.DefaultTarget) {
+		toSerialize["defaultTarget"] = o.DefaultTarget
+	}
+	if !IsNil(o.CanManage) {
+		toSerialize["canManage"] = o.CanManage
+	}
 	if !IsNil(o.All) {
 		toSerialize["all"] = o.All
+	}
+	if !IsNil(o.Account) {
+		toSerialize["account"] = o.Account
 	}
 	if o.Sites != nil {
 		toSerialize["sites"] = o.Sites

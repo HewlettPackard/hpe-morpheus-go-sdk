@@ -21,12 +21,12 @@ var _ MappedNullable = &ClusterDatastoresResourcePermissions{}
 // ClusterDatastoresResourcePermissions struct for ClusterDatastoresResourcePermissions
 type ClusterDatastoresResourcePermissions struct {
 	DefaultStore         *bool                                            `json:"defaultStore,omitempty"`
-	AllPlans             *bool                                            `json:"allPlans,omitempty"`
 	DefaultTarget        *bool                                            `json:"defaultTarget,omitempty"`
 	CanManage            *bool                                            `json:"canManage,omitempty"`
 	All                  *bool                                            `json:"all,omitempty"`
 	Account              *ClusterDatastoresResourcePermissionsAccount     `json:"account,omitempty"`
 	Sites                []ClusterDatastoresResourcePermissionsSitesInner `json:"sites,omitempty"`
+	AllPlans             *bool                                            `json:"allPlans,omitempty"`
 	Plans                []ClusterDatastoresResourcePermissionsPlansInner `json:"plans,omitempty"`
 	AdditionalProperties map[string]interface{}                           `json:",remain"`
 }
@@ -80,38 +80,6 @@ func (o *ClusterDatastoresResourcePermissions) IsSetDefaultStore() bool {
 // SetDefaultStore gets a reference to the given bool and assigns it to the DefaultStore field.
 func (o *ClusterDatastoresResourcePermissions) SetDefaultStore(v bool) {
 	o.DefaultStore = &v
-}
-
-// GetAllPlans returns the AllPlans field value if set, zero value otherwise.
-func (o *ClusterDatastoresResourcePermissions) GetAllPlans() bool {
-	if o == nil || IsNil(o.AllPlans) {
-		var ret bool
-		return ret
-	}
-	return *o.AllPlans
-}
-
-// GetAllPlansOk returns a tuple with the AllPlans field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClusterDatastoresResourcePermissions) GetAllPlansOk() (*bool, bool) {
-	if o == nil || IsNil(o.AllPlans) {
-		return nil, false
-	}
-	return o.AllPlans, true
-}
-
-// IsSetAllPlans returns a boolean if a field has been set.
-func (o *ClusterDatastoresResourcePermissions) IsSetAllPlans() bool {
-	if o != nil && !IsNil(o.AllPlans) {
-		return true
-	}
-
-	return false
-}
-
-// SetAllPlans gets a reference to the given bool and assigns it to the AllPlans field.
-func (o *ClusterDatastoresResourcePermissions) SetAllPlans(v bool) {
-	o.AllPlans = &v
 }
 
 // GetDefaultTarget returns the DefaultTarget field value if set, zero value otherwise.
@@ -275,6 +243,38 @@ func (o *ClusterDatastoresResourcePermissions) SetSites(v []ClusterDatastoresRes
 	o.Sites = v
 }
 
+// GetAllPlans returns the AllPlans field value if set, zero value otherwise.
+func (o *ClusterDatastoresResourcePermissions) GetAllPlans() bool {
+	if o == nil || IsNil(o.AllPlans) {
+		var ret bool
+		return ret
+	}
+	return *o.AllPlans
+}
+
+// GetAllPlansOk returns a tuple with the AllPlans field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClusterDatastoresResourcePermissions) GetAllPlansOk() (*bool, bool) {
+	if o == nil || IsNil(o.AllPlans) {
+		return nil, false
+	}
+	return o.AllPlans, true
+}
+
+// IsSetAllPlans returns a boolean if a field has been set.
+func (o *ClusterDatastoresResourcePermissions) IsSetAllPlans() bool {
+	if o != nil && !IsNil(o.AllPlans) {
+		return true
+	}
+
+	return false
+}
+
+// SetAllPlans gets a reference to the given bool and assigns it to the AllPlans field.
+func (o *ClusterDatastoresResourcePermissions) SetAllPlans(v bool) {
+	o.AllPlans = &v
+}
+
 // GetPlans returns the Plans field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ClusterDatastoresResourcePermissions) GetPlans() []ClusterDatastoresResourcePermissionsPlansInner {
 	if o == nil {
@@ -321,9 +321,6 @@ func (o ClusterDatastoresResourcePermissions) ToMap() (map[string]interface{}, e
 	if !IsNil(o.DefaultStore) {
 		toSerialize["defaultStore"] = o.DefaultStore
 	}
-	if !IsNil(o.AllPlans) {
-		toSerialize["allPlans"] = o.AllPlans
-	}
 	if !IsNil(o.DefaultTarget) {
 		toSerialize["defaultTarget"] = o.DefaultTarget
 	}
@@ -338,6 +335,9 @@ func (o ClusterDatastoresResourcePermissions) ToMap() (map[string]interface{}, e
 	}
 	if o.Sites != nil {
 		toSerialize["sites"] = o.Sites
+	}
+	if !IsNil(o.AllPlans) {
+		toSerialize["allPlans"] = o.AllPlans
 	}
 	if o.Plans != nil {
 		toSerialize["plans"] = o.Plans
