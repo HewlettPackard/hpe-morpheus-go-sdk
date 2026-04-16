@@ -4,7 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**DefaultStore** | Pointer to **bool** |  | [optional] 
+**DefaultTarget** | Pointer to **bool** |  | [optional] 
+**CanManage** | Pointer to **bool** |  | [optional] 
 **All** | Pointer to **bool** |  | [optional] 
+**Account** | Pointer to [**GetLoadBalancer200ResponseLoadBalancerResourcePermissionAccount**](GetLoadBalancer200ResponseLoadBalancerResourcePermissionAccount.md) |  | [optional] 
 **Sites** | Pointer to [**[]GetLoadBalancer200ResponseLoadBalancerResourcePermissionSitesInner**](GetLoadBalancer200ResponseLoadBalancerResourcePermissionSitesInner.md) |  | [optional] 
 **AllPlans** | Pointer to **bool** |  | [optional] 
 **Plans** | Pointer to [**[]GetLoadBalancer200ResponseLoadBalancerResourcePermissionPlansInner**](GetLoadBalancer200ResponseLoadBalancerResourcePermissionPlansInner.md) |  | [optional] 
@@ -27,6 +31,81 @@ will change when the set of required properties is changed
 NewGetLoadBalancer200ResponseLoadBalancerResourcePermissionWithDefaults instantiates a new GetLoadBalancer200ResponseLoadBalancerResourcePermission object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetDefaultStore
+
+`func (o *GetLoadBalancer200ResponseLoadBalancerResourcePermission) GetDefaultStore() bool`
+
+GetDefaultStore returns the DefaultStore field if non-nil, zero value otherwise.
+
+### GetDefaultStoreOk
+
+`func (o *GetLoadBalancer200ResponseLoadBalancerResourcePermission) GetDefaultStoreOk() (*bool, bool)`
+
+GetDefaultStoreOk returns a tuple with the DefaultStore field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDefaultStore
+
+`func (o *GetLoadBalancer200ResponseLoadBalancerResourcePermission) SetDefaultStore(v bool)`
+
+SetDefaultStore sets DefaultStore field to given value.
+
+### HasDefaultStore
+
+`func (o *GetLoadBalancer200ResponseLoadBalancerResourcePermission) HasDefaultStore() bool`
+
+HasDefaultStore returns a boolean if a field has been set.
+
+### GetDefaultTarget
+
+`func (o *GetLoadBalancer200ResponseLoadBalancerResourcePermission) GetDefaultTarget() bool`
+
+GetDefaultTarget returns the DefaultTarget field if non-nil, zero value otherwise.
+
+### GetDefaultTargetOk
+
+`func (o *GetLoadBalancer200ResponseLoadBalancerResourcePermission) GetDefaultTargetOk() (*bool, bool)`
+
+GetDefaultTargetOk returns a tuple with the DefaultTarget field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDefaultTarget
+
+`func (o *GetLoadBalancer200ResponseLoadBalancerResourcePermission) SetDefaultTarget(v bool)`
+
+SetDefaultTarget sets DefaultTarget field to given value.
+
+### HasDefaultTarget
+
+`func (o *GetLoadBalancer200ResponseLoadBalancerResourcePermission) HasDefaultTarget() bool`
+
+HasDefaultTarget returns a boolean if a field has been set.
+
+### GetCanManage
+
+`func (o *GetLoadBalancer200ResponseLoadBalancerResourcePermission) GetCanManage() bool`
+
+GetCanManage returns the CanManage field if non-nil, zero value otherwise.
+
+### GetCanManageOk
+
+`func (o *GetLoadBalancer200ResponseLoadBalancerResourcePermission) GetCanManageOk() (*bool, bool)`
+
+GetCanManageOk returns a tuple with the CanManage field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCanManage
+
+`func (o *GetLoadBalancer200ResponseLoadBalancerResourcePermission) SetCanManage(v bool)`
+
+SetCanManage sets CanManage field to given value.
+
+### HasCanManage
+
+`func (o *GetLoadBalancer200ResponseLoadBalancerResourcePermission) HasCanManage() bool`
+
+HasCanManage returns a boolean if a field has been set.
 
 ### GetAll
 
@@ -52,6 +131,31 @@ SetAll sets All field to given value.
 `func (o *GetLoadBalancer200ResponseLoadBalancerResourcePermission) HasAll() bool`
 
 HasAll returns a boolean if a field has been set.
+
+### GetAccount
+
+`func (o *GetLoadBalancer200ResponseLoadBalancerResourcePermission) GetAccount() GetLoadBalancer200ResponseLoadBalancerResourcePermissionAccount`
+
+GetAccount returns the Account field if non-nil, zero value otherwise.
+
+### GetAccountOk
+
+`func (o *GetLoadBalancer200ResponseLoadBalancerResourcePermission) GetAccountOk() (*GetLoadBalancer200ResponseLoadBalancerResourcePermissionAccount, bool)`
+
+GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAccount
+
+`func (o *GetLoadBalancer200ResponseLoadBalancerResourcePermission) SetAccount(v GetLoadBalancer200ResponseLoadBalancerResourcePermissionAccount)`
+
+SetAccount sets Account field to given value.
+
+### HasAccount
+
+`func (o *GetLoadBalancer200ResponseLoadBalancerResourcePermission) HasAccount() bool`
+
+HasAccount returns a boolean if a field has been set.
 
 ### GetSites
 

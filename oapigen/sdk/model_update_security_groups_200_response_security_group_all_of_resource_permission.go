@@ -21,12 +21,12 @@ var _ MappedNullable = &UpdateSecurityGroups200ResponseSecurityGroupAllOfResourc
 // UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermission struct for UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermission
 type UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermission struct {
 	DefaultStore         *bool                                                                           `json:"defaultStore,omitempty"`
-	AllPlans             *bool                                                                           `json:"allPlans,omitempty"`
 	DefaultTarget        *bool                                                                           `json:"defaultTarget,omitempty"`
 	CanManage            *bool                                                                           `json:"canManage,omitempty"`
 	All                  *bool                                                                           `json:"all,omitempty"`
 	Account              *UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermissionAccount     `json:"account,omitempty"`
 	Sites                []UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermissionSitesInner `json:"sites,omitempty"`
+	AllPlans             *bool                                                                           `json:"allPlans,omitempty"`
 	Plans                []UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermissionPlansInner `json:"plans,omitempty"`
 	AdditionalProperties map[string]interface{}                                                          `json:",remain"`
 }
@@ -80,38 +80,6 @@ func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) Is
 // SetDefaultStore gets a reference to the given bool and assigns it to the DefaultStore field.
 func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) SetDefaultStore(v bool) {
 	o.DefaultStore = &v
-}
-
-// GetAllPlans returns the AllPlans field value if set, zero value otherwise.
-func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) GetAllPlans() bool {
-	if o == nil || IsNil(o.AllPlans) {
-		var ret bool
-		return ret
-	}
-	return *o.AllPlans
-}
-
-// GetAllPlansOk returns a tuple with the AllPlans field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) GetAllPlansOk() (*bool, bool) {
-	if o == nil || IsNil(o.AllPlans) {
-		return nil, false
-	}
-	return o.AllPlans, true
-}
-
-// IsSetAllPlans returns a boolean if a field has been set.
-func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) IsSetAllPlans() bool {
-	if o != nil && !IsNil(o.AllPlans) {
-		return true
-	}
-
-	return false
-}
-
-// SetAllPlans gets a reference to the given bool and assigns it to the AllPlans field.
-func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) SetAllPlans(v bool) {
-	o.AllPlans = &v
 }
 
 // GetDefaultTarget returns the DefaultTarget field value if set, zero value otherwise.
@@ -275,6 +243,38 @@ func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) Se
 	o.Sites = v
 }
 
+// GetAllPlans returns the AllPlans field value if set, zero value otherwise.
+func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) GetAllPlans() bool {
+	if o == nil || IsNil(o.AllPlans) {
+		var ret bool
+		return ret
+	}
+	return *o.AllPlans
+}
+
+// GetAllPlansOk returns a tuple with the AllPlans field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) GetAllPlansOk() (*bool, bool) {
+	if o == nil || IsNil(o.AllPlans) {
+		return nil, false
+	}
+	return o.AllPlans, true
+}
+
+// IsSetAllPlans returns a boolean if a field has been set.
+func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) IsSetAllPlans() bool {
+	if o != nil && !IsNil(o.AllPlans) {
+		return true
+	}
+
+	return false
+}
+
+// SetAllPlans gets a reference to the given bool and assigns it to the AllPlans field.
+func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) SetAllPlans(v bool) {
+	o.AllPlans = &v
+}
+
 // GetPlans returns the Plans field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) GetPlans() []UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermissionPlansInner {
 	if o == nil {
@@ -321,9 +321,6 @@ func (o UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) ToM
 	if !IsNil(o.DefaultStore) {
 		toSerialize["defaultStore"] = o.DefaultStore
 	}
-	if !IsNil(o.AllPlans) {
-		toSerialize["allPlans"] = o.AllPlans
-	}
 	if !IsNil(o.DefaultTarget) {
 		toSerialize["defaultTarget"] = o.DefaultTarget
 	}
@@ -338,6 +335,9 @@ func (o UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) ToM
 	}
 	if o.Sites != nil {
 		toSerialize["sites"] = o.Sites
+	}
+	if !IsNil(o.AllPlans) {
+		toSerialize["allPlans"] = o.AllPlans
 	}
 	if o.Plans != nil {
 		toSerialize["plans"] = o.Plans

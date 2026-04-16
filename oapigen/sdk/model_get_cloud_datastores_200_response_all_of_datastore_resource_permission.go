@@ -20,7 +20,11 @@ var _ MappedNullable = &GetCloudDatastores200ResponseAllOfDatastoreResourcePermi
 
 // GetCloudDatastores200ResponseAllOfDatastoreResourcePermission struct for GetCloudDatastores200ResponseAllOfDatastoreResourcePermission
 type GetCloudDatastores200ResponseAllOfDatastoreResourcePermission struct {
+	DefaultStore         *bool                                                                     `json:"defaultStore,omitempty"`
+	DefaultTarget        *bool                                                                     `json:"defaultTarget,omitempty"`
+	CanManage            *bool                                                                     `json:"canManage,omitempty"`
 	All                  *bool                                                                     `json:"all,omitempty"`
+	Account              *GetCloudDatastores200ResponseAllOfDatastoreResourcePermissionAccount     `json:"account,omitempty"`
 	Sites                []GetCloudDatastores200ResponseAllOfDatastoreResourcePermissionSitesInner `json:"sites,omitempty"`
 	AllPlans             *bool                                                                     `json:"allPlans,omitempty"`
 	Plans                []GetCloudDatastores200ResponseAllOfDatastoreResourcePermissionPlansInner `json:"plans,omitempty"`
@@ -44,6 +48,102 @@ func NewGetCloudDatastores200ResponseAllOfDatastoreResourcePermission() *GetClou
 func NewGetCloudDatastores200ResponseAllOfDatastoreResourcePermissionWithDefaults() *GetCloudDatastores200ResponseAllOfDatastoreResourcePermission {
 	this := GetCloudDatastores200ResponseAllOfDatastoreResourcePermission{}
 	return &this
+}
+
+// GetDefaultStore returns the DefaultStore field value if set, zero value otherwise.
+func (o *GetCloudDatastores200ResponseAllOfDatastoreResourcePermission) GetDefaultStore() bool {
+	if o == nil || IsNil(o.DefaultStore) {
+		var ret bool
+		return ret
+	}
+	return *o.DefaultStore
+}
+
+// GetDefaultStoreOk returns a tuple with the DefaultStore field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetCloudDatastores200ResponseAllOfDatastoreResourcePermission) GetDefaultStoreOk() (*bool, bool) {
+	if o == nil || IsNil(o.DefaultStore) {
+		return nil, false
+	}
+	return o.DefaultStore, true
+}
+
+// IsSetDefaultStore returns a boolean if a field has been set.
+func (o *GetCloudDatastores200ResponseAllOfDatastoreResourcePermission) IsSetDefaultStore() bool {
+	if o != nil && !IsNil(o.DefaultStore) {
+		return true
+	}
+
+	return false
+}
+
+// SetDefaultStore gets a reference to the given bool and assigns it to the DefaultStore field.
+func (o *GetCloudDatastores200ResponseAllOfDatastoreResourcePermission) SetDefaultStore(v bool) {
+	o.DefaultStore = &v
+}
+
+// GetDefaultTarget returns the DefaultTarget field value if set, zero value otherwise.
+func (o *GetCloudDatastores200ResponseAllOfDatastoreResourcePermission) GetDefaultTarget() bool {
+	if o == nil || IsNil(o.DefaultTarget) {
+		var ret bool
+		return ret
+	}
+	return *o.DefaultTarget
+}
+
+// GetDefaultTargetOk returns a tuple with the DefaultTarget field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetCloudDatastores200ResponseAllOfDatastoreResourcePermission) GetDefaultTargetOk() (*bool, bool) {
+	if o == nil || IsNil(o.DefaultTarget) {
+		return nil, false
+	}
+	return o.DefaultTarget, true
+}
+
+// IsSetDefaultTarget returns a boolean if a field has been set.
+func (o *GetCloudDatastores200ResponseAllOfDatastoreResourcePermission) IsSetDefaultTarget() bool {
+	if o != nil && !IsNil(o.DefaultTarget) {
+		return true
+	}
+
+	return false
+}
+
+// SetDefaultTarget gets a reference to the given bool and assigns it to the DefaultTarget field.
+func (o *GetCloudDatastores200ResponseAllOfDatastoreResourcePermission) SetDefaultTarget(v bool) {
+	o.DefaultTarget = &v
+}
+
+// GetCanManage returns the CanManage field value if set, zero value otherwise.
+func (o *GetCloudDatastores200ResponseAllOfDatastoreResourcePermission) GetCanManage() bool {
+	if o == nil || IsNil(o.CanManage) {
+		var ret bool
+		return ret
+	}
+	return *o.CanManage
+}
+
+// GetCanManageOk returns a tuple with the CanManage field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetCloudDatastores200ResponseAllOfDatastoreResourcePermission) GetCanManageOk() (*bool, bool) {
+	if o == nil || IsNil(o.CanManage) {
+		return nil, false
+	}
+	return o.CanManage, true
+}
+
+// IsSetCanManage returns a boolean if a field has been set.
+func (o *GetCloudDatastores200ResponseAllOfDatastoreResourcePermission) IsSetCanManage() bool {
+	if o != nil && !IsNil(o.CanManage) {
+		return true
+	}
+
+	return false
+}
+
+// SetCanManage gets a reference to the given bool and assigns it to the CanManage field.
+func (o *GetCloudDatastores200ResponseAllOfDatastoreResourcePermission) SetCanManage(v bool) {
+	o.CanManage = &v
 }
 
 // GetAll returns the All field value if set, zero value otherwise.
@@ -76,6 +176,38 @@ func (o *GetCloudDatastores200ResponseAllOfDatastoreResourcePermission) IsSetAll
 // SetAll gets a reference to the given bool and assigns it to the All field.
 func (o *GetCloudDatastores200ResponseAllOfDatastoreResourcePermission) SetAll(v bool) {
 	o.All = &v
+}
+
+// GetAccount returns the Account field value if set, zero value otherwise.
+func (o *GetCloudDatastores200ResponseAllOfDatastoreResourcePermission) GetAccount() GetCloudDatastores200ResponseAllOfDatastoreResourcePermissionAccount {
+	if o == nil || IsNil(o.Account) {
+		var ret GetCloudDatastores200ResponseAllOfDatastoreResourcePermissionAccount
+		return ret
+	}
+	return *o.Account
+}
+
+// GetAccountOk returns a tuple with the Account field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetCloudDatastores200ResponseAllOfDatastoreResourcePermission) GetAccountOk() (*GetCloudDatastores200ResponseAllOfDatastoreResourcePermissionAccount, bool) {
+	if o == nil || IsNil(o.Account) {
+		return nil, false
+	}
+	return o.Account, true
+}
+
+// IsSetAccount returns a boolean if a field has been set.
+func (o *GetCloudDatastores200ResponseAllOfDatastoreResourcePermission) IsSetAccount() bool {
+	if o != nil && !IsNil(o.Account) {
+		return true
+	}
+
+	return false
+}
+
+// SetAccount gets a reference to the given GetCloudDatastores200ResponseAllOfDatastoreResourcePermissionAccount and assigns it to the Account field.
+func (o *GetCloudDatastores200ResponseAllOfDatastoreResourcePermission) SetAccount(v GetCloudDatastores200ResponseAllOfDatastoreResourcePermissionAccount) {
+	o.Account = &v
 }
 
 // GetSites returns the Sites field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -186,8 +318,20 @@ func (o GetCloudDatastores200ResponseAllOfDatastoreResourcePermission) MarshalJS
 
 func (o GetCloudDatastores200ResponseAllOfDatastoreResourcePermission) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.DefaultStore) {
+		toSerialize["defaultStore"] = o.DefaultStore
+	}
+	if !IsNil(o.DefaultTarget) {
+		toSerialize["defaultTarget"] = o.DefaultTarget
+	}
+	if !IsNil(o.CanManage) {
+		toSerialize["canManage"] = o.CanManage
+	}
 	if !IsNil(o.All) {
 		toSerialize["all"] = o.All
+	}
+	if !IsNil(o.Account) {
+		toSerialize["account"] = o.Account
 	}
 	if o.Sites != nil {
 		toSerialize["sites"] = o.Sites

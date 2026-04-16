@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DefaultStore** | Pointer to **bool** |  | [optional] 
-**AllPlans** | Pointer to **bool** |  | [optional] 
 **DefaultTarget** | Pointer to **bool** |  | [optional] 
 **CanManage** | Pointer to **bool** |  | [optional] 
 **All** | Pointer to **bool** |  | [optional] 
-**Account** | Pointer to [**ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionAccount**](ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionAccount.md) |  | [optional] 
-**Sites** | Pointer to [**[]ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionSitesInner**](ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionSitesInner.md) |  | [optional] 
-**Plans** | Pointer to [**[]ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionPlansInner**](ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionPlansInner.md) |  | [optional] 
+**Account** | Pointer to [**ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsAccount**](ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsAccount.md) |  | [optional] 
+**Sites** | Pointer to [**[]ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsSitesInner**](ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsSitesInner.md) |  | [optional] 
+**AllPlans** | Pointer to **bool** |  | [optional] 
+**Plans** | Pointer to [**[]ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsPlansInner**](ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsPlansInner.md) |  | [optional] 
 
 ## Methods
 
@@ -56,31 +56,6 @@ SetDefaultStore sets DefaultStore field to given value.
 `func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) HasDefaultStore() bool`
 
 HasDefaultStore returns a boolean if a field has been set.
-
-### GetAllPlans
-
-`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetAllPlans() bool`
-
-GetAllPlans returns the AllPlans field if non-nil, zero value otherwise.
-
-### GetAllPlansOk
-
-`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetAllPlansOk() (*bool, bool)`
-
-GetAllPlansOk returns a tuple with the AllPlans field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAllPlans
-
-`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) SetAllPlans(v bool)`
-
-SetAllPlans sets AllPlans field to given value.
-
-### HasAllPlans
-
-`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) HasAllPlans() bool`
-
-HasAllPlans returns a boolean if a field has been set.
 
 ### GetDefaultTarget
 
@@ -159,20 +134,20 @@ HasAll returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetAccount() ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionAccount`
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetAccount() ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsAccount`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetAccountOk() (*ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionAccount, bool)`
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetAccountOk() (*ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsAccount, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) SetAccount(v ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionAccount)`
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) SetAccount(v ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsAccount)`
 
 SetAccount sets Account field to given value.
 
@@ -184,20 +159,20 @@ HasAccount returns a boolean if a field has been set.
 
 ### GetSites
 
-`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetSites() []ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionSitesInner`
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetSites() []ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsSitesInner`
 
 GetSites returns the Sites field if non-nil, zero value otherwise.
 
 ### GetSitesOk
 
-`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetSitesOk() (*[]ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionSitesInner, bool)`
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetSitesOk() (*[]ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsSitesInner, bool)`
 
 GetSitesOk returns a tuple with the Sites field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSites
 
-`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) SetSites(v []ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionSitesInner)`
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) SetSites(v []ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsSitesInner)`
 
 SetSites sets Sites field to given value.
 
@@ -217,22 +192,47 @@ HasSites returns a boolean if a field has been set.
 `func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) UnsetSites()`
 
 UnsetSites ensures that no value is present for Sites, not even an explicit nil
+### GetAllPlans
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetAllPlans() bool`
+
+GetAllPlans returns the AllPlans field if non-nil, zero value otherwise.
+
+### GetAllPlansOk
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetAllPlansOk() (*bool, bool)`
+
+GetAllPlansOk returns a tuple with the AllPlans field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllPlans
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) SetAllPlans(v bool)`
+
+SetAllPlans sets AllPlans field to given value.
+
+### HasAllPlans
+
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) HasAllPlans() bool`
+
+HasAllPlans returns a boolean if a field has been set.
+
 ### GetPlans
 
-`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetPlans() []ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionPlansInner`
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetPlans() []ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsPlansInner`
 
 GetPlans returns the Plans field if non-nil, zero value otherwise.
 
 ### GetPlansOk
 
-`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetPlansOk() (*[]ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionPlansInner, bool)`
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) GetPlansOk() (*[]ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsPlansInner, bool)`
 
 GetPlansOk returns a tuple with the Plans field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlans
 
-`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) SetPlans(v []ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermissionPlansInner)`
+`func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission) SetPlans(v []ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsPlansInner)`
 
 SetPlans sets Plans field to given value.
 

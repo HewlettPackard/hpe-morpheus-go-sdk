@@ -5,12 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DefaultStore** | Pointer to **bool** |  | [optional] 
-**AllPlans** | Pointer to **bool** |  | [optional] 
 **DefaultTarget** | Pointer to **bool** |  | [optional] 
 **CanManage** | Pointer to **bool** |  | [optional] 
 **All** | Pointer to **bool** |  | [optional] 
 **Account** | Pointer to [**ClusterDatastoresResourcePermissionsAccount**](ClusterDatastoresResourcePermissionsAccount.md) |  | [optional] 
 **Sites** | Pointer to [**[]ClusterDatastoresResourcePermissionsSitesInner**](ClusterDatastoresResourcePermissionsSitesInner.md) |  | [optional] 
+**AllPlans** | Pointer to **bool** |  | [optional] 
 **Plans** | Pointer to [**[]ClusterDatastoresResourcePermissionsPlansInner**](ClusterDatastoresResourcePermissionsPlansInner.md) |  | [optional] 
 
 ## Methods
@@ -56,31 +56,6 @@ SetDefaultStore sets DefaultStore field to given value.
 `func (o *ClusterDatastoresResourcePermissions) HasDefaultStore() bool`
 
 HasDefaultStore returns a boolean if a field has been set.
-
-### GetAllPlans
-
-`func (o *ClusterDatastoresResourcePermissions) GetAllPlans() bool`
-
-GetAllPlans returns the AllPlans field if non-nil, zero value otherwise.
-
-### GetAllPlansOk
-
-`func (o *ClusterDatastoresResourcePermissions) GetAllPlansOk() (*bool, bool)`
-
-GetAllPlansOk returns a tuple with the AllPlans field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAllPlans
-
-`func (o *ClusterDatastoresResourcePermissions) SetAllPlans(v bool)`
-
-SetAllPlans sets AllPlans field to given value.
-
-### HasAllPlans
-
-`func (o *ClusterDatastoresResourcePermissions) HasAllPlans() bool`
-
-HasAllPlans returns a boolean if a field has been set.
 
 ### GetDefaultTarget
 
@@ -217,6 +192,31 @@ HasSites returns a boolean if a field has been set.
 `func (o *ClusterDatastoresResourcePermissions) UnsetSites()`
 
 UnsetSites ensures that no value is present for Sites, not even an explicit nil
+### GetAllPlans
+
+`func (o *ClusterDatastoresResourcePermissions) GetAllPlans() bool`
+
+GetAllPlans returns the AllPlans field if non-nil, zero value otherwise.
+
+### GetAllPlansOk
+
+`func (o *ClusterDatastoresResourcePermissions) GetAllPlansOk() (*bool, bool)`
+
+GetAllPlansOk returns a tuple with the AllPlans field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllPlans
+
+`func (o *ClusterDatastoresResourcePermissions) SetAllPlans(v bool)`
+
+SetAllPlans sets AllPlans field to given value.
+
+### HasAllPlans
+
+`func (o *ClusterDatastoresResourcePermissions) HasAllPlans() bool`
+
+HasAllPlans returns a boolean if a field has been set.
+
 ### GetPlans
 
 `func (o *ClusterDatastoresResourcePermissions) GetPlans() []ClusterDatastoresResourcePermissionsPlansInner`

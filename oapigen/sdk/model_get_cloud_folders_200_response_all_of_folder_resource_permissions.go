@@ -20,7 +20,11 @@ var _ MappedNullable = &GetCloudFolders200ResponseAllOfFolderResourcePermissions
 
 // GetCloudFolders200ResponseAllOfFolderResourcePermissions struct for GetCloudFolders200ResponseAllOfFolderResourcePermissions
 type GetCloudFolders200ResponseAllOfFolderResourcePermissions struct {
+	DefaultStore         *bool                                                                `json:"defaultStore,omitempty"`
+	DefaultTarget        *bool                                                                `json:"defaultTarget,omitempty"`
+	CanManage            *bool                                                                `json:"canManage,omitempty"`
 	All                  *bool                                                                `json:"all,omitempty"`
+	Account              *GetCloudFolders200ResponseAllOfFolderResourcePermissionsAccount     `json:"account,omitempty"`
 	Sites                []GetCloudFolders200ResponseAllOfFolderResourcePermissionsSitesInner `json:"sites,omitempty"`
 	AllPlans             *bool                                                                `json:"allPlans,omitempty"`
 	Plans                []GetCloudFolders200ResponseAllOfFolderResourcePermissionsPlansInner `json:"plans,omitempty"`
@@ -44,6 +48,102 @@ func NewGetCloudFolders200ResponseAllOfFolderResourcePermissions() *GetCloudFold
 func NewGetCloudFolders200ResponseAllOfFolderResourcePermissionsWithDefaults() *GetCloudFolders200ResponseAllOfFolderResourcePermissions {
 	this := GetCloudFolders200ResponseAllOfFolderResourcePermissions{}
 	return &this
+}
+
+// GetDefaultStore returns the DefaultStore field value if set, zero value otherwise.
+func (o *GetCloudFolders200ResponseAllOfFolderResourcePermissions) GetDefaultStore() bool {
+	if o == nil || IsNil(o.DefaultStore) {
+		var ret bool
+		return ret
+	}
+	return *o.DefaultStore
+}
+
+// GetDefaultStoreOk returns a tuple with the DefaultStore field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetCloudFolders200ResponseAllOfFolderResourcePermissions) GetDefaultStoreOk() (*bool, bool) {
+	if o == nil || IsNil(o.DefaultStore) {
+		return nil, false
+	}
+	return o.DefaultStore, true
+}
+
+// IsSetDefaultStore returns a boolean if a field has been set.
+func (o *GetCloudFolders200ResponseAllOfFolderResourcePermissions) IsSetDefaultStore() bool {
+	if o != nil && !IsNil(o.DefaultStore) {
+		return true
+	}
+
+	return false
+}
+
+// SetDefaultStore gets a reference to the given bool and assigns it to the DefaultStore field.
+func (o *GetCloudFolders200ResponseAllOfFolderResourcePermissions) SetDefaultStore(v bool) {
+	o.DefaultStore = &v
+}
+
+// GetDefaultTarget returns the DefaultTarget field value if set, zero value otherwise.
+func (o *GetCloudFolders200ResponseAllOfFolderResourcePermissions) GetDefaultTarget() bool {
+	if o == nil || IsNil(o.DefaultTarget) {
+		var ret bool
+		return ret
+	}
+	return *o.DefaultTarget
+}
+
+// GetDefaultTargetOk returns a tuple with the DefaultTarget field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetCloudFolders200ResponseAllOfFolderResourcePermissions) GetDefaultTargetOk() (*bool, bool) {
+	if o == nil || IsNil(o.DefaultTarget) {
+		return nil, false
+	}
+	return o.DefaultTarget, true
+}
+
+// IsSetDefaultTarget returns a boolean if a field has been set.
+func (o *GetCloudFolders200ResponseAllOfFolderResourcePermissions) IsSetDefaultTarget() bool {
+	if o != nil && !IsNil(o.DefaultTarget) {
+		return true
+	}
+
+	return false
+}
+
+// SetDefaultTarget gets a reference to the given bool and assigns it to the DefaultTarget field.
+func (o *GetCloudFolders200ResponseAllOfFolderResourcePermissions) SetDefaultTarget(v bool) {
+	o.DefaultTarget = &v
+}
+
+// GetCanManage returns the CanManage field value if set, zero value otherwise.
+func (o *GetCloudFolders200ResponseAllOfFolderResourcePermissions) GetCanManage() bool {
+	if o == nil || IsNil(o.CanManage) {
+		var ret bool
+		return ret
+	}
+	return *o.CanManage
+}
+
+// GetCanManageOk returns a tuple with the CanManage field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetCloudFolders200ResponseAllOfFolderResourcePermissions) GetCanManageOk() (*bool, bool) {
+	if o == nil || IsNil(o.CanManage) {
+		return nil, false
+	}
+	return o.CanManage, true
+}
+
+// IsSetCanManage returns a boolean if a field has been set.
+func (o *GetCloudFolders200ResponseAllOfFolderResourcePermissions) IsSetCanManage() bool {
+	if o != nil && !IsNil(o.CanManage) {
+		return true
+	}
+
+	return false
+}
+
+// SetCanManage gets a reference to the given bool and assigns it to the CanManage field.
+func (o *GetCloudFolders200ResponseAllOfFolderResourcePermissions) SetCanManage(v bool) {
+	o.CanManage = &v
 }
 
 // GetAll returns the All field value if set, zero value otherwise.
@@ -76,6 +176,38 @@ func (o *GetCloudFolders200ResponseAllOfFolderResourcePermissions) IsSetAll() bo
 // SetAll gets a reference to the given bool and assigns it to the All field.
 func (o *GetCloudFolders200ResponseAllOfFolderResourcePermissions) SetAll(v bool) {
 	o.All = &v
+}
+
+// GetAccount returns the Account field value if set, zero value otherwise.
+func (o *GetCloudFolders200ResponseAllOfFolderResourcePermissions) GetAccount() GetCloudFolders200ResponseAllOfFolderResourcePermissionsAccount {
+	if o == nil || IsNil(o.Account) {
+		var ret GetCloudFolders200ResponseAllOfFolderResourcePermissionsAccount
+		return ret
+	}
+	return *o.Account
+}
+
+// GetAccountOk returns a tuple with the Account field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetCloudFolders200ResponseAllOfFolderResourcePermissions) GetAccountOk() (*GetCloudFolders200ResponseAllOfFolderResourcePermissionsAccount, bool) {
+	if o == nil || IsNil(o.Account) {
+		return nil, false
+	}
+	return o.Account, true
+}
+
+// IsSetAccount returns a boolean if a field has been set.
+func (o *GetCloudFolders200ResponseAllOfFolderResourcePermissions) IsSetAccount() bool {
+	if o != nil && !IsNil(o.Account) {
+		return true
+	}
+
+	return false
+}
+
+// SetAccount gets a reference to the given GetCloudFolders200ResponseAllOfFolderResourcePermissionsAccount and assigns it to the Account field.
+func (o *GetCloudFolders200ResponseAllOfFolderResourcePermissions) SetAccount(v GetCloudFolders200ResponseAllOfFolderResourcePermissionsAccount) {
+	o.Account = &v
 }
 
 // GetSites returns the Sites field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -186,8 +318,20 @@ func (o GetCloudFolders200ResponseAllOfFolderResourcePermissions) MarshalJSON() 
 
 func (o GetCloudFolders200ResponseAllOfFolderResourcePermissions) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.DefaultStore) {
+		toSerialize["defaultStore"] = o.DefaultStore
+	}
+	if !IsNil(o.DefaultTarget) {
+		toSerialize["defaultTarget"] = o.DefaultTarget
+	}
+	if !IsNil(o.CanManage) {
+		toSerialize["canManage"] = o.CanManage
+	}
 	if !IsNil(o.All) {
 		toSerialize["all"] = o.All
+	}
+	if !IsNil(o.Account) {
+		toSerialize["account"] = o.Account
 	}
 	if o.Sites != nil {
 		toSerialize["sites"] = o.Sites

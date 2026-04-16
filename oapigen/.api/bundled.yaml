@@ -37043,8 +37043,20 @@ paths:
                             resourcePermission:
                               type: object
                               properties: &ref_141
+                                defaultStore:
+                                  type: boolean
+                                defaultTarget:
+                                  type: boolean
+                                canManage:
+                                  type: boolean
                                 all:
                                   type: boolean
+                                account:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: integer
+                                      format: int64
                                 sites:
                                   type:
                                     - array
@@ -100191,6 +100203,14 @@ paths:
                               type:
                                 - string
                                 - 'null'
+                            password:
+                              type:
+                                - string
+                                - 'null'
+                            passwordHash:
+                              type:
+                                - string
+                                - 'null'
                             ip:
                               type: string
                             internalIp:
@@ -100198,6 +100218,10 @@ paths:
                                 - string
                                 - 'null'
                             externalIp:
+                              type:
+                                - string
+                                - 'null'
+                            externalId:
                               type:
                                 - string
                                 - 'null'
@@ -100214,6 +100238,26 @@ paths:
                                 - boolean
                                 - 'null'
                             sslCert:
+                              type:
+                                - string
+                                - 'null'
+                            enabled:
+                              type: boolean
+                            allowVipEntry:
+                              type: boolean
+                            vipPools:
+                              type: array
+                              items:
+                                type: object
+                            virtualServiceName:
+                              type:
+                                - string
+                                - 'null'
+                            poolName:
+                              type:
+                                - string
+                                - 'null'
+                            serverName:
                               type:
                                 - string
                                 - 'null'
@@ -100241,6 +100285,8 @@ paths:
                             resourcePermission:
                               type: object
                               properties: *ref_141
+                            instancePrice:
+                              type: object
                   - type: object
                     properties: *ref_2
               examples:
@@ -100457,6 +100503,7 @@ paths:
                     loadBalancer: &ref_492
                       id: 1064
                       uuid: 3e84ad00-1421-46c2-a0c8-17fcde5a8f93
+                      name: my-load-balancer
                       accountId: 3
                       cloud:
                         id: 12
@@ -100478,11 +100525,17 @@ paths:
                       ip: XXXXXX10070-3672406.us-west-1.elb.amazonaws.com
                       internalIp: null
                       externalIp: null
+                      externalId: null
                       apiPort: null
                       adminPort: null
                       sslEnabled: false
                       sslCert: null
                       enabled: true
+                      allowVipEntry: false
+                      vipPools: []
+                      virtualServiceName: null
+                      poolName: null
+                      serverName: null
                       config: {}
                       dateCreated: '2021-02-26T21:18:56Z'
                       lastUpdated: '2022-07-07T15:56:12Z'
@@ -100493,6 +100546,17 @@ paths:
                           name: acme
                         - id: 3
                           name: icorp
+                      resourcePermission:
+                        defaultStore: false
+                        allPlans: true
+                        defaultTarget: false
+                        canManage: false
+                        all: true
+                        account:
+                          id: 1
+                        sites: []
+                        plans: []
+                      instancePrice: {}
         4XX:
           description: Error Codes
           content: *ref_3

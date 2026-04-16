@@ -5,12 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DefaultStore** | Pointer to **bool** |  | [optional] 
-**AllPlans** | Pointer to **bool** |  | [optional] 
 **DefaultTarget** | Pointer to **bool** |  | [optional] 
 **CanManage** | Pointer to **bool** |  | [optional] 
 **All** | Pointer to **bool** |  | [optional] 
 **Account** | Pointer to [**UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermissionAccount**](UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermissionAccount.md) |  | [optional] 
 **Sites** | Pointer to [**[]UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermissionSitesInner**](UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermissionSitesInner.md) |  | [optional] 
+**AllPlans** | Pointer to **bool** |  | [optional] 
 **Plans** | Pointer to [**[]UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermissionPlansInner**](UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermissionPlansInner.md) |  | [optional] 
 
 ## Methods
@@ -56,31 +56,6 @@ SetDefaultStore sets DefaultStore field to given value.
 `func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) HasDefaultStore() bool`
 
 HasDefaultStore returns a boolean if a field has been set.
-
-### GetAllPlans
-
-`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) GetAllPlans() bool`
-
-GetAllPlans returns the AllPlans field if non-nil, zero value otherwise.
-
-### GetAllPlansOk
-
-`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) GetAllPlansOk() (*bool, bool)`
-
-GetAllPlansOk returns a tuple with the AllPlans field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAllPlans
-
-`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) SetAllPlans(v bool)`
-
-SetAllPlans sets AllPlans field to given value.
-
-### HasAllPlans
-
-`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) HasAllPlans() bool`
-
-HasAllPlans returns a boolean if a field has been set.
 
 ### GetDefaultTarget
 
@@ -217,6 +192,31 @@ HasSites returns a boolean if a field has been set.
 `func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) UnsetSites()`
 
 UnsetSites ensures that no value is present for Sites, not even an explicit nil
+### GetAllPlans
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) GetAllPlans() bool`
+
+GetAllPlans returns the AllPlans field if non-nil, zero value otherwise.
+
+### GetAllPlansOk
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) GetAllPlansOk() (*bool, bool)`
+
+GetAllPlansOk returns a tuple with the AllPlans field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllPlans
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) SetAllPlans(v bool)`
+
+SetAllPlans sets AllPlans field to given value.
+
+### HasAllPlans
+
+`func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) HasAllPlans() bool`
+
+HasAllPlans returns a boolean if a field has been set.
+
 ### GetPlans
 
 `func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) GetPlans() []UpdateSecurityGroups200ResponseSecurityGroupAllOfResourcePermissionPlansInner`

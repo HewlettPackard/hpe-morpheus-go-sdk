@@ -16,19 +16,29 @@ Name | Type | Description | Notes
 **Host** | Pointer to **string** |  | [optional] 
 **Port** | Pointer to **int64** |  | [optional] 
 **Username** | Pointer to **NullableString** |  | [optional] 
+**Password** | Pointer to **NullableString** |  | [optional] 
+**PasswordHash** | Pointer to **NullableString** |  | [optional] 
 **Ip** | Pointer to **string** |  | [optional] 
 **InternalIp** | Pointer to **NullableString** |  | [optional] 
 **ExternalIp** | Pointer to **NullableString** |  | [optional] 
+**ExternalId** | Pointer to **NullableString** |  | [optional] 
 **ApiPort** | Pointer to **NullableString** |  | [optional] 
 **AdminPort** | Pointer to **NullableString** |  | [optional] 
 **SslEnabled** | Pointer to **NullableBool** |  | [optional] 
 **SslCert** | Pointer to **NullableString** |  | [optional] 
+**Enabled** | Pointer to **bool** |  | [optional] 
+**AllowVipEntry** | Pointer to **bool** |  | [optional] 
+**VipPools** | Pointer to **[]map[string]interface{}** |  | [optional] 
+**VirtualServiceName** | Pointer to **NullableString** |  | [optional] 
+**PoolName** | Pointer to **NullableString** |  | [optional] 
+**ServerName** | Pointer to **NullableString** |  | [optional] 
 **Config** | Pointer to **map[string]interface{}** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 **Credential** | Pointer to [**CreateLoadBalancer200ResponseLoadBalancerCredential**](CreateLoadBalancer200ResponseLoadBalancerCredential.md) |  | [optional] 
 **Tenants** | Pointer to [**[]CreateLoadBalancer200ResponseLoadBalancerTenantsInner**](CreateLoadBalancer200ResponseLoadBalancerTenantsInner.md) |  | [optional] 
 **ResourcePermission** | Pointer to [**CreateLoadBalancer200ResponseLoadBalancerResourcePermission**](CreateLoadBalancer200ResponseLoadBalancerResourcePermission.md) |  | [optional] 
+**InstancePrice** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
@@ -359,6 +369,76 @@ HasUsername returns a boolean if a field has been set.
 `func (o *CreateLoadBalancer200ResponseLoadBalancer) UnsetUsername()`
 
 UnsetUsername ensures that no value is present for Username, not even an explicit nil
+### GetPassword
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) GetPassword() string`
+
+GetPassword returns the Password field if non-nil, zero value otherwise.
+
+### GetPasswordOk
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) GetPasswordOk() (*string, bool)`
+
+GetPasswordOk returns a tuple with the Password field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPassword
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) SetPassword(v string)`
+
+SetPassword sets Password field to given value.
+
+### HasPassword
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) HasPassword() bool`
+
+HasPassword returns a boolean if a field has been set.
+
+### SetPasswordNil
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) SetPasswordNil(b bool)`
+
+ SetPasswordNil sets the value for Password to be an explicit nil
+
+### UnsetPassword
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) UnsetPassword()`
+
+UnsetPassword ensures that no value is present for Password, not even an explicit nil
+### GetPasswordHash
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) GetPasswordHash() string`
+
+GetPasswordHash returns the PasswordHash field if non-nil, zero value otherwise.
+
+### GetPasswordHashOk
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) GetPasswordHashOk() (*string, bool)`
+
+GetPasswordHashOk returns a tuple with the PasswordHash field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPasswordHash
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) SetPasswordHash(v string)`
+
+SetPasswordHash sets PasswordHash field to given value.
+
+### HasPasswordHash
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) HasPasswordHash() bool`
+
+HasPasswordHash returns a boolean if a field has been set.
+
+### SetPasswordHashNil
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) SetPasswordHashNil(b bool)`
+
+ SetPasswordHashNil sets the value for PasswordHash to be an explicit nil
+
+### UnsetPasswordHash
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) UnsetPasswordHash()`
+
+UnsetPasswordHash ensures that no value is present for PasswordHash, not even an explicit nil
 ### GetIp
 
 `func (o *CreateLoadBalancer200ResponseLoadBalancer) GetIp() string`
@@ -454,6 +534,41 @@ HasExternalIp returns a boolean if a field has been set.
 `func (o *CreateLoadBalancer200ResponseLoadBalancer) UnsetExternalIp()`
 
 UnsetExternalIp ensures that no value is present for ExternalIp, not even an explicit nil
+### GetExternalId
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) GetExternalId() string`
+
+GetExternalId returns the ExternalId field if non-nil, zero value otherwise.
+
+### GetExternalIdOk
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) GetExternalIdOk() (*string, bool)`
+
+GetExternalIdOk returns a tuple with the ExternalId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExternalId
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) SetExternalId(v string)`
+
+SetExternalId sets ExternalId field to given value.
+
+### HasExternalId
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) HasExternalId() bool`
+
+HasExternalId returns a boolean if a field has been set.
+
+### SetExternalIdNil
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) SetExternalIdNil(b bool)`
+
+ SetExternalIdNil sets the value for ExternalId to be an explicit nil
+
+### UnsetExternalId
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) UnsetExternalId()`
+
+UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
 ### GetApiPort
 
 `func (o *CreateLoadBalancer200ResponseLoadBalancer) GetApiPort() string`
@@ -594,6 +709,186 @@ HasSslCert returns a boolean if a field has been set.
 `func (o *CreateLoadBalancer200ResponseLoadBalancer) UnsetSslCert()`
 
 UnsetSslCert ensures that no value is present for SslCert, not even an explicit nil
+### GetEnabled
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) GetEnabled() bool`
+
+GetEnabled returns the Enabled field if non-nil, zero value otherwise.
+
+### GetEnabledOk
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) GetEnabledOk() (*bool, bool)`
+
+GetEnabledOk returns a tuple with the Enabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnabled
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) SetEnabled(v bool)`
+
+SetEnabled sets Enabled field to given value.
+
+### HasEnabled
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) HasEnabled() bool`
+
+HasEnabled returns a boolean if a field has been set.
+
+### GetAllowVipEntry
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) GetAllowVipEntry() bool`
+
+GetAllowVipEntry returns the AllowVipEntry field if non-nil, zero value otherwise.
+
+### GetAllowVipEntryOk
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) GetAllowVipEntryOk() (*bool, bool)`
+
+GetAllowVipEntryOk returns a tuple with the AllowVipEntry field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllowVipEntry
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) SetAllowVipEntry(v bool)`
+
+SetAllowVipEntry sets AllowVipEntry field to given value.
+
+### HasAllowVipEntry
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) HasAllowVipEntry() bool`
+
+HasAllowVipEntry returns a boolean if a field has been set.
+
+### GetVipPools
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) GetVipPools() []map[string]interface{}`
+
+GetVipPools returns the VipPools field if non-nil, zero value otherwise.
+
+### GetVipPoolsOk
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) GetVipPoolsOk() (*[]map[string]interface{}, bool)`
+
+GetVipPoolsOk returns a tuple with the VipPools field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVipPools
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) SetVipPools(v []map[string]interface{})`
+
+SetVipPools sets VipPools field to given value.
+
+### HasVipPools
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) HasVipPools() bool`
+
+HasVipPools returns a boolean if a field has been set.
+
+### GetVirtualServiceName
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) GetVirtualServiceName() string`
+
+GetVirtualServiceName returns the VirtualServiceName field if non-nil, zero value otherwise.
+
+### GetVirtualServiceNameOk
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) GetVirtualServiceNameOk() (*string, bool)`
+
+GetVirtualServiceNameOk returns a tuple with the VirtualServiceName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVirtualServiceName
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) SetVirtualServiceName(v string)`
+
+SetVirtualServiceName sets VirtualServiceName field to given value.
+
+### HasVirtualServiceName
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) HasVirtualServiceName() bool`
+
+HasVirtualServiceName returns a boolean if a field has been set.
+
+### SetVirtualServiceNameNil
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) SetVirtualServiceNameNil(b bool)`
+
+ SetVirtualServiceNameNil sets the value for VirtualServiceName to be an explicit nil
+
+### UnsetVirtualServiceName
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) UnsetVirtualServiceName()`
+
+UnsetVirtualServiceName ensures that no value is present for VirtualServiceName, not even an explicit nil
+### GetPoolName
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) GetPoolName() string`
+
+GetPoolName returns the PoolName field if non-nil, zero value otherwise.
+
+### GetPoolNameOk
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) GetPoolNameOk() (*string, bool)`
+
+GetPoolNameOk returns a tuple with the PoolName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPoolName
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) SetPoolName(v string)`
+
+SetPoolName sets PoolName field to given value.
+
+### HasPoolName
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) HasPoolName() bool`
+
+HasPoolName returns a boolean if a field has been set.
+
+### SetPoolNameNil
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) SetPoolNameNil(b bool)`
+
+ SetPoolNameNil sets the value for PoolName to be an explicit nil
+
+### UnsetPoolName
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) UnsetPoolName()`
+
+UnsetPoolName ensures that no value is present for PoolName, not even an explicit nil
+### GetServerName
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) GetServerName() string`
+
+GetServerName returns the ServerName field if non-nil, zero value otherwise.
+
+### GetServerNameOk
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) GetServerNameOk() (*string, bool)`
+
+GetServerNameOk returns a tuple with the ServerName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetServerName
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) SetServerName(v string)`
+
+SetServerName sets ServerName field to given value.
+
+### HasServerName
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) HasServerName() bool`
+
+HasServerName returns a boolean if a field has been set.
+
+### SetServerNameNil
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) SetServerNameNil(b bool)`
+
+ SetServerNameNil sets the value for ServerName to be an explicit nil
+
+### UnsetServerName
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) UnsetServerName()`
+
+UnsetServerName ensures that no value is present for ServerName, not even an explicit nil
 ### GetConfig
 
 `func (o *CreateLoadBalancer200ResponseLoadBalancer) GetConfig() map[string]interface{}`
@@ -743,6 +1038,31 @@ SetResourcePermission sets ResourcePermission field to given value.
 `func (o *CreateLoadBalancer200ResponseLoadBalancer) HasResourcePermission() bool`
 
 HasResourcePermission returns a boolean if a field has been set.
+
+### GetInstancePrice
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) GetInstancePrice() map[string]interface{}`
+
+GetInstancePrice returns the InstancePrice field if non-nil, zero value otherwise.
+
+### GetInstancePriceOk
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) GetInstancePriceOk() (*map[string]interface{}, bool)`
+
+GetInstancePriceOk returns a tuple with the InstancePrice field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInstancePrice
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) SetInstancePrice(v map[string]interface{})`
+
+SetInstancePrice sets InstancePrice field to given value.
+
+### HasInstancePrice
+
+`func (o *CreateLoadBalancer200ResponseLoadBalancer) HasInstancePrice() bool`
+
+HasInstancePrice returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

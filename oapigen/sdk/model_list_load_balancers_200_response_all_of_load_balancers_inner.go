@@ -33,19 +33,29 @@ type ListLoadBalancers200ResponseAllOfLoadBalancersInner struct {
 	Host                 *string                                                                `json:"host,omitempty"`
 	Port                 *int64                                                                 `json:"port,omitempty"`
 	Username             NullableString                                                         `json:"username,omitempty"`
+	Password             NullableString                                                         `json:"password,omitempty"`
+	PasswordHash         NullableString                                                         `json:"passwordHash,omitempty"`
 	Ip                   *string                                                                `json:"ip,omitempty"`
 	InternalIp           NullableString                                                         `json:"internalIp,omitempty"`
 	ExternalIp           NullableString                                                         `json:"externalIp,omitempty"`
+	ExternalId           NullableString                                                         `json:"externalId,omitempty"`
 	ApiPort              NullableString                                                         `json:"apiPort,omitempty"`
 	AdminPort            NullableString                                                         `json:"adminPort,omitempty"`
 	SslEnabled           NullableBool                                                           `json:"sslEnabled,omitempty"`
 	SslCert              NullableString                                                         `json:"sslCert,omitempty"`
+	Enabled              *bool                                                                  `json:"enabled,omitempty"`
+	AllowVipEntry        *bool                                                                  `json:"allowVipEntry,omitempty"`
+	VipPools             []map[string]interface{}                                               `json:"vipPools,omitempty"`
+	VirtualServiceName   NullableString                                                         `json:"virtualServiceName,omitempty"`
+	PoolName             NullableString                                                         `json:"poolName,omitempty"`
+	ServerName           NullableString                                                         `json:"serverName,omitempty"`
 	Config               map[string]interface{}                                                 `json:"config,omitempty"`
 	DateCreated          *time.Time                                                             `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                             `json:"lastUpdated,omitempty"`
 	Credential           *ListLoadBalancers200ResponseAllOfLoadBalancersInnerCredential         `json:"credential,omitempty"`
 	Tenants              []ListLoadBalancers200ResponseAllOfLoadBalancersInnerTenantsInner      `json:"tenants,omitempty"`
 	ResourcePermission   *ListLoadBalancers200ResponseAllOfLoadBalancersInnerResourcePermission `json:"resourcePermission,omitempty"`
+	InstancePrice        map[string]interface{}                                                 `json:"instancePrice,omitempty"`
 	AdditionalProperties map[string]interface{}                                                 `json:",remain"`
 }
 
@@ -474,6 +484,92 @@ func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) UnsetUsername() {
 	o.Username.Unset()
 }
 
+// GetPassword returns the Password field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetPassword() string {
+	if o == nil || IsNil(o.Password.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.Password.Get()
+}
+
+// GetPasswordOk returns a tuple with the Password field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetPasswordOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Password.Get(), o.Password.IsSet()
+}
+
+// IsSetPassword returns a boolean if a field has been set.
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) IsSetPassword() bool {
+	if o != nil && o.Password.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetPassword gets a reference to the given NullableString and assigns it to the Password field.
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetPassword(v string) {
+	o.Password.Set(&v)
+}
+
+// SetPasswordNil sets the value for Password to be an explicit nil
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetPasswordNil() {
+	o.Password.Set(nil)
+}
+
+// UnsetPassword ensures that no value is present for Password, not even an explicit nil
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) UnsetPassword() {
+	o.Password.Unset()
+}
+
+// GetPasswordHash returns the PasswordHash field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetPasswordHash() string {
+	if o == nil || IsNil(o.PasswordHash.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.PasswordHash.Get()
+}
+
+// GetPasswordHashOk returns a tuple with the PasswordHash field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetPasswordHashOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.PasswordHash.Get(), o.PasswordHash.IsSet()
+}
+
+// IsSetPasswordHash returns a boolean if a field has been set.
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) IsSetPasswordHash() bool {
+	if o != nil && o.PasswordHash.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetPasswordHash gets a reference to the given NullableString and assigns it to the PasswordHash field.
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetPasswordHash(v string) {
+	o.PasswordHash.Set(&v)
+}
+
+// SetPasswordHashNil sets the value for PasswordHash to be an explicit nil
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetPasswordHashNil() {
+	o.PasswordHash.Set(nil)
+}
+
+// UnsetPasswordHash ensures that no value is present for PasswordHash, not even an explicit nil
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) UnsetPasswordHash() {
+	o.PasswordHash.Unset()
+}
+
 // GetIp returns the Ip field value if set, zero value otherwise.
 func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetIp() string {
 	if o == nil || IsNil(o.Ip) {
@@ -590,6 +686,49 @@ func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetExternalIpNil()
 // UnsetExternalIp ensures that no value is present for ExternalIp, not even an explicit nil
 func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) UnsetExternalIp() {
 	o.ExternalIp.Unset()
+}
+
+// GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetExternalId() string {
+	if o == nil || IsNil(o.ExternalId.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.ExternalId.Get()
+}
+
+// GetExternalIdOk returns a tuple with the ExternalId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetExternalIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.ExternalId.Get(), o.ExternalId.IsSet()
+}
+
+// IsSetExternalId returns a boolean if a field has been set.
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) IsSetExternalId() bool {
+	if o != nil && o.ExternalId.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetExternalId(v string) {
+	o.ExternalId.Set(&v)
+}
+
+// SetExternalIdNil sets the value for ExternalId to be an explicit nil
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetExternalIdNil() {
+	o.ExternalId.Set(nil)
+}
+
+// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) UnsetExternalId() {
+	o.ExternalId.Unset()
 }
 
 // GetApiPort returns the ApiPort field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -762,6 +901,231 @@ func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetSslCertNil() {
 // UnsetSslCert ensures that no value is present for SslCert, not even an explicit nil
 func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) UnsetSslCert() {
 	o.SslCert.Unset()
+}
+
+// GetEnabled returns the Enabled field value if set, zero value otherwise.
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetEnabled() bool {
+	if o == nil || IsNil(o.Enabled) {
+		var ret bool
+		return ret
+	}
+	return *o.Enabled
+}
+
+// GetEnabledOk returns a tuple with the Enabled field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetEnabledOk() (*bool, bool) {
+	if o == nil || IsNil(o.Enabled) {
+		return nil, false
+	}
+	return o.Enabled, true
+}
+
+// IsSetEnabled returns a boolean if a field has been set.
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) IsSetEnabled() bool {
+	if o != nil && !IsNil(o.Enabled) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetEnabled(v bool) {
+	o.Enabled = &v
+}
+
+// GetAllowVipEntry returns the AllowVipEntry field value if set, zero value otherwise.
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetAllowVipEntry() bool {
+	if o == nil || IsNil(o.AllowVipEntry) {
+		var ret bool
+		return ret
+	}
+	return *o.AllowVipEntry
+}
+
+// GetAllowVipEntryOk returns a tuple with the AllowVipEntry field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetAllowVipEntryOk() (*bool, bool) {
+	if o == nil || IsNil(o.AllowVipEntry) {
+		return nil, false
+	}
+	return o.AllowVipEntry, true
+}
+
+// IsSetAllowVipEntry returns a boolean if a field has been set.
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) IsSetAllowVipEntry() bool {
+	if o != nil && !IsNil(o.AllowVipEntry) {
+		return true
+	}
+
+	return false
+}
+
+// SetAllowVipEntry gets a reference to the given bool and assigns it to the AllowVipEntry field.
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetAllowVipEntry(v bool) {
+	o.AllowVipEntry = &v
+}
+
+// GetVipPools returns the VipPools field value if set, zero value otherwise.
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetVipPools() []map[string]interface{} {
+	if o == nil || IsNil(o.VipPools) {
+		var ret []map[string]interface{}
+		return ret
+	}
+	return o.VipPools
+}
+
+// GetVipPoolsOk returns a tuple with the VipPools field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetVipPoolsOk() ([]map[string]interface{}, bool) {
+	if o == nil || IsNil(o.VipPools) {
+		return nil, false
+	}
+	return o.VipPools, true
+}
+
+// IsSetVipPools returns a boolean if a field has been set.
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) IsSetVipPools() bool {
+	if o != nil && !IsNil(o.VipPools) {
+		return true
+	}
+
+	return false
+}
+
+// SetVipPools gets a reference to the given []map[string]interface{} and assigns it to the VipPools field.
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetVipPools(v []map[string]interface{}) {
+	o.VipPools = v
+}
+
+// GetVirtualServiceName returns the VirtualServiceName field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetVirtualServiceName() string {
+	if o == nil || IsNil(o.VirtualServiceName.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.VirtualServiceName.Get()
+}
+
+// GetVirtualServiceNameOk returns a tuple with the VirtualServiceName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetVirtualServiceNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.VirtualServiceName.Get(), o.VirtualServiceName.IsSet()
+}
+
+// IsSetVirtualServiceName returns a boolean if a field has been set.
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) IsSetVirtualServiceName() bool {
+	if o != nil && o.VirtualServiceName.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetVirtualServiceName gets a reference to the given NullableString and assigns it to the VirtualServiceName field.
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetVirtualServiceName(v string) {
+	o.VirtualServiceName.Set(&v)
+}
+
+// SetVirtualServiceNameNil sets the value for VirtualServiceName to be an explicit nil
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetVirtualServiceNameNil() {
+	o.VirtualServiceName.Set(nil)
+}
+
+// UnsetVirtualServiceName ensures that no value is present for VirtualServiceName, not even an explicit nil
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) UnsetVirtualServiceName() {
+	o.VirtualServiceName.Unset()
+}
+
+// GetPoolName returns the PoolName field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetPoolName() string {
+	if o == nil || IsNil(o.PoolName.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.PoolName.Get()
+}
+
+// GetPoolNameOk returns a tuple with the PoolName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetPoolNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.PoolName.Get(), o.PoolName.IsSet()
+}
+
+// IsSetPoolName returns a boolean if a field has been set.
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) IsSetPoolName() bool {
+	if o != nil && o.PoolName.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetPoolName gets a reference to the given NullableString and assigns it to the PoolName field.
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetPoolName(v string) {
+	o.PoolName.Set(&v)
+}
+
+// SetPoolNameNil sets the value for PoolName to be an explicit nil
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetPoolNameNil() {
+	o.PoolName.Set(nil)
+}
+
+// UnsetPoolName ensures that no value is present for PoolName, not even an explicit nil
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) UnsetPoolName() {
+	o.PoolName.Unset()
+}
+
+// GetServerName returns the ServerName field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetServerName() string {
+	if o == nil || IsNil(o.ServerName.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.ServerName.Get()
+}
+
+// GetServerNameOk returns a tuple with the ServerName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetServerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.ServerName.Get(), o.ServerName.IsSet()
+}
+
+// IsSetServerName returns a boolean if a field has been set.
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) IsSetServerName() bool {
+	if o != nil && o.ServerName.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetServerName gets a reference to the given NullableString and assigns it to the ServerName field.
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetServerName(v string) {
+	o.ServerName.Set(&v)
+}
+
+// SetServerNameNil sets the value for ServerName to be an explicit nil
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetServerNameNil() {
+	o.ServerName.Set(nil)
+}
+
+// UnsetServerName ensures that no value is present for ServerName, not even an explicit nil
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) UnsetServerName() {
+	o.ServerName.Unset()
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
@@ -956,6 +1320,38 @@ func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetResourcePermiss
 	o.ResourcePermission = &v
 }
 
+// GetInstancePrice returns the InstancePrice field value if set, zero value otherwise.
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetInstancePrice() map[string]interface{} {
+	if o == nil || IsNil(o.InstancePrice) {
+		var ret map[string]interface{}
+		return ret
+	}
+	return o.InstancePrice
+}
+
+// GetInstancePriceOk returns a tuple with the InstancePrice field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetInstancePriceOk() (map[string]interface{}, bool) {
+	if o == nil || IsNil(o.InstancePrice) {
+		return map[string]interface{}{}, false
+	}
+	return o.InstancePrice, true
+}
+
+// IsSetInstancePrice returns a boolean if a field has been set.
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) IsSetInstancePrice() bool {
+	if o != nil && !IsNil(o.InstancePrice) {
+		return true
+	}
+
+	return false
+}
+
+// SetInstancePrice gets a reference to the given map[string]interface{} and assigns it to the InstancePrice field.
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetInstancePrice(v map[string]interface{}) {
+	o.InstancePrice = v
+}
+
 func (o ListLoadBalancers200ResponseAllOfLoadBalancersInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -1002,6 +1398,12 @@ func (o ListLoadBalancers200ResponseAllOfLoadBalancersInner) ToMap() (map[string
 	if o.Username.IsSet() {
 		toSerialize["username"] = o.Username.Get()
 	}
+	if o.Password.IsSet() {
+		toSerialize["password"] = o.Password.Get()
+	}
+	if o.PasswordHash.IsSet() {
+		toSerialize["passwordHash"] = o.PasswordHash.Get()
+	}
 	if !IsNil(o.Ip) {
 		toSerialize["ip"] = o.Ip
 	}
@@ -1010,6 +1412,9 @@ func (o ListLoadBalancers200ResponseAllOfLoadBalancersInner) ToMap() (map[string
 	}
 	if o.ExternalIp.IsSet() {
 		toSerialize["externalIp"] = o.ExternalIp.Get()
+	}
+	if o.ExternalId.IsSet() {
+		toSerialize["externalId"] = o.ExternalId.Get()
 	}
 	if o.ApiPort.IsSet() {
 		toSerialize["apiPort"] = o.ApiPort.Get()
@@ -1022,6 +1427,24 @@ func (o ListLoadBalancers200ResponseAllOfLoadBalancersInner) ToMap() (map[string
 	}
 	if o.SslCert.IsSet() {
 		toSerialize["sslCert"] = o.SslCert.Get()
+	}
+	if !IsNil(o.Enabled) {
+		toSerialize["enabled"] = o.Enabled
+	}
+	if !IsNil(o.AllowVipEntry) {
+		toSerialize["allowVipEntry"] = o.AllowVipEntry
+	}
+	if !IsNil(o.VipPools) {
+		toSerialize["vipPools"] = o.VipPools
+	}
+	if o.VirtualServiceName.IsSet() {
+		toSerialize["virtualServiceName"] = o.VirtualServiceName.Get()
+	}
+	if o.PoolName.IsSet() {
+		toSerialize["poolName"] = o.PoolName.Get()
+	}
+	if o.ServerName.IsSet() {
+		toSerialize["serverName"] = o.ServerName.Get()
 	}
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
@@ -1040,6 +1463,9 @@ func (o ListLoadBalancers200ResponseAllOfLoadBalancersInner) ToMap() (map[string
 	}
 	if !IsNil(o.ResourcePermission) {
 		toSerialize["resourcePermission"] = o.ResourcePermission
+	}
+	if !IsNil(o.InstancePrice) {
+		toSerialize["instancePrice"] = o.InstancePrice
 	}
 
 	for key, value := range o.AdditionalProperties {
