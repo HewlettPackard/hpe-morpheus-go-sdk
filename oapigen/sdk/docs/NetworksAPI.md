@@ -220,7 +220,7 @@ import (
 )
 
 func main() {
-	serverId := float32(4) // float32 | Server ID
+	serverId := int64(4) // int64 | Server ID
 	createNetworkDhcpRelayRequest := *openapiclient.NewCreateNetworkDhcpRelayRequest() // CreateNetworkDhcpRelayRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -241,7 +241,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serverId** | **float32** | Server ID | 
+**serverId** | **int64** | Server ID | 
 
 ### Other Parameters
 
@@ -292,7 +292,7 @@ import (
 )
 
 func main() {
-	serverId := float32(4) // float32 | Server ID
+	serverId := int64(4) // int64 | Server ID
 	createNetworkDhcpServerRequest := *openapiclient.NewCreateNetworkDhcpServerRequest() // CreateNetworkDhcpServerRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -313,7 +313,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serverId** | **float32** | Server ID | 
+**serverId** | **int64** | Server ID | 
 
 ### Other Parameters
 
@@ -430,7 +430,7 @@ import (
 )
 
 func main() {
-	serverId := float32(4) // float32 | Server ID
+	serverId := int64(4) // int64 | Server ID
 	createNetworkFirewallRuleRequest := *openapiclient.NewCreateNetworkFirewallRuleRequest() // CreateNetworkFirewallRuleRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -451,7 +451,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serverId** | **float32** | Server ID | 
+**serverId** | **int64** | Server ID | 
 
 ### Other Parameters
 
@@ -502,7 +502,7 @@ import (
 )
 
 func main() {
-	serverId := float32(4) // float32 | Server ID
+	serverId := int64(4) // int64 | Server ID
 	createNetworkFirewallRuleGroupRequest := *openapiclient.NewCreateNetworkFirewallRuleGroupRequest() // CreateNetworkFirewallRuleGroupRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -523,7 +523,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serverId** | **float32** | Server ID | 
+**serverId** | **int64** | Server ID | 
 
 ### Other Parameters
 
@@ -1402,7 +1402,7 @@ import (
 )
 
 func main() {
-	serverId := float32(4) // float32 | Server ID
+	serverId := int64(4) // int64 | Server ID
 	createNetworkServerGroupRequest := *openapiclient.NewCreateNetworkServerGroupRequest() // CreateNetworkServerGroupRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -1423,7 +1423,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serverId** | **float32** | Server ID | 
+**serverId** | **int64** | Server ID | 
 
 ### Other Parameters
 
@@ -1474,7 +1474,7 @@ import (
 )
 
 func main() {
-	serverId := float32(4) // float32 | Server ID
+	serverId := int64(4) // int64 | Server ID
 	createNetworkTransportZoneRequest := *openapiclient.NewCreateNetworkTransportZoneRequest() // CreateNetworkTransportZoneRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -1495,7 +1495,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serverId** | **float32** | Server ID | 
+**serverId** | **int64** | Server ID | 
 
 ### Other Parameters
 
@@ -1821,7 +1821,7 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	serverId := float32(4) // float32 | Server ID
+	serverId := int64(4) // int64 | Server ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1842,7 +1842,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **id** | **int64** | Morpheus ID of the Object being referenced | 
-**serverId** | **float32** | Server ID | 
+**serverId** | **int64** | Server ID | 
 
 ### Other Parameters
 
@@ -1894,7 +1894,7 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	serverId := float32(4) // float32 | Server ID
+	serverId := int64(4) // int64 | Server ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1915,7 +1915,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **id** | **int64** | Morpheus ID of the Object being referenced | 
-**serverId** | **float32** | Server ID | 
+**serverId** | **int64** | Server ID | 
 
 ### Other Parameters
 
@@ -2037,7 +2037,7 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	serverId := float32(4) // float32 | Server ID
+	serverId := int64(4) // int64 | Server ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2058,7 +2058,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **id** | **int64** | Morpheus ID of the Object being referenced | 
-**serverId** | **float32** | Server ID | 
+**serverId** | **int64** | Server ID | 
 
 ### Other Parameters
 
@@ -2110,7 +2110,7 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	serverId := float32(4) // float32 | Server ID
+	serverId := int64(4) // int64 | Server ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2131,7 +2131,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **id** | **int64** | Morpheus ID of the Object being referenced | 
-**serverId** | **float32** | Server ID | 
+**serverId** | **int64** | Server ID | 
 
 ### Other Parameters
 
@@ -3041,7 +3041,7 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	serverId := float32(4) // float32 | Server ID
+	serverId := int64(4) // int64 | Server ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3062,7 +3062,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **id** | **int64** | Morpheus ID of the Object being referenced | 
-**serverId** | **float32** | Server ID | 
+**serverId** | **int64** | Server ID | 
 
 ### Other Parameters
 
@@ -3114,7 +3114,7 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	serverId := float32(4) // float32 | Server ID
+	serverId := int64(4) // int64 | Server ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3135,7 +3135,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **id** | **int64** | Morpheus ID of the Object being referenced | 
-**serverId** | **float32** | Server ID | 
+**serverId** | **int64** | Server ID | 
 
 ### Other Parameters
 
@@ -3474,7 +3474,7 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	serverId := float32(4) // float32 | Server ID
+	serverId := int64(4) // int64 | Server ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3495,7 +3495,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **id** | **int64** | Morpheus ID of the Object being referenced | 
-**serverId** | **float32** | Server ID | 
+**serverId** | **int64** | Server ID | 
 
 ### Other Parameters
 
@@ -3546,7 +3546,7 @@ import (
 )
 
 func main() {
-	serverId := float32(4) // float32 | Server ID
+	serverId := int64(4) // int64 | Server ID
 	max := int64(789) // int64 | Maximum number of records to return (optional) (default to 25)
 	offset := int64(789) // int64 | Offset records, the number of records to skip, for paginating requests (optional) (default to 0)
 	sort := "sort_example" // string | Sort order, the name of the property to sort by (optional) (default to "name")
@@ -3571,7 +3571,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serverId** | **float32** | Server ID | 
+**serverId** | **int64** | Server ID | 
 
 ### Other Parameters
 
@@ -3627,7 +3627,7 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	serverId := float32(4) // float32 | Server ID
+	serverId := int64(4) // int64 | Server ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3648,7 +3648,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **id** | **int64** | Morpheus ID of the Object being referenced | 
-**serverId** | **float32** | Server ID | 
+**serverId** | **int64** | Server ID | 
 
 ### Other Parameters
 
@@ -3699,7 +3699,7 @@ import (
 )
 
 func main() {
-	serverId := float32(4) // float32 | Server ID
+	serverId := int64(4) // int64 | Server ID
 	max := int64(789) // int64 | Maximum number of records to return (optional) (default to 25)
 	offset := int64(789) // int64 | Offset records, the number of records to skip, for paginating requests (optional) (default to 0)
 	sort := "sort_example" // string | Sort order, the name of the property to sort by (optional) (default to "name")
@@ -3724,7 +3724,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serverId** | **float32** | Server ID | 
+**serverId** | **int64** | Server ID | 
 
 ### Other Parameters
 
@@ -3918,7 +3918,7 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	serverId := float32(4) // float32 | Server ID
+	serverId := int64(4) // int64 | Server ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3939,7 +3939,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **id** | **int64** | Morpheus ID of the Object being referenced | 
-**serverId** | **float32** | Server ID | 
+**serverId** | **int64** | Server ID | 
 
 ### Other Parameters
 
@@ -3990,7 +3990,7 @@ import (
 )
 
 func main() {
-	serverId := float32(4) // float32 | Server ID
+	serverId := int64(4) // int64 | Server ID
 	max := int64(789) // int64 | Maximum number of records to return (optional) (default to 25)
 	offset := int64(789) // int64 | Offset records, the number of records to skip, for paginating requests (optional) (default to 0)
 	sort := "sort_example" // string | Sort order, the name of the property to sort by (optional) (default to "name")
@@ -4015,7 +4015,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serverId** | **float32** | Server ID | 
+**serverId** | **int64** | Server ID | 
 
 ### Other Parameters
 
@@ -4071,7 +4071,7 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	serverId := float32(4) // float32 | Server ID
+	serverId := int64(4) // int64 | Server ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4092,7 +4092,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **id** | **int64** | Morpheus ID of the Object being referenced | 
-**serverId** | **float32** | Server ID | 
+**serverId** | **int64** | Server ID | 
 
 ### Other Parameters
 
@@ -4144,7 +4144,7 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	serverId := float32(4) // float32 | Server ID
+	serverId := int64(4) // int64 | Server ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4165,7 +4165,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **id** | **int64** | Morpheus ID of the Object being referenced | 
-**serverId** | **float32** | Server ID | 
+**serverId** | **int64** | Server ID | 
 
 ### Other Parameters
 
@@ -4216,7 +4216,7 @@ import (
 )
 
 func main() {
-	serverId := float32(4) // float32 | Server ID
+	serverId := int64(4) // int64 | Server ID
 	max := int64(789) // int64 | Maximum number of records to return (optional) (default to 25)
 	offset := int64(789) // int64 | Offset records, the number of records to skip, for paginating requests (optional) (default to 0)
 	sort := "sort_example" // string | Sort order, the name of the property to sort by (optional) (default to "name")
@@ -4241,7 +4241,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serverId** | **float32** | Server ID | 
+**serverId** | **int64** | Server ID | 
 
 ### Other Parameters
 
@@ -4296,7 +4296,7 @@ import (
 )
 
 func main() {
-	serverId := float32(4) // float32 | Server ID
+	serverId := int64(4) // int64 | Server ID
 	max := int64(789) // int64 | Maximum number of records to return (optional) (default to 25)
 	offset := int64(789) // int64 | Offset records, the number of records to skip, for paginating requests (optional) (default to 0)
 	sort := "sort_example" // string | Sort order, the name of the property to sort by (optional) (default to "name")
@@ -4321,7 +4321,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serverId** | **float32** | Server ID | 
+**serverId** | **int64** | Server ID | 
 
 ### Other Parameters
 
@@ -6128,7 +6128,7 @@ import (
 )
 
 func main() {
-	serverId := float32(4) // float32 | Server ID
+	serverId := int64(4) // int64 | Server ID
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 
 	configuration := openapiclient.NewConfiguration()
@@ -6149,7 +6149,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serverId** | **float32** | Server ID | 
+**serverId** | **int64** | Server ID | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -6272,7 +6272,7 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	serverId := float32(4) // float32 | Server ID
+	serverId := int64(4) // int64 | Server ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6293,7 +6293,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **id** | **int64** | Morpheus ID of the Object being referenced | 
-**serverId** | **float32** | Server ID | 
+**serverId** | **int64** | Server ID | 
 
 ### Other Parameters
 
@@ -6344,7 +6344,7 @@ import (
 )
 
 func main() {
-	serverId := float32(4) // float32 | Server ID
+	serverId := int64(4) // int64 | Server ID
 	max := int64(789) // int64 | Maximum number of records to return (optional) (default to 25)
 	offset := int64(789) // int64 | Offset records, the number of records to skip, for paginating requests (optional) (default to 0)
 	sort := "sort_example" // string | Sort order, the name of the property to sort by (optional) (default to "name")
@@ -6369,7 +6369,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serverId** | **float32** | Server ID | 
+**serverId** | **int64** | Server ID | 
 
 ### Other Parameters
 
@@ -6922,7 +6922,7 @@ import (
 )
 
 func main() {
-	serverId := float32(4) // float32 | Server ID
+	serverId := int64(4) // int64 | Server ID
 	max := int64(789) // int64 | Maximum number of records to return (optional) (default to 25)
 	offset := int64(789) // int64 | Offset records, the number of records to skip, for paginating requests (optional) (default to 0)
 	sort := "sort_example" // string | Sort order, the name of the property to sort by (optional) (default to "name")
@@ -6947,7 +6947,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serverId** | **float32** | Server ID | 
+**serverId** | **int64** | Server ID | 
 
 ### Other Parameters
 
@@ -7647,7 +7647,7 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	serverId := float32(4) // float32 | Server ID
+	serverId := int64(4) // int64 | Server ID
 	updateNetworkDhcpRelayRequest := *openapiclient.NewUpdateNetworkDhcpRelayRequest() // UpdateNetworkDhcpRelayRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -7669,7 +7669,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **id** | **int64** | Morpheus ID of the Object being referenced | 
-**serverId** | **float32** | Server ID | 
+**serverId** | **int64** | Server ID | 
 
 ### Other Parameters
 
@@ -7722,7 +7722,7 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	serverId := float32(4) // float32 | Server ID
+	serverId := int64(4) // int64 | Server ID
 	updateNetworkDhcpServerRequest := *openapiclient.NewUpdateNetworkDhcpServerRequest() // UpdateNetworkDhcpServerRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -7744,7 +7744,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **id** | **int64** | Morpheus ID of the Object being referenced | 
-**serverId** | **float32** | Server ID | 
+**serverId** | **int64** | Server ID | 
 
 ### Other Parameters
 
@@ -7869,7 +7869,7 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	serverId := float32(4) // float32 | Server ID
+	serverId := int64(4) // int64 | Server ID
 	updateNetworkEdgeClusterRequest := *openapiclient.NewUpdateNetworkEdgeClusterRequest() // UpdateNetworkEdgeClusterRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -7891,7 +7891,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **id** | **int64** | Morpheus ID of the Object being referenced | 
-**serverId** | **float32** | Server ID | 
+**serverId** | **int64** | Server ID | 
 
 ### Other Parameters
 
@@ -7944,7 +7944,7 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	serverId := float32(4) // float32 | Server ID
+	serverId := int64(4) // int64 | Server ID
 	updateNetworkFirewallRuleRequest := *openapiclient.NewUpdateNetworkFirewallRuleRequest() // UpdateNetworkFirewallRuleRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -7966,7 +7966,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **id** | **int64** | Morpheus ID of the Object being referenced | 
-**serverId** | **float32** | Server ID | 
+**serverId** | **int64** | Server ID | 
 
 ### Other Parameters
 
@@ -8019,7 +8019,7 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	serverId := float32(4) // float32 | Server ID
+	serverId := int64(4) // int64 | Server ID
 	updateNetworkFirewallRuleGroupRequest := *openapiclient.NewUpdateNetworkFirewallRuleGroupRequest() // UpdateNetworkFirewallRuleGroupRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -8041,7 +8041,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **id** | **int64** | Morpheus ID of the Object being referenced | 
-**serverId** | **float32** | Server ID | 
+**serverId** | **int64** | Server ID | 
 
 ### Other Parameters
 
@@ -8898,7 +8898,7 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	serverId := float32(4) // float32 | Server ID
+	serverId := int64(4) // int64 | Server ID
 	updateNetworkServerGroupRequest := *openapiclient.NewUpdateNetworkServerGroupRequest() // UpdateNetworkServerGroupRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -8920,7 +8920,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **id** | **int64** | Morpheus ID of the Object being referenced | 
-**serverId** | **float32** | Server ID | 
+**serverId** | **int64** | Server ID | 
 
 ### Other Parameters
 
@@ -8973,7 +8973,7 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	serverId := float32(4) // float32 | Server ID
+	serverId := int64(4) // int64 | Server ID
 	updateNetworkTransportZoneRequest := *openapiclient.NewUpdateNetworkTransportZoneRequest() // UpdateNetworkTransportZoneRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -8995,7 +8995,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **id** | **int64** | Morpheus ID of the Object being referenced | 
-**serverId** | **float32** | Server ID | 
+**serverId** | **int64** | Server ID | 
 
 ### Other Parameters
 

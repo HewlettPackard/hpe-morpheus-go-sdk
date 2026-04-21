@@ -16,11 +16,11 @@ import (
 	"time"
 )
 
-// checks if the GetNetworkDhcpServer200ResponseNetworkDhcpServer type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GetNetworkDhcpServer200ResponseNetworkDhcpServer{}
+// checks if the NetworkDhcpServer type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &NetworkDhcpServer{}
 
-// GetNetworkDhcpServer200ResponseNetworkDhcpServer struct for GetNetworkDhcpServer200ResponseNetworkDhcpServer
-type GetNetworkDhcpServer200ResponseNetworkDhcpServer struct {
+// NetworkDhcpServer struct for NetworkDhcpServer
+type NetworkDhcpServer struct {
 	Id                   *int64                                                         `json:"id,omitempty"`
 	DateCreated          *time.Time                                                     `json:"dateCreated,omitempty"`
 	ProviderId           *string                                                        `json:"providerId,omitempty"`
@@ -35,27 +35,27 @@ type GetNetworkDhcpServer200ResponseNetworkDhcpServer struct {
 	AdditionalProperties map[string]interface{}                                         `json:",remain"`
 }
 
-type _GetNetworkDhcpServer200ResponseNetworkDhcpServer GetNetworkDhcpServer200ResponseNetworkDhcpServer
+type _NetworkDhcpServer NetworkDhcpServer
 
-// NewGetNetworkDhcpServer200ResponseNetworkDhcpServer instantiates a new GetNetworkDhcpServer200ResponseNetworkDhcpServer object
+// NewNetworkDhcpServer instantiates a new NetworkDhcpServer object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGetNetworkDhcpServer200ResponseNetworkDhcpServer() *GetNetworkDhcpServer200ResponseNetworkDhcpServer {
-	this := GetNetworkDhcpServer200ResponseNetworkDhcpServer{}
+func NewNetworkDhcpServer() *NetworkDhcpServer {
+	this := NetworkDhcpServer{}
 	return &this
 }
 
-// NewGetNetworkDhcpServer200ResponseNetworkDhcpServerWithDefaults instantiates a new GetNetworkDhcpServer200ResponseNetworkDhcpServer object
+// NewNetworkDhcpServerWithDefaults instantiates a new NetworkDhcpServer object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewGetNetworkDhcpServer200ResponseNetworkDhcpServerWithDefaults() *GetNetworkDhcpServer200ResponseNetworkDhcpServer {
-	this := GetNetworkDhcpServer200ResponseNetworkDhcpServer{}
+func NewNetworkDhcpServerWithDefaults() *NetworkDhcpServer {
+	this := NetworkDhcpServer{}
 	return &this
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetId() int64 {
+func (o *NetworkDhcpServer) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
 		var ret int64
 		return ret
@@ -65,7 +65,7 @@ func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetId() int64 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetIdOk() (*int64, bool) {
+func (o *NetworkDhcpServer) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -73,7 +73,7 @@ func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetIdOk() (*int64, bo
 }
 
 // IsSetId returns a boolean if a field has been set.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) IsSetId() bool {
+func (o *NetworkDhcpServer) IsSetId() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -82,12 +82,12 @@ func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) IsSetId() bool {
 }
 
 // SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) SetId(v int64) {
+func (o *NetworkDhcpServer) SetId(v int64) {
 	o.Id = &v
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetDateCreated() time.Time {
+func (o *NetworkDhcpServer) GetDateCreated() time.Time {
 	if o == nil || IsNil(o.DateCreated) {
 		var ret time.Time
 		return ret
@@ -97,7 +97,7 @@ func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetDateCreated() time
 
 // GetDateCreatedOk returns a tuple with the DateCreated field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetDateCreatedOk() (*time.Time, bool) {
+func (o *NetworkDhcpServer) GetDateCreatedOk() (*time.Time, bool) {
 	if o == nil || IsNil(o.DateCreated) {
 		return nil, false
 	}
@@ -105,7 +105,7 @@ func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetDateCreatedOk() (*
 }
 
 // IsSetDateCreated returns a boolean if a field has been set.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) IsSetDateCreated() bool {
+func (o *NetworkDhcpServer) IsSetDateCreated() bool {
 	if o != nil && !IsNil(o.DateCreated) {
 		return true
 	}
@@ -114,12 +114,12 @@ func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) IsSetDateCreated() bo
 }
 
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) SetDateCreated(v time.Time) {
+func (o *NetworkDhcpServer) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
 }
 
 // GetProviderId returns the ProviderId field value if set, zero value otherwise.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetProviderId() string {
+func (o *NetworkDhcpServer) GetProviderId() string {
 	if o == nil || IsNil(o.ProviderId) {
 		var ret string
 		return ret
@@ -129,7 +129,7 @@ func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetProviderId() strin
 
 // GetProviderIdOk returns a tuple with the ProviderId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetProviderIdOk() (*string, bool) {
+func (o *NetworkDhcpServer) GetProviderIdOk() (*string, bool) {
 	if o == nil || IsNil(o.ProviderId) {
 		return nil, false
 	}
@@ -137,7 +137,7 @@ func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetProviderIdOk() (*s
 }
 
 // IsSetProviderId returns a boolean if a field has been set.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) IsSetProviderId() bool {
+func (o *NetworkDhcpServer) IsSetProviderId() bool {
 	if o != nil && !IsNil(o.ProviderId) {
 		return true
 	}
@@ -146,12 +146,12 @@ func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) IsSetProviderId() boo
 }
 
 // SetProviderId gets a reference to the given string and assigns it to the ProviderId field.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) SetProviderId(v string) {
+func (o *NetworkDhcpServer) SetProviderId(v string) {
 	o.ProviderId = &v
 }
 
 // GetServerIpAddress returns the ServerIpAddress field value if set, zero value otherwise.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetServerIpAddress() string {
+func (o *NetworkDhcpServer) GetServerIpAddress() string {
 	if o == nil || IsNil(o.ServerIpAddress) {
 		var ret string
 		return ret
@@ -161,7 +161,7 @@ func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetServerIpAddress() 
 
 // GetServerIpAddressOk returns a tuple with the ServerIpAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetServerIpAddressOk() (*string, bool) {
+func (o *NetworkDhcpServer) GetServerIpAddressOk() (*string, bool) {
 	if o == nil || IsNil(o.ServerIpAddress) {
 		return nil, false
 	}
@@ -169,7 +169,7 @@ func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetServerIpAddressOk(
 }
 
 // IsSetServerIpAddress returns a boolean if a field has been set.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) IsSetServerIpAddress() bool {
+func (o *NetworkDhcpServer) IsSetServerIpAddress() bool {
 	if o != nil && !IsNil(o.ServerIpAddress) {
 		return true
 	}
@@ -178,12 +178,12 @@ func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) IsSetServerIpAddress(
 }
 
 // SetServerIpAddress gets a reference to the given string and assigns it to the ServerIpAddress field.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) SetServerIpAddress(v string) {
+func (o *NetworkDhcpServer) SetServerIpAddress(v string) {
 	o.ServerIpAddress = &v
 }
 
 // GetLastUpdated returns the LastUpdated field value if set, zero value otherwise.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetLastUpdated() time.Time {
+func (o *NetworkDhcpServer) GetLastUpdated() time.Time {
 	if o == nil || IsNil(o.LastUpdated) {
 		var ret time.Time
 		return ret
@@ -193,7 +193,7 @@ func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetLastUpdated() time
 
 // GetLastUpdatedOk returns a tuple with the LastUpdated field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetLastUpdatedOk() (*time.Time, bool) {
+func (o *NetworkDhcpServer) GetLastUpdatedOk() (*time.Time, bool) {
 	if o == nil || IsNil(o.LastUpdated) {
 		return nil, false
 	}
@@ -201,7 +201,7 @@ func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetLastUpdatedOk() (*
 }
 
 // IsSetLastUpdated returns a boolean if a field has been set.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) IsSetLastUpdated() bool {
+func (o *NetworkDhcpServer) IsSetLastUpdated() bool {
 	if o != nil && !IsNil(o.LastUpdated) {
 		return true
 	}
@@ -210,12 +210,12 @@ func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) IsSetLastUpdated() bo
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) SetLastUpdated(v time.Time) {
+func (o *NetworkDhcpServer) SetLastUpdated(v time.Time) {
 	o.LastUpdated = &v
 }
 
 // GetLeaseTime returns the LeaseTime field value if set, zero value otherwise.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetLeaseTime() int64 {
+func (o *NetworkDhcpServer) GetLeaseTime() int64 {
 	if o == nil || IsNil(o.LeaseTime) {
 		var ret int64
 		return ret
@@ -225,7 +225,7 @@ func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetLeaseTime() int64 
 
 // GetLeaseTimeOk returns a tuple with the LeaseTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetLeaseTimeOk() (*int64, bool) {
+func (o *NetworkDhcpServer) GetLeaseTimeOk() (*int64, bool) {
 	if o == nil || IsNil(o.LeaseTime) {
 		return nil, false
 	}
@@ -233,7 +233,7 @@ func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetLeaseTimeOk() (*in
 }
 
 // IsSetLeaseTime returns a boolean if a field has been set.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) IsSetLeaseTime() bool {
+func (o *NetworkDhcpServer) IsSetLeaseTime() bool {
 	if o != nil && !IsNil(o.LeaseTime) {
 		return true
 	}
@@ -242,12 +242,12 @@ func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) IsSetLeaseTime() bool
 }
 
 // SetLeaseTime gets a reference to the given int64 and assigns it to the LeaseTime field.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) SetLeaseTime(v int64) {
+func (o *NetworkDhcpServer) SetLeaseTime(v int64) {
 	o.LeaseTime = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetName() string {
+func (o *NetworkDhcpServer) GetName() string {
 	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
@@ -257,7 +257,7 @@ func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetNameOk() (*string, bool) {
+func (o *NetworkDhcpServer) GetNameOk() (*string, bool) {
 	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
@@ -265,7 +265,7 @@ func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetNameOk() (*string,
 }
 
 // IsSetName returns a boolean if a field has been set.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) IsSetName() bool {
+func (o *NetworkDhcpServer) IsSetName() bool {
 	if o != nil && !IsNil(o.Name) {
 		return true
 	}
@@ -274,12 +274,12 @@ func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) IsSetName() bool {
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) SetName(v string) {
+func (o *NetworkDhcpServer) SetName(v string) {
 	o.Name = &v
 }
 
 // GetExternalId returns the ExternalId field value if set, zero value otherwise.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetExternalId() string {
+func (o *NetworkDhcpServer) GetExternalId() string {
 	if o == nil || IsNil(o.ExternalId) {
 		var ret string
 		return ret
@@ -289,7 +289,7 @@ func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetExternalId() strin
 
 // GetExternalIdOk returns a tuple with the ExternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetExternalIdOk() (*string, bool) {
+func (o *NetworkDhcpServer) GetExternalIdOk() (*string, bool) {
 	if o == nil || IsNil(o.ExternalId) {
 		return nil, false
 	}
@@ -297,7 +297,7 @@ func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetExternalIdOk() (*s
 }
 
 // IsSetExternalId returns a boolean if a field has been set.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) IsSetExternalId() bool {
+func (o *NetworkDhcpServer) IsSetExternalId() bool {
 	if o != nil && !IsNil(o.ExternalId) {
 		return true
 	}
@@ -306,12 +306,12 @@ func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) IsSetExternalId() boo
 }
 
 // SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) SetExternalId(v string) {
+func (o *NetworkDhcpServer) SetExternalId(v string) {
 	o.ExternalId = &v
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetConfig() GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig {
+func (o *NetworkDhcpServer) GetConfig() GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig {
 	if o == nil || IsNil(o.Config) {
 		var ret GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig
 		return ret
@@ -321,7 +321,7 @@ func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetConfig() GetNetwor
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetConfigOk() (*GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig, bool) {
+func (o *NetworkDhcpServer) GetConfigOk() (*GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig, bool) {
 	if o == nil || IsNil(o.Config) {
 		return nil, false
 	}
@@ -329,7 +329,7 @@ func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetConfigOk() (*GetNe
 }
 
 // IsSetConfig returns a boolean if a field has been set.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) IsSetConfig() bool {
+func (o *NetworkDhcpServer) IsSetConfig() bool {
 	if o != nil && !IsNil(o.Config) {
 		return true
 	}
@@ -338,12 +338,12 @@ func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) IsSetConfig() bool {
 }
 
 // SetConfig gets a reference to the given GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig and assigns it to the Config field.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) SetConfig(v GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig) {
+func (o *NetworkDhcpServer) SetConfig(v GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig) {
 	o.Config = &v
 }
 
 // GetOwner returns the Owner field value if set, zero value otherwise.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetOwner() GetNetworkDhcpServer200ResponseNetworkDhcpServerOwner {
+func (o *NetworkDhcpServer) GetOwner() GetNetworkDhcpServer200ResponseNetworkDhcpServerOwner {
 	if o == nil || IsNil(o.Owner) {
 		var ret GetNetworkDhcpServer200ResponseNetworkDhcpServerOwner
 		return ret
@@ -353,7 +353,7 @@ func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetOwner() GetNetwork
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetOwnerOk() (*GetNetworkDhcpServer200ResponseNetworkDhcpServerOwner, bool) {
+func (o *NetworkDhcpServer) GetOwnerOk() (*GetNetworkDhcpServer200ResponseNetworkDhcpServerOwner, bool) {
 	if o == nil || IsNil(o.Owner) {
 		return nil, false
 	}
@@ -361,7 +361,7 @@ func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetOwnerOk() (*GetNet
 }
 
 // IsSetOwner returns a boolean if a field has been set.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) IsSetOwner() bool {
+func (o *NetworkDhcpServer) IsSetOwner() bool {
 	if o != nil && !IsNil(o.Owner) {
 		return true
 	}
@@ -370,12 +370,12 @@ func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) IsSetOwner() bool {
 }
 
 // SetOwner gets a reference to the given GetNetworkDhcpServer200ResponseNetworkDhcpServerOwner and assigns it to the Owner field.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) SetOwner(v GetNetworkDhcpServer200ResponseNetworkDhcpServerOwner) {
+func (o *NetworkDhcpServer) SetOwner(v GetNetworkDhcpServer200ResponseNetworkDhcpServerOwner) {
 	o.Owner = &v
 }
 
 // GetNetworkServer returns the NetworkServer field value if set, zero value otherwise.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetNetworkServer() GetNetworkDhcpServer200ResponseNetworkDhcpServerNetworkServer {
+func (o *NetworkDhcpServer) GetNetworkServer() GetNetworkDhcpServer200ResponseNetworkDhcpServerNetworkServer {
 	if o == nil || IsNil(o.NetworkServer) {
 		var ret GetNetworkDhcpServer200ResponseNetworkDhcpServerNetworkServer
 		return ret
@@ -385,7 +385,7 @@ func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetNetworkServer() Ge
 
 // GetNetworkServerOk returns a tuple with the NetworkServer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetNetworkServerOk() (*GetNetworkDhcpServer200ResponseNetworkDhcpServerNetworkServer, bool) {
+func (o *NetworkDhcpServer) GetNetworkServerOk() (*GetNetworkDhcpServer200ResponseNetworkDhcpServerNetworkServer, bool) {
 	if o == nil || IsNil(o.NetworkServer) {
 		return nil, false
 	}
@@ -393,7 +393,7 @@ func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetNetworkServerOk() 
 }
 
 // IsSetNetworkServer returns a boolean if a field has been set.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) IsSetNetworkServer() bool {
+func (o *NetworkDhcpServer) IsSetNetworkServer() bool {
 	if o != nil && !IsNil(o.NetworkServer) {
 		return true
 	}
@@ -402,11 +402,11 @@ func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) IsSetNetworkServer() 
 }
 
 // SetNetworkServer gets a reference to the given GetNetworkDhcpServer200ResponseNetworkDhcpServerNetworkServer and assigns it to the NetworkServer field.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) SetNetworkServer(v GetNetworkDhcpServer200ResponseNetworkDhcpServerNetworkServer) {
+func (o *NetworkDhcpServer) SetNetworkServer(v GetNetworkDhcpServer200ResponseNetworkDhcpServerNetworkServer) {
 	o.NetworkServer = &v
 }
 
-func (o GetNetworkDhcpServer200ResponseNetworkDhcpServer) MarshalJSON() ([]byte, error) {
+func (o NetworkDhcpServer) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -414,7 +414,7 @@ func (o GetNetworkDhcpServer200ResponseNetworkDhcpServer) MarshalJSON() ([]byte,
 	return json.Marshal(toSerialize)
 }
 
-func (o GetNetworkDhcpServer200ResponseNetworkDhcpServer) ToMap() (map[string]interface{}, error) {
+func (o NetworkDhcpServer) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
@@ -457,43 +457,43 @@ func (o GetNetworkDhcpServer200ResponseNetworkDhcpServer) ToMap() (map[string]in
 	return toSerialize, nil
 }
 
-type NullableGetNetworkDhcpServer200ResponseNetworkDhcpServer struct {
-	value *GetNetworkDhcpServer200ResponseNetworkDhcpServer
+type NullableNetworkDhcpServer struct {
+	value *NetworkDhcpServer
 	isSet bool
 }
 
-func (v NullableGetNetworkDhcpServer200ResponseNetworkDhcpServer) Get() *GetNetworkDhcpServer200ResponseNetworkDhcpServer {
+func (v NullableNetworkDhcpServer) Get() *NetworkDhcpServer {
 	return v.value
 }
 
-func (v *NullableGetNetworkDhcpServer200ResponseNetworkDhcpServer) Set(val *GetNetworkDhcpServer200ResponseNetworkDhcpServer) {
+func (v *NullableNetworkDhcpServer) Set(val *NetworkDhcpServer) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableGetNetworkDhcpServer200ResponseNetworkDhcpServer) IsSet() bool {
+func (v NullableNetworkDhcpServer) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableGetNetworkDhcpServer200ResponseNetworkDhcpServer) Unset() {
+func (v *NullableNetworkDhcpServer) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableGetNetworkDhcpServer200ResponseNetworkDhcpServer(val *GetNetworkDhcpServer200ResponseNetworkDhcpServer) *NullableGetNetworkDhcpServer200ResponseNetworkDhcpServer {
-	return &NullableGetNetworkDhcpServer200ResponseNetworkDhcpServer{value: val, isSet: true}
+func NewNullableNetworkDhcpServer(val *NetworkDhcpServer) *NullableNetworkDhcpServer {
+	return &NullableNetworkDhcpServer{value: val, isSet: true}
 }
 
-func (v NullableGetNetworkDhcpServer200ResponseNetworkDhcpServer) MarshalJSON() ([]byte, error) {
+func (v NullableNetworkDhcpServer) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableGetNetworkDhcpServer200ResponseNetworkDhcpServer) UnmarshalJSON(src []byte) error {
+func (v *NullableNetworkDhcpServer) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
 
-func (v NullableGetNetworkDhcpServer200ResponseNetworkDhcpServer) UnmarshalMapstructure(data any) (any, error) {
+func (v NullableNetworkDhcpServer) UnmarshalMapstructure(data any) (any, error) {
 	if err := mapstructDecode(data, &v.value); err != nil {
 		return nil, err
 	}
@@ -502,7 +502,7 @@ func (v NullableGetNetworkDhcpServer200ResponseNetworkDhcpServer) UnmarshalMapst
 	return v, nil
 }
 
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) UnmarshalJSON(data []byte) (err error) {
+func (o *NetworkDhcpServer) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }
 

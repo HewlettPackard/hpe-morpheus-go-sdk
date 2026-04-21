@@ -155,7 +155,7 @@ func (a *NetworksAPIService) AllocateNetworkFloatingIpExecute(r ApiAllocateNetwo
 type ApiCreateNetworkDhcpRelayRequest struct {
 	ctx                           context.Context
 	ApiService                    *NetworksAPIService
-	serverId                      float32
+	serverId                      int64
 	createNetworkDhcpRelayRequest *CreateNetworkDhcpRelayRequest
 }
 
@@ -177,7 +177,7 @@ Create a Network DHCP Relay.
 	@param serverId Server ID
 	@return ApiCreateNetworkDhcpRelayRequest
 */
-func (a *NetworksAPIService) CreateNetworkDhcpRelay(ctx context.Context, serverId float32) ApiCreateNetworkDhcpRelayRequest {
+func (a *NetworksAPIService) CreateNetworkDhcpRelay(ctx context.Context, serverId int64) ApiCreateNetworkDhcpRelayRequest {
 	return ApiCreateNetworkDhcpRelayRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -287,7 +287,7 @@ func (a *NetworksAPIService) CreateNetworkDhcpRelayExecute(r ApiCreateNetworkDhc
 type ApiCreateNetworkDhcpServerRequest struct {
 	ctx                            context.Context
 	ApiService                     *NetworksAPIService
-	serverId                       float32
+	serverId                       int64
 	createNetworkDhcpServerRequest *CreateNetworkDhcpServerRequest
 }
 
@@ -309,7 +309,7 @@ Create a Network DHCP Server.
 	@param serverId Server ID
 	@return ApiCreateNetworkDhcpServerRequest
 */
-func (a *NetworksAPIService) CreateNetworkDhcpServer(ctx context.Context, serverId float32) ApiCreateNetworkDhcpServerRequest {
+func (a *NetworksAPIService) CreateNetworkDhcpServer(ctx context.Context, serverId int64) ApiCreateNetworkDhcpServerRequest {
 	return ApiCreateNetworkDhcpServerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -547,7 +547,7 @@ func (a *NetworksAPIService) CreateNetworkDomainExecute(r ApiCreateNetworkDomain
 type ApiCreateNetworkFirewallRuleRequest struct {
 	ctx                              context.Context
 	ApiService                       *NetworksAPIService
-	serverId                         float32
+	serverId                         int64
 	createNetworkFirewallRuleRequest *CreateNetworkFirewallRuleRequest
 }
 
@@ -569,7 +569,7 @@ Use this command to create a network firewall rule.
 	@param serverId Server ID
 	@return ApiCreateNetworkFirewallRuleRequest
 */
-func (a *NetworksAPIService) CreateNetworkFirewallRule(ctx context.Context, serverId float32) ApiCreateNetworkFirewallRuleRequest {
+func (a *NetworksAPIService) CreateNetworkFirewallRule(ctx context.Context, serverId int64) ApiCreateNetworkFirewallRuleRequest {
 	return ApiCreateNetworkFirewallRuleRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -679,7 +679,7 @@ func (a *NetworksAPIService) CreateNetworkFirewallRuleExecute(r ApiCreateNetwork
 type ApiCreateNetworkFirewallRuleGroupRequest struct {
 	ctx                                   context.Context
 	ApiService                            *NetworksAPIService
-	serverId                              float32
+	serverId                              int64
 	createNetworkFirewallRuleGroupRequest *CreateNetworkFirewallRuleGroupRequest
 }
 
@@ -701,7 +701,7 @@ Use this command to create a network firewall rule group.
 	@param serverId Server ID
 	@return ApiCreateNetworkFirewallRuleGroupRequest
 */
-func (a *NetworksAPIService) CreateNetworkFirewallRuleGroup(ctx context.Context, serverId float32) ApiCreateNetworkFirewallRuleGroupRequest {
+func (a *NetworksAPIService) CreateNetworkFirewallRuleGroup(ctx context.Context, serverId int64) ApiCreateNetworkFirewallRuleGroupRequest {
 	return ApiCreateNetworkFirewallRuleGroupRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2459,7 +2459,7 @@ func (a *NetworksAPIService) CreateNetworkServerExecute(r ApiCreateNetworkServer
 type ApiCreateNetworkServerGroupRequest struct {
 	ctx                             context.Context
 	ApiService                      *NetworksAPIService
-	serverId                        float32
+	serverId                        int64
 	createNetworkServerGroupRequest *CreateNetworkServerGroupRequest
 }
 
@@ -2482,7 +2482,7 @@ Note: Only available for NSX-T network integrations.
 	@param serverId Server ID
 	@return ApiCreateNetworkServerGroupRequest
 */
-func (a *NetworksAPIService) CreateNetworkServerGroup(ctx context.Context, serverId float32) ApiCreateNetworkServerGroupRequest {
+func (a *NetworksAPIService) CreateNetworkServerGroup(ctx context.Context, serverId int64) ApiCreateNetworkServerGroupRequest {
 	return ApiCreateNetworkServerGroupRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2592,7 +2592,7 @@ func (a *NetworksAPIService) CreateNetworkServerGroupExecute(r ApiCreateNetworkS
 type ApiCreateNetworkTransportZoneRequest struct {
 	ctx                               context.Context
 	ApiService                        *NetworksAPIService
-	serverId                          float32
+	serverId                          int64
 	createNetworkTransportZoneRequest *CreateNetworkTransportZoneRequest
 }
 
@@ -2614,7 +2614,7 @@ Use this command to create a network transport zone.
 	@param serverId Server ID
 	@return ApiCreateNetworkTransportZoneRequest
 */
-func (a *NetworksAPIService) CreateNetworkTransportZone(ctx context.Context, serverId float32) ApiCreateNetworkTransportZoneRequest {
+func (a *NetworksAPIService) CreateNetworkTransportZone(ctx context.Context, serverId int64) ApiCreateNetworkTransportZoneRequest {
 	return ApiCreateNetworkTransportZoneRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -3237,7 +3237,7 @@ type ApiDeleteNetworkDhcpRelayRequest struct {
 	ctx        context.Context
 	ApiService *NetworksAPIService
 	id         int64
-	serverId   float32
+	serverId   int64
 }
 
 func (r ApiDeleteNetworkDhcpRelayRequest) Execute() (*DeleteNetworkDhcpRelay200Response, *http.Response, error) {
@@ -3254,7 +3254,7 @@ Will delete a Network DHCP Relay from the system and make it no longer usable.
 	@param serverId Server ID
 	@return ApiDeleteNetworkDhcpRelayRequest
 */
-func (a *NetworksAPIService) DeleteNetworkDhcpRelay(ctx context.Context, id int64, serverId float32) ApiDeleteNetworkDhcpRelayRequest {
+func (a *NetworksAPIService) DeleteNetworkDhcpRelay(ctx context.Context, id int64, serverId int64) ApiDeleteNetworkDhcpRelayRequest {
 	return ApiDeleteNetworkDhcpRelayRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -3365,7 +3365,7 @@ type ApiDeleteNetworkDhcpServerRequest struct {
 	ctx        context.Context
 	ApiService *NetworksAPIService
 	id         int64
-	serverId   float32
+	serverId   int64
 }
 
 func (r ApiDeleteNetworkDhcpServerRequest) Execute() (*DeleteNetworkDhcpServer200Response, *http.Response, error) {
@@ -3382,7 +3382,7 @@ Will delete a Network DHCP Server from the system and make it no longer usable.
 	@param serverId Server ID
 	@return ApiDeleteNetworkDhcpServerRequest
 */
-func (a *NetworksAPIService) DeleteNetworkDhcpServer(ctx context.Context, id int64, serverId float32) ApiDeleteNetworkDhcpServerRequest {
+func (a *NetworksAPIService) DeleteNetworkDhcpServer(ctx context.Context, id int64, serverId int64) ApiDeleteNetworkDhcpServerRequest {
 	return ApiDeleteNetworkDhcpServerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -3617,7 +3617,7 @@ type ApiDeleteNetworkFirewallRuleRequest struct {
 	ctx        context.Context
 	ApiService *NetworksAPIService
 	id         int64
-	serverId   float32
+	serverId   int64
 }
 
 func (r ApiDeleteNetworkFirewallRuleRequest) Execute() (*DeleteNetworkFirewallRule200Response, *http.Response, error) {
@@ -3634,7 +3634,7 @@ Will delete a Network Firewall Rule from the system and make it no longer usable
 	@param serverId Server ID
 	@return ApiDeleteNetworkFirewallRuleRequest
 */
-func (a *NetworksAPIService) DeleteNetworkFirewallRule(ctx context.Context, id int64, serverId float32) ApiDeleteNetworkFirewallRuleRequest {
+func (a *NetworksAPIService) DeleteNetworkFirewallRule(ctx context.Context, id int64, serverId int64) ApiDeleteNetworkFirewallRuleRequest {
 	return ApiDeleteNetworkFirewallRuleRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -3745,7 +3745,7 @@ type ApiDeleteNetworkFirewallRuleGroupRequest struct {
 	ctx        context.Context
 	ApiService *NetworksAPIService
 	id         int64
-	serverId   float32
+	serverId   int64
 }
 
 func (r ApiDeleteNetworkFirewallRuleGroupRequest) Execute() (*DeleteNetworkFirewallRuleGroup200Response, *http.Response, error) {
@@ -3762,7 +3762,7 @@ Will delete a network firewall rule group.
 	@param serverId Server ID
 	@return ApiDeleteNetworkFirewallRuleGroupRequest
 */
-func (a *NetworksAPIService) DeleteNetworkFirewallRuleGroup(ctx context.Context, id int64, serverId float32) ApiDeleteNetworkFirewallRuleGroupRequest {
+func (a *NetworksAPIService) DeleteNetworkFirewallRuleGroup(ctx context.Context, id int64, serverId int64) ApiDeleteNetworkFirewallRuleGroupRequest {
 	return ApiDeleteNetworkFirewallRuleGroupRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -5473,7 +5473,7 @@ type ApiDeleteNetworkServerGroupRequest struct {
 	ctx        context.Context
 	ApiService *NetworksAPIService
 	id         int64
-	serverId   float32
+	serverId   int64
 }
 
 func (r ApiDeleteNetworkServerGroupRequest) Execute() (*DeleteNetworkServerGroup200Response, *http.Response, error) {
@@ -5491,7 +5491,7 @@ Note: Only available for NSX-T network integrations.
 	@param serverId Server ID
 	@return ApiDeleteNetworkServerGroupRequest
 */
-func (a *NetworksAPIService) DeleteNetworkServerGroup(ctx context.Context, id int64, serverId float32) ApiDeleteNetworkServerGroupRequest {
+func (a *NetworksAPIService) DeleteNetworkServerGroup(ctx context.Context, id int64, serverId int64) ApiDeleteNetworkServerGroupRequest {
 	return ApiDeleteNetworkServerGroupRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -5602,7 +5602,7 @@ type ApiDeleteNetworkTransportZoneRequest struct {
 	ctx        context.Context
 	ApiService *NetworksAPIService
 	id         int64
-	serverId   float32
+	serverId   int64
 }
 
 func (r ApiDeleteNetworkTransportZoneRequest) Execute() (*DeleteNetworkTransportZone200Response, *http.Response, error) {
@@ -5619,7 +5619,7 @@ Will delete a Network Transport Zone from the system and make it no longer usabl
 	@param serverId Server ID
 	@return ApiDeleteNetworkTransportZoneRequest
 */
-func (a *NetworksAPIService) DeleteNetworkTransportZone(ctx context.Context, id int64, serverId float32) ApiDeleteNetworkTransportZoneRequest {
+func (a *NetworksAPIService) DeleteNetworkTransportZone(ctx context.Context, id int64, serverId int64) ApiDeleteNetworkTransportZoneRequest {
 	return ApiDeleteNetworkTransportZoneRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -6276,7 +6276,7 @@ type ApiGetNetworkDhcpRelayRequest struct {
 	ctx        context.Context
 	ApiService *NetworksAPIService
 	id         int64
-	serverId   float32
+	serverId   int64
 }
 
 func (r ApiGetNetworkDhcpRelayRequest) Execute() (*GetNetworkDhcpRelay200Response, *http.Response, error) {
@@ -6293,7 +6293,7 @@ This endpoint retrieves a specific Network DHCP Relay.
 	@param serverId Server ID
 	@return ApiGetNetworkDhcpRelayRequest
 */
-func (a *NetworksAPIService) GetNetworkDhcpRelay(ctx context.Context, id int64, serverId float32) ApiGetNetworkDhcpRelayRequest {
+func (a *NetworksAPIService) GetNetworkDhcpRelay(ctx context.Context, id int64, serverId int64) ApiGetNetworkDhcpRelayRequest {
 	return ApiGetNetworkDhcpRelayRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -6403,7 +6403,7 @@ func (a *NetworksAPIService) GetNetworkDhcpRelayExecute(r ApiGetNetworkDhcpRelay
 type ApiGetNetworkDhcpRelaysRequest struct {
 	ctx        context.Context
 	ApiService *NetworksAPIService
-	serverId   float32
+	serverId   int64
 	max        *int64
 	offset     *int64
 	sort       *string
@@ -6454,7 +6454,7 @@ This endpoint retrieves all Network DHCP Relays for a specified Network Service.
 	@param serverId Server ID
 	@return ApiGetNetworkDhcpRelaysRequest
 */
-func (a *NetworksAPIService) GetNetworkDhcpRelays(ctx context.Context, serverId float32) ApiGetNetworkDhcpRelaysRequest {
+func (a *NetworksAPIService) GetNetworkDhcpRelays(ctx context.Context, serverId int64) ApiGetNetworkDhcpRelaysRequest {
 	return ApiGetNetworkDhcpRelaysRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -6590,7 +6590,7 @@ type ApiGetNetworkDhcpServerRequest struct {
 	ctx        context.Context
 	ApiService *NetworksAPIService
 	id         int64
-	serverId   float32
+	serverId   int64
 }
 
 func (r ApiGetNetworkDhcpServerRequest) Execute() (*GetNetworkDhcpServer200Response, *http.Response, error) {
@@ -6607,7 +6607,7 @@ This endpoint retrieves a specific Network DHCP Server.
 	@param serverId Server ID
 	@return ApiGetNetworkDhcpServerRequest
 */
-func (a *NetworksAPIService) GetNetworkDhcpServer(ctx context.Context, id int64, serverId float32) ApiGetNetworkDhcpServerRequest {
+func (a *NetworksAPIService) GetNetworkDhcpServer(ctx context.Context, id int64, serverId int64) ApiGetNetworkDhcpServerRequest {
 	return ApiGetNetworkDhcpServerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -6717,7 +6717,7 @@ func (a *NetworksAPIService) GetNetworkDhcpServerExecute(r ApiGetNetworkDhcpServ
 type ApiGetNetworkDhcpServersRequest struct {
 	ctx        context.Context
 	ApiService *NetworksAPIService
-	serverId   float32
+	serverId   int64
 	max        *int64
 	offset     *int64
 	sort       *string
@@ -6768,7 +6768,7 @@ This endpoint retrieves all Network DHCP Servers for a specified Network Service
 	@param serverId Server ID
 	@return ApiGetNetworkDhcpServersRequest
 */
-func (a *NetworksAPIService) GetNetworkDhcpServers(ctx context.Context, serverId float32) ApiGetNetworkDhcpServersRequest {
+func (a *NetworksAPIService) GetNetworkDhcpServers(ctx context.Context, serverId int64) ApiGetNetworkDhcpServersRequest {
 	return ApiGetNetworkDhcpServersRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -7168,7 +7168,7 @@ type ApiGetNetworkEdgeClusterRequest struct {
 	ctx        context.Context
 	ApiService *NetworksAPIService
 	id         int64
-	serverId   float32
+	serverId   int64
 }
 
 func (r ApiGetNetworkEdgeClusterRequest) Execute() (*GetNetworkEdgeCluster200Response, *http.Response, error) {
@@ -7185,7 +7185,7 @@ This endpoint retrieves a specific network Edge Cluster.
 	@param serverId Server ID
 	@return ApiGetNetworkEdgeClusterRequest
 */
-func (a *NetworksAPIService) GetNetworkEdgeCluster(ctx context.Context, id int64, serverId float32) ApiGetNetworkEdgeClusterRequest {
+func (a *NetworksAPIService) GetNetworkEdgeCluster(ctx context.Context, id int64, serverId int64) ApiGetNetworkEdgeClusterRequest {
 	return ApiGetNetworkEdgeClusterRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -7295,7 +7295,7 @@ func (a *NetworksAPIService) GetNetworkEdgeClusterExecute(r ApiGetNetworkEdgeClu
 type ApiGetNetworkEdgeClustersRequest struct {
 	ctx        context.Context
 	ApiService *NetworksAPIService
-	serverId   float32
+	serverId   int64
 	max        *int64
 	offset     *int64
 	sort       *string
@@ -7346,7 +7346,7 @@ This endpoint retrieves all Network Edge Clusters for a specified Network Servic
 	@param serverId Server ID
 	@return ApiGetNetworkEdgeClustersRequest
 */
-func (a *NetworksAPIService) GetNetworkEdgeClusters(ctx context.Context, serverId float32) ApiGetNetworkEdgeClustersRequest {
+func (a *NetworksAPIService) GetNetworkEdgeClusters(ctx context.Context, serverId int64) ApiGetNetworkEdgeClustersRequest {
 	return ApiGetNetworkEdgeClustersRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -7482,7 +7482,7 @@ type ApiGetNetworkFirewallRuleRequest struct {
 	ctx        context.Context
 	ApiService *NetworksAPIService
 	id         int64
-	serverId   float32
+	serverId   int64
 }
 
 func (r ApiGetNetworkFirewallRuleRequest) Execute() (*GetNetworkFirewallRule200Response, *http.Response, error) {
@@ -7499,7 +7499,7 @@ This endpoint retrieves a specific Network Firewall Rule.
 	@param serverId Server ID
 	@return ApiGetNetworkFirewallRuleRequest
 */
-func (a *NetworksAPIService) GetNetworkFirewallRule(ctx context.Context, id int64, serverId float32) ApiGetNetworkFirewallRuleRequest {
+func (a *NetworksAPIService) GetNetworkFirewallRule(ctx context.Context, id int64, serverId int64) ApiGetNetworkFirewallRuleRequest {
 	return ApiGetNetworkFirewallRuleRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -7610,7 +7610,7 @@ type ApiGetNetworkFirewallRuleGroupRequest struct {
 	ctx        context.Context
 	ApiService *NetworksAPIService
 	id         int64
-	serverId   float32
+	serverId   int64
 }
 
 func (r ApiGetNetworkFirewallRuleGroupRequest) Execute() (*GetNetworkFirewallRuleGroup200Response, *http.Response, error) {
@@ -7627,7 +7627,7 @@ This endpoint retrieves a specific Network Firewall Rule Group.
 	@param serverId Server ID
 	@return ApiGetNetworkFirewallRuleGroupRequest
 */
-func (a *NetworksAPIService) GetNetworkFirewallRuleGroup(ctx context.Context, id int64, serverId float32) ApiGetNetworkFirewallRuleGroupRequest {
+func (a *NetworksAPIService) GetNetworkFirewallRuleGroup(ctx context.Context, id int64, serverId int64) ApiGetNetworkFirewallRuleGroupRequest {
 	return ApiGetNetworkFirewallRuleGroupRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -7737,7 +7737,7 @@ func (a *NetworksAPIService) GetNetworkFirewallRuleGroupExecute(r ApiGetNetworkF
 type ApiGetNetworkFirewallRuleGroupsRequest struct {
 	ctx        context.Context
 	ApiService *NetworksAPIService
-	serverId   float32
+	serverId   int64
 	max        *int64
 	offset     *int64
 	sort       *string
@@ -7788,7 +7788,7 @@ This endpoint retrieves all Network Firewall Rule Groups for a specified Network
 	@param serverId Server ID
 	@return ApiGetNetworkFirewallRuleGroupsRequest
 */
-func (a *NetworksAPIService) GetNetworkFirewallRuleGroups(ctx context.Context, serverId float32) ApiGetNetworkFirewallRuleGroupsRequest {
+func (a *NetworksAPIService) GetNetworkFirewallRuleGroups(ctx context.Context, serverId int64) ApiGetNetworkFirewallRuleGroupsRequest {
 	return ApiGetNetworkFirewallRuleGroupsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -7923,7 +7923,7 @@ func (a *NetworksAPIService) GetNetworkFirewallRuleGroupsExecute(r ApiGetNetwork
 type ApiGetNetworkFirewallRulesRequest struct {
 	ctx        context.Context
 	ApiService *NetworksAPIService
-	serverId   float32
+	serverId   int64
 	max        *int64
 	offset     *int64
 	sort       *string
@@ -7974,7 +7974,7 @@ This endpoint retrieves all Network Firewall Rules for a specified Network Servi
 	@param serverId Server ID
 	@return ApiGetNetworkFirewallRulesRequest
 */
-func (a *NetworksAPIService) GetNetworkFirewallRules(ctx context.Context, serverId float32) ApiGetNetworkFirewallRulesRequest {
+func (a *NetworksAPIService) GetNetworkFirewallRules(ctx context.Context, serverId int64) ApiGetNetworkFirewallRulesRequest {
 	return ApiGetNetworkFirewallRulesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -11463,7 +11463,7 @@ func (a *NetworksAPIService) GetNetworkServerExecute(r ApiGetNetworkServerReques
 type ApiGetNetworkServerGroupRequest struct {
 	ctx        context.Context
 	ApiService *NetworksAPIService
-	serverId   float32
+	serverId   int64
 	id         int64
 }
 
@@ -11482,7 +11482,7 @@ Note: Only available for NSX-T network integrations.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiGetNetworkServerGroupRequest
 */
-func (a *NetworksAPIService) GetNetworkServerGroup(ctx context.Context, serverId float32, id int64) ApiGetNetworkServerGroupRequest {
+func (a *NetworksAPIService) GetNetworkServerGroup(ctx context.Context, serverId int64, id int64) ApiGetNetworkServerGroupRequest {
 	return ApiGetNetworkServerGroupRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -11717,7 +11717,7 @@ type ApiGetNetworkTransportZoneRequest struct {
 	ctx        context.Context
 	ApiService *NetworksAPIService
 	id         int64
-	serverId   float32
+	serverId   int64
 }
 
 func (r ApiGetNetworkTransportZoneRequest) Execute() (*GetNetworkTransportZone200Response, *http.Response, error) {
@@ -11734,7 +11734,7 @@ This endpoint retrieves a specific Network Transport Zone.
 	@param serverId Server ID
 	@return ApiGetNetworkTransportZoneRequest
 */
-func (a *NetworksAPIService) GetNetworkTransportZone(ctx context.Context, id int64, serverId float32) ApiGetNetworkTransportZoneRequest {
+func (a *NetworksAPIService) GetNetworkTransportZone(ctx context.Context, id int64, serverId int64) ApiGetNetworkTransportZoneRequest {
 	return ApiGetNetworkTransportZoneRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -11844,7 +11844,7 @@ func (a *NetworksAPIService) GetNetworkTransportZoneExecute(r ApiGetNetworkTrans
 type ApiGetNetworkTransportZonesRequest struct {
 	ctx        context.Context
 	ApiService *NetworksAPIService
-	serverId   float32
+	serverId   int64
 	max        *int64
 	offset     *int64
 	sort       *string
@@ -11895,7 +11895,7 @@ This endpoint retrieves all Network Transport Zones for a specified Network Serv
 	@param serverId Server ID
 	@return ApiGetNetworkTransportZonesRequest
 */
-func (a *NetworksAPIService) GetNetworkTransportZones(ctx context.Context, serverId float32) ApiGetNetworkTransportZonesRequest {
+func (a *NetworksAPIService) GetNetworkTransportZones(ctx context.Context, serverId int64) ApiGetNetworkTransportZonesRequest {
 	return ApiGetNetworkTransportZonesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -13044,7 +13044,7 @@ func (a *NetworksAPIService) ListNetworkRouterTypesExecute(r ApiListNetworkRoute
 type ApiListNetworkServerGroupsRequest struct {
 	ctx        context.Context
 	ApiService *NetworksAPIService
-	serverId   float32
+	serverId   int64
 	max        *int64
 	offset     *int64
 	sort       *string
@@ -13096,7 +13096,7 @@ Note: Only available for NSX-T network integrations.
 	@param serverId Server ID
 	@return ApiListNetworkServerGroupsRequest
 */
-func (a *NetworksAPIService) ListNetworkServerGroups(ctx context.Context, serverId float32) ApiListNetworkServerGroupsRequest {
+func (a *NetworksAPIService) ListNetworkServerGroups(ctx context.Context, serverId int64) ApiListNetworkServerGroupsRequest {
 	return ApiListNetworkServerGroupsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -14588,7 +14588,7 @@ type ApiUpdateNetworkDhcpRelayRequest struct {
 	ctx                           context.Context
 	ApiService                    *NetworksAPIService
 	id                            int64
-	serverId                      float32
+	serverId                      int64
 	updateNetworkDhcpRelayRequest *UpdateNetworkDhcpRelayRequest
 }
 
@@ -14611,7 +14611,7 @@ Use this command to update an existing Network DHCP Relay.
 	@param serverId Server ID
 	@return ApiUpdateNetworkDhcpRelayRequest
 */
-func (a *NetworksAPIService) UpdateNetworkDhcpRelay(ctx context.Context, id int64, serverId float32) ApiUpdateNetworkDhcpRelayRequest {
+func (a *NetworksAPIService) UpdateNetworkDhcpRelay(ctx context.Context, id int64, serverId int64) ApiUpdateNetworkDhcpRelayRequest {
 	return ApiUpdateNetworkDhcpRelayRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -14724,7 +14724,7 @@ type ApiUpdateNetworkDhcpServerRequest struct {
 	ctx                            context.Context
 	ApiService                     *NetworksAPIService
 	id                             int64
-	serverId                       float32
+	serverId                       int64
 	updateNetworkDhcpServerRequest *UpdateNetworkDhcpServerRequest
 }
 
@@ -14747,7 +14747,7 @@ Use this command to update an existing Network DHCP Server.
 	@param serverId Server ID
 	@return ApiUpdateNetworkDhcpServerRequest
 */
-func (a *NetworksAPIService) UpdateNetworkDhcpServer(ctx context.Context, id int64, serverId float32) ApiUpdateNetworkDhcpServerRequest {
+func (a *NetworksAPIService) UpdateNetworkDhcpServer(ctx context.Context, id int64, serverId int64) ApiUpdateNetworkDhcpServerRequest {
 	return ApiUpdateNetworkDhcpServerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -14992,7 +14992,7 @@ type ApiUpdateNetworkEdgeClusterRequest struct {
 	ctx                             context.Context
 	ApiService                      *NetworksAPIService
 	id                              int64
-	serverId                        float32
+	serverId                        int64
 	updateNetworkEdgeClusterRequest *UpdateNetworkEdgeClusterRequest
 }
 
@@ -15015,7 +15015,7 @@ Use this command to update an existing network Edge Cluster.
 	@param serverId Server ID
 	@return ApiUpdateNetworkEdgeClusterRequest
 */
-func (a *NetworksAPIService) UpdateNetworkEdgeCluster(ctx context.Context, id int64, serverId float32) ApiUpdateNetworkEdgeClusterRequest {
+func (a *NetworksAPIService) UpdateNetworkEdgeCluster(ctx context.Context, id int64, serverId int64) ApiUpdateNetworkEdgeClusterRequest {
 	return ApiUpdateNetworkEdgeClusterRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -15128,7 +15128,7 @@ type ApiUpdateNetworkFirewallRuleRequest struct {
 	ctx                              context.Context
 	ApiService                       *NetworksAPIService
 	id                               int64
-	serverId                         float32
+	serverId                         int64
 	updateNetworkFirewallRuleRequest *UpdateNetworkFirewallRuleRequest
 }
 
@@ -15151,7 +15151,7 @@ Use this command to update an existing network firewall Rule.
 	@param serverId Server ID
 	@return ApiUpdateNetworkFirewallRuleRequest
 */
-func (a *NetworksAPIService) UpdateNetworkFirewallRule(ctx context.Context, id int64, serverId float32) ApiUpdateNetworkFirewallRuleRequest {
+func (a *NetworksAPIService) UpdateNetworkFirewallRule(ctx context.Context, id int64, serverId int64) ApiUpdateNetworkFirewallRuleRequest {
 	return ApiUpdateNetworkFirewallRuleRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -15264,7 +15264,7 @@ type ApiUpdateNetworkFirewallRuleGroupRequest struct {
 	ctx                                   context.Context
 	ApiService                            *NetworksAPIService
 	id                                    int64
-	serverId                              float32
+	serverId                              int64
 	updateNetworkFirewallRuleGroupRequest *UpdateNetworkFirewallRuleGroupRequest
 }
 
@@ -15287,7 +15287,7 @@ Use this command to update an existing Network Firewall Rule Group.
 	@param serverId Server ID
 	@return ApiUpdateNetworkFirewallRuleGroupRequest
 */
-func (a *NetworksAPIService) UpdateNetworkFirewallRuleGroup(ctx context.Context, id int64, serverId float32) ApiUpdateNetworkFirewallRuleGroupRequest {
+func (a *NetworksAPIService) UpdateNetworkFirewallRuleGroup(ctx context.Context, id int64, serverId int64) ApiUpdateNetworkFirewallRuleGroupRequest {
 	return ApiUpdateNetworkFirewallRuleGroupRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -16868,7 +16868,7 @@ type ApiUpdateNetworkServerGroupRequest struct {
 	ctx                             context.Context
 	ApiService                      *NetworksAPIService
 	id                              int64
-	serverId                        float32
+	serverId                        int64
 	updateNetworkServerGroupRequest *UpdateNetworkServerGroupRequest
 }
 
@@ -16892,7 +16892,7 @@ Note: Only available for NSX-T network integrations.
 	@param serverId Server ID
 	@return ApiUpdateNetworkServerGroupRequest
 */
-func (a *NetworksAPIService) UpdateNetworkServerGroup(ctx context.Context, id int64, serverId float32) ApiUpdateNetworkServerGroupRequest {
+func (a *NetworksAPIService) UpdateNetworkServerGroup(ctx context.Context, id int64, serverId int64) ApiUpdateNetworkServerGroupRequest {
 	return ApiUpdateNetworkServerGroupRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -17005,7 +17005,7 @@ type ApiUpdateNetworkTransportZoneRequest struct {
 	ctx                               context.Context
 	ApiService                        *NetworksAPIService
 	id                                int64
-	serverId                          float32
+	serverId                          int64
 	updateNetworkTransportZoneRequest *UpdateNetworkTransportZoneRequest
 }
 
@@ -17028,7 +17028,7 @@ Use this command to update an existing network Transport Zone.
 	@param serverId Server ID
 	@return ApiUpdateNetworkTransportZoneRequest
 */
-func (a *NetworksAPIService) UpdateNetworkTransportZone(ctx context.Context, id int64, serverId float32) ApiUpdateNetworkTransportZoneRequest {
+func (a *NetworksAPIService) UpdateNetworkTransportZone(ctx context.Context, id int64, serverId int64) ApiUpdateNetworkTransportZoneRequest {
 	return ApiUpdateNetworkTransportZoneRequest{
 		ApiService: a,
 		ctx:        ctx,

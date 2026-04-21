@@ -20,9 +20,9 @@ var _ MappedNullable = &GetNetworkDhcpServers200Response{}
 
 // GetNetworkDhcpServers200Response struct for GetNetworkDhcpServers200Response
 type GetNetworkDhcpServers200Response struct {
-	NetworkDhcpServers   interface{}                     `json:"networkDhcpServers,omitempty"`
-	Meta                 *ListAlerts200ResponseAllOfMeta `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}          `json:",remain"`
+	NetworkDhcpServers   []GetNetworkDhcpServers200ResponseAllOfNetworkDhcpServersInner `json:"networkDhcpServers,omitempty"`
+	Meta                 *ListAlerts200ResponseAllOfMeta                                `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}                                         `json:",remain"`
 }
 
 type _GetNetworkDhcpServers200Response GetNetworkDhcpServers200Response
@@ -44,10 +44,10 @@ func NewGetNetworkDhcpServers200ResponseWithDefaults() *GetNetworkDhcpServers200
 	return &this
 }
 
-// GetNetworkDhcpServers returns the NetworkDhcpServers field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GetNetworkDhcpServers200Response) GetNetworkDhcpServers() interface{} {
-	if o == nil {
-		var ret interface{}
+// GetNetworkDhcpServers returns the NetworkDhcpServers field value if set, zero value otherwise.
+func (o *GetNetworkDhcpServers200Response) GetNetworkDhcpServers() []GetNetworkDhcpServers200ResponseAllOfNetworkDhcpServersInner {
+	if o == nil || IsNil(o.NetworkDhcpServers) {
+		var ret []GetNetworkDhcpServers200ResponseAllOfNetworkDhcpServersInner
 		return ret
 	}
 	return o.NetworkDhcpServers
@@ -55,12 +55,11 @@ func (o *GetNetworkDhcpServers200Response) GetNetworkDhcpServers() interface{} {
 
 // GetNetworkDhcpServersOk returns a tuple with the NetworkDhcpServers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GetNetworkDhcpServers200Response) GetNetworkDhcpServersOk() (*interface{}, bool) {
+func (o *GetNetworkDhcpServers200Response) GetNetworkDhcpServersOk() ([]GetNetworkDhcpServers200ResponseAllOfNetworkDhcpServersInner, bool) {
 	if o == nil || IsNil(o.NetworkDhcpServers) {
 		return nil, false
 	}
-	return &o.NetworkDhcpServers, true
+	return o.NetworkDhcpServers, true
 }
 
 // IsSetNetworkDhcpServers returns a boolean if a field has been set.
@@ -72,8 +71,8 @@ func (o *GetNetworkDhcpServers200Response) IsSetNetworkDhcpServers() bool {
 	return false
 }
 
-// SetNetworkDhcpServers gets a reference to the given interface{} and assigns it to the NetworkDhcpServers field.
-func (o *GetNetworkDhcpServers200Response) SetNetworkDhcpServers(v interface{}) {
+// SetNetworkDhcpServers gets a reference to the given []GetNetworkDhcpServers200ResponseAllOfNetworkDhcpServersInner and assigns it to the NetworkDhcpServers field.
+func (o *GetNetworkDhcpServers200Response) SetNetworkDhcpServers(v []GetNetworkDhcpServers200ResponseAllOfNetworkDhcpServersInner) {
 	o.NetworkDhcpServers = v
 }
 
@@ -119,7 +118,7 @@ func (o GetNetworkDhcpServers200Response) MarshalJSON() ([]byte, error) {
 
 func (o GetNetworkDhcpServers200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if o.NetworkDhcpServers != nil {
+	if !IsNil(o.NetworkDhcpServers) {
 		toSerialize["networkDhcpServers"] = o.NetworkDhcpServers
 	}
 	if !IsNil(o.Meta) {

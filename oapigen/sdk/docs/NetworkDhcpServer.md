@@ -1,4 +1,4 @@
-# GetNetworkDhcpServer200ResponseNetworkDhcpServer
+# NetworkDhcpServer
 
 ## Properties
 
@@ -18,295 +18,295 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewGetNetworkDhcpServer200ResponseNetworkDhcpServer
+### NewNetworkDhcpServer
 
-`func NewGetNetworkDhcpServer200ResponseNetworkDhcpServer() *GetNetworkDhcpServer200ResponseNetworkDhcpServer`
+`func NewNetworkDhcpServer() *NetworkDhcpServer`
 
-NewGetNetworkDhcpServer200ResponseNetworkDhcpServer instantiates a new GetNetworkDhcpServer200ResponseNetworkDhcpServer object
+NewNetworkDhcpServer instantiates a new NetworkDhcpServer object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetNetworkDhcpServer200ResponseNetworkDhcpServerWithDefaults
+### NewNetworkDhcpServerWithDefaults
 
-`func NewGetNetworkDhcpServer200ResponseNetworkDhcpServerWithDefaults() *GetNetworkDhcpServer200ResponseNetworkDhcpServer`
+`func NewNetworkDhcpServerWithDefaults() *NetworkDhcpServer`
 
-NewGetNetworkDhcpServer200ResponseNetworkDhcpServerWithDefaults instantiates a new GetNetworkDhcpServer200ResponseNetworkDhcpServer object
+NewNetworkDhcpServerWithDefaults instantiates a new NetworkDhcpServer object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetId() int64`
+`func (o *NetworkDhcpServer) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetIdOk() (*int64, bool)`
+`func (o *NetworkDhcpServer) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) SetId(v int64)`
+`func (o *NetworkDhcpServer) SetId(v int64)`
 
 SetId sets Id field to given value.
 
 ### HasId
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) HasId() bool`
+`func (o *NetworkDhcpServer) HasId() bool`
 
 HasId returns a boolean if a field has been set.
 
 ### GetDateCreated
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetDateCreated() time.Time`
+`func (o *NetworkDhcpServer) GetDateCreated() time.Time`
 
 GetDateCreated returns the DateCreated field if non-nil, zero value otherwise.
 
 ### GetDateCreatedOk
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetDateCreatedOk() (*time.Time, bool)`
+`func (o *NetworkDhcpServer) GetDateCreatedOk() (*time.Time, bool)`
 
 GetDateCreatedOk returns a tuple with the DateCreated field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDateCreated
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) SetDateCreated(v time.Time)`
+`func (o *NetworkDhcpServer) SetDateCreated(v time.Time)`
 
 SetDateCreated sets DateCreated field to given value.
 
 ### HasDateCreated
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) HasDateCreated() bool`
+`func (o *NetworkDhcpServer) HasDateCreated() bool`
 
 HasDateCreated returns a boolean if a field has been set.
 
 ### GetProviderId
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetProviderId() string`
+`func (o *NetworkDhcpServer) GetProviderId() string`
 
 GetProviderId returns the ProviderId field if non-nil, zero value otherwise.
 
 ### GetProviderIdOk
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetProviderIdOk() (*string, bool)`
+`func (o *NetworkDhcpServer) GetProviderIdOk() (*string, bool)`
 
 GetProviderIdOk returns a tuple with the ProviderId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProviderId
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) SetProviderId(v string)`
+`func (o *NetworkDhcpServer) SetProviderId(v string)`
 
 SetProviderId sets ProviderId field to given value.
 
 ### HasProviderId
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) HasProviderId() bool`
+`func (o *NetworkDhcpServer) HasProviderId() bool`
 
 HasProviderId returns a boolean if a field has been set.
 
 ### GetServerIpAddress
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetServerIpAddress() string`
+`func (o *NetworkDhcpServer) GetServerIpAddress() string`
 
 GetServerIpAddress returns the ServerIpAddress field if non-nil, zero value otherwise.
 
 ### GetServerIpAddressOk
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetServerIpAddressOk() (*string, bool)`
+`func (o *NetworkDhcpServer) GetServerIpAddressOk() (*string, bool)`
 
 GetServerIpAddressOk returns a tuple with the ServerIpAddress field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServerIpAddress
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) SetServerIpAddress(v string)`
+`func (o *NetworkDhcpServer) SetServerIpAddress(v string)`
 
 SetServerIpAddress sets ServerIpAddress field to given value.
 
 ### HasServerIpAddress
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) HasServerIpAddress() bool`
+`func (o *NetworkDhcpServer) HasServerIpAddress() bool`
 
 HasServerIpAddress returns a boolean if a field has been set.
 
 ### GetLastUpdated
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetLastUpdated() time.Time`
+`func (o *NetworkDhcpServer) GetLastUpdated() time.Time`
 
 GetLastUpdated returns the LastUpdated field if non-nil, zero value otherwise.
 
 ### GetLastUpdatedOk
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetLastUpdatedOk() (*time.Time, bool)`
+`func (o *NetworkDhcpServer) GetLastUpdatedOk() (*time.Time, bool)`
 
 GetLastUpdatedOk returns a tuple with the LastUpdated field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLastUpdated
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) SetLastUpdated(v time.Time)`
+`func (o *NetworkDhcpServer) SetLastUpdated(v time.Time)`
 
 SetLastUpdated sets LastUpdated field to given value.
 
 ### HasLastUpdated
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) HasLastUpdated() bool`
+`func (o *NetworkDhcpServer) HasLastUpdated() bool`
 
 HasLastUpdated returns a boolean if a field has been set.
 
 ### GetLeaseTime
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetLeaseTime() int64`
+`func (o *NetworkDhcpServer) GetLeaseTime() int64`
 
 GetLeaseTime returns the LeaseTime field if non-nil, zero value otherwise.
 
 ### GetLeaseTimeOk
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetLeaseTimeOk() (*int64, bool)`
+`func (o *NetworkDhcpServer) GetLeaseTimeOk() (*int64, bool)`
 
 GetLeaseTimeOk returns a tuple with the LeaseTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLeaseTime
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) SetLeaseTime(v int64)`
+`func (o *NetworkDhcpServer) SetLeaseTime(v int64)`
 
 SetLeaseTime sets LeaseTime field to given value.
 
 ### HasLeaseTime
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) HasLeaseTime() bool`
+`func (o *NetworkDhcpServer) HasLeaseTime() bool`
 
 HasLeaseTime returns a boolean if a field has been set.
 
 ### GetName
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetName() string`
+`func (o *NetworkDhcpServer) GetName() string`
 
 GetName returns the Name field if non-nil, zero value otherwise.
 
 ### GetNameOk
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetNameOk() (*string, bool)`
+`func (o *NetworkDhcpServer) GetNameOk() (*string, bool)`
 
 GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetName
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) SetName(v string)`
+`func (o *NetworkDhcpServer) SetName(v string)`
 
 SetName sets Name field to given value.
 
 ### HasName
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) HasName() bool`
+`func (o *NetworkDhcpServer) HasName() bool`
 
 HasName returns a boolean if a field has been set.
 
 ### GetExternalId
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetExternalId() string`
+`func (o *NetworkDhcpServer) GetExternalId() string`
 
 GetExternalId returns the ExternalId field if non-nil, zero value otherwise.
 
 ### GetExternalIdOk
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetExternalIdOk() (*string, bool)`
+`func (o *NetworkDhcpServer) GetExternalIdOk() (*string, bool)`
 
 GetExternalIdOk returns a tuple with the ExternalId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExternalId
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) SetExternalId(v string)`
+`func (o *NetworkDhcpServer) SetExternalId(v string)`
 
 SetExternalId sets ExternalId field to given value.
 
 ### HasExternalId
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) HasExternalId() bool`
+`func (o *NetworkDhcpServer) HasExternalId() bool`
 
 HasExternalId returns a boolean if a field has been set.
 
 ### GetConfig
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetConfig() GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig`
+`func (o *NetworkDhcpServer) GetConfig() GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetConfigOk() (*GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig, bool)`
+`func (o *NetworkDhcpServer) GetConfigOk() (*GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) SetConfig(v GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig)`
+`func (o *NetworkDhcpServer) SetConfig(v GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig)`
 
 SetConfig sets Config field to given value.
 
 ### HasConfig
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) HasConfig() bool`
+`func (o *NetworkDhcpServer) HasConfig() bool`
 
 HasConfig returns a boolean if a field has been set.
 
 ### GetOwner
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetOwner() GetNetworkDhcpServer200ResponseNetworkDhcpServerOwner`
+`func (o *NetworkDhcpServer) GetOwner() GetNetworkDhcpServer200ResponseNetworkDhcpServerOwner`
 
 GetOwner returns the Owner field if non-nil, zero value otherwise.
 
 ### GetOwnerOk
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetOwnerOk() (*GetNetworkDhcpServer200ResponseNetworkDhcpServerOwner, bool)`
+`func (o *NetworkDhcpServer) GetOwnerOk() (*GetNetworkDhcpServer200ResponseNetworkDhcpServerOwner, bool)`
 
 GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOwner
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) SetOwner(v GetNetworkDhcpServer200ResponseNetworkDhcpServerOwner)`
+`func (o *NetworkDhcpServer) SetOwner(v GetNetworkDhcpServer200ResponseNetworkDhcpServerOwner)`
 
 SetOwner sets Owner field to given value.
 
 ### HasOwner
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) HasOwner() bool`
+`func (o *NetworkDhcpServer) HasOwner() bool`
 
 HasOwner returns a boolean if a field has been set.
 
 ### GetNetworkServer
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetNetworkServer() GetNetworkDhcpServer200ResponseNetworkDhcpServerNetworkServer`
+`func (o *NetworkDhcpServer) GetNetworkServer() GetNetworkDhcpServer200ResponseNetworkDhcpServerNetworkServer`
 
 GetNetworkServer returns the NetworkServer field if non-nil, zero value otherwise.
 
 ### GetNetworkServerOk
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) GetNetworkServerOk() (*GetNetworkDhcpServer200ResponseNetworkDhcpServerNetworkServer, bool)`
+`func (o *NetworkDhcpServer) GetNetworkServerOk() (*GetNetworkDhcpServer200ResponseNetworkDhcpServerNetworkServer, bool)`
 
 GetNetworkServerOk returns a tuple with the NetworkServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkServer
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) SetNetworkServer(v GetNetworkDhcpServer200ResponseNetworkDhcpServerNetworkServer)`
+`func (o *NetworkDhcpServer) SetNetworkServer(v GetNetworkDhcpServer200ResponseNetworkDhcpServerNetworkServer)`
 
 SetNetworkServer sets NetworkServer field to given value.
 
 ### HasNetworkServer
 
-`func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) HasNetworkServer() bool`
+`func (o *NetworkDhcpServer) HasNetworkServer() bool`
 
 HasNetworkServer returns a boolean if a field has been set.
 
