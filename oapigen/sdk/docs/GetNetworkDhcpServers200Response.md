@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**NetworkDhcpServers** | Pointer to **interface{}** |  | [optional] 
+**NetworkDhcpServers** | Pointer to [**[]GetNetworkDhcpServers200ResponseAllOfNetworkDhcpServersInner**](GetNetworkDhcpServers200ResponseAllOfNetworkDhcpServersInner.md) |  | [optional] 
 **Meta** | Pointer to [**ListAlerts200ResponseAllOfMeta**](ListAlerts200ResponseAllOfMeta.md) |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetNetworkDhcpServers
 
-`func (o *GetNetworkDhcpServers200Response) GetNetworkDhcpServers() interface{}`
+`func (o *GetNetworkDhcpServers200Response) GetNetworkDhcpServers() []GetNetworkDhcpServers200ResponseAllOfNetworkDhcpServersInner`
 
 GetNetworkDhcpServers returns the NetworkDhcpServers field if non-nil, zero value otherwise.
 
 ### GetNetworkDhcpServersOk
 
-`func (o *GetNetworkDhcpServers200Response) GetNetworkDhcpServersOk() (*interface{}, bool)`
+`func (o *GetNetworkDhcpServers200Response) GetNetworkDhcpServersOk() (*[]GetNetworkDhcpServers200ResponseAllOfNetworkDhcpServersInner, bool)`
 
 GetNetworkDhcpServersOk returns a tuple with the NetworkDhcpServers field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkDhcpServers
 
-`func (o *GetNetworkDhcpServers200Response) SetNetworkDhcpServers(v interface{})`
+`func (o *GetNetworkDhcpServers200Response) SetNetworkDhcpServers(v []GetNetworkDhcpServers200ResponseAllOfNetworkDhcpServersInner)`
 
 SetNetworkDhcpServers sets NetworkDhcpServers field to given value.
 
@@ -51,16 +51,6 @@ SetNetworkDhcpServers sets NetworkDhcpServers field to given value.
 
 HasNetworkDhcpServers returns a boolean if a field has been set.
 
-### SetNetworkDhcpServersNil
-
-`func (o *GetNetworkDhcpServers200Response) SetNetworkDhcpServersNil(b bool)`
-
- SetNetworkDhcpServersNil sets the value for NetworkDhcpServers to be an explicit nil
-
-### UnsetNetworkDhcpServers
-`func (o *GetNetworkDhcpServers200Response) UnsetNetworkDhcpServers()`
-
-UnsetNetworkDhcpServers ensures that no value is present for NetworkDhcpServers, not even an explicit nil
 ### GetMeta
 
 `func (o *GetNetworkDhcpServers200Response) GetMeta() ListAlerts200ResponseAllOfMeta`

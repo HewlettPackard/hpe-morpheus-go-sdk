@@ -21,8 +21,8 @@ var _ fmt.Stringer
 
 // GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig Configuration object with parameters that vary by type.
 type GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig struct {
-	NSXDHCPServerConfiguration *NSXDHCPServerConfiguration
-	MapmapOfStringAny          *map[string]interface{}
+	NSXDHCPServerConfiguration2 *NSXDHCPServerConfiguration2
+	MapmapOfStringAny           *map[string]interface{}
 }
 
 func (dst *GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig) UnmarshalMapstructure(data any) (any, error) {
@@ -30,10 +30,10 @@ func (dst *GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig) UnmarshalMaps
 		dst = &GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig{}
 	}
 
-	mapstructDecode(data, &dst.NSXDHCPServerConfiguration)
+	mapstructDecode(data, &dst.NSXDHCPServerConfiguration2)
 
-	if IsEmpty(dst.NSXDHCPServerConfiguration) {
-		dst.NSXDHCPServerConfiguration = nil
+	if IsEmpty(dst.NSXDHCPServerConfiguration2) {
+		dst.NSXDHCPServerConfiguration2 = nil
 	}
 
 	mapstructDecode(data, &dst.MapmapOfStringAny)
@@ -48,17 +48,17 @@ func (dst *GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig) UnmarshalMaps
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into NSXDHCPServerConfiguration
-	err = json.Unmarshal(data, &dst.NSXDHCPServerConfiguration)
+	// try to unmarshal JSON data into NSXDHCPServerConfiguration2
+	err = json.Unmarshal(data, &dst.NSXDHCPServerConfiguration2)
 	if err == nil {
-		jsonNSXDHCPServerConfiguration, _ := json.Marshal(dst.NSXDHCPServerConfiguration)
-		if string(jsonNSXDHCPServerConfiguration) == "{}" { // empty struct
-			dst.NSXDHCPServerConfiguration = nil
+		jsonNSXDHCPServerConfiguration2, _ := json.Marshal(dst.NSXDHCPServerConfiguration2)
+		if string(jsonNSXDHCPServerConfiguration2) == "{}" { // empty struct
+			dst.NSXDHCPServerConfiguration2 = nil
 		} else {
-			return nil // data stored in dst.NSXDHCPServerConfiguration, return on the first match
+			return nil // data stored in dst.NSXDHCPServerConfiguration2, return on the first match
 		}
 	} else {
-		dst.NSXDHCPServerConfiguration = nil
+		dst.NSXDHCPServerConfiguration2 = nil
 	}
 
 	// try to unmarshal JSON data into MapmapOfStringAny
@@ -79,8 +79,8 @@ func (dst *GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig) UnmarshalJSON
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig) MarshalJSON() ([]byte, error) {
-	if src.NSXDHCPServerConfiguration != nil {
-		return json.Marshal(&src.NSXDHCPServerConfiguration)
+	if src.NSXDHCPServerConfiguration2 != nil {
+		return json.Marshal(&src.NSXDHCPServerConfiguration2)
 	}
 
 	if src.MapmapOfStringAny != nil {

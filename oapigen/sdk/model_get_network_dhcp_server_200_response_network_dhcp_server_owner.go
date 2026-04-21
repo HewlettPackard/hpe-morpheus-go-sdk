@@ -20,7 +20,7 @@ var _ MappedNullable = &GetNetworkDhcpServer200ResponseNetworkDhcpServerOwner{}
 
 // GetNetworkDhcpServer200ResponseNetworkDhcpServerOwner struct for GetNetworkDhcpServer200ResponseNetworkDhcpServerOwner
 type GetNetworkDhcpServer200ResponseNetworkDhcpServerOwner struct {
-	Id                   *int32                 `json:"id,omitempty"`
+	Id                   *int64                 `json:"id,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -44,9 +44,9 @@ func NewGetNetworkDhcpServer200ResponseNetworkDhcpServerOwnerWithDefaults() *Get
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServerOwner) GetId() int32 {
+func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServerOwner) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -54,7 +54,7 @@ func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServerOwner) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServerOwner) GetIdOk() (*int32, bool) {
+func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServerOwner) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServerOwner) IsSetId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServerOwner) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServerOwner) SetId(v int64) {
 	o.Id = &v
 }
 
