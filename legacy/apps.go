@@ -224,7 +224,6 @@ func (client *Client) GetAppState(id int64, req *Request) (*Response, error) {
 }
 
 func (client *Client) CreateApp(req *Request) (*Response, error) {
-	fmt.Println(req.Body)
 	return client.Execute(&Request{
 		Method:      "POST",
 		Path:        AppsPath,
