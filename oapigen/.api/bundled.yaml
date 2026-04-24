@@ -76623,6 +76623,14 @@ paths:
                                     - 'null'
                                   items:
                                     type: object
+                                networkDomain:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type:
+                                        - integer
+                                        - 'null'
+                                      format: int64
                             configGroup:
                               type:
                                 - string

@@ -38,6 +38,7 @@ Name | Type | Description | Notes
 **ReplicationGroup** | Pointer to [**GetInstance200ResponseInstanceConfigReplicationGroup**](GetInstance200ResponseInstanceConfigReplicationGroup.md) |  | [optional] 
 **LayoutSize** | Pointer to **int64** |  | [optional] 
 **LbInstances** | Pointer to **[]map[string]interface{}** |  | [optional] 
+**NetworkDomain** | Pointer to [**GetInstance200ResponseInstanceConfigNetworkDomain**](GetInstance200ResponseInstanceConfigNetworkDomain.md) |  | [optional] 
 
 ## Methods
 
@@ -1008,6 +1009,31 @@ HasLbInstances returns a boolean if a field has been set.
 `func (o *GetInstance200ResponseInstanceConfig) UnsetLbInstances()`
 
 UnsetLbInstances ensures that no value is present for LbInstances, not even an explicit nil
+### GetNetworkDomain
+
+`func (o *GetInstance200ResponseInstanceConfig) GetNetworkDomain() GetInstance200ResponseInstanceConfigNetworkDomain`
+
+GetNetworkDomain returns the NetworkDomain field if non-nil, zero value otherwise.
+
+### GetNetworkDomainOk
+
+`func (o *GetInstance200ResponseInstanceConfig) GetNetworkDomainOk() (*GetInstance200ResponseInstanceConfigNetworkDomain, bool)`
+
+GetNetworkDomainOk returns a tuple with the NetworkDomain field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNetworkDomain
+
+`func (o *GetInstance200ResponseInstanceConfig) SetNetworkDomain(v GetInstance200ResponseInstanceConfigNetworkDomain)`
+
+SetNetworkDomain sets NetworkDomain field to given value.
+
+### HasNetworkDomain
+
+`func (o *GetInstance200ResponseInstanceConfig) HasNetworkDomain() bool`
+
+HasNetworkDomain returns a boolean if a field has been set.
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
