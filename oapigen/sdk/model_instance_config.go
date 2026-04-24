@@ -54,6 +54,7 @@ type InstanceConfig struct {
 	ReplicationGroup     *InstanceConfigReplicationGroup                                     `json:"replicationGroup,omitempty"`
 	LayoutSize           *int64                                                              `json:"layoutSize,omitempty"`
 	LbInstances          []map[string]interface{}                                            `json:"lbInstances,omitempty"`
+	NetworkDomain        *InstanceConfigNetworkDomain                                        `json:"networkDomain,omitempty"`
 	AdditionalProperties map[string]interface{}                                              `json:",remain"`
 }
 
@@ -1264,6 +1265,38 @@ func (o *InstanceConfig) SetLbInstances(v []map[string]interface{}) {
 	o.LbInstances = v
 }
 
+// GetNetworkDomain returns the NetworkDomain field value if set, zero value otherwise.
+func (o *InstanceConfig) GetNetworkDomain() InstanceConfigNetworkDomain {
+	if o == nil || IsNil(o.NetworkDomain) {
+		var ret InstanceConfigNetworkDomain
+		return ret
+	}
+	return *o.NetworkDomain
+}
+
+// GetNetworkDomainOk returns a tuple with the NetworkDomain field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InstanceConfig) GetNetworkDomainOk() (*InstanceConfigNetworkDomain, bool) {
+	if o == nil || IsNil(o.NetworkDomain) {
+		return nil, false
+	}
+	return o.NetworkDomain, true
+}
+
+// IsSetNetworkDomain returns a boolean if a field has been set.
+func (o *InstanceConfig) IsSetNetworkDomain() bool {
+	if o != nil && !IsNil(o.NetworkDomain) {
+		return true
+	}
+
+	return false
+}
+
+// SetNetworkDomain gets a reference to the given InstanceConfigNetworkDomain and assigns it to the NetworkDomain field.
+func (o *InstanceConfig) SetNetworkDomain(v InstanceConfigNetworkDomain) {
+	o.NetworkDomain = &v
+}
+
 func (o InstanceConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -1375,6 +1408,9 @@ func (o InstanceConfig) ToMap() (map[string]interface{}, error) {
 	}
 	if o.LbInstances != nil {
 		toSerialize["lbInstances"] = o.LbInstances
+	}
+	if !IsNil(o.NetworkDomain) {
+		toSerialize["networkDomain"] = o.NetworkDomain
 	}
 
 	for key, value := range o.AdditionalProperties {

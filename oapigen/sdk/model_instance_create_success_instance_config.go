@@ -54,6 +54,7 @@ type InstanceCreateSuccessInstanceConfig struct {
 	ReplicationGroup     *InstanceCreateSuccessInstanceConfigReplicationGroup                `json:"replicationGroup,omitempty"`
 	LayoutSize           *int64                                                              `json:"layoutSize,omitempty"`
 	LbInstances          []map[string]interface{}                                            `json:"lbInstances,omitempty"`
+	NetworkDomain        *InstanceCreateSuccessInstanceConfigNetworkDomain                   `json:"networkDomain,omitempty"`
 	AdditionalProperties map[string]interface{}                                              `json:",remain"`
 }
 
@@ -1264,6 +1265,38 @@ func (o *InstanceCreateSuccessInstanceConfig) SetLbInstances(v []map[string]inte
 	o.LbInstances = v
 }
 
+// GetNetworkDomain returns the NetworkDomain field value if set, zero value otherwise.
+func (o *InstanceCreateSuccessInstanceConfig) GetNetworkDomain() InstanceCreateSuccessInstanceConfigNetworkDomain {
+	if o == nil || IsNil(o.NetworkDomain) {
+		var ret InstanceCreateSuccessInstanceConfigNetworkDomain
+		return ret
+	}
+	return *o.NetworkDomain
+}
+
+// GetNetworkDomainOk returns a tuple with the NetworkDomain field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InstanceCreateSuccessInstanceConfig) GetNetworkDomainOk() (*InstanceCreateSuccessInstanceConfigNetworkDomain, bool) {
+	if o == nil || IsNil(o.NetworkDomain) {
+		return nil, false
+	}
+	return o.NetworkDomain, true
+}
+
+// IsSetNetworkDomain returns a boolean if a field has been set.
+func (o *InstanceCreateSuccessInstanceConfig) IsSetNetworkDomain() bool {
+	if o != nil && !IsNil(o.NetworkDomain) {
+		return true
+	}
+
+	return false
+}
+
+// SetNetworkDomain gets a reference to the given InstanceCreateSuccessInstanceConfigNetworkDomain and assigns it to the NetworkDomain field.
+func (o *InstanceCreateSuccessInstanceConfig) SetNetworkDomain(v InstanceCreateSuccessInstanceConfigNetworkDomain) {
+	o.NetworkDomain = &v
+}
+
 func (o InstanceCreateSuccessInstanceConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -1375,6 +1408,9 @@ func (o InstanceCreateSuccessInstanceConfig) ToMap() (map[string]interface{}, er
 	}
 	if o.LbInstances != nil {
 		toSerialize["lbInstances"] = o.LbInstances
+	}
+	if !IsNil(o.NetworkDomain) {
+		toSerialize["networkDomain"] = o.NetworkDomain
 	}
 
 	for key, value := range o.AdditionalProperties {

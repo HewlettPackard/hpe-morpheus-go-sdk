@@ -54,6 +54,7 @@ type GetInstance200ResponseInstanceConfig struct {
 	ReplicationGroup     *GetInstance200ResponseInstanceConfigReplicationGroup               `json:"replicationGroup,omitempty"`
 	LayoutSize           *int64                                                              `json:"layoutSize,omitempty"`
 	LbInstances          []map[string]interface{}                                            `json:"lbInstances,omitempty"`
+	NetworkDomain        *GetInstance200ResponseInstanceConfigNetworkDomain                  `json:"networkDomain,omitempty"`
 	AdditionalProperties map[string]interface{}                                              `json:",remain"`
 }
 
@@ -1264,6 +1265,38 @@ func (o *GetInstance200ResponseInstanceConfig) SetLbInstances(v []map[string]int
 	o.LbInstances = v
 }
 
+// GetNetworkDomain returns the NetworkDomain field value if set, zero value otherwise.
+func (o *GetInstance200ResponseInstanceConfig) GetNetworkDomain() GetInstance200ResponseInstanceConfigNetworkDomain {
+	if o == nil || IsNil(o.NetworkDomain) {
+		var ret GetInstance200ResponseInstanceConfigNetworkDomain
+		return ret
+	}
+	return *o.NetworkDomain
+}
+
+// GetNetworkDomainOk returns a tuple with the NetworkDomain field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetInstance200ResponseInstanceConfig) GetNetworkDomainOk() (*GetInstance200ResponseInstanceConfigNetworkDomain, bool) {
+	if o == nil || IsNil(o.NetworkDomain) {
+		return nil, false
+	}
+	return o.NetworkDomain, true
+}
+
+// IsSetNetworkDomain returns a boolean if a field has been set.
+func (o *GetInstance200ResponseInstanceConfig) IsSetNetworkDomain() bool {
+	if o != nil && !IsNil(o.NetworkDomain) {
+		return true
+	}
+
+	return false
+}
+
+// SetNetworkDomain gets a reference to the given GetInstance200ResponseInstanceConfigNetworkDomain and assigns it to the NetworkDomain field.
+func (o *GetInstance200ResponseInstanceConfig) SetNetworkDomain(v GetInstance200ResponseInstanceConfigNetworkDomain) {
+	o.NetworkDomain = &v
+}
+
 func (o GetInstance200ResponseInstanceConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -1375,6 +1408,9 @@ func (o GetInstance200ResponseInstanceConfig) ToMap() (map[string]interface{}, e
 	}
 	if o.LbInstances != nil {
 		toSerialize["lbInstances"] = o.LbInstances
+	}
+	if !IsNil(o.NetworkDomain) {
+		toSerialize["networkDomain"] = o.NetworkDomain
 	}
 
 	for key, value := range o.AdditionalProperties {
