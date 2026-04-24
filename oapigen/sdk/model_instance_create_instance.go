@@ -33,8 +33,9 @@ type InstanceCreateInstance struct {
 	// Environment
 	InstanceContext *string `json:"instanceContext,omitempty"`
 	// Hostname of the instance to be created.  Can be the same as the instance name.
-	HostName             *string                `json:"hostName,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	HostName             *string                              `json:"hostName,omitempty"`
+	NetworkDomain        *InstanceCreateInstanceNetworkDomain `json:"networkDomain,omitempty"`
+	AdditionalProperties map[string]interface{}               `json:",remain"`
 }
 
 type _InstanceCreateInstance InstanceCreateInstance
@@ -309,6 +310,38 @@ func (o *InstanceCreateInstance) SetHostName(v string) {
 	o.HostName = &v
 }
 
+// GetNetworkDomain returns the NetworkDomain field value if set, zero value otherwise.
+func (o *InstanceCreateInstance) GetNetworkDomain() InstanceCreateInstanceNetworkDomain {
+	if o == nil || IsNil(o.NetworkDomain) {
+		var ret InstanceCreateInstanceNetworkDomain
+		return ret
+	}
+	return *o.NetworkDomain
+}
+
+// GetNetworkDomainOk returns a tuple with the NetworkDomain field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InstanceCreateInstance) GetNetworkDomainOk() (*InstanceCreateInstanceNetworkDomain, bool) {
+	if o == nil || IsNil(o.NetworkDomain) {
+		return nil, false
+	}
+	return o.NetworkDomain, true
+}
+
+// IsSetNetworkDomain returns a boolean if a field has been set.
+func (o *InstanceCreateInstance) IsSetNetworkDomain() bool {
+	if o != nil && !IsNil(o.NetworkDomain) {
+		return true
+	}
+
+	return false
+}
+
+// SetNetworkDomain gets a reference to the given InstanceCreateInstanceNetworkDomain and assigns it to the NetworkDomain field.
+func (o *InstanceCreateInstance) SetNetworkDomain(v InstanceCreateInstanceNetworkDomain) {
+	o.NetworkDomain = &v
+}
+
 func (o InstanceCreateInstance) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -335,6 +368,9 @@ func (o InstanceCreateInstance) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.HostName) {
 		toSerialize["hostName"] = o.HostName
+	}
+	if !IsNil(o.NetworkDomain) {
+		toSerialize["networkDomain"] = o.NetworkDomain
 	}
 
 	for key, value := range o.AdditionalProperties {

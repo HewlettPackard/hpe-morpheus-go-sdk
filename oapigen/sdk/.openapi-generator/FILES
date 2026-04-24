@@ -710,6 +710,7 @@ docs/AddInstanceRequestEvarsInner.md
 docs/AddInstanceRequestInstance.md
 docs/AddInstanceRequestInstanceInstanceType.md
 docs/AddInstanceRequestInstanceLayout.md
+docs/AddInstanceRequestInstanceNetworkDomain.md
 docs/AddInstanceRequestInstancePlan.md
 docs/AddInstanceRequestInstanceSite.md
 docs/AddInstanceRequestMetadataInner.md
@@ -4450,6 +4451,7 @@ docs/InstanceCreateEvarsInner.md
 docs/InstanceCreateInstance.md
 docs/InstanceCreateInstanceInstanceType.md
 docs/InstanceCreateInstanceLayout.md
+docs/InstanceCreateInstanceNetworkDomain.md
 docs/InstanceCreateInstancePlan.md
 docs/InstanceCreateInstanceSite.md
 docs/InstanceCreateMetadataInner.md
@@ -9624,6 +9626,7 @@ model_add_instance_request_evars_inner.go
 model_add_instance_request_instance.go
 model_add_instance_request_instance_instance_type.go
 model_add_instance_request_instance_layout.go
+model_add_instance_request_instance_network_domain.go
 model_add_instance_request_instance_plan.go
 model_add_instance_request_instance_site.go
 model_add_instance_request_metadata_inner.go
@@ -13327,6 +13330,7 @@ model_instance_create_evars_inner.go
 model_instance_create_instance.go
 model_instance_create_instance_instance_type.go
 model_instance_create_instance_layout.go
+model_instance_create_instance_network_domain.go
 model_instance_create_instance_plan.go
 model_instance_create_instance_site.go
 model_instance_create_metadata_inner.go

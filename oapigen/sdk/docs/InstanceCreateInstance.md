@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **Plan** | [**InstanceCreateInstancePlan**](InstanceCreateInstancePlan.md) |  | 
 **InstanceContext** | Pointer to **string** | Environment | [optional] 
 **HostName** | Pointer to **string** | Hostname of the instance to be created.  Can be the same as the instance name. | [optional] 
+**NetworkDomain** | Pointer to [**InstanceCreateInstanceNetworkDomain**](InstanceCreateInstanceNetworkDomain.md) |  | [optional] 
 
 ## Methods
 
@@ -232,6 +233,31 @@ SetHostName sets HostName field to given value.
 `func (o *InstanceCreateInstance) HasHostName() bool`
 
 HasHostName returns a boolean if a field has been set.
+
+### GetNetworkDomain
+
+`func (o *InstanceCreateInstance) GetNetworkDomain() InstanceCreateInstanceNetworkDomain`
+
+GetNetworkDomain returns the NetworkDomain field if non-nil, zero value otherwise.
+
+### GetNetworkDomainOk
+
+`func (o *InstanceCreateInstance) GetNetworkDomainOk() (*InstanceCreateInstanceNetworkDomain, bool)`
+
+GetNetworkDomainOk returns a tuple with the NetworkDomain field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNetworkDomain
+
+`func (o *InstanceCreateInstance) SetNetworkDomain(v InstanceCreateInstanceNetworkDomain)`
+
+SetNetworkDomain sets NetworkDomain field to given value.
+
+### HasNetworkDomain
+
+`func (o *InstanceCreateInstance) HasNetworkDomain() bool`
+
+HasNetworkDomain returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
