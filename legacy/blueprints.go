@@ -155,7 +155,6 @@ func (client *Client) GetBlueprint(id int64, req *Request) (*Response, error) {
 }
 
 func (client *Client) CreateBlueprint(req *Request) (*Response, error) {
-	fmt.Println(req.Body)
 	return client.Execute(&Request{
 		Method:      "POST",
 		Path:        BlueprintsPath,
