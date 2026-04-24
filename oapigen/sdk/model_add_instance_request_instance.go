@@ -33,8 +33,9 @@ type AddInstanceRequestInstance struct {
 	// Environment
 	InstanceContext *string `json:"instanceContext,omitempty"`
 	// Hostname of the instance to be created.  Can be the same as the instance name.
-	HostName             *string                `json:"hostName,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	HostName             *string                                  `json:"hostName,omitempty"`
+	NetworkDomain        *AddInstanceRequestInstanceNetworkDomain `json:"networkDomain,omitempty"`
+	AdditionalProperties map[string]interface{}                   `json:",remain"`
 }
 
 type _AddInstanceRequestInstance AddInstanceRequestInstance
@@ -309,6 +310,38 @@ func (o *AddInstanceRequestInstance) SetHostName(v string) {
 	o.HostName = &v
 }
 
+// GetNetworkDomain returns the NetworkDomain field value if set, zero value otherwise.
+func (o *AddInstanceRequestInstance) GetNetworkDomain() AddInstanceRequestInstanceNetworkDomain {
+	if o == nil || IsNil(o.NetworkDomain) {
+		var ret AddInstanceRequestInstanceNetworkDomain
+		return ret
+	}
+	return *o.NetworkDomain
+}
+
+// GetNetworkDomainOk returns a tuple with the NetworkDomain field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstanceRequestInstance) GetNetworkDomainOk() (*AddInstanceRequestInstanceNetworkDomain, bool) {
+	if o == nil || IsNil(o.NetworkDomain) {
+		return nil, false
+	}
+	return o.NetworkDomain, true
+}
+
+// IsSetNetworkDomain returns a boolean if a field has been set.
+func (o *AddInstanceRequestInstance) IsSetNetworkDomain() bool {
+	if o != nil && !IsNil(o.NetworkDomain) {
+		return true
+	}
+
+	return false
+}
+
+// SetNetworkDomain gets a reference to the given AddInstanceRequestInstanceNetworkDomain and assigns it to the NetworkDomain field.
+func (o *AddInstanceRequestInstance) SetNetworkDomain(v AddInstanceRequestInstanceNetworkDomain) {
+	o.NetworkDomain = &v
+}
+
 func (o AddInstanceRequestInstance) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -335,6 +368,9 @@ func (o AddInstanceRequestInstance) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.HostName) {
 		toSerialize["hostName"] = o.HostName
+	}
+	if !IsNil(o.NetworkDomain) {
+		toSerialize["networkDomain"] = o.NetworkDomain
 	}
 
 	for key, value := range o.AdditionalProperties {
