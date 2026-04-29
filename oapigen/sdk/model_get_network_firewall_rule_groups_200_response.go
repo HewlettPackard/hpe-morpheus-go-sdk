@@ -20,9 +20,9 @@ var _ MappedNullable = &GetNetworkFirewallRuleGroups200Response{}
 
 // GetNetworkFirewallRuleGroups200Response struct for GetNetworkFirewallRuleGroups200Response
 type GetNetworkFirewallRuleGroups200Response struct {
-	RuleGroups           interface{}                     `json:"ruleGroups,omitempty"`
-	Meta                 *ListAlerts200ResponseAllOfMeta `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}          `json:",remain"`
+	RuleGroups           []GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInner `json:"ruleGroups,omitempty"`
+	Meta                 *ListAlerts200ResponseAllOfMeta                               `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}                                        `json:",remain"`
 }
 
 type _GetNetworkFirewallRuleGroups200Response GetNetworkFirewallRuleGroups200Response
@@ -44,10 +44,10 @@ func NewGetNetworkFirewallRuleGroups200ResponseWithDefaults() *GetNetworkFirewal
 	return &this
 }
 
-// GetRuleGroups returns the RuleGroups field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GetNetworkFirewallRuleGroups200Response) GetRuleGroups() interface{} {
-	if o == nil {
-		var ret interface{}
+// GetRuleGroups returns the RuleGroups field value if set, zero value otherwise.
+func (o *GetNetworkFirewallRuleGroups200Response) GetRuleGroups() []GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInner {
+	if o == nil || IsNil(o.RuleGroups) {
+		var ret []GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInner
 		return ret
 	}
 	return o.RuleGroups
@@ -55,12 +55,11 @@ func (o *GetNetworkFirewallRuleGroups200Response) GetRuleGroups() interface{} {
 
 // GetRuleGroupsOk returns a tuple with the RuleGroups field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GetNetworkFirewallRuleGroups200Response) GetRuleGroupsOk() (*interface{}, bool) {
+func (o *GetNetworkFirewallRuleGroups200Response) GetRuleGroupsOk() ([]GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInner, bool) {
 	if o == nil || IsNil(o.RuleGroups) {
 		return nil, false
 	}
-	return &o.RuleGroups, true
+	return o.RuleGroups, true
 }
 
 // IsSetRuleGroups returns a boolean if a field has been set.
@@ -72,8 +71,8 @@ func (o *GetNetworkFirewallRuleGroups200Response) IsSetRuleGroups() bool {
 	return false
 }
 
-// SetRuleGroups gets a reference to the given interface{} and assigns it to the RuleGroups field.
-func (o *GetNetworkFirewallRuleGroups200Response) SetRuleGroups(v interface{}) {
+// SetRuleGroups gets a reference to the given []GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInner and assigns it to the RuleGroups field.
+func (o *GetNetworkFirewallRuleGroups200Response) SetRuleGroups(v []GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInner) {
 	o.RuleGroups = v
 }
 
@@ -119,7 +118,7 @@ func (o GetNetworkFirewallRuleGroups200Response) MarshalJSON() ([]byte, error) {
 
 func (o GetNetworkFirewallRuleGroups200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if o.RuleGroups != nil {
+	if !IsNil(o.RuleGroups) {
 		toSerialize["ruleGroups"] = o.RuleGroups
 	}
 	if !IsNil(o.Meta) {

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**RuleGroups** | Pointer to **interface{}** |  | [optional] 
+**RuleGroups** | Pointer to [**[]GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInner**](GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInner.md) |  | [optional] 
 **Meta** | Pointer to [**ListAlerts200ResponseAllOfMeta**](ListAlerts200ResponseAllOfMeta.md) |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetRuleGroups
 
-`func (o *GetNetworkFirewallRuleGroups200Response) GetRuleGroups() interface{}`
+`func (o *GetNetworkFirewallRuleGroups200Response) GetRuleGroups() []GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInner`
 
 GetRuleGroups returns the RuleGroups field if non-nil, zero value otherwise.
 
 ### GetRuleGroupsOk
 
-`func (o *GetNetworkFirewallRuleGroups200Response) GetRuleGroupsOk() (*interface{}, bool)`
+`func (o *GetNetworkFirewallRuleGroups200Response) GetRuleGroupsOk() (*[]GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInner, bool)`
 
 GetRuleGroupsOk returns a tuple with the RuleGroups field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRuleGroups
 
-`func (o *GetNetworkFirewallRuleGroups200Response) SetRuleGroups(v interface{})`
+`func (o *GetNetworkFirewallRuleGroups200Response) SetRuleGroups(v []GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInner)`
 
 SetRuleGroups sets RuleGroups field to given value.
 
@@ -51,16 +51,6 @@ SetRuleGroups sets RuleGroups field to given value.
 
 HasRuleGroups returns a boolean if a field has been set.
 
-### SetRuleGroupsNil
-
-`func (o *GetNetworkFirewallRuleGroups200Response) SetRuleGroupsNil(b bool)`
-
- SetRuleGroupsNil sets the value for RuleGroups to be an explicit nil
-
-### UnsetRuleGroups
-`func (o *GetNetworkFirewallRuleGroups200Response) UnsetRuleGroups()`
-
-UnsetRuleGroups ensures that no value is present for RuleGroups, not even an explicit nil
 ### GetMeta
 
 `func (o *GetNetworkFirewallRuleGroups200Response) GetMeta() ListAlerts200ResponseAllOfMeta`
