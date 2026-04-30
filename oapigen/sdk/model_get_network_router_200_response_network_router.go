@@ -45,6 +45,7 @@ type GetNetworkRouter200ResponseNetworkRouter struct {
 	Routes               []map[string]interface{}                               `json:"routes,omitempty"`
 	Nats                 []map[string]interface{}                               `json:"nats,omitempty"`
 	Permissions          *GetNetworkRouter200ResponseNetworkRouterPermissions   `json:"permissions,omitempty"`
+	Config               map[string]interface{}                                 `json:"config,omitempty"`
 	AdditionalProperties map[string]interface{}                                 `json:",remain"`
 }
 
@@ -890,6 +891,38 @@ func (o *GetNetworkRouter200ResponseNetworkRouter) SetPermissions(v GetNetworkRo
 	o.Permissions = &v
 }
 
+// GetConfig returns the Config field value if set, zero value otherwise.
+func (o *GetNetworkRouter200ResponseNetworkRouter) GetConfig() map[string]interface{} {
+	if o == nil || IsNil(o.Config) {
+		var ret map[string]interface{}
+		return ret
+	}
+	return o.Config
+}
+
+// GetConfigOk returns a tuple with the Config field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetNetworkRouter200ResponseNetworkRouter) GetConfigOk() (map[string]interface{}, bool) {
+	if o == nil || IsNil(o.Config) {
+		return map[string]interface{}{}, false
+	}
+	return o.Config, true
+}
+
+// IsSetConfig returns a boolean if a field has been set.
+func (o *GetNetworkRouter200ResponseNetworkRouter) IsSetConfig() bool {
+	if o != nil && !IsNil(o.Config) {
+		return true
+	}
+
+	return false
+}
+
+// SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
+func (o *GetNetworkRouter200ResponseNetworkRouter) SetConfig(v map[string]interface{}) {
+	o.Config = v
+}
+
 func (o GetNetworkRouter200ResponseNetworkRouter) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -971,6 +1004,9 @@ func (o GetNetworkRouter200ResponseNetworkRouter) ToMap() (map[string]interface{
 	}
 	if !IsNil(o.Permissions) {
 		toSerialize["permissions"] = o.Permissions
+	}
+	if !IsNil(o.Config) {
+		toSerialize["config"] = o.Config
 	}
 
 	for key, value := range o.AdditionalProperties {

@@ -21,48 +21,50 @@ var _ MappedNullable = &GetLoadBalancerVirtualServer200ResponseLoadBalancerInsta
 
 // GetLoadBalancerVirtualServer200ResponseLoadBalancerInstance struct for GetLoadBalancerVirtualServer200ResponseLoadBalancerInstance
 type GetLoadBalancerVirtualServer200ResponseLoadBalancerInstance struct {
-	Id                   *int64                                                                   `json:"id,omitempty"`
-	LoadBalancer         *GetLoadBalancerVirtualServer200ResponseLoadBalancerInstanceLoadBalancer `json:"loadBalancer,omitempty"`
-	Instance             NullableString                                                           `json:"instance,omitempty"`
-	Description          NullableString                                                           `json:"description,omitempty"`
-	InternalId           *string                                                                  `json:"internalId,omitempty"`
-	ExternalId           *string                                                                  `json:"externalId,omitempty"`
-	DateCreated          *time.Time                                                               `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                                               `json:"lastUpdated,omitempty"`
-	Active               *bool                                                                    `json:"active,omitempty"`
-	Sticky               *bool                                                                    `json:"sticky,omitempty"`
-	SslEnabled           NullableString                                                           `json:"sslEnabled,omitempty"`
-	ExternalAddress      *bool                                                                    `json:"externalAddress,omitempty"`
-	BackendPort          NullableString                                                           `json:"backendPort,omitempty"`
-	VipType              NullableString                                                           `json:"vipType,omitempty"`
-	VipAddress           *string                                                                  `json:"vipAddress,omitempty"`
-	VipHostname          NullableString                                                           `json:"vipHostname,omitempty"`
-	VipProtocol          *string                                                                  `json:"vipProtocol,omitempty"`
-	VipScheme            NullableString                                                           `json:"vipScheme,omitempty"`
-	VipMode              NullableString                                                           `json:"vipMode,omitempty"`
-	VipName              *string                                                                  `json:"vipName,omitempty"`
-	VipPort              *int64                                                                   `json:"vipPort,omitempty"`
-	VipSticky            NullableString                                                           `json:"vipSticky,omitempty"`
-	VipBalance           NullableString                                                           `json:"vipBalance,omitempty"`
-	ServicePort          NullableString                                                           `json:"servicePort,omitempty"`
-	SourceAddress        NullableString                                                           `json:"sourceAddress,omitempty"`
-	SslCert              *GetLoadBalancerVirtualServer200ResponseLoadBalancerInstanceSslCert      `json:"sslCert,omitempty"`
-	SslMode              NullableString                                                           `json:"sslMode,omitempty"`
-	SslRedirectMode      NullableString                                                           `json:"sslRedirectMode,omitempty"`
-	VipShared            *bool                                                                    `json:"vipShared,omitempty"`
-	VipDirectAddress     NullableString                                                           `json:"vipDirectAddress,omitempty"`
-	ServerName           NullableString                                                           `json:"serverName,omitempty"`
-	PoolName             NullableString                                                           `json:"poolName,omitempty"`
-	Removing             *bool                                                                    `json:"removing,omitempty"`
-	VipSource            *string                                                                  `json:"vipSource,omitempty"`
-	ExtraConfig          NullableString                                                           `json:"extraConfig,omitempty"`
-	ServiceAccess        NullableString                                                           `json:"serviceAccess,omitempty"`
-	NetworkId            NullableString                                                           `json:"networkId,omitempty"`
-	SubnetId             NullableString                                                           `json:"subnetId,omitempty"`
-	ExternalPortId       NullableString                                                           `json:"externalPortId,omitempty"`
-	Status               *string                                                                  `json:"status,omitempty"`
-	VipStatus            *string                                                                  `json:"vipStatus,omitempty"`
-	AdditionalProperties map[string]interface{}                                                   `json:",remain"`
+	Id           *int64                                                                   `json:"id,omitempty"`
+	LoadBalancer *GetLoadBalancerVirtualServer200ResponseLoadBalancerInstanceLoadBalancer `json:"loadBalancer,omitempty"`
+	Instance     NullableString                                                           `json:"instance,omitempty"`
+	// Configuration object with parameters that vary by type.
+	Config               map[string]interface{}                                              `json:"config,omitempty"`
+	Description          NullableString                                                      `json:"description,omitempty"`
+	InternalId           *string                                                             `json:"internalId,omitempty"`
+	ExternalId           *string                                                             `json:"externalId,omitempty"`
+	DateCreated          *time.Time                                                          `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                          `json:"lastUpdated,omitempty"`
+	Active               *bool                                                               `json:"active,omitempty"`
+	Sticky               *bool                                                               `json:"sticky,omitempty"`
+	SslEnabled           NullableString                                                      `json:"sslEnabled,omitempty"`
+	ExternalAddress      *bool                                                               `json:"externalAddress,omitempty"`
+	BackendPort          NullableString                                                      `json:"backendPort,omitempty"`
+	VipType              NullableString                                                      `json:"vipType,omitempty"`
+	VipAddress           *string                                                             `json:"vipAddress,omitempty"`
+	VipHostname          NullableString                                                      `json:"vipHostname,omitempty"`
+	VipProtocol          *string                                                             `json:"vipProtocol,omitempty"`
+	VipScheme            NullableString                                                      `json:"vipScheme,omitempty"`
+	VipMode              NullableString                                                      `json:"vipMode,omitempty"`
+	VipName              *string                                                             `json:"vipName,omitempty"`
+	VipPort              *int64                                                              `json:"vipPort,omitempty"`
+	VipSticky            NullableString                                                      `json:"vipSticky,omitempty"`
+	VipBalance           NullableString                                                      `json:"vipBalance,omitempty"`
+	ServicePort          NullableString                                                      `json:"servicePort,omitempty"`
+	SourceAddress        NullableString                                                      `json:"sourceAddress,omitempty"`
+	SslCert              *GetLoadBalancerVirtualServer200ResponseLoadBalancerInstanceSslCert `json:"sslCert,omitempty"`
+	SslMode              NullableString                                                      `json:"sslMode,omitempty"`
+	SslRedirectMode      NullableString                                                      `json:"sslRedirectMode,omitempty"`
+	VipShared            *bool                                                               `json:"vipShared,omitempty"`
+	VipDirectAddress     NullableString                                                      `json:"vipDirectAddress,omitempty"`
+	ServerName           NullableString                                                      `json:"serverName,omitempty"`
+	PoolName             NullableString                                                      `json:"poolName,omitempty"`
+	Removing             *bool                                                               `json:"removing,omitempty"`
+	VipSource            *string                                                             `json:"vipSource,omitempty"`
+	ExtraConfig          NullableString                                                      `json:"extraConfig,omitempty"`
+	ServiceAccess        NullableString                                                      `json:"serviceAccess,omitempty"`
+	NetworkId            NullableString                                                      `json:"networkId,omitempty"`
+	SubnetId             NullableString                                                      `json:"subnetId,omitempty"`
+	ExternalPortId       NullableString                                                      `json:"externalPortId,omitempty"`
+	Status               *string                                                             `json:"status,omitempty"`
+	VipStatus            *string                                                             `json:"vipStatus,omitempty"`
+	AdditionalProperties map[string]interface{}                                              `json:",remain"`
 }
 
 type _GetLoadBalancerVirtualServer200ResponseLoadBalancerInstance GetLoadBalancerVirtualServer200ResponseLoadBalancerInstance
@@ -189,6 +191,38 @@ func (o *GetLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetInstanc
 // UnsetInstance ensures that no value is present for Instance, not even an explicit nil
 func (o *GetLoadBalancerVirtualServer200ResponseLoadBalancerInstance) UnsetInstance() {
 	o.Instance.Unset()
+}
+
+// GetConfig returns the Config field value if set, zero value otherwise.
+func (o *GetLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetConfig() map[string]interface{} {
+	if o == nil || IsNil(o.Config) {
+		var ret map[string]interface{}
+		return ret
+	}
+	return o.Config
+}
+
+// GetConfigOk returns a tuple with the Config field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetConfigOk() (map[string]interface{}, bool) {
+	if o == nil || IsNil(o.Config) {
+		return map[string]interface{}{}, false
+	}
+	return o.Config, true
+}
+
+// IsSetConfig returns a boolean if a field has been set.
+func (o *GetLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetConfig() bool {
+	if o != nil && !IsNil(o.Config) {
+		return true
+	}
+
+	return false
+}
+
+// SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
+func (o *GetLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetConfig(v map[string]interface{}) {
+	o.Config = v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1656,6 +1690,9 @@ func (o GetLoadBalancerVirtualServer200ResponseLoadBalancerInstance) ToMap() (ma
 	}
 	if o.Instance.IsSet() {
 		toSerialize["instance"] = o.Instance.Get()
+	}
+	if !IsNil(o.Config) {
+		toSerialize["config"] = o.Config
 	}
 	if o.Description.IsSet() {
 		toSerialize["description"] = o.Description.Get()

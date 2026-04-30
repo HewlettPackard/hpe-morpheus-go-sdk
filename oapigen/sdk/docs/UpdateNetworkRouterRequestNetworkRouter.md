@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Enabled** | Pointer to **bool** | Can be used to enable / disable the network router (true, false). Default is on | [optional] 
 **Zone** | Pointer to [**UpdateNetworkRouterRequestNetworkRouterZone**](UpdateNetworkRouterRequestNetworkRouterZone.md) |  | [optional] 
 **NetworkServer** | Pointer to [**UpdateNetworkRouterRequestNetworkRouterNetworkServer**](UpdateNetworkRouterRequestNetworkRouterNetworkServer.md) |  | [optional] 
+**Config** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
@@ -179,6 +180,31 @@ SetNetworkServer sets NetworkServer field to given value.
 `func (o *UpdateNetworkRouterRequestNetworkRouter) HasNetworkServer() bool`
 
 HasNetworkServer returns a boolean if a field has been set.
+
+### GetConfig
+
+`func (o *UpdateNetworkRouterRequestNetworkRouter) GetConfig() map[string]interface{}`
+
+GetConfig returns the Config field if non-nil, zero value otherwise.
+
+### GetConfigOk
+
+`func (o *UpdateNetworkRouterRequestNetworkRouter) GetConfigOk() (*map[string]interface{}, bool)`
+
+GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConfig
+
+`func (o *UpdateNetworkRouterRequestNetworkRouter) SetConfig(v map[string]interface{})`
+
+SetConfig sets Config field to given value.
+
+### HasConfig
+
+`func (o *UpdateNetworkRouterRequestNetworkRouter) HasConfig() bool`
+
+HasConfig returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

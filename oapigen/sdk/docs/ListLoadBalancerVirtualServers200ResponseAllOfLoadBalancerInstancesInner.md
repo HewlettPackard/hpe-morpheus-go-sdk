@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **LoadBalancer** | Pointer to [**ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInnerLoadBalancer**](ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInnerLoadBalancer.md) |  | [optional] 
 **Instance** | Pointer to **NullableString** |  | [optional] 
+**Config** | Pointer to **map[string]interface{}** | Configuration object with parameters that vary by type. | [optional] 
 **Description** | Pointer to **NullableString** |  | [optional] 
 **InternalId** | Pointer to **string** |  | [optional] 
 **ExternalId** | Pointer to **string** |  | [optional] 
@@ -150,6 +151,31 @@ HasInstance returns a boolean if a field has been set.
 `func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) UnsetInstance()`
 
 UnsetInstance ensures that no value is present for Instance, not even an explicit nil
+### GetConfig
+
+`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetConfig() map[string]interface{}`
+
+GetConfig returns the Config field if non-nil, zero value otherwise.
+
+### GetConfigOk
+
+`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetConfigOk() (*map[string]interface{}, bool)`
+
+GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConfig
+
+`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) SetConfig(v map[string]interface{})`
+
+SetConfig sets Config field to given value.
+
+### HasConfig
+
+`func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) HasConfig() bool`
+
+HasConfig returns a boolean if a field has been set.
+
 ### GetDescription
 
 `func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) GetDescription() string`

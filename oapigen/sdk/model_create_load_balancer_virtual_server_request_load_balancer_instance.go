@@ -24,6 +24,8 @@ type CreateLoadBalancerVirtualServerRequestLoadBalancerInstance struct {
 	VipName *string `json:"vipName,omitempty"`
 	// Description
 	Description *string `json:"description,omitempty"`
+	// VIP Type
+	VipType *string `json:"vipType,omitempty"`
 	// VIP Address
 	VipAddress *string `json:"vipAddress,omitempty"`
 	// VIP Port
@@ -121,6 +123,38 @@ func (o *CreateLoadBalancerVirtualServerRequestLoadBalancerInstance) IsSetDescri
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *CreateLoadBalancerVirtualServerRequestLoadBalancerInstance) SetDescription(v string) {
 	o.Description = &v
+}
+
+// GetVipType returns the VipType field value if set, zero value otherwise.
+func (o *CreateLoadBalancerVirtualServerRequestLoadBalancerInstance) GetVipType() string {
+	if o == nil || IsNil(o.VipType) {
+		var ret string
+		return ret
+	}
+	return *o.VipType
+}
+
+// GetVipTypeOk returns a tuple with the VipType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateLoadBalancerVirtualServerRequestLoadBalancerInstance) GetVipTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.VipType) {
+		return nil, false
+	}
+	return o.VipType, true
+}
+
+// IsSetVipType returns a boolean if a field has been set.
+func (o *CreateLoadBalancerVirtualServerRequestLoadBalancerInstance) IsSetVipType() bool {
+	if o != nil && !IsNil(o.VipType) {
+		return true
+	}
+
+	return false
+}
+
+// SetVipType gets a reference to the given string and assigns it to the VipType field.
+func (o *CreateLoadBalancerVirtualServerRequestLoadBalancerInstance) SetVipType(v string) {
+	o.VipType = &v
 }
 
 // GetVipAddress returns the VipAddress field value if set, zero value otherwise.
@@ -362,6 +396,9 @@ func (o CreateLoadBalancerVirtualServerRequestLoadBalancerInstance) ToMap() (map
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.VipType) {
+		toSerialize["vipType"] = o.VipType
 	}
 	if !IsNil(o.VipAddress) {
 		toSerialize["vipAddress"] = o.VipAddress

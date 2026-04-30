@@ -28,6 +28,7 @@ type CreateNetworkRouterRequestNetworkRouter struct {
 	Enabled              *bool                                                 `json:"enabled,omitempty"`
 	Zone                 *CreateNetworkRouterRequestNetworkRouterZone          `json:"zone,omitempty"`
 	NetworkServer        *CreateNetworkRouterRequestNetworkRouterNetworkServer `json:"networkServer,omitempty"`
+	Config               *CreateNetworkRouterRequestNetworkRouterConfig        `json:"config,omitempty"`
 	AdditionalProperties map[string]interface{}                                `json:",remain"`
 }
 
@@ -221,6 +222,38 @@ func (o *CreateNetworkRouterRequestNetworkRouter) SetNetworkServer(v CreateNetwo
 	o.NetworkServer = &v
 }
 
+// GetConfig returns the Config field value if set, zero value otherwise.
+func (o *CreateNetworkRouterRequestNetworkRouter) GetConfig() CreateNetworkRouterRequestNetworkRouterConfig {
+	if o == nil || IsNil(o.Config) {
+		var ret CreateNetworkRouterRequestNetworkRouterConfig
+		return ret
+	}
+	return *o.Config
+}
+
+// GetConfigOk returns a tuple with the Config field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateNetworkRouterRequestNetworkRouter) GetConfigOk() (*CreateNetworkRouterRequestNetworkRouterConfig, bool) {
+	if o == nil || IsNil(o.Config) {
+		return nil, false
+	}
+	return o.Config, true
+}
+
+// IsSetConfig returns a boolean if a field has been set.
+func (o *CreateNetworkRouterRequestNetworkRouter) IsSetConfig() bool {
+	if o != nil && !IsNil(o.Config) {
+		return true
+	}
+
+	return false
+}
+
+// SetConfig gets a reference to the given CreateNetworkRouterRequestNetworkRouterConfig and assigns it to the Config field.
+func (o *CreateNetworkRouterRequestNetworkRouter) SetConfig(v CreateNetworkRouterRequestNetworkRouterConfig) {
+	o.Config = &v
+}
+
 func (o CreateNetworkRouterRequestNetworkRouter) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -242,6 +275,9 @@ func (o CreateNetworkRouterRequestNetworkRouter) ToMap() (map[string]interface{}
 	}
 	if !IsNil(o.NetworkServer) {
 		toSerialize["networkServer"] = o.NetworkServer
+	}
+	if !IsNil(o.Config) {
+		toSerialize["config"] = o.Config
 	}
 
 	for key, value := range o.AdditionalProperties {
