@@ -28,6 +28,7 @@ type NetworkRoutersCreate struct {
 	Enabled              *bool                              `json:"enabled,omitempty"`
 	Zone                 *NetworkRoutersCreateZone          `json:"zone,omitempty"`
 	NetworkServer        *NetworkRoutersCreateNetworkServer `json:"networkServer,omitempty"`
+	Config               *NetworkRoutersCreateConfig        `json:"config,omitempty"`
 	AdditionalProperties map[string]interface{}             `json:",remain"`
 }
 
@@ -221,6 +222,38 @@ func (o *NetworkRoutersCreate) SetNetworkServer(v NetworkRoutersCreateNetworkSer
 	o.NetworkServer = &v
 }
 
+// GetConfig returns the Config field value if set, zero value otherwise.
+func (o *NetworkRoutersCreate) GetConfig() NetworkRoutersCreateConfig {
+	if o == nil || IsNil(o.Config) {
+		var ret NetworkRoutersCreateConfig
+		return ret
+	}
+	return *o.Config
+}
+
+// GetConfigOk returns a tuple with the Config field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NetworkRoutersCreate) GetConfigOk() (*NetworkRoutersCreateConfig, bool) {
+	if o == nil || IsNil(o.Config) {
+		return nil, false
+	}
+	return o.Config, true
+}
+
+// IsSetConfig returns a boolean if a field has been set.
+func (o *NetworkRoutersCreate) IsSetConfig() bool {
+	if o != nil && !IsNil(o.Config) {
+		return true
+	}
+
+	return false
+}
+
+// SetConfig gets a reference to the given NetworkRoutersCreateConfig and assigns it to the Config field.
+func (o *NetworkRoutersCreate) SetConfig(v NetworkRoutersCreateConfig) {
+	o.Config = &v
+}
+
 func (o NetworkRoutersCreate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -242,6 +275,9 @@ func (o NetworkRoutersCreate) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.NetworkServer) {
 		toSerialize["networkServer"] = o.NetworkServer
+	}
+	if !IsNil(o.Config) {
+		toSerialize["config"] = o.Config
 	}
 
 	for key, value := range o.AdditionalProperties {

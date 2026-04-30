@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **VipName** | Pointer to **string** | VIP Name | [optional] 
 **Description** | Pointer to **string** | Description | [optional] 
+**VipType** | Pointer to **string** | VIP Type | [optional] 
 **VipAddress** | Pointer to **string** | VIP Address | [optional] 
 **VipPort** | Pointer to **int64** | VIP Port | [optional] 
 **VipProtocol** | Pointer to **string** | VIP Protocol | [optional] 
@@ -82,6 +83,31 @@ SetDescription sets Description field to given value.
 `func (o *CreateLoadBalancerVirtualServerRequestLoadBalancerInstance) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetVipType
+
+`func (o *CreateLoadBalancerVirtualServerRequestLoadBalancerInstance) GetVipType() string`
+
+GetVipType returns the VipType field if non-nil, zero value otherwise.
+
+### GetVipTypeOk
+
+`func (o *CreateLoadBalancerVirtualServerRequestLoadBalancerInstance) GetVipTypeOk() (*string, bool)`
+
+GetVipTypeOk returns a tuple with the VipType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVipType
+
+`func (o *CreateLoadBalancerVirtualServerRequestLoadBalancerInstance) SetVipType(v string)`
+
+SetVipType sets VipType field to given value.
+
+### HasVipType
+
+`func (o *CreateLoadBalancerVirtualServerRequestLoadBalancerInstance) HasVipType() bool`
+
+HasVipType returns a boolean if a field has been set.
 
 ### GetVipAddress
 
