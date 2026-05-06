@@ -362,29 +362,6 @@ func (client *Client) Execute(req *Request) (*Response, error) {
 	}
 
 	httpResp, err := client.HTTPClient.Do(httpReq)
-
-	receivedTime := time.Now()
-	httpRespBody, err := io.ReadAll(httpResp.Body)
-	if err != nil {
-		return nil, err
-	}
-	defer httpResp.Body.Close()
-
-	// Convert a net/http response into a Morpheus Response object
-	// Do this before error checking so we can return a Morpheus Response
-	// with useful information.
-	// Having the resp information availble regardless of failure is how the
-	// client behaved before we switched from the Resty Client to net/http client.
-	resp = &Response{
-		Success:      httpResp.StatusCode > 199 && httpResp.StatusCode < 300,
-		StatusCode:   httpResp.StatusCode,
-		Status:       httpResp.Status,
-		ReceivedAt:   receivedTime,
-		Size:         int64(len(httpRespBody)), // This is the same as what Resty does
-		Body:         httpRespBody,
-		HTTPResponse: httpResp,
-	}
-
 	if httpResp == nil || httpResp.StatusCode != http.StatusOK || err != nil {
 		// standardize the error format across both providers
 		return resp, errWithBody(err, httpResp)
@@ -400,6 +377,24 @@ func (client *Client) Execute(req *Request) (*Response, error) {
 		log.Printf("\nRESPONSE:\n%s\n", string(dump))
 	}
 
+	receivedTime := time.Now()
+
+	httpRespBody, err := io.ReadAll(httpResp.Body)
+	if err != nil {
+		return nil, err
+	}
+	defer httpResp.Body.Close()
+
+	// Convert a net/http response into a Morpheus Response object
+	resp = &Response{
+		Success:    httpResp.StatusCode > 199 && httpResp.StatusCode < 300,
+		StatusCode: httpResp.StatusCode,
+		Status:     httpResp.Status,
+		ReceivedAt: receivedTime,
+		Size:       int64(len(httpRespBody)), // This is the same as what Resty does
+		Body:       httpRespBody,
+	}
+
 	if client.errCallbackFunc != nil {
 		customErr := client.errCallbackFunc(err)
 		// only use non-nil errors
@@ -407,6 +402,8 @@ func (client *Client) Execute(req *Request) (*Response, error) {
 			return resp, customErr
 		}
 	}
+
+	resp.HTTPResponse = httpResp
 
 	// attempt to parse as json, populates JsonData
 	var parsedResult interface{}
