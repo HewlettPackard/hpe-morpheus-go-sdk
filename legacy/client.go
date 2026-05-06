@@ -362,9 +362,11 @@ func (client *Client) Execute(req *Request) (*Response, error) {
 	}
 
 	httpResp, err := client.HTTPClient.Do(httpReq)
-	if httpResp == nil || httpResp.StatusCode != http.StatusOK || err != nil {
-		// standardize the error format across both providers
-		return resp, errWithBody(err, httpResp)
+	if httpResp == nil || err != nil {
+		if httpResp == nil {
+			return resp, errors.New("nil HTTP response")
+		}
+		return resp, err
 	}
 
 	// Dump the response if debug is enabled.
@@ -380,19 +382,23 @@ func (client *Client) Execute(req *Request) (*Response, error) {
 	receivedTime := time.Now()
 
 	httpRespBody, err := io.ReadAll(httpResp.Body)
+	httpResp.Body.Close()
+	// we need the body available for a second read for returning
+	// formatted errs in non-success cases.
+	httpResp.Body = io.NopCloser(bytes.NewReader(httpRespBody))
 	if err != nil {
 		return nil, err
 	}
-	defer httpResp.Body.Close()
 
 	// Convert a net/http response into a Morpheus Response object
 	resp = &Response{
-		Success:    httpResp.StatusCode > 199 && httpResp.StatusCode < 300,
-		StatusCode: httpResp.StatusCode,
-		Status:     httpResp.Status,
-		ReceivedAt: receivedTime,
-		Size:       int64(len(httpRespBody)), // This is the same as what Resty does
-		Body:       httpRespBody,
+		Success:      httpResp.StatusCode > 199 && httpResp.StatusCode < 300, // This is what Resty considers a success.
+		StatusCode:   httpResp.StatusCode,
+		Status:       httpResp.Status,
+		ReceivedAt:   receivedTime,
+		Size:         int64(len(httpRespBody)), // This is the same as what Resty does
+		Body:         httpRespBody,
+		HTTPResponse: httpResp,
 	}
 
 	if client.errCallbackFunc != nil {
@@ -402,8 +408,6 @@ func (client *Client) Execute(req *Request) (*Response, error) {
 			return resp, customErr
 		}
 	}
-
-	resp.HTTPResponse = httpResp
 
 	// attempt to parse as json, populates JsonData
 	var parsedResult interface{}
@@ -449,7 +453,13 @@ func (client *Client) Execute(req *Request) (*Response, error) {
 
 	client.incrementRequests(req, resp)
 
-	return resp, err
+	// so we can still access the Morpheus Resp body in non-success cases
+	if !resp.Success {
+		return resp, errWithBody(errors.New("failed"), httpResp)
+	}
+
+	// success
+	return resp, nil
 }
 
 func (client *Client) Get(req *Request) (*Response, error) {
