@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Type** | [**CreateNetworkRouterRequestNetworkRouterType**](CreateNetworkRouterRequestNetworkRouterType.md) |  | 
 **Site** | [**CreateNetworkRouterRequestNetworkRouterSite**](CreateNetworkRouterRequestNetworkRouterSite.md) |  | 
 **Enabled** | Pointer to **bool** | Can be used to enable / disable the network router (true, false). Default is on | [optional] 
+**EnableBgp** | Pointer to **bool** |  | [optional] 
 **Zone** | Pointer to [**CreateNetworkRouterRequestNetworkRouterZone**](CreateNetworkRouterRequestNetworkRouterZone.md) |  | [optional] 
 **NetworkServer** | Pointer to [**CreateNetworkRouterRequestNetworkRouterNetworkServer**](CreateNetworkRouterRequestNetworkRouterNetworkServer.md) |  | [optional] 
 **Config** | Pointer to [**CreateNetworkRouterRequestNetworkRouterConfig**](CreateNetworkRouterRequestNetworkRouterConfig.md) |  | [optional] 
@@ -115,6 +116,31 @@ SetEnabled sets Enabled field to given value.
 `func (o *CreateNetworkRouterRequestNetworkRouter) HasEnabled() bool`
 
 HasEnabled returns a boolean if a field has been set.
+
+### GetEnableBgp
+
+`func (o *CreateNetworkRouterRequestNetworkRouter) GetEnableBgp() bool`
+
+GetEnableBgp returns the EnableBgp field if non-nil, zero value otherwise.
+
+### GetEnableBgpOk
+
+`func (o *CreateNetworkRouterRequestNetworkRouter) GetEnableBgpOk() (*bool, bool)`
+
+GetEnableBgpOk returns a tuple with the EnableBgp field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnableBgp
+
+`func (o *CreateNetworkRouterRequestNetworkRouter) SetEnableBgp(v bool)`
+
+SetEnableBgp sets EnableBgp field to given value.
+
+### HasEnableBgp
+
+`func (o *CreateNetworkRouterRequestNetworkRouter) HasEnableBgp() bool`
+
+HasEnableBgp returns a boolean if a field has been set.
 
 ### GetZone
 
