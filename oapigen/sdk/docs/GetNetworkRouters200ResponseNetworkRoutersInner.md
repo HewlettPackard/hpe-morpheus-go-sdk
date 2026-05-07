@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **RouterType** | Pointer to **string** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
+**EnableBgp** | Pointer to **bool** |  | [optional] 
 **ExternalIp** | Pointer to **NullableString** |  | [optional] 
 **ExternalId** | Pointer to **string** |  | [optional] 
 **ProviderId** | Pointer to **NullableString** |  | [optional] 
@@ -24,6 +25,7 @@ Name | Type | Description | Notes
 **ExternalNetwork** | Pointer to [**GetNetworkRouters200ResponseNetworkRoutersInnerExternalNetwork**](GetNetworkRouters200ResponseNetworkRoutersInnerExternalNetwork.md) |  | [optional] 
 **Site** | Pointer to [**GetNetworkRouters200ResponseNetworkRoutersInnerSite**](GetNetworkRouters200ResponseNetworkRoutersInnerSite.md) |  | [optional] 
 **Interfaces** | Pointer to [**[]GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner**](GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner.md) |  | [optional] 
+**Config** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
@@ -303,6 +305,31 @@ SetEnabled sets Enabled field to given value.
 `func (o *GetNetworkRouters200ResponseNetworkRoutersInner) HasEnabled() bool`
 
 HasEnabled returns a boolean if a field has been set.
+
+### GetEnableBgp
+
+`func (o *GetNetworkRouters200ResponseNetworkRoutersInner) GetEnableBgp() bool`
+
+GetEnableBgp returns the EnableBgp field if non-nil, zero value otherwise.
+
+### GetEnableBgpOk
+
+`func (o *GetNetworkRouters200ResponseNetworkRoutersInner) GetEnableBgpOk() (*bool, bool)`
+
+GetEnableBgpOk returns a tuple with the EnableBgp field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnableBgp
+
+`func (o *GetNetworkRouters200ResponseNetworkRoutersInner) SetEnableBgp(v bool)`
+
+SetEnableBgp sets EnableBgp field to given value.
+
+### HasEnableBgp
+
+`func (o *GetNetworkRouters200ResponseNetworkRoutersInner) HasEnableBgp() bool`
+
+HasEnableBgp returns a boolean if a field has been set.
 
 ### GetExternalIp
 
@@ -593,6 +620,31 @@ SetInterfaces sets Interfaces field to given value.
 `func (o *GetNetworkRouters200ResponseNetworkRoutersInner) HasInterfaces() bool`
 
 HasInterfaces returns a boolean if a field has been set.
+
+### GetConfig
+
+`func (o *GetNetworkRouters200ResponseNetworkRoutersInner) GetConfig() map[string]interface{}`
+
+GetConfig returns the Config field if non-nil, zero value otherwise.
+
+### GetConfigOk
+
+`func (o *GetNetworkRouters200ResponseNetworkRoutersInner) GetConfigOk() (*map[string]interface{}, bool)`
+
+GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConfig
+
+`func (o *GetNetworkRouters200ResponseNetworkRoutersInner) SetConfig(v map[string]interface{})`
+
+SetConfig sets Config field to given value.
+
+### HasConfig
+
+`func (o *GetNetworkRouters200ResponseNetworkRoutersInner) HasConfig() bool`
+
+HasConfig returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

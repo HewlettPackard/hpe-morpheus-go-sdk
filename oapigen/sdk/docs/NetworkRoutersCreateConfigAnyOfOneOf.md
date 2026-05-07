@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 **RESTART_MODE** | Pointer to **string** |  | [optional] 
 **RESTART_TIME** | Pointer to **int64** |  | [optional] 
 **STALE_ROUTE_TIME** | Pointer to **int64** |  | [optional] 
+**INTER_SR_IBGP** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -725,6 +726,31 @@ SetSTALE_ROUTE_TIME sets STALE_ROUTE_TIME field to given value.
 `func (o *NetworkRoutersCreateConfigAnyOfOneOf) HasSTALE_ROUTE_TIME() bool`
 
 HasSTALE_ROUTE_TIME returns a boolean if a field has been set.
+
+### GetINTER_SR_IBGP
+
+`func (o *NetworkRoutersCreateConfigAnyOfOneOf) GetINTER_SR_IBGP() string`
+
+GetINTER_SR_IBGP returns the INTER_SR_IBGP field if non-nil, zero value otherwise.
+
+### GetINTER_SR_IBGPOk
+
+`func (o *NetworkRoutersCreateConfigAnyOfOneOf) GetINTER_SR_IBGPOk() (*string, bool)`
+
+GetINTER_SR_IBGPOk returns a tuple with the INTER_SR_IBGP field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetINTER_SR_IBGP
+
+`func (o *NetworkRoutersCreateConfigAnyOfOneOf) SetINTER_SR_IBGP(v string)`
+
+SetINTER_SR_IBGP sets INTER_SR_IBGP field to given value.
+
+### HasINTER_SR_IBGP
+
+`func (o *NetworkRoutersCreateConfigAnyOfOneOf) HasINTER_SR_IBGP() bool`
+
+HasINTER_SR_IBGP returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

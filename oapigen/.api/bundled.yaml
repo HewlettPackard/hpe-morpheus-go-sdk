@@ -109504,6 +109504,8 @@ paths:
                           type: string
                         enabled:
                           type: boolean
+                        enableBgp:
+                          type: boolean
                         externalIp:
                           type:
                             - string
@@ -109632,6 +109634,8 @@ paths:
                               type:
                                 - object
                                 - 'null'
+                        config:
+                          type: object
               examples:
                 Network Routers Response:
                   value:
@@ -109898,6 +109902,11 @@ paths:
                                 STALE_ROUTE_TIME:
                                   type: integer
                                   format: int64
+                                INTER_SR_IBGP:
+                                  type: string
+                                  enum:
+                                    - 'on'
+                                    - 'off'
                             - type: object
                               description: Configuration object for NSX-T Tier-1 gateway network routers.
                               properties: &ref_1627
@@ -110048,6 +110057,8 @@ paths:
                       status:
                         type: string
                       enabled:
+                        type: boolean
+                      enableBgp:
                         type: boolean
                       externalIp:
                         type:

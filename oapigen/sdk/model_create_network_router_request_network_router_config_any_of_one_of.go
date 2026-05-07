@@ -47,6 +47,7 @@ type CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf struct {
 	RESTART_MODE            *string                `json:"RESTART_MODE,omitempty"`
 	RESTART_TIME            *int64                 `json:"RESTART_TIME,omitempty"`
 	STALE_ROUTE_TIME        *int64                 `json:"STALE_ROUTE_TIME,omitempty"`
+	INTER_SR_IBGP           *string                `json:"INTER_SR_IBGP,omitempty"`
 	AdditionalProperties    map[string]interface{} `json:",remain"`
 }
 
@@ -933,6 +934,38 @@ func (o *CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf) SetSTALE_ROUTE
 	o.STALE_ROUTE_TIME = &v
 }
 
+// GetINTER_SR_IBGP returns the INTER_SR_IBGP field value if set, zero value otherwise.
+func (o *CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf) GetINTER_SR_IBGP() string {
+	if o == nil || IsNil(o.INTER_SR_IBGP) {
+		var ret string
+		return ret
+	}
+	return *o.INTER_SR_IBGP
+}
+
+// GetINTER_SR_IBGPOk returns a tuple with the INTER_SR_IBGP field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf) GetINTER_SR_IBGPOk() (*string, bool) {
+	if o == nil || IsNil(o.INTER_SR_IBGP) {
+		return nil, false
+	}
+	return o.INTER_SR_IBGP, true
+}
+
+// IsSetINTER_SR_IBGP returns a boolean if a field has been set.
+func (o *CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf) IsSetINTER_SR_IBGP() bool {
+	if o != nil && !IsNil(o.INTER_SR_IBGP) {
+		return true
+	}
+
+	return false
+}
+
+// SetINTER_SR_IBGP gets a reference to the given string and assigns it to the INTER_SR_IBGP field.
+func (o *CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf) SetINTER_SR_IBGP(v string) {
+	o.INTER_SR_IBGP = &v
+}
+
 func (o CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -1023,6 +1056,9 @@ func (o CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf) ToMap() (map[st
 	}
 	if !IsNil(o.STALE_ROUTE_TIME) {
 		toSerialize["STALE_ROUTE_TIME"] = o.STALE_ROUTE_TIME
+	}
+	if !IsNil(o.INTER_SR_IBGP) {
+		toSerialize["INTER_SR_IBGP"] = o.INTER_SR_IBGP
 	}
 
 	for key, value := range o.AdditionalProperties {
