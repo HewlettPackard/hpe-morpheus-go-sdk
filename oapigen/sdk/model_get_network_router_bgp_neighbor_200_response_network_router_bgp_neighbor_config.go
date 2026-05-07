@@ -13,87 +13,105 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
-// checks if the GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighborConfig type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighborConfig{}
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
 
 // GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighborConfig struct for GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighborConfig
 type GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighborConfig struct {
-	SourceAddresses      []string               `json:"sourceAddresses,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	NSXTBGPNeighborConfig2 *NSXTBGPNeighborConfig2
+	NSXVBGPNeighborConfig2 *NSXVBGPNeighborConfig2
+	MapmapOfStringAny      *map[string]interface{}
 }
 
-type _GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighborConfig GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighborConfig
-
-// NewGetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighborConfig instantiates a new GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighborConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighborConfig() *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighborConfig {
-	this := GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighborConfig{}
-	return &this
-}
-
-// NewGetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighborConfigWithDefaults instantiates a new GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighborConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewGetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighborConfigWithDefaults() *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighborConfig {
-	this := GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighborConfig{}
-	return &this
-}
-
-// GetSourceAddresses returns the SourceAddresses field value if set, zero value otherwise.
-func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighborConfig) GetSourceAddresses() []string {
-	if o == nil || IsNil(o.SourceAddresses) {
-		var ret []string
-		return ret
-	}
-	return o.SourceAddresses
-}
-
-// GetSourceAddressesOk returns a tuple with the SourceAddresses field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighborConfig) GetSourceAddressesOk() ([]string, bool) {
-	if o == nil || IsNil(o.SourceAddresses) {
-		return nil, false
-	}
-	return o.SourceAddresses, true
-}
-
-// IsSetSourceAddresses returns a boolean if a field has been set.
-func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighborConfig) IsSetSourceAddresses() bool {
-	if o != nil && !IsNil(o.SourceAddresses) {
-		return true
+func (dst *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighborConfig) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighborConfig{}
 	}
 
-	return false
-}
+	mapstructDecode(data, &dst.NSXTBGPNeighborConfig2)
 
-// SetSourceAddresses gets a reference to the given []string and assigns it to the SourceAddresses field.
-func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighborConfig) SetSourceAddresses(v []string) {
-	o.SourceAddresses = v
-}
-
-func (o GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighborConfig) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighborConfig) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SourceAddresses) {
-		toSerialize["sourceAddresses"] = o.SourceAddresses
+	if IsEmpty(dst.NSXTBGPNeighborConfig2) {
+		dst.NSXTBGPNeighborConfig2 = nil
 	}
 
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
+	mapstructDecode(data, &dst.NSXVBGPNeighborConfig2)
+
+	if IsEmpty(dst.NSXVBGPNeighborConfig2) {
+		dst.NSXVBGPNeighborConfig2 = nil
 	}
 
-	return toSerialize, nil
+	mapstructDecode(data, &dst.MapmapOfStringAny)
+
+	if IsEmpty(dst.MapmapOfStringAny) {
+		dst.MapmapOfStringAny = nil
+	}
+
+	return dst, nil
+}
+
+// Unmarshal JSON data into any of the pointers in the struct
+func (dst *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighborConfig) UnmarshalJSON(data []byte) error {
+	var err error
+	// try to unmarshal JSON data into NSXTBGPNeighborConfig2
+	err = json.Unmarshal(data, &dst.NSXTBGPNeighborConfig2)
+	if err == nil {
+		jsonNSXTBGPNeighborConfig2, _ := json.Marshal(dst.NSXTBGPNeighborConfig2)
+		if string(jsonNSXTBGPNeighborConfig2) == "{}" { // empty struct
+			dst.NSXTBGPNeighborConfig2 = nil
+		} else {
+			return nil // data stored in dst.NSXTBGPNeighborConfig2, return on the first match
+		}
+	} else {
+		dst.NSXTBGPNeighborConfig2 = nil
+	}
+
+	// try to unmarshal JSON data into NSXVBGPNeighborConfig2
+	err = json.Unmarshal(data, &dst.NSXVBGPNeighborConfig2)
+	if err == nil {
+		jsonNSXVBGPNeighborConfig2, _ := json.Marshal(dst.NSXVBGPNeighborConfig2)
+		if string(jsonNSXVBGPNeighborConfig2) == "{}" { // empty struct
+			dst.NSXVBGPNeighborConfig2 = nil
+		} else {
+			return nil // data stored in dst.NSXVBGPNeighborConfig2, return on the first match
+		}
+	} else {
+		dst.NSXVBGPNeighborConfig2 = nil
+	}
+
+	// try to unmarshal JSON data into MapmapOfStringAny
+	err = json.Unmarshal(data, &dst.MapmapOfStringAny)
+	if err == nil {
+		jsonMapmapOfStringAny, _ := json.Marshal(dst.MapmapOfStringAny)
+		if string(jsonMapmapOfStringAny) == "{}" { // empty struct
+			dst.MapmapOfStringAny = nil
+		} else {
+			return nil // data stored in dst.MapmapOfStringAny, return on the first match
+		}
+	} else {
+		dst.MapmapOfStringAny = nil
+	}
+
+	return NewResponseValidationError("data failed to match schemas in anyOf(GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighborConfig)")
+}
+
+// Marshal data from the first non-nil pointers in the struct to JSON
+func (src GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighborConfig) MarshalJSON() ([]byte, error) {
+	if src.NSXTBGPNeighborConfig2 != nil {
+		return json.Marshal(&src.NSXTBGPNeighborConfig2)
+	}
+
+	if src.NSXVBGPNeighborConfig2 != nil {
+		return json.Marshal(&src.NSXVBGPNeighborConfig2)
+	}
+
+	if src.MapmapOfStringAny != nil {
+		return json.Marshal(&src.MapmapOfStringAny)
+	}
+
+	return nil, nil // no data in anyOf schemas
 }
 
 type NullableGetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighborConfig struct {
@@ -140,9 +158,3 @@ func (v NullableGetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighborCo
 
 	return v, nil
 }
-
-func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighborConfig) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
-}
-
-// - model_simple.mustache

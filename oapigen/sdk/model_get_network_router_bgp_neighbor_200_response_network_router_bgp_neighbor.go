@@ -23,6 +23,7 @@ var _ MappedNullable = &GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNe
 type GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor struct {
 	Id                   *int64                                                                `json:"id,omitempty"`
 	IpAddress            *string                                                               `json:"ipAddress,omitempty"`
+	Description          NullableString                                                        `json:"description,omitempty"`
 	ForwardingAddress    NullableString                                                        `json:"forwardingAddress,omitempty"`
 	ProtocolAddress      NullableString                                                        `json:"protocolAddress,omitempty"`
 	RemoteAs             *string                                                               `json:"remoteAs,omitempty"`
@@ -30,21 +31,22 @@ type GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor struct {
 	KeepAlive            *int64                                                                `json:"keepAlive,omitempty"`
 	HoldDown             *int64                                                                `json:"holdDown,omitempty"`
 	Password             NullableString                                                        `json:"password,omitempty"`
-	RouteFilteringType   *string                                                               `json:"routeFilteringType,omitempty"`
-	RouteFilteringIn     *string                                                               `json:"routeFilteringIn,omitempty"`
-	RouteFilteringOut    *string                                                               `json:"routeFilteringOut,omitempty"`
-	BfdEnabled           *bool                                                                 `json:"bfdEnabled,omitempty"`
-	BfdInterval          *int64                                                                `json:"bfdInterval,omitempty"`
-	BfdMultiple          *int64                                                                `json:"bfdMultiple,omitempty"`
-	AllowAsIn            *bool                                                                 `json:"allowAsIn,omitempty"`
-	HopLimit             *int64                                                                `json:"hopLimit,omitempty"`
-	RestartMode          *string                                                               `json:"restartMode,omitempty"`
-	ProviderId           *string                                                               `json:"providerId,omitempty"`
-	SyncSource           *string                                                               `json:"syncSource,omitempty"`
+	PasswordHash         NullableString                                                        `json:"passwordHash,omitempty"`
+	RouteFilteringType   NullableString                                                        `json:"routeFilteringType,omitempty"`
+	RouteFilteringIn     NullableString                                                        `json:"routeFilteringIn,omitempty"`
+	RouteFilteringOut    NullableString                                                        `json:"routeFilteringOut,omitempty"`
+	BfdEnabled           NullableBool                                                          `json:"bfdEnabled,omitempty"`
+	BfdInterval          NullableInt64                                                         `json:"bfdInterval,omitempty"`
+	BfdMultiple          NullableInt64                                                         `json:"bfdMultiple,omitempty"`
+	AllowAsIn            NullableBool                                                          `json:"allowAsIn,omitempty"`
+	HopLimit             NullableInt64                                                         `json:"hopLimit,omitempty"`
+	RestartMode          NullableString                                                        `json:"restartMode,omitempty"`
+	ProviderId           NullableString                                                        `json:"providerId,omitempty"`
+	SyncSource           NullableString                                                        `json:"syncSource,omitempty"`
 	InternalId           NullableString                                                        `json:"internalId,omitempty"`
-	ExternalId           *string                                                               `json:"externalId,omitempty"`
+	ExternalId           NullableString                                                        `json:"externalId,omitempty"`
 	RefType              NullableString                                                        `json:"refType,omitempty"`
-	RefId                NullableString                                                        `json:"refId,omitempty"`
+	RefId                NullableInt64                                                         `json:"refId,omitempty"`
 	Config               *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighborConfig `json:"config,omitempty"`
 	DateCreated          *time.Time                                                            `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                            `json:"lastUpdated,omitempty"`
@@ -132,6 +134,49 @@ func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) IsSetIp
 // SetIpAddress gets a reference to the given string and assigns it to the IpAddress field.
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetIpAddress(v string) {
 	o.IpAddress = &v
+}
+
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetDescription() string {
+	if o == nil || IsNil(o.Description.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.Description.Get()
+}
+
+// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetDescriptionOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Description.Get(), o.Description.IsSet()
+}
+
+// IsSetDescription returns a boolean if a field has been set.
+func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) IsSetDescription() bool {
+	if o != nil && o.Description.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
+func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetDescription(v string) {
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetForwardingAddress returns the ForwardingAddress field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -391,356 +436,520 @@ func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) UnsetPa
 	o.Password.Unset()
 }
 
-// GetRouteFilteringType returns the RouteFilteringType field value if set, zero value otherwise.
-func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetRouteFilteringType() string {
-	if o == nil || IsNil(o.RouteFilteringType) {
+// GetPasswordHash returns the PasswordHash field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetPasswordHash() string {
+	if o == nil || IsNil(o.PasswordHash.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.RouteFilteringType
+	return *o.PasswordHash.Get()
+}
+
+// GetPasswordHashOk returns a tuple with the PasswordHash field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetPasswordHashOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.PasswordHash.Get(), o.PasswordHash.IsSet()
+}
+
+// IsSetPasswordHash returns a boolean if a field has been set.
+func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) IsSetPasswordHash() bool {
+	if o != nil && o.PasswordHash.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetPasswordHash gets a reference to the given NullableString and assigns it to the PasswordHash field.
+func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetPasswordHash(v string) {
+	o.PasswordHash.Set(&v)
+}
+
+// SetPasswordHashNil sets the value for PasswordHash to be an explicit nil
+func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetPasswordHashNil() {
+	o.PasswordHash.Set(nil)
+}
+
+// UnsetPasswordHash ensures that no value is present for PasswordHash, not even an explicit nil
+func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) UnsetPasswordHash() {
+	o.PasswordHash.Unset()
+}
+
+// GetRouteFilteringType returns the RouteFilteringType field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetRouteFilteringType() string {
+	if o == nil || IsNil(o.RouteFilteringType.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.RouteFilteringType.Get()
 }
 
 // GetRouteFilteringTypeOk returns a tuple with the RouteFilteringType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetRouteFilteringTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.RouteFilteringType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RouteFilteringType, true
+	return o.RouteFilteringType.Get(), o.RouteFilteringType.IsSet()
 }
 
 // IsSetRouteFilteringType returns a boolean if a field has been set.
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) IsSetRouteFilteringType() bool {
-	if o != nil && !IsNil(o.RouteFilteringType) {
+	if o != nil && o.RouteFilteringType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRouteFilteringType gets a reference to the given string and assigns it to the RouteFilteringType field.
+// SetRouteFilteringType gets a reference to the given NullableString and assigns it to the RouteFilteringType field.
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetRouteFilteringType(v string) {
-	o.RouteFilteringType = &v
+	o.RouteFilteringType.Set(&v)
 }
 
-// GetRouteFilteringIn returns the RouteFilteringIn field value if set, zero value otherwise.
+// SetRouteFilteringTypeNil sets the value for RouteFilteringType to be an explicit nil
+func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetRouteFilteringTypeNil() {
+	o.RouteFilteringType.Set(nil)
+}
+
+// UnsetRouteFilteringType ensures that no value is present for RouteFilteringType, not even an explicit nil
+func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) UnsetRouteFilteringType() {
+	o.RouteFilteringType.Unset()
+}
+
+// GetRouteFilteringIn returns the RouteFilteringIn field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetRouteFilteringIn() string {
-	if o == nil || IsNil(o.RouteFilteringIn) {
+	if o == nil || IsNil(o.RouteFilteringIn.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.RouteFilteringIn
+	return *o.RouteFilteringIn.Get()
 }
 
 // GetRouteFilteringInOk returns a tuple with the RouteFilteringIn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetRouteFilteringInOk() (*string, bool) {
-	if o == nil || IsNil(o.RouteFilteringIn) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RouteFilteringIn, true
+	return o.RouteFilteringIn.Get(), o.RouteFilteringIn.IsSet()
 }
 
 // IsSetRouteFilteringIn returns a boolean if a field has been set.
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) IsSetRouteFilteringIn() bool {
-	if o != nil && !IsNil(o.RouteFilteringIn) {
+	if o != nil && o.RouteFilteringIn.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRouteFilteringIn gets a reference to the given string and assigns it to the RouteFilteringIn field.
+// SetRouteFilteringIn gets a reference to the given NullableString and assigns it to the RouteFilteringIn field.
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetRouteFilteringIn(v string) {
-	o.RouteFilteringIn = &v
+	o.RouteFilteringIn.Set(&v)
 }
 
-// GetRouteFilteringOut returns the RouteFilteringOut field value if set, zero value otherwise.
+// SetRouteFilteringInNil sets the value for RouteFilteringIn to be an explicit nil
+func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetRouteFilteringInNil() {
+	o.RouteFilteringIn.Set(nil)
+}
+
+// UnsetRouteFilteringIn ensures that no value is present for RouteFilteringIn, not even an explicit nil
+func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) UnsetRouteFilteringIn() {
+	o.RouteFilteringIn.Unset()
+}
+
+// GetRouteFilteringOut returns the RouteFilteringOut field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetRouteFilteringOut() string {
-	if o == nil || IsNil(o.RouteFilteringOut) {
+	if o == nil || IsNil(o.RouteFilteringOut.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.RouteFilteringOut
+	return *o.RouteFilteringOut.Get()
 }
 
 // GetRouteFilteringOutOk returns a tuple with the RouteFilteringOut field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetRouteFilteringOutOk() (*string, bool) {
-	if o == nil || IsNil(o.RouteFilteringOut) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RouteFilteringOut, true
+	return o.RouteFilteringOut.Get(), o.RouteFilteringOut.IsSet()
 }
 
 // IsSetRouteFilteringOut returns a boolean if a field has been set.
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) IsSetRouteFilteringOut() bool {
-	if o != nil && !IsNil(o.RouteFilteringOut) {
+	if o != nil && o.RouteFilteringOut.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRouteFilteringOut gets a reference to the given string and assigns it to the RouteFilteringOut field.
+// SetRouteFilteringOut gets a reference to the given NullableString and assigns it to the RouteFilteringOut field.
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetRouteFilteringOut(v string) {
-	o.RouteFilteringOut = &v
+	o.RouteFilteringOut.Set(&v)
 }
 
-// GetBfdEnabled returns the BfdEnabled field value if set, zero value otherwise.
+// SetRouteFilteringOutNil sets the value for RouteFilteringOut to be an explicit nil
+func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetRouteFilteringOutNil() {
+	o.RouteFilteringOut.Set(nil)
+}
+
+// UnsetRouteFilteringOut ensures that no value is present for RouteFilteringOut, not even an explicit nil
+func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) UnsetRouteFilteringOut() {
+	o.RouteFilteringOut.Unset()
+}
+
+// GetBfdEnabled returns the BfdEnabled field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetBfdEnabled() bool {
-	if o == nil || IsNil(o.BfdEnabled) {
+	if o == nil || IsNil(o.BfdEnabled.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.BfdEnabled
+	return *o.BfdEnabled.Get()
 }
 
 // GetBfdEnabledOk returns a tuple with the BfdEnabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetBfdEnabledOk() (*bool, bool) {
-	if o == nil || IsNil(o.BfdEnabled) {
+	if o == nil {
 		return nil, false
 	}
-	return o.BfdEnabled, true
+	return o.BfdEnabled.Get(), o.BfdEnabled.IsSet()
 }
 
 // IsSetBfdEnabled returns a boolean if a field has been set.
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) IsSetBfdEnabled() bool {
-	if o != nil && !IsNil(o.BfdEnabled) {
+	if o != nil && o.BfdEnabled.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetBfdEnabled gets a reference to the given bool and assigns it to the BfdEnabled field.
+// SetBfdEnabled gets a reference to the given NullableBool and assigns it to the BfdEnabled field.
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetBfdEnabled(v bool) {
-	o.BfdEnabled = &v
+	o.BfdEnabled.Set(&v)
 }
 
-// GetBfdInterval returns the BfdInterval field value if set, zero value otherwise.
+// SetBfdEnabledNil sets the value for BfdEnabled to be an explicit nil
+func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetBfdEnabledNil() {
+	o.BfdEnabled.Set(nil)
+}
+
+// UnsetBfdEnabled ensures that no value is present for BfdEnabled, not even an explicit nil
+func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) UnsetBfdEnabled() {
+	o.BfdEnabled.Unset()
+}
+
+// GetBfdInterval returns the BfdInterval field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetBfdInterval() int64 {
-	if o == nil || IsNil(o.BfdInterval) {
+	if o == nil || IsNil(o.BfdInterval.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.BfdInterval
+	return *o.BfdInterval.Get()
 }
 
 // GetBfdIntervalOk returns a tuple with the BfdInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetBfdIntervalOk() (*int64, bool) {
-	if o == nil || IsNil(o.BfdInterval) {
+	if o == nil {
 		return nil, false
 	}
-	return o.BfdInterval, true
+	return o.BfdInterval.Get(), o.BfdInterval.IsSet()
 }
 
 // IsSetBfdInterval returns a boolean if a field has been set.
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) IsSetBfdInterval() bool {
-	if o != nil && !IsNil(o.BfdInterval) {
+	if o != nil && o.BfdInterval.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetBfdInterval gets a reference to the given int64 and assigns it to the BfdInterval field.
+// SetBfdInterval gets a reference to the given NullableInt64 and assigns it to the BfdInterval field.
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetBfdInterval(v int64) {
-	o.BfdInterval = &v
+	o.BfdInterval.Set(&v)
 }
 
-// GetBfdMultiple returns the BfdMultiple field value if set, zero value otherwise.
+// SetBfdIntervalNil sets the value for BfdInterval to be an explicit nil
+func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetBfdIntervalNil() {
+	o.BfdInterval.Set(nil)
+}
+
+// UnsetBfdInterval ensures that no value is present for BfdInterval, not even an explicit nil
+func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) UnsetBfdInterval() {
+	o.BfdInterval.Unset()
+}
+
+// GetBfdMultiple returns the BfdMultiple field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetBfdMultiple() int64 {
-	if o == nil || IsNil(o.BfdMultiple) {
+	if o == nil || IsNil(o.BfdMultiple.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.BfdMultiple
+	return *o.BfdMultiple.Get()
 }
 
 // GetBfdMultipleOk returns a tuple with the BfdMultiple field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetBfdMultipleOk() (*int64, bool) {
-	if o == nil || IsNil(o.BfdMultiple) {
+	if o == nil {
 		return nil, false
 	}
-	return o.BfdMultiple, true
+	return o.BfdMultiple.Get(), o.BfdMultiple.IsSet()
 }
 
 // IsSetBfdMultiple returns a boolean if a field has been set.
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) IsSetBfdMultiple() bool {
-	if o != nil && !IsNil(o.BfdMultiple) {
+	if o != nil && o.BfdMultiple.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetBfdMultiple gets a reference to the given int64 and assigns it to the BfdMultiple field.
+// SetBfdMultiple gets a reference to the given NullableInt64 and assigns it to the BfdMultiple field.
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetBfdMultiple(v int64) {
-	o.BfdMultiple = &v
+	o.BfdMultiple.Set(&v)
 }
 
-// GetAllowAsIn returns the AllowAsIn field value if set, zero value otherwise.
+// SetBfdMultipleNil sets the value for BfdMultiple to be an explicit nil
+func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetBfdMultipleNil() {
+	o.BfdMultiple.Set(nil)
+}
+
+// UnsetBfdMultiple ensures that no value is present for BfdMultiple, not even an explicit nil
+func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) UnsetBfdMultiple() {
+	o.BfdMultiple.Unset()
+}
+
+// GetAllowAsIn returns the AllowAsIn field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetAllowAsIn() bool {
-	if o == nil || IsNil(o.AllowAsIn) {
+	if o == nil || IsNil(o.AllowAsIn.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.AllowAsIn
+	return *o.AllowAsIn.Get()
 }
 
 // GetAllowAsInOk returns a tuple with the AllowAsIn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetAllowAsInOk() (*bool, bool) {
-	if o == nil || IsNil(o.AllowAsIn) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AllowAsIn, true
+	return o.AllowAsIn.Get(), o.AllowAsIn.IsSet()
 }
 
 // IsSetAllowAsIn returns a boolean if a field has been set.
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) IsSetAllowAsIn() bool {
-	if o != nil && !IsNil(o.AllowAsIn) {
+	if o != nil && o.AllowAsIn.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAllowAsIn gets a reference to the given bool and assigns it to the AllowAsIn field.
+// SetAllowAsIn gets a reference to the given NullableBool and assigns it to the AllowAsIn field.
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetAllowAsIn(v bool) {
-	o.AllowAsIn = &v
+	o.AllowAsIn.Set(&v)
 }
 
-// GetHopLimit returns the HopLimit field value if set, zero value otherwise.
+// SetAllowAsInNil sets the value for AllowAsIn to be an explicit nil
+func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetAllowAsInNil() {
+	o.AllowAsIn.Set(nil)
+}
+
+// UnsetAllowAsIn ensures that no value is present for AllowAsIn, not even an explicit nil
+func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) UnsetAllowAsIn() {
+	o.AllowAsIn.Unset()
+}
+
+// GetHopLimit returns the HopLimit field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetHopLimit() int64 {
-	if o == nil || IsNil(o.HopLimit) {
+	if o == nil || IsNil(o.HopLimit.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.HopLimit
+	return *o.HopLimit.Get()
 }
 
 // GetHopLimitOk returns a tuple with the HopLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetHopLimitOk() (*int64, bool) {
-	if o == nil || IsNil(o.HopLimit) {
+	if o == nil {
 		return nil, false
 	}
-	return o.HopLimit, true
+	return o.HopLimit.Get(), o.HopLimit.IsSet()
 }
 
 // IsSetHopLimit returns a boolean if a field has been set.
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) IsSetHopLimit() bool {
-	if o != nil && !IsNil(o.HopLimit) {
+	if o != nil && o.HopLimit.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetHopLimit gets a reference to the given int64 and assigns it to the HopLimit field.
+// SetHopLimit gets a reference to the given NullableInt64 and assigns it to the HopLimit field.
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetHopLimit(v int64) {
-	o.HopLimit = &v
+	o.HopLimit.Set(&v)
 }
 
-// GetRestartMode returns the RestartMode field value if set, zero value otherwise.
+// SetHopLimitNil sets the value for HopLimit to be an explicit nil
+func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetHopLimitNil() {
+	o.HopLimit.Set(nil)
+}
+
+// UnsetHopLimit ensures that no value is present for HopLimit, not even an explicit nil
+func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) UnsetHopLimit() {
+	o.HopLimit.Unset()
+}
+
+// GetRestartMode returns the RestartMode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetRestartMode() string {
-	if o == nil || IsNil(o.RestartMode) {
+	if o == nil || IsNil(o.RestartMode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.RestartMode
+	return *o.RestartMode.Get()
 }
 
 // GetRestartModeOk returns a tuple with the RestartMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetRestartModeOk() (*string, bool) {
-	if o == nil || IsNil(o.RestartMode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RestartMode, true
+	return o.RestartMode.Get(), o.RestartMode.IsSet()
 }
 
 // IsSetRestartMode returns a boolean if a field has been set.
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) IsSetRestartMode() bool {
-	if o != nil && !IsNil(o.RestartMode) {
+	if o != nil && o.RestartMode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRestartMode gets a reference to the given string and assigns it to the RestartMode field.
+// SetRestartMode gets a reference to the given NullableString and assigns it to the RestartMode field.
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetRestartMode(v string) {
-	o.RestartMode = &v
+	o.RestartMode.Set(&v)
 }
 
-// GetProviderId returns the ProviderId field value if set, zero value otherwise.
+// SetRestartModeNil sets the value for RestartMode to be an explicit nil
+func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetRestartModeNil() {
+	o.RestartMode.Set(nil)
+}
+
+// UnsetRestartMode ensures that no value is present for RestartMode, not even an explicit nil
+func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) UnsetRestartMode() {
+	o.RestartMode.Unset()
+}
+
+// GetProviderId returns the ProviderId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetProviderId() string {
-	if o == nil || IsNil(o.ProviderId) {
+	if o == nil || IsNil(o.ProviderId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ProviderId
+	return *o.ProviderId.Get()
 }
 
 // GetProviderIdOk returns a tuple with the ProviderId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetProviderIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ProviderId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ProviderId, true
+	return o.ProviderId.Get(), o.ProviderId.IsSet()
 }
 
 // IsSetProviderId returns a boolean if a field has been set.
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) IsSetProviderId() bool {
-	if o != nil && !IsNil(o.ProviderId) {
+	if o != nil && o.ProviderId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetProviderId gets a reference to the given string and assigns it to the ProviderId field.
+// SetProviderId gets a reference to the given NullableString and assigns it to the ProviderId field.
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetProviderId(v string) {
-	o.ProviderId = &v
+	o.ProviderId.Set(&v)
 }
 
-// GetSyncSource returns the SyncSource field value if set, zero value otherwise.
+// SetProviderIdNil sets the value for ProviderId to be an explicit nil
+func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetProviderIdNil() {
+	o.ProviderId.Set(nil)
+}
+
+// UnsetProviderId ensures that no value is present for ProviderId, not even an explicit nil
+func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) UnsetProviderId() {
+	o.ProviderId.Unset()
+}
+
+// GetSyncSource returns the SyncSource field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetSyncSource() string {
-	if o == nil || IsNil(o.SyncSource) {
+	if o == nil || IsNil(o.SyncSource.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SyncSource
+	return *o.SyncSource.Get()
 }
 
 // GetSyncSourceOk returns a tuple with the SyncSource field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetSyncSourceOk() (*string, bool) {
-	if o == nil || IsNil(o.SyncSource) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SyncSource, true
+	return o.SyncSource.Get(), o.SyncSource.IsSet()
 }
 
 // IsSetSyncSource returns a boolean if a field has been set.
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) IsSetSyncSource() bool {
-	if o != nil && !IsNil(o.SyncSource) {
+	if o != nil && o.SyncSource.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSyncSource gets a reference to the given string and assigns it to the SyncSource field.
+// SetSyncSource gets a reference to the given NullableString and assigns it to the SyncSource field.
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetSyncSource(v string) {
-	o.SyncSource = &v
+	o.SyncSource.Set(&v)
+}
+
+// SetSyncSourceNil sets the value for SyncSource to be an explicit nil
+func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetSyncSourceNil() {
+	o.SyncSource.Set(nil)
+}
+
+// UnsetSyncSource ensures that no value is present for SyncSource, not even an explicit nil
+func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) UnsetSyncSource() {
+	o.SyncSource.Unset()
 }
 
 // GetInternalId returns the InternalId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -786,36 +995,47 @@ func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) UnsetIn
 	o.InternalId.Unset()
 }
 
-// GetExternalId returns the ExternalId field value if set, zero value otherwise.
+// GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetExternalId() string {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil || IsNil(o.ExternalId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ExternalId
+	return *o.ExternalId.Get()
 }
 
 // GetExternalIdOk returns a tuple with the ExternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetExternalIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExternalId, true
+	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
 // IsSetExternalId returns a boolean if a field has been set.
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
+	if o != nil && o.ExternalId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
+// SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetExternalId(v string) {
-	o.ExternalId = &v
+	o.ExternalId.Set(&v)
+}
+
+// SetExternalIdNil sets the value for ExternalId to be an explicit nil
+func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetExternalIdNil() {
+	o.ExternalId.Set(nil)
+}
+
+// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
+func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) UnsetExternalId() {
+	o.ExternalId.Unset()
 }
 
 // GetRefType returns the RefType field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -862,9 +1082,9 @@ func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) UnsetRe
 }
 
 // GetRefId returns the RefId field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetRefId() string {
+func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetRefId() int64 {
 	if o == nil || IsNil(o.RefId.Get()) {
-		var ret string
+		var ret int64
 		return ret
 	}
 	return *o.RefId.Get()
@@ -873,7 +1093,7 @@ func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetRefI
 // GetRefIdOk returns a tuple with the RefId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetRefIdOk() (*string, bool) {
+func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetRefIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -889,8 +1109,8 @@ func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) IsSetRe
 	return false
 }
 
-// SetRefId gets a reference to the given NullableString and assigns it to the RefId field.
-func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetRefId(v string) {
+// SetRefId gets a reference to the given NullableInt64 and assigns it to the RefId field.
+func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetRefId(v int64) {
 	o.RefId.Set(&v)
 }
 
@@ -1016,6 +1236,9 @@ func (o GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) ToMap() 
 	if !IsNil(o.IpAddress) {
 		toSerialize["ipAddress"] = o.IpAddress
 	}
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
+	}
 	if o.ForwardingAddress.IsSet() {
 		toSerialize["forwardingAddress"] = o.ForwardingAddress.Get()
 	}
@@ -1037,44 +1260,47 @@ func (o GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) ToMap() 
 	if o.Password.IsSet() {
 		toSerialize["password"] = o.Password.Get()
 	}
-	if !IsNil(o.RouteFilteringType) {
-		toSerialize["routeFilteringType"] = o.RouteFilteringType
+	if o.PasswordHash.IsSet() {
+		toSerialize["passwordHash"] = o.PasswordHash.Get()
 	}
-	if !IsNil(o.RouteFilteringIn) {
-		toSerialize["routeFilteringIn"] = o.RouteFilteringIn
+	if o.RouteFilteringType.IsSet() {
+		toSerialize["routeFilteringType"] = o.RouteFilteringType.Get()
 	}
-	if !IsNil(o.RouteFilteringOut) {
-		toSerialize["routeFilteringOut"] = o.RouteFilteringOut
+	if o.RouteFilteringIn.IsSet() {
+		toSerialize["routeFilteringIn"] = o.RouteFilteringIn.Get()
 	}
-	if !IsNil(o.BfdEnabled) {
-		toSerialize["bfdEnabled"] = o.BfdEnabled
+	if o.RouteFilteringOut.IsSet() {
+		toSerialize["routeFilteringOut"] = o.RouteFilteringOut.Get()
 	}
-	if !IsNil(o.BfdInterval) {
-		toSerialize["bfdInterval"] = o.BfdInterval
+	if o.BfdEnabled.IsSet() {
+		toSerialize["bfdEnabled"] = o.BfdEnabled.Get()
 	}
-	if !IsNil(o.BfdMultiple) {
-		toSerialize["bfdMultiple"] = o.BfdMultiple
+	if o.BfdInterval.IsSet() {
+		toSerialize["bfdInterval"] = o.BfdInterval.Get()
 	}
-	if !IsNil(o.AllowAsIn) {
-		toSerialize["allowAsIn"] = o.AllowAsIn
+	if o.BfdMultiple.IsSet() {
+		toSerialize["bfdMultiple"] = o.BfdMultiple.Get()
 	}
-	if !IsNil(o.HopLimit) {
-		toSerialize["hopLimit"] = o.HopLimit
+	if o.AllowAsIn.IsSet() {
+		toSerialize["allowAsIn"] = o.AllowAsIn.Get()
 	}
-	if !IsNil(o.RestartMode) {
-		toSerialize["restartMode"] = o.RestartMode
+	if o.HopLimit.IsSet() {
+		toSerialize["hopLimit"] = o.HopLimit.Get()
 	}
-	if !IsNil(o.ProviderId) {
-		toSerialize["providerId"] = o.ProviderId
+	if o.RestartMode.IsSet() {
+		toSerialize["restartMode"] = o.RestartMode.Get()
 	}
-	if !IsNil(o.SyncSource) {
-		toSerialize["syncSource"] = o.SyncSource
+	if o.ProviderId.IsSet() {
+		toSerialize["providerId"] = o.ProviderId.Get()
+	}
+	if o.SyncSource.IsSet() {
+		toSerialize["syncSource"] = o.SyncSource.Get()
 	}
 	if o.InternalId.IsSet() {
 		toSerialize["internalId"] = o.InternalId.Get()
 	}
-	if !IsNil(o.ExternalId) {
-		toSerialize["externalId"] = o.ExternalId
+	if o.ExternalId.IsSet() {
+		toSerialize["externalId"] = o.ExternalId.Get()
 	}
 	if o.RefType.IsSet() {
 		toSerialize["refType"] = o.RefType.Get()

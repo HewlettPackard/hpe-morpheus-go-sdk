@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **IpAddress** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **ForwardingAddress** | Pointer to **NullableString** |  | [optional] 
 **ProtocolAddress** | Pointer to **NullableString** |  | [optional] 
 **RemoteAs** | Pointer to **string** |  | [optional] 
@@ -13,21 +14,22 @@ Name | Type | Description | Notes
 **KeepAlive** | Pointer to **int64** |  | [optional] 
 **HoldDown** | Pointer to **int64** |  | [optional] 
 **Password** | Pointer to **NullableString** |  | [optional] 
-**RouteFilteringType** | Pointer to **string** |  | [optional] 
-**RouteFilteringIn** | Pointer to **string** |  | [optional] 
-**RouteFilteringOut** | Pointer to **string** |  | [optional] 
-**BfdEnabled** | Pointer to **bool** |  | [optional] 
-**BfdInterval** | Pointer to **int64** |  | [optional] 
-**BfdMultiple** | Pointer to **int64** |  | [optional] 
-**AllowAsIn** | Pointer to **bool** |  | [optional] 
-**HopLimit** | Pointer to **int64** |  | [optional] 
-**RestartMode** | Pointer to **string** |  | [optional] 
-**ProviderId** | Pointer to **string** |  | [optional] 
-**SyncSource** | Pointer to **string** |  | [optional] 
+**PasswordHash** | Pointer to **NullableString** |  | [optional] 
+**RouteFilteringType** | Pointer to **NullableString** |  | [optional] 
+**RouteFilteringIn** | Pointer to **NullableString** |  | [optional] 
+**RouteFilteringOut** | Pointer to **NullableString** |  | [optional] 
+**BfdEnabled** | Pointer to **NullableBool** |  | [optional] 
+**BfdInterval** | Pointer to **NullableInt64** |  | [optional] 
+**BfdMultiple** | Pointer to **NullableInt64** |  | [optional] 
+**AllowAsIn** | Pointer to **NullableBool** |  | [optional] 
+**HopLimit** | Pointer to **NullableInt64** |  | [optional] 
+**RestartMode** | Pointer to **NullableString** |  | [optional] 
+**ProviderId** | Pointer to **NullableString** |  | [optional] 
+**SyncSource** | Pointer to **NullableString** |  | [optional] 
 **InternalId** | Pointer to **NullableString** |  | [optional] 
-**ExternalId** | Pointer to **string** |  | [optional] 
+**ExternalId** | Pointer to **NullableString** |  | [optional] 
 **RefType** | Pointer to **NullableString** |  | [optional] 
-**RefId** | Pointer to **NullableString** |  | [optional] 
+**RefId** | Pointer to **NullableInt64** |  | [optional] 
 **Config** | Pointer to [**GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighborConfig**](GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighborConfig.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
@@ -101,6 +103,41 @@ SetIpAddress sets IpAddress field to given value.
 
 HasIpAddress returns a boolean if a field has been set.
 
+### GetDescription
+
+`func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
+
+### SetDescriptionNil
+
+`func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetForwardingAddress
 
 `func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetForwardingAddress() string`
@@ -306,6 +343,41 @@ HasPassword returns a boolean if a field has been set.
 `func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) UnsetPassword()`
 
 UnsetPassword ensures that no value is present for Password, not even an explicit nil
+### GetPasswordHash
+
+`func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetPasswordHash() string`
+
+GetPasswordHash returns the PasswordHash field if non-nil, zero value otherwise.
+
+### GetPasswordHashOk
+
+`func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetPasswordHashOk() (*string, bool)`
+
+GetPasswordHashOk returns a tuple with the PasswordHash field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPasswordHash
+
+`func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetPasswordHash(v string)`
+
+SetPasswordHash sets PasswordHash field to given value.
+
+### HasPasswordHash
+
+`func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) HasPasswordHash() bool`
+
+HasPasswordHash returns a boolean if a field has been set.
+
+### SetPasswordHashNil
+
+`func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetPasswordHashNil(b bool)`
+
+ SetPasswordHashNil sets the value for PasswordHash to be an explicit nil
+
+### UnsetPasswordHash
+`func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) UnsetPasswordHash()`
+
+UnsetPasswordHash ensures that no value is present for PasswordHash, not even an explicit nil
 ### GetRouteFilteringType
 
 `func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetRouteFilteringType() string`
@@ -331,6 +403,16 @@ SetRouteFilteringType sets RouteFilteringType field to given value.
 
 HasRouteFilteringType returns a boolean if a field has been set.
 
+### SetRouteFilteringTypeNil
+
+`func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetRouteFilteringTypeNil(b bool)`
+
+ SetRouteFilteringTypeNil sets the value for RouteFilteringType to be an explicit nil
+
+### UnsetRouteFilteringType
+`func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) UnsetRouteFilteringType()`
+
+UnsetRouteFilteringType ensures that no value is present for RouteFilteringType, not even an explicit nil
 ### GetRouteFilteringIn
 
 `func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetRouteFilteringIn() string`
@@ -356,6 +438,16 @@ SetRouteFilteringIn sets RouteFilteringIn field to given value.
 
 HasRouteFilteringIn returns a boolean if a field has been set.
 
+### SetRouteFilteringInNil
+
+`func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetRouteFilteringInNil(b bool)`
+
+ SetRouteFilteringInNil sets the value for RouteFilteringIn to be an explicit nil
+
+### UnsetRouteFilteringIn
+`func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) UnsetRouteFilteringIn()`
+
+UnsetRouteFilteringIn ensures that no value is present for RouteFilteringIn, not even an explicit nil
 ### GetRouteFilteringOut
 
 `func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetRouteFilteringOut() string`
@@ -381,6 +473,16 @@ SetRouteFilteringOut sets RouteFilteringOut field to given value.
 
 HasRouteFilteringOut returns a boolean if a field has been set.
 
+### SetRouteFilteringOutNil
+
+`func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetRouteFilteringOutNil(b bool)`
+
+ SetRouteFilteringOutNil sets the value for RouteFilteringOut to be an explicit nil
+
+### UnsetRouteFilteringOut
+`func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) UnsetRouteFilteringOut()`
+
+UnsetRouteFilteringOut ensures that no value is present for RouteFilteringOut, not even an explicit nil
 ### GetBfdEnabled
 
 `func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetBfdEnabled() bool`
@@ -406,6 +508,16 @@ SetBfdEnabled sets BfdEnabled field to given value.
 
 HasBfdEnabled returns a boolean if a field has been set.
 
+### SetBfdEnabledNil
+
+`func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetBfdEnabledNil(b bool)`
+
+ SetBfdEnabledNil sets the value for BfdEnabled to be an explicit nil
+
+### UnsetBfdEnabled
+`func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) UnsetBfdEnabled()`
+
+UnsetBfdEnabled ensures that no value is present for BfdEnabled, not even an explicit nil
 ### GetBfdInterval
 
 `func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetBfdInterval() int64`
@@ -431,6 +543,16 @@ SetBfdInterval sets BfdInterval field to given value.
 
 HasBfdInterval returns a boolean if a field has been set.
 
+### SetBfdIntervalNil
+
+`func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetBfdIntervalNil(b bool)`
+
+ SetBfdIntervalNil sets the value for BfdInterval to be an explicit nil
+
+### UnsetBfdInterval
+`func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) UnsetBfdInterval()`
+
+UnsetBfdInterval ensures that no value is present for BfdInterval, not even an explicit nil
 ### GetBfdMultiple
 
 `func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetBfdMultiple() int64`
@@ -456,6 +578,16 @@ SetBfdMultiple sets BfdMultiple field to given value.
 
 HasBfdMultiple returns a boolean if a field has been set.
 
+### SetBfdMultipleNil
+
+`func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetBfdMultipleNil(b bool)`
+
+ SetBfdMultipleNil sets the value for BfdMultiple to be an explicit nil
+
+### UnsetBfdMultiple
+`func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) UnsetBfdMultiple()`
+
+UnsetBfdMultiple ensures that no value is present for BfdMultiple, not even an explicit nil
 ### GetAllowAsIn
 
 `func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetAllowAsIn() bool`
@@ -481,6 +613,16 @@ SetAllowAsIn sets AllowAsIn field to given value.
 
 HasAllowAsIn returns a boolean if a field has been set.
 
+### SetAllowAsInNil
+
+`func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetAllowAsInNil(b bool)`
+
+ SetAllowAsInNil sets the value for AllowAsIn to be an explicit nil
+
+### UnsetAllowAsIn
+`func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) UnsetAllowAsIn()`
+
+UnsetAllowAsIn ensures that no value is present for AllowAsIn, not even an explicit nil
 ### GetHopLimit
 
 `func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetHopLimit() int64`
@@ -506,6 +648,16 @@ SetHopLimit sets HopLimit field to given value.
 
 HasHopLimit returns a boolean if a field has been set.
 
+### SetHopLimitNil
+
+`func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetHopLimitNil(b bool)`
+
+ SetHopLimitNil sets the value for HopLimit to be an explicit nil
+
+### UnsetHopLimit
+`func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) UnsetHopLimit()`
+
+UnsetHopLimit ensures that no value is present for HopLimit, not even an explicit nil
 ### GetRestartMode
 
 `func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetRestartMode() string`
@@ -531,6 +683,16 @@ SetRestartMode sets RestartMode field to given value.
 
 HasRestartMode returns a boolean if a field has been set.
 
+### SetRestartModeNil
+
+`func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetRestartModeNil(b bool)`
+
+ SetRestartModeNil sets the value for RestartMode to be an explicit nil
+
+### UnsetRestartMode
+`func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) UnsetRestartMode()`
+
+UnsetRestartMode ensures that no value is present for RestartMode, not even an explicit nil
 ### GetProviderId
 
 `func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetProviderId() string`
@@ -556,6 +718,16 @@ SetProviderId sets ProviderId field to given value.
 
 HasProviderId returns a boolean if a field has been set.
 
+### SetProviderIdNil
+
+`func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetProviderIdNil(b bool)`
+
+ SetProviderIdNil sets the value for ProviderId to be an explicit nil
+
+### UnsetProviderId
+`func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) UnsetProviderId()`
+
+UnsetProviderId ensures that no value is present for ProviderId, not even an explicit nil
 ### GetSyncSource
 
 `func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetSyncSource() string`
@@ -581,6 +753,16 @@ SetSyncSource sets SyncSource field to given value.
 
 HasSyncSource returns a boolean if a field has been set.
 
+### SetSyncSourceNil
+
+`func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetSyncSourceNil(b bool)`
+
+ SetSyncSourceNil sets the value for SyncSource to be an explicit nil
+
+### UnsetSyncSource
+`func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) UnsetSyncSource()`
+
+UnsetSyncSource ensures that no value is present for SyncSource, not even an explicit nil
 ### GetInternalId
 
 `func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetInternalId() string`
@@ -641,6 +823,16 @@ SetExternalId sets ExternalId field to given value.
 
 HasExternalId returns a boolean if a field has been set.
 
+### SetExternalIdNil
+
+`func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetExternalIdNil(b bool)`
+
+ SetExternalIdNil sets the value for ExternalId to be an explicit nil
+
+### UnsetExternalId
+`func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) UnsetExternalId()`
+
+UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
 ### GetRefType
 
 `func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetRefType() string`
@@ -678,20 +870,20 @@ HasRefType returns a boolean if a field has been set.
 UnsetRefType ensures that no value is present for RefType, not even an explicit nil
 ### GetRefId
 
-`func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetRefId() string`
+`func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetRefId() int64`
 
 GetRefId returns the RefId field if non-nil, zero value otherwise.
 
 ### GetRefIdOk
 
-`func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetRefIdOk() (*string, bool)`
+`func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) GetRefIdOk() (*int64, bool)`
 
 GetRefIdOk returns a tuple with the RefId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRefId
 
-`func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetRefId(v string)`
+`func (o *GetNetworkRouterBgpNeighbor200ResponseNetworkRouterBgpNeighbor) SetRefId(v int64)`
 
 SetRefId sets RefId field to given value.
 

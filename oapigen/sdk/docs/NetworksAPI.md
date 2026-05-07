@@ -976,7 +976,7 @@ import (
 )
 
 func main() {
-	routerId := float32(4) // float32 | Router ID
+	routerId := int64(4) // int64 | Router ID
 	createNetworkRouterBgpNeighborRequest := *openapiclient.NewCreateNetworkRouterBgpNeighborRequest() // CreateNetworkRouterBgpNeighborRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -997,7 +997,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**routerId** | **float32** | Router ID | 
+**routerId** | **int64** | Router ID | 
 
 ### Other Parameters
 
@@ -1048,7 +1048,7 @@ import (
 )
 
 func main() {
-	routerId := float32(4) // float32 | Router ID
+	routerId := int64(4) // int64 | Router ID
 	createNetworkRouterFirewallRuleRequest := *openapiclient.NewCreateNetworkRouterFirewallRuleRequest() // CreateNetworkRouterFirewallRuleRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -1069,7 +1069,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**routerId** | **float32** | Router ID | 
+**routerId** | **int64** | Router ID | 
 
 ### Other Parameters
 
@@ -1120,7 +1120,7 @@ import (
 )
 
 func main() {
-	routerId := float32(4) // float32 | Router ID
+	routerId := int64(4) // int64 | Router ID
 	createNetworkRouterFirewallRuleGroupRequest := *openapiclient.NewCreateNetworkRouterFirewallRuleGroupRequest() // CreateNetworkRouterFirewallRuleGroupRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -1141,7 +1141,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**routerId** | **float32** | Router ID | 
+**routerId** | **int64** | Router ID | 
 
 ### Other Parameters
 
@@ -1192,7 +1192,7 @@ import (
 )
 
 func main() {
-	routerId := float32(4) // float32 | Router ID
+	routerId := int64(4) // int64 | Router ID
 	createNetworkRouterNatRequest := *openapiclient.NewCreateNetworkRouterNatRequest() // CreateNetworkRouterNatRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -1213,7 +1213,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**routerId** | **float32** | Router ID | 
+**routerId** | **int64** | Router ID | 
 
 ### Other Parameters
 
@@ -1264,7 +1264,7 @@ import (
 )
 
 func main() {
-	routerId := float32(4) // float32 | Router ID
+	routerId := int64(4) // int64 | Router ID
 	createNetworkRouterRouteRequest := *openapiclient.NewCreateNetworkRouterRouteRequest() // CreateNetworkRouterRouteRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -1285,7 +1285,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**routerId** | **float32** | Router ID | 
+**routerId** | **int64** | Router ID | 
 
 ### Other Parameters
 
@@ -2606,7 +2606,7 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	routerId := float32(4) // float32 | Router ID
+	routerId := int64(4) // int64 | Router ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2627,7 +2627,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **id** | **int64** | Morpheus ID of the Object being referenced | 
-**routerId** | **float32** | Router ID | 
+**routerId** | **int64** | Router ID | 
 
 ### Other Parameters
 
@@ -2679,7 +2679,7 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	routerId := float32(4) // float32 | Router ID
+	routerId := int64(4) // int64 | Router ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2700,7 +2700,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **id** | **int64** | Morpheus ID of the Object being referenced | 
-**routerId** | **float32** | Router ID | 
+**routerId** | **int64** | Router ID | 
 
 ### Other Parameters
 
@@ -2752,7 +2752,7 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	routerId := float32(4) // float32 | Router ID
+	routerId := int64(4) // int64 | Router ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2773,7 +2773,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **id** | **int64** | Morpheus ID of the Object being referenced | 
-**routerId** | **float32** | Router ID | 
+**routerId** | **int64** | Router ID | 
 
 ### Other Parameters
 
@@ -2825,7 +2825,7 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	routerId := float32(4) // float32 | Router ID
+	routerId := int64(4) // int64 | Router ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2846,7 +2846,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **id** | **int64** | Morpheus ID of the Object being referenced | 
-**routerId** | **float32** | Router ID | 
+**routerId** | **int64** | Router ID | 
 
 ### Other Parameters
 
@@ -2898,7 +2898,7 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	routerId := float32(4) // float32 | Router ID
+	routerId := int64(4) // int64 | Router ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2919,7 +2919,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **id** | **int64** | Morpheus ID of the Object being referenced | 
-**routerId** | **float32** | Router ID | 
+**routerId** | **int64** | Router ID | 
 
 ### Other Parameters
 
@@ -5213,7 +5213,7 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	routerId := float32(4) // float32 | Router ID
+	routerId := int64(4) // int64 | Router ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5234,7 +5234,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **id** | **int64** | Morpheus ID of the Object being referenced | 
-**routerId** | **float32** | Router ID | 
+**routerId** | **int64** | Router ID | 
 
 ### Other Parameters
 
@@ -5286,7 +5286,7 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	routerId := float32(4) // float32 | Router ID
+	routerId := int64(4) // int64 | Router ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5307,7 +5307,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **id** | **int64** | Morpheus ID of the Object being referenced | 
-**routerId** | **float32** | Router ID | 
+**routerId** | **int64** | Router ID | 
 
 ### Other Parameters
 
@@ -5359,7 +5359,7 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	routerId := float32(4) // float32 | Router ID
+	routerId := int64(4) // int64 | Router ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5380,7 +5380,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **id** | **int64** | Morpheus ID of the Object being referenced | 
-**routerId** | **float32** | Router ID | 
+**routerId** | **int64** | Router ID | 
 
 ### Other Parameters
 
@@ -5431,7 +5431,7 @@ import (
 )
 
 func main() {
-	routerId := float32(4) // float32 | Router ID
+	routerId := int64(4) // int64 | Router ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5451,7 +5451,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**routerId** | **float32** | Router ID | 
+**routerId** | **int64** | Router ID | 
 
 ### Other Parameters
 
@@ -5502,7 +5502,7 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	routerId := float32(4) // float32 | Router ID
+	routerId := int64(4) // int64 | Router ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5523,7 +5523,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **id** | **int64** | Morpheus ID of the Object being referenced | 
-**routerId** | **float32** | Router ID | 
+**routerId** | **int64** | Router ID | 
 
 ### Other Parameters
 
@@ -5575,7 +5575,7 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	routerId := float32(4) // float32 | Router ID
+	routerId := int64(4) // int64 | Router ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5596,7 +5596,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **id** | **int64** | Morpheus ID of the Object being referenced | 
-**routerId** | **float32** | Router ID | 
+**routerId** | **int64** | Router ID | 
 
 ### Other Parameters
 
@@ -5778,7 +5778,7 @@ import (
 )
 
 func main() {
-	routerId := float32(4) // float32 | Router ID
+	routerId := int64(4) // int64 | Router ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5798,7 +5798,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**routerId** | **float32** | Router ID | 
+**routerId** | **int64** | Router ID | 
 
 ### Other Parameters
 
@@ -5848,7 +5848,7 @@ import (
 )
 
 func main() {
-	routerId := float32(4) // float32 | Router ID
+	routerId := int64(4) // int64 | Router ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5868,7 +5868,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**routerId** | **float32** | Router ID | 
+**routerId** | **int64** | Router ID | 
 
 ### Other Parameters
 
@@ -5918,7 +5918,7 @@ import (
 )
 
 func main() {
-	routerId := float32(4) // float32 | Router ID
+	routerId := int64(4) // int64 | Router ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5938,7 +5938,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**routerId** | **float32** | Router ID | 
+**routerId** | **int64** | Router ID | 
 
 ### Other Parameters
 
@@ -5988,7 +5988,7 @@ import (
 )
 
 func main() {
-	routerId := float32(4) // float32 | Router ID
+	routerId := int64(4) // int64 | Router ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6008,7 +6008,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**routerId** | **float32** | Router ID | 
+**routerId** | **int64** | Router ID | 
 
 ### Other Parameters
 
@@ -8454,7 +8454,7 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	routerId := float32(4) // float32 | Router ID
+	routerId := int64(4) // int64 | Router ID
 	updateNetworkRouterBgpNeighborRequest := *openapiclient.NewUpdateNetworkRouterBgpNeighborRequest() // UpdateNetworkRouterBgpNeighborRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -8476,7 +8476,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **id** | **int64** | Morpheus ID of the Object being referenced | 
-**routerId** | **float32** | Router ID | 
+**routerId** | **int64** | Router ID | 
 
 ### Other Parameters
 
@@ -8529,7 +8529,7 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	routerId := float32(4) // float32 | Router ID
+	routerId := int64(4) // int64 | Router ID
 	updateNetworkRouterFirewallRuleRequest := *openapiclient.NewUpdateNetworkRouterFirewallRuleRequest() // UpdateNetworkRouterFirewallRuleRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -8551,7 +8551,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **id** | **int64** | Morpheus ID of the Object being referenced | 
-**routerId** | **float32** | Router ID | 
+**routerId** | **int64** | Router ID | 
 
 ### Other Parameters
 
@@ -8604,7 +8604,7 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	routerId := float32(4) // float32 | Router ID
+	routerId := int64(4) // int64 | Router ID
 	updateNetworkRouterFirewallRuleGroupRequest := *openapiclient.NewUpdateNetworkRouterFirewallRuleGroupRequest() // UpdateNetworkRouterFirewallRuleGroupRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -8626,7 +8626,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **id** | **int64** | Morpheus ID of the Object being referenced | 
-**routerId** | **float32** | Router ID | 
+**routerId** | **int64** | Router ID | 
 
 ### Other Parameters
 
@@ -8679,7 +8679,7 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	routerId := float32(4) // float32 | Router ID
+	routerId := int64(4) // int64 | Router ID
 	updateNetworkRouterNatRequest := *openapiclient.NewUpdateNetworkRouterNatRequest() // UpdateNetworkRouterNatRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -8701,7 +8701,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **id** | **int64** | Morpheus ID of the Object being referenced | 
-**routerId** | **float32** | Router ID | 
+**routerId** | **int64** | Router ID | 
 
 ### Other Parameters
 
@@ -8753,7 +8753,7 @@ import (
 )
 
 func main() {
-	routerId := float32(4) // float32 | Router ID
+	routerId := int64(4) // int64 | Router ID
 	updateNetworkRouterPermissionsRequest := *openapiclient.NewUpdateNetworkRouterPermissionsRequest() // UpdateNetworkRouterPermissionsRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -8774,7 +8774,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**routerId** | **float32** | Router ID | 
+**routerId** | **int64** | Router ID | 
 
 ### Other Parameters
 

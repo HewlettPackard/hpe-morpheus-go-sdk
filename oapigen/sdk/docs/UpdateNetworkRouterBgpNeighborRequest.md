@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**NetworkRouterBgpNeighbor** | Pointer to **map[string]interface{}** | For a full list of available BGP Neighbor options, see bgpOptionTypes in the specific Network Router Type | [optional] 
+**NetworkRouterBgpNeighbor** | Pointer to [**UpdateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor**](UpdateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetNetworkRouterBgpNeighbor
 
-`func (o *UpdateNetworkRouterBgpNeighborRequest) GetNetworkRouterBgpNeighbor() map[string]interface{}`
+`func (o *UpdateNetworkRouterBgpNeighborRequest) GetNetworkRouterBgpNeighbor() UpdateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor`
 
 GetNetworkRouterBgpNeighbor returns the NetworkRouterBgpNeighbor field if non-nil, zero value otherwise.
 
 ### GetNetworkRouterBgpNeighborOk
 
-`func (o *UpdateNetworkRouterBgpNeighborRequest) GetNetworkRouterBgpNeighborOk() (*map[string]interface{}, bool)`
+`func (o *UpdateNetworkRouterBgpNeighborRequest) GetNetworkRouterBgpNeighborOk() (*UpdateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor, bool)`
 
 GetNetworkRouterBgpNeighborOk returns a tuple with the NetworkRouterBgpNeighbor field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkRouterBgpNeighbor
 
-`func (o *UpdateNetworkRouterBgpNeighborRequest) SetNetworkRouterBgpNeighbor(v map[string]interface{})`
+`func (o *UpdateNetworkRouterBgpNeighborRequest) SetNetworkRouterBgpNeighbor(v UpdateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor)`
 
 SetNetworkRouterBgpNeighbor sets NetworkRouterBgpNeighbor field to given value.
 

@@ -1671,7 +1671,7 @@ func (a *NetworksAPIService) CreateNetworkRouterExecute(r ApiCreateNetworkRouter
 type ApiCreateNetworkRouterBgpNeighborRequest struct {
 	ctx                                   context.Context
 	ApiService                            *NetworksAPIService
-	routerId                              float32
+	routerId                              int64
 	createNetworkRouterBgpNeighborRequest *CreateNetworkRouterBgpNeighborRequest
 }
 
@@ -1693,7 +1693,7 @@ Use this command to create a BGP Neighbor for an existing network router.
 	@param routerId Router ID
 	@return ApiCreateNetworkRouterBgpNeighborRequest
 */
-func (a *NetworksAPIService) CreateNetworkRouterBgpNeighbor(ctx context.Context, routerId float32) ApiCreateNetworkRouterBgpNeighborRequest {
+func (a *NetworksAPIService) CreateNetworkRouterBgpNeighbor(ctx context.Context, routerId int64) ApiCreateNetworkRouterBgpNeighborRequest {
 	return ApiCreateNetworkRouterBgpNeighborRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1803,7 +1803,7 @@ func (a *NetworksAPIService) CreateNetworkRouterBgpNeighborExecute(r ApiCreateNe
 type ApiCreateNetworkRouterFirewallRuleRequest struct {
 	ctx                                    context.Context
 	ApiService                             *NetworksAPIService
-	routerId                               float32
+	routerId                               int64
 	createNetworkRouterFirewallRuleRequest *CreateNetworkRouterFirewallRuleRequest
 }
 
@@ -1825,7 +1825,7 @@ Use this command to create a firewall rule for an existing network router.
 	@param routerId Router ID
 	@return ApiCreateNetworkRouterFirewallRuleRequest
 */
-func (a *NetworksAPIService) CreateNetworkRouterFirewallRule(ctx context.Context, routerId float32) ApiCreateNetworkRouterFirewallRuleRequest {
+func (a *NetworksAPIService) CreateNetworkRouterFirewallRule(ctx context.Context, routerId int64) ApiCreateNetworkRouterFirewallRuleRequest {
 	return ApiCreateNetworkRouterFirewallRuleRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1935,7 +1935,7 @@ func (a *NetworksAPIService) CreateNetworkRouterFirewallRuleExecute(r ApiCreateN
 type ApiCreateNetworkRouterFirewallRuleGroupRequest struct {
 	ctx                                         context.Context
 	ApiService                                  *NetworksAPIService
-	routerId                                    float32
+	routerId                                    int64
 	createNetworkRouterFirewallRuleGroupRequest *CreateNetworkRouterFirewallRuleGroupRequest
 }
 
@@ -1957,7 +1957,7 @@ Use this command to create a network firewall rule group.
 	@param routerId Router ID
 	@return ApiCreateNetworkRouterFirewallRuleGroupRequest
 */
-func (a *NetworksAPIService) CreateNetworkRouterFirewallRuleGroup(ctx context.Context, routerId float32) ApiCreateNetworkRouterFirewallRuleGroupRequest {
+func (a *NetworksAPIService) CreateNetworkRouterFirewallRuleGroup(ctx context.Context, routerId int64) ApiCreateNetworkRouterFirewallRuleGroupRequest {
 	return ApiCreateNetworkRouterFirewallRuleGroupRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2067,7 +2067,7 @@ func (a *NetworksAPIService) CreateNetworkRouterFirewallRuleGroupExecute(r ApiCr
 type ApiCreateNetworkRouterNatRequest struct {
 	ctx                           context.Context
 	ApiService                    *NetworksAPIService
-	routerId                      float32
+	routerId                      int64
 	createNetworkRouterNatRequest *CreateNetworkRouterNatRequest
 }
 
@@ -2089,7 +2089,7 @@ Use this command to create a NAT for an existing network router.
 	@param routerId Router ID
 	@return ApiCreateNetworkRouterNatRequest
 */
-func (a *NetworksAPIService) CreateNetworkRouterNat(ctx context.Context, routerId float32) ApiCreateNetworkRouterNatRequest {
+func (a *NetworksAPIService) CreateNetworkRouterNat(ctx context.Context, routerId int64) ApiCreateNetworkRouterNatRequest {
 	return ApiCreateNetworkRouterNatRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2199,7 +2199,7 @@ func (a *NetworksAPIService) CreateNetworkRouterNatExecute(r ApiCreateNetworkRou
 type ApiCreateNetworkRouterRouteRequest struct {
 	ctx                             context.Context
 	ApiService                      *NetworksAPIService
-	routerId                        float32
+	routerId                        int64
 	createNetworkRouterRouteRequest *CreateNetworkRouterRouteRequest
 }
 
@@ -2221,7 +2221,7 @@ Use this command to create a route for an existing network router.
 	@param routerId Router ID
 	@return ApiCreateNetworkRouterRouteRequest
 */
-func (a *NetworksAPIService) CreateNetworkRouterRoute(ctx context.Context, routerId float32) ApiCreateNetworkRouterRouteRequest {
+func (a *NetworksAPIService) CreateNetworkRouterRoute(ctx context.Context, routerId int64) ApiCreateNetworkRouterRouteRequest {
 	return ApiCreateNetworkRouterRouteRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -4709,7 +4709,7 @@ type ApiDeleteNetworkRouterBgpNeighborRequest struct {
 	ctx        context.Context
 	ApiService *NetworksAPIService
 	id         int64
-	routerId   float32
+	routerId   int64
 }
 
 func (r ApiDeleteNetworkRouterBgpNeighborRequest) Execute() (*DeleteNetworkRouterBgpNeighbor200Response, *http.Response, error) {
@@ -4726,7 +4726,7 @@ Will delete a BGP Neighbor from a network router.
 	@param routerId Router ID
 	@return ApiDeleteNetworkRouterBgpNeighborRequest
 */
-func (a *NetworksAPIService) DeleteNetworkRouterBgpNeighbor(ctx context.Context, id int64, routerId float32) ApiDeleteNetworkRouterBgpNeighborRequest {
+func (a *NetworksAPIService) DeleteNetworkRouterBgpNeighbor(ctx context.Context, id int64, routerId int64) ApiDeleteNetworkRouterBgpNeighborRequest {
 	return ApiDeleteNetworkRouterBgpNeighborRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -4837,7 +4837,7 @@ type ApiDeleteNetworkRouterFirewallRuleRequest struct {
 	ctx        context.Context
 	ApiService *NetworksAPIService
 	id         int64
-	routerId   float32
+	routerId   int64
 }
 
 func (r ApiDeleteNetworkRouterFirewallRuleRequest) Execute() (*DeleteNetworkRouterFirewallRule200Response, *http.Response, error) {
@@ -4854,7 +4854,7 @@ Will delete a firewall rule from a network router.
 	@param routerId Router ID
 	@return ApiDeleteNetworkRouterFirewallRuleRequest
 */
-func (a *NetworksAPIService) DeleteNetworkRouterFirewallRule(ctx context.Context, id int64, routerId float32) ApiDeleteNetworkRouterFirewallRuleRequest {
+func (a *NetworksAPIService) DeleteNetworkRouterFirewallRule(ctx context.Context, id int64, routerId int64) ApiDeleteNetworkRouterFirewallRuleRequest {
 	return ApiDeleteNetworkRouterFirewallRuleRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -4965,7 +4965,7 @@ type ApiDeleteNetworkRouterFirewallRuleGroupRequest struct {
 	ctx        context.Context
 	ApiService *NetworksAPIService
 	id         int64
-	routerId   float32
+	routerId   int64
 }
 
 func (r ApiDeleteNetworkRouterFirewallRuleGroupRequest) Execute() (*DeleteNetworkRouterFirewallRuleGroup200Response, *http.Response, error) {
@@ -4982,7 +4982,7 @@ Will delete a network router firewall rule group.
 	@param routerId Router ID
 	@return ApiDeleteNetworkRouterFirewallRuleGroupRequest
 */
-func (a *NetworksAPIService) DeleteNetworkRouterFirewallRuleGroup(ctx context.Context, id int64, routerId float32) ApiDeleteNetworkRouterFirewallRuleGroupRequest {
+func (a *NetworksAPIService) DeleteNetworkRouterFirewallRuleGroup(ctx context.Context, id int64, routerId int64) ApiDeleteNetworkRouterFirewallRuleGroupRequest {
 	return ApiDeleteNetworkRouterFirewallRuleGroupRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -5093,7 +5093,7 @@ type ApiDeleteNetworkRouterNatRequest struct {
 	ctx        context.Context
 	ApiService *NetworksAPIService
 	id         int64
-	routerId   float32
+	routerId   int64
 }
 
 func (r ApiDeleteNetworkRouterNatRequest) Execute() (*DeleteNetworkRouterNat200Response, *http.Response, error) {
@@ -5110,7 +5110,7 @@ Will delete a NAT from a network router.
 	@param routerId Router ID
 	@return ApiDeleteNetworkRouterNatRequest
 */
-func (a *NetworksAPIService) DeleteNetworkRouterNat(ctx context.Context, id int64, routerId float32) ApiDeleteNetworkRouterNatRequest {
+func (a *NetworksAPIService) DeleteNetworkRouterNat(ctx context.Context, id int64, routerId int64) ApiDeleteNetworkRouterNatRequest {
 	return ApiDeleteNetworkRouterNatRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -5221,7 +5221,7 @@ type ApiDeleteNetworkRouterRouteRequest struct {
 	ctx        context.Context
 	ApiService *NetworksAPIService
 	id         int64
-	routerId   float32
+	routerId   int64
 }
 
 func (r ApiDeleteNetworkRouterRouteRequest) Execute() (*DeleteNetworkRouterRoute200Response, *http.Response, error) {
@@ -5238,7 +5238,7 @@ Will delete a Route from a network router.
 	@param routerId Router ID
 	@return ApiDeleteNetworkRouterRouteRequest
 */
-func (a *NetworksAPIService) DeleteNetworkRouterRoute(ctx context.Context, id int64, routerId float32) ApiDeleteNetworkRouterRouteRequest {
+func (a *NetworksAPIService) DeleteNetworkRouterRoute(ctx context.Context, id int64, routerId int64) ApiDeleteNetworkRouterRouteRequest {
 	return ApiDeleteNetworkRouterRouteRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -9836,7 +9836,7 @@ type ApiGetNetworkRouterBgpNeighborRequest struct {
 	ctx        context.Context
 	ApiService *NetworksAPIService
 	id         int64
-	routerId   float32
+	routerId   int64
 }
 
 func (r ApiGetNetworkRouterBgpNeighborRequest) Execute() (*GetNetworkRouterBgpNeighbor200Response, *http.Response, error) {
@@ -9853,7 +9853,7 @@ This endpoint retrieves a network router BGP Neighbor for specified network rout
 	@param routerId Router ID
 	@return ApiGetNetworkRouterBgpNeighborRequest
 */
-func (a *NetworksAPIService) GetNetworkRouterBgpNeighbor(ctx context.Context, id int64, routerId float32) ApiGetNetworkRouterBgpNeighborRequest {
+func (a *NetworksAPIService) GetNetworkRouterBgpNeighbor(ctx context.Context, id int64, routerId int64) ApiGetNetworkRouterBgpNeighborRequest {
 	return ApiGetNetworkRouterBgpNeighborRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -9964,7 +9964,7 @@ type ApiGetNetworkRouterFirewallRuleRequest struct {
 	ctx        context.Context
 	ApiService *NetworksAPIService
 	id         int64
-	routerId   float32
+	routerId   int64
 }
 
 func (r ApiGetNetworkRouterFirewallRuleRequest) Execute() (*GetNetworkRouterFirewallRule200Response, *http.Response, error) {
@@ -9981,7 +9981,7 @@ This endpoint retrieves a firewall rule.
 	@param routerId Router ID
 	@return ApiGetNetworkRouterFirewallRuleRequest
 */
-func (a *NetworksAPIService) GetNetworkRouterFirewallRule(ctx context.Context, id int64, routerId float32) ApiGetNetworkRouterFirewallRuleRequest {
+func (a *NetworksAPIService) GetNetworkRouterFirewallRule(ctx context.Context, id int64, routerId int64) ApiGetNetworkRouterFirewallRuleRequest {
 	return ApiGetNetworkRouterFirewallRuleRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -10092,7 +10092,7 @@ type ApiGetNetworkRouterFirewallRuleGroupRequest struct {
 	ctx        context.Context
 	ApiService *NetworksAPIService
 	id         int64
-	routerId   float32
+	routerId   int64
 }
 
 func (r ApiGetNetworkRouterFirewallRuleGroupRequest) Execute() (*GetNetworkRouterFirewallRuleGroup200Response, *http.Response, error) {
@@ -10109,7 +10109,7 @@ This endpoint retrieves a firewall rule group for specified network router.
 	@param routerId Router ID
 	@return ApiGetNetworkRouterFirewallRuleGroupRequest
 */
-func (a *NetworksAPIService) GetNetworkRouterFirewallRuleGroup(ctx context.Context, id int64, routerId float32) ApiGetNetworkRouterFirewallRuleGroupRequest {
+func (a *NetworksAPIService) GetNetworkRouterFirewallRuleGroup(ctx context.Context, id int64, routerId int64) ApiGetNetworkRouterFirewallRuleGroupRequest {
 	return ApiGetNetworkRouterFirewallRuleGroupRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -10219,7 +10219,7 @@ func (a *NetworksAPIService) GetNetworkRouterFirewallRuleGroupExecute(r ApiGetNe
 type ApiGetNetworkRouterFirewallRuleGroupsRequest struct {
 	ctx        context.Context
 	ApiService *NetworksAPIService
-	routerId   float32
+	routerId   int64
 }
 
 func (r ApiGetNetworkRouterFirewallRuleGroupsRequest) Execute() (*GetNetworkRouterFirewallRuleGroups200Response, *http.Response, error) {
@@ -10235,7 +10235,7 @@ This endpoint retrieves all Network Firewall Rule Groups for a specified Network
 	@param routerId Router ID
 	@return ApiGetNetworkRouterFirewallRuleGroupsRequest
 */
-func (a *NetworksAPIService) GetNetworkRouterFirewallRuleGroups(ctx context.Context, routerId float32) ApiGetNetworkRouterFirewallRuleGroupsRequest {
+func (a *NetworksAPIService) GetNetworkRouterFirewallRuleGroups(ctx context.Context, routerId int64) ApiGetNetworkRouterFirewallRuleGroupsRequest {
 	return ApiGetNetworkRouterFirewallRuleGroupsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -10344,7 +10344,7 @@ type ApiGetNetworkRouterNatRequest struct {
 	ctx        context.Context
 	ApiService *NetworksAPIService
 	id         int64
-	routerId   float32
+	routerId   int64
 }
 
 func (r ApiGetNetworkRouterNatRequest) Execute() (*GetNetworkRouterNat200Response, *http.Response, error) {
@@ -10361,7 +10361,7 @@ This endpoint retrieves a network router NAT for specified network router.
 	@param routerId Router ID
 	@return ApiGetNetworkRouterNatRequest
 */
-func (a *NetworksAPIService) GetNetworkRouterNat(ctx context.Context, id int64, routerId float32) ApiGetNetworkRouterNatRequest {
+func (a *NetworksAPIService) GetNetworkRouterNat(ctx context.Context, id int64, routerId int64) ApiGetNetworkRouterNatRequest {
 	return ApiGetNetworkRouterNatRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -10472,7 +10472,7 @@ type ApiGetNetworkRouterRouteRequest struct {
 	ctx        context.Context
 	ApiService *NetworksAPIService
 	id         int64
-	routerId   float32
+	routerId   int64
 }
 
 func (r ApiGetNetworkRouterRouteRequest) Execute() (*GetNetworkRouterRoute200Response, *http.Response, error) {
@@ -10489,7 +10489,7 @@ This endpoint retrieves a Route.
 	@param routerId Router ID
 	@return ApiGetNetworkRouterRouteRequest
 */
-func (a *NetworksAPIService) GetNetworkRouterRoute(ctx context.Context, id int64, routerId float32) ApiGetNetworkRouterRouteRequest {
+func (a *NetworksAPIService) GetNetworkRouterRoute(ctx context.Context, id int64, routerId int64) ApiGetNetworkRouterRouteRequest {
 	return ApiGetNetworkRouterRouteRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -10843,7 +10843,7 @@ func (a *NetworksAPIService) GetNetworkRoutersExecute(r ApiGetNetworkRoutersRequ
 type ApiGetNetworkRoutersBgpNeighborsRequest struct {
 	ctx        context.Context
 	ApiService *NetworksAPIService
-	routerId   float32
+	routerId   int64
 }
 
 func (r ApiGetNetworkRoutersBgpNeighborsRequest) Execute() (*GetNetworkRoutersBgpNeighbors200Response, *http.Response, error) {
@@ -10859,7 +10859,7 @@ This endpoint retrieves all BGP Neighbors for specified network router.
 	@param routerId Router ID
 	@return ApiGetNetworkRoutersBgpNeighborsRequest
 */
-func (a *NetworksAPIService) GetNetworkRoutersBgpNeighbors(ctx context.Context, routerId float32) ApiGetNetworkRoutersBgpNeighborsRequest {
+func (a *NetworksAPIService) GetNetworkRoutersBgpNeighbors(ctx context.Context, routerId int64) ApiGetNetworkRoutersBgpNeighborsRequest {
 	return ApiGetNetworkRoutersBgpNeighborsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -10967,7 +10967,7 @@ func (a *NetworksAPIService) GetNetworkRoutersBgpNeighborsExecute(r ApiGetNetwor
 type ApiGetNetworkRoutersFirewallRulesRequest struct {
 	ctx        context.Context
 	ApiService *NetworksAPIService
-	routerId   float32
+	routerId   int64
 }
 
 func (r ApiGetNetworkRoutersFirewallRulesRequest) Execute() (*GetNetworkRoutersFirewallRules200Response, *http.Response, error) {
@@ -10983,7 +10983,7 @@ This endpoint retrieves all firewall rules for specified network router.
 	@param routerId Router ID
 	@return ApiGetNetworkRoutersFirewallRulesRequest
 */
-func (a *NetworksAPIService) GetNetworkRoutersFirewallRules(ctx context.Context, routerId float32) ApiGetNetworkRoutersFirewallRulesRequest {
+func (a *NetworksAPIService) GetNetworkRoutersFirewallRules(ctx context.Context, routerId int64) ApiGetNetworkRoutersFirewallRulesRequest {
 	return ApiGetNetworkRoutersFirewallRulesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -11091,7 +11091,7 @@ func (a *NetworksAPIService) GetNetworkRoutersFirewallRulesExecute(r ApiGetNetwo
 type ApiGetNetworkRoutersNatsRequest struct {
 	ctx        context.Context
 	ApiService *NetworksAPIService
-	routerId   float32
+	routerId   int64
 }
 
 func (r ApiGetNetworkRoutersNatsRequest) Execute() (*GetNetworkRoutersNats200Response, *http.Response, error) {
@@ -11107,7 +11107,7 @@ This endpoint retrieves all NATs for specified network router.
 	@param routerId Router ID
 	@return ApiGetNetworkRoutersNatsRequest
 */
-func (a *NetworksAPIService) GetNetworkRoutersNats(ctx context.Context, routerId float32) ApiGetNetworkRoutersNatsRequest {
+func (a *NetworksAPIService) GetNetworkRoutersNats(ctx context.Context, routerId int64) ApiGetNetworkRoutersNatsRequest {
 	return ApiGetNetworkRoutersNatsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -11215,7 +11215,7 @@ func (a *NetworksAPIService) GetNetworkRoutersNatsExecute(r ApiGetNetworkRouters
 type ApiGetNetworkRoutersRoutesRequest struct {
 	ctx        context.Context
 	ApiService *NetworksAPIService
-	routerId   float32
+	routerId   int64
 }
 
 func (r ApiGetNetworkRoutersRoutesRequest) Execute() (*GetNetworkRoutersRoutes200Response, *http.Response, error) {
@@ -11231,7 +11231,7 @@ This endpoint retrieves all Routes for specified network router.
 	@param routerId Router ID
 	@return ApiGetNetworkRoutersRoutesRequest
 */
-func (a *NetworksAPIService) GetNetworkRoutersRoutes(ctx context.Context, routerId float32) ApiGetNetworkRoutersRoutesRequest {
+func (a *NetworksAPIService) GetNetworkRoutersRoutes(ctx context.Context, routerId int64) ApiGetNetworkRoutersRoutesRequest {
 	return ApiGetNetworkRoutersRoutesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -16060,7 +16060,7 @@ type ApiUpdateNetworkRouterBgpNeighborRequest struct {
 	ctx                                   context.Context
 	ApiService                            *NetworksAPIService
 	id                                    int64
-	routerId                              float32
+	routerId                              int64
 	updateNetworkRouterBgpNeighborRequest *UpdateNetworkRouterBgpNeighborRequest
 }
 
@@ -16083,7 +16083,7 @@ Use this command to update an existing Network Router BGP Neighbor.
 	@param routerId Router ID
 	@return ApiUpdateNetworkRouterBgpNeighborRequest
 */
-func (a *NetworksAPIService) UpdateNetworkRouterBgpNeighbor(ctx context.Context, id int64, routerId float32) ApiUpdateNetworkRouterBgpNeighborRequest {
+func (a *NetworksAPIService) UpdateNetworkRouterBgpNeighbor(ctx context.Context, id int64, routerId int64) ApiUpdateNetworkRouterBgpNeighborRequest {
 	return ApiUpdateNetworkRouterBgpNeighborRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -16196,7 +16196,7 @@ type ApiUpdateNetworkRouterFirewallRuleRequest struct {
 	ctx                                    context.Context
 	ApiService                             *NetworksAPIService
 	id                                     int64
-	routerId                               float32
+	routerId                               int64
 	updateNetworkRouterFirewallRuleRequest *UpdateNetworkRouterFirewallRuleRequest
 }
 
@@ -16219,7 +16219,7 @@ Use this command to update an existing network router firewall rule.
 	@param routerId Router ID
 	@return ApiUpdateNetworkRouterFirewallRuleRequest
 */
-func (a *NetworksAPIService) UpdateNetworkRouterFirewallRule(ctx context.Context, id int64, routerId float32) ApiUpdateNetworkRouterFirewallRuleRequest {
+func (a *NetworksAPIService) UpdateNetworkRouterFirewallRule(ctx context.Context, id int64, routerId int64) ApiUpdateNetworkRouterFirewallRuleRequest {
 	return ApiUpdateNetworkRouterFirewallRuleRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -16332,7 +16332,7 @@ type ApiUpdateNetworkRouterFirewallRuleGroupRequest struct {
 	ctx                                         context.Context
 	ApiService                                  *NetworksAPIService
 	id                                          int64
-	routerId                                    float32
+	routerId                                    int64
 	updateNetworkRouterFirewallRuleGroupRequest *UpdateNetworkRouterFirewallRuleGroupRequest
 }
 
@@ -16355,7 +16355,7 @@ Use this command to update an existing Network Router Firewall Rule Group.
 	@param routerId Router ID
 	@return ApiUpdateNetworkRouterFirewallRuleGroupRequest
 */
-func (a *NetworksAPIService) UpdateNetworkRouterFirewallRuleGroup(ctx context.Context, id int64, routerId float32) ApiUpdateNetworkRouterFirewallRuleGroupRequest {
+func (a *NetworksAPIService) UpdateNetworkRouterFirewallRuleGroup(ctx context.Context, id int64, routerId int64) ApiUpdateNetworkRouterFirewallRuleGroupRequest {
 	return ApiUpdateNetworkRouterFirewallRuleGroupRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -16468,7 +16468,7 @@ type ApiUpdateNetworkRouterNatRequest struct {
 	ctx                           context.Context
 	ApiService                    *NetworksAPIService
 	id                            int64
-	routerId                      float32
+	routerId                      int64
 	updateNetworkRouterNatRequest *UpdateNetworkRouterNatRequest
 }
 
@@ -16491,7 +16491,7 @@ Use this command to update an existing Network Router NAT.
 	@param routerId Router ID
 	@return ApiUpdateNetworkRouterNatRequest
 */
-func (a *NetworksAPIService) UpdateNetworkRouterNat(ctx context.Context, id int64, routerId float32) ApiUpdateNetworkRouterNatRequest {
+func (a *NetworksAPIService) UpdateNetworkRouterNat(ctx context.Context, id int64, routerId int64) ApiUpdateNetworkRouterNatRequest {
 	return ApiUpdateNetworkRouterNatRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -16603,7 +16603,7 @@ func (a *NetworksAPIService) UpdateNetworkRouterNatExecute(r ApiUpdateNetworkRou
 type ApiUpdateNetworkRouterPermissionsRequest struct {
 	ctx                                   context.Context
 	ApiService                            *NetworksAPIService
-	routerId                              float32
+	routerId                              int64
 	updateNetworkRouterPermissionsRequest *UpdateNetworkRouterPermissionsRequest
 }
 
@@ -16625,7 +16625,7 @@ UpdateNetworkRouterPermissions Update Network Router Permissions
 	@param routerId Router ID
 	@return ApiUpdateNetworkRouterPermissionsRequest
 */
-func (a *NetworksAPIService) UpdateNetworkRouterPermissions(ctx context.Context, routerId float32) ApiUpdateNetworkRouterPermissionsRequest {
+func (a *NetworksAPIService) UpdateNetworkRouterPermissions(ctx context.Context, routerId int64) ApiUpdateNetworkRouterPermissionsRequest {
 	return ApiUpdateNetworkRouterPermissionsRequest{
 		ApiService: a,
 		ctx:        ctx,

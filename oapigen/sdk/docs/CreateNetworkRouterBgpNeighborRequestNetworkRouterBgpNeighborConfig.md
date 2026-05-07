@@ -1,0 +1,108 @@
+# CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighborConfig
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**SourceAddresses** | Pointer to **[]string** | Source IP addresses for the BGP session | [optional] 
+**RouterId** | Pointer to **string** | The router identifier (auto-populated for edge routers) | [optional] 
+**Interface** | Pointer to **string** | The interface name for the BGP session (distributed routers only) | [optional] 
+
+## Methods
+
+### NewCreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighborConfig
+
+`func NewCreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighborConfig() *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighborConfig`
+
+NewCreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighborConfig instantiates a new CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighborConfig object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewCreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighborConfigWithDefaults
+
+`func NewCreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighborConfigWithDefaults() *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighborConfig`
+
+NewCreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighborConfigWithDefaults instantiates a new CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighborConfig object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetSourceAddresses
+
+`func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighborConfig) GetSourceAddresses() []string`
+
+GetSourceAddresses returns the SourceAddresses field if non-nil, zero value otherwise.
+
+### GetSourceAddressesOk
+
+`func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighborConfig) GetSourceAddressesOk() (*[]string, bool)`
+
+GetSourceAddressesOk returns a tuple with the SourceAddresses field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSourceAddresses
+
+`func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighborConfig) SetSourceAddresses(v []string)`
+
+SetSourceAddresses sets SourceAddresses field to given value.
+
+### HasSourceAddresses
+
+`func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighborConfig) HasSourceAddresses() bool`
+
+HasSourceAddresses returns a boolean if a field has been set.
+
+### GetRouterId
+
+`func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighborConfig) GetRouterId() string`
+
+GetRouterId returns the RouterId field if non-nil, zero value otherwise.
+
+### GetRouterIdOk
+
+`func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighborConfig) GetRouterIdOk() (*string, bool)`
+
+GetRouterIdOk returns a tuple with the RouterId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRouterId
+
+`func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighborConfig) SetRouterId(v string)`
+
+SetRouterId sets RouterId field to given value.
+
+### HasRouterId
+
+`func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighborConfig) HasRouterId() bool`
+
+HasRouterId returns a boolean if a field has been set.
+
+### GetInterface
+
+`func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighborConfig) GetInterface() string`
+
+GetInterface returns the Interface field if non-nil, zero value otherwise.
+
+### GetInterfaceOk
+
+`func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighborConfig) GetInterfaceOk() (*string, bool)`
+
+GetInterfaceOk returns a tuple with the Interface field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInterface
+
+`func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighborConfig) SetInterface(v string)`
+
+SetInterface sets Interface field to given value.
+
+### HasInterface
+
+`func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighborConfig) HasInterface() bool`
+
+HasInterface returns a boolean if a field has been set.
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
