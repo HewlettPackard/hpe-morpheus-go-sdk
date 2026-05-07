@@ -39,7 +39,7 @@ type GetNetworkRouter200ResponseNetworkRouter struct {
 	Zone                 *GetNetworkRouter200ResponseNetworkRouterZone          `json:"zone,omitempty"`
 	Instance             NullableString                                         `json:"instance,omitempty"`
 	ExternalNetwork      NullableString                                         `json:"externalNetwork,omitempty"`
-	Site                 NullableString                                         `json:"site,omitempty"`
+	Site                 *GetNetworkRouter200ResponseNetworkRouterSite          `json:"site,omitempty"`
 	Interfaces           []map[string]interface{}                               `json:"interfaces,omitempty"`
 	Firewall             *GetNetworkRouter200ResponseNetworkRouterFirewall      `json:"firewall,omitempty"`
 	Routes               []map[string]interface{}                               `json:"routes,omitempty"`
@@ -688,47 +688,36 @@ func (o *GetNetworkRouter200ResponseNetworkRouter) UnsetExternalNetwork() {
 	o.ExternalNetwork.Unset()
 }
 
-// GetSite returns the Site field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GetNetworkRouter200ResponseNetworkRouter) GetSite() string {
-	if o == nil || IsNil(o.Site.Get()) {
-		var ret string
+// GetSite returns the Site field value if set, zero value otherwise.
+func (o *GetNetworkRouter200ResponseNetworkRouter) GetSite() GetNetworkRouter200ResponseNetworkRouterSite {
+	if o == nil || IsNil(o.Site) {
+		var ret GetNetworkRouter200ResponseNetworkRouterSite
 		return ret
 	}
-	return *o.Site.Get()
+	return *o.Site
 }
 
 // GetSiteOk returns a tuple with the Site field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GetNetworkRouter200ResponseNetworkRouter) GetSiteOk() (*string, bool) {
-	if o == nil {
+func (o *GetNetworkRouter200ResponseNetworkRouter) GetSiteOk() (*GetNetworkRouter200ResponseNetworkRouterSite, bool) {
+	if o == nil || IsNil(o.Site) {
 		return nil, false
 	}
-	return o.Site.Get(), o.Site.IsSet()
+	return o.Site, true
 }
 
 // IsSetSite returns a boolean if a field has been set.
 func (o *GetNetworkRouter200ResponseNetworkRouter) IsSetSite() bool {
-	if o != nil && o.Site.IsSet() {
+	if o != nil && !IsNil(o.Site) {
 		return true
 	}
 
 	return false
 }
 
-// SetSite gets a reference to the given NullableString and assigns it to the Site field.
-func (o *GetNetworkRouter200ResponseNetworkRouter) SetSite(v string) {
-	o.Site.Set(&v)
-}
-
-// SetSiteNil sets the value for Site to be an explicit nil
-func (o *GetNetworkRouter200ResponseNetworkRouter) SetSiteNil() {
-	o.Site.Set(nil)
-}
-
-// UnsetSite ensures that no value is present for Site, not even an explicit nil
-func (o *GetNetworkRouter200ResponseNetworkRouter) UnsetSite() {
-	o.Site.Unset()
+// SetSite gets a reference to the given GetNetworkRouter200ResponseNetworkRouterSite and assigns it to the Site field.
+func (o *GetNetworkRouter200ResponseNetworkRouter) SetSite(v GetNetworkRouter200ResponseNetworkRouterSite) {
+	o.Site = &v
 }
 
 // GetInterfaces returns the Interfaces field value if set, zero value otherwise.
@@ -987,8 +976,8 @@ func (o GetNetworkRouter200ResponseNetworkRouter) ToMap() (map[string]interface{
 	if o.ExternalNetwork.IsSet() {
 		toSerialize["externalNetwork"] = o.ExternalNetwork.Get()
 	}
-	if o.Site.IsSet() {
-		toSerialize["site"] = o.Site.Get()
+	if !IsNil(o.Site) {
+		toSerialize["site"] = o.Site
 	}
 	if !IsNil(o.Interfaces) {
 		toSerialize["interfaces"] = o.Interfaces

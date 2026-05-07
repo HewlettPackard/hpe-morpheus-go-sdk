@@ -20,9 +20,8 @@ var _ MappedNullable = &UpdateNetworkRouterBgpNeighborRequest{}
 
 // UpdateNetworkRouterBgpNeighborRequest struct for UpdateNetworkRouterBgpNeighborRequest
 type UpdateNetworkRouterBgpNeighborRequest struct {
-	// For a full list of available BGP Neighbor options, see bgpOptionTypes in the specific Network Router Type
-	NetworkRouterBgpNeighbor map[string]interface{} `json:"networkRouterBgpNeighbor,omitempty"`
-	AdditionalProperties     map[string]interface{} `json:",remain"`
+	NetworkRouterBgpNeighbor *UpdateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor `json:"networkRouterBgpNeighbor,omitempty"`
+	AdditionalProperties     map[string]interface{}                                         `json:",remain"`
 }
 
 type _UpdateNetworkRouterBgpNeighborRequest UpdateNetworkRouterBgpNeighborRequest
@@ -45,19 +44,19 @@ func NewUpdateNetworkRouterBgpNeighborRequestWithDefaults() *UpdateNetworkRouter
 }
 
 // GetNetworkRouterBgpNeighbor returns the NetworkRouterBgpNeighbor field value if set, zero value otherwise.
-func (o *UpdateNetworkRouterBgpNeighborRequest) GetNetworkRouterBgpNeighbor() map[string]interface{} {
+func (o *UpdateNetworkRouterBgpNeighborRequest) GetNetworkRouterBgpNeighbor() UpdateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor {
 	if o == nil || IsNil(o.NetworkRouterBgpNeighbor) {
-		var ret map[string]interface{}
+		var ret UpdateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor
 		return ret
 	}
-	return o.NetworkRouterBgpNeighbor
+	return *o.NetworkRouterBgpNeighbor
 }
 
 // GetNetworkRouterBgpNeighborOk returns a tuple with the NetworkRouterBgpNeighbor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateNetworkRouterBgpNeighborRequest) GetNetworkRouterBgpNeighborOk() (map[string]interface{}, bool) {
+func (o *UpdateNetworkRouterBgpNeighborRequest) GetNetworkRouterBgpNeighborOk() (*UpdateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor, bool) {
 	if o == nil || IsNil(o.NetworkRouterBgpNeighbor) {
-		return map[string]interface{}{}, false
+		return nil, false
 	}
 	return o.NetworkRouterBgpNeighbor, true
 }
@@ -71,9 +70,9 @@ func (o *UpdateNetworkRouterBgpNeighborRequest) IsSetNetworkRouterBgpNeighbor() 
 	return false
 }
 
-// SetNetworkRouterBgpNeighbor gets a reference to the given map[string]interface{} and assigns it to the NetworkRouterBgpNeighbor field.
-func (o *UpdateNetworkRouterBgpNeighborRequest) SetNetworkRouterBgpNeighbor(v map[string]interface{}) {
-	o.NetworkRouterBgpNeighbor = v
+// SetNetworkRouterBgpNeighbor gets a reference to the given UpdateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor and assigns it to the NetworkRouterBgpNeighbor field.
+func (o *UpdateNetworkRouterBgpNeighborRequest) SetNetworkRouterBgpNeighbor(v UpdateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) {
+	o.NetworkRouterBgpNeighbor = &v
 }
 
 func (o UpdateNetworkRouterBgpNeighborRequest) MarshalJSON() ([]byte, error) {

@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **Zone** | Pointer to [**GetNetworkRouters200ResponseNetworkRoutersInnerZone**](GetNetworkRouters200ResponseNetworkRoutersInnerZone.md) |  | [optional] 
 **Instance** | Pointer to **NullableString** |  | [optional] 
 **ExternalNetwork** | Pointer to [**GetNetworkRouters200ResponseNetworkRoutersInnerExternalNetwork**](GetNetworkRouters200ResponseNetworkRoutersInnerExternalNetwork.md) |  | [optional] 
-**Site** | Pointer to **NullableString** |  | [optional] 
+**Site** | Pointer to [**GetNetworkRouters200ResponseNetworkRoutersInnerSite**](GetNetworkRouters200ResponseNetworkRoutersInnerSite.md) |  | [optional] 
 **Interfaces** | Pointer to [**[]GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner**](GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner.md) |  | [optional] 
 
 ## Methods
@@ -546,20 +546,20 @@ HasExternalNetwork returns a boolean if a field has been set.
 
 ### GetSite
 
-`func (o *GetNetworkRouters200ResponseNetworkRoutersInner) GetSite() string`
+`func (o *GetNetworkRouters200ResponseNetworkRoutersInner) GetSite() GetNetworkRouters200ResponseNetworkRoutersInnerSite`
 
 GetSite returns the Site field if non-nil, zero value otherwise.
 
 ### GetSiteOk
 
-`func (o *GetNetworkRouters200ResponseNetworkRoutersInner) GetSiteOk() (*string, bool)`
+`func (o *GetNetworkRouters200ResponseNetworkRoutersInner) GetSiteOk() (*GetNetworkRouters200ResponseNetworkRoutersInnerSite, bool)`
 
 GetSiteOk returns a tuple with the Site field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSite
 
-`func (o *GetNetworkRouters200ResponseNetworkRoutersInner) SetSite(v string)`
+`func (o *GetNetworkRouters200ResponseNetworkRoutersInner) SetSite(v GetNetworkRouters200ResponseNetworkRoutersInnerSite)`
 
 SetSite sets Site field to given value.
 
@@ -569,16 +569,6 @@ SetSite sets Site field to given value.
 
 HasSite returns a boolean if a field has been set.
 
-### SetSiteNil
-
-`func (o *GetNetworkRouters200ResponseNetworkRoutersInner) SetSiteNil(b bool)`
-
- SetSiteNil sets the value for Site to be an explicit nil
-
-### UnsetSite
-`func (o *GetNetworkRouters200ResponseNetworkRoutersInner) UnsetSite()`
-
-UnsetSite ensures that no value is present for Site, not even an explicit nil
 ### GetInterfaces
 
 `func (o *GetNetworkRouters200ResponseNetworkRoutersInner) GetInterfaces() []GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner`
