@@ -31,6 +31,7 @@ type GetNetworkRouter200ResponseNetworkRouter struct {
 	RouterType           *string                                                `json:"routerType,omitempty"`
 	Status               *string                                                `json:"status,omitempty"`
 	Enabled              *bool                                                  `json:"enabled,omitempty"`
+	EnableBgp            *bool                                                  `json:"enableBgp,omitempty"`
 	ExternalIp           NullableString                                         `json:"externalIp,omitempty"`
 	ExternalId           *string                                                `json:"externalId,omitempty"`
 	ProviderId           *string                                                `json:"providerId,omitempty"`
@@ -397,6 +398,38 @@ func (o *GetNetworkRouter200ResponseNetworkRouter) IsSetEnabled() bool {
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *GetNetworkRouter200ResponseNetworkRouter) SetEnabled(v bool) {
 	o.Enabled = &v
+}
+
+// GetEnableBgp returns the EnableBgp field value if set, zero value otherwise.
+func (o *GetNetworkRouter200ResponseNetworkRouter) GetEnableBgp() bool {
+	if o == nil || IsNil(o.EnableBgp) {
+		var ret bool
+		return ret
+	}
+	return *o.EnableBgp
+}
+
+// GetEnableBgpOk returns a tuple with the EnableBgp field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetNetworkRouter200ResponseNetworkRouter) GetEnableBgpOk() (*bool, bool) {
+	if o == nil || IsNil(o.EnableBgp) {
+		return nil, false
+	}
+	return o.EnableBgp, true
+}
+
+// IsSetEnableBgp returns a boolean if a field has been set.
+func (o *GetNetworkRouter200ResponseNetworkRouter) IsSetEnableBgp() bool {
+	if o != nil && !IsNil(o.EnableBgp) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnableBgp gets a reference to the given bool and assigns it to the EnableBgp field.
+func (o *GetNetworkRouter200ResponseNetworkRouter) SetEnableBgp(v bool) {
+	o.EnableBgp = &v
 }
 
 // GetExternalIp returns the ExternalIp field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -951,6 +984,9 @@ func (o GetNetworkRouter200ResponseNetworkRouter) ToMap() (map[string]interface{
 	}
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
+	}
+	if !IsNil(o.EnableBgp) {
+		toSerialize["enableBgp"] = o.EnableBgp
 	}
 	if o.ExternalIp.IsSet() {
 		toSerialize["externalIp"] = o.ExternalIp.Get()

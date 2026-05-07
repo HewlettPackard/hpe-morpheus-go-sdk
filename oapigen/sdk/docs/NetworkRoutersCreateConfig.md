@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 **RESTART_MODE** | Pointer to **string** |  | [optional] 
 **RESTART_TIME** | Pointer to **int64** |  | [optional] 
 **STALE_ROUTE_TIME** | Pointer to **int64** |  | [optional] 
+**INTER_SR_IBGP** | Pointer to **string** |  | [optional] 
 **Tier0Gateway** | Pointer to **string** |  | [optional] 
 **TIER1CONNECTED** | Pointer to **string** |  | [optional] 
 **TIER1STATICROUTES** | Pointer to **string** |  | [optional] 
@@ -728,6 +729,31 @@ SetSTALE_ROUTE_TIME sets STALE_ROUTE_TIME field to given value.
 `func (o *NetworkRoutersCreateConfig) HasSTALE_ROUTE_TIME() bool`
 
 HasSTALE_ROUTE_TIME returns a boolean if a field has been set.
+
+### GetINTER_SR_IBGP
+
+`func (o *NetworkRoutersCreateConfig) GetINTER_SR_IBGP() string`
+
+GetINTER_SR_IBGP returns the INTER_SR_IBGP field if non-nil, zero value otherwise.
+
+### GetINTER_SR_IBGPOk
+
+`func (o *NetworkRoutersCreateConfig) GetINTER_SR_IBGPOk() (*string, bool)`
+
+GetINTER_SR_IBGPOk returns a tuple with the INTER_SR_IBGP field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetINTER_SR_IBGP
+
+`func (o *NetworkRoutersCreateConfig) SetINTER_SR_IBGP(v string)`
+
+SetINTER_SR_IBGP sets INTER_SR_IBGP field to given value.
+
+### HasINTER_SR_IBGP
+
+`func (o *NetworkRoutersCreateConfig) HasINTER_SR_IBGP() bool`
+
+HasINTER_SR_IBGP returns a boolean if a field has been set.
 
 ### GetTier0Gateway
 

@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **RouterType** | Pointer to **string** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
+**EnableBgp** | Pointer to **bool** |  | [optional] 
 **ExternalIp** | Pointer to **NullableString** |  | [optional] 
 **ExternalId** | Pointer to **string** |  | [optional] 
 **ProviderId** | Pointer to **string** |  | [optional] 
@@ -308,6 +309,31 @@ SetEnabled sets Enabled field to given value.
 `func (o *GetNetworkRouter200ResponseNetworkRouter) HasEnabled() bool`
 
 HasEnabled returns a boolean if a field has been set.
+
+### GetEnableBgp
+
+`func (o *GetNetworkRouter200ResponseNetworkRouter) GetEnableBgp() bool`
+
+GetEnableBgp returns the EnableBgp field if non-nil, zero value otherwise.
+
+### GetEnableBgpOk
+
+`func (o *GetNetworkRouter200ResponseNetworkRouter) GetEnableBgpOk() (*bool, bool)`
+
+GetEnableBgpOk returns a tuple with the EnableBgp field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnableBgp
+
+`func (o *GetNetworkRouter200ResponseNetworkRouter) SetEnableBgp(v bool)`
+
+SetEnableBgp sets EnableBgp field to given value.
+
+### HasEnableBgp
+
+`func (o *GetNetworkRouter200ResponseNetworkRouter) HasEnableBgp() bool`
+
+HasEnableBgp returns a boolean if a field has been set.
 
 ### GetExternalIp
 

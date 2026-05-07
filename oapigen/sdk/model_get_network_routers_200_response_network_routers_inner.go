@@ -31,6 +31,7 @@ type GetNetworkRouters200ResponseNetworkRoutersInner struct {
 	RouterType           *string                                                          `json:"routerType,omitempty"`
 	Status               *string                                                          `json:"status,omitempty"`
 	Enabled              *bool                                                            `json:"enabled,omitempty"`
+	EnableBgp            *bool                                                            `json:"enableBgp,omitempty"`
 	ExternalIp           NullableString                                                   `json:"externalIp,omitempty"`
 	ExternalId           *string                                                          `json:"externalId,omitempty"`
 	ProviderId           NullableString                                                   `json:"providerId,omitempty"`
@@ -41,6 +42,7 @@ type GetNetworkRouters200ResponseNetworkRoutersInner struct {
 	ExternalNetwork      *GetNetworkRouters200ResponseNetworkRoutersInnerExternalNetwork  `json:"externalNetwork,omitempty"`
 	Site                 *GetNetworkRouters200ResponseNetworkRoutersInnerSite             `json:"site,omitempty"`
 	Interfaces           []GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner `json:"interfaces,omitempty"`
+	Config               map[string]interface{}                                           `json:"config,omitempty"`
 	AdditionalProperties map[string]interface{}                                           `json:",remain"`
 }
 
@@ -392,6 +394,38 @@ func (o *GetNetworkRouters200ResponseNetworkRoutersInner) IsSetEnabled() bool {
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *GetNetworkRouters200ResponseNetworkRoutersInner) SetEnabled(v bool) {
 	o.Enabled = &v
+}
+
+// GetEnableBgp returns the EnableBgp field value if set, zero value otherwise.
+func (o *GetNetworkRouters200ResponseNetworkRoutersInner) GetEnableBgp() bool {
+	if o == nil || IsNil(o.EnableBgp) {
+		var ret bool
+		return ret
+	}
+	return *o.EnableBgp
+}
+
+// GetEnableBgpOk returns a tuple with the EnableBgp field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetNetworkRouters200ResponseNetworkRoutersInner) GetEnableBgpOk() (*bool, bool) {
+	if o == nil || IsNil(o.EnableBgp) {
+		return nil, false
+	}
+	return o.EnableBgp, true
+}
+
+// IsSetEnableBgp returns a boolean if a field has been set.
+func (o *GetNetworkRouters200ResponseNetworkRoutersInner) IsSetEnableBgp() bool {
+	if o != nil && !IsNil(o.EnableBgp) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnableBgp gets a reference to the given bool and assigns it to the EnableBgp field.
+func (o *GetNetworkRouters200ResponseNetworkRoutersInner) SetEnableBgp(v bool) {
+	o.EnableBgp = &v
 }
 
 // GetExternalIp returns the ExternalIp field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -758,6 +792,38 @@ func (o *GetNetworkRouters200ResponseNetworkRoutersInner) SetInterfaces(v []GetN
 	o.Interfaces = v
 }
 
+// GetConfig returns the Config field value if set, zero value otherwise.
+func (o *GetNetworkRouters200ResponseNetworkRoutersInner) GetConfig() map[string]interface{} {
+	if o == nil || IsNil(o.Config) {
+		var ret map[string]interface{}
+		return ret
+	}
+	return o.Config
+}
+
+// GetConfigOk returns a tuple with the Config field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetNetworkRouters200ResponseNetworkRoutersInner) GetConfigOk() (map[string]interface{}, bool) {
+	if o == nil || IsNil(o.Config) {
+		return map[string]interface{}{}, false
+	}
+	return o.Config, true
+}
+
+// IsSetConfig returns a boolean if a field has been set.
+func (o *GetNetworkRouters200ResponseNetworkRoutersInner) IsSetConfig() bool {
+	if o != nil && !IsNil(o.Config) {
+		return true
+	}
+
+	return false
+}
+
+// SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
+func (o *GetNetworkRouters200ResponseNetworkRoutersInner) SetConfig(v map[string]interface{}) {
+	o.Config = v
+}
+
 func (o GetNetworkRouters200ResponseNetworkRoutersInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -798,6 +864,9 @@ func (o GetNetworkRouters200ResponseNetworkRoutersInner) ToMap() (map[string]int
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}
+	if !IsNil(o.EnableBgp) {
+		toSerialize["enableBgp"] = o.EnableBgp
+	}
 	if o.ExternalIp.IsSet() {
 		toSerialize["externalIp"] = o.ExternalIp.Get()
 	}
@@ -827,6 +896,9 @@ func (o GetNetworkRouters200ResponseNetworkRoutersInner) ToMap() (map[string]int
 	}
 	if !IsNil(o.Interfaces) {
 		toSerialize["interfaces"] = o.Interfaces
+	}
+	if !IsNil(o.Config) {
+		toSerialize["config"] = o.Config
 	}
 
 	for key, value := range o.AdditionalProperties {
