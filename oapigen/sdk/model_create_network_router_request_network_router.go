@@ -26,6 +26,7 @@ type CreateNetworkRouterRequestNetworkRouter struct {
 	Site CreateNetworkRouterRequestNetworkRouterSite `json:"site"`
 	// Can be used to enable / disable the network router (true, false). Default is on
 	Enabled              *bool                                                 `json:"enabled,omitempty"`
+	EnableBgp            *bool                                                 `json:"enableBgp,omitempty"`
 	Zone                 *CreateNetworkRouterRequestNetworkRouterZone          `json:"zone,omitempty"`
 	NetworkServer        *CreateNetworkRouterRequestNetworkRouterNetworkServer `json:"networkServer,omitempty"`
 	Config               *CreateNetworkRouterRequestNetworkRouterConfig        `json:"config,omitempty"`
@@ -158,6 +159,38 @@ func (o *CreateNetworkRouterRequestNetworkRouter) SetEnabled(v bool) {
 	o.Enabled = &v
 }
 
+// GetEnableBgp returns the EnableBgp field value if set, zero value otherwise.
+func (o *CreateNetworkRouterRequestNetworkRouter) GetEnableBgp() bool {
+	if o == nil || IsNil(o.EnableBgp) {
+		var ret bool
+		return ret
+	}
+	return *o.EnableBgp
+}
+
+// GetEnableBgpOk returns a tuple with the EnableBgp field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateNetworkRouterRequestNetworkRouter) GetEnableBgpOk() (*bool, bool) {
+	if o == nil || IsNil(o.EnableBgp) {
+		return nil, false
+	}
+	return o.EnableBgp, true
+}
+
+// IsSetEnableBgp returns a boolean if a field has been set.
+func (o *CreateNetworkRouterRequestNetworkRouter) IsSetEnableBgp() bool {
+	if o != nil && !IsNil(o.EnableBgp) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnableBgp gets a reference to the given bool and assigns it to the EnableBgp field.
+func (o *CreateNetworkRouterRequestNetworkRouter) SetEnableBgp(v bool) {
+	o.EnableBgp = &v
+}
+
 // GetZone returns the Zone field value if set, zero value otherwise.
 func (o *CreateNetworkRouterRequestNetworkRouter) GetZone() CreateNetworkRouterRequestNetworkRouterZone {
 	if o == nil || IsNil(o.Zone) {
@@ -269,6 +302,9 @@ func (o CreateNetworkRouterRequestNetworkRouter) ToMap() (map[string]interface{}
 	toSerialize["site"] = o.Site
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
+	}
+	if !IsNil(o.EnableBgp) {
+		toSerialize["enableBgp"] = o.EnableBgp
 	}
 	if !IsNil(o.Zone) {
 		toSerialize["zone"] = o.Zone
