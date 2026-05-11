@@ -23,9 +23,25 @@ type CreateLoadBalancerMonitorRequestLoadBalancerMonitor struct {
 	// Name
 	Name *string `json:"name,omitempty"`
 	// Description
-	Description    *string `json:"description,omitempty"`
-	MonitorType    *string `json:"monitorType,omitempty"`
-	MonitorTimeout *int64  `json:"monitorTimeout,omitempty"`
+	Description        *string        `json:"description,omitempty"`
+	MonitorType        *string        `json:"monitorType,omitempty"`
+	MonitorInterval    *int64         `json:"monitorInterval,omitempty"`
+	MonitorTimeout     *int64         `json:"monitorTimeout,omitempty"`
+	SendData           NullableString `json:"sendData,omitempty"`
+	SendVersion        NullableString `json:"sendVersion,omitempty"`
+	SendType           NullableString `json:"sendType,omitempty"`
+	ReceiveData        NullableString `json:"receiveData,omitempty"`
+	ReceiveCode        NullableString `json:"receiveCode,omitempty"`
+	MonitorUsername    NullableString `json:"monitorUsername,omitempty"`
+	MonitorPassword    NullableString `json:"monitorPassword,omitempty"`
+	MonitorDestination NullableString `json:"monitorDestination,omitempty"`
+	FallCount          *int64         `json:"fallCount,omitempty"`
+	RiseCount          *int64         `json:"riseCount,omitempty"`
+	AliasPort          *int64         `json:"aliasPort,omitempty"`
+	DataLength         *int64         `json:"dataLength,omitempty"`
+	MaxRetry           *int64         `json:"maxRetry,omitempty"`
+	ExtraConfig        NullableString `json:"extraConfig,omitempty"`
+	Partition          NullableString `json:"partition,omitempty"`
 	// Configuration object with parameters that vary by type.
 	Config               map[string]interface{} `json:"config,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
@@ -146,6 +162,38 @@ func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) SetMonitorType(v s
 	o.MonitorType = &v
 }
 
+// GetMonitorInterval returns the MonitorInterval field value if set, zero value otherwise.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) GetMonitorInterval() int64 {
+	if o == nil || IsNil(o.MonitorInterval) {
+		var ret int64
+		return ret
+	}
+	return *o.MonitorInterval
+}
+
+// GetMonitorIntervalOk returns a tuple with the MonitorInterval field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) GetMonitorIntervalOk() (*int64, bool) {
+	if o == nil || IsNil(o.MonitorInterval) {
+		return nil, false
+	}
+	return o.MonitorInterval, true
+}
+
+// IsSetMonitorInterval returns a boolean if a field has been set.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) IsSetMonitorInterval() bool {
+	if o != nil && !IsNil(o.MonitorInterval) {
+		return true
+	}
+
+	return false
+}
+
+// SetMonitorInterval gets a reference to the given int64 and assigns it to the MonitorInterval field.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) SetMonitorInterval(v int64) {
+	o.MonitorInterval = &v
+}
+
 // GetMonitorTimeout returns the MonitorTimeout field value if set, zero value otherwise.
 func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) GetMonitorTimeout() int64 {
 	if o == nil || IsNil(o.MonitorTimeout) {
@@ -176,6 +224,596 @@ func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) IsSetMonitorTimeou
 // SetMonitorTimeout gets a reference to the given int64 and assigns it to the MonitorTimeout field.
 func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) SetMonitorTimeout(v int64) {
 	o.MonitorTimeout = &v
+}
+
+// GetSendData returns the SendData field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) GetSendData() string {
+	if o == nil || IsNil(o.SendData.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.SendData.Get()
+}
+
+// GetSendDataOk returns a tuple with the SendData field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) GetSendDataOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.SendData.Get(), o.SendData.IsSet()
+}
+
+// IsSetSendData returns a boolean if a field has been set.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) IsSetSendData() bool {
+	if o != nil && o.SendData.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetSendData gets a reference to the given NullableString and assigns it to the SendData field.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) SetSendData(v string) {
+	o.SendData.Set(&v)
+}
+
+// SetSendDataNil sets the value for SendData to be an explicit nil
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) SetSendDataNil() {
+	o.SendData.Set(nil)
+}
+
+// UnsetSendData ensures that no value is present for SendData, not even an explicit nil
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) UnsetSendData() {
+	o.SendData.Unset()
+}
+
+// GetSendVersion returns the SendVersion field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) GetSendVersion() string {
+	if o == nil || IsNil(o.SendVersion.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.SendVersion.Get()
+}
+
+// GetSendVersionOk returns a tuple with the SendVersion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) GetSendVersionOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.SendVersion.Get(), o.SendVersion.IsSet()
+}
+
+// IsSetSendVersion returns a boolean if a field has been set.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) IsSetSendVersion() bool {
+	if o != nil && o.SendVersion.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetSendVersion gets a reference to the given NullableString and assigns it to the SendVersion field.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) SetSendVersion(v string) {
+	o.SendVersion.Set(&v)
+}
+
+// SetSendVersionNil sets the value for SendVersion to be an explicit nil
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) SetSendVersionNil() {
+	o.SendVersion.Set(nil)
+}
+
+// UnsetSendVersion ensures that no value is present for SendVersion, not even an explicit nil
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) UnsetSendVersion() {
+	o.SendVersion.Unset()
+}
+
+// GetSendType returns the SendType field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) GetSendType() string {
+	if o == nil || IsNil(o.SendType.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.SendType.Get()
+}
+
+// GetSendTypeOk returns a tuple with the SendType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) GetSendTypeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.SendType.Get(), o.SendType.IsSet()
+}
+
+// IsSetSendType returns a boolean if a field has been set.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) IsSetSendType() bool {
+	if o != nil && o.SendType.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetSendType gets a reference to the given NullableString and assigns it to the SendType field.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) SetSendType(v string) {
+	o.SendType.Set(&v)
+}
+
+// SetSendTypeNil sets the value for SendType to be an explicit nil
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) SetSendTypeNil() {
+	o.SendType.Set(nil)
+}
+
+// UnsetSendType ensures that no value is present for SendType, not even an explicit nil
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) UnsetSendType() {
+	o.SendType.Unset()
+}
+
+// GetReceiveData returns the ReceiveData field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) GetReceiveData() string {
+	if o == nil || IsNil(o.ReceiveData.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.ReceiveData.Get()
+}
+
+// GetReceiveDataOk returns a tuple with the ReceiveData field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) GetReceiveDataOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.ReceiveData.Get(), o.ReceiveData.IsSet()
+}
+
+// IsSetReceiveData returns a boolean if a field has been set.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) IsSetReceiveData() bool {
+	if o != nil && o.ReceiveData.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetReceiveData gets a reference to the given NullableString and assigns it to the ReceiveData field.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) SetReceiveData(v string) {
+	o.ReceiveData.Set(&v)
+}
+
+// SetReceiveDataNil sets the value for ReceiveData to be an explicit nil
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) SetReceiveDataNil() {
+	o.ReceiveData.Set(nil)
+}
+
+// UnsetReceiveData ensures that no value is present for ReceiveData, not even an explicit nil
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) UnsetReceiveData() {
+	o.ReceiveData.Unset()
+}
+
+// GetReceiveCode returns the ReceiveCode field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) GetReceiveCode() string {
+	if o == nil || IsNil(o.ReceiveCode.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.ReceiveCode.Get()
+}
+
+// GetReceiveCodeOk returns a tuple with the ReceiveCode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) GetReceiveCodeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.ReceiveCode.Get(), o.ReceiveCode.IsSet()
+}
+
+// IsSetReceiveCode returns a boolean if a field has been set.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) IsSetReceiveCode() bool {
+	if o != nil && o.ReceiveCode.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetReceiveCode gets a reference to the given NullableString and assigns it to the ReceiveCode field.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) SetReceiveCode(v string) {
+	o.ReceiveCode.Set(&v)
+}
+
+// SetReceiveCodeNil sets the value for ReceiveCode to be an explicit nil
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) SetReceiveCodeNil() {
+	o.ReceiveCode.Set(nil)
+}
+
+// UnsetReceiveCode ensures that no value is present for ReceiveCode, not even an explicit nil
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) UnsetReceiveCode() {
+	o.ReceiveCode.Unset()
+}
+
+// GetMonitorUsername returns the MonitorUsername field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) GetMonitorUsername() string {
+	if o == nil || IsNil(o.MonitorUsername.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.MonitorUsername.Get()
+}
+
+// GetMonitorUsernameOk returns a tuple with the MonitorUsername field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) GetMonitorUsernameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.MonitorUsername.Get(), o.MonitorUsername.IsSet()
+}
+
+// IsSetMonitorUsername returns a boolean if a field has been set.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) IsSetMonitorUsername() bool {
+	if o != nil && o.MonitorUsername.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetMonitorUsername gets a reference to the given NullableString and assigns it to the MonitorUsername field.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) SetMonitorUsername(v string) {
+	o.MonitorUsername.Set(&v)
+}
+
+// SetMonitorUsernameNil sets the value for MonitorUsername to be an explicit nil
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) SetMonitorUsernameNil() {
+	o.MonitorUsername.Set(nil)
+}
+
+// UnsetMonitorUsername ensures that no value is present for MonitorUsername, not even an explicit nil
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) UnsetMonitorUsername() {
+	o.MonitorUsername.Unset()
+}
+
+// GetMonitorPassword returns the MonitorPassword field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) GetMonitorPassword() string {
+	if o == nil || IsNil(o.MonitorPassword.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.MonitorPassword.Get()
+}
+
+// GetMonitorPasswordOk returns a tuple with the MonitorPassword field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) GetMonitorPasswordOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.MonitorPassword.Get(), o.MonitorPassword.IsSet()
+}
+
+// IsSetMonitorPassword returns a boolean if a field has been set.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) IsSetMonitorPassword() bool {
+	if o != nil && o.MonitorPassword.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetMonitorPassword gets a reference to the given NullableString and assigns it to the MonitorPassword field.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) SetMonitorPassword(v string) {
+	o.MonitorPassword.Set(&v)
+}
+
+// SetMonitorPasswordNil sets the value for MonitorPassword to be an explicit nil
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) SetMonitorPasswordNil() {
+	o.MonitorPassword.Set(nil)
+}
+
+// UnsetMonitorPassword ensures that no value is present for MonitorPassword, not even an explicit nil
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) UnsetMonitorPassword() {
+	o.MonitorPassword.Unset()
+}
+
+// GetMonitorDestination returns the MonitorDestination field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) GetMonitorDestination() string {
+	if o == nil || IsNil(o.MonitorDestination.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.MonitorDestination.Get()
+}
+
+// GetMonitorDestinationOk returns a tuple with the MonitorDestination field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) GetMonitorDestinationOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.MonitorDestination.Get(), o.MonitorDestination.IsSet()
+}
+
+// IsSetMonitorDestination returns a boolean if a field has been set.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) IsSetMonitorDestination() bool {
+	if o != nil && o.MonitorDestination.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetMonitorDestination gets a reference to the given NullableString and assigns it to the MonitorDestination field.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) SetMonitorDestination(v string) {
+	o.MonitorDestination.Set(&v)
+}
+
+// SetMonitorDestinationNil sets the value for MonitorDestination to be an explicit nil
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) SetMonitorDestinationNil() {
+	o.MonitorDestination.Set(nil)
+}
+
+// UnsetMonitorDestination ensures that no value is present for MonitorDestination, not even an explicit nil
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) UnsetMonitorDestination() {
+	o.MonitorDestination.Unset()
+}
+
+// GetFallCount returns the FallCount field value if set, zero value otherwise.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) GetFallCount() int64 {
+	if o == nil || IsNil(o.FallCount) {
+		var ret int64
+		return ret
+	}
+	return *o.FallCount
+}
+
+// GetFallCountOk returns a tuple with the FallCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) GetFallCountOk() (*int64, bool) {
+	if o == nil || IsNil(o.FallCount) {
+		return nil, false
+	}
+	return o.FallCount, true
+}
+
+// IsSetFallCount returns a boolean if a field has been set.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) IsSetFallCount() bool {
+	if o != nil && !IsNil(o.FallCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetFallCount gets a reference to the given int64 and assigns it to the FallCount field.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) SetFallCount(v int64) {
+	o.FallCount = &v
+}
+
+// GetRiseCount returns the RiseCount field value if set, zero value otherwise.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) GetRiseCount() int64 {
+	if o == nil || IsNil(o.RiseCount) {
+		var ret int64
+		return ret
+	}
+	return *o.RiseCount
+}
+
+// GetRiseCountOk returns a tuple with the RiseCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) GetRiseCountOk() (*int64, bool) {
+	if o == nil || IsNil(o.RiseCount) {
+		return nil, false
+	}
+	return o.RiseCount, true
+}
+
+// IsSetRiseCount returns a boolean if a field has been set.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) IsSetRiseCount() bool {
+	if o != nil && !IsNil(o.RiseCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetRiseCount gets a reference to the given int64 and assigns it to the RiseCount field.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) SetRiseCount(v int64) {
+	o.RiseCount = &v
+}
+
+// GetAliasPort returns the AliasPort field value if set, zero value otherwise.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) GetAliasPort() int64 {
+	if o == nil || IsNil(o.AliasPort) {
+		var ret int64
+		return ret
+	}
+	return *o.AliasPort
+}
+
+// GetAliasPortOk returns a tuple with the AliasPort field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) GetAliasPortOk() (*int64, bool) {
+	if o == nil || IsNil(o.AliasPort) {
+		return nil, false
+	}
+	return o.AliasPort, true
+}
+
+// IsSetAliasPort returns a boolean if a field has been set.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) IsSetAliasPort() bool {
+	if o != nil && !IsNil(o.AliasPort) {
+		return true
+	}
+
+	return false
+}
+
+// SetAliasPort gets a reference to the given int64 and assigns it to the AliasPort field.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) SetAliasPort(v int64) {
+	o.AliasPort = &v
+}
+
+// GetDataLength returns the DataLength field value if set, zero value otherwise.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) GetDataLength() int64 {
+	if o == nil || IsNil(o.DataLength) {
+		var ret int64
+		return ret
+	}
+	return *o.DataLength
+}
+
+// GetDataLengthOk returns a tuple with the DataLength field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) GetDataLengthOk() (*int64, bool) {
+	if o == nil || IsNil(o.DataLength) {
+		return nil, false
+	}
+	return o.DataLength, true
+}
+
+// IsSetDataLength returns a boolean if a field has been set.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) IsSetDataLength() bool {
+	if o != nil && !IsNil(o.DataLength) {
+		return true
+	}
+
+	return false
+}
+
+// SetDataLength gets a reference to the given int64 and assigns it to the DataLength field.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) SetDataLength(v int64) {
+	o.DataLength = &v
+}
+
+// GetMaxRetry returns the MaxRetry field value if set, zero value otherwise.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) GetMaxRetry() int64 {
+	if o == nil || IsNil(o.MaxRetry) {
+		var ret int64
+		return ret
+	}
+	return *o.MaxRetry
+}
+
+// GetMaxRetryOk returns a tuple with the MaxRetry field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) GetMaxRetryOk() (*int64, bool) {
+	if o == nil || IsNil(o.MaxRetry) {
+		return nil, false
+	}
+	return o.MaxRetry, true
+}
+
+// IsSetMaxRetry returns a boolean if a field has been set.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) IsSetMaxRetry() bool {
+	if o != nil && !IsNil(o.MaxRetry) {
+		return true
+	}
+
+	return false
+}
+
+// SetMaxRetry gets a reference to the given int64 and assigns it to the MaxRetry field.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) SetMaxRetry(v int64) {
+	o.MaxRetry = &v
+}
+
+// GetExtraConfig returns the ExtraConfig field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) GetExtraConfig() string {
+	if o == nil || IsNil(o.ExtraConfig.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.ExtraConfig.Get()
+}
+
+// GetExtraConfigOk returns a tuple with the ExtraConfig field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) GetExtraConfigOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.ExtraConfig.Get(), o.ExtraConfig.IsSet()
+}
+
+// IsSetExtraConfig returns a boolean if a field has been set.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) IsSetExtraConfig() bool {
+	if o != nil && o.ExtraConfig.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetExtraConfig gets a reference to the given NullableString and assigns it to the ExtraConfig field.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) SetExtraConfig(v string) {
+	o.ExtraConfig.Set(&v)
+}
+
+// SetExtraConfigNil sets the value for ExtraConfig to be an explicit nil
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) SetExtraConfigNil() {
+	o.ExtraConfig.Set(nil)
+}
+
+// UnsetExtraConfig ensures that no value is present for ExtraConfig, not even an explicit nil
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) UnsetExtraConfig() {
+	o.ExtraConfig.Unset()
+}
+
+// GetPartition returns the Partition field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) GetPartition() string {
+	if o == nil || IsNil(o.Partition.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.Partition.Get()
+}
+
+// GetPartitionOk returns a tuple with the Partition field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) GetPartitionOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Partition.Get(), o.Partition.IsSet()
+}
+
+// IsSetPartition returns a boolean if a field has been set.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) IsSetPartition() bool {
+	if o != nil && o.Partition.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetPartition gets a reference to the given NullableString and assigns it to the Partition field.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) SetPartition(v string) {
+	o.Partition.Set(&v)
+}
+
+// SetPartitionNil sets the value for Partition to be an explicit nil
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) SetPartitionNil() {
+	o.Partition.Set(nil)
+}
+
+// UnsetPartition ensures that no value is present for Partition, not even an explicit nil
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) UnsetPartition() {
+	o.Partition.Unset()
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -230,8 +868,56 @@ func (o CreateLoadBalancerMonitorRequestLoadBalancerMonitor) ToMap() (map[string
 	if !IsNil(o.MonitorType) {
 		toSerialize["monitorType"] = o.MonitorType
 	}
+	if !IsNil(o.MonitorInterval) {
+		toSerialize["monitorInterval"] = o.MonitorInterval
+	}
 	if !IsNil(o.MonitorTimeout) {
 		toSerialize["monitorTimeout"] = o.MonitorTimeout
+	}
+	if o.SendData.IsSet() {
+		toSerialize["sendData"] = o.SendData.Get()
+	}
+	if o.SendVersion.IsSet() {
+		toSerialize["sendVersion"] = o.SendVersion.Get()
+	}
+	if o.SendType.IsSet() {
+		toSerialize["sendType"] = o.SendType.Get()
+	}
+	if o.ReceiveData.IsSet() {
+		toSerialize["receiveData"] = o.ReceiveData.Get()
+	}
+	if o.ReceiveCode.IsSet() {
+		toSerialize["receiveCode"] = o.ReceiveCode.Get()
+	}
+	if o.MonitorUsername.IsSet() {
+		toSerialize["monitorUsername"] = o.MonitorUsername.Get()
+	}
+	if o.MonitorPassword.IsSet() {
+		toSerialize["monitorPassword"] = o.MonitorPassword.Get()
+	}
+	if o.MonitorDestination.IsSet() {
+		toSerialize["monitorDestination"] = o.MonitorDestination.Get()
+	}
+	if !IsNil(o.FallCount) {
+		toSerialize["fallCount"] = o.FallCount
+	}
+	if !IsNil(o.RiseCount) {
+		toSerialize["riseCount"] = o.RiseCount
+	}
+	if !IsNil(o.AliasPort) {
+		toSerialize["aliasPort"] = o.AliasPort
+	}
+	if !IsNil(o.DataLength) {
+		toSerialize["dataLength"] = o.DataLength
+	}
+	if !IsNil(o.MaxRetry) {
+		toSerialize["maxRetry"] = o.MaxRetry
+	}
+	if o.ExtraConfig.IsSet() {
+		toSerialize["extraConfig"] = o.ExtraConfig.Get()
+	}
+	if o.Partition.IsSet() {
+		toSerialize["partition"] = o.Partition.Get()
 	}
 	if o.Config != nil {
 		toSerialize["config"] = o.Config
