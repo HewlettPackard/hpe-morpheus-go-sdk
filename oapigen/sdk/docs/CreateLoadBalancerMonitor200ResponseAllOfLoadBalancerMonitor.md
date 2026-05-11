@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **DisabledData** | Pointer to **NullableString** |  | [optional] 
 **MonitorUsername** | Pointer to **NullableString** |  | [optional] 
 **MonitorPassword** | Pointer to **NullableString** |  | [optional] 
+**MonitorPasswordHash** | Pointer to **NullableString** |  | [optional] 
 **MonitorDestination** | Pointer to **string** |  | [optional] 
 **MonitorReverse** | Pointer to **bool** |  | [optional] 
 **MonitorTransparent** | Pointer to **bool** |  | [optional] 
@@ -38,9 +39,9 @@ Name | Type | Description | Notes
 **MaxRetry** | Pointer to **int64** |  | [optional] 
 **FallCount** | Pointer to **int64** |  | [optional] 
 **RiseCount** | Pointer to **int64** |  | [optional] 
-**DataLength** | Pointer to **NullableString** |  | [optional] 
+**DataLength** | Pointer to **NullableInt64** |  | [optional] 
 **Config** | Pointer to **map[string]interface{}** |  | [optional] 
-**CreatedBy** | Pointer to **NullableString** |  | [optional] 
+**CreatedBy** | Pointer to [**CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorCreatedBy**](CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorCreatedBy.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 
@@ -583,6 +584,41 @@ HasMonitorPassword returns a boolean if a field has been set.
 `func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) UnsetMonitorPassword()`
 
 UnsetMonitorPassword ensures that no value is present for MonitorPassword, not even an explicit nil
+### GetMonitorPasswordHash
+
+`func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetMonitorPasswordHash() string`
+
+GetMonitorPasswordHash returns the MonitorPasswordHash field if non-nil, zero value otherwise.
+
+### GetMonitorPasswordHashOk
+
+`func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetMonitorPasswordHashOk() (*string, bool)`
+
+GetMonitorPasswordHashOk returns a tuple with the MonitorPasswordHash field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMonitorPasswordHash
+
+`func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetMonitorPasswordHash(v string)`
+
+SetMonitorPasswordHash sets MonitorPasswordHash field to given value.
+
+### HasMonitorPasswordHash
+
+`func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) HasMonitorPasswordHash() bool`
+
+HasMonitorPasswordHash returns a boolean if a field has been set.
+
+### SetMonitorPasswordHashNil
+
+`func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetMonitorPasswordHashNil(b bool)`
+
+ SetMonitorPasswordHashNil sets the value for MonitorPasswordHash to be an explicit nil
+
+### UnsetMonitorPasswordHash
+`func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) UnsetMonitorPasswordHash()`
+
+UnsetMonitorPasswordHash ensures that no value is present for MonitorPasswordHash, not even an explicit nil
 ### GetMonitorDestination
 
 `func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetMonitorDestination() string`
@@ -1015,20 +1051,20 @@ HasRiseCount returns a boolean if a field has been set.
 
 ### GetDataLength
 
-`func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetDataLength() string`
+`func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetDataLength() int64`
 
 GetDataLength returns the DataLength field if non-nil, zero value otherwise.
 
 ### GetDataLengthOk
 
-`func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetDataLengthOk() (*string, bool)`
+`func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetDataLengthOk() (*int64, bool)`
 
 GetDataLengthOk returns a tuple with the DataLength field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDataLength
 
-`func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetDataLength(v string)`
+`func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetDataLength(v int64)`
 
 SetDataLength sets DataLength field to given value.
 
@@ -1075,20 +1111,20 @@ HasConfig returns a boolean if a field has been set.
 
 ### GetCreatedBy
 
-`func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetCreatedBy() string`
+`func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetCreatedBy() CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorCreatedBy`
 
 GetCreatedBy returns the CreatedBy field if non-nil, zero value otherwise.
 
 ### GetCreatedByOk
 
-`func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetCreatedByOk() (*string, bool)`
+`func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetCreatedByOk() (*CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorCreatedBy, bool)`
 
 GetCreatedByOk returns a tuple with the CreatedBy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreatedBy
 
-`func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetCreatedBy(v string)`
+`func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetCreatedBy(v CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorCreatedBy)`
 
 SetCreatedBy sets CreatedBy field to given value.
 
@@ -1098,16 +1134,6 @@ SetCreatedBy sets CreatedBy field to given value.
 
 HasCreatedBy returns a boolean if a field has been set.
 
-### SetCreatedByNil
-
-`func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetCreatedByNil(b bool)`
-
- SetCreatedByNil sets the value for CreatedBy to be an explicit nil
-
-### UnsetCreatedBy
-`func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) UnsetCreatedBy()`
-
-UnsetCreatedBy ensures that no value is present for CreatedBy, not even an explicit nil
 ### GetDateCreated
 
 `func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetDateCreated() time.Time`

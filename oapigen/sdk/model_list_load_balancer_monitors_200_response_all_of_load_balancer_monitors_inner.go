@@ -39,6 +39,7 @@ type ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner struct {
 	DisabledData         NullableString                                                                 `json:"disabledData,omitempty"`
 	MonitorUsername      NullableString                                                                 `json:"monitorUsername,omitempty"`
 	MonitorPassword      NullableString                                                                 `json:"monitorPassword,omitempty"`
+	MonitorPasswordHash  NullableString                                                                 `json:"monitorPasswordHash,omitempty"`
 	MonitorDestination   *string                                                                        `json:"monitorDestination,omitempty"`
 	MonitorReverse       *bool                                                                          `json:"monitorReverse,omitempty"`
 	MonitorTransparent   *bool                                                                          `json:"monitorTransparent,omitempty"`
@@ -55,9 +56,9 @@ type ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner struct {
 	MaxRetry             *int64                                                                         `json:"maxRetry,omitempty"`
 	FallCount            *int64                                                                         `json:"fallCount,omitempty"`
 	RiseCount            *int64                                                                         `json:"riseCount,omitempty"`
-	DataLength           NullableString                                                                 `json:"dataLength,omitempty"`
+	DataLength           NullableInt64                                                                  `json:"dataLength,omitempty"`
 	Config               map[string]interface{}                                                         `json:"config,omitempty"`
-	CreatedBy            NullableString                                                                 `json:"createdBy,omitempty"`
+	CreatedBy            *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerCreatedBy    `json:"createdBy,omitempty"`
 	DateCreated          *time.Time                                                                     `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                                     `json:"lastUpdated,omitempty"`
 	AdditionalProperties map[string]interface{}                                                         `json:",remain"`
@@ -735,6 +736,49 @@ func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) Unse
 	o.MonitorPassword.Unset()
 }
 
+// GetMonitorPasswordHash returns the MonitorPasswordHash field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetMonitorPasswordHash() string {
+	if o == nil || IsNil(o.MonitorPasswordHash.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.MonitorPasswordHash.Get()
+}
+
+// GetMonitorPasswordHashOk returns a tuple with the MonitorPasswordHash field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetMonitorPasswordHashOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.MonitorPasswordHash.Get(), o.MonitorPasswordHash.IsSet()
+}
+
+// IsSetMonitorPasswordHash returns a boolean if a field has been set.
+func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) IsSetMonitorPasswordHash() bool {
+	if o != nil && o.MonitorPasswordHash.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetMonitorPasswordHash gets a reference to the given NullableString and assigns it to the MonitorPasswordHash field.
+func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetMonitorPasswordHash(v string) {
+	o.MonitorPasswordHash.Set(&v)
+}
+
+// SetMonitorPasswordHashNil sets the value for MonitorPasswordHash to be an explicit nil
+func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetMonitorPasswordHashNil() {
+	o.MonitorPasswordHash.Set(nil)
+}
+
+// UnsetMonitorPasswordHash ensures that no value is present for MonitorPasswordHash, not even an explicit nil
+func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) UnsetMonitorPasswordHash() {
+	o.MonitorPasswordHash.Unset()
+}
+
 // GetMonitorDestination returns the MonitorDestination field value if set, zero value otherwise.
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetMonitorDestination() string {
 	if o == nil || IsNil(o.MonitorDestination) {
@@ -1281,9 +1325,9 @@ func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetR
 }
 
 // GetDataLength returns the DataLength field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetDataLength() string {
+func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetDataLength() int64 {
 	if o == nil || IsNil(o.DataLength.Get()) {
-		var ret string
+		var ret int64
 		return ret
 	}
 	return *o.DataLength.Get()
@@ -1292,7 +1336,7 @@ func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetD
 // GetDataLengthOk returns a tuple with the DataLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetDataLengthOk() (*string, bool) {
+func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetDataLengthOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -1308,8 +1352,8 @@ func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) IsSe
 	return false
 }
 
-// SetDataLength gets a reference to the given NullableString and assigns it to the DataLength field.
-func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetDataLength(v string) {
+// SetDataLength gets a reference to the given NullableInt64 and assigns it to the DataLength field.
+func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetDataLength(v int64) {
 	o.DataLength.Set(&v)
 }
 
@@ -1355,47 +1399,36 @@ func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetC
 	o.Config = v
 }
 
-// GetCreatedBy returns the CreatedBy field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetCreatedBy() string {
-	if o == nil || IsNil(o.CreatedBy.Get()) {
-		var ret string
+// GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
+func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetCreatedBy() ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerCreatedBy {
+	if o == nil || IsNil(o.CreatedBy) {
+		var ret ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerCreatedBy
 		return ret
 	}
-	return *o.CreatedBy.Get()
+	return *o.CreatedBy
 }
 
 // GetCreatedByOk returns a tuple with the CreatedBy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetCreatedByOk() (*string, bool) {
-	if o == nil {
+func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetCreatedByOk() (*ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerCreatedBy, bool) {
+	if o == nil || IsNil(o.CreatedBy) {
 		return nil, false
 	}
-	return o.CreatedBy.Get(), o.CreatedBy.IsSet()
+	return o.CreatedBy, true
 }
 
 // IsSetCreatedBy returns a boolean if a field has been set.
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) IsSetCreatedBy() bool {
-	if o != nil && o.CreatedBy.IsSet() {
+	if o != nil && !IsNil(o.CreatedBy) {
 		return true
 	}
 
 	return false
 }
 
-// SetCreatedBy gets a reference to the given NullableString and assigns it to the CreatedBy field.
-func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetCreatedBy(v string) {
-	o.CreatedBy.Set(&v)
-}
-
-// SetCreatedByNil sets the value for CreatedBy to be an explicit nil
-func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetCreatedByNil() {
-	o.CreatedBy.Set(nil)
-}
-
-// UnsetCreatedBy ensures that no value is present for CreatedBy, not even an explicit nil
-func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) UnsetCreatedBy() {
-	o.CreatedBy.Unset()
+// SetCreatedBy gets a reference to the given ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerCreatedBy and assigns it to the CreatedBy field.
+func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetCreatedBy(v ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerCreatedBy) {
+	o.CreatedBy = &v
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -1526,6 +1559,9 @@ func (o ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) ToMap
 	if o.MonitorPassword.IsSet() {
 		toSerialize["monitorPassword"] = o.MonitorPassword.Get()
 	}
+	if o.MonitorPasswordHash.IsSet() {
+		toSerialize["monitorPasswordHash"] = o.MonitorPasswordHash.Get()
+	}
 	if !IsNil(o.MonitorDestination) {
 		toSerialize["monitorDestination"] = o.MonitorDestination
 	}
@@ -1580,8 +1616,8 @@ func (o ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) ToMap
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
-	if o.CreatedBy.IsSet() {
-		toSerialize["createdBy"] = o.CreatedBy.Get()
+	if !IsNil(o.CreatedBy) {
+		toSerialize["createdBy"] = o.CreatedBy
 	}
 	if !IsNil(o.DateCreated) {
 		toSerialize["dateCreated"] = o.DateCreated
