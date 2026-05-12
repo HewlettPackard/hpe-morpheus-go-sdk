@@ -40,7 +40,7 @@ Name | Type | Description | Notes
 **FallCount** | Pointer to **int64** |  | [optional] 
 **RiseCount** | Pointer to **int64** |  | [optional] 
 **DataLength** | Pointer to **NullableInt64** |  | [optional] 
-**Config** | Pointer to **map[string]interface{}** |  | [optional] 
+**Config** | Pointer to [**ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerConfig**](ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerConfig.md) |  | [optional] 
 **CreatedBy** | Pointer to [**ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerCreatedBy**](ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerCreatedBy.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
@@ -1086,20 +1086,20 @@ HasDataLength returns a boolean if a field has been set.
 UnsetDataLength ensures that no value is present for DataLength, not even an explicit nil
 ### GetConfig
 
-`func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetConfig() map[string]interface{}`
+`func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetConfig() ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetConfigOk() (*map[string]interface{}, bool)`
+`func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetConfigOk() (*ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetConfig(v map[string]interface{})`
+`func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetConfig(v ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerConfig)`
 
 SetConfig sets Config field to given value.
 

@@ -57,7 +57,7 @@ type UpdateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor struct {
 	FallCount            *int64                                                                    `json:"fallCount,omitempty"`
 	RiseCount            *int64                                                                    `json:"riseCount,omitempty"`
 	DataLength           NullableInt64                                                             `json:"dataLength,omitempty"`
-	Config               map[string]interface{}                                                    `json:"config,omitempty"`
+	Config               *UpdateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfig       `json:"config,omitempty"`
 	CreatedBy            *UpdateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorCreatedBy    `json:"createdBy,omitempty"`
 	DateCreated          *time.Time                                                                `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                                `json:"lastUpdated,omitempty"`
@@ -1368,19 +1368,19 @@ func (o *UpdateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) UnsetData
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
-func (o *UpdateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetConfig() map[string]interface{} {
+func (o *UpdateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetConfig() UpdateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfig {
 	if o == nil || IsNil(o.Config) {
-		var ret map[string]interface{}
+		var ret UpdateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfig
 		return ret
 	}
-	return o.Config
+	return *o.Config
 }
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetConfigOk() (map[string]interface{}, bool) {
+func (o *UpdateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetConfigOk() (*UpdateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfig, bool) {
 	if o == nil || IsNil(o.Config) {
-		return map[string]interface{}{}, false
+		return nil, false
 	}
 	return o.Config, true
 }
@@ -1394,9 +1394,9 @@ func (o *UpdateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) IsSetConf
 	return false
 }
 
-// SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
-func (o *UpdateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetConfig(v map[string]interface{}) {
-	o.Config = v
+// SetConfig gets a reference to the given UpdateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfig and assigns it to the Config field.
+func (o *UpdateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetConfig(v UpdateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfig) {
+	o.Config = &v
 }
 
 // GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.

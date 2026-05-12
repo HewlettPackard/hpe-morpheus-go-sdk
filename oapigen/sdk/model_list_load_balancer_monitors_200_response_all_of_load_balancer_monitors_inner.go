@@ -57,7 +57,7 @@ type ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner struct {
 	FallCount            *int64                                                                         `json:"fallCount,omitempty"`
 	RiseCount            *int64                                                                         `json:"riseCount,omitempty"`
 	DataLength           NullableInt64                                                                  `json:"dataLength,omitempty"`
-	Config               map[string]interface{}                                                         `json:"config,omitempty"`
+	Config               *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerConfig       `json:"config,omitempty"`
 	CreatedBy            *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerCreatedBy    `json:"createdBy,omitempty"`
 	DateCreated          *time.Time                                                                     `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                                     `json:"lastUpdated,omitempty"`
@@ -1368,19 +1368,19 @@ func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) Unse
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
-func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetConfig() map[string]interface{} {
+func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetConfig() ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerConfig {
 	if o == nil || IsNil(o.Config) {
-		var ret map[string]interface{}
+		var ret ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerConfig
 		return ret
 	}
-	return o.Config
+	return *o.Config
 }
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetConfigOk() (map[string]interface{}, bool) {
+func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) GetConfigOk() (*ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerConfig, bool) {
 	if o == nil || IsNil(o.Config) {
-		return map[string]interface{}{}, false
+		return nil, false
 	}
 	return o.Config, true
 }
@@ -1394,9 +1394,9 @@ func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) IsSe
 	return false
 }
 
-// SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
-func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetConfig(v map[string]interface{}) {
-	o.Config = v
+// SetConfig gets a reference to the given ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerConfig and assigns it to the Config field.
+func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) SetConfig(v ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerConfig) {
+	o.Config = &v
 }
 
 // GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.

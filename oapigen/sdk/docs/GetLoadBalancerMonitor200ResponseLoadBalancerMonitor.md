@@ -40,7 +40,7 @@ Name | Type | Description | Notes
 **FallCount** | Pointer to **int64** |  | [optional] 
 **RiseCount** | Pointer to **int64** |  | [optional] 
 **DataLength** | Pointer to **NullableInt64** |  | [optional] 
-**Config** | Pointer to **map[string]interface{}** |  | [optional] 
+**Config** | Pointer to [**GetLoadBalancerMonitor200ResponseLoadBalancerMonitorConfig**](GetLoadBalancerMonitor200ResponseLoadBalancerMonitorConfig.md) |  | [optional] 
 **CreatedBy** | Pointer to [**GetLoadBalancerMonitor200ResponseLoadBalancerMonitorCreatedBy**](GetLoadBalancerMonitor200ResponseLoadBalancerMonitorCreatedBy.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
@@ -1086,20 +1086,20 @@ HasDataLength returns a boolean if a field has been set.
 UnsetDataLength ensures that no value is present for DataLength, not even an explicit nil
 ### GetConfig
 
-`func (o *GetLoadBalancerMonitor200ResponseLoadBalancerMonitor) GetConfig() map[string]interface{}`
+`func (o *GetLoadBalancerMonitor200ResponseLoadBalancerMonitor) GetConfig() GetLoadBalancerMonitor200ResponseLoadBalancerMonitorConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *GetLoadBalancerMonitor200ResponseLoadBalancerMonitor) GetConfigOk() (*map[string]interface{}, bool)`
+`func (o *GetLoadBalancerMonitor200ResponseLoadBalancerMonitor) GetConfigOk() (*GetLoadBalancerMonitor200ResponseLoadBalancerMonitorConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *GetLoadBalancerMonitor200ResponseLoadBalancerMonitor) SetConfig(v map[string]interface{})`
+`func (o *GetLoadBalancerMonitor200ResponseLoadBalancerMonitor) SetConfig(v GetLoadBalancerMonitor200ResponseLoadBalancerMonitorConfig)`
 
 SetConfig sets Config field to given value.
 

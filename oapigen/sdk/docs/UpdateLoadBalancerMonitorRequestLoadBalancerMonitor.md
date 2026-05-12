@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **MaxRetry** | Pointer to **int64** |  | [optional] 
 **ExtraConfig** | Pointer to **NullableString** |  | [optional] 
 **Partition** | Pointer to **NullableString** |  | [optional] 
-**Config** | Pointer to **map[string]interface{}** | Configuration object with parameters that vary by type. | [optional] 
+**Config** | Pointer to [**UpdateLoadBalancerMonitorRequestLoadBalancerMonitorConfig**](UpdateLoadBalancerMonitorRequestLoadBalancerMonitorConfig.md) |  | [optional] 
 
 ## Methods
 
@@ -647,20 +647,20 @@ HasPartition returns a boolean if a field has been set.
 UnsetPartition ensures that no value is present for Partition, not even an explicit nil
 ### GetConfig
 
-`func (o *UpdateLoadBalancerMonitorRequestLoadBalancerMonitor) GetConfig() map[string]interface{}`
+`func (o *UpdateLoadBalancerMonitorRequestLoadBalancerMonitor) GetConfig() UpdateLoadBalancerMonitorRequestLoadBalancerMonitorConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *UpdateLoadBalancerMonitorRequestLoadBalancerMonitor) GetConfigOk() (*map[string]interface{}, bool)`
+`func (o *UpdateLoadBalancerMonitorRequestLoadBalancerMonitor) GetConfigOk() (*UpdateLoadBalancerMonitorRequestLoadBalancerMonitorConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *UpdateLoadBalancerMonitorRequestLoadBalancerMonitor) SetConfig(v map[string]interface{})`
+`func (o *UpdateLoadBalancerMonitorRequestLoadBalancerMonitor) SetConfig(v UpdateLoadBalancerMonitorRequestLoadBalancerMonitorConfig)`
 
 SetConfig sets Config field to given value.
 
@@ -670,16 +670,6 @@ SetConfig sets Config field to given value.
 
 HasConfig returns a boolean if a field has been set.
 
-### SetConfigNil
-
-`func (o *UpdateLoadBalancerMonitorRequestLoadBalancerMonitor) SetConfigNil(b bool)`
-
- SetConfigNil sets the value for Config to be an explicit nil
-
-### UnsetConfig
-`func (o *UpdateLoadBalancerMonitorRequestLoadBalancerMonitor) UnsetConfig()`
-
-UnsetConfig ensures that no value is present for Config, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
