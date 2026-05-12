@@ -40,7 +40,7 @@ Name | Type | Description | Notes
 **FallCount** | Pointer to **int64** |  | [optional] 
 **RiseCount** | Pointer to **int64** |  | [optional] 
 **DataLength** | Pointer to **NullableInt64** |  | [optional] 
-**Config** | Pointer to **map[string]interface{}** |  | [optional] 
+**Config** | Pointer to [**UpdateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfig**](UpdateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfig.md) |  | [optional] 
 **CreatedBy** | Pointer to [**UpdateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorCreatedBy**](UpdateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorCreatedBy.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
@@ -1086,20 +1086,20 @@ HasDataLength returns a boolean if a field has been set.
 UnsetDataLength ensures that no value is present for DataLength, not even an explicit nil
 ### GetConfig
 
-`func (o *UpdateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetConfig() map[string]interface{}`
+`func (o *UpdateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetConfig() UpdateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *UpdateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetConfigOk() (*map[string]interface{}, bool)`
+`func (o *UpdateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetConfigOk() (*UpdateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *UpdateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetConfig(v map[string]interface{})`
+`func (o *UpdateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetConfig(v UpdateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfig)`
 
 SetConfig sets Config field to given value.
 

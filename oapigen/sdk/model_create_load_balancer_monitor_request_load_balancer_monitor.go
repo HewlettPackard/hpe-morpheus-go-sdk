@@ -23,28 +23,27 @@ type CreateLoadBalancerMonitorRequestLoadBalancerMonitor struct {
 	// Name
 	Name *string `json:"name,omitempty"`
 	// Description
-	Description        *string        `json:"description,omitempty"`
-	MonitorType        *string        `json:"monitorType,omitempty"`
-	MonitorInterval    *int64         `json:"monitorInterval,omitempty"`
-	MonitorTimeout     *int64         `json:"monitorTimeout,omitempty"`
-	SendData           NullableString `json:"sendData,omitempty"`
-	SendVersion        NullableString `json:"sendVersion,omitempty"`
-	SendType           NullableString `json:"sendType,omitempty"`
-	ReceiveData        NullableString `json:"receiveData,omitempty"`
-	ReceiveCode        NullableString `json:"receiveCode,omitempty"`
-	MonitorUsername    NullableString `json:"monitorUsername,omitempty"`
-	MonitorPassword    NullableString `json:"monitorPassword,omitempty"`
-	MonitorDestination NullableString `json:"monitorDestination,omitempty"`
-	FallCount          *int64         `json:"fallCount,omitempty"`
-	RiseCount          *int64         `json:"riseCount,omitempty"`
-	AliasPort          *int64         `json:"aliasPort,omitempty"`
-	DataLength         *int64         `json:"dataLength,omitempty"`
-	MaxRetry           *int64         `json:"maxRetry,omitempty"`
-	ExtraConfig        NullableString `json:"extraConfig,omitempty"`
-	Partition          NullableString `json:"partition,omitempty"`
-	// Configuration object with parameters that vary by type.
-	Config               map[string]interface{} `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Description          *string                                                    `json:"description,omitempty"`
+	MonitorType          *string                                                    `json:"monitorType,omitempty"`
+	MonitorInterval      *int64                                                     `json:"monitorInterval,omitempty"`
+	MonitorTimeout       *int64                                                     `json:"monitorTimeout,omitempty"`
+	SendData             NullableString                                             `json:"sendData,omitempty"`
+	SendVersion          NullableString                                             `json:"sendVersion,omitempty"`
+	SendType             NullableString                                             `json:"sendType,omitempty"`
+	ReceiveData          NullableString                                             `json:"receiveData,omitempty"`
+	ReceiveCode          NullableString                                             `json:"receiveCode,omitempty"`
+	MonitorUsername      NullableString                                             `json:"monitorUsername,omitempty"`
+	MonitorPassword      NullableString                                             `json:"monitorPassword,omitempty"`
+	MonitorDestination   NullableString                                             `json:"monitorDestination,omitempty"`
+	FallCount            *int64                                                     `json:"fallCount,omitempty"`
+	RiseCount            *int64                                                     `json:"riseCount,omitempty"`
+	AliasPort            *int64                                                     `json:"aliasPort,omitempty"`
+	DataLength           *int64                                                     `json:"dataLength,omitempty"`
+	MaxRetry             *int64                                                     `json:"maxRetry,omitempty"`
+	ExtraConfig          NullableString                                             `json:"extraConfig,omitempty"`
+	Partition            NullableString                                             `json:"partition,omitempty"`
+	Config               *CreateLoadBalancerMonitorRequestLoadBalancerMonitorConfig `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}                                     `json:",remain"`
 }
 
 type _CreateLoadBalancerMonitorRequestLoadBalancerMonitor CreateLoadBalancerMonitorRequestLoadBalancerMonitor
@@ -816,21 +815,20 @@ func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) UnsetPartition() {
 	o.Partition.Unset()
 }
 
-// GetConfig returns the Config field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) GetConfig() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+// GetConfig returns the Config field value if set, zero value otherwise.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) GetConfig() CreateLoadBalancerMonitorRequestLoadBalancerMonitorConfig {
+	if o == nil || IsNil(o.Config) {
+		var ret CreateLoadBalancerMonitorRequestLoadBalancerMonitorConfig
 		return ret
 	}
-	return o.Config
+	return *o.Config
 }
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) GetConfigOk() (map[string]interface{}, bool) {
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) GetConfigOk() (*CreateLoadBalancerMonitorRequestLoadBalancerMonitorConfig, bool) {
 	if o == nil || IsNil(o.Config) {
-		return map[string]interface{}{}, false
+		return nil, false
 	}
 	return o.Config, true
 }
@@ -844,9 +842,9 @@ func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) IsSetConfig() bool
 	return false
 }
 
-// SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
-func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) SetConfig(v map[string]interface{}) {
-	o.Config = v
+// SetConfig gets a reference to the given CreateLoadBalancerMonitorRequestLoadBalancerMonitorConfig and assigns it to the Config field.
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) SetConfig(v CreateLoadBalancerMonitorRequestLoadBalancerMonitorConfig) {
+	o.Config = &v
 }
 
 func (o CreateLoadBalancerMonitorRequestLoadBalancerMonitor) MarshalJSON() ([]byte, error) {
@@ -919,7 +917,7 @@ func (o CreateLoadBalancerMonitorRequestLoadBalancerMonitor) ToMap() (map[string
 	if o.Partition.IsSet() {
 		toSerialize["partition"] = o.Partition.Get()
 	}
-	if o.Config != nil {
+	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
 
