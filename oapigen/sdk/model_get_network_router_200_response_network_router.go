@@ -21,33 +21,33 @@ var _ MappedNullable = &GetNetworkRouter200ResponseNetworkRouter{}
 
 // GetNetworkRouter200ResponseNetworkRouter struct for GetNetworkRouter200ResponseNetworkRouter
 type GetNetworkRouter200ResponseNetworkRouter struct {
-	Id                   *int64                                                 `json:"id,omitempty"`
-	Code                 *string                                                `json:"code,omitempty"`
-	Name                 *string                                                `json:"name,omitempty"`
-	Description          NullableString                                         `json:"description,omitempty"`
-	Category             *string                                                `json:"category,omitempty"`
-	DateCreated          *time.Time                                             `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                             `json:"lastUpdated,omitempty"`
-	RouterType           *string                                                `json:"routerType,omitempty"`
-	Status               *string                                                `json:"status,omitempty"`
-	Enabled              *bool                                                  `json:"enabled,omitempty"`
-	EnableBgp            *bool                                                  `json:"enableBgp,omitempty"`
-	ExternalIp           NullableString                                         `json:"externalIp,omitempty"`
-	ExternalId           *string                                                `json:"externalId,omitempty"`
-	ProviderId           *string                                                `json:"providerId,omitempty"`
-	Type                 *GetNetworkRouter200ResponseNetworkRouterType          `json:"type,omitempty"`
-	NetworkServer        *GetNetworkRouter200ResponseNetworkRouterNetworkServer `json:"networkServer,omitempty"`
-	Zone                 *GetNetworkRouter200ResponseNetworkRouterZone          `json:"zone,omitempty"`
-	Instance             NullableString                                         `json:"instance,omitempty"`
-	ExternalNetwork      NullableString                                         `json:"externalNetwork,omitempty"`
-	Site                 *GetNetworkRouter200ResponseNetworkRouterSite          `json:"site,omitempty"`
-	Interfaces           []map[string]interface{}                               `json:"interfaces,omitempty"`
-	Firewall             *GetNetworkRouter200ResponseNetworkRouterFirewall      `json:"firewall,omitempty"`
-	Routes               []map[string]interface{}                               `json:"routes,omitempty"`
-	Nats                 []map[string]interface{}                               `json:"nats,omitempty"`
-	Permissions          *GetNetworkRouter200ResponseNetworkRouterPermissions   `json:"permissions,omitempty"`
-	Config               map[string]interface{}                                 `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}                                 `json:",remain"`
+	Id                   *int64                                                    `json:"id,omitempty"`
+	Code                 *string                                                   `json:"code,omitempty"`
+	Name                 *string                                                   `json:"name,omitempty"`
+	Description          NullableString                                            `json:"description,omitempty"`
+	Category             *string                                                   `json:"category,omitempty"`
+	DateCreated          *time.Time                                                `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                `json:"lastUpdated,omitempty"`
+	RouterType           *string                                                   `json:"routerType,omitempty"`
+	Status               *string                                                   `json:"status,omitempty"`
+	Enabled              *bool                                                     `json:"enabled,omitempty"`
+	EnableBgp            *bool                                                     `json:"enableBgp,omitempty"`
+	ExternalIp           NullableString                                            `json:"externalIp,omitempty"`
+	ExternalId           *string                                                   `json:"externalId,omitempty"`
+	ProviderId           *string                                                   `json:"providerId,omitempty"`
+	Type                 *GetNetworkRouter200ResponseNetworkRouterType             `json:"type,omitempty"`
+	NetworkServer        *GetNetworkRouter200ResponseNetworkRouterNetworkServer    `json:"networkServer,omitempty"`
+	Zone                 *GetNetworkRouter200ResponseNetworkRouterZone             `json:"zone,omitempty"`
+	Instance             NullableString                                            `json:"instance,omitempty"`
+	ExternalNetwork      NullableString                                            `json:"externalNetwork,omitempty"`
+	Site                 *GetNetworkRouter200ResponseNetworkRouterSite             `json:"site,omitempty"`
+	Interfaces           []GetNetworkRouter200ResponseNetworkRouterInterfacesInner `json:"interfaces,omitempty"`
+	Firewall             *GetNetworkRouter200ResponseNetworkRouterFirewall         `json:"firewall,omitempty"`
+	Routes               []map[string]interface{}                                  `json:"routes,omitempty"`
+	Nats                 []map[string]interface{}                                  `json:"nats,omitempty"`
+	Permissions          *GetNetworkRouter200ResponseNetworkRouterPermissions      `json:"permissions,omitempty"`
+	Config               map[string]interface{}                                    `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}                                    `json:",remain"`
 }
 
 type _GetNetworkRouter200ResponseNetworkRouter GetNetworkRouter200ResponseNetworkRouter
@@ -754,9 +754,9 @@ func (o *GetNetworkRouter200ResponseNetworkRouter) SetSite(v GetNetworkRouter200
 }
 
 // GetInterfaces returns the Interfaces field value if set, zero value otherwise.
-func (o *GetNetworkRouter200ResponseNetworkRouter) GetInterfaces() []map[string]interface{} {
+func (o *GetNetworkRouter200ResponseNetworkRouter) GetInterfaces() []GetNetworkRouter200ResponseNetworkRouterInterfacesInner {
 	if o == nil || IsNil(o.Interfaces) {
-		var ret []map[string]interface{}
+		var ret []GetNetworkRouter200ResponseNetworkRouterInterfacesInner
 		return ret
 	}
 	return o.Interfaces
@@ -764,7 +764,7 @@ func (o *GetNetworkRouter200ResponseNetworkRouter) GetInterfaces() []map[string]
 
 // GetInterfacesOk returns a tuple with the Interfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetNetworkRouter200ResponseNetworkRouter) GetInterfacesOk() ([]map[string]interface{}, bool) {
+func (o *GetNetworkRouter200ResponseNetworkRouter) GetInterfacesOk() ([]GetNetworkRouter200ResponseNetworkRouterInterfacesInner, bool) {
 	if o == nil || IsNil(o.Interfaces) {
 		return nil, false
 	}
@@ -780,8 +780,8 @@ func (o *GetNetworkRouter200ResponseNetworkRouter) IsSetInterfaces() bool {
 	return false
 }
 
-// SetInterfaces gets a reference to the given []map[string]interface{} and assigns it to the Interfaces field.
-func (o *GetNetworkRouter200ResponseNetworkRouter) SetInterfaces(v []map[string]interface{}) {
+// SetInterfaces gets a reference to the given []GetNetworkRouter200ResponseNetworkRouterInterfacesInner and assigns it to the Interfaces field.
+func (o *GetNetworkRouter200ResponseNetworkRouter) SetInterfaces(v []GetNetworkRouter200ResponseNetworkRouterInterfacesInner) {
 	o.Interfaces = v
 }
 
