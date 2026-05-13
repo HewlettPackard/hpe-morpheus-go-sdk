@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **Instance** | Pointer to **NullableString** |  | [optional] 
 **ExternalNetwork** | Pointer to **NullableString** |  | [optional] 
 **Site** | Pointer to [**GetNetworkRouter200ResponseNetworkRouterSite**](GetNetworkRouter200ResponseNetworkRouterSite.md) |  | [optional] 
-**Interfaces** | Pointer to **[]map[string]interface{}** |  | [optional] 
+**Interfaces** | Pointer to [**[]GetNetworkRouter200ResponseNetworkRouterInterfacesInner**](GetNetworkRouter200ResponseNetworkRouterInterfacesInner.md) |  | [optional] 
 **Firewall** | Pointer to [**GetNetworkRouter200ResponseNetworkRouterFirewall**](GetNetworkRouter200ResponseNetworkRouterFirewall.md) |  | [optional] 
 **Routes** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **Nats** | Pointer to **[]map[string]interface{}** |  | [optional] 
@@ -592,20 +592,20 @@ HasSite returns a boolean if a field has been set.
 
 ### GetInterfaces
 
-`func (o *GetNetworkRouter200ResponseNetworkRouter) GetInterfaces() []map[string]interface{}`
+`func (o *GetNetworkRouter200ResponseNetworkRouter) GetInterfaces() []GetNetworkRouter200ResponseNetworkRouterInterfacesInner`
 
 GetInterfaces returns the Interfaces field if non-nil, zero value otherwise.
 
 ### GetInterfacesOk
 
-`func (o *GetNetworkRouter200ResponseNetworkRouter) GetInterfacesOk() (*[]map[string]interface{}, bool)`
+`func (o *GetNetworkRouter200ResponseNetworkRouter) GetInterfacesOk() (*[]GetNetworkRouter200ResponseNetworkRouterInterfacesInner, bool)`
 
 GetInterfacesOk returns a tuple with the Interfaces field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInterfaces
 
-`func (o *GetNetworkRouter200ResponseNetworkRouter) SetInterfaces(v []map[string]interface{})`
+`func (o *GetNetworkRouter200ResponseNetworkRouter) SetInterfaces(v []GetNetworkRouter200ResponseNetworkRouterInterfacesInner)`
 
 SetInterfaces sets Interfaces field to given value.
 
