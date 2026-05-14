@@ -22,6 +22,7 @@ var _ fmt.Stringer
 // LoadBalancerCreateConfig Configuration object with parameters that vary by load balancer type.
 type LoadBalancerCreateConfig struct {
 	HAProxyLoadBalancerConfigObject1 *HAProxyLoadBalancerConfigObject1
+	NSXTLoadBalancerConfigObject1    *NSXTLoadBalancerConfigObject1
 	MapmapOfStringAny                *map[string]interface{}
 }
 
@@ -34,6 +35,12 @@ func (dst *LoadBalancerCreateConfig) UnmarshalMapstructure(data any) (any, error
 
 	if IsEmpty(dst.HAProxyLoadBalancerConfigObject1) {
 		dst.HAProxyLoadBalancerConfigObject1 = nil
+	}
+
+	mapstructDecode(data, &dst.NSXTLoadBalancerConfigObject1)
+
+	if IsEmpty(dst.NSXTLoadBalancerConfigObject1) {
+		dst.NSXTLoadBalancerConfigObject1 = nil
 	}
 
 	mapstructDecode(data, &dst.MapmapOfStringAny)
@@ -61,6 +68,19 @@ func (dst *LoadBalancerCreateConfig) UnmarshalJSON(data []byte) error {
 		dst.HAProxyLoadBalancerConfigObject1 = nil
 	}
 
+	// try to unmarshal JSON data into NSXTLoadBalancerConfigObject1
+	err = json.Unmarshal(data, &dst.NSXTLoadBalancerConfigObject1)
+	if err == nil {
+		jsonNSXTLoadBalancerConfigObject1, _ := json.Marshal(dst.NSXTLoadBalancerConfigObject1)
+		if string(jsonNSXTLoadBalancerConfigObject1) == "{}" { // empty struct
+			dst.NSXTLoadBalancerConfigObject1 = nil
+		} else {
+			return nil // data stored in dst.NSXTLoadBalancerConfigObject1, return on the first match
+		}
+	} else {
+		dst.NSXTLoadBalancerConfigObject1 = nil
+	}
+
 	// try to unmarshal JSON data into MapmapOfStringAny
 	err = json.Unmarshal(data, &dst.MapmapOfStringAny)
 	if err == nil {
@@ -81,6 +101,10 @@ func (dst *LoadBalancerCreateConfig) UnmarshalJSON(data []byte) error {
 func (src LoadBalancerCreateConfig) MarshalJSON() ([]byte, error) {
 	if src.HAProxyLoadBalancerConfigObject1 != nil {
 		return json.Marshal(&src.HAProxyLoadBalancerConfigObject1)
+	}
+
+	if src.NSXTLoadBalancerConfigObject1 != nil {
+		return json.Marshal(&src.NSXTLoadBalancerConfigObject1)
 	}
 
 	if src.MapmapOfStringAny != nil {
