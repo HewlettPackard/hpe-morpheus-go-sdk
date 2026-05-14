@@ -26,11 +26,13 @@ Name | Type | Description | Notes
 **VipMode** | Pointer to **NullableString** |  | [optional] 
 **VipName** | Pointer to **string** |  | [optional] 
 **VipPort** | Pointer to **int64** |  | [optional] 
+**VipPool** | Pointer to **map[string]interface{}** | Network Pool used for VIP address allocation, if set. | [optional] 
 **VipSticky** | Pointer to **NullableString** |  | [optional] 
 **VipBalance** | Pointer to **NullableString** |  | [optional] 
 **ServicePort** | Pointer to **NullableString** |  | [optional] 
 **SourceAddress** | Pointer to **NullableString** |  | [optional] 
 **SslCert** | Pointer to [**CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstanceSslCert**](CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstanceSslCert.md) |  | [optional] 
+**SslServerCert** | Pointer to [**CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstanceSslServerCert**](CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstanceSslServerCert.md) |  | [optional] 
 **SslMode** | Pointer to **NullableString** |  | [optional] 
 **SslRedirectMode** | Pointer to **NullableString** |  | [optional] 
 **VipShared** | Pointer to **bool** |  | [optional] 
@@ -38,6 +40,7 @@ Name | Type | Description | Notes
 **ServerName** | Pointer to **NullableString** |  | [optional] 
 **PoolName** | Pointer to **NullableString** |  | [optional] 
 **Removing** | Pointer to **bool** |  | [optional] 
+**Pool** | Pointer to [**CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstancePool**](CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstancePool.md) |  | [optional] 
 **VipSource** | Pointer to **string** |  | [optional] 
 **ExtraConfig** | Pointer to **NullableString** |  | [optional] 
 **ServiceAccess** | Pointer to **NullableString** |  | [optional] 
@@ -696,6 +699,41 @@ SetVipPort sets VipPort field to given value.
 
 HasVipPort returns a boolean if a field has been set.
 
+### GetVipPool
+
+`func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetVipPool() map[string]interface{}`
+
+GetVipPool returns the VipPool field if non-nil, zero value otherwise.
+
+### GetVipPoolOk
+
+`func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetVipPoolOk() (*map[string]interface{}, bool)`
+
+GetVipPoolOk returns a tuple with the VipPool field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVipPool
+
+`func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetVipPool(v map[string]interface{})`
+
+SetVipPool sets VipPool field to given value.
+
+### HasVipPool
+
+`func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) HasVipPool() bool`
+
+HasVipPool returns a boolean if a field has been set.
+
+### SetVipPoolNil
+
+`func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetVipPoolNil(b bool)`
+
+ SetVipPoolNil sets the value for VipPool to be an explicit nil
+
+### UnsetVipPool
+`func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) UnsetVipPool()`
+
+UnsetVipPool ensures that no value is present for VipPool, not even an explicit nil
 ### GetVipSticky
 
 `func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetVipSticky() string`
@@ -860,6 +898,31 @@ SetSslCert sets SslCert field to given value.
 `func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) HasSslCert() bool`
 
 HasSslCert returns a boolean if a field has been set.
+
+### GetSslServerCert
+
+`func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetSslServerCert() CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstanceSslServerCert`
+
+GetSslServerCert returns the SslServerCert field if non-nil, zero value otherwise.
+
+### GetSslServerCertOk
+
+`func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetSslServerCertOk() (*CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstanceSslServerCert, bool)`
+
+GetSslServerCertOk returns a tuple with the SslServerCert field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSslServerCert
+
+`func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetSslServerCert(v CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstanceSslServerCert)`
+
+SetSslServerCert sets SslServerCert field to given value.
+
+### HasSslServerCert
+
+`func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) HasSslServerCert() bool`
+
+HasSslServerCert returns a boolean if a field has been set.
 
 ### GetSslMode
 
@@ -1085,6 +1148,31 @@ SetRemoving sets Removing field to given value.
 `func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) HasRemoving() bool`
 
 HasRemoving returns a boolean if a field has been set.
+
+### GetPool
+
+`func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetPool() CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstancePool`
+
+GetPool returns the Pool field if non-nil, zero value otherwise.
+
+### GetPoolOk
+
+`func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetPoolOk() (*CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstancePool, bool)`
+
+GetPoolOk returns a tuple with the Pool field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPool
+
+`func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetPool(v CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstancePool)`
+
+SetPool sets Pool field to given value.
+
+### HasPool
+
+`func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) HasPool() bool`
+
+HasPool returns a boolean if a field has been set.
 
 ### GetVipSource
 

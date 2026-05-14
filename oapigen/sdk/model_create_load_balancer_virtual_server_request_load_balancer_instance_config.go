@@ -14,31 +14,15 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
-
-	"gopkg.in/validator.v2"
 )
 
 // very silly way of avoiding `"fmt" imported and not used` errors
 var _ fmt.Stringer
 
-// CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig - struct for CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig
+// CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig struct for CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig
 type CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig struct {
 	NSXVirtualServerConfigObject *NSXVirtualServerConfigObject
 	MapmapOfStringAny            *map[string]interface{}
-}
-
-// NSXVirtualServerConfigObjectAsCreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig is a convenience function that returns NSXVirtualServerConfigObject wrapped in CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig
-func NSXVirtualServerConfigObjectAsCreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig(v *NSXVirtualServerConfigObject) CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig {
-	return CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig{
-		NSXVirtualServerConfigObject: v,
-	}
-}
-
-// map[string]interface{}AsCreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig is a convenience function that returns map[string]interface{} wrapped in CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig
-func MapmapOfStringAnyAsCreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig(v *map[string]interface{}) CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig {
-	return CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig{
-		MapmapOfStringAny: v,
-	}
 }
 
 func (dst *CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig) UnmarshalMapstructure(data any) (any, error) {
@@ -61,55 +45,36 @@ func (dst *CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig) Unm
 	return dst, nil
 }
 
-// Unmarshal JSON data into one of the pointers in the struct
+// Unmarshal JSON data into any of the pointers in the struct
 func (dst *CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig) UnmarshalJSON(data []byte) error {
 	var err error
-	match := 0
-	// try to unmarshal data into NSXVirtualServerConfigObject
-	err = newStrictDecoder(data).Decode(&dst.NSXVirtualServerConfigObject)
+	// try to unmarshal JSON data into NSXVirtualServerConfigObject
+	err = json.Unmarshal(data, &dst.NSXVirtualServerConfigObject)
 	if err == nil {
 		jsonNSXVirtualServerConfigObject, _ := json.Marshal(dst.NSXVirtualServerConfigObject)
 		if string(jsonNSXVirtualServerConfigObject) == "{}" { // empty struct
 			dst.NSXVirtualServerConfigObject = nil
 		} else {
-			if err = validator.Validate(dst.NSXVirtualServerConfigObject); err != nil {
-				dst.NSXVirtualServerConfigObject = nil
-			} else {
-				match++
-			}
+			return nil // data stored in dst.NSXVirtualServerConfigObject, return on the first match
 		}
 	} else {
 		dst.NSXVirtualServerConfigObject = nil
 	}
 
-	// try to unmarshal data into MapmapOfStringAny
-	err = newStrictDecoder(data).Decode(&dst.MapmapOfStringAny)
+	// try to unmarshal JSON data into MapmapOfStringAny
+	err = json.Unmarshal(data, &dst.MapmapOfStringAny)
 	if err == nil {
 		jsonMapmapOfStringAny, _ := json.Marshal(dst.MapmapOfStringAny)
 		if string(jsonMapmapOfStringAny) == "{}" { // empty struct
 			dst.MapmapOfStringAny = nil
 		} else {
-			if err = validator.Validate(dst.MapmapOfStringAny); err != nil {
-				dst.MapmapOfStringAny = nil
-			} else {
-				match++
-			}
+			return nil // data stored in dst.MapmapOfStringAny, return on the first match
 		}
 	} else {
 		dst.MapmapOfStringAny = nil
 	}
 
-	if match > 1 { // more than 1 match
-		// reset to nil
-		dst.NSXVirtualServerConfigObject = nil
-		dst.MapmapOfStringAny = nil
-
-		return NewResponseValidationError("data matches more than one schema in oneOf(CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig)")
-	} else if match == 1 {
-		return nil // exactly one match
-	} else { // no match
-		return NewResponseValidationError("data failed to match schemas in oneOf(CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig)")
-	}
+	return NewResponseValidationError("data failed to match schemas in anyOf(CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig)")
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON
@@ -122,38 +87,7 @@ func (src CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig) Mars
 		return json.Marshal(&src.MapmapOfStringAny)
 	}
 
-	return nil, nil // no data in oneOf schemas
-}
-
-// Get the actual instance
-func (obj *CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig) GetActualInstance() interface{} {
-	if obj == nil {
-		return nil
-	}
-	if obj.NSXVirtualServerConfigObject != nil {
-		return obj.NSXVirtualServerConfigObject
-	}
-
-	if obj.MapmapOfStringAny != nil {
-		return obj.MapmapOfStringAny
-	}
-
-	// all schemas are nil
-	return nil
-}
-
-// Get the actual instance value
-func (obj CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig) GetActualInstanceValue() interface{} {
-	if obj.NSXVirtualServerConfigObject != nil {
-		return *obj.NSXVirtualServerConfigObject
-	}
-
-	if obj.MapmapOfStringAny != nil {
-		return *obj.MapmapOfStringAny
-	}
-
-	// all schemas are nil
-	return nil
+	return nil, nil // no data in anyOf schemas
 }
 
 type NullableCreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig struct {

@@ -7,12 +7,13 @@ Name | Type | Description | Notes
 **VipName** | Pointer to **string** | VIP Name | [optional] 
 **Description** | Pointer to **string** | Description | [optional] 
 **VipType** | Pointer to **string** | VIP Type | [optional] 
-**VipAddress** | Pointer to **string** | VIP Address | [optional] 
+**VipAddress** | Pointer to **string** | VIP Address. Required when &#x60;vipPool&#x60; is not set. | [optional] 
 **VipPort** | Pointer to **int64** | VIP Port | [optional] 
-**VipProtocol** | Pointer to **string** | VIP Protocol | [optional] 
+**VipProtocol** | Pointer to **string** | VIP Protocol. For NSX-T load balancers, this is the virtual server type. Valid values are &#x60;http&#x60;, &#x60;tcp&#x60;, &#x60;udp&#x60;. | [optional] 
 **VipHostname** | Pointer to **string** | VIP Hostname | [optional] 
-**SslCert** | Pointer to **int64** | SSL Client Certificate ID | [optional] 
-**SslServerCert** | Pointer to **int64** | SSL Server Certificate ID | [optional] 
+**VipPool** | Pointer to **NullableInt64** | Network Pool ID for automatic VIP address allocation. When set, a VIP address will be leased from this pool and &#x60;vipAddress&#x60; does not need to be specified. | [optional] 
+**SslCert** | Pointer to **int64** | SSL Client Certificate ID. Use &#x60;0&#x60; for none. | [optional] 
+**SslServerCert** | Pointer to **int64** | SSL Server Certificate ID. Use &#x60;0&#x60; for none. | [optional] 
 **Config** | Pointer to [**CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig**](CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig.md) |  | [optional] 
 
 ## Methods
@@ -209,6 +210,41 @@ SetVipHostname sets VipHostname field to given value.
 
 HasVipHostname returns a boolean if a field has been set.
 
+### GetVipPool
+
+`func (o *CreateLoadBalancerVirtualServerRequestLoadBalancerInstance) GetVipPool() int64`
+
+GetVipPool returns the VipPool field if non-nil, zero value otherwise.
+
+### GetVipPoolOk
+
+`func (o *CreateLoadBalancerVirtualServerRequestLoadBalancerInstance) GetVipPoolOk() (*int64, bool)`
+
+GetVipPoolOk returns a tuple with the VipPool field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVipPool
+
+`func (o *CreateLoadBalancerVirtualServerRequestLoadBalancerInstance) SetVipPool(v int64)`
+
+SetVipPool sets VipPool field to given value.
+
+### HasVipPool
+
+`func (o *CreateLoadBalancerVirtualServerRequestLoadBalancerInstance) HasVipPool() bool`
+
+HasVipPool returns a boolean if a field has been set.
+
+### SetVipPoolNil
+
+`func (o *CreateLoadBalancerVirtualServerRequestLoadBalancerInstance) SetVipPoolNil(b bool)`
+
+ SetVipPoolNil sets the value for VipPool to be an explicit nil
+
+### UnsetVipPool
+`func (o *CreateLoadBalancerVirtualServerRequestLoadBalancerInstance) UnsetVipPool()`
+
+UnsetVipPool ensures that no value is present for VipPool, not even an explicit nil
 ### GetSslCert
 
 `func (o *CreateLoadBalancerVirtualServerRequestLoadBalancerInstance) GetSslCert() int64`
