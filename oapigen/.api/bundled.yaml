@@ -113044,8 +113044,9 @@ paths:
                           type: boolean
                         networkMtu:
                           type:
-                            - string
+                            - number
                             - 'null'
+                          format: int64
                         externalInterface:
                           type:
                             - string
@@ -113124,7 +113125,6 @@ paths:
                   required: &ref_1658
                     - source
                     - destination
-                    - networkMtu
                   properties: &ref_1659
                     name:
                       type: string
@@ -113147,7 +113147,8 @@ paths:
                       type: string
                       description: Destination address or range
                     networkMtu:
-                      type: string
+                      type: number
+                      format: int64
                       description: MTU
             examples:
               Network  Router Request:
@@ -113159,7 +113160,7 @@ paths:
                     defaultRoute: false
                     source: 99.99.99.99
                     destination: 88.88.88.88
-                    networkMtu: '65535'
+                    networkMtu: 65535
       responses:
         '200':
           description: Successful Request

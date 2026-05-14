@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **Destination** | Pointer to **string** |  | [optional] 
 **DestinationType** | Pointer to **string** |  | [optional] 
 **DefaultRoute** | Pointer to **bool** |  | [optional] 
-**NetworkMtu** | Pointer to **NullableString** |  | [optional] 
+**NetworkMtu** | Pointer to **NullableFloat32** |  | [optional] 
 **ExternalInterface** | Pointer to **NullableString** |  | [optional] 
 **InternalId** | Pointer to **NullableString** |  | [optional] 
 **ExternalId** | Pointer to **string** |  | [optional] 
@@ -351,20 +351,20 @@ HasDefaultRoute returns a boolean if a field has been set.
 
 ### GetNetworkMtu
 
-`func (o *GetNetworkRouterRoute200ResponseNetworkRoute) GetNetworkMtu() string`
+`func (o *GetNetworkRouterRoute200ResponseNetworkRoute) GetNetworkMtu() float32`
 
 GetNetworkMtu returns the NetworkMtu field if non-nil, zero value otherwise.
 
 ### GetNetworkMtuOk
 
-`func (o *GetNetworkRouterRoute200ResponseNetworkRoute) GetNetworkMtuOk() (*string, bool)`
+`func (o *GetNetworkRouterRoute200ResponseNetworkRoute) GetNetworkMtuOk() (*float32, bool)`
 
 GetNetworkMtuOk returns a tuple with the NetworkMtu field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkMtu
 
-`func (o *GetNetworkRouterRoute200ResponseNetworkRoute) SetNetworkMtu(v string)`
+`func (o *GetNetworkRouterRoute200ResponseNetworkRoute) SetNetworkMtu(v float32)`
 
 SetNetworkMtu sets NetworkMtu field to given value.
 
