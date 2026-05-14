@@ -20,15 +20,15 @@ var _ MappedNullable = &GetNetworkFirewallRule200ResponseRule{}
 
 // GetNetworkFirewallRule200ResponseRule struct for GetNetworkFirewallRule200ResponseRule
 type GetNetworkFirewallRule200ResponseRule struct {
-	Id                   *int32                                                   `json:"id,omitempty"`
+	Id                   *int64                                                   `json:"id,omitempty"`
 	Direction            *string                                                  `json:"direction,omitempty"`
 	SourceType           *string                                                  `json:"sourceType,omitempty"`
 	DestinationType      *string                                                  `json:"destinationType,omitempty"`
 	Name                 *string                                                  `json:"name,omitempty"`
 	Policy               *string                                                  `json:"policy,omitempty"`
-	Priority             *int32                                                   `json:"priority,omitempty"`
+	Priority             *int64                                                   `json:"priority,omitempty"`
 	Enabled              *bool                                                    `json:"enabled,omitempty"`
-	RuleGroup            *GetNetworkFirewallRule200ResponseRuleRuleGroup          `json:"ruleGroup,omitempty"`
+	RuleGroup            NullableGetNetworkFirewallRule200ResponseRuleRuleGroup   `json:"ruleGroup,omitempty"`
 	GroupName            *string                                                  `json:"groupName,omitempty"`
 	Config               map[string]interface{}                                   `json:"config,omitempty"`
 	Sources              []GetNetworkFirewallRule200ResponseRuleSourcesInner      `json:"sources,omitempty"`
@@ -60,9 +60,9 @@ func NewGetNetworkFirewallRule200ResponseRuleWithDefaults() *GetNetworkFirewallR
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *GetNetworkFirewallRule200ResponseRule) GetId() int32 {
+func (o *GetNetworkFirewallRule200ResponseRule) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -70,7 +70,7 @@ func (o *GetNetworkFirewallRule200ResponseRule) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetNetworkFirewallRule200ResponseRule) GetIdOk() (*int32, bool) {
+func (o *GetNetworkFirewallRule200ResponseRule) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -86,8 +86,8 @@ func (o *GetNetworkFirewallRule200ResponseRule) IsSetId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *GetNetworkFirewallRule200ResponseRule) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *GetNetworkFirewallRule200ResponseRule) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -252,9 +252,9 @@ func (o *GetNetworkFirewallRule200ResponseRule) SetPolicy(v string) {
 }
 
 // GetPriority returns the Priority field value if set, zero value otherwise.
-func (o *GetNetworkFirewallRule200ResponseRule) GetPriority() int32 {
+func (o *GetNetworkFirewallRule200ResponseRule) GetPriority() int64 {
 	if o == nil || IsNil(o.Priority) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Priority
@@ -262,7 +262,7 @@ func (o *GetNetworkFirewallRule200ResponseRule) GetPriority() int32 {
 
 // GetPriorityOk returns a tuple with the Priority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetNetworkFirewallRule200ResponseRule) GetPriorityOk() (*int32, bool) {
+func (o *GetNetworkFirewallRule200ResponseRule) GetPriorityOk() (*int64, bool) {
 	if o == nil || IsNil(o.Priority) {
 		return nil, false
 	}
@@ -278,8 +278,8 @@ func (o *GetNetworkFirewallRule200ResponseRule) IsSetPriority() bool {
 	return false
 }
 
-// SetPriority gets a reference to the given int32 and assigns it to the Priority field.
-func (o *GetNetworkFirewallRule200ResponseRule) SetPriority(v int32) {
+// SetPriority gets a reference to the given int64 and assigns it to the Priority field.
+func (o *GetNetworkFirewallRule200ResponseRule) SetPriority(v int64) {
 	o.Priority = &v
 }
 
@@ -315,36 +315,47 @@ func (o *GetNetworkFirewallRule200ResponseRule) SetEnabled(v bool) {
 	o.Enabled = &v
 }
 
-// GetRuleGroup returns the RuleGroup field value if set, zero value otherwise.
+// GetRuleGroup returns the RuleGroup field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GetNetworkFirewallRule200ResponseRule) GetRuleGroup() GetNetworkFirewallRule200ResponseRuleRuleGroup {
-	if o == nil || IsNil(o.RuleGroup) {
+	if o == nil || IsNil(o.RuleGroup.Get()) {
 		var ret GetNetworkFirewallRule200ResponseRuleRuleGroup
 		return ret
 	}
-	return *o.RuleGroup
+	return *o.RuleGroup.Get()
 }
 
 // GetRuleGroupOk returns a tuple with the RuleGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkFirewallRule200ResponseRule) GetRuleGroupOk() (*GetNetworkFirewallRule200ResponseRuleRuleGroup, bool) {
-	if o == nil || IsNil(o.RuleGroup) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RuleGroup, true
+	return o.RuleGroup.Get(), o.RuleGroup.IsSet()
 }
 
 // IsSetRuleGroup returns a boolean if a field has been set.
 func (o *GetNetworkFirewallRule200ResponseRule) IsSetRuleGroup() bool {
-	if o != nil && !IsNil(o.RuleGroup) {
+	if o != nil && o.RuleGroup.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRuleGroup gets a reference to the given GetNetworkFirewallRule200ResponseRuleRuleGroup and assigns it to the RuleGroup field.
+// SetRuleGroup gets a reference to the given NullableGetNetworkFirewallRule200ResponseRuleRuleGroup and assigns it to the RuleGroup field.
 func (o *GetNetworkFirewallRule200ResponseRule) SetRuleGroup(v GetNetworkFirewallRule200ResponseRuleRuleGroup) {
-	o.RuleGroup = &v
+	o.RuleGroup.Set(&v)
+}
+
+// SetRuleGroupNil sets the value for RuleGroup to be an explicit nil
+func (o *GetNetworkFirewallRule200ResponseRule) SetRuleGroupNil() {
+	o.RuleGroup.Set(nil)
+}
+
+// UnsetRuleGroup ensures that no value is present for RuleGroup, not even an explicit nil
+func (o *GetNetworkFirewallRule200ResponseRule) UnsetRuleGroup() {
+	o.RuleGroup.Unset()
 }
 
 // GetGroupName returns the GroupName field value if set, zero value otherwise.
@@ -637,8 +648,8 @@ func (o GetNetworkFirewallRule200ResponseRule) ToMap() (map[string]interface{}, 
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}
-	if !IsNil(o.RuleGroup) {
-		toSerialize["ruleGroup"] = o.RuleGroup
+	if o.RuleGroup.IsSet() {
+		toSerialize["ruleGroup"] = o.RuleGroup.Get()
 	}
 	if !IsNil(o.GroupName) {
 		toSerialize["groupName"] = o.GroupName

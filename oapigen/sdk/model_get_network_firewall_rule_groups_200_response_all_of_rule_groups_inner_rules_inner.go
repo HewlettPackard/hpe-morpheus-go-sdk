@@ -28,7 +28,7 @@ type GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInner struc
 	Policy               *string                                                                                  `json:"policy,omitempty"`
 	Priority             *int64                                                                                   `json:"priority,omitempty"`
 	Enabled              *bool                                                                                    `json:"enabled,omitempty"`
-	RuleGroup            NullableGetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInnerRuleGroup   `json:"ruleGroup,omitempty"`
+	RuleGroup            *GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInnerRuleGroup          `json:"ruleGroup,omitempty"`
 	GroupName            *string                                                                                  `json:"groupName,omitempty"`
 	Config               map[string]interface{}                                                                   `json:"config,omitempty"`
 	Sources              []GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInnerSourcesInner      `json:"sources,omitempty"`
@@ -315,47 +315,36 @@ func (o *GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInner) 
 	o.Enabled = &v
 }
 
-// GetRuleGroup returns the RuleGroup field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetRuleGroup returns the RuleGroup field value if set, zero value otherwise.
 func (o *GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInner) GetRuleGroup() GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInnerRuleGroup {
-	if o == nil || IsNil(o.RuleGroup.Get()) {
+	if o == nil || IsNil(o.RuleGroup) {
 		var ret GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInnerRuleGroup
 		return ret
 	}
-	return *o.RuleGroup.Get()
+	return *o.RuleGroup
 }
 
 // GetRuleGroupOk returns a tuple with the RuleGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInner) GetRuleGroupOk() (*GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInnerRuleGroup, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.RuleGroup) {
 		return nil, false
 	}
-	return o.RuleGroup.Get(), o.RuleGroup.IsSet()
+	return o.RuleGroup, true
 }
 
 // IsSetRuleGroup returns a boolean if a field has been set.
 func (o *GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInner) IsSetRuleGroup() bool {
-	if o != nil && o.RuleGroup.IsSet() {
+	if o != nil && !IsNil(o.RuleGroup) {
 		return true
 	}
 
 	return false
 }
 
-// SetRuleGroup gets a reference to the given NullableGetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInnerRuleGroup and assigns it to the RuleGroup field.
+// SetRuleGroup gets a reference to the given GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInnerRuleGroup and assigns it to the RuleGroup field.
 func (o *GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInner) SetRuleGroup(v GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInnerRuleGroup) {
-	o.RuleGroup.Set(&v)
-}
-
-// SetRuleGroupNil sets the value for RuleGroup to be an explicit nil
-func (o *GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInner) SetRuleGroupNil() {
-	o.RuleGroup.Set(nil)
-}
-
-// UnsetRuleGroup ensures that no value is present for RuleGroup, not even an explicit nil
-func (o *GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInner) UnsetRuleGroup() {
-	o.RuleGroup.Unset()
+	o.RuleGroup = &v
 }
 
 // GetGroupName returns the GroupName field value if set, zero value otherwise.
@@ -648,8 +637,8 @@ func (o GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInner) T
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}
-	if o.RuleGroup.IsSet() {
-		toSerialize["ruleGroup"] = o.RuleGroup.Get()
+	if !IsNil(o.RuleGroup) {
+		toSerialize["ruleGroup"] = o.RuleGroup
 	}
 	if !IsNil(o.GroupName) {
 		toSerialize["groupName"] = o.GroupName

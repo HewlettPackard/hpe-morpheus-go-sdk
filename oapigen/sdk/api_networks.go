@@ -5730,7 +5730,7 @@ type ApiDeleteStaticRouteRequest struct {
 	ctx        context.Context
 	ApiService *NetworksAPIService
 	id         int64
-	routeId    float32
+	routeId    int64
 }
 
 func (r ApiDeleteStaticRouteRequest) Execute() (*DeleteStaticRoute200Response, *http.Response, error) {
@@ -5747,7 +5747,7 @@ Will delete a route from a network.
 	@param routeId The ID of the route
 	@return ApiDeleteStaticRouteRequest
 */
-func (a *NetworksAPIService) DeleteStaticRoute(ctx context.Context, id int64, routeId float32) ApiDeleteStaticRouteRequest {
+func (a *NetworksAPIService) DeleteStaticRoute(ctx context.Context, id int64, routeId int64) ApiDeleteStaticRouteRequest {
 	return ApiDeleteStaticRouteRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -12155,7 +12155,7 @@ type ApiGetStaticRouteRequest struct {
 	ctx        context.Context
 	ApiService *NetworksAPIService
 	id         int64
-	routeId    float32
+	routeId    int64
 }
 
 func (r ApiGetStaticRouteRequest) Execute() (*GetStaticRoute200Response, *http.Response, error) {
@@ -12172,7 +12172,7 @@ This endpoint retrieves a network static route for specified network.
 	@param routeId The ID of the route
 	@return ApiGetStaticRouteRequest
 */
-func (a *NetworksAPIService) GetStaticRoute(ctx context.Context, id int64, routeId float32) ApiGetStaticRouteRequest {
+func (a *NetworksAPIService) GetStaticRoute(ctx context.Context, id int64, routeId int64) ApiGetStaticRouteRequest {
 	return ApiGetStaticRouteRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -17141,7 +17141,7 @@ type ApiUpdateStaticRouteRequest struct {
 	ctx                      context.Context
 	ApiService               *NetworksAPIService
 	id                       int64
-	routeId                  float32
+	routeId                  int64
 	updateStaticRouteRequest *UpdateStaticRouteRequest
 }
 
@@ -17164,7 +17164,7 @@ Use this command to update a route.
 	@param routeId The ID of the route
 	@return ApiUpdateStaticRouteRequest
 */
-func (a *NetworksAPIService) UpdateStaticRoute(ctx context.Context, id int64, routeId float32) ApiUpdateStaticRouteRequest {
+func (a *NetworksAPIService) UpdateStaticRoute(ctx context.Context, id int64, routeId int64) ApiUpdateStaticRouteRequest {
 	return ApiUpdateStaticRouteRequest{
 		ApiService: a,
 		ctx:        ctx,

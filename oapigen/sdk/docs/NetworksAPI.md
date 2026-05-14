@@ -3187,7 +3187,7 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	routeId := float32(4) // float32 | The ID of the route
+	routeId := int64(4) // int64 | The ID of the route
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3208,7 +3208,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **id** | **int64** | Morpheus ID of the Object being referenced | 
-**routeId** | **float32** | The ID of the route | 
+**routeId** | **int64** | The ID of the route | 
 
 ### Other Parameters
 
@@ -6495,7 +6495,7 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	routeId := float32(4) // float32 | The ID of the route
+	routeId := int64(4) // int64 | The ID of the route
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6516,7 +6516,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **id** | **int64** | Morpheus ID of the Object being referenced | 
-**routeId** | **float32** | The ID of the route | 
+**routeId** | **int64** | The ID of the route | 
 
 ### Other Parameters
 
@@ -9048,7 +9048,7 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	routeId := float32(4) // float32 | The ID of the route
+	routeId := int64(4) // int64 | The ID of the route
 	updateStaticRouteRequest := *openapiclient.NewUpdateStaticRouteRequest() // UpdateStaticRouteRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -9070,7 +9070,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **id** | **int64** | Morpheus ID of the Object being referenced | 
-**routeId** | **float32** | The ID of the route | 
+**routeId** | **int64** | The ID of the route | 
 
 ### Other Parameters
 
