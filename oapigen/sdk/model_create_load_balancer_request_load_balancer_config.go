@@ -22,6 +22,7 @@ var _ fmt.Stringer
 // CreateLoadBalancerRequestLoadBalancerConfig Configuration object with parameters that vary by load balancer type.
 type CreateLoadBalancerRequestLoadBalancerConfig struct {
 	HAProxyLoadBalancerConfigObject *HAProxyLoadBalancerConfigObject
+	NSXTLoadBalancerConfigObject    *NSXTLoadBalancerConfigObject
 	MapmapOfStringAny               *map[string]interface{}
 }
 
@@ -34,6 +35,12 @@ func (dst *CreateLoadBalancerRequestLoadBalancerConfig) UnmarshalMapstructure(da
 
 	if IsEmpty(dst.HAProxyLoadBalancerConfigObject) {
 		dst.HAProxyLoadBalancerConfigObject = nil
+	}
+
+	mapstructDecode(data, &dst.NSXTLoadBalancerConfigObject)
+
+	if IsEmpty(dst.NSXTLoadBalancerConfigObject) {
+		dst.NSXTLoadBalancerConfigObject = nil
 	}
 
 	mapstructDecode(data, &dst.MapmapOfStringAny)
@@ -61,6 +68,19 @@ func (dst *CreateLoadBalancerRequestLoadBalancerConfig) UnmarshalJSON(data []byt
 		dst.HAProxyLoadBalancerConfigObject = nil
 	}
 
+	// try to unmarshal JSON data into NSXTLoadBalancerConfigObject
+	err = json.Unmarshal(data, &dst.NSXTLoadBalancerConfigObject)
+	if err == nil {
+		jsonNSXTLoadBalancerConfigObject, _ := json.Marshal(dst.NSXTLoadBalancerConfigObject)
+		if string(jsonNSXTLoadBalancerConfigObject) == "{}" { // empty struct
+			dst.NSXTLoadBalancerConfigObject = nil
+		} else {
+			return nil // data stored in dst.NSXTLoadBalancerConfigObject, return on the first match
+		}
+	} else {
+		dst.NSXTLoadBalancerConfigObject = nil
+	}
+
 	// try to unmarshal JSON data into MapmapOfStringAny
 	err = json.Unmarshal(data, &dst.MapmapOfStringAny)
 	if err == nil {
@@ -81,6 +101,10 @@ func (dst *CreateLoadBalancerRequestLoadBalancerConfig) UnmarshalJSON(data []byt
 func (src CreateLoadBalancerRequestLoadBalancerConfig) MarshalJSON() ([]byte, error) {
 	if src.HAProxyLoadBalancerConfigObject != nil {
 		return json.Marshal(&src.HAProxyLoadBalancerConfigObject)
+	}
+
+	if src.NSXTLoadBalancerConfigObject != nil {
+		return json.Marshal(&src.NSXTLoadBalancerConfigObject)
 	}
 
 	if src.MapmapOfStringAny != nil {

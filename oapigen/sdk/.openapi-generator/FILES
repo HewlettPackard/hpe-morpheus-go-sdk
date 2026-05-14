@@ -6087,6 +6087,7 @@ docs/LoadBalancerCreateConfig.md
 docs/LoadBalancerCreateConfigHaproxy.md
 docs/LoadBalancerCreateConfigHaproxyPlan.md
 docs/LoadBalancerCreateConfigHaproxyPool.md
+docs/LoadBalancerCreateConfigNSXT.md
 docs/LoadBalancerCreateResourcePermissions.md
 docs/LoadBalancerCreateSite.md
 docs/LoadBalancerCreateTenantsInner.md
@@ -6397,6 +6398,8 @@ docs/NSXTBGPNeighborConfig2.md
 docs/NSXTBGPNeighborConfig3.md
 docs/NSXTBGPNeighborConfig4.md
 docs/NSXTBGPNeighborConfig5.md
+docs/NSXTLoadBalancerConfigObject.md
+docs/NSXTLoadBalancerConfigObject1.md
 docs/NSXVBGPNeighborConfig.md
 docs/NSXVBGPNeighborConfig1.md
 docs/NSXVBGPNeighborConfig2.md
@@ -15034,6 +15037,7 @@ model_load_balancer_create_config.go
 model_load_balancer_create_config_haproxy.go
 model_load_balancer_create_config_haproxy_plan.go
 model_load_balancer_create_config_haproxy_pool.go
+model_load_balancer_create_config_nsxt.go
 model_load_balancer_create_resource_permissions.go
 model_load_balancer_create_site.go
 model_load_balancer_create_tenants_inner.go
@@ -15512,6 +15516,8 @@ model_nsx_t_bgp_neighbor_config_2.go
 model_nsx_t_bgp_neighbor_config_3.go
 model_nsx_t_bgp_neighbor_config_4.go
 model_nsx_t_bgp_neighbor_config_5.go
+model_nsx_t_load_balancer_config_object.go
+model_nsx_t_load_balancer_config_object_1.go
 model_nsx_v_bgp_neighbor_config.go
 model_nsx_v_bgp_neighbor_config_1.go
 model_nsx_v_bgp_neighbor_config_2.go
