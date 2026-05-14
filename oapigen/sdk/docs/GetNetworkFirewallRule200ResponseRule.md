@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** |  | [optional] 
+**Id** | Pointer to **int64** |  | [optional] 
 **Direction** | Pointer to **string** |  | [optional] 
 **SourceType** | Pointer to **string** |  | [optional] 
 **DestinationType** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Policy** | Pointer to **string** |  | [optional] 
-**Priority** | Pointer to **int32** |  | [optional] 
+**Priority** | Pointer to **int64** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**RuleGroup** | Pointer to [**GetNetworkFirewallRule200ResponseRuleRuleGroup**](GetNetworkFirewallRule200ResponseRuleRuleGroup.md) |  | [optional] 
+**RuleGroup** | Pointer to [**NullableGetNetworkFirewallRule200ResponseRuleRuleGroup**](GetNetworkFirewallRule200ResponseRuleRuleGroup.md) |  | [optional] 
 **GroupName** | Pointer to **string** |  | [optional] 
 **Config** | Pointer to **map[string]interface{}** |  | [optional] 
 **Sources** | Pointer to [**[]GetNetworkFirewallRule200ResponseRuleSourcesInner**](GetNetworkFirewallRule200ResponseRuleSourcesInner.md) |  | [optional] 
@@ -43,20 +43,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *GetNetworkFirewallRule200ResponseRule) GetId() int32`
+`func (o *GetNetworkFirewallRule200ResponseRule) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *GetNetworkFirewallRule200ResponseRule) GetIdOk() (*int32, bool)`
+`func (o *GetNetworkFirewallRule200ResponseRule) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *GetNetworkFirewallRule200ResponseRule) SetId(v int32)`
+`func (o *GetNetworkFirewallRule200ResponseRule) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -193,20 +193,20 @@ HasPolicy returns a boolean if a field has been set.
 
 ### GetPriority
 
-`func (o *GetNetworkFirewallRule200ResponseRule) GetPriority() int32`
+`func (o *GetNetworkFirewallRule200ResponseRule) GetPriority() int64`
 
 GetPriority returns the Priority field if non-nil, zero value otherwise.
 
 ### GetPriorityOk
 
-`func (o *GetNetworkFirewallRule200ResponseRule) GetPriorityOk() (*int32, bool)`
+`func (o *GetNetworkFirewallRule200ResponseRule) GetPriorityOk() (*int64, bool)`
 
 GetPriorityOk returns a tuple with the Priority field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPriority
 
-`func (o *GetNetworkFirewallRule200ResponseRule) SetPriority(v int32)`
+`func (o *GetNetworkFirewallRule200ResponseRule) SetPriority(v int64)`
 
 SetPriority sets Priority field to given value.
 
@@ -266,6 +266,16 @@ SetRuleGroup sets RuleGroup field to given value.
 
 HasRuleGroup returns a boolean if a field has been set.
 
+### SetRuleGroupNil
+
+`func (o *GetNetworkFirewallRule200ResponseRule) SetRuleGroupNil(b bool)`
+
+ SetRuleGroupNil sets the value for RuleGroup to be an explicit nil
+
+### UnsetRuleGroup
+`func (o *GetNetworkFirewallRule200ResponseRule) UnsetRuleGroup()`
+
+UnsetRuleGroup ensures that no value is present for RuleGroup, not even an explicit nil
 ### GetGroupName
 
 `func (o *GetNetworkFirewallRule200ResponseRule) GetGroupName() string`

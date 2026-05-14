@@ -108501,7 +108501,9 @@ paths:
           description: The ID of the route
           required: true
           schema: &ref_741
-            type: number
+            type: integer
+            format: int64
+            description: Route ID
           example: 4
       responses:
         '200':
@@ -117166,7 +117168,7 @@ paths:
                           properties:
                             id: &ref_947
                               type: integer
-                              format: int32
+                              format: int64
                             direction: &ref_948
                               type: string
                             sourceType: &ref_949
@@ -117179,7 +117181,7 @@ paths:
                               type: string
                             priority: &ref_953
                               type: integer
-                              format: int32
+                              format: int64
                             enabled: &ref_954
                               type: boolean
                             ruleGroup: &ref_955
@@ -117187,7 +117189,7 @@ paths:
                               properties:
                                 id:
                                   type: integer
-                                  format: int32
+                                  format: int64
                                 name:
                                   type: string
                             groupName: &ref_956
