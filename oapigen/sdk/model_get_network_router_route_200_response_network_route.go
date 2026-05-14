@@ -31,7 +31,7 @@ type GetNetworkRouterRoute200ResponseNetworkRoute struct {
 	Destination          *string                `json:"destination,omitempty"`
 	DestinationType      *string                `json:"destinationType,omitempty"`
 	DefaultRoute         *bool                  `json:"defaultRoute,omitempty"`
-	NetworkMtu           NullableString         `json:"networkMtu,omitempty"`
+	NetworkMtu           NullableFloat32        `json:"networkMtu,omitempty"`
 	ExternalInterface    NullableString         `json:"externalInterface,omitempty"`
 	InternalId           NullableString         `json:"internalId,omitempty"`
 	ExternalId           *string                `json:"externalId,omitempty"`
@@ -448,9 +448,9 @@ func (o *GetNetworkRouterRoute200ResponseNetworkRoute) SetDefaultRoute(v bool) {
 }
 
 // GetNetworkMtu returns the NetworkMtu field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GetNetworkRouterRoute200ResponseNetworkRoute) GetNetworkMtu() string {
+func (o *GetNetworkRouterRoute200ResponseNetworkRoute) GetNetworkMtu() float32 {
 	if o == nil || IsNil(o.NetworkMtu.Get()) {
-		var ret string
+		var ret float32
 		return ret
 	}
 	return *o.NetworkMtu.Get()
@@ -459,7 +459,7 @@ func (o *GetNetworkRouterRoute200ResponseNetworkRoute) GetNetworkMtu() string {
 // GetNetworkMtuOk returns a tuple with the NetworkMtu field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GetNetworkRouterRoute200ResponseNetworkRoute) GetNetworkMtuOk() (*string, bool) {
+func (o *GetNetworkRouterRoute200ResponseNetworkRoute) GetNetworkMtuOk() (*float32, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -475,8 +475,8 @@ func (o *GetNetworkRouterRoute200ResponseNetworkRoute) IsSetNetworkMtu() bool {
 	return false
 }
 
-// SetNetworkMtu gets a reference to the given NullableString and assigns it to the NetworkMtu field.
-func (o *GetNetworkRouterRoute200ResponseNetworkRoute) SetNetworkMtu(v string) {
+// SetNetworkMtu gets a reference to the given NullableFloat32 and assigns it to the NetworkMtu field.
+func (o *GetNetworkRouterRoute200ResponseNetworkRoute) SetNetworkMtu(v float32) {
 	o.NetworkMtu.Set(&v)
 }
 

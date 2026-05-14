@@ -33,7 +33,7 @@ type NetworkRouterRouteCreate struct {
 	// Destination address or range
 	Destination string `json:"destination"`
 	// MTU
-	NetworkMtu           string                 `json:"networkMtu"`
+	NetworkMtu           *float32               `json:"networkMtu,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -43,7 +43,7 @@ type _NetworkRouterRouteCreate NetworkRouterRouteCreate
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNetworkRouterRouteCreate(source string, destination string, networkMtu string) *NetworkRouterRouteCreate {
+func NewNetworkRouterRouteCreate(source string, destination string) *NetworkRouterRouteCreate {
 	this := NetworkRouterRouteCreate{}
 	var enabled bool = false
 	this.Enabled = &enabled
@@ -51,7 +51,6 @@ func NewNetworkRouterRouteCreate(source string, destination string, networkMtu s
 	this.DefaultRoute = &defaultRoute
 	this.Source = source
 	this.Destination = destination
-	this.NetworkMtu = networkMtu
 	return &this
 }
 
@@ -243,28 +242,36 @@ func (o *NetworkRouterRouteCreate) SetDestination(v string) {
 	o.Destination = v
 }
 
-// GetNetworkMtu returns the NetworkMtu field value
-func (o *NetworkRouterRouteCreate) GetNetworkMtu() string {
-	if o == nil {
-		var ret string
+// GetNetworkMtu returns the NetworkMtu field value if set, zero value otherwise.
+func (o *NetworkRouterRouteCreate) GetNetworkMtu() float32 {
+	if o == nil || IsNil(o.NetworkMtu) {
+		var ret float32
 		return ret
 	}
-
-	return o.NetworkMtu
+	return *o.NetworkMtu
 }
 
-// GetNetworkMtuOk returns a tuple with the NetworkMtu field value
+// GetNetworkMtuOk returns a tuple with the NetworkMtu field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NetworkRouterRouteCreate) GetNetworkMtuOk() (*string, bool) {
-	if o == nil {
+func (o *NetworkRouterRouteCreate) GetNetworkMtuOk() (*float32, bool) {
+	if o == nil || IsNil(o.NetworkMtu) {
 		return nil, false
 	}
-	return &o.NetworkMtu, true
+	return o.NetworkMtu, true
 }
 
-// SetNetworkMtu sets field value
-func (o *NetworkRouterRouteCreate) SetNetworkMtu(v string) {
-	o.NetworkMtu = v
+// IsSetNetworkMtu returns a boolean if a field has been set.
+func (o *NetworkRouterRouteCreate) IsSetNetworkMtu() bool {
+	if o != nil && !IsNil(o.NetworkMtu) {
+		return true
+	}
+
+	return false
+}
+
+// SetNetworkMtu gets a reference to the given float32 and assigns it to the NetworkMtu field.
+func (o *NetworkRouterRouteCreate) SetNetworkMtu(v float32) {
+	o.NetworkMtu = &v
 }
 
 func (o NetworkRouterRouteCreate) MarshalJSON() ([]byte, error) {
@@ -291,7 +298,9 @@ func (o NetworkRouterRouteCreate) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["source"] = o.Source
 	toSerialize["destination"] = o.Destination
-	toSerialize["networkMtu"] = o.NetworkMtu
+	if !IsNil(o.NetworkMtu) {
+		toSerialize["networkMtu"] = o.NetworkMtu
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value

@@ -10,13 +10,13 @@ Name | Type | Description | Notes
 **DefaultRoute** | Pointer to **bool** | Can be used to set as default route (true, false). Default is off | [optional] [default to false]
 **Source** | **string** | Source address or range | 
 **Destination** | **string** | Destination address or range | 
-**NetworkMtu** | **string** | MTU | 
+**NetworkMtu** | Pointer to **float32** | MTU | [optional] 
 
 ## Methods
 
 ### NewCreateNetworkRouterRouteRequestNetworkRoute
 
-`func NewCreateNetworkRouterRouteRequestNetworkRoute(source string, destination string, networkMtu string, ) *CreateNetworkRouterRouteRequestNetworkRoute`
+`func NewCreateNetworkRouterRouteRequestNetworkRoute(source string, destination string, ) *CreateNetworkRouterRouteRequestNetworkRoute`
 
 NewCreateNetworkRouterRouteRequestNetworkRoute instantiates a new CreateNetworkRouterRouteRequestNetworkRoute object
 This constructor will assign default values to properties that have it defined,
@@ -173,23 +173,28 @@ SetDestination sets Destination field to given value.
 
 ### GetNetworkMtu
 
-`func (o *CreateNetworkRouterRouteRequestNetworkRoute) GetNetworkMtu() string`
+`func (o *CreateNetworkRouterRouteRequestNetworkRoute) GetNetworkMtu() float32`
 
 GetNetworkMtu returns the NetworkMtu field if non-nil, zero value otherwise.
 
 ### GetNetworkMtuOk
 
-`func (o *CreateNetworkRouterRouteRequestNetworkRoute) GetNetworkMtuOk() (*string, bool)`
+`func (o *CreateNetworkRouterRouteRequestNetworkRoute) GetNetworkMtuOk() (*float32, bool)`
 
 GetNetworkMtuOk returns a tuple with the NetworkMtu field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkMtu
 
-`func (o *CreateNetworkRouterRouteRequestNetworkRoute) SetNetworkMtu(v string)`
+`func (o *CreateNetworkRouterRouteRequestNetworkRoute) SetNetworkMtu(v float32)`
 
 SetNetworkMtu sets NetworkMtu field to given value.
 
+### HasNetworkMtu
+
+`func (o *CreateNetworkRouterRouteRequestNetworkRoute) HasNetworkMtu() bool`
+
+HasNetworkMtu returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
