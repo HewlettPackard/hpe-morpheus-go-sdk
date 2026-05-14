@@ -14,31 +14,15 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
-
-	"gopkg.in/validator.v2"
 )
 
 // very silly way of avoiding `"fmt" imported and not used` errors
 var _ fmt.Stringer
 
-// LoadBalancerInstanceUpdateConfig - struct for LoadBalancerInstanceUpdateConfig
+// LoadBalancerInstanceUpdateConfig struct for LoadBalancerInstanceUpdateConfig
 type LoadBalancerInstanceUpdateConfig struct {
 	NSXVirtualServerConfigObject2 *NSXVirtualServerConfigObject2
 	MapmapOfStringAny             *map[string]interface{}
-}
-
-// NSXVirtualServerConfigObject2AsLoadBalancerInstanceUpdateConfig is a convenience function that returns NSXVirtualServerConfigObject2 wrapped in LoadBalancerInstanceUpdateConfig
-func NSXVirtualServerConfigObject2AsLoadBalancerInstanceUpdateConfig(v *NSXVirtualServerConfigObject2) LoadBalancerInstanceUpdateConfig {
-	return LoadBalancerInstanceUpdateConfig{
-		NSXVirtualServerConfigObject2: v,
-	}
-}
-
-// map[string]interface{}AsLoadBalancerInstanceUpdateConfig is a convenience function that returns map[string]interface{} wrapped in LoadBalancerInstanceUpdateConfig
-func MapmapOfStringAnyAsLoadBalancerInstanceUpdateConfig(v *map[string]interface{}) LoadBalancerInstanceUpdateConfig {
-	return LoadBalancerInstanceUpdateConfig{
-		MapmapOfStringAny: v,
-	}
 }
 
 func (dst *LoadBalancerInstanceUpdateConfig) UnmarshalMapstructure(data any) (any, error) {
@@ -61,55 +45,36 @@ func (dst *LoadBalancerInstanceUpdateConfig) UnmarshalMapstructure(data any) (an
 	return dst, nil
 }
 
-// Unmarshal JSON data into one of the pointers in the struct
+// Unmarshal JSON data into any of the pointers in the struct
 func (dst *LoadBalancerInstanceUpdateConfig) UnmarshalJSON(data []byte) error {
 	var err error
-	match := 0
-	// try to unmarshal data into NSXVirtualServerConfigObject2
-	err = newStrictDecoder(data).Decode(&dst.NSXVirtualServerConfigObject2)
+	// try to unmarshal JSON data into NSXVirtualServerConfigObject2
+	err = json.Unmarshal(data, &dst.NSXVirtualServerConfigObject2)
 	if err == nil {
 		jsonNSXVirtualServerConfigObject2, _ := json.Marshal(dst.NSXVirtualServerConfigObject2)
 		if string(jsonNSXVirtualServerConfigObject2) == "{}" { // empty struct
 			dst.NSXVirtualServerConfigObject2 = nil
 		} else {
-			if err = validator.Validate(dst.NSXVirtualServerConfigObject2); err != nil {
-				dst.NSXVirtualServerConfigObject2 = nil
-			} else {
-				match++
-			}
+			return nil // data stored in dst.NSXVirtualServerConfigObject2, return on the first match
 		}
 	} else {
 		dst.NSXVirtualServerConfigObject2 = nil
 	}
 
-	// try to unmarshal data into MapmapOfStringAny
-	err = newStrictDecoder(data).Decode(&dst.MapmapOfStringAny)
+	// try to unmarshal JSON data into MapmapOfStringAny
+	err = json.Unmarshal(data, &dst.MapmapOfStringAny)
 	if err == nil {
 		jsonMapmapOfStringAny, _ := json.Marshal(dst.MapmapOfStringAny)
 		if string(jsonMapmapOfStringAny) == "{}" { // empty struct
 			dst.MapmapOfStringAny = nil
 		} else {
-			if err = validator.Validate(dst.MapmapOfStringAny); err != nil {
-				dst.MapmapOfStringAny = nil
-			} else {
-				match++
-			}
+			return nil // data stored in dst.MapmapOfStringAny, return on the first match
 		}
 	} else {
 		dst.MapmapOfStringAny = nil
 	}
 
-	if match > 1 { // more than 1 match
-		// reset to nil
-		dst.NSXVirtualServerConfigObject2 = nil
-		dst.MapmapOfStringAny = nil
-
-		return NewResponseValidationError("data matches more than one schema in oneOf(LoadBalancerInstanceUpdateConfig)")
-	} else if match == 1 {
-		return nil // exactly one match
-	} else { // no match
-		return NewResponseValidationError("data failed to match schemas in oneOf(LoadBalancerInstanceUpdateConfig)")
-	}
+	return NewResponseValidationError("data failed to match schemas in anyOf(LoadBalancerInstanceUpdateConfig)")
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON
@@ -122,38 +87,7 @@ func (src LoadBalancerInstanceUpdateConfig) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.MapmapOfStringAny)
 	}
 
-	return nil, nil // no data in oneOf schemas
-}
-
-// Get the actual instance
-func (obj *LoadBalancerInstanceUpdateConfig) GetActualInstance() interface{} {
-	if obj == nil {
-		return nil
-	}
-	if obj.NSXVirtualServerConfigObject2 != nil {
-		return obj.NSXVirtualServerConfigObject2
-	}
-
-	if obj.MapmapOfStringAny != nil {
-		return obj.MapmapOfStringAny
-	}
-
-	// all schemas are nil
-	return nil
-}
-
-// Get the actual instance value
-func (obj LoadBalancerInstanceUpdateConfig) GetActualInstanceValue() interface{} {
-	if obj.NSXVirtualServerConfigObject2 != nil {
-		return *obj.NSXVirtualServerConfigObject2
-	}
-
-	if obj.MapmapOfStringAny != nil {
-		return *obj.MapmapOfStringAny
-	}
-
-	// all schemas are nil
-	return nil
+	return nil, nil // no data in anyOf schemas
 }
 
 type NullableLoadBalancerInstanceUpdateConfig struct {

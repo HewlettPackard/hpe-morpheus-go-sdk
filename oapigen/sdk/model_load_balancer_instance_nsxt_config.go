@@ -20,8 +20,18 @@ var _ MappedNullable = &LoadBalancerInstanceNSXTConfig{}
 
 // LoadBalancerInstanceNSXTConfig struct for LoadBalancerInstanceNSXTConfig
 type LoadBalancerInstanceNSXTConfig struct {
-	// The Load Balancer Application Profile ID The Options API `/api/options/nsxt/nsxtLBVirtualServerApplicationProfile?loadBalancerId=42&loadBalancerInstance.vipProtocol=tcp` can be used to see which options are available.
-	ApplicationProfile   NullableString         `json:"applicationProfile,omitempty"`
+	// The Load Balancer Application Profile ID. The Options API `/api/options/nsxt/nsxtLBVirtualServerApplicationProfile?loadBalancerId=42&loadBalancerInstance.vipProtocol=tcp` can be used to see which options are available.
+	ApplicationProfile NullableString `json:"applicationProfile,omitempty"`
+	// The backend server pool ID (`NetworkLoadBalancerPool`). The Options API `/api/options/nsxt/nsxtLBPool?loadBalancerId=42` can be used to see which options are available.
+	Pool NullableString `json:"pool,omitempty"`
+	// Session persistence mode. The available values depend on the virtual server protocol. For HTTP: `SOURCE_IP`, `COOKIE`, or empty string (disabled). For TCP/UDP: `SOURCE_IP` or empty string (disabled). The Options API `/api/options/nsxt/nsxtLBPersistence?loadBalancerId=42&loadBalancerInstance.vipProtocol=tcp` can be used to see which options are available.
+	Persistence NullableString `json:"persistence,omitempty"`
+	// The ID of the persistence profile to use. Required when `persistence` is set to a non-empty value (`SOURCE_IP` or `COOKIE`). The Options API `/api/options/nsxt/nsxtLBPersistenceProfile?loadBalancerId=42&config.persistence=SOURCE_IP` can be used to see which options are available.
+	PersistenceProfile NullableString `json:"persistenceProfile,omitempty"`
+	// The SSL client profile ID. Only applicable when `sslCert` is set to a non-zero value. The Options API `/api/options/nsxt/nsxtLBClientSSlProfiles?loadBalancerId=42` can be used to see which options are available.
+	SslClientProfile NullableString `json:"sslClientProfile,omitempty"`
+	// The SSL server profile ID. Only applicable when `sslServerCert` is set to a non-zero value. The Options API `/api/options/nsxt/nsxtLBServerSSlProfiles?loadBalancerId=42` can be used to see which options are available.
+	SslServerProfile     NullableString         `json:"sslServerProfile,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -87,6 +97,221 @@ func (o *LoadBalancerInstanceNSXTConfig) UnsetApplicationProfile() {
 	o.ApplicationProfile.Unset()
 }
 
+// GetPool returns the Pool field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *LoadBalancerInstanceNSXTConfig) GetPool() string {
+	if o == nil || IsNil(o.Pool.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.Pool.Get()
+}
+
+// GetPoolOk returns a tuple with the Pool field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *LoadBalancerInstanceNSXTConfig) GetPoolOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Pool.Get(), o.Pool.IsSet()
+}
+
+// IsSetPool returns a boolean if a field has been set.
+func (o *LoadBalancerInstanceNSXTConfig) IsSetPool() bool {
+	if o != nil && o.Pool.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetPool gets a reference to the given NullableString and assigns it to the Pool field.
+func (o *LoadBalancerInstanceNSXTConfig) SetPool(v string) {
+	o.Pool.Set(&v)
+}
+
+// SetPoolNil sets the value for Pool to be an explicit nil
+func (o *LoadBalancerInstanceNSXTConfig) SetPoolNil() {
+	o.Pool.Set(nil)
+}
+
+// UnsetPool ensures that no value is present for Pool, not even an explicit nil
+func (o *LoadBalancerInstanceNSXTConfig) UnsetPool() {
+	o.Pool.Unset()
+}
+
+// GetPersistence returns the Persistence field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *LoadBalancerInstanceNSXTConfig) GetPersistence() string {
+	if o == nil || IsNil(o.Persistence.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.Persistence.Get()
+}
+
+// GetPersistenceOk returns a tuple with the Persistence field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *LoadBalancerInstanceNSXTConfig) GetPersistenceOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Persistence.Get(), o.Persistence.IsSet()
+}
+
+// IsSetPersistence returns a boolean if a field has been set.
+func (o *LoadBalancerInstanceNSXTConfig) IsSetPersistence() bool {
+	if o != nil && o.Persistence.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetPersistence gets a reference to the given NullableString and assigns it to the Persistence field.
+func (o *LoadBalancerInstanceNSXTConfig) SetPersistence(v string) {
+	o.Persistence.Set(&v)
+}
+
+// SetPersistenceNil sets the value for Persistence to be an explicit nil
+func (o *LoadBalancerInstanceNSXTConfig) SetPersistenceNil() {
+	o.Persistence.Set(nil)
+}
+
+// UnsetPersistence ensures that no value is present for Persistence, not even an explicit nil
+func (o *LoadBalancerInstanceNSXTConfig) UnsetPersistence() {
+	o.Persistence.Unset()
+}
+
+// GetPersistenceProfile returns the PersistenceProfile field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *LoadBalancerInstanceNSXTConfig) GetPersistenceProfile() string {
+	if o == nil || IsNil(o.PersistenceProfile.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.PersistenceProfile.Get()
+}
+
+// GetPersistenceProfileOk returns a tuple with the PersistenceProfile field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *LoadBalancerInstanceNSXTConfig) GetPersistenceProfileOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.PersistenceProfile.Get(), o.PersistenceProfile.IsSet()
+}
+
+// IsSetPersistenceProfile returns a boolean if a field has been set.
+func (o *LoadBalancerInstanceNSXTConfig) IsSetPersistenceProfile() bool {
+	if o != nil && o.PersistenceProfile.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetPersistenceProfile gets a reference to the given NullableString and assigns it to the PersistenceProfile field.
+func (o *LoadBalancerInstanceNSXTConfig) SetPersistenceProfile(v string) {
+	o.PersistenceProfile.Set(&v)
+}
+
+// SetPersistenceProfileNil sets the value for PersistenceProfile to be an explicit nil
+func (o *LoadBalancerInstanceNSXTConfig) SetPersistenceProfileNil() {
+	o.PersistenceProfile.Set(nil)
+}
+
+// UnsetPersistenceProfile ensures that no value is present for PersistenceProfile, not even an explicit nil
+func (o *LoadBalancerInstanceNSXTConfig) UnsetPersistenceProfile() {
+	o.PersistenceProfile.Unset()
+}
+
+// GetSslClientProfile returns the SslClientProfile field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *LoadBalancerInstanceNSXTConfig) GetSslClientProfile() string {
+	if o == nil || IsNil(o.SslClientProfile.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.SslClientProfile.Get()
+}
+
+// GetSslClientProfileOk returns a tuple with the SslClientProfile field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *LoadBalancerInstanceNSXTConfig) GetSslClientProfileOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.SslClientProfile.Get(), o.SslClientProfile.IsSet()
+}
+
+// IsSetSslClientProfile returns a boolean if a field has been set.
+func (o *LoadBalancerInstanceNSXTConfig) IsSetSslClientProfile() bool {
+	if o != nil && o.SslClientProfile.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetSslClientProfile gets a reference to the given NullableString and assigns it to the SslClientProfile field.
+func (o *LoadBalancerInstanceNSXTConfig) SetSslClientProfile(v string) {
+	o.SslClientProfile.Set(&v)
+}
+
+// SetSslClientProfileNil sets the value for SslClientProfile to be an explicit nil
+func (o *LoadBalancerInstanceNSXTConfig) SetSslClientProfileNil() {
+	o.SslClientProfile.Set(nil)
+}
+
+// UnsetSslClientProfile ensures that no value is present for SslClientProfile, not even an explicit nil
+func (o *LoadBalancerInstanceNSXTConfig) UnsetSslClientProfile() {
+	o.SslClientProfile.Unset()
+}
+
+// GetSslServerProfile returns the SslServerProfile field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *LoadBalancerInstanceNSXTConfig) GetSslServerProfile() string {
+	if o == nil || IsNil(o.SslServerProfile.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.SslServerProfile.Get()
+}
+
+// GetSslServerProfileOk returns a tuple with the SslServerProfile field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *LoadBalancerInstanceNSXTConfig) GetSslServerProfileOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.SslServerProfile.Get(), o.SslServerProfile.IsSet()
+}
+
+// IsSetSslServerProfile returns a boolean if a field has been set.
+func (o *LoadBalancerInstanceNSXTConfig) IsSetSslServerProfile() bool {
+	if o != nil && o.SslServerProfile.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetSslServerProfile gets a reference to the given NullableString and assigns it to the SslServerProfile field.
+func (o *LoadBalancerInstanceNSXTConfig) SetSslServerProfile(v string) {
+	o.SslServerProfile.Set(&v)
+}
+
+// SetSslServerProfileNil sets the value for SslServerProfile to be an explicit nil
+func (o *LoadBalancerInstanceNSXTConfig) SetSslServerProfileNil() {
+	o.SslServerProfile.Set(nil)
+}
+
+// UnsetSslServerProfile ensures that no value is present for SslServerProfile, not even an explicit nil
+func (o *LoadBalancerInstanceNSXTConfig) UnsetSslServerProfile() {
+	o.SslServerProfile.Unset()
+}
+
 func (o LoadBalancerInstanceNSXTConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -99,6 +324,21 @@ func (o LoadBalancerInstanceNSXTConfig) ToMap() (map[string]interface{}, error) 
 	toSerialize := map[string]interface{}{}
 	if o.ApplicationProfile.IsSet() {
 		toSerialize["applicationProfile"] = o.ApplicationProfile.Get()
+	}
+	if o.Pool.IsSet() {
+		toSerialize["pool"] = o.Pool.Get()
+	}
+	if o.Persistence.IsSet() {
+		toSerialize["persistence"] = o.Persistence.Get()
+	}
+	if o.PersistenceProfile.IsSet() {
+		toSerialize["persistenceProfile"] = o.PersistenceProfile.Get()
+	}
+	if o.SslClientProfile.IsSet() {
+		toSerialize["sslClientProfile"] = o.SslClientProfile.Get()
+	}
+	if o.SslServerProfile.IsSet() {
+		toSerialize["sslServerProfile"] = o.SslServerProfile.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

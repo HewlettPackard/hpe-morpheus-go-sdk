@@ -26,17 +26,19 @@ type CreateLoadBalancerVirtualServerRequestLoadBalancerInstance struct {
 	Description *string `json:"description,omitempty"`
 	// VIP Type
 	VipType *string `json:"vipType,omitempty"`
-	// VIP Address
+	// VIP Address. Required when `vipPool` is not set.
 	VipAddress *string `json:"vipAddress,omitempty"`
 	// VIP Port
 	VipPort *int64 `json:"vipPort,omitempty"`
-	// VIP Protocol
+	// VIP Protocol. For NSX-T load balancers, this is the virtual server type. Valid values are `http`, `tcp`, `udp`.
 	VipProtocol *string `json:"vipProtocol,omitempty"`
 	// VIP Hostname
 	VipHostname *string `json:"vipHostname,omitempty"`
-	// SSL Client Certificate ID
+	// Network Pool ID for automatic VIP address allocation. When set, a VIP address will be leased from this pool and `vipAddress` does not need to be specified.
+	VipPool NullableInt64 `json:"vipPool,omitempty"`
+	// SSL Client Certificate ID. Use `0` for none.
 	SslCert *int64 `json:"sslCert,omitempty"`
-	// SSL Server Certificate ID
+	// SSL Server Certificate ID. Use `0` for none.
 	SslServerCert        *int64                                                            `json:"sslServerCert,omitempty"`
 	Config               *CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig `json:"config,omitempty"`
 	AdditionalProperties map[string]interface{}                                            `json:",remain"`
@@ -285,6 +287,49 @@ func (o *CreateLoadBalancerVirtualServerRequestLoadBalancerInstance) SetVipHostn
 	o.VipHostname = &v
 }
 
+// GetVipPool returns the VipPool field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *CreateLoadBalancerVirtualServerRequestLoadBalancerInstance) GetVipPool() int64 {
+	if o == nil || IsNil(o.VipPool.Get()) {
+		var ret int64
+		return ret
+	}
+	return *o.VipPool.Get()
+}
+
+// GetVipPoolOk returns a tuple with the VipPool field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *CreateLoadBalancerVirtualServerRequestLoadBalancerInstance) GetVipPoolOk() (*int64, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.VipPool.Get(), o.VipPool.IsSet()
+}
+
+// IsSetVipPool returns a boolean if a field has been set.
+func (o *CreateLoadBalancerVirtualServerRequestLoadBalancerInstance) IsSetVipPool() bool {
+	if o != nil && o.VipPool.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetVipPool gets a reference to the given NullableInt64 and assigns it to the VipPool field.
+func (o *CreateLoadBalancerVirtualServerRequestLoadBalancerInstance) SetVipPool(v int64) {
+	o.VipPool.Set(&v)
+}
+
+// SetVipPoolNil sets the value for VipPool to be an explicit nil
+func (o *CreateLoadBalancerVirtualServerRequestLoadBalancerInstance) SetVipPoolNil() {
+	o.VipPool.Set(nil)
+}
+
+// UnsetVipPool ensures that no value is present for VipPool, not even an explicit nil
+func (o *CreateLoadBalancerVirtualServerRequestLoadBalancerInstance) UnsetVipPool() {
+	o.VipPool.Unset()
+}
+
 // GetSslCert returns the SslCert field value if set, zero value otherwise.
 func (o *CreateLoadBalancerVirtualServerRequestLoadBalancerInstance) GetSslCert() int64 {
 	if o == nil || IsNil(o.SslCert) {
@@ -411,6 +456,9 @@ func (o CreateLoadBalancerVirtualServerRequestLoadBalancerInstance) ToMap() (map
 	}
 	if !IsNil(o.VipHostname) {
 		toSerialize["vipHostname"] = o.VipHostname
+	}
+	if o.VipPool.IsSet() {
+		toSerialize["vipPool"] = o.VipPool.Get()
 	}
 	if !IsNil(o.SslCert) {
 		toSerialize["sslCert"] = o.SslCert
