@@ -20,9 +20,9 @@ var _ MappedNullable = &GetNetworkFirewallRules200Response{}
 
 // GetNetworkFirewallRules200Response struct for GetNetworkFirewallRules200Response
 type GetNetworkFirewallRules200Response struct {
-	Rules                interface{}                     `json:"rules,omitempty"`
-	Meta                 *ListAlerts200ResponseAllOfMeta `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}          `json:",remain"`
+	Rules                []GetNetworkFirewallRules200ResponseAllOfRulesInner `json:"rules,omitempty"`
+	Meta                 *ListAlerts200ResponseAllOfMeta                     `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}                              `json:",remain"`
 }
 
 type _GetNetworkFirewallRules200Response GetNetworkFirewallRules200Response
@@ -44,10 +44,10 @@ func NewGetNetworkFirewallRules200ResponseWithDefaults() *GetNetworkFirewallRule
 	return &this
 }
 
-// GetRules returns the Rules field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GetNetworkFirewallRules200Response) GetRules() interface{} {
-	if o == nil {
-		var ret interface{}
+// GetRules returns the Rules field value if set, zero value otherwise.
+func (o *GetNetworkFirewallRules200Response) GetRules() []GetNetworkFirewallRules200ResponseAllOfRulesInner {
+	if o == nil || IsNil(o.Rules) {
+		var ret []GetNetworkFirewallRules200ResponseAllOfRulesInner
 		return ret
 	}
 	return o.Rules
@@ -55,12 +55,11 @@ func (o *GetNetworkFirewallRules200Response) GetRules() interface{} {
 
 // GetRulesOk returns a tuple with the Rules field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GetNetworkFirewallRules200Response) GetRulesOk() (*interface{}, bool) {
+func (o *GetNetworkFirewallRules200Response) GetRulesOk() ([]GetNetworkFirewallRules200ResponseAllOfRulesInner, bool) {
 	if o == nil || IsNil(o.Rules) {
 		return nil, false
 	}
-	return &o.Rules, true
+	return o.Rules, true
 }
 
 // IsSetRules returns a boolean if a field has been set.
@@ -72,8 +71,8 @@ func (o *GetNetworkFirewallRules200Response) IsSetRules() bool {
 	return false
 }
 
-// SetRules gets a reference to the given interface{} and assigns it to the Rules field.
-func (o *GetNetworkFirewallRules200Response) SetRules(v interface{}) {
+// SetRules gets a reference to the given []GetNetworkFirewallRules200ResponseAllOfRulesInner and assigns it to the Rules field.
+func (o *GetNetworkFirewallRules200Response) SetRules(v []GetNetworkFirewallRules200ResponseAllOfRulesInner) {
 	o.Rules = v
 }
 
@@ -119,7 +118,7 @@ func (o GetNetworkFirewallRules200Response) MarshalJSON() ([]byte, error) {
 
 func (o GetNetworkFirewallRules200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Rules != nil {
+	if !IsNil(o.Rules) {
 		toSerialize["rules"] = o.Rules
 	}
 	if !IsNil(o.Meta) {

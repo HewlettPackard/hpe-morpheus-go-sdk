@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Rules** | Pointer to **interface{}** |  | [optional] 
+**Rules** | Pointer to [**[]GetNetworkFirewallRules200ResponseAllOfRulesInner**](GetNetworkFirewallRules200ResponseAllOfRulesInner.md) |  | [optional] 
 **Meta** | Pointer to [**ListAlerts200ResponseAllOfMeta**](ListAlerts200ResponseAllOfMeta.md) |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetRules
 
-`func (o *GetNetworkFirewallRules200Response) GetRules() interface{}`
+`func (o *GetNetworkFirewallRules200Response) GetRules() []GetNetworkFirewallRules200ResponseAllOfRulesInner`
 
 GetRules returns the Rules field if non-nil, zero value otherwise.
 
 ### GetRulesOk
 
-`func (o *GetNetworkFirewallRules200Response) GetRulesOk() (*interface{}, bool)`
+`func (o *GetNetworkFirewallRules200Response) GetRulesOk() (*[]GetNetworkFirewallRules200ResponseAllOfRulesInner, bool)`
 
 GetRulesOk returns a tuple with the Rules field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRules
 
-`func (o *GetNetworkFirewallRules200Response) SetRules(v interface{})`
+`func (o *GetNetworkFirewallRules200Response) SetRules(v []GetNetworkFirewallRules200ResponseAllOfRulesInner)`
 
 SetRules sets Rules field to given value.
 
@@ -51,16 +51,6 @@ SetRules sets Rules field to given value.
 
 HasRules returns a boolean if a field has been set.
 
-### SetRulesNil
-
-`func (o *GetNetworkFirewallRules200Response) SetRulesNil(b bool)`
-
- SetRulesNil sets the value for Rules to be an explicit nil
-
-### UnsetRules
-`func (o *GetNetworkFirewallRules200Response) UnsetRules()`
-
-UnsetRules ensures that no value is present for Rules, not even an explicit nil
 ### GetMeta
 
 `func (o *GetNetworkFirewallRules200Response) GetMeta() ListAlerts200ResponseAllOfMeta`
