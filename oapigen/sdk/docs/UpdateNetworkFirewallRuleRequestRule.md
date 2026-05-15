@@ -1,327 +1,332 @@
-# CreateNetworkFirewallRuleRequestRule
+# UpdateNetworkFirewallRuleRequestRule
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**RuleGroup** | Pointer to [**CreateNetworkFirewallRuleRequestRuleRuleGroup**](CreateNetworkFirewallRuleRequestRuleRuleGroup.md) |  | [optional] 
-**Name** | **string** | Network firewall rule name | 
+**RuleGroup** | Pointer to [**UpdateNetworkFirewallRuleRequestRuleRuleGroup**](UpdateNetworkFirewallRuleRequestRuleRuleGroup.md) |  | [optional] 
+**Name** | Pointer to **string** | Network firewall rule name | [optional] 
 **Description** | Pointer to **NullableString** | Network firewall rule description | [optional] 
 **Enabled** | Pointer to **bool** | Use this to set enabled state | [optional] 
 **Priority** | Pointer to **NullableInt64** | Network firewall rule priority | [optional] 
 **Direction** | Pointer to **string** |  | [optional] 
-**Sources** | Pointer to [**CreateNetworkFirewallRuleRequestRuleSources**](CreateNetworkFirewallRuleRequestRuleSources.md) |  | [optional] 
-**Destinations** | Pointer to [**CreateNetworkFirewallRuleRequestRuleDestinations**](CreateNetworkFirewallRuleRequestRuleDestinations.md) |  | [optional] 
-**Config** | Pointer to [**CreateNetworkFirewallRuleRequestRuleConfig**](CreateNetworkFirewallRuleRequestRuleConfig.md) |  | [optional] 
-**Scopes** | Pointer to [**CreateNetworkFirewallRuleRequestRuleScopes**](CreateNetworkFirewallRuleRequestRuleScopes.md) |  | [optional] 
+**Sources** | Pointer to [**UpdateNetworkFirewallRuleRequestRuleSources**](UpdateNetworkFirewallRuleRequestRuleSources.md) |  | [optional] 
+**Destinations** | Pointer to [**UpdateNetworkFirewallRuleRequestRuleDestinations**](UpdateNetworkFirewallRuleRequestRuleDestinations.md) |  | [optional] 
+**Config** | Pointer to [**UpdateNetworkFirewallRuleRequestRuleConfig**](UpdateNetworkFirewallRuleRequestRuleConfig.md) |  | [optional] 
+**Scopes** | Pointer to [**UpdateNetworkFirewallRuleRequestRuleScopes**](UpdateNetworkFirewallRuleRequestRuleScopes.md) |  | [optional] 
 **Policy** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
-### NewCreateNetworkFirewallRuleRequestRule
+### NewUpdateNetworkFirewallRuleRequestRule
 
-`func NewCreateNetworkFirewallRuleRequestRule(name string, ) *CreateNetworkFirewallRuleRequestRule`
+`func NewUpdateNetworkFirewallRuleRequestRule() *UpdateNetworkFirewallRuleRequestRule`
 
-NewCreateNetworkFirewallRuleRequestRule instantiates a new CreateNetworkFirewallRuleRequestRule object
+NewUpdateNetworkFirewallRuleRequestRule instantiates a new UpdateNetworkFirewallRuleRequestRule object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewCreateNetworkFirewallRuleRequestRuleWithDefaults
+### NewUpdateNetworkFirewallRuleRequestRuleWithDefaults
 
-`func NewCreateNetworkFirewallRuleRequestRuleWithDefaults() *CreateNetworkFirewallRuleRequestRule`
+`func NewUpdateNetworkFirewallRuleRequestRuleWithDefaults() *UpdateNetworkFirewallRuleRequestRule`
 
-NewCreateNetworkFirewallRuleRequestRuleWithDefaults instantiates a new CreateNetworkFirewallRuleRequestRule object
+NewUpdateNetworkFirewallRuleRequestRuleWithDefaults instantiates a new UpdateNetworkFirewallRuleRequestRule object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetRuleGroup
 
-`func (o *CreateNetworkFirewallRuleRequestRule) GetRuleGroup() CreateNetworkFirewallRuleRequestRuleRuleGroup`
+`func (o *UpdateNetworkFirewallRuleRequestRule) GetRuleGroup() UpdateNetworkFirewallRuleRequestRuleRuleGroup`
 
 GetRuleGroup returns the RuleGroup field if non-nil, zero value otherwise.
 
 ### GetRuleGroupOk
 
-`func (o *CreateNetworkFirewallRuleRequestRule) GetRuleGroupOk() (*CreateNetworkFirewallRuleRequestRuleRuleGroup, bool)`
+`func (o *UpdateNetworkFirewallRuleRequestRule) GetRuleGroupOk() (*UpdateNetworkFirewallRuleRequestRuleRuleGroup, bool)`
 
 GetRuleGroupOk returns a tuple with the RuleGroup field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRuleGroup
 
-`func (o *CreateNetworkFirewallRuleRequestRule) SetRuleGroup(v CreateNetworkFirewallRuleRequestRuleRuleGroup)`
+`func (o *UpdateNetworkFirewallRuleRequestRule) SetRuleGroup(v UpdateNetworkFirewallRuleRequestRuleRuleGroup)`
 
 SetRuleGroup sets RuleGroup field to given value.
 
 ### HasRuleGroup
 
-`func (o *CreateNetworkFirewallRuleRequestRule) HasRuleGroup() bool`
+`func (o *UpdateNetworkFirewallRuleRequestRule) HasRuleGroup() bool`
 
 HasRuleGroup returns a boolean if a field has been set.
 
 ### GetName
 
-`func (o *CreateNetworkFirewallRuleRequestRule) GetName() string`
+`func (o *UpdateNetworkFirewallRuleRequestRule) GetName() string`
 
 GetName returns the Name field if non-nil, zero value otherwise.
 
 ### GetNameOk
 
-`func (o *CreateNetworkFirewallRuleRequestRule) GetNameOk() (*string, bool)`
+`func (o *UpdateNetworkFirewallRuleRequestRule) GetNameOk() (*string, bool)`
 
 GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetName
 
-`func (o *CreateNetworkFirewallRuleRequestRule) SetName(v string)`
+`func (o *UpdateNetworkFirewallRuleRequestRule) SetName(v string)`
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *UpdateNetworkFirewallRuleRequestRule) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetDescription
 
-`func (o *CreateNetworkFirewallRuleRequestRule) GetDescription() string`
+`func (o *UpdateNetworkFirewallRuleRequestRule) GetDescription() string`
 
 GetDescription returns the Description field if non-nil, zero value otherwise.
 
 ### GetDescriptionOk
 
-`func (o *CreateNetworkFirewallRuleRequestRule) GetDescriptionOk() (*string, bool)`
+`func (o *UpdateNetworkFirewallRuleRequestRule) GetDescriptionOk() (*string, bool)`
 
 GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDescription
 
-`func (o *CreateNetworkFirewallRuleRequestRule) SetDescription(v string)`
+`func (o *UpdateNetworkFirewallRuleRequestRule) SetDescription(v string)`
 
 SetDescription sets Description field to given value.
 
 ### HasDescription
 
-`func (o *CreateNetworkFirewallRuleRequestRule) HasDescription() bool`
+`func (o *UpdateNetworkFirewallRuleRequestRule) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
 
 ### SetDescriptionNil
 
-`func (o *CreateNetworkFirewallRuleRequestRule) SetDescriptionNil(b bool)`
+`func (o *UpdateNetworkFirewallRuleRequestRule) SetDescriptionNil(b bool)`
 
  SetDescriptionNil sets the value for Description to be an explicit nil
 
 ### UnsetDescription
-`func (o *CreateNetworkFirewallRuleRequestRule) UnsetDescription()`
+`func (o *UpdateNetworkFirewallRuleRequestRule) UnsetDescription()`
 
 UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetEnabled
 
-`func (o *CreateNetworkFirewallRuleRequestRule) GetEnabled() bool`
+`func (o *UpdateNetworkFirewallRuleRequestRule) GetEnabled() bool`
 
 GetEnabled returns the Enabled field if non-nil, zero value otherwise.
 
 ### GetEnabledOk
 
-`func (o *CreateNetworkFirewallRuleRequestRule) GetEnabledOk() (*bool, bool)`
+`func (o *UpdateNetworkFirewallRuleRequestRule) GetEnabledOk() (*bool, bool)`
 
 GetEnabledOk returns a tuple with the Enabled field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEnabled
 
-`func (o *CreateNetworkFirewallRuleRequestRule) SetEnabled(v bool)`
+`func (o *UpdateNetworkFirewallRuleRequestRule) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
 
 ### HasEnabled
 
-`func (o *CreateNetworkFirewallRuleRequestRule) HasEnabled() bool`
+`func (o *UpdateNetworkFirewallRuleRequestRule) HasEnabled() bool`
 
 HasEnabled returns a boolean if a field has been set.
 
 ### GetPriority
 
-`func (o *CreateNetworkFirewallRuleRequestRule) GetPriority() int64`
+`func (o *UpdateNetworkFirewallRuleRequestRule) GetPriority() int64`
 
 GetPriority returns the Priority field if non-nil, zero value otherwise.
 
 ### GetPriorityOk
 
-`func (o *CreateNetworkFirewallRuleRequestRule) GetPriorityOk() (*int64, bool)`
+`func (o *UpdateNetworkFirewallRuleRequestRule) GetPriorityOk() (*int64, bool)`
 
 GetPriorityOk returns a tuple with the Priority field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPriority
 
-`func (o *CreateNetworkFirewallRuleRequestRule) SetPriority(v int64)`
+`func (o *UpdateNetworkFirewallRuleRequestRule) SetPriority(v int64)`
 
 SetPriority sets Priority field to given value.
 
 ### HasPriority
 
-`func (o *CreateNetworkFirewallRuleRequestRule) HasPriority() bool`
+`func (o *UpdateNetworkFirewallRuleRequestRule) HasPriority() bool`
 
 HasPriority returns a boolean if a field has been set.
 
 ### SetPriorityNil
 
-`func (o *CreateNetworkFirewallRuleRequestRule) SetPriorityNil(b bool)`
+`func (o *UpdateNetworkFirewallRuleRequestRule) SetPriorityNil(b bool)`
 
  SetPriorityNil sets the value for Priority to be an explicit nil
 
 ### UnsetPriority
-`func (o *CreateNetworkFirewallRuleRequestRule) UnsetPriority()`
+`func (o *UpdateNetworkFirewallRuleRequestRule) UnsetPriority()`
 
 UnsetPriority ensures that no value is present for Priority, not even an explicit nil
 ### GetDirection
 
-`func (o *CreateNetworkFirewallRuleRequestRule) GetDirection() string`
+`func (o *UpdateNetworkFirewallRuleRequestRule) GetDirection() string`
 
 GetDirection returns the Direction field if non-nil, zero value otherwise.
 
 ### GetDirectionOk
 
-`func (o *CreateNetworkFirewallRuleRequestRule) GetDirectionOk() (*string, bool)`
+`func (o *UpdateNetworkFirewallRuleRequestRule) GetDirectionOk() (*string, bool)`
 
 GetDirectionOk returns a tuple with the Direction field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDirection
 
-`func (o *CreateNetworkFirewallRuleRequestRule) SetDirection(v string)`
+`func (o *UpdateNetworkFirewallRuleRequestRule) SetDirection(v string)`
 
 SetDirection sets Direction field to given value.
 
 ### HasDirection
 
-`func (o *CreateNetworkFirewallRuleRequestRule) HasDirection() bool`
+`func (o *UpdateNetworkFirewallRuleRequestRule) HasDirection() bool`
 
 HasDirection returns a boolean if a field has been set.
 
 ### GetSources
 
-`func (o *CreateNetworkFirewallRuleRequestRule) GetSources() CreateNetworkFirewallRuleRequestRuleSources`
+`func (o *UpdateNetworkFirewallRuleRequestRule) GetSources() UpdateNetworkFirewallRuleRequestRuleSources`
 
 GetSources returns the Sources field if non-nil, zero value otherwise.
 
 ### GetSourcesOk
 
-`func (o *CreateNetworkFirewallRuleRequestRule) GetSourcesOk() (*CreateNetworkFirewallRuleRequestRuleSources, bool)`
+`func (o *UpdateNetworkFirewallRuleRequestRule) GetSourcesOk() (*UpdateNetworkFirewallRuleRequestRuleSources, bool)`
 
 GetSourcesOk returns a tuple with the Sources field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSources
 
-`func (o *CreateNetworkFirewallRuleRequestRule) SetSources(v CreateNetworkFirewallRuleRequestRuleSources)`
+`func (o *UpdateNetworkFirewallRuleRequestRule) SetSources(v UpdateNetworkFirewallRuleRequestRuleSources)`
 
 SetSources sets Sources field to given value.
 
 ### HasSources
 
-`func (o *CreateNetworkFirewallRuleRequestRule) HasSources() bool`
+`func (o *UpdateNetworkFirewallRuleRequestRule) HasSources() bool`
 
 HasSources returns a boolean if a field has been set.
 
 ### GetDestinations
 
-`func (o *CreateNetworkFirewallRuleRequestRule) GetDestinations() CreateNetworkFirewallRuleRequestRuleDestinations`
+`func (o *UpdateNetworkFirewallRuleRequestRule) GetDestinations() UpdateNetworkFirewallRuleRequestRuleDestinations`
 
 GetDestinations returns the Destinations field if non-nil, zero value otherwise.
 
 ### GetDestinationsOk
 
-`func (o *CreateNetworkFirewallRuleRequestRule) GetDestinationsOk() (*CreateNetworkFirewallRuleRequestRuleDestinations, bool)`
+`func (o *UpdateNetworkFirewallRuleRequestRule) GetDestinationsOk() (*UpdateNetworkFirewallRuleRequestRuleDestinations, bool)`
 
 GetDestinationsOk returns a tuple with the Destinations field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDestinations
 
-`func (o *CreateNetworkFirewallRuleRequestRule) SetDestinations(v CreateNetworkFirewallRuleRequestRuleDestinations)`
+`func (o *UpdateNetworkFirewallRuleRequestRule) SetDestinations(v UpdateNetworkFirewallRuleRequestRuleDestinations)`
 
 SetDestinations sets Destinations field to given value.
 
 ### HasDestinations
 
-`func (o *CreateNetworkFirewallRuleRequestRule) HasDestinations() bool`
+`func (o *UpdateNetworkFirewallRuleRequestRule) HasDestinations() bool`
 
 HasDestinations returns a boolean if a field has been set.
 
 ### GetConfig
 
-`func (o *CreateNetworkFirewallRuleRequestRule) GetConfig() CreateNetworkFirewallRuleRequestRuleConfig`
+`func (o *UpdateNetworkFirewallRuleRequestRule) GetConfig() UpdateNetworkFirewallRuleRequestRuleConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *CreateNetworkFirewallRuleRequestRule) GetConfigOk() (*CreateNetworkFirewallRuleRequestRuleConfig, bool)`
+`func (o *UpdateNetworkFirewallRuleRequestRule) GetConfigOk() (*UpdateNetworkFirewallRuleRequestRuleConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *CreateNetworkFirewallRuleRequestRule) SetConfig(v CreateNetworkFirewallRuleRequestRuleConfig)`
+`func (o *UpdateNetworkFirewallRuleRequestRule) SetConfig(v UpdateNetworkFirewallRuleRequestRuleConfig)`
 
 SetConfig sets Config field to given value.
 
 ### HasConfig
 
-`func (o *CreateNetworkFirewallRuleRequestRule) HasConfig() bool`
+`func (o *UpdateNetworkFirewallRuleRequestRule) HasConfig() bool`
 
 HasConfig returns a boolean if a field has been set.
 
 ### GetScopes
 
-`func (o *CreateNetworkFirewallRuleRequestRule) GetScopes() CreateNetworkFirewallRuleRequestRuleScopes`
+`func (o *UpdateNetworkFirewallRuleRequestRule) GetScopes() UpdateNetworkFirewallRuleRequestRuleScopes`
 
 GetScopes returns the Scopes field if non-nil, zero value otherwise.
 
 ### GetScopesOk
 
-`func (o *CreateNetworkFirewallRuleRequestRule) GetScopesOk() (*CreateNetworkFirewallRuleRequestRuleScopes, bool)`
+`func (o *UpdateNetworkFirewallRuleRequestRule) GetScopesOk() (*UpdateNetworkFirewallRuleRequestRuleScopes, bool)`
 
 GetScopesOk returns a tuple with the Scopes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetScopes
 
-`func (o *CreateNetworkFirewallRuleRequestRule) SetScopes(v CreateNetworkFirewallRuleRequestRuleScopes)`
+`func (o *UpdateNetworkFirewallRuleRequestRule) SetScopes(v UpdateNetworkFirewallRuleRequestRuleScopes)`
 
 SetScopes sets Scopes field to given value.
 
 ### HasScopes
 
-`func (o *CreateNetworkFirewallRuleRequestRule) HasScopes() bool`
+`func (o *UpdateNetworkFirewallRuleRequestRule) HasScopes() bool`
 
 HasScopes returns a boolean if a field has been set.
 
 ### GetPolicy
 
-`func (o *CreateNetworkFirewallRuleRequestRule) GetPolicy() string`
+`func (o *UpdateNetworkFirewallRuleRequestRule) GetPolicy() string`
 
 GetPolicy returns the Policy field if non-nil, zero value otherwise.
 
 ### GetPolicyOk
 
-`func (o *CreateNetworkFirewallRuleRequestRule) GetPolicyOk() (*string, bool)`
+`func (o *UpdateNetworkFirewallRuleRequestRule) GetPolicyOk() (*string, bool)`
 
 GetPolicyOk returns a tuple with the Policy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPolicy
 
-`func (o *CreateNetworkFirewallRuleRequestRule) SetPolicy(v string)`
+`func (o *UpdateNetworkFirewallRuleRequestRule) SetPolicy(v string)`
 
 SetPolicy sets Policy field to given value.
 
 ### HasPolicy
 
-`func (o *CreateNetworkFirewallRuleRequestRule) HasPolicy() bool`
+`func (o *UpdateNetworkFirewallRuleRequestRule) HasPolicy() bool`
 
 HasPolicy returns a boolean if a field has been set.
 

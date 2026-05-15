@@ -25,10 +25,11 @@ type GetNetworkFirewallRule200ResponseRule struct {
 	SourceType           *string                                                  `json:"sourceType,omitempty"`
 	DestinationType      *string                                                  `json:"destinationType,omitempty"`
 	Name                 *string                                                  `json:"name,omitempty"`
+	Description          NullableString                                           `json:"description,omitempty"`
 	Policy               *string                                                  `json:"policy,omitempty"`
 	Priority             *int64                                                   `json:"priority,omitempty"`
 	Enabled              *bool                                                    `json:"enabled,omitempty"`
-	RuleGroup            NullableGetNetworkFirewallRule200ResponseRuleRuleGroup   `json:"ruleGroup,omitempty"`
+	RuleGroup            *GetNetworkFirewallRule200ResponseRuleRuleGroup          `json:"ruleGroup,omitempty"`
 	GroupName            *string                                                  `json:"groupName,omitempty"`
 	Config               map[string]interface{}                                   `json:"config,omitempty"`
 	Sources              []GetNetworkFirewallRule200ResponseRuleSourcesInner      `json:"sources,omitempty"`
@@ -219,6 +220,49 @@ func (o *GetNetworkFirewallRule200ResponseRule) SetName(v string) {
 	o.Name = &v
 }
 
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GetNetworkFirewallRule200ResponseRule) GetDescription() string {
+	if o == nil || IsNil(o.Description.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.Description.Get()
+}
+
+// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GetNetworkFirewallRule200ResponseRule) GetDescriptionOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Description.Get(), o.Description.IsSet()
+}
+
+// IsSetDescription returns a boolean if a field has been set.
+func (o *GetNetworkFirewallRule200ResponseRule) IsSetDescription() bool {
+	if o != nil && o.Description.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
+func (o *GetNetworkFirewallRule200ResponseRule) SetDescription(v string) {
+	o.Description.Set(&v)
+}
+
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *GetNetworkFirewallRule200ResponseRule) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *GetNetworkFirewallRule200ResponseRule) UnsetDescription() {
+	o.Description.Unset()
+}
+
 // GetPolicy returns the Policy field value if set, zero value otherwise.
 func (o *GetNetworkFirewallRule200ResponseRule) GetPolicy() string {
 	if o == nil || IsNil(o.Policy) {
@@ -315,47 +359,36 @@ func (o *GetNetworkFirewallRule200ResponseRule) SetEnabled(v bool) {
 	o.Enabled = &v
 }
 
-// GetRuleGroup returns the RuleGroup field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetRuleGroup returns the RuleGroup field value if set, zero value otherwise.
 func (o *GetNetworkFirewallRule200ResponseRule) GetRuleGroup() GetNetworkFirewallRule200ResponseRuleRuleGroup {
-	if o == nil || IsNil(o.RuleGroup.Get()) {
+	if o == nil || IsNil(o.RuleGroup) {
 		var ret GetNetworkFirewallRule200ResponseRuleRuleGroup
 		return ret
 	}
-	return *o.RuleGroup.Get()
+	return *o.RuleGroup
 }
 
 // GetRuleGroupOk returns a tuple with the RuleGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GetNetworkFirewallRule200ResponseRule) GetRuleGroupOk() (*GetNetworkFirewallRule200ResponseRuleRuleGroup, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.RuleGroup) {
 		return nil, false
 	}
-	return o.RuleGroup.Get(), o.RuleGroup.IsSet()
+	return o.RuleGroup, true
 }
 
 // IsSetRuleGroup returns a boolean if a field has been set.
 func (o *GetNetworkFirewallRule200ResponseRule) IsSetRuleGroup() bool {
-	if o != nil && o.RuleGroup.IsSet() {
+	if o != nil && !IsNil(o.RuleGroup) {
 		return true
 	}
 
 	return false
 }
 
-// SetRuleGroup gets a reference to the given NullableGetNetworkFirewallRule200ResponseRuleRuleGroup and assigns it to the RuleGroup field.
+// SetRuleGroup gets a reference to the given GetNetworkFirewallRule200ResponseRuleRuleGroup and assigns it to the RuleGroup field.
 func (o *GetNetworkFirewallRule200ResponseRule) SetRuleGroup(v GetNetworkFirewallRule200ResponseRuleRuleGroup) {
-	o.RuleGroup.Set(&v)
-}
-
-// SetRuleGroupNil sets the value for RuleGroup to be an explicit nil
-func (o *GetNetworkFirewallRule200ResponseRule) SetRuleGroupNil() {
-	o.RuleGroup.Set(nil)
-}
-
-// UnsetRuleGroup ensures that no value is present for RuleGroup, not even an explicit nil
-func (o *GetNetworkFirewallRule200ResponseRule) UnsetRuleGroup() {
-	o.RuleGroup.Unset()
+	o.RuleGroup = &v
 }
 
 // GetGroupName returns the GroupName field value if set, zero value otherwise.
@@ -639,6 +672,9 @@ func (o GetNetworkFirewallRule200ResponseRule) ToMap() (map[string]interface{}, 
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
+	}
 	if !IsNil(o.Policy) {
 		toSerialize["policy"] = o.Policy
 	}
@@ -648,8 +684,8 @@ func (o GetNetworkFirewallRule200ResponseRule) ToMap() (map[string]interface{}, 
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}
-	if o.RuleGroup.IsSet() {
-		toSerialize["ruleGroup"] = o.RuleGroup.Get()
+	if !IsNil(o.RuleGroup) {
+		toSerialize["ruleGroup"] = o.RuleGroup
 	}
 	if !IsNil(o.GroupName) {
 		toSerialize["groupName"] = o.GroupName

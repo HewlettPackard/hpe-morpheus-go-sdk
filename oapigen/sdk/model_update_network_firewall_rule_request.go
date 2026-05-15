@@ -20,8 +20,8 @@ var _ MappedNullable = &UpdateNetworkFirewallRuleRequest{}
 
 // UpdateNetworkFirewallRuleRequest The parameters for update a Network Firewall Rule is type dependent. The following lists the common parameters. Get a specific network type to list available options for the network relay type.
 type UpdateNetworkFirewallRuleRequest struct {
-	Rule                 map[string]interface{} `json:"rule,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Rule                 *UpdateNetworkFirewallRuleRequestRule `json:"rule,omitempty"`
+	AdditionalProperties map[string]interface{}                `json:",remain"`
 }
 
 type _UpdateNetworkFirewallRuleRequest UpdateNetworkFirewallRuleRequest
@@ -44,19 +44,19 @@ func NewUpdateNetworkFirewallRuleRequestWithDefaults() *UpdateNetworkFirewallRul
 }
 
 // GetRule returns the Rule field value if set, zero value otherwise.
-func (o *UpdateNetworkFirewallRuleRequest) GetRule() map[string]interface{} {
+func (o *UpdateNetworkFirewallRuleRequest) GetRule() UpdateNetworkFirewallRuleRequestRule {
 	if o == nil || IsNil(o.Rule) {
-		var ret map[string]interface{}
+		var ret UpdateNetworkFirewallRuleRequestRule
 		return ret
 	}
-	return o.Rule
+	return *o.Rule
 }
 
 // GetRuleOk returns a tuple with the Rule field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateNetworkFirewallRuleRequest) GetRuleOk() (map[string]interface{}, bool) {
+func (o *UpdateNetworkFirewallRuleRequest) GetRuleOk() (*UpdateNetworkFirewallRuleRequestRule, bool) {
 	if o == nil || IsNil(o.Rule) {
-		return map[string]interface{}{}, false
+		return nil, false
 	}
 	return o.Rule, true
 }
@@ -70,9 +70,9 @@ func (o *UpdateNetworkFirewallRuleRequest) IsSetRule() bool {
 	return false
 }
 
-// SetRule gets a reference to the given map[string]interface{} and assigns it to the Rule field.
-func (o *UpdateNetworkFirewallRuleRequest) SetRule(v map[string]interface{}) {
-	o.Rule = v
+// SetRule gets a reference to the given UpdateNetworkFirewallRuleRequestRule and assigns it to the Rule field.
+func (o *UpdateNetworkFirewallRuleRequest) SetRule(v UpdateNetworkFirewallRuleRequestRule) {
+	o.Rule = &v
 }
 
 func (o UpdateNetworkFirewallRuleRequest) MarshalJSON() ([]byte, error) {

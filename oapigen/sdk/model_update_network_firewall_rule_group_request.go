@@ -20,8 +20,8 @@ var _ MappedNullable = &UpdateNetworkFirewallRuleGroupRequest{}
 
 // UpdateNetworkFirewallRuleGroupRequest The parameters for update a network firewall rule group is type dependent. The following lists the common parameters. See get a specific type to list available options for the network server type.
 type UpdateNetworkFirewallRuleGroupRequest struct {
-	RuleGroup            map[string]interface{} `json:"ruleGroup,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	RuleGroup            *UpdateNetworkFirewallRuleGroupRequestRuleGroup `json:"ruleGroup,omitempty"`
+	AdditionalProperties map[string]interface{}                          `json:",remain"`
 }
 
 type _UpdateNetworkFirewallRuleGroupRequest UpdateNetworkFirewallRuleGroupRequest
@@ -44,19 +44,19 @@ func NewUpdateNetworkFirewallRuleGroupRequestWithDefaults() *UpdateNetworkFirewa
 }
 
 // GetRuleGroup returns the RuleGroup field value if set, zero value otherwise.
-func (o *UpdateNetworkFirewallRuleGroupRequest) GetRuleGroup() map[string]interface{} {
+func (o *UpdateNetworkFirewallRuleGroupRequest) GetRuleGroup() UpdateNetworkFirewallRuleGroupRequestRuleGroup {
 	if o == nil || IsNil(o.RuleGroup) {
-		var ret map[string]interface{}
+		var ret UpdateNetworkFirewallRuleGroupRequestRuleGroup
 		return ret
 	}
-	return o.RuleGroup
+	return *o.RuleGroup
 }
 
 // GetRuleGroupOk returns a tuple with the RuleGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateNetworkFirewallRuleGroupRequest) GetRuleGroupOk() (map[string]interface{}, bool) {
+func (o *UpdateNetworkFirewallRuleGroupRequest) GetRuleGroupOk() (*UpdateNetworkFirewallRuleGroupRequestRuleGroup, bool) {
 	if o == nil || IsNil(o.RuleGroup) {
-		return map[string]interface{}{}, false
+		return nil, false
 	}
 	return o.RuleGroup, true
 }
@@ -70,9 +70,9 @@ func (o *UpdateNetworkFirewallRuleGroupRequest) IsSetRuleGroup() bool {
 	return false
 }
 
-// SetRuleGroup gets a reference to the given map[string]interface{} and assigns it to the RuleGroup field.
-func (o *UpdateNetworkFirewallRuleGroupRequest) SetRuleGroup(v map[string]interface{}) {
-	o.RuleGroup = v
+// SetRuleGroup gets a reference to the given UpdateNetworkFirewallRuleGroupRequestRuleGroup and assigns it to the RuleGroup field.
+func (o *UpdateNetworkFirewallRuleGroupRequest) SetRuleGroup(v UpdateNetworkFirewallRuleGroupRequestRuleGroup) {
+	o.RuleGroup = &v
 }
 
 func (o UpdateNetworkFirewallRuleGroupRequest) MarshalJSON() ([]byte, error) {

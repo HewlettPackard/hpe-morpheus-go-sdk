@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Name** | **string** | Network firewall rule name | 
 **Description** | Pointer to **NullableString** | Network firewall rule description | [optional] 
 **Enabled** | Pointer to **bool** | Use this to set enabled state | [optional] 
-**Priority** | Pointer to **NullableString** | Network firewall rule priority | [optional] 
+**Priority** | Pointer to **NullableInt64** | Network firewall rule priority | [optional] 
 **Direction** | Pointer to **string** |  | [optional] 
 **Sources** | Pointer to [**NetworkFirewallRuleCreateSources**](NetworkFirewallRuleCreateSources.md) |  | [optional] 
 **Destinations** | Pointer to [**NetworkFirewallRuleCreateDestinations**](NetworkFirewallRuleCreateDestinations.md) |  | [optional] 
@@ -142,20 +142,20 @@ HasEnabled returns a boolean if a field has been set.
 
 ### GetPriority
 
-`func (o *NetworkFirewallRuleCreate) GetPriority() string`
+`func (o *NetworkFirewallRuleCreate) GetPriority() int64`
 
 GetPriority returns the Priority field if non-nil, zero value otherwise.
 
 ### GetPriorityOk
 
-`func (o *NetworkFirewallRuleCreate) GetPriorityOk() (*string, bool)`
+`func (o *NetworkFirewallRuleCreate) GetPriorityOk() (*int64, bool)`
 
 GetPriorityOk returns a tuple with the Priority field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPriority
 
-`func (o *NetworkFirewallRuleCreate) SetPriority(v string)`
+`func (o *NetworkFirewallRuleCreate) SetPriority(v int64)`
 
 SetPriority sets Priority field to given value.
 

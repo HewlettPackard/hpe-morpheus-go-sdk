@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**RuleGroup** | Pointer to **map[string]interface{}** |  | [optional] 
+**RuleGroup** | Pointer to [**UpdateNetworkFirewallRuleGroupRequestRuleGroup**](UpdateNetworkFirewallRuleGroupRequestRuleGroup.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetRuleGroup
 
-`func (o *UpdateNetworkFirewallRuleGroupRequest) GetRuleGroup() map[string]interface{}`
+`func (o *UpdateNetworkFirewallRuleGroupRequest) GetRuleGroup() UpdateNetworkFirewallRuleGroupRequestRuleGroup`
 
 GetRuleGroup returns the RuleGroup field if non-nil, zero value otherwise.
 
 ### GetRuleGroupOk
 
-`func (o *UpdateNetworkFirewallRuleGroupRequest) GetRuleGroupOk() (*map[string]interface{}, bool)`
+`func (o *UpdateNetworkFirewallRuleGroupRequest) GetRuleGroupOk() (*UpdateNetworkFirewallRuleGroupRequestRuleGroup, bool)`
 
 GetRuleGroupOk returns a tuple with the RuleGroup field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRuleGroup
 
-`func (o *UpdateNetworkFirewallRuleGroupRequest) SetRuleGroup(v map[string]interface{})`
+`func (o *UpdateNetworkFirewallRuleGroupRequest) SetRuleGroup(v UpdateNetworkFirewallRuleGroupRequestRuleGroup)`
 
 SetRuleGroup sets RuleGroup field to given value.
 
