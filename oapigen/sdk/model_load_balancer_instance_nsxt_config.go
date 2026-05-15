@@ -21,17 +21,17 @@ var _ MappedNullable = &LoadBalancerInstanceNSXTConfig{}
 // LoadBalancerInstanceNSXTConfig struct for LoadBalancerInstanceNSXTConfig
 type LoadBalancerInstanceNSXTConfig struct {
 	// The Load Balancer Application Profile ID. The Options API `/api/options/nsxt/nsxtLBVirtualServerApplicationProfile?loadBalancerId=42&loadBalancerInstance.vipProtocol=tcp` can be used to see which options are available.
-	ApplicationProfile NullableString `json:"applicationProfile,omitempty"`
+	ApplicationProfile NullableInt64 `json:"applicationProfile,omitempty"`
 	// The backend server pool ID (`NetworkLoadBalancerPool`). The Options API `/api/options/nsxt/nsxtLBPool?loadBalancerId=42` can be used to see which options are available.
 	Pool NullableString `json:"pool,omitempty"`
 	// Session persistence mode. The available values depend on the virtual server protocol. For HTTP: `SOURCE_IP`, `COOKIE`, or empty string (disabled). For TCP/UDP: `SOURCE_IP` or empty string (disabled). The Options API `/api/options/nsxt/nsxtLBPersistence?loadBalancerId=42&loadBalancerInstance.vipProtocol=tcp` can be used to see which options are available.
 	Persistence NullableString `json:"persistence,omitempty"`
 	// The ID of the persistence profile to use. Required when `persistence` is set to a non-empty value (`SOURCE_IP` or `COOKIE`). The Options API `/api/options/nsxt/nsxtLBPersistenceProfile?loadBalancerId=42&config.persistence=SOURCE_IP` can be used to see which options are available.
-	PersistenceProfile NullableString `json:"persistenceProfile,omitempty"`
+	PersistenceProfile NullableInt64 `json:"persistenceProfile,omitempty"`
 	// The SSL client profile ID. Only applicable when `sslCert` is set to a non-zero value. The Options API `/api/options/nsxt/nsxtLBClientSSlProfiles?loadBalancerId=42` can be used to see which options are available.
-	SslClientProfile NullableString `json:"sslClientProfile,omitempty"`
+	SslClientProfile NullableInt64 `json:"sslClientProfile,omitempty"`
 	// The SSL server profile ID. Only applicable when `sslServerCert` is set to a non-zero value. The Options API `/api/options/nsxt/nsxtLBServerSSlProfiles?loadBalancerId=42` can be used to see which options are available.
-	SslServerProfile     NullableString         `json:"sslServerProfile,omitempty"`
+	SslServerProfile     NullableInt64          `json:"sslServerProfile,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -55,9 +55,9 @@ func NewLoadBalancerInstanceNSXTConfigWithDefaults() *LoadBalancerInstanceNSXTCo
 }
 
 // GetApplicationProfile returns the ApplicationProfile field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LoadBalancerInstanceNSXTConfig) GetApplicationProfile() string {
+func (o *LoadBalancerInstanceNSXTConfig) GetApplicationProfile() int64 {
 	if o == nil || IsNil(o.ApplicationProfile.Get()) {
-		var ret string
+		var ret int64
 		return ret
 	}
 	return *o.ApplicationProfile.Get()
@@ -66,7 +66,7 @@ func (o *LoadBalancerInstanceNSXTConfig) GetApplicationProfile() string {
 // GetApplicationProfileOk returns a tuple with the ApplicationProfile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LoadBalancerInstanceNSXTConfig) GetApplicationProfileOk() (*string, bool) {
+func (o *LoadBalancerInstanceNSXTConfig) GetApplicationProfileOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -82,8 +82,8 @@ func (o *LoadBalancerInstanceNSXTConfig) IsSetApplicationProfile() bool {
 	return false
 }
 
-// SetApplicationProfile gets a reference to the given NullableString and assigns it to the ApplicationProfile field.
-func (o *LoadBalancerInstanceNSXTConfig) SetApplicationProfile(v string) {
+// SetApplicationProfile gets a reference to the given NullableInt64 and assigns it to the ApplicationProfile field.
+func (o *LoadBalancerInstanceNSXTConfig) SetApplicationProfile(v int64) {
 	o.ApplicationProfile.Set(&v)
 }
 
@@ -184,9 +184,9 @@ func (o *LoadBalancerInstanceNSXTConfig) UnsetPersistence() {
 }
 
 // GetPersistenceProfile returns the PersistenceProfile field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LoadBalancerInstanceNSXTConfig) GetPersistenceProfile() string {
+func (o *LoadBalancerInstanceNSXTConfig) GetPersistenceProfile() int64 {
 	if o == nil || IsNil(o.PersistenceProfile.Get()) {
-		var ret string
+		var ret int64
 		return ret
 	}
 	return *o.PersistenceProfile.Get()
@@ -195,7 +195,7 @@ func (o *LoadBalancerInstanceNSXTConfig) GetPersistenceProfile() string {
 // GetPersistenceProfileOk returns a tuple with the PersistenceProfile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LoadBalancerInstanceNSXTConfig) GetPersistenceProfileOk() (*string, bool) {
+func (o *LoadBalancerInstanceNSXTConfig) GetPersistenceProfileOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -211,8 +211,8 @@ func (o *LoadBalancerInstanceNSXTConfig) IsSetPersistenceProfile() bool {
 	return false
 }
 
-// SetPersistenceProfile gets a reference to the given NullableString and assigns it to the PersistenceProfile field.
-func (o *LoadBalancerInstanceNSXTConfig) SetPersistenceProfile(v string) {
+// SetPersistenceProfile gets a reference to the given NullableInt64 and assigns it to the PersistenceProfile field.
+func (o *LoadBalancerInstanceNSXTConfig) SetPersistenceProfile(v int64) {
 	o.PersistenceProfile.Set(&v)
 }
 
@@ -227,9 +227,9 @@ func (o *LoadBalancerInstanceNSXTConfig) UnsetPersistenceProfile() {
 }
 
 // GetSslClientProfile returns the SslClientProfile field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LoadBalancerInstanceNSXTConfig) GetSslClientProfile() string {
+func (o *LoadBalancerInstanceNSXTConfig) GetSslClientProfile() int64 {
 	if o == nil || IsNil(o.SslClientProfile.Get()) {
-		var ret string
+		var ret int64
 		return ret
 	}
 	return *o.SslClientProfile.Get()
@@ -238,7 +238,7 @@ func (o *LoadBalancerInstanceNSXTConfig) GetSslClientProfile() string {
 // GetSslClientProfileOk returns a tuple with the SslClientProfile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LoadBalancerInstanceNSXTConfig) GetSslClientProfileOk() (*string, bool) {
+func (o *LoadBalancerInstanceNSXTConfig) GetSslClientProfileOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -254,8 +254,8 @@ func (o *LoadBalancerInstanceNSXTConfig) IsSetSslClientProfile() bool {
 	return false
 }
 
-// SetSslClientProfile gets a reference to the given NullableString and assigns it to the SslClientProfile field.
-func (o *LoadBalancerInstanceNSXTConfig) SetSslClientProfile(v string) {
+// SetSslClientProfile gets a reference to the given NullableInt64 and assigns it to the SslClientProfile field.
+func (o *LoadBalancerInstanceNSXTConfig) SetSslClientProfile(v int64) {
 	o.SslClientProfile.Set(&v)
 }
 
@@ -270,9 +270,9 @@ func (o *LoadBalancerInstanceNSXTConfig) UnsetSslClientProfile() {
 }
 
 // GetSslServerProfile returns the SslServerProfile field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LoadBalancerInstanceNSXTConfig) GetSslServerProfile() string {
+func (o *LoadBalancerInstanceNSXTConfig) GetSslServerProfile() int64 {
 	if o == nil || IsNil(o.SslServerProfile.Get()) {
-		var ret string
+		var ret int64
 		return ret
 	}
 	return *o.SslServerProfile.Get()
@@ -281,7 +281,7 @@ func (o *LoadBalancerInstanceNSXTConfig) GetSslServerProfile() string {
 // GetSslServerProfileOk returns a tuple with the SslServerProfile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LoadBalancerInstanceNSXTConfig) GetSslServerProfileOk() (*string, bool) {
+func (o *LoadBalancerInstanceNSXTConfig) GetSslServerProfileOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -297,8 +297,8 @@ func (o *LoadBalancerInstanceNSXTConfig) IsSetSslServerProfile() bool {
 	return false
 }
 
-// SetSslServerProfile gets a reference to the given NullableString and assigns it to the SslServerProfile field.
-func (o *LoadBalancerInstanceNSXTConfig) SetSslServerProfile(v string) {
+// SetSslServerProfile gets a reference to the given NullableInt64 and assigns it to the SslServerProfile field.
+func (o *LoadBalancerInstanceNSXTConfig) SetSslServerProfile(v int64) {
 	o.SslServerProfile.Set(&v)
 }
 
