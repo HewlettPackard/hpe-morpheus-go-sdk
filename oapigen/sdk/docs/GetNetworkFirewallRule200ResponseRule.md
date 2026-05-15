@@ -9,10 +9,11 @@ Name | Type | Description | Notes
 **SourceType** | Pointer to **string** |  | [optional] 
 **DestinationType** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **Policy** | Pointer to **string** |  | [optional] 
 **Priority** | Pointer to **int64** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**RuleGroup** | Pointer to [**NullableGetNetworkFirewallRule200ResponseRuleRuleGroup**](GetNetworkFirewallRule200ResponseRuleRuleGroup.md) |  | [optional] 
+**RuleGroup** | Pointer to [**GetNetworkFirewallRule200ResponseRuleRuleGroup**](GetNetworkFirewallRule200ResponseRuleRuleGroup.md) |  | [optional] 
 **GroupName** | Pointer to **string** |  | [optional] 
 **Config** | Pointer to **map[string]interface{}** |  | [optional] 
 **Sources** | Pointer to [**[]GetNetworkFirewallRule200ResponseRuleSourcesInner**](GetNetworkFirewallRule200ResponseRuleSourcesInner.md) |  | [optional] 
@@ -166,6 +167,41 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
+### GetDescription
+
+`func (o *GetNetworkFirewallRule200ResponseRule) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *GetNetworkFirewallRule200ResponseRule) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *GetNetworkFirewallRule200ResponseRule) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *GetNetworkFirewallRule200ResponseRule) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
+
+### SetDescriptionNil
+
+`func (o *GetNetworkFirewallRule200ResponseRule) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *GetNetworkFirewallRule200ResponseRule) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetPolicy
 
 `func (o *GetNetworkFirewallRule200ResponseRule) GetPolicy() string`
@@ -266,16 +302,6 @@ SetRuleGroup sets RuleGroup field to given value.
 
 HasRuleGroup returns a boolean if a field has been set.
 
-### SetRuleGroupNil
-
-`func (o *GetNetworkFirewallRule200ResponseRule) SetRuleGroupNil(b bool)`
-
- SetRuleGroupNil sets the value for RuleGroup to be an explicit nil
-
-### UnsetRuleGroup
-`func (o *GetNetworkFirewallRule200ResponseRule) UnsetRuleGroup()`
-
-UnsetRuleGroup ensures that no value is present for RuleGroup, not even an explicit nil
 ### GetGroupName
 
 `func (o *GetNetworkFirewallRule200ResponseRule) GetGroupName() string`

@@ -15,53 +15,52 @@ import (
 	"encoding/json"
 )
 
-// checks if the NetworkFirewallRuleCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &NetworkFirewallRuleCreate{}
+// checks if the UpdateNetworkFirewallRuleRequestRule type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &UpdateNetworkFirewallRuleRequestRule{}
 
-// NetworkFirewallRuleCreate struct for NetworkFirewallRuleCreate
-type NetworkFirewallRuleCreate struct {
-	RuleGroup *NetworkFirewallRuleCreateRuleGroup `json:"ruleGroup,omitempty"`
+// UpdateNetworkFirewallRuleRequestRule struct for UpdateNetworkFirewallRuleRequestRule
+type UpdateNetworkFirewallRuleRequestRule struct {
+	RuleGroup *UpdateNetworkFirewallRuleRequestRuleRuleGroup `json:"ruleGroup,omitempty"`
 	// Network firewall rule name
-	Name string `json:"name"`
+	Name *string `json:"name,omitempty"`
 	// Network firewall rule description
 	Description NullableString `json:"description,omitempty"`
 	// Use this to set enabled state
 	Enabled *bool `json:"enabled,omitempty"`
 	// Network firewall rule priority
-	Priority             NullableInt64                          `json:"priority,omitempty"`
-	Direction            *string                                `json:"direction,omitempty"`
-	Sources              *NetworkFirewallRuleCreateSources      `json:"sources,omitempty"`
-	Destinations         *NetworkFirewallRuleCreateDestinations `json:"destinations,omitempty"`
-	Config               *NetworkFirewallRuleCreateConfig       `json:"config,omitempty"`
-	Scopes               *NetworkFirewallRuleCreateScopes       `json:"scopes,omitempty"`
-	Policy               *string                                `json:"policy,omitempty"`
-	AdditionalProperties map[string]interface{}                 `json:",remain"`
+	Priority             NullableInt64                                     `json:"priority,omitempty"`
+	Direction            *string                                           `json:"direction,omitempty"`
+	Sources              *UpdateNetworkFirewallRuleRequestRuleSources      `json:"sources,omitempty"`
+	Destinations         *UpdateNetworkFirewallRuleRequestRuleDestinations `json:"destinations,omitempty"`
+	Config               *UpdateNetworkFirewallRuleRequestRuleConfig       `json:"config,omitempty"`
+	Scopes               *UpdateNetworkFirewallRuleRequestRuleScopes       `json:"scopes,omitempty"`
+	Policy               *string                                           `json:"policy,omitempty"`
+	AdditionalProperties map[string]interface{}                            `json:",remain"`
 }
 
-type _NetworkFirewallRuleCreate NetworkFirewallRuleCreate
+type _UpdateNetworkFirewallRuleRequestRule UpdateNetworkFirewallRuleRequestRule
 
-// NewNetworkFirewallRuleCreate instantiates a new NetworkFirewallRuleCreate object
+// NewUpdateNetworkFirewallRuleRequestRule instantiates a new UpdateNetworkFirewallRuleRequestRule object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNetworkFirewallRuleCreate(name string) *NetworkFirewallRuleCreate {
-	this := NetworkFirewallRuleCreate{}
-	this.Name = name
+func NewUpdateNetworkFirewallRuleRequestRule() *UpdateNetworkFirewallRuleRequestRule {
+	this := UpdateNetworkFirewallRuleRequestRule{}
 	return &this
 }
 
-// NewNetworkFirewallRuleCreateWithDefaults instantiates a new NetworkFirewallRuleCreate object
+// NewUpdateNetworkFirewallRuleRequestRuleWithDefaults instantiates a new UpdateNetworkFirewallRuleRequestRule object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewNetworkFirewallRuleCreateWithDefaults() *NetworkFirewallRuleCreate {
-	this := NetworkFirewallRuleCreate{}
+func NewUpdateNetworkFirewallRuleRequestRuleWithDefaults() *UpdateNetworkFirewallRuleRequestRule {
+	this := UpdateNetworkFirewallRuleRequestRule{}
 	return &this
 }
 
 // GetRuleGroup returns the RuleGroup field value if set, zero value otherwise.
-func (o *NetworkFirewallRuleCreate) GetRuleGroup() NetworkFirewallRuleCreateRuleGroup {
+func (o *UpdateNetworkFirewallRuleRequestRule) GetRuleGroup() UpdateNetworkFirewallRuleRequestRuleRuleGroup {
 	if o == nil || IsNil(o.RuleGroup) {
-		var ret NetworkFirewallRuleCreateRuleGroup
+		var ret UpdateNetworkFirewallRuleRequestRuleRuleGroup
 		return ret
 	}
 	return *o.RuleGroup
@@ -69,7 +68,7 @@ func (o *NetworkFirewallRuleCreate) GetRuleGroup() NetworkFirewallRuleCreateRule
 
 // GetRuleGroupOk returns a tuple with the RuleGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NetworkFirewallRuleCreate) GetRuleGroupOk() (*NetworkFirewallRuleCreateRuleGroup, bool) {
+func (o *UpdateNetworkFirewallRuleRequestRule) GetRuleGroupOk() (*UpdateNetworkFirewallRuleRequestRuleRuleGroup, bool) {
 	if o == nil || IsNil(o.RuleGroup) {
 		return nil, false
 	}
@@ -77,7 +76,7 @@ func (o *NetworkFirewallRuleCreate) GetRuleGroupOk() (*NetworkFirewallRuleCreate
 }
 
 // IsSetRuleGroup returns a boolean if a field has been set.
-func (o *NetworkFirewallRuleCreate) IsSetRuleGroup() bool {
+func (o *UpdateNetworkFirewallRuleRequestRule) IsSetRuleGroup() bool {
 	if o != nil && !IsNil(o.RuleGroup) {
 		return true
 	}
@@ -85,37 +84,45 @@ func (o *NetworkFirewallRuleCreate) IsSetRuleGroup() bool {
 	return false
 }
 
-// SetRuleGroup gets a reference to the given NetworkFirewallRuleCreateRuleGroup and assigns it to the RuleGroup field.
-func (o *NetworkFirewallRuleCreate) SetRuleGroup(v NetworkFirewallRuleCreateRuleGroup) {
+// SetRuleGroup gets a reference to the given UpdateNetworkFirewallRuleRequestRuleRuleGroup and assigns it to the RuleGroup field.
+func (o *UpdateNetworkFirewallRuleRequestRule) SetRuleGroup(v UpdateNetworkFirewallRuleRequestRuleRuleGroup) {
 	o.RuleGroup = &v
 }
 
-// GetName returns the Name field value
-func (o *NetworkFirewallRuleCreate) GetName() string {
-	if o == nil {
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *UpdateNetworkFirewallRuleRequestRule) GetName() string {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NetworkFirewallRuleCreate) GetNameOk() (*string, bool) {
-	if o == nil {
+func (o *UpdateNetworkFirewallRuleRequestRule) GetNameOk() (*string, bool) {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
-func (o *NetworkFirewallRuleCreate) SetName(v string) {
-	o.Name = v
+// IsSetName returns a boolean if a field has been set.
+func (o *UpdateNetworkFirewallRuleRequestRule) IsSetName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *UpdateNetworkFirewallRuleRequestRule) SetName(v string) {
+	o.Name = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *NetworkFirewallRuleCreate) GetDescription() string {
+func (o *UpdateNetworkFirewallRuleRequestRule) GetDescription() string {
 	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
@@ -126,7 +133,7 @@ func (o *NetworkFirewallRuleCreate) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *NetworkFirewallRuleCreate) GetDescriptionOk() (*string, bool) {
+func (o *UpdateNetworkFirewallRuleRequestRule) GetDescriptionOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -134,7 +141,7 @@ func (o *NetworkFirewallRuleCreate) GetDescriptionOk() (*string, bool) {
 }
 
 // IsSetDescription returns a boolean if a field has been set.
-func (o *NetworkFirewallRuleCreate) IsSetDescription() bool {
+func (o *UpdateNetworkFirewallRuleRequestRule) IsSetDescription() bool {
 	if o != nil && o.Description.IsSet() {
 		return true
 	}
@@ -143,22 +150,22 @@ func (o *NetworkFirewallRuleCreate) IsSetDescription() bool {
 }
 
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
-func (o *NetworkFirewallRuleCreate) SetDescription(v string) {
+func (o *UpdateNetworkFirewallRuleRequestRule) SetDescription(v string) {
 	o.Description.Set(&v)
 }
 
 // SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *NetworkFirewallRuleCreate) SetDescriptionNil() {
+func (o *UpdateNetworkFirewallRuleRequestRule) SetDescriptionNil() {
 	o.Description.Set(nil)
 }
 
 // UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *NetworkFirewallRuleCreate) UnsetDescription() {
+func (o *UpdateNetworkFirewallRuleRequestRule) UnsetDescription() {
 	o.Description.Unset()
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
-func (o *NetworkFirewallRuleCreate) GetEnabled() bool {
+func (o *UpdateNetworkFirewallRuleRequestRule) GetEnabled() bool {
 	if o == nil || IsNil(o.Enabled) {
 		var ret bool
 		return ret
@@ -168,7 +175,7 @@ func (o *NetworkFirewallRuleCreate) GetEnabled() bool {
 
 // GetEnabledOk returns a tuple with the Enabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NetworkFirewallRuleCreate) GetEnabledOk() (*bool, bool) {
+func (o *UpdateNetworkFirewallRuleRequestRule) GetEnabledOk() (*bool, bool) {
 	if o == nil || IsNil(o.Enabled) {
 		return nil, false
 	}
@@ -176,7 +183,7 @@ func (o *NetworkFirewallRuleCreate) GetEnabledOk() (*bool, bool) {
 }
 
 // IsSetEnabled returns a boolean if a field has been set.
-func (o *NetworkFirewallRuleCreate) IsSetEnabled() bool {
+func (o *UpdateNetworkFirewallRuleRequestRule) IsSetEnabled() bool {
 	if o != nil && !IsNil(o.Enabled) {
 		return true
 	}
@@ -185,12 +192,12 @@ func (o *NetworkFirewallRuleCreate) IsSetEnabled() bool {
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
-func (o *NetworkFirewallRuleCreate) SetEnabled(v bool) {
+func (o *UpdateNetworkFirewallRuleRequestRule) SetEnabled(v bool) {
 	o.Enabled = &v
 }
 
 // GetPriority returns the Priority field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *NetworkFirewallRuleCreate) GetPriority() int64 {
+func (o *UpdateNetworkFirewallRuleRequestRule) GetPriority() int64 {
 	if o == nil || IsNil(o.Priority.Get()) {
 		var ret int64
 		return ret
@@ -201,7 +208,7 @@ func (o *NetworkFirewallRuleCreate) GetPriority() int64 {
 // GetPriorityOk returns a tuple with the Priority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *NetworkFirewallRuleCreate) GetPriorityOk() (*int64, bool) {
+func (o *UpdateNetworkFirewallRuleRequestRule) GetPriorityOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -209,7 +216,7 @@ func (o *NetworkFirewallRuleCreate) GetPriorityOk() (*int64, bool) {
 }
 
 // IsSetPriority returns a boolean if a field has been set.
-func (o *NetworkFirewallRuleCreate) IsSetPriority() bool {
+func (o *UpdateNetworkFirewallRuleRequestRule) IsSetPriority() bool {
 	if o != nil && o.Priority.IsSet() {
 		return true
 	}
@@ -218,22 +225,22 @@ func (o *NetworkFirewallRuleCreate) IsSetPriority() bool {
 }
 
 // SetPriority gets a reference to the given NullableInt64 and assigns it to the Priority field.
-func (o *NetworkFirewallRuleCreate) SetPriority(v int64) {
+func (o *UpdateNetworkFirewallRuleRequestRule) SetPriority(v int64) {
 	o.Priority.Set(&v)
 }
 
 // SetPriorityNil sets the value for Priority to be an explicit nil
-func (o *NetworkFirewallRuleCreate) SetPriorityNil() {
+func (o *UpdateNetworkFirewallRuleRequestRule) SetPriorityNil() {
 	o.Priority.Set(nil)
 }
 
 // UnsetPriority ensures that no value is present for Priority, not even an explicit nil
-func (o *NetworkFirewallRuleCreate) UnsetPriority() {
+func (o *UpdateNetworkFirewallRuleRequestRule) UnsetPriority() {
 	o.Priority.Unset()
 }
 
 // GetDirection returns the Direction field value if set, zero value otherwise.
-func (o *NetworkFirewallRuleCreate) GetDirection() string {
+func (o *UpdateNetworkFirewallRuleRequestRule) GetDirection() string {
 	if o == nil || IsNil(o.Direction) {
 		var ret string
 		return ret
@@ -243,7 +250,7 @@ func (o *NetworkFirewallRuleCreate) GetDirection() string {
 
 // GetDirectionOk returns a tuple with the Direction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NetworkFirewallRuleCreate) GetDirectionOk() (*string, bool) {
+func (o *UpdateNetworkFirewallRuleRequestRule) GetDirectionOk() (*string, bool) {
 	if o == nil || IsNil(o.Direction) {
 		return nil, false
 	}
@@ -251,7 +258,7 @@ func (o *NetworkFirewallRuleCreate) GetDirectionOk() (*string, bool) {
 }
 
 // IsSetDirection returns a boolean if a field has been set.
-func (o *NetworkFirewallRuleCreate) IsSetDirection() bool {
+func (o *UpdateNetworkFirewallRuleRequestRule) IsSetDirection() bool {
 	if o != nil && !IsNil(o.Direction) {
 		return true
 	}
@@ -260,14 +267,14 @@ func (o *NetworkFirewallRuleCreate) IsSetDirection() bool {
 }
 
 // SetDirection gets a reference to the given string and assigns it to the Direction field.
-func (o *NetworkFirewallRuleCreate) SetDirection(v string) {
+func (o *UpdateNetworkFirewallRuleRequestRule) SetDirection(v string) {
 	o.Direction = &v
 }
 
 // GetSources returns the Sources field value if set, zero value otherwise.
-func (o *NetworkFirewallRuleCreate) GetSources() NetworkFirewallRuleCreateSources {
+func (o *UpdateNetworkFirewallRuleRequestRule) GetSources() UpdateNetworkFirewallRuleRequestRuleSources {
 	if o == nil || IsNil(o.Sources) {
-		var ret NetworkFirewallRuleCreateSources
+		var ret UpdateNetworkFirewallRuleRequestRuleSources
 		return ret
 	}
 	return *o.Sources
@@ -275,7 +282,7 @@ func (o *NetworkFirewallRuleCreate) GetSources() NetworkFirewallRuleCreateSource
 
 // GetSourcesOk returns a tuple with the Sources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NetworkFirewallRuleCreate) GetSourcesOk() (*NetworkFirewallRuleCreateSources, bool) {
+func (o *UpdateNetworkFirewallRuleRequestRule) GetSourcesOk() (*UpdateNetworkFirewallRuleRequestRuleSources, bool) {
 	if o == nil || IsNil(o.Sources) {
 		return nil, false
 	}
@@ -283,7 +290,7 @@ func (o *NetworkFirewallRuleCreate) GetSourcesOk() (*NetworkFirewallRuleCreateSo
 }
 
 // IsSetSources returns a boolean if a field has been set.
-func (o *NetworkFirewallRuleCreate) IsSetSources() bool {
+func (o *UpdateNetworkFirewallRuleRequestRule) IsSetSources() bool {
 	if o != nil && !IsNil(o.Sources) {
 		return true
 	}
@@ -291,15 +298,15 @@ func (o *NetworkFirewallRuleCreate) IsSetSources() bool {
 	return false
 }
 
-// SetSources gets a reference to the given NetworkFirewallRuleCreateSources and assigns it to the Sources field.
-func (o *NetworkFirewallRuleCreate) SetSources(v NetworkFirewallRuleCreateSources) {
+// SetSources gets a reference to the given UpdateNetworkFirewallRuleRequestRuleSources and assigns it to the Sources field.
+func (o *UpdateNetworkFirewallRuleRequestRule) SetSources(v UpdateNetworkFirewallRuleRequestRuleSources) {
 	o.Sources = &v
 }
 
 // GetDestinations returns the Destinations field value if set, zero value otherwise.
-func (o *NetworkFirewallRuleCreate) GetDestinations() NetworkFirewallRuleCreateDestinations {
+func (o *UpdateNetworkFirewallRuleRequestRule) GetDestinations() UpdateNetworkFirewallRuleRequestRuleDestinations {
 	if o == nil || IsNil(o.Destinations) {
-		var ret NetworkFirewallRuleCreateDestinations
+		var ret UpdateNetworkFirewallRuleRequestRuleDestinations
 		return ret
 	}
 	return *o.Destinations
@@ -307,7 +314,7 @@ func (o *NetworkFirewallRuleCreate) GetDestinations() NetworkFirewallRuleCreateD
 
 // GetDestinationsOk returns a tuple with the Destinations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NetworkFirewallRuleCreate) GetDestinationsOk() (*NetworkFirewallRuleCreateDestinations, bool) {
+func (o *UpdateNetworkFirewallRuleRequestRule) GetDestinationsOk() (*UpdateNetworkFirewallRuleRequestRuleDestinations, bool) {
 	if o == nil || IsNil(o.Destinations) {
 		return nil, false
 	}
@@ -315,7 +322,7 @@ func (o *NetworkFirewallRuleCreate) GetDestinationsOk() (*NetworkFirewallRuleCre
 }
 
 // IsSetDestinations returns a boolean if a field has been set.
-func (o *NetworkFirewallRuleCreate) IsSetDestinations() bool {
+func (o *UpdateNetworkFirewallRuleRequestRule) IsSetDestinations() bool {
 	if o != nil && !IsNil(o.Destinations) {
 		return true
 	}
@@ -323,15 +330,15 @@ func (o *NetworkFirewallRuleCreate) IsSetDestinations() bool {
 	return false
 }
 
-// SetDestinations gets a reference to the given NetworkFirewallRuleCreateDestinations and assigns it to the Destinations field.
-func (o *NetworkFirewallRuleCreate) SetDestinations(v NetworkFirewallRuleCreateDestinations) {
+// SetDestinations gets a reference to the given UpdateNetworkFirewallRuleRequestRuleDestinations and assigns it to the Destinations field.
+func (o *UpdateNetworkFirewallRuleRequestRule) SetDestinations(v UpdateNetworkFirewallRuleRequestRuleDestinations) {
 	o.Destinations = &v
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
-func (o *NetworkFirewallRuleCreate) GetConfig() NetworkFirewallRuleCreateConfig {
+func (o *UpdateNetworkFirewallRuleRequestRule) GetConfig() UpdateNetworkFirewallRuleRequestRuleConfig {
 	if o == nil || IsNil(o.Config) {
-		var ret NetworkFirewallRuleCreateConfig
+		var ret UpdateNetworkFirewallRuleRequestRuleConfig
 		return ret
 	}
 	return *o.Config
@@ -339,7 +346,7 @@ func (o *NetworkFirewallRuleCreate) GetConfig() NetworkFirewallRuleCreateConfig 
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NetworkFirewallRuleCreate) GetConfigOk() (*NetworkFirewallRuleCreateConfig, bool) {
+func (o *UpdateNetworkFirewallRuleRequestRule) GetConfigOk() (*UpdateNetworkFirewallRuleRequestRuleConfig, bool) {
 	if o == nil || IsNil(o.Config) {
 		return nil, false
 	}
@@ -347,7 +354,7 @@ func (o *NetworkFirewallRuleCreate) GetConfigOk() (*NetworkFirewallRuleCreateCon
 }
 
 // IsSetConfig returns a boolean if a field has been set.
-func (o *NetworkFirewallRuleCreate) IsSetConfig() bool {
+func (o *UpdateNetworkFirewallRuleRequestRule) IsSetConfig() bool {
 	if o != nil && !IsNil(o.Config) {
 		return true
 	}
@@ -355,15 +362,15 @@ func (o *NetworkFirewallRuleCreate) IsSetConfig() bool {
 	return false
 }
 
-// SetConfig gets a reference to the given NetworkFirewallRuleCreateConfig and assigns it to the Config field.
-func (o *NetworkFirewallRuleCreate) SetConfig(v NetworkFirewallRuleCreateConfig) {
+// SetConfig gets a reference to the given UpdateNetworkFirewallRuleRequestRuleConfig and assigns it to the Config field.
+func (o *UpdateNetworkFirewallRuleRequestRule) SetConfig(v UpdateNetworkFirewallRuleRequestRuleConfig) {
 	o.Config = &v
 }
 
 // GetScopes returns the Scopes field value if set, zero value otherwise.
-func (o *NetworkFirewallRuleCreate) GetScopes() NetworkFirewallRuleCreateScopes {
+func (o *UpdateNetworkFirewallRuleRequestRule) GetScopes() UpdateNetworkFirewallRuleRequestRuleScopes {
 	if o == nil || IsNil(o.Scopes) {
-		var ret NetworkFirewallRuleCreateScopes
+		var ret UpdateNetworkFirewallRuleRequestRuleScopes
 		return ret
 	}
 	return *o.Scopes
@@ -371,7 +378,7 @@ func (o *NetworkFirewallRuleCreate) GetScopes() NetworkFirewallRuleCreateScopes 
 
 // GetScopesOk returns a tuple with the Scopes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NetworkFirewallRuleCreate) GetScopesOk() (*NetworkFirewallRuleCreateScopes, bool) {
+func (o *UpdateNetworkFirewallRuleRequestRule) GetScopesOk() (*UpdateNetworkFirewallRuleRequestRuleScopes, bool) {
 	if o == nil || IsNil(o.Scopes) {
 		return nil, false
 	}
@@ -379,7 +386,7 @@ func (o *NetworkFirewallRuleCreate) GetScopesOk() (*NetworkFirewallRuleCreateSco
 }
 
 // IsSetScopes returns a boolean if a field has been set.
-func (o *NetworkFirewallRuleCreate) IsSetScopes() bool {
+func (o *UpdateNetworkFirewallRuleRequestRule) IsSetScopes() bool {
 	if o != nil && !IsNil(o.Scopes) {
 		return true
 	}
@@ -387,13 +394,13 @@ func (o *NetworkFirewallRuleCreate) IsSetScopes() bool {
 	return false
 }
 
-// SetScopes gets a reference to the given NetworkFirewallRuleCreateScopes and assigns it to the Scopes field.
-func (o *NetworkFirewallRuleCreate) SetScopes(v NetworkFirewallRuleCreateScopes) {
+// SetScopes gets a reference to the given UpdateNetworkFirewallRuleRequestRuleScopes and assigns it to the Scopes field.
+func (o *UpdateNetworkFirewallRuleRequestRule) SetScopes(v UpdateNetworkFirewallRuleRequestRuleScopes) {
 	o.Scopes = &v
 }
 
 // GetPolicy returns the Policy field value if set, zero value otherwise.
-func (o *NetworkFirewallRuleCreate) GetPolicy() string {
+func (o *UpdateNetworkFirewallRuleRequestRule) GetPolicy() string {
 	if o == nil || IsNil(o.Policy) {
 		var ret string
 		return ret
@@ -403,7 +410,7 @@ func (o *NetworkFirewallRuleCreate) GetPolicy() string {
 
 // GetPolicyOk returns a tuple with the Policy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NetworkFirewallRuleCreate) GetPolicyOk() (*string, bool) {
+func (o *UpdateNetworkFirewallRuleRequestRule) GetPolicyOk() (*string, bool) {
 	if o == nil || IsNil(o.Policy) {
 		return nil, false
 	}
@@ -411,7 +418,7 @@ func (o *NetworkFirewallRuleCreate) GetPolicyOk() (*string, bool) {
 }
 
 // IsSetPolicy returns a boolean if a field has been set.
-func (o *NetworkFirewallRuleCreate) IsSetPolicy() bool {
+func (o *UpdateNetworkFirewallRuleRequestRule) IsSetPolicy() bool {
 	if o != nil && !IsNil(o.Policy) {
 		return true
 	}
@@ -420,11 +427,11 @@ func (o *NetworkFirewallRuleCreate) IsSetPolicy() bool {
 }
 
 // SetPolicy gets a reference to the given string and assigns it to the Policy field.
-func (o *NetworkFirewallRuleCreate) SetPolicy(v string) {
+func (o *UpdateNetworkFirewallRuleRequestRule) SetPolicy(v string) {
 	o.Policy = &v
 }
 
-func (o NetworkFirewallRuleCreate) MarshalJSON() ([]byte, error) {
+func (o UpdateNetworkFirewallRuleRequestRule) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -432,12 +439,14 @@ func (o NetworkFirewallRuleCreate) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o NetworkFirewallRuleCreate) ToMap() (map[string]interface{}, error) {
+func (o UpdateNetworkFirewallRuleRequestRule) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.RuleGroup) {
 		toSerialize["ruleGroup"] = o.RuleGroup
 	}
-	toSerialize["name"] = o.Name
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
 	if o.Description.IsSet() {
 		toSerialize["description"] = o.Description.Get()
 	}
@@ -473,43 +482,43 @@ func (o NetworkFirewallRuleCreate) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 
-type NullableNetworkFirewallRuleCreate struct {
-	value *NetworkFirewallRuleCreate
+type NullableUpdateNetworkFirewallRuleRequestRule struct {
+	value *UpdateNetworkFirewallRuleRequestRule
 	isSet bool
 }
 
-func (v NullableNetworkFirewallRuleCreate) Get() *NetworkFirewallRuleCreate {
+func (v NullableUpdateNetworkFirewallRuleRequestRule) Get() *UpdateNetworkFirewallRuleRequestRule {
 	return v.value
 }
 
-func (v *NullableNetworkFirewallRuleCreate) Set(val *NetworkFirewallRuleCreate) {
+func (v *NullableUpdateNetworkFirewallRuleRequestRule) Set(val *UpdateNetworkFirewallRuleRequestRule) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableNetworkFirewallRuleCreate) IsSet() bool {
+func (v NullableUpdateNetworkFirewallRuleRequestRule) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableNetworkFirewallRuleCreate) Unset() {
+func (v *NullableUpdateNetworkFirewallRuleRequestRule) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableNetworkFirewallRuleCreate(val *NetworkFirewallRuleCreate) *NullableNetworkFirewallRuleCreate {
-	return &NullableNetworkFirewallRuleCreate{value: val, isSet: true}
+func NewNullableUpdateNetworkFirewallRuleRequestRule(val *UpdateNetworkFirewallRuleRequestRule) *NullableUpdateNetworkFirewallRuleRequestRule {
+	return &NullableUpdateNetworkFirewallRuleRequestRule{value: val, isSet: true}
 }
 
-func (v NullableNetworkFirewallRuleCreate) MarshalJSON() ([]byte, error) {
+func (v NullableUpdateNetworkFirewallRuleRequestRule) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableNetworkFirewallRuleCreate) UnmarshalJSON(src []byte) error {
+func (v *NullableUpdateNetworkFirewallRuleRequestRule) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
 
-func (v NullableNetworkFirewallRuleCreate) UnmarshalMapstructure(data any) (any, error) {
+func (v NullableUpdateNetworkFirewallRuleRequestRule) UnmarshalMapstructure(data any) (any, error) {
 	if err := mapstructDecode(data, &v.value); err != nil {
 		return nil, err
 	}
@@ -518,7 +527,7 @@ func (v NullableNetworkFirewallRuleCreate) UnmarshalMapstructure(data any) (any,
 	return v, nil
 }
 
-func (o *NetworkFirewallRuleCreate) UnmarshalJSON(data []byte) (err error) {
+func (o *UpdateNetworkFirewallRuleRequestRule) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }
 

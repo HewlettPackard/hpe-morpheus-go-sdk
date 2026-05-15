@@ -28,7 +28,7 @@ type CreateNetworkFirewallRuleRequestRule struct {
 	// Use this to set enabled state
 	Enabled *bool `json:"enabled,omitempty"`
 	// Network firewall rule priority
-	Priority             NullableString                                    `json:"priority,omitempty"`
+	Priority             NullableInt64                                     `json:"priority,omitempty"`
 	Direction            *string                                           `json:"direction,omitempty"`
 	Sources              *CreateNetworkFirewallRuleRequestRuleSources      `json:"sources,omitempty"`
 	Destinations         *CreateNetworkFirewallRuleRequestRuleDestinations `json:"destinations,omitempty"`
@@ -190,9 +190,9 @@ func (o *CreateNetworkFirewallRuleRequestRule) SetEnabled(v bool) {
 }
 
 // GetPriority returns the Priority field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CreateNetworkFirewallRuleRequestRule) GetPriority() string {
+func (o *CreateNetworkFirewallRuleRequestRule) GetPriority() int64 {
 	if o == nil || IsNil(o.Priority.Get()) {
-		var ret string
+		var ret int64
 		return ret
 	}
 	return *o.Priority.Get()
@@ -201,7 +201,7 @@ func (o *CreateNetworkFirewallRuleRequestRule) GetPriority() string {
 // GetPriorityOk returns a tuple with the Priority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CreateNetworkFirewallRuleRequestRule) GetPriorityOk() (*string, bool) {
+func (o *CreateNetworkFirewallRuleRequestRule) GetPriorityOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -217,8 +217,8 @@ func (o *CreateNetworkFirewallRuleRequestRule) IsSetPriority() bool {
 	return false
 }
 
-// SetPriority gets a reference to the given NullableString and assigns it to the Priority field.
-func (o *CreateNetworkFirewallRuleRequestRule) SetPriority(v string) {
+// SetPriority gets a reference to the given NullableInt64 and assigns it to the Priority field.
+func (o *CreateNetworkFirewallRuleRequestRule) SetPriority(v int64) {
 	o.Priority.Set(&v)
 }
 

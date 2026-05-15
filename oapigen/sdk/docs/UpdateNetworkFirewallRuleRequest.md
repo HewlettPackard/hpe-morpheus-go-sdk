@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Rule** | Pointer to **map[string]interface{}** |  | [optional] 
+**Rule** | Pointer to [**UpdateNetworkFirewallRuleRequestRule**](UpdateNetworkFirewallRuleRequestRule.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetRule
 
-`func (o *UpdateNetworkFirewallRuleRequest) GetRule() map[string]interface{}`
+`func (o *UpdateNetworkFirewallRuleRequest) GetRule() UpdateNetworkFirewallRuleRequestRule`
 
 GetRule returns the Rule field if non-nil, zero value otherwise.
 
 ### GetRuleOk
 
-`func (o *UpdateNetworkFirewallRuleRequest) GetRuleOk() (*map[string]interface{}, bool)`
+`func (o *UpdateNetworkFirewallRuleRequest) GetRuleOk() (*UpdateNetworkFirewallRuleRequestRule, bool)`
 
 GetRuleOk returns a tuple with the Rule field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRule
 
-`func (o *UpdateNetworkFirewallRuleRequest) SetRule(v map[string]interface{})`
+`func (o *UpdateNetworkFirewallRuleRequest) SetRule(v UpdateNetworkFirewallRuleRequestRule)`
 
 SetRule sets Rule field to given value.
 

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **Policy** | Pointer to **string** |  | [optional] 
 **Priority** | Pointer to **int64** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**RuleGroup** | Pointer to [**GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInnerRuleGroup**](GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInnerRuleGroup.md) |  | [optional] 
+**RuleGroup** | Pointer to [**NullableGetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInnerRuleGroup**](GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInnerRuleGroup.md) |  | [optional] 
 **GroupName** | Pointer to **string** |  | [optional] 
 **Config** | Pointer to **map[string]interface{}** |  | [optional] 
 **Sources** | Pointer to [**[]GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInnerSourcesInner**](GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInnerSourcesInner.md) |  | [optional] 
@@ -266,6 +266,16 @@ SetRuleGroup sets RuleGroup field to given value.
 
 HasRuleGroup returns a boolean if a field has been set.
 
+### SetRuleGroupNil
+
+`func (o *GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInner) SetRuleGroupNil(b bool)`
+
+ SetRuleGroupNil sets the value for RuleGroup to be an explicit nil
+
+### UnsetRuleGroup
+`func (o *GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInner) UnsetRuleGroup()`
+
+UnsetRuleGroup ensures that no value is present for RuleGroup, not even an explicit nil
 ### GetGroupName
 
 `func (o *GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInnerRulesInner) GetGroupName() string`
