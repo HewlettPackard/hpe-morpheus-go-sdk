@@ -103634,8 +103634,9 @@ paths:
                           properties: &ref_682
                             applicationProfile:
                               type:
-                                - string
+                                - integer
                                 - 'null'
+                              format: int64
                               description: |-
                                 The Load Balancer Application Profile ID.
                                 The Options API `/api/options/nsxt/nsxtLBVirtualServerApplicationProfile?loadBalancerId=42&loadBalancerInstance.vipProtocol=tcp` can be used to see which options are available.
@@ -103662,22 +103663,25 @@ paths:
                                 - null
                             persistenceProfile:
                               type:
-                                - string
+                                - integer
                                 - 'null'
+                              format: int64
                               description: |-
                                 The ID of the persistence profile to use. Required when `persistence` is set to a non-empty value (`SOURCE_IP` or `COOKIE`).
                                 The Options API `/api/options/nsxt/nsxtLBPersistenceProfile?loadBalancerId=42&config.persistence=SOURCE_IP` can be used to see which options are available.
                             sslClientProfile:
                               type:
-                                - string
+                                - integer
                                 - 'null'
+                              format: int64
                               description: |-
                                 The SSL client profile ID. Only applicable when `sslCert` is set to a non-zero value.
                                 The Options API `/api/options/nsxt/nsxtLBClientSSlProfiles?loadBalancerId=42` can be used to see which options are available.
                             sslServerProfile:
                               type:
-                                - string
+                                - integer
                                 - 'null'
+                              format: int64
                               description: |-
                                 The SSL server profile ID. Only applicable when `sslServerCert` is set to a non-zero value.
                                 The Options API `/api/options/nsxt/nsxtLBServerSSlProfiles?loadBalancerId=42` can be used to see which options are available.
@@ -103694,12 +103698,12 @@ paths:
                     sslCert: 12
                     sslServerCert: 15
                     config:
-                      applicationProfile: '85'
+                      applicationProfile: 85
                       pool: '42'
                       persistence: SOURCE_IP
-                      persistenceProfile: '78'
-                      sslClientProfile: '33'
-                      sslServerProfile: '44'
+                      persistenceProfile: 78
+                      sslClientProfile: 33
+                      sslServerProfile: 44
       responses:
         '200':
           description: Successful Response
@@ -103770,12 +103774,12 @@ paths:
                         name: dd-nsxt-1
                         ip: 10.32.23.7
                       config:
-                        applicationProfile: '85'
+                        applicationProfile: 85
                         pool: '42'
                         persistence: SOURCE_IP
-                        persistenceProfile: '78'
-                        sslClientProfile: '33'
-                        sslServerProfile: '44'
+                        persistenceProfile: 78
+                        sslClientProfile: 33
+                        sslServerProfile: 44
                       instance: null
                       description: Web virtual server
                       internalId: /infra/lb-virtual-servers/93bd9df9-966b-4698-8dc0-1431295df6a4
@@ -104001,7 +104005,7 @@ paths:
                     vipHostname: updated.example.com
                     config:
                       persistence: COOKIE
-                      persistenceProfile: '92'
+                      persistenceProfile: 92
                       pool: '55'
       responses:
         '200':
