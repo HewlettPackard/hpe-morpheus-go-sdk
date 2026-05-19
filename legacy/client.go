@@ -455,7 +455,7 @@ func (client *Client) Execute(req *Request) (*Response, error) {
 
 	// so we can still access the Morpheus Resp body in non-success cases
 	if !resp.Success {
-		return resp, errWithBody(errors.New("failed"), httpResp)
+		return resp, errWithBody(nil, httpResp)
 	}
 
 	// success
