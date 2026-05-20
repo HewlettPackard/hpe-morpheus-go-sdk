@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **ConfigCmdbDiscovery** | Pointer to **bool** |  | [optional] 
 **EnableNetworkTypeSelection** | Pointer to **string** |  | [optional] 
 **KubeUrl** | Pointer to **string** |  | [optional] 
-**NetworkServer** | Pointer to [**AddClouds200ResponseAllOfZoneConfigAnyOf2NetworkServer**](AddClouds200ResponseAllOfZoneConfigAnyOf2NetworkServer.md) |  | [optional] 
+**NetworkServer** | Pointer to [**AddClouds200ResponseAllOfZoneConfigAnyOf3NetworkServer**](AddClouds200ResponseAllOfZoneConfigAnyOf3NetworkServer.md) |  | [optional] 
 **NetworkServerId** | Pointer to **string** |  | [optional] 
 **ReplicationMode** | Pointer to **string** |  | [optional] 
 **SecurityServer** | Pointer to **string** |  | [optional] 
@@ -62,6 +62,23 @@ Name | Type | Description | Notes
 **CostingReportName** | Pointer to **string** |  | [optional] 
 **SecretKeyHash** | Pointer to **string** |  | [optional] 
 **CostingSecretKeyHash** | Pointer to **string** |  | [optional] 
+**SubscriberId** | Pointer to **string** |  | [optional] 
+**TenantId** | Pointer to **string** |  | [optional] 
+**ClientId** | Pointer to **string** |  | [optional] 
+**ClientSecret** | Pointer to **string** |  | [optional] 
+**ResourceGroup** | Pointer to **string** |  | [optional] 
+**AccountType** | Pointer to **string** |  | [optional] 
+**CloudType** | Pointer to **string** |  | [optional] 
+**StorageAccount** | Pointer to **string** |  | [optional] 
+**DiskEncryption** | Pointer to **string** |  | [optional] 
+**EncryptionSet** | Pointer to **string** |  | [optional] 
+**CspTenantId** | Pointer to **string** |  | [optional] 
+**CspClientId** | Pointer to **string** |  | [optional] 
+**CspClientSecret** | Pointer to **string** |  | [optional] 
+**CspCustomer** | Pointer to **string** |  | [optional] 
+**AzureCostingMode** | Pointer to **string** |  | [optional] 
+**ClientSecretHash** | Pointer to **string** |  | [optional] 
+**CspClientSecretHash** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -334,20 +351,20 @@ HasKubeUrl returns a boolean if a field has been set.
 
 ### GetNetworkServer
 
-`func (o *ZoneConfig) GetNetworkServer() AddClouds200ResponseAllOfZoneConfigAnyOf2NetworkServer`
+`func (o *ZoneConfig) GetNetworkServer() AddClouds200ResponseAllOfZoneConfigAnyOf3NetworkServer`
 
 GetNetworkServer returns the NetworkServer field if non-nil, zero value otherwise.
 
 ### GetNetworkServerOk
 
-`func (o *ZoneConfig) GetNetworkServerOk() (*AddClouds200ResponseAllOfZoneConfigAnyOf2NetworkServer, bool)`
+`func (o *ZoneConfig) GetNetworkServerOk() (*AddClouds200ResponseAllOfZoneConfigAnyOf3NetworkServer, bool)`
 
 GetNetworkServerOk returns a tuple with the NetworkServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkServer
 
-`func (o *ZoneConfig) SetNetworkServer(v AddClouds200ResponseAllOfZoneConfigAnyOf2NetworkServer)`
+`func (o *ZoneConfig) SetNetworkServer(v AddClouds200ResponseAllOfZoneConfigAnyOf3NetworkServer)`
 
 SetNetworkServer sets NetworkServer field to given value.
 
@@ -1531,6 +1548,431 @@ SetCostingSecretKeyHash sets CostingSecretKeyHash field to given value.
 `func (o *ZoneConfig) HasCostingSecretKeyHash() bool`
 
 HasCostingSecretKeyHash returns a boolean if a field has been set.
+
+### GetSubscriberId
+
+`func (o *ZoneConfig) GetSubscriberId() string`
+
+GetSubscriberId returns the SubscriberId field if non-nil, zero value otherwise.
+
+### GetSubscriberIdOk
+
+`func (o *ZoneConfig) GetSubscriberIdOk() (*string, bool)`
+
+GetSubscriberIdOk returns a tuple with the SubscriberId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubscriberId
+
+`func (o *ZoneConfig) SetSubscriberId(v string)`
+
+SetSubscriberId sets SubscriberId field to given value.
+
+### HasSubscriberId
+
+`func (o *ZoneConfig) HasSubscriberId() bool`
+
+HasSubscriberId returns a boolean if a field has been set.
+
+### GetTenantId
+
+`func (o *ZoneConfig) GetTenantId() string`
+
+GetTenantId returns the TenantId field if non-nil, zero value otherwise.
+
+### GetTenantIdOk
+
+`func (o *ZoneConfig) GetTenantIdOk() (*string, bool)`
+
+GetTenantIdOk returns a tuple with the TenantId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTenantId
+
+`func (o *ZoneConfig) SetTenantId(v string)`
+
+SetTenantId sets TenantId field to given value.
+
+### HasTenantId
+
+`func (o *ZoneConfig) HasTenantId() bool`
+
+HasTenantId returns a boolean if a field has been set.
+
+### GetClientId
+
+`func (o *ZoneConfig) GetClientId() string`
+
+GetClientId returns the ClientId field if non-nil, zero value otherwise.
+
+### GetClientIdOk
+
+`func (o *ZoneConfig) GetClientIdOk() (*string, bool)`
+
+GetClientIdOk returns a tuple with the ClientId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientId
+
+`func (o *ZoneConfig) SetClientId(v string)`
+
+SetClientId sets ClientId field to given value.
+
+### HasClientId
+
+`func (o *ZoneConfig) HasClientId() bool`
+
+HasClientId returns a boolean if a field has been set.
+
+### GetClientSecret
+
+`func (o *ZoneConfig) GetClientSecret() string`
+
+GetClientSecret returns the ClientSecret field if non-nil, zero value otherwise.
+
+### GetClientSecretOk
+
+`func (o *ZoneConfig) GetClientSecretOk() (*string, bool)`
+
+GetClientSecretOk returns a tuple with the ClientSecret field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientSecret
+
+`func (o *ZoneConfig) SetClientSecret(v string)`
+
+SetClientSecret sets ClientSecret field to given value.
+
+### HasClientSecret
+
+`func (o *ZoneConfig) HasClientSecret() bool`
+
+HasClientSecret returns a boolean if a field has been set.
+
+### GetResourceGroup
+
+`func (o *ZoneConfig) GetResourceGroup() string`
+
+GetResourceGroup returns the ResourceGroup field if non-nil, zero value otherwise.
+
+### GetResourceGroupOk
+
+`func (o *ZoneConfig) GetResourceGroupOk() (*string, bool)`
+
+GetResourceGroupOk returns a tuple with the ResourceGroup field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResourceGroup
+
+`func (o *ZoneConfig) SetResourceGroup(v string)`
+
+SetResourceGroup sets ResourceGroup field to given value.
+
+### HasResourceGroup
+
+`func (o *ZoneConfig) HasResourceGroup() bool`
+
+HasResourceGroup returns a boolean if a field has been set.
+
+### GetAccountType
+
+`func (o *ZoneConfig) GetAccountType() string`
+
+GetAccountType returns the AccountType field if non-nil, zero value otherwise.
+
+### GetAccountTypeOk
+
+`func (o *ZoneConfig) GetAccountTypeOk() (*string, bool)`
+
+GetAccountTypeOk returns a tuple with the AccountType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAccountType
+
+`func (o *ZoneConfig) SetAccountType(v string)`
+
+SetAccountType sets AccountType field to given value.
+
+### HasAccountType
+
+`func (o *ZoneConfig) HasAccountType() bool`
+
+HasAccountType returns a boolean if a field has been set.
+
+### GetCloudType
+
+`func (o *ZoneConfig) GetCloudType() string`
+
+GetCloudType returns the CloudType field if non-nil, zero value otherwise.
+
+### GetCloudTypeOk
+
+`func (o *ZoneConfig) GetCloudTypeOk() (*string, bool)`
+
+GetCloudTypeOk returns a tuple with the CloudType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCloudType
+
+`func (o *ZoneConfig) SetCloudType(v string)`
+
+SetCloudType sets CloudType field to given value.
+
+### HasCloudType
+
+`func (o *ZoneConfig) HasCloudType() bool`
+
+HasCloudType returns a boolean if a field has been set.
+
+### GetStorageAccount
+
+`func (o *ZoneConfig) GetStorageAccount() string`
+
+GetStorageAccount returns the StorageAccount field if non-nil, zero value otherwise.
+
+### GetStorageAccountOk
+
+`func (o *ZoneConfig) GetStorageAccountOk() (*string, bool)`
+
+GetStorageAccountOk returns a tuple with the StorageAccount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStorageAccount
+
+`func (o *ZoneConfig) SetStorageAccount(v string)`
+
+SetStorageAccount sets StorageAccount field to given value.
+
+### HasStorageAccount
+
+`func (o *ZoneConfig) HasStorageAccount() bool`
+
+HasStorageAccount returns a boolean if a field has been set.
+
+### GetDiskEncryption
+
+`func (o *ZoneConfig) GetDiskEncryption() string`
+
+GetDiskEncryption returns the DiskEncryption field if non-nil, zero value otherwise.
+
+### GetDiskEncryptionOk
+
+`func (o *ZoneConfig) GetDiskEncryptionOk() (*string, bool)`
+
+GetDiskEncryptionOk returns a tuple with the DiskEncryption field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDiskEncryption
+
+`func (o *ZoneConfig) SetDiskEncryption(v string)`
+
+SetDiskEncryption sets DiskEncryption field to given value.
+
+### HasDiskEncryption
+
+`func (o *ZoneConfig) HasDiskEncryption() bool`
+
+HasDiskEncryption returns a boolean if a field has been set.
+
+### GetEncryptionSet
+
+`func (o *ZoneConfig) GetEncryptionSet() string`
+
+GetEncryptionSet returns the EncryptionSet field if non-nil, zero value otherwise.
+
+### GetEncryptionSetOk
+
+`func (o *ZoneConfig) GetEncryptionSetOk() (*string, bool)`
+
+GetEncryptionSetOk returns a tuple with the EncryptionSet field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEncryptionSet
+
+`func (o *ZoneConfig) SetEncryptionSet(v string)`
+
+SetEncryptionSet sets EncryptionSet field to given value.
+
+### HasEncryptionSet
+
+`func (o *ZoneConfig) HasEncryptionSet() bool`
+
+HasEncryptionSet returns a boolean if a field has been set.
+
+### GetCspTenantId
+
+`func (o *ZoneConfig) GetCspTenantId() string`
+
+GetCspTenantId returns the CspTenantId field if non-nil, zero value otherwise.
+
+### GetCspTenantIdOk
+
+`func (o *ZoneConfig) GetCspTenantIdOk() (*string, bool)`
+
+GetCspTenantIdOk returns a tuple with the CspTenantId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCspTenantId
+
+`func (o *ZoneConfig) SetCspTenantId(v string)`
+
+SetCspTenantId sets CspTenantId field to given value.
+
+### HasCspTenantId
+
+`func (o *ZoneConfig) HasCspTenantId() bool`
+
+HasCspTenantId returns a boolean if a field has been set.
+
+### GetCspClientId
+
+`func (o *ZoneConfig) GetCspClientId() string`
+
+GetCspClientId returns the CspClientId field if non-nil, zero value otherwise.
+
+### GetCspClientIdOk
+
+`func (o *ZoneConfig) GetCspClientIdOk() (*string, bool)`
+
+GetCspClientIdOk returns a tuple with the CspClientId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCspClientId
+
+`func (o *ZoneConfig) SetCspClientId(v string)`
+
+SetCspClientId sets CspClientId field to given value.
+
+### HasCspClientId
+
+`func (o *ZoneConfig) HasCspClientId() bool`
+
+HasCspClientId returns a boolean if a field has been set.
+
+### GetCspClientSecret
+
+`func (o *ZoneConfig) GetCspClientSecret() string`
+
+GetCspClientSecret returns the CspClientSecret field if non-nil, zero value otherwise.
+
+### GetCspClientSecretOk
+
+`func (o *ZoneConfig) GetCspClientSecretOk() (*string, bool)`
+
+GetCspClientSecretOk returns a tuple with the CspClientSecret field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCspClientSecret
+
+`func (o *ZoneConfig) SetCspClientSecret(v string)`
+
+SetCspClientSecret sets CspClientSecret field to given value.
+
+### HasCspClientSecret
+
+`func (o *ZoneConfig) HasCspClientSecret() bool`
+
+HasCspClientSecret returns a boolean if a field has been set.
+
+### GetCspCustomer
+
+`func (o *ZoneConfig) GetCspCustomer() string`
+
+GetCspCustomer returns the CspCustomer field if non-nil, zero value otherwise.
+
+### GetCspCustomerOk
+
+`func (o *ZoneConfig) GetCspCustomerOk() (*string, bool)`
+
+GetCspCustomerOk returns a tuple with the CspCustomer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCspCustomer
+
+`func (o *ZoneConfig) SetCspCustomer(v string)`
+
+SetCspCustomer sets CspCustomer field to given value.
+
+### HasCspCustomer
+
+`func (o *ZoneConfig) HasCspCustomer() bool`
+
+HasCspCustomer returns a boolean if a field has been set.
+
+### GetAzureCostingMode
+
+`func (o *ZoneConfig) GetAzureCostingMode() string`
+
+GetAzureCostingMode returns the AzureCostingMode field if non-nil, zero value otherwise.
+
+### GetAzureCostingModeOk
+
+`func (o *ZoneConfig) GetAzureCostingModeOk() (*string, bool)`
+
+GetAzureCostingModeOk returns a tuple with the AzureCostingMode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAzureCostingMode
+
+`func (o *ZoneConfig) SetAzureCostingMode(v string)`
+
+SetAzureCostingMode sets AzureCostingMode field to given value.
+
+### HasAzureCostingMode
+
+`func (o *ZoneConfig) HasAzureCostingMode() bool`
+
+HasAzureCostingMode returns a boolean if a field has been set.
+
+### GetClientSecretHash
+
+`func (o *ZoneConfig) GetClientSecretHash() string`
+
+GetClientSecretHash returns the ClientSecretHash field if non-nil, zero value otherwise.
+
+### GetClientSecretHashOk
+
+`func (o *ZoneConfig) GetClientSecretHashOk() (*string, bool)`
+
+GetClientSecretHashOk returns a tuple with the ClientSecretHash field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientSecretHash
+
+`func (o *ZoneConfig) SetClientSecretHash(v string)`
+
+SetClientSecretHash sets ClientSecretHash field to given value.
+
+### HasClientSecretHash
+
+`func (o *ZoneConfig) HasClientSecretHash() bool`
+
+HasClientSecretHash returns a boolean if a field has been set.
+
+### GetCspClientSecretHash
+
+`func (o *ZoneConfig) GetCspClientSecretHash() string`
+
+GetCspClientSecretHash returns the CspClientSecretHash field if non-nil, zero value otherwise.
+
+### GetCspClientSecretHashOk
+
+`func (o *ZoneConfig) GetCspClientSecretHashOk() (*string, bool)`
+
+GetCspClientSecretHashOk returns a tuple with the CspClientSecretHash field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCspClientSecretHash
+
+`func (o *ZoneConfig) SetCspClientSecretHash(v string)`
+
+SetCspClientSecretHash sets CspClientSecretHash field to given value.
+
+### HasCspClientSecretHash
+
+`func (o *ZoneConfig) HasCspClientSecretHash() bool`
+
+HasCspClientSecretHash returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

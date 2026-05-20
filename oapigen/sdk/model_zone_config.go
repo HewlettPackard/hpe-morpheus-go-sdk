@@ -24,6 +24,7 @@ type ZoneConfig struct {
 	ZoneConfigAnyOf   *ZoneConfigAnyOf
 	ZoneConfigAnyOf1  *ZoneConfigAnyOf1
 	ZoneConfigAnyOf2  *ZoneConfigAnyOf2
+	ZoneConfigAnyOf3  *ZoneConfigAnyOf3
 	MapmapOfStringAny *map[string]interface{}
 }
 
@@ -48,6 +49,12 @@ func (dst *ZoneConfig) UnmarshalMapstructure(data any) (any, error) {
 
 	if IsEmpty(dst.ZoneConfigAnyOf2) {
 		dst.ZoneConfigAnyOf2 = nil
+	}
+
+	mapstructDecode(data, &dst.ZoneConfigAnyOf3)
+
+	if IsEmpty(dst.ZoneConfigAnyOf3) {
+		dst.ZoneConfigAnyOf3 = nil
 	}
 
 	mapstructDecode(data, &dst.MapmapOfStringAny)
@@ -101,6 +108,19 @@ func (dst *ZoneConfig) UnmarshalJSON(data []byte) error {
 		dst.ZoneConfigAnyOf2 = nil
 	}
 
+	// try to unmarshal JSON data into ZoneConfigAnyOf3
+	err = json.Unmarshal(data, &dst.ZoneConfigAnyOf3)
+	if err == nil {
+		jsonZoneConfigAnyOf3, _ := json.Marshal(dst.ZoneConfigAnyOf3)
+		if string(jsonZoneConfigAnyOf3) == "{}" { // empty struct
+			dst.ZoneConfigAnyOf3 = nil
+		} else {
+			return nil // data stored in dst.ZoneConfigAnyOf3, return on the first match
+		}
+	} else {
+		dst.ZoneConfigAnyOf3 = nil
+	}
+
 	// try to unmarshal JSON data into MapmapOfStringAny
 	err = json.Unmarshal(data, &dst.MapmapOfStringAny)
 	if err == nil {
@@ -129,6 +149,10 @@ func (src ZoneConfig) MarshalJSON() ([]byte, error) {
 
 	if src.ZoneConfigAnyOf2 != nil {
 		return json.Marshal(&src.ZoneConfigAnyOf2)
+	}
+
+	if src.ZoneConfigAnyOf3 != nil {
+		return json.Marshal(&src.ZoneConfigAnyOf3)
 	}
 
 	if src.MapmapOfStringAny != nil {

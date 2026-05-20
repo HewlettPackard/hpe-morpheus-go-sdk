@@ -5,6 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ResourcePoolId** | Pointer to **string** | id of the resource group to be used, can be prefixed with &#x60;pool-&#x60;. A resource pool group can be specified instead by prefixing its ID with &#x60;poolGroup-&#x60;. | [optional] 
+**AzureRegion** | Pointer to **string** | The Azure region to provision the instance in. | [optional] 
+**AzuresecurityGroupId** | Pointer to **string** | The id of the Azure security group to assign the instance to. | [optional] 
 **AvailabilityOptions** | Pointer to **string** | Availability Options | [optional] 
 **AvailabilitySet** | Pointer to **string** | Availability Set | [optional] 
 **AvailabilityZone** | Pointer to **int64** | Availability Zone | [optional] 
@@ -57,6 +59,56 @@ SetResourcePoolId sets ResourcePoolId field to given value.
 `func (o *InstancesConfigAzure) HasResourcePoolId() bool`
 
 HasResourcePoolId returns a boolean if a field has been set.
+
+### GetAzureRegion
+
+`func (o *InstancesConfigAzure) GetAzureRegion() string`
+
+GetAzureRegion returns the AzureRegion field if non-nil, zero value otherwise.
+
+### GetAzureRegionOk
+
+`func (o *InstancesConfigAzure) GetAzureRegionOk() (*string, bool)`
+
+GetAzureRegionOk returns a tuple with the AzureRegion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAzureRegion
+
+`func (o *InstancesConfigAzure) SetAzureRegion(v string)`
+
+SetAzureRegion sets AzureRegion field to given value.
+
+### HasAzureRegion
+
+`func (o *InstancesConfigAzure) HasAzureRegion() bool`
+
+HasAzureRegion returns a boolean if a field has been set.
+
+### GetAzuresecurityGroupId
+
+`func (o *InstancesConfigAzure) GetAzuresecurityGroupId() string`
+
+GetAzuresecurityGroupId returns the AzuresecurityGroupId field if non-nil, zero value otherwise.
+
+### GetAzuresecurityGroupIdOk
+
+`func (o *InstancesConfigAzure) GetAzuresecurityGroupIdOk() (*string, bool)`
+
+GetAzuresecurityGroupIdOk returns a tuple with the AzuresecurityGroupId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAzuresecurityGroupId
+
+`func (o *InstancesConfigAzure) SetAzuresecurityGroupId(v string)`
+
+SetAzuresecurityGroupId sets AzuresecurityGroupId field to given value.
+
+### HasAzuresecurityGroupId
+
+`func (o *InstancesConfigAzure) HasAzuresecurityGroupId() bool`
+
+HasAzuresecurityGroupId returns a boolean if a field has been set.
 
 ### GetAvailabilityOptions
 

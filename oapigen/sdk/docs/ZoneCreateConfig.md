@@ -41,11 +41,14 @@ Name | Type | Description | Notes
 **BypassProxyForCloud** | Pointer to **string** | Whether to bypass the proxy for API calls to the cloud or not. | [optional] 
 **NoProxy** | Pointer to **string** | A comma separated list of hosts to bypass the proxy for when making API calls to the cloud. | [optional] 
 **UserDataLinux** | Pointer to **string** | The user data script to use for provisioning instances in this cloud. | [optional] 
+**CloudType** | Pointer to **string** | The Azure cloud type (global, usgov, german, china). | [optional] [default to "global"]
+**ImportExisting** | Pointer to **string** | Whether to import existing resources from the cloud (on, off). | [optional] 
 **SubscriberId** | Pointer to **string** | Azure subscriber id | [optional] 
 **TenantId** | Pointer to **string** | Azure tenant id | [optional] 
 **ClientId** | Pointer to **string** | Azure client id | [optional] 
 **ClientSecret** | Pointer to **string** | Azure client secret | [optional] 
 **ResourceGroup** | Pointer to **string** | Azure resource group | [optional] 
+**StorageAccount** | Pointer to **string** | The Azure storage account to use. | [optional] 
 **RpcMode** | Pointer to [**NullableZoneCreateConfigAnyOf3RpcMode**](ZoneCreateConfigAnyOf3RpcMode.md) |  | [optional] 
 **CertificateProvider** | Pointer to **string** | Certificate provider | [optional] [default to "internal"]
 **EnableNetworkTypeSelection** | Pointer to [**NullableZoneCreateConfigAnyOf3EnableNetworkTypeSelection**](ZoneCreateConfigAnyOf3EnableNetworkTypeSelection.md) |  | [optional] 
@@ -1001,6 +1004,56 @@ SetUserDataLinux sets UserDataLinux field to given value.
 
 HasUserDataLinux returns a boolean if a field has been set.
 
+### GetCloudType
+
+`func (o *ZoneCreateConfig) GetCloudType() string`
+
+GetCloudType returns the CloudType field if non-nil, zero value otherwise.
+
+### GetCloudTypeOk
+
+`func (o *ZoneCreateConfig) GetCloudTypeOk() (*string, bool)`
+
+GetCloudTypeOk returns a tuple with the CloudType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCloudType
+
+`func (o *ZoneCreateConfig) SetCloudType(v string)`
+
+SetCloudType sets CloudType field to given value.
+
+### HasCloudType
+
+`func (o *ZoneCreateConfig) HasCloudType() bool`
+
+HasCloudType returns a boolean if a field has been set.
+
+### GetImportExisting
+
+`func (o *ZoneCreateConfig) GetImportExisting() string`
+
+GetImportExisting returns the ImportExisting field if non-nil, zero value otherwise.
+
+### GetImportExistingOk
+
+`func (o *ZoneCreateConfig) GetImportExistingOk() (*string, bool)`
+
+GetImportExistingOk returns a tuple with the ImportExisting field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImportExisting
+
+`func (o *ZoneCreateConfig) SetImportExisting(v string)`
+
+SetImportExisting sets ImportExisting field to given value.
+
+### HasImportExisting
+
+`func (o *ZoneCreateConfig) HasImportExisting() bool`
+
+HasImportExisting returns a boolean if a field has been set.
+
 ### GetSubscriberId
 
 `func (o *ZoneCreateConfig) GetSubscriberId() string`
@@ -1125,6 +1178,31 @@ SetResourceGroup sets ResourceGroup field to given value.
 `func (o *ZoneCreateConfig) HasResourceGroup() bool`
 
 HasResourceGroup returns a boolean if a field has been set.
+
+### GetStorageAccount
+
+`func (o *ZoneCreateConfig) GetStorageAccount() string`
+
+GetStorageAccount returns the StorageAccount field if non-nil, zero value otherwise.
+
+### GetStorageAccountOk
+
+`func (o *ZoneCreateConfig) GetStorageAccountOk() (*string, bool)`
+
+GetStorageAccountOk returns a tuple with the StorageAccount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStorageAccount
+
+`func (o *ZoneCreateConfig) SetStorageAccount(v string)`
+
+SetStorageAccount sets StorageAccount field to given value.
+
+### HasStorageAccount
+
+`func (o *ZoneCreateConfig) HasStorageAccount() bool`
+
+HasStorageAccount returns a boolean if a field has been set.
 
 ### GetRpcMode
 

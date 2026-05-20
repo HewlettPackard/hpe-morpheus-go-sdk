@@ -24,6 +24,7 @@ type ListClouds200ResponseAllOfZonesInnerConfig struct {
 	ListClouds200ResponseAllOfZonesInnerConfigAnyOf  *ListClouds200ResponseAllOfZonesInnerConfigAnyOf
 	ListClouds200ResponseAllOfZonesInnerConfigAnyOf1 *ListClouds200ResponseAllOfZonesInnerConfigAnyOf1
 	ListClouds200ResponseAllOfZonesInnerConfigAnyOf2 *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2
+	ListClouds200ResponseAllOfZonesInnerConfigAnyOf3 *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3
 	MapmapOfStringAny                                *map[string]interface{}
 }
 
@@ -48,6 +49,12 @@ func (dst *ListClouds200ResponseAllOfZonesInnerConfig) UnmarshalMapstructure(dat
 
 	if IsEmpty(dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) {
 		dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf2 = nil
+	}
+
+	mapstructDecode(data, &dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf3)
+
+	if IsEmpty(dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) {
+		dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf3 = nil
 	}
 
 	mapstructDecode(data, &dst.MapmapOfStringAny)
@@ -101,6 +108,19 @@ func (dst *ListClouds200ResponseAllOfZonesInnerConfig) UnmarshalJSON(data []byte
 		dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf2 = nil
 	}
 
+	// try to unmarshal JSON data into ListClouds200ResponseAllOfZonesInnerConfigAnyOf3
+	err = json.Unmarshal(data, &dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf3)
+	if err == nil {
+		jsonListClouds200ResponseAllOfZonesInnerConfigAnyOf3, _ := json.Marshal(dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf3)
+		if string(jsonListClouds200ResponseAllOfZonesInnerConfigAnyOf3) == "{}" { // empty struct
+			dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf3 = nil
+		} else {
+			return nil // data stored in dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf3, return on the first match
+		}
+	} else {
+		dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf3 = nil
+	}
+
 	// try to unmarshal JSON data into MapmapOfStringAny
 	err = json.Unmarshal(data, &dst.MapmapOfStringAny)
 	if err == nil {
@@ -129,6 +149,10 @@ func (src ListClouds200ResponseAllOfZonesInnerConfig) MarshalJSON() ([]byte, err
 
 	if src.ListClouds200ResponseAllOfZonesInnerConfigAnyOf2 != nil {
 		return json.Marshal(&src.ListClouds200ResponseAllOfZonesInnerConfigAnyOf2)
+	}
+
+	if src.ListClouds200ResponseAllOfZonesInnerConfigAnyOf3 != nil {
+		return json.Marshal(&src.ListClouds200ResponseAllOfZonesInnerConfigAnyOf3)
 	}
 
 	if src.MapmapOfStringAny != nil {
