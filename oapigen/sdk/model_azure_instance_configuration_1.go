@@ -22,6 +22,10 @@ var _ MappedNullable = &AzureInstanceConfiguration1{}
 type AzureInstanceConfiguration1 struct {
 	// id of the resource group to be used, can be prefixed with `pool-`. A resource pool group can be specified instead by prefixing its ID with `poolGroup-`.
 	ResourcePoolId *string `json:"resourcePoolId,omitempty"`
+	// The Azure region to provision the instance in.
+	AzureRegion *string `json:"azureRegion,omitempty"`
+	// The id of the Azure security group to assign the instance to.
+	AzuresecurityGroupId *string `json:"azuresecurityGroupId,omitempty"`
 	// Availability Options
 	AvailabilityOptions *string `json:"availabilityOptions,omitempty"`
 	// Availability Set
@@ -94,6 +98,70 @@ func (o *AzureInstanceConfiguration1) IsSetResourcePoolId() bool {
 // SetResourcePoolId gets a reference to the given string and assigns it to the ResourcePoolId field.
 func (o *AzureInstanceConfiguration1) SetResourcePoolId(v string) {
 	o.ResourcePoolId = &v
+}
+
+// GetAzureRegion returns the AzureRegion field value if set, zero value otherwise.
+func (o *AzureInstanceConfiguration1) GetAzureRegion() string {
+	if o == nil || IsNil(o.AzureRegion) {
+		var ret string
+		return ret
+	}
+	return *o.AzureRegion
+}
+
+// GetAzureRegionOk returns a tuple with the AzureRegion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AzureInstanceConfiguration1) GetAzureRegionOk() (*string, bool) {
+	if o == nil || IsNil(o.AzureRegion) {
+		return nil, false
+	}
+	return o.AzureRegion, true
+}
+
+// IsSetAzureRegion returns a boolean if a field has been set.
+func (o *AzureInstanceConfiguration1) IsSetAzureRegion() bool {
+	if o != nil && !IsNil(o.AzureRegion) {
+		return true
+	}
+
+	return false
+}
+
+// SetAzureRegion gets a reference to the given string and assigns it to the AzureRegion field.
+func (o *AzureInstanceConfiguration1) SetAzureRegion(v string) {
+	o.AzureRegion = &v
+}
+
+// GetAzuresecurityGroupId returns the AzuresecurityGroupId field value if set, zero value otherwise.
+func (o *AzureInstanceConfiguration1) GetAzuresecurityGroupId() string {
+	if o == nil || IsNil(o.AzuresecurityGroupId) {
+		var ret string
+		return ret
+	}
+	return *o.AzuresecurityGroupId
+}
+
+// GetAzuresecurityGroupIdOk returns a tuple with the AzuresecurityGroupId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AzureInstanceConfiguration1) GetAzuresecurityGroupIdOk() (*string, bool) {
+	if o == nil || IsNil(o.AzuresecurityGroupId) {
+		return nil, false
+	}
+	return o.AzuresecurityGroupId, true
+}
+
+// IsSetAzuresecurityGroupId returns a boolean if a field has been set.
+func (o *AzureInstanceConfiguration1) IsSetAzuresecurityGroupId() bool {
+	if o != nil && !IsNil(o.AzuresecurityGroupId) {
+		return true
+	}
+
+	return false
+}
+
+// SetAzuresecurityGroupId gets a reference to the given string and assigns it to the AzuresecurityGroupId field.
+func (o *AzureInstanceConfiguration1) SetAzuresecurityGroupId(v string) {
+	o.AzuresecurityGroupId = &v
 }
 
 // GetAvailabilityOptions returns the AvailabilityOptions field value if set, zero value otherwise.
@@ -364,6 +432,12 @@ func (o AzureInstanceConfiguration1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.ResourcePoolId) {
 		toSerialize["resourcePoolId"] = o.ResourcePoolId
+	}
+	if !IsNil(o.AzureRegion) {
+		toSerialize["azureRegion"] = o.AzureRegion
+	}
+	if !IsNil(o.AzuresecurityGroupId) {
+		toSerialize["azuresecurityGroupId"] = o.AzuresecurityGroupId
 	}
 	if !IsNil(o.AvailabilityOptions) {
 		toSerialize["availabilityOptions"] = o.AvailabilityOptions

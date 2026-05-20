@@ -24,6 +24,7 @@ type AddClouds200ResponseAllOfZoneConfig struct {
 	AddClouds200ResponseAllOfZoneConfigAnyOf  *AddClouds200ResponseAllOfZoneConfigAnyOf
 	AddClouds200ResponseAllOfZoneConfigAnyOf1 *AddClouds200ResponseAllOfZoneConfigAnyOf1
 	AddClouds200ResponseAllOfZoneConfigAnyOf2 *AddClouds200ResponseAllOfZoneConfigAnyOf2
+	AddClouds200ResponseAllOfZoneConfigAnyOf3 *AddClouds200ResponseAllOfZoneConfigAnyOf3
 	MapmapOfStringAny                         *map[string]interface{}
 }
 
@@ -48,6 +49,12 @@ func (dst *AddClouds200ResponseAllOfZoneConfig) UnmarshalMapstructure(data any) 
 
 	if IsEmpty(dst.AddClouds200ResponseAllOfZoneConfigAnyOf2) {
 		dst.AddClouds200ResponseAllOfZoneConfigAnyOf2 = nil
+	}
+
+	mapstructDecode(data, &dst.AddClouds200ResponseAllOfZoneConfigAnyOf3)
+
+	if IsEmpty(dst.AddClouds200ResponseAllOfZoneConfigAnyOf3) {
+		dst.AddClouds200ResponseAllOfZoneConfigAnyOf3 = nil
 	}
 
 	mapstructDecode(data, &dst.MapmapOfStringAny)
@@ -101,6 +108,19 @@ func (dst *AddClouds200ResponseAllOfZoneConfig) UnmarshalJSON(data []byte) error
 		dst.AddClouds200ResponseAllOfZoneConfigAnyOf2 = nil
 	}
 
+	// try to unmarshal JSON data into AddClouds200ResponseAllOfZoneConfigAnyOf3
+	err = json.Unmarshal(data, &dst.AddClouds200ResponseAllOfZoneConfigAnyOf3)
+	if err == nil {
+		jsonAddClouds200ResponseAllOfZoneConfigAnyOf3, _ := json.Marshal(dst.AddClouds200ResponseAllOfZoneConfigAnyOf3)
+		if string(jsonAddClouds200ResponseAllOfZoneConfigAnyOf3) == "{}" { // empty struct
+			dst.AddClouds200ResponseAllOfZoneConfigAnyOf3 = nil
+		} else {
+			return nil // data stored in dst.AddClouds200ResponseAllOfZoneConfigAnyOf3, return on the first match
+		}
+	} else {
+		dst.AddClouds200ResponseAllOfZoneConfigAnyOf3 = nil
+	}
+
 	// try to unmarshal JSON data into MapmapOfStringAny
 	err = json.Unmarshal(data, &dst.MapmapOfStringAny)
 	if err == nil {
@@ -129,6 +149,10 @@ func (src AddClouds200ResponseAllOfZoneConfig) MarshalJSON() ([]byte, error) {
 
 	if src.AddClouds200ResponseAllOfZoneConfigAnyOf2 != nil {
 		return json.Marshal(&src.AddClouds200ResponseAllOfZoneConfigAnyOf2)
+	}
+
+	if src.AddClouds200ResponseAllOfZoneConfigAnyOf3 != nil {
+		return json.Marshal(&src.AddClouds200ResponseAllOfZoneConfigAnyOf3)
 	}
 
 	if src.MapmapOfStringAny != nil {

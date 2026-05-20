@@ -26,8 +26,12 @@ type CloudCreateConfigAzure struct {
 	DatacenterName *string `json:"datacenterName,omitempty"`
 	// The external id of the cloud
 	ExternalId NullableString `json:"externalId,omitempty"`
+	// The Azure cloud type (global, usgov, german, china).
+	CloudType *string `json:"cloudType,omitempty"`
 	// Whether to import existing virtual machines.
 	InventoryLevel *string `json:"inventoryLevel,omitempty"`
+	// Whether to import existing resources from the cloud (on, off).
+	ImportExisting *string `json:"importExisting,omitempty"`
 	// The keyboard layout to use for the console
 	ConsoleKeymap *string `json:"consoleKeymap,omitempty"`
 	// Azure subscriber id
@@ -39,7 +43,9 @@ type CloudCreateConfigAzure struct {
 	// Azure client secret
 	ClientSecret *string `json:"clientSecret,omitempty"`
 	// Azure resource group
-	ResourceGroup        *string                `json:"resourceGroup,omitempty"`
+	ResourceGroup *string `json:"resourceGroup,omitempty"`
+	// The Azure storage account to use.
+	StorageAccount       *string                `json:"storageAccount,omitempty"`
 	RpcMode              NullableString         `json:"rpcMode,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
@@ -52,6 +58,8 @@ type _CloudCreateConfigAzure CloudCreateConfigAzure
 // will change when the set of required properties is changed
 func NewCloudCreateConfigAzure() *CloudCreateConfigAzure {
 	this := CloudCreateConfigAzure{}
+	var cloudType string = "global"
+	this.CloudType = &cloudType
 	return &this
 }
 
@@ -60,6 +68,8 @@ func NewCloudCreateConfigAzure() *CloudCreateConfigAzure {
 // but it doesn't guarantee that properties required by API are set
 func NewCloudCreateConfigAzureWithDefaults() *CloudCreateConfigAzure {
 	this := CloudCreateConfigAzure{}
+	var cloudType string = "global"
+	this.CloudType = &cloudType
 	return &this
 }
 
@@ -170,6 +180,38 @@ func (o *CloudCreateConfigAzure) UnsetExternalId() {
 	o.ExternalId.Unset()
 }
 
+// GetCloudType returns the CloudType field value if set, zero value otherwise.
+func (o *CloudCreateConfigAzure) GetCloudType() string {
+	if o == nil || IsNil(o.CloudType) {
+		var ret string
+		return ret
+	}
+	return *o.CloudType
+}
+
+// GetCloudTypeOk returns a tuple with the CloudType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CloudCreateConfigAzure) GetCloudTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.CloudType) {
+		return nil, false
+	}
+	return o.CloudType, true
+}
+
+// IsSetCloudType returns a boolean if a field has been set.
+func (o *CloudCreateConfigAzure) IsSetCloudType() bool {
+	if o != nil && !IsNil(o.CloudType) {
+		return true
+	}
+
+	return false
+}
+
+// SetCloudType gets a reference to the given string and assigns it to the CloudType field.
+func (o *CloudCreateConfigAzure) SetCloudType(v string) {
+	o.CloudType = &v
+}
+
 // GetInventoryLevel returns the InventoryLevel field value if set, zero value otherwise.
 func (o *CloudCreateConfigAzure) GetInventoryLevel() string {
 	if o == nil || IsNil(o.InventoryLevel) {
@@ -200,6 +242,38 @@ func (o *CloudCreateConfigAzure) IsSetInventoryLevel() bool {
 // SetInventoryLevel gets a reference to the given string and assigns it to the InventoryLevel field.
 func (o *CloudCreateConfigAzure) SetInventoryLevel(v string) {
 	o.InventoryLevel = &v
+}
+
+// GetImportExisting returns the ImportExisting field value if set, zero value otherwise.
+func (o *CloudCreateConfigAzure) GetImportExisting() string {
+	if o == nil || IsNil(o.ImportExisting) {
+		var ret string
+		return ret
+	}
+	return *o.ImportExisting
+}
+
+// GetImportExistingOk returns a tuple with the ImportExisting field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CloudCreateConfigAzure) GetImportExistingOk() (*string, bool) {
+	if o == nil || IsNil(o.ImportExisting) {
+		return nil, false
+	}
+	return o.ImportExisting, true
+}
+
+// IsSetImportExisting returns a boolean if a field has been set.
+func (o *CloudCreateConfigAzure) IsSetImportExisting() bool {
+	if o != nil && !IsNil(o.ImportExisting) {
+		return true
+	}
+
+	return false
+}
+
+// SetImportExisting gets a reference to the given string and assigns it to the ImportExisting field.
+func (o *CloudCreateConfigAzure) SetImportExisting(v string) {
+	o.ImportExisting = &v
 }
 
 // GetConsoleKeymap returns the ConsoleKeymap field value if set, zero value otherwise.
@@ -394,6 +468,38 @@ func (o *CloudCreateConfigAzure) SetResourceGroup(v string) {
 	o.ResourceGroup = &v
 }
 
+// GetStorageAccount returns the StorageAccount field value if set, zero value otherwise.
+func (o *CloudCreateConfigAzure) GetStorageAccount() string {
+	if o == nil || IsNil(o.StorageAccount) {
+		var ret string
+		return ret
+	}
+	return *o.StorageAccount
+}
+
+// GetStorageAccountOk returns a tuple with the StorageAccount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CloudCreateConfigAzure) GetStorageAccountOk() (*string, bool) {
+	if o == nil || IsNil(o.StorageAccount) {
+		return nil, false
+	}
+	return o.StorageAccount, true
+}
+
+// IsSetStorageAccount returns a boolean if a field has been set.
+func (o *CloudCreateConfigAzure) IsSetStorageAccount() bool {
+	if o != nil && !IsNil(o.StorageAccount) {
+		return true
+	}
+
+	return false
+}
+
+// SetStorageAccount gets a reference to the given string and assigns it to the StorageAccount field.
+func (o *CloudCreateConfigAzure) SetStorageAccount(v string) {
+	o.StorageAccount = &v
+}
+
 // GetRpcMode returns the RpcMode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CloudCreateConfigAzure) GetRpcMode() string {
 	if o == nil || IsNil(o.RpcMode.Get()) {
@@ -456,8 +562,14 @@ func (o CloudCreateConfigAzure) ToMap() (map[string]interface{}, error) {
 	if o.ExternalId.IsSet() {
 		toSerialize["externalId"] = o.ExternalId.Get()
 	}
+	if !IsNil(o.CloudType) {
+		toSerialize["cloudType"] = o.CloudType
+	}
 	if !IsNil(o.InventoryLevel) {
 		toSerialize["inventoryLevel"] = o.InventoryLevel
+	}
+	if !IsNil(o.ImportExisting) {
+		toSerialize["importExisting"] = o.ImportExisting
 	}
 	if !IsNil(o.ConsoleKeymap) {
 		toSerialize["consoleKeymap"] = o.ConsoleKeymap
@@ -476,6 +588,9 @@ func (o CloudCreateConfigAzure) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ResourceGroup) {
 		toSerialize["resourceGroup"] = o.ResourceGroup
+	}
+	if !IsNil(o.StorageAccount) {
+		toSerialize["storageAccount"] = o.StorageAccount
 	}
 	if o.RpcMode.IsSet() {
 		toSerialize["rpcMode"] = o.RpcMode.Get()

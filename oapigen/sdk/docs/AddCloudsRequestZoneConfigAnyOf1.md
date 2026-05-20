@@ -7,13 +7,16 @@ Name | Type | Description | Notes
 **ApplianceUrl** | Pointer to **string** | The URL used by workloads provisioned in the cloud for interacting with the Morpheus appliance. | [optional] 
 **DatacenterName** | Pointer to **string** | A custom name used to reference the datacenter for the cloud. | [optional] 
 **ExternalId** | Pointer to **NullableString** | The external id of the cloud | [optional] 
+**CloudType** | Pointer to **string** | The Azure cloud type (global, usgov, german, china). | [optional] [default to "global"]
 **InventoryLevel** | Pointer to **string** | Whether to import existing virtual machines. | [optional] 
+**ImportExisting** | Pointer to **string** | Whether to import existing resources from the cloud (on, off). | [optional] 
 **ConsoleKeymap** | Pointer to **string** | The keyboard layout to use for the console | [optional] 
 **SubscriberId** | Pointer to **string** | Azure subscriber id | [optional] 
 **TenantId** | Pointer to **string** | Azure tenant id | [optional] 
 **ClientId** | Pointer to **string** | Azure client id | [optional] 
 **ClientSecret** | Pointer to **string** | Azure client secret | [optional] 
 **ResourceGroup** | Pointer to **string** | Azure resource group | [optional] 
+**StorageAccount** | Pointer to **string** | The Azure storage account to use. | [optional] 
 **RpcMode** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
@@ -120,6 +123,31 @@ HasExternalId returns a boolean if a field has been set.
 `func (o *AddCloudsRequestZoneConfigAnyOf1) UnsetExternalId()`
 
 UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
+### GetCloudType
+
+`func (o *AddCloudsRequestZoneConfigAnyOf1) GetCloudType() string`
+
+GetCloudType returns the CloudType field if non-nil, zero value otherwise.
+
+### GetCloudTypeOk
+
+`func (o *AddCloudsRequestZoneConfigAnyOf1) GetCloudTypeOk() (*string, bool)`
+
+GetCloudTypeOk returns a tuple with the CloudType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCloudType
+
+`func (o *AddCloudsRequestZoneConfigAnyOf1) SetCloudType(v string)`
+
+SetCloudType sets CloudType field to given value.
+
+### HasCloudType
+
+`func (o *AddCloudsRequestZoneConfigAnyOf1) HasCloudType() bool`
+
+HasCloudType returns a boolean if a field has been set.
+
 ### GetInventoryLevel
 
 `func (o *AddCloudsRequestZoneConfigAnyOf1) GetInventoryLevel() string`
@@ -144,6 +172,31 @@ SetInventoryLevel sets InventoryLevel field to given value.
 `func (o *AddCloudsRequestZoneConfigAnyOf1) HasInventoryLevel() bool`
 
 HasInventoryLevel returns a boolean if a field has been set.
+
+### GetImportExisting
+
+`func (o *AddCloudsRequestZoneConfigAnyOf1) GetImportExisting() string`
+
+GetImportExisting returns the ImportExisting field if non-nil, zero value otherwise.
+
+### GetImportExistingOk
+
+`func (o *AddCloudsRequestZoneConfigAnyOf1) GetImportExistingOk() (*string, bool)`
+
+GetImportExistingOk returns a tuple with the ImportExisting field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImportExisting
+
+`func (o *AddCloudsRequestZoneConfigAnyOf1) SetImportExisting(v string)`
+
+SetImportExisting sets ImportExisting field to given value.
+
+### HasImportExisting
+
+`func (o *AddCloudsRequestZoneConfigAnyOf1) HasImportExisting() bool`
+
+HasImportExisting returns a boolean if a field has been set.
 
 ### GetConsoleKeymap
 
@@ -294,6 +347,31 @@ SetResourceGroup sets ResourceGroup field to given value.
 `func (o *AddCloudsRequestZoneConfigAnyOf1) HasResourceGroup() bool`
 
 HasResourceGroup returns a boolean if a field has been set.
+
+### GetStorageAccount
+
+`func (o *AddCloudsRequestZoneConfigAnyOf1) GetStorageAccount() string`
+
+GetStorageAccount returns the StorageAccount field if non-nil, zero value otherwise.
+
+### GetStorageAccountOk
+
+`func (o *AddCloudsRequestZoneConfigAnyOf1) GetStorageAccountOk() (*string, bool)`
+
+GetStorageAccountOk returns a tuple with the StorageAccount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStorageAccount
+
+`func (o *AddCloudsRequestZoneConfigAnyOf1) SetStorageAccount(v string)`
+
+SetStorageAccount sets StorageAccount field to given value.
+
+### HasStorageAccount
+
+`func (o *AddCloudsRequestZoneConfigAnyOf1) HasStorageAccount() bool`
+
+HasStorageAccount returns a boolean if a field has been set.
 
 ### GetRpcMode
 

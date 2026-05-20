@@ -24,6 +24,7 @@ type GetClouds200ResponseZoneConfig struct {
 	GetClouds200ResponseZoneConfigAnyOf  *GetClouds200ResponseZoneConfigAnyOf
 	GetClouds200ResponseZoneConfigAnyOf1 *GetClouds200ResponseZoneConfigAnyOf1
 	GetClouds200ResponseZoneConfigAnyOf2 *GetClouds200ResponseZoneConfigAnyOf2
+	GetClouds200ResponseZoneConfigAnyOf3 *GetClouds200ResponseZoneConfigAnyOf3
 	MapmapOfStringAny                    *map[string]interface{}
 }
 
@@ -48,6 +49,12 @@ func (dst *GetClouds200ResponseZoneConfig) UnmarshalMapstructure(data any) (any,
 
 	if IsEmpty(dst.GetClouds200ResponseZoneConfigAnyOf2) {
 		dst.GetClouds200ResponseZoneConfigAnyOf2 = nil
+	}
+
+	mapstructDecode(data, &dst.GetClouds200ResponseZoneConfigAnyOf3)
+
+	if IsEmpty(dst.GetClouds200ResponseZoneConfigAnyOf3) {
+		dst.GetClouds200ResponseZoneConfigAnyOf3 = nil
 	}
 
 	mapstructDecode(data, &dst.MapmapOfStringAny)
@@ -101,6 +108,19 @@ func (dst *GetClouds200ResponseZoneConfig) UnmarshalJSON(data []byte) error {
 		dst.GetClouds200ResponseZoneConfigAnyOf2 = nil
 	}
 
+	// try to unmarshal JSON data into GetClouds200ResponseZoneConfigAnyOf3
+	err = json.Unmarshal(data, &dst.GetClouds200ResponseZoneConfigAnyOf3)
+	if err == nil {
+		jsonGetClouds200ResponseZoneConfigAnyOf3, _ := json.Marshal(dst.GetClouds200ResponseZoneConfigAnyOf3)
+		if string(jsonGetClouds200ResponseZoneConfigAnyOf3) == "{}" { // empty struct
+			dst.GetClouds200ResponseZoneConfigAnyOf3 = nil
+		} else {
+			return nil // data stored in dst.GetClouds200ResponseZoneConfigAnyOf3, return on the first match
+		}
+	} else {
+		dst.GetClouds200ResponseZoneConfigAnyOf3 = nil
+	}
+
 	// try to unmarshal JSON data into MapmapOfStringAny
 	err = json.Unmarshal(data, &dst.MapmapOfStringAny)
 	if err == nil {
@@ -129,6 +149,10 @@ func (src GetClouds200ResponseZoneConfig) MarshalJSON() ([]byte, error) {
 
 	if src.GetClouds200ResponseZoneConfigAnyOf2 != nil {
 		return json.Marshal(&src.GetClouds200ResponseZoneConfigAnyOf2)
+	}
+
+	if src.GetClouds200ResponseZoneConfigAnyOf3 != nil {
+		return json.Marshal(&src.GetClouds200ResponseZoneConfigAnyOf3)
 	}
 
 	if src.MapmapOfStringAny != nil {
