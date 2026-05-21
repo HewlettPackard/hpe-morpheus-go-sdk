@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.1.1
+API version: 9.0.0
 Contact: dev@morpheusdata.com
 */
 
@@ -108,7 +108,7 @@ func (a *ApplianceSettingsAPIService) ListApplianceSettingsExecute(r ApiListAppl
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -119,7 +119,7 @@ func (a *ApplianceSettingsAPIService) ListApplianceSettingsExecute(r ApiListAppl
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -148,7 +148,7 @@ type ApiReindexRequest struct {
 	ApiService *ApplianceSettingsAPIService
 }
 
-func (r ApiReindexRequest) Execute() (*Reindex200Response, *http.Response, error) {
+func (r ApiReindexRequest) Execute() (*SetApplianceSettingsMaintenanceMode200Response, *http.Response, error) {
 	return r.ApiService.ReindexExecute(r)
 }
 
@@ -169,13 +169,13 @@ func (a *ApplianceSettingsAPIService) Reindex(ctx context.Context) ApiReindexReq
 
 // Execute executes the request
 //
-//	@return Reindex200Response
-func (a *ApplianceSettingsAPIService) ReindexExecute(r ApiReindexRequest) (*Reindex200Response, *http.Response, error) {
+//	@return SetApplianceSettingsMaintenanceMode200Response
+func (a *ApplianceSettingsAPIService) ReindexExecute(r ApiReindexRequest) (*SetApplianceSettingsMaintenanceMode200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *Reindex200Response
+		localVarReturnValue *SetApplianceSettingsMaintenanceMode200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceSettingsAPIService.Reindex")
@@ -228,7 +228,7 @@ func (a *ApplianceSettingsAPIService) ReindexExecute(r ApiReindexRequest) (*Rein
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -239,7 +239,7 @@ func (a *ApplianceSettingsAPIService) ReindexExecute(r ApiReindexRequest) (*Rein
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -358,7 +358,7 @@ func (a *ApplianceSettingsAPIService) SetApplianceSettingsMaintenanceModeExecute
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -369,7 +369,7 @@ func (a *ApplianceSettingsAPIService) SetApplianceSettingsMaintenanceModeExecute
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -486,7 +486,7 @@ func (a *ApplianceSettingsAPIService) UpdateApplianceSettingsExecute(r ApiUpdate
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -497,7 +497,7 @@ func (a *ApplianceSettingsAPIService) UpdateApplianceSettingsExecute(r ApiUpdate
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err

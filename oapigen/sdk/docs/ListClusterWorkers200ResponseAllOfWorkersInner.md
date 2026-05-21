@@ -67,7 +67,7 @@ Name | Type | Description | Notes
 **Labels** | Pointer to **[]string** |  | [optional] 
 **Tags** | Pointer to [**[]ListClusterWorkers200ResponseAllOfWorkersInnerTagsInner**](ListClusterWorkers200ResponseAllOfWorkersInnerTagsInner.md) |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**TagCompliant** | Pointer to **NullableString** |  | [optional] 
+**TagCompliant** | Pointer to **NullableBool** |  | [optional] 
 **Containers** | Pointer to **[]int64** |  | [optional] 
 **GuestConsolePreferred** | Pointer to **bool** |  | [optional] 
 **GuestConsoleType** | Pointer to **NullableString** |  | [optional] 
@@ -1782,20 +1782,20 @@ HasEnabled returns a boolean if a field has been set.
 
 ### GetTagCompliant
 
-`func (o *ListClusterWorkers200ResponseAllOfWorkersInner) GetTagCompliant() string`
+`func (o *ListClusterWorkers200ResponseAllOfWorkersInner) GetTagCompliant() bool`
 
 GetTagCompliant returns the TagCompliant field if non-nil, zero value otherwise.
 
 ### GetTagCompliantOk
 
-`func (o *ListClusterWorkers200ResponseAllOfWorkersInner) GetTagCompliantOk() (*string, bool)`
+`func (o *ListClusterWorkers200ResponseAllOfWorkersInner) GetTagCompliantOk() (*bool, bool)`
 
 GetTagCompliantOk returns a tuple with the TagCompliant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTagCompliant
 
-`func (o *ListClusterWorkers200ResponseAllOfWorkersInner) SetTagCompliant(v string)`
+`func (o *ListClusterWorkers200ResponseAllOfWorkersInner) SetTagCompliant(v bool)`
 
 SetTagCompliant sets TagCompliant field to given value.
 

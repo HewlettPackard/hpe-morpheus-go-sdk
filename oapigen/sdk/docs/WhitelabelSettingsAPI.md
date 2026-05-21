@@ -215,7 +215,7 @@ Name | Type | Description  | Notes
 
 ## UpdateWhitelabelImages
 
-> UpdateWhitelabelImages200Response UpdateWhitelabelImages(ctx).HeaderLogoFile(headerLogoFile).ResetHeaderLogo(resetHeaderLogo).FooterLogoFile(footerLogoFile).ResetFooterLogo(resetFooterLogo).LoginLogoFile(loginLogoFile).ResetLoginLogo(resetLoginLogo).FaviconFile(faviconFile).ResetFaviconLogo(resetFaviconLogo).Execute()
+> SetApplianceSettingsMaintenanceMode200Response UpdateWhitelabelImages(ctx).HeaderLogoFile(headerLogoFile).ResetHeaderLogo(resetHeaderLogo).FooterLogoFile(footerLogoFile).ResetFooterLogo(resetFooterLogo).LoginLogoFile(loginLogoFile).ResetLoginLogo(resetLoginLogo).FaviconFile(faviconFile).ResetFaviconLogo(resetFaviconLogo).Execute()
 
 Update Images
 
@@ -250,7 +250,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `WhitelabelSettingsAPI.UpdateWhitelabelImages``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `UpdateWhitelabelImages`: UpdateWhitelabelImages200Response
+	// response from `UpdateWhitelabelImages`: SetApplianceSettingsMaintenanceMode200Response
 	fmt.Fprintf(os.Stdout, "Response from `WhitelabelSettingsAPI.UpdateWhitelabelImages`: %v\n", resp)
 }
 ```
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UpdateWhitelabelImages200Response**](UpdateWhitelabelImages200Response.md)
+[**SetApplianceSettingsMaintenanceMode200Response**](SetApplianceSettingsMaintenanceMode200Response.md)
 
 ### Authorization
 
@@ -295,7 +295,7 @@ Name | Type | Description  | Notes
 
 ## UpdateWhitelabelSettings
 
-> UpdateWhitelabelSettings200Response UpdateWhitelabelSettings(ctx).UpdateWhitelabelSettingsRequest(updateWhitelabelSettingsRequest).Execute()
+> SetApplianceSettingsMaintenanceMode200Response UpdateWhitelabelSettings(ctx).UpdateWhitelabelSettingsRequest(updateWhitelabelSettingsRequest).Execute()
 
 Update Whitelabel Settings
 
@@ -323,7 +323,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `WhitelabelSettingsAPI.UpdateWhitelabelSettings``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `UpdateWhitelabelSettings`: UpdateWhitelabelSettings200Response
+	// response from `UpdateWhitelabelSettings`: SetApplianceSettingsMaintenanceMode200Response
 	fmt.Fprintf(os.Stdout, "Response from `WhitelabelSettingsAPI.UpdateWhitelabelSettings`: %v\n", resp)
 }
 ```
@@ -343,7 +343,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UpdateWhitelabelSettings200Response**](UpdateWhitelabelSettings200Response.md)
+[**SetApplianceSettingsMaintenanceMode200Response**](SetApplianceSettingsMaintenanceMode200Response.md)
 
 ### Authorization
 

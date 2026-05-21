@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.1.1
+API version: 9.0.0
 Contact: dev@morpheusdata.com
 */
 
@@ -117,7 +117,7 @@ func (a *WikiAPIService) AddWikiExecute(r ApiAddWikiRequest) (*AddWiki200Respons
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -128,7 +128,7 @@ func (a *WikiAPIService) AddWikiExecute(r ApiAddWikiRequest) (*AddWiki200Respons
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -241,7 +241,7 @@ func (a *WikiAPIService) GetWikiExecute(r ApiGetWikiRequest) (*GetWiki200Respons
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -252,7 +252,7 @@ func (a *WikiAPIService) GetWikiExecute(r ApiGetWikiRequest) (*GetWiki200Respons
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -365,7 +365,7 @@ func (a *WikiAPIService) GetWikiAppExecute(r ApiGetWikiAppRequest) (*GetWikiApp2
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -376,7 +376,7 @@ func (a *WikiAPIService) GetWikiAppExecute(r ApiGetWikiAppRequest) (*GetWikiApp2
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -505,7 +505,7 @@ func (a *WikiAPIService) GetWikiCategoriesExecute(r ApiGetWikiCategoriesRequest)
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -516,7 +516,7 @@ func (a *WikiAPIService) GetWikiCategoriesExecute(r ApiGetWikiCategoriesRequest)
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -629,7 +629,7 @@ func (a *WikiAPIService) GetWikiCloudExecute(r ApiGetWikiCloudRequest) (*GetWiki
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -640,7 +640,7 @@ func (a *WikiAPIService) GetWikiCloudExecute(r ApiGetWikiCloudRequest) (*GetWiki
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -753,7 +753,7 @@ func (a *WikiAPIService) GetWikiClusterExecute(r ApiGetWikiClusterRequest) (*Get
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -764,7 +764,7 @@ func (a *WikiAPIService) GetWikiClusterExecute(r ApiGetWikiClusterRequest) (*Get
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -877,7 +877,7 @@ func (a *WikiAPIService) GetWikiGroupExecute(r ApiGetWikiGroupRequest) (*GetWiki
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -888,7 +888,7 @@ func (a *WikiAPIService) GetWikiGroupExecute(r ApiGetWikiGroupRequest) (*GetWiki
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1001,7 +1001,7 @@ func (a *WikiAPIService) GetWikiInstanceExecute(r ApiGetWikiInstanceRequest) (*G
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1012,7 +1012,7 @@ func (a *WikiAPIService) GetWikiInstanceExecute(r ApiGetWikiInstanceRequest) (*G
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1125,7 +1125,7 @@ func (a *WikiAPIService) GetWikiServerExecute(r ApiGetWikiServerRequest) (*GetWi
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1136,7 +1136,7 @@ func (a *WikiAPIService) GetWikiServerExecute(r ApiGetWikiServerRequest) (*GetWi
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1265,7 +1265,7 @@ func (a *WikiAPIService) ListWikiExecute(r ApiListWikiRequest) (*ListWiki200Resp
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1276,7 +1276,7 @@ func (a *WikiAPIService) ListWikiExecute(r ApiListWikiRequest) (*ListWiki200Resp
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1389,7 +1389,7 @@ func (a *WikiAPIService) RemoveWikiExecute(r ApiRemoveWikiRequest) (*RemoveExecu
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1400,7 +1400,7 @@ func (a *WikiAPIService) RemoveWikiExecute(r ApiRemoveWikiRequest) (*RemoveExecu
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1521,7 +1521,7 @@ func (a *WikiAPIService) UpdateWikiExecute(r ApiUpdateWikiRequest) (*UpdateWiki2
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1532,7 +1532,7 @@ func (a *WikiAPIService) UpdateWikiExecute(r ApiUpdateWikiRequest) (*UpdateWiki2
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1653,7 +1653,7 @@ func (a *WikiAPIService) UpdateWikiAppExecute(r ApiUpdateWikiAppRequest) (*Updat
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1664,7 +1664,7 @@ func (a *WikiAPIService) UpdateWikiAppExecute(r ApiUpdateWikiAppRequest) (*Updat
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1785,7 +1785,7 @@ func (a *WikiAPIService) UpdateWikiCloudExecute(r ApiUpdateWikiCloudRequest) (*U
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1796,7 +1796,7 @@ func (a *WikiAPIService) UpdateWikiCloudExecute(r ApiUpdateWikiCloudRequest) (*U
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1917,7 +1917,7 @@ func (a *WikiAPIService) UpdateWikiClusterExecute(r ApiUpdateWikiClusterRequest)
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1928,7 +1928,7 @@ func (a *WikiAPIService) UpdateWikiClusterExecute(r ApiUpdateWikiClusterRequest)
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2049,7 +2049,7 @@ func (a *WikiAPIService) UpdateWikiGroupExecute(r ApiUpdateWikiGroupRequest) (*U
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2060,7 +2060,7 @@ func (a *WikiAPIService) UpdateWikiGroupExecute(r ApiUpdateWikiGroupRequest) (*U
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2181,7 +2181,7 @@ func (a *WikiAPIService) UpdateWikiInstanceExecute(r ApiUpdateWikiInstanceReques
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2192,7 +2192,7 @@ func (a *WikiAPIService) UpdateWikiInstanceExecute(r ApiUpdateWikiInstanceReques
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2313,7 +2313,7 @@ func (a *WikiAPIService) UpdateWikiServerExecute(r ApiUpdateWikiServerRequest) (
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2324,7 +2324,7 @@ func (a *WikiAPIService) UpdateWikiServerExecute(r ApiUpdateWikiServerRequest) (
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err

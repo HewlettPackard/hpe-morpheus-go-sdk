@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **Labels** | Pointer to **[]string** |  | [optional] 
 **Location** | Pointer to **NullableString** |  | [optional] 
 **AccountId** | Pointer to **int64** |  | [optional] 
+**Account** | Pointer to [**NullableListGroups200ResponseAllOfGroupsInnerAccount**](ListGroups200ResponseAllOfGroupsInnerAccount.md) |  | [optional] 
 **Active** | Pointer to **bool** |  | [optional] 
 **Config** | Pointer to [**ListGroups200ResponseAllOfGroupsInnerConfig**](ListGroups200ResponseAllOfGroupsInnerConfig.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
@@ -233,6 +234,41 @@ SetAccountId sets AccountId field to given value.
 
 HasAccountId returns a boolean if a field has been set.
 
+### GetAccount
+
+`func (o *ListGroups200ResponseAllOfGroupsInner) GetAccount() ListGroups200ResponseAllOfGroupsInnerAccount`
+
+GetAccount returns the Account field if non-nil, zero value otherwise.
+
+### GetAccountOk
+
+`func (o *ListGroups200ResponseAllOfGroupsInner) GetAccountOk() (*ListGroups200ResponseAllOfGroupsInnerAccount, bool)`
+
+GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAccount
+
+`func (o *ListGroups200ResponseAllOfGroupsInner) SetAccount(v ListGroups200ResponseAllOfGroupsInnerAccount)`
+
+SetAccount sets Account field to given value.
+
+### HasAccount
+
+`func (o *ListGroups200ResponseAllOfGroupsInner) HasAccount() bool`
+
+HasAccount returns a boolean if a field has been set.
+
+### SetAccountNil
+
+`func (o *ListGroups200ResponseAllOfGroupsInner) SetAccountNil(b bool)`
+
+ SetAccountNil sets the value for Account to be an explicit nil
+
+### UnsetAccount
+`func (o *ListGroups200ResponseAllOfGroupsInner) UnsetAccount()`
+
+UnsetAccount ensures that no value is present for Account, not even an explicit nil
 ### GetActive
 
 `func (o *ListGroups200ResponseAllOfGroupsInner) GetActive() bool`

@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.1.1
+API version: 9.0.0
 Contact: dev@morpheusdata.com
 */
 
@@ -40,6 +40,8 @@ type ClusterUpdate struct {
 	Managed *bool `json:"managed,omitempty"`
 	// Automatically Power on VMs
 	AutoRecoverPowerState *bool `json:"autoRecoverPowerState,omitempty"`
+	// Cluster CPU placement mode
+	CpuPlacementMode *string `json:"cpuPlacementMode,omitempty"`
 	// Cluster integrations
 	Integrations         []ClusterUpdateIntegrationsInner `json:"integrations,omitempty"`
 	Config               *ClusterUpdateConfig             `json:"config,omitempty"`
@@ -386,6 +388,38 @@ func (o *ClusterUpdate) SetAutoRecoverPowerState(v bool) {
 	o.AutoRecoverPowerState = &v
 }
 
+// GetCpuPlacementMode returns the CpuPlacementMode field value if set, zero value otherwise.
+func (o *ClusterUpdate) GetCpuPlacementMode() string {
+	if o == nil || IsNil(o.CpuPlacementMode) {
+		var ret string
+		return ret
+	}
+	return *o.CpuPlacementMode
+}
+
+// GetCpuPlacementModeOk returns a tuple with the CpuPlacementMode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClusterUpdate) GetCpuPlacementModeOk() (*string, bool) {
+	if o == nil || IsNil(o.CpuPlacementMode) {
+		return nil, false
+	}
+	return o.CpuPlacementMode, true
+}
+
+// IsSetCpuPlacementMode returns a boolean if a field has been set.
+func (o *ClusterUpdate) IsSetCpuPlacementMode() bool {
+	if o != nil && !IsNil(o.CpuPlacementMode) {
+		return true
+	}
+
+	return false
+}
+
+// SetCpuPlacementMode gets a reference to the given string and assigns it to the CpuPlacementMode field.
+func (o *ClusterUpdate) SetCpuPlacementMode(v string) {
+	o.CpuPlacementMode = &v
+}
+
 // GetIntegrations returns the Integrations field value if set, zero value otherwise.
 func (o *ClusterUpdate) GetIntegrations() []ClusterUpdateIntegrationsInner {
 	if o == nil || IsNil(o.Integrations) {
@@ -489,6 +523,9 @@ func (o ClusterUpdate) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.AutoRecoverPowerState) {
 		toSerialize["autoRecoverPowerState"] = o.AutoRecoverPowerState
+	}
+	if !IsNil(o.CpuPlacementMode) {
+		toSerialize["cpuPlacementMode"] = o.CpuPlacementMode
 	}
 	if !IsNil(o.Integrations) {
 		toSerialize["integrations"] = o.Integrations

@@ -73,7 +73,7 @@ Name | Type | Description | Notes
 **Labels** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **Tags** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**TagCompliant** | Pointer to **NullableString** |  | [optional] 
+**TagCompliant** | Pointer to **NullableBool** |  | [optional] 
 **Containers** | Pointer to **[]int64** |  | [optional] 
 **Config** | Pointer to [**AddBaremetalHost200ResponseServerConfig**](AddBaremetalHost200ResponseServerConfig.md) |  | [optional] 
 **Instance** | Pointer to [**AddBaremetalHost200ResponseServerInstance**](AddBaremetalHost200ResponseServerInstance.md) |  | [optional] 
@@ -83,6 +83,7 @@ Name | Type | Description | Notes
 **GuestConsolePassword** | Pointer to **NullableString** |  | [optional] 
 **GuestConsolePasswordHash** | Pointer to **NullableString** |  | [optional] 
 **GuestConsolePort** | Pointer to **NullableString** |  | [optional] 
+**SecureMetadataDatastore** | Pointer to [**AddBaremetalHost200ResponseServerSecureMetadataDatastore**](AddBaremetalHost200ResponseServerSecureMetadataDatastore.md) |  | [optional] 
 
 ## Methods
 
@@ -2100,20 +2101,20 @@ HasEnabled returns a boolean if a field has been set.
 
 ### GetTagCompliant
 
-`func (o *GetHost200ResponseServer) GetTagCompliant() string`
+`func (o *GetHost200ResponseServer) GetTagCompliant() bool`
 
 GetTagCompliant returns the TagCompliant field if non-nil, zero value otherwise.
 
 ### GetTagCompliantOk
 
-`func (o *GetHost200ResponseServer) GetTagCompliantOk() (*string, bool)`
+`func (o *GetHost200ResponseServer) GetTagCompliantOk() (*bool, bool)`
 
 GetTagCompliantOk returns a tuple with the TagCompliant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTagCompliant
 
-`func (o *GetHost200ResponseServer) SetTagCompliant(v string)`
+`func (o *GetHost200ResponseServer) SetTagCompliant(v bool)`
 
 SetTagCompliant sets TagCompliant field to given value.
 
@@ -2408,6 +2409,31 @@ HasGuestConsolePort returns a boolean if a field has been set.
 `func (o *GetHost200ResponseServer) UnsetGuestConsolePort()`
 
 UnsetGuestConsolePort ensures that no value is present for GuestConsolePort, not even an explicit nil
+### GetSecureMetadataDatastore
+
+`func (o *GetHost200ResponseServer) GetSecureMetadataDatastore() AddBaremetalHost200ResponseServerSecureMetadataDatastore`
+
+GetSecureMetadataDatastore returns the SecureMetadataDatastore field if non-nil, zero value otherwise.
+
+### GetSecureMetadataDatastoreOk
+
+`func (o *GetHost200ResponseServer) GetSecureMetadataDatastoreOk() (*AddBaremetalHost200ResponseServerSecureMetadataDatastore, bool)`
+
+GetSecureMetadataDatastoreOk returns a tuple with the SecureMetadataDatastore field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSecureMetadataDatastore
+
+`func (o *GetHost200ResponseServer) SetSecureMetadataDatastore(v AddBaremetalHost200ResponseServerSecureMetadataDatastore)`
+
+SetSecureMetadataDatastore sets SecureMetadataDatastore field to given value.
+
+### HasSecureMetadataDatastore
+
+`func (o *GetHost200ResponseServer) HasSecureMetadataDatastore() bool`
+
+HasSecureMetadataDatastore returns a boolean if a field has been set.
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

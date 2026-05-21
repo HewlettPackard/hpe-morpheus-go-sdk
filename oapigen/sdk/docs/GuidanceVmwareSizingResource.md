@@ -68,7 +68,7 @@ Name | Type | Description | Notes
 **Labels** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **Tags** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**TagCompliant** | Pointer to **NullableString** |  | [optional] 
+**TagCompliant** | Pointer to **NullableBool** |  | [optional] 
 **Containers** | Pointer to **[]int64** |  | [optional] 
 
 ## Methods
@@ -1772,20 +1772,20 @@ HasEnabled returns a boolean if a field has been set.
 
 ### GetTagCompliant
 
-`func (o *GuidanceVmwareSizingResource) GetTagCompliant() string`
+`func (o *GuidanceVmwareSizingResource) GetTagCompliant() bool`
 
 GetTagCompliant returns the TagCompliant field if non-nil, zero value otherwise.
 
 ### GetTagCompliantOk
 
-`func (o *GuidanceVmwareSizingResource) GetTagCompliantOk() (*string, bool)`
+`func (o *GuidanceVmwareSizingResource) GetTagCompliantOk() (*bool, bool)`
 
 GetTagCompliantOk returns a tuple with the TagCompliant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTagCompliant
 
-`func (o *GuidanceVmwareSizingResource) SetTagCompliant(v string)`
+`func (o *GuidanceVmwareSizingResource) SetTagCompliant(v bool)`
 
 SetTagCompliant sets TagCompliant field to given value.
 

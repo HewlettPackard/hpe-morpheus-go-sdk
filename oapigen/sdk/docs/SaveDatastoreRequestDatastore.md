@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | The name of the datastore to be created. | 
-**DatastoreType** | **string** | The code of the datatoreType | 
+**DatastoreType** | **string** | The code of the datastoreType | 
 **Config** | [**SaveDatastoreRequestDatastoreConfig**](SaveDatastoreRequestDatastoreConfig.md) |  | 
 **RefType** | **string** | Type of the resource this datastore is associated with, can be &#39;ComputeZone&#39; (&#39;Cloud&#39;) or &#39;ComputeServerGroup&#39; (&#39;Cluster&#39;) | 
 **RefId** | **int64** | The ID of the resource this datastore is associated with, e.g. ComputeZone, ComputeServerGroup | 

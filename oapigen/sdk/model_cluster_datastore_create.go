@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.1.1
+API version: 9.0.0
 Contact: dev@morpheusdata.com
 */
 
@@ -31,8 +31,10 @@ type ClusterDatastoreCreate struct {
 	ResourcePermissions *ClusterDatastoreCreateResourcePermissions `json:"resourcePermissions,omitempty"`
 	Datastores          []map[string]interface{}                   `json:"datastores,omitempty"`
 	// Heartbeat Target
-	HeartbeatTarget      *bool                  `json:"heartbeatTarget,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	HeartbeatTarget *bool `json:"heartbeatTarget,omitempty"`
+	// When `true`, designates this datastore to hold NVRAM and swtpm state for TPM/SecureBoot VMs in the cluster, enabling live migration and HA failover. Only one datastore per cluster scope may be designated at a time; setting this to `true` automatically clears the flag on any previously designated datastore. Only applicable to GFS2 and NFS datastore types.
+	SupportsVmSecureMetadata *bool                  `json:"supportsVmSecureMetadata,omitempty"`
+	AdditionalProperties     map[string]interface{} `json:",remain"`
 }
 
 type _ClusterDatastoreCreate ClusterDatastoreCreate
@@ -406,6 +408,38 @@ func (o *ClusterDatastoreCreate) SetHeartbeatTarget(v bool) {
 	o.HeartbeatTarget = &v
 }
 
+// GetSupportsVmSecureMetadata returns the SupportsVmSecureMetadata field value if set, zero value otherwise.
+func (o *ClusterDatastoreCreate) GetSupportsVmSecureMetadata() bool {
+	if o == nil || IsNil(o.SupportsVmSecureMetadata) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportsVmSecureMetadata
+}
+
+// GetSupportsVmSecureMetadataOk returns a tuple with the SupportsVmSecureMetadata field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClusterDatastoreCreate) GetSupportsVmSecureMetadataOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportsVmSecureMetadata) {
+		return nil, false
+	}
+	return o.SupportsVmSecureMetadata, true
+}
+
+// IsSetSupportsVmSecureMetadata returns a boolean if a field has been set.
+func (o *ClusterDatastoreCreate) IsSetSupportsVmSecureMetadata() bool {
+	if o != nil && !IsNil(o.SupportsVmSecureMetadata) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportsVmSecureMetadata gets a reference to the given bool and assigns it to the SupportsVmSecureMetadata field.
+func (o *ClusterDatastoreCreate) SetSupportsVmSecureMetadata(v bool) {
+	o.SupportsVmSecureMetadata = &v
+}
+
 func (o ClusterDatastoreCreate) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -448,6 +482,9 @@ func (o ClusterDatastoreCreate) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.HeartbeatTarget) {
 		toSerialize["heartbeatTarget"] = o.HeartbeatTarget
+	}
+	if !IsNil(o.SupportsVmSecureMetadata) {
+		toSerialize["supportsVmSecureMetadata"] = o.SupportsVmSecureMetadata
 	}
 
 	for key, value := range o.AdditionalProperties {

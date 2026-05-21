@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Jobs** | Pointer to [**[]ListClusterJobs200ResponseAllOfJobsInner**](ListClusterJobs200ResponseAllOfJobsInner.md) |  | [optional] 
 **Stats** | Pointer to **map[string]interface{}** |  | [optional] 
-**Meta** | Pointer to [**ListAlerts200ResponseAllOfMeta**](ListAlerts200ResponseAllOfMeta.md) |  | [optional] 
+**Meta** | Pointer to [**ListApprovals200ResponseAllOfMeta**](ListApprovals200ResponseAllOfMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasStats returns a boolean if a field has been set.
 
 ### GetMeta
 
-`func (o *ListClusterJobs200Response) GetMeta() ListAlerts200ResponseAllOfMeta`
+`func (o *ListClusterJobs200Response) GetMeta() ListApprovals200ResponseAllOfMeta`
 
 GetMeta returns the Meta field if non-nil, zero value otherwise.
 
 ### GetMetaOk
 
-`func (o *ListClusterJobs200Response) GetMetaOk() (*ListAlerts200ResponseAllOfMeta, bool)`
+`func (o *ListClusterJobs200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool)`
 
 GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMeta
 
-`func (o *ListClusterJobs200Response) SetMeta(v ListAlerts200ResponseAllOfMeta)`
+`func (o *ListClusterJobs200Response) SetMeta(v ListApprovals200ResponseAllOfMeta)`
 
 SetMeta sets Meta field to given value.
 

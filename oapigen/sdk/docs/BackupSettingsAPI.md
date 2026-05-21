@@ -72,7 +72,7 @@ Other parameters are passed through a pointer to a apiListBackupSettingsRequest 
 
 ## UpdateBackupSettings
 
-> UpdateBackupSettings200Response UpdateBackupSettings(ctx).UpdateBackupSettingsRequest(updateBackupSettingsRequest).Execute()
+> SetApplianceSettingsMaintenanceMode200Response UpdateBackupSettings(ctx).UpdateBackupSettingsRequest(updateBackupSettingsRequest).Execute()
 
 Update Backup Settings
 
@@ -100,7 +100,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `BackupSettingsAPI.UpdateBackupSettings``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `UpdateBackupSettings`: UpdateBackupSettings200Response
+	// response from `UpdateBackupSettings`: SetApplianceSettingsMaintenanceMode200Response
 	fmt.Fprintf(os.Stdout, "Response from `BackupSettingsAPI.UpdateBackupSettings`: %v\n", resp)
 }
 ```
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UpdateBackupSettings200Response**](UpdateBackupSettings200Response.md)
+[**SetApplianceSettingsMaintenanceMode200Response**](SetApplianceSettingsMaintenanceMode200Response.md)
 
 ### Authorization
 

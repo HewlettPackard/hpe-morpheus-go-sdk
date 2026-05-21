@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **ImageBuildExecutions** | Pointer to [**[]GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInner**](GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInner.md) |  | [optional] 
 **ImageBuildExecutionCount** | Pointer to **int64** |  | [optional] 
 **ImageBuild** | Pointer to [**GetImageBuildExecutions200ResponseAllOfImageBuild**](GetImageBuildExecutions200ResponseAllOfImageBuild.md) |  | [optional] 
-**Meta** | Pointer to [**ListAlerts200ResponseAllOfMeta**](ListAlerts200ResponseAllOfMeta.md) |  | [optional] 
+**Meta** | Pointer to [**ListApprovals200ResponseAllOfMeta**](ListApprovals200ResponseAllOfMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -105,20 +105,20 @@ HasImageBuild returns a boolean if a field has been set.
 
 ### GetMeta
 
-`func (o *GetImageBuildExecutions200Response) GetMeta() ListAlerts200ResponseAllOfMeta`
+`func (o *GetImageBuildExecutions200Response) GetMeta() ListApprovals200ResponseAllOfMeta`
 
 GetMeta returns the Meta field if non-nil, zero value otherwise.
 
 ### GetMetaOk
 
-`func (o *GetImageBuildExecutions200Response) GetMetaOk() (*ListAlerts200ResponseAllOfMeta, bool)`
+`func (o *GetImageBuildExecutions200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool)`
 
 GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMeta
 
-`func (o *GetImageBuildExecutions200Response) SetMeta(v ListAlerts200ResponseAllOfMeta)`
+`func (o *GetImageBuildExecutions200Response) SetMeta(v ListApprovals200ResponseAllOfMeta)`
 
 SetMeta sets Meta field to given value.
 

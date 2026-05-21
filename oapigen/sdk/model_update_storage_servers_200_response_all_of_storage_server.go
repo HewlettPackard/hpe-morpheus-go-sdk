@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.1.1
+API version: 9.0.0
 Contact: dev@morpheusdata.com
 */
 
@@ -21,51 +21,51 @@ var _ MappedNullable = &UpdateStorageServers200ResponseAllOfStorageServer{}
 
 // UpdateStorageServers200ResponseAllOfStorageServer struct for UpdateStorageServers200ResponseAllOfStorageServer
 type UpdateStorageServers200ResponseAllOfStorageServer struct {
-	Id                   *int64                                                  `json:"id,omitempty"`
-	Name                 *string                                                 `json:"name,omitempty"`
-	Type                 *UpdateStorageServers200ResponseAllOfStorageServerType  `json:"type,omitempty"`
-	Chassis              NullableString                                          `json:"chassis,omitempty"`
-	Visibility           *string                                                 `json:"visibility,omitempty"`
-	Description          NullableString                                          `json:"description,omitempty"`
-	InternalId           NullableString                                          `json:"internalId,omitempty"`
-	ExternalId           NullableString                                          `json:"externalId,omitempty"`
-	ServiceUrl           NullableString                                          `json:"serviceUrl,omitempty"`
-	ServiceHost          NullableString                                          `json:"serviceHost,omitempty"`
-	ServicePath          NullableString                                          `json:"servicePath,omitempty"`
-	ServiceToken         NullableString                                          `json:"serviceToken,omitempty"`
-	ServiceTokenHash     NullableString                                          `json:"serviceTokenHash,omitempty"`
-	ServiceVersion       NullableString                                          `json:"serviceVersion,omitempty"`
-	ServiceUsername      NullableString                                          `json:"serviceUsername,omitempty"`
-	ServicePassword      NullableString                                          `json:"servicePassword,omitempty"`
-	ServicePasswordHash  NullableString                                          `json:"servicePasswordHash,omitempty"`
-	InternalIp           NullableString                                          `json:"internalIp,omitempty"`
-	ExternalIp           NullableString                                          `json:"externalIp,omitempty"`
-	ApiPort              NullableString                                          `json:"apiPort,omitempty"`
-	AdminPort            NullableString                                          `json:"adminPort,omitempty"`
-	Config               map[string]interface{}                                  `json:"config,omitempty"`
-	RefType              *string                                                 `json:"refType,omitempty"`
-	RefId                *int64                                                  `json:"refId,omitempty"`
-	Category             NullableString                                          `json:"category,omitempty"`
-	ServerVendor         NullableString                                          `json:"serverVendor,omitempty"`
-	ServerModel          NullableString                                          `json:"serverModel,omitempty"`
-	SerialNumber         NullableString                                          `json:"serialNumber,omitempty"`
-	Status               *string                                                 `json:"status,omitempty"`
-	StatusMessage        NullableString                                          `json:"statusMessage,omitempty"`
-	StatusDate           *time.Time                                              `json:"statusDate,omitempty"`
-	ErrorMessage         NullableString                                          `json:"errorMessage,omitempty"`
-	MaxStorage           NullableString                                          `json:"maxStorage,omitempty"`
-	UsedStorage          NullableString                                          `json:"usedStorage,omitempty"`
-	DiskCount            NullableString                                          `json:"diskCount,omitempty"`
-	DateCreated          *time.Time                                              `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                              `json:"lastUpdated,omitempty"`
-	Enabled              *bool                                                   `json:"enabled,omitempty"`
-	Groups               []map[string]interface{}                                `json:"groups,omitempty"`
-	HostGroups           []map[string]interface{}                                `json:"hostGroups,omitempty"`
-	Hosts                []map[string]interface{}                                `json:"hosts,omitempty"`
-	Tenants              []map[string]interface{}                                `json:"tenants,omitempty"`
-	Owner                *UpdateStorageServers200ResponseAllOfStorageServerOwner `json:"owner,omitempty"`
-	Credential           map[string]interface{}                                  `json:"credential,omitempty"`
-	AdditionalProperties map[string]interface{}                                  `json:",remain"`
+	Id                   *int64                                                             `json:"id,omitempty"`
+	Name                 *string                                                            `json:"name,omitempty"`
+	Type                 *UpdateStorageServers200ResponseAllOfStorageServerType             `json:"type,omitempty"`
+	Chassis              *UpdateStorageServers200ResponseAllOfStorageServerChassis          `json:"chassis,omitempty"`
+	Visibility           *string                                                            `json:"visibility,omitempty"`
+	Description          NullableString                                                     `json:"description,omitempty"`
+	InternalId           NullableString                                                     `json:"internalId,omitempty"`
+	ExternalId           NullableString                                                     `json:"externalId,omitempty"`
+	ServiceUrl           NullableString                                                     `json:"serviceUrl,omitempty"`
+	ServiceHost          NullableString                                                     `json:"serviceHost,omitempty"`
+	ServicePath          NullableString                                                     `json:"servicePath,omitempty"`
+	ServiceToken         NullableString                                                     `json:"serviceToken,omitempty"`
+	ServiceTokenHash     NullableString                                                     `json:"serviceTokenHash,omitempty"`
+	ServiceVersion       NullableString                                                     `json:"serviceVersion,omitempty"`
+	ServiceUsername      NullableString                                                     `json:"serviceUsername,omitempty"`
+	ServicePassword      NullableString                                                     `json:"servicePassword,omitempty"`
+	ServicePasswordHash  NullableString                                                     `json:"servicePasswordHash,omitempty"`
+	InternalIp           NullableString                                                     `json:"internalIp,omitempty"`
+	ExternalIp           NullableString                                                     `json:"externalIp,omitempty"`
+	ApiPort              NullableInt32                                                      `json:"apiPort,omitempty"`
+	AdminPort            NullableInt32                                                      `json:"adminPort,omitempty"`
+	Config               map[string]interface{}                                             `json:"config,omitempty"`
+	RefType              *string                                                            `json:"refType,omitempty"`
+	RefId                *int64                                                             `json:"refId,omitempty"`
+	Category             NullableString                                                     `json:"category,omitempty"`
+	ServerVendor         NullableString                                                     `json:"serverVendor,omitempty"`
+	ServerModel          NullableString                                                     `json:"serverModel,omitempty"`
+	SerialNumber         NullableString                                                     `json:"serialNumber,omitempty"`
+	Status               NullableString                                                     `json:"status,omitempty"`
+	StatusMessage        NullableString                                                     `json:"statusMessage,omitempty"`
+	StatusDate           *time.Time                                                         `json:"statusDate,omitempty"`
+	ErrorMessage         NullableString                                                     `json:"errorMessage,omitempty"`
+	MaxStorage           NullableInt64                                                      `json:"maxStorage,omitempty"`
+	UsedStorage          NullableInt64                                                      `json:"usedStorage,omitempty"`
+	DiskCount            NullableInt32                                                      `json:"diskCount,omitempty"`
+	DateCreated          *time.Time                                                         `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                         `json:"lastUpdated,omitempty"`
+	Enabled              *bool                                                              `json:"enabled,omitempty"`
+	Groups               []UpdateStorageServers200ResponseAllOfStorageServerGroupsInner     `json:"groups,omitempty"`
+	HostGroups           []UpdateStorageServers200ResponseAllOfStorageServerHostGroupsInner `json:"hostGroups,omitempty"`
+	Hosts                []UpdateStorageServers200ResponseAllOfStorageServerHostsInner      `json:"hosts,omitempty"`
+	Tenants              []UpdateStorageServers200ResponseAllOfStorageServerTenantsInner    `json:"tenants,omitempty"`
+	Owner                *UpdateStorageServers200ResponseAllOfStorageServerOwner            `json:"owner,omitempty"`
+	Credential           *UpdateStorageServers200ResponseAllOfStorageServerCredential       `json:"credential,omitempty"`
+	AdditionalProperties map[string]interface{}                                             `json:",remain"`
 }
 
 type _UpdateStorageServers200ResponseAllOfStorageServer UpdateStorageServers200ResponseAllOfStorageServer
@@ -183,47 +183,36 @@ func (o *UpdateStorageServers200ResponseAllOfStorageServer) SetType(v UpdateStor
 	o.Type = &v
 }
 
-// GetChassis returns the Chassis field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetChassis() string {
-	if o == nil || IsNil(o.Chassis.Get()) {
-		var ret string
+// GetChassis returns the Chassis field value if set, zero value otherwise.
+func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetChassis() UpdateStorageServers200ResponseAllOfStorageServerChassis {
+	if o == nil || IsNil(o.Chassis) {
+		var ret UpdateStorageServers200ResponseAllOfStorageServerChassis
 		return ret
 	}
-	return *o.Chassis.Get()
+	return *o.Chassis
 }
 
 // GetChassisOk returns a tuple with the Chassis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetChassisOk() (*string, bool) {
-	if o == nil {
+func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetChassisOk() (*UpdateStorageServers200ResponseAllOfStorageServerChassis, bool) {
+	if o == nil || IsNil(o.Chassis) {
 		return nil, false
 	}
-	return o.Chassis.Get(), o.Chassis.IsSet()
+	return o.Chassis, true
 }
 
 // IsSetChassis returns a boolean if a field has been set.
 func (o *UpdateStorageServers200ResponseAllOfStorageServer) IsSetChassis() bool {
-	if o != nil && o.Chassis.IsSet() {
+	if o != nil && !IsNil(o.Chassis) {
 		return true
 	}
 
 	return false
 }
 
-// SetChassis gets a reference to the given NullableString and assigns it to the Chassis field.
-func (o *UpdateStorageServers200ResponseAllOfStorageServer) SetChassis(v string) {
-	o.Chassis.Set(&v)
-}
-
-// SetChassisNil sets the value for Chassis to be an explicit nil
-func (o *UpdateStorageServers200ResponseAllOfStorageServer) SetChassisNil() {
-	o.Chassis.Set(nil)
-}
-
-// UnsetChassis ensures that no value is present for Chassis, not even an explicit nil
-func (o *UpdateStorageServers200ResponseAllOfStorageServer) UnsetChassis() {
-	o.Chassis.Unset()
+// SetChassis gets a reference to the given UpdateStorageServers200ResponseAllOfStorageServerChassis and assigns it to the Chassis field.
+func (o *UpdateStorageServers200ResponseAllOfStorageServer) SetChassis(v UpdateStorageServers200ResponseAllOfStorageServerChassis) {
+	o.Chassis = &v
 }
 
 // GetVisibility returns the Visibility field value if set, zero value otherwise.
@@ -861,9 +850,9 @@ func (o *UpdateStorageServers200ResponseAllOfStorageServer) UnsetExternalIp() {
 }
 
 // GetApiPort returns the ApiPort field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetApiPort() string {
+func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetApiPort() int32 {
 	if o == nil || IsNil(o.ApiPort.Get()) {
-		var ret string
+		var ret int32
 		return ret
 	}
 	return *o.ApiPort.Get()
@@ -872,7 +861,7 @@ func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetApiPort() string 
 // GetApiPortOk returns a tuple with the ApiPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetApiPortOk() (*string, bool) {
+func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetApiPortOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -888,8 +877,8 @@ func (o *UpdateStorageServers200ResponseAllOfStorageServer) IsSetApiPort() bool 
 	return false
 }
 
-// SetApiPort gets a reference to the given NullableString and assigns it to the ApiPort field.
-func (o *UpdateStorageServers200ResponseAllOfStorageServer) SetApiPort(v string) {
+// SetApiPort gets a reference to the given NullableInt32 and assigns it to the ApiPort field.
+func (o *UpdateStorageServers200ResponseAllOfStorageServer) SetApiPort(v int32) {
 	o.ApiPort.Set(&v)
 }
 
@@ -904,9 +893,9 @@ func (o *UpdateStorageServers200ResponseAllOfStorageServer) UnsetApiPort() {
 }
 
 // GetAdminPort returns the AdminPort field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetAdminPort() string {
+func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetAdminPort() int32 {
 	if o == nil || IsNil(o.AdminPort.Get()) {
-		var ret string
+		var ret int32
 		return ret
 	}
 	return *o.AdminPort.Get()
@@ -915,7 +904,7 @@ func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetAdminPort() strin
 // GetAdminPortOk returns a tuple with the AdminPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetAdminPortOk() (*string, bool) {
+func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetAdminPortOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -931,8 +920,8 @@ func (o *UpdateStorageServers200ResponseAllOfStorageServer) IsSetAdminPort() boo
 	return false
 }
 
-// SetAdminPort gets a reference to the given NullableString and assigns it to the AdminPort field.
-func (o *UpdateStorageServers200ResponseAllOfStorageServer) SetAdminPort(v string) {
+// SetAdminPort gets a reference to the given NullableInt32 and assigns it to the AdminPort field.
+func (o *UpdateStorageServers200ResponseAllOfStorageServer) SetAdminPort(v int32) {
 	o.AdminPort.Set(&v)
 }
 
@@ -1214,36 +1203,47 @@ func (o *UpdateStorageServers200ResponseAllOfStorageServer) UnsetSerialNumber() 
 	o.SerialNumber.Unset()
 }
 
-// GetStatus returns the Status field value if set, zero value otherwise.
+// GetStatus returns the Status field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetStatus() string {
-	if o == nil || IsNil(o.Status) {
+	if o == nil || IsNil(o.Status.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Status
+	return *o.Status.Get()
 }
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetStatusOk() (*string, bool) {
-	if o == nil || IsNil(o.Status) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Status, true
+	return o.Status.Get(), o.Status.IsSet()
 }
 
 // IsSetStatus returns a boolean if a field has been set.
 func (o *UpdateStorageServers200ResponseAllOfStorageServer) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
+	if o != nil && o.Status.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStatus gets a reference to the given string and assigns it to the Status field.
+// SetStatus gets a reference to the given NullableString and assigns it to the Status field.
 func (o *UpdateStorageServers200ResponseAllOfStorageServer) SetStatus(v string) {
-	o.Status = &v
+	o.Status.Set(&v)
+}
+
+// SetStatusNil sets the value for Status to be an explicit nil
+func (o *UpdateStorageServers200ResponseAllOfStorageServer) SetStatusNil() {
+	o.Status.Set(nil)
+}
+
+// UnsetStatus ensures that no value is present for Status, not even an explicit nil
+func (o *UpdateStorageServers200ResponseAllOfStorageServer) UnsetStatus() {
+	o.Status.Unset()
 }
 
 // GetStatusMessage returns the StatusMessage field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1365,9 +1365,9 @@ func (o *UpdateStorageServers200ResponseAllOfStorageServer) UnsetErrorMessage() 
 }
 
 // GetMaxStorage returns the MaxStorage field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetMaxStorage() string {
+func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetMaxStorage() int64 {
 	if o == nil || IsNil(o.MaxStorage.Get()) {
-		var ret string
+		var ret int64
 		return ret
 	}
 	return *o.MaxStorage.Get()
@@ -1376,7 +1376,7 @@ func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetMaxStorage() stri
 // GetMaxStorageOk returns a tuple with the MaxStorage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetMaxStorageOk() (*string, bool) {
+func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetMaxStorageOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -1392,8 +1392,8 @@ func (o *UpdateStorageServers200ResponseAllOfStorageServer) IsSetMaxStorage() bo
 	return false
 }
 
-// SetMaxStorage gets a reference to the given NullableString and assigns it to the MaxStorage field.
-func (o *UpdateStorageServers200ResponseAllOfStorageServer) SetMaxStorage(v string) {
+// SetMaxStorage gets a reference to the given NullableInt64 and assigns it to the MaxStorage field.
+func (o *UpdateStorageServers200ResponseAllOfStorageServer) SetMaxStorage(v int64) {
 	o.MaxStorage.Set(&v)
 }
 
@@ -1408,9 +1408,9 @@ func (o *UpdateStorageServers200ResponseAllOfStorageServer) UnsetMaxStorage() {
 }
 
 // GetUsedStorage returns the UsedStorage field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetUsedStorage() string {
+func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetUsedStorage() int64 {
 	if o == nil || IsNil(o.UsedStorage.Get()) {
-		var ret string
+		var ret int64
 		return ret
 	}
 	return *o.UsedStorage.Get()
@@ -1419,7 +1419,7 @@ func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetUsedStorage() str
 // GetUsedStorageOk returns a tuple with the UsedStorage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetUsedStorageOk() (*string, bool) {
+func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetUsedStorageOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -1435,8 +1435,8 @@ func (o *UpdateStorageServers200ResponseAllOfStorageServer) IsSetUsedStorage() b
 	return false
 }
 
-// SetUsedStorage gets a reference to the given NullableString and assigns it to the UsedStorage field.
-func (o *UpdateStorageServers200ResponseAllOfStorageServer) SetUsedStorage(v string) {
+// SetUsedStorage gets a reference to the given NullableInt64 and assigns it to the UsedStorage field.
+func (o *UpdateStorageServers200ResponseAllOfStorageServer) SetUsedStorage(v int64) {
 	o.UsedStorage.Set(&v)
 }
 
@@ -1451,9 +1451,9 @@ func (o *UpdateStorageServers200ResponseAllOfStorageServer) UnsetUsedStorage() {
 }
 
 // GetDiskCount returns the DiskCount field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetDiskCount() string {
+func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetDiskCount() int32 {
 	if o == nil || IsNil(o.DiskCount.Get()) {
-		var ret string
+		var ret int32
 		return ret
 	}
 	return *o.DiskCount.Get()
@@ -1462,7 +1462,7 @@ func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetDiskCount() strin
 // GetDiskCountOk returns a tuple with the DiskCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetDiskCountOk() (*string, bool) {
+func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetDiskCountOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -1478,8 +1478,8 @@ func (o *UpdateStorageServers200ResponseAllOfStorageServer) IsSetDiskCount() boo
 	return false
 }
 
-// SetDiskCount gets a reference to the given NullableString and assigns it to the DiskCount field.
-func (o *UpdateStorageServers200ResponseAllOfStorageServer) SetDiskCount(v string) {
+// SetDiskCount gets a reference to the given NullableInt32 and assigns it to the DiskCount field.
+func (o *UpdateStorageServers200ResponseAllOfStorageServer) SetDiskCount(v int32) {
 	o.DiskCount.Set(&v)
 }
 
@@ -1590,9 +1590,9 @@ func (o *UpdateStorageServers200ResponseAllOfStorageServer) SetEnabled(v bool) {
 }
 
 // GetGroups returns the Groups field value if set, zero value otherwise.
-func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetGroups() []map[string]interface{} {
+func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetGroups() []UpdateStorageServers200ResponseAllOfStorageServerGroupsInner {
 	if o == nil || IsNil(o.Groups) {
-		var ret []map[string]interface{}
+		var ret []UpdateStorageServers200ResponseAllOfStorageServerGroupsInner
 		return ret
 	}
 	return o.Groups
@@ -1600,7 +1600,7 @@ func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetGroups() []map[st
 
 // GetGroupsOk returns a tuple with the Groups field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetGroupsOk() ([]map[string]interface{}, bool) {
+func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetGroupsOk() ([]UpdateStorageServers200ResponseAllOfStorageServerGroupsInner, bool) {
 	if o == nil || IsNil(o.Groups) {
 		return nil, false
 	}
@@ -1616,15 +1616,15 @@ func (o *UpdateStorageServers200ResponseAllOfStorageServer) IsSetGroups() bool {
 	return false
 }
 
-// SetGroups gets a reference to the given []map[string]interface{} and assigns it to the Groups field.
-func (o *UpdateStorageServers200ResponseAllOfStorageServer) SetGroups(v []map[string]interface{}) {
+// SetGroups gets a reference to the given []UpdateStorageServers200ResponseAllOfStorageServerGroupsInner and assigns it to the Groups field.
+func (o *UpdateStorageServers200ResponseAllOfStorageServer) SetGroups(v []UpdateStorageServers200ResponseAllOfStorageServerGroupsInner) {
 	o.Groups = v
 }
 
 // GetHostGroups returns the HostGroups field value if set, zero value otherwise.
-func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetHostGroups() []map[string]interface{} {
+func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetHostGroups() []UpdateStorageServers200ResponseAllOfStorageServerHostGroupsInner {
 	if o == nil || IsNil(o.HostGroups) {
-		var ret []map[string]interface{}
+		var ret []UpdateStorageServers200ResponseAllOfStorageServerHostGroupsInner
 		return ret
 	}
 	return o.HostGroups
@@ -1632,7 +1632,7 @@ func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetHostGroups() []ma
 
 // GetHostGroupsOk returns a tuple with the HostGroups field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetHostGroupsOk() ([]map[string]interface{}, bool) {
+func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetHostGroupsOk() ([]UpdateStorageServers200ResponseAllOfStorageServerHostGroupsInner, bool) {
 	if o == nil || IsNil(o.HostGroups) {
 		return nil, false
 	}
@@ -1648,15 +1648,15 @@ func (o *UpdateStorageServers200ResponseAllOfStorageServer) IsSetHostGroups() bo
 	return false
 }
 
-// SetHostGroups gets a reference to the given []map[string]interface{} and assigns it to the HostGroups field.
-func (o *UpdateStorageServers200ResponseAllOfStorageServer) SetHostGroups(v []map[string]interface{}) {
+// SetHostGroups gets a reference to the given []UpdateStorageServers200ResponseAllOfStorageServerHostGroupsInner and assigns it to the HostGroups field.
+func (o *UpdateStorageServers200ResponseAllOfStorageServer) SetHostGroups(v []UpdateStorageServers200ResponseAllOfStorageServerHostGroupsInner) {
 	o.HostGroups = v
 }
 
 // GetHosts returns the Hosts field value if set, zero value otherwise.
-func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetHosts() []map[string]interface{} {
+func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetHosts() []UpdateStorageServers200ResponseAllOfStorageServerHostsInner {
 	if o == nil || IsNil(o.Hosts) {
-		var ret []map[string]interface{}
+		var ret []UpdateStorageServers200ResponseAllOfStorageServerHostsInner
 		return ret
 	}
 	return o.Hosts
@@ -1664,7 +1664,7 @@ func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetHosts() []map[str
 
 // GetHostsOk returns a tuple with the Hosts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetHostsOk() ([]map[string]interface{}, bool) {
+func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetHostsOk() ([]UpdateStorageServers200ResponseAllOfStorageServerHostsInner, bool) {
 	if o == nil || IsNil(o.Hosts) {
 		return nil, false
 	}
@@ -1680,15 +1680,15 @@ func (o *UpdateStorageServers200ResponseAllOfStorageServer) IsSetHosts() bool {
 	return false
 }
 
-// SetHosts gets a reference to the given []map[string]interface{} and assigns it to the Hosts field.
-func (o *UpdateStorageServers200ResponseAllOfStorageServer) SetHosts(v []map[string]interface{}) {
+// SetHosts gets a reference to the given []UpdateStorageServers200ResponseAllOfStorageServerHostsInner and assigns it to the Hosts field.
+func (o *UpdateStorageServers200ResponseAllOfStorageServer) SetHosts(v []UpdateStorageServers200ResponseAllOfStorageServerHostsInner) {
 	o.Hosts = v
 }
 
 // GetTenants returns the Tenants field value if set, zero value otherwise.
-func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetTenants() []map[string]interface{} {
+func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetTenants() []UpdateStorageServers200ResponseAllOfStorageServerTenantsInner {
 	if o == nil || IsNil(o.Tenants) {
-		var ret []map[string]interface{}
+		var ret []UpdateStorageServers200ResponseAllOfStorageServerTenantsInner
 		return ret
 	}
 	return o.Tenants
@@ -1696,7 +1696,7 @@ func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetTenants() []map[s
 
 // GetTenantsOk returns a tuple with the Tenants field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetTenantsOk() ([]map[string]interface{}, bool) {
+func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetTenantsOk() ([]UpdateStorageServers200ResponseAllOfStorageServerTenantsInner, bool) {
 	if o == nil || IsNil(o.Tenants) {
 		return nil, false
 	}
@@ -1712,8 +1712,8 @@ func (o *UpdateStorageServers200ResponseAllOfStorageServer) IsSetTenants() bool 
 	return false
 }
 
-// SetTenants gets a reference to the given []map[string]interface{} and assigns it to the Tenants field.
-func (o *UpdateStorageServers200ResponseAllOfStorageServer) SetTenants(v []map[string]interface{}) {
+// SetTenants gets a reference to the given []UpdateStorageServers200ResponseAllOfStorageServerTenantsInner and assigns it to the Tenants field.
+func (o *UpdateStorageServers200ResponseAllOfStorageServer) SetTenants(v []UpdateStorageServers200ResponseAllOfStorageServerTenantsInner) {
 	o.Tenants = v
 }
 
@@ -1750,19 +1750,19 @@ func (o *UpdateStorageServers200ResponseAllOfStorageServer) SetOwner(v UpdateSto
 }
 
 // GetCredential returns the Credential field value if set, zero value otherwise.
-func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetCredential() map[string]interface{} {
+func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetCredential() UpdateStorageServers200ResponseAllOfStorageServerCredential {
 	if o == nil || IsNil(o.Credential) {
-		var ret map[string]interface{}
+		var ret UpdateStorageServers200ResponseAllOfStorageServerCredential
 		return ret
 	}
-	return o.Credential
+	return *o.Credential
 }
 
 // GetCredentialOk returns a tuple with the Credential field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetCredentialOk() (map[string]interface{}, bool) {
+func (o *UpdateStorageServers200ResponseAllOfStorageServer) GetCredentialOk() (*UpdateStorageServers200ResponseAllOfStorageServerCredential, bool) {
 	if o == nil || IsNil(o.Credential) {
-		return map[string]interface{}{}, false
+		return nil, false
 	}
 	return o.Credential, true
 }
@@ -1776,9 +1776,9 @@ func (o *UpdateStorageServers200ResponseAllOfStorageServer) IsSetCredential() bo
 	return false
 }
 
-// SetCredential gets a reference to the given map[string]interface{} and assigns it to the Credential field.
-func (o *UpdateStorageServers200ResponseAllOfStorageServer) SetCredential(v map[string]interface{}) {
-	o.Credential = v
+// SetCredential gets a reference to the given UpdateStorageServers200ResponseAllOfStorageServerCredential and assigns it to the Credential field.
+func (o *UpdateStorageServers200ResponseAllOfStorageServer) SetCredential(v UpdateStorageServers200ResponseAllOfStorageServerCredential) {
+	o.Credential = &v
 }
 
 func (o UpdateStorageServers200ResponseAllOfStorageServer) MarshalJSON() ([]byte, error) {
@@ -1800,8 +1800,8 @@ func (o UpdateStorageServers200ResponseAllOfStorageServer) ToMap() (map[string]i
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
-	if o.Chassis.IsSet() {
-		toSerialize["chassis"] = o.Chassis.Get()
+	if !IsNil(o.Chassis) {
+		toSerialize["chassis"] = o.Chassis
 	}
 	if !IsNil(o.Visibility) {
 		toSerialize["visibility"] = o.Visibility
@@ -1875,8 +1875,8 @@ func (o UpdateStorageServers200ResponseAllOfStorageServer) ToMap() (map[string]i
 	if o.SerialNumber.IsSet() {
 		toSerialize["serialNumber"] = o.SerialNumber.Get()
 	}
-	if !IsNil(o.Status) {
-		toSerialize["status"] = o.Status
+	if o.Status.IsSet() {
+		toSerialize["status"] = o.Status.Get()
 	}
 	if o.StatusMessage.IsSet() {
 		toSerialize["statusMessage"] = o.StatusMessage.Get()

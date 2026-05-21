@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.1.1
+API version: 9.0.0
 Contact: dev@morpheusdata.com
 */
 
@@ -123,7 +123,7 @@ func (a *CloudsAPIService) AddCloudResourcePoolExecute(r ApiAddCloudResourcePool
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -134,7 +134,7 @@ func (a *CloudsAPIService) AddCloudResourcePoolExecute(r ApiAddCloudResourcePool
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -251,7 +251,7 @@ func (a *CloudsAPIService) AddCloudsExecute(r ApiAddCloudsRequest) (*AddClouds20
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -262,7 +262,7 @@ func (a *CloudsAPIService) AddCloudsExecute(r ApiAddCloudsRequest) (*AddClouds20
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -379,7 +379,7 @@ func (a *CloudsAPIService) DeleteCloudAffinityGroupExecute(r ApiDeleteCloudAffin
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -390,7 +390,7 @@ func (a *CloudsAPIService) DeleteCloudAffinityGroupExecute(r ApiDeleteCloudAffin
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -507,7 +507,7 @@ func (a *CloudsAPIService) GetCloudAffinityGroupExecute(r ApiGetCloudAffinityGro
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -518,7 +518,7 @@ func (a *CloudsAPIService) GetCloudAffinityGroupExecute(r ApiGetCloudAffinityGro
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -636,7 +636,7 @@ func (a *CloudsAPIService) GetCloudDatastoresExecute(r ApiGetCloudDatastoresRequ
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -647,7 +647,7 @@ func (a *CloudsAPIService) GetCloudDatastoresExecute(r ApiGetCloudDatastoresRequ
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -765,7 +765,7 @@ func (a *CloudsAPIService) GetCloudFoldersExecute(r ApiGetCloudFoldersRequest) (
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -776,7 +776,7 @@ func (a *CloudsAPIService) GetCloudFoldersExecute(r ApiGetCloudFoldersRequest) (
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -893,7 +893,7 @@ func (a *CloudsAPIService) GetCloudResourcePoolsExecute(r ApiGetCloudResourcePoo
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -904,7 +904,7 @@ func (a *CloudsAPIService) GetCloudResourcePoolsExecute(r ApiGetCloudResourcePoo
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1017,7 +1017,7 @@ func (a *CloudsAPIService) GetCloudTypesExecute(r ApiGetCloudTypesRequest) (*Get
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1028,7 +1028,7 @@ func (a *CloudsAPIService) GetCloudTypesExecute(r ApiGetCloudTypesRequest) (*Get
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1141,7 +1141,7 @@ func (a *CloudsAPIService) GetCloudsExecute(r ApiGetCloudsRequest) (*GetClouds20
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1152,7 +1152,7 @@ func (a *CloudsAPIService) GetCloudsExecute(r ApiGetCloudsRequest) (*GetClouds20
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1360,7 +1360,7 @@ func (a *CloudsAPIService) ListCloudAffinityGroupsExecute(r ApiListCloudAffinity
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1371,7 +1371,7 @@ func (a *CloudsAPIService) ListCloudAffinityGroupsExecute(r ApiListCloudAffinity
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1544,7 +1544,7 @@ func (a *CloudsAPIService) ListCloudDatastoresExecute(r ApiListCloudDatastoresRe
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1555,7 +1555,7 @@ func (a *CloudsAPIService) ListCloudDatastoresExecute(r ApiListCloudDatastoresRe
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1702,7 +1702,7 @@ func (a *CloudsAPIService) ListCloudFoldersExecute(r ApiListCloudFoldersRequest)
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1713,7 +1713,7 @@ func (a *CloudsAPIService) ListCloudFoldersExecute(r ApiListCloudFoldersRequest)
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1860,7 +1860,7 @@ func (a *CloudsAPIService) ListCloudResourcePoolsExecute(r ApiListCloudResourceP
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1871,7 +1871,7 @@ func (a *CloudsAPIService) ListCloudResourcePoolsExecute(r ApiListCloudResourceP
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1984,7 +1984,7 @@ func (a *CloudsAPIService) ListCloudSecurityGroupsExecute(r ApiListCloudSecurity
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1995,7 +1995,7 @@ func (a *CloudsAPIService) ListCloudSecurityGroupsExecute(r ApiListCloudSecurity
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2207,7 +2207,7 @@ func (a *CloudsAPIService) ListCloudTypesExecute(r ApiListCloudTypesRequest) (*L
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2218,7 +2218,7 @@ func (a *CloudsAPIService) ListCloudTypesExecute(r ApiListCloudTypesRequest) (*L
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2243,18 +2243,20 @@ func (a *CloudsAPIService) ListCloudTypesExecute(r ApiListCloudTypesRequest) (*L
 }
 
 type ApiListCloudsRequest struct {
-	ctx         context.Context
-	ApiService  *CloudsAPIService
-	lastUpdated *time.Time
-	type_       *string
-	groupId     *int64
-	max         *int64
-	offset      *int64
-	sort        *string
-	direction   *string
-	phrase      *string
-	name        *string
-	labels      *string
+	ctx            context.Context
+	ApiService     *CloudsAPIService
+	lastUpdated    *time.Time
+	type_          *string
+	groupId        *int64
+	max            *int64
+	offset         *int64
+	sort           *string
+	direction      *string
+	phrase         *string
+	name           *string
+	labels         *string
+	includeTenants *bool
+	tenantId       *float32
 }
 
 // Date filter, restricts query to only load resources updated more recently than the date specified (ISO 8601)
@@ -2314,6 +2316,18 @@ func (r ApiListCloudsRequest) Name(name string) ApiListCloudsRequest {
 // Filter by label(s), matches records that contain any of the specified labels
 func (r ApiListCloudsRequest) Labels(labels string) ApiListCloudsRequest {
 	r.labels = &labels
+	return r
+}
+
+// Optional ability to include all subtenant resources when calling from a master tenant user
+func (r ApiListCloudsRequest) IncludeTenants(includeTenants bool) ApiListCloudsRequest {
+	r.includeTenants = &includeTenants
+	return r
+}
+
+// Filter by Tenant ID. Only available to the master account.
+func (r ApiListCloudsRequest) TenantId(tenantId float32) ApiListCloudsRequest {
+	r.tenantId = &tenantId
 	return r
 }
 
@@ -2400,6 +2414,15 @@ func (a *CloudsAPIService) ListCloudsExecute(r ApiListCloudsRequest) (*ListCloud
 	if r.labels != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "labels", r.labels, "form", "")
 	}
+	if r.includeTenants != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeTenants", r.includeTenants, "form", "")
+	} else {
+		var defaultValue bool = false
+		r.includeTenants = &defaultValue
+	}
+	if r.tenantId != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "tenantId", r.tenantId, "form", "")
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -2439,7 +2462,7 @@ func (a *CloudsAPIService) ListCloudsExecute(r ApiListCloudsRequest) (*ListCloud
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2450,7 +2473,7 @@ func (a *CloudsAPIService) ListCloudsExecute(r ApiListCloudsRequest) (*ListCloud
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2571,7 +2594,7 @@ func (a *CloudsAPIService) RefreshCloudsExecute(r ApiRefreshCloudsRequest) (*Ref
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2582,7 +2605,7 @@ func (a *CloudsAPIService) RefreshCloudsExecute(r ApiRefreshCloudsRequest) (*Ref
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2699,7 +2722,7 @@ func (a *CloudsAPIService) RemoveCloudResourcePoolsExecute(r ApiRemoveCloudResou
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2710,7 +2733,7 @@ func (a *CloudsAPIService) RemoveCloudResourcePoolsExecute(r ApiRemoveCloudResou
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2849,7 +2872,7 @@ func (a *CloudsAPIService) RemoveCloudsExecute(r ApiRemoveCloudsRequest) (*Remov
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2860,7 +2883,7 @@ func (a *CloudsAPIService) RemoveCloudsExecute(r ApiRemoveCloudsRequest) (*Remov
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2981,7 +3004,7 @@ func (a *CloudsAPIService) SaveCloudAffinityGroupExecute(r ApiSaveCloudAffinityG
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2992,7 +3015,7 @@ func (a *CloudsAPIService) SaveCloudAffinityGroupExecute(r ApiSaveCloudAffinityG
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3113,7 +3136,7 @@ func (a *CloudsAPIService) SaveCloudDatastoreExecute(r ApiSaveCloudDatastoreRequ
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3124,7 +3147,7 @@ func (a *CloudsAPIService) SaveCloudDatastoreExecute(r ApiSaveCloudDatastoreRequ
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3249,7 +3272,7 @@ func (a *CloudsAPIService) UpdateCloudAffinityGroupExecute(r ApiUpdateCloudAffin
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3260,7 +3283,7 @@ func (a *CloudsAPIService) UpdateCloudAffinityGroupExecute(r ApiUpdateCloudAffin
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3385,7 +3408,7 @@ func (a *CloudsAPIService) UpdateCloudDatastoresExecute(r ApiUpdateCloudDatastor
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3396,7 +3419,7 @@ func (a *CloudsAPIService) UpdateCloudDatastoresExecute(r ApiUpdateCloudDatastor
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3521,7 +3544,7 @@ func (a *CloudsAPIService) UpdateCloudFoldersExecute(r ApiUpdateCloudFoldersRequ
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3532,7 +3555,7 @@ func (a *CloudsAPIService) UpdateCloudFoldersExecute(r ApiUpdateCloudFoldersRequ
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3689,7 +3712,7 @@ func (a *CloudsAPIService) UpdateCloudLogoExecute(r ApiUpdateCloudLogoRequest) (
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3700,7 +3723,7 @@ func (a *CloudsAPIService) UpdateCloudLogoExecute(r ApiUpdateCloudLogoRequest) (
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3825,7 +3848,7 @@ func (a *CloudsAPIService) UpdateCloudResourcePoolExecute(r ApiUpdateCloudResour
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3836,7 +3859,7 @@ func (a *CloudsAPIService) UpdateCloudResourcePoolExecute(r ApiUpdateCloudResour
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3957,7 +3980,7 @@ func (a *CloudsAPIService) UpdateCloudSecurityGroupsExecute(r ApiUpdateCloudSecu
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3968,7 +3991,7 @@ func (a *CloudsAPIService) UpdateCloudSecurityGroupsExecute(r ApiUpdateCloudSecu
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -4089,7 +4112,7 @@ func (a *CloudsAPIService) UpdateCloudsExecute(r ApiUpdateCloudsRequest) (*Updat
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -4100,7 +4123,7 @@ func (a *CloudsAPIService) UpdateCloudsExecute(r ApiUpdateCloudsRequest) (*Updat
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err

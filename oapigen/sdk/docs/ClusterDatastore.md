@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **AllowRead** | Pointer to **bool** |  | [optional] 
 **AllowProvision** | Pointer to **bool** |  | [optional] 
 **HeartbeatTarget** | Pointer to **bool** | Heartbeat Target | [optional] 
+**SupportsVmSecureMetadata** | Pointer to **bool** | When &#x60;true&#x60;, this datastore is designated to hold NVRAM and swtpm state for TPM/SecureBoot VMs in the cluster, enabling live migration and HA failover. Only one datastore per cluster scope may have this set to &#x60;true&#x60;. Only applicable to GFS2 and NFS datastore types.  | [optional] 
 **RefType** | Pointer to **string** |  | [optional] 
 **RefId** | Pointer to **int64** |  | [optional] 
 **ExternalId** | Pointer to **string** |  | [optional] 
@@ -504,6 +505,31 @@ SetHeartbeatTarget sets HeartbeatTarget field to given value.
 `func (o *ClusterDatastore) HasHeartbeatTarget() bool`
 
 HasHeartbeatTarget returns a boolean if a field has been set.
+
+### GetSupportsVmSecureMetadata
+
+`func (o *ClusterDatastore) GetSupportsVmSecureMetadata() bool`
+
+GetSupportsVmSecureMetadata returns the SupportsVmSecureMetadata field if non-nil, zero value otherwise.
+
+### GetSupportsVmSecureMetadataOk
+
+`func (o *ClusterDatastore) GetSupportsVmSecureMetadataOk() (*bool, bool)`
+
+GetSupportsVmSecureMetadataOk returns a tuple with the SupportsVmSecureMetadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportsVmSecureMetadata
+
+`func (o *ClusterDatastore) SetSupportsVmSecureMetadata(v bool)`
+
+SetSupportsVmSecureMetadata sets SupportsVmSecureMetadata field to given value.
+
+### HasSupportsVmSecureMetadata
+
+`func (o *ClusterDatastore) HasSupportsVmSecureMetadata() bool`
+
+HasSupportsVmSecureMetadata returns a boolean if a field has been set.
 
 ### GetRefType
 

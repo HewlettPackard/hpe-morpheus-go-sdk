@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **UserGroups** | Pointer to [**[]ListUserGroups200ResponseAllOfUserGroupsInner**](ListUserGroups200ResponseAllOfUserGroupsInner.md) |  | [optional] 
-**Meta** | Pointer to [**ListAlerts200ResponseAllOfMeta**](ListAlerts200ResponseAllOfMeta.md) |  | [optional] 
+**Meta** | Pointer to [**ListApprovals200ResponseAllOfMeta**](ListApprovals200ResponseAllOfMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasUserGroups returns a boolean if a field has been set.
 
 ### GetMeta
 
-`func (o *ListUserGroups200Response) GetMeta() ListAlerts200ResponseAllOfMeta`
+`func (o *ListUserGroups200Response) GetMeta() ListApprovals200ResponseAllOfMeta`
 
 GetMeta returns the Meta field if non-nil, zero value otherwise.
 
 ### GetMetaOk
 
-`func (o *ListUserGroups200Response) GetMetaOk() (*ListAlerts200ResponseAllOfMeta, bool)`
+`func (o *ListUserGroups200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool)`
 
 GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMeta
 
-`func (o *ListUserGroups200Response) SetMeta(v ListAlerts200ResponseAllOfMeta)`
+`func (o *ListUserGroups200Response) SetMeta(v ListApprovals200ResponseAllOfMeta)`
 
 SetMeta sets Meta field to given value.
 

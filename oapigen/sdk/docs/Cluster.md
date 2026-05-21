@@ -45,6 +45,7 @@ Name | Type | Description | Notes
 **Managed** | Pointer to **bool** |  | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
 **AutoRecoverPowerState** | Pointer to **bool** | Automatically Power on VMs | [optional] [default to false]
+**CpuPlacementMode** | Pointer to **NullableString** | Cluster CPU placement mode | [optional] 
 **UseAgent** | Pointer to **NullableString** | Use the Agent to relay communications for the Kubernetes API instead of direct. | [optional] 
 **ProvisionComplete** | Pointer to **bool** | Changes from false to true once provisioning is finished. | [optional] 
 **ServiceEntry** | Pointer to **NullableString** |  | [optional] 
@@ -1394,6 +1395,41 @@ SetAutoRecoverPowerState sets AutoRecoverPowerState field to given value.
 
 HasAutoRecoverPowerState returns a boolean if a field has been set.
 
+### GetCpuPlacementMode
+
+`func (o *Cluster) GetCpuPlacementMode() string`
+
+GetCpuPlacementMode returns the CpuPlacementMode field if non-nil, zero value otherwise.
+
+### GetCpuPlacementModeOk
+
+`func (o *Cluster) GetCpuPlacementModeOk() (*string, bool)`
+
+GetCpuPlacementModeOk returns a tuple with the CpuPlacementMode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCpuPlacementMode
+
+`func (o *Cluster) SetCpuPlacementMode(v string)`
+
+SetCpuPlacementMode sets CpuPlacementMode field to given value.
+
+### HasCpuPlacementMode
+
+`func (o *Cluster) HasCpuPlacementMode() bool`
+
+HasCpuPlacementMode returns a boolean if a field has been set.
+
+### SetCpuPlacementModeNil
+
+`func (o *Cluster) SetCpuPlacementModeNil(b bool)`
+
+ SetCpuPlacementModeNil sets the value for CpuPlacementMode to be an explicit nil
+
+### UnsetCpuPlacementMode
+`func (o *Cluster) UnsetCpuPlacementMode()`
+
+UnsetCpuPlacementMode ensures that no value is present for CpuPlacementMode, not even an explicit nil
 ### GetUseAgent
 
 `func (o *Cluster) GetUseAgent() string`

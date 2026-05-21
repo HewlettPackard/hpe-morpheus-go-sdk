@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.1.1
+API version: 9.0.0
 Contact: dev@morpheusdata.com
 */
 
@@ -127,7 +127,7 @@ func (a *RolesAPIService) AddRolesExecute(r ApiAddRolesRequest) (*AddRoles200Res
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -138,7 +138,7 @@ func (a *RolesAPIService) AddRolesExecute(r ApiAddRolesRequest) (*AddRoles200Res
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -262,7 +262,7 @@ func (a *RolesAPIService) DeleteRoleExecute(r ApiDeleteRoleRequest) (*UpdateAppr
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -273,7 +273,7 @@ func (a *RolesAPIService) DeleteRoleExecute(r ApiDeleteRoleRequest) (*UpdateAppr
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -396,7 +396,7 @@ func (a *RolesAPIService) GetRoleExecute(r ApiGetRoleRequest) (*GetRole200Respon
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -407,7 +407,7 @@ func (a *RolesAPIService) GetRoleExecute(r ApiGetRoleRequest) (*GetRole200Respon
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -598,7 +598,7 @@ func (a *RolesAPIService) ListRolesExecute(r ApiListRolesRequest) (*ListRoles200
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -609,7 +609,7 @@ func (a *RolesAPIService) ListRolesExecute(r ApiListRolesRequest) (*ListRoles200
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -740,7 +740,7 @@ func (a *RolesAPIService) UpdateRoleExecute(r ApiUpdateRoleRequest) (*UpdateRole
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -751,7 +751,7 @@ func (a *RolesAPIService) UpdateRoleExecute(r ApiUpdateRoleRequest) (*UpdateRole
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -872,7 +872,7 @@ func (a *RolesAPIService) UpdateRoleBlueprintAccessExecute(r ApiUpdateRoleBluepr
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -883,7 +883,7 @@ func (a *RolesAPIService) UpdateRoleBlueprintAccessExecute(r ApiUpdateRoleBluepr
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1004,7 +1004,7 @@ func (a *RolesAPIService) UpdateRoleCatalogItemTypeAccessExecute(r ApiUpdateRole
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1015,7 +1015,7 @@ func (a *RolesAPIService) UpdateRoleCatalogItemTypeAccessExecute(r ApiUpdateRole
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1136,7 +1136,7 @@ func (a *RolesAPIService) UpdateRoleCloudAccessExecute(r ApiUpdateRoleCloudAcces
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1147,7 +1147,7 @@ func (a *RolesAPIService) UpdateRoleCloudAccessExecute(r ApiUpdateRoleCloudAcces
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1268,7 +1268,7 @@ func (a *RolesAPIService) UpdateRoleClusterTypeAccessExecute(r ApiUpdateRoleClus
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1279,7 +1279,7 @@ func (a *RolesAPIService) UpdateRoleClusterTypeAccessExecute(r ApiUpdateRoleClus
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1400,7 +1400,7 @@ func (a *RolesAPIService) UpdateRoleGroupAccessExecute(r ApiUpdateRoleGroupAcces
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1411,7 +1411,7 @@ func (a *RolesAPIService) UpdateRoleGroupAccessExecute(r ApiUpdateRoleGroupAcces
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1532,7 +1532,7 @@ func (a *RolesAPIService) UpdateRoleInstanceTypeAccessExecute(r ApiUpdateRoleIns
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1543,7 +1543,7 @@ func (a *RolesAPIService) UpdateRoleInstanceTypeAccessExecute(r ApiUpdateRoleIns
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1664,7 +1664,7 @@ func (a *RolesAPIService) UpdateRolePermissionExecute(r ApiUpdateRolePermissionR
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1675,7 +1675,7 @@ func (a *RolesAPIService) UpdateRolePermissionExecute(r ApiUpdateRolePermissionR
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1796,7 +1796,7 @@ func (a *RolesAPIService) UpdateRolePersonaAccessExecute(r ApiUpdateRolePersonaA
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1807,7 +1807,7 @@ func (a *RolesAPIService) UpdateRolePersonaAccessExecute(r ApiUpdateRolePersonaA
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1928,7 +1928,7 @@ func (a *RolesAPIService) UpdateRoleReportTypeAccessExecute(r ApiUpdateRoleRepor
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1939,7 +1939,7 @@ func (a *RolesAPIService) UpdateRoleReportTypeAccessExecute(r ApiUpdateRoleRepor
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2060,7 +2060,7 @@ func (a *RolesAPIService) UpdateRoleTaskAccessExecute(r ApiUpdateRoleTaskAccessR
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2071,7 +2071,7 @@ func (a *RolesAPIService) UpdateRoleTaskAccessExecute(r ApiUpdateRoleTaskAccessR
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2192,7 +2192,7 @@ func (a *RolesAPIService) UpdateRoleVDIPoolAccessExecute(r ApiUpdateRoleVDIPoolA
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2203,7 +2203,7 @@ func (a *RolesAPIService) UpdateRoleVDIPoolAccessExecute(r ApiUpdateRoleVDIPoolA
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2324,7 +2324,7 @@ func (a *RolesAPIService) UpdateRoleWorkflowAccessExecute(r ApiUpdateRoleWorkflo
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2335,7 +2335,7 @@ func (a *RolesAPIService) UpdateRoleWorkflowAccessExecute(r ApiUpdateRoleWorkflo
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err

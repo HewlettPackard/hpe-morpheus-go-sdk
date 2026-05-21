@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **Refresh** | Pointer to **bool** | Queue cluster refresh | [optional] 
 **Managed** | Pointer to **bool** | Cluster managed | [optional] 
 **AutoRecoverPowerState** | Pointer to **bool** | Automatically Power on VMs | [optional] 
+**CpuPlacementMode** | Pointer to **string** | Cluster CPU placement mode | [optional] 
 **Integrations** | Pointer to [**[]ClusterUpdateIntegrationsInner**](ClusterUpdateIntegrationsInner.md) | Cluster integrations | [optional] 
 **Config** | Pointer to [**ClusterUpdateConfig**](ClusterUpdateConfig.md) |  | [optional] 
 
@@ -295,6 +296,31 @@ SetAutoRecoverPowerState sets AutoRecoverPowerState field to given value.
 `func (o *ClusterUpdate) HasAutoRecoverPowerState() bool`
 
 HasAutoRecoverPowerState returns a boolean if a field has been set.
+
+### GetCpuPlacementMode
+
+`func (o *ClusterUpdate) GetCpuPlacementMode() string`
+
+GetCpuPlacementMode returns the CpuPlacementMode field if non-nil, zero value otherwise.
+
+### GetCpuPlacementModeOk
+
+`func (o *ClusterUpdate) GetCpuPlacementModeOk() (*string, bool)`
+
+GetCpuPlacementModeOk returns a tuple with the CpuPlacementMode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCpuPlacementMode
+
+`func (o *ClusterUpdate) SetCpuPlacementMode(v string)`
+
+SetCpuPlacementMode sets CpuPlacementMode field to given value.
+
+### HasCpuPlacementMode
+
+`func (o *ClusterUpdate) HasCpuPlacementMode() bool`
+
+HasCpuPlacementMode returns a boolean if a field has been set.
 
 ### GetIntegrations
 

@@ -6983,7 +6983,7 @@ Name | Type | Description  | Notes
 
 ## ListNetworkServers
 
-> ListNetworkServers200Response ListNetworkServers(ctx).Max(max).Offset(offset).Sort(sort).Direction(direction).Phrase(phrase).Name(name).Execute()
+> ListNetworkServers200Response ListNetworkServers(ctx).Max(max).Offset(offset).Sort(sort).Direction(direction).Phrase(phrase).Name(name).ShowHidden(showHidden).Execute()
 
 Get All Network Servers
 
@@ -7008,10 +7008,11 @@ func main() {
 	direction := "asc" // string | Sort direction, use 'desc' to reverse sort (optional) (default to "asc")
 	phrase := "phrase_example" // string | Search phrase for partial matches on name or description (optional)
 	name := "example" // string | Filter by name (optional)
+	showHidden := true // bool | If true, includes hidden network servers in the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.NetworksAPI.ListNetworkServers(context.Background()).Max(max).Offset(offset).Sort(sort).Direction(direction).Phrase(phrase).Name(name).Execute()
+	resp, r, err := apiClient.NetworksAPI.ListNetworkServers(context.Background()).Max(max).Offset(offset).Sort(sort).Direction(direction).Phrase(phrase).Name(name).ShowHidden(showHidden).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `NetworksAPI.ListNetworkServers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7038,6 +7039,7 @@ Name | Type | Description  | Notes
  **direction** | **string** | Sort direction, use &#39;desc&#39; to reverse sort | [default to &quot;asc&quot;]
  **phrase** | **string** | Search phrase for partial matches on name or description | 
  **name** | **string** | Filter by name | 
+ **showHidden** | **bool** | If true, includes hidden network servers in the response. | 
 
 ### Return type
 
@@ -7485,7 +7487,7 @@ Name | Type | Description  | Notes
 
 ## ReleaseNetworkFloatingIp
 
-> ReleaseNetworkFloatingIp200Response ReleaseNetworkFloatingIp(ctx, id).Execute()
+> ContainersAttachFloatingIp200Response ReleaseNetworkFloatingIp(ctx, id).Execute()
 
 Release a Floating IP
 
@@ -7513,7 +7515,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `NetworksAPI.ReleaseNetworkFloatingIp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ReleaseNetworkFloatingIp`: ReleaseNetworkFloatingIp200Response
+	// response from `ReleaseNetworkFloatingIp`: ContainersAttachFloatingIp200Response
 	fmt.Fprintf(os.Stdout, "Response from `NetworksAPI.ReleaseNetworkFloatingIp`: %v\n", resp)
 }
 ```
@@ -7537,7 +7539,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ReleaseNetworkFloatingIp200Response**](ReleaseNetworkFloatingIp200Response.md)
+[**ContainersAttachFloatingIp200Response**](ContainersAttachFloatingIp200Response.md)
 
 ### Authorization
 

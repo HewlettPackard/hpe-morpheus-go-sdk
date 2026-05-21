@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.1.1
+API version: 9.0.0
 Contact: dev@morpheusdata.com
 */
 
@@ -84,7 +84,7 @@ type GetClusterMasters200ResponseMastersInner struct {
 	Labels                   []string                                                   `json:"labels,omitempty"`
 	Tags                     []GetClusterMasters200ResponseMastersInnerTagsInner        `json:"tags,omitempty"`
 	Enabled                  *bool                                                      `json:"enabled,omitempty"`
-	TagCompliant             NullableString                                             `json:"tagCompliant,omitempty"`
+	TagCompliant             NullableBool                                               `json:"tagCompliant,omitempty"`
 	Containers               []int64                                                    `json:"containers,omitempty"`
 	GuestConsolePreferred    *bool                                                      `json:"guestConsolePreferred,omitempty"`
 	GuestConsoleType         NullableString                                             `json:"guestConsoleType,omitempty"`
@@ -2274,9 +2274,9 @@ func (o *GetClusterMasters200ResponseMastersInner) SetEnabled(v bool) {
 }
 
 // GetTagCompliant returns the TagCompliant field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GetClusterMasters200ResponseMastersInner) GetTagCompliant() string {
+func (o *GetClusterMasters200ResponseMastersInner) GetTagCompliant() bool {
 	if o == nil || IsNil(o.TagCompliant.Get()) {
-		var ret string
+		var ret bool
 		return ret
 	}
 	return *o.TagCompliant.Get()
@@ -2285,7 +2285,7 @@ func (o *GetClusterMasters200ResponseMastersInner) GetTagCompliant() string {
 // GetTagCompliantOk returns a tuple with the TagCompliant field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GetClusterMasters200ResponseMastersInner) GetTagCompliantOk() (*string, bool) {
+func (o *GetClusterMasters200ResponseMastersInner) GetTagCompliantOk() (*bool, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -2301,8 +2301,8 @@ func (o *GetClusterMasters200ResponseMastersInner) IsSetTagCompliant() bool {
 	return false
 }
 
-// SetTagCompliant gets a reference to the given NullableString and assigns it to the TagCompliant field.
-func (o *GetClusterMasters200ResponseMastersInner) SetTagCompliant(v string) {
+// SetTagCompliant gets a reference to the given NullableBool and assigns it to the TagCompliant field.
+func (o *GetClusterMasters200ResponseMastersInner) SetTagCompliant(v bool) {
 	o.TagCompliant.Set(&v)
 }
 

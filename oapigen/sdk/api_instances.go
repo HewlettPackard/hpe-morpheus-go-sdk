@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.1.1
+API version: 9.0.0
 Contact: dev@morpheusdata.com
 */
 
@@ -118,7 +118,7 @@ func (a *InstancesAPIService) AddInstanceExecute(r ApiAddInstanceRequest) (*AddI
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -129,7 +129,7 @@ func (a *InstancesAPIService) AddInstanceExecute(r ApiAddInstanceRequest) (*AddI
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -242,7 +242,7 @@ func (a *InstancesAPIService) BackupInstanceExecute(r ApiBackupInstanceRequest) 
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -253,7 +253,7 @@ func (a *InstancesAPIService) BackupInstanceExecute(r ApiBackupInstanceRequest) 
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -366,7 +366,7 @@ func (a *InstancesAPIService) BackupsInstanceExecute(r ApiBackupsInstanceRequest
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -377,7 +377,7 @@ func (a *InstancesAPIService) BackupsInstanceExecute(r ApiBackupsInstanceRequest
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -490,7 +490,7 @@ func (a *InstancesAPIService) CancelExpirationInstanceExecute(r ApiCancelExpirat
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -501,7 +501,7 @@ func (a *InstancesAPIService) CancelExpirationInstanceExecute(r ApiCancelExpirat
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -614,7 +614,7 @@ func (a *InstancesAPIService) CancelRemovalInstanceExecute(r ApiCancelRemovalIns
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -625,7 +625,7 @@ func (a *InstancesAPIService) CancelRemovalInstanceExecute(r ApiCancelRemovalIns
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -738,7 +738,7 @@ func (a *InstancesAPIService) CancelShutdownInstanceExecute(r ApiCancelShutdownI
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -749,7 +749,7 @@ func (a *InstancesAPIService) CancelShutdownInstanceExecute(r ApiCancelShutdownI
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -870,7 +870,7 @@ func (a *InstancesAPIService) CloneImageInstanceExecute(r ApiCloneImageInstanceR
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -881,7 +881,7 @@ func (a *InstancesAPIService) CloneImageInstanceExecute(r ApiCloneImageInstanceR
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1004,7 +1004,7 @@ func (a *InstancesAPIService) CloneInstanceExecute(r ApiCloneInstanceRequest) (*
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1015,7 +1015,7 @@ func (a *InstancesAPIService) CloneInstanceExecute(r ApiCloneInstanceRequest) (*
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1136,7 +1136,7 @@ func (a *InstancesAPIService) CreateInstanceScheduleExecute(r ApiCreateInstanceS
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1147,7 +1147,7 @@ func (a *InstancesAPIService) CreateInstanceScheduleExecute(r ApiCreateInstanceS
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1260,7 +1260,7 @@ func (a *InstancesAPIService) DeleteAllSnapshotsInstanceExecute(r ApiDeleteAllSn
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1271,7 +1271,7 @@ func (a *InstancesAPIService) DeleteAllSnapshotsInstanceExecute(r ApiDeleteAllSn
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1388,7 +1388,7 @@ func (a *InstancesAPIService) DeleteAllSnapshotsInstanceContainerExecute(r ApiDe
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1399,7 +1399,7 @@ func (a *InstancesAPIService) DeleteAllSnapshotsInstanceContainerExecute(r ApiDe
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1590,7 +1590,7 @@ func (a *InstancesAPIService) DeleteInstanceExecute(r ApiDeleteInstanceRequest) 
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1601,7 +1601,7 @@ func (a *InstancesAPIService) DeleteInstanceExecute(r ApiDeleteInstanceRequest) 
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1718,7 +1718,7 @@ func (a *InstancesAPIService) DeleteInstanceScheduleExecute(r ApiDeleteInstanceS
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1729,7 +1729,7 @@ func (a *InstancesAPIService) DeleteInstanceScheduleExecute(r ApiDeleteInstanceS
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1842,7 +1842,7 @@ func (a *InstancesAPIService) DeleteSnapshotInstanceExecute(r ApiDeleteSnapshotI
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1853,7 +1853,7 @@ func (a *InstancesAPIService) DeleteSnapshotInstanceExecute(r ApiDeleteSnapshotI
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1966,7 +1966,7 @@ func (a *InstancesAPIService) EjectInstanceExecute(r ApiEjectInstanceRequest) (*
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1977,7 +1977,7 @@ func (a *InstancesAPIService) EjectInstanceExecute(r ApiEjectInstanceRequest) (*
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2109,7 +2109,7 @@ func (a *InstancesAPIService) ExecuteInstanceActionExecute(r ApiExecuteInstanceA
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2120,7 +2120,7 @@ func (a *InstancesAPIService) ExecuteInstanceActionExecute(r ApiExecuteInstanceA
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2233,7 +2233,7 @@ func (a *InstancesAPIService) ExtendExpirationInstanceExecute(r ApiExtendExpirat
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2244,7 +2244,7 @@ func (a *InstancesAPIService) ExtendExpirationInstanceExecute(r ApiExtendExpirat
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2357,7 +2357,7 @@ func (a *InstancesAPIService) ExtendShutdownInstanceExecute(r ApiExtendShutdownI
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2368,7 +2368,7 @@ func (a *InstancesAPIService) ExtendShutdownInstanceExecute(r ApiExtendShutdownI
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2481,7 +2481,7 @@ func (a *InstancesAPIService) GetEnvVariablesExecute(r ApiGetEnvVariablesRequest
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2492,7 +2492,7 @@ func (a *InstancesAPIService) GetEnvVariablesExecute(r ApiGetEnvVariablesRequest
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2618,7 +2618,7 @@ func (a *InstancesAPIService) GetInstanceExecute(r ApiGetInstanceRequest) (*GetI
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2629,7 +2629,7 @@ func (a *InstancesAPIService) GetInstanceExecute(r ApiGetInstanceRequest) (*GetI
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2742,7 +2742,7 @@ func (a *InstancesAPIService) GetInstanceActionsExecute(r ApiGetInstanceActionsR
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2753,7 +2753,7 @@ func (a *InstancesAPIService) GetInstanceActionsExecute(r ApiGetInstanceActionsR
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2866,7 +2866,7 @@ func (a *InstancesAPIService) GetInstanceContainersExecute(r ApiGetInstanceConta
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2877,7 +2877,7 @@ func (a *InstancesAPIService) GetInstanceContainersExecute(r ApiGetInstanceConta
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3030,7 +3030,7 @@ func (a *InstancesAPIService) GetInstanceHistoryExecute(r ApiGetInstanceHistoryR
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3041,7 +3041,7 @@ func (a *InstancesAPIService) GetInstanceHistoryExecute(r ApiGetInstanceHistoryR
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3158,7 +3158,7 @@ func (a *InstancesAPIService) GetInstanceScheduleExecute(r ApiGetInstanceSchedul
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3169,7 +3169,7 @@ func (a *InstancesAPIService) GetInstanceScheduleExecute(r ApiGetInstanceSchedul
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3282,7 +3282,7 @@ func (a *InstancesAPIService) GetInstanceSchedulesExecute(r ApiGetInstanceSchedu
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3293,7 +3293,7 @@ func (a *InstancesAPIService) GetInstanceSchedulesExecute(r ApiGetInstanceSchedu
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3412,7 +3412,7 @@ func (a *InstancesAPIService) GetInstanceStatsExecute(r ApiGetInstanceStatsReque
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3423,7 +3423,7 @@ func (a *InstancesAPIService) GetInstanceStatsExecute(r ApiGetInstanceStatsReque
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3536,7 +3536,7 @@ func (a *InstancesAPIService) GetInstanceThresholdExecute(r ApiGetInstanceThresh
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3547,7 +3547,7 @@ func (a *InstancesAPIService) GetInstanceThresholdExecute(r ApiGetInstanceThresh
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3660,7 +3660,7 @@ func (a *InstancesAPIService) GetInstanceTypeProvisioningExecute(r ApiGetInstanc
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3671,7 +3671,7 @@ func (a *InstancesAPIService) GetInstanceTypeProvisioningExecute(r ApiGetInstanc
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3784,7 +3784,7 @@ func (a *InstancesAPIService) GetPrepareApplyInstanceExecute(r ApiGetPrepareAppl
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3795,7 +3795,7 @@ func (a *InstancesAPIService) GetPrepareApplyInstanceExecute(r ApiGetPrepareAppl
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3908,7 +3908,7 @@ func (a *InstancesAPIService) GetSnapshotInstanceExecute(r ApiGetSnapshotInstanc
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3919,7 +3919,7 @@ func (a *InstancesAPIService) GetSnapshotInstanceExecute(r ApiGetSnapshotInstanc
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -4032,7 +4032,7 @@ func (a *InstancesAPIService) GetStateInstanceExecute(r ApiGetStateInstanceReque
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -4043,7 +4043,7 @@ func (a *InstancesAPIService) GetStateInstanceExecute(r ApiGetStateInstanceReque
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -4164,7 +4164,7 @@ func (a *InstancesAPIService) GetValidateApplyInstanceExecute(r ApiGetValidateAp
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -4175,7 +4175,7 @@ func (a *InstancesAPIService) GetValidateApplyInstanceExecute(r ApiGetValidateAp
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -4296,7 +4296,7 @@ func (a *InstancesAPIService) ImportSnapshotInstanceExecute(r ApiImportSnapshotI
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -4307,7 +4307,7 @@ func (a *InstancesAPIService) ImportSnapshotInstanceExecute(r ApiImportSnapshotI
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -4424,7 +4424,7 @@ func (a *InstancesAPIService) LinkedCloneSnapshotInstanceExecute(r ApiLinkedClon
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -4435,7 +4435,7 @@ func (a *InstancesAPIService) LinkedCloneSnapshotInstanceExecute(r ApiLinkedClon
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -4574,7 +4574,7 @@ func (a *InstancesAPIService) ListInstanceServicePlansExecute(r ApiListInstanceS
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -4585,7 +4585,7 @@ func (a *InstancesAPIService) ListInstanceServicePlansExecute(r ApiListInstanceS
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -4796,7 +4796,7 @@ func (a *InstancesAPIService) ListInstanceTypesProvisioningExecute(r ApiListInst
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -4807,7 +4807,7 @@ func (a *InstancesAPIService) ListInstanceTypesProvisioningExecute(r ApiListInst
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -4863,6 +4863,8 @@ type ApiListInstancesRequest struct {
 	allLabels       *string
 	tagsName        *string
 	details         *bool
+	includeTenants  *bool
+	tenantId        *float32
 }
 
 // Maximum number of records to return
@@ -5039,6 +5041,18 @@ func (r ApiListInstancesRequest) Details(details bool) ApiListInstancesRequest {
 	return r
 }
 
+// Optional ability to include all subtenant resources when calling from a master tenant user
+func (r ApiListInstancesRequest) IncludeTenants(includeTenants bool) ApiListInstancesRequest {
+	r.includeTenants = &includeTenants
+	return r
+}
+
+// Filter by Tenant ID. Only available to the master account.
+func (r ApiListInstancesRequest) TenantId(tenantId float32) ApiListInstancesRequest {
+	r.tenantId = &tenantId
+	return r
+}
+
 func (r ApiListInstancesRequest) Execute() (*ListInstances200Response, *http.Response, error) {
 	return r.ApiService.ListInstancesExecute(r)
 }
@@ -5179,6 +5193,15 @@ func (a *InstancesAPIService) ListInstancesExecute(r ApiListInstancesRequest) (*
 		var defaultValue bool = false
 		r.details = &defaultValue
 	}
+	if r.includeTenants != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeTenants", r.includeTenants, "form", "")
+	} else {
+		var defaultValue bool = false
+		r.includeTenants = &defaultValue
+	}
+	if r.tenantId != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "tenantId", r.tenantId, "form", "")
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -5218,7 +5241,7 @@ func (a *InstancesAPIService) ListInstancesExecute(r ApiListInstancesRequest) (*
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -5229,7 +5252,7 @@ func (a *InstancesAPIService) ListInstancesExecute(r ApiListInstancesRequest) (*
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -5342,7 +5365,7 @@ func (a *InstancesAPIService) ListSecurityGroupsInstanceExecute(r ApiListSecurit
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -5353,7 +5376,7 @@ func (a *InstancesAPIService) ListSecurityGroupsInstanceExecute(r ApiListSecurit
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -5466,7 +5489,7 @@ func (a *InstancesAPIService) LockInstanceExecute(r ApiLockInstanceRequest) (*Lo
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -5477,7 +5500,7 @@ func (a *InstancesAPIService) LockInstanceExecute(r ApiLockInstanceRequest) (*Lo
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -5507,7 +5530,7 @@ type ApiRefreshStateInstanceRequest struct {
 	id         int64
 }
 
-func (r ApiRefreshStateInstanceRequest) Execute() (*RefreshStateInstance200Response, *http.Response, error) {
+func (r ApiRefreshStateInstanceRequest) Execute() (*ContainersAttachFloatingIp200Response, *http.Response, error) {
 	return r.ApiService.RefreshStateInstanceExecute(r)
 }
 
@@ -5530,13 +5553,13 @@ func (a *InstancesAPIService) RefreshStateInstance(ctx context.Context, id int64
 
 // Execute executes the request
 //
-//	@return RefreshStateInstance200Response
-func (a *InstancesAPIService) RefreshStateInstanceExecute(r ApiRefreshStateInstanceRequest) (*RefreshStateInstance200Response, *http.Response, error) {
+//	@return ContainersAttachFloatingIp200Response
+func (a *InstancesAPIService) RefreshStateInstanceExecute(r ApiRefreshStateInstanceRequest) (*ContainersAttachFloatingIp200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *RefreshStateInstance200Response
+		localVarReturnValue *ContainersAttachFloatingIp200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InstancesAPIService.RefreshStateInstance")
@@ -5590,7 +5613,7 @@ func (a *InstancesAPIService) RefreshStateInstanceExecute(r ApiRefreshStateInsta
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -5601,7 +5624,7 @@ func (a *InstancesAPIService) RefreshStateInstanceExecute(r ApiRefreshStateInsta
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -5718,7 +5741,7 @@ func (a *InstancesAPIService) RemoveInstancesFromControlExecute(r ApiRemoveInsta
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -5729,7 +5752,7 @@ func (a *InstancesAPIService) RemoveInstancesFromControlExecute(r ApiRemoveInsta
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -5850,7 +5873,7 @@ func (a *InstancesAPIService) ResizeInstanceExecute(r ApiResizeInstanceRequest) 
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -5861,7 +5884,7 @@ func (a *InstancesAPIService) ResizeInstanceExecute(r ApiResizeInstanceRequest) 
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -5987,7 +6010,7 @@ func (a *InstancesAPIService) RestartInstanceExecute(r ApiRestartInstanceRequest
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -5998,7 +6021,7 @@ func (a *InstancesAPIService) RestartInstanceExecute(r ApiRestartInstanceRequest
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -6115,7 +6138,7 @@ func (a *InstancesAPIService) RevertSnapshotInstanceExecute(r ApiRevertSnapshotI
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -6126,7 +6149,7 @@ func (a *InstancesAPIService) RevertSnapshotInstanceExecute(r ApiRevertSnapshotI
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -6267,7 +6290,7 @@ func (a *InstancesAPIService) RunWorkflowInstanceExecute(r ApiRunWorkflowInstanc
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -6278,7 +6301,7 @@ func (a *InstancesAPIService) RunWorkflowInstanceExecute(r ApiRunWorkflowInstanc
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -6399,7 +6422,7 @@ func (a *InstancesAPIService) SetApplyInstanceExecute(r ApiSetApplyInstanceReque
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -6410,7 +6433,7 @@ func (a *InstancesAPIService) SetApplyInstanceExecute(r ApiSetApplyInstanceReque
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -6531,7 +6554,7 @@ func (a *InstancesAPIService) SetInstanceSecurityGroupsExecute(r ApiSetInstanceS
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -6542,7 +6565,7 @@ func (a *InstancesAPIService) SetInstanceSecurityGroupsExecute(r ApiSetInstanceS
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -6663,7 +6686,7 @@ func (a *InstancesAPIService) SnapshotInstanceExecute(r ApiSnapshotInstanceReque
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -6674,7 +6697,7 @@ func (a *InstancesAPIService) SnapshotInstanceExecute(r ApiSnapshotInstanceReque
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -6787,7 +6810,7 @@ func (a *InstancesAPIService) SnapshotsInstanceExecute(r ApiSnapshotsInstanceReq
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -6798,7 +6821,7 @@ func (a *InstancesAPIService) SnapshotsInstanceExecute(r ApiSnapshotsInstanceReq
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -6924,7 +6947,7 @@ func (a *InstancesAPIService) StartInstanceExecute(r ApiStartInstanceRequest) (*
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -6935,7 +6958,7 @@ func (a *InstancesAPIService) StartInstanceExecute(r ApiStartInstanceRequest) (*
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -7074,7 +7097,7 @@ func (a *InstancesAPIService) StopInstanceExecute(r ApiStopInstanceRequest) (*St
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -7085,7 +7108,7 @@ func (a *InstancesAPIService) StopInstanceExecute(r ApiStopInstanceRequest) (*St
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -7198,7 +7221,7 @@ func (a *InstancesAPIService) SuspendInstanceExecute(r ApiSuspendInstanceRequest
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -7209,7 +7232,7 @@ func (a *InstancesAPIService) SuspendInstanceExecute(r ApiSuspendInstanceRequest
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -7322,7 +7345,7 @@ func (a *InstancesAPIService) UnlockInstanceExecute(r ApiUnlockInstanceRequest) 
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -7333,7 +7356,7 @@ func (a *InstancesAPIService) UnlockInstanceExecute(r ApiUnlockInstanceRequest) 
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -7454,7 +7477,7 @@ func (a *InstancesAPIService) UpdateInstanceExecute(r ApiUpdateInstanceRequest) 
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -7465,7 +7488,7 @@ func (a *InstancesAPIService) UpdateInstanceExecute(r ApiUpdateInstanceRequest) 
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -7590,7 +7613,7 @@ func (a *InstancesAPIService) UpdateInstanceNetworkInterfaceExecute(r ApiUpdateI
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -7601,7 +7624,7 @@ func (a *InstancesAPIService) UpdateInstanceNetworkInterfaceExecute(r ApiUpdateI
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -7726,7 +7749,7 @@ func (a *InstancesAPIService) UpdateInstanceScheduleExecute(r ApiUpdateInstanceS
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -7737,7 +7760,7 @@ func (a *InstancesAPIService) UpdateInstanceScheduleExecute(r ApiUpdateInstanceS
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -7858,7 +7881,7 @@ func (a *InstancesAPIService) UpdateInstanceThresholdExecute(r ApiUpdateInstance
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -7869,7 +7892,7 @@ func (a *InstancesAPIService) UpdateInstanceThresholdExecute(r ApiUpdateInstance
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err

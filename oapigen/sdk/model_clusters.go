@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.1.1
+API version: 9.0.0
 Contact: dev@morpheusdata.com
 */
 
@@ -21,60 +21,62 @@ var _ MappedNullable = &Clusters{}
 
 // Clusters struct for Clusters
 type Clusters struct {
-	Id                    *int64                   `json:"id,omitempty"`
-	Name                  *string                  `json:"name,omitempty"`
-	Code                  NullableString           `json:"code,omitempty"`
-	Category              NullableString           `json:"category,omitempty"`
-	Visibility            *string                  `json:"visibility,omitempty"`
-	Description           NullableString           `json:"description,omitempty"`
-	Location              NullableString           `json:"location,omitempty"`
-	Enabled               *bool                    `json:"enabled,omitempty"`
-	ServiceUrl            NullableString           `json:"serviceUrl,omitempty"`
-	ServiceHost           NullableString           `json:"serviceHost,omitempty"`
-	ServicePath           NullableString           `json:"servicePath,omitempty"`
-	ServiceHostname       NullableString           `json:"serviceHostname,omitempty"`
-	ServicePort           *int64                   `json:"servicePort,omitempty"`
-	ServiceUsername       NullableString           `json:"serviceUsername,omitempty"`
-	ServicePassword       NullableString           `json:"servicePassword,omitempty"`
-	ServicePasswordHash   NullableString           `json:"servicePasswordHash,omitempty"`
-	ServiceToken          *string                  `json:"serviceToken,omitempty"`
-	ServiceTokenHash      *string                  `json:"serviceTokenHash,omitempty"`
-	ServiceAccess         *string                  `json:"serviceAccess,omitempty"`
-	ServiceAccessHash     *string                  `json:"serviceAccessHash,omitempty"`
-	ServiceCert           NullableString           `json:"serviceCert,omitempty"`
-	ServiceCertHash       NullableString           `json:"serviceCertHash,omitempty"`
-	ServiceVersion        *string                  `json:"serviceVersion,omitempty"`
-	SearchDomains         NullableString           `json:"searchDomains,omitempty"`
-	EnableInternalDns     *bool                    `json:"enableInternalDns,omitempty"`
-	InternalId            NullableString           `json:"internalId,omitempty"`
-	ExternalId            NullableString           `json:"externalId,omitempty"`
-	DatacenterId          NullableString           `json:"datacenterId,omitempty"`
-	Status                *string                  `json:"status,omitempty"`
-	StatusDate            *time.Time               `json:"statusDate,omitempty"`
-	StatusMessage         *string                  `json:"statusMessage,omitempty"`
-	InventoryLevel        *string                  `json:"inventoryLevel,omitempty"`
-	LastSync              *time.Time               `json:"lastSync,omitempty"`
-	NextRunDate           *time.Time               `json:"nextRunDate,omitempty"`
-	LastSyncDuration      *int64                   `json:"lastSyncDuration,omitempty"`
-	DateCreated           *time.Time               `json:"dateCreated,omitempty"`
-	LastUpdated           *time.Time               `json:"lastUpdated,omitempty"`
-	Managed               *bool                    `json:"managed,omitempty"`
-	Labels                []string                 `json:"labels,omitempty"`
-	AutoRecoverPowerState *bool                    `json:"autoRecoverPowerState,omitempty"`
-	ServiceEntry          NullableString           `json:"serviceEntry,omitempty"`
-	CreatedBy             *ClustersCreatedBy       `json:"createdBy,omitempty"`
-	UserGroup             NullableString           `json:"userGroup,omitempty"`
-	Layout                *ClustersLayout          `json:"layout,omitempty"`
-	Owner                 *ClustersOwner           `json:"owner,omitempty"`
-	Servers               []ClustersServersInner   `json:"servers,omitempty"`
-	Accounts              []map[string]interface{} `json:"accounts,omitempty"`
-	Integrations          []map[string]interface{} `json:"integrations,omitempty"`
-	Site                  *ClustersSite            `json:"site,omitempty"`
-	Type                  *ClustersType            `json:"type,omitempty"`
-	Zone                  *ClustersZone            `json:"zone,omitempty"`
-	WorkerStats           *ClustersWorkerStats     `json:"workerStats,omitempty"`
-	Config                map[string]interface{}   `json:"config,omitempty"`
-	AdditionalProperties  map[string]interface{}   `json:",remain"`
+	Id                    *int64         `json:"id,omitempty"`
+	Name                  *string        `json:"name,omitempty"`
+	Code                  NullableString `json:"code,omitempty"`
+	Category              NullableString `json:"category,omitempty"`
+	Visibility            *string        `json:"visibility,omitempty"`
+	Description           NullableString `json:"description,omitempty"`
+	Location              NullableString `json:"location,omitempty"`
+	Enabled               *bool          `json:"enabled,omitempty"`
+	ServiceUrl            NullableString `json:"serviceUrl,omitempty"`
+	ServiceHost           NullableString `json:"serviceHost,omitempty"`
+	ServicePath           NullableString `json:"servicePath,omitempty"`
+	ServiceHostname       NullableString `json:"serviceHostname,omitempty"`
+	ServicePort           *int64         `json:"servicePort,omitempty"`
+	ServiceUsername       NullableString `json:"serviceUsername,omitempty"`
+	ServicePassword       NullableString `json:"servicePassword,omitempty"`
+	ServicePasswordHash   NullableString `json:"servicePasswordHash,omitempty"`
+	ServiceToken          *string        `json:"serviceToken,omitempty"`
+	ServiceTokenHash      *string        `json:"serviceTokenHash,omitempty"`
+	ServiceAccess         *string        `json:"serviceAccess,omitempty"`
+	ServiceAccessHash     *string        `json:"serviceAccessHash,omitempty"`
+	ServiceCert           NullableString `json:"serviceCert,omitempty"`
+	ServiceCertHash       NullableString `json:"serviceCertHash,omitempty"`
+	ServiceVersion        *string        `json:"serviceVersion,omitempty"`
+	SearchDomains         NullableString `json:"searchDomains,omitempty"`
+	EnableInternalDns     *bool          `json:"enableInternalDns,omitempty"`
+	InternalId            NullableString `json:"internalId,omitempty"`
+	ExternalId            NullableString `json:"externalId,omitempty"`
+	DatacenterId          NullableString `json:"datacenterId,omitempty"`
+	Status                *string        `json:"status,omitempty"`
+	StatusDate            *time.Time     `json:"statusDate,omitempty"`
+	StatusMessage         *string        `json:"statusMessage,omitempty"`
+	InventoryLevel        *string        `json:"inventoryLevel,omitempty"`
+	LastSync              *time.Time     `json:"lastSync,omitempty"`
+	NextRunDate           *time.Time     `json:"nextRunDate,omitempty"`
+	LastSyncDuration      *int64         `json:"lastSyncDuration,omitempty"`
+	DateCreated           *time.Time     `json:"dateCreated,omitempty"`
+	LastUpdated           *time.Time     `json:"lastUpdated,omitempty"`
+	Managed               *bool          `json:"managed,omitempty"`
+	Labels                []string       `json:"labels,omitempty"`
+	AutoRecoverPowerState *bool          `json:"autoRecoverPowerState,omitempty"`
+	// Cluster CPU placement mode
+	CpuPlacementMode     NullableString           `json:"cpuPlacementMode,omitempty"`
+	ServiceEntry         NullableString           `json:"serviceEntry,omitempty"`
+	CreatedBy            *ClustersCreatedBy       `json:"createdBy,omitempty"`
+	UserGroup            NullableString           `json:"userGroup,omitempty"`
+	Layout               *ClustersLayout          `json:"layout,omitempty"`
+	Owner                *ClustersOwner           `json:"owner,omitempty"`
+	Servers              []ClustersServersInner   `json:"servers,omitempty"`
+	Accounts             []map[string]interface{} `json:"accounts,omitempty"`
+	Integrations         []map[string]interface{} `json:"integrations,omitempty"`
+	Site                 *ClustersSite            `json:"site,omitempty"`
+	Type                 *ClustersType            `json:"type,omitempty"`
+	Zone                 *ClustersZone            `json:"zone,omitempty"`
+	WorkerStats          *ClustersWorkerStats     `json:"workerStats,omitempty"`
+	Config               map[string]interface{}   `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}   `json:",remain"`
 }
 
 type _Clusters Clusters
@@ -1563,6 +1565,49 @@ func (o *Clusters) SetAutoRecoverPowerState(v bool) {
 	o.AutoRecoverPowerState = &v
 }
 
+// GetCpuPlacementMode returns the CpuPlacementMode field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *Clusters) GetCpuPlacementMode() string {
+	if o == nil || IsNil(o.CpuPlacementMode.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.CpuPlacementMode.Get()
+}
+
+// GetCpuPlacementModeOk returns a tuple with the CpuPlacementMode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Clusters) GetCpuPlacementModeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.CpuPlacementMode.Get(), o.CpuPlacementMode.IsSet()
+}
+
+// IsSetCpuPlacementMode returns a boolean if a field has been set.
+func (o *Clusters) IsSetCpuPlacementMode() bool {
+	if o != nil && o.CpuPlacementMode.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetCpuPlacementMode gets a reference to the given NullableString and assigns it to the CpuPlacementMode field.
+func (o *Clusters) SetCpuPlacementMode(v string) {
+	o.CpuPlacementMode.Set(&v)
+}
+
+// SetCpuPlacementModeNil sets the value for CpuPlacementMode to be an explicit nil
+func (o *Clusters) SetCpuPlacementModeNil() {
+	o.CpuPlacementMode.Set(nil)
+}
+
+// UnsetCpuPlacementMode ensures that no value is present for CpuPlacementMode, not even an explicit nil
+func (o *Clusters) UnsetCpuPlacementMode() {
+	o.CpuPlacementMode.Unset()
+}
+
 // GetServiceEntry returns the ServiceEntry field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Clusters) GetServiceEntry() string {
 	if o == nil || IsNil(o.ServiceEntry.Get()) {
@@ -2130,6 +2175,9 @@ func (o Clusters) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.AutoRecoverPowerState) {
 		toSerialize["autoRecoverPowerState"] = o.AutoRecoverPowerState
+	}
+	if o.CpuPlacementMode.IsSet() {
+		toSerialize["cpuPlacementMode"] = o.CpuPlacementMode.Get()
 	}
 	if o.ServiceEntry.IsSet() {
 		toSerialize["serviceEntry"] = o.ServiceEntry.Get()

@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.1.1
+API version: 9.0.0
 Contact: dev@morpheusdata.com
 */
 
@@ -21,7 +21,7 @@ var _ MappedNullable = &ListHistory200Response{}
 // ListHistory200Response struct for ListHistory200Response
 type ListHistory200Response struct {
 	Processes            []ListHistory200ResponseAllOfProcessesInner `json:"processes,omitempty"`
-	Meta                 *ListAlerts200ResponseAllOfMeta             `json:"meta,omitempty"`
+	Meta                 *ListApprovals200ResponseAllOfMeta          `json:"meta,omitempty"`
 	AdditionalProperties map[string]interface{}                      `json:",remain"`
 }
 
@@ -77,9 +77,9 @@ func (o *ListHistory200Response) SetProcesses(v []ListHistory200ResponseAllOfPro
 }
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListHistory200Response) GetMeta() ListAlerts200ResponseAllOfMeta {
+func (o *ListHistory200Response) GetMeta() ListApprovals200ResponseAllOfMeta {
 	if o == nil || IsNil(o.Meta) {
-		var ret ListAlerts200ResponseAllOfMeta
+		var ret ListApprovals200ResponseAllOfMeta
 		return ret
 	}
 	return *o.Meta
@@ -87,7 +87,7 @@ func (o *ListHistory200Response) GetMeta() ListAlerts200ResponseAllOfMeta {
 
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListHistory200Response) GetMetaOk() (*ListAlerts200ResponseAllOfMeta, bool) {
+func (o *ListHistory200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool) {
 	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
@@ -103,8 +103,8 @@ func (o *ListHistory200Response) IsSetMeta() bool {
 	return false
 }
 
-// SetMeta gets a reference to the given ListAlerts200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListHistory200Response) SetMeta(v ListAlerts200ResponseAllOfMeta) {
+// SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.
+func (o *ListHistory200Response) SetMeta(v ListApprovals200ResponseAllOfMeta) {
 	o.Meta = &v
 }
 

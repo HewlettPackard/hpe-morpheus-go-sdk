@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Evars** | Pointer to [**[]InstanceCreateEvarsInner**](InstanceCreateEvarsInner.md) | Environment Variables, an array of objects that have name and value. | [optional] 
 **Copies** | Pointer to **int64** | Number of copies to provision. | [optional] [default to 1]
 **LayoutSize** | Pointer to **int64** | Apply a multiply factor of containers/vms within the instance. | [optional] [default to 1]
-**ServicePlanOptions** | Pointer to **map[string]interface{}** | Map of custom options depending on selected service plan. | [optional] 
+**ServicePlanOptions** | Pointer to [**InstanceCreateServicePlanOptions**](InstanceCreateServicePlanOptions.md) |  | [optional] 
 **SecurityGroups** | Pointer to [**[]InstanceCreateSecurityGroupsInner**](InstanceCreateSecurityGroupsInner.md) | Key for security group configuration. It should be passed as an array of objects containing the id of the security group to assign the instance to. | [optional] 
 **Volumes** | Pointer to [**[]InstanceCreateVolumesInner**](InstanceCreateVolumesInner.md) | The (optional) volumes parameter is for LV configuration, can create additional LVs at provision It should be passed as an array of | [optional] 
 **NetworkInterfaces** | Pointer to [**[]InstancesNetworkInterfaces6**](InstancesNetworkInterfaces6.md) | The networkInterfaces parameter is for network configuration.  The Options API &#x60;/api/options/zoneNetworkOptions?zoneId&#x3D;5&amp;provisionTypeId&#x3D;10&#x60; can be used to see which options are available.  | [optional] 
@@ -163,20 +163,20 @@ HasLayoutSize returns a boolean if a field has been set.
 
 ### GetServicePlanOptions
 
-`func (o *InstanceCreate) GetServicePlanOptions() map[string]interface{}`
+`func (o *InstanceCreate) GetServicePlanOptions() InstanceCreateServicePlanOptions`
 
 GetServicePlanOptions returns the ServicePlanOptions field if non-nil, zero value otherwise.
 
 ### GetServicePlanOptionsOk
 
-`func (o *InstanceCreate) GetServicePlanOptionsOk() (*map[string]interface{}, bool)`
+`func (o *InstanceCreate) GetServicePlanOptionsOk() (*InstanceCreateServicePlanOptions, bool)`
 
 GetServicePlanOptionsOk returns a tuple with the ServicePlanOptions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServicePlanOptions
 
-`func (o *InstanceCreate) SetServicePlanOptions(v map[string]interface{})`
+`func (o *InstanceCreate) SetServicePlanOptions(v InstanceCreateServicePlanOptions)`
 
 SetServicePlanOptions sets ServicePlanOptions field to given value.
 

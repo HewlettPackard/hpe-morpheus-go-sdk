@@ -67,7 +67,7 @@ Name | Type | Description | Notes
 **Labels** | Pointer to **[]string** |  | [optional] 
 **Tags** | Pointer to [**[]ClusterMastersTagsInner**](ClusterMastersTagsInner.md) |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**TagCompliant** | Pointer to **NullableString** |  | [optional] 
+**TagCompliant** | Pointer to **NullableBool** |  | [optional] 
 **Containers** | Pointer to **[]int64** |  | [optional] 
 **GuestConsolePreferred** | Pointer to **bool** |  | [optional] 
 **GuestConsoleType** | Pointer to **NullableString** |  | [optional] 
@@ -1782,20 +1782,20 @@ HasEnabled returns a boolean if a field has been set.
 
 ### GetTagCompliant
 
-`func (o *ClusterMasters) GetTagCompliant() string`
+`func (o *ClusterMasters) GetTagCompliant() bool`
 
 GetTagCompliant returns the TagCompliant field if non-nil, zero value otherwise.
 
 ### GetTagCompliantOk
 
-`func (o *ClusterMasters) GetTagCompliantOk() (*string, bool)`
+`func (o *ClusterMasters) GetTagCompliantOk() (*bool, bool)`
 
 GetTagCompliantOk returns a tuple with the TagCompliant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTagCompliant
 
-`func (o *ClusterMasters) SetTagCompliant(v string)`
+`func (o *ClusterMasters) SetTagCompliant(v bool)`
 
 SetTagCompliant sets TagCompliant field to given value.
 

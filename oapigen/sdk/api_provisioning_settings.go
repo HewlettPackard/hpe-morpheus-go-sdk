@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.1.1
+API version: 9.0.0
 Contact: dev@morpheusdata.com
 */
 
@@ -108,7 +108,7 @@ func (a *ProvisioningSettingsAPIService) ListProvisioningSettingsExecute(r ApiLi
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -119,7 +119,7 @@ func (a *ProvisioningSettingsAPIService) ListProvisioningSettingsExecute(r ApiLi
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -154,7 +154,7 @@ func (r ApiUpdateProvisioningSettingsRequest) UpdateProvisioningSettingsRequest(
 	return r
 }
 
-func (r ApiUpdateProvisioningSettingsRequest) Execute() (*UpdateProvisioningSettings200Response, *http.Response, error) {
+func (r ApiUpdateProvisioningSettingsRequest) Execute() (*SetApplianceSettingsMaintenanceMode200Response, *http.Response, error) {
 	return r.ApiService.UpdateProvisioningSettingsExecute(r)
 }
 
@@ -175,13 +175,13 @@ func (a *ProvisioningSettingsAPIService) UpdateProvisioningSettings(ctx context.
 
 // Execute executes the request
 //
-//	@return UpdateProvisioningSettings200Response
-func (a *ProvisioningSettingsAPIService) UpdateProvisioningSettingsExecute(r ApiUpdateProvisioningSettingsRequest) (*UpdateProvisioningSettings200Response, *http.Response, error) {
+//	@return SetApplianceSettingsMaintenanceMode200Response
+func (a *ProvisioningSettingsAPIService) UpdateProvisioningSettingsExecute(r ApiUpdateProvisioningSettingsRequest) (*SetApplianceSettingsMaintenanceMode200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *UpdateProvisioningSettings200Response
+		localVarReturnValue *SetApplianceSettingsMaintenanceMode200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProvisioningSettingsAPIService.UpdateProvisioningSettings")
@@ -236,7 +236,7 @@ func (a *ProvisioningSettingsAPIService) UpdateProvisioningSettingsExecute(r Api
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -247,7 +247,7 @@ func (a *ProvisioningSettingsAPIService) UpdateProvisioningSettingsExecute(r Api
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err

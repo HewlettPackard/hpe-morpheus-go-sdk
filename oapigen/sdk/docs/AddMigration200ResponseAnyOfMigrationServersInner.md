@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Status** | Pointer to **string** | Migration Server Status. The possible status values are: &#39;pending&#39;, &#39;precheck&#39;, &#39;running&#39;, &#39;failed&#39;, &#39;completed&#39; | [optional] 
 **StatusMessage** | Pointer to **NullableString** | Status Message | [optional] 
 **SourceServer** | Pointer to [**AddMigration200ResponseAnyOfMigrationServersInnerSourceServer**](AddMigration200ResponseAnyOfMigrationServersInnerSourceServer.md) |  | [optional] 
-**DestinationServer** | Pointer to **string** | Destination Server | [optional] 
+**DestinationServer** | Pointer to [**AddMigration200ResponseAnyOfMigrationServersInnerDestinationServer**](AddMigration200ResponseAnyOfMigrationServersInnerDestinationServer.md) |  | [optional] 
 
 ## Methods
 
@@ -115,20 +115,20 @@ HasSourceServer returns a boolean if a field has been set.
 
 ### GetDestinationServer
 
-`func (o *AddMigration200ResponseAnyOfMigrationServersInner) GetDestinationServer() string`
+`func (o *AddMigration200ResponseAnyOfMigrationServersInner) GetDestinationServer() AddMigration200ResponseAnyOfMigrationServersInnerDestinationServer`
 
 GetDestinationServer returns the DestinationServer field if non-nil, zero value otherwise.
 
 ### GetDestinationServerOk
 
-`func (o *AddMigration200ResponseAnyOfMigrationServersInner) GetDestinationServerOk() (*string, bool)`
+`func (o *AddMigration200ResponseAnyOfMigrationServersInner) GetDestinationServerOk() (*AddMigration200ResponseAnyOfMigrationServersInnerDestinationServer, bool)`
 
 GetDestinationServerOk returns a tuple with the DestinationServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDestinationServer
 
-`func (o *AddMigration200ResponseAnyOfMigrationServersInner) SetDestinationServer(v string)`
+`func (o *AddMigration200ResponseAnyOfMigrationServersInner) SetDestinationServer(v AddMigration200ResponseAnyOfMigrationServersInnerDestinationServer)`
 
 SetDestinationServer sets DestinationServer field to given value.
 

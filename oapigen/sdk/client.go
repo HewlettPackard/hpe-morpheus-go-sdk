@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.1.1
+API version: 9.0.0
 Contact: dev@morpheusdata.com
 */
 
@@ -41,7 +41,7 @@ var (
 	queryDescape    = strings.NewReplacer("%5B", "[", "%5D", "]")
 )
 
-// APIClient manages communication with the Morpheus API API v8.1.1
+// APIClient manages communication with the Morpheus API API v9.0.0
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
 	cfg    *Configuration
@@ -193,9 +193,19 @@ type APIClient struct {
 
 	StorageAPI *StorageAPIService
 
+	SupportBundlesAPI *SupportBundlesAPIService
+
+	SystemsAPI *SystemsAPIService
+
 	TenantsAPI *TenantsAPIService
 
+	TokensAPI *TokensAPIService
+
 	UsageAPI *UsageAPIService
+
+	UserGroupsAPI *UserGroupsAPIService
+
+	UserSettingsAPI *UserSettingsAPIService
 
 	UsersAPI *UsersAPIService
 
@@ -294,8 +304,13 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.ServicePlansAPI = (*ServicePlansAPIService)(&c.common)
 	c.SetupAPI = (*SetupAPIService)(&c.common)
 	c.StorageAPI = (*StorageAPIService)(&c.common)
+	c.SupportBundlesAPI = (*SupportBundlesAPIService)(&c.common)
+	c.SystemsAPI = (*SystemsAPIService)(&c.common)
 	c.TenantsAPI = (*TenantsAPIService)(&c.common)
+	c.TokensAPI = (*TokensAPIService)(&c.common)
 	c.UsageAPI = (*UsageAPIService)(&c.common)
+	c.UserGroupsAPI = (*UserGroupsAPIService)(&c.common)
+	c.UserSettingsAPI = (*UserSettingsAPIService)(&c.common)
 	c.UsersAPI = (*UsersAPIService)(&c.common)
 	c.VDIAPI = (*VDIAPIService)(&c.common)
 	c.WhitelabelSettingsAPI = (*WhitelabelSettingsAPIService)(&c.common)

@@ -74,7 +74,7 @@ Other parameters are passed through a pointer to a apiListApplianceSettingsReque
 
 ## Reindex
 
-> Reindex200Response Reindex(ctx).Execute()
+> SetApplianceSettingsMaintenanceMode200Response Reindex(ctx).Execute()
 
 Reindex Search
 
@@ -101,7 +101,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ApplianceSettingsAPI.Reindex``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Reindex`: Reindex200Response
+	// response from `Reindex`: SetApplianceSettingsMaintenanceMode200Response
 	fmt.Fprintf(os.Stdout, "Response from `ApplianceSettingsAPI.Reindex`: %v\n", resp)
 }
 ```
@@ -117,7 +117,7 @@ Other parameters are passed through a pointer to a apiReindexRequest struct via 
 
 ### Return type
 
-[**Reindex200Response**](Reindex200Response.md)
+[**SetApplianceSettingsMaintenanceMode200Response**](SetApplianceSettingsMaintenanceMode200Response.md)
 
 ### Authorization
 

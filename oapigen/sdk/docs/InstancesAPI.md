@@ -2638,7 +2638,7 @@ Name | Type | Description  | Notes
 
 ## ListInstances
 
-> ListInstances200Response ListInstances(ctx).Max(max).Offset(offset).Name(name).Phrase(phrase).ZoneId(zoneId).SiteId(siteId).PlanId(planId).ServerId(serverId).ParentServerId(parentServerId).InstanceType(instanceType).LastUpdated(lastUpdated).CreatedBy(createdBy).AgentInstalled(agentInstalled).Status(status).Environment(environment).ShowDeleted(showDeleted).Deleted(deleted).ExpireDate(expireDate).ExpireDateMin(expireDateMin).ExpireDays(expireDays).ExpireDaysMin(expireDaysMin).ShutdownDate(shutdownDate).ShutdownDateMin(shutdownDateMin).ShutdownDays(shutdownDays).ShutdownDaysMin(shutdownDaysMin).Labels(labels).AllLabels(allLabels).TagsName(tagsName).Details(details).Execute()
+> ListInstances200Response ListInstances(ctx).Max(max).Offset(offset).Name(name).Phrase(phrase).ZoneId(zoneId).SiteId(siteId).PlanId(planId).ServerId(serverId).ParentServerId(parentServerId).InstanceType(instanceType).LastUpdated(lastUpdated).CreatedBy(createdBy).AgentInstalled(agentInstalled).Status(status).Environment(environment).ShowDeleted(showDeleted).Deleted(deleted).ExpireDate(expireDate).ExpireDateMin(expireDateMin).ExpireDays(expireDays).ExpireDaysMin(expireDaysMin).ShutdownDate(shutdownDate).ShutdownDateMin(shutdownDateMin).ShutdownDays(shutdownDays).ShutdownDaysMin(shutdownDaysMin).Labels(labels).AllLabels(allLabels).TagsName(tagsName).Details(details).IncludeTenants(includeTenants).TenantId(tenantId).Execute()
 
 Get All Instances
 
@@ -2687,10 +2687,12 @@ func main() {
 	allLabels := "allLabels_example" // string | Filter by label(s), matches records that contain all of the specified labels (optional)
 	tagsName := "value" // string | Filter by tags (metadata). This allows filtering by a tag name and value(s)  (optional)
 	details := true // bool | Include details=true to return more details about the instance and its container(s) and server(s), ie. instancePrice, apps, powerSchedule, isScalable, instanceThreshold, containerDetails.server. (optional) (default to false)
+	includeTenants := true // bool | Optional ability to include all subtenant resources when calling from a master tenant user (optional) (default to false)
+	tenantId := float32(3) // float32 | Filter by Tenant ID. Only available to the master account. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.InstancesAPI.ListInstances(context.Background()).Max(max).Offset(offset).Name(name).Phrase(phrase).ZoneId(zoneId).SiteId(siteId).PlanId(planId).ServerId(serverId).ParentServerId(parentServerId).InstanceType(instanceType).LastUpdated(lastUpdated).CreatedBy(createdBy).AgentInstalled(agentInstalled).Status(status).Environment(environment).ShowDeleted(showDeleted).Deleted(deleted).ExpireDate(expireDate).ExpireDateMin(expireDateMin).ExpireDays(expireDays).ExpireDaysMin(expireDaysMin).ShutdownDate(shutdownDate).ShutdownDateMin(shutdownDateMin).ShutdownDays(shutdownDays).ShutdownDaysMin(shutdownDaysMin).Labels(labels).AllLabels(allLabels).TagsName(tagsName).Details(details).Execute()
+	resp, r, err := apiClient.InstancesAPI.ListInstances(context.Background()).Max(max).Offset(offset).Name(name).Phrase(phrase).ZoneId(zoneId).SiteId(siteId).PlanId(planId).ServerId(serverId).ParentServerId(parentServerId).InstanceType(instanceType).LastUpdated(lastUpdated).CreatedBy(createdBy).AgentInstalled(agentInstalled).Status(status).Environment(environment).ShowDeleted(showDeleted).Deleted(deleted).ExpireDate(expireDate).ExpireDateMin(expireDateMin).ExpireDays(expireDays).ExpireDaysMin(expireDaysMin).ShutdownDate(shutdownDate).ShutdownDateMin(shutdownDateMin).ShutdownDays(shutdownDays).ShutdownDaysMin(shutdownDaysMin).Labels(labels).AllLabels(allLabels).TagsName(tagsName).Details(details).IncludeTenants(includeTenants).TenantId(tenantId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `InstancesAPI.ListInstances``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2740,6 +2742,8 @@ Name | Type | Description  | Notes
  **allLabels** | **string** | Filter by label(s), matches records that contain all of the specified labels | 
  **tagsName** | **string** | Filter by tags (metadata). This allows filtering by a tag name and value(s)  | 
  **details** | **bool** | Include details&#x3D;true to return more details about the instance and its container(s) and server(s), ie. instancePrice, apps, powerSchedule, isScalable, instanceThreshold, containerDetails.server. | [default to false]
+ **includeTenants** | **bool** | Optional ability to include all subtenant resources when calling from a master tenant user | [default to false]
+ **tenantId** | **float32** | Filter by Tenant ID. Only available to the master account. | 
 
 ### Return type
 
@@ -2901,7 +2905,7 @@ Name | Type | Description  | Notes
 
 ## RefreshStateInstance
 
-> RefreshStateInstance200Response RefreshStateInstance(ctx, id).Execute()
+> ContainersAttachFloatingIp200Response RefreshStateInstance(ctx, id).Execute()
 
 Refresh State of an Instance
 
@@ -2929,7 +2933,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `InstancesAPI.RefreshStateInstance``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `RefreshStateInstance`: RefreshStateInstance200Response
+	// response from `RefreshStateInstance`: ContainersAttachFloatingIp200Response
 	fmt.Fprintf(os.Stdout, "Response from `InstancesAPI.RefreshStateInstance`: %v\n", resp)
 }
 ```
@@ -2953,7 +2957,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RefreshStateInstance200Response**](RefreshStateInstance200Response.md)
+[**ContainersAttachFloatingIp200Response**](ContainersAttachFloatingIp200Response.md)
 
 ### Authorization
 

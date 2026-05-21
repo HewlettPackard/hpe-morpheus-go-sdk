@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **Labels** | Pointer to **[]string** |  | [optional] 
 **Location** | Pointer to **NullableString** |  | [optional] 
 **AccountId** | Pointer to **int64** |  | [optional] 
+**Account** | Pointer to [**GetGroups200ResponseGroupAccount**](GetGroups200ResponseGroupAccount.md) |  | [optional] 
 **Active** | Pointer to **bool** |  | [optional] 
 **Config** | Pointer to [**GetGroups200ResponseGroupConfig**](GetGroups200ResponseGroupConfig.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
@@ -232,6 +233,31 @@ SetAccountId sets AccountId field to given value.
 `func (o *GetGroups200ResponseGroup) HasAccountId() bool`
 
 HasAccountId returns a boolean if a field has been set.
+
+### GetAccount
+
+`func (o *GetGroups200ResponseGroup) GetAccount() GetGroups200ResponseGroupAccount`
+
+GetAccount returns the Account field if non-nil, zero value otherwise.
+
+### GetAccountOk
+
+`func (o *GetGroups200ResponseGroup) GetAccountOk() (*GetGroups200ResponseGroupAccount, bool)`
+
+GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAccount
+
+`func (o *GetGroups200ResponseGroup) SetAccount(v GetGroups200ResponseGroupAccount)`
+
+SetAccount sets Account field to given value.
+
+### HasAccount
+
+`func (o *GetGroups200ResponseGroup) HasAccount() bool`
+
+HasAccount returns a boolean if a field has been set.
 
 ### GetActive
 

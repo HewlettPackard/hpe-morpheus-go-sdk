@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Users** | Pointer to [**[]ListUsers200ResponseAllOfUsersInner**](ListUsers200ResponseAllOfUsersInner.md) |  | [optional] 
-**Meta** | Pointer to [**ListAlerts200ResponseAllOfMeta**](ListAlerts200ResponseAllOfMeta.md) |  | [optional] 
+**Meta** | Pointer to [**ListApprovals200ResponseAllOfMeta**](ListApprovals200ResponseAllOfMeta.md) |  | [optional] 
 **Global** | Pointer to **bool** | Global (All Tenants), load users from all tenants. The default is to only see your own tenant. This is only available to master tenant users with permission to manage tenants and users. | [optional] [default to false]
 
 ## Methods
@@ -54,20 +54,20 @@ HasUsers returns a boolean if a field has been set.
 
 ### GetMeta
 
-`func (o *ListUsers200Response) GetMeta() ListAlerts200ResponseAllOfMeta`
+`func (o *ListUsers200Response) GetMeta() ListApprovals200ResponseAllOfMeta`
 
 GetMeta returns the Meta field if non-nil, zero value otherwise.
 
 ### GetMetaOk
 
-`func (o *ListUsers200Response) GetMetaOk() (*ListAlerts200ResponseAllOfMeta, bool)`
+`func (o *ListUsers200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool)`
 
 GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMeta
 
-`func (o *ListUsers200Response) SetMeta(v ListAlerts200ResponseAllOfMeta)`
+`func (o *ListUsers200Response) SetMeta(v ListApprovals200ResponseAllOfMeta)`
 
 SetMeta sets Meta field to given value.
 

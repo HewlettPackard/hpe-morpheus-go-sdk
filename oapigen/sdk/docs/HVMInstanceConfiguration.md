@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **CreateUser** | Pointer to **NullableBool** | Create user | [optional] [default to false]
 **PoolProviderType** | Pointer to **string** | The type of pool provider to use for this instance, must be \&quot;mvm\&quot; | [optional] [default to "mvm"]
 **KvmHostId** | Pointer to **int64** | The ID of the KVM host to provision the instance on | [optional] 
+**ProvisionPoweredOff** | Pointer to **bool** | Whether to provision the instance in a powered off state | [optional] [default to false]
 
 ## Methods
 
@@ -199,6 +200,31 @@ SetKvmHostId sets KvmHostId field to given value.
 `func (o *HVMInstanceConfiguration) HasKvmHostId() bool`
 
 HasKvmHostId returns a boolean if a field has been set.
+
+### GetProvisionPoweredOff
+
+`func (o *HVMInstanceConfiguration) GetProvisionPoweredOff() bool`
+
+GetProvisionPoweredOff returns the ProvisionPoweredOff field if non-nil, zero value otherwise.
+
+### GetProvisionPoweredOffOk
+
+`func (o *HVMInstanceConfiguration) GetProvisionPoweredOffOk() (*bool, bool)`
+
+GetProvisionPoweredOffOk returns a tuple with the ProvisionPoweredOff field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProvisionPoweredOff
+
+`func (o *HVMInstanceConfiguration) SetProvisionPoweredOff(v bool)`
+
+SetProvisionPoweredOff sets ProvisionPoweredOff field to given value.
+
+### HasProvisionPoweredOff
+
+`func (o *HVMInstanceConfiguration) HasProvisionPoweredOff() bool`
+
+HasProvisionPoweredOff returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

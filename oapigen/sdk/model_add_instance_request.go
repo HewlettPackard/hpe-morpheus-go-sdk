@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.1.1
+API version: 9.0.0
 Contact: dev@morpheusdata.com
 */
 
@@ -28,9 +28,8 @@ type AddInstanceRequest struct {
 	// Number of copies to provision.
 	Copies *int64 `json:"copies,omitempty"`
 	// Apply a multiply factor of containers/vms within the instance.
-	LayoutSize *int64 `json:"layoutSize,omitempty"`
-	// Map of custom options depending on selected service plan.
-	ServicePlanOptions map[string]interface{} `json:"servicePlanOptions,omitempty"`
+	LayoutSize         *int64                                `json:"layoutSize,omitempty"`
+	ServicePlanOptions *AddInstanceRequestServicePlanOptions `json:"servicePlanOptions,omitempty"`
 	// Key for security group configuration. It should be passed as an array of objects containing the id of the security group to assign the instance to.
 	SecurityGroups []AddInstanceRequestSecurityGroupsInner `json:"securityGroups,omitempty"`
 	// The (optional) volumes parameter is for LV configuration, can create additional LVs at provision It should be passed as an array of
@@ -237,19 +236,19 @@ func (o *AddInstanceRequest) SetLayoutSize(v int64) {
 }
 
 // GetServicePlanOptions returns the ServicePlanOptions field value if set, zero value otherwise.
-func (o *AddInstanceRequest) GetServicePlanOptions() map[string]interface{} {
+func (o *AddInstanceRequest) GetServicePlanOptions() AddInstanceRequestServicePlanOptions {
 	if o == nil || IsNil(o.ServicePlanOptions) {
-		var ret map[string]interface{}
+		var ret AddInstanceRequestServicePlanOptions
 		return ret
 	}
-	return o.ServicePlanOptions
+	return *o.ServicePlanOptions
 }
 
 // GetServicePlanOptionsOk returns a tuple with the ServicePlanOptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddInstanceRequest) GetServicePlanOptionsOk() (map[string]interface{}, bool) {
+func (o *AddInstanceRequest) GetServicePlanOptionsOk() (*AddInstanceRequestServicePlanOptions, bool) {
 	if o == nil || IsNil(o.ServicePlanOptions) {
-		return map[string]interface{}{}, false
+		return nil, false
 	}
 	return o.ServicePlanOptions, true
 }
@@ -263,9 +262,9 @@ func (o *AddInstanceRequest) IsSetServicePlanOptions() bool {
 	return false
 }
 
-// SetServicePlanOptions gets a reference to the given map[string]interface{} and assigns it to the ServicePlanOptions field.
-func (o *AddInstanceRequest) SetServicePlanOptions(v map[string]interface{}) {
-	o.ServicePlanOptions = v
+// SetServicePlanOptions gets a reference to the given AddInstanceRequestServicePlanOptions and assigns it to the ServicePlanOptions field.
+func (o *AddInstanceRequest) SetServicePlanOptions(v AddInstanceRequestServicePlanOptions) {
+	o.ServicePlanOptions = &v
 }
 
 // GetSecurityGroups returns the SecurityGroups field value if set, zero value otherwise (both if not set or set to explicit null).

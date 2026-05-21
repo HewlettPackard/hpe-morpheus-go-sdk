@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.1.1
+API version: 9.0.0
 Contact: dev@morpheusdata.com
 */
 
@@ -114,7 +114,7 @@ func (a *WhitelabelSettingsAPIService) GetWhitelabelImageExecute(r ApiGetWhitela
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -125,7 +125,7 @@ func (a *WhitelabelSettingsAPIService) GetWhitelabelImageExecute(r ApiGetWhitela
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -234,7 +234,7 @@ func (a *WhitelabelSettingsAPIService) ListWhitelabelSettingsExecute(r ApiListWh
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -245,7 +245,7 @@ func (a *WhitelabelSettingsAPIService) ListWhitelabelSettingsExecute(r ApiListWh
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -358,7 +358,7 @@ func (a *WhitelabelSettingsAPIService) RemoveWhitelabelImageExecute(r ApiRemoveW
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -369,7 +369,7 @@ func (a *WhitelabelSettingsAPIService) RemoveWhitelabelImageExecute(r ApiRemoveW
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -454,7 +454,7 @@ func (r ApiUpdateWhitelabelImagesRequest) ResetFaviconLogo(resetFaviconLogo bool
 	return r
 }
 
-func (r ApiUpdateWhitelabelImagesRequest) Execute() (*UpdateWhitelabelImages200Response, *http.Response, error) {
+func (r ApiUpdateWhitelabelImagesRequest) Execute() (*SetApplianceSettingsMaintenanceMode200Response, *http.Response, error) {
 	return r.ApiService.UpdateWhitelabelImagesExecute(r)
 }
 
@@ -475,13 +475,13 @@ func (a *WhitelabelSettingsAPIService) UpdateWhitelabelImages(ctx context.Contex
 
 // Execute executes the request
 //
-//	@return UpdateWhitelabelImages200Response
-func (a *WhitelabelSettingsAPIService) UpdateWhitelabelImagesExecute(r ApiUpdateWhitelabelImagesRequest) (*UpdateWhitelabelImages200Response, *http.Response, error) {
+//	@return SetApplianceSettingsMaintenanceMode200Response
+func (a *WhitelabelSettingsAPIService) UpdateWhitelabelImagesExecute(r ApiUpdateWhitelabelImagesRequest) (*SetApplianceSettingsMaintenanceMode200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *UpdateWhitelabelImages200Response
+		localVarReturnValue *SetApplianceSettingsMaintenanceMode200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WhitelabelSettingsAPIService.UpdateWhitelabelImages")
@@ -606,7 +606,7 @@ func (a *WhitelabelSettingsAPIService) UpdateWhitelabelImagesExecute(r ApiUpdate
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -617,7 +617,7 @@ func (a *WhitelabelSettingsAPIService) UpdateWhitelabelImagesExecute(r ApiUpdate
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -652,7 +652,7 @@ func (r ApiUpdateWhitelabelSettingsRequest) UpdateWhitelabelSettingsRequest(upda
 	return r
 }
 
-func (r ApiUpdateWhitelabelSettingsRequest) Execute() (*UpdateWhitelabelSettings200Response, *http.Response, error) {
+func (r ApiUpdateWhitelabelSettingsRequest) Execute() (*SetApplianceSettingsMaintenanceMode200Response, *http.Response, error) {
 	return r.ApiService.UpdateWhitelabelSettingsExecute(r)
 }
 
@@ -673,13 +673,13 @@ func (a *WhitelabelSettingsAPIService) UpdateWhitelabelSettings(ctx context.Cont
 
 // Execute executes the request
 //
-//	@return UpdateWhitelabelSettings200Response
-func (a *WhitelabelSettingsAPIService) UpdateWhitelabelSettingsExecute(r ApiUpdateWhitelabelSettingsRequest) (*UpdateWhitelabelSettings200Response, *http.Response, error) {
+//	@return SetApplianceSettingsMaintenanceMode200Response
+func (a *WhitelabelSettingsAPIService) UpdateWhitelabelSettingsExecute(r ApiUpdateWhitelabelSettingsRequest) (*SetApplianceSettingsMaintenanceMode200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *UpdateWhitelabelSettings200Response
+		localVarReturnValue *SetApplianceSettingsMaintenanceMode200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WhitelabelSettingsAPIService.UpdateWhitelabelSettings")
@@ -734,7 +734,7 @@ func (a *WhitelabelSettingsAPIService) UpdateWhitelabelSettingsExecute(r ApiUpda
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -745,7 +745,7 @@ func (a *WhitelabelSettingsAPIService) UpdateWhitelabelSettingsExecute(r ApiUpda
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Data** | Pointer to [**ListCypherKeys200ResponseAllOfData**](ListCypherKeys200ResponseAllOfData.md) |  | [optional] 
 **Cyphers** | Pointer to [**[]ListCypherKeys200ResponseAllOfCyphersInner**](ListCypherKeys200ResponseAllOfCyphersInner.md) |  | [optional] 
-**Meta** | Pointer to [**ListAlerts200ResponseAllOfMeta**](ListAlerts200ResponseAllOfMeta.md) |  | [optional] 
+**Meta** | Pointer to [**ListApprovals200ResponseAllOfMeta**](ListApprovals200ResponseAllOfMeta.md) |  | [optional] 
 **Success** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -80,20 +80,20 @@ HasCyphers returns a boolean if a field has been set.
 
 ### GetMeta
 
-`func (o *ListCypherKeys200Response) GetMeta() ListAlerts200ResponseAllOfMeta`
+`func (o *ListCypherKeys200Response) GetMeta() ListApprovals200ResponseAllOfMeta`
 
 GetMeta returns the Meta field if non-nil, zero value otherwise.
 
 ### GetMetaOk
 
-`func (o *ListCypherKeys200Response) GetMetaOk() (*ListAlerts200ResponseAllOfMeta, bool)`
+`func (o *ListCypherKeys200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool)`
 
 GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMeta
 
-`func (o *ListCypherKeys200Response) SetMeta(v ListAlerts200ResponseAllOfMeta)`
+`func (o *ListCypherKeys200Response) SetMeta(v ListApprovals200ResponseAllOfMeta)`
 
 SetMeta sets Meta field to given value.
 

@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.1.1
+API version: 9.0.0
 Contact: dev@morpheusdata.com
 */
 
@@ -20,16 +20,18 @@ var _ MappedNullable = &AccessToken{}
 
 // AccessToken struct for AccessToken
 type AccessToken struct {
-	// Token that grants API Access
+	// Access token that is used as a bearer token in the Authorization header of API requests to protected resources
 	AccessToken *string `json:"access_token,omitempty"`
-	// Token that can request an new API access_token
+	// Refresh token that allows refreshing access token without re-authenticating
 	RefreshToken *string `json:"refresh_token,omitempty"`
 	// Seconds until token expires
 	ExpiresIn *float32 `json:"expires_in,omitempty"`
 	// Token type granted
 	TokenType *string `json:"token_type,omitempty"`
 	// Scope granted
-	Scope                *string                `json:"scope,omitempty"`
+	Scope *string `json:"scope,omitempty"`
+	// ID token that is only returned when using the `openid` scope. The ID token is a JSON Web Token (JWT) that contains claims about the authenticated user and can be decoded and verified using the tenant's public key. The claims in the ID token can be used to obtain user information such as the user's name, email, and roles without needing to make additional API calls. The ID token is intended for use in OIDC-compliant applications that require user authentication and authorization based on OIDC claims.
+	IdToken              *string                `json:"id_token,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -212,6 +214,38 @@ func (o *AccessToken) SetScope(v string) {
 	o.Scope = &v
 }
 
+// GetIdToken returns the IdToken field value if set, zero value otherwise.
+func (o *AccessToken) GetIdToken() string {
+	if o == nil || IsNil(o.IdToken) {
+		var ret string
+		return ret
+	}
+	return *o.IdToken
+}
+
+// GetIdTokenOk returns a tuple with the IdToken field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AccessToken) GetIdTokenOk() (*string, bool) {
+	if o == nil || IsNil(o.IdToken) {
+		return nil, false
+	}
+	return o.IdToken, true
+}
+
+// IsSetIdToken returns a boolean if a field has been set.
+func (o *AccessToken) IsSetIdToken() bool {
+	if o != nil && !IsNil(o.IdToken) {
+		return true
+	}
+
+	return false
+}
+
+// SetIdToken gets a reference to the given string and assigns it to the IdToken field.
+func (o *AccessToken) SetIdToken(v string) {
+	o.IdToken = &v
+}
+
 func (o AccessToken) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -236,6 +270,9 @@ func (o AccessToken) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Scope) {
 		toSerialize["scope"] = o.Scope
+	}
+	if !IsNil(o.IdToken) {
+		toSerialize["id_token"] = o.IdToken
 	}
 
 	for key, value := range o.AdditionalProperties {

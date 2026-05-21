@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to [**GetStorageServers200ResponseStorageServerType**](GetStorageServers200ResponseStorageServerType.md) |  | [optional] 
-**Chassis** | Pointer to **NullableString** |  | [optional] 
+**Chassis** | Pointer to [**GetStorageServers200ResponseStorageServerChassis**](GetStorageServers200ResponseStorageServerChassis.md) |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **NullableString** |  | [optional] 
 **InternalId** | Pointer to **NullableString** |  | [optional] 
@@ -23,8 +23,8 @@ Name | Type | Description | Notes
 **ServicePasswordHash** | Pointer to **NullableString** |  | [optional] 
 **InternalIp** | Pointer to **NullableString** |  | [optional] 
 **ExternalIp** | Pointer to **NullableString** |  | [optional] 
-**ApiPort** | Pointer to **NullableString** |  | [optional] 
-**AdminPort** | Pointer to **NullableString** |  | [optional] 
+**ApiPort** | Pointer to **NullableInt32** |  | [optional] 
+**AdminPort** | Pointer to **NullableInt32** |  | [optional] 
 **Config** | Pointer to **map[string]interface{}** |  | [optional] 
 **RefType** | Pointer to **string** |  | [optional] 
 **RefId** | Pointer to **int64** |  | [optional] 
@@ -32,22 +32,22 @@ Name | Type | Description | Notes
 **ServerVendor** | Pointer to **NullableString** |  | [optional] 
 **ServerModel** | Pointer to **NullableString** |  | [optional] 
 **SerialNumber** | Pointer to **NullableString** |  | [optional] 
-**Status** | Pointer to **string** |  | [optional] 
+**Status** | Pointer to **NullableString** |  | [optional] 
 **StatusMessage** | Pointer to **NullableString** |  | [optional] 
 **StatusDate** | Pointer to **time.Time** |  | [optional] 
 **ErrorMessage** | Pointer to **NullableString** |  | [optional] 
-**MaxStorage** | Pointer to **NullableString** |  | [optional] 
-**UsedStorage** | Pointer to **NullableString** |  | [optional] 
-**DiskCount** | Pointer to **NullableString** |  | [optional] 
+**MaxStorage** | Pointer to **NullableInt64** |  | [optional] 
+**UsedStorage** | Pointer to **NullableInt64** |  | [optional] 
+**DiskCount** | Pointer to **NullableInt32** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**Groups** | Pointer to **[]map[string]interface{}** |  | [optional] 
-**HostGroups** | Pointer to **[]map[string]interface{}** |  | [optional] 
-**Hosts** | Pointer to **[]map[string]interface{}** |  | [optional] 
-**Tenants** | Pointer to **[]map[string]interface{}** |  | [optional] 
+**Groups** | Pointer to [**[]GetStorageServers200ResponseStorageServerGroupsInner**](GetStorageServers200ResponseStorageServerGroupsInner.md) |  | [optional] 
+**HostGroups** | Pointer to [**[]GetStorageServers200ResponseStorageServerHostGroupsInner**](GetStorageServers200ResponseStorageServerHostGroupsInner.md) |  | [optional] 
+**Hosts** | Pointer to [**[]GetStorageServers200ResponseStorageServerHostsInner**](GetStorageServers200ResponseStorageServerHostsInner.md) |  | [optional] 
+**Tenants** | Pointer to [**[]GetStorageServers200ResponseStorageServerTenantsInner**](GetStorageServers200ResponseStorageServerTenantsInner.md) |  | [optional] 
 **Owner** | Pointer to [**GetStorageServers200ResponseStorageServerOwner**](GetStorageServers200ResponseStorageServerOwner.md) |  | [optional] 
-**Credential** | Pointer to **map[string]interface{}** |  | [optional] 
+**Credential** | Pointer to [**GetStorageServers200ResponseStorageServerCredential**](GetStorageServers200ResponseStorageServerCredential.md) |  | [optional] 
 
 ## Methods
 
@@ -145,20 +145,20 @@ HasType returns a boolean if a field has been set.
 
 ### GetChassis
 
-`func (o *GetStorageServers200ResponseStorageServer) GetChassis() string`
+`func (o *GetStorageServers200ResponseStorageServer) GetChassis() GetStorageServers200ResponseStorageServerChassis`
 
 GetChassis returns the Chassis field if non-nil, zero value otherwise.
 
 ### GetChassisOk
 
-`func (o *GetStorageServers200ResponseStorageServer) GetChassisOk() (*string, bool)`
+`func (o *GetStorageServers200ResponseStorageServer) GetChassisOk() (*GetStorageServers200ResponseStorageServerChassis, bool)`
 
 GetChassisOk returns a tuple with the Chassis field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetChassis
 
-`func (o *GetStorageServers200ResponseStorageServer) SetChassis(v string)`
+`func (o *GetStorageServers200ResponseStorageServer) SetChassis(v GetStorageServers200ResponseStorageServerChassis)`
 
 SetChassis sets Chassis field to given value.
 
@@ -168,16 +168,6 @@ SetChassis sets Chassis field to given value.
 
 HasChassis returns a boolean if a field has been set.
 
-### SetChassisNil
-
-`func (o *GetStorageServers200ResponseStorageServer) SetChassisNil(b bool)`
-
- SetChassisNil sets the value for Chassis to be an explicit nil
-
-### UnsetChassis
-`func (o *GetStorageServers200ResponseStorageServer) UnsetChassis()`
-
-UnsetChassis ensures that no value is present for Chassis, not even an explicit nil
 ### GetVisibility
 
 `func (o *GetStorageServers200ResponseStorageServer) GetVisibility() string`
@@ -695,20 +685,20 @@ HasExternalIp returns a boolean if a field has been set.
 UnsetExternalIp ensures that no value is present for ExternalIp, not even an explicit nil
 ### GetApiPort
 
-`func (o *GetStorageServers200ResponseStorageServer) GetApiPort() string`
+`func (o *GetStorageServers200ResponseStorageServer) GetApiPort() int32`
 
 GetApiPort returns the ApiPort field if non-nil, zero value otherwise.
 
 ### GetApiPortOk
 
-`func (o *GetStorageServers200ResponseStorageServer) GetApiPortOk() (*string, bool)`
+`func (o *GetStorageServers200ResponseStorageServer) GetApiPortOk() (*int32, bool)`
 
 GetApiPortOk returns a tuple with the ApiPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetApiPort
 
-`func (o *GetStorageServers200ResponseStorageServer) SetApiPort(v string)`
+`func (o *GetStorageServers200ResponseStorageServer) SetApiPort(v int32)`
 
 SetApiPort sets ApiPort field to given value.
 
@@ -730,20 +720,20 @@ HasApiPort returns a boolean if a field has been set.
 UnsetApiPort ensures that no value is present for ApiPort, not even an explicit nil
 ### GetAdminPort
 
-`func (o *GetStorageServers200ResponseStorageServer) GetAdminPort() string`
+`func (o *GetStorageServers200ResponseStorageServer) GetAdminPort() int32`
 
 GetAdminPort returns the AdminPort field if non-nil, zero value otherwise.
 
 ### GetAdminPortOk
 
-`func (o *GetStorageServers200ResponseStorageServer) GetAdminPortOk() (*string, bool)`
+`func (o *GetStorageServers200ResponseStorageServer) GetAdminPortOk() (*int32, bool)`
 
 GetAdminPortOk returns a tuple with the AdminPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAdminPort
 
-`func (o *GetStorageServers200ResponseStorageServer) SetAdminPort(v string)`
+`func (o *GetStorageServers200ResponseStorageServer) SetAdminPort(v int32)`
 
 SetAdminPort sets AdminPort field to given value.
 
@@ -1003,6 +993,16 @@ SetStatus sets Status field to given value.
 
 HasStatus returns a boolean if a field has been set.
 
+### SetStatusNil
+
+`func (o *GetStorageServers200ResponseStorageServer) SetStatusNil(b bool)`
+
+ SetStatusNil sets the value for Status to be an explicit nil
+
+### UnsetStatus
+`func (o *GetStorageServers200ResponseStorageServer) UnsetStatus()`
+
+UnsetStatus ensures that no value is present for Status, not even an explicit nil
 ### GetStatusMessage
 
 `func (o *GetStorageServers200ResponseStorageServer) GetStatusMessage() string`
@@ -1100,20 +1100,20 @@ HasErrorMessage returns a boolean if a field has been set.
 UnsetErrorMessage ensures that no value is present for ErrorMessage, not even an explicit nil
 ### GetMaxStorage
 
-`func (o *GetStorageServers200ResponseStorageServer) GetMaxStorage() string`
+`func (o *GetStorageServers200ResponseStorageServer) GetMaxStorage() int64`
 
 GetMaxStorage returns the MaxStorage field if non-nil, zero value otherwise.
 
 ### GetMaxStorageOk
 
-`func (o *GetStorageServers200ResponseStorageServer) GetMaxStorageOk() (*string, bool)`
+`func (o *GetStorageServers200ResponseStorageServer) GetMaxStorageOk() (*int64, bool)`
 
 GetMaxStorageOk returns a tuple with the MaxStorage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxStorage
 
-`func (o *GetStorageServers200ResponseStorageServer) SetMaxStorage(v string)`
+`func (o *GetStorageServers200ResponseStorageServer) SetMaxStorage(v int64)`
 
 SetMaxStorage sets MaxStorage field to given value.
 
@@ -1135,20 +1135,20 @@ HasMaxStorage returns a boolean if a field has been set.
 UnsetMaxStorage ensures that no value is present for MaxStorage, not even an explicit nil
 ### GetUsedStorage
 
-`func (o *GetStorageServers200ResponseStorageServer) GetUsedStorage() string`
+`func (o *GetStorageServers200ResponseStorageServer) GetUsedStorage() int64`
 
 GetUsedStorage returns the UsedStorage field if non-nil, zero value otherwise.
 
 ### GetUsedStorageOk
 
-`func (o *GetStorageServers200ResponseStorageServer) GetUsedStorageOk() (*string, bool)`
+`func (o *GetStorageServers200ResponseStorageServer) GetUsedStorageOk() (*int64, bool)`
 
 GetUsedStorageOk returns a tuple with the UsedStorage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUsedStorage
 
-`func (o *GetStorageServers200ResponseStorageServer) SetUsedStorage(v string)`
+`func (o *GetStorageServers200ResponseStorageServer) SetUsedStorage(v int64)`
 
 SetUsedStorage sets UsedStorage field to given value.
 
@@ -1170,20 +1170,20 @@ HasUsedStorage returns a boolean if a field has been set.
 UnsetUsedStorage ensures that no value is present for UsedStorage, not even an explicit nil
 ### GetDiskCount
 
-`func (o *GetStorageServers200ResponseStorageServer) GetDiskCount() string`
+`func (o *GetStorageServers200ResponseStorageServer) GetDiskCount() int32`
 
 GetDiskCount returns the DiskCount field if non-nil, zero value otherwise.
 
 ### GetDiskCountOk
 
-`func (o *GetStorageServers200ResponseStorageServer) GetDiskCountOk() (*string, bool)`
+`func (o *GetStorageServers200ResponseStorageServer) GetDiskCountOk() (*int32, bool)`
 
 GetDiskCountOk returns a tuple with the DiskCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDiskCount
 
-`func (o *GetStorageServers200ResponseStorageServer) SetDiskCount(v string)`
+`func (o *GetStorageServers200ResponseStorageServer) SetDiskCount(v int32)`
 
 SetDiskCount sets DiskCount field to given value.
 
@@ -1280,20 +1280,20 @@ HasEnabled returns a boolean if a field has been set.
 
 ### GetGroups
 
-`func (o *GetStorageServers200ResponseStorageServer) GetGroups() []map[string]interface{}`
+`func (o *GetStorageServers200ResponseStorageServer) GetGroups() []GetStorageServers200ResponseStorageServerGroupsInner`
 
 GetGroups returns the Groups field if non-nil, zero value otherwise.
 
 ### GetGroupsOk
 
-`func (o *GetStorageServers200ResponseStorageServer) GetGroupsOk() (*[]map[string]interface{}, bool)`
+`func (o *GetStorageServers200ResponseStorageServer) GetGroupsOk() (*[]GetStorageServers200ResponseStorageServerGroupsInner, bool)`
 
 GetGroupsOk returns a tuple with the Groups field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGroups
 
-`func (o *GetStorageServers200ResponseStorageServer) SetGroups(v []map[string]interface{})`
+`func (o *GetStorageServers200ResponseStorageServer) SetGroups(v []GetStorageServers200ResponseStorageServerGroupsInner)`
 
 SetGroups sets Groups field to given value.
 
@@ -1305,20 +1305,20 @@ HasGroups returns a boolean if a field has been set.
 
 ### GetHostGroups
 
-`func (o *GetStorageServers200ResponseStorageServer) GetHostGroups() []map[string]interface{}`
+`func (o *GetStorageServers200ResponseStorageServer) GetHostGroups() []GetStorageServers200ResponseStorageServerHostGroupsInner`
 
 GetHostGroups returns the HostGroups field if non-nil, zero value otherwise.
 
 ### GetHostGroupsOk
 
-`func (o *GetStorageServers200ResponseStorageServer) GetHostGroupsOk() (*[]map[string]interface{}, bool)`
+`func (o *GetStorageServers200ResponseStorageServer) GetHostGroupsOk() (*[]GetStorageServers200ResponseStorageServerHostGroupsInner, bool)`
 
 GetHostGroupsOk returns a tuple with the HostGroups field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHostGroups
 
-`func (o *GetStorageServers200ResponseStorageServer) SetHostGroups(v []map[string]interface{})`
+`func (o *GetStorageServers200ResponseStorageServer) SetHostGroups(v []GetStorageServers200ResponseStorageServerHostGroupsInner)`
 
 SetHostGroups sets HostGroups field to given value.
 
@@ -1330,20 +1330,20 @@ HasHostGroups returns a boolean if a field has been set.
 
 ### GetHosts
 
-`func (o *GetStorageServers200ResponseStorageServer) GetHosts() []map[string]interface{}`
+`func (o *GetStorageServers200ResponseStorageServer) GetHosts() []GetStorageServers200ResponseStorageServerHostsInner`
 
 GetHosts returns the Hosts field if non-nil, zero value otherwise.
 
 ### GetHostsOk
 
-`func (o *GetStorageServers200ResponseStorageServer) GetHostsOk() (*[]map[string]interface{}, bool)`
+`func (o *GetStorageServers200ResponseStorageServer) GetHostsOk() (*[]GetStorageServers200ResponseStorageServerHostsInner, bool)`
 
 GetHostsOk returns a tuple with the Hosts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHosts
 
-`func (o *GetStorageServers200ResponseStorageServer) SetHosts(v []map[string]interface{})`
+`func (o *GetStorageServers200ResponseStorageServer) SetHosts(v []GetStorageServers200ResponseStorageServerHostsInner)`
 
 SetHosts sets Hosts field to given value.
 
@@ -1355,20 +1355,20 @@ HasHosts returns a boolean if a field has been set.
 
 ### GetTenants
 
-`func (o *GetStorageServers200ResponseStorageServer) GetTenants() []map[string]interface{}`
+`func (o *GetStorageServers200ResponseStorageServer) GetTenants() []GetStorageServers200ResponseStorageServerTenantsInner`
 
 GetTenants returns the Tenants field if non-nil, zero value otherwise.
 
 ### GetTenantsOk
 
-`func (o *GetStorageServers200ResponseStorageServer) GetTenantsOk() (*[]map[string]interface{}, bool)`
+`func (o *GetStorageServers200ResponseStorageServer) GetTenantsOk() (*[]GetStorageServers200ResponseStorageServerTenantsInner, bool)`
 
 GetTenantsOk returns a tuple with the Tenants field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenants
 
-`func (o *GetStorageServers200ResponseStorageServer) SetTenants(v []map[string]interface{})`
+`func (o *GetStorageServers200ResponseStorageServer) SetTenants(v []GetStorageServers200ResponseStorageServerTenantsInner)`
 
 SetTenants sets Tenants field to given value.
 
@@ -1405,20 +1405,20 @@ HasOwner returns a boolean if a field has been set.
 
 ### GetCredential
 
-`func (o *GetStorageServers200ResponseStorageServer) GetCredential() map[string]interface{}`
+`func (o *GetStorageServers200ResponseStorageServer) GetCredential() GetStorageServers200ResponseStorageServerCredential`
 
 GetCredential returns the Credential field if non-nil, zero value otherwise.
 
 ### GetCredentialOk
 
-`func (o *GetStorageServers200ResponseStorageServer) GetCredentialOk() (*map[string]interface{}, bool)`
+`func (o *GetStorageServers200ResponseStorageServer) GetCredentialOk() (*GetStorageServers200ResponseStorageServerCredential, bool)`
 
 GetCredentialOk returns a tuple with the Credential field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCredential
 
-`func (o *GetStorageServers200ResponseStorageServer) SetCredential(v map[string]interface{})`
+`func (o *GetStorageServers200ResponseStorageServer) SetCredential(v GetStorageServers200ResponseStorageServerCredential)`
 
 SetCredential sets Credential field to given value.
 

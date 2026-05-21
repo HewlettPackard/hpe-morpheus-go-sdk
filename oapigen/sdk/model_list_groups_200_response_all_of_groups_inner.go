@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.1.1
+API version: 9.0.0
 Contact: dev@morpheusdata.com
 */
 
@@ -21,21 +21,22 @@ var _ MappedNullable = &ListGroups200ResponseAllOfGroupsInner{}
 
 // ListGroups200ResponseAllOfGroupsInner struct for ListGroups200ResponseAllOfGroupsInner
 type ListGroups200ResponseAllOfGroupsInner struct {
-	Id                   *int64                                            `json:"id,omitempty"`
-	Uuid                 *string                                           `json:"uuid,omitempty"`
-	Name                 *string                                           `json:"name,omitempty"`
-	Code                 NullableString                                    `json:"code,omitempty"`
-	Labels               []string                                          `json:"labels,omitempty"`
-	Location             NullableString                                    `json:"location,omitempty"`
-	AccountId            *int64                                            `json:"accountId,omitempty"`
-	Active               *bool                                             `json:"active,omitempty"`
-	Config               *ListGroups200ResponseAllOfGroupsInnerConfig      `json:"config,omitempty"`
-	DateCreated          *time.Time                                        `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                        `json:"lastUpdated,omitempty"`
-	Zones                []ListGroups200ResponseAllOfGroupsInnerZonesInner `json:"zones,omitempty"`
-	Stats                *ListGroups200ResponseAllOfGroupsInnerStats       `json:"stats,omitempty"`
-	ServerCount          *int64                                            `json:"serverCount,omitempty"`
-	AdditionalProperties map[string]interface{}                            `json:",remain"`
+	Id                   *int64                                               `json:"id,omitempty"`
+	Uuid                 *string                                              `json:"uuid,omitempty"`
+	Name                 *string                                              `json:"name,omitempty"`
+	Code                 NullableString                                       `json:"code,omitempty"`
+	Labels               []string                                             `json:"labels,omitempty"`
+	Location             NullableString                                       `json:"location,omitempty"`
+	AccountId            *int64                                               `json:"accountId,omitempty"`
+	Account              NullableListGroups200ResponseAllOfGroupsInnerAccount `json:"account,omitempty"`
+	Active               *bool                                                `json:"active,omitempty"`
+	Config               *ListGroups200ResponseAllOfGroupsInnerConfig         `json:"config,omitempty"`
+	DateCreated          *time.Time                                           `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                           `json:"lastUpdated,omitempty"`
+	Zones                []ListGroups200ResponseAllOfGroupsInnerZonesInner    `json:"zones,omitempty"`
+	Stats                *ListGroups200ResponseAllOfGroupsInnerStats          `json:"stats,omitempty"`
+	ServerCount          *int64                                               `json:"serverCount,omitempty"`
+	AdditionalProperties map[string]interface{}                               `json:",remain"`
 }
 
 type _ListGroups200ResponseAllOfGroupsInner ListGroups200ResponseAllOfGroupsInner
@@ -303,6 +304,49 @@ func (o *ListGroups200ResponseAllOfGroupsInner) SetAccountId(v int64) {
 	o.AccountId = &v
 }
 
+// GetAccount returns the Account field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListGroups200ResponseAllOfGroupsInner) GetAccount() ListGroups200ResponseAllOfGroupsInnerAccount {
+	if o == nil || IsNil(o.Account.Get()) {
+		var ret ListGroups200ResponseAllOfGroupsInnerAccount
+		return ret
+	}
+	return *o.Account.Get()
+}
+
+// GetAccountOk returns a tuple with the Account field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListGroups200ResponseAllOfGroupsInner) GetAccountOk() (*ListGroups200ResponseAllOfGroupsInnerAccount, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Account.Get(), o.Account.IsSet()
+}
+
+// IsSetAccount returns a boolean if a field has been set.
+func (o *ListGroups200ResponseAllOfGroupsInner) IsSetAccount() bool {
+	if o != nil && o.Account.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetAccount gets a reference to the given NullableListGroups200ResponseAllOfGroupsInnerAccount and assigns it to the Account field.
+func (o *ListGroups200ResponseAllOfGroupsInner) SetAccount(v ListGroups200ResponseAllOfGroupsInnerAccount) {
+	o.Account.Set(&v)
+}
+
+// SetAccountNil sets the value for Account to be an explicit nil
+func (o *ListGroups200ResponseAllOfGroupsInner) SetAccountNil() {
+	o.Account.Set(nil)
+}
+
+// UnsetAccount ensures that no value is present for Account, not even an explicit nil
+func (o *ListGroups200ResponseAllOfGroupsInner) UnsetAccount() {
+	o.Account.Unset()
+}
+
 // GetActive returns the Active field value if set, zero value otherwise.
 func (o *ListGroups200ResponseAllOfGroupsInner) GetActive() bool {
 	if o == nil || IsNil(o.Active) {
@@ -557,6 +601,9 @@ func (o ListGroups200ResponseAllOfGroupsInner) ToMap() (map[string]interface{}, 
 	}
 	if !IsNil(o.AccountId) {
 		toSerialize["accountId"] = o.AccountId
+	}
+	if o.Account.IsSet() {
+		toSerialize["account"] = o.Account.Get()
 	}
 	if !IsNil(o.Active) {
 		toSerialize["active"] = o.Active

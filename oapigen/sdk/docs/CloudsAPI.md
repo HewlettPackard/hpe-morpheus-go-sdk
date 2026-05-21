@@ -1150,7 +1150,7 @@ Name | Type | Description  | Notes
 
 ## ListClouds
 
-> ListClouds200Response ListClouds(ctx).LastUpdated(lastUpdated).Type_(type_).GroupId(groupId).Max(max).Offset(offset).Sort(sort).Direction(direction).Phrase(phrase).Name(name).Labels(labels).Execute()
+> ListClouds200Response ListClouds(ctx).LastUpdated(lastUpdated).Type_(type_).GroupId(groupId).Max(max).Offset(offset).Sort(sort).Direction(direction).Phrase(phrase).Name(name).Labels(labels).IncludeTenants(includeTenants).TenantId(tenantId).Execute()
 
 Retrieves all Clouds
 
@@ -1180,10 +1180,12 @@ func main() {
 	phrase := "phrase_example" // string | Search phrase for partial matches on name or description (optional)
 	name := "example" // string | Filter by name (optional)
 	labels := "labels_example" // string | Filter by label(s), matches records that contain any of the specified labels (optional)
+	includeTenants := true // bool | Optional ability to include all subtenant resources when calling from a master tenant user (optional) (default to false)
+	tenantId := float32(3) // float32 | Filter by Tenant ID. Only available to the master account. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CloudsAPI.ListClouds(context.Background()).LastUpdated(lastUpdated).Type_(type_).GroupId(groupId).Max(max).Offset(offset).Sort(sort).Direction(direction).Phrase(phrase).Name(name).Labels(labels).Execute()
+	resp, r, err := apiClient.CloudsAPI.ListClouds(context.Background()).LastUpdated(lastUpdated).Type_(type_).GroupId(groupId).Max(max).Offset(offset).Sort(sort).Direction(direction).Phrase(phrase).Name(name).Labels(labels).IncludeTenants(includeTenants).TenantId(tenantId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CloudsAPI.ListClouds``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1214,6 +1216,8 @@ Name | Type | Description  | Notes
  **phrase** | **string** | Search phrase for partial matches on name or description | 
  **name** | **string** | Filter by name | 
  **labels** | **string** | Filter by label(s), matches records that contain any of the specified labels | 
+ **includeTenants** | **bool** | Optional ability to include all subtenant resources when calling from a master tenant user | [default to false]
+ **tenantId** | **float32** | Filter by Tenant ID. Only available to the master account. | 
 
 ### Return type
 
