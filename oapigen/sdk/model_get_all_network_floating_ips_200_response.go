@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.1.1
+API version: 9.0.0
 Contact: dev@morpheusdata.com
 */
 
@@ -20,9 +20,9 @@ var _ MappedNullable = &GetAllNetworkFloatingIps200Response{}
 
 // GetAllNetworkFloatingIps200Response struct for GetAllNetworkFloatingIps200Response
 type GetAllNetworkFloatingIps200Response struct {
-	NetworkFloatingIps   interface{}                     `json:"networkFloatingIps,omitempty"`
-	Meta                 *ListAlerts200ResponseAllOfMeta `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}          `json:",remain"`
+	NetworkFloatingIps   interface{}                        `json:"networkFloatingIps,omitempty"`
+	Meta                 *ListApprovals200ResponseAllOfMeta `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}             `json:",remain"`
 }
 
 type _GetAllNetworkFloatingIps200Response GetAllNetworkFloatingIps200Response
@@ -78,9 +78,9 @@ func (o *GetAllNetworkFloatingIps200Response) SetNetworkFloatingIps(v interface{
 }
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *GetAllNetworkFloatingIps200Response) GetMeta() ListAlerts200ResponseAllOfMeta {
+func (o *GetAllNetworkFloatingIps200Response) GetMeta() ListApprovals200ResponseAllOfMeta {
 	if o == nil || IsNil(o.Meta) {
-		var ret ListAlerts200ResponseAllOfMeta
+		var ret ListApprovals200ResponseAllOfMeta
 		return ret
 	}
 	return *o.Meta
@@ -88,7 +88,7 @@ func (o *GetAllNetworkFloatingIps200Response) GetMeta() ListAlerts200ResponseAll
 
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetAllNetworkFloatingIps200Response) GetMetaOk() (*ListAlerts200ResponseAllOfMeta, bool) {
+func (o *GetAllNetworkFloatingIps200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool) {
 	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
@@ -104,8 +104,8 @@ func (o *GetAllNetworkFloatingIps200Response) IsSetMeta() bool {
 	return false
 }
 
-// SetMeta gets a reference to the given ListAlerts200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *GetAllNetworkFloatingIps200Response) SetMeta(v ListAlerts200ResponseAllOfMeta) {
+// SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.
+func (o *GetAllNetworkFloatingIps200Response) SetMeta(v ListApprovals200ResponseAllOfMeta) {
 	o.Meta = &v
 }
 

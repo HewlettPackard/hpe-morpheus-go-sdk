@@ -136,7 +136,7 @@ func main() {
 	includeUsages := true // bool | Optional ability to suppress the usage records (optional) (default to true)
 	maxUsages := int64(789) // int64 | Optional ability to limit the usages returned (optional)
 	offsetUsages := int64(789) // int64 | Optional ability to offset the usages returned, for use with maxUsages to paginate (optional)
-	includeTenants := true // bool | Optional ability to include all subtenant billing information when calling from a master tenant user (optional) (default to false)
+	includeTenants := true // bool | Optional ability to include all subtenant resources when calling from a master tenant user (optional) (default to false)
 	accountId := int64(3) // int64 | Filter by Tenant ID. This is only available to master tenant users with permission to manage tenants and users. (optional)
 	includeMs := true // bool | Optional ability to include milliseconds (optional) (default to false)
 
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
  **includeUsages** | **bool** | Optional ability to suppress the usage records | [default to true]
  **maxUsages** | **int64** | Optional ability to limit the usages returned | 
  **offsetUsages** | **int64** | Optional ability to offset the usages returned, for use with maxUsages to paginate | 
- **includeTenants** | **bool** | Optional ability to include all subtenant billing information when calling from a master tenant user | [default to false]
+ **includeTenants** | **bool** | Optional ability to include all subtenant resources when calling from a master tenant user | [default to false]
  **accountId** | **int64** | Filter by Tenant ID. This is only available to master tenant users with permission to manage tenants and users. | 
  **includeMs** | **bool** | Optional ability to include milliseconds | [default to false]
 
@@ -222,7 +222,7 @@ func main() {
 	includeUsages := true // bool | Optional ability to suppress the usage records (optional) (default to true)
 	maxUsages := int64(789) // int64 | Optional ability to limit the usages returned (optional)
 	offsetUsages := int64(789) // int64 | Optional ability to offset the usages returned, for use with maxUsages to paginate (optional)
-	includeTenants := true // bool | Optional ability to include all subtenant billing information when calling from a master tenant user (optional) (default to false)
+	includeTenants := true // bool | Optional ability to include all subtenant resources when calling from a master tenant user (optional) (default to false)
 	accountId := int64(3) // int64 | Filter by Tenant ID. This is only available to master tenant users with permission to manage tenants and users. (optional)
 	includeMs := true // bool | Optional ability to include milliseconds (optional) (default to false)
 
@@ -259,7 +259,7 @@ Name | Type | Description  | Notes
  **includeUsages** | **bool** | Optional ability to suppress the usage records | [default to true]
  **maxUsages** | **int64** | Optional ability to limit the usages returned | 
  **offsetUsages** | **int64** | Optional ability to offset the usages returned, for use with maxUsages to paginate | 
- **includeTenants** | **bool** | Optional ability to include all subtenant billing information when calling from a master tenant user | [default to false]
+ **includeTenants** | **bool** | Optional ability to include all subtenant resources when calling from a master tenant user | [default to false]
  **accountId** | **int64** | Filter by Tenant ID. This is only available to master tenant users with permission to manage tenants and users. | 
  **includeMs** | **bool** | Optional ability to include milliseconds | [default to false]
 
@@ -489,7 +489,7 @@ func main() {
 	includeUsages := true // bool | Optional ability to suppress the usage records (optional) (default to true)
 	maxUsages := int64(789) // int64 | Optional ability to limit the usages returned (optional)
 	offsetUsages := int64(789) // int64 | Optional ability to offset the usages returned, for use with maxUsages to paginate (optional)
-	includeTenants := true // bool | Optional ability to include all subtenant billing information when calling from a master tenant user (optional) (default to false)
+	includeTenants := true // bool | Optional ability to include all subtenant resources when calling from a master tenant user (optional) (default to false)
 	accountId := int64(3) // int64 | Filter by Tenant ID. This is only available to master tenant users with permission to manage tenants and users. (optional)
 	includeMs := true // bool | Optional ability to include milliseconds (optional) (default to false)
 
@@ -521,7 +521,7 @@ Name | Type | Description  | Notes
  **includeUsages** | **bool** | Optional ability to suppress the usage records | [default to true]
  **maxUsages** | **int64** | Optional ability to limit the usages returned | 
  **offsetUsages** | **int64** | Optional ability to offset the usages returned, for use with maxUsages to paginate | 
- **includeTenants** | **bool** | Optional ability to include all subtenant billing information when calling from a master tenant user | [default to false]
+ **includeTenants** | **bool** | Optional ability to include all subtenant resources when calling from a master tenant user | [default to false]
  **accountId** | **int64** | Filter by Tenant ID. This is only available to master tenant users with permission to manage tenants and users. | 
  **includeMs** | **bool** | Optional ability to include milliseconds | [default to false]
 
@@ -569,7 +569,7 @@ func main() {
 	includeUsages := true // bool | Optional ability to suppress the usage records (optional) (default to true)
 	maxUsages := int64(789) // int64 | Optional ability to limit the usages returned (optional)
 	offsetUsages := int64(789) // int64 | Optional ability to offset the usages returned, for use with maxUsages to paginate (optional)
-	includeTenants := true // bool | Optional ability to include all subtenant billing information when calling from a master tenant user (optional) (default to false)
+	includeTenants := true // bool | Optional ability to include all subtenant resources when calling from a master tenant user (optional) (default to false)
 	accountId := int64(3) // int64 | Filter by Tenant ID. This is only available to master tenant users with permission to manage tenants and users. (optional)
 	includeMs := true // bool | Optional ability to include milliseconds (optional) (default to false)
 
@@ -601,7 +601,7 @@ Name | Type | Description  | Notes
  **includeUsages** | **bool** | Optional ability to suppress the usage records | [default to true]
  **maxUsages** | **int64** | Optional ability to limit the usages returned | 
  **offsetUsages** | **int64** | Optional ability to offset the usages returned, for use with maxUsages to paginate | 
- **includeTenants** | **bool** | Optional ability to include all subtenant billing information when calling from a master tenant user | [default to false]
+ **includeTenants** | **bool** | Optional ability to include all subtenant resources when calling from a master tenant user | [default to false]
  **accountId** | **int64** | Filter by Tenant ID. This is only available to master tenant users with permission to manage tenants and users. | 
  **includeMs** | **bool** | Optional ability to include milliseconds | [default to false]
 

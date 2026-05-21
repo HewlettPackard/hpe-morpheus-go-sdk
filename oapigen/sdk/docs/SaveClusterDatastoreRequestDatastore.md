@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **ResourcePermissions** | Pointer to [**SaveClusterDatastoreRequestDatastoreResourcePermissions**](SaveClusterDatastoreRequestDatastoreResourcePermissions.md) |  | [optional] 
 **Datastores** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **HeartbeatTarget** | Pointer to **bool** | Heartbeat Target | [optional] 
+**SupportsVmSecureMetadata** | Pointer to **bool** | When &#x60;true&#x60;, designates this datastore to hold NVRAM and swtpm state for TPM/SecureBoot VMs in the cluster, enabling live migration and HA failover. Only one datastore per cluster scope may be designated at a time; setting this to &#x60;true&#x60; automatically clears the flag on any previously designated datastore. Only applicable to GFS2 and NFS datastore types.  | [optional] 
 
 ## Methods
 
@@ -309,6 +310,31 @@ SetHeartbeatTarget sets HeartbeatTarget field to given value.
 `func (o *SaveClusterDatastoreRequestDatastore) HasHeartbeatTarget() bool`
 
 HasHeartbeatTarget returns a boolean if a field has been set.
+
+### GetSupportsVmSecureMetadata
+
+`func (o *SaveClusterDatastoreRequestDatastore) GetSupportsVmSecureMetadata() bool`
+
+GetSupportsVmSecureMetadata returns the SupportsVmSecureMetadata field if non-nil, zero value otherwise.
+
+### GetSupportsVmSecureMetadataOk
+
+`func (o *SaveClusterDatastoreRequestDatastore) GetSupportsVmSecureMetadataOk() (*bool, bool)`
+
+GetSupportsVmSecureMetadataOk returns a tuple with the SupportsVmSecureMetadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportsVmSecureMetadata
+
+`func (o *SaveClusterDatastoreRequestDatastore) SetSupportsVmSecureMetadata(v bool)`
+
+SetSupportsVmSecureMetadata sets SupportsVmSecureMetadata field to given value.
+
+### HasSupportsVmSecureMetadata
+
+`func (o *SaveClusterDatastoreRequestDatastore) HasSupportsVmSecureMetadata() bool`
+
+HasSupportsVmSecureMetadata returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -10,6 +10,12 @@ Name | Type | Description | Notes
 **Enabled** | Pointer to **bool** | The enabled flag | [optional] [default to true]
 **Config** | Pointer to **map[string]interface{}** | Configuration object with parameters that vary by &#x60;type&#x60; | [optional] 
 **Visibility** | Pointer to **string** | private or public | [optional] [default to "private"]
+**ServiceHost** | Pointer to **string** | Storage server host | [optional] 
+**ServiceUrl** | Pointer to **string** | Storage server URL | [optional] 
+**ServiceUsername** | Pointer to **string** | Service username for authentication | [optional] 
+**ServicePassword** | Pointer to **string** | Service password for authentication | [optional] 
+**ServicePort** | Pointer to **int32** | Service port | [optional] 
+**Credential** | Pointer to [**UpdateStorageServersRequestStorageServerCredential**](UpdateStorageServersRequestStorageServerCredential.md) |  | [optional] 
 **Tenants** | Pointer to [**[]UpdateStorageServersRequestStorageServerTenantsInner**](UpdateStorageServersRequestStorageServerTenantsInner.md) | Array of tenant account ids that are allowed access | [optional] 
 
 ## Methods
@@ -180,6 +186,156 @@ SetVisibility sets Visibility field to given value.
 `func (o *UpdateStorageServersRequestStorageServer) HasVisibility() bool`
 
 HasVisibility returns a boolean if a field has been set.
+
+### GetServiceHost
+
+`func (o *UpdateStorageServersRequestStorageServer) GetServiceHost() string`
+
+GetServiceHost returns the ServiceHost field if non-nil, zero value otherwise.
+
+### GetServiceHostOk
+
+`func (o *UpdateStorageServersRequestStorageServer) GetServiceHostOk() (*string, bool)`
+
+GetServiceHostOk returns a tuple with the ServiceHost field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetServiceHost
+
+`func (o *UpdateStorageServersRequestStorageServer) SetServiceHost(v string)`
+
+SetServiceHost sets ServiceHost field to given value.
+
+### HasServiceHost
+
+`func (o *UpdateStorageServersRequestStorageServer) HasServiceHost() bool`
+
+HasServiceHost returns a boolean if a field has been set.
+
+### GetServiceUrl
+
+`func (o *UpdateStorageServersRequestStorageServer) GetServiceUrl() string`
+
+GetServiceUrl returns the ServiceUrl field if non-nil, zero value otherwise.
+
+### GetServiceUrlOk
+
+`func (o *UpdateStorageServersRequestStorageServer) GetServiceUrlOk() (*string, bool)`
+
+GetServiceUrlOk returns a tuple with the ServiceUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetServiceUrl
+
+`func (o *UpdateStorageServersRequestStorageServer) SetServiceUrl(v string)`
+
+SetServiceUrl sets ServiceUrl field to given value.
+
+### HasServiceUrl
+
+`func (o *UpdateStorageServersRequestStorageServer) HasServiceUrl() bool`
+
+HasServiceUrl returns a boolean if a field has been set.
+
+### GetServiceUsername
+
+`func (o *UpdateStorageServersRequestStorageServer) GetServiceUsername() string`
+
+GetServiceUsername returns the ServiceUsername field if non-nil, zero value otherwise.
+
+### GetServiceUsernameOk
+
+`func (o *UpdateStorageServersRequestStorageServer) GetServiceUsernameOk() (*string, bool)`
+
+GetServiceUsernameOk returns a tuple with the ServiceUsername field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetServiceUsername
+
+`func (o *UpdateStorageServersRequestStorageServer) SetServiceUsername(v string)`
+
+SetServiceUsername sets ServiceUsername field to given value.
+
+### HasServiceUsername
+
+`func (o *UpdateStorageServersRequestStorageServer) HasServiceUsername() bool`
+
+HasServiceUsername returns a boolean if a field has been set.
+
+### GetServicePassword
+
+`func (o *UpdateStorageServersRequestStorageServer) GetServicePassword() string`
+
+GetServicePassword returns the ServicePassword field if non-nil, zero value otherwise.
+
+### GetServicePasswordOk
+
+`func (o *UpdateStorageServersRequestStorageServer) GetServicePasswordOk() (*string, bool)`
+
+GetServicePasswordOk returns a tuple with the ServicePassword field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetServicePassword
+
+`func (o *UpdateStorageServersRequestStorageServer) SetServicePassword(v string)`
+
+SetServicePassword sets ServicePassword field to given value.
+
+### HasServicePassword
+
+`func (o *UpdateStorageServersRequestStorageServer) HasServicePassword() bool`
+
+HasServicePassword returns a boolean if a field has been set.
+
+### GetServicePort
+
+`func (o *UpdateStorageServersRequestStorageServer) GetServicePort() int32`
+
+GetServicePort returns the ServicePort field if non-nil, zero value otherwise.
+
+### GetServicePortOk
+
+`func (o *UpdateStorageServersRequestStorageServer) GetServicePortOk() (*int32, bool)`
+
+GetServicePortOk returns a tuple with the ServicePort field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetServicePort
+
+`func (o *UpdateStorageServersRequestStorageServer) SetServicePort(v int32)`
+
+SetServicePort sets ServicePort field to given value.
+
+### HasServicePort
+
+`func (o *UpdateStorageServersRequestStorageServer) HasServicePort() bool`
+
+HasServicePort returns a boolean if a field has been set.
+
+### GetCredential
+
+`func (o *UpdateStorageServersRequestStorageServer) GetCredential() UpdateStorageServersRequestStorageServerCredential`
+
+GetCredential returns the Credential field if non-nil, zero value otherwise.
+
+### GetCredentialOk
+
+`func (o *UpdateStorageServersRequestStorageServer) GetCredentialOk() (*UpdateStorageServersRequestStorageServerCredential, bool)`
+
+GetCredentialOk returns a tuple with the Credential field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCredential
+
+`func (o *UpdateStorageServersRequestStorageServer) SetCredential(v UpdateStorageServersRequestStorageServerCredential)`
+
+SetCredential sets Credential field to given value.
+
+### HasCredential
+
+`func (o *UpdateStorageServersRequestStorageServer) HasCredential() bool`
+
+HasCredential returns a boolean if a field has been set.
 
 ### GetTenants
 

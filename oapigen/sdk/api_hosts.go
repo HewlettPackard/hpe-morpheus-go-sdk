@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.1.1
+API version: 9.0.0
 Contact: dev@morpheusdata.com
 */
 
@@ -118,7 +118,7 @@ func (a *HostsAPIService) AddBaremetalHostExecute(r ApiAddBaremetalHostRequest) 
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -129,7 +129,7 @@ func (a *HostsAPIService) AddBaremetalHostExecute(r ApiAddBaremetalHostRequest) 
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -254,7 +254,7 @@ func (a *HostsAPIService) AssignDeviceExecute(r ApiAssignDeviceRequest) (*Restar
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -265,7 +265,7 @@ func (a *HostsAPIService) AssignDeviceExecute(r ApiAssignDeviceRequest) (*Restar
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -382,7 +382,7 @@ func (a *HostsAPIService) AttachDeviceExecute(r ApiAttachDeviceRequest) (*Restar
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -393,7 +393,7 @@ func (a *HostsAPIService) AttachDeviceExecute(r ApiAttachDeviceRequest) (*Restar
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -510,7 +510,7 @@ func (a *HostsAPIService) DetachDeviceExecute(r ApiDetachDeviceRequest) (*Restar
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -521,7 +521,7 @@ func (a *HostsAPIService) DetachDeviceExecute(r ApiDetachDeviceRequest) (*Restar
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -642,7 +642,7 @@ func (a *HostsAPIService) EnableMaintenanceModeExecute(r ApiEnableMaintenanceMod
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -653,7 +653,7 @@ func (a *HostsAPIService) EnableMaintenanceModeExecute(r ApiEnableMaintenanceMod
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -766,7 +766,7 @@ func (a *HostsAPIService) GetHostExecute(r ApiGetHostRequest) (*GetHost200Respon
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -777,7 +777,7 @@ func (a *HostsAPIService) GetHostExecute(r ApiGetHostRequest) (*GetHost200Respon
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -890,7 +890,7 @@ func (a *HostsAPIService) GetHostSnpshotsExecute(r ApiGetHostSnpshotsRequest) (*
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -901,7 +901,7 @@ func (a *HostsAPIService) GetHostSnpshotsExecute(r ApiGetHostSnpshotsRequest) (*
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1014,7 +1014,7 @@ func (a *HostsAPIService) GetHostTypeExecute(r ApiGetHostTypeRequest) (*GetHostT
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1025,7 +1025,183 @@ func (a *HostsAPIService) GetHostTypeExecute(r ApiGetHostTypeRequest) (*GetHostT
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.err = err
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body: localVarBody,
+			err:  err,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiLeaseAgentTokenRequest struct {
+	ctx           context.Context
+	ApiService    *HostsAPIService
+	tokenType     string
+	serverId      LeaseAgentTokenServerIdParameter
+	timeout       *int64
+	nbdListenPort *int32
+}
+
+// Token time-to-live in milliseconds. Defaults to 300000 (5 minutes).
+func (r ApiLeaseAgentTokenRequest) Timeout(timeout int64) ApiLeaseAgentTokenRequest {
+	r.timeout = &timeout
+	return r
+}
+
+// NBD listen port. Only used when &#x60;tokenType&#x60; is &#x60;nbd&#x60;. Defaults to &#x60;10809&#x60;.
+func (r ApiLeaseAgentTokenRequest) NbdListenPort(nbdListenPort int32) ApiLeaseAgentTokenRequest {
+	r.nbdListenPort = &nbdListenPort
+	return r
+}
+
+func (r ApiLeaseAgentTokenRequest) Execute() (*LeaseAgentToken200Response, *http.Response, error) {
+	return r.ApiService.LeaseAgentTokenExecute(r)
+}
+
+/*
+LeaseAgentToken Lease an Agent WebSocket Token
+
+Creates a short-lived lease token for agent websocket access.
+
+The returned `url` and `headers.X-LEASE-TOKEN` are used together to establish the websocket connection.
+
+### Sample Usage
+```bash
+
+	curl -X POST "https://CHANGEME/api/lease-token/vnc/97?timeout=300000" \
+	  -H "Authorization: BEARER ${ACCESS_TOKEN}" \
+	  -H "Content-Type: application/json"
+
+```
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param tokenType Lease token scope/type.
+	@param serverId Server ID or UUID.
+	@return ApiLeaseAgentTokenRequest
+*/
+func (a *HostsAPIService) LeaseAgentToken(ctx context.Context, tokenType string, serverId LeaseAgentTokenServerIdParameter) ApiLeaseAgentTokenRequest {
+	return ApiLeaseAgentTokenRequest{
+		ApiService: a,
+		ctx:        ctx,
+		tokenType:  tokenType,
+		serverId:   serverId,
+	}
+}
+
+// Execute executes the request
+//
+//	@return LeaseAgentToken200Response
+func (a *HostsAPIService) LeaseAgentTokenExecute(r ApiLeaseAgentTokenRequest) (*LeaseAgentToken200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *LeaseAgentToken200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HostsAPIService.LeaseAgentToken")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
+	}
+
+	localVarPath := localBasePath + "/api/lease-token/{tokenType}/{serverId}"
+	localVarPath = strings.Replace(localVarPath, "{"+"tokenType"+"}", url.PathEscape(parameterValueToString(r.tokenType, "tokenType")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"serverId"+"}", url.PathEscape(parameterValueToString(r.serverId, "serverId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if r.timeout != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "timeout", r.timeout, "form", "")
+	} else {
+		var defaultValue int64 = 300000
+		r.timeout = &defaultValue
+	}
+	if r.nbdListenPort != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "nbdListenPort", r.nbdListenPort, "form", "")
+	} else {
+		var defaultValue int32 = 10809
+		r.nbdListenPort = &defaultValue
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body: localVarBody,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v LeaseAgentToken400Response
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.err = err
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 404 {
+			var v LeaseAgentToken404Response
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.err = err
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode >= 500 {
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1138,7 +1314,7 @@ func (a *HostsAPIService) LeaveMaintenanceModeExecute(r ApiLeaveMaintenanceModeR
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1149,7 +1325,7 @@ func (a *HostsAPIService) LeaveMaintenanceModeExecute(r ApiLeaveMaintenanceModeR
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1262,7 +1438,7 @@ func (a *HostsAPIService) ListHostDevicesExecute(r ApiListHostDevicesRequest) (*
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1273,7 +1449,7 @@ func (a *HostsAPIService) ListHostDevicesExecute(r ApiListHostDevicesRequest) (*
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1494,7 +1670,7 @@ func (a *HostsAPIService) ListHostTypesExecute(r ApiListHostTypesRequest) (*List
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1505,7 +1681,7 @@ func (a *HostsAPIService) ListHostTypesExecute(r ApiListHostTypesRequest) (*List
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1559,6 +1735,8 @@ type ApiListHostsRequest struct {
 	internalId        *string
 	externalUniquelId *string
 	stats             *string
+	includeTenants    *bool
+	tenantId          *float32
 }
 
 // Filter by name
@@ -1723,6 +1901,18 @@ func (r ApiListHostsRequest) Stats(stats string) ApiListHostsRequest {
 	return r
 }
 
+// Optional ability to include all subtenant resources when calling from a master tenant user. The default is true for backwards compatibility but can be set to false to exclude subtenant resources.
+func (r ApiListHostsRequest) IncludeTenants(includeTenants bool) ApiListHostsRequest {
+	r.includeTenants = &includeTenants
+	return r
+}
+
+// Filter by Tenant ID. Only available to the master account.
+func (r ApiListHostsRequest) TenantId(tenantId float32) ApiListHostsRequest {
+	r.tenantId = &tenantId
+	return r
+}
+
 func (r ApiListHostsRequest) Execute() (*ListHosts200Response, *http.Response, error) {
 	return r.ApiService.ListHostsExecute(r)
 }
@@ -1851,6 +2041,15 @@ func (a *HostsAPIService) ListHostsExecute(r ApiListHostsRequest) (*ListHosts200
 	if r.stats != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "stats", r.stats, "form", "")
 	}
+	if r.includeTenants != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeTenants", r.includeTenants, "form", "")
+	} else {
+		var defaultValue bool = true
+		r.includeTenants = &defaultValue
+	}
+	if r.tenantId != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "tenantId", r.tenantId, "form", "")
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -1890,7 +2089,7 @@ func (a *HostsAPIService) ListHostsExecute(r ApiListHostsRequest) (*ListHosts200
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1901,7 +2100,7 @@ func (a *HostsAPIService) ListHostsExecute(r ApiListHostsRequest) (*ListHosts200
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2041,7 +2240,7 @@ func (a *HostsAPIService) ListServerServicePlansExecute(r ApiListServerServicePl
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2052,7 +2251,7 @@ func (a *HostsAPIService) ListServerServicePlansExecute(r ApiListServerServicePl
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2173,7 +2372,7 @@ func (a *HostsAPIService) ManageHostPlacementExecute(r ApiManageHostPlacementReq
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2184,7 +2383,7 @@ func (a *HostsAPIService) ManageHostPlacementExecute(r ApiManageHostPlacementReq
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2375,7 +2574,7 @@ func (a *HostsAPIService) RemoveHostExecute(r ApiRemoveHostRequest) (*RemoveExec
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2386,7 +2585,7 @@ func (a *HostsAPIService) RemoveHostExecute(r ApiRemoveHostRequest) (*RemoveExec
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2499,7 +2698,7 @@ func (a *HostsAPIService) RestartHostExecute(r ApiRestartHostRequest) (*UpdateHo
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2510,7 +2709,7 @@ func (a *HostsAPIService) RestartHostExecute(r ApiRestartHostRequest) (*UpdateHo
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2631,7 +2830,7 @@ func (a *HostsAPIService) SnapshotHostExecute(r ApiSnapshotHostRequest) (*Snapsh
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2642,7 +2841,7 @@ func (a *HostsAPIService) SnapshotHostExecute(r ApiSnapshotHostRequest) (*Snapsh
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2755,7 +2954,7 @@ func (a *HostsAPIService) StartHostExecute(r ApiStartHostRequest) (*StartHost200
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2766,7 +2965,7 @@ func (a *HostsAPIService) StartHostExecute(r ApiStartHostRequest) (*StartHost200
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2879,7 +3078,7 @@ func (a *HostsAPIService) StopHostExecute(r ApiStopHostRequest) (*StopHost200Res
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -2890,7 +3089,7 @@ func (a *HostsAPIService) StopHostExecute(r ApiStopHostRequest) (*StopHost200Res
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3011,7 +3210,7 @@ func (a *HostsAPIService) UpdateHostExecute(r ApiUpdateHostRequest) (*GetHost200
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3022,7 +3221,7 @@ func (a *HostsAPIService) UpdateHostExecute(r ApiUpdateHostRequest) (*GetHost200
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3153,7 +3352,7 @@ func (a *HostsAPIService) UpdateHostAssignTenantExecute(r ApiUpdateHostAssignTen
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3164,7 +3363,7 @@ func (a *HostsAPIService) UpdateHostAssignTenantExecute(r ApiUpdateHostAssignTen
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3281,7 +3480,7 @@ func (a *HostsAPIService) UpdateHostCloudExecute(r ApiUpdateHostCloudRequest) (*
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3292,7 +3491,7 @@ func (a *HostsAPIService) UpdateHostCloudExecute(r ApiUpdateHostCloudRequest) (*
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3435,7 +3634,7 @@ func (a *HostsAPIService) UpdateHostExecuteWorkflowExecute(r ApiUpdateHostExecut
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3446,7 +3645,7 @@ func (a *HostsAPIService) UpdateHostExecuteWorkflowExecute(r ApiUpdateHostExecut
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3567,7 +3766,7 @@ func (a *HostsAPIService) UpdateHostInstallAgentExecute(r ApiUpdateHostInstallAg
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3578,7 +3777,7 @@ func (a *HostsAPIService) UpdateHostInstallAgentExecute(r ApiUpdateHostInstallAg
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3699,7 +3898,7 @@ func (a *HostsAPIService) UpdateHostManagedExecute(r ApiUpdateHostManagedRequest
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3710,7 +3909,7 @@ func (a *HostsAPIService) UpdateHostManagedExecute(r ApiUpdateHostManagedRequest
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3831,7 +4030,7 @@ func (a *HostsAPIService) UpdateHostResizeExecute(r ApiUpdateHostResizeRequest) 
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3842,7 +4041,7 @@ func (a *HostsAPIService) UpdateHostResizeExecute(r ApiUpdateHostResizeRequest) 
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3955,7 +4154,7 @@ func (a *HostsAPIService) UpdateHostUpgradeAgentExecute(r ApiUpdateHostUpgradeAg
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -3966,7 +4165,7 @@ func (a *HostsAPIService) UpdateHostUpgradeAgentExecute(r ApiUpdateHostUpgradeAg
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -4091,7 +4290,7 @@ func (a *HostsAPIService) UpdateServerNetworkInterfaceExecute(r ApiUpdateServerN
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListAlerts4XXResponse
+			var v ListApplianceSettings4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -4102,7 +4301,7 @@ func (a *HostsAPIService) UpdateServerNetworkInterfaceExecute(r ApiUpdateServerN
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListAlerts5XXResponse
+			var v ListApplianceSettings5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err

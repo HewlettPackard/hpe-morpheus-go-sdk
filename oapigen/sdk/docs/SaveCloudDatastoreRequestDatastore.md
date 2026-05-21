@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** |  | [optional] 
-**DatastoreType** | Pointer to **string** | The code of the datatoreType | [optional] 
+**DatastoreType** | Pointer to **string** | The code of the datastoreType | [optional] 
 **StorageServer** | Pointer to [**SaveCloudDatastoreRequestDatastoreStorageServer**](SaveCloudDatastoreRequestDatastoreStorageServer.md) |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
 **Active** | Pointer to **bool** |  | [optional] 

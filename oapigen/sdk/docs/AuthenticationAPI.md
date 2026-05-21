@@ -5,9 +5,9 @@ All URIs are relative to *https://CHANGEME*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**ForgotPassword**](AuthenticationAPI.md#ForgotPassword) | **Post** /api/forgot/send-email | Request a reset password email
-[**GetAccessToken**](AuthenticationAPI.md#GetAccessToken) | **Post** /oauth/token | Provides authentication via username and password
+[**GetAccessToken**](AuthenticationAPI.md#GetAccessToken) | **Post** /oauth/token | Get Access Token
 [**ResetPassword**](AuthenticationAPI.md#ResetPassword) | **Post** /api/forgot/reset-password | Reset user password
-[**Whoami**](AuthenticationAPI.md#Whoami) | **Get** /api/whoami | Retrieves information about current user roles and permissions
+[**Whoami**](AuthenticationAPI.md#Whoami) | **Get** /api/whoami | Whoami
 
 
 
@@ -79,9 +79,9 @@ No authorization required
 
 ## GetAccessToken
 
-> GetAccessToken200Response GetAccessToken(ctx).ClientId(clientId).GrantType(grantType).Scope(scope).Username(username).Password(password).RefreshToken(refreshToken).Execute()
+> GetAccessToken200Response GetAccessToken(ctx).ClientId(clientId).GrantType(grantType).Scope(scope).Username(username).Password(password).RefreshToken(refreshToken).ClientSecret(clientSecret).AuthorizationCode(authorizationCode).Execute()
 
-Provides authentication via username and password
+Get Access Token
 
 
 
@@ -98,16 +98,18 @@ import (
 )
 
 func main() {
-	clientId := "clientId_example" // string | Client ID, use morph-api. Users may only have one access token per Client ID. The CLI uses morph-cli.
-	grantType := "grantType_example" // string | OAuth Grant Type, use password.
-	scope := "scope_example" // string | OAuth token scope, use write.
-	username := "username_example" // string | Specified as \\\"username\\\" or \\\"tenantId\\\\username\\\" with proper HTML encoding and used in conjunction with `password`. Not utilized with `refresh_token`. (optional)
-	password := "password_example" // string | The Password for defined `username`. Must have proper HTML encoding (optional)
-	refreshToken := TODO // interface{} |  (optional)
+	clientId := "clientId_example" // string | Client ID (optional)
+	grantType := "grantType_example" // string | OAuth Grant Type, use authorization_code. (optional) (default to "authorization_code")
+	scope := "scope_example" // string | OAuth token scope, use `write`. (optional)
+	username := "username_example" // string | Username Sub-tenant users must format their username as `subdomain\\\\username` with a prefix that is the tenant subdomain or id by default.  (optional)
+	password := "password_example" // string | Password (optional)
+	refreshToken := "refreshToken_example" // string | Refresh Token (optional)
+	clientSecret := "clientSecret_example" // string | Client Secret (optional)
+	authorizationCode := "authorizationCode_example" // string | Authorization code must be obtained with a valid request to `/oauth/authorize`. This code is used to request an access token in the OAuth 2.0 Authorization Code Flow. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AuthenticationAPI.GetAccessToken(context.Background()).ClientId(clientId).GrantType(grantType).Scope(scope).Username(username).Password(password).RefreshToken(refreshToken).Execute()
+	resp, r, err := apiClient.AuthenticationAPI.GetAccessToken(context.Background()).ClientId(clientId).GrantType(grantType).Scope(scope).Username(username).Password(password).RefreshToken(refreshToken).ClientSecret(clientSecret).AuthorizationCode(authorizationCode).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationAPI.GetAccessToken``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -128,12 +130,14 @@ Other parameters are passed through a pointer to a apiGetAccessTokenRequest stru
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **clientId** | **string** | Client ID, use morph-api. Users may only have one access token per Client ID. The CLI uses morph-cli. | 
- **grantType** | **string** | OAuth Grant Type, use password. | 
- **scope** | **string** | OAuth token scope, use write. | 
- **username** | **string** | Specified as \\\&quot;username\\\&quot; or \\\&quot;tenantId\\\\username\\\&quot; with proper HTML encoding and used in conjunction with &#x60;password&#x60;. Not utilized with &#x60;refresh_token&#x60;. | 
- **password** | **string** | The Password for defined &#x60;username&#x60;. Must have proper HTML encoding | 
- **refreshToken** | [**interface{}**](interface{}.md) |  | 
+ **clientId** | **string** | Client ID | 
+ **grantType** | **string** | OAuth Grant Type, use authorization_code. | [default to &quot;authorization_code&quot;]
+ **scope** | **string** | OAuth token scope, use &#x60;write&#x60;. | 
+ **username** | **string** | Username Sub-tenant users must format their username as &#x60;subdomain\\\\username&#x60; with a prefix that is the tenant subdomain or id by default.  | 
+ **password** | **string** | Password | 
+ **refreshToken** | **string** | Refresh Token | 
+ **clientSecret** | **string** | Client Secret | 
+ **authorizationCode** | **string** | Authorization code must be obtained with a valid request to &#x60;/oauth/authorize&#x60;. This code is used to request an access token in the OAuth 2.0 Authorization Code Flow. | 
 
 ### Return type
 
@@ -223,7 +227,7 @@ No authorization required
 
 > Whoami200Response Whoami(ctx).Execute()
 
-Retrieves information about current user roles and permissions
+Whoami
 
 
 

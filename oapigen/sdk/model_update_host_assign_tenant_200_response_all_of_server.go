@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.1.1
+API version: 9.0.0
 Contact: dev@morpheusdata.com
 */
 
@@ -21,86 +21,87 @@ var _ MappedNullable = &UpdateHostAssignTenant200ResponseAllOfServer{}
 
 // UpdateHostAssignTenant200ResponseAllOfServer struct for UpdateHostAssignTenant200ResponseAllOfServer
 type UpdateHostAssignTenant200ResponseAllOfServer struct {
-	Id                       *int64                                              `json:"id,omitempty"`
-	Uuid                     *string                                             `json:"uuid,omitempty"`
-	ExternalId               NullableString                                      `json:"externalId,omitempty"`
-	InternalId               NullableString                                      `json:"internalId,omitempty"`
-	ExternalUniqueId         NullableString                                      `json:"externalUniqueId,omitempty"`
-	Name                     *string                                             `json:"name,omitempty"`
-	ExternalName             *string                                             `json:"externalName,omitempty"`
-	Hostname                 *string                                             `json:"hostname,omitempty"`
-	ParentServer             *AddBaremetalHost200ResponseServerParentServer      `json:"parentServer,omitempty"`
-	AccountId                *int64                                              `json:"accountId,omitempty"`
-	Account                  *AddBaremetalHost200ResponseServerAccount           `json:"account,omitempty"`
-	Owner                    *AddBaremetalHost200ResponseServerOwner             `json:"owner,omitempty"`
-	Zone                     *AddBaremetalHost200ResponseServerZone              `json:"zone,omitempty"`
-	Plan                     *AddBaremetalHost200ResponseServerPlan              `json:"plan,omitempty"`
-	ComputeServerType        *AddBaremetalHost200ResponseServerComputeServerType `json:"computeServerType,omitempty"`
-	Visibility               *string                                             `json:"visibility,omitempty"`
-	Description              NullableString                                      `json:"description,omitempty"`
-	ZoneId                   *int64                                              `json:"zoneId,omitempty"`
-	SiteId                   *int64                                              `json:"siteId,omitempty"`
-	ResourcePoolId           NullableInt64                                       `json:"resourcePoolId,omitempty"`
-	FolderId                 NullableInt64                                       `json:"folderId,omitempty"`
-	SshHost                  NullableString                                      `json:"sshHost,omitempty"`
-	SshPort                  *int64                                              `json:"sshPort,omitempty"`
-	ExternalIp               NullableString                                      `json:"externalIp,omitempty"`
-	InternalIp               NullableString                                      `json:"internalIp,omitempty"`
-	VolumeId                 NullableString                                      `json:"volumeId,omitempty"`
-	Platform                 NullableString                                      `json:"platform,omitempty"`
-	PlatformVersion          NullableString                                      `json:"platformVersion,omitempty"`
-	SshUsername              NullableString                                      `json:"sshUsername,omitempty"`
-	SshPassword              NullableString                                      `json:"sshPassword,omitempty"`
-	SshPasswordHash          NullableString                                      `json:"sshPasswordHash,omitempty"`
-	SshKeyPair               *AddBaremetalHost200ResponseServerSshKeyPair        `json:"sshKeyPair,omitempty"`
-	OsDevice                 *string                                             `json:"osDevice,omitempty"`
-	OsType                   *string                                             `json:"osType,omitempty"`
-	DataDevice               *string                                             `json:"dataDevice,omitempty"`
-	LvmEnabled               *bool                                               `json:"lvmEnabled,omitempty"`
-	ApiKey                   *string                                             `json:"apiKey,omitempty"`
-	SoftwareRaid             *bool                                               `json:"softwareRaid,omitempty"`
-	DateCreated              *time.Time                                          `json:"dateCreated,omitempty"`
-	LastUpdated              *time.Time                                          `json:"lastUpdated,omitempty"`
-	Stats                    *AddBaremetalHost200ResponseServerStats             `json:"stats,omitempty"`
-	Status                   *string                                             `json:"status,omitempty"`
-	StatusMessage            NullableString                                      `json:"statusMessage,omitempty"`
-	ErrorMessage             NullableString                                      `json:"errorMessage,omitempty"`
-	StatusDate               NullableTime                                        `json:"statusDate,omitempty"`
-	StatusPercent            NullableString                                      `json:"statusPercent,omitempty"`
-	StatusEta                NullableString                                      `json:"statusEta,omitempty"`
-	PowerState               *string                                             `json:"powerState,omitempty"`
-	AgentInstalled           *bool                                               `json:"agentInstalled,omitempty"`
-	LastAgentUpdate          NullableString                                      `json:"lastAgentUpdate,omitempty"`
-	AgentVersion             NullableString                                      `json:"agentVersion,omitempty"`
-	MaxCores                 *int64                                              `json:"maxCores,omitempty"`
-	CoresPerSocket           NullableInt64                                       `json:"coresPerSocket,omitempty"`
-	MaxMemory                *int64                                              `json:"maxMemory,omitempty"`
-	MaxStorage               *int64                                              `json:"maxStorage,omitempty"`
-	MaxCpu                   NullableInt64                                       `json:"maxCpu,omitempty"`
-	MaxGpus                  NullableInt64                                       `json:"maxGpus,omitempty"`
-	ManageInternalFirewall   *bool                                               `json:"manageInternalFirewall,omitempty"`
-	EnableLogs               *bool                                               `json:"enableLogs,omitempty"`
-	HourlyCost               *float32                                            `json:"hourlyCost,omitempty"`
-	HourlyPrice              *float32                                            `json:"hourlyPrice,omitempty"`
-	SourceImage              *AddBaremetalHost200ResponseServerSourceImage       `json:"sourceImage,omitempty"`
-	ServerOs                 *AddBaremetalHost200ResponseServerServerOs          `json:"serverOs,omitempty"`
-	Volumes                  []AddBaremetalHost200ResponseServerVolumesInner     `json:"volumes,omitempty"`
-	Controllers              []AddBaremetalHost200ResponseServerControllersInner `json:"controllers,omitempty"`
-	Interfaces               []AddBaremetalHost200ResponseServerInterfacesInner  `json:"interfaces,omitempty"`
-	Labels                   []map[string]interface{}                            `json:"labels,omitempty"`
-	Tags                     []map[string]interface{}                            `json:"tags,omitempty"`
-	Enabled                  *bool                                               `json:"enabled,omitempty"`
-	TagCompliant             NullableString                                      `json:"tagCompliant,omitempty"`
-	Containers               []int64                                             `json:"containers,omitempty"`
-	Config                   *AddBaremetalHost200ResponseServerConfig            `json:"config,omitempty"`
-	Instance                 *AddBaremetalHost200ResponseServerInstance          `json:"instance,omitempty"`
-	GuestConsolePreferred    *bool                                               `json:"guestConsolePreferred,omitempty"`
-	GuestConsoleType         NullableString                                      `json:"guestConsoleType,omitempty"`
-	GuestConsoleUsername     NullableString                                      `json:"guestConsoleUsername,omitempty"`
-	GuestConsolePassword     NullableString                                      `json:"guestConsolePassword,omitempty"`
-	GuestConsolePasswordHash NullableString                                      `json:"guestConsolePasswordHash,omitempty"`
-	GuestConsolePort         NullableString                                      `json:"guestConsolePort,omitempty"`
-	AdditionalProperties     map[string]interface{}                              `json:",remain"`
+	Id                       *int64                                                    `json:"id,omitempty"`
+	Uuid                     *string                                                   `json:"uuid,omitempty"`
+	ExternalId               NullableString                                            `json:"externalId,omitempty"`
+	InternalId               NullableString                                            `json:"internalId,omitempty"`
+	ExternalUniqueId         NullableString                                            `json:"externalUniqueId,omitempty"`
+	Name                     *string                                                   `json:"name,omitempty"`
+	ExternalName             *string                                                   `json:"externalName,omitempty"`
+	Hostname                 *string                                                   `json:"hostname,omitempty"`
+	ParentServer             *AddBaremetalHost200ResponseServerParentServer            `json:"parentServer,omitempty"`
+	AccountId                *int64                                                    `json:"accountId,omitempty"`
+	Account                  *AddBaremetalHost200ResponseServerAccount                 `json:"account,omitempty"`
+	Owner                    *AddBaremetalHost200ResponseServerOwner                   `json:"owner,omitempty"`
+	Zone                     *AddBaremetalHost200ResponseServerZone                    `json:"zone,omitempty"`
+	Plan                     *AddBaremetalHost200ResponseServerPlan                    `json:"plan,omitempty"`
+	ComputeServerType        *AddBaremetalHost200ResponseServerComputeServerType       `json:"computeServerType,omitempty"`
+	Visibility               *string                                                   `json:"visibility,omitempty"`
+	Description              NullableString                                            `json:"description,omitempty"`
+	ZoneId                   *int64                                                    `json:"zoneId,omitempty"`
+	SiteId                   *int64                                                    `json:"siteId,omitempty"`
+	ResourcePoolId           NullableInt64                                             `json:"resourcePoolId,omitempty"`
+	FolderId                 NullableInt64                                             `json:"folderId,omitempty"`
+	SshHost                  NullableString                                            `json:"sshHost,omitempty"`
+	SshPort                  *int64                                                    `json:"sshPort,omitempty"`
+	ExternalIp               NullableString                                            `json:"externalIp,omitempty"`
+	InternalIp               NullableString                                            `json:"internalIp,omitempty"`
+	VolumeId                 NullableString                                            `json:"volumeId,omitempty"`
+	Platform                 NullableString                                            `json:"platform,omitempty"`
+	PlatformVersion          NullableString                                            `json:"platformVersion,omitempty"`
+	SshUsername              NullableString                                            `json:"sshUsername,omitempty"`
+	SshPassword              NullableString                                            `json:"sshPassword,omitempty"`
+	SshPasswordHash          NullableString                                            `json:"sshPasswordHash,omitempty"`
+	SshKeyPair               *AddBaremetalHost200ResponseServerSshKeyPair              `json:"sshKeyPair,omitempty"`
+	OsDevice                 *string                                                   `json:"osDevice,omitempty"`
+	OsType                   *string                                                   `json:"osType,omitempty"`
+	DataDevice               *string                                                   `json:"dataDevice,omitempty"`
+	LvmEnabled               *bool                                                     `json:"lvmEnabled,omitempty"`
+	ApiKey                   *string                                                   `json:"apiKey,omitempty"`
+	SoftwareRaid             *bool                                                     `json:"softwareRaid,omitempty"`
+	DateCreated              *time.Time                                                `json:"dateCreated,omitempty"`
+	LastUpdated              *time.Time                                                `json:"lastUpdated,omitempty"`
+	Stats                    *AddBaremetalHost200ResponseServerStats                   `json:"stats,omitempty"`
+	Status                   *string                                                   `json:"status,omitempty"`
+	StatusMessage            NullableString                                            `json:"statusMessage,omitempty"`
+	ErrorMessage             NullableString                                            `json:"errorMessage,omitempty"`
+	StatusDate               NullableTime                                              `json:"statusDate,omitempty"`
+	StatusPercent            NullableString                                            `json:"statusPercent,omitempty"`
+	StatusEta                NullableString                                            `json:"statusEta,omitempty"`
+	PowerState               *string                                                   `json:"powerState,omitempty"`
+	AgentInstalled           *bool                                                     `json:"agentInstalled,omitempty"`
+	LastAgentUpdate          NullableString                                            `json:"lastAgentUpdate,omitempty"`
+	AgentVersion             NullableString                                            `json:"agentVersion,omitempty"`
+	MaxCores                 *int64                                                    `json:"maxCores,omitempty"`
+	CoresPerSocket           NullableInt64                                             `json:"coresPerSocket,omitempty"`
+	MaxMemory                *int64                                                    `json:"maxMemory,omitempty"`
+	MaxStorage               *int64                                                    `json:"maxStorage,omitempty"`
+	MaxCpu                   NullableInt64                                             `json:"maxCpu,omitempty"`
+	MaxGpus                  NullableInt64                                             `json:"maxGpus,omitempty"`
+	ManageInternalFirewall   *bool                                                     `json:"manageInternalFirewall,omitempty"`
+	EnableLogs               *bool                                                     `json:"enableLogs,omitempty"`
+	HourlyCost               *float32                                                  `json:"hourlyCost,omitempty"`
+	HourlyPrice              *float32                                                  `json:"hourlyPrice,omitempty"`
+	SourceImage              *AddBaremetalHost200ResponseServerSourceImage             `json:"sourceImage,omitempty"`
+	ServerOs                 *AddBaremetalHost200ResponseServerServerOs                `json:"serverOs,omitempty"`
+	Volumes                  []AddBaremetalHost200ResponseServerVolumesInner           `json:"volumes,omitempty"`
+	Controllers              []AddBaremetalHost200ResponseServerControllersInner       `json:"controllers,omitempty"`
+	Interfaces               []AddBaremetalHost200ResponseServerInterfacesInner        `json:"interfaces,omitempty"`
+	Labels                   []map[string]interface{}                                  `json:"labels,omitempty"`
+	Tags                     []map[string]interface{}                                  `json:"tags,omitempty"`
+	Enabled                  *bool                                                     `json:"enabled,omitempty"`
+	TagCompliant             NullableBool                                              `json:"tagCompliant,omitempty"`
+	Containers               []int64                                                   `json:"containers,omitempty"`
+	Config                   *AddBaremetalHost200ResponseServerConfig                  `json:"config,omitempty"`
+	Instance                 *AddBaremetalHost200ResponseServerInstance                `json:"instance,omitempty"`
+	GuestConsolePreferred    *bool                                                     `json:"guestConsolePreferred,omitempty"`
+	GuestConsoleType         NullableString                                            `json:"guestConsoleType,omitempty"`
+	GuestConsoleUsername     NullableString                                            `json:"guestConsoleUsername,omitempty"`
+	GuestConsolePassword     NullableString                                            `json:"guestConsolePassword,omitempty"`
+	GuestConsolePasswordHash NullableString                                            `json:"guestConsolePasswordHash,omitempty"`
+	GuestConsolePort         NullableString                                            `json:"guestConsolePort,omitempty"`
+	SecureMetadataDatastore  *AddBaremetalHost200ResponseServerSecureMetadataDatastore `json:"secureMetadataDatastore,omitempty"`
+	AdditionalProperties     map[string]interface{}                                    `json:",remain"`
 }
 
 type _UpdateHostAssignTenant200ResponseAllOfServer UpdateHostAssignTenant200ResponseAllOfServer
@@ -2608,9 +2609,9 @@ func (o *UpdateHostAssignTenant200ResponseAllOfServer) SetEnabled(v bool) {
 }
 
 // GetTagCompliant returns the TagCompliant field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *UpdateHostAssignTenant200ResponseAllOfServer) GetTagCompliant() string {
+func (o *UpdateHostAssignTenant200ResponseAllOfServer) GetTagCompliant() bool {
 	if o == nil || IsNil(o.TagCompliant.Get()) {
-		var ret string
+		var ret bool
 		return ret
 	}
 	return *o.TagCompliant.Get()
@@ -2619,7 +2620,7 @@ func (o *UpdateHostAssignTenant200ResponseAllOfServer) GetTagCompliant() string 
 // GetTagCompliantOk returns a tuple with the TagCompliant field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *UpdateHostAssignTenant200ResponseAllOfServer) GetTagCompliantOk() (*string, bool) {
+func (o *UpdateHostAssignTenant200ResponseAllOfServer) GetTagCompliantOk() (*bool, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -2635,8 +2636,8 @@ func (o *UpdateHostAssignTenant200ResponseAllOfServer) IsSetTagCompliant() bool 
 	return false
 }
 
-// SetTagCompliant gets a reference to the given NullableString and assigns it to the TagCompliant field.
-func (o *UpdateHostAssignTenant200ResponseAllOfServer) SetTagCompliant(v string) {
+// SetTagCompliant gets a reference to the given NullableBool and assigns it to the TagCompliant field.
+func (o *UpdateHostAssignTenant200ResponseAllOfServer) SetTagCompliant(v bool) {
 	o.TagCompliant.Set(&v)
 }
 
@@ -2993,6 +2994,38 @@ func (o *UpdateHostAssignTenant200ResponseAllOfServer) UnsetGuestConsolePort() {
 	o.GuestConsolePort.Unset()
 }
 
+// GetSecureMetadataDatastore returns the SecureMetadataDatastore field value if set, zero value otherwise.
+func (o *UpdateHostAssignTenant200ResponseAllOfServer) GetSecureMetadataDatastore() AddBaremetalHost200ResponseServerSecureMetadataDatastore {
+	if o == nil || IsNil(o.SecureMetadataDatastore) {
+		var ret AddBaremetalHost200ResponseServerSecureMetadataDatastore
+		return ret
+	}
+	return *o.SecureMetadataDatastore
+}
+
+// GetSecureMetadataDatastoreOk returns a tuple with the SecureMetadataDatastore field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateHostAssignTenant200ResponseAllOfServer) GetSecureMetadataDatastoreOk() (*AddBaremetalHost200ResponseServerSecureMetadataDatastore, bool) {
+	if o == nil || IsNil(o.SecureMetadataDatastore) {
+		return nil, false
+	}
+	return o.SecureMetadataDatastore, true
+}
+
+// IsSetSecureMetadataDatastore returns a boolean if a field has been set.
+func (o *UpdateHostAssignTenant200ResponseAllOfServer) IsSetSecureMetadataDatastore() bool {
+	if o != nil && !IsNil(o.SecureMetadataDatastore) {
+		return true
+	}
+
+	return false
+}
+
+// SetSecureMetadataDatastore gets a reference to the given AddBaremetalHost200ResponseServerSecureMetadataDatastore and assigns it to the SecureMetadataDatastore field.
+func (o *UpdateHostAssignTenant200ResponseAllOfServer) SetSecureMetadataDatastore(v AddBaremetalHost200ResponseServerSecureMetadataDatastore) {
+	o.SecureMetadataDatastore = &v
+}
+
 func (o UpdateHostAssignTenant200ResponseAllOfServer) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -3239,6 +3272,9 @@ func (o UpdateHostAssignTenant200ResponseAllOfServer) ToMap() (map[string]interf
 	}
 	if o.GuestConsolePort.IsSet() {
 		toSerialize["guestConsolePort"] = o.GuestConsolePort.Get()
+	}
+	if !IsNil(o.SecureMetadataDatastore) {
+		toSerialize["secureMetadataDatastore"] = o.SecureMetadataDatastore
 	}
 
 	for key, value := range o.AdditionalProperties {

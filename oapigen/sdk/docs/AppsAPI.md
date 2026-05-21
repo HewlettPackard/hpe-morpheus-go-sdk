@@ -232,7 +232,7 @@ Name | Type | Description  | Notes
 
 ## ApplyAppState
 
-> ApplyAppState200Response ApplyAppState(ctx, id).ApplyAppStateRequest(applyAppStateRequest).Execute()
+> UpdateApplianceSettings200Response ApplyAppState(ctx, id).ApplyAppStateRequest(applyAppStateRequest).Execute()
 
 Apply State of an App
 
@@ -261,7 +261,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `AppsAPI.ApplyAppState``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ApplyAppState`: ApplyAppState200Response
+	// response from `ApplyAppState`: UpdateApplianceSettings200Response
 	fmt.Fprintf(os.Stdout, "Response from `AppsAPI.ApplyAppState`: %v\n", resp)
 }
 ```
@@ -286,7 +286,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApplyAppState200Response**](ApplyAppState200Response.md)
+[**UpdateApplianceSettings200Response**](UpdateApplianceSettings200Response.md)
 
 ### Authorization
 

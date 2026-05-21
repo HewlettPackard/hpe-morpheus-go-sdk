@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.1.1
+API version: 9.0.0
 Contact: dev@morpheusdata.com
 */
 
@@ -31,7 +31,9 @@ type HVMInstanceConfiguration1 struct {
 	// The type of pool provider to use for this instance, must be \"mvm\"
 	PoolProviderType *string `json:"poolProviderType,omitempty"`
 	// The ID of the KVM host to provision the instance on
-	KvmHostId            *int64                 `json:"kvmHostId,omitempty"`
+	KvmHostId *int64 `json:"kvmHostId,omitempty"`
+	// Whether to provision the instance in a powered off state
+	ProvisionPoweredOff  *bool                  `json:"provisionPoweredOff,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -51,6 +53,8 @@ func NewHVMInstanceConfiguration1() *HVMInstanceConfiguration1 {
 	this.CreateUser = *NewNullableBool(&createUser)
 	var poolProviderType string = "mvm"
 	this.PoolProviderType = &poolProviderType
+	var provisionPoweredOff bool = false
+	this.ProvisionPoweredOff = &provisionPoweredOff
 	return &this
 }
 
@@ -67,6 +71,8 @@ func NewHVMInstanceConfiguration1WithDefaults() *HVMInstanceConfiguration1 {
 	this.CreateUser = *NewNullableBool(&createUser)
 	var poolProviderType string = "mvm"
 	this.PoolProviderType = &poolProviderType
+	var provisionPoweredOff bool = false
+	this.ProvisionPoweredOff = &provisionPoweredOff
 	return &this
 }
 
@@ -284,6 +290,38 @@ func (o *HVMInstanceConfiguration1) SetKvmHostId(v int64) {
 	o.KvmHostId = &v
 }
 
+// GetProvisionPoweredOff returns the ProvisionPoweredOff field value if set, zero value otherwise.
+func (o *HVMInstanceConfiguration1) GetProvisionPoweredOff() bool {
+	if o == nil || IsNil(o.ProvisionPoweredOff) {
+		var ret bool
+		return ret
+	}
+	return *o.ProvisionPoweredOff
+}
+
+// GetProvisionPoweredOffOk returns a tuple with the ProvisionPoweredOff field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *HVMInstanceConfiguration1) GetProvisionPoweredOffOk() (*bool, bool) {
+	if o == nil || IsNil(o.ProvisionPoweredOff) {
+		return nil, false
+	}
+	return o.ProvisionPoweredOff, true
+}
+
+// IsSetProvisionPoweredOff returns a boolean if a field has been set.
+func (o *HVMInstanceConfiguration1) IsSetProvisionPoweredOff() bool {
+	if o != nil && !IsNil(o.ProvisionPoweredOff) {
+		return true
+	}
+
+	return false
+}
+
+// SetProvisionPoweredOff gets a reference to the given bool and assigns it to the ProvisionPoweredOff field.
+func (o *HVMInstanceConfiguration1) SetProvisionPoweredOff(v bool) {
+	o.ProvisionPoweredOff = &v
+}
+
 func (o HVMInstanceConfiguration1) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -311,6 +349,9 @@ func (o HVMInstanceConfiguration1) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.KvmHostId) {
 		toSerialize["kvmHostId"] = o.KvmHostId
+	}
+	if !IsNil(o.ProvisionPoweredOff) {
+		toSerialize["provisionPoweredOff"] = o.ProvisionPoweredOff
 	}
 
 	for key, value := range o.AdditionalProperties {

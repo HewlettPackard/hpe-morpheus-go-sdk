@@ -4,11 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AccessToken** | Pointer to **string** | Token that grants API Access | [optional] 
-**RefreshToken** | Pointer to **string** | Token that can request an new API access_token | [optional] 
+**AccessToken** | Pointer to **string** | Access token that is used as a bearer token in the Authorization header of API requests to protected resources | [optional] 
+**RefreshToken** | Pointer to **string** | Refresh token that allows refreshing access token without re-authenticating | [optional] 
 **ExpiresIn** | Pointer to **float32** | Seconds until token expires | [optional] 
 **TokenType** | Pointer to **string** | Token type granted | [optional] 
 **Scope** | Pointer to **string** | Scope granted | [optional] 
+**IdToken** | Pointer to **string** | ID token that is only returned when using the &#x60;openid&#x60; scope. The ID token is a JSON Web Token (JWT) that contains claims about the authenticated user and can be decoded and verified using the tenant&#39;s public key. The claims in the ID token can be used to obtain user information such as the user&#39;s name, email, and roles without needing to make additional API calls. The ID token is intended for use in OIDC-compliant applications that require user authentication and authorization based on OIDC claims. | [optional] 
 
 ## Methods
 
@@ -153,6 +154,31 @@ SetScope sets Scope field to given value.
 `func (o *AccessToken) HasScope() bool`
 
 HasScope returns a boolean if a field has been set.
+
+### GetIdToken
+
+`func (o *AccessToken) GetIdToken() string`
+
+GetIdToken returns the IdToken field if non-nil, zero value otherwise.
+
+### GetIdTokenOk
+
+`func (o *AccessToken) GetIdTokenOk() (*string, bool)`
+
+GetIdTokenOk returns a tuple with the IdToken field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIdToken
+
+`func (o *AccessToken) SetIdToken(v string)`
+
+SetIdToken sets IdToken field to given value.
+
+### HasIdToken
+
+`func (o *AccessToken) HasIdToken() bool`
+
+HasIdToken returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

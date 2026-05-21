@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Meta** | Pointer to [**ListAlerts200ResponseAllOfMeta**](ListAlerts200ResponseAllOfMeta.md) |  | [optional] 
+**Meta** | Pointer to [**ListApprovals200ResponseAllOfMeta**](ListApprovals200ResponseAllOfMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMeta
 
-`func (o *ListIntegrations200ResponseAnyOf1) GetMeta() ListAlerts200ResponseAllOfMeta`
+`func (o *ListIntegrations200ResponseAnyOf1) GetMeta() ListApprovals200ResponseAllOfMeta`
 
 GetMeta returns the Meta field if non-nil, zero value otherwise.
 
 ### GetMetaOk
 
-`func (o *ListIntegrations200ResponseAnyOf1) GetMetaOk() (*ListAlerts200ResponseAllOfMeta, bool)`
+`func (o *ListIntegrations200ResponseAnyOf1) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool)`
 
 GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMeta
 
-`func (o *ListIntegrations200ResponseAnyOf1) SetMeta(v ListAlerts200ResponseAllOfMeta)`
+`func (o *ListIntegrations200ResponseAnyOf1) SetMeta(v ListApprovals200ResponseAllOfMeta)`
 
 SetMeta sets Meta field to given value.
 

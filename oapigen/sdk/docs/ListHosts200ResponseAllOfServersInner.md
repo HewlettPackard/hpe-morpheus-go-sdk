@@ -73,7 +73,7 @@ Name | Type | Description | Notes
 **Labels** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **Tags** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**TagCompliant** | Pointer to **NullableString** |  | [optional] 
+**TagCompliant** | Pointer to **NullableBool** |  | [optional] 
 **Containers** | Pointer to **[]int64** |  | [optional] 
 **Config** | Pointer to [**ListHosts200ResponseAllOfServersInnerConfig**](ListHosts200ResponseAllOfServersInnerConfig.md) |  | [optional] 
 **Instance** | Pointer to [**ListHosts200ResponseAllOfServersInnerInstance**](ListHosts200ResponseAllOfServersInnerInstance.md) |  | [optional] 
@@ -83,6 +83,7 @@ Name | Type | Description | Notes
 **GuestConsolePassword** | Pointer to **NullableString** |  | [optional] 
 **GuestConsolePasswordHash** | Pointer to **NullableString** |  | [optional] 
 **GuestConsolePort** | Pointer to **NullableString** |  | [optional] 
+**SecureMetadataDatastore** | Pointer to [**ListHosts200ResponseAllOfServersInnerSecureMetadataDatastore**](ListHosts200ResponseAllOfServersInnerSecureMetadataDatastore.md) |  | [optional] 
 
 ## Methods
 
@@ -2130,20 +2131,20 @@ HasEnabled returns a boolean if a field has been set.
 
 ### GetTagCompliant
 
-`func (o *ListHosts200ResponseAllOfServersInner) GetTagCompliant() string`
+`func (o *ListHosts200ResponseAllOfServersInner) GetTagCompliant() bool`
 
 GetTagCompliant returns the TagCompliant field if non-nil, zero value otherwise.
 
 ### GetTagCompliantOk
 
-`func (o *ListHosts200ResponseAllOfServersInner) GetTagCompliantOk() (*string, bool)`
+`func (o *ListHosts200ResponseAllOfServersInner) GetTagCompliantOk() (*bool, bool)`
 
 GetTagCompliantOk returns a tuple with the TagCompliant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTagCompliant
 
-`func (o *ListHosts200ResponseAllOfServersInner) SetTagCompliant(v string)`
+`func (o *ListHosts200ResponseAllOfServersInner) SetTagCompliant(v bool)`
 
 SetTagCompliant sets TagCompliant field to given value.
 
@@ -2438,6 +2439,31 @@ HasGuestConsolePort returns a boolean if a field has been set.
 `func (o *ListHosts200ResponseAllOfServersInner) UnsetGuestConsolePort()`
 
 UnsetGuestConsolePort ensures that no value is present for GuestConsolePort, not even an explicit nil
+### GetSecureMetadataDatastore
+
+`func (o *ListHosts200ResponseAllOfServersInner) GetSecureMetadataDatastore() ListHosts200ResponseAllOfServersInnerSecureMetadataDatastore`
+
+GetSecureMetadataDatastore returns the SecureMetadataDatastore field if non-nil, zero value otherwise.
+
+### GetSecureMetadataDatastoreOk
+
+`func (o *ListHosts200ResponseAllOfServersInner) GetSecureMetadataDatastoreOk() (*ListHosts200ResponseAllOfServersInnerSecureMetadataDatastore, bool)`
+
+GetSecureMetadataDatastoreOk returns a tuple with the SecureMetadataDatastore field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSecureMetadataDatastore
+
+`func (o *ListHosts200ResponseAllOfServersInner) SetSecureMetadataDatastore(v ListHosts200ResponseAllOfServersInnerSecureMetadataDatastore)`
+
+SetSecureMetadataDatastore sets SecureMetadataDatastore field to given value.
+
+### HasSecureMetadataDatastore
+
+`func (o *ListHosts200ResponseAllOfServersInner) HasSecureMetadataDatastore() bool`
+
+HasSecureMetadataDatastore returns a boolean if a field has been set.
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

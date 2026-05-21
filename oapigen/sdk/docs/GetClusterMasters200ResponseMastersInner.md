@@ -67,7 +67,7 @@ Name | Type | Description | Notes
 **Labels** | Pointer to **[]string** |  | [optional] 
 **Tags** | Pointer to [**[]GetClusterMasters200ResponseMastersInnerTagsInner**](GetClusterMasters200ResponseMastersInnerTagsInner.md) |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**TagCompliant** | Pointer to **NullableString** |  | [optional] 
+**TagCompliant** | Pointer to **NullableBool** |  | [optional] 
 **Containers** | Pointer to **[]int64** |  | [optional] 
 **GuestConsolePreferred** | Pointer to **bool** |  | [optional] 
 **GuestConsoleType** | Pointer to **NullableString** |  | [optional] 
@@ -1802,20 +1802,20 @@ HasEnabled returns a boolean if a field has been set.
 
 ### GetTagCompliant
 
-`func (o *GetClusterMasters200ResponseMastersInner) GetTagCompliant() string`
+`func (o *GetClusterMasters200ResponseMastersInner) GetTagCompliant() bool`
 
 GetTagCompliant returns the TagCompliant field if non-nil, zero value otherwise.
 
 ### GetTagCompliantOk
 
-`func (o *GetClusterMasters200ResponseMastersInner) GetTagCompliantOk() (*string, bool)`
+`func (o *GetClusterMasters200ResponseMastersInner) GetTagCompliantOk() (*bool, bool)`
 
 GetTagCompliantOk returns a tuple with the TagCompliant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTagCompliant
 
-`func (o *GetClusterMasters200ResponseMastersInner) SetTagCompliant(v string)`
+`func (o *GetClusterMasters200ResponseMastersInner) SetTagCompliant(v bool)`
 
 SetTagCompliant sets TagCompliant field to given value.
 

@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.1.1
+API version: 9.0.0
 Contact: dev@morpheusdata.com
 */
 
@@ -23,11 +23,10 @@ type AddMigration200ResponseAnyOfMigrationServersInner struct {
 	// Migration Server Status. The possible status values are: 'pending', 'precheck', 'running', 'failed', 'completed'
 	Status *string `json:"status,omitempty"`
 	// Status Message
-	StatusMessage NullableString                                                 `json:"statusMessage,omitempty"`
-	SourceServer  *AddMigration200ResponseAnyOfMigrationServersInnerSourceServer `json:"sourceServer,omitempty"`
-	// Destination Server
-	DestinationServer    *string                `json:"destinationServer,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	StatusMessage        NullableString                                                      `json:"statusMessage,omitempty"`
+	SourceServer         *AddMigration200ResponseAnyOfMigrationServersInnerSourceServer      `json:"sourceServer,omitempty"`
+	DestinationServer    *AddMigration200ResponseAnyOfMigrationServersInnerDestinationServer `json:"destinationServer,omitempty"`
+	AdditionalProperties map[string]interface{}                                              `json:",remain"`
 }
 
 type _AddMigration200ResponseAnyOfMigrationServersInner AddMigration200ResponseAnyOfMigrationServersInner
@@ -157,9 +156,9 @@ func (o *AddMigration200ResponseAnyOfMigrationServersInner) SetSourceServer(v Ad
 }
 
 // GetDestinationServer returns the DestinationServer field value if set, zero value otherwise.
-func (o *AddMigration200ResponseAnyOfMigrationServersInner) GetDestinationServer() string {
+func (o *AddMigration200ResponseAnyOfMigrationServersInner) GetDestinationServer() AddMigration200ResponseAnyOfMigrationServersInnerDestinationServer {
 	if o == nil || IsNil(o.DestinationServer) {
-		var ret string
+		var ret AddMigration200ResponseAnyOfMigrationServersInnerDestinationServer
 		return ret
 	}
 	return *o.DestinationServer
@@ -167,7 +166,7 @@ func (o *AddMigration200ResponseAnyOfMigrationServersInner) GetDestinationServer
 
 // GetDestinationServerOk returns a tuple with the DestinationServer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddMigration200ResponseAnyOfMigrationServersInner) GetDestinationServerOk() (*string, bool) {
+func (o *AddMigration200ResponseAnyOfMigrationServersInner) GetDestinationServerOk() (*AddMigration200ResponseAnyOfMigrationServersInnerDestinationServer, bool) {
 	if o == nil || IsNil(o.DestinationServer) {
 		return nil, false
 	}
@@ -183,8 +182,8 @@ func (o *AddMigration200ResponseAnyOfMigrationServersInner) IsSetDestinationServ
 	return false
 }
 
-// SetDestinationServer gets a reference to the given string and assigns it to the DestinationServer field.
-func (o *AddMigration200ResponseAnyOfMigrationServersInner) SetDestinationServer(v string) {
+// SetDestinationServer gets a reference to the given AddMigration200ResponseAnyOfMigrationServersInnerDestinationServer and assigns it to the DestinationServer field.
+func (o *AddMigration200ResponseAnyOfMigrationServersInner) SetDestinationServer(v AddMigration200ResponseAnyOfMigrationServersInnerDestinationServer) {
 	o.DestinationServer = &v
 }
 

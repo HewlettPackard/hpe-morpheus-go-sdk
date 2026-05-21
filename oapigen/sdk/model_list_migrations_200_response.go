@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.1.1
+API version: 9.0.0
 Contact: dev@morpheusdata.com
 */
 
@@ -20,9 +20,9 @@ var _ MappedNullable = &ListMigrations200Response{}
 
 // ListMigrations200Response struct for ListMigrations200Response
 type ListMigrations200Response struct {
-	Migrations           interface{}                     `json:"migrations,omitempty"`
-	Meta                 *ListAlerts200ResponseAllOfMeta `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}          `json:",remain"`
+	Migrations           interface{}                        `json:"migrations,omitempty"`
+	Meta                 *ListApprovals200ResponseAllOfMeta `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}             `json:",remain"`
 }
 
 type _ListMigrations200Response ListMigrations200Response
@@ -78,9 +78,9 @@ func (o *ListMigrations200Response) SetMigrations(v interface{}) {
 }
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListMigrations200Response) GetMeta() ListAlerts200ResponseAllOfMeta {
+func (o *ListMigrations200Response) GetMeta() ListApprovals200ResponseAllOfMeta {
 	if o == nil || IsNil(o.Meta) {
-		var ret ListAlerts200ResponseAllOfMeta
+		var ret ListApprovals200ResponseAllOfMeta
 		return ret
 	}
 	return *o.Meta
@@ -88,7 +88,7 @@ func (o *ListMigrations200Response) GetMeta() ListAlerts200ResponseAllOfMeta {
 
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListMigrations200Response) GetMetaOk() (*ListAlerts200ResponseAllOfMeta, bool) {
+func (o *ListMigrations200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool) {
 	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
@@ -104,8 +104,8 @@ func (o *ListMigrations200Response) IsSetMeta() bool {
 	return false
 }
 
-// SetMeta gets a reference to the given ListAlerts200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListMigrations200Response) SetMeta(v ListAlerts200ResponseAllOfMeta) {
+// SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.
+func (o *ListMigrations200Response) SetMeta(v ListApprovals200ResponseAllOfMeta) {
 	o.Meta = &v
 }
 

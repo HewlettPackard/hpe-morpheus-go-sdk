@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.1.1
+API version: 9.0.0
 Contact: dev@morpheusdata.com
 */
 
@@ -28,6 +28,7 @@ type UpdateGroups200ResponseGroup struct {
 	Labels               []string                                   `json:"labels,omitempty"`
 	Location             NullableString                             `json:"location,omitempty"`
 	AccountId            *int64                                     `json:"accountId,omitempty"`
+	Account              *AddGroups200ResponseAllOfGroupAccount     `json:"account,omitempty"`
 	Active               *bool                                      `json:"active,omitempty"`
 	Config               *AddGroups200ResponseAllOfGroupConfig      `json:"config,omitempty"`
 	DateCreated          *time.Time                                 `json:"dateCreated,omitempty"`
@@ -302,6 +303,38 @@ func (o *UpdateGroups200ResponseGroup) IsSetAccountId() bool {
 // SetAccountId gets a reference to the given int64 and assigns it to the AccountId field.
 func (o *UpdateGroups200ResponseGroup) SetAccountId(v int64) {
 	o.AccountId = &v
+}
+
+// GetAccount returns the Account field value if set, zero value otherwise.
+func (o *UpdateGroups200ResponseGroup) GetAccount() AddGroups200ResponseAllOfGroupAccount {
+	if o == nil || IsNil(o.Account) {
+		var ret AddGroups200ResponseAllOfGroupAccount
+		return ret
+	}
+	return *o.Account
+}
+
+// GetAccountOk returns a tuple with the Account field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateGroups200ResponseGroup) GetAccountOk() (*AddGroups200ResponseAllOfGroupAccount, bool) {
+	if o == nil || IsNil(o.Account) {
+		return nil, false
+	}
+	return o.Account, true
+}
+
+// IsSetAccount returns a boolean if a field has been set.
+func (o *UpdateGroups200ResponseGroup) IsSetAccount() bool {
+	if o != nil && !IsNil(o.Account) {
+		return true
+	}
+
+	return false
+}
+
+// SetAccount gets a reference to the given AddGroups200ResponseAllOfGroupAccount and assigns it to the Account field.
+func (o *UpdateGroups200ResponseGroup) SetAccount(v AddGroups200ResponseAllOfGroupAccount) {
+	o.Account = &v
 }
 
 // GetActive returns the Active field value if set, zero value otherwise.
@@ -590,6 +623,9 @@ func (o UpdateGroups200ResponseGroup) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.AccountId) {
 		toSerialize["accountId"] = o.AccountId
+	}
+	if !IsNil(o.Account) {
+		toSerialize["account"] = o.Account
 	}
 	if !IsNil(o.Active) {
 		toSerialize["active"] = o.Active

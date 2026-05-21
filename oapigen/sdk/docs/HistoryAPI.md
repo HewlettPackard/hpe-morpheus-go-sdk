@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## CancelProcess
 
-> CancelProcess200Response CancelProcess(ctx, id).Execute()
+> ContainersAttachFloatingIp200Response CancelProcess(ctx, id).Execute()
 
 Cancel a Specific Process
 
@@ -41,7 +41,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `HistoryAPI.CancelProcess``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CancelProcess`: CancelProcess200Response
+	// response from `CancelProcess`: ContainersAttachFloatingIp200Response
 	fmt.Fprintf(os.Stdout, "Response from `HistoryAPI.CancelProcess`: %v\n", resp)
 }
 ```
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CancelProcess200Response**](CancelProcess200Response.md)
+[**ContainersAttachFloatingIp200Response**](ContainersAttachFloatingIp200Response.md)
 
 ### Authorization
 
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 
 ## RetryProcess
 
-> RetryProcess200Response RetryProcess(ctx, id).Execute()
+> ContainersAttachFloatingIp200Response RetryProcess(ctx, id).Execute()
 
 Retry a Specific Process
 
@@ -257,7 +257,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `HistoryAPI.RetryProcess``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `RetryProcess`: RetryProcess200Response
+	// response from `RetryProcess`: ContainersAttachFloatingIp200Response
 	fmt.Fprintf(os.Stdout, "Response from `HistoryAPI.RetryProcess`: %v\n", resp)
 }
 ```
@@ -281,7 +281,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RetryProcess200Response**](RetryProcess200Response.md)
+[**ContainersAttachFloatingIp200Response**](ContainersAttachFloatingIp200Response.md)
 
 ### Authorization
 

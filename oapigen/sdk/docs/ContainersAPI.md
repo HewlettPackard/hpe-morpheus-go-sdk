@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 
 ## ContainersDetachFloatingIp
 
-> ContainersDetachFloatingIp200Response ContainersDetachFloatingIp(ctx, id).Execute()
+> ContainersAttachFloatingIp200Response ContainersDetachFloatingIp(ctx, id).Execute()
 
 Detach Floating IP from Container
 
@@ -193,7 +193,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ContainersAPI.ContainersDetachFloatingIp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ContainersDetachFloatingIp`: ContainersDetachFloatingIp200Response
+	// response from `ContainersDetachFloatingIp`: ContainersAttachFloatingIp200Response
 	fmt.Fprintf(os.Stdout, "Response from `ContainersAPI.ContainersDetachFloatingIp`: %v\n", resp)
 }
 ```
@@ -217,7 +217,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ContainersDetachFloatingIp200Response**](ContainersDetachFloatingIp200Response.md)
+[**ContainersAttachFloatingIp200Response**](ContainersAttachFloatingIp200Response.md)
 
 ### Authorization
 

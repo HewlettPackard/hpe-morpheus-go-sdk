@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**GetHost**](HostsAPI.md#GetHost) | **Get** /api/servers/{id} | Get a Specific Host
 [**GetHostSnpshots**](HostsAPI.md#GetHostSnpshots) | **Get** /api/servers/{id}/snapshots | Get list of snapshots for a Host
 [**GetHostType**](HostsAPI.md#GetHostType) | **Get** /api/server-types/{id} | Get a Specific Host Type
+[**LeaseAgentToken**](HostsAPI.md#LeaseAgentToken) | **Post** /api/lease-token/{tokenType}/{serverId} | Lease an Agent WebSocket Token
 [**LeaveMaintenanceMode**](HostsAPI.md#LeaveMaintenanceMode) | **Put** /api/servers/{id}/leave-maintenance | Leave Maintenance Mode
 [**ListHostDevices**](HostsAPI.md#ListHostDevices) | **Get** /api/servers/{id}/devices | Get list of devices for a Host
 [**ListHostTypes**](HostsAPI.md#ListHostTypes) | **Get** /api/server-types | Host Types
@@ -604,6 +605,83 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## LeaseAgentToken
+
+> LeaseAgentToken200Response LeaseAgentToken(ctx, tokenType, serverId).Timeout(timeout).NbdListenPort(nbdListenPort).Execute()
+
+Lease an Agent WebSocket Token
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-go-sdk/sdk"
+)
+
+func main() {
+	tokenType := "vnc" // string | Lease token scope/type.
+	serverId := openapiclient.leaseAgentToken_serverId_parameter{Int64: new(int64)} // LeaseAgentTokenServerIdParameter | Server ID or UUID.
+	timeout := int64(300000) // int64 | Token time-to-live in milliseconds. Defaults to 300000 (5 minutes). (optional) (default to 300000)
+	nbdListenPort := int32(10809) // int32 | NBD listen port. Only used when `tokenType` is `nbd`. Defaults to `10809`. (optional) (default to 10809)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.HostsAPI.LeaseAgentToken(context.Background(), tokenType, serverId).Timeout(timeout).NbdListenPort(nbdListenPort).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `HostsAPI.LeaseAgentToken``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `LeaseAgentToken`: LeaseAgentToken200Response
+	fmt.Fprintf(os.Stdout, "Response from `HostsAPI.LeaseAgentToken`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**tokenType** | **string** | Lease token scope/type. | 
+**serverId** | [**LeaseAgentTokenServerIdParameter**](.md) | Server ID or UUID. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiLeaseAgentTokenRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **timeout** | **int64** | Token time-to-live in milliseconds. Defaults to 300000 (5 minutes). | [default to 300000]
+ **nbdListenPort** | **int32** | NBD listen port. Only used when &#x60;tokenType&#x60; is &#x60;nbd&#x60;. Defaults to &#x60;10809&#x60;. | [default to 10809]
+
+### Return type
+
+[**LeaseAgentToken200Response**](LeaseAgentToken200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## LeaveMaintenanceMode
 
 > LeaveMaintenanceMode200Response LeaveMaintenanceMode(ctx, id).Execute()
@@ -830,7 +908,7 @@ Name | Type | Description  | Notes
 
 ## ListHosts
 
-> ListHosts200Response ListHosts(ctx).Name(name).Phrase(phrase).ZoneId(zoneId).SiteId(siteId).ClusterId(clusterId).ParentServerId(parentServerId).Managed(managed).ServerType(serverType).PowerState(powerState).Ip(ip).Vm(vm).VmHypervisor(vmHypervisor).BareMetalHost(bareMetalHost).Status(status).AgentInstalled(agentInstalled).GuestAgentStatus(guestAgentStatus).Max(max).Offset(offset).LastUpdated(lastUpdated).CreatedBy(createdBy).TagsName(tagsName).Metadata(metadata).Uuid(uuid).ExternalId(externalId).InternalId(internalId).ExternalUniquelId(externalUniquelId).Stats(stats).Execute()
+> ListHosts200Response ListHosts(ctx).Name(name).Phrase(phrase).ZoneId(zoneId).SiteId(siteId).ClusterId(clusterId).ParentServerId(parentServerId).Managed(managed).ServerType(serverType).PowerState(powerState).Ip(ip).Vm(vm).VmHypervisor(vmHypervisor).BareMetalHost(bareMetalHost).Status(status).AgentInstalled(agentInstalled).GuestAgentStatus(guestAgentStatus).Max(max).Offset(offset).LastUpdated(lastUpdated).CreatedBy(createdBy).TagsName(tagsName).Metadata(metadata).Uuid(uuid).ExternalId(externalId).InternalId(internalId).ExternalUniquelId(externalUniquelId).Stats(stats).IncludeTenants(includeTenants).TenantId(tenantId).Execute()
 
 Get All Hosts
 
@@ -877,10 +955,12 @@ func main() {
 	internalId := "internalId_example" // string | Filter by Internal ID (optional)
 	externalUniquelId := "externalUniquelId_example" // string | Filter by External Unique ID (optional)
 	stats := "stats_example" // string | This can be used to exclude the `stats` object in the response by passing `false` which can increase performance when returning a large number of servers. (optional)
+	includeTenants := true // bool | Optional ability to include all subtenant resources when calling from a master tenant user. The default is true for backwards compatibility but can be set to false to exclude subtenant resources. (optional) (default to true)
+	tenantId := float32(3) // float32 | Filter by Tenant ID. Only available to the master account. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.HostsAPI.ListHosts(context.Background()).Name(name).Phrase(phrase).ZoneId(zoneId).SiteId(siteId).ClusterId(clusterId).ParentServerId(parentServerId).Managed(managed).ServerType(serverType).PowerState(powerState).Ip(ip).Vm(vm).VmHypervisor(vmHypervisor).BareMetalHost(bareMetalHost).Status(status).AgentInstalled(agentInstalled).GuestAgentStatus(guestAgentStatus).Max(max).Offset(offset).LastUpdated(lastUpdated).CreatedBy(createdBy).TagsName(tagsName).Metadata(metadata).Uuid(uuid).ExternalId(externalId).InternalId(internalId).ExternalUniquelId(externalUniquelId).Stats(stats).Execute()
+	resp, r, err := apiClient.HostsAPI.ListHosts(context.Background()).Name(name).Phrase(phrase).ZoneId(zoneId).SiteId(siteId).ClusterId(clusterId).ParentServerId(parentServerId).Managed(managed).ServerType(serverType).PowerState(powerState).Ip(ip).Vm(vm).VmHypervisor(vmHypervisor).BareMetalHost(bareMetalHost).Status(status).AgentInstalled(agentInstalled).GuestAgentStatus(guestAgentStatus).Max(max).Offset(offset).LastUpdated(lastUpdated).CreatedBy(createdBy).TagsName(tagsName).Metadata(metadata).Uuid(uuid).ExternalId(externalId).InternalId(internalId).ExternalUniquelId(externalUniquelId).Stats(stats).IncludeTenants(includeTenants).TenantId(tenantId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `HostsAPI.ListHosts``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -928,6 +1008,8 @@ Name | Type | Description  | Notes
  **internalId** | **string** | Filter by Internal ID | 
  **externalUniquelId** | **string** | Filter by External Unique ID | 
  **stats** | **string** | This can be used to exclude the &#x60;stats&#x60; object in the response by passing &#x60;false&#x60; which can increase performance when returning a large number of servers. | 
+ **includeTenants** | **bool** | Optional ability to include all subtenant resources when calling from a master tenant user. The default is true for backwards compatibility but can be set to false to exclude subtenant resources. | [default to true]
+ **tenantId** | **float32** | Filter by Tenant ID. Only available to the master account. | 
 
 ### Return type
 

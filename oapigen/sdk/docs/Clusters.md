@@ -44,6 +44,7 @@ Name | Type | Description | Notes
 **Managed** | Pointer to **bool** |  | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
 **AutoRecoverPowerState** | Pointer to **bool** |  | [optional] 
+**CpuPlacementMode** | Pointer to **NullableString** | Cluster CPU placement mode | [optional] 
 **ServiceEntry** | Pointer to **NullableString** |  | [optional] 
 **CreatedBy** | Pointer to [**ClustersCreatedBy**](ClustersCreatedBy.md) |  | [optional] 
 **UserGroup** | Pointer to **NullableString** |  | [optional] 
@@ -1247,6 +1248,41 @@ SetAutoRecoverPowerState sets AutoRecoverPowerState field to given value.
 
 HasAutoRecoverPowerState returns a boolean if a field has been set.
 
+### GetCpuPlacementMode
+
+`func (o *Clusters) GetCpuPlacementMode() string`
+
+GetCpuPlacementMode returns the CpuPlacementMode field if non-nil, zero value otherwise.
+
+### GetCpuPlacementModeOk
+
+`func (o *Clusters) GetCpuPlacementModeOk() (*string, bool)`
+
+GetCpuPlacementModeOk returns a tuple with the CpuPlacementMode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCpuPlacementMode
+
+`func (o *Clusters) SetCpuPlacementMode(v string)`
+
+SetCpuPlacementMode sets CpuPlacementMode field to given value.
+
+### HasCpuPlacementMode
+
+`func (o *Clusters) HasCpuPlacementMode() bool`
+
+HasCpuPlacementMode returns a boolean if a field has been set.
+
+### SetCpuPlacementModeNil
+
+`func (o *Clusters) SetCpuPlacementModeNil(b bool)`
+
+ SetCpuPlacementModeNil sets the value for CpuPlacementMode to be an explicit nil
+
+### UnsetCpuPlacementMode
+`func (o *Clusters) UnsetCpuPlacementMode()`
+
+UnsetCpuPlacementMode ensures that no value is present for CpuPlacementMode, not even an explicit nil
 ### GetServiceEntry
 
 `func (o *Clusters) GetServiceEntry() string`

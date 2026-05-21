@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.1.1
+API version: 9.0.0
 Contact: dev@morpheusdata.com
 */
 
@@ -82,9 +82,9 @@ type _AddVirtualImageRequestVirtualImage AddVirtualImageRequestVirtualImage
 // will change when the set of required properties is changed
 func NewAddVirtualImageRequestVirtualImage() *AddVirtualImageRequestVirtualImage {
 	this := AddVirtualImageRequestVirtualImage{}
-	var isCloudInit bool = false
+	var isCloudInit bool = true
 	this.IsCloudInit = &isCloudInit
-	var installAgent bool = false
+	var installAgent bool = true
 	this.InstallAgent = &installAgent
 	var visibility string = "private"
 	this.Visibility = &visibility
@@ -108,9 +108,9 @@ func NewAddVirtualImageRequestVirtualImage() *AddVirtualImageRequestVirtualImage
 // but it doesn't guarantee that properties required by API are set
 func NewAddVirtualImageRequestVirtualImageWithDefaults() *AddVirtualImageRequestVirtualImage {
 	this := AddVirtualImageRequestVirtualImage{}
-	var isCloudInit bool = false
+	var isCloudInit bool = true
 	this.IsCloudInit = &isCloudInit
-	var installAgent bool = false
+	var installAgent bool = true
 	this.InstallAgent = &installAgent
 	var visibility string = "private"
 	this.Visibility = &visibility

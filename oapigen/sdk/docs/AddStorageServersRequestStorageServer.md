@@ -10,6 +10,12 @@ Name | Type | Description | Notes
 **Enabled** | Pointer to **bool** | The enabled flag | [optional] [default to true]
 **Config** | **map[string]interface{}** | Configuration object with parameters that vary by &#x60;type&#x60; | 
 **Visibility** | Pointer to **string** | private or public | [optional] [default to "private"]
+**ServiceHost** | Pointer to **string** | Storage server host | [optional] 
+**ServiceUrl** | Pointer to **string** | Storage server URL | [optional] 
+**ServiceUsername** | Pointer to **string** | Service username for authentication | [optional] 
+**ServicePassword** | Pointer to **string** | Service password for authentication | [optional] 
+**ServicePort** | Pointer to **int32** | Service port | [optional] [default to 22]
+**Credential** | Pointer to [**AddStorageServersRequestStorageServerCredential**](AddStorageServersRequestStorageServerCredential.md) |  | [optional] 
 **Tenants** | Pointer to [**[]AddStorageServersRequestStorageServerTenantsInner**](AddStorageServersRequestStorageServerTenantsInner.md) | Array of tenant account ids that are allowed access | [optional] 
 
 ## Methods
@@ -165,6 +171,156 @@ SetVisibility sets Visibility field to given value.
 `func (o *AddStorageServersRequestStorageServer) HasVisibility() bool`
 
 HasVisibility returns a boolean if a field has been set.
+
+### GetServiceHost
+
+`func (o *AddStorageServersRequestStorageServer) GetServiceHost() string`
+
+GetServiceHost returns the ServiceHost field if non-nil, zero value otherwise.
+
+### GetServiceHostOk
+
+`func (o *AddStorageServersRequestStorageServer) GetServiceHostOk() (*string, bool)`
+
+GetServiceHostOk returns a tuple with the ServiceHost field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetServiceHost
+
+`func (o *AddStorageServersRequestStorageServer) SetServiceHost(v string)`
+
+SetServiceHost sets ServiceHost field to given value.
+
+### HasServiceHost
+
+`func (o *AddStorageServersRequestStorageServer) HasServiceHost() bool`
+
+HasServiceHost returns a boolean if a field has been set.
+
+### GetServiceUrl
+
+`func (o *AddStorageServersRequestStorageServer) GetServiceUrl() string`
+
+GetServiceUrl returns the ServiceUrl field if non-nil, zero value otherwise.
+
+### GetServiceUrlOk
+
+`func (o *AddStorageServersRequestStorageServer) GetServiceUrlOk() (*string, bool)`
+
+GetServiceUrlOk returns a tuple with the ServiceUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetServiceUrl
+
+`func (o *AddStorageServersRequestStorageServer) SetServiceUrl(v string)`
+
+SetServiceUrl sets ServiceUrl field to given value.
+
+### HasServiceUrl
+
+`func (o *AddStorageServersRequestStorageServer) HasServiceUrl() bool`
+
+HasServiceUrl returns a boolean if a field has been set.
+
+### GetServiceUsername
+
+`func (o *AddStorageServersRequestStorageServer) GetServiceUsername() string`
+
+GetServiceUsername returns the ServiceUsername field if non-nil, zero value otherwise.
+
+### GetServiceUsernameOk
+
+`func (o *AddStorageServersRequestStorageServer) GetServiceUsernameOk() (*string, bool)`
+
+GetServiceUsernameOk returns a tuple with the ServiceUsername field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetServiceUsername
+
+`func (o *AddStorageServersRequestStorageServer) SetServiceUsername(v string)`
+
+SetServiceUsername sets ServiceUsername field to given value.
+
+### HasServiceUsername
+
+`func (o *AddStorageServersRequestStorageServer) HasServiceUsername() bool`
+
+HasServiceUsername returns a boolean if a field has been set.
+
+### GetServicePassword
+
+`func (o *AddStorageServersRequestStorageServer) GetServicePassword() string`
+
+GetServicePassword returns the ServicePassword field if non-nil, zero value otherwise.
+
+### GetServicePasswordOk
+
+`func (o *AddStorageServersRequestStorageServer) GetServicePasswordOk() (*string, bool)`
+
+GetServicePasswordOk returns a tuple with the ServicePassword field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetServicePassword
+
+`func (o *AddStorageServersRequestStorageServer) SetServicePassword(v string)`
+
+SetServicePassword sets ServicePassword field to given value.
+
+### HasServicePassword
+
+`func (o *AddStorageServersRequestStorageServer) HasServicePassword() bool`
+
+HasServicePassword returns a boolean if a field has been set.
+
+### GetServicePort
+
+`func (o *AddStorageServersRequestStorageServer) GetServicePort() int32`
+
+GetServicePort returns the ServicePort field if non-nil, zero value otherwise.
+
+### GetServicePortOk
+
+`func (o *AddStorageServersRequestStorageServer) GetServicePortOk() (*int32, bool)`
+
+GetServicePortOk returns a tuple with the ServicePort field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetServicePort
+
+`func (o *AddStorageServersRequestStorageServer) SetServicePort(v int32)`
+
+SetServicePort sets ServicePort field to given value.
+
+### HasServicePort
+
+`func (o *AddStorageServersRequestStorageServer) HasServicePort() bool`
+
+HasServicePort returns a boolean if a field has been set.
+
+### GetCredential
+
+`func (o *AddStorageServersRequestStorageServer) GetCredential() AddStorageServersRequestStorageServerCredential`
+
+GetCredential returns the Credential field if non-nil, zero value otherwise.
+
+### GetCredentialOk
+
+`func (o *AddStorageServersRequestStorageServer) GetCredentialOk() (*AddStorageServersRequestStorageServerCredential, bool)`
+
+GetCredentialOk returns a tuple with the Credential field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCredential
+
+`func (o *AddStorageServersRequestStorageServer) SetCredential(v AddStorageServersRequestStorageServerCredential)`
+
+SetCredential sets Credential field to given value.
+
+### HasCredential
+
+`func (o *AddStorageServersRequestStorageServer) HasCredential() bool`
+
+HasCredential returns a boolean if a field has been set.
 
 ### GetTenants
 

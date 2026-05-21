@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Status** | Pointer to **string** | Migration Server Status. The possible status values are: &#39;pending&#39;, &#39;precheck&#39;, &#39;running&#39;, &#39;failed&#39;, &#39;completed&#39; | [optional] 
 **StatusMessage** | Pointer to **NullableString** | Status Message | [optional] 
 **SourceServer** | Pointer to [**GetMigration200ResponseMigrationServersInnerSourceServer**](GetMigration200ResponseMigrationServersInnerSourceServer.md) |  | [optional] 
-**DestinationServer** | Pointer to **string** | Destination Server | [optional] 
+**DestinationServer** | Pointer to [**GetMigration200ResponseMigrationServersInnerDestinationServer**](GetMigration200ResponseMigrationServersInnerDestinationServer.md) |  | [optional] 
 
 ## Methods
 
@@ -115,20 +115,20 @@ HasSourceServer returns a boolean if a field has been set.
 
 ### GetDestinationServer
 
-`func (o *GetMigration200ResponseMigrationServersInner) GetDestinationServer() string`
+`func (o *GetMigration200ResponseMigrationServersInner) GetDestinationServer() GetMigration200ResponseMigrationServersInnerDestinationServer`
 
 GetDestinationServer returns the DestinationServer field if non-nil, zero value otherwise.
 
 ### GetDestinationServerOk
 
-`func (o *GetMigration200ResponseMigrationServersInner) GetDestinationServerOk() (*string, bool)`
+`func (o *GetMigration200ResponseMigrationServersInner) GetDestinationServerOk() (*GetMigration200ResponseMigrationServersInnerDestinationServer, bool)`
 
 GetDestinationServerOk returns a tuple with the DestinationServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDestinationServer
 
-`func (o *GetMigration200ResponseMigrationServersInner) SetDestinationServer(v string)`
+`func (o *GetMigration200ResponseMigrationServersInner) SetDestinationServer(v GetMigration200ResponseMigrationServersInnerDestinationServer)`
 
 SetDestinationServer sets DestinationServer field to given value.
 

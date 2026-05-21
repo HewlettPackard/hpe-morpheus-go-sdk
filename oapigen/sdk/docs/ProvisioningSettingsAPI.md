@@ -72,7 +72,7 @@ Other parameters are passed through a pointer to a apiListProvisioningSettingsRe
 
 ## UpdateProvisioningSettings
 
-> UpdateProvisioningSettings200Response UpdateProvisioningSettings(ctx).UpdateProvisioningSettingsRequest(updateProvisioningSettingsRequest).Execute()
+> SetApplianceSettingsMaintenanceMode200Response UpdateProvisioningSettings(ctx).UpdateProvisioningSettingsRequest(updateProvisioningSettingsRequest).Execute()
 
 Update Provisioning Settings
 
@@ -100,7 +100,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ProvisioningSettingsAPI.UpdateProvisioningSettings``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `UpdateProvisioningSettings`: UpdateProvisioningSettings200Response
+	// response from `UpdateProvisioningSettings`: SetApplianceSettingsMaintenanceMode200Response
 	fmt.Fprintf(os.Stdout, "Response from `ProvisioningSettingsAPI.UpdateProvisioningSettings`: %v\n", resp)
 }
 ```
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UpdateProvisioningSettings200Response**](UpdateProvisioningSettings200Response.md)
+[**SetApplianceSettingsMaintenanceMode200Response**](SetApplianceSettingsMaintenanceMode200Response.md)
 
 ### Authorization
 

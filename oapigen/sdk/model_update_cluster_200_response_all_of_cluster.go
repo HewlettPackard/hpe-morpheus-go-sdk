@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.1.1
+API version: 9.0.0
 Contact: dev@morpheusdata.com
 */
 
@@ -63,6 +63,8 @@ type UpdateCluster200ResponseAllOfCluster struct {
 	Labels              []string       `json:"labels,omitempty"`
 	// Automatically Power on VMs
 	AutoRecoverPowerState *bool `json:"autoRecoverPowerState,omitempty"`
+	// Cluster CPU placement mode
+	CpuPlacementMode NullableString `json:"cpuPlacementMode,omitempty"`
 	// Use the Agent to relay communications for the Kubernetes API instead of direct.
 	UseAgent NullableString `json:"useAgent,omitempty"`
 	// Changes from false to true once provisioning is finished.
@@ -1725,6 +1727,49 @@ func (o *UpdateCluster200ResponseAllOfCluster) SetAutoRecoverPowerState(v bool) 
 	o.AutoRecoverPowerState = &v
 }
 
+// GetCpuPlacementMode returns the CpuPlacementMode field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *UpdateCluster200ResponseAllOfCluster) GetCpuPlacementMode() string {
+	if o == nil || IsNil(o.CpuPlacementMode.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.CpuPlacementMode.Get()
+}
+
+// GetCpuPlacementModeOk returns a tuple with the CpuPlacementMode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *UpdateCluster200ResponseAllOfCluster) GetCpuPlacementModeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.CpuPlacementMode.Get(), o.CpuPlacementMode.IsSet()
+}
+
+// IsSetCpuPlacementMode returns a boolean if a field has been set.
+func (o *UpdateCluster200ResponseAllOfCluster) IsSetCpuPlacementMode() bool {
+	if o != nil && o.CpuPlacementMode.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetCpuPlacementMode gets a reference to the given NullableString and assigns it to the CpuPlacementMode field.
+func (o *UpdateCluster200ResponseAllOfCluster) SetCpuPlacementMode(v string) {
+	o.CpuPlacementMode.Set(&v)
+}
+
+// SetCpuPlacementModeNil sets the value for CpuPlacementMode to be an explicit nil
+func (o *UpdateCluster200ResponseAllOfCluster) SetCpuPlacementModeNil() {
+	o.CpuPlacementMode.Set(nil)
+}
+
+// UnsetCpuPlacementMode ensures that no value is present for CpuPlacementMode, not even an explicit nil
+func (o *UpdateCluster200ResponseAllOfCluster) UnsetCpuPlacementMode() {
+	o.CpuPlacementMode.Unset()
+}
+
 // GetUseAgent returns the UseAgent field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateCluster200ResponseAllOfCluster) GetUseAgent() string {
 	if o == nil || IsNil(o.UseAgent.Get()) {
@@ -2658,6 +2703,9 @@ func (o UpdateCluster200ResponseAllOfCluster) ToMap() (map[string]interface{}, e
 	}
 	if !IsNil(o.AutoRecoverPowerState) {
 		toSerialize["autoRecoverPowerState"] = o.AutoRecoverPowerState
+	}
+	if o.CpuPlacementMode.IsSet() {
+		toSerialize["cpuPlacementMode"] = o.CpuPlacementMode.Get()
 	}
 	if o.UseAgent.IsSet() {
 		toSerialize["useAgent"] = o.UseAgent.Get()

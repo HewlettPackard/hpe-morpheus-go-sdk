@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.1.1
+API version: 9.0.0
 Contact: dev@morpheusdata.com
 */
 
@@ -32,6 +32,17 @@ type UpdateStorageServersRequestStorageServer struct {
 	Config map[string]interface{} `json:"config,omitempty"`
 	// private or public
 	Visibility *string `json:"visibility,omitempty"`
+	// Storage server host
+	ServiceHost *string `json:"serviceHost,omitempty"`
+	// Storage server URL
+	ServiceUrl *string `json:"serviceUrl,omitempty"`
+	// Service username for authentication
+	ServiceUsername *string `json:"serviceUsername,omitempty"`
+	// Service password for authentication
+	ServicePassword *string `json:"servicePassword,omitempty"`
+	// Service port
+	ServicePort *int32                                              `json:"servicePort,omitempty"`
+	Credential  *UpdateStorageServersRequestStorageServerCredential `json:"credential,omitempty"`
 	// Array of tenant account ids that are allowed access
 	Tenants              []UpdateStorageServersRequestStorageServerTenantsInner `json:"tenants,omitempty"`
 	AdditionalProperties map[string]interface{}                                 `json:",remain"`
@@ -256,6 +267,198 @@ func (o *UpdateStorageServersRequestStorageServer) SetVisibility(v string) {
 	o.Visibility = &v
 }
 
+// GetServiceHost returns the ServiceHost field value if set, zero value otherwise.
+func (o *UpdateStorageServersRequestStorageServer) GetServiceHost() string {
+	if o == nil || IsNil(o.ServiceHost) {
+		var ret string
+		return ret
+	}
+	return *o.ServiceHost
+}
+
+// GetServiceHostOk returns a tuple with the ServiceHost field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateStorageServersRequestStorageServer) GetServiceHostOk() (*string, bool) {
+	if o == nil || IsNil(o.ServiceHost) {
+		return nil, false
+	}
+	return o.ServiceHost, true
+}
+
+// IsSetServiceHost returns a boolean if a field has been set.
+func (o *UpdateStorageServersRequestStorageServer) IsSetServiceHost() bool {
+	if o != nil && !IsNil(o.ServiceHost) {
+		return true
+	}
+
+	return false
+}
+
+// SetServiceHost gets a reference to the given string and assigns it to the ServiceHost field.
+func (o *UpdateStorageServersRequestStorageServer) SetServiceHost(v string) {
+	o.ServiceHost = &v
+}
+
+// GetServiceUrl returns the ServiceUrl field value if set, zero value otherwise.
+func (o *UpdateStorageServersRequestStorageServer) GetServiceUrl() string {
+	if o == nil || IsNil(o.ServiceUrl) {
+		var ret string
+		return ret
+	}
+	return *o.ServiceUrl
+}
+
+// GetServiceUrlOk returns a tuple with the ServiceUrl field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateStorageServersRequestStorageServer) GetServiceUrlOk() (*string, bool) {
+	if o == nil || IsNil(o.ServiceUrl) {
+		return nil, false
+	}
+	return o.ServiceUrl, true
+}
+
+// IsSetServiceUrl returns a boolean if a field has been set.
+func (o *UpdateStorageServersRequestStorageServer) IsSetServiceUrl() bool {
+	if o != nil && !IsNil(o.ServiceUrl) {
+		return true
+	}
+
+	return false
+}
+
+// SetServiceUrl gets a reference to the given string and assigns it to the ServiceUrl field.
+func (o *UpdateStorageServersRequestStorageServer) SetServiceUrl(v string) {
+	o.ServiceUrl = &v
+}
+
+// GetServiceUsername returns the ServiceUsername field value if set, zero value otherwise.
+func (o *UpdateStorageServersRequestStorageServer) GetServiceUsername() string {
+	if o == nil || IsNil(o.ServiceUsername) {
+		var ret string
+		return ret
+	}
+	return *o.ServiceUsername
+}
+
+// GetServiceUsernameOk returns a tuple with the ServiceUsername field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateStorageServersRequestStorageServer) GetServiceUsernameOk() (*string, bool) {
+	if o == nil || IsNil(o.ServiceUsername) {
+		return nil, false
+	}
+	return o.ServiceUsername, true
+}
+
+// IsSetServiceUsername returns a boolean if a field has been set.
+func (o *UpdateStorageServersRequestStorageServer) IsSetServiceUsername() bool {
+	if o != nil && !IsNil(o.ServiceUsername) {
+		return true
+	}
+
+	return false
+}
+
+// SetServiceUsername gets a reference to the given string and assigns it to the ServiceUsername field.
+func (o *UpdateStorageServersRequestStorageServer) SetServiceUsername(v string) {
+	o.ServiceUsername = &v
+}
+
+// GetServicePassword returns the ServicePassword field value if set, zero value otherwise.
+func (o *UpdateStorageServersRequestStorageServer) GetServicePassword() string {
+	if o == nil || IsNil(o.ServicePassword) {
+		var ret string
+		return ret
+	}
+	return *o.ServicePassword
+}
+
+// GetServicePasswordOk returns a tuple with the ServicePassword field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateStorageServersRequestStorageServer) GetServicePasswordOk() (*string, bool) {
+	if o == nil || IsNil(o.ServicePassword) {
+		return nil, false
+	}
+	return o.ServicePassword, true
+}
+
+// IsSetServicePassword returns a boolean if a field has been set.
+func (o *UpdateStorageServersRequestStorageServer) IsSetServicePassword() bool {
+	if o != nil && !IsNil(o.ServicePassword) {
+		return true
+	}
+
+	return false
+}
+
+// SetServicePassword gets a reference to the given string and assigns it to the ServicePassword field.
+func (o *UpdateStorageServersRequestStorageServer) SetServicePassword(v string) {
+	o.ServicePassword = &v
+}
+
+// GetServicePort returns the ServicePort field value if set, zero value otherwise.
+func (o *UpdateStorageServersRequestStorageServer) GetServicePort() int32 {
+	if o == nil || IsNil(o.ServicePort) {
+		var ret int32
+		return ret
+	}
+	return *o.ServicePort
+}
+
+// GetServicePortOk returns a tuple with the ServicePort field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateStorageServersRequestStorageServer) GetServicePortOk() (*int32, bool) {
+	if o == nil || IsNil(o.ServicePort) {
+		return nil, false
+	}
+	return o.ServicePort, true
+}
+
+// IsSetServicePort returns a boolean if a field has been set.
+func (o *UpdateStorageServersRequestStorageServer) IsSetServicePort() bool {
+	if o != nil && !IsNil(o.ServicePort) {
+		return true
+	}
+
+	return false
+}
+
+// SetServicePort gets a reference to the given int32 and assigns it to the ServicePort field.
+func (o *UpdateStorageServersRequestStorageServer) SetServicePort(v int32) {
+	o.ServicePort = &v
+}
+
+// GetCredential returns the Credential field value if set, zero value otherwise.
+func (o *UpdateStorageServersRequestStorageServer) GetCredential() UpdateStorageServersRequestStorageServerCredential {
+	if o == nil || IsNil(o.Credential) {
+		var ret UpdateStorageServersRequestStorageServerCredential
+		return ret
+	}
+	return *o.Credential
+}
+
+// GetCredentialOk returns a tuple with the Credential field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateStorageServersRequestStorageServer) GetCredentialOk() (*UpdateStorageServersRequestStorageServerCredential, bool) {
+	if o == nil || IsNil(o.Credential) {
+		return nil, false
+	}
+	return o.Credential, true
+}
+
+// IsSetCredential returns a boolean if a field has been set.
+func (o *UpdateStorageServersRequestStorageServer) IsSetCredential() bool {
+	if o != nil && !IsNil(o.Credential) {
+		return true
+	}
+
+	return false
+}
+
+// SetCredential gets a reference to the given UpdateStorageServersRequestStorageServerCredential and assigns it to the Credential field.
+func (o *UpdateStorageServersRequestStorageServer) SetCredential(v UpdateStorageServersRequestStorageServerCredential) {
+	o.Credential = &v
+}
+
 // GetTenants returns the Tenants field value if set, zero value otherwise.
 func (o *UpdateStorageServersRequestStorageServer) GetTenants() []UpdateStorageServersRequestStorageServerTenantsInner {
 	if o == nil || IsNil(o.Tenants) {
@@ -315,6 +518,24 @@ func (o UpdateStorageServersRequestStorageServer) ToMap() (map[string]interface{
 	}
 	if !IsNil(o.Visibility) {
 		toSerialize["visibility"] = o.Visibility
+	}
+	if !IsNil(o.ServiceHost) {
+		toSerialize["serviceHost"] = o.ServiceHost
+	}
+	if !IsNil(o.ServiceUrl) {
+		toSerialize["serviceUrl"] = o.ServiceUrl
+	}
+	if !IsNil(o.ServiceUsername) {
+		toSerialize["serviceUsername"] = o.ServiceUsername
+	}
+	if !IsNil(o.ServicePassword) {
+		toSerialize["servicePassword"] = o.ServicePassword
+	}
+	if !IsNil(o.ServicePort) {
+		toSerialize["servicePort"] = o.ServicePort
+	}
+	if !IsNil(o.Credential) {
+		toSerialize["credential"] = o.Credential
 	}
 	if !IsNil(o.Tenants) {
 		toSerialize["tenants"] = o.Tenants
