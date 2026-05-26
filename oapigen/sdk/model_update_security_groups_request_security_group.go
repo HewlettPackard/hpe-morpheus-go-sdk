@@ -25,7 +25,9 @@ type UpdateSecurityGroupsRequestSecurityGroup struct {
 	// Optional description field
 	Description *string `json:"description,omitempty"`
 	// Set to `false` to disable a security group.
-	Active               *bool                                                        `json:"active,omitempty"`
+	Active *bool `json:"active,omitempty"`
+	// Visibility for the security group.
+	Visibility           *string                                                      `json:"visibility,omitempty"`
 	TenantPermissions    *UpdateSecurityGroupsRequestSecurityGroupTenantPermissions   `json:"tenantPermissions,omitempty"`
 	ResourcePermissions  *UpdateSecurityGroupsRequestSecurityGroupResourcePermissions `json:"resourcePermissions,omitempty"`
 	AdditionalProperties map[string]interface{}                                       `json:",remain"`
@@ -39,6 +41,8 @@ type _UpdateSecurityGroupsRequestSecurityGroup UpdateSecurityGroupsRequestSecuri
 // will change when the set of required properties is changed
 func NewUpdateSecurityGroupsRequestSecurityGroup() *UpdateSecurityGroupsRequestSecurityGroup {
 	this := UpdateSecurityGroupsRequestSecurityGroup{}
+	var visibility string = "private"
+	this.Visibility = &visibility
 	return &this
 }
 
@@ -47,6 +51,8 @@ func NewUpdateSecurityGroupsRequestSecurityGroup() *UpdateSecurityGroupsRequestS
 // but it doesn't guarantee that properties required by API are set
 func NewUpdateSecurityGroupsRequestSecurityGroupWithDefaults() *UpdateSecurityGroupsRequestSecurityGroup {
 	this := UpdateSecurityGroupsRequestSecurityGroup{}
+	var visibility string = "private"
+	this.Visibility = &visibility
 	return &this
 }
 
@@ -146,6 +152,38 @@ func (o *UpdateSecurityGroupsRequestSecurityGroup) SetActive(v bool) {
 	o.Active = &v
 }
 
+// GetVisibility returns the Visibility field value if set, zero value otherwise.
+func (o *UpdateSecurityGroupsRequestSecurityGroup) GetVisibility() string {
+	if o == nil || IsNil(o.Visibility) {
+		var ret string
+		return ret
+	}
+	return *o.Visibility
+}
+
+// GetVisibilityOk returns a tuple with the Visibility field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateSecurityGroupsRequestSecurityGroup) GetVisibilityOk() (*string, bool) {
+	if o == nil || IsNil(o.Visibility) {
+		return nil, false
+	}
+	return o.Visibility, true
+}
+
+// IsSetVisibility returns a boolean if a field has been set.
+func (o *UpdateSecurityGroupsRequestSecurityGroup) IsSetVisibility() bool {
+	if o != nil && !IsNil(o.Visibility) {
+		return true
+	}
+
+	return false
+}
+
+// SetVisibility gets a reference to the given string and assigns it to the Visibility field.
+func (o *UpdateSecurityGroupsRequestSecurityGroup) SetVisibility(v string) {
+	o.Visibility = &v
+}
+
 // GetTenantPermissions returns the TenantPermissions field value if set, zero value otherwise.
 func (o *UpdateSecurityGroupsRequestSecurityGroup) GetTenantPermissions() UpdateSecurityGroupsRequestSecurityGroupTenantPermissions {
 	if o == nil || IsNil(o.TenantPermissions) {
@@ -228,6 +266,9 @@ func (o UpdateSecurityGroupsRequestSecurityGroup) ToMap() (map[string]interface{
 	}
 	if !IsNil(o.Active) {
 		toSerialize["active"] = o.Active
+	}
+	if !IsNil(o.Visibility) {
+		toSerialize["visibility"] = o.Visibility
 	}
 	if !IsNil(o.TenantPermissions) {
 		toSerialize["tenantPermissions"] = o.TenantPermissions

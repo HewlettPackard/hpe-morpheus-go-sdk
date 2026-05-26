@@ -27,7 +27,11 @@ type AddSecurityGroupsRequestSecurityGroup struct {
 	// Scoped Cloud ID
 	ZoneId int64 `json:"zoneId"`
 	// Set to `false` to disable a security group.
-	Active               *bool                                                     `json:"active,omitempty"`
+	Active *bool `json:"active,omitempty"`
+	// Visibility for the security group.
+	Visibility *string `json:"visibility,omitempty"`
+	// Network Server ID to scope the security group to a network integration (e.g. NSX-T). Use as an alternative to zoneId for network-server-scoped groups.
+	NetworkServerId      *int64                                                    `json:"networkServerId,omitempty"`
 	CustomOptions        *AddSecurityGroupsRequestSecurityGroupCustomOptions       `json:"customOptions,omitempty"`
 	TenantPermissions    *AddSecurityGroupsRequestSecurityGroupTenantPermissions   `json:"tenantPermissions,omitempty"`
 	ResourcePermissions  *AddSecurityGroupsRequestSecurityGroupResourcePermissions `json:"resourcePermissions,omitempty"`
@@ -44,6 +48,8 @@ func NewAddSecurityGroupsRequestSecurityGroup(name string, zoneId int64) *AddSec
 	this := AddSecurityGroupsRequestSecurityGroup{}
 	this.Name = name
 	this.ZoneId = zoneId
+	var visibility string = "private"
+	this.Visibility = &visibility
 	return &this
 }
 
@@ -52,6 +58,8 @@ func NewAddSecurityGroupsRequestSecurityGroup(name string, zoneId int64) *AddSec
 // but it doesn't guarantee that properties required by API are set
 func NewAddSecurityGroupsRequestSecurityGroupWithDefaults() *AddSecurityGroupsRequestSecurityGroup {
 	this := AddSecurityGroupsRequestSecurityGroup{}
+	var visibility string = "private"
+	this.Visibility = &visibility
 	return &this
 }
 
@@ -167,6 +175,70 @@ func (o *AddSecurityGroupsRequestSecurityGroup) SetActive(v bool) {
 	o.Active = &v
 }
 
+// GetVisibility returns the Visibility field value if set, zero value otherwise.
+func (o *AddSecurityGroupsRequestSecurityGroup) GetVisibility() string {
+	if o == nil || IsNil(o.Visibility) {
+		var ret string
+		return ret
+	}
+	return *o.Visibility
+}
+
+// GetVisibilityOk returns a tuple with the Visibility field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddSecurityGroupsRequestSecurityGroup) GetVisibilityOk() (*string, bool) {
+	if o == nil || IsNil(o.Visibility) {
+		return nil, false
+	}
+	return o.Visibility, true
+}
+
+// IsSetVisibility returns a boolean if a field has been set.
+func (o *AddSecurityGroupsRequestSecurityGroup) IsSetVisibility() bool {
+	if o != nil && !IsNil(o.Visibility) {
+		return true
+	}
+
+	return false
+}
+
+// SetVisibility gets a reference to the given string and assigns it to the Visibility field.
+func (o *AddSecurityGroupsRequestSecurityGroup) SetVisibility(v string) {
+	o.Visibility = &v
+}
+
+// GetNetworkServerId returns the NetworkServerId field value if set, zero value otherwise.
+func (o *AddSecurityGroupsRequestSecurityGroup) GetNetworkServerId() int64 {
+	if o == nil || IsNil(o.NetworkServerId) {
+		var ret int64
+		return ret
+	}
+	return *o.NetworkServerId
+}
+
+// GetNetworkServerIdOk returns a tuple with the NetworkServerId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddSecurityGroupsRequestSecurityGroup) GetNetworkServerIdOk() (*int64, bool) {
+	if o == nil || IsNil(o.NetworkServerId) {
+		return nil, false
+	}
+	return o.NetworkServerId, true
+}
+
+// IsSetNetworkServerId returns a boolean if a field has been set.
+func (o *AddSecurityGroupsRequestSecurityGroup) IsSetNetworkServerId() bool {
+	if o != nil && !IsNil(o.NetworkServerId) {
+		return true
+	}
+
+	return false
+}
+
+// SetNetworkServerId gets a reference to the given int64 and assigns it to the NetworkServerId field.
+func (o *AddSecurityGroupsRequestSecurityGroup) SetNetworkServerId(v int64) {
+	o.NetworkServerId = &v
+}
+
 // GetCustomOptions returns the CustomOptions field value if set, zero value otherwise.
 func (o *AddSecurityGroupsRequestSecurityGroup) GetCustomOptions() AddSecurityGroupsRequestSecurityGroupCustomOptions {
 	if o == nil || IsNil(o.CustomOptions) {
@@ -280,6 +352,12 @@ func (o AddSecurityGroupsRequestSecurityGroup) ToMap() (map[string]interface{}, 
 	toSerialize["zoneId"] = o.ZoneId
 	if !IsNil(o.Active) {
 		toSerialize["active"] = o.Active
+	}
+	if !IsNil(o.Visibility) {
+		toSerialize["visibility"] = o.Visibility
+	}
+	if !IsNil(o.NetworkServerId) {
+		toSerialize["networkServerId"] = o.NetworkServerId
 	}
 	if !IsNil(o.CustomOptions) {
 		toSerialize["customOptions"] = o.CustomOptions

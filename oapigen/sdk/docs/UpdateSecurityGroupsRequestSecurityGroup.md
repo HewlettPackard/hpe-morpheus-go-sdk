@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** | Name for your security group | [optional] 
 **Description** | Pointer to **string** | Optional description field | [optional] 
 **Active** | Pointer to **bool** | Set to &#x60;false&#x60; to disable a security group. | [optional] 
+**Visibility** | Pointer to **string** | Visibility for the security group. | [optional] [default to "private"]
 **TenantPermissions** | Pointer to [**UpdateSecurityGroupsRequestSecurityGroupTenantPermissions**](UpdateSecurityGroupsRequestSecurityGroupTenantPermissions.md) |  | [optional] 
 **ResourcePermissions** | Pointer to [**UpdateSecurityGroupsRequestSecurityGroupResourcePermissions**](UpdateSecurityGroupsRequestSecurityGroupResourcePermissions.md) |  | [optional] 
 
@@ -103,6 +104,31 @@ SetActive sets Active field to given value.
 `func (o *UpdateSecurityGroupsRequestSecurityGroup) HasActive() bool`
 
 HasActive returns a boolean if a field has been set.
+
+### GetVisibility
+
+`func (o *UpdateSecurityGroupsRequestSecurityGroup) GetVisibility() string`
+
+GetVisibility returns the Visibility field if non-nil, zero value otherwise.
+
+### GetVisibilityOk
+
+`func (o *UpdateSecurityGroupsRequestSecurityGroup) GetVisibilityOk() (*string, bool)`
+
+GetVisibilityOk returns a tuple with the Visibility field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVisibility
+
+`func (o *UpdateSecurityGroupsRequestSecurityGroup) SetVisibility(v string)`
+
+SetVisibility sets Visibility field to given value.
+
+### HasVisibility
+
+`func (o *UpdateSecurityGroupsRequestSecurityGroup) HasVisibility() bool`
+
+HasVisibility returns a boolean if a field has been set.
 
 ### GetTenantPermissions
 

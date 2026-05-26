@@ -20,9 +20,24 @@ var _ MappedNullable = &UpdateSubnetRequestSubnet{}
 
 // UpdateSubnetRequestSubnet struct for UpdateSubnetRequestSubnet
 type UpdateSubnetRequestSubnet struct {
-	Type *UpdateSubnetRequestSubnetType `json:"type,omitempty"`
+	// Name for the subnet
+	Name *string `json:"name,omitempty"`
+	// Description
+	Description *string                        `json:"description,omitempty"`
+	Type        *UpdateSubnetRequestSubnetType `json:"type,omitempty"`
+	// The ID of the Network this subnet belongs to. Required when not using the nested route `/api/networks/{networkId}/subnets`.
+	NetworkId *int64 `json:"networkId,omitempty"`
 	// Configuration object. Settings vary by type.
 	Config map[string]interface{} `json:"config,omitempty"`
+	// Subnet CIDR. Used directly by subnet types with `cidrEditable` and `cidrRequired` (e.g. Google). For Azure subnets, this is derived from `config.subnetCidr` and does not need to be set explicitly.
+	Cidr *string `json:"cidr,omitempty"`
+	// Activate (true) or disable (false) the subnet
+	Active *bool `json:"active,omitempty"`
+	// DHCP Server enabled subnet
+	DhcpServer *bool `json:"dhcpServer,omitempty"`
+	// Allow IP Override
+	AllowStaticOverride *bool                          `json:"allowStaticOverride,omitempty"`
+	Pool                *UpdateSubnetRequestSubnetPool `json:"pool,omitempty"`
 	// Array of tenant account ID objects that are allowed access
 	Tenants []UpdateSubnetRequestSubnetTenantsInner `json:"tenants,omitempty"`
 	// private or public
@@ -53,6 +68,70 @@ func NewUpdateSubnetRequestSubnetWithDefaults() *UpdateSubnetRequestSubnet {
 	var visibility string = "private"
 	this.Visibility = &visibility
 	return &this
+}
+
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *UpdateSubnetRequestSubnet) GetName() string {
+	if o == nil || IsNil(o.Name) {
+		var ret string
+		return ret
+	}
+	return *o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateSubnetRequestSubnet) GetNameOk() (*string, bool) {
+	if o == nil || IsNil(o.Name) {
+		return nil, false
+	}
+	return o.Name, true
+}
+
+// IsSetName returns a boolean if a field has been set.
+func (o *UpdateSubnetRequestSubnet) IsSetName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *UpdateSubnetRequestSubnet) SetName(v string) {
+	o.Name = &v
+}
+
+// GetDescription returns the Description field value if set, zero value otherwise.
+func (o *UpdateSubnetRequestSubnet) GetDescription() string {
+	if o == nil || IsNil(o.Description) {
+		var ret string
+		return ret
+	}
+	return *o.Description
+}
+
+// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateSubnetRequestSubnet) GetDescriptionOk() (*string, bool) {
+	if o == nil || IsNil(o.Description) {
+		return nil, false
+	}
+	return o.Description, true
+}
+
+// IsSetDescription returns a boolean if a field has been set.
+func (o *UpdateSubnetRequestSubnet) IsSetDescription() bool {
+	if o != nil && !IsNil(o.Description) {
+		return true
+	}
+
+	return false
+}
+
+// SetDescription gets a reference to the given string and assigns it to the Description field.
+func (o *UpdateSubnetRequestSubnet) SetDescription(v string) {
+	o.Description = &v
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
@@ -87,6 +166,38 @@ func (o *UpdateSubnetRequestSubnet) SetType(v UpdateSubnetRequestSubnetType) {
 	o.Type = &v
 }
 
+// GetNetworkId returns the NetworkId field value if set, zero value otherwise.
+func (o *UpdateSubnetRequestSubnet) GetNetworkId() int64 {
+	if o == nil || IsNil(o.NetworkId) {
+		var ret int64
+		return ret
+	}
+	return *o.NetworkId
+}
+
+// GetNetworkIdOk returns a tuple with the NetworkId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateSubnetRequestSubnet) GetNetworkIdOk() (*int64, bool) {
+	if o == nil || IsNil(o.NetworkId) {
+		return nil, false
+	}
+	return o.NetworkId, true
+}
+
+// IsSetNetworkId returns a boolean if a field has been set.
+func (o *UpdateSubnetRequestSubnet) IsSetNetworkId() bool {
+	if o != nil && !IsNil(o.NetworkId) {
+		return true
+	}
+
+	return false
+}
+
+// SetNetworkId gets a reference to the given int64 and assigns it to the NetworkId field.
+func (o *UpdateSubnetRequestSubnet) SetNetworkId(v int64) {
+	o.NetworkId = &v
+}
+
 // GetConfig returns the Config field value if set, zero value otherwise.
 func (o *UpdateSubnetRequestSubnet) GetConfig() map[string]interface{} {
 	if o == nil || IsNil(o.Config) {
@@ -117,6 +228,166 @@ func (o *UpdateSubnetRequestSubnet) IsSetConfig() bool {
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
 func (o *UpdateSubnetRequestSubnet) SetConfig(v map[string]interface{}) {
 	o.Config = v
+}
+
+// GetCidr returns the Cidr field value if set, zero value otherwise.
+func (o *UpdateSubnetRequestSubnet) GetCidr() string {
+	if o == nil || IsNil(o.Cidr) {
+		var ret string
+		return ret
+	}
+	return *o.Cidr
+}
+
+// GetCidrOk returns a tuple with the Cidr field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateSubnetRequestSubnet) GetCidrOk() (*string, bool) {
+	if o == nil || IsNil(o.Cidr) {
+		return nil, false
+	}
+	return o.Cidr, true
+}
+
+// IsSetCidr returns a boolean if a field has been set.
+func (o *UpdateSubnetRequestSubnet) IsSetCidr() bool {
+	if o != nil && !IsNil(o.Cidr) {
+		return true
+	}
+
+	return false
+}
+
+// SetCidr gets a reference to the given string and assigns it to the Cidr field.
+func (o *UpdateSubnetRequestSubnet) SetCidr(v string) {
+	o.Cidr = &v
+}
+
+// GetActive returns the Active field value if set, zero value otherwise.
+func (o *UpdateSubnetRequestSubnet) GetActive() bool {
+	if o == nil || IsNil(o.Active) {
+		var ret bool
+		return ret
+	}
+	return *o.Active
+}
+
+// GetActiveOk returns a tuple with the Active field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateSubnetRequestSubnet) GetActiveOk() (*bool, bool) {
+	if o == nil || IsNil(o.Active) {
+		return nil, false
+	}
+	return o.Active, true
+}
+
+// IsSetActive returns a boolean if a field has been set.
+func (o *UpdateSubnetRequestSubnet) IsSetActive() bool {
+	if o != nil && !IsNil(o.Active) {
+		return true
+	}
+
+	return false
+}
+
+// SetActive gets a reference to the given bool and assigns it to the Active field.
+func (o *UpdateSubnetRequestSubnet) SetActive(v bool) {
+	o.Active = &v
+}
+
+// GetDhcpServer returns the DhcpServer field value if set, zero value otherwise.
+func (o *UpdateSubnetRequestSubnet) GetDhcpServer() bool {
+	if o == nil || IsNil(o.DhcpServer) {
+		var ret bool
+		return ret
+	}
+	return *o.DhcpServer
+}
+
+// GetDhcpServerOk returns a tuple with the DhcpServer field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateSubnetRequestSubnet) GetDhcpServerOk() (*bool, bool) {
+	if o == nil || IsNil(o.DhcpServer) {
+		return nil, false
+	}
+	return o.DhcpServer, true
+}
+
+// IsSetDhcpServer returns a boolean if a field has been set.
+func (o *UpdateSubnetRequestSubnet) IsSetDhcpServer() bool {
+	if o != nil && !IsNil(o.DhcpServer) {
+		return true
+	}
+
+	return false
+}
+
+// SetDhcpServer gets a reference to the given bool and assigns it to the DhcpServer field.
+func (o *UpdateSubnetRequestSubnet) SetDhcpServer(v bool) {
+	o.DhcpServer = &v
+}
+
+// GetAllowStaticOverride returns the AllowStaticOverride field value if set, zero value otherwise.
+func (o *UpdateSubnetRequestSubnet) GetAllowStaticOverride() bool {
+	if o == nil || IsNil(o.AllowStaticOverride) {
+		var ret bool
+		return ret
+	}
+	return *o.AllowStaticOverride
+}
+
+// GetAllowStaticOverrideOk returns a tuple with the AllowStaticOverride field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateSubnetRequestSubnet) GetAllowStaticOverrideOk() (*bool, bool) {
+	if o == nil || IsNil(o.AllowStaticOverride) {
+		return nil, false
+	}
+	return o.AllowStaticOverride, true
+}
+
+// IsSetAllowStaticOverride returns a boolean if a field has been set.
+func (o *UpdateSubnetRequestSubnet) IsSetAllowStaticOverride() bool {
+	if o != nil && !IsNil(o.AllowStaticOverride) {
+		return true
+	}
+
+	return false
+}
+
+// SetAllowStaticOverride gets a reference to the given bool and assigns it to the AllowStaticOverride field.
+func (o *UpdateSubnetRequestSubnet) SetAllowStaticOverride(v bool) {
+	o.AllowStaticOverride = &v
+}
+
+// GetPool returns the Pool field value if set, zero value otherwise.
+func (o *UpdateSubnetRequestSubnet) GetPool() UpdateSubnetRequestSubnetPool {
+	if o == nil || IsNil(o.Pool) {
+		var ret UpdateSubnetRequestSubnetPool
+		return ret
+	}
+	return *o.Pool
+}
+
+// GetPoolOk returns a tuple with the Pool field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateSubnetRequestSubnet) GetPoolOk() (*UpdateSubnetRequestSubnetPool, bool) {
+	if o == nil || IsNil(o.Pool) {
+		return nil, false
+	}
+	return o.Pool, true
+}
+
+// IsSetPool returns a boolean if a field has been set.
+func (o *UpdateSubnetRequestSubnet) IsSetPool() bool {
+	if o != nil && !IsNil(o.Pool) {
+		return true
+	}
+
+	return false
+}
+
+// SetPool gets a reference to the given UpdateSubnetRequestSubnetPool and assigns it to the Pool field.
+func (o *UpdateSubnetRequestSubnet) SetPool(v UpdateSubnetRequestSubnetPool) {
+	o.Pool = &v
 }
 
 // GetTenants returns the Tenants field value if set, zero value otherwise.
@@ -226,11 +497,35 @@ func (o UpdateSubnetRequestSubnet) MarshalJSON() ([]byte, error) {
 
 func (o UpdateSubnetRequestSubnet) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
+	if !IsNil(o.NetworkId) {
+		toSerialize["networkId"] = o.NetworkId
+	}
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
+	}
+	if !IsNil(o.Cidr) {
+		toSerialize["cidr"] = o.Cidr
+	}
+	if !IsNil(o.Active) {
+		toSerialize["active"] = o.Active
+	}
+	if !IsNil(o.DhcpServer) {
+		toSerialize["dhcpServer"] = o.DhcpServer
+	}
+	if !IsNil(o.AllowStaticOverride) {
+		toSerialize["allowStaticOverride"] = o.AllowStaticOverride
+	}
+	if !IsNil(o.Pool) {
+		toSerialize["pool"] = o.Pool
 	}
 	if !IsNil(o.Tenants) {
 		toSerialize["tenants"] = o.Tenants

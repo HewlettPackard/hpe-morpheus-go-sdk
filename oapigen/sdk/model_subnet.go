@@ -35,7 +35,7 @@ type Subnet struct {
 	SubnetAddress        *string                                          `json:"subnetAddress,omitempty"`
 	TftpServer           NullableString                                   `json:"tftpServer,omitempty"`
 	BootFile             NullableString                                   `json:"bootFile,omitempty"`
-	Pool                 NullableString                                   `json:"pool,omitempty"`
+	Pool                 *CreateSubnet200ResponseSubnetPool               `json:"pool,omitempty"`
 	DhcpServer           *bool                                            `json:"dhcpServer,omitempty"`
 	HasFloatingIps       *bool                                            `json:"hasFloatingIps,omitempty"`
 	DhcpIp               NullableString                                   `json:"dhcpIp,omitempty"`
@@ -44,7 +44,7 @@ type Subnet struct {
 	DhcpStart            *string                                          `json:"dhcpStart,omitempty"`
 	DhcpEnd              *string                                          `json:"dhcpEnd,omitempty"`
 	DhcpRange            NullableString                                   `json:"dhcpRange,omitempty"`
-	NetworkProxy         NullableString                                   `json:"networkProxy,omitempty"`
+	NetworkProxy         *CreateSubnet200ResponseSubnetNetworkProxy       `json:"networkProxy,omitempty"`
 	NetworkDomain        *CreateSubnet200ResponseSubnetNetworkDomain      `json:"networkDomain,omitempty"`
 	SearchDomains        NullableString                                   `json:"searchDomains,omitempty"`
 	DefaultNetwork       *bool                                            `json:"defaultNetwork,omitempty"`
@@ -52,6 +52,7 @@ type Subnet struct {
 	Visibility           *string                                          `json:"visibility,omitempty"`
 	Status               *CreateSubnet200ResponseSubnetStatus             `json:"status,omitempty"`
 	Network              *CreateSubnet200ResponseSubnetNetwork            `json:"network,omitempty"`
+	Zone                 *CreateSubnet200ResponseSubnetZone               `json:"zone,omitempty"`
 	Type                 *CreateSubnet200ResponseSubnetType               `json:"type,omitempty"`
 	Account              *CreateSubnet200ResponseSubnetAccount            `json:"account,omitempty"`
 	SecurityGroups       []map[string]interface{}                         `json:"securityGroups,omitempty"`
@@ -637,47 +638,36 @@ func (o *Subnet) UnsetBootFile() {
 	o.BootFile.Unset()
 }
 
-// GetPool returns the Pool field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *Subnet) GetPool() string {
-	if o == nil || IsNil(o.Pool.Get()) {
-		var ret string
+// GetPool returns the Pool field value if set, zero value otherwise.
+func (o *Subnet) GetPool() CreateSubnet200ResponseSubnetPool {
+	if o == nil || IsNil(o.Pool) {
+		var ret CreateSubnet200ResponseSubnetPool
 		return ret
 	}
-	return *o.Pool.Get()
+	return *o.Pool
 }
 
 // GetPoolOk returns a tuple with the Pool field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *Subnet) GetPoolOk() (*string, bool) {
-	if o == nil {
+func (o *Subnet) GetPoolOk() (*CreateSubnet200ResponseSubnetPool, bool) {
+	if o == nil || IsNil(o.Pool) {
 		return nil, false
 	}
-	return o.Pool.Get(), o.Pool.IsSet()
+	return o.Pool, true
 }
 
 // IsSetPool returns a boolean if a field has been set.
 func (o *Subnet) IsSetPool() bool {
-	if o != nil && o.Pool.IsSet() {
+	if o != nil && !IsNil(o.Pool) {
 		return true
 	}
 
 	return false
 }
 
-// SetPool gets a reference to the given NullableString and assigns it to the Pool field.
-func (o *Subnet) SetPool(v string) {
-	o.Pool.Set(&v)
-}
-
-// SetPoolNil sets the value for Pool to be an explicit nil
-func (o *Subnet) SetPoolNil() {
-	o.Pool.Set(nil)
-}
-
-// UnsetPool ensures that no value is present for Pool, not even an explicit nil
-func (o *Subnet) UnsetPool() {
-	o.Pool.Unset()
+// SetPool gets a reference to the given CreateSubnet200ResponseSubnetPool and assigns it to the Pool field.
+func (o *Subnet) SetPool(v CreateSubnet200ResponseSubnetPool) {
+	o.Pool = &v
 }
 
 // GetDhcpServer returns the DhcpServer field value if set, zero value otherwise.
@@ -980,47 +970,36 @@ func (o *Subnet) UnsetDhcpRange() {
 	o.DhcpRange.Unset()
 }
 
-// GetNetworkProxy returns the NetworkProxy field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *Subnet) GetNetworkProxy() string {
-	if o == nil || IsNil(o.NetworkProxy.Get()) {
-		var ret string
+// GetNetworkProxy returns the NetworkProxy field value if set, zero value otherwise.
+func (o *Subnet) GetNetworkProxy() CreateSubnet200ResponseSubnetNetworkProxy {
+	if o == nil || IsNil(o.NetworkProxy) {
+		var ret CreateSubnet200ResponseSubnetNetworkProxy
 		return ret
 	}
-	return *o.NetworkProxy.Get()
+	return *o.NetworkProxy
 }
 
 // GetNetworkProxyOk returns a tuple with the NetworkProxy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *Subnet) GetNetworkProxyOk() (*string, bool) {
-	if o == nil {
+func (o *Subnet) GetNetworkProxyOk() (*CreateSubnet200ResponseSubnetNetworkProxy, bool) {
+	if o == nil || IsNil(o.NetworkProxy) {
 		return nil, false
 	}
-	return o.NetworkProxy.Get(), o.NetworkProxy.IsSet()
+	return o.NetworkProxy, true
 }
 
 // IsSetNetworkProxy returns a boolean if a field has been set.
 func (o *Subnet) IsSetNetworkProxy() bool {
-	if o != nil && o.NetworkProxy.IsSet() {
+	if o != nil && !IsNil(o.NetworkProxy) {
 		return true
 	}
 
 	return false
 }
 
-// SetNetworkProxy gets a reference to the given NullableString and assigns it to the NetworkProxy field.
-func (o *Subnet) SetNetworkProxy(v string) {
-	o.NetworkProxy.Set(&v)
-}
-
-// SetNetworkProxyNil sets the value for NetworkProxy to be an explicit nil
-func (o *Subnet) SetNetworkProxyNil() {
-	o.NetworkProxy.Set(nil)
-}
-
-// UnsetNetworkProxy ensures that no value is present for NetworkProxy, not even an explicit nil
-func (o *Subnet) UnsetNetworkProxy() {
-	o.NetworkProxy.Unset()
+// SetNetworkProxy gets a reference to the given CreateSubnet200ResponseSubnetNetworkProxy and assigns it to the NetworkProxy field.
+func (o *Subnet) SetNetworkProxy(v CreateSubnet200ResponseSubnetNetworkProxy) {
+	o.NetworkProxy = &v
 }
 
 // GetNetworkDomain returns the NetworkDomain field value if set, zero value otherwise.
@@ -1258,6 +1237,38 @@ func (o *Subnet) SetNetwork(v CreateSubnet200ResponseSubnetNetwork) {
 	o.Network = &v
 }
 
+// GetZone returns the Zone field value if set, zero value otherwise.
+func (o *Subnet) GetZone() CreateSubnet200ResponseSubnetZone {
+	if o == nil || IsNil(o.Zone) {
+		var ret CreateSubnet200ResponseSubnetZone
+		return ret
+	}
+	return *o.Zone
+}
+
+// GetZoneOk returns a tuple with the Zone field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Subnet) GetZoneOk() (*CreateSubnet200ResponseSubnetZone, bool) {
+	if o == nil || IsNil(o.Zone) {
+		return nil, false
+	}
+	return o.Zone, true
+}
+
+// IsSetZone returns a boolean if a field has been set.
+func (o *Subnet) IsSetZone() bool {
+	if o != nil && !IsNil(o.Zone) {
+		return true
+	}
+
+	return false
+}
+
+// SetZone gets a reference to the given CreateSubnet200ResponseSubnetZone and assigns it to the Zone field.
+func (o *Subnet) SetZone(v CreateSubnet200ResponseSubnetZone) {
+	o.Zone = &v
+}
+
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *Subnet) GetType() CreateSubnet200ResponseSubnetType {
 	if o == nil || IsNil(o.Type) {
@@ -1473,8 +1484,8 @@ func (o Subnet) ToMap() (map[string]interface{}, error) {
 	if o.BootFile.IsSet() {
 		toSerialize["bootFile"] = o.BootFile.Get()
 	}
-	if o.Pool.IsSet() {
-		toSerialize["pool"] = o.Pool.Get()
+	if !IsNil(o.Pool) {
+		toSerialize["pool"] = o.Pool
 	}
 	if !IsNil(o.DhcpServer) {
 		toSerialize["dhcpServer"] = o.DhcpServer
@@ -1500,8 +1511,8 @@ func (o Subnet) ToMap() (map[string]interface{}, error) {
 	if o.DhcpRange.IsSet() {
 		toSerialize["dhcpRange"] = o.DhcpRange.Get()
 	}
-	if o.NetworkProxy.IsSet() {
-		toSerialize["networkProxy"] = o.NetworkProxy.Get()
+	if !IsNil(o.NetworkProxy) {
+		toSerialize["networkProxy"] = o.NetworkProxy
 	}
 	if !IsNil(o.NetworkDomain) {
 		toSerialize["networkDomain"] = o.NetworkDomain
@@ -1523,6 +1534,9 @@ func (o Subnet) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Network) {
 		toSerialize["network"] = o.Network
+	}
+	if !IsNil(o.Zone) {
+		toSerialize["zone"] = o.Zone
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
