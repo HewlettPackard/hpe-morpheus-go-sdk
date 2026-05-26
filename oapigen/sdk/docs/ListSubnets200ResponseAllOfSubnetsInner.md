@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **SubnetAddress** | Pointer to **string** |  | [optional] 
 **TftpServer** | Pointer to **NullableString** |  | [optional] 
 **BootFile** | Pointer to **NullableString** |  | [optional] 
-**Pool** | Pointer to **NullableString** |  | [optional] 
+**Pool** | Pointer to [**ListSubnets200ResponseAllOfSubnetsInnerPool**](ListSubnets200ResponseAllOfSubnetsInnerPool.md) |  | [optional] 
 **DhcpServer** | Pointer to **bool** |  | [optional] 
 **HasFloatingIps** | Pointer to **bool** |  | [optional] 
 **DhcpIp** | Pointer to **NullableString** |  | [optional] 
@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 **DhcpStart** | Pointer to **string** |  | [optional] 
 **DhcpEnd** | Pointer to **string** |  | [optional] 
 **DhcpRange** | Pointer to **NullableString** |  | [optional] 
-**NetworkProxy** | Pointer to **NullableString** |  | [optional] 
+**NetworkProxy** | Pointer to [**ListSubnets200ResponseAllOfSubnetsInnerNetworkProxy**](ListSubnets200ResponseAllOfSubnetsInnerNetworkProxy.md) |  | [optional] 
 **NetworkDomain** | Pointer to [**ListSubnets200ResponseAllOfSubnetsInnerNetworkDomain**](ListSubnets200ResponseAllOfSubnetsInnerNetworkDomain.md) |  | [optional] 
 **SearchDomains** | Pointer to **NullableString** |  | [optional] 
 **DefaultNetwork** | Pointer to **bool** |  | [optional] 
@@ -36,6 +36,7 @@ Name | Type | Description | Notes
 **Visibility** | Pointer to **string** |  | [optional] 
 **Status** | Pointer to [**ListSubnets200ResponseAllOfSubnetsInnerStatus**](ListSubnets200ResponseAllOfSubnetsInnerStatus.md) |  | [optional] 
 **Network** | Pointer to [**ListSubnets200ResponseAllOfSubnetsInnerNetwork**](ListSubnets200ResponseAllOfSubnetsInnerNetwork.md) |  | [optional] 
+**Zone** | Pointer to [**ListSubnets200ResponseAllOfSubnetsInnerZone**](ListSubnets200ResponseAllOfSubnetsInnerZone.md) |  | [optional] 
 **Type** | Pointer to [**ListSubnets200ResponseAllOfSubnetsInnerType**](ListSubnets200ResponseAllOfSubnetsInnerType.md) |  | [optional] 
 **Account** | Pointer to [**ListSubnets200ResponseAllOfSubnetsInnerAccount**](ListSubnets200ResponseAllOfSubnetsInnerAccount.md) |  | [optional] 
 **SecurityGroups** | Pointer to **[]map[string]interface{}** |  | [optional] 
@@ -518,20 +519,20 @@ HasBootFile returns a boolean if a field has been set.
 UnsetBootFile ensures that no value is present for BootFile, not even an explicit nil
 ### GetPool
 
-`func (o *ListSubnets200ResponseAllOfSubnetsInner) GetPool() string`
+`func (o *ListSubnets200ResponseAllOfSubnetsInner) GetPool() ListSubnets200ResponseAllOfSubnetsInnerPool`
 
 GetPool returns the Pool field if non-nil, zero value otherwise.
 
 ### GetPoolOk
 
-`func (o *ListSubnets200ResponseAllOfSubnetsInner) GetPoolOk() (*string, bool)`
+`func (o *ListSubnets200ResponseAllOfSubnetsInner) GetPoolOk() (*ListSubnets200ResponseAllOfSubnetsInnerPool, bool)`
 
 GetPoolOk returns a tuple with the Pool field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPool
 
-`func (o *ListSubnets200ResponseAllOfSubnetsInner) SetPool(v string)`
+`func (o *ListSubnets200ResponseAllOfSubnetsInner) SetPool(v ListSubnets200ResponseAllOfSubnetsInnerPool)`
 
 SetPool sets Pool field to given value.
 
@@ -541,16 +542,6 @@ SetPool sets Pool field to given value.
 
 HasPool returns a boolean if a field has been set.
 
-### SetPoolNil
-
-`func (o *ListSubnets200ResponseAllOfSubnetsInner) SetPoolNil(b bool)`
-
- SetPoolNil sets the value for Pool to be an explicit nil
-
-### UnsetPool
-`func (o *ListSubnets200ResponseAllOfSubnetsInner) UnsetPool()`
-
-UnsetPool ensures that no value is present for Pool, not even an explicit nil
 ### GetDhcpServer
 
 `func (o *ListSubnets200ResponseAllOfSubnetsInner) GetDhcpServer() bool`
@@ -793,20 +784,20 @@ HasDhcpRange returns a boolean if a field has been set.
 UnsetDhcpRange ensures that no value is present for DhcpRange, not even an explicit nil
 ### GetNetworkProxy
 
-`func (o *ListSubnets200ResponseAllOfSubnetsInner) GetNetworkProxy() string`
+`func (o *ListSubnets200ResponseAllOfSubnetsInner) GetNetworkProxy() ListSubnets200ResponseAllOfSubnetsInnerNetworkProxy`
 
 GetNetworkProxy returns the NetworkProxy field if non-nil, zero value otherwise.
 
 ### GetNetworkProxyOk
 
-`func (o *ListSubnets200ResponseAllOfSubnetsInner) GetNetworkProxyOk() (*string, bool)`
+`func (o *ListSubnets200ResponseAllOfSubnetsInner) GetNetworkProxyOk() (*ListSubnets200ResponseAllOfSubnetsInnerNetworkProxy, bool)`
 
 GetNetworkProxyOk returns a tuple with the NetworkProxy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkProxy
 
-`func (o *ListSubnets200ResponseAllOfSubnetsInner) SetNetworkProxy(v string)`
+`func (o *ListSubnets200ResponseAllOfSubnetsInner) SetNetworkProxy(v ListSubnets200ResponseAllOfSubnetsInnerNetworkProxy)`
 
 SetNetworkProxy sets NetworkProxy field to given value.
 
@@ -816,16 +807,6 @@ SetNetworkProxy sets NetworkProxy field to given value.
 
 HasNetworkProxy returns a boolean if a field has been set.
 
-### SetNetworkProxyNil
-
-`func (o *ListSubnets200ResponseAllOfSubnetsInner) SetNetworkProxyNil(b bool)`
-
- SetNetworkProxyNil sets the value for NetworkProxy to be an explicit nil
-
-### UnsetNetworkProxy
-`func (o *ListSubnets200ResponseAllOfSubnetsInner) UnsetNetworkProxy()`
-
-UnsetNetworkProxy ensures that no value is present for NetworkProxy, not even an explicit nil
 ### GetNetworkDomain
 
 `func (o *ListSubnets200ResponseAllOfSubnetsInner) GetNetworkDomain() ListSubnets200ResponseAllOfSubnetsInnerNetworkDomain`
@@ -1010,6 +991,31 @@ SetNetwork sets Network field to given value.
 `func (o *ListSubnets200ResponseAllOfSubnetsInner) HasNetwork() bool`
 
 HasNetwork returns a boolean if a field has been set.
+
+### GetZone
+
+`func (o *ListSubnets200ResponseAllOfSubnetsInner) GetZone() ListSubnets200ResponseAllOfSubnetsInnerZone`
+
+GetZone returns the Zone field if non-nil, zero value otherwise.
+
+### GetZoneOk
+
+`func (o *ListSubnets200ResponseAllOfSubnetsInner) GetZoneOk() (*ListSubnets200ResponseAllOfSubnetsInnerZone, bool)`
+
+GetZoneOk returns a tuple with the Zone field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetZone
+
+`func (o *ListSubnets200ResponseAllOfSubnetsInner) SetZone(v ListSubnets200ResponseAllOfSubnetsInnerZone)`
+
+SetZone sets Zone field to given value.
+
+### HasZone
+
+`func (o *ListSubnets200ResponseAllOfSubnetsInner) HasZone() bool`
+
+HasZone returns a boolean if a field has been set.
 
 ### GetType
 

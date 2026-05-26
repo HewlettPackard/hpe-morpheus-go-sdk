@@ -109079,8 +109079,14 @@ paths:
                                 - 'null'
                             pool:
                               type:
-                                - string
+                                - object
                                 - 'null'
+                              properties:
+                                id:
+                                  type: integer
+                                  format: int64
+                                name:
+                                  type: string
                             dhcpServer:
                               type: boolean
                             hasFloatingIps:
@@ -109107,8 +109113,14 @@ paths:
                                 - 'null'
                             networkProxy:
                               type:
-                                - string
+                                - object
                                 - 'null'
+                              properties:
+                                id:
+                                  type: integer
+                                  format: int64
+                                name:
+                                  type: string
                             networkDomain:
                               type:
                                 - object
@@ -109136,6 +109148,16 @@ paths:
                                   type: string
                             network:
                               type: object
+                              properties:
+                                id:
+                                  type: integer
+                                  format: int64
+                                name:
+                                  type: string
+                            zone:
+                              type:
+                                - object
+                                - 'null'
                               properties:
                                 id:
                                   type: integer
@@ -147569,6 +147591,17 @@ paths:
                     active:
                       type: boolean
                       description: Set to `false` to disable a security group.
+                    visibility:
+                      type: string
+                      description: Visibility for the security group.
+                      enum:
+                        - private
+                        - public
+                      default: private
+                    networkServerId:
+                      type: integer
+                      format: int64
+                      description: Network Server ID to scope the security group to a network integration (e.g. NSX-T). Use as an alternative to zoneId for network-server-scoped groups.
                     customOptions:
                       anyOf:
                         - title: Custom Options for Azure
@@ -147820,6 +147853,13 @@ paths:
                     active:
                       type: boolean
                       description: Set to `false` to disable a security group.
+                    visibility:
+                      type: string
+                      description: Visibility for the security group.
+                      enum:
+                        - private
+                        - public
+                      default: private
                     tenantPermissions:
                       type: object
                       properties:
@@ -166238,6 +166278,9 @@ paths:
                         network:
                           id: 55
                           name: our-subnet
+                        zone:
+                          id: 4617
+                          name: Azure Cloud
                         type:
                           id: 6
                           code: azure
@@ -166289,6 +166332,9 @@ paths:
                         network:
                           id: 55
                           name: our-subnet
+                        zone:
+                          id: 4617
+                          name: Azure Cloud
                         type:
                           id: 6
                           code: azure
@@ -166331,6 +166377,12 @@ paths:
                 subnet: &ref_1233
                   type: object
                   properties:
+                    name:
+                      type: string
+                      description: Name for the subnet
+                    description:
+                      type: string
+                      description: Description
                     type:
                       type: object
                       properties:
@@ -166338,9 +166390,32 @@ paths:
                           type: integer
                           format: int64
                           description: Subnet Type ID
+                    networkId:
+                      type: integer
+                      format: int64
+                      description: The ID of the Network this subnet belongs to. Required when not using the nested route `/api/networks/{networkId}/subnets`.
                     config:
                       type: object
                       description: Configuration object. Settings vary by type.
+                    cidr:
+                      type: string
+                      description: Subnet CIDR. Used directly by subnet types with `cidrEditable` and `cidrRequired` (e.g. Google). For Azure subnets, this is derived from `config.subnetCidr` and does not need to be set explicitly.
+                    active:
+                      type: boolean
+                      description: Activate (true) or disable (false) the subnet
+                    dhcpServer:
+                      type: boolean
+                      description: DHCP Server enabled subnet
+                    allowStaticOverride:
+                      type: boolean
+                      description: Allow IP Override
+                    pool:
+                      type: object
+                      description: Network Pool
+                      properties:
+                        id:
+                          type: integer
+                          format: int64
                     tenants:
                       type: array
                       description: Array of tenant account ID objects that are allowed access
@@ -166386,16 +166461,24 @@ paths:
               Subnet Request:
                 value:
                   subnet:
+                    name: My Subnet
+                    description: A new subnet in the Azure VNet
                     type:
                       id: 6
+                    networkId: 55
                     config:
                       subnetName: My Subnet
                       subnetCidr: 192.168.2.0/24
+                    active: true
+                    dhcpServer: true
                     tenants:
                       - id: 2
                       - id: 1
                     visibility: private
-                  resourcePermissions:
+                    labels:
+                      - production
+                      - azure
+                  resourcePermission:
                     all: true
       responses:
         '200':
@@ -166447,6 +166530,9 @@ paths:
                       network:
                         id: 55
                         name: our-subnet
+                      zone:
+                        id: 4617
+                        name: Azure Cloud
                       type:
                         id: 6
                         code: azure
@@ -166531,8 +166617,16 @@ paths:
               Subnet Update Request:
                 value:
                   subnet:
+                    name: Updated Subnet Name
+                    active: true
+                    dhcpServer: false
+                    visibility: public
                     config:
-                      subnetName: Our Subnet
+                      subnetName: Updated Subnet Name
+                  resourcePermission:
+                    all: true
+                    sites:
+                      - id: 1
       responses:
         '200':
           description: Successful Request

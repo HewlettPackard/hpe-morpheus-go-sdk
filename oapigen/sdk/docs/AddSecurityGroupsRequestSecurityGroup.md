@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | Optional description field | [optional] 
 **ZoneId** | **int64** | Scoped Cloud ID | 
 **Active** | Pointer to **bool** | Set to &#x60;false&#x60; to disable a security group. | [optional] 
+**Visibility** | Pointer to **string** | Visibility for the security group. | [optional] [default to "private"]
+**NetworkServerId** | Pointer to **int64** | Network Server ID to scope the security group to a network integration (e.g. NSX-T). Use as an alternative to zoneId for network-server-scoped groups. | [optional] 
 **CustomOptions** | Pointer to [**AddSecurityGroupsRequestSecurityGroupCustomOptions**](AddSecurityGroupsRequestSecurityGroupCustomOptions.md) |  | [optional] 
 **TenantPermissions** | Pointer to [**AddSecurityGroupsRequestSecurityGroupTenantPermissions**](AddSecurityGroupsRequestSecurityGroupTenantPermissions.md) |  | [optional] 
 **ResourcePermissions** | Pointer to [**AddSecurityGroupsRequestSecurityGroupResourcePermissions**](AddSecurityGroupsRequestSecurityGroupResourcePermissions.md) |  | [optional] 
@@ -120,6 +122,56 @@ SetActive sets Active field to given value.
 `func (o *AddSecurityGroupsRequestSecurityGroup) HasActive() bool`
 
 HasActive returns a boolean if a field has been set.
+
+### GetVisibility
+
+`func (o *AddSecurityGroupsRequestSecurityGroup) GetVisibility() string`
+
+GetVisibility returns the Visibility field if non-nil, zero value otherwise.
+
+### GetVisibilityOk
+
+`func (o *AddSecurityGroupsRequestSecurityGroup) GetVisibilityOk() (*string, bool)`
+
+GetVisibilityOk returns a tuple with the Visibility field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVisibility
+
+`func (o *AddSecurityGroupsRequestSecurityGroup) SetVisibility(v string)`
+
+SetVisibility sets Visibility field to given value.
+
+### HasVisibility
+
+`func (o *AddSecurityGroupsRequestSecurityGroup) HasVisibility() bool`
+
+HasVisibility returns a boolean if a field has been set.
+
+### GetNetworkServerId
+
+`func (o *AddSecurityGroupsRequestSecurityGroup) GetNetworkServerId() int64`
+
+GetNetworkServerId returns the NetworkServerId field if non-nil, zero value otherwise.
+
+### GetNetworkServerIdOk
+
+`func (o *AddSecurityGroupsRequestSecurityGroup) GetNetworkServerIdOk() (*int64, bool)`
+
+GetNetworkServerIdOk returns a tuple with the NetworkServerId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNetworkServerId
+
+`func (o *AddSecurityGroupsRequestSecurityGroup) SetNetworkServerId(v int64)`
+
+SetNetworkServerId sets NetworkServerId field to given value.
+
+### HasNetworkServerId
+
+`func (o *AddSecurityGroupsRequestSecurityGroup) HasNetworkServerId() bool`
+
+HasNetworkServerId returns a boolean if a field has been set.
 
 ### GetCustomOptions
 
