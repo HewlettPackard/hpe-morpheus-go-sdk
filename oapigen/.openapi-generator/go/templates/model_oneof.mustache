@@ -8,15 +8,6 @@ type {{classname}} struct {
 	{{/oneOf}}
 }
 
-{{#oneOf}}
-// {{{.}}}As{{classname}} is a convenience function that returns {{{.}}} wrapped in {{classname}}
-func {{#lambda.type-to-name}}{{{.}}}{{/lambda.type-to-name}}As{{classname}}(v *{{{.}}}) {{classname}} {
-	return {{classname}}{
-		{{#lambda.type-to-name}}{{{.}}}{{/lambda.type-to-name}}: v,
-	}
-}
-
-{{/oneOf}}
 
 {{#useMapStructs}}
 func (dst *{{classname}}) UnmarshalMapstructure(data any) (any, error) {
