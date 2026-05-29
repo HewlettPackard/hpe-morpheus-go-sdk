@@ -1,10 +1,6 @@
 // very silly way of avoiding `"fmt" imported and not used` errors
 var _ fmt.Stringer
 
-{{#discriminator}}
-// checks if the {{classname}} type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &{{classname}}{}
-{{/discriminator}}
 
 // {{classname}} {{{description}}}{{^description}}struct for {{{classname}}}{{/description}}
 type {{classname}} struct {
@@ -112,4 +108,3 @@ func (src {{classname}}) ToMap() (map[string]interface{}, error) {
 }
 {{/discriminator}}
 
-{{>nullable_model}}
