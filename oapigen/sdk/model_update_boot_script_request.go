@@ -61,15 +61,6 @@ func (o *UpdateBootScriptRequest) GetBootScriptOk() (*UpdateBootScriptRequestBoo
 	return o.BootScript, true
 }
 
-// IsSetBootScript returns a boolean if a field has been set.
-func (o *UpdateBootScriptRequest) IsSetBootScript() bool {
-	if o != nil && !IsNil(o.BootScript) {
-		return true
-	}
-
-	return false
-}
-
 // SetBootScript gets a reference to the given UpdateBootScriptRequestBootScript and assigns it to the BootScript field.
 func (o *UpdateBootScriptRequest) SetBootScript(v UpdateBootScriptRequestBootScript) {
 	o.BootScript = &v

@@ -74,15 +74,6 @@ func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) GetIdOk() (*int64, b
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) SetId(v int64) {
 	o.Id = &v
@@ -107,28 +98,9 @@ func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) GetImageBuildOk() (*
 	return o.ImageBuild.Get(), o.ImageBuild.IsSet()
 }
 
-// IsSetImageBuild returns a boolean if a field has been set.
-func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) IsSetImageBuild() bool {
-	if o != nil && o.ImageBuild.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetImageBuild gets a reference to the given NullableAddImageBuild200ResponseAllOfImageBuildLastResultImageBuild and assigns it to the ImageBuild field.
 func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) SetImageBuild(v AddImageBuild200ResponseAllOfImageBuildLastResultImageBuild) {
 	o.ImageBuild.Set(&v)
-}
-
-// SetImageBuildNil sets the value for ImageBuild to be an explicit nil
-func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) SetImageBuildNil() {
-	o.ImageBuild.Set(nil)
-}
-
-// UnsetImageBuild ensures that no value is present for ImageBuild, not even an explicit nil
-func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) UnsetImageBuild() {
-	o.ImageBuild.Unset()
 }
 
 // GetBuildNumber returns the BuildNumber field value if set, zero value otherwise.
@@ -147,15 +119,6 @@ func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) GetBuildNumberOk() (
 		return nil, false
 	}
 	return o.BuildNumber, true
-}
-
-// IsSetBuildNumber returns a boolean if a field has been set.
-func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) IsSetBuildNumber() bool {
-	if o != nil && !IsNil(o.BuildNumber) {
-		return true
-	}
-
-	return false
 }
 
 // SetBuildNumber gets a reference to the given int64 and assigns it to the BuildNumber field.
@@ -179,15 +142,6 @@ func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) GetStartDateOk() (*t
 		return nil, false
 	}
 	return o.StartDate, true
-}
-
-// IsSetStartDate returns a boolean if a field has been set.
-func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) IsSetStartDate() bool {
-	if o != nil && !IsNil(o.StartDate) {
-		return true
-	}
-
-	return false
 }
 
 // SetStartDate gets a reference to the given time.Time and assigns it to the StartDate field.
@@ -214,28 +168,9 @@ func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) GetEndDateOk() (*tim
 	return o.EndDate.Get(), o.EndDate.IsSet()
 }
 
-// IsSetEndDate returns a boolean if a field has been set.
-func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) IsSetEndDate() bool {
-	if o != nil && o.EndDate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetEndDate gets a reference to the given NullableTime and assigns it to the EndDate field.
 func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) SetEndDate(v time.Time) {
 	o.EndDate.Set(&v)
-}
-
-// SetEndDateNil sets the value for EndDate to be an explicit nil
-func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) SetEndDateNil() {
-	o.EndDate.Set(nil)
-}
-
-// UnsetEndDate ensures that no value is present for EndDate, not even an explicit nil
-func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) UnsetEndDate() {
-	o.EndDate.Unset()
 }
 
 // GetStatusMessage returns the StatusMessage field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -257,28 +192,9 @@ func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) GetStatusMessageOk()
 	return o.StatusMessage.Get(), o.StatusMessage.IsSet()
 }
 
-// IsSetStatusMessage returns a boolean if a field has been set.
-func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) IsSetStatusMessage() bool {
-	if o != nil && o.StatusMessage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusMessage gets a reference to the given NullableString and assigns it to the StatusMessage field.
 func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) SetStatusMessage(v string) {
 	o.StatusMessage.Set(&v)
-}
-
-// SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
-func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) SetStatusMessageNil() {
-	o.StatusMessage.Set(nil)
-}
-
-// UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
-func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) UnsetStatusMessage() {
-	o.StatusMessage.Unset()
 }
 
 // GetStatusPercent returns the StatusPercent field value if set, zero value otherwise.
@@ -297,15 +213,6 @@ func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) GetStatusPercentOk()
 		return nil, false
 	}
 	return o.StatusPercent, true
-}
-
-// IsSetStatusPercent returns a boolean if a field has been set.
-func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) IsSetStatusPercent() bool {
-	if o != nil && !IsNil(o.StatusPercent) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatusPercent gets a reference to the given int64 and assigns it to the StatusPercent field.
@@ -332,28 +239,9 @@ func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) GetStatusEtaOk() (*s
 	return o.StatusEta.Get(), o.StatusEta.IsSet()
 }
 
-// IsSetStatusEta returns a boolean if a field has been set.
-func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) IsSetStatusEta() bool {
-	if o != nil && o.StatusEta.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusEta gets a reference to the given NullableString and assigns it to the StatusEta field.
 func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) SetStatusEta(v string) {
 	o.StatusEta.Set(&v)
-}
-
-// SetStatusEtaNil sets the value for StatusEta to be an explicit nil
-func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) SetStatusEtaNil() {
-	o.StatusEta.Set(nil)
-}
-
-// UnsetStatusEta ensures that no value is present for StatusEta, not even an explicit nil
-func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) UnsetStatusEta() {
-	o.StatusEta.Unset()
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -372,15 +260,6 @@ func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) GetStatusOk() (*stri
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -407,28 +286,9 @@ func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) GetErrorMessageOk() 
 	return o.ErrorMessage.Get(), o.ErrorMessage.IsSet()
 }
 
-// IsSetErrorMessage returns a boolean if a field has been set.
-func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) IsSetErrorMessage() bool {
-	if o != nil && o.ErrorMessage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetErrorMessage gets a reference to the given NullableString and assigns it to the ErrorMessage field.
 func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) SetErrorMessage(v string) {
 	o.ErrorMessage.Set(&v)
-}
-
-// SetErrorMessageNil sets the value for ErrorMessage to be an explicit nil
-func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) SetErrorMessageNil() {
-	o.ErrorMessage.Set(nil)
-}
-
-// UnsetErrorMessage ensures that no value is present for ErrorMessage, not even an explicit nil
-func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) UnsetErrorMessage() {
-	o.ErrorMessage.Unset()
 }
 
 // GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
@@ -447,15 +307,6 @@ func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) GetCreatedByOk() (*A
 		return nil, false
 	}
 	return o.CreatedBy, true
-}
-
-// IsSetCreatedBy returns a boolean if a field has been set.
-func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) IsSetCreatedBy() bool {
-	if o != nil && !IsNil(o.CreatedBy) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreatedBy gets a reference to the given AddImageBuild200ResponseAllOfImageBuildLastResultCreatedBy and assigns it to the CreatedBy field.
@@ -482,28 +333,9 @@ func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) GetTempInstanceOk() 
 	return o.TempInstance.Get(), o.TempInstance.IsSet()
 }
 
-// IsSetTempInstance returns a boolean if a field has been set.
-func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) IsSetTempInstance() bool {
-	if o != nil && o.TempInstance.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetTempInstance gets a reference to the given NullableString and assigns it to the TempInstance field.
 func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) SetTempInstance(v string) {
 	o.TempInstance.Set(&v)
-}
-
-// SetTempInstanceNil sets the value for TempInstance to be an explicit nil
-func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) SetTempInstanceNil() {
-	o.TempInstance.Set(nil)
-}
-
-// UnsetTempInstance ensures that no value is present for TempInstance, not even an explicit nil
-func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) UnsetTempInstance() {
-	o.TempInstance.Unset()
 }
 
 // GetVirtualImages returns the VirtualImages field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -523,15 +355,6 @@ func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) GetVirtualImagesOk()
 		return nil, false
 	}
 	return o.VirtualImages, true
-}
-
-// IsSetVirtualImages returns a boolean if a field has been set.
-func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) IsSetVirtualImages() bool {
-	if o != nil && !IsNil(o.VirtualImages) {
-		return true
-	}
-
-	return false
 }
 
 // SetVirtualImages gets a reference to the given []AddImageBuild200ResponseAllOfImageBuildLastResultVirtualImagesInner and assigns it to the VirtualImages field.

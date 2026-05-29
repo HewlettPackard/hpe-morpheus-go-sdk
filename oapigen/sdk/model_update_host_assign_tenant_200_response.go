@@ -62,15 +62,6 @@ func (o *UpdateHostAssignTenant200Response) GetServerOk() (*UpdateHostAssignTena
 	return o.Server, true
 }
 
-// IsSetServer returns a boolean if a field has been set.
-func (o *UpdateHostAssignTenant200Response) IsSetServer() bool {
-	if o != nil && !IsNil(o.Server) {
-		return true
-	}
-
-	return false
-}
-
 // SetServer gets a reference to the given UpdateHostAssignTenant200ResponseAllOfServer and assigns it to the Server field.
 func (o *UpdateHostAssignTenant200Response) SetServer(v UpdateHostAssignTenant200ResponseAllOfServer) {
 	o.Server = &v
@@ -92,15 +83,6 @@ func (o *UpdateHostAssignTenant200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *UpdateHostAssignTenant200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

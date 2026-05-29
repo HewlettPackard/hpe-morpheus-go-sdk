@@ -132,15 +132,6 @@ func (o *ClusterMasters) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ClusterMasters) SetId(v int64) {
 	o.Id = &v
@@ -164,15 +155,6 @@ func (o *ClusterMasters) GetUuidOk() (*string, bool) {
 	return o.Uuid, true
 }
 
-// IsSetUuid returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetUuid() bool {
-	if o != nil && !IsNil(o.Uuid) {
-		return true
-	}
-
-	return false
-}
-
 // SetUuid gets a reference to the given string and assigns it to the Uuid field.
 func (o *ClusterMasters) SetUuid(v string) {
 	o.Uuid = &v
@@ -194,15 +176,6 @@ func (o *ClusterMasters) GetExternalIdOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ExternalId, true
-}
-
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
-		return true
-	}
-
-	return false
 }
 
 // SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
@@ -229,28 +202,9 @@ func (o *ClusterMasters) GetInternalIdOk() (*string, bool) {
 	return o.InternalId.Get(), o.InternalId.IsSet()
 }
 
-// IsSetInternalId returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetInternalId() bool {
-	if o != nil && o.InternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInternalId gets a reference to the given NullableString and assigns it to the InternalId field.
 func (o *ClusterMasters) SetInternalId(v string) {
 	o.InternalId.Set(&v)
-}
-
-// SetInternalIdNil sets the value for InternalId to be an explicit nil
-func (o *ClusterMasters) SetInternalIdNil() {
-	o.InternalId.Set(nil)
-}
-
-// UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
-func (o *ClusterMasters) UnsetInternalId() {
-	o.InternalId.Unset()
 }
 
 // GetExternalUniqueId returns the ExternalUniqueId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -272,28 +226,9 @@ func (o *ClusterMasters) GetExternalUniqueIdOk() (*string, bool) {
 	return o.ExternalUniqueId.Get(), o.ExternalUniqueId.IsSet()
 }
 
-// IsSetExternalUniqueId returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetExternalUniqueId() bool {
-	if o != nil && o.ExternalUniqueId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalUniqueId gets a reference to the given NullableString and assigns it to the ExternalUniqueId field.
 func (o *ClusterMasters) SetExternalUniqueId(v string) {
 	o.ExternalUniqueId.Set(&v)
-}
-
-// SetExternalUniqueIdNil sets the value for ExternalUniqueId to be an explicit nil
-func (o *ClusterMasters) SetExternalUniqueIdNil() {
-	o.ExternalUniqueId.Set(nil)
-}
-
-// UnsetExternalUniqueId ensures that no value is present for ExternalUniqueId, not even an explicit nil
-func (o *ClusterMasters) UnsetExternalUniqueId() {
-	o.ExternalUniqueId.Unset()
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -312,15 +247,6 @@ func (o *ClusterMasters) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -346,15 +272,6 @@ func (o *ClusterMasters) GetExternalNameOk() (*string, bool) {
 	return o.ExternalName, true
 }
 
-// IsSetExternalName returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetExternalName() bool {
-	if o != nil && !IsNil(o.ExternalName) {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalName gets a reference to the given string and assigns it to the ExternalName field.
 func (o *ClusterMasters) SetExternalName(v string) {
 	o.ExternalName = &v
@@ -376,15 +293,6 @@ func (o *ClusterMasters) GetHostnameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Hostname, true
-}
-
-// IsSetHostname returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetHostname() bool {
-	if o != nil && !IsNil(o.Hostname) {
-		return true
-	}
-
-	return false
 }
 
 // SetHostname gets a reference to the given string and assigns it to the Hostname field.
@@ -410,15 +318,6 @@ func (o *ClusterMasters) GetAccountIdOk() (*int64, bool) {
 	return o.AccountId, true
 }
 
-// IsSetAccountId returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetAccountId() bool {
-	if o != nil && !IsNil(o.AccountId) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccountId gets a reference to the given int64 and assigns it to the AccountId field.
 func (o *ClusterMasters) SetAccountId(v int64) {
 	o.AccountId = &v
@@ -440,15 +339,6 @@ func (o *ClusterMasters) GetAccountOk() (*ClusterMastersAccount, bool) {
 		return nil, false
 	}
 	return o.Account, true
-}
-
-// IsSetAccount returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccount gets a reference to the given ClusterMastersAccount and assigns it to the Account field.
@@ -474,15 +364,6 @@ func (o *ClusterMasters) GetOwnerOk() (*ClusterMastersOwner, bool) {
 	return o.Owner, true
 }
 
-// IsSetOwner returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
-		return true
-	}
-
-	return false
-}
-
 // SetOwner gets a reference to the given ClusterMastersOwner and assigns it to the Owner field.
 func (o *ClusterMasters) SetOwner(v ClusterMastersOwner) {
 	o.Owner = &v
@@ -504,15 +385,6 @@ func (o *ClusterMasters) GetZoneOk() (*ClusterMastersZone, bool) {
 		return nil, false
 	}
 	return o.Zone, true
-}
-
-// IsSetZone returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetZone() bool {
-	if o != nil && !IsNil(o.Zone) {
-		return true
-	}
-
-	return false
 }
 
 // SetZone gets a reference to the given ClusterMastersZone and assigns it to the Zone field.
@@ -538,15 +410,6 @@ func (o *ClusterMasters) GetPlanOk() (*ClusterMastersPlan, bool) {
 	return o.Plan, true
 }
 
-// IsSetPlan returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetPlan() bool {
-	if o != nil && !IsNil(o.Plan) {
-		return true
-	}
-
-	return false
-}
-
 // SetPlan gets a reference to the given ClusterMastersPlan and assigns it to the Plan field.
 func (o *ClusterMasters) SetPlan(v ClusterMastersPlan) {
 	o.Plan = &v
@@ -568,15 +431,6 @@ func (o *ClusterMasters) GetComputeServerTypeOk() (*ClusterMastersComputeServerT
 		return nil, false
 	}
 	return o.ComputeServerType, true
-}
-
-// IsSetComputeServerType returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetComputeServerType() bool {
-	if o != nil && !IsNil(o.ComputeServerType) {
-		return true
-	}
-
-	return false
 }
 
 // SetComputeServerType gets a reference to the given ClusterMastersComputeServerType and assigns it to the ComputeServerType field.
@@ -602,15 +456,6 @@ func (o *ClusterMasters) GetVisibilityOk() (*string, bool) {
 	return o.Visibility, true
 }
 
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
-}
-
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
 func (o *ClusterMasters) SetVisibility(v string) {
 	o.Visibility = &v
@@ -632,15 +477,6 @@ func (o *ClusterMasters) GetDescriptionOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -666,15 +502,6 @@ func (o *ClusterMasters) GetZoneIdOk() (*int64, bool) {
 	return o.ZoneId, true
 }
 
-// IsSetZoneId returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetZoneId() bool {
-	if o != nil && !IsNil(o.ZoneId) {
-		return true
-	}
-
-	return false
-}
-
 // SetZoneId gets a reference to the given int64 and assigns it to the ZoneId field.
 func (o *ClusterMasters) SetZoneId(v int64) {
 	o.ZoneId = &v
@@ -698,15 +525,6 @@ func (o *ClusterMasters) GetSiteIdOk() (*int64, bool) {
 	return o.SiteId, true
 }
 
-// IsSetSiteId returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetSiteId() bool {
-	if o != nil && !IsNil(o.SiteId) {
-		return true
-	}
-
-	return false
-}
-
 // SetSiteId gets a reference to the given int64 and assigns it to the SiteId field.
 func (o *ClusterMasters) SetSiteId(v int64) {
 	o.SiteId = &v
@@ -728,15 +546,6 @@ func (o *ClusterMasters) GetResourcePoolIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.ResourcePoolId, true
-}
-
-// IsSetResourcePoolId returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetResourcePoolId() bool {
-	if o != nil && !IsNil(o.ResourcePoolId) {
-		return true
-	}
-
-	return false
 }
 
 // SetResourcePoolId gets a reference to the given int64 and assigns it to the ResourcePoolId field.
@@ -763,28 +572,9 @@ func (o *ClusterMasters) GetFolderIdOk() (*string, bool) {
 	return o.FolderId.Get(), o.FolderId.IsSet()
 }
 
-// IsSetFolderId returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetFolderId() bool {
-	if o != nil && o.FolderId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFolderId gets a reference to the given NullableString and assigns it to the FolderId field.
 func (o *ClusterMasters) SetFolderId(v string) {
 	o.FolderId.Set(&v)
-}
-
-// SetFolderIdNil sets the value for FolderId to be an explicit nil
-func (o *ClusterMasters) SetFolderIdNil() {
-	o.FolderId.Set(nil)
-}
-
-// UnsetFolderId ensures that no value is present for FolderId, not even an explicit nil
-func (o *ClusterMasters) UnsetFolderId() {
-	o.FolderId.Unset()
 }
 
 // GetSshHost returns the SshHost field value if set, zero value otherwise.
@@ -803,15 +593,6 @@ func (o *ClusterMasters) GetSshHostOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SshHost, true
-}
-
-// IsSetSshHost returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetSshHost() bool {
-	if o != nil && !IsNil(o.SshHost) {
-		return true
-	}
-
-	return false
 }
 
 // SetSshHost gets a reference to the given string and assigns it to the SshHost field.
@@ -837,15 +618,6 @@ func (o *ClusterMasters) GetSshPortOk() (*int64, bool) {
 	return o.SshPort, true
 }
 
-// IsSetSshPort returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetSshPort() bool {
-	if o != nil && !IsNil(o.SshPort) {
-		return true
-	}
-
-	return false
-}
-
 // SetSshPort gets a reference to the given int64 and assigns it to the SshPort field.
 func (o *ClusterMasters) SetSshPort(v int64) {
 	o.SshPort = &v
@@ -869,15 +641,6 @@ func (o *ClusterMasters) GetExternalIpOk() (*string, bool) {
 	return o.ExternalIp, true
 }
 
-// IsSetExternalIp returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetExternalIp() bool {
-	if o != nil && !IsNil(o.ExternalIp) {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalIp gets a reference to the given string and assigns it to the ExternalIp field.
 func (o *ClusterMasters) SetExternalIp(v string) {
 	o.ExternalIp = &v
@@ -899,15 +662,6 @@ func (o *ClusterMasters) GetInternalIpOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InternalIp, true
-}
-
-// IsSetInternalIp returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetInternalIp() bool {
-	if o != nil && !IsNil(o.InternalIp) {
-		return true
-	}
-
-	return false
 }
 
 // SetInternalIp gets a reference to the given string and assigns it to the InternalIp field.
@@ -934,28 +688,9 @@ func (o *ClusterMasters) GetVolumeIdOk() (*string, bool) {
 	return o.VolumeId.Get(), o.VolumeId.IsSet()
 }
 
-// IsSetVolumeId returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetVolumeId() bool {
-	if o != nil && o.VolumeId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetVolumeId gets a reference to the given NullableString and assigns it to the VolumeId field.
 func (o *ClusterMasters) SetVolumeId(v string) {
 	o.VolumeId.Set(&v)
-}
-
-// SetVolumeIdNil sets the value for VolumeId to be an explicit nil
-func (o *ClusterMasters) SetVolumeIdNil() {
-	o.VolumeId.Set(nil)
-}
-
-// UnsetVolumeId ensures that no value is present for VolumeId, not even an explicit nil
-func (o *ClusterMasters) UnsetVolumeId() {
-	o.VolumeId.Unset()
 }
 
 // GetPlatform returns the Platform field value if set, zero value otherwise.
@@ -974,15 +709,6 @@ func (o *ClusterMasters) GetPlatformOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Platform, true
-}
-
-// IsSetPlatform returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetPlatform() bool {
-	if o != nil && !IsNil(o.Platform) {
-		return true
-	}
-
-	return false
 }
 
 // SetPlatform gets a reference to the given string and assigns it to the Platform field.
@@ -1008,15 +734,6 @@ func (o *ClusterMasters) GetPlatformVersionOk() (*string, bool) {
 	return o.PlatformVersion, true
 }
 
-// IsSetPlatformVersion returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetPlatformVersion() bool {
-	if o != nil && !IsNil(o.PlatformVersion) {
-		return true
-	}
-
-	return false
-}
-
 // SetPlatformVersion gets a reference to the given string and assigns it to the PlatformVersion field.
 func (o *ClusterMasters) SetPlatformVersion(v string) {
 	o.PlatformVersion = &v
@@ -1038,15 +755,6 @@ func (o *ClusterMasters) GetSshUsernameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SshUsername, true
-}
-
-// IsSetSshUsername returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetSshUsername() bool {
-	if o != nil && !IsNil(o.SshUsername) {
-		return true
-	}
-
-	return false
 }
 
 // SetSshUsername gets a reference to the given string and assigns it to the SshUsername field.
@@ -1072,15 +780,6 @@ func (o *ClusterMasters) GetSshPasswordOk() (*string, bool) {
 	return o.SshPassword, true
 }
 
-// IsSetSshPassword returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetSshPassword() bool {
-	if o != nil && !IsNil(o.SshPassword) {
-		return true
-	}
-
-	return false
-}
-
 // SetSshPassword gets a reference to the given string and assigns it to the SshPassword field.
 func (o *ClusterMasters) SetSshPassword(v string) {
 	o.SshPassword = &v
@@ -1102,15 +801,6 @@ func (o *ClusterMasters) GetSshPasswordHashOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SshPasswordHash, true
-}
-
-// IsSetSshPasswordHash returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetSshPasswordHash() bool {
-	if o != nil && !IsNil(o.SshPasswordHash) {
-		return true
-	}
-
-	return false
 }
 
 // SetSshPasswordHash gets a reference to the given string and assigns it to the SshPasswordHash field.
@@ -1136,15 +826,6 @@ func (o *ClusterMasters) GetOsDeviceOk() (*string, bool) {
 	return o.OsDevice, true
 }
 
-// IsSetOsDevice returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetOsDevice() bool {
-	if o != nil && !IsNil(o.OsDevice) {
-		return true
-	}
-
-	return false
-}
-
 // SetOsDevice gets a reference to the given string and assigns it to the OsDevice field.
 func (o *ClusterMasters) SetOsDevice(v string) {
 	o.OsDevice = &v
@@ -1166,15 +847,6 @@ func (o *ClusterMasters) GetOsTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.OsType, true
-}
-
-// IsSetOsType returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetOsType() bool {
-	if o != nil && !IsNil(o.OsType) {
-		return true
-	}
-
-	return false
 }
 
 // SetOsType gets a reference to the given string and assigns it to the OsType field.
@@ -1200,15 +872,6 @@ func (o *ClusterMasters) GetDataDeviceOk() (*string, bool) {
 	return o.DataDevice, true
 }
 
-// IsSetDataDevice returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetDataDevice() bool {
-	if o != nil && !IsNil(o.DataDevice) {
-		return true
-	}
-
-	return false
-}
-
 // SetDataDevice gets a reference to the given string and assigns it to the DataDevice field.
 func (o *ClusterMasters) SetDataDevice(v string) {
 	o.DataDevice = &v
@@ -1230,15 +893,6 @@ func (o *ClusterMasters) GetLvmEnabledOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.LvmEnabled, true
-}
-
-// IsSetLvmEnabled returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetLvmEnabled() bool {
-	if o != nil && !IsNil(o.LvmEnabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetLvmEnabled gets a reference to the given bool and assigns it to the LvmEnabled field.
@@ -1264,15 +918,6 @@ func (o *ClusterMasters) GetApiKeyOk() (*string, bool) {
 	return o.ApiKey, true
 }
 
-// IsSetApiKey returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetApiKey() bool {
-	if o != nil && !IsNil(o.ApiKey) {
-		return true
-	}
-
-	return false
-}
-
 // SetApiKey gets a reference to the given string and assigns it to the ApiKey field.
 func (o *ClusterMasters) SetApiKey(v string) {
 	o.ApiKey = &v
@@ -1294,15 +939,6 @@ func (o *ClusterMasters) GetSoftwareRaidOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.SoftwareRaid, true
-}
-
-// IsSetSoftwareRaid returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetSoftwareRaid() bool {
-	if o != nil && !IsNil(o.SoftwareRaid) {
-		return true
-	}
-
-	return false
 }
 
 // SetSoftwareRaid gets a reference to the given bool and assigns it to the SoftwareRaid field.
@@ -1328,15 +964,6 @@ func (o *ClusterMasters) GetDateCreatedOk() (*time.Time, bool) {
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *ClusterMasters) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -1358,15 +985,6 @@ func (o *ClusterMasters) GetLastUpdatedOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
@@ -1392,15 +1010,6 @@ func (o *ClusterMasters) GetStatsOk() (*ClusterMastersStats, bool) {
 	return o.Stats, true
 }
 
-// IsSetStats returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetStats() bool {
-	if o != nil && !IsNil(o.Stats) {
-		return true
-	}
-
-	return false
-}
-
 // SetStats gets a reference to the given ClusterMastersStats and assigns it to the Stats field.
 func (o *ClusterMasters) SetStats(v ClusterMastersStats) {
 	o.Stats = &v
@@ -1422,15 +1031,6 @@ func (o *ClusterMasters) GetStatusOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -1457,28 +1057,9 @@ func (o *ClusterMasters) GetStatusMessageOk() (*string, bool) {
 	return o.StatusMessage.Get(), o.StatusMessage.IsSet()
 }
 
-// IsSetStatusMessage returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetStatusMessage() bool {
-	if o != nil && o.StatusMessage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusMessage gets a reference to the given NullableString and assigns it to the StatusMessage field.
 func (o *ClusterMasters) SetStatusMessage(v string) {
 	o.StatusMessage.Set(&v)
-}
-
-// SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
-func (o *ClusterMasters) SetStatusMessageNil() {
-	o.StatusMessage.Set(nil)
-}
-
-// UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
-func (o *ClusterMasters) UnsetStatusMessage() {
-	o.StatusMessage.Unset()
 }
 
 // GetErrorMessage returns the ErrorMessage field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1500,28 +1081,9 @@ func (o *ClusterMasters) GetErrorMessageOk() (*string, bool) {
 	return o.ErrorMessage.Get(), o.ErrorMessage.IsSet()
 }
 
-// IsSetErrorMessage returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetErrorMessage() bool {
-	if o != nil && o.ErrorMessage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetErrorMessage gets a reference to the given NullableString and assigns it to the ErrorMessage field.
 func (o *ClusterMasters) SetErrorMessage(v string) {
 	o.ErrorMessage.Set(&v)
-}
-
-// SetErrorMessageNil sets the value for ErrorMessage to be an explicit nil
-func (o *ClusterMasters) SetErrorMessageNil() {
-	o.ErrorMessage.Set(nil)
-}
-
-// UnsetErrorMessage ensures that no value is present for ErrorMessage, not even an explicit nil
-func (o *ClusterMasters) UnsetErrorMessage() {
-	o.ErrorMessage.Unset()
 }
 
 // GetStatusDate returns the StatusDate field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1543,28 +1105,9 @@ func (o *ClusterMasters) GetStatusDateOk() (*string, bool) {
 	return o.StatusDate.Get(), o.StatusDate.IsSet()
 }
 
-// IsSetStatusDate returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetStatusDate() bool {
-	if o != nil && o.StatusDate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusDate gets a reference to the given NullableString and assigns it to the StatusDate field.
 func (o *ClusterMasters) SetStatusDate(v string) {
 	o.StatusDate.Set(&v)
-}
-
-// SetStatusDateNil sets the value for StatusDate to be an explicit nil
-func (o *ClusterMasters) SetStatusDateNil() {
-	o.StatusDate.Set(nil)
-}
-
-// UnsetStatusDate ensures that no value is present for StatusDate, not even an explicit nil
-func (o *ClusterMasters) UnsetStatusDate() {
-	o.StatusDate.Unset()
 }
 
 // GetStatusPercent returns the StatusPercent field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1586,28 +1129,9 @@ func (o *ClusterMasters) GetStatusPercentOk() (*string, bool) {
 	return o.StatusPercent.Get(), o.StatusPercent.IsSet()
 }
 
-// IsSetStatusPercent returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetStatusPercent() bool {
-	if o != nil && o.StatusPercent.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusPercent gets a reference to the given NullableString and assigns it to the StatusPercent field.
 func (o *ClusterMasters) SetStatusPercent(v string) {
 	o.StatusPercent.Set(&v)
-}
-
-// SetStatusPercentNil sets the value for StatusPercent to be an explicit nil
-func (o *ClusterMasters) SetStatusPercentNil() {
-	o.StatusPercent.Set(nil)
-}
-
-// UnsetStatusPercent ensures that no value is present for StatusPercent, not even an explicit nil
-func (o *ClusterMasters) UnsetStatusPercent() {
-	o.StatusPercent.Unset()
 }
 
 // GetStatusEta returns the StatusEta field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1629,28 +1153,9 @@ func (o *ClusterMasters) GetStatusEtaOk() (*string, bool) {
 	return o.StatusEta.Get(), o.StatusEta.IsSet()
 }
 
-// IsSetStatusEta returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetStatusEta() bool {
-	if o != nil && o.StatusEta.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusEta gets a reference to the given NullableString and assigns it to the StatusEta field.
 func (o *ClusterMasters) SetStatusEta(v string) {
 	o.StatusEta.Set(&v)
-}
-
-// SetStatusEtaNil sets the value for StatusEta to be an explicit nil
-func (o *ClusterMasters) SetStatusEtaNil() {
-	o.StatusEta.Set(nil)
-}
-
-// UnsetStatusEta ensures that no value is present for StatusEta, not even an explicit nil
-func (o *ClusterMasters) UnsetStatusEta() {
-	o.StatusEta.Unset()
 }
 
 // GetPowerState returns the PowerState field value if set, zero value otherwise.
@@ -1669,15 +1174,6 @@ func (o *ClusterMasters) GetPowerStateOk() (*string, bool) {
 		return nil, false
 	}
 	return o.PowerState, true
-}
-
-// IsSetPowerState returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetPowerState() bool {
-	if o != nil && !IsNil(o.PowerState) {
-		return true
-	}
-
-	return false
 }
 
 // SetPowerState gets a reference to the given string and assigns it to the PowerState field.
@@ -1703,15 +1199,6 @@ func (o *ClusterMasters) GetAgentInstalledOk() (*bool, bool) {
 	return o.AgentInstalled, true
 }
 
-// IsSetAgentInstalled returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetAgentInstalled() bool {
-	if o != nil && !IsNil(o.AgentInstalled) {
-		return true
-	}
-
-	return false
-}
-
 // SetAgentInstalled gets a reference to the given bool and assigns it to the AgentInstalled field.
 func (o *ClusterMasters) SetAgentInstalled(v bool) {
 	o.AgentInstalled = &v
@@ -1733,15 +1220,6 @@ func (o *ClusterMasters) GetLastAgentUpdateOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.LastAgentUpdate, true
-}
-
-// IsSetLastAgentUpdate returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetLastAgentUpdate() bool {
-	if o != nil && !IsNil(o.LastAgentUpdate) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastAgentUpdate gets a reference to the given time.Time and assigns it to the LastAgentUpdate field.
@@ -1767,15 +1245,6 @@ func (o *ClusterMasters) GetAgentVersionOk() (*string, bool) {
 	return o.AgentVersion, true
 }
 
-// IsSetAgentVersion returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetAgentVersion() bool {
-	if o != nil && !IsNil(o.AgentVersion) {
-		return true
-	}
-
-	return false
-}
-
 // SetAgentVersion gets a reference to the given string and assigns it to the AgentVersion field.
 func (o *ClusterMasters) SetAgentVersion(v string) {
 	o.AgentVersion = &v
@@ -1797,15 +1266,6 @@ func (o *ClusterMasters) GetMaxCoresOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.MaxCores, true
-}
-
-// IsSetMaxCores returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetMaxCores() bool {
-	if o != nil && !IsNil(o.MaxCores) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxCores gets a reference to the given int64 and assigns it to the MaxCores field.
@@ -1832,28 +1292,9 @@ func (o *ClusterMasters) GetCoresPerSocketOk() (*string, bool) {
 	return o.CoresPerSocket.Get(), o.CoresPerSocket.IsSet()
 }
 
-// IsSetCoresPerSocket returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetCoresPerSocket() bool {
-	if o != nil && o.CoresPerSocket.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCoresPerSocket gets a reference to the given NullableString and assigns it to the CoresPerSocket field.
 func (o *ClusterMasters) SetCoresPerSocket(v string) {
 	o.CoresPerSocket.Set(&v)
-}
-
-// SetCoresPerSocketNil sets the value for CoresPerSocket to be an explicit nil
-func (o *ClusterMasters) SetCoresPerSocketNil() {
-	o.CoresPerSocket.Set(nil)
-}
-
-// UnsetCoresPerSocket ensures that no value is present for CoresPerSocket, not even an explicit nil
-func (o *ClusterMasters) UnsetCoresPerSocket() {
-	o.CoresPerSocket.Unset()
 }
 
 // GetMaxMemory returns the MaxMemory field value if set, zero value otherwise.
@@ -1872,15 +1313,6 @@ func (o *ClusterMasters) GetMaxMemoryOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.MaxMemory, true
-}
-
-// IsSetMaxMemory returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetMaxMemory() bool {
-	if o != nil && !IsNil(o.MaxMemory) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxMemory gets a reference to the given int64 and assigns it to the MaxMemory field.
@@ -1906,15 +1338,6 @@ func (o *ClusterMasters) GetMaxStorageOk() (*int64, bool) {
 	return o.MaxStorage, true
 }
 
-// IsSetMaxStorage returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetMaxStorage() bool {
-	if o != nil && !IsNil(o.MaxStorage) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxStorage gets a reference to the given int64 and assigns it to the MaxStorage field.
 func (o *ClusterMasters) SetMaxStorage(v int64) {
 	o.MaxStorage = &v
@@ -1936,15 +1359,6 @@ func (o *ClusterMasters) GetMaxCpuOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.MaxCpu, true
-}
-
-// IsSetMaxCpu returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetMaxCpu() bool {
-	if o != nil && !IsNil(o.MaxCpu) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxCpu gets a reference to the given int64 and assigns it to the MaxCpu field.
@@ -1970,15 +1384,6 @@ func (o *ClusterMasters) GetHourlyPriceOk() (*float32, bool) {
 	return o.HourlyPrice, true
 }
 
-// IsSetHourlyPrice returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetHourlyPrice() bool {
-	if o != nil && !IsNil(o.HourlyPrice) {
-		return true
-	}
-
-	return false
-}
-
 // SetHourlyPrice gets a reference to the given float32 and assigns it to the HourlyPrice field.
 func (o *ClusterMasters) SetHourlyPrice(v float32) {
 	o.HourlyPrice = &v
@@ -2000,15 +1405,6 @@ func (o *ClusterMasters) GetSourceImageOk() (*ClusterMastersSourceImage, bool) {
 		return nil, false
 	}
 	return o.SourceImage, true
-}
-
-// IsSetSourceImage returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetSourceImage() bool {
-	if o != nil && !IsNil(o.SourceImage) {
-		return true
-	}
-
-	return false
 }
 
 // SetSourceImage gets a reference to the given ClusterMastersSourceImage and assigns it to the SourceImage field.
@@ -2035,28 +1431,9 @@ func (o *ClusterMasters) GetServerOsOk() (*string, bool) {
 	return o.ServerOs.Get(), o.ServerOs.IsSet()
 }
 
-// IsSetServerOs returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetServerOs() bool {
-	if o != nil && o.ServerOs.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServerOs gets a reference to the given NullableString and assigns it to the ServerOs field.
 func (o *ClusterMasters) SetServerOs(v string) {
 	o.ServerOs.Set(&v)
-}
-
-// SetServerOsNil sets the value for ServerOs to be an explicit nil
-func (o *ClusterMasters) SetServerOsNil() {
-	o.ServerOs.Set(nil)
-}
-
-// UnsetServerOs ensures that no value is present for ServerOs, not even an explicit nil
-func (o *ClusterMasters) UnsetServerOs() {
-	o.ServerOs.Unset()
 }
 
 // GetVolumes returns the Volumes field value if set, zero value otherwise.
@@ -2075,15 +1452,6 @@ func (o *ClusterMasters) GetVolumesOk() ([]ClusterMastersVolumesInner, bool) {
 		return nil, false
 	}
 	return o.Volumes, true
-}
-
-// IsSetVolumes returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetVolumes() bool {
-	if o != nil && !IsNil(o.Volumes) {
-		return true
-	}
-
-	return false
 }
 
 // SetVolumes gets a reference to the given []ClusterMastersVolumesInner and assigns it to the Volumes field.
@@ -2109,15 +1477,6 @@ func (o *ClusterMasters) GetControllersOk() ([]map[string]interface{}, bool) {
 	return o.Controllers, true
 }
 
-// IsSetControllers returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetControllers() bool {
-	if o != nil && !IsNil(o.Controllers) {
-		return true
-	}
-
-	return false
-}
-
 // SetControllers gets a reference to the given []map[string]interface{} and assigns it to the Controllers field.
 func (o *ClusterMasters) SetControllers(v []map[string]interface{}) {
 	o.Controllers = v
@@ -2139,15 +1498,6 @@ func (o *ClusterMasters) GetInterfacesOk() ([]ClusterMastersInterfacesInner, boo
 		return nil, false
 	}
 	return o.Interfaces, true
-}
-
-// IsSetInterfaces returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetInterfaces() bool {
-	if o != nil && !IsNil(o.Interfaces) {
-		return true
-	}
-
-	return false
 }
 
 // SetInterfaces gets a reference to the given []ClusterMastersInterfacesInner and assigns it to the Interfaces field.
@@ -2173,15 +1523,6 @@ func (o *ClusterMasters) GetLabelsOk() ([]string, bool) {
 	return o.Labels, true
 }
 
-// IsSetLabels returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
-}
-
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
 func (o *ClusterMasters) SetLabels(v []string) {
 	o.Labels = v
@@ -2205,15 +1546,6 @@ func (o *ClusterMasters) GetTagsOk() ([]ClusterMastersTagsInner, bool) {
 	return o.Tags, true
 }
 
-// IsSetTags returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetTags() bool {
-	if o != nil && !IsNil(o.Tags) {
-		return true
-	}
-
-	return false
-}
-
 // SetTags gets a reference to the given []ClusterMastersTagsInner and assigns it to the Tags field.
 func (o *ClusterMasters) SetTags(v []ClusterMastersTagsInner) {
 	o.Tags = v
@@ -2235,15 +1567,6 @@ func (o *ClusterMasters) GetEnabledOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -2270,28 +1593,9 @@ func (o *ClusterMasters) GetTagCompliantOk() (*bool, bool) {
 	return o.TagCompliant.Get(), o.TagCompliant.IsSet()
 }
 
-// IsSetTagCompliant returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetTagCompliant() bool {
-	if o != nil && o.TagCompliant.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetTagCompliant gets a reference to the given NullableBool and assigns it to the TagCompliant field.
 func (o *ClusterMasters) SetTagCompliant(v bool) {
 	o.TagCompliant.Set(&v)
-}
-
-// SetTagCompliantNil sets the value for TagCompliant to be an explicit nil
-func (o *ClusterMasters) SetTagCompliantNil() {
-	o.TagCompliant.Set(nil)
-}
-
-// UnsetTagCompliant ensures that no value is present for TagCompliant, not even an explicit nil
-func (o *ClusterMasters) UnsetTagCompliant() {
-	o.TagCompliant.Unset()
 }
 
 // GetContainers returns the Containers field value if set, zero value otherwise.
@@ -2310,15 +1614,6 @@ func (o *ClusterMasters) GetContainersOk() ([]int64, bool) {
 		return nil, false
 	}
 	return o.Containers, true
-}
-
-// IsSetContainers returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetContainers() bool {
-	if o != nil && !IsNil(o.Containers) {
-		return true
-	}
-
-	return false
 }
 
 // SetContainers gets a reference to the given []int64 and assigns it to the Containers field.
@@ -2342,15 +1637,6 @@ func (o *ClusterMasters) GetGuestConsolePreferredOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.GuestConsolePreferred, true
-}
-
-// IsSetGuestConsolePreferred returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetGuestConsolePreferred() bool {
-	if o != nil && !IsNil(o.GuestConsolePreferred) {
-		return true
-	}
-
-	return false
 }
 
 // SetGuestConsolePreferred gets a reference to the given bool and assigns it to the GuestConsolePreferred field.
@@ -2377,28 +1663,9 @@ func (o *ClusterMasters) GetGuestConsoleTypeOk() (*string, bool) {
 	return o.GuestConsoleType.Get(), o.GuestConsoleType.IsSet()
 }
 
-// IsSetGuestConsoleType returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetGuestConsoleType() bool {
-	if o != nil && o.GuestConsoleType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetGuestConsoleType gets a reference to the given NullableString and assigns it to the GuestConsoleType field.
 func (o *ClusterMasters) SetGuestConsoleType(v string) {
 	o.GuestConsoleType.Set(&v)
-}
-
-// SetGuestConsoleTypeNil sets the value for GuestConsoleType to be an explicit nil
-func (o *ClusterMasters) SetGuestConsoleTypeNil() {
-	o.GuestConsoleType.Set(nil)
-}
-
-// UnsetGuestConsoleType ensures that no value is present for GuestConsoleType, not even an explicit nil
-func (o *ClusterMasters) UnsetGuestConsoleType() {
-	o.GuestConsoleType.Unset()
 }
 
 // GetGuestConsoleUsername returns the GuestConsoleUsername field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -2420,28 +1687,9 @@ func (o *ClusterMasters) GetGuestConsoleUsernameOk() (*string, bool) {
 	return o.GuestConsoleUsername.Get(), o.GuestConsoleUsername.IsSet()
 }
 
-// IsSetGuestConsoleUsername returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetGuestConsoleUsername() bool {
-	if o != nil && o.GuestConsoleUsername.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetGuestConsoleUsername gets a reference to the given NullableString and assigns it to the GuestConsoleUsername field.
 func (o *ClusterMasters) SetGuestConsoleUsername(v string) {
 	o.GuestConsoleUsername.Set(&v)
-}
-
-// SetGuestConsoleUsernameNil sets the value for GuestConsoleUsername to be an explicit nil
-func (o *ClusterMasters) SetGuestConsoleUsernameNil() {
-	o.GuestConsoleUsername.Set(nil)
-}
-
-// UnsetGuestConsoleUsername ensures that no value is present for GuestConsoleUsername, not even an explicit nil
-func (o *ClusterMasters) UnsetGuestConsoleUsername() {
-	o.GuestConsoleUsername.Unset()
 }
 
 // GetGuestConsolePassword returns the GuestConsolePassword field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -2463,28 +1711,9 @@ func (o *ClusterMasters) GetGuestConsolePasswordOk() (*string, bool) {
 	return o.GuestConsolePassword.Get(), o.GuestConsolePassword.IsSet()
 }
 
-// IsSetGuestConsolePassword returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetGuestConsolePassword() bool {
-	if o != nil && o.GuestConsolePassword.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetGuestConsolePassword gets a reference to the given NullableString and assigns it to the GuestConsolePassword field.
 func (o *ClusterMasters) SetGuestConsolePassword(v string) {
 	o.GuestConsolePassword.Set(&v)
-}
-
-// SetGuestConsolePasswordNil sets the value for GuestConsolePassword to be an explicit nil
-func (o *ClusterMasters) SetGuestConsolePasswordNil() {
-	o.GuestConsolePassword.Set(nil)
-}
-
-// UnsetGuestConsolePassword ensures that no value is present for GuestConsolePassword, not even an explicit nil
-func (o *ClusterMasters) UnsetGuestConsolePassword() {
-	o.GuestConsolePassword.Unset()
 }
 
 // GetGuestConsolePasswordHash returns the GuestConsolePasswordHash field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -2506,28 +1735,9 @@ func (o *ClusterMasters) GetGuestConsolePasswordHashOk() (*string, bool) {
 	return o.GuestConsolePasswordHash.Get(), o.GuestConsolePasswordHash.IsSet()
 }
 
-// IsSetGuestConsolePasswordHash returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetGuestConsolePasswordHash() bool {
-	if o != nil && o.GuestConsolePasswordHash.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetGuestConsolePasswordHash gets a reference to the given NullableString and assigns it to the GuestConsolePasswordHash field.
 func (o *ClusterMasters) SetGuestConsolePasswordHash(v string) {
 	o.GuestConsolePasswordHash.Set(&v)
-}
-
-// SetGuestConsolePasswordHashNil sets the value for GuestConsolePasswordHash to be an explicit nil
-func (o *ClusterMasters) SetGuestConsolePasswordHashNil() {
-	o.GuestConsolePasswordHash.Set(nil)
-}
-
-// UnsetGuestConsolePasswordHash ensures that no value is present for GuestConsolePasswordHash, not even an explicit nil
-func (o *ClusterMasters) UnsetGuestConsolePasswordHash() {
-	o.GuestConsolePasswordHash.Unset()
 }
 
 // GetGuestConsolePort returns the GuestConsolePort field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -2549,28 +1759,9 @@ func (o *ClusterMasters) GetGuestConsolePortOk() (*string, bool) {
 	return o.GuestConsolePort.Get(), o.GuestConsolePort.IsSet()
 }
 
-// IsSetGuestConsolePort returns a boolean if a field has been set.
-func (o *ClusterMasters) IsSetGuestConsolePort() bool {
-	if o != nil && o.GuestConsolePort.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetGuestConsolePort gets a reference to the given NullableString and assigns it to the GuestConsolePort field.
 func (o *ClusterMasters) SetGuestConsolePort(v string) {
 	o.GuestConsolePort.Set(&v)
-}
-
-// SetGuestConsolePortNil sets the value for GuestConsolePort to be an explicit nil
-func (o *ClusterMasters) SetGuestConsolePortNil() {
-	o.GuestConsolePort.Set(nil)
-}
-
-// UnsetGuestConsolePort ensures that no value is present for GuestConsolePort, not even an explicit nil
-func (o *ClusterMasters) UnsetGuestConsolePort() {
-	o.GuestConsolePort.Unset()
 }
 
 func (o ClusterMasters) MarshalJSON() ([]byte, error) {

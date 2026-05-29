@@ -77,15 +77,6 @@ func (o *SpecTemplate) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *SpecTemplate) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *SpecTemplate) SetId(v int64) {
 	o.Id = &v
@@ -107,15 +98,6 @@ func (o *SpecTemplate) GetAccountOk() (*GetSpecTemplate200ResponseSpecTemplateAc
 		return nil, false
 	}
 	return o.Account, true
-}
-
-// IsSetAccount returns a boolean if a field has been set.
-func (o *SpecTemplate) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccount gets a reference to the given GetSpecTemplate200ResponseSpecTemplateAccount and assigns it to the Account field.
@@ -141,15 +123,6 @@ func (o *SpecTemplate) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *SpecTemplate) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *SpecTemplate) SetName(v string) {
 	o.Name = &v
@@ -171,15 +144,6 @@ func (o *SpecTemplate) GetLabelsOk() ([]string, bool) {
 		return nil, false
 	}
 	return o.Labels, true
-}
-
-// IsSetLabels returns a boolean if a field has been set.
-func (o *SpecTemplate) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
 }
 
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
@@ -206,28 +170,9 @@ func (o *SpecTemplate) GetCodeOk() (*string, bool) {
 	return o.Code.Get(), o.Code.IsSet()
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *SpecTemplate) IsSetCode() bool {
-	if o != nil && o.Code.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *SpecTemplate) SetCode(v string) {
 	o.Code.Set(&v)
-}
-
-// SetCodeNil sets the value for Code to be an explicit nil
-func (o *SpecTemplate) SetCodeNil() {
-	o.Code.Set(nil)
-}
-
-// UnsetCode ensures that no value is present for Code, not even an explicit nil
-func (o *SpecTemplate) UnsetCode() {
-	o.Code.Unset()
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
@@ -246,15 +191,6 @@ func (o *SpecTemplate) GetTypeOk() (*GetSpecTemplate200ResponseSpecTemplateType,
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *SpecTemplate) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given GetSpecTemplate200ResponseSpecTemplateType and assigns it to the Type field.
@@ -281,28 +217,9 @@ func (o *SpecTemplate) GetExternalIdOk() (*string, bool) {
 	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *SpecTemplate) IsSetExternalId() bool {
-	if o != nil && o.ExternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *SpecTemplate) SetExternalId(v string) {
 	o.ExternalId.Set(&v)
-}
-
-// SetExternalIdNil sets the value for ExternalId to be an explicit nil
-func (o *SpecTemplate) SetExternalIdNil() {
-	o.ExternalId.Set(nil)
-}
-
-// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-func (o *SpecTemplate) UnsetExternalId() {
-	o.ExternalId.Unset()
 }
 
 // GetExternalType returns the ExternalType field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -324,28 +241,9 @@ func (o *SpecTemplate) GetExternalTypeOk() (*string, bool) {
 	return o.ExternalType.Get(), o.ExternalType.IsSet()
 }
 
-// IsSetExternalType returns a boolean if a field has been set.
-func (o *SpecTemplate) IsSetExternalType() bool {
-	if o != nil && o.ExternalType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalType gets a reference to the given NullableString and assigns it to the ExternalType field.
 func (o *SpecTemplate) SetExternalType(v string) {
 	o.ExternalType.Set(&v)
-}
-
-// SetExternalTypeNil sets the value for ExternalType to be an explicit nil
-func (o *SpecTemplate) SetExternalTypeNil() {
-	o.ExternalType.Set(nil)
-}
-
-// UnsetExternalType ensures that no value is present for ExternalType, not even an explicit nil
-func (o *SpecTemplate) UnsetExternalType() {
-	o.ExternalType.Unset()
 }
 
 // GetDeploymentId returns the DeploymentId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -367,28 +265,9 @@ func (o *SpecTemplate) GetDeploymentIdOk() (*string, bool) {
 	return o.DeploymentId.Get(), o.DeploymentId.IsSet()
 }
 
-// IsSetDeploymentId returns a boolean if a field has been set.
-func (o *SpecTemplate) IsSetDeploymentId() bool {
-	if o != nil && o.DeploymentId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDeploymentId gets a reference to the given NullableString and assigns it to the DeploymentId field.
 func (o *SpecTemplate) SetDeploymentId(v string) {
 	o.DeploymentId.Set(&v)
-}
-
-// SetDeploymentIdNil sets the value for DeploymentId to be an explicit nil
-func (o *SpecTemplate) SetDeploymentIdNil() {
-	o.DeploymentId.Set(nil)
-}
-
-// UnsetDeploymentId ensures that no value is present for DeploymentId, not even an explicit nil
-func (o *SpecTemplate) UnsetDeploymentId() {
-	o.DeploymentId.Unset()
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -410,28 +289,9 @@ func (o *SpecTemplate) GetStatusOk() (*string, bool) {
 	return o.Status.Get(), o.Status.IsSet()
 }
 
-// IsSetStatus returns a boolean if a field has been set.
-func (o *SpecTemplate) IsSetStatus() bool {
-	if o != nil && o.Status.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatus gets a reference to the given NullableString and assigns it to the Status field.
 func (o *SpecTemplate) SetStatus(v string) {
 	o.Status.Set(&v)
-}
-
-// SetStatusNil sets the value for Status to be an explicit nil
-func (o *SpecTemplate) SetStatusNil() {
-	o.Status.Set(nil)
-}
-
-// UnsetStatus ensures that no value is present for Status, not even an explicit nil
-func (o *SpecTemplate) UnsetStatus() {
-	o.Status.Unset()
 }
 
 // GetFile returns the File field value if set, zero value otherwise.
@@ -450,15 +310,6 @@ func (o *SpecTemplate) GetFileOk() (*GetSpecTemplate200ResponseSpecTemplateFile,
 		return nil, false
 	}
 	return o.File, true
-}
-
-// IsSetFile returns a boolean if a field has been set.
-func (o *SpecTemplate) IsSetFile() bool {
-	if o != nil && !IsNil(o.File) {
-		return true
-	}
-
-	return false
 }
 
 // SetFile gets a reference to the given GetSpecTemplate200ResponseSpecTemplateFile and assigns it to the File field.
@@ -484,15 +335,6 @@ func (o *SpecTemplate) GetConfigOk() (map[string]interface{}, bool) {
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *SpecTemplate) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
 func (o *SpecTemplate) SetConfig(v map[string]interface{}) {
 	o.Config = v
@@ -514,15 +356,6 @@ func (o *SpecTemplate) GetCreatedByOk() (*string, bool) {
 		return nil, false
 	}
 	return o.CreatedBy, true
-}
-
-// IsSetCreatedBy returns a boolean if a field has been set.
-func (o *SpecTemplate) IsSetCreatedBy() bool {
-	if o != nil && !IsNil(o.CreatedBy) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreatedBy gets a reference to the given string and assigns it to the CreatedBy field.
@@ -549,28 +382,9 @@ func (o *SpecTemplate) GetUpdatedByOk() (*string, bool) {
 	return o.UpdatedBy.Get(), o.UpdatedBy.IsSet()
 }
 
-// IsSetUpdatedBy returns a boolean if a field has been set.
-func (o *SpecTemplate) IsSetUpdatedBy() bool {
-	if o != nil && o.UpdatedBy.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUpdatedBy gets a reference to the given NullableString and assigns it to the UpdatedBy field.
 func (o *SpecTemplate) SetUpdatedBy(v string) {
 	o.UpdatedBy.Set(&v)
-}
-
-// SetUpdatedByNil sets the value for UpdatedBy to be an explicit nil
-func (o *SpecTemplate) SetUpdatedByNil() {
-	o.UpdatedBy.Set(nil)
-}
-
-// UnsetUpdatedBy ensures that no value is present for UpdatedBy, not even an explicit nil
-func (o *SpecTemplate) UnsetUpdatedBy() {
-	o.UpdatedBy.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -589,15 +403,6 @@ func (o *SpecTemplate) GetDateCreatedOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.DateCreated, true
-}
-
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *SpecTemplate) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
@@ -621,15 +426,6 @@ func (o *SpecTemplate) GetLastUpdatedOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *SpecTemplate) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.

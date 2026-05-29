@@ -84,15 +84,6 @@ func (o *GetSystem200ResponseSystem) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetSystem200ResponseSystem) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetSystem200ResponseSystem) SetId(v int64) {
 	o.Id = &v
@@ -114,15 +105,6 @@ func (o *GetSystem200ResponseSystem) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *GetSystem200ResponseSystem) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -148,15 +130,6 @@ func (o *GetSystem200ResponseSystem) GetDescriptionOk() (*string, bool) {
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *GetSystem200ResponseSystem) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *GetSystem200ResponseSystem) SetDescription(v string) {
 	o.Description = &v
@@ -178,15 +151,6 @@ func (o *GetSystem200ResponseSystem) GetTypeOk() (*GetSystem200ResponseSystemTyp
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *GetSystem200ResponseSystem) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given GetSystem200ResponseSystemType and assigns it to the Type field.
@@ -212,15 +176,6 @@ func (o *GetSystem200ResponseSystem) GetLayoutOk() (*GetSystem200ResponseSystemL
 	return o.Layout, true
 }
 
-// IsSetLayout returns a boolean if a field has been set.
-func (o *GetSystem200ResponseSystem) IsSetLayout() bool {
-	if o != nil && !IsNil(o.Layout) {
-		return true
-	}
-
-	return false
-}
-
 // SetLayout gets a reference to the given GetSystem200ResponseSystemLayout and assigns it to the Layout field.
 func (o *GetSystem200ResponseSystem) SetLayout(v GetSystem200ResponseSystemLayout) {
 	o.Layout = &v
@@ -242,15 +197,6 @@ func (o *GetSystem200ResponseSystem) GetStatusOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *GetSystem200ResponseSystem) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -277,28 +223,9 @@ func (o *GetSystem200ResponseSystem) GetStatusMessageOk() (*string, bool) {
 	return o.StatusMessage.Get(), o.StatusMessage.IsSet()
 }
 
-// IsSetStatusMessage returns a boolean if a field has been set.
-func (o *GetSystem200ResponseSystem) IsSetStatusMessage() bool {
-	if o != nil && o.StatusMessage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusMessage gets a reference to the given NullableString and assigns it to the StatusMessage field.
 func (o *GetSystem200ResponseSystem) SetStatusMessage(v string) {
 	o.StatusMessage.Set(&v)
-}
-
-// SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
-func (o *GetSystem200ResponseSystem) SetStatusMessageNil() {
-	o.StatusMessage.Set(nil)
-}
-
-// UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
-func (o *GetSystem200ResponseSystem) UnsetStatusMessage() {
-	o.StatusMessage.Unset()
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
@@ -317,15 +244,6 @@ func (o *GetSystem200ResponseSystem) GetEnabledOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *GetSystem200ResponseSystem) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -351,15 +269,6 @@ func (o *GetSystem200ResponseSystem) GetExternalIdOk() (*string, bool) {
 	return o.ExternalId, true
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *GetSystem200ResponseSystem) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
 func (o *GetSystem200ResponseSystem) SetExternalId(v string) {
 	o.ExternalId = &v
@@ -381,15 +290,6 @@ func (o *GetSystem200ResponseSystem) GetConfigOk() (map[string]interface{}, bool
 		return map[string]interface{}{}, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *GetSystem200ResponseSystem) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
@@ -415,15 +315,6 @@ func (o *GetSystem200ResponseSystem) GetComponentsOk() ([]GetSystem200ResponseSy
 	return o.Components, true
 }
 
-// IsSetComponents returns a boolean if a field has been set.
-func (o *GetSystem200ResponseSystem) IsSetComponents() bool {
-	if o != nil && !IsNil(o.Components) {
-		return true
-	}
-
-	return false
-}
-
 // SetComponents gets a reference to the given []GetSystem200ResponseSystemComponentsInner and assigns it to the Components field.
 func (o *GetSystem200ResponseSystem) SetComponents(v []GetSystem200ResponseSystemComponentsInner) {
 	o.Components = v
@@ -447,15 +338,6 @@ func (o *GetSystem200ResponseSystem) GetDateCreatedOk() (*time.Time, bool) {
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *GetSystem200ResponseSystem) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *GetSystem200ResponseSystem) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -477,15 +359,6 @@ func (o *GetSystem200ResponseSystem) GetLastUpdatedOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *GetSystem200ResponseSystem) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.

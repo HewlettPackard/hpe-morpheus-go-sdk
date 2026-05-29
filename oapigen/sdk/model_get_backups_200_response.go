@@ -61,15 +61,6 @@ func (o *GetBackups200Response) GetBackupOk() (*GetBackups200ResponseBackup, boo
 	return o.Backup, true
 }
 
-// IsSetBackup returns a boolean if a field has been set.
-func (o *GetBackups200Response) IsSetBackup() bool {
-	if o != nil && !IsNil(o.Backup) {
-		return true
-	}
-
-	return false
-}
-
 // SetBackup gets a reference to the given GetBackups200ResponseBackup and assigns it to the Backup field.
 func (o *GetBackups200Response) SetBackup(v GetBackups200ResponseBackup) {
 	o.Backup = &v

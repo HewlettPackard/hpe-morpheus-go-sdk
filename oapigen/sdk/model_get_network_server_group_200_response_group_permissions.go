@@ -63,15 +63,6 @@ func (o *GetNetworkServerGroup200ResponseGroupPermissions) GetResourcePoolOk() (
 	return o.ResourcePool, true
 }
 
-// IsSetResourcePool returns a boolean if a field has been set.
-func (o *GetNetworkServerGroup200ResponseGroupPermissions) IsSetResourcePool() bool {
-	if o != nil && !IsNil(o.ResourcePool) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourcePool gets a reference to the given GetNetworkServerGroup200ResponseGroupPermissionsResourcePool and assigns it to the ResourcePool field.
 func (o *GetNetworkServerGroup200ResponseGroupPermissions) SetResourcePool(v GetNetworkServerGroup200ResponseGroupPermissionsResourcePool) {
 	o.ResourcePool = &v
@@ -95,15 +86,6 @@ func (o *GetNetworkServerGroup200ResponseGroupPermissions) GetResourcePermission
 	return o.ResourcePermissions, true
 }
 
-// IsSetResourcePermissions returns a boolean if a field has been set.
-func (o *GetNetworkServerGroup200ResponseGroupPermissions) IsSetResourcePermissions() bool {
-	if o != nil && !IsNil(o.ResourcePermissions) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourcePermissions gets a reference to the given GetNetworkServerGroup200ResponseGroupPermissionsResourcePermissions and assigns it to the ResourcePermissions field.
 func (o *GetNetworkServerGroup200ResponseGroupPermissions) SetResourcePermissions(v GetNetworkServerGroup200ResponseGroupPermissionsResourcePermissions) {
 	o.ResourcePermissions = &v
@@ -125,15 +107,6 @@ func (o *GetNetworkServerGroup200ResponseGroupPermissions) GetTenantPermissionsO
 		return nil, false
 	}
 	return o.TenantPermissions, true
-}
-
-// IsSetTenantPermissions returns a boolean if a field has been set.
-func (o *GetNetworkServerGroup200ResponseGroupPermissions) IsSetTenantPermissions() bool {
-	if o != nil && !IsNil(o.TenantPermissions) {
-		return true
-	}
-
-	return false
 }
 
 // SetTenantPermissions gets a reference to the given GetNetworkServerGroup200ResponseGroupPermissionsTenantPermissions and assigns it to the TenantPermissions field.

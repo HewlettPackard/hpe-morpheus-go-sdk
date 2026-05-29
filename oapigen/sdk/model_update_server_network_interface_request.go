@@ -62,15 +62,6 @@ func (o *UpdateServerNetworkInterfaceRequest) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterfaceRequest) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *UpdateServerNetworkInterfaceRequest) SetName(v string) {
 	o.Name = &v

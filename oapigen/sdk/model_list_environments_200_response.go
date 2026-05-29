@@ -62,15 +62,6 @@ func (o *ListEnvironments200Response) GetEnvironmentsOk() ([]ListEnvironments200
 	return o.Environments, true
 }
 
-// IsSetEnvironments returns a boolean if a field has been set.
-func (o *ListEnvironments200Response) IsSetEnvironments() bool {
-	if o != nil && !IsNil(o.Environments) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnvironments gets a reference to the given []ListEnvironments200ResponseAllOfEnvironmentsInner and assigns it to the Environments field.
 func (o *ListEnvironments200Response) SetEnvironments(v []ListEnvironments200ResponseAllOfEnvironmentsInner) {
 	o.Environments = v
@@ -92,15 +83,6 @@ func (o *ListEnvironments200Response) GetMetaOk() (*ListApprovals200ResponseAllO
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListEnvironments200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

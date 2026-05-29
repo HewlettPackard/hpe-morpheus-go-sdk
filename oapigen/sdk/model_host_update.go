@@ -112,15 +112,6 @@ func (o *HostUpdate) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *HostUpdate) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *HostUpdate) SetName(v string) {
 	o.Name = &v
@@ -142,15 +133,6 @@ func (o *HostUpdate) GetDescriptionOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *HostUpdate) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -176,15 +158,6 @@ func (o *HostUpdate) GetEnabledOk() (*bool, bool) {
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *HostUpdate) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *HostUpdate) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -206,15 +179,6 @@ func (o *HostUpdate) GetManageInternalFirewallOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.ManageInternalFirewall, true
-}
-
-// IsSetManageInternalFirewall returns a boolean if a field has been set.
-func (o *HostUpdate) IsSetManageInternalFirewall() bool {
-	if o != nil && !IsNil(o.ManageInternalFirewall) {
-		return true
-	}
-
-	return false
 }
 
 // SetManageInternalFirewall gets a reference to the given bool and assigns it to the ManageInternalFirewall field.
@@ -240,15 +204,6 @@ func (o *HostUpdate) GetEnableLogsOk() (*bool, bool) {
 	return o.EnableLogs, true
 }
 
-// IsSetEnableLogs returns a boolean if a field has been set.
-func (o *HostUpdate) IsSetEnableLogs() bool {
-	if o != nil && !IsNil(o.EnableLogs) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnableLogs gets a reference to the given bool and assigns it to the EnableLogs field.
 func (o *HostUpdate) SetEnableLogs(v bool) {
 	o.EnableLogs = &v
@@ -270,15 +225,6 @@ func (o *HostUpdate) GetSshUsernameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SshUsername, true
-}
-
-// IsSetSshUsername returns a boolean if a field has been set.
-func (o *HostUpdate) IsSetSshUsername() bool {
-	if o != nil && !IsNil(o.SshUsername) {
-		return true
-	}
-
-	return false
 }
 
 // SetSshUsername gets a reference to the given string and assigns it to the SshUsername field.
@@ -305,28 +251,9 @@ func (o *HostUpdate) GetSshPasswordOk() (*string, bool) {
 	return o.SshPassword.Get(), o.SshPassword.IsSet()
 }
 
-// IsSetSshPassword returns a boolean if a field has been set.
-func (o *HostUpdate) IsSetSshPassword() bool {
-	if o != nil && o.SshPassword.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSshPassword gets a reference to the given NullableString and assigns it to the SshPassword field.
 func (o *HostUpdate) SetSshPassword(v string) {
 	o.SshPassword.Set(&v)
-}
-
-// SetSshPasswordNil sets the value for SshPassword to be an explicit nil
-func (o *HostUpdate) SetSshPasswordNil() {
-	o.SshPassword.Set(nil)
-}
-
-// UnsetSshPassword ensures that no value is present for SshPassword, not even an explicit nil
-func (o *HostUpdate) UnsetSshPassword() {
-	o.SshPassword.Unset()
 }
 
 // GetSshKeyPair returns the SshKeyPair field value if set, zero value otherwise.
@@ -345,15 +272,6 @@ func (o *HostUpdate) GetSshKeyPairOk() (*HostUpdateSshKeyPair, bool) {
 		return nil, false
 	}
 	return o.SshKeyPair, true
-}
-
-// IsSetSshKeyPair returns a boolean if a field has been set.
-func (o *HostUpdate) IsSetSshKeyPair() bool {
-	if o != nil && !IsNil(o.SshKeyPair) {
-		return true
-	}
-
-	return false
 }
 
 // SetSshKeyPair gets a reference to the given HostUpdateSshKeyPair and assigns it to the SshKeyPair field.
@@ -379,15 +297,6 @@ func (o *HostUpdate) GetPowerScheduleTypeOk() (*int64, bool) {
 	return o.PowerScheduleType, true
 }
 
-// IsSetPowerScheduleType returns a boolean if a field has been set.
-func (o *HostUpdate) IsSetPowerScheduleType() bool {
-	if o != nil && !IsNil(o.PowerScheduleType) {
-		return true
-	}
-
-	return false
-}
-
 // SetPowerScheduleType gets a reference to the given int64 and assigns it to the PowerScheduleType field.
 func (o *HostUpdate) SetPowerScheduleType(v int64) {
 	o.PowerScheduleType = &v
@@ -409,15 +318,6 @@ func (o *HostUpdate) GetLabelsOk() ([]string, bool) {
 		return nil, false
 	}
 	return o.Labels, true
-}
-
-// IsSetLabels returns a boolean if a field has been set.
-func (o *HostUpdate) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
 }
 
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
@@ -443,15 +343,6 @@ func (o *HostUpdate) GetServerOsOk() (*HostUpdateServerOs, bool) {
 	return o.ServerOs, true
 }
 
-// IsSetServerOs returns a boolean if a field has been set.
-func (o *HostUpdate) IsSetServerOs() bool {
-	if o != nil && !IsNil(o.ServerOs) {
-		return true
-	}
-
-	return false
-}
-
 // SetServerOs gets a reference to the given HostUpdateServerOs and assigns it to the ServerOs field.
 func (o *HostUpdate) SetServerOs(v HostUpdateServerOs) {
 	o.ServerOs = &v
@@ -473,15 +364,6 @@ func (o *HostUpdate) GetTagsOk() ([]HostUpdateTagsInner, bool) {
 		return nil, false
 	}
 	return o.Tags, true
-}
-
-// IsSetTags returns a boolean if a field has been set.
-func (o *HostUpdate) IsSetTags() bool {
-	if o != nil && !IsNil(o.Tags) {
-		return true
-	}
-
-	return false
 }
 
 // SetTags gets a reference to the given []HostUpdateTagsInner and assigns it to the Tags field.
@@ -507,15 +389,6 @@ func (o *HostUpdate) GetAddTagsOk() ([]HostUpdateAddTagsInner, bool) {
 	return o.AddTags, true
 }
 
-// IsSetAddTags returns a boolean if a field has been set.
-func (o *HostUpdate) IsSetAddTags() bool {
-	if o != nil && !IsNil(o.AddTags) {
-		return true
-	}
-
-	return false
-}
-
 // SetAddTags gets a reference to the given []HostUpdateAddTagsInner and assigns it to the AddTags field.
 func (o *HostUpdate) SetAddTags(v []HostUpdateAddTagsInner) {
 	o.AddTags = v
@@ -537,15 +410,6 @@ func (o *HostUpdate) GetRemoveTagsOk() ([]HostUpdateRemoveTagsInner, bool) {
 		return nil, false
 	}
 	return o.RemoveTags, true
-}
-
-// IsSetRemoveTags returns a boolean if a field has been set.
-func (o *HostUpdate) IsSetRemoveTags() bool {
-	if o != nil && !IsNil(o.RemoveTags) {
-		return true
-	}
-
-	return false
 }
 
 // SetRemoveTags gets a reference to the given []HostUpdateRemoveTagsInner and assigns it to the RemoveTags field.
@@ -571,15 +435,6 @@ func (o *HostUpdate) GetGuestConsoleTypeOk() (*string, bool) {
 	return o.GuestConsoleType, true
 }
 
-// IsSetGuestConsoleType returns a boolean if a field has been set.
-func (o *HostUpdate) IsSetGuestConsoleType() bool {
-	if o != nil && !IsNil(o.GuestConsoleType) {
-		return true
-	}
-
-	return false
-}
-
 // SetGuestConsoleType gets a reference to the given string and assigns it to the GuestConsoleType field.
 func (o *HostUpdate) SetGuestConsoleType(v string) {
 	o.GuestConsoleType = &v
@@ -601,15 +456,6 @@ func (o *HostUpdate) GetGuestConsoleUsernameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.GuestConsoleUsername, true
-}
-
-// IsSetGuestConsoleUsername returns a boolean if a field has been set.
-func (o *HostUpdate) IsSetGuestConsoleUsername() bool {
-	if o != nil && !IsNil(o.GuestConsoleUsername) {
-		return true
-	}
-
-	return false
 }
 
 // SetGuestConsoleUsername gets a reference to the given string and assigns it to the GuestConsoleUsername field.
@@ -635,15 +481,6 @@ func (o *HostUpdate) GetGuestConsolePasswordOk() (*string, bool) {
 	return o.GuestConsolePassword, true
 }
 
-// IsSetGuestConsolePassword returns a boolean if a field has been set.
-func (o *HostUpdate) IsSetGuestConsolePassword() bool {
-	if o != nil && !IsNil(o.GuestConsolePassword) {
-		return true
-	}
-
-	return false
-}
-
 // SetGuestConsolePassword gets a reference to the given string and assigns it to the GuestConsolePassword field.
 func (o *HostUpdate) SetGuestConsolePassword(v string) {
 	o.GuestConsolePassword = &v
@@ -665,15 +502,6 @@ func (o *HostUpdate) GetGuestConsolePortOk() (*string, bool) {
 		return nil, false
 	}
 	return o.GuestConsolePort, true
-}
-
-// IsSetGuestConsolePort returns a boolean if a field has been set.
-func (o *HostUpdate) IsSetGuestConsolePort() bool {
-	if o != nil && !IsNil(o.GuestConsolePort) {
-		return true
-	}
-
-	return false
 }
 
 // SetGuestConsolePort gets a reference to the given string and assigns it to the GuestConsolePort field.
@@ -699,15 +527,6 @@ func (o *HostUpdate) GetGuestConsolePreferredOk() (*bool, bool) {
 	return o.GuestConsolePreferred, true
 }
 
-// IsSetGuestConsolePreferred returns a boolean if a field has been set.
-func (o *HostUpdate) IsSetGuestConsolePreferred() bool {
-	if o != nil && !IsNil(o.GuestConsolePreferred) {
-		return true
-	}
-
-	return false
-}
-
 // SetGuestConsolePreferred gets a reference to the given bool and assigns it to the GuestConsolePreferred field.
 func (o *HostUpdate) SetGuestConsolePreferred(v bool) {
 	o.GuestConsolePreferred = &v
@@ -729,15 +548,6 @@ func (o *HostUpdate) GetConfigOk() (*HostUpdateConfig, bool) {
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *HostUpdate) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given HostUpdateConfig and assigns it to the Config field.

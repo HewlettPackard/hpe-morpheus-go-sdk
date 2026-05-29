@@ -116,15 +116,6 @@ func (o *NFSDatastoreConfiguration1) GetSourceVersionOk() (*string, bool) {
 	return o.SourceVersion, true
 }
 
-// IsSetSourceVersion returns a boolean if a field has been set.
-func (o *NFSDatastoreConfiguration1) IsSetSourceVersion() bool {
-	if o != nil && !IsNil(o.SourceVersion) {
-		return true
-	}
-
-	return false
-}
-
 // SetSourceVersion gets a reference to the given string and assigns it to the SourceVersion field.
 func (o *NFSDatastoreConfiguration1) SetSourceVersion(v string) {
 	o.SourceVersion = &v

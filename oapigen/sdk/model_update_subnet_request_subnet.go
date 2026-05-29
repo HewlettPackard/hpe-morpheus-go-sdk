@@ -88,15 +88,6 @@ func (o *UpdateSubnetRequestSubnet) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateSubnetRequestSubnet) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *UpdateSubnetRequestSubnet) SetName(v string) {
 	o.Name = &v
@@ -118,15 +109,6 @@ func (o *UpdateSubnetRequestSubnet) GetDescriptionOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *UpdateSubnetRequestSubnet) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -152,15 +134,6 @@ func (o *UpdateSubnetRequestSubnet) GetTypeOk() (*UpdateSubnetRequestSubnetType,
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *UpdateSubnetRequestSubnet) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given UpdateSubnetRequestSubnetType and assigns it to the Type field.
 func (o *UpdateSubnetRequestSubnet) SetType(v UpdateSubnetRequestSubnetType) {
 	o.Type = &v
@@ -182,15 +155,6 @@ func (o *UpdateSubnetRequestSubnet) GetNetworkIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.NetworkId, true
-}
-
-// IsSetNetworkId returns a boolean if a field has been set.
-func (o *UpdateSubnetRequestSubnet) IsSetNetworkId() bool {
-	if o != nil && !IsNil(o.NetworkId) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkId gets a reference to the given int64 and assigns it to the NetworkId field.
@@ -216,15 +180,6 @@ func (o *UpdateSubnetRequestSubnet) GetConfigOk() (map[string]interface{}, bool)
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *UpdateSubnetRequestSubnet) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
 func (o *UpdateSubnetRequestSubnet) SetConfig(v map[string]interface{}) {
 	o.Config = v
@@ -246,15 +201,6 @@ func (o *UpdateSubnetRequestSubnet) GetCidrOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Cidr, true
-}
-
-// IsSetCidr returns a boolean if a field has been set.
-func (o *UpdateSubnetRequestSubnet) IsSetCidr() bool {
-	if o != nil && !IsNil(o.Cidr) {
-		return true
-	}
-
-	return false
 }
 
 // SetCidr gets a reference to the given string and assigns it to the Cidr field.
@@ -280,15 +226,6 @@ func (o *UpdateSubnetRequestSubnet) GetActiveOk() (*bool, bool) {
 	return o.Active, true
 }
 
-// IsSetActive returns a boolean if a field has been set.
-func (o *UpdateSubnetRequestSubnet) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
-}
-
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *UpdateSubnetRequestSubnet) SetActive(v bool) {
 	o.Active = &v
@@ -310,15 +247,6 @@ func (o *UpdateSubnetRequestSubnet) GetDhcpServerOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.DhcpServer, true
-}
-
-// IsSetDhcpServer returns a boolean if a field has been set.
-func (o *UpdateSubnetRequestSubnet) IsSetDhcpServer() bool {
-	if o != nil && !IsNil(o.DhcpServer) {
-		return true
-	}
-
-	return false
 }
 
 // SetDhcpServer gets a reference to the given bool and assigns it to the DhcpServer field.
@@ -344,15 +272,6 @@ func (o *UpdateSubnetRequestSubnet) GetAllowStaticOverrideOk() (*bool, bool) {
 	return o.AllowStaticOverride, true
 }
 
-// IsSetAllowStaticOverride returns a boolean if a field has been set.
-func (o *UpdateSubnetRequestSubnet) IsSetAllowStaticOverride() bool {
-	if o != nil && !IsNil(o.AllowStaticOverride) {
-		return true
-	}
-
-	return false
-}
-
 // SetAllowStaticOverride gets a reference to the given bool and assigns it to the AllowStaticOverride field.
 func (o *UpdateSubnetRequestSubnet) SetAllowStaticOverride(v bool) {
 	o.AllowStaticOverride = &v
@@ -374,15 +293,6 @@ func (o *UpdateSubnetRequestSubnet) GetPoolOk() (*UpdateSubnetRequestSubnetPool,
 		return nil, false
 	}
 	return o.Pool, true
-}
-
-// IsSetPool returns a boolean if a field has been set.
-func (o *UpdateSubnetRequestSubnet) IsSetPool() bool {
-	if o != nil && !IsNil(o.Pool) {
-		return true
-	}
-
-	return false
 }
 
 // SetPool gets a reference to the given UpdateSubnetRequestSubnetPool and assigns it to the Pool field.
@@ -408,15 +318,6 @@ func (o *UpdateSubnetRequestSubnet) GetTenantsOk() ([]UpdateSubnetRequestSubnetT
 	return o.Tenants, true
 }
 
-// IsSetTenants returns a boolean if a field has been set.
-func (o *UpdateSubnetRequestSubnet) IsSetTenants() bool {
-	if o != nil && !IsNil(o.Tenants) {
-		return true
-	}
-
-	return false
-}
-
 // SetTenants gets a reference to the given []UpdateSubnetRequestSubnetTenantsInner and assigns it to the Tenants field.
 func (o *UpdateSubnetRequestSubnet) SetTenants(v []UpdateSubnetRequestSubnetTenantsInner) {
 	o.Tenants = v
@@ -438,15 +339,6 @@ func (o *UpdateSubnetRequestSubnet) GetVisibilityOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *UpdateSubnetRequestSubnet) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -471,15 +363,6 @@ func (o *UpdateSubnetRequestSubnet) GetLabelsOk() ([]string, bool) {
 		return nil, false
 	}
 	return o.Labels, true
-}
-
-// IsSetLabels returns a boolean if a field has been set.
-func (o *UpdateSubnetRequestSubnet) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
 }
 
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.

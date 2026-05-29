@@ -62,15 +62,6 @@ func (o *SnapshotsInstance200Response) GetSnapshotsOk() ([]SnapshotsInstance200R
 	return o.Snapshots, true
 }
 
-// IsSetSnapshots returns a boolean if a field has been set.
-func (o *SnapshotsInstance200Response) IsSetSnapshots() bool {
-	if o != nil && !IsNil(o.Snapshots) {
-		return true
-	}
-
-	return false
-}
-
 // SetSnapshots gets a reference to the given []SnapshotsInstance200ResponseSnapshotsInner and assigns it to the Snapshots field.
 func (o *SnapshotsInstance200Response) SetSnapshots(v []SnapshotsInstance200ResponseSnapshotsInner) {
 	o.Snapshots = v

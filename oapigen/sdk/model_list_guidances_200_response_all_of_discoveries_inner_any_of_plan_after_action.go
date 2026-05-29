@@ -90,15 +90,6 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) GetI
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) SetId(v int64) {
 	o.Id = &v
@@ -120,15 +111,6 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) GetN
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -154,15 +136,6 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) GetC
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) SetCode(v string) {
 	o.Code = &v
@@ -184,15 +157,6 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) GetA
 		return nil, false
 	}
 	return o.Active, true
-}
-
-// IsSetActive returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
 }
 
 // SetActive gets a reference to the given bool and assigns it to the Active field.
@@ -218,15 +182,6 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) GetS
 	return o.SortOrder, true
 }
 
-// IsSetSortOrder returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) IsSetSortOrder() bool {
-	if o != nil && !IsNil(o.SortOrder) {
-		return true
-	}
-
-	return false
-}
-
 // SetSortOrder gets a reference to the given int64 and assigns it to the SortOrder field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) SetSortOrder(v int64) {
 	o.SortOrder = &v
@@ -248,15 +203,6 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) GetD
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -282,15 +228,6 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) GetM
 	return o.MaxStorage, true
 }
 
-// IsSetMaxStorage returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) IsSetMaxStorage() bool {
-	if o != nil && !IsNil(o.MaxStorage) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxStorage gets a reference to the given int64 and assigns it to the MaxStorage field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) SetMaxStorage(v int64) {
 	o.MaxStorage = &v
@@ -312,15 +249,6 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) GetM
 		return nil, false
 	}
 	return o.MaxMemory, true
-}
-
-// IsSetMaxMemory returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) IsSetMaxMemory() bool {
-	if o != nil && !IsNil(o.MaxMemory) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxMemory gets a reference to the given int64 and assigns it to the MaxMemory field.
@@ -346,15 +274,6 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) GetM
 	return o.MaxCpu, true
 }
 
-// IsSetMaxCpu returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) IsSetMaxCpu() bool {
-	if o != nil && !IsNil(o.MaxCpu) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxCpu gets a reference to the given int64 and assigns it to the MaxCpu field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) SetMaxCpu(v int64) {
 	o.MaxCpu = &v
@@ -376,15 +295,6 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) GetM
 		return nil, false
 	}
 	return o.MaxCores, true
-}
-
-// IsSetMaxCores returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) IsSetMaxCores() bool {
-	if o != nil && !IsNil(o.MaxCores) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxCores gets a reference to the given int64 and assigns it to the MaxCores field.
@@ -411,28 +321,9 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) GetM
 	return o.MaxDisks.Get(), o.MaxDisks.IsSet()
 }
 
-// IsSetMaxDisks returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) IsSetMaxDisks() bool {
-	if o != nil && o.MaxDisks.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxDisks gets a reference to the given NullableString and assigns it to the MaxDisks field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) SetMaxDisks(v string) {
 	o.MaxDisks.Set(&v)
-}
-
-// SetMaxDisksNil sets the value for MaxDisks to be an explicit nil
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) SetMaxDisksNil() {
-	o.MaxDisks.Set(nil)
-}
-
-// UnsetMaxDisks ensures that no value is present for MaxDisks, not even an explicit nil
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) UnsetMaxDisks() {
-	o.MaxDisks.Unset()
 }
 
 // GetCoresPerSocket returns the CoresPerSocket field value if set, zero value otherwise.
@@ -451,15 +342,6 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) GetC
 		return nil, false
 	}
 	return o.CoresPerSocket, true
-}
-
-// IsSetCoresPerSocket returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) IsSetCoresPerSocket() bool {
-	if o != nil && !IsNil(o.CoresPerSocket) {
-		return true
-	}
-
-	return false
 }
 
 // SetCoresPerSocket gets a reference to the given int64 and assigns it to the CoresPerSocket field.
@@ -485,15 +367,6 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) GetC
 	return o.CustomCpu, true
 }
 
-// IsSetCustomCpu returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) IsSetCustomCpu() bool {
-	if o != nil && !IsNil(o.CustomCpu) {
-		return true
-	}
-
-	return false
-}
-
 // SetCustomCpu gets a reference to the given bool and assigns it to the CustomCpu field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) SetCustomCpu(v bool) {
 	o.CustomCpu = &v
@@ -515,15 +388,6 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) GetC
 		return nil, false
 	}
 	return o.CustomCores, true
-}
-
-// IsSetCustomCores returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) IsSetCustomCores() bool {
-	if o != nil && !IsNil(o.CustomCores) {
-		return true
-	}
-
-	return false
 }
 
 // SetCustomCores gets a reference to the given bool and assigns it to the CustomCores field.
@@ -549,15 +413,6 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) GetC
 	return o.CustomMaxStorage, true
 }
 
-// IsSetCustomMaxStorage returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) IsSetCustomMaxStorage() bool {
-	if o != nil && !IsNil(o.CustomMaxStorage) {
-		return true
-	}
-
-	return false
-}
-
 // SetCustomMaxStorage gets a reference to the given bool and assigns it to the CustomMaxStorage field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) SetCustomMaxStorage(v bool) {
 	o.CustomMaxStorage = &v
@@ -579,15 +434,6 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) GetC
 		return nil, false
 	}
 	return o.CustomMaxDataStorage, true
-}
-
-// IsSetCustomMaxDataStorage returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) IsSetCustomMaxDataStorage() bool {
-	if o != nil && !IsNil(o.CustomMaxDataStorage) {
-		return true
-	}
-
-	return false
 }
 
 // SetCustomMaxDataStorage gets a reference to the given bool and assigns it to the CustomMaxDataStorage field.
@@ -613,15 +459,6 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) GetC
 	return o.CustomMaxMemory, true
 }
 
-// IsSetCustomMaxMemory returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) IsSetCustomMaxMemory() bool {
-	if o != nil && !IsNil(o.CustomMaxMemory) {
-		return true
-	}
-
-	return false
-}
-
 // SetCustomMaxMemory gets a reference to the given bool and assigns it to the CustomMaxMemory field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) SetCustomMaxMemory(v bool) {
 	o.CustomMaxMemory = &v
@@ -643,15 +480,6 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) GetA
 		return nil, false
 	}
 	return o.AddVolumes, true
-}
-
-// IsSetAddVolumes returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) IsSetAddVolumes() bool {
-	if o != nil && !IsNil(o.AddVolumes) {
-		return true
-	}
-
-	return false
 }
 
 // SetAddVolumes gets a reference to the given bool and assigns it to the AddVolumes field.
@@ -678,28 +506,9 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) GetM
 	return o.MemoryOptionSource.Get(), o.MemoryOptionSource.IsSet()
 }
 
-// IsSetMemoryOptionSource returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) IsSetMemoryOptionSource() bool {
-	if o != nil && o.MemoryOptionSource.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMemoryOptionSource gets a reference to the given NullableString and assigns it to the MemoryOptionSource field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) SetMemoryOptionSource(v string) {
 	o.MemoryOptionSource.Set(&v)
-}
-
-// SetMemoryOptionSourceNil sets the value for MemoryOptionSource to be an explicit nil
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) SetMemoryOptionSourceNil() {
-	o.MemoryOptionSource.Set(nil)
-}
-
-// UnsetMemoryOptionSource ensures that no value is present for MemoryOptionSource, not even an explicit nil
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) UnsetMemoryOptionSource() {
-	o.MemoryOptionSource.Unset()
 }
 
 // GetCpuOptionSource returns the CpuOptionSource field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -721,28 +530,9 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) GetC
 	return o.CpuOptionSource.Get(), o.CpuOptionSource.IsSet()
 }
 
-// IsSetCpuOptionSource returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) IsSetCpuOptionSource() bool {
-	if o != nil && o.CpuOptionSource.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuOptionSource gets a reference to the given NullableString and assigns it to the CpuOptionSource field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) SetCpuOptionSource(v string) {
 	o.CpuOptionSource.Set(&v)
-}
-
-// SetCpuOptionSourceNil sets the value for CpuOptionSource to be an explicit nil
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) SetCpuOptionSourceNil() {
-	o.CpuOptionSource.Set(nil)
-}
-
-// UnsetCpuOptionSource ensures that no value is present for CpuOptionSource, not even an explicit nil
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) UnsetCpuOptionSource() {
-	o.CpuOptionSource.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -761,15 +551,6 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) GetD
 		return nil, false
 	}
 	return o.DateCreated, true
-}
-
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
@@ -793,15 +574,6 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) GetL
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
@@ -828,28 +600,9 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) GetR
 	return o.RegionCode.Get(), o.RegionCode.IsSet()
 }
 
-// IsSetRegionCode returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) IsSetRegionCode() bool {
-	if o != nil && o.RegionCode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRegionCode gets a reference to the given NullableString and assigns it to the RegionCode field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) SetRegionCode(v string) {
 	o.RegionCode.Set(&v)
-}
-
-// SetRegionCodeNil sets the value for RegionCode to be an explicit nil
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) SetRegionCodeNil() {
-	o.RegionCode.Set(nil)
-}
-
-// UnsetRegionCode ensures that no value is present for RegionCode, not even an explicit nil
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) UnsetRegionCode() {
-	o.RegionCode.Unset()
 }
 
 // GetVisibility returns the Visibility field value if set, zero value otherwise.
@@ -868,15 +621,6 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) GetV
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -902,15 +646,6 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) GetE
 	return o.Editable, true
 }
 
-// IsSetEditable returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) IsSetEditable() bool {
-	if o != nil && !IsNil(o.Editable) {
-		return true
-	}
-
-	return false
-}
-
 // SetEditable gets a reference to the given bool and assigns it to the Editable field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) SetEditable(v bool) {
 	o.Editable = &v
@@ -932,15 +667,6 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) GetP
 		return nil, false
 	}
 	return o.ProvisionType, true
-}
-
-// IsSetProvisionType returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) IsSetProvisionType() bool {
-	if o != nil && !IsNil(o.ProvisionType) {
-		return true
-	}
-
-	return false
 }
 
 // SetProvisionType gets a reference to the given ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionProvisionType and assigns it to the ProvisionType field.
@@ -966,15 +692,6 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) GetT
 	return o.Tenants, true
 }
 
-// IsSetTenants returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) IsSetTenants() bool {
-	if o != nil && !IsNil(o.Tenants) {
-		return true
-	}
-
-	return false
-}
-
 // SetTenants gets a reference to the given string and assigns it to the Tenants field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) SetTenants(v string) {
 	o.Tenants = &v
@@ -998,15 +715,6 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) GetP
 	return o.PriceSets, true
 }
 
-// IsSetPriceSets returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) IsSetPriceSets() bool {
-	if o != nil && !IsNil(o.PriceSets) {
-		return true
-	}
-
-	return false
-}
-
 // SetPriceSets gets a reference to the given []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionPriceSetsInner and assigns it to the PriceSets field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) SetPriceSets(v []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionPriceSetsInner) {
 	o.PriceSets = v
@@ -1028,15 +736,6 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) GetC
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionConfig and assigns it to the Config field.

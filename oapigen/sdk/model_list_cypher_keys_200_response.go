@@ -64,15 +64,6 @@ func (o *ListCypherKeys200Response) GetDataOk() (*ListCypherKeys200ResponseAllOf
 	return o.Data, true
 }
 
-// IsSetData returns a boolean if a field has been set.
-func (o *ListCypherKeys200Response) IsSetData() bool {
-	if o != nil && !IsNil(o.Data) {
-		return true
-	}
-
-	return false
-}
-
 // SetData gets a reference to the given ListCypherKeys200ResponseAllOfData and assigns it to the Data field.
 func (o *ListCypherKeys200Response) SetData(v ListCypherKeys200ResponseAllOfData) {
 	o.Data = &v
@@ -94,15 +85,6 @@ func (o *ListCypherKeys200Response) GetCyphersOk() ([]ListCypherKeys200ResponseA
 		return nil, false
 	}
 	return o.Cyphers, true
-}
-
-// IsSetCyphers returns a boolean if a field has been set.
-func (o *ListCypherKeys200Response) IsSetCyphers() bool {
-	if o != nil && !IsNil(o.Cyphers) {
-		return true
-	}
-
-	return false
 }
 
 // SetCyphers gets a reference to the given []ListCypherKeys200ResponseAllOfCyphersInner and assigns it to the Cyphers field.
@@ -128,15 +110,6 @@ func (o *ListCypherKeys200Response) GetMetaOk() (*ListApprovals200ResponseAllOfM
 	return o.Meta, true
 }
 
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListCypherKeys200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
-}
-
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.
 func (o *ListCypherKeys200Response) SetMeta(v ListApprovals200ResponseAllOfMeta) {
 	o.Meta = &v
@@ -158,15 +131,6 @@ func (o *ListCypherKeys200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *ListCypherKeys200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

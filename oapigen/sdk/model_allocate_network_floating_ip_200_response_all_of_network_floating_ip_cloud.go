@@ -66,15 +66,6 @@ func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpCloud) GetIdO
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpCloud) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpCloud) SetId(v int64) {
 	o.Id = &v
@@ -98,15 +89,6 @@ func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpCloud) GetNam
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpCloud) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpCloud) SetName(v string) {
 	o.Name = &v
@@ -128,15 +110,6 @@ func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpCloud) GetTyp
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpCloud) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.

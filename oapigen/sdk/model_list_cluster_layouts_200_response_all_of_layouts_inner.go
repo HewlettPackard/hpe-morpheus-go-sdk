@@ -89,15 +89,6 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetIdOk() (*int64, bool
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) SetId(v int64) {
 	o.Id = &v
@@ -119,15 +110,6 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetInternalIdOk() (*str
 		return nil, false
 	}
 	return o.InternalId, true
-}
-
-// IsSetInternalId returns a boolean if a field has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) IsSetInternalId() bool {
-	if o != nil && !IsNil(o.InternalId) {
-		return true
-	}
-
-	return false
 }
 
 // SetInternalId gets a reference to the given string and assigns it to the InternalId field.
@@ -153,15 +135,6 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetServerCountOk() (*in
 	return o.ServerCount, true
 }
 
-// IsSetServerCount returns a boolean if a field has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) IsSetServerCount() bool {
-	if o != nil && !IsNil(o.ServerCount) {
-		return true
-	}
-
-	return false
-}
-
 // SetServerCount gets a reference to the given int64 and assigns it to the ServerCount field.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) SetServerCount(v int64) {
 	o.ServerCount = &v
@@ -183,15 +156,6 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetDateCreatedOk() (*ti
 		return nil, false
 	}
 	return o.DateCreated, true
-}
-
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
@@ -217,15 +181,6 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetCodeOk() (*string, b
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) SetCode(v string) {
 	o.Code = &v
@@ -247,15 +202,6 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetLastUpdatedOk() (*ti
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
@@ -281,15 +227,6 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetHasAutoScaleOk() (*b
 	return o.HasAutoScale, true
 }
 
-// IsSetHasAutoScale returns a boolean if a field has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) IsSetHasAutoScale() bool {
-	if o != nil && !IsNil(o.HasAutoScale) {
-		return true
-	}
-
-	return false
-}
-
 // SetHasAutoScale gets a reference to the given bool and assigns it to the HasAutoScale field.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) SetHasAutoScale(v bool) {
 	o.HasAutoScale = &v
@@ -311,15 +248,6 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetMemoryRequirementOk(
 		return nil, false
 	}
 	return o.MemoryRequirement, true
-}
-
-// IsSetMemoryRequirement returns a boolean if a field has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) IsSetMemoryRequirement() bool {
-	if o != nil && !IsNil(o.MemoryRequirement) {
-		return true
-	}
-
-	return false
 }
 
 // SetMemoryRequirement gets a reference to the given int64 and assigns it to the MemoryRequirement field.
@@ -345,15 +273,6 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetClusterVersionOk() (
 	return o.ClusterVersion, true
 }
 
-// IsSetClusterVersion returns a boolean if a field has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) IsSetClusterVersion() bool {
-	if o != nil && !IsNil(o.ClusterVersion) {
-		return true
-	}
-
-	return false
-}
-
 // SetClusterVersion gets a reference to the given string and assigns it to the ClusterVersion field.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) SetClusterVersion(v string) {
 	o.ClusterVersion = &v
@@ -375,15 +294,6 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetComputeVersionOk() (
 		return nil, false
 	}
 	return o.ComputeVersion, true
-}
-
-// IsSetComputeVersion returns a boolean if a field has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) IsSetComputeVersion() bool {
-	if o != nil && !IsNil(o.ComputeVersion) {
-		return true
-	}
-
-	return false
 }
 
 // SetComputeVersion gets a reference to the given string and assigns it to the ComputeVersion field.
@@ -409,15 +319,6 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetHasSettingsOk() (*bo
 	return o.HasSettings, true
 }
 
-// IsSetHasSettings returns a boolean if a field has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) IsSetHasSettings() bool {
-	if o != nil && !IsNil(o.HasSettings) {
-		return true
-	}
-
-	return false
-}
-
 // SetHasSettings gets a reference to the given bool and assigns it to the HasSettings field.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) SetHasSettings(v bool) {
 	o.HasSettings = &v
@@ -439,15 +340,6 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetSortOrderOk() (*int6
 		return nil, false
 	}
 	return o.SortOrder, true
-}
-
-// IsSetSortOrder returns a boolean if a field has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) IsSetSortOrder() bool {
-	if o != nil && !IsNil(o.SortOrder) {
-		return true
-	}
-
-	return false
 }
 
 // SetSortOrder gets a reference to the given int64 and assigns it to the SortOrder field.
@@ -473,15 +365,6 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetHasConfigOk() (*bool
 	return o.HasConfig, true
 }
 
-// IsSetHasConfig returns a boolean if a field has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) IsSetHasConfig() bool {
-	if o != nil && !IsNil(o.HasConfig) {
-		return true
-	}
-
-	return false
-}
-
 // SetHasConfig gets a reference to the given bool and assigns it to the HasConfig field.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) SetHasConfig(v bool) {
 	o.HasConfig = &v
@@ -503,15 +386,6 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetNameOk() (*string, b
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -537,15 +411,6 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetCreatableOk() (*bool
 	return o.Creatable, true
 }
 
-// IsSetCreatable returns a boolean if a field has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) IsSetCreatable() bool {
-	if o != nil && !IsNil(o.Creatable) {
-		return true
-	}
-
-	return false
-}
-
 // SetCreatable gets a reference to the given bool and assigns it to the Creatable field.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) SetCreatable(v bool) {
 	o.Creatable = &v
@@ -567,15 +432,6 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetEnabledOk() (*bool, 
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -601,15 +457,6 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetDescriptionOk() (*st
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) SetDescription(v string) {
 	o.Description = &v
@@ -631,15 +478,6 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetGroupTypeOk() (*List
 		return nil, false
 	}
 	return o.GroupType, true
-}
-
-// IsSetGroupType returns a boolean if a field has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) IsSetGroupType() bool {
-	if o != nil && !IsNil(o.GroupType) {
-		return true
-	}
-
-	return false
 }
 
 // SetGroupType gets a reference to the given ListClusterLayouts200ResponseAllOfLayoutsInnerGroupType and assigns it to the GroupType field.
@@ -665,15 +503,6 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetLabelsOk() ([]string
 	return o.Labels, true
 }
 
-// IsSetLabels returns a boolean if a field has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
-}
-
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) SetLabels(v []string) {
 	o.Labels = v
@@ -695,15 +524,6 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetEnvironmentVariables
 		return nil, false
 	}
 	return o.EnvironmentVariables, true
-}
-
-// IsSetEnvironmentVariables returns a boolean if a field has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) IsSetEnvironmentVariables() bool {
-	if o != nil && !IsNil(o.EnvironmentVariables) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnvironmentVariables gets a reference to the given []map[string]interface{} and assigns it to the EnvironmentVariables field.
@@ -729,15 +549,6 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetOptionTypesOk() ([]L
 	return o.OptionTypes, true
 }
 
-// IsSetOptionTypes returns a boolean if a field has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) IsSetOptionTypes() bool {
-	if o != nil && !IsNil(o.OptionTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetOptionTypes gets a reference to the given []ListClusterLayouts200ResponseAllOfLayoutsInnerOptionTypesInner and assigns it to the OptionTypes field.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) SetOptionTypes(v []ListClusterLayouts200ResponseAllOfLayoutsInnerOptionTypesInner) {
 	o.OptionTypes = v
@@ -759,15 +570,6 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetActionsOk() ([]map[s
 		return nil, false
 	}
 	return o.Actions, true
-}
-
-// IsSetActions returns a boolean if a field has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) IsSetActions() bool {
-	if o != nil && !IsNil(o.Actions) {
-		return true
-	}
-
-	return false
 }
 
 // SetActions gets a reference to the given []map[string]interface{} and assigns it to the Actions field.
@@ -793,15 +595,6 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetComputeServersOk() (
 	return o.ComputeServers, true
 }
 
-// IsSetComputeServers returns a boolean if a field has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) IsSetComputeServers() bool {
-	if o != nil && !IsNil(o.ComputeServers) {
-		return true
-	}
-
-	return false
-}
-
 // SetComputeServers gets a reference to the given []ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner and assigns it to the ComputeServers field.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) SetComputeServers(v []ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) {
 	o.ComputeServers = v
@@ -823,15 +616,6 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetInstallContainerRunt
 		return nil, false
 	}
 	return o.InstallContainerRuntime, true
-}
-
-// IsSetInstallContainerRuntime returns a boolean if a field has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) IsSetInstallContainerRuntime() bool {
-	if o != nil && !IsNil(o.InstallContainerRuntime) {
-		return true
-	}
-
-	return false
 }
 
 // SetInstallContainerRuntime gets a reference to the given bool and assigns it to the InstallContainerRuntime field.
@@ -857,15 +641,6 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetProvisionTypeOk() (*
 	return o.ProvisionType, true
 }
 
-// IsSetProvisionType returns a boolean if a field has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) IsSetProvisionType() bool {
-	if o != nil && !IsNil(o.ProvisionType) {
-		return true
-	}
-
-	return false
-}
-
 // SetProvisionType gets a reference to the given ListClusterLayouts200ResponseAllOfLayoutsInnerProvisionType and assigns it to the ProvisionType field.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) SetProvisionType(v ListClusterLayouts200ResponseAllOfLayoutsInnerProvisionType) {
 	o.ProvisionType = &v
@@ -887,15 +662,6 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetSpecTemplatesOk() ([
 		return nil, false
 	}
 	return o.SpecTemplates, true
-}
-
-// IsSetSpecTemplates returns a boolean if a field has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) IsSetSpecTemplates() bool {
-	if o != nil && !IsNil(o.SpecTemplates) {
-		return true
-	}
-
-	return false
 }
 
 // SetSpecTemplates gets a reference to the given []ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner and assigns it to the SpecTemplates field.
@@ -921,15 +687,6 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetTaskSetsOk() ([]map[
 	return o.TaskSets, true
 }
 
-// IsSetTaskSets returns a boolean if a field has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) IsSetTaskSets() bool {
-	if o != nil && !IsNil(o.TaskSets) {
-		return true
-	}
-
-	return false
-}
-
 // SetTaskSets gets a reference to the given []map[string]interface{} and assigns it to the TaskSets field.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) SetTaskSets(v []map[string]interface{}) {
 	o.TaskSets = v
@@ -951,15 +708,6 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetTypeOk() (*ListClust
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given ListClusterLayouts200ResponseAllOfLayoutsInnerType and assigns it to the Type field.

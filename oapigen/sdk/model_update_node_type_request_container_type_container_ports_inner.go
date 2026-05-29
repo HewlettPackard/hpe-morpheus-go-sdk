@@ -113,15 +113,6 @@ func (o *UpdateNodeTypeRequestContainerTypeContainerPortsInner) GetLoadBalancePr
 	return o.LoadBalanceProtocol, true
 }
 
-// IsSetLoadBalanceProtocol returns a boolean if a field has been set.
-func (o *UpdateNodeTypeRequestContainerTypeContainerPortsInner) IsSetLoadBalanceProtocol() bool {
-	if o != nil && !IsNil(o.LoadBalanceProtocol) {
-		return true
-	}
-
-	return false
-}
-
 // SetLoadBalanceProtocol gets a reference to the given string and assigns it to the LoadBalanceProtocol field.
 func (o *UpdateNodeTypeRequestContainerTypeContainerPortsInner) SetLoadBalanceProtocol(v string) {
 	o.LoadBalanceProtocol = &v

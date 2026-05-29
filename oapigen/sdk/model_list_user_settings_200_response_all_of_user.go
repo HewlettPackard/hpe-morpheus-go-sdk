@@ -78,15 +78,6 @@ func (o *ListUserSettings200ResponseAllOfUser) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListUserSettings200ResponseAllOfUser) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListUserSettings200ResponseAllOfUser) SetId(v int64) {
 	o.Id = &v
@@ -108,15 +99,6 @@ func (o *ListUserSettings200ResponseAllOfUser) GetUsernameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Username, true
-}
-
-// IsSetUsername returns a boolean if a field has been set.
-func (o *ListUserSettings200ResponseAllOfUser) IsSetUsername() bool {
-	if o != nil && !IsNil(o.Username) {
-		return true
-	}
-
-	return false
 }
 
 // SetUsername gets a reference to the given string and assigns it to the Username field.
@@ -142,15 +124,6 @@ func (o *ListUserSettings200ResponseAllOfUser) GetFirstNameOk() (*string, bool) 
 	return o.FirstName, true
 }
 
-// IsSetFirstName returns a boolean if a field has been set.
-func (o *ListUserSettings200ResponseAllOfUser) IsSetFirstName() bool {
-	if o != nil && !IsNil(o.FirstName) {
-		return true
-	}
-
-	return false
-}
-
 // SetFirstName gets a reference to the given string and assigns it to the FirstName field.
 func (o *ListUserSettings200ResponseAllOfUser) SetFirstName(v string) {
 	o.FirstName = &v
@@ -172,15 +145,6 @@ func (o *ListUserSettings200ResponseAllOfUser) GetLastNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.LastName, true
-}
-
-// IsSetLastName returns a boolean if a field has been set.
-func (o *ListUserSettings200ResponseAllOfUser) IsSetLastName() bool {
-	if o != nil && !IsNil(o.LastName) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastName gets a reference to the given string and assigns it to the LastName field.
@@ -206,15 +170,6 @@ func (o *ListUserSettings200ResponseAllOfUser) GetEmailOk() (*string, bool) {
 	return o.Email, true
 }
 
-// IsSetEmail returns a boolean if a field has been set.
-func (o *ListUserSettings200ResponseAllOfUser) IsSetEmail() bool {
-	if o != nil && !IsNil(o.Email) {
-		return true
-	}
-
-	return false
-}
-
 // SetEmail gets a reference to the given string and assigns it to the Email field.
 func (o *ListUserSettings200ResponseAllOfUser) SetEmail(v string) {
 	o.Email = &v
@@ -238,15 +193,6 @@ func (o *ListUserSettings200ResponseAllOfUser) GetLinuxUsernameOk() (*string, bo
 	return o.LinuxUsername, true
 }
 
-// IsSetLinuxUsername returns a boolean if a field has been set.
-func (o *ListUserSettings200ResponseAllOfUser) IsSetLinuxUsername() bool {
-	if o != nil && !IsNil(o.LinuxUsername) {
-		return true
-	}
-
-	return false
-}
-
 // SetLinuxUsername gets a reference to the given string and assigns it to the LinuxUsername field.
 func (o *ListUserSettings200ResponseAllOfUser) SetLinuxUsername(v string) {
 	o.LinuxUsername = &v
@@ -268,15 +214,6 @@ func (o *ListUserSettings200ResponseAllOfUser) GetLinuxPasswordOk() (*string, bo
 		return nil, false
 	}
 	return o.LinuxPassword, true
-}
-
-// IsSetLinuxPassword returns a boolean if a field has been set.
-func (o *ListUserSettings200ResponseAllOfUser) IsSetLinuxPassword() bool {
-	if o != nil && !IsNil(o.LinuxPassword) {
-		return true
-	}
-
-	return false
 }
 
 // SetLinuxPassword gets a reference to the given string and assigns it to the LinuxPassword field.
@@ -303,28 +240,9 @@ func (o *ListUserSettings200ResponseAllOfUser) GetLinuxKeyPairIdOk() (*int64, bo
 	return o.LinuxKeyPairId.Get(), o.LinuxKeyPairId.IsSet()
 }
 
-// IsSetLinuxKeyPairId returns a boolean if a field has been set.
-func (o *ListUserSettings200ResponseAllOfUser) IsSetLinuxKeyPairId() bool {
-	if o != nil && o.LinuxKeyPairId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLinuxKeyPairId gets a reference to the given NullableInt64 and assigns it to the LinuxKeyPairId field.
 func (o *ListUserSettings200ResponseAllOfUser) SetLinuxKeyPairId(v int64) {
 	o.LinuxKeyPairId.Set(&v)
-}
-
-// SetLinuxKeyPairIdNil sets the value for LinuxKeyPairId to be an explicit nil
-func (o *ListUserSettings200ResponseAllOfUser) SetLinuxKeyPairIdNil() {
-	o.LinuxKeyPairId.Set(nil)
-}
-
-// UnsetLinuxKeyPairId ensures that no value is present for LinuxKeyPairId, not even an explicit nil
-func (o *ListUserSettings200ResponseAllOfUser) UnsetLinuxKeyPairId() {
-	o.LinuxKeyPairId.Unset()
 }
 
 // GetWindowsUsername returns the WindowsUsername field value if set, zero value otherwise.
@@ -343,15 +261,6 @@ func (o *ListUserSettings200ResponseAllOfUser) GetWindowsUsernameOk() (*string, 
 		return nil, false
 	}
 	return o.WindowsUsername, true
-}
-
-// IsSetWindowsUsername returns a boolean if a field has been set.
-func (o *ListUserSettings200ResponseAllOfUser) IsSetWindowsUsername() bool {
-	if o != nil && !IsNil(o.WindowsUsername) {
-		return true
-	}
-
-	return false
 }
 
 // SetWindowsUsername gets a reference to the given string and assigns it to the WindowsUsername field.
@@ -377,15 +286,6 @@ func (o *ListUserSettings200ResponseAllOfUser) GetWindowsPasswordOk() (*string, 
 	return o.WindowsPassword, true
 }
 
-// IsSetWindowsPassword returns a boolean if a field has been set.
-func (o *ListUserSettings200ResponseAllOfUser) IsSetWindowsPassword() bool {
-	if o != nil && !IsNil(o.WindowsPassword) {
-		return true
-	}
-
-	return false
-}
-
 // SetWindowsPassword gets a reference to the given string and assigns it to the WindowsPassword field.
 func (o *ListUserSettings200ResponseAllOfUser) SetWindowsPassword(v string) {
 	o.WindowsPassword = &v
@@ -407,15 +307,6 @@ func (o *ListUserSettings200ResponseAllOfUser) GetAvatarOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Avatar, true
-}
-
-// IsSetAvatar returns a boolean if a field has been set.
-func (o *ListUserSettings200ResponseAllOfUser) IsSetAvatar() bool {
-	if o != nil && !IsNil(o.Avatar) {
-		return true
-	}
-
-	return false
 }
 
 // SetAvatar gets a reference to the given string and assigns it to the Avatar field.
@@ -441,15 +332,6 @@ func (o *ListUserSettings200ResponseAllOfUser) GetDesktopBackgroundOk() (*string
 	return o.DesktopBackground, true
 }
 
-// IsSetDesktopBackground returns a boolean if a field has been set.
-func (o *ListUserSettings200ResponseAllOfUser) IsSetDesktopBackground() bool {
-	if o != nil && !IsNil(o.DesktopBackground) {
-		return true
-	}
-
-	return false
-}
-
 // SetDesktopBackground gets a reference to the given string and assigns it to the DesktopBackground field.
 func (o *ListUserSettings200ResponseAllOfUser) SetDesktopBackground(v string) {
 	o.DesktopBackground = &v
@@ -471,15 +353,6 @@ func (o *ListUserSettings200ResponseAllOfUser) GetReceiveNotificationsOk() (*boo
 		return nil, false
 	}
 	return o.ReceiveNotifications, true
-}
-
-// IsSetReceiveNotifications returns a boolean if a field has been set.
-func (o *ListUserSettings200ResponseAllOfUser) IsSetReceiveNotifications() bool {
-	if o != nil && !IsNil(o.ReceiveNotifications) {
-		return true
-	}
-
-	return false
 }
 
 // SetReceiveNotifications gets a reference to the given bool and assigns it to the ReceiveNotifications field.
@@ -506,28 +379,9 @@ func (o *ListUserSettings200ResponseAllOfUser) GetDefaultGroupOk() (*ListUserSet
 	return o.DefaultGroup.Get(), o.DefaultGroup.IsSet()
 }
 
-// IsSetDefaultGroup returns a boolean if a field has been set.
-func (o *ListUserSettings200ResponseAllOfUser) IsSetDefaultGroup() bool {
-	if o != nil && o.DefaultGroup.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultGroup gets a reference to the given NullableListUserSettings200ResponseAllOfUserDefaultGroup and assigns it to the DefaultGroup field.
 func (o *ListUserSettings200ResponseAllOfUser) SetDefaultGroup(v ListUserSettings200ResponseAllOfUserDefaultGroup) {
 	o.DefaultGroup.Set(&v)
-}
-
-// SetDefaultGroupNil sets the value for DefaultGroup to be an explicit nil
-func (o *ListUserSettings200ResponseAllOfUser) SetDefaultGroupNil() {
-	o.DefaultGroup.Set(nil)
-}
-
-// UnsetDefaultGroup ensures that no value is present for DefaultGroup, not even an explicit nil
-func (o *ListUserSettings200ResponseAllOfUser) UnsetDefaultGroup() {
-	o.DefaultGroup.Unset()
 }
 
 // GetDefaultCloud returns the DefaultCloud field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -549,28 +403,9 @@ func (o *ListUserSettings200ResponseAllOfUser) GetDefaultCloudOk() (*ListUserSet
 	return o.DefaultCloud.Get(), o.DefaultCloud.IsSet()
 }
 
-// IsSetDefaultCloud returns a boolean if a field has been set.
-func (o *ListUserSettings200ResponseAllOfUser) IsSetDefaultCloud() bool {
-	if o != nil && o.DefaultCloud.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultCloud gets a reference to the given NullableListUserSettings200ResponseAllOfUserDefaultCloud and assigns it to the DefaultCloud field.
 func (o *ListUserSettings200ResponseAllOfUser) SetDefaultCloud(v ListUserSettings200ResponseAllOfUserDefaultCloud) {
 	o.DefaultCloud.Set(&v)
-}
-
-// SetDefaultCloudNil sets the value for DefaultCloud to be an explicit nil
-func (o *ListUserSettings200ResponseAllOfUser) SetDefaultCloudNil() {
-	o.DefaultCloud.Set(nil)
-}
-
-// UnsetDefaultCloud ensures that no value is present for DefaultCloud, not even an explicit nil
-func (o *ListUserSettings200ResponseAllOfUser) UnsetDefaultCloud() {
-	o.DefaultCloud.Unset()
 }
 
 // GetDefaultPersona returns the DefaultPersona field value if set, zero value otherwise.
@@ -589,15 +424,6 @@ func (o *ListUserSettings200ResponseAllOfUser) GetDefaultPersonaOk() (*ListUserS
 		return nil, false
 	}
 	return o.DefaultPersona, true
-}
-
-// IsSetDefaultPersona returns a boolean if a field has been set.
-func (o *ListUserSettings200ResponseAllOfUser) IsSetDefaultPersona() bool {
-	if o != nil && !IsNil(o.DefaultPersona) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultPersona gets a reference to the given ListUserSettings200ResponseAllOfUserDefaultPersona and assigns it to the DefaultPersona field.
@@ -621,15 +447,6 @@ func (o *ListUserSettings200ResponseAllOfUser) GetIsUsing2FAOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.IsUsing2FA, true
-}
-
-// IsSetIsUsing2FA returns a boolean if a field has been set.
-func (o *ListUserSettings200ResponseAllOfUser) IsSetIsUsing2FA() bool {
-	if o != nil && !IsNil(o.IsUsing2FA) {
-		return true
-	}
-
-	return false
 }
 
 // SetIsUsing2FA gets a reference to the given bool and assigns it to the IsUsing2FA field.
@@ -656,28 +473,9 @@ func (o *ListUserSettings200ResponseAllOfUser) GetTenantOk() (*ListUserSettings2
 	return o.Tenant.Get(), o.Tenant.IsSet()
 }
 
-// IsSetTenant returns a boolean if a field has been set.
-func (o *ListUserSettings200ResponseAllOfUser) IsSetTenant() bool {
-	if o != nil && o.Tenant.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetTenant gets a reference to the given NullableListUserSettings200ResponseAllOfUserTenant and assigns it to the Tenant field.
 func (o *ListUserSettings200ResponseAllOfUser) SetTenant(v ListUserSettings200ResponseAllOfUserTenant) {
 	o.Tenant.Set(&v)
-}
-
-// SetTenantNil sets the value for Tenant to be an explicit nil
-func (o *ListUserSettings200ResponseAllOfUser) SetTenantNil() {
-	o.Tenant.Set(nil)
-}
-
-// UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
-func (o *ListUserSettings200ResponseAllOfUser) UnsetTenant() {
-	o.Tenant.Unset()
 }
 
 func (o ListUserSettings200ResponseAllOfUser) MarshalJSON() ([]byte, error) {

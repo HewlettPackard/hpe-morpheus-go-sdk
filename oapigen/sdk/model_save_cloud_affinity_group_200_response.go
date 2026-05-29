@@ -62,15 +62,6 @@ func (o *SaveCloudAffinityGroup200Response) GetAffinityGroupOk() (*SaveCloudAffi
 	return o.AffinityGroup, true
 }
 
-// IsSetAffinityGroup returns a boolean if a field has been set.
-func (o *SaveCloudAffinityGroup200Response) IsSetAffinityGroup() bool {
-	if o != nil && !IsNil(o.AffinityGroup) {
-		return true
-	}
-
-	return false
-}
-
 // SetAffinityGroup gets a reference to the given SaveCloudAffinityGroup200ResponseAllOfAffinityGroup and assigns it to the AffinityGroup field.
 func (o *SaveCloudAffinityGroup200Response) SetAffinityGroup(v SaveCloudAffinityGroup200ResponseAllOfAffinityGroup) {
 	o.AffinityGroup = &v
@@ -92,15 +83,6 @@ func (o *SaveCloudAffinityGroup200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *SaveCloudAffinityGroup200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

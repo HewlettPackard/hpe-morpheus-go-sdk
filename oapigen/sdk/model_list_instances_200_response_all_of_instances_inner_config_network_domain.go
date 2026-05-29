@@ -62,28 +62,9 @@ func (o *ListInstances200ResponseAllOfInstancesInnerConfigNetworkDomain) GetIdOk
 	return o.Id.Get(), o.Id.IsSet()
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerConfigNetworkDomain) IsSetId() bool {
-	if o != nil && o.Id.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given NullableInt64 and assigns it to the Id field.
 func (o *ListInstances200ResponseAllOfInstancesInnerConfigNetworkDomain) SetId(v int64) {
 	o.Id.Set(&v)
-}
-
-// SetIdNil sets the value for Id to be an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInnerConfigNetworkDomain) SetIdNil() {
-	o.Id.Set(nil)
-}
-
-// UnsetId ensures that no value is present for Id, not even an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInnerConfigNetworkDomain) UnsetId() {
-	o.Id.Unset()
 }
 
 func (o ListInstances200ResponseAllOfInstancesInnerConfigNetworkDomain) MarshalJSON() ([]byte, error) {

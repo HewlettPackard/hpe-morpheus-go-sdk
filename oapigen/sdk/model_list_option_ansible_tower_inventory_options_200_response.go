@@ -62,15 +62,6 @@ func (o *ListOptionAnsibleTowerInventoryOptions200Response) GetDataOk() ([]ListO
 	return o.Data, true
 }
 
-// IsSetData returns a boolean if a field has been set.
-func (o *ListOptionAnsibleTowerInventoryOptions200Response) IsSetData() bool {
-	if o != nil && !IsNil(o.Data) {
-		return true
-	}
-
-	return false
-}
-
 // SetData gets a reference to the given []ListOptionAnsibleTowerInventoryOptions200ResponseAllOfDataInner and assigns it to the Data field.
 func (o *ListOptionAnsibleTowerInventoryOptions200Response) SetData(v []ListOptionAnsibleTowerInventoryOptions200ResponseAllOfDataInner) {
 	o.Data = v
@@ -92,15 +83,6 @@ func (o *ListOptionAnsibleTowerInventoryOptions200Response) GetSuccessOk() (*boo
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *ListOptionAnsibleTowerInventoryOptions200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

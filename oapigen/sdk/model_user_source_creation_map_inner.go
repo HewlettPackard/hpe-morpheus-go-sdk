@@ -65,15 +65,6 @@ func (o *UserSourceCreationMapInner) GetMappedRoleOk() (*UserSourceCreationMapIn
 	return o.MappedRole, true
 }
 
-// IsSetMappedRole returns a boolean if a field has been set.
-func (o *UserSourceCreationMapInner) IsSetMappedRole() bool {
-	if o != nil && !IsNil(o.MappedRole) {
-		return true
-	}
-
-	return false
-}
-
 // SetMappedRole gets a reference to the given UserSourceCreationMapInnerMappedRole and assigns it to the MappedRole field.
 func (o *UserSourceCreationMapInner) SetMappedRole(v UserSourceCreationMapInnerMappedRole) {
 	o.MappedRole = &v
@@ -97,15 +88,6 @@ func (o *UserSourceCreationMapInner) GetSourceRoleFqnOk() (*string, bool) {
 	return o.SourceRoleFqn, true
 }
 
-// IsSetSourceRoleFqn returns a boolean if a field has been set.
-func (o *UserSourceCreationMapInner) IsSetSourceRoleFqn() bool {
-	if o != nil && !IsNil(o.SourceRoleFqn) {
-		return true
-	}
-
-	return false
-}
-
 // SetSourceRoleFqn gets a reference to the given string and assigns it to the SourceRoleFqn field.
 func (o *UserSourceCreationMapInner) SetSourceRoleFqn(v string) {
 	o.SourceRoleFqn = &v
@@ -127,15 +109,6 @@ func (o *UserSourceCreationMapInner) GetSourceRoleNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SourceRoleName, true
-}
-
-// IsSetSourceRoleName returns a boolean if a field has been set.
-func (o *UserSourceCreationMapInner) IsSetSourceRoleName() bool {
-	if o != nil && !IsNil(o.SourceRoleName) {
-		return true
-	}
-
-	return false
 }
 
 // SetSourceRoleName gets a reference to the given string and assigns it to the SourceRoleName field.

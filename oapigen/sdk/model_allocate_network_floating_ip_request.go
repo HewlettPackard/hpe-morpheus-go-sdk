@@ -64,15 +64,6 @@ func (o *AllocateNetworkFloatingIpRequest) GetNetworkServerIdOk() (*int64, bool)
 	return o.NetworkServerId, true
 }
 
-// IsSetNetworkServerId returns a boolean if a field has been set.
-func (o *AllocateNetworkFloatingIpRequest) IsSetNetworkServerId() bool {
-	if o != nil && !IsNil(o.NetworkServerId) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkServerId gets a reference to the given int64 and assigns it to the NetworkServerId field.
 func (o *AllocateNetworkFloatingIpRequest) SetNetworkServerId(v int64) {
 	o.NetworkServerId = &v
@@ -94,15 +85,6 @@ func (o *AllocateNetworkFloatingIpRequest) GetFloatingIpPoolIdOk() (*int64, bool
 		return nil, false
 	}
 	return o.FloatingIpPoolId, true
-}
-
-// IsSetFloatingIpPoolId returns a boolean if a field has been set.
-func (o *AllocateNetworkFloatingIpRequest) IsSetFloatingIpPoolId() bool {
-	if o != nil && !IsNil(o.FloatingIpPoolId) {
-		return true
-	}
-
-	return false
 }
 
 // SetFloatingIpPoolId gets a reference to the given int64 and assigns it to the FloatingIpPoolId field.

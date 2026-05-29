@@ -64,15 +64,6 @@ func (o *GetInstance200ResponseInstanceInstancePrice) GetPriceOk() (*float32, bo
 	return o.Price, true
 }
 
-// IsSetPrice returns a boolean if a field has been set.
-func (o *GetInstance200ResponseInstanceInstancePrice) IsSetPrice() bool {
-	if o != nil && !IsNil(o.Price) {
-		return true
-	}
-
-	return false
-}
-
 // SetPrice gets a reference to the given float32 and assigns it to the Price field.
 func (o *GetInstance200ResponseInstanceInstancePrice) SetPrice(v float32) {
 	o.Price = &v
@@ -94,15 +85,6 @@ func (o *GetInstance200ResponseInstanceInstancePrice) GetCostOk() (*float32, boo
 		return nil, false
 	}
 	return o.Cost, true
-}
-
-// IsSetCost returns a boolean if a field has been set.
-func (o *GetInstance200ResponseInstanceInstancePrice) IsSetCost() bool {
-	if o != nil && !IsNil(o.Cost) {
-		return true
-	}
-
-	return false
 }
 
 // SetCost gets a reference to the given float32 and assigns it to the Cost field.
@@ -128,15 +110,6 @@ func (o *GetInstance200ResponseInstanceInstancePrice) GetCurrencyOk() (*string, 
 	return o.Currency, true
 }
 
-// IsSetCurrency returns a boolean if a field has been set.
-func (o *GetInstance200ResponseInstanceInstancePrice) IsSetCurrency() bool {
-	if o != nil && !IsNil(o.Currency) {
-		return true
-	}
-
-	return false
-}
-
 // SetCurrency gets a reference to the given string and assigns it to the Currency field.
 func (o *GetInstance200ResponseInstanceInstancePrice) SetCurrency(v string) {
 	o.Currency = &v
@@ -158,15 +131,6 @@ func (o *GetInstance200ResponseInstanceInstancePrice) GetUnitOk() (*string, bool
 		return nil, false
 	}
 	return o.Unit, true
-}
-
-// IsSetUnit returns a boolean if a field has been set.
-func (o *GetInstance200ResponseInstanceInstancePrice) IsSetUnit() bool {
-	if o != nil && !IsNil(o.Unit) {
-		return true
-	}
-
-	return false
 }
 
 // SetUnit gets a reference to the given string and assigns it to the Unit field.

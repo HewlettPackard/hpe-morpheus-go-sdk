@@ -61,15 +61,6 @@ func (o *AddProvisioningLicenseRequest) GetLicenseOk() (*AddProvisioningLicenseR
 	return o.License, true
 }
 
-// IsSetLicense returns a boolean if a field has been set.
-func (o *AddProvisioningLicenseRequest) IsSetLicense() bool {
-	if o != nil && !IsNil(o.License) {
-		return true
-	}
-
-	return false
-}
-
 // SetLicense gets a reference to the given AddProvisioningLicenseRequestLicense and assigns it to the License field.
 func (o *AddProvisioningLicenseRequest) SetLicense(v AddProvisioningLicenseRequestLicense) {
 	o.License = &v

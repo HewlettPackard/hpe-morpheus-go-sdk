@@ -135,15 +135,6 @@ func (o *GetCluster200ResponseCluster) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetCluster200ResponseCluster) SetId(v int64) {
 	o.Id = &v
@@ -167,15 +158,6 @@ func (o *GetCluster200ResponseCluster) GetUuidOk() (*string, bool) {
 	return o.Uuid, true
 }
 
-// IsSetUuid returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetUuid() bool {
-	if o != nil && !IsNil(o.Uuid) {
-		return true
-	}
-
-	return false
-}
-
 // SetUuid gets a reference to the given string and assigns it to the Uuid field.
 func (o *GetCluster200ResponseCluster) SetUuid(v string) {
 	o.Uuid = &v
@@ -197,15 +179,6 @@ func (o *GetCluster200ResponseCluster) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -232,28 +205,9 @@ func (o *GetCluster200ResponseCluster) GetCodeOk() (*string, bool) {
 	return o.Code.Get(), o.Code.IsSet()
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetCode() bool {
-	if o != nil && o.Code.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *GetCluster200ResponseCluster) SetCode(v string) {
 	o.Code.Set(&v)
-}
-
-// SetCodeNil sets the value for Code to be an explicit nil
-func (o *GetCluster200ResponseCluster) SetCodeNil() {
-	o.Code.Set(nil)
-}
-
-// UnsetCode ensures that no value is present for Code, not even an explicit nil
-func (o *GetCluster200ResponseCluster) UnsetCode() {
-	o.Code.Unset()
 }
 
 // GetCategory returns the Category field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -275,28 +229,9 @@ func (o *GetCluster200ResponseCluster) GetCategoryOk() (*string, bool) {
 	return o.Category.Get(), o.Category.IsSet()
 }
 
-// IsSetCategory returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetCategory() bool {
-	if o != nil && o.Category.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCategory gets a reference to the given NullableString and assigns it to the Category field.
 func (o *GetCluster200ResponseCluster) SetCategory(v string) {
 	o.Category.Set(&v)
-}
-
-// SetCategoryNil sets the value for Category to be an explicit nil
-func (o *GetCluster200ResponseCluster) SetCategoryNil() {
-	o.Category.Set(nil)
-}
-
-// UnsetCategory ensures that no value is present for Category, not even an explicit nil
-func (o *GetCluster200ResponseCluster) UnsetCategory() {
-	o.Category.Unset()
 }
 
 // GetVisibility returns the Visibility field value if set, zero value otherwise.
@@ -315,15 +250,6 @@ func (o *GetCluster200ResponseCluster) GetVisibilityOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -350,28 +276,9 @@ func (o *GetCluster200ResponseCluster) GetDescriptionOk() (*string, bool) {
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *GetCluster200ResponseCluster) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *GetCluster200ResponseCluster) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *GetCluster200ResponseCluster) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetLocation returns the Location field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -393,28 +300,9 @@ func (o *GetCluster200ResponseCluster) GetLocationOk() (*string, bool) {
 	return o.Location.Get(), o.Location.IsSet()
 }
 
-// IsSetLocation returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetLocation() bool {
-	if o != nil && o.Location.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLocation gets a reference to the given NullableString and assigns it to the Location field.
 func (o *GetCluster200ResponseCluster) SetLocation(v string) {
 	o.Location.Set(&v)
-}
-
-// SetLocationNil sets the value for Location to be an explicit nil
-func (o *GetCluster200ResponseCluster) SetLocationNil() {
-	o.Location.Set(nil)
-}
-
-// UnsetLocation ensures that no value is present for Location, not even an explicit nil
-func (o *GetCluster200ResponseCluster) UnsetLocation() {
-	o.Location.Unset()
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
@@ -433,15 +321,6 @@ func (o *GetCluster200ResponseCluster) GetEnabledOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -468,28 +347,9 @@ func (o *GetCluster200ResponseCluster) GetServiceUrlOk() (*string, bool) {
 	return o.ServiceUrl.Get(), o.ServiceUrl.IsSet()
 }
 
-// IsSetServiceUrl returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetServiceUrl() bool {
-	if o != nil && o.ServiceUrl.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceUrl gets a reference to the given NullableString and assigns it to the ServiceUrl field.
 func (o *GetCluster200ResponseCluster) SetServiceUrl(v string) {
 	o.ServiceUrl.Set(&v)
-}
-
-// SetServiceUrlNil sets the value for ServiceUrl to be an explicit nil
-func (o *GetCluster200ResponseCluster) SetServiceUrlNil() {
-	o.ServiceUrl.Set(nil)
-}
-
-// UnsetServiceUrl ensures that no value is present for ServiceUrl, not even an explicit nil
-func (o *GetCluster200ResponseCluster) UnsetServiceUrl() {
-	o.ServiceUrl.Unset()
 }
 
 // GetServiceHost returns the ServiceHost field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -511,28 +371,9 @@ func (o *GetCluster200ResponseCluster) GetServiceHostOk() (*string, bool) {
 	return o.ServiceHost.Get(), o.ServiceHost.IsSet()
 }
 
-// IsSetServiceHost returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetServiceHost() bool {
-	if o != nil && o.ServiceHost.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceHost gets a reference to the given NullableString and assigns it to the ServiceHost field.
 func (o *GetCluster200ResponseCluster) SetServiceHost(v string) {
 	o.ServiceHost.Set(&v)
-}
-
-// SetServiceHostNil sets the value for ServiceHost to be an explicit nil
-func (o *GetCluster200ResponseCluster) SetServiceHostNil() {
-	o.ServiceHost.Set(nil)
-}
-
-// UnsetServiceHost ensures that no value is present for ServiceHost, not even an explicit nil
-func (o *GetCluster200ResponseCluster) UnsetServiceHost() {
-	o.ServiceHost.Unset()
 }
 
 // GetServicePath returns the ServicePath field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -554,28 +395,9 @@ func (o *GetCluster200ResponseCluster) GetServicePathOk() (*string, bool) {
 	return o.ServicePath.Get(), o.ServicePath.IsSet()
 }
 
-// IsSetServicePath returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetServicePath() bool {
-	if o != nil && o.ServicePath.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServicePath gets a reference to the given NullableString and assigns it to the ServicePath field.
 func (o *GetCluster200ResponseCluster) SetServicePath(v string) {
 	o.ServicePath.Set(&v)
-}
-
-// SetServicePathNil sets the value for ServicePath to be an explicit nil
-func (o *GetCluster200ResponseCluster) SetServicePathNil() {
-	o.ServicePath.Set(nil)
-}
-
-// UnsetServicePath ensures that no value is present for ServicePath, not even an explicit nil
-func (o *GetCluster200ResponseCluster) UnsetServicePath() {
-	o.ServicePath.Unset()
 }
 
 // GetServiceHostname returns the ServiceHostname field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -597,28 +419,9 @@ func (o *GetCluster200ResponseCluster) GetServiceHostnameOk() (*string, bool) {
 	return o.ServiceHostname.Get(), o.ServiceHostname.IsSet()
 }
 
-// IsSetServiceHostname returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetServiceHostname() bool {
-	if o != nil && o.ServiceHostname.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceHostname gets a reference to the given NullableString and assigns it to the ServiceHostname field.
 func (o *GetCluster200ResponseCluster) SetServiceHostname(v string) {
 	o.ServiceHostname.Set(&v)
-}
-
-// SetServiceHostnameNil sets the value for ServiceHostname to be an explicit nil
-func (o *GetCluster200ResponseCluster) SetServiceHostnameNil() {
-	o.ServiceHostname.Set(nil)
-}
-
-// UnsetServiceHostname ensures that no value is present for ServiceHostname, not even an explicit nil
-func (o *GetCluster200ResponseCluster) UnsetServiceHostname() {
-	o.ServiceHostname.Unset()
 }
 
 // GetServicePort returns the ServicePort field value if set, zero value otherwise.
@@ -637,15 +440,6 @@ func (o *GetCluster200ResponseCluster) GetServicePortOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.ServicePort, true
-}
-
-// IsSetServicePort returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetServicePort() bool {
-	if o != nil && !IsNil(o.ServicePort) {
-		return true
-	}
-
-	return false
 }
 
 // SetServicePort gets a reference to the given int64 and assigns it to the ServicePort field.
@@ -672,28 +466,9 @@ func (o *GetCluster200ResponseCluster) GetServiceUsernameOk() (*string, bool) {
 	return o.ServiceUsername.Get(), o.ServiceUsername.IsSet()
 }
 
-// IsSetServiceUsername returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetServiceUsername() bool {
-	if o != nil && o.ServiceUsername.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceUsername gets a reference to the given NullableString and assigns it to the ServiceUsername field.
 func (o *GetCluster200ResponseCluster) SetServiceUsername(v string) {
 	o.ServiceUsername.Set(&v)
-}
-
-// SetServiceUsernameNil sets the value for ServiceUsername to be an explicit nil
-func (o *GetCluster200ResponseCluster) SetServiceUsernameNil() {
-	o.ServiceUsername.Set(nil)
-}
-
-// UnsetServiceUsername ensures that no value is present for ServiceUsername, not even an explicit nil
-func (o *GetCluster200ResponseCluster) UnsetServiceUsername() {
-	o.ServiceUsername.Unset()
 }
 
 // GetServicePassword returns the ServicePassword field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -715,28 +490,9 @@ func (o *GetCluster200ResponseCluster) GetServicePasswordOk() (*string, bool) {
 	return o.ServicePassword.Get(), o.ServicePassword.IsSet()
 }
 
-// IsSetServicePassword returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetServicePassword() bool {
-	if o != nil && o.ServicePassword.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServicePassword gets a reference to the given NullableString and assigns it to the ServicePassword field.
 func (o *GetCluster200ResponseCluster) SetServicePassword(v string) {
 	o.ServicePassword.Set(&v)
-}
-
-// SetServicePasswordNil sets the value for ServicePassword to be an explicit nil
-func (o *GetCluster200ResponseCluster) SetServicePasswordNil() {
-	o.ServicePassword.Set(nil)
-}
-
-// UnsetServicePassword ensures that no value is present for ServicePassword, not even an explicit nil
-func (o *GetCluster200ResponseCluster) UnsetServicePassword() {
-	o.ServicePassword.Unset()
 }
 
 // GetServicePasswordHash returns the ServicePasswordHash field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -758,28 +514,9 @@ func (o *GetCluster200ResponseCluster) GetServicePasswordHashOk() (*string, bool
 	return o.ServicePasswordHash.Get(), o.ServicePasswordHash.IsSet()
 }
 
-// IsSetServicePasswordHash returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetServicePasswordHash() bool {
-	if o != nil && o.ServicePasswordHash.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServicePasswordHash gets a reference to the given NullableString and assigns it to the ServicePasswordHash field.
 func (o *GetCluster200ResponseCluster) SetServicePasswordHash(v string) {
 	o.ServicePasswordHash.Set(&v)
-}
-
-// SetServicePasswordHashNil sets the value for ServicePasswordHash to be an explicit nil
-func (o *GetCluster200ResponseCluster) SetServicePasswordHashNil() {
-	o.ServicePasswordHash.Set(nil)
-}
-
-// UnsetServicePasswordHash ensures that no value is present for ServicePasswordHash, not even an explicit nil
-func (o *GetCluster200ResponseCluster) UnsetServicePasswordHash() {
-	o.ServicePasswordHash.Unset()
 }
 
 // GetServiceToken returns the ServiceToken field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -801,28 +538,9 @@ func (o *GetCluster200ResponseCluster) GetServiceTokenOk() (*string, bool) {
 	return o.ServiceToken.Get(), o.ServiceToken.IsSet()
 }
 
-// IsSetServiceToken returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetServiceToken() bool {
-	if o != nil && o.ServiceToken.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceToken gets a reference to the given NullableString and assigns it to the ServiceToken field.
 func (o *GetCluster200ResponseCluster) SetServiceToken(v string) {
 	o.ServiceToken.Set(&v)
-}
-
-// SetServiceTokenNil sets the value for ServiceToken to be an explicit nil
-func (o *GetCluster200ResponseCluster) SetServiceTokenNil() {
-	o.ServiceToken.Set(nil)
-}
-
-// UnsetServiceToken ensures that no value is present for ServiceToken, not even an explicit nil
-func (o *GetCluster200ResponseCluster) UnsetServiceToken() {
-	o.ServiceToken.Unset()
 }
 
 // GetServiceTokenHash returns the ServiceTokenHash field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -844,28 +562,9 @@ func (o *GetCluster200ResponseCluster) GetServiceTokenHashOk() (*string, bool) {
 	return o.ServiceTokenHash.Get(), o.ServiceTokenHash.IsSet()
 }
 
-// IsSetServiceTokenHash returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetServiceTokenHash() bool {
-	if o != nil && o.ServiceTokenHash.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceTokenHash gets a reference to the given NullableString and assigns it to the ServiceTokenHash field.
 func (o *GetCluster200ResponseCluster) SetServiceTokenHash(v string) {
 	o.ServiceTokenHash.Set(&v)
-}
-
-// SetServiceTokenHashNil sets the value for ServiceTokenHash to be an explicit nil
-func (o *GetCluster200ResponseCluster) SetServiceTokenHashNil() {
-	o.ServiceTokenHash.Set(nil)
-}
-
-// UnsetServiceTokenHash ensures that no value is present for ServiceTokenHash, not even an explicit nil
-func (o *GetCluster200ResponseCluster) UnsetServiceTokenHash() {
-	o.ServiceTokenHash.Unset()
 }
 
 // GetServiceAccess returns the ServiceAccess field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -887,28 +586,9 @@ func (o *GetCluster200ResponseCluster) GetServiceAccessOk() (*string, bool) {
 	return o.ServiceAccess.Get(), o.ServiceAccess.IsSet()
 }
 
-// IsSetServiceAccess returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetServiceAccess() bool {
-	if o != nil && o.ServiceAccess.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceAccess gets a reference to the given NullableString and assigns it to the ServiceAccess field.
 func (o *GetCluster200ResponseCluster) SetServiceAccess(v string) {
 	o.ServiceAccess.Set(&v)
-}
-
-// SetServiceAccessNil sets the value for ServiceAccess to be an explicit nil
-func (o *GetCluster200ResponseCluster) SetServiceAccessNil() {
-	o.ServiceAccess.Set(nil)
-}
-
-// UnsetServiceAccess ensures that no value is present for ServiceAccess, not even an explicit nil
-func (o *GetCluster200ResponseCluster) UnsetServiceAccess() {
-	o.ServiceAccess.Unset()
 }
 
 // GetServiceAccessHash returns the ServiceAccessHash field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -930,28 +610,9 @@ func (o *GetCluster200ResponseCluster) GetServiceAccessHashOk() (*string, bool) 
 	return o.ServiceAccessHash.Get(), o.ServiceAccessHash.IsSet()
 }
 
-// IsSetServiceAccessHash returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetServiceAccessHash() bool {
-	if o != nil && o.ServiceAccessHash.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceAccessHash gets a reference to the given NullableString and assigns it to the ServiceAccessHash field.
 func (o *GetCluster200ResponseCluster) SetServiceAccessHash(v string) {
 	o.ServiceAccessHash.Set(&v)
-}
-
-// SetServiceAccessHashNil sets the value for ServiceAccessHash to be an explicit nil
-func (o *GetCluster200ResponseCluster) SetServiceAccessHashNil() {
-	o.ServiceAccessHash.Set(nil)
-}
-
-// UnsetServiceAccessHash ensures that no value is present for ServiceAccessHash, not even an explicit nil
-func (o *GetCluster200ResponseCluster) UnsetServiceAccessHash() {
-	o.ServiceAccessHash.Unset()
 }
 
 // GetServiceCert returns the ServiceCert field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -973,28 +634,9 @@ func (o *GetCluster200ResponseCluster) GetServiceCertOk() (*string, bool) {
 	return o.ServiceCert.Get(), o.ServiceCert.IsSet()
 }
 
-// IsSetServiceCert returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetServiceCert() bool {
-	if o != nil && o.ServiceCert.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceCert gets a reference to the given NullableString and assigns it to the ServiceCert field.
 func (o *GetCluster200ResponseCluster) SetServiceCert(v string) {
 	o.ServiceCert.Set(&v)
-}
-
-// SetServiceCertNil sets the value for ServiceCert to be an explicit nil
-func (o *GetCluster200ResponseCluster) SetServiceCertNil() {
-	o.ServiceCert.Set(nil)
-}
-
-// UnsetServiceCert ensures that no value is present for ServiceCert, not even an explicit nil
-func (o *GetCluster200ResponseCluster) UnsetServiceCert() {
-	o.ServiceCert.Unset()
 }
 
 // GetServiceCertHash returns the ServiceCertHash field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1016,28 +658,9 @@ func (o *GetCluster200ResponseCluster) GetServiceCertHashOk() (*string, bool) {
 	return o.ServiceCertHash.Get(), o.ServiceCertHash.IsSet()
 }
 
-// IsSetServiceCertHash returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetServiceCertHash() bool {
-	if o != nil && o.ServiceCertHash.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceCertHash gets a reference to the given NullableString and assigns it to the ServiceCertHash field.
 func (o *GetCluster200ResponseCluster) SetServiceCertHash(v string) {
 	o.ServiceCertHash.Set(&v)
-}
-
-// SetServiceCertHashNil sets the value for ServiceCertHash to be an explicit nil
-func (o *GetCluster200ResponseCluster) SetServiceCertHashNil() {
-	o.ServiceCertHash.Set(nil)
-}
-
-// UnsetServiceCertHash ensures that no value is present for ServiceCertHash, not even an explicit nil
-func (o *GetCluster200ResponseCluster) UnsetServiceCertHash() {
-	o.ServiceCertHash.Unset()
 }
 
 // GetServiceVersion returns the ServiceVersion field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1059,28 +682,9 @@ func (o *GetCluster200ResponseCluster) GetServiceVersionOk() (*string, bool) {
 	return o.ServiceVersion.Get(), o.ServiceVersion.IsSet()
 }
 
-// IsSetServiceVersion returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetServiceVersion() bool {
-	if o != nil && o.ServiceVersion.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceVersion gets a reference to the given NullableString and assigns it to the ServiceVersion field.
 func (o *GetCluster200ResponseCluster) SetServiceVersion(v string) {
 	o.ServiceVersion.Set(&v)
-}
-
-// SetServiceVersionNil sets the value for ServiceVersion to be an explicit nil
-func (o *GetCluster200ResponseCluster) SetServiceVersionNil() {
-	o.ServiceVersion.Set(nil)
-}
-
-// UnsetServiceVersion ensures that no value is present for ServiceVersion, not even an explicit nil
-func (o *GetCluster200ResponseCluster) UnsetServiceVersion() {
-	o.ServiceVersion.Unset()
 }
 
 // GetSearchDomains returns the SearchDomains field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1102,28 +706,9 @@ func (o *GetCluster200ResponseCluster) GetSearchDomainsOk() (*string, bool) {
 	return o.SearchDomains.Get(), o.SearchDomains.IsSet()
 }
 
-// IsSetSearchDomains returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetSearchDomains() bool {
-	if o != nil && o.SearchDomains.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSearchDomains gets a reference to the given NullableString and assigns it to the SearchDomains field.
 func (o *GetCluster200ResponseCluster) SetSearchDomains(v string) {
 	o.SearchDomains.Set(&v)
-}
-
-// SetSearchDomainsNil sets the value for SearchDomains to be an explicit nil
-func (o *GetCluster200ResponseCluster) SetSearchDomainsNil() {
-	o.SearchDomains.Set(nil)
-}
-
-// UnsetSearchDomains ensures that no value is present for SearchDomains, not even an explicit nil
-func (o *GetCluster200ResponseCluster) UnsetSearchDomains() {
-	o.SearchDomains.Unset()
 }
 
 // GetEnableInternalDns returns the EnableInternalDns field value if set, zero value otherwise.
@@ -1142,15 +727,6 @@ func (o *GetCluster200ResponseCluster) GetEnableInternalDnsOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.EnableInternalDns, true
-}
-
-// IsSetEnableInternalDns returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetEnableInternalDns() bool {
-	if o != nil && !IsNil(o.EnableInternalDns) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnableInternalDns gets a reference to the given bool and assigns it to the EnableInternalDns field.
@@ -1177,28 +753,9 @@ func (o *GetCluster200ResponseCluster) GetInternalIdOk() (*string, bool) {
 	return o.InternalId.Get(), o.InternalId.IsSet()
 }
 
-// IsSetInternalId returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetInternalId() bool {
-	if o != nil && o.InternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInternalId gets a reference to the given NullableString and assigns it to the InternalId field.
 func (o *GetCluster200ResponseCluster) SetInternalId(v string) {
 	o.InternalId.Set(&v)
-}
-
-// SetInternalIdNil sets the value for InternalId to be an explicit nil
-func (o *GetCluster200ResponseCluster) SetInternalIdNil() {
-	o.InternalId.Set(nil)
-}
-
-// UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
-func (o *GetCluster200ResponseCluster) UnsetInternalId() {
-	o.InternalId.Unset()
 }
 
 // GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1220,28 +777,9 @@ func (o *GetCluster200ResponseCluster) GetExternalIdOk() (*string, bool) {
 	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetExternalId() bool {
-	if o != nil && o.ExternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *GetCluster200ResponseCluster) SetExternalId(v string) {
 	o.ExternalId.Set(&v)
-}
-
-// SetExternalIdNil sets the value for ExternalId to be an explicit nil
-func (o *GetCluster200ResponseCluster) SetExternalIdNil() {
-	o.ExternalId.Set(nil)
-}
-
-// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-func (o *GetCluster200ResponseCluster) UnsetExternalId() {
-	o.ExternalId.Unset()
 }
 
 // GetDatacenterId returns the DatacenterId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1263,28 +801,9 @@ func (o *GetCluster200ResponseCluster) GetDatacenterIdOk() (*string, bool) {
 	return o.DatacenterId.Get(), o.DatacenterId.IsSet()
 }
 
-// IsSetDatacenterId returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetDatacenterId() bool {
-	if o != nil && o.DatacenterId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDatacenterId gets a reference to the given NullableString and assigns it to the DatacenterId field.
 func (o *GetCluster200ResponseCluster) SetDatacenterId(v string) {
 	o.DatacenterId.Set(&v)
-}
-
-// SetDatacenterIdNil sets the value for DatacenterId to be an explicit nil
-func (o *GetCluster200ResponseCluster) SetDatacenterIdNil() {
-	o.DatacenterId.Set(nil)
-}
-
-// UnsetDatacenterId ensures that no value is present for DatacenterId, not even an explicit nil
-func (o *GetCluster200ResponseCluster) UnsetDatacenterId() {
-	o.DatacenterId.Unset()
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -1303,15 +822,6 @@ func (o *GetCluster200ResponseCluster) GetStatusOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -1338,28 +848,9 @@ func (o *GetCluster200ResponseCluster) GetStatusDateOk() (*time.Time, bool) {
 	return o.StatusDate.Get(), o.StatusDate.IsSet()
 }
 
-// IsSetStatusDate returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetStatusDate() bool {
-	if o != nil && o.StatusDate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusDate gets a reference to the given NullableTime and assigns it to the StatusDate field.
 func (o *GetCluster200ResponseCluster) SetStatusDate(v time.Time) {
 	o.StatusDate.Set(&v)
-}
-
-// SetStatusDateNil sets the value for StatusDate to be an explicit nil
-func (o *GetCluster200ResponseCluster) SetStatusDateNil() {
-	o.StatusDate.Set(nil)
-}
-
-// UnsetStatusDate ensures that no value is present for StatusDate, not even an explicit nil
-func (o *GetCluster200ResponseCluster) UnsetStatusDate() {
-	o.StatusDate.Unset()
 }
 
 // GetStatusMessage returns the StatusMessage field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1381,28 +872,9 @@ func (o *GetCluster200ResponseCluster) GetStatusMessageOk() (*string, bool) {
 	return o.StatusMessage.Get(), o.StatusMessage.IsSet()
 }
 
-// IsSetStatusMessage returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetStatusMessage() bool {
-	if o != nil && o.StatusMessage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusMessage gets a reference to the given NullableString and assigns it to the StatusMessage field.
 func (o *GetCluster200ResponseCluster) SetStatusMessage(v string) {
 	o.StatusMessage.Set(&v)
-}
-
-// SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
-func (o *GetCluster200ResponseCluster) SetStatusMessageNil() {
-	o.StatusMessage.Set(nil)
-}
-
-// UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
-func (o *GetCluster200ResponseCluster) UnsetStatusMessage() {
-	o.StatusMessage.Unset()
 }
 
 // GetInventoryLevel returns the InventoryLevel field value if set, zero value otherwise.
@@ -1421,15 +893,6 @@ func (o *GetCluster200ResponseCluster) GetInventoryLevelOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InventoryLevel, true
-}
-
-// IsSetInventoryLevel returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetInventoryLevel() bool {
-	if o != nil && !IsNil(o.InventoryLevel) {
-		return true
-	}
-
-	return false
 }
 
 // SetInventoryLevel gets a reference to the given string and assigns it to the InventoryLevel field.
@@ -1456,28 +919,9 @@ func (o *GetCluster200ResponseCluster) GetLastSyncOk() (*time.Time, bool) {
 	return o.LastSync.Get(), o.LastSync.IsSet()
 }
 
-// IsSetLastSync returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetLastSync() bool {
-	if o != nil && o.LastSync.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastSync gets a reference to the given NullableTime and assigns it to the LastSync field.
 func (o *GetCluster200ResponseCluster) SetLastSync(v time.Time) {
 	o.LastSync.Set(&v)
-}
-
-// SetLastSyncNil sets the value for LastSync to be an explicit nil
-func (o *GetCluster200ResponseCluster) SetLastSyncNil() {
-	o.LastSync.Set(nil)
-}
-
-// UnsetLastSync ensures that no value is present for LastSync, not even an explicit nil
-func (o *GetCluster200ResponseCluster) UnsetLastSync() {
-	o.LastSync.Unset()
 }
 
 // GetNextRunDate returns the NextRunDate field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1499,28 +943,9 @@ func (o *GetCluster200ResponseCluster) GetNextRunDateOk() (*time.Time, bool) {
 	return o.NextRunDate.Get(), o.NextRunDate.IsSet()
 }
 
-// IsSetNextRunDate returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetNextRunDate() bool {
-	if o != nil && o.NextRunDate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNextRunDate gets a reference to the given NullableTime and assigns it to the NextRunDate field.
 func (o *GetCluster200ResponseCluster) SetNextRunDate(v time.Time) {
 	o.NextRunDate.Set(&v)
-}
-
-// SetNextRunDateNil sets the value for NextRunDate to be an explicit nil
-func (o *GetCluster200ResponseCluster) SetNextRunDateNil() {
-	o.NextRunDate.Set(nil)
-}
-
-// UnsetNextRunDate ensures that no value is present for NextRunDate, not even an explicit nil
-func (o *GetCluster200ResponseCluster) UnsetNextRunDate() {
-	o.NextRunDate.Unset()
 }
 
 // GetLastSyncDuration returns the LastSyncDuration field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1542,28 +967,9 @@ func (o *GetCluster200ResponseCluster) GetLastSyncDurationOk() (*int64, bool) {
 	return o.LastSyncDuration.Get(), o.LastSyncDuration.IsSet()
 }
 
-// IsSetLastSyncDuration returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetLastSyncDuration() bool {
-	if o != nil && o.LastSyncDuration.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastSyncDuration gets a reference to the given NullableInt64 and assigns it to the LastSyncDuration field.
 func (o *GetCluster200ResponseCluster) SetLastSyncDuration(v int64) {
 	o.LastSyncDuration.Set(&v)
-}
-
-// SetLastSyncDurationNil sets the value for LastSyncDuration to be an explicit nil
-func (o *GetCluster200ResponseCluster) SetLastSyncDurationNil() {
-	o.LastSyncDuration.Set(nil)
-}
-
-// UnsetLastSyncDuration ensures that no value is present for LastSyncDuration, not even an explicit nil
-func (o *GetCluster200ResponseCluster) UnsetLastSyncDuration() {
-	o.LastSyncDuration.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -1582,15 +988,6 @@ func (o *GetCluster200ResponseCluster) GetDateCreatedOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.DateCreated, true
-}
-
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
@@ -1616,15 +1013,6 @@ func (o *GetCluster200ResponseCluster) GetLastUpdatedOk() (*time.Time, bool) {
 	return o.LastUpdated, true
 }
 
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
-}
-
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
 func (o *GetCluster200ResponseCluster) SetLastUpdated(v time.Time) {
 	o.LastUpdated = &v
@@ -1646,15 +1034,6 @@ func (o *GetCluster200ResponseCluster) GetManagedOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Managed, true
-}
-
-// IsSetManaged returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetManaged() bool {
-	if o != nil && !IsNil(o.Managed) {
-		return true
-	}
-
-	return false
 }
 
 // SetManaged gets a reference to the given bool and assigns it to the Managed field.
@@ -1681,15 +1060,6 @@ func (o *GetCluster200ResponseCluster) GetLabelsOk() ([]string, bool) {
 	return o.Labels, true
 }
 
-// IsSetLabels returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
-}
-
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
 func (o *GetCluster200ResponseCluster) SetLabels(v []string) {
 	o.Labels = v
@@ -1711,15 +1081,6 @@ func (o *GetCluster200ResponseCluster) GetAutoRecoverPowerStateOk() (*bool, bool
 		return nil, false
 	}
 	return o.AutoRecoverPowerState, true
-}
-
-// IsSetAutoRecoverPowerState returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetAutoRecoverPowerState() bool {
-	if o != nil && !IsNil(o.AutoRecoverPowerState) {
-		return true
-	}
-
-	return false
 }
 
 // SetAutoRecoverPowerState gets a reference to the given bool and assigns it to the AutoRecoverPowerState field.
@@ -1746,28 +1107,9 @@ func (o *GetCluster200ResponseCluster) GetCpuPlacementModeOk() (*string, bool) {
 	return o.CpuPlacementMode.Get(), o.CpuPlacementMode.IsSet()
 }
 
-// IsSetCpuPlacementMode returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetCpuPlacementMode() bool {
-	if o != nil && o.CpuPlacementMode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuPlacementMode gets a reference to the given NullableString and assigns it to the CpuPlacementMode field.
 func (o *GetCluster200ResponseCluster) SetCpuPlacementMode(v string) {
 	o.CpuPlacementMode.Set(&v)
-}
-
-// SetCpuPlacementModeNil sets the value for CpuPlacementMode to be an explicit nil
-func (o *GetCluster200ResponseCluster) SetCpuPlacementModeNil() {
-	o.CpuPlacementMode.Set(nil)
-}
-
-// UnsetCpuPlacementMode ensures that no value is present for CpuPlacementMode, not even an explicit nil
-func (o *GetCluster200ResponseCluster) UnsetCpuPlacementMode() {
-	o.CpuPlacementMode.Unset()
 }
 
 // GetUseAgent returns the UseAgent field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1789,28 +1131,9 @@ func (o *GetCluster200ResponseCluster) GetUseAgentOk() (*string, bool) {
 	return o.UseAgent.Get(), o.UseAgent.IsSet()
 }
 
-// IsSetUseAgent returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetUseAgent() bool {
-	if o != nil && o.UseAgent.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUseAgent gets a reference to the given NullableString and assigns it to the UseAgent field.
 func (o *GetCluster200ResponseCluster) SetUseAgent(v string) {
 	o.UseAgent.Set(&v)
-}
-
-// SetUseAgentNil sets the value for UseAgent to be an explicit nil
-func (o *GetCluster200ResponseCluster) SetUseAgentNil() {
-	o.UseAgent.Set(nil)
-}
-
-// UnsetUseAgent ensures that no value is present for UseAgent, not even an explicit nil
-func (o *GetCluster200ResponseCluster) UnsetUseAgent() {
-	o.UseAgent.Unset()
 }
 
 // GetProvisionComplete returns the ProvisionComplete field value if set, zero value otherwise.
@@ -1829,15 +1152,6 @@ func (o *GetCluster200ResponseCluster) GetProvisionCompleteOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.ProvisionComplete, true
-}
-
-// IsSetProvisionComplete returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetProvisionComplete() bool {
-	if o != nil && !IsNil(o.ProvisionComplete) {
-		return true
-	}
-
-	return false
 }
 
 // SetProvisionComplete gets a reference to the given bool and assigns it to the ProvisionComplete field.
@@ -1864,28 +1178,9 @@ func (o *GetCluster200ResponseCluster) GetServiceEntryOk() (*string, bool) {
 	return o.ServiceEntry.Get(), o.ServiceEntry.IsSet()
 }
 
-// IsSetServiceEntry returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetServiceEntry() bool {
-	if o != nil && o.ServiceEntry.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceEntry gets a reference to the given NullableString and assigns it to the ServiceEntry field.
 func (o *GetCluster200ResponseCluster) SetServiceEntry(v string) {
 	o.ServiceEntry.Set(&v)
-}
-
-// SetServiceEntryNil sets the value for ServiceEntry to be an explicit nil
-func (o *GetCluster200ResponseCluster) SetServiceEntryNil() {
-	o.ServiceEntry.Set(nil)
-}
-
-// UnsetServiceEntry ensures that no value is present for ServiceEntry, not even an explicit nil
-func (o *GetCluster200ResponseCluster) UnsetServiceEntry() {
-	o.ServiceEntry.Unset()
 }
 
 // GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
@@ -1904,15 +1199,6 @@ func (o *GetCluster200ResponseCluster) GetCreatedByOk() (*GetCluster200ResponseC
 		return nil, false
 	}
 	return o.CreatedBy, true
-}
-
-// IsSetCreatedBy returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetCreatedBy() bool {
-	if o != nil && !IsNil(o.CreatedBy) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreatedBy gets a reference to the given GetCluster200ResponseClusterCreatedBy and assigns it to the CreatedBy field.
@@ -1939,28 +1225,9 @@ func (o *GetCluster200ResponseCluster) GetUserGroupOk() (*string, bool) {
 	return o.UserGroup.Get(), o.UserGroup.IsSet()
 }
 
-// IsSetUserGroup returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetUserGroup() bool {
-	if o != nil && o.UserGroup.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUserGroup gets a reference to the given NullableString and assigns it to the UserGroup field.
 func (o *GetCluster200ResponseCluster) SetUserGroup(v string) {
 	o.UserGroup.Set(&v)
-}
-
-// SetUserGroupNil sets the value for UserGroup to be an explicit nil
-func (o *GetCluster200ResponseCluster) SetUserGroupNil() {
-	o.UserGroup.Set(nil)
-}
-
-// UnsetUserGroup ensures that no value is present for UserGroup, not even an explicit nil
-func (o *GetCluster200ResponseCluster) UnsetUserGroup() {
-	o.UserGroup.Unset()
 }
 
 // GetLayout returns the Layout field value if set, zero value otherwise.
@@ -1979,15 +1246,6 @@ func (o *GetCluster200ResponseCluster) GetLayoutOk() (*GetCluster200ResponseClus
 		return nil, false
 	}
 	return o.Layout, true
-}
-
-// IsSetLayout returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetLayout() bool {
-	if o != nil && !IsNil(o.Layout) {
-		return true
-	}
-
-	return false
 }
 
 // SetLayout gets a reference to the given GetCluster200ResponseClusterLayout and assigns it to the Layout field.
@@ -2013,15 +1271,6 @@ func (o *GetCluster200ResponseCluster) GetOwnerOk() (*GetCluster200ResponseClust
 	return o.Owner, true
 }
 
-// IsSetOwner returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
-		return true
-	}
-
-	return false
-}
-
 // SetOwner gets a reference to the given GetCluster200ResponseClusterOwner and assigns it to the Owner field.
 func (o *GetCluster200ResponseCluster) SetOwner(v GetCluster200ResponseClusterOwner) {
 	o.Owner = &v
@@ -2043,15 +1292,6 @@ func (o *GetCluster200ResponseCluster) GetServersOk() ([]GetCluster200ResponseCl
 		return nil, false
 	}
 	return o.Servers, true
-}
-
-// IsSetServers returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetServers() bool {
-	if o != nil && !IsNil(o.Servers) {
-		return true
-	}
-
-	return false
 }
 
 // SetServers gets a reference to the given []GetCluster200ResponseClusterServersInner and assigns it to the Servers field.
@@ -2077,15 +1317,6 @@ func (o *GetCluster200ResponseCluster) GetAccountsOk() ([]map[string]interface{}
 	return o.Accounts, true
 }
 
-// IsSetAccounts returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetAccounts() bool {
-	if o != nil && !IsNil(o.Accounts) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccounts gets a reference to the given []map[string]interface{} and assigns it to the Accounts field.
 func (o *GetCluster200ResponseCluster) SetAccounts(v []map[string]interface{}) {
 	o.Accounts = v
@@ -2107,15 +1338,6 @@ func (o *GetCluster200ResponseCluster) GetIntegrationsOk() ([]map[string]interfa
 		return nil, false
 	}
 	return o.Integrations, true
-}
-
-// IsSetIntegrations returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetIntegrations() bool {
-	if o != nil && !IsNil(o.Integrations) {
-		return true
-	}
-
-	return false
 }
 
 // SetIntegrations gets a reference to the given []map[string]interface{} and assigns it to the Integrations field.
@@ -2141,15 +1363,6 @@ func (o *GetCluster200ResponseCluster) GetSiteOk() (*GetCluster200ResponseCluste
 	return o.Site, true
 }
 
-// IsSetSite returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetSite() bool {
-	if o != nil && !IsNil(o.Site) {
-		return true
-	}
-
-	return false
-}
-
 // SetSite gets a reference to the given GetCluster200ResponseClusterSite and assigns it to the Site field.
 func (o *GetCluster200ResponseCluster) SetSite(v GetCluster200ResponseClusterSite) {
 	o.Site = &v
@@ -2171,15 +1384,6 @@ func (o *GetCluster200ResponseCluster) GetTypeOk() (*GetCluster200ResponseCluste
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given GetCluster200ResponseClusterType and assigns it to the Type field.
@@ -2205,15 +1409,6 @@ func (o *GetCluster200ResponseCluster) GetZoneOk() (*GetCluster200ResponseCluste
 	return o.Zone, true
 }
 
-// IsSetZone returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetZone() bool {
-	if o != nil && !IsNil(o.Zone) {
-		return true
-	}
-
-	return false
-}
-
 // SetZone gets a reference to the given GetCluster200ResponseClusterZone and assigns it to the Zone field.
 func (o *GetCluster200ResponseCluster) SetZone(v GetCluster200ResponseClusterZone) {
 	o.Zone = &v
@@ -2235,15 +1430,6 @@ func (o *GetCluster200ResponseCluster) GetWorkerStatsOk() (*GetCluster200Respons
 		return nil, false
 	}
 	return o.WorkerStats, true
-}
-
-// IsSetWorkerStats returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetWorkerStats() bool {
-	if o != nil && !IsNil(o.WorkerStats) {
-		return true
-	}
-
-	return false
 }
 
 // SetWorkerStats gets a reference to the given GetCluster200ResponseClusterWorkerStats and assigns it to the WorkerStats field.
@@ -2269,15 +1455,6 @@ func (o *GetCluster200ResponseCluster) GetContainersCountOk() (*int64, bool) {
 	return o.ContainersCount, true
 }
 
-// IsSetContainersCount returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetContainersCount() bool {
-	if o != nil && !IsNil(o.ContainersCount) {
-		return true
-	}
-
-	return false
-}
-
 // SetContainersCount gets a reference to the given int64 and assigns it to the ContainersCount field.
 func (o *GetCluster200ResponseCluster) SetContainersCount(v int64) {
 	o.ContainersCount = &v
@@ -2299,15 +1476,6 @@ func (o *GetCluster200ResponseCluster) GetDeploymentsCountOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.DeploymentsCount, true
-}
-
-// IsSetDeploymentsCount returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetDeploymentsCount() bool {
-	if o != nil && !IsNil(o.DeploymentsCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetDeploymentsCount gets a reference to the given int64 and assigns it to the DeploymentsCount field.
@@ -2333,15 +1501,6 @@ func (o *GetCluster200ResponseCluster) GetPodsCountOk() (*int64, bool) {
 	return o.PodsCount, true
 }
 
-// IsSetPodsCount returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetPodsCount() bool {
-	if o != nil && !IsNil(o.PodsCount) {
-		return true
-	}
-
-	return false
-}
-
 // SetPodsCount gets a reference to the given int64 and assigns it to the PodsCount field.
 func (o *GetCluster200ResponseCluster) SetPodsCount(v int64) {
 	o.PodsCount = &v
@@ -2363,15 +1522,6 @@ func (o *GetCluster200ResponseCluster) GetJobsCountOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.JobsCount, true
-}
-
-// IsSetJobsCount returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetJobsCount() bool {
-	if o != nil && !IsNil(o.JobsCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetJobsCount gets a reference to the given int64 and assigns it to the JobsCount field.
@@ -2397,15 +1547,6 @@ func (o *GetCluster200ResponseCluster) GetVolumesCountOk() (*int64, bool) {
 	return o.VolumesCount, true
 }
 
-// IsSetVolumesCount returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetVolumesCount() bool {
-	if o != nil && !IsNil(o.VolumesCount) {
-		return true
-	}
-
-	return false
-}
-
 // SetVolumesCount gets a reference to the given int64 and assigns it to the VolumesCount field.
 func (o *GetCluster200ResponseCluster) SetVolumesCount(v int64) {
 	o.VolumesCount = &v
@@ -2427,15 +1568,6 @@ func (o *GetCluster200ResponseCluster) GetNamespacesCountOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.NamespacesCount, true
-}
-
-// IsSetNamespacesCount returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetNamespacesCount() bool {
-	if o != nil && !IsNil(o.NamespacesCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetNamespacesCount gets a reference to the given int64 and assigns it to the NamespacesCount field.
@@ -2461,15 +1593,6 @@ func (o *GetCluster200ResponseCluster) GetWorkersCountOk() (*int64, bool) {
 	return o.WorkersCount, true
 }
 
-// IsSetWorkersCount returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetWorkersCount() bool {
-	if o != nil && !IsNil(o.WorkersCount) {
-		return true
-	}
-
-	return false
-}
-
 // SetWorkersCount gets a reference to the given int64 and assigns it to the WorkersCount field.
 func (o *GetCluster200ResponseCluster) SetWorkersCount(v int64) {
 	o.WorkersCount = &v
@@ -2491,15 +1614,6 @@ func (o *GetCluster200ResponseCluster) GetServicesCountOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.ServicesCount, true
-}
-
-// IsSetServicesCount returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetServicesCount() bool {
-	if o != nil && !IsNil(o.ServicesCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetServicesCount gets a reference to the given int64 and assigns it to the ServicesCount field.
@@ -2525,15 +1639,6 @@ func (o *GetCluster200ResponseCluster) GetPermissionsOk() (*GetCluster200Respons
 	return o.Permissions, true
 }
 
-// IsSetPermissions returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetPermissions() bool {
-	if o != nil && !IsNil(o.Permissions) {
-		return true
-	}
-
-	return false
-}
-
 // SetPermissions gets a reference to the given GetCluster200ResponseClusterPermissions and assigns it to the Permissions field.
 func (o *GetCluster200ResponseCluster) SetPermissions(v GetCluster200ResponseClusterPermissions) {
 	o.Permissions = &v
@@ -2555,15 +1660,6 @@ func (o *GetCluster200ResponseCluster) GetConfigOk() (map[string]interface{}, bo
 		return map[string]interface{}{}, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *GetCluster200ResponseCluster) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.

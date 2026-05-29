@@ -79,15 +79,6 @@ func (o *UpdateIdentitySourcesRequestUserSource) GetAccountOk() (*UpdateIdentity
 	return o.Account, true
 }
 
-// IsSetAccount returns a boolean if a field has been set.
-func (o *UpdateIdentitySourcesRequestUserSource) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccount gets a reference to the given UpdateIdentitySourcesRequestUserSourceAccount and assigns it to the Account field.
 func (o *UpdateIdentitySourcesRequestUserSource) SetAccount(v UpdateIdentitySourcesRequestUserSourceAccount) {
 	o.Account = &v
@@ -159,15 +150,6 @@ func (o *UpdateIdentitySourcesRequestUserSource) GetDescriptionOk() (*string, bo
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *UpdateIdentitySourcesRequestUserSource) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *UpdateIdentitySourcesRequestUserSource) SetDescription(v string) {
 	o.Description = &v
@@ -191,15 +173,6 @@ func (o *UpdateIdentitySourcesRequestUserSource) GetDefaultAccountRoleOk() (*Upd
 	return o.DefaultAccountRole, true
 }
 
-// IsSetDefaultAccountRole returns a boolean if a field has been set.
-func (o *UpdateIdentitySourcesRequestUserSource) IsSetDefaultAccountRole() bool {
-	if o != nil && !IsNil(o.DefaultAccountRole) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultAccountRole gets a reference to the given UpdateIdentitySourcesRequestUserSourceDefaultAccountRole and assigns it to the DefaultAccountRole field.
 func (o *UpdateIdentitySourcesRequestUserSource) SetDefaultAccountRole(v UpdateIdentitySourcesRequestUserSourceDefaultAccountRole) {
 	o.DefaultAccountRole = &v
@@ -221,15 +194,6 @@ func (o *UpdateIdentitySourcesRequestUserSource) GetRoleMappingsOk() (*UpdateIde
 		return nil, false
 	}
 	return o.RoleMappings, true
-}
-
-// IsSetRoleMappings returns a boolean if a field has been set.
-func (o *UpdateIdentitySourcesRequestUserSource) IsSetRoleMappings() bool {
-	if o != nil && !IsNil(o.RoleMappings) {
-		return true
-	}
-
-	return false
 }
 
 // SetRoleMappings gets a reference to the given UpdateIdentitySourcesRequestUserSourceRoleMappings and assigns it to the RoleMappings field.
@@ -257,15 +221,6 @@ func (o *UpdateIdentitySourcesRequestUserSource) GetRoleMappingNamesOk() (map[st
 	return o.RoleMappingNames, true
 }
 
-// IsSetRoleMappingNames returns a boolean if a field has been set.
-func (o *UpdateIdentitySourcesRequestUserSource) IsSetRoleMappingNames() bool {
-	if o != nil && !IsNil(o.RoleMappingNames) {
-		return true
-	}
-
-	return false
-}
-
 // SetRoleMappingNames gets a reference to the given map[string]string and assigns it to the RoleMappingNames field.
 // Deprecated
 func (o *UpdateIdentitySourcesRequestUserSource) SetRoleMappingNames(v map[string]string) {
@@ -288,15 +243,6 @@ func (o *UpdateIdentitySourcesRequestUserSource) GetAllowCustomMappingsOk() (*bo
 		return nil, false
 	}
 	return o.AllowCustomMappings, true
-}
-
-// IsSetAllowCustomMappings returns a boolean if a field has been set.
-func (o *UpdateIdentitySourcesRequestUserSource) IsSetAllowCustomMappings() bool {
-	if o != nil && !IsNil(o.AllowCustomMappings) {
-		return true
-	}
-
-	return false
 }
 
 // SetAllowCustomMappings gets a reference to the given bool and assigns it to the AllowCustomMappings field.
@@ -322,15 +268,6 @@ func (o *UpdateIdentitySourcesRequestUserSource) GetManualRoleAssignmentOk() (*b
 	return o.ManualRoleAssignment, true
 }
 
-// IsSetManualRoleAssignment returns a boolean if a field has been set.
-func (o *UpdateIdentitySourcesRequestUserSource) IsSetManualRoleAssignment() bool {
-	if o != nil && !IsNil(o.ManualRoleAssignment) {
-		return true
-	}
-
-	return false
-}
-
 // SetManualRoleAssignment gets a reference to the given bool and assigns it to the ManualRoleAssignment field.
 func (o *UpdateIdentitySourcesRequestUserSource) SetManualRoleAssignment(v bool) {
 	o.ManualRoleAssignment = &v
@@ -352,15 +289,6 @@ func (o *UpdateIdentitySourcesRequestUserSource) GetConfigOk() (*UpdateIdentityS
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *UpdateIdentitySourcesRequestUserSource) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given UpdateIdentitySourcesRequestUserSourceConfig and assigns it to the Config field.

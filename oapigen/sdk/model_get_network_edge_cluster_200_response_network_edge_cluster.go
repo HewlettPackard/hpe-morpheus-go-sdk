@@ -77,15 +77,6 @@ func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetIdOk() (*int32, 
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int32 and assigns it to the Id field.
 func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) SetId(v int32) {
 	o.Id = &v
@@ -107,15 +98,6 @@ func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetInternalIdOk() (
 		return nil, false
 	}
 	return o.InternalId, true
-}
-
-// IsSetInternalId returns a boolean if a field has been set.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) IsSetInternalId() bool {
-	if o != nil && !IsNil(o.InternalId) {
-		return true
-	}
-
-	return false
 }
 
 // SetInternalId gets a reference to the given string and assigns it to the InternalId field.
@@ -141,15 +123,6 @@ func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetVisibilityOk() (
 	return o.Visibility, true
 }
 
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
-}
-
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
 func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) SetVisibility(v string) {
 	o.Visibility = &v
@@ -171,15 +144,6 @@ func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetDateCreatedOk() 
 		return nil, false
 	}
 	return o.DateCreated, true
-}
-
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
@@ -205,15 +169,6 @@ func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetProviderIdOk() (
 	return o.ProviderId, true
 }
 
-// IsSetProviderId returns a boolean if a field has been set.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) IsSetProviderId() bool {
-	if o != nil && !IsNil(o.ProviderId) {
-		return true
-	}
-
-	return false
-}
-
 // SetProviderId gets a reference to the given string and assigns it to the ProviderId field.
 func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) SetProviderId(v string) {
 	o.ProviderId = &v
@@ -235,15 +190,6 @@ func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetLastUpdatedOk() 
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
@@ -269,15 +215,6 @@ func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetActiveOk() (*boo
 	return o.Active, true
 }
 
-// IsSetActive returns a boolean if a field has been set.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
-}
-
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) SetActive(v bool) {
 	o.Active = &v
@@ -299,15 +236,6 @@ func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetDisplayNameOk() 
 		return nil, false
 	}
 	return o.DisplayName, true
-}
-
-// IsSetDisplayName returns a boolean if a field has been set.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) IsSetDisplayName() bool {
-	if o != nil && !IsNil(o.DisplayName) {
-		return true
-	}
-
-	return false
 }
 
 // SetDisplayName gets a reference to the given string and assigns it to the DisplayName field.
@@ -333,15 +261,6 @@ func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetNameOk() (*strin
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) SetName(v string) {
 	o.Name = &v
@@ -363,15 +282,6 @@ func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetEnabledOk() (*bo
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -397,15 +307,6 @@ func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetExternalIdOk() (
 	return o.ExternalId, true
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
 func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) SetExternalId(v string) {
 	o.ExternalId = &v
@@ -427,15 +328,6 @@ func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetConfigOk() (*Get
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig and assigns it to the Config field.
@@ -461,15 +353,6 @@ func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetOwnerOk() (*GetN
 	return o.Owner, true
 }
 
-// IsSetOwner returns a boolean if a field has been set.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
-		return true
-	}
-
-	return false
-}
-
 // SetOwner gets a reference to the given GetNetworkEdgeCluster200ResponseNetworkEdgeClusterOwner and assigns it to the Owner field.
 func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) SetOwner(v GetNetworkEdgeCluster200ResponseNetworkEdgeClusterOwner) {
 	o.Owner = &v
@@ -491,15 +374,6 @@ func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetNetworkServerOk(
 		return nil, false
 	}
 	return o.NetworkServer, true
-}
-
-// IsSetNetworkServer returns a boolean if a field has been set.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) IsSetNetworkServer() bool {
-	if o != nil && !IsNil(o.NetworkServer) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkServer gets a reference to the given GetNetworkEdgeCluster200ResponseNetworkEdgeClusterNetworkServer and assigns it to the NetworkServer field.
@@ -525,15 +399,6 @@ func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetZoneOk() (*GetNe
 	return o.Zone, true
 }
 
-// IsSetZone returns a boolean if a field has been set.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) IsSetZone() bool {
-	if o != nil && !IsNil(o.Zone) {
-		return true
-	}
-
-	return false
-}
-
 // SetZone gets a reference to the given GetNetworkEdgeCluster200ResponseNetworkEdgeClusterZone and assigns it to the Zone field.
 func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) SetZone(v GetNetworkEdgeCluster200ResponseNetworkEdgeClusterZone) {
 	o.Zone = &v
@@ -555,15 +420,6 @@ func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) GetTenantsOk() ([]G
 		return nil, false
 	}
 	return o.Tenants, true
-}
-
-// IsSetTenants returns a boolean if a field has been set.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) IsSetTenants() bool {
-	if o != nil && !IsNil(o.Tenants) {
-		return true
-	}
-
-	return false
 }
 
 // SetTenants gets a reference to the given []GetNetworkEdgeCluster200ResponseNetworkEdgeClusterTenantsInner and assigns it to the Tenants field.

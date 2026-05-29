@@ -186,15 +186,6 @@ func (o *AddServicePlansRequestServicePlan) GetDescriptionOk() (*string, bool) {
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *AddServicePlansRequestServicePlan) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *AddServicePlansRequestServicePlan) SetDescription(v string) {
 	o.Description = &v
@@ -216,15 +207,6 @@ func (o *AddServicePlansRequestServicePlan) GetRegionCodeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.RegionCode, true
-}
-
-// IsSetRegionCode returns a boolean if a field has been set.
-func (o *AddServicePlansRequestServicePlan) IsSetRegionCode() bool {
-	if o != nil && !IsNil(o.RegionCode) {
-		return true
-	}
-
-	return false
 }
 
 // SetRegionCode gets a reference to the given string and assigns it to the RegionCode field.
@@ -250,15 +232,6 @@ func (o *AddServicePlansRequestServicePlan) GetEditableOk() (*bool, bool) {
 	return o.Editable, true
 }
 
-// IsSetEditable returns a boolean if a field has been set.
-func (o *AddServicePlansRequestServicePlan) IsSetEditable() bool {
-	if o != nil && !IsNil(o.Editable) {
-		return true
-	}
-
-	return false
-}
-
 // SetEditable gets a reference to the given bool and assigns it to the Editable field.
 func (o *AddServicePlansRequestServicePlan) SetEditable(v bool) {
 	o.Editable = &v
@@ -280,15 +253,6 @@ func (o *AddServicePlansRequestServicePlan) GetVisibilityOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *AddServicePlansRequestServicePlan) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -362,15 +326,6 @@ func (o *AddServicePlansRequestServicePlan) GetMaxCoresOk() (*int64, bool) {
 	return o.MaxCores, true
 }
 
-// IsSetMaxCores returns a boolean if a field has been set.
-func (o *AddServicePlansRequestServicePlan) IsSetMaxCores() bool {
-	if o != nil && !IsNil(o.MaxCores) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxCores gets a reference to the given int64 and assigns it to the MaxCores field.
 func (o *AddServicePlansRequestServicePlan) SetMaxCores(v int64) {
 	o.MaxCores = &v
@@ -392,15 +347,6 @@ func (o *AddServicePlansRequestServicePlan) GetMaxCpuOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.MaxCpu, true
-}
-
-// IsSetMaxCpu returns a boolean if a field has been set.
-func (o *AddServicePlansRequestServicePlan) IsSetMaxCpu() bool {
-	if o != nil && !IsNil(o.MaxCpu) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxCpu gets a reference to the given int64 and assigns it to the MaxCpu field.
@@ -426,15 +372,6 @@ func (o *AddServicePlansRequestServicePlan) GetCoresPerSocketOk() (*int64, bool)
 	return o.CoresPerSocket, true
 }
 
-// IsSetCoresPerSocket returns a boolean if a field has been set.
-func (o *AddServicePlansRequestServicePlan) IsSetCoresPerSocket() bool {
-	if o != nil && !IsNil(o.CoresPerSocket) {
-		return true
-	}
-
-	return false
-}
-
 // SetCoresPerSocket gets a reference to the given int64 and assigns it to the CoresPerSocket field.
 func (o *AddServicePlansRequestServicePlan) SetCoresPerSocket(v int64) {
 	o.CoresPerSocket = &v
@@ -458,15 +395,6 @@ func (o *AddServicePlansRequestServicePlan) GetMaxGpusOk() (*int64, bool) {
 	return o.MaxGpus, true
 }
 
-// IsSetMaxGpus returns a boolean if a field has been set.
-func (o *AddServicePlansRequestServicePlan) IsSetMaxGpus() bool {
-	if o != nil && !IsNil(o.MaxGpus) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxGpus gets a reference to the given int64 and assigns it to the MaxGpus field.
 func (o *AddServicePlansRequestServicePlan) SetMaxGpus(v int64) {
 	o.MaxGpus = &v
@@ -488,15 +416,6 @@ func (o *AddServicePlansRequestServicePlan) GetMaxDisksOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.MaxDisks, true
-}
-
-// IsSetMaxDisks returns a boolean if a field has been set.
-func (o *AddServicePlansRequestServicePlan) IsSetMaxDisks() bool {
-	if o != nil && !IsNil(o.MaxDisks) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxDisks gets a reference to the given int64 and assigns it to the MaxDisks field.
@@ -546,15 +465,6 @@ func (o *AddServicePlansRequestServicePlan) GetCustomCpuOk() (*bool, bool) {
 	return o.CustomCpu, true
 }
 
-// IsSetCustomCpu returns a boolean if a field has been set.
-func (o *AddServicePlansRequestServicePlan) IsSetCustomCpu() bool {
-	if o != nil && !IsNil(o.CustomCpu) {
-		return true
-	}
-
-	return false
-}
-
 // SetCustomCpu gets a reference to the given bool and assigns it to the CustomCpu field.
 func (o *AddServicePlansRequestServicePlan) SetCustomCpu(v bool) {
 	o.CustomCpu = &v
@@ -576,15 +486,6 @@ func (o *AddServicePlansRequestServicePlan) GetCustomCoresOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.CustomCores, true
-}
-
-// IsSetCustomCores returns a boolean if a field has been set.
-func (o *AddServicePlansRequestServicePlan) IsSetCustomCores() bool {
-	if o != nil && !IsNil(o.CustomCores) {
-		return true
-	}
-
-	return false
 }
 
 // SetCustomCores gets a reference to the given bool and assigns it to the CustomCores field.
@@ -610,15 +511,6 @@ func (o *AddServicePlansRequestServicePlan) GetCustomMaxStorageOk() (*bool, bool
 	return o.CustomMaxStorage, true
 }
 
-// IsSetCustomMaxStorage returns a boolean if a field has been set.
-func (o *AddServicePlansRequestServicePlan) IsSetCustomMaxStorage() bool {
-	if o != nil && !IsNil(o.CustomMaxStorage) {
-		return true
-	}
-
-	return false
-}
-
 // SetCustomMaxStorage gets a reference to the given bool and assigns it to the CustomMaxStorage field.
 func (o *AddServicePlansRequestServicePlan) SetCustomMaxStorage(v bool) {
 	o.CustomMaxStorage = &v
@@ -640,15 +532,6 @@ func (o *AddServicePlansRequestServicePlan) GetCustomMaxDataStorageOk() (*bool, 
 		return nil, false
 	}
 	return o.CustomMaxDataStorage, true
-}
-
-// IsSetCustomMaxDataStorage returns a boolean if a field has been set.
-func (o *AddServicePlansRequestServicePlan) IsSetCustomMaxDataStorage() bool {
-	if o != nil && !IsNil(o.CustomMaxDataStorage) {
-		return true
-	}
-
-	return false
 }
 
 // SetCustomMaxDataStorage gets a reference to the given bool and assigns it to the CustomMaxDataStorage field.
@@ -674,15 +557,6 @@ func (o *AddServicePlansRequestServicePlan) GetCustomMaxMemoryOk() (*bool, bool)
 	return o.CustomMaxMemory, true
 }
 
-// IsSetCustomMaxMemory returns a boolean if a field has been set.
-func (o *AddServicePlansRequestServicePlan) IsSetCustomMaxMemory() bool {
-	if o != nil && !IsNil(o.CustomMaxMemory) {
-		return true
-	}
-
-	return false
-}
-
 // SetCustomMaxMemory gets a reference to the given bool and assigns it to the CustomMaxMemory field.
 func (o *AddServicePlansRequestServicePlan) SetCustomMaxMemory(v bool) {
 	o.CustomMaxMemory = &v
@@ -704,15 +578,6 @@ func (o *AddServicePlansRequestServicePlan) GetAddVolumesOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.AddVolumes, true
-}
-
-// IsSetAddVolumes returns a boolean if a field has been set.
-func (o *AddServicePlansRequestServicePlan) IsSetAddVolumes() bool {
-	if o != nil && !IsNil(o.AddVolumes) {
-		return true
-	}
-
-	return false
 }
 
 // SetAddVolumes gets a reference to the given bool and assigns it to the AddVolumes field.
@@ -738,15 +603,6 @@ func (o *AddServicePlansRequestServicePlan) GetSortOrderOk() (*int64, bool) {
 	return o.SortOrder, true
 }
 
-// IsSetSortOrder returns a boolean if a field has been set.
-func (o *AddServicePlansRequestServicePlan) IsSetSortOrder() bool {
-	if o != nil && !IsNil(o.SortOrder) {
-		return true
-	}
-
-	return false
-}
-
 // SetSortOrder gets a reference to the given int64 and assigns it to the SortOrder field.
 func (o *AddServicePlansRequestServicePlan) SetSortOrder(v int64) {
 	o.SortOrder = &v
@@ -768,15 +624,6 @@ func (o *AddServicePlansRequestServicePlan) GetPriceSetsOk() ([]AddServicePlansR
 		return nil, false
 	}
 	return o.PriceSets, true
-}
-
-// IsSetPriceSets returns a boolean if a field has been set.
-func (o *AddServicePlansRequestServicePlan) IsSetPriceSets() bool {
-	if o != nil && !IsNil(o.PriceSets) {
-		return true
-	}
-
-	return false
 }
 
 // SetPriceSets gets a reference to the given []AddServicePlansRequestServicePlanPriceSetsInner and assigns it to the PriceSets field.
@@ -802,15 +649,6 @@ func (o *AddServicePlansRequestServicePlan) GetPermissionsOk() (*AddServicePlans
 	return o.Permissions, true
 }
 
-// IsSetPermissions returns a boolean if a field has been set.
-func (o *AddServicePlansRequestServicePlan) IsSetPermissions() bool {
-	if o != nil && !IsNil(o.Permissions) {
-		return true
-	}
-
-	return false
-}
-
 // SetPermissions gets a reference to the given AddServicePlansRequestServicePlanPermissions and assigns it to the Permissions field.
 func (o *AddServicePlansRequestServicePlan) SetPermissions(v AddServicePlansRequestServicePlanPermissions) {
 	o.Permissions = &v
@@ -832,15 +670,6 @@ func (o *AddServicePlansRequestServicePlan) GetConfigOk() (*AddServicePlansReque
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *AddServicePlansRequestServicePlan) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given AddServicePlansRequestServicePlanConfig and assigns it to the Config field.

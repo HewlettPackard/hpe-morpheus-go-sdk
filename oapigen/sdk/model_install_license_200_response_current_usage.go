@@ -84,15 +84,6 @@ func (o *InstallLicense200ResponseCurrentUsage) GetMemoryOk() (*int64, bool) {
 	return o.Memory, true
 }
 
-// IsSetMemory returns a boolean if a field has been set.
-func (o *InstallLicense200ResponseCurrentUsage) IsSetMemory() bool {
-	if o != nil && !IsNil(o.Memory) {
-		return true
-	}
-
-	return false
-}
-
 // SetMemory gets a reference to the given int64 and assigns it to the Memory field.
 func (o *InstallLicense200ResponseCurrentUsage) SetMemory(v int64) {
 	o.Memory = &v
@@ -114,15 +105,6 @@ func (o *InstallLicense200ResponseCurrentUsage) GetStorageOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.Storage, true
-}
-
-// IsSetStorage returns a boolean if a field has been set.
-func (o *InstallLicense200ResponseCurrentUsage) IsSetStorage() bool {
-	if o != nil && !IsNil(o.Storage) {
-		return true
-	}
-
-	return false
 }
 
 // SetStorage gets a reference to the given int64 and assigns it to the Storage field.
@@ -148,15 +130,6 @@ func (o *InstallLicense200ResponseCurrentUsage) GetWorkloadsOk() (*int64, bool) 
 	return o.Workloads, true
 }
 
-// IsSetWorkloads returns a boolean if a field has been set.
-func (o *InstallLicense200ResponseCurrentUsage) IsSetWorkloads() bool {
-	if o != nil && !IsNil(o.Workloads) {
-		return true
-	}
-
-	return false
-}
-
 // SetWorkloads gets a reference to the given int64 and assigns it to the Workloads field.
 func (o *InstallLicense200ResponseCurrentUsage) SetWorkloads(v int64) {
 	o.Workloads = &v
@@ -178,15 +151,6 @@ func (o *InstallLicense200ResponseCurrentUsage) GetDiscoveredServersOk() (*int64
 		return nil, false
 	}
 	return o.DiscoveredServers, true
-}
-
-// IsSetDiscoveredServers returns a boolean if a field has been set.
-func (o *InstallLicense200ResponseCurrentUsage) IsSetDiscoveredServers() bool {
-	if o != nil && !IsNil(o.DiscoveredServers) {
-		return true
-	}
-
-	return false
 }
 
 // SetDiscoveredServers gets a reference to the given int64 and assigns it to the DiscoveredServers field.
@@ -212,15 +176,6 @@ func (o *InstallLicense200ResponseCurrentUsage) GetHostsOk() (*int64, bool) {
 	return o.Hosts, true
 }
 
-// IsSetHosts returns a boolean if a field has been set.
-func (o *InstallLicense200ResponseCurrentUsage) IsSetHosts() bool {
-	if o != nil && !IsNil(o.Hosts) {
-		return true
-	}
-
-	return false
-}
-
 // SetHosts gets a reference to the given int64 and assigns it to the Hosts field.
 func (o *InstallLicense200ResponseCurrentUsage) SetHosts(v int64) {
 	o.Hosts = &v
@@ -242,15 +197,6 @@ func (o *InstallLicense200ResponseCurrentUsage) GetMvmOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.Mvm, true
-}
-
-// IsSetMvm returns a boolean if a field has been set.
-func (o *InstallLicense200ResponseCurrentUsage) IsSetMvm() bool {
-	if o != nil && !IsNil(o.Mvm) {
-		return true
-	}
-
-	return false
 }
 
 // SetMvm gets a reference to the given int64 and assigns it to the Mvm field.
@@ -276,15 +222,6 @@ func (o *InstallLicense200ResponseCurrentUsage) GetMvmSocketsOk() (*int64, bool)
 	return o.MvmSockets, true
 }
 
-// IsSetMvmSockets returns a boolean if a field has been set.
-func (o *InstallLicense200ResponseCurrentUsage) IsSetMvmSockets() bool {
-	if o != nil && !IsNil(o.MvmSockets) {
-		return true
-	}
-
-	return false
-}
-
 // SetMvmSockets gets a reference to the given int64 and assigns it to the MvmSockets field.
 func (o *InstallLicense200ResponseCurrentUsage) SetMvmSockets(v int64) {
 	o.MvmSockets = &v
@@ -306,15 +243,6 @@ func (o *InstallLicense200ResponseCurrentUsage) GetIacOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.Iac, true
-}
-
-// IsSetIac returns a boolean if a field has been set.
-func (o *InstallLicense200ResponseCurrentUsage) IsSetIac() bool {
-	if o != nil && !IsNil(o.Iac) {
-		return true
-	}
-
-	return false
 }
 
 // SetIac gets a reference to the given int64 and assigns it to the Iac field.
@@ -340,15 +268,6 @@ func (o *InstallLicense200ResponseCurrentUsage) GetXaasOk() (*int64, bool) {
 	return o.Xaas, true
 }
 
-// IsSetXaas returns a boolean if a field has been set.
-func (o *InstallLicense200ResponseCurrentUsage) IsSetXaas() bool {
-	if o != nil && !IsNil(o.Xaas) {
-		return true
-	}
-
-	return false
-}
-
 // SetXaas gets a reference to the given int64 and assigns it to the Xaas field.
 func (o *InstallLicense200ResponseCurrentUsage) SetXaas(v int64) {
 	o.Xaas = &v
@@ -370,15 +289,6 @@ func (o *InstallLicense200ResponseCurrentUsage) GetExecutionsOk() (*int64, bool)
 		return nil, false
 	}
 	return o.Executions, true
-}
-
-// IsSetExecutions returns a boolean if a field has been set.
-func (o *InstallLicense200ResponseCurrentUsage) IsSetExecutions() bool {
-	if o != nil && !IsNil(o.Executions) {
-		return true
-	}
-
-	return false
 }
 
 // SetExecutions gets a reference to the given int64 and assigns it to the Executions field.
@@ -404,15 +314,6 @@ func (o *InstallLicense200ResponseCurrentUsage) GetDistributedWorkersOk() (*int6
 	return o.DistributedWorkers, true
 }
 
-// IsSetDistributedWorkers returns a boolean if a field has been set.
-func (o *InstallLicense200ResponseCurrentUsage) IsSetDistributedWorkers() bool {
-	if o != nil && !IsNil(o.DistributedWorkers) {
-		return true
-	}
-
-	return false
-}
-
 // SetDistributedWorkers gets a reference to the given int64 and assigns it to the DistributedWorkers field.
 func (o *InstallLicense200ResponseCurrentUsage) SetDistributedWorkers(v int64) {
 	o.DistributedWorkers = &v
@@ -434,15 +335,6 @@ func (o *InstallLicense200ResponseCurrentUsage) GetDiscoveredObjectsOk() (*int64
 		return nil, false
 	}
 	return o.DiscoveredObjects, true
-}
-
-// IsSetDiscoveredObjects returns a boolean if a field has been set.
-func (o *InstallLicense200ResponseCurrentUsage) IsSetDiscoveredObjects() bool {
-	if o != nil && !IsNil(o.DiscoveredObjects) {
-		return true
-	}
-
-	return false
 }
 
 // SetDiscoveredObjects gets a reference to the given int64 and assigns it to the DiscoveredObjects field.

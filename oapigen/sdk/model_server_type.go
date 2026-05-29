@@ -83,15 +83,6 @@ func (o *ServerType) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ServerType) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ServerType) SetId(v int64) {
 	o.Id = &v
@@ -113,15 +104,6 @@ func (o *ServerType) GetCodeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *ServerType) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -147,15 +129,6 @@ func (o *ServerType) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ServerType) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ServerType) SetName(v string) {
 	o.Name = &v
@@ -177,15 +150,6 @@ func (o *ServerType) GetDescriptionOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ServerType) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -211,15 +175,6 @@ func (o *ServerType) GetNodeTypeOk() (*string, bool) {
 	return o.NodeType, true
 }
 
-// IsSetNodeType returns a boolean if a field has been set.
-func (o *ServerType) IsSetNodeType() bool {
-	if o != nil && !IsNil(o.NodeType) {
-		return true
-	}
-
-	return false
-}
-
 // SetNodeType gets a reference to the given string and assigns it to the NodeType field.
 func (o *ServerType) SetNodeType(v string) {
 	o.NodeType = &v
@@ -241,15 +196,6 @@ func (o *ServerType) GetPlatformOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Platform, true
-}
-
-// IsSetPlatform returns a boolean if a field has been set.
-func (o *ServerType) IsSetPlatform() bool {
-	if o != nil && !IsNil(o.Platform) {
-		return true
-	}
-
-	return false
 }
 
 // SetPlatform gets a reference to the given string and assigns it to the Platform field.
@@ -275,15 +221,6 @@ func (o *ServerType) GetEnabledOk() (*bool, bool) {
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *ServerType) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *ServerType) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -305,15 +242,6 @@ func (o *ServerType) GetSelectableOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Selectable, true
-}
-
-// IsSetSelectable returns a boolean if a field has been set.
-func (o *ServerType) IsSetSelectable() bool {
-	if o != nil && !IsNil(o.Selectable) {
-		return true
-	}
-
-	return false
 }
 
 // SetSelectable gets a reference to the given bool and assigns it to the Selectable field.
@@ -339,15 +267,6 @@ func (o *ServerType) GetExternalDeleteOk() (*bool, bool) {
 	return o.ExternalDelete, true
 }
 
-// IsSetExternalDelete returns a boolean if a field has been set.
-func (o *ServerType) IsSetExternalDelete() bool {
-	if o != nil && !IsNil(o.ExternalDelete) {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalDelete gets a reference to the given bool and assigns it to the ExternalDelete field.
 func (o *ServerType) SetExternalDelete(v bool) {
 	o.ExternalDelete = &v
@@ -369,15 +288,6 @@ func (o *ServerType) GetManagedOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Managed, true
-}
-
-// IsSetManaged returns a boolean if a field has been set.
-func (o *ServerType) IsSetManaged() bool {
-	if o != nil && !IsNil(o.Managed) {
-		return true
-	}
-
-	return false
 }
 
 // SetManaged gets a reference to the given bool and assigns it to the Managed field.
@@ -403,15 +313,6 @@ func (o *ServerType) GetControlPowerOk() (*bool, bool) {
 	return o.ControlPower, true
 }
 
-// IsSetControlPower returns a boolean if a field has been set.
-func (o *ServerType) IsSetControlPower() bool {
-	if o != nil && !IsNil(o.ControlPower) {
-		return true
-	}
-
-	return false
-}
-
 // SetControlPower gets a reference to the given bool and assigns it to the ControlPower field.
 func (o *ServerType) SetControlPower(v bool) {
 	o.ControlPower = &v
@@ -433,15 +334,6 @@ func (o *ServerType) GetControlSuspendOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.ControlSuspend, true
-}
-
-// IsSetControlSuspend returns a boolean if a field has been set.
-func (o *ServerType) IsSetControlSuspend() bool {
-	if o != nil && !IsNil(o.ControlSuspend) {
-		return true
-	}
-
-	return false
 }
 
 // SetControlSuspend gets a reference to the given bool and assigns it to the ControlSuspend field.
@@ -467,15 +359,6 @@ func (o *ServerType) GetControlStartOk() (*bool, bool) {
 	return o.ControlStart, true
 }
 
-// IsSetControlStart returns a boolean if a field has been set.
-func (o *ServerType) IsSetControlStart() bool {
-	if o != nil && !IsNil(o.ControlStart) {
-		return true
-	}
-
-	return false
-}
-
 // SetControlStart gets a reference to the given bool and assigns it to the ControlStart field.
 func (o *ServerType) SetControlStart(v bool) {
 	o.ControlStart = &v
@@ -497,15 +380,6 @@ func (o *ServerType) GetCreatableOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Creatable, true
-}
-
-// IsSetCreatable returns a boolean if a field has been set.
-func (o *ServerType) IsSetCreatable() bool {
-	if o != nil && !IsNil(o.Creatable) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreatable gets a reference to the given bool and assigns it to the Creatable field.
@@ -531,15 +405,6 @@ func (o *ServerType) GetHasAgentOk() (*bool, bool) {
 	return o.HasAgent, true
 }
 
-// IsSetHasAgent returns a boolean if a field has been set.
-func (o *ServerType) IsSetHasAgent() bool {
-	if o != nil && !IsNil(o.HasAgent) {
-		return true
-	}
-
-	return false
-}
-
 // SetHasAgent gets a reference to the given bool and assigns it to the HasAgent field.
 func (o *ServerType) SetHasAgent(v bool) {
 	o.HasAgent = &v
@@ -561,15 +426,6 @@ func (o *ServerType) GetVmHypervisorOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.VmHypervisor, true
-}
-
-// IsSetVmHypervisor returns a boolean if a field has been set.
-func (o *ServerType) IsSetVmHypervisor() bool {
-	if o != nil && !IsNil(o.VmHypervisor) {
-		return true
-	}
-
-	return false
 }
 
 // SetVmHypervisor gets a reference to the given bool and assigns it to the VmHypervisor field.
@@ -595,15 +451,6 @@ func (o *ServerType) GetContainerHypervisorOk() (*bool, bool) {
 	return o.ContainerHypervisor, true
 }
 
-// IsSetContainerHypervisor returns a boolean if a field has been set.
-func (o *ServerType) IsSetContainerHypervisor() bool {
-	if o != nil && !IsNil(o.ContainerHypervisor) {
-		return true
-	}
-
-	return false
-}
-
 // SetContainerHypervisor gets a reference to the given bool and assigns it to the ContainerHypervisor field.
 func (o *ServerType) SetContainerHypervisor(v bool) {
 	o.ContainerHypervisor = &v
@@ -625,15 +472,6 @@ func (o *ServerType) GetBareMetalHostOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.BareMetalHost, true
-}
-
-// IsSetBareMetalHost returns a boolean if a field has been set.
-func (o *ServerType) IsSetBareMetalHost() bool {
-	if o != nil && !IsNil(o.BareMetalHost) {
-		return true
-	}
-
-	return false
 }
 
 // SetBareMetalHost gets a reference to the given bool and assigns it to the BareMetalHost field.
@@ -659,15 +497,6 @@ func (o *ServerType) GetGuestVmOk() (*bool, bool) {
 	return o.GuestVm, true
 }
 
-// IsSetGuestVm returns a boolean if a field has been set.
-func (o *ServerType) IsSetGuestVm() bool {
-	if o != nil && !IsNil(o.GuestVm) {
-		return true
-	}
-
-	return false
-}
-
 // SetGuestVm gets a reference to the given bool and assigns it to the GuestVm field.
 func (o *ServerType) SetGuestVm(v bool) {
 	o.GuestVm = &v
@@ -689,15 +518,6 @@ func (o *ServerType) GetHasAutomationOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.HasAutomation, true
-}
-
-// IsSetHasAutomation returns a boolean if a field has been set.
-func (o *ServerType) IsSetHasAutomation() bool {
-	if o != nil && !IsNil(o.HasAutomation) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasAutomation gets a reference to the given bool and assigns it to the HasAutomation field.
@@ -723,15 +543,6 @@ func (o *ServerType) GetProvisionTypeOk() (*GetHostType200ResponseServerTypeProv
 	return o.ProvisionType, true
 }
 
-// IsSetProvisionType returns a boolean if a field has been set.
-func (o *ServerType) IsSetProvisionType() bool {
-	if o != nil && !IsNil(o.ProvisionType) {
-		return true
-	}
-
-	return false
-}
-
 // SetProvisionType gets a reference to the given GetHostType200ResponseServerTypeProvisionType and assigns it to the ProvisionType field.
 func (o *ServerType) SetProvisionType(v GetHostType200ResponseServerTypeProvisionType) {
 	o.ProvisionType = &v
@@ -755,15 +566,6 @@ func (o *ServerType) GetOptionTypesOk() ([]GetHostType200ResponseServerTypeOptio
 	return o.OptionTypes, true
 }
 
-// IsSetOptionTypes returns a boolean if a field has been set.
-func (o *ServerType) IsSetOptionTypes() bool {
-	if o != nil && !IsNil(o.OptionTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetOptionTypes gets a reference to the given []GetHostType200ResponseServerTypeOptionTypesInner and assigns it to the OptionTypes field.
 func (o *ServerType) SetOptionTypes(v []GetHostType200ResponseServerTypeOptionTypesInner) {
 	o.OptionTypes = v
@@ -785,15 +587,6 @@ func (o *ServerType) GetDisplayOrderOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.DisplayOrder, true
-}
-
-// IsSetDisplayOrder returns a boolean if a field has been set.
-func (o *ServerType) IsSetDisplayOrder() bool {
-	if o != nil && !IsNil(o.DisplayOrder) {
-		return true
-	}
-
-	return false
 }
 
 // SetDisplayOrder gets a reference to the given int64 and assigns it to the DisplayOrder field.

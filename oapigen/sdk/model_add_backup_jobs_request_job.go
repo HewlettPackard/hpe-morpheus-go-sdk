@@ -93,15 +93,6 @@ func (o *AddBackupJobsRequestJob) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *AddBackupJobsRequestJob) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *AddBackupJobsRequestJob) SetCode(v string) {
 	o.Code = &v
@@ -126,28 +117,9 @@ func (o *AddBackupJobsRequestJob) GetScheduleIdOk() (*int64, bool) {
 	return o.ScheduleId.Get(), o.ScheduleId.IsSet()
 }
 
-// IsSetScheduleId returns a boolean if a field has been set.
-func (o *AddBackupJobsRequestJob) IsSetScheduleId() bool {
-	if o != nil && o.ScheduleId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetScheduleId gets a reference to the given NullableInt64 and assigns it to the ScheduleId field.
 func (o *AddBackupJobsRequestJob) SetScheduleId(v int64) {
 	o.ScheduleId.Set(&v)
-}
-
-// SetScheduleIdNil sets the value for ScheduleId to be an explicit nil
-func (o *AddBackupJobsRequestJob) SetScheduleIdNil() {
-	o.ScheduleId.Set(nil)
-}
-
-// UnsetScheduleId ensures that no value is present for ScheduleId, not even an explicit nil
-func (o *AddBackupJobsRequestJob) UnsetScheduleId() {
-	o.ScheduleId.Unset()
 }
 
 // GetRetentionCount returns the RetentionCount field value if set, zero value otherwise.
@@ -166,15 +138,6 @@ func (o *AddBackupJobsRequestJob) GetRetentionCountOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.RetentionCount, true
-}
-
-// IsSetRetentionCount returns a boolean if a field has been set.
-func (o *AddBackupJobsRequestJob) IsSetRetentionCount() bool {
-	if o != nil && !IsNil(o.RetentionCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetRetentionCount gets a reference to the given int64 and assigns it to the RetentionCount field.

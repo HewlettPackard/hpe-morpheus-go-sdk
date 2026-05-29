@@ -160,15 +160,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetId(v int64) {
 	o.Id = &v
@@ -190,15 +181,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetOwnerIdOk() (*int64, bool
 		return nil, false
 	}
 	return o.OwnerId, true
-}
-
-// IsSetOwnerId returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetOwnerId() bool {
-	if o != nil && !IsNil(o.OwnerId) {
-		return true
-	}
-
-	return false
 }
 
 // SetOwnerId gets a reference to the given int64 and assigns it to the OwnerId field.
@@ -225,28 +207,9 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetAccountOk() (*ListInvoice
 	return o.Account.Get(), o.Account.IsSet()
 }
 
-// IsSetAccount returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetAccount() bool {
-	if o != nil && o.Account.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAccount gets a reference to the given NullableListInvoices200ResponseAllOfInvoicesInnerAccount and assigns it to the Account field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetAccount(v ListInvoices200ResponseAllOfInvoicesInnerAccount) {
 	o.Account.Set(&v)
-}
-
-// SetAccountNil sets the value for Account to be an explicit nil
-func (o *ListInvoices200ResponseAllOfInvoicesInner) SetAccountNil() {
-	o.Account.Set(nil)
-}
-
-// UnsetAccount ensures that no value is present for Account, not even an explicit nil
-func (o *ListInvoices200ResponseAllOfInvoicesInner) UnsetAccount() {
-	o.Account.Unset()
 }
 
 // GetGroup returns the Group field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -266,15 +229,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetGroupOk() (map[string]int
 		return map[string]interface{}{}, false
 	}
 	return o.Group, true
-}
-
-// IsSetGroup returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetGroup() bool {
-	if o != nil && !IsNil(o.Group) {
-		return true
-	}
-
-	return false
 }
 
 // SetGroup gets a reference to the given map[string]interface{} and assigns it to the Group field.
@@ -298,15 +252,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetCloudOk() (*ListInvoices2
 		return nil, false
 	}
 	return o.Cloud, true
-}
-
-// IsSetCloud returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetCloud() bool {
-	if o != nil && !IsNil(o.Cloud) {
-		return true
-	}
-
-	return false
 }
 
 // SetCloud gets a reference to the given ListInvoices200ResponseAllOfInvoicesInnerCloud and assigns it to the Cloud field.
@@ -333,15 +278,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetInstanceOk() (map[string]
 	return o.Instance, true
 }
 
-// IsSetInstance returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetInstance() bool {
-	if o != nil && !IsNil(o.Instance) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstance gets a reference to the given map[string]interface{} and assigns it to the Instance field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetInstance(v map[string]interface{}) {
 	o.Instance = v
@@ -366,28 +302,9 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetServerOk() (*string, bool
 	return o.Server.Get(), o.Server.IsSet()
 }
 
-// IsSetServer returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetServer() bool {
-	if o != nil && o.Server.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServer gets a reference to the given NullableString and assigns it to the Server field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetServer(v string) {
 	o.Server.Set(&v)
-}
-
-// SetServerNil sets the value for Server to be an explicit nil
-func (o *ListInvoices200ResponseAllOfInvoicesInner) SetServerNil() {
-	o.Server.Set(nil)
-}
-
-// UnsetServer ensures that no value is present for Server, not even an explicit nil
-func (o *ListInvoices200ResponseAllOfInvoicesInner) UnsetServer() {
-	o.Server.Unset()
 }
 
 // GetCluster returns the Cluster field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -409,28 +326,9 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetClusterOk() (*string, boo
 	return o.Cluster.Get(), o.Cluster.IsSet()
 }
 
-// IsSetCluster returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetCluster() bool {
-	if o != nil && o.Cluster.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCluster gets a reference to the given NullableString and assigns it to the Cluster field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetCluster(v string) {
 	o.Cluster.Set(&v)
-}
-
-// SetClusterNil sets the value for Cluster to be an explicit nil
-func (o *ListInvoices200ResponseAllOfInvoicesInner) SetClusterNil() {
-	o.Cluster.Set(nil)
-}
-
-// UnsetCluster ensures that no value is present for Cluster, not even an explicit nil
-func (o *ListInvoices200ResponseAllOfInvoicesInner) UnsetCluster() {
-	o.Cluster.Unset()
 }
 
 // GetUser returns the User field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -450,15 +348,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetUserOk() (map[string]inte
 		return map[string]interface{}{}, false
 	}
 	return o.User, true
-}
-
-// IsSetUser returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetUser() bool {
-	if o != nil && !IsNil(o.User) {
-		return true
-	}
-
-	return false
 }
 
 // SetUser gets a reference to the given map[string]interface{} and assigns it to the User field.
@@ -485,15 +374,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetPlanOk() (map[string]inte
 	return o.Plan, true
 }
 
-// IsSetPlan returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetPlan() bool {
-	if o != nil && !IsNil(o.Plan) {
-		return true
-	}
-
-	return false
-}
-
 // SetPlan gets a reference to the given map[string]interface{} and assigns it to the Plan field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetPlan(v map[string]interface{}) {
 	o.Plan = v
@@ -516,15 +396,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetTagsOk() ([]map[string]in
 		return nil, false
 	}
 	return o.Tags, true
-}
-
-// IsSetTags returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetTags() bool {
-	if o != nil && !IsNil(o.Tags) {
-		return true
-	}
-
-	return false
 }
 
 // SetTags gets a reference to the given []map[string]interface{} and assigns it to the Tags field.
@@ -551,28 +422,9 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetProjectOk() (*string, boo
 	return o.Project.Get(), o.Project.IsSet()
 }
 
-// IsSetProject returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetProject() bool {
-	if o != nil && o.Project.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetProject gets a reference to the given NullableString and assigns it to the Project field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetProject(v string) {
 	o.Project.Set(&v)
-}
-
-// SetProjectNil sets the value for Project to be an explicit nil
-func (o *ListInvoices200ResponseAllOfInvoicesInner) SetProjectNil() {
-	o.Project.Set(nil)
-}
-
-// UnsetProject ensures that no value is present for Project, not even an explicit nil
-func (o *ListInvoices200ResponseAllOfInvoicesInner) UnsetProject() {
-	o.Project.Unset()
 }
 
 // GetRefType returns the RefType field value if set, zero value otherwise.
@@ -591,15 +443,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetRefTypeOk() (*string, boo
 		return nil, false
 	}
 	return o.RefType, true
-}
-
-// IsSetRefType returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetRefType() bool {
-	if o != nil && !IsNil(o.RefType) {
-		return true
-	}
-
-	return false
 }
 
 // SetRefType gets a reference to the given string and assigns it to the RefType field.
@@ -623,15 +466,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetRefIdOk() (*int64, bool) 
 		return nil, false
 	}
 	return o.RefId, true
-}
-
-// IsSetRefId returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetRefId() bool {
-	if o != nil && !IsNil(o.RefId) {
-		return true
-	}
-
-	return false
 }
 
 // SetRefId gets a reference to the given int64 and assigns it to the RefId field.
@@ -658,28 +492,9 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetRefUuidOk() (*string, boo
 	return o.RefUuid.Get(), o.RefUuid.IsSet()
 }
 
-// IsSetRefUuid returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetRefUuid() bool {
-	if o != nil && o.RefUuid.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRefUuid gets a reference to the given NullableString and assigns it to the RefUuid field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetRefUuid(v string) {
 	o.RefUuid.Set(&v)
-}
-
-// SetRefUuidNil sets the value for RefUuid to be an explicit nil
-func (o *ListInvoices200ResponseAllOfInvoicesInner) SetRefUuidNil() {
-	o.RefUuid.Set(nil)
-}
-
-// UnsetRefUuid ensures that no value is present for RefUuid, not even an explicit nil
-func (o *ListInvoices200ResponseAllOfInvoicesInner) UnsetRefUuid() {
-	o.RefUuid.Unset()
 }
 
 // GetRefName returns the RefName field value if set, zero value otherwise.
@@ -698,15 +513,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetRefNameOk() (*string, boo
 		return nil, false
 	}
 	return o.RefName, true
-}
-
-// IsSetRefName returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetRefName() bool {
-	if o != nil && !IsNil(o.RefName) {
-		return true
-	}
-
-	return false
 }
 
 // SetRefName gets a reference to the given string and assigns it to the RefName field.
@@ -730,15 +536,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetRefCategoryOk() (*string,
 		return nil, false
 	}
 	return o.RefCategory, true
-}
-
-// IsSetRefCategory returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetRefCategory() bool {
-	if o != nil && !IsNil(o.RefCategory) {
-		return true
-	}
-
-	return false
 }
 
 // SetRefCategory gets a reference to the given string and assigns it to the RefCategory field.
@@ -765,28 +562,9 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetResourceIdOk() (*string, 
 	return o.ResourceId.Get(), o.ResourceId.IsSet()
 }
 
-// IsSetResourceId returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetResourceId() bool {
-	if o != nil && o.ResourceId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetResourceId gets a reference to the given NullableString and assigns it to the ResourceId field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetResourceId(v string) {
 	o.ResourceId.Set(&v)
-}
-
-// SetResourceIdNil sets the value for ResourceId to be an explicit nil
-func (o *ListInvoices200ResponseAllOfInvoicesInner) SetResourceIdNil() {
-	o.ResourceId.Set(nil)
-}
-
-// UnsetResourceId ensures that no value is present for ResourceId, not even an explicit nil
-func (o *ListInvoices200ResponseAllOfInvoicesInner) UnsetResourceId() {
-	o.ResourceId.Unset()
 }
 
 // GetResourceUuid returns the ResourceUuid field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -808,28 +586,9 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetResourceUuidOk() (*string
 	return o.ResourceUuid.Get(), o.ResourceUuid.IsSet()
 }
 
-// IsSetResourceUuid returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetResourceUuid() bool {
-	if o != nil && o.ResourceUuid.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetResourceUuid gets a reference to the given NullableString and assigns it to the ResourceUuid field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetResourceUuid(v string) {
 	o.ResourceUuid.Set(&v)
-}
-
-// SetResourceUuidNil sets the value for ResourceUuid to be an explicit nil
-func (o *ListInvoices200ResponseAllOfInvoicesInner) SetResourceUuidNil() {
-	o.ResourceUuid.Set(nil)
-}
-
-// UnsetResourceUuid ensures that no value is present for ResourceUuid, not even an explicit nil
-func (o *ListInvoices200ResponseAllOfInvoicesInner) UnsetResourceUuid() {
-	o.ResourceUuid.Unset()
 }
 
 // GetResourceType returns the ResourceType field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -851,28 +610,9 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetResourceTypeOk() (*string
 	return o.ResourceType.Get(), o.ResourceType.IsSet()
 }
 
-// IsSetResourceType returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetResourceType() bool {
-	if o != nil && o.ResourceType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetResourceType gets a reference to the given NullableString and assigns it to the ResourceType field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetResourceType(v string) {
 	o.ResourceType.Set(&v)
-}
-
-// SetResourceTypeNil sets the value for ResourceType to be an explicit nil
-func (o *ListInvoices200ResponseAllOfInvoicesInner) SetResourceTypeNil() {
-	o.ResourceType.Set(nil)
-}
-
-// UnsetResourceType ensures that no value is present for ResourceType, not even an explicit nil
-func (o *ListInvoices200ResponseAllOfInvoicesInner) UnsetResourceType() {
-	o.ResourceType.Unset()
 }
 
 // GetResourceName returns the ResourceName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -894,28 +634,9 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetResourceNameOk() (*string
 	return o.ResourceName.Get(), o.ResourceName.IsSet()
 }
 
-// IsSetResourceName returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetResourceName() bool {
-	if o != nil && o.ResourceName.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetResourceName gets a reference to the given NullableString and assigns it to the ResourceName field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetResourceName(v string) {
 	o.ResourceName.Set(&v)
-}
-
-// SetResourceNameNil sets the value for ResourceName to be an explicit nil
-func (o *ListInvoices200ResponseAllOfInvoicesInner) SetResourceNameNil() {
-	o.ResourceName.Set(nil)
-}
-
-// UnsetResourceName ensures that no value is present for ResourceName, not even an explicit nil
-func (o *ListInvoices200ResponseAllOfInvoicesInner) UnsetResourceName() {
-	o.ResourceName.Unset()
 }
 
 // GetResourceExternalId returns the ResourceExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -937,28 +658,9 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetResourceExternalIdOk() (*
 	return o.ResourceExternalId.Get(), o.ResourceExternalId.IsSet()
 }
 
-// IsSetResourceExternalId returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetResourceExternalId() bool {
-	if o != nil && o.ResourceExternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetResourceExternalId gets a reference to the given NullableString and assigns it to the ResourceExternalId field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetResourceExternalId(v string) {
 	o.ResourceExternalId.Set(&v)
-}
-
-// SetResourceExternalIdNil sets the value for ResourceExternalId to be an explicit nil
-func (o *ListInvoices200ResponseAllOfInvoicesInner) SetResourceExternalIdNil() {
-	o.ResourceExternalId.Set(nil)
-}
-
-// UnsetResourceExternalId ensures that no value is present for ResourceExternalId, not even an explicit nil
-func (o *ListInvoices200ResponseAllOfInvoicesInner) UnsetResourceExternalId() {
-	o.ResourceExternalId.Unset()
 }
 
 // GetResourceInternalId returns the ResourceInternalId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -980,28 +682,9 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetResourceInternalIdOk() (*
 	return o.ResourceInternalId.Get(), o.ResourceInternalId.IsSet()
 }
 
-// IsSetResourceInternalId returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetResourceInternalId() bool {
-	if o != nil && o.ResourceInternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetResourceInternalId gets a reference to the given NullableString and assigns it to the ResourceInternalId field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetResourceInternalId(v string) {
 	o.ResourceInternalId.Set(&v)
-}
-
-// SetResourceInternalIdNil sets the value for ResourceInternalId to be an explicit nil
-func (o *ListInvoices200ResponseAllOfInvoicesInner) SetResourceInternalIdNil() {
-	o.ResourceInternalId.Set(nil)
-}
-
-// UnsetResourceInternalId ensures that no value is present for ResourceInternalId, not even an explicit nil
-func (o *ListInvoices200ResponseAllOfInvoicesInner) UnsetResourceInternalId() {
-	o.ResourceInternalId.Unset()
 }
 
 // GetInterval returns the Interval field value if set, zero value otherwise.
@@ -1020,15 +703,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetIntervalOk() (*string, bo
 		return nil, false
 	}
 	return o.Interval, true
-}
-
-// IsSetInterval returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetInterval() bool {
-	if o != nil && !IsNil(o.Interval) {
-		return true
-	}
-
-	return false
 }
 
 // SetInterval gets a reference to the given string and assigns it to the Interval field.
@@ -1054,15 +728,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetPeriodOk() (*string, bool
 	return o.Period, true
 }
 
-// IsSetPeriod returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetPeriod() bool {
-	if o != nil && !IsNil(o.Period) {
-		return true
-	}
-
-	return false
-}
-
 // SetPeriod gets a reference to the given string and assigns it to the Period field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetPeriod(v string) {
 	o.Period = &v
@@ -1084,15 +749,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetEstimateOk() (*bool, bool
 		return nil, false
 	}
 	return o.Estimate, true
-}
-
-// IsSetEstimate returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetEstimate() bool {
-	if o != nil && !IsNil(o.Estimate) {
-		return true
-	}
-
-	return false
 }
 
 // SetEstimate gets a reference to the given bool and assigns it to the Estimate field.
@@ -1118,15 +774,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetSummaryInvoiceOk() (*bool
 	return o.SummaryInvoice, true
 }
 
-// IsSetSummaryInvoice returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetSummaryInvoice() bool {
-	if o != nil && !IsNil(o.SummaryInvoice) {
-		return true
-	}
-
-	return false
-}
-
 // SetSummaryInvoice gets a reference to the given bool and assigns it to the SummaryInvoice field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetSummaryInvoice(v bool) {
 	o.SummaryInvoice = &v
@@ -1148,15 +795,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetActiveOk() (*bool, bool) 
 		return nil, false
 	}
 	return o.Active, true
-}
-
-// IsSetActive returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
 }
 
 // SetActive gets a reference to the given bool and assigns it to the Active field.
@@ -1182,15 +820,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetStartDateOk() (*time.Time
 	return o.StartDate, true
 }
 
-// IsSetStartDate returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetStartDate() bool {
-	if o != nil && !IsNil(o.StartDate) {
-		return true
-	}
-
-	return false
-}
-
 // SetStartDate gets a reference to the given time.Time and assigns it to the StartDate field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetStartDate(v time.Time) {
 	o.StartDate = &v
@@ -1212,15 +841,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetEndDateOk() (*time.Time, 
 		return nil, false
 	}
 	return o.EndDate, true
-}
-
-// IsSetEndDate returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetEndDate() bool {
-	if o != nil && !IsNil(o.EndDate) {
-		return true
-	}
-
-	return false
 }
 
 // SetEndDate gets a reference to the given time.Time and assigns it to the EndDate field.
@@ -1246,15 +866,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetRefStartOk() (*time.Time,
 	return o.RefStart, true
 }
 
-// IsSetRefStart returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetRefStart() bool {
-	if o != nil && !IsNil(o.RefStart) {
-		return true
-	}
-
-	return false
-}
-
 // SetRefStart gets a reference to the given time.Time and assigns it to the RefStart field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetRefStart(v time.Time) {
 	o.RefStart = &v
@@ -1276,15 +887,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetRefEndOk() (*time.Time, b
 		return nil, false
 	}
 	return o.RefEnd, true
-}
-
-// IsSetRefEnd returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetRefEnd() bool {
-	if o != nil && !IsNil(o.RefEnd) {
-		return true
-	}
-
-	return false
 }
 
 // SetRefEnd gets a reference to the given time.Time and assigns it to the RefEnd field.
@@ -1310,15 +912,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetEstimatedComputePriceOk()
 	return o.EstimatedComputePrice, true
 }
 
-// IsSetEstimatedComputePrice returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetEstimatedComputePrice() bool {
-	if o != nil && !IsNil(o.EstimatedComputePrice) {
-		return true
-	}
-
-	return false
-}
-
 // SetEstimatedComputePrice gets a reference to the given float32 and assigns it to the EstimatedComputePrice field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetEstimatedComputePrice(v float32) {
 	o.EstimatedComputePrice = &v
@@ -1340,15 +933,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetEstimatedComputeCostOk() 
 		return nil, false
 	}
 	return o.EstimatedComputeCost, true
-}
-
-// IsSetEstimatedComputeCost returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetEstimatedComputeCost() bool {
-	if o != nil && !IsNil(o.EstimatedComputeCost) {
-		return true
-	}
-
-	return false
 }
 
 // SetEstimatedComputeCost gets a reference to the given float32 and assigns it to the EstimatedComputeCost field.
@@ -1374,15 +958,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetEstimatedMemoryPriceOk() 
 	return o.EstimatedMemoryPrice, true
 }
 
-// IsSetEstimatedMemoryPrice returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetEstimatedMemoryPrice() bool {
-	if o != nil && !IsNil(o.EstimatedMemoryPrice) {
-		return true
-	}
-
-	return false
-}
-
 // SetEstimatedMemoryPrice gets a reference to the given float32 and assigns it to the EstimatedMemoryPrice field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetEstimatedMemoryPrice(v float32) {
 	o.EstimatedMemoryPrice = &v
@@ -1404,15 +979,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetEstimatedMemoryCostOk() (
 		return nil, false
 	}
 	return o.EstimatedMemoryCost, true
-}
-
-// IsSetEstimatedMemoryCost returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetEstimatedMemoryCost() bool {
-	if o != nil && !IsNil(o.EstimatedMemoryCost) {
-		return true
-	}
-
-	return false
 }
 
 // SetEstimatedMemoryCost gets a reference to the given float32 and assigns it to the EstimatedMemoryCost field.
@@ -1438,15 +1004,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetEstimatedStoragePriceOk()
 	return o.EstimatedStoragePrice, true
 }
 
-// IsSetEstimatedStoragePrice returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetEstimatedStoragePrice() bool {
-	if o != nil && !IsNil(o.EstimatedStoragePrice) {
-		return true
-	}
-
-	return false
-}
-
 // SetEstimatedStoragePrice gets a reference to the given float32 and assigns it to the EstimatedStoragePrice field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetEstimatedStoragePrice(v float32) {
 	o.EstimatedStoragePrice = &v
@@ -1468,15 +1025,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetEstimatedStorageCostOk() 
 		return nil, false
 	}
 	return o.EstimatedStorageCost, true
-}
-
-// IsSetEstimatedStorageCost returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetEstimatedStorageCost() bool {
-	if o != nil && !IsNil(o.EstimatedStorageCost) {
-		return true
-	}
-
-	return false
 }
 
 // SetEstimatedStorageCost gets a reference to the given float32 and assigns it to the EstimatedStorageCost field.
@@ -1502,15 +1050,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetEstimatedNetworkPriceOk()
 	return o.EstimatedNetworkPrice, true
 }
 
-// IsSetEstimatedNetworkPrice returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetEstimatedNetworkPrice() bool {
-	if o != nil && !IsNil(o.EstimatedNetworkPrice) {
-		return true
-	}
-
-	return false
-}
-
 // SetEstimatedNetworkPrice gets a reference to the given float32 and assigns it to the EstimatedNetworkPrice field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetEstimatedNetworkPrice(v float32) {
 	o.EstimatedNetworkPrice = &v
@@ -1532,15 +1071,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetEstimatedNetworkCostOk() 
 		return nil, false
 	}
 	return o.EstimatedNetworkCost, true
-}
-
-// IsSetEstimatedNetworkCost returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetEstimatedNetworkCost() bool {
-	if o != nil && !IsNil(o.EstimatedNetworkCost) {
-		return true
-	}
-
-	return false
 }
 
 // SetEstimatedNetworkCost gets a reference to the given float32 and assigns it to the EstimatedNetworkCost field.
@@ -1566,15 +1096,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetEstimatedLicensePriceOk()
 	return o.EstimatedLicensePrice, true
 }
 
-// IsSetEstimatedLicensePrice returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetEstimatedLicensePrice() bool {
-	if o != nil && !IsNil(o.EstimatedLicensePrice) {
-		return true
-	}
-
-	return false
-}
-
 // SetEstimatedLicensePrice gets a reference to the given float32 and assigns it to the EstimatedLicensePrice field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetEstimatedLicensePrice(v float32) {
 	o.EstimatedLicensePrice = &v
@@ -1596,15 +1117,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetEstimatedLicenseCostOk() 
 		return nil, false
 	}
 	return o.EstimatedLicenseCost, true
-}
-
-// IsSetEstimatedLicenseCost returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetEstimatedLicenseCost() bool {
-	if o != nil && !IsNil(o.EstimatedLicenseCost) {
-		return true
-	}
-
-	return false
 }
 
 // SetEstimatedLicenseCost gets a reference to the given float32 and assigns it to the EstimatedLicenseCost field.
@@ -1630,15 +1142,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetEstimatedExtraPriceOk() (
 	return o.EstimatedExtraPrice, true
 }
 
-// IsSetEstimatedExtraPrice returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetEstimatedExtraPrice() bool {
-	if o != nil && !IsNil(o.EstimatedExtraPrice) {
-		return true
-	}
-
-	return false
-}
-
 // SetEstimatedExtraPrice gets a reference to the given float32 and assigns it to the EstimatedExtraPrice field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetEstimatedExtraPrice(v float32) {
 	o.EstimatedExtraPrice = &v
@@ -1660,15 +1163,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetEstimatedExtraCostOk() (*
 		return nil, false
 	}
 	return o.EstimatedExtraCost, true
-}
-
-// IsSetEstimatedExtraCost returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetEstimatedExtraCost() bool {
-	if o != nil && !IsNil(o.EstimatedExtraCost) {
-		return true
-	}
-
-	return false
 }
 
 // SetEstimatedExtraCost gets a reference to the given float32 and assigns it to the EstimatedExtraCost field.
@@ -1694,15 +1188,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetEstimatedTotalPriceOk() (
 	return o.EstimatedTotalPrice, true
 }
 
-// IsSetEstimatedTotalPrice returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetEstimatedTotalPrice() bool {
-	if o != nil && !IsNil(o.EstimatedTotalPrice) {
-		return true
-	}
-
-	return false
-}
-
 // SetEstimatedTotalPrice gets a reference to the given float32 and assigns it to the EstimatedTotalPrice field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetEstimatedTotalPrice(v float32) {
 	o.EstimatedTotalPrice = &v
@@ -1724,15 +1209,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetEstimatedTotalCostOk() (*
 		return nil, false
 	}
 	return o.EstimatedTotalCost, true
-}
-
-// IsSetEstimatedTotalCost returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetEstimatedTotalCost() bool {
-	if o != nil && !IsNil(o.EstimatedTotalCost) {
-		return true
-	}
-
-	return false
 }
 
 // SetEstimatedTotalCost gets a reference to the given float32 and assigns it to the EstimatedTotalCost field.
@@ -1758,15 +1234,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetEstimatedRunningPriceOk()
 	return o.EstimatedRunningPrice, true
 }
 
-// IsSetEstimatedRunningPrice returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetEstimatedRunningPrice() bool {
-	if o != nil && !IsNil(o.EstimatedRunningPrice) {
-		return true
-	}
-
-	return false
-}
-
 // SetEstimatedRunningPrice gets a reference to the given float32 and assigns it to the EstimatedRunningPrice field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetEstimatedRunningPrice(v float32) {
 	o.EstimatedRunningPrice = &v
@@ -1788,15 +1255,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetEstimatedRunningCostOk() 
 		return nil, false
 	}
 	return o.EstimatedRunningCost, true
-}
-
-// IsSetEstimatedRunningCost returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetEstimatedRunningCost() bool {
-	if o != nil && !IsNil(o.EstimatedRunningCost) {
-		return true
-	}
-
-	return false
 }
 
 // SetEstimatedRunningCost gets a reference to the given float32 and assigns it to the EstimatedRunningCost field.
@@ -1822,15 +1280,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetEstimatedCurrencyOk() (*s
 	return o.EstimatedCurrency, true
 }
 
-// IsSetEstimatedCurrency returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetEstimatedCurrency() bool {
-	if o != nil && !IsNil(o.EstimatedCurrency) {
-		return true
-	}
-
-	return false
-}
-
 // SetEstimatedCurrency gets a reference to the given string and assigns it to the EstimatedCurrency field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetEstimatedCurrency(v string) {
 	o.EstimatedCurrency = &v
@@ -1852,15 +1301,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetEstimatedConversionRateOk
 		return nil, false
 	}
 	return o.EstimatedConversionRate, true
-}
-
-// IsSetEstimatedConversionRate returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetEstimatedConversionRate() bool {
-	if o != nil && !IsNil(o.EstimatedConversionRate) {
-		return true
-	}
-
-	return false
 }
 
 // SetEstimatedConversionRate gets a reference to the given float32 and assigns it to the EstimatedConversionRate field.
@@ -1886,15 +1326,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetActualComputePriceOk() (*
 	return o.ActualComputePrice, true
 }
 
-// IsSetActualComputePrice returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetActualComputePrice() bool {
-	if o != nil && !IsNil(o.ActualComputePrice) {
-		return true
-	}
-
-	return false
-}
-
 // SetActualComputePrice gets a reference to the given float32 and assigns it to the ActualComputePrice field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetActualComputePrice(v float32) {
 	o.ActualComputePrice = &v
@@ -1916,15 +1347,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetActualComputeCostOk() (*f
 		return nil, false
 	}
 	return o.ActualComputeCost, true
-}
-
-// IsSetActualComputeCost returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetActualComputeCost() bool {
-	if o != nil && !IsNil(o.ActualComputeCost) {
-		return true
-	}
-
-	return false
 }
 
 // SetActualComputeCost gets a reference to the given float32 and assigns it to the ActualComputeCost field.
@@ -1950,15 +1372,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetActualMemoryPriceOk() (*f
 	return o.ActualMemoryPrice, true
 }
 
-// IsSetActualMemoryPrice returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetActualMemoryPrice() bool {
-	if o != nil && !IsNil(o.ActualMemoryPrice) {
-		return true
-	}
-
-	return false
-}
-
 // SetActualMemoryPrice gets a reference to the given float32 and assigns it to the ActualMemoryPrice field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetActualMemoryPrice(v float32) {
 	o.ActualMemoryPrice = &v
@@ -1980,15 +1393,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetActualMemoryCostOk() (*fl
 		return nil, false
 	}
 	return o.ActualMemoryCost, true
-}
-
-// IsSetActualMemoryCost returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetActualMemoryCost() bool {
-	if o != nil && !IsNil(o.ActualMemoryCost) {
-		return true
-	}
-
-	return false
 }
 
 // SetActualMemoryCost gets a reference to the given float32 and assigns it to the ActualMemoryCost field.
@@ -2014,15 +1418,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetActualStoragePriceOk() (*
 	return o.ActualStoragePrice, true
 }
 
-// IsSetActualStoragePrice returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetActualStoragePrice() bool {
-	if o != nil && !IsNil(o.ActualStoragePrice) {
-		return true
-	}
-
-	return false
-}
-
 // SetActualStoragePrice gets a reference to the given float32 and assigns it to the ActualStoragePrice field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetActualStoragePrice(v float32) {
 	o.ActualStoragePrice = &v
@@ -2044,15 +1439,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetActualStorageCostOk() (*f
 		return nil, false
 	}
 	return o.ActualStorageCost, true
-}
-
-// IsSetActualStorageCost returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetActualStorageCost() bool {
-	if o != nil && !IsNil(o.ActualStorageCost) {
-		return true
-	}
-
-	return false
 }
 
 // SetActualStorageCost gets a reference to the given float32 and assigns it to the ActualStorageCost field.
@@ -2078,15 +1464,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetActualNetworkPriceOk() (*
 	return o.ActualNetworkPrice, true
 }
 
-// IsSetActualNetworkPrice returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetActualNetworkPrice() bool {
-	if o != nil && !IsNil(o.ActualNetworkPrice) {
-		return true
-	}
-
-	return false
-}
-
 // SetActualNetworkPrice gets a reference to the given float32 and assigns it to the ActualNetworkPrice field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetActualNetworkPrice(v float32) {
 	o.ActualNetworkPrice = &v
@@ -2108,15 +1485,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetActualNetworkCostOk() (*f
 		return nil, false
 	}
 	return o.ActualNetworkCost, true
-}
-
-// IsSetActualNetworkCost returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetActualNetworkCost() bool {
-	if o != nil && !IsNil(o.ActualNetworkCost) {
-		return true
-	}
-
-	return false
 }
 
 // SetActualNetworkCost gets a reference to the given float32 and assigns it to the ActualNetworkCost field.
@@ -2142,15 +1510,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetActualLicensePriceOk() (*
 	return o.ActualLicensePrice, true
 }
 
-// IsSetActualLicensePrice returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetActualLicensePrice() bool {
-	if o != nil && !IsNil(o.ActualLicensePrice) {
-		return true
-	}
-
-	return false
-}
-
 // SetActualLicensePrice gets a reference to the given float32 and assigns it to the ActualLicensePrice field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetActualLicensePrice(v float32) {
 	o.ActualLicensePrice = &v
@@ -2172,15 +1531,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetActualLicenseCostOk() (*f
 		return nil, false
 	}
 	return o.ActualLicenseCost, true
-}
-
-// IsSetActualLicenseCost returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetActualLicenseCost() bool {
-	if o != nil && !IsNil(o.ActualLicenseCost) {
-		return true
-	}
-
-	return false
 }
 
 // SetActualLicenseCost gets a reference to the given float32 and assigns it to the ActualLicenseCost field.
@@ -2206,15 +1556,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetActualExtraPriceOk() (*fl
 	return o.ActualExtraPrice, true
 }
 
-// IsSetActualExtraPrice returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetActualExtraPrice() bool {
-	if o != nil && !IsNil(o.ActualExtraPrice) {
-		return true
-	}
-
-	return false
-}
-
 // SetActualExtraPrice gets a reference to the given float32 and assigns it to the ActualExtraPrice field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetActualExtraPrice(v float32) {
 	o.ActualExtraPrice = &v
@@ -2236,15 +1577,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetActualExtraCostOk() (*flo
 		return nil, false
 	}
 	return o.ActualExtraCost, true
-}
-
-// IsSetActualExtraCost returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetActualExtraCost() bool {
-	if o != nil && !IsNil(o.ActualExtraCost) {
-		return true
-	}
-
-	return false
 }
 
 // SetActualExtraCost gets a reference to the given float32 and assigns it to the ActualExtraCost field.
@@ -2270,15 +1602,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetActualTotalPriceOk() (*fl
 	return o.ActualTotalPrice, true
 }
 
-// IsSetActualTotalPrice returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetActualTotalPrice() bool {
-	if o != nil && !IsNil(o.ActualTotalPrice) {
-		return true
-	}
-
-	return false
-}
-
 // SetActualTotalPrice gets a reference to the given float32 and assigns it to the ActualTotalPrice field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetActualTotalPrice(v float32) {
 	o.ActualTotalPrice = &v
@@ -2300,15 +1623,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetActualTotalCostOk() (*flo
 		return nil, false
 	}
 	return o.ActualTotalCost, true
-}
-
-// IsSetActualTotalCost returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetActualTotalCost() bool {
-	if o != nil && !IsNil(o.ActualTotalCost) {
-		return true
-	}
-
-	return false
 }
 
 // SetActualTotalCost gets a reference to the given float32 and assigns it to the ActualTotalCost field.
@@ -2334,15 +1648,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetActualRunningPriceOk() (*
 	return o.ActualRunningPrice, true
 }
 
-// IsSetActualRunningPrice returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetActualRunningPrice() bool {
-	if o != nil && !IsNil(o.ActualRunningPrice) {
-		return true
-	}
-
-	return false
-}
-
 // SetActualRunningPrice gets a reference to the given float32 and assigns it to the ActualRunningPrice field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetActualRunningPrice(v float32) {
 	o.ActualRunningPrice = &v
@@ -2364,15 +1669,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetActualRunningCostOk() (*f
 		return nil, false
 	}
 	return o.ActualRunningCost, true
-}
-
-// IsSetActualRunningCost returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetActualRunningCost() bool {
-	if o != nil && !IsNil(o.ActualRunningCost) {
-		return true
-	}
-
-	return false
 }
 
 // SetActualRunningCost gets a reference to the given float32 and assigns it to the ActualRunningCost field.
@@ -2398,15 +1694,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetActualCurrencyOk() (*stri
 	return o.ActualCurrency, true
 }
 
-// IsSetActualCurrency returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetActualCurrency() bool {
-	if o != nil && !IsNil(o.ActualCurrency) {
-		return true
-	}
-
-	return false
-}
-
 // SetActualCurrency gets a reference to the given string and assigns it to the ActualCurrency field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetActualCurrency(v string) {
 	o.ActualCurrency = &v
@@ -2428,15 +1715,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetActualConversionRateOk() 
 		return nil, false
 	}
 	return o.ActualConversionRate, true
-}
-
-// IsSetActualConversionRate returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetActualConversionRate() bool {
-	if o != nil && !IsNil(o.ActualConversionRate) {
-		return true
-	}
-
-	return false
 }
 
 // SetActualConversionRate gets a reference to the given float32 and assigns it to the ActualConversionRate field.
@@ -2462,15 +1740,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetComputePriceOk() (*float3
 	return o.ComputePrice, true
 }
 
-// IsSetComputePrice returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetComputePrice() bool {
-	if o != nil && !IsNil(o.ComputePrice) {
-		return true
-	}
-
-	return false
-}
-
 // SetComputePrice gets a reference to the given float32 and assigns it to the ComputePrice field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetComputePrice(v float32) {
 	o.ComputePrice = &v
@@ -2492,15 +1761,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetComputeCostOk() (*float32
 		return nil, false
 	}
 	return o.ComputeCost, true
-}
-
-// IsSetComputeCost returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetComputeCost() bool {
-	if o != nil && !IsNil(o.ComputeCost) {
-		return true
-	}
-
-	return false
 }
 
 // SetComputeCost gets a reference to the given float32 and assigns it to the ComputeCost field.
@@ -2526,15 +1786,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetMemoryPriceOk() (*float32
 	return o.MemoryPrice, true
 }
 
-// IsSetMemoryPrice returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetMemoryPrice() bool {
-	if o != nil && !IsNil(o.MemoryPrice) {
-		return true
-	}
-
-	return false
-}
-
 // SetMemoryPrice gets a reference to the given float32 and assigns it to the MemoryPrice field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetMemoryPrice(v float32) {
 	o.MemoryPrice = &v
@@ -2556,15 +1807,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetMemoryCostOk() (*float32,
 		return nil, false
 	}
 	return o.MemoryCost, true
-}
-
-// IsSetMemoryCost returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetMemoryCost() bool {
-	if o != nil && !IsNil(o.MemoryCost) {
-		return true
-	}
-
-	return false
 }
 
 // SetMemoryCost gets a reference to the given float32 and assigns it to the MemoryCost field.
@@ -2590,15 +1832,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetStoragePriceOk() (*float3
 	return o.StoragePrice, true
 }
 
-// IsSetStoragePrice returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetStoragePrice() bool {
-	if o != nil && !IsNil(o.StoragePrice) {
-		return true
-	}
-
-	return false
-}
-
 // SetStoragePrice gets a reference to the given float32 and assigns it to the StoragePrice field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetStoragePrice(v float32) {
 	o.StoragePrice = &v
@@ -2620,15 +1853,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetStorageCostOk() (*float32
 		return nil, false
 	}
 	return o.StorageCost, true
-}
-
-// IsSetStorageCost returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetStorageCost() bool {
-	if o != nil && !IsNil(o.StorageCost) {
-		return true
-	}
-
-	return false
 }
 
 // SetStorageCost gets a reference to the given float32 and assigns it to the StorageCost field.
@@ -2654,15 +1878,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetNetworkPriceOk() (*float3
 	return o.NetworkPrice, true
 }
 
-// IsSetNetworkPrice returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetNetworkPrice() bool {
-	if o != nil && !IsNil(o.NetworkPrice) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkPrice gets a reference to the given float32 and assigns it to the NetworkPrice field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetNetworkPrice(v float32) {
 	o.NetworkPrice = &v
@@ -2684,15 +1899,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetNetworkCostOk() (*float32
 		return nil, false
 	}
 	return o.NetworkCost, true
-}
-
-// IsSetNetworkCost returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetNetworkCost() bool {
-	if o != nil && !IsNil(o.NetworkCost) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkCost gets a reference to the given float32 and assigns it to the NetworkCost field.
@@ -2718,15 +1924,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetLicensePriceOk() (*float3
 	return o.LicensePrice, true
 }
 
-// IsSetLicensePrice returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetLicensePrice() bool {
-	if o != nil && !IsNil(o.LicensePrice) {
-		return true
-	}
-
-	return false
-}
-
 // SetLicensePrice gets a reference to the given float32 and assigns it to the LicensePrice field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetLicensePrice(v float32) {
 	o.LicensePrice = &v
@@ -2748,15 +1945,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetLicenseCostOk() (*float32
 		return nil, false
 	}
 	return o.LicenseCost, true
-}
-
-// IsSetLicenseCost returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetLicenseCost() bool {
-	if o != nil && !IsNil(o.LicenseCost) {
-		return true
-	}
-
-	return false
 }
 
 // SetLicenseCost gets a reference to the given float32 and assigns it to the LicenseCost field.
@@ -2782,15 +1970,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetExtraPriceOk() (*float32,
 	return o.ExtraPrice, true
 }
 
-// IsSetExtraPrice returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetExtraPrice() bool {
-	if o != nil && !IsNil(o.ExtraPrice) {
-		return true
-	}
-
-	return false
-}
-
 // SetExtraPrice gets a reference to the given float32 and assigns it to the ExtraPrice field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetExtraPrice(v float32) {
 	o.ExtraPrice = &v
@@ -2812,15 +1991,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetExtraCostOk() (*float32, 
 		return nil, false
 	}
 	return o.ExtraCost, true
-}
-
-// IsSetExtraCost returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetExtraCost() bool {
-	if o != nil && !IsNil(o.ExtraCost) {
-		return true
-	}
-
-	return false
 }
 
 // SetExtraCost gets a reference to the given float32 and assigns it to the ExtraCost field.
@@ -2846,15 +2016,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetTotalPriceOk() (*float32,
 	return o.TotalPrice, true
 }
 
-// IsSetTotalPrice returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetTotalPrice() bool {
-	if o != nil && !IsNil(o.TotalPrice) {
-		return true
-	}
-
-	return false
-}
-
 // SetTotalPrice gets a reference to the given float32 and assigns it to the TotalPrice field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetTotalPrice(v float32) {
 	o.TotalPrice = &v
@@ -2876,15 +2037,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetTotalCostOk() (*float32, 
 		return nil, false
 	}
 	return o.TotalCost, true
-}
-
-// IsSetTotalCost returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetTotalCost() bool {
-	if o != nil && !IsNil(o.TotalCost) {
-		return true
-	}
-
-	return false
 }
 
 // SetTotalCost gets a reference to the given float32 and assigns it to the TotalCost field.
@@ -2910,15 +2062,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetRunningPriceOk() (*float3
 	return o.RunningPrice, true
 }
 
-// IsSetRunningPrice returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetRunningPrice() bool {
-	if o != nil && !IsNil(o.RunningPrice) {
-		return true
-	}
-
-	return false
-}
-
 // SetRunningPrice gets a reference to the given float32 and assigns it to the RunningPrice field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetRunningPrice(v float32) {
 	o.RunningPrice = &v
@@ -2940,15 +2083,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetRunningCostOk() (*float32
 		return nil, false
 	}
 	return o.RunningCost, true
-}
-
-// IsSetRunningCost returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetRunningCost() bool {
-	if o != nil && !IsNil(o.RunningCost) {
-		return true
-	}
-
-	return false
 }
 
 // SetRunningCost gets a reference to the given float32 and assigns it to the RunningCost field.
@@ -2974,15 +2108,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetCurrencyOk() (*string, bo
 	return o.Currency, true
 }
 
-// IsSetCurrency returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetCurrency() bool {
-	if o != nil && !IsNil(o.Currency) {
-		return true
-	}
-
-	return false
-}
-
 // SetCurrency gets a reference to the given string and assigns it to the Currency field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetCurrency(v string) {
 	o.Currency = &v
@@ -3004,15 +2129,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetConversionRateOk() (*floa
 		return nil, false
 	}
 	return o.ConversionRate, true
-}
-
-// IsSetConversionRate returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetConversionRate() bool {
-	if o != nil && !IsNil(o.ConversionRate) {
-		return true
-	}
-
-	return false
 }
 
 // SetConversionRate gets a reference to the given float32 and assigns it to the ConversionRate field.
@@ -3038,15 +2154,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetCostTypeOk() (*string, bo
 	return o.CostType, true
 }
 
-// IsSetCostType returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetCostType() bool {
-	if o != nil && !IsNil(o.CostType) {
-		return true
-	}
-
-	return false
-}
-
 // SetCostType gets a reference to the given string and assigns it to the CostType field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetCostType(v string) {
 	o.CostType = &v
@@ -3068,15 +2175,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetOffTimeOk() (*int64, bool
 		return nil, false
 	}
 	return o.OffTime, true
-}
-
-// IsSetOffTime returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetOffTime() bool {
-	if o != nil && !IsNil(o.OffTime) {
-		return true
-	}
-
-	return false
 }
 
 // SetOffTime gets a reference to the given int64 and assigns it to the OffTime field.
@@ -3103,28 +2201,9 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetPowerStateOk() (*string, 
 	return o.PowerState.Get(), o.PowerState.IsSet()
 }
 
-// IsSetPowerState returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetPowerState() bool {
-	if o != nil && o.PowerState.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPowerState gets a reference to the given NullableString and assigns it to the PowerState field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetPowerState(v string) {
 	o.PowerState.Set(&v)
-}
-
-// SetPowerStateNil sets the value for PowerState to be an explicit nil
-func (o *ListInvoices200ResponseAllOfInvoicesInner) SetPowerStateNil() {
-	o.PowerState.Set(nil)
-}
-
-// UnsetPowerState ensures that no value is present for PowerState, not even an explicit nil
-func (o *ListInvoices200ResponseAllOfInvoicesInner) UnsetPowerState() {
-	o.PowerState.Unset()
 }
 
 // GetPowerDate returns the PowerDate field value if set, zero value otherwise.
@@ -3143,15 +2222,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetPowerDateOk() (*time.Time
 		return nil, false
 	}
 	return o.PowerDate, true
-}
-
-// IsSetPowerDate returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetPowerDate() bool {
-	if o != nil && !IsNil(o.PowerDate) {
-		return true
-	}
-
-	return false
 }
 
 // SetPowerDate gets a reference to the given time.Time and assigns it to the PowerDate field.
@@ -3175,15 +2245,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetRunningMultiplierOk() (*f
 		return nil, false
 	}
 	return o.RunningMultiplier, true
-}
-
-// IsSetRunningMultiplier returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetRunningMultiplier() bool {
-	if o != nil && !IsNil(o.RunningMultiplier) {
-		return true
-	}
-
-	return false
 }
 
 // SetRunningMultiplier gets a reference to the given float32 and assigns it to the RunningMultiplier field.
@@ -3210,28 +2271,9 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetUsageTypeOk() (*string, b
 	return o.UsageType.Get(), o.UsageType.IsSet()
 }
 
-// IsSetUsageType returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetUsageType() bool {
-	if o != nil && o.UsageType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUsageType gets a reference to the given NullableString and assigns it to the UsageType field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetUsageType(v string) {
 	o.UsageType.Set(&v)
-}
-
-// SetUsageTypeNil sets the value for UsageType to be an explicit nil
-func (o *ListInvoices200ResponseAllOfInvoicesInner) SetUsageTypeNil() {
-	o.UsageType.Set(nil)
-}
-
-// UnsetUsageType ensures that no value is present for UsageType, not even an explicit nil
-func (o *ListInvoices200ResponseAllOfInvoicesInner) UnsetUsageType() {
-	o.UsageType.Unset()
 }
 
 // GetUsageCategory returns the UsageCategory field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -3253,28 +2295,9 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetUsageCategoryOk() (*strin
 	return o.UsageCategory.Get(), o.UsageCategory.IsSet()
 }
 
-// IsSetUsageCategory returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetUsageCategory() bool {
-	if o != nil && o.UsageCategory.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUsageCategory gets a reference to the given NullableString and assigns it to the UsageCategory field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetUsageCategory(v string) {
 	o.UsageCategory.Set(&v)
-}
-
-// SetUsageCategoryNil sets the value for UsageCategory to be an explicit nil
-func (o *ListInvoices200ResponseAllOfInvoicesInner) SetUsageCategoryNil() {
-	o.UsageCategory.Set(nil)
-}
-
-// UnsetUsageCategory ensures that no value is present for UsageCategory, not even an explicit nil
-func (o *ListInvoices200ResponseAllOfInvoicesInner) UnsetUsageCategory() {
-	o.UsageCategory.Unset()
 }
 
 // GetLastCostDate returns the LastCostDate field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -3296,28 +2319,9 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetLastCostDateOk() (*time.T
 	return o.LastCostDate.Get(), o.LastCostDate.IsSet()
 }
 
-// IsSetLastCostDate returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetLastCostDate() bool {
-	if o != nil && o.LastCostDate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastCostDate gets a reference to the given NullableTime and assigns it to the LastCostDate field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetLastCostDate(v time.Time) {
 	o.LastCostDate.Set(&v)
-}
-
-// SetLastCostDateNil sets the value for LastCostDate to be an explicit nil
-func (o *ListInvoices200ResponseAllOfInvoicesInner) SetLastCostDateNil() {
-	o.LastCostDate.Set(nil)
-}
-
-// UnsetLastCostDate ensures that no value is present for LastCostDate, not even an explicit nil
-func (o *ListInvoices200ResponseAllOfInvoicesInner) UnsetLastCostDate() {
-	o.LastCostDate.Unset()
 }
 
 // GetLastActualDate returns the LastActualDate field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -3339,28 +2343,9 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetLastActualDateOk() (*time
 	return o.LastActualDate.Get(), o.LastActualDate.IsSet()
 }
 
-// IsSetLastActualDate returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetLastActualDate() bool {
-	if o != nil && o.LastActualDate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastActualDate gets a reference to the given NullableTime and assigns it to the LastActualDate field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetLastActualDate(v time.Time) {
 	o.LastActualDate.Set(&v)
-}
-
-// SetLastActualDateNil sets the value for LastActualDate to be an explicit nil
-func (o *ListInvoices200ResponseAllOfInvoicesInner) SetLastActualDateNil() {
-	o.LastActualDate.Set(nil)
-}
-
-// UnsetLastActualDate ensures that no value is present for LastActualDate, not even an explicit nil
-func (o *ListInvoices200ResponseAllOfInvoicesInner) UnsetLastActualDate() {
-	o.LastActualDate.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -3379,15 +2364,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetDateCreatedOk() (*time.Ti
 		return nil, false
 	}
 	return o.DateCreated, true
-}
-
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
@@ -3413,15 +2389,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetLastUpdatedOk() (*time.Ti
 	return o.LastUpdated, true
 }
 
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
-}
-
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetLastUpdated(v time.Time) {
 	o.LastUpdated = &v
@@ -3445,15 +2412,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetLineItemCountOk() (*int64
 	return o.LineItemCount, true
 }
 
-// IsSetLineItemCount returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetLineItemCount() bool {
-	if o != nil && !IsNil(o.LineItemCount) {
-		return true
-	}
-
-	return false
-}
-
 // SetLineItemCount gets a reference to the given int64 and assigns it to the LineItemCount field.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) SetLineItemCount(v int64) {
 	o.LineItemCount = &v
@@ -3475,15 +2433,6 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) GetLineItemsOk() ([]ListInvo
 		return nil, false
 	}
 	return o.LineItems, true
-}
-
-// IsSetLineItems returns a boolean if a field has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetLineItems() bool {
-	if o != nil && !IsNil(o.LineItems) {
-		return true
-	}
-
-	return false
 }
 
 // SetLineItems gets a reference to the given []ListInvoices200ResponseAllOfInvoicesInnerLineItemsInner and assigns it to the LineItems field.

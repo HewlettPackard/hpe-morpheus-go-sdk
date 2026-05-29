@@ -81,15 +81,6 @@ func (o *UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) GetVipNameO
 	return o.VipName, true
 }
 
-// IsSetVipName returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) IsSetVipName() bool {
-	if o != nil && !IsNil(o.VipName) {
-		return true
-	}
-
-	return false
-}
-
 // SetVipName gets a reference to the given string and assigns it to the VipName field.
 func (o *UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) SetVipName(v string) {
 	o.VipName = &v
@@ -111,15 +102,6 @@ func (o *UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) GetDescript
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -145,15 +127,6 @@ func (o *UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) GetVipAddre
 	return o.VipAddress, true
 }
 
-// IsSetVipAddress returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) IsSetVipAddress() bool {
-	if o != nil && !IsNil(o.VipAddress) {
-		return true
-	}
-
-	return false
-}
-
 // SetVipAddress gets a reference to the given string and assigns it to the VipAddress field.
 func (o *UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) SetVipAddress(v string) {
 	o.VipAddress = &v
@@ -175,15 +148,6 @@ func (o *UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) GetVipPortO
 		return nil, false
 	}
 	return o.VipPort, true
-}
-
-// IsSetVipPort returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) IsSetVipPort() bool {
-	if o != nil && !IsNil(o.VipPort) {
-		return true
-	}
-
-	return false
 }
 
 // SetVipPort gets a reference to the given int64 and assigns it to the VipPort field.
@@ -209,15 +173,6 @@ func (o *UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) GetVipProto
 	return o.VipProtocol, true
 }
 
-// IsSetVipProtocol returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) IsSetVipProtocol() bool {
-	if o != nil && !IsNil(o.VipProtocol) {
-		return true
-	}
-
-	return false
-}
-
 // SetVipProtocol gets a reference to the given string and assigns it to the VipProtocol field.
 func (o *UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) SetVipProtocol(v string) {
 	o.VipProtocol = &v
@@ -239,15 +194,6 @@ func (o *UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) GetVipHostn
 		return nil, false
 	}
 	return o.VipHostname, true
-}
-
-// IsSetVipHostname returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) IsSetVipHostname() bool {
-	if o != nil && !IsNil(o.VipHostname) {
-		return true
-	}
-
-	return false
 }
 
 // SetVipHostname gets a reference to the given string and assigns it to the VipHostname field.
@@ -274,28 +220,9 @@ func (o *UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) GetVipPoolO
 	return o.VipPool.Get(), o.VipPool.IsSet()
 }
 
-// IsSetVipPool returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) IsSetVipPool() bool {
-	if o != nil && o.VipPool.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetVipPool gets a reference to the given NullableInt64 and assigns it to the VipPool field.
 func (o *UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) SetVipPool(v int64) {
 	o.VipPool.Set(&v)
-}
-
-// SetVipPoolNil sets the value for VipPool to be an explicit nil
-func (o *UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) SetVipPoolNil() {
-	o.VipPool.Set(nil)
-}
-
-// UnsetVipPool ensures that no value is present for VipPool, not even an explicit nil
-func (o *UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) UnsetVipPool() {
-	o.VipPool.Unset()
 }
 
 // GetPool returns the Pool field value if set, zero value otherwise.
@@ -314,15 +241,6 @@ func (o *UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) GetPoolOk()
 		return nil, false
 	}
 	return o.Pool, true
-}
-
-// IsSetPool returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) IsSetPool() bool {
-	if o != nil && !IsNil(o.Pool) {
-		return true
-	}
-
-	return false
 }
 
 // SetPool gets a reference to the given int64 and assigns it to the Pool field.
@@ -348,15 +266,6 @@ func (o *UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) GetSslCertO
 	return o.SslCert, true
 }
 
-// IsSetSslCert returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) IsSetSslCert() bool {
-	if o != nil && !IsNil(o.SslCert) {
-		return true
-	}
-
-	return false
-}
-
 // SetSslCert gets a reference to the given int64 and assigns it to the SslCert field.
 func (o *UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) SetSslCert(v int64) {
 	o.SslCert = &v
@@ -380,15 +289,6 @@ func (o *UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) GetSslServe
 	return o.SslServerCert, true
 }
 
-// IsSetSslServerCert returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) IsSetSslServerCert() bool {
-	if o != nil && !IsNil(o.SslServerCert) {
-		return true
-	}
-
-	return false
-}
-
 // SetSslServerCert gets a reference to the given int64 and assigns it to the SslServerCert field.
 func (o *UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) SetSslServerCert(v int64) {
 	o.SslServerCert = &v
@@ -410,15 +310,6 @@ func (o *UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) GetConfigOk
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given UpdateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig and assigns it to the Config field.

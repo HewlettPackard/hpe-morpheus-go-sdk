@@ -70,15 +70,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesInner) GetVolumeC
 	return o.VolumeCustomizable, true
 }
 
-// IsSetVolumeCustomizable returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesInner) IsSetVolumeCustomizable() bool {
-	if o != nil && !IsNil(o.VolumeCustomizable) {
-		return true
-	}
-
-	return false
-}
-
 // SetVolumeCustomizable gets a reference to the given bool and assigns it to the VolumeCustomizable field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesInner) SetVolumeCustomizable(v bool) {
 	o.VolumeCustomizable = &v
@@ -100,15 +91,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesInner) GetVIdOk()
 		return nil, false
 	}
 	return o.VId, true
-}
-
-// IsSetVId returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesInner) IsSetVId() bool {
-	if o != nil && !IsNil(o.VId) {
-		return true
-	}
-
-	return false
 }
 
 // SetVId gets a reference to the given int64 and assigns it to the VId field.
@@ -134,15 +116,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesInner) GetReadonl
 	return o.ReadonlyName, true
 }
 
-// IsSetReadonlyName returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesInner) IsSetReadonlyName() bool {
-	if o != nil && !IsNil(o.ReadonlyName) {
-		return true
-	}
-
-	return false
-}
-
 // SetReadonlyName gets a reference to the given bool and assigns it to the ReadonlyName field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesInner) SetReadonlyName(v bool) {
 	o.ReadonlyName = &v
@@ -164,15 +137,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesInner) GetSizeOk(
 		return nil, false
 	}
 	return o.Size, true
-}
-
-// IsSetSize returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesInner) IsSetSize() bool {
-	if o != nil && !IsNil(o.Size) {
-		return true
-	}
-
-	return false
 }
 
 // SetSize gets a reference to the given int64 and assigns it to the Size field.
@@ -199,28 +163,9 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesInner) GetMaxIOPS
 	return o.MaxIOPS.Get(), o.MaxIOPS.IsSet()
 }
 
-// IsSetMaxIOPS returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesInner) IsSetMaxIOPS() bool {
-	if o != nil && o.MaxIOPS.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxIOPS gets a reference to the given NullableString and assigns it to the MaxIOPS field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesInner) SetMaxIOPS(v string) {
 	o.MaxIOPS.Set(&v)
-}
-
-// SetMaxIOPSNil sets the value for MaxIOPS to be an explicit nil
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesInner) SetMaxIOPSNil() {
-	o.MaxIOPS.Set(nil)
-}
-
-// UnsetMaxIOPS ensures that no value is present for MaxIOPS, not even an explicit nil
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesInner) UnsetMaxIOPS() {
-	o.MaxIOPS.Unset()
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -239,15 +184,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesInner) GetNameOk(
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -273,15 +209,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesInner) GetRootVol
 	return o.RootVolume, true
 }
 
-// IsSetRootVolume returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesInner) IsSetRootVolume() bool {
-	if o != nil && !IsNil(o.RootVolume) {
-		return true
-	}
-
-	return false
-}
-
 // SetRootVolume gets a reference to the given bool and assigns it to the RootVolume field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesInner) SetRootVolume(v bool) {
 	o.RootVolume = &v
@@ -303,15 +230,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesInner) GetStorage
 		return nil, false
 	}
 	return o.StorageType, true
-}
-
-// IsSetStorageType returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesInner) IsSetStorageType() bool {
-	if o != nil && !IsNil(o.StorageType) {
-		return true
-	}
-
-	return false
 }
 
 // SetStorageType gets a reference to the given int64 and assigns it to the StorageType field.
@@ -337,15 +255,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesInner) GetDatasto
 	return o.DatastoreId, true
 }
 
-// IsSetDatastoreId returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesInner) IsSetDatastoreId() bool {
-	if o != nil && !IsNil(o.DatastoreId) {
-		return true
-	}
-
-	return false
-}
-
 // SetDatastoreId gets a reference to the given string and assigns it to the DatastoreId field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesInner) SetDatastoreId(v string) {
 	o.DatastoreId = &v
@@ -367,15 +276,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesInner) GetMaxStor
 		return nil, false
 	}
 	return o.MaxStorage, true
-}
-
-// IsSetMaxStorage returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesInner) IsSetMaxStorage() bool {
-	if o != nil && !IsNil(o.MaxStorage) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxStorage gets a reference to the given int64 and assigns it to the MaxStorage field.

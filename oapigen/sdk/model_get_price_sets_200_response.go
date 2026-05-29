@@ -61,15 +61,6 @@ func (o *GetPriceSets200Response) GetPriceSetOk() (*GetPriceSets200ResponsePrice
 	return o.PriceSet, true
 }
 
-// IsSetPriceSet returns a boolean if a field has been set.
-func (o *GetPriceSets200Response) IsSetPriceSet() bool {
-	if o != nil && !IsNil(o.PriceSet) {
-		return true
-	}
-
-	return false
-}
-
 // SetPriceSet gets a reference to the given GetPriceSets200ResponsePriceSet and assigns it to the PriceSet field.
 func (o *GetPriceSets200Response) SetPriceSet(v GetPriceSets200ResponsePriceSet) {
 	o.PriceSet = &v

@@ -67,28 +67,9 @@ func (o *TaskResponseFile) GetIdOk() (*int64, bool) {
 	return o.Id.Get(), o.Id.IsSet()
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *TaskResponseFile) IsSetId() bool {
-	if o != nil && o.Id.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given NullableInt64 and assigns it to the Id field.
 func (o *TaskResponseFile) SetId(v int64) {
 	o.Id.Set(&v)
-}
-
-// SetIdNil sets the value for Id to be an explicit nil
-func (o *TaskResponseFile) SetIdNil() {
-	o.Id.Set(nil)
-}
-
-// UnsetId ensures that no value is present for Id, not even an explicit nil
-func (o *TaskResponseFile) UnsetId() {
-	o.Id.Unset()
 }
 
 // GetSourceType returns the SourceType field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -110,28 +91,9 @@ func (o *TaskResponseFile) GetSourceTypeOk() (*string, bool) {
 	return o.SourceType.Get(), o.SourceType.IsSet()
 }
 
-// IsSetSourceType returns a boolean if a field has been set.
-func (o *TaskResponseFile) IsSetSourceType() bool {
-	if o != nil && o.SourceType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSourceType gets a reference to the given NullableString and assigns it to the SourceType field.
 func (o *TaskResponseFile) SetSourceType(v string) {
 	o.SourceType.Set(&v)
-}
-
-// SetSourceTypeNil sets the value for SourceType to be an explicit nil
-func (o *TaskResponseFile) SetSourceTypeNil() {
-	o.SourceType.Set(nil)
-}
-
-// UnsetSourceType ensures that no value is present for SourceType, not even an explicit nil
-func (o *TaskResponseFile) UnsetSourceType() {
-	o.SourceType.Unset()
 }
 
 // GetContentRef returns the ContentRef field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -153,28 +115,9 @@ func (o *TaskResponseFile) GetContentRefOk() (*string, bool) {
 	return o.ContentRef.Get(), o.ContentRef.IsSet()
 }
 
-// IsSetContentRef returns a boolean if a field has been set.
-func (o *TaskResponseFile) IsSetContentRef() bool {
-	if o != nil && o.ContentRef.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetContentRef gets a reference to the given NullableString and assigns it to the ContentRef field.
 func (o *TaskResponseFile) SetContentRef(v string) {
 	o.ContentRef.Set(&v)
-}
-
-// SetContentRefNil sets the value for ContentRef to be an explicit nil
-func (o *TaskResponseFile) SetContentRefNil() {
-	o.ContentRef.Set(nil)
-}
-
-// UnsetContentRef ensures that no value is present for ContentRef, not even an explicit nil
-func (o *TaskResponseFile) UnsetContentRef() {
-	o.ContentRef.Unset()
 }
 
 // GetContentPath returns the ContentPath field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -196,28 +139,9 @@ func (o *TaskResponseFile) GetContentPathOk() (*string, bool) {
 	return o.ContentPath.Get(), o.ContentPath.IsSet()
 }
 
-// IsSetContentPath returns a boolean if a field has been set.
-func (o *TaskResponseFile) IsSetContentPath() bool {
-	if o != nil && o.ContentPath.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetContentPath gets a reference to the given NullableString and assigns it to the ContentPath field.
 func (o *TaskResponseFile) SetContentPath(v string) {
 	o.ContentPath.Set(&v)
-}
-
-// SetContentPathNil sets the value for ContentPath to be an explicit nil
-func (o *TaskResponseFile) SetContentPathNil() {
-	o.ContentPath.Set(nil)
-}
-
-// UnsetContentPath ensures that no value is present for ContentPath, not even an explicit nil
-func (o *TaskResponseFile) UnsetContentPath() {
-	o.ContentPath.Unset()
 }
 
 // GetRepository returns the Repository field value if set, zero value otherwise.
@@ -236,15 +160,6 @@ func (o *TaskResponseFile) GetRepositoryOk() (*GetTasks200ResponseAllOfTaskFileR
 		return nil, false
 	}
 	return o.Repository, true
-}
-
-// IsSetRepository returns a boolean if a field has been set.
-func (o *TaskResponseFile) IsSetRepository() bool {
-	if o != nil && !IsNil(o.Repository) {
-		return true
-	}
-
-	return false
 }
 
 // SetRepository gets a reference to the given GetTasks200ResponseAllOfTaskFileRepository and assigns it to the Repository field.
@@ -271,28 +186,9 @@ func (o *TaskResponseFile) GetContentOk() (*string, bool) {
 	return o.Content.Get(), o.Content.IsSet()
 }
 
-// IsSetContent returns a boolean if a field has been set.
-func (o *TaskResponseFile) IsSetContent() bool {
-	if o != nil && o.Content.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetContent gets a reference to the given NullableString and assigns it to the Content field.
 func (o *TaskResponseFile) SetContent(v string) {
 	o.Content.Set(&v)
-}
-
-// SetContentNil sets the value for Content to be an explicit nil
-func (o *TaskResponseFile) SetContentNil() {
-	o.Content.Set(nil)
-}
-
-// UnsetContent ensures that no value is present for Content, not even an explicit nil
-func (o *TaskResponseFile) UnsetContent() {
-	o.Content.Unset()
 }
 
 func (o TaskResponseFile) MarshalJSON() ([]byte, error) {

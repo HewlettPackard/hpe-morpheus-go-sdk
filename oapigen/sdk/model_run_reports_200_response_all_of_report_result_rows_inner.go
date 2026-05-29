@@ -64,15 +64,6 @@ func (o *RunReports200ResponseAllOfReportResultRowsInner) GetIdOk() (*int64, boo
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *RunReports200ResponseAllOfReportResultRowsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *RunReports200ResponseAllOfReportResultRowsInner) SetId(v int64) {
 	o.Id = &v
@@ -96,15 +87,6 @@ func (o *RunReports200ResponseAllOfReportResultRowsInner) GetSectionOk() (*strin
 	return o.Section, true
 }
 
-// IsSetSection returns a boolean if a field has been set.
-func (o *RunReports200ResponseAllOfReportResultRowsInner) IsSetSection() bool {
-	if o != nil && !IsNil(o.Section) {
-		return true
-	}
-
-	return false
-}
-
 // SetSection gets a reference to the given string and assigns it to the Section field.
 func (o *RunReports200ResponseAllOfReportResultRowsInner) SetSection(v string) {
 	o.Section = &v
@@ -126,15 +108,6 @@ func (o *RunReports200ResponseAllOfReportResultRowsInner) GetDataOk() (*string, 
 		return nil, false
 	}
 	return o.Data, true
-}
-
-// IsSetData returns a boolean if a field has been set.
-func (o *RunReports200ResponseAllOfReportResultRowsInner) IsSetData() bool {
-	if o != nil && !IsNil(o.Data) {
-		return true
-	}
-
-	return false
 }
 
 // SetData gets a reference to the given string and assigns it to the Data field.
@@ -161,28 +134,9 @@ func (o *RunReports200ResponseAllOfReportResultRowsInner) GetDisplayOrderOk() (*
 	return o.DisplayOrder.Get(), o.DisplayOrder.IsSet()
 }
 
-// IsSetDisplayOrder returns a boolean if a field has been set.
-func (o *RunReports200ResponseAllOfReportResultRowsInner) IsSetDisplayOrder() bool {
-	if o != nil && o.DisplayOrder.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDisplayOrder gets a reference to the given NullableString and assigns it to the DisplayOrder field.
 func (o *RunReports200ResponseAllOfReportResultRowsInner) SetDisplayOrder(v string) {
 	o.DisplayOrder.Set(&v)
-}
-
-// SetDisplayOrderNil sets the value for DisplayOrder to be an explicit nil
-func (o *RunReports200ResponseAllOfReportResultRowsInner) SetDisplayOrderNil() {
-	o.DisplayOrder.Set(nil)
-}
-
-// UnsetDisplayOrder ensures that no value is present for DisplayOrder, not even an explicit nil
-func (o *RunReports200ResponseAllOfReportResultRowsInner) UnsetDisplayOrder() {
-	o.DisplayOrder.Unset()
 }
 
 func (o RunReports200ResponseAllOfReportResultRowsInner) MarshalJSON() ([]byte, error) {

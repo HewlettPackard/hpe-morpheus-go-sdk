@@ -62,15 +62,6 @@ func (o *ListClusterSecrets200Response) GetSecretsOk() ([]ListClusterSecrets200R
 	return o.Secrets, true
 }
 
-// IsSetSecrets returns a boolean if a field has been set.
-func (o *ListClusterSecrets200Response) IsSetSecrets() bool {
-	if o != nil && !IsNil(o.Secrets) {
-		return true
-	}
-
-	return false
-}
-
 // SetSecrets gets a reference to the given []ListClusterSecrets200ResponseAllOfSecretsInner and assigns it to the Secrets field.
 func (o *ListClusterSecrets200Response) SetSecrets(v []ListClusterSecrets200ResponseAllOfSecretsInner) {
 	o.Secrets = v
@@ -92,15 +83,6 @@ func (o *ListClusterSecrets200Response) GetMetaOk() (*ListApprovals200ResponseAl
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListClusterSecrets200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

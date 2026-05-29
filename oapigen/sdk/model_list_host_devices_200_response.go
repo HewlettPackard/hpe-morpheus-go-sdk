@@ -61,15 +61,6 @@ func (o *ListHostDevices200Response) GetDevicesOk() ([]ListHostDevices200Respons
 	return o.Devices, true
 }
 
-// IsSetDevices returns a boolean if a field has been set.
-func (o *ListHostDevices200Response) IsSetDevices() bool {
-	if o != nil && !IsNil(o.Devices) {
-		return true
-	}
-
-	return false
-}
-
 // SetDevices gets a reference to the given []ListHostDevices200ResponseDevicesInner and assigns it to the Devices field.
 func (o *ListHostDevices200Response) SetDevices(v []ListHostDevices200ResponseDevicesInner) {
 	o.Devices = v

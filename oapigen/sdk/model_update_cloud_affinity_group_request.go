@@ -61,15 +61,6 @@ func (o *UpdateCloudAffinityGroupRequest) GetAffinityGroupOk() (*UpdateCloudAffi
 	return o.AffinityGroup, true
 }
 
-// IsSetAffinityGroup returns a boolean if a field has been set.
-func (o *UpdateCloudAffinityGroupRequest) IsSetAffinityGroup() bool {
-	if o != nil && !IsNil(o.AffinityGroup) {
-		return true
-	}
-
-	return false
-}
-
 // SetAffinityGroup gets a reference to the given UpdateCloudAffinityGroupRequestAffinityGroup and assigns it to the AffinityGroup field.
 func (o *UpdateCloudAffinityGroupRequest) SetAffinityGroup(v UpdateCloudAffinityGroupRequestAffinityGroup) {
 	o.AffinityGroup = &v

@@ -102,15 +102,6 @@ func (o *ClusterContainers) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ClusterContainers) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ClusterContainers) SetId(v int64) {
 	o.Id = &v
@@ -134,15 +125,6 @@ func (o *ClusterContainers) GetUuidOk() (*string, bool) {
 	return o.Uuid, true
 }
 
-// IsSetUuid returns a boolean if a field has been set.
-func (o *ClusterContainers) IsSetUuid() bool {
-	if o != nil && !IsNil(o.Uuid) {
-		return true
-	}
-
-	return false
-}
-
 // SetUuid gets a reference to the given string and assigns it to the Uuid field.
 func (o *ClusterContainers) SetUuid(v string) {
 	o.Uuid = &v
@@ -164,15 +146,6 @@ func (o *ClusterContainers) GetAccountIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.AccountId, true
-}
-
-// IsSetAccountId returns a boolean if a field has been set.
-func (o *ClusterContainers) IsSetAccountId() bool {
-	if o != nil && !IsNil(o.AccountId) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccountId gets a reference to the given int64 and assigns it to the AccountId field.
@@ -199,28 +172,9 @@ func (o *ClusterContainers) GetInstanceOk() (*string, bool) {
 	return o.Instance.Get(), o.Instance.IsSet()
 }
 
-// IsSetInstance returns a boolean if a field has been set.
-func (o *ClusterContainers) IsSetInstance() bool {
-	if o != nil && o.Instance.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInstance gets a reference to the given NullableString and assigns it to the Instance field.
 func (o *ClusterContainers) SetInstance(v string) {
 	o.Instance.Set(&v)
-}
-
-// SetInstanceNil sets the value for Instance to be an explicit nil
-func (o *ClusterContainers) SetInstanceNil() {
-	o.Instance.Set(nil)
-}
-
-// UnsetInstance ensures that no value is present for Instance, not even an explicit nil
-func (o *ClusterContainers) UnsetInstance() {
-	o.Instance.Unset()
 }
 
 // GetContainerType returns the ContainerType field value if set, zero value otherwise.
@@ -239,15 +193,6 @@ func (o *ClusterContainers) GetContainerTypeOk() (*ClusterContainersContainerTyp
 		return nil, false
 	}
 	return o.ContainerType, true
-}
-
-// IsSetContainerType returns a boolean if a field has been set.
-func (o *ClusterContainers) IsSetContainerType() bool {
-	if o != nil && !IsNil(o.ContainerType) {
-		return true
-	}
-
-	return false
 }
 
 // SetContainerType gets a reference to the given ClusterContainersContainerType and assigns it to the ContainerType field.
@@ -273,15 +218,6 @@ func (o *ClusterContainers) GetContainerTypeSetOk() (*ClusterContainersContainer
 	return o.ContainerTypeSet, true
 }
 
-// IsSetContainerTypeSet returns a boolean if a field has been set.
-func (o *ClusterContainers) IsSetContainerTypeSet() bool {
-	if o != nil && !IsNil(o.ContainerTypeSet) {
-		return true
-	}
-
-	return false
-}
-
 // SetContainerTypeSet gets a reference to the given ClusterContainersContainerTypeSet and assigns it to the ContainerTypeSet field.
 func (o *ClusterContainers) SetContainerTypeSet(v ClusterContainersContainerTypeSet) {
 	o.ContainerTypeSet = &v
@@ -303,15 +239,6 @@ func (o *ClusterContainers) GetServerOk() (*ClusterContainersServer, bool) {
 		return nil, false
 	}
 	return o.Server, true
-}
-
-// IsSetServer returns a boolean if a field has been set.
-func (o *ClusterContainers) IsSetServer() bool {
-	if o != nil && !IsNil(o.Server) {
-		return true
-	}
-
-	return false
 }
 
 // SetServer gets a reference to the given ClusterContainersServer and assigns it to the Server field.
@@ -337,15 +264,6 @@ func (o *ClusterContainers) GetCloudOk() (*ClusterContainersCloud, bool) {
 	return o.Cloud, true
 }
 
-// IsSetCloud returns a boolean if a field has been set.
-func (o *ClusterContainers) IsSetCloud() bool {
-	if o != nil && !IsNil(o.Cloud) {
-		return true
-	}
-
-	return false
-}
-
 // SetCloud gets a reference to the given ClusterContainersCloud and assigns it to the Cloud field.
 func (o *ClusterContainers) SetCloud(v ClusterContainersCloud) {
 	o.Cloud = &v
@@ -367,15 +285,6 @@ func (o *ClusterContainers) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ClusterContainers) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -401,15 +310,6 @@ func (o *ClusterContainers) GetIpOk() (*string, bool) {
 	return o.Ip, true
 }
 
-// IsSetIp returns a boolean if a field has been set.
-func (o *ClusterContainers) IsSetIp() bool {
-	if o != nil && !IsNil(o.Ip) {
-		return true
-	}
-
-	return false
-}
-
 // SetIp gets a reference to the given string and assigns it to the Ip field.
 func (o *ClusterContainers) SetIp(v string) {
 	o.Ip = &v
@@ -431,15 +331,6 @@ func (o *ClusterContainers) GetInternalIpOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InternalIp, true
-}
-
-// IsSetInternalIp returns a boolean if a field has been set.
-func (o *ClusterContainers) IsSetInternalIp() bool {
-	if o != nil && !IsNil(o.InternalIp) {
-		return true
-	}
-
-	return false
 }
 
 // SetInternalIp gets a reference to the given string and assigns it to the InternalIp field.
@@ -465,15 +356,6 @@ func (o *ClusterContainers) GetInternalHostnameOk() (*string, bool) {
 	return o.InternalHostname, true
 }
 
-// IsSetInternalHostname returns a boolean if a field has been set.
-func (o *ClusterContainers) IsSetInternalHostname() bool {
-	if o != nil && !IsNil(o.InternalHostname) {
-		return true
-	}
-
-	return false
-}
-
 // SetInternalHostname gets a reference to the given string and assigns it to the InternalHostname field.
 func (o *ClusterContainers) SetInternalHostname(v string) {
 	o.InternalHostname = &v
@@ -495,15 +377,6 @@ func (o *ClusterContainers) GetExternalHostnameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ExternalHostname, true
-}
-
-// IsSetExternalHostname returns a boolean if a field has been set.
-func (o *ClusterContainers) IsSetExternalHostname() bool {
-	if o != nil && !IsNil(o.ExternalHostname) {
-		return true
-	}
-
-	return false
 }
 
 // SetExternalHostname gets a reference to the given string and assigns it to the ExternalHostname field.
@@ -529,15 +402,6 @@ func (o *ClusterContainers) GetExternalDomainOk() (*string, bool) {
 	return o.ExternalDomain, true
 }
 
-// IsSetExternalDomain returns a boolean if a field has been set.
-func (o *ClusterContainers) IsSetExternalDomain() bool {
-	if o != nil && !IsNil(o.ExternalDomain) {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalDomain gets a reference to the given string and assigns it to the ExternalDomain field.
 func (o *ClusterContainers) SetExternalDomain(v string) {
 	o.ExternalDomain = &v
@@ -559,15 +423,6 @@ func (o *ClusterContainers) GetExternalFqdnOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ExternalFqdn, true
-}
-
-// IsSetExternalFqdn returns a boolean if a field has been set.
-func (o *ClusterContainers) IsSetExternalFqdn() bool {
-	if o != nil && !IsNil(o.ExternalFqdn) {
-		return true
-	}
-
-	return false
 }
 
 // SetExternalFqdn gets a reference to the given string and assigns it to the ExternalFqdn field.
@@ -593,15 +448,6 @@ func (o *ClusterContainers) GetPortsOk() ([]map[string]interface{}, bool) {
 	return o.Ports, true
 }
 
-// IsSetPorts returns a boolean if a field has been set.
-func (o *ClusterContainers) IsSetPorts() bool {
-	if o != nil && !IsNil(o.Ports) {
-		return true
-	}
-
-	return false
-}
-
 // SetPorts gets a reference to the given []map[string]interface{} and assigns it to the Ports field.
 func (o *ClusterContainers) SetPorts(v []map[string]interface{}) {
 	o.Ports = v
@@ -623,15 +469,6 @@ func (o *ClusterContainers) GetPlanOk() (*ClusterContainersPlan, bool) {
 		return nil, false
 	}
 	return o.Plan, true
-}
-
-// IsSetPlan returns a boolean if a field has been set.
-func (o *ClusterContainers) IsSetPlan() bool {
-	if o != nil && !IsNil(o.Plan) {
-		return true
-	}
-
-	return false
 }
 
 // SetPlan gets a reference to the given ClusterContainersPlan and assigns it to the Plan field.
@@ -658,28 +495,9 @@ func (o *ClusterContainers) GetDateCreatedOk() (*time.Time, bool) {
 	return o.DateCreated.Get(), o.DateCreated.IsSet()
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *ClusterContainers) IsSetDateCreated() bool {
-	if o != nil && o.DateCreated.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given NullableTime and assigns it to the DateCreated field.
 func (o *ClusterContainers) SetDateCreated(v time.Time) {
 	o.DateCreated.Set(&v)
-}
-
-// SetDateCreatedNil sets the value for DateCreated to be an explicit nil
-func (o *ClusterContainers) SetDateCreatedNil() {
-	o.DateCreated.Set(nil)
-}
-
-// UnsetDateCreated ensures that no value is present for DateCreated, not even an explicit nil
-func (o *ClusterContainers) UnsetDateCreated() {
-	o.DateCreated.Unset()
 }
 
 // GetLastUpdated returns the LastUpdated field value if set, zero value otherwise.
@@ -698,15 +516,6 @@ func (o *ClusterContainers) GetLastUpdatedOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *ClusterContainers) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
@@ -732,15 +541,6 @@ func (o *ClusterContainers) GetStatsEnabledOk() (*bool, bool) {
 	return o.StatsEnabled, true
 }
 
-// IsSetStatsEnabled returns a boolean if a field has been set.
-func (o *ClusterContainers) IsSetStatsEnabled() bool {
-	if o != nil && !IsNil(o.StatsEnabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetStatsEnabled gets a reference to the given bool and assigns it to the StatsEnabled field.
 func (o *ClusterContainers) SetStatsEnabled(v bool) {
 	o.StatsEnabled = &v
@@ -764,15 +564,6 @@ func (o *ClusterContainers) GetStatusOk() (*string, bool) {
 	return o.Status, true
 }
 
-// IsSetStatus returns a boolean if a field has been set.
-func (o *ClusterContainers) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
-}
-
 // SetStatus gets a reference to the given string and assigns it to the Status field.
 func (o *ClusterContainers) SetStatus(v string) {
 	o.Status = &v
@@ -794,15 +585,6 @@ func (o *ClusterContainers) GetUserStatusOk() (*string, bool) {
 		return nil, false
 	}
 	return o.UserStatus, true
-}
-
-// IsSetUserStatus returns a boolean if a field has been set.
-func (o *ClusterContainers) IsSetUserStatus() bool {
-	if o != nil && !IsNil(o.UserStatus) {
-		return true
-	}
-
-	return false
 }
 
 // SetUserStatus gets a reference to the given string and assigns it to the UserStatus field.
@@ -829,28 +611,9 @@ func (o *ClusterContainers) GetEnvironmentPrefixOk() (*string, bool) {
 	return o.EnvironmentPrefix.Get(), o.EnvironmentPrefix.IsSet()
 }
 
-// IsSetEnvironmentPrefix returns a boolean if a field has been set.
-func (o *ClusterContainers) IsSetEnvironmentPrefix() bool {
-	if o != nil && o.EnvironmentPrefix.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetEnvironmentPrefix gets a reference to the given NullableString and assigns it to the EnvironmentPrefix field.
 func (o *ClusterContainers) SetEnvironmentPrefix(v string) {
 	o.EnvironmentPrefix.Set(&v)
-}
-
-// SetEnvironmentPrefixNil sets the value for EnvironmentPrefix to be an explicit nil
-func (o *ClusterContainers) SetEnvironmentPrefixNil() {
-	o.EnvironmentPrefix.Set(nil)
-}
-
-// UnsetEnvironmentPrefix ensures that no value is present for EnvironmentPrefix, not even an explicit nil
-func (o *ClusterContainers) UnsetEnvironmentPrefix() {
-	o.EnvironmentPrefix.Unset()
 }
 
 // GetConfigGroup returns the ConfigGroup field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -872,28 +635,9 @@ func (o *ClusterContainers) GetConfigGroupOk() (*string, bool) {
 	return o.ConfigGroup.Get(), o.ConfigGroup.IsSet()
 }
 
-// IsSetConfigGroup returns a boolean if a field has been set.
-func (o *ClusterContainers) IsSetConfigGroup() bool {
-	if o != nil && o.ConfigGroup.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetConfigGroup gets a reference to the given NullableString and assigns it to the ConfigGroup field.
 func (o *ClusterContainers) SetConfigGroup(v string) {
 	o.ConfigGroup.Set(&v)
-}
-
-// SetConfigGroupNil sets the value for ConfigGroup to be an explicit nil
-func (o *ClusterContainers) SetConfigGroupNil() {
-	o.ConfigGroup.Set(nil)
-}
-
-// UnsetConfigGroup ensures that no value is present for ConfigGroup, not even an explicit nil
-func (o *ClusterContainers) UnsetConfigGroup() {
-	o.ConfigGroup.Unset()
 }
 
 // GetConfigId returns the ConfigId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -915,28 +659,9 @@ func (o *ClusterContainers) GetConfigIdOk() (*string, bool) {
 	return o.ConfigId.Get(), o.ConfigId.IsSet()
 }
 
-// IsSetConfigId returns a boolean if a field has been set.
-func (o *ClusterContainers) IsSetConfigId() bool {
-	if o != nil && o.ConfigId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetConfigId gets a reference to the given NullableString and assigns it to the ConfigId field.
 func (o *ClusterContainers) SetConfigId(v string) {
 	o.ConfigId.Set(&v)
-}
-
-// SetConfigIdNil sets the value for ConfigId to be an explicit nil
-func (o *ClusterContainers) SetConfigIdNil() {
-	o.ConfigId.Set(nil)
-}
-
-// UnsetConfigId ensures that no value is present for ConfigId, not even an explicit nil
-func (o *ClusterContainers) UnsetConfigId() {
-	o.ConfigId.Unset()
 }
 
 // GetConfigRole returns the ConfigRole field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -958,28 +683,9 @@ func (o *ClusterContainers) GetConfigRoleOk() (*string, bool) {
 	return o.ConfigRole.Get(), o.ConfigRole.IsSet()
 }
 
-// IsSetConfigRole returns a boolean if a field has been set.
-func (o *ClusterContainers) IsSetConfigRole() bool {
-	if o != nil && o.ConfigRole.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetConfigRole gets a reference to the given NullableString and assigns it to the ConfigRole field.
 func (o *ClusterContainers) SetConfigRole(v string) {
 	o.ConfigRole.Set(&v)
-}
-
-// SetConfigRoleNil sets the value for ConfigRole to be an explicit nil
-func (o *ClusterContainers) SetConfigRoleNil() {
-	o.ConfigRole.Set(nil)
-}
-
-// UnsetConfigRole ensures that no value is present for ConfigRole, not even an explicit nil
-func (o *ClusterContainers) UnsetConfigRole() {
-	o.ConfigRole.Unset()
 }
 
 // GetStats returns the Stats field value if set, zero value otherwise.
@@ -998,15 +704,6 @@ func (o *ClusterContainers) GetStatsOk() (*ClusterContainersStats, bool) {
 		return nil, false
 	}
 	return o.Stats, true
-}
-
-// IsSetStats returns a boolean if a field has been set.
-func (o *ClusterContainers) IsSetStats() bool {
-	if o != nil && !IsNil(o.Stats) {
-		return true
-	}
-
-	return false
 }
 
 // SetStats gets a reference to the given ClusterContainersStats and assigns it to the Stats field.
@@ -1030,15 +727,6 @@ func (o *ClusterContainers) GetRuntimeInfoOk() (map[string]interface{}, bool) {
 		return map[string]interface{}{}, false
 	}
 	return o.RuntimeInfo, true
-}
-
-// IsSetRuntimeInfo returns a boolean if a field has been set.
-func (o *ClusterContainers) IsSetRuntimeInfo() bool {
-	if o != nil && !IsNil(o.RuntimeInfo) {
-		return true
-	}
-
-	return false
 }
 
 // SetRuntimeInfo gets a reference to the given map[string]interface{} and assigns it to the RuntimeInfo field.
@@ -1065,28 +753,9 @@ func (o *ClusterContainers) GetContainerVersionOk() (*string, bool) {
 	return o.ContainerVersion.Get(), o.ContainerVersion.IsSet()
 }
 
-// IsSetContainerVersion returns a boolean if a field has been set.
-func (o *ClusterContainers) IsSetContainerVersion() bool {
-	if o != nil && o.ContainerVersion.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetContainerVersion gets a reference to the given NullableString and assigns it to the ContainerVersion field.
 func (o *ClusterContainers) SetContainerVersion(v string) {
 	o.ContainerVersion.Set(&v)
-}
-
-// SetContainerVersionNil sets the value for ContainerVersion to be an explicit nil
-func (o *ClusterContainers) SetContainerVersionNil() {
-	o.ContainerVersion.Set(nil)
-}
-
-// UnsetContainerVersion ensures that no value is present for ContainerVersion, not even an explicit nil
-func (o *ClusterContainers) UnsetContainerVersion() {
-	o.ContainerVersion.Unset()
 }
 
 // GetRepositoryImage returns the RepositoryImage field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1108,28 +777,9 @@ func (o *ClusterContainers) GetRepositoryImageOk() (*string, bool) {
 	return o.RepositoryImage.Get(), o.RepositoryImage.IsSet()
 }
 
-// IsSetRepositoryImage returns a boolean if a field has been set.
-func (o *ClusterContainers) IsSetRepositoryImage() bool {
-	if o != nil && o.RepositoryImage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRepositoryImage gets a reference to the given NullableString and assigns it to the RepositoryImage field.
 func (o *ClusterContainers) SetRepositoryImage(v string) {
 	o.RepositoryImage.Set(&v)
-}
-
-// SetRepositoryImageNil sets the value for RepositoryImage to be an explicit nil
-func (o *ClusterContainers) SetRepositoryImageNil() {
-	o.RepositoryImage.Set(nil)
-}
-
-// UnsetRepositoryImage ensures that no value is present for RepositoryImage, not even an explicit nil
-func (o *ClusterContainers) UnsetRepositoryImage() {
-	o.RepositoryImage.Unset()
 }
 
 // GetPlanCategory returns the PlanCategory field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1151,28 +801,9 @@ func (o *ClusterContainers) GetPlanCategoryOk() (*string, bool) {
 	return o.PlanCategory.Get(), o.PlanCategory.IsSet()
 }
 
-// IsSetPlanCategory returns a boolean if a field has been set.
-func (o *ClusterContainers) IsSetPlanCategory() bool {
-	if o != nil && o.PlanCategory.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPlanCategory gets a reference to the given NullableString and assigns it to the PlanCategory field.
 func (o *ClusterContainers) SetPlanCategory(v string) {
 	o.PlanCategory.Set(&v)
-}
-
-// SetPlanCategoryNil sets the value for PlanCategory to be an explicit nil
-func (o *ClusterContainers) SetPlanCategoryNil() {
-	o.PlanCategory.Set(nil)
-}
-
-// UnsetPlanCategory ensures that no value is present for PlanCategory, not even an explicit nil
-func (o *ClusterContainers) UnsetPlanCategory() {
-	o.PlanCategory.Unset()
 }
 
 // GetHostname returns the Hostname field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1194,28 +825,9 @@ func (o *ClusterContainers) GetHostnameOk() (*string, bool) {
 	return o.Hostname.Get(), o.Hostname.IsSet()
 }
 
-// IsSetHostname returns a boolean if a field has been set.
-func (o *ClusterContainers) IsSetHostname() bool {
-	if o != nil && o.Hostname.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetHostname gets a reference to the given NullableString and assigns it to the Hostname field.
 func (o *ClusterContainers) SetHostname(v string) {
 	o.Hostname.Set(&v)
-}
-
-// SetHostnameNil sets the value for Hostname to be an explicit nil
-func (o *ClusterContainers) SetHostnameNil() {
-	o.Hostname.Set(nil)
-}
-
-// UnsetHostname ensures that no value is present for Hostname, not even an explicit nil
-func (o *ClusterContainers) UnsetHostname() {
-	o.Hostname.Unset()
 }
 
 // GetDomainName returns the DomainName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1237,28 +849,9 @@ func (o *ClusterContainers) GetDomainNameOk() (*string, bool) {
 	return o.DomainName.Get(), o.DomainName.IsSet()
 }
 
-// IsSetDomainName returns a boolean if a field has been set.
-func (o *ClusterContainers) IsSetDomainName() bool {
-	if o != nil && o.DomainName.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDomainName gets a reference to the given NullableString and assigns it to the DomainName field.
 func (o *ClusterContainers) SetDomainName(v string) {
 	o.DomainName.Set(&v)
-}
-
-// SetDomainNameNil sets the value for DomainName to be an explicit nil
-func (o *ClusterContainers) SetDomainNameNil() {
-	o.DomainName.Set(nil)
-}
-
-// UnsetDomainName ensures that no value is present for DomainName, not even an explicit nil
-func (o *ClusterContainers) UnsetDomainName() {
-	o.DomainName.Unset()
 }
 
 // GetVolumeCreated returns the VolumeCreated field value if set, zero value otherwise.
@@ -1277,15 +870,6 @@ func (o *ClusterContainers) GetVolumeCreatedOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.VolumeCreated, true
-}
-
-// IsSetVolumeCreated returns a boolean if a field has been set.
-func (o *ClusterContainers) IsSetVolumeCreated() bool {
-	if o != nil && !IsNil(o.VolumeCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetVolumeCreated gets a reference to the given bool and assigns it to the VolumeCreated field.
@@ -1309,15 +893,6 @@ func (o *ClusterContainers) GetContainerCreatedOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.ContainerCreated, true
-}
-
-// IsSetContainerCreated returns a boolean if a field has been set.
-func (o *ClusterContainers) IsSetContainerCreated() bool {
-	if o != nil && !IsNil(o.ContainerCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetContainerCreated gets a reference to the given bool and assigns it to the ContainerCreated field.
@@ -1344,28 +919,9 @@ func (o *ClusterContainers) GetMaxStorageOk() (*string, bool) {
 	return o.MaxStorage.Get(), o.MaxStorage.IsSet()
 }
 
-// IsSetMaxStorage returns a boolean if a field has been set.
-func (o *ClusterContainers) IsSetMaxStorage() bool {
-	if o != nil && o.MaxStorage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxStorage gets a reference to the given NullableString and assigns it to the MaxStorage field.
 func (o *ClusterContainers) SetMaxStorage(v string) {
 	o.MaxStorage.Set(&v)
-}
-
-// SetMaxStorageNil sets the value for MaxStorage to be an explicit nil
-func (o *ClusterContainers) SetMaxStorageNil() {
-	o.MaxStorage.Set(nil)
-}
-
-// UnsetMaxStorage ensures that no value is present for MaxStorage, not even an explicit nil
-func (o *ClusterContainers) UnsetMaxStorage() {
-	o.MaxStorage.Unset()
 }
 
 // GetMaxMemory returns the MaxMemory field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1387,28 +943,9 @@ func (o *ClusterContainers) GetMaxMemoryOk() (*string, bool) {
 	return o.MaxMemory.Get(), o.MaxMemory.IsSet()
 }
 
-// IsSetMaxMemory returns a boolean if a field has been set.
-func (o *ClusterContainers) IsSetMaxMemory() bool {
-	if o != nil && o.MaxMemory.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxMemory gets a reference to the given NullableString and assigns it to the MaxMemory field.
 func (o *ClusterContainers) SetMaxMemory(v string) {
 	o.MaxMemory.Set(&v)
-}
-
-// SetMaxMemoryNil sets the value for MaxMemory to be an explicit nil
-func (o *ClusterContainers) SetMaxMemoryNil() {
-	o.MaxMemory.Set(nil)
-}
-
-// UnsetMaxMemory ensures that no value is present for MaxMemory, not even an explicit nil
-func (o *ClusterContainers) UnsetMaxMemory() {
-	o.MaxMemory.Unset()
 }
 
 // GetMaxCores returns the MaxCores field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1430,28 +967,9 @@ func (o *ClusterContainers) GetMaxCoresOk() (*string, bool) {
 	return o.MaxCores.Get(), o.MaxCores.IsSet()
 }
 
-// IsSetMaxCores returns a boolean if a field has been set.
-func (o *ClusterContainers) IsSetMaxCores() bool {
-	if o != nil && o.MaxCores.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxCores gets a reference to the given NullableString and assigns it to the MaxCores field.
 func (o *ClusterContainers) SetMaxCores(v string) {
 	o.MaxCores.Set(&v)
-}
-
-// SetMaxCoresNil sets the value for MaxCores to be an explicit nil
-func (o *ClusterContainers) SetMaxCoresNil() {
-	o.MaxCores.Set(nil)
-}
-
-// UnsetMaxCores ensures that no value is present for MaxCores, not even an explicit nil
-func (o *ClusterContainers) UnsetMaxCores() {
-	o.MaxCores.Unset()
 }
 
 // GetMaxCpu returns the MaxCpu field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1473,28 +991,9 @@ func (o *ClusterContainers) GetMaxCpuOk() (*string, bool) {
 	return o.MaxCpu.Get(), o.MaxCpu.IsSet()
 }
 
-// IsSetMaxCpu returns a boolean if a field has been set.
-func (o *ClusterContainers) IsSetMaxCpu() bool {
-	if o != nil && o.MaxCpu.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxCpu gets a reference to the given NullableString and assigns it to the MaxCpu field.
 func (o *ClusterContainers) SetMaxCpu(v string) {
 	o.MaxCpu.Set(&v)
-}
-
-// SetMaxCpuNil sets the value for MaxCpu to be an explicit nil
-func (o *ClusterContainers) SetMaxCpuNil() {
-	o.MaxCpu.Set(nil)
-}
-
-// UnsetMaxCpu ensures that no value is present for MaxCpu, not even an explicit nil
-func (o *ClusterContainers) UnsetMaxCpu() {
-	o.MaxCpu.Unset()
 }
 
 // GetHourlyPrice returns the HourlyPrice field value if set, zero value otherwise.
@@ -1513,15 +1012,6 @@ func (o *ClusterContainers) GetHourlyPriceOk() (*float32, bool) {
 		return nil, false
 	}
 	return o.HourlyPrice, true
-}
-
-// IsSetHourlyPrice returns a boolean if a field has been set.
-func (o *ClusterContainers) IsSetHourlyPrice() bool {
-	if o != nil && !IsNil(o.HourlyPrice) {
-		return true
-	}
-
-	return false
 }
 
 // SetHourlyPrice gets a reference to the given float32 and assigns it to the HourlyPrice field.
@@ -1545,15 +1035,6 @@ func (o *ClusterContainers) GetAvailableActionsOk() ([]ClusterContainersAvailabl
 		return nil, false
 	}
 	return o.AvailableActions, true
-}
-
-// IsSetAvailableActions returns a boolean if a field has been set.
-func (o *ClusterContainers) IsSetAvailableActions() bool {
-	if o != nil && !IsNil(o.AvailableActions) {
-		return true
-	}
-
-	return false
 }
 
 // SetAvailableActions gets a reference to the given []ClusterContainersAvailableActionsInner and assigns it to the AvailableActions field.

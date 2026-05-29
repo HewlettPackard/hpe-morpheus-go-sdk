@@ -62,28 +62,9 @@ func (o *ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner) G
 	return o.Id.Get(), o.Id.IsSet()
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner) IsSetId() bool {
-	if o != nil && o.Id.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given NullableString and assigns it to the Id field.
 func (o *ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner) SetId(v string) {
 	o.Id.Set(&v)
-}
-
-// SetIdNil sets the value for Id to be an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner) SetIdNil() {
-	o.Id.Set(nil)
-}
-
-// UnsetId ensures that no value is present for Id, not even an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner) UnsetId() {
-	o.Id.Unset()
 }
 
 func (o ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner) MarshalJSON() ([]byte, error) {

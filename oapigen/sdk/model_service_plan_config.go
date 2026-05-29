@@ -64,28 +64,9 @@ func (o *ServicePlanConfig) GetStorageSizeTypeOk() (*string, bool) {
 	return o.StorageSizeType.Get(), o.StorageSizeType.IsSet()
 }
 
-// IsSetStorageSizeType returns a boolean if a field has been set.
-func (o *ServicePlanConfig) IsSetStorageSizeType() bool {
-	if o != nil && o.StorageSizeType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStorageSizeType gets a reference to the given NullableString and assigns it to the StorageSizeType field.
 func (o *ServicePlanConfig) SetStorageSizeType(v string) {
 	o.StorageSizeType.Set(&v)
-}
-
-// SetStorageSizeTypeNil sets the value for StorageSizeType to be an explicit nil
-func (o *ServicePlanConfig) SetStorageSizeTypeNil() {
-	o.StorageSizeType.Set(nil)
-}
-
-// UnsetStorageSizeType ensures that no value is present for StorageSizeType, not even an explicit nil
-func (o *ServicePlanConfig) UnsetStorageSizeType() {
-	o.StorageSizeType.Unset()
 }
 
 // GetMemorySizeType returns the MemorySizeType field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -107,28 +88,9 @@ func (o *ServicePlanConfig) GetMemorySizeTypeOk() (*string, bool) {
 	return o.MemorySizeType.Get(), o.MemorySizeType.IsSet()
 }
 
-// IsSetMemorySizeType returns a boolean if a field has been set.
-func (o *ServicePlanConfig) IsSetMemorySizeType() bool {
-	if o != nil && o.MemorySizeType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMemorySizeType gets a reference to the given NullableString and assigns it to the MemorySizeType field.
 func (o *ServicePlanConfig) SetMemorySizeType(v string) {
 	o.MemorySizeType.Set(&v)
-}
-
-// SetMemorySizeTypeNil sets the value for MemorySizeType to be an explicit nil
-func (o *ServicePlanConfig) SetMemorySizeTypeNil() {
-	o.MemorySizeType.Set(nil)
-}
-
-// UnsetMemorySizeType ensures that no value is present for MemorySizeType, not even an explicit nil
-func (o *ServicePlanConfig) UnsetMemorySizeType() {
-	o.MemorySizeType.Unset()
 }
 
 // GetRanges returns the Ranges field value if set, zero value otherwise.
@@ -147,15 +109,6 @@ func (o *ServicePlanConfig) GetRangesOk() (*ServicePlanConfigRanges, bool) {
 		return nil, false
 	}
 	return o.Ranges, true
-}
-
-// IsSetRanges returns a boolean if a field has been set.
-func (o *ServicePlanConfig) IsSetRanges() bool {
-	if o != nil && !IsNil(o.Ranges) {
-		return true
-	}
-
-	return false
 }
 
 // SetRanges gets a reference to the given ServicePlanConfigRanges and assigns it to the Ranges field.

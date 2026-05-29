@@ -62,15 +62,6 @@ func (o *ForgotPassword200Response) GetSuccessOk() (*bool, bool) {
 	return o.Success, true
 }
 
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *ForgotPassword200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
-}
-
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.
 func (o *ForgotPassword200Response) SetSuccess(v bool) {
 	o.Success = &v
@@ -92,15 +83,6 @@ func (o *ForgotPassword200Response) GetMsgOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Msg, true
-}
-
-// IsSetMsg returns a boolean if a field has been set.
-func (o *ForgotPassword200Response) IsSetMsg() bool {
-	if o != nil && !IsNil(o.Msg) {
-		return true
-	}
-
-	return false
 }
 
 // SetMsg gets a reference to the given string and assigns it to the Msg field.

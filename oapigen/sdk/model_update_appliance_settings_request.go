@@ -61,15 +61,6 @@ func (o *UpdateApplianceSettingsRequest) GetApplianceSettingsOk() (*UpdateApplia
 	return o.ApplianceSettings, true
 }
 
-// IsSetApplianceSettings returns a boolean if a field has been set.
-func (o *UpdateApplianceSettingsRequest) IsSetApplianceSettings() bool {
-	if o != nil && !IsNil(o.ApplianceSettings) {
-		return true
-	}
-
-	return false
-}
-
 // SetApplianceSettings gets a reference to the given UpdateApplianceSettingsRequestApplianceSettings and assigns it to the ApplianceSettings field.
 func (o *UpdateApplianceSettingsRequest) SetApplianceSettings(v UpdateApplianceSettingsRequestApplianceSettings) {
 	o.ApplianceSettings = &v

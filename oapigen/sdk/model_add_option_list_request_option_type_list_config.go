@@ -61,15 +61,6 @@ func (o *AddOptionListRequestOptionTypeListConfig) GetSourceHeadersOk() ([]AddOp
 	return o.SourceHeaders, true
 }
 
-// IsSetSourceHeaders returns a boolean if a field has been set.
-func (o *AddOptionListRequestOptionTypeListConfig) IsSetSourceHeaders() bool {
-	if o != nil && !IsNil(o.SourceHeaders) {
-		return true
-	}
-
-	return false
-}
-
 // SetSourceHeaders gets a reference to the given []AddOptionListRequestOptionTypeListConfigSourceHeadersInner and assigns it to the SourceHeaders field.
 func (o *AddOptionListRequestOptionTypeListConfig) SetSourceHeaders(v []AddOptionListRequestOptionTypeListConfigSourceHeadersInner) {
 	o.SourceHeaders = v

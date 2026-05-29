@@ -63,15 +63,6 @@ func (o *UpdateWikiAppRequestPage) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateWikiAppRequestPage) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *UpdateWikiAppRequestPage) SetName(v string) {
 	o.Name = &v
@@ -95,15 +86,6 @@ func (o *UpdateWikiAppRequestPage) GetCategoryOk() (*string, bool) {
 	return o.Category, true
 }
 
-// IsSetCategory returns a boolean if a field has been set.
-func (o *UpdateWikiAppRequestPage) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
-		return true
-	}
-
-	return false
-}
-
 // SetCategory gets a reference to the given string and assigns it to the Category field.
 func (o *UpdateWikiAppRequestPage) SetCategory(v string) {
 	o.Category = &v
@@ -125,15 +107,6 @@ func (o *UpdateWikiAppRequestPage) GetContentOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Content, true
-}
-
-// IsSetContent returns a boolean if a field has been set.
-func (o *UpdateWikiAppRequestPage) IsSetContent() bool {
-	if o != nil && !IsNil(o.Content) {
-		return true
-	}
-
-	return false
 }
 
 // SetContent gets a reference to the given string and assigns it to the Content field.

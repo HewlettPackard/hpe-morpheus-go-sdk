@@ -61,15 +61,6 @@ func (o *GetLoadBalancerType200Response) GetLoadBalancerTypeOk() (*GetLoadBalanc
 	return o.LoadBalancerType, true
 }
 
-// IsSetLoadBalancerType returns a boolean if a field has been set.
-func (o *GetLoadBalancerType200Response) IsSetLoadBalancerType() bool {
-	if o != nil && !IsNil(o.LoadBalancerType) {
-		return true
-	}
-
-	return false
-}
-
 // SetLoadBalancerType gets a reference to the given GetLoadBalancerType200ResponseLoadBalancerType and assigns it to the LoadBalancerType field.
 func (o *GetLoadBalancerType200Response) SetLoadBalancerType(v GetLoadBalancerType200ResponseLoadBalancerType) {
 	o.LoadBalancerType = &v

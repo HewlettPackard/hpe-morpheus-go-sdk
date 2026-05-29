@@ -64,15 +64,6 @@ func (o *Search200Response) GetHitsOk() ([]Search200ResponseHitsInner, bool) {
 	return o.Hits, true
 }
 
-// IsSetHits returns a boolean if a field has been set.
-func (o *Search200Response) IsSetHits() bool {
-	if o != nil && !IsNil(o.Hits) {
-		return true
-	}
-
-	return false
-}
-
 // SetHits gets a reference to the given []Search200ResponseHitsInner and assigns it to the Hits field.
 func (o *Search200Response) SetHits(v []Search200ResponseHitsInner) {
 	o.Hits = v
@@ -94,15 +85,6 @@ func (o *Search200Response) GetQueryOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Query, true
-}
-
-// IsSetQuery returns a boolean if a field has been set.
-func (o *Search200Response) IsSetQuery() bool {
-	if o != nil && !IsNil(o.Query) {
-		return true
-	}
-
-	return false
 }
 
 // SetQuery gets a reference to the given string and assigns it to the Query field.
@@ -128,15 +110,6 @@ func (o *Search200Response) GetTookOk() (*int64, bool) {
 	return o.Took, true
 }
 
-// IsSetTook returns a boolean if a field has been set.
-func (o *Search200Response) IsSetTook() bool {
-	if o != nil && !IsNil(o.Took) {
-		return true
-	}
-
-	return false
-}
-
 // SetTook gets a reference to the given int64 and assigns it to the Took field.
 func (o *Search200Response) SetTook(v int64) {
 	o.Took = &v
@@ -158,15 +131,6 @@ func (o *Search200Response) GetMetaOk() (*Search200ResponseMeta, bool) {
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *Search200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given Search200ResponseMeta and assigns it to the Meta field.

@@ -70,28 +70,9 @@ func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions)
 	return o.LocalScriptGitRef.Get(), o.LocalScriptGitRef.IsSet()
 }
 
-// IsSetLocalScriptGitRef returns a boolean if a field has been set.
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) IsSetLocalScriptGitRef() bool {
-	if o != nil && o.LocalScriptGitRef.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLocalScriptGitRef gets a reference to the given NullableString and assigns it to the LocalScriptGitRef field.
 func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) SetLocalScriptGitRef(v string) {
 	o.LocalScriptGitRef.Set(&v)
-}
-
-// SetLocalScriptGitRefNil sets the value for LocalScriptGitRef to be an explicit nil
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) SetLocalScriptGitRefNil() {
-	o.LocalScriptGitRef.Set(nil)
-}
-
-// UnsetLocalScriptGitRef ensures that no value is present for LocalScriptGitRef, not even an explicit nil
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) UnsetLocalScriptGitRef() {
-	o.LocalScriptGitRef.Unset()
 }
 
 // GetUsername returns the Username field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -113,28 +94,9 @@ func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions)
 	return o.Username.Get(), o.Username.IsSet()
 }
 
-// IsSetUsername returns a boolean if a field has been set.
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) IsSetUsername() bool {
-	if o != nil && o.Username.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUsername gets a reference to the given NullableString and assigns it to the Username field.
 func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) SetUsername(v string) {
 	o.Username.Set(&v)
-}
-
-// SetUsernameNil sets the value for Username to be an explicit nil
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) SetUsernameNil() {
-	o.Username.Set(nil)
-}
-
-// UnsetUsername ensures that no value is present for Username, not even an explicit nil
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) UnsetUsername() {
-	o.Username.Unset()
 }
 
 // GetLocalScriptGitId returns the LocalScriptGitId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -156,28 +118,9 @@ func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions)
 	return o.LocalScriptGitId.Get(), o.LocalScriptGitId.IsSet()
 }
 
-// IsSetLocalScriptGitId returns a boolean if a field has been set.
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) IsSetLocalScriptGitId() bool {
-	if o != nil && o.LocalScriptGitId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLocalScriptGitId gets a reference to the given NullableString and assigns it to the LocalScriptGitId field.
 func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) SetLocalScriptGitId(v string) {
 	o.LocalScriptGitId.Set(&v)
-}
-
-// SetLocalScriptGitIdNil sets the value for LocalScriptGitId to be an explicit nil
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) SetLocalScriptGitIdNil() {
-	o.LocalScriptGitId.Set(nil)
-}
-
-// UnsetLocalScriptGitId ensures that no value is present for LocalScriptGitId, not even an explicit nil
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) UnsetLocalScriptGitId() {
-	o.LocalScriptGitId.Unset()
 }
 
 // GetHost returns the Host field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -199,28 +142,9 @@ func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions)
 	return o.Host.Get(), o.Host.IsSet()
 }
 
-// IsSetHost returns a boolean if a field has been set.
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) IsSetHost() bool {
-	if o != nil && o.Host.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetHost gets a reference to the given NullableString and assigns it to the Host field.
 func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) SetHost(v string) {
 	o.Host.Set(&v)
-}
-
-// SetHostNil sets the value for Host to be an explicit nil
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) SetHostNil() {
-	o.Host.Set(nil)
-}
-
-// UnsetHost ensures that no value is present for Host, not even an explicit nil
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) UnsetHost() {
-	o.Host.Unset()
 }
 
 // GetSshKey returns the SshKey field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -242,28 +166,9 @@ func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions)
 	return o.SshKey.Get(), o.SshKey.IsSet()
 }
 
-// IsSetSshKey returns a boolean if a field has been set.
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) IsSetSshKey() bool {
-	if o != nil && o.SshKey.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSshKey gets a reference to the given NullableString and assigns it to the SshKey field.
 func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) SetSshKey(v string) {
 	o.SshKey.Set(&v)
-}
-
-// SetSshKeyNil sets the value for SshKey to be an explicit nil
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) SetSshKeyNil() {
-	o.SshKey.Set(nil)
-}
-
-// UnsetSshKey ensures that no value is present for SshKey, not even an explicit nil
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) UnsetSshKey() {
-	o.SshKey.Unset()
 }
 
 // GetPort returns the Port field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -285,28 +190,9 @@ func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions)
 	return o.Port.Get(), o.Port.IsSet()
 }
 
-// IsSetPort returns a boolean if a field has been set.
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) IsSetPort() bool {
-	if o != nil && o.Port.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPort gets a reference to the given NullableString and assigns it to the Port field.
 func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) SetPort(v string) {
 	o.Port.Set(&v)
-}
-
-// SetPortNil sets the value for Port to be an explicit nil
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) SetPortNil() {
-	o.Port.Set(nil)
-}
-
-// UnsetPort ensures that no value is present for Port, not even an explicit nil
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) UnsetPort() {
-	o.Port.Unset()
 }
 
 // GetPassword returns the Password field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -328,28 +214,9 @@ func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions)
 	return o.Password.Get(), o.Password.IsSet()
 }
 
-// IsSetPassword returns a boolean if a field has been set.
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) IsSetPassword() bool {
-	if o != nil && o.Password.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPassword gets a reference to the given NullableString and assigns it to the Password field.
 func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) SetPassword(v string) {
 	o.Password.Set(&v)
-}
-
-// SetPasswordNil sets the value for Password to be an explicit nil
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) SetPasswordNil() {
-	o.Password.Set(nil)
-}
-
-// UnsetPassword ensures that no value is present for Password, not even an explicit nil
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) UnsetPassword() {
-	o.Password.Unset()
 }
 
 // GetPasswordHash returns the PasswordHash field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -371,28 +238,9 @@ func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions)
 	return o.PasswordHash.Get(), o.PasswordHash.IsSet()
 }
 
-// IsSetPasswordHash returns a boolean if a field has been set.
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) IsSetPasswordHash() bool {
-	if o != nil && o.PasswordHash.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPasswordHash gets a reference to the given NullableString and assigns it to the PasswordHash field.
 func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) SetPasswordHash(v string) {
 	o.PasswordHash.Set(&v)
-}
-
-// SetPasswordHashNil sets the value for PasswordHash to be an explicit nil
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) SetPasswordHashNil() {
-	o.PasswordHash.Set(nil)
-}
-
-// UnsetPasswordHash ensures that no value is present for PasswordHash, not even an explicit nil
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) UnsetPasswordHash() {
-	o.PasswordHash.Unset()
 }
 
 // GetShellSudo returns the ShellSudo field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -414,28 +262,9 @@ func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions)
 	return o.ShellSudo.Get(), o.ShellSudo.IsSet()
 }
 
-// IsSetShellSudo returns a boolean if a field has been set.
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) IsSetShellSudo() bool {
-	if o != nil && o.ShellSudo.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetShellSudo gets a reference to the given NullableString and assigns it to the ShellSudo field.
 func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) SetShellSudo(v string) {
 	o.ShellSudo.Set(&v)
-}
-
-// SetShellSudoNil sets the value for ShellSudo to be an explicit nil
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) SetShellSudoNil() {
-	o.ShellSudo.Set(nil)
-}
-
-// UnsetShellSudo ensures that no value is present for ShellSudo, not even an explicit nil
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) UnsetShellSudo() {
-	o.ShellSudo.Unset()
 }
 
 func (o UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) MarshalJSON() ([]byte, error) {

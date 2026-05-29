@@ -81,15 +81,6 @@ func (o *ShutdownPolicyTypeConfiguration1) GetShutdownTypeOk() (*string, bool) {
 	return o.ShutdownType, true
 }
 
-// IsSetShutdownType returns a boolean if a field has been set.
-func (o *ShutdownPolicyTypeConfiguration1) IsSetShutdownType() bool {
-	if o != nil && !IsNil(o.ShutdownType) {
-		return true
-	}
-
-	return false
-}
-
 // SetShutdownType gets a reference to the given string and assigns it to the ShutdownType field.
 func (o *ShutdownPolicyTypeConfiguration1) SetShutdownType(v string) {
 	o.ShutdownType = &v
@@ -111,15 +102,6 @@ func (o *ShutdownPolicyTypeConfiguration1) GetShutdownAgeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ShutdownAge, true
-}
-
-// IsSetShutdownAge returns a boolean if a field has been set.
-func (o *ShutdownPolicyTypeConfiguration1) IsSetShutdownAge() bool {
-	if o != nil && !IsNil(o.ShutdownAge) {
-		return true
-	}
-
-	return false
 }
 
 // SetShutdownAge gets a reference to the given string and assigns it to the ShutdownAge field.
@@ -145,15 +127,6 @@ func (o *ShutdownPolicyTypeConfiguration1) GetShutdownRenewalOk() (*string, bool
 	return o.ShutdownRenewal, true
 }
 
-// IsSetShutdownRenewal returns a boolean if a field has been set.
-func (o *ShutdownPolicyTypeConfiguration1) IsSetShutdownRenewal() bool {
-	if o != nil && !IsNil(o.ShutdownRenewal) {
-		return true
-	}
-
-	return false
-}
-
 // SetShutdownRenewal gets a reference to the given string and assigns it to the ShutdownRenewal field.
 func (o *ShutdownPolicyTypeConfiguration1) SetShutdownRenewal(v string) {
 	o.ShutdownRenewal = &v
@@ -175,15 +148,6 @@ func (o *ShutdownPolicyTypeConfiguration1) GetShutdownNotifyOk() (*string, bool)
 		return nil, false
 	}
 	return o.ShutdownNotify, true
-}
-
-// IsSetShutdownNotify returns a boolean if a field has been set.
-func (o *ShutdownPolicyTypeConfiguration1) IsSetShutdownNotify() bool {
-	if o != nil && !IsNil(o.ShutdownNotify) {
-		return true
-	}
-
-	return false
 }
 
 // SetShutdownNotify gets a reference to the given string and assigns it to the ShutdownNotify field.
@@ -209,15 +173,6 @@ func (o *ShutdownPolicyTypeConfiguration1) GetShutdownMessageOk() (*string, bool
 	return o.ShutdownMessage, true
 }
 
-// IsSetShutdownMessage returns a boolean if a field has been set.
-func (o *ShutdownPolicyTypeConfiguration1) IsSetShutdownMessage() bool {
-	if o != nil && !IsNil(o.ShutdownMessage) {
-		return true
-	}
-
-	return false
-}
-
 // SetShutdownMessage gets a reference to the given string and assigns it to the ShutdownMessage field.
 func (o *ShutdownPolicyTypeConfiguration1) SetShutdownMessage(v string) {
 	o.ShutdownMessage = &v
@@ -239,15 +194,6 @@ func (o *ShutdownPolicyTypeConfiguration1) GetShutdownAutoRenewOk() (*string, bo
 		return nil, false
 	}
 	return o.ShutdownAutoRenew, true
-}
-
-// IsSetShutdownAutoRenew returns a boolean if a field has been set.
-func (o *ShutdownPolicyTypeConfiguration1) IsSetShutdownAutoRenew() bool {
-	if o != nil && !IsNil(o.ShutdownAutoRenew) {
-		return true
-	}
-
-	return false
 }
 
 // SetShutdownAutoRenew gets a reference to the given string and assigns it to the ShutdownAutoRenew field.
@@ -273,15 +219,6 @@ func (o *ShutdownPolicyTypeConfiguration1) GetShutdownAllowExtendOk() (*string, 
 	return o.ShutdownAllowExtend, true
 }
 
-// IsSetShutdownAllowExtend returns a boolean if a field has been set.
-func (o *ShutdownPolicyTypeConfiguration1) IsSetShutdownAllowExtend() bool {
-	if o != nil && !IsNil(o.ShutdownAllowExtend) {
-		return true
-	}
-
-	return false
-}
-
 // SetShutdownAllowExtend gets a reference to the given string and assigns it to the ShutdownAllowExtend field.
 func (o *ShutdownPolicyTypeConfiguration1) SetShutdownAllowExtend(v string) {
 	o.ShutdownAllowExtend = &v
@@ -303,15 +240,6 @@ func (o *ShutdownPolicyTypeConfiguration1) GetShutdownExtensionsBeforeApprovalOk
 		return nil, false
 	}
 	return o.ShutdownExtensionsBeforeApproval, true
-}
-
-// IsSetShutdownExtensionsBeforeApproval returns a boolean if a field has been set.
-func (o *ShutdownPolicyTypeConfiguration1) IsSetShutdownExtensionsBeforeApproval() bool {
-	if o != nil && !IsNil(o.ShutdownExtensionsBeforeApproval) {
-		return true
-	}
-
-	return false
 }
 
 // SetShutdownExtensionsBeforeApproval gets a reference to the given string and assigns it to the ShutdownExtensionsBeforeApproval field.
@@ -337,15 +265,6 @@ func (o *ShutdownPolicyTypeConfiguration1) GetAccountIntegrationIdOk() (*string,
 	return o.AccountIntegrationId, true
 }
 
-// IsSetAccountIntegrationId returns a boolean if a field has been set.
-func (o *ShutdownPolicyTypeConfiguration1) IsSetAccountIntegrationId() bool {
-	if o != nil && !IsNil(o.AccountIntegrationId) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccountIntegrationId gets a reference to the given string and assigns it to the AccountIntegrationId field.
 func (o *ShutdownPolicyTypeConfiguration1) SetAccountIntegrationId(v string) {
 	o.AccountIntegrationId = &v
@@ -367,15 +286,6 @@ func (o *ShutdownPolicyTypeConfiguration1) GetShutdownHideFixedOk() (*bool, bool
 		return nil, false
 	}
 	return o.ShutdownHideFixed, true
-}
-
-// IsSetShutdownHideFixed returns a boolean if a field has been set.
-func (o *ShutdownPolicyTypeConfiguration1) IsSetShutdownHideFixed() bool {
-	if o != nil && !IsNil(o.ShutdownHideFixed) {
-		return true
-	}
-
-	return false
 }
 
 // SetShutdownHideFixed gets a reference to the given bool and assigns it to the ShutdownHideFixed field.
@@ -401,15 +311,6 @@ func (o *ShutdownPolicyTypeConfiguration1) GetShutdownWorkflowIdOk() (*string, b
 	return o.ShutdownWorkflowId, true
 }
 
-// IsSetShutdownWorkflowId returns a boolean if a field has been set.
-func (o *ShutdownPolicyTypeConfiguration1) IsSetShutdownWorkflowId() bool {
-	if o != nil && !IsNil(o.ShutdownWorkflowId) {
-		return true
-	}
-
-	return false
-}
-
 // SetShutdownWorkflowId gets a reference to the given string and assigns it to the ShutdownWorkflowId field.
 func (o *ShutdownPolicyTypeConfiguration1) SetShutdownWorkflowId(v string) {
 	o.ShutdownWorkflowId = &v
@@ -433,15 +334,6 @@ func (o *ShutdownPolicyTypeConfiguration1) GetFlowIdOk() (*string, bool) {
 	return o.FlowId, true
 }
 
-// IsSetFlowId returns a boolean if a field has been set.
-func (o *ShutdownPolicyTypeConfiguration1) IsSetFlowId() bool {
-	if o != nil && !IsNil(o.FlowId) {
-		return true
-	}
-
-	return false
-}
-
 // SetFlowId gets a reference to the given string and assigns it to the FlowId field.
 func (o *ShutdownPolicyTypeConfiguration1) SetFlowId(v string) {
 	o.FlowId = &v
@@ -463,15 +355,6 @@ func (o *ShutdownPolicyTypeConfiguration1) GetWorkflowTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WorkflowType, true
-}
-
-// IsSetWorkflowType returns a boolean if a field has been set.
-func (o *ShutdownPolicyTypeConfiguration1) IsSetWorkflowType() bool {
-	if o != nil && !IsNil(o.WorkflowType) {
-		return true
-	}
-
-	return false
 }
 
 // SetWorkflowType gets a reference to the given string and assigns it to the WorkflowType field.

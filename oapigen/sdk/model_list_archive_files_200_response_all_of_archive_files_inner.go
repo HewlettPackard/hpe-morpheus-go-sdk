@@ -73,15 +73,6 @@ func (o *ListArchiveFiles200ResponseAllOfArchiveFilesInner) GetIdOk() (*int64, b
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListArchiveFiles200ResponseAllOfArchiveFilesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListArchiveFiles200ResponseAllOfArchiveFilesInner) SetId(v int64) {
 	o.Id = &v
@@ -103,15 +94,6 @@ func (o *ListArchiveFiles200ResponseAllOfArchiveFilesInner) GetNameOk() (*string
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListArchiveFiles200ResponseAllOfArchiveFilesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -137,15 +119,6 @@ func (o *ListArchiveFiles200ResponseAllOfArchiveFilesInner) GetFilePathOk() (*st
 	return o.FilePath, true
 }
 
-// IsSetFilePath returns a boolean if a field has been set.
-func (o *ListArchiveFiles200ResponseAllOfArchiveFilesInner) IsSetFilePath() bool {
-	if o != nil && !IsNil(o.FilePath) {
-		return true
-	}
-
-	return false
-}
-
 // SetFilePath gets a reference to the given string and assigns it to the FilePath field.
 func (o *ListArchiveFiles200ResponseAllOfArchiveFilesInner) SetFilePath(v string) {
 	o.FilePath = &v
@@ -167,15 +140,6 @@ func (o *ListArchiveFiles200ResponseAllOfArchiveFilesInner) GetArchiveBucketOk()
 		return nil, false
 	}
 	return o.ArchiveBucket, true
-}
-
-// IsSetArchiveBucket returns a boolean if a field has been set.
-func (o *ListArchiveFiles200ResponseAllOfArchiveFilesInner) IsSetArchiveBucket() bool {
-	if o != nil && !IsNil(o.ArchiveBucket) {
-		return true
-	}
-
-	return false
 }
 
 // SetArchiveBucket gets a reference to the given ListArchiveFiles200ResponseAllOfArchiveFilesInnerArchiveBucket and assigns it to the ArchiveBucket field.
@@ -201,15 +165,6 @@ func (o *ListArchiveFiles200ResponseAllOfArchiveFilesInner) GetCreatedByOk() (*L
 	return o.CreatedBy, true
 }
 
-// IsSetCreatedBy returns a boolean if a field has been set.
-func (o *ListArchiveFiles200ResponseAllOfArchiveFilesInner) IsSetCreatedBy() bool {
-	if o != nil && !IsNil(o.CreatedBy) {
-		return true
-	}
-
-	return false
-}
-
 // SetCreatedBy gets a reference to the given ListArchiveFiles200ResponseAllOfArchiveFilesInnerCreatedBy and assigns it to the CreatedBy field.
 func (o *ListArchiveFiles200ResponseAllOfArchiveFilesInner) SetCreatedBy(v ListArchiveFiles200ResponseAllOfArchiveFilesInnerCreatedBy) {
 	o.CreatedBy = &v
@@ -231,15 +186,6 @@ func (o *ListArchiveFiles200ResponseAllOfArchiveFilesInner) GetIsDirectoryOk() (
 		return nil, false
 	}
 	return o.IsDirectory, true
-}
-
-// IsSetIsDirectory returns a boolean if a field has been set.
-func (o *ListArchiveFiles200ResponseAllOfArchiveFilesInner) IsSetIsDirectory() bool {
-	if o != nil && !IsNil(o.IsDirectory) {
-		return true
-	}
-
-	return false
 }
 
 // SetIsDirectory gets a reference to the given bool and assigns it to the IsDirectory field.
@@ -265,15 +211,6 @@ func (o *ListArchiveFiles200ResponseAllOfArchiveFilesInner) GetStatusOk() (*stri
 	return o.Status, true
 }
 
-// IsSetStatus returns a boolean if a field has been set.
-func (o *ListArchiveFiles200ResponseAllOfArchiveFilesInner) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
-}
-
 // SetStatus gets a reference to the given string and assigns it to the Status field.
 func (o *ListArchiveFiles200ResponseAllOfArchiveFilesInner) SetStatus(v string) {
 	o.Status = &v
@@ -295,15 +232,6 @@ func (o *ListArchiveFiles200ResponseAllOfArchiveFilesInner) GetRawSizeOk() (*int
 		return nil, false
 	}
 	return o.RawSize, true
-}
-
-// IsSetRawSize returns a boolean if a field has been set.
-func (o *ListArchiveFiles200ResponseAllOfArchiveFilesInner) IsSetRawSize() bool {
-	if o != nil && !IsNil(o.RawSize) {
-		return true
-	}
-
-	return false
 }
 
 // SetRawSize gets a reference to the given int64 and assigns it to the RawSize field.
@@ -330,28 +258,9 @@ func (o *ListArchiveFiles200ResponseAllOfArchiveFilesInner) GetContentTypeOk() (
 	return o.ContentType.Get(), o.ContentType.IsSet()
 }
 
-// IsSetContentType returns a boolean if a field has been set.
-func (o *ListArchiveFiles200ResponseAllOfArchiveFilesInner) IsSetContentType() bool {
-	if o != nil && o.ContentType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetContentType gets a reference to the given NullableString and assigns it to the ContentType field.
 func (o *ListArchiveFiles200ResponseAllOfArchiveFilesInner) SetContentType(v string) {
 	o.ContentType.Set(&v)
-}
-
-// SetContentTypeNil sets the value for ContentType to be an explicit nil
-func (o *ListArchiveFiles200ResponseAllOfArchiveFilesInner) SetContentTypeNil() {
-	o.ContentType.Set(nil)
-}
-
-// UnsetContentType ensures that no value is present for ContentType, not even an explicit nil
-func (o *ListArchiveFiles200ResponseAllOfArchiveFilesInner) UnsetContentType() {
-	o.ContentType.Unset()
 }
 
 // GetDownloadCount returns the DownloadCount field value if set, zero value otherwise.
@@ -370,15 +279,6 @@ func (o *ListArchiveFiles200ResponseAllOfArchiveFilesInner) GetDownloadCountOk()
 		return nil, false
 	}
 	return o.DownloadCount, true
-}
-
-// IsSetDownloadCount returns a boolean if a field has been set.
-func (o *ListArchiveFiles200ResponseAllOfArchiveFilesInner) IsSetDownloadCount() bool {
-	if o != nil && !IsNil(o.DownloadCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetDownloadCount gets a reference to the given int64 and assigns it to the DownloadCount field.
@@ -404,15 +304,6 @@ func (o *ListArchiveFiles200ResponseAllOfArchiveFilesInner) GetDateCreatedOk() (
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *ListArchiveFiles200ResponseAllOfArchiveFilesInner) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *ListArchiveFiles200ResponseAllOfArchiveFilesInner) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -434,15 +325,6 @@ func (o *ListArchiveFiles200ResponseAllOfArchiveFilesInner) GetLastUpdatedOk() (
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *ListArchiveFiles200ResponseAllOfArchiveFilesInner) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.

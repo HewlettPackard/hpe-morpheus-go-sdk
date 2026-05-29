@@ -61,15 +61,6 @@ func (o *GetToken200Response) GetTokenOk() (*GetToken200ResponseToken, bool) {
 	return o.Token, true
 }
 
-// IsSetToken returns a boolean if a field has been set.
-func (o *GetToken200Response) IsSetToken() bool {
-	if o != nil && !IsNil(o.Token) {
-		return true
-	}
-
-	return false
-}
-
 // SetToken gets a reference to the given GetToken200ResponseToken and assigns it to the Token field.
 func (o *GetToken200Response) SetToken(v GetToken200ResponseToken) {
 	o.Token = &v

@@ -61,15 +61,6 @@ func (o *GetStorageVolumes200Response) GetStorageVolumeOk() (*GetStorageVolumes2
 	return o.StorageVolume, true
 }
 
-// IsSetStorageVolume returns a boolean if a field has been set.
-func (o *GetStorageVolumes200Response) IsSetStorageVolume() bool {
-	if o != nil && !IsNil(o.StorageVolume) {
-		return true
-	}
-
-	return false
-}
-
 // SetStorageVolume gets a reference to the given GetStorageVolumes200ResponseStorageVolume and assigns it to the StorageVolume field.
 func (o *GetStorageVolumes200Response) SetStorageVolume(v GetStorageVolumes200ResponseStorageVolume) {
 	o.StorageVolume = &v

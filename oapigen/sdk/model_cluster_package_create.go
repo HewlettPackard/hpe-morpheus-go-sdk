@@ -112,28 +112,9 @@ func (o *ClusterPackageCreate) GetDescriptionOk() (*string, bool) {
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ClusterPackageCreate) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ClusterPackageCreate) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *ClusterPackageCreate) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *ClusterPackageCreate) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetCode returns the Code field value
@@ -272,15 +253,6 @@ func (o *ClusterPackageCreate) GetIconPathOk() (*string, bool) {
 		return nil, false
 	}
 	return o.IconPath, true
-}
-
-// IsSetIconPath returns a boolean if a field has been set.
-func (o *ClusterPackageCreate) IsSetIconPath() bool {
-	if o != nil && !IsNil(o.IconPath) {
-		return true
-	}
-
-	return false
 }
 
 // SetIconPath gets a reference to the given string and assigns it to the IconPath field.

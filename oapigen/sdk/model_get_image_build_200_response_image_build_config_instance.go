@@ -63,15 +63,6 @@ func (o *GetImageBuild200ResponseImageBuildConfigInstance) GetLayoutOk() (*GetIm
 	return o.Layout, true
 }
 
-// IsSetLayout returns a boolean if a field has been set.
-func (o *GetImageBuild200ResponseImageBuildConfigInstance) IsSetLayout() bool {
-	if o != nil && !IsNil(o.Layout) {
-		return true
-	}
-
-	return false
-}
-
 // SetLayout gets a reference to the given GetImageBuild200ResponseImageBuildConfigInstanceLayout and assigns it to the Layout field.
 func (o *GetImageBuild200ResponseImageBuildConfigInstance) SetLayout(v GetImageBuild200ResponseImageBuildConfigInstanceLayout) {
 	o.Layout = &v
@@ -95,15 +86,6 @@ func (o *GetImageBuild200ResponseImageBuildConfigInstance) GetTypeOk() (*string,
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *GetImageBuild200ResponseImageBuildConfigInstance) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given string and assigns it to the Type field.
 func (o *GetImageBuild200ResponseImageBuildConfigInstance) SetType(v string) {
 	o.Type = &v
@@ -125,15 +107,6 @@ func (o *GetImageBuild200ResponseImageBuildConfigInstance) GetUserGroupOk() (*Ge
 		return nil, false
 	}
 	return o.UserGroup, true
-}
-
-// IsSetUserGroup returns a boolean if a field has been set.
-func (o *GetImageBuild200ResponseImageBuildConfigInstance) IsSetUserGroup() bool {
-	if o != nil && !IsNil(o.UserGroup) {
-		return true
-	}
-
-	return false
 }
 
 // SetUserGroup gets a reference to the given GetImageBuild200ResponseImageBuildConfigInstanceUserGroup and assigns it to the UserGroup field.

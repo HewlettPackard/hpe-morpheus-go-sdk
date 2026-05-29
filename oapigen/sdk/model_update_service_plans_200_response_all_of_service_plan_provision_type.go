@@ -67,15 +67,6 @@ func (o *UpdateServicePlans200ResponseAllOfServicePlanProvisionType) GetIdOk() (
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *UpdateServicePlans200ResponseAllOfServicePlanProvisionType) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *UpdateServicePlans200ResponseAllOfServicePlanProvisionType) SetId(v int64) {
 	o.Id = &v
@@ -97,15 +88,6 @@ func (o *UpdateServicePlans200ResponseAllOfServicePlanProvisionType) GetNameOk()
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateServicePlans200ResponseAllOfServicePlanProvisionType) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -131,15 +113,6 @@ func (o *UpdateServicePlans200ResponseAllOfServicePlanProvisionType) GetCodeOk()
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *UpdateServicePlans200ResponseAllOfServicePlanProvisionType) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *UpdateServicePlans200ResponseAllOfServicePlanProvisionType) SetCode(v string) {
 	o.Code = &v
@@ -161,15 +134,6 @@ func (o *UpdateServicePlans200ResponseAllOfServicePlanProvisionType) GetRootDisk
 		return nil, false
 	}
 	return o.RootDiskCustomizable, true
-}
-
-// IsSetRootDiskCustomizable returns a boolean if a field has been set.
-func (o *UpdateServicePlans200ResponseAllOfServicePlanProvisionType) IsSetRootDiskCustomizable() bool {
-	if o != nil && !IsNil(o.RootDiskCustomizable) {
-		return true
-	}
-
-	return false
 }
 
 // SetRootDiskCustomizable gets a reference to the given bool and assigns it to the RootDiskCustomizable field.
@@ -195,15 +159,6 @@ func (o *UpdateServicePlans200ResponseAllOfServicePlanProvisionType) GetAddVolum
 	return o.AddVolumes, true
 }
 
-// IsSetAddVolumes returns a boolean if a field has been set.
-func (o *UpdateServicePlans200ResponseAllOfServicePlanProvisionType) IsSetAddVolumes() bool {
-	if o != nil && !IsNil(o.AddVolumes) {
-		return true
-	}
-
-	return false
-}
-
 // SetAddVolumes gets a reference to the given bool and assigns it to the AddVolumes field.
 func (o *UpdateServicePlans200ResponseAllOfServicePlanProvisionType) SetAddVolumes(v bool) {
 	o.AddVolumes = &v
@@ -227,15 +182,6 @@ func (o *UpdateServicePlans200ResponseAllOfServicePlanProvisionType) GetCustomiz
 	return o.CustomizeVolume, true
 }
 
-// IsSetCustomizeVolume returns a boolean if a field has been set.
-func (o *UpdateServicePlans200ResponseAllOfServicePlanProvisionType) IsSetCustomizeVolume() bool {
-	if o != nil && !IsNil(o.CustomizeVolume) {
-		return true
-	}
-
-	return false
-}
-
 // SetCustomizeVolume gets a reference to the given bool and assigns it to the CustomizeVolume field.
 func (o *UpdateServicePlans200ResponseAllOfServicePlanProvisionType) SetCustomizeVolume(v bool) {
 	o.CustomizeVolume = &v
@@ -257,15 +203,6 @@ func (o *UpdateServicePlans200ResponseAllOfServicePlanProvisionType) GetHasConfi
 		return nil, false
 	}
 	return o.HasConfigurableCpuSockets, true
-}
-
-// IsSetHasConfigurableCpuSockets returns a boolean if a field has been set.
-func (o *UpdateServicePlans200ResponseAllOfServicePlanProvisionType) IsSetHasConfigurableCpuSockets() bool {
-	if o != nil && !IsNil(o.HasConfigurableCpuSockets) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasConfigurableCpuSockets gets a reference to the given bool and assigns it to the HasConfigurableCpuSockets field.

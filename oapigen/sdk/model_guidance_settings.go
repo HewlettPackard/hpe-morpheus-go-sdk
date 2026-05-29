@@ -77,28 +77,9 @@ func (o *GuidanceSettings) GetCpuAvgCutoffPowerOk() (*int32, bool) {
 	return o.CpuAvgCutoffPower.Get(), o.CpuAvgCutoffPower.IsSet()
 }
 
-// IsSetCpuAvgCutoffPower returns a boolean if a field has been set.
-func (o *GuidanceSettings) IsSetCpuAvgCutoffPower() bool {
-	if o != nil && o.CpuAvgCutoffPower.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuAvgCutoffPower gets a reference to the given NullableInt32 and assigns it to the CpuAvgCutoffPower field.
 func (o *GuidanceSettings) SetCpuAvgCutoffPower(v int32) {
 	o.CpuAvgCutoffPower.Set(&v)
-}
-
-// SetCpuAvgCutoffPowerNil sets the value for CpuAvgCutoffPower to be an explicit nil
-func (o *GuidanceSettings) SetCpuAvgCutoffPowerNil() {
-	o.CpuAvgCutoffPower.Set(nil)
-}
-
-// UnsetCpuAvgCutoffPower ensures that no value is present for CpuAvgCutoffPower, not even an explicit nil
-func (o *GuidanceSettings) UnsetCpuAvgCutoffPower() {
-	o.CpuAvgCutoffPower.Unset()
 }
 
 // GetCpuMaxCutoffPower returns the CpuMaxCutoffPower field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -120,28 +101,9 @@ func (o *GuidanceSettings) GetCpuMaxCutoffPowerOk() (*int32, bool) {
 	return o.CpuMaxCutoffPower.Get(), o.CpuMaxCutoffPower.IsSet()
 }
 
-// IsSetCpuMaxCutoffPower returns a boolean if a field has been set.
-func (o *GuidanceSettings) IsSetCpuMaxCutoffPower() bool {
-	if o != nil && o.CpuMaxCutoffPower.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuMaxCutoffPower gets a reference to the given NullableInt32 and assigns it to the CpuMaxCutoffPower field.
 func (o *GuidanceSettings) SetCpuMaxCutoffPower(v int32) {
 	o.CpuMaxCutoffPower.Set(&v)
-}
-
-// SetCpuMaxCutoffPowerNil sets the value for CpuMaxCutoffPower to be an explicit nil
-func (o *GuidanceSettings) SetCpuMaxCutoffPowerNil() {
-	o.CpuMaxCutoffPower.Set(nil)
-}
-
-// UnsetCpuMaxCutoffPower ensures that no value is present for CpuMaxCutoffPower, not even an explicit nil
-func (o *GuidanceSettings) UnsetCpuMaxCutoffPower() {
-	o.CpuMaxCutoffPower.Unset()
 }
 
 // GetNetworkCutoffPower returns the NetworkCutoffPower field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -163,28 +125,9 @@ func (o *GuidanceSettings) GetNetworkCutoffPowerOk() (*int32, bool) {
 	return o.NetworkCutoffPower.Get(), o.NetworkCutoffPower.IsSet()
 }
 
-// IsSetNetworkCutoffPower returns a boolean if a field has been set.
-func (o *GuidanceSettings) IsSetNetworkCutoffPower() bool {
-	if o != nil && o.NetworkCutoffPower.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkCutoffPower gets a reference to the given NullableInt32 and assigns it to the NetworkCutoffPower field.
 func (o *GuidanceSettings) SetNetworkCutoffPower(v int32) {
 	o.NetworkCutoffPower.Set(&v)
-}
-
-// SetNetworkCutoffPowerNil sets the value for NetworkCutoffPower to be an explicit nil
-func (o *GuidanceSettings) SetNetworkCutoffPowerNil() {
-	o.NetworkCutoffPower.Set(nil)
-}
-
-// UnsetNetworkCutoffPower ensures that no value is present for NetworkCutoffPower, not even an explicit nil
-func (o *GuidanceSettings) UnsetNetworkCutoffPower() {
-	o.NetworkCutoffPower.Unset()
 }
 
 // GetCpuUpAvgStandardCutoffRightSize returns the CpuUpAvgStandardCutoffRightSize field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -206,28 +149,9 @@ func (o *GuidanceSettings) GetCpuUpAvgStandardCutoffRightSizeOk() (*int32, bool)
 	return o.CpuUpAvgStandardCutoffRightSize.Get(), o.CpuUpAvgStandardCutoffRightSize.IsSet()
 }
 
-// IsSetCpuUpAvgStandardCutoffRightSize returns a boolean if a field has been set.
-func (o *GuidanceSettings) IsSetCpuUpAvgStandardCutoffRightSize() bool {
-	if o != nil && o.CpuUpAvgStandardCutoffRightSize.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuUpAvgStandardCutoffRightSize gets a reference to the given NullableInt32 and assigns it to the CpuUpAvgStandardCutoffRightSize field.
 func (o *GuidanceSettings) SetCpuUpAvgStandardCutoffRightSize(v int32) {
 	o.CpuUpAvgStandardCutoffRightSize.Set(&v)
-}
-
-// SetCpuUpAvgStandardCutoffRightSizeNil sets the value for CpuUpAvgStandardCutoffRightSize to be an explicit nil
-func (o *GuidanceSettings) SetCpuUpAvgStandardCutoffRightSizeNil() {
-	o.CpuUpAvgStandardCutoffRightSize.Set(nil)
-}
-
-// UnsetCpuUpAvgStandardCutoffRightSize ensures that no value is present for CpuUpAvgStandardCutoffRightSize, not even an explicit nil
-func (o *GuidanceSettings) UnsetCpuUpAvgStandardCutoffRightSize() {
-	o.CpuUpAvgStandardCutoffRightSize.Unset()
 }
 
 // GetCpuUpMaxStandardCutoffRightSize returns the CpuUpMaxStandardCutoffRightSize field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -249,28 +173,9 @@ func (o *GuidanceSettings) GetCpuUpMaxStandardCutoffRightSizeOk() (*int32, bool)
 	return o.CpuUpMaxStandardCutoffRightSize.Get(), o.CpuUpMaxStandardCutoffRightSize.IsSet()
 }
 
-// IsSetCpuUpMaxStandardCutoffRightSize returns a boolean if a field has been set.
-func (o *GuidanceSettings) IsSetCpuUpMaxStandardCutoffRightSize() bool {
-	if o != nil && o.CpuUpMaxStandardCutoffRightSize.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuUpMaxStandardCutoffRightSize gets a reference to the given NullableInt32 and assigns it to the CpuUpMaxStandardCutoffRightSize field.
 func (o *GuidanceSettings) SetCpuUpMaxStandardCutoffRightSize(v int32) {
 	o.CpuUpMaxStandardCutoffRightSize.Set(&v)
-}
-
-// SetCpuUpMaxStandardCutoffRightSizeNil sets the value for CpuUpMaxStandardCutoffRightSize to be an explicit nil
-func (o *GuidanceSettings) SetCpuUpMaxStandardCutoffRightSizeNil() {
-	o.CpuUpMaxStandardCutoffRightSize.Set(nil)
-}
-
-// UnsetCpuUpMaxStandardCutoffRightSize ensures that no value is present for CpuUpMaxStandardCutoffRightSize, not even an explicit nil
-func (o *GuidanceSettings) UnsetCpuUpMaxStandardCutoffRightSize() {
-	o.CpuUpMaxStandardCutoffRightSize.Unset()
 }
 
 // GetMemoryUpAvgStandardCutoffRightSize returns the MemoryUpAvgStandardCutoffRightSize field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -292,28 +197,9 @@ func (o *GuidanceSettings) GetMemoryUpAvgStandardCutoffRightSizeOk() (*int32, bo
 	return o.MemoryUpAvgStandardCutoffRightSize.Get(), o.MemoryUpAvgStandardCutoffRightSize.IsSet()
 }
 
-// IsSetMemoryUpAvgStandardCutoffRightSize returns a boolean if a field has been set.
-func (o *GuidanceSettings) IsSetMemoryUpAvgStandardCutoffRightSize() bool {
-	if o != nil && o.MemoryUpAvgStandardCutoffRightSize.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMemoryUpAvgStandardCutoffRightSize gets a reference to the given NullableInt32 and assigns it to the MemoryUpAvgStandardCutoffRightSize field.
 func (o *GuidanceSettings) SetMemoryUpAvgStandardCutoffRightSize(v int32) {
 	o.MemoryUpAvgStandardCutoffRightSize.Set(&v)
-}
-
-// SetMemoryUpAvgStandardCutoffRightSizeNil sets the value for MemoryUpAvgStandardCutoffRightSize to be an explicit nil
-func (o *GuidanceSettings) SetMemoryUpAvgStandardCutoffRightSizeNil() {
-	o.MemoryUpAvgStandardCutoffRightSize.Set(nil)
-}
-
-// UnsetMemoryUpAvgStandardCutoffRightSize ensures that no value is present for MemoryUpAvgStandardCutoffRightSize, not even an explicit nil
-func (o *GuidanceSettings) UnsetMemoryUpAvgStandardCutoffRightSize() {
-	o.MemoryUpAvgStandardCutoffRightSize.Unset()
 }
 
 // GetMemoryDownAvgStandardCutoffRightSize returns the MemoryDownAvgStandardCutoffRightSize field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -335,28 +221,9 @@ func (o *GuidanceSettings) GetMemoryDownAvgStandardCutoffRightSizeOk() (*int32, 
 	return o.MemoryDownAvgStandardCutoffRightSize.Get(), o.MemoryDownAvgStandardCutoffRightSize.IsSet()
 }
 
-// IsSetMemoryDownAvgStandardCutoffRightSize returns a boolean if a field has been set.
-func (o *GuidanceSettings) IsSetMemoryDownAvgStandardCutoffRightSize() bool {
-	if o != nil && o.MemoryDownAvgStandardCutoffRightSize.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMemoryDownAvgStandardCutoffRightSize gets a reference to the given NullableInt32 and assigns it to the MemoryDownAvgStandardCutoffRightSize field.
 func (o *GuidanceSettings) SetMemoryDownAvgStandardCutoffRightSize(v int32) {
 	o.MemoryDownAvgStandardCutoffRightSize.Set(&v)
-}
-
-// SetMemoryDownAvgStandardCutoffRightSizeNil sets the value for MemoryDownAvgStandardCutoffRightSize to be an explicit nil
-func (o *GuidanceSettings) SetMemoryDownAvgStandardCutoffRightSizeNil() {
-	o.MemoryDownAvgStandardCutoffRightSize.Set(nil)
-}
-
-// UnsetMemoryDownAvgStandardCutoffRightSize ensures that no value is present for MemoryDownAvgStandardCutoffRightSize, not even an explicit nil
-func (o *GuidanceSettings) UnsetMemoryDownAvgStandardCutoffRightSize() {
-	o.MemoryDownAvgStandardCutoffRightSize.Unset()
 }
 
 // GetMemoryDownMaxStandardCutoffRightSize returns the MemoryDownMaxStandardCutoffRightSize field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -378,28 +245,9 @@ func (o *GuidanceSettings) GetMemoryDownMaxStandardCutoffRightSizeOk() (*int32, 
 	return o.MemoryDownMaxStandardCutoffRightSize.Get(), o.MemoryDownMaxStandardCutoffRightSize.IsSet()
 }
 
-// IsSetMemoryDownMaxStandardCutoffRightSize returns a boolean if a field has been set.
-func (o *GuidanceSettings) IsSetMemoryDownMaxStandardCutoffRightSize() bool {
-	if o != nil && o.MemoryDownMaxStandardCutoffRightSize.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMemoryDownMaxStandardCutoffRightSize gets a reference to the given NullableInt32 and assigns it to the MemoryDownMaxStandardCutoffRightSize field.
 func (o *GuidanceSettings) SetMemoryDownMaxStandardCutoffRightSize(v int32) {
 	o.MemoryDownMaxStandardCutoffRightSize.Set(&v)
-}
-
-// SetMemoryDownMaxStandardCutoffRightSizeNil sets the value for MemoryDownMaxStandardCutoffRightSize to be an explicit nil
-func (o *GuidanceSettings) SetMemoryDownMaxStandardCutoffRightSizeNil() {
-	o.MemoryDownMaxStandardCutoffRightSize.Set(nil)
-}
-
-// UnsetMemoryDownMaxStandardCutoffRightSize ensures that no value is present for MemoryDownMaxStandardCutoffRightSize, not even an explicit nil
-func (o *GuidanceSettings) UnsetMemoryDownMaxStandardCutoffRightSize() {
-	o.MemoryDownMaxStandardCutoffRightSize.Unset()
 }
 
 func (o GuidanceSettings) MarshalJSON() ([]byte, error) {

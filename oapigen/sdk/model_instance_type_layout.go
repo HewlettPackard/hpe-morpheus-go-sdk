@@ -84,15 +84,6 @@ func (o *InstanceTypeLayout) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *InstanceTypeLayout) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *InstanceTypeLayout) SetId(v int64) {
 	o.Id = &v
@@ -114,15 +105,6 @@ func (o *InstanceTypeLayout) GetInstanceTypeOk() (*AddLayout200ResponseInstanceT
 		return nil, false
 	}
 	return o.InstanceType, true
-}
-
-// IsSetInstanceType returns a boolean if a field has been set.
-func (o *InstanceTypeLayout) IsSetInstanceType() bool {
-	if o != nil && !IsNil(o.InstanceType) {
-		return true
-	}
-
-	return false
 }
 
 // SetInstanceType gets a reference to the given AddLayout200ResponseInstanceTypeLayoutInstanceType and assigns it to the InstanceType field.
@@ -148,15 +130,6 @@ func (o *InstanceTypeLayout) GetAccountOk() (*AddLayout200ResponseInstanceTypeLa
 	return o.Account, true
 }
 
-// IsSetAccount returns a boolean if a field has been set.
-func (o *InstanceTypeLayout) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccount gets a reference to the given AddLayout200ResponseInstanceTypeLayoutAccount and assigns it to the Account field.
 func (o *InstanceTypeLayout) SetAccount(v AddLayout200ResponseInstanceTypeLayoutAccount) {
 	o.Account = &v
@@ -180,15 +153,6 @@ func (o *InstanceTypeLayout) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *InstanceTypeLayout) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *InstanceTypeLayout) SetCode(v string) {
 	o.Code = &v
@@ -210,15 +174,6 @@ func (o *InstanceTypeLayout) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *InstanceTypeLayout) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -245,15 +200,6 @@ func (o *InstanceTypeLayout) GetLabelsOk() ([]string, bool) {
 	return o.Labels, true
 }
 
-// IsSetLabels returns a boolean if a field has been set.
-func (o *InstanceTypeLayout) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
-}
-
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
 func (o *InstanceTypeLayout) SetLabels(v []string) {
 	o.Labels = v
@@ -275,15 +221,6 @@ func (o *InstanceTypeLayout) GetInstanceVersionOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InstanceVersion, true
-}
-
-// IsSetInstanceVersion returns a boolean if a field has been set.
-func (o *InstanceTypeLayout) IsSetInstanceVersion() bool {
-	if o != nil && !IsNil(o.InstanceVersion) {
-		return true
-	}
-
-	return false
 }
 
 // SetInstanceVersion gets a reference to the given string and assigns it to the InstanceVersion field.
@@ -310,28 +247,9 @@ func (o *InstanceTypeLayout) GetDescriptionOk() (*string, bool) {
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *InstanceTypeLayout) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *InstanceTypeLayout) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *InstanceTypeLayout) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *InstanceTypeLayout) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetCreatable returns the Creatable field value if set, zero value otherwise.
@@ -350,15 +268,6 @@ func (o *InstanceTypeLayout) GetCreatableOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Creatable, true
-}
-
-// IsSetCreatable returns a boolean if a field has been set.
-func (o *InstanceTypeLayout) IsSetCreatable() bool {
-	if o != nil && !IsNil(o.Creatable) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreatable gets a reference to the given bool and assigns it to the Creatable field.
@@ -385,28 +294,9 @@ func (o *InstanceTypeLayout) GetMemoryRequirementOk() (*int64, bool) {
 	return o.MemoryRequirement.Get(), o.MemoryRequirement.IsSet()
 }
 
-// IsSetMemoryRequirement returns a boolean if a field has been set.
-func (o *InstanceTypeLayout) IsSetMemoryRequirement() bool {
-	if o != nil && o.MemoryRequirement.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMemoryRequirement gets a reference to the given NullableInt64 and assigns it to the MemoryRequirement field.
 func (o *InstanceTypeLayout) SetMemoryRequirement(v int64) {
 	o.MemoryRequirement.Set(&v)
-}
-
-// SetMemoryRequirementNil sets the value for MemoryRequirement to be an explicit nil
-func (o *InstanceTypeLayout) SetMemoryRequirementNil() {
-	o.MemoryRequirement.Set(nil)
-}
-
-// UnsetMemoryRequirement ensures that no value is present for MemoryRequirement, not even an explicit nil
-func (o *InstanceTypeLayout) UnsetMemoryRequirement() {
-	o.MemoryRequirement.Unset()
 }
 
 // GetSortOrder returns the SortOrder field value if set, zero value otherwise.
@@ -425,15 +315,6 @@ func (o *InstanceTypeLayout) GetSortOrderOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.SortOrder, true
-}
-
-// IsSetSortOrder returns a boolean if a field has been set.
-func (o *InstanceTypeLayout) IsSetSortOrder() bool {
-	if o != nil && !IsNil(o.SortOrder) {
-		return true
-	}
-
-	return false
 }
 
 // SetSortOrder gets a reference to the given int64 and assigns it to the SortOrder field.
@@ -460,28 +341,9 @@ func (o *InstanceTypeLayout) GetSupportsConvertToManagedOk() (*bool, bool) {
 	return o.SupportsConvertToManaged.Get(), o.SupportsConvertToManaged.IsSet()
 }
 
-// IsSetSupportsConvertToManaged returns a boolean if a field has been set.
-func (o *InstanceTypeLayout) IsSetSupportsConvertToManaged() bool {
-	if o != nil && o.SupportsConvertToManaged.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSupportsConvertToManaged gets a reference to the given NullableBool and assigns it to the SupportsConvertToManaged field.
 func (o *InstanceTypeLayout) SetSupportsConvertToManaged(v bool) {
 	o.SupportsConvertToManaged.Set(&v)
-}
-
-// SetSupportsConvertToManagedNil sets the value for SupportsConvertToManaged to be an explicit nil
-func (o *InstanceTypeLayout) SetSupportsConvertToManagedNil() {
-	o.SupportsConvertToManaged.Set(nil)
-}
-
-// UnsetSupportsConvertToManaged ensures that no value is present for SupportsConvertToManaged, not even an explicit nil
-func (o *InstanceTypeLayout) UnsetSupportsConvertToManaged() {
-	o.SupportsConvertToManaged.Unset()
 }
 
 // GetProvisionType returns the ProvisionType field value if set, zero value otherwise.
@@ -500,15 +362,6 @@ func (o *InstanceTypeLayout) GetProvisionTypeOk() (*AddLayout200ResponseInstance
 		return nil, false
 	}
 	return o.ProvisionType, true
-}
-
-// IsSetProvisionType returns a boolean if a field has been set.
-func (o *InstanceTypeLayout) IsSetProvisionType() bool {
-	if o != nil && !IsNil(o.ProvisionType) {
-		return true
-	}
-
-	return false
 }
 
 // SetProvisionType gets a reference to the given AddLayout200ResponseInstanceTypeLayoutProvisionType and assigns it to the ProvisionType field.
@@ -535,15 +388,6 @@ func (o *InstanceTypeLayout) GetTaskSetsOk() ([]map[string]interface{}, bool) {
 	return o.TaskSets, true
 }
 
-// IsSetTaskSets returns a boolean if a field has been set.
-func (o *InstanceTypeLayout) IsSetTaskSets() bool {
-	if o != nil && !IsNil(o.TaskSets) {
-		return true
-	}
-
-	return false
-}
-
 // SetTaskSets gets a reference to the given []map[string]interface{} and assigns it to the TaskSets field.
 func (o *InstanceTypeLayout) SetTaskSets(v []map[string]interface{}) {
 	o.TaskSets = v
@@ -565,15 +409,6 @@ func (o *InstanceTypeLayout) GetContainerTypesOk() ([]AddLayout200ResponseInstan
 		return nil, false
 	}
 	return o.ContainerTypes, true
-}
-
-// IsSetContainerTypes returns a boolean if a field has been set.
-func (o *InstanceTypeLayout) IsSetContainerTypes() bool {
-	if o != nil && !IsNil(o.ContainerTypes) {
-		return true
-	}
-
-	return false
 }
 
 // SetContainerTypes gets a reference to the given []AddLayout200ResponseInstanceTypeLayoutContainerTypesInner and assigns it to the ContainerTypes field.
@@ -600,15 +435,6 @@ func (o *InstanceTypeLayout) GetMountsOk() ([]map[string]interface{}, bool) {
 	return o.Mounts, true
 }
 
-// IsSetMounts returns a boolean if a field has been set.
-func (o *InstanceTypeLayout) IsSetMounts() bool {
-	if o != nil && !IsNil(o.Mounts) {
-		return true
-	}
-
-	return false
-}
-
 // SetMounts gets a reference to the given []map[string]interface{} and assigns it to the Mounts field.
 func (o *InstanceTypeLayout) SetMounts(v []map[string]interface{}) {
 	o.Mounts = v
@@ -631,15 +457,6 @@ func (o *InstanceTypeLayout) GetPortsOk() ([]map[string]interface{}, bool) {
 		return nil, false
 	}
 	return o.Ports, true
-}
-
-// IsSetPorts returns a boolean if a field has been set.
-func (o *InstanceTypeLayout) IsSetPorts() bool {
-	if o != nil && !IsNil(o.Ports) {
-		return true
-	}
-
-	return false
 }
 
 // SetPorts gets a reference to the given []map[string]interface{} and assigns it to the Ports field.
@@ -666,15 +483,6 @@ func (o *InstanceTypeLayout) GetOptionTypesOk() ([]map[string]interface{}, bool)
 	return o.OptionTypes, true
 }
 
-// IsSetOptionTypes returns a boolean if a field has been set.
-func (o *InstanceTypeLayout) IsSetOptionTypes() bool {
-	if o != nil && !IsNil(o.OptionTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetOptionTypes gets a reference to the given []map[string]interface{} and assigns it to the OptionTypes field.
 func (o *InstanceTypeLayout) SetOptionTypes(v []map[string]interface{}) {
 	o.OptionTypes = v
@@ -697,15 +505,6 @@ func (o *InstanceTypeLayout) GetEnvironmentVariablesOk() ([]map[string]interface
 		return nil, false
 	}
 	return o.EnvironmentVariables, true
-}
-
-// IsSetEnvironmentVariables returns a boolean if a field has been set.
-func (o *InstanceTypeLayout) IsSetEnvironmentVariables() bool {
-	if o != nil && !IsNil(o.EnvironmentVariables) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnvironmentVariables gets a reference to the given []map[string]interface{} and assigns it to the EnvironmentVariables field.
@@ -732,15 +531,6 @@ func (o *InstanceTypeLayout) GetPriceSetsOk() ([]map[string]interface{}, bool) {
 	return o.PriceSets, true
 }
 
-// IsSetPriceSets returns a boolean if a field has been set.
-func (o *InstanceTypeLayout) IsSetPriceSets() bool {
-	if o != nil && !IsNil(o.PriceSets) {
-		return true
-	}
-
-	return false
-}
-
 // SetPriceSets gets a reference to the given []map[string]interface{} and assigns it to the PriceSets field.
 func (o *InstanceTypeLayout) SetPriceSets(v []map[string]interface{}) {
 	o.PriceSets = v
@@ -763,15 +553,6 @@ func (o *InstanceTypeLayout) GetSpecTemplatesOk() ([]map[string]interface{}, boo
 		return nil, false
 	}
 	return o.SpecTemplates, true
-}
-
-// IsSetSpecTemplates returns a boolean if a field has been set.
-func (o *InstanceTypeLayout) IsSetSpecTemplates() bool {
-	if o != nil && !IsNil(o.SpecTemplates) {
-		return true
-	}
-
-	return false
 }
 
 // SetSpecTemplates gets a reference to the given []map[string]interface{} and assigns it to the SpecTemplates field.
@@ -798,28 +579,9 @@ func (o *InstanceTypeLayout) GetTfvarSecretOk() (*string, bool) {
 	return o.TfvarSecret.Get(), o.TfvarSecret.IsSet()
 }
 
-// IsSetTfvarSecret returns a boolean if a field has been set.
-func (o *InstanceTypeLayout) IsSetTfvarSecret() bool {
-	if o != nil && o.TfvarSecret.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetTfvarSecret gets a reference to the given NullableString and assigns it to the TfvarSecret field.
 func (o *InstanceTypeLayout) SetTfvarSecret(v string) {
 	o.TfvarSecret.Set(&v)
-}
-
-// SetTfvarSecretNil sets the value for TfvarSecret to be an explicit nil
-func (o *InstanceTypeLayout) SetTfvarSecretNil() {
-	o.TfvarSecret.Set(nil)
-}
-
-// UnsetTfvarSecret ensures that no value is present for TfvarSecret, not even an explicit nil
-func (o *InstanceTypeLayout) UnsetTfvarSecret() {
-	o.TfvarSecret.Unset()
 }
 
 // GetPermissions returns the Permissions field value if set, zero value otherwise.
@@ -838,15 +600,6 @@ func (o *InstanceTypeLayout) GetPermissionsOk() (*AddLayout200ResponseInstanceTy
 		return nil, false
 	}
 	return o.Permissions, true
-}
-
-// IsSetPermissions returns a boolean if a field has been set.
-func (o *InstanceTypeLayout) IsSetPermissions() bool {
-	if o != nil && !IsNil(o.Permissions) {
-		return true
-	}
-
-	return false
 }
 
 // SetPermissions gets a reference to the given AddLayout200ResponseInstanceTypeLayoutPermissions and assigns it to the Permissions field.

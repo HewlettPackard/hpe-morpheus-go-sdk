@@ -77,15 +77,6 @@ func (o *ListTenants200ResponseAllOfAccountsInner) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListTenants200ResponseAllOfAccountsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListTenants200ResponseAllOfAccountsInner) SetId(v int64) {
 	o.Id = &v
@@ -107,15 +98,6 @@ func (o *ListTenants200ResponseAllOfAccountsInner) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListTenants200ResponseAllOfAccountsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -142,28 +124,9 @@ func (o *ListTenants200ResponseAllOfAccountsInner) GetDescriptionOk() (*string, 
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ListTenants200ResponseAllOfAccountsInner) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListTenants200ResponseAllOfAccountsInner) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *ListTenants200ResponseAllOfAccountsInner) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *ListTenants200ResponseAllOfAccountsInner) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetSubdomain returns the Subdomain field value if set, zero value otherwise.
@@ -182,15 +145,6 @@ func (o *ListTenants200ResponseAllOfAccountsInner) GetSubdomainOk() (*string, bo
 		return nil, false
 	}
 	return o.Subdomain, true
-}
-
-// IsSetSubdomain returns a boolean if a field has been set.
-func (o *ListTenants200ResponseAllOfAccountsInner) IsSetSubdomain() bool {
-	if o != nil && !IsNil(o.Subdomain) {
-		return true
-	}
-
-	return false
 }
 
 // SetSubdomain gets a reference to the given string and assigns it to the Subdomain field.
@@ -214,15 +168,6 @@ func (o *ListTenants200ResponseAllOfAccountsInner) GetCurrencyOk() (*string, boo
 		return nil, false
 	}
 	return o.Currency, true
-}
-
-// IsSetCurrency returns a boolean if a field has been set.
-func (o *ListTenants200ResponseAllOfAccountsInner) IsSetCurrency() bool {
-	if o != nil && !IsNil(o.Currency) {
-		return true
-	}
-
-	return false
 }
 
 // SetCurrency gets a reference to the given string and assigns it to the Currency field.
@@ -249,28 +194,9 @@ func (o *ListTenants200ResponseAllOfAccountsInner) GetExternalIdOk() (*string, b
 	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *ListTenants200ResponseAllOfAccountsInner) IsSetExternalId() bool {
-	if o != nil && o.ExternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *ListTenants200ResponseAllOfAccountsInner) SetExternalId(v string) {
 	o.ExternalId.Set(&v)
-}
-
-// SetExternalIdNil sets the value for ExternalId to be an explicit nil
-func (o *ListTenants200ResponseAllOfAccountsInner) SetExternalIdNil() {
-	o.ExternalId.Set(nil)
-}
-
-// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-func (o *ListTenants200ResponseAllOfAccountsInner) UnsetExternalId() {
-	o.ExternalId.Unset()
 }
 
 // GetCustomerNumber returns the CustomerNumber field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -292,28 +218,9 @@ func (o *ListTenants200ResponseAllOfAccountsInner) GetCustomerNumberOk() (*strin
 	return o.CustomerNumber.Get(), o.CustomerNumber.IsSet()
 }
 
-// IsSetCustomerNumber returns a boolean if a field has been set.
-func (o *ListTenants200ResponseAllOfAccountsInner) IsSetCustomerNumber() bool {
-	if o != nil && o.CustomerNumber.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCustomerNumber gets a reference to the given NullableString and assigns it to the CustomerNumber field.
 func (o *ListTenants200ResponseAllOfAccountsInner) SetCustomerNumber(v string) {
 	o.CustomerNumber.Set(&v)
-}
-
-// SetCustomerNumberNil sets the value for CustomerNumber to be an explicit nil
-func (o *ListTenants200ResponseAllOfAccountsInner) SetCustomerNumberNil() {
-	o.CustomerNumber.Set(nil)
-}
-
-// UnsetCustomerNumber ensures that no value is present for CustomerNumber, not even an explicit nil
-func (o *ListTenants200ResponseAllOfAccountsInner) UnsetCustomerNumber() {
-	o.CustomerNumber.Unset()
 }
 
 // GetAccountNumber returns the AccountNumber field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -335,28 +242,9 @@ func (o *ListTenants200ResponseAllOfAccountsInner) GetAccountNumberOk() (*string
 	return o.AccountNumber.Get(), o.AccountNumber.IsSet()
 }
 
-// IsSetAccountNumber returns a boolean if a field has been set.
-func (o *ListTenants200ResponseAllOfAccountsInner) IsSetAccountNumber() bool {
-	if o != nil && o.AccountNumber.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAccountNumber gets a reference to the given NullableString and assigns it to the AccountNumber field.
 func (o *ListTenants200ResponseAllOfAccountsInner) SetAccountNumber(v string) {
 	o.AccountNumber.Set(&v)
-}
-
-// SetAccountNumberNil sets the value for AccountNumber to be an explicit nil
-func (o *ListTenants200ResponseAllOfAccountsInner) SetAccountNumberNil() {
-	o.AccountNumber.Set(nil)
-}
-
-// UnsetAccountNumber ensures that no value is present for AccountNumber, not even an explicit nil
-func (o *ListTenants200ResponseAllOfAccountsInner) UnsetAccountNumber() {
-	o.AccountNumber.Unset()
 }
 
 // GetAccountName returns the AccountName field value if set, zero value otherwise.
@@ -375,15 +263,6 @@ func (o *ListTenants200ResponseAllOfAccountsInner) GetAccountNameOk() (*string, 
 		return nil, false
 	}
 	return o.AccountName, true
-}
-
-// IsSetAccountName returns a boolean if a field has been set.
-func (o *ListTenants200ResponseAllOfAccountsInner) IsSetAccountName() bool {
-	if o != nil && !IsNil(o.AccountName) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccountName gets a reference to the given string and assigns it to the AccountName field.
@@ -409,15 +288,6 @@ func (o *ListTenants200ResponseAllOfAccountsInner) GetActiveOk() (*bool, bool) {
 	return o.Active, true
 }
 
-// IsSetActive returns a boolean if a field has been set.
-func (o *ListTenants200ResponseAllOfAccountsInner) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
-}
-
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *ListTenants200ResponseAllOfAccountsInner) SetActive(v bool) {
 	o.Active = &v
@@ -439,15 +309,6 @@ func (o *ListTenants200ResponseAllOfAccountsInner) GetMasterOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Master, true
-}
-
-// IsSetMaster returns a boolean if a field has been set.
-func (o *ListTenants200ResponseAllOfAccountsInner) IsSetMaster() bool {
-	if o != nil && !IsNil(o.Master) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaster gets a reference to the given bool and assigns it to the Master field.
@@ -473,15 +334,6 @@ func (o *ListTenants200ResponseAllOfAccountsInner) GetParentOk() (*ListTenants20
 	return o.Parent, true
 }
 
-// IsSetParent returns a boolean if a field has been set.
-func (o *ListTenants200ResponseAllOfAccountsInner) IsSetParent() bool {
-	if o != nil && !IsNil(o.Parent) {
-		return true
-	}
-
-	return false
-}
-
 // SetParent gets a reference to the given ListTenants200ResponseAllOfAccountsInnerParent and assigns it to the Parent field.
 func (o *ListTenants200ResponseAllOfAccountsInner) SetParent(v ListTenants200ResponseAllOfAccountsInnerParent) {
 	o.Parent = &v
@@ -503,15 +355,6 @@ func (o *ListTenants200ResponseAllOfAccountsInner) GetRoleOk() (*ListTenants200R
 		return nil, false
 	}
 	return o.Role, true
-}
-
-// IsSetRole returns a boolean if a field has been set.
-func (o *ListTenants200ResponseAllOfAccountsInner) IsSetRole() bool {
-	if o != nil && !IsNil(o.Role) {
-		return true
-	}
-
-	return false
 }
 
 // SetRole gets a reference to the given ListTenants200ResponseAllOfAccountsInnerRole and assigns it to the Role field.
@@ -537,15 +380,6 @@ func (o *ListTenants200ResponseAllOfAccountsInner) GetStatsOk() (*ListTenants200
 	return o.Stats, true
 }
 
-// IsSetStats returns a boolean if a field has been set.
-func (o *ListTenants200ResponseAllOfAccountsInner) IsSetStats() bool {
-	if o != nil && !IsNil(o.Stats) {
-		return true
-	}
-
-	return false
-}
-
 // SetStats gets a reference to the given ListTenants200ResponseAllOfAccountsInnerStats and assigns it to the Stats field.
 func (o *ListTenants200ResponseAllOfAccountsInner) SetStats(v ListTenants200ResponseAllOfAccountsInnerStats) {
 	o.Stats = &v
@@ -569,15 +403,6 @@ func (o *ListTenants200ResponseAllOfAccountsInner) GetDateCreatedOk() (*time.Tim
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *ListTenants200ResponseAllOfAccountsInner) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *ListTenants200ResponseAllOfAccountsInner) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -599,15 +424,6 @@ func (o *ListTenants200ResponseAllOfAccountsInner) GetLastUpdatedOk() (*time.Tim
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *ListTenants200ResponseAllOfAccountsInner) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.

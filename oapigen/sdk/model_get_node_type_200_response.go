@@ -61,15 +61,6 @@ func (o *GetNodeType200Response) GetContainerTypeOk() (*GetNodeType200ResponseCo
 	return o.ContainerType, true
 }
 
-// IsSetContainerType returns a boolean if a field has been set.
-func (o *GetNodeType200Response) IsSetContainerType() bool {
-	if o != nil && !IsNil(o.ContainerType) {
-		return true
-	}
-
-	return false
-}
-
 // SetContainerType gets a reference to the given GetNodeType200ResponseContainerType and assigns it to the ContainerType field.
 func (o *GetNodeType200Response) SetContainerType(v GetNodeType200ResponseContainerType) {
 	o.ContainerType = &v

@@ -63,15 +63,6 @@ func (o *ListUserSettings200Response) GetUserOk() (*ListUserSettings200ResponseA
 	return o.User, true
 }
 
-// IsSetUser returns a boolean if a field has been set.
-func (o *ListUserSettings200Response) IsSetUser() bool {
-	if o != nil && !IsNil(o.User) {
-		return true
-	}
-
-	return false
-}
-
 // SetUser gets a reference to the given ListUserSettings200ResponseAllOfUser and assigns it to the User field.
 func (o *ListUserSettings200Response) SetUser(v ListUserSettings200ResponseAllOfUser) {
 	o.User = &v
@@ -95,15 +86,6 @@ func (o *ListUserSettings200Response) GetAccessTokensOk() ([]ListUserSettings200
 	return o.AccessTokens, true
 }
 
-// IsSetAccessTokens returns a boolean if a field has been set.
-func (o *ListUserSettings200Response) IsSetAccessTokens() bool {
-	if o != nil && !IsNil(o.AccessTokens) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccessTokens gets a reference to the given []ListUserSettings200ResponseAllOfAccessTokensInner and assigns it to the AccessTokens field.
 func (o *ListUserSettings200Response) SetAccessTokens(v []ListUserSettings200ResponseAllOfAccessTokensInner) {
 	o.AccessTokens = v
@@ -125,15 +107,6 @@ func (o *ListUserSettings200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *ListUserSettings200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

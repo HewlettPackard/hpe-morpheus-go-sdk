@@ -62,15 +62,6 @@ func (o *SetInstanceSecurityGroupsRequest) GetSecurityGroupIdsOk() ([]int64, boo
 	return o.SecurityGroupIds, true
 }
 
-// IsSetSecurityGroupIds returns a boolean if a field has been set.
-func (o *SetInstanceSecurityGroupsRequest) IsSetSecurityGroupIds() bool {
-	if o != nil && !IsNil(o.SecurityGroupIds) {
-		return true
-	}
-
-	return false
-}
-
 // SetSecurityGroupIds gets a reference to the given []int64 and assigns it to the SecurityGroupIds field.
 func (o *SetInstanceSecurityGroupsRequest) SetSecurityGroupIds(v []int64) {
 	o.SecurityGroupIds = v

@@ -64,15 +64,6 @@ func (o *SetInstanceSecurityGroups200Response) GetSecurityGroupsOk() ([]SetInsta
 	return o.SecurityGroups, true
 }
 
-// IsSetSecurityGroups returns a boolean if a field has been set.
-func (o *SetInstanceSecurityGroups200Response) IsSetSecurityGroups() bool {
-	if o != nil && !IsNil(o.SecurityGroups) {
-		return true
-	}
-
-	return false
-}
-
 // SetSecurityGroups gets a reference to the given []SetInstanceSecurityGroups200ResponseAllOfSecurityGroupsInner and assigns it to the SecurityGroups field.
 func (o *SetInstanceSecurityGroups200Response) SetSecurityGroups(v []SetInstanceSecurityGroups200ResponseAllOfSecurityGroupsInner) {
 	o.SecurityGroups = v
@@ -94,15 +85,6 @@ func (o *SetInstanceSecurityGroups200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *SetInstanceSecurityGroups200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

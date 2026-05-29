@@ -63,15 +63,6 @@ func (o *GetNetworkTransportZones200Response) GetNetworkScopesOk() (*interface{}
 	return &o.NetworkScopes, true
 }
 
-// IsSetNetworkScopes returns a boolean if a field has been set.
-func (o *GetNetworkTransportZones200Response) IsSetNetworkScopes() bool {
-	if o != nil && !IsNil(o.NetworkScopes) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkScopes gets a reference to the given interface{} and assigns it to the NetworkScopes field.
 func (o *GetNetworkTransportZones200Response) SetNetworkScopes(v interface{}) {
 	o.NetworkScopes = v
@@ -93,15 +84,6 @@ func (o *GetNetworkTransportZones200Response) GetMetaOk() (*ListApprovals200Resp
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *GetNetworkTransportZones200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

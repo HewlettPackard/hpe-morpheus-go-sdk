@@ -64,15 +64,6 @@ func (o *GetInstance200ResponseInstanceLayout) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetInstance200ResponseInstanceLayout) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetInstance200ResponseInstanceLayout) SetId(v int64) {
 	o.Id = &v
@@ -94,15 +85,6 @@ func (o *GetInstance200ResponseInstanceLayout) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *GetInstance200ResponseInstanceLayout) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -128,15 +110,6 @@ func (o *GetInstance200ResponseInstanceLayout) GetProvisionTypeIdOk() (*int64, b
 	return o.ProvisionTypeId, true
 }
 
-// IsSetProvisionTypeId returns a boolean if a field has been set.
-func (o *GetInstance200ResponseInstanceLayout) IsSetProvisionTypeId() bool {
-	if o != nil && !IsNil(o.ProvisionTypeId) {
-		return true
-	}
-
-	return false
-}
-
 // SetProvisionTypeId gets a reference to the given int64 and assigns it to the ProvisionTypeId field.
 func (o *GetInstance200ResponseInstanceLayout) SetProvisionTypeId(v int64) {
 	o.ProvisionTypeId = &v
@@ -158,15 +131,6 @@ func (o *GetInstance200ResponseInstanceLayout) GetProvisionTypeCodeOk() (*string
 		return nil, false
 	}
 	return o.ProvisionTypeCode, true
-}
-
-// IsSetProvisionTypeCode returns a boolean if a field has been set.
-func (o *GetInstance200ResponseInstanceLayout) IsSetProvisionTypeCode() bool {
-	if o != nil && !IsNil(o.ProvisionTypeCode) {
-		return true
-	}
-
-	return false
 }
 
 // SetProvisionTypeCode gets a reference to the given string and assigns it to the ProvisionTypeCode field.

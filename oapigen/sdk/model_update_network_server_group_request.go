@@ -61,15 +61,6 @@ func (o *UpdateNetworkServerGroupRequest) GetGroupOk() (map[string]interface{}, 
 	return o.Group, true
 }
 
-// IsSetGroup returns a boolean if a field has been set.
-func (o *UpdateNetworkServerGroupRequest) IsSetGroup() bool {
-	if o != nil && !IsNil(o.Group) {
-		return true
-	}
-
-	return false
-}
-
 // SetGroup gets a reference to the given map[string]interface{} and assigns it to the Group field.
 func (o *UpdateNetworkServerGroupRequest) SetGroup(v map[string]interface{}) {
 	o.Group = v

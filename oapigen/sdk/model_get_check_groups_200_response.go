@@ -62,15 +62,6 @@ func (o *GetCheckGroups200Response) GetCheckGroupOk() (*GetCheckGroups200Respons
 	return o.CheckGroup, true
 }
 
-// IsSetCheckGroup returns a boolean if a field has been set.
-func (o *GetCheckGroups200Response) IsSetCheckGroup() bool {
-	if o != nil && !IsNil(o.CheckGroup) {
-		return true
-	}
-
-	return false
-}
-
 // SetCheckGroup gets a reference to the given GetCheckGroups200ResponseCheckGroup and assigns it to the CheckGroup field.
 func (o *GetCheckGroups200Response) SetCheckGroup(v GetCheckGroups200ResponseCheckGroup) {
 	o.CheckGroup = &v
@@ -92,15 +83,6 @@ func (o *GetCheckGroups200Response) GetChecksOk() ([]GetCheckGroups200ResponseCh
 		return nil, false
 	}
 	return o.Checks, true
-}
-
-// IsSetChecks returns a boolean if a field has been set.
-func (o *GetCheckGroups200Response) IsSetChecks() bool {
-	if o != nil && !IsNil(o.Checks) {
-		return true
-	}
-
-	return false
 }
 
 // SetChecks gets a reference to the given []GetCheckGroups200ResponseChecksInner and assigns it to the Checks field.

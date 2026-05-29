@@ -101,15 +101,6 @@ func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) GetIdOk() (*int64, bool
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) SetId(v int64) {
 	o.Id = &v
@@ -133,15 +124,6 @@ func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) GetLoadBalancerOk() (*G
 	return o.LoadBalancer, true
 }
 
-// IsSetLoadBalancer returns a boolean if a field has been set.
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) IsSetLoadBalancer() bool {
-	if o != nil && !IsNil(o.LoadBalancer) {
-		return true
-	}
-
-	return false
-}
-
 // SetLoadBalancer gets a reference to the given GetLoadBalancerPool200ResponseLoadBalancerPoolLoadBalancer and assigns it to the LoadBalancer field.
 func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) SetLoadBalancer(v GetLoadBalancerPool200ResponseLoadBalancerPoolLoadBalancer) {
 	o.LoadBalancer = &v
@@ -163,15 +145,6 @@ func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) GetNameOk() (*string, b
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -198,28 +171,9 @@ func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) GetCategoryOk() (*strin
 	return o.Category.Get(), o.Category.IsSet()
 }
 
-// IsSetCategory returns a boolean if a field has been set.
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) IsSetCategory() bool {
-	if o != nil && o.Category.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCategory gets a reference to the given NullableString and assigns it to the Category field.
 func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) SetCategory(v string) {
 	o.Category.Set(&v)
-}
-
-// SetCategoryNil sets the value for Category to be an explicit nil
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) SetCategoryNil() {
-	o.Category.Set(nil)
-}
-
-// UnsetCategory ensures that no value is present for Category, not even an explicit nil
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) UnsetCategory() {
-	o.Category.Unset()
 }
 
 // GetVisibility returns the Visibility field value if set, zero value otherwise.
@@ -238,15 +192,6 @@ func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) GetVisibilityOk() (*str
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -273,28 +218,9 @@ func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) GetDescriptionOk() (*st
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetInternalId returns the InternalId field value if set, zero value otherwise.
@@ -313,15 +239,6 @@ func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) GetInternalIdOk() (*str
 		return nil, false
 	}
 	return o.InternalId, true
-}
-
-// IsSetInternalId returns a boolean if a field has been set.
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) IsSetInternalId() bool {
-	if o != nil && !IsNil(o.InternalId) {
-		return true
-	}
-
-	return false
 }
 
 // SetInternalId gets a reference to the given string and assigns it to the InternalId field.
@@ -347,15 +264,6 @@ func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) GetExternalIdOk() (*str
 	return o.ExternalId, true
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
 func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) SetExternalId(v string) {
 	o.ExternalId = &v
@@ -377,15 +285,6 @@ func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) GetEnabledOk() (*bool, 
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -412,28 +311,9 @@ func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) GetVipStickyOk() (*stri
 	return o.VipSticky.Get(), o.VipSticky.IsSet()
 }
 
-// IsSetVipSticky returns a boolean if a field has been set.
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) IsSetVipSticky() bool {
-	if o != nil && o.VipSticky.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetVipSticky gets a reference to the given NullableString and assigns it to the VipSticky field.
 func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) SetVipSticky(v string) {
 	o.VipSticky.Set(&v)
-}
-
-// SetVipStickyNil sets the value for VipSticky to be an explicit nil
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) SetVipStickyNil() {
-	o.VipSticky.Set(nil)
-}
-
-// UnsetVipSticky ensures that no value is present for VipSticky, not even an explicit nil
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) UnsetVipSticky() {
-	o.VipSticky.Unset()
 }
 
 // GetVipBalance returns the VipBalance field value if set, zero value otherwise.
@@ -452,15 +332,6 @@ func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) GetVipBalanceOk() (*str
 		return nil, false
 	}
 	return o.VipBalance, true
-}
-
-// IsSetVipBalance returns a boolean if a field has been set.
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) IsSetVipBalance() bool {
-	if o != nil && !IsNil(o.VipBalance) {
-		return true
-	}
-
-	return false
 }
 
 // SetVipBalance gets a reference to the given string and assigns it to the VipBalance field.
@@ -487,28 +358,9 @@ func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) GetAllowNatOk() (*strin
 	return o.AllowNat.Get(), o.AllowNat.IsSet()
 }
 
-// IsSetAllowNat returns a boolean if a field has been set.
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) IsSetAllowNat() bool {
-	if o != nil && o.AllowNat.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAllowNat gets a reference to the given NullableString and assigns it to the AllowNat field.
 func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) SetAllowNat(v string) {
 	o.AllowNat.Set(&v)
-}
-
-// SetAllowNatNil sets the value for AllowNat to be an explicit nil
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) SetAllowNatNil() {
-	o.AllowNat.Set(nil)
-}
-
-// UnsetAllowNat ensures that no value is present for AllowNat, not even an explicit nil
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) UnsetAllowNat() {
-	o.AllowNat.Unset()
 }
 
 // GetAllowSnat returns the AllowSnat field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -530,28 +382,9 @@ func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) GetAllowSnatOk() (*stri
 	return o.AllowSnat.Get(), o.AllowSnat.IsSet()
 }
 
-// IsSetAllowSnat returns a boolean if a field has been set.
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) IsSetAllowSnat() bool {
-	if o != nil && o.AllowSnat.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAllowSnat gets a reference to the given NullableString and assigns it to the AllowSnat field.
 func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) SetAllowSnat(v string) {
 	o.AllowSnat.Set(&v)
-}
-
-// SetAllowSnatNil sets the value for AllowSnat to be an explicit nil
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) SetAllowSnatNil() {
-	o.AllowSnat.Set(nil)
-}
-
-// UnsetAllowSnat ensures that no value is present for AllowSnat, not even an explicit nil
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) UnsetAllowSnat() {
-	o.AllowSnat.Unset()
 }
 
 // GetVipClientIpMode returns the VipClientIpMode field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -573,28 +406,9 @@ func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) GetVipClientIpModeOk() 
 	return o.VipClientIpMode.Get(), o.VipClientIpMode.IsSet()
 }
 
-// IsSetVipClientIpMode returns a boolean if a field has been set.
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) IsSetVipClientIpMode() bool {
-	if o != nil && o.VipClientIpMode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetVipClientIpMode gets a reference to the given NullableString and assigns it to the VipClientIpMode field.
 func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) SetVipClientIpMode(v string) {
 	o.VipClientIpMode.Set(&v)
-}
-
-// SetVipClientIpModeNil sets the value for VipClientIpMode to be an explicit nil
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) SetVipClientIpModeNil() {
-	o.VipClientIpMode.Set(nil)
-}
-
-// UnsetVipClientIpMode ensures that no value is present for VipClientIpMode, not even an explicit nil
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) UnsetVipClientIpMode() {
-	o.VipClientIpMode.Unset()
 }
 
 // GetVipServerIpMode returns the VipServerIpMode field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -616,28 +430,9 @@ func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) GetVipServerIpModeOk() 
 	return o.VipServerIpMode.Get(), o.VipServerIpMode.IsSet()
 }
 
-// IsSetVipServerIpMode returns a boolean if a field has been set.
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) IsSetVipServerIpMode() bool {
-	if o != nil && o.VipServerIpMode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetVipServerIpMode gets a reference to the given NullableString and assigns it to the VipServerIpMode field.
 func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) SetVipServerIpMode(v string) {
 	o.VipServerIpMode.Set(&v)
-}
-
-// SetVipServerIpModeNil sets the value for VipServerIpMode to be an explicit nil
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) SetVipServerIpModeNil() {
-	o.VipServerIpMode.Set(nil)
-}
-
-// UnsetVipServerIpMode ensures that no value is present for VipServerIpMode, not even an explicit nil
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) UnsetVipServerIpMode() {
-	o.VipServerIpMode.Unset()
 }
 
 // GetMinActive returns the MinActive field value if set, zero value otherwise.
@@ -656,15 +451,6 @@ func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) GetMinActiveOk() (*int6
 		return nil, false
 	}
 	return o.MinActive, true
-}
-
-// IsSetMinActive returns a boolean if a field has been set.
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) IsSetMinActive() bool {
-	if o != nil && !IsNil(o.MinActive) {
-		return true
-	}
-
-	return false
 }
 
 // SetMinActive gets a reference to the given int64 and assigns it to the MinActive field.
@@ -691,28 +477,9 @@ func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) GetMinInServiceOk() (*s
 	return o.MinInService.Get(), o.MinInService.IsSet()
 }
 
-// IsSetMinInService returns a boolean if a field has been set.
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) IsSetMinInService() bool {
-	if o != nil && o.MinInService.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMinInService gets a reference to the given NullableString and assigns it to the MinInService field.
 func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) SetMinInService(v string) {
 	o.MinInService.Set(&v)
-}
-
-// SetMinInServiceNil sets the value for MinInService to be an explicit nil
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) SetMinInServiceNil() {
-	o.MinInService.Set(nil)
-}
-
-// UnsetMinInService ensures that no value is present for MinInService, not even an explicit nil
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) UnsetMinInService() {
-	o.MinInService.Unset()
 }
 
 // GetMinUpMonitor returns the MinUpMonitor field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -734,28 +501,9 @@ func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) GetMinUpMonitorOk() (*s
 	return o.MinUpMonitor.Get(), o.MinUpMonitor.IsSet()
 }
 
-// IsSetMinUpMonitor returns a boolean if a field has been set.
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) IsSetMinUpMonitor() bool {
-	if o != nil && o.MinUpMonitor.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMinUpMonitor gets a reference to the given NullableString and assigns it to the MinUpMonitor field.
 func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) SetMinUpMonitor(v string) {
 	o.MinUpMonitor.Set(&v)
-}
-
-// SetMinUpMonitorNil sets the value for MinUpMonitor to be an explicit nil
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) SetMinUpMonitorNil() {
-	o.MinUpMonitor.Set(nil)
-}
-
-// UnsetMinUpMonitor ensures that no value is present for MinUpMonitor, not even an explicit nil
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) UnsetMinUpMonitor() {
-	o.MinUpMonitor.Unset()
 }
 
 // GetMinUpAction returns the MinUpAction field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -777,28 +525,9 @@ func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) GetMinUpActionOk() (*st
 	return o.MinUpAction.Get(), o.MinUpAction.IsSet()
 }
 
-// IsSetMinUpAction returns a boolean if a field has been set.
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) IsSetMinUpAction() bool {
-	if o != nil && o.MinUpAction.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMinUpAction gets a reference to the given NullableString and assigns it to the MinUpAction field.
 func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) SetMinUpAction(v string) {
 	o.MinUpAction.Set(&v)
-}
-
-// SetMinUpActionNil sets the value for MinUpAction to be an explicit nil
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) SetMinUpActionNil() {
-	o.MinUpAction.Set(nil)
-}
-
-// UnsetMinUpAction ensures that no value is present for MinUpAction, not even an explicit nil
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) UnsetMinUpAction() {
-	o.MinUpAction.Unset()
 }
 
 // GetMaxQueueDepth returns the MaxQueueDepth field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -820,28 +549,9 @@ func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) GetMaxQueueDepthOk() (*
 	return o.MaxQueueDepth.Get(), o.MaxQueueDepth.IsSet()
 }
 
-// IsSetMaxQueueDepth returns a boolean if a field has been set.
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) IsSetMaxQueueDepth() bool {
-	if o != nil && o.MaxQueueDepth.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxQueueDepth gets a reference to the given NullableString and assigns it to the MaxQueueDepth field.
 func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) SetMaxQueueDepth(v string) {
 	o.MaxQueueDepth.Set(&v)
-}
-
-// SetMaxQueueDepthNil sets the value for MaxQueueDepth to be an explicit nil
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) SetMaxQueueDepthNil() {
-	o.MaxQueueDepth.Set(nil)
-}
-
-// UnsetMaxQueueDepth ensures that no value is present for MaxQueueDepth, not even an explicit nil
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) UnsetMaxQueueDepth() {
-	o.MaxQueueDepth.Unset()
 }
 
 // GetMaxQueueTime returns the MaxQueueTime field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -863,28 +573,9 @@ func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) GetMaxQueueTimeOk() (*s
 	return o.MaxQueueTime.Get(), o.MaxQueueTime.IsSet()
 }
 
-// IsSetMaxQueueTime returns a boolean if a field has been set.
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) IsSetMaxQueueTime() bool {
-	if o != nil && o.MaxQueueTime.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxQueueTime gets a reference to the given NullableString and assigns it to the MaxQueueTime field.
 func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) SetMaxQueueTime(v string) {
 	o.MaxQueueTime.Set(&v)
-}
-
-// SetMaxQueueTimeNil sets the value for MaxQueueTime to be an explicit nil
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) SetMaxQueueTimeNil() {
-	o.MaxQueueTime.Set(nil)
-}
-
-// UnsetMaxQueueTime ensures that no value is present for MaxQueueTime, not even an explicit nil
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) UnsetMaxQueueTime() {
-	o.MaxQueueTime.Unset()
 }
 
 // GetNumberActive returns the NumberActive field value if set, zero value otherwise.
@@ -903,15 +594,6 @@ func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) GetNumberActiveOk() (*i
 		return nil, false
 	}
 	return o.NumberActive, true
-}
-
-// IsSetNumberActive returns a boolean if a field has been set.
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) IsSetNumberActive() bool {
-	if o != nil && !IsNil(o.NumberActive) {
-		return true
-	}
-
-	return false
 }
 
 // SetNumberActive gets a reference to the given int64 and assigns it to the NumberActive field.
@@ -937,15 +619,6 @@ func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) GetNumberInServiceOk() 
 	return o.NumberInService, true
 }
 
-// IsSetNumberInService returns a boolean if a field has been set.
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) IsSetNumberInService() bool {
-	if o != nil && !IsNil(o.NumberInService) {
-		return true
-	}
-
-	return false
-}
-
 // SetNumberInService gets a reference to the given int64 and assigns it to the NumberInService field.
 func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) SetNumberInService(v int64) {
 	o.NumberInService = &v
@@ -967,15 +640,6 @@ func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) GetHealthScoreOk() (*in
 		return nil, false
 	}
 	return o.HealthScore, true
-}
-
-// IsSetHealthScore returns a boolean if a field has been set.
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) IsSetHealthScore() bool {
-	if o != nil && !IsNil(o.HealthScore) {
-		return true
-	}
-
-	return false
 }
 
 // SetHealthScore gets a reference to the given int64 and assigns it to the HealthScore field.
@@ -1001,15 +665,6 @@ func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) GetPerformanceScoreOk()
 	return o.PerformanceScore, true
 }
 
-// IsSetPerformanceScore returns a boolean if a field has been set.
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) IsSetPerformanceScore() bool {
-	if o != nil && !IsNil(o.PerformanceScore) {
-		return true
-	}
-
-	return false
-}
-
 // SetPerformanceScore gets a reference to the given int64 and assigns it to the PerformanceScore field.
 func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) SetPerformanceScore(v int64) {
 	o.PerformanceScore = &v
@@ -1031,15 +686,6 @@ func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) GetHealthPenaltyOk() (*
 		return nil, false
 	}
 	return o.HealthPenalty, true
-}
-
-// IsSetHealthPenalty returns a boolean if a field has been set.
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) IsSetHealthPenalty() bool {
-	if o != nil && !IsNil(o.HealthPenalty) {
-		return true
-	}
-
-	return false
 }
 
 // SetHealthPenalty gets a reference to the given int64 and assigns it to the HealthPenalty field.
@@ -1065,15 +711,6 @@ func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) GetSecurityPenaltyOk() 
 	return o.SecurityPenalty, true
 }
 
-// IsSetSecurityPenalty returns a boolean if a field has been set.
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) IsSetSecurityPenalty() bool {
-	if o != nil && !IsNil(o.SecurityPenalty) {
-		return true
-	}
-
-	return false
-}
-
 // SetSecurityPenalty gets a reference to the given int64 and assigns it to the SecurityPenalty field.
 func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) SetSecurityPenalty(v int64) {
 	o.SecurityPenalty = &v
@@ -1095,15 +732,6 @@ func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) GetErrorPenaltyOk() (*i
 		return nil, false
 	}
 	return o.ErrorPenalty, true
-}
-
-// IsSetErrorPenalty returns a boolean if a field has been set.
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) IsSetErrorPenalty() bool {
-	if o != nil && !IsNil(o.ErrorPenalty) {
-		return true
-	}
-
-	return false
 }
 
 // SetErrorPenalty gets a reference to the given int64 and assigns it to the ErrorPenalty field.
@@ -1130,28 +758,9 @@ func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) GetDownActionOk() (*str
 	return o.DownAction.Get(), o.DownAction.IsSet()
 }
 
-// IsSetDownAction returns a boolean if a field has been set.
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) IsSetDownAction() bool {
-	if o != nil && o.DownAction.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDownAction gets a reference to the given NullableString and assigns it to the DownAction field.
 func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) SetDownAction(v string) {
 	o.DownAction.Set(&v)
-}
-
-// SetDownActionNil sets the value for DownAction to be an explicit nil
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) SetDownActionNil() {
-	o.DownAction.Set(nil)
-}
-
-// UnsetDownAction ensures that no value is present for DownAction, not even an explicit nil
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) UnsetDownAction() {
-	o.DownAction.Unset()
 }
 
 // GetRampTime returns the RampTime field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1173,28 +782,9 @@ func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) GetRampTimeOk() (*strin
 	return o.RampTime.Get(), o.RampTime.IsSet()
 }
 
-// IsSetRampTime returns a boolean if a field has been set.
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) IsSetRampTime() bool {
-	if o != nil && o.RampTime.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRampTime gets a reference to the given NullableString and assigns it to the RampTime field.
 func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) SetRampTime(v string) {
 	o.RampTime.Set(&v)
-}
-
-// SetRampTimeNil sets the value for RampTime to be an explicit nil
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) SetRampTimeNil() {
-	o.RampTime.Set(nil)
-}
-
-// UnsetRampTime ensures that no value is present for RampTime, not even an explicit nil
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) UnsetRampTime() {
-	o.RampTime.Unset()
 }
 
 // GetPort returns the Port field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1216,28 +806,9 @@ func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) GetPortOk() (*string, b
 	return o.Port.Get(), o.Port.IsSet()
 }
 
-// IsSetPort returns a boolean if a field has been set.
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) IsSetPort() bool {
-	if o != nil && o.Port.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPort gets a reference to the given NullableString and assigns it to the Port field.
 func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) SetPort(v string) {
 	o.Port.Set(&v)
-}
-
-// SetPortNil sets the value for Port to be an explicit nil
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) SetPortNil() {
-	o.Port.Set(nil)
-}
-
-// UnsetPort ensures that no value is present for Port, not even an explicit nil
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) UnsetPort() {
-	o.Port.Unset()
 }
 
 // GetPortType returns the PortType field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1259,28 +830,9 @@ func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) GetPortTypeOk() (*strin
 	return o.PortType.Get(), o.PortType.IsSet()
 }
 
-// IsSetPortType returns a boolean if a field has been set.
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) IsSetPortType() bool {
-	if o != nil && o.PortType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPortType gets a reference to the given NullableString and assigns it to the PortType field.
 func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) SetPortType(v string) {
 	o.PortType.Set(&v)
-}
-
-// SetPortTypeNil sets the value for PortType to be an explicit nil
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) SetPortTypeNil() {
-	o.PortType.Set(nil)
-}
-
-// UnsetPortType ensures that no value is present for PortType, not even an explicit nil
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) UnsetPortType() {
-	o.PortType.Unset()
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -1299,15 +851,6 @@ func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) GetStatusOk() (*string,
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -1333,15 +876,6 @@ func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) GetNodesOk() ([]GetLoad
 	return o.Nodes, true
 }
 
-// IsSetNodes returns a boolean if a field has been set.
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) IsSetNodes() bool {
-	if o != nil && !IsNil(o.Nodes) {
-		return true
-	}
-
-	return false
-}
-
 // SetNodes gets a reference to the given []GetLoadBalancerPool200ResponseLoadBalancerPoolNodesInner and assigns it to the Nodes field.
 func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) SetNodes(v []GetLoadBalancerPool200ResponseLoadBalancerPoolNodesInner) {
 	o.Nodes = v
@@ -1363,15 +897,6 @@ func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) GetMonitorsOk() ([]GetL
 		return nil, false
 	}
 	return o.Monitors, true
-}
-
-// IsSetMonitors returns a boolean if a field has been set.
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) IsSetMonitors() bool {
-	if o != nil && !IsNil(o.Monitors) {
-		return true
-	}
-
-	return false
 }
 
 // SetMonitors gets a reference to the given []GetLoadBalancerPool200ResponseLoadBalancerPoolMonitorsInner and assigns it to the Monitors field.
@@ -1397,15 +922,6 @@ func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) GetMembersOk() ([]map[s
 	return o.Members, true
 }
 
-// IsSetMembers returns a boolean if a field has been set.
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) IsSetMembers() bool {
-	if o != nil && !IsNil(o.Members) {
-		return true
-	}
-
-	return false
-}
-
 // SetMembers gets a reference to the given []map[string]interface{} and assigns it to the Members field.
 func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) SetMembers(v []map[string]interface{}) {
 	o.Members = v
@@ -1427,15 +943,6 @@ func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) GetConfigOk() (map[stri
 		return map[string]interface{}{}, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
@@ -1462,28 +969,9 @@ func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) GetCreatedByOk() (*stri
 	return o.CreatedBy.Get(), o.CreatedBy.IsSet()
 }
 
-// IsSetCreatedBy returns a boolean if a field has been set.
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) IsSetCreatedBy() bool {
-	if o != nil && o.CreatedBy.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCreatedBy gets a reference to the given NullableString and assigns it to the CreatedBy field.
 func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) SetCreatedBy(v string) {
 	o.CreatedBy.Set(&v)
-}
-
-// SetCreatedByNil sets the value for CreatedBy to be an explicit nil
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) SetCreatedByNil() {
-	o.CreatedBy.Set(nil)
-}
-
-// UnsetCreatedBy ensures that no value is present for CreatedBy, not even an explicit nil
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) UnsetCreatedBy() {
-	o.CreatedBy.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -1502,15 +990,6 @@ func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) GetDateCreatedOk() (*ti
 		return nil, false
 	}
 	return o.DateCreated, true
-}
-
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
@@ -1534,15 +1013,6 @@ func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) GetLastUpdatedOk() (*ti
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *GetLoadBalancerPool200ResponseLoadBalancerPool) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.

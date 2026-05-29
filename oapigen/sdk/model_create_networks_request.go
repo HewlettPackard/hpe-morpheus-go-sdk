@@ -61,15 +61,6 @@ func (o *CreateNetworksRequest) GetNetworkOk() (*CreateNetworksRequestNetwork, b
 	return o.Network, true
 }
 
-// IsSetNetwork returns a boolean if a field has been set.
-func (o *CreateNetworksRequest) IsSetNetwork() bool {
-	if o != nil && !IsNil(o.Network) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetwork gets a reference to the given CreateNetworksRequestNetwork and assigns it to the Network field.
 func (o *CreateNetworksRequest) SetNetwork(v CreateNetworksRequestNetwork) {
 	o.Network = &v

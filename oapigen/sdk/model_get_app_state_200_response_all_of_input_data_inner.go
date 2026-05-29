@@ -63,15 +63,6 @@ func (o *GetAppState200ResponseAllOfInputDataInner) GetKeyOk() (*string, bool) {
 	return o.Key, true
 }
 
-// IsSetKey returns a boolean if a field has been set.
-func (o *GetAppState200ResponseAllOfInputDataInner) IsSetKey() bool {
-	if o != nil && !IsNil(o.Key) {
-		return true
-	}
-
-	return false
-}
-
 // SetKey gets a reference to the given string and assigns it to the Key field.
 func (o *GetAppState200ResponseAllOfInputDataInner) SetKey(v string) {
 	o.Key = &v
@@ -95,15 +86,6 @@ func (o *GetAppState200ResponseAllOfInputDataInner) GetNameOk() (*GetAppState200
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *GetAppState200ResponseAllOfInputDataInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given GetAppState200ResponseAllOfInputDataInnerName and assigns it to the Name field.
 func (o *GetAppState200ResponseAllOfInputDataInner) SetName(v GetAppState200ResponseAllOfInputDataInnerName) {
 	o.Name = &v
@@ -125,15 +107,6 @@ func (o *GetAppState200ResponseAllOfInputDataInner) GetTypeOk() (*string, bool) 
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *GetAppState200ResponseAllOfInputDataInner) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.

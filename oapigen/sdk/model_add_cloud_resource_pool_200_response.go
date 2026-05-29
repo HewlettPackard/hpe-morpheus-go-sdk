@@ -61,15 +61,6 @@ func (o *AddCloudResourcePool200Response) GetResourcePoolOk() (*AddCloudResource
 	return o.ResourcePool, true
 }
 
-// IsSetResourcePool returns a boolean if a field has been set.
-func (o *AddCloudResourcePool200Response) IsSetResourcePool() bool {
-	if o != nil && !IsNil(o.ResourcePool) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourcePool gets a reference to the given AddCloudResourcePool200ResponseResourcePool and assigns it to the ResourcePool field.
 func (o *AddCloudResourcePool200Response) SetResourcePool(v AddCloudResourcePool200ResponseResourcePool) {
 	o.ResourcePool = &v

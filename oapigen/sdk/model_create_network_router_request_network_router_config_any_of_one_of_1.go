@@ -72,15 +72,6 @@ func (o *CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf1) GetTier0Gatew
 	return o.Tier0Gateway, true
 }
 
-// IsSetTier0Gateway returns a boolean if a field has been set.
-func (o *CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf1) IsSetTier0Gateway() bool {
-	if o != nil && !IsNil(o.Tier0Gateway) {
-		return true
-	}
-
-	return false
-}
-
 // SetTier0Gateway gets a reference to the given string and assigns it to the Tier0Gateway field.
 func (o *CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf1) SetTier0Gateway(v string) {
 	o.Tier0Gateway = &v
@@ -102,15 +93,6 @@ func (o *CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf1) GetEdgeCluste
 		return nil, false
 	}
 	return o.EdgeCluster, true
-}
-
-// IsSetEdgeCluster returns a boolean if a field has been set.
-func (o *CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf1) IsSetEdgeCluster() bool {
-	if o != nil && !IsNil(o.EdgeCluster) {
-		return true
-	}
-
-	return false
 }
 
 // SetEdgeCluster gets a reference to the given string and assigns it to the EdgeCluster field.
@@ -136,15 +118,6 @@ func (o *CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf1) GetFailOverOk
 	return o.FailOver, true
 }
 
-// IsSetFailOver returns a boolean if a field has been set.
-func (o *CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf1) IsSetFailOver() bool {
-	if o != nil && !IsNil(o.FailOver) {
-		return true
-	}
-
-	return false
-}
-
 // SetFailOver gets a reference to the given string and assigns it to the FailOver field.
 func (o *CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf1) SetFailOver(v string) {
 	o.FailOver = &v
@@ -166,15 +139,6 @@ func (o *CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf1) GetIpManageme
 		return nil, false
 	}
 	return o.IpManagementType, true
-}
-
-// IsSetIpManagementType returns a boolean if a field has been set.
-func (o *CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf1) IsSetIpManagementType() bool {
-	if o != nil && !IsNil(o.IpManagementType) {
-		return true
-	}
-
-	return false
 }
 
 // SetIpManagementType gets a reference to the given string and assigns it to the IpManagementType field.
@@ -200,15 +164,6 @@ func (o *CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf1) GetIpServerId
 	return o.IpServerId, true
 }
 
-// IsSetIpServerId returns a boolean if a field has been set.
-func (o *CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf1) IsSetIpServerId() bool {
-	if o != nil && !IsNil(o.IpServerId) {
-		return true
-	}
-
-	return false
-}
-
 // SetIpServerId gets a reference to the given string and assigns it to the IpServerId field.
 func (o *CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf1) SetIpServerId(v string) {
 	o.IpServerId = &v
@@ -230,15 +185,6 @@ func (o *CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf1) GetTIER1CONNE
 		return nil, false
 	}
 	return o.TIER1CONNECTED, true
-}
-
-// IsSetTIER1CONNECTED returns a boolean if a field has been set.
-func (o *CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf1) IsSetTIER1CONNECTED() bool {
-	if o != nil && !IsNil(o.TIER1CONNECTED) {
-		return true
-	}
-
-	return false
 }
 
 // SetTIER1CONNECTED gets a reference to the given string and assigns it to the TIER1CONNECTED field.
@@ -264,15 +210,6 @@ func (o *CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf1) GetTIER1NATOk
 	return o.TIER1NAT, true
 }
 
-// IsSetTIER1NAT returns a boolean if a field has been set.
-func (o *CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf1) IsSetTIER1NAT() bool {
-	if o != nil && !IsNil(o.TIER1NAT) {
-		return true
-	}
-
-	return false
-}
-
 // SetTIER1NAT gets a reference to the given string and assigns it to the TIER1NAT field.
 func (o *CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf1) SetTIER1NAT(v string) {
 	o.TIER1NAT = &v
@@ -294,15 +231,6 @@ func (o *CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf1) GetTIER1STATI
 		return nil, false
 	}
 	return o.TIER1STATICROUTES, true
-}
-
-// IsSetTIER1STATICROUTES returns a boolean if a field has been set.
-func (o *CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf1) IsSetTIER1STATICROUTES() bool {
-	if o != nil && !IsNil(o.TIER1STATICROUTES) {
-		return true
-	}
-
-	return false
 }
 
 // SetTIER1STATICROUTES gets a reference to the given string and assigns it to the TIER1STATICROUTES field.
@@ -328,15 +256,6 @@ func (o *CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf1) GetTIER1LBVIP
 	return o.TIER1LBVIP, true
 }
 
-// IsSetTIER1LBVIP returns a boolean if a field has been set.
-func (o *CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf1) IsSetTIER1LBVIP() bool {
-	if o != nil && !IsNil(o.TIER1LBVIP) {
-		return true
-	}
-
-	return false
-}
-
 // SetTIER1LBVIP gets a reference to the given string and assigns it to the TIER1LBVIP field.
 func (o *CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf1) SetTIER1LBVIP(v string) {
 	o.TIER1LBVIP = &v
@@ -358,15 +277,6 @@ func (o *CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf1) GetTIER1LBSNA
 		return nil, false
 	}
 	return o.TIER1LBSNAT, true
-}
-
-// IsSetTIER1LBSNAT returns a boolean if a field has been set.
-func (o *CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf1) IsSetTIER1LBSNAT() bool {
-	if o != nil && !IsNil(o.TIER1LBSNAT) {
-		return true
-	}
-
-	return false
 }
 
 // SetTIER1LBSNAT gets a reference to the given string and assigns it to the TIER1LBSNAT field.
@@ -392,15 +302,6 @@ func (o *CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf1) GetTIER1DNSFO
 	return o.TIER1DNSFORWARDERIP, true
 }
 
-// IsSetTIER1DNSFORWARDERIP returns a boolean if a field has been set.
-func (o *CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf1) IsSetTIER1DNSFORWARDERIP() bool {
-	if o != nil && !IsNil(o.TIER1DNSFORWARDERIP) {
-		return true
-	}
-
-	return false
-}
-
 // SetTIER1DNSFORWARDERIP gets a reference to the given string and assigns it to the TIER1DNSFORWARDERIP field.
 func (o *CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf1) SetTIER1DNSFORWARDERIP(v string) {
 	o.TIER1DNSFORWARDERIP = &v
@@ -422,15 +323,6 @@ func (o *CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf1) GetTIER1IPSEC
 		return nil, false
 	}
 	return o.TIER1IPSECLOCALENDPOINT, true
-}
-
-// IsSetTIER1IPSECLOCALENDPOINT returns a boolean if a field has been set.
-func (o *CreateNetworkRouterRequestNetworkRouterConfigAnyOfOneOf1) IsSetTIER1IPSECLOCALENDPOINT() bool {
-	if o != nil && !IsNil(o.TIER1IPSECLOCALENDPOINT) {
-		return true
-	}
-
-	return false
 }
 
 // SetTIER1IPSECLOCALENDPOINT gets a reference to the given string and assigns it to the TIER1IPSECLOCALENDPOINT field.

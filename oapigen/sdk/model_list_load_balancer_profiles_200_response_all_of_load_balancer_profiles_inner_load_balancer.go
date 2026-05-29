@@ -64,15 +64,6 @@ func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInnerLoadBa
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInnerLoadBalancer) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInnerLoadBalancer) SetId(v int64) {
 	o.Id = &v
@@ -94,15 +85,6 @@ func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInnerLoadBa
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInnerLoadBalancer) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInnerLoadBalancerType and assigns it to the Type field.
@@ -128,15 +110,6 @@ func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInnerLoadBa
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInnerLoadBalancer) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInnerLoadBalancer) SetName(v string) {
 	o.Name = &v
@@ -158,15 +131,6 @@ func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInnerLoadBa
 		return nil, false
 	}
 	return o.Ip, true
-}
-
-// IsSetIp returns a boolean if a field has been set.
-func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInnerLoadBalancer) IsSetIp() bool {
-	if o != nil && !IsNil(o.Ip) {
-		return true
-	}
-
-	return false
 }
 
 // SetIp gets a reference to the given string and assigns it to the Ip field.

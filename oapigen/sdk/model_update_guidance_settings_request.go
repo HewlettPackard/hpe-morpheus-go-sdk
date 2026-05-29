@@ -61,15 +61,6 @@ func (o *UpdateGuidanceSettingsRequest) GetGuidanceSettingsOk() (*UpdateGuidance
 	return o.GuidanceSettings, true
 }
 
-// IsSetGuidanceSettings returns a boolean if a field has been set.
-func (o *UpdateGuidanceSettingsRequest) IsSetGuidanceSettings() bool {
-	if o != nil && !IsNil(o.GuidanceSettings) {
-		return true
-	}
-
-	return false
-}
-
 // SetGuidanceSettings gets a reference to the given UpdateGuidanceSettingsRequestGuidanceSettings and assigns it to the GuidanceSettings field.
 func (o *UpdateGuidanceSettingsRequest) SetGuidanceSettings(v UpdateGuidanceSettingsRequestGuidanceSettings) {
 	o.GuidanceSettings = &v

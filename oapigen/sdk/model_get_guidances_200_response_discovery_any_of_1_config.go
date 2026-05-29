@@ -64,15 +64,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1Config) GetSuccessOk() (*bool, bo
 	return o.Success, true
 }
 
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1Config) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
-}
-
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.
 func (o *GetGuidances200ResponseDiscoveryAnyOf1Config) SetSuccess(v bool) {
 	o.Success = &v
@@ -94,15 +85,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1Config) GetDetailListOk() ([]GetG
 		return nil, false
 	}
 	return o.DetailList, true
-}
-
-// IsSetDetailList returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1Config) IsSetDetailList() bool {
-	if o != nil && !IsNil(o.DetailList) {
-		return true
-	}
-
-	return false
 }
 
 // SetDetailList gets a reference to the given []GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner and assigns it to the DetailList field.
@@ -128,15 +110,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1Config) GetServicesOk() (*GetGuid
 	return o.Services, true
 }
 
-// IsSetServices returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1Config) IsSetServices() bool {
-	if o != nil && !IsNil(o.Services) {
-		return true
-	}
-
-	return false
-}
-
 // SetServices gets a reference to the given GetGuidances200ResponseDiscoveryAnyOf1ConfigServices and assigns it to the Services field.
 func (o *GetGuidances200ResponseDiscoveryAnyOf1Config) SetServices(v GetGuidances200ResponseDiscoveryAnyOf1ConfigServices) {
 	o.Services = &v
@@ -158,15 +131,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1Config) GetSummaryOk() (*GetGuida
 		return nil, false
 	}
 	return o.Summary, true
-}
-
-// IsSetSummary returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1Config) IsSetSummary() bool {
-	if o != nil && !IsNil(o.Summary) {
-		return true
-	}
-
-	return false
 }
 
 // SetSummary gets a reference to the given GetGuidances200ResponseDiscoveryAnyOf1ConfigSummary and assigns it to the Summary field.

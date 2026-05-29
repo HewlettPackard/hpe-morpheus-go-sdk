@@ -68,15 +68,6 @@ func (o *PhpIPAMNetworkPoolServerUpdateConfig) GetAppIdOk() (*string, bool) {
 	return o.AppId, true
 }
 
-// IsSetAppId returns a boolean if a field has been set.
-func (o *PhpIPAMNetworkPoolServerUpdateConfig) IsSetAppId() bool {
-	if o != nil && !IsNil(o.AppId) {
-		return true
-	}
-
-	return false
-}
-
 // SetAppId gets a reference to the given string and assigns it to the AppId field.
 func (o *PhpIPAMNetworkPoolServerUpdateConfig) SetAppId(v string) {
 	o.AppId = &v
@@ -98,15 +89,6 @@ func (o *PhpIPAMNetworkPoolServerUpdateConfig) GetInventoryExistingOk() (*string
 		return nil, false
 	}
 	return o.InventoryExisting, true
-}
-
-// IsSetInventoryExisting returns a boolean if a field has been set.
-func (o *PhpIPAMNetworkPoolServerUpdateConfig) IsSetInventoryExisting() bool {
-	if o != nil && !IsNil(o.InventoryExisting) {
-		return true
-	}
-
-	return false
 }
 
 // SetInventoryExisting gets a reference to the given string and assigns it to the InventoryExisting field.

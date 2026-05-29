@@ -61,15 +61,6 @@ func (o *UpdateNetworkFirewallRuleGroupRequest) GetRuleGroupOk() (*UpdateNetwork
 	return o.RuleGroup, true
 }
 
-// IsSetRuleGroup returns a boolean if a field has been set.
-func (o *UpdateNetworkFirewallRuleGroupRequest) IsSetRuleGroup() bool {
-	if o != nil && !IsNil(o.RuleGroup) {
-		return true
-	}
-
-	return false
-}
-
 // SetRuleGroup gets a reference to the given UpdateNetworkFirewallRuleGroupRequestRuleGroup and assigns it to the RuleGroup field.
 func (o *UpdateNetworkFirewallRuleGroupRequest) SetRuleGroup(v UpdateNetworkFirewallRuleGroupRequestRuleGroup) {
 	o.RuleGroup = &v

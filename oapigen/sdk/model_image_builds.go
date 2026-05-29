@@ -82,15 +82,6 @@ func (o *ImageBuilds) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ImageBuilds) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ImageBuilds) SetId(v int64) {
 	o.Id = &v
@@ -112,15 +103,6 @@ func (o *ImageBuilds) GetAccountOk() (*ImageBuildsAccount, bool) {
 		return nil, false
 	}
 	return o.Account, true
-}
-
-// IsSetAccount returns a boolean if a field has been set.
-func (o *ImageBuilds) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccount gets a reference to the given ImageBuildsAccount and assigns it to the Account field.
@@ -146,15 +128,6 @@ func (o *ImageBuilds) GetTypeOk() (*ImageBuildsType, bool) {
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *ImageBuilds) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given ImageBuildsType and assigns it to the Type field.
 func (o *ImageBuilds) SetType(v ImageBuildsType) {
 	o.Type = &v
@@ -176,15 +149,6 @@ func (o *ImageBuilds) GetSiteOk() (*ImageBuildsSite, bool) {
 		return nil, false
 	}
 	return o.Site, true
-}
-
-// IsSetSite returns a boolean if a field has been set.
-func (o *ImageBuilds) IsSetSite() bool {
-	if o != nil && !IsNil(o.Site) {
-		return true
-	}
-
-	return false
 }
 
 // SetSite gets a reference to the given ImageBuildsSite and assigns it to the Site field.
@@ -210,15 +174,6 @@ func (o *ImageBuilds) GetZoneOk() (*ImageBuildsZone, bool) {
 	return o.Zone, true
 }
 
-// IsSetZone returns a boolean if a field has been set.
-func (o *ImageBuilds) IsSetZone() bool {
-	if o != nil && !IsNil(o.Zone) {
-		return true
-	}
-
-	return false
-}
-
 // SetZone gets a reference to the given ImageBuildsZone and assigns it to the Zone field.
 func (o *ImageBuilds) SetZone(v ImageBuildsZone) {
 	o.Zone = &v
@@ -240,15 +195,6 @@ func (o *ImageBuilds) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ImageBuilds) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -274,15 +220,6 @@ func (o *ImageBuilds) GetDescriptionOk() (*string, bool) {
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ImageBuilds) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *ImageBuilds) SetDescription(v string) {
 	o.Description = &v
@@ -304,15 +241,6 @@ func (o *ImageBuilds) GetBootScriptOk() (*ImageBuildsBootScript, bool) {
 		return nil, false
 	}
 	return o.BootScript, true
-}
-
-// IsSetBootScript returns a boolean if a field has been set.
-func (o *ImageBuilds) IsSetBootScript() bool {
-	if o != nil && !IsNil(o.BootScript) {
-		return true
-	}
-
-	return false
 }
 
 // SetBootScript gets a reference to the given ImageBuildsBootScript and assigns it to the BootScript field.
@@ -339,28 +267,9 @@ func (o *ImageBuilds) GetBootCommandOk() (*string, bool) {
 	return o.BootCommand.Get(), o.BootCommand.IsSet()
 }
 
-// IsSetBootCommand returns a boolean if a field has been set.
-func (o *ImageBuilds) IsSetBootCommand() bool {
-	if o != nil && o.BootCommand.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetBootCommand gets a reference to the given NullableString and assigns it to the BootCommand field.
 func (o *ImageBuilds) SetBootCommand(v string) {
 	o.BootCommand.Set(&v)
-}
-
-// SetBootCommandNil sets the value for BootCommand to be an explicit nil
-func (o *ImageBuilds) SetBootCommandNil() {
-	o.BootCommand.Set(nil)
-}
-
-// UnsetBootCommand ensures that no value is present for BootCommand, not even an explicit nil
-func (o *ImageBuilds) UnsetBootCommand() {
-	o.BootCommand.Unset()
 }
 
 // GetPreseedScript returns the PreseedScript field value if set, zero value otherwise.
@@ -379,15 +288,6 @@ func (o *ImageBuilds) GetPreseedScriptOk() (*ImageBuildsPreseedScript, bool) {
 		return nil, false
 	}
 	return o.PreseedScript, true
-}
-
-// IsSetPreseedScript returns a boolean if a field has been set.
-func (o *ImageBuilds) IsSetPreseedScript() bool {
-	if o != nil && !IsNil(o.PreseedScript) {
-		return true
-	}
-
-	return false
 }
 
 // SetPreseedScript gets a reference to the given ImageBuildsPreseedScript and assigns it to the PreseedScript field.
@@ -413,15 +313,6 @@ func (o *ImageBuilds) GetScriptsOk() ([]ImageBuildsScriptsInner, bool) {
 	return o.Scripts, true
 }
 
-// IsSetScripts returns a boolean if a field has been set.
-func (o *ImageBuilds) IsSetScripts() bool {
-	if o != nil && !IsNil(o.Scripts) {
-		return true
-	}
-
-	return false
-}
-
 // SetScripts gets a reference to the given []ImageBuildsScriptsInner and assigns it to the Scripts field.
 func (o *ImageBuilds) SetScripts(v []ImageBuildsScriptsInner) {
 	o.Scripts = v
@@ -445,15 +336,6 @@ func (o *ImageBuilds) GetSshUsernameOk() (*string, bool) {
 	return o.SshUsername, true
 }
 
-// IsSetSshUsername returns a boolean if a field has been set.
-func (o *ImageBuilds) IsSetSshUsername() bool {
-	if o != nil && !IsNil(o.SshUsername) {
-		return true
-	}
-
-	return false
-}
-
 // SetSshUsername gets a reference to the given string and assigns it to the SshUsername field.
 func (o *ImageBuilds) SetSshUsername(v string) {
 	o.SshUsername = &v
@@ -475,15 +357,6 @@ func (o *ImageBuilds) GetSshPasswordOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SshPassword, true
-}
-
-// IsSetSshPassword returns a boolean if a field has been set.
-func (o *ImageBuilds) IsSetSshPassword() bool {
-	if o != nil && !IsNil(o.SshPassword) {
-		return true
-	}
-
-	return false
 }
 
 // SetSshPassword gets a reference to the given string and assigns it to the SshPassword field.
@@ -510,28 +383,9 @@ func (o *ImageBuilds) GetStorageProviderOk() (*string, bool) {
 	return o.StorageProvider.Get(), o.StorageProvider.IsSet()
 }
 
-// IsSetStorageProvider returns a boolean if a field has been set.
-func (o *ImageBuilds) IsSetStorageProvider() bool {
-	if o != nil && o.StorageProvider.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStorageProvider gets a reference to the given NullableString and assigns it to the StorageProvider field.
 func (o *ImageBuilds) SetStorageProvider(v string) {
 	o.StorageProvider.Set(&v)
-}
-
-// SetStorageProviderNil sets the value for StorageProvider to be an explicit nil
-func (o *ImageBuilds) SetStorageProviderNil() {
-	o.StorageProvider.Set(nil)
-}
-
-// UnsetStorageProvider ensures that no value is present for StorageProvider, not even an explicit nil
-func (o *ImageBuilds) UnsetStorageProvider() {
-	o.StorageProvider.Unset()
 }
 
 // GetBuildOutputName returns the BuildOutputName field value if set, zero value otherwise.
@@ -550,15 +404,6 @@ func (o *ImageBuilds) GetBuildOutputNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.BuildOutputName, true
-}
-
-// IsSetBuildOutputName returns a boolean if a field has been set.
-func (o *ImageBuilds) IsSetBuildOutputName() bool {
-	if o != nil && !IsNil(o.BuildOutputName) {
-		return true
-	}
-
-	return false
 }
 
 // SetBuildOutputName gets a reference to the given string and assigns it to the BuildOutputName field.
@@ -585,28 +430,9 @@ func (o *ImageBuilds) GetConversionFormatsOk() (*string, bool) {
 	return o.ConversionFormats.Get(), o.ConversionFormats.IsSet()
 }
 
-// IsSetConversionFormats returns a boolean if a field has been set.
-func (o *ImageBuilds) IsSetConversionFormats() bool {
-	if o != nil && o.ConversionFormats.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetConversionFormats gets a reference to the given NullableString and assigns it to the ConversionFormats field.
 func (o *ImageBuilds) SetConversionFormats(v string) {
 	o.ConversionFormats.Set(&v)
-}
-
-// SetConversionFormatsNil sets the value for ConversionFormats to be an explicit nil
-func (o *ImageBuilds) SetConversionFormatsNil() {
-	o.ConversionFormats.Set(nil)
-}
-
-// UnsetConversionFormats ensures that no value is present for ConversionFormats, not even an explicit nil
-func (o *ImageBuilds) UnsetConversionFormats() {
-	o.ConversionFormats.Unset()
 }
 
 // GetIsCloudInit returns the IsCloudInit field value if set, zero value otherwise.
@@ -625,15 +451,6 @@ func (o *ImageBuilds) GetIsCloudInitOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.IsCloudInit, true
-}
-
-// IsSetIsCloudInit returns a boolean if a field has been set.
-func (o *ImageBuilds) IsSetIsCloudInit() bool {
-	if o != nil && !IsNil(o.IsCloudInit) {
-		return true
-	}
-
-	return false
 }
 
 // SetIsCloudInit gets a reference to the given bool and assigns it to the IsCloudInit field.
@@ -659,15 +476,6 @@ func (o *ImageBuilds) GetVmToolsInstalledOk() (*bool, bool) {
 	return o.VmToolsInstalled, true
 }
 
-// IsSetVmToolsInstalled returns a boolean if a field has been set.
-func (o *ImageBuilds) IsSetVmToolsInstalled() bool {
-	if o != nil && !IsNil(o.VmToolsInstalled) {
-		return true
-	}
-
-	return false
-}
-
 // SetVmToolsInstalled gets a reference to the given bool and assigns it to the VmToolsInstalled field.
 func (o *ImageBuilds) SetVmToolsInstalled(v bool) {
 	o.VmToolsInstalled = &v
@@ -689,15 +497,6 @@ func (o *ImageBuilds) GetKeepResultsOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.KeepResults, true
-}
-
-// IsSetKeepResults returns a boolean if a field has been set.
-func (o *ImageBuilds) IsSetKeepResults() bool {
-	if o != nil && !IsNil(o.KeepResults) {
-		return true
-	}
-
-	return false
 }
 
 // SetKeepResults gets a reference to the given int64 and assigns it to the KeepResults field.
@@ -723,15 +522,6 @@ func (o *ImageBuilds) GetConfigOk() (*ImageBuildsConfig, bool) {
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *ImageBuilds) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given ImageBuildsConfig and assigns it to the Config field.
 func (o *ImageBuilds) SetConfig(v ImageBuildsConfig) {
 	o.Config = &v
@@ -755,15 +545,6 @@ func (o *ImageBuilds) GetLastResultOk() (*ImageBuildsLastResult, bool) {
 	return o.LastResult, true
 }
 
-// IsSetLastResult returns a boolean if a field has been set.
-func (o *ImageBuilds) IsSetLastResult() bool {
-	if o != nil && !IsNil(o.LastResult) {
-		return true
-	}
-
-	return false
-}
-
 // SetLastResult gets a reference to the given ImageBuildsLastResult and assigns it to the LastResult field.
 func (o *ImageBuilds) SetLastResult(v ImageBuildsLastResult) {
 	o.LastResult = &v
@@ -785,15 +566,6 @@ func (o *ImageBuilds) GetExecutionCountOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.ExecutionCount, true
-}
-
-// IsSetExecutionCount returns a boolean if a field has been set.
-func (o *ImageBuilds) IsSetExecutionCount() bool {
-	if o != nil && !IsNil(o.ExecutionCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetExecutionCount gets a reference to the given int64 and assigns it to the ExecutionCount field.

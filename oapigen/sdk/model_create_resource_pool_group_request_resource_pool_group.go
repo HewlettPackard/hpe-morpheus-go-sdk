@@ -68,15 +68,6 @@ func (o *CreateResourcePoolGroupRequestResourcePoolGroup) GetNameOk() (*string, 
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *CreateResourcePoolGroupRequestResourcePoolGroup) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *CreateResourcePoolGroupRequestResourcePoolGroup) SetName(v string) {
 	o.Name = &v
@@ -98,15 +89,6 @@ func (o *CreateResourcePoolGroupRequestResourcePoolGroup) GetDescriptionOk() (*s
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *CreateResourcePoolGroupRequestResourcePoolGroup) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -132,15 +114,6 @@ func (o *CreateResourcePoolGroupRequestResourcePoolGroup) GetVisibilityOk() (*st
 	return o.Visibility, true
 }
 
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *CreateResourcePoolGroupRequestResourcePoolGroup) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
-}
-
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
 func (o *CreateResourcePoolGroupRequestResourcePoolGroup) SetVisibility(v string) {
 	o.Visibility = &v
@@ -162,15 +135,6 @@ func (o *CreateResourcePoolGroupRequestResourcePoolGroup) GetModeOk() (*string, 
 		return nil, false
 	}
 	return o.Mode, true
-}
-
-// IsSetMode returns a boolean if a field has been set.
-func (o *CreateResourcePoolGroupRequestResourcePoolGroup) IsSetMode() bool {
-	if o != nil && !IsNil(o.Mode) {
-		return true
-	}
-
-	return false
 }
 
 // SetMode gets a reference to the given string and assigns it to the Mode field.
@@ -196,15 +160,6 @@ func (o *CreateResourcePoolGroupRequestResourcePoolGroup) GetPoolsOk() ([]int64,
 	return o.Pools, true
 }
 
-// IsSetPools returns a boolean if a field has been set.
-func (o *CreateResourcePoolGroupRequestResourcePoolGroup) IsSetPools() bool {
-	if o != nil && !IsNil(o.Pools) {
-		return true
-	}
-
-	return false
-}
-
 // SetPools gets a reference to the given []int64 and assigns it to the Pools field.
 func (o *CreateResourcePoolGroupRequestResourcePoolGroup) SetPools(v []int64) {
 	o.Pools = v
@@ -228,15 +183,6 @@ func (o *CreateResourcePoolGroupRequestResourcePoolGroup) GetTenantsOk() ([]Crea
 	return o.Tenants, true
 }
 
-// IsSetTenants returns a boolean if a field has been set.
-func (o *CreateResourcePoolGroupRequestResourcePoolGroup) IsSetTenants() bool {
-	if o != nil && !IsNil(o.Tenants) {
-		return true
-	}
-
-	return false
-}
-
 // SetTenants gets a reference to the given []CreateResourcePoolGroupRequestResourcePoolGroupTenantsInner and assigns it to the Tenants field.
 func (o *CreateResourcePoolGroupRequestResourcePoolGroup) SetTenants(v []CreateResourcePoolGroupRequestResourcePoolGroupTenantsInner) {
 	o.Tenants = v
@@ -258,15 +204,6 @@ func (o *CreateResourcePoolGroupRequestResourcePoolGroup) GetResourcePermissionO
 		return nil, false
 	}
 	return o.ResourcePermission, true
-}
-
-// IsSetResourcePermission returns a boolean if a field has been set.
-func (o *CreateResourcePoolGroupRequestResourcePoolGroup) IsSetResourcePermission() bool {
-	if o != nil && !IsNil(o.ResourcePermission) {
-		return true
-	}
-
-	return false
 }
 
 // SetResourcePermission gets a reference to the given CreateResourcePoolGroupRequestResourcePoolGroupResourcePermission and assigns it to the ResourcePermission field.

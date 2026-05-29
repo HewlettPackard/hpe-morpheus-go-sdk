@@ -64,15 +64,6 @@ func (o *ListJobs200ResponseAllOfJobsInnerAnyOf2TargetsInner) GetIdOk() (*int64,
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListJobs200ResponseAllOfJobsInnerAnyOf2TargetsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListJobs200ResponseAllOfJobsInnerAnyOf2TargetsInner) SetId(v int64) {
 	o.Id = &v
@@ -94,15 +85,6 @@ func (o *ListJobs200ResponseAllOfJobsInnerAnyOf2TargetsInner) GetNameOk() (*stri
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListJobs200ResponseAllOfJobsInnerAnyOf2TargetsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -128,15 +110,6 @@ func (o *ListJobs200ResponseAllOfJobsInnerAnyOf2TargetsInner) GetTargetTypeOk() 
 	return o.TargetType, true
 }
 
-// IsSetTargetType returns a boolean if a field has been set.
-func (o *ListJobs200ResponseAllOfJobsInnerAnyOf2TargetsInner) IsSetTargetType() bool {
-	if o != nil && !IsNil(o.TargetType) {
-		return true
-	}
-
-	return false
-}
-
 // SetTargetType gets a reference to the given string and assigns it to the TargetType field.
 func (o *ListJobs200ResponseAllOfJobsInnerAnyOf2TargetsInner) SetTargetType(v string) {
 	o.TargetType = &v
@@ -158,15 +131,6 @@ func (o *ListJobs200ResponseAllOfJobsInnerAnyOf2TargetsInner) GetRefIdOk() (*int
 		return nil, false
 	}
 	return o.RefId, true
-}
-
-// IsSetRefId returns a boolean if a field has been set.
-func (o *ListJobs200ResponseAllOfJobsInnerAnyOf2TargetsInner) IsSetRefId() bool {
-	if o != nil && !IsNil(o.RefId) {
-		return true
-	}
-
-	return false
 }
 
 // SetRefId gets a reference to the given int64 and assigns it to the RefId field.

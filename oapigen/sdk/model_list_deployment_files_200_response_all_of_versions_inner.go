@@ -72,15 +72,6 @@ func (o *ListDeploymentFiles200ResponseAllOfVersionsInner) GetIdOk() (*int64, bo
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListDeploymentFiles200ResponseAllOfVersionsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListDeploymentFiles200ResponseAllOfVersionsInner) SetId(v int64) {
 	o.Id = &v
@@ -104,15 +95,6 @@ func (o *ListDeploymentFiles200ResponseAllOfVersionsInner) GetDeployTypeOk() (*s
 	return o.DeployType, true
 }
 
-// IsSetDeployType returns a boolean if a field has been set.
-func (o *ListDeploymentFiles200ResponseAllOfVersionsInner) IsSetDeployType() bool {
-	if o != nil && !IsNil(o.DeployType) {
-		return true
-	}
-
-	return false
-}
-
 // SetDeployType gets a reference to the given string and assigns it to the DeployType field.
 func (o *ListDeploymentFiles200ResponseAllOfVersionsInner) SetDeployType(v string) {
 	o.DeployType = &v
@@ -134,15 +116,6 @@ func (o *ListDeploymentFiles200ResponseAllOfVersionsInner) GetDeploymentIdOk() (
 		return nil, false
 	}
 	return o.DeploymentId, true
-}
-
-// IsSetDeploymentId returns a boolean if a field has been set.
-func (o *ListDeploymentFiles200ResponseAllOfVersionsInner) IsSetDeploymentId() bool {
-	if o != nil && !IsNil(o.DeploymentId) {
-		return true
-	}
-
-	return false
 }
 
 // SetDeploymentId gets a reference to the given int64 and assigns it to the DeploymentId field.
@@ -169,28 +142,9 @@ func (o *ListDeploymentFiles200ResponseAllOfVersionsInner) GetFetchUrlOk() (*str
 	return o.FetchUrl.Get(), o.FetchUrl.IsSet()
 }
 
-// IsSetFetchUrl returns a boolean if a field has been set.
-func (o *ListDeploymentFiles200ResponseAllOfVersionsInner) IsSetFetchUrl() bool {
-	if o != nil && o.FetchUrl.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFetchUrl gets a reference to the given NullableString and assigns it to the FetchUrl field.
 func (o *ListDeploymentFiles200ResponseAllOfVersionsInner) SetFetchUrl(v string) {
 	o.FetchUrl.Set(&v)
-}
-
-// SetFetchUrlNil sets the value for FetchUrl to be an explicit nil
-func (o *ListDeploymentFiles200ResponseAllOfVersionsInner) SetFetchUrlNil() {
-	o.FetchUrl.Set(nil)
-}
-
-// UnsetFetchUrl ensures that no value is present for FetchUrl, not even an explicit nil
-func (o *ListDeploymentFiles200ResponseAllOfVersionsInner) UnsetFetchUrl() {
-	o.FetchUrl.Unset()
 }
 
 // GetGitUrl returns the GitUrl field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -212,28 +166,9 @@ func (o *ListDeploymentFiles200ResponseAllOfVersionsInner) GetGitUrlOk() (*strin
 	return o.GitUrl.Get(), o.GitUrl.IsSet()
 }
 
-// IsSetGitUrl returns a boolean if a field has been set.
-func (o *ListDeploymentFiles200ResponseAllOfVersionsInner) IsSetGitUrl() bool {
-	if o != nil && o.GitUrl.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetGitUrl gets a reference to the given NullableString and assigns it to the GitUrl field.
 func (o *ListDeploymentFiles200ResponseAllOfVersionsInner) SetGitUrl(v string) {
 	o.GitUrl.Set(&v)
-}
-
-// SetGitUrlNil sets the value for GitUrl to be an explicit nil
-func (o *ListDeploymentFiles200ResponseAllOfVersionsInner) SetGitUrlNil() {
-	o.GitUrl.Set(nil)
-}
-
-// UnsetGitUrl ensures that no value is present for GitUrl, not even an explicit nil
-func (o *ListDeploymentFiles200ResponseAllOfVersionsInner) UnsetGitUrl() {
-	o.GitUrl.Unset()
 }
 
 // GetGitRef returns the GitRef field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -255,28 +190,9 @@ func (o *ListDeploymentFiles200ResponseAllOfVersionsInner) GetGitRefOk() (*strin
 	return o.GitRef.Get(), o.GitRef.IsSet()
 }
 
-// IsSetGitRef returns a boolean if a field has been set.
-func (o *ListDeploymentFiles200ResponseAllOfVersionsInner) IsSetGitRef() bool {
-	if o != nil && o.GitRef.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetGitRef gets a reference to the given NullableString and assigns it to the GitRef field.
 func (o *ListDeploymentFiles200ResponseAllOfVersionsInner) SetGitRef(v string) {
 	o.GitRef.Set(&v)
-}
-
-// SetGitRefNil sets the value for GitRef to be an explicit nil
-func (o *ListDeploymentFiles200ResponseAllOfVersionsInner) SetGitRefNil() {
-	o.GitRef.Set(nil)
-}
-
-// UnsetGitRef ensures that no value is present for GitRef, not even an explicit nil
-func (o *ListDeploymentFiles200ResponseAllOfVersionsInner) UnsetGitRef() {
-	o.GitRef.Unset()
 }
 
 // GetUserVersion returns the UserVersion field value if set, zero value otherwise.
@@ -295,15 +211,6 @@ func (o *ListDeploymentFiles200ResponseAllOfVersionsInner) GetUserVersionOk() (*
 		return nil, false
 	}
 	return o.UserVersion, true
-}
-
-// IsSetUserVersion returns a boolean if a field has been set.
-func (o *ListDeploymentFiles200ResponseAllOfVersionsInner) IsSetUserVersion() bool {
-	if o != nil && !IsNil(o.UserVersion) {
-		return true
-	}
-
-	return false
 }
 
 // SetUserVersion gets a reference to the given string and assigns it to the UserVersion field.
@@ -329,15 +236,6 @@ func (o *ListDeploymentFiles200ResponseAllOfVersionsInner) GetVersionOk() (*stri
 	return o.Version, true
 }
 
-// IsSetVersion returns a boolean if a field has been set.
-func (o *ListDeploymentFiles200ResponseAllOfVersionsInner) IsSetVersion() bool {
-	if o != nil && !IsNil(o.Version) {
-		return true
-	}
-
-	return false
-}
-
 // SetVersion gets a reference to the given string and assigns it to the Version field.
 func (o *ListDeploymentFiles200ResponseAllOfVersionsInner) SetVersion(v string) {
 	o.Version = &v
@@ -359,15 +257,6 @@ func (o *ListDeploymentFiles200ResponseAllOfVersionsInner) GetStatusOk() (*strin
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *ListDeploymentFiles200ResponseAllOfVersionsInner) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -393,15 +282,6 @@ func (o *ListDeploymentFiles200ResponseAllOfVersionsInner) GetDateCreatedOk() (*
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *ListDeploymentFiles200ResponseAllOfVersionsInner) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *ListDeploymentFiles200ResponseAllOfVersionsInner) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -423,15 +303,6 @@ func (o *ListDeploymentFiles200ResponseAllOfVersionsInner) GetLastUpdatedOk() (*
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *ListDeploymentFiles200ResponseAllOfVersionsInner) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.

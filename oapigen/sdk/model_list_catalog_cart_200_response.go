@@ -61,15 +61,6 @@ func (o *ListCatalogCart200Response) GetCartOk() (*ListCatalogCart200ResponseCar
 	return o.Cart, true
 }
 
-// IsSetCart returns a boolean if a field has been set.
-func (o *ListCatalogCart200Response) IsSetCart() bool {
-	if o != nil && !IsNil(o.Cart) {
-		return true
-	}
-
-	return false
-}
-
 // SetCart gets a reference to the given ListCatalogCart200ResponseCart and assigns it to the Cart field.
 func (o *ListCatalogCart200Response) SetCart(v ListCatalogCart200ResponseCart) {
 	o.Cart = &v

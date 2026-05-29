@@ -68,15 +68,6 @@ func (o *GetAppState200ResponseAllOfWorkloadsInner) GetRefTypeOk() (*string, boo
 	return o.RefType, true
 }
 
-// IsSetRefType returns a boolean if a field has been set.
-func (o *GetAppState200ResponseAllOfWorkloadsInner) IsSetRefType() bool {
-	if o != nil && !IsNil(o.RefType) {
-		return true
-	}
-
-	return false
-}
-
 // SetRefType gets a reference to the given string and assigns it to the RefType field.
 func (o *GetAppState200ResponseAllOfWorkloadsInner) SetRefType(v string) {
 	o.RefType = &v
@@ -100,15 +91,6 @@ func (o *GetAppState200ResponseAllOfWorkloadsInner) GetRefIdOk() (*int64, bool) 
 	return o.RefId, true
 }
 
-// IsSetRefId returns a boolean if a field has been set.
-func (o *GetAppState200ResponseAllOfWorkloadsInner) IsSetRefId() bool {
-	if o != nil && !IsNil(o.RefId) {
-		return true
-	}
-
-	return false
-}
-
 // SetRefId gets a reference to the given int64 and assigns it to the RefId field.
 func (o *GetAppState200ResponseAllOfWorkloadsInner) SetRefId(v int64) {
 	o.RefId = &v
@@ -130,15 +112,6 @@ func (o *GetAppState200ResponseAllOfWorkloadsInner) GetRefNameOk() (*string, boo
 		return nil, false
 	}
 	return o.RefName, true
-}
-
-// IsSetRefName returns a boolean if a field has been set.
-func (o *GetAppState200ResponseAllOfWorkloadsInner) IsSetRefName() bool {
-	if o != nil && !IsNil(o.RefName) {
-		return true
-	}
-
-	return false
 }
 
 // SetRefName gets a reference to the given string and assigns it to the RefName field.
@@ -165,28 +138,9 @@ func (o *GetAppState200ResponseAllOfWorkloadsInner) GetSubRefNameOk() (*string, 
 	return o.SubRefName.Get(), o.SubRefName.IsSet()
 }
 
-// IsSetSubRefName returns a boolean if a field has been set.
-func (o *GetAppState200ResponseAllOfWorkloadsInner) IsSetSubRefName() bool {
-	if o != nil && o.SubRefName.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSubRefName gets a reference to the given NullableString and assigns it to the SubRefName field.
 func (o *GetAppState200ResponseAllOfWorkloadsInner) SetSubRefName(v string) {
 	o.SubRefName.Set(&v)
-}
-
-// SetSubRefNameNil sets the value for SubRefName to be an explicit nil
-func (o *GetAppState200ResponseAllOfWorkloadsInner) SetSubRefNameNil() {
-	o.SubRefName.Set(nil)
-}
-
-// UnsetSubRefName ensures that no value is present for SubRefName, not even an explicit nil
-func (o *GetAppState200ResponseAllOfWorkloadsInner) UnsetSubRefName() {
-	o.SubRefName.Unset()
 }
 
 // GetStateDate returns the StateDate field value if set, zero value otherwise.
@@ -205,15 +159,6 @@ func (o *GetAppState200ResponseAllOfWorkloadsInner) GetStateDateOk() (*time.Time
 		return nil, false
 	}
 	return o.StateDate, true
-}
-
-// IsSetStateDate returns a boolean if a field has been set.
-func (o *GetAppState200ResponseAllOfWorkloadsInner) IsSetStateDate() bool {
-	if o != nil && !IsNil(o.StateDate) {
-		return true
-	}
-
-	return false
 }
 
 // SetStateDate gets a reference to the given time.Time and assigns it to the StateDate field.
@@ -239,15 +184,6 @@ func (o *GetAppState200ResponseAllOfWorkloadsInner) GetStatusOk() (*string, bool
 	return o.Status, true
 }
 
-// IsSetStatus returns a boolean if a field has been set.
-func (o *GetAppState200ResponseAllOfWorkloadsInner) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
-}
-
 // SetStatus gets a reference to the given string and assigns it to the Status field.
 func (o *GetAppState200ResponseAllOfWorkloadsInner) SetStatus(v string) {
 	o.Status = &v
@@ -269,15 +205,6 @@ func (o *GetAppState200ResponseAllOfWorkloadsInner) GetIacDriftOk() (*bool, bool
 		return nil, false
 	}
 	return o.IacDrift, true
-}
-
-// IsSetIacDrift returns a boolean if a field has been set.
-func (o *GetAppState200ResponseAllOfWorkloadsInner) IsSetIacDrift() bool {
-	if o != nil && !IsNil(o.IacDrift) {
-		return true
-	}
-
-	return false
 }
 
 // SetIacDrift gets a reference to the given bool and assigns it to the IacDrift field.

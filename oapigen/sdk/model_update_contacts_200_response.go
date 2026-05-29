@@ -62,15 +62,6 @@ func (o *UpdateContacts200Response) GetContactOk() (*UpdateContacts200ResponseAl
 	return o.Contact, true
 }
 
-// IsSetContact returns a boolean if a field has been set.
-func (o *UpdateContacts200Response) IsSetContact() bool {
-	if o != nil && !IsNil(o.Contact) {
-		return true
-	}
-
-	return false
-}
-
 // SetContact gets a reference to the given UpdateContacts200ResponseAllOfContact and assigns it to the Contact field.
 func (o *UpdateContacts200Response) SetContact(v UpdateContacts200ResponseAllOfContact) {
 	o.Contact = &v
@@ -92,15 +83,6 @@ func (o *UpdateContacts200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *UpdateContacts200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

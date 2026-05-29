@@ -62,15 +62,6 @@ func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInnerCreatedBy) Ge
 	return o.Username, true
 }
 
-// IsSetUsername returns a boolean if a field has been set.
-func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInnerCreatedBy) IsSetUsername() bool {
-	if o != nil && !IsNil(o.Username) {
-		return true
-	}
-
-	return false
-}
-
 // SetUsername gets a reference to the given string and assigns it to the Username field.
 func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInnerCreatedBy) SetUsername(v string) {
 	o.Username = &v
@@ -92,15 +83,6 @@ func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInnerCreatedBy) Ge
 		return nil, false
 	}
 	return o.DisplayName, true
-}
-
-// IsSetDisplayName returns a boolean if a field has been set.
-func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInnerCreatedBy) IsSetDisplayName() bool {
-	if o != nil && !IsNil(o.DisplayName) {
-		return true
-	}
-
-	return false
 }
 
 // SetDisplayName gets a reference to the given string and assigns it to the DisplayName field.

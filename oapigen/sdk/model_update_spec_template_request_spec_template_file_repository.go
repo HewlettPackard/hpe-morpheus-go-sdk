@@ -62,15 +62,6 @@ func (o *UpdateSpecTemplateRequestSpecTemplateFileRepository) GetIdOk() (*int64,
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *UpdateSpecTemplateRequestSpecTemplateFileRepository) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *UpdateSpecTemplateRequestSpecTemplateFileRepository) SetId(v int64) {
 	o.Id = &v

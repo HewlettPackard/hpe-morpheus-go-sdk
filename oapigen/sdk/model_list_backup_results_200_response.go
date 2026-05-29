@@ -62,15 +62,6 @@ func (o *ListBackupResults200Response) GetResultsOk() ([]ListBackupResults200Res
 	return o.Results, true
 }
 
-// IsSetResults returns a boolean if a field has been set.
-func (o *ListBackupResults200Response) IsSetResults() bool {
-	if o != nil && !IsNil(o.Results) {
-		return true
-	}
-
-	return false
-}
-
 // SetResults gets a reference to the given []ListBackupResults200ResponseAllOfResultsInner and assigns it to the Results field.
 func (o *ListBackupResults200Response) SetResults(v []ListBackupResults200ResponseAllOfResultsInner) {
 	o.Results = v
@@ -92,15 +83,6 @@ func (o *ListBackupResults200Response) GetMetaOk() (*ListApprovals200ResponseAll
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListBackupResults200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

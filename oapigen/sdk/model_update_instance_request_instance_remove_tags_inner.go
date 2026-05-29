@@ -62,15 +62,6 @@ func (o *UpdateInstanceRequestInstanceRemoveTagsInner) GetNameOk() (*string, boo
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateInstanceRequestInstanceRemoveTagsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *UpdateInstanceRequestInstanceRemoveTagsInner) SetName(v string) {
 	o.Name = &v
@@ -95,28 +86,9 @@ func (o *UpdateInstanceRequestInstanceRemoveTagsInner) GetValueOk() (*string, bo
 	return o.Value.Get(), o.Value.IsSet()
 }
 
-// IsSetValue returns a boolean if a field has been set.
-func (o *UpdateInstanceRequestInstanceRemoveTagsInner) IsSetValue() bool {
-	if o != nil && o.Value.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetValue gets a reference to the given NullableString and assigns it to the Value field.
 func (o *UpdateInstanceRequestInstanceRemoveTagsInner) SetValue(v string) {
 	o.Value.Set(&v)
-}
-
-// SetValueNil sets the value for Value to be an explicit nil
-func (o *UpdateInstanceRequestInstanceRemoveTagsInner) SetValueNil() {
-	o.Value.Set(nil)
-}
-
-// UnsetValue ensures that no value is present for Value, not even an explicit nil
-func (o *UpdateInstanceRequestInstanceRemoveTagsInner) UnsetValue() {
-	o.Value.Unset()
 }
 
 func (o UpdateInstanceRequestInstanceRemoveTagsInner) MarshalJSON() ([]byte, error) {

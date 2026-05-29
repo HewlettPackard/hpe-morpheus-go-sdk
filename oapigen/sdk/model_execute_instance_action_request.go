@@ -75,15 +75,6 @@ func (o *ExecuteInstanceActionRequest) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *ExecuteInstanceActionRequest) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *ExecuteInstanceActionRequest) SetCode(v string) {
 	o.Code = &v
@@ -105,15 +96,6 @@ func (o *ExecuteInstanceActionRequest) GetSelectedResourcePoolIdOk() (*int64, bo
 		return nil, false
 	}
 	return o.SelectedResourcePoolId, true
-}
-
-// IsSetSelectedResourcePoolId returns a boolean if a field has been set.
-func (o *ExecuteInstanceActionRequest) IsSetSelectedResourcePoolId() bool {
-	if o != nil && !IsNil(o.SelectedResourcePoolId) {
-		return true
-	}
-
-	return false
 }
 
 // SetSelectedResourcePoolId gets a reference to the given int64 and assigns it to the SelectedResourcePoolId field.
@@ -139,15 +121,6 @@ func (o *ExecuteInstanceActionRequest) GetPreProvisionedOk() (*string, bool) {
 	return o.PreProvisioned, true
 }
 
-// IsSetPreProvisioned returns a boolean if a field has been set.
-func (o *ExecuteInstanceActionRequest) IsSetPreProvisioned() bool {
-	if o != nil && !IsNil(o.PreProvisioned) {
-		return true
-	}
-
-	return false
-}
-
 // SetPreProvisioned gets a reference to the given string and assigns it to the PreProvisioned field.
 func (o *ExecuteInstanceActionRequest) SetPreProvisioned(v string) {
 	o.PreProvisioned = &v
@@ -169,15 +142,6 @@ func (o *ExecuteInstanceActionRequest) GetSelectedServerIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.SelectedServerId, true
-}
-
-// IsSetSelectedServerId returns a boolean if a field has been set.
-func (o *ExecuteInstanceActionRequest) IsSetSelectedServerId() bool {
-	if o != nil && !IsNil(o.SelectedServerId) {
-		return true
-	}
-
-	return false
 }
 
 // SetSelectedServerId gets a reference to the given int64 and assigns it to the SelectedServerId field.
@@ -203,15 +167,6 @@ func (o *ExecuteInstanceActionRequest) GetSshUsernameOk() (*string, bool) {
 	return o.SshUsername, true
 }
 
-// IsSetSshUsername returns a boolean if a field has been set.
-func (o *ExecuteInstanceActionRequest) IsSetSshUsername() bool {
-	if o != nil && !IsNil(o.SshUsername) {
-		return true
-	}
-
-	return false
-}
-
 // SetSshUsername gets a reference to the given string and assigns it to the SshUsername field.
 func (o *ExecuteInstanceActionRequest) SetSshUsername(v string) {
 	o.SshUsername = &v
@@ -233,15 +188,6 @@ func (o *ExecuteInstanceActionRequest) GetSshPasswordOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SshPassword, true
-}
-
-// IsSetSshPassword returns a boolean if a field has been set.
-func (o *ExecuteInstanceActionRequest) IsSetSshPassword() bool {
-	if o != nil && !IsNil(o.SshPassword) {
-		return true
-	}
-
-	return false
 }
 
 // SetSshPassword gets a reference to the given string and assigns it to the SshPassword field.
@@ -267,15 +213,6 @@ func (o *ExecuteInstanceActionRequest) GetSshHostOk() (*string, bool) {
 	return o.SshHost, true
 }
 
-// IsSetSshHost returns a boolean if a field has been set.
-func (o *ExecuteInstanceActionRequest) IsSetSshHost() bool {
-	if o != nil && !IsNil(o.SshHost) {
-		return true
-	}
-
-	return false
-}
-
 // SetSshHost gets a reference to the given string and assigns it to the SshHost field.
 func (o *ExecuteInstanceActionRequest) SetSshHost(v string) {
 	o.SshHost = &v
@@ -297,15 +234,6 @@ func (o *ExecuteInstanceActionRequest) GetSshKeyPairOk() (*ExecuteInstanceAction
 		return nil, false
 	}
 	return o.SshKeyPair, true
-}
-
-// IsSetSshKeyPair returns a boolean if a field has been set.
-func (o *ExecuteInstanceActionRequest) IsSetSshKeyPair() bool {
-	if o != nil && !IsNil(o.SshKeyPair) {
-		return true
-	}
-
-	return false
 }
 
 // SetSshKeyPair gets a reference to the given ExecuteInstanceActionRequestSshKeyPair and assigns it to the SshKeyPair field.

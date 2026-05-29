@@ -64,15 +64,6 @@ func (o *AddBootScriptRequestBootScript) GetFileNameOk() (*string, bool) {
 	return o.FileName, true
 }
 
-// IsSetFileName returns a boolean if a field has been set.
-func (o *AddBootScriptRequestBootScript) IsSetFileName() bool {
-	if o != nil && !IsNil(o.FileName) {
-		return true
-	}
-
-	return false
-}
-
 // SetFileName gets a reference to the given string and assigns it to the FileName field.
 func (o *AddBootScriptRequestBootScript) SetFileName(v string) {
 	o.FileName = &v
@@ -94,15 +85,6 @@ func (o *AddBootScriptRequestBootScript) GetContentOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Content, true
-}
-
-// IsSetContent returns a boolean if a field has been set.
-func (o *AddBootScriptRequestBootScript) IsSetContent() bool {
-	if o != nil && !IsNil(o.Content) {
-		return true
-	}
-
-	return false
 }
 
 // SetContent gets a reference to the given string and assigns it to the Content field.

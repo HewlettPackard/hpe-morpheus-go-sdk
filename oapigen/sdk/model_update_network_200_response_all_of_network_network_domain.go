@@ -62,15 +62,6 @@ func (o *UpdateNetwork200ResponseAllOfNetworkNetworkDomain) GetIdOk() (*int64, b
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetworkNetworkDomain) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *UpdateNetwork200ResponseAllOfNetworkNetworkDomain) SetId(v int64) {
 	o.Id = &v

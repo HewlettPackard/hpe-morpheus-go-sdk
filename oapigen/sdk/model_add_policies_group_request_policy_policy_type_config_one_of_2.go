@@ -61,15 +61,6 @@ func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf2) GetBackupStorageId
 	return o.BackupStorageIds, true
 }
 
-// IsSetBackupStorageIds returns a boolean if a field has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf2) IsSetBackupStorageIds() bool {
-	if o != nil && !IsNil(o.BackupStorageIds) {
-		return true
-	}
-
-	return false
-}
-
 // SetBackupStorageIds gets a reference to the given []int64 and assigns it to the BackupStorageIds field.
 func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf2) SetBackupStorageIds(v []int64) {
 	o.BackupStorageIds = v

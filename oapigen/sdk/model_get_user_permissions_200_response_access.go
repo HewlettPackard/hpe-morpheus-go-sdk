@@ -71,15 +71,6 @@ func (o *GetUserPermissions200ResponseAccess) GetFeaturesOk() ([]map[string]inte
 	return o.Features, true
 }
 
-// IsSetFeatures returns a boolean if a field has been set.
-func (o *GetUserPermissions200ResponseAccess) IsSetFeatures() bool {
-	if o != nil && !IsNil(o.Features) {
-		return true
-	}
-
-	return false
-}
-
 // SetFeatures gets a reference to the given []map[string]interface{} and assigns it to the Features field.
 func (o *GetUserPermissions200ResponseAccess) SetFeatures(v []map[string]interface{}) {
 	o.Features = v
@@ -101,15 +92,6 @@ func (o *GetUserPermissions200ResponseAccess) GetZonesOk() ([]map[string]interfa
 		return nil, false
 	}
 	return o.Zones, true
-}
-
-// IsSetZones returns a boolean if a field has been set.
-func (o *GetUserPermissions200ResponseAccess) IsSetZones() bool {
-	if o != nil && !IsNil(o.Zones) {
-		return true
-	}
-
-	return false
 }
 
 // SetZones gets a reference to the given []map[string]interface{} and assigns it to the Zones field.
@@ -135,15 +117,6 @@ func (o *GetUserPermissions200ResponseAccess) GetSitesOk() ([]map[string]interfa
 	return o.Sites, true
 }
 
-// IsSetSites returns a boolean if a field has been set.
-func (o *GetUserPermissions200ResponseAccess) IsSetSites() bool {
-	if o != nil && !IsNil(o.Sites) {
-		return true
-	}
-
-	return false
-}
-
 // SetSites gets a reference to the given []map[string]interface{} and assigns it to the Sites field.
 func (o *GetUserPermissions200ResponseAccess) SetSites(v []map[string]interface{}) {
 	o.Sites = v
@@ -165,15 +138,6 @@ func (o *GetUserPermissions200ResponseAccess) GetInstanceTypesOk() ([]map[string
 		return nil, false
 	}
 	return o.InstanceTypes, true
-}
-
-// IsSetInstanceTypes returns a boolean if a field has been set.
-func (o *GetUserPermissions200ResponseAccess) IsSetInstanceTypes() bool {
-	if o != nil && !IsNil(o.InstanceTypes) {
-		return true
-	}
-
-	return false
 }
 
 // SetInstanceTypes gets a reference to the given []map[string]interface{} and assigns it to the InstanceTypes field.
@@ -199,15 +163,6 @@ func (o *GetUserPermissions200ResponseAccess) GetAppTemplatesOk() ([]map[string]
 	return o.AppTemplates, true
 }
 
-// IsSetAppTemplates returns a boolean if a field has been set.
-func (o *GetUserPermissions200ResponseAccess) IsSetAppTemplates() bool {
-	if o != nil && !IsNil(o.AppTemplates) {
-		return true
-	}
-
-	return false
-}
-
 // SetAppTemplates gets a reference to the given []map[string]interface{} and assigns it to the AppTemplates field.
 func (o *GetUserPermissions200ResponseAccess) SetAppTemplates(v []map[string]interface{}) {
 	o.AppTemplates = v
@@ -229,15 +184,6 @@ func (o *GetUserPermissions200ResponseAccess) GetCatalogItemTypesOk() ([]map[str
 		return nil, false
 	}
 	return o.CatalogItemTypes, true
-}
-
-// IsSetCatalogItemTypes returns a boolean if a field has been set.
-func (o *GetUserPermissions200ResponseAccess) IsSetCatalogItemTypes() bool {
-	if o != nil && !IsNil(o.CatalogItemTypes) {
-		return true
-	}
-
-	return false
 }
 
 // SetCatalogItemTypes gets a reference to the given []map[string]interface{} and assigns it to the CatalogItemTypes field.
@@ -263,15 +209,6 @@ func (o *GetUserPermissions200ResponseAccess) GetPersonasOk() ([]map[string]inte
 	return o.Personas, true
 }
 
-// IsSetPersonas returns a boolean if a field has been set.
-func (o *GetUserPermissions200ResponseAccess) IsSetPersonas() bool {
-	if o != nil && !IsNil(o.Personas) {
-		return true
-	}
-
-	return false
-}
-
 // SetPersonas gets a reference to the given []map[string]interface{} and assigns it to the Personas field.
 func (o *GetUserPermissions200ResponseAccess) SetPersonas(v []map[string]interface{}) {
 	o.Personas = v
@@ -293,15 +230,6 @@ func (o *GetUserPermissions200ResponseAccess) GetVdiPoolsOk() ([]map[string]inte
 		return nil, false
 	}
 	return o.VdiPools, true
-}
-
-// IsSetVdiPools returns a boolean if a field has been set.
-func (o *GetUserPermissions200ResponseAccess) IsSetVdiPools() bool {
-	if o != nil && !IsNil(o.VdiPools) {
-		return true
-	}
-
-	return false
 }
 
 // SetVdiPools gets a reference to the given []map[string]interface{} and assigns it to the VdiPools field.
@@ -327,15 +255,6 @@ func (o *GetUserPermissions200ResponseAccess) GetReportTypesOk() ([]map[string]i
 	return o.ReportTypes, true
 }
 
-// IsSetReportTypes returns a boolean if a field has been set.
-func (o *GetUserPermissions200ResponseAccess) IsSetReportTypes() bool {
-	if o != nil && !IsNil(o.ReportTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetReportTypes gets a reference to the given []map[string]interface{} and assigns it to the ReportTypes field.
 func (o *GetUserPermissions200ResponseAccess) SetReportTypes(v []map[string]interface{}) {
 	o.ReportTypes = v
@@ -359,15 +278,6 @@ func (o *GetUserPermissions200ResponseAccess) GetTasksOk() ([]map[string]interfa
 	return o.Tasks, true
 }
 
-// IsSetTasks returns a boolean if a field has been set.
-func (o *GetUserPermissions200ResponseAccess) IsSetTasks() bool {
-	if o != nil && !IsNil(o.Tasks) {
-		return true
-	}
-
-	return false
-}
-
 // SetTasks gets a reference to the given []map[string]interface{} and assigns it to the Tasks field.
 func (o *GetUserPermissions200ResponseAccess) SetTasks(v []map[string]interface{}) {
 	o.Tasks = v
@@ -389,15 +299,6 @@ func (o *GetUserPermissions200ResponseAccess) GetTaskSetsOk() ([]map[string]inte
 		return nil, false
 	}
 	return o.TaskSets, true
-}
-
-// IsSetTaskSets returns a boolean if a field has been set.
-func (o *GetUserPermissions200ResponseAccess) IsSetTaskSets() bool {
-	if o != nil && !IsNil(o.TaskSets) {
-		return true
-	}
-
-	return false
 }
 
 // SetTaskSets gets a reference to the given []map[string]interface{} and assigns it to the TaskSets field.

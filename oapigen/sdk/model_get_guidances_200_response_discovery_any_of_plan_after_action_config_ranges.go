@@ -66,15 +66,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfPlanAfterActionConfigRanges) GetMi
 	return o.MinStorage, true
 }
 
-// IsSetMinStorage returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfPlanAfterActionConfigRanges) IsSetMinStorage() bool {
-	if o != nil && !IsNil(o.MinStorage) {
-		return true
-	}
-
-	return false
-}
-
 // SetMinStorage gets a reference to the given string and assigns it to the MinStorage field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfPlanAfterActionConfigRanges) SetMinStorage(v string) {
 	o.MinStorage = &v
@@ -96,15 +87,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfPlanAfterActionConfigRanges) GetMa
 		return nil, false
 	}
 	return o.MaxStorage, true
-}
-
-// IsSetMaxStorage returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfPlanAfterActionConfigRanges) IsSetMaxStorage() bool {
-	if o != nil && !IsNil(o.MaxStorage) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxStorage gets a reference to the given string and assigns it to the MaxStorage field.
@@ -130,15 +112,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfPlanAfterActionConfigRanges) GetMi
 	return o.MinMemory, true
 }
 
-// IsSetMinMemory returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfPlanAfterActionConfigRanges) IsSetMinMemory() bool {
-	if o != nil && !IsNil(o.MinMemory) {
-		return true
-	}
-
-	return false
-}
-
 // SetMinMemory gets a reference to the given string and assigns it to the MinMemory field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfPlanAfterActionConfigRanges) SetMinMemory(v string) {
 	o.MinMemory = &v
@@ -160,15 +133,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfPlanAfterActionConfigRanges) GetMa
 		return nil, false
 	}
 	return o.MaxMemory, true
-}
-
-// IsSetMaxMemory returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfPlanAfterActionConfigRanges) IsSetMaxMemory() bool {
-	if o != nil && !IsNil(o.MaxMemory) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxMemory gets a reference to the given string and assigns it to the MaxMemory field.
@@ -194,15 +158,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfPlanAfterActionConfigRanges) GetMi
 	return o.MinCores, true
 }
 
-// IsSetMinCores returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfPlanAfterActionConfigRanges) IsSetMinCores() bool {
-	if o != nil && !IsNil(o.MinCores) {
-		return true
-	}
-
-	return false
-}
-
 // SetMinCores gets a reference to the given string and assigns it to the MinCores field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfPlanAfterActionConfigRanges) SetMinCores(v string) {
 	o.MinCores = &v
@@ -224,15 +179,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfPlanAfterActionConfigRanges) GetMa
 		return nil, false
 	}
 	return o.MaxCores, true
-}
-
-// IsSetMaxCores returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfPlanAfterActionConfigRanges) IsSetMaxCores() bool {
-	if o != nil && !IsNil(o.MaxCores) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxCores gets a reference to the given string and assigns it to the MaxCores field.

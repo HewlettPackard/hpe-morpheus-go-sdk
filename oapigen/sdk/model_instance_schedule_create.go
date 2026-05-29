@@ -85,15 +85,6 @@ func (o *InstanceScheduleCreate) GetScheduleTypeOk() (*string, bool) {
 	return o.ScheduleType, true
 }
 
-// IsSetScheduleType returns a boolean if a field has been set.
-func (o *InstanceScheduleCreate) IsSetScheduleType() bool {
-	if o != nil && !IsNil(o.ScheduleType) {
-		return true
-	}
-
-	return false
-}
-
 // SetScheduleType gets a reference to the given string and assigns it to the ScheduleType field.
 func (o *InstanceScheduleCreate) SetScheduleType(v string) {
 	o.ScheduleType = &v
@@ -115,15 +106,6 @@ func (o *InstanceScheduleCreate) GetScheduleTimezoneOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ScheduleTimezone, true
-}
-
-// IsSetScheduleTimezone returns a boolean if a field has been set.
-func (o *InstanceScheduleCreate) IsSetScheduleTimezone() bool {
-	if o != nil && !IsNil(o.ScheduleTimezone) {
-		return true
-	}
-
-	return false
 }
 
 // SetScheduleTimezone gets a reference to the given string and assigns it to the ScheduleTimezone field.
@@ -149,15 +131,6 @@ func (o *InstanceScheduleCreate) GetStartDayOfWeekOk() (*int32, bool) {
 	return o.StartDayOfWeek, true
 }
 
-// IsSetStartDayOfWeek returns a boolean if a field has been set.
-func (o *InstanceScheduleCreate) IsSetStartDayOfWeek() bool {
-	if o != nil && !IsNil(o.StartDayOfWeek) {
-		return true
-	}
-
-	return false
-}
-
 // SetStartDayOfWeek gets a reference to the given int32 and assigns it to the StartDayOfWeek field.
 func (o *InstanceScheduleCreate) SetStartDayOfWeek(v int32) {
 	o.StartDayOfWeek = &v
@@ -179,15 +152,6 @@ func (o *InstanceScheduleCreate) GetStartTimeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.StartTime, true
-}
-
-// IsSetStartTime returns a boolean if a field has been set.
-func (o *InstanceScheduleCreate) IsSetStartTime() bool {
-	if o != nil && !IsNil(o.StartTime) {
-		return true
-	}
-
-	return false
 }
 
 // SetStartTime gets a reference to the given string and assigns it to the StartTime field.
@@ -213,15 +177,6 @@ func (o *InstanceScheduleCreate) GetEndDayOfWeekOk() (*int32, bool) {
 	return o.EndDayOfWeek, true
 }
 
-// IsSetEndDayOfWeek returns a boolean if a field has been set.
-func (o *InstanceScheduleCreate) IsSetEndDayOfWeek() bool {
-	if o != nil && !IsNil(o.EndDayOfWeek) {
-		return true
-	}
-
-	return false
-}
-
 // SetEndDayOfWeek gets a reference to the given int32 and assigns it to the EndDayOfWeek field.
 func (o *InstanceScheduleCreate) SetEndDayOfWeek(v int32) {
 	o.EndDayOfWeek = &v
@@ -243,15 +198,6 @@ func (o *InstanceScheduleCreate) GetEndTimeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.EndTime, true
-}
-
-// IsSetEndTime returns a boolean if a field has been set.
-func (o *InstanceScheduleCreate) IsSetEndTime() bool {
-	if o != nil && !IsNil(o.EndTime) {
-		return true
-	}
-
-	return false
 }
 
 // SetEndTime gets a reference to the given string and assigns it to the EndTime field.
@@ -277,15 +223,6 @@ func (o *InstanceScheduleCreate) GetStartDateOk() (*time.Time, bool) {
 	return o.StartDate, true
 }
 
-// IsSetStartDate returns a boolean if a field has been set.
-func (o *InstanceScheduleCreate) IsSetStartDate() bool {
-	if o != nil && !IsNil(o.StartDate) {
-		return true
-	}
-
-	return false
-}
-
 // SetStartDate gets a reference to the given time.Time and assigns it to the StartDate field.
 func (o *InstanceScheduleCreate) SetStartDate(v time.Time) {
 	o.StartDate = &v
@@ -309,15 +246,6 @@ func (o *InstanceScheduleCreate) GetEndDateOk() (*time.Time, bool) {
 	return o.EndDate, true
 }
 
-// IsSetEndDate returns a boolean if a field has been set.
-func (o *InstanceScheduleCreate) IsSetEndDate() bool {
-	if o != nil && !IsNil(o.EndDate) {
-		return true
-	}
-
-	return false
-}
-
 // SetEndDate gets a reference to the given time.Time and assigns it to the EndDate field.
 func (o *InstanceScheduleCreate) SetEndDate(v time.Time) {
 	o.EndDate = &v
@@ -339,15 +267,6 @@ func (o *InstanceScheduleCreate) GetThresholdOk() (*InstanceScheduleCreateThresh
 		return nil, false
 	}
 	return o.Threshold, true
-}
-
-// IsSetThreshold returns a boolean if a field has been set.
-func (o *InstanceScheduleCreate) IsSetThreshold() bool {
-	if o != nil && !IsNil(o.Threshold) {
-		return true
-	}
-
-	return false
 }
 
 // SetThreshold gets a reference to the given InstanceScheduleCreateThreshold and assigns it to the Threshold field.

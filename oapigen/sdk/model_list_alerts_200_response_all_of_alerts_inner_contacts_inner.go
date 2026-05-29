@@ -65,15 +65,6 @@ func (o *ListAlerts200ResponseAllOfAlertsInnerContactsInner) GetIdOk() (*int64, 
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListAlerts200ResponseAllOfAlertsInnerContactsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListAlerts200ResponseAllOfAlertsInnerContactsInner) SetId(v int64) {
 	o.Id = &v
@@ -95,15 +86,6 @@ func (o *ListAlerts200ResponseAllOfAlertsInnerContactsInner) GetNameOk() (*strin
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListAlerts200ResponseAllOfAlertsInnerContactsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -129,15 +111,6 @@ func (o *ListAlerts200ResponseAllOfAlertsInnerContactsInner) GetMethodOk() (*str
 	return o.Method, true
 }
 
-// IsSetMethod returns a boolean if a field has been set.
-func (o *ListAlerts200ResponseAllOfAlertsInnerContactsInner) IsSetMethod() bool {
-	if o != nil && !IsNil(o.Method) {
-		return true
-	}
-
-	return false
-}
-
 // SetMethod gets a reference to the given string and assigns it to the Method field.
 func (o *ListAlerts200ResponseAllOfAlertsInnerContactsInner) SetMethod(v string) {
 	o.Method = &v
@@ -161,15 +134,6 @@ func (o *ListAlerts200ResponseAllOfAlertsInnerContactsInner) GetNotifyOk() (*boo
 	return o.Notify, true
 }
 
-// IsSetNotify returns a boolean if a field has been set.
-func (o *ListAlerts200ResponseAllOfAlertsInnerContactsInner) IsSetNotify() bool {
-	if o != nil && !IsNil(o.Notify) {
-		return true
-	}
-
-	return false
-}
-
 // SetNotify gets a reference to the given bool and assigns it to the Notify field.
 func (o *ListAlerts200ResponseAllOfAlertsInnerContactsInner) SetNotify(v bool) {
 	o.Notify = &v
@@ -191,15 +155,6 @@ func (o *ListAlerts200ResponseAllOfAlertsInnerContactsInner) GetCloseOk() (*bool
 		return nil, false
 	}
 	return o.Close, true
-}
-
-// IsSetClose returns a boolean if a field has been set.
-func (o *ListAlerts200ResponseAllOfAlertsInnerContactsInner) IsSetClose() bool {
-	if o != nil && !IsNil(o.Close) {
-		return true
-	}
-
-	return false
 }
 
 // SetClose gets a reference to the given bool and assigns it to the Close field.

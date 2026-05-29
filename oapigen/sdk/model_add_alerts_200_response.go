@@ -62,15 +62,6 @@ func (o *AddAlerts200Response) GetAlertOk() (*AddAlerts200ResponseAllOfAlert, bo
 	return o.Alert, true
 }
 
-// IsSetAlert returns a boolean if a field has been set.
-func (o *AddAlerts200Response) IsSetAlert() bool {
-	if o != nil && !IsNil(o.Alert) {
-		return true
-	}
-
-	return false
-}
-
 // SetAlert gets a reference to the given AddAlerts200ResponseAllOfAlert and assigns it to the Alert field.
 func (o *AddAlerts200Response) SetAlert(v AddAlerts200ResponseAllOfAlert) {
 	o.Alert = &v
@@ -92,15 +83,6 @@ func (o *AddAlerts200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *AddAlerts200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

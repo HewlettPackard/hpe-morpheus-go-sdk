@@ -61,15 +61,6 @@ func (o *StorageDatastoreCreateTenantPermissions) GetAccountsOk() ([]StorageData
 	return o.Accounts, true
 }
 
-// IsSetAccounts returns a boolean if a field has been set.
-func (o *StorageDatastoreCreateTenantPermissions) IsSetAccounts() bool {
-	if o != nil && !IsNil(o.Accounts) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccounts gets a reference to the given []StorageDatastoreCreateTenantPermissionsAccountsInner and assigns it to the Accounts field.
 func (o *StorageDatastoreCreateTenantPermissions) SetAccounts(v []StorageDatastoreCreateTenantPermissionsAccountsInner) {
 	o.Accounts = v

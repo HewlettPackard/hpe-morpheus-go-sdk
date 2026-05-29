@@ -62,15 +62,6 @@ func (o *ListSupportBundles200Response) GetSupportBundlesOk() ([]ListSupportBund
 	return o.SupportBundles, true
 }
 
-// IsSetSupportBundles returns a boolean if a field has been set.
-func (o *ListSupportBundles200Response) IsSetSupportBundles() bool {
-	if o != nil && !IsNil(o.SupportBundles) {
-		return true
-	}
-
-	return false
-}
-
 // SetSupportBundles gets a reference to the given []ListSupportBundles200ResponseAllOfSupportBundlesInner and assigns it to the SupportBundles field.
 func (o *ListSupportBundles200Response) SetSupportBundles(v []ListSupportBundles200ResponseAllOfSupportBundlesInner) {
 	o.SupportBundles = v
@@ -92,15 +83,6 @@ func (o *ListSupportBundles200Response) GetMetaOk() (*ListApprovals200ResponseAl
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListSupportBundles200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

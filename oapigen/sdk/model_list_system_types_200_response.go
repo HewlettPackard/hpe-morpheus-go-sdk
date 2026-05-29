@@ -61,15 +61,6 @@ func (o *ListSystemTypes200Response) GetSystemTypesOk() ([]ListSystemTypes200Res
 	return o.SystemTypes, true
 }
 
-// IsSetSystemTypes returns a boolean if a field has been set.
-func (o *ListSystemTypes200Response) IsSetSystemTypes() bool {
-	if o != nil && !IsNil(o.SystemTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetSystemTypes gets a reference to the given []ListSystemTypes200ResponseSystemTypesInner and assigns it to the SystemTypes field.
 func (o *ListSystemTypes200Response) SetSystemTypes(v []ListSystemTypes200ResponseSystemTypesInner) {
 	o.SystemTypes = v

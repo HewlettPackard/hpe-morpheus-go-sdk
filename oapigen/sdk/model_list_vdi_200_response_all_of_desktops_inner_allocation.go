@@ -74,15 +74,6 @@ func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) GetIdOk() (*int64, bool
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) SetId(v int64) {
 	o.Id = &v
@@ -104,15 +95,6 @@ func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) GetPoolIdOk() (*int64, 
 		return nil, false
 	}
 	return o.PoolId, true
-}
-
-// IsSetPoolId returns a boolean if a field has been set.
-func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) IsSetPoolId() bool {
-	if o != nil && !IsNil(o.PoolId) {
-		return true
-	}
-
-	return false
 }
 
 // SetPoolId gets a reference to the given int64 and assigns it to the PoolId field.
@@ -139,28 +121,9 @@ func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) GetPoolOk() (*ListVdi20
 	return o.Pool.Get(), o.Pool.IsSet()
 }
 
-// IsSetPool returns a boolean if a field has been set.
-func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) IsSetPool() bool {
-	if o != nil && o.Pool.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPool gets a reference to the given NullableListVdi200ResponseAllOfDesktopsInnerAllocationPool and assigns it to the Pool field.
 func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) SetPool(v ListVdi200ResponseAllOfDesktopsInnerAllocationPool) {
 	o.Pool.Set(&v)
-}
-
-// SetPoolNil sets the value for Pool to be an explicit nil
-func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) SetPoolNil() {
-	o.Pool.Set(nil)
-}
-
-// UnsetPool ensures that no value is present for Pool, not even an explicit nil
-func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) UnsetPool() {
-	o.Pool.Unset()
 }
 
 // GetInstance returns the Instance field value if set, zero value otherwise.
@@ -179,15 +142,6 @@ func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) GetInstanceOk() (*ListV
 		return nil, false
 	}
 	return o.Instance, true
-}
-
-// IsSetInstance returns a boolean if a field has been set.
-func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) IsSetInstance() bool {
-	if o != nil && !IsNil(o.Instance) {
-		return true
-	}
-
-	return false
 }
 
 // SetInstance gets a reference to the given ListVdi200ResponseAllOfDesktopsInnerAllocationInstance and assigns it to the Instance field.
@@ -213,15 +167,6 @@ func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) GetUserOk() (*ListVdi20
 	return o.User, true
 }
 
-// IsSetUser returns a boolean if a field has been set.
-func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) IsSetUser() bool {
-	if o != nil && !IsNil(o.User) {
-		return true
-	}
-
-	return false
-}
-
 // SetUser gets a reference to the given ListVdi200ResponseAllOfDesktopsInnerAllocationUser and assigns it to the User field.
 func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) SetUser(v ListVdi200ResponseAllOfDesktopsInnerAllocationUser) {
 	o.User = &v
@@ -243,15 +188,6 @@ func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) GetLocalUserCreatedOk()
 		return nil, false
 	}
 	return o.LocalUserCreated, true
-}
-
-// IsSetLocalUserCreated returns a boolean if a field has been set.
-func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) IsSetLocalUserCreated() bool {
-	if o != nil && !IsNil(o.LocalUserCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLocalUserCreated gets a reference to the given bool and assigns it to the LocalUserCreated field.
@@ -277,15 +213,6 @@ func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) GetPersistentOk() (*boo
 	return o.Persistent, true
 }
 
-// IsSetPersistent returns a boolean if a field has been set.
-func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) IsSetPersistent() bool {
-	if o != nil && !IsNil(o.Persistent) {
-		return true
-	}
-
-	return false
-}
-
 // SetPersistent gets a reference to the given bool and assigns it to the Persistent field.
 func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) SetPersistent(v bool) {
 	o.Persistent = &v
@@ -307,15 +234,6 @@ func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) GetRecyclableOk() (*boo
 		return nil, false
 	}
 	return o.Recyclable, true
-}
-
-// IsSetRecyclable returns a boolean if a field has been set.
-func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) IsSetRecyclable() bool {
-	if o != nil && !IsNil(o.Recyclable) {
-		return true
-	}
-
-	return false
 }
 
 // SetRecyclable gets a reference to the given bool and assigns it to the Recyclable field.
@@ -341,15 +259,6 @@ func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) GetStatusOk() (*string,
 	return o.Status, true
 }
 
-// IsSetStatus returns a boolean if a field has been set.
-func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
-}
-
 // SetStatus gets a reference to the given string and assigns it to the Status field.
 func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) SetStatus(v string) {
 	o.Status = &v
@@ -373,15 +282,6 @@ func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) GetDateCreatedOk() (*ti
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -403,15 +303,6 @@ func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) GetLastUpdatedOk() (*ti
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
@@ -438,28 +329,9 @@ func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) GetLastReservedOk() (*t
 	return o.LastReserved.Get(), o.LastReserved.IsSet()
 }
 
-// IsSetLastReserved returns a boolean if a field has been set.
-func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) IsSetLastReserved() bool {
-	if o != nil && o.LastReserved.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastReserved gets a reference to the given NullableTime and assigns it to the LastReserved field.
 func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) SetLastReserved(v time.Time) {
 	o.LastReserved.Set(&v)
-}
-
-// SetLastReservedNil sets the value for LastReserved to be an explicit nil
-func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) SetLastReservedNil() {
-	o.LastReserved.Set(nil)
-}
-
-// UnsetLastReserved ensures that no value is present for LastReserved, not even an explicit nil
-func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) UnsetLastReserved() {
-	o.LastReserved.Unset()
 }
 
 // GetReleaseDate returns the ReleaseDate field value if set, zero value otherwise.
@@ -478,15 +350,6 @@ func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) GetReleaseDateOk() (*ti
 		return nil, false
 	}
 	return o.ReleaseDate, true
-}
-
-// IsSetReleaseDate returns a boolean if a field has been set.
-func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) IsSetReleaseDate() bool {
-	if o != nil && !IsNil(o.ReleaseDate) {
-		return true
-	}
-
-	return false
 }
 
 // SetReleaseDate gets a reference to the given time.Time and assigns it to the ReleaseDate field.

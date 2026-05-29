@@ -74,15 +74,6 @@ func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) GetIdOk() (
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) SetId(v int64) {
 	o.Id = &v
@@ -107,28 +98,9 @@ func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) GetExternal
 	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) IsSetExternalId() bool {
-	if o != nil && o.ExternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) SetExternalId(v string) {
 	o.ExternalId.Set(&v)
-}
-
-// SetExternalIdNil sets the value for ExternalId to be an explicit nil
-func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) SetExternalIdNil() {
-	o.ExternalId.Set(nil)
-}
-
-// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) UnsetExternalId() {
-	o.ExternalId.Unset()
 }
 
 // GetCloud returns the Cloud field value if set, zero value otherwise.
@@ -147,15 +119,6 @@ func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) GetCloudOk(
 		return nil, false
 	}
 	return o.Cloud, true
-}
-
-// IsSetCloud returns a boolean if a field has been set.
-func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) IsSetCloud() bool {
-	if o != nil && !IsNil(o.Cloud) {
-		return true
-	}
-
-	return false
 }
 
 // SetCloud gets a reference to the given AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpCloud and assigns it to the Cloud field.
@@ -181,15 +144,6 @@ func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) GetServerOk
 	return o.Server, true
 }
 
-// IsSetServer returns a boolean if a field has been set.
-func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) IsSetServer() bool {
-	if o != nil && !IsNil(o.Server) {
-		return true
-	}
-
-	return false
-}
-
 // SetServer gets a reference to the given AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpServer and assigns it to the Server field.
 func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) SetServer(v AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpServer) {
 	o.Server = &v
@@ -213,15 +167,6 @@ func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) GetIpStatus
 	return o.IpStatus, true
 }
 
-// IsSetIpStatus returns a boolean if a field has been set.
-func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) IsSetIpStatus() bool {
-	if o != nil && !IsNil(o.IpStatus) {
-		return true
-	}
-
-	return false
-}
-
 // SetIpStatus gets a reference to the given string and assigns it to the IpStatus field.
 func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) SetIpStatus(v string) {
 	o.IpStatus = &v
@@ -243,15 +188,6 @@ func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) GetIpAddres
 		return nil, false
 	}
 	return o.IpAddress, true
-}
-
-// IsSetIpAddress returns a boolean if a field has been set.
-func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) IsSetIpAddress() bool {
-	if o != nil && !IsNil(o.IpAddress) {
-		return true
-	}
-
-	return false
 }
 
 // SetIpAddress gets a reference to the given string and assigns it to the IpAddress field.
@@ -278,28 +214,9 @@ func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) GetIpRangeO
 	return o.IpRange.Get(), o.IpRange.IsSet()
 }
 
-// IsSetIpRange returns a boolean if a field has been set.
-func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) IsSetIpRange() bool {
-	if o != nil && o.IpRange.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetIpRange gets a reference to the given NullableString and assigns it to the IpRange field.
 func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) SetIpRange(v string) {
 	o.IpRange.Set(&v)
-}
-
-// SetIpRangeNil sets the value for IpRange to be an explicit nil
-func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) SetIpRangeNil() {
-	o.IpRange.Set(nil)
-}
-
-// UnsetIpRange ensures that no value is present for IpRange, not even an explicit nil
-func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) UnsetIpRange() {
-	o.IpRange.Unset()
 }
 
 // GetPtrId returns the PtrId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -321,28 +238,9 @@ func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) GetPtrIdOk(
 	return o.PtrId.Get(), o.PtrId.IsSet()
 }
 
-// IsSetPtrId returns a boolean if a field has been set.
-func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) IsSetPtrId() bool {
-	if o != nil && o.PtrId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPtrId gets a reference to the given NullableString and assigns it to the PtrId field.
 func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) SetPtrId(v string) {
 	o.PtrId.Set(&v)
-}
-
-// SetPtrIdNil sets the value for PtrId to be an explicit nil
-func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) SetPtrIdNil() {
-	o.PtrId.Set(nil)
-}
-
-// UnsetPtrId ensures that no value is present for PtrId, not even an explicit nil
-func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) UnsetPtrId() {
-	o.PtrId.Unset()
 }
 
 // GetNetworkDomain returns the NetworkDomain field value if set, zero value otherwise.
@@ -361,15 +259,6 @@ func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) GetNetworkD
 		return nil, false
 	}
 	return o.NetworkDomain, true
-}
-
-// IsSetNetworkDomain returns a boolean if a field has been set.
-func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) IsSetNetworkDomain() bool {
-	if o != nil && !IsNil(o.NetworkDomain) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkDomain gets a reference to the given AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpNetworkDomain and assigns it to the NetworkDomain field.
@@ -395,15 +284,6 @@ func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) GetCreatedB
 	return o.CreatedBy, true
 }
 
-// IsSetCreatedBy returns a boolean if a field has been set.
-func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) IsSetCreatedBy() bool {
-	if o != nil && !IsNil(o.CreatedBy) {
-		return true
-	}
-
-	return false
-}
-
 // SetCreatedBy gets a reference to the given AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpCreatedBy and assigns it to the CreatedBy field.
 func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) SetCreatedBy(v AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpCreatedBy) {
 	o.CreatedBy = &v
@@ -427,15 +307,6 @@ func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) GetDateCrea
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -457,15 +328,6 @@ func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) GetLastUpda
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.

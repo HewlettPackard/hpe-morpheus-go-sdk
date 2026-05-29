@@ -62,15 +62,6 @@ func (o *ListPlugins200Response) GetPluginsOk() ([]ListPlugins200ResponseAllOfPl
 	return o.Plugins, true
 }
 
-// IsSetPlugins returns a boolean if a field has been set.
-func (o *ListPlugins200Response) IsSetPlugins() bool {
-	if o != nil && !IsNil(o.Plugins) {
-		return true
-	}
-
-	return false
-}
-
 // SetPlugins gets a reference to the given []ListPlugins200ResponseAllOfPluginsInner and assigns it to the Plugins field.
 func (o *ListPlugins200Response) SetPlugins(v []ListPlugins200ResponseAllOfPluginsInner) {
 	o.Plugins = v
@@ -92,15 +83,6 @@ func (o *ListPlugins200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListPlugins200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

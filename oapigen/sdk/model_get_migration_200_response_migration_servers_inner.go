@@ -66,15 +66,6 @@ func (o *GetMigration200ResponseMigrationServersInner) GetStatusOk() (*string, b
 	return o.Status, true
 }
 
-// IsSetStatus returns a boolean if a field has been set.
-func (o *GetMigration200ResponseMigrationServersInner) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
-}
-
 // SetStatus gets a reference to the given string and assigns it to the Status field.
 func (o *GetMigration200ResponseMigrationServersInner) SetStatus(v string) {
 	o.Status = &v
@@ -99,28 +90,9 @@ func (o *GetMigration200ResponseMigrationServersInner) GetStatusMessageOk() (*st
 	return o.StatusMessage.Get(), o.StatusMessage.IsSet()
 }
 
-// IsSetStatusMessage returns a boolean if a field has been set.
-func (o *GetMigration200ResponseMigrationServersInner) IsSetStatusMessage() bool {
-	if o != nil && o.StatusMessage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusMessage gets a reference to the given NullableString and assigns it to the StatusMessage field.
 func (o *GetMigration200ResponseMigrationServersInner) SetStatusMessage(v string) {
 	o.StatusMessage.Set(&v)
-}
-
-// SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
-func (o *GetMigration200ResponseMigrationServersInner) SetStatusMessageNil() {
-	o.StatusMessage.Set(nil)
-}
-
-// UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
-func (o *GetMigration200ResponseMigrationServersInner) UnsetStatusMessage() {
-	o.StatusMessage.Unset()
 }
 
 // GetSourceServer returns the SourceServer field value if set, zero value otherwise.
@@ -139,15 +111,6 @@ func (o *GetMigration200ResponseMigrationServersInner) GetSourceServerOk() (*Get
 		return nil, false
 	}
 	return o.SourceServer, true
-}
-
-// IsSetSourceServer returns a boolean if a field has been set.
-func (o *GetMigration200ResponseMigrationServersInner) IsSetSourceServer() bool {
-	if o != nil && !IsNil(o.SourceServer) {
-		return true
-	}
-
-	return false
 }
 
 // SetSourceServer gets a reference to the given GetMigration200ResponseMigrationServersInnerSourceServer and assigns it to the SourceServer field.
@@ -171,15 +134,6 @@ func (o *GetMigration200ResponseMigrationServersInner) GetDestinationServerOk() 
 		return nil, false
 	}
 	return o.DestinationServer, true
-}
-
-// IsSetDestinationServer returns a boolean if a field has been set.
-func (o *GetMigration200ResponseMigrationServersInner) IsSetDestinationServer() bool {
-	if o != nil && !IsNil(o.DestinationServer) {
-		return true
-	}
-
-	return false
 }
 
 // SetDestinationServer gets a reference to the given GetMigration200ResponseMigrationServersInnerDestinationServer and assigns it to the DestinationServer field.

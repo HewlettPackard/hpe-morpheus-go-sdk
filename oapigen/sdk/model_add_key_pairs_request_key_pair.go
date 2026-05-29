@@ -114,15 +114,6 @@ func (o *AddKeyPairsRequestKeyPair) GetPrivateKeyOk() (*string, bool) {
 	return o.PrivateKey, true
 }
 
-// IsSetPrivateKey returns a boolean if a field has been set.
-func (o *AddKeyPairsRequestKeyPair) IsSetPrivateKey() bool {
-	if o != nil && !IsNil(o.PrivateKey) {
-		return true
-	}
-
-	return false
-}
-
 // SetPrivateKey gets a reference to the given string and assigns it to the PrivateKey field.
 func (o *AddKeyPairsRequestKeyPair) SetPrivateKey(v string) {
 	o.PrivateKey = &v
@@ -144,15 +135,6 @@ func (o *AddKeyPairsRequestKeyPair) GetPassphraseOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Passphrase, true
-}
-
-// IsSetPassphrase returns a boolean if a field has been set.
-func (o *AddKeyPairsRequestKeyPair) IsSetPassphrase() bool {
-	if o != nil && !IsNil(o.Passphrase) {
-		return true
-	}
-
-	return false
 }
 
 // SetPassphrase gets a reference to the given string and assigns it to the Passphrase field.

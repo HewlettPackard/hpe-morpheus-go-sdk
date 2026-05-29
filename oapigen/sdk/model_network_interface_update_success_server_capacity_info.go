@@ -70,15 +70,6 @@ func (o *NetworkInterfaceUpdateSuccessServerCapacityInfo) GetIdOk() (*int64, boo
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerCapacityInfo) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *NetworkInterfaceUpdateSuccessServerCapacityInfo) SetId(v int64) {
 	o.Id = &v
@@ -100,15 +91,6 @@ func (o *NetworkInterfaceUpdateSuccessServerCapacityInfo) GetMaxMemoryOk() (*int
 		return nil, false
 	}
 	return o.MaxMemory, true
-}
-
-// IsSetMaxMemory returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerCapacityInfo) IsSetMaxMemory() bool {
-	if o != nil && !IsNil(o.MaxMemory) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxMemory gets a reference to the given int64 and assigns it to the MaxMemory field.
@@ -134,15 +116,6 @@ func (o *NetworkInterfaceUpdateSuccessServerCapacityInfo) GetServerOk() (*Networ
 	return o.Server, true
 }
 
-// IsSetServer returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerCapacityInfo) IsSetServer() bool {
-	if o != nil && !IsNil(o.Server) {
-		return true
-	}
-
-	return false
-}
-
 // SetServer gets a reference to the given NetworkInterfaceUpdateSuccessServerCapacityInfoServer and assigns it to the Server field.
 func (o *NetworkInterfaceUpdateSuccessServerCapacityInfo) SetServer(v NetworkInterfaceUpdateSuccessServerCapacityInfoServer) {
 	o.Server = &v
@@ -164,15 +137,6 @@ func (o *NetworkInterfaceUpdateSuccessServerCapacityInfo) GetUsedStorageOk() (*i
 		return nil, false
 	}
 	return o.UsedStorage, true
-}
-
-// IsSetUsedStorage returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerCapacityInfo) IsSetUsedStorage() bool {
-	if o != nil && !IsNil(o.UsedStorage) {
-		return true
-	}
-
-	return false
 }
 
 // SetUsedStorage gets a reference to the given int64 and assigns it to the UsedStorage field.
@@ -199,28 +163,9 @@ func (o *NetworkInterfaceUpdateSuccessServerCapacityInfo) GetVersionOk() (*strin
 	return o.Version.Get(), o.Version.IsSet()
 }
 
-// IsSetVersion returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerCapacityInfo) IsSetVersion() bool {
-	if o != nil && o.Version.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetVersion gets a reference to the given NullableString and assigns it to the Version field.
 func (o *NetworkInterfaceUpdateSuccessServerCapacityInfo) SetVersion(v string) {
 	o.Version.Set(&v)
-}
-
-// SetVersionNil sets the value for Version to be an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerCapacityInfo) SetVersionNil() {
-	o.Version.Set(nil)
-}
-
-// UnsetVersion ensures that no value is present for Version, not even an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerCapacityInfo) UnsetVersion() {
-	o.Version.Unset()
 }
 
 // GetMaxCpu returns the MaxCpu field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -242,28 +187,9 @@ func (o *NetworkInterfaceUpdateSuccessServerCapacityInfo) GetMaxCpuOk() (*string
 	return o.MaxCpu.Get(), o.MaxCpu.IsSet()
 }
 
-// IsSetMaxCpu returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerCapacityInfo) IsSetMaxCpu() bool {
-	if o != nil && o.MaxCpu.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxCpu gets a reference to the given NullableString and assigns it to the MaxCpu field.
 func (o *NetworkInterfaceUpdateSuccessServerCapacityInfo) SetMaxCpu(v string) {
 	o.MaxCpu.Set(&v)
-}
-
-// SetMaxCpuNil sets the value for MaxCpu to be an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerCapacityInfo) SetMaxCpuNil() {
-	o.MaxCpu.Set(nil)
-}
-
-// UnsetMaxCpu ensures that no value is present for MaxCpu, not even an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerCapacityInfo) UnsetMaxCpu() {
-	o.MaxCpu.Unset()
 }
 
 // GetUsedCores returns the UsedCores field value if set, zero value otherwise.
@@ -282,15 +208,6 @@ func (o *NetworkInterfaceUpdateSuccessServerCapacityInfo) GetUsedCoresOk() (*int
 		return nil, false
 	}
 	return o.UsedCores, true
-}
-
-// IsSetUsedCores returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerCapacityInfo) IsSetUsedCores() bool {
-	if o != nil && !IsNil(o.UsedCores) {
-		return true
-	}
-
-	return false
 }
 
 // SetUsedCores gets a reference to the given int64 and assigns it to the UsedCores field.
@@ -316,15 +233,6 @@ func (o *NetworkInterfaceUpdateSuccessServerCapacityInfo) GetUsedMemoryOk() (*in
 	return o.UsedMemory, true
 }
 
-// IsSetUsedMemory returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerCapacityInfo) IsSetUsedMemory() bool {
-	if o != nil && !IsNil(o.UsedMemory) {
-		return true
-	}
-
-	return false
-}
-
 // SetUsedMemory gets a reference to the given int64 and assigns it to the UsedMemory field.
 func (o *NetworkInterfaceUpdateSuccessServerCapacityInfo) SetUsedMemory(v int64) {
 	o.UsedMemory = &v
@@ -348,15 +256,6 @@ func (o *NetworkInterfaceUpdateSuccessServerCapacityInfo) GetMaxCoresOk() (*int6
 	return o.MaxCores, true
 }
 
-// IsSetMaxCores returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerCapacityInfo) IsSetMaxCores() bool {
-	if o != nil && !IsNil(o.MaxCores) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxCores gets a reference to the given int64 and assigns it to the MaxCores field.
 func (o *NetworkInterfaceUpdateSuccessServerCapacityInfo) SetMaxCores(v int64) {
 	o.MaxCores = &v
@@ -378,15 +277,6 @@ func (o *NetworkInterfaceUpdateSuccessServerCapacityInfo) GetMaxStorageOk() (*in
 		return nil, false
 	}
 	return o.MaxStorage, true
-}
-
-// IsSetMaxStorage returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerCapacityInfo) IsSetMaxStorage() bool {
-	if o != nil && !IsNil(o.MaxStorage) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxStorage gets a reference to the given int64 and assigns it to the MaxStorage field.

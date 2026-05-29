@@ -70,15 +70,6 @@ func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) GetIdOk
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) SetId(v int64) {
 	o.Id = &v
@@ -100,15 +91,6 @@ func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) GetName
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -135,28 +117,9 @@ func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) GetCode
 	return o.Code.Get(), o.Code.IsSet()
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) IsSetCode() bool {
-	if o != nil && o.Code.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) SetCode(v string) {
 	o.Code.Set(&v)
-}
-
-// SetCodeNil sets the value for Code to be an explicit nil
-func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) SetCodeNil() {
-	o.Code.Set(nil)
-}
-
-// UnsetCode ensures that no value is present for Code, not even an explicit nil
-func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) UnsetCode() {
-	o.Code.Unset()
 }
 
 // GetInterfaceType returns the InterfaceType field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -178,28 +141,9 @@ func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) GetInte
 	return o.InterfaceType.Get(), o.InterfaceType.IsSet()
 }
 
-// IsSetInterfaceType returns a boolean if a field has been set.
-func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) IsSetInterfaceType() bool {
-	if o != nil && o.InterfaceType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInterfaceType gets a reference to the given NullableString and assigns it to the InterfaceType field.
 func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) SetInterfaceType(v string) {
 	o.InterfaceType.Set(&v)
-}
-
-// SetInterfaceTypeNil sets the value for InterfaceType to be an explicit nil
-func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) SetInterfaceTypeNil() {
-	o.InterfaceType.Set(nil)
-}
-
-// UnsetInterfaceType ensures that no value is present for InterfaceType, not even an explicit nil
-func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) UnsetInterfaceType() {
-	o.InterfaceType.Unset()
 }
 
 // GetNetworkPosition returns the NetworkPosition field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -221,28 +165,9 @@ func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) GetNetw
 	return o.NetworkPosition.Get(), o.NetworkPosition.IsSet()
 }
 
-// IsSetNetworkPosition returns a boolean if a field has been set.
-func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) IsSetNetworkPosition() bool {
-	if o != nil && o.NetworkPosition.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkPosition gets a reference to the given NullableString and assigns it to the NetworkPosition field.
 func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) SetNetworkPosition(v string) {
 	o.NetworkPosition.Set(&v)
-}
-
-// SetNetworkPositionNil sets the value for NetworkPosition to be an explicit nil
-func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) SetNetworkPositionNil() {
-	o.NetworkPosition.Set(nil)
-}
-
-// UnsetNetworkPosition ensures that no value is present for NetworkPosition, not even an explicit nil
-func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) UnsetNetworkPosition() {
-	o.NetworkPosition.Unset()
 }
 
 // GetIpAddress returns the IpAddress field value if set, zero value otherwise.
@@ -261,15 +186,6 @@ func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) GetIpAd
 		return nil, false
 	}
 	return o.IpAddress, true
-}
-
-// IsSetIpAddress returns a boolean if a field has been set.
-func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) IsSetIpAddress() bool {
-	if o != nil && !IsNil(o.IpAddress) {
-		return true
-	}
-
-	return false
 }
 
 // SetIpAddress gets a reference to the given string and assigns it to the IpAddress field.
@@ -293,15 +209,6 @@ func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) GetCidr
 		return nil, false
 	}
 	return o.Cidr, true
-}
-
-// IsSetCidr returns a boolean if a field has been set.
-func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) IsSetCidr() bool {
-	if o != nil && !IsNil(o.Cidr) {
-		return true
-	}
-
-	return false
 }
 
 // SetCidr gets a reference to the given string and assigns it to the Cidr field.
@@ -328,28 +235,9 @@ func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) GetExte
 	return o.ExternalLink.Get(), o.ExternalLink.IsSet()
 }
 
-// IsSetExternalLink returns a boolean if a field has been set.
-func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) IsSetExternalLink() bool {
-	if o != nil && o.ExternalLink.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalLink gets a reference to the given NullableString and assigns it to the ExternalLink field.
 func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) SetExternalLink(v string) {
 	o.ExternalLink.Set(&v)
-}
-
-// SetExternalLinkNil sets the value for ExternalLink to be an explicit nil
-func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) SetExternalLinkNil() {
-	o.ExternalLink.Set(nil)
-}
-
-// UnsetExternalLink ensures that no value is present for ExternalLink, not even an explicit nil
-func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) UnsetExternalLink() {
-	o.ExternalLink.Unset()
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
@@ -368,15 +256,6 @@ func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) GetEnab
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -400,15 +279,6 @@ func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) GetNetw
 		return nil, false
 	}
 	return o.Network, true
-}
-
-// IsSetNetwork returns a boolean if a field has been set.
-func (o *GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInner) IsSetNetwork() bool {
-	if o != nil && !IsNil(o.Network) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetwork gets a reference to the given GetNetworkRouters200ResponseNetworkRoutersInnerInterfacesInnerNetwork and assigns it to the Network field.

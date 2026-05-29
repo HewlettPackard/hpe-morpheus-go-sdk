@@ -68,15 +68,6 @@ func (o *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeRootSto
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeRootStorageTypesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeRootStorageTypesInner) SetId(v int64) {
 	o.Id = &v
@@ -98,15 +89,6 @@ func (o *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeRootSto
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeRootStorageTypesInner) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -132,15 +114,6 @@ func (o *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeRootSto
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeRootStorageTypesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeRootStorageTypesInner) SetName(v string) {
 	o.Name = &v
@@ -162,15 +135,6 @@ func (o *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeRootSto
 		return nil, false
 	}
 	return o.DisplayOrder, true
-}
-
-// IsSetDisplayOrder returns a boolean if a field has been set.
-func (o *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeRootStorageTypesInner) IsSetDisplayOrder() bool {
-	if o != nil && !IsNil(o.DisplayOrder) {
-		return true
-	}
-
-	return false
 }
 
 // SetDisplayOrder gets a reference to the given int64 and assigns it to the DisplayOrder field.
@@ -196,15 +160,6 @@ func (o *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeRootSto
 	return o.DefaultType, true
 }
 
-// IsSetDefaultType returns a boolean if a field has been set.
-func (o *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeRootStorageTypesInner) IsSetDefaultType() bool {
-	if o != nil && !IsNil(o.DefaultType) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultType gets a reference to the given bool and assigns it to the DefaultType field.
 func (o *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeRootStorageTypesInner) SetDefaultType(v bool) {
 	o.DefaultType = &v
@@ -228,15 +183,6 @@ func (o *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeRootSto
 	return o.CustomLabel, true
 }
 
-// IsSetCustomLabel returns a boolean if a field has been set.
-func (o *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeRootStorageTypesInner) IsSetCustomLabel() bool {
-	if o != nil && !IsNil(o.CustomLabel) {
-		return true
-	}
-
-	return false
-}
-
 // SetCustomLabel gets a reference to the given bool and assigns it to the CustomLabel field.
 func (o *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeRootStorageTypesInner) SetCustomLabel(v bool) {
 	o.CustomLabel = &v
@@ -258,15 +204,6 @@ func (o *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeRootSto
 		return nil, false
 	}
 	return o.CustomSize, true
-}
-
-// IsSetCustomSize returns a boolean if a field has been set.
-func (o *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeRootStorageTypesInner) IsSetCustomSize() bool {
-	if o != nil && !IsNil(o.CustomSize) {
-		return true
-	}
-
-	return false
 }
 
 // SetCustomSize gets a reference to the given bool and assigns it to the CustomSize field.
@@ -293,28 +230,9 @@ func (o *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeRootSto
 	return o.CustomSizeOptions.Get(), o.CustomSizeOptions.IsSet()
 }
 
-// IsSetCustomSizeOptions returns a boolean if a field has been set.
-func (o *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeRootStorageTypesInner) IsSetCustomSizeOptions() bool {
-	if o != nil && o.CustomSizeOptions.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCustomSizeOptions gets a reference to the given NullableString and assigns it to the CustomSizeOptions field.
 func (o *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeRootStorageTypesInner) SetCustomSizeOptions(v string) {
 	o.CustomSizeOptions.Set(&v)
-}
-
-// SetCustomSizeOptionsNil sets the value for CustomSizeOptions to be an explicit nil
-func (o *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeRootStorageTypesInner) SetCustomSizeOptionsNil() {
-	o.CustomSizeOptions.Set(nil)
-}
-
-// UnsetCustomSizeOptions ensures that no value is present for CustomSizeOptions, not even an explicit nil
-func (o *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeRootStorageTypesInner) UnsetCustomSizeOptions() {
-	o.CustomSizeOptions.Unset()
 }
 
 func (o ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeRootStorageTypesInner) MarshalJSON() ([]byte, error) {

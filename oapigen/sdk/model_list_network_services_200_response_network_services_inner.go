@@ -67,15 +67,6 @@ func (o *ListNetworkServices200ResponseNetworkServicesInner) GetServiceTypeOk() 
 	return o.ServiceType, true
 }
 
-// IsSetServiceType returns a boolean if a field has been set.
-func (o *ListNetworkServices200ResponseNetworkServicesInner) IsSetServiceType() bool {
-	if o != nil && !IsNil(o.ServiceType) {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceType gets a reference to the given string and assigns it to the ServiceType field.
 func (o *ListNetworkServices200ResponseNetworkServicesInner) SetServiceType(v string) {
 	o.ServiceType = &v
@@ -97,15 +88,6 @@ func (o *ListNetworkServices200ResponseNetworkServicesInner) GetServiceTypeNameO
 		return nil, false
 	}
 	return o.ServiceTypeName, true
-}
-
-// IsSetServiceTypeName returns a boolean if a field has been set.
-func (o *ListNetworkServices200ResponseNetworkServicesInner) IsSetServiceTypeName() bool {
-	if o != nil && !IsNil(o.ServiceTypeName) {
-		return true
-	}
-
-	return false
 }
 
 // SetServiceTypeName gets a reference to the given string and assigns it to the ServiceTypeName field.
@@ -131,15 +113,6 @@ func (o *ListNetworkServices200ResponseNetworkServicesInner) GetTypeOk() (*strin
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *ListNetworkServices200ResponseNetworkServicesInner) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given string and assigns it to the Type field.
 func (o *ListNetworkServices200ResponseNetworkServicesInner) SetType(v string) {
 	o.Type = &v
@@ -161,15 +134,6 @@ func (o *ListNetworkServices200ResponseNetworkServicesInner) GetTypeNameOk() (*s
 		return nil, false
 	}
 	return o.TypeName, true
-}
-
-// IsSetTypeName returns a boolean if a field has been set.
-func (o *ListNetworkServices200ResponseNetworkServicesInner) IsSetTypeName() bool {
-	if o != nil && !IsNil(o.TypeName) {
-		return true
-	}
-
-	return false
 }
 
 // SetTypeName gets a reference to the given string and assigns it to the TypeName field.
@@ -195,15 +159,6 @@ func (o *ListNetworkServices200ResponseNetworkServicesInner) GetNameOk() (*strin
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ListNetworkServices200ResponseNetworkServicesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ListNetworkServices200ResponseNetworkServicesInner) SetName(v string) {
 	o.Name = &v
@@ -227,15 +182,6 @@ func (o *ListNetworkServices200ResponseNetworkServicesInner) GetIdOk() (*int64, 
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListNetworkServices200ResponseNetworkServicesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListNetworkServices200ResponseNetworkServicesInner) SetId(v int64) {
 	o.Id = &v
@@ -257,15 +203,6 @@ func (o *ListNetworkServices200ResponseNetworkServicesInner) GetIntegrationIdOk(
 		return nil, false
 	}
 	return o.IntegrationId, true
-}
-
-// IsSetIntegrationId returns a boolean if a field has been set.
-func (o *ListNetworkServices200ResponseNetworkServicesInner) IsSetIntegrationId() bool {
-	if o != nil && !IsNil(o.IntegrationId) {
-		return true
-	}
-
-	return false
 }
 
 // SetIntegrationId gets a reference to the given int64 and assigns it to the IntegrationId field.

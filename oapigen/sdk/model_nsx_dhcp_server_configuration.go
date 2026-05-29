@@ -67,28 +67,9 @@ func (o *NSXDHCPServerConfiguration) GetEdgeClusterOk() (*string, bool) {
 	return o.EdgeCluster.Get(), o.EdgeCluster.IsSet()
 }
 
-// IsSetEdgeCluster returns a boolean if a field has been set.
-func (o *NSXDHCPServerConfiguration) IsSetEdgeCluster() bool {
-	if o != nil && o.EdgeCluster.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetEdgeCluster gets a reference to the given NullableString and assigns it to the EdgeCluster field.
 func (o *NSXDHCPServerConfiguration) SetEdgeCluster(v string) {
 	o.EdgeCluster.Set(&v)
-}
-
-// SetEdgeClusterNil sets the value for EdgeCluster to be an explicit nil
-func (o *NSXDHCPServerConfiguration) SetEdgeClusterNil() {
-	o.EdgeCluster.Set(nil)
-}
-
-// UnsetEdgeCluster ensures that no value is present for EdgeCluster, not even an explicit nil
-func (o *NSXDHCPServerConfiguration) UnsetEdgeCluster() {
-	o.EdgeCluster.Unset()
 }
 
 // GetPreferredEdgeNode1 returns the PreferredEdgeNode1 field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -110,28 +91,9 @@ func (o *NSXDHCPServerConfiguration) GetPreferredEdgeNode1Ok() (*string, bool) {
 	return o.PreferredEdgeNode1.Get(), o.PreferredEdgeNode1.IsSet()
 }
 
-// IsSetPreferredEdgeNode1 returns a boolean if a field has been set.
-func (o *NSXDHCPServerConfiguration) IsSetPreferredEdgeNode1() bool {
-	if o != nil && o.PreferredEdgeNode1.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPreferredEdgeNode1 gets a reference to the given NullableString and assigns it to the PreferredEdgeNode1 field.
 func (o *NSXDHCPServerConfiguration) SetPreferredEdgeNode1(v string) {
 	o.PreferredEdgeNode1.Set(&v)
-}
-
-// SetPreferredEdgeNode1Nil sets the value for PreferredEdgeNode1 to be an explicit nil
-func (o *NSXDHCPServerConfiguration) SetPreferredEdgeNode1Nil() {
-	o.PreferredEdgeNode1.Set(nil)
-}
-
-// UnsetPreferredEdgeNode1 ensures that no value is present for PreferredEdgeNode1, not even an explicit nil
-func (o *NSXDHCPServerConfiguration) UnsetPreferredEdgeNode1() {
-	o.PreferredEdgeNode1.Unset()
 }
 
 // GetPreferredEdgeNode2 returns the PreferredEdgeNode2 field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -153,28 +115,9 @@ func (o *NSXDHCPServerConfiguration) GetPreferredEdgeNode2Ok() (*string, bool) {
 	return o.PreferredEdgeNode2.Get(), o.PreferredEdgeNode2.IsSet()
 }
 
-// IsSetPreferredEdgeNode2 returns a boolean if a field has been set.
-func (o *NSXDHCPServerConfiguration) IsSetPreferredEdgeNode2() bool {
-	if o != nil && o.PreferredEdgeNode2.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPreferredEdgeNode2 gets a reference to the given NullableString and assigns it to the PreferredEdgeNode2 field.
 func (o *NSXDHCPServerConfiguration) SetPreferredEdgeNode2(v string) {
 	o.PreferredEdgeNode2.Set(&v)
-}
-
-// SetPreferredEdgeNode2Nil sets the value for PreferredEdgeNode2 to be an explicit nil
-func (o *NSXDHCPServerConfiguration) SetPreferredEdgeNode2Nil() {
-	o.PreferredEdgeNode2.Set(nil)
-}
-
-// UnsetPreferredEdgeNode2 ensures that no value is present for PreferredEdgeNode2, not even an explicit nil
-func (o *NSXDHCPServerConfiguration) UnsetPreferredEdgeNode2() {
-	o.PreferredEdgeNode2.Unset()
 }
 
 func (o NSXDHCPServerConfiguration) MarshalJSON() ([]byte, error) {

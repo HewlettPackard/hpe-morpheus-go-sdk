@@ -63,28 +63,9 @@ func (o *GenericInstanceConfiguration1) GetUserDataOk() (*string, bool) {
 	return o.UserData.Get(), o.UserData.IsSet()
 }
 
-// IsSetUserData returns a boolean if a field has been set.
-func (o *GenericInstanceConfiguration1) IsSetUserData() bool {
-	if o != nil && o.UserData.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUserData gets a reference to the given NullableString and assigns it to the UserData field.
 func (o *GenericInstanceConfiguration1) SetUserData(v string) {
 	o.UserData.Set(&v)
-}
-
-// SetUserDataNil sets the value for UserData to be an explicit nil
-func (o *GenericInstanceConfiguration1) SetUserDataNil() {
-	o.UserData.Set(nil)
-}
-
-// UnsetUserData ensures that no value is present for UserData, not even an explicit nil
-func (o *GenericInstanceConfiguration1) UnsetUserData() {
-	o.UserData.Unset()
 }
 
 func (o GenericInstanceConfiguration1) MarshalJSON() ([]byte, error) {

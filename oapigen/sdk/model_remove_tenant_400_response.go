@@ -70,15 +70,6 @@ func (o *RemoveTenant400Response) GetSuccessOk() (*bool, bool) {
 	return o.Success, true
 }
 
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *RemoveTenant400Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
-}
-
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.
 func (o *RemoveTenant400Response) SetSuccess(v bool) {
 	o.Success = &v
@@ -103,28 +94,9 @@ func (o *RemoveTenant400Response) GetMsgOk() (*string, bool) {
 	return o.Msg.Get(), o.Msg.IsSet()
 }
 
-// IsSetMsg returns a boolean if a field has been set.
-func (o *RemoveTenant400Response) IsSetMsg() bool {
-	if o != nil && o.Msg.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMsg gets a reference to the given NullableString and assigns it to the Msg field.
 func (o *RemoveTenant400Response) SetMsg(v string) {
 	o.Msg.Set(&v)
-}
-
-// SetMsgNil sets the value for Msg to be an explicit nil
-func (o *RemoveTenant400Response) SetMsgNil() {
-	o.Msg.Set(nil)
-}
-
-// UnsetMsg ensures that no value is present for Msg, not even an explicit nil
-func (o *RemoveTenant400Response) UnsetMsg() {
-	o.Msg.Unset()
 }
 
 // GetErrors returns the Errors field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -144,15 +116,6 @@ func (o *RemoveTenant400Response) GetErrorsOk() (map[string]interface{}, bool) {
 		return map[string]interface{}{}, false
 	}
 	return o.Errors, true
-}
-
-// IsSetErrors returns a boolean if a field has been set.
-func (o *RemoveTenant400Response) IsSetErrors() bool {
-	if o != nil && !IsNil(o.Errors) {
-		return true
-	}
-
-	return false
 }
 
 // SetErrors gets a reference to the given map[string]interface{} and assigns it to the Errors field.

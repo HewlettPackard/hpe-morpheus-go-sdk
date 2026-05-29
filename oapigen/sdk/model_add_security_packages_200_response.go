@@ -62,15 +62,6 @@ func (o *AddSecurityPackages200Response) GetSecurityPackageOk() (*AddSecurityPac
 	return o.SecurityPackage, true
 }
 
-// IsSetSecurityPackage returns a boolean if a field has been set.
-func (o *AddSecurityPackages200Response) IsSetSecurityPackage() bool {
-	if o != nil && !IsNil(o.SecurityPackage) {
-		return true
-	}
-
-	return false
-}
-
 // SetSecurityPackage gets a reference to the given AddSecurityPackages200ResponseAllOfSecurityPackage and assigns it to the SecurityPackage field.
 func (o *AddSecurityPackages200Response) SetSecurityPackage(v AddSecurityPackages200ResponseAllOfSecurityPackage) {
 	o.SecurityPackage = &v
@@ -92,15 +83,6 @@ func (o *AddSecurityPackages200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *AddSecurityPackages200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

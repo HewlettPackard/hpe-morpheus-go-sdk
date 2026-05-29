@@ -104,15 +104,6 @@ func (o *AddInstanceRequestInstance) GetUuidOk() (*string, bool) {
 	return o.Uuid, true
 }
 
-// IsSetUuid returns a boolean if a field has been set.
-func (o *AddInstanceRequestInstance) IsSetUuid() bool {
-	if o != nil && !IsNil(o.Uuid) {
-		return true
-	}
-
-	return false
-}
-
 // SetUuid gets a reference to the given string and assigns it to the Uuid field.
 func (o *AddInstanceRequestInstance) SetUuid(v string) {
 	o.Uuid = &v
@@ -134,15 +125,6 @@ func (o *AddInstanceRequestInstance) GetDescriptionOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *AddInstanceRequestInstance) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -264,15 +246,6 @@ func (o *AddInstanceRequestInstance) GetInstanceContextOk() (*string, bool) {
 	return o.InstanceContext, true
 }
 
-// IsSetInstanceContext returns a boolean if a field has been set.
-func (o *AddInstanceRequestInstance) IsSetInstanceContext() bool {
-	if o != nil && !IsNil(o.InstanceContext) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstanceContext gets a reference to the given string and assigns it to the InstanceContext field.
 func (o *AddInstanceRequestInstance) SetInstanceContext(v string) {
 	o.InstanceContext = &v
@@ -296,15 +269,6 @@ func (o *AddInstanceRequestInstance) GetHostNameOk() (*string, bool) {
 	return o.HostName, true
 }
 
-// IsSetHostName returns a boolean if a field has been set.
-func (o *AddInstanceRequestInstance) IsSetHostName() bool {
-	if o != nil && !IsNil(o.HostName) {
-		return true
-	}
-
-	return false
-}
-
 // SetHostName gets a reference to the given string and assigns it to the HostName field.
 func (o *AddInstanceRequestInstance) SetHostName(v string) {
 	o.HostName = &v
@@ -326,15 +290,6 @@ func (o *AddInstanceRequestInstance) GetNetworkDomainOk() (*AddInstanceRequestIn
 		return nil, false
 	}
 	return o.NetworkDomain, true
-}
-
-// IsSetNetworkDomain returns a boolean if a field has been set.
-func (o *AddInstanceRequestInstance) IsSetNetworkDomain() bool {
-	if o != nil && !IsNil(o.NetworkDomain) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkDomain gets a reference to the given AddInstanceRequestInstanceNetworkDomain and assigns it to the NetworkDomain field.

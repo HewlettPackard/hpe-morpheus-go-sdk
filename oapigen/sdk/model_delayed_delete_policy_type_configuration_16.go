@@ -61,15 +61,6 @@ func (o *DelayedDeletePolicyTypeConfiguration16) GetRemovalAgeOk() (*string, boo
 	return o.RemovalAge, true
 }
 
-// IsSetRemovalAge returns a boolean if a field has been set.
-func (o *DelayedDeletePolicyTypeConfiguration16) IsSetRemovalAge() bool {
-	if o != nil && !IsNil(o.RemovalAge) {
-		return true
-	}
-
-	return false
-}
-
 // SetRemovalAge gets a reference to the given string and assigns it to the RemovalAge field.
 func (o *DelayedDeletePolicyTypeConfiguration16) SetRemovalAge(v string) {
 	o.RemovalAge = &v

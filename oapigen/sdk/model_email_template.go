@@ -69,15 +69,6 @@ func (o *EmailTemplate) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *EmailTemplate) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *EmailTemplate) SetId(v int64) {
 	o.Id = &v
@@ -99,15 +90,6 @@ func (o *EmailTemplate) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *EmailTemplate) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -133,15 +115,6 @@ func (o *EmailTemplate) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *EmailTemplate) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *EmailTemplate) SetCode(v string) {
 	o.Code = &v
@@ -163,15 +136,6 @@ func (o *EmailTemplate) GetOwnerOk() (*AddEmailTemplateRequestEmailTemplateOwner
 		return nil, false
 	}
 	return o.Owner, true
-}
-
-// IsSetOwner returns a boolean if a field has been set.
-func (o *EmailTemplate) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
-		return true
-	}
-
-	return false
 }
 
 // SetOwner gets a reference to the given AddEmailTemplateRequestEmailTemplateOwner and assigns it to the Owner field.
@@ -198,15 +162,6 @@ func (o *EmailTemplate) GetAccountsOk() ([]AddEmailTemplateRequestEmailTemplateA
 	return o.Accounts, true
 }
 
-// IsSetAccounts returns a boolean if a field has been set.
-func (o *EmailTemplate) IsSetAccounts() bool {
-	if o != nil && !IsNil(o.Accounts) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccounts gets a reference to the given []AddEmailTemplateRequestEmailTemplateAccountsInner and assigns it to the Accounts field.
 func (o *EmailTemplate) SetAccounts(v []AddEmailTemplateRequestEmailTemplateAccountsInner) {
 	o.Accounts = v
@@ -228,15 +183,6 @@ func (o *EmailTemplate) GetTemplateOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Template, true
-}
-
-// IsSetTemplate returns a boolean if a field has been set.
-func (o *EmailTemplate) IsSetTemplate() bool {
-	if o != nil && !IsNil(o.Template) {
-		return true
-	}
-
-	return false
 }
 
 // SetTemplate gets a reference to the given string and assigns it to the Template field.

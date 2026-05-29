@@ -62,15 +62,6 @@ func (o *ServerServicePlansDatastores) GetClusterOk() ([]map[string]interface{},
 	return o.Cluster, true
 }
 
-// IsSetCluster returns a boolean if a field has been set.
-func (o *ServerServicePlansDatastores) IsSetCluster() bool {
-	if o != nil && !IsNil(o.Cluster) {
-		return true
-	}
-
-	return false
-}
-
 // SetCluster gets a reference to the given []map[string]interface{} and assigns it to the Cluster field.
 func (o *ServerServicePlansDatastores) SetCluster(v []map[string]interface{}) {
 	o.Cluster = v
@@ -92,15 +83,6 @@ func (o *ServerServicePlansDatastores) GetStoreOk() ([]map[string]interface{}, b
 		return nil, false
 	}
 	return o.Store, true
-}
-
-// IsSetStore returns a boolean if a field has been set.
-func (o *ServerServicePlansDatastores) IsSetStore() bool {
-	if o != nil && !IsNil(o.Store) {
-		return true
-	}
-
-	return false
 }
 
 // SetStore gets a reference to the given []map[string]interface{} and assigns it to the Store field.

@@ -63,15 +63,6 @@ func (o *GetUserGroup200ResponseUserGroupUsersInner) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetUserGroup200ResponseUserGroupUsersInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetUserGroup200ResponseUserGroupUsersInner) SetId(v int64) {
 	o.Id = &v
@@ -95,15 +86,6 @@ func (o *GetUserGroup200ResponseUserGroupUsersInner) GetUsernameOk() (*string, b
 	return o.Username, true
 }
 
-// IsSetUsername returns a boolean if a field has been set.
-func (o *GetUserGroup200ResponseUserGroupUsersInner) IsSetUsername() bool {
-	if o != nil && !IsNil(o.Username) {
-		return true
-	}
-
-	return false
-}
-
 // SetUsername gets a reference to the given string and assigns it to the Username field.
 func (o *GetUserGroup200ResponseUserGroupUsersInner) SetUsername(v string) {
 	o.Username = &v
@@ -125,15 +107,6 @@ func (o *GetUserGroup200ResponseUserGroupUsersInner) GetDisplayNameOk() (*string
 		return nil, false
 	}
 	return o.DisplayName, true
-}
-
-// IsSetDisplayName returns a boolean if a field has been set.
-func (o *GetUserGroup200ResponseUserGroupUsersInner) IsSetDisplayName() bool {
-	if o != nil && !IsNil(o.DisplayName) {
-		return true
-	}
-
-	return false
 }
 
 // SetDisplayName gets a reference to the given string and assigns it to the DisplayName field.

@@ -68,15 +68,6 @@ func (o *AddSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) GetDe
 	return o.DefaultStore, true
 }
 
-// IsSetDefaultStore returns a boolean if a field has been set.
-func (o *AddSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) IsSetDefaultStore() bool {
-	if o != nil && !IsNil(o.DefaultStore) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultStore gets a reference to the given bool and assigns it to the DefaultStore field.
 func (o *AddSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) SetDefaultStore(v bool) {
 	o.DefaultStore = &v
@@ -98,15 +89,6 @@ func (o *AddSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) GetDe
 		return nil, false
 	}
 	return o.DefaultTarget, true
-}
-
-// IsSetDefaultTarget returns a boolean if a field has been set.
-func (o *AddSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) IsSetDefaultTarget() bool {
-	if o != nil && !IsNil(o.DefaultTarget) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultTarget gets a reference to the given bool and assigns it to the DefaultTarget field.
@@ -132,15 +114,6 @@ func (o *AddSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) GetCa
 	return o.CanManage, true
 }
 
-// IsSetCanManage returns a boolean if a field has been set.
-func (o *AddSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) IsSetCanManage() bool {
-	if o != nil && !IsNil(o.CanManage) {
-		return true
-	}
-
-	return false
-}
-
 // SetCanManage gets a reference to the given bool and assigns it to the CanManage field.
 func (o *AddSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) SetCanManage(v bool) {
 	o.CanManage = &v
@@ -164,15 +137,6 @@ func (o *AddSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) GetAl
 	return o.All, true
 }
 
-// IsSetAll returns a boolean if a field has been set.
-func (o *AddSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) IsSetAll() bool {
-	if o != nil && !IsNil(o.All) {
-		return true
-	}
-
-	return false
-}
-
 // SetAll gets a reference to the given bool and assigns it to the All field.
 func (o *AddSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) SetAll(v bool) {
 	o.All = &v
@@ -194,15 +158,6 @@ func (o *AddSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) GetAc
 		return nil, false
 	}
 	return o.Account, true
-}
-
-// IsSetAccount returns a boolean if a field has been set.
-func (o *AddSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccount gets a reference to the given AddSecurityGroups200ResponseSecurityGroupAllOfResourcePermissionAccount and assigns it to the Account field.
@@ -229,15 +184,6 @@ func (o *AddSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) GetSi
 	return o.Sites, true
 }
 
-// IsSetSites returns a boolean if a field has been set.
-func (o *AddSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) IsSetSites() bool {
-	if o != nil && !IsNil(o.Sites) {
-		return true
-	}
-
-	return false
-}
-
 // SetSites gets a reference to the given []AddSecurityGroups200ResponseSecurityGroupAllOfResourcePermissionSitesInner and assigns it to the Sites field.
 func (o *AddSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) SetSites(v []AddSecurityGroups200ResponseSecurityGroupAllOfResourcePermissionSitesInner) {
 	o.Sites = v
@@ -259,15 +205,6 @@ func (o *AddSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) GetAl
 		return nil, false
 	}
 	return o.AllPlans, true
-}
-
-// IsSetAllPlans returns a boolean if a field has been set.
-func (o *AddSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) IsSetAllPlans() bool {
-	if o != nil && !IsNil(o.AllPlans) {
-		return true
-	}
-
-	return false
 }
 
 // SetAllPlans gets a reference to the given bool and assigns it to the AllPlans field.
@@ -292,15 +229,6 @@ func (o *AddSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) GetPl
 		return nil, false
 	}
 	return o.Plans, true
-}
-
-// IsSetPlans returns a boolean if a field has been set.
-func (o *AddSecurityGroups200ResponseSecurityGroupAllOfResourcePermission) IsSetPlans() bool {
-	if o != nil && !IsNil(o.Plans) {
-		return true
-	}
-
-	return false
 }
 
 // SetPlans gets a reference to the given []AddSecurityGroups200ResponseSecurityGroupAllOfResourcePermissionPlansInner and assigns it to the Plans field.

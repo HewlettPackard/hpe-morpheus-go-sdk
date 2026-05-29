@@ -62,15 +62,6 @@ func (o *ZoneNetworkOptionsResponseNetworkGroupsInner) GetIdOk() (*string, bool)
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ZoneNetworkOptionsResponseNetworkGroupsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given string and assigns it to the Id field.
 func (o *ZoneNetworkOptionsResponseNetworkGroupsInner) SetId(v string) {
 	o.Id = &v
@@ -92,15 +83,6 @@ func (o *ZoneNetworkOptionsResponseNetworkGroupsInner) GetNameOk() (*string, boo
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ZoneNetworkOptionsResponseNetworkGroupsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.

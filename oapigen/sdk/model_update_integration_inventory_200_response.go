@@ -62,15 +62,6 @@ func (o *UpdateIntegrationInventory200Response) GetInventoryOk() (*UpdateIntegra
 	return o.Inventory, true
 }
 
-// IsSetInventory returns a boolean if a field has been set.
-func (o *UpdateIntegrationInventory200Response) IsSetInventory() bool {
-	if o != nil && !IsNil(o.Inventory) {
-		return true
-	}
-
-	return false
-}
-
 // SetInventory gets a reference to the given UpdateIntegrationInventory200ResponseAllOfInventory and assigns it to the Inventory field.
 func (o *UpdateIntegrationInventory200Response) SetInventory(v UpdateIntegrationInventory200ResponseAllOfInventory) {
 	o.Inventory = &v
@@ -92,15 +83,6 @@ func (o *UpdateIntegrationInventory200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *UpdateIntegrationInventory200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

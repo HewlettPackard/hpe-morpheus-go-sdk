@@ -62,15 +62,6 @@ func (o *ListIdentitySources200Response) GetUserSourcesOk() ([]ListIdentitySourc
 	return o.UserSources, true
 }
 
-// IsSetUserSources returns a boolean if a field has been set.
-func (o *ListIdentitySources200Response) IsSetUserSources() bool {
-	if o != nil && !IsNil(o.UserSources) {
-		return true
-	}
-
-	return false
-}
-
 // SetUserSources gets a reference to the given []ListIdentitySources200ResponseAllOfUserSourcesInner and assigns it to the UserSources field.
 func (o *ListIdentitySources200Response) SetUserSources(v []ListIdentitySources200ResponseAllOfUserSourcesInner) {
 	o.UserSources = v
@@ -92,15 +83,6 @@ func (o *ListIdentitySources200Response) GetMetaOk() (*ListApprovals200ResponseA
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListIdentitySources200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

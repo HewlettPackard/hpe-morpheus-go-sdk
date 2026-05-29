@@ -84,15 +84,6 @@ func (o *NetworkRouterRouteCreate) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *NetworkRouterRouteCreate) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *NetworkRouterRouteCreate) SetName(v string) {
 	o.Name = &v
@@ -114,15 +105,6 @@ func (o *NetworkRouterRouteCreate) GetDescriptionOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *NetworkRouterRouteCreate) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -148,15 +130,6 @@ func (o *NetworkRouterRouteCreate) GetEnabledOk() (*bool, bool) {
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *NetworkRouterRouteCreate) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *NetworkRouterRouteCreate) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -178,15 +151,6 @@ func (o *NetworkRouterRouteCreate) GetDefaultRouteOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.DefaultRoute, true
-}
-
-// IsSetDefaultRoute returns a boolean if a field has been set.
-func (o *NetworkRouterRouteCreate) IsSetDefaultRoute() bool {
-	if o != nil && !IsNil(o.DefaultRoute) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultRoute gets a reference to the given bool and assigns it to the DefaultRoute field.
@@ -258,15 +222,6 @@ func (o *NetworkRouterRouteCreate) GetNetworkMtuOk() (*float32, bool) {
 		return nil, false
 	}
 	return o.NetworkMtu, true
-}
-
-// IsSetNetworkMtu returns a boolean if a field has been set.
-func (o *NetworkRouterRouteCreate) IsSetNetworkMtu() bool {
-	if o != nil && !IsNil(o.NetworkMtu) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkMtu gets a reference to the given float32 and assigns it to the NetworkMtu field.

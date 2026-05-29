@@ -122,15 +122,6 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetIdOk() (*int64, 
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetId(v int64) {
 	o.Id = &v
@@ -152,15 +143,6 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetNameOk() (*strin
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -187,28 +169,9 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetDescriptionOk() 
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetController returns the Controller field value if set, zero value otherwise.
@@ -227,15 +190,6 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetControllerOk() (
 		return nil, false
 	}
 	return o.Controller, true
-}
-
-// IsSetController returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetController() bool {
-	if o != nil && !IsNil(o.Controller) {
-		return true
-	}
-
-	return false
 }
 
 // SetController gets a reference to the given UpdateHostResize200ResponseAllOfServerVolumesInnerController and assigns it to the Controller field.
@@ -262,28 +216,9 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetControllerIdOk()
 	return o.ControllerId.Get(), o.ControllerId.IsSet()
 }
 
-// IsSetControllerId returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetControllerId() bool {
-	if o != nil && o.ControllerId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetControllerId gets a reference to the given NullableInt64 and assigns it to the ControllerId field.
 func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetControllerId(v int64) {
 	o.ControllerId.Set(&v)
-}
-
-// SetControllerIdNil sets the value for ControllerId to be an explicit nil
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetControllerIdNil() {
-	o.ControllerId.Set(nil)
-}
-
-// UnsetControllerId ensures that no value is present for ControllerId, not even an explicit nil
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) UnsetControllerId() {
-	o.ControllerId.Unset()
 }
 
 // GetControllerMountPoint returns the ControllerMountPoint field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -305,28 +240,9 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetControllerMountP
 	return o.ControllerMountPoint.Get(), o.ControllerMountPoint.IsSet()
 }
 
-// IsSetControllerMountPoint returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetControllerMountPoint() bool {
-	if o != nil && o.ControllerMountPoint.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetControllerMountPoint gets a reference to the given NullableString and assigns it to the ControllerMountPoint field.
 func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetControllerMountPoint(v string) {
 	o.ControllerMountPoint.Set(&v)
-}
-
-// SetControllerMountPointNil sets the value for ControllerMountPoint to be an explicit nil
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetControllerMountPointNil() {
-	o.ControllerMountPoint.Set(nil)
-}
-
-// UnsetControllerMountPoint ensures that no value is present for ControllerMountPoint, not even an explicit nil
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) UnsetControllerMountPoint() {
-	o.ControllerMountPoint.Unset()
 }
 
 // GetResizeable returns the Resizeable field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -348,28 +264,9 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetResizeableOk() (
 	return o.Resizeable.Get(), o.Resizeable.IsSet()
 }
 
-// IsSetResizeable returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetResizeable() bool {
-	if o != nil && o.Resizeable.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetResizeable gets a reference to the given NullableBool and assigns it to the Resizeable field.
 func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetResizeable(v bool) {
 	o.Resizeable.Set(&v)
-}
-
-// SetResizeableNil sets the value for Resizeable to be an explicit nil
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetResizeableNil() {
-	o.Resizeable.Set(nil)
-}
-
-// UnsetResizeable ensures that no value is present for Resizeable, not even an explicit nil
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) UnsetResizeable() {
-	o.Resizeable.Unset()
 }
 
 // GetRootVolume returns the RootVolume field value if set, zero value otherwise.
@@ -388,15 +285,6 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetRootVolumeOk() (
 		return nil, false
 	}
 	return o.RootVolume, true
-}
-
-// IsSetRootVolume returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetRootVolume() bool {
-	if o != nil && !IsNil(o.RootVolume) {
-		return true
-	}
-
-	return false
 }
 
 // SetRootVolume gets a reference to the given bool and assigns it to the RootVolume field.
@@ -423,28 +311,9 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetUnitNumberOk() (
 	return o.UnitNumber.Get(), o.UnitNumber.IsSet()
 }
 
-// IsSetUnitNumber returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetUnitNumber() bool {
-	if o != nil && o.UnitNumber.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUnitNumber gets a reference to the given NullableString and assigns it to the UnitNumber field.
 func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetUnitNumber(v string) {
 	o.UnitNumber.Set(&v)
-}
-
-// SetUnitNumberNil sets the value for UnitNumber to be an explicit nil
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetUnitNumberNil() {
-	o.UnitNumber.Set(nil)
-}
-
-// UnsetUnitNumber ensures that no value is present for UnitNumber, not even an explicit nil
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) UnsetUnitNumber() {
-	o.UnitNumber.Unset()
 }
 
 // GetDeviceName returns the DeviceName field value if set, zero value otherwise.
@@ -463,15 +332,6 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetDeviceNameOk() (
 		return nil, false
 	}
 	return o.DeviceName, true
-}
-
-// IsSetDeviceName returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetDeviceName() bool {
-	if o != nil && !IsNil(o.DeviceName) {
-		return true
-	}
-
-	return false
 }
 
 // SetDeviceName gets a reference to the given string and assigns it to the DeviceName field.
@@ -497,15 +357,6 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetDeviceDisplayNam
 	return o.DeviceDisplayName, true
 }
 
-// IsSetDeviceDisplayName returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetDeviceDisplayName() bool {
-	if o != nil && !IsNil(o.DeviceDisplayName) {
-		return true
-	}
-
-	return false
-}
-
 // SetDeviceDisplayName gets a reference to the given string and assigns it to the DeviceDisplayName field.
 func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetDeviceDisplayName(v string) {
 	o.DeviceDisplayName = &v
@@ -527,15 +378,6 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetVolumeNameOk() (
 		return nil, false
 	}
 	return o.VolumeName, true
-}
-
-// IsSetVolumeName returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetVolumeName() bool {
-	if o != nil && !IsNil(o.VolumeName) {
-		return true
-	}
-
-	return false
 }
 
 // SetVolumeName gets a reference to the given string and assigns it to the VolumeName field.
@@ -561,15 +403,6 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetVolumePathOk() (
 	return o.VolumePath, true
 }
 
-// IsSetVolumePath returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetVolumePath() bool {
-	if o != nil && !IsNil(o.VolumePath) {
-		return true
-	}
-
-	return false
-}
-
 // SetVolumePath gets a reference to the given string and assigns it to the VolumePath field.
 func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetVolumePath(v string) {
 	o.VolumePath = &v
@@ -591,15 +424,6 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetVolumeTypeOk() (
 		return nil, false
 	}
 	return o.VolumeType, true
-}
-
-// IsSetVolumeType returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetVolumeType() bool {
-	if o != nil && !IsNil(o.VolumeType) {
-		return true
-	}
-
-	return false
 }
 
 // SetVolumeType gets a reference to the given string and assigns it to the VolumeType field.
@@ -625,15 +449,6 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetRefTypeOk() (*st
 	return o.RefType, true
 }
 
-// IsSetRefType returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetRefType() bool {
-	if o != nil && !IsNil(o.RefType) {
-		return true
-	}
-
-	return false
-}
-
 // SetRefType gets a reference to the given string and assigns it to the RefType field.
 func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetRefType(v string) {
 	o.RefType = &v
@@ -655,15 +470,6 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetRefIdOk() (*int6
 		return nil, false
 	}
 	return o.RefId, true
-}
-
-// IsSetRefId returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetRefId() bool {
-	if o != nil && !IsNil(o.RefId) {
-		return true
-	}
-
-	return false
 }
 
 // SetRefId gets a reference to the given int64 and assigns it to the RefId field.
@@ -689,15 +495,6 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetDiskModeOk() (*s
 	return o.DiskMode, true
 }
 
-// IsSetDiskMode returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetDiskMode() bool {
-	if o != nil && !IsNil(o.DiskMode) {
-		return true
-	}
-
-	return false
-}
-
 // SetDiskMode gets a reference to the given string and assigns it to the DiskMode field.
 func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetDiskMode(v string) {
 	o.DiskMode = &v
@@ -719,15 +516,6 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetDiskTypeOk() (*s
 		return nil, false
 	}
 	return o.DiskType, true
-}
-
-// IsSetDiskType returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetDiskType() bool {
-	if o != nil && !IsNil(o.DiskType) {
-		return true
-	}
-
-	return false
 }
 
 // SetDiskType gets a reference to the given string and assigns it to the DiskType field.
@@ -753,15 +541,6 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetTypeOk() (*Updat
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given UpdateHostResize200ResponseAllOfServerVolumesInnerType and assigns it to the Type field.
 func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetType(v UpdateHostResize200ResponseAllOfServerVolumesInnerType) {
 	o.Type = &v
@@ -783,15 +562,6 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetTypeIdOk() (*int
 		return nil, false
 	}
 	return o.TypeId, true
-}
-
-// IsSetTypeId returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetTypeId() bool {
-	if o != nil && !IsNil(o.TypeId) {
-		return true
-	}
-
-	return false
 }
 
 // SetTypeId gets a reference to the given int64 and assigns it to the TypeId field.
@@ -817,15 +587,6 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetCategoryOk() (*s
 	return o.Category, true
 }
 
-// IsSetCategory returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
-		return true
-	}
-
-	return false
-}
-
 // SetCategory gets a reference to the given string and assigns it to the Category field.
 func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetCategory(v string) {
 	o.Category = &v
@@ -847,15 +608,6 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetStatusOk() (*str
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -882,28 +634,9 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetStatusMessageOk(
 	return o.StatusMessage.Get(), o.StatusMessage.IsSet()
 }
 
-// IsSetStatusMessage returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetStatusMessage() bool {
-	if o != nil && o.StatusMessage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusMessage gets a reference to the given NullableString and assigns it to the StatusMessage field.
 func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetStatusMessage(v string) {
 	o.StatusMessage.Set(&v)
-}
-
-// SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetStatusMessageNil() {
-	o.StatusMessage.Set(nil)
-}
-
-// UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) UnsetStatusMessage() {
-	o.StatusMessage.Unset()
 }
 
 // GetConfigurableIOPS returns the ConfigurableIOPS field value if set, zero value otherwise.
@@ -922,15 +655,6 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetConfigurableIOPS
 		return nil, false
 	}
 	return o.ConfigurableIOPS, true
-}
-
-// IsSetConfigurableIOPS returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetConfigurableIOPS() bool {
-	if o != nil && !IsNil(o.ConfigurableIOPS) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfigurableIOPS gets a reference to the given bool and assigns it to the ConfigurableIOPS field.
@@ -956,15 +680,6 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetMaxStorageOk() (
 	return o.MaxStorage, true
 }
 
-// IsSetMaxStorage returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetMaxStorage() bool {
-	if o != nil && !IsNil(o.MaxStorage) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxStorage gets a reference to the given int64 and assigns it to the MaxStorage field.
 func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetMaxStorage(v int64) {
 	o.MaxStorage = &v
@@ -988,15 +703,6 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetUsedStorageOk() 
 	return o.UsedStorage, true
 }
 
-// IsSetUsedStorage returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetUsedStorage() bool {
-	if o != nil && !IsNil(o.UsedStorage) {
-		return true
-	}
-
-	return false
-}
-
 // SetUsedStorage gets a reference to the given int64 and assigns it to the UsedStorage field.
 func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetUsedStorage(v int64) {
 	o.UsedStorage = &v
@@ -1018,15 +724,6 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetDisplayOrderOk()
 		return nil, false
 	}
 	return o.DisplayOrder, true
-}
-
-// IsSetDisplayOrder returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetDisplayOrder() bool {
-	if o != nil && !IsNil(o.DisplayOrder) {
-		return true
-	}
-
-	return false
 }
 
 // SetDisplayOrder gets a reference to the given int64 and assigns it to the DisplayOrder field.
@@ -1053,28 +750,9 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetMaxIOPSOk() (*st
 	return o.MaxIOPS.Get(), o.MaxIOPS.IsSet()
 }
 
-// IsSetMaxIOPS returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetMaxIOPS() bool {
-	if o != nil && o.MaxIOPS.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxIOPS gets a reference to the given NullableString and assigns it to the MaxIOPS field.
 func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetMaxIOPS(v string) {
 	o.MaxIOPS.Set(&v)
-}
-
-// SetMaxIOPSNil sets the value for MaxIOPS to be an explicit nil
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetMaxIOPSNil() {
-	o.MaxIOPS.Set(nil)
-}
-
-// UnsetMaxIOPS ensures that no value is present for MaxIOPS, not even an explicit nil
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) UnsetMaxIOPS() {
-	o.MaxIOPS.Unset()
 }
 
 // GetUuid returns the Uuid field value if set, zero value otherwise.
@@ -1093,15 +771,6 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetUuidOk() (*strin
 		return nil, false
 	}
 	return o.Uuid, true
-}
-
-// IsSetUuid returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetUuid() bool {
-	if o != nil && !IsNil(o.Uuid) {
-		return true
-	}
-
-	return false
 }
 
 // SetUuid gets a reference to the given string and assigns it to the Uuid field.
@@ -1127,15 +796,6 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetActiveOk() (*boo
 	return o.Active, true
 }
 
-// IsSetActive returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
-}
-
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetActive(v bool) {
 	o.Active = &v
@@ -1157,15 +817,6 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetReadOnlyOk() (*b
 		return nil, false
 	}
 	return o.ReadOnly, true
-}
-
-// IsSetReadOnly returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetReadOnly() bool {
-	if o != nil && !IsNil(o.ReadOnly) {
-		return true
-	}
-
-	return false
 }
 
 // SetReadOnly gets a reference to the given bool and assigns it to the ReadOnly field.
@@ -1191,15 +842,6 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetRemovableOk() (*
 	return o.Removable, true
 }
 
-// IsSetRemovable returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetRemovable() bool {
-	if o != nil && !IsNil(o.Removable) {
-		return true
-	}
-
-	return false
-}
-
 // SetRemovable gets a reference to the given bool and assigns it to the Removable field.
 func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetRemovable(v bool) {
 	o.Removable = &v
@@ -1221,15 +863,6 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetPoolNameOk() (*s
 		return nil, false
 	}
 	return o.PoolName, true
-}
-
-// IsSetPoolName returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetPoolName() bool {
-	if o != nil && !IsNil(o.PoolName) {
-		return true
-	}
-
-	return false
 }
 
 // SetPoolName gets a reference to the given string and assigns it to the PoolName field.
@@ -1255,15 +888,6 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetZoneOk() (*Updat
 	return o.Zone, true
 }
 
-// IsSetZone returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetZone() bool {
-	if o != nil && !IsNil(o.Zone) {
-		return true
-	}
-
-	return false
-}
-
 // SetZone gets a reference to the given UpdateHostResize200ResponseAllOfServerVolumesInnerZone and assigns it to the Zone field.
 func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetZone(v UpdateHostResize200ResponseAllOfServerVolumesInnerZone) {
 	o.Zone = &v
@@ -1287,15 +911,6 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetZoneIdOk() (*int
 	return o.ZoneId, true
 }
 
-// IsSetZoneId returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetZoneId() bool {
-	if o != nil && !IsNil(o.ZoneId) {
-		return true
-	}
-
-	return false
-}
-
 // SetZoneId gets a reference to the given int64 and assigns it to the ZoneId field.
 func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetZoneId(v int64) {
 	o.ZoneId = &v
@@ -1317,15 +932,6 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetDatastoreOk() (*
 		return nil, false
 	}
 	return o.Datastore, true
-}
-
-// IsSetDatastore returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetDatastore() bool {
-	if o != nil && !IsNil(o.Datastore) {
-		return true
-	}
-
-	return false
 }
 
 // SetDatastore gets a reference to the given UpdateHostResize200ResponseAllOfServerVolumesInnerDatastore and assigns it to the Datastore field.
@@ -1352,28 +958,9 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetDatastoreIdOk() 
 	return o.DatastoreId.Get(), o.DatastoreId.IsSet()
 }
 
-// IsSetDatastoreId returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetDatastoreId() bool {
-	if o != nil && o.DatastoreId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDatastoreId gets a reference to the given NullableInt64 and assigns it to the DatastoreId field.
 func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetDatastoreId(v int64) {
 	o.DatastoreId.Set(&v)
-}
-
-// SetDatastoreIdNil sets the value for DatastoreId to be an explicit nil
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetDatastoreIdNil() {
-	o.DatastoreId.Set(nil)
-}
-
-// UnsetDatastoreId ensures that no value is present for DatastoreId, not even an explicit nil
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) UnsetDatastoreId() {
-	o.DatastoreId.Unset()
 }
 
 // GetDatastoreOption returns the DatastoreOption field value if set, zero value otherwise.
@@ -1392,15 +979,6 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetDatastoreOptionO
 		return nil, false
 	}
 	return o.DatastoreOption, true
-}
-
-// IsSetDatastoreOption returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetDatastoreOption() bool {
-	if o != nil && !IsNil(o.DatastoreOption) {
-		return true
-	}
-
-	return false
 }
 
 // SetDatastoreOption gets a reference to the given string and assigns it to the DatastoreOption field.
@@ -1427,28 +1005,9 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetStorageGroupOk()
 	return o.StorageGroup.Get(), o.StorageGroup.IsSet()
 }
 
-// IsSetStorageGroup returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetStorageGroup() bool {
-	if o != nil && o.StorageGroup.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStorageGroup gets a reference to the given NullableString and assigns it to the StorageGroup field.
 func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetStorageGroup(v string) {
 	o.StorageGroup.Set(&v)
-}
-
-// SetStorageGroupNil sets the value for StorageGroup to be an explicit nil
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetStorageGroupNil() {
-	o.StorageGroup.Set(nil)
-}
-
-// UnsetStorageGroup ensures that no value is present for StorageGroup, not even an explicit nil
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) UnsetStorageGroup() {
-	o.StorageGroup.Unset()
 }
 
 // GetNamespace returns the Namespace field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1470,28 +1029,9 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetNamespaceOk() (*
 	return o.Namespace.Get(), o.Namespace.IsSet()
 }
 
-// IsSetNamespace returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetNamespace() bool {
-	if o != nil && o.Namespace.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNamespace gets a reference to the given NullableString and assigns it to the Namespace field.
 func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetNamespace(v string) {
 	o.Namespace.Set(&v)
-}
-
-// SetNamespaceNil sets the value for Namespace to be an explicit nil
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetNamespaceNil() {
-	o.Namespace.Set(nil)
-}
-
-// UnsetNamespace ensures that no value is present for Namespace, not even an explicit nil
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) UnsetNamespace() {
-	o.Namespace.Unset()
 }
 
 // GetStorageServer returns the StorageServer field value if set, zero value otherwise.
@@ -1510,15 +1050,6 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetStorageServerOk(
 		return map[string]interface{}{}, false
 	}
 	return o.StorageServer, true
-}
-
-// IsSetStorageServer returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetStorageServer() bool {
-	if o != nil && !IsNil(o.StorageServer) {
-		return true
-	}
-
-	return false
 }
 
 // SetStorageServer gets a reference to the given map[string]interface{} and assigns it to the StorageServer field.
@@ -1542,15 +1073,6 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetSourceOk() (*str
 		return nil, false
 	}
 	return o.Source, true
-}
-
-// IsSetSource returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetSource() bool {
-	if o != nil && !IsNil(o.Source) {
-		return true
-	}
-
-	return false
 }
 
 // SetSource gets a reference to the given string and assigns it to the Source field.
@@ -1577,28 +1099,9 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetUniqueIdOk() (*s
 	return o.UniqueId.Get(), o.UniqueId.IsSet()
 }
 
-// IsSetUniqueId returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetUniqueId() bool {
-	if o != nil && o.UniqueId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUniqueId gets a reference to the given NullableString and assigns it to the UniqueId field.
 func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetUniqueId(v string) {
 	o.UniqueId.Set(&v)
-}
-
-// SetUniqueIdNil sets the value for UniqueId to be an explicit nil
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetUniqueIdNil() {
-	o.UniqueId.Set(nil)
-}
-
-// UnsetUniqueId ensures that no value is present for UniqueId, not even an explicit nil
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) UnsetUniqueId() {
-	o.UniqueId.Unset()
 }
 
 // GetInternalId returns the InternalId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1620,28 +1123,9 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetInternalIdOk() (
 	return o.InternalId.Get(), o.InternalId.IsSet()
 }
 
-// IsSetInternalId returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetInternalId() bool {
-	if o != nil && o.InternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInternalId gets a reference to the given NullableString and assigns it to the InternalId field.
 func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetInternalId(v string) {
 	o.InternalId.Set(&v)
-}
-
-// SetInternalIdNil sets the value for InternalId to be an explicit nil
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetInternalIdNil() {
-	o.InternalId.Set(nil)
-}
-
-// UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) UnsetInternalId() {
-	o.InternalId.Unset()
 }
 
 // GetExternalId returns the ExternalId field value if set, zero value otherwise.
@@ -1660,15 +1144,6 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetExternalIdOk() (
 		return nil, false
 	}
 	return o.ExternalId, true
-}
-
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
-		return true
-	}
-
-	return false
 }
 
 // SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
@@ -1695,28 +1170,9 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetProvisionTypeOk(
 	return o.ProvisionType.Get(), o.ProvisionType.IsSet()
 }
 
-// IsSetProvisionType returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetProvisionType() bool {
-	if o != nil && o.ProvisionType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetProvisionType gets a reference to the given NullableString and assigns it to the ProvisionType field.
 func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetProvisionType(v string) {
 	o.ProvisionType.Set(&v)
-}
-
-// SetProvisionTypeNil sets the value for ProvisionType to be an explicit nil
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetProvisionTypeNil() {
-	o.ProvisionType.Set(nil)
-}
-
-// UnsetProvisionType ensures that no value is present for ProvisionType, not even an explicit nil
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) UnsetProvisionType() {
-	o.ProvisionType.Unset()
 }
 
 // GetCopyType returns the CopyType field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1738,28 +1194,9 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetCopyTypeOk() (*s
 	return o.CopyType.Get(), o.CopyType.IsSet()
 }
 
-// IsSetCopyType returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetCopyType() bool {
-	if o != nil && o.CopyType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCopyType gets a reference to the given NullableString and assigns it to the CopyType field.
 func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetCopyType(v string) {
 	o.CopyType.Set(&v)
-}
-
-// SetCopyTypeNil sets the value for CopyType to be an explicit nil
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetCopyTypeNil() {
-	o.CopyType.Set(nil)
-}
-
-// UnsetCopyType ensures that no value is present for CopyType, not even an explicit nil
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) UnsetCopyType() {
-	o.CopyType.Unset()
 }
 
 // GetFiberWwn returns the FiberWwn field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1781,28 +1218,9 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetFiberWwnOk() (*s
 	return o.FiberWwn.Get(), o.FiberWwn.IsSet()
 }
 
-// IsSetFiberWwn returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetFiberWwn() bool {
-	if o != nil && o.FiberWwn.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFiberWwn gets a reference to the given NullableString and assigns it to the FiberWwn field.
 func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetFiberWwn(v string) {
 	o.FiberWwn.Set(&v)
-}
-
-// SetFiberWwnNil sets the value for FiberWwn to be an explicit nil
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetFiberWwnNil() {
-	o.FiberWwn.Set(nil)
-}
-
-// UnsetFiberWwn ensures that no value is present for FiberWwn, not even an explicit nil
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) UnsetFiberWwn() {
-	o.FiberWwn.Unset()
 }
 
 // GetFileName returns the FileName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1824,28 +1242,9 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetFileNameOk() (*s
 	return o.FileName.Get(), o.FileName.IsSet()
 }
 
-// IsSetFileName returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetFileName() bool {
-	if o != nil && o.FileName.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFileName gets a reference to the given NullableString and assigns it to the FileName field.
 func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetFileName(v string) {
 	o.FileName.Set(&v)
-}
-
-// SetFileNameNil sets the value for FileName to be an explicit nil
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetFileNameNil() {
-	o.FileName.Set(nil)
-}
-
-// UnsetFileName ensures that no value is present for FileName, not even an explicit nil
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) UnsetFileName() {
-	o.FileName.Unset()
 }
 
 // GetClaimName returns the ClaimName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1867,28 +1266,9 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetClaimNameOk() (*
 	return o.ClaimName.Get(), o.ClaimName.IsSet()
 }
 
-// IsSetClaimName returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetClaimName() bool {
-	if o != nil && o.ClaimName.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetClaimName gets a reference to the given NullableString and assigns it to the ClaimName field.
 func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetClaimName(v string) {
 	o.ClaimName.Set(&v)
-}
-
-// SetClaimNameNil sets the value for ClaimName to be an explicit nil
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetClaimNameNil() {
-	o.ClaimName.Set(nil)
-}
-
-// UnsetClaimName ensures that no value is present for ClaimName, not even an explicit nil
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) UnsetClaimName() {
-	o.ClaimName.Unset()
 }
 
 // GetSharePath returns the SharePath field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1910,28 +1290,9 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetSharePathOk() (*
 	return o.SharePath.Get(), o.SharePath.IsSet()
 }
 
-// IsSetSharePath returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetSharePath() bool {
-	if o != nil && o.SharePath.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSharePath gets a reference to the given NullableString and assigns it to the SharePath field.
 func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetSharePath(v string) {
 	o.SharePath.Set(&v)
-}
-
-// SetSharePathNil sets the value for SharePath to be an explicit nil
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetSharePathNil() {
-	o.SharePath.Set(nil)
-}
-
-// UnsetSharePath ensures that no value is present for SharePath, not even an explicit nil
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) UnsetSharePath() {
-	o.SharePath.Unset()
 }
 
 // GetSourceId returns the SourceId field value if set, zero value otherwise.
@@ -1950,15 +1311,6 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetSourceIdOk() (*s
 		return nil, false
 	}
 	return o.SourceId, true
-}
-
-// IsSetSourceId returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetSourceId() bool {
-	if o != nil && !IsNil(o.SourceId) {
-		return true
-	}
-
-	return false
 }
 
 // SetSourceId gets a reference to the given string and assigns it to the SourceId field.
@@ -1984,15 +1336,6 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetSourceImageOk() 
 	return o.SourceImage, true
 }
 
-// IsSetSourceImage returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetSourceImage() bool {
-	if o != nil && !IsNil(o.SourceImage) {
-		return true
-	}
-
-	return false
-}
-
 // SetSourceImage gets a reference to the given string and assigns it to the SourceImage field.
 func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetSourceImage(v string) {
 	o.SourceImage = &v
@@ -2014,15 +1357,6 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetImageTypeOk() (*
 		return nil, false
 	}
 	return o.ImageType, true
-}
-
-// IsSetImageType returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetImageType() bool {
-	if o != nil && !IsNil(o.ImageType) {
-		return true
-	}
-
-	return false
 }
 
 // SetImageType gets a reference to the given string and assigns it to the ImageType field.
@@ -2048,15 +1382,6 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetOnlineOk() (*boo
 	return o.Online, true
 }
 
-// IsSetOnline returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetOnline() bool {
-	if o != nil && !IsNil(o.Online) {
-		return true
-	}
-
-	return false
-}
-
 // SetOnline gets a reference to the given bool and assigns it to the Online field.
 func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetOnline(v bool) {
 	o.Online = &v
@@ -2078,15 +1403,6 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetRawDataOk() (*st
 		return nil, false
 	}
 	return o.RawData, true
-}
-
-// IsSetRawData returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetRawData() bool {
-	if o != nil && !IsNil(o.RawData) {
-		return true
-	}
-
-	return false
 }
 
 // SetRawData gets a reference to the given string and assigns it to the RawData field.
@@ -2112,15 +1428,6 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetCreateForMultiAt
 	return o.CreateForMultiAttach, true
 }
 
-// IsSetCreateForMultiAttach returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetCreateForMultiAttach() bool {
-	if o != nil && !IsNil(o.CreateForMultiAttach) {
-		return true
-	}
-
-	return false
-}
-
 // SetCreateForMultiAttach gets a reference to the given bool and assigns it to the CreateForMultiAttach field.
 func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetCreateForMultiAttach(v bool) {
 	o.CreateForMultiAttach = &v
@@ -2142,15 +1449,6 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetIsMultiAttachOk(
 		return nil, false
 	}
 	return o.IsMultiAttach, true
-}
-
-// IsSetIsMultiAttach returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetIsMultiAttach() bool {
-	if o != nil && !IsNil(o.IsMultiAttach) {
-		return true
-	}
-
-	return false
 }
 
 // SetIsMultiAttach gets a reference to the given bool and assigns it to the IsMultiAttach field.
@@ -2177,28 +1475,9 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetStorageProfileOk
 	return o.StorageProfile.Get(), o.StorageProfile.IsSet()
 }
 
-// IsSetStorageProfile returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetStorageProfile() bool {
-	if o != nil && o.StorageProfile.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStorageProfile gets a reference to the given NullableString and assigns it to the StorageProfile field.
 func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetStorageProfile(v string) {
 	o.StorageProfile.Set(&v)
-}
-
-// SetStorageProfileNil sets the value for StorageProfile to be an explicit nil
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) SetStorageProfileNil() {
-	o.StorageProfile.Set(nil)
-}
-
-// UnsetStorageProfile ensures that no value is present for StorageProfile, not even an explicit nil
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) UnsetStorageProfile() {
-	o.StorageProfile.Unset()
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
@@ -2217,15 +1496,6 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetAccountOk() (*Up
 		return nil, false
 	}
 	return o.Account, true
-}
-
-// IsSetAccount returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccount gets a reference to the given UpdateHostResize200ResponseAllOfServerVolumesInnerAccount and assigns it to the Account field.
@@ -2249,15 +1519,6 @@ func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) GetOwnerOk() (*Upda
 		return nil, false
 	}
 	return o.Owner, true
-}
-
-// IsSetOwner returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerVolumesInner) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
-		return true
-	}
-
-	return false
 }
 
 // SetOwner gets a reference to the given UpdateHostResize200ResponseAllOfServerVolumesInnerOwner and assigns it to the Owner field.

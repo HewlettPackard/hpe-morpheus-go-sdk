@@ -61,15 +61,6 @@ func (o *GetCluster200Response) GetClusterOk() (*GetCluster200ResponseCluster, b
 	return o.Cluster, true
 }
 
-// IsSetCluster returns a boolean if a field has been set.
-func (o *GetCluster200Response) IsSetCluster() bool {
-	if o != nil && !IsNil(o.Cluster) {
-		return true
-	}
-
-	return false
-}
-
 // SetCluster gets a reference to the given GetCluster200ResponseCluster and assigns it to the Cluster field.
 func (o *GetCluster200Response) SetCluster(v GetCluster200ResponseCluster) {
 	o.Cluster = &v

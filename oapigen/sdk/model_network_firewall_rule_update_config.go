@@ -62,15 +62,6 @@ func (o *NetworkFirewallRuleUpdateConfig) GetApplicationOk() ([]string, bool) {
 	return o.Application, true
 }
 
-// IsSetApplication returns a boolean if a field has been set.
-func (o *NetworkFirewallRuleUpdateConfig) IsSetApplication() bool {
-	if o != nil && !IsNil(o.Application) {
-		return true
-	}
-
-	return false
-}
-
 // SetApplication gets a reference to the given []string and assigns it to the Application field.
 func (o *NetworkFirewallRuleUpdateConfig) SetApplication(v []string) {
 	o.Application = v
@@ -92,15 +83,6 @@ func (o *NetworkFirewallRuleUpdateConfig) GetProfileOk() ([]string, bool) {
 		return nil, false
 	}
 	return o.Profile, true
-}
-
-// IsSetProfile returns a boolean if a field has been set.
-func (o *NetworkFirewallRuleUpdateConfig) IsSetProfile() bool {
-	if o != nil && !IsNil(o.Profile) {
-		return true
-	}
-
-	return false
 }
 
 // SetProfile gets a reference to the given []string and assigns it to the Profile field.

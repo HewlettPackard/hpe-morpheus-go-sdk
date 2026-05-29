@@ -87,15 +87,6 @@ func (o *GuidanceVmwareSizingResourceInterfacesInner) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingResourceInterfacesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GuidanceVmwareSizingResourceInterfacesInner) SetId(v int64) {
 	o.Id = &v
@@ -120,28 +111,9 @@ func (o *GuidanceVmwareSizingResourceInterfacesInner) GetRefTypeOk() (*string, b
 	return o.RefType.Get(), o.RefType.IsSet()
 }
 
-// IsSetRefType returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingResourceInterfacesInner) IsSetRefType() bool {
-	if o != nil && o.RefType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRefType gets a reference to the given NullableString and assigns it to the RefType field.
 func (o *GuidanceVmwareSizingResourceInterfacesInner) SetRefType(v string) {
 	o.RefType.Set(&v)
-}
-
-// SetRefTypeNil sets the value for RefType to be an explicit nil
-func (o *GuidanceVmwareSizingResourceInterfacesInner) SetRefTypeNil() {
-	o.RefType.Set(nil)
-}
-
-// UnsetRefType ensures that no value is present for RefType, not even an explicit nil
-func (o *GuidanceVmwareSizingResourceInterfacesInner) UnsetRefType() {
-	o.RefType.Unset()
 }
 
 // GetRefId returns the RefId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -163,28 +135,9 @@ func (o *GuidanceVmwareSizingResourceInterfacesInner) GetRefIdOk() (*string, boo
 	return o.RefId.Get(), o.RefId.IsSet()
 }
 
-// IsSetRefId returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingResourceInterfacesInner) IsSetRefId() bool {
-	if o != nil && o.RefId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRefId gets a reference to the given NullableString and assigns it to the RefId field.
 func (o *GuidanceVmwareSizingResourceInterfacesInner) SetRefId(v string) {
 	o.RefId.Set(&v)
-}
-
-// SetRefIdNil sets the value for RefId to be an explicit nil
-func (o *GuidanceVmwareSizingResourceInterfacesInner) SetRefIdNil() {
-	o.RefId.Set(nil)
-}
-
-// UnsetRefId ensures that no value is present for RefId, not even an explicit nil
-func (o *GuidanceVmwareSizingResourceInterfacesInner) UnsetRefId() {
-	o.RefId.Unset()
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -203,15 +156,6 @@ func (o *GuidanceVmwareSizingResourceInterfacesInner) GetNameOk() (*string, bool
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingResourceInterfacesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -237,15 +181,6 @@ func (o *GuidanceVmwareSizingResourceInterfacesInner) GetInternalIdOk() (*string
 	return o.InternalId, true
 }
 
-// IsSetInternalId returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingResourceInterfacesInner) IsSetInternalId() bool {
-	if o != nil && !IsNil(o.InternalId) {
-		return true
-	}
-
-	return false
-}
-
 // SetInternalId gets a reference to the given string and assigns it to the InternalId field.
 func (o *GuidanceVmwareSizingResourceInterfacesInner) SetInternalId(v string) {
 	o.InternalId = &v
@@ -267,15 +202,6 @@ func (o *GuidanceVmwareSizingResourceInterfacesInner) GetExternalIdOk() (*string
 		return nil, false
 	}
 	return o.ExternalId, true
-}
-
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingResourceInterfacesInner) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
-		return true
-	}
-
-	return false
 }
 
 // SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
@@ -302,28 +228,9 @@ func (o *GuidanceVmwareSizingResourceInterfacesInner) GetUniqueIdOk() (*string, 
 	return o.UniqueId.Get(), o.UniqueId.IsSet()
 }
 
-// IsSetUniqueId returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingResourceInterfacesInner) IsSetUniqueId() bool {
-	if o != nil && o.UniqueId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUniqueId gets a reference to the given NullableString and assigns it to the UniqueId field.
 func (o *GuidanceVmwareSizingResourceInterfacesInner) SetUniqueId(v string) {
 	o.UniqueId.Set(&v)
-}
-
-// SetUniqueIdNil sets the value for UniqueId to be an explicit nil
-func (o *GuidanceVmwareSizingResourceInterfacesInner) SetUniqueIdNil() {
-	o.UniqueId.Set(nil)
-}
-
-// UnsetUniqueId ensures that no value is present for UniqueId, not even an explicit nil
-func (o *GuidanceVmwareSizingResourceInterfacesInner) UnsetUniqueId() {
-	o.UniqueId.Unset()
 }
 
 // GetPublicIpAddress returns the PublicIpAddress field value if set, zero value otherwise.
@@ -342,15 +249,6 @@ func (o *GuidanceVmwareSizingResourceInterfacesInner) GetPublicIpAddressOk() (*s
 		return nil, false
 	}
 	return o.PublicIpAddress, true
-}
-
-// IsSetPublicIpAddress returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingResourceInterfacesInner) IsSetPublicIpAddress() bool {
-	if o != nil && !IsNil(o.PublicIpAddress) {
-		return true
-	}
-
-	return false
 }
 
 // SetPublicIpAddress gets a reference to the given string and assigns it to the PublicIpAddress field.
@@ -377,28 +275,9 @@ func (o *GuidanceVmwareSizingResourceInterfacesInner) GetPublicIpv6AddressOk() (
 	return o.PublicIpv6Address.Get(), o.PublicIpv6Address.IsSet()
 }
 
-// IsSetPublicIpv6Address returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingResourceInterfacesInner) IsSetPublicIpv6Address() bool {
-	if o != nil && o.PublicIpv6Address.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPublicIpv6Address gets a reference to the given NullableString and assigns it to the PublicIpv6Address field.
 func (o *GuidanceVmwareSizingResourceInterfacesInner) SetPublicIpv6Address(v string) {
 	o.PublicIpv6Address.Set(&v)
-}
-
-// SetPublicIpv6AddressNil sets the value for PublicIpv6Address to be an explicit nil
-func (o *GuidanceVmwareSizingResourceInterfacesInner) SetPublicIpv6AddressNil() {
-	o.PublicIpv6Address.Set(nil)
-}
-
-// UnsetPublicIpv6Address ensures that no value is present for PublicIpv6Address, not even an explicit nil
-func (o *GuidanceVmwareSizingResourceInterfacesInner) UnsetPublicIpv6Address() {
-	o.PublicIpv6Address.Unset()
 }
 
 // GetIpAddress returns the IpAddress field value if set, zero value otherwise.
@@ -417,15 +296,6 @@ func (o *GuidanceVmwareSizingResourceInterfacesInner) GetIpAddressOk() (*string,
 		return nil, false
 	}
 	return o.IpAddress, true
-}
-
-// IsSetIpAddress returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingResourceInterfacesInner) IsSetIpAddress() bool {
-	if o != nil && !IsNil(o.IpAddress) {
-		return true
-	}
-
-	return false
 }
 
 // SetIpAddress gets a reference to the given string and assigns it to the IpAddress field.
@@ -449,15 +319,6 @@ func (o *GuidanceVmwareSizingResourceInterfacesInner) GetIpv6AddressOk() (*strin
 		return nil, false
 	}
 	return o.Ipv6Address, true
-}
-
-// IsSetIpv6Address returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingResourceInterfacesInner) IsSetIpv6Address() bool {
-	if o != nil && !IsNil(o.Ipv6Address) {
-		return true
-	}
-
-	return false
 }
 
 // SetIpv6Address gets a reference to the given string and assigns it to the Ipv6Address field.
@@ -484,28 +345,9 @@ func (o *GuidanceVmwareSizingResourceInterfacesInner) GetIpSubnetOk() (*string, 
 	return o.IpSubnet.Get(), o.IpSubnet.IsSet()
 }
 
-// IsSetIpSubnet returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingResourceInterfacesInner) IsSetIpSubnet() bool {
-	if o != nil && o.IpSubnet.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetIpSubnet gets a reference to the given NullableString and assigns it to the IpSubnet field.
 func (o *GuidanceVmwareSizingResourceInterfacesInner) SetIpSubnet(v string) {
 	o.IpSubnet.Set(&v)
-}
-
-// SetIpSubnetNil sets the value for IpSubnet to be an explicit nil
-func (o *GuidanceVmwareSizingResourceInterfacesInner) SetIpSubnetNil() {
-	o.IpSubnet.Set(nil)
-}
-
-// UnsetIpSubnet ensures that no value is present for IpSubnet, not even an explicit nil
-func (o *GuidanceVmwareSizingResourceInterfacesInner) UnsetIpSubnet() {
-	o.IpSubnet.Unset()
 }
 
 // GetIpv6Subnet returns the Ipv6Subnet field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -527,28 +369,9 @@ func (o *GuidanceVmwareSizingResourceInterfacesInner) GetIpv6SubnetOk() (*string
 	return o.Ipv6Subnet.Get(), o.Ipv6Subnet.IsSet()
 }
 
-// IsSetIpv6Subnet returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingResourceInterfacesInner) IsSetIpv6Subnet() bool {
-	if o != nil && o.Ipv6Subnet.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetIpv6Subnet gets a reference to the given NullableString and assigns it to the Ipv6Subnet field.
 func (o *GuidanceVmwareSizingResourceInterfacesInner) SetIpv6Subnet(v string) {
 	o.Ipv6Subnet.Set(&v)
-}
-
-// SetIpv6SubnetNil sets the value for Ipv6Subnet to be an explicit nil
-func (o *GuidanceVmwareSizingResourceInterfacesInner) SetIpv6SubnetNil() {
-	o.Ipv6Subnet.Set(nil)
-}
-
-// UnsetIpv6Subnet ensures that no value is present for Ipv6Subnet, not even an explicit nil
-func (o *GuidanceVmwareSizingResourceInterfacesInner) UnsetIpv6Subnet() {
-	o.Ipv6Subnet.Unset()
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -570,28 +393,9 @@ func (o *GuidanceVmwareSizingResourceInterfacesInner) GetDescriptionOk() (*strin
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingResourceInterfacesInner) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *GuidanceVmwareSizingResourceInterfacesInner) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *GuidanceVmwareSizingResourceInterfacesInner) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *GuidanceVmwareSizingResourceInterfacesInner) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetDhcp returns the Dhcp field value if set, zero value otherwise.
@@ -610,15 +414,6 @@ func (o *GuidanceVmwareSizingResourceInterfacesInner) GetDhcpOk() (*bool, bool) 
 		return nil, false
 	}
 	return o.Dhcp, true
-}
-
-// IsSetDhcp returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingResourceInterfacesInner) IsSetDhcp() bool {
-	if o != nil && !IsNil(o.Dhcp) {
-		return true
-	}
-
-	return false
 }
 
 // SetDhcp gets a reference to the given bool and assigns it to the Dhcp field.
@@ -644,15 +439,6 @@ func (o *GuidanceVmwareSizingResourceInterfacesInner) GetActiveOk() (*bool, bool
 	return o.Active, true
 }
 
-// IsSetActive returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingResourceInterfacesInner) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
-}
-
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *GuidanceVmwareSizingResourceInterfacesInner) SetActive(v bool) {
 	o.Active = &v
@@ -674,15 +460,6 @@ func (o *GuidanceVmwareSizingResourceInterfacesInner) GetPoolAssignedOk() (*bool
 		return nil, false
 	}
 	return o.PoolAssigned, true
-}
-
-// IsSetPoolAssigned returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingResourceInterfacesInner) IsSetPoolAssigned() bool {
-	if o != nil && !IsNil(o.PoolAssigned) {
-		return true
-	}
-
-	return false
 }
 
 // SetPoolAssigned gets a reference to the given bool and assigns it to the PoolAssigned field.
@@ -708,15 +485,6 @@ func (o *GuidanceVmwareSizingResourceInterfacesInner) GetPrimaryInterfaceOk() (*
 	return o.PrimaryInterface, true
 }
 
-// IsSetPrimaryInterface returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingResourceInterfacesInner) IsSetPrimaryInterface() bool {
-	if o != nil && !IsNil(o.PrimaryInterface) {
-		return true
-	}
-
-	return false
-}
-
 // SetPrimaryInterface gets a reference to the given bool and assigns it to the PrimaryInterface field.
 func (o *GuidanceVmwareSizingResourceInterfacesInner) SetPrimaryInterface(v bool) {
 	o.PrimaryInterface = &v
@@ -738,15 +506,6 @@ func (o *GuidanceVmwareSizingResourceInterfacesInner) GetNetworkOk() (*GuidanceV
 		return nil, false
 	}
 	return o.Network, true
-}
-
-// IsSetNetwork returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingResourceInterfacesInner) IsSetNetwork() bool {
-	if o != nil && !IsNil(o.Network) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetwork gets a reference to the given GuidanceVmwareSizingResourceInterfacesInnerNetwork and assigns it to the Network field.
@@ -773,28 +532,9 @@ func (o *GuidanceVmwareSizingResourceInterfacesInner) GetSubnetOk() (*string, bo
 	return o.Subnet.Get(), o.Subnet.IsSet()
 }
 
-// IsSetSubnet returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingResourceInterfacesInner) IsSetSubnet() bool {
-	if o != nil && o.Subnet.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSubnet gets a reference to the given NullableString and assigns it to the Subnet field.
 func (o *GuidanceVmwareSizingResourceInterfacesInner) SetSubnet(v string) {
 	o.Subnet.Set(&v)
-}
-
-// SetSubnetNil sets the value for Subnet to be an explicit nil
-func (o *GuidanceVmwareSizingResourceInterfacesInner) SetSubnetNil() {
-	o.Subnet.Set(nil)
-}
-
-// UnsetSubnet ensures that no value is present for Subnet, not even an explicit nil
-func (o *GuidanceVmwareSizingResourceInterfacesInner) UnsetSubnet() {
-	o.Subnet.Unset()
 }
 
 // GetNetworkGroup returns the NetworkGroup field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -816,28 +556,9 @@ func (o *GuidanceVmwareSizingResourceInterfacesInner) GetNetworkGroupOk() (*stri
 	return o.NetworkGroup.Get(), o.NetworkGroup.IsSet()
 }
 
-// IsSetNetworkGroup returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingResourceInterfacesInner) IsSetNetworkGroup() bool {
-	if o != nil && o.NetworkGroup.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkGroup gets a reference to the given NullableString and assigns it to the NetworkGroup field.
 func (o *GuidanceVmwareSizingResourceInterfacesInner) SetNetworkGroup(v string) {
 	o.NetworkGroup.Set(&v)
-}
-
-// SetNetworkGroupNil sets the value for NetworkGroup to be an explicit nil
-func (o *GuidanceVmwareSizingResourceInterfacesInner) SetNetworkGroupNil() {
-	o.NetworkGroup.Set(nil)
-}
-
-// UnsetNetworkGroup ensures that no value is present for NetworkGroup, not even an explicit nil
-func (o *GuidanceVmwareSizingResourceInterfacesInner) UnsetNetworkGroup() {
-	o.NetworkGroup.Unset()
 }
 
 // GetNetworkPosition returns the NetworkPosition field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -859,28 +580,9 @@ func (o *GuidanceVmwareSizingResourceInterfacesInner) GetNetworkPositionOk() (*s
 	return o.NetworkPosition.Get(), o.NetworkPosition.IsSet()
 }
 
-// IsSetNetworkPosition returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingResourceInterfacesInner) IsSetNetworkPosition() bool {
-	if o != nil && o.NetworkPosition.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkPosition gets a reference to the given NullableString and assigns it to the NetworkPosition field.
 func (o *GuidanceVmwareSizingResourceInterfacesInner) SetNetworkPosition(v string) {
 	o.NetworkPosition.Set(&v)
-}
-
-// SetNetworkPositionNil sets the value for NetworkPosition to be an explicit nil
-func (o *GuidanceVmwareSizingResourceInterfacesInner) SetNetworkPositionNil() {
-	o.NetworkPosition.Set(nil)
-}
-
-// UnsetNetworkPosition ensures that no value is present for NetworkPosition, not even an explicit nil
-func (o *GuidanceVmwareSizingResourceInterfacesInner) UnsetNetworkPosition() {
-	o.NetworkPosition.Unset()
 }
 
 // GetNetworkPool returns the NetworkPool field value if set, zero value otherwise.
@@ -899,15 +601,6 @@ func (o *GuidanceVmwareSizingResourceInterfacesInner) GetNetworkPoolOk() (*Guida
 		return nil, false
 	}
 	return o.NetworkPool, true
-}
-
-// IsSetNetworkPool returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingResourceInterfacesInner) IsSetNetworkPool() bool {
-	if o != nil && !IsNil(o.NetworkPool) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkPool gets a reference to the given GuidanceVmwareSizingResourceInterfacesInnerNetworkPool and assigns it to the NetworkPool field.
@@ -933,15 +626,6 @@ func (o *GuidanceVmwareSizingResourceInterfacesInner) GetNetworkDomainOk() (*Gui
 	return o.NetworkDomain, true
 }
 
-// IsSetNetworkDomain returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingResourceInterfacesInner) IsSetNetworkDomain() bool {
-	if o != nil && !IsNil(o.NetworkDomain) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkDomain gets a reference to the given GuidanceVmwareSizingResourceInterfacesInnerNetworkDomain and assigns it to the NetworkDomain field.
 func (o *GuidanceVmwareSizingResourceInterfacesInner) SetNetworkDomain(v GuidanceVmwareSizingResourceInterfacesInnerNetworkDomain) {
 	o.NetworkDomain = &v
@@ -963,15 +647,6 @@ func (o *GuidanceVmwareSizingResourceInterfacesInner) GetTypeOk() (*GuidanceVmwa
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingResourceInterfacesInner) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given GuidanceVmwareSizingResourceInterfacesInnerType and assigns it to the Type field.
@@ -997,15 +672,6 @@ func (o *GuidanceVmwareSizingResourceInterfacesInner) GetIpModeOk() (*string, bo
 	return o.IpMode, true
 }
 
-// IsSetIpMode returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingResourceInterfacesInner) IsSetIpMode() bool {
-	if o != nil && !IsNil(o.IpMode) {
-		return true
-	}
-
-	return false
-}
-
 // SetIpMode gets a reference to the given string and assigns it to the IpMode field.
 func (o *GuidanceVmwareSizingResourceInterfacesInner) SetIpMode(v string) {
 	o.IpMode = &v
@@ -1027,15 +693,6 @@ func (o *GuidanceVmwareSizingResourceInterfacesInner) GetMacAddressOk() (*string
 		return nil, false
 	}
 	return o.MacAddress, true
-}
-
-// IsSetMacAddress returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingResourceInterfacesInner) IsSetMacAddress() bool {
-	if o != nil && !IsNil(o.MacAddress) {
-		return true
-	}
-
-	return false
 }
 
 // SetMacAddress gets a reference to the given string and assigns it to the MacAddress field.

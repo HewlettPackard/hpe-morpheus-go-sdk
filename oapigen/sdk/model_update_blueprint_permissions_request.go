@@ -61,15 +61,6 @@ func (o *UpdateBlueprintPermissionsRequest) GetResourcePermissionOk() (*UpdateBl
 	return o.ResourcePermission, true
 }
 
-// IsSetResourcePermission returns a boolean if a field has been set.
-func (o *UpdateBlueprintPermissionsRequest) IsSetResourcePermission() bool {
-	if o != nil && !IsNil(o.ResourcePermission) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourcePermission gets a reference to the given UpdateBlueprintPermissionsRequestResourcePermission and assigns it to the ResourcePermission field.
 func (o *UpdateBlueprintPermissionsRequest) SetResourcePermission(v UpdateBlueprintPermissionsRequestResourcePermission) {
 	o.ResourcePermission = &v

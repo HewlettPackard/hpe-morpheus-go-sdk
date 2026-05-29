@@ -62,15 +62,6 @@ func (o *SnapshotsInstance200ResponseSnapshotsInnerZone) GetIdOk() (*int32, bool
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *SnapshotsInstance200ResponseSnapshotsInnerZone) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int32 and assigns it to the Id field.
 func (o *SnapshotsInstance200ResponseSnapshotsInnerZone) SetId(v int32) {
 	o.Id = &v
@@ -92,15 +83,6 @@ func (o *SnapshotsInstance200ResponseSnapshotsInnerZone) GetNameOk() (*string, b
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *SnapshotsInstance200ResponseSnapshotsInnerZone) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.

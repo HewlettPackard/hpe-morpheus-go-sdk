@@ -64,15 +64,6 @@ func (o *ListClusterIngresses200ResponseAllOfIngressesInner) GetIdOk() (*int64, 
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListClusterIngresses200ResponseAllOfIngressesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListClusterIngresses200ResponseAllOfIngressesInner) SetId(v int64) {
 	o.Id = &v
@@ -94,15 +85,6 @@ func (o *ListClusterIngresses200ResponseAllOfIngressesInner) GetNameOk() (*strin
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListClusterIngresses200ResponseAllOfIngressesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -128,15 +110,6 @@ func (o *ListClusterIngresses200ResponseAllOfIngressesInner) GetCodeOk() (*strin
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *ListClusterIngresses200ResponseAllOfIngressesInner) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *ListClusterIngresses200ResponseAllOfIngressesInner) SetCode(v string) {
 	o.Code = &v
@@ -158,15 +131,6 @@ func (o *ListClusterIngresses200ResponseAllOfIngressesInner) GetCategoryOk() (*s
 		return nil, false
 	}
 	return o.Category, true
-}
-
-// IsSetCategory returns a boolean if a field has been set.
-func (o *ListClusterIngresses200ResponseAllOfIngressesInner) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
-		return true
-	}
-
-	return false
 }
 
 // SetCategory gets a reference to the given string and assigns it to the Category field.

@@ -63,15 +63,6 @@ func (o *UpdateClusterDatastoreRequestDatastorePermissions) GetResourcePermissio
 	return o.ResourcePermissions, true
 }
 
-// IsSetResourcePermissions returns a boolean if a field has been set.
-func (o *UpdateClusterDatastoreRequestDatastorePermissions) IsSetResourcePermissions() bool {
-	if o != nil && !IsNil(o.ResourcePermissions) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourcePermissions gets a reference to the given UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissions and assigns it to the ResourcePermissions field.
 func (o *UpdateClusterDatastoreRequestDatastorePermissions) SetResourcePermissions(v UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissions) {
 	o.ResourcePermissions = &v
@@ -95,15 +86,6 @@ func (o *UpdateClusterDatastoreRequestDatastorePermissions) GetResourcePoolOk() 
 	return o.ResourcePool, true
 }
 
-// IsSetResourcePool returns a boolean if a field has been set.
-func (o *UpdateClusterDatastoreRequestDatastorePermissions) IsSetResourcePool() bool {
-	if o != nil && !IsNil(o.ResourcePool) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourcePool gets a reference to the given UpdateClusterDatastoreRequestDatastorePermissionsResourcePool and assigns it to the ResourcePool field.
 func (o *UpdateClusterDatastoreRequestDatastorePermissions) SetResourcePool(v UpdateClusterDatastoreRequestDatastorePermissionsResourcePool) {
 	o.ResourcePool = &v
@@ -125,15 +107,6 @@ func (o *UpdateClusterDatastoreRequestDatastorePermissions) GetTenantPermissions
 		return nil, false
 	}
 	return o.TenantPermissions, true
-}
-
-// IsSetTenantPermissions returns a boolean if a field has been set.
-func (o *UpdateClusterDatastoreRequestDatastorePermissions) IsSetTenantPermissions() bool {
-	if o != nil && !IsNil(o.TenantPermissions) {
-		return true
-	}
-
-	return false
 }
 
 // SetTenantPermissions gets a reference to the given UpdateClusterDatastoreRequestDatastorePermissionsTenantPermissions and assigns it to the TenantPermissions field.

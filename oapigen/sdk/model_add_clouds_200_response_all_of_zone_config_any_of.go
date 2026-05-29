@@ -75,28 +75,9 @@ func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) GetApplianceUrlOk() (*string,
 	return o.ApplianceUrl.Get(), o.ApplianceUrl.IsSet()
 }
 
-// IsSetApplianceUrl returns a boolean if a field has been set.
-func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) IsSetApplianceUrl() bool {
-	if o != nil && o.ApplianceUrl.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetApplianceUrl gets a reference to the given NullableString and assigns it to the ApplianceUrl field.
 func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetApplianceUrl(v string) {
 	o.ApplianceUrl.Set(&v)
-}
-
-// SetApplianceUrlNil sets the value for ApplianceUrl to be an explicit nil
-func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetApplianceUrlNil() {
-	o.ApplianceUrl.Set(nil)
-}
-
-// UnsetApplianceUrl ensures that no value is present for ApplianceUrl, not even an explicit nil
-func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) UnsetApplianceUrl() {
-	o.ApplianceUrl.Unset()
 }
 
 // GetDatacenterName returns the DatacenterName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -118,28 +99,9 @@ func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) GetDatacenterNameOk() (*strin
 	return o.DatacenterName.Get(), o.DatacenterName.IsSet()
 }
 
-// IsSetDatacenterName returns a boolean if a field has been set.
-func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) IsSetDatacenterName() bool {
-	if o != nil && o.DatacenterName.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDatacenterName gets a reference to the given NullableString and assigns it to the DatacenterName field.
 func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetDatacenterName(v string) {
 	o.DatacenterName.Set(&v)
-}
-
-// SetDatacenterNameNil sets the value for DatacenterName to be an explicit nil
-func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetDatacenterNameNil() {
-	o.DatacenterName.Set(nil)
-}
-
-// UnsetDatacenterName ensures that no value is present for DatacenterName, not even an explicit nil
-func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) UnsetDatacenterName() {
-	o.DatacenterName.Unset()
 }
 
 // GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -161,28 +123,9 @@ func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) GetExternalIdOk() (*string, b
 	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) IsSetExternalId() bool {
-	if o != nil && o.ExternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetExternalId(v string) {
 	o.ExternalId.Set(&v)
-}
-
-// SetExternalIdNil sets the value for ExternalId to be an explicit nil
-func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetExternalIdNil() {
-	o.ExternalId.Set(nil)
-}
-
-// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) UnsetExternalId() {
-	o.ExternalId.Unset()
 }
 
 // GetInventoryLevel returns the InventoryLevel field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -204,28 +147,9 @@ func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) GetInventoryLevelOk() (*strin
 	return o.InventoryLevel.Get(), o.InventoryLevel.IsSet()
 }
 
-// IsSetInventoryLevel returns a boolean if a field has been set.
-func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) IsSetInventoryLevel() bool {
-	if o != nil && o.InventoryLevel.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInventoryLevel gets a reference to the given NullableString and assigns it to the InventoryLevel field.
 func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetInventoryLevel(v string) {
 	o.InventoryLevel.Set(&v)
-}
-
-// SetInventoryLevelNil sets the value for InventoryLevel to be an explicit nil
-func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetInventoryLevelNil() {
-	o.InventoryLevel.Set(nil)
-}
-
-// UnsetInventoryLevel ensures that no value is present for InventoryLevel, not even an explicit nil
-func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) UnsetInventoryLevel() {
-	o.InventoryLevel.Unset()
 }
 
 // GetConsoleKeymap returns the ConsoleKeymap field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -247,28 +171,9 @@ func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) GetConsoleKeymapOk() (*string
 	return o.ConsoleKeymap.Get(), o.ConsoleKeymap.IsSet()
 }
 
-// IsSetConsoleKeymap returns a boolean if a field has been set.
-func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) IsSetConsoleKeymap() bool {
-	if o != nil && o.ConsoleKeymap.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetConsoleKeymap gets a reference to the given NullableString and assigns it to the ConsoleKeymap field.
 func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetConsoleKeymap(v string) {
 	o.ConsoleKeymap.Set(&v)
-}
-
-// SetConsoleKeymapNil sets the value for ConsoleKeymap to be an explicit nil
-func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetConsoleKeymapNil() {
-	o.ConsoleKeymap.Set(nil)
-}
-
-// UnsetConsoleKeymap ensures that no value is present for ConsoleKeymap, not even an explicit nil
-func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) UnsetConsoleKeymap() {
-	o.ConsoleKeymap.Unset()
 }
 
 // GetBackupMode returns the BackupMode field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -290,28 +195,9 @@ func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) GetBackupModeOk() (*string, b
 	return o.BackupMode.Get(), o.BackupMode.IsSet()
 }
 
-// IsSetBackupMode returns a boolean if a field has been set.
-func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) IsSetBackupMode() bool {
-	if o != nil && o.BackupMode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetBackupMode gets a reference to the given NullableString and assigns it to the BackupMode field.
 func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetBackupMode(v string) {
 	o.BackupMode.Set(&v)
-}
-
-// SetBackupModeNil sets the value for BackupMode to be an explicit nil
-func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetBackupModeNil() {
-	o.BackupMode.Set(nil)
-}
-
-// UnsetBackupMode ensures that no value is present for BackupMode, not even an explicit nil
-func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) UnsetBackupMode() {
-	o.BackupMode.Unset()
 }
 
 // GetCertificateProvider returns the CertificateProvider field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -333,28 +219,9 @@ func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) GetCertificateProviderOk() (*
 	return o.CertificateProvider.Get(), o.CertificateProvider.IsSet()
 }
 
-// IsSetCertificateProvider returns a boolean if a field has been set.
-func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) IsSetCertificateProvider() bool {
-	if o != nil && o.CertificateProvider.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCertificateProvider gets a reference to the given NullableString and assigns it to the CertificateProvider field.
 func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetCertificateProvider(v string) {
 	o.CertificateProvider.Set(&v)
-}
-
-// SetCertificateProviderNil sets the value for CertificateProvider to be an explicit nil
-func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetCertificateProviderNil() {
-	o.CertificateProvider.Set(nil)
-}
-
-// UnsetCertificateProvider ensures that no value is present for CertificateProvider, not even an explicit nil
-func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) UnsetCertificateProvider() {
-	o.CertificateProvider.Unset()
 }
 
 // GetConfigCmdbDiscovery returns the ConfigCmdbDiscovery field value if set, zero value otherwise.
@@ -373,15 +240,6 @@ func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) GetConfigCmdbDiscoveryOk() (*
 		return nil, false
 	}
 	return o.ConfigCmdbDiscovery, true
-}
-
-// IsSetConfigCmdbDiscovery returns a boolean if a field has been set.
-func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) IsSetConfigCmdbDiscovery() bool {
-	if o != nil && !IsNil(o.ConfigCmdbDiscovery) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfigCmdbDiscovery gets a reference to the given bool and assigns it to the ConfigCmdbDiscovery field.
@@ -408,28 +266,9 @@ func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) GetEnableNetworkTypeSelection
 	return o.EnableNetworkTypeSelection.Get(), o.EnableNetworkTypeSelection.IsSet()
 }
 
-// IsSetEnableNetworkTypeSelection returns a boolean if a field has been set.
-func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) IsSetEnableNetworkTypeSelection() bool {
-	if o != nil && o.EnableNetworkTypeSelection.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetEnableNetworkTypeSelection gets a reference to the given NullableString and assigns it to the EnableNetworkTypeSelection field.
 func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetEnableNetworkTypeSelection(v string) {
 	o.EnableNetworkTypeSelection.Set(&v)
-}
-
-// SetEnableNetworkTypeSelectionNil sets the value for EnableNetworkTypeSelection to be an explicit nil
-func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetEnableNetworkTypeSelectionNil() {
-	o.EnableNetworkTypeSelection.Set(nil)
-}
-
-// UnsetEnableNetworkTypeSelection ensures that no value is present for EnableNetworkTypeSelection, not even an explicit nil
-func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) UnsetEnableNetworkTypeSelection() {
-	o.EnableNetworkTypeSelection.Unset()
 }
 
 // GetKubeUrl returns the KubeUrl field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -451,28 +290,9 @@ func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) GetKubeUrlOk() (*string, bool
 	return o.KubeUrl.Get(), o.KubeUrl.IsSet()
 }
 
-// IsSetKubeUrl returns a boolean if a field has been set.
-func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) IsSetKubeUrl() bool {
-	if o != nil && o.KubeUrl.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetKubeUrl gets a reference to the given NullableString and assigns it to the KubeUrl field.
 func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetKubeUrl(v string) {
 	o.KubeUrl.Set(&v)
-}
-
-// SetKubeUrlNil sets the value for KubeUrl to be an explicit nil
-func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetKubeUrlNil() {
-	o.KubeUrl.Set(nil)
-}
-
-// UnsetKubeUrl ensures that no value is present for KubeUrl, not even an explicit nil
-func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) UnsetKubeUrl() {
-	o.KubeUrl.Unset()
 }
 
 // GetNetworkServer returns the NetworkServer field value if set, zero value otherwise.
@@ -491,15 +311,6 @@ func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) GetNetworkServerOk() (*AddClo
 		return nil, false
 	}
 	return o.NetworkServer, true
-}
-
-// IsSetNetworkServer returns a boolean if a field has been set.
-func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) IsSetNetworkServer() bool {
-	if o != nil && !IsNil(o.NetworkServer) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkServer gets a reference to the given AddClouds200ResponseAllOfZoneConfigAnyOfNetworkServer and assigns it to the NetworkServer field.
@@ -523,15 +334,6 @@ func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) GetNetworkServerIdOk() (*stri
 		return nil, false
 	}
 	return o.NetworkServerId, true
-}
-
-// IsSetNetworkServerId returns a boolean if a field has been set.
-func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) IsSetNetworkServerId() bool {
-	if o != nil && !IsNil(o.NetworkServerId) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkServerId gets a reference to the given string and assigns it to the NetworkServerId field.
@@ -558,28 +360,9 @@ func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) GetReplicationModeOk() (*stri
 	return o.ReplicationMode.Get(), o.ReplicationMode.IsSet()
 }
 
-// IsSetReplicationMode returns a boolean if a field has been set.
-func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) IsSetReplicationMode() bool {
-	if o != nil && o.ReplicationMode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetReplicationMode gets a reference to the given NullableString and assigns it to the ReplicationMode field.
 func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetReplicationMode(v string) {
 	o.ReplicationMode.Set(&v)
-}
-
-// SetReplicationModeNil sets the value for ReplicationMode to be an explicit nil
-func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetReplicationModeNil() {
-	o.ReplicationMode.Set(nil)
-}
-
-// UnsetReplicationMode ensures that no value is present for ReplicationMode, not even an explicit nil
-func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) UnsetReplicationMode() {
-	o.ReplicationMode.Unset()
 }
 
 // GetSecurityServer returns the SecurityServer field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -601,28 +384,9 @@ func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) GetSecurityServerOk() (*strin
 	return o.SecurityServer.Get(), o.SecurityServer.IsSet()
 }
 
-// IsSetSecurityServer returns a boolean if a field has been set.
-func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) IsSetSecurityServer() bool {
-	if o != nil && o.SecurityServer.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSecurityServer gets a reference to the given NullableString and assigns it to the SecurityServer field.
 func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetSecurityServer(v string) {
 	o.SecurityServer.Set(&v)
-}
-
-// SetSecurityServerNil sets the value for SecurityServer to be an explicit nil
-func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) SetSecurityServerNil() {
-	o.SecurityServer.Set(nil)
-}
-
-// UnsetSecurityServer ensures that no value is present for SecurityServer, not even an explicit nil
-func (o *AddClouds200ResponseAllOfZoneConfigAnyOf) UnsetSecurityServer() {
-	o.SecurityServer.Unset()
 }
 
 func (o AddClouds200ResponseAllOfZoneConfigAnyOf) MarshalJSON() ([]byte, error) {

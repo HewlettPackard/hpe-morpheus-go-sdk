@@ -66,15 +66,6 @@ func (o *GetClusterLayout200ResponseLayoutSpecTemplatesInnerFile) GetIdOk() (*in
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetClusterLayout200ResponseLayoutSpecTemplatesInnerFile) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetClusterLayout200ResponseLayoutSpecTemplatesInnerFile) SetId(v int64) {
 	o.Id = &v
@@ -96,15 +87,6 @@ func (o *GetClusterLayout200ResponseLayoutSpecTemplatesInnerFile) GetSourceTypeO
 		return nil, false
 	}
 	return o.SourceType, true
-}
-
-// IsSetSourceType returns a boolean if a field has been set.
-func (o *GetClusterLayout200ResponseLayoutSpecTemplatesInnerFile) IsSetSourceType() bool {
-	if o != nil && !IsNil(o.SourceType) {
-		return true
-	}
-
-	return false
 }
 
 // SetSourceType gets a reference to the given string and assigns it to the SourceType field.
@@ -131,28 +113,9 @@ func (o *GetClusterLayout200ResponseLayoutSpecTemplatesInnerFile) GetContentRefO
 	return o.ContentRef.Get(), o.ContentRef.IsSet()
 }
 
-// IsSetContentRef returns a boolean if a field has been set.
-func (o *GetClusterLayout200ResponseLayoutSpecTemplatesInnerFile) IsSetContentRef() bool {
-	if o != nil && o.ContentRef.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetContentRef gets a reference to the given NullableString and assigns it to the ContentRef field.
 func (o *GetClusterLayout200ResponseLayoutSpecTemplatesInnerFile) SetContentRef(v string) {
 	o.ContentRef.Set(&v)
-}
-
-// SetContentRefNil sets the value for ContentRef to be an explicit nil
-func (o *GetClusterLayout200ResponseLayoutSpecTemplatesInnerFile) SetContentRefNil() {
-	o.ContentRef.Set(nil)
-}
-
-// UnsetContentRef ensures that no value is present for ContentRef, not even an explicit nil
-func (o *GetClusterLayout200ResponseLayoutSpecTemplatesInnerFile) UnsetContentRef() {
-	o.ContentRef.Unset()
 }
 
 // GetContentPath returns the ContentPath field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -174,28 +137,9 @@ func (o *GetClusterLayout200ResponseLayoutSpecTemplatesInnerFile) GetContentPath
 	return o.ContentPath.Get(), o.ContentPath.IsSet()
 }
 
-// IsSetContentPath returns a boolean if a field has been set.
-func (o *GetClusterLayout200ResponseLayoutSpecTemplatesInnerFile) IsSetContentPath() bool {
-	if o != nil && o.ContentPath.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetContentPath gets a reference to the given NullableString and assigns it to the ContentPath field.
 func (o *GetClusterLayout200ResponseLayoutSpecTemplatesInnerFile) SetContentPath(v string) {
 	o.ContentPath.Set(&v)
-}
-
-// SetContentPathNil sets the value for ContentPath to be an explicit nil
-func (o *GetClusterLayout200ResponseLayoutSpecTemplatesInnerFile) SetContentPathNil() {
-	o.ContentPath.Set(nil)
-}
-
-// UnsetContentPath ensures that no value is present for ContentPath, not even an explicit nil
-func (o *GetClusterLayout200ResponseLayoutSpecTemplatesInnerFile) UnsetContentPath() {
-	o.ContentPath.Unset()
 }
 
 // GetRepository returns the Repository field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -217,28 +161,9 @@ func (o *GetClusterLayout200ResponseLayoutSpecTemplatesInnerFile) GetRepositoryO
 	return o.Repository.Get(), o.Repository.IsSet()
 }
 
-// IsSetRepository returns a boolean if a field has been set.
-func (o *GetClusterLayout200ResponseLayoutSpecTemplatesInnerFile) IsSetRepository() bool {
-	if o != nil && o.Repository.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRepository gets a reference to the given NullableString and assigns it to the Repository field.
 func (o *GetClusterLayout200ResponseLayoutSpecTemplatesInnerFile) SetRepository(v string) {
 	o.Repository.Set(&v)
-}
-
-// SetRepositoryNil sets the value for Repository to be an explicit nil
-func (o *GetClusterLayout200ResponseLayoutSpecTemplatesInnerFile) SetRepositoryNil() {
-	o.Repository.Set(nil)
-}
-
-// UnsetRepository ensures that no value is present for Repository, not even an explicit nil
-func (o *GetClusterLayout200ResponseLayoutSpecTemplatesInnerFile) UnsetRepository() {
-	o.Repository.Unset()
 }
 
 // GetContent returns the Content field value if set, zero value otherwise.
@@ -257,15 +182,6 @@ func (o *GetClusterLayout200ResponseLayoutSpecTemplatesInnerFile) GetContentOk()
 		return nil, false
 	}
 	return o.Content, true
-}
-
-// IsSetContent returns a boolean if a field has been set.
-func (o *GetClusterLayout200ResponseLayoutSpecTemplatesInnerFile) IsSetContent() bool {
-	if o != nil && !IsNil(o.Content) {
-		return true
-	}
-
-	return false
 }
 
 // SetContent gets a reference to the given string and assigns it to the Content field.

@@ -74,15 +74,6 @@ func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) GetIdOk() (*int
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) SetId(v int64) {
 	o.Id = &v
@@ -106,15 +97,6 @@ func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) GetNameOk() (*s
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) SetName(v string) {
 	o.Name = &v
@@ -136,15 +118,6 @@ func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) GetCodeOk() (*s
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -171,28 +144,9 @@ func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) GetDescriptionO
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetCategory returns the Category field value if set, zero value otherwise.
@@ -211,15 +165,6 @@ func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) GetCategoryOk()
 		return nil, false
 	}
 	return o.Category, true
-}
-
-// IsSetCategory returns a boolean if a field has been set.
-func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
-		return true
-	}
-
-	return false
 }
 
 // SetCategory gets a reference to the given string and assigns it to the Category field.
@@ -246,28 +191,9 @@ func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) GetResourceLeve
 	return o.ResourceLevel.Get(), o.ResourceLevel.IsSet()
 }
 
-// IsSetResourceLevel returns a boolean if a field has been set.
-func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) IsSetResourceLevel() bool {
-	if o != nil && o.ResourceLevel.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetResourceLevel gets a reference to the given NullableString and assigns it to the ResourceLevel field.
 func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) SetResourceLevel(v string) {
 	o.ResourceLevel.Set(&v)
-}
-
-// SetResourceLevelNil sets the value for ResourceLevel to be an explicit nil
-func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) SetResourceLevelNil() {
-	o.ResourceLevel.Set(nil)
-}
-
-// UnsetResourceLevel ensures that no value is present for ResourceLevel, not even an explicit nil
-func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) UnsetResourceLevel() {
-	o.ResourceLevel.Unset()
 }
 
 // GetResourceType returns the ResourceType field value if set, zero value otherwise.
@@ -286,15 +212,6 @@ func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) GetResourceType
 		return nil, false
 	}
 	return o.ResourceType, true
-}
-
-// IsSetResourceType returns a boolean if a field has been set.
-func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) IsSetResourceType() bool {
-	if o != nil && !IsNil(o.ResourceType) {
-		return true
-	}
-
-	return false
 }
 
 // SetResourceType gets a reference to the given string and assigns it to the ResourceType field.
@@ -321,28 +238,9 @@ func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) GetManagedOk() 
 	return o.Managed.Get(), o.Managed.IsSet()
 }
 
-// IsSetManaged returns a boolean if a field has been set.
-func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) IsSetManaged() bool {
-	if o != nil && o.Managed.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetManaged gets a reference to the given NullableBool and assigns it to the Managed field.
 func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) SetManaged(v bool) {
 	o.Managed.Set(&v)
-}
-
-// SetManagedNil sets the value for Managed to be an explicit nil
-func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) SetManagedNil() {
-	o.Managed.Set(nil)
-}
-
-// UnsetManaged ensures that no value is present for Managed, not even an explicit nil
-func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) UnsetManaged() {
-	o.Managed.Unset()
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -361,15 +259,6 @@ func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) GetStatusOk() (
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -396,28 +285,9 @@ func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) GetLastUpdatedO
 	return o.LastUpdated.Get(), o.LastUpdated.IsSet()
 }
 
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) IsSetLastUpdated() bool {
-	if o != nil && o.LastUpdated.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastUpdated gets a reference to the given NullableTime and assigns it to the LastUpdated field.
 func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) SetLastUpdated(v time.Time) {
 	o.LastUpdated.Set(&v)
-}
-
-// SetLastUpdatedNil sets the value for LastUpdated to be an explicit nil
-func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) SetLastUpdatedNil() {
-	o.LastUpdated.Set(nil)
-}
-
-// UnsetLastUpdated ensures that no value is present for LastUpdated, not even an explicit nil
-func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) UnsetLastUpdated() {
-	o.LastUpdated.Unset()
 }
 
 // GetOwner returns the Owner field value if set, zero value otherwise.
@@ -436,15 +306,6 @@ func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) GetOwnerOk() (*
 		return nil, false
 	}
 	return o.Owner, true
-}
-
-// IsSetOwner returns a boolean if a field has been set.
-func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
-		return true
-	}
-
-	return false
 }
 
 // SetOwner gets a reference to the given ListClusterReplicasets200ResponseAllOfReplicasetsInnerOwner and assigns it to the Owner field.
@@ -471,28 +332,9 @@ func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) GetTotalCpuUsag
 	return o.TotalCpuUsage.Get(), o.TotalCpuUsage.IsSet()
 }
 
-// IsSetTotalCpuUsage returns a boolean if a field has been set.
-func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) IsSetTotalCpuUsage() bool {
-	if o != nil && o.TotalCpuUsage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetTotalCpuUsage gets a reference to the given NullableInt64 and assigns it to the TotalCpuUsage field.
 func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) SetTotalCpuUsage(v int64) {
 	o.TotalCpuUsage.Set(&v)
-}
-
-// SetTotalCpuUsageNil sets the value for TotalCpuUsage to be an explicit nil
-func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) SetTotalCpuUsageNil() {
-	o.TotalCpuUsage.Set(nil)
-}
-
-// UnsetTotalCpuUsage ensures that no value is present for TotalCpuUsage, not even an explicit nil
-func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) UnsetTotalCpuUsage() {
-	o.TotalCpuUsage.Unset()
 }
 
 // GetStats returns the Stats field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -512,15 +354,6 @@ func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) GetStatsOk() (m
 		return map[string]interface{}{}, false
 	}
 	return o.Stats, true
-}
-
-// IsSetStats returns a boolean if a field has been set.
-func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) IsSetStats() bool {
-	if o != nil && !IsNil(o.Stats) {
-		return true
-	}
-
-	return false
 }
 
 // SetStats gets a reference to the given map[string]interface{} and assigns it to the Stats field.

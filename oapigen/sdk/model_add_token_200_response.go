@@ -62,15 +62,6 @@ func (o *AddToken200Response) GetTokenOk() (*AddToken200ResponseAllOfToken, bool
 	return o.Token, true
 }
 
-// IsSetToken returns a boolean if a field has been set.
-func (o *AddToken200Response) IsSetToken() bool {
-	if o != nil && !IsNil(o.Token) {
-		return true
-	}
-
-	return false
-}
-
 // SetToken gets a reference to the given AddToken200ResponseAllOfToken and assigns it to the Token field.
 func (o *AddToken200Response) SetToken(v AddToken200ResponseAllOfToken) {
 	o.Token = &v
@@ -92,15 +83,6 @@ func (o *AddToken200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *AddToken200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

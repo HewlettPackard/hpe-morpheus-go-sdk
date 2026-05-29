@@ -71,15 +71,6 @@ func (o *ListBlueprints200ResponseAllOfBlueprintsInner) GetIdOk() (*int64, bool)
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListBlueprints200ResponseAllOfBlueprintsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListBlueprints200ResponseAllOfBlueprintsInner) SetId(v int64) {
 	o.Id = &v
@@ -101,15 +92,6 @@ func (o *ListBlueprints200ResponseAllOfBlueprintsInner) GetNameOk() (*string, bo
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListBlueprints200ResponseAllOfBlueprintsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -135,15 +117,6 @@ func (o *ListBlueprints200ResponseAllOfBlueprintsInner) GetLabelsOk() ([]string,
 	return o.Labels, true
 }
 
-// IsSetLabels returns a boolean if a field has been set.
-func (o *ListBlueprints200ResponseAllOfBlueprintsInner) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
-}
-
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
 func (o *ListBlueprints200ResponseAllOfBlueprintsInner) SetLabels(v []string) {
 	o.Labels = v
@@ -165,15 +138,6 @@ func (o *ListBlueprints200ResponseAllOfBlueprintsInner) GetTypeOk() (*string, bo
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *ListBlueprints200ResponseAllOfBlueprintsInner) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.
@@ -200,28 +164,9 @@ func (o *ListBlueprints200ResponseAllOfBlueprintsInner) GetDescriptionOk() (*str
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ListBlueprints200ResponseAllOfBlueprintsInner) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListBlueprints200ResponseAllOfBlueprintsInner) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *ListBlueprints200ResponseAllOfBlueprintsInner) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *ListBlueprints200ResponseAllOfBlueprintsInner) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetCategory returns the Category field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -243,28 +188,9 @@ func (o *ListBlueprints200ResponseAllOfBlueprintsInner) GetCategoryOk() (*string
 	return o.Category.Get(), o.Category.IsSet()
 }
 
-// IsSetCategory returns a boolean if a field has been set.
-func (o *ListBlueprints200ResponseAllOfBlueprintsInner) IsSetCategory() bool {
-	if o != nil && o.Category.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCategory gets a reference to the given NullableString and assigns it to the Category field.
 func (o *ListBlueprints200ResponseAllOfBlueprintsInner) SetCategory(v string) {
 	o.Category.Set(&v)
-}
-
-// SetCategoryNil sets the value for Category to be an explicit nil
-func (o *ListBlueprints200ResponseAllOfBlueprintsInner) SetCategoryNil() {
-	o.Category.Set(nil)
-}
-
-// UnsetCategory ensures that no value is present for Category, not even an explicit nil
-func (o *ListBlueprints200ResponseAllOfBlueprintsInner) UnsetCategory() {
-	o.Category.Unset()
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
@@ -283,15 +209,6 @@ func (o *ListBlueprints200ResponseAllOfBlueprintsInner) GetConfigOk() (map[strin
 		return map[string]interface{}{}, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *ListBlueprints200ResponseAllOfBlueprintsInner) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
@@ -315,15 +232,6 @@ func (o *ListBlueprints200ResponseAllOfBlueprintsInner) GetVisibilityOk() (*stri
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *ListBlueprints200ResponseAllOfBlueprintsInner) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -350,15 +258,6 @@ func (o *ListBlueprints200ResponseAllOfBlueprintsInner) GetResourcePermissionOk(
 	return o.ResourcePermission, true
 }
 
-// IsSetResourcePermission returns a boolean if a field has been set.
-func (o *ListBlueprints200ResponseAllOfBlueprintsInner) IsSetResourcePermission() bool {
-	if o != nil && !IsNil(o.ResourcePermission) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourcePermission gets a reference to the given map[string]interface{} and assigns it to the ResourcePermission field.
 func (o *ListBlueprints200ResponseAllOfBlueprintsInner) SetResourcePermission(v map[string]interface{}) {
 	o.ResourcePermission = v
@@ -380,15 +279,6 @@ func (o *ListBlueprints200ResponseAllOfBlueprintsInner) GetOwnerOk() (*ListBluep
 		return nil, false
 	}
 	return o.Owner, true
-}
-
-// IsSetOwner returns a boolean if a field has been set.
-func (o *ListBlueprints200ResponseAllOfBlueprintsInner) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
-		return true
-	}
-
-	return false
 }
 
 // SetOwner gets a reference to the given ListBlueprints200ResponseAllOfBlueprintsInnerOwner and assigns it to the Owner field.
@@ -415,28 +305,9 @@ func (o *ListBlueprints200ResponseAllOfBlueprintsInner) GetTenantOk() (*ListBlue
 	return o.Tenant.Get(), o.Tenant.IsSet()
 }
 
-// IsSetTenant returns a boolean if a field has been set.
-func (o *ListBlueprints200ResponseAllOfBlueprintsInner) IsSetTenant() bool {
-	if o != nil && o.Tenant.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetTenant gets a reference to the given NullableListBlueprints200ResponseAllOfBlueprintsInnerTenant and assigns it to the Tenant field.
 func (o *ListBlueprints200ResponseAllOfBlueprintsInner) SetTenant(v ListBlueprints200ResponseAllOfBlueprintsInnerTenant) {
 	o.Tenant.Set(&v)
-}
-
-// SetTenantNil sets the value for Tenant to be an explicit nil
-func (o *ListBlueprints200ResponseAllOfBlueprintsInner) SetTenantNil() {
-	o.Tenant.Set(nil)
-}
-
-// UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
-func (o *ListBlueprints200ResponseAllOfBlueprintsInner) UnsetTenant() {
-	o.Tenant.Unset()
 }
 
 func (o ListBlueprints200ResponseAllOfBlueprintsInner) MarshalJSON() ([]byte, error) {

@@ -72,15 +72,6 @@ func (o *PolicyType) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *PolicyType) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *PolicyType) SetId(v int64) {
 	o.Id = &v
@@ -104,15 +95,6 @@ func (o *PolicyType) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *PolicyType) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *PolicyType) SetCode(v string) {
 	o.Code = &v
@@ -134,15 +116,6 @@ func (o *PolicyType) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *PolicyType) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -169,28 +142,9 @@ func (o *PolicyType) GetDescriptionOk() (*string, bool) {
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *PolicyType) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *PolicyType) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *PolicyType) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *PolicyType) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetCategory returns the Category field value if set, zero value otherwise.
@@ -209,15 +163,6 @@ func (o *PolicyType) GetCategoryOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Category, true
-}
-
-// IsSetCategory returns a boolean if a field has been set.
-func (o *PolicyType) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
-		return true
-	}
-
-	return false
 }
 
 // SetCategory gets a reference to the given string and assigns it to the Category field.
@@ -244,28 +189,9 @@ func (o *PolicyType) GetLoadMethodOk() (*string, bool) {
 	return o.LoadMethod.Get(), o.LoadMethod.IsSet()
 }
 
-// IsSetLoadMethod returns a boolean if a field has been set.
-func (o *PolicyType) IsSetLoadMethod() bool {
-	if o != nil && o.LoadMethod.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLoadMethod gets a reference to the given NullableString and assigns it to the LoadMethod field.
 func (o *PolicyType) SetLoadMethod(v string) {
 	o.LoadMethod.Set(&v)
-}
-
-// SetLoadMethodNil sets the value for LoadMethod to be an explicit nil
-func (o *PolicyType) SetLoadMethodNil() {
-	o.LoadMethod.Set(nil)
-}
-
-// UnsetLoadMethod ensures that no value is present for LoadMethod, not even an explicit nil
-func (o *PolicyType) UnsetLoadMethod() {
-	o.LoadMethod.Unset()
 }
 
 // GetEnforceMethod returns the EnforceMethod field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -287,28 +213,9 @@ func (o *PolicyType) GetEnforceMethodOk() (*string, bool) {
 	return o.EnforceMethod.Get(), o.EnforceMethod.IsSet()
 }
 
-// IsSetEnforceMethod returns a boolean if a field has been set.
-func (o *PolicyType) IsSetEnforceMethod() bool {
-	if o != nil && o.EnforceMethod.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetEnforceMethod gets a reference to the given NullableString and assigns it to the EnforceMethod field.
 func (o *PolicyType) SetEnforceMethod(v string) {
 	o.EnforceMethod.Set(&v)
-}
-
-// SetEnforceMethodNil sets the value for EnforceMethod to be an explicit nil
-func (o *PolicyType) SetEnforceMethodNil() {
-	o.EnforceMethod.Set(nil)
-}
-
-// UnsetEnforceMethod ensures that no value is present for EnforceMethod, not even an explicit nil
-func (o *PolicyType) UnsetEnforceMethod() {
-	o.EnforceMethod.Unset()
 }
 
 // GetPrepareMethod returns the PrepareMethod field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -330,28 +237,9 @@ func (o *PolicyType) GetPrepareMethodOk() (*string, bool) {
 	return o.PrepareMethod.Get(), o.PrepareMethod.IsSet()
 }
 
-// IsSetPrepareMethod returns a boolean if a field has been set.
-func (o *PolicyType) IsSetPrepareMethod() bool {
-	if o != nil && o.PrepareMethod.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPrepareMethod gets a reference to the given NullableString and assigns it to the PrepareMethod field.
 func (o *PolicyType) SetPrepareMethod(v string) {
 	o.PrepareMethod.Set(&v)
-}
-
-// SetPrepareMethodNil sets the value for PrepareMethod to be an explicit nil
-func (o *PolicyType) SetPrepareMethodNil() {
-	o.PrepareMethod.Set(nil)
-}
-
-// UnsetPrepareMethod ensures that no value is present for PrepareMethod, not even an explicit nil
-func (o *PolicyType) UnsetPrepareMethod() {
-	o.PrepareMethod.Unset()
 }
 
 // GetValidateMethod returns the ValidateMethod field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -373,28 +261,9 @@ func (o *PolicyType) GetValidateMethodOk() (*string, bool) {
 	return o.ValidateMethod.Get(), o.ValidateMethod.IsSet()
 }
 
-// IsSetValidateMethod returns a boolean if a field has been set.
-func (o *PolicyType) IsSetValidateMethod() bool {
-	if o != nil && o.ValidateMethod.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetValidateMethod gets a reference to the given NullableString and assigns it to the ValidateMethod field.
 func (o *PolicyType) SetValidateMethod(v string) {
 	o.ValidateMethod.Set(&v)
-}
-
-// SetValidateMethodNil sets the value for ValidateMethod to be an explicit nil
-func (o *PolicyType) SetValidateMethodNil() {
-	o.ValidateMethod.Set(nil)
-}
-
-// UnsetValidateMethod ensures that no value is present for ValidateMethod, not even an explicit nil
-func (o *PolicyType) UnsetValidateMethod() {
-	o.ValidateMethod.Unset()
 }
 
 // GetEnforceOnProvision returns the EnforceOnProvision field value if set, zero value otherwise.
@@ -413,15 +282,6 @@ func (o *PolicyType) GetEnforceOnProvisionOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.EnforceOnProvision, true
-}
-
-// IsSetEnforceOnProvision returns a boolean if a field has been set.
-func (o *PolicyType) IsSetEnforceOnProvision() bool {
-	if o != nil && !IsNil(o.EnforceOnProvision) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnforceOnProvision gets a reference to the given bool and assigns it to the EnforceOnProvision field.
@@ -447,15 +307,6 @@ func (o *PolicyType) GetEnforceOnManagedOk() (*bool, bool) {
 	return o.EnforceOnManaged, true
 }
 
-// IsSetEnforceOnManaged returns a boolean if a field has been set.
-func (o *PolicyType) IsSetEnforceOnManaged() bool {
-	if o != nil && !IsNil(o.EnforceOnManaged) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnforceOnManaged gets a reference to the given bool and assigns it to the EnforceOnManaged field.
 func (o *PolicyType) SetEnforceOnManaged(v bool) {
 	o.EnforceOnManaged = &v
@@ -477,15 +328,6 @@ func (o *PolicyType) GetOptionTypesOk() ([]PolicyTypeOptionTypesInner, bool) {
 		return nil, false
 	}
 	return o.OptionTypes, true
-}
-
-// IsSetOptionTypes returns a boolean if a field has been set.
-func (o *PolicyType) IsSetOptionTypes() bool {
-	if o != nil && !IsNil(o.OptionTypes) {
-		return true
-	}
-
-	return false
 }
 
 // SetOptionTypes gets a reference to the given []PolicyTypeOptionTypesInner and assigns it to the OptionTypes field.

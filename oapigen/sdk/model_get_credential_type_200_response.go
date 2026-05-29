@@ -61,15 +61,6 @@ func (o *GetCredentialType200Response) GetCredentialTypeOk() (*GetCredentialType
 	return o.CredentialType, true
 }
 
-// IsSetCredentialType returns a boolean if a field has been set.
-func (o *GetCredentialType200Response) IsSetCredentialType() bool {
-	if o != nil && !IsNil(o.CredentialType) {
-		return true
-	}
-
-	return false
-}
-
 // SetCredentialType gets a reference to the given GetCredentialType200ResponseCredentialType and assigns it to the CredentialType field.
 func (o *GetCredentialType200Response) SetCredentialType(v GetCredentialType200ResponseCredentialType) {
 	o.CredentialType = &v

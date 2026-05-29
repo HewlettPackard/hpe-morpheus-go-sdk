@@ -62,15 +62,6 @@ func (o *ListClusterAffinityGroups200Response) GetAffinityGroupsOk() ([]ListClus
 	return o.AffinityGroups, true
 }
 
-// IsSetAffinityGroups returns a boolean if a field has been set.
-func (o *ListClusterAffinityGroups200Response) IsSetAffinityGroups() bool {
-	if o != nil && !IsNil(o.AffinityGroups) {
-		return true
-	}
-
-	return false
-}
-
 // SetAffinityGroups gets a reference to the given []ListClusterAffinityGroups200ResponseAllOfAffinityGroupsInner and assigns it to the AffinityGroups field.
 func (o *ListClusterAffinityGroups200Response) SetAffinityGroups(v []ListClusterAffinityGroups200ResponseAllOfAffinityGroupsInner) {
 	o.AffinityGroups = v
@@ -92,15 +83,6 @@ func (o *ListClusterAffinityGroups200Response) GetMetaOk() (*ListApprovals200Res
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListClusterAffinityGroups200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

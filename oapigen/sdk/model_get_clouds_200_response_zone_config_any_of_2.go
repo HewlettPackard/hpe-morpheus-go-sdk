@@ -91,15 +91,6 @@ func (o *GetClouds200ResponseZoneConfigAnyOf2) GetEndpointOk() (*string, bool) {
 	return o.Endpoint, true
 }
 
-// IsSetEndpoint returns a boolean if a field has been set.
-func (o *GetClouds200ResponseZoneConfigAnyOf2) IsSetEndpoint() bool {
-	if o != nil && !IsNil(o.Endpoint) {
-		return true
-	}
-
-	return false
-}
-
 // SetEndpoint gets a reference to the given string and assigns it to the Endpoint field.
 func (o *GetClouds200ResponseZoneConfigAnyOf2) SetEndpoint(v string) {
 	o.Endpoint = &v
@@ -121,15 +112,6 @@ func (o *GetClouds200ResponseZoneConfigAnyOf2) GetAccessKeyOk() (*string, bool) 
 		return nil, false
 	}
 	return o.AccessKey, true
-}
-
-// IsSetAccessKey returns a boolean if a field has been set.
-func (o *GetClouds200ResponseZoneConfigAnyOf2) IsSetAccessKey() bool {
-	if o != nil && !IsNil(o.AccessKey) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccessKey gets a reference to the given string and assigns it to the AccessKey field.
@@ -155,15 +137,6 @@ func (o *GetClouds200ResponseZoneConfigAnyOf2) GetSecretKeyOk() (*string, bool) 
 	return o.SecretKey, true
 }
 
-// IsSetSecretKey returns a boolean if a field has been set.
-func (o *GetClouds200ResponseZoneConfigAnyOf2) IsSetSecretKey() bool {
-	if o != nil && !IsNil(o.SecretKey) {
-		return true
-	}
-
-	return false
-}
-
 // SetSecretKey gets a reference to the given string and assigns it to the SecretKey field.
 func (o *GetClouds200ResponseZoneConfigAnyOf2) SetSecretKey(v string) {
 	o.SecretKey = &v
@@ -185,15 +158,6 @@ func (o *GetClouds200ResponseZoneConfigAnyOf2) GetUseHostCredentialsOk() (*strin
 		return nil, false
 	}
 	return o.UseHostCredentials, true
-}
-
-// IsSetUseHostCredentials returns a boolean if a field has been set.
-func (o *GetClouds200ResponseZoneConfigAnyOf2) IsSetUseHostCredentials() bool {
-	if o != nil && !IsNil(o.UseHostCredentials) {
-		return true
-	}
-
-	return false
 }
 
 // SetUseHostCredentials gets a reference to the given string and assigns it to the UseHostCredentials field.
@@ -219,15 +183,6 @@ func (o *GetClouds200ResponseZoneConfigAnyOf2) GetStsAssumeRoleOk() (*string, bo
 	return o.StsAssumeRole, true
 }
 
-// IsSetStsAssumeRole returns a boolean if a field has been set.
-func (o *GetClouds200ResponseZoneConfigAnyOf2) IsSetStsAssumeRole() bool {
-	if o != nil && !IsNil(o.StsAssumeRole) {
-		return true
-	}
-
-	return false
-}
-
 // SetStsAssumeRole gets a reference to the given string and assigns it to the StsAssumeRole field.
 func (o *GetClouds200ResponseZoneConfigAnyOf2) SetStsAssumeRole(v string) {
 	o.StsAssumeRole = &v
@@ -249,15 +204,6 @@ func (o *GetClouds200ResponseZoneConfigAnyOf2) GetIsVpcOk() (*string, bool) {
 		return nil, false
 	}
 	return o.IsVpc, true
-}
-
-// IsSetIsVpc returns a boolean if a field has been set.
-func (o *GetClouds200ResponseZoneConfigAnyOf2) IsSetIsVpc() bool {
-	if o != nil && !IsNil(o.IsVpc) {
-		return true
-	}
-
-	return false
 }
 
 // SetIsVpc gets a reference to the given string and assigns it to the IsVpc field.
@@ -283,15 +229,6 @@ func (o *GetClouds200ResponseZoneConfigAnyOf2) GetVpcOk() (*string, bool) {
 	return o.Vpc, true
 }
 
-// IsSetVpc returns a boolean if a field has been set.
-func (o *GetClouds200ResponseZoneConfigAnyOf2) IsSetVpc() bool {
-	if o != nil && !IsNil(o.Vpc) {
-		return true
-	}
-
-	return false
-}
-
 // SetVpc gets a reference to the given string and assigns it to the Vpc field.
 func (o *GetClouds200ResponseZoneConfigAnyOf2) SetVpc(v string) {
 	o.Vpc = &v
@@ -313,15 +250,6 @@ func (o *GetClouds200ResponseZoneConfigAnyOf2) GetImageStoreIdOk() (*string, boo
 		return nil, false
 	}
 	return o.ImageStoreId, true
-}
-
-// IsSetImageStoreId returns a boolean if a field has been set.
-func (o *GetClouds200ResponseZoneConfigAnyOf2) IsSetImageStoreId() bool {
-	if o != nil && !IsNil(o.ImageStoreId) {
-		return true
-	}
-
-	return false
 }
 
 // SetImageStoreId gets a reference to the given string and assigns it to the ImageStoreId field.
@@ -347,15 +275,6 @@ func (o *GetClouds200ResponseZoneConfigAnyOf2) GetEbsEncryptionOk() (*string, bo
 	return o.EbsEncryption, true
 }
 
-// IsSetEbsEncryption returns a boolean if a field has been set.
-func (o *GetClouds200ResponseZoneConfigAnyOf2) IsSetEbsEncryption() bool {
-	if o != nil && !IsNil(o.EbsEncryption) {
-		return true
-	}
-
-	return false
-}
-
 // SetEbsEncryption gets a reference to the given string and assigns it to the EbsEncryption field.
 func (o *GetClouds200ResponseZoneConfigAnyOf2) SetEbsEncryption(v string) {
 	o.EbsEncryption = &v
@@ -377,15 +296,6 @@ func (o *GetClouds200ResponseZoneConfigAnyOf2) GetCostingReportOk() (*string, bo
 		return nil, false
 	}
 	return o.CostingReport, true
-}
-
-// IsSetCostingReport returns a boolean if a field has been set.
-func (o *GetClouds200ResponseZoneConfigAnyOf2) IsSetCostingReport() bool {
-	if o != nil && !IsNil(o.CostingReport) {
-		return true
-	}
-
-	return false
 }
 
 // SetCostingReport gets a reference to the given string and assigns it to the CostingReport field.
@@ -411,15 +321,6 @@ func (o *GetClouds200ResponseZoneConfigAnyOf2) GetCostingFolderOk() (*string, bo
 	return o.CostingFolder, true
 }
 
-// IsSetCostingFolder returns a boolean if a field has been set.
-func (o *GetClouds200ResponseZoneConfigAnyOf2) IsSetCostingFolder() bool {
-	if o != nil && !IsNil(o.CostingFolder) {
-		return true
-	}
-
-	return false
-}
-
 // SetCostingFolder gets a reference to the given string and assigns it to the CostingFolder field.
 func (o *GetClouds200ResponseZoneConfigAnyOf2) SetCostingFolder(v string) {
 	o.CostingFolder = &v
@@ -441,15 +342,6 @@ func (o *GetClouds200ResponseZoneConfigAnyOf2) GetCostingBucketOk() (*string, bo
 		return nil, false
 	}
 	return o.CostingBucket, true
-}
-
-// IsSetCostingBucket returns a boolean if a field has been set.
-func (o *GetClouds200ResponseZoneConfigAnyOf2) IsSetCostingBucket() bool {
-	if o != nil && !IsNil(o.CostingBucket) {
-		return true
-	}
-
-	return false
 }
 
 // SetCostingBucket gets a reference to the given string and assigns it to the CostingBucket field.
@@ -475,15 +367,6 @@ func (o *GetClouds200ResponseZoneConfigAnyOf2) GetCostingBucketNameOk() (*string
 	return o.CostingBucketName, true
 }
 
-// IsSetCostingBucketName returns a boolean if a field has been set.
-func (o *GetClouds200ResponseZoneConfigAnyOf2) IsSetCostingBucketName() bool {
-	if o != nil && !IsNil(o.CostingBucketName) {
-		return true
-	}
-
-	return false
-}
-
 // SetCostingBucketName gets a reference to the given string and assigns it to the CostingBucketName field.
 func (o *GetClouds200ResponseZoneConfigAnyOf2) SetCostingBucketName(v string) {
 	o.CostingBucketName = &v
@@ -507,15 +390,6 @@ func (o *GetClouds200ResponseZoneConfigAnyOf2) GetCostingRegionOk() (*string, bo
 	return o.CostingRegion, true
 }
 
-// IsSetCostingRegion returns a boolean if a field has been set.
-func (o *GetClouds200ResponseZoneConfigAnyOf2) IsSetCostingRegion() bool {
-	if o != nil && !IsNil(o.CostingRegion) {
-		return true
-	}
-
-	return false
-}
-
 // SetCostingRegion gets a reference to the given string and assigns it to the CostingRegion field.
 func (o *GetClouds200ResponseZoneConfigAnyOf2) SetCostingRegion(v string) {
 	o.CostingRegion = &v
@@ -537,15 +411,6 @@ func (o *GetClouds200ResponseZoneConfigAnyOf2) GetCostingAccessKeyOk() (*string,
 		return nil, false
 	}
 	return o.CostingAccessKey, true
-}
-
-// IsSetCostingAccessKey returns a boolean if a field has been set.
-func (o *GetClouds200ResponseZoneConfigAnyOf2) IsSetCostingAccessKey() bool {
-	if o != nil && !IsNil(o.CostingAccessKey) {
-		return true
-	}
-
-	return false
 }
 
 // SetCostingAccessKey gets a reference to the given string and assigns it to the CostingAccessKey field.
@@ -572,28 +437,9 @@ func (o *GetClouds200ResponseZoneConfigAnyOf2) GetCostingSecretKeyOk() (*string,
 	return o.CostingSecretKey.Get(), o.CostingSecretKey.IsSet()
 }
 
-// IsSetCostingSecretKey returns a boolean if a field has been set.
-func (o *GetClouds200ResponseZoneConfigAnyOf2) IsSetCostingSecretKey() bool {
-	if o != nil && o.CostingSecretKey.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCostingSecretKey gets a reference to the given NullableString and assigns it to the CostingSecretKey field.
 func (o *GetClouds200ResponseZoneConfigAnyOf2) SetCostingSecretKey(v string) {
 	o.CostingSecretKey.Set(&v)
-}
-
-// SetCostingSecretKeyNil sets the value for CostingSecretKey to be an explicit nil
-func (o *GetClouds200ResponseZoneConfigAnyOf2) SetCostingSecretKeyNil() {
-	o.CostingSecretKey.Set(nil)
-}
-
-// UnsetCostingSecretKey ensures that no value is present for CostingSecretKey, not even an explicit nil
-func (o *GetClouds200ResponseZoneConfigAnyOf2) UnsetCostingSecretKey() {
-	o.CostingSecretKey.Unset()
 }
 
 // GetCostingReportName returns the CostingReportName field value if set, zero value otherwise.
@@ -612,15 +458,6 @@ func (o *GetClouds200ResponseZoneConfigAnyOf2) GetCostingReportNameOk() (*string
 		return nil, false
 	}
 	return o.CostingReportName, true
-}
-
-// IsSetCostingReportName returns a boolean if a field has been set.
-func (o *GetClouds200ResponseZoneConfigAnyOf2) IsSetCostingReportName() bool {
-	if o != nil && !IsNil(o.CostingReportName) {
-		return true
-	}
-
-	return false
 }
 
 // SetCostingReportName gets a reference to the given string and assigns it to the CostingReportName field.
@@ -646,15 +483,6 @@ func (o *GetClouds200ResponseZoneConfigAnyOf2) GetApplianceUrlOk() (*string, boo
 	return o.ApplianceUrl, true
 }
 
-// IsSetApplianceUrl returns a boolean if a field has been set.
-func (o *GetClouds200ResponseZoneConfigAnyOf2) IsSetApplianceUrl() bool {
-	if o != nil && !IsNil(o.ApplianceUrl) {
-		return true
-	}
-
-	return false
-}
-
 // SetApplianceUrl gets a reference to the given string and assigns it to the ApplianceUrl field.
 func (o *GetClouds200ResponseZoneConfigAnyOf2) SetApplianceUrl(v string) {
 	o.ApplianceUrl = &v
@@ -676,15 +504,6 @@ func (o *GetClouds200ResponseZoneConfigAnyOf2) GetDatacenterNameOk() (*string, b
 		return nil, false
 	}
 	return o.DatacenterName, true
-}
-
-// IsSetDatacenterName returns a boolean if a field has been set.
-func (o *GetClouds200ResponseZoneConfigAnyOf2) IsSetDatacenterName() bool {
-	if o != nil && !IsNil(o.DatacenterName) {
-		return true
-	}
-
-	return false
 }
 
 // SetDatacenterName gets a reference to the given string and assigns it to the DatacenterName field.
@@ -710,15 +529,6 @@ func (o *GetClouds200ResponseZoneConfigAnyOf2) GetNetworkServerIdOk() (*string, 
 	return o.NetworkServerId, true
 }
 
-// IsSetNetworkServerId returns a boolean if a field has been set.
-func (o *GetClouds200ResponseZoneConfigAnyOf2) IsSetNetworkServerId() bool {
-	if o != nil && !IsNil(o.NetworkServerId) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkServerId gets a reference to the given string and assigns it to the NetworkServerId field.
 func (o *GetClouds200ResponseZoneConfigAnyOf2) SetNetworkServerId(v string) {
 	o.NetworkServerId = &v
@@ -740,15 +550,6 @@ func (o *GetClouds200ResponseZoneConfigAnyOf2) GetNetworkServerOk() (*AddClouds2
 		return nil, false
 	}
 	return o.NetworkServer, true
-}
-
-// IsSetNetworkServer returns a boolean if a field has been set.
-func (o *GetClouds200ResponseZoneConfigAnyOf2) IsSetNetworkServer() bool {
-	if o != nil && !IsNil(o.NetworkServer) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkServer gets a reference to the given AddClouds200ResponseAllOfZoneConfigAnyOf2NetworkServer and assigns it to the NetworkServer field.
@@ -775,28 +576,9 @@ func (o *GetClouds200ResponseZoneConfigAnyOf2) GetSecurityServerOk() (*string, b
 	return o.SecurityServer.Get(), o.SecurityServer.IsSet()
 }
 
-// IsSetSecurityServer returns a boolean if a field has been set.
-func (o *GetClouds200ResponseZoneConfigAnyOf2) IsSetSecurityServer() bool {
-	if o != nil && o.SecurityServer.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSecurityServer gets a reference to the given NullableString and assigns it to the SecurityServer field.
 func (o *GetClouds200ResponseZoneConfigAnyOf2) SetSecurityServer(v string) {
 	o.SecurityServer.Set(&v)
-}
-
-// SetSecurityServerNil sets the value for SecurityServer to be an explicit nil
-func (o *GetClouds200ResponseZoneConfigAnyOf2) SetSecurityServerNil() {
-	o.SecurityServer.Set(nil)
-}
-
-// UnsetSecurityServer ensures that no value is present for SecurityServer, not even an explicit nil
-func (o *GetClouds200ResponseZoneConfigAnyOf2) UnsetSecurityServer() {
-	o.SecurityServer.Unset()
 }
 
 // GetCertificateProvider returns the CertificateProvider field value if set, zero value otherwise.
@@ -815,15 +597,6 @@ func (o *GetClouds200ResponseZoneConfigAnyOf2) GetCertificateProviderOk() (*stri
 		return nil, false
 	}
 	return o.CertificateProvider, true
-}
-
-// IsSetCertificateProvider returns a boolean if a field has been set.
-func (o *GetClouds200ResponseZoneConfigAnyOf2) IsSetCertificateProvider() bool {
-	if o != nil && !IsNil(o.CertificateProvider) {
-		return true
-	}
-
-	return false
 }
 
 // SetCertificateProvider gets a reference to the given string and assigns it to the CertificateProvider field.
@@ -849,15 +622,6 @@ func (o *GetClouds200ResponseZoneConfigAnyOf2) GetBackupModeOk() (*string, bool)
 	return o.BackupMode, true
 }
 
-// IsSetBackupMode returns a boolean if a field has been set.
-func (o *GetClouds200ResponseZoneConfigAnyOf2) IsSetBackupMode() bool {
-	if o != nil && !IsNil(o.BackupMode) {
-		return true
-	}
-
-	return false
-}
-
 // SetBackupMode gets a reference to the given string and assigns it to the BackupMode field.
 func (o *GetClouds200ResponseZoneConfigAnyOf2) SetBackupMode(v string) {
 	o.BackupMode = &v
@@ -879,15 +643,6 @@ func (o *GetClouds200ResponseZoneConfigAnyOf2) GetReplicationModeOk() (*string, 
 		return nil, false
 	}
 	return o.ReplicationMode, true
-}
-
-// IsSetReplicationMode returns a boolean if a field has been set.
-func (o *GetClouds200ResponseZoneConfigAnyOf2) IsSetReplicationMode() bool {
-	if o != nil && !IsNil(o.ReplicationMode) {
-		return true
-	}
-
-	return false
 }
 
 // SetReplicationMode gets a reference to the given string and assigns it to the ReplicationMode field.
@@ -913,15 +668,6 @@ func (o *GetClouds200ResponseZoneConfigAnyOf2) GetDnsIntegrationIdOk() (*string,
 	return o.DnsIntegrationId, true
 }
 
-// IsSetDnsIntegrationId returns a boolean if a field has been set.
-func (o *GetClouds200ResponseZoneConfigAnyOf2) IsSetDnsIntegrationId() bool {
-	if o != nil && !IsNil(o.DnsIntegrationId) {
-		return true
-	}
-
-	return false
-}
-
 // SetDnsIntegrationId gets a reference to the given string and assigns it to the DnsIntegrationId field.
 func (o *GetClouds200ResponseZoneConfigAnyOf2) SetDnsIntegrationId(v string) {
 	o.DnsIntegrationId = &v
@@ -943,15 +689,6 @@ func (o *GetClouds200ResponseZoneConfigAnyOf2) GetServiceRegistryIdOk() (*string
 		return nil, false
 	}
 	return o.ServiceRegistryId, true
-}
-
-// IsSetServiceRegistryId returns a boolean if a field has been set.
-func (o *GetClouds200ResponseZoneConfigAnyOf2) IsSetServiceRegistryId() bool {
-	if o != nil && !IsNil(o.ServiceRegistryId) {
-		return true
-	}
-
-	return false
 }
 
 // SetServiceRegistryId gets a reference to the given string and assigns it to the ServiceRegistryId field.
@@ -977,15 +714,6 @@ func (o *GetClouds200ResponseZoneConfigAnyOf2) GetConfigManagementIdOk() (*strin
 	return o.ConfigManagementId, true
 }
 
-// IsSetConfigManagementId returns a boolean if a field has been set.
-func (o *GetClouds200ResponseZoneConfigAnyOf2) IsSetConfigManagementId() bool {
-	if o != nil && !IsNil(o.ConfigManagementId) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfigManagementId gets a reference to the given string and assigns it to the ConfigManagementId field.
 func (o *GetClouds200ResponseZoneConfigAnyOf2) SetConfigManagementId(v string) {
 	o.ConfigManagementId = &v
@@ -1009,15 +737,6 @@ func (o *GetClouds200ResponseZoneConfigAnyOf2) GetConfigCmdbDiscoveryOk() (*bool
 	return o.ConfigCmdbDiscovery, true
 }
 
-// IsSetConfigCmdbDiscovery returns a boolean if a field has been set.
-func (o *GetClouds200ResponseZoneConfigAnyOf2) IsSetConfigCmdbDiscovery() bool {
-	if o != nil && !IsNil(o.ConfigCmdbDiscovery) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfigCmdbDiscovery gets a reference to the given bool and assigns it to the ConfigCmdbDiscovery field.
 func (o *GetClouds200ResponseZoneConfigAnyOf2) SetConfigCmdbDiscovery(v bool) {
 	o.ConfigCmdbDiscovery = &v
@@ -1039,15 +758,6 @@ func (o *GetClouds200ResponseZoneConfigAnyOf2) GetSecretKeyHashOk() (*string, bo
 		return nil, false
 	}
 	return o.SecretKeyHash, true
-}
-
-// IsSetSecretKeyHash returns a boolean if a field has been set.
-func (o *GetClouds200ResponseZoneConfigAnyOf2) IsSetSecretKeyHash() bool {
-	if o != nil && !IsNil(o.SecretKeyHash) {
-		return true
-	}
-
-	return false
 }
 
 // SetSecretKeyHash gets a reference to the given string and assigns it to the SecretKeyHash field.
@@ -1074,28 +784,9 @@ func (o *GetClouds200ResponseZoneConfigAnyOf2) GetCostingSecretKeyHashOk() (*str
 	return o.CostingSecretKeyHash.Get(), o.CostingSecretKeyHash.IsSet()
 }
 
-// IsSetCostingSecretKeyHash returns a boolean if a field has been set.
-func (o *GetClouds200ResponseZoneConfigAnyOf2) IsSetCostingSecretKeyHash() bool {
-	if o != nil && o.CostingSecretKeyHash.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCostingSecretKeyHash gets a reference to the given NullableString and assigns it to the CostingSecretKeyHash field.
 func (o *GetClouds200ResponseZoneConfigAnyOf2) SetCostingSecretKeyHash(v string) {
 	o.CostingSecretKeyHash.Set(&v)
-}
-
-// SetCostingSecretKeyHashNil sets the value for CostingSecretKeyHash to be an explicit nil
-func (o *GetClouds200ResponseZoneConfigAnyOf2) SetCostingSecretKeyHashNil() {
-	o.CostingSecretKeyHash.Set(nil)
-}
-
-// UnsetCostingSecretKeyHash ensures that no value is present for CostingSecretKeyHash, not even an explicit nil
-func (o *GetClouds200ResponseZoneConfigAnyOf2) UnsetCostingSecretKeyHash() {
-	o.CostingSecretKeyHash.Unset()
 }
 
 func (o GetClouds200ResponseZoneConfigAnyOf2) MarshalJSON() ([]byte, error) {

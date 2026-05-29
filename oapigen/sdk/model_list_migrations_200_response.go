@@ -63,15 +63,6 @@ func (o *ListMigrations200Response) GetMigrationsOk() (*interface{}, bool) {
 	return &o.Migrations, true
 }
 
-// IsSetMigrations returns a boolean if a field has been set.
-func (o *ListMigrations200Response) IsSetMigrations() bool {
-	if o != nil && !IsNil(o.Migrations) {
-		return true
-	}
-
-	return false
-}
-
 // SetMigrations gets a reference to the given interface{} and assigns it to the Migrations field.
 func (o *ListMigrations200Response) SetMigrations(v interface{}) {
 	o.Migrations = v
@@ -93,15 +84,6 @@ func (o *ListMigrations200Response) GetMetaOk() (*ListApprovals200ResponseAllOfM
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListMigrations200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

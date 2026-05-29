@@ -62,15 +62,6 @@ func (o *AddCheckApps200Response) GetCheckAppOk() (*AddCheckApps200ResponseAllOf
 	return o.CheckApp, true
 }
 
-// IsSetCheckApp returns a boolean if a field has been set.
-func (o *AddCheckApps200Response) IsSetCheckApp() bool {
-	if o != nil && !IsNil(o.CheckApp) {
-		return true
-	}
-
-	return false
-}
-
 // SetCheckApp gets a reference to the given AddCheckApps200ResponseAllOfCheckApp and assigns it to the CheckApp field.
 func (o *AddCheckApps200Response) SetCheckApp(v AddCheckApps200ResponseAllOfCheckApp) {
 	o.CheckApp = &v
@@ -92,15 +83,6 @@ func (o *AddCheckApps200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *AddCheckApps200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

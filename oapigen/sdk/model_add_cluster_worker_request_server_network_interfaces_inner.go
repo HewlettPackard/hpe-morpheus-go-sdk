@@ -96,15 +96,6 @@ func (o *AddClusterWorkerRequestServerNetworkInterfacesInner) GetNetworkInterfac
 	return o.NetworkInterfaceTypeId, true
 }
 
-// IsSetNetworkInterfaceTypeId returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServerNetworkInterfacesInner) IsSetNetworkInterfaceTypeId() bool {
-	if o != nil && !IsNil(o.NetworkInterfaceTypeId) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkInterfaceTypeId gets a reference to the given int64 and assigns it to the NetworkInterfaceTypeId field.
 func (o *AddClusterWorkerRequestServerNetworkInterfacesInner) SetNetworkInterfaceTypeId(v int64) {
 	o.NetworkInterfaceTypeId = &v
@@ -128,15 +119,6 @@ func (o *AddClusterWorkerRequestServerNetworkInterfacesInner) GetIpAddressOk() (
 	return o.IpAddress, true
 }
 
-// IsSetIpAddress returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServerNetworkInterfacesInner) IsSetIpAddress() bool {
-	if o != nil && !IsNil(o.IpAddress) {
-		return true
-	}
-
-	return false
-}
-
 // SetIpAddress gets a reference to the given string and assigns it to the IpAddress field.
 func (o *AddClusterWorkerRequestServerNetworkInterfacesInner) SetIpAddress(v string) {
 	o.IpAddress = &v
@@ -158,15 +140,6 @@ func (o *AddClusterWorkerRequestServerNetworkInterfacesInner) GetIpModeOk() (*st
 		return nil, false
 	}
 	return o.IpMode, true
-}
-
-// IsSetIpMode returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServerNetworkInterfacesInner) IsSetIpMode() bool {
-	if o != nil && !IsNil(o.IpMode) {
-		return true
-	}
-
-	return false
 }
 
 // SetIpMode gets a reference to the given string and assigns it to the IpMode field.

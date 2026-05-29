@@ -64,15 +64,6 @@ func (o *GetImageBuildExecutions200Response) GetImageBuildExecutionsOk() ([]GetI
 	return o.ImageBuildExecutions, true
 }
 
-// IsSetImageBuildExecutions returns a boolean if a field has been set.
-func (o *GetImageBuildExecutions200Response) IsSetImageBuildExecutions() bool {
-	if o != nil && !IsNil(o.ImageBuildExecutions) {
-		return true
-	}
-
-	return false
-}
-
 // SetImageBuildExecutions gets a reference to the given []GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInner and assigns it to the ImageBuildExecutions field.
 func (o *GetImageBuildExecutions200Response) SetImageBuildExecutions(v []GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInner) {
 	o.ImageBuildExecutions = v
@@ -94,15 +85,6 @@ func (o *GetImageBuildExecutions200Response) GetImageBuildExecutionCountOk() (*i
 		return nil, false
 	}
 	return o.ImageBuildExecutionCount, true
-}
-
-// IsSetImageBuildExecutionCount returns a boolean if a field has been set.
-func (o *GetImageBuildExecutions200Response) IsSetImageBuildExecutionCount() bool {
-	if o != nil && !IsNil(o.ImageBuildExecutionCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetImageBuildExecutionCount gets a reference to the given int64 and assigns it to the ImageBuildExecutionCount field.
@@ -128,15 +110,6 @@ func (o *GetImageBuildExecutions200Response) GetImageBuildOk() (*GetImageBuildEx
 	return o.ImageBuild, true
 }
 
-// IsSetImageBuild returns a boolean if a field has been set.
-func (o *GetImageBuildExecutions200Response) IsSetImageBuild() bool {
-	if o != nil && !IsNil(o.ImageBuild) {
-		return true
-	}
-
-	return false
-}
-
 // SetImageBuild gets a reference to the given GetImageBuildExecutions200ResponseAllOfImageBuild and assigns it to the ImageBuild field.
 func (o *GetImageBuildExecutions200Response) SetImageBuild(v GetImageBuildExecutions200ResponseAllOfImageBuild) {
 	o.ImageBuild = &v
@@ -158,15 +131,6 @@ func (o *GetImageBuildExecutions200Response) GetMetaOk() (*ListApprovals200Respo
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *GetImageBuildExecutions200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

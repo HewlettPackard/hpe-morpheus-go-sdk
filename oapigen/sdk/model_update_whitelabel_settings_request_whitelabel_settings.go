@@ -107,15 +107,6 @@ func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) GetEnabledOk() (*boo
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -137,15 +128,6 @@ func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) GetApplianceNameOk()
 		return nil, false
 	}
 	return o.ApplianceName, true
-}
-
-// IsSetApplianceName returns a boolean if a field has been set.
-func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) IsSetApplianceName() bool {
-	if o != nil && !IsNil(o.ApplianceName) {
-		return true
-	}
-
-	return false
 }
 
 // SetApplianceName gets a reference to the given string and assigns it to the ApplianceName field.
@@ -171,15 +153,6 @@ func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) GetDisableSupportMen
 	return o.DisableSupportMenu, true
 }
 
-// IsSetDisableSupportMenu returns a boolean if a field has been set.
-func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) IsSetDisableSupportMenu() bool {
-	if o != nil && !IsNil(o.DisableSupportMenu) {
-		return true
-	}
-
-	return false
-}
-
 // SetDisableSupportMenu gets a reference to the given bool and assigns it to the DisableSupportMenu field.
 func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) SetDisableSupportMenu(v bool) {
 	o.DisableSupportMenu = &v
@@ -201,15 +174,6 @@ func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) GetResetHeaderLogoOk
 		return nil, false
 	}
 	return o.ResetHeaderLogo, true
-}
-
-// IsSetResetHeaderLogo returns a boolean if a field has been set.
-func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) IsSetResetHeaderLogo() bool {
-	if o != nil && !IsNil(o.ResetHeaderLogo) {
-		return true
-	}
-
-	return false
 }
 
 // SetResetHeaderLogo gets a reference to the given bool and assigns it to the ResetHeaderLogo field.
@@ -235,15 +199,6 @@ func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) GetResetFooterLogoOk
 	return o.ResetFooterLogo, true
 }
 
-// IsSetResetFooterLogo returns a boolean if a field has been set.
-func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) IsSetResetFooterLogo() bool {
-	if o != nil && !IsNil(o.ResetFooterLogo) {
-		return true
-	}
-
-	return false
-}
-
 // SetResetFooterLogo gets a reference to the given bool and assigns it to the ResetFooterLogo field.
 func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) SetResetFooterLogo(v bool) {
 	o.ResetFooterLogo = &v
@@ -265,15 +220,6 @@ func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) GetResetLoginLogoOk(
 		return nil, false
 	}
 	return o.ResetLoginLogo, true
-}
-
-// IsSetResetLoginLogo returns a boolean if a field has been set.
-func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) IsSetResetLoginLogo() bool {
-	if o != nil && !IsNil(o.ResetLoginLogo) {
-		return true
-	}
-
-	return false
 }
 
 // SetResetLoginLogo gets a reference to the given bool and assigns it to the ResetLoginLogo field.
@@ -299,15 +245,6 @@ func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) GetResetFaviconOk() 
 	return o.ResetFavicon, true
 }
 
-// IsSetResetFavicon returns a boolean if a field has been set.
-func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) IsSetResetFavicon() bool {
-	if o != nil && !IsNil(o.ResetFavicon) {
-		return true
-	}
-
-	return false
-}
-
 // SetResetFavicon gets a reference to the given bool and assigns it to the ResetFavicon field.
 func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) SetResetFavicon(v bool) {
 	o.ResetFavicon = &v
@@ -329,15 +266,6 @@ func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) GetHeaderBgColorOk()
 		return nil, false
 	}
 	return o.HeaderBgColor, true
-}
-
-// IsSetHeaderBgColor returns a boolean if a field has been set.
-func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) IsSetHeaderBgColor() bool {
-	if o != nil && !IsNil(o.HeaderBgColor) {
-		return true
-	}
-
-	return false
 }
 
 // SetHeaderBgColor gets a reference to the given string and assigns it to the HeaderBgColor field.
@@ -363,15 +291,6 @@ func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) GetHeaderFgColorOk()
 	return o.HeaderFgColor, true
 }
 
-// IsSetHeaderFgColor returns a boolean if a field has been set.
-func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) IsSetHeaderFgColor() bool {
-	if o != nil && !IsNil(o.HeaderFgColor) {
-		return true
-	}
-
-	return false
-}
-
 // SetHeaderFgColor gets a reference to the given string and assigns it to the HeaderFgColor field.
 func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) SetHeaderFgColor(v string) {
 	o.HeaderFgColor = &v
@@ -393,15 +312,6 @@ func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) GetNavBgColorOk() (*
 		return nil, false
 	}
 	return o.NavBgColor, true
-}
-
-// IsSetNavBgColor returns a boolean if a field has been set.
-func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) IsSetNavBgColor() bool {
-	if o != nil && !IsNil(o.NavBgColor) {
-		return true
-	}
-
-	return false
 }
 
 // SetNavBgColor gets a reference to the given string and assigns it to the NavBgColor field.
@@ -427,15 +337,6 @@ func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) GetNavFgColorOk() (*
 	return o.NavFgColor, true
 }
 
-// IsSetNavFgColor returns a boolean if a field has been set.
-func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) IsSetNavFgColor() bool {
-	if o != nil && !IsNil(o.NavFgColor) {
-		return true
-	}
-
-	return false
-}
-
 // SetNavFgColor gets a reference to the given string and assigns it to the NavFgColor field.
 func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) SetNavFgColor(v string) {
 	o.NavFgColor = &v
@@ -457,15 +358,6 @@ func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) GetNavHoverColorOk()
 		return nil, false
 	}
 	return o.NavHoverColor, true
-}
-
-// IsSetNavHoverColor returns a boolean if a field has been set.
-func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) IsSetNavHoverColor() bool {
-	if o != nil && !IsNil(o.NavHoverColor) {
-		return true
-	}
-
-	return false
 }
 
 // SetNavHoverColor gets a reference to the given string and assigns it to the NavHoverColor field.
@@ -491,15 +383,6 @@ func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) GetPrimaryButtonBgCo
 	return o.PrimaryButtonBgColor, true
 }
 
-// IsSetPrimaryButtonBgColor returns a boolean if a field has been set.
-func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) IsSetPrimaryButtonBgColor() bool {
-	if o != nil && !IsNil(o.PrimaryButtonBgColor) {
-		return true
-	}
-
-	return false
-}
-
 // SetPrimaryButtonBgColor gets a reference to the given string and assigns it to the PrimaryButtonBgColor field.
 func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) SetPrimaryButtonBgColor(v string) {
 	o.PrimaryButtonBgColor = &v
@@ -521,15 +404,6 @@ func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) GetPrimaryButtonFgCo
 		return nil, false
 	}
 	return o.PrimaryButtonFgColor, true
-}
-
-// IsSetPrimaryButtonFgColor returns a boolean if a field has been set.
-func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) IsSetPrimaryButtonFgColor() bool {
-	if o != nil && !IsNil(o.PrimaryButtonFgColor) {
-		return true
-	}
-
-	return false
 }
 
 // SetPrimaryButtonFgColor gets a reference to the given string and assigns it to the PrimaryButtonFgColor field.
@@ -555,15 +429,6 @@ func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) GetPrimaryButtonHove
 	return o.PrimaryButtonHoverBgColor, true
 }
 
-// IsSetPrimaryButtonHoverBgColor returns a boolean if a field has been set.
-func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) IsSetPrimaryButtonHoverBgColor() bool {
-	if o != nil && !IsNil(o.PrimaryButtonHoverBgColor) {
-		return true
-	}
-
-	return false
-}
-
 // SetPrimaryButtonHoverBgColor gets a reference to the given string and assigns it to the PrimaryButtonHoverBgColor field.
 func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) SetPrimaryButtonHoverBgColor(v string) {
 	o.PrimaryButtonHoverBgColor = &v
@@ -585,15 +450,6 @@ func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) GetPrimaryButtonHove
 		return nil, false
 	}
 	return o.PrimaryButtonHoverFgColor, true
-}
-
-// IsSetPrimaryButtonHoverFgColor returns a boolean if a field has been set.
-func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) IsSetPrimaryButtonHoverFgColor() bool {
-	if o != nil && !IsNil(o.PrimaryButtonHoverFgColor) {
-		return true
-	}
-
-	return false
 }
 
 // SetPrimaryButtonHoverFgColor gets a reference to the given string and assigns it to the PrimaryButtonHoverFgColor field.
@@ -619,15 +475,6 @@ func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) GetFooterBgColorOk()
 	return o.FooterBgColor, true
 }
 
-// IsSetFooterBgColor returns a boolean if a field has been set.
-func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) IsSetFooterBgColor() bool {
-	if o != nil && !IsNil(o.FooterBgColor) {
-		return true
-	}
-
-	return false
-}
-
 // SetFooterBgColor gets a reference to the given string and assigns it to the FooterBgColor field.
 func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) SetFooterBgColor(v string) {
 	o.FooterBgColor = &v
@@ -649,15 +496,6 @@ func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) GetFooterFgColorOk()
 		return nil, false
 	}
 	return o.FooterFgColor, true
-}
-
-// IsSetFooterFgColor returns a boolean if a field has been set.
-func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) IsSetFooterFgColor() bool {
-	if o != nil && !IsNil(o.FooterFgColor) {
-		return true
-	}
-
-	return false
 }
 
 // SetFooterFgColor gets a reference to the given string and assigns it to the FooterFgColor field.
@@ -683,15 +521,6 @@ func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) GetLoginBgColorOk() 
 	return o.LoginBgColor, true
 }
 
-// IsSetLoginBgColor returns a boolean if a field has been set.
-func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) IsSetLoginBgColor() bool {
-	if o != nil && !IsNil(o.LoginBgColor) {
-		return true
-	}
-
-	return false
-}
-
 // SetLoginBgColor gets a reference to the given string and assigns it to the LoginBgColor field.
 func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) SetLoginBgColor(v string) {
 	o.LoginBgColor = &v
@@ -713,15 +542,6 @@ func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) GetCopyrightStringOk
 		return nil, false
 	}
 	return o.CopyrightString, true
-}
-
-// IsSetCopyrightString returns a boolean if a field has been set.
-func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) IsSetCopyrightString() bool {
-	if o != nil && !IsNil(o.CopyrightString) {
-		return true
-	}
-
-	return false
 }
 
 // SetCopyrightString gets a reference to the given string and assigns it to the CopyrightString field.
@@ -747,15 +567,6 @@ func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) GetOverrideCssOk() (
 	return o.OverrideCss, true
 }
 
-// IsSetOverrideCss returns a boolean if a field has been set.
-func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) IsSetOverrideCss() bool {
-	if o != nil && !IsNil(o.OverrideCss) {
-		return true
-	}
-
-	return false
-}
-
 // SetOverrideCss gets a reference to the given string and assigns it to the OverrideCss field.
 func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) SetOverrideCss(v string) {
 	o.OverrideCss = &v
@@ -777,15 +588,6 @@ func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) GetTermsOfUseOk() (*
 		return nil, false
 	}
 	return o.TermsOfUse, true
-}
-
-// IsSetTermsOfUse returns a boolean if a field has been set.
-func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) IsSetTermsOfUse() bool {
-	if o != nil && !IsNil(o.TermsOfUse) {
-		return true
-	}
-
-	return false
 }
 
 // SetTermsOfUse gets a reference to the given string and assigns it to the TermsOfUse field.
@@ -811,15 +613,6 @@ func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) GetPrivacyPolicyOk()
 	return o.PrivacyPolicy, true
 }
 
-// IsSetPrivacyPolicy returns a boolean if a field has been set.
-func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) IsSetPrivacyPolicy() bool {
-	if o != nil && !IsNil(o.PrivacyPolicy) {
-		return true
-	}
-
-	return false
-}
-
 // SetPrivacyPolicy gets a reference to the given string and assigns it to the PrivacyPolicy field.
 func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) SetPrivacyPolicy(v string) {
 	o.PrivacyPolicy = &v
@@ -841,15 +634,6 @@ func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) GetSupportMenuLinksO
 		return nil, false
 	}
 	return o.SupportMenuLinks, true
-}
-
-// IsSetSupportMenuLinks returns a boolean if a field has been set.
-func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) IsSetSupportMenuLinks() bool {
-	if o != nil && !IsNil(o.SupportMenuLinks) {
-		return true
-	}
-
-	return false
 }
 
 // SetSupportMenuLinks gets a reference to the given []UpdateWhitelabelSettingsRequestWhitelabelSettingsSupportMenuLinksInner and assigns it to the SupportMenuLinks field.

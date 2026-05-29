@@ -62,15 +62,6 @@ func (o *GuidanceStatsSavings) GetAmountOk() (*float32, bool) {
 	return o.Amount, true
 }
 
-// IsSetAmount returns a boolean if a field has been set.
-func (o *GuidanceStatsSavings) IsSetAmount() bool {
-	if o != nil && !IsNil(o.Amount) {
-		return true
-	}
-
-	return false
-}
-
 // SetAmount gets a reference to the given float32 and assigns it to the Amount field.
 func (o *GuidanceStatsSavings) SetAmount(v float32) {
 	o.Amount = &v
@@ -92,15 +83,6 @@ func (o *GuidanceStatsSavings) GetCurrencyOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Currency, true
-}
-
-// IsSetCurrency returns a boolean if a field has been set.
-func (o *GuidanceStatsSavings) IsSetCurrency() bool {
-	if o != nil && !IsNil(o.Currency) {
-		return true
-	}
-
-	return false
 }
 
 // SetCurrency gets a reference to the given string and assigns it to the Currency field.

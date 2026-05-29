@@ -87,15 +87,6 @@ func (o *HostnamePolicyTypeConfiguration14) GetHostNamingPatternOk() (*string, b
 	return o.HostNamingPattern, true
 }
 
-// IsSetHostNamingPattern returns a boolean if a field has been set.
-func (o *HostnamePolicyTypeConfiguration14) IsSetHostNamingPattern() bool {
-	if o != nil && !IsNil(o.HostNamingPattern) {
-		return true
-	}
-
-	return false
-}
-
 // SetHostNamingPattern gets a reference to the given string and assigns it to the HostNamingPattern field.
 func (o *HostnamePolicyTypeConfiguration14) SetHostNamingPattern(v string) {
 	o.HostNamingPattern = &v

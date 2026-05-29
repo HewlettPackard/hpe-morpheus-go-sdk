@@ -63,15 +63,6 @@ func (o *ListInvoiceLineItems200Response) GetLineItemsOk() ([]ListInvoiceLineIte
 	return o.LineItems, true
 }
 
-// IsSetLineItems returns a boolean if a field has been set.
-func (o *ListInvoiceLineItems200Response) IsSetLineItems() bool {
-	if o != nil && !IsNil(o.LineItems) {
-		return true
-	}
-
-	return false
-}
-
 // SetLineItems gets a reference to the given []ListInvoiceLineItems200ResponseAllOfLineItemsInner and assigns it to the LineItems field.
 func (o *ListInvoiceLineItems200Response) SetLineItems(v []ListInvoiceLineItems200ResponseAllOfLineItemsInner) {
 	o.LineItems = v
@@ -95,15 +86,6 @@ func (o *ListInvoiceLineItems200Response) GetMasterAccountOk() (*bool, bool) {
 	return o.MasterAccount, true
 }
 
-// IsSetMasterAccount returns a boolean if a field has been set.
-func (o *ListInvoiceLineItems200Response) IsSetMasterAccount() bool {
-	if o != nil && !IsNil(o.MasterAccount) {
-		return true
-	}
-
-	return false
-}
-
 // SetMasterAccount gets a reference to the given bool and assigns it to the MasterAccount field.
 func (o *ListInvoiceLineItems200Response) SetMasterAccount(v bool) {
 	o.MasterAccount = &v
@@ -125,15 +107,6 @@ func (o *ListInvoiceLineItems200Response) GetMetaOk() (*ListApprovals200Response
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListInvoiceLineItems200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

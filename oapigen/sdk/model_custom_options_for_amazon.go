@@ -62,15 +62,6 @@ func (o *CustomOptionsForAmazon) GetVpcOk() (*string, bool) {
 	return o.Vpc, true
 }
 
-// IsSetVpc returns a boolean if a field has been set.
-func (o *CustomOptionsForAmazon) IsSetVpc() bool {
-	if o != nil && !IsNil(o.Vpc) {
-		return true
-	}
-
-	return false
-}
-
 // SetVpc gets a reference to the given string and assigns it to the Vpc field.
 func (o *CustomOptionsForAmazon) SetVpc(v string) {
 	o.Vpc = &v

@@ -89,15 +89,6 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *SaveCloudDatastore200ResponseAllOfDatastore) SetId(v int64) {
 	o.Id = &v
@@ -119,15 +110,6 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetNameOk() (*string, bool
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -154,28 +136,9 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetCodeOk() (*string, bool
 	return o.Code.Get(), o.Code.IsSet()
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) IsSetCode() bool {
-	if o != nil && o.Code.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *SaveCloudDatastore200ResponseAllOfDatastore) SetCode(v string) {
 	o.Code.Set(&v)
-}
-
-// SetCodeNil sets the value for Code to be an explicit nil
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) SetCodeNil() {
-	o.Code.Set(nil)
-}
-
-// UnsetCode ensures that no value is present for Code, not even an explicit nil
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) UnsetCode() {
-	o.Code.Unset()
 }
 
 // GetDatastoreType returns the DatastoreType field value if set, zero value otherwise.
@@ -194,15 +157,6 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetDatastoreTypeOk() (*Sav
 		return nil, false
 	}
 	return o.DatastoreType, true
-}
-
-// IsSetDatastoreType returns a boolean if a field has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) IsSetDatastoreType() bool {
-	if o != nil && !IsNil(o.DatastoreType) {
-		return true
-	}
-
-	return false
 }
 
 // SetDatastoreType gets a reference to the given SaveCloudDatastore200ResponseAllOfDatastoreDatastoreType and assigns it to the DatastoreType field.
@@ -228,15 +182,6 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetStorageServerOk() (*Sav
 	return o.StorageServer, true
 }
 
-// IsSetStorageServer returns a boolean if a field has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) IsSetStorageServer() bool {
-	if o != nil && !IsNil(o.StorageServer) {
-		return true
-	}
-
-	return false
-}
-
 // SetStorageServer gets a reference to the given SaveCloudDatastore200ResponseAllOfDatastoreStorageServer and assigns it to the StorageServer field.
 func (o *SaveCloudDatastore200ResponseAllOfDatastore) SetStorageServer(v SaveCloudDatastore200ResponseAllOfDatastoreStorageServer) {
 	o.StorageServer = &v
@@ -260,15 +205,6 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetTypeOk() (*string, bool
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given string and assigns it to the Type field.
 func (o *SaveCloudDatastore200ResponseAllOfDatastore) SetType(v string) {
 	o.Type = &v
@@ -290,15 +226,6 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetVisibilityOk() (*string
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -325,28 +252,9 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetStorageSizeOk() (*int64
 	return o.StorageSize.Get(), o.StorageSize.IsSet()
 }
 
-// IsSetStorageSize returns a boolean if a field has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) IsSetStorageSize() bool {
-	if o != nil && o.StorageSize.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStorageSize gets a reference to the given NullableInt64 and assigns it to the StorageSize field.
 func (o *SaveCloudDatastore200ResponseAllOfDatastore) SetStorageSize(v int64) {
 	o.StorageSize.Set(&v)
-}
-
-// SetStorageSizeNil sets the value for StorageSize to be an explicit nil
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) SetStorageSizeNil() {
-	o.StorageSize.Set(nil)
-}
-
-// UnsetStorageSize ensures that no value is present for StorageSize, not even an explicit nil
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) UnsetStorageSize() {
-	o.StorageSize.Unset()
 }
 
 // GetFreeSpace returns the FreeSpace field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -368,28 +276,9 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetFreeSpaceOk() (*int64, 
 	return o.FreeSpace.Get(), o.FreeSpace.IsSet()
 }
 
-// IsSetFreeSpace returns a boolean if a field has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) IsSetFreeSpace() bool {
-	if o != nil && o.FreeSpace.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFreeSpace gets a reference to the given NullableInt64 and assigns it to the FreeSpace field.
 func (o *SaveCloudDatastore200ResponseAllOfDatastore) SetFreeSpace(v int64) {
 	o.FreeSpace.Set(&v)
-}
-
-// SetFreeSpaceNil sets the value for FreeSpace to be an explicit nil
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) SetFreeSpaceNil() {
-	o.FreeSpace.Set(nil)
-}
-
-// UnsetFreeSpace ensures that no value is present for FreeSpace, not even an explicit nil
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) UnsetFreeSpace() {
-	o.FreeSpace.Unset()
 }
 
 // GetDrsEnabled returns the DrsEnabled field value if set, zero value otherwise.
@@ -408,15 +297,6 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetDrsEnabledOk() (*bool, 
 		return nil, false
 	}
 	return o.DrsEnabled, true
-}
-
-// IsSetDrsEnabled returns a boolean if a field has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) IsSetDrsEnabled() bool {
-	if o != nil && !IsNil(o.DrsEnabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetDrsEnabled gets a reference to the given bool and assigns it to the DrsEnabled field.
@@ -442,15 +322,6 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetActiveOk() (*bool, bool
 	return o.Active, true
 }
 
-// IsSetActive returns a boolean if a field has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
-}
-
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *SaveCloudDatastore200ResponseAllOfDatastore) SetActive(v bool) {
 	o.Active = &v
@@ -472,15 +343,6 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetAllowWriteOk() (*bool, 
 		return nil, false
 	}
 	return o.AllowWrite, true
-}
-
-// IsSetAllowWrite returns a boolean if a field has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) IsSetAllowWrite() bool {
-	if o != nil && !IsNil(o.AllowWrite) {
-		return true
-	}
-
-	return false
 }
 
 // SetAllowWrite gets a reference to the given bool and assigns it to the AllowWrite field.
@@ -506,15 +368,6 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetDefaultStoreOk() (*bool
 	return o.DefaultStore, true
 }
 
-// IsSetDefaultStore returns a boolean if a field has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) IsSetDefaultStore() bool {
-	if o != nil && !IsNil(o.DefaultStore) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultStore gets a reference to the given bool and assigns it to the DefaultStore field.
 func (o *SaveCloudDatastore200ResponseAllOfDatastore) SetDefaultStore(v bool) {
 	o.DefaultStore = &v
@@ -536,15 +389,6 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetOnlineOk() (*bool, bool
 		return nil, false
 	}
 	return o.Online, true
-}
-
-// IsSetOnline returns a boolean if a field has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) IsSetOnline() bool {
-	if o != nil && !IsNil(o.Online) {
-		return true
-	}
-
-	return false
 }
 
 // SetOnline gets a reference to the given bool and assigns it to the Online field.
@@ -570,15 +414,6 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetAllowReadOk() (*bool, b
 	return o.AllowRead, true
 }
 
-// IsSetAllowRead returns a boolean if a field has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) IsSetAllowRead() bool {
-	if o != nil && !IsNil(o.AllowRead) {
-		return true
-	}
-
-	return false
-}
-
 // SetAllowRead gets a reference to the given bool and assigns it to the AllowRead field.
 func (o *SaveCloudDatastore200ResponseAllOfDatastore) SetAllowRead(v bool) {
 	o.AllowRead = &v
@@ -600,15 +435,6 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetAllowProvisionOk() (*bo
 		return nil, false
 	}
 	return o.AllowProvision, true
-}
-
-// IsSetAllowProvision returns a boolean if a field has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) IsSetAllowProvision() bool {
-	if o != nil && !IsNil(o.AllowProvision) {
-		return true
-	}
-
-	return false
 }
 
 // SetAllowProvision gets a reference to the given bool and assigns it to the AllowProvision field.
@@ -634,15 +460,6 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetHeartbeatTargetOk() (*b
 	return o.HeartbeatTarget, true
 }
 
-// IsSetHeartbeatTarget returns a boolean if a field has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) IsSetHeartbeatTarget() bool {
-	if o != nil && !IsNil(o.HeartbeatTarget) {
-		return true
-	}
-
-	return false
-}
-
 // SetHeartbeatTarget gets a reference to the given bool and assigns it to the HeartbeatTarget field.
 func (o *SaveCloudDatastore200ResponseAllOfDatastore) SetHeartbeatTarget(v bool) {
 	o.HeartbeatTarget = &v
@@ -664,15 +481,6 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetSupportsVmSecureMetadat
 		return nil, false
 	}
 	return o.SupportsVmSecureMetadata, true
-}
-
-// IsSetSupportsVmSecureMetadata returns a boolean if a field has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) IsSetSupportsVmSecureMetadata() bool {
-	if o != nil && !IsNil(o.SupportsVmSecureMetadata) {
-		return true
-	}
-
-	return false
 }
 
 // SetSupportsVmSecureMetadata gets a reference to the given bool and assigns it to the SupportsVmSecureMetadata field.
@@ -698,15 +506,6 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetRefTypeOk() (*string, b
 	return o.RefType, true
 }
 
-// IsSetRefType returns a boolean if a field has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) IsSetRefType() bool {
-	if o != nil && !IsNil(o.RefType) {
-		return true
-	}
-
-	return false
-}
-
 // SetRefType gets a reference to the given string and assigns it to the RefType field.
 func (o *SaveCloudDatastore200ResponseAllOfDatastore) SetRefType(v string) {
 	o.RefType = &v
@@ -728,15 +527,6 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetRefIdOk() (*int64, bool
 		return nil, false
 	}
 	return o.RefId, true
-}
-
-// IsSetRefId returns a boolean if a field has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) IsSetRefId() bool {
-	if o != nil && !IsNil(o.RefId) {
-		return true
-	}
-
-	return false
 }
 
 // SetRefId gets a reference to the given int64 and assigns it to the RefId field.
@@ -762,15 +552,6 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetExternalIdOk() (*string
 	return o.ExternalId, true
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
 func (o *SaveCloudDatastore200ResponseAllOfDatastore) SetExternalId(v string) {
 	o.ExternalId = &v
@@ -792,15 +573,6 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetZoneOk() (*SaveCloudDat
 		return nil, false
 	}
 	return o.Zone, true
-}
-
-// IsSetZone returns a boolean if a field has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) IsSetZone() bool {
-	if o != nil && !IsNil(o.Zone) {
-		return true
-	}
-
-	return false
 }
 
 // SetZone gets a reference to the given SaveCloudDatastore200ResponseAllOfDatastoreZone and assigns it to the Zone field.
@@ -826,15 +598,6 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetZonePoolOk() (*SaveClou
 	return o.ZonePool, true
 }
 
-// IsSetZonePool returns a boolean if a field has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) IsSetZonePool() bool {
-	if o != nil && !IsNil(o.ZonePool) {
-		return true
-	}
-
-	return false
-}
-
 // SetZonePool gets a reference to the given SaveCloudDatastore200ResponseAllOfDatastoreZonePool and assigns it to the ZonePool field.
 func (o *SaveCloudDatastore200ResponseAllOfDatastore) SetZonePool(v SaveCloudDatastore200ResponseAllOfDatastoreZonePool) {
 	o.ZonePool = &v
@@ -856,15 +619,6 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetOwnerOk() (*SaveCloudDa
 		return nil, false
 	}
 	return o.Owner, true
-}
-
-// IsSetOwner returns a boolean if a field has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
-		return true
-	}
-
-	return false
 }
 
 // SetOwner gets a reference to the given SaveCloudDatastore200ResponseAllOfDatastoreOwner and assigns it to the Owner field.
@@ -890,15 +644,6 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetTenantsOk() ([]SaveClou
 	return o.Tenants, true
 }
 
-// IsSetTenants returns a boolean if a field has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) IsSetTenants() bool {
-	if o != nil && !IsNil(o.Tenants) {
-		return true
-	}
-
-	return false
-}
-
 // SetTenants gets a reference to the given []SaveCloudDatastore200ResponseAllOfDatastoreTenantsInner and assigns it to the Tenants field.
 func (o *SaveCloudDatastore200ResponseAllOfDatastore) SetTenants(v []SaveCloudDatastore200ResponseAllOfDatastoreTenantsInner) {
 	o.Tenants = v
@@ -922,15 +667,6 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetResourcePermissionsOk()
 	return o.ResourcePermissions, true
 }
 
-// IsSetResourcePermissions returns a boolean if a field has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) IsSetResourcePermissions() bool {
-	if o != nil && !IsNil(o.ResourcePermissions) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourcePermissions gets a reference to the given SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions and assigns it to the ResourcePermissions field.
 func (o *SaveCloudDatastore200ResponseAllOfDatastore) SetResourcePermissions(v SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) {
 	o.ResourcePermissions = &v
@@ -952,15 +688,6 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetDatastoresOk() ([]map[s
 		return nil, false
 	}
 	return o.Datastores, true
-}
-
-// IsSetDatastores returns a boolean if a field has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) IsSetDatastores() bool {
-	if o != nil && !IsNil(o.Datastores) {
-		return true
-	}
-
-	return false
 }
 
 // SetDatastores gets a reference to the given []map[string]interface{} and assigns it to the Datastores field.

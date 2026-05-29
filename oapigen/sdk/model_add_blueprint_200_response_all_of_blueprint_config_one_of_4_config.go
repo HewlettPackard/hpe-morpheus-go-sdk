@@ -68,15 +68,6 @@ func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf4Config) GetImageOk() (
 	return o.Image, true
 }
 
-// IsSetImage returns a boolean if a field has been set.
-func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf4Config) IsSetImage() bool {
-	if o != nil && !IsNil(o.Image) {
-		return true
-	}
-
-	return false
-}
-
 // SetImage gets a reference to the given string and assigns it to the Image field.
 func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf4Config) SetImage(v string) {
 	o.Image = &v
@@ -98,15 +89,6 @@ func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf4Config) GetNameOk() (*
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf4Config) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -132,15 +114,6 @@ func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf4Config) GetTypeOk() (*
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf4Config) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given string and assigns it to the Type field.
 func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf4Config) SetType(v string) {
 	o.Type = &v
@@ -162,15 +135,6 @@ func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf4Config) GetTiersOk() (
 		return map[string]interface{}{}, false
 	}
 	return o.Tiers, true
-}
-
-// IsSetTiers returns a boolean if a field has been set.
-func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf4Config) IsSetTiers() bool {
-	if o != nil && !IsNil(o.Tiers) {
-		return true
-	}
-
-	return false
 }
 
 // SetTiers gets a reference to the given map[string]interface{} and assigns it to the Tiers field.

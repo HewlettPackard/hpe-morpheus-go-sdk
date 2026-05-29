@@ -66,15 +66,6 @@ func (o *ApplyTemplateRequest) GetServiceUrlOk() (*string, bool) {
 	return o.ServiceUrl, true
 }
 
-// IsSetServiceUrl returns a boolean if a field has been set.
-func (o *ApplyTemplateRequest) IsSetServiceUrl() bool {
-	if o != nil && !IsNil(o.ServiceUrl) {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceUrl gets a reference to the given string and assigns it to the ServiceUrl field.
 func (o *ApplyTemplateRequest) SetServiceUrl(v string) {
 	o.ServiceUrl = &v
@@ -98,15 +89,6 @@ func (o *ApplyTemplateRequest) GetSpecTemplateOk() (*string, bool) {
 	return o.SpecTemplate, true
 }
 
-// IsSetSpecTemplate returns a boolean if a field has been set.
-func (o *ApplyTemplateRequest) IsSetSpecTemplate() bool {
-	if o != nil && !IsNil(o.SpecTemplate) {
-		return true
-	}
-
-	return false
-}
-
 // SetSpecTemplate gets a reference to the given string and assigns it to the SpecTemplate field.
 func (o *ApplyTemplateRequest) SetSpecTemplate(v string) {
 	o.SpecTemplate = &v
@@ -128,15 +110,6 @@ func (o *ApplyTemplateRequest) GetSpecYamlOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SpecYaml, true
-}
-
-// IsSetSpecYaml returns a boolean if a field has been set.
-func (o *ApplyTemplateRequest) IsSetSpecYaml() bool {
-	if o != nil && !IsNil(o.SpecYaml) {
-		return true
-	}
-
-	return false
 }
 
 // SetSpecYaml gets a reference to the given string and assigns it to the SpecYaml field.

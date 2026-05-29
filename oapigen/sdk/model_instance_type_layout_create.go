@@ -130,15 +130,6 @@ func (o *InstanceTypeLayoutCreate) GetLabelsOk() ([]string, bool) {
 	return o.Labels, true
 }
 
-// IsSetLabels returns a boolean if a field has been set.
-func (o *InstanceTypeLayoutCreate) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
-}
-
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
 func (o *InstanceTypeLayoutCreate) SetLabels(v []string) {
 	o.Labels = v
@@ -186,15 +177,6 @@ func (o *InstanceTypeLayoutCreate) GetDescriptionOk() (*string, bool) {
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *InstanceTypeLayoutCreate) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *InstanceTypeLayoutCreate) SetDescription(v string) {
 	o.Description = &v
@@ -218,15 +200,6 @@ func (o *InstanceTypeLayoutCreate) GetSortOrderOk() (*int64, bool) {
 	return o.SortOrder, true
 }
 
-// IsSetSortOrder returns a boolean if a field has been set.
-func (o *InstanceTypeLayoutCreate) IsSetSortOrder() bool {
-	if o != nil && !IsNil(o.SortOrder) {
-		return true
-	}
-
-	return false
-}
-
 // SetSortOrder gets a reference to the given int64 and assigns it to the SortOrder field.
 func (o *InstanceTypeLayoutCreate) SetSortOrder(v int64) {
 	o.SortOrder = &v
@@ -248,15 +221,6 @@ func (o *InstanceTypeLayoutCreate) GetCreatableOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Creatable, true
-}
-
-// IsSetCreatable returns a boolean if a field has been set.
-func (o *InstanceTypeLayoutCreate) IsSetCreatable() bool {
-	if o != nil && !IsNil(o.Creatable) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreatable gets a reference to the given bool and assigns it to the Creatable field.
@@ -306,15 +270,6 @@ func (o *InstanceTypeLayoutCreate) GetMemoryRequirementOk() (*string, bool) {
 	return o.MemoryRequirement, true
 }
 
-// IsSetMemoryRequirement returns a boolean if a field has been set.
-func (o *InstanceTypeLayoutCreate) IsSetMemoryRequirement() bool {
-	if o != nil && !IsNil(o.MemoryRequirement) {
-		return true
-	}
-
-	return false
-}
-
 // SetMemoryRequirement gets a reference to the given string and assigns it to the MemoryRequirement field.
 func (o *InstanceTypeLayoutCreate) SetMemoryRequirement(v string) {
 	o.MemoryRequirement = &v
@@ -336,15 +291,6 @@ func (o *InstanceTypeLayoutCreate) GetHasAutoScaleOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.HasAutoScale, true
-}
-
-// IsSetHasAutoScale returns a boolean if a field has been set.
-func (o *InstanceTypeLayoutCreate) IsSetHasAutoScale() bool {
-	if o != nil && !IsNil(o.HasAutoScale) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasAutoScale gets a reference to the given bool and assigns it to the HasAutoScale field.
@@ -370,15 +316,6 @@ func (o *InstanceTypeLayoutCreate) GetSupportsConvertToManagedOk() (*bool, bool)
 	return o.SupportsConvertToManaged, true
 }
 
-// IsSetSupportsConvertToManaged returns a boolean if a field has been set.
-func (o *InstanceTypeLayoutCreate) IsSetSupportsConvertToManaged() bool {
-	if o != nil && !IsNil(o.SupportsConvertToManaged) {
-		return true
-	}
-
-	return false
-}
-
 // SetSupportsConvertToManaged gets a reference to the given bool and assigns it to the SupportsConvertToManaged field.
 func (o *InstanceTypeLayoutCreate) SetSupportsConvertToManaged(v bool) {
 	o.SupportsConvertToManaged = &v
@@ -400,15 +337,6 @@ func (o *InstanceTypeLayoutCreate) GetContainerTypesOk() ([]int64, bool) {
 		return nil, false
 	}
 	return o.ContainerTypes, true
-}
-
-// IsSetContainerTypes returns a boolean if a field has been set.
-func (o *InstanceTypeLayoutCreate) IsSetContainerTypes() bool {
-	if o != nil && !IsNil(o.ContainerTypes) {
-		return true
-	}
-
-	return false
 }
 
 // SetContainerTypes gets a reference to the given []int64 and assigns it to the ContainerTypes field.
@@ -434,15 +362,6 @@ func (o *InstanceTypeLayoutCreate) GetOptionTypesOk() ([]int64, bool) {
 	return o.OptionTypes, true
 }
 
-// IsSetOptionTypes returns a boolean if a field has been set.
-func (o *InstanceTypeLayoutCreate) IsSetOptionTypes() bool {
-	if o != nil && !IsNil(o.OptionTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetOptionTypes gets a reference to the given []int64 and assigns it to the OptionTypes field.
 func (o *InstanceTypeLayoutCreate) SetOptionTypes(v []int64) {
 	o.OptionTypes = v
@@ -464,15 +383,6 @@ func (o *InstanceTypeLayoutCreate) GetSpecTemplatesOk() ([]int64, bool) {
 		return nil, false
 	}
 	return o.SpecTemplates, true
-}
-
-// IsSetSpecTemplates returns a boolean if a field has been set.
-func (o *InstanceTypeLayoutCreate) IsSetSpecTemplates() bool {
-	if o != nil && !IsNil(o.SpecTemplates) {
-		return true
-	}
-
-	return false
 }
 
 // SetSpecTemplates gets a reference to the given []int64 and assigns it to the SpecTemplates field.
@@ -498,15 +408,6 @@ func (o *InstanceTypeLayoutCreate) GetEnvironmentVariablesOk() ([]InstanceTypeLa
 	return o.EnvironmentVariables, true
 }
 
-// IsSetEnvironmentVariables returns a boolean if a field has been set.
-func (o *InstanceTypeLayoutCreate) IsSetEnvironmentVariables() bool {
-	if o != nil && !IsNil(o.EnvironmentVariables) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnvironmentVariables gets a reference to the given []InstanceTypeLayoutCreateEnvironmentVariablesInner and assigns it to the EnvironmentVariables field.
 func (o *InstanceTypeLayoutCreate) SetEnvironmentVariables(v []InstanceTypeLayoutCreateEnvironmentVariablesInner) {
 	o.EnvironmentVariables = v
@@ -530,15 +431,6 @@ func (o *InstanceTypeLayoutCreate) GetPriceSetsOk() ([]InstanceTypeLayoutCreateP
 	return o.PriceSets, true
 }
 
-// IsSetPriceSets returns a boolean if a field has been set.
-func (o *InstanceTypeLayoutCreate) IsSetPriceSets() bool {
-	if o != nil && !IsNil(o.PriceSets) {
-		return true
-	}
-
-	return false
-}
-
 // SetPriceSets gets a reference to the given []InstanceTypeLayoutCreatePriceSetsInner and assigns it to the PriceSets field.
 func (o *InstanceTypeLayoutCreate) SetPriceSets(v []InstanceTypeLayoutCreatePriceSetsInner) {
 	o.PriceSets = v
@@ -560,15 +452,6 @@ func (o *InstanceTypeLayoutCreate) GetPermissionsOk() (*InstanceTypeLayoutCreate
 		return nil, false
 	}
 	return o.Permissions, true
-}
-
-// IsSetPermissions returns a boolean if a field has been set.
-func (o *InstanceTypeLayoutCreate) IsSetPermissions() bool {
-	if o != nil && !IsNil(o.Permissions) {
-		return true
-	}
-
-	return false
 }
 
 // SetPermissions gets a reference to the given InstanceTypeLayoutCreatePermissions and assigns it to the Permissions field.

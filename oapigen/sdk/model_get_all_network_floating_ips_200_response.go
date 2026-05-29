@@ -63,15 +63,6 @@ func (o *GetAllNetworkFloatingIps200Response) GetNetworkFloatingIpsOk() (*interf
 	return &o.NetworkFloatingIps, true
 }
 
-// IsSetNetworkFloatingIps returns a boolean if a field has been set.
-func (o *GetAllNetworkFloatingIps200Response) IsSetNetworkFloatingIps() bool {
-	if o != nil && !IsNil(o.NetworkFloatingIps) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkFloatingIps gets a reference to the given interface{} and assigns it to the NetworkFloatingIps field.
 func (o *GetAllNetworkFloatingIps200Response) SetNetworkFloatingIps(v interface{}) {
 	o.NetworkFloatingIps = v
@@ -93,15 +84,6 @@ func (o *GetAllNetworkFloatingIps200Response) GetMetaOk() (*ListApprovals200Resp
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *GetAllNetworkFloatingIps200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

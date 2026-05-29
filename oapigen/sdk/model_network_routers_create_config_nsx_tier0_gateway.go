@@ -88,15 +88,6 @@ func (o *NetworkRoutersCreateConfigNSXTier0Gateway) GetHaModeOk() (*string, bool
 	return o.HaMode, true
 }
 
-// IsSetHaMode returns a boolean if a field has been set.
-func (o *NetworkRoutersCreateConfigNSXTier0Gateway) IsSetHaMode() bool {
-	if o != nil && !IsNil(o.HaMode) {
-		return true
-	}
-
-	return false
-}
-
 // SetHaMode gets a reference to the given string and assigns it to the HaMode field.
 func (o *NetworkRoutersCreateConfigNSXTier0Gateway) SetHaMode(v string) {
 	o.HaMode = &v
@@ -118,15 +109,6 @@ func (o *NetworkRoutersCreateConfigNSXTier0Gateway) GetEdgeClusterOk() (*string,
 		return nil, false
 	}
 	return o.EdgeCluster, true
-}
-
-// IsSetEdgeCluster returns a boolean if a field has been set.
-func (o *NetworkRoutersCreateConfigNSXTier0Gateway) IsSetEdgeCluster() bool {
-	if o != nil && !IsNil(o.EdgeCluster) {
-		return true
-	}
-
-	return false
 }
 
 // SetEdgeCluster gets a reference to the given string and assigns it to the EdgeCluster field.
@@ -152,15 +134,6 @@ func (o *NetworkRoutersCreateConfigNSXTier0Gateway) GetFailOverOk() (*string, bo
 	return o.FailOver, true
 }
 
-// IsSetFailOver returns a boolean if a field has been set.
-func (o *NetworkRoutersCreateConfigNSXTier0Gateway) IsSetFailOver() bool {
-	if o != nil && !IsNil(o.FailOver) {
-		return true
-	}
-
-	return false
-}
-
 // SetFailOver gets a reference to the given string and assigns it to the FailOver field.
 func (o *NetworkRoutersCreateConfigNSXTier0Gateway) SetFailOver(v string) {
 	o.FailOver = &v
@@ -182,15 +155,6 @@ func (o *NetworkRoutersCreateConfigNSXTier0Gateway) GetIpManagementTypeOk() (*st
 		return nil, false
 	}
 	return o.IpManagementType, true
-}
-
-// IsSetIpManagementType returns a boolean if a field has been set.
-func (o *NetworkRoutersCreateConfigNSXTier0Gateway) IsSetIpManagementType() bool {
-	if o != nil && !IsNil(o.IpManagementType) {
-		return true
-	}
-
-	return false
 }
 
 // SetIpManagementType gets a reference to the given string and assigns it to the IpManagementType field.
@@ -216,15 +180,6 @@ func (o *NetworkRoutersCreateConfigNSXTier0Gateway) GetIpServerIdOk() (*string, 
 	return o.IpServerId, true
 }
 
-// IsSetIpServerId returns a boolean if a field has been set.
-func (o *NetworkRoutersCreateConfigNSXTier0Gateway) IsSetIpServerId() bool {
-	if o != nil && !IsNil(o.IpServerId) {
-		return true
-	}
-
-	return false
-}
-
 // SetIpServerId gets a reference to the given string and assigns it to the IpServerId field.
 func (o *NetworkRoutersCreateConfigNSXTier0Gateway) SetIpServerId(v string) {
 	o.IpServerId = &v
@@ -246,15 +201,6 @@ func (o *NetworkRoutersCreateConfigNSXTier0Gateway) GetTIER0STATICOk() (*string,
 		return nil, false
 	}
 	return o.TIER0STATIC, true
-}
-
-// IsSetTIER0STATIC returns a boolean if a field has been set.
-func (o *NetworkRoutersCreateConfigNSXTier0Gateway) IsSetTIER0STATIC() bool {
-	if o != nil && !IsNil(o.TIER0STATIC) {
-		return true
-	}
-
-	return false
 }
 
 // SetTIER0STATIC gets a reference to the given string and assigns it to the TIER0STATIC field.
@@ -280,15 +226,6 @@ func (o *NetworkRoutersCreateConfigNSXTier0Gateway) GetTIER0NATOk() (*string, bo
 	return o.TIER0NAT, true
 }
 
-// IsSetTIER0NAT returns a boolean if a field has been set.
-func (o *NetworkRoutersCreateConfigNSXTier0Gateway) IsSetTIER0NAT() bool {
-	if o != nil && !IsNil(o.TIER0NAT) {
-		return true
-	}
-
-	return false
-}
-
 // SetTIER0NAT gets a reference to the given string and assigns it to the TIER0NAT field.
 func (o *NetworkRoutersCreateConfigNSXTier0Gateway) SetTIER0NAT(v string) {
 	o.TIER0NAT = &v
@@ -310,15 +247,6 @@ func (o *NetworkRoutersCreateConfigNSXTier0Gateway) GetTIER0IPSECLOCALIPOk() (*s
 		return nil, false
 	}
 	return o.TIER0IPSECLOCALIP, true
-}
-
-// IsSetTIER0IPSECLOCALIP returns a boolean if a field has been set.
-func (o *NetworkRoutersCreateConfigNSXTier0Gateway) IsSetTIER0IPSECLOCALIP() bool {
-	if o != nil && !IsNil(o.TIER0IPSECLOCALIP) {
-		return true
-	}
-
-	return false
 }
 
 // SetTIER0IPSECLOCALIP gets a reference to the given string and assigns it to the TIER0IPSECLOCALIP field.
@@ -344,15 +272,6 @@ func (o *NetworkRoutersCreateConfigNSXTier0Gateway) GetTIER0DNSFORWARDERIPOk() (
 	return o.TIER0DNSFORWARDERIP, true
 }
 
-// IsSetTIER0DNSFORWARDERIP returns a boolean if a field has been set.
-func (o *NetworkRoutersCreateConfigNSXTier0Gateway) IsSetTIER0DNSFORWARDERIP() bool {
-	if o != nil && !IsNil(o.TIER0DNSFORWARDERIP) {
-		return true
-	}
-
-	return false
-}
-
 // SetTIER0DNSFORWARDERIP gets a reference to the given string and assigns it to the TIER0DNSFORWARDERIP field.
 func (o *NetworkRoutersCreateConfigNSXTier0Gateway) SetTIER0DNSFORWARDERIP(v string) {
 	o.TIER0DNSFORWARDERIP = &v
@@ -374,15 +293,6 @@ func (o *NetworkRoutersCreateConfigNSXTier0Gateway) GetTIER0SERVICEINTERFACEOk()
 		return nil, false
 	}
 	return o.TIER0SERVICEINTERFACE, true
-}
-
-// IsSetTIER0SERVICEINTERFACE returns a boolean if a field has been set.
-func (o *NetworkRoutersCreateConfigNSXTier0Gateway) IsSetTIER0SERVICEINTERFACE() bool {
-	if o != nil && !IsNil(o.TIER0SERVICEINTERFACE) {
-		return true
-	}
-
-	return false
 }
 
 // SetTIER0SERVICEINTERFACE gets a reference to the given string and assigns it to the TIER0SERVICEINTERFACE field.
@@ -408,15 +318,6 @@ func (o *NetworkRoutersCreateConfigNSXTier0Gateway) GetTIER0EXTERNALINTERFACEOk(
 	return o.TIER0EXTERNALINTERFACE, true
 }
 
-// IsSetTIER0EXTERNALINTERFACE returns a boolean if a field has been set.
-func (o *NetworkRoutersCreateConfigNSXTier0Gateway) IsSetTIER0EXTERNALINTERFACE() bool {
-	if o != nil && !IsNil(o.TIER0EXTERNALINTERFACE) {
-		return true
-	}
-
-	return false
-}
-
 // SetTIER0EXTERNALINTERFACE gets a reference to the given string and assigns it to the TIER0EXTERNALINTERFACE field.
 func (o *NetworkRoutersCreateConfigNSXTier0Gateway) SetTIER0EXTERNALINTERFACE(v string) {
 	o.TIER0EXTERNALINTERFACE = &v
@@ -438,15 +339,6 @@ func (o *NetworkRoutersCreateConfigNSXTier0Gateway) GetTIER0LOOPBACKINTERFACEOk(
 		return nil, false
 	}
 	return o.TIER0LOOPBACKINTERFACE, true
-}
-
-// IsSetTIER0LOOPBACKINTERFACE returns a boolean if a field has been set.
-func (o *NetworkRoutersCreateConfigNSXTier0Gateway) IsSetTIER0LOOPBACKINTERFACE() bool {
-	if o != nil && !IsNil(o.TIER0LOOPBACKINTERFACE) {
-		return true
-	}
-
-	return false
 }
 
 // SetTIER0LOOPBACKINTERFACE gets a reference to the given string and assigns it to the TIER0LOOPBACKINTERFACE field.
@@ -472,15 +364,6 @@ func (o *NetworkRoutersCreateConfigNSXTier0Gateway) GetTIER0SEGMENTOk() (*string
 	return o.TIER0SEGMENT, true
 }
 
-// IsSetTIER0SEGMENT returns a boolean if a field has been set.
-func (o *NetworkRoutersCreateConfigNSXTier0Gateway) IsSetTIER0SEGMENT() bool {
-	if o != nil && !IsNil(o.TIER0SEGMENT) {
-		return true
-	}
-
-	return false
-}
-
 // SetTIER0SEGMENT gets a reference to the given string and assigns it to the TIER0SEGMENT field.
 func (o *NetworkRoutersCreateConfigNSXTier0Gateway) SetTIER0SEGMENT(v string) {
 	o.TIER0SEGMENT = &v
@@ -502,15 +385,6 @@ func (o *NetworkRoutersCreateConfigNSXTier0Gateway) GetTIER1DNSFORWARDERIPOk() (
 		return nil, false
 	}
 	return o.TIER1DNSFORWARDERIP, true
-}
-
-// IsSetTIER1DNSFORWARDERIP returns a boolean if a field has been set.
-func (o *NetworkRoutersCreateConfigNSXTier0Gateway) IsSetTIER1DNSFORWARDERIP() bool {
-	if o != nil && !IsNil(o.TIER1DNSFORWARDERIP) {
-		return true
-	}
-
-	return false
 }
 
 // SetTIER1DNSFORWARDERIP gets a reference to the given string and assigns it to the TIER1DNSFORWARDERIP field.
@@ -536,15 +410,6 @@ func (o *NetworkRoutersCreateConfigNSXTier0Gateway) GetTIER1STATICOk() (*string,
 	return o.TIER1STATIC, true
 }
 
-// IsSetTIER1STATIC returns a boolean if a field has been set.
-func (o *NetworkRoutersCreateConfigNSXTier0Gateway) IsSetTIER1STATIC() bool {
-	if o != nil && !IsNil(o.TIER1STATIC) {
-		return true
-	}
-
-	return false
-}
-
 // SetTIER1STATIC gets a reference to the given string and assigns it to the TIER1STATIC field.
 func (o *NetworkRoutersCreateConfigNSXTier0Gateway) SetTIER1STATIC(v string) {
 	o.TIER1STATIC = &v
@@ -566,15 +431,6 @@ func (o *NetworkRoutersCreateConfigNSXTier0Gateway) GetTIER1LBVIPOk() (*string, 
 		return nil, false
 	}
 	return o.TIER1LBVIP, true
-}
-
-// IsSetTIER1LBVIP returns a boolean if a field has been set.
-func (o *NetworkRoutersCreateConfigNSXTier0Gateway) IsSetTIER1LBVIP() bool {
-	if o != nil && !IsNil(o.TIER1LBVIP) {
-		return true
-	}
-
-	return false
 }
 
 // SetTIER1LBVIP gets a reference to the given string and assigns it to the TIER1LBVIP field.
@@ -600,15 +456,6 @@ func (o *NetworkRoutersCreateConfigNSXTier0Gateway) GetTIER1NATOk() (*string, bo
 	return o.TIER1NAT, true
 }
 
-// IsSetTIER1NAT returns a boolean if a field has been set.
-func (o *NetworkRoutersCreateConfigNSXTier0Gateway) IsSetTIER1NAT() bool {
-	if o != nil && !IsNil(o.TIER1NAT) {
-		return true
-	}
-
-	return false
-}
-
 // SetTIER1NAT gets a reference to the given string and assigns it to the TIER1NAT field.
 func (o *NetworkRoutersCreateConfigNSXTier0Gateway) SetTIER1NAT(v string) {
 	o.TIER1NAT = &v
@@ -630,15 +477,6 @@ func (o *NetworkRoutersCreateConfigNSXTier0Gateway) GetTIER1LBSNATOk() (*string,
 		return nil, false
 	}
 	return o.TIER1LBSNAT, true
-}
-
-// IsSetTIER1LBSNAT returns a boolean if a field has been set.
-func (o *NetworkRoutersCreateConfigNSXTier0Gateway) IsSetTIER1LBSNAT() bool {
-	if o != nil && !IsNil(o.TIER1LBSNAT) {
-		return true
-	}
-
-	return false
 }
 
 // SetTIER1LBSNAT gets a reference to the given string and assigns it to the TIER1LBSNAT field.
@@ -664,15 +502,6 @@ func (o *NetworkRoutersCreateConfigNSXTier0Gateway) GetTIER1IPSECLOCALENDPOINTOk
 	return o.TIER1IPSECLOCALENDPOINT, true
 }
 
-// IsSetTIER1IPSECLOCALENDPOINT returns a boolean if a field has been set.
-func (o *NetworkRoutersCreateConfigNSXTier0Gateway) IsSetTIER1IPSECLOCALENDPOINT() bool {
-	if o != nil && !IsNil(o.TIER1IPSECLOCALENDPOINT) {
-		return true
-	}
-
-	return false
-}
-
 // SetTIER1IPSECLOCALENDPOINT gets a reference to the given string and assigns it to the TIER1IPSECLOCALENDPOINT field.
 func (o *NetworkRoutersCreateConfigNSXTier0Gateway) SetTIER1IPSECLOCALENDPOINT(v string) {
 	o.TIER1IPSECLOCALENDPOINT = &v
@@ -694,15 +523,6 @@ func (o *NetworkRoutersCreateConfigNSXTier0Gateway) GetTIER1SERVICEINTERFACEOk()
 		return nil, false
 	}
 	return o.TIER1SERVICEINTERFACE, true
-}
-
-// IsSetTIER1SERVICEINTERFACE returns a boolean if a field has been set.
-func (o *NetworkRoutersCreateConfigNSXTier0Gateway) IsSetTIER1SERVICEINTERFACE() bool {
-	if o != nil && !IsNil(o.TIER1SERVICEINTERFACE) {
-		return true
-	}
-
-	return false
 }
 
 // SetTIER1SERVICEINTERFACE gets a reference to the given string and assigns it to the TIER1SERVICEINTERFACE field.
@@ -728,15 +548,6 @@ func (o *NetworkRoutersCreateConfigNSXTier0Gateway) GetTIER1SEGMENTOk() (*string
 	return o.TIER1SEGMENT, true
 }
 
-// IsSetTIER1SEGMENT returns a boolean if a field has been set.
-func (o *NetworkRoutersCreateConfigNSXTier0Gateway) IsSetTIER1SEGMENT() bool {
-	if o != nil && !IsNil(o.TIER1SEGMENT) {
-		return true
-	}
-
-	return false
-}
-
 // SetTIER1SEGMENT gets a reference to the given string and assigns it to the TIER1SEGMENT field.
 func (o *NetworkRoutersCreateConfigNSXTier0Gateway) SetTIER1SEGMENT(v string) {
 	o.TIER1SEGMENT = &v
@@ -758,15 +569,6 @@ func (o *NetworkRoutersCreateConfigNSXTier0Gateway) GetLOCAL_AS_NUMOk() (*string
 		return nil, false
 	}
 	return o.LOCAL_AS_NUM, true
-}
-
-// IsSetLOCAL_AS_NUM returns a boolean if a field has been set.
-func (o *NetworkRoutersCreateConfigNSXTier0Gateway) IsSetLOCAL_AS_NUM() bool {
-	if o != nil && !IsNil(o.LOCAL_AS_NUM) {
-		return true
-	}
-
-	return false
 }
 
 // SetLOCAL_AS_NUM gets a reference to the given string and assigns it to the LOCAL_AS_NUM field.
@@ -792,15 +594,6 @@ func (o *NetworkRoutersCreateConfigNSXTier0Gateway) GetECMPOk() (*string, bool) 
 	return o.ECMP, true
 }
 
-// IsSetECMP returns a boolean if a field has been set.
-func (o *NetworkRoutersCreateConfigNSXTier0Gateway) IsSetECMP() bool {
-	if o != nil && !IsNil(o.ECMP) {
-		return true
-	}
-
-	return false
-}
-
 // SetECMP gets a reference to the given string and assigns it to the ECMP field.
 func (o *NetworkRoutersCreateConfigNSXTier0Gateway) SetECMP(v string) {
 	o.ECMP = &v
@@ -822,15 +615,6 @@ func (o *NetworkRoutersCreateConfigNSXTier0Gateway) GetMULTIPATH_RELAXOk() (*str
 		return nil, false
 	}
 	return o.MULTIPATH_RELAX, true
-}
-
-// IsSetMULTIPATH_RELAX returns a boolean if a field has been set.
-func (o *NetworkRoutersCreateConfigNSXTier0Gateway) IsSetMULTIPATH_RELAX() bool {
-	if o != nil && !IsNil(o.MULTIPATH_RELAX) {
-		return true
-	}
-
-	return false
 }
 
 // SetMULTIPATH_RELAX gets a reference to the given string and assigns it to the MULTIPATH_RELAX field.
@@ -856,15 +640,6 @@ func (o *NetworkRoutersCreateConfigNSXTier0Gateway) GetRESTART_MODEOk() (*string
 	return o.RESTART_MODE, true
 }
 
-// IsSetRESTART_MODE returns a boolean if a field has been set.
-func (o *NetworkRoutersCreateConfigNSXTier0Gateway) IsSetRESTART_MODE() bool {
-	if o != nil && !IsNil(o.RESTART_MODE) {
-		return true
-	}
-
-	return false
-}
-
 // SetRESTART_MODE gets a reference to the given string and assigns it to the RESTART_MODE field.
 func (o *NetworkRoutersCreateConfigNSXTier0Gateway) SetRESTART_MODE(v string) {
 	o.RESTART_MODE = &v
@@ -886,15 +661,6 @@ func (o *NetworkRoutersCreateConfigNSXTier0Gateway) GetRESTART_TIMEOk() (*int64,
 		return nil, false
 	}
 	return o.RESTART_TIME, true
-}
-
-// IsSetRESTART_TIME returns a boolean if a field has been set.
-func (o *NetworkRoutersCreateConfigNSXTier0Gateway) IsSetRESTART_TIME() bool {
-	if o != nil && !IsNil(o.RESTART_TIME) {
-		return true
-	}
-
-	return false
 }
 
 // SetRESTART_TIME gets a reference to the given int64 and assigns it to the RESTART_TIME field.
@@ -920,15 +686,6 @@ func (o *NetworkRoutersCreateConfigNSXTier0Gateway) GetSTALE_ROUTE_TIMEOk() (*in
 	return o.STALE_ROUTE_TIME, true
 }
 
-// IsSetSTALE_ROUTE_TIME returns a boolean if a field has been set.
-func (o *NetworkRoutersCreateConfigNSXTier0Gateway) IsSetSTALE_ROUTE_TIME() bool {
-	if o != nil && !IsNil(o.STALE_ROUTE_TIME) {
-		return true
-	}
-
-	return false
-}
-
 // SetSTALE_ROUTE_TIME gets a reference to the given int64 and assigns it to the STALE_ROUTE_TIME field.
 func (o *NetworkRoutersCreateConfigNSXTier0Gateway) SetSTALE_ROUTE_TIME(v int64) {
 	o.STALE_ROUTE_TIME = &v
@@ -950,15 +707,6 @@ func (o *NetworkRoutersCreateConfigNSXTier0Gateway) GetINTER_SR_IBGPOk() (*strin
 		return nil, false
 	}
 	return o.INTER_SR_IBGP, true
-}
-
-// IsSetINTER_SR_IBGP returns a boolean if a field has been set.
-func (o *NetworkRoutersCreateConfigNSXTier0Gateway) IsSetINTER_SR_IBGP() bool {
-	if o != nil && !IsNil(o.INTER_SR_IBGP) {
-		return true
-	}
-
-	return false
 }
 
 // SetINTER_SR_IBGP gets a reference to the given string and assigns it to the INTER_SR_IBGP field.

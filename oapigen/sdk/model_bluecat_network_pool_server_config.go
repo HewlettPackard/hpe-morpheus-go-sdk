@@ -66,15 +66,6 @@ func (o *BluecatNetworkPoolServerConfig) GetInventoryExistingOk() (*string, bool
 	return o.InventoryExisting, true
 }
 
-// IsSetInventoryExisting returns a boolean if a field has been set.
-func (o *BluecatNetworkPoolServerConfig) IsSetInventoryExisting() bool {
-	if o != nil && !IsNil(o.InventoryExisting) {
-		return true
-	}
-
-	return false
-}
-
 // SetInventoryExisting gets a reference to the given string and assigns it to the InventoryExisting field.
 func (o *BluecatNetworkPoolServerConfig) SetInventoryExisting(v string) {
 	o.InventoryExisting = &v

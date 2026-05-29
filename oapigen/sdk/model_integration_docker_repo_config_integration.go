@@ -122,15 +122,6 @@ func (o *IntegrationDockerRepoConfigIntegration) GetServiceUrlOk() (*string, boo
 	return o.ServiceUrl, true
 }
 
-// IsSetServiceUrl returns a boolean if a field has been set.
-func (o *IntegrationDockerRepoConfigIntegration) IsSetServiceUrl() bool {
-	if o != nil && !IsNil(o.ServiceUrl) {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceUrl gets a reference to the given string and assigns it to the ServiceUrl field.
 func (o *IntegrationDockerRepoConfigIntegration) SetServiceUrl(v string) {
 	o.ServiceUrl = &v
@@ -152,15 +143,6 @@ func (o *IntegrationDockerRepoConfigIntegration) GetServiceUsernameOk() (*string
 		return nil, false
 	}
 	return o.ServiceUsername, true
-}
-
-// IsSetServiceUsername returns a boolean if a field has been set.
-func (o *IntegrationDockerRepoConfigIntegration) IsSetServiceUsername() bool {
-	if o != nil && !IsNil(o.ServiceUsername) {
-		return true
-	}
-
-	return false
 }
 
 // SetServiceUsername gets a reference to the given string and assigns it to the ServiceUsername field.
@@ -186,15 +168,6 @@ func (o *IntegrationDockerRepoConfigIntegration) GetServicePasswordOk() (*string
 	return o.ServicePassword, true
 }
 
-// IsSetServicePassword returns a boolean if a field has been set.
-func (o *IntegrationDockerRepoConfigIntegration) IsSetServicePassword() bool {
-	if o != nil && !IsNil(o.ServicePassword) {
-		return true
-	}
-
-	return false
-}
-
 // SetServicePassword gets a reference to the given string and assigns it to the ServicePassword field.
 func (o *IntegrationDockerRepoConfigIntegration) SetServicePassword(v string) {
 	o.ServicePassword = &v
@@ -216,15 +189,6 @@ func (o *IntegrationDockerRepoConfigIntegration) GetServiceTokenOk() (*string, b
 		return nil, false
 	}
 	return o.ServiceToken, true
-}
-
-// IsSetServiceToken returns a boolean if a field has been set.
-func (o *IntegrationDockerRepoConfigIntegration) IsSetServiceToken() bool {
-	if o != nil && !IsNil(o.ServiceToken) {
-		return true
-	}
-
-	return false
 }
 
 // SetServiceToken gets a reference to the given string and assigns it to the ServiceToken field.

@@ -62,15 +62,6 @@ func (o *ListServicePlans200Response) GetServicePlansOk() ([]ListServicePlans200
 	return o.ServicePlans, true
 }
 
-// IsSetServicePlans returns a boolean if a field has been set.
-func (o *ListServicePlans200Response) IsSetServicePlans() bool {
-	if o != nil && !IsNil(o.ServicePlans) {
-		return true
-	}
-
-	return false
-}
-
 // SetServicePlans gets a reference to the given []ListServicePlans200ResponseAllOfServicePlansInner and assigns it to the ServicePlans field.
 func (o *ListServicePlans200Response) SetServicePlans(v []ListServicePlans200ResponseAllOfServicePlansInner) {
 	o.ServicePlans = v
@@ -92,15 +83,6 @@ func (o *ListServicePlans200Response) GetMetaOk() (*ListApprovals200ResponseAllO
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListServicePlans200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

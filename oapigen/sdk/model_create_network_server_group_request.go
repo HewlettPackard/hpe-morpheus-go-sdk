@@ -61,15 +61,6 @@ func (o *CreateNetworkServerGroupRequest) GetGroupOk() (*CreateNetworkServerGrou
 	return o.Group, true
 }
 
-// IsSetGroup returns a boolean if a field has been set.
-func (o *CreateNetworkServerGroupRequest) IsSetGroup() bool {
-	if o != nil && !IsNil(o.Group) {
-		return true
-	}
-
-	return false
-}
-
 // SetGroup gets a reference to the given CreateNetworkServerGroupRequestGroup and assigns it to the Group field.
 func (o *CreateNetworkServerGroupRequest) SetGroup(v CreateNetworkServerGroupRequestGroup) {
 	o.Group = &v

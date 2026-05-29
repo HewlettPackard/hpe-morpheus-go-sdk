@@ -63,15 +63,6 @@ func (o *Whoami200ResponsePermissionsInner) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *Whoami200ResponsePermissionsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *Whoami200ResponsePermissionsInner) SetName(v string) {
 	o.Name = &v
@@ -95,15 +86,6 @@ func (o *Whoami200ResponsePermissionsInner) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *Whoami200ResponsePermissionsInner) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *Whoami200ResponsePermissionsInner) SetCode(v string) {
 	o.Code = &v
@@ -125,15 +107,6 @@ func (o *Whoami200ResponsePermissionsInner) GetAccessOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Access, true
-}
-
-// IsSetAccess returns a boolean if a field has been set.
-func (o *Whoami200ResponsePermissionsInner) IsSetAccess() bool {
-	if o != nil && !IsNil(o.Access) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccess gets a reference to the given string and assigns it to the Access field.

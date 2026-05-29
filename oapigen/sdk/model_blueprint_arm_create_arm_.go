@@ -96,15 +96,6 @@ func (o *BlueprintARMCreateArm) GetJsonOk() (*string, bool) {
 	return o.Json, true
 }
 
-// IsSetJson returns a boolean if a field has been set.
-func (o *BlueprintARMCreateArm) IsSetJson() bool {
-	if o != nil && !IsNil(o.Json) {
-		return true
-	}
-
-	return false
-}
-
 // SetJson gets a reference to the given string and assigns it to the Json field.
 func (o *BlueprintARMCreateArm) SetJson(v string) {
 	o.Json = &v
@@ -126,15 +117,6 @@ func (o *BlueprintARMCreateArm) GetYamlOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Yaml, true
-}
-
-// IsSetYaml returns a boolean if a field has been set.
-func (o *BlueprintARMCreateArm) IsSetYaml() bool {
-	if o != nil && !IsNil(o.Yaml) {
-		return true
-	}
-
-	return false
 }
 
 // SetYaml gets a reference to the given string and assigns it to the Yaml field.
@@ -160,15 +142,6 @@ func (o *BlueprintARMCreateArm) GetGitOk() (*BlueprintARMCreateArmGit, bool) {
 	return o.Git, true
 }
 
-// IsSetGit returns a boolean if a field has been set.
-func (o *BlueprintARMCreateArm) IsSetGit() bool {
-	if o != nil && !IsNil(o.Git) {
-		return true
-	}
-
-	return false
-}
-
 // SetGit gets a reference to the given BlueprintARMCreateArmGit and assigns it to the Git field.
 func (o *BlueprintARMCreateArm) SetGit(v BlueprintARMCreateArmGit) {
 	o.Git = &v
@@ -190,15 +163,6 @@ func (o *BlueprintARMCreateArm) GetOsTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.OsType, true
-}
-
-// IsSetOsType returns a boolean if a field has been set.
-func (o *BlueprintARMCreateArm) IsSetOsType() bool {
-	if o != nil && !IsNil(o.OsType) {
-		return true
-	}
-
-	return false
 }
 
 // SetOsType gets a reference to the given string and assigns it to the OsType field.
@@ -224,15 +188,6 @@ func (o *BlueprintARMCreateArm) GetInstallAgentOk() (*BlueprintARMCreateArmInsta
 	return o.InstallAgent, true
 }
 
-// IsSetInstallAgent returns a boolean if a field has been set.
-func (o *BlueprintARMCreateArm) IsSetInstallAgent() bool {
-	if o != nil && !IsNil(o.InstallAgent) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstallAgent gets a reference to the given BlueprintARMCreateArmInstallAgent and assigns it to the InstallAgent field.
 func (o *BlueprintARMCreateArm) SetInstallAgent(v BlueprintARMCreateArmInstallAgent) {
 	o.InstallAgent = &v
@@ -254,15 +209,6 @@ func (o *BlueprintARMCreateArm) GetCloudInitEnabledOk() (*BlueprintARMCreateArmC
 		return nil, false
 	}
 	return o.CloudInitEnabled, true
-}
-
-// IsSetCloudInitEnabled returns a boolean if a field has been set.
-func (o *BlueprintARMCreateArm) IsSetCloudInitEnabled() bool {
-	if o != nil && !IsNil(o.CloudInitEnabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetCloudInitEnabled gets a reference to the given BlueprintARMCreateArmCloudInitEnabled and assigns it to the CloudInitEnabled field.

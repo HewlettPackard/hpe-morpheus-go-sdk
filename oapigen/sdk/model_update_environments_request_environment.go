@@ -78,15 +78,6 @@ func (o *UpdateEnvironmentsRequestEnvironment) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateEnvironmentsRequestEnvironment) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *UpdateEnvironmentsRequestEnvironment) SetName(v string) {
 	o.Name = &v
@@ -108,15 +99,6 @@ func (o *UpdateEnvironmentsRequestEnvironment) GetDescriptionOk() (*string, bool
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *UpdateEnvironmentsRequestEnvironment) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -142,15 +124,6 @@ func (o *UpdateEnvironmentsRequestEnvironment) GetVisibilityOk() (*string, bool)
 	return o.Visibility, true
 }
 
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *UpdateEnvironmentsRequestEnvironment) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
-}
-
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
 func (o *UpdateEnvironmentsRequestEnvironment) SetVisibility(v string) {
 	o.Visibility = &v
@@ -174,15 +147,6 @@ func (o *UpdateEnvironmentsRequestEnvironment) GetSortOrderOk() (*int64, bool) {
 	return o.SortOrder, true
 }
 
-// IsSetSortOrder returns a boolean if a field has been set.
-func (o *UpdateEnvironmentsRequestEnvironment) IsSetSortOrder() bool {
-	if o != nil && !IsNil(o.SortOrder) {
-		return true
-	}
-
-	return false
-}
-
 // SetSortOrder gets a reference to the given int64 and assigns it to the SortOrder field.
 func (o *UpdateEnvironmentsRequestEnvironment) SetSortOrder(v int64) {
 	o.SortOrder = &v
@@ -204,15 +168,6 @@ func (o *UpdateEnvironmentsRequestEnvironment) GetActiveOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Active, true
-}
-
-// IsSetActive returns a boolean if a field has been set.
-func (o *UpdateEnvironmentsRequestEnvironment) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
 }
 
 // SetActive gets a reference to the given bool and assigns it to the Active field.

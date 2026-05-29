@@ -118,15 +118,6 @@ func (o *AddInstanceTypeRequestInstanceType) GetLabelsOk() ([]string, bool) {
 	return o.Labels, true
 }
 
-// IsSetLabels returns a boolean if a field has been set.
-func (o *AddInstanceTypeRequestInstanceType) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
-}
-
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
 func (o *AddInstanceTypeRequestInstanceType) SetLabels(v []string) {
 	o.Labels = v
@@ -148,15 +139,6 @@ func (o *AddInstanceTypeRequestInstanceType) GetDescriptionOk() (*string, bool) 
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *AddInstanceTypeRequestInstanceType) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -182,15 +164,6 @@ func (o *AddInstanceTypeRequestInstanceType) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *AddInstanceTypeRequestInstanceType) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *AddInstanceTypeRequestInstanceType) SetCode(v string) {
 	o.Code = &v
@@ -212,15 +185,6 @@ func (o *AddInstanceTypeRequestInstanceType) GetCategoryOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Category, true
-}
-
-// IsSetCategory returns a boolean if a field has been set.
-func (o *AddInstanceTypeRequestInstanceType) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
-		return true
-	}
-
-	return false
 }
 
 // SetCategory gets a reference to the given string and assigns it to the Category field.
@@ -246,15 +210,6 @@ func (o *AddInstanceTypeRequestInstanceType) GetVisibilityOk() (*string, bool) {
 	return o.Visibility, true
 }
 
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *AddInstanceTypeRequestInstanceType) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
-}
-
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
 func (o *AddInstanceTypeRequestInstanceType) SetVisibility(v string) {
 	o.Visibility = &v
@@ -276,15 +231,6 @@ func (o *AddInstanceTypeRequestInstanceType) GetFeaturedOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Featured, true
-}
-
-// IsSetFeatured returns a boolean if a field has been set.
-func (o *AddInstanceTypeRequestInstanceType) IsSetFeatured() bool {
-	if o != nil && !IsNil(o.Featured) {
-		return true
-	}
-
-	return false
 }
 
 // SetFeatured gets a reference to the given bool and assigns it to the Featured field.
@@ -310,15 +256,6 @@ func (o *AddInstanceTypeRequestInstanceType) GetHasSettingsOk() (*bool, bool) {
 	return o.HasSettings, true
 }
 
-// IsSetHasSettings returns a boolean if a field has been set.
-func (o *AddInstanceTypeRequestInstanceType) IsSetHasSettings() bool {
-	if o != nil && !IsNil(o.HasSettings) {
-		return true
-	}
-
-	return false
-}
-
 // SetHasSettings gets a reference to the given bool and assigns it to the HasSettings field.
 func (o *AddInstanceTypeRequestInstanceType) SetHasSettings(v bool) {
 	o.HasSettings = &v
@@ -340,15 +277,6 @@ func (o *AddInstanceTypeRequestInstanceType) GetHasAutoScaleOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.HasAutoScale, true
-}
-
-// IsSetHasAutoScale returns a boolean if a field has been set.
-func (o *AddInstanceTypeRequestInstanceType) IsSetHasAutoScale() bool {
-	if o != nil && !IsNil(o.HasAutoScale) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasAutoScale gets a reference to the given bool and assigns it to the HasAutoScale field.
@@ -374,15 +302,6 @@ func (o *AddInstanceTypeRequestInstanceType) GetHasDeploymentOk() (*bool, bool) 
 	return o.HasDeployment, true
 }
 
-// IsSetHasDeployment returns a boolean if a field has been set.
-func (o *AddInstanceTypeRequestInstanceType) IsSetHasDeployment() bool {
-	if o != nil && !IsNil(o.HasDeployment) {
-		return true
-	}
-
-	return false
-}
-
 // SetHasDeployment gets a reference to the given bool and assigns it to the HasDeployment field.
 func (o *AddInstanceTypeRequestInstanceType) SetHasDeployment(v bool) {
 	o.HasDeployment = &v
@@ -404,15 +323,6 @@ func (o *AddInstanceTypeRequestInstanceType) GetEnvironmentPrefixOk() (*string, 
 		return nil, false
 	}
 	return o.EnvironmentPrefix, true
-}
-
-// IsSetEnvironmentPrefix returns a boolean if a field has been set.
-func (o *AddInstanceTypeRequestInstanceType) IsSetEnvironmentPrefix() bool {
-	if o != nil && !IsNil(o.EnvironmentPrefix) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnvironmentPrefix gets a reference to the given string and assigns it to the EnvironmentPrefix field.
@@ -438,15 +348,6 @@ func (o *AddInstanceTypeRequestInstanceType) GetEnvironmentVariablesOk() ([]AddI
 	return o.EnvironmentVariables, true
 }
 
-// IsSetEnvironmentVariables returns a boolean if a field has been set.
-func (o *AddInstanceTypeRequestInstanceType) IsSetEnvironmentVariables() bool {
-	if o != nil && !IsNil(o.EnvironmentVariables) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnvironmentVariables gets a reference to the given []AddInstanceTypeRequestInstanceTypeEnvironmentVariablesInner and assigns it to the EnvironmentVariables field.
 func (o *AddInstanceTypeRequestInstanceType) SetEnvironmentVariables(v []AddInstanceTypeRequestInstanceTypeEnvironmentVariablesInner) {
 	o.EnvironmentVariables = v
@@ -470,15 +371,6 @@ func (o *AddInstanceTypeRequestInstanceType) GetPriceSetsOk() ([]AddInstanceType
 	return o.PriceSets, true
 }
 
-// IsSetPriceSets returns a boolean if a field has been set.
-func (o *AddInstanceTypeRequestInstanceType) IsSetPriceSets() bool {
-	if o != nil && !IsNil(o.PriceSets) {
-		return true
-	}
-
-	return false
-}
-
 // SetPriceSets gets a reference to the given []AddInstanceTypeRequestInstanceTypePriceSetsInner and assigns it to the PriceSets field.
 func (o *AddInstanceTypeRequestInstanceType) SetPriceSets(v []AddInstanceTypeRequestInstanceTypePriceSetsInner) {
 	o.PriceSets = v
@@ -500,15 +392,6 @@ func (o *AddInstanceTypeRequestInstanceType) GetOptionTypesOk() ([]int64, bool) 
 		return nil, false
 	}
 	return o.OptionTypes, true
-}
-
-// IsSetOptionTypes returns a boolean if a field has been set.
-func (o *AddInstanceTypeRequestInstanceType) IsSetOptionTypes() bool {
-	if o != nil && !IsNil(o.OptionTypes) {
-		return true
-	}
-
-	return false
 }
 
 // SetOptionTypes gets a reference to the given []int64 and assigns it to the OptionTypes field.

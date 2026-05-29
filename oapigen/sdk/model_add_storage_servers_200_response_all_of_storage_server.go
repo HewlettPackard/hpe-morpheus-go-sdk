@@ -105,15 +105,6 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetIdOk() (*int64, bool
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *AddStorageServers200ResponseAllOfStorageServer) SetId(v int64) {
 	o.Id = &v
@@ -135,15 +126,6 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetNameOk() (*string, b
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -169,15 +151,6 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetTypeOk() (*AddStorag
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given AddStorageServers200ResponseAllOfStorageServerType and assigns it to the Type field.
 func (o *AddStorageServers200ResponseAllOfStorageServer) SetType(v AddStorageServers200ResponseAllOfStorageServerType) {
 	o.Type = &v
@@ -201,15 +174,6 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetChassisOk() (*AddSto
 	return o.Chassis, true
 }
 
-// IsSetChassis returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetChassis() bool {
-	if o != nil && !IsNil(o.Chassis) {
-		return true
-	}
-
-	return false
-}
-
 // SetChassis gets a reference to the given AddStorageServers200ResponseAllOfStorageServerChassis and assigns it to the Chassis field.
 func (o *AddStorageServers200ResponseAllOfStorageServer) SetChassis(v AddStorageServers200ResponseAllOfStorageServerChassis) {
 	o.Chassis = &v
@@ -231,15 +195,6 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetVisibilityOk() (*str
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -266,28 +221,9 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetDescriptionOk() (*st
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *AddStorageServers200ResponseAllOfStorageServer) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetInternalId returns the InternalId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -309,28 +245,9 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetInternalIdOk() (*str
 	return o.InternalId.Get(), o.InternalId.IsSet()
 }
 
-// IsSetInternalId returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetInternalId() bool {
-	if o != nil && o.InternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInternalId gets a reference to the given NullableString and assigns it to the InternalId field.
 func (o *AddStorageServers200ResponseAllOfStorageServer) SetInternalId(v string) {
 	o.InternalId.Set(&v)
-}
-
-// SetInternalIdNil sets the value for InternalId to be an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) SetInternalIdNil() {
-	o.InternalId.Set(nil)
-}
-
-// UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) UnsetInternalId() {
-	o.InternalId.Unset()
 }
 
 // GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -352,28 +269,9 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetExternalIdOk() (*str
 	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetExternalId() bool {
-	if o != nil && o.ExternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *AddStorageServers200ResponseAllOfStorageServer) SetExternalId(v string) {
 	o.ExternalId.Set(&v)
-}
-
-// SetExternalIdNil sets the value for ExternalId to be an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) SetExternalIdNil() {
-	o.ExternalId.Set(nil)
-}
-
-// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) UnsetExternalId() {
-	o.ExternalId.Unset()
 }
 
 // GetServiceUrl returns the ServiceUrl field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -395,28 +293,9 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetServiceUrlOk() (*str
 	return o.ServiceUrl.Get(), o.ServiceUrl.IsSet()
 }
 
-// IsSetServiceUrl returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetServiceUrl() bool {
-	if o != nil && o.ServiceUrl.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceUrl gets a reference to the given NullableString and assigns it to the ServiceUrl field.
 func (o *AddStorageServers200ResponseAllOfStorageServer) SetServiceUrl(v string) {
 	o.ServiceUrl.Set(&v)
-}
-
-// SetServiceUrlNil sets the value for ServiceUrl to be an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) SetServiceUrlNil() {
-	o.ServiceUrl.Set(nil)
-}
-
-// UnsetServiceUrl ensures that no value is present for ServiceUrl, not even an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) UnsetServiceUrl() {
-	o.ServiceUrl.Unset()
 }
 
 // GetServiceHost returns the ServiceHost field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -438,28 +317,9 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetServiceHostOk() (*st
 	return o.ServiceHost.Get(), o.ServiceHost.IsSet()
 }
 
-// IsSetServiceHost returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetServiceHost() bool {
-	if o != nil && o.ServiceHost.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceHost gets a reference to the given NullableString and assigns it to the ServiceHost field.
 func (o *AddStorageServers200ResponseAllOfStorageServer) SetServiceHost(v string) {
 	o.ServiceHost.Set(&v)
-}
-
-// SetServiceHostNil sets the value for ServiceHost to be an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) SetServiceHostNil() {
-	o.ServiceHost.Set(nil)
-}
-
-// UnsetServiceHost ensures that no value is present for ServiceHost, not even an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) UnsetServiceHost() {
-	o.ServiceHost.Unset()
 }
 
 // GetServicePath returns the ServicePath field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -481,28 +341,9 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetServicePathOk() (*st
 	return o.ServicePath.Get(), o.ServicePath.IsSet()
 }
 
-// IsSetServicePath returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetServicePath() bool {
-	if o != nil && o.ServicePath.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServicePath gets a reference to the given NullableString and assigns it to the ServicePath field.
 func (o *AddStorageServers200ResponseAllOfStorageServer) SetServicePath(v string) {
 	o.ServicePath.Set(&v)
-}
-
-// SetServicePathNil sets the value for ServicePath to be an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) SetServicePathNil() {
-	o.ServicePath.Set(nil)
-}
-
-// UnsetServicePath ensures that no value is present for ServicePath, not even an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) UnsetServicePath() {
-	o.ServicePath.Unset()
 }
 
 // GetServiceToken returns the ServiceToken field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -524,28 +365,9 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetServiceTokenOk() (*s
 	return o.ServiceToken.Get(), o.ServiceToken.IsSet()
 }
 
-// IsSetServiceToken returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetServiceToken() bool {
-	if o != nil && o.ServiceToken.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceToken gets a reference to the given NullableString and assigns it to the ServiceToken field.
 func (o *AddStorageServers200ResponseAllOfStorageServer) SetServiceToken(v string) {
 	o.ServiceToken.Set(&v)
-}
-
-// SetServiceTokenNil sets the value for ServiceToken to be an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) SetServiceTokenNil() {
-	o.ServiceToken.Set(nil)
-}
-
-// UnsetServiceToken ensures that no value is present for ServiceToken, not even an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) UnsetServiceToken() {
-	o.ServiceToken.Unset()
 }
 
 // GetServiceTokenHash returns the ServiceTokenHash field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -567,28 +389,9 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetServiceTokenHashOk()
 	return o.ServiceTokenHash.Get(), o.ServiceTokenHash.IsSet()
 }
 
-// IsSetServiceTokenHash returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetServiceTokenHash() bool {
-	if o != nil && o.ServiceTokenHash.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceTokenHash gets a reference to the given NullableString and assigns it to the ServiceTokenHash field.
 func (o *AddStorageServers200ResponseAllOfStorageServer) SetServiceTokenHash(v string) {
 	o.ServiceTokenHash.Set(&v)
-}
-
-// SetServiceTokenHashNil sets the value for ServiceTokenHash to be an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) SetServiceTokenHashNil() {
-	o.ServiceTokenHash.Set(nil)
-}
-
-// UnsetServiceTokenHash ensures that no value is present for ServiceTokenHash, not even an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) UnsetServiceTokenHash() {
-	o.ServiceTokenHash.Unset()
 }
 
 // GetServiceVersion returns the ServiceVersion field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -610,28 +413,9 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetServiceVersionOk() (
 	return o.ServiceVersion.Get(), o.ServiceVersion.IsSet()
 }
 
-// IsSetServiceVersion returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetServiceVersion() bool {
-	if o != nil && o.ServiceVersion.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceVersion gets a reference to the given NullableString and assigns it to the ServiceVersion field.
 func (o *AddStorageServers200ResponseAllOfStorageServer) SetServiceVersion(v string) {
 	o.ServiceVersion.Set(&v)
-}
-
-// SetServiceVersionNil sets the value for ServiceVersion to be an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) SetServiceVersionNil() {
-	o.ServiceVersion.Set(nil)
-}
-
-// UnsetServiceVersion ensures that no value is present for ServiceVersion, not even an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) UnsetServiceVersion() {
-	o.ServiceVersion.Unset()
 }
 
 // GetServiceUsername returns the ServiceUsername field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -653,28 +437,9 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetServiceUsernameOk() 
 	return o.ServiceUsername.Get(), o.ServiceUsername.IsSet()
 }
 
-// IsSetServiceUsername returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetServiceUsername() bool {
-	if o != nil && o.ServiceUsername.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceUsername gets a reference to the given NullableString and assigns it to the ServiceUsername field.
 func (o *AddStorageServers200ResponseAllOfStorageServer) SetServiceUsername(v string) {
 	o.ServiceUsername.Set(&v)
-}
-
-// SetServiceUsernameNil sets the value for ServiceUsername to be an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) SetServiceUsernameNil() {
-	o.ServiceUsername.Set(nil)
-}
-
-// UnsetServiceUsername ensures that no value is present for ServiceUsername, not even an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) UnsetServiceUsername() {
-	o.ServiceUsername.Unset()
 }
 
 // GetServicePassword returns the ServicePassword field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -696,28 +461,9 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetServicePasswordOk() 
 	return o.ServicePassword.Get(), o.ServicePassword.IsSet()
 }
 
-// IsSetServicePassword returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetServicePassword() bool {
-	if o != nil && o.ServicePassword.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServicePassword gets a reference to the given NullableString and assigns it to the ServicePassword field.
 func (o *AddStorageServers200ResponseAllOfStorageServer) SetServicePassword(v string) {
 	o.ServicePassword.Set(&v)
-}
-
-// SetServicePasswordNil sets the value for ServicePassword to be an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) SetServicePasswordNil() {
-	o.ServicePassword.Set(nil)
-}
-
-// UnsetServicePassword ensures that no value is present for ServicePassword, not even an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) UnsetServicePassword() {
-	o.ServicePassword.Unset()
 }
 
 // GetServicePasswordHash returns the ServicePasswordHash field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -739,28 +485,9 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetServicePasswordHashO
 	return o.ServicePasswordHash.Get(), o.ServicePasswordHash.IsSet()
 }
 
-// IsSetServicePasswordHash returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetServicePasswordHash() bool {
-	if o != nil && o.ServicePasswordHash.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServicePasswordHash gets a reference to the given NullableString and assigns it to the ServicePasswordHash field.
 func (o *AddStorageServers200ResponseAllOfStorageServer) SetServicePasswordHash(v string) {
 	o.ServicePasswordHash.Set(&v)
-}
-
-// SetServicePasswordHashNil sets the value for ServicePasswordHash to be an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) SetServicePasswordHashNil() {
-	o.ServicePasswordHash.Set(nil)
-}
-
-// UnsetServicePasswordHash ensures that no value is present for ServicePasswordHash, not even an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) UnsetServicePasswordHash() {
-	o.ServicePasswordHash.Unset()
 }
 
 // GetInternalIp returns the InternalIp field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -782,28 +509,9 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetInternalIpOk() (*str
 	return o.InternalIp.Get(), o.InternalIp.IsSet()
 }
 
-// IsSetInternalIp returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetInternalIp() bool {
-	if o != nil && o.InternalIp.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInternalIp gets a reference to the given NullableString and assigns it to the InternalIp field.
 func (o *AddStorageServers200ResponseAllOfStorageServer) SetInternalIp(v string) {
 	o.InternalIp.Set(&v)
-}
-
-// SetInternalIpNil sets the value for InternalIp to be an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) SetInternalIpNil() {
-	o.InternalIp.Set(nil)
-}
-
-// UnsetInternalIp ensures that no value is present for InternalIp, not even an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) UnsetInternalIp() {
-	o.InternalIp.Unset()
 }
 
 // GetExternalIp returns the ExternalIp field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -825,28 +533,9 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetExternalIpOk() (*str
 	return o.ExternalIp.Get(), o.ExternalIp.IsSet()
 }
 
-// IsSetExternalIp returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetExternalIp() bool {
-	if o != nil && o.ExternalIp.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalIp gets a reference to the given NullableString and assigns it to the ExternalIp field.
 func (o *AddStorageServers200ResponseAllOfStorageServer) SetExternalIp(v string) {
 	o.ExternalIp.Set(&v)
-}
-
-// SetExternalIpNil sets the value for ExternalIp to be an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) SetExternalIpNil() {
-	o.ExternalIp.Set(nil)
-}
-
-// UnsetExternalIp ensures that no value is present for ExternalIp, not even an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) UnsetExternalIp() {
-	o.ExternalIp.Unset()
 }
 
 // GetApiPort returns the ApiPort field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -868,28 +557,9 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetApiPortOk() (*int32,
 	return o.ApiPort.Get(), o.ApiPort.IsSet()
 }
 
-// IsSetApiPort returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetApiPort() bool {
-	if o != nil && o.ApiPort.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetApiPort gets a reference to the given NullableInt32 and assigns it to the ApiPort field.
 func (o *AddStorageServers200ResponseAllOfStorageServer) SetApiPort(v int32) {
 	o.ApiPort.Set(&v)
-}
-
-// SetApiPortNil sets the value for ApiPort to be an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) SetApiPortNil() {
-	o.ApiPort.Set(nil)
-}
-
-// UnsetApiPort ensures that no value is present for ApiPort, not even an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) UnsetApiPort() {
-	o.ApiPort.Unset()
 }
 
 // GetAdminPort returns the AdminPort field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -911,28 +581,9 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetAdminPortOk() (*int3
 	return o.AdminPort.Get(), o.AdminPort.IsSet()
 }
 
-// IsSetAdminPort returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetAdminPort() bool {
-	if o != nil && o.AdminPort.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAdminPort gets a reference to the given NullableInt32 and assigns it to the AdminPort field.
 func (o *AddStorageServers200ResponseAllOfStorageServer) SetAdminPort(v int32) {
 	o.AdminPort.Set(&v)
-}
-
-// SetAdminPortNil sets the value for AdminPort to be an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) SetAdminPortNil() {
-	o.AdminPort.Set(nil)
-}
-
-// UnsetAdminPort ensures that no value is present for AdminPort, not even an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) UnsetAdminPort() {
-	o.AdminPort.Unset()
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
@@ -951,15 +602,6 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetConfigOk() (map[stri
 		return map[string]interface{}{}, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
@@ -985,15 +627,6 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetRefTypeOk() (*string
 	return o.RefType, true
 }
 
-// IsSetRefType returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetRefType() bool {
-	if o != nil && !IsNil(o.RefType) {
-		return true
-	}
-
-	return false
-}
-
 // SetRefType gets a reference to the given string and assigns it to the RefType field.
 func (o *AddStorageServers200ResponseAllOfStorageServer) SetRefType(v string) {
 	o.RefType = &v
@@ -1015,15 +648,6 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetRefIdOk() (*int64, b
 		return nil, false
 	}
 	return o.RefId, true
-}
-
-// IsSetRefId returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetRefId() bool {
-	if o != nil && !IsNil(o.RefId) {
-		return true
-	}
-
-	return false
 }
 
 // SetRefId gets a reference to the given int64 and assigns it to the RefId field.
@@ -1050,28 +674,9 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetCategoryOk() (*strin
 	return o.Category.Get(), o.Category.IsSet()
 }
 
-// IsSetCategory returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetCategory() bool {
-	if o != nil && o.Category.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCategory gets a reference to the given NullableString and assigns it to the Category field.
 func (o *AddStorageServers200ResponseAllOfStorageServer) SetCategory(v string) {
 	o.Category.Set(&v)
-}
-
-// SetCategoryNil sets the value for Category to be an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) SetCategoryNil() {
-	o.Category.Set(nil)
-}
-
-// UnsetCategory ensures that no value is present for Category, not even an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) UnsetCategory() {
-	o.Category.Unset()
 }
 
 // GetServerVendor returns the ServerVendor field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1093,28 +698,9 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetServerVendorOk() (*s
 	return o.ServerVendor.Get(), o.ServerVendor.IsSet()
 }
 
-// IsSetServerVendor returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetServerVendor() bool {
-	if o != nil && o.ServerVendor.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServerVendor gets a reference to the given NullableString and assigns it to the ServerVendor field.
 func (o *AddStorageServers200ResponseAllOfStorageServer) SetServerVendor(v string) {
 	o.ServerVendor.Set(&v)
-}
-
-// SetServerVendorNil sets the value for ServerVendor to be an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) SetServerVendorNil() {
-	o.ServerVendor.Set(nil)
-}
-
-// UnsetServerVendor ensures that no value is present for ServerVendor, not even an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) UnsetServerVendor() {
-	o.ServerVendor.Unset()
 }
 
 // GetServerModel returns the ServerModel field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1136,28 +722,9 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetServerModelOk() (*st
 	return o.ServerModel.Get(), o.ServerModel.IsSet()
 }
 
-// IsSetServerModel returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetServerModel() bool {
-	if o != nil && o.ServerModel.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServerModel gets a reference to the given NullableString and assigns it to the ServerModel field.
 func (o *AddStorageServers200ResponseAllOfStorageServer) SetServerModel(v string) {
 	o.ServerModel.Set(&v)
-}
-
-// SetServerModelNil sets the value for ServerModel to be an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) SetServerModelNil() {
-	o.ServerModel.Set(nil)
-}
-
-// UnsetServerModel ensures that no value is present for ServerModel, not even an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) UnsetServerModel() {
-	o.ServerModel.Unset()
 }
 
 // GetSerialNumber returns the SerialNumber field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1179,28 +746,9 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetSerialNumberOk() (*s
 	return o.SerialNumber.Get(), o.SerialNumber.IsSet()
 }
 
-// IsSetSerialNumber returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetSerialNumber() bool {
-	if o != nil && o.SerialNumber.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSerialNumber gets a reference to the given NullableString and assigns it to the SerialNumber field.
 func (o *AddStorageServers200ResponseAllOfStorageServer) SetSerialNumber(v string) {
 	o.SerialNumber.Set(&v)
-}
-
-// SetSerialNumberNil sets the value for SerialNumber to be an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) SetSerialNumberNil() {
-	o.SerialNumber.Set(nil)
-}
-
-// UnsetSerialNumber ensures that no value is present for SerialNumber, not even an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) UnsetSerialNumber() {
-	o.SerialNumber.Unset()
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1222,28 +770,9 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetStatusOk() (*string,
 	return o.Status.Get(), o.Status.IsSet()
 }
 
-// IsSetStatus returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetStatus() bool {
-	if o != nil && o.Status.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatus gets a reference to the given NullableString and assigns it to the Status field.
 func (o *AddStorageServers200ResponseAllOfStorageServer) SetStatus(v string) {
 	o.Status.Set(&v)
-}
-
-// SetStatusNil sets the value for Status to be an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) SetStatusNil() {
-	o.Status.Set(nil)
-}
-
-// UnsetStatus ensures that no value is present for Status, not even an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) UnsetStatus() {
-	o.Status.Unset()
 }
 
 // GetStatusMessage returns the StatusMessage field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1265,28 +794,9 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetStatusMessageOk() (*
 	return o.StatusMessage.Get(), o.StatusMessage.IsSet()
 }
 
-// IsSetStatusMessage returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetStatusMessage() bool {
-	if o != nil && o.StatusMessage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusMessage gets a reference to the given NullableString and assigns it to the StatusMessage field.
 func (o *AddStorageServers200ResponseAllOfStorageServer) SetStatusMessage(v string) {
 	o.StatusMessage.Set(&v)
-}
-
-// SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) SetStatusMessageNil() {
-	o.StatusMessage.Set(nil)
-}
-
-// UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) UnsetStatusMessage() {
-	o.StatusMessage.Unset()
 }
 
 // GetStatusDate returns the StatusDate field value if set, zero value otherwise.
@@ -1305,15 +815,6 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetStatusDateOk() (*tim
 		return nil, false
 	}
 	return o.StatusDate, true
-}
-
-// IsSetStatusDate returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetStatusDate() bool {
-	if o != nil && !IsNil(o.StatusDate) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatusDate gets a reference to the given time.Time and assigns it to the StatusDate field.
@@ -1340,28 +841,9 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetErrorMessageOk() (*s
 	return o.ErrorMessage.Get(), o.ErrorMessage.IsSet()
 }
 
-// IsSetErrorMessage returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetErrorMessage() bool {
-	if o != nil && o.ErrorMessage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetErrorMessage gets a reference to the given NullableString and assigns it to the ErrorMessage field.
 func (o *AddStorageServers200ResponseAllOfStorageServer) SetErrorMessage(v string) {
 	o.ErrorMessage.Set(&v)
-}
-
-// SetErrorMessageNil sets the value for ErrorMessage to be an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) SetErrorMessageNil() {
-	o.ErrorMessage.Set(nil)
-}
-
-// UnsetErrorMessage ensures that no value is present for ErrorMessage, not even an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) UnsetErrorMessage() {
-	o.ErrorMessage.Unset()
 }
 
 // GetMaxStorage returns the MaxStorage field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1383,28 +865,9 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetMaxStorageOk() (*int
 	return o.MaxStorage.Get(), o.MaxStorage.IsSet()
 }
 
-// IsSetMaxStorage returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetMaxStorage() bool {
-	if o != nil && o.MaxStorage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxStorage gets a reference to the given NullableInt64 and assigns it to the MaxStorage field.
 func (o *AddStorageServers200ResponseAllOfStorageServer) SetMaxStorage(v int64) {
 	o.MaxStorage.Set(&v)
-}
-
-// SetMaxStorageNil sets the value for MaxStorage to be an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) SetMaxStorageNil() {
-	o.MaxStorage.Set(nil)
-}
-
-// UnsetMaxStorage ensures that no value is present for MaxStorage, not even an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) UnsetMaxStorage() {
-	o.MaxStorage.Unset()
 }
 
 // GetUsedStorage returns the UsedStorage field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1426,28 +889,9 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetUsedStorageOk() (*in
 	return o.UsedStorage.Get(), o.UsedStorage.IsSet()
 }
 
-// IsSetUsedStorage returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetUsedStorage() bool {
-	if o != nil && o.UsedStorage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUsedStorage gets a reference to the given NullableInt64 and assigns it to the UsedStorage field.
 func (o *AddStorageServers200ResponseAllOfStorageServer) SetUsedStorage(v int64) {
 	o.UsedStorage.Set(&v)
-}
-
-// SetUsedStorageNil sets the value for UsedStorage to be an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) SetUsedStorageNil() {
-	o.UsedStorage.Set(nil)
-}
-
-// UnsetUsedStorage ensures that no value is present for UsedStorage, not even an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) UnsetUsedStorage() {
-	o.UsedStorage.Unset()
 }
 
 // GetDiskCount returns the DiskCount field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1469,28 +913,9 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetDiskCountOk() (*int3
 	return o.DiskCount.Get(), o.DiskCount.IsSet()
 }
 
-// IsSetDiskCount returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetDiskCount() bool {
-	if o != nil && o.DiskCount.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDiskCount gets a reference to the given NullableInt32 and assigns it to the DiskCount field.
 func (o *AddStorageServers200ResponseAllOfStorageServer) SetDiskCount(v int32) {
 	o.DiskCount.Set(&v)
-}
-
-// SetDiskCountNil sets the value for DiskCount to be an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) SetDiskCountNil() {
-	o.DiskCount.Set(nil)
-}
-
-// UnsetDiskCount ensures that no value is present for DiskCount, not even an explicit nil
-func (o *AddStorageServers200ResponseAllOfStorageServer) UnsetDiskCount() {
-	o.DiskCount.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -1509,15 +934,6 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetDateCreatedOk() (*ti
 		return nil, false
 	}
 	return o.DateCreated, true
-}
-
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
@@ -1543,15 +959,6 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetLastUpdatedOk() (*ti
 	return o.LastUpdated, true
 }
 
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
-}
-
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
 func (o *AddStorageServers200ResponseAllOfStorageServer) SetLastUpdated(v time.Time) {
 	o.LastUpdated = &v
@@ -1573,15 +980,6 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetEnabledOk() (*bool, 
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -1607,15 +1005,6 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetGroupsOk() ([]AddSto
 	return o.Groups, true
 }
 
-// IsSetGroups returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetGroups() bool {
-	if o != nil && !IsNil(o.Groups) {
-		return true
-	}
-
-	return false
-}
-
 // SetGroups gets a reference to the given []AddStorageServers200ResponseAllOfStorageServerGroupsInner and assigns it to the Groups field.
 func (o *AddStorageServers200ResponseAllOfStorageServer) SetGroups(v []AddStorageServers200ResponseAllOfStorageServerGroupsInner) {
 	o.Groups = v
@@ -1637,15 +1026,6 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetHostGroupsOk() ([]Ad
 		return nil, false
 	}
 	return o.HostGroups, true
-}
-
-// IsSetHostGroups returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetHostGroups() bool {
-	if o != nil && !IsNil(o.HostGroups) {
-		return true
-	}
-
-	return false
 }
 
 // SetHostGroups gets a reference to the given []AddStorageServers200ResponseAllOfStorageServerHostGroupsInner and assigns it to the HostGroups field.
@@ -1671,15 +1051,6 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetHostsOk() ([]AddStor
 	return o.Hosts, true
 }
 
-// IsSetHosts returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetHosts() bool {
-	if o != nil && !IsNil(o.Hosts) {
-		return true
-	}
-
-	return false
-}
-
 // SetHosts gets a reference to the given []AddStorageServers200ResponseAllOfStorageServerHostsInner and assigns it to the Hosts field.
 func (o *AddStorageServers200ResponseAllOfStorageServer) SetHosts(v []AddStorageServers200ResponseAllOfStorageServerHostsInner) {
 	o.Hosts = v
@@ -1701,15 +1072,6 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetTenantsOk() ([]AddSt
 		return nil, false
 	}
 	return o.Tenants, true
-}
-
-// IsSetTenants returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetTenants() bool {
-	if o != nil && !IsNil(o.Tenants) {
-		return true
-	}
-
-	return false
 }
 
 // SetTenants gets a reference to the given []AddStorageServers200ResponseAllOfStorageServerTenantsInner and assigns it to the Tenants field.
@@ -1735,15 +1097,6 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetOwnerOk() (*AddStora
 	return o.Owner, true
 }
 
-// IsSetOwner returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
-		return true
-	}
-
-	return false
-}
-
 // SetOwner gets a reference to the given AddStorageServers200ResponseAllOfStorageServerOwner and assigns it to the Owner field.
 func (o *AddStorageServers200ResponseAllOfStorageServer) SetOwner(v AddStorageServers200ResponseAllOfStorageServerOwner) {
 	o.Owner = &v
@@ -1765,15 +1118,6 @@ func (o *AddStorageServers200ResponseAllOfStorageServer) GetCredentialOk() (*Add
 		return nil, false
 	}
 	return o.Credential, true
-}
-
-// IsSetCredential returns a boolean if a field has been set.
-func (o *AddStorageServers200ResponseAllOfStorageServer) IsSetCredential() bool {
-	if o != nil && !IsNil(o.Credential) {
-		return true
-	}
-
-	return false
 }
 
 // SetCredential gets a reference to the given AddStorageServers200ResponseAllOfStorageServerCredential and assigns it to the Credential field.

@@ -64,15 +64,6 @@ func (o *ListHosts200Response) GetServersOk() ([]ListHosts200ResponseAllOfServer
 	return o.Servers, true
 }
 
-// IsSetServers returns a boolean if a field has been set.
-func (o *ListHosts200Response) IsSetServers() bool {
-	if o != nil && !IsNil(o.Servers) {
-		return true
-	}
-
-	return false
-}
-
 // SetServers gets a reference to the given []ListHosts200ResponseAllOfServersInner and assigns it to the Servers field.
 func (o *ListHosts200Response) SetServers(v []ListHosts200ResponseAllOfServersInner) {
 	o.Servers = v
@@ -94,15 +85,6 @@ func (o *ListHosts200Response) GetStatsOk() (map[string]interface{}, bool) {
 		return map[string]interface{}{}, false
 	}
 	return o.Stats, true
-}
-
-// IsSetStats returns a boolean if a field has been set.
-func (o *ListHosts200Response) IsSetStats() bool {
-	if o != nil && !IsNil(o.Stats) {
-		return true
-	}
-
-	return false
 }
 
 // SetStats gets a reference to the given map[string]interface{} and assigns it to the Stats field.
@@ -128,15 +110,6 @@ func (o *ListHosts200Response) GetMultitenantOk() (*bool, bool) {
 	return o.Multitenant, true
 }
 
-// IsSetMultitenant returns a boolean if a field has been set.
-func (o *ListHosts200Response) IsSetMultitenant() bool {
-	if o != nil && !IsNil(o.Multitenant) {
-		return true
-	}
-
-	return false
-}
-
 // SetMultitenant gets a reference to the given bool and assigns it to the Multitenant field.
 func (o *ListHosts200Response) SetMultitenant(v bool) {
 	o.Multitenant = &v
@@ -158,15 +131,6 @@ func (o *ListHosts200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, 
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListHosts200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

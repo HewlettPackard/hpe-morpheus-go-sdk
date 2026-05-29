@@ -61,15 +61,6 @@ func (o *ClusterServerCreateConfigGKEWorker) GetPlanOk() (*ClusterServerCreateCo
 	return o.Plan, true
 }
 
-// IsSetPlan returns a boolean if a field has been set.
-func (o *ClusterServerCreateConfigGKEWorker) IsSetPlan() bool {
-	if o != nil && !IsNil(o.Plan) {
-		return true
-	}
-
-	return false
-}
-
 // SetPlan gets a reference to the given ClusterServerCreateConfigGKEWorkerPlan and assigns it to the Plan field.
 func (o *ClusterServerCreateConfigGKEWorker) SetPlan(v ClusterServerCreateConfigGKEWorkerPlan) {
 	o.Plan = &v

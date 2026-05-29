@@ -92,15 +92,6 @@ func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) GetIdOk() (*int64
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) SetId(v int64) {
 	o.Id = &v
@@ -122,15 +113,6 @@ func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) GetProcessIdOk() 
 		return nil, false
 	}
 	return o.ProcessId, true
-}
-
-// IsSetProcessId returns a boolean if a field has been set.
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) IsSetProcessId() bool {
-	if o != nil && !IsNil(o.ProcessId) {
-		return true
-	}
-
-	return false
 }
 
 // SetProcessId gets a reference to the given int64 and assigns it to the ProcessId field.
@@ -156,15 +138,6 @@ func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) GetAccountIdOk() 
 	return o.AccountId, true
 }
 
-// IsSetAccountId returns a boolean if a field has been set.
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) IsSetAccountId() bool {
-	if o != nil && !IsNil(o.AccountId) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccountId gets a reference to the given int64 and assigns it to the AccountId field.
 func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) SetAccountId(v int64) {
 	o.AccountId = &v
@@ -188,15 +161,6 @@ func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) GetUniqueIdOk() (
 	return o.UniqueId, true
 }
 
-// IsSetUniqueId returns a boolean if a field has been set.
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) IsSetUniqueId() bool {
-	if o != nil && !IsNil(o.UniqueId) {
-		return true
-	}
-
-	return false
-}
-
 // SetUniqueId gets a reference to the given string and assigns it to the UniqueId field.
 func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) SetUniqueId(v string) {
 	o.UniqueId = &v
@@ -218,15 +182,6 @@ func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) GetProcessTypeOk(
 		return nil, false
 	}
 	return o.ProcessType, true
-}
-
-// IsSetProcessType returns a boolean if a field has been set.
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) IsSetProcessType() bool {
-	if o != nil && !IsNil(o.ProcessType) {
-		return true
-	}
-
-	return false
 }
 
 // SetProcessType gets a reference to the given ListHistory200ResponseAllOfProcessesInnerEventsInnerProcessType and assigns it to the ProcessType field.
@@ -253,28 +208,9 @@ func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) GetDescriptionOk(
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetRefType returns the RefType field value if set, zero value otherwise.
@@ -293,15 +229,6 @@ func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) GetRefTypeOk() (*
 		return nil, false
 	}
 	return o.RefType, true
-}
-
-// IsSetRefType returns a boolean if a field has been set.
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) IsSetRefType() bool {
-	if o != nil && !IsNil(o.RefType) {
-		return true
-	}
-
-	return false
 }
 
 // SetRefType gets a reference to the given string and assigns it to the RefType field.
@@ -325,15 +252,6 @@ func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) GetRefIdOk() (*in
 		return nil, false
 	}
 	return o.RefId, true
-}
-
-// IsSetRefId returns a boolean if a field has been set.
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) IsSetRefId() bool {
-	if o != nil && !IsNil(o.RefId) {
-		return true
-	}
-
-	return false
 }
 
 // SetRefId gets a reference to the given int64 and assigns it to the RefId field.
@@ -360,28 +278,9 @@ func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) GetSubTypeOk() (*
 	return o.SubType.Get(), o.SubType.IsSet()
 }
 
-// IsSetSubType returns a boolean if a field has been set.
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) IsSetSubType() bool {
-	if o != nil && o.SubType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSubType gets a reference to the given NullableString and assigns it to the SubType field.
 func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) SetSubType(v string) {
 	o.SubType.Set(&v)
-}
-
-// SetSubTypeNil sets the value for SubType to be an explicit nil
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) SetSubTypeNil() {
-	o.SubType.Set(nil)
-}
-
-// UnsetSubType ensures that no value is present for SubType, not even an explicit nil
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) UnsetSubType() {
-	o.SubType.Unset()
 }
 
 // GetSubId returns the SubId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -403,28 +302,9 @@ func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) GetSubIdOk() (*st
 	return o.SubId.Get(), o.SubId.IsSet()
 }
 
-// IsSetSubId returns a boolean if a field has been set.
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) IsSetSubId() bool {
-	if o != nil && o.SubId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSubId gets a reference to the given NullableString and assigns it to the SubId field.
 func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) SetSubId(v string) {
 	o.SubId.Set(&v)
-}
-
-// SetSubIdNil sets the value for SubId to be an explicit nil
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) SetSubIdNil() {
-	o.SubId.Set(nil)
-}
-
-// UnsetSubId ensures that no value is present for SubId, not even an explicit nil
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) UnsetSubId() {
-	o.SubId.Unset()
 }
 
 // GetZoneId returns the ZoneId field value if set, zero value otherwise.
@@ -443,15 +323,6 @@ func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) GetZoneIdOk() (*i
 		return nil, false
 	}
 	return o.ZoneId, true
-}
-
-// IsSetZoneId returns a boolean if a field has been set.
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) IsSetZoneId() bool {
-	if o != nil && !IsNil(o.ZoneId) {
-		return true
-	}
-
-	return false
 }
 
 // SetZoneId gets a reference to the given int64 and assigns it to the ZoneId field.
@@ -478,28 +349,9 @@ func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) GetIntegrationIdO
 	return o.IntegrationId.Get(), o.IntegrationId.IsSet()
 }
 
-// IsSetIntegrationId returns a boolean if a field has been set.
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) IsSetIntegrationId() bool {
-	if o != nil && o.IntegrationId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetIntegrationId gets a reference to the given NullableString and assigns it to the IntegrationId field.
 func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) SetIntegrationId(v string) {
 	o.IntegrationId.Set(&v)
-}
-
-// SetIntegrationIdNil sets the value for IntegrationId to be an explicit nil
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) SetIntegrationIdNil() {
-	o.IntegrationId.Set(nil)
-}
-
-// UnsetIntegrationId ensures that no value is present for IntegrationId, not even an explicit nil
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) UnsetIntegrationId() {
-	o.IntegrationId.Unset()
 }
 
 // GetInstanceId returns the InstanceId field value if set, zero value otherwise.
@@ -518,15 +370,6 @@ func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) GetInstanceIdOk()
 		return nil, false
 	}
 	return o.InstanceId, true
-}
-
-// IsSetInstanceId returns a boolean if a field has been set.
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) IsSetInstanceId() bool {
-	if o != nil && !IsNil(o.InstanceId) {
-		return true
-	}
-
-	return false
 }
 
 // SetInstanceId gets a reference to the given int64 and assigns it to the InstanceId field.
@@ -552,15 +395,6 @@ func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) GetContainerIdOk(
 	return o.ContainerId, true
 }
 
-// IsSetContainerId returns a boolean if a field has been set.
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) IsSetContainerId() bool {
-	if o != nil && !IsNil(o.ContainerId) {
-		return true
-	}
-
-	return false
-}
-
 // SetContainerId gets a reference to the given int64 and assigns it to the ContainerId field.
 func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) SetContainerId(v int64) {
 	o.ContainerId = &v
@@ -582,15 +416,6 @@ func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) GetServerIdOk() (
 		return nil, false
 	}
 	return o.ServerId, true
-}
-
-// IsSetServerId returns a boolean if a field has been set.
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) IsSetServerId() bool {
-	if o != nil && !IsNil(o.ServerId) {
-		return true
-	}
-
-	return false
 }
 
 // SetServerId gets a reference to the given int64 and assigns it to the ServerId field.
@@ -616,15 +441,6 @@ func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) GetContainerNameO
 	return o.ContainerName, true
 }
 
-// IsSetContainerName returns a boolean if a field has been set.
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) IsSetContainerName() bool {
-	if o != nil && !IsNil(o.ContainerName) {
-		return true
-	}
-
-	return false
-}
-
 // SetContainerName gets a reference to the given string and assigns it to the ContainerName field.
 func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) SetContainerName(v string) {
 	o.ContainerName = &v
@@ -648,15 +464,6 @@ func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) GetDisplayNameOk(
 	return o.DisplayName, true
 }
 
-// IsSetDisplayName returns a boolean if a field has been set.
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) IsSetDisplayName() bool {
-	if o != nil && !IsNil(o.DisplayName) {
-		return true
-	}
-
-	return false
-}
-
 // SetDisplayName gets a reference to the given string and assigns it to the DisplayName field.
 func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) SetDisplayName(v string) {
 	o.DisplayName = &v
@@ -678,15 +485,6 @@ func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) GetStatusOk() (*s
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -713,28 +511,9 @@ func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) GetReasonOk() (*s
 	return o.Reason.Get(), o.Reason.IsSet()
 }
 
-// IsSetReason returns a boolean if a field has been set.
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) IsSetReason() bool {
-	if o != nil && o.Reason.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetReason gets a reference to the given NullableString and assigns it to the Reason field.
 func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) SetReason(v string) {
 	o.Reason.Set(&v)
-}
-
-// SetReasonNil sets the value for Reason to be an explicit nil
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) SetReasonNil() {
-	o.Reason.Set(nil)
-}
-
-// UnsetReason ensures that no value is present for Reason, not even an explicit nil
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) UnsetReason() {
-	o.Reason.Unset()
 }
 
 // GetPercent returns the Percent field value if set, zero value otherwise.
@@ -753,15 +532,6 @@ func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) GetPercentOk() (*
 		return nil, false
 	}
 	return o.Percent, true
-}
-
-// IsSetPercent returns a boolean if a field has been set.
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) IsSetPercent() bool {
-	if o != nil && !IsNil(o.Percent) {
-		return true
-	}
-
-	return false
 }
 
 // SetPercent gets a reference to the given float64 and assigns it to the Percent field.
@@ -785,15 +555,6 @@ func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) GetStatusEtaOk() 
 		return nil, false
 	}
 	return o.StatusEta, true
-}
-
-// IsSetStatusEta returns a boolean if a field has been set.
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) IsSetStatusEta() bool {
-	if o != nil && !IsNil(o.StatusEta) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatusEta gets a reference to the given int64 and assigns it to the StatusEta field.
@@ -820,28 +581,9 @@ func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) GetMessageOk() (*
 	return o.Message.Get(), o.Message.IsSet()
 }
 
-// IsSetMessage returns a boolean if a field has been set.
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) IsSetMessage() bool {
-	if o != nil && o.Message.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMessage gets a reference to the given NullableString and assigns it to the Message field.
 func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) SetMessage(v string) {
 	o.Message.Set(&v)
-}
-
-// SetMessageNil sets the value for Message to be an explicit nil
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) SetMessageNil() {
-	o.Message.Set(nil)
-}
-
-// UnsetMessage ensures that no value is present for Message, not even an explicit nil
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) UnsetMessage() {
-	o.Message.Unset()
 }
 
 // GetOutput returns the Output field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -863,28 +605,9 @@ func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) GetOutputOk() (*s
 	return o.Output.Get(), o.Output.IsSet()
 }
 
-// IsSetOutput returns a boolean if a field has been set.
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) IsSetOutput() bool {
-	if o != nil && o.Output.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetOutput gets a reference to the given NullableString and assigns it to the Output field.
 func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) SetOutput(v string) {
 	o.Output.Set(&v)
-}
-
-// SetOutputNil sets the value for Output to be an explicit nil
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) SetOutputNil() {
-	o.Output.Set(nil)
-}
-
-// UnsetOutput ensures that no value is present for Output, not even an explicit nil
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) UnsetOutput() {
-	o.Output.Unset()
 }
 
 // GetError returns the Error field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -906,28 +629,9 @@ func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) GetErrorOk() (*st
 	return o.Error.Get(), o.Error.IsSet()
 }
 
-// IsSetError returns a boolean if a field has been set.
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) IsSetError() bool {
-	if o != nil && o.Error.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetError gets a reference to the given NullableString and assigns it to the Error field.
 func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) SetError(v string) {
 	o.Error.Set(&v)
-}
-
-// SetErrorNil sets the value for Error to be an explicit nil
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) SetErrorNil() {
-	o.Error.Set(nil)
-}
-
-// UnsetError ensures that no value is present for Error, not even an explicit nil
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) UnsetError() {
-	o.Error.Unset()
 }
 
 // GetStartDate returns the StartDate field value if set, zero value otherwise.
@@ -946,15 +650,6 @@ func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) GetStartDateOk() 
 		return nil, false
 	}
 	return o.StartDate, true
-}
-
-// IsSetStartDate returns a boolean if a field has been set.
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) IsSetStartDate() bool {
-	if o != nil && !IsNil(o.StartDate) {
-		return true
-	}
-
-	return false
 }
 
 // SetStartDate gets a reference to the given time.Time and assigns it to the StartDate field.
@@ -980,15 +675,6 @@ func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) GetEndDateOk() (*
 	return o.EndDate, true
 }
 
-// IsSetEndDate returns a boolean if a field has been set.
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) IsSetEndDate() bool {
-	if o != nil && !IsNil(o.EndDate) {
-		return true
-	}
-
-	return false
-}
-
 // SetEndDate gets a reference to the given time.Time and assigns it to the EndDate field.
 func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) SetEndDate(v time.Time) {
 	o.EndDate = &v
@@ -1010,15 +696,6 @@ func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) GetDurationOk() (
 		return nil, false
 	}
 	return o.Duration, true
-}
-
-// IsSetDuration returns a boolean if a field has been set.
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) IsSetDuration() bool {
-	if o != nil && !IsNil(o.Duration) {
-		return true
-	}
-
-	return false
 }
 
 // SetDuration gets a reference to the given int64 and assigns it to the Duration field.
@@ -1044,15 +721,6 @@ func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) GetDateCreatedOk(
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -1074,15 +742,6 @@ func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) GetLastUpdatedOk(
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
@@ -1108,15 +767,6 @@ func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) GetCreatedByOk() 
 	return o.CreatedBy, true
 }
 
-// IsSetCreatedBy returns a boolean if a field has been set.
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) IsSetCreatedBy() bool {
-	if o != nil && !IsNil(o.CreatedBy) {
-		return true
-	}
-
-	return false
-}
-
 // SetCreatedBy gets a reference to the given ListHistory200ResponseAllOfProcessesInnerEventsInnerCreatedBy and assigns it to the CreatedBy field.
 func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) SetCreatedBy(v ListHistory200ResponseAllOfProcessesInnerEventsInnerCreatedBy) {
 	o.CreatedBy = &v
@@ -1138,15 +788,6 @@ func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) GetUpdatedByOk() 
 		return nil, false
 	}
 	return o.UpdatedBy, true
-}
-
-// IsSetUpdatedBy returns a boolean if a field has been set.
-func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) IsSetUpdatedBy() bool {
-	if o != nil && !IsNil(o.UpdatedBy) {
-		return true
-	}
-
-	return false
 }
 
 // SetUpdatedBy gets a reference to the given ListHistory200ResponseAllOfProcessesInnerEventsInnerUpdatedBy and assigns it to the UpdatedBy field.

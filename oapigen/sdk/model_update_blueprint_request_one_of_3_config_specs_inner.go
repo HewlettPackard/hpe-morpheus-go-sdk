@@ -63,15 +63,6 @@ func (o *UpdateBlueprintRequestOneOf3ConfigSpecsInner) GetIdOk() (*int64, bool) 
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *UpdateBlueprintRequestOneOf3ConfigSpecsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *UpdateBlueprintRequestOneOf3ConfigSpecsInner) SetId(v int64) {
 	o.Id = &v
@@ -95,15 +86,6 @@ func (o *UpdateBlueprintRequestOneOf3ConfigSpecsInner) GetValueOk() (*int64, boo
 	return o.Value, true
 }
 
-// IsSetValue returns a boolean if a field has been set.
-func (o *UpdateBlueprintRequestOneOf3ConfigSpecsInner) IsSetValue() bool {
-	if o != nil && !IsNil(o.Value) {
-		return true
-	}
-
-	return false
-}
-
 // SetValue gets a reference to the given int64 and assigns it to the Value field.
 func (o *UpdateBlueprintRequestOneOf3ConfigSpecsInner) SetValue(v int64) {
 	o.Value = &v
@@ -125,15 +107,6 @@ func (o *UpdateBlueprintRequestOneOf3ConfigSpecsInner) GetNameOk() (*string, boo
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateBlueprintRequestOneOf3ConfigSpecsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.

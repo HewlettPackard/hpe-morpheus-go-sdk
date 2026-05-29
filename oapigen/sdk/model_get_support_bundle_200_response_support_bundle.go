@@ -77,15 +77,6 @@ func (o *GetSupportBundle200ResponseSupportBundle) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetSupportBundle200ResponseSupportBundle) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetSupportBundle200ResponseSupportBundle) SetId(v int64) {
 	o.Id = &v
@@ -107,15 +98,6 @@ func (o *GetSupportBundle200ResponseSupportBundle) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *GetSupportBundle200ResponseSupportBundle) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -141,15 +123,6 @@ func (o *GetSupportBundle200ResponseSupportBundle) GetUuidOk() (*string, bool) {
 	return o.Uuid, true
 }
 
-// IsSetUuid returns a boolean if a field has been set.
-func (o *GetSupportBundle200ResponseSupportBundle) IsSetUuid() bool {
-	if o != nil && !IsNil(o.Uuid) {
-		return true
-	}
-
-	return false
-}
-
 // SetUuid gets a reference to the given string and assigns it to the Uuid field.
 func (o *GetSupportBundle200ResponseSupportBundle) SetUuid(v string) {
 	o.Uuid = &v
@@ -171,15 +144,6 @@ func (o *GetSupportBundle200ResponseSupportBundle) GetStatusOk() (*string, bool)
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *GetSupportBundle200ResponseSupportBundle) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -206,28 +170,9 @@ func (o *GetSupportBundle200ResponseSupportBundle) GetStatusMessageOk() (*string
 	return o.StatusMessage.Get(), o.StatusMessage.IsSet()
 }
 
-// IsSetStatusMessage returns a boolean if a field has been set.
-func (o *GetSupportBundle200ResponseSupportBundle) IsSetStatusMessage() bool {
-	if o != nil && o.StatusMessage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusMessage gets a reference to the given NullableString and assigns it to the StatusMessage field.
 func (o *GetSupportBundle200ResponseSupportBundle) SetStatusMessage(v string) {
 	o.StatusMessage.Set(&v)
-}
-
-// SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
-func (o *GetSupportBundle200ResponseSupportBundle) SetStatusMessageNil() {
-	o.StatusMessage.Set(nil)
-}
-
-// UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
-func (o *GetSupportBundle200ResponseSupportBundle) UnsetStatusMessage() {
-	o.StatusMessage.Unset()
 }
 
 // GetStartedAt returns the StartedAt field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -249,28 +194,9 @@ func (o *GetSupportBundle200ResponseSupportBundle) GetStartedAtOk() (*time.Time,
 	return o.StartedAt.Get(), o.StartedAt.IsSet()
 }
 
-// IsSetStartedAt returns a boolean if a field has been set.
-func (o *GetSupportBundle200ResponseSupportBundle) IsSetStartedAt() bool {
-	if o != nil && o.StartedAt.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStartedAt gets a reference to the given NullableTime and assigns it to the StartedAt field.
 func (o *GetSupportBundle200ResponseSupportBundle) SetStartedAt(v time.Time) {
 	o.StartedAt.Set(&v)
-}
-
-// SetStartedAtNil sets the value for StartedAt to be an explicit nil
-func (o *GetSupportBundle200ResponseSupportBundle) SetStartedAtNil() {
-	o.StartedAt.Set(nil)
-}
-
-// UnsetStartedAt ensures that no value is present for StartedAt, not even an explicit nil
-func (o *GetSupportBundle200ResponseSupportBundle) UnsetStartedAt() {
-	o.StartedAt.Unset()
 }
 
 // GetCompletedAt returns the CompletedAt field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -292,28 +218,9 @@ func (o *GetSupportBundle200ResponseSupportBundle) GetCompletedAtOk() (*time.Tim
 	return o.CompletedAt.Get(), o.CompletedAt.IsSet()
 }
 
-// IsSetCompletedAt returns a boolean if a field has been set.
-func (o *GetSupportBundle200ResponseSupportBundle) IsSetCompletedAt() bool {
-	if o != nil && o.CompletedAt.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCompletedAt gets a reference to the given NullableTime and assigns it to the CompletedAt field.
 func (o *GetSupportBundle200ResponseSupportBundle) SetCompletedAt(v time.Time) {
 	o.CompletedAt.Set(&v)
-}
-
-// SetCompletedAtNil sets the value for CompletedAt to be an explicit nil
-func (o *GetSupportBundle200ResponseSupportBundle) SetCompletedAtNil() {
-	o.CompletedAt.Set(nil)
-}
-
-// UnsetCompletedAt ensures that no value is present for CompletedAt, not even an explicit nil
-func (o *GetSupportBundle200ResponseSupportBundle) UnsetCompletedAt() {
-	o.CompletedAt.Unset()
 }
 
 // GetFilePath returns the FilePath field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -335,28 +242,9 @@ func (o *GetSupportBundle200ResponseSupportBundle) GetFilePathOk() (*string, boo
 	return o.FilePath.Get(), o.FilePath.IsSet()
 }
 
-// IsSetFilePath returns a boolean if a field has been set.
-func (o *GetSupportBundle200ResponseSupportBundle) IsSetFilePath() bool {
-	if o != nil && o.FilePath.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFilePath gets a reference to the given NullableString and assigns it to the FilePath field.
 func (o *GetSupportBundle200ResponseSupportBundle) SetFilePath(v string) {
 	o.FilePath.Set(&v)
-}
-
-// SetFilePathNil sets the value for FilePath to be an explicit nil
-func (o *GetSupportBundle200ResponseSupportBundle) SetFilePathNil() {
-	o.FilePath.Set(nil)
-}
-
-// UnsetFilePath ensures that no value is present for FilePath, not even an explicit nil
-func (o *GetSupportBundle200ResponseSupportBundle) UnsetFilePath() {
-	o.FilePath.Unset()
 }
 
 // GetContentLength returns the ContentLength field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -378,28 +266,9 @@ func (o *GetSupportBundle200ResponseSupportBundle) GetContentLengthOk() (*int64,
 	return o.ContentLength.Get(), o.ContentLength.IsSet()
 }
 
-// IsSetContentLength returns a boolean if a field has been set.
-func (o *GetSupportBundle200ResponseSupportBundle) IsSetContentLength() bool {
-	if o != nil && o.ContentLength.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetContentLength gets a reference to the given NullableInt64 and assigns it to the ContentLength field.
 func (o *GetSupportBundle200ResponseSupportBundle) SetContentLength(v int64) {
 	o.ContentLength.Set(&v)
-}
-
-// SetContentLengthNil sets the value for ContentLength to be an explicit nil
-func (o *GetSupportBundle200ResponseSupportBundle) SetContentLengthNil() {
-	o.ContentLength.Set(nil)
-}
-
-// UnsetContentLength ensures that no value is present for ContentLength, not even an explicit nil
-func (o *GetSupportBundle200ResponseSupportBundle) UnsetContentLength() {
-	o.ContentLength.Unset()
 }
 
 // GetContentType returns the ContentType field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -421,28 +290,9 @@ func (o *GetSupportBundle200ResponseSupportBundle) GetContentTypeOk() (*string, 
 	return o.ContentType.Get(), o.ContentType.IsSet()
 }
 
-// IsSetContentType returns a boolean if a field has been set.
-func (o *GetSupportBundle200ResponseSupportBundle) IsSetContentType() bool {
-	if o != nil && o.ContentType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetContentType gets a reference to the given NullableString and assigns it to the ContentType field.
 func (o *GetSupportBundle200ResponseSupportBundle) SetContentType(v string) {
 	o.ContentType.Set(&v)
-}
-
-// SetContentTypeNil sets the value for ContentType to be an explicit nil
-func (o *GetSupportBundle200ResponseSupportBundle) SetContentTypeNil() {
-	o.ContentType.Set(nil)
-}
-
-// UnsetContentType ensures that no value is present for ContentType, not even an explicit nil
-func (o *GetSupportBundle200ResponseSupportBundle) UnsetContentType() {
-	o.ContentType.Unset()
 }
 
 // GetChecksum returns the Checksum field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -464,28 +314,9 @@ func (o *GetSupportBundle200ResponseSupportBundle) GetChecksumOk() (*string, boo
 	return o.Checksum.Get(), o.Checksum.IsSet()
 }
 
-// IsSetChecksum returns a boolean if a field has been set.
-func (o *GetSupportBundle200ResponseSupportBundle) IsSetChecksum() bool {
-	if o != nil && o.Checksum.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetChecksum gets a reference to the given NullableString and assigns it to the Checksum field.
 func (o *GetSupportBundle200ResponseSupportBundle) SetChecksum(v string) {
 	o.Checksum.Set(&v)
-}
-
-// SetChecksumNil sets the value for Checksum to be an explicit nil
-func (o *GetSupportBundle200ResponseSupportBundle) SetChecksumNil() {
-	o.Checksum.Set(nil)
-}
-
-// UnsetChecksum ensures that no value is present for Checksum, not even an explicit nil
-func (o *GetSupportBundle200ResponseSupportBundle) UnsetChecksum() {
-	o.Checksum.Unset()
 }
 
 // GetStorageProvider returns the StorageProvider field value if set, zero value otherwise.
@@ -504,15 +335,6 @@ func (o *GetSupportBundle200ResponseSupportBundle) GetStorageProviderOk() (*GetS
 		return nil, false
 	}
 	return o.StorageProvider, true
-}
-
-// IsSetStorageProvider returns a boolean if a field has been set.
-func (o *GetSupportBundle200ResponseSupportBundle) IsSetStorageProvider() bool {
-	if o != nil && !IsNil(o.StorageProvider) {
-		return true
-	}
-
-	return false
 }
 
 // SetStorageProvider gets a reference to the given GetSupportBundle200ResponseSupportBundleStorageProvider and assigns it to the StorageProvider field.

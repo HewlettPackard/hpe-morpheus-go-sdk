@@ -61,15 +61,6 @@ func (o *GetWorkflows200Response) GetTaskSetOk() (*GetWorkflows200ResponseAllOfT
 	return o.TaskSet, true
 }
 
-// IsSetTaskSet returns a boolean if a field has been set.
-func (o *GetWorkflows200Response) IsSetTaskSet() bool {
-	if o != nil && !IsNil(o.TaskSet) {
-		return true
-	}
-
-	return false
-}
-
 // SetTaskSet gets a reference to the given GetWorkflows200ResponseAllOfTaskSet and assigns it to the TaskSet field.
 func (o *GetWorkflows200Response) SetTaskSet(v GetWorkflows200ResponseAllOfTaskSet) {
 	o.TaskSet = &v

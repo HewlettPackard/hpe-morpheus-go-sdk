@@ -131,15 +131,6 @@ func (o *BackupTypeProvider) GetSourceProviderIdOk() (*int64, bool) {
 	return o.SourceProviderId, true
 }
 
-// IsSetSourceProviderId returns a boolean if a field has been set.
-func (o *BackupTypeProvider) IsSetSourceProviderId() bool {
-	if o != nil && !IsNil(o.SourceProviderId) {
-		return true
-	}
-
-	return false
-}
-
 // SetSourceProviderId gets a reference to the given int64 and assigns it to the SourceProviderId field.
 func (o *BackupTypeProvider) SetSourceProviderId(v int64) {
 	o.SourceProviderId = &v
@@ -161,15 +152,6 @@ func (o *BackupTypeProvider) GetStorageProviderIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.StorageProviderId, true
-}
-
-// IsSetStorageProviderId returns a boolean if a field has been set.
-func (o *BackupTypeProvider) IsSetStorageProviderId() bool {
-	if o != nil && !IsNil(o.StorageProviderId) {
-		return true
-	}
-
-	return false
 }
 
 // SetStorageProviderId gets a reference to the given int64 and assigns it to the StorageProviderId field.
@@ -243,15 +225,6 @@ func (o *BackupTypeProvider) GetJobIdOk() (*int64, bool) {
 	return o.JobId, true
 }
 
-// IsSetJobId returns a boolean if a field has been set.
-func (o *BackupTypeProvider) IsSetJobId() bool {
-	if o != nil && !IsNil(o.JobId) {
-		return true
-	}
-
-	return false
-}
-
 // SetJobId gets a reference to the given int64 and assigns it to the JobId field.
 func (o *BackupTypeProvider) SetJobId(v int64) {
 	o.JobId = &v
@@ -273,15 +246,6 @@ func (o *BackupTypeProvider) GetJobNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.JobName, true
-}
-
-// IsSetJobName returns a boolean if a field has been set.
-func (o *BackupTypeProvider) IsSetJobName() bool {
-	if o != nil && !IsNil(o.JobName) {
-		return true
-	}
-
-	return false
 }
 
 // SetJobName gets a reference to the given string and assigns it to the JobName field.
@@ -307,15 +271,6 @@ func (o *BackupTypeProvider) GetJobScheduleOk() (*int64, bool) {
 	return o.JobSchedule, true
 }
 
-// IsSetJobSchedule returns a boolean if a field has been set.
-func (o *BackupTypeProvider) IsSetJobSchedule() bool {
-	if o != nil && !IsNil(o.JobSchedule) {
-		return true
-	}
-
-	return false
-}
-
 // SetJobSchedule gets a reference to the given int64 and assigns it to the JobSchedule field.
 func (o *BackupTypeProvider) SetJobSchedule(v int64) {
 	o.JobSchedule = &v
@@ -337,15 +292,6 @@ func (o *BackupTypeProvider) GetRetentionCountOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.RetentionCount, true
-}
-
-// IsSetRetentionCount returns a boolean if a field has been set.
-func (o *BackupTypeProvider) IsSetRetentionCount() bool {
-	if o != nil && !IsNil(o.RetentionCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetRetentionCount gets a reference to the given int64 and assigns it to the RetentionCount field.

@@ -75,15 +75,6 @@ func (o *IntegrationType) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *IntegrationType) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *IntegrationType) SetId(v int64) {
 	o.Id = &v
@@ -107,15 +98,6 @@ func (o *IntegrationType) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *IntegrationType) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *IntegrationType) SetCode(v string) {
 	o.Code = &v
@@ -137,15 +119,6 @@ func (o *IntegrationType) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *IntegrationType) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -172,28 +145,9 @@ func (o *IntegrationType) GetDescriptionOk() (*string, bool) {
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *IntegrationType) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *IntegrationType) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *IntegrationType) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *IntegrationType) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetCategory returns the Category field value if set, zero value otherwise.
@@ -212,15 +166,6 @@ func (o *IntegrationType) GetCategoryOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Category, true
-}
-
-// IsSetCategory returns a boolean if a field has been set.
-func (o *IntegrationType) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
-		return true
-	}
-
-	return false
 }
 
 // SetCategory gets a reference to the given string and assigns it to the Category field.
@@ -246,15 +191,6 @@ func (o *IntegrationType) GetEnabledOk() (*bool, bool) {
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *IntegrationType) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *IntegrationType) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -276,15 +212,6 @@ func (o *IntegrationType) GetCreatableOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Creatable, true
-}
-
-// IsSetCreatable returns a boolean if a field has been set.
-func (o *IntegrationType) IsSetCreatable() bool {
-	if o != nil && !IsNil(o.Creatable) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreatable gets a reference to the given bool and assigns it to the Creatable field.
@@ -310,15 +237,6 @@ func (o *IntegrationType) GetHasCMDBOk() (*bool, bool) {
 	return o.HasCMDB, true
 }
 
-// IsSetHasCMDB returns a boolean if a field has been set.
-func (o *IntegrationType) IsSetHasCMDB() bool {
-	if o != nil && !IsNil(o.HasCMDB) {
-		return true
-	}
-
-	return false
-}
-
 // SetHasCMDB gets a reference to the given bool and assigns it to the HasCMDB field.
 func (o *IntegrationType) SetHasCMDB(v bool) {
 	o.HasCMDB = &v
@@ -340,15 +258,6 @@ func (o *IntegrationType) GetHasCMDBDiscoveryOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.HasCMDBDiscovery, true
-}
-
-// IsSetHasCMDBDiscovery returns a boolean if a field has been set.
-func (o *IntegrationType) IsSetHasCMDBDiscovery() bool {
-	if o != nil && !IsNil(o.HasCMDBDiscovery) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasCMDBDiscovery gets a reference to the given bool and assigns it to the HasCMDBDiscovery field.
@@ -374,15 +283,6 @@ func (o *IntegrationType) GetHasCMOk() (*bool, bool) {
 	return o.HasCM, true
 }
 
-// IsSetHasCM returns a boolean if a field has been set.
-func (o *IntegrationType) IsSetHasCM() bool {
-	if o != nil && !IsNil(o.HasCM) {
-		return true
-	}
-
-	return false
-}
-
 // SetHasCM gets a reference to the given bool and assigns it to the HasCM field.
 func (o *IntegrationType) SetHasCM(v bool) {
 	o.HasCM = &v
@@ -404,15 +304,6 @@ func (o *IntegrationType) GetHasDNSOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.HasDNS, true
-}
-
-// IsSetHasDNS returns a boolean if a field has been set.
-func (o *IntegrationType) IsSetHasDNS() bool {
-	if o != nil && !IsNil(o.HasDNS) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasDNS gets a reference to the given bool and assigns it to the HasDNS field.
@@ -438,15 +329,6 @@ func (o *IntegrationType) GetHasApprovalsOk() (*bool, bool) {
 	return o.HasApprovals, true
 }
 
-// IsSetHasApprovals returns a boolean if a field has been set.
-func (o *IntegrationType) IsSetHasApprovals() bool {
-	if o != nil && !IsNil(o.HasApprovals) {
-		return true
-	}
-
-	return false
-}
-
 // SetHasApprovals gets a reference to the given bool and assigns it to the HasApprovals field.
 func (o *IntegrationType) SetHasApprovals(v bool) {
 	o.HasApprovals = &v
@@ -468,15 +350,6 @@ func (o *IntegrationType) GetHasDeleteApprovalsOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.HasDeleteApprovals, true
-}
-
-// IsSetHasDeleteApprovals returns a boolean if a field has been set.
-func (o *IntegrationType) IsSetHasDeleteApprovals() bool {
-	if o != nil && !IsNil(o.HasDeleteApprovals) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasDeleteApprovals gets a reference to the given bool and assigns it to the HasDeleteApprovals field.
@@ -502,15 +375,6 @@ func (o *IntegrationType) GetHasReconfigureApprovalsOk() (*bool, bool) {
 	return o.HasReconfigureApprovals, true
 }
 
-// IsSetHasReconfigureApprovals returns a boolean if a field has been set.
-func (o *IntegrationType) IsSetHasReconfigureApprovals() bool {
-	if o != nil && !IsNil(o.HasReconfigureApprovals) {
-		return true
-	}
-
-	return false
-}
-
 // SetHasReconfigureApprovals gets a reference to the given bool and assigns it to the HasReconfigureApprovals field.
 func (o *IntegrationType) SetHasReconfigureApprovals(v bool) {
 	o.HasReconfigureApprovals = &v
@@ -532,15 +396,6 @@ func (o *IntegrationType) GetIsPluginOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.IsPlugin, true
-}
-
-// IsSetIsPlugin returns a boolean if a field has been set.
-func (o *IntegrationType) IsSetIsPlugin() bool {
-	if o != nil && !IsNil(o.IsPlugin) {
-		return true
-	}
-
-	return false
 }
 
 // SetIsPlugin gets a reference to the given bool and assigns it to the IsPlugin field.

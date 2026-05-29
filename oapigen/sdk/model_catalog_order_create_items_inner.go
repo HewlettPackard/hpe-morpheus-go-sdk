@@ -68,15 +68,6 @@ func (o *CatalogOrderCreateItemsInner) GetTypeOk() (*CatalogOrderCreateItemsInne
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *CatalogOrderCreateItemsInner) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given CatalogOrderCreateItemsInnerType and assigns it to the Type field.
 func (o *CatalogOrderCreateItemsInner) SetType(v CatalogOrderCreateItemsInnerType) {
 	o.Type = &v
@@ -124,15 +115,6 @@ func (o *CatalogOrderCreateItemsInner) GetContextOk() (*string, bool) {
 	return o.Context, true
 }
 
-// IsSetContext returns a boolean if a field has been set.
-func (o *CatalogOrderCreateItemsInner) IsSetContext() bool {
-	if o != nil && !IsNil(o.Context) {
-		return true
-	}
-
-	return false
-}
-
 // SetContext gets a reference to the given string and assigns it to the Context field.
 func (o *CatalogOrderCreateItemsInner) SetContext(v string) {
 	o.Context = &v
@@ -154,15 +136,6 @@ func (o *CatalogOrderCreateItemsInner) GetTargetOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.Target, true
-}
-
-// IsSetTarget returns a boolean if a field has been set.
-func (o *CatalogOrderCreateItemsInner) IsSetTarget() bool {
-	if o != nil && !IsNil(o.Target) {
-		return true
-	}
-
-	return false
 }
 
 // SetTarget gets a reference to the given int64 and assigns it to the Target field.

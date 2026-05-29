@@ -61,15 +61,6 @@ func (o *GetLayout200ResponseInstanceTypeLayoutPermissions) GetResourcePermissio
 	return o.ResourcePermissions, true
 }
 
-// IsSetResourcePermissions returns a boolean if a field has been set.
-func (o *GetLayout200ResponseInstanceTypeLayoutPermissions) IsSetResourcePermissions() bool {
-	if o != nil && !IsNil(o.ResourcePermissions) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourcePermissions gets a reference to the given GetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissions and assigns it to the ResourcePermissions field.
 func (o *GetLayout200ResponseInstanceTypeLayoutPermissions) SetResourcePermissions(v GetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissions) {
 	o.ResourcePermissions = &v

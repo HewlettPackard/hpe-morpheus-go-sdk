@@ -67,15 +67,6 @@ func (o *ClusterMastersStats) GetUsedStorageOk() (*int64, bool) {
 	return o.UsedStorage, true
 }
 
-// IsSetUsedStorage returns a boolean if a field has been set.
-func (o *ClusterMastersStats) IsSetUsedStorage() bool {
-	if o != nil && !IsNil(o.UsedStorage) {
-		return true
-	}
-
-	return false
-}
-
 // SetUsedStorage gets a reference to the given int64 and assigns it to the UsedStorage field.
 func (o *ClusterMastersStats) SetUsedStorage(v int64) {
 	o.UsedStorage = &v
@@ -97,15 +88,6 @@ func (o *ClusterMastersStats) GetReservedStorageOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.ReservedStorage, true
-}
-
-// IsSetReservedStorage returns a boolean if a field has been set.
-func (o *ClusterMastersStats) IsSetReservedStorage() bool {
-	if o != nil && !IsNil(o.ReservedStorage) {
-		return true
-	}
-
-	return false
 }
 
 // SetReservedStorage gets a reference to the given int64 and assigns it to the ReservedStorage field.
@@ -131,15 +113,6 @@ func (o *ClusterMastersStats) GetMaxStorageOk() (*int64, bool) {
 	return o.MaxStorage, true
 }
 
-// IsSetMaxStorage returns a boolean if a field has been set.
-func (o *ClusterMastersStats) IsSetMaxStorage() bool {
-	if o != nil && !IsNil(o.MaxStorage) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxStorage gets a reference to the given int64 and assigns it to the MaxStorage field.
 func (o *ClusterMastersStats) SetMaxStorage(v int64) {
 	o.MaxStorage = &v
@@ -161,15 +134,6 @@ func (o *ClusterMastersStats) GetUsedMemoryOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.UsedMemory, true
-}
-
-// IsSetUsedMemory returns a boolean if a field has been set.
-func (o *ClusterMastersStats) IsSetUsedMemory() bool {
-	if o != nil && !IsNil(o.UsedMemory) {
-		return true
-	}
-
-	return false
 }
 
 // SetUsedMemory gets a reference to the given int64 and assigns it to the UsedMemory field.
@@ -195,15 +159,6 @@ func (o *ClusterMastersStats) GetReservedMemoryOk() (*int64, bool) {
 	return o.ReservedMemory, true
 }
 
-// IsSetReservedMemory returns a boolean if a field has been set.
-func (o *ClusterMastersStats) IsSetReservedMemory() bool {
-	if o != nil && !IsNil(o.ReservedMemory) {
-		return true
-	}
-
-	return false
-}
-
 // SetReservedMemory gets a reference to the given int64 and assigns it to the ReservedMemory field.
 func (o *ClusterMastersStats) SetReservedMemory(v int64) {
 	o.ReservedMemory = &v
@@ -227,15 +182,6 @@ func (o *ClusterMastersStats) GetMaxMemoryOk() (*int64, bool) {
 	return o.MaxMemory, true
 }
 
-// IsSetMaxMemory returns a boolean if a field has been set.
-func (o *ClusterMastersStats) IsSetMaxMemory() bool {
-	if o != nil && !IsNil(o.MaxMemory) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxMemory gets a reference to the given int64 and assigns it to the MaxMemory field.
 func (o *ClusterMastersStats) SetMaxMemory(v int64) {
 	o.MaxMemory = &v
@@ -257,15 +203,6 @@ func (o *ClusterMastersStats) GetCpuUsageOk() (*float32, bool) {
 		return nil, false
 	}
 	return o.CpuUsage, true
-}
-
-// IsSetCpuUsage returns a boolean if a field has been set.
-func (o *ClusterMastersStats) IsSetCpuUsage() bool {
-	if o != nil && !IsNil(o.CpuUsage) {
-		return true
-	}
-
-	return false
 }
 
 // SetCpuUsage gets a reference to the given float32 and assigns it to the CpuUsage field.

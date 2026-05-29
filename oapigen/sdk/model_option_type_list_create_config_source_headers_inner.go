@@ -95,15 +95,6 @@ func (o *OptionTypeListCreateConfigSourceHeadersInner) GetValueOk() (*string, bo
 	return o.Value, true
 }
 
-// IsSetValue returns a boolean if a field has been set.
-func (o *OptionTypeListCreateConfigSourceHeadersInner) IsSetValue() bool {
-	if o != nil && !IsNil(o.Value) {
-		return true
-	}
-
-	return false
-}
-
 // SetValue gets a reference to the given string and assigns it to the Value field.
 func (o *OptionTypeListCreateConfigSourceHeadersInner) SetValue(v string) {
 	o.Value = &v
@@ -125,15 +116,6 @@ func (o *OptionTypeListCreateConfigSourceHeadersInner) GetMaskedOk() (*bool, boo
 		return nil, false
 	}
 	return o.Masked, true
-}
-
-// IsSetMasked returns a boolean if a field has been set.
-func (o *OptionTypeListCreateConfigSourceHeadersInner) IsSetMasked() bool {
-	if o != nil && !IsNil(o.Masked) {
-		return true
-	}
-
-	return false
 }
 
 // SetMasked gets a reference to the given bool and assigns it to the Masked field.

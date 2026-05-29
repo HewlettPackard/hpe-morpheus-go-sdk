@@ -62,15 +62,6 @@ func (o *ListClusterReplicasets200Response) GetReplicasetsOk() ([]ListClusterRep
 	return o.Replicasets, true
 }
 
-// IsSetReplicasets returns a boolean if a field has been set.
-func (o *ListClusterReplicasets200Response) IsSetReplicasets() bool {
-	if o != nil && !IsNil(o.Replicasets) {
-		return true
-	}
-
-	return false
-}
-
 // SetReplicasets gets a reference to the given []ListClusterReplicasets200ResponseAllOfReplicasetsInner and assigns it to the Replicasets field.
 func (o *ListClusterReplicasets200Response) SetReplicasets(v []ListClusterReplicasets200ResponseAllOfReplicasetsInner) {
 	o.Replicasets = v
@@ -92,15 +83,6 @@ func (o *ListClusterReplicasets200Response) GetMetaOk() (*ListApprovals200Respon
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListClusterReplicasets200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

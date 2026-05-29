@@ -81,15 +81,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) GetRol
 	return o.RoleAttributeName, true
 }
 
-// IsSetRoleAttributeName returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) IsSetRoleAttributeName() bool {
-	if o != nil && !IsNil(o.RoleAttributeName) {
-		return true
-	}
-
-	return false
-}
-
 // SetRoleAttributeName gets a reference to the given string and assigns it to the RoleAttributeName field.
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) SetRoleAttributeName(v string) {
 	o.RoleAttributeName = &v
@@ -111,15 +102,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) GetReq
 		return nil, false
 	}
 	return o.RequiredAttributeValue, true
-}
-
-// IsSetRequiredAttributeValue returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) IsSetRequiredAttributeValue() bool {
-	if o != nil && !IsNil(o.RequiredAttributeValue) {
-		return true
-	}
-
-	return false
 }
 
 // SetRequiredAttributeValue gets a reference to the given string and assigns it to the RequiredAttributeValue field.
@@ -145,15 +127,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) GetGiv
 	return o.GivenNameAttribute, true
 }
 
-// IsSetGivenNameAttribute returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) IsSetGivenNameAttribute() bool {
-	if o != nil && !IsNil(o.GivenNameAttribute) {
-		return true
-	}
-
-	return false
-}
-
 // SetGivenNameAttribute gets a reference to the given string and assigns it to the GivenNameAttribute field.
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) SetGivenNameAttribute(v string) {
 	o.GivenNameAttribute = &v
@@ -175,15 +148,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) GetSur
 		return nil, false
 	}
 	return o.SurnameAttribute, true
-}
-
-// IsSetSurnameAttribute returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) IsSetSurnameAttribute() bool {
-	if o != nil && !IsNil(o.SurnameAttribute) {
-		return true
-	}
-
-	return false
 }
 
 // SetSurnameAttribute gets a reference to the given string and assigns it to the SurnameAttribute field.
@@ -209,15 +173,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) GetLog
 	return o.LogoutUrl, true
 }
 
-// IsSetLogoutUrl returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) IsSetLogoutUrl() bool {
-	if o != nil && !IsNil(o.LogoutUrl) {
-		return true
-	}
-
-	return false
-}
-
 // SetLogoutUrl gets a reference to the given string and assigns it to the LogoutUrl field.
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) SetLogoutUrl(v string) {
 	o.LogoutUrl = &v
@@ -239,15 +194,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) GetDoN
 		return nil, false
 	}
 	return o.DoNotIncludeSAMLRequest, true
-}
-
-// IsSetDoNotIncludeSAMLRequest returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) IsSetDoNotIncludeSAMLRequest() bool {
-	if o != nil && !IsNil(o.DoNotIncludeSAMLRequest) {
-		return true
-	}
-
-	return false
 }
 
 // SetDoNotIncludeSAMLRequest gets a reference to the given bool and assigns it to the DoNotIncludeSAMLRequest field.
@@ -273,15 +219,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) GetPub
 	return o.PublicKey, true
 }
 
-// IsSetPublicKey returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) IsSetPublicKey() bool {
-	if o != nil && !IsNil(o.PublicKey) {
-		return true
-	}
-
-	return false
-}
-
 // SetPublicKey gets a reference to the given string and assigns it to the PublicKey field.
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) SetPublicKey(v string) {
 	o.PublicKey = &v
@@ -303,15 +240,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) GetEma
 		return nil, false
 	}
 	return o.EmailAttribute, true
-}
-
-// IsSetEmailAttribute returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) IsSetEmailAttribute() bool {
-	if o != nil && !IsNil(o.EmailAttribute) {
-		return true
-	}
-
-	return false
 }
 
 // SetEmailAttribute gets a reference to the given string and assigns it to the EmailAttribute field.
@@ -337,15 +265,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) GetUrl
 	return o.Url, true
 }
 
-// IsSetUrl returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) IsSetUrl() bool {
-	if o != nil && !IsNil(o.Url) {
-		return true
-	}
-
-	return false
-}
-
 // SetUrl gets a reference to the given string and assigns it to the Url field.
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) SetUrl(v string) {
 	o.Url = &v
@@ -367,15 +286,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) GetDoN
 		return nil, false
 	}
 	return o.DoNotValidateSignature, true
-}
-
-// IsSetDoNotValidateSignature returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) IsSetDoNotValidateSignature() bool {
-	if o != nil && !IsNil(o.DoNotValidateSignature) {
-		return true
-	}
-
-	return false
 }
 
 // SetDoNotValidateSignature gets a reference to the given bool and assigns it to the DoNotValidateSignature field.
@@ -401,15 +311,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) GetDoN
 	return o.DoNotValidateStatusCode, true
 }
 
-// IsSetDoNotValidateStatusCode returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) IsSetDoNotValidateStatusCode() bool {
-	if o != nil && !IsNil(o.DoNotValidateStatusCode) {
-		return true
-	}
-
-	return false
-}
-
 // SetDoNotValidateStatusCode gets a reference to the given bool and assigns it to the DoNotValidateStatusCode field.
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) SetDoNotValidateStatusCode(v bool) {
 	o.DoNotValidateStatusCode = &v
@@ -431,15 +332,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) GetDoN
 		return nil, false
 	}
 	return o.DoNotValidateDestination, true
-}
-
-// IsSetDoNotValidateDestination returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) IsSetDoNotValidateDestination() bool {
-	if o != nil && !IsNil(o.DoNotValidateDestination) {
-		return true
-	}
-
-	return false
 }
 
 // SetDoNotValidateDestination gets a reference to the given bool and assigns it to the DoNotValidateDestination field.
@@ -465,15 +357,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) GetDoN
 	return o.DoNotValidateIssueInstants, true
 }
 
-// IsSetDoNotValidateIssueInstants returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) IsSetDoNotValidateIssueInstants() bool {
-	if o != nil && !IsNil(o.DoNotValidateIssueInstants) {
-		return true
-	}
-
-	return false
-}
-
 // SetDoNotValidateIssueInstants gets a reference to the given bool and assigns it to the DoNotValidateIssueInstants field.
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) SetDoNotValidateIssueInstants(v bool) {
 	o.DoNotValidateIssueInstants = &v
@@ -495,15 +378,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) GetDoN
 		return nil, false
 	}
 	return o.DoNotValidateAssertions, true
-}
-
-// IsSetDoNotValidateAssertions returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) IsSetDoNotValidateAssertions() bool {
-	if o != nil && !IsNil(o.DoNotValidateAssertions) {
-		return true
-	}
-
-	return false
 }
 
 // SetDoNotValidateAssertions gets a reference to the given bool and assigns it to the DoNotValidateAssertions field.
@@ -529,15 +403,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) GetDoN
 	return o.DoNotValidateAuthStatements, true
 }
 
-// IsSetDoNotValidateAuthStatements returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) IsSetDoNotValidateAuthStatements() bool {
-	if o != nil && !IsNil(o.DoNotValidateAuthStatements) {
-		return true
-	}
-
-	return false
-}
-
 // SetDoNotValidateAuthStatements gets a reference to the given bool and assigns it to the DoNotValidateAuthStatements field.
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) SetDoNotValidateAuthStatements(v bool) {
 	o.DoNotValidateAuthStatements = &v
@@ -559,15 +424,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) GetDoN
 		return nil, false
 	}
 	return o.DoNotValidateSubject, true
-}
-
-// IsSetDoNotValidateSubject returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) IsSetDoNotValidateSubject() bool {
-	if o != nil && !IsNil(o.DoNotValidateSubject) {
-		return true
-	}
-
-	return false
 }
 
 // SetDoNotValidateSubject gets a reference to the given bool and assigns it to the DoNotValidateSubject field.
@@ -593,15 +449,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) GetDoN
 	return o.DoNotValidateConditions, true
 }
 
-// IsSetDoNotValidateConditions returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) IsSetDoNotValidateConditions() bool {
-	if o != nil && !IsNil(o.DoNotValidateConditions) {
-		return true
-	}
-
-	return false
-}
-
 // SetDoNotValidateConditions gets a reference to the given bool and assigns it to the DoNotValidateConditions field.
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) SetDoNotValidateConditions(v bool) {
 	o.DoNotValidateConditions = &v
@@ -623,15 +470,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) GetDoN
 		return nil, false
 	}
 	return o.DoNotValidateAudiences, true
-}
-
-// IsSetDoNotValidateAudiences returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) IsSetDoNotValidateAudiences() bool {
-	if o != nil && !IsNil(o.DoNotValidateAudiences) {
-		return true
-	}
-
-	return false
 }
 
 // SetDoNotValidateAudiences gets a reference to the given bool and assigns it to the DoNotValidateAudiences field.
@@ -657,15 +495,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) GetDoN
 	return o.DoNotValidateSubjectRecipients, true
 }
 
-// IsSetDoNotValidateSubjectRecipients returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) IsSetDoNotValidateSubjectRecipients() bool {
-	if o != nil && !IsNil(o.DoNotValidateSubjectRecipients) {
-		return true
-	}
-
-	return false
-}
-
 // SetDoNotValidateSubjectRecipients gets a reference to the given bool and assigns it to the DoNotValidateSubjectRecipients field.
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) SetDoNotValidateSubjectRecipients(v bool) {
 	o.DoNotValidateSubjectRecipients = &v
@@ -689,15 +518,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) GetSAM
 	return o.SAMLSignatureMode, true
 }
 
-// IsSetSAMLSignatureMode returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) IsSetSAMLSignatureMode() bool {
-	if o != nil && !IsNil(o.SAMLSignatureMode) {
-		return true
-	}
-
-	return false
-}
-
 // SetSAMLSignatureMode gets a reference to the given string and assigns it to the SAMLSignatureMode field.
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) SetSAMLSignatureMode(v string) {
 	o.SAMLSignatureMode = &v
@@ -719,15 +539,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) GetFor
 		return nil, false
 	}
 	return o.ForceAuthn, true
-}
-
-// IsSetForceAuthn returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) IsSetForceAuthn() bool {
-	if o != nil && !IsNil(o.ForceAuthn) {
-		return true
-	}
-
-	return false
 }
 
 // SetForceAuthn gets a reference to the given bool and assigns it to the ForceAuthn field.

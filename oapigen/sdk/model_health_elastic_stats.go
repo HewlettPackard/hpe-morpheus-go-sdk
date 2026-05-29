@@ -71,15 +71,6 @@ func (o *HealthElasticStats) GetStatusOk() (*string, bool) {
 	return o.Status, true
 }
 
-// IsSetStatus returns a boolean if a field has been set.
-func (o *HealthElasticStats) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
-}
-
 // SetStatus gets a reference to the given string and assigns it to the Status field.
 func (o *HealthElasticStats) SetStatus(v string) {
 	o.Status = &v
@@ -101,15 +92,6 @@ func (o *HealthElasticStats) GetClusterNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ClusterName, true
-}
-
-// IsSetClusterName returns a boolean if a field has been set.
-func (o *HealthElasticStats) IsSetClusterName() bool {
-	if o != nil && !IsNil(o.ClusterName) {
-		return true
-	}
-
-	return false
 }
 
 // SetClusterName gets a reference to the given string and assigns it to the ClusterName field.
@@ -135,15 +117,6 @@ func (o *HealthElasticStats) GetNodeTotalOk() (*string, bool) {
 	return o.NodeTotal, true
 }
 
-// IsSetNodeTotal returns a boolean if a field has been set.
-func (o *HealthElasticStats) IsSetNodeTotal() bool {
-	if o != nil && !IsNil(o.NodeTotal) {
-		return true
-	}
-
-	return false
-}
-
 // SetNodeTotal gets a reference to the given string and assigns it to the NodeTotal field.
 func (o *HealthElasticStats) SetNodeTotal(v string) {
 	o.NodeTotal = &v
@@ -165,15 +138,6 @@ func (o *HealthElasticStats) GetNodeDataOk() (*string, bool) {
 		return nil, false
 	}
 	return o.NodeData, true
-}
-
-// IsSetNodeData returns a boolean if a field has been set.
-func (o *HealthElasticStats) IsSetNodeData() bool {
-	if o != nil && !IsNil(o.NodeData) {
-		return true
-	}
-
-	return false
 }
 
 // SetNodeData gets a reference to the given string and assigns it to the NodeData field.
@@ -199,15 +163,6 @@ func (o *HealthElasticStats) GetShardsOk() (*string, bool) {
 	return o.Shards, true
 }
 
-// IsSetShards returns a boolean if a field has been set.
-func (o *HealthElasticStats) IsSetShards() bool {
-	if o != nil && !IsNil(o.Shards) {
-		return true
-	}
-
-	return false
-}
-
 // SetShards gets a reference to the given string and assigns it to the Shards field.
 func (o *HealthElasticStats) SetShards(v string) {
 	o.Shards = &v
@@ -229,15 +184,6 @@ func (o *HealthElasticStats) GetPrimaryOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Primary, true
-}
-
-// IsSetPrimary returns a boolean if a field has been set.
-func (o *HealthElasticStats) IsSetPrimary() bool {
-	if o != nil && !IsNil(o.Primary) {
-		return true
-	}
-
-	return false
 }
 
 // SetPrimary gets a reference to the given string and assigns it to the Primary field.
@@ -263,15 +209,6 @@ func (o *HealthElasticStats) GetRelocatingOk() (*string, bool) {
 	return o.Relocating, true
 }
 
-// IsSetRelocating returns a boolean if a field has been set.
-func (o *HealthElasticStats) IsSetRelocating() bool {
-	if o != nil && !IsNil(o.Relocating) {
-		return true
-	}
-
-	return false
-}
-
 // SetRelocating gets a reference to the given string and assigns it to the Relocating field.
 func (o *HealthElasticStats) SetRelocating(v string) {
 	o.Relocating = &v
@@ -293,15 +230,6 @@ func (o *HealthElasticStats) GetInitializingOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Initializing, true
-}
-
-// IsSetInitializing returns a boolean if a field has been set.
-func (o *HealthElasticStats) IsSetInitializing() bool {
-	if o != nil && !IsNil(o.Initializing) {
-		return true
-	}
-
-	return false
 }
 
 // SetInitializing gets a reference to the given string and assigns it to the Initializing field.
@@ -327,15 +255,6 @@ func (o *HealthElasticStats) GetUnassignedOk() (*string, bool) {
 	return o.Unassigned, true
 }
 
-// IsSetUnassigned returns a boolean if a field has been set.
-func (o *HealthElasticStats) IsSetUnassigned() bool {
-	if o != nil && !IsNil(o.Unassigned) {
-		return true
-	}
-
-	return false
-}
-
 // SetUnassigned gets a reference to the given string and assigns it to the Unassigned field.
 func (o *HealthElasticStats) SetUnassigned(v string) {
 	o.Unassigned = &v
@@ -359,15 +278,6 @@ func (o *HealthElasticStats) GetPendingTasksOk() (*string, bool) {
 	return o.PendingTasks, true
 }
 
-// IsSetPendingTasks returns a boolean if a field has been set.
-func (o *HealthElasticStats) IsSetPendingTasks() bool {
-	if o != nil && !IsNil(o.PendingTasks) {
-		return true
-	}
-
-	return false
-}
-
 // SetPendingTasks gets a reference to the given string and assigns it to the PendingTasks field.
 func (o *HealthElasticStats) SetPendingTasks(v string) {
 	o.PendingTasks = &v
@@ -389,15 +299,6 @@ func (o *HealthElasticStats) GetActivePercentOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ActivePercent, true
-}
-
-// IsSetActivePercent returns a boolean if a field has been set.
-func (o *HealthElasticStats) IsSetActivePercent() bool {
-	if o != nil && !IsNil(o.ActivePercent) {
-		return true
-	}
-
-	return false
 }
 
 // SetActivePercent gets a reference to the given string and assigns it to the ActivePercent field.

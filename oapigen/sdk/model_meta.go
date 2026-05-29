@@ -61,15 +61,6 @@ func (o *Meta) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bool) {
 	return o.Meta, true
 }
 
-// IsSetMeta returns a boolean if a field has been set.
-func (o *Meta) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
-}
-
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.
 func (o *Meta) SetMeta(v ListApprovals200ResponseAllOfMeta) {
 	o.Meta = &v

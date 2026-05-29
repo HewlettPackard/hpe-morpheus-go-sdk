@@ -62,15 +62,6 @@ func (o *ListVDIPools200Response) GetVdiPoolsOk() ([]ListVDIPools200ResponseAllO
 	return o.VdiPools, true
 }
 
-// IsSetVdiPools returns a boolean if a field has been set.
-func (o *ListVDIPools200Response) IsSetVdiPools() bool {
-	if o != nil && !IsNil(o.VdiPools) {
-		return true
-	}
-
-	return false
-}
-
 // SetVdiPools gets a reference to the given []ListVDIPools200ResponseAllOfVdiPoolsInner and assigns it to the VdiPools field.
 func (o *ListVDIPools200Response) SetVdiPools(v []ListVDIPools200ResponseAllOfVdiPoolsInner) {
 	o.VdiPools = v
@@ -92,15 +83,6 @@ func (o *ListVDIPools200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMet
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListVDIPools200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

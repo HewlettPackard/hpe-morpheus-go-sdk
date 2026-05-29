@@ -61,15 +61,6 @@ func (o *UpdateMonitoringSettingsRequest) GetMonitoringSettingsOk() (*UpdateMoni
 	return o.MonitoringSettings, true
 }
 
-// IsSetMonitoringSettings returns a boolean if a field has been set.
-func (o *UpdateMonitoringSettingsRequest) IsSetMonitoringSettings() bool {
-	if o != nil && !IsNil(o.MonitoringSettings) {
-		return true
-	}
-
-	return false
-}
-
 // SetMonitoringSettings gets a reference to the given UpdateMonitoringSettingsRequestMonitoringSettings and assigns it to the MonitoringSettings field.
 func (o *UpdateMonitoringSettingsRequest) SetMonitoringSettings(v UpdateMonitoringSettingsRequestMonitoringSettings) {
 	o.MonitoringSettings = &v

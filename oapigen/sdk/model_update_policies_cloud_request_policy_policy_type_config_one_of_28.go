@@ -64,15 +64,6 @@ func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf28) GetStrictOk() 
 	return o.Strict, true
 }
 
-// IsSetStrict returns a boolean if a field has been set.
-func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf28) IsSetStrict() bool {
-	if o != nil && !IsNil(o.Strict) {
-		return true
-	}
-
-	return false
-}
-
 // SetStrict gets a reference to the given bool and assigns it to the Strict field.
 func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf28) SetStrict(v bool) {
 	o.Strict = &v
@@ -94,15 +85,6 @@ func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf28) GetKeyOk() (*s
 		return nil, false
 	}
 	return o.Key, true
-}
-
-// IsSetKey returns a boolean if a field has been set.
-func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf28) IsSetKey() bool {
-	if o != nil && !IsNil(o.Key) {
-		return true
-	}
-
-	return false
 }
 
 // SetKey gets a reference to the given string and assigns it to the Key field.
@@ -128,15 +110,6 @@ func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf28) GetValueListId
 	return o.ValueListId, true
 }
 
-// IsSetValueListId returns a boolean if a field has been set.
-func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf28) IsSetValueListId() bool {
-	if o != nil && !IsNil(o.ValueListId) {
-		return true
-	}
-
-	return false
-}
-
 // SetValueListId gets a reference to the given string and assigns it to the ValueListId field.
 func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf28) SetValueListId(v string) {
 	o.ValueListId = &v
@@ -158,15 +131,6 @@ func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf28) GetValueOk() (
 		return nil, false
 	}
 	return o.Value, true
-}
-
-// IsSetValue returns a boolean if a field has been set.
-func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf28) IsSetValue() bool {
-	if o != nil && !IsNil(o.Value) {
-		return true
-	}
-
-	return false
 }
 
 // SetValue gets a reference to the given string and assigns it to the Value field.

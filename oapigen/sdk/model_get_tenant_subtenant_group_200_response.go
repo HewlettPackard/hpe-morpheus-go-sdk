@@ -61,15 +61,6 @@ func (o *GetTenantSubtenantGroup200Response) GetGroupOk() (*GetTenantSubtenantGr
 	return o.Group, true
 }
 
-// IsSetGroup returns a boolean if a field has been set.
-func (o *GetTenantSubtenantGroup200Response) IsSetGroup() bool {
-	if o != nil && !IsNil(o.Group) {
-		return true
-	}
-
-	return false
-}
-
 // SetGroup gets a reference to the given GetTenantSubtenantGroup200ResponseGroup and assigns it to the Group field.
 func (o *GetTenantSubtenantGroup200Response) SetGroup(v GetTenantSubtenantGroup200ResponseGroup) {
 	o.Group = &v

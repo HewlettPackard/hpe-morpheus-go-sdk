@@ -62,15 +62,6 @@ func (o *ListClients200Response) GetClientsOk() ([]ListClients200ResponseAllOfCl
 	return o.Clients, true
 }
 
-// IsSetClients returns a boolean if a field has been set.
-func (o *ListClients200Response) IsSetClients() bool {
-	if o != nil && !IsNil(o.Clients) {
-		return true
-	}
-
-	return false
-}
-
 // SetClients gets a reference to the given []ListClients200ResponseAllOfClientsInner and assigns it to the Clients field.
 func (o *ListClients200Response) SetClients(v []ListClients200ResponseAllOfClientsInner) {
 	o.Clients = v
@@ -92,15 +83,6 @@ func (o *ListClients200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListClients200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

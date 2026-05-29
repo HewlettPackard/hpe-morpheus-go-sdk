@@ -94,15 +94,6 @@ func (o *GroupUpdate) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *GroupUpdate) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *GroupUpdate) SetCode(v string) {
 	o.Code = &v
@@ -124,15 +115,6 @@ func (o *GroupUpdate) GetLabelsOk() ([]string, bool) {
 		return nil, false
 	}
 	return o.Labels, true
-}
-
-// IsSetLabels returns a boolean if a field has been set.
-func (o *GroupUpdate) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
 }
 
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
@@ -158,15 +140,6 @@ func (o *GroupUpdate) GetLocationOk() (*string, bool) {
 	return o.Location, true
 }
 
-// IsSetLocation returns a boolean if a field has been set.
-func (o *GroupUpdate) IsSetLocation() bool {
-	if o != nil && !IsNil(o.Location) {
-		return true
-	}
-
-	return false
-}
-
 // SetLocation gets a reference to the given string and assigns it to the Location field.
 func (o *GroupUpdate) SetLocation(v string) {
 	o.Location = &v
@@ -188,15 +161,6 @@ func (o *GroupUpdate) GetConfigOk() (*GroupCreateConfig, bool) {
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *GroupUpdate) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given GroupCreateConfig and assigns it to the Config field.

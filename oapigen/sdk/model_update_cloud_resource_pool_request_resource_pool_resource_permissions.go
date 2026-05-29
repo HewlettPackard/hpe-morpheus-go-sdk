@@ -76,15 +76,6 @@ func (o *UpdateCloudResourcePoolRequestResourcePoolResourcePermissions) GetAllOk
 	return o.All, true
 }
 
-// IsSetAll returns a boolean if a field has been set.
-func (o *UpdateCloudResourcePoolRequestResourcePoolResourcePermissions) IsSetAll() bool {
-	if o != nil && !IsNil(o.All) {
-		return true
-	}
-
-	return false
-}
-
 // SetAll gets a reference to the given bool and assigns it to the All field.
 func (o *UpdateCloudResourcePoolRequestResourcePoolResourcePermissions) SetAll(v bool) {
 	o.All = &v
@@ -106,15 +97,6 @@ func (o *UpdateCloudResourcePoolRequestResourcePoolResourcePermissions) GetSites
 		return nil, false
 	}
 	return o.Sites, true
-}
-
-// IsSetSites returns a boolean if a field has been set.
-func (o *UpdateCloudResourcePoolRequestResourcePoolResourcePermissions) IsSetSites() bool {
-	if o != nil && !IsNil(o.Sites) {
-		return true
-	}
-
-	return false
 }
 
 // SetSites gets a reference to the given []UpdateCloudFoldersRequestFolderResourcePermissionsSitesInner and assigns it to the Sites field.
@@ -140,15 +122,6 @@ func (o *UpdateCloudResourcePoolRequestResourcePoolResourcePermissions) GetAllPl
 	return o.AllPlans, true
 }
 
-// IsSetAllPlans returns a boolean if a field has been set.
-func (o *UpdateCloudResourcePoolRequestResourcePoolResourcePermissions) IsSetAllPlans() bool {
-	if o != nil && !IsNil(o.AllPlans) {
-		return true
-	}
-
-	return false
-}
-
 // SetAllPlans gets a reference to the given bool and assigns it to the AllPlans field.
 func (o *UpdateCloudResourcePoolRequestResourcePoolResourcePermissions) SetAllPlans(v bool) {
 	o.AllPlans = &v
@@ -170,15 +143,6 @@ func (o *UpdateCloudResourcePoolRequestResourcePoolResourcePermissions) GetPlans
 		return nil, false
 	}
 	return o.Plans, true
-}
-
-// IsSetPlans returns a boolean if a field has been set.
-func (o *UpdateCloudResourcePoolRequestResourcePoolResourcePermissions) IsSetPlans() bool {
-	if o != nil && !IsNil(o.Plans) {
-		return true
-	}
-
-	return false
 }
 
 // SetPlans gets a reference to the given []UpdateCloudFoldersRequestFolderResourcePermissionsPlansInner and assigns it to the Plans field.

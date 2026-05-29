@@ -89,15 +89,6 @@ func (o *ContainersAttachFloatingIpRequestConfig) GetFloatingIpBandwidthOk() (*f
 	return o.FloatingIpBandwidth, true
 }
 
-// IsSetFloatingIpBandwidth returns a boolean if a field has been set.
-func (o *ContainersAttachFloatingIpRequestConfig) IsSetFloatingIpBandwidth() bool {
-	if o != nil && !IsNil(o.FloatingIpBandwidth) {
-		return true
-	}
-
-	return false
-}
-
 // SetFloatingIpBandwidth gets a reference to the given float32 and assigns it to the FloatingIpBandwidth field.
 func (o *ContainersAttachFloatingIpRequestConfig) SetFloatingIpBandwidth(v float32) {
 	o.FloatingIpBandwidth = &v

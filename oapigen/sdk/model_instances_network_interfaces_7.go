@@ -102,15 +102,6 @@ func (o *InstancesNetworkInterfaces7) GetNetworkInterfaceTypeIdOk() (*int64, boo
 	return o.NetworkInterfaceTypeId, true
 }
 
-// IsSetNetworkInterfaceTypeId returns a boolean if a field has been set.
-func (o *InstancesNetworkInterfaces7) IsSetNetworkInterfaceTypeId() bool {
-	if o != nil && !IsNil(o.NetworkInterfaceTypeId) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkInterfaceTypeId gets a reference to the given int64 and assigns it to the NetworkInterfaceTypeId field.
 func (o *InstancesNetworkInterfaces7) SetNetworkInterfaceTypeId(v int64) {
 	o.NetworkInterfaceTypeId = &v
@@ -132,15 +123,6 @@ func (o *InstancesNetworkInterfaces7) GetIpModeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.IpMode, true
-}
-
-// IsSetIpMode returns a boolean if a field has been set.
-func (o *InstancesNetworkInterfaces7) IsSetIpMode() bool {
-	if o != nil && !IsNil(o.IpMode) {
-		return true
-	}
-
-	return false
 }
 
 // SetIpMode gets a reference to the given string and assigns it to the IpMode field.
@@ -166,15 +148,6 @@ func (o *InstancesNetworkInterfaces7) GetIpAddressOk() (*string, bool) {
 	return o.IpAddress, true
 }
 
-// IsSetIpAddress returns a boolean if a field has been set.
-func (o *InstancesNetworkInterfaces7) IsSetIpAddress() bool {
-	if o != nil && !IsNil(o.IpAddress) {
-		return true
-	}
-
-	return false
-}
-
 // SetIpAddress gets a reference to the given string and assigns it to the IpAddress field.
 func (o *InstancesNetworkInterfaces7) SetIpAddress(v string) {
 	o.IpAddress = &v
@@ -196,15 +169,6 @@ func (o *InstancesNetworkInterfaces7) GetMacAddressOk() (*string, bool) {
 		return nil, false
 	}
 	return o.MacAddress, true
-}
-
-// IsSetMacAddress returns a boolean if a field has been set.
-func (o *InstancesNetworkInterfaces7) IsSetMacAddress() bool {
-	if o != nil && !IsNil(o.MacAddress) {
-		return true
-	}
-
-	return false
 }
 
 // SetMacAddress gets a reference to the given string and assigns it to the MacAddress field.
@@ -230,15 +194,6 @@ func (o *InstancesNetworkInterfaces7) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *InstancesNetworkInterfaces7) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *InstancesNetworkInterfaces7) SetId(v int64) {
 	o.Id = &v
@@ -260,15 +215,6 @@ func (o *InstancesNetworkInterfaces7) GetNetworkInterfacesOk() ([]InstancesNetwo
 		return nil, false
 	}
 	return o.NetworkInterfaces, true
-}
-
-// IsSetNetworkInterfaces returns a boolean if a field has been set.
-func (o *InstancesNetworkInterfaces7) IsSetNetworkInterfaces() bool {
-	if o != nil && !IsNil(o.NetworkInterfaces) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkInterfaces gets a reference to the given []InstancesNetworkInterfaces7NetworkInterfacesInner and assigns it to the NetworkInterfaces field.

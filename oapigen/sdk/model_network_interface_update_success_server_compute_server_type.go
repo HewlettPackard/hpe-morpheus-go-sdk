@@ -77,15 +77,6 @@ func (o *NetworkInterfaceUpdateSuccessServerComputeServerType) GetIdOk() (*int64
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerComputeServerType) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *NetworkInterfaceUpdateSuccessServerComputeServerType) SetId(v int64) {
 	o.Id = &v
@@ -107,15 +98,6 @@ func (o *NetworkInterfaceUpdateSuccessServerComputeServerType) GetCodeOk() (*str
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerComputeServerType) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -141,15 +123,6 @@ func (o *NetworkInterfaceUpdateSuccessServerComputeServerType) GetNameOk() (*str
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerComputeServerType) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *NetworkInterfaceUpdateSuccessServerComputeServerType) SetName(v string) {
 	o.Name = &v
@@ -171,15 +144,6 @@ func (o *NetworkInterfaceUpdateSuccessServerComputeServerType) GetDescriptionOk(
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerComputeServerType) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -205,15 +169,6 @@ func (o *NetworkInterfaceUpdateSuccessServerComputeServerType) GetPlatformOk() (
 	return o.Platform, true
 }
 
-// IsSetPlatform returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerComputeServerType) IsSetPlatform() bool {
-	if o != nil && !IsNil(o.Platform) {
-		return true
-	}
-
-	return false
-}
-
 // SetPlatform gets a reference to the given string and assigns it to the Platform field.
 func (o *NetworkInterfaceUpdateSuccessServerComputeServerType) SetPlatform(v string) {
 	o.Platform = &v
@@ -235,15 +190,6 @@ func (o *NetworkInterfaceUpdateSuccessServerComputeServerType) GetNodeTypeOk() (
 		return nil, false
 	}
 	return o.NodeType, true
-}
-
-// IsSetNodeType returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerComputeServerType) IsSetNodeType() bool {
-	if o != nil && !IsNil(o.NodeType) {
-		return true
-	}
-
-	return false
 }
 
 // SetNodeType gets a reference to the given string and assigns it to the NodeType field.
@@ -269,15 +215,6 @@ func (o *NetworkInterfaceUpdateSuccessServerComputeServerType) GetManagedOk() (*
 	return o.Managed, true
 }
 
-// IsSetManaged returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerComputeServerType) IsSetManaged() bool {
-	if o != nil && !IsNil(o.Managed) {
-		return true
-	}
-
-	return false
-}
-
 // SetManaged gets a reference to the given bool and assigns it to the Managed field.
 func (o *NetworkInterfaceUpdateSuccessServerComputeServerType) SetManaged(v bool) {
 	o.Managed = &v
@@ -299,15 +236,6 @@ func (o *NetworkInterfaceUpdateSuccessServerComputeServerType) GetEnabledOk() (*
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerComputeServerType) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -333,15 +261,6 @@ func (o *NetworkInterfaceUpdateSuccessServerComputeServerType) GetVmHypervisorOk
 	return o.VmHypervisor, true
 }
 
-// IsSetVmHypervisor returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerComputeServerType) IsSetVmHypervisor() bool {
-	if o != nil && !IsNil(o.VmHypervisor) {
-		return true
-	}
-
-	return false
-}
-
 // SetVmHypervisor gets a reference to the given bool and assigns it to the VmHypervisor field.
 func (o *NetworkInterfaceUpdateSuccessServerComputeServerType) SetVmHypervisor(v bool) {
 	o.VmHypervisor = &v
@@ -363,15 +282,6 @@ func (o *NetworkInterfaceUpdateSuccessServerComputeServerType) GetContainerHyper
 		return nil, false
 	}
 	return o.ContainerHypervisor, true
-}
-
-// IsSetContainerHypervisor returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerComputeServerType) IsSetContainerHypervisor() bool {
-	if o != nil && !IsNil(o.ContainerHypervisor) {
-		return true
-	}
-
-	return false
 }
 
 // SetContainerHypervisor gets a reference to the given bool and assigns it to the ContainerHypervisor field.
@@ -397,15 +307,6 @@ func (o *NetworkInterfaceUpdateSuccessServerComputeServerType) GetDisplayOrderOk
 	return o.DisplayOrder, true
 }
 
-// IsSetDisplayOrder returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerComputeServerType) IsSetDisplayOrder() bool {
-	if o != nil && !IsNil(o.DisplayOrder) {
-		return true
-	}
-
-	return false
-}
-
 // SetDisplayOrder gets a reference to the given int64 and assigns it to the DisplayOrder field.
 func (o *NetworkInterfaceUpdateSuccessServerComputeServerType) SetDisplayOrder(v int64) {
 	o.DisplayOrder = &v
@@ -427,15 +328,6 @@ func (o *NetworkInterfaceUpdateSuccessServerComputeServerType) GetSelectableOk()
 		return nil, false
 	}
 	return o.Selectable, true
-}
-
-// IsSetSelectable returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerComputeServerType) IsSetSelectable() bool {
-	if o != nil && !IsNil(o.Selectable) {
-		return true
-	}
-
-	return false
 }
 
 // SetSelectable gets a reference to the given bool and assigns it to the Selectable field.
@@ -461,15 +353,6 @@ func (o *NetworkInterfaceUpdateSuccessServerComputeServerType) GetControlPowerOk
 	return o.ControlPower, true
 }
 
-// IsSetControlPower returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerComputeServerType) IsSetControlPower() bool {
-	if o != nil && !IsNil(o.ControlPower) {
-		return true
-	}
-
-	return false
-}
-
 // SetControlPower gets a reference to the given bool and assigns it to the ControlPower field.
 func (o *NetworkInterfaceUpdateSuccessServerComputeServerType) SetControlPower(v bool) {
 	o.ControlPower = &v
@@ -491,15 +374,6 @@ func (o *NetworkInterfaceUpdateSuccessServerComputeServerType) GetControlSuspend
 		return nil, false
 	}
 	return o.ControlSuspend, true
-}
-
-// IsSetControlSuspend returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerComputeServerType) IsSetControlSuspend() bool {
-	if o != nil && !IsNil(o.ControlSuspend) {
-		return true
-	}
-
-	return false
 }
 
 // SetControlSuspend gets a reference to the given bool and assigns it to the ControlSuspend field.
@@ -525,15 +399,6 @@ func (o *NetworkInterfaceUpdateSuccessServerComputeServerType) GetHasAgentOk() (
 	return o.HasAgent, true
 }
 
-// IsSetHasAgent returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerComputeServerType) IsSetHasAgent() bool {
-	if o != nil && !IsNil(o.HasAgent) {
-		return true
-	}
-
-	return false
-}
-
 // SetHasAgent gets a reference to the given bool and assigns it to the HasAgent field.
 func (o *NetworkInterfaceUpdateSuccessServerComputeServerType) SetHasAgent(v bool) {
 	o.HasAgent = &v
@@ -557,15 +422,6 @@ func (o *NetworkInterfaceUpdateSuccessServerComputeServerType) GetCreatableOk() 
 	return o.Creatable, true
 }
 
-// IsSetCreatable returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerComputeServerType) IsSetCreatable() bool {
-	if o != nil && !IsNil(o.Creatable) {
-		return true
-	}
-
-	return false
-}
-
 // SetCreatable gets a reference to the given bool and assigns it to the Creatable field.
 func (o *NetworkInterfaceUpdateSuccessServerComputeServerType) SetCreatable(v bool) {
 	o.Creatable = &v
@@ -587,15 +443,6 @@ func (o *NetworkInterfaceUpdateSuccessServerComputeServerType) GetOptionTypesOk(
 		return nil, false
 	}
 	return o.OptionTypes, true
-}
-
-// IsSetOptionTypes returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerComputeServerType) IsSetOptionTypes() bool {
-	if o != nil && !IsNil(o.OptionTypes) {
-		return true
-	}
-
-	return false
 }
 
 // SetOptionTypes gets a reference to the given []map[string]interface{} and assigns it to the OptionTypes field.

@@ -61,15 +61,6 @@ func (o *UpdateTenantSubtenantGroup200Response) GetAccountOk() (*UpdateTenantSub
 	return o.Account, true
 }
 
-// IsSetAccount returns a boolean if a field has been set.
-func (o *UpdateTenantSubtenantGroup200Response) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccount gets a reference to the given UpdateTenantSubtenantGroup200ResponseAccount and assigns it to the Account field.
 func (o *UpdateTenantSubtenantGroup200Response) SetAccount(v UpdateTenantSubtenantGroup200ResponseAccount) {
 	o.Account = &v

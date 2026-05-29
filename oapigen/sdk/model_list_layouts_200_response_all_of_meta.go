@@ -84,15 +84,6 @@ func (o *ListLayouts200ResponseAllOfMeta) GetOffsetOk() (*int64, bool) {
 	return o.Offset, true
 }
 
-// IsSetOffset returns a boolean if a field has been set.
-func (o *ListLayouts200ResponseAllOfMeta) IsSetOffset() bool {
-	if o != nil && !IsNil(o.Offset) {
-		return true
-	}
-
-	return false
-}
-
 // SetOffset gets a reference to the given int64 and assigns it to the Offset field.
 func (o *ListLayouts200ResponseAllOfMeta) SetOffset(v int64) {
 	o.Offset = &v
@@ -114,15 +105,6 @@ func (o *ListLayouts200ResponseAllOfMeta) GetMaxOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.Max, true
-}
-
-// IsSetMax returns a boolean if a field has been set.
-func (o *ListLayouts200ResponseAllOfMeta) IsSetMax() bool {
-	if o != nil && !IsNil(o.Max) {
-		return true
-	}
-
-	return false
 }
 
 // SetMax gets a reference to the given int64 and assigns it to the Max field.
@@ -148,15 +130,6 @@ func (o *ListLayouts200ResponseAllOfMeta) GetSizeOk() (*int64, bool) {
 	return o.Size, true
 }
 
-// IsSetSize returns a boolean if a field has been set.
-func (o *ListLayouts200ResponseAllOfMeta) IsSetSize() bool {
-	if o != nil && !IsNil(o.Size) {
-		return true
-	}
-
-	return false
-}
-
 // SetSize gets a reference to the given int64 and assigns it to the Size field.
 func (o *ListLayouts200ResponseAllOfMeta) SetSize(v int64) {
 	o.Size = &v
@@ -178,15 +151,6 @@ func (o *ListLayouts200ResponseAllOfMeta) GetTotalOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.Total, true
-}
-
-// IsSetTotal returns a boolean if a field has been set.
-func (o *ListLayouts200ResponseAllOfMeta) IsSetTotal() bool {
-	if o != nil && !IsNil(o.Total) {
-		return true
-	}
-
-	return false
 }
 
 // SetTotal gets a reference to the given int64 and assigns it to the Total field.

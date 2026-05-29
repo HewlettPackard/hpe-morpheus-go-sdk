@@ -62,15 +62,6 @@ func (o *AddArchiveBucket200Response) GetArchiveBucketOk() (*AddArchiveBucket200
 	return o.ArchiveBucket, true
 }
 
-// IsSetArchiveBucket returns a boolean if a field has been set.
-func (o *AddArchiveBucket200Response) IsSetArchiveBucket() bool {
-	if o != nil && !IsNil(o.ArchiveBucket) {
-		return true
-	}
-
-	return false
-}
-
 // SetArchiveBucket gets a reference to the given AddArchiveBucket200ResponseAllOfArchiveBucket and assigns it to the ArchiveBucket field.
 func (o *AddArchiveBucket200Response) SetArchiveBucket(v AddArchiveBucket200ResponseAllOfArchiveBucket) {
 	o.ArchiveBucket = &v
@@ -92,15 +83,6 @@ func (o *AddArchiveBucket200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *AddArchiveBucket200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

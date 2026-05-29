@@ -64,15 +64,6 @@ func (o *ClusterCreateServerConfigAnyOfOneOf2Worker) GetNetworkOk() (*ClusterCre
 	return o.Network, true
 }
 
-// IsSetNetwork returns a boolean if a field has been set.
-func (o *ClusterCreateServerConfigAnyOfOneOf2Worker) IsSetNetwork() bool {
-	if o != nil && !IsNil(o.Network) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetwork gets a reference to the given ClusterCreateServerConfigAnyOfOneOf2WorkerNetwork and assigns it to the Network field.
 func (o *ClusterCreateServerConfigAnyOfOneOf2Worker) SetNetwork(v ClusterCreateServerConfigAnyOfOneOf2WorkerNetwork) {
 	o.Network = &v
@@ -94,15 +85,6 @@ func (o *ClusterCreateServerConfigAnyOfOneOf2Worker) GetSecurityGroupOk() (*Clus
 		return nil, false
 	}
 	return o.SecurityGroup, true
-}
-
-// IsSetSecurityGroup returns a boolean if a field has been set.
-func (o *ClusterCreateServerConfigAnyOfOneOf2Worker) IsSetSecurityGroup() bool {
-	if o != nil && !IsNil(o.SecurityGroup) {
-		return true
-	}
-
-	return false
 }
 
 // SetSecurityGroup gets a reference to the given ClusterCreateServerConfigAnyOfOneOf2WorkerSecurityGroup and assigns it to the SecurityGroup field.
@@ -128,15 +110,6 @@ func (o *ClusterCreateServerConfigAnyOfOneOf2Worker) GetPlanOk() (*ClusterCreate
 	return o.Plan, true
 }
 
-// IsSetPlan returns a boolean if a field has been set.
-func (o *ClusterCreateServerConfigAnyOfOneOf2Worker) IsSetPlan() bool {
-	if o != nil && !IsNil(o.Plan) {
-		return true
-	}
-
-	return false
-}
-
 // SetPlan gets a reference to the given ClusterCreateServerConfigAnyOfOneOf2WorkerPlan and assigns it to the Plan field.
 func (o *ClusterCreateServerConfigAnyOfOneOf2Worker) SetPlan(v ClusterCreateServerConfigAnyOfOneOf2WorkerPlan) {
 	o.Plan = &v
@@ -158,15 +131,6 @@ func (o *ClusterCreateServerConfigAnyOfOneOf2Worker) GetRoleOk() (*ClusterCreate
 		return nil, false
 	}
 	return o.Role, true
-}
-
-// IsSetRole returns a boolean if a field has been set.
-func (o *ClusterCreateServerConfigAnyOfOneOf2Worker) IsSetRole() bool {
-	if o != nil && !IsNil(o.Role) {
-		return true
-	}
-
-	return false
 }
 
 // SetRole gets a reference to the given ClusterCreateServerConfigAnyOfOneOf2WorkerRole and assigns it to the Role field.

@@ -66,15 +66,6 @@ func (o *ListBackupSettings200ResponseBackupSettings) GetBackupsEnabledOk() (*bo
 	return o.BackupsEnabled, true
 }
 
-// IsSetBackupsEnabled returns a boolean if a field has been set.
-func (o *ListBackupSettings200ResponseBackupSettings) IsSetBackupsEnabled() bool {
-	if o != nil && !IsNil(o.BackupsEnabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetBackupsEnabled gets a reference to the given bool and assigns it to the BackupsEnabled field.
 func (o *ListBackupSettings200ResponseBackupSettings) SetBackupsEnabled(v bool) {
 	o.BackupsEnabled = &v
@@ -98,15 +89,6 @@ func (o *ListBackupSettings200ResponseBackupSettings) GetCreateBackupsOk() (*boo
 	return o.CreateBackups, true
 }
 
-// IsSetCreateBackups returns a boolean if a field has been set.
-func (o *ListBackupSettings200ResponseBackupSettings) IsSetCreateBackups() bool {
-	if o != nil && !IsNil(o.CreateBackups) {
-		return true
-	}
-
-	return false
-}
-
 // SetCreateBackups gets a reference to the given bool and assigns it to the CreateBackups field.
 func (o *ListBackupSettings200ResponseBackupSettings) SetCreateBackups(v bool) {
 	o.CreateBackups = &v
@@ -128,15 +110,6 @@ func (o *ListBackupSettings200ResponseBackupSettings) GetBackupApplianceOk() (*b
 		return nil, false
 	}
 	return o.BackupAppliance, true
-}
-
-// IsSetBackupAppliance returns a boolean if a field has been set.
-func (o *ListBackupSettings200ResponseBackupSettings) IsSetBackupAppliance() bool {
-	if o != nil && !IsNil(o.BackupAppliance) {
-		return true
-	}
-
-	return false
 }
 
 // SetBackupAppliance gets a reference to the given bool and assigns it to the BackupAppliance field.
@@ -163,28 +136,9 @@ func (o *ListBackupSettings200ResponseBackupSettings) GetDefaultStorageBucketOk(
 	return o.DefaultStorageBucket.Get(), o.DefaultStorageBucket.IsSet()
 }
 
-// IsSetDefaultStorageBucket returns a boolean if a field has been set.
-func (o *ListBackupSettings200ResponseBackupSettings) IsSetDefaultStorageBucket() bool {
-	if o != nil && o.DefaultStorageBucket.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultStorageBucket gets a reference to the given NullableListBackupSettings200ResponseBackupSettingsDefaultStorageBucket and assigns it to the DefaultStorageBucket field.
 func (o *ListBackupSettings200ResponseBackupSettings) SetDefaultStorageBucket(v ListBackupSettings200ResponseBackupSettingsDefaultStorageBucket) {
 	o.DefaultStorageBucket.Set(&v)
-}
-
-// SetDefaultStorageBucketNil sets the value for DefaultStorageBucket to be an explicit nil
-func (o *ListBackupSettings200ResponseBackupSettings) SetDefaultStorageBucketNil() {
-	o.DefaultStorageBucket.Set(nil)
-}
-
-// UnsetDefaultStorageBucket ensures that no value is present for DefaultStorageBucket, not even an explicit nil
-func (o *ListBackupSettings200ResponseBackupSettings) UnsetDefaultStorageBucket() {
-	o.DefaultStorageBucket.Unset()
 }
 
 // GetDefaultSchedule returns the DefaultSchedule field value if set, zero value otherwise.
@@ -203,15 +157,6 @@ func (o *ListBackupSettings200ResponseBackupSettings) GetDefaultScheduleOk() (*L
 		return nil, false
 	}
 	return o.DefaultSchedule, true
-}
-
-// IsSetDefaultSchedule returns a boolean if a field has been set.
-func (o *ListBackupSettings200ResponseBackupSettings) IsSetDefaultSchedule() bool {
-	if o != nil && !IsNil(o.DefaultSchedule) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultSchedule gets a reference to the given ListBackupSettings200ResponseBackupSettingsDefaultSchedule and assigns it to the DefaultSchedule field.
@@ -235,15 +180,6 @@ func (o *ListBackupSettings200ResponseBackupSettings) GetRetentionCountOk() (*in
 		return nil, false
 	}
 	return o.RetentionCount, true
-}
-
-// IsSetRetentionCount returns a boolean if a field has been set.
-func (o *ListBackupSettings200ResponseBackupSettings) IsSetRetentionCount() bool {
-	if o != nil && !IsNil(o.RetentionCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetRetentionCount gets a reference to the given int64 and assigns it to the RetentionCount field.

@@ -62,15 +62,6 @@ func (o *HostUpdateRemoveTagsInner) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *HostUpdateRemoveTagsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *HostUpdateRemoveTagsInner) SetName(v string) {
 	o.Name = &v
@@ -95,28 +86,9 @@ func (o *HostUpdateRemoveTagsInner) GetValueOk() (*string, bool) {
 	return o.Value.Get(), o.Value.IsSet()
 }
 
-// IsSetValue returns a boolean if a field has been set.
-func (o *HostUpdateRemoveTagsInner) IsSetValue() bool {
-	if o != nil && o.Value.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetValue gets a reference to the given NullableString and assigns it to the Value field.
 func (o *HostUpdateRemoveTagsInner) SetValue(v string) {
 	o.Value.Set(&v)
-}
-
-// SetValueNil sets the value for Value to be an explicit nil
-func (o *HostUpdateRemoveTagsInner) SetValueNil() {
-	o.Value.Set(nil)
-}
-
-// UnsetValue ensures that no value is present for Value, not even an explicit nil
-func (o *HostUpdateRemoveTagsInner) UnsetValue() {
-	o.Value.Unset()
 }
 
 func (o HostUpdateRemoveTagsInner) MarshalJSON() ([]byte, error) {

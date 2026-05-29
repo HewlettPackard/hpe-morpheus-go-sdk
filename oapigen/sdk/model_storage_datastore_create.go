@@ -205,15 +205,6 @@ func (o *StorageDatastoreCreate) GetStorageServerOk() (*StorageDatastoreCreateSt
 	return o.StorageServer, true
 }
 
-// IsSetStorageServer returns a boolean if a field has been set.
-func (o *StorageDatastoreCreate) IsSetStorageServer() bool {
-	if o != nil && !IsNil(o.StorageServer) {
-		return true
-	}
-
-	return false
-}
-
 // SetStorageServer gets a reference to the given StorageDatastoreCreateStorageServer and assigns it to the StorageServer field.
 func (o *StorageDatastoreCreate) SetStorageServer(v StorageDatastoreCreateStorageServer) {
 	o.StorageServer = &v
@@ -235,15 +226,6 @@ func (o *StorageDatastoreCreate) GetVisibilityOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *StorageDatastoreCreate) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -269,15 +251,6 @@ func (o *StorageDatastoreCreate) GetActiveOk() (*bool, bool) {
 	return o.Active, true
 }
 
-// IsSetActive returns a boolean if a field has been set.
-func (o *StorageDatastoreCreate) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
-}
-
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *StorageDatastoreCreate) SetActive(v bool) {
 	o.Active = &v
@@ -299,15 +272,6 @@ func (o *StorageDatastoreCreate) GetDefaultStoreOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.DefaultStore, true
-}
-
-// IsSetDefaultStore returns a boolean if a field has been set.
-func (o *StorageDatastoreCreate) IsSetDefaultStore() bool {
-	if o != nil && !IsNil(o.DefaultStore) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultStore gets a reference to the given bool and assigns it to the DefaultStore field.
@@ -333,15 +297,6 @@ func (o *StorageDatastoreCreate) GetTenantPermissionsOk() (*StorageDatastoreCrea
 	return o.TenantPermissions, true
 }
 
-// IsSetTenantPermissions returns a boolean if a field has been set.
-func (o *StorageDatastoreCreate) IsSetTenantPermissions() bool {
-	if o != nil && !IsNil(o.TenantPermissions) {
-		return true
-	}
-
-	return false
-}
-
 // SetTenantPermissions gets a reference to the given StorageDatastoreCreateTenantPermissions and assigns it to the TenantPermissions field.
 func (o *StorageDatastoreCreate) SetTenantPermissions(v StorageDatastoreCreateTenantPermissions) {
 	o.TenantPermissions = &v
@@ -363,15 +318,6 @@ func (o *StorageDatastoreCreate) GetResourcePermissionsOk() (*StorageDatastoreCr
 		return nil, false
 	}
 	return o.ResourcePermissions, true
-}
-
-// IsSetResourcePermissions returns a boolean if a field has been set.
-func (o *StorageDatastoreCreate) IsSetResourcePermissions() bool {
-	if o != nil && !IsNil(o.ResourcePermissions) {
-		return true
-	}
-
-	return false
 }
 
 // SetResourcePermissions gets a reference to the given StorageDatastoreCreateResourcePermissions and assigns it to the ResourcePermissions field.
@@ -397,15 +343,6 @@ func (o *StorageDatastoreCreate) GetDatastoresOk() ([]map[string]interface{}, bo
 	return o.Datastores, true
 }
 
-// IsSetDatastores returns a boolean if a field has been set.
-func (o *StorageDatastoreCreate) IsSetDatastores() bool {
-	if o != nil && !IsNil(o.Datastores) {
-		return true
-	}
-
-	return false
-}
-
 // SetDatastores gets a reference to the given []map[string]interface{} and assigns it to the Datastores field.
 func (o *StorageDatastoreCreate) SetDatastores(v []map[string]interface{}) {
 	o.Datastores = v
@@ -427,15 +364,6 @@ func (o *StorageDatastoreCreate) GetHeartbeatTargetOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.HeartbeatTarget, true
-}
-
-// IsSetHeartbeatTarget returns a boolean if a field has been set.
-func (o *StorageDatastoreCreate) IsSetHeartbeatTarget() bool {
-	if o != nil && !IsNil(o.HeartbeatTarget) {
-		return true
-	}
-
-	return false
 }
 
 // SetHeartbeatTarget gets a reference to the given bool and assigns it to the HeartbeatTarget field.

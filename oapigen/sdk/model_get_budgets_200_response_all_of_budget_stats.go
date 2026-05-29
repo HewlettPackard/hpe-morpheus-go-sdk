@@ -64,15 +64,6 @@ func (o *GetBudgets200ResponseAllOfBudgetStats) GetCurrencyOk() (*string, bool) 
 	return o.Currency, true
 }
 
-// IsSetCurrency returns a boolean if a field has been set.
-func (o *GetBudgets200ResponseAllOfBudgetStats) IsSetCurrency() bool {
-	if o != nil && !IsNil(o.Currency) {
-		return true
-	}
-
-	return false
-}
-
 // SetCurrency gets a reference to the given string and assigns it to the Currency field.
 func (o *GetBudgets200ResponseAllOfBudgetStats) SetCurrency(v string) {
 	o.Currency = &v
@@ -94,15 +85,6 @@ func (o *GetBudgets200ResponseAllOfBudgetStats) GetConversionRateOk() (*int64, b
 		return nil, false
 	}
 	return o.ConversionRate, true
-}
-
-// IsSetConversionRate returns a boolean if a field has been set.
-func (o *GetBudgets200ResponseAllOfBudgetStats) IsSetConversionRate() bool {
-	if o != nil && !IsNil(o.ConversionRate) {
-		return true
-	}
-
-	return false
 }
 
 // SetConversionRate gets a reference to the given int64 and assigns it to the ConversionRate field.
@@ -128,15 +110,6 @@ func (o *GetBudgets200ResponseAllOfBudgetStats) GetIntervalsOk() ([]GetBudgets20
 	return o.Intervals, true
 }
 
-// IsSetIntervals returns a boolean if a field has been set.
-func (o *GetBudgets200ResponseAllOfBudgetStats) IsSetIntervals() bool {
-	if o != nil && !IsNil(o.Intervals) {
-		return true
-	}
-
-	return false
-}
-
 // SetIntervals gets a reference to the given []GetBudgets200ResponseAllOfBudgetStatsIntervalsInner and assigns it to the Intervals field.
 func (o *GetBudgets200ResponseAllOfBudgetStats) SetIntervals(v []GetBudgets200ResponseAllOfBudgetStatsIntervalsInner) {
 	o.Intervals = v
@@ -158,15 +131,6 @@ func (o *GetBudgets200ResponseAllOfBudgetStats) GetCurrentOk() (*GetBudgets200Re
 		return nil, false
 	}
 	return o.Current, true
-}
-
-// IsSetCurrent returns a boolean if a field has been set.
-func (o *GetBudgets200ResponseAllOfBudgetStats) IsSetCurrent() bool {
-	if o != nil && !IsNil(o.Current) {
-		return true
-	}
-
-	return false
 }
 
 // SetCurrent gets a reference to the given GetBudgets200ResponseAllOfBudgetStatsCurrent and assigns it to the Current field.

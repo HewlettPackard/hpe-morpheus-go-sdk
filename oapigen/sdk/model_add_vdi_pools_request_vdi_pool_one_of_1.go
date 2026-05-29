@@ -170,15 +170,6 @@ func (o *AddVDIPoolsRequestVdiPoolOneOf1) GetDescriptionOk() (*string, bool) {
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *AddVDIPoolsRequestVdiPoolOneOf1) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *AddVDIPoolsRequestVdiPoolOneOf1) SetDescription(v string) {
 	o.Description = &v
@@ -200,15 +191,6 @@ func (o *AddVDIPoolsRequestVdiPoolOneOf1) GetOwnerOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.Owner, true
-}
-
-// IsSetOwner returns a boolean if a field has been set.
-func (o *AddVDIPoolsRequestVdiPoolOneOf1) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
-		return true
-	}
-
-	return false
 }
 
 // SetOwner gets a reference to the given int64 and assigns it to the Owner field.
@@ -234,15 +216,6 @@ func (o *AddVDIPoolsRequestVdiPoolOneOf1) GetMinIdleOk() (*float32, bool) {
 	return o.MinIdle, true
 }
 
-// IsSetMinIdle returns a boolean if a field has been set.
-func (o *AddVDIPoolsRequestVdiPoolOneOf1) IsSetMinIdle() bool {
-	if o != nil && !IsNil(o.MinIdle) {
-		return true
-	}
-
-	return false
-}
-
 // SetMinIdle gets a reference to the given float32 and assigns it to the MinIdle field.
 func (o *AddVDIPoolsRequestVdiPoolOneOf1) SetMinIdle(v float32) {
 	o.MinIdle = &v
@@ -266,15 +239,6 @@ func (o *AddVDIPoolsRequestVdiPoolOneOf1) GetInitialPoolSizeOk() (*float32, bool
 	return o.InitialPoolSize, true
 }
 
-// IsSetInitialPoolSize returns a boolean if a field has been set.
-func (o *AddVDIPoolsRequestVdiPoolOneOf1) IsSetInitialPoolSize() bool {
-	if o != nil && !IsNil(o.InitialPoolSize) {
-		return true
-	}
-
-	return false
-}
-
 // SetInitialPoolSize gets a reference to the given float32 and assigns it to the InitialPoolSize field.
 func (o *AddVDIPoolsRequestVdiPoolOneOf1) SetInitialPoolSize(v float32) {
 	o.InitialPoolSize = &v
@@ -296,15 +260,6 @@ func (o *AddVDIPoolsRequestVdiPoolOneOf1) GetMaxIdleOk() (*float32, bool) {
 		return nil, false
 	}
 	return o.MaxIdle, true
-}
-
-// IsSetMaxIdle returns a boolean if a field has been set.
-func (o *AddVDIPoolsRequestVdiPoolOneOf1) IsSetMaxIdle() bool {
-	if o != nil && !IsNil(o.MaxIdle) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxIdle gets a reference to the given float32 and assigns it to the MaxIdle field.
@@ -354,15 +309,6 @@ func (o *AddVDIPoolsRequestVdiPoolOneOf1) GetAllocationTimeoutMinutesOk() (*floa
 	return o.AllocationTimeoutMinutes, true
 }
 
-// IsSetAllocationTimeoutMinutes returns a boolean if a field has been set.
-func (o *AddVDIPoolsRequestVdiPoolOneOf1) IsSetAllocationTimeoutMinutes() bool {
-	if o != nil && !IsNil(o.AllocationTimeoutMinutes) {
-		return true
-	}
-
-	return false
-}
-
 // SetAllocationTimeoutMinutes gets a reference to the given float32 and assigns it to the AllocationTimeoutMinutes field.
 func (o *AddVDIPoolsRequestVdiPoolOneOf1) SetAllocationTimeoutMinutes(v float32) {
 	o.AllocationTimeoutMinutes = &v
@@ -384,15 +330,6 @@ func (o *AddVDIPoolsRequestVdiPoolOneOf1) GetPersistentUserOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.PersistentUser, true
-}
-
-// IsSetPersistentUser returns a boolean if a field has been set.
-func (o *AddVDIPoolsRequestVdiPoolOneOf1) IsSetPersistentUser() bool {
-	if o != nil && !IsNil(o.PersistentUser) {
-		return true
-	}
-
-	return false
 }
 
 // SetPersistentUser gets a reference to the given bool and assigns it to the PersistentUser field.
@@ -418,15 +355,6 @@ func (o *AddVDIPoolsRequestVdiPoolOneOf1) GetRecyclableOk() (*bool, bool) {
 	return o.Recyclable, true
 }
 
-// IsSetRecyclable returns a boolean if a field has been set.
-func (o *AddVDIPoolsRequestVdiPoolOneOf1) IsSetRecyclable() bool {
-	if o != nil && !IsNil(o.Recyclable) {
-		return true
-	}
-
-	return false
-}
-
 // SetRecyclable gets a reference to the given bool and assigns it to the Recyclable field.
 func (o *AddVDIPoolsRequestVdiPoolOneOf1) SetRecyclable(v bool) {
 	o.Recyclable = &v
@@ -448,15 +376,6 @@ func (o *AddVDIPoolsRequestVdiPoolOneOf1) GetAllowCopyOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.AllowCopy, true
-}
-
-// IsSetAllowCopy returns a boolean if a field has been set.
-func (o *AddVDIPoolsRequestVdiPoolOneOf1) IsSetAllowCopy() bool {
-	if o != nil && !IsNil(o.AllowCopy) {
-		return true
-	}
-
-	return false
 }
 
 // SetAllowCopy gets a reference to the given bool and assigns it to the AllowCopy field.
@@ -482,15 +401,6 @@ func (o *AddVDIPoolsRequestVdiPoolOneOf1) GetAllowPrinterOk() (*bool, bool) {
 	return o.AllowPrinter, true
 }
 
-// IsSetAllowPrinter returns a boolean if a field has been set.
-func (o *AddVDIPoolsRequestVdiPoolOneOf1) IsSetAllowPrinter() bool {
-	if o != nil && !IsNil(o.AllowPrinter) {
-		return true
-	}
-
-	return false
-}
-
 // SetAllowPrinter gets a reference to the given bool and assigns it to the AllowPrinter field.
 func (o *AddVDIPoolsRequestVdiPoolOneOf1) SetAllowPrinter(v bool) {
 	o.AllowPrinter = &v
@@ -512,15 +422,6 @@ func (o *AddVDIPoolsRequestVdiPoolOneOf1) GetAllowFileshareOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.AllowFileshare, true
-}
-
-// IsSetAllowFileshare returns a boolean if a field has been set.
-func (o *AddVDIPoolsRequestVdiPoolOneOf1) IsSetAllowFileshare() bool {
-	if o != nil && !IsNil(o.AllowFileshare) {
-		return true
-	}
-
-	return false
 }
 
 // SetAllowFileshare gets a reference to the given bool and assigns it to the AllowFileshare field.
@@ -546,15 +447,6 @@ func (o *AddVDIPoolsRequestVdiPoolOneOf1) GetAllowHypervisorConsoleOk() (*bool, 
 	return o.AllowHypervisorConsole, true
 }
 
-// IsSetAllowHypervisorConsole returns a boolean if a field has been set.
-func (o *AddVDIPoolsRequestVdiPoolOneOf1) IsSetAllowHypervisorConsole() bool {
-	if o != nil && !IsNil(o.AllowHypervisorConsole) {
-		return true
-	}
-
-	return false
-}
-
 // SetAllowHypervisorConsole gets a reference to the given bool and assigns it to the AllowHypervisorConsole field.
 func (o *AddVDIPoolsRequestVdiPoolOneOf1) SetAllowHypervisorConsole(v bool) {
 	o.AllowHypervisorConsole = &v
@@ -576,15 +468,6 @@ func (o *AddVDIPoolsRequestVdiPoolOneOf1) GetAutoCreateLocalUserOnReservationOk(
 		return nil, false
 	}
 	return o.AutoCreateLocalUserOnReservation, true
-}
-
-// IsSetAutoCreateLocalUserOnReservation returns a boolean if a field has been set.
-func (o *AddVDIPoolsRequestVdiPoolOneOf1) IsSetAutoCreateLocalUserOnReservation() bool {
-	if o != nil && !IsNil(o.AutoCreateLocalUserOnReservation) {
-		return true
-	}
-
-	return false
 }
 
 // SetAutoCreateLocalUserOnReservation gets a reference to the given bool and assigns it to the AutoCreateLocalUserOnReservation field.
@@ -610,15 +493,6 @@ func (o *AddVDIPoolsRequestVdiPoolOneOf1) GetEnabledOk() (*bool, bool) {
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *AddVDIPoolsRequestVdiPoolOneOf1) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *AddVDIPoolsRequestVdiPoolOneOf1) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -640,15 +514,6 @@ func (o *AddVDIPoolsRequestVdiPoolOneOf1) GetIconPathOk() (*string, bool) {
 		return nil, false
 	}
 	return o.IconPath, true
-}
-
-// IsSetIconPath returns a boolean if a field has been set.
-func (o *AddVDIPoolsRequestVdiPoolOneOf1) IsSetIconPath() bool {
-	if o != nil && !IsNil(o.IconPath) {
-		return true
-	}
-
-	return false
 }
 
 // SetIconPath gets a reference to the given string and assigns it to the IconPath field.
@@ -674,15 +539,6 @@ func (o *AddVDIPoolsRequestVdiPoolOneOf1) GetAppsOk() ([]int64, bool) {
 	return o.Apps, true
 }
 
-// IsSetApps returns a boolean if a field has been set.
-func (o *AddVDIPoolsRequestVdiPoolOneOf1) IsSetApps() bool {
-	if o != nil && !IsNil(o.Apps) {
-		return true
-	}
-
-	return false
-}
-
 // SetApps gets a reference to the given []int64 and assigns it to the Apps field.
 func (o *AddVDIPoolsRequestVdiPoolOneOf1) SetApps(v []int64) {
 	o.Apps = v
@@ -706,15 +562,6 @@ func (o *AddVDIPoolsRequestVdiPoolOneOf1) GetGatewayOk() (*int64, bool) {
 	return o.Gateway, true
 }
 
-// IsSetGateway returns a boolean if a field has been set.
-func (o *AddVDIPoolsRequestVdiPoolOneOf1) IsSetGateway() bool {
-	if o != nil && !IsNil(o.Gateway) {
-		return true
-	}
-
-	return false
-}
-
 // SetGateway gets a reference to the given int64 and assigns it to the Gateway field.
 func (o *AddVDIPoolsRequestVdiPoolOneOf1) SetGateway(v int64) {
 	o.Gateway = &v
@@ -736,15 +583,6 @@ func (o *AddVDIPoolsRequestVdiPoolOneOf1) GetInstanceConfigOk() (*string, bool) 
 		return nil, false
 	}
 	return o.InstanceConfig, true
-}
-
-// IsSetInstanceConfig returns a boolean if a field has been set.
-func (o *AddVDIPoolsRequestVdiPoolOneOf1) IsSetInstanceConfig() bool {
-	if o != nil && !IsNil(o.InstanceConfig) {
-		return true
-	}
-
-	return false
 }
 
 // SetInstanceConfig gets a reference to the given string and assigns it to the InstanceConfig field.
@@ -794,15 +632,6 @@ func (o *AddVDIPoolsRequestVdiPoolOneOf1) GetGuestConsoleJumpHostOk() (*string, 
 	return o.GuestConsoleJumpHost, true
 }
 
-// IsSetGuestConsoleJumpHost returns a boolean if a field has been set.
-func (o *AddVDIPoolsRequestVdiPoolOneOf1) IsSetGuestConsoleJumpHost() bool {
-	if o != nil && !IsNil(o.GuestConsoleJumpHost) {
-		return true
-	}
-
-	return false
-}
-
 // SetGuestConsoleJumpHost gets a reference to the given string and assigns it to the GuestConsoleJumpHost field.
 func (o *AddVDIPoolsRequestVdiPoolOneOf1) SetGuestConsoleJumpHost(v string) {
 	o.GuestConsoleJumpHost = &v
@@ -824,15 +653,6 @@ func (o *AddVDIPoolsRequestVdiPoolOneOf1) GetGuestConsoleJumpPortOk() (*int64, b
 		return nil, false
 	}
 	return o.GuestConsoleJumpPort, true
-}
-
-// IsSetGuestConsoleJumpPort returns a boolean if a field has been set.
-func (o *AddVDIPoolsRequestVdiPoolOneOf1) IsSetGuestConsoleJumpPort() bool {
-	if o != nil && !IsNil(o.GuestConsoleJumpPort) {
-		return true
-	}
-
-	return false
 }
 
 // SetGuestConsoleJumpPort gets a reference to the given int64 and assigns it to the GuestConsoleJumpPort field.
@@ -858,15 +678,6 @@ func (o *AddVDIPoolsRequestVdiPoolOneOf1) GetGuestConsoleJumpUsernameOk() (*stri
 	return o.GuestConsoleJumpUsername, true
 }
 
-// IsSetGuestConsoleJumpUsername returns a boolean if a field has been set.
-func (o *AddVDIPoolsRequestVdiPoolOneOf1) IsSetGuestConsoleJumpUsername() bool {
-	if o != nil && !IsNil(o.GuestConsoleJumpUsername) {
-		return true
-	}
-
-	return false
-}
-
 // SetGuestConsoleJumpUsername gets a reference to the given string and assigns it to the GuestConsoleJumpUsername field.
 func (o *AddVDIPoolsRequestVdiPoolOneOf1) SetGuestConsoleJumpUsername(v string) {
 	o.GuestConsoleJumpUsername = &v
@@ -890,15 +701,6 @@ func (o *AddVDIPoolsRequestVdiPoolOneOf1) GetGuestConsoleJumpPasswordOk() (*stri
 	return o.GuestConsoleJumpPassword, true
 }
 
-// IsSetGuestConsoleJumpPassword returns a boolean if a field has been set.
-func (o *AddVDIPoolsRequestVdiPoolOneOf1) IsSetGuestConsoleJumpPassword() bool {
-	if o != nil && !IsNil(o.GuestConsoleJumpPassword) {
-		return true
-	}
-
-	return false
-}
-
 // SetGuestConsoleJumpPassword gets a reference to the given string and assigns it to the GuestConsoleJumpPassword field.
 func (o *AddVDIPoolsRequestVdiPoolOneOf1) SetGuestConsoleJumpPassword(v string) {
 	o.GuestConsoleJumpPassword = &v
@@ -920,15 +722,6 @@ func (o *AddVDIPoolsRequestVdiPoolOneOf1) GetGuestConsoleJumpKeypairOk() (*int64
 		return nil, false
 	}
 	return o.GuestConsoleJumpKeypair, true
-}
-
-// IsSetGuestConsoleJumpKeypair returns a boolean if a field has been set.
-func (o *AddVDIPoolsRequestVdiPoolOneOf1) IsSetGuestConsoleJumpKeypair() bool {
-	if o != nil && !IsNil(o.GuestConsoleJumpKeypair) {
-		return true
-	}
-
-	return false
 }
 
 // SetGuestConsoleJumpKeypair gets a reference to the given int64 and assigns it to the GuestConsoleJumpKeypair field.

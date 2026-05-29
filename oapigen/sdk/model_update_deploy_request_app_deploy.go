@@ -62,15 +62,6 @@ func (o *UpdateDeployRequestAppDeploy) GetConfigOk() (map[string]interface{}, bo
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *UpdateDeployRequestAppDeploy) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
 func (o *UpdateDeployRequestAppDeploy) SetConfig(v map[string]interface{}) {
 	o.Config = v

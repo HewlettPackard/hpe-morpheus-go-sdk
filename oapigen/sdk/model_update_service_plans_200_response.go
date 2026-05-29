@@ -62,15 +62,6 @@ func (o *UpdateServicePlans200Response) GetServicePlanOk() (*UpdateServicePlans2
 	return o.ServicePlan, true
 }
 
-// IsSetServicePlan returns a boolean if a field has been set.
-func (o *UpdateServicePlans200Response) IsSetServicePlan() bool {
-	if o != nil && !IsNil(o.ServicePlan) {
-		return true
-	}
-
-	return false
-}
-
 // SetServicePlan gets a reference to the given UpdateServicePlans200ResponseAllOfServicePlan and assigns it to the ServicePlan field.
 func (o *UpdateServicePlans200Response) SetServicePlan(v UpdateServicePlans200ResponseAllOfServicePlan) {
 	o.ServicePlan = &v
@@ -92,15 +83,6 @@ func (o *UpdateServicePlans200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *UpdateServicePlans200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

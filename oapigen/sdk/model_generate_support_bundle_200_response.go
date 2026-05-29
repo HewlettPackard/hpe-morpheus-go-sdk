@@ -62,15 +62,6 @@ func (o *GenerateSupportBundle200Response) GetSupportBundleOk() (*GenerateSuppor
 	return o.SupportBundle, true
 }
 
-// IsSetSupportBundle returns a boolean if a field has been set.
-func (o *GenerateSupportBundle200Response) IsSetSupportBundle() bool {
-	if o != nil && !IsNil(o.SupportBundle) {
-		return true
-	}
-
-	return false
-}
-
 // SetSupportBundle gets a reference to the given GenerateSupportBundle200ResponseAllOfSupportBundle and assigns it to the SupportBundle field.
 func (o *GenerateSupportBundle200Response) SetSupportBundle(v GenerateSupportBundle200ResponseAllOfSupportBundle) {
 	o.SupportBundle = &v
@@ -92,15 +83,6 @@ func (o *GenerateSupportBundle200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *GenerateSupportBundle200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

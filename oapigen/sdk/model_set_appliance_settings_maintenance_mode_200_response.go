@@ -61,15 +61,6 @@ func (o *SetApplianceSettingsMaintenanceMode200Response) GetSuccessOk() (*bool, 
 	return o.Success, true
 }
 
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *SetApplianceSettingsMaintenanceMode200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
-}
-
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.
 func (o *SetApplianceSettingsMaintenanceMode200Response) SetSuccess(v bool) {
 	o.Success = &v

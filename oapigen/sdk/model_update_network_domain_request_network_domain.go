@@ -94,15 +94,6 @@ func (o *UpdateNetworkDomainRequestNetworkDomain) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateNetworkDomainRequestNetworkDomain) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *UpdateNetworkDomainRequestNetworkDomain) SetName(v string) {
 	o.Name = &v
@@ -124,15 +115,6 @@ func (o *UpdateNetworkDomainRequestNetworkDomain) GetDescriptionOk() (*string, b
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *UpdateNetworkDomainRequestNetworkDomain) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -158,15 +140,6 @@ func (o *UpdateNetworkDomainRequestNetworkDomain) GetDisplayNameOk() (*string, b
 	return o.DisplayName, true
 }
 
-// IsSetDisplayName returns a boolean if a field has been set.
-func (o *UpdateNetworkDomainRequestNetworkDomain) IsSetDisplayName() bool {
-	if o != nil && !IsNil(o.DisplayName) {
-		return true
-	}
-
-	return false
-}
-
 // SetDisplayName gets a reference to the given string and assigns it to the DisplayName field.
 func (o *UpdateNetworkDomainRequestNetworkDomain) SetDisplayName(v string) {
 	o.DisplayName = &v
@@ -188,15 +161,6 @@ func (o *UpdateNetworkDomainRequestNetworkDomain) GetPublicZoneOk() (*bool, bool
 		return nil, false
 	}
 	return o.PublicZone, true
-}
-
-// IsSetPublicZone returns a boolean if a field has been set.
-func (o *UpdateNetworkDomainRequestNetworkDomain) IsSetPublicZone() bool {
-	if o != nil && !IsNil(o.PublicZone) {
-		return true
-	}
-
-	return false
 }
 
 // SetPublicZone gets a reference to the given bool and assigns it to the PublicZone field.
@@ -222,15 +186,6 @@ func (o *UpdateNetworkDomainRequestNetworkDomain) GetTaskSetIdOk() (*int64, bool
 	return o.TaskSetId, true
 }
 
-// IsSetTaskSetId returns a boolean if a field has been set.
-func (o *UpdateNetworkDomainRequestNetworkDomain) IsSetTaskSetId() bool {
-	if o != nil && !IsNil(o.TaskSetId) {
-		return true
-	}
-
-	return false
-}
-
 // SetTaskSetId gets a reference to the given int64 and assigns it to the TaskSetId field.
 func (o *UpdateNetworkDomainRequestNetworkDomain) SetTaskSetId(v int64) {
 	o.TaskSetId = &v
@@ -252,15 +207,6 @@ func (o *UpdateNetworkDomainRequestNetworkDomain) GetActiveOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Active, true
-}
-
-// IsSetActive returns a boolean if a field has been set.
-func (o *UpdateNetworkDomainRequestNetworkDomain) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
 }
 
 // SetActive gets a reference to the given bool and assigns it to the Active field.
@@ -286,15 +232,6 @@ func (o *UpdateNetworkDomainRequestNetworkDomain) GetDomainControllerOk() (*bool
 	return o.DomainController, true
 }
 
-// IsSetDomainController returns a boolean if a field has been set.
-func (o *UpdateNetworkDomainRequestNetworkDomain) IsSetDomainController() bool {
-	if o != nil && !IsNil(o.DomainController) {
-		return true
-	}
-
-	return false
-}
-
 // SetDomainController gets a reference to the given bool and assigns it to the DomainController field.
 func (o *UpdateNetworkDomainRequestNetworkDomain) SetDomainController(v bool) {
 	o.DomainController = &v
@@ -316,15 +253,6 @@ func (o *UpdateNetworkDomainRequestNetworkDomain) GetDomainUsernameOk() (*string
 		return nil, false
 	}
 	return o.DomainUsername, true
-}
-
-// IsSetDomainUsername returns a boolean if a field has been set.
-func (o *UpdateNetworkDomainRequestNetworkDomain) IsSetDomainUsername() bool {
-	if o != nil && !IsNil(o.DomainUsername) {
-		return true
-	}
-
-	return false
 }
 
 // SetDomainUsername gets a reference to the given string and assigns it to the DomainUsername field.
@@ -350,15 +278,6 @@ func (o *UpdateNetworkDomainRequestNetworkDomain) GetDomainPasswordOk() (*string
 	return o.DomainPassword, true
 }
 
-// IsSetDomainPassword returns a boolean if a field has been set.
-func (o *UpdateNetworkDomainRequestNetworkDomain) IsSetDomainPassword() bool {
-	if o != nil && !IsNil(o.DomainPassword) {
-		return true
-	}
-
-	return false
-}
-
 // SetDomainPassword gets a reference to the given string and assigns it to the DomainPassword field.
 func (o *UpdateNetworkDomainRequestNetworkDomain) SetDomainPassword(v string) {
 	o.DomainPassword = &v
@@ -380,15 +299,6 @@ func (o *UpdateNetworkDomainRequestNetworkDomain) GetDcServerOk() (*string, bool
 		return nil, false
 	}
 	return o.DcServer, true
-}
-
-// IsSetDcServer returns a boolean if a field has been set.
-func (o *UpdateNetworkDomainRequestNetworkDomain) IsSetDcServer() bool {
-	if o != nil && !IsNil(o.DcServer) {
-		return true
-	}
-
-	return false
 }
 
 // SetDcServer gets a reference to the given string and assigns it to the DcServer field.
@@ -414,15 +324,6 @@ func (o *UpdateNetworkDomainRequestNetworkDomain) GetOuPathOk() (*string, bool) 
 	return o.OuPath, true
 }
 
-// IsSetOuPath returns a boolean if a field has been set.
-func (o *UpdateNetworkDomainRequestNetworkDomain) IsSetOuPath() bool {
-	if o != nil && !IsNil(o.OuPath) {
-		return true
-	}
-
-	return false
-}
-
 // SetOuPath gets a reference to the given string and assigns it to the OuPath field.
 func (o *UpdateNetworkDomainRequestNetworkDomain) SetOuPath(v string) {
 	o.OuPath = &v
@@ -446,15 +347,6 @@ func (o *UpdateNetworkDomainRequestNetworkDomain) GetGuestUsernameOk() (*string,
 	return o.GuestUsername, true
 }
 
-// IsSetGuestUsername returns a boolean if a field has been set.
-func (o *UpdateNetworkDomainRequestNetworkDomain) IsSetGuestUsername() bool {
-	if o != nil && !IsNil(o.GuestUsername) {
-		return true
-	}
-
-	return false
-}
-
 // SetGuestUsername gets a reference to the given string and assigns it to the GuestUsername field.
 func (o *UpdateNetworkDomainRequestNetworkDomain) SetGuestUsername(v string) {
 	o.GuestUsername = &v
@@ -476,15 +368,6 @@ func (o *UpdateNetworkDomainRequestNetworkDomain) GetGuestPasswordOk() (*string,
 		return nil, false
 	}
 	return o.GuestPassword, true
-}
-
-// IsSetGuestPassword returns a boolean if a field has been set.
-func (o *UpdateNetworkDomainRequestNetworkDomain) IsSetGuestPassword() bool {
-	if o != nil && !IsNil(o.GuestPassword) {
-		return true
-	}
-
-	return false
 }
 
 // SetGuestPassword gets a reference to the given string and assigns it to the GuestPassword field.

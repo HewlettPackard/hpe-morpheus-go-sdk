@@ -61,15 +61,6 @@ func (o *UpdateServicePlans200ResponseAllOfServicePlanPermissionsResourcePermiss
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *UpdateServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissionsAccount) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *UpdateServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissionsAccount) SetId(v int64) {
 	o.Id = &v

@@ -65,15 +65,6 @@ func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionTy
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType) SetId(v int64) {
 	o.Id = &v
@@ -95,15 +86,6 @@ func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionTy
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -129,15 +111,6 @@ func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionTy
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType) SetName(v string) {
 	o.Name = &v
@@ -161,15 +134,6 @@ func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionTy
 	return o.HasNetworks, true
 }
 
-// IsSetHasNetworks returns a boolean if a field has been set.
-func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType) IsSetHasNetworks() bool {
-	if o != nil && !IsNil(o.HasNetworks) {
-		return true
-	}
-
-	return false
-}
-
 // SetHasNetworks gets a reference to the given bool and assigns it to the HasNetworks field.
 func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType) SetHasNetworks(v bool) {
 	o.HasNetworks = &v
@@ -191,15 +155,6 @@ func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionTy
 		return nil, false
 	}
 	return o.HasZonePools, true
-}
-
-// IsSetHasZonePools returns a boolean if a field has been set.
-func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType) IsSetHasZonePools() bool {
-	if o != nil && !IsNil(o.HasZonePools) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasZonePools gets a reference to the given bool and assigns it to the HasZonePools field.

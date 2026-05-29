@@ -68,15 +68,6 @@ func (o *ListClusters200ResponseAllOfClustersInnerWorkerStats) GetUsedStorageOk(
 	return o.UsedStorage, true
 }
 
-// IsSetUsedStorage returns a boolean if a field has been set.
-func (o *ListClusters200ResponseAllOfClustersInnerWorkerStats) IsSetUsedStorage() bool {
-	if o != nil && !IsNil(o.UsedStorage) {
-		return true
-	}
-
-	return false
-}
-
 // SetUsedStorage gets a reference to the given int64 and assigns it to the UsedStorage field.
 func (o *ListClusters200ResponseAllOfClustersInnerWorkerStats) SetUsedStorage(v int64) {
 	o.UsedStorage = &v
@@ -98,15 +89,6 @@ func (o *ListClusters200ResponseAllOfClustersInnerWorkerStats) GetMaxStorageOk()
 		return nil, false
 	}
 	return o.MaxStorage, true
-}
-
-// IsSetMaxStorage returns a boolean if a field has been set.
-func (o *ListClusters200ResponseAllOfClustersInnerWorkerStats) IsSetMaxStorage() bool {
-	if o != nil && !IsNil(o.MaxStorage) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxStorage gets a reference to the given int64 and assigns it to the MaxStorage field.
@@ -132,15 +114,6 @@ func (o *ListClusters200ResponseAllOfClustersInnerWorkerStats) GetUsedMemoryOk()
 	return o.UsedMemory, true
 }
 
-// IsSetUsedMemory returns a boolean if a field has been set.
-func (o *ListClusters200ResponseAllOfClustersInnerWorkerStats) IsSetUsedMemory() bool {
-	if o != nil && !IsNil(o.UsedMemory) {
-		return true
-	}
-
-	return false
-}
-
 // SetUsedMemory gets a reference to the given int64 and assigns it to the UsedMemory field.
 func (o *ListClusters200ResponseAllOfClustersInnerWorkerStats) SetUsedMemory(v int64) {
 	o.UsedMemory = &v
@@ -162,15 +135,6 @@ func (o *ListClusters200ResponseAllOfClustersInnerWorkerStats) GetMaxMemoryOk() 
 		return nil, false
 	}
 	return o.MaxMemory, true
-}
-
-// IsSetMaxMemory returns a boolean if a field has been set.
-func (o *ListClusters200ResponseAllOfClustersInnerWorkerStats) IsSetMaxMemory() bool {
-	if o != nil && !IsNil(o.MaxMemory) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxMemory gets a reference to the given int64 and assigns it to the MaxMemory field.
@@ -196,15 +160,6 @@ func (o *ListClusters200ResponseAllOfClustersInnerWorkerStats) GetUsedCpuOk() (*
 	return o.UsedCpu, true
 }
 
-// IsSetUsedCpu returns a boolean if a field has been set.
-func (o *ListClusters200ResponseAllOfClustersInnerWorkerStats) IsSetUsedCpu() bool {
-	if o != nil && !IsNil(o.UsedCpu) {
-		return true
-	}
-
-	return false
-}
-
 // SetUsedCpu gets a reference to the given int64 and assigns it to the UsedCpu field.
 func (o *ListClusters200ResponseAllOfClustersInnerWorkerStats) SetUsedCpu(v int64) {
 	o.UsedCpu = &v
@@ -226,15 +181,6 @@ func (o *ListClusters200ResponseAllOfClustersInnerWorkerStats) GetCpuUsageOk() (
 		return nil, false
 	}
 	return o.CpuUsage, true
-}
-
-// IsSetCpuUsage returns a boolean if a field has been set.
-func (o *ListClusters200ResponseAllOfClustersInnerWorkerStats) IsSetCpuUsage() bool {
-	if o != nil && !IsNil(o.CpuUsage) {
-		return true
-	}
-
-	return false
 }
 
 // SetCpuUsage gets a reference to the given float32 and assigns it to the CpuUsage field.
@@ -260,15 +206,6 @@ func (o *ListClusters200ResponseAllOfClustersInnerWorkerStats) GetCpuUsagePeakOk
 	return o.CpuUsagePeak, true
 }
 
-// IsSetCpuUsagePeak returns a boolean if a field has been set.
-func (o *ListClusters200ResponseAllOfClustersInnerWorkerStats) IsSetCpuUsagePeak() bool {
-	if o != nil && !IsNil(o.CpuUsagePeak) {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuUsagePeak gets a reference to the given float32 and assigns it to the CpuUsagePeak field.
 func (o *ListClusters200ResponseAllOfClustersInnerWorkerStats) SetCpuUsagePeak(v float32) {
 	o.CpuUsagePeak = &v
@@ -290,15 +227,6 @@ func (o *ListClusters200ResponseAllOfClustersInnerWorkerStats) GetCpuUsageAvgOk(
 		return nil, false
 	}
 	return o.CpuUsageAvg, true
-}
-
-// IsSetCpuUsageAvg returns a boolean if a field has been set.
-func (o *ListClusters200ResponseAllOfClustersInnerWorkerStats) IsSetCpuUsageAvg() bool {
-	if o != nil && !IsNil(o.CpuUsageAvg) {
-		return true
-	}
-
-	return false
 }
 
 // SetCpuUsageAvg gets a reference to the given float32 and assigns it to the CpuUsageAvg field.

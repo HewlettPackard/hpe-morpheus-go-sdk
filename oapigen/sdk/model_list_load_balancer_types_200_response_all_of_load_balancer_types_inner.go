@@ -69,15 +69,6 @@ func (o *ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner) GetIdOk() 
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner) SetId(v int64) {
 	o.Id = &v
@@ -99,15 +90,6 @@ func (o *ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner) GetNameOk(
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -133,15 +115,6 @@ func (o *ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner) GetCodeOk(
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner) SetCode(v string) {
 	o.Code = &v
@@ -163,15 +136,6 @@ func (o *ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner) GetEnabled
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -197,15 +161,6 @@ func (o *ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner) GetInterna
 	return o.Internal, true
 }
 
-// IsSetInternal returns a boolean if a field has been set.
-func (o *ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner) IsSetInternal() bool {
-	if o != nil && !IsNil(o.Internal) {
-		return true
-	}
-
-	return false
-}
-
 // SetInternal gets a reference to the given bool and assigns it to the Internal field.
 func (o *ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner) SetInternal(v bool) {
 	o.Internal = &v
@@ -227,15 +182,6 @@ func (o *ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner) GetCreatab
 		return nil, false
 	}
 	return o.Creatable, true
-}
-
-// IsSetCreatable returns a boolean if a field has been set.
-func (o *ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner) IsSetCreatable() bool {
-	if o != nil && !IsNil(o.Creatable) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreatable gets a reference to the given bool and assigns it to the Creatable field.
@@ -261,15 +207,6 @@ func (o *ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner) GetCreateT
 	return o.CreateType, true
 }
 
-// IsSetCreateType returns a boolean if a field has been set.
-func (o *ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner) IsSetCreateType() bool {
-	if o != nil && !IsNil(o.CreateType) {
-		return true
-	}
-
-	return false
-}
-
 // SetCreateType gets a reference to the given string and assigns it to the CreateType field.
 func (o *ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner) SetCreateType(v string) {
 	o.CreateType = &v
@@ -293,15 +230,6 @@ func (o *ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner) GetOptionT
 	return o.OptionTypes, true
 }
 
-// IsSetOptionTypes returns a boolean if a field has been set.
-func (o *ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner) IsSetOptionTypes() bool {
-	if o != nil && !IsNil(o.OptionTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetOptionTypes gets a reference to the given []ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInnerOptionTypesInner and assigns it to the OptionTypes field.
 func (o *ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner) SetOptionTypes(v []ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInnerOptionTypesInner) {
 	o.OptionTypes = v
@@ -323,15 +251,6 @@ func (o *ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner) GetVipOpti
 		return nil, false
 	}
 	return o.VipOptionTypes, true
-}
-
-// IsSetVipOptionTypes returns a boolean if a field has been set.
-func (o *ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner) IsSetVipOptionTypes() bool {
-	if o != nil && !IsNil(o.VipOptionTypes) {
-		return true
-	}
-
-	return false
 }
 
 // SetVipOptionTypes gets a reference to the given []ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInnerVipOptionTypesInner and assigns it to the VipOptionTypes field.

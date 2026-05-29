@@ -66,15 +66,6 @@ func (o *UpdateClusterNamespace200ResponseAllOfNamespace) GetIdOk() (*int64, boo
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *UpdateClusterNamespace200ResponseAllOfNamespace) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *UpdateClusterNamespace200ResponseAllOfNamespace) SetId(v int64) {
 	o.Id = &v
@@ -98,15 +89,6 @@ func (o *UpdateClusterNamespace200ResponseAllOfNamespace) GetNameOk() (*string, 
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateClusterNamespace200ResponseAllOfNamespace) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *UpdateClusterNamespace200ResponseAllOfNamespace) SetName(v string) {
 	o.Name = &v
@@ -128,15 +110,6 @@ func (o *UpdateClusterNamespace200ResponseAllOfNamespace) GetDescriptionOk() (*s
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *UpdateClusterNamespace200ResponseAllOfNamespace) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -163,28 +136,9 @@ func (o *UpdateClusterNamespace200ResponseAllOfNamespace) GetRegionCodeOk() (*st
 	return o.RegionCode.Get(), o.RegionCode.IsSet()
 }
 
-// IsSetRegionCode returns a boolean if a field has been set.
-func (o *UpdateClusterNamespace200ResponseAllOfNamespace) IsSetRegionCode() bool {
-	if o != nil && o.RegionCode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRegionCode gets a reference to the given NullableString and assigns it to the RegionCode field.
 func (o *UpdateClusterNamespace200ResponseAllOfNamespace) SetRegionCode(v string) {
 	o.RegionCode.Set(&v)
-}
-
-// SetRegionCodeNil sets the value for RegionCode to be an explicit nil
-func (o *UpdateClusterNamespace200ResponseAllOfNamespace) SetRegionCodeNil() {
-	o.RegionCode.Set(nil)
-}
-
-// UnsetRegionCode ensures that no value is present for RegionCode, not even an explicit nil
-func (o *UpdateClusterNamespace200ResponseAllOfNamespace) UnsetRegionCode() {
-	o.RegionCode.Unset()
 }
 
 // GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -206,28 +160,9 @@ func (o *UpdateClusterNamespace200ResponseAllOfNamespace) GetExternalIdOk() (*st
 	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *UpdateClusterNamespace200ResponseAllOfNamespace) IsSetExternalId() bool {
-	if o != nil && o.ExternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *UpdateClusterNamespace200ResponseAllOfNamespace) SetExternalId(v string) {
 	o.ExternalId.Set(&v)
-}
-
-// SetExternalIdNil sets the value for ExternalId to be an explicit nil
-func (o *UpdateClusterNamespace200ResponseAllOfNamespace) SetExternalIdNil() {
-	o.ExternalId.Set(nil)
-}
-
-// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-func (o *UpdateClusterNamespace200ResponseAllOfNamespace) UnsetExternalId() {
-	o.ExternalId.Unset()
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -246,15 +181,6 @@ func (o *UpdateClusterNamespace200ResponseAllOfNamespace) GetStatusOk() (*string
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *UpdateClusterNamespace200ResponseAllOfNamespace) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.

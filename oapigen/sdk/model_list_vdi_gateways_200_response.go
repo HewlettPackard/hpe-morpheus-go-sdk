@@ -62,15 +62,6 @@ func (o *ListVDIGateways200Response) GetVdiGatewaysOk() ([]ListVDIGateways200Res
 	return o.VdiGateways, true
 }
 
-// IsSetVdiGateways returns a boolean if a field has been set.
-func (o *ListVDIGateways200Response) IsSetVdiGateways() bool {
-	if o != nil && !IsNil(o.VdiGateways) {
-		return true
-	}
-
-	return false
-}
-
 // SetVdiGateways gets a reference to the given []ListVDIGateways200ResponseAllOfVdiGatewaysInner and assigns it to the VdiGateways field.
 func (o *ListVDIGateways200Response) SetVdiGateways(v []ListVDIGateways200ResponseAllOfVdiGatewaysInner) {
 	o.VdiGateways = v
@@ -92,15 +83,6 @@ func (o *ListVDIGateways200Response) GetMetaOk() (*ListApprovals200ResponseAllOf
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListVDIGateways200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

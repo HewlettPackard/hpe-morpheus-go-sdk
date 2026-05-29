@@ -61,15 +61,6 @@ func (o *GetBackupRestores200Response) GetRestoreOk() (*GetBackupRestores200Resp
 	return o.Restore, true
 }
 
-// IsSetRestore returns a boolean if a field has been set.
-func (o *GetBackupRestores200Response) IsSetRestore() bool {
-	if o != nil && !IsNil(o.Restore) {
-		return true
-	}
-
-	return false
-}
-
 // SetRestore gets a reference to the given GetBackupRestores200ResponseRestore and assigns it to the Restore field.
 func (o *GetBackupRestores200Response) SetRestore(v GetBackupRestores200ResponseRestore) {
 	o.Restore = &v

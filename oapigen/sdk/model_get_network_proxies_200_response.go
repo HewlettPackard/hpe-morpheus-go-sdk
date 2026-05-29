@@ -64,15 +64,6 @@ func (o *GetNetworkProxies200Response) GetNetworkProxiesOk() (*interface{}, bool
 	return &o.NetworkProxies, true
 }
 
-// IsSetNetworkProxies returns a boolean if a field has been set.
-func (o *GetNetworkProxies200Response) IsSetNetworkProxies() bool {
-	if o != nil && !IsNil(o.NetworkProxies) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkProxies gets a reference to the given interface{} and assigns it to the NetworkProxies field.
 func (o *GetNetworkProxies200Response) SetNetworkProxies(v interface{}) {
 	o.NetworkProxies = v
@@ -96,15 +87,6 @@ func (o *GetNetworkProxies200Response) GetNetworkProxyCountOk() (*int32, bool) {
 	return o.NetworkProxyCount, true
 }
 
-// IsSetNetworkProxyCount returns a boolean if a field has been set.
-func (o *GetNetworkProxies200Response) IsSetNetworkProxyCount() bool {
-	if o != nil && !IsNil(o.NetworkProxyCount) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkProxyCount gets a reference to the given int32 and assigns it to the NetworkProxyCount field.
 func (o *GetNetworkProxies200Response) SetNetworkProxyCount(v int32) {
 	o.NetworkProxyCount = &v
@@ -126,15 +108,6 @@ func (o *GetNetworkProxies200Response) GetMetaOk() (*ListApprovals200ResponseAll
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *GetNetworkProxies200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

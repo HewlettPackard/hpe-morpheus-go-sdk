@@ -61,15 +61,6 @@ func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf30) GetUserGroupOk() 
 	return o.UserGroup, true
 }
 
-// IsSetUserGroup returns a boolean if a field has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf30) IsSetUserGroup() bool {
-	if o != nil && !IsNil(o.UserGroup) {
-		return true
-	}
-
-	return false
-}
-
 // SetUserGroup gets a reference to the given string and assigns it to the UserGroup field.
 func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf30) SetUserGroup(v string) {
 	o.UserGroup = &v

@@ -62,15 +62,6 @@ func (o *ListClusterPods200Response) GetPodsOk() ([]ListClusterPods200ResponseAl
 	return o.Pods, true
 }
 
-// IsSetPods returns a boolean if a field has been set.
-func (o *ListClusterPods200Response) IsSetPods() bool {
-	if o != nil && !IsNil(o.Pods) {
-		return true
-	}
-
-	return false
-}
-
 // SetPods gets a reference to the given []ListClusterPods200ResponseAllOfPodsInner and assigns it to the Pods field.
 func (o *ListClusterPods200Response) SetPods(v []ListClusterPods200ResponseAllOfPodsInner) {
 	o.Pods = v
@@ -92,15 +83,6 @@ func (o *ListClusterPods200Response) GetMetaOk() (*ListApprovals200ResponseAllOf
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListClusterPods200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

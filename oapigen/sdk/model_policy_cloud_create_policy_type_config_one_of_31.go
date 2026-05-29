@@ -61,15 +61,6 @@ func (o *PolicyCloudCreatePolicyTypeConfigOneOf31) GetWorkflowIdOk() (*string, b
 	return o.WorkflowId, true
 }
 
-// IsSetWorkflowId returns a boolean if a field has been set.
-func (o *PolicyCloudCreatePolicyTypeConfigOneOf31) IsSetWorkflowId() bool {
-	if o != nil && !IsNil(o.WorkflowId) {
-		return true
-	}
-
-	return false
-}
-
 // SetWorkflowId gets a reference to the given string and assigns it to the WorkflowId field.
 func (o *PolicyCloudCreatePolicyTypeConfigOneOf31) SetWorkflowId(v string) {
 	o.WorkflowId = &v

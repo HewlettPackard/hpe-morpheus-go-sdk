@@ -62,15 +62,6 @@ func (o *ListClusterPackages200Response) GetClusterPackagesOk() ([]ListClusterPa
 	return o.ClusterPackages, true
 }
 
-// IsSetClusterPackages returns a boolean if a field has been set.
-func (o *ListClusterPackages200Response) IsSetClusterPackages() bool {
-	if o != nil && !IsNil(o.ClusterPackages) {
-		return true
-	}
-
-	return false
-}
-
 // SetClusterPackages gets a reference to the given []ListClusterPackages200ResponseAllOfClusterPackagesInner and assigns it to the ClusterPackages field.
 func (o *ListClusterPackages200Response) SetClusterPackages(v []ListClusterPackages200ResponseAllOfClusterPackagesInner) {
 	o.ClusterPackages = v
@@ -92,15 +83,6 @@ func (o *ListClusterPackages200Response) GetMetaOk() (*ListApprovals200ResponseA
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListClusterPackages200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

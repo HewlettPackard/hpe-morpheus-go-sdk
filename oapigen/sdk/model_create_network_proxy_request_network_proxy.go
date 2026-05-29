@@ -81,15 +81,6 @@ func (o *CreateNetworkProxyRequestNetworkProxy) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *CreateNetworkProxyRequestNetworkProxy) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *CreateNetworkProxyRequestNetworkProxy) SetName(v string) {
 	o.Name = &v
@@ -111,15 +102,6 @@ func (o *CreateNetworkProxyRequestNetworkProxy) GetProxyHostOk() (*string, bool)
 		return nil, false
 	}
 	return o.ProxyHost, true
-}
-
-// IsSetProxyHost returns a boolean if a field has been set.
-func (o *CreateNetworkProxyRequestNetworkProxy) IsSetProxyHost() bool {
-	if o != nil && !IsNil(o.ProxyHost) {
-		return true
-	}
-
-	return false
 }
 
 // SetProxyHost gets a reference to the given string and assigns it to the ProxyHost field.
@@ -145,15 +127,6 @@ func (o *CreateNetworkProxyRequestNetworkProxy) GetProxyPortOk() (*string, bool)
 	return o.ProxyPort, true
 }
 
-// IsSetProxyPort returns a boolean if a field has been set.
-func (o *CreateNetworkProxyRequestNetworkProxy) IsSetProxyPort() bool {
-	if o != nil && !IsNil(o.ProxyPort) {
-		return true
-	}
-
-	return false
-}
-
 // SetProxyPort gets a reference to the given string and assigns it to the ProxyPort field.
 func (o *CreateNetworkProxyRequestNetworkProxy) SetProxyPort(v string) {
 	o.ProxyPort = &v
@@ -175,15 +148,6 @@ func (o *CreateNetworkProxyRequestNetworkProxy) GetProxyUserOk() (*string, bool)
 		return nil, false
 	}
 	return o.ProxyUser, true
-}
-
-// IsSetProxyUser returns a boolean if a field has been set.
-func (o *CreateNetworkProxyRequestNetworkProxy) IsSetProxyUser() bool {
-	if o != nil && !IsNil(o.ProxyUser) {
-		return true
-	}
-
-	return false
 }
 
 // SetProxyUser gets a reference to the given string and assigns it to the ProxyUser field.
@@ -209,15 +173,6 @@ func (o *CreateNetworkProxyRequestNetworkProxy) GetProxyPasswordOk() (*string, b
 	return o.ProxyPassword, true
 }
 
-// IsSetProxyPassword returns a boolean if a field has been set.
-func (o *CreateNetworkProxyRequestNetworkProxy) IsSetProxyPassword() bool {
-	if o != nil && !IsNil(o.ProxyPassword) {
-		return true
-	}
-
-	return false
-}
-
 // SetProxyPassword gets a reference to the given string and assigns it to the ProxyPassword field.
 func (o *CreateNetworkProxyRequestNetworkProxy) SetProxyPassword(v string) {
 	o.ProxyPassword = &v
@@ -239,15 +194,6 @@ func (o *CreateNetworkProxyRequestNetworkProxy) GetProxyDomainOk() (*string, boo
 		return nil, false
 	}
 	return o.ProxyDomain, true
-}
-
-// IsSetProxyDomain returns a boolean if a field has been set.
-func (o *CreateNetworkProxyRequestNetworkProxy) IsSetProxyDomain() bool {
-	if o != nil && !IsNil(o.ProxyDomain) {
-		return true
-	}
-
-	return false
 }
 
 // SetProxyDomain gets a reference to the given string and assigns it to the ProxyDomain field.
@@ -273,15 +219,6 @@ func (o *CreateNetworkProxyRequestNetworkProxy) GetProxyWorkstationOk() (*string
 	return o.ProxyWorkstation, true
 }
 
-// IsSetProxyWorkstation returns a boolean if a field has been set.
-func (o *CreateNetworkProxyRequestNetworkProxy) IsSetProxyWorkstation() bool {
-	if o != nil && !IsNil(o.ProxyWorkstation) {
-		return true
-	}
-
-	return false
-}
-
 // SetProxyWorkstation gets a reference to the given string and assigns it to the ProxyWorkstation field.
 func (o *CreateNetworkProxyRequestNetworkProxy) SetProxyWorkstation(v string) {
 	o.ProxyWorkstation = &v
@@ -305,15 +242,6 @@ func (o *CreateNetworkProxyRequestNetworkProxy) GetVisibilityOk() (*string, bool
 	return o.Visibility, true
 }
 
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *CreateNetworkProxyRequestNetworkProxy) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
-}
-
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
 func (o *CreateNetworkProxyRequestNetworkProxy) SetVisibility(v string) {
 	o.Visibility = &v
@@ -335,15 +263,6 @@ func (o *CreateNetworkProxyRequestNetworkProxy) GetAccountOk() (*CreateNetworkPr
 		return nil, false
 	}
 	return o.Account, true
-}
-
-// IsSetAccount returns a boolean if a field has been set.
-func (o *CreateNetworkProxyRequestNetworkProxy) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccount gets a reference to the given CreateNetworkProxyRequestNetworkProxyAccount and assigns it to the Account field.

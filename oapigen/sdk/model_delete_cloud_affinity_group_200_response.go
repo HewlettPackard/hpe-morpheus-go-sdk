@@ -61,15 +61,6 @@ func (o *DeleteCloudAffinityGroup200Response) GetSuccessOk() (*bool, bool) {
 	return o.Success, true
 }
 
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *DeleteCloudAffinityGroup200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
-}
-
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.
 func (o *DeleteCloudAffinityGroup200Response) SetSuccess(v bool) {
 	o.Success = &v

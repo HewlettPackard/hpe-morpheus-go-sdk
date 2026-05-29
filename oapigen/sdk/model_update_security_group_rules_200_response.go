@@ -62,15 +62,6 @@ func (o *UpdateSecurityGroupRules200Response) GetRuleOk() (*UpdateSecurityGroupR
 	return o.Rule, true
 }
 
-// IsSetRule returns a boolean if a field has been set.
-func (o *UpdateSecurityGroupRules200Response) IsSetRule() bool {
-	if o != nil && !IsNil(o.Rule) {
-		return true
-	}
-
-	return false
-}
-
 // SetRule gets a reference to the given UpdateSecurityGroupRules200ResponseAllOfRule and assigns it to the Rule field.
 func (o *UpdateSecurityGroupRules200Response) SetRule(v UpdateSecurityGroupRules200ResponseAllOfRule) {
 	o.Rule = &v
@@ -92,15 +83,6 @@ func (o *UpdateSecurityGroupRules200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *UpdateSecurityGroupRules200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

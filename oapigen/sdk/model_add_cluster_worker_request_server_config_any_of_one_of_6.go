@@ -71,15 +71,6 @@ func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf6) GetCpuArchOk() (*string
 	return o.CpuArch, true
 }
 
-// IsSetCpuArch returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf6) IsSetCpuArch() bool {
-	if o != nil && !IsNil(o.CpuArch) {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuArch gets a reference to the given string and assigns it to the CpuArch field.
 func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf6) SetCpuArch(v string) {
 	o.CpuArch = &v
@@ -101,15 +92,6 @@ func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf6) GetCpuModelOk() (*strin
 		return nil, false
 	}
 	return o.CpuModel, true
-}
-
-// IsSetCpuModel returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf6) IsSetCpuModel() bool {
-	if o != nil && !IsNil(o.CpuModel) {
-		return true
-	}
-
-	return false
 }
 
 // SetCpuModel gets a reference to the given string and assigns it to the CpuModel field.
@@ -135,15 +117,6 @@ func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf6) GetDynamicPlacementMode
 	return o.DynamicPlacementMode, true
 }
 
-// IsSetDynamicPlacementMode returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf6) IsSetDynamicPlacementMode() bool {
-	if o != nil && !IsNil(o.DynamicPlacementMode) {
-		return true
-	}
-
-	return false
-}
-
 // SetDynamicPlacementMode gets a reference to the given string and assigns it to the DynamicPlacementMode field.
 func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf6) SetDynamicPlacementMode(v string) {
 	o.DynamicPlacementMode = &v
@@ -165,15 +138,6 @@ func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf6) GetPowerPolicyOk() (*st
 		return nil, false
 	}
 	return o.PowerPolicy, true
-}
-
-// IsSetPowerPolicy returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf6) IsSetPowerPolicy() bool {
-	if o != nil && !IsNil(o.PowerPolicy) {
-		return true
-	}
-
-	return false
 }
 
 // SetPowerPolicy gets a reference to the given string and assigns it to the PowerPolicy field.
@@ -199,15 +163,6 @@ func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf6) GetVcpuPlacementModeOk(
 	return o.VcpuPlacementMode, true
 }
 
-// IsSetVcpuPlacementMode returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf6) IsSetVcpuPlacementMode() bool {
-	if o != nil && !IsNil(o.VcpuPlacementMode) {
-		return true
-	}
-
-	return false
-}
-
 // SetVcpuPlacementMode gets a reference to the given string and assigns it to the VcpuPlacementMode field.
 func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf6) SetVcpuPlacementMode(v string) {
 	o.VcpuPlacementMode = &v
@@ -229,15 +184,6 @@ func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf6) GetStorageInterfaceName
 		return nil, false
 	}
 	return o.StorageInterfaceName, true
-}
-
-// IsSetStorageInterfaceName returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf6) IsSetStorageInterfaceName() bool {
-	if o != nil && !IsNil(o.StorageInterfaceName) {
-		return true
-	}
-
-	return false
 }
 
 // SetStorageInterfaceName gets a reference to the given string and assigns it to the StorageInterfaceName field.
@@ -263,15 +209,6 @@ func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf6) GetComputeInterfaceName
 	return o.ComputeInterfaceName, true
 }
 
-// IsSetComputeInterfaceName returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf6) IsSetComputeInterfaceName() bool {
-	if o != nil && !IsNil(o.ComputeInterfaceName) {
-		return true
-	}
-
-	return false
-}
-
 // SetComputeInterfaceName gets a reference to the given string and assigns it to the ComputeInterfaceName field.
 func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf6) SetComputeInterfaceName(v string) {
 	o.ComputeInterfaceName = &v
@@ -293,15 +230,6 @@ func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf6) GetComputeVlansOk() (*s
 		return nil, false
 	}
 	return o.ComputeVlans, true
-}
-
-// IsSetComputeVlans returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf6) IsSetComputeVlans() bool {
-	if o != nil && !IsNil(o.ComputeVlans) {
-		return true
-	}
-
-	return false
 }
 
 // SetComputeVlans gets a reference to the given string and assigns it to the ComputeVlans field.
@@ -327,15 +255,6 @@ func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf6) GetOverlayInterfaceName
 	return o.OverlayInterfaceName, true
 }
 
-// IsSetOverlayInterfaceName returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf6) IsSetOverlayInterfaceName() bool {
-	if o != nil && !IsNil(o.OverlayInterfaceName) {
-		return true
-	}
-
-	return false
-}
-
 // SetOverlayInterfaceName gets a reference to the given string and assigns it to the OverlayInterfaceName field.
 func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf6) SetOverlayInterfaceName(v string) {
 	o.OverlayInterfaceName = &v
@@ -357,15 +276,6 @@ func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf6) GetCreateUserOk() (*boo
 		return nil, false
 	}
 	return o.CreateUser, true
-}
-
-// IsSetCreateUser returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf6) IsSetCreateUser() bool {
-	if o != nil && !IsNil(o.CreateUser) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreateUser gets a reference to the given bool and assigns it to the CreateUser field.

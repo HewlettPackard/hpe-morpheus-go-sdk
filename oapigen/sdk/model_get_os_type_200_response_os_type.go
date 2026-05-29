@@ -88,15 +88,6 @@ func (o *GetOsType200ResponseOsType) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetOsType200ResponseOsType) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetOsType200ResponseOsType) SetId(v int64) {
 	o.Id = &v
@@ -120,15 +111,6 @@ func (o *GetOsType200ResponseOsType) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *GetOsType200ResponseOsType) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *GetOsType200ResponseOsType) SetCode(v string) {
 	o.Code = &v
@@ -150,15 +132,6 @@ func (o *GetOsType200ResponseOsType) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *GetOsType200ResponseOsType) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -185,28 +158,9 @@ func (o *GetOsType200ResponseOsType) GetDescriptionOk() (*string, bool) {
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *GetOsType200ResponseOsType) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *GetOsType200ResponseOsType) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *GetOsType200ResponseOsType) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *GetOsType200ResponseOsType) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetPlatform returns the Platform field value if set, zero value otherwise.
@@ -225,15 +179,6 @@ func (o *GetOsType200ResponseOsType) GetPlatformOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Platform, true
-}
-
-// IsSetPlatform returns a boolean if a field has been set.
-func (o *GetOsType200ResponseOsType) IsSetPlatform() bool {
-	if o != nil && !IsNil(o.Platform) {
-		return true
-	}
-
-	return false
 }
 
 // SetPlatform gets a reference to the given string and assigns it to the Platform field.
@@ -257,15 +202,6 @@ func (o *GetOsType200ResponseOsType) GetOwnerOk() (*GetOsType200ResponseOsTypeOw
 		return nil, false
 	}
 	return o.Owner, true
-}
-
-// IsSetOwner returns a boolean if a field has been set.
-func (o *GetOsType200ResponseOsType) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
-		return true
-	}
-
-	return false
 }
 
 // SetOwner gets a reference to the given GetOsType200ResponseOsTypeOwner and assigns it to the Owner field.
@@ -292,28 +228,9 @@ func (o *GetOsType200ResponseOsType) GetCategoryOk() (*string, bool) {
 	return o.Category.Get(), o.Category.IsSet()
 }
 
-// IsSetCategory returns a boolean if a field has been set.
-func (o *GetOsType200ResponseOsType) IsSetCategory() bool {
-	if o != nil && o.Category.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCategory gets a reference to the given NullableString and assigns it to the Category field.
 func (o *GetOsType200ResponseOsType) SetCategory(v string) {
 	o.Category.Set(&v)
-}
-
-// SetCategoryNil sets the value for Category to be an explicit nil
-func (o *GetOsType200ResponseOsType) SetCategoryNil() {
-	o.Category.Set(nil)
-}
-
-// UnsetCategory ensures that no value is present for Category, not even an explicit nil
-func (o *GetOsType200ResponseOsType) UnsetCategory() {
-	o.Category.Unset()
 }
 
 // GetVendor returns the Vendor field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -335,28 +252,9 @@ func (o *GetOsType200ResponseOsType) GetVendorOk() (*string, bool) {
 	return o.Vendor.Get(), o.Vendor.IsSet()
 }
 
-// IsSetVendor returns a boolean if a field has been set.
-func (o *GetOsType200ResponseOsType) IsSetVendor() bool {
-	if o != nil && o.Vendor.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetVendor gets a reference to the given NullableString and assigns it to the Vendor field.
 func (o *GetOsType200ResponseOsType) SetVendor(v string) {
 	o.Vendor.Set(&v)
-}
-
-// SetVendorNil sets the value for Vendor to be an explicit nil
-func (o *GetOsType200ResponseOsType) SetVendorNil() {
-	o.Vendor.Set(nil)
-}
-
-// UnsetVendor ensures that no value is present for Vendor, not even an explicit nil
-func (o *GetOsType200ResponseOsType) UnsetVendor() {
-	o.Vendor.Unset()
 }
 
 // GetOsName returns the OsName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -378,28 +276,9 @@ func (o *GetOsType200ResponseOsType) GetOsNameOk() (*string, bool) {
 	return o.OsName.Get(), o.OsName.IsSet()
 }
 
-// IsSetOsName returns a boolean if a field has been set.
-func (o *GetOsType200ResponseOsType) IsSetOsName() bool {
-	if o != nil && o.OsName.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetOsName gets a reference to the given NullableString and assigns it to the OsName field.
 func (o *GetOsType200ResponseOsType) SetOsName(v string) {
 	o.OsName.Set(&v)
-}
-
-// SetOsNameNil sets the value for OsName to be an explicit nil
-func (o *GetOsType200ResponseOsType) SetOsNameNil() {
-	o.OsName.Set(nil)
-}
-
-// UnsetOsName ensures that no value is present for OsName, not even an explicit nil
-func (o *GetOsType200ResponseOsType) UnsetOsName() {
-	o.OsName.Unset()
 }
 
 // GetOsVersion returns the OsVersion field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -421,28 +300,9 @@ func (o *GetOsType200ResponseOsType) GetOsVersionOk() (*string, bool) {
 	return o.OsVersion.Get(), o.OsVersion.IsSet()
 }
 
-// IsSetOsVersion returns a boolean if a field has been set.
-func (o *GetOsType200ResponseOsType) IsSetOsVersion() bool {
-	if o != nil && o.OsVersion.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetOsVersion gets a reference to the given NullableString and assigns it to the OsVersion field.
 func (o *GetOsType200ResponseOsType) SetOsVersion(v string) {
 	o.OsVersion.Set(&v)
-}
-
-// SetOsVersionNil sets the value for OsVersion to be an explicit nil
-func (o *GetOsType200ResponseOsType) SetOsVersionNil() {
-	o.OsVersion.Set(nil)
-}
-
-// UnsetOsVersion ensures that no value is present for OsVersion, not even an explicit nil
-func (o *GetOsType200ResponseOsType) UnsetOsVersion() {
-	o.OsVersion.Unset()
 }
 
 // GetOsCodename returns the OsCodename field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -464,28 +324,9 @@ func (o *GetOsType200ResponseOsType) GetOsCodenameOk() (*string, bool) {
 	return o.OsCodename.Get(), o.OsCodename.IsSet()
 }
 
-// IsSetOsCodename returns a boolean if a field has been set.
-func (o *GetOsType200ResponseOsType) IsSetOsCodename() bool {
-	if o != nil && o.OsCodename.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetOsCodename gets a reference to the given NullableString and assigns it to the OsCodename field.
 func (o *GetOsType200ResponseOsType) SetOsCodename(v string) {
 	o.OsCodename.Set(&v)
-}
-
-// SetOsCodenameNil sets the value for OsCodename to be an explicit nil
-func (o *GetOsType200ResponseOsType) SetOsCodenameNil() {
-	o.OsCodename.Set(nil)
-}
-
-// UnsetOsCodename ensures that no value is present for OsCodename, not even an explicit nil
-func (o *GetOsType200ResponseOsType) UnsetOsCodename() {
-	o.OsCodename.Unset()
 }
 
 // GetOsFamily returns the OsFamily field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -507,28 +348,9 @@ func (o *GetOsType200ResponseOsType) GetOsFamilyOk() (*string, bool) {
 	return o.OsFamily.Get(), o.OsFamily.IsSet()
 }
 
-// IsSetOsFamily returns a boolean if a field has been set.
-func (o *GetOsType200ResponseOsType) IsSetOsFamily() bool {
-	if o != nil && o.OsFamily.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetOsFamily gets a reference to the given NullableString and assigns it to the OsFamily field.
 func (o *GetOsType200ResponseOsType) SetOsFamily(v string) {
 	o.OsFamily.Set(&v)
-}
-
-// SetOsFamilyNil sets the value for OsFamily to be an explicit nil
-func (o *GetOsType200ResponseOsType) SetOsFamilyNil() {
-	o.OsFamily.Set(nil)
-}
-
-// UnsetOsFamily ensures that no value is present for OsFamily, not even an explicit nil
-func (o *GetOsType200ResponseOsType) UnsetOsFamily() {
-	o.OsFamily.Unset()
 }
 
 // GetBitCount returns the BitCount field value if set, zero value otherwise.
@@ -547,15 +369,6 @@ func (o *GetOsType200ResponseOsType) GetBitCountOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.BitCount, true
-}
-
-// IsSetBitCount returns a boolean if a field has been set.
-func (o *GetOsType200ResponseOsType) IsSetBitCount() bool {
-	if o != nil && !IsNil(o.BitCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetBitCount gets a reference to the given int64 and assigns it to the BitCount field.
@@ -579,15 +392,6 @@ func (o *GetOsType200ResponseOsType) GetCloudInitVersionOk() (*string, bool) {
 		return nil, false
 	}
 	return o.CloudInitVersion, true
-}
-
-// IsSetCloudInitVersion returns a boolean if a field has been set.
-func (o *GetOsType200ResponseOsType) IsSetCloudInitVersion() bool {
-	if o != nil && !IsNil(o.CloudInitVersion) {
-		return true
-	}
-
-	return false
 }
 
 // SetCloudInitVersion gets a reference to the given string and assigns it to the CloudInitVersion field.
@@ -614,28 +418,9 @@ func (o *GetOsType200ResponseOsType) GetInstallAgentOk() (*bool, bool) {
 	return o.InstallAgent.Get(), o.InstallAgent.IsSet()
 }
 
-// IsSetInstallAgent returns a boolean if a field has been set.
-func (o *GetOsType200ResponseOsType) IsSetInstallAgent() bool {
-	if o != nil && o.InstallAgent.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInstallAgent gets a reference to the given NullableBool and assigns it to the InstallAgent field.
 func (o *GetOsType200ResponseOsType) SetInstallAgent(v bool) {
 	o.InstallAgent.Set(&v)
-}
-
-// SetInstallAgentNil sets the value for InstallAgent to be an explicit nil
-func (o *GetOsType200ResponseOsType) SetInstallAgentNil() {
-	o.InstallAgent.Set(nil)
-}
-
-// UnsetInstallAgent ensures that no value is present for InstallAgent, not even an explicit nil
-func (o *GetOsType200ResponseOsType) UnsetInstallAgent() {
-	o.InstallAgent.Unset()
 }
 
 // GetImages returns the Images field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -655,15 +440,6 @@ func (o *GetOsType200ResponseOsType) GetImagesOk() ([]GetOsType200ResponseOsType
 		return nil, false
 	}
 	return o.Images, true
-}
-
-// IsSetImages returns a boolean if a field has been set.
-func (o *GetOsType200ResponseOsType) IsSetImages() bool {
-	if o != nil && !IsNil(o.Images) {
-		return true
-	}
-
-	return false
 }
 
 // SetImages gets a reference to the given []GetOsType200ResponseOsTypeImagesInner and assigns it to the Images field.

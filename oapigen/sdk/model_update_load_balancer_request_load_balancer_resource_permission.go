@@ -64,15 +64,6 @@ func (o *UpdateLoadBalancerRequestLoadBalancerResourcePermission) GetAllOk() (*b
 	return o.All, true
 }
 
-// IsSetAll returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerRequestLoadBalancerResourcePermission) IsSetAll() bool {
-	if o != nil && !IsNil(o.All) {
-		return true
-	}
-
-	return false
-}
-
 // SetAll gets a reference to the given bool and assigns it to the All field.
 func (o *UpdateLoadBalancerRequestLoadBalancerResourcePermission) SetAll(v bool) {
 	o.All = &v
@@ -94,15 +85,6 @@ func (o *UpdateLoadBalancerRequestLoadBalancerResourcePermission) GetSitesOk() (
 		return nil, false
 	}
 	return o.Sites, true
-}
-
-// IsSetSites returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerRequestLoadBalancerResourcePermission) IsSetSites() bool {
-	if o != nil && !IsNil(o.Sites) {
-		return true
-	}
-
-	return false
 }
 
 // SetSites gets a reference to the given []int64 and assigns it to the Sites field.

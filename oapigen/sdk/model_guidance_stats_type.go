@@ -64,15 +64,6 @@ func (o *GuidanceStatsType) GetSizeOk() (*int64, bool) {
 	return o.Size, true
 }
 
-// IsSetSize returns a boolean if a field has been set.
-func (o *GuidanceStatsType) IsSetSize() bool {
-	if o != nil && !IsNil(o.Size) {
-		return true
-	}
-
-	return false
-}
-
 // SetSize gets a reference to the given int64 and assigns it to the Size field.
 func (o *GuidanceStatsType) SetSize(v int64) {
 	o.Size = &v
@@ -94,15 +85,6 @@ func (o *GuidanceStatsType) GetShutdownOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.Shutdown, true
-}
-
-// IsSetShutdown returns a boolean if a field has been set.
-func (o *GuidanceStatsType) IsSetShutdown() bool {
-	if o != nil && !IsNil(o.Shutdown) {
-		return true
-	}
-
-	return false
 }
 
 // SetShutdown gets a reference to the given int64 and assigns it to the Shutdown field.
@@ -128,15 +110,6 @@ func (o *GuidanceStatsType) GetMoveOk() (*int64, bool) {
 	return o.Move, true
 }
 
-// IsSetMove returns a boolean if a field has been set.
-func (o *GuidanceStatsType) IsSetMove() bool {
-	if o != nil && !IsNil(o.Move) {
-		return true
-	}
-
-	return false
-}
-
 // SetMove gets a reference to the given int64 and assigns it to the Move field.
 func (o *GuidanceStatsType) SetMove(v int64) {
 	o.Move = &v
@@ -158,15 +131,6 @@ func (o *GuidanceStatsType) GetScheduleOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.Schedule, true
-}
-
-// IsSetSchedule returns a boolean if a field has been set.
-func (o *GuidanceStatsType) IsSetSchedule() bool {
-	if o != nil && !IsNil(o.Schedule) {
-		return true
-	}
-
-	return false
 }
 
 // SetSchedule gets a reference to the given int64 and assigns it to the Schedule field.

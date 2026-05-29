@@ -61,15 +61,6 @@ func (o *GenerateKeyPairs200Response) GetKeyPairOk() (*GenerateKeyPairs200Respon
 	return o.KeyPair, true
 }
 
-// IsSetKeyPair returns a boolean if a field has been set.
-func (o *GenerateKeyPairs200Response) IsSetKeyPair() bool {
-	if o != nil && !IsNil(o.KeyPair) {
-		return true
-	}
-
-	return false
-}
-
 // SetKeyPair gets a reference to the given GenerateKeyPairs200ResponseKeyPair and assigns it to the KeyPair field.
 func (o *GenerateKeyPairs200Response) SetKeyPair(v GenerateKeyPairs200ResponseKeyPair) {
 	o.KeyPair = &v

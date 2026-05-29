@@ -61,15 +61,6 @@ func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf1) GetCreateUserOk() (*boo
 	return o.CreateUser, true
 }
 
-// IsSetCreateUser returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf1) IsSetCreateUser() bool {
-	if o != nil && !IsNil(o.CreateUser) {
-		return true
-	}
-
-	return false
-}
-
 // SetCreateUser gets a reference to the given bool and assigns it to the CreateUser field.
 func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf1) SetCreateUser(v bool) {
 	o.CreateUser = &v

@@ -175,15 +175,6 @@ func (o *IntegrationGitRepoConfigIntegration) GetServicePasswordOk() (*string, b
 	return o.ServicePassword, true
 }
 
-// IsSetServicePassword returns a boolean if a field has been set.
-func (o *IntegrationGitRepoConfigIntegration) IsSetServicePassword() bool {
-	if o != nil && !IsNil(o.ServicePassword) {
-		return true
-	}
-
-	return false
-}
-
 // SetServicePassword gets a reference to the given string and assigns it to the ServicePassword field.
 func (o *IntegrationGitRepoConfigIntegration) SetServicePassword(v string) {
 	o.ServicePassword = &v
@@ -205,15 +196,6 @@ func (o *IntegrationGitRepoConfigIntegration) GetServiceTokenOk() (*string, bool
 		return nil, false
 	}
 	return o.ServiceToken, true
-}
-
-// IsSetServiceToken returns a boolean if a field has been set.
-func (o *IntegrationGitRepoConfigIntegration) IsSetServiceToken() bool {
-	if o != nil && !IsNil(o.ServiceToken) {
-		return true
-	}
-
-	return false
 }
 
 // SetServiceToken gets a reference to the given string and assigns it to the ServiceToken field.
@@ -239,15 +221,6 @@ func (o *IntegrationGitRepoConfigIntegration) GetServiceKeyOk() (*int64, bool) {
 	return o.ServiceKey, true
 }
 
-// IsSetServiceKey returns a boolean if a field has been set.
-func (o *IntegrationGitRepoConfigIntegration) IsSetServiceKey() bool {
-	if o != nil && !IsNil(o.ServiceKey) {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceKey gets a reference to the given int64 and assigns it to the ServiceKey field.
 func (o *IntegrationGitRepoConfigIntegration) SetServiceKey(v int64) {
 	o.ServiceKey = &v
@@ -269,15 +242,6 @@ func (o *IntegrationGitRepoConfigIntegration) GetConfigOk() (*IntegrationGitRepo
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *IntegrationGitRepoConfigIntegration) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given IntegrationGitRepoConfigIntegrationConfig and assigns it to the Config field.

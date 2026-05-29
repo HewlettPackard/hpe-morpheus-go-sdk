@@ -227,15 +227,6 @@ func (o *AddCloudsRequestZone) GetAgentModeOk() (*string, bool) {
 	return o.AgentMode, true
 }
 
-// IsSetAgentMode returns a boolean if a field has been set.
-func (o *AddCloudsRequestZone) IsSetAgentMode() bool {
-	if o != nil && !IsNil(o.AgentMode) {
-		return true
-	}
-
-	return false
-}
-
 // SetAgentMode gets a reference to the given string and assigns it to the AgentMode field.
 func (o *AddCloudsRequestZone) SetAgentMode(v string) {
 	o.AgentMode = &v
@@ -257,15 +248,6 @@ func (o *AddCloudsRequestZone) GetDescriptionOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *AddCloudsRequestZone) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -291,15 +273,6 @@ func (o *AddCloudsRequestZone) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *AddCloudsRequestZone) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *AddCloudsRequestZone) SetCode(v string) {
 	o.Code = &v
@@ -321,15 +294,6 @@ func (o *AddCloudsRequestZone) GetLabelsOk() ([]string, bool) {
 		return nil, false
 	}
 	return o.Labels, true
-}
-
-// IsSetLabels returns a boolean if a field has been set.
-func (o *AddCloudsRequestZone) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
 }
 
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
@@ -356,28 +320,9 @@ func (o *AddCloudsRequestZone) GetLocationOk() (*string, bool) {
 	return o.Location.Get(), o.Location.IsSet()
 }
 
-// IsSetLocation returns a boolean if a field has been set.
-func (o *AddCloudsRequestZone) IsSetLocation() bool {
-	if o != nil && o.Location.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLocation gets a reference to the given NullableString and assigns it to the Location field.
 func (o *AddCloudsRequestZone) SetLocation(v string) {
 	o.Location.Set(&v)
-}
-
-// SetLocationNil sets the value for Location to be an explicit nil
-func (o *AddCloudsRequestZone) SetLocationNil() {
-	o.Location.Set(nil)
-}
-
-// UnsetLocation ensures that no value is present for Location, not even an explicit nil
-func (o *AddCloudsRequestZone) UnsetLocation() {
-	o.Location.Unset()
 }
 
 // GetVisibility returns the Visibility field value if set, zero value otherwise.
@@ -396,15 +341,6 @@ func (o *AddCloudsRequestZone) GetVisibilityOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *AddCloudsRequestZone) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -430,15 +366,6 @@ func (o *AddCloudsRequestZone) GetAccountIdOk() (*int64, bool) {
 	return o.AccountId, true
 }
 
-// IsSetAccountId returns a boolean if a field has been set.
-func (o *AddCloudsRequestZone) IsSetAccountId() bool {
-	if o != nil && !IsNil(o.AccountId) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccountId gets a reference to the given int64 and assigns it to the AccountId field.
 func (o *AddCloudsRequestZone) SetAccountId(v int64) {
 	o.AccountId = &v
@@ -460,15 +387,6 @@ func (o *AddCloudsRequestZone) GetEnabledOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *AddCloudsRequestZone) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -494,15 +412,6 @@ func (o *AddCloudsRequestZone) GetAutoRecoverPowerStateOk() (*bool, bool) {
 	return o.AutoRecoverPowerState, true
 }
 
-// IsSetAutoRecoverPowerState returns a boolean if a field has been set.
-func (o *AddCloudsRequestZone) IsSetAutoRecoverPowerState() bool {
-	if o != nil && !IsNil(o.AutoRecoverPowerState) {
-		return true
-	}
-
-	return false
-}
-
 // SetAutoRecoverPowerState gets a reference to the given bool and assigns it to the AutoRecoverPowerState field.
 func (o *AddCloudsRequestZone) SetAutoRecoverPowerState(v bool) {
 	o.AutoRecoverPowerState = &v
@@ -524,15 +433,6 @@ func (o *AddCloudsRequestZone) GetScalePriorityOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.ScalePriority, true
-}
-
-// IsSetScalePriority returns a boolean if a field has been set.
-func (o *AddCloudsRequestZone) IsSetScalePriority() bool {
-	if o != nil && !IsNil(o.ScalePriority) {
-		return true
-	}
-
-	return false
 }
 
 // SetScalePriority gets a reference to the given int64 and assigns it to the ScalePriority field.
@@ -558,15 +458,6 @@ func (o *AddCloudsRequestZone) GetDefaultDatastoreSyncActiveOk() (*bool, bool) {
 	return o.DefaultDatastoreSyncActive, true
 }
 
-// IsSetDefaultDatastoreSyncActive returns a boolean if a field has been set.
-func (o *AddCloudsRequestZone) IsSetDefaultDatastoreSyncActive() bool {
-	if o != nil && !IsNil(o.DefaultDatastoreSyncActive) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultDatastoreSyncActive gets a reference to the given bool and assigns it to the DefaultDatastoreSyncActive field.
 func (o *AddCloudsRequestZone) SetDefaultDatastoreSyncActive(v bool) {
 	o.DefaultDatastoreSyncActive = &v
@@ -588,15 +479,6 @@ func (o *AddCloudsRequestZone) GetDefaultNetworkSyncActiveOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.DefaultNetworkSyncActive, true
-}
-
-// IsSetDefaultNetworkSyncActive returns a boolean if a field has been set.
-func (o *AddCloudsRequestZone) IsSetDefaultNetworkSyncActive() bool {
-	if o != nil && !IsNil(o.DefaultNetworkSyncActive) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultNetworkSyncActive gets a reference to the given bool and assigns it to the DefaultNetworkSyncActive field.
@@ -622,15 +504,6 @@ func (o *AddCloudsRequestZone) GetDefaultFolderSyncActiveOk() (*bool, bool) {
 	return o.DefaultFolderSyncActive, true
 }
 
-// IsSetDefaultFolderSyncActive returns a boolean if a field has been set.
-func (o *AddCloudsRequestZone) IsSetDefaultFolderSyncActive() bool {
-	if o != nil && !IsNil(o.DefaultFolderSyncActive) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultFolderSyncActive gets a reference to the given bool and assigns it to the DefaultFolderSyncActive field.
 func (o *AddCloudsRequestZone) SetDefaultFolderSyncActive(v bool) {
 	o.DefaultFolderSyncActive = &v
@@ -652,15 +525,6 @@ func (o *AddCloudsRequestZone) GetDefaultSecurityGroupSyncActiveOk() (*bool, boo
 		return nil, false
 	}
 	return o.DefaultSecurityGroupSyncActive, true
-}
-
-// IsSetDefaultSecurityGroupSyncActive returns a boolean if a field has been set.
-func (o *AddCloudsRequestZone) IsSetDefaultSecurityGroupSyncActive() bool {
-	if o != nil && !IsNil(o.DefaultSecurityGroupSyncActive) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultSecurityGroupSyncActive gets a reference to the given bool and assigns it to the DefaultSecurityGroupSyncActive field.
@@ -686,15 +550,6 @@ func (o *AddCloudsRequestZone) GetDefaultPoolSyncActiveOk() (*bool, bool) {
 	return o.DefaultPoolSyncActive, true
 }
 
-// IsSetDefaultPoolSyncActive returns a boolean if a field has been set.
-func (o *AddCloudsRequestZone) IsSetDefaultPoolSyncActive() bool {
-	if o != nil && !IsNil(o.DefaultPoolSyncActive) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultPoolSyncActive gets a reference to the given bool and assigns it to the DefaultPoolSyncActive field.
 func (o *AddCloudsRequestZone) SetDefaultPoolSyncActive(v bool) {
 	o.DefaultPoolSyncActive = &v
@@ -716,15 +571,6 @@ func (o *AddCloudsRequestZone) GetDefaultPlanSyncActiveOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.DefaultPlanSyncActive, true
-}
-
-// IsSetDefaultPlanSyncActive returns a boolean if a field has been set.
-func (o *AddCloudsRequestZone) IsSetDefaultPlanSyncActive() bool {
-	if o != nil && !IsNil(o.DefaultPlanSyncActive) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultPlanSyncActive gets a reference to the given bool and assigns it to the DefaultPlanSyncActive field.
@@ -750,15 +596,6 @@ func (o *AddCloudsRequestZone) GetLinkedAccountIdOk() (*int64, bool) {
 	return o.LinkedAccountId, true
 }
 
-// IsSetLinkedAccountId returns a boolean if a field has been set.
-func (o *AddCloudsRequestZone) IsSetLinkedAccountId() bool {
-	if o != nil && !IsNil(o.LinkedAccountId) {
-		return true
-	}
-
-	return false
-}
-
 // SetLinkedAccountId gets a reference to the given int64 and assigns it to the LinkedAccountId field.
 func (o *AddCloudsRequestZone) SetLinkedAccountId(v int64) {
 	o.LinkedAccountId = &v
@@ -782,15 +619,6 @@ func (o *AddCloudsRequestZone) GetSecurityModeOk() (*string, bool) {
 	return o.SecurityMode, true
 }
 
-// IsSetSecurityMode returns a boolean if a field has been set.
-func (o *AddCloudsRequestZone) IsSetSecurityMode() bool {
-	if o != nil && !IsNil(o.SecurityMode) {
-		return true
-	}
-
-	return false
-}
-
 // SetSecurityMode gets a reference to the given string and assigns it to the SecurityMode field.
 func (o *AddCloudsRequestZone) SetSecurityMode(v string) {
 	o.SecurityMode = &v
@@ -812,15 +640,6 @@ func (o *AddCloudsRequestZone) GetCredentialOk() (*AddCloudsRequestZoneCredentia
 		return nil, false
 	}
 	return o.Credential, true
-}
-
-// IsSetCredential returns a boolean if a field has been set.
-func (o *AddCloudsRequestZone) IsSetCredential() bool {
-	if o != nil && !IsNil(o.Credential) {
-		return true
-	}
-
-	return false
 }
 
 // SetCredential gets a reference to the given AddCloudsRequestZoneCredential and assigns it to the Credential field.

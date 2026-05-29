@@ -68,15 +68,6 @@ func (o *GetClusterContainer200ResponseResource) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetClusterContainer200ResponseResource) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetClusterContainer200ResponseResource) SetId(v int64) {
 	o.Id = &v
@@ -98,15 +89,6 @@ func (o *GetClusterContainer200ResponseResource) GetTitleOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Title, true
-}
-
-// IsSetTitle returns a boolean if a field has been set.
-func (o *GetClusterContainer200ResponseResource) IsSetTitle() bool {
-	if o != nil && !IsNil(o.Title) {
-		return true
-	}
-
-	return false
 }
 
 // SetTitle gets a reference to the given string and assigns it to the Title field.
@@ -132,15 +114,6 @@ func (o *GetClusterContainer200ResponseResource) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *GetClusterContainer200ResponseResource) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *GetClusterContainer200ResponseResource) SetName(v string) {
 	o.Name = &v
@@ -164,15 +137,6 @@ func (o *GetClusterContainer200ResponseResource) GetStatusOk() (*string, bool) {
 	return o.Status, true
 }
 
-// IsSetStatus returns a boolean if a field has been set.
-func (o *GetClusterContainer200ResponseResource) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
-}
-
 // SetStatus gets a reference to the given string and assigns it to the Status field.
 func (o *GetClusterContainer200ResponseResource) SetStatus(v string) {
 	o.Status = &v
@@ -194,15 +158,6 @@ func (o *GetClusterContainer200ResponseResource) GetMetadataOk() (map[string]int
 		return map[string]interface{}{}, false
 	}
 	return o.Metadata, true
-}
-
-// IsSetMetadata returns a boolean if a field has been set.
-func (o *GetClusterContainer200ResponseResource) IsSetMetadata() bool {
-	if o != nil && !IsNil(o.Metadata) {
-		return true
-	}
-
-	return false
 }
 
 // SetMetadata gets a reference to the given map[string]interface{} and assigns it to the Metadata field.
@@ -229,15 +184,6 @@ func (o *GetClusterContainer200ResponseResource) GetSpecOk() (map[string]interfa
 	return o.Spec, true
 }
 
-// IsSetSpec returns a boolean if a field has been set.
-func (o *GetClusterContainer200ResponseResource) IsSetSpec() bool {
-	if o != nil && !IsNil(o.Spec) {
-		return true
-	}
-
-	return false
-}
-
 // SetSpec gets a reference to the given map[string]interface{} and assigns it to the Spec field.
 func (o *GetClusterContainer200ResponseResource) SetSpec(v map[string]interface{}) {
 	o.Spec = v
@@ -262,15 +208,6 @@ func (o *GetClusterContainer200ResponseResource) GetConfigOk() (map[string]inter
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *GetClusterContainer200ResponseResource) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
 func (o *GetClusterContainer200ResponseResource) SetConfig(v map[string]interface{}) {
 	o.Config = v
@@ -293,15 +230,6 @@ func (o *GetClusterContainer200ResponseResource) GetRawSecOk() (map[string]inter
 		return map[string]interface{}{}, false
 	}
 	return o.RawSec, true
-}
-
-// IsSetRawSec returns a boolean if a field has been set.
-func (o *GetClusterContainer200ResponseResource) IsSetRawSec() bool {
-	if o != nil && !IsNil(o.RawSec) {
-		return true
-	}
-
-	return false
 }
 
 // SetRawSec gets a reference to the given map[string]interface{} and assigns it to the RawSec field.

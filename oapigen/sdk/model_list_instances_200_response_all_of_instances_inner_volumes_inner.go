@@ -80,28 +80,9 @@ func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) GetControllerI
 	return o.ControllerId.Get(), o.ControllerId.IsSet()
 }
 
-// IsSetControllerId returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) IsSetControllerId() bool {
-	if o != nil && o.ControllerId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetControllerId gets a reference to the given NullableInt64 and assigns it to the ControllerId field.
 func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) SetControllerId(v int64) {
 	o.ControllerId.Set(&v)
-}
-
-// SetControllerIdNil sets the value for ControllerId to be an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) SetControllerIdNil() {
-	o.ControllerId.Set(nil)
-}
-
-// UnsetControllerId ensures that no value is present for ControllerId, not even an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) UnsetControllerId() {
-	o.ControllerId.Unset()
 }
 
 // GetDatastoreId returns the DatastoreId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -123,28 +104,9 @@ func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) GetDatastoreId
 	return o.DatastoreId.Get(), o.DatastoreId.IsSet()
 }
 
-// IsSetDatastoreId returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) IsSetDatastoreId() bool {
-	if o != nil && o.DatastoreId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDatastoreId gets a reference to the given NullableString and assigns it to the DatastoreId field.
 func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) SetDatastoreId(v string) {
 	o.DatastoreId.Set(&v)
-}
-
-// SetDatastoreIdNil sets the value for DatastoreId to be an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) SetDatastoreIdNil() {
-	o.DatastoreId.Set(nil)
-}
-
-// UnsetDatastoreId ensures that no value is present for DatastoreId, not even an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) UnsetDatastoreId() {
-	o.DatastoreId.Unset()
 }
 
 // GetDisplayOrder returns the DisplayOrder field value if set, zero value otherwise.
@@ -163,15 +125,6 @@ func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) GetDisplayOrde
 		return nil, false
 	}
 	return o.DisplayOrder, true
-}
-
-// IsSetDisplayOrder returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) IsSetDisplayOrder() bool {
-	if o != nil && !IsNil(o.DisplayOrder) {
-		return true
-	}
-
-	return false
 }
 
 // SetDisplayOrder gets a reference to the given int64 and assigns it to the DisplayOrder field.
@@ -197,15 +150,6 @@ func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) GetIdOk() (*in
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) SetId(v int64) {
 	o.Id = &v
@@ -227,15 +171,6 @@ func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) GetUuidOk() (*
 		return nil, false
 	}
 	return o.Uuid, true
-}
-
-// IsSetUuid returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) IsSetUuid() bool {
-	if o != nil && !IsNil(o.Uuid) {
-		return true
-	}
-
-	return false
 }
 
 // SetUuid gets a reference to the given string and assigns it to the Uuid field.
@@ -262,28 +197,9 @@ func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) GetMaxIOPSOk()
 	return o.MaxIOPS.Get(), o.MaxIOPS.IsSet()
 }
 
-// IsSetMaxIOPS returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) IsSetMaxIOPS() bool {
-	if o != nil && o.MaxIOPS.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxIOPS gets a reference to the given NullableString and assigns it to the MaxIOPS field.
 func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) SetMaxIOPS(v string) {
 	o.MaxIOPS.Set(&v)
-}
-
-// SetMaxIOPSNil sets the value for MaxIOPS to be an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) SetMaxIOPSNil() {
-	o.MaxIOPS.Set(nil)
-}
-
-// UnsetMaxIOPS ensures that no value is present for MaxIOPS, not even an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) UnsetMaxIOPS() {
-	o.MaxIOPS.Unset()
 }
 
 // GetMaxStorage returns the MaxStorage field value if set, zero value otherwise.
@@ -302,15 +218,6 @@ func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) GetMaxStorageO
 		return nil, false
 	}
 	return o.MaxStorage, true
-}
-
-// IsSetMaxStorage returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) IsSetMaxStorage() bool {
-	if o != nil && !IsNil(o.MaxStorage) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxStorage gets a reference to the given int64 and assigns it to the MaxStorage field.
@@ -336,15 +243,6 @@ func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) GetNameOk() (*
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) SetName(v string) {
 	o.Name = &v
@@ -366,15 +264,6 @@ func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) GetShortNameOk
 		return nil, false
 	}
 	return o.ShortName, true
-}
-
-// IsSetShortName returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) IsSetShortName() bool {
-	if o != nil && !IsNil(o.ShortName) {
-		return true
-	}
-
-	return false
 }
 
 // SetShortName gets a reference to the given string and assigns it to the ShortName field.
@@ -400,15 +289,6 @@ func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) GetResizeableO
 	return o.Resizeable, true
 }
 
-// IsSetResizeable returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) IsSetResizeable() bool {
-	if o != nil && !IsNil(o.Resizeable) {
-		return true
-	}
-
-	return false
-}
-
 // SetResizeable gets a reference to the given bool and assigns it to the Resizeable field.
 func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) SetResizeable(v bool) {
 	o.Resizeable = &v
@@ -430,15 +310,6 @@ func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) GetPlanResizab
 		return nil, false
 	}
 	return o.PlanResizable, true
-}
-
-// IsSetPlanResizable returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) IsSetPlanResizable() bool {
-	if o != nil && !IsNil(o.PlanResizable) {
-		return true
-	}
-
-	return false
 }
 
 // SetPlanResizable gets a reference to the given bool and assigns it to the PlanResizable field.
@@ -464,15 +335,6 @@ func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) GetRootVolumeO
 	return o.RootVolume, true
 }
 
-// IsSetRootVolume returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) IsSetRootVolume() bool {
-	if o != nil && !IsNil(o.RootVolume) {
-		return true
-	}
-
-	return false
-}
-
 // SetRootVolume gets a reference to the given bool and assigns it to the RootVolume field.
 func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) SetRootVolume(v bool) {
 	o.RootVolume = &v
@@ -496,15 +358,6 @@ func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) GetSizeOk() (*
 	return o.Size, true
 }
 
-// IsSetSize returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) IsSetSize() bool {
-	if o != nil && !IsNil(o.Size) {
-		return true
-	}
-
-	return false
-}
-
 // SetSize gets a reference to the given int64 and assigns it to the Size field.
 func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) SetSize(v int64) {
 	o.Size = &v
@@ -526,15 +379,6 @@ func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) GetStorageType
 		return nil, false
 	}
 	return o.StorageType, true
-}
-
-// IsSetStorageType returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) IsSetStorageType() bool {
-	if o != nil && !IsNil(o.StorageType) {
-		return true
-	}
-
-	return false
 }
 
 // SetStorageType gets a reference to the given int64 and assigns it to the StorageType field.
@@ -561,28 +405,9 @@ func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) GetUnitNumberO
 	return o.UnitNumber.Get(), o.UnitNumber.IsSet()
 }
 
-// IsSetUnitNumber returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) IsSetUnitNumber() bool {
-	if o != nil && o.UnitNumber.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUnitNumber gets a reference to the given NullableString and assigns it to the UnitNumber field.
 func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) SetUnitNumber(v string) {
 	o.UnitNumber.Set(&v)
-}
-
-// SetUnitNumberNil sets the value for UnitNumber to be an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) SetUnitNumberNil() {
-	o.UnitNumber.Set(nil)
-}
-
-// UnsetUnitNumber ensures that no value is present for UnitNumber, not even an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) UnsetUnitNumber() {
-	o.UnitNumber.Unset()
 }
 
 // GetControllerMountPoint returns the ControllerMountPoint field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -604,28 +429,9 @@ func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) GetControllerM
 	return o.ControllerMountPoint.Get(), o.ControllerMountPoint.IsSet()
 }
 
-// IsSetControllerMountPoint returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) IsSetControllerMountPoint() bool {
-	if o != nil && o.ControllerMountPoint.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetControllerMountPoint gets a reference to the given NullableString and assigns it to the ControllerMountPoint field.
 func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) SetControllerMountPoint(v string) {
 	o.ControllerMountPoint.Set(&v)
-}
-
-// SetControllerMountPointNil sets the value for ControllerMountPoint to be an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) SetControllerMountPointNil() {
-	o.ControllerMountPoint.Set(nil)
-}
-
-// UnsetControllerMountPoint ensures that no value is present for ControllerMountPoint, not even an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) UnsetControllerMountPoint() {
-	o.ControllerMountPoint.Unset()
 }
 
 // GetCreateForMultiAttach returns the CreateForMultiAttach field value if set, zero value otherwise.
@@ -644,15 +450,6 @@ func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) GetCreateForMu
 		return nil, false
 	}
 	return o.CreateForMultiAttach, true
-}
-
-// IsSetCreateForMultiAttach returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) IsSetCreateForMultiAttach() bool {
-	if o != nil && !IsNil(o.CreateForMultiAttach) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreateForMultiAttach gets a reference to the given bool and assigns it to the CreateForMultiAttach field.
@@ -679,28 +476,9 @@ func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) GetStorageProf
 	return o.StorageProfile.Get(), o.StorageProfile.IsSet()
 }
 
-// IsSetStorageProfile returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) IsSetStorageProfile() bool {
-	if o != nil && o.StorageProfile.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStorageProfile gets a reference to the given NullableString and assigns it to the StorageProfile field.
 func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) SetStorageProfile(v string) {
 	o.StorageProfile.Set(&v)
-}
-
-// SetStorageProfileNil sets the value for StorageProfile to be an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) SetStorageProfileNil() {
-	o.StorageProfile.Set(nil)
-}
-
-// UnsetStorageProfile ensures that no value is present for StorageProfile, not even an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) UnsetStorageProfile() {
-	o.StorageProfile.Unset()
 }
 
 func (o ListInstances200ResponseAllOfInstancesInnerVolumesInner) MarshalJSON() ([]byte, error) {

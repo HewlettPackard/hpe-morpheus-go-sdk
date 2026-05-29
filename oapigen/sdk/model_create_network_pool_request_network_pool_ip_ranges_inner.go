@@ -66,15 +66,6 @@ func (o *CreateNetworkPoolRequestNetworkPoolIpRangesInner) GetStartAddressOk() (
 	return o.StartAddress, true
 }
 
-// IsSetStartAddress returns a boolean if a field has been set.
-func (o *CreateNetworkPoolRequestNetworkPoolIpRangesInner) IsSetStartAddress() bool {
-	if o != nil && !IsNil(o.StartAddress) {
-		return true
-	}
-
-	return false
-}
-
 // SetStartAddress gets a reference to the given string and assigns it to the StartAddress field.
 func (o *CreateNetworkPoolRequestNetworkPoolIpRangesInner) SetStartAddress(v string) {
 	o.StartAddress = &v
@@ -98,15 +89,6 @@ func (o *CreateNetworkPoolRequestNetworkPoolIpRangesInner) GetEndAddressOk() (*s
 	return o.EndAddress, true
 }
 
-// IsSetEndAddress returns a boolean if a field has been set.
-func (o *CreateNetworkPoolRequestNetworkPoolIpRangesInner) IsSetEndAddress() bool {
-	if o != nil && !IsNil(o.EndAddress) {
-		return true
-	}
-
-	return false
-}
-
 // SetEndAddress gets a reference to the given string and assigns it to the EndAddress field.
 func (o *CreateNetworkPoolRequestNetworkPoolIpRangesInner) SetEndAddress(v string) {
 	o.EndAddress = &v
@@ -128,15 +110,6 @@ func (o *CreateNetworkPoolRequestNetworkPoolIpRangesInner) GetCidrIPv6Ok() (*str
 		return nil, false
 	}
 	return o.CidrIPv6, true
-}
-
-// IsSetCidrIPv6 returns a boolean if a field has been set.
-func (o *CreateNetworkPoolRequestNetworkPoolIpRangesInner) IsSetCidrIPv6() bool {
-	if o != nil && !IsNil(o.CidrIPv6) {
-		return true
-	}
-
-	return false
 }
 
 // SetCidrIPv6 gets a reference to the given string and assigns it to the CidrIPv6 field.

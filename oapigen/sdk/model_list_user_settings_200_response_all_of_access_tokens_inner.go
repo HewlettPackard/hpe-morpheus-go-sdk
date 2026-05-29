@@ -67,15 +67,6 @@ func (o *ListUserSettings200ResponseAllOfAccessTokensInner) GetClientIdOk() (*st
 	return o.ClientId, true
 }
 
-// IsSetClientId returns a boolean if a field has been set.
-func (o *ListUserSettings200ResponseAllOfAccessTokensInner) IsSetClientId() bool {
-	if o != nil && !IsNil(o.ClientId) {
-		return true
-	}
-
-	return false
-}
-
 // SetClientId gets a reference to the given string and assigns it to the ClientId field.
 func (o *ListUserSettings200ResponseAllOfAccessTokensInner) SetClientId(v string) {
 	o.ClientId = &v
@@ -97,15 +88,6 @@ func (o *ListUserSettings200ResponseAllOfAccessTokensInner) GetUsernameOk() (*st
 		return nil, false
 	}
 	return o.Username, true
-}
-
-// IsSetUsername returns a boolean if a field has been set.
-func (o *ListUserSettings200ResponseAllOfAccessTokensInner) IsSetUsername() bool {
-	if o != nil && !IsNil(o.Username) {
-		return true
-	}
-
-	return false
 }
 
 // SetUsername gets a reference to the given string and assigns it to the Username field.
@@ -131,15 +113,6 @@ func (o *ListUserSettings200ResponseAllOfAccessTokensInner) GetExpirationOk() (*
 	return o.Expiration, true
 }
 
-// IsSetExpiration returns a boolean if a field has been set.
-func (o *ListUserSettings200ResponseAllOfAccessTokensInner) IsSetExpiration() bool {
-	if o != nil && !IsNil(o.Expiration) {
-		return true
-	}
-
-	return false
-}
-
 // SetExpiration gets a reference to the given time.Time and assigns it to the Expiration field.
 func (o *ListUserSettings200ResponseAllOfAccessTokensInner) SetExpiration(v time.Time) {
 	o.Expiration = &v
@@ -161,15 +134,6 @@ func (o *ListUserSettings200ResponseAllOfAccessTokensInner) GetTokenTypeOk() (*s
 		return nil, false
 	}
 	return o.TokenType, true
-}
-
-// IsSetTokenType returns a boolean if a field has been set.
-func (o *ListUserSettings200ResponseAllOfAccessTokensInner) IsSetTokenType() bool {
-	if o != nil && !IsNil(o.TokenType) {
-		return true
-	}
-
-	return false
 }
 
 // SetTokenType gets a reference to the given string and assigns it to the TokenType field.
@@ -195,15 +159,6 @@ func (o *ListUserSettings200ResponseAllOfAccessTokensInner) GetMaskedAccessToken
 	return o.MaskedAccessToken, true
 }
 
-// IsSetMaskedAccessToken returns a boolean if a field has been set.
-func (o *ListUserSettings200ResponseAllOfAccessTokensInner) IsSetMaskedAccessToken() bool {
-	if o != nil && !IsNil(o.MaskedAccessToken) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaskedAccessToken gets a reference to the given string and assigns it to the MaskedAccessToken field.
 func (o *ListUserSettings200ResponseAllOfAccessTokensInner) SetMaskedAccessToken(v string) {
 	o.MaskedAccessToken = &v
@@ -225,15 +180,6 @@ func (o *ListUserSettings200ResponseAllOfAccessTokensInner) GetMaskedRefreshToke
 		return nil, false
 	}
 	return o.MaskedRefreshToken, true
-}
-
-// IsSetMaskedRefreshToken returns a boolean if a field has been set.
-func (o *ListUserSettings200ResponseAllOfAccessTokensInner) IsSetMaskedRefreshToken() bool {
-	if o != nil && !IsNil(o.MaskedRefreshToken) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaskedRefreshToken gets a reference to the given string and assigns it to the MaskedRefreshToken field.

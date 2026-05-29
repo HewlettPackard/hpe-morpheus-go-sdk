@@ -72,15 +72,6 @@ func (o *AccessToken) GetAccessTokenOk() (*string, bool) {
 	return o.AccessToken, true
 }
 
-// IsSetAccessToken returns a boolean if a field has been set.
-func (o *AccessToken) IsSetAccessToken() bool {
-	if o != nil && !IsNil(o.AccessToken) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccessToken gets a reference to the given string and assigns it to the AccessToken field.
 func (o *AccessToken) SetAccessToken(v string) {
 	o.AccessToken = &v
@@ -102,15 +93,6 @@ func (o *AccessToken) GetRefreshTokenOk() (*string, bool) {
 		return nil, false
 	}
 	return o.RefreshToken, true
-}
-
-// IsSetRefreshToken returns a boolean if a field has been set.
-func (o *AccessToken) IsSetRefreshToken() bool {
-	if o != nil && !IsNil(o.RefreshToken) {
-		return true
-	}
-
-	return false
 }
 
 // SetRefreshToken gets a reference to the given string and assigns it to the RefreshToken field.
@@ -136,15 +118,6 @@ func (o *AccessToken) GetExpiresInOk() (*float32, bool) {
 	return o.ExpiresIn, true
 }
 
-// IsSetExpiresIn returns a boolean if a field has been set.
-func (o *AccessToken) IsSetExpiresIn() bool {
-	if o != nil && !IsNil(o.ExpiresIn) {
-		return true
-	}
-
-	return false
-}
-
 // SetExpiresIn gets a reference to the given float32 and assigns it to the ExpiresIn field.
 func (o *AccessToken) SetExpiresIn(v float32) {
 	o.ExpiresIn = &v
@@ -166,15 +139,6 @@ func (o *AccessToken) GetTokenTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.TokenType, true
-}
-
-// IsSetTokenType returns a boolean if a field has been set.
-func (o *AccessToken) IsSetTokenType() bool {
-	if o != nil && !IsNil(o.TokenType) {
-		return true
-	}
-
-	return false
 }
 
 // SetTokenType gets a reference to the given string and assigns it to the TokenType field.
@@ -200,15 +164,6 @@ func (o *AccessToken) GetScopeOk() (*string, bool) {
 	return o.Scope, true
 }
 
-// IsSetScope returns a boolean if a field has been set.
-func (o *AccessToken) IsSetScope() bool {
-	if o != nil && !IsNil(o.Scope) {
-		return true
-	}
-
-	return false
-}
-
 // SetScope gets a reference to the given string and assigns it to the Scope field.
 func (o *AccessToken) SetScope(v string) {
 	o.Scope = &v
@@ -230,15 +185,6 @@ func (o *AccessToken) GetIdTokenOk() (*string, bool) {
 		return nil, false
 	}
 	return o.IdToken, true
-}
-
-// IsSetIdToken returns a boolean if a field has been set.
-func (o *AccessToken) IsSetIdToken() bool {
-	if o != nil && !IsNil(o.IdToken) {
-		return true
-	}
-
-	return false
 }
 
 // SetIdToken gets a reference to the given string and assigns it to the IdToken field.

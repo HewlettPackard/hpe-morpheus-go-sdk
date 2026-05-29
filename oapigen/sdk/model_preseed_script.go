@@ -66,15 +66,6 @@ func (o *PreseedScript) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *PreseedScript) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *PreseedScript) SetId(v int64) {
 	o.Id = &v
@@ -98,15 +89,6 @@ func (o *PreseedScript) GetAccountOk() (*AddPreseedScript200ResponseAllOfPreseed
 	return o.Account, true
 }
 
-// IsSetAccount returns a boolean if a field has been set.
-func (o *PreseedScript) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccount gets a reference to the given AddPreseedScript200ResponseAllOfPreseedScriptAccount and assigns it to the Account field.
 func (o *PreseedScript) SetAccount(v AddPreseedScript200ResponseAllOfPreseedScriptAccount) {
 	o.Account = &v
@@ -128,15 +110,6 @@ func (o *PreseedScript) GetFileNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.FileName, true
-}
-
-// IsSetFileName returns a boolean if a field has been set.
-func (o *PreseedScript) IsSetFileName() bool {
-	if o != nil && !IsNil(o.FileName) {
-		return true
-	}
-
-	return false
 }
 
 // SetFileName gets a reference to the given string and assigns it to the FileName field.
@@ -163,28 +136,9 @@ func (o *PreseedScript) GetDescriptionOk() (*string, bool) {
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *PreseedScript) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *PreseedScript) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *PreseedScript) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *PreseedScript) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetContent returns the Content field value if set, zero value otherwise.
@@ -203,15 +157,6 @@ func (o *PreseedScript) GetContentOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Content, true
-}
-
-// IsSetContent returns a boolean if a field has been set.
-func (o *PreseedScript) IsSetContent() bool {
-	if o != nil && !IsNil(o.Content) {
-		return true
-	}
-
-	return false
 }
 
 // SetContent gets a reference to the given string and assigns it to the Content field.
@@ -235,15 +180,6 @@ func (o *PreseedScript) GetCreatedByOk() (*AddPreseedScript200ResponseAllOfPrese
 		return nil, false
 	}
 	return o.CreatedBy, true
-}
-
-// IsSetCreatedBy returns a boolean if a field has been set.
-func (o *PreseedScript) IsSetCreatedBy() bool {
-	if o != nil && !IsNil(o.CreatedBy) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreatedBy gets a reference to the given AddPreseedScript200ResponseAllOfPreseedScriptCreatedBy and assigns it to the CreatedBy field.

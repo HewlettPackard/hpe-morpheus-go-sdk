@@ -159,15 +159,6 @@ func (o *AddProvisioningLicenseRequestLicense) GetOrgNameOk() (*string, bool) {
 	return o.OrgName, true
 }
 
-// IsSetOrgName returns a boolean if a field has been set.
-func (o *AddProvisioningLicenseRequestLicense) IsSetOrgName() bool {
-	if o != nil && !IsNil(o.OrgName) {
-		return true
-	}
-
-	return false
-}
-
 // SetOrgName gets a reference to the given string and assigns it to the OrgName field.
 func (o *AddProvisioningLicenseRequestLicense) SetOrgName(v string) {
 	o.OrgName = &v
@@ -189,15 +180,6 @@ func (o *AddProvisioningLicenseRequestLicense) GetFullNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.FullName, true
-}
-
-// IsSetFullName returns a boolean if a field has been set.
-func (o *AddProvisioningLicenseRequestLicense) IsSetFullName() bool {
-	if o != nil && !IsNil(o.FullName) {
-		return true
-	}
-
-	return false
 }
 
 // SetFullName gets a reference to the given string and assigns it to the FullName field.
@@ -223,15 +205,6 @@ func (o *AddProvisioningLicenseRequestLicense) GetLicenseVersionOk() (*string, b
 	return o.LicenseVersion, true
 }
 
-// IsSetLicenseVersion returns a boolean if a field has been set.
-func (o *AddProvisioningLicenseRequestLicense) IsSetLicenseVersion() bool {
-	if o != nil && !IsNil(o.LicenseVersion) {
-		return true
-	}
-
-	return false
-}
-
 // SetLicenseVersion gets a reference to the given string and assigns it to the LicenseVersion field.
 func (o *AddProvisioningLicenseRequestLicense) SetLicenseVersion(v string) {
 	o.LicenseVersion = &v
@@ -253,15 +226,6 @@ func (o *AddProvisioningLicenseRequestLicense) GetCopiesOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.Copies, true
-}
-
-// IsSetCopies returns a boolean if a field has been set.
-func (o *AddProvisioningLicenseRequestLicense) IsSetCopies() bool {
-	if o != nil && !IsNil(o.Copies) {
-		return true
-	}
-
-	return false
 }
 
 // SetCopies gets a reference to the given int64 and assigns it to the Copies field.
@@ -287,15 +251,6 @@ func (o *AddProvisioningLicenseRequestLicense) GetDescriptionOk() (*string, bool
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *AddProvisioningLicenseRequestLicense) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *AddProvisioningLicenseRequestLicense) SetDescription(v string) {
 	o.Description = &v
@@ -319,15 +274,6 @@ func (o *AddProvisioningLicenseRequestLicense) GetVirtualImagesOk() ([]int64, bo
 	return o.VirtualImages, true
 }
 
-// IsSetVirtualImages returns a boolean if a field has been set.
-func (o *AddProvisioningLicenseRequestLicense) IsSetVirtualImages() bool {
-	if o != nil && !IsNil(o.VirtualImages) {
-		return true
-	}
-
-	return false
-}
-
 // SetVirtualImages gets a reference to the given []int64 and assigns it to the VirtualImages field.
 func (o *AddProvisioningLicenseRequestLicense) SetVirtualImages(v []int64) {
 	o.VirtualImages = v
@@ -349,15 +295,6 @@ func (o *AddProvisioningLicenseRequestLicense) GetTenantsOk() ([]int64, bool) {
 		return nil, false
 	}
 	return o.Tenants, true
-}
-
-// IsSetTenants returns a boolean if a field has been set.
-func (o *AddProvisioningLicenseRequestLicense) IsSetTenants() bool {
-	if o != nil && !IsNil(o.Tenants) {
-		return true
-	}
-
-	return false
 }
 
 // SetTenants gets a reference to the given []int64 and assigns it to the Tenants field.

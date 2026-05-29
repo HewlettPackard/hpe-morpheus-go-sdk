@@ -75,15 +75,6 @@ func (o *Alert) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *Alert) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *Alert) SetId(v int64) {
 	o.Id = &v
@@ -105,15 +96,6 @@ func (o *Alert) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *Alert) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -139,15 +121,6 @@ func (o *Alert) GetAllAppsOk() (*bool, bool) {
 	return o.AllApps, true
 }
 
-// IsSetAllApps returns a boolean if a field has been set.
-func (o *Alert) IsSetAllApps() bool {
-	if o != nil && !IsNil(o.AllApps) {
-		return true
-	}
-
-	return false
-}
-
 // SetAllApps gets a reference to the given bool and assigns it to the AllApps field.
 func (o *Alert) SetAllApps(v bool) {
 	o.AllApps = &v
@@ -169,15 +142,6 @@ func (o *Alert) GetAllChecksOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.AllChecks, true
-}
-
-// IsSetAllChecks returns a boolean if a field has been set.
-func (o *Alert) IsSetAllChecks() bool {
-	if o != nil && !IsNil(o.AllChecks) {
-		return true
-	}
-
-	return false
 }
 
 // SetAllChecks gets a reference to the given bool and assigns it to the AllChecks field.
@@ -203,15 +167,6 @@ func (o *Alert) GetAllGroupsOk() (*bool, bool) {
 	return o.AllGroups, true
 }
 
-// IsSetAllGroups returns a boolean if a field has been set.
-func (o *Alert) IsSetAllGroups() bool {
-	if o != nil && !IsNil(o.AllGroups) {
-		return true
-	}
-
-	return false
-}
-
 // SetAllGroups gets a reference to the given bool and assigns it to the AllGroups field.
 func (o *Alert) SetAllGroups(v bool) {
 	o.AllGroups = &v
@@ -233,15 +188,6 @@ func (o *Alert) GetActiveOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Active, true
-}
-
-// IsSetActive returns a boolean if a field has been set.
-func (o *Alert) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
 }
 
 // SetActive gets a reference to the given bool and assigns it to the Active field.
@@ -267,15 +213,6 @@ func (o *Alert) GetMinSeverityOk() (*string, bool) {
 	return o.MinSeverity, true
 }
 
-// IsSetMinSeverity returns a boolean if a field has been set.
-func (o *Alert) IsSetMinSeverity() bool {
-	if o != nil && !IsNil(o.MinSeverity) {
-		return true
-	}
-
-	return false
-}
-
 // SetMinSeverity gets a reference to the given string and assigns it to the MinSeverity field.
 func (o *Alert) SetMinSeverity(v string) {
 	o.MinSeverity = &v
@@ -297,15 +234,6 @@ func (o *Alert) GetMinDurationOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.MinDuration, true
-}
-
-// IsSetMinDuration returns a boolean if a field has been set.
-func (o *Alert) IsSetMinDuration() bool {
-	if o != nil && !IsNil(o.MinDuration) {
-		return true
-	}
-
-	return false
 }
 
 // SetMinDuration gets a reference to the given int64 and assigns it to the MinDuration field.
@@ -331,15 +259,6 @@ func (o *Alert) GetDateCreatedOk() (*time.Time, bool) {
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *Alert) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *Alert) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -361,15 +280,6 @@ func (o *Alert) GetLastUpdatedOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *Alert) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
@@ -396,15 +306,6 @@ func (o *Alert) GetChecksOk() ([]int32, bool) {
 	return o.Checks, true
 }
 
-// IsSetChecks returns a boolean if a field has been set.
-func (o *Alert) IsSetChecks() bool {
-	if o != nil && !IsNil(o.Checks) {
-		return true
-	}
-
-	return false
-}
-
 // SetChecks gets a reference to the given []int32 and assigns it to the Checks field.
 func (o *Alert) SetChecks(v []int32) {
 	o.Checks = v
@@ -427,15 +328,6 @@ func (o *Alert) GetCheckGroupsOk() ([]int32, bool) {
 		return nil, false
 	}
 	return o.CheckGroups, true
-}
-
-// IsSetCheckGroups returns a boolean if a field has been set.
-func (o *Alert) IsSetCheckGroups() bool {
-	if o != nil && !IsNil(o.CheckGroups) {
-		return true
-	}
-
-	return false
 }
 
 // SetCheckGroups gets a reference to the given []int32 and assigns it to the CheckGroups field.
@@ -462,15 +354,6 @@ func (o *Alert) GetAppsOk() ([]int32, bool) {
 	return o.Apps, true
 }
 
-// IsSetApps returns a boolean if a field has been set.
-func (o *Alert) IsSetApps() bool {
-	if o != nil && !IsNil(o.Apps) {
-		return true
-	}
-
-	return false
-}
-
 // SetApps gets a reference to the given []int32 and assigns it to the Apps field.
 func (o *Alert) SetApps(v []int32) {
 	o.Apps = v
@@ -492,15 +375,6 @@ func (o *Alert) GetContactsOk() ([]AddAlerts200ResponseAllOfAlertContactsInner, 
 		return nil, false
 	}
 	return o.Contacts, true
-}
-
-// IsSetContacts returns a boolean if a field has been set.
-func (o *Alert) IsSetContacts() bool {
-	if o != nil && !IsNil(o.Contacts) {
-		return true
-	}
-
-	return false
 }
 
 // SetContacts gets a reference to the given []AddAlerts200ResponseAllOfAlertContactsInner and assigns it to the Contacts field.

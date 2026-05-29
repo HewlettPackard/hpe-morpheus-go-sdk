@@ -61,15 +61,6 @@ func (o *GetPoliciesGroup200Response) GetPolicyOk() (*GetPoliciesGroup200Respons
 	return o.Policy, true
 }
 
-// IsSetPolicy returns a boolean if a field has been set.
-func (o *GetPoliciesGroup200Response) IsSetPolicy() bool {
-	if o != nil && !IsNil(o.Policy) {
-		return true
-	}
-
-	return false
-}
-
 // SetPolicy gets a reference to the given GetPoliciesGroup200ResponseAllOfPolicy and assigns it to the Policy field.
 func (o *GetPoliciesGroup200Response) SetPolicy(v GetPoliciesGroup200ResponseAllOfPolicy) {
 	o.Policy = &v

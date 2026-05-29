@@ -68,15 +68,6 @@ func (o *AppState) GetWorkloadsOk() ([]AppStateWorkloadsInner, bool) {
 	return o.Workloads, true
 }
 
-// IsSetWorkloads returns a boolean if a field has been set.
-func (o *AppState) IsSetWorkloads() bool {
-	if o != nil && !IsNil(o.Workloads) {
-		return true
-	}
-
-	return false
-}
-
 // SetWorkloads gets a reference to the given []AppStateWorkloadsInner and assigns it to the Workloads field.
 func (o *AppState) SetWorkloads(v []AppStateWorkloadsInner) {
 	o.Workloads = v
@@ -98,15 +89,6 @@ func (o *AppState) GetIacDriftOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.IacDrift, true
-}
-
-// IsSetIacDrift returns a boolean if a field has been set.
-func (o *AppState) IsSetIacDrift() bool {
-	if o != nil && !IsNil(o.IacDrift) {
-		return true
-	}
-
-	return false
 }
 
 // SetIacDrift gets a reference to the given bool and assigns it to the IacDrift field.
@@ -132,15 +114,6 @@ func (o *AppState) GetPlanResourcesOk() ([]map[string]interface{}, bool) {
 	return o.PlanResources, true
 }
 
-// IsSetPlanResources returns a boolean if a field has been set.
-func (o *AppState) IsSetPlanResources() bool {
-	if o != nil && !IsNil(o.PlanResources) {
-		return true
-	}
-
-	return false
-}
-
 // SetPlanResources gets a reference to the given []map[string]interface{} and assigns it to the PlanResources field.
 func (o *AppState) SetPlanResources(v []map[string]interface{}) {
 	o.PlanResources = v
@@ -162,15 +135,6 @@ func (o *AppState) GetSpecsOk() ([]AppStateSpecsInner, bool) {
 		return nil, false
 	}
 	return o.Specs, true
-}
-
-// IsSetSpecs returns a boolean if a field has been set.
-func (o *AppState) IsSetSpecs() bool {
-	if o != nil && !IsNil(o.Specs) {
-		return true
-	}
-
-	return false
 }
 
 // SetSpecs gets a reference to the given []AppStateSpecsInner and assigns it to the Specs field.
@@ -196,15 +160,6 @@ func (o *AppState) GetStateDataOk() (*string, bool) {
 	return o.StateData, true
 }
 
-// IsSetStateData returns a boolean if a field has been set.
-func (o *AppState) IsSetStateData() bool {
-	if o != nil && !IsNil(o.StateData) {
-		return true
-	}
-
-	return false
-}
-
 // SetStateData gets a reference to the given string and assigns it to the StateData field.
 func (o *AppState) SetStateData(v string) {
 	o.StateData = &v
@@ -226,15 +181,6 @@ func (o *AppState) GetPlanDataOk() (*string, bool) {
 		return nil, false
 	}
 	return o.PlanData, true
-}
-
-// IsSetPlanData returns a boolean if a field has been set.
-func (o *AppState) IsSetPlanData() bool {
-	if o != nil && !IsNil(o.PlanData) {
-		return true
-	}
-
-	return false
 }
 
 // SetPlanData gets a reference to the given string and assigns it to the PlanData field.
@@ -260,15 +206,6 @@ func (o *AppState) GetInputOk() (*AppStateInput, bool) {
 	return o.Input, true
 }
 
-// IsSetInput returns a boolean if a field has been set.
-func (o *AppState) IsSetInput() bool {
-	if o != nil && !IsNil(o.Input) {
-		return true
-	}
-
-	return false
-}
-
 // SetInput gets a reference to the given AppStateInput and assigns it to the Input field.
 func (o *AppState) SetInput(v AppStateInput) {
 	o.Input = &v
@@ -290,15 +227,6 @@ func (o *AppState) GetOutputOk() (*AppStateOutput, bool) {
 		return nil, false
 	}
 	return o.Output, true
-}
-
-// IsSetOutput returns a boolean if a field has been set.
-func (o *AppState) IsSetOutput() bool {
-	if o != nil && !IsNil(o.Output) {
-		return true
-	}
-
-	return false
 }
 
 // SetOutput gets a reference to the given AppStateOutput and assigns it to the Output field.

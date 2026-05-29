@@ -61,15 +61,6 @@ func (o *ListCheckGroups200ResponseAllOfCheckGroupsInnerAccount) GetIdOk() (*int
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListCheckGroups200ResponseAllOfCheckGroupsInnerAccount) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListCheckGroups200ResponseAllOfCheckGroupsInnerAccount) SetId(v int64) {
 	o.Id = &v

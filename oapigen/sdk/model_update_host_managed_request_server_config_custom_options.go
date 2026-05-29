@@ -61,15 +61,6 @@ func (o *UpdateHostManagedRequestServerConfigCustomOptions) GetDbfoldernameOk() 
 	return o.Dbfoldername, true
 }
 
-// IsSetDbfoldername returns a boolean if a field has been set.
-func (o *UpdateHostManagedRequestServerConfigCustomOptions) IsSetDbfoldername() bool {
-	if o != nil && !IsNil(o.Dbfoldername) {
-		return true
-	}
-
-	return false
-}
-
 // SetDbfoldername gets a reference to the given string and assigns it to the Dbfoldername field.
 func (o *UpdateHostManagedRequestServerConfigCustomOptions) SetDbfoldername(v string) {
 	o.Dbfoldername = &v

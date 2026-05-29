@@ -72,15 +72,6 @@ func (o *VdiAllocation) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *VdiAllocation) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *VdiAllocation) SetId(v int64) {
 	o.Id = &v
@@ -102,15 +93,6 @@ func (o *VdiAllocation) GetPoolOk() (*GetVDIAllocations200ResponseVdiAllocationP
 		return nil, false
 	}
 	return o.Pool, true
-}
-
-// IsSetPool returns a boolean if a field has been set.
-func (o *VdiAllocation) IsSetPool() bool {
-	if o != nil && !IsNil(o.Pool) {
-		return true
-	}
-
-	return false
 }
 
 // SetPool gets a reference to the given GetVDIAllocations200ResponseVdiAllocationPool and assigns it to the Pool field.
@@ -136,15 +118,6 @@ func (o *VdiAllocation) GetInstanceOk() (*GetVDIAllocations200ResponseVdiAllocat
 	return o.Instance, true
 }
 
-// IsSetInstance returns a boolean if a field has been set.
-func (o *VdiAllocation) IsSetInstance() bool {
-	if o != nil && !IsNil(o.Instance) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstance gets a reference to the given GetVDIAllocations200ResponseVdiAllocationInstance and assigns it to the Instance field.
 func (o *VdiAllocation) SetInstance(v GetVDIAllocations200ResponseVdiAllocationInstance) {
 	o.Instance = &v
@@ -166,15 +139,6 @@ func (o *VdiAllocation) GetUserOk() (*GetVDIAllocations200ResponseVdiAllocationU
 		return nil, false
 	}
 	return o.User, true
-}
-
-// IsSetUser returns a boolean if a field has been set.
-func (o *VdiAllocation) IsSetUser() bool {
-	if o != nil && !IsNil(o.User) {
-		return true
-	}
-
-	return false
 }
 
 // SetUser gets a reference to the given GetVDIAllocations200ResponseVdiAllocationUser and assigns it to the User field.
@@ -200,15 +164,6 @@ func (o *VdiAllocation) GetLocalUserCreatedOk() (*bool, bool) {
 	return o.LocalUserCreated, true
 }
 
-// IsSetLocalUserCreated returns a boolean if a field has been set.
-func (o *VdiAllocation) IsSetLocalUserCreated() bool {
-	if o != nil && !IsNil(o.LocalUserCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetLocalUserCreated gets a reference to the given bool and assigns it to the LocalUserCreated field.
 func (o *VdiAllocation) SetLocalUserCreated(v bool) {
 	o.LocalUserCreated = &v
@@ -230,15 +185,6 @@ func (o *VdiAllocation) GetPersistentOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Persistent, true
-}
-
-// IsSetPersistent returns a boolean if a field has been set.
-func (o *VdiAllocation) IsSetPersistent() bool {
-	if o != nil && !IsNil(o.Persistent) {
-		return true
-	}
-
-	return false
 }
 
 // SetPersistent gets a reference to the given bool and assigns it to the Persistent field.
@@ -264,15 +210,6 @@ func (o *VdiAllocation) GetStatusOk() (*string, bool) {
 	return o.Status, true
 }
 
-// IsSetStatus returns a boolean if a field has been set.
-func (o *VdiAllocation) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
-}
-
 // SetStatus gets a reference to the given string and assigns it to the Status field.
 func (o *VdiAllocation) SetStatus(v string) {
 	o.Status = &v
@@ -294,15 +231,6 @@ func (o *VdiAllocation) GetDateCreatedOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.DateCreated, true
-}
-
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *VdiAllocation) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
@@ -329,28 +257,9 @@ func (o *VdiAllocation) GetLastUpdatedOk() (*time.Time, bool) {
 	return o.LastUpdated.Get(), o.LastUpdated.IsSet()
 }
 
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *VdiAllocation) IsSetLastUpdated() bool {
-	if o != nil && o.LastUpdated.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastUpdated gets a reference to the given NullableTime and assigns it to the LastUpdated field.
 func (o *VdiAllocation) SetLastUpdated(v time.Time) {
 	o.LastUpdated.Set(&v)
-}
-
-// SetLastUpdatedNil sets the value for LastUpdated to be an explicit nil
-func (o *VdiAllocation) SetLastUpdatedNil() {
-	o.LastUpdated.Set(nil)
-}
-
-// UnsetLastUpdated ensures that no value is present for LastUpdated, not even an explicit nil
-func (o *VdiAllocation) UnsetLastUpdated() {
-	o.LastUpdated.Unset()
 }
 
 // GetLastReserved returns the LastReserved field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -372,28 +281,9 @@ func (o *VdiAllocation) GetLastReservedOk() (*time.Time, bool) {
 	return o.LastReserved.Get(), o.LastReserved.IsSet()
 }
 
-// IsSetLastReserved returns a boolean if a field has been set.
-func (o *VdiAllocation) IsSetLastReserved() bool {
-	if o != nil && o.LastReserved.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastReserved gets a reference to the given NullableTime and assigns it to the LastReserved field.
 func (o *VdiAllocation) SetLastReserved(v time.Time) {
 	o.LastReserved.Set(&v)
-}
-
-// SetLastReservedNil sets the value for LastReserved to be an explicit nil
-func (o *VdiAllocation) SetLastReservedNil() {
-	o.LastReserved.Set(nil)
-}
-
-// UnsetLastReserved ensures that no value is present for LastReserved, not even an explicit nil
-func (o *VdiAllocation) UnsetLastReserved() {
-	o.LastReserved.Unset()
 }
 
 // GetReleaseDate returns the ReleaseDate field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -415,28 +305,9 @@ func (o *VdiAllocation) GetReleaseDateOk() (*time.Time, bool) {
 	return o.ReleaseDate.Get(), o.ReleaseDate.IsSet()
 }
 
-// IsSetReleaseDate returns a boolean if a field has been set.
-func (o *VdiAllocation) IsSetReleaseDate() bool {
-	if o != nil && o.ReleaseDate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetReleaseDate gets a reference to the given NullableTime and assigns it to the ReleaseDate field.
 func (o *VdiAllocation) SetReleaseDate(v time.Time) {
 	o.ReleaseDate.Set(&v)
-}
-
-// SetReleaseDateNil sets the value for ReleaseDate to be an explicit nil
-func (o *VdiAllocation) SetReleaseDateNil() {
-	o.ReleaseDate.Set(nil)
-}
-
-// UnsetReleaseDate ensures that no value is present for ReleaseDate, not even an explicit nil
-func (o *VdiAllocation) UnsetReleaseDate() {
-	o.ReleaseDate.Unset()
 }
 
 func (o VdiAllocation) MarshalJSON() ([]byte, error) {

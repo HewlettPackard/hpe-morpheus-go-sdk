@@ -133,15 +133,6 @@ func (o *AddClusterRequestCluster) GetDescriptionOk() (*string, bool) {
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *AddClusterRequestCluster) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *AddClusterRequestCluster) SetDescription(v string) {
 	o.Description = &v
@@ -165,15 +156,6 @@ func (o *AddClusterRequestCluster) GetLabelsOk() ([]string, bool) {
 	return o.Labels, true
 }
 
-// IsSetLabels returns a boolean if a field has been set.
-func (o *AddClusterRequestCluster) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
-}
-
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
 func (o *AddClusterRequestCluster) SetLabels(v []string) {
 	o.Labels = v
@@ -195,15 +177,6 @@ func (o *AddClusterRequestCluster) GetGroupOk() (*AddClusterRequestClusterGroup,
 		return nil, false
 	}
 	return o.Group, true
-}
-
-// IsSetGroup returns a boolean if a field has been set.
-func (o *AddClusterRequestCluster) IsSetGroup() bool {
-	if o != nil && !IsNil(o.Group) {
-		return true
-	}
-
-	return false
 }
 
 // SetGroup gets a reference to the given AddClusterRequestClusterGroup and assigns it to the Group field.
@@ -251,15 +224,6 @@ func (o *AddClusterRequestCluster) GetConfigOk() (*AddClusterRequestClusterConfi
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *AddClusterRequestCluster) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given AddClusterRequestClusterConfig and assigns it to the Config field.
@@ -333,15 +297,6 @@ func (o *AddClusterRequestCluster) GetAutoRecoverPowerStateOk() (*bool, bool) {
 	return o.AutoRecoverPowerState, true
 }
 
-// IsSetAutoRecoverPowerState returns a boolean if a field has been set.
-func (o *AddClusterRequestCluster) IsSetAutoRecoverPowerState() bool {
-	if o != nil && !IsNil(o.AutoRecoverPowerState) {
-		return true
-	}
-
-	return false
-}
-
 // SetAutoRecoverPowerState gets a reference to the given bool and assigns it to the AutoRecoverPowerState field.
 func (o *AddClusterRequestCluster) SetAutoRecoverPowerState(v bool) {
 	o.AutoRecoverPowerState = &v
@@ -363,15 +318,6 @@ func (o *AddClusterRequestCluster) GetTaskSetIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.TaskSetId, true
-}
-
-// IsSetTaskSetId returns a boolean if a field has been set.
-func (o *AddClusterRequestCluster) IsSetTaskSetId() bool {
-	if o != nil && !IsNil(o.TaskSetId) {
-		return true
-	}
-
-	return false
 }
 
 // SetTaskSetId gets a reference to the given int64 and assigns it to the TaskSetId field.

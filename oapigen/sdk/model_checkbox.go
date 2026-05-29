@@ -48,32 +48,6 @@ func (v *Checkbox) UnmarshalJSON(src []byte) error {
 	return NewResponseValidationError(fmt.Sprintf("%+v is not a valid Checkbox", value))
 }
 
-// NewCheckboxFromValue returns a pointer to a valid Checkbox
-// for the value passed as argument, or an error if the value passed is not allowed by the enum
-func NewCheckboxFromValue(v string) (*Checkbox, error) {
-	ev := Checkbox(v)
-	if ev.IsValid() {
-		return &ev, nil
-	} else {
-		return nil, fmt.Errorf("invalid value '%v' for Checkbox: valid values are %v", v, AllowedCheckboxEnumValues)
-	}
-}
-
-// IsValid return true if the value is valid for the enum, false otherwise
-func (v Checkbox) IsValid() bool {
-	for _, existing := range AllowedCheckboxEnumValues {
-		if existing == v {
-			return true
-		}
-	}
-	return false
-}
-
-// Ptr returns reference to checkbox value
-func (v Checkbox) Ptr() *Checkbox {
-	return &v
-}
-
 type NullableCheckbox struct {
 	value *Checkbox
 	isSet bool

@@ -61,15 +61,6 @@ func (o *ListInstanceServicePlans200Response) GetPlansOk() ([]ListInstanceServic
 	return o.Plans, true
 }
 
-// IsSetPlans returns a boolean if a field has been set.
-func (o *ListInstanceServicePlans200Response) IsSetPlans() bool {
-	if o != nil && !IsNil(o.Plans) {
-		return true
-	}
-
-	return false
-}
-
 // SetPlans gets a reference to the given []ListInstanceServicePlans200ResponsePlansInner and assigns it to the Plans field.
 func (o *ListInstanceServicePlans200Response) SetPlans(v []ListInstanceServicePlans200ResponsePlansInner) {
 	o.Plans = v

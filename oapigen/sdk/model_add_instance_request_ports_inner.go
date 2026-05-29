@@ -91,15 +91,6 @@ func (o *AddInstanceRequestPortsInner) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *AddInstanceRequestPortsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *AddInstanceRequestPortsInner) SetName(v string) {
 	o.Name = &v
@@ -124,28 +115,9 @@ func (o *AddInstanceRequestPortsInner) GetLbOk() (*string, bool) {
 	return o.Lb.Get(), o.Lb.IsSet()
 }
 
-// IsSetLb returns a boolean if a field has been set.
-func (o *AddInstanceRequestPortsInner) IsSetLb() bool {
-	if o != nil && o.Lb.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLb gets a reference to the given NullableString and assigns it to the Lb field.
 func (o *AddInstanceRequestPortsInner) SetLb(v string) {
 	o.Lb.Set(&v)
-}
-
-// SetLbNil sets the value for Lb to be an explicit nil
-func (o *AddInstanceRequestPortsInner) SetLbNil() {
-	o.Lb.Set(nil)
-}
-
-// UnsetLb ensures that no value is present for Lb, not even an explicit nil
-func (o *AddInstanceRequestPortsInner) UnsetLb() {
-	o.Lb.Unset()
 }
 
 func (o AddInstanceRequestPortsInner) MarshalJSON() ([]byte, error) {

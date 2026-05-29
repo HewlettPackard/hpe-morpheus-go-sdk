@@ -73,15 +73,6 @@ func (o *SpecTemplateUpdateFile) GetSourceTypeOk() (*string, bool) {
 	return o.SourceType, true
 }
 
-// IsSetSourceType returns a boolean if a field has been set.
-func (o *SpecTemplateUpdateFile) IsSetSourceType() bool {
-	if o != nil && !IsNil(o.SourceType) {
-		return true
-	}
-
-	return false
-}
-
 // SetSourceType gets a reference to the given string and assigns it to the SourceType field.
 func (o *SpecTemplateUpdateFile) SetSourceType(v string) {
 	o.SourceType = &v
@@ -103,15 +94,6 @@ func (o *SpecTemplateUpdateFile) GetContentOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Content, true
-}
-
-// IsSetContent returns a boolean if a field has been set.
-func (o *SpecTemplateUpdateFile) IsSetContent() bool {
-	if o != nil && !IsNil(o.Content) {
-		return true
-	}
-
-	return false
 }
 
 // SetContent gets a reference to the given string and assigns it to the Content field.
@@ -137,15 +119,6 @@ func (o *SpecTemplateUpdateFile) GetContentPathOk() (*string, bool) {
 	return o.ContentPath, true
 }
 
-// IsSetContentPath returns a boolean if a field has been set.
-func (o *SpecTemplateUpdateFile) IsSetContentPath() bool {
-	if o != nil && !IsNil(o.ContentPath) {
-		return true
-	}
-
-	return false
-}
-
 // SetContentPath gets a reference to the given string and assigns it to the ContentPath field.
 func (o *SpecTemplateUpdateFile) SetContentPath(v string) {
 	o.ContentPath = &v
@@ -169,15 +142,6 @@ func (o *SpecTemplateUpdateFile) GetContentRefOk() (*string, bool) {
 	return o.ContentRef, true
 }
 
-// IsSetContentRef returns a boolean if a field has been set.
-func (o *SpecTemplateUpdateFile) IsSetContentRef() bool {
-	if o != nil && !IsNil(o.ContentRef) {
-		return true
-	}
-
-	return false
-}
-
 // SetContentRef gets a reference to the given string and assigns it to the ContentRef field.
 func (o *SpecTemplateUpdateFile) SetContentRef(v string) {
 	o.ContentRef = &v
@@ -199,15 +163,6 @@ func (o *SpecTemplateUpdateFile) GetRepositoryOk() (*SpecTemplateUpdateFileRepos
 		return nil, false
 	}
 	return o.Repository, true
-}
-
-// IsSetRepository returns a boolean if a field has been set.
-func (o *SpecTemplateUpdateFile) IsSetRepository() bool {
-	if o != nil && !IsNil(o.Repository) {
-		return true
-	}
-
-	return false
 }
 
 // SetRepository gets a reference to the given SpecTemplateUpdateFileRepository and assigns it to the Repository field.

@@ -68,15 +68,6 @@ func (o *NSXTLoadBalancerConfigObject1) GetAdminStateOk() (*bool, bool) {
 	return o.AdminState, true
 }
 
-// IsSetAdminState returns a boolean if a field has been set.
-func (o *NSXTLoadBalancerConfigObject1) IsSetAdminState() bool {
-	if o != nil && !IsNil(o.AdminState) {
-		return true
-	}
-
-	return false
-}
-
 // SetAdminState gets a reference to the given bool and assigns it to the AdminState field.
 func (o *NSXTLoadBalancerConfigObject1) SetAdminState(v bool) {
 	o.AdminState = &v
@@ -98,15 +89,6 @@ func (o *NSXTLoadBalancerConfigObject1) GetSizeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Size, true
-}
-
-// IsSetSize returns a boolean if a field has been set.
-func (o *NSXTLoadBalancerConfigObject1) IsSetSize() bool {
-	if o != nil && !IsNil(o.Size) {
-		return true
-	}
-
-	return false
 }
 
 // SetSize gets a reference to the given string and assigns it to the Size field.
@@ -132,15 +114,6 @@ func (o *NSXTLoadBalancerConfigObject1) GetTier1Ok() (*string, bool) {
 	return o.Tier1, true
 }
 
-// IsSetTier1 returns a boolean if a field has been set.
-func (o *NSXTLoadBalancerConfigObject1) IsSetTier1() bool {
-	if o != nil && !IsNil(o.Tier1) {
-		return true
-	}
-
-	return false
-}
-
 // SetTier1 gets a reference to the given string and assigns it to the Tier1 field.
 func (o *NSXTLoadBalancerConfigObject1) SetTier1(v string) {
 	o.Tier1 = &v
@@ -162,15 +135,6 @@ func (o *NSXTLoadBalancerConfigObject1) GetLoglevelOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Loglevel, true
-}
-
-// IsSetLoglevel returns a boolean if a field has been set.
-func (o *NSXTLoadBalancerConfigObject1) IsSetLoglevel() bool {
-	if o != nil && !IsNil(o.Loglevel) {
-		return true
-	}
-
-	return false
 }
 
 // SetLoglevel gets a reference to the given string and assigns it to the Loglevel field.

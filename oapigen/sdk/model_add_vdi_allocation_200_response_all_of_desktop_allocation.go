@@ -74,15 +74,6 @@ func (o *AddVdiAllocation200ResponseAllOfDesktopAllocation) GetIdOk() (*int64, b
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *AddVdiAllocation200ResponseAllOfDesktopAllocation) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *AddVdiAllocation200ResponseAllOfDesktopAllocation) SetId(v int64) {
 	o.Id = &v
@@ -104,15 +95,6 @@ func (o *AddVdiAllocation200ResponseAllOfDesktopAllocation) GetPoolIdOk() (*int6
 		return nil, false
 	}
 	return o.PoolId, true
-}
-
-// IsSetPoolId returns a boolean if a field has been set.
-func (o *AddVdiAllocation200ResponseAllOfDesktopAllocation) IsSetPoolId() bool {
-	if o != nil && !IsNil(o.PoolId) {
-		return true
-	}
-
-	return false
 }
 
 // SetPoolId gets a reference to the given int64 and assigns it to the PoolId field.
@@ -138,15 +120,6 @@ func (o *AddVdiAllocation200ResponseAllOfDesktopAllocation) GetPoolOk() (*AddVdi
 	return o.Pool, true
 }
 
-// IsSetPool returns a boolean if a field has been set.
-func (o *AddVdiAllocation200ResponseAllOfDesktopAllocation) IsSetPool() bool {
-	if o != nil && !IsNil(o.Pool) {
-		return true
-	}
-
-	return false
-}
-
 // SetPool gets a reference to the given AddVdiAllocation200ResponseAllOfDesktopAllocationPool and assigns it to the Pool field.
 func (o *AddVdiAllocation200ResponseAllOfDesktopAllocation) SetPool(v AddVdiAllocation200ResponseAllOfDesktopAllocationPool) {
 	o.Pool = &v
@@ -168,15 +141,6 @@ func (o *AddVdiAllocation200ResponseAllOfDesktopAllocation) GetInstanceOk() (*Ad
 		return nil, false
 	}
 	return o.Instance, true
-}
-
-// IsSetInstance returns a boolean if a field has been set.
-func (o *AddVdiAllocation200ResponseAllOfDesktopAllocation) IsSetInstance() bool {
-	if o != nil && !IsNil(o.Instance) {
-		return true
-	}
-
-	return false
 }
 
 // SetInstance gets a reference to the given AddVdiAllocation200ResponseAllOfDesktopAllocationInstance and assigns it to the Instance field.
@@ -202,15 +166,6 @@ func (o *AddVdiAllocation200ResponseAllOfDesktopAllocation) GetUserOk() (*AddVdi
 	return o.User, true
 }
 
-// IsSetUser returns a boolean if a field has been set.
-func (o *AddVdiAllocation200ResponseAllOfDesktopAllocation) IsSetUser() bool {
-	if o != nil && !IsNil(o.User) {
-		return true
-	}
-
-	return false
-}
-
 // SetUser gets a reference to the given AddVdiAllocation200ResponseAllOfDesktopAllocationUser and assigns it to the User field.
 func (o *AddVdiAllocation200ResponseAllOfDesktopAllocation) SetUser(v AddVdiAllocation200ResponseAllOfDesktopAllocationUser) {
 	o.User = &v
@@ -232,15 +187,6 @@ func (o *AddVdiAllocation200ResponseAllOfDesktopAllocation) GetLocalUserCreatedO
 		return nil, false
 	}
 	return o.LocalUserCreated, true
-}
-
-// IsSetLocalUserCreated returns a boolean if a field has been set.
-func (o *AddVdiAllocation200ResponseAllOfDesktopAllocation) IsSetLocalUserCreated() bool {
-	if o != nil && !IsNil(o.LocalUserCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLocalUserCreated gets a reference to the given bool and assigns it to the LocalUserCreated field.
@@ -266,15 +212,6 @@ func (o *AddVdiAllocation200ResponseAllOfDesktopAllocation) GetPersistentOk() (*
 	return o.Persistent, true
 }
 
-// IsSetPersistent returns a boolean if a field has been set.
-func (o *AddVdiAllocation200ResponseAllOfDesktopAllocation) IsSetPersistent() bool {
-	if o != nil && !IsNil(o.Persistent) {
-		return true
-	}
-
-	return false
-}
-
 // SetPersistent gets a reference to the given bool and assigns it to the Persistent field.
 func (o *AddVdiAllocation200ResponseAllOfDesktopAllocation) SetPersistent(v bool) {
 	o.Persistent = &v
@@ -296,15 +233,6 @@ func (o *AddVdiAllocation200ResponseAllOfDesktopAllocation) GetRecyclableOk() (*
 		return nil, false
 	}
 	return o.Recyclable, true
-}
-
-// IsSetRecyclable returns a boolean if a field has been set.
-func (o *AddVdiAllocation200ResponseAllOfDesktopAllocation) IsSetRecyclable() bool {
-	if o != nil && !IsNil(o.Recyclable) {
-		return true
-	}
-
-	return false
 }
 
 // SetRecyclable gets a reference to the given bool and assigns it to the Recyclable field.
@@ -330,15 +258,6 @@ func (o *AddVdiAllocation200ResponseAllOfDesktopAllocation) GetStatusOk() (*stri
 	return o.Status, true
 }
 
-// IsSetStatus returns a boolean if a field has been set.
-func (o *AddVdiAllocation200ResponseAllOfDesktopAllocation) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
-}
-
 // SetStatus gets a reference to the given string and assigns it to the Status field.
 func (o *AddVdiAllocation200ResponseAllOfDesktopAllocation) SetStatus(v string) {
 	o.Status = &v
@@ -362,15 +281,6 @@ func (o *AddVdiAllocation200ResponseAllOfDesktopAllocation) GetDateCreatedOk() (
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *AddVdiAllocation200ResponseAllOfDesktopAllocation) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *AddVdiAllocation200ResponseAllOfDesktopAllocation) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -392,15 +302,6 @@ func (o *AddVdiAllocation200ResponseAllOfDesktopAllocation) GetLastUpdatedOk() (
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *AddVdiAllocation200ResponseAllOfDesktopAllocation) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
@@ -427,28 +328,9 @@ func (o *AddVdiAllocation200ResponseAllOfDesktopAllocation) GetLastReservedOk() 
 	return o.LastReserved.Get(), o.LastReserved.IsSet()
 }
 
-// IsSetLastReserved returns a boolean if a field has been set.
-func (o *AddVdiAllocation200ResponseAllOfDesktopAllocation) IsSetLastReserved() bool {
-	if o != nil && o.LastReserved.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastReserved gets a reference to the given NullableTime and assigns it to the LastReserved field.
 func (o *AddVdiAllocation200ResponseAllOfDesktopAllocation) SetLastReserved(v time.Time) {
 	o.LastReserved.Set(&v)
-}
-
-// SetLastReservedNil sets the value for LastReserved to be an explicit nil
-func (o *AddVdiAllocation200ResponseAllOfDesktopAllocation) SetLastReservedNil() {
-	o.LastReserved.Set(nil)
-}
-
-// UnsetLastReserved ensures that no value is present for LastReserved, not even an explicit nil
-func (o *AddVdiAllocation200ResponseAllOfDesktopAllocation) UnsetLastReserved() {
-	o.LastReserved.Unset()
 }
 
 // GetReleaseDate returns the ReleaseDate field value if set, zero value otherwise.
@@ -467,15 +349,6 @@ func (o *AddVdiAllocation200ResponseAllOfDesktopAllocation) GetReleaseDateOk() (
 		return nil, false
 	}
 	return o.ReleaseDate, true
-}
-
-// IsSetReleaseDate returns a boolean if a field has been set.
-func (o *AddVdiAllocation200ResponseAllOfDesktopAllocation) IsSetReleaseDate() bool {
-	if o != nil && !IsNil(o.ReleaseDate) {
-		return true
-	}
-
-	return false
 }
 
 // SetReleaseDate gets a reference to the given time.Time and assigns it to the ReleaseDate field.

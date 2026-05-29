@@ -64,15 +64,6 @@ func (o *GetUser200ResponseUserAccessFeaturesInner) GetCodeOk() (*string, bool) 
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *GetUser200ResponseUserAccessFeaturesInner) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *GetUser200ResponseUserAccessFeaturesInner) SetCode(v string) {
 	o.Code = &v
@@ -94,15 +85,6 @@ func (o *GetUser200ResponseUserAccessFeaturesInner) GetNameOk() (*string, bool) 
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *GetUser200ResponseUserAccessFeaturesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -128,15 +110,6 @@ func (o *GetUser200ResponseUserAccessFeaturesInner) GetAccessOk() (*string, bool
 	return o.Access, true
 }
 
-// IsSetAccess returns a boolean if a field has been set.
-func (o *GetUser200ResponseUserAccessFeaturesInner) IsSetAccess() bool {
-	if o != nil && !IsNil(o.Access) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccess gets a reference to the given string and assigns it to the Access field.
 func (o *GetUser200ResponseUserAccessFeaturesInner) SetAccess(v string) {
 	o.Access = &v
@@ -158,15 +131,6 @@ func (o *GetUser200ResponseUserAccessFeaturesInner) GetSubCategoryOk() (*string,
 		return nil, false
 	}
 	return o.SubCategory, true
-}
-
-// IsSetSubCategory returns a boolean if a field has been set.
-func (o *GetUser200ResponseUserAccessFeaturesInner) IsSetSubCategory() bool {
-	if o != nil && !IsNil(o.SubCategory) {
-		return true
-	}
-
-	return false
 }
 
 // SetSubCategory gets a reference to the given string and assigns it to the SubCategory field.

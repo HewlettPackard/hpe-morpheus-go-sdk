@@ -64,15 +64,6 @@ func (o *ListClusterTypes200ResponseAllOfClusterTypesInnerWorkerTypesInner) GetI
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListClusterTypes200ResponseAllOfClusterTypesInnerWorkerTypesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListClusterTypes200ResponseAllOfClusterTypesInnerWorkerTypesInner) SetId(v int64) {
 	o.Id = &v
@@ -94,15 +85,6 @@ func (o *ListClusterTypes200ResponseAllOfClusterTypesInnerWorkerTypesInner) GetN
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListClusterTypes200ResponseAllOfClusterTypesInnerWorkerTypesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -128,15 +110,6 @@ func (o *ListClusterTypes200ResponseAllOfClusterTypesInnerWorkerTypesInner) GetC
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *ListClusterTypes200ResponseAllOfClusterTypesInnerWorkerTypesInner) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *ListClusterTypes200ResponseAllOfClusterTypesInnerWorkerTypesInner) SetCode(v string) {
 	o.Code = &v
@@ -158,15 +131,6 @@ func (o *ListClusterTypes200ResponseAllOfClusterTypesInnerWorkerTypesInner) GetD
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ListClusterTypes200ResponseAllOfClusterTypesInnerWorkerTypesInner) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.

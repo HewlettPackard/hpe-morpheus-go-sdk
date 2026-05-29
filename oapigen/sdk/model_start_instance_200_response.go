@@ -62,15 +62,6 @@ func (o *StartInstance200Response) GetResultsOk() (map[string]interface{}, bool)
 	return o.Results, true
 }
 
-// IsSetResults returns a boolean if a field has been set.
-func (o *StartInstance200Response) IsSetResults() bool {
-	if o != nil && !IsNil(o.Results) {
-		return true
-	}
-
-	return false
-}
-
 // SetResults gets a reference to the given map[string]interface{} and assigns it to the Results field.
 func (o *StartInstance200Response) SetResults(v map[string]interface{}) {
 	o.Results = v
@@ -92,15 +83,6 @@ func (o *StartInstance200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *StartInstance200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

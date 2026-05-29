@@ -61,15 +61,6 @@ func (o *GetClusterMasters200Response) GetMastersOk() ([]GetClusterMasters200Res
 	return o.Masters, true
 }
 
-// IsSetMasters returns a boolean if a field has been set.
-func (o *GetClusterMasters200Response) IsSetMasters() bool {
-	if o != nil && !IsNil(o.Masters) {
-		return true
-	}
-
-	return false
-}
-
 // SetMasters gets a reference to the given []GetClusterMasters200ResponseMastersInner and assigns it to the Masters field.
 func (o *GetClusterMasters200Response) SetMasters(v []GetClusterMasters200ResponseMastersInner) {
 	o.Masters = v

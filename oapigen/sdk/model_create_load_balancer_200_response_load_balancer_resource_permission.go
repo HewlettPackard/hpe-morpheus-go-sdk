@@ -68,15 +68,6 @@ func (o *CreateLoadBalancer200ResponseLoadBalancerResourcePermission) GetDefault
 	return o.DefaultStore, true
 }
 
-// IsSetDefaultStore returns a boolean if a field has been set.
-func (o *CreateLoadBalancer200ResponseLoadBalancerResourcePermission) IsSetDefaultStore() bool {
-	if o != nil && !IsNil(o.DefaultStore) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultStore gets a reference to the given bool and assigns it to the DefaultStore field.
 func (o *CreateLoadBalancer200ResponseLoadBalancerResourcePermission) SetDefaultStore(v bool) {
 	o.DefaultStore = &v
@@ -98,15 +89,6 @@ func (o *CreateLoadBalancer200ResponseLoadBalancerResourcePermission) GetDefault
 		return nil, false
 	}
 	return o.DefaultTarget, true
-}
-
-// IsSetDefaultTarget returns a boolean if a field has been set.
-func (o *CreateLoadBalancer200ResponseLoadBalancerResourcePermission) IsSetDefaultTarget() bool {
-	if o != nil && !IsNil(o.DefaultTarget) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultTarget gets a reference to the given bool and assigns it to the DefaultTarget field.
@@ -132,15 +114,6 @@ func (o *CreateLoadBalancer200ResponseLoadBalancerResourcePermission) GetCanMana
 	return o.CanManage, true
 }
 
-// IsSetCanManage returns a boolean if a field has been set.
-func (o *CreateLoadBalancer200ResponseLoadBalancerResourcePermission) IsSetCanManage() bool {
-	if o != nil && !IsNil(o.CanManage) {
-		return true
-	}
-
-	return false
-}
-
 // SetCanManage gets a reference to the given bool and assigns it to the CanManage field.
 func (o *CreateLoadBalancer200ResponseLoadBalancerResourcePermission) SetCanManage(v bool) {
 	o.CanManage = &v
@@ -164,15 +137,6 @@ func (o *CreateLoadBalancer200ResponseLoadBalancerResourcePermission) GetAllOk()
 	return o.All, true
 }
 
-// IsSetAll returns a boolean if a field has been set.
-func (o *CreateLoadBalancer200ResponseLoadBalancerResourcePermission) IsSetAll() bool {
-	if o != nil && !IsNil(o.All) {
-		return true
-	}
-
-	return false
-}
-
 // SetAll gets a reference to the given bool and assigns it to the All field.
 func (o *CreateLoadBalancer200ResponseLoadBalancerResourcePermission) SetAll(v bool) {
 	o.All = &v
@@ -194,15 +158,6 @@ func (o *CreateLoadBalancer200ResponseLoadBalancerResourcePermission) GetAccount
 		return nil, false
 	}
 	return o.Account, true
-}
-
-// IsSetAccount returns a boolean if a field has been set.
-func (o *CreateLoadBalancer200ResponseLoadBalancerResourcePermission) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccount gets a reference to the given CreateLoadBalancer200ResponseLoadBalancerResourcePermissionAccount and assigns it to the Account field.
@@ -229,15 +184,6 @@ func (o *CreateLoadBalancer200ResponseLoadBalancerResourcePermission) GetSitesOk
 	return o.Sites, true
 }
 
-// IsSetSites returns a boolean if a field has been set.
-func (o *CreateLoadBalancer200ResponseLoadBalancerResourcePermission) IsSetSites() bool {
-	if o != nil && !IsNil(o.Sites) {
-		return true
-	}
-
-	return false
-}
-
 // SetSites gets a reference to the given []CreateLoadBalancer200ResponseLoadBalancerResourcePermissionSitesInner and assigns it to the Sites field.
 func (o *CreateLoadBalancer200ResponseLoadBalancerResourcePermission) SetSites(v []CreateLoadBalancer200ResponseLoadBalancerResourcePermissionSitesInner) {
 	o.Sites = v
@@ -259,15 +205,6 @@ func (o *CreateLoadBalancer200ResponseLoadBalancerResourcePermission) GetAllPlan
 		return nil, false
 	}
 	return o.AllPlans, true
-}
-
-// IsSetAllPlans returns a boolean if a field has been set.
-func (o *CreateLoadBalancer200ResponseLoadBalancerResourcePermission) IsSetAllPlans() bool {
-	if o != nil && !IsNil(o.AllPlans) {
-		return true
-	}
-
-	return false
 }
 
 // SetAllPlans gets a reference to the given bool and assigns it to the AllPlans field.
@@ -292,15 +229,6 @@ func (o *CreateLoadBalancer200ResponseLoadBalancerResourcePermission) GetPlansOk
 		return nil, false
 	}
 	return o.Plans, true
-}
-
-// IsSetPlans returns a boolean if a field has been set.
-func (o *CreateLoadBalancer200ResponseLoadBalancerResourcePermission) IsSetPlans() bool {
-	if o != nil && !IsNil(o.Plans) {
-		return true
-	}
-
-	return false
 }
 
 // SetPlans gets a reference to the given []CreateLoadBalancer200ResponseLoadBalancerResourcePermissionPlansInner and assigns it to the Plans field.

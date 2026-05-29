@@ -69,15 +69,6 @@ func (o *BillingServerUsagesInnerApplicablePricesInnerPricesInner) GetTypeOk() (
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *BillingServerUsagesInnerApplicablePricesInnerPricesInner) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given string and assigns it to the Type field.
 func (o *BillingServerUsagesInnerApplicablePricesInnerPricesInner) SetType(v string) {
 	o.Type = &v
@@ -99,15 +90,6 @@ func (o *BillingServerUsagesInnerApplicablePricesInnerPricesInner) GetPricePerUn
 		return nil, false
 	}
 	return o.PricePerUnit, true
-}
-
-// IsSetPricePerUnit returns a boolean if a field has been set.
-func (o *BillingServerUsagesInnerApplicablePricesInnerPricesInner) IsSetPricePerUnit() bool {
-	if o != nil && !IsNil(o.PricePerUnit) {
-		return true
-	}
-
-	return false
 }
 
 // SetPricePerUnit gets a reference to the given float32 and assigns it to the PricePerUnit field.
@@ -133,15 +115,6 @@ func (o *BillingServerUsagesInnerApplicablePricesInnerPricesInner) GetCostPerUni
 	return o.CostPerUnit, true
 }
 
-// IsSetCostPerUnit returns a boolean if a field has been set.
-func (o *BillingServerUsagesInnerApplicablePricesInnerPricesInner) IsSetCostPerUnit() bool {
-	if o != nil && !IsNil(o.CostPerUnit) {
-		return true
-	}
-
-	return false
-}
-
 // SetCostPerUnit gets a reference to the given float32 and assigns it to the CostPerUnit field.
 func (o *BillingServerUsagesInnerApplicablePricesInnerPricesInner) SetCostPerUnit(v float32) {
 	o.CostPerUnit = &v
@@ -163,15 +136,6 @@ func (o *BillingServerUsagesInnerApplicablePricesInnerPricesInner) GetCostOk() (
 		return nil, false
 	}
 	return o.Cost, true
-}
-
-// IsSetCost returns a boolean if a field has been set.
-func (o *BillingServerUsagesInnerApplicablePricesInnerPricesInner) IsSetCost() bool {
-	if o != nil && !IsNil(o.Cost) {
-		return true
-	}
-
-	return false
 }
 
 // SetCost gets a reference to the given float32 and assigns it to the Cost field.
@@ -197,15 +161,6 @@ func (o *BillingServerUsagesInnerApplicablePricesInnerPricesInner) GetPriceOk() 
 	return o.Price, true
 }
 
-// IsSetPrice returns a boolean if a field has been set.
-func (o *BillingServerUsagesInnerApplicablePricesInnerPricesInner) IsSetPrice() bool {
-	if o != nil && !IsNil(o.Price) {
-		return true
-	}
-
-	return false
-}
-
 // SetPrice gets a reference to the given float32 and assigns it to the Price field.
 func (o *BillingServerUsagesInnerApplicablePricesInnerPricesInner) SetPrice(v float32) {
 	o.Price = &v
@@ -227,15 +182,6 @@ func (o *BillingServerUsagesInnerApplicablePricesInnerPricesInner) GetQuantityOk
 		return nil, false
 	}
 	return o.Quantity, true
-}
-
-// IsSetQuantity returns a boolean if a field has been set.
-func (o *BillingServerUsagesInnerApplicablePricesInnerPricesInner) IsSetQuantity() bool {
-	if o != nil && !IsNil(o.Quantity) {
-		return true
-	}
-
-	return false
 }
 
 // SetQuantity gets a reference to the given int64 and assigns it to the Quantity field.
@@ -262,28 +208,9 @@ func (o *BillingServerUsagesInnerApplicablePricesInnerPricesInner) GetDatastoreI
 	return o.DatastoreId.Get(), o.DatastoreId.IsSet()
 }
 
-// IsSetDatastoreId returns a boolean if a field has been set.
-func (o *BillingServerUsagesInnerApplicablePricesInnerPricesInner) IsSetDatastoreId() bool {
-	if o != nil && o.DatastoreId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDatastoreId gets a reference to the given NullableString and assigns it to the DatastoreId field.
 func (o *BillingServerUsagesInnerApplicablePricesInnerPricesInner) SetDatastoreId(v string) {
 	o.DatastoreId.Set(&v)
-}
-
-// SetDatastoreIdNil sets the value for DatastoreId to be an explicit nil
-func (o *BillingServerUsagesInnerApplicablePricesInnerPricesInner) SetDatastoreIdNil() {
-	o.DatastoreId.Set(nil)
-}
-
-// UnsetDatastoreId ensures that no value is present for DatastoreId, not even an explicit nil
-func (o *BillingServerUsagesInnerApplicablePricesInnerPricesInner) UnsetDatastoreId() {
-	o.DatastoreId.Unset()
 }
 
 // GetVolumeType returns the VolumeType field value if set, zero value otherwise.
@@ -302,15 +229,6 @@ func (o *BillingServerUsagesInnerApplicablePricesInnerPricesInner) GetVolumeType
 		return nil, false
 	}
 	return o.VolumeType, true
-}
-
-// IsSetVolumeType returns a boolean if a field has been set.
-func (o *BillingServerUsagesInnerApplicablePricesInnerPricesInner) IsSetVolumeType() bool {
-	if o != nil && !IsNil(o.VolumeType) {
-		return true
-	}
-
-	return false
 }
 
 // SetVolumeType gets a reference to the given string and assigns it to the VolumeType field.
@@ -334,15 +252,6 @@ func (o *BillingServerUsagesInnerApplicablePricesInnerPricesInner) GetDatastoreO
 		return nil, false
 	}
 	return o.Datastore, true
-}
-
-// IsSetDatastore returns a boolean if a field has been set.
-func (o *BillingServerUsagesInnerApplicablePricesInnerPricesInner) IsSetDatastore() bool {
-	if o != nil && !IsNil(o.Datastore) {
-		return true
-	}
-
-	return false
 }
 
 // SetDatastore gets a reference to the given string and assigns it to the Datastore field.

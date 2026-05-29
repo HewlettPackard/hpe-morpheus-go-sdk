@@ -64,15 +64,6 @@ func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf) GetAccountIntegr
 	return o.AccountIntegrationId, true
 }
 
-// IsSetAccountIntegrationId returns a boolean if a field has been set.
-func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf) IsSetAccountIntegrationId() bool {
-	if o != nil && !IsNil(o.AccountIntegrationId) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccountIntegrationId gets a reference to the given string and assigns it to the AccountIntegrationId field.
 func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf) SetAccountIntegrationId(v string) {
 	o.AccountIntegrationId = &v
@@ -94,15 +85,6 @@ func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf) GetWorkflowIdOk(
 		return nil, false
 	}
 	return o.WorkflowId, true
-}
-
-// IsSetWorkflowId returns a boolean if a field has been set.
-func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf) IsSetWorkflowId() bool {
-	if o != nil && !IsNil(o.WorkflowId) {
-		return true
-	}
-
-	return false
 }
 
 // SetWorkflowId gets a reference to the given string and assigns it to the WorkflowId field.
@@ -128,15 +110,6 @@ func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf) GetFlowIdOk() (*
 	return o.FlowId, true
 }
 
-// IsSetFlowId returns a boolean if a field has been set.
-func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf) IsSetFlowId() bool {
-	if o != nil && !IsNil(o.FlowId) {
-		return true
-	}
-
-	return false
-}
-
 // SetFlowId gets a reference to the given string and assigns it to the FlowId field.
 func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf) SetFlowId(v string) {
 	o.FlowId = &v
@@ -158,15 +131,6 @@ func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf) GetWorkflowTypeO
 		return nil, false
 	}
 	return o.WorkflowType, true
-}
-
-// IsSetWorkflowType returns a boolean if a field has been set.
-func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf) IsSetWorkflowType() bool {
-	if o != nil && !IsNil(o.WorkflowType) {
-		return true
-	}
-
-	return false
 }
 
 // SetWorkflowType gets a reference to the given string and assigns it to the WorkflowType field.

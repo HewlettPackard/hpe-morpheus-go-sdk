@@ -63,28 +63,9 @@ func (o *GetBudgets200ResponseAllOfBudgetStatsCurrent) GetEstimatedCostOk() (*st
 	return o.EstimatedCost.Get(), o.EstimatedCost.IsSet()
 }
 
-// IsSetEstimatedCost returns a boolean if a field has been set.
-func (o *GetBudgets200ResponseAllOfBudgetStatsCurrent) IsSetEstimatedCost() bool {
-	if o != nil && o.EstimatedCost.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetEstimatedCost gets a reference to the given NullableString and assigns it to the EstimatedCost field.
 func (o *GetBudgets200ResponseAllOfBudgetStatsCurrent) SetEstimatedCost(v string) {
 	o.EstimatedCost.Set(&v)
-}
-
-// SetEstimatedCostNil sets the value for EstimatedCost to be an explicit nil
-func (o *GetBudgets200ResponseAllOfBudgetStatsCurrent) SetEstimatedCostNil() {
-	o.EstimatedCost.Set(nil)
-}
-
-// UnsetEstimatedCost ensures that no value is present for EstimatedCost, not even an explicit nil
-func (o *GetBudgets200ResponseAllOfBudgetStatsCurrent) UnsetEstimatedCost() {
-	o.EstimatedCost.Unset()
 }
 
 // GetLastCost returns the LastCost field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -106,28 +87,9 @@ func (o *GetBudgets200ResponseAllOfBudgetStatsCurrent) GetLastCostOk() (*string,
 	return o.LastCost.Get(), o.LastCost.IsSet()
 }
 
-// IsSetLastCost returns a boolean if a field has been set.
-func (o *GetBudgets200ResponseAllOfBudgetStatsCurrent) IsSetLastCost() bool {
-	if o != nil && o.LastCost.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastCost gets a reference to the given NullableString and assigns it to the LastCost field.
 func (o *GetBudgets200ResponseAllOfBudgetStatsCurrent) SetLastCost(v string) {
 	o.LastCost.Set(&v)
-}
-
-// SetLastCostNil sets the value for LastCost to be an explicit nil
-func (o *GetBudgets200ResponseAllOfBudgetStatsCurrent) SetLastCostNil() {
-	o.LastCost.Set(nil)
-}
-
-// UnsetLastCost ensures that no value is present for LastCost, not even an explicit nil
-func (o *GetBudgets200ResponseAllOfBudgetStatsCurrent) UnsetLastCost() {
-	o.LastCost.Unset()
 }
 
 func (o GetBudgets200ResponseAllOfBudgetStatsCurrent) MarshalJSON() ([]byte, error) {

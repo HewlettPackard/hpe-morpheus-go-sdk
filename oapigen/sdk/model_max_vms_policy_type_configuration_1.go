@@ -61,15 +61,6 @@ func (o *MaxVMsPolicyTypeConfiguration1) GetMaxVmsOk() (*string, bool) {
 	return o.MaxVms, true
 }
 
-// IsSetMaxVms returns a boolean if a field has been set.
-func (o *MaxVMsPolicyTypeConfiguration1) IsSetMaxVms() bool {
-	if o != nil && !IsNil(o.MaxVms) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxVms gets a reference to the given string and assigns it to the MaxVms field.
 func (o *MaxVMsPolicyTypeConfiguration1) SetMaxVms(v string) {
 	o.MaxVms = &v

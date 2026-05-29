@@ -66,15 +66,6 @@ func (o *BillingServers) GetPriceOk() (*float32, bool) {
 	return o.Price, true
 }
 
-// IsSetPrice returns a boolean if a field has been set.
-func (o *BillingServers) IsSetPrice() bool {
-	if o != nil && !IsNil(o.Price) {
-		return true
-	}
-
-	return false
-}
-
 // SetPrice gets a reference to the given float32 and assigns it to the Price field.
 func (o *BillingServers) SetPrice(v float32) {
 	o.Price = &v
@@ -96,15 +87,6 @@ func (o *BillingServers) GetCostOk() (*float32, bool) {
 		return nil, false
 	}
 	return o.Cost, true
-}
-
-// IsSetCost returns a boolean if a field has been set.
-func (o *BillingServers) IsSetCost() bool {
-	if o != nil && !IsNil(o.Cost) {
-		return true
-	}
-
-	return false
 }
 
 // SetCost gets a reference to the given float32 and assigns it to the Cost field.
@@ -130,15 +112,6 @@ func (o *BillingServers) GetStartDateOk() (*time.Time, bool) {
 	return o.StartDate, true
 }
 
-// IsSetStartDate returns a boolean if a field has been set.
-func (o *BillingServers) IsSetStartDate() bool {
-	if o != nil && !IsNil(o.StartDate) {
-		return true
-	}
-
-	return false
-}
-
 // SetStartDate gets a reference to the given time.Time and assigns it to the StartDate field.
 func (o *BillingServers) SetStartDate(v time.Time) {
 	o.StartDate = &v
@@ -162,15 +135,6 @@ func (o *BillingServers) GetEndDateOk() (*time.Time, bool) {
 	return o.EndDate, true
 }
 
-// IsSetEndDate returns a boolean if a field has been set.
-func (o *BillingServers) IsSetEndDate() bool {
-	if o != nil && !IsNil(o.EndDate) {
-		return true
-	}
-
-	return false
-}
-
 // SetEndDate gets a reference to the given time.Time and assigns it to the EndDate field.
 func (o *BillingServers) SetEndDate(v time.Time) {
 	o.EndDate = &v
@@ -192,15 +156,6 @@ func (o *BillingServers) GetServersOk() ([]BillingServersServersInner, bool) {
 		return nil, false
 	}
 	return o.Servers, true
-}
-
-// IsSetServers returns a boolean if a field has been set.
-func (o *BillingServers) IsSetServers() bool {
-	if o != nil && !IsNil(o.Servers) {
-		return true
-	}
-
-	return false
 }
 
 // SetServers gets a reference to the given []BillingServersServersInner and assigns it to the Servers field.

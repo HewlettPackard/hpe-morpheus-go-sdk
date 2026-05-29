@@ -71,15 +71,6 @@ func (o *Blueprint) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *Blueprint) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *Blueprint) SetId(v int64) {
 	o.Id = &v
@@ -101,15 +92,6 @@ func (o *Blueprint) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *Blueprint) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -135,15 +117,6 @@ func (o *Blueprint) GetLabelsOk() ([]string, bool) {
 	return o.Labels, true
 }
 
-// IsSetLabels returns a boolean if a field has been set.
-func (o *Blueprint) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
-}
-
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
 func (o *Blueprint) SetLabels(v []string) {
 	o.Labels = v
@@ -165,15 +138,6 @@ func (o *Blueprint) GetTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *Blueprint) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.
@@ -200,28 +164,9 @@ func (o *Blueprint) GetDescriptionOk() (*string, bool) {
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *Blueprint) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *Blueprint) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *Blueprint) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *Blueprint) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetCategory returns the Category field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -243,28 +188,9 @@ func (o *Blueprint) GetCategoryOk() (*string, bool) {
 	return o.Category.Get(), o.Category.IsSet()
 }
 
-// IsSetCategory returns a boolean if a field has been set.
-func (o *Blueprint) IsSetCategory() bool {
-	if o != nil && o.Category.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCategory gets a reference to the given NullableString and assigns it to the Category field.
 func (o *Blueprint) SetCategory(v string) {
 	o.Category.Set(&v)
-}
-
-// SetCategoryNil sets the value for Category to be an explicit nil
-func (o *Blueprint) SetCategoryNil() {
-	o.Category.Set(nil)
-}
-
-// UnsetCategory ensures that no value is present for Category, not even an explicit nil
-func (o *Blueprint) UnsetCategory() {
-	o.Category.Unset()
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
@@ -283,15 +209,6 @@ func (o *Blueprint) GetConfigOk() (map[string]interface{}, bool) {
 		return map[string]interface{}{}, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *Blueprint) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
@@ -315,15 +232,6 @@ func (o *Blueprint) GetVisibilityOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *Blueprint) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -350,15 +258,6 @@ func (o *Blueprint) GetResourcePermissionOk() (map[string]interface{}, bool) {
 	return o.ResourcePermission, true
 }
 
-// IsSetResourcePermission returns a boolean if a field has been set.
-func (o *Blueprint) IsSetResourcePermission() bool {
-	if o != nil && !IsNil(o.ResourcePermission) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourcePermission gets a reference to the given map[string]interface{} and assigns it to the ResourcePermission field.
 func (o *Blueprint) SetResourcePermission(v map[string]interface{}) {
 	o.ResourcePermission = v
@@ -382,15 +281,6 @@ func (o *Blueprint) GetOwnerOk() (*GetBlueprint200ResponseBlueprintOwner, bool) 
 	return o.Owner, true
 }
 
-// IsSetOwner returns a boolean if a field has been set.
-func (o *Blueprint) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
-		return true
-	}
-
-	return false
-}
-
 // SetOwner gets a reference to the given GetBlueprint200ResponseBlueprintOwner and assigns it to the Owner field.
 func (o *Blueprint) SetOwner(v GetBlueprint200ResponseBlueprintOwner) {
 	o.Owner = &v
@@ -412,15 +302,6 @@ func (o *Blueprint) GetTenantOk() (*GetBlueprint200ResponseBlueprintTenant, bool
 		return nil, false
 	}
 	return o.Tenant, true
-}
-
-// IsSetTenant returns a boolean if a field has been set.
-func (o *Blueprint) IsSetTenant() bool {
-	if o != nil && !IsNil(o.Tenant) {
-		return true
-	}
-
-	return false
 }
 
 // SetTenant gets a reference to the given GetBlueprint200ResponseBlueprintTenant and assigns it to the Tenant field.

@@ -91,15 +91,6 @@ func (o *ResizeInstanceRequestVolumesInner) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ResizeInstanceRequestVolumesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ResizeInstanceRequestVolumesInner) SetId(v int64) {
 	o.Id = &v
@@ -121,15 +112,6 @@ func (o *ResizeInstanceRequestVolumesInner) GetRootVolumeOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.RootVolume, true
-}
-
-// IsSetRootVolume returns a boolean if a field has been set.
-func (o *ResizeInstanceRequestVolumesInner) IsSetRootVolume() bool {
-	if o != nil && !IsNil(o.RootVolume) {
-		return true
-	}
-
-	return false
 }
 
 // SetRootVolume gets a reference to the given bool and assigns it to the RootVolume field.
@@ -155,15 +137,6 @@ func (o *ResizeInstanceRequestVolumesInner) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ResizeInstanceRequestVolumesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ResizeInstanceRequestVolumesInner) SetName(v string) {
 	o.Name = &v
@@ -185,15 +158,6 @@ func (o *ResizeInstanceRequestVolumesInner) GetSizeOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.Size, true
-}
-
-// IsSetSize returns a boolean if a field has been set.
-func (o *ResizeInstanceRequestVolumesInner) IsSetSize() bool {
-	if o != nil && !IsNil(o.Size) {
-		return true
-	}
-
-	return false
 }
 
 // SetSize gets a reference to the given int64 and assigns it to the Size field.
@@ -220,28 +184,9 @@ func (o *ResizeInstanceRequestVolumesInner) GetSizeIdOk() (*int64, bool) {
 	return o.SizeId.Get(), o.SizeId.IsSet()
 }
 
-// IsSetSizeId returns a boolean if a field has been set.
-func (o *ResizeInstanceRequestVolumesInner) IsSetSizeId() bool {
-	if o != nil && o.SizeId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSizeId gets a reference to the given NullableInt64 and assigns it to the SizeId field.
 func (o *ResizeInstanceRequestVolumesInner) SetSizeId(v int64) {
 	o.SizeId.Set(&v)
-}
-
-// SetSizeIdNil sets the value for SizeId to be an explicit nil
-func (o *ResizeInstanceRequestVolumesInner) SetSizeIdNil() {
-	o.SizeId.Set(nil)
-}
-
-// UnsetSizeId ensures that no value is present for SizeId, not even an explicit nil
-func (o *ResizeInstanceRequestVolumesInner) UnsetSizeId() {
-	o.SizeId.Unset()
 }
 
 // GetStorageType returns the StorageType field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -263,28 +208,9 @@ func (o *ResizeInstanceRequestVolumesInner) GetStorageTypeOk() (*int64, bool) {
 	return o.StorageType.Get(), o.StorageType.IsSet()
 }
 
-// IsSetStorageType returns a boolean if a field has been set.
-func (o *ResizeInstanceRequestVolumesInner) IsSetStorageType() bool {
-	if o != nil && o.StorageType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStorageType gets a reference to the given NullableInt64 and assigns it to the StorageType field.
 func (o *ResizeInstanceRequestVolumesInner) SetStorageType(v int64) {
 	o.StorageType.Set(&v)
-}
-
-// SetStorageTypeNil sets the value for StorageType to be an explicit nil
-func (o *ResizeInstanceRequestVolumesInner) SetStorageTypeNil() {
-	o.StorageType.Set(nil)
-}
-
-// UnsetStorageType ensures that no value is present for StorageType, not even an explicit nil
-func (o *ResizeInstanceRequestVolumesInner) UnsetStorageType() {
-	o.StorageType.Unset()
 }
 
 // GetDatastoreId returns the DatastoreId field value if set, zero value otherwise.
@@ -303,15 +229,6 @@ func (o *ResizeInstanceRequestVolumesInner) GetDatastoreIdOk() (*ResizeInstanceR
 		return nil, false
 	}
 	return o.DatastoreId, true
-}
-
-// IsSetDatastoreId returns a boolean if a field has been set.
-func (o *ResizeInstanceRequestVolumesInner) IsSetDatastoreId() bool {
-	if o != nil && !IsNil(o.DatastoreId) {
-		return true
-	}
-
-	return false
 }
 
 // SetDatastoreId gets a reference to the given ResizeInstanceRequestVolumesInnerDatastoreId and assigns it to the DatastoreId field.
@@ -335,15 +252,6 @@ func (o *ResizeInstanceRequestVolumesInner) GetControllerMountPointOk() (*string
 		return nil, false
 	}
 	return o.ControllerMountPoint, true
-}
-
-// IsSetControllerMountPoint returns a boolean if a field has been set.
-func (o *ResizeInstanceRequestVolumesInner) IsSetControllerMountPoint() bool {
-	if o != nil && !IsNil(o.ControllerMountPoint) {
-		return true
-	}
-
-	return false
 }
 
 // SetControllerMountPoint gets a reference to the given string and assigns it to the ControllerMountPoint field.
@@ -370,28 +278,9 @@ func (o *ResizeInstanceRequestVolumesInner) GetStorageProfileOk() (*string, bool
 	return o.StorageProfile.Get(), o.StorageProfile.IsSet()
 }
 
-// IsSetStorageProfile returns a boolean if a field has been set.
-func (o *ResizeInstanceRequestVolumesInner) IsSetStorageProfile() bool {
-	if o != nil && o.StorageProfile.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStorageProfile gets a reference to the given NullableString and assigns it to the StorageProfile field.
 func (o *ResizeInstanceRequestVolumesInner) SetStorageProfile(v string) {
 	o.StorageProfile.Set(&v)
-}
-
-// SetStorageProfileNil sets the value for StorageProfile to be an explicit nil
-func (o *ResizeInstanceRequestVolumesInner) SetStorageProfileNil() {
-	o.StorageProfile.Set(nil)
-}
-
-// UnsetStorageProfile ensures that no value is present for StorageProfile, not even an explicit nil
-func (o *ResizeInstanceRequestVolumesInner) UnsetStorageProfile() {
-	o.StorageProfile.Unset()
 }
 
 // GetUuid returns the Uuid field value if set, zero value otherwise.
@@ -410,15 +299,6 @@ func (o *ResizeInstanceRequestVolumesInner) GetUuidOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Uuid, true
-}
-
-// IsSetUuid returns a boolean if a field has been set.
-func (o *ResizeInstanceRequestVolumesInner) IsSetUuid() bool {
-	if o != nil && !IsNil(o.Uuid) {
-		return true
-	}
-
-	return false
 }
 
 // SetUuid gets a reference to the given string and assigns it to the Uuid field.

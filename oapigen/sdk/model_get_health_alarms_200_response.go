@@ -62,15 +62,6 @@ func (o *GetHealthAlarms200Response) GetAlarmOk() (*GetHealthAlarms200ResponseAl
 	return o.Alarm, true
 }
 
-// IsSetAlarm returns a boolean if a field has been set.
-func (o *GetHealthAlarms200Response) IsSetAlarm() bool {
-	if o != nil && !IsNil(o.Alarm) {
-		return true
-	}
-
-	return false
-}
-
 // SetAlarm gets a reference to the given GetHealthAlarms200ResponseAllOfAlarm and assigns it to the Alarm field.
 func (o *GetHealthAlarms200Response) SetAlarm(v GetHealthAlarms200ResponseAllOfAlarm) {
 	o.Alarm = &v
@@ -92,15 +83,6 @@ func (o *GetHealthAlarms200Response) GetMetaOk() (*ListApprovals200ResponseAllOf
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *GetHealthAlarms200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

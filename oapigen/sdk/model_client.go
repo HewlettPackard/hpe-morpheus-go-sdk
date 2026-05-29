@@ -68,15 +68,6 @@ func (o *Client) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *Client) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *Client) SetId(v int64) {
 	o.Id = &v
@@ -98,15 +89,6 @@ func (o *Client) GetClientIdOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ClientId, true
-}
-
-// IsSetClientId returns a boolean if a field has been set.
-func (o *Client) IsSetClientId() bool {
-	if o != nil && !IsNil(o.ClientId) {
-		return true
-	}
-
-	return false
 }
 
 // SetClientId gets a reference to the given string and assigns it to the ClientId field.
@@ -132,15 +114,6 @@ func (o *Client) GetAccessTokenValiditySecondsOk() (*int64, bool) {
 	return o.AccessTokenValiditySeconds, true
 }
 
-// IsSetAccessTokenValiditySeconds returns a boolean if a field has been set.
-func (o *Client) IsSetAccessTokenValiditySeconds() bool {
-	if o != nil && !IsNil(o.AccessTokenValiditySeconds) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccessTokenValiditySeconds gets a reference to the given int64 and assigns it to the AccessTokenValiditySeconds field.
 func (o *Client) SetAccessTokenValiditySeconds(v int64) {
 	o.AccessTokenValiditySeconds = &v
@@ -162,15 +135,6 @@ func (o *Client) GetRefreshTokenValiditySecondsOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.RefreshTokenValiditySeconds, true
-}
-
-// IsSetRefreshTokenValiditySeconds returns a boolean if a field has been set.
-func (o *Client) IsSetRefreshTokenValiditySeconds() bool {
-	if o != nil && !IsNil(o.RefreshTokenValiditySeconds) {
-		return true
-	}
-
-	return false
 }
 
 // SetRefreshTokenValiditySeconds gets a reference to the given int64 and assigns it to the RefreshTokenValiditySeconds field.
@@ -196,15 +160,6 @@ func (o *Client) GetAuthoritiesOk() ([]string, bool) {
 	return o.Authorities, true
 }
 
-// IsSetAuthorities returns a boolean if a field has been set.
-func (o *Client) IsSetAuthorities() bool {
-	if o != nil && !IsNil(o.Authorities) {
-		return true
-	}
-
-	return false
-}
-
 // SetAuthorities gets a reference to the given []string and assigns it to the Authorities field.
 func (o *Client) SetAuthorities(v []string) {
 	o.Authorities = v
@@ -226,15 +181,6 @@ func (o *Client) GetAuthorizedGrantTypesOk() ([]string, bool) {
 		return nil, false
 	}
 	return o.AuthorizedGrantTypes, true
-}
-
-// IsSetAuthorizedGrantTypes returns a boolean if a field has been set.
-func (o *Client) IsSetAuthorizedGrantTypes() bool {
-	if o != nil && !IsNil(o.AuthorizedGrantTypes) {
-		return true
-	}
-
-	return false
 }
 
 // SetAuthorizedGrantTypes gets a reference to the given []string and assigns it to the AuthorizedGrantTypes field.
@@ -260,15 +206,6 @@ func (o *Client) GetScopesOk() ([]string, bool) {
 	return o.Scopes, true
 }
 
-// IsSetScopes returns a boolean if a field has been set.
-func (o *Client) IsSetScopes() bool {
-	if o != nil && !IsNil(o.Scopes) {
-		return true
-	}
-
-	return false
-}
-
 // SetScopes gets a reference to the given []string and assigns it to the Scopes field.
 func (o *Client) SetScopes(v []string) {
 	o.Scopes = v
@@ -290,15 +227,6 @@ func (o *Client) GetRedirectUrisOk() ([]string, bool) {
 		return nil, false
 	}
 	return o.RedirectUris, true
-}
-
-// IsSetRedirectUris returns a boolean if a field has been set.
-func (o *Client) IsSetRedirectUris() bool {
-	if o != nil && !IsNil(o.RedirectUris) {
-		return true
-	}
-
-	return false
 }
 
 // SetRedirectUris gets a reference to the given []string and assigns it to the RedirectUris field.

@@ -104,15 +104,6 @@ func (o *AddSecurityGroupRulesRequestRule) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *AddSecurityGroupRulesRequestRule) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *AddSecurityGroupRulesRequestRule) SetName(v string) {
 	o.Name = &v
@@ -134,15 +125,6 @@ func (o *AddSecurityGroupRulesRequestRule) GetDirectionOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Direction, true
-}
-
-// IsSetDirection returns a boolean if a field has been set.
-func (o *AddSecurityGroupRulesRequestRule) IsSetDirection() bool {
-	if o != nil && !IsNil(o.Direction) {
-		return true
-	}
-
-	return false
 }
 
 // SetDirection gets a reference to the given string and assigns it to the Direction field.
@@ -168,15 +150,6 @@ func (o *AddSecurityGroupRulesRequestRule) GetSourceTypeOk() (*string, bool) {
 	return o.SourceType, true
 }
 
-// IsSetSourceType returns a boolean if a field has been set.
-func (o *AddSecurityGroupRulesRequestRule) IsSetSourceType() bool {
-	if o != nil && !IsNil(o.SourceType) {
-		return true
-	}
-
-	return false
-}
-
 // SetSourceType gets a reference to the given string and assigns it to the SourceType field.
 func (o *AddSecurityGroupRulesRequestRule) SetSourceType(v string) {
 	o.SourceType = &v
@@ -198,15 +171,6 @@ func (o *AddSecurityGroupRulesRequestRule) GetSourceOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Source, true
-}
-
-// IsSetSource returns a boolean if a field has been set.
-func (o *AddSecurityGroupRulesRequestRule) IsSetSource() bool {
-	if o != nil && !IsNil(o.Source) {
-		return true
-	}
-
-	return false
 }
 
 // SetSource gets a reference to the given string and assigns it to the Source field.
@@ -232,15 +196,6 @@ func (o *AddSecurityGroupRulesRequestRule) GetSourceGroupOk() (*AddSecurityGroup
 	return o.SourceGroup, true
 }
 
-// IsSetSourceGroup returns a boolean if a field has been set.
-func (o *AddSecurityGroupRulesRequestRule) IsSetSourceGroup() bool {
-	if o != nil && !IsNil(o.SourceGroup) {
-		return true
-	}
-
-	return false
-}
-
 // SetSourceGroup gets a reference to the given AddSecurityGroupRulesRequestRuleSourceGroup and assigns it to the SourceGroup field.
 func (o *AddSecurityGroupRulesRequestRule) SetSourceGroup(v AddSecurityGroupRulesRequestRuleSourceGroup) {
 	o.SourceGroup = &v
@@ -262,15 +217,6 @@ func (o *AddSecurityGroupRulesRequestRule) GetSourceTierOk() (*AddSecurityGroupR
 		return nil, false
 	}
 	return o.SourceTier, true
-}
-
-// IsSetSourceTier returns a boolean if a field has been set.
-func (o *AddSecurityGroupRulesRequestRule) IsSetSourceTier() bool {
-	if o != nil && !IsNil(o.SourceTier) {
-		return true
-	}
-
-	return false
 }
 
 // SetSourceTier gets a reference to the given AddSecurityGroupRulesRequestRuleSourceTier and assigns it to the SourceTier field.
@@ -296,15 +242,6 @@ func (o *AddSecurityGroupRulesRequestRule) GetPortRangeOk() (*string, bool) {
 	return o.PortRange, true
 }
 
-// IsSetPortRange returns a boolean if a field has been set.
-func (o *AddSecurityGroupRulesRequestRule) IsSetPortRange() bool {
-	if o != nil && !IsNil(o.PortRange) {
-		return true
-	}
-
-	return false
-}
-
 // SetPortRange gets a reference to the given string and assigns it to the PortRange field.
 func (o *AddSecurityGroupRulesRequestRule) SetPortRange(v string) {
 	o.PortRange = &v
@@ -326,15 +263,6 @@ func (o *AddSecurityGroupRulesRequestRule) GetDestinationPortRangeOk() (*string,
 		return nil, false
 	}
 	return o.DestinationPortRange, true
-}
-
-// IsSetDestinationPortRange returns a boolean if a field has been set.
-func (o *AddSecurityGroupRulesRequestRule) IsSetDestinationPortRange() bool {
-	if o != nil && !IsNil(o.DestinationPortRange) {
-		return true
-	}
-
-	return false
 }
 
 // SetDestinationPortRange gets a reference to the given string and assigns it to the DestinationPortRange field.
@@ -384,15 +312,6 @@ func (o *AddSecurityGroupRulesRequestRule) GetDestinationTypeOk() (*string, bool
 	return o.DestinationType, true
 }
 
-// IsSetDestinationType returns a boolean if a field has been set.
-func (o *AddSecurityGroupRulesRequestRule) IsSetDestinationType() bool {
-	if o != nil && !IsNil(o.DestinationType) {
-		return true
-	}
-
-	return false
-}
-
 // SetDestinationType gets a reference to the given string and assigns it to the DestinationType field.
 func (o *AddSecurityGroupRulesRequestRule) SetDestinationType(v string) {
 	o.DestinationType = &v
@@ -414,15 +333,6 @@ func (o *AddSecurityGroupRulesRequestRule) GetDestinationOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Destination, true
-}
-
-// IsSetDestination returns a boolean if a field has been set.
-func (o *AddSecurityGroupRulesRequestRule) IsSetDestination() bool {
-	if o != nil && !IsNil(o.Destination) {
-		return true
-	}
-
-	return false
 }
 
 // SetDestination gets a reference to the given string and assigns it to the Destination field.
@@ -448,15 +358,6 @@ func (o *AddSecurityGroupRulesRequestRule) GetDestinationGroupOk() (*AddSecurity
 	return o.DestinationGroup, true
 }
 
-// IsSetDestinationGroup returns a boolean if a field has been set.
-func (o *AddSecurityGroupRulesRequestRule) IsSetDestinationGroup() bool {
-	if o != nil && !IsNil(o.DestinationGroup) {
-		return true
-	}
-
-	return false
-}
-
 // SetDestinationGroup gets a reference to the given AddSecurityGroupRulesRequestRuleDestinationGroup and assigns it to the DestinationGroup field.
 func (o *AddSecurityGroupRulesRequestRule) SetDestinationGroup(v AddSecurityGroupRulesRequestRuleDestinationGroup) {
 	o.DestinationGroup = &v
@@ -478,15 +379,6 @@ func (o *AddSecurityGroupRulesRequestRule) GetDestinationTierOk() (*AddSecurityG
 		return nil, false
 	}
 	return o.DestinationTier, true
-}
-
-// IsSetDestinationTier returns a boolean if a field has been set.
-func (o *AddSecurityGroupRulesRequestRule) IsSetDestinationTier() bool {
-	if o != nil && !IsNil(o.DestinationTier) {
-		return true
-	}
-
-	return false
 }
 
 // SetDestinationTier gets a reference to the given AddSecurityGroupRulesRequestRuleDestinationTier and assigns it to the DestinationTier field.
@@ -536,15 +428,6 @@ func (o *AddSecurityGroupRulesRequestRule) GetPolicyOk() (*string, bool) {
 	return o.Policy, true
 }
 
-// IsSetPolicy returns a boolean if a field has been set.
-func (o *AddSecurityGroupRulesRequestRule) IsSetPolicy() bool {
-	if o != nil && !IsNil(o.Policy) {
-		return true
-	}
-
-	return false
-}
-
 // SetPolicy gets a reference to the given string and assigns it to the Policy field.
 func (o *AddSecurityGroupRulesRequestRule) SetPolicy(v string) {
 	o.Policy = &v
@@ -566,15 +449,6 @@ func (o *AddSecurityGroupRulesRequestRule) GetInstanceTypeIdOk() (*int64, bool) 
 		return nil, false
 	}
 	return o.InstanceTypeId, true
-}
-
-// IsSetInstanceTypeId returns a boolean if a field has been set.
-func (o *AddSecurityGroupRulesRequestRule) IsSetInstanceTypeId() bool {
-	if o != nil && !IsNil(o.InstanceTypeId) {
-		return true
-	}
-
-	return false
 }
 
 // SetInstanceTypeId gets a reference to the given int64 and assigns it to the InstanceTypeId field.

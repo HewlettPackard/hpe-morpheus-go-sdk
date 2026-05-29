@@ -62,15 +62,6 @@ func (o *AddIntegrationSnowObjects200Response) GetObjectOk() (*AddIntegrationSno
 	return o.Object, true
 }
 
-// IsSetObject returns a boolean if a field has been set.
-func (o *AddIntegrationSnowObjects200Response) IsSetObject() bool {
-	if o != nil && !IsNil(o.Object) {
-		return true
-	}
-
-	return false
-}
-
 // SetObject gets a reference to the given AddIntegrationSnowObjects200ResponseAllOfObject and assigns it to the Object field.
 func (o *AddIntegrationSnowObjects200Response) SetObject(v AddIntegrationSnowObjects200ResponseAllOfObject) {
 	o.Object = &v
@@ -92,15 +83,6 @@ func (o *AddIntegrationSnowObjects200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *AddIntegrationSnowObjects200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

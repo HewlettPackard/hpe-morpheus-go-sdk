@@ -74,15 +74,6 @@ func (o *GetTaskTypes200ResponseTaskType) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetTaskTypes200ResponseTaskType) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetTaskTypes200ResponseTaskType) SetId(v int64) {
 	o.Id = &v
@@ -104,15 +95,6 @@ func (o *GetTaskTypes200ResponseTaskType) GetCodeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *GetTaskTypes200ResponseTaskType) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -138,15 +120,6 @@ func (o *GetTaskTypes200ResponseTaskType) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *GetTaskTypes200ResponseTaskType) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *GetTaskTypes200ResponseTaskType) SetName(v string) {
 	o.Name = &v
@@ -168,15 +141,6 @@ func (o *GetTaskTypes200ResponseTaskType) GetCategoryOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Category, true
-}
-
-// IsSetCategory returns a boolean if a field has been set.
-func (o *GetTaskTypes200ResponseTaskType) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
-		return true
-	}
-
-	return false
 }
 
 // SetCategory gets a reference to the given string and assigns it to the Category field.
@@ -203,28 +167,9 @@ func (o *GetTaskTypes200ResponseTaskType) GetDescriptionOk() (*string, bool) {
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *GetTaskTypes200ResponseTaskType) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *GetTaskTypes200ResponseTaskType) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *GetTaskTypes200ResponseTaskType) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *GetTaskTypes200ResponseTaskType) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetScriptable returns the Scriptable field value if set, zero value otherwise.
@@ -243,15 +188,6 @@ func (o *GetTaskTypes200ResponseTaskType) GetScriptableOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Scriptable, true
-}
-
-// IsSetScriptable returns a boolean if a field has been set.
-func (o *GetTaskTypes200ResponseTaskType) IsSetScriptable() bool {
-	if o != nil && !IsNil(o.Scriptable) {
-		return true
-	}
-
-	return false
 }
 
 // SetScriptable gets a reference to the given bool and assigns it to the Scriptable field.
@@ -277,15 +213,6 @@ func (o *GetTaskTypes200ResponseTaskType) GetEnabledOk() (*bool, bool) {
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *GetTaskTypes200ResponseTaskType) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *GetTaskTypes200ResponseTaskType) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -307,15 +234,6 @@ func (o *GetTaskTypes200ResponseTaskType) GetHasResultsOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.HasResults, true
-}
-
-// IsSetHasResults returns a boolean if a field has been set.
-func (o *GetTaskTypes200ResponseTaskType) IsSetHasResults() bool {
-	if o != nil && !IsNil(o.HasResults) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasResults gets a reference to the given bool and assigns it to the HasResults field.
@@ -342,28 +260,9 @@ func (o *GetTaskTypes200ResponseTaskType) GetAllowExecuteLocalOk() (*bool, bool)
 	return o.AllowExecuteLocal.Get(), o.AllowExecuteLocal.IsSet()
 }
 
-// IsSetAllowExecuteLocal returns a boolean if a field has been set.
-func (o *GetTaskTypes200ResponseTaskType) IsSetAllowExecuteLocal() bool {
-	if o != nil && o.AllowExecuteLocal.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAllowExecuteLocal gets a reference to the given NullableBool and assigns it to the AllowExecuteLocal field.
 func (o *GetTaskTypes200ResponseTaskType) SetAllowExecuteLocal(v bool) {
 	o.AllowExecuteLocal.Set(&v)
-}
-
-// SetAllowExecuteLocalNil sets the value for AllowExecuteLocal to be an explicit nil
-func (o *GetTaskTypes200ResponseTaskType) SetAllowExecuteLocalNil() {
-	o.AllowExecuteLocal.Set(nil)
-}
-
-// UnsetAllowExecuteLocal ensures that no value is present for AllowExecuteLocal, not even an explicit nil
-func (o *GetTaskTypes200ResponseTaskType) UnsetAllowExecuteLocal() {
-	o.AllowExecuteLocal.Unset()
 }
 
 // GetAllowExecuteRemote returns the AllowExecuteRemote field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -385,28 +284,9 @@ func (o *GetTaskTypes200ResponseTaskType) GetAllowExecuteRemoteOk() (*bool, bool
 	return o.AllowExecuteRemote.Get(), o.AllowExecuteRemote.IsSet()
 }
 
-// IsSetAllowExecuteRemote returns a boolean if a field has been set.
-func (o *GetTaskTypes200ResponseTaskType) IsSetAllowExecuteRemote() bool {
-	if o != nil && o.AllowExecuteRemote.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAllowExecuteRemote gets a reference to the given NullableBool and assigns it to the AllowExecuteRemote field.
 func (o *GetTaskTypes200ResponseTaskType) SetAllowExecuteRemote(v bool) {
 	o.AllowExecuteRemote.Set(&v)
-}
-
-// SetAllowExecuteRemoteNil sets the value for AllowExecuteRemote to be an explicit nil
-func (o *GetTaskTypes200ResponseTaskType) SetAllowExecuteRemoteNil() {
-	o.AllowExecuteRemote.Set(nil)
-}
-
-// UnsetAllowExecuteRemote ensures that no value is present for AllowExecuteRemote, not even an explicit nil
-func (o *GetTaskTypes200ResponseTaskType) UnsetAllowExecuteRemote() {
-	o.AllowExecuteRemote.Unset()
 }
 
 // GetAllowExecuteResource returns the AllowExecuteResource field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -428,28 +308,9 @@ func (o *GetTaskTypes200ResponseTaskType) GetAllowExecuteResourceOk() (*bool, bo
 	return o.AllowExecuteResource.Get(), o.AllowExecuteResource.IsSet()
 }
 
-// IsSetAllowExecuteResource returns a boolean if a field has been set.
-func (o *GetTaskTypes200ResponseTaskType) IsSetAllowExecuteResource() bool {
-	if o != nil && o.AllowExecuteResource.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAllowExecuteResource gets a reference to the given NullableBool and assigns it to the AllowExecuteResource field.
 func (o *GetTaskTypes200ResponseTaskType) SetAllowExecuteResource(v bool) {
 	o.AllowExecuteResource.Set(&v)
-}
-
-// SetAllowExecuteResourceNil sets the value for AllowExecuteResource to be an explicit nil
-func (o *GetTaskTypes200ResponseTaskType) SetAllowExecuteResourceNil() {
-	o.AllowExecuteResource.Set(nil)
-}
-
-// UnsetAllowExecuteResource ensures that no value is present for AllowExecuteResource, not even an explicit nil
-func (o *GetTaskTypes200ResponseTaskType) UnsetAllowExecuteResource() {
-	o.AllowExecuteResource.Unset()
 }
 
 // GetAllowLocalRepo returns the AllowLocalRepo field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -471,28 +332,9 @@ func (o *GetTaskTypes200ResponseTaskType) GetAllowLocalRepoOk() (*bool, bool) {
 	return o.AllowLocalRepo.Get(), o.AllowLocalRepo.IsSet()
 }
 
-// IsSetAllowLocalRepo returns a boolean if a field has been set.
-func (o *GetTaskTypes200ResponseTaskType) IsSetAllowLocalRepo() bool {
-	if o != nil && o.AllowLocalRepo.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAllowLocalRepo gets a reference to the given NullableBool and assigns it to the AllowLocalRepo field.
 func (o *GetTaskTypes200ResponseTaskType) SetAllowLocalRepo(v bool) {
 	o.AllowLocalRepo.Set(&v)
-}
-
-// SetAllowLocalRepoNil sets the value for AllowLocalRepo to be an explicit nil
-func (o *GetTaskTypes200ResponseTaskType) SetAllowLocalRepoNil() {
-	o.AllowLocalRepo.Set(nil)
-}
-
-// UnsetAllowLocalRepo ensures that no value is present for AllowLocalRepo, not even an explicit nil
-func (o *GetTaskTypes200ResponseTaskType) UnsetAllowLocalRepo() {
-	o.AllowLocalRepo.Unset()
 }
 
 // GetAllowRemoteKeyAuth returns the AllowRemoteKeyAuth field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -514,28 +356,9 @@ func (o *GetTaskTypes200ResponseTaskType) GetAllowRemoteKeyAuthOk() (*bool, bool
 	return o.AllowRemoteKeyAuth.Get(), o.AllowRemoteKeyAuth.IsSet()
 }
 
-// IsSetAllowRemoteKeyAuth returns a boolean if a field has been set.
-func (o *GetTaskTypes200ResponseTaskType) IsSetAllowRemoteKeyAuth() bool {
-	if o != nil && o.AllowRemoteKeyAuth.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAllowRemoteKeyAuth gets a reference to the given NullableBool and assigns it to the AllowRemoteKeyAuth field.
 func (o *GetTaskTypes200ResponseTaskType) SetAllowRemoteKeyAuth(v bool) {
 	o.AllowRemoteKeyAuth.Set(&v)
-}
-
-// SetAllowRemoteKeyAuthNil sets the value for AllowRemoteKeyAuth to be an explicit nil
-func (o *GetTaskTypes200ResponseTaskType) SetAllowRemoteKeyAuthNil() {
-	o.AllowRemoteKeyAuth.Set(nil)
-}
-
-// UnsetAllowRemoteKeyAuth ensures that no value is present for AllowRemoteKeyAuth, not even an explicit nil
-func (o *GetTaskTypes200ResponseTaskType) UnsetAllowRemoteKeyAuth() {
-	o.AllowRemoteKeyAuth.Unset()
 }
 
 // GetOptionTypes returns the OptionTypes field value if set, zero value otherwise.
@@ -554,15 +377,6 @@ func (o *GetTaskTypes200ResponseTaskType) GetOptionTypesOk() ([]GetTaskTypes200R
 		return nil, false
 	}
 	return o.OptionTypes, true
-}
-
-// IsSetOptionTypes returns a boolean if a field has been set.
-func (o *GetTaskTypes200ResponseTaskType) IsSetOptionTypes() bool {
-	if o != nil && !IsNil(o.OptionTypes) {
-		return true
-	}
-
-	return false
 }
 
 // SetOptionTypes gets a reference to the given []GetTaskTypes200ResponseTaskTypeOptionTypesInner and assigns it to the OptionTypes field.

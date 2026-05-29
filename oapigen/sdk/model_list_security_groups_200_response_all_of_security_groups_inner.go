@@ -75,15 +75,6 @@ func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) GetIdOk() (*int6
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) SetId(v int64) {
 	o.Id = &v
@@ -105,15 +96,6 @@ func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) GetNameOk() (*st
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -140,28 +122,9 @@ func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) GetDescriptionOk
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetAccountId returns the AccountId field value if set, zero value otherwise.
@@ -180,15 +143,6 @@ func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) GetAccountIdOk()
 		return nil, false
 	}
 	return o.AccountId, true
-}
-
-// IsSetAccountId returns a boolean if a field has been set.
-func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) IsSetAccountId() bool {
-	if o != nil && !IsNil(o.AccountId) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccountId gets a reference to the given int64 and assigns it to the AccountId field.
@@ -215,28 +169,9 @@ func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) GetGroupSourceOk
 	return o.GroupSource.Get(), o.GroupSource.IsSet()
 }
 
-// IsSetGroupSource returns a boolean if a field has been set.
-func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) IsSetGroupSource() bool {
-	if o != nil && o.GroupSource.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetGroupSource gets a reference to the given NullableString and assigns it to the GroupSource field.
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) SetGroupSource(v string) {
 	o.GroupSource.Set(&v)
-}
-
-// SetGroupSourceNil sets the value for GroupSource to be an explicit nil
-func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) SetGroupSourceNil() {
-	o.GroupSource.Set(nil)
-}
-
-// UnsetGroupSource ensures that no value is present for GroupSource, not even an explicit nil
-func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) UnsetGroupSource() {
-	o.GroupSource.Unset()
 }
 
 // GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -258,28 +193,9 @@ func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) GetExternalIdOk(
 	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) IsSetExternalId() bool {
-	if o != nil && o.ExternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) SetExternalId(v string) {
 	o.ExternalId.Set(&v)
-}
-
-// SetExternalIdNil sets the value for ExternalId to be an explicit nil
-func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) SetExternalIdNil() {
-	o.ExternalId.Set(nil)
-}
-
-// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) UnsetExternalId() {
-	o.ExternalId.Unset()
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -301,28 +217,9 @@ func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) GetEnabledOk() (
 	return o.Enabled.Get(), o.Enabled.IsSet()
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) IsSetEnabled() bool {
-	if o != nil && o.Enabled.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given NullableString and assigns it to the Enabled field.
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) SetEnabled(v string) {
 	o.Enabled.Set(&v)
-}
-
-// SetEnabledNil sets the value for Enabled to be an explicit nil
-func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) SetEnabledNil() {
-	o.Enabled.Set(nil)
-}
-
-// UnsetEnabled ensures that no value is present for Enabled, not even an explicit nil
-func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) UnsetEnabled() {
-	o.Enabled.Unset()
 }
 
 // GetSyncSource returns the SyncSource field value if set, zero value otherwise.
@@ -341,15 +238,6 @@ func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) GetSyncSourceOk(
 		return nil, false
 	}
 	return o.SyncSource, true
-}
-
-// IsSetSyncSource returns a boolean if a field has been set.
-func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) IsSetSyncSource() bool {
-	if o != nil && !IsNil(o.SyncSource) {
-		return true
-	}
-
-	return false
 }
 
 // SetSyncSource gets a reference to the given string and assigns it to the SyncSource field.
@@ -375,15 +263,6 @@ func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) GetVisibilityOk(
 	return o.Visibility, true
 }
 
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
-}
-
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) SetVisibility(v string) {
 	o.Visibility = &v
@@ -405,15 +284,6 @@ func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) GetActiveOk() (*
 		return nil, false
 	}
 	return o.Active, true
-}
-
-// IsSetActive returns a boolean if a field has been set.
-func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
 }
 
 // SetActive gets a reference to the given bool and assigns it to the Active field.
@@ -439,15 +309,6 @@ func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) GetZoneOk() (*Li
 	return o.Zone, true
 }
 
-// IsSetZone returns a boolean if a field has been set.
-func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) IsSetZone() bool {
-	if o != nil && !IsNil(o.Zone) {
-		return true
-	}
-
-	return false
-}
-
 // SetZone gets a reference to the given ListSecurityGroups200ResponseAllOfSecurityGroupsInnerZone and assigns it to the Zone field.
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) SetZone(v ListSecurityGroups200ResponseAllOfSecurityGroupsInnerZone) {
 	o.Zone = &v
@@ -469,15 +330,6 @@ func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) GetLocationsOk()
 		return nil, false
 	}
 	return o.Locations, true
-}
-
-// IsSetLocations returns a boolean if a field has been set.
-func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) IsSetLocations() bool {
-	if o != nil && !IsNil(o.Locations) {
-		return true
-	}
-
-	return false
 }
 
 // SetLocations gets a reference to the given []ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner and assigns it to the Locations field.
@@ -503,15 +355,6 @@ func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) GetRulesOk() ([]
 	return o.Rules, true
 }
 
-// IsSetRules returns a boolean if a field has been set.
-func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) IsSetRules() bool {
-	if o != nil && !IsNil(o.Rules) {
-		return true
-	}
-
-	return false
-}
-
 // SetRules gets a reference to the given []ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner and assigns it to the Rules field.
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) SetRules(v []ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) {
 	o.Rules = v
@@ -535,15 +378,6 @@ func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) GetTenantsOk() (
 	return o.Tenants, true
 }
 
-// IsSetTenants returns a boolean if a field has been set.
-func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) IsSetTenants() bool {
-	if o != nil && !IsNil(o.Tenants) {
-		return true
-	}
-
-	return false
-}
-
 // SetTenants gets a reference to the given []ListSecurityGroups200ResponseAllOfSecurityGroupsInnerTenantsInner and assigns it to the Tenants field.
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) SetTenants(v []ListSecurityGroups200ResponseAllOfSecurityGroupsInnerTenantsInner) {
 	o.Tenants = v
@@ -565,15 +399,6 @@ func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) GetResourcePermi
 		return nil, false
 	}
 	return o.ResourcePermission, true
-}
-
-// IsSetResourcePermission returns a boolean if a field has been set.
-func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) IsSetResourcePermission() bool {
-	if o != nil && !IsNil(o.ResourcePermission) {
-		return true
-	}
-
-	return false
 }
 
 // SetResourcePermission gets a reference to the given ListSecurityGroups200ResponseAllOfSecurityGroupsInnerResourcePermission and assigns it to the ResourcePermission field.

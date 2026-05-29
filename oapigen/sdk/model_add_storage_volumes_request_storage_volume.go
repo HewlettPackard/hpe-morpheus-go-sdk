@@ -119,15 +119,6 @@ func (o *AddStorageVolumesRequestStorageVolume) GetConfigOk() (map[string]interf
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *AddStorageVolumesRequestStorageVolume) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
 func (o *AddStorageVolumesRequestStorageVolume) SetConfig(v map[string]interface{}) {
 	o.Config = v
@@ -173,15 +164,6 @@ func (o *AddStorageVolumesRequestStorageVolume) GetStorageGroupOk() (*AddStorage
 		return nil, false
 	}
 	return o.StorageGroup, true
-}
-
-// IsSetStorageGroup returns a boolean if a field has been set.
-func (o *AddStorageVolumesRequestStorageVolume) IsSetStorageGroup() bool {
-	if o != nil && !IsNil(o.StorageGroup) {
-		return true
-	}
-
-	return false
 }
 
 // SetStorageGroup gets a reference to the given AddStorageVolumesRequestStorageVolumeStorageGroup and assigns it to the StorageGroup field.

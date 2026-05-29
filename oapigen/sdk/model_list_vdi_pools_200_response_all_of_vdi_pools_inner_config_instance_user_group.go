@@ -61,15 +61,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstanceUserGroup) GetId
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstanceUserGroup) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given string and assigns it to the Id field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstanceUserGroup) SetId(v string) {
 	o.Id = &v

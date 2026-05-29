@@ -61,15 +61,6 @@ func (o *UpdateNetworkRouterFirewallRuleGroupRequest) GetRuleGroupOk() (map[stri
 	return o.RuleGroup, true
 }
 
-// IsSetRuleGroup returns a boolean if a field has been set.
-func (o *UpdateNetworkRouterFirewallRuleGroupRequest) IsSetRuleGroup() bool {
-	if o != nil && !IsNil(o.RuleGroup) {
-		return true
-	}
-
-	return false
-}
-
 // SetRuleGroup gets a reference to the given map[string]interface{} and assigns it to the RuleGroup field.
 func (o *UpdateNetworkRouterFirewallRuleGroupRequest) SetRuleGroup(v map[string]interface{}) {
 	o.RuleGroup = v

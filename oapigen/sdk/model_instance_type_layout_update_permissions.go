@@ -61,15 +61,6 @@ func (o *InstanceTypeLayoutUpdatePermissions) GetResourcePermissionsOk() (*Insta
 	return o.ResourcePermissions, true
 }
 
-// IsSetResourcePermissions returns a boolean if a field has been set.
-func (o *InstanceTypeLayoutUpdatePermissions) IsSetResourcePermissions() bool {
-	if o != nil && !IsNil(o.ResourcePermissions) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourcePermissions gets a reference to the given InstanceTypeLayoutUpdatePermissionsResourcePermissions and assigns it to the ResourcePermissions field.
 func (o *InstanceTypeLayoutUpdatePermissions) SetResourcePermissions(v InstanceTypeLayoutUpdatePermissionsResourcePermissions) {
 	o.ResourcePermissions = &v

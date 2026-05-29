@@ -62,15 +62,6 @@ func (o *IntegrationSaltMasterConfigIntegrationConfig) GetSaltApplyOnMinionOk() 
 	return o.SaltApplyOnMinion, true
 }
 
-// IsSetSaltApplyOnMinion returns a boolean if a field has been set.
-func (o *IntegrationSaltMasterConfigIntegrationConfig) IsSetSaltApplyOnMinion() bool {
-	if o != nil && !IsNil(o.SaltApplyOnMinion) {
-		return true
-	}
-
-	return false
-}
-
 // SetSaltApplyOnMinion gets a reference to the given bool and assigns it to the SaltApplyOnMinion field.
 func (o *IntegrationSaltMasterConfigIntegrationConfig) SetSaltApplyOnMinion(v bool) {
 	o.SaltApplyOnMinion = &v

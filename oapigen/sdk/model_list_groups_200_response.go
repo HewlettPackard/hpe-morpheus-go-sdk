@@ -62,15 +62,6 @@ func (o *ListGroups200Response) GetGroupsOk() ([]ListGroups200ResponseAllOfGroup
 	return o.Groups, true
 }
 
-// IsSetGroups returns a boolean if a field has been set.
-func (o *ListGroups200Response) IsSetGroups() bool {
-	if o != nil && !IsNil(o.Groups) {
-		return true
-	}
-
-	return false
-}
-
 // SetGroups gets a reference to the given []ListGroups200ResponseAllOfGroupsInner and assigns it to the Groups field.
 func (o *ListGroups200Response) SetGroups(v []ListGroups200ResponseAllOfGroupsInner) {
 	o.Groups = v
@@ -92,15 +83,6 @@ func (o *ListGroups200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta,
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListGroups200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

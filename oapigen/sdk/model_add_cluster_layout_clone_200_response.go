@@ -62,15 +62,6 @@ func (o *AddClusterLayoutClone200Response) GetSuccessOk() (*bool, bool) {
 	return o.Success, true
 }
 
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *AddClusterLayoutClone200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
-}
-
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.
 func (o *AddClusterLayoutClone200Response) SetSuccess(v bool) {
 	o.Success = &v
@@ -95,28 +86,9 @@ func (o *AddClusterLayoutClone200Response) GetIdOk() (*int64, bool) {
 	return o.Id.Get(), o.Id.IsSet()
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *AddClusterLayoutClone200Response) IsSetId() bool {
-	if o != nil && o.Id.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given NullableInt64 and assigns it to the Id field.
 func (o *AddClusterLayoutClone200Response) SetId(v int64) {
 	o.Id.Set(&v)
-}
-
-// SetIdNil sets the value for Id to be an explicit nil
-func (o *AddClusterLayoutClone200Response) SetIdNil() {
-	o.Id.Set(nil)
-}
-
-// UnsetId ensures that no value is present for Id, not even an explicit nil
-func (o *AddClusterLayoutClone200Response) UnsetId() {
-	o.Id.Unset()
 }
 
 func (o AddClusterLayoutClone200Response) MarshalJSON() ([]byte, error) {

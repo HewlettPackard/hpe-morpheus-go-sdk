@@ -64,15 +64,6 @@ func (o *GetLicense200Response) GetLicenseOk() (*GetLicense200ResponseLicense, b
 	return o.License, true
 }
 
-// IsSetLicense returns a boolean if a field has been set.
-func (o *GetLicense200Response) IsSetLicense() bool {
-	if o != nil && !IsNil(o.License) {
-		return true
-	}
-
-	return false
-}
-
 // SetLicense gets a reference to the given GetLicense200ResponseLicense and assigns it to the License field.
 func (o *GetLicense200Response) SetLicense(v GetLicense200ResponseLicense) {
 	o.License = &v
@@ -96,15 +87,6 @@ func (o *GetLicense200Response) GetInstalledLicensesOk() ([]GetLicense200Respons
 	return o.InstalledLicenses, true
 }
 
-// IsSetInstalledLicenses returns a boolean if a field has been set.
-func (o *GetLicense200Response) IsSetInstalledLicenses() bool {
-	if o != nil && !IsNil(o.InstalledLicenses) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstalledLicenses gets a reference to the given []GetLicense200ResponseInstalledLicensesInner and assigns it to the InstalledLicenses field.
 func (o *GetLicense200Response) SetInstalledLicenses(v []GetLicense200ResponseInstalledLicensesInner) {
 	o.InstalledLicenses = v
@@ -126,15 +108,6 @@ func (o *GetLicense200Response) GetCurrentUsageOk() (*GetLicense200ResponseCurre
 		return nil, false
 	}
 	return o.CurrentUsage, true
-}
-
-// IsSetCurrentUsage returns a boolean if a field has been set.
-func (o *GetLicense200Response) IsSetCurrentUsage() bool {
-	if o != nil && !IsNil(o.CurrentUsage) {
-		return true
-	}
-
-	return false
 }
 
 // SetCurrentUsage gets a reference to the given GetLicense200ResponseCurrentUsage and assigns it to the CurrentUsage field.

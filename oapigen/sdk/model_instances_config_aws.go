@@ -91,28 +91,9 @@ func (o *InstancesConfigAWS) GetNoAgentOk() (*bool, bool) {
 	return o.NoAgent.Get(), o.NoAgent.IsSet()
 }
 
-// IsSetNoAgent returns a boolean if a field has been set.
-func (o *InstancesConfigAWS) IsSetNoAgent() bool {
-	if o != nil && o.NoAgent.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNoAgent gets a reference to the given NullableBool and assigns it to the NoAgent field.
 func (o *InstancesConfigAWS) SetNoAgent(v bool) {
 	o.NoAgent.Set(&v)
-}
-
-// SetNoAgentNil sets the value for NoAgent to be an explicit nil
-func (o *InstancesConfigAWS) SetNoAgentNil() {
-	o.NoAgent.Set(nil)
-}
-
-// UnsetNoAgent ensures that no value is present for NoAgent, not even an explicit nil
-func (o *InstancesConfigAWS) UnsetNoAgent() {
-	o.NoAgent.Unset()
 }
 
 // GetCreateUser returns the CreateUser field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -134,28 +115,9 @@ func (o *InstancesConfigAWS) GetCreateUserOk() (*bool, bool) {
 	return o.CreateUser.Get(), o.CreateUser.IsSet()
 }
 
-// IsSetCreateUser returns a boolean if a field has been set.
-func (o *InstancesConfigAWS) IsSetCreateUser() bool {
-	if o != nil && o.CreateUser.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCreateUser gets a reference to the given NullableBool and assigns it to the CreateUser field.
 func (o *InstancesConfigAWS) SetCreateUser(v bool) {
 	o.CreateUser.Set(&v)
-}
-
-// SetCreateUserNil sets the value for CreateUser to be an explicit nil
-func (o *InstancesConfigAWS) SetCreateUserNil() {
-	o.CreateUser.Set(nil)
-}
-
-// UnsetCreateUser ensures that no value is present for CreateUser, not even an explicit nil
-func (o *InstancesConfigAWS) UnsetCreateUser() {
-	o.CreateUser.Unset()
 }
 
 // GetIsEC2 returns the IsEC2 field value if set, zero value otherwise.
@@ -174,15 +136,6 @@ func (o *InstancesConfigAWS) GetIsEC2Ok() (*string, bool) {
 		return nil, false
 	}
 	return o.IsEC2, true
-}
-
-// IsSetIsEC2 returns a boolean if a field has been set.
-func (o *InstancesConfigAWS) IsSetIsEC2() bool {
-	if o != nil && !IsNil(o.IsEC2) {
-		return true
-	}
-
-	return false
 }
 
 // SetIsEC2 gets a reference to the given string and assigns it to the IsEC2 field.
@@ -208,15 +161,6 @@ func (o *InstancesConfigAWS) GetAvailabilityIdOk() (*string, bool) {
 	return o.AvailabilityId, true
 }
 
-// IsSetAvailabilityId returns a boolean if a field has been set.
-func (o *InstancesConfigAWS) IsSetAvailabilityId() bool {
-	if o != nil && !IsNil(o.AvailabilityId) {
-		return true
-	}
-
-	return false
-}
-
 // SetAvailabilityId gets a reference to the given string and assigns it to the AvailabilityId field.
 func (o *InstancesConfigAWS) SetAvailabilityId(v string) {
 	o.AvailabilityId = &v
@@ -238,15 +182,6 @@ func (o *InstancesConfigAWS) GetSecurityIdOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SecurityId, true
-}
-
-// IsSetSecurityId returns a boolean if a field has been set.
-func (o *InstancesConfigAWS) IsSetSecurityId() bool {
-	if o != nil && !IsNil(o.SecurityId) {
-		return true
-	}
-
-	return false
 }
 
 // SetSecurityId gets a reference to the given string and assigns it to the SecurityId field.
@@ -272,15 +207,6 @@ func (o *InstancesConfigAWS) GetPublicIpTypeOk() (*string, bool) {
 	return o.PublicIpType, true
 }
 
-// IsSetPublicIpType returns a boolean if a field has been set.
-func (o *InstancesConfigAWS) IsSetPublicIpType() bool {
-	if o != nil && !IsNil(o.PublicIpType) {
-		return true
-	}
-
-	return false
-}
-
 // SetPublicIpType gets a reference to the given string and assigns it to the PublicIpType field.
 func (o *InstancesConfigAWS) SetPublicIpType(v string) {
 	o.PublicIpType = &v
@@ -302,15 +228,6 @@ func (o *InstancesConfigAWS) GetInstanceProfileOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InstanceProfile, true
-}
-
-// IsSetInstanceProfile returns a boolean if a field has been set.
-func (o *InstancesConfigAWS) IsSetInstanceProfile() bool {
-	if o != nil && !IsNil(o.InstanceProfile) {
-		return true
-	}
-
-	return false
 }
 
 // SetInstanceProfile gets a reference to the given string and assigns it to the InstanceProfile field.
@@ -336,15 +253,6 @@ func (o *InstancesConfigAWS) GetKmsKeyIdOk() (*string, bool) {
 	return o.KmsKeyId, true
 }
 
-// IsSetKmsKeyId returns a boolean if a field has been set.
-func (o *InstancesConfigAWS) IsSetKmsKeyId() bool {
-	if o != nil && !IsNil(o.KmsKeyId) {
-		return true
-	}
-
-	return false
-}
-
 // SetKmsKeyId gets a reference to the given string and assigns it to the KmsKeyId field.
 func (o *InstancesConfigAWS) SetKmsKeyId(v string) {
 	o.KmsKeyId = &v
@@ -366,15 +274,6 @@ func (o *InstancesConfigAWS) GetResourcePoolIdOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ResourcePoolId, true
-}
-
-// IsSetResourcePoolId returns a boolean if a field has been set.
-func (o *InstancesConfigAWS) IsSetResourcePoolId() bool {
-	if o != nil && !IsNil(o.ResourcePoolId) {
-		return true
-	}
-
-	return false
 }
 
 // SetResourcePoolId gets a reference to the given string and assigns it to the ResourcePoolId field.

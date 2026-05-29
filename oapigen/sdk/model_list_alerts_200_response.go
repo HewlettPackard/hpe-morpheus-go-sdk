@@ -62,15 +62,6 @@ func (o *ListAlerts200Response) GetAlertsOk() ([]ListAlerts200ResponseAllOfAlert
 	return o.Alerts, true
 }
 
-// IsSetAlerts returns a boolean if a field has been set.
-func (o *ListAlerts200Response) IsSetAlerts() bool {
-	if o != nil && !IsNil(o.Alerts) {
-		return true
-	}
-
-	return false
-}
-
 // SetAlerts gets a reference to the given []ListAlerts200ResponseAllOfAlertsInner and assigns it to the Alerts field.
 func (o *ListAlerts200Response) SetAlerts(v []ListAlerts200ResponseAllOfAlertsInner) {
 	o.Alerts = v
@@ -92,15 +83,6 @@ func (o *ListAlerts200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta,
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListAlerts200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

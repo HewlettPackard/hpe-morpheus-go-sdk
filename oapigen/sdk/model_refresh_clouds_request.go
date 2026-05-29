@@ -66,15 +66,6 @@ func (o *RefreshCloudsRequest) GetModeOk() (*string, bool) {
 	return o.Mode, true
 }
 
-// IsSetMode returns a boolean if a field has been set.
-func (o *RefreshCloudsRequest) IsSetMode() bool {
-	if o != nil && !IsNil(o.Mode) {
-		return true
-	}
-
-	return false
-}
-
 // SetMode gets a reference to the given string and assigns it to the Mode field.
 func (o *RefreshCloudsRequest) SetMode(v string) {
 	o.Mode = &v
@@ -98,15 +89,6 @@ func (o *RefreshCloudsRequest) GetRebuildOk() (*string, bool) {
 	return o.Rebuild, true
 }
 
-// IsSetRebuild returns a boolean if a field has been set.
-func (o *RefreshCloudsRequest) IsSetRebuild() bool {
-	if o != nil && !IsNil(o.Rebuild) {
-		return true
-	}
-
-	return false
-}
-
 // SetRebuild gets a reference to the given string and assigns it to the Rebuild field.
 func (o *RefreshCloudsRequest) SetRebuild(v string) {
 	o.Rebuild = &v
@@ -128,15 +110,6 @@ func (o *RefreshCloudsRequest) GetPeriodOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Period, true
-}
-
-// IsSetPeriod returns a boolean if a field has been set.
-func (o *RefreshCloudsRequest) IsSetPeriod() bool {
-	if o != nil && !IsNil(o.Period) {
-		return true
-	}
-
-	return false
 }
 
 // SetPeriod gets a reference to the given string and assigns it to the Period field.

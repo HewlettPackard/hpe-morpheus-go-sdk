@@ -61,15 +61,6 @@ func (o *UpdateCredentialsRequestCredentialOneOf4Integration) GetIdOk() (*Update
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *UpdateCredentialsRequestCredentialOneOf4Integration) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given UpdateCredentialsRequestCredentialOneOf4IntegrationId and assigns it to the Id field.
 func (o *UpdateCredentialsRequestCredentialOneOf4Integration) SetId(v UpdateCredentialsRequestCredentialOneOf4IntegrationId) {
 	o.Id = &v

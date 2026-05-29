@@ -122,15 +122,6 @@ func (o *UpdateBlueprintRequestOneOf1CloudFormation) GetJsonOk() (*string, bool)
 	return o.Json, true
 }
 
-// IsSetJson returns a boolean if a field has been set.
-func (o *UpdateBlueprintRequestOneOf1CloudFormation) IsSetJson() bool {
-	if o != nil && !IsNil(o.Json) {
-		return true
-	}
-
-	return false
-}
-
 // SetJson gets a reference to the given string and assigns it to the Json field.
 func (o *UpdateBlueprintRequestOneOf1CloudFormation) SetJson(v string) {
 	o.Json = &v
@@ -152,15 +143,6 @@ func (o *UpdateBlueprintRequestOneOf1CloudFormation) GetYamlOk() (*string, bool)
 		return nil, false
 	}
 	return o.Yaml, true
-}
-
-// IsSetYaml returns a boolean if a field has been set.
-func (o *UpdateBlueprintRequestOneOf1CloudFormation) IsSetYaml() bool {
-	if o != nil && !IsNil(o.Yaml) {
-		return true
-	}
-
-	return false
 }
 
 // SetYaml gets a reference to the given string and assigns it to the Yaml field.
@@ -186,15 +168,6 @@ func (o *UpdateBlueprintRequestOneOf1CloudFormation) GetGitOk() (*UpdateBlueprin
 	return o.Git, true
 }
 
-// IsSetGit returns a boolean if a field has been set.
-func (o *UpdateBlueprintRequestOneOf1CloudFormation) IsSetGit() bool {
-	if o != nil && !IsNil(o.Git) {
-		return true
-	}
-
-	return false
-}
-
 // SetGit gets a reference to the given UpdateBlueprintRequestOneOf1CloudFormationGit and assigns it to the Git field.
 func (o *UpdateBlueprintRequestOneOf1CloudFormation) SetGit(v UpdateBlueprintRequestOneOf1CloudFormationGit) {
 	o.Git = &v
@@ -216,15 +189,6 @@ func (o *UpdateBlueprintRequestOneOf1CloudFormation) GetIAMOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.IAM, true
-}
-
-// IsSetIAM returns a boolean if a field has been set.
-func (o *UpdateBlueprintRequestOneOf1CloudFormation) IsSetIAM() bool {
-	if o != nil && !IsNil(o.IAM) {
-		return true
-	}
-
-	return false
 }
 
 // SetIAM gets a reference to the given bool and assigns it to the IAM field.
@@ -250,15 +214,6 @@ func (o *UpdateBlueprintRequestOneOf1CloudFormation) GetCAPABILITY_NAMED_IAMOk()
 	return o.CAPABILITY_NAMED_IAM, true
 }
 
-// IsSetCAPABILITY_NAMED_IAM returns a boolean if a field has been set.
-func (o *UpdateBlueprintRequestOneOf1CloudFormation) IsSetCAPABILITY_NAMED_IAM() bool {
-	if o != nil && !IsNil(o.CAPABILITY_NAMED_IAM) {
-		return true
-	}
-
-	return false
-}
-
 // SetCAPABILITY_NAMED_IAM gets a reference to the given bool and assigns it to the CAPABILITY_NAMED_IAM field.
 func (o *UpdateBlueprintRequestOneOf1CloudFormation) SetCAPABILITY_NAMED_IAM(v bool) {
 	o.CAPABILITY_NAMED_IAM = &v
@@ -280,15 +235,6 @@ func (o *UpdateBlueprintRequestOneOf1CloudFormation) GetCAPABILITY_AUTO_EXPANDOk
 		return nil, false
 	}
 	return o.CAPABILITY_AUTO_EXPAND, true
-}
-
-// IsSetCAPABILITY_AUTO_EXPAND returns a boolean if a field has been set.
-func (o *UpdateBlueprintRequestOneOf1CloudFormation) IsSetCAPABILITY_AUTO_EXPAND() bool {
-	if o != nil && !IsNil(o.CAPABILITY_AUTO_EXPAND) {
-		return true
-	}
-
-	return false
 }
 
 // SetCAPABILITY_AUTO_EXPAND gets a reference to the given bool and assigns it to the CAPABILITY_AUTO_EXPAND field.
@@ -314,15 +260,6 @@ func (o *UpdateBlueprintRequestOneOf1CloudFormation) GetInstallAgentOk() (*bool,
 	return o.InstallAgent, true
 }
 
-// IsSetInstallAgent returns a boolean if a field has been set.
-func (o *UpdateBlueprintRequestOneOf1CloudFormation) IsSetInstallAgent() bool {
-	if o != nil && !IsNil(o.InstallAgent) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstallAgent gets a reference to the given bool and assigns it to the InstallAgent field.
 func (o *UpdateBlueprintRequestOneOf1CloudFormation) SetInstallAgent(v bool) {
 	o.InstallAgent = &v
@@ -344,15 +281,6 @@ func (o *UpdateBlueprintRequestOneOf1CloudFormation) GetCloudInitEnabledOk() (*b
 		return nil, false
 	}
 	return o.CloudInitEnabled, true
-}
-
-// IsSetCloudInitEnabled returns a boolean if a field has been set.
-func (o *UpdateBlueprintRequestOneOf1CloudFormation) IsSetCloudInitEnabled() bool {
-	if o != nil && !IsNil(o.CloudInitEnabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetCloudInitEnabled gets a reference to the given bool and assigns it to the CloudInitEnabled field.

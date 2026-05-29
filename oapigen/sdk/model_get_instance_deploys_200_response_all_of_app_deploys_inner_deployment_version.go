@@ -63,15 +63,6 @@ func (o *GetInstanceDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion) Get
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetInstanceDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetInstanceDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion) SetId(v int64) {
 	o.Id = &v
@@ -95,15 +86,6 @@ func (o *GetInstanceDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion) Get
 	return o.UserVersion, true
 }
 
-// IsSetUserVersion returns a boolean if a field has been set.
-func (o *GetInstanceDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion) IsSetUserVersion() bool {
-	if o != nil && !IsNil(o.UserVersion) {
-		return true
-	}
-
-	return false
-}
-
 // SetUserVersion gets a reference to the given string and assigns it to the UserVersion field.
 func (o *GetInstanceDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion) SetUserVersion(v string) {
 	o.UserVersion = &v
@@ -125,15 +107,6 @@ func (o *GetInstanceDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion) Get
 		return nil, false
 	}
 	return o.DeployType, true
-}
-
-// IsSetDeployType returns a boolean if a field has been set.
-func (o *GetInstanceDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion) IsSetDeployType() bool {
-	if o != nil && !IsNil(o.DeployType) {
-		return true
-	}
-
-	return false
 }
 
 // SetDeployType gets a reference to the given string and assigns it to the DeployType field.

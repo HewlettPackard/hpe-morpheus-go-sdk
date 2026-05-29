@@ -61,15 +61,6 @@ func (o *UpdateCertificateRequest) GetCertificateOk() (*UpdateCertificateRequest
 	return o.Certificate, true
 }
 
-// IsSetCertificate returns a boolean if a field has been set.
-func (o *UpdateCertificateRequest) IsSetCertificate() bool {
-	if o != nil && !IsNil(o.Certificate) {
-		return true
-	}
-
-	return false
-}
-
 // SetCertificate gets a reference to the given UpdateCertificateRequestCertificate and assigns it to the Certificate field.
 func (o *UpdateCertificateRequest) SetCertificate(v UpdateCertificateRequestCertificate) {
 	o.Certificate = &v

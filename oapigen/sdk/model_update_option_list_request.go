@@ -61,15 +61,6 @@ func (o *UpdateOptionListRequest) GetOptionTypeListOk() (*UpdateOptionListReques
 	return o.OptionTypeList, true
 }
 
-// IsSetOptionTypeList returns a boolean if a field has been set.
-func (o *UpdateOptionListRequest) IsSetOptionTypeList() bool {
-	if o != nil && !IsNil(o.OptionTypeList) {
-		return true
-	}
-
-	return false
-}
-
 // SetOptionTypeList gets a reference to the given UpdateOptionListRequestOptionTypeList and assigns it to the OptionTypeList field.
 func (o *UpdateOptionListRequest) SetOptionTypeList(v UpdateOptionListRequestOptionTypeList) {
 	o.OptionTypeList = &v

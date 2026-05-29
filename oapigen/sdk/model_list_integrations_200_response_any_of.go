@@ -61,15 +61,6 @@ func (o *ListIntegrations200ResponseAnyOf) GetIntegrationsOk() ([]ListIntegratio
 	return o.Integrations, true
 }
 
-// IsSetIntegrations returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOf) IsSetIntegrations() bool {
-	if o != nil && !IsNil(o.Integrations) {
-		return true
-	}
-
-	return false
-}
-
 // SetIntegrations gets a reference to the given []ListIntegrations200ResponseAnyOfIntegrationsInner and assigns it to the Integrations field.
 func (o *ListIntegrations200ResponseAnyOf) SetIntegrations(v []ListIntegrations200ResponseAnyOfIntegrationsInner) {
 	o.Integrations = v

@@ -90,15 +90,6 @@ func (o *GuidanceVmwareSizingPlanBeforeAction) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingPlanBeforeAction) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GuidanceVmwareSizingPlanBeforeAction) SetId(v int64) {
 	o.Id = &v
@@ -120,15 +111,6 @@ func (o *GuidanceVmwareSizingPlanBeforeAction) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingPlanBeforeAction) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -154,15 +136,6 @@ func (o *GuidanceVmwareSizingPlanBeforeAction) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingPlanBeforeAction) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *GuidanceVmwareSizingPlanBeforeAction) SetCode(v string) {
 	o.Code = &v
@@ -186,15 +159,6 @@ func (o *GuidanceVmwareSizingPlanBeforeAction) GetActiveOk() (*bool, bool) {
 	return o.Active, true
 }
 
-// IsSetActive returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingPlanBeforeAction) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
-}
-
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *GuidanceVmwareSizingPlanBeforeAction) SetActive(v bool) {
 	o.Active = &v
@@ -216,15 +180,6 @@ func (o *GuidanceVmwareSizingPlanBeforeAction) GetSortOrderOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.SortOrder, true
-}
-
-// IsSetSortOrder returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingPlanBeforeAction) IsSetSortOrder() bool {
-	if o != nil && !IsNil(o.SortOrder) {
-		return true
-	}
-
-	return false
 }
 
 // SetSortOrder gets a reference to the given int64 and assigns it to the SortOrder field.
@@ -251,28 +206,9 @@ func (o *GuidanceVmwareSizingPlanBeforeAction) GetDescriptionOk() (*string, bool
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingPlanBeforeAction) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *GuidanceVmwareSizingPlanBeforeAction) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *GuidanceVmwareSizingPlanBeforeAction) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *GuidanceVmwareSizingPlanBeforeAction) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetMaxStorage returns the MaxStorage field value if set, zero value otherwise.
@@ -291,15 +227,6 @@ func (o *GuidanceVmwareSizingPlanBeforeAction) GetMaxStorageOk() (*int64, bool) 
 		return nil, false
 	}
 	return o.MaxStorage, true
-}
-
-// IsSetMaxStorage returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingPlanBeforeAction) IsSetMaxStorage() bool {
-	if o != nil && !IsNil(o.MaxStorage) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxStorage gets a reference to the given int64 and assigns it to the MaxStorage field.
@@ -323,15 +250,6 @@ func (o *GuidanceVmwareSizingPlanBeforeAction) GetMaxMemoryOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.MaxMemory, true
-}
-
-// IsSetMaxMemory returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingPlanBeforeAction) IsSetMaxMemory() bool {
-	if o != nil && !IsNil(o.MaxMemory) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxMemory gets a reference to the given int64 and assigns it to the MaxMemory field.
@@ -358,28 +276,9 @@ func (o *GuidanceVmwareSizingPlanBeforeAction) GetMaxCpuOk() (*string, bool) {
 	return o.MaxCpu.Get(), o.MaxCpu.IsSet()
 }
 
-// IsSetMaxCpu returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingPlanBeforeAction) IsSetMaxCpu() bool {
-	if o != nil && o.MaxCpu.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxCpu gets a reference to the given NullableString and assigns it to the MaxCpu field.
 func (o *GuidanceVmwareSizingPlanBeforeAction) SetMaxCpu(v string) {
 	o.MaxCpu.Set(&v)
-}
-
-// SetMaxCpuNil sets the value for MaxCpu to be an explicit nil
-func (o *GuidanceVmwareSizingPlanBeforeAction) SetMaxCpuNil() {
-	o.MaxCpu.Set(nil)
-}
-
-// UnsetMaxCpu ensures that no value is present for MaxCpu, not even an explicit nil
-func (o *GuidanceVmwareSizingPlanBeforeAction) UnsetMaxCpu() {
-	o.MaxCpu.Unset()
 }
 
 // GetMaxCores returns the MaxCores field value if set, zero value otherwise.
@@ -398,15 +297,6 @@ func (o *GuidanceVmwareSizingPlanBeforeAction) GetMaxCoresOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.MaxCores, true
-}
-
-// IsSetMaxCores returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingPlanBeforeAction) IsSetMaxCores() bool {
-	if o != nil && !IsNil(o.MaxCores) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxCores gets a reference to the given int64 and assigns it to the MaxCores field.
@@ -433,28 +323,9 @@ func (o *GuidanceVmwareSizingPlanBeforeAction) GetMaxDisksOk() (*string, bool) {
 	return o.MaxDisks.Get(), o.MaxDisks.IsSet()
 }
 
-// IsSetMaxDisks returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingPlanBeforeAction) IsSetMaxDisks() bool {
-	if o != nil && o.MaxDisks.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxDisks gets a reference to the given NullableString and assigns it to the MaxDisks field.
 func (o *GuidanceVmwareSizingPlanBeforeAction) SetMaxDisks(v string) {
 	o.MaxDisks.Set(&v)
-}
-
-// SetMaxDisksNil sets the value for MaxDisks to be an explicit nil
-func (o *GuidanceVmwareSizingPlanBeforeAction) SetMaxDisksNil() {
-	o.MaxDisks.Set(nil)
-}
-
-// UnsetMaxDisks ensures that no value is present for MaxDisks, not even an explicit nil
-func (o *GuidanceVmwareSizingPlanBeforeAction) UnsetMaxDisks() {
-	o.MaxDisks.Unset()
 }
 
 // GetCoresPerSocket returns the CoresPerSocket field value if set, zero value otherwise.
@@ -473,15 +344,6 @@ func (o *GuidanceVmwareSizingPlanBeforeAction) GetCoresPerSocketOk() (*int64, bo
 		return nil, false
 	}
 	return o.CoresPerSocket, true
-}
-
-// IsSetCoresPerSocket returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingPlanBeforeAction) IsSetCoresPerSocket() bool {
-	if o != nil && !IsNil(o.CoresPerSocket) {
-		return true
-	}
-
-	return false
 }
 
 // SetCoresPerSocket gets a reference to the given int64 and assigns it to the CoresPerSocket field.
@@ -507,15 +369,6 @@ func (o *GuidanceVmwareSizingPlanBeforeAction) GetCustomCpuOk() (*bool, bool) {
 	return o.CustomCpu, true
 }
 
-// IsSetCustomCpu returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingPlanBeforeAction) IsSetCustomCpu() bool {
-	if o != nil && !IsNil(o.CustomCpu) {
-		return true
-	}
-
-	return false
-}
-
 // SetCustomCpu gets a reference to the given bool and assigns it to the CustomCpu field.
 func (o *GuidanceVmwareSizingPlanBeforeAction) SetCustomCpu(v bool) {
 	o.CustomCpu = &v
@@ -537,15 +390,6 @@ func (o *GuidanceVmwareSizingPlanBeforeAction) GetCustomCoresOk() (*bool, bool) 
 		return nil, false
 	}
 	return o.CustomCores, true
-}
-
-// IsSetCustomCores returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingPlanBeforeAction) IsSetCustomCores() bool {
-	if o != nil && !IsNil(o.CustomCores) {
-		return true
-	}
-
-	return false
 }
 
 // SetCustomCores gets a reference to the given bool and assigns it to the CustomCores field.
@@ -571,15 +415,6 @@ func (o *GuidanceVmwareSizingPlanBeforeAction) GetCustomMaxStorageOk() (*bool, b
 	return o.CustomMaxStorage, true
 }
 
-// IsSetCustomMaxStorage returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingPlanBeforeAction) IsSetCustomMaxStorage() bool {
-	if o != nil && !IsNil(o.CustomMaxStorage) {
-		return true
-	}
-
-	return false
-}
-
 // SetCustomMaxStorage gets a reference to the given bool and assigns it to the CustomMaxStorage field.
 func (o *GuidanceVmwareSizingPlanBeforeAction) SetCustomMaxStorage(v bool) {
 	o.CustomMaxStorage = &v
@@ -601,15 +436,6 @@ func (o *GuidanceVmwareSizingPlanBeforeAction) GetCustomMaxDataStorageOk() (*boo
 		return nil, false
 	}
 	return o.CustomMaxDataStorage, true
-}
-
-// IsSetCustomMaxDataStorage returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingPlanBeforeAction) IsSetCustomMaxDataStorage() bool {
-	if o != nil && !IsNil(o.CustomMaxDataStorage) {
-		return true
-	}
-
-	return false
 }
 
 // SetCustomMaxDataStorage gets a reference to the given bool and assigns it to the CustomMaxDataStorage field.
@@ -635,15 +461,6 @@ func (o *GuidanceVmwareSizingPlanBeforeAction) GetCustomMaxMemoryOk() (*bool, bo
 	return o.CustomMaxMemory, true
 }
 
-// IsSetCustomMaxMemory returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingPlanBeforeAction) IsSetCustomMaxMemory() bool {
-	if o != nil && !IsNil(o.CustomMaxMemory) {
-		return true
-	}
-
-	return false
-}
-
 // SetCustomMaxMemory gets a reference to the given bool and assigns it to the CustomMaxMemory field.
 func (o *GuidanceVmwareSizingPlanBeforeAction) SetCustomMaxMemory(v bool) {
 	o.CustomMaxMemory = &v
@@ -665,15 +482,6 @@ func (o *GuidanceVmwareSizingPlanBeforeAction) GetAddVolumesOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.AddVolumes, true
-}
-
-// IsSetAddVolumes returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingPlanBeforeAction) IsSetAddVolumes() bool {
-	if o != nil && !IsNil(o.AddVolumes) {
-		return true
-	}
-
-	return false
 }
 
 // SetAddVolumes gets a reference to the given bool and assigns it to the AddVolumes field.
@@ -700,28 +508,9 @@ func (o *GuidanceVmwareSizingPlanBeforeAction) GetMemoryOptionSourceOk() (*strin
 	return o.MemoryOptionSource.Get(), o.MemoryOptionSource.IsSet()
 }
 
-// IsSetMemoryOptionSource returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingPlanBeforeAction) IsSetMemoryOptionSource() bool {
-	if o != nil && o.MemoryOptionSource.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMemoryOptionSource gets a reference to the given NullableString and assigns it to the MemoryOptionSource field.
 func (o *GuidanceVmwareSizingPlanBeforeAction) SetMemoryOptionSource(v string) {
 	o.MemoryOptionSource.Set(&v)
-}
-
-// SetMemoryOptionSourceNil sets the value for MemoryOptionSource to be an explicit nil
-func (o *GuidanceVmwareSizingPlanBeforeAction) SetMemoryOptionSourceNil() {
-	o.MemoryOptionSource.Set(nil)
-}
-
-// UnsetMemoryOptionSource ensures that no value is present for MemoryOptionSource, not even an explicit nil
-func (o *GuidanceVmwareSizingPlanBeforeAction) UnsetMemoryOptionSource() {
-	o.MemoryOptionSource.Unset()
 }
 
 // GetCpuOptionSource returns the CpuOptionSource field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -743,28 +532,9 @@ func (o *GuidanceVmwareSizingPlanBeforeAction) GetCpuOptionSourceOk() (*string, 
 	return o.CpuOptionSource.Get(), o.CpuOptionSource.IsSet()
 }
 
-// IsSetCpuOptionSource returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingPlanBeforeAction) IsSetCpuOptionSource() bool {
-	if o != nil && o.CpuOptionSource.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuOptionSource gets a reference to the given NullableString and assigns it to the CpuOptionSource field.
 func (o *GuidanceVmwareSizingPlanBeforeAction) SetCpuOptionSource(v string) {
 	o.CpuOptionSource.Set(&v)
-}
-
-// SetCpuOptionSourceNil sets the value for CpuOptionSource to be an explicit nil
-func (o *GuidanceVmwareSizingPlanBeforeAction) SetCpuOptionSourceNil() {
-	o.CpuOptionSource.Set(nil)
-}
-
-// UnsetCpuOptionSource ensures that no value is present for CpuOptionSource, not even an explicit nil
-func (o *GuidanceVmwareSizingPlanBeforeAction) UnsetCpuOptionSource() {
-	o.CpuOptionSource.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -783,15 +553,6 @@ func (o *GuidanceVmwareSizingPlanBeforeAction) GetDateCreatedOk() (*time.Time, b
 		return nil, false
 	}
 	return o.DateCreated, true
-}
-
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingPlanBeforeAction) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
@@ -815,15 +576,6 @@ func (o *GuidanceVmwareSizingPlanBeforeAction) GetLastUpdatedOk() (*time.Time, b
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingPlanBeforeAction) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
@@ -850,28 +602,9 @@ func (o *GuidanceVmwareSizingPlanBeforeAction) GetRegionCodeOk() (*string, bool)
 	return o.RegionCode.Get(), o.RegionCode.IsSet()
 }
 
-// IsSetRegionCode returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingPlanBeforeAction) IsSetRegionCode() bool {
-	if o != nil && o.RegionCode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRegionCode gets a reference to the given NullableString and assigns it to the RegionCode field.
 func (o *GuidanceVmwareSizingPlanBeforeAction) SetRegionCode(v string) {
 	o.RegionCode.Set(&v)
-}
-
-// SetRegionCodeNil sets the value for RegionCode to be an explicit nil
-func (o *GuidanceVmwareSizingPlanBeforeAction) SetRegionCodeNil() {
-	o.RegionCode.Set(nil)
-}
-
-// UnsetRegionCode ensures that no value is present for RegionCode, not even an explicit nil
-func (o *GuidanceVmwareSizingPlanBeforeAction) UnsetRegionCode() {
-	o.RegionCode.Unset()
 }
 
 // GetVisibility returns the Visibility field value if set, zero value otherwise.
@@ -890,15 +623,6 @@ func (o *GuidanceVmwareSizingPlanBeforeAction) GetVisibilityOk() (*string, bool)
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingPlanBeforeAction) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -924,15 +648,6 @@ func (o *GuidanceVmwareSizingPlanBeforeAction) GetEditableOk() (*bool, bool) {
 	return o.Editable, true
 }
 
-// IsSetEditable returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingPlanBeforeAction) IsSetEditable() bool {
-	if o != nil && !IsNil(o.Editable) {
-		return true
-	}
-
-	return false
-}
-
 // SetEditable gets a reference to the given bool and assigns it to the Editable field.
 func (o *GuidanceVmwareSizingPlanBeforeAction) SetEditable(v bool) {
 	o.Editable = &v
@@ -954,15 +669,6 @@ func (o *GuidanceVmwareSizingPlanBeforeAction) GetProvisionTypeOk() (*GuidanceVm
 		return nil, false
 	}
 	return o.ProvisionType, true
-}
-
-// IsSetProvisionType returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingPlanBeforeAction) IsSetProvisionType() bool {
-	if o != nil && !IsNil(o.ProvisionType) {
-		return true
-	}
-
-	return false
 }
 
 // SetProvisionType gets a reference to the given GuidanceVmwareSizingPlanBeforeActionProvisionType and assigns it to the ProvisionType field.
@@ -988,15 +694,6 @@ func (o *GuidanceVmwareSizingPlanBeforeAction) GetTenantsOk() (*string, bool) {
 	return o.Tenants, true
 }
 
-// IsSetTenants returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingPlanBeforeAction) IsSetTenants() bool {
-	if o != nil && !IsNil(o.Tenants) {
-		return true
-	}
-
-	return false
-}
-
 // SetTenants gets a reference to the given string and assigns it to the Tenants field.
 func (o *GuidanceVmwareSizingPlanBeforeAction) SetTenants(v string) {
 	o.Tenants = &v
@@ -1020,15 +717,6 @@ func (o *GuidanceVmwareSizingPlanBeforeAction) GetPriceSetsOk() ([]GuidanceVmwar
 	return o.PriceSets, true
 }
 
-// IsSetPriceSets returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingPlanBeforeAction) IsSetPriceSets() bool {
-	if o != nil && !IsNil(o.PriceSets) {
-		return true
-	}
-
-	return false
-}
-
 // SetPriceSets gets a reference to the given []GuidanceVmwareSizingPlanBeforeActionPriceSetsInner and assigns it to the PriceSets field.
 func (o *GuidanceVmwareSizingPlanBeforeAction) SetPriceSets(v []GuidanceVmwareSizingPlanBeforeActionPriceSetsInner) {
 	o.PriceSets = v
@@ -1050,15 +738,6 @@ func (o *GuidanceVmwareSizingPlanBeforeAction) GetConfigOk() (*GuidanceVmwareSiz
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingPlanBeforeAction) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given GuidanceVmwareSizingPlanBeforeActionConfig and assigns it to the Config field.

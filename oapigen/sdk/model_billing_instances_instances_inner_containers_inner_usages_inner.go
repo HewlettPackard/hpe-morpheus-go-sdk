@@ -93,15 +93,6 @@ func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) GetNameOk() (
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) SetName(v string) {
 	o.Name = &v
@@ -123,15 +114,6 @@ func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) GetInstanceNa
 		return nil, false
 	}
 	return o.InstanceName, true
-}
-
-// IsSetInstanceName returns a boolean if a field has been set.
-func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) IsSetInstanceName() bool {
-	if o != nil && !IsNil(o.InstanceName) {
-		return true
-	}
-
-	return false
 }
 
 // SetInstanceName gets a reference to the given string and assigns it to the InstanceName field.
@@ -157,15 +139,6 @@ func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) GetZoneNameOk
 	return o.ZoneName, true
 }
 
-// IsSetZoneName returns a boolean if a field has been set.
-func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) IsSetZoneName() bool {
-	if o != nil && !IsNil(o.ZoneName) {
-		return true
-	}
-
-	return false
-}
-
 // SetZoneName gets a reference to the given string and assigns it to the ZoneName field.
 func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) SetZoneName(v string) {
 	o.ZoneName = &v
@@ -187,15 +160,6 @@ func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) GetAccountNam
 		return nil, false
 	}
 	return o.AccountName, true
-}
-
-// IsSetAccountName returns a boolean if a field has been set.
-func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) IsSetAccountName() bool {
-	if o != nil && !IsNil(o.AccountName) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccountName gets a reference to the given string and assigns it to the AccountName field.
@@ -221,15 +185,6 @@ func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) GetVolumesOk(
 	return o.Volumes, true
 }
 
-// IsSetVolumes returns a boolean if a field has been set.
-func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) IsSetVolumes() bool {
-	if o != nil && !IsNil(o.Volumes) {
-		return true
-	}
-
-	return false
-}
-
 // SetVolumes gets a reference to the given []BillingInstancesInstancesInnerContainersInnerUsagesInnerVolumesInner and assigns it to the Volumes field.
 func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) SetVolumes(v []BillingInstancesInstancesInnerContainersInnerUsagesInnerVolumesInner) {
 	o.Volumes = v
@@ -251,15 +206,6 @@ func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) GetMaxMemoryO
 		return nil, false
 	}
 	return o.MaxMemory, true
-}
-
-// IsSetMaxMemory returns a boolean if a field has been set.
-func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) IsSetMaxMemory() bool {
-	if o != nil && !IsNil(o.MaxMemory) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxMemory gets a reference to the given int64 and assigns it to the MaxMemory field.
@@ -286,28 +232,9 @@ func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) GetMaxCpuOk()
 	return o.MaxCpu.Get(), o.MaxCpu.IsSet()
 }
 
-// IsSetMaxCpu returns a boolean if a field has been set.
-func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) IsSetMaxCpu() bool {
-	if o != nil && o.MaxCpu.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxCpu gets a reference to the given NullableString and assigns it to the MaxCpu field.
 func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) SetMaxCpu(v string) {
 	o.MaxCpu.Set(&v)
-}
-
-// SetMaxCpuNil sets the value for MaxCpu to be an explicit nil
-func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) SetMaxCpuNil() {
-	o.MaxCpu.Set(nil)
-}
-
-// UnsetMaxCpu ensures that no value is present for MaxCpu, not even an explicit nil
-func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) UnsetMaxCpu() {
-	o.MaxCpu.Unset()
 }
 
 // GetMaxCores returns the MaxCores field value if set, zero value otherwise.
@@ -326,15 +253,6 @@ func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) GetMaxCoresOk
 		return nil, false
 	}
 	return o.MaxCores, true
-}
-
-// IsSetMaxCores returns a boolean if a field has been set.
-func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) IsSetMaxCores() bool {
-	if o != nil && !IsNil(o.MaxCores) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxCores gets a reference to the given int64 and assigns it to the MaxCores field.
@@ -360,15 +278,6 @@ func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) GetServerExte
 	return o.ServerExternalId, true
 }
 
-// IsSetServerExternalId returns a boolean if a field has been set.
-func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) IsSetServerExternalId() bool {
-	if o != nil && !IsNil(o.ServerExternalId) {
-		return true
-	}
-
-	return false
-}
-
 // SetServerExternalId gets a reference to the given string and assigns it to the ServerExternalId field.
 func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) SetServerExternalId(v string) {
 	o.ServerExternalId = &v
@@ -390,15 +299,6 @@ func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) GetServerInte
 		return nil, false
 	}
 	return o.ServerInternalId, true
-}
-
-// IsSetServerInternalId returns a boolean if a field has been set.
-func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) IsSetServerInternalId() bool {
-	if o != nil && !IsNil(o.ServerInternalId) {
-		return true
-	}
-
-	return false
 }
 
 // SetServerInternalId gets a reference to the given string and assigns it to the ServerInternalId field.
@@ -424,15 +324,6 @@ func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) GetPlanNameOk
 	return o.PlanName, true
 }
 
-// IsSetPlanName returns a boolean if a field has been set.
-func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) IsSetPlanName() bool {
-	if o != nil && !IsNil(o.PlanName) {
-		return true
-	}
-
-	return false
-}
-
 // SetPlanName gets a reference to the given string and assigns it to the PlanName field.
 func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) SetPlanName(v string) {
 	o.PlanName = &v
@@ -454,15 +345,6 @@ func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) GetHourlyPric
 		return nil, false
 	}
 	return o.HourlyPrice, true
-}
-
-// IsSetHourlyPrice returns a boolean if a field has been set.
-func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) IsSetHourlyPrice() bool {
-	if o != nil && !IsNil(o.HourlyPrice) {
-		return true
-	}
-
-	return false
 }
 
 // SetHourlyPrice gets a reference to the given float32 and assigns it to the HourlyPrice field.
@@ -488,15 +370,6 @@ func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) GetHourlyCost
 	return o.HourlyCost, true
 }
 
-// IsSetHourlyCost returns a boolean if a field has been set.
-func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) IsSetHourlyCost() bool {
-	if o != nil && !IsNil(o.HourlyCost) {
-		return true
-	}
-
-	return false
-}
-
 // SetHourlyCost gets a reference to the given float32 and assigns it to the HourlyCost field.
 func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) SetHourlyCost(v float32) {
 	o.HourlyCost = &v
@@ -518,15 +391,6 @@ func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) GetCurrencyOk
 		return nil, false
 	}
 	return o.Currency, true
-}
-
-// IsSetCurrency returns a boolean if a field has been set.
-func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) IsSetCurrency() bool {
-	if o != nil && !IsNil(o.Currency) {
-		return true
-	}
-
-	return false
 }
 
 // SetCurrency gets a reference to the given string and assigns it to the Currency field.
@@ -552,15 +416,6 @@ func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) GetPricesUsed
 	return o.PricesUsed, true
 }
 
-// IsSetPricesUsed returns a boolean if a field has been set.
-func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) IsSetPricesUsed() bool {
-	if o != nil && !IsNil(o.PricesUsed) {
-		return true
-	}
-
-	return false
-}
-
 // SetPricesUsed gets a reference to the given []BillingInstancesInstancesInnerContainersInnerUsagesInnerPricesUsedInner and assigns it to the PricesUsed field.
 func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) SetPricesUsed(v []BillingInstancesInstancesInnerContainersInnerUsagesInnerPricesUsedInner) {
 	o.PricesUsed = v
@@ -582,15 +437,6 @@ func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) GetCostOk() (
 		return nil, false
 	}
 	return o.Cost, true
-}
-
-// IsSetCost returns a boolean if a field has been set.
-func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) IsSetCost() bool {
-	if o != nil && !IsNil(o.Cost) {
-		return true
-	}
-
-	return false
 }
 
 // SetCost gets a reference to the given float32 and assigns it to the Cost field.
@@ -616,15 +462,6 @@ func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) GetPriceOk() 
 	return o.Price, true
 }
 
-// IsSetPrice returns a boolean if a field has been set.
-func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) IsSetPrice() bool {
-	if o != nil && !IsNil(o.Price) {
-		return true
-	}
-
-	return false
-}
-
 // SetPrice gets a reference to the given float32 and assigns it to the Price field.
 func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) SetPrice(v float32) {
 	o.Price = &v
@@ -646,15 +483,6 @@ func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) GetCreatedByU
 		return nil, false
 	}
 	return o.CreatedByUser, true
-}
-
-// IsSetCreatedByUser returns a boolean if a field has been set.
-func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) IsSetCreatedByUser() bool {
-	if o != nil && !IsNil(o.CreatedByUser) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreatedByUser gets a reference to the given string and assigns it to the CreatedByUser field.
@@ -680,15 +508,6 @@ func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) GetCreatedByU
 	return o.CreatedByUserId, true
 }
 
-// IsSetCreatedByUserId returns a boolean if a field has been set.
-func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) IsSetCreatedByUserId() bool {
-	if o != nil && !IsNil(o.CreatedByUserId) {
-		return true
-	}
-
-	return false
-}
-
 // SetCreatedByUserId gets a reference to the given int64 and assigns it to the CreatedByUserId field.
 func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) SetCreatedByUserId(v int64) {
 	o.CreatedByUserId = &v
@@ -710,15 +529,6 @@ func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) GetSiteIdOk()
 		return nil, false
 	}
 	return o.SiteId, true
-}
-
-// IsSetSiteId returns a boolean if a field has been set.
-func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) IsSetSiteId() bool {
-	if o != nil && !IsNil(o.SiteId) {
-		return true
-	}
-
-	return false
 }
 
 // SetSiteId gets a reference to the given int64 and assigns it to the SiteId field.
@@ -744,15 +554,6 @@ func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) GetSiteNameOk
 	return o.SiteName, true
 }
 
-// IsSetSiteName returns a boolean if a field has been set.
-func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) IsSetSiteName() bool {
-	if o != nil && !IsNil(o.SiteName) {
-		return true
-	}
-
-	return false
-}
-
 // SetSiteName gets a reference to the given string and assigns it to the SiteName field.
 func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) SetSiteName(v string) {
 	o.SiteName = &v
@@ -774,15 +575,6 @@ func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) GetSiteUUIDOk
 		return nil, false
 	}
 	return o.SiteUUID, true
-}
-
-// IsSetSiteUUID returns a boolean if a field has been set.
-func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) IsSetSiteUUID() bool {
-	if o != nil && !IsNil(o.SiteUUID) {
-		return true
-	}
-
-	return false
 }
 
 // SetSiteUUID gets a reference to the given string and assigns it to the SiteUUID field.
@@ -809,28 +601,9 @@ func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) GetSiteCodeOk
 	return o.SiteCode.Get(), o.SiteCode.IsSet()
 }
 
-// IsSetSiteCode returns a boolean if a field has been set.
-func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) IsSetSiteCode() bool {
-	if o != nil && o.SiteCode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSiteCode gets a reference to the given NullableString and assigns it to the SiteCode field.
 func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) SetSiteCode(v string) {
 	o.SiteCode.Set(&v)
-}
-
-// SetSiteCodeNil sets the value for SiteCode to be an explicit nil
-func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) SetSiteCodeNil() {
-	o.SiteCode.Set(nil)
-}
-
-// UnsetSiteCode ensures that no value is present for SiteCode, not even an explicit nil
-func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) UnsetSiteCode() {
-	o.SiteCode.Unset()
 }
 
 // GetStartDate returns the StartDate field value if set, zero value otherwise.
@@ -849,15 +622,6 @@ func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) GetStartDateO
 		return nil, false
 	}
 	return o.StartDate, true
-}
-
-// IsSetStartDate returns a boolean if a field has been set.
-func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) IsSetStartDate() bool {
-	if o != nil && !IsNil(o.StartDate) {
-		return true
-	}
-
-	return false
 }
 
 // SetStartDate gets a reference to the given time.Time and assigns it to the StartDate field.
@@ -883,15 +647,6 @@ func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) GetEndDateOk(
 	return o.EndDate, true
 }
 
-// IsSetEndDate returns a boolean if a field has been set.
-func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) IsSetEndDate() bool {
-	if o != nil && !IsNil(o.EndDate) {
-		return true
-	}
-
-	return false
-}
-
 // SetEndDate gets a reference to the given time.Time and assigns it to the EndDate field.
 func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) SetEndDate(v time.Time) {
 	o.EndDate = &v
@@ -913,15 +668,6 @@ func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) GetStatusOk()
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -948,15 +694,6 @@ func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) GetTagsOk() (
 	return o.Tags, true
 }
 
-// IsSetTags returns a boolean if a field has been set.
-func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) IsSetTags() bool {
-	if o != nil && !IsNil(o.Tags) {
-		return true
-	}
-
-	return false
-}
-
 // SetTags gets a reference to the given []map[string]interface{} and assigns it to the Tags field.
 func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) SetTags(v []map[string]interface{}) {
 	o.Tags = v
@@ -978,15 +715,6 @@ func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) GetApplicable
 		return nil, false
 	}
 	return o.ApplicablePrices, true
-}
-
-// IsSetApplicablePrices returns a boolean if a field has been set.
-func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) IsSetApplicablePrices() bool {
-	if o != nil && !IsNil(o.ApplicablePrices) {
-		return true
-	}
-
-	return false
 }
 
 // SetApplicablePrices gets a reference to the given []BillingInstancesInstancesInnerContainersInnerUsagesInnerApplicablePricesInner and assigns it to the ApplicablePrices field.
@@ -1012,15 +740,6 @@ func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) GetServicePla
 	return o.ServicePlanId, true
 }
 
-// IsSetServicePlanId returns a boolean if a field has been set.
-func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) IsSetServicePlanId() bool {
-	if o != nil && !IsNil(o.ServicePlanId) {
-		return true
-	}
-
-	return false
-}
-
 // SetServicePlanId gets a reference to the given int64 and assigns it to the ServicePlanId field.
 func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) SetServicePlanId(v int64) {
 	o.ServicePlanId = &v
@@ -1042,15 +761,6 @@ func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) GetServicePla
 		return nil, false
 	}
 	return o.ServicePlanName, true
-}
-
-// IsSetServicePlanName returns a boolean if a field has been set.
-func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) IsSetServicePlanName() bool {
-	if o != nil && !IsNil(o.ServicePlanName) {
-		return true
-	}
-
-	return false
 }
 
 // SetServicePlanName gets a reference to the given string and assigns it to the ServicePlanName field.
@@ -1076,15 +786,6 @@ func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) GetResourcePo
 	return o.ResourcePoolId, true
 }
 
-// IsSetResourcePoolId returns a boolean if a field has been set.
-func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) IsSetResourcePoolId() bool {
-	if o != nil && !IsNil(o.ResourcePoolId) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourcePoolId gets a reference to the given int64 and assigns it to the ResourcePoolId field.
 func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) SetResourcePoolId(v int64) {
 	o.ResourcePoolId = &v
@@ -1106,15 +807,6 @@ func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) GetResourcePo
 		return nil, false
 	}
 	return o.ResourcePoolName, true
-}
-
-// IsSetResourcePoolName returns a boolean if a field has been set.
-func (o *BillingInstancesInstancesInnerContainersInnerUsagesInner) IsSetResourcePoolName() bool {
-	if o != nil && !IsNil(o.ResourcePoolName) {
-		return true
-	}
-
-	return false
 }
 
 // SetResourcePoolName gets a reference to the given string and assigns it to the ResourcePoolName field.

@@ -65,28 +65,9 @@ func (o *ListReports200ResponseAllOfReportResultsInnerConfig) GetReportTypeOk() 
 	return o.ReportType.Get(), o.ReportType.IsSet()
 }
 
-// IsSetReportType returns a boolean if a field has been set.
-func (o *ListReports200ResponseAllOfReportResultsInnerConfig) IsSetReportType() bool {
-	if o != nil && o.ReportType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetReportType gets a reference to the given NullableString and assigns it to the ReportType field.
 func (o *ListReports200ResponseAllOfReportResultsInnerConfig) SetReportType(v string) {
 	o.ReportType.Set(&v)
-}
-
-// SetReportTypeNil sets the value for ReportType to be an explicit nil
-func (o *ListReports200ResponseAllOfReportResultsInnerConfig) SetReportTypeNil() {
-	o.ReportType.Set(nil)
-}
-
-// UnsetReportType ensures that no value is present for ReportType, not even an explicit nil
-func (o *ListReports200ResponseAllOfReportResultsInnerConfig) UnsetReportType() {
-	o.ReportType.Unset()
 }
 
 // GetStartDate returns the StartDate field value if set, zero value otherwise.
@@ -105,15 +86,6 @@ func (o *ListReports200ResponseAllOfReportResultsInnerConfig) GetStartDateOk() (
 		return nil, false
 	}
 	return o.StartDate, true
-}
-
-// IsSetStartDate returns a boolean if a field has been set.
-func (o *ListReports200ResponseAllOfReportResultsInnerConfig) IsSetStartDate() bool {
-	if o != nil && !IsNil(o.StartDate) {
-		return true
-	}
-
-	return false
 }
 
 // SetStartDate gets a reference to the given string and assigns it to the StartDate field.
@@ -139,15 +111,6 @@ func (o *ListReports200ResponseAllOfReportResultsInnerConfig) GetEndDateOk() (*s
 	return o.EndDate, true
 }
 
-// IsSetEndDate returns a boolean if a field has been set.
-func (o *ListReports200ResponseAllOfReportResultsInnerConfig) IsSetEndDate() bool {
-	if o != nil && !IsNil(o.EndDate) {
-		return true
-	}
-
-	return false
-}
-
 // SetEndDate gets a reference to the given string and assigns it to the EndDate field.
 func (o *ListReports200ResponseAllOfReportResultsInnerConfig) SetEndDate(v string) {
 	o.EndDate = &v
@@ -169,15 +132,6 @@ func (o *ListReports200ResponseAllOfReportResultsInnerConfig) GetCloudIdOk() (*s
 		return nil, false
 	}
 	return o.CloudId, true
-}
-
-// IsSetCloudId returns a boolean if a field has been set.
-func (o *ListReports200ResponseAllOfReportResultsInnerConfig) IsSetCloudId() bool {
-	if o != nil && !IsNil(o.CloudId) {
-		return true
-	}
-
-	return false
 }
 
 // SetCloudId gets a reference to the given string and assigns it to the CloudId field.

@@ -108,15 +108,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetIdOk() (*int64,
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) SetId(v int64) {
 	o.Id = &v
@@ -138,15 +129,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetNameOk() (*stri
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -173,28 +155,9 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetDescriptionOk()
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetCode returns the Code field value if set, zero value otherwise.
@@ -213,15 +176,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetCodeOk() (*stri
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -247,15 +201,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetAclEnabledOk() 
 	return o.AclEnabled, true
 }
 
-// IsSetAclEnabled returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetAclEnabled() bool {
-	if o != nil && !IsNil(o.AclEnabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetAclEnabled gets a reference to the given bool and assigns it to the AclEnabled field.
 func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) SetAclEnabled(v bool) {
 	o.AclEnabled = &v
@@ -277,15 +222,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetMultiTenantOk()
 		return nil, false
 	}
 	return o.MultiTenant, true
-}
-
-// IsSetMultiTenant returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetMultiTenant() bool {
-	if o != nil && !IsNil(o.MultiTenant) {
-		return true
-	}
-
-	return false
 }
 
 // SetMultiTenant gets a reference to the given bool and assigns it to the MultiTenant field.
@@ -311,15 +247,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetManagedOk() (*b
 	return o.Managed, true
 }
 
-// IsSetManaged returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetManaged() bool {
-	if o != nil && !IsNil(o.Managed) {
-		return true
-	}
-
-	return false
-}
-
 // SetManaged gets a reference to the given bool and assigns it to the Managed field.
 func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) SetManaged(v bool) {
 	o.Managed = &v
@@ -341,15 +268,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetHostNetworkOk()
 		return nil, false
 	}
 	return o.HostNetwork, true
-}
-
-// IsSetHostNetwork returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetHostNetwork() bool {
-	if o != nil && !IsNil(o.HostNetwork) {
-		return true
-	}
-
-	return false
 }
 
 // SetHostNetwork gets a reference to the given bool and assigns it to the HostNetwork field.
@@ -375,15 +293,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetCustomSupported
 	return o.CustomSupported, true
 }
 
-// IsSetCustomSupported returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetCustomSupported() bool {
-	if o != nil && !IsNil(o.CustomSupported) {
-		return true
-	}
-
-	return false
-}
-
 // SetCustomSupported gets a reference to the given bool and assigns it to the CustomSupported field.
 func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) SetCustomSupported(v bool) {
 	o.CustomSupported = &v
@@ -407,15 +316,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetMapPortsOk() (*
 	return o.MapPorts, true
 }
 
-// IsSetMapPorts returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetMapPorts() bool {
-	if o != nil && !IsNil(o.MapPorts) {
-		return true
-	}
-
-	return false
-}
-
 // SetMapPorts gets a reference to the given bool and assigns it to the MapPorts field.
 func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) SetMapPorts(v bool) {
 	o.MapPorts = &v
@@ -437,15 +337,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetExportServerOk(
 		return nil, false
 	}
 	return o.ExportServer, true
-}
-
-// IsSetExportServer returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetExportServer() bool {
-	if o != nil && !IsNil(o.ExportServer) {
-		return true
-	}
-
-	return false
 }
 
 // SetExportServer gets a reference to the given bool and assigns it to the ExportServer field.
@@ -472,28 +363,9 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetViewSetOk() (*s
 	return o.ViewSet.Get(), o.ViewSet.IsSet()
 }
 
-// IsSetViewSet returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetViewSet() bool {
-	if o != nil && o.ViewSet.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetViewSet gets a reference to the given NullableString and assigns it to the ViewSet field.
 func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) SetViewSet(v string) {
 	o.ViewSet.Set(&v)
-}
-
-// SetViewSetNil sets the value for ViewSet to be an explicit nil
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) SetViewSetNil() {
-	o.ViewSet.Set(nil)
-}
-
-// UnsetViewSet ensures that no value is present for ViewSet, not even an explicit nil
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) UnsetViewSet() {
-	o.ViewSet.Unset()
 }
 
 // GetServerType returns the ServerType field value if set, zero value otherwise.
@@ -512,15 +384,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetServerTypeOk() 
 		return nil, false
 	}
 	return o.ServerType, true
-}
-
-// IsSetServerType returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetServerType() bool {
-	if o != nil && !IsNil(o.ServerType) {
-		return true
-	}
-
-	return false
 }
 
 // SetServerType gets a reference to the given string and assigns it to the ServerType field.
@@ -546,15 +409,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetHostTypeOk() (*
 	return o.HostType, true
 }
 
-// IsSetHostType returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetHostType() bool {
-	if o != nil && !IsNil(o.HostType) {
-		return true
-	}
-
-	return false
-}
-
 // SetHostType gets a reference to the given string and assigns it to the HostType field.
 func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) SetHostType(v string) {
 	o.HostType = &v
@@ -576,15 +430,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetAddVolumesOk() 
 		return nil, false
 	}
 	return o.AddVolumes, true
-}
-
-// IsSetAddVolumes returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetAddVolumes() bool {
-	if o != nil && !IsNil(o.AddVolumes) {
-		return true
-	}
-
-	return false
 }
 
 // SetAddVolumes gets a reference to the given bool and assigns it to the AddVolumes field.
@@ -610,15 +455,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetHasVolumesOk() 
 	return o.HasVolumes, true
 }
 
-// IsSetHasVolumes returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetHasVolumes() bool {
-	if o != nil && !IsNil(o.HasVolumes) {
-		return true
-	}
-
-	return false
-}
-
 // SetHasVolumes gets a reference to the given bool and assigns it to the HasVolumes field.
 func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) SetHasVolumes(v bool) {
 	o.HasVolumes = &v
@@ -640,15 +476,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetHasDatastoreOk(
 		return nil, false
 	}
 	return o.HasDatastore, true
-}
-
-// IsSetHasDatastore returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetHasDatastore() bool {
-	if o != nil && !IsNil(o.HasDatastore) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasDatastore gets a reference to the given bool and assigns it to the HasDatastore field.
@@ -674,15 +501,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetHasNetworksOk()
 	return o.HasNetworks, true
 }
 
-// IsSetHasNetworks returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetHasNetworks() bool {
-	if o != nil && !IsNil(o.HasNetworks) {
-		return true
-	}
-
-	return false
-}
-
 // SetHasNetworks gets a reference to the given bool and assigns it to the HasNetworks field.
 func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) SetHasNetworks(v bool) {
 	o.HasNetworks = &v
@@ -704,15 +522,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetMaxNetworksOk()
 		return nil, false
 	}
 	return o.MaxNetworks, true
-}
-
-// IsSetMaxNetworks returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetMaxNetworks() bool {
-	if o != nil && !IsNil(o.MaxNetworks) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxNetworks gets a reference to the given int64 and assigns it to the MaxNetworks field.
@@ -738,15 +547,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetCustomizeVolume
 	return o.CustomizeVolume, true
 }
 
-// IsSetCustomizeVolume returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetCustomizeVolume() bool {
-	if o != nil && !IsNil(o.CustomizeVolume) {
-		return true
-	}
-
-	return false
-}
-
 // SetCustomizeVolume gets a reference to the given bool and assigns it to the CustomizeVolume field.
 func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) SetCustomizeVolume(v bool) {
 	o.CustomizeVolume = &v
@@ -768,15 +568,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetRootDiskCustomi
 		return nil, false
 	}
 	return o.RootDiskCustomizable, true
-}
-
-// IsSetRootDiskCustomizable returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetRootDiskCustomizable() bool {
-	if o != nil && !IsNil(o.RootDiskCustomizable) {
-		return true
-	}
-
-	return false
 }
 
 // SetRootDiskCustomizable gets a reference to the given bool and assigns it to the RootDiskCustomizable field.
@@ -802,15 +593,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetRootDiskSizeKno
 	return o.RootDiskSizeKnown, true
 }
 
-// IsSetRootDiskSizeKnown returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetRootDiskSizeKnown() bool {
-	if o != nil && !IsNil(o.RootDiskSizeKnown) {
-		return true
-	}
-
-	return false
-}
-
 // SetRootDiskSizeKnown gets a reference to the given bool and assigns it to the RootDiskSizeKnown field.
 func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) SetRootDiskSizeKnown(v bool) {
 	o.RootDiskSizeKnown = &v
@@ -832,15 +614,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetRootDiskResizab
 		return nil, false
 	}
 	return o.RootDiskResizable, true
-}
-
-// IsSetRootDiskResizable returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetRootDiskResizable() bool {
-	if o != nil && !IsNil(o.RootDiskResizable) {
-		return true
-	}
-
-	return false
 }
 
 // SetRootDiskResizable gets a reference to the given bool and assigns it to the RootDiskResizable field.
@@ -866,15 +639,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetLvmSupportedOk(
 	return o.LvmSupported, true
 }
 
-// IsSetLvmSupported returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetLvmSupported() bool {
-	if o != nil && !IsNil(o.LvmSupported) {
-		return true
-	}
-
-	return false
-}
-
 // SetLvmSupported gets a reference to the given bool and assigns it to the LvmSupported field.
 func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) SetLvmSupported(v bool) {
 	o.LvmSupported = &v
@@ -898,15 +662,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetHostDiskModeOk(
 	return o.HostDiskMode, true
 }
 
-// IsSetHostDiskMode returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetHostDiskMode() bool {
-	if o != nil && !IsNil(o.HostDiskMode) {
-		return true
-	}
-
-	return false
-}
-
 // SetHostDiskMode gets a reference to the given string and assigns it to the HostDiskMode field.
 func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) SetHostDiskMode(v string) {
 	o.HostDiskMode = &v
@@ -928,15 +683,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetMinDiskOk() (*i
 		return nil, false
 	}
 	return o.MinDisk, true
-}
-
-// IsSetMinDisk returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetMinDisk() bool {
-	if o != nil && !IsNil(o.MinDisk) {
-		return true
-	}
-
-	return false
 }
 
 // SetMinDisk gets a reference to the given int64 and assigns it to the MinDisk field.
@@ -963,28 +709,9 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetMaxDiskOk() (*s
 	return o.MaxDisk.Get(), o.MaxDisk.IsSet()
 }
 
-// IsSetMaxDisk returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetMaxDisk() bool {
-	if o != nil && o.MaxDisk.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxDisk gets a reference to the given NullableString and assigns it to the MaxDisk field.
 func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) SetMaxDisk(v string) {
 	o.MaxDisk.Set(&v)
-}
-
-// SetMaxDiskNil sets the value for MaxDisk to be an explicit nil
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) SetMaxDiskNil() {
-	o.MaxDisk.Set(nil)
-}
-
-// UnsetMaxDisk ensures that no value is present for MaxDisk, not even an explicit nil
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) UnsetMaxDisk() {
-	o.MaxDisk.Unset()
 }
 
 // GetResizeCopiesVolumes returns the ResizeCopiesVolumes field value if set, zero value otherwise.
@@ -1003,15 +730,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetResizeCopiesVol
 		return nil, false
 	}
 	return o.ResizeCopiesVolumes, true
-}
-
-// IsSetResizeCopiesVolumes returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetResizeCopiesVolumes() bool {
-	if o != nil && !IsNil(o.ResizeCopiesVolumes) {
-		return true
-	}
-
-	return false
 }
 
 // SetResizeCopiesVolumes gets a reference to the given bool and assigns it to the ResizeCopiesVolumes field.
@@ -1037,15 +755,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetSupportsAutoDat
 	return o.SupportsAutoDatastore, true
 }
 
-// IsSetSupportsAutoDatastore returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetSupportsAutoDatastore() bool {
-	if o != nil && !IsNil(o.SupportsAutoDatastore) {
-		return true
-	}
-
-	return false
-}
-
 // SetSupportsAutoDatastore gets a reference to the given bool and assigns it to the SupportsAutoDatastore field.
 func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) SetSupportsAutoDatastore(v bool) {
 	o.SupportsAutoDatastore = &v
@@ -1067,15 +776,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetHasZonePoolsOk(
 		return nil, false
 	}
 	return o.HasZonePools, true
-}
-
-// IsSetHasZonePools returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetHasZonePools() bool {
-	if o != nil && !IsNil(o.HasZonePools) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasZonePools gets a reference to the given bool and assigns it to the HasZonePools field.
@@ -1101,15 +801,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetHasSecurityGrou
 	return o.HasSecurityGroups, true
 }
 
-// IsSetHasSecurityGroups returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetHasSecurityGroups() bool {
-	if o != nil && !IsNil(o.HasSecurityGroups) {
-		return true
-	}
-
-	return false
-}
-
 // SetHasSecurityGroups gets a reference to the given bool and assigns it to the HasSecurityGroups field.
 func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) SetHasSecurityGroups(v bool) {
 	o.HasSecurityGroups = &v
@@ -1131,15 +822,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetHasParametersOk
 		return nil, false
 	}
 	return o.HasParameters, true
-}
-
-// IsSetHasParameters returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetHasParameters() bool {
-	if o != nil && !IsNil(o.HasParameters) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasParameters gets a reference to the given bool and assigns it to the HasParameters field.
@@ -1166,28 +848,9 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetCanEnforceTagsO
 	return o.CanEnforceTags.Get(), o.CanEnforceTags.IsSet()
 }
 
-// IsSetCanEnforceTags returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetCanEnforceTags() bool {
-	if o != nil && o.CanEnforceTags.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCanEnforceTags gets a reference to the given NullableBool and assigns it to the CanEnforceTags field.
 func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) SetCanEnforceTags(v bool) {
 	o.CanEnforceTags.Set(&v)
-}
-
-// SetCanEnforceTagsNil sets the value for CanEnforceTags to be an explicit nil
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) SetCanEnforceTagsNil() {
-	o.CanEnforceTags.Set(nil)
-}
-
-// UnsetCanEnforceTags ensures that no value is present for CanEnforceTags, not even an explicit nil
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) UnsetCanEnforceTags() {
-	o.CanEnforceTags.Unset()
 }
 
 // GetDisableRootDatastore returns the DisableRootDatastore field value if set, zero value otherwise.
@@ -1206,15 +869,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetDisableRootData
 		return nil, false
 	}
 	return o.DisableRootDatastore, true
-}
-
-// IsSetDisableRootDatastore returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetDisableRootDatastore() bool {
-	if o != nil && !IsNil(o.DisableRootDatastore) {
-		return true
-	}
-
-	return false
 }
 
 // SetDisableRootDatastore gets a reference to the given bool and assigns it to the DisableRootDatastore field.
@@ -1240,15 +894,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetHasSnapshotsOk(
 	return o.HasSnapshots, true
 }
 
-// IsSetHasSnapshots returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetHasSnapshots() bool {
-	if o != nil && !IsNil(o.HasSnapshots) {
-		return true
-	}
-
-	return false
-}
-
 // SetHasSnapshots gets a reference to the given bool and assigns it to the HasSnapshots field.
 func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) SetHasSnapshots(v bool) {
 	o.HasSnapshots = &v
@@ -1270,15 +915,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetHasMemorySnapsh
 		return nil, false
 	}
 	return o.HasMemorySnapshots, true
-}
-
-// IsSetHasMemorySnapshots returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetHasMemorySnapshots() bool {
-	if o != nil && !IsNil(o.HasMemorySnapshots) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasMemorySnapshots gets a reference to the given bool and assigns it to the HasMemorySnapshots field.
@@ -1304,15 +940,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetHasSpecTemplate
 	return o.HasSpecTemplates, true
 }
 
-// IsSetHasSpecTemplates returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetHasSpecTemplates() bool {
-	if o != nil && !IsNil(o.HasSpecTemplates) {
-		return true
-	}
-
-	return false
-}
-
 // SetHasSpecTemplates gets a reference to the given bool and assigns it to the HasSpecTemplates field.
 func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) SetHasSpecTemplates(v bool) {
 	o.HasSpecTemplates = &v
@@ -1334,15 +961,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetHasPreviewOk() 
 		return nil, false
 	}
 	return o.HasPreview, true
-}
-
-// IsSetHasPreview returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetHasPreview() bool {
-	if o != nil && !IsNil(o.HasPreview) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasPreview gets a reference to the given bool and assigns it to the HasPreview field.
@@ -1368,15 +986,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetZonePoolRequire
 	return o.ZonePoolRequired, true
 }
 
-// IsSetZonePoolRequired returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetZonePoolRequired() bool {
-	if o != nil && !IsNil(o.ZonePoolRequired) {
-		return true
-	}
-
-	return false
-}
-
 // SetZonePoolRequired gets a reference to the given bool and assigns it to the ZonePoolRequired field.
 func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) SetZonePoolRequired(v bool) {
 	o.ZonePoolRequired = &v
@@ -1398,15 +1007,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetPlanRequiresPoo
 		return nil, false
 	}
 	return o.PlanRequiresPool, true
-}
-
-// IsSetPlanRequiresPool returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetPlanRequiresPool() bool {
-	if o != nil && !IsNil(o.PlanRequiresPool) {
-		return true
-	}
-
-	return false
 }
 
 // SetPlanRequiresPool gets a reference to the given bool and assigns it to the PlanRequiresPool field.
@@ -1433,28 +1033,9 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetHasFoldersOk() 
 	return o.HasFolders.Get(), o.HasFolders.IsSet()
 }
 
-// IsSetHasFolders returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetHasFolders() bool {
-	if o != nil && o.HasFolders.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetHasFolders gets a reference to the given NullableBool and assigns it to the HasFolders field.
 func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) SetHasFolders(v bool) {
 	o.HasFolders.Set(&v)
-}
-
-// SetHasFoldersNil sets the value for HasFolders to be an explicit nil
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) SetHasFoldersNil() {
-	o.HasFolders.Set(nil)
-}
-
-// UnsetHasFolders ensures that no value is present for HasFolders, not even an explicit nil
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) UnsetHasFolders() {
-	o.HasFolders.Unset()
 }
 
 // GetOptionTypes returns the OptionTypes field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1474,15 +1055,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetOptionTypesOk()
 		return nil, false
 	}
 	return o.OptionTypes, true
-}
-
-// IsSetOptionTypes returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetOptionTypes() bool {
-	if o != nil && !IsNil(o.OptionTypes) {
-		return true
-	}
-
-	return false
 }
 
 // SetOptionTypes gets a reference to the given []AddLayout200ResponseInstanceTypeLayoutProvisionTypeOptionTypesInner and assigns it to the OptionTypes field.
@@ -1509,15 +1081,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetCustomOptionTyp
 	return o.CustomOptionTypes, true
 }
 
-// IsSetCustomOptionTypes returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetCustomOptionTypes() bool {
-	if o != nil && !IsNil(o.CustomOptionTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetCustomOptionTypes gets a reference to the given []AddLayout200ResponseInstanceTypeLayoutProvisionTypeCustomOptionTypesInner and assigns it to the CustomOptionTypes field.
 func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) SetCustomOptionTypes(v []AddLayout200ResponseInstanceTypeLayoutProvisionTypeCustomOptionTypesInner) {
 	o.CustomOptionTypes = v
@@ -1540,15 +1103,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetNetworkTypesOk(
 		return nil, false
 	}
 	return o.NetworkTypes, true
-}
-
-// IsSetNetworkTypes returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetNetworkTypes() bool {
-	if o != nil && !IsNil(o.NetworkTypes) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkTypes gets a reference to the given []AddLayout200ResponseInstanceTypeLayoutProvisionTypeNetworkTypesInner and assigns it to the NetworkTypes field.
@@ -1575,15 +1129,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetStorageTypesOk(
 	return o.StorageTypes, true
 }
 
-// IsSetStorageTypes returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetStorageTypes() bool {
-	if o != nil && !IsNil(o.StorageTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetStorageTypes gets a reference to the given []AddLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner and assigns it to the StorageTypes field.
 func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) SetStorageTypes(v []AddLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) {
 	o.StorageTypes = v
@@ -1606,15 +1151,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetRootStorageType
 		return nil, false
 	}
 	return o.RootStorageTypes, true
-}
-
-// IsSetRootStorageTypes returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetRootStorageTypes() bool {
-	if o != nil && !IsNil(o.RootStorageTypes) {
-		return true
-	}
-
-	return false
 }
 
 // SetRootStorageTypes gets a reference to the given []AddLayout200ResponseInstanceTypeLayoutProvisionTypeRootStorageTypesInner and assigns it to the RootStorageTypes field.
@@ -1641,15 +1177,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetControllerTypes
 	return o.ControllerTypes, true
 }
 
-// IsSetControllerTypes returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetControllerTypes() bool {
-	if o != nil && !IsNil(o.ControllerTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetControllerTypes gets a reference to the given []AddLayout200ResponseInstanceTypeLayoutProvisionTypeControllerTypesInner and assigns it to the ControllerTypes field.
 func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) SetControllerTypes(v []AddLayout200ResponseInstanceTypeLayoutProvisionTypeControllerTypesInner) {
 	o.ControllerTypes = v
@@ -1672,15 +1199,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) GetStorageProfiles
 		return nil, false
 	}
 	return o.StorageProfiles, true
-}
-
-// IsSetStorageProfiles returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionType) IsSetStorageProfiles() bool {
-	if o != nil && !IsNil(o.StorageProfiles) {
-		return true
-	}
-
-	return false
 }
 
 // SetStorageProfiles gets a reference to the given []AddLayout200ResponseInstanceTypeLayoutProvisionTypeStorageProfilesInner and assigns it to the StorageProfiles field.

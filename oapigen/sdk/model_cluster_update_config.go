@@ -62,15 +62,6 @@ func (o *ClusterUpdateConfig) GetDynamicPlacementModeOk() (*string, bool) {
 	return o.DynamicPlacementMode, true
 }
 
-// IsSetDynamicPlacementMode returns a boolean if a field has been set.
-func (o *ClusterUpdateConfig) IsSetDynamicPlacementMode() bool {
-	if o != nil && !IsNil(o.DynamicPlacementMode) {
-		return true
-	}
-
-	return false
-}
-
 // SetDynamicPlacementMode gets a reference to the given string and assigns it to the DynamicPlacementMode field.
 func (o *ClusterUpdateConfig) SetDynamicPlacementMode(v string) {
 	o.DynamicPlacementMode = &v

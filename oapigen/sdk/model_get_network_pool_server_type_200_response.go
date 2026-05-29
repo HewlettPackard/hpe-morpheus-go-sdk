@@ -61,15 +61,6 @@ func (o *GetNetworkPoolServerType200Response) GetNetworkPoolServerTypeOk() (*Get
 	return o.NetworkPoolServerType, true
 }
 
-// IsSetNetworkPoolServerType returns a boolean if a field has been set.
-func (o *GetNetworkPoolServerType200Response) IsSetNetworkPoolServerType() bool {
-	if o != nil && !IsNil(o.NetworkPoolServerType) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkPoolServerType gets a reference to the given GetNetworkPoolServerType200ResponseNetworkPoolServerType and assigns it to the NetworkPoolServerType field.
 func (o *GetNetworkPoolServerType200Response) SetNetworkPoolServerType(v GetNetworkPoolServerType200ResponseNetworkPoolServerType) {
 	o.NetworkPoolServerType = &v

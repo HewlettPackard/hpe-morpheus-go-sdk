@@ -61,15 +61,6 @@ func (o *UpdateOsTypeRequest) GetOsTypeOk() (*UpdateOsTypeRequestOsType, bool) {
 	return o.OsType, true
 }
 
-// IsSetOsType returns a boolean if a field has been set.
-func (o *UpdateOsTypeRequest) IsSetOsType() bool {
-	if o != nil && !IsNil(o.OsType) {
-		return true
-	}
-
-	return false
-}
-
 // SetOsType gets a reference to the given UpdateOsTypeRequestOsType and assigns it to the OsType field.
 func (o *UpdateOsTypeRequest) SetOsType(v UpdateOsTypeRequestOsType) {
 	o.OsType = &v

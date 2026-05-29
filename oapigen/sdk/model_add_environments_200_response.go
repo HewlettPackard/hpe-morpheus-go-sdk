@@ -62,15 +62,6 @@ func (o *AddEnvironments200Response) GetEnvironmentOk() (*AddEnvironments200Resp
 	return o.Environment, true
 }
 
-// IsSetEnvironment returns a boolean if a field has been set.
-func (o *AddEnvironments200Response) IsSetEnvironment() bool {
-	if o != nil && !IsNil(o.Environment) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnvironment gets a reference to the given AddEnvironments200ResponseAllOfEnvironment and assigns it to the Environment field.
 func (o *AddEnvironments200Response) SetEnvironment(v AddEnvironments200ResponseAllOfEnvironment) {
 	o.Environment = &v
@@ -92,15 +83,6 @@ func (o *AddEnvironments200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *AddEnvironments200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

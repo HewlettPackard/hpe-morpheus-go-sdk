@@ -101,15 +101,6 @@ func (o *AddSystemRequestSystem) GetDescriptionOk() (*string, bool) {
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *AddSystemRequestSystem) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *AddSystemRequestSystem) SetDescription(v string) {
 	o.Description = &v
@@ -181,15 +172,6 @@ func (o *AddSystemRequestSystem) GetEnabledOk() (*bool, bool) {
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *AddSystemRequestSystem) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *AddSystemRequestSystem) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -211,15 +193,6 @@ func (o *AddSystemRequestSystem) GetExternalIdOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ExternalId, true
-}
-
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *AddSystemRequestSystem) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
-		return true
-	}
-
-	return false
 }
 
 // SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
@@ -245,15 +218,6 @@ func (o *AddSystemRequestSystem) GetConfigOk() (map[string]interface{}, bool) {
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *AddSystemRequestSystem) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
 func (o *AddSystemRequestSystem) SetConfig(v map[string]interface{}) {
 	o.Config = v
@@ -275,15 +239,6 @@ func (o *AddSystemRequestSystem) GetComponentsOk() ([]AddSystemRequestSystemComp
 		return nil, false
 	}
 	return o.Components, true
-}
-
-// IsSetComponents returns a boolean if a field has been set.
-func (o *AddSystemRequestSystem) IsSetComponents() bool {
-	if o != nil && !IsNil(o.Components) {
-		return true
-	}
-
-	return false
 }
 
 // SetComponents gets a reference to the given []AddSystemRequestSystemComponentsInner and assigns it to the Components field.

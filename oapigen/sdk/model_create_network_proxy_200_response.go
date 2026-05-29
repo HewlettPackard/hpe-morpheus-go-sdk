@@ -61,15 +61,6 @@ func (o *CreateNetworkProxy200Response) GetNetworkProxyOk() (*CreateNetworkProxy
 	return o.NetworkProxy, true
 }
 
-// IsSetNetworkProxy returns a boolean if a field has been set.
-func (o *CreateNetworkProxy200Response) IsSetNetworkProxy() bool {
-	if o != nil && !IsNil(o.NetworkProxy) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkProxy gets a reference to the given CreateNetworkProxy200ResponseNetworkProxy and assigns it to the NetworkProxy field.
 func (o *CreateNetworkProxy200Response) SetNetworkProxy(v CreateNetworkProxy200ResponseNetworkProxy) {
 	o.NetworkProxy = &v

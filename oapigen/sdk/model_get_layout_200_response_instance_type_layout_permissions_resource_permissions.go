@@ -68,15 +68,6 @@ func (o *GetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissions) G
 	return o.DefaultStore, true
 }
 
-// IsSetDefaultStore returns a boolean if a field has been set.
-func (o *GetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissions) IsSetDefaultStore() bool {
-	if o != nil && !IsNil(o.DefaultStore) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultStore gets a reference to the given bool and assigns it to the DefaultStore field.
 func (o *GetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissions) SetDefaultStore(v bool) {
 	o.DefaultStore = &v
@@ -98,15 +89,6 @@ func (o *GetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissions) G
 		return nil, false
 	}
 	return o.AllPlans, true
-}
-
-// IsSetAllPlans returns a boolean if a field has been set.
-func (o *GetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissions) IsSetAllPlans() bool {
-	if o != nil && !IsNil(o.AllPlans) {
-		return true
-	}
-
-	return false
 }
 
 // SetAllPlans gets a reference to the given bool and assigns it to the AllPlans field.
@@ -132,15 +114,6 @@ func (o *GetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissions) G
 	return o.DefaultTarget, true
 }
 
-// IsSetDefaultTarget returns a boolean if a field has been set.
-func (o *GetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissions) IsSetDefaultTarget() bool {
-	if o != nil && !IsNil(o.DefaultTarget) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultTarget gets a reference to the given bool and assigns it to the DefaultTarget field.
 func (o *GetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissions) SetDefaultTarget(v bool) {
 	o.DefaultTarget = &v
@@ -162,15 +135,6 @@ func (o *GetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissions) G
 		return nil, false
 	}
 	return o.CanManage, true
-}
-
-// IsSetCanManage returns a boolean if a field has been set.
-func (o *GetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissions) IsSetCanManage() bool {
-	if o != nil && !IsNil(o.CanManage) {
-		return true
-	}
-
-	return false
 }
 
 // SetCanManage gets a reference to the given bool and assigns it to the CanManage field.
@@ -196,15 +160,6 @@ func (o *GetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissions) G
 	return o.All, true
 }
 
-// IsSetAll returns a boolean if a field has been set.
-func (o *GetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissions) IsSetAll() bool {
-	if o != nil && !IsNil(o.All) {
-		return true
-	}
-
-	return false
-}
-
 // SetAll gets a reference to the given bool and assigns it to the All field.
 func (o *GetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissions) SetAll(v bool) {
 	o.All = &v
@@ -226,15 +181,6 @@ func (o *GetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissions) G
 		return nil, false
 	}
 	return o.Account, true
-}
-
-// IsSetAccount returns a boolean if a field has been set.
-func (o *GetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissions) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccount gets a reference to the given GetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissionsAccount and assigns it to the Account field.
@@ -261,15 +207,6 @@ func (o *GetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissions) G
 	return o.Sites, true
 }
 
-// IsSetSites returns a boolean if a field has been set.
-func (o *GetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissions) IsSetSites() bool {
-	if o != nil && !IsNil(o.Sites) {
-		return true
-	}
-
-	return false
-}
-
 // SetSites gets a reference to the given []map[string]interface{} and assigns it to the Sites field.
 func (o *GetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissions) SetSites(v []map[string]interface{}) {
 	o.Sites = v
@@ -292,15 +229,6 @@ func (o *GetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissions) G
 		return nil, false
 	}
 	return o.Plans, true
-}
-
-// IsSetPlans returns a boolean if a field has been set.
-func (o *GetLayout200ResponseInstanceTypeLayoutPermissionsResourcePermissions) IsSetPlans() bool {
-	if o != nil && !IsNil(o.Plans) {
-		return true
-	}
-
-	return false
 }
 
 // SetPlans gets a reference to the given []map[string]interface{} and assigns it to the Plans field.

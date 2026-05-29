@@ -73,28 +73,9 @@ func (o *NSXVirtualServerConfigObject1) GetApplicationProfileOk() (*int64, bool)
 	return o.ApplicationProfile.Get(), o.ApplicationProfile.IsSet()
 }
 
-// IsSetApplicationProfile returns a boolean if a field has been set.
-func (o *NSXVirtualServerConfigObject1) IsSetApplicationProfile() bool {
-	if o != nil && o.ApplicationProfile.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetApplicationProfile gets a reference to the given NullableInt64 and assigns it to the ApplicationProfile field.
 func (o *NSXVirtualServerConfigObject1) SetApplicationProfile(v int64) {
 	o.ApplicationProfile.Set(&v)
-}
-
-// SetApplicationProfileNil sets the value for ApplicationProfile to be an explicit nil
-func (o *NSXVirtualServerConfigObject1) SetApplicationProfileNil() {
-	o.ApplicationProfile.Set(nil)
-}
-
-// UnsetApplicationProfile ensures that no value is present for ApplicationProfile, not even an explicit nil
-func (o *NSXVirtualServerConfigObject1) UnsetApplicationProfile() {
-	o.ApplicationProfile.Unset()
 }
 
 // GetPool returns the Pool field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -116,28 +97,9 @@ func (o *NSXVirtualServerConfigObject1) GetPoolOk() (*string, bool) {
 	return o.Pool.Get(), o.Pool.IsSet()
 }
 
-// IsSetPool returns a boolean if a field has been set.
-func (o *NSXVirtualServerConfigObject1) IsSetPool() bool {
-	if o != nil && o.Pool.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPool gets a reference to the given NullableString and assigns it to the Pool field.
 func (o *NSXVirtualServerConfigObject1) SetPool(v string) {
 	o.Pool.Set(&v)
-}
-
-// SetPoolNil sets the value for Pool to be an explicit nil
-func (o *NSXVirtualServerConfigObject1) SetPoolNil() {
-	o.Pool.Set(nil)
-}
-
-// UnsetPool ensures that no value is present for Pool, not even an explicit nil
-func (o *NSXVirtualServerConfigObject1) UnsetPool() {
-	o.Pool.Unset()
 }
 
 // GetPersistence returns the Persistence field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -159,28 +121,9 @@ func (o *NSXVirtualServerConfigObject1) GetPersistenceOk() (*string, bool) {
 	return o.Persistence.Get(), o.Persistence.IsSet()
 }
 
-// IsSetPersistence returns a boolean if a field has been set.
-func (o *NSXVirtualServerConfigObject1) IsSetPersistence() bool {
-	if o != nil && o.Persistence.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPersistence gets a reference to the given NullableString and assigns it to the Persistence field.
 func (o *NSXVirtualServerConfigObject1) SetPersistence(v string) {
 	o.Persistence.Set(&v)
-}
-
-// SetPersistenceNil sets the value for Persistence to be an explicit nil
-func (o *NSXVirtualServerConfigObject1) SetPersistenceNil() {
-	o.Persistence.Set(nil)
-}
-
-// UnsetPersistence ensures that no value is present for Persistence, not even an explicit nil
-func (o *NSXVirtualServerConfigObject1) UnsetPersistence() {
-	o.Persistence.Unset()
 }
 
 // GetPersistenceProfile returns the PersistenceProfile field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -202,28 +145,9 @@ func (o *NSXVirtualServerConfigObject1) GetPersistenceProfileOk() (*int64, bool)
 	return o.PersistenceProfile.Get(), o.PersistenceProfile.IsSet()
 }
 
-// IsSetPersistenceProfile returns a boolean if a field has been set.
-func (o *NSXVirtualServerConfigObject1) IsSetPersistenceProfile() bool {
-	if o != nil && o.PersistenceProfile.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPersistenceProfile gets a reference to the given NullableInt64 and assigns it to the PersistenceProfile field.
 func (o *NSXVirtualServerConfigObject1) SetPersistenceProfile(v int64) {
 	o.PersistenceProfile.Set(&v)
-}
-
-// SetPersistenceProfileNil sets the value for PersistenceProfile to be an explicit nil
-func (o *NSXVirtualServerConfigObject1) SetPersistenceProfileNil() {
-	o.PersistenceProfile.Set(nil)
-}
-
-// UnsetPersistenceProfile ensures that no value is present for PersistenceProfile, not even an explicit nil
-func (o *NSXVirtualServerConfigObject1) UnsetPersistenceProfile() {
-	o.PersistenceProfile.Unset()
 }
 
 // GetSslClientProfile returns the SslClientProfile field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -245,28 +169,9 @@ func (o *NSXVirtualServerConfigObject1) GetSslClientProfileOk() (*int64, bool) {
 	return o.SslClientProfile.Get(), o.SslClientProfile.IsSet()
 }
 
-// IsSetSslClientProfile returns a boolean if a field has been set.
-func (o *NSXVirtualServerConfigObject1) IsSetSslClientProfile() bool {
-	if o != nil && o.SslClientProfile.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSslClientProfile gets a reference to the given NullableInt64 and assigns it to the SslClientProfile field.
 func (o *NSXVirtualServerConfigObject1) SetSslClientProfile(v int64) {
 	o.SslClientProfile.Set(&v)
-}
-
-// SetSslClientProfileNil sets the value for SslClientProfile to be an explicit nil
-func (o *NSXVirtualServerConfigObject1) SetSslClientProfileNil() {
-	o.SslClientProfile.Set(nil)
-}
-
-// UnsetSslClientProfile ensures that no value is present for SslClientProfile, not even an explicit nil
-func (o *NSXVirtualServerConfigObject1) UnsetSslClientProfile() {
-	o.SslClientProfile.Unset()
 }
 
 // GetSslServerProfile returns the SslServerProfile field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -288,28 +193,9 @@ func (o *NSXVirtualServerConfigObject1) GetSslServerProfileOk() (*int64, bool) {
 	return o.SslServerProfile.Get(), o.SslServerProfile.IsSet()
 }
 
-// IsSetSslServerProfile returns a boolean if a field has been set.
-func (o *NSXVirtualServerConfigObject1) IsSetSslServerProfile() bool {
-	if o != nil && o.SslServerProfile.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSslServerProfile gets a reference to the given NullableInt64 and assigns it to the SslServerProfile field.
 func (o *NSXVirtualServerConfigObject1) SetSslServerProfile(v int64) {
 	o.SslServerProfile.Set(&v)
-}
-
-// SetSslServerProfileNil sets the value for SslServerProfile to be an explicit nil
-func (o *NSXVirtualServerConfigObject1) SetSslServerProfileNil() {
-	o.SslServerProfile.Set(nil)
-}
-
-// UnsetSslServerProfile ensures that no value is present for SslServerProfile, not even an explicit nil
-func (o *NSXVirtualServerConfigObject1) UnsetSslServerProfile() {
-	o.SslServerProfile.Unset()
 }
 
 func (o NSXVirtualServerConfigObject1) MarshalJSON() ([]byte, error) {

@@ -63,15 +63,6 @@ func (o *ListTenants200ResponseAllOfAccountsInnerParent) GetIdOk() (*int64, bool
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListTenants200ResponseAllOfAccountsInnerParent) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListTenants200ResponseAllOfAccountsInnerParent) SetId(v int64) {
 	o.Id = &v
@@ -93,15 +84,6 @@ func (o *ListTenants200ResponseAllOfAccountsInnerParent) GetNameOk() (*string, b
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListTenants200ResponseAllOfAccountsInnerParent) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -128,28 +110,9 @@ func (o *ListTenants200ResponseAllOfAccountsInnerParent) GetSubdomainOk() (*stri
 	return o.Subdomain.Get(), o.Subdomain.IsSet()
 }
 
-// IsSetSubdomain returns a boolean if a field has been set.
-func (o *ListTenants200ResponseAllOfAccountsInnerParent) IsSetSubdomain() bool {
-	if o != nil && o.Subdomain.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSubdomain gets a reference to the given NullableString and assigns it to the Subdomain field.
 func (o *ListTenants200ResponseAllOfAccountsInnerParent) SetSubdomain(v string) {
 	o.Subdomain.Set(&v)
-}
-
-// SetSubdomainNil sets the value for Subdomain to be an explicit nil
-func (o *ListTenants200ResponseAllOfAccountsInnerParent) SetSubdomainNil() {
-	o.Subdomain.Set(nil)
-}
-
-// UnsetSubdomain ensures that no value is present for Subdomain, not even an explicit nil
-func (o *ListTenants200ResponseAllOfAccountsInnerParent) UnsetSubdomain() {
-	o.Subdomain.Unset()
 }
 
 func (o ListTenants200ResponseAllOfAccountsInnerParent) MarshalJSON() ([]byte, error) {

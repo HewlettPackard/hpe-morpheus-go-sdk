@@ -62,15 +62,6 @@ func (o *ListJobs200Response) GetJobsOk() ([]ListJobs200ResponseAllOfJobsInner, 
 	return o.Jobs, true
 }
 
-// IsSetJobs returns a boolean if a field has been set.
-func (o *ListJobs200Response) IsSetJobs() bool {
-	if o != nil && !IsNil(o.Jobs) {
-		return true
-	}
-
-	return false
-}
-
 // SetJobs gets a reference to the given []ListJobs200ResponseAllOfJobsInner and assigns it to the Jobs field.
 func (o *ListJobs200Response) SetJobs(v []ListJobs200ResponseAllOfJobsInner) {
 	o.Jobs = v
@@ -92,15 +83,6 @@ func (o *ListJobs200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, b
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListJobs200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

@@ -78,15 +78,6 @@ func (o *ArchiveBucketCreate) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ArchiveBucketCreate) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ArchiveBucketCreate) SetName(v string) {
 	o.Name = &v
@@ -108,15 +99,6 @@ func (o *ArchiveBucketCreate) GetDescriptionOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ArchiveBucketCreate) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -142,15 +124,6 @@ func (o *ArchiveBucketCreate) GetStorageProviderOk() (*ArchiveBucketCreateStorag
 	return o.StorageProvider, true
 }
 
-// IsSetStorageProvider returns a boolean if a field has been set.
-func (o *ArchiveBucketCreate) IsSetStorageProvider() bool {
-	if o != nil && !IsNil(o.StorageProvider) {
-		return true
-	}
-
-	return false
-}
-
 // SetStorageProvider gets a reference to the given ArchiveBucketCreateStorageProvider and assigns it to the StorageProvider field.
 func (o *ArchiveBucketCreate) SetStorageProvider(v ArchiveBucketCreateStorageProvider) {
 	o.StorageProvider = &v
@@ -172,15 +145,6 @@ func (o *ArchiveBucketCreate) GetVisibilityOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *ArchiveBucketCreate) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -206,15 +170,6 @@ func (o *ArchiveBucketCreate) GetIsPublicOk() (*bool, bool) {
 	return o.IsPublic, true
 }
 
-// IsSetIsPublic returns a boolean if a field has been set.
-func (o *ArchiveBucketCreate) IsSetIsPublic() bool {
-	if o != nil && !IsNil(o.IsPublic) {
-		return true
-	}
-
-	return false
-}
-
 // SetIsPublic gets a reference to the given bool and assigns it to the IsPublic field.
 func (o *ArchiveBucketCreate) SetIsPublic(v bool) {
 	o.IsPublic = &v
@@ -236,15 +191,6 @@ func (o *ArchiveBucketCreate) GetAccountsOk() (*ArchiveBucketCreateAccounts, boo
 		return nil, false
 	}
 	return o.Accounts, true
-}
-
-// IsSetAccounts returns a boolean if a field has been set.
-func (o *ArchiveBucketCreate) IsSetAccounts() bool {
-	if o != nil && !IsNil(o.Accounts) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccounts gets a reference to the given ArchiveBucketCreateAccounts and assigns it to the Accounts field.

@@ -62,15 +62,6 @@ func (o *ListTenants200Response) GetAccountsOk() ([]ListTenants200ResponseAllOfA
 	return o.Accounts, true
 }
 
-// IsSetAccounts returns a boolean if a field has been set.
-func (o *ListTenants200Response) IsSetAccounts() bool {
-	if o != nil && !IsNil(o.Accounts) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccounts gets a reference to the given []ListTenants200ResponseAllOfAccountsInner and assigns it to the Accounts field.
 func (o *ListTenants200Response) SetAccounts(v []ListTenants200ResponseAllOfAccountsInner) {
 	o.Accounts = v
@@ -92,15 +83,6 @@ func (o *ListTenants200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListTenants200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

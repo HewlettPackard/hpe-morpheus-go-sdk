@@ -69,15 +69,6 @@ func (o *VdiApp) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *VdiApp) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *VdiApp) SetId(v int64) {
 	o.Id = &v
@@ -99,15 +90,6 @@ func (o *VdiApp) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *VdiApp) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -134,28 +116,9 @@ func (o *VdiApp) GetDescriptionOk() (*string, bool) {
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *VdiApp) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *VdiApp) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *VdiApp) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *VdiApp) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetLaunchPrefix returns the LaunchPrefix field value if set, zero value otherwise.
@@ -174,15 +137,6 @@ func (o *VdiApp) GetLaunchPrefixOk() (*string, bool) {
 		return nil, false
 	}
 	return o.LaunchPrefix, true
-}
-
-// IsSetLaunchPrefix returns a boolean if a field has been set.
-func (o *VdiApp) IsSetLaunchPrefix() bool {
-	if o != nil && !IsNil(o.LaunchPrefix) {
-		return true
-	}
-
-	return false
 }
 
 // SetLaunchPrefix gets a reference to the given string and assigns it to the LaunchPrefix field.
@@ -209,28 +163,9 @@ func (o *VdiApp) GetIconPathOk() (*string, bool) {
 	return o.IconPath.Get(), o.IconPath.IsSet()
 }
 
-// IsSetIconPath returns a boolean if a field has been set.
-func (o *VdiApp) IsSetIconPath() bool {
-	if o != nil && o.IconPath.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetIconPath gets a reference to the given NullableString and assigns it to the IconPath field.
 func (o *VdiApp) SetIconPath(v string) {
 	o.IconPath.Set(&v)
-}
-
-// SetIconPathNil sets the value for IconPath to be an explicit nil
-func (o *VdiApp) SetIconPathNil() {
-	o.IconPath.Set(nil)
-}
-
-// UnsetIconPath ensures that no value is present for IconPath, not even an explicit nil
-func (o *VdiApp) UnsetIconPath() {
-	o.IconPath.Unset()
 }
 
 // GetLogo returns the Logo field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -252,28 +187,9 @@ func (o *VdiApp) GetLogoOk() (*string, bool) {
 	return o.Logo.Get(), o.Logo.IsSet()
 }
 
-// IsSetLogo returns a boolean if a field has been set.
-func (o *VdiApp) IsSetLogo() bool {
-	if o != nil && o.Logo.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLogo gets a reference to the given NullableString and assigns it to the Logo field.
 func (o *VdiApp) SetLogo(v string) {
 	o.Logo.Set(&v)
-}
-
-// SetLogoNil sets the value for Logo to be an explicit nil
-func (o *VdiApp) SetLogoNil() {
-	o.Logo.Set(nil)
-}
-
-// UnsetLogo ensures that no value is present for Logo, not even an explicit nil
-func (o *VdiApp) UnsetLogo() {
-	o.Logo.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -292,15 +208,6 @@ func (o *VdiApp) GetDateCreatedOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.DateCreated, true
-}
-
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *VdiApp) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
@@ -324,15 +231,6 @@ func (o *VdiApp) GetLastUpdatedOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *VdiApp) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.

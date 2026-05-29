@@ -63,15 +63,6 @@ func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf
 	return o.EntityId, true
 }
 
-// IsSetEntityId returns a boolean if a field has been set.
-func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6ProviderSettings) IsSetEntityId() bool {
-	if o != nil && !IsNil(o.EntityId) {
-		return true
-	}
-
-	return false
-}
-
 // SetEntityId gets a reference to the given string and assigns it to the EntityId field.
 func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6ProviderSettings) SetEntityId(v string) {
 	o.EntityId = &v
@@ -95,15 +86,6 @@ func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf
 	return o.AcsUrl, true
 }
 
-// IsSetAcsUrl returns a boolean if a field has been set.
-func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6ProviderSettings) IsSetAcsUrl() bool {
-	if o != nil && !IsNil(o.AcsUrl) {
-		return true
-	}
-
-	return false
-}
-
 // SetAcsUrl gets a reference to the given string and assigns it to the AcsUrl field.
 func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6ProviderSettings) SetAcsUrl(v string) {
 	o.AcsUrl = &v
@@ -125,15 +107,6 @@ func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf
 		return nil, false
 	}
 	return o.SpMetadata, true
-}
-
-// IsSetSpMetadata returns a boolean if a field has been set.
-func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6ProviderSettings) IsSetSpMetadata() bool {
-	if o != nil && !IsNil(o.SpMetadata) {
-		return true
-	}
-
-	return false
 }
 
 // SetSpMetadata gets a reference to the given string and assigns it to the SpMetadata field.

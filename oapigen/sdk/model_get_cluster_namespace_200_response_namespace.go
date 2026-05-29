@@ -67,15 +67,6 @@ func (o *GetClusterNamespace200ResponseNamespace) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetClusterNamespace200ResponseNamespace) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetClusterNamespace200ResponseNamespace) SetId(v int64) {
 	o.Id = &v
@@ -97,15 +88,6 @@ func (o *GetClusterNamespace200ResponseNamespace) GetVisibilityOk() (*string, bo
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *GetClusterNamespace200ResponseNamespace) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -131,15 +113,6 @@ func (o *GetClusterNamespace200ResponseNamespace) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *GetClusterNamespace200ResponseNamespace) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *GetClusterNamespace200ResponseNamespace) SetName(v string) {
 	o.Name = &v
@@ -161,15 +134,6 @@ func (o *GetClusterNamespace200ResponseNamespace) GetDescriptionOk() (*string, b
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *GetClusterNamespace200ResponseNamespace) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -195,15 +159,6 @@ func (o *GetClusterNamespace200ResponseNamespace) GetStatusOk() (*string, bool) 
 	return o.Status, true
 }
 
-// IsSetStatus returns a boolean if a field has been set.
-func (o *GetClusterNamespace200ResponseNamespace) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
-}
-
 // SetStatus gets a reference to the given string and assigns it to the Status field.
 func (o *GetClusterNamespace200ResponseNamespace) SetStatus(v string) {
 	o.Status = &v
@@ -227,15 +182,6 @@ func (o *GetClusterNamespace200ResponseNamespace) GetExternalIdOk() (*string, bo
 	return o.ExternalId, true
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *GetClusterNamespace200ResponseNamespace) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
 func (o *GetClusterNamespace200ResponseNamespace) SetExternalId(v string) {
 	o.ExternalId = &v
@@ -257,15 +203,6 @@ func (o *GetClusterNamespace200ResponseNamespace) GetPermissionsOk() (*GetCluste
 		return nil, false
 	}
 	return o.Permissions, true
-}
-
-// IsSetPermissions returns a boolean if a field has been set.
-func (o *GetClusterNamespace200ResponseNamespace) IsSetPermissions() bool {
-	if o != nil && !IsNil(o.Permissions) {
-		return true
-	}
-
-	return false
 }
 
 // SetPermissions gets a reference to the given GetClusterNamespace200ResponseNamespacePermissions and assigns it to the Permissions field.

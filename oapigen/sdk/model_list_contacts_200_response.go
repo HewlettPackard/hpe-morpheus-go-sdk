@@ -62,15 +62,6 @@ func (o *ListContacts200Response) GetContactsOk() ([]ListContacts200ResponseAllO
 	return o.Contacts, true
 }
 
-// IsSetContacts returns a boolean if a field has been set.
-func (o *ListContacts200Response) IsSetContacts() bool {
-	if o != nil && !IsNil(o.Contacts) {
-		return true
-	}
-
-	return false
-}
-
 // SetContacts gets a reference to the given []ListContacts200ResponseAllOfContactsInner and assigns it to the Contacts field.
 func (o *ListContacts200Response) SetContacts(v []ListContacts200ResponseAllOfContactsInner) {
 	o.Contacts = v
@@ -92,15 +83,6 @@ func (o *ListContacts200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMet
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListContacts200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

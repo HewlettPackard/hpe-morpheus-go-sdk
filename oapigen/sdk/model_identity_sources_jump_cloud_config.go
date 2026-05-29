@@ -81,15 +81,6 @@ func (o *IdentitySourcesJumpCloudConfig) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *IdentitySourcesJumpCloudConfig) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *IdentitySourcesJumpCloudConfig) SetId(v int64) {
 	o.Id = &v
@@ -111,15 +102,6 @@ func (o *IdentitySourcesJumpCloudConfig) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *IdentitySourcesJumpCloudConfig) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -145,15 +127,6 @@ func (o *IdentitySourcesJumpCloudConfig) GetDescriptionOk() (*string, bool) {
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *IdentitySourcesJumpCloudConfig) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *IdentitySourcesJumpCloudConfig) SetDescription(v string) {
 	o.Description = &v
@@ -175,15 +148,6 @@ func (o *IdentitySourcesJumpCloudConfig) GetCodeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *IdentitySourcesJumpCloudConfig) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -209,15 +173,6 @@ func (o *IdentitySourcesJumpCloudConfig) GetTypeOk() (*string, bool) {
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *IdentitySourcesJumpCloudConfig) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given string and assigns it to the Type field.
 func (o *IdentitySourcesJumpCloudConfig) SetType(v string) {
 	o.Type = &v
@@ -239,15 +194,6 @@ func (o *IdentitySourcesJumpCloudConfig) GetActiveOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Active, true
-}
-
-// IsSetActive returns a boolean if a field has been set.
-func (o *IdentitySourcesJumpCloudConfig) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
 }
 
 // SetActive gets a reference to the given bool and assigns it to the Active field.
@@ -273,15 +219,6 @@ func (o *IdentitySourcesJumpCloudConfig) GetDeletedOk() (*bool, bool) {
 	return o.Deleted, true
 }
 
-// IsSetDeleted returns a boolean if a field has been set.
-func (o *IdentitySourcesJumpCloudConfig) IsSetDeleted() bool {
-	if o != nil && !IsNil(o.Deleted) {
-		return true
-	}
-
-	return false
-}
-
 // SetDeleted gets a reference to the given bool and assigns it to the Deleted field.
 func (o *IdentitySourcesJumpCloudConfig) SetDeleted(v bool) {
 	o.Deleted = &v
@@ -303,15 +240,6 @@ func (o *IdentitySourcesJumpCloudConfig) GetAutoSyncOnLoginOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.AutoSyncOnLogin, true
-}
-
-// IsSetAutoSyncOnLogin returns a boolean if a field has been set.
-func (o *IdentitySourcesJumpCloudConfig) IsSetAutoSyncOnLogin() bool {
-	if o != nil && !IsNil(o.AutoSyncOnLogin) {
-		return true
-	}
-
-	return false
 }
 
 // SetAutoSyncOnLogin gets a reference to the given bool and assigns it to the AutoSyncOnLogin field.
@@ -337,15 +265,6 @@ func (o *IdentitySourcesJumpCloudConfig) GetExternalLoginOk() (*bool, bool) {
 	return o.ExternalLogin, true
 }
 
-// IsSetExternalLogin returns a boolean if a field has been set.
-func (o *IdentitySourcesJumpCloudConfig) IsSetExternalLogin() bool {
-	if o != nil && !IsNil(o.ExternalLogin) {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalLogin gets a reference to the given bool and assigns it to the ExternalLogin field.
 func (o *IdentitySourcesJumpCloudConfig) SetExternalLogin(v bool) {
 	o.ExternalLogin = &v
@@ -367,15 +286,6 @@ func (o *IdentitySourcesJumpCloudConfig) GetAllowCustomMappingsOk() (*bool, bool
 		return nil, false
 	}
 	return o.AllowCustomMappings, true
-}
-
-// IsSetAllowCustomMappings returns a boolean if a field has been set.
-func (o *IdentitySourcesJumpCloudConfig) IsSetAllowCustomMappings() bool {
-	if o != nil && !IsNil(o.AllowCustomMappings) {
-		return true
-	}
-
-	return false
 }
 
 // SetAllowCustomMappings gets a reference to the given bool and assigns it to the AllowCustomMappings field.
@@ -401,15 +311,6 @@ func (o *IdentitySourcesJumpCloudConfig) GetManualRoleAssignmentOk() (*bool, boo
 	return o.ManualRoleAssignment, true
 }
 
-// IsSetManualRoleAssignment returns a boolean if a field has been set.
-func (o *IdentitySourcesJumpCloudConfig) IsSetManualRoleAssignment() bool {
-	if o != nil && !IsNil(o.ManualRoleAssignment) {
-		return true
-	}
-
-	return false
-}
-
 // SetManualRoleAssignment gets a reference to the given bool and assigns it to the ManualRoleAssignment field.
 func (o *IdentitySourcesJumpCloudConfig) SetManualRoleAssignment(v bool) {
 	o.ManualRoleAssignment = &v
@@ -431,15 +332,6 @@ func (o *IdentitySourcesJumpCloudConfig) GetAccountOk() (*AddIdentitySources200R
 		return nil, false
 	}
 	return o.Account, true
-}
-
-// IsSetAccount returns a boolean if a field has been set.
-func (o *IdentitySourcesJumpCloudConfig) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccount gets a reference to the given AddIdentitySources200ResponseAllOfTaskOneOf1Account and assigns it to the Account field.
@@ -465,15 +357,6 @@ func (o *IdentitySourcesJumpCloudConfig) GetDefaultAccountRoleOk() (*AddIdentity
 	return o.DefaultAccountRole, true
 }
 
-// IsSetDefaultAccountRole returns a boolean if a field has been set.
-func (o *IdentitySourcesJumpCloudConfig) IsSetDefaultAccountRole() bool {
-	if o != nil && !IsNil(o.DefaultAccountRole) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultAccountRole gets a reference to the given AddIdentitySources200ResponseAllOfTaskOneOf1DefaultAccountRole and assigns it to the DefaultAccountRole field.
 func (o *IdentitySourcesJumpCloudConfig) SetDefaultAccountRole(v AddIdentitySources200ResponseAllOfTaskOneOf1DefaultAccountRole) {
 	o.DefaultAccountRole = &v
@@ -495,15 +378,6 @@ func (o *IdentitySourcesJumpCloudConfig) GetConfigOk() (*AddIdentitySources200Re
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *IdentitySourcesJumpCloudConfig) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given AddIdentitySources200ResponseAllOfTaskOneOf1Config and assigns it to the Config field.
@@ -529,15 +403,6 @@ func (o *IdentitySourcesJumpCloudConfig) GetRoleMappingsOk() ([]AddIdentitySourc
 	return o.RoleMappings, true
 }
 
-// IsSetRoleMappings returns a boolean if a field has been set.
-func (o *IdentitySourcesJumpCloudConfig) IsSetRoleMappings() bool {
-	if o != nil && !IsNil(o.RoleMappings) {
-		return true
-	}
-
-	return false
-}
-
 // SetRoleMappings gets a reference to the given []AddIdentitySources200ResponseAllOfTaskOneOf1RoleMappingsInner and assigns it to the RoleMappings field.
 func (o *IdentitySourcesJumpCloudConfig) SetRoleMappings(v []AddIdentitySources200ResponseAllOfTaskOneOf1RoleMappingsInner) {
 	o.RoleMappings = v
@@ -559,15 +424,6 @@ func (o *IdentitySourcesJumpCloudConfig) GetSubdomainOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Subdomain, true
-}
-
-// IsSetSubdomain returns a boolean if a field has been set.
-func (o *IdentitySourcesJumpCloudConfig) IsSetSubdomain() bool {
-	if o != nil && !IsNil(o.Subdomain) {
-		return true
-	}
-
-	return false
 }
 
 // SetSubdomain gets a reference to the given string and assigns it to the Subdomain field.
@@ -593,15 +449,6 @@ func (o *IdentitySourcesJumpCloudConfig) GetLoginURLOk() (*string, bool) {
 	return o.LoginURL, true
 }
 
-// IsSetLoginURL returns a boolean if a field has been set.
-func (o *IdentitySourcesJumpCloudConfig) IsSetLoginURL() bool {
-	if o != nil && !IsNil(o.LoginURL) {
-		return true
-	}
-
-	return false
-}
-
 // SetLoginURL gets a reference to the given string and assigns it to the LoginURL field.
 func (o *IdentitySourcesJumpCloudConfig) SetLoginURL(v string) {
 	o.LoginURL = &v
@@ -623,15 +470,6 @@ func (o *IdentitySourcesJumpCloudConfig) GetProviderSettingsOk() (map[string]int
 		return map[string]interface{}{}, false
 	}
 	return o.ProviderSettings, true
-}
-
-// IsSetProviderSettings returns a boolean if a field has been set.
-func (o *IdentitySourcesJumpCloudConfig) IsSetProviderSettings() bool {
-	if o != nil && !IsNil(o.ProviderSettings) {
-		return true
-	}
-
-	return false
 }
 
 // SetProviderSettings gets a reference to the given map[string]interface{} and assigns it to the ProviderSettings field.
@@ -657,15 +495,6 @@ func (o *IdentitySourcesJumpCloudConfig) GetDateCreatedOk() (*time.Time, bool) {
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *IdentitySourcesJumpCloudConfig) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *IdentitySourcesJumpCloudConfig) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -687,15 +516,6 @@ func (o *IdentitySourcesJumpCloudConfig) GetLastUpdatedOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *IdentitySourcesJumpCloudConfig) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.

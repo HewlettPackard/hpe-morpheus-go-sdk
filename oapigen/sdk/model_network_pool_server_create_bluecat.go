@@ -143,15 +143,6 @@ func (o *NetworkPoolServerCreateBluecat) GetEnabledOk() (*bool, bool) {
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *NetworkPoolServerCreateBluecat) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *NetworkPoolServerCreateBluecat) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -202,28 +193,9 @@ func (o *NetworkPoolServerCreateBluecat) GetServiceUsernameOk() (*string, bool) 
 	return o.ServiceUsername.Get(), o.ServiceUsername.IsSet()
 }
 
-// IsSetServiceUsername returns a boolean if a field has been set.
-func (o *NetworkPoolServerCreateBluecat) IsSetServiceUsername() bool {
-	if o != nil && o.ServiceUsername.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceUsername gets a reference to the given NullableString and assigns it to the ServiceUsername field.
 func (o *NetworkPoolServerCreateBluecat) SetServiceUsername(v string) {
 	o.ServiceUsername.Set(&v)
-}
-
-// SetServiceUsernameNil sets the value for ServiceUsername to be an explicit nil
-func (o *NetworkPoolServerCreateBluecat) SetServiceUsernameNil() {
-	o.ServiceUsername.Set(nil)
-}
-
-// UnsetServiceUsername ensures that no value is present for ServiceUsername, not even an explicit nil
-func (o *NetworkPoolServerCreateBluecat) UnsetServiceUsername() {
-	o.ServiceUsername.Unset()
 }
 
 // GetServicePassword returns the ServicePassword field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -245,28 +217,9 @@ func (o *NetworkPoolServerCreateBluecat) GetServicePasswordOk() (*string, bool) 
 	return o.ServicePassword.Get(), o.ServicePassword.IsSet()
 }
 
-// IsSetServicePassword returns a boolean if a field has been set.
-func (o *NetworkPoolServerCreateBluecat) IsSetServicePassword() bool {
-	if o != nil && o.ServicePassword.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServicePassword gets a reference to the given NullableString and assigns it to the ServicePassword field.
 func (o *NetworkPoolServerCreateBluecat) SetServicePassword(v string) {
 	o.ServicePassword.Set(&v)
-}
-
-// SetServicePasswordNil sets the value for ServicePassword to be an explicit nil
-func (o *NetworkPoolServerCreateBluecat) SetServicePasswordNil() {
-	o.ServicePassword.Set(nil)
-}
-
-// UnsetServicePassword ensures that no value is present for ServicePassword, not even an explicit nil
-func (o *NetworkPoolServerCreateBluecat) UnsetServicePassword() {
-	o.ServicePassword.Unset()
 }
 
 // GetServiceThrottleRate returns the ServiceThrottleRate field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -288,28 +241,9 @@ func (o *NetworkPoolServerCreateBluecat) GetServiceThrottleRateOk() (*int64, boo
 	return o.ServiceThrottleRate.Get(), o.ServiceThrottleRate.IsSet()
 }
 
-// IsSetServiceThrottleRate returns a boolean if a field has been set.
-func (o *NetworkPoolServerCreateBluecat) IsSetServiceThrottleRate() bool {
-	if o != nil && o.ServiceThrottleRate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceThrottleRate gets a reference to the given NullableInt64 and assigns it to the ServiceThrottleRate field.
 func (o *NetworkPoolServerCreateBluecat) SetServiceThrottleRate(v int64) {
 	o.ServiceThrottleRate.Set(&v)
-}
-
-// SetServiceThrottleRateNil sets the value for ServiceThrottleRate to be an explicit nil
-func (o *NetworkPoolServerCreateBluecat) SetServiceThrottleRateNil() {
-	o.ServiceThrottleRate.Set(nil)
-}
-
-// UnsetServiceThrottleRate ensures that no value is present for ServiceThrottleRate, not even an explicit nil
-func (o *NetworkPoolServerCreateBluecat) UnsetServiceThrottleRate() {
-	o.ServiceThrottleRate.Unset()
 }
 
 // GetIgnoreSsl returns the IgnoreSsl field value if set, zero value otherwise.
@@ -328,15 +262,6 @@ func (o *NetworkPoolServerCreateBluecat) GetIgnoreSslOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.IgnoreSsl, true
-}
-
-// IsSetIgnoreSsl returns a boolean if a field has been set.
-func (o *NetworkPoolServerCreateBluecat) IsSetIgnoreSsl() bool {
-	if o != nil && !IsNil(o.IgnoreSsl) {
-		return true
-	}
-
-	return false
 }
 
 // SetIgnoreSsl gets a reference to the given bool and assigns it to the IgnoreSsl field.
@@ -363,28 +288,9 @@ func (o *NetworkPoolServerCreateBluecat) GetNetworkFilterOk() (*string, bool) {
 	return o.NetworkFilter.Get(), o.NetworkFilter.IsSet()
 }
 
-// IsSetNetworkFilter returns a boolean if a field has been set.
-func (o *NetworkPoolServerCreateBluecat) IsSetNetworkFilter() bool {
-	if o != nil && o.NetworkFilter.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkFilter gets a reference to the given NullableString and assigns it to the NetworkFilter field.
 func (o *NetworkPoolServerCreateBluecat) SetNetworkFilter(v string) {
 	o.NetworkFilter.Set(&v)
-}
-
-// SetNetworkFilterNil sets the value for NetworkFilter to be an explicit nil
-func (o *NetworkPoolServerCreateBluecat) SetNetworkFilterNil() {
-	o.NetworkFilter.Set(nil)
-}
-
-// UnsetNetworkFilter ensures that no value is present for NetworkFilter, not even an explicit nil
-func (o *NetworkPoolServerCreateBluecat) UnsetNetworkFilter() {
-	o.NetworkFilter.Unset()
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
@@ -403,15 +309,6 @@ func (o *NetworkPoolServerCreateBluecat) GetConfigOk() (*NetworkPoolServerCreate
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *NetworkPoolServerCreateBluecat) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given NetworkPoolServerCreateBluecatConfig and assigns it to the Config field.
@@ -435,15 +332,6 @@ func (o *NetworkPoolServerCreateBluecat) GetCredentialOk() (*NetworkPoolServerCr
 		return nil, false
 	}
 	return o.Credential, true
-}
-
-// IsSetCredential returns a boolean if a field has been set.
-func (o *NetworkPoolServerCreateBluecat) IsSetCredential() bool {
-	if o != nil && !IsNil(o.Credential) {
-		return true
-	}
-
-	return false
 }
 
 // SetCredential gets a reference to the given NetworkPoolServerCreateBluecatCredential and assigns it to the Credential field.

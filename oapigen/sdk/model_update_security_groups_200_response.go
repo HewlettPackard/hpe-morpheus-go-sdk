@@ -61,15 +61,6 @@ func (o *UpdateSecurityGroups200Response) GetSecurityGroupOk() (*UpdateSecurityG
 	return o.SecurityGroup, true
 }
 
-// IsSetSecurityGroup returns a boolean if a field has been set.
-func (o *UpdateSecurityGroups200Response) IsSetSecurityGroup() bool {
-	if o != nil && !IsNil(o.SecurityGroup) {
-		return true
-	}
-
-	return false
-}
-
 // SetSecurityGroup gets a reference to the given UpdateSecurityGroups200ResponseSecurityGroup and assigns it to the SecurityGroup field.
 func (o *UpdateSecurityGroups200Response) SetSecurityGroup(v UpdateSecurityGroups200ResponseSecurityGroup) {
 	o.SecurityGroup = &v

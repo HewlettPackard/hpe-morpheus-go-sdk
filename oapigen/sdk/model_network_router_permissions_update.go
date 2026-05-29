@@ -63,15 +63,6 @@ func (o *NetworkRouterPermissionsUpdate) GetVisibilityOk() (*string, bool) {
 	return o.Visibility, true
 }
 
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *NetworkRouterPermissionsUpdate) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
-}
-
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
 func (o *NetworkRouterPermissionsUpdate) SetVisibility(v string) {
 	o.Visibility = &v
@@ -93,15 +84,6 @@ func (o *NetworkRouterPermissionsUpdate) GetTenantPermissionsOk() (*NetworkRoute
 		return nil, false
 	}
 	return o.TenantPermissions, true
-}
-
-// IsSetTenantPermissions returns a boolean if a field has been set.
-func (o *NetworkRouterPermissionsUpdate) IsSetTenantPermissions() bool {
-	if o != nil && !IsNil(o.TenantPermissions) {
-		return true
-	}
-
-	return false
 }
 
 // SetTenantPermissions gets a reference to the given NetworkRouterPermissionsUpdateTenantPermissions and assigns it to the TenantPermissions field.

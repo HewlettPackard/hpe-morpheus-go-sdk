@@ -65,15 +65,6 @@ func (o *GetNetworkServer200ResponseNetworkServerIntegration) GetIdOk() (*int64,
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetNetworkServer200ResponseNetworkServerIntegration) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetNetworkServer200ResponseNetworkServerIntegration) SetId(v int64) {
 	o.Id = &v
@@ -95,15 +86,6 @@ func (o *GetNetworkServer200ResponseNetworkServerIntegration) GetNameOk() (*stri
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *GetNetworkServer200ResponseNetworkServerIntegration) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -129,15 +111,6 @@ func (o *GetNetworkServer200ResponseNetworkServerIntegration) GetTypeOk() (*stri
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *GetNetworkServer200ResponseNetworkServerIntegration) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given string and assigns it to the Type field.
 func (o *GetNetworkServer200ResponseNetworkServerIntegration) SetType(v string) {
 	o.Type = &v
@@ -159,15 +132,6 @@ func (o *GetNetworkServer200ResponseNetworkServerIntegration) GetIntegrationType
 		return nil, false
 	}
 	return o.IntegrationType, true
-}
-
-// IsSetIntegrationType returns a boolean if a field has been set.
-func (o *GetNetworkServer200ResponseNetworkServerIntegration) IsSetIntegrationType() bool {
-	if o != nil && !IsNil(o.IntegrationType) {
-		return true
-	}
-
-	return false
 }
 
 // SetIntegrationType gets a reference to the given GetNetworkServer200ResponseNetworkServerIntegrationIntegrationType and assigns it to the IntegrationType field.

@@ -88,15 +88,6 @@ func (o *InstanceConfigObject1Group) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *InstanceConfigObject1Group) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *InstanceConfigObject1Group) SetName(v string) {
 	o.Name = &v

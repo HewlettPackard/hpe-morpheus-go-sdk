@@ -61,15 +61,6 @@ func (o *UpdateUserSettingsRequest) GetUserOk() (*UpdateUserSettingsRequestUser,
 	return o.User, true
 }
 
-// IsSetUser returns a boolean if a field has been set.
-func (o *UpdateUserSettingsRequest) IsSetUser() bool {
-	if o != nil && !IsNil(o.User) {
-		return true
-	}
-
-	return false
-}
-
 // SetUser gets a reference to the given UpdateUserSettingsRequestUser and assigns it to the User field.
 func (o *UpdateUserSettingsRequest) SetUser(v UpdateUserSettingsRequestUser) {
 	o.User = &v

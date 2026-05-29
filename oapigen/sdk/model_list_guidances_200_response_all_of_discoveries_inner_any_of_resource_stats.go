@@ -76,15 +76,6 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) GetTsO
 	return o.Ts, true
 }
 
-// IsSetTs returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) IsSetTs() bool {
-	if o != nil && !IsNil(o.Ts) {
-		return true
-	}
-
-	return false
-}
-
 // SetTs gets a reference to the given string and assigns it to the Ts field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) SetTs(v string) {
 	o.Ts = &v
@@ -109,28 +100,9 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) GetFre
 	return o.FreeMemory.Get(), o.FreeMemory.IsSet()
 }
 
-// IsSetFreeMemory returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) IsSetFreeMemory() bool {
-	if o != nil && o.FreeMemory.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFreeMemory gets a reference to the given NullableInt64 and assigns it to the FreeMemory field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) SetFreeMemory(v int64) {
 	o.FreeMemory.Set(&v)
-}
-
-// SetFreeMemoryNil sets the value for FreeMemory to be an explicit nil
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) SetFreeMemoryNil() {
-	o.FreeMemory.Set(nil)
-}
-
-// UnsetFreeMemory ensures that no value is present for FreeMemory, not even an explicit nil
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) UnsetFreeMemory() {
-	o.FreeMemory.Unset()
 }
 
 // GetUsedMemory returns the UsedMemory field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -152,28 +124,9 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) GetUse
 	return o.UsedMemory.Get(), o.UsedMemory.IsSet()
 }
 
-// IsSetUsedMemory returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) IsSetUsedMemory() bool {
-	if o != nil && o.UsedMemory.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUsedMemory gets a reference to the given NullableInt64 and assigns it to the UsedMemory field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) SetUsedMemory(v int64) {
 	o.UsedMemory.Set(&v)
-}
-
-// SetUsedMemoryNil sets the value for UsedMemory to be an explicit nil
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) SetUsedMemoryNil() {
-	o.UsedMemory.Set(nil)
-}
-
-// UnsetUsedMemory ensures that no value is present for UsedMemory, not even an explicit nil
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) UnsetUsedMemory() {
-	o.UsedMemory.Unset()
 }
 
 // GetFreeSwap returns the FreeSwap field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -195,28 +148,9 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) GetFre
 	return o.FreeSwap.Get(), o.FreeSwap.IsSet()
 }
 
-// IsSetFreeSwap returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) IsSetFreeSwap() bool {
-	if o != nil && o.FreeSwap.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFreeSwap gets a reference to the given NullableInt64 and assigns it to the FreeSwap field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) SetFreeSwap(v int64) {
 	o.FreeSwap.Set(&v)
-}
-
-// SetFreeSwapNil sets the value for FreeSwap to be an explicit nil
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) SetFreeSwapNil() {
-	o.FreeSwap.Set(nil)
-}
-
-// UnsetFreeSwap ensures that no value is present for FreeSwap, not even an explicit nil
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) UnsetFreeSwap() {
-	o.FreeSwap.Unset()
 }
 
 // GetUsedSwap returns the UsedSwap field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -238,28 +172,9 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) GetUse
 	return o.UsedSwap.Get(), o.UsedSwap.IsSet()
 }
 
-// IsSetUsedSwap returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) IsSetUsedSwap() bool {
-	if o != nil && o.UsedSwap.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUsedSwap gets a reference to the given NullableInt64 and assigns it to the UsedSwap field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) SetUsedSwap(v int64) {
 	o.UsedSwap.Set(&v)
-}
-
-// SetUsedSwapNil sets the value for UsedSwap to be an explicit nil
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) SetUsedSwapNil() {
-	o.UsedSwap.Set(nil)
-}
-
-// UnsetUsedSwap ensures that no value is present for UsedSwap, not even an explicit nil
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) UnsetUsedSwap() {
-	o.UsedSwap.Unset()
 }
 
 // GetCpuIdleTime returns the CpuIdleTime field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -281,28 +196,9 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) GetCpu
 	return o.CpuIdleTime.Get(), o.CpuIdleTime.IsSet()
 }
 
-// IsSetCpuIdleTime returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) IsSetCpuIdleTime() bool {
-	if o != nil && o.CpuIdleTime.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuIdleTime gets a reference to the given NullableInt64 and assigns it to the CpuIdleTime field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) SetCpuIdleTime(v int64) {
 	o.CpuIdleTime.Set(&v)
-}
-
-// SetCpuIdleTimeNil sets the value for CpuIdleTime to be an explicit nil
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) SetCpuIdleTimeNil() {
-	o.CpuIdleTime.Set(nil)
-}
-
-// UnsetCpuIdleTime ensures that no value is present for CpuIdleTime, not even an explicit nil
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) UnsetCpuIdleTime() {
-	o.CpuIdleTime.Unset()
 }
 
 // GetCpuSystemTime returns the CpuSystemTime field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -324,28 +220,9 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) GetCpu
 	return o.CpuSystemTime.Get(), o.CpuSystemTime.IsSet()
 }
 
-// IsSetCpuSystemTime returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) IsSetCpuSystemTime() bool {
-	if o != nil && o.CpuSystemTime.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuSystemTime gets a reference to the given NullableInt64 and assigns it to the CpuSystemTime field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) SetCpuSystemTime(v int64) {
 	o.CpuSystemTime.Set(&v)
-}
-
-// SetCpuSystemTimeNil sets the value for CpuSystemTime to be an explicit nil
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) SetCpuSystemTimeNil() {
-	o.CpuSystemTime.Set(nil)
-}
-
-// UnsetCpuSystemTime ensures that no value is present for CpuSystemTime, not even an explicit nil
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) UnsetCpuSystemTime() {
-	o.CpuSystemTime.Unset()
 }
 
 // GetCpuUserTime returns the CpuUserTime field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -367,28 +244,9 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) GetCpu
 	return o.CpuUserTime.Get(), o.CpuUserTime.IsSet()
 }
 
-// IsSetCpuUserTime returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) IsSetCpuUserTime() bool {
-	if o != nil && o.CpuUserTime.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuUserTime gets a reference to the given NullableInt64 and assigns it to the CpuUserTime field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) SetCpuUserTime(v int64) {
 	o.CpuUserTime.Set(&v)
-}
-
-// SetCpuUserTimeNil sets the value for CpuUserTime to be an explicit nil
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) SetCpuUserTimeNil() {
-	o.CpuUserTime.Set(nil)
-}
-
-// UnsetCpuUserTime ensures that no value is present for CpuUserTime, not even an explicit nil
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) UnsetCpuUserTime() {
-	o.CpuUserTime.Unset()
 }
 
 // GetCpuTotalTime returns the CpuTotalTime field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -410,28 +268,9 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) GetCpu
 	return o.CpuTotalTime.Get(), o.CpuTotalTime.IsSet()
 }
 
-// IsSetCpuTotalTime returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) IsSetCpuTotalTime() bool {
-	if o != nil && o.CpuTotalTime.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuTotalTime gets a reference to the given NullableInt64 and assigns it to the CpuTotalTime field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) SetCpuTotalTime(v int64) {
 	o.CpuTotalTime.Set(&v)
-}
-
-// SetCpuTotalTimeNil sets the value for CpuTotalTime to be an explicit nil
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) SetCpuTotalTimeNil() {
-	o.CpuTotalTime.Set(nil)
-}
-
-// UnsetCpuTotalTime ensures that no value is present for CpuTotalTime, not even an explicit nil
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) UnsetCpuTotalTime() {
-	o.CpuTotalTime.Unset()
 }
 
 // GetCpuUsage returns the CpuUsage field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -453,28 +292,9 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) GetCpu
 	return o.CpuUsage.Get(), o.CpuUsage.IsSet()
 }
 
-// IsSetCpuUsage returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) IsSetCpuUsage() bool {
-	if o != nil && o.CpuUsage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuUsage gets a reference to the given NullableFloat32 and assigns it to the CpuUsage field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) SetCpuUsage(v float32) {
 	o.CpuUsage.Set(&v)
-}
-
-// SetCpuUsageNil sets the value for CpuUsage to be an explicit nil
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) SetCpuUsageNil() {
-	o.CpuUsage.Set(nil)
-}
-
-// UnsetCpuUsage ensures that no value is present for CpuUsage, not even an explicit nil
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) UnsetCpuUsage() {
-	o.CpuUsage.Unset()
 }
 
 // GetUsedStorage returns the UsedStorage field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -496,28 +316,9 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) GetUse
 	return o.UsedStorage.Get(), o.UsedStorage.IsSet()
 }
 
-// IsSetUsedStorage returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) IsSetUsedStorage() bool {
-	if o != nil && o.UsedStorage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUsedStorage gets a reference to the given NullableInt64 and assigns it to the UsedStorage field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) SetUsedStorage(v int64) {
 	o.UsedStorage.Set(&v)
-}
-
-// SetUsedStorageNil sets the value for UsedStorage to be an explicit nil
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) SetUsedStorageNil() {
-	o.UsedStorage.Set(nil)
-}
-
-// UnsetUsedStorage ensures that no value is present for UsedStorage, not even an explicit nil
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) UnsetUsedStorage() {
-	o.UsedStorage.Unset()
 }
 
 // GetReservedStorage returns the ReservedStorage field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -539,28 +340,9 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) GetRes
 	return o.ReservedStorage.Get(), o.ReservedStorage.IsSet()
 }
 
-// IsSetReservedStorage returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) IsSetReservedStorage() bool {
-	if o != nil && o.ReservedStorage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetReservedStorage gets a reference to the given NullableInt64 and assigns it to the ReservedStorage field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) SetReservedStorage(v int64) {
 	o.ReservedStorage.Set(&v)
-}
-
-// SetReservedStorageNil sets the value for ReservedStorage to be an explicit nil
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) SetReservedStorageNil() {
-	o.ReservedStorage.Set(nil)
-}
-
-// UnsetReservedStorage ensures that no value is present for ReservedStorage, not even an explicit nil
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) UnsetReservedStorage() {
-	o.ReservedStorage.Unset()
 }
 
 // GetMaxStorage returns the MaxStorage field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -582,28 +364,9 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) GetMax
 	return o.MaxStorage.Get(), o.MaxStorage.IsSet()
 }
 
-// IsSetMaxStorage returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) IsSetMaxStorage() bool {
-	if o != nil && o.MaxStorage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxStorage gets a reference to the given NullableInt64 and assigns it to the MaxStorage field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) SetMaxStorage(v int64) {
 	o.MaxStorage.Set(&v)
-}
-
-// SetMaxStorageNil sets the value for MaxStorage to be an explicit nil
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) SetMaxStorageNil() {
-	o.MaxStorage.Set(nil)
-}
-
-// UnsetMaxStorage ensures that no value is present for MaxStorage, not even an explicit nil
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) UnsetMaxStorage() {
-	o.MaxStorage.Unset()
 }
 
 // GetNetTxUsage returns the NetTxUsage field value if set, zero value otherwise.
@@ -622,15 +385,6 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) GetNet
 		return nil, false
 	}
 	return o.NetTxUsage, true
-}
-
-// IsSetNetTxUsage returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) IsSetNetTxUsage() bool {
-	if o != nil && !IsNil(o.NetTxUsage) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetTxUsage gets a reference to the given int64 and assigns it to the NetTxUsage field.
@@ -656,15 +410,6 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) GetNet
 	return o.NetRxUsage, true
 }
 
-// IsSetNetRxUsage returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) IsSetNetRxUsage() bool {
-	if o != nil && !IsNil(o.NetRxUsage) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetRxUsage gets a reference to the given int64 and assigns it to the NetRxUsage field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) SetNetRxUsage(v int64) {
 	o.NetRxUsage = &v
@@ -686,15 +431,6 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) GetNet
 		return nil, false
 	}
 	return o.NetworkBandwidth, true
-}
-
-// IsSetNetworkBandwidth returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) IsSetNetworkBandwidth() bool {
-	if o != nil && !IsNil(o.NetworkBandwidth) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkBandwidth gets a reference to the given int64 and assigns it to the NetworkBandwidth field.

@@ -69,15 +69,6 @@ func (o *ListDeployments200ResponseAllOfDeploymentsInner) GetIdOk() (*int64, boo
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListDeployments200ResponseAllOfDeploymentsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListDeployments200ResponseAllOfDeploymentsInner) SetId(v int64) {
 	o.Id = &v
@@ -99,15 +90,6 @@ func (o *ListDeployments200ResponseAllOfDeploymentsInner) GetNameOk() (*string, 
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListDeployments200ResponseAllOfDeploymentsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -134,28 +116,9 @@ func (o *ListDeployments200ResponseAllOfDeploymentsInner) GetDescriptionOk() (*s
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ListDeployments200ResponseAllOfDeploymentsInner) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListDeployments200ResponseAllOfDeploymentsInner) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *ListDeployments200ResponseAllOfDeploymentsInner) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *ListDeployments200ResponseAllOfDeploymentsInner) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetAccountId returns the AccountId field value if set, zero value otherwise.
@@ -174,15 +137,6 @@ func (o *ListDeployments200ResponseAllOfDeploymentsInner) GetAccountIdOk() (*int
 		return nil, false
 	}
 	return o.AccountId, true
-}
-
-// IsSetAccountId returns a boolean if a field has been set.
-func (o *ListDeployments200ResponseAllOfDeploymentsInner) IsSetAccountId() bool {
-	if o != nil && !IsNil(o.AccountId) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccountId gets a reference to the given int64 and assigns it to the AccountId field.
@@ -209,28 +163,9 @@ func (o *ListDeployments200ResponseAllOfDeploymentsInner) GetExternalIdOk() (*st
 	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *ListDeployments200ResponseAllOfDeploymentsInner) IsSetExternalId() bool {
-	if o != nil && o.ExternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *ListDeployments200ResponseAllOfDeploymentsInner) SetExternalId(v string) {
 	o.ExternalId.Set(&v)
-}
-
-// SetExternalIdNil sets the value for ExternalId to be an explicit nil
-func (o *ListDeployments200ResponseAllOfDeploymentsInner) SetExternalIdNil() {
-	o.ExternalId.Set(nil)
-}
-
-// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-func (o *ListDeployments200ResponseAllOfDeploymentsInner) UnsetExternalId() {
-	o.ExternalId.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -249,15 +184,6 @@ func (o *ListDeployments200ResponseAllOfDeploymentsInner) GetDateCreatedOk() (*t
 		return nil, false
 	}
 	return o.DateCreated, true
-}
-
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *ListDeployments200ResponseAllOfDeploymentsInner) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
@@ -283,15 +209,6 @@ func (o *ListDeployments200ResponseAllOfDeploymentsInner) GetLastUpdatedOk() (*t
 	return o.LastUpdated, true
 }
 
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *ListDeployments200ResponseAllOfDeploymentsInner) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
-}
-
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
 func (o *ListDeployments200ResponseAllOfDeploymentsInner) SetLastUpdated(v time.Time) {
 	o.LastUpdated = &v
@@ -313,15 +230,6 @@ func (o *ListDeployments200ResponseAllOfDeploymentsInner) GetVersionCountOk() (*
 		return nil, false
 	}
 	return o.VersionCount, true
-}
-
-// IsSetVersionCount returns a boolean if a field has been set.
-func (o *ListDeployments200ResponseAllOfDeploymentsInner) IsSetVersionCount() bool {
-	if o != nil && !IsNil(o.VersionCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetVersionCount gets a reference to the given int64 and assigns it to the VersionCount field.

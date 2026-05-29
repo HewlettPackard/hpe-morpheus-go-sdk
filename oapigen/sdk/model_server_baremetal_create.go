@@ -61,15 +61,6 @@ func (o *ServerBaremetalCreate) GetServerOk() (*ServerBaremetalCreateServer, boo
 	return o.Server, true
 }
 
-// IsSetServer returns a boolean if a field has been set.
-func (o *ServerBaremetalCreate) IsSetServer() bool {
-	if o != nil && !IsNil(o.Server) {
-		return true
-	}
-
-	return false
-}
-
 // SetServer gets a reference to the given ServerBaremetalCreateServer and assigns it to the Server field.
 func (o *ServerBaremetalCreate) SetServer(v ServerBaremetalCreateServer) {
 	o.Server = &v

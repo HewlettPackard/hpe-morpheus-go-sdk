@@ -81,15 +81,6 @@ func (o *IdentitySourcesCustomSSOConfig) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *IdentitySourcesCustomSSOConfig) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *IdentitySourcesCustomSSOConfig) SetId(v int64) {
 	o.Id = &v
@@ -111,15 +102,6 @@ func (o *IdentitySourcesCustomSSOConfig) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *IdentitySourcesCustomSSOConfig) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -145,15 +127,6 @@ func (o *IdentitySourcesCustomSSOConfig) GetDescriptionOk() (*string, bool) {
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *IdentitySourcesCustomSSOConfig) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *IdentitySourcesCustomSSOConfig) SetDescription(v string) {
 	o.Description = &v
@@ -175,15 +148,6 @@ func (o *IdentitySourcesCustomSSOConfig) GetCodeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *IdentitySourcesCustomSSOConfig) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -209,15 +173,6 @@ func (o *IdentitySourcesCustomSSOConfig) GetTypeOk() (*string, bool) {
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *IdentitySourcesCustomSSOConfig) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given string and assigns it to the Type field.
 func (o *IdentitySourcesCustomSSOConfig) SetType(v string) {
 	o.Type = &v
@@ -239,15 +194,6 @@ func (o *IdentitySourcesCustomSSOConfig) GetActiveOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Active, true
-}
-
-// IsSetActive returns a boolean if a field has been set.
-func (o *IdentitySourcesCustomSSOConfig) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
 }
 
 // SetActive gets a reference to the given bool and assigns it to the Active field.
@@ -273,15 +219,6 @@ func (o *IdentitySourcesCustomSSOConfig) GetDeletedOk() (*bool, bool) {
 	return o.Deleted, true
 }
 
-// IsSetDeleted returns a boolean if a field has been set.
-func (o *IdentitySourcesCustomSSOConfig) IsSetDeleted() bool {
-	if o != nil && !IsNil(o.Deleted) {
-		return true
-	}
-
-	return false
-}
-
 // SetDeleted gets a reference to the given bool and assigns it to the Deleted field.
 func (o *IdentitySourcesCustomSSOConfig) SetDeleted(v bool) {
 	o.Deleted = &v
@@ -303,15 +240,6 @@ func (o *IdentitySourcesCustomSSOConfig) GetAutoSyncOnLoginOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.AutoSyncOnLogin, true
-}
-
-// IsSetAutoSyncOnLogin returns a boolean if a field has been set.
-func (o *IdentitySourcesCustomSSOConfig) IsSetAutoSyncOnLogin() bool {
-	if o != nil && !IsNil(o.AutoSyncOnLogin) {
-		return true
-	}
-
-	return false
 }
 
 // SetAutoSyncOnLogin gets a reference to the given bool and assigns it to the AutoSyncOnLogin field.
@@ -337,15 +265,6 @@ func (o *IdentitySourcesCustomSSOConfig) GetExternalLoginOk() (*bool, bool) {
 	return o.ExternalLogin, true
 }
 
-// IsSetExternalLogin returns a boolean if a field has been set.
-func (o *IdentitySourcesCustomSSOConfig) IsSetExternalLogin() bool {
-	if o != nil && !IsNil(o.ExternalLogin) {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalLogin gets a reference to the given bool and assigns it to the ExternalLogin field.
 func (o *IdentitySourcesCustomSSOConfig) SetExternalLogin(v bool) {
 	o.ExternalLogin = &v
@@ -367,15 +286,6 @@ func (o *IdentitySourcesCustomSSOConfig) GetAllowCustomMappingsOk() (*bool, bool
 		return nil, false
 	}
 	return o.AllowCustomMappings, true
-}
-
-// IsSetAllowCustomMappings returns a boolean if a field has been set.
-func (o *IdentitySourcesCustomSSOConfig) IsSetAllowCustomMappings() bool {
-	if o != nil && !IsNil(o.AllowCustomMappings) {
-		return true
-	}
-
-	return false
 }
 
 // SetAllowCustomMappings gets a reference to the given bool and assigns it to the AllowCustomMappings field.
@@ -401,15 +311,6 @@ func (o *IdentitySourcesCustomSSOConfig) GetManualRoleAssignmentOk() (*bool, boo
 	return o.ManualRoleAssignment, true
 }
 
-// IsSetManualRoleAssignment returns a boolean if a field has been set.
-func (o *IdentitySourcesCustomSSOConfig) IsSetManualRoleAssignment() bool {
-	if o != nil && !IsNil(o.ManualRoleAssignment) {
-		return true
-	}
-
-	return false
-}
-
 // SetManualRoleAssignment gets a reference to the given bool and assigns it to the ManualRoleAssignment field.
 func (o *IdentitySourcesCustomSSOConfig) SetManualRoleAssignment(v bool) {
 	o.ManualRoleAssignment = &v
@@ -431,15 +332,6 @@ func (o *IdentitySourcesCustomSSOConfig) GetAccountOk() (*AddIdentitySources200R
 		return nil, false
 	}
 	return o.Account, true
-}
-
-// IsSetAccount returns a boolean if a field has been set.
-func (o *IdentitySourcesCustomSSOConfig) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccount gets a reference to the given AddIdentitySources200ResponseAllOfTaskOneOf7Account and assigns it to the Account field.
@@ -465,15 +357,6 @@ func (o *IdentitySourcesCustomSSOConfig) GetDefaultAccountRoleOk() (*AddIdentity
 	return o.DefaultAccountRole, true
 }
 
-// IsSetDefaultAccountRole returns a boolean if a field has been set.
-func (o *IdentitySourcesCustomSSOConfig) IsSetDefaultAccountRole() bool {
-	if o != nil && !IsNil(o.DefaultAccountRole) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultAccountRole gets a reference to the given AddIdentitySources200ResponseAllOfTaskOneOf7DefaultAccountRole and assigns it to the DefaultAccountRole field.
 func (o *IdentitySourcesCustomSSOConfig) SetDefaultAccountRole(v AddIdentitySources200ResponseAllOfTaskOneOf7DefaultAccountRole) {
 	o.DefaultAccountRole = &v
@@ -495,15 +378,6 @@ func (o *IdentitySourcesCustomSSOConfig) GetConfigOk() (*AddIdentitySources200Re
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *IdentitySourcesCustomSSOConfig) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given AddIdentitySources200ResponseAllOfTaskOneOf7Config and assigns it to the Config field.
@@ -529,15 +403,6 @@ func (o *IdentitySourcesCustomSSOConfig) GetRoleMappingsOk() ([]map[string]inter
 	return o.RoleMappings, true
 }
 
-// IsSetRoleMappings returns a boolean if a field has been set.
-func (o *IdentitySourcesCustomSSOConfig) IsSetRoleMappings() bool {
-	if o != nil && !IsNil(o.RoleMappings) {
-		return true
-	}
-
-	return false
-}
-
 // SetRoleMappings gets a reference to the given []map[string]interface{} and assigns it to the RoleMappings field.
 func (o *IdentitySourcesCustomSSOConfig) SetRoleMappings(v []map[string]interface{}) {
 	o.RoleMappings = v
@@ -559,15 +424,6 @@ func (o *IdentitySourcesCustomSSOConfig) GetSubdomainOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Subdomain, true
-}
-
-// IsSetSubdomain returns a boolean if a field has been set.
-func (o *IdentitySourcesCustomSSOConfig) IsSetSubdomain() bool {
-	if o != nil && !IsNil(o.Subdomain) {
-		return true
-	}
-
-	return false
 }
 
 // SetSubdomain gets a reference to the given string and assigns it to the Subdomain field.
@@ -593,15 +449,6 @@ func (o *IdentitySourcesCustomSSOConfig) GetLoginURLOk() (*string, bool) {
 	return o.LoginURL, true
 }
 
-// IsSetLoginURL returns a boolean if a field has been set.
-func (o *IdentitySourcesCustomSSOConfig) IsSetLoginURL() bool {
-	if o != nil && !IsNil(o.LoginURL) {
-		return true
-	}
-
-	return false
-}
-
 // SetLoginURL gets a reference to the given string and assigns it to the LoginURL field.
 func (o *IdentitySourcesCustomSSOConfig) SetLoginURL(v string) {
 	o.LoginURL = &v
@@ -623,15 +470,6 @@ func (o *IdentitySourcesCustomSSOConfig) GetProviderSettingsOk() (map[string]int
 		return map[string]interface{}{}, false
 	}
 	return o.ProviderSettings, true
-}
-
-// IsSetProviderSettings returns a boolean if a field has been set.
-func (o *IdentitySourcesCustomSSOConfig) IsSetProviderSettings() bool {
-	if o != nil && !IsNil(o.ProviderSettings) {
-		return true
-	}
-
-	return false
 }
 
 // SetProviderSettings gets a reference to the given map[string]interface{} and assigns it to the ProviderSettings field.
@@ -657,15 +495,6 @@ func (o *IdentitySourcesCustomSSOConfig) GetDateCreatedOk() (*time.Time, bool) {
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *IdentitySourcesCustomSSOConfig) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *IdentitySourcesCustomSSOConfig) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -687,15 +516,6 @@ func (o *IdentitySourcesCustomSSOConfig) GetLastUpdatedOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *IdentitySourcesCustomSSOConfig) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.

@@ -77,15 +77,6 @@ func (o *UpdateIncidentsRequestIncident) GetResolutionOk() (*string, bool) {
 	return o.Resolution, true
 }
 
-// IsSetResolution returns a boolean if a field has been set.
-func (o *UpdateIncidentsRequestIncident) IsSetResolution() bool {
-	if o != nil && !IsNil(o.Resolution) {
-		return true
-	}
-
-	return false
-}
-
 // SetResolution gets a reference to the given string and assigns it to the Resolution field.
 func (o *UpdateIncidentsRequestIncident) SetResolution(v string) {
 	o.Resolution = &v
@@ -107,15 +98,6 @@ func (o *UpdateIncidentsRequestIncident) GetCommentOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Comment, true
-}
-
-// IsSetComment returns a boolean if a field has been set.
-func (o *UpdateIncidentsRequestIncident) IsSetComment() bool {
-	if o != nil && !IsNil(o.Comment) {
-		return true
-	}
-
-	return false
 }
 
 // SetComment gets a reference to the given string and assigns it to the Comment field.
@@ -141,15 +123,6 @@ func (o *UpdateIncidentsRequestIncident) GetStatusOk() (*string, bool) {
 	return o.Status, true
 }
 
-// IsSetStatus returns a boolean if a field has been set.
-func (o *UpdateIncidentsRequestIncident) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
-}
-
 // SetStatus gets a reference to the given string and assigns it to the Status field.
 func (o *UpdateIncidentsRequestIncident) SetStatus(v string) {
 	o.Status = &v
@@ -171,15 +144,6 @@ func (o *UpdateIncidentsRequestIncident) GetSeverityOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Severity, true
-}
-
-// IsSetSeverity returns a boolean if a field has been set.
-func (o *UpdateIncidentsRequestIncident) IsSetSeverity() bool {
-	if o != nil && !IsNil(o.Severity) {
-		return true
-	}
-
-	return false
 }
 
 // SetSeverity gets a reference to the given string and assigns it to the Severity field.
@@ -205,15 +169,6 @@ func (o *UpdateIncidentsRequestIncident) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateIncidentsRequestIncident) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *UpdateIncidentsRequestIncident) SetName(v string) {
 	o.Name = &v
@@ -235,15 +190,6 @@ func (o *UpdateIncidentsRequestIncident) GetStartDateOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.StartDate, true
-}
-
-// IsSetStartDate returns a boolean if a field has been set.
-func (o *UpdateIncidentsRequestIncident) IsSetStartDate() bool {
-	if o != nil && !IsNil(o.StartDate) {
-		return true
-	}
-
-	return false
 }
 
 // SetStartDate gets a reference to the given time.Time and assigns it to the StartDate field.
@@ -269,15 +215,6 @@ func (o *UpdateIncidentsRequestIncident) GetEndDateOk() (*time.Time, bool) {
 	return o.EndDate, true
 }
 
-// IsSetEndDate returns a boolean if a field has been set.
-func (o *UpdateIncidentsRequestIncident) IsSetEndDate() bool {
-	if o != nil && !IsNil(o.EndDate) {
-		return true
-	}
-
-	return false
-}
-
 // SetEndDate gets a reference to the given time.Time and assigns it to the EndDate field.
 func (o *UpdateIncidentsRequestIncident) SetEndDate(v time.Time) {
 	o.EndDate = &v
@@ -299,15 +236,6 @@ func (o *UpdateIncidentsRequestIncident) GetInUptimeOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.InUptime, true
-}
-
-// IsSetInUptime returns a boolean if a field has been set.
-func (o *UpdateIncidentsRequestIncident) IsSetInUptime() bool {
-	if o != nil && !IsNil(o.InUptime) {
-		return true
-	}
-
-	return false
 }
 
 // SetInUptime gets a reference to the given bool and assigns it to the InUptime field.

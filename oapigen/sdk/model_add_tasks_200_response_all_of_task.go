@@ -79,15 +79,6 @@ func (o *AddTasks200ResponseAllOfTask) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *AddTasks200ResponseAllOfTask) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *AddTasks200ResponseAllOfTask) SetId(v int64) {
 	o.Id = &v
@@ -111,15 +102,6 @@ func (o *AddTasks200ResponseAllOfTask) GetAccountIdOk() (*int64, bool) {
 	return o.AccountId, true
 }
 
-// IsSetAccountId returns a boolean if a field has been set.
-func (o *AddTasks200ResponseAllOfTask) IsSetAccountId() bool {
-	if o != nil && !IsNil(o.AccountId) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccountId gets a reference to the given int64 and assigns it to the AccountId field.
 func (o *AddTasks200ResponseAllOfTask) SetAccountId(v int64) {
 	o.AccountId = &v
@@ -141,15 +123,6 @@ func (o *AddTasks200ResponseAllOfTask) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *AddTasks200ResponseAllOfTask) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -176,28 +149,9 @@ func (o *AddTasks200ResponseAllOfTask) GetCodeOk() (*string, bool) {
 	return o.Code.Get(), o.Code.IsSet()
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *AddTasks200ResponseAllOfTask) IsSetCode() bool {
-	if o != nil && o.Code.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *AddTasks200ResponseAllOfTask) SetCode(v string) {
 	o.Code.Set(&v)
-}
-
-// SetCodeNil sets the value for Code to be an explicit nil
-func (o *AddTasks200ResponseAllOfTask) SetCodeNil() {
-	o.Code.Set(nil)
-}
-
-// UnsetCode ensures that no value is present for Code, not even an explicit nil
-func (o *AddTasks200ResponseAllOfTask) UnsetCode() {
-	o.Code.Unset()
 }
 
 // GetTaskType returns the TaskType field value if set, zero value otherwise.
@@ -216,15 +170,6 @@ func (o *AddTasks200ResponseAllOfTask) GetTaskTypeOk() (*AddTasks200ResponseAllO
 		return nil, false
 	}
 	return o.TaskType, true
-}
-
-// IsSetTaskType returns a boolean if a field has been set.
-func (o *AddTasks200ResponseAllOfTask) IsSetTaskType() bool {
-	if o != nil && !IsNil(o.TaskType) {
-		return true
-	}
-
-	return false
 }
 
 // SetTaskType gets a reference to the given AddTasks200ResponseAllOfTaskTaskType and assigns it to the TaskType field.
@@ -250,15 +195,6 @@ func (o *AddTasks200ResponseAllOfTask) GetLabelsOk() ([]string, bool) {
 	return o.Labels, true
 }
 
-// IsSetLabels returns a boolean if a field has been set.
-func (o *AddTasks200ResponseAllOfTask) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
-}
-
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
 func (o *AddTasks200ResponseAllOfTask) SetLabels(v []string) {
 	o.Labels = v
@@ -280,15 +216,6 @@ func (o *AddTasks200ResponseAllOfTask) GetVisibilityOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *AddTasks200ResponseAllOfTask) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -314,15 +241,6 @@ func (o *AddTasks200ResponseAllOfTask) GetTaskOptionsOk() (*AddTasks200ResponseA
 	return o.TaskOptions, true
 }
 
-// IsSetTaskOptions returns a boolean if a field has been set.
-func (o *AddTasks200ResponseAllOfTask) IsSetTaskOptions() bool {
-	if o != nil && !IsNil(o.TaskOptions) {
-		return true
-	}
-
-	return false
-}
-
 // SetTaskOptions gets a reference to the given AddTasks200ResponseAllOfTaskTaskOptions and assigns it to the TaskOptions field.
 func (o *AddTasks200ResponseAllOfTask) SetTaskOptions(v AddTasks200ResponseAllOfTaskTaskOptions) {
 	o.TaskOptions = &v
@@ -344,15 +262,6 @@ func (o *AddTasks200ResponseAllOfTask) GetFileOk() (*AddTasks200ResponseAllOfTas
 		return nil, false
 	}
 	return o.File, true
-}
-
-// IsSetFile returns a boolean if a field has been set.
-func (o *AddTasks200ResponseAllOfTask) IsSetFile() bool {
-	if o != nil && !IsNil(o.File) {
-		return true
-	}
-
-	return false
 }
 
 // SetFile gets a reference to the given AddTasks200ResponseAllOfTaskFile and assigns it to the File field.
@@ -379,28 +288,9 @@ func (o *AddTasks200ResponseAllOfTask) GetResultTypeOk() (*string, bool) {
 	return o.ResultType.Get(), o.ResultType.IsSet()
 }
 
-// IsSetResultType returns a boolean if a field has been set.
-func (o *AddTasks200ResponseAllOfTask) IsSetResultType() bool {
-	if o != nil && o.ResultType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetResultType gets a reference to the given NullableString and assigns it to the ResultType field.
 func (o *AddTasks200ResponseAllOfTask) SetResultType(v string) {
 	o.ResultType.Set(&v)
-}
-
-// SetResultTypeNil sets the value for ResultType to be an explicit nil
-func (o *AddTasks200ResponseAllOfTask) SetResultTypeNil() {
-	o.ResultType.Set(nil)
-}
-
-// UnsetResultType ensures that no value is present for ResultType, not even an explicit nil
-func (o *AddTasks200ResponseAllOfTask) UnsetResultType() {
-	o.ResultType.Unset()
 }
 
 // GetExecuteTarget returns the ExecuteTarget field value if set, zero value otherwise.
@@ -419,15 +309,6 @@ func (o *AddTasks200ResponseAllOfTask) GetExecuteTargetOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ExecuteTarget, true
-}
-
-// IsSetExecuteTarget returns a boolean if a field has been set.
-func (o *AddTasks200ResponseAllOfTask) IsSetExecuteTarget() bool {
-	if o != nil && !IsNil(o.ExecuteTarget) {
-		return true
-	}
-
-	return false
 }
 
 // SetExecuteTarget gets a reference to the given string and assigns it to the ExecuteTarget field.
@@ -453,15 +334,6 @@ func (o *AddTasks200ResponseAllOfTask) GetRetryableOk() (*bool, bool) {
 	return o.Retryable, true
 }
 
-// IsSetRetryable returns a boolean if a field has been set.
-func (o *AddTasks200ResponseAllOfTask) IsSetRetryable() bool {
-	if o != nil && !IsNil(o.Retryable) {
-		return true
-	}
-
-	return false
-}
-
 // SetRetryable gets a reference to the given bool and assigns it to the Retryable field.
 func (o *AddTasks200ResponseAllOfTask) SetRetryable(v bool) {
 	o.Retryable = &v
@@ -483,15 +355,6 @@ func (o *AddTasks200ResponseAllOfTask) GetRetryCountOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.RetryCount, true
-}
-
-// IsSetRetryCount returns a boolean if a field has been set.
-func (o *AddTasks200ResponseAllOfTask) IsSetRetryCount() bool {
-	if o != nil && !IsNil(o.RetryCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetRetryCount gets a reference to the given int64 and assigns it to the RetryCount field.
@@ -517,15 +380,6 @@ func (o *AddTasks200ResponseAllOfTask) GetRetryDelaySecondsOk() (*int64, bool) {
 	return o.RetryDelaySeconds, true
 }
 
-// IsSetRetryDelaySeconds returns a boolean if a field has been set.
-func (o *AddTasks200ResponseAllOfTask) IsSetRetryDelaySeconds() bool {
-	if o != nil && !IsNil(o.RetryDelaySeconds) {
-		return true
-	}
-
-	return false
-}
-
 // SetRetryDelaySeconds gets a reference to the given int64 and assigns it to the RetryDelaySeconds field.
 func (o *AddTasks200ResponseAllOfTask) SetRetryDelaySeconds(v int64) {
 	o.RetryDelaySeconds = &v
@@ -547,15 +401,6 @@ func (o *AddTasks200ResponseAllOfTask) GetAllowCustomConfigOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.AllowCustomConfig, true
-}
-
-// IsSetAllowCustomConfig returns a boolean if a field has been set.
-func (o *AddTasks200ResponseAllOfTask) IsSetAllowCustomConfig() bool {
-	if o != nil && !IsNil(o.AllowCustomConfig) {
-		return true
-	}
-
-	return false
 }
 
 // SetAllowCustomConfig gets a reference to the given bool and assigns it to the AllowCustomConfig field.
@@ -581,15 +426,6 @@ func (o *AddTasks200ResponseAllOfTask) GetCredentialOk() (*AddTasks200ResponseAl
 	return o.Credential, true
 }
 
-// IsSetCredential returns a boolean if a field has been set.
-func (o *AddTasks200ResponseAllOfTask) IsSetCredential() bool {
-	if o != nil && !IsNil(o.Credential) {
-		return true
-	}
-
-	return false
-}
-
 // SetCredential gets a reference to the given AddTasks200ResponseAllOfTaskCredential and assigns it to the Credential field.
 func (o *AddTasks200ResponseAllOfTask) SetCredential(v AddTasks200ResponseAllOfTaskCredential) {
 	o.Credential = &v
@@ -613,15 +449,6 @@ func (o *AddTasks200ResponseAllOfTask) GetDateCreatedOk() (*time.Time, bool) {
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *AddTasks200ResponseAllOfTask) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *AddTasks200ResponseAllOfTask) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -643,15 +470,6 @@ func (o *AddTasks200ResponseAllOfTask) GetLastUpdatedOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *AddTasks200ResponseAllOfTask) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.

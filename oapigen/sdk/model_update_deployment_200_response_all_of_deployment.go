@@ -70,15 +70,6 @@ func (o *UpdateDeployment200ResponseAllOfDeployment) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *UpdateDeployment200ResponseAllOfDeployment) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *UpdateDeployment200ResponseAllOfDeployment) SetId(v int64) {
 	o.Id = &v
@@ -100,15 +91,6 @@ func (o *UpdateDeployment200ResponseAllOfDeployment) GetNameOk() (*string, bool)
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateDeployment200ResponseAllOfDeployment) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -134,15 +116,6 @@ func (o *UpdateDeployment200ResponseAllOfDeployment) GetDescriptionOk() (*string
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *UpdateDeployment200ResponseAllOfDeployment) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *UpdateDeployment200ResponseAllOfDeployment) SetDescription(v string) {
 	o.Description = &v
@@ -164,15 +137,6 @@ func (o *UpdateDeployment200ResponseAllOfDeployment) GetAccountIdOk() (*int64, b
 		return nil, false
 	}
 	return o.AccountId, true
-}
-
-// IsSetAccountId returns a boolean if a field has been set.
-func (o *UpdateDeployment200ResponseAllOfDeployment) IsSetAccountId() bool {
-	if o != nil && !IsNil(o.AccountId) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccountId gets a reference to the given int64 and assigns it to the AccountId field.
@@ -199,28 +163,9 @@ func (o *UpdateDeployment200ResponseAllOfDeployment) GetExternalIdOk() (*string,
 	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *UpdateDeployment200ResponseAllOfDeployment) IsSetExternalId() bool {
-	if o != nil && o.ExternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *UpdateDeployment200ResponseAllOfDeployment) SetExternalId(v string) {
 	o.ExternalId.Set(&v)
-}
-
-// SetExternalIdNil sets the value for ExternalId to be an explicit nil
-func (o *UpdateDeployment200ResponseAllOfDeployment) SetExternalIdNil() {
-	o.ExternalId.Set(nil)
-}
-
-// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-func (o *UpdateDeployment200ResponseAllOfDeployment) UnsetExternalId() {
-	o.ExternalId.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -239,15 +184,6 @@ func (o *UpdateDeployment200ResponseAllOfDeployment) GetDateCreatedOk() (*time.T
 		return nil, false
 	}
 	return o.DateCreated, true
-}
-
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *UpdateDeployment200ResponseAllOfDeployment) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
@@ -273,15 +209,6 @@ func (o *UpdateDeployment200ResponseAllOfDeployment) GetLastUpdatedOk() (*time.T
 	return o.LastUpdated, true
 }
 
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *UpdateDeployment200ResponseAllOfDeployment) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
-}
-
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
 func (o *UpdateDeployment200ResponseAllOfDeployment) SetLastUpdated(v time.Time) {
 	o.LastUpdated = &v
@@ -305,15 +232,6 @@ func (o *UpdateDeployment200ResponseAllOfDeployment) GetVersionCountOk() (*int64
 	return o.VersionCount, true
 }
 
-// IsSetVersionCount returns a boolean if a field has been set.
-func (o *UpdateDeployment200ResponseAllOfDeployment) IsSetVersionCount() bool {
-	if o != nil && !IsNil(o.VersionCount) {
-		return true
-	}
-
-	return false
-}
-
 // SetVersionCount gets a reference to the given int64 and assigns it to the VersionCount field.
 func (o *UpdateDeployment200ResponseAllOfDeployment) SetVersionCount(v int64) {
 	o.VersionCount = &v
@@ -335,15 +253,6 @@ func (o *UpdateDeployment200ResponseAllOfDeployment) GetVersionsOk() ([]UpdateDe
 		return nil, false
 	}
 	return o.Versions, true
-}
-
-// IsSetVersions returns a boolean if a field has been set.
-func (o *UpdateDeployment200ResponseAllOfDeployment) IsSetVersions() bool {
-	if o != nil && !IsNil(o.Versions) {
-		return true
-	}
-
-	return false
 }
 
 // SetVersions gets a reference to the given []UpdateDeployment200ResponseAllOfDeploymentVersionsInner and assigns it to the Versions field.

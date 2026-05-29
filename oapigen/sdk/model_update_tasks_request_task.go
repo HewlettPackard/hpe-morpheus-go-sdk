@@ -91,15 +91,6 @@ func (o *UpdateTasksRequestTask) GetAllowCustomConfigOk() (*bool, bool) {
 	return o.AllowCustomConfig, true
 }
 
-// IsSetAllowCustomConfig returns a boolean if a field has been set.
-func (o *UpdateTasksRequestTask) IsSetAllowCustomConfig() bool {
-	if o != nil && !IsNil(o.AllowCustomConfig) {
-		return true
-	}
-
-	return false
-}
-
 // SetAllowCustomConfig gets a reference to the given bool and assigns it to the AllowCustomConfig field.
 func (o *UpdateTasksRequestTask) SetAllowCustomConfig(v bool) {
 	o.AllowCustomConfig = &v
@@ -121,15 +112,6 @@ func (o *UpdateTasksRequestTask) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateTasksRequestTask) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -155,15 +137,6 @@ func (o *UpdateTasksRequestTask) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *UpdateTasksRequestTask) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *UpdateTasksRequestTask) SetCode(v string) {
 	o.Code = &v
@@ -185,15 +158,6 @@ func (o *UpdateTasksRequestTask) GetVisibilityOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *UpdateTasksRequestTask) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -219,15 +183,6 @@ func (o *UpdateTasksRequestTask) GetTaskTypeOk() (*UpdateTasksRequestTaskTaskTyp
 	return o.TaskType, true
 }
 
-// IsSetTaskType returns a boolean if a field has been set.
-func (o *UpdateTasksRequestTask) IsSetTaskType() bool {
-	if o != nil && !IsNil(o.TaskType) {
-		return true
-	}
-
-	return false
-}
-
 // SetTaskType gets a reference to the given UpdateTasksRequestTaskTaskType and assigns it to the TaskType field.
 func (o *UpdateTasksRequestTask) SetTaskType(v UpdateTasksRequestTaskTaskType) {
 	o.TaskType = &v
@@ -251,15 +206,6 @@ func (o *UpdateTasksRequestTask) GetLabelsOk() ([]string, bool) {
 	return o.Labels, true
 }
 
-// IsSetLabels returns a boolean if a field has been set.
-func (o *UpdateTasksRequestTask) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
-}
-
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
 func (o *UpdateTasksRequestTask) SetLabels(v []string) {
 	o.Labels = v
@@ -281,15 +227,6 @@ func (o *UpdateTasksRequestTask) GetTaskOptionsOk() (*UpdateTasksRequestTaskTask
 		return nil, false
 	}
 	return o.TaskOptions, true
-}
-
-// IsSetTaskOptions returns a boolean if a field has been set.
-func (o *UpdateTasksRequestTask) IsSetTaskOptions() bool {
-	if o != nil && !IsNil(o.TaskOptions) {
-		return true
-	}
-
-	return false
 }
 
 // SetTaskOptions gets a reference to the given UpdateTasksRequestTaskTaskOptions and assigns it to the TaskOptions field.
@@ -316,28 +253,9 @@ func (o *UpdateTasksRequestTask) GetResultTypeOk() (*string, bool) {
 	return o.ResultType.Get(), o.ResultType.IsSet()
 }
 
-// IsSetResultType returns a boolean if a field has been set.
-func (o *UpdateTasksRequestTask) IsSetResultType() bool {
-	if o != nil && o.ResultType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetResultType gets a reference to the given NullableString and assigns it to the ResultType field.
 func (o *UpdateTasksRequestTask) SetResultType(v string) {
 	o.ResultType.Set(&v)
-}
-
-// SetResultTypeNil sets the value for ResultType to be an explicit nil
-func (o *UpdateTasksRequestTask) SetResultTypeNil() {
-	o.ResultType.Set(nil)
-}
-
-// UnsetResultType ensures that no value is present for ResultType, not even an explicit nil
-func (o *UpdateTasksRequestTask) UnsetResultType() {
-	o.ResultType.Unset()
 }
 
 // GetExecuteTarget returns the ExecuteTarget field value if set, zero value otherwise.
@@ -356,15 +274,6 @@ func (o *UpdateTasksRequestTask) GetExecuteTargetOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ExecuteTarget, true
-}
-
-// IsSetExecuteTarget returns a boolean if a field has been set.
-func (o *UpdateTasksRequestTask) IsSetExecuteTarget() bool {
-	if o != nil && !IsNil(o.ExecuteTarget) {
-		return true
-	}
-
-	return false
 }
 
 // SetExecuteTarget gets a reference to the given string and assigns it to the ExecuteTarget field.
@@ -390,15 +299,6 @@ func (o *UpdateTasksRequestTask) GetRetryableOk() (*bool, bool) {
 	return o.Retryable, true
 }
 
-// IsSetRetryable returns a boolean if a field has been set.
-func (o *UpdateTasksRequestTask) IsSetRetryable() bool {
-	if o != nil && !IsNil(o.Retryable) {
-		return true
-	}
-
-	return false
-}
-
 // SetRetryable gets a reference to the given bool and assigns it to the Retryable field.
 func (o *UpdateTasksRequestTask) SetRetryable(v bool) {
 	o.Retryable = &v
@@ -420,15 +320,6 @@ func (o *UpdateTasksRequestTask) GetRetryCountOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.RetryCount, true
-}
-
-// IsSetRetryCount returns a boolean if a field has been set.
-func (o *UpdateTasksRequestTask) IsSetRetryCount() bool {
-	if o != nil && !IsNil(o.RetryCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetRetryCount gets a reference to the given int64 and assigns it to the RetryCount field.
@@ -454,15 +345,6 @@ func (o *UpdateTasksRequestTask) GetRetryDelaySecondsOk() (*int64, bool) {
 	return o.RetryDelaySeconds, true
 }
 
-// IsSetRetryDelaySeconds returns a boolean if a field has been set.
-func (o *UpdateTasksRequestTask) IsSetRetryDelaySeconds() bool {
-	if o != nil && !IsNil(o.RetryDelaySeconds) {
-		return true
-	}
-
-	return false
-}
-
 // SetRetryDelaySeconds gets a reference to the given int64 and assigns it to the RetryDelaySeconds field.
 func (o *UpdateTasksRequestTask) SetRetryDelaySeconds(v int64) {
 	o.RetryDelaySeconds = &v
@@ -486,15 +368,6 @@ func (o *UpdateTasksRequestTask) GetFileOk() (*UpdateTasksRequestTaskFile, bool)
 	return o.File, true
 }
 
-// IsSetFile returns a boolean if a field has been set.
-func (o *UpdateTasksRequestTask) IsSetFile() bool {
-	if o != nil && !IsNil(o.File) {
-		return true
-	}
-
-	return false
-}
-
 // SetFile gets a reference to the given UpdateTasksRequestTaskFile and assigns it to the File field.
 func (o *UpdateTasksRequestTask) SetFile(v UpdateTasksRequestTaskFile) {
 	o.File = &v
@@ -516,15 +389,6 @@ func (o *UpdateTasksRequestTask) GetCredentialOk() (*UpdateTasksRequestTaskCrede
 		return nil, false
 	}
 	return o.Credential, true
-}
-
-// IsSetCredential returns a boolean if a field has been set.
-func (o *UpdateTasksRequestTask) IsSetCredential() bool {
-	if o != nil && !IsNil(o.Credential) {
-		return true
-	}
-
-	return false
 }
 
 // SetCredential gets a reference to the given UpdateTasksRequestTaskCredential and assigns it to the Credential field.

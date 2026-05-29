@@ -61,15 +61,6 @@ func (o *UpdateCloudFolders200Response) GetFolderOk() (*UpdateCloudFolders200Res
 	return o.Folder, true
 }
 
-// IsSetFolder returns a boolean if a field has been set.
-func (o *UpdateCloudFolders200Response) IsSetFolder() bool {
-	if o != nil && !IsNil(o.Folder) {
-		return true
-	}
-
-	return false
-}
-
 // SetFolder gets a reference to the given UpdateCloudFolders200ResponseFolder and assigns it to the Folder field.
 func (o *UpdateCloudFolders200Response) SetFolder(v UpdateCloudFolders200ResponseFolder) {
 	o.Folder = &v

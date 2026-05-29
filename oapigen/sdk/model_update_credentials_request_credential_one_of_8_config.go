@@ -123,15 +123,6 @@ func (o *UpdateCredentialsRequestCredentialOneOf8Config) GetClientIdOk() (*strin
 	return o.ClientId, true
 }
 
-// IsSetClientId returns a boolean if a field has been set.
-func (o *UpdateCredentialsRequestCredentialOneOf8Config) IsSetClientId() bool {
-	if o != nil && !IsNil(o.ClientId) {
-		return true
-	}
-
-	return false
-}
-
 // SetClientId gets a reference to the given string and assigns it to the ClientId field.
 func (o *UpdateCredentialsRequestCredentialOneOf8Config) SetClientId(v string) {
 	o.ClientId = &v
@@ -155,15 +146,6 @@ func (o *UpdateCredentialsRequestCredentialOneOf8Config) GetClientSecretOk() (*s
 	return o.ClientSecret, true
 }
 
-// IsSetClientSecret returns a boolean if a field has been set.
-func (o *UpdateCredentialsRequestCredentialOneOf8Config) IsSetClientSecret() bool {
-	if o != nil && !IsNil(o.ClientSecret) {
-		return true
-	}
-
-	return false
-}
-
 // SetClientSecret gets a reference to the given string and assigns it to the ClientSecret field.
 func (o *UpdateCredentialsRequestCredentialOneOf8Config) SetClientSecret(v string) {
 	o.ClientSecret = &v
@@ -185,15 +167,6 @@ func (o *UpdateCredentialsRequestCredentialOneOf8Config) GetScopeOk() (*string, 
 		return nil, false
 	}
 	return o.Scope, true
-}
-
-// IsSetScope returns a boolean if a field has been set.
-func (o *UpdateCredentialsRequestCredentialOneOf8Config) IsSetScope() bool {
-	if o != nil && !IsNil(o.Scope) {
-		return true
-	}
-
-	return false
 }
 
 // SetScope gets a reference to the given string and assigns it to the Scope field.

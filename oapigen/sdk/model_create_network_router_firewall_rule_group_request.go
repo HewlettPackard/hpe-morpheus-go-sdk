@@ -61,15 +61,6 @@ func (o *CreateNetworkRouterFirewallRuleGroupRequest) GetRuleGroupOk() (*CreateN
 	return o.RuleGroup, true
 }
 
-// IsSetRuleGroup returns a boolean if a field has been set.
-func (o *CreateNetworkRouterFirewallRuleGroupRequest) IsSetRuleGroup() bool {
-	if o != nil && !IsNil(o.RuleGroup) {
-		return true
-	}
-
-	return false
-}
-
 // SetRuleGroup gets a reference to the given CreateNetworkRouterFirewallRuleGroupRequestRuleGroup and assigns it to the RuleGroup field.
 func (o *CreateNetworkRouterFirewallRuleGroupRequest) SetRuleGroup(v CreateNetworkRouterFirewallRuleGroupRequestRuleGroup) {
 	o.RuleGroup = &v

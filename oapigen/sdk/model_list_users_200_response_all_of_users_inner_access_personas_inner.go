@@ -64,15 +64,6 @@ func (o *ListUsers200ResponseAllOfUsersInnerAccessPersonasInner) GetIdOk() (*int
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListUsers200ResponseAllOfUsersInnerAccessPersonasInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListUsers200ResponseAllOfUsersInnerAccessPersonasInner) SetId(v int64) {
 	o.Id = &v
@@ -94,15 +85,6 @@ func (o *ListUsers200ResponseAllOfUsersInnerAccessPersonasInner) GetCodeOk() (*s
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *ListUsers200ResponseAllOfUsersInnerAccessPersonasInner) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -128,15 +110,6 @@ func (o *ListUsers200ResponseAllOfUsersInnerAccessPersonasInner) GetNameOk() (*s
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ListUsers200ResponseAllOfUsersInnerAccessPersonasInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ListUsers200ResponseAllOfUsersInnerAccessPersonasInner) SetName(v string) {
 	o.Name = &v
@@ -158,15 +131,6 @@ func (o *ListUsers200ResponseAllOfUsersInnerAccessPersonasInner) GetAccessOk() (
 		return nil, false
 	}
 	return o.Access, true
-}
-
-// IsSetAccess returns a boolean if a field has been set.
-func (o *ListUsers200ResponseAllOfUsersInnerAccessPersonasInner) IsSetAccess() bool {
-	if o != nil && !IsNil(o.Access) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccess gets a reference to the given string and assigns it to the Access field.

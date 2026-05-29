@@ -63,15 +63,6 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskType
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskType) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskType) SetId(v int64) {
 	o.Id = &v
@@ -95,15 +86,6 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskType
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskType) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskType) SetCode(v string) {
 	o.Code = &v
@@ -125,15 +107,6 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskType
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskType) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.

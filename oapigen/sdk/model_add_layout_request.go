@@ -61,15 +61,6 @@ func (o *AddLayoutRequest) GetInstanceTypeLayoutOk() (*AddLayoutRequestInstanceT
 	return o.InstanceTypeLayout, true
 }
 
-// IsSetInstanceTypeLayout returns a boolean if a field has been set.
-func (o *AddLayoutRequest) IsSetInstanceTypeLayout() bool {
-	if o != nil && !IsNil(o.InstanceTypeLayout) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstanceTypeLayout gets a reference to the given AddLayoutRequestInstanceTypeLayout and assigns it to the InstanceTypeLayout field.
 func (o *AddLayoutRequest) SetInstanceTypeLayout(v AddLayoutRequestInstanceTypeLayout) {
 	o.InstanceTypeLayout = &v

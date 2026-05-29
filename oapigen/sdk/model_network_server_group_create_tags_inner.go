@@ -63,15 +63,6 @@ func (o *NetworkServerGroupCreateTagsInner) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *NetworkServerGroupCreateTagsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *NetworkServerGroupCreateTagsInner) SetId(v int64) {
 	o.Id = &v
@@ -95,15 +86,6 @@ func (o *NetworkServerGroupCreateTagsInner) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *NetworkServerGroupCreateTagsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *NetworkServerGroupCreateTagsInner) SetName(v string) {
 	o.Name = &v
@@ -125,15 +107,6 @@ func (o *NetworkServerGroupCreateTagsInner) GetValueOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Value, true
-}
-
-// IsSetValue returns a boolean if a field has been set.
-func (o *NetworkServerGroupCreateTagsInner) IsSetValue() bool {
-	if o != nil && !IsNil(o.Value) {
-		return true
-	}
-
-	return false
 }
 
 // SetValue gets a reference to the given string and assigns it to the Value field.

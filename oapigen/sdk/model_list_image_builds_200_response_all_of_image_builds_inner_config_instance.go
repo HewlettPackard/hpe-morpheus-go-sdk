@@ -64,15 +64,6 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigInstance) GetLayou
 	return o.Layout, true
 }
 
-// IsSetLayout returns a boolean if a field has been set.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigInstance) IsSetLayout() bool {
-	if o != nil && !IsNil(o.Layout) {
-		return true
-	}
-
-	return false
-}
-
 // SetLayout gets a reference to the given ListImageBuilds200ResponseAllOfImageBuildsInnerConfigInstanceLayout and assigns it to the Layout field.
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigInstance) SetLayout(v ListImageBuilds200ResponseAllOfImageBuildsInnerConfigInstanceLayout) {
 	o.Layout = &v
@@ -94,15 +85,6 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigInstance) GetSiteO
 		return nil, false
 	}
 	return o.Site, true
-}
-
-// IsSetSite returns a boolean if a field has been set.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigInstance) IsSetSite() bool {
-	if o != nil && !IsNil(o.Site) {
-		return true
-	}
-
-	return false
 }
 
 // SetSite gets a reference to the given ListImageBuilds200ResponseAllOfImageBuildsInnerConfigInstanceSite and assigns it to the Site field.
@@ -128,15 +110,6 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigInstance) GetNameO
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigInstance) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigInstance) SetName(v string) {
 	o.Name = &v
@@ -158,15 +131,6 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigInstance) GetTypeO
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigInstance) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.

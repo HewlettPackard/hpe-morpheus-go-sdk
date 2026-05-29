@@ -61,15 +61,6 @@ func (o *UpdateDeploymentVersionRequest) GetVersionOk() (*UpdateDeploymentVersio
 	return o.Version, true
 }
 
-// IsSetVersion returns a boolean if a field has been set.
-func (o *UpdateDeploymentVersionRequest) IsSetVersion() bool {
-	if o != nil && !IsNil(o.Version) {
-		return true
-	}
-
-	return false
-}
-
 // SetVersion gets a reference to the given UpdateDeploymentVersionRequestVersion and assigns it to the Version field.
 func (o *UpdateDeploymentVersionRequest) SetVersion(v UpdateDeploymentVersionRequestVersion) {
 	o.Version = &v

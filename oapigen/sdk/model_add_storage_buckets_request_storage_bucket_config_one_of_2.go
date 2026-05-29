@@ -66,15 +66,6 @@ func (o *AddStorageBucketsRequestStorageBucketConfigOneOf2) GetHostOk() (*string
 	return o.Host, true
 }
 
-// IsSetHost returns a boolean if a field has been set.
-func (o *AddStorageBucketsRequestStorageBucketConfigOneOf2) IsSetHost() bool {
-	if o != nil && !IsNil(o.Host) {
-		return true
-	}
-
-	return false
-}
-
 // SetHost gets a reference to the given string and assigns it to the Host field.
 func (o *AddStorageBucketsRequestStorageBucketConfigOneOf2) SetHost(v string) {
 	o.Host = &v
@@ -98,15 +89,6 @@ func (o *AddStorageBucketsRequestStorageBucketConfigOneOf2) GetUsernameOk() (*st
 	return o.Username, true
 }
 
-// IsSetUsername returns a boolean if a field has been set.
-func (o *AddStorageBucketsRequestStorageBucketConfigOneOf2) IsSetUsername() bool {
-	if o != nil && !IsNil(o.Username) {
-		return true
-	}
-
-	return false
-}
-
 // SetUsername gets a reference to the given string and assigns it to the Username field.
 func (o *AddStorageBucketsRequestStorageBucketConfigOneOf2) SetUsername(v string) {
 	o.Username = &v
@@ -128,15 +110,6 @@ func (o *AddStorageBucketsRequestStorageBucketConfigOneOf2) GetPasswordOk() (*st
 		return nil, false
 	}
 	return o.Password, true
-}
-
-// IsSetPassword returns a boolean if a field has been set.
-func (o *AddStorageBucketsRequestStorageBucketConfigOneOf2) IsSetPassword() bool {
-	if o != nil && !IsNil(o.Password) {
-		return true
-	}
-
-	return false
 }
 
 // SetPassword gets a reference to the given string and assigns it to the Password field.

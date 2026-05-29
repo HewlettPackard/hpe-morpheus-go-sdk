@@ -62,15 +62,6 @@ func (o *ClusterHistoryItemCreatedBy) GetUsernameOk() (*string, bool) {
 	return o.Username, true
 }
 
-// IsSetUsername returns a boolean if a field has been set.
-func (o *ClusterHistoryItemCreatedBy) IsSetUsername() bool {
-	if o != nil && !IsNil(o.Username) {
-		return true
-	}
-
-	return false
-}
-
 // SetUsername gets a reference to the given string and assigns it to the Username field.
 func (o *ClusterHistoryItemCreatedBy) SetUsername(v string) {
 	o.Username = &v
@@ -92,15 +83,6 @@ func (o *ClusterHistoryItemCreatedBy) GetDisplayNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.DisplayName, true
-}
-
-// IsSetDisplayName returns a boolean if a field has been set.
-func (o *ClusterHistoryItemCreatedBy) IsSetDisplayName() bool {
-	if o != nil && !IsNil(o.DisplayName) {
-		return true
-	}
-
-	return false
 }
 
 // SetDisplayName gets a reference to the given string and assigns it to the DisplayName field.

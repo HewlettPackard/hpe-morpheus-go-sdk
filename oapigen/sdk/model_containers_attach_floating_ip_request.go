@@ -61,15 +61,6 @@ func (o *ContainersAttachFloatingIpRequest) GetConfigOk() (*ContainersAttachFloa
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *ContainersAttachFloatingIpRequest) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given ContainersAttachFloatingIpRequestConfig and assigns it to the Config field.
 func (o *ContainersAttachFloatingIpRequest) SetConfig(v ContainersAttachFloatingIpRequestConfig) {
 	o.Config = &v

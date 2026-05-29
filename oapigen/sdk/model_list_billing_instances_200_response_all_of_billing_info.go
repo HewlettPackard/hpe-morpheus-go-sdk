@@ -66,15 +66,6 @@ func (o *ListBillingInstances200ResponseAllOfBillingInfo) GetPriceOk() (*float32
 	return o.Price, true
 }
 
-// IsSetPrice returns a boolean if a field has been set.
-func (o *ListBillingInstances200ResponseAllOfBillingInfo) IsSetPrice() bool {
-	if o != nil && !IsNil(o.Price) {
-		return true
-	}
-
-	return false
-}
-
 // SetPrice gets a reference to the given float32 and assigns it to the Price field.
 func (o *ListBillingInstances200ResponseAllOfBillingInfo) SetPrice(v float32) {
 	o.Price = &v
@@ -96,15 +87,6 @@ func (o *ListBillingInstances200ResponseAllOfBillingInfo) GetCostOk() (*float32,
 		return nil, false
 	}
 	return o.Cost, true
-}
-
-// IsSetCost returns a boolean if a field has been set.
-func (o *ListBillingInstances200ResponseAllOfBillingInfo) IsSetCost() bool {
-	if o != nil && !IsNil(o.Cost) {
-		return true
-	}
-
-	return false
 }
 
 // SetCost gets a reference to the given float32 and assigns it to the Cost field.
@@ -130,15 +112,6 @@ func (o *ListBillingInstances200ResponseAllOfBillingInfo) GetStartDateOk() (*tim
 	return o.StartDate, true
 }
 
-// IsSetStartDate returns a boolean if a field has been set.
-func (o *ListBillingInstances200ResponseAllOfBillingInfo) IsSetStartDate() bool {
-	if o != nil && !IsNil(o.StartDate) {
-		return true
-	}
-
-	return false
-}
-
 // SetStartDate gets a reference to the given time.Time and assigns it to the StartDate field.
 func (o *ListBillingInstances200ResponseAllOfBillingInfo) SetStartDate(v time.Time) {
 	o.StartDate = &v
@@ -162,15 +135,6 @@ func (o *ListBillingInstances200ResponseAllOfBillingInfo) GetEndDateOk() (*time.
 	return o.EndDate, true
 }
 
-// IsSetEndDate returns a boolean if a field has been set.
-func (o *ListBillingInstances200ResponseAllOfBillingInfo) IsSetEndDate() bool {
-	if o != nil && !IsNil(o.EndDate) {
-		return true
-	}
-
-	return false
-}
-
 // SetEndDate gets a reference to the given time.Time and assigns it to the EndDate field.
 func (o *ListBillingInstances200ResponseAllOfBillingInfo) SetEndDate(v time.Time) {
 	o.EndDate = &v
@@ -192,15 +156,6 @@ func (o *ListBillingInstances200ResponseAllOfBillingInfo) GetInstancesOk() ([]Li
 		return nil, false
 	}
 	return o.Instances, true
-}
-
-// IsSetInstances returns a boolean if a field has been set.
-func (o *ListBillingInstances200ResponseAllOfBillingInfo) IsSetInstances() bool {
-	if o != nil && !IsNil(o.Instances) {
-		return true
-	}
-
-	return false
 }
 
 // SetInstances gets a reference to the given []ListBillingInstances200ResponseAllOfBillingInfoInstancesInner and assigns it to the Instances field.

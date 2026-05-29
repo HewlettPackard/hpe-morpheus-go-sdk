@@ -71,15 +71,6 @@ func (o *AddOptionFormRequestOptionTypeForm) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *AddOptionFormRequestOptionTypeForm) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *AddOptionFormRequestOptionTypeForm) SetName(v string) {
 	o.Name = &v
@@ -101,15 +92,6 @@ func (o *AddOptionFormRequestOptionTypeForm) GetCodeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *AddOptionFormRequestOptionTypeForm) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -136,28 +118,9 @@ func (o *AddOptionFormRequestOptionTypeForm) GetDescriptionOk() (*string, bool) 
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *AddOptionFormRequestOptionTypeForm) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *AddOptionFormRequestOptionTypeForm) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *AddOptionFormRequestOptionTypeForm) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *AddOptionFormRequestOptionTypeForm) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetLabels returns the Labels field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -177,15 +140,6 @@ func (o *AddOptionFormRequestOptionTypeForm) GetLabelsOk() ([]string, bool) {
 		return nil, false
 	}
 	return o.Labels, true
-}
-
-// IsSetLabels returns a boolean if a field has been set.
-func (o *AddOptionFormRequestOptionTypeForm) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
 }
 
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
@@ -211,15 +165,6 @@ func (o *AddOptionFormRequestOptionTypeForm) GetOptionsOk() ([]AddOptionFormRequ
 	return o.Options, true
 }
 
-// IsSetOptions returns a boolean if a field has been set.
-func (o *AddOptionFormRequestOptionTypeForm) IsSetOptions() bool {
-	if o != nil && !IsNil(o.Options) {
-		return true
-	}
-
-	return false
-}
-
 // SetOptions gets a reference to the given []AddOptionFormRequestOptionTypeFormOptionsInner and assigns it to the Options field.
 func (o *AddOptionFormRequestOptionTypeForm) SetOptions(v []AddOptionFormRequestOptionTypeFormOptionsInner) {
 	o.Options = v
@@ -241,15 +186,6 @@ func (o *AddOptionFormRequestOptionTypeForm) GetFieldGroupsOk() ([]AddOptionForm
 		return nil, false
 	}
 	return o.FieldGroups, true
-}
-
-// IsSetFieldGroups returns a boolean if a field has been set.
-func (o *AddOptionFormRequestOptionTypeForm) IsSetFieldGroups() bool {
-	if o != nil && !IsNil(o.FieldGroups) {
-		return true
-	}
-
-	return false
 }
 
 // SetFieldGroups gets a reference to the given []AddOptionFormRequestOptionTypeFormFieldGroupsInner and assigns it to the FieldGroups field.

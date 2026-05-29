@@ -64,15 +64,6 @@ func (o *AppStateSpecsInner) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *AppStateSpecsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *AppStateSpecsInner) SetId(v int64) {
 	o.Id = &v
@@ -94,15 +85,6 @@ func (o *AppStateSpecsInner) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *AppStateSpecsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -128,15 +110,6 @@ func (o *AppStateSpecsInner) GetTemplateOk() (*AppStateSpecsInnerTemplate, bool)
 	return o.Template, true
 }
 
-// IsSetTemplate returns a boolean if a field has been set.
-func (o *AppStateSpecsInner) IsSetTemplate() bool {
-	if o != nil && !IsNil(o.Template) {
-		return true
-	}
-
-	return false
-}
-
 // SetTemplate gets a reference to the given AppStateSpecsInnerTemplate and assigns it to the Template field.
 func (o *AppStateSpecsInner) SetTemplate(v AppStateSpecsInnerTemplate) {
 	o.Template = &v
@@ -158,15 +131,6 @@ func (o *AppStateSpecsInner) GetIsolatedOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Isolated, true
-}
-
-// IsSetIsolated returns a boolean if a field has been set.
-func (o *AppStateSpecsInner) IsSetIsolated() bool {
-	if o != nil && !IsNil(o.Isolated) {
-		return true
-	}
-
-	return false
 }
 
 // SetIsolated gets a reference to the given bool and assigns it to the Isolated field.

@@ -61,15 +61,6 @@ func (o *SaveClusterDatastore200ResponseAllOfDatastoreZone) GetIdOk() (*int64, b
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *SaveClusterDatastore200ResponseAllOfDatastoreZone) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *SaveClusterDatastore200ResponseAllOfDatastoreZone) SetId(v int64) {
 	o.Id = &v

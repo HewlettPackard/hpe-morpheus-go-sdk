@@ -61,15 +61,6 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerRole) GetIdOk(
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerRole) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given string and assigns it to the Id field.
 func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerRole) SetId(v string) {
 	o.Id = &v

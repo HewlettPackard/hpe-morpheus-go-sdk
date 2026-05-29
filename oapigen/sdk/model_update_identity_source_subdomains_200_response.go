@@ -62,15 +62,6 @@ func (o *UpdateIdentitySourceSubdomains200Response) GetUserSourceOk() (*UpdateId
 	return o.UserSource, true
 }
 
-// IsSetUserSource returns a boolean if a field has been set.
-func (o *UpdateIdentitySourceSubdomains200Response) IsSetUserSource() bool {
-	if o != nil && !IsNil(o.UserSource) {
-		return true
-	}
-
-	return false
-}
-
 // SetUserSource gets a reference to the given UpdateIdentitySourceSubdomains200ResponseAllOfUserSource and assigns it to the UserSource field.
 func (o *UpdateIdentitySourceSubdomains200Response) SetUserSource(v UpdateIdentitySourceSubdomains200ResponseAllOfUserSource) {
 	o.UserSource = &v
@@ -92,15 +83,6 @@ func (o *UpdateIdentitySourceSubdomains200Response) GetSuccessOk() (*bool, bool)
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *UpdateIdentitySourceSubdomains200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

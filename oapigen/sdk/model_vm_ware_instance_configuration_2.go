@@ -89,28 +89,9 @@ func (o *VMWareInstanceConfiguration2) GetNoAgentOk() (*bool, bool) {
 	return o.NoAgent.Get(), o.NoAgent.IsSet()
 }
 
-// IsSetNoAgent returns a boolean if a field has been set.
-func (o *VMWareInstanceConfiguration2) IsSetNoAgent() bool {
-	if o != nil && o.NoAgent.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNoAgent gets a reference to the given NullableBool and assigns it to the NoAgent field.
 func (o *VMWareInstanceConfiguration2) SetNoAgent(v bool) {
 	o.NoAgent.Set(&v)
-}
-
-// SetNoAgentNil sets the value for NoAgent to be an explicit nil
-func (o *VMWareInstanceConfiguration2) SetNoAgentNil() {
-	o.NoAgent.Set(nil)
-}
-
-// UnsetNoAgent ensures that no value is present for NoAgent, not even an explicit nil
-func (o *VMWareInstanceConfiguration2) UnsetNoAgent() {
-	o.NoAgent.Unset()
 }
 
 // GetResourcePoolId returns the ResourcePoolId field value if set, zero value otherwise.
@@ -129,15 +110,6 @@ func (o *VMWareInstanceConfiguration2) GetResourcePoolIdOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ResourcePoolId, true
-}
-
-// IsSetResourcePoolId returns a boolean if a field has been set.
-func (o *VMWareInstanceConfiguration2) IsSetResourcePoolId() bool {
-	if o != nil && !IsNil(o.ResourcePoolId) {
-		return true
-	}
-
-	return false
 }
 
 // SetResourcePoolId gets a reference to the given string and assigns it to the ResourcePoolId field.
@@ -163,15 +135,6 @@ func (o *VMWareInstanceConfiguration2) GetHostIdOk() (*string, bool) {
 	return o.HostId, true
 }
 
-// IsSetHostId returns a boolean if a field has been set.
-func (o *VMWareInstanceConfiguration2) IsSetHostId() bool {
-	if o != nil && !IsNil(o.HostId) {
-		return true
-	}
-
-	return false
-}
-
 // SetHostId gets a reference to the given string and assigns it to the HostId field.
 func (o *VMWareInstanceConfiguration2) SetHostId(v string) {
 	o.HostId = &v
@@ -193,15 +156,6 @@ func (o *VMWareInstanceConfiguration2) GetSmbiosAssetTagOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SmbiosAssetTag, true
-}
-
-// IsSetSmbiosAssetTag returns a boolean if a field has been set.
-func (o *VMWareInstanceConfiguration2) IsSetSmbiosAssetTag() bool {
-	if o != nil && !IsNil(o.SmbiosAssetTag) {
-		return true
-	}
-
-	return false
 }
 
 // SetSmbiosAssetTag gets a reference to the given string and assigns it to the SmbiosAssetTag field.
@@ -227,15 +181,6 @@ func (o *VMWareInstanceConfiguration2) GetNestedVirtualizationOk() (*string, boo
 	return o.NestedVirtualization, true
 }
 
-// IsSetNestedVirtualization returns a boolean if a field has been set.
-func (o *VMWareInstanceConfiguration2) IsSetNestedVirtualization() bool {
-	if o != nil && !IsNil(o.NestedVirtualization) {
-		return true
-	}
-
-	return false
-}
-
 // SetNestedVirtualization gets a reference to the given string and assigns it to the NestedVirtualization field.
 func (o *VMWareInstanceConfiguration2) SetNestedVirtualization(v string) {
 	o.NestedVirtualization = &v
@@ -257,15 +202,6 @@ func (o *VMWareInstanceConfiguration2) GetVmwareFolderIdOk() (*string, bool) {
 		return nil, false
 	}
 	return o.VmwareFolderId, true
-}
-
-// IsSetVmwareFolderId returns a boolean if a field has been set.
-func (o *VMWareInstanceConfiguration2) IsSetVmwareFolderId() bool {
-	if o != nil && !IsNil(o.VmwareFolderId) {
-		return true
-	}
-
-	return false
 }
 
 // SetVmwareFolderId gets a reference to the given string and assigns it to the VmwareFolderId field.
@@ -292,28 +228,9 @@ func (o *VMWareInstanceConfiguration2) GetCreateUserOk() (*bool, bool) {
 	return o.CreateUser.Get(), o.CreateUser.IsSet()
 }
 
-// IsSetCreateUser returns a boolean if a field has been set.
-func (o *VMWareInstanceConfiguration2) IsSetCreateUser() bool {
-	if o != nil && o.CreateUser.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCreateUser gets a reference to the given NullableBool and assigns it to the CreateUser field.
 func (o *VMWareInstanceConfiguration2) SetCreateUser(v bool) {
 	o.CreateUser.Set(&v)
-}
-
-// SetCreateUserNil sets the value for CreateUser to be an explicit nil
-func (o *VMWareInstanceConfiguration2) SetCreateUserNil() {
-	o.CreateUser.Set(nil)
-}
-
-// UnsetCreateUser ensures that no value is present for CreateUser, not even an explicit nil
-func (o *VMWareInstanceConfiguration2) UnsetCreateUser() {
-	o.CreateUser.Unset()
 }
 
 // GetTemplate returns the Template field value if set, zero value otherwise.
@@ -332,15 +249,6 @@ func (o *VMWareInstanceConfiguration2) GetTemplateOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.Template, true
-}
-
-// IsSetTemplate returns a boolean if a field has been set.
-func (o *VMWareInstanceConfiguration2) IsSetTemplate() bool {
-	if o != nil && !IsNil(o.Template) {
-		return true
-	}
-
-	return false
 }
 
 // SetTemplate gets a reference to the given int64 and assigns it to the Template field.

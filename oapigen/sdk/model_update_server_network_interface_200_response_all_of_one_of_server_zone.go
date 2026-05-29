@@ -70,15 +70,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZone) GetIdOk() 
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZone) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZone) SetId(v int64) {
 	o.Id = &v
@@ -100,15 +91,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZone) GetAccount
 		return nil, false
 	}
 	return o.AccountId, true
-}
-
-// IsSetAccountId returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZone) IsSetAccountId() bool {
-	if o != nil && !IsNil(o.AccountId) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccountId gets a reference to the given int64 and assigns it to the AccountId field.
@@ -134,15 +116,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZone) GetGroupsO
 	return o.Groups, true
 }
 
-// IsSetGroups returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZone) IsSetGroups() bool {
-	if o != nil && !IsNil(o.Groups) {
-		return true
-	}
-
-	return false
-}
-
 // SetGroups gets a reference to the given []int64 and assigns it to the Groups field.
 func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZone) SetGroups(v []int64) {
 	o.Groups = v
@@ -164,15 +137,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZone) GetNameOk(
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZone) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -199,28 +163,9 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZone) GetDescrip
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZone) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZone) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZone) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZone) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetLocation returns the Location field value if set, zero value otherwise.
@@ -239,15 +184,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZone) GetLocatio
 		return nil, false
 	}
 	return o.Location, true
-}
-
-// IsSetLocation returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZone) IsSetLocation() bool {
-	if o != nil && !IsNil(o.Location) {
-		return true
-	}
-
-	return false
 }
 
 // SetLocation gets a reference to the given string and assigns it to the Location field.
@@ -273,15 +209,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZone) GetVisibil
 	return o.Visibility, true
 }
 
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZone) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
-}
-
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
 func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZone) SetVisibility(v string) {
 	o.Visibility = &v
@@ -305,15 +232,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZone) GetZoneTyp
 	return o.ZoneTypeId, true
 }
 
-// IsSetZoneTypeId returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZone) IsSetZoneTypeId() bool {
-	if o != nil && !IsNil(o.ZoneTypeId) {
-		return true
-	}
-
-	return false
-}
-
 // SetZoneTypeId gets a reference to the given int64 and assigns it to the ZoneTypeId field.
 func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZone) SetZoneTypeId(v int64) {
 	o.ZoneTypeId = &v
@@ -335,15 +253,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZone) GetNetwork
 		return nil, false
 	}
 	return o.NetworkServer, true
-}
-
-// IsSetNetworkServer returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZone) IsSetNetworkServer() bool {
-	if o != nil && !IsNil(o.NetworkServer) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkServer gets a reference to the given UpdateServerNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServer and assigns it to the NetworkServer field.
@@ -370,28 +279,9 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZone) GetSecurit
 	return o.SecurityServer.Get(), o.SecurityServer.IsSet()
 }
 
-// IsSetSecurityServer returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZone) IsSetSecurityServer() bool {
-	if o != nil && o.SecurityServer.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSecurityServer gets a reference to the given NullableString and assigns it to the SecurityServer field.
 func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZone) SetSecurityServer(v string) {
 	o.SecurityServer.Set(&v)
-}
-
-// SetSecurityServerNil sets the value for SecurityServer to be an explicit nil
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZone) SetSecurityServerNil() {
-	o.SecurityServer.Set(nil)
-}
-
-// UnsetSecurityServer ensures that no value is present for SecurityServer, not even an explicit nil
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZone) UnsetSecurityServer() {
-	o.SecurityServer.Unset()
 }
 
 func (o UpdateServerNetworkInterface200ResponseAllOfOneOfServerZone) MarshalJSON() ([]byte, error) {

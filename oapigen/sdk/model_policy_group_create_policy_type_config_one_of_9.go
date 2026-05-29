@@ -62,15 +62,6 @@ func (o *PolicyGroupCreatePolicyTypeConfigOneOf9) GetHostNamingTypeOk() (*string
 	return o.HostNamingType, true
 }
 
-// IsSetHostNamingType returns a boolean if a field has been set.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf9) IsSetHostNamingType() bool {
-	if o != nil && !IsNil(o.HostNamingType) {
-		return true
-	}
-
-	return false
-}
-
 // SetHostNamingType gets a reference to the given string and assigns it to the HostNamingType field.
 func (o *PolicyGroupCreatePolicyTypeConfigOneOf9) SetHostNamingType(v string) {
 	o.HostNamingType = &v
@@ -92,15 +83,6 @@ func (o *PolicyGroupCreatePolicyTypeConfigOneOf9) GetHostNamingPatternOk() (*str
 		return nil, false
 	}
 	return o.HostNamingPattern, true
-}
-
-// IsSetHostNamingPattern returns a boolean if a field has been set.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf9) IsSetHostNamingPattern() bool {
-	if o != nil && !IsNil(o.HostNamingPattern) {
-		return true
-	}
-
-	return false
 }
 
 // SetHostNamingPattern gets a reference to the given string and assigns it to the HostNamingPattern field.

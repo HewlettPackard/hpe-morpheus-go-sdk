@@ -84,15 +84,6 @@ func (o *IntegrationSaltMaster) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *IntegrationSaltMaster) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *IntegrationSaltMaster) SetId(v int64) {
 	o.Id = &v
@@ -114,15 +105,6 @@ func (o *IntegrationSaltMaster) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *IntegrationSaltMaster) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -148,15 +130,6 @@ func (o *IntegrationSaltMaster) GetEnabledOk() (*bool, bool) {
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *IntegrationSaltMaster) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *IntegrationSaltMaster) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -178,15 +151,6 @@ func (o *IntegrationSaltMaster) GetTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *IntegrationSaltMaster) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.
@@ -212,15 +176,6 @@ func (o *IntegrationSaltMaster) GetIntegrationTypeOk() (*AddIntegrations200Respo
 	return o.IntegrationType, true
 }
 
-// IsSetIntegrationType returns a boolean if a field has been set.
-func (o *IntegrationSaltMaster) IsSetIntegrationType() bool {
-	if o != nil && !IsNil(o.IntegrationType) {
-		return true
-	}
-
-	return false
-}
-
 // SetIntegrationType gets a reference to the given AddIntegrations200ResponseAllOfIntegrationOneOf14IntegrationType and assigns it to the IntegrationType field.
 func (o *IntegrationSaltMaster) SetIntegrationType(v AddIntegrations200ResponseAllOfIntegrationOneOf14IntegrationType) {
 	o.IntegrationType = &v
@@ -242,15 +197,6 @@ func (o *IntegrationSaltMaster) GetUrlOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Url, true
-}
-
-// IsSetUrl returns a boolean if a field has been set.
-func (o *IntegrationSaltMaster) IsSetUrl() bool {
-	if o != nil && !IsNil(o.Url) {
-		return true
-	}
-
-	return false
 }
 
 // SetUrl gets a reference to the given string and assigns it to the Url field.
@@ -276,15 +222,6 @@ func (o *IntegrationSaltMaster) GetPortOk() (*string, bool) {
 	return o.Port, true
 }
 
-// IsSetPort returns a boolean if a field has been set.
-func (o *IntegrationSaltMaster) IsSetPort() bool {
-	if o != nil && !IsNil(o.Port) {
-		return true
-	}
-
-	return false
-}
-
 // SetPort gets a reference to the given string and assigns it to the Port field.
 func (o *IntegrationSaltMaster) SetPort(v string) {
 	o.Port = &v
@@ -306,15 +243,6 @@ func (o *IntegrationSaltMaster) GetUsernameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Username, true
-}
-
-// IsSetUsername returns a boolean if a field has been set.
-func (o *IntegrationSaltMaster) IsSetUsername() bool {
-	if o != nil && !IsNil(o.Username) {
-		return true
-	}
-
-	return false
 }
 
 // SetUsername gets a reference to the given string and assigns it to the Username field.
@@ -340,15 +268,6 @@ func (o *IntegrationSaltMaster) GetPasswordOk() (*string, bool) {
 	return o.Password, true
 }
 
-// IsSetPassword returns a boolean if a field has been set.
-func (o *IntegrationSaltMaster) IsSetPassword() bool {
-	if o != nil && !IsNil(o.Password) {
-		return true
-	}
-
-	return false
-}
-
 // SetPassword gets a reference to the given string and assigns it to the Password field.
 func (o *IntegrationSaltMaster) SetPassword(v string) {
 	o.Password = &v
@@ -370,15 +289,6 @@ func (o *IntegrationSaltMaster) GetPasswordHashOk() (*string, bool) {
 		return nil, false
 	}
 	return o.PasswordHash, true
-}
-
-// IsSetPasswordHash returns a boolean if a field has been set.
-func (o *IntegrationSaltMaster) IsSetPasswordHash() bool {
-	if o != nil && !IsNil(o.PasswordHash) {
-		return true
-	}
-
-	return false
 }
 
 // SetPasswordHash gets a reference to the given string and assigns it to the PasswordHash field.
@@ -404,15 +314,6 @@ func (o *IntegrationSaltMaster) GetPathOk() (*string, bool) {
 	return o.Path, true
 }
 
-// IsSetPath returns a boolean if a field has been set.
-func (o *IntegrationSaltMaster) IsSetPath() bool {
-	if o != nil && !IsNil(o.Path) {
-		return true
-	}
-
-	return false
-}
-
 // SetPath gets a reference to the given string and assigns it to the Path field.
 func (o *IntegrationSaltMaster) SetPath(v string) {
 	o.Path = &v
@@ -434,15 +335,6 @@ func (o *IntegrationSaltMaster) GetVersionOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Version, true
-}
-
-// IsSetVersion returns a boolean if a field has been set.
-func (o *IntegrationSaltMaster) IsSetVersion() bool {
-	if o != nil && !IsNil(o.Version) {
-		return true
-	}
-
-	return false
 }
 
 // SetVersion gets a reference to the given string and assigns it to the Version field.
@@ -468,15 +360,6 @@ func (o *IntegrationSaltMaster) GetWindowsVersionOk() (*string, bool) {
 	return o.WindowsVersion, true
 }
 
-// IsSetWindowsVersion returns a boolean if a field has been set.
-func (o *IntegrationSaltMaster) IsSetWindowsVersion() bool {
-	if o != nil && !IsNil(o.WindowsVersion) {
-		return true
-	}
-
-	return false
-}
-
 // SetWindowsVersion gets a reference to the given string and assigns it to the WindowsVersion field.
 func (o *IntegrationSaltMaster) SetWindowsVersion(v string) {
 	o.WindowsVersion = &v
@@ -498,15 +381,6 @@ func (o *IntegrationSaltMaster) GetRepoUrlOk() (*string, bool) {
 		return nil, false
 	}
 	return o.RepoUrl, true
-}
-
-// IsSetRepoUrl returns a boolean if a field has been set.
-func (o *IntegrationSaltMaster) IsSetRepoUrl() bool {
-	if o != nil && !IsNil(o.RepoUrl) {
-		return true
-	}
-
-	return false
 }
 
 // SetRepoUrl gets a reference to the given string and assigns it to the RepoUrl field.
@@ -532,15 +406,6 @@ func (o *IntegrationSaltMaster) GetServiceModeOk() (*string, bool) {
 	return o.ServiceMode, true
 }
 
-// IsSetServiceMode returns a boolean if a field has been set.
-func (o *IntegrationSaltMaster) IsSetServiceMode() bool {
-	if o != nil && !IsNil(o.ServiceMode) {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceMode gets a reference to the given string and assigns it to the ServiceMode field.
 func (o *IntegrationSaltMaster) SetServiceMode(v string) {
 	o.ServiceMode = &v
@@ -562,15 +427,6 @@ func (o *IntegrationSaltMaster) GetIsPluginOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.IsPlugin, true
-}
-
-// IsSetIsPlugin returns a boolean if a field has been set.
-func (o *IntegrationSaltMaster) IsSetIsPlugin() bool {
-	if o != nil && !IsNil(o.IsPlugin) {
-		return true
-	}
-
-	return false
 }
 
 // SetIsPlugin gets a reference to the given bool and assigns it to the IsPlugin field.
@@ -596,15 +452,6 @@ func (o *IntegrationSaltMaster) GetConfigOk() (*AddIntegrations200ResponseAllOfI
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *IntegrationSaltMaster) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given AddIntegrations200ResponseAllOfIntegrationOneOf14Config and assigns it to the Config field.
 func (o *IntegrationSaltMaster) SetConfig(v AddIntegrations200ResponseAllOfIntegrationOneOf14Config) {
 	o.Config = &v
@@ -626,15 +473,6 @@ func (o *IntegrationSaltMaster) GetStatusOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *IntegrationSaltMaster) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -660,15 +498,6 @@ func (o *IntegrationSaltMaster) GetStatusDateOk() (*time.Time, bool) {
 	return o.StatusDate, true
 }
 
-// IsSetStatusDate returns a boolean if a field has been set.
-func (o *IntegrationSaltMaster) IsSetStatusDate() bool {
-	if o != nil && !IsNil(o.StatusDate) {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusDate gets a reference to the given time.Time and assigns it to the StatusDate field.
 func (o *IntegrationSaltMaster) SetStatusDate(v time.Time) {
 	o.StatusDate = &v
@@ -690,15 +519,6 @@ func (o *IntegrationSaltMaster) GetStatusMessageOk() (*string, bool) {
 		return nil, false
 	}
 	return o.StatusMessage, true
-}
-
-// IsSetStatusMessage returns a boolean if a field has been set.
-func (o *IntegrationSaltMaster) IsSetStatusMessage() bool {
-	if o != nil && !IsNil(o.StatusMessage) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatusMessage gets a reference to the given string and assigns it to the StatusMessage field.
@@ -725,28 +545,9 @@ func (o *IntegrationSaltMaster) GetLastSyncOk() (*string, bool) {
 	return o.LastSync.Get(), o.LastSync.IsSet()
 }
 
-// IsSetLastSync returns a boolean if a field has been set.
-func (o *IntegrationSaltMaster) IsSetLastSync() bool {
-	if o != nil && o.LastSync.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastSync gets a reference to the given NullableString and assigns it to the LastSync field.
 func (o *IntegrationSaltMaster) SetLastSync(v string) {
 	o.LastSync.Set(&v)
-}
-
-// SetLastSyncNil sets the value for LastSync to be an explicit nil
-func (o *IntegrationSaltMaster) SetLastSyncNil() {
-	o.LastSync.Set(nil)
-}
-
-// UnsetLastSync ensures that no value is present for LastSync, not even an explicit nil
-func (o *IntegrationSaltMaster) UnsetLastSync() {
-	o.LastSync.Unset()
 }
 
 // GetLastSyncDuration returns the LastSyncDuration field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -768,28 +569,9 @@ func (o *IntegrationSaltMaster) GetLastSyncDurationOk() (*string, bool) {
 	return o.LastSyncDuration.Get(), o.LastSyncDuration.IsSet()
 }
 
-// IsSetLastSyncDuration returns a boolean if a field has been set.
-func (o *IntegrationSaltMaster) IsSetLastSyncDuration() bool {
-	if o != nil && o.LastSyncDuration.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastSyncDuration gets a reference to the given NullableString and assigns it to the LastSyncDuration field.
 func (o *IntegrationSaltMaster) SetLastSyncDuration(v string) {
 	o.LastSyncDuration.Set(&v)
-}
-
-// SetLastSyncDurationNil sets the value for LastSyncDuration to be an explicit nil
-func (o *IntegrationSaltMaster) SetLastSyncDurationNil() {
-	o.LastSyncDuration.Set(nil)
-}
-
-// UnsetLastSyncDuration ensures that no value is present for LastSyncDuration, not even an explicit nil
-func (o *IntegrationSaltMaster) UnsetLastSyncDuration() {
-	o.LastSyncDuration.Unset()
 }
 
 // GetCredential returns the Credential field value if set, zero value otherwise.
@@ -808,15 +590,6 @@ func (o *IntegrationSaltMaster) GetCredentialOk() (*AddIntegrations200ResponseAl
 		return nil, false
 	}
 	return o.Credential, true
-}
-
-// IsSetCredential returns a boolean if a field has been set.
-func (o *IntegrationSaltMaster) IsSetCredential() bool {
-	if o != nil && !IsNil(o.Credential) {
-		return true
-	}
-
-	return false
 }
 
 // SetCredential gets a reference to the given AddIntegrations200ResponseAllOfIntegrationOneOf14Credential and assigns it to the Credential field.

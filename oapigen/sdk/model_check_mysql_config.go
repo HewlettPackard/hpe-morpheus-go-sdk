@@ -171,15 +171,6 @@ func (o *CheckMysqlConfig) GetCheckOperatorOk() (*string, bool) {
 	return o.CheckOperator, true
 }
 
-// IsSetCheckOperator returns a boolean if a field has been set.
-func (o *CheckMysqlConfig) IsSetCheckOperator() bool {
-	if o != nil && !IsNil(o.CheckOperator) {
-		return true
-	}
-
-	return false
-}
-
 // SetCheckOperator gets a reference to the given string and assigns it to the CheckOperator field.
 func (o *CheckMysqlConfig) SetCheckOperator(v string) {
 	o.CheckOperator = &v
@@ -227,15 +218,6 @@ func (o *CheckMysqlConfig) GetCheckResultOk() (*int64, bool) {
 	return o.CheckResult, true
 }
 
-// IsSetCheckResult returns a boolean if a field has been set.
-func (o *CheckMysqlConfig) IsSetCheckResult() bool {
-	if o != nil && !IsNil(o.CheckResult) {
-		return true
-	}
-
-	return false
-}
-
 // SetCheckResult gets a reference to the given int64 and assigns it to the CheckResult field.
 func (o *CheckMysqlConfig) SetCheckResult(v int64) {
 	o.CheckResult = &v
@@ -281,15 +263,6 @@ func (o *CheckMysqlConfig) GetDbPasswordHashOk() (*string, bool) {
 		return nil, false
 	}
 	return o.DbPasswordHash, true
-}
-
-// IsSetDbPasswordHash returns a boolean if a field has been set.
-func (o *CheckMysqlConfig) IsSetDbPasswordHash() bool {
-	if o != nil && !IsNil(o.DbPasswordHash) {
-		return true
-	}
-
-	return false
 }
 
 // SetDbPasswordHash gets a reference to the given string and assigns it to the DbPasswordHash field.

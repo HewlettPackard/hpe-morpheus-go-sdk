@@ -92,15 +92,6 @@ func (o *GetInstanceThreshold200ResponseInstanceSchedulesInner) GetIdOk() (*int6
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetInstanceThreshold200ResponseInstanceSchedulesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetInstanceThreshold200ResponseInstanceSchedulesInner) SetId(v int64) {
 	o.Id = &v
@@ -122,15 +113,6 @@ func (o *GetInstanceThreshold200ResponseInstanceSchedulesInner) GetScheduleTypeO
 		return nil, false
 	}
 	return o.ScheduleType, true
-}
-
-// IsSetScheduleType returns a boolean if a field has been set.
-func (o *GetInstanceThreshold200ResponseInstanceSchedulesInner) IsSetScheduleType() bool {
-	if o != nil && !IsNil(o.ScheduleType) {
-		return true
-	}
-
-	return false
 }
 
 // SetScheduleType gets a reference to the given string and assigns it to the ScheduleType field.
@@ -156,15 +138,6 @@ func (o *GetInstanceThreshold200ResponseInstanceSchedulesInner) GetScheduleTimez
 	return o.ScheduleTimezone, true
 }
 
-// IsSetScheduleTimezone returns a boolean if a field has been set.
-func (o *GetInstanceThreshold200ResponseInstanceSchedulesInner) IsSetScheduleTimezone() bool {
-	if o != nil && !IsNil(o.ScheduleTimezone) {
-		return true
-	}
-
-	return false
-}
-
 // SetScheduleTimezone gets a reference to the given string and assigns it to the ScheduleTimezone field.
 func (o *GetInstanceThreshold200ResponseInstanceSchedulesInner) SetScheduleTimezone(v string) {
 	o.ScheduleTimezone = &v
@@ -186,15 +159,6 @@ func (o *GetInstanceThreshold200ResponseInstanceSchedulesInner) GetStartDayOfWee
 		return nil, false
 	}
 	return o.StartDayOfWeek, true
-}
-
-// IsSetStartDayOfWeek returns a boolean if a field has been set.
-func (o *GetInstanceThreshold200ResponseInstanceSchedulesInner) IsSetStartDayOfWeek() bool {
-	if o != nil && !IsNil(o.StartDayOfWeek) {
-		return true
-	}
-
-	return false
 }
 
 // SetStartDayOfWeek gets a reference to the given int32 and assigns it to the StartDayOfWeek field.
@@ -220,15 +184,6 @@ func (o *GetInstanceThreshold200ResponseInstanceSchedulesInner) GetStartTimeOk()
 	return o.StartTime, true
 }
 
-// IsSetStartTime returns a boolean if a field has been set.
-func (o *GetInstanceThreshold200ResponseInstanceSchedulesInner) IsSetStartTime() bool {
-	if o != nil && !IsNil(o.StartTime) {
-		return true
-	}
-
-	return false
-}
-
 // SetStartTime gets a reference to the given string and assigns it to the StartTime field.
 func (o *GetInstanceThreshold200ResponseInstanceSchedulesInner) SetStartTime(v string) {
 	o.StartTime = &v
@@ -250,15 +205,6 @@ func (o *GetInstanceThreshold200ResponseInstanceSchedulesInner) GetEndDayOfWeekO
 		return nil, false
 	}
 	return o.EndDayOfWeek, true
-}
-
-// IsSetEndDayOfWeek returns a boolean if a field has been set.
-func (o *GetInstanceThreshold200ResponseInstanceSchedulesInner) IsSetEndDayOfWeek() bool {
-	if o != nil && !IsNil(o.EndDayOfWeek) {
-		return true
-	}
-
-	return false
 }
 
 // SetEndDayOfWeek gets a reference to the given int32 and assigns it to the EndDayOfWeek field.
@@ -284,15 +230,6 @@ func (o *GetInstanceThreshold200ResponseInstanceSchedulesInner) GetEndTimeOk() (
 	return o.EndTime, true
 }
 
-// IsSetEndTime returns a boolean if a field has been set.
-func (o *GetInstanceThreshold200ResponseInstanceSchedulesInner) IsSetEndTime() bool {
-	if o != nil && !IsNil(o.EndTime) {
-		return true
-	}
-
-	return false
-}
-
 // SetEndTime gets a reference to the given string and assigns it to the EndTime field.
 func (o *GetInstanceThreshold200ResponseInstanceSchedulesInner) SetEndTime(v string) {
 	o.EndTime = &v
@@ -314,15 +251,6 @@ func (o *GetInstanceThreshold200ResponseInstanceSchedulesInner) GetStartDateOk()
 		return nil, false
 	}
 	return o.StartDate, true
-}
-
-// IsSetStartDate returns a boolean if a field has been set.
-func (o *GetInstanceThreshold200ResponseInstanceSchedulesInner) IsSetStartDate() bool {
-	if o != nil && !IsNil(o.StartDate) {
-		return true
-	}
-
-	return false
 }
 
 // SetStartDate gets a reference to the given time.Time and assigns it to the StartDate field.
@@ -348,15 +276,6 @@ func (o *GetInstanceThreshold200ResponseInstanceSchedulesInner) GetEndDateOk() (
 	return o.EndDate, true
 }
 
-// IsSetEndDate returns a boolean if a field has been set.
-func (o *GetInstanceThreshold200ResponseInstanceSchedulesInner) IsSetEndDate() bool {
-	if o != nil && !IsNil(o.EndDate) {
-		return true
-	}
-
-	return false
-}
-
 // SetEndDate gets a reference to the given time.Time and assigns it to the EndDate field.
 func (o *GetInstanceThreshold200ResponseInstanceSchedulesInner) SetEndDate(v time.Time) {
 	o.EndDate = &v
@@ -378,15 +297,6 @@ func (o *GetInstanceThreshold200ResponseInstanceSchedulesInner) GetStartDisplayO
 		return nil, false
 	}
 	return o.StartDisplay, true
-}
-
-// IsSetStartDisplay returns a boolean if a field has been set.
-func (o *GetInstanceThreshold200ResponseInstanceSchedulesInner) IsSetStartDisplay() bool {
-	if o != nil && !IsNil(o.StartDisplay) {
-		return true
-	}
-
-	return false
 }
 
 // SetStartDisplay gets a reference to the given string and assigns it to the StartDisplay field.
@@ -412,15 +322,6 @@ func (o *GetInstanceThreshold200ResponseInstanceSchedulesInner) GetEndDisplayOk(
 	return o.EndDisplay, true
 }
 
-// IsSetEndDisplay returns a boolean if a field has been set.
-func (o *GetInstanceThreshold200ResponseInstanceSchedulesInner) IsSetEndDisplay() bool {
-	if o != nil && !IsNil(o.EndDisplay) {
-		return true
-	}
-
-	return false
-}
-
 // SetEndDisplay gets a reference to the given string and assigns it to the EndDisplay field.
 func (o *GetInstanceThreshold200ResponseInstanceSchedulesInner) SetEndDisplay(v string) {
 	o.EndDisplay = &v
@@ -442,15 +343,6 @@ func (o *GetInstanceThreshold200ResponseInstanceSchedulesInner) GetThresholdOk()
 		return nil, false
 	}
 	return o.Threshold, true
-}
-
-// IsSetThreshold returns a boolean if a field has been set.
-func (o *GetInstanceThreshold200ResponseInstanceSchedulesInner) IsSetThreshold() bool {
-	if o != nil && !IsNil(o.Threshold) {
-		return true
-	}
-
-	return false
 }
 
 // SetThreshold gets a reference to the given GetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold and assigns it to the Threshold field.
@@ -476,15 +368,6 @@ func (o *GetInstanceThreshold200ResponseInstanceSchedulesInner) GetDateCreatedOk
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *GetInstanceThreshold200ResponseInstanceSchedulesInner) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *GetInstanceThreshold200ResponseInstanceSchedulesInner) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -506,15 +389,6 @@ func (o *GetInstanceThreshold200ResponseInstanceSchedulesInner) GetLastUpdatedOk
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *GetInstanceThreshold200ResponseInstanceSchedulesInner) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.

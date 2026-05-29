@@ -70,15 +70,6 @@ func (o *TaskConditionalWorkflowConfig) GetConditionalScriptOk() (*string, bool)
 	return o.ConditionalScript, true
 }
 
-// IsSetConditionalScript returns a boolean if a field has been set.
-func (o *TaskConditionalWorkflowConfig) IsSetConditionalScript() bool {
-	if o != nil && !IsNil(o.ConditionalScript) {
-		return true
-	}
-
-	return false
-}
-
 // SetConditionalScript gets a reference to the given string and assigns it to the ConditionalScript field.
 func (o *TaskConditionalWorkflowConfig) SetConditionalScript(v string) {
 	o.ConditionalScript = &v
@@ -100,15 +91,6 @@ func (o *TaskConditionalWorkflowConfig) GetIfOperationalWorkflowIdOk() (*int64, 
 		return nil, false
 	}
 	return o.IfOperationalWorkflowId, true
-}
-
-// IsSetIfOperationalWorkflowId returns a boolean if a field has been set.
-func (o *TaskConditionalWorkflowConfig) IsSetIfOperationalWorkflowId() bool {
-	if o != nil && !IsNil(o.IfOperationalWorkflowId) {
-		return true
-	}
-
-	return false
 }
 
 // SetIfOperationalWorkflowId gets a reference to the given int64 and assigns it to the IfOperationalWorkflowId field.
@@ -134,15 +116,6 @@ func (o *TaskConditionalWorkflowConfig) GetIfOperationalWorkflowNameOk() (*strin
 	return o.IfOperationalWorkflowName, true
 }
 
-// IsSetIfOperationalWorkflowName returns a boolean if a field has been set.
-func (o *TaskConditionalWorkflowConfig) IsSetIfOperationalWorkflowName() bool {
-	if o != nil && !IsNil(o.IfOperationalWorkflowName) {
-		return true
-	}
-
-	return false
-}
-
 // SetIfOperationalWorkflowName gets a reference to the given string and assigns it to the IfOperationalWorkflowName field.
 func (o *TaskConditionalWorkflowConfig) SetIfOperationalWorkflowName(v string) {
 	o.IfOperationalWorkflowName = &v
@@ -166,15 +139,6 @@ func (o *TaskConditionalWorkflowConfig) GetElseOperationalWorkflowIdOk() (*int64
 	return o.ElseOperationalWorkflowId, true
 }
 
-// IsSetElseOperationalWorkflowId returns a boolean if a field has been set.
-func (o *TaskConditionalWorkflowConfig) IsSetElseOperationalWorkflowId() bool {
-	if o != nil && !IsNil(o.ElseOperationalWorkflowId) {
-		return true
-	}
-
-	return false
-}
-
 // SetElseOperationalWorkflowId gets a reference to the given int64 and assigns it to the ElseOperationalWorkflowId field.
 func (o *TaskConditionalWorkflowConfig) SetElseOperationalWorkflowId(v int64) {
 	o.ElseOperationalWorkflowId = &v
@@ -196,15 +160,6 @@ func (o *TaskConditionalWorkflowConfig) GetElseOperationalWorkflowNameOk() (*str
 		return nil, false
 	}
 	return o.ElseOperationalWorkflowName, true
-}
-
-// IsSetElseOperationalWorkflowName returns a boolean if a field has been set.
-func (o *TaskConditionalWorkflowConfig) IsSetElseOperationalWorkflowName() bool {
-	if o != nil && !IsNil(o.ElseOperationalWorkflowName) {
-		return true
-	}
-
-	return false
 }
 
 // SetElseOperationalWorkflowName gets a reference to the given string and assigns it to the ElseOperationalWorkflowName field.

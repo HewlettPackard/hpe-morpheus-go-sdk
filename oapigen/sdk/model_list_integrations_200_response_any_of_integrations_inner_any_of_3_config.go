@@ -72,15 +72,6 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) GetDatab
 	return o.Databags, true
 }
 
-// IsSetDatabags returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) IsSetDatabags() bool {
-	if o != nil && !IsNil(o.Databags) {
-		return true
-	}
-
-	return false
-}
-
 // SetDatabags gets a reference to the given []ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3ConfigDatabagsInner and assigns it to the Databags field.
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) SetDatabags(v []ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3ConfigDatabagsInner) {
 	o.Databags = v
@@ -102,15 +93,6 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) GetEndpo
 		return nil, false
 	}
 	return o.Endpoint, true
-}
-
-// IsSetEndpoint returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) IsSetEndpoint() bool {
-	if o != nil && !IsNil(o.Endpoint) {
-		return true
-	}
-
-	return false
 }
 
 // SetEndpoint gets a reference to the given string and assigns it to the Endpoint field.
@@ -136,15 +118,6 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) GetOrgOk
 	return o.Org, true
 }
 
-// IsSetOrg returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) IsSetOrg() bool {
-	if o != nil && !IsNil(o.Org) {
-		return true
-	}
-
-	return false
-}
-
 // SetOrg gets a reference to the given string and assigns it to the Org field.
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) SetOrg(v string) {
 	o.Org = &v
@@ -166,15 +139,6 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) GetChefU
 		return nil, false
 	}
 	return o.ChefUser, true
-}
-
-// IsSetChefUser returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) IsSetChefUser() bool {
-	if o != nil && !IsNil(o.ChefUser) {
-		return true
-	}
-
-	return false
 }
 
 // SetChefUser gets a reference to the given string and assigns it to the ChefUser field.
@@ -200,15 +164,6 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) GetUserK
 	return o.UserKey, true
 }
 
-// IsSetUserKey returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) IsSetUserKey() bool {
-	if o != nil && !IsNil(o.UserKey) {
-		return true
-	}
-
-	return false
-}
-
 // SetUserKey gets a reference to the given string and assigns it to the UserKey field.
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) SetUserKey(v string) {
 	o.UserKey = &v
@@ -230,15 +185,6 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) GetOrgKe
 		return nil, false
 	}
 	return o.OrgKey, true
-}
-
-// IsSetOrgKey returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) IsSetOrgKey() bool {
-	if o != nil && !IsNil(o.OrgKey) {
-		return true
-	}
-
-	return false
 }
 
 // SetOrgKey gets a reference to the given string and assigns it to the OrgKey field.
@@ -264,15 +210,6 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) GetVersi
 	return o.Version, true
 }
 
-// IsSetVersion returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) IsSetVersion() bool {
-	if o != nil && !IsNil(o.Version) {
-		return true
-	}
-
-	return false
-}
-
 // SetVersion gets a reference to the given string and assigns it to the Version field.
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) SetVersion(v string) {
 	o.Version = &v
@@ -294,15 +231,6 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) GetChefU
 		return nil, false
 	}
 	return o.ChefUseFqdn, true
-}
-
-// IsSetChefUseFqdn returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) IsSetChefUseFqdn() bool {
-	if o != nil && !IsNil(o.ChefUseFqdn) {
-		return true
-	}
-
-	return false
 }
 
 // SetChefUseFqdn gets a reference to the given bool and assigns it to the ChefUseFqdn field.
@@ -328,15 +256,6 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) GetWindo
 	return o.WindowsVersion, true
 }
 
-// IsSetWindowsVersion returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) IsSetWindowsVersion() bool {
-	if o != nil && !IsNil(o.WindowsVersion) {
-		return true
-	}
-
-	return false
-}
-
 // SetWindowsVersion gets a reference to the given string and assigns it to the WindowsVersion field.
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) SetWindowsVersion(v string) {
 	o.WindowsVersion = &v
@@ -358,15 +277,6 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) GetWindo
 		return nil, false
 	}
 	return o.WindowsInstallUrl, true
-}
-
-// IsSetWindowsInstallUrl returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) IsSetWindowsInstallUrl() bool {
-	if o != nil && !IsNil(o.WindowsInstallUrl) {
-		return true
-	}
-
-	return false
 }
 
 // SetWindowsInstallUrl gets a reference to the given string and assigns it to the WindowsInstallUrl field.
@@ -392,15 +302,6 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) GetUserK
 	return o.UserKeyHash, true
 }
 
-// IsSetUserKeyHash returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) IsSetUserKeyHash() bool {
-	if o != nil && !IsNil(o.UserKeyHash) {
-		return true
-	}
-
-	return false
-}
-
 // SetUserKeyHash gets a reference to the given string and assigns it to the UserKeyHash field.
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) SetUserKeyHash(v string) {
 	o.UserKeyHash = &v
@@ -422,15 +323,6 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) GetOrgKe
 		return nil, false
 	}
 	return o.OrgKeyHash, true
-}
-
-// IsSetOrgKeyHash returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) IsSetOrgKeyHash() bool {
-	if o != nil && !IsNil(o.OrgKeyHash) {
-		return true
-	}
-
-	return false
 }
 
 // SetOrgKeyHash gets a reference to the given string and assigns it to the OrgKeyHash field.

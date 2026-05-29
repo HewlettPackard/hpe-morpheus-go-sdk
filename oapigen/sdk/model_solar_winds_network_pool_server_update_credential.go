@@ -62,15 +62,6 @@ func (o *SolarWindsNetworkPoolServerUpdateCredential) GetTypeOk() (*string, bool
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *SolarWindsNetworkPoolServerUpdateCredential) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given string and assigns it to the Type field.
 func (o *SolarWindsNetworkPoolServerUpdateCredential) SetType(v string) {
 	o.Type = &v
@@ -92,15 +83,6 @@ func (o *SolarWindsNetworkPoolServerUpdateCredential) GetIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.Id, true
-}
-
-// IsSetId returns a boolean if a field has been set.
-func (o *SolarWindsNetworkPoolServerUpdateCredential) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
 }
 
 // SetId gets a reference to the given int64 and assigns it to the Id field.

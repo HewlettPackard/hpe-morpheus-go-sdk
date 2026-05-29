@@ -63,15 +63,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1Zone) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1Zone) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetGuidances200ResponseDiscoveryAnyOf1Zone) SetId(v int64) {
 	o.Id = &v
@@ -95,15 +86,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1Zone) GetNameOk() (*string, bool)
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1Zone) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *GetGuidances200ResponseDiscoveryAnyOf1Zone) SetName(v string) {
 	o.Name = &v
@@ -125,15 +107,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1Zone) GetZoneTypeOk() (*GetGuidan
 		return nil, false
 	}
 	return o.ZoneType, true
-}
-
-// IsSetZoneType returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1Zone) IsSetZoneType() bool {
-	if o != nil && !IsNil(o.ZoneType) {
-		return true
-	}
-
-	return false
 }
 
 // SetZoneType gets a reference to the given GetGuidances200ResponseDiscoveryAnyOf1ZoneZoneType and assigns it to the ZoneType field.

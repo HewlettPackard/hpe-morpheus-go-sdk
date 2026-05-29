@@ -64,15 +64,6 @@ func (o *GetContainer200ResponseContainerContainerType) GetIdOk() (*int32, bool)
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetContainer200ResponseContainerContainerType) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int32 and assigns it to the Id field.
 func (o *GetContainer200ResponseContainerContainerType) SetId(v int32) {
 	o.Id = &v
@@ -94,15 +85,6 @@ func (o *GetContainer200ResponseContainerContainerType) GetCodeOk() (*string, bo
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *GetContainer200ResponseContainerContainerType) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -128,15 +110,6 @@ func (o *GetContainer200ResponseContainerContainerType) GetCategoryOk() (*string
 	return o.Category, true
 }
 
-// IsSetCategory returns a boolean if a field has been set.
-func (o *GetContainer200ResponseContainerContainerType) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
-		return true
-	}
-
-	return false
-}
-
 // SetCategory gets a reference to the given string and assigns it to the Category field.
 func (o *GetContainer200ResponseContainerContainerType) SetCategory(v string) {
 	o.Category = &v
@@ -158,15 +131,6 @@ func (o *GetContainer200ResponseContainerContainerType) GetNameOk() (*string, bo
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *GetContainer200ResponseContainerContainerType) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.

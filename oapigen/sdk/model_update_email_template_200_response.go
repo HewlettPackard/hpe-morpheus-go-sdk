@@ -61,15 +61,6 @@ func (o *UpdateEmailTemplate200Response) GetEmailTemplateOk() (*AddEmailTemplate
 	return o.EmailTemplate, true
 }
 
-// IsSetEmailTemplate returns a boolean if a field has been set.
-func (o *UpdateEmailTemplate200Response) IsSetEmailTemplate() bool {
-	if o != nil && !IsNil(o.EmailTemplate) {
-		return true
-	}
-
-	return false
-}
-
 // SetEmailTemplate gets a reference to the given AddEmailTemplate200ResponseEmailTemplate and assigns it to the EmailTemplate field.
 func (o *UpdateEmailTemplate200Response) SetEmailTemplate(v AddEmailTemplate200ResponseEmailTemplate) {
 	o.EmailTemplate = &v

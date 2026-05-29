@@ -62,15 +62,6 @@ func (o *ListInstances200ResponseAllOfInstancesInnerConfigLayout) GetCodeOk() (*
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerConfigLayout) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *ListInstances200ResponseAllOfInstancesInnerConfigLayout) SetCode(v string) {
 	o.Code = &v
@@ -92,15 +83,6 @@ func (o *ListInstances200ResponseAllOfInstancesInnerConfigLayout) GetIdOk() (*in
 		return nil, false
 	}
 	return o.Id, true
-}
-
-// IsSetId returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerConfigLayout) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
 }
 
 // SetId gets a reference to the given int64 and assigns it to the Id field.

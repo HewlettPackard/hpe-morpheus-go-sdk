@@ -111,15 +111,6 @@ func (o *ZoneCreateConfigAnyOf3) GetApplianceUrlOk() (*string, bool) {
 	return o.ApplianceUrl, true
 }
 
-// IsSetApplianceUrl returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf3) IsSetApplianceUrl() bool {
-	if o != nil && !IsNil(o.ApplianceUrl) {
-		return true
-	}
-
-	return false
-}
-
 // SetApplianceUrl gets a reference to the given string and assigns it to the ApplianceUrl field.
 func (o *ZoneCreateConfigAnyOf3) SetApplianceUrl(v string) {
 	o.ApplianceUrl = &v
@@ -141,15 +132,6 @@ func (o *ZoneCreateConfigAnyOf3) GetDatacenterNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.DatacenterName, true
-}
-
-// IsSetDatacenterName returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf3) IsSetDatacenterName() bool {
-	if o != nil && !IsNil(o.DatacenterName) {
-		return true
-	}
-
-	return false
 }
 
 // SetDatacenterName gets a reference to the given string and assigns it to the DatacenterName field.
@@ -176,28 +158,9 @@ func (o *ZoneCreateConfigAnyOf3) GetExternalIdOk() (*string, bool) {
 	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf3) IsSetExternalId() bool {
-	if o != nil && o.ExternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *ZoneCreateConfigAnyOf3) SetExternalId(v string) {
 	o.ExternalId.Set(&v)
-}
-
-// SetExternalIdNil sets the value for ExternalId to be an explicit nil
-func (o *ZoneCreateConfigAnyOf3) SetExternalIdNil() {
-	o.ExternalId.Set(nil)
-}
-
-// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-func (o *ZoneCreateConfigAnyOf3) UnsetExternalId() {
-	o.ExternalId.Unset()
 }
 
 // GetInventoryLevel returns the InventoryLevel field value if set, zero value otherwise.
@@ -216,15 +179,6 @@ func (o *ZoneCreateConfigAnyOf3) GetInventoryLevelOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InventoryLevel, true
-}
-
-// IsSetInventoryLevel returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf3) IsSetInventoryLevel() bool {
-	if o != nil && !IsNil(o.InventoryLevel) {
-		return true
-	}
-
-	return false
 }
 
 // SetInventoryLevel gets a reference to the given string and assigns it to the InventoryLevel field.
@@ -248,15 +202,6 @@ func (o *ZoneCreateConfigAnyOf3) GetConsoleKeymapOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ConsoleKeymap, true
-}
-
-// IsSetConsoleKeymap returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf3) IsSetConsoleKeymap() bool {
-	if o != nil && !IsNil(o.ConsoleKeymap) {
-		return true
-	}
-
-	return false
 }
 
 // SetConsoleKeymap gets a reference to the given string and assigns it to the ConsoleKeymap field.
@@ -354,15 +299,6 @@ func (o *ZoneCreateConfigAnyOf3) GetClusterOk() (*string, bool) {
 	return o.Cluster, true
 }
 
-// IsSetCluster returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf3) IsSetCluster() bool {
-	if o != nil && !IsNil(o.Cluster) {
-		return true
-	}
-
-	return false
-}
-
 // SetCluster gets a reference to the given string and assigns it to the Cluster field.
 func (o *ZoneCreateConfigAnyOf3) SetCluster(v string) {
 	o.Cluster = &v
@@ -386,15 +322,6 @@ func (o *ZoneCreateConfigAnyOf3) GetConfigManagementIdOk() (*string, bool) {
 	return o.ConfigManagementId, true
 }
 
-// IsSetConfigManagementId returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf3) IsSetConfigManagementId() bool {
-	if o != nil && !IsNil(o.ConfigManagementId) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfigManagementId gets a reference to the given string and assigns it to the ConfigManagementId field.
 func (o *ZoneCreateConfigAnyOf3) SetConfigManagementId(v string) {
 	o.ConfigManagementId = &v
@@ -416,15 +343,6 @@ func (o *ZoneCreateConfigAnyOf3) GetResourcePoolOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ResourcePool, true
-}
-
-// IsSetResourcePool returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf3) IsSetResourcePool() bool {
-	if o != nil && !IsNil(o.ResourcePool) {
-		return true
-	}
-
-	return false
 }
 
 // SetResourcePool gets a reference to the given string and assigns it to the ResourcePool field.
@@ -451,28 +369,9 @@ func (o *ZoneCreateConfigAnyOf3) GetRpcModeOk() (*ZoneCreateConfigAnyOf3RpcMode,
 	return o.RpcMode.Get(), o.RpcMode.IsSet()
 }
 
-// IsSetRpcMode returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf3) IsSetRpcMode() bool {
-	if o != nil && o.RpcMode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRpcMode gets a reference to the given NullableZoneCreateConfigAnyOf3RpcMode and assigns it to the RpcMode field.
 func (o *ZoneCreateConfigAnyOf3) SetRpcMode(v ZoneCreateConfigAnyOf3RpcMode) {
 	o.RpcMode.Set(&v)
-}
-
-// SetRpcModeNil sets the value for RpcMode to be an explicit nil
-func (o *ZoneCreateConfigAnyOf3) SetRpcModeNil() {
-	o.RpcMode.Set(nil)
-}
-
-// UnsetRpcMode ensures that no value is present for RpcMode, not even an explicit nil
-func (o *ZoneCreateConfigAnyOf3) UnsetRpcMode() {
-	o.RpcMode.Unset()
 }
 
 // GetStorageType returns the StorageType field value if set, zero value otherwise.
@@ -491,15 +390,6 @@ func (o *ZoneCreateConfigAnyOf3) GetStorageTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.StorageType, true
-}
-
-// IsSetStorageType returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf3) IsSetStorageType() bool {
-	if o != nil && !IsNil(o.StorageType) {
-		return true
-	}
-
-	return false
 }
 
 // SetStorageType gets a reference to the given string and assigns it to the StorageType field.
@@ -523,15 +413,6 @@ func (o *ZoneCreateConfigAnyOf3) GetCertificateProviderOk() (*string, bool) {
 		return nil, false
 	}
 	return o.CertificateProvider, true
-}
-
-// IsSetCertificateProvider returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf3) IsSetCertificateProvider() bool {
-	if o != nil && !IsNil(o.CertificateProvider) {
-		return true
-	}
-
-	return false
 }
 
 // SetCertificateProvider gets a reference to the given string and assigns it to the CertificateProvider field.
@@ -558,28 +439,9 @@ func (o *ZoneCreateConfigAnyOf3) GetEnableVncOk() (*ZoneCreateConfigAnyOf3Enable
 	return o.EnableVnc.Get(), o.EnableVnc.IsSet()
 }
 
-// IsSetEnableVnc returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf3) IsSetEnableVnc() bool {
-	if o != nil && o.EnableVnc.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetEnableVnc gets a reference to the given NullableZoneCreateConfigAnyOf3EnableVnc and assigns it to the EnableVnc field.
 func (o *ZoneCreateConfigAnyOf3) SetEnableVnc(v ZoneCreateConfigAnyOf3EnableVnc) {
 	o.EnableVnc.Set(&v)
-}
-
-// SetEnableVncNil sets the value for EnableVnc to be an explicit nil
-func (o *ZoneCreateConfigAnyOf3) SetEnableVncNil() {
-	o.EnableVnc.Set(nil)
-}
-
-// UnsetEnableVnc ensures that no value is present for EnableVnc, not even an explicit nil
-func (o *ZoneCreateConfigAnyOf3) UnsetEnableVnc() {
-	o.EnableVnc.Unset()
 }
 
 // GetHideHostSelection returns the HideHostSelection field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -601,28 +463,9 @@ func (o *ZoneCreateConfigAnyOf3) GetHideHostSelectionOk() (*ZoneCreateConfigAnyO
 	return o.HideHostSelection.Get(), o.HideHostSelection.IsSet()
 }
 
-// IsSetHideHostSelection returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf3) IsSetHideHostSelection() bool {
-	if o != nil && o.HideHostSelection.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetHideHostSelection gets a reference to the given NullableZoneCreateConfigAnyOf3HideHostSelection and assigns it to the HideHostSelection field.
 func (o *ZoneCreateConfigAnyOf3) SetHideHostSelection(v ZoneCreateConfigAnyOf3HideHostSelection) {
 	o.HideHostSelection.Set(&v)
-}
-
-// SetHideHostSelectionNil sets the value for HideHostSelection to be an explicit nil
-func (o *ZoneCreateConfigAnyOf3) SetHideHostSelectionNil() {
-	o.HideHostSelection.Set(nil)
-}
-
-// UnsetHideHostSelection ensures that no value is present for HideHostSelection, not even an explicit nil
-func (o *ZoneCreateConfigAnyOf3) UnsetHideHostSelection() {
-	o.HideHostSelection.Unset()
 }
 
 // GetEnableDiskTypeSelection returns the EnableDiskTypeSelection field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -644,28 +487,9 @@ func (o *ZoneCreateConfigAnyOf3) GetEnableDiskTypeSelectionOk() (*ZoneCreateConf
 	return o.EnableDiskTypeSelection.Get(), o.EnableDiskTypeSelection.IsSet()
 }
 
-// IsSetEnableDiskTypeSelection returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf3) IsSetEnableDiskTypeSelection() bool {
-	if o != nil && o.EnableDiskTypeSelection.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetEnableDiskTypeSelection gets a reference to the given NullableZoneCreateConfigAnyOf3EnableDiskTypeSelection and assigns it to the EnableDiskTypeSelection field.
 func (o *ZoneCreateConfigAnyOf3) SetEnableDiskTypeSelection(v ZoneCreateConfigAnyOf3EnableDiskTypeSelection) {
 	o.EnableDiskTypeSelection.Set(&v)
-}
-
-// SetEnableDiskTypeSelectionNil sets the value for EnableDiskTypeSelection to be an explicit nil
-func (o *ZoneCreateConfigAnyOf3) SetEnableDiskTypeSelectionNil() {
-	o.EnableDiskTypeSelection.Set(nil)
-}
-
-// UnsetEnableDiskTypeSelection ensures that no value is present for EnableDiskTypeSelection, not even an explicit nil
-func (o *ZoneCreateConfigAnyOf3) UnsetEnableDiskTypeSelection() {
-	o.EnableDiskTypeSelection.Unset()
 }
 
 // GetEnableStorageTypeSelection returns the EnableStorageTypeSelection field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -687,28 +511,9 @@ func (o *ZoneCreateConfigAnyOf3) GetEnableStorageTypeSelectionOk() (*ZoneCreateC
 	return o.EnableStorageTypeSelection.Get(), o.EnableStorageTypeSelection.IsSet()
 }
 
-// IsSetEnableStorageTypeSelection returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf3) IsSetEnableStorageTypeSelection() bool {
-	if o != nil && o.EnableStorageTypeSelection.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetEnableStorageTypeSelection gets a reference to the given NullableZoneCreateConfigAnyOf3EnableStorageTypeSelection and assigns it to the EnableStorageTypeSelection field.
 func (o *ZoneCreateConfigAnyOf3) SetEnableStorageTypeSelection(v ZoneCreateConfigAnyOf3EnableStorageTypeSelection) {
 	o.EnableStorageTypeSelection.Set(&v)
-}
-
-// SetEnableStorageTypeSelectionNil sets the value for EnableStorageTypeSelection to be an explicit nil
-func (o *ZoneCreateConfigAnyOf3) SetEnableStorageTypeSelectionNil() {
-	o.EnableStorageTypeSelection.Set(nil)
-}
-
-// UnsetEnableStorageTypeSelection ensures that no value is present for EnableStorageTypeSelection, not even an explicit nil
-func (o *ZoneCreateConfigAnyOf3) UnsetEnableStorageTypeSelection() {
-	o.EnableStorageTypeSelection.Unset()
 }
 
 // GetEnableNetworkTypeSelection returns the EnableNetworkTypeSelection field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -730,28 +535,9 @@ func (o *ZoneCreateConfigAnyOf3) GetEnableNetworkTypeSelectionOk() (*ZoneCreateC
 	return o.EnableNetworkTypeSelection.Get(), o.EnableNetworkTypeSelection.IsSet()
 }
 
-// IsSetEnableNetworkTypeSelection returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf3) IsSetEnableNetworkTypeSelection() bool {
-	if o != nil && o.EnableNetworkTypeSelection.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetEnableNetworkTypeSelection gets a reference to the given NullableZoneCreateConfigAnyOf3EnableNetworkTypeSelection and assigns it to the EnableNetworkTypeSelection field.
 func (o *ZoneCreateConfigAnyOf3) SetEnableNetworkTypeSelection(v ZoneCreateConfigAnyOf3EnableNetworkTypeSelection) {
 	o.EnableNetworkTypeSelection.Set(&v)
-}
-
-// SetEnableNetworkTypeSelectionNil sets the value for EnableNetworkTypeSelection to be an explicit nil
-func (o *ZoneCreateConfigAnyOf3) SetEnableNetworkTypeSelectionNil() {
-	o.EnableNetworkTypeSelection.Set(nil)
-}
-
-// UnsetEnableNetworkTypeSelection ensures that no value is present for EnableNetworkTypeSelection, not even an explicit nil
-func (o *ZoneCreateConfigAnyOf3) UnsetEnableNetworkTypeSelection() {
-	o.EnableNetworkTypeSelection.Unset()
 }
 
 // GetUsername returns the Username field value if set, zero value otherwise.
@@ -770,15 +556,6 @@ func (o *ZoneCreateConfigAnyOf3) GetUsernameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Username, true
-}
-
-// IsSetUsername returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf3) IsSetUsername() bool {
-	if o != nil && !IsNil(o.Username) {
-		return true
-	}
-
-	return false
 }
 
 // SetUsername gets a reference to the given string and assigns it to the Username field.
@@ -802,15 +579,6 @@ func (o *ZoneCreateConfigAnyOf3) GetPasswordOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Password, true
-}
-
-// IsSetPassword returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf3) IsSetPassword() bool {
-	if o != nil && !IsNil(o.Password) {
-		return true
-	}
-
-	return false
 }
 
 // SetPassword gets a reference to the given string and assigns it to the Password field.

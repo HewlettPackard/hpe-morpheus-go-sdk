@@ -68,15 +68,6 @@ func (o *UserSourceCreateUserSourceConfigOneOf) GetUrlOk() (*string, bool) {
 	return o.Url, true
 }
 
-// IsSetUrl returns a boolean if a field has been set.
-func (o *UserSourceCreateUserSourceConfigOneOf) IsSetUrl() bool {
-	if o != nil && !IsNil(o.Url) {
-		return true
-	}
-
-	return false
-}
-
 // SetUrl gets a reference to the given string and assigns it to the Url field.
 func (o *UserSourceCreateUserSourceConfigOneOf) SetUrl(v string) {
 	o.Url = &v
@@ -98,15 +89,6 @@ func (o *UserSourceCreateUserSourceConfigOneOf) GetBindingUsernameOk() (*string,
 		return nil, false
 	}
 	return o.BindingUsername, true
-}
-
-// IsSetBindingUsername returns a boolean if a field has been set.
-func (o *UserSourceCreateUserSourceConfigOneOf) IsSetBindingUsername() bool {
-	if o != nil && !IsNil(o.BindingUsername) {
-		return true
-	}
-
-	return false
 }
 
 // SetBindingUsername gets a reference to the given string and assigns it to the BindingUsername field.
@@ -132,15 +114,6 @@ func (o *UserSourceCreateUserSourceConfigOneOf) GetBindingPasswordOk() (*string,
 	return o.BindingPassword, true
 }
 
-// IsSetBindingPassword returns a boolean if a field has been set.
-func (o *UserSourceCreateUserSourceConfigOneOf) IsSetBindingPassword() bool {
-	if o != nil && !IsNil(o.BindingPassword) {
-		return true
-	}
-
-	return false
-}
-
 // SetBindingPassword gets a reference to the given string and assigns it to the BindingPassword field.
 func (o *UserSourceCreateUserSourceConfigOneOf) SetBindingPassword(v string) {
 	o.BindingPassword = &v
@@ -162,15 +135,6 @@ func (o *UserSourceCreateUserSourceConfigOneOf) GetRequiredGroupOk() (*string, b
 		return nil, false
 	}
 	return o.RequiredGroup, true
-}
-
-// IsSetRequiredGroup returns a boolean if a field has been set.
-func (o *UserSourceCreateUserSourceConfigOneOf) IsSetRequiredGroup() bool {
-	if o != nil && !IsNil(o.RequiredGroup) {
-		return true
-	}
-
-	return false
 }
 
 // SetRequiredGroup gets a reference to the given string and assigns it to the RequiredGroup field.

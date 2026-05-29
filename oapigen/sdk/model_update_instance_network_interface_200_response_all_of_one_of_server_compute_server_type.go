@@ -77,15 +77,6 @@ func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerT
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType) SetId(v int64) {
 	o.Id = &v
@@ -107,15 +98,6 @@ func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerT
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -141,15 +123,6 @@ func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerT
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType) SetName(v string) {
 	o.Name = &v
@@ -171,15 +144,6 @@ func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerT
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -205,15 +169,6 @@ func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerT
 	return o.Platform, true
 }
 
-// IsSetPlatform returns a boolean if a field has been set.
-func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType) IsSetPlatform() bool {
-	if o != nil && !IsNil(o.Platform) {
-		return true
-	}
-
-	return false
-}
-
 // SetPlatform gets a reference to the given string and assigns it to the Platform field.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType) SetPlatform(v string) {
 	o.Platform = &v
@@ -235,15 +190,6 @@ func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerT
 		return nil, false
 	}
 	return o.NodeType, true
-}
-
-// IsSetNodeType returns a boolean if a field has been set.
-func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType) IsSetNodeType() bool {
-	if o != nil && !IsNil(o.NodeType) {
-		return true
-	}
-
-	return false
 }
 
 // SetNodeType gets a reference to the given string and assigns it to the NodeType field.
@@ -269,15 +215,6 @@ func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerT
 	return o.Managed, true
 }
 
-// IsSetManaged returns a boolean if a field has been set.
-func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType) IsSetManaged() bool {
-	if o != nil && !IsNil(o.Managed) {
-		return true
-	}
-
-	return false
-}
-
 // SetManaged gets a reference to the given bool and assigns it to the Managed field.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType) SetManaged(v bool) {
 	o.Managed = &v
@@ -299,15 +236,6 @@ func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerT
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -333,15 +261,6 @@ func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerT
 	return o.VmHypervisor, true
 }
 
-// IsSetVmHypervisor returns a boolean if a field has been set.
-func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType) IsSetVmHypervisor() bool {
-	if o != nil && !IsNil(o.VmHypervisor) {
-		return true
-	}
-
-	return false
-}
-
 // SetVmHypervisor gets a reference to the given bool and assigns it to the VmHypervisor field.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType) SetVmHypervisor(v bool) {
 	o.VmHypervisor = &v
@@ -363,15 +282,6 @@ func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerT
 		return nil, false
 	}
 	return o.ContainerHypervisor, true
-}
-
-// IsSetContainerHypervisor returns a boolean if a field has been set.
-func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType) IsSetContainerHypervisor() bool {
-	if o != nil && !IsNil(o.ContainerHypervisor) {
-		return true
-	}
-
-	return false
 }
 
 // SetContainerHypervisor gets a reference to the given bool and assigns it to the ContainerHypervisor field.
@@ -397,15 +307,6 @@ func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerT
 	return o.DisplayOrder, true
 }
 
-// IsSetDisplayOrder returns a boolean if a field has been set.
-func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType) IsSetDisplayOrder() bool {
-	if o != nil && !IsNil(o.DisplayOrder) {
-		return true
-	}
-
-	return false
-}
-
 // SetDisplayOrder gets a reference to the given int64 and assigns it to the DisplayOrder field.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType) SetDisplayOrder(v int64) {
 	o.DisplayOrder = &v
@@ -427,15 +328,6 @@ func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerT
 		return nil, false
 	}
 	return o.Selectable, true
-}
-
-// IsSetSelectable returns a boolean if a field has been set.
-func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType) IsSetSelectable() bool {
-	if o != nil && !IsNil(o.Selectable) {
-		return true
-	}
-
-	return false
 }
 
 // SetSelectable gets a reference to the given bool and assigns it to the Selectable field.
@@ -461,15 +353,6 @@ func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerT
 	return o.ControlPower, true
 }
 
-// IsSetControlPower returns a boolean if a field has been set.
-func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType) IsSetControlPower() bool {
-	if o != nil && !IsNil(o.ControlPower) {
-		return true
-	}
-
-	return false
-}
-
 // SetControlPower gets a reference to the given bool and assigns it to the ControlPower field.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType) SetControlPower(v bool) {
 	o.ControlPower = &v
@@ -491,15 +374,6 @@ func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerT
 		return nil, false
 	}
 	return o.ControlSuspend, true
-}
-
-// IsSetControlSuspend returns a boolean if a field has been set.
-func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType) IsSetControlSuspend() bool {
-	if o != nil && !IsNil(o.ControlSuspend) {
-		return true
-	}
-
-	return false
 }
 
 // SetControlSuspend gets a reference to the given bool and assigns it to the ControlSuspend field.
@@ -525,15 +399,6 @@ func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerT
 	return o.HasAgent, true
 }
 
-// IsSetHasAgent returns a boolean if a field has been set.
-func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType) IsSetHasAgent() bool {
-	if o != nil && !IsNil(o.HasAgent) {
-		return true
-	}
-
-	return false
-}
-
 // SetHasAgent gets a reference to the given bool and assigns it to the HasAgent field.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType) SetHasAgent(v bool) {
 	o.HasAgent = &v
@@ -557,15 +422,6 @@ func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerT
 	return o.Creatable, true
 }
 
-// IsSetCreatable returns a boolean if a field has been set.
-func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType) IsSetCreatable() bool {
-	if o != nil && !IsNil(o.Creatable) {
-		return true
-	}
-
-	return false
-}
-
 // SetCreatable gets a reference to the given bool and assigns it to the Creatable field.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType) SetCreatable(v bool) {
 	o.Creatable = &v
@@ -587,15 +443,6 @@ func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerT
 		return nil, false
 	}
 	return o.OptionTypes, true
-}
-
-// IsSetOptionTypes returns a boolean if a field has been set.
-func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType) IsSetOptionTypes() bool {
-	if o != nil && !IsNil(o.OptionTypes) {
-		return true
-	}
-
-	return false
 }
 
 // SetOptionTypes gets a reference to the given []map[string]interface{} and assigns it to the OptionTypes field.

@@ -64,15 +64,6 @@ func (o *ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner) GetIdOk() (*
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner) SetId(v int64) {
 	o.Id = &v
@@ -94,15 +85,6 @@ func (o *ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner) GetNameOk() 
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -128,15 +110,6 @@ func (o *ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner) GetCodeOk() 
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner) SetCode(v string) {
 	o.Code = &v
@@ -158,15 +131,6 @@ func (o *ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner) GetCategoryO
 		return nil, false
 	}
 	return o.Category, true
-}
-
-// IsSetCategory returns a boolean if a field has been set.
-func (o *ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
-		return true
-	}
-
-	return false
 }
 
 // SetCategory gets a reference to the given string and assigns it to the Category field.

@@ -63,15 +63,6 @@ func (o *ConvertImageRequest) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ConvertImageRequest) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ConvertImageRequest) SetName(v string) {
 	o.Name = &v
@@ -95,15 +86,6 @@ func (o *ConvertImageRequest) GetFormatOk() (*string, bool) {
 	return o.Format, true
 }
 
-// IsSetFormat returns a boolean if a field has been set.
-func (o *ConvertImageRequest) IsSetFormat() bool {
-	if o != nil && !IsNil(o.Format) {
-		return true
-	}
-
-	return false
-}
-
 // SetFormat gets a reference to the given string and assigns it to the Format field.
 func (o *ConvertImageRequest) SetFormat(v string) {
 	o.Format = &v
@@ -125,15 +107,6 @@ func (o *ConvertImageRequest) GetStorageProviderOk() (*ConvertImageRequestStorag
 		return nil, false
 	}
 	return o.StorageProvider, true
-}
-
-// IsSetStorageProvider returns a boolean if a field has been set.
-func (o *ConvertImageRequest) IsSetStorageProvider() bool {
-	if o != nil && !IsNil(o.StorageProvider) {
-		return true
-	}
-
-	return false
 }
 
 // SetStorageProvider gets a reference to the given ConvertImageRequestStorageProvider and assigns it to the StorageProvider field.

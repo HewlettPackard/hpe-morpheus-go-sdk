@@ -63,15 +63,6 @@ func (o *ListImageBuilds200Response) GetImageBuildsOk() ([]ListImageBuilds200Res
 	return o.ImageBuilds, true
 }
 
-// IsSetImageBuilds returns a boolean if a field has been set.
-func (o *ListImageBuilds200Response) IsSetImageBuilds() bool {
-	if o != nil && !IsNil(o.ImageBuilds) {
-		return true
-	}
-
-	return false
-}
-
 // SetImageBuilds gets a reference to the given []ListImageBuilds200ResponseAllOfImageBuildsInner and assigns it to the ImageBuilds field.
 func (o *ListImageBuilds200Response) SetImageBuilds(v []ListImageBuilds200ResponseAllOfImageBuildsInner) {
 	o.ImageBuilds = v
@@ -95,15 +86,6 @@ func (o *ListImageBuilds200Response) GetImageBuildCountOk() (*int64, bool) {
 	return o.ImageBuildCount, true
 }
 
-// IsSetImageBuildCount returns a boolean if a field has been set.
-func (o *ListImageBuilds200Response) IsSetImageBuildCount() bool {
-	if o != nil && !IsNil(o.ImageBuildCount) {
-		return true
-	}
-
-	return false
-}
-
 // SetImageBuildCount gets a reference to the given int64 and assigns it to the ImageBuildCount field.
 func (o *ListImageBuilds200Response) SetImageBuildCount(v int64) {
 	o.ImageBuildCount = &v
@@ -125,15 +107,6 @@ func (o *ListImageBuilds200Response) GetMetaOk() (*ListApprovals200ResponseAllOf
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListImageBuilds200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

@@ -70,15 +70,6 @@ func (o *Deployment) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *Deployment) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *Deployment) SetId(v int64) {
 	o.Id = &v
@@ -100,15 +91,6 @@ func (o *Deployment) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *Deployment) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -134,15 +116,6 @@ func (o *Deployment) GetDescriptionOk() (*string, bool) {
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *Deployment) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *Deployment) SetDescription(v string) {
 	o.Description = &v
@@ -164,15 +137,6 @@ func (o *Deployment) GetAccountIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.AccountId, true
-}
-
-// IsSetAccountId returns a boolean if a field has been set.
-func (o *Deployment) IsSetAccountId() bool {
-	if o != nil && !IsNil(o.AccountId) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccountId gets a reference to the given int64 and assigns it to the AccountId field.
@@ -199,28 +163,9 @@ func (o *Deployment) GetExternalIdOk() (*string, bool) {
 	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *Deployment) IsSetExternalId() bool {
-	if o != nil && o.ExternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *Deployment) SetExternalId(v string) {
 	o.ExternalId.Set(&v)
-}
-
-// SetExternalIdNil sets the value for ExternalId to be an explicit nil
-func (o *Deployment) SetExternalIdNil() {
-	o.ExternalId.Set(nil)
-}
-
-// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-func (o *Deployment) UnsetExternalId() {
-	o.ExternalId.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -239,15 +184,6 @@ func (o *Deployment) GetDateCreatedOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.DateCreated, true
-}
-
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *Deployment) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
@@ -273,15 +209,6 @@ func (o *Deployment) GetLastUpdatedOk() (*time.Time, bool) {
 	return o.LastUpdated, true
 }
 
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *Deployment) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
-}
-
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
 func (o *Deployment) SetLastUpdated(v time.Time) {
 	o.LastUpdated = &v
@@ -305,15 +232,6 @@ func (o *Deployment) GetVersionCountOk() (*int64, bool) {
 	return o.VersionCount, true
 }
 
-// IsSetVersionCount returns a boolean if a field has been set.
-func (o *Deployment) IsSetVersionCount() bool {
-	if o != nil && !IsNil(o.VersionCount) {
-		return true
-	}
-
-	return false
-}
-
 // SetVersionCount gets a reference to the given int64 and assigns it to the VersionCount field.
 func (o *Deployment) SetVersionCount(v int64) {
 	o.VersionCount = &v
@@ -335,15 +253,6 @@ func (o *Deployment) GetVersionsOk() ([]DeploymentVersionsInner, bool) {
 		return nil, false
 	}
 	return o.Versions, true
-}
-
-// IsSetVersions returns a boolean if a field has been set.
-func (o *Deployment) IsSetVersions() bool {
-	if o != nil && !IsNil(o.Versions) {
-		return true
-	}
-
-	return false
 }
 
 // SetVersions gets a reference to the given []DeploymentVersionsInner and assigns it to the Versions field.

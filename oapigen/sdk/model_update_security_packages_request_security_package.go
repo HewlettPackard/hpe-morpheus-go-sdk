@@ -76,15 +76,6 @@ func (o *UpdateSecurityPackagesRequestSecurityPackage) GetNameOk() (*string, boo
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateSecurityPackagesRequestSecurityPackage) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *UpdateSecurityPackagesRequestSecurityPackage) SetName(v string) {
 	o.Name = &v
@@ -107,15 +98,6 @@ func (o *UpdateSecurityPackagesRequestSecurityPackage) GetLabelsOk() ([]string, 
 		return nil, false
 	}
 	return o.Labels, true
-}
-
-// IsSetLabels returns a boolean if a field has been set.
-func (o *UpdateSecurityPackagesRequestSecurityPackage) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
 }
 
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
@@ -141,15 +123,6 @@ func (o *UpdateSecurityPackagesRequestSecurityPackage) GetTypeOk() (*string, boo
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *UpdateSecurityPackagesRequestSecurityPackage) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given string and assigns it to the Type field.
 func (o *UpdateSecurityPackagesRequestSecurityPackage) SetType(v string) {
 	o.Type = &v
@@ -171,15 +144,6 @@ func (o *UpdateSecurityPackagesRequestSecurityPackage) GetDescriptionOk() (*stri
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *UpdateSecurityPackagesRequestSecurityPackage) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -205,15 +169,6 @@ func (o *UpdateSecurityPackagesRequestSecurityPackage) GetUrlOk() (*string, bool
 	return o.Url, true
 }
 
-// IsSetUrl returns a boolean if a field has been set.
-func (o *UpdateSecurityPackagesRequestSecurityPackage) IsSetUrl() bool {
-	if o != nil && !IsNil(o.Url) {
-		return true
-	}
-
-	return false
-}
-
 // SetUrl gets a reference to the given string and assigns it to the Url field.
 func (o *UpdateSecurityPackagesRequestSecurityPackage) SetUrl(v string) {
 	o.Url = &v
@@ -235,15 +190,6 @@ func (o *UpdateSecurityPackagesRequestSecurityPackage) GetEnabledOk() (*bool, bo
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *UpdateSecurityPackagesRequestSecurityPackage) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.

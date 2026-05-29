@@ -64,15 +64,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionPriceSetsInner) Ge
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionPriceSetsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionPriceSetsInner) SetId(v int64) {
 	o.Id = &v
@@ -94,15 +85,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionPriceSetsInner) Ge
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionPriceSetsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -128,15 +110,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionPriceSetsInner) Ge
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionPriceSetsInner) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionPriceSetsInner) SetCode(v string) {
 	o.Code = &v
@@ -158,15 +131,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionPriceSetsInner) Ge
 		return nil, false
 	}
 	return o.PriceUnit, true
-}
-
-// IsSetPriceUnit returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfPlanBeforeActionPriceSetsInner) IsSetPriceUnit() bool {
-	if o != nil && !IsNil(o.PriceUnit) {
-		return true
-	}
-
-	return false
 }
 
 // SetPriceUnit gets a reference to the given string and assigns it to the PriceUnit field.

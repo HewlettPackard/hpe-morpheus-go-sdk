@@ -67,15 +67,6 @@ func (o *UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsServerCounts) Get
 	return o.All, true
 }
 
-// IsSetAll returns a boolean if a field has been set.
-func (o *UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsServerCounts) IsSetAll() bool {
-	if o != nil && !IsNil(o.All) {
-		return true
-	}
-
-	return false
-}
-
 // SetAll gets a reference to the given int64 and assigns it to the All field.
 func (o *UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsServerCounts) SetAll(v int64) {
 	o.All = &v
@@ -97,15 +88,6 @@ func (o *UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsServerCounts) Get
 		return nil, false
 	}
 	return o.Host, true
-}
-
-// IsSetHost returns a boolean if a field has been set.
-func (o *UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsServerCounts) IsSetHost() bool {
-	if o != nil && !IsNil(o.Host) {
-		return true
-	}
-
-	return false
 }
 
 // SetHost gets a reference to the given int64 and assigns it to the Host field.
@@ -131,15 +113,6 @@ func (o *UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsServerCounts) Get
 	return o.Hypervisor, true
 }
 
-// IsSetHypervisor returns a boolean if a field has been set.
-func (o *UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsServerCounts) IsSetHypervisor() bool {
-	if o != nil && !IsNil(o.Hypervisor) {
-		return true
-	}
-
-	return false
-}
-
 // SetHypervisor gets a reference to the given int64 and assigns it to the Hypervisor field.
 func (o *UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsServerCounts) SetHypervisor(v int64) {
 	o.Hypervisor = &v
@@ -161,15 +134,6 @@ func (o *UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsServerCounts) Get
 		return nil, false
 	}
 	return o.ContainerHost, true
-}
-
-// IsSetContainerHost returns a boolean if a field has been set.
-func (o *UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsServerCounts) IsSetContainerHost() bool {
-	if o != nil && !IsNil(o.ContainerHost) {
-		return true
-	}
-
-	return false
 }
 
 // SetContainerHost gets a reference to the given int64 and assigns it to the ContainerHost field.
@@ -195,15 +159,6 @@ func (o *UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsServerCounts) Get
 	return o.Vm, true
 }
 
-// IsSetVm returns a boolean if a field has been set.
-func (o *UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsServerCounts) IsSetVm() bool {
-	if o != nil && !IsNil(o.Vm) {
-		return true
-	}
-
-	return false
-}
-
 // SetVm gets a reference to the given int64 and assigns it to the Vm field.
 func (o *UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsServerCounts) SetVm(v int64) {
 	o.Vm = &v
@@ -227,15 +182,6 @@ func (o *UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsServerCounts) Get
 	return o.Baremetal, true
 }
 
-// IsSetBaremetal returns a boolean if a field has been set.
-func (o *UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsServerCounts) IsSetBaremetal() bool {
-	if o != nil && !IsNil(o.Baremetal) {
-		return true
-	}
-
-	return false
-}
-
 // SetBaremetal gets a reference to the given int64 and assigns it to the Baremetal field.
 func (o *UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsServerCounts) SetBaremetal(v int64) {
 	o.Baremetal = &v
@@ -257,15 +203,6 @@ func (o *UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsServerCounts) Get
 		return nil, false
 	}
 	return o.Unmanaged, true
-}
-
-// IsSetUnmanaged returns a boolean if a field has been set.
-func (o *UpdateTenantSubtenantGroup200ResponseAccountAllOfStatsServerCounts) IsSetUnmanaged() bool {
-	if o != nil && !IsNil(o.Unmanaged) {
-		return true
-	}
-
-	return false
 }
 
 // SetUnmanaged gets a reference to the given int64 and assigns it to the Unmanaged field.

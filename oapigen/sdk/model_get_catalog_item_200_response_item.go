@@ -72,15 +72,6 @@ func (o *GetCatalogItem200ResponseItem) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetCatalogItem200ResponseItem) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetCatalogItem200ResponseItem) SetId(v int64) {
 	o.Id = &v
@@ -102,15 +93,6 @@ func (o *GetCatalogItem200ResponseItem) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *GetCatalogItem200ResponseItem) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -136,15 +118,6 @@ func (o *GetCatalogItem200ResponseItem) GetTypeOk() (*GetCatalogItem200ResponseI
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *GetCatalogItem200ResponseItem) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given GetCatalogItem200ResponseItemType and assigns it to the Type field.
 func (o *GetCatalogItem200ResponseItem) SetType(v GetCatalogItem200ResponseItemType) {
 	o.Type = &v
@@ -168,15 +141,6 @@ func (o *GetCatalogItem200ResponseItem) GetQuantityOk() (*int64, bool) {
 	return o.Quantity, true
 }
 
-// IsSetQuantity returns a boolean if a field has been set.
-func (o *GetCatalogItem200ResponseItem) IsSetQuantity() bool {
-	if o != nil && !IsNil(o.Quantity) {
-		return true
-	}
-
-	return false
-}
-
 // SetQuantity gets a reference to the given int64 and assigns it to the Quantity field.
 func (o *GetCatalogItem200ResponseItem) SetQuantity(v int64) {
 	o.Quantity = &v
@@ -198,15 +162,6 @@ func (o *GetCatalogItem200ResponseItem) GetStatusOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *GetCatalogItem200ResponseItem) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -233,28 +188,9 @@ func (o *GetCatalogItem200ResponseItem) GetStatusMessageOk() (*string, bool) {
 	return o.StatusMessage.Get(), o.StatusMessage.IsSet()
 }
 
-// IsSetStatusMessage returns a boolean if a field has been set.
-func (o *GetCatalogItem200ResponseItem) IsSetStatusMessage() bool {
-	if o != nil && o.StatusMessage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusMessage gets a reference to the given NullableString and assigns it to the StatusMessage field.
 func (o *GetCatalogItem200ResponseItem) SetStatusMessage(v string) {
 	o.StatusMessage.Set(&v)
-}
-
-// SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
-func (o *GetCatalogItem200ResponseItem) SetStatusMessageNil() {
-	o.StatusMessage.Set(nil)
-}
-
-// UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
-func (o *GetCatalogItem200ResponseItem) UnsetStatusMessage() {
-	o.StatusMessage.Unset()
 }
 
 // GetRefType returns the RefType field value if set, zero value otherwise.
@@ -273,15 +209,6 @@ func (o *GetCatalogItem200ResponseItem) GetRefTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.RefType, true
-}
-
-// IsSetRefType returns a boolean if a field has been set.
-func (o *GetCatalogItem200ResponseItem) IsSetRefType() bool {
-	if o != nil && !IsNil(o.RefType) {
-		return true
-	}
-
-	return false
 }
 
 // SetRefType gets a reference to the given string and assigns it to the RefType field.
@@ -307,15 +234,6 @@ func (o *GetCatalogItem200ResponseItem) GetInstanceOk() (*GetCatalogItem200Respo
 	return o.Instance, true
 }
 
-// IsSetInstance returns a boolean if a field has been set.
-func (o *GetCatalogItem200ResponseItem) IsSetInstance() bool {
-	if o != nil && !IsNil(o.Instance) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstance gets a reference to the given GetCatalogItem200ResponseItemInstance and assigns it to the Instance field.
 func (o *GetCatalogItem200ResponseItem) SetInstance(v GetCatalogItem200ResponseItemInstance) {
 	o.Instance = &v
@@ -337,15 +255,6 @@ func (o *GetCatalogItem200ResponseItem) GetOrderDateOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.OrderDate, true
-}
-
-// IsSetOrderDate returns a boolean if a field has been set.
-func (o *GetCatalogItem200ResponseItem) IsSetOrderDate() bool {
-	if o != nil && !IsNil(o.OrderDate) {
-		return true
-	}
-
-	return false
 }
 
 // SetOrderDate gets a reference to the given time.Time and assigns it to the OrderDate field.
@@ -371,15 +280,6 @@ func (o *GetCatalogItem200ResponseItem) GetDateCreatedOk() (*time.Time, bool) {
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *GetCatalogItem200ResponseItem) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *GetCatalogItem200ResponseItem) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -401,15 +301,6 @@ func (o *GetCatalogItem200ResponseItem) GetLastUpdatedOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *GetCatalogItem200ResponseItem) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.

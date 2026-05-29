@@ -63,15 +63,6 @@ func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsIn
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner) SetName(v string) {
 	o.Name = &v
@@ -93,15 +84,6 @@ func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsIn
 		return nil, false
 	}
 	return o.Port, true
-}
-
-// IsSetPort returns a boolean if a field has been set.
-func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner) IsSetPort() bool {
-	if o != nil && !IsNil(o.Port) {
-		return true
-	}
-
-	return false
 }
 
 // SetPort gets a reference to the given int64 and assigns it to the Port field.
@@ -128,28 +110,9 @@ func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsIn
 	return o.LoadBalanceProtocol.Get(), o.LoadBalanceProtocol.IsSet()
 }
 
-// IsSetLoadBalanceProtocol returns a boolean if a field has been set.
-func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner) IsSetLoadBalanceProtocol() bool {
-	if o != nil && o.LoadBalanceProtocol.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLoadBalanceProtocol gets a reference to the given NullableString and assigns it to the LoadBalanceProtocol field.
 func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner) SetLoadBalanceProtocol(v string) {
 	o.LoadBalanceProtocol.Set(&v)
-}
-
-// SetLoadBalanceProtocolNil sets the value for LoadBalanceProtocol to be an explicit nil
-func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner) SetLoadBalanceProtocolNil() {
-	o.LoadBalanceProtocol.Set(nil)
-}
-
-// UnsetLoadBalanceProtocol ensures that no value is present for LoadBalanceProtocol, not even an explicit nil
-func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner) UnsetLoadBalanceProtocol() {
-	o.LoadBalanceProtocol.Unset()
 }
 
 func (o InstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner) MarshalJSON() ([]byte, error) {

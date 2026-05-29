@@ -94,15 +94,6 @@ func (o *ZoneAzureConfig) GetSubscriberIdOk() (*string, bool) {
 	return o.SubscriberId, true
 }
 
-// IsSetSubscriberId returns a boolean if a field has been set.
-func (o *ZoneAzureConfig) IsSetSubscriberId() bool {
-	if o != nil && !IsNil(o.SubscriberId) {
-		return true
-	}
-
-	return false
-}
-
 // SetSubscriberId gets a reference to the given string and assigns it to the SubscriberId field.
 func (o *ZoneAzureConfig) SetSubscriberId(v string) {
 	o.SubscriberId = &v
@@ -124,15 +115,6 @@ func (o *ZoneAzureConfig) GetTenantIdOk() (*string, bool) {
 		return nil, false
 	}
 	return o.TenantId, true
-}
-
-// IsSetTenantId returns a boolean if a field has been set.
-func (o *ZoneAzureConfig) IsSetTenantId() bool {
-	if o != nil && !IsNil(o.TenantId) {
-		return true
-	}
-
-	return false
 }
 
 // SetTenantId gets a reference to the given string and assigns it to the TenantId field.
@@ -158,15 +140,6 @@ func (o *ZoneAzureConfig) GetClientIdOk() (*string, bool) {
 	return o.ClientId, true
 }
 
-// IsSetClientId returns a boolean if a field has been set.
-func (o *ZoneAzureConfig) IsSetClientId() bool {
-	if o != nil && !IsNil(o.ClientId) {
-		return true
-	}
-
-	return false
-}
-
 // SetClientId gets a reference to the given string and assigns it to the ClientId field.
 func (o *ZoneAzureConfig) SetClientId(v string) {
 	o.ClientId = &v
@@ -188,15 +161,6 @@ func (o *ZoneAzureConfig) GetClientSecretOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ClientSecret, true
-}
-
-// IsSetClientSecret returns a boolean if a field has been set.
-func (o *ZoneAzureConfig) IsSetClientSecret() bool {
-	if o != nil && !IsNil(o.ClientSecret) {
-		return true
-	}
-
-	return false
 }
 
 // SetClientSecret gets a reference to the given string and assigns it to the ClientSecret field.
@@ -222,15 +186,6 @@ func (o *ZoneAzureConfig) GetResourceGroupOk() (*string, bool) {
 	return o.ResourceGroup, true
 }
 
-// IsSetResourceGroup returns a boolean if a field has been set.
-func (o *ZoneAzureConfig) IsSetResourceGroup() bool {
-	if o != nil && !IsNil(o.ResourceGroup) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourceGroup gets a reference to the given string and assigns it to the ResourceGroup field.
 func (o *ZoneAzureConfig) SetResourceGroup(v string) {
 	o.ResourceGroup = &v
@@ -252,15 +207,6 @@ func (o *ZoneAzureConfig) GetImportExistingOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ImportExisting, true
-}
-
-// IsSetImportExisting returns a boolean if a field has been set.
-func (o *ZoneAzureConfig) IsSetImportExisting() bool {
-	if o != nil && !IsNil(o.ImportExisting) {
-		return true
-	}
-
-	return false
 }
 
 // SetImportExisting gets a reference to the given string and assigns it to the ImportExisting field.
@@ -286,15 +232,6 @@ func (o *ZoneAzureConfig) GetInventoryLevelOk() (*string, bool) {
 	return o.InventoryLevel, true
 }
 
-// IsSetInventoryLevel returns a boolean if a field has been set.
-func (o *ZoneAzureConfig) IsSetInventoryLevel() bool {
-	if o != nil && !IsNil(o.InventoryLevel) {
-		return true
-	}
-
-	return false
-}
-
 // SetInventoryLevel gets a reference to the given string and assigns it to the InventoryLevel field.
 func (o *ZoneAzureConfig) SetInventoryLevel(v string) {
 	o.InventoryLevel = &v
@@ -316,15 +253,6 @@ func (o *ZoneAzureConfig) GetApplianceUrlOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ApplianceUrl, true
-}
-
-// IsSetApplianceUrl returns a boolean if a field has been set.
-func (o *ZoneAzureConfig) IsSetApplianceUrl() bool {
-	if o != nil && !IsNil(o.ApplianceUrl) {
-		return true
-	}
-
-	return false
 }
 
 // SetApplianceUrl gets a reference to the given string and assigns it to the ApplianceUrl field.
@@ -350,15 +278,6 @@ func (o *ZoneAzureConfig) GetDatacenterNameOk() (*string, bool) {
 	return o.DatacenterName, true
 }
 
-// IsSetDatacenterName returns a boolean if a field has been set.
-func (o *ZoneAzureConfig) IsSetDatacenterName() bool {
-	if o != nil && !IsNil(o.DatacenterName) {
-		return true
-	}
-
-	return false
-}
-
 // SetDatacenterName gets a reference to the given string and assigns it to the DatacenterName field.
 func (o *ZoneAzureConfig) SetDatacenterName(v string) {
 	o.DatacenterName = &v
@@ -380,15 +299,6 @@ func (o *ZoneAzureConfig) GetNetworkServerIdOk() (*string, bool) {
 		return nil, false
 	}
 	return o.NetworkServerId, true
-}
-
-// IsSetNetworkServerId returns a boolean if a field has been set.
-func (o *ZoneAzureConfig) IsSetNetworkServerId() bool {
-	if o != nil && !IsNil(o.NetworkServerId) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkServerId gets a reference to the given string and assigns it to the NetworkServerId field.
@@ -414,15 +324,6 @@ func (o *ZoneAzureConfig) GetNetworkServerOk() (*AddClouds200ResponseAllOfZoneCo
 	return o.NetworkServer, true
 }
 
-// IsSetNetworkServer returns a boolean if a field has been set.
-func (o *ZoneAzureConfig) IsSetNetworkServer() bool {
-	if o != nil && !IsNil(o.NetworkServer) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkServer gets a reference to the given AddClouds200ResponseAllOfZoneConfigAnyOf3NetworkServer and assigns it to the NetworkServer field.
 func (o *ZoneAzureConfig) SetNetworkServer(v AddClouds200ResponseAllOfZoneConfigAnyOf3NetworkServer) {
 	o.NetworkServer = &v
@@ -444,15 +345,6 @@ func (o *ZoneAzureConfig) GetSecurityModeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SecurityMode, true
-}
-
-// IsSetSecurityMode returns a boolean if a field has been set.
-func (o *ZoneAzureConfig) IsSetSecurityMode() bool {
-	if o != nil && !IsNil(o.SecurityMode) {
-		return true
-	}
-
-	return false
 }
 
 // SetSecurityMode gets a reference to the given string and assigns it to the SecurityMode field.
@@ -478,15 +370,6 @@ func (o *ZoneAzureConfig) GetCertificateProviderOk() (*string, bool) {
 	return o.CertificateProvider, true
 }
 
-// IsSetCertificateProvider returns a boolean if a field has been set.
-func (o *ZoneAzureConfig) IsSetCertificateProvider() bool {
-	if o != nil && !IsNil(o.CertificateProvider) {
-		return true
-	}
-
-	return false
-}
-
 // SetCertificateProvider gets a reference to the given string and assigns it to the CertificateProvider field.
 func (o *ZoneAzureConfig) SetCertificateProvider(v string) {
 	o.CertificateProvider = &v
@@ -508,15 +391,6 @@ func (o *ZoneAzureConfig) GetBackupModeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.BackupMode, true
-}
-
-// IsSetBackupMode returns a boolean if a field has been set.
-func (o *ZoneAzureConfig) IsSetBackupMode() bool {
-	if o != nil && !IsNil(o.BackupMode) {
-		return true
-	}
-
-	return false
 }
 
 // SetBackupMode gets a reference to the given string and assigns it to the BackupMode field.
@@ -542,15 +416,6 @@ func (o *ZoneAzureConfig) GetReplicationModeOk() (*string, bool) {
 	return o.ReplicationMode, true
 }
 
-// IsSetReplicationMode returns a boolean if a field has been set.
-func (o *ZoneAzureConfig) IsSetReplicationMode() bool {
-	if o != nil && !IsNil(o.ReplicationMode) {
-		return true
-	}
-
-	return false
-}
-
 // SetReplicationMode gets a reference to the given string and assigns it to the ReplicationMode field.
 func (o *ZoneAzureConfig) SetReplicationMode(v string) {
 	o.ReplicationMode = &v
@@ -572,15 +437,6 @@ func (o *ZoneAzureConfig) GetDnsIntegrationIdOk() (*string, bool) {
 		return nil, false
 	}
 	return o.DnsIntegrationId, true
-}
-
-// IsSetDnsIntegrationId returns a boolean if a field has been set.
-func (o *ZoneAzureConfig) IsSetDnsIntegrationId() bool {
-	if o != nil && !IsNil(o.DnsIntegrationId) {
-		return true
-	}
-
-	return false
 }
 
 // SetDnsIntegrationId gets a reference to the given string and assigns it to the DnsIntegrationId field.
@@ -606,15 +462,6 @@ func (o *ZoneAzureConfig) GetConfigManagementIdOk() (*string, bool) {
 	return o.ConfigManagementId, true
 }
 
-// IsSetConfigManagementId returns a boolean if a field has been set.
-func (o *ZoneAzureConfig) IsSetConfigManagementId() bool {
-	if o != nil && !IsNil(o.ConfigManagementId) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfigManagementId gets a reference to the given string and assigns it to the ConfigManagementId field.
 func (o *ZoneAzureConfig) SetConfigManagementId(v string) {
 	o.ConfigManagementId = &v
@@ -636,15 +483,6 @@ func (o *ZoneAzureConfig) GetConfigCmdbIdOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ConfigCmdbId, true
-}
-
-// IsSetConfigCmdbId returns a boolean if a field has been set.
-func (o *ZoneAzureConfig) IsSetConfigCmdbId() bool {
-	if o != nil && !IsNil(o.ConfigCmdbId) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfigCmdbId gets a reference to the given string and assigns it to the ConfigCmdbId field.
@@ -671,28 +509,9 @@ func (o *ZoneAzureConfig) GetSecurityServerOk() (*string, bool) {
 	return o.SecurityServer.Get(), o.SecurityServer.IsSet()
 }
 
-// IsSetSecurityServer returns a boolean if a field has been set.
-func (o *ZoneAzureConfig) IsSetSecurityServer() bool {
-	if o != nil && o.SecurityServer.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSecurityServer gets a reference to the given NullableString and assigns it to the SecurityServer field.
 func (o *ZoneAzureConfig) SetSecurityServer(v string) {
 	o.SecurityServer.Set(&v)
-}
-
-// SetSecurityServerNil sets the value for SecurityServer to be an explicit nil
-func (o *ZoneAzureConfig) SetSecurityServerNil() {
-	o.SecurityServer.Set(nil)
-}
-
-// UnsetSecurityServer ensures that no value is present for SecurityServer, not even an explicit nil
-func (o *ZoneAzureConfig) UnsetSecurityServer() {
-	o.SecurityServer.Unset()
 }
 
 // GetAccountType returns the AccountType field value if set, zero value otherwise.
@@ -711,15 +530,6 @@ func (o *ZoneAzureConfig) GetAccountTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.AccountType, true
-}
-
-// IsSetAccountType returns a boolean if a field has been set.
-func (o *ZoneAzureConfig) IsSetAccountType() bool {
-	if o != nil && !IsNil(o.AccountType) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccountType gets a reference to the given string and assigns it to the AccountType field.
@@ -745,15 +555,6 @@ func (o *ZoneAzureConfig) GetServiceRegistryIdOk() (*string, bool) {
 	return o.ServiceRegistryId, true
 }
 
-// IsSetServiceRegistryId returns a boolean if a field has been set.
-func (o *ZoneAzureConfig) IsSetServiceRegistryId() bool {
-	if o != nil && !IsNil(o.ServiceRegistryId) {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceRegistryId gets a reference to the given string and assigns it to the ServiceRegistryId field.
 func (o *ZoneAzureConfig) SetServiceRegistryId(v string) {
 	o.ServiceRegistryId = &v
@@ -775,15 +576,6 @@ func (o *ZoneAzureConfig) GetCloudTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.CloudType, true
-}
-
-// IsSetCloudType returns a boolean if a field has been set.
-func (o *ZoneAzureConfig) IsSetCloudType() bool {
-	if o != nil && !IsNil(o.CloudType) {
-		return true
-	}
-
-	return false
 }
 
 // SetCloudType gets a reference to the given string and assigns it to the CloudType field.
@@ -809,15 +601,6 @@ func (o *ZoneAzureConfig) GetStorageAccountOk() (*string, bool) {
 	return o.StorageAccount, true
 }
 
-// IsSetStorageAccount returns a boolean if a field has been set.
-func (o *ZoneAzureConfig) IsSetStorageAccount() bool {
-	if o != nil && !IsNil(o.StorageAccount) {
-		return true
-	}
-
-	return false
-}
-
 // SetStorageAccount gets a reference to the given string and assigns it to the StorageAccount field.
 func (o *ZoneAzureConfig) SetStorageAccount(v string) {
 	o.StorageAccount = &v
@@ -839,15 +622,6 @@ func (o *ZoneAzureConfig) GetRpcModeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.RpcMode, true
-}
-
-// IsSetRpcMode returns a boolean if a field has been set.
-func (o *ZoneAzureConfig) IsSetRpcMode() bool {
-	if o != nil && !IsNil(o.RpcMode) {
-		return true
-	}
-
-	return false
 }
 
 // SetRpcMode gets a reference to the given string and assigns it to the RpcMode field.
@@ -873,15 +647,6 @@ func (o *ZoneAzureConfig) GetDiskEncryptionOk() (*string, bool) {
 	return o.DiskEncryption, true
 }
 
-// IsSetDiskEncryption returns a boolean if a field has been set.
-func (o *ZoneAzureConfig) IsSetDiskEncryption() bool {
-	if o != nil && !IsNil(o.DiskEncryption) {
-		return true
-	}
-
-	return false
-}
-
 // SetDiskEncryption gets a reference to the given string and assigns it to the DiskEncryption field.
 func (o *ZoneAzureConfig) SetDiskEncryption(v string) {
 	o.DiskEncryption = &v
@@ -903,15 +668,6 @@ func (o *ZoneAzureConfig) GetEncryptionSetOk() (*string, bool) {
 		return nil, false
 	}
 	return o.EncryptionSet, true
-}
-
-// IsSetEncryptionSet returns a boolean if a field has been set.
-func (o *ZoneAzureConfig) IsSetEncryptionSet() bool {
-	if o != nil && !IsNil(o.EncryptionSet) {
-		return true
-	}
-
-	return false
 }
 
 // SetEncryptionSet gets a reference to the given string and assigns it to the EncryptionSet field.
@@ -937,15 +693,6 @@ func (o *ZoneAzureConfig) GetCspTenantIdOk() (*string, bool) {
 	return o.CspTenantId, true
 }
 
-// IsSetCspTenantId returns a boolean if a field has been set.
-func (o *ZoneAzureConfig) IsSetCspTenantId() bool {
-	if o != nil && !IsNil(o.CspTenantId) {
-		return true
-	}
-
-	return false
-}
-
 // SetCspTenantId gets a reference to the given string and assigns it to the CspTenantId field.
 func (o *ZoneAzureConfig) SetCspTenantId(v string) {
 	o.CspTenantId = &v
@@ -967,15 +714,6 @@ func (o *ZoneAzureConfig) GetCspClientIdOk() (*string, bool) {
 		return nil, false
 	}
 	return o.CspClientId, true
-}
-
-// IsSetCspClientId returns a boolean if a field has been set.
-func (o *ZoneAzureConfig) IsSetCspClientId() bool {
-	if o != nil && !IsNil(o.CspClientId) {
-		return true
-	}
-
-	return false
 }
 
 // SetCspClientId gets a reference to the given string and assigns it to the CspClientId field.
@@ -1002,28 +740,9 @@ func (o *ZoneAzureConfig) GetCspClientSecretOk() (*string, bool) {
 	return o.CspClientSecret.Get(), o.CspClientSecret.IsSet()
 }
 
-// IsSetCspClientSecret returns a boolean if a field has been set.
-func (o *ZoneAzureConfig) IsSetCspClientSecret() bool {
-	if o != nil && o.CspClientSecret.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCspClientSecret gets a reference to the given NullableString and assigns it to the CspClientSecret field.
 func (o *ZoneAzureConfig) SetCspClientSecret(v string) {
 	o.CspClientSecret.Set(&v)
-}
-
-// SetCspClientSecretNil sets the value for CspClientSecret to be an explicit nil
-func (o *ZoneAzureConfig) SetCspClientSecretNil() {
-	o.CspClientSecret.Set(nil)
-}
-
-// UnsetCspClientSecret ensures that no value is present for CspClientSecret, not even an explicit nil
-func (o *ZoneAzureConfig) UnsetCspClientSecret() {
-	o.CspClientSecret.Unset()
 }
 
 // GetCspCustomer returns the CspCustomer field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1045,28 +764,9 @@ func (o *ZoneAzureConfig) GetCspCustomerOk() (*string, bool) {
 	return o.CspCustomer.Get(), o.CspCustomer.IsSet()
 }
 
-// IsSetCspCustomer returns a boolean if a field has been set.
-func (o *ZoneAzureConfig) IsSetCspCustomer() bool {
-	if o != nil && o.CspCustomer.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCspCustomer gets a reference to the given NullableString and assigns it to the CspCustomer field.
 func (o *ZoneAzureConfig) SetCspCustomer(v string) {
 	o.CspCustomer.Set(&v)
-}
-
-// SetCspCustomerNil sets the value for CspCustomer to be an explicit nil
-func (o *ZoneAzureConfig) SetCspCustomerNil() {
-	o.CspCustomer.Set(nil)
-}
-
-// UnsetCspCustomer ensures that no value is present for CspCustomer, not even an explicit nil
-func (o *ZoneAzureConfig) UnsetCspCustomer() {
-	o.CspCustomer.Unset()
 }
 
 // GetConfigCmdbDiscovery returns the ConfigCmdbDiscovery field value if set, zero value otherwise.
@@ -1085,15 +785,6 @@ func (o *ZoneAzureConfig) GetConfigCmdbDiscoveryOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.ConfigCmdbDiscovery, true
-}
-
-// IsSetConfigCmdbDiscovery returns a boolean if a field has been set.
-func (o *ZoneAzureConfig) IsSetConfigCmdbDiscovery() bool {
-	if o != nil && !IsNil(o.ConfigCmdbDiscovery) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfigCmdbDiscovery gets a reference to the given bool and assigns it to the ConfigCmdbDiscovery field.
@@ -1119,15 +810,6 @@ func (o *ZoneAzureConfig) GetAzureCostingModeOk() (*string, bool) {
 	return o.AzureCostingMode, true
 }
 
-// IsSetAzureCostingMode returns a boolean if a field has been set.
-func (o *ZoneAzureConfig) IsSetAzureCostingMode() bool {
-	if o != nil && !IsNil(o.AzureCostingMode) {
-		return true
-	}
-
-	return false
-}
-
 // SetAzureCostingMode gets a reference to the given string and assigns it to the AzureCostingMode field.
 func (o *ZoneAzureConfig) SetAzureCostingMode(v string) {
 	o.AzureCostingMode = &v
@@ -1149,15 +831,6 @@ func (o *ZoneAzureConfig) GetClientSecretHashOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ClientSecretHash, true
-}
-
-// IsSetClientSecretHash returns a boolean if a field has been set.
-func (o *ZoneAzureConfig) IsSetClientSecretHash() bool {
-	if o != nil && !IsNil(o.ClientSecretHash) {
-		return true
-	}
-
-	return false
 }
 
 // SetClientSecretHash gets a reference to the given string and assigns it to the ClientSecretHash field.
@@ -1184,28 +857,9 @@ func (o *ZoneAzureConfig) GetCspClientSecretHashOk() (*string, bool) {
 	return o.CspClientSecretHash.Get(), o.CspClientSecretHash.IsSet()
 }
 
-// IsSetCspClientSecretHash returns a boolean if a field has been set.
-func (o *ZoneAzureConfig) IsSetCspClientSecretHash() bool {
-	if o != nil && o.CspClientSecretHash.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCspClientSecretHash gets a reference to the given NullableString and assigns it to the CspClientSecretHash field.
 func (o *ZoneAzureConfig) SetCspClientSecretHash(v string) {
 	o.CspClientSecretHash.Set(&v)
-}
-
-// SetCspClientSecretHashNil sets the value for CspClientSecretHash to be an explicit nil
-func (o *ZoneAzureConfig) SetCspClientSecretHashNil() {
-	o.CspClientSecretHash.Set(nil)
-}
-
-// UnsetCspClientSecretHash ensures that no value is present for CspClientSecretHash, not even an explicit nil
-func (o *ZoneAzureConfig) UnsetCspClientSecretHash() {
-	o.CspClientSecretHash.Unset()
 }
 
 func (o ZoneAzureConfig) MarshalJSON() ([]byte, error) {

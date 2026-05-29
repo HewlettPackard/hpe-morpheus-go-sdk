@@ -86,15 +86,6 @@ func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) GetIdOk() (*i
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) SetId(v int64) {
 	o.Id = &v
@@ -116,15 +107,6 @@ func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) GetNameOk() (
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -150,15 +132,6 @@ func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) GetCodeOk() (
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) SetCode(v string) {
 	o.Code = &v
@@ -180,15 +153,6 @@ func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) GetDescriptio
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -214,15 +178,6 @@ func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) GetCreatableO
 	return o.Creatable, true
 }
 
-// IsSetCreatable returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) IsSetCreatable() bool {
-	if o != nil && !IsNil(o.Creatable) {
-		return true
-	}
-
-	return false
-}
-
 // SetCreatable gets a reference to the given bool and assigns it to the Creatable field.
 func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) SetCreatable(v bool) {
 	o.Creatable = &v
@@ -246,15 +201,6 @@ func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) GetUserVisibl
 	return o.UserVisible, true
 }
 
-// IsSetUserVisible returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) IsSetUserVisible() bool {
-	if o != nil && !IsNil(o.UserVisible) {
-		return true
-	}
-
-	return false
-}
-
 // SetUserVisible gets a reference to the given bool and assigns it to the UserVisible field.
 func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) SetUserVisible(v bool) {
 	o.UserVisible = &v
@@ -276,15 +222,6 @@ func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) GetHasScopesO
 		return nil, false
 	}
 	return o.HasScopes, true
-}
-
-// IsSetHasScopes returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) IsSetHasScopes() bool {
-	if o != nil && !IsNil(o.HasScopes) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasScopes gets a reference to the given bool and assigns it to the HasScopes field.
@@ -311,28 +248,9 @@ func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) GetTitleScope
 	return o.TitleScopes.Get(), o.TitleScopes.IsSet()
 }
 
-// IsSetTitleScopes returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) IsSetTitleScopes() bool {
-	if o != nil && o.TitleScopes.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetTitleScopes gets a reference to the given NullableString and assigns it to the TitleScopes field.
 func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) SetTitleScopes(v string) {
 	o.TitleScopes.Set(&v)
-}
-
-// SetTitleScopesNil sets the value for TitleScopes to be an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) SetTitleScopesNil() {
-	o.TitleScopes.Set(nil)
-}
-
-// UnsetTitleScopes ensures that no value is present for TitleScopes, not even an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) UnsetTitleScopes() {
-	o.TitleScopes.Unset()
 }
 
 // GetHasNetworks returns the HasNetworks field value if set, zero value otherwise.
@@ -351,15 +269,6 @@ func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) GetHasNetwork
 		return nil, false
 	}
 	return o.HasNetworks, true
-}
-
-// IsSetHasNetworks returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) IsSetHasNetworks() bool {
-	if o != nil && !IsNil(o.HasNetworks) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasNetworks gets a reference to the given bool and assigns it to the HasNetworks field.
@@ -386,28 +295,9 @@ func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) GetTitleNetwo
 	return o.TitleNetworks.Get(), o.TitleNetworks.IsSet()
 }
 
-// IsSetTitleNetworks returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) IsSetTitleNetworks() bool {
-	if o != nil && o.TitleNetworks.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetTitleNetworks gets a reference to the given NullableString and assigns it to the TitleNetworks field.
 func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) SetTitleNetworks(v string) {
 	o.TitleNetworks.Set(&v)
-}
-
-// SetTitleNetworksNil sets the value for TitleNetworks to be an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) SetTitleNetworksNil() {
-	o.TitleNetworks.Set(nil)
-}
-
-// UnsetTitleNetworks ensures that no value is present for TitleNetworks, not even an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) UnsetTitleNetworks() {
-	o.TitleNetworks.Unset()
 }
 
 // GetHasSwitches returns the HasSwitches field value if set, zero value otherwise.
@@ -426,15 +316,6 @@ func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) GetHasSwitche
 		return nil, false
 	}
 	return o.HasSwitches, true
-}
-
-// IsSetHasSwitches returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) IsSetHasSwitches() bool {
-	if o != nil && !IsNil(o.HasSwitches) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasSwitches gets a reference to the given bool and assigns it to the HasSwitches field.
@@ -461,28 +342,9 @@ func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) GetTitleSwitc
 	return o.TitleSwitches.Get(), o.TitleSwitches.IsSet()
 }
 
-// IsSetTitleSwitches returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) IsSetTitleSwitches() bool {
-	if o != nil && o.TitleSwitches.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetTitleSwitches gets a reference to the given NullableString and assigns it to the TitleSwitches field.
 func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) SetTitleSwitches(v string) {
 	o.TitleSwitches.Set(&v)
-}
-
-// SetTitleSwitchesNil sets the value for TitleSwitches to be an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) SetTitleSwitchesNil() {
-	o.TitleSwitches.Set(nil)
-}
-
-// UnsetTitleSwitches ensures that no value is present for TitleSwitches, not even an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) UnsetTitleSwitches() {
-	o.TitleSwitches.Unset()
 }
 
 // GetHasGateways returns the HasGateways field value if set, zero value otherwise.
@@ -501,15 +363,6 @@ func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) GetHasGateway
 		return nil, false
 	}
 	return o.HasGateways, true
-}
-
-// IsSetHasGateways returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) IsSetHasGateways() bool {
-	if o != nil && !IsNil(o.HasGateways) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasGateways gets a reference to the given bool and assigns it to the HasGateways field.
@@ -536,28 +389,9 @@ func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) GetTitleGatew
 	return o.TitleGateways.Get(), o.TitleGateways.IsSet()
 }
 
-// IsSetTitleGateways returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) IsSetTitleGateways() bool {
-	if o != nil && o.TitleGateways.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetTitleGateways gets a reference to the given NullableString and assigns it to the TitleGateways field.
 func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) SetTitleGateways(v string) {
 	o.TitleGateways.Set(&v)
-}
-
-// SetTitleGatewaysNil sets the value for TitleGateways to be an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) SetTitleGatewaysNil() {
-	o.TitleGateways.Set(nil)
-}
-
-// UnsetTitleGateways ensures that no value is present for TitleGateways, not even an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) UnsetTitleGateways() {
-	o.TitleGateways.Unset()
 }
 
 // GetHasRouters returns the HasRouters field value if set, zero value otherwise.
@@ -576,15 +410,6 @@ func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) GetHasRouters
 		return nil, false
 	}
 	return o.HasRouters, true
-}
-
-// IsSetHasRouters returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) IsSetHasRouters() bool {
-	if o != nil && !IsNil(o.HasRouters) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasRouters gets a reference to the given bool and assigns it to the HasRouters field.
@@ -611,28 +436,9 @@ func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) GetTitleRoute
 	return o.TitleRouters.Get(), o.TitleRouters.IsSet()
 }
 
-// IsSetTitleRouters returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) IsSetTitleRouters() bool {
-	if o != nil && o.TitleRouters.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetTitleRouters gets a reference to the given NullableString and assigns it to the TitleRouters field.
 func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) SetTitleRouters(v string) {
 	o.TitleRouters.Set(&v)
-}
-
-// SetTitleRoutersNil sets the value for TitleRouters to be an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) SetTitleRoutersNil() {
-	o.TitleRouters.Set(nil)
-}
-
-// UnsetTitleRouters ensures that no value is present for TitleRouters, not even an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) UnsetTitleRouters() {
-	o.TitleRouters.Unset()
 }
 
 // GetHasSecurityGroups returns the HasSecurityGroups field value if set, zero value otherwise.
@@ -651,15 +457,6 @@ func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) GetHasSecurit
 		return nil, false
 	}
 	return o.HasSecurityGroups, true
-}
-
-// IsSetHasSecurityGroups returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) IsSetHasSecurityGroups() bool {
-	if o != nil && !IsNil(o.HasSecurityGroups) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasSecurityGroups gets a reference to the given bool and assigns it to the HasSecurityGroups field.
@@ -686,28 +483,9 @@ func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) GetTitleSecur
 	return o.TitleSecurityGroups.Get(), o.TitleSecurityGroups.IsSet()
 }
 
-// IsSetTitleSecurityGroups returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) IsSetTitleSecurityGroups() bool {
-	if o != nil && o.TitleSecurityGroups.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetTitleSecurityGroups gets a reference to the given NullableString and assigns it to the TitleSecurityGroups field.
 func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) SetTitleSecurityGroups(v string) {
 	o.TitleSecurityGroups.Set(&v)
-}
-
-// SetTitleSecurityGroupsNil sets the value for TitleSecurityGroups to be an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) SetTitleSecurityGroupsNil() {
-	o.TitleSecurityGroups.Set(nil)
-}
-
-// UnsetTitleSecurityGroups ensures that no value is present for TitleSecurityGroups, not even an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) UnsetTitleSecurityGroups() {
-	o.TitleSecurityGroups.Unset()
 }
 
 // GetHasLoadBalancers returns the HasLoadBalancers field value if set, zero value otherwise.
@@ -726,15 +504,6 @@ func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) GetHasLoadBal
 		return nil, false
 	}
 	return o.HasLoadBalancers, true
-}
-
-// IsSetHasLoadBalancers returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) IsSetHasLoadBalancers() bool {
-	if o != nil && !IsNil(o.HasLoadBalancers) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasLoadBalancers gets a reference to the given bool and assigns it to the HasLoadBalancers field.
@@ -761,28 +530,9 @@ func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) GetTitleLoadB
 	return o.TitleLoadBalancers.Get(), o.TitleLoadBalancers.IsSet()
 }
 
-// IsSetTitleLoadBalancers returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) IsSetTitleLoadBalancers() bool {
-	if o != nil && o.TitleLoadBalancers.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetTitleLoadBalancers gets a reference to the given NullableString and assigns it to the TitleLoadBalancers field.
 func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) SetTitleLoadBalancers(v string) {
 	o.TitleLoadBalancers.Set(&v)
-}
-
-// SetTitleLoadBalancersNil sets the value for TitleLoadBalancers to be an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) SetTitleLoadBalancersNil() {
-	o.TitleLoadBalancers.Set(nil)
-}
-
-// UnsetTitleLoadBalancers ensures that no value is present for TitleLoadBalancers, not even an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) UnsetTitleLoadBalancers() {
-	o.TitleLoadBalancers.Unset()
 }
 
 // GetHasRouteTables returns the HasRouteTables field value if set, zero value otherwise.
@@ -801,15 +551,6 @@ func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) GetHasRouteTa
 		return nil, false
 	}
 	return o.HasRouteTables, true
-}
-
-// IsSetHasRouteTables returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) IsSetHasRouteTables() bool {
-	if o != nil && !IsNil(o.HasRouteTables) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasRouteTables gets a reference to the given bool and assigns it to the HasRouteTables field.
@@ -836,28 +577,9 @@ func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) GetTitleRoute
 	return o.TitleRouteTables.Get(), o.TitleRouteTables.IsSet()
 }
 
-// IsSetTitleRouteTables returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) IsSetTitleRouteTables() bool {
-	if o != nil && o.TitleRouteTables.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetTitleRouteTables gets a reference to the given NullableString and assigns it to the TitleRouteTables field.
 func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) SetTitleRouteTables(v string) {
 	o.TitleRouteTables.Set(&v)
-}
-
-// SetTitleRouteTablesNil sets the value for TitleRouteTables to be an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) SetTitleRouteTablesNil() {
-	o.TitleRouteTables.Set(nil)
-}
-
-// UnsetTitleRouteTables ensures that no value is present for TitleRouteTables, not even an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) UnsetTitleRouteTables() {
-	o.TitleRouteTables.Unset()
 }
 
 // GetHasFirewall returns the HasFirewall field value if set, zero value otherwise.
@@ -876,15 +598,6 @@ func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) GetHasFirewal
 		return nil, false
 	}
 	return o.HasFirewall, true
-}
-
-// IsSetHasFirewall returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) IsSetHasFirewall() bool {
-	if o != nil && !IsNil(o.HasFirewall) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasFirewall gets a reference to the given bool and assigns it to the HasFirewall field.
@@ -911,28 +624,9 @@ func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) GetTitleFirew
 	return o.TitleFirewall.Get(), o.TitleFirewall.IsSet()
 }
 
-// IsSetTitleFirewall returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) IsSetTitleFirewall() bool {
-	if o != nil && o.TitleFirewall.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetTitleFirewall gets a reference to the given NullableString and assigns it to the TitleFirewall field.
 func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) SetTitleFirewall(v string) {
 	o.TitleFirewall.Set(&v)
-}
-
-// SetTitleFirewallNil sets the value for TitleFirewall to be an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) SetTitleFirewallNil() {
-	o.TitleFirewall.Set(nil)
-}
-
-// UnsetTitleFirewall ensures that no value is present for TitleFirewall, not even an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) UnsetTitleFirewall() {
-	o.TitleFirewall.Unset()
 }
 
 // GetHasFirewallGroups returns the HasFirewallGroups field value if set, zero value otherwise.
@@ -951,15 +645,6 @@ func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) GetHasFirewal
 		return nil, false
 	}
 	return o.HasFirewallGroups, true
-}
-
-// IsSetHasFirewallGroups returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) IsSetHasFirewallGroups() bool {
-	if o != nil && !IsNil(o.HasFirewallGroups) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasFirewallGroups gets a reference to the given bool and assigns it to the HasFirewallGroups field.
@@ -986,28 +671,9 @@ func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) GetTitleFirew
 	return o.TitleFirewallGroups.Get(), o.TitleFirewallGroups.IsSet()
 }
 
-// IsSetTitleFirewallGroups returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) IsSetTitleFirewallGroups() bool {
-	if o != nil && o.TitleFirewallGroups.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetTitleFirewallGroups gets a reference to the given NullableString and assigns it to the TitleFirewallGroups field.
 func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) SetTitleFirewallGroups(v string) {
 	o.TitleFirewallGroups.Set(&v)
-}
-
-// SetTitleFirewallGroupsNil sets the value for TitleFirewallGroups to be an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) SetTitleFirewallGroupsNil() {
-	o.TitleFirewallGroups.Set(nil)
-}
-
-// UnsetTitleFirewallGroups ensures that no value is present for TitleFirewallGroups, not even an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) UnsetTitleFirewallGroups() {
-	o.TitleFirewallGroups.Unset()
 }
 
 func (o NetworkInterfaceUpdateSuccessServerZoneNetworkServerType) MarshalJSON() ([]byte, error) {

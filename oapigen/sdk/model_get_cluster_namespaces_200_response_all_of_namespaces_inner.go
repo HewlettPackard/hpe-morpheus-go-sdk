@@ -68,15 +68,6 @@ func (o *GetClusterNamespaces200ResponseAllOfNamespacesInner) GetIdOk() (*int64,
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetClusterNamespaces200ResponseAllOfNamespacesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetClusterNamespaces200ResponseAllOfNamespacesInner) SetId(v int64) {
 	o.Id = &v
@@ -98,15 +89,6 @@ func (o *GetClusterNamespaces200ResponseAllOfNamespacesInner) GetNameOk() (*stri
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *GetClusterNamespaces200ResponseAllOfNamespacesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -133,28 +115,9 @@ func (o *GetClusterNamespaces200ResponseAllOfNamespacesInner) GetDescriptionOk()
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *GetClusterNamespaces200ResponseAllOfNamespacesInner) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *GetClusterNamespaces200ResponseAllOfNamespacesInner) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *GetClusterNamespaces200ResponseAllOfNamespacesInner) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *GetClusterNamespaces200ResponseAllOfNamespacesInner) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetRegionCode returns the RegionCode field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -176,28 +139,9 @@ func (o *GetClusterNamespaces200ResponseAllOfNamespacesInner) GetRegionCodeOk() 
 	return o.RegionCode.Get(), o.RegionCode.IsSet()
 }
 
-// IsSetRegionCode returns a boolean if a field has been set.
-func (o *GetClusterNamespaces200ResponseAllOfNamespacesInner) IsSetRegionCode() bool {
-	if o != nil && o.RegionCode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRegionCode gets a reference to the given NullableString and assigns it to the RegionCode field.
 func (o *GetClusterNamespaces200ResponseAllOfNamespacesInner) SetRegionCode(v string) {
 	o.RegionCode.Set(&v)
-}
-
-// SetRegionCodeNil sets the value for RegionCode to be an explicit nil
-func (o *GetClusterNamespaces200ResponseAllOfNamespacesInner) SetRegionCodeNil() {
-	o.RegionCode.Set(nil)
-}
-
-// UnsetRegionCode ensures that no value is present for RegionCode, not even an explicit nil
-func (o *GetClusterNamespaces200ResponseAllOfNamespacesInner) UnsetRegionCode() {
-	o.RegionCode.Unset()
 }
 
 // GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -219,28 +163,9 @@ func (o *GetClusterNamespaces200ResponseAllOfNamespacesInner) GetExternalIdOk() 
 	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *GetClusterNamespaces200ResponseAllOfNamespacesInner) IsSetExternalId() bool {
-	if o != nil && o.ExternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *GetClusterNamespaces200ResponseAllOfNamespacesInner) SetExternalId(v string) {
 	o.ExternalId.Set(&v)
-}
-
-// SetExternalIdNil sets the value for ExternalId to be an explicit nil
-func (o *GetClusterNamespaces200ResponseAllOfNamespacesInner) SetExternalIdNil() {
-	o.ExternalId.Set(nil)
-}
-
-// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-func (o *GetClusterNamespaces200ResponseAllOfNamespacesInner) UnsetExternalId() {
-	o.ExternalId.Unset()
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -259,15 +184,6 @@ func (o *GetClusterNamespaces200ResponseAllOfNamespacesInner) GetStatusOk() (*st
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *GetClusterNamespaces200ResponseAllOfNamespacesInner) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -293,15 +209,6 @@ func (o *GetClusterNamespaces200ResponseAllOfNamespacesInner) GetVisibilityOk() 
 	return o.Visibility, true
 }
 
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *GetClusterNamespaces200ResponseAllOfNamespacesInner) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
-}
-
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
 func (o *GetClusterNamespaces200ResponseAllOfNamespacesInner) SetVisibility(v string) {
 	o.Visibility = &v
@@ -323,15 +230,6 @@ func (o *GetClusterNamespaces200ResponseAllOfNamespacesInner) GetActiveOk() (*bo
 		return nil, false
 	}
 	return o.Active, true
-}
-
-// IsSetActive returns a boolean if a field has been set.
-func (o *GetClusterNamespaces200ResponseAllOfNamespacesInner) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
 }
 
 // SetActive gets a reference to the given bool and assigns it to the Active field.

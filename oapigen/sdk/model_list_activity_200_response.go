@@ -62,15 +62,6 @@ func (o *ListActivity200Response) GetActivityOk() ([]ListActivity200ResponseAllO
 	return o.Activity, true
 }
 
-// IsSetActivity returns a boolean if a field has been set.
-func (o *ListActivity200Response) IsSetActivity() bool {
-	if o != nil && !IsNil(o.Activity) {
-		return true
-	}
-
-	return false
-}
-
 // SetActivity gets a reference to the given []ListActivity200ResponseAllOfActivityInner and assigns it to the Activity field.
 func (o *ListActivity200Response) SetActivity(v []ListActivity200ResponseAllOfActivityInner) {
 	o.Activity = v
@@ -92,15 +83,6 @@ func (o *ListActivity200Response) GetMetaOk() (*ListActivity200ResponseAllOfMeta
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListActivity200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListActivity200ResponseAllOfMeta and assigns it to the Meta field.

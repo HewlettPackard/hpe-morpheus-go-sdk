@@ -62,15 +62,6 @@ func (o *RemoveInstancesFromControlRequest) GetIdsOk() ([]int64, bool) {
 	return o.Ids, true
 }
 
-// IsSetIds returns a boolean if a field has been set.
-func (o *RemoveInstancesFromControlRequest) IsSetIds() bool {
-	if o != nil && !IsNil(o.Ids) {
-		return true
-	}
-
-	return false
-}
-
 // SetIds gets a reference to the given []int64 and assigns it to the Ids field.
 func (o *RemoveInstancesFromControlRequest) SetIds(v []int64) {
 	o.Ids = v

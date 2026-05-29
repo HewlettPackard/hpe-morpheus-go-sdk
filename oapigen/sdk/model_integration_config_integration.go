@@ -123,15 +123,6 @@ func (o *IntegrationConfigIntegration) GetEnabledOk() (*bool, bool) {
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *IntegrationConfigIntegration) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *IntegrationConfigIntegration) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -155,15 +146,6 @@ func (o *IntegrationConfigIntegration) GetRefreshOk() (*bool, bool) {
 	return o.Refresh, true
 }
 
-// IsSetRefresh returns a boolean if a field has been set.
-func (o *IntegrationConfigIntegration) IsSetRefresh() bool {
-	if o != nil && !IsNil(o.Refresh) {
-		return true
-	}
-
-	return false
-}
-
 // SetRefresh gets a reference to the given bool and assigns it to the Refresh field.
 func (o *IntegrationConfigIntegration) SetRefresh(v bool) {
 	o.Refresh = &v
@@ -185,15 +167,6 @@ func (o *IntegrationConfigIntegration) GetCredentialOk() (*IntegrationConfigInte
 		return nil, false
 	}
 	return o.Credential, true
-}
-
-// IsSetCredential returns a boolean if a field has been set.
-func (o *IntegrationConfigIntegration) IsSetCredential() bool {
-	if o != nil && !IsNil(o.Credential) {
-		return true
-	}
-
-	return false
 }
 
 // SetCredential gets a reference to the given IntegrationConfigIntegrationCredential and assigns it to the Credential field.

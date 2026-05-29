@@ -63,15 +63,6 @@ func (o *ClusterCreateConfig) GetDynamicPlacementModeOk() (*string, bool) {
 	return o.DynamicPlacementMode, true
 }
 
-// IsSetDynamicPlacementMode returns a boolean if a field has been set.
-func (o *ClusterCreateConfig) IsSetDynamicPlacementMode() bool {
-	if o != nil && !IsNil(o.DynamicPlacementMode) {
-		return true
-	}
-
-	return false
-}
-
 // SetDynamicPlacementMode gets a reference to the given string and assigns it to the DynamicPlacementMode field.
 func (o *ClusterCreateConfig) SetDynamicPlacementMode(v string) {
 	o.DynamicPlacementMode = &v
@@ -93,15 +84,6 @@ func (o *ClusterCreateConfig) GetTemplateParameterOk() (*ClusterCreateConfigTemp
 		return nil, false
 	}
 	return o.TemplateParameter, true
-}
-
-// IsSetTemplateParameter returns a boolean if a field has been set.
-func (o *ClusterCreateConfig) IsSetTemplateParameter() bool {
-	if o != nil && !IsNil(o.TemplateParameter) {
-		return true
-	}
-
-	return false
 }
 
 // SetTemplateParameter gets a reference to the given ClusterCreateConfigTemplateParameter and assigns it to the TemplateParameter field.

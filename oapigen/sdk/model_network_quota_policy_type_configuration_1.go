@@ -61,15 +61,6 @@ func (o *NetworkQuotaPolicyTypeConfiguration1) GetMaxNetworksOk() (*string, bool
 	return o.MaxNetworks, true
 }
 
-// IsSetMaxNetworks returns a boolean if a field has been set.
-func (o *NetworkQuotaPolicyTypeConfiguration1) IsSetMaxNetworks() bool {
-	if o != nil && !IsNil(o.MaxNetworks) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxNetworks gets a reference to the given string and assigns it to the MaxNetworks field.
 func (o *NetworkQuotaPolicyTypeConfiguration1) SetMaxNetworks(v string) {
 	o.MaxNetworks = &v

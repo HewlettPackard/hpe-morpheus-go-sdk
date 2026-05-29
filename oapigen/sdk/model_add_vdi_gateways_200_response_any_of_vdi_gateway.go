@@ -68,15 +68,6 @@ func (o *AddVDIGateways200ResponseAnyOfVdiGateway) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *AddVDIGateways200ResponseAnyOfVdiGateway) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *AddVDIGateways200ResponseAnyOfVdiGateway) SetId(v int64) {
 	o.Id = &v
@@ -98,15 +89,6 @@ func (o *AddVDIGateways200ResponseAnyOfVdiGateway) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *AddVDIGateways200ResponseAnyOfVdiGateway) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -133,28 +115,9 @@ func (o *AddVDIGateways200ResponseAnyOfVdiGateway) GetDescriptionOk() (*string, 
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *AddVDIGateways200ResponseAnyOfVdiGateway) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *AddVDIGateways200ResponseAnyOfVdiGateway) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *AddVDIGateways200ResponseAnyOfVdiGateway) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *AddVDIGateways200ResponseAnyOfVdiGateway) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetGatewayUrl returns the GatewayUrl field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -176,28 +139,9 @@ func (o *AddVDIGateways200ResponseAnyOfVdiGateway) GetGatewayUrlOk() (*string, b
 	return o.GatewayUrl.Get(), o.GatewayUrl.IsSet()
 }
 
-// IsSetGatewayUrl returns a boolean if a field has been set.
-func (o *AddVDIGateways200ResponseAnyOfVdiGateway) IsSetGatewayUrl() bool {
-	if o != nil && o.GatewayUrl.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetGatewayUrl gets a reference to the given NullableString and assigns it to the GatewayUrl field.
 func (o *AddVDIGateways200ResponseAnyOfVdiGateway) SetGatewayUrl(v string) {
 	o.GatewayUrl.Set(&v)
-}
-
-// SetGatewayUrlNil sets the value for GatewayUrl to be an explicit nil
-func (o *AddVDIGateways200ResponseAnyOfVdiGateway) SetGatewayUrlNil() {
-	o.GatewayUrl.Set(nil)
-}
-
-// UnsetGatewayUrl ensures that no value is present for GatewayUrl, not even an explicit nil
-func (o *AddVDIGateways200ResponseAnyOfVdiGateway) UnsetGatewayUrl() {
-	o.GatewayUrl.Unset()
 }
 
 // GetApiKey returns the ApiKey field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -219,28 +163,9 @@ func (o *AddVDIGateways200ResponseAnyOfVdiGateway) GetApiKeyOk() (*string, bool)
 	return o.ApiKey.Get(), o.ApiKey.IsSet()
 }
 
-// IsSetApiKey returns a boolean if a field has been set.
-func (o *AddVDIGateways200ResponseAnyOfVdiGateway) IsSetApiKey() bool {
-	if o != nil && o.ApiKey.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetApiKey gets a reference to the given NullableString and assigns it to the ApiKey field.
 func (o *AddVDIGateways200ResponseAnyOfVdiGateway) SetApiKey(v string) {
 	o.ApiKey.Set(&v)
-}
-
-// SetApiKeyNil sets the value for ApiKey to be an explicit nil
-func (o *AddVDIGateways200ResponseAnyOfVdiGateway) SetApiKeyNil() {
-	o.ApiKey.Set(nil)
-}
-
-// UnsetApiKey ensures that no value is present for ApiKey, not even an explicit nil
-func (o *AddVDIGateways200ResponseAnyOfVdiGateway) UnsetApiKey() {
-	o.ApiKey.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -259,15 +184,6 @@ func (o *AddVDIGateways200ResponseAnyOfVdiGateway) GetDateCreatedOk() (*time.Tim
 		return nil, false
 	}
 	return o.DateCreated, true
-}
-
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *AddVDIGateways200ResponseAnyOfVdiGateway) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
@@ -291,15 +207,6 @@ func (o *AddVDIGateways200ResponseAnyOfVdiGateway) GetLastUpdatedOk() (*time.Tim
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *AddVDIGateways200ResponseAnyOfVdiGateway) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.

@@ -76,15 +76,6 @@ func (o *UpdateBackups200ResponseAllOfBackupStats) GetTotalSizeOk() (*int64, boo
 	return o.TotalSize, true
 }
 
-// IsSetTotalSize returns a boolean if a field has been set.
-func (o *UpdateBackups200ResponseAllOfBackupStats) IsSetTotalSize() bool {
-	if o != nil && !IsNil(o.TotalSize) {
-		return true
-	}
-
-	return false
-}
-
 // SetTotalSize gets a reference to the given int64 and assigns it to the TotalSize field.
 func (o *UpdateBackups200ResponseAllOfBackupStats) SetTotalSize(v int64) {
 	o.TotalSize = &v
@@ -106,15 +97,6 @@ func (o *UpdateBackups200ResponseAllOfBackupStats) GetAvgSizeOk() (*int64, bool)
 		return nil, false
 	}
 	return o.AvgSize, true
-}
-
-// IsSetAvgSize returns a boolean if a field has been set.
-func (o *UpdateBackups200ResponseAllOfBackupStats) IsSetAvgSize() bool {
-	if o != nil && !IsNil(o.AvgSize) {
-		return true
-	}
-
-	return false
 }
 
 // SetAvgSize gets a reference to the given int64 and assigns it to the AvgSize field.
@@ -140,15 +122,6 @@ func (o *UpdateBackups200ResponseAllOfBackupStats) GetTotalCompletedOk() (*int64
 	return o.TotalCompleted, true
 }
 
-// IsSetTotalCompleted returns a boolean if a field has been set.
-func (o *UpdateBackups200ResponseAllOfBackupStats) IsSetTotalCompleted() bool {
-	if o != nil && !IsNil(o.TotalCompleted) {
-		return true
-	}
-
-	return false
-}
-
 // SetTotalCompleted gets a reference to the given int64 and assigns it to the TotalCompleted field.
 func (o *UpdateBackups200ResponseAllOfBackupStats) SetTotalCompleted(v int64) {
 	o.TotalCompleted = &v
@@ -170,15 +143,6 @@ func (o *UpdateBackups200ResponseAllOfBackupStats) GetSuccessOk() (*int64, bool)
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *UpdateBackups200ResponseAllOfBackupStats) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given int64 and assigns it to the Success field.
@@ -204,15 +168,6 @@ func (o *UpdateBackups200ResponseAllOfBackupStats) GetFailedOk() (*int64, bool) 
 	return o.Failed, true
 }
 
-// IsSetFailed returns a boolean if a field has been set.
-func (o *UpdateBackups200ResponseAllOfBackupStats) IsSetFailed() bool {
-	if o != nil && !IsNil(o.Failed) {
-		return true
-	}
-
-	return false
-}
-
 // SetFailed gets a reference to the given int64 and assigns it to the Failed field.
 func (o *UpdateBackups200ResponseAllOfBackupStats) SetFailed(v int64) {
 	o.Failed = &v
@@ -234,15 +189,6 @@ func (o *UpdateBackups200ResponseAllOfBackupStats) GetSuccessRateOk() (*float64,
 		return nil, false
 	}
 	return o.SuccessRate, true
-}
-
-// IsSetSuccessRate returns a boolean if a field has been set.
-func (o *UpdateBackups200ResponseAllOfBackupStats) IsSetSuccessRate() bool {
-	if o != nil && !IsNil(o.SuccessRate) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccessRate gets a reference to the given float64 and assigns it to the SuccessRate field.
@@ -268,15 +214,6 @@ func (o *UpdateBackups200ResponseAllOfBackupStats) GetFailRateOk() (*float64, bo
 	return o.FailRate, true
 }
 
-// IsSetFailRate returns a boolean if a field has been set.
-func (o *UpdateBackups200ResponseAllOfBackupStats) IsSetFailRate() bool {
-	if o != nil && !IsNil(o.FailRate) {
-		return true
-	}
-
-	return false
-}
-
 // SetFailRate gets a reference to the given float64 and assigns it to the FailRate field.
 func (o *UpdateBackups200ResponseAllOfBackupStats) SetFailRate(v float64) {
 	o.FailRate = &v
@@ -298,15 +235,6 @@ func (o *UpdateBackups200ResponseAllOfBackupStats) GetLastFiveResultsOk() ([]str
 		return nil, false
 	}
 	return o.LastFiveResults, true
-}
-
-// IsSetLastFiveResults returns a boolean if a field has been set.
-func (o *UpdateBackups200ResponseAllOfBackupStats) IsSetLastFiveResults() bool {
-	if o != nil && !IsNil(o.LastFiveResults) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastFiveResults gets a reference to the given []string and assigns it to the LastFiveResults field.

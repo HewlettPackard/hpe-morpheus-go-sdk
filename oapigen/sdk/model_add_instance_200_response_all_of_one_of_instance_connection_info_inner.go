@@ -63,15 +63,6 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) GetIpOk() 
 	return o.Ip, true
 }
 
-// IsSetIp returns a boolean if a field has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) IsSetIp() bool {
-	if o != nil && !IsNil(o.Ip) {
-		return true
-	}
-
-	return false
-}
-
 // SetIp gets a reference to the given string and assigns it to the Ip field.
 func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) SetIp(v string) {
 	o.Ip = &v
@@ -95,15 +86,6 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) GetPortOk(
 	return o.Port, true
 }
 
-// IsSetPort returns a boolean if a field has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) IsSetPort() bool {
-	if o != nil && !IsNil(o.Port) {
-		return true
-	}
-
-	return false
-}
-
 // SetPort gets a reference to the given int64 and assigns it to the Port field.
 func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) SetPort(v int64) {
 	o.Port = &v
@@ -125,15 +107,6 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) GetNameOk(
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.

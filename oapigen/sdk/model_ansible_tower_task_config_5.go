@@ -72,28 +72,9 @@ func (o *AnsibleTowerTaskConfig5) GetPasswordOk() (*string, bool) {
 	return o.Password.Get(), o.Password.IsSet()
 }
 
-// IsSetPassword returns a boolean if a field has been set.
-func (o *AnsibleTowerTaskConfig5) IsSetPassword() bool {
-	if o != nil && o.Password.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPassword gets a reference to the given NullableString and assigns it to the Password field.
 func (o *AnsibleTowerTaskConfig5) SetPassword(v string) {
 	o.Password.Set(&v)
-}
-
-// SetPasswordNil sets the value for Password to be an explicit nil
-func (o *AnsibleTowerTaskConfig5) SetPasswordNil() {
-	o.Password.Set(nil)
-}
-
-// UnsetPassword ensures that no value is present for Password, not even an explicit nil
-func (o *AnsibleTowerTaskConfig5) UnsetPassword() {
-	o.Password.Unset()
 }
 
 // GetPasswordHash returns the PasswordHash field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -115,28 +96,9 @@ func (o *AnsibleTowerTaskConfig5) GetPasswordHashOk() (*string, bool) {
 	return o.PasswordHash.Get(), o.PasswordHash.IsSet()
 }
 
-// IsSetPasswordHash returns a boolean if a field has been set.
-func (o *AnsibleTowerTaskConfig5) IsSetPasswordHash() bool {
-	if o != nil && o.PasswordHash.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPasswordHash gets a reference to the given NullableString and assigns it to the PasswordHash field.
 func (o *AnsibleTowerTaskConfig5) SetPasswordHash(v string) {
 	o.PasswordHash.Set(&v)
-}
-
-// SetPasswordHashNil sets the value for PasswordHash to be an explicit nil
-func (o *AnsibleTowerTaskConfig5) SetPasswordHashNil() {
-	o.PasswordHash.Set(nil)
-}
-
-// UnsetPasswordHash ensures that no value is present for PasswordHash, not even an explicit nil
-func (o *AnsibleTowerTaskConfig5) UnsetPasswordHash() {
-	o.PasswordHash.Unset()
 }
 
 // GetAnsibleTowerGitRef returns the AnsibleTowerGitRef field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -158,28 +120,9 @@ func (o *AnsibleTowerTaskConfig5) GetAnsibleTowerGitRefOk() (*string, bool) {
 	return o.AnsibleTowerGitRef.Get(), o.AnsibleTowerGitRef.IsSet()
 }
 
-// IsSetAnsibleTowerGitRef returns a boolean if a field has been set.
-func (o *AnsibleTowerTaskConfig5) IsSetAnsibleTowerGitRef() bool {
-	if o != nil && o.AnsibleTowerGitRef.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAnsibleTowerGitRef gets a reference to the given NullableString and assigns it to the AnsibleTowerGitRef field.
 func (o *AnsibleTowerTaskConfig5) SetAnsibleTowerGitRef(v string) {
 	o.AnsibleTowerGitRef.Set(&v)
-}
-
-// SetAnsibleTowerGitRefNil sets the value for AnsibleTowerGitRef to be an explicit nil
-func (o *AnsibleTowerTaskConfig5) SetAnsibleTowerGitRefNil() {
-	o.AnsibleTowerGitRef.Set(nil)
-}
-
-// UnsetAnsibleTowerGitRef ensures that no value is present for AnsibleTowerGitRef, not even an explicit nil
-func (o *AnsibleTowerTaskConfig5) UnsetAnsibleTowerGitRef() {
-	o.AnsibleTowerGitRef.Unset()
 }
 
 // GetLocalScriptGitId returns the LocalScriptGitId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -201,28 +144,9 @@ func (o *AnsibleTowerTaskConfig5) GetLocalScriptGitIdOk() (*string, bool) {
 	return o.LocalScriptGitId.Get(), o.LocalScriptGitId.IsSet()
 }
 
-// IsSetLocalScriptGitId returns a boolean if a field has been set.
-func (o *AnsibleTowerTaskConfig5) IsSetLocalScriptGitId() bool {
-	if o != nil && o.LocalScriptGitId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLocalScriptGitId gets a reference to the given NullableString and assigns it to the LocalScriptGitId field.
 func (o *AnsibleTowerTaskConfig5) SetLocalScriptGitId(v string) {
 	o.LocalScriptGitId.Set(&v)
-}
-
-// SetLocalScriptGitIdNil sets the value for LocalScriptGitId to be an explicit nil
-func (o *AnsibleTowerTaskConfig5) SetLocalScriptGitIdNil() {
-	o.LocalScriptGitId.Set(nil)
-}
-
-// UnsetLocalScriptGitId ensures that no value is present for LocalScriptGitId, not even an explicit nil
-func (o *AnsibleTowerTaskConfig5) UnsetLocalScriptGitId() {
-	o.LocalScriptGitId.Unset()
 }
 
 // GetHost returns the Host field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -244,28 +168,9 @@ func (o *AnsibleTowerTaskConfig5) GetHostOk() (*string, bool) {
 	return o.Host.Get(), o.Host.IsSet()
 }
 
-// IsSetHost returns a boolean if a field has been set.
-func (o *AnsibleTowerTaskConfig5) IsSetHost() bool {
-	if o != nil && o.Host.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetHost gets a reference to the given NullableString and assigns it to the Host field.
 func (o *AnsibleTowerTaskConfig5) SetHost(v string) {
 	o.Host.Set(&v)
-}
-
-// SetHostNil sets the value for Host to be an explicit nil
-func (o *AnsibleTowerTaskConfig5) SetHostNil() {
-	o.Host.Set(nil)
-}
-
-// UnsetHost ensures that no value is present for Host, not even an explicit nil
-func (o *AnsibleTowerTaskConfig5) UnsetHost() {
-	o.Host.Unset()
 }
 
 // GetUsername returns the Username field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -287,28 +192,9 @@ func (o *AnsibleTowerTaskConfig5) GetUsernameOk() (*string, bool) {
 	return o.Username.Get(), o.Username.IsSet()
 }
 
-// IsSetUsername returns a boolean if a field has been set.
-func (o *AnsibleTowerTaskConfig5) IsSetUsername() bool {
-	if o != nil && o.Username.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUsername gets a reference to the given NullableString and assigns it to the Username field.
 func (o *AnsibleTowerTaskConfig5) SetUsername(v string) {
 	o.Username.Set(&v)
-}
-
-// SetUsernameNil sets the value for Username to be an explicit nil
-func (o *AnsibleTowerTaskConfig5) SetUsernameNil() {
-	o.Username.Set(nil)
-}
-
-// UnsetUsername ensures that no value is present for Username, not even an explicit nil
-func (o *AnsibleTowerTaskConfig5) UnsetUsername() {
-	o.Username.Unset()
 }
 
 // GetSshKey returns the SshKey field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -330,28 +216,9 @@ func (o *AnsibleTowerTaskConfig5) GetSshKeyOk() (*string, bool) {
 	return o.SshKey.Get(), o.SshKey.IsSet()
 }
 
-// IsSetSshKey returns a boolean if a field has been set.
-func (o *AnsibleTowerTaskConfig5) IsSetSshKey() bool {
-	if o != nil && o.SshKey.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSshKey gets a reference to the given NullableString and assigns it to the SshKey field.
 func (o *AnsibleTowerTaskConfig5) SetSshKey(v string) {
 	o.SshKey.Set(&v)
-}
-
-// SetSshKeyNil sets the value for SshKey to be an explicit nil
-func (o *AnsibleTowerTaskConfig5) SetSshKeyNil() {
-	o.SshKey.Set(nil)
-}
-
-// UnsetSshKey ensures that no value is present for SshKey, not even an explicit nil
-func (o *AnsibleTowerTaskConfig5) UnsetSshKey() {
-	o.SshKey.Unset()
 }
 
 // GetAnsibleGroup returns the AnsibleGroup field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -373,28 +240,9 @@ func (o *AnsibleTowerTaskConfig5) GetAnsibleGroupOk() (*string, bool) {
 	return o.AnsibleGroup.Get(), o.AnsibleGroup.IsSet()
 }
 
-// IsSetAnsibleGroup returns a boolean if a field has been set.
-func (o *AnsibleTowerTaskConfig5) IsSetAnsibleGroup() bool {
-	if o != nil && o.AnsibleGroup.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAnsibleGroup gets a reference to the given NullableString and assigns it to the AnsibleGroup field.
 func (o *AnsibleTowerTaskConfig5) SetAnsibleGroup(v string) {
 	o.AnsibleGroup.Set(&v)
-}
-
-// SetAnsibleGroupNil sets the value for AnsibleGroup to be an explicit nil
-func (o *AnsibleTowerTaskConfig5) SetAnsibleGroupNil() {
-	o.AnsibleGroup.Set(nil)
-}
-
-// UnsetAnsibleGroup ensures that no value is present for AnsibleGroup, not even an explicit nil
-func (o *AnsibleTowerTaskConfig5) UnsetAnsibleGroup() {
-	o.AnsibleGroup.Unset()
 }
 
 // GetAnsibleTowerExecuteMode returns the AnsibleTowerExecuteMode field value if set, zero value otherwise.
@@ -413,15 +261,6 @@ func (o *AnsibleTowerTaskConfig5) GetAnsibleTowerExecuteModeOk() (*string, bool)
 		return nil, false
 	}
 	return o.AnsibleTowerExecuteMode, true
-}
-
-// IsSetAnsibleTowerExecuteMode returns a boolean if a field has been set.
-func (o *AnsibleTowerTaskConfig5) IsSetAnsibleTowerExecuteMode() bool {
-	if o != nil && !IsNil(o.AnsibleTowerExecuteMode) {
-		return true
-	}
-
-	return false
 }
 
 // SetAnsibleTowerExecuteMode gets a reference to the given string and assigns it to the AnsibleTowerExecuteMode field.
@@ -448,28 +287,9 @@ func (o *AnsibleTowerTaskConfig5) GetLocalScriptGitRefOk() (*string, bool) {
 	return o.LocalScriptGitRef.Get(), o.LocalScriptGitRef.IsSet()
 }
 
-// IsSetLocalScriptGitRef returns a boolean if a field has been set.
-func (o *AnsibleTowerTaskConfig5) IsSetLocalScriptGitRef() bool {
-	if o != nil && o.LocalScriptGitRef.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLocalScriptGitRef gets a reference to the given NullableString and assigns it to the LocalScriptGitRef field.
 func (o *AnsibleTowerTaskConfig5) SetLocalScriptGitRef(v string) {
 	o.LocalScriptGitRef.Set(&v)
-}
-
-// SetLocalScriptGitRefNil sets the value for LocalScriptGitRef to be an explicit nil
-func (o *AnsibleTowerTaskConfig5) SetLocalScriptGitRefNil() {
-	o.LocalScriptGitRef.Set(nil)
-}
-
-// UnsetLocalScriptGitRef ensures that no value is present for LocalScriptGitRef, not even an explicit nil
-func (o *AnsibleTowerTaskConfig5) UnsetLocalScriptGitRef() {
-	o.LocalScriptGitRef.Unset()
 }
 
 // GetPort returns the Port field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -491,28 +311,9 @@ func (o *AnsibleTowerTaskConfig5) GetPortOk() (*string, bool) {
 	return o.Port.Get(), o.Port.IsSet()
 }
 
-// IsSetPort returns a boolean if a field has been set.
-func (o *AnsibleTowerTaskConfig5) IsSetPort() bool {
-	if o != nil && o.Port.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPort gets a reference to the given NullableString and assigns it to the Port field.
 func (o *AnsibleTowerTaskConfig5) SetPort(v string) {
 	o.Port.Set(&v)
-}
-
-// SetPortNil sets the value for Port to be an explicit nil
-func (o *AnsibleTowerTaskConfig5) SetPortNil() {
-	o.Port.Set(nil)
-}
-
-// UnsetPort ensures that no value is present for Port, not even an explicit nil
-func (o *AnsibleTowerTaskConfig5) UnsetPort() {
-	o.Port.Unset()
 }
 
 func (o AnsibleTowerTaskConfig5) MarshalJSON() ([]byte, error) {

@@ -61,15 +61,6 @@ func (o *AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInnerNetw
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInnerNetwork) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given string and assigns it to the Id field.
 func (o *AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInnerNetwork) SetId(v string) {
 	o.Id = &v

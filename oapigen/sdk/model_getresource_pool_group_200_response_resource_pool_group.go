@@ -70,15 +70,6 @@ func (o *GetresourcePoolGroup200ResponseResourcePoolGroup) GetIdOk() (*int64, bo
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetresourcePoolGroup200ResponseResourcePoolGroup) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetresourcePoolGroup200ResponseResourcePoolGroup) SetId(v int64) {
 	o.Id = &v
@@ -100,15 +91,6 @@ func (o *GetresourcePoolGroup200ResponseResourcePoolGroup) GetNameOk() (*string,
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *GetresourcePoolGroup200ResponseResourcePoolGroup) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -134,15 +116,6 @@ func (o *GetresourcePoolGroup200ResponseResourcePoolGroup) GetDescriptionOk() (*
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *GetresourcePoolGroup200ResponseResourcePoolGroup) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *GetresourcePoolGroup200ResponseResourcePoolGroup) SetDescription(v string) {
 	o.Description = &v
@@ -164,15 +137,6 @@ func (o *GetresourcePoolGroup200ResponseResourcePoolGroup) GetVisibilityOk() (*s
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *GetresourcePoolGroup200ResponseResourcePoolGroup) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -198,15 +162,6 @@ func (o *GetresourcePoolGroup200ResponseResourcePoolGroup) GetModeOk() (*string,
 	return o.Mode, true
 }
 
-// IsSetMode returns a boolean if a field has been set.
-func (o *GetresourcePoolGroup200ResponseResourcePoolGroup) IsSetMode() bool {
-	if o != nil && !IsNil(o.Mode) {
-		return true
-	}
-
-	return false
-}
-
 // SetMode gets a reference to the given string and assigns it to the Mode field.
 func (o *GetresourcePoolGroup200ResponseResourcePoolGroup) SetMode(v string) {
 	o.Mode = &v
@@ -228,15 +183,6 @@ func (o *GetresourcePoolGroup200ResponseResourcePoolGroup) GetPoolsOk() ([]int64
 		return nil, false
 	}
 	return o.Pools, true
-}
-
-// IsSetPools returns a boolean if a field has been set.
-func (o *GetresourcePoolGroup200ResponseResourcePoolGroup) IsSetPools() bool {
-	if o != nil && !IsNil(o.Pools) {
-		return true
-	}
-
-	return false
 }
 
 // SetPools gets a reference to the given []int64 and assigns it to the Pools field.
@@ -262,15 +208,6 @@ func (o *GetresourcePoolGroup200ResponseResourcePoolGroup) GetTenantsOk() ([]Get
 	return o.Tenants, true
 }
 
-// IsSetTenants returns a boolean if a field has been set.
-func (o *GetresourcePoolGroup200ResponseResourcePoolGroup) IsSetTenants() bool {
-	if o != nil && !IsNil(o.Tenants) {
-		return true
-	}
-
-	return false
-}
-
 // SetTenants gets a reference to the given []GetresourcePoolGroup200ResponseResourcePoolGroupTenantsInner and assigns it to the Tenants field.
 func (o *GetresourcePoolGroup200ResponseResourcePoolGroup) SetTenants(v []GetresourcePoolGroup200ResponseResourcePoolGroupTenantsInner) {
 	o.Tenants = v
@@ -292,15 +229,6 @@ func (o *GetresourcePoolGroup200ResponseResourcePoolGroup) GetResourcePermission
 		return nil, false
 	}
 	return o.ResourcePermission, true
-}
-
-// IsSetResourcePermission returns a boolean if a field has been set.
-func (o *GetresourcePoolGroup200ResponseResourcePoolGroup) IsSetResourcePermission() bool {
-	if o != nil && !IsNil(o.ResourcePermission) {
-		return true
-	}
-
-	return false
 }
 
 // SetResourcePermission gets a reference to the given GetresourcePoolGroup200ResponseResourcePoolGroupResourcePermission and assigns it to the ResourcePermission field.

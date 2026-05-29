@@ -106,15 +106,6 @@ func (o *ExpirationPolicyTypeConfiguration) GetLifecycleAgeOk() (*string, bool) 
 	return o.LifecycleAge, true
 }
 
-// IsSetLifecycleAge returns a boolean if a field has been set.
-func (o *ExpirationPolicyTypeConfiguration) IsSetLifecycleAge() bool {
-	if o != nil && !IsNil(o.LifecycleAge) {
-		return true
-	}
-
-	return false
-}
-
 // SetLifecycleAge gets a reference to the given string and assigns it to the LifecycleAge field.
 func (o *ExpirationPolicyTypeConfiguration) SetLifecycleAge(v string) {
 	o.LifecycleAge = &v
@@ -136,15 +127,6 @@ func (o *ExpirationPolicyTypeConfiguration) GetLifecycleRenewalOk() (*string, bo
 		return nil, false
 	}
 	return o.LifecycleRenewal, true
-}
-
-// IsSetLifecycleRenewal returns a boolean if a field has been set.
-func (o *ExpirationPolicyTypeConfiguration) IsSetLifecycleRenewal() bool {
-	if o != nil && !IsNil(o.LifecycleRenewal) {
-		return true
-	}
-
-	return false
 }
 
 // SetLifecycleRenewal gets a reference to the given string and assigns it to the LifecycleRenewal field.
@@ -170,15 +152,6 @@ func (o *ExpirationPolicyTypeConfiguration) GetLifecycleNotifyOk() (*string, boo
 	return o.LifecycleNotify, true
 }
 
-// IsSetLifecycleNotify returns a boolean if a field has been set.
-func (o *ExpirationPolicyTypeConfiguration) IsSetLifecycleNotify() bool {
-	if o != nil && !IsNil(o.LifecycleNotify) {
-		return true
-	}
-
-	return false
-}
-
 // SetLifecycleNotify gets a reference to the given string and assigns it to the LifecycleNotify field.
 func (o *ExpirationPolicyTypeConfiguration) SetLifecycleNotify(v string) {
 	o.LifecycleNotify = &v
@@ -200,15 +173,6 @@ func (o *ExpirationPolicyTypeConfiguration) GetLifecycleMessageOk() (*string, bo
 		return nil, false
 	}
 	return o.LifecycleMessage, true
-}
-
-// IsSetLifecycleMessage returns a boolean if a field has been set.
-func (o *ExpirationPolicyTypeConfiguration) IsSetLifecycleMessage() bool {
-	if o != nil && !IsNil(o.LifecycleMessage) {
-		return true
-	}
-
-	return false
 }
 
 // SetLifecycleMessage gets a reference to the given string and assigns it to the LifecycleMessage field.
@@ -234,15 +198,6 @@ func (o *ExpirationPolicyTypeConfiguration) GetLifecycleAutoRenewOk() (*string, 
 	return o.LifecycleAutoRenew, true
 }
 
-// IsSetLifecycleAutoRenew returns a boolean if a field has been set.
-func (o *ExpirationPolicyTypeConfiguration) IsSetLifecycleAutoRenew() bool {
-	if o != nil && !IsNil(o.LifecycleAutoRenew) {
-		return true
-	}
-
-	return false
-}
-
 // SetLifecycleAutoRenew gets a reference to the given string and assigns it to the LifecycleAutoRenew field.
 func (o *ExpirationPolicyTypeConfiguration) SetLifecycleAutoRenew(v string) {
 	o.LifecycleAutoRenew = &v
@@ -264,15 +219,6 @@ func (o *ExpirationPolicyTypeConfiguration) GetLifecycleAllowExtendOk() (*string
 		return nil, false
 	}
 	return o.LifecycleAllowExtend, true
-}
-
-// IsSetLifecycleAllowExtend returns a boolean if a field has been set.
-func (o *ExpirationPolicyTypeConfiguration) IsSetLifecycleAllowExtend() bool {
-	if o != nil && !IsNil(o.LifecycleAllowExtend) {
-		return true
-	}
-
-	return false
 }
 
 // SetLifecycleAllowExtend gets a reference to the given string and assigns it to the LifecycleAllowExtend field.
@@ -298,15 +244,6 @@ func (o *ExpirationPolicyTypeConfiguration) GetLifecycleExtensionsBeforeApproval
 	return o.LifecycleExtensionsBeforeApproval, true
 }
 
-// IsSetLifecycleExtensionsBeforeApproval returns a boolean if a field has been set.
-func (o *ExpirationPolicyTypeConfiguration) IsSetLifecycleExtensionsBeforeApproval() bool {
-	if o != nil && !IsNil(o.LifecycleExtensionsBeforeApproval) {
-		return true
-	}
-
-	return false
-}
-
 // SetLifecycleExtensionsBeforeApproval gets a reference to the given string and assigns it to the LifecycleExtensionsBeforeApproval field.
 func (o *ExpirationPolicyTypeConfiguration) SetLifecycleExtensionsBeforeApproval(v string) {
 	o.LifecycleExtensionsBeforeApproval = &v
@@ -328,15 +265,6 @@ func (o *ExpirationPolicyTypeConfiguration) GetAccountIntegrationIdOk() (*string
 		return nil, false
 	}
 	return o.AccountIntegrationId, true
-}
-
-// IsSetAccountIntegrationId returns a boolean if a field has been set.
-func (o *ExpirationPolicyTypeConfiguration) IsSetAccountIntegrationId() bool {
-	if o != nil && !IsNil(o.AccountIntegrationId) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccountIntegrationId gets a reference to the given string and assigns it to the AccountIntegrationId field.
@@ -362,15 +290,6 @@ func (o *ExpirationPolicyTypeConfiguration) GetLifecycleWorkflowIdOk() (*string,
 	return o.LifecycleWorkflowId, true
 }
 
-// IsSetLifecycleWorkflowId returns a boolean if a field has been set.
-func (o *ExpirationPolicyTypeConfiguration) IsSetLifecycleWorkflowId() bool {
-	if o != nil && !IsNil(o.LifecycleWorkflowId) {
-		return true
-	}
-
-	return false
-}
-
 // SetLifecycleWorkflowId gets a reference to the given string and assigns it to the LifecycleWorkflowId field.
 func (o *ExpirationPolicyTypeConfiguration) SetLifecycleWorkflowId(v string) {
 	o.LifecycleWorkflowId = &v
@@ -392,15 +311,6 @@ func (o *ExpirationPolicyTypeConfiguration) GetFlowIdOk() (*string, bool) {
 		return nil, false
 	}
 	return o.FlowId, true
-}
-
-// IsSetFlowId returns a boolean if a field has been set.
-func (o *ExpirationPolicyTypeConfiguration) IsSetFlowId() bool {
-	if o != nil && !IsNil(o.FlowId) {
-		return true
-	}
-
-	return false
 }
 
 // SetFlowId gets a reference to the given string and assigns it to the FlowId field.
@@ -426,15 +336,6 @@ func (o *ExpirationPolicyTypeConfiguration) GetWorkflowTypeOk() (*string, bool) 
 	return o.WorkflowType, true
 }
 
-// IsSetWorkflowType returns a boolean if a field has been set.
-func (o *ExpirationPolicyTypeConfiguration) IsSetWorkflowType() bool {
-	if o != nil && !IsNil(o.WorkflowType) {
-		return true
-	}
-
-	return false
-}
-
 // SetWorkflowType gets a reference to the given string and assigns it to the WorkflowType field.
 func (o *ExpirationPolicyTypeConfiguration) SetWorkflowType(v string) {
 	o.WorkflowType = &v
@@ -456,15 +357,6 @@ func (o *ExpirationPolicyTypeConfiguration) GetLifecycleHideFixedOk() (*bool, bo
 		return nil, false
 	}
 	return o.LifecycleHideFixed, true
-}
-
-// IsSetLifecycleHideFixed returns a boolean if a field has been set.
-func (o *ExpirationPolicyTypeConfiguration) IsSetLifecycleHideFixed() bool {
-	if o != nil && !IsNil(o.LifecycleHideFixed) {
-		return true
-	}
-
-	return false
 }
 
 // SetLifecycleHideFixed gets a reference to the given bool and assigns it to the LifecycleHideFixed field.

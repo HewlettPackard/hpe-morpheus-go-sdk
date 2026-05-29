@@ -61,15 +61,6 @@ func (o *UpdateImageBuild200Response) GetImageBuildOk() (*UpdateImageBuild200Res
 	return o.ImageBuild, true
 }
 
-// IsSetImageBuild returns a boolean if a field has been set.
-func (o *UpdateImageBuild200Response) IsSetImageBuild() bool {
-	if o != nil && !IsNil(o.ImageBuild) {
-		return true
-	}
-
-	return false
-}
-
 // SetImageBuild gets a reference to the given UpdateImageBuild200ResponseImageBuild and assigns it to the ImageBuild field.
 func (o *UpdateImageBuild200Response) SetImageBuild(v UpdateImageBuild200ResponseImageBuild) {
 	o.ImageBuild = &v

@@ -65,15 +65,6 @@ func (o *ZoneNetworkOptionsNetworksInner) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ZoneNetworkOptionsNetworksInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given string and assigns it to the Id field.
 func (o *ZoneNetworkOptionsNetworksInner) SetId(v string) {
 	o.Id = &v
@@ -95,15 +86,6 @@ func (o *ZoneNetworkOptionsNetworksInner) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ZoneNetworkOptionsNetworksInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -129,15 +111,6 @@ func (o *ZoneNetworkOptionsNetworksInner) GetDhcpServerOk() (*bool, bool) {
 	return o.DhcpServer, true
 }
 
-// IsSetDhcpServer returns a boolean if a field has been set.
-func (o *ZoneNetworkOptionsNetworksInner) IsSetDhcpServer() bool {
-	if o != nil && !IsNil(o.DhcpServer) {
-		return true
-	}
-
-	return false
-}
-
 // SetDhcpServer gets a reference to the given bool and assigns it to the DhcpServer field.
 func (o *ZoneNetworkOptionsNetworksInner) SetDhcpServer(v bool) {
 	o.DhcpServer = &v
@@ -159,15 +132,6 @@ func (o *ZoneNetworkOptionsNetworksInner) GetAllowStaticOverrideOk() (*bool, boo
 		return nil, false
 	}
 	return o.AllowStaticOverride, true
-}
-
-// IsSetAllowStaticOverride returns a boolean if a field has been set.
-func (o *ZoneNetworkOptionsNetworksInner) IsSetAllowStaticOverride() bool {
-	if o != nil && !IsNil(o.AllowStaticOverride) {
-		return true
-	}
-
-	return false
 }
 
 // SetAllowStaticOverride gets a reference to the given bool and assigns it to the AllowStaticOverride field.
@@ -194,28 +158,9 @@ func (o *ZoneNetworkOptionsNetworksInner) GetPoolOk() (*ZoneNetworkOptionsNetwor
 	return o.Pool.Get(), o.Pool.IsSet()
 }
 
-// IsSetPool returns a boolean if a field has been set.
-func (o *ZoneNetworkOptionsNetworksInner) IsSetPool() bool {
-	if o != nil && o.Pool.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPool gets a reference to the given NullableZoneNetworkOptionsNetworksInnerPool and assigns it to the Pool field.
 func (o *ZoneNetworkOptionsNetworksInner) SetPool(v ZoneNetworkOptionsNetworksInnerPool) {
 	o.Pool.Set(&v)
-}
-
-// SetPoolNil sets the value for Pool to be an explicit nil
-func (o *ZoneNetworkOptionsNetworksInner) SetPoolNil() {
-	o.Pool.Set(nil)
-}
-
-// UnsetPool ensures that no value is present for Pool, not even an explicit nil
-func (o *ZoneNetworkOptionsNetworksInner) UnsetPool() {
-	o.Pool.Unset()
 }
 
 func (o ZoneNetworkOptionsNetworksInner) MarshalJSON() ([]byte, error) {

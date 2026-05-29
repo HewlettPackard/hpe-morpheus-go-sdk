@@ -62,15 +62,6 @@ func (o *NetworkRouterBgpNeighborConfigNsxtCreate) GetSourceAddressesOk() ([]str
 	return o.SourceAddresses, true
 }
 
-// IsSetSourceAddresses returns a boolean if a field has been set.
-func (o *NetworkRouterBgpNeighborConfigNsxtCreate) IsSetSourceAddresses() bool {
-	if o != nil && !IsNil(o.SourceAddresses) {
-		return true
-	}
-
-	return false
-}
-
 // SetSourceAddresses gets a reference to the given []string and assigns it to the SourceAddresses field.
 func (o *NetworkRouterBgpNeighborConfigNsxtCreate) SetSourceAddresses(v []string) {
 	o.SourceAddresses = v

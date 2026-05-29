@@ -61,15 +61,6 @@ func (o *UpdateEmailTemplateRequest) GetPolicyOk() (*UpdateEmailTemplateRequestA
 	return o.Policy, true
 }
 
-// IsSetPolicy returns a boolean if a field has been set.
-func (o *UpdateEmailTemplateRequest) IsSetPolicy() bool {
-	if o != nil && !IsNil(o.Policy) {
-		return true
-	}
-
-	return false
-}
-
 // SetPolicy gets a reference to the given UpdateEmailTemplateRequestAllOfPolicy and assigns it to the Policy field.
 func (o *UpdateEmailTemplateRequest) SetPolicy(v UpdateEmailTemplateRequestAllOfPolicy) {
 	o.Policy = &v

@@ -67,15 +67,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServe
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServer) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServer) SetId(v int64) {
 	o.Id = &v
@@ -97,15 +88,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServe
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServer) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -132,28 +114,9 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServe
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServer) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServer) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServer) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServer) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
@@ -172,15 +135,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServe
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServer) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given UpdateServerNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType and assigns it to the Type field.
@@ -206,15 +160,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServe
 	return o.Status, true
 }
 
-// IsSetStatus returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServer) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
-}
-
 // SetStatus gets a reference to the given string and assigns it to the Status field.
 func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServer) SetStatus(v string) {
 	o.Status = &v
@@ -238,15 +183,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServe
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServer) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServer) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -268,15 +204,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServe
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServer) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.

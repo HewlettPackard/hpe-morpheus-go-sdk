@@ -71,15 +71,6 @@ func (o *GetUser200ResponseUserAccess) GetFeaturesOk() ([]GetUser200ResponseUser
 	return o.Features, true
 }
 
-// IsSetFeatures returns a boolean if a field has been set.
-func (o *GetUser200ResponseUserAccess) IsSetFeatures() bool {
-	if o != nil && !IsNil(o.Features) {
-		return true
-	}
-
-	return false
-}
-
 // SetFeatures gets a reference to the given []GetUser200ResponseUserAccessFeaturesInner and assigns it to the Features field.
 func (o *GetUser200ResponseUserAccess) SetFeatures(v []GetUser200ResponseUserAccessFeaturesInner) {
 	o.Features = v
@@ -101,15 +92,6 @@ func (o *GetUser200ResponseUserAccess) GetZonesOk() ([]GetUser200ResponseUserAcc
 		return nil, false
 	}
 	return o.Zones, true
-}
-
-// IsSetZones returns a boolean if a field has been set.
-func (o *GetUser200ResponseUserAccess) IsSetZones() bool {
-	if o != nil && !IsNil(o.Zones) {
-		return true
-	}
-
-	return false
 }
 
 // SetZones gets a reference to the given []GetUser200ResponseUserAccessZonesInner and assigns it to the Zones field.
@@ -135,15 +117,6 @@ func (o *GetUser200ResponseUserAccess) GetSitesOk() ([]GetUser200ResponseUserAcc
 	return o.Sites, true
 }
 
-// IsSetSites returns a boolean if a field has been set.
-func (o *GetUser200ResponseUserAccess) IsSetSites() bool {
-	if o != nil && !IsNil(o.Sites) {
-		return true
-	}
-
-	return false
-}
-
 // SetSites gets a reference to the given []GetUser200ResponseUserAccessSitesInner and assigns it to the Sites field.
 func (o *GetUser200ResponseUserAccess) SetSites(v []GetUser200ResponseUserAccessSitesInner) {
 	o.Sites = v
@@ -165,15 +138,6 @@ func (o *GetUser200ResponseUserAccess) GetInstanceTypesOk() ([]GetUser200Respons
 		return nil, false
 	}
 	return o.InstanceTypes, true
-}
-
-// IsSetInstanceTypes returns a boolean if a field has been set.
-func (o *GetUser200ResponseUserAccess) IsSetInstanceTypes() bool {
-	if o != nil && !IsNil(o.InstanceTypes) {
-		return true
-	}
-
-	return false
 }
 
 // SetInstanceTypes gets a reference to the given []GetUser200ResponseUserAccessInstanceTypesInner and assigns it to the InstanceTypes field.
@@ -199,15 +163,6 @@ func (o *GetUser200ResponseUserAccess) GetAppTemplatesOk() ([]GetUser200Response
 	return o.AppTemplates, true
 }
 
-// IsSetAppTemplates returns a boolean if a field has been set.
-func (o *GetUser200ResponseUserAccess) IsSetAppTemplates() bool {
-	if o != nil && !IsNil(o.AppTemplates) {
-		return true
-	}
-
-	return false
-}
-
 // SetAppTemplates gets a reference to the given []GetUser200ResponseUserAccessAppTemplatesInner and assigns it to the AppTemplates field.
 func (o *GetUser200ResponseUserAccess) SetAppTemplates(v []GetUser200ResponseUserAccessAppTemplatesInner) {
 	o.AppTemplates = v
@@ -229,15 +184,6 @@ func (o *GetUser200ResponseUserAccess) GetCatalogItemTypesOk() ([]GetUser200Resp
 		return nil, false
 	}
 	return o.CatalogItemTypes, true
-}
-
-// IsSetCatalogItemTypes returns a boolean if a field has been set.
-func (o *GetUser200ResponseUserAccess) IsSetCatalogItemTypes() bool {
-	if o != nil && !IsNil(o.CatalogItemTypes) {
-		return true
-	}
-
-	return false
 }
 
 // SetCatalogItemTypes gets a reference to the given []GetUser200ResponseUserAccessCatalogItemTypesInner and assigns it to the CatalogItemTypes field.
@@ -263,15 +209,6 @@ func (o *GetUser200ResponseUserAccess) GetPersonasOk() ([]GetUser200ResponseUser
 	return o.Personas, true
 }
 
-// IsSetPersonas returns a boolean if a field has been set.
-func (o *GetUser200ResponseUserAccess) IsSetPersonas() bool {
-	if o != nil && !IsNil(o.Personas) {
-		return true
-	}
-
-	return false
-}
-
 // SetPersonas gets a reference to the given []GetUser200ResponseUserAccessPersonasInner and assigns it to the Personas field.
 func (o *GetUser200ResponseUserAccess) SetPersonas(v []GetUser200ResponseUserAccessPersonasInner) {
 	o.Personas = v
@@ -293,15 +230,6 @@ func (o *GetUser200ResponseUserAccess) GetVdiPoolsOk() ([]GetUser200ResponseUser
 		return nil, false
 	}
 	return o.VdiPools, true
-}
-
-// IsSetVdiPools returns a boolean if a field has been set.
-func (o *GetUser200ResponseUserAccess) IsSetVdiPools() bool {
-	if o != nil && !IsNil(o.VdiPools) {
-		return true
-	}
-
-	return false
 }
 
 // SetVdiPools gets a reference to the given []GetUser200ResponseUserAccessVdiPoolsInner and assigns it to the VdiPools field.
@@ -327,15 +255,6 @@ func (o *GetUser200ResponseUserAccess) GetReportTypesOk() ([]GetUser200ResponseU
 	return o.ReportTypes, true
 }
 
-// IsSetReportTypes returns a boolean if a field has been set.
-func (o *GetUser200ResponseUserAccess) IsSetReportTypes() bool {
-	if o != nil && !IsNil(o.ReportTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetReportTypes gets a reference to the given []GetUser200ResponseUserAccessReportTypesInner and assigns it to the ReportTypes field.
 func (o *GetUser200ResponseUserAccess) SetReportTypes(v []GetUser200ResponseUserAccessReportTypesInner) {
 	o.ReportTypes = v
@@ -359,15 +278,6 @@ func (o *GetUser200ResponseUserAccess) GetTasksOk() ([]GetUser200ResponseUserAcc
 	return o.Tasks, true
 }
 
-// IsSetTasks returns a boolean if a field has been set.
-func (o *GetUser200ResponseUserAccess) IsSetTasks() bool {
-	if o != nil && !IsNil(o.Tasks) {
-		return true
-	}
-
-	return false
-}
-
 // SetTasks gets a reference to the given []GetUser200ResponseUserAccessTasksInner and assigns it to the Tasks field.
 func (o *GetUser200ResponseUserAccess) SetTasks(v []GetUser200ResponseUserAccessTasksInner) {
 	o.Tasks = v
@@ -389,15 +299,6 @@ func (o *GetUser200ResponseUserAccess) GetTaskSetsOk() ([]GetUser200ResponseUser
 		return nil, false
 	}
 	return o.TaskSets, true
-}
-
-// IsSetTaskSets returns a boolean if a field has been set.
-func (o *GetUser200ResponseUserAccess) IsSetTaskSets() bool {
-	if o != nil && !IsNil(o.TaskSets) {
-		return true
-	}
-
-	return false
 }
 
 // SetTaskSets gets a reference to the given []GetUser200ResponseUserAccessTaskSetsInner and assigns it to the TaskSets field.

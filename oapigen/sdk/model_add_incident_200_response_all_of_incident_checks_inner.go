@@ -98,15 +98,6 @@ func (o *AddIncident200ResponseAllOfIncidentChecksInner) GetIdOk() (*int64, bool
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetId(v int64) {
 	o.Id = &v
@@ -128,15 +119,6 @@ func (o *AddIncident200ResponseAllOfIncidentChecksInner) GetAccountOk() (*AddInc
 		return nil, false
 	}
 	return o.Account, true
-}
-
-// IsSetAccount returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccount gets a reference to the given AddIncident200ResponseAllOfIncidentChecksInnerAccount and assigns it to the Account field.
@@ -162,15 +144,6 @@ func (o *AddIncident200ResponseAllOfIncidentChecksInner) GetActiveOk() (*bool, b
 	return o.Active, true
 }
 
-// IsSetActive returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
-}
-
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetActive(v bool) {
 	o.Active = &v
@@ -194,15 +167,6 @@ func (o *AddIncident200ResponseAllOfIncidentChecksInner) GetApiKeyOk() (*string,
 	return o.ApiKey, true
 }
 
-// IsSetApiKey returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) IsSetApiKey() bool {
-	if o != nil && !IsNil(o.ApiKey) {
-		return true
-	}
-
-	return false
-}
-
 // SetApiKey gets a reference to the given string and assigns it to the ApiKey field.
 func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetApiKey(v string) {
 	o.ApiKey = &v
@@ -224,15 +188,6 @@ func (o *AddIncident200ResponseAllOfIncidentChecksInner) GetAvailabilityOk() (*f
 		return nil, false
 	}
 	return o.Availability, true
-}
-
-// IsSetAvailability returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) IsSetAvailability() bool {
-	if o != nil && !IsNil(o.Availability) {
-		return true
-	}
-
-	return false
 }
 
 // SetAvailability gets a reference to the given float32 and assigns it to the Availability field.
@@ -259,28 +214,9 @@ func (o *AddIncident200ResponseAllOfIncidentChecksInner) GetCheckAgentOk() (*str
 	return o.CheckAgent.Get(), o.CheckAgent.IsSet()
 }
 
-// IsSetCheckAgent returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) IsSetCheckAgent() bool {
-	if o != nil && o.CheckAgent.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCheckAgent gets a reference to the given NullableString and assigns it to the CheckAgent field.
 func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetCheckAgent(v string) {
 	o.CheckAgent.Set(&v)
-}
-
-// SetCheckAgentNil sets the value for CheckAgent to be an explicit nil
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetCheckAgentNil() {
-	o.CheckAgent.Set(nil)
-}
-
-// UnsetCheckAgent ensures that no value is present for CheckAgent, not even an explicit nil
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) UnsetCheckAgent() {
-	o.CheckAgent.Unset()
 }
 
 // GetCheckInterval returns the CheckInterval field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -302,28 +238,9 @@ func (o *AddIncident200ResponseAllOfIncidentChecksInner) GetCheckIntervalOk() (*
 	return o.CheckInterval.Get(), o.CheckInterval.IsSet()
 }
 
-// IsSetCheckInterval returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) IsSetCheckInterval() bool {
-	if o != nil && o.CheckInterval.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCheckInterval gets a reference to the given NullableInt64 and assigns it to the CheckInterval field.
 func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetCheckInterval(v int64) {
 	o.CheckInterval.Set(&v)
-}
-
-// SetCheckIntervalNil sets the value for CheckInterval to be an explicit nil
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetCheckIntervalNil() {
-	o.CheckInterval.Set(nil)
-}
-
-// UnsetCheckInterval ensures that no value is present for CheckInterval, not even an explicit nil
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) UnsetCheckInterval() {
-	o.CheckInterval.Unset()
 }
 
 // GetCheckSpec returns the CheckSpec field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -345,28 +262,9 @@ func (o *AddIncident200ResponseAllOfIncidentChecksInner) GetCheckSpecOk() (*stri
 	return o.CheckSpec.Get(), o.CheckSpec.IsSet()
 }
 
-// IsSetCheckSpec returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) IsSetCheckSpec() bool {
-	if o != nil && o.CheckSpec.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCheckSpec gets a reference to the given NullableString and assigns it to the CheckSpec field.
 func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetCheckSpec(v string) {
 	o.CheckSpec.Set(&v)
-}
-
-// SetCheckSpecNil sets the value for CheckSpec to be an explicit nil
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetCheckSpecNil() {
-	o.CheckSpec.Set(nil)
-}
-
-// UnsetCheckSpec ensures that no value is present for CheckSpec, not even an explicit nil
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) UnsetCheckSpec() {
-	o.CheckSpec.Unset()
 }
 
 // GetCheckType returns the CheckType field value if set, zero value otherwise.
@@ -385,15 +283,6 @@ func (o *AddIncident200ResponseAllOfIncidentChecksInner) GetCheckTypeOk() (*AddI
 		return nil, false
 	}
 	return o.CheckType, true
-}
-
-// IsSetCheckType returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) IsSetCheckType() bool {
-	if o != nil && !IsNil(o.CheckType) {
-		return true
-	}
-
-	return false
 }
 
 // SetCheckType gets a reference to the given AddIncident200ResponseAllOfIncidentChecksInnerCheckType and assigns it to the CheckType field.
@@ -419,15 +308,6 @@ func (o *AddIncident200ResponseAllOfIncidentChecksInner) GetConfigOk() (*AddInci
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given AddIncident200ResponseAllOfIncidentChecksInnerConfig and assigns it to the Config field.
 func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetConfig(v AddIncident200ResponseAllOfIncidentChecksInnerConfig) {
 	o.Config = &v
@@ -449,15 +329,6 @@ func (o *AddIncident200ResponseAllOfIncidentChecksInner) GetContainerOk() (*AddI
 		return nil, false
 	}
 	return o.Container, true
-}
-
-// IsSetContainer returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) IsSetContainer() bool {
-	if o != nil && !IsNil(o.Container) {
-		return true
-	}
-
-	return false
 }
 
 // SetContainer gets a reference to the given AddIncident200ResponseAllOfIncidentChecksInnerContainer and assigns it to the Container field.
@@ -483,15 +354,6 @@ func (o *AddIncident200ResponseAllOfIncidentChecksInner) GetCreateIncidentOk() (
 	return o.CreateIncident, true
 }
 
-// IsSetCreateIncident returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) IsSetCreateIncident() bool {
-	if o != nil && !IsNil(o.CreateIncident) {
-		return true
-	}
-
-	return false
-}
-
 // SetCreateIncident gets a reference to the given bool and assigns it to the CreateIncident field.
 func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetCreateIncident(v bool) {
 	o.CreateIncident = &v
@@ -513,15 +375,6 @@ func (o *AddIncident200ResponseAllOfIncidentChecksInner) GetMutedOk() (*bool, bo
 		return nil, false
 	}
 	return o.Muted, true
-}
-
-// IsSetMuted returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) IsSetMuted() bool {
-	if o != nil && !IsNil(o.Muted) {
-		return true
-	}
-
-	return false
 }
 
 // SetMuted gets a reference to the given bool and assigns it to the Muted field.
@@ -547,15 +400,6 @@ func (o *AddIncident200ResponseAllOfIncidentChecksInner) GetCreatedByOk() (*AddI
 	return o.CreatedBy, true
 }
 
-// IsSetCreatedBy returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) IsSetCreatedBy() bool {
-	if o != nil && !IsNil(o.CreatedBy) {
-		return true
-	}
-
-	return false
-}
-
 // SetCreatedBy gets a reference to the given AddIncident200ResponseAllOfIncidentChecksInnerCreatedBy and assigns it to the CreatedBy field.
 func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetCreatedBy(v AddIncident200ResponseAllOfIncidentChecksInnerCreatedBy) {
 	o.CreatedBy = &v
@@ -577,15 +421,6 @@ func (o *AddIncident200ResponseAllOfIncidentChecksInner) GetDateCreatedOk() (*ti
 		return nil, false
 	}
 	return o.DateCreated, true
-}
-
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
@@ -612,28 +447,9 @@ func (o *AddIncident200ResponseAllOfIncidentChecksInner) GetDescriptionOk() (*st
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetEndDate returns the EndDate field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -655,28 +471,9 @@ func (o *AddIncident200ResponseAllOfIncidentChecksInner) GetEndDateOk() (*time.T
 	return o.EndDate.Get(), o.EndDate.IsSet()
 }
 
-// IsSetEndDate returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) IsSetEndDate() bool {
-	if o != nil && o.EndDate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetEndDate gets a reference to the given NullableTime and assigns it to the EndDate field.
 func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetEndDate(v time.Time) {
 	o.EndDate.Set(&v)
-}
-
-// SetEndDateNil sets the value for EndDate to be an explicit nil
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetEndDateNil() {
-	o.EndDate.Set(nil)
-}
-
-// UnsetEndDate ensures that no value is present for EndDate, not even an explicit nil
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) UnsetEndDate() {
-	o.EndDate.Unset()
 }
 
 // GetHealth returns the Health field value if set, zero value otherwise.
@@ -695,15 +492,6 @@ func (o *AddIncident200ResponseAllOfIncidentChecksInner) GetHealthOk() (*int64, 
 		return nil, false
 	}
 	return o.Health, true
-}
-
-// IsSetHealth returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) IsSetHealth() bool {
-	if o != nil && !IsNil(o.Health) {
-		return true
-	}
-
-	return false
 }
 
 // SetHealth gets a reference to the given int64 and assigns it to the Health field.
@@ -727,15 +515,6 @@ func (o *AddIncident200ResponseAllOfIncidentChecksInner) GetInUptimeOk() (*bool,
 		return nil, false
 	}
 	return o.InUptime, true
-}
-
-// IsSetInUptime returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) IsSetInUptime() bool {
-	if o != nil && !IsNil(o.InUptime) {
-		return true
-	}
-
-	return false
 }
 
 // SetInUptime gets a reference to the given bool and assigns it to the InUptime field.
@@ -762,28 +541,9 @@ func (o *AddIncident200ResponseAllOfIncidentChecksInner) GetLastBoxStatsOk() (*s
 	return o.LastBoxStats.Get(), o.LastBoxStats.IsSet()
 }
 
-// IsSetLastBoxStats returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) IsSetLastBoxStats() bool {
-	if o != nil && o.LastBoxStats.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastBoxStats gets a reference to the given NullableString and assigns it to the LastBoxStats field.
 func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetLastBoxStats(v string) {
 	o.LastBoxStats.Set(&v)
-}
-
-// SetLastBoxStatsNil sets the value for LastBoxStats to be an explicit nil
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetLastBoxStatsNil() {
-	o.LastBoxStats.Set(nil)
-}
-
-// UnsetLastBoxStats ensures that no value is present for LastBoxStats, not even an explicit nil
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) UnsetLastBoxStats() {
-	o.LastBoxStats.Unset()
 }
 
 // GetLastCheckStatus returns the LastCheckStatus field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -805,28 +565,9 @@ func (o *AddIncident200ResponseAllOfIncidentChecksInner) GetLastCheckStatusOk() 
 	return o.LastCheckStatus.Get(), o.LastCheckStatus.IsSet()
 }
 
-// IsSetLastCheckStatus returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) IsSetLastCheckStatus() bool {
-	if o != nil && o.LastCheckStatus.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastCheckStatus gets a reference to the given NullableString and assigns it to the LastCheckStatus field.
 func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetLastCheckStatus(v string) {
 	o.LastCheckStatus.Set(&v)
-}
-
-// SetLastCheckStatusNil sets the value for LastCheckStatus to be an explicit nil
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetLastCheckStatusNil() {
-	o.LastCheckStatus.Set(nil)
-}
-
-// UnsetLastCheckStatus ensures that no value is present for LastCheckStatus, not even an explicit nil
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) UnsetLastCheckStatus() {
-	o.LastCheckStatus.Unset()
 }
 
 // GetLastError returns the LastError field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -848,28 +589,9 @@ func (o *AddIncident200ResponseAllOfIncidentChecksInner) GetLastErrorOk() (*stri
 	return o.LastError.Get(), o.LastError.IsSet()
 }
 
-// IsSetLastError returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) IsSetLastError() bool {
-	if o != nil && o.LastError.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastError gets a reference to the given NullableString and assigns it to the LastError field.
 func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetLastError(v string) {
 	o.LastError.Set(&v)
-}
-
-// SetLastErrorNil sets the value for LastError to be an explicit nil
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetLastErrorNil() {
-	o.LastError.Set(nil)
-}
-
-// UnsetLastError ensures that no value is present for LastError, not even an explicit nil
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) UnsetLastError() {
-	o.LastError.Unset()
 }
 
 // GetLastErrorDate returns the LastErrorDate field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -891,28 +613,9 @@ func (o *AddIncident200ResponseAllOfIncidentChecksInner) GetLastErrorDateOk() (*
 	return o.LastErrorDate.Get(), o.LastErrorDate.IsSet()
 }
 
-// IsSetLastErrorDate returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) IsSetLastErrorDate() bool {
-	if o != nil && o.LastErrorDate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastErrorDate gets a reference to the given NullableTime and assigns it to the LastErrorDate field.
 func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetLastErrorDate(v time.Time) {
 	o.LastErrorDate.Set(&v)
-}
-
-// SetLastErrorDateNil sets the value for LastErrorDate to be an explicit nil
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetLastErrorDateNil() {
-	o.LastErrorDate.Set(nil)
-}
-
-// UnsetLastErrorDate ensures that no value is present for LastErrorDate, not even an explicit nil
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) UnsetLastErrorDate() {
-	o.LastErrorDate.Unset()
 }
 
 // GetLastMessage returns the LastMessage field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -934,28 +637,9 @@ func (o *AddIncident200ResponseAllOfIncidentChecksInner) GetLastMessageOk() (*st
 	return o.LastMessage.Get(), o.LastMessage.IsSet()
 }
 
-// IsSetLastMessage returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) IsSetLastMessage() bool {
-	if o != nil && o.LastMessage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastMessage gets a reference to the given NullableString and assigns it to the LastMessage field.
 func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetLastMessage(v string) {
 	o.LastMessage.Set(&v)
-}
-
-// SetLastMessageNil sets the value for LastMessage to be an explicit nil
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetLastMessageNil() {
-	o.LastMessage.Set(nil)
-}
-
-// UnsetLastMessage ensures that no value is present for LastMessage, not even an explicit nil
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) UnsetLastMessage() {
-	o.LastMessage.Unset()
 }
 
 // GetLastMetric returns the LastMetric field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -977,28 +661,9 @@ func (o *AddIncident200ResponseAllOfIncidentChecksInner) GetLastMetricOk() (*str
 	return o.LastMetric.Get(), o.LastMetric.IsSet()
 }
 
-// IsSetLastMetric returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) IsSetLastMetric() bool {
-	if o != nil && o.LastMetric.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastMetric gets a reference to the given NullableString and assigns it to the LastMetric field.
 func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetLastMetric(v string) {
 	o.LastMetric.Set(&v)
-}
-
-// SetLastMetricNil sets the value for LastMetric to be an explicit nil
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetLastMetricNil() {
-	o.LastMetric.Set(nil)
-}
-
-// UnsetLastMetric ensures that no value is present for LastMetric, not even an explicit nil
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) UnsetLastMetric() {
-	o.LastMetric.Unset()
 }
 
 // GetLastRunDate returns the LastRunDate field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1020,28 +685,9 @@ func (o *AddIncident200ResponseAllOfIncidentChecksInner) GetLastRunDateOk() (*ti
 	return o.LastRunDate.Get(), o.LastRunDate.IsSet()
 }
 
-// IsSetLastRunDate returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) IsSetLastRunDate() bool {
-	if o != nil && o.LastRunDate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastRunDate gets a reference to the given NullableTime and assigns it to the LastRunDate field.
 func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetLastRunDate(v time.Time) {
 	o.LastRunDate.Set(&v)
-}
-
-// SetLastRunDateNil sets the value for LastRunDate to be an explicit nil
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetLastRunDateNil() {
-	o.LastRunDate.Set(nil)
-}
-
-// UnsetLastRunDate ensures that no value is present for LastRunDate, not even an explicit nil
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) UnsetLastRunDate() {
-	o.LastRunDate.Unset()
 }
 
 // GetLastStats returns the LastStats field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1063,28 +709,9 @@ func (o *AddIncident200ResponseAllOfIncidentChecksInner) GetLastStatsOk() (*stri
 	return o.LastStats.Get(), o.LastStats.IsSet()
 }
 
-// IsSetLastStats returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) IsSetLastStats() bool {
-	if o != nil && o.LastStats.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastStats gets a reference to the given NullableString and assigns it to the LastStats field.
 func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetLastStats(v string) {
 	o.LastStats.Set(&v)
-}
-
-// SetLastStatsNil sets the value for LastStats to be an explicit nil
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetLastStatsNil() {
-	o.LastStats.Set(nil)
-}
-
-// UnsetLastStats ensures that no value is present for LastStats, not even an explicit nil
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) UnsetLastStats() {
-	o.LastStats.Unset()
 }
 
 // GetLastSuccessDate returns the LastSuccessDate field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1106,28 +733,9 @@ func (o *AddIncident200ResponseAllOfIncidentChecksInner) GetLastSuccessDateOk() 
 	return o.LastSuccessDate.Get(), o.LastSuccessDate.IsSet()
 }
 
-// IsSetLastSuccessDate returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) IsSetLastSuccessDate() bool {
-	if o != nil && o.LastSuccessDate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastSuccessDate gets a reference to the given NullableTime and assigns it to the LastSuccessDate field.
 func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetLastSuccessDate(v time.Time) {
 	o.LastSuccessDate.Set(&v)
-}
-
-// SetLastSuccessDateNil sets the value for LastSuccessDate to be an explicit nil
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetLastSuccessDateNil() {
-	o.LastSuccessDate.Set(nil)
-}
-
-// UnsetLastSuccessDate ensures that no value is present for LastSuccessDate, not even an explicit nil
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) UnsetLastSuccessDate() {
-	o.LastSuccessDate.Unset()
 }
 
 // GetLastTimer returns the LastTimer field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1149,28 +757,9 @@ func (o *AddIncident200ResponseAllOfIncidentChecksInner) GetLastTimerOk() (*int6
 	return o.LastTimer.Get(), o.LastTimer.IsSet()
 }
 
-// IsSetLastTimer returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) IsSetLastTimer() bool {
-	if o != nil && o.LastTimer.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastTimer gets a reference to the given NullableInt64 and assigns it to the LastTimer field.
 func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetLastTimer(v int64) {
 	o.LastTimer.Set(&v)
-}
-
-// SetLastTimerNil sets the value for LastTimer to be an explicit nil
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetLastTimerNil() {
-	o.LastTimer.Set(nil)
-}
-
-// UnsetLastTimer ensures that no value is present for LastTimer, not even an explicit nil
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) UnsetLastTimer() {
-	o.LastTimer.Unset()
 }
 
 // GetLastUpdated returns the LastUpdated field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1192,28 +781,9 @@ func (o *AddIncident200ResponseAllOfIncidentChecksInner) GetLastUpdatedOk() (*ti
 	return o.LastUpdated.Get(), o.LastUpdated.IsSet()
 }
 
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) IsSetLastUpdated() bool {
-	if o != nil && o.LastUpdated.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastUpdated gets a reference to the given NullableTime and assigns it to the LastUpdated field.
 func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetLastUpdated(v time.Time) {
 	o.LastUpdated.Set(&v)
-}
-
-// SetLastUpdatedNil sets the value for LastUpdated to be an explicit nil
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetLastUpdatedNil() {
-	o.LastUpdated.Set(nil)
-}
-
-// UnsetLastUpdated ensures that no value is present for LastUpdated, not even an explicit nil
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) UnsetLastUpdated() {
-	o.LastUpdated.Unset()
 }
 
 // GetLastWarningDate returns the LastWarningDate field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1235,28 +805,9 @@ func (o *AddIncident200ResponseAllOfIncidentChecksInner) GetLastWarningDateOk() 
 	return o.LastWarningDate.Get(), o.LastWarningDate.IsSet()
 }
 
-// IsSetLastWarningDate returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) IsSetLastWarningDate() bool {
-	if o != nil && o.LastWarningDate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastWarningDate gets a reference to the given NullableTime and assigns it to the LastWarningDate field.
 func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetLastWarningDate(v time.Time) {
 	o.LastWarningDate.Set(&v)
-}
-
-// SetLastWarningDateNil sets the value for LastWarningDate to be an explicit nil
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetLastWarningDateNil() {
-	o.LastWarningDate.Set(nil)
-}
-
-// UnsetLastWarningDate ensures that no value is present for LastWarningDate, not even an explicit nil
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) UnsetLastWarningDate() {
-	o.LastWarningDate.Unset()
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -1275,15 +826,6 @@ func (o *AddIncident200ResponseAllOfIncidentChecksInner) GetNameOk() (*string, b
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -1310,28 +852,9 @@ func (o *AddIncident200ResponseAllOfIncidentChecksInner) GetNextRunDateOk() (*ti
 	return o.NextRunDate.Get(), o.NextRunDate.IsSet()
 }
 
-// IsSetNextRunDate returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) IsSetNextRunDate() bool {
-	if o != nil && o.NextRunDate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNextRunDate gets a reference to the given NullableTime and assigns it to the NextRunDate field.
 func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetNextRunDate(v time.Time) {
 	o.NextRunDate.Set(&v)
-}
-
-// SetNextRunDateNil sets the value for NextRunDate to be an explicit nil
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetNextRunDateNil() {
-	o.NextRunDate.Set(nil)
-}
-
-// UnsetNextRunDate ensures that no value is present for NextRunDate, not even an explicit nil
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) UnsetNextRunDate() {
-	o.NextRunDate.Unset()
 }
 
 // GetOutageTime returns the OutageTime field value if set, zero value otherwise.
@@ -1350,15 +873,6 @@ func (o *AddIncident200ResponseAllOfIncidentChecksInner) GetOutageTimeOk() (*int
 		return nil, false
 	}
 	return o.OutageTime, true
-}
-
-// IsSetOutageTime returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) IsSetOutageTime() bool {
-	if o != nil && !IsNil(o.OutageTime) {
-		return true
-	}
-
-	return false
 }
 
 // SetOutageTime gets a reference to the given int64 and assigns it to the OutageTime field.
@@ -1382,15 +896,6 @@ func (o *AddIncident200ResponseAllOfIncidentChecksInner) GetSeverityOk() (*strin
 		return nil, false
 	}
 	return o.Severity, true
-}
-
-// IsSetSeverity returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) IsSetSeverity() bool {
-	if o != nil && !IsNil(o.Severity) {
-		return true
-	}
-
-	return false
 }
 
 // SetSeverity gets a reference to the given string and assigns it to the Severity field.
@@ -1417,28 +922,9 @@ func (o *AddIncident200ResponseAllOfIncidentChecksInner) GetStartDateOk() (*time
 	return o.StartDate.Get(), o.StartDate.IsSet()
 }
 
-// IsSetStartDate returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) IsSetStartDate() bool {
-	if o != nil && o.StartDate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStartDate gets a reference to the given NullableTime and assigns it to the StartDate field.
 func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetStartDate(v time.Time) {
 	o.StartDate.Set(&v)
-}
-
-// SetStartDateNil sets the value for StartDate to be an explicit nil
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) SetStartDateNil() {
-	o.StartDate.Set(nil)
-}
-
-// UnsetStartDate ensures that no value is present for StartDate, not even an explicit nil
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) UnsetStartDate() {
-	o.StartDate.Unset()
 }
 
 // GetDeleted returns the Deleted field value if set, zero value otherwise.
@@ -1457,15 +943,6 @@ func (o *AddIncident200ResponseAllOfIncidentChecksInner) GetDeletedOk() (*bool, 
 		return nil, false
 	}
 	return o.Deleted, true
-}
-
-// IsSetDeleted returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncidentChecksInner) IsSetDeleted() bool {
-	if o != nil && !IsNil(o.Deleted) {
-		return true
-	}
-
-	return false
 }
 
 // SetDeleted gets a reference to the given bool and assigns it to the Deleted field.

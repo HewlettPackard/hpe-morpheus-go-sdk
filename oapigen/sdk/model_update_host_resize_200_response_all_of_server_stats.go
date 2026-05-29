@@ -78,15 +78,6 @@ func (o *UpdateHostResize200ResponseAllOfServerStats) GetTsOk() (*time.Time, boo
 	return o.Ts, true
 }
 
-// IsSetTs returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerStats) IsSetTs() bool {
-	if o != nil && !IsNil(o.Ts) {
-		return true
-	}
-
-	return false
-}
-
 // SetTs gets a reference to the given time.Time and assigns it to the Ts field.
 func (o *UpdateHostResize200ResponseAllOfServerStats) SetTs(v time.Time) {
 	o.Ts = &v
@@ -108,15 +99,6 @@ func (o *UpdateHostResize200ResponseAllOfServerStats) GetFreeSwapOk() (*int64, b
 		return nil, false
 	}
 	return o.FreeSwap, true
-}
-
-// IsSetFreeSwap returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerStats) IsSetFreeSwap() bool {
-	if o != nil && !IsNil(o.FreeSwap) {
-		return true
-	}
-
-	return false
 }
 
 // SetFreeSwap gets a reference to the given int64 and assigns it to the FreeSwap field.
@@ -142,15 +124,6 @@ func (o *UpdateHostResize200ResponseAllOfServerStats) GetUsedSwapOk() (*int64, b
 	return o.UsedSwap, true
 }
 
-// IsSetUsedSwap returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerStats) IsSetUsedSwap() bool {
-	if o != nil && !IsNil(o.UsedSwap) {
-		return true
-	}
-
-	return false
-}
-
 // SetUsedSwap gets a reference to the given int64 and assigns it to the UsedSwap field.
 func (o *UpdateHostResize200ResponseAllOfServerStats) SetUsedSwap(v int64) {
 	o.UsedSwap = &v
@@ -172,15 +145,6 @@ func (o *UpdateHostResize200ResponseAllOfServerStats) GetCpuIdleTimeOk() (*int64
 		return nil, false
 	}
 	return o.CpuIdleTime, true
-}
-
-// IsSetCpuIdleTime returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerStats) IsSetCpuIdleTime() bool {
-	if o != nil && !IsNil(o.CpuIdleTime) {
-		return true
-	}
-
-	return false
 }
 
 // SetCpuIdleTime gets a reference to the given int64 and assigns it to the CpuIdleTime field.
@@ -206,15 +170,6 @@ func (o *UpdateHostResize200ResponseAllOfServerStats) GetCpuSystemTimeOk() (*int
 	return o.CpuSystemTime, true
 }
 
-// IsSetCpuSystemTime returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerStats) IsSetCpuSystemTime() bool {
-	if o != nil && !IsNil(o.CpuSystemTime) {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuSystemTime gets a reference to the given int64 and assigns it to the CpuSystemTime field.
 func (o *UpdateHostResize200ResponseAllOfServerStats) SetCpuSystemTime(v int64) {
 	o.CpuSystemTime = &v
@@ -236,15 +191,6 @@ func (o *UpdateHostResize200ResponseAllOfServerStats) GetCpuUserTimeOk() (*int64
 		return nil, false
 	}
 	return o.CpuUserTime, true
-}
-
-// IsSetCpuUserTime returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerStats) IsSetCpuUserTime() bool {
-	if o != nil && !IsNil(o.CpuUserTime) {
-		return true
-	}
-
-	return false
 }
 
 // SetCpuUserTime gets a reference to the given int64 and assigns it to the CpuUserTime field.
@@ -270,15 +216,6 @@ func (o *UpdateHostResize200ResponseAllOfServerStats) GetCpuTotalTimeOk() (*int6
 	return o.CpuTotalTime, true
 }
 
-// IsSetCpuTotalTime returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerStats) IsSetCpuTotalTime() bool {
-	if o != nil && !IsNil(o.CpuTotalTime) {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuTotalTime gets a reference to the given int64 and assigns it to the CpuTotalTime field.
 func (o *UpdateHostResize200ResponseAllOfServerStats) SetCpuTotalTime(v int64) {
 	o.CpuTotalTime = &v
@@ -300,15 +237,6 @@ func (o *UpdateHostResize200ResponseAllOfServerStats) GetMaxMemoryOk() (*int64, 
 		return nil, false
 	}
 	return o.MaxMemory, true
-}
-
-// IsSetMaxMemory returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerStats) IsSetMaxMemory() bool {
-	if o != nil && !IsNil(o.MaxMemory) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxMemory gets a reference to the given int64 and assigns it to the MaxMemory field.
@@ -334,15 +262,6 @@ func (o *UpdateHostResize200ResponseAllOfServerStats) GetUsedMemoryOk() (*int64,
 	return o.UsedMemory, true
 }
 
-// IsSetUsedMemory returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerStats) IsSetUsedMemory() bool {
-	if o != nil && !IsNil(o.UsedMemory) {
-		return true
-	}
-
-	return false
-}
-
 // SetUsedMemory gets a reference to the given int64 and assigns it to the UsedMemory field.
 func (o *UpdateHostResize200ResponseAllOfServerStats) SetUsedMemory(v int64) {
 	o.UsedMemory = &v
@@ -364,15 +283,6 @@ func (o *UpdateHostResize200ResponseAllOfServerStats) GetMaxStorageOk() (*int64,
 		return nil, false
 	}
 	return o.MaxStorage, true
-}
-
-// IsSetMaxStorage returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerStats) IsSetMaxStorage() bool {
-	if o != nil && !IsNil(o.MaxStorage) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxStorage gets a reference to the given int64 and assigns it to the MaxStorage field.
@@ -398,15 +308,6 @@ func (o *UpdateHostResize200ResponseAllOfServerStats) GetUsedStorageOk() (*int64
 	return o.UsedStorage, true
 }
 
-// IsSetUsedStorage returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerStats) IsSetUsedStorage() bool {
-	if o != nil && !IsNil(o.UsedStorage) {
-		return true
-	}
-
-	return false
-}
-
 // SetUsedStorage gets a reference to the given int64 and assigns it to the UsedStorage field.
 func (o *UpdateHostResize200ResponseAllOfServerStats) SetUsedStorage(v int64) {
 	o.UsedStorage = &v
@@ -428,15 +329,6 @@ func (o *UpdateHostResize200ResponseAllOfServerStats) GetReservedStorageOk() (*i
 		return nil, false
 	}
 	return o.ReservedStorage, true
-}
-
-// IsSetReservedStorage returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerStats) IsSetReservedStorage() bool {
-	if o != nil && !IsNil(o.ReservedStorage) {
-		return true
-	}
-
-	return false
 }
 
 // SetReservedStorage gets a reference to the given int64 and assigns it to the ReservedStorage field.
@@ -462,15 +354,6 @@ func (o *UpdateHostResize200ResponseAllOfServerStats) GetCpuUsageOk() (*float32,
 	return o.CpuUsage, true
 }
 
-// IsSetCpuUsage returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerStats) IsSetCpuUsage() bool {
-	if o != nil && !IsNil(o.CpuUsage) {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuUsage gets a reference to the given float32 and assigns it to the CpuUsage field.
 func (o *UpdateHostResize200ResponseAllOfServerStats) SetCpuUsage(v float32) {
 	o.CpuUsage = &v
@@ -492,15 +375,6 @@ func (o *UpdateHostResize200ResponseAllOfServerStats) GetFreeMemoryOk() (*int64,
 		return nil, false
 	}
 	return o.FreeMemory, true
-}
-
-// IsSetFreeMemory returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerStats) IsSetFreeMemory() bool {
-	if o != nil && !IsNil(o.FreeMemory) {
-		return true
-	}
-
-	return false
 }
 
 // SetFreeMemory gets a reference to the given int64 and assigns it to the FreeMemory field.
@@ -526,15 +400,6 @@ func (o *UpdateHostResize200ResponseAllOfServerStats) GetNetTxUsageOk() (*int64,
 	return o.NetTxUsage, true
 }
 
-// IsSetNetTxUsage returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerStats) IsSetNetTxUsage() bool {
-	if o != nil && !IsNil(o.NetTxUsage) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetTxUsage gets a reference to the given int64 and assigns it to the NetTxUsage field.
 func (o *UpdateHostResize200ResponseAllOfServerStats) SetNetTxUsage(v int64) {
 	o.NetTxUsage = &v
@@ -558,15 +423,6 @@ func (o *UpdateHostResize200ResponseAllOfServerStats) GetNetRxUsageOk() (*int64,
 	return o.NetRxUsage, true
 }
 
-// IsSetNetRxUsage returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerStats) IsSetNetRxUsage() bool {
-	if o != nil && !IsNil(o.NetRxUsage) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetRxUsage gets a reference to the given int64 and assigns it to the NetRxUsage field.
 func (o *UpdateHostResize200ResponseAllOfServerStats) SetNetRxUsage(v int64) {
 	o.NetRxUsage = &v
@@ -588,15 +444,6 @@ func (o *UpdateHostResize200ResponseAllOfServerStats) GetNetworkBandwidthOk() (*
 		return nil, false
 	}
 	return o.NetworkBandwidth, true
-}
-
-// IsSetNetworkBandwidth returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerStats) IsSetNetworkBandwidth() bool {
-	if o != nil && !IsNil(o.NetworkBandwidth) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkBandwidth gets a reference to the given int64 and assigns it to the NetworkBandwidth field.

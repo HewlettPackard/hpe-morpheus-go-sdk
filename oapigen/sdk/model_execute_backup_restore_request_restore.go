@@ -122,15 +122,6 @@ func (o *ExecuteBackupRestoreRequestRestore) GetInstanceIdOk() (*int64, bool) {
 	return o.InstanceId, true
 }
 
-// IsSetInstanceId returns a boolean if a field has been set.
-func (o *ExecuteBackupRestoreRequestRestore) IsSetInstanceId() bool {
-	if o != nil && !IsNil(o.InstanceId) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstanceId gets a reference to the given int64 and assigns it to the InstanceId field.
 func (o *ExecuteBackupRestoreRequestRestore) SetInstanceId(v int64) {
 	o.InstanceId = &v
@@ -152,15 +143,6 @@ func (o *ExecuteBackupRestoreRequestRestore) GetSiteIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.SiteId, true
-}
-
-// IsSetSiteId returns a boolean if a field has been set.
-func (o *ExecuteBackupRestoreRequestRestore) IsSetSiteId() bool {
-	if o != nil && !IsNil(o.SiteId) {
-		return true
-	}
-
-	return false
 }
 
 // SetSiteId gets a reference to the given int64 and assigns it to the SiteId field.
@@ -186,15 +168,6 @@ func (o *ExecuteBackupRestoreRequestRestore) GetConfigOk() (map[string]interface
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *ExecuteBackupRestoreRequestRestore) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
 func (o *ExecuteBackupRestoreRequestRestore) SetConfig(v map[string]interface{}) {
 	o.Config = v
@@ -216,15 +189,6 @@ func (o *ExecuteBackupRestoreRequestRestore) GetInstanceConfigOk() (map[string]i
 		return map[string]interface{}{}, false
 	}
 	return o.InstanceConfig, true
-}
-
-// IsSetInstanceConfig returns a boolean if a field has been set.
-func (o *ExecuteBackupRestoreRequestRestore) IsSetInstanceConfig() bool {
-	if o != nil && !IsNil(o.InstanceConfig) {
-		return true
-	}
-
-	return false
 }
 
 // SetInstanceConfig gets a reference to the given map[string]interface{} and assigns it to the InstanceConfig field.

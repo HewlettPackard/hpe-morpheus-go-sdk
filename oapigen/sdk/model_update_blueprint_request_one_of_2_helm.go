@@ -88,15 +88,6 @@ func (o *UpdateBlueprintRequestOneOf2Helm) GetGitOk() (*UpdateBlueprintRequestOn
 	return o.Git, true
 }
 
-// IsSetGit returns a boolean if a field has been set.
-func (o *UpdateBlueprintRequestOneOf2Helm) IsSetGit() bool {
-	if o != nil && !IsNil(o.Git) {
-		return true
-	}
-
-	return false
-}
-
 // SetGit gets a reference to the given UpdateBlueprintRequestOneOf2HelmGit and assigns it to the Git field.
 func (o *UpdateBlueprintRequestOneOf2Helm) SetGit(v UpdateBlueprintRequestOneOf2HelmGit) {
 	o.Git = &v

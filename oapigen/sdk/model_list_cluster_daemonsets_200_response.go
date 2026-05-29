@@ -62,15 +62,6 @@ func (o *ListClusterDaemonsets200Response) GetDaemonsetsOk() ([]ListClusterDaemo
 	return o.Daemonsets, true
 }
 
-// IsSetDaemonsets returns a boolean if a field has been set.
-func (o *ListClusterDaemonsets200Response) IsSetDaemonsets() bool {
-	if o != nil && !IsNil(o.Daemonsets) {
-		return true
-	}
-
-	return false
-}
-
 // SetDaemonsets gets a reference to the given []ListClusterDaemonsets200ResponseAllOfDaemonsetsInner and assigns it to the Daemonsets field.
 func (o *ListClusterDaemonsets200Response) SetDaemonsets(v []ListClusterDaemonsets200ResponseAllOfDaemonsetsInner) {
 	o.Daemonsets = v
@@ -92,15 +83,6 @@ func (o *ListClusterDaemonsets200Response) GetMetaOk() (*ListApprovals200Respons
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListClusterDaemonsets200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

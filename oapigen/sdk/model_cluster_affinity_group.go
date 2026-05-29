@@ -80,15 +80,6 @@ func (o *ClusterAffinityGroup) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ClusterAffinityGroup) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ClusterAffinityGroup) SetId(v int64) {
 	o.Id = &v
@@ -110,15 +101,6 @@ func (o *ClusterAffinityGroup) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ClusterAffinityGroup) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -144,15 +126,6 @@ func (o *ClusterAffinityGroup) GetAffinityTypeOk() (*string, bool) {
 	return o.AffinityType, true
 }
 
-// IsSetAffinityType returns a boolean if a field has been set.
-func (o *ClusterAffinityGroup) IsSetAffinityType() bool {
-	if o != nil && !IsNil(o.AffinityType) {
-		return true
-	}
-
-	return false
-}
-
 // SetAffinityType gets a reference to the given string and assigns it to the AffinityType field.
 func (o *ClusterAffinityGroup) SetAffinityType(v string) {
 	o.AffinityType = &v
@@ -174,15 +147,6 @@ func (o *ClusterAffinityGroup) GetSourceOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Source, true
-}
-
-// IsSetSource returns a boolean if a field has been set.
-func (o *ClusterAffinityGroup) IsSetSource() bool {
-	if o != nil && !IsNil(o.Source) {
-		return true
-	}
-
-	return false
 }
 
 // SetSource gets a reference to the given string and assigns it to the Source field.
@@ -208,15 +172,6 @@ func (o *ClusterAffinityGroup) GetRefTypeOk() (*string, bool) {
 	return o.RefType, true
 }
 
-// IsSetRefType returns a boolean if a field has been set.
-func (o *ClusterAffinityGroup) IsSetRefType() bool {
-	if o != nil && !IsNil(o.RefType) {
-		return true
-	}
-
-	return false
-}
-
 // SetRefType gets a reference to the given string and assigns it to the RefType field.
 func (o *ClusterAffinityGroup) SetRefType(v string) {
 	o.RefType = &v
@@ -238,15 +193,6 @@ func (o *ClusterAffinityGroup) GetRefIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.RefId, true
-}
-
-// IsSetRefId returns a boolean if a field has been set.
-func (o *ClusterAffinityGroup) IsSetRefId() bool {
-	if o != nil && !IsNil(o.RefId) {
-		return true
-	}
-
-	return false
 }
 
 // SetRefId gets a reference to the given int64 and assigns it to the RefId field.
@@ -272,15 +218,6 @@ func (o *ClusterAffinityGroup) GetActiveOk() (*bool, bool) {
 	return o.Active, true
 }
 
-// IsSetActive returns a boolean if a field has been set.
-func (o *ClusterAffinityGroup) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
-}
-
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *ClusterAffinityGroup) SetActive(v bool) {
 	o.Active = &v
@@ -302,15 +239,6 @@ func (o *ClusterAffinityGroup) GetPoolOk() (*SaveClusterAffinityGroup200Response
 		return nil, false
 	}
 	return o.Pool, true
-}
-
-// IsSetPool returns a boolean if a field has been set.
-func (o *ClusterAffinityGroup) IsSetPool() bool {
-	if o != nil && !IsNil(o.Pool) {
-		return true
-	}
-
-	return false
 }
 
 // SetPool gets a reference to the given SaveClusterAffinityGroup200ResponseAllOfAffinityGroupPool and assigns it to the Pool field.
@@ -336,15 +264,6 @@ func (o *ClusterAffinityGroup) GetServersOk() ([]SaveClusterAffinityGroup200Resp
 	return o.Servers, true
 }
 
-// IsSetServers returns a boolean if a field has been set.
-func (o *ClusterAffinityGroup) IsSetServers() bool {
-	if o != nil && !IsNil(o.Servers) {
-		return true
-	}
-
-	return false
-}
-
 // SetServers gets a reference to the given []SaveClusterAffinityGroup200ResponseAllOfAffinityGroupServersInner and assigns it to the Servers field.
 func (o *ClusterAffinityGroup) SetServers(v []SaveClusterAffinityGroup200ResponseAllOfAffinityGroupServersInner) {
 	o.Servers = v
@@ -366,15 +285,6 @@ func (o *ClusterAffinityGroup) GetVisibilityOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *ClusterAffinityGroup) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -400,15 +310,6 @@ func (o *ClusterAffinityGroup) GetTenantsOk() ([]SaveClusterAffinityGroup200Resp
 	return o.Tenants, true
 }
 
-// IsSetTenants returns a boolean if a field has been set.
-func (o *ClusterAffinityGroup) IsSetTenants() bool {
-	if o != nil && !IsNil(o.Tenants) {
-		return true
-	}
-
-	return false
-}
-
 // SetTenants gets a reference to the given []SaveClusterAffinityGroup200ResponseAllOfAffinityGroupTenantsInner and assigns it to the Tenants field.
 func (o *ClusterAffinityGroup) SetTenants(v []SaveClusterAffinityGroup200ResponseAllOfAffinityGroupTenantsInner) {
 	o.Tenants = v
@@ -430,15 +331,6 @@ func (o *ClusterAffinityGroup) GetResourcePermissionsOk() (*SaveClusterAffinityG
 		return nil, false
 	}
 	return o.ResourcePermissions, true
-}
-
-// IsSetResourcePermissions returns a boolean if a field has been set.
-func (o *ClusterAffinityGroup) IsSetResourcePermissions() bool {
-	if o != nil && !IsNil(o.ResourcePermissions) {
-		return true
-	}
-
-	return false
 }
 
 // SetResourcePermissions gets a reference to the given SaveClusterAffinityGroup200ResponseAllOfAffinityGroupResourcePermissions and assigns it to the ResourcePermissions field.

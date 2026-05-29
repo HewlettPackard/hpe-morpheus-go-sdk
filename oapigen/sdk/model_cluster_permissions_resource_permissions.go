@@ -68,15 +68,6 @@ func (o *ClusterPermissionsResourcePermissions) GetDefaultStoreOk() (*bool, bool
 	return o.DefaultStore, true
 }
 
-// IsSetDefaultStore returns a boolean if a field has been set.
-func (o *ClusterPermissionsResourcePermissions) IsSetDefaultStore() bool {
-	if o != nil && !IsNil(o.DefaultStore) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultStore gets a reference to the given bool and assigns it to the DefaultStore field.
 func (o *ClusterPermissionsResourcePermissions) SetDefaultStore(v bool) {
 	o.DefaultStore = &v
@@ -98,15 +89,6 @@ func (o *ClusterPermissionsResourcePermissions) GetAllPlansOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.AllPlans, true
-}
-
-// IsSetAllPlans returns a boolean if a field has been set.
-func (o *ClusterPermissionsResourcePermissions) IsSetAllPlans() bool {
-	if o != nil && !IsNil(o.AllPlans) {
-		return true
-	}
-
-	return false
 }
 
 // SetAllPlans gets a reference to the given bool and assigns it to the AllPlans field.
@@ -132,15 +114,6 @@ func (o *ClusterPermissionsResourcePermissions) GetDefaultTargetOk() (*bool, boo
 	return o.DefaultTarget, true
 }
 
-// IsSetDefaultTarget returns a boolean if a field has been set.
-func (o *ClusterPermissionsResourcePermissions) IsSetDefaultTarget() bool {
-	if o != nil && !IsNil(o.DefaultTarget) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultTarget gets a reference to the given bool and assigns it to the DefaultTarget field.
 func (o *ClusterPermissionsResourcePermissions) SetDefaultTarget(v bool) {
 	o.DefaultTarget = &v
@@ -162,15 +135,6 @@ func (o *ClusterPermissionsResourcePermissions) GetCanManageOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.CanManage, true
-}
-
-// IsSetCanManage returns a boolean if a field has been set.
-func (o *ClusterPermissionsResourcePermissions) IsSetCanManage() bool {
-	if o != nil && !IsNil(o.CanManage) {
-		return true
-	}
-
-	return false
 }
 
 // SetCanManage gets a reference to the given bool and assigns it to the CanManage field.
@@ -196,15 +160,6 @@ func (o *ClusterPermissionsResourcePermissions) GetAllOk() (*bool, bool) {
 	return o.All, true
 }
 
-// IsSetAll returns a boolean if a field has been set.
-func (o *ClusterPermissionsResourcePermissions) IsSetAll() bool {
-	if o != nil && !IsNil(o.All) {
-		return true
-	}
-
-	return false
-}
-
 // SetAll gets a reference to the given bool and assigns it to the All field.
 func (o *ClusterPermissionsResourcePermissions) SetAll(v bool) {
 	o.All = &v
@@ -226,15 +181,6 @@ func (o *ClusterPermissionsResourcePermissions) GetAccountOk() (*ClusterPermissi
 		return nil, false
 	}
 	return o.Account, true
-}
-
-// IsSetAccount returns a boolean if a field has been set.
-func (o *ClusterPermissionsResourcePermissions) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccount gets a reference to the given ClusterPermissionsResourcePermissionsAccount and assigns it to the Account field.
@@ -260,15 +206,6 @@ func (o *ClusterPermissionsResourcePermissions) GetSitesOk() ([]map[string]inter
 	return o.Sites, true
 }
 
-// IsSetSites returns a boolean if a field has been set.
-func (o *ClusterPermissionsResourcePermissions) IsSetSites() bool {
-	if o != nil && !IsNil(o.Sites) {
-		return true
-	}
-
-	return false
-}
-
 // SetSites gets a reference to the given []map[string]interface{} and assigns it to the Sites field.
 func (o *ClusterPermissionsResourcePermissions) SetSites(v []map[string]interface{}) {
 	o.Sites = v
@@ -290,15 +227,6 @@ func (o *ClusterPermissionsResourcePermissions) GetPlansOk() ([]map[string]inter
 		return nil, false
 	}
 	return o.Plans, true
-}
-
-// IsSetPlans returns a boolean if a field has been set.
-func (o *ClusterPermissionsResourcePermissions) IsSetPlans() bool {
-	if o != nil && !IsNil(o.Plans) {
-		return true
-	}
-
-	return false
 }
 
 // SetPlans gets a reference to the given []map[string]interface{} and assigns it to the Plans field.

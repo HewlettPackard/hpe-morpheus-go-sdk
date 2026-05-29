@@ -87,15 +87,6 @@ func (o *UserCreationPolicyTypeConfiguration7) GetCreateUserOk() (*bool, bool) {
 	return o.CreateUser, true
 }
 
-// IsSetCreateUser returns a boolean if a field has been set.
-func (o *UserCreationPolicyTypeConfiguration7) IsSetCreateUser() bool {
-	if o != nil && !IsNil(o.CreateUser) {
-		return true
-	}
-
-	return false
-}
-
 // SetCreateUser gets a reference to the given bool and assigns it to the CreateUser field.
 func (o *UserCreationPolicyTypeConfiguration7) SetCreateUser(v bool) {
 	o.CreateUser = &v

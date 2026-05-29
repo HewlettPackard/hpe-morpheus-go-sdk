@@ -63,15 +63,6 @@ func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions) GetResou
 	return o.ResourcePool, true
 }
 
-// IsSetResourcePool returns a boolean if a field has been set.
-func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions) IsSetResourcePool() bool {
-	if o != nil && !IsNil(o.ResourcePool) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourcePool gets a reference to the given ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePool and assigns it to the ResourcePool field.
 func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions) SetResourcePool(v ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePool) {
 	o.ResourcePool = &v
@@ -95,15 +86,6 @@ func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions) GetResou
 	return o.ResourcePermissions, true
 }
 
-// IsSetResourcePermissions returns a boolean if a field has been set.
-func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions) IsSetResourcePermissions() bool {
-	if o != nil && !IsNil(o.ResourcePermissions) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourcePermissions gets a reference to the given ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePermissions and assigns it to the ResourcePermissions field.
 func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions) SetResourcePermissions(v ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePermissions) {
 	o.ResourcePermissions = &v
@@ -125,15 +107,6 @@ func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions) GetTenan
 		return nil, false
 	}
 	return o.TenantPermissions, true
-}
-
-// IsSetTenantPermissions returns a boolean if a field has been set.
-func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions) IsSetTenantPermissions() bool {
-	if o != nil && !IsNil(o.TenantPermissions) {
-		return true
-	}
-
-	return false
 }
 
 // SetTenantPermissions gets a reference to the given ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsTenantPermissions and assigns it to the TenantPermissions field.

@@ -63,15 +63,6 @@ func (o *ListIncidents200Response) GetIncidentsOk() ([]ListIncidents200ResponseA
 	return o.Incidents, true
 }
 
-// IsSetIncidents returns a boolean if a field has been set.
-func (o *ListIncidents200Response) IsSetIncidents() bool {
-	if o != nil && !IsNil(o.Incidents) {
-		return true
-	}
-
-	return false
-}
-
 // SetIncidents gets a reference to the given []ListIncidents200ResponseAllOfIncidentsInner and assigns it to the Incidents field.
 func (o *ListIncidents200Response) SetIncidents(v []ListIncidents200ResponseAllOfIncidentsInner) {
 	o.Incidents = v
@@ -95,15 +86,6 @@ func (o *ListIncidents200Response) GetIssuesOk() ([]ListIncidents200ResponseAllO
 	return o.Issues, true
 }
 
-// IsSetIssues returns a boolean if a field has been set.
-func (o *ListIncidents200Response) IsSetIssues() bool {
-	if o != nil && !IsNil(o.Issues) {
-		return true
-	}
-
-	return false
-}
-
 // SetIssues gets a reference to the given []ListIncidents200ResponseAllOfIssuesInner and assigns it to the Issues field.
 func (o *ListIncidents200Response) SetIssues(v []ListIncidents200ResponseAllOfIssuesInner) {
 	o.Issues = v
@@ -125,15 +107,6 @@ func (o *ListIncidents200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMe
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListIncidents200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

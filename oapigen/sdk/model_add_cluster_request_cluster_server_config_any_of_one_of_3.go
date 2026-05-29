@@ -70,15 +70,6 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf3) GetGoogleZoneIdOk() (*
 	return o.GoogleZoneId, true
 }
 
-// IsSetGoogleZoneId returns a boolean if a field has been set.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf3) IsSetGoogleZoneId() bool {
-	if o != nil && !IsNil(o.GoogleZoneId) {
-		return true
-	}
-
-	return false
-}
-
 // SetGoogleZoneId gets a reference to the given int64 and assigns it to the GoogleZoneId field.
 func (o *AddClusterRequestClusterServerConfigAnyOfOneOf3) SetGoogleZoneId(v int64) {
 	o.GoogleZoneId = &v
@@ -100,15 +91,6 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf3) GetWorkerOk() (*AddClu
 		return nil, false
 	}
 	return o.Worker, true
-}
-
-// IsSetWorker returns a boolean if a field has been set.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf3) IsSetWorker() bool {
-	if o != nil && !IsNil(o.Worker) {
-		return true
-	}
-
-	return false
 }
 
 // SetWorker gets a reference to the given AddClusterRequestClusterServerConfigAnyOfOneOf3Worker and assigns it to the Worker field.
@@ -134,15 +116,6 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf3) GetChannelOk() (*strin
 	return o.Channel, true
 }
 
-// IsSetChannel returns a boolean if a field has been set.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf3) IsSetChannel() bool {
-	if o != nil && !IsNil(o.Channel) {
-		return true
-	}
-
-	return false
-}
-
 // SetChannel gets a reference to the given string and assigns it to the Channel field.
 func (o *AddClusterRequestClusterServerConfigAnyOfOneOf3) SetChannel(v string) {
 	o.Channel = &v
@@ -164,15 +137,6 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf3) GetControlPlaneVersion
 		return nil, false
 	}
 	return o.ControlPlaneVersion, true
-}
-
-// IsSetControlPlaneVersion returns a boolean if a field has been set.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf3) IsSetControlPlaneVersion() bool {
-	if o != nil && !IsNil(o.ControlPlaneVersion) {
-		return true
-	}
-
-	return false
 }
 
 // SetControlPlaneVersion gets a reference to the given string and assigns it to the ControlPlaneVersion field.
@@ -198,15 +162,6 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf3) GetNodeCountOk() (*int
 	return o.NodeCount, true
 }
 
-// IsSetNodeCount returns a boolean if a field has been set.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf3) IsSetNodeCount() bool {
-	if o != nil && !IsNil(o.NodeCount) {
-		return true
-	}
-
-	return false
-}
-
 // SetNodeCount gets a reference to the given int64 and assigns it to the NodeCount field.
 func (o *AddClusterRequestClusterServerConfigAnyOfOneOf3) SetNodeCount(v int64) {
 	o.NodeCount = &v
@@ -228,15 +183,6 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf3) GetCreateUserOk() (*bo
 		return nil, false
 	}
 	return o.CreateUser, true
-}
-
-// IsSetCreateUser returns a boolean if a field has been set.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf3) IsSetCreateUser() bool {
-	if o != nil && !IsNil(o.CreateUser) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreateUser gets a reference to the given bool and assigns it to the CreateUser field.
@@ -263,28 +209,9 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf3) GetDefaultRepoAccountO
 	return o.DefaultRepoAccount.Get(), o.DefaultRepoAccount.IsSet()
 }
 
-// IsSetDefaultRepoAccount returns a boolean if a field has been set.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf3) IsSetDefaultRepoAccount() bool {
-	if o != nil && o.DefaultRepoAccount.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultRepoAccount gets a reference to the given NullableInt64 and assigns it to the DefaultRepoAccount field.
 func (o *AddClusterRequestClusterServerConfigAnyOfOneOf3) SetDefaultRepoAccount(v int64) {
 	o.DefaultRepoAccount.Set(&v)
-}
-
-// SetDefaultRepoAccountNil sets the value for DefaultRepoAccount to be an explicit nil
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf3) SetDefaultRepoAccountNil() {
-	o.DefaultRepoAccount.Set(nil)
-}
-
-// UnsetDefaultRepoAccount ensures that no value is present for DefaultRepoAccount, not even an explicit nil
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf3) UnsetDefaultRepoAccount() {
-	o.DefaultRepoAccount.Unset()
 }
 
 // GetImageServer returns the ImageServer field value if set, zero value otherwise.
@@ -303,15 +230,6 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf3) GetImageServerOk() (*s
 		return nil, false
 	}
 	return o.ImageServer, true
-}
-
-// IsSetImageServer returns a boolean if a field has been set.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf3) IsSetImageServer() bool {
-	if o != nil && !IsNil(o.ImageServer) {
-		return true
-	}
-
-	return false
 }
 
 // SetImageServer gets a reference to the given string and assigns it to the ImageServer field.

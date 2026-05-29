@@ -82,15 +82,6 @@ func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) GetIdOk() (*i
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) SetId(v int64) {
 	o.Id = &v
@@ -112,15 +103,6 @@ func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) GetCodeOk() (
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -146,15 +128,6 @@ func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) GetAccountOk(
 	return o.Account, true
 }
 
-// IsSetAccount returns a boolean if a field has been set.
-func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccount gets a reference to the given ListFileTemplates200ResponseAllOfContainerTemplatesInnerAccount and assigns it to the Account field.
 func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) SetAccount(v ListFileTemplates200ResponseAllOfContainerTemplatesInnerAccount) {
 	o.Account = &v
@@ -176,15 +149,6 @@ func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) GetNameOk() (
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -211,15 +175,6 @@ func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) GetLabelsOk()
 	return o.Labels, true
 }
 
-// IsSetLabels returns a boolean if a field has been set.
-func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
-}
-
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
 func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) SetLabels(v []string) {
 	o.Labels = v
@@ -243,15 +198,6 @@ func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) GetFileNameOk
 	return o.FileName, true
 }
 
-// IsSetFileName returns a boolean if a field has been set.
-func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) IsSetFileName() bool {
-	if o != nil && !IsNil(o.FileName) {
-		return true
-	}
-
-	return false
-}
-
 // SetFileName gets a reference to the given string and assigns it to the FileName field.
 func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) SetFileName(v string) {
 	o.FileName = &v
@@ -273,15 +219,6 @@ func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) GetFilePathOk
 		return nil, false
 	}
 	return o.FilePath, true
-}
-
-// IsSetFilePath returns a boolean if a field has been set.
-func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) IsSetFilePath() bool {
-	if o != nil && !IsNil(o.FilePath) {
-		return true
-	}
-
-	return false
 }
 
 // SetFilePath gets a reference to the given string and assigns it to the FilePath field.
@@ -308,28 +245,9 @@ func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) GetTemplateTy
 	return o.TemplateType.Get(), o.TemplateType.IsSet()
 }
 
-// IsSetTemplateType returns a boolean if a field has been set.
-func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) IsSetTemplateType() bool {
-	if o != nil && o.TemplateType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetTemplateType gets a reference to the given NullableString and assigns it to the TemplateType field.
 func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) SetTemplateType(v string) {
 	o.TemplateType.Set(&v)
-}
-
-// SetTemplateTypeNil sets the value for TemplateType to be an explicit nil
-func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) SetTemplateTypeNil() {
-	o.TemplateType.Set(nil)
-}
-
-// UnsetTemplateType ensures that no value is present for TemplateType, not even an explicit nil
-func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) UnsetTemplateType() {
-	o.TemplateType.Unset()
 }
 
 // GetTemplatePhase returns the TemplatePhase field value if set, zero value otherwise.
@@ -348,15 +266,6 @@ func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) GetTemplatePh
 		return nil, false
 	}
 	return o.TemplatePhase, true
-}
-
-// IsSetTemplatePhase returns a boolean if a field has been set.
-func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) IsSetTemplatePhase() bool {
-	if o != nil && !IsNil(o.TemplatePhase) {
-		return true
-	}
-
-	return false
 }
 
 // SetTemplatePhase gets a reference to the given string and assigns it to the TemplatePhase field.
@@ -380,15 +289,6 @@ func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) GetTemplateOk
 		return nil, false
 	}
 	return o.Template, true
-}
-
-// IsSetTemplate returns a boolean if a field has been set.
-func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) IsSetTemplate() bool {
-	if o != nil && !IsNil(o.Template) {
-		return true
-	}
-
-	return false
 }
 
 // SetTemplate gets a reference to the given string and assigns it to the Template field.
@@ -415,28 +315,9 @@ func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) GetCategoryOk
 	return o.Category.Get(), o.Category.IsSet()
 }
 
-// IsSetCategory returns a boolean if a field has been set.
-func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) IsSetCategory() bool {
-	if o != nil && o.Category.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCategory gets a reference to the given NullableString and assigns it to the Category field.
 func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) SetCategory(v string) {
 	o.Category.Set(&v)
-}
-
-// SetCategoryNil sets the value for Category to be an explicit nil
-func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) SetCategoryNil() {
-	o.Category.Set(nil)
-}
-
-// UnsetCategory ensures that no value is present for Category, not even an explicit nil
-func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) UnsetCategory() {
-	o.Category.Unset()
 }
 
 // GetSettingCategory returns the SettingCategory field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -458,28 +339,9 @@ func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) GetSettingCat
 	return o.SettingCategory.Get(), o.SettingCategory.IsSet()
 }
 
-// IsSetSettingCategory returns a boolean if a field has been set.
-func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) IsSetSettingCategory() bool {
-	if o != nil && o.SettingCategory.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSettingCategory gets a reference to the given NullableString and assigns it to the SettingCategory field.
 func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) SetSettingCategory(v string) {
 	o.SettingCategory.Set(&v)
-}
-
-// SetSettingCategoryNil sets the value for SettingCategory to be an explicit nil
-func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) SetSettingCategoryNil() {
-	o.SettingCategory.Set(nil)
-}
-
-// UnsetSettingCategory ensures that no value is present for SettingCategory, not even an explicit nil
-func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) UnsetSettingCategory() {
-	o.SettingCategory.Unset()
 }
 
 // GetSettingName returns the SettingName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -501,28 +363,9 @@ func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) GetSettingNam
 	return o.SettingName.Get(), o.SettingName.IsSet()
 }
 
-// IsSetSettingName returns a boolean if a field has been set.
-func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) IsSetSettingName() bool {
-	if o != nil && o.SettingName.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSettingName gets a reference to the given NullableString and assigns it to the SettingName field.
 func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) SetSettingName(v string) {
 	o.SettingName.Set(&v)
-}
-
-// SetSettingNameNil sets the value for SettingName to be an explicit nil
-func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) SetSettingNameNil() {
-	o.SettingName.Set(nil)
-}
-
-// UnsetSettingName ensures that no value is present for SettingName, not even an explicit nil
-func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) UnsetSettingName() {
-	o.SettingName.Unset()
 }
 
 // GetAutoRun returns the AutoRun field value if set, zero value otherwise.
@@ -541,15 +384,6 @@ func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) GetAutoRunOk(
 		return nil, false
 	}
 	return o.AutoRun, true
-}
-
-// IsSetAutoRun returns a boolean if a field has been set.
-func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) IsSetAutoRun() bool {
-	if o != nil && !IsNil(o.AutoRun) {
-		return true
-	}
-
-	return false
 }
 
 // SetAutoRun gets a reference to the given bool and assigns it to the AutoRun field.
@@ -576,28 +410,9 @@ func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) GetRunOnScale
 	return o.RunOnScale.Get(), o.RunOnScale.IsSet()
 }
 
-// IsSetRunOnScale returns a boolean if a field has been set.
-func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) IsSetRunOnScale() bool {
-	if o != nil && o.RunOnScale.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRunOnScale gets a reference to the given NullableBool and assigns it to the RunOnScale field.
 func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) SetRunOnScale(v bool) {
 	o.RunOnScale.Set(&v)
-}
-
-// SetRunOnScaleNil sets the value for RunOnScale to be an explicit nil
-func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) SetRunOnScaleNil() {
-	o.RunOnScale.Set(nil)
-}
-
-// UnsetRunOnScale ensures that no value is present for RunOnScale, not even an explicit nil
-func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) UnsetRunOnScale() {
-	o.RunOnScale.Unset()
 }
 
 // GetRunOnDeploy returns the RunOnDeploy field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -619,28 +434,9 @@ func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) GetRunOnDeplo
 	return o.RunOnDeploy.Get(), o.RunOnDeploy.IsSet()
 }
 
-// IsSetRunOnDeploy returns a boolean if a field has been set.
-func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) IsSetRunOnDeploy() bool {
-	if o != nil && o.RunOnDeploy.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRunOnDeploy gets a reference to the given NullableBool and assigns it to the RunOnDeploy field.
 func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) SetRunOnDeploy(v bool) {
 	o.RunOnDeploy.Set(&v)
-}
-
-// SetRunOnDeployNil sets the value for RunOnDeploy to be an explicit nil
-func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) SetRunOnDeployNil() {
-	o.RunOnDeploy.Set(nil)
-}
-
-// UnsetRunOnDeploy ensures that no value is present for RunOnDeploy, not even an explicit nil
-func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) UnsetRunOnDeploy() {
-	o.RunOnDeploy.Unset()
 }
 
 // GetFileOwner returns the FileOwner field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -662,28 +458,9 @@ func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) GetFileOwnerO
 	return o.FileOwner.Get(), o.FileOwner.IsSet()
 }
 
-// IsSetFileOwner returns a boolean if a field has been set.
-func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) IsSetFileOwner() bool {
-	if o != nil && o.FileOwner.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFileOwner gets a reference to the given NullableString and assigns it to the FileOwner field.
 func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) SetFileOwner(v string) {
 	o.FileOwner.Set(&v)
-}
-
-// SetFileOwnerNil sets the value for FileOwner to be an explicit nil
-func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) SetFileOwnerNil() {
-	o.FileOwner.Set(nil)
-}
-
-// UnsetFileOwner ensures that no value is present for FileOwner, not even an explicit nil
-func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) UnsetFileOwner() {
-	o.FileOwner.Unset()
 }
 
 // GetFileGroup returns the FileGroup field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -705,28 +482,9 @@ func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) GetFileGroupO
 	return o.FileGroup.Get(), o.FileGroup.IsSet()
 }
 
-// IsSetFileGroup returns a boolean if a field has been set.
-func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) IsSetFileGroup() bool {
-	if o != nil && o.FileGroup.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFileGroup gets a reference to the given NullableString and assigns it to the FileGroup field.
 func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) SetFileGroup(v string) {
 	o.FileGroup.Set(&v)
-}
-
-// SetFileGroupNil sets the value for FileGroup to be an explicit nil
-func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) SetFileGroupNil() {
-	o.FileGroup.Set(nil)
-}
-
-// UnsetFileGroup ensures that no value is present for FileGroup, not even an explicit nil
-func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) UnsetFileGroup() {
-	o.FileGroup.Unset()
 }
 
 // GetPermissions returns the Permissions field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -748,28 +506,9 @@ func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) GetPermission
 	return o.Permissions.Get(), o.Permissions.IsSet()
 }
 
-// IsSetPermissions returns a boolean if a field has been set.
-func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) IsSetPermissions() bool {
-	if o != nil && o.Permissions.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPermissions gets a reference to the given NullableString and assigns it to the Permissions field.
 func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) SetPermissions(v string) {
 	o.Permissions.Set(&v)
-}
-
-// SetPermissionsNil sets the value for Permissions to be an explicit nil
-func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) SetPermissionsNil() {
-	o.Permissions.Set(nil)
-}
-
-// UnsetPermissions ensures that no value is present for Permissions, not even an explicit nil
-func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) UnsetPermissions() {
-	o.Permissions.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -788,15 +527,6 @@ func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) GetDateCreate
 		return nil, false
 	}
 	return o.DateCreated, true
-}
-
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
@@ -820,15 +550,6 @@ func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) GetLastUpdate
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.

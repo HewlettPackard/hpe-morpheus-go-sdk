@@ -67,15 +67,6 @@ func (o *ZoneNetworkOptionsResponseNetworkTypesInner) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ZoneNetworkOptionsResponseNetworkTypesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ZoneNetworkOptionsResponseNetworkTypesInner) SetId(v int64) {
 	o.Id = &v
@@ -97,15 +88,6 @@ func (o *ZoneNetworkOptionsResponseNetworkTypesInner) GetNameOk() (*string, bool
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ZoneNetworkOptionsResponseNetworkTypesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -131,15 +113,6 @@ func (o *ZoneNetworkOptionsResponseNetworkTypesInner) GetDisplayOrderOk() (*int6
 	return o.DisplayOrder, true
 }
 
-// IsSetDisplayOrder returns a boolean if a field has been set.
-func (o *ZoneNetworkOptionsResponseNetworkTypesInner) IsSetDisplayOrder() bool {
-	if o != nil && !IsNil(o.DisplayOrder) {
-		return true
-	}
-
-	return false
-}
-
 // SetDisplayOrder gets a reference to the given int64 and assigns it to the DisplayOrder field.
 func (o *ZoneNetworkOptionsResponseNetworkTypesInner) SetDisplayOrder(v int64) {
 	o.DisplayOrder = &v
@@ -161,15 +134,6 @@ func (o *ZoneNetworkOptionsResponseNetworkTypesInner) GetEnabledOk() (*bool, boo
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *ZoneNetworkOptionsResponseNetworkTypesInner) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -195,15 +159,6 @@ func (o *ZoneNetworkOptionsResponseNetworkTypesInner) GetDefaultTypeOk() (*bool,
 	return o.DefaultType, true
 }
 
-// IsSetDefaultType returns a boolean if a field has been set.
-func (o *ZoneNetworkOptionsResponseNetworkTypesInner) IsSetDefaultType() bool {
-	if o != nil && !IsNil(o.DefaultType) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultType gets a reference to the given bool and assigns it to the DefaultType field.
 func (o *ZoneNetworkOptionsResponseNetworkTypesInner) SetDefaultType(v bool) {
 	o.DefaultType = &v
@@ -227,15 +182,6 @@ func (o *ZoneNetworkOptionsResponseNetworkTypesInner) GetExternalIdOk() (*string
 	return o.ExternalId, true
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *ZoneNetworkOptionsResponseNetworkTypesInner) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
 func (o *ZoneNetworkOptionsResponseNetworkTypesInner) SetExternalId(v string) {
 	o.ExternalId = &v
@@ -257,15 +203,6 @@ func (o *ZoneNetworkOptionsResponseNetworkTypesInner) GetCodeOk() (*string, bool
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *ZoneNetworkOptionsResponseNetworkTypesInner) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.

@@ -61,15 +61,6 @@ func (o *ListLogs200ResponseAllOfSort) GetTsOk() (*string, bool) {
 	return o.Ts, true
 }
 
-// IsSetTs returns a boolean if a field has been set.
-func (o *ListLogs200ResponseAllOfSort) IsSetTs() bool {
-	if o != nil && !IsNil(o.Ts) {
-		return true
-	}
-
-	return false
-}
-
 // SetTs gets a reference to the given string and assigns it to the Ts field.
 func (o *ListLogs200ResponseAllOfSort) SetTs(v string) {
 	o.Ts = &v

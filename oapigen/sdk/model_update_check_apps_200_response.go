@@ -62,15 +62,6 @@ func (o *UpdateCheckApps200Response) GetMonitorAppOk() (*UpdateCheckApps200Respo
 	return o.MonitorApp, true
 }
 
-// IsSetMonitorApp returns a boolean if a field has been set.
-func (o *UpdateCheckApps200Response) IsSetMonitorApp() bool {
-	if o != nil && !IsNil(o.MonitorApp) {
-		return true
-	}
-
-	return false
-}
-
 // SetMonitorApp gets a reference to the given UpdateCheckApps200ResponseAllOfMonitorApp and assigns it to the MonitorApp field.
 func (o *UpdateCheckApps200Response) SetMonitorApp(v UpdateCheckApps200ResponseAllOfMonitorApp) {
 	o.MonitorApp = &v
@@ -92,15 +83,6 @@ func (o *UpdateCheckApps200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *UpdateCheckApps200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

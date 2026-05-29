@@ -61,15 +61,6 @@ func (o *UpdateWikiAppRequest) GetPageOk() (*UpdateWikiAppRequestPage, bool) {
 	return o.Page, true
 }
 
-// IsSetPage returns a boolean if a field has been set.
-func (o *UpdateWikiAppRequest) IsSetPage() bool {
-	if o != nil && !IsNil(o.Page) {
-		return true
-	}
-
-	return false
-}
-
 // SetPage gets a reference to the given UpdateWikiAppRequestPage and assigns it to the Page field.
 func (o *UpdateWikiAppRequest) SetPage(v UpdateWikiAppRequestPage) {
 	o.Page = &v

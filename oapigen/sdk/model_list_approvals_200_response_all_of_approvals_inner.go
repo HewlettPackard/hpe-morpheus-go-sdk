@@ -75,15 +75,6 @@ func (o *ListApprovals200ResponseAllOfApprovalsInner) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListApprovals200ResponseAllOfApprovalsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListApprovals200ResponseAllOfApprovalsInner) SetId(v int64) {
 	o.Id = &v
@@ -105,15 +96,6 @@ func (o *ListApprovals200ResponseAllOfApprovalsInner) GetNameOk() (*string, bool
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListApprovals200ResponseAllOfApprovalsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -140,28 +122,9 @@ func (o *ListApprovals200ResponseAllOfApprovalsInner) GetInternalIdOk() (*string
 	return o.InternalId.Get(), o.InternalId.IsSet()
 }
 
-// IsSetInternalId returns a boolean if a field has been set.
-func (o *ListApprovals200ResponseAllOfApprovalsInner) IsSetInternalId() bool {
-	if o != nil && o.InternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInternalId gets a reference to the given NullableString and assigns it to the InternalId field.
 func (o *ListApprovals200ResponseAllOfApprovalsInner) SetInternalId(v string) {
 	o.InternalId.Set(&v)
-}
-
-// SetInternalIdNil sets the value for InternalId to be an explicit nil
-func (o *ListApprovals200ResponseAllOfApprovalsInner) SetInternalIdNil() {
-	o.InternalId.Set(nil)
-}
-
-// UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
-func (o *ListApprovals200ResponseAllOfApprovalsInner) UnsetInternalId() {
-	o.InternalId.Unset()
 }
 
 // GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -183,28 +146,9 @@ func (o *ListApprovals200ResponseAllOfApprovalsInner) GetExternalIdOk() (*string
 	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *ListApprovals200ResponseAllOfApprovalsInner) IsSetExternalId() bool {
-	if o != nil && o.ExternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *ListApprovals200ResponseAllOfApprovalsInner) SetExternalId(v string) {
 	o.ExternalId.Set(&v)
-}
-
-// SetExternalIdNil sets the value for ExternalId to be an explicit nil
-func (o *ListApprovals200ResponseAllOfApprovalsInner) SetExternalIdNil() {
-	o.ExternalId.Set(nil)
-}
-
-// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-func (o *ListApprovals200ResponseAllOfApprovalsInner) UnsetExternalId() {
-	o.ExternalId.Unset()
 }
 
 // GetExternalName returns the ExternalName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -226,28 +170,9 @@ func (o *ListApprovals200ResponseAllOfApprovalsInner) GetExternalNameOk() (*stri
 	return o.ExternalName.Get(), o.ExternalName.IsSet()
 }
 
-// IsSetExternalName returns a boolean if a field has been set.
-func (o *ListApprovals200ResponseAllOfApprovalsInner) IsSetExternalName() bool {
-	if o != nil && o.ExternalName.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalName gets a reference to the given NullableString and assigns it to the ExternalName field.
 func (o *ListApprovals200ResponseAllOfApprovalsInner) SetExternalName(v string) {
 	o.ExternalName.Set(&v)
-}
-
-// SetExternalNameNil sets the value for ExternalName to be an explicit nil
-func (o *ListApprovals200ResponseAllOfApprovalsInner) SetExternalNameNil() {
-	o.ExternalName.Set(nil)
-}
-
-// UnsetExternalName ensures that no value is present for ExternalName, not even an explicit nil
-func (o *ListApprovals200ResponseAllOfApprovalsInner) UnsetExternalName() {
-	o.ExternalName.Unset()
 }
 
 // GetRequestType returns the RequestType field value if set, zero value otherwise.
@@ -266,15 +191,6 @@ func (o *ListApprovals200ResponseAllOfApprovalsInner) GetRequestTypeOk() (*strin
 		return nil, false
 	}
 	return o.RequestType, true
-}
-
-// IsSetRequestType returns a boolean if a field has been set.
-func (o *ListApprovals200ResponseAllOfApprovalsInner) IsSetRequestType() bool {
-	if o != nil && !IsNil(o.RequestType) {
-		return true
-	}
-
-	return false
 }
 
 // SetRequestType gets a reference to the given string and assigns it to the RequestType field.
@@ -301,28 +217,9 @@ func (o *ListApprovals200ResponseAllOfApprovalsInner) GetAccountOk() (*ListAppro
 	return o.Account.Get(), o.Account.IsSet()
 }
 
-// IsSetAccount returns a boolean if a field has been set.
-func (o *ListApprovals200ResponseAllOfApprovalsInner) IsSetAccount() bool {
-	if o != nil && o.Account.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAccount gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Account field.
 func (o *ListApprovals200ResponseAllOfApprovalsInner) SetAccount(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
 	o.Account.Set(&v)
-}
-
-// SetAccountNil sets the value for Account to be an explicit nil
-func (o *ListApprovals200ResponseAllOfApprovalsInner) SetAccountNil() {
-	o.Account.Set(nil)
-}
-
-// UnsetAccount ensures that no value is present for Account, not even an explicit nil
-func (o *ListApprovals200ResponseAllOfApprovalsInner) UnsetAccount() {
-	o.Account.Unset()
 }
 
 // GetApprover returns the Approver field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -344,28 +241,9 @@ func (o *ListApprovals200ResponseAllOfApprovalsInner) GetApproverOk() (*ListAppr
 	return o.Approver.Get(), o.Approver.IsSet()
 }
 
-// IsSetApprover returns a boolean if a field has been set.
-func (o *ListApprovals200ResponseAllOfApprovalsInner) IsSetApprover() bool {
-	if o != nil && o.Approver.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetApprover gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerApprover and assigns it to the Approver field.
 func (o *ListApprovals200ResponseAllOfApprovalsInner) SetApprover(v ListApprovals200ResponseAllOfApprovalsInnerApprover) {
 	o.Approver.Set(&v)
-}
-
-// SetApproverNil sets the value for Approver to be an explicit nil
-func (o *ListApprovals200ResponseAllOfApprovalsInner) SetApproverNil() {
-	o.Approver.Set(nil)
-}
-
-// UnsetApprover ensures that no value is present for Approver, not even an explicit nil
-func (o *ListApprovals200ResponseAllOfApprovalsInner) UnsetApprover() {
-	o.Approver.Unset()
 }
 
 // GetAccountIntegration returns the AccountIntegration field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -387,28 +265,9 @@ func (o *ListApprovals200ResponseAllOfApprovalsInner) GetAccountIntegrationOk() 
 	return o.AccountIntegration.Get(), o.AccountIntegration.IsSet()
 }
 
-// IsSetAccountIntegration returns a boolean if a field has been set.
-func (o *ListApprovals200ResponseAllOfApprovalsInner) IsSetAccountIntegration() bool {
-	if o != nil && o.AccountIntegration.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAccountIntegration gets a reference to the given NullableString and assigns it to the AccountIntegration field.
 func (o *ListApprovals200ResponseAllOfApprovalsInner) SetAccountIntegration(v string) {
 	o.AccountIntegration.Set(&v)
-}
-
-// SetAccountIntegrationNil sets the value for AccountIntegration to be an explicit nil
-func (o *ListApprovals200ResponseAllOfApprovalsInner) SetAccountIntegrationNil() {
-	o.AccountIntegration.Set(nil)
-}
-
-// UnsetAccountIntegration ensures that no value is present for AccountIntegration, not even an explicit nil
-func (o *ListApprovals200ResponseAllOfApprovalsInner) UnsetAccountIntegration() {
-	o.AccountIntegration.Unset()
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -427,15 +286,6 @@ func (o *ListApprovals200ResponseAllOfApprovalsInner) GetStatusOk() (*string, bo
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *ListApprovals200ResponseAllOfApprovalsInner) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -462,28 +312,9 @@ func (o *ListApprovals200ResponseAllOfApprovalsInner) GetErrorMessageOk() (*stri
 	return o.ErrorMessage.Get(), o.ErrorMessage.IsSet()
 }
 
-// IsSetErrorMessage returns a boolean if a field has been set.
-func (o *ListApprovals200ResponseAllOfApprovalsInner) IsSetErrorMessage() bool {
-	if o != nil && o.ErrorMessage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetErrorMessage gets a reference to the given NullableString and assigns it to the ErrorMessage field.
 func (o *ListApprovals200ResponseAllOfApprovalsInner) SetErrorMessage(v string) {
 	o.ErrorMessage.Set(&v)
-}
-
-// SetErrorMessageNil sets the value for ErrorMessage to be an explicit nil
-func (o *ListApprovals200ResponseAllOfApprovalsInner) SetErrorMessageNil() {
-	o.ErrorMessage.Set(nil)
-}
-
-// UnsetErrorMessage ensures that no value is present for ErrorMessage, not even an explicit nil
-func (o *ListApprovals200ResponseAllOfApprovalsInner) UnsetErrorMessage() {
-	o.ErrorMessage.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -502,15 +333,6 @@ func (o *ListApprovals200ResponseAllOfApprovalsInner) GetDateCreatedOk() (*time.
 		return nil, false
 	}
 	return o.DateCreated, true
-}
-
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *ListApprovals200ResponseAllOfApprovalsInner) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
@@ -536,15 +358,6 @@ func (o *ListApprovals200ResponseAllOfApprovalsInner) GetLastUpdatedOk() (*time.
 	return o.LastUpdated, true
 }
 
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *ListApprovals200ResponseAllOfApprovalsInner) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
-}
-
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
 func (o *ListApprovals200ResponseAllOfApprovalsInner) SetLastUpdated(v time.Time) {
 	o.LastUpdated = &v
@@ -566,15 +379,6 @@ func (o *ListApprovals200ResponseAllOfApprovalsInner) GetRequestByOk() (*string,
 		return nil, false
 	}
 	return o.RequestBy, true
-}
-
-// IsSetRequestBy returns a boolean if a field has been set.
-func (o *ListApprovals200ResponseAllOfApprovalsInner) IsSetRequestBy() bool {
-	if o != nil && !IsNil(o.RequestBy) {
-		return true
-	}
-
-	return false
 }
 
 // SetRequestBy gets a reference to the given string and assigns it to the RequestBy field.

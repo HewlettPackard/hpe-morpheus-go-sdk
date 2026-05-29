@@ -76,15 +76,6 @@ func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) GetIdOk() (*int64, bool)
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) SetId(v int64) {
 	o.Id = &v
@@ -106,15 +97,6 @@ func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) GetNameOk() (*string, bo
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -141,28 +123,9 @@ func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) GetDescriptionOk() (*str
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetStorageProvider returns the StorageProvider field value if set, zero value otherwise.
@@ -181,15 +144,6 @@ func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) GetStorageProviderOk() (
 		return nil, false
 	}
 	return o.StorageProvider, true
-}
-
-// IsSetStorageProvider returns a boolean if a field has been set.
-func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) IsSetStorageProvider() bool {
-	if o != nil && !IsNil(o.StorageProvider) {
-		return true
-	}
-
-	return false
 }
 
 // SetStorageProvider gets a reference to the given AddArchiveBucket200ResponseAllOfArchiveBucketStorageProvider and assigns it to the StorageProvider field.
@@ -215,15 +169,6 @@ func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) GetOwnerOk() (*AddArchiv
 	return o.Owner, true
 }
 
-// IsSetOwner returns a boolean if a field has been set.
-func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
-		return true
-	}
-
-	return false
-}
-
 // SetOwner gets a reference to the given AddArchiveBucket200ResponseAllOfArchiveBucketOwner and assigns it to the Owner field.
 func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) SetOwner(v AddArchiveBucket200ResponseAllOfArchiveBucketOwner) {
 	o.Owner = &v
@@ -245,15 +190,6 @@ func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) GetCreatedByOk() (*AddAr
 		return nil, false
 	}
 	return o.CreatedBy, true
-}
-
-// IsSetCreatedBy returns a boolean if a field has been set.
-func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) IsSetCreatedBy() bool {
-	if o != nil && !IsNil(o.CreatedBy) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreatedBy gets a reference to the given AddArchiveBucket200ResponseAllOfArchiveBucketCreatedBy and assigns it to the CreatedBy field.
@@ -279,15 +215,6 @@ func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) GetIsPublicOk() (*bool, 
 	return o.IsPublic, true
 }
 
-// IsSetIsPublic returns a boolean if a field has been set.
-func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) IsSetIsPublic() bool {
-	if o != nil && !IsNil(o.IsPublic) {
-		return true
-	}
-
-	return false
-}
-
 // SetIsPublic gets a reference to the given bool and assigns it to the IsPublic field.
 func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) SetIsPublic(v bool) {
 	o.IsPublic = &v
@@ -309,15 +236,6 @@ func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) GetVisibilityOk() (*stri
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -343,15 +261,6 @@ func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) GetCodeOk() (*string, bo
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) SetCode(v string) {
 	o.Code = &v
@@ -373,15 +282,6 @@ func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) GetFilePathOk() (*string
 		return nil, false
 	}
 	return o.FilePath, true
-}
-
-// IsSetFilePath returns a boolean if a field has been set.
-func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) IsSetFilePath() bool {
-	if o != nil && !IsNil(o.FilePath) {
-		return true
-	}
-
-	return false
 }
 
 // SetFilePath gets a reference to the given string and assigns it to the FilePath field.
@@ -408,28 +308,9 @@ func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) GetRawSizeOk() (*int64, 
 	return o.RawSize.Get(), o.RawSize.IsSet()
 }
 
-// IsSetRawSize returns a boolean if a field has been set.
-func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) IsSetRawSize() bool {
-	if o != nil && o.RawSize.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRawSize gets a reference to the given NullableInt64 and assigns it to the RawSize field.
 func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) SetRawSize(v int64) {
 	o.RawSize.Set(&v)
-}
-
-// SetRawSizeNil sets the value for RawSize to be an explicit nil
-func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) SetRawSizeNil() {
-	o.RawSize.Set(nil)
-}
-
-// UnsetRawSize ensures that no value is present for RawSize, not even an explicit nil
-func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) UnsetRawSize() {
-	o.RawSize.Unset()
 }
 
 // GetFileCount returns the FileCount field value if set, zero value otherwise.
@@ -448,15 +329,6 @@ func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) GetFileCountOk() (*int64
 		return nil, false
 	}
 	return o.FileCount, true
-}
-
-// IsSetFileCount returns a boolean if a field has been set.
-func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) IsSetFileCount() bool {
-	if o != nil && !IsNil(o.FileCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetFileCount gets a reference to the given int64 and assigns it to the FileCount field.
@@ -482,15 +354,6 @@ func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) GetAccountsOk() ([]AddAr
 	return o.Accounts, true
 }
 
-// IsSetAccounts returns a boolean if a field has been set.
-func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) IsSetAccounts() bool {
-	if o != nil && !IsNil(o.Accounts) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccounts gets a reference to the given []AddArchiveBucket200ResponseAllOfArchiveBucketAccountsInner and assigns it to the Accounts field.
 func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) SetAccounts(v []AddArchiveBucket200ResponseAllOfArchiveBucketAccountsInner) {
 	o.Accounts = v
@@ -514,15 +377,6 @@ func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) GetDateCreatedOk() (*tim
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -544,15 +398,6 @@ func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) GetLastUpdatedOk() (*tim
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.

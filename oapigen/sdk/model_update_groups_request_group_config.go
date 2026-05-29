@@ -72,15 +72,6 @@ func (o *UpdateGroupsRequestGroupConfig) GetDnsIntegrationIdOk() (*string, bool)
 	return o.DnsIntegrationId, true
 }
 
-// IsSetDnsIntegrationId returns a boolean if a field has been set.
-func (o *UpdateGroupsRequestGroupConfig) IsSetDnsIntegrationId() bool {
-	if o != nil && !IsNil(o.DnsIntegrationId) {
-		return true
-	}
-
-	return false
-}
-
 // SetDnsIntegrationId gets a reference to the given string and assigns it to the DnsIntegrationId field.
 func (o *UpdateGroupsRequestGroupConfig) SetDnsIntegrationId(v string) {
 	o.DnsIntegrationId = &v
@@ -102,15 +93,6 @@ func (o *UpdateGroupsRequestGroupConfig) GetConfigCmdbIdOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ConfigCmdbId, true
-}
-
-// IsSetConfigCmdbId returns a boolean if a field has been set.
-func (o *UpdateGroupsRequestGroupConfig) IsSetConfigCmdbId() bool {
-	if o != nil && !IsNil(o.ConfigCmdbId) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfigCmdbId gets a reference to the given string and assigns it to the ConfigCmdbId field.
@@ -136,15 +118,6 @@ func (o *UpdateGroupsRequestGroupConfig) GetConfigCmIdOk() (*string, bool) {
 	return o.ConfigCmId, true
 }
 
-// IsSetConfigCmId returns a boolean if a field has been set.
-func (o *UpdateGroupsRequestGroupConfig) IsSetConfigCmId() bool {
-	if o != nil && !IsNil(o.ConfigCmId) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfigCmId gets a reference to the given string and assigns it to the ConfigCmId field.
 func (o *UpdateGroupsRequestGroupConfig) SetConfigCmId(v string) {
 	o.ConfigCmId = &v
@@ -166,15 +139,6 @@ func (o *UpdateGroupsRequestGroupConfig) GetServiceRegistryIdOk() (*string, bool
 		return nil, false
 	}
 	return o.ServiceRegistryId, true
-}
-
-// IsSetServiceRegistryId returns a boolean if a field has been set.
-func (o *UpdateGroupsRequestGroupConfig) IsSetServiceRegistryId() bool {
-	if o != nil && !IsNil(o.ServiceRegistryId) {
-		return true
-	}
-
-	return false
 }
 
 // SetServiceRegistryId gets a reference to the given string and assigns it to the ServiceRegistryId field.
@@ -200,15 +164,6 @@ func (o *UpdateGroupsRequestGroupConfig) GetConfigManagementIdOk() (*string, boo
 	return o.ConfigManagementId, true
 }
 
-// IsSetConfigManagementId returns a boolean if a field has been set.
-func (o *UpdateGroupsRequestGroupConfig) IsSetConfigManagementId() bool {
-	if o != nil && !IsNil(o.ConfigManagementId) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfigManagementId gets a reference to the given string and assigns it to the ConfigManagementId field.
 func (o *UpdateGroupsRequestGroupConfig) SetConfigManagementId(v string) {
 	o.ConfigManagementId = &v
@@ -230,15 +185,6 @@ func (o *UpdateGroupsRequestGroupConfig) GetConfigCmdbDiscoveryOk() (*bool, bool
 		return nil, false
 	}
 	return o.ConfigCmdbDiscovery, true
-}
-
-// IsSetConfigCmdbDiscovery returns a boolean if a field has been set.
-func (o *UpdateGroupsRequestGroupConfig) IsSetConfigCmdbDiscovery() bool {
-	if o != nil && !IsNil(o.ConfigCmdbDiscovery) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfigCmdbDiscovery gets a reference to the given bool and assigns it to the ConfigCmdbDiscovery field.

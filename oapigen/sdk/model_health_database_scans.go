@@ -67,15 +67,6 @@ func (o *HealthDatabaseScans) GetHandlerReadFirstOk() (*string, bool) {
 	return o.HandlerReadFirst, true
 }
 
-// IsSetHandlerReadFirst returns a boolean if a field has been set.
-func (o *HealthDatabaseScans) IsSetHandlerReadFirst() bool {
-	if o != nil && !IsNil(o.HandlerReadFirst) {
-		return true
-	}
-
-	return false
-}
-
 // SetHandlerReadFirst gets a reference to the given string and assigns it to the HandlerReadFirst field.
 func (o *HealthDatabaseScans) SetHandlerReadFirst(v string) {
 	o.HandlerReadFirst = &v
@@ -97,15 +88,6 @@ func (o *HealthDatabaseScans) GetHandlerReadKeyOk() (*string, bool) {
 		return nil, false
 	}
 	return o.HandlerReadKey, true
-}
-
-// IsSetHandlerReadKey returns a boolean if a field has been set.
-func (o *HealthDatabaseScans) IsSetHandlerReadKey() bool {
-	if o != nil && !IsNil(o.HandlerReadKey) {
-		return true
-	}
-
-	return false
 }
 
 // SetHandlerReadKey gets a reference to the given string and assigns it to the HandlerReadKey field.
@@ -131,15 +113,6 @@ func (o *HealthDatabaseScans) GetHandlerReadLastOk() (*string, bool) {
 	return o.HandlerReadLast, true
 }
 
-// IsSetHandlerReadLast returns a boolean if a field has been set.
-func (o *HealthDatabaseScans) IsSetHandlerReadLast() bool {
-	if o != nil && !IsNil(o.HandlerReadLast) {
-		return true
-	}
-
-	return false
-}
-
 // SetHandlerReadLast gets a reference to the given string and assigns it to the HandlerReadLast field.
 func (o *HealthDatabaseScans) SetHandlerReadLast(v string) {
 	o.HandlerReadLast = &v
@@ -161,15 +134,6 @@ func (o *HealthDatabaseScans) GetHandlerReadNextOk() (*string, bool) {
 		return nil, false
 	}
 	return o.HandlerReadNext, true
-}
-
-// IsSetHandlerReadNext returns a boolean if a field has been set.
-func (o *HealthDatabaseScans) IsSetHandlerReadNext() bool {
-	if o != nil && !IsNil(o.HandlerReadNext) {
-		return true
-	}
-
-	return false
 }
 
 // SetHandlerReadNext gets a reference to the given string and assigns it to the HandlerReadNext field.
@@ -195,15 +159,6 @@ func (o *HealthDatabaseScans) GetHandlerReadPrevOk() (*string, bool) {
 	return o.HandlerReadPrev, true
 }
 
-// IsSetHandlerReadPrev returns a boolean if a field has been set.
-func (o *HealthDatabaseScans) IsSetHandlerReadPrev() bool {
-	if o != nil && !IsNil(o.HandlerReadPrev) {
-		return true
-	}
-
-	return false
-}
-
 // SetHandlerReadPrev gets a reference to the given string and assigns it to the HandlerReadPrev field.
 func (o *HealthDatabaseScans) SetHandlerReadPrev(v string) {
 	o.HandlerReadPrev = &v
@@ -227,15 +182,6 @@ func (o *HealthDatabaseScans) GetHandlerReadRndOk() (*string, bool) {
 	return o.HandlerReadRnd, true
 }
 
-// IsSetHandlerReadRnd returns a boolean if a field has been set.
-func (o *HealthDatabaseScans) IsSetHandlerReadRnd() bool {
-	if o != nil && !IsNil(o.HandlerReadRnd) {
-		return true
-	}
-
-	return false
-}
-
 // SetHandlerReadRnd gets a reference to the given string and assigns it to the HandlerReadRnd field.
 func (o *HealthDatabaseScans) SetHandlerReadRnd(v string) {
 	o.HandlerReadRnd = &v
@@ -257,15 +203,6 @@ func (o *HealthDatabaseScans) GetHandlerReadRndNextOk() (*string, bool) {
 		return nil, false
 	}
 	return o.HandlerReadRndNext, true
-}
-
-// IsSetHandlerReadRndNext returns a boolean if a field has been set.
-func (o *HealthDatabaseScans) IsSetHandlerReadRndNext() bool {
-	if o != nil && !IsNil(o.HandlerReadRndNext) {
-		return true
-	}
-
-	return false
 }
 
 // SetHandlerReadRndNext gets a reference to the given string and assigns it to the HandlerReadRndNext field.

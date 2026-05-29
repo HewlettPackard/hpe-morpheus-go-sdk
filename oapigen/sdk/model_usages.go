@@ -62,15 +62,6 @@ func (o *Usages) GetActivityOk() ([]UsagesActivityInner, bool) {
 	return o.Activity, true
 }
 
-// IsSetActivity returns a boolean if a field has been set.
-func (o *Usages) IsSetActivity() bool {
-	if o != nil && !IsNil(o.Activity) {
-		return true
-	}
-
-	return false
-}
-
 // SetActivity gets a reference to the given []UsagesActivityInner and assigns it to the Activity field.
 func (o *Usages) SetActivity(v []UsagesActivityInner) {
 	o.Activity = v
@@ -92,15 +83,6 @@ func (o *Usages) GetMetaOk() (*UsagesMeta, bool) {
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *Usages) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given UsagesMeta and assigns it to the Meta field.

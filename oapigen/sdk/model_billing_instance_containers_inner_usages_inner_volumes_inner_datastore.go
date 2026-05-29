@@ -66,15 +66,6 @@ func (o *BillingInstanceContainersInnerUsagesInnerVolumesInnerDatastore) GetIdOk
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *BillingInstanceContainersInnerUsagesInnerVolumesInnerDatastore) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *BillingInstanceContainersInnerUsagesInnerVolumesInnerDatastore) SetId(v int64) {
 	o.Id = &v
@@ -96,15 +87,6 @@ func (o *BillingInstanceContainersInnerUsagesInnerVolumesInnerDatastore) GetName
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *BillingInstanceContainersInnerUsagesInnerVolumesInnerDatastore) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -130,15 +112,6 @@ func (o *BillingInstanceContainersInnerUsagesInnerVolumesInnerDatastore) GetType
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *BillingInstanceContainersInnerUsagesInnerVolumesInnerDatastore) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given string and assigns it to the Type field.
 func (o *BillingInstanceContainersInnerUsagesInnerVolumesInnerDatastore) SetType(v string) {
 	o.Type = &v
@@ -160,15 +133,6 @@ func (o *BillingInstanceContainersInnerUsagesInnerVolumesInnerDatastore) GetExte
 		return nil, false
 	}
 	return o.ExternalId, true
-}
-
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *BillingInstanceContainersInnerUsagesInnerVolumesInnerDatastore) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
-		return true
-	}
-
-	return false
 }
 
 // SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
@@ -195,28 +159,9 @@ func (o *BillingInstanceContainersInnerUsagesInnerVolumesInnerDatastore) GetInte
 	return o.InternalId.Get(), o.InternalId.IsSet()
 }
 
-// IsSetInternalId returns a boolean if a field has been set.
-func (o *BillingInstanceContainersInnerUsagesInnerVolumesInnerDatastore) IsSetInternalId() bool {
-	if o != nil && o.InternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInternalId gets a reference to the given NullableString and assigns it to the InternalId field.
 func (o *BillingInstanceContainersInnerUsagesInnerVolumesInnerDatastore) SetInternalId(v string) {
 	o.InternalId.Set(&v)
-}
-
-// SetInternalIdNil sets the value for InternalId to be an explicit nil
-func (o *BillingInstanceContainersInnerUsagesInnerVolumesInnerDatastore) SetInternalIdNil() {
-	o.InternalId.Set(nil)
-}
-
-// UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
-func (o *BillingInstanceContainersInnerUsagesInnerVolumesInnerDatastore) UnsetInternalId() {
-	o.InternalId.Unset()
 }
 
 // GetExternalPath returns the ExternalPath field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -238,28 +183,9 @@ func (o *BillingInstanceContainersInnerUsagesInnerVolumesInnerDatastore) GetExte
 	return o.ExternalPath.Get(), o.ExternalPath.IsSet()
 }
 
-// IsSetExternalPath returns a boolean if a field has been set.
-func (o *BillingInstanceContainersInnerUsagesInnerVolumesInnerDatastore) IsSetExternalPath() bool {
-	if o != nil && o.ExternalPath.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalPath gets a reference to the given NullableString and assigns it to the ExternalPath field.
 func (o *BillingInstanceContainersInnerUsagesInnerVolumesInnerDatastore) SetExternalPath(v string) {
 	o.ExternalPath.Set(&v)
-}
-
-// SetExternalPathNil sets the value for ExternalPath to be an explicit nil
-func (o *BillingInstanceContainersInnerUsagesInnerVolumesInnerDatastore) SetExternalPathNil() {
-	o.ExternalPath.Set(nil)
-}
-
-// UnsetExternalPath ensures that no value is present for ExternalPath, not even an explicit nil
-func (o *BillingInstanceContainersInnerUsagesInnerVolumesInnerDatastore) UnsetExternalPath() {
-	o.ExternalPath.Unset()
 }
 
 func (o BillingInstanceContainersInnerUsagesInnerVolumesInnerDatastore) MarshalJSON() ([]byte, error) {

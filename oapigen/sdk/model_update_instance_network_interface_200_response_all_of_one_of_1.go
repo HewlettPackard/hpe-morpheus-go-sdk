@@ -62,15 +62,6 @@ func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOf1) GetSuccessOk() (*
 	return o.Success, true
 }
 
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOf1) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
-}
-
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOf1) SetSuccess(v bool) {
 	o.Success = &v
@@ -93,15 +84,6 @@ func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOf1) GetErrorsOk() (ma
 		return map[string]interface{}{}, false
 	}
 	return o.Errors, true
-}
-
-// IsSetErrors returns a boolean if a field has been set.
-func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOf1) IsSetErrors() bool {
-	if o != nil && !IsNil(o.Errors) {
-		return true
-	}
-
-	return false
 }
 
 // SetErrors gets a reference to the given map[string]interface{} and assigns it to the Errors field.

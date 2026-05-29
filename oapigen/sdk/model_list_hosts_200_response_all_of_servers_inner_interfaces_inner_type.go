@@ -63,15 +63,6 @@ func (o *ListHosts200ResponseAllOfServersInnerInterfacesInnerType) GetIdOk() (*i
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListHosts200ResponseAllOfServersInnerInterfacesInnerType) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListHosts200ResponseAllOfServersInnerInterfacesInnerType) SetId(v int64) {
 	o.Id = &v
@@ -95,15 +86,6 @@ func (o *ListHosts200ResponseAllOfServersInnerInterfacesInnerType) GetCodeOk() (
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *ListHosts200ResponseAllOfServersInnerInterfacesInnerType) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *ListHosts200ResponseAllOfServersInnerInterfacesInnerType) SetCode(v string) {
 	o.Code = &v
@@ -125,15 +107,6 @@ func (o *ListHosts200ResponseAllOfServersInnerInterfacesInnerType) GetNameOk() (
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListHosts200ResponseAllOfServersInnerInterfacesInnerType) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.

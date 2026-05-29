@@ -101,15 +101,6 @@ func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetIdOk()
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetId(v int64) {
 	o.Id = &v
@@ -133,15 +124,6 @@ func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetLoadBa
 	return o.LoadBalancer, true
 }
 
-// IsSetLoadBalancer returns a boolean if a field has been set.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) IsSetLoadBalancer() bool {
-	if o != nil && !IsNil(o.LoadBalancer) {
-		return true
-	}
-
-	return false
-}
-
 // SetLoadBalancer gets a reference to the given CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorLoadBalancer and assigns it to the LoadBalancer field.
 func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetLoadBalancer(v CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorLoadBalancer) {
 	o.LoadBalancer = &v
@@ -163,15 +145,6 @@ func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetNameOk
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -198,28 +171,9 @@ func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetCodeOk
 	return o.Code.Get(), o.Code.IsSet()
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) IsSetCode() bool {
-	if o != nil && o.Code.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetCode(v string) {
 	o.Code.Set(&v)
-}
-
-// SetCodeNil sets the value for Code to be an explicit nil
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetCodeNil() {
-	o.Code.Set(nil)
-}
-
-// UnsetCode ensures that no value is present for Code, not even an explicit nil
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) UnsetCode() {
-	o.Code.Unset()
 }
 
 // GetCategory returns the Category field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -241,28 +195,9 @@ func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetCatego
 	return o.Category.Get(), o.Category.IsSet()
 }
 
-// IsSetCategory returns a boolean if a field has been set.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) IsSetCategory() bool {
-	if o != nil && o.Category.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCategory gets a reference to the given NullableString and assigns it to the Category field.
 func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetCategory(v string) {
 	o.Category.Set(&v)
-}
-
-// SetCategoryNil sets the value for Category to be an explicit nil
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetCategoryNil() {
-	o.Category.Set(nil)
-}
-
-// UnsetCategory ensures that no value is present for Category, not even an explicit nil
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) UnsetCategory() {
-	o.Category.Unset()
 }
 
 // GetVisibility returns the Visibility field value if set, zero value otherwise.
@@ -281,15 +216,6 @@ func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetVisibi
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -315,15 +241,6 @@ func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetDescri
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetDescription(v string) {
 	o.Description = &v
@@ -345,15 +262,6 @@ func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetMonito
 		return nil, false
 	}
 	return o.MonitorType, true
-}
-
-// IsSetMonitorType returns a boolean if a field has been set.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) IsSetMonitorType() bool {
-	if o != nil && !IsNil(o.MonitorType) {
-		return true
-	}
-
-	return false
 }
 
 // SetMonitorType gets a reference to the given string and assigns it to the MonitorType field.
@@ -379,15 +287,6 @@ func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetMonito
 	return o.MonitorInterval, true
 }
 
-// IsSetMonitorInterval returns a boolean if a field has been set.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) IsSetMonitorInterval() bool {
-	if o != nil && !IsNil(o.MonitorInterval) {
-		return true
-	}
-
-	return false
-}
-
 // SetMonitorInterval gets a reference to the given int64 and assigns it to the MonitorInterval field.
 func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetMonitorInterval(v int64) {
 	o.MonitorInterval = &v
@@ -409,15 +308,6 @@ func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetMonito
 		return nil, false
 	}
 	return o.MonitorTimeout, true
-}
-
-// IsSetMonitorTimeout returns a boolean if a field has been set.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) IsSetMonitorTimeout() bool {
-	if o != nil && !IsNil(o.MonitorTimeout) {
-		return true
-	}
-
-	return false
 }
 
 // SetMonitorTimeout gets a reference to the given int64 and assigns it to the MonitorTimeout field.
@@ -444,28 +334,9 @@ func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetSendDa
 	return o.SendData.Get(), o.SendData.IsSet()
 }
 
-// IsSetSendData returns a boolean if a field has been set.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) IsSetSendData() bool {
-	if o != nil && o.SendData.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSendData gets a reference to the given NullableString and assigns it to the SendData field.
 func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetSendData(v string) {
 	o.SendData.Set(&v)
-}
-
-// SetSendDataNil sets the value for SendData to be an explicit nil
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetSendDataNil() {
-	o.SendData.Set(nil)
-}
-
-// UnsetSendData ensures that no value is present for SendData, not even an explicit nil
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) UnsetSendData() {
-	o.SendData.Unset()
 }
 
 // GetSendVersion returns the SendVersion field value if set, zero value otherwise.
@@ -484,15 +355,6 @@ func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetSendVe
 		return nil, false
 	}
 	return o.SendVersion, true
-}
-
-// IsSetSendVersion returns a boolean if a field has been set.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) IsSetSendVersion() bool {
-	if o != nil && !IsNil(o.SendVersion) {
-		return true
-	}
-
-	return false
 }
 
 // SetSendVersion gets a reference to the given string and assigns it to the SendVersion field.
@@ -516,15 +378,6 @@ func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetSendTy
 		return nil, false
 	}
 	return o.SendType, true
-}
-
-// IsSetSendType returns a boolean if a field has been set.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) IsSetSendType() bool {
-	if o != nil && !IsNil(o.SendType) {
-		return true
-	}
-
-	return false
 }
 
 // SetSendType gets a reference to the given string and assigns it to the SendType field.
@@ -551,28 +404,9 @@ func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetReceiv
 	return o.ReceiveData.Get(), o.ReceiveData.IsSet()
 }
 
-// IsSetReceiveData returns a boolean if a field has been set.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) IsSetReceiveData() bool {
-	if o != nil && o.ReceiveData.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetReceiveData gets a reference to the given NullableString and assigns it to the ReceiveData field.
 func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetReceiveData(v string) {
 	o.ReceiveData.Set(&v)
-}
-
-// SetReceiveDataNil sets the value for ReceiveData to be an explicit nil
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetReceiveDataNil() {
-	o.ReceiveData.Set(nil)
-}
-
-// UnsetReceiveData ensures that no value is present for ReceiveData, not even an explicit nil
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) UnsetReceiveData() {
-	o.ReceiveData.Unset()
 }
 
 // GetReceiveCode returns the ReceiveCode field value if set, zero value otherwise.
@@ -591,15 +425,6 @@ func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetReceiv
 		return nil, false
 	}
 	return o.ReceiveCode, true
-}
-
-// IsSetReceiveCode returns a boolean if a field has been set.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) IsSetReceiveCode() bool {
-	if o != nil && !IsNil(o.ReceiveCode) {
-		return true
-	}
-
-	return false
 }
 
 // SetReceiveCode gets a reference to the given string and assigns it to the ReceiveCode field.
@@ -626,28 +451,9 @@ func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetDisabl
 	return o.DisabledData.Get(), o.DisabledData.IsSet()
 }
 
-// IsSetDisabledData returns a boolean if a field has been set.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) IsSetDisabledData() bool {
-	if o != nil && o.DisabledData.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDisabledData gets a reference to the given NullableString and assigns it to the DisabledData field.
 func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetDisabledData(v string) {
 	o.DisabledData.Set(&v)
-}
-
-// SetDisabledDataNil sets the value for DisabledData to be an explicit nil
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetDisabledDataNil() {
-	o.DisabledData.Set(nil)
-}
-
-// UnsetDisabledData ensures that no value is present for DisabledData, not even an explicit nil
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) UnsetDisabledData() {
-	o.DisabledData.Unset()
 }
 
 // GetMonitorUsername returns the MonitorUsername field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -669,28 +475,9 @@ func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetMonito
 	return o.MonitorUsername.Get(), o.MonitorUsername.IsSet()
 }
 
-// IsSetMonitorUsername returns a boolean if a field has been set.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) IsSetMonitorUsername() bool {
-	if o != nil && o.MonitorUsername.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMonitorUsername gets a reference to the given NullableString and assigns it to the MonitorUsername field.
 func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetMonitorUsername(v string) {
 	o.MonitorUsername.Set(&v)
-}
-
-// SetMonitorUsernameNil sets the value for MonitorUsername to be an explicit nil
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetMonitorUsernameNil() {
-	o.MonitorUsername.Set(nil)
-}
-
-// UnsetMonitorUsername ensures that no value is present for MonitorUsername, not even an explicit nil
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) UnsetMonitorUsername() {
-	o.MonitorUsername.Unset()
 }
 
 // GetMonitorPassword returns the MonitorPassword field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -712,28 +499,9 @@ func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetMonito
 	return o.MonitorPassword.Get(), o.MonitorPassword.IsSet()
 }
 
-// IsSetMonitorPassword returns a boolean if a field has been set.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) IsSetMonitorPassword() bool {
-	if o != nil && o.MonitorPassword.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMonitorPassword gets a reference to the given NullableString and assigns it to the MonitorPassword field.
 func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetMonitorPassword(v string) {
 	o.MonitorPassword.Set(&v)
-}
-
-// SetMonitorPasswordNil sets the value for MonitorPassword to be an explicit nil
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetMonitorPasswordNil() {
-	o.MonitorPassword.Set(nil)
-}
-
-// UnsetMonitorPassword ensures that no value is present for MonitorPassword, not even an explicit nil
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) UnsetMonitorPassword() {
-	o.MonitorPassword.Unset()
 }
 
 // GetMonitorPasswordHash returns the MonitorPasswordHash field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -755,28 +523,9 @@ func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetMonito
 	return o.MonitorPasswordHash.Get(), o.MonitorPasswordHash.IsSet()
 }
 
-// IsSetMonitorPasswordHash returns a boolean if a field has been set.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) IsSetMonitorPasswordHash() bool {
-	if o != nil && o.MonitorPasswordHash.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMonitorPasswordHash gets a reference to the given NullableString and assigns it to the MonitorPasswordHash field.
 func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetMonitorPasswordHash(v string) {
 	o.MonitorPasswordHash.Set(&v)
-}
-
-// SetMonitorPasswordHashNil sets the value for MonitorPasswordHash to be an explicit nil
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetMonitorPasswordHashNil() {
-	o.MonitorPasswordHash.Set(nil)
-}
-
-// UnsetMonitorPasswordHash ensures that no value is present for MonitorPasswordHash, not even an explicit nil
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) UnsetMonitorPasswordHash() {
-	o.MonitorPasswordHash.Unset()
 }
 
 // GetMonitorDestination returns the MonitorDestination field value if set, zero value otherwise.
@@ -795,15 +544,6 @@ func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetMonito
 		return nil, false
 	}
 	return o.MonitorDestination, true
-}
-
-// IsSetMonitorDestination returns a boolean if a field has been set.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) IsSetMonitorDestination() bool {
-	if o != nil && !IsNil(o.MonitorDestination) {
-		return true
-	}
-
-	return false
 }
 
 // SetMonitorDestination gets a reference to the given string and assigns it to the MonitorDestination field.
@@ -829,15 +569,6 @@ func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetMonito
 	return o.MonitorReverse, true
 }
 
-// IsSetMonitorReverse returns a boolean if a field has been set.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) IsSetMonitorReverse() bool {
-	if o != nil && !IsNil(o.MonitorReverse) {
-		return true
-	}
-
-	return false
-}
-
 // SetMonitorReverse gets a reference to the given bool and assigns it to the MonitorReverse field.
 func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetMonitorReverse(v bool) {
 	o.MonitorReverse = &v
@@ -861,15 +592,6 @@ func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetMonito
 	return o.MonitorTransparent, true
 }
 
-// IsSetMonitorTransparent returns a boolean if a field has been set.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) IsSetMonitorTransparent() bool {
-	if o != nil && !IsNil(o.MonitorTransparent) {
-		return true
-	}
-
-	return false
-}
-
 // SetMonitorTransparent gets a reference to the given bool and assigns it to the MonitorTransparent field.
 func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetMonitorTransparent(v bool) {
 	o.MonitorTransparent = &v
@@ -891,15 +613,6 @@ func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetMonito
 		return nil, false
 	}
 	return o.MonitorAdaptive, true
-}
-
-// IsSetMonitorAdaptive returns a boolean if a field has been set.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) IsSetMonitorAdaptive() bool {
-	if o != nil && !IsNil(o.MonitorAdaptive) {
-		return true
-	}
-
-	return false
 }
 
 // SetMonitorAdaptive gets a reference to the given bool and assigns it to the MonitorAdaptive field.
@@ -926,28 +639,9 @@ func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetAliasA
 	return o.AliasAddress.Get(), o.AliasAddress.IsSet()
 }
 
-// IsSetAliasAddress returns a boolean if a field has been set.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) IsSetAliasAddress() bool {
-	if o != nil && o.AliasAddress.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAliasAddress gets a reference to the given NullableString and assigns it to the AliasAddress field.
 func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetAliasAddress(v string) {
 	o.AliasAddress.Set(&v)
-}
-
-// SetAliasAddressNil sets the value for AliasAddress to be an explicit nil
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetAliasAddressNil() {
-	o.AliasAddress.Set(nil)
-}
-
-// UnsetAliasAddress ensures that no value is present for AliasAddress, not even an explicit nil
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) UnsetAliasAddress() {
-	o.AliasAddress.Unset()
 }
 
 // GetAliasPort returns the AliasPort field value if set, zero value otherwise.
@@ -966,15 +660,6 @@ func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetAliasP
 		return nil, false
 	}
 	return o.AliasPort, true
-}
-
-// IsSetAliasPort returns a boolean if a field has been set.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) IsSetAliasPort() bool {
-	if o != nil && !IsNil(o.AliasPort) {
-		return true
-	}
-
-	return false
 }
 
 // SetAliasPort gets a reference to the given int64 and assigns it to the AliasPort field.
@@ -1000,15 +685,6 @@ func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetIntern
 	return o.InternalId, true
 }
 
-// IsSetInternalId returns a boolean if a field has been set.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) IsSetInternalId() bool {
-	if o != nil && !IsNil(o.InternalId) {
-		return true
-	}
-
-	return false
-}
-
 // SetInternalId gets a reference to the given string and assigns it to the InternalId field.
 func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetInternalId(v string) {
 	o.InternalId = &v
@@ -1030,15 +706,6 @@ func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetExtern
 		return nil, false
 	}
 	return o.ExternalId, true
-}
-
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
-		return true
-	}
-
-	return false
 }
 
 // SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
@@ -1064,15 +731,6 @@ func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetMonito
 	return o.MonitorSource, true
 }
 
-// IsSetMonitorSource returns a boolean if a field has been set.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) IsSetMonitorSource() bool {
-	if o != nil && !IsNil(o.MonitorSource) {
-		return true
-	}
-
-	return false
-}
-
 // SetMonitorSource gets a reference to the given string and assigns it to the MonitorSource field.
 func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetMonitorSource(v string) {
 	o.MonitorSource = &v
@@ -1094,15 +752,6 @@ func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetStatus
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -1129,28 +778,9 @@ func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetStatus
 	return o.StatusMessage.Get(), o.StatusMessage.IsSet()
 }
 
-// IsSetStatusMessage returns a boolean if a field has been set.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) IsSetStatusMessage() bool {
-	if o != nil && o.StatusMessage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusMessage gets a reference to the given NullableString and assigns it to the StatusMessage field.
 func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetStatusMessage(v string) {
 	o.StatusMessage.Set(&v)
-}
-
-// SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetStatusMessageNil() {
-	o.StatusMessage.Set(nil)
-}
-
-// UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) UnsetStatusMessage() {
-	o.StatusMessage.Unset()
 }
 
 // GetStatusDate returns the StatusDate field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1172,28 +802,9 @@ func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetStatus
 	return o.StatusDate.Get(), o.StatusDate.IsSet()
 }
 
-// IsSetStatusDate returns a boolean if a field has been set.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) IsSetStatusDate() bool {
-	if o != nil && o.StatusDate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusDate gets a reference to the given NullableTime and assigns it to the StatusDate field.
 func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetStatusDate(v time.Time) {
 	o.StatusDate.Set(&v)
-}
-
-// SetStatusDateNil sets the value for StatusDate to be an explicit nil
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetStatusDateNil() {
-	o.StatusDate.Set(nil)
-}
-
-// UnsetStatusDate ensures that no value is present for StatusDate, not even an explicit nil
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) UnsetStatusDate() {
-	o.StatusDate.Unset()
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
@@ -1212,15 +823,6 @@ func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetEnable
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -1246,15 +848,6 @@ func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetMaxRet
 	return o.MaxRetry, true
 }
 
-// IsSetMaxRetry returns a boolean if a field has been set.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) IsSetMaxRetry() bool {
-	if o != nil && !IsNil(o.MaxRetry) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxRetry gets a reference to the given int64 and assigns it to the MaxRetry field.
 func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetMaxRetry(v int64) {
 	o.MaxRetry = &v
@@ -1278,15 +871,6 @@ func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetFallCo
 	return o.FallCount, true
 }
 
-// IsSetFallCount returns a boolean if a field has been set.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) IsSetFallCount() bool {
-	if o != nil && !IsNil(o.FallCount) {
-		return true
-	}
-
-	return false
-}
-
 // SetFallCount gets a reference to the given int64 and assigns it to the FallCount field.
 func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetFallCount(v int64) {
 	o.FallCount = &v
@@ -1308,15 +892,6 @@ func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetRiseCo
 		return nil, false
 	}
 	return o.RiseCount, true
-}
-
-// IsSetRiseCount returns a boolean if a field has been set.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) IsSetRiseCount() bool {
-	if o != nil && !IsNil(o.RiseCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetRiseCount gets a reference to the given int64 and assigns it to the RiseCount field.
@@ -1343,28 +918,9 @@ func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetDataLe
 	return o.DataLength.Get(), o.DataLength.IsSet()
 }
 
-// IsSetDataLength returns a boolean if a field has been set.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) IsSetDataLength() bool {
-	if o != nil && o.DataLength.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDataLength gets a reference to the given NullableInt64 and assigns it to the DataLength field.
 func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetDataLength(v int64) {
 	o.DataLength.Set(&v)
-}
-
-// SetDataLengthNil sets the value for DataLength to be an explicit nil
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetDataLengthNil() {
-	o.DataLength.Set(nil)
-}
-
-// UnsetDataLength ensures that no value is present for DataLength, not even an explicit nil
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) UnsetDataLength() {
-	o.DataLength.Unset()
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
@@ -1383,15 +939,6 @@ func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetConfig
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorConfig and assigns it to the Config field.
@@ -1417,15 +964,6 @@ func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetCreate
 	return o.CreatedBy, true
 }
 
-// IsSetCreatedBy returns a boolean if a field has been set.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) IsSetCreatedBy() bool {
-	if o != nil && !IsNil(o.CreatedBy) {
-		return true
-	}
-
-	return false
-}
-
 // SetCreatedBy gets a reference to the given CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorCreatedBy and assigns it to the CreatedBy field.
 func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetCreatedBy(v CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitorCreatedBy) {
 	o.CreatedBy = &v
@@ -1449,15 +987,6 @@ func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetDateCr
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -1479,15 +1008,6 @@ func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) GetLastUp
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *CreateLoadBalancerMonitor200ResponseAllOfLoadBalancerMonitor) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.

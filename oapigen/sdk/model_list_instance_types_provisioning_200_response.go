@@ -62,15 +62,6 @@ func (o *ListInstanceTypesProvisioning200Response) GetInstanceTypesOk() ([]ListI
 	return o.InstanceTypes, true
 }
 
-// IsSetInstanceTypes returns a boolean if a field has been set.
-func (o *ListInstanceTypesProvisioning200Response) IsSetInstanceTypes() bool {
-	if o != nil && !IsNil(o.InstanceTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstanceTypes gets a reference to the given []ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner and assigns it to the InstanceTypes field.
 func (o *ListInstanceTypesProvisioning200Response) SetInstanceTypes(v []ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner) {
 	o.InstanceTypes = v
@@ -92,15 +83,6 @@ func (o *ListInstanceTypesProvisioning200Response) GetMetaOk() (*ListApprovals20
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListInstanceTypesProvisioning200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

@@ -61,15 +61,6 @@ func (o *GetIncidents200Response) GetIncidentOk() (*GetIncidents200ResponseIncid
 	return o.Incident, true
 }
 
-// IsSetIncident returns a boolean if a field has been set.
-func (o *GetIncidents200Response) IsSetIncident() bool {
-	if o != nil && !IsNil(o.Incident) {
-		return true
-	}
-
-	return false
-}
-
 // SetIncident gets a reference to the given GetIncidents200ResponseIncident and assigns it to the Incident field.
 func (o *GetIncidents200Response) SetIncident(v GetIncidents200ResponseIncident) {
 	o.Incident = &v

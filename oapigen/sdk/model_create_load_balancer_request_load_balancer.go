@@ -80,15 +80,6 @@ func (o *CreateLoadBalancerRequestLoadBalancer) GetTypeOk() (*string, bool) {
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *CreateLoadBalancerRequestLoadBalancer) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given string and assigns it to the Type field.
 func (o *CreateLoadBalancerRequestLoadBalancer) SetType(v string) {
 	o.Type = &v
@@ -110,15 +101,6 @@ func (o *CreateLoadBalancerRequestLoadBalancer) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *CreateLoadBalancerRequestLoadBalancer) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -144,15 +126,6 @@ func (o *CreateLoadBalancerRequestLoadBalancer) GetDescriptionOk() (*string, boo
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *CreateLoadBalancerRequestLoadBalancer) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *CreateLoadBalancerRequestLoadBalancer) SetDescription(v string) {
 	o.Description = &v
@@ -174,15 +147,6 @@ func (o *CreateLoadBalancerRequestLoadBalancer) GetNetworkServerIdOk() (*int64, 
 		return nil, false
 	}
 	return o.NetworkServerId, true
-}
-
-// IsSetNetworkServerId returns a boolean if a field has been set.
-func (o *CreateLoadBalancerRequestLoadBalancer) IsSetNetworkServerId() bool {
-	if o != nil && !IsNil(o.NetworkServerId) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkServerId gets a reference to the given int64 and assigns it to the NetworkServerId field.
@@ -208,15 +172,6 @@ func (o *CreateLoadBalancerRequestLoadBalancer) GetSiteOk() (*CreateLoadBalancer
 	return o.Site, true
 }
 
-// IsSetSite returns a boolean if a field has been set.
-func (o *CreateLoadBalancerRequestLoadBalancer) IsSetSite() bool {
-	if o != nil && !IsNil(o.Site) {
-		return true
-	}
-
-	return false
-}
-
 // SetSite gets a reference to the given CreateLoadBalancerRequestLoadBalancerSite and assigns it to the Site field.
 func (o *CreateLoadBalancerRequestLoadBalancer) SetSite(v CreateLoadBalancerRequestLoadBalancerSite) {
 	o.Site = &v
@@ -238,15 +193,6 @@ func (o *CreateLoadBalancerRequestLoadBalancer) GetZoneOk() (*CreateLoadBalancer
 		return nil, false
 	}
 	return o.Zone, true
-}
-
-// IsSetZone returns a boolean if a field has been set.
-func (o *CreateLoadBalancerRequestLoadBalancer) IsSetZone() bool {
-	if o != nil && !IsNil(o.Zone) {
-		return true
-	}
-
-	return false
 }
 
 // SetZone gets a reference to the given CreateLoadBalancerRequestLoadBalancerZone and assigns it to the Zone field.
@@ -272,15 +218,6 @@ func (o *CreateLoadBalancerRequestLoadBalancer) GetConfigOk() (*CreateLoadBalanc
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *CreateLoadBalancerRequestLoadBalancer) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given CreateLoadBalancerRequestLoadBalancerConfig and assigns it to the Config field.
 func (o *CreateLoadBalancerRequestLoadBalancer) SetConfig(v CreateLoadBalancerRequestLoadBalancerConfig) {
 	o.Config = &v
@@ -302,15 +239,6 @@ func (o *CreateLoadBalancerRequestLoadBalancer) GetVisibilityOk() (*string, bool
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *CreateLoadBalancerRequestLoadBalancer) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -336,15 +264,6 @@ func (o *CreateLoadBalancerRequestLoadBalancer) GetTenantsOk() ([]CreateLoadBala
 	return o.Tenants, true
 }
 
-// IsSetTenants returns a boolean if a field has been set.
-func (o *CreateLoadBalancerRequestLoadBalancer) IsSetTenants() bool {
-	if o != nil && !IsNil(o.Tenants) {
-		return true
-	}
-
-	return false
-}
-
 // SetTenants gets a reference to the given []CreateLoadBalancerRequestLoadBalancerTenantsInner and assigns it to the Tenants field.
 func (o *CreateLoadBalancerRequestLoadBalancer) SetTenants(v []CreateLoadBalancerRequestLoadBalancerTenantsInner) {
 	o.Tenants = v
@@ -366,15 +285,6 @@ func (o *CreateLoadBalancerRequestLoadBalancer) GetResourcePermissionsOk() (*Cre
 		return nil, false
 	}
 	return o.ResourcePermissions, true
-}
-
-// IsSetResourcePermissions returns a boolean if a field has been set.
-func (o *CreateLoadBalancerRequestLoadBalancer) IsSetResourcePermissions() bool {
-	if o != nil && !IsNil(o.ResourcePermissions) {
-		return true
-	}
-
-	return false
 }
 
 // SetResourcePermissions gets a reference to the given CreateLoadBalancerRequestLoadBalancerResourcePermissions and assigns it to the ResourcePermissions field.

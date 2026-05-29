@@ -62,15 +62,6 @@ func (o *ListVirtualImages200Response) GetVirtualImagesOk() ([]ListVirtualImages
 	return o.VirtualImages, true
 }
 
-// IsSetVirtualImages returns a boolean if a field has been set.
-func (o *ListVirtualImages200Response) IsSetVirtualImages() bool {
-	if o != nil && !IsNil(o.VirtualImages) {
-		return true
-	}
-
-	return false
-}
-
 // SetVirtualImages gets a reference to the given []ListVirtualImages200ResponseAllOfVirtualImagesInner and assigns it to the VirtualImages field.
 func (o *ListVirtualImages200Response) SetVirtualImages(v []ListVirtualImages200ResponseAllOfVirtualImagesInner) {
 	o.VirtualImages = v
@@ -92,15 +83,6 @@ func (o *ListVirtualImages200Response) GetMetaOk() (*ListApprovals200ResponseAll
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListVirtualImages200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

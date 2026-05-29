@@ -91,15 +91,6 @@ func (o *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration8) GetExcludeCont
 	return o.ExcludeContainers, true
 }
 
-// IsSetExcludeContainers returns a boolean if a field has been set.
-func (o *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration8) IsSetExcludeContainers() bool {
-	if o != nil && !IsNil(o.ExcludeContainers) {
-		return true
-	}
-
-	return false
-}
-
 // SetExcludeContainers gets a reference to the given string and assigns it to the ExcludeContainers field.
 func (o *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration8) SetExcludeContainers(v string) {
 	o.ExcludeContainers = &v

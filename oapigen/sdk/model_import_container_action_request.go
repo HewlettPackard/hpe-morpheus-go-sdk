@@ -62,15 +62,6 @@ func (o *ImportContainerActionRequest) GetStorageProviderIdOk() (*int64, bool) {
 	return o.StorageProviderId, true
 }
 
-// IsSetStorageProviderId returns a boolean if a field has been set.
-func (o *ImportContainerActionRequest) IsSetStorageProviderId() bool {
-	if o != nil && !IsNil(o.StorageProviderId) {
-		return true
-	}
-
-	return false
-}
-
 // SetStorageProviderId gets a reference to the given int64 and assigns it to the StorageProviderId field.
 func (o *ImportContainerActionRequest) SetStorageProviderId(v int64) {
 	o.StorageProviderId = &v

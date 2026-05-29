@@ -61,15 +61,6 @@ func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf3Worker) GetPlanOk() (*Add
 	return o.Plan, true
 }
 
-// IsSetPlan returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf3Worker) IsSetPlan() bool {
-	if o != nil && !IsNil(o.Plan) {
-		return true
-	}
-
-	return false
-}
-
 // SetPlan gets a reference to the given AddClusterWorkerRequestServerConfigAnyOfOneOf3WorkerPlan and assigns it to the Plan field.
 func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf3Worker) SetPlan(v AddClusterWorkerRequestServerConfigAnyOfOneOf3WorkerPlan) {
 	o.Plan = &v

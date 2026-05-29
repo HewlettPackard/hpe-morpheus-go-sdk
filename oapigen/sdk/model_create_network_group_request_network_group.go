@@ -64,15 +64,6 @@ func (o *CreateNetworkGroupRequestNetworkGroup) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *CreateNetworkGroupRequestNetworkGroup) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *CreateNetworkGroupRequestNetworkGroup) SetName(v string) {
 	o.Name = &v
@@ -94,15 +85,6 @@ func (o *CreateNetworkGroupRequestNetworkGroup) GetDescriptionOk() (*string, boo
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *CreateNetworkGroupRequestNetworkGroup) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -128,15 +110,6 @@ func (o *CreateNetworkGroupRequestNetworkGroup) GetNetworksOk() ([]int64, bool) 
 	return o.Networks, true
 }
 
-// IsSetNetworks returns a boolean if a field has been set.
-func (o *CreateNetworkGroupRequestNetworkGroup) IsSetNetworks() bool {
-	if o != nil && !IsNil(o.Networks) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworks gets a reference to the given []int64 and assigns it to the Networks field.
 func (o *CreateNetworkGroupRequestNetworkGroup) SetNetworks(v []int64) {
 	o.Networks = v
@@ -158,15 +131,6 @@ func (o *CreateNetworkGroupRequestNetworkGroup) GetSubnetsOk() ([]map[string]int
 		return nil, false
 	}
 	return o.Subnets, true
-}
-
-// IsSetSubnets returns a boolean if a field has been set.
-func (o *CreateNetworkGroupRequestNetworkGroup) IsSetSubnets() bool {
-	if o != nil && !IsNil(o.Subnets) {
-		return true
-	}
-
-	return false
 }
 
 // SetSubnets gets a reference to the given []map[string]interface{} and assigns it to the Subnets field.

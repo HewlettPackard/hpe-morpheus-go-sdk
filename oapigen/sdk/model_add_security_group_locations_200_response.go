@@ -62,15 +62,6 @@ func (o *AddSecurityGroupLocations200Response) GetSecurityGroupLocationOk() (*Ad
 	return o.SecurityGroupLocation, true
 }
 
-// IsSetSecurityGroupLocation returns a boolean if a field has been set.
-func (o *AddSecurityGroupLocations200Response) IsSetSecurityGroupLocation() bool {
-	if o != nil && !IsNil(o.SecurityGroupLocation) {
-		return true
-	}
-
-	return false
-}
-
 // SetSecurityGroupLocation gets a reference to the given AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation and assigns it to the SecurityGroupLocation field.
 func (o *AddSecurityGroupLocations200Response) SetSecurityGroupLocation(v AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) {
 	o.SecurityGroupLocation = &v
@@ -92,15 +83,6 @@ func (o *AddSecurityGroupLocations200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *AddSecurityGroupLocations200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

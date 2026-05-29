@@ -62,15 +62,6 @@ func (o *AddClusterWorker200Response) GetServersOk() ([]map[string]interface{}, 
 	return o.Servers, true
 }
 
-// IsSetServers returns a boolean if a field has been set.
-func (o *AddClusterWorker200Response) IsSetServers() bool {
-	if o != nil && !IsNil(o.Servers) {
-		return true
-	}
-
-	return false
-}
-
 // SetServers gets a reference to the given []map[string]interface{} and assigns it to the Servers field.
 func (o *AddClusterWorker200Response) SetServers(v []map[string]interface{}) {
 	o.Servers = v
@@ -92,15 +83,6 @@ func (o *AddClusterWorker200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *AddClusterWorker200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

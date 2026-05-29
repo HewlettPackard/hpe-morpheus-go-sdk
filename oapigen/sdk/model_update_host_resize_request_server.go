@@ -61,15 +61,6 @@ func (o *UpdateHostResizeRequestServer) GetPlanOk() (*UpdateHostResizeRequestSer
 	return o.Plan, true
 }
 
-// IsSetPlan returns a boolean if a field has been set.
-func (o *UpdateHostResizeRequestServer) IsSetPlan() bool {
-	if o != nil && !IsNil(o.Plan) {
-		return true
-	}
-
-	return false
-}
-
 // SetPlan gets a reference to the given UpdateHostResizeRequestServerPlan and assigns it to the Plan field.
 func (o *UpdateHostResizeRequestServer) SetPlan(v UpdateHostResizeRequestServerPlan) {
 	o.Plan = &v

@@ -63,15 +63,6 @@ func (o *AddVdiAllocation200ResponseAllOfDesktopAllocationUser) GetIdOk() (*int6
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *AddVdiAllocation200ResponseAllOfDesktopAllocationUser) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *AddVdiAllocation200ResponseAllOfDesktopAllocationUser) SetId(v int64) {
 	o.Id = &v
@@ -95,15 +86,6 @@ func (o *AddVdiAllocation200ResponseAllOfDesktopAllocationUser) GetNameOk() (*st
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *AddVdiAllocation200ResponseAllOfDesktopAllocationUser) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *AddVdiAllocation200ResponseAllOfDesktopAllocationUser) SetName(v string) {
 	o.Name = &v
@@ -125,15 +107,6 @@ func (o *AddVdiAllocation200ResponseAllOfDesktopAllocationUser) GetUsernameOk() 
 		return nil, false
 	}
 	return o.Username, true
-}
-
-// IsSetUsername returns a boolean if a field has been set.
-func (o *AddVdiAllocation200ResponseAllOfDesktopAllocationUser) IsSetUsername() bool {
-	if o != nil && !IsNil(o.Username) {
-		return true
-	}
-
-	return false
 }
 
 // SetUsername gets a reference to the given string and assigns it to the Username field.

@@ -66,15 +66,6 @@ func (o *UpdateNetworkFirewallRuleGroupRequestRuleGroup) GetNameOk() (*string, b
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateNetworkFirewallRuleGroupRequestRuleGroup) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *UpdateNetworkFirewallRuleGroupRequestRuleGroup) SetName(v string) {
 	o.Name = &v
@@ -99,28 +90,9 @@ func (o *UpdateNetworkFirewallRuleGroupRequestRuleGroup) GetDescriptionOk() (*st
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *UpdateNetworkFirewallRuleGroupRequestRuleGroup) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *UpdateNetworkFirewallRuleGroupRequestRuleGroup) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *UpdateNetworkFirewallRuleGroupRequestRuleGroup) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *UpdateNetworkFirewallRuleGroupRequestRuleGroup) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetPriority returns the Priority field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -142,28 +114,9 @@ func (o *UpdateNetworkFirewallRuleGroupRequestRuleGroup) GetPriorityOk() (*int64
 	return o.Priority.Get(), o.Priority.IsSet()
 }
 
-// IsSetPriority returns a boolean if a field has been set.
-func (o *UpdateNetworkFirewallRuleGroupRequestRuleGroup) IsSetPriority() bool {
-	if o != nil && o.Priority.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPriority gets a reference to the given NullableInt64 and assigns it to the Priority field.
 func (o *UpdateNetworkFirewallRuleGroupRequestRuleGroup) SetPriority(v int64) {
 	o.Priority.Set(&v)
-}
-
-// SetPriorityNil sets the value for Priority to be an explicit nil
-func (o *UpdateNetworkFirewallRuleGroupRequestRuleGroup) SetPriorityNil() {
-	o.Priority.Set(nil)
-}
-
-// UnsetPriority ensures that no value is present for Priority, not even an explicit nil
-func (o *UpdateNetworkFirewallRuleGroupRequestRuleGroup) UnsetPriority() {
-	o.Priority.Unset()
 }
 
 func (o UpdateNetworkFirewallRuleGroupRequestRuleGroup) MarshalJSON() ([]byte, error) {

@@ -75,15 +75,6 @@ func (o *UpdateHostManagedRequestServer) GetSshHostOk() (*string, bool) {
 	return o.SshHost, true
 }
 
-// IsSetSshHost returns a boolean if a field has been set.
-func (o *UpdateHostManagedRequestServer) IsSetSshHost() bool {
-	if o != nil && !IsNil(o.SshHost) {
-		return true
-	}
-
-	return false
-}
-
 // SetSshHost gets a reference to the given string and assigns it to the SshHost field.
 func (o *UpdateHostManagedRequestServer) SetSshHost(v string) {
 	o.SshHost = &v
@@ -105,15 +96,6 @@ func (o *UpdateHostManagedRequestServer) GetSshUsernameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SshUsername, true
-}
-
-// IsSetSshUsername returns a boolean if a field has been set.
-func (o *UpdateHostManagedRequestServer) IsSetSshUsername() bool {
-	if o != nil && !IsNil(o.SshUsername) {
-		return true
-	}
-
-	return false
 }
 
 // SetSshUsername gets a reference to the given string and assigns it to the SshUsername field.
@@ -139,15 +121,6 @@ func (o *UpdateHostManagedRequestServer) GetSshPasswordOk() (*string, bool) {
 	return o.SshPassword, true
 }
 
-// IsSetSshPassword returns a boolean if a field has been set.
-func (o *UpdateHostManagedRequestServer) IsSetSshPassword() bool {
-	if o != nil && !IsNil(o.SshPassword) {
-		return true
-	}
-
-	return false
-}
-
 // SetSshPassword gets a reference to the given string and assigns it to the SshPassword field.
 func (o *UpdateHostManagedRequestServer) SetSshPassword(v string) {
 	o.SshPassword = &v
@@ -169,15 +142,6 @@ func (o *UpdateHostManagedRequestServer) GetSshKeyPairOk() (*UpdateHostManagedRe
 		return nil, false
 	}
 	return o.SshKeyPair, true
-}
-
-// IsSetSshKeyPair returns a boolean if a field has been set.
-func (o *UpdateHostManagedRequestServer) IsSetSshKeyPair() bool {
-	if o != nil && !IsNil(o.SshKeyPair) {
-		return true
-	}
-
-	return false
 }
 
 // SetSshKeyPair gets a reference to the given UpdateHostManagedRequestServerSshKeyPair and assigns it to the SshKeyPair field.
@@ -203,15 +167,6 @@ func (o *UpdateHostManagedRequestServer) GetServerOsOk() (*UpdateHostManagedRequ
 	return o.ServerOs, true
 }
 
-// IsSetServerOs returns a boolean if a field has been set.
-func (o *UpdateHostManagedRequestServer) IsSetServerOs() bool {
-	if o != nil && !IsNil(o.ServerOs) {
-		return true
-	}
-
-	return false
-}
-
 // SetServerOs gets a reference to the given UpdateHostManagedRequestServerServerOs and assigns it to the ServerOs field.
 func (o *UpdateHostManagedRequestServer) SetServerOs(v UpdateHostManagedRequestServerServerOs) {
 	o.ServerOs = &v
@@ -233,15 +188,6 @@ func (o *UpdateHostManagedRequestServer) GetPlanOk() (*UpdateHostManagedRequestS
 		return nil, false
 	}
 	return o.Plan, true
-}
-
-// IsSetPlan returns a boolean if a field has been set.
-func (o *UpdateHostManagedRequestServer) IsSetPlan() bool {
-	if o != nil && !IsNil(o.Plan) {
-		return true
-	}
-
-	return false
 }
 
 // SetPlan gets a reference to the given UpdateHostManagedRequestServerPlan and assigns it to the Plan field.
@@ -267,15 +213,6 @@ func (o *UpdateHostManagedRequestServer) GetAccountOk() (*UpdateHostManagedReque
 	return o.Account, true
 }
 
-// IsSetAccount returns a boolean if a field has been set.
-func (o *UpdateHostManagedRequestServer) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccount gets a reference to the given UpdateHostManagedRequestServerAccount and assigns it to the Account field.
 func (o *UpdateHostManagedRequestServer) SetAccount(v UpdateHostManagedRequestServerAccount) {
 	o.Account = &v
@@ -297,15 +234,6 @@ func (o *UpdateHostManagedRequestServer) GetProvisionSiteIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.ProvisionSiteId, true
-}
-
-// IsSetProvisionSiteId returns a boolean if a field has been set.
-func (o *UpdateHostManagedRequestServer) IsSetProvisionSiteId() bool {
-	if o != nil && !IsNil(o.ProvisionSiteId) {
-		return true
-	}
-
-	return false
 }
 
 // SetProvisionSiteId gets a reference to the given int64 and assigns it to the ProvisionSiteId field.
@@ -331,15 +259,6 @@ func (o *UpdateHostManagedRequestServer) GetTagsOk() ([]UpdateHostManagedRequest
 	return o.Tags, true
 }
 
-// IsSetTags returns a boolean if a field has been set.
-func (o *UpdateHostManagedRequestServer) IsSetTags() bool {
-	if o != nil && !IsNil(o.Tags) {
-		return true
-	}
-
-	return false
-}
-
 // SetTags gets a reference to the given []UpdateHostManagedRequestServerTagsInner and assigns it to the Tags field.
 func (o *UpdateHostManagedRequestServer) SetTags(v []UpdateHostManagedRequestServerTagsInner) {
 	o.Tags = v
@@ -361,15 +280,6 @@ func (o *UpdateHostManagedRequestServer) GetConfigOk() (*UpdateHostManagedReques
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *UpdateHostManagedRequestServer) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given UpdateHostManagedRequestServerConfig and assigns it to the Config field.

@@ -69,15 +69,6 @@ func (o *Cypher) GetIdOk() (*int32, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *Cypher) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int32 and assigns it to the Id field.
 func (o *Cypher) SetId(v int32) {
 	o.Id = &v
@@ -101,15 +92,6 @@ func (o *Cypher) GetItemKeyOk() (*string, bool) {
 	return o.ItemKey, true
 }
 
-// IsSetItemKey returns a boolean if a field has been set.
-func (o *Cypher) IsSetItemKey() bool {
-	if o != nil && !IsNil(o.ItemKey) {
-		return true
-	}
-
-	return false
-}
-
 // SetItemKey gets a reference to the given string and assigns it to the ItemKey field.
 func (o *Cypher) SetItemKey(v string) {
 	o.ItemKey = &v
@@ -131,15 +113,6 @@ func (o *Cypher) GetLeaseTimeoutOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.LeaseTimeout, true
-}
-
-// IsSetLeaseTimeout returns a boolean if a field has been set.
-func (o *Cypher) IsSetLeaseTimeout() bool {
-	if o != nil && !IsNil(o.LeaseTimeout) {
-		return true
-	}
-
-	return false
 }
 
 // SetLeaseTimeout gets a reference to the given int64 and assigns it to the LeaseTimeout field.
@@ -166,28 +139,9 @@ func (o *Cypher) GetExpireDateOk() (*time.Time, bool) {
 	return o.ExpireDate.Get(), o.ExpireDate.IsSet()
 }
 
-// IsSetExpireDate returns a boolean if a field has been set.
-func (o *Cypher) IsSetExpireDate() bool {
-	if o != nil && o.ExpireDate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExpireDate gets a reference to the given NullableTime and assigns it to the ExpireDate field.
 func (o *Cypher) SetExpireDate(v time.Time) {
 	o.ExpireDate.Set(&v)
-}
-
-// SetExpireDateNil sets the value for ExpireDate to be an explicit nil
-func (o *Cypher) SetExpireDateNil() {
-	o.ExpireDate.Set(nil)
-}
-
-// UnsetExpireDate ensures that no value is present for ExpireDate, not even an explicit nil
-func (o *Cypher) UnsetExpireDate() {
-	o.ExpireDate.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -209,28 +163,9 @@ func (o *Cypher) GetDateCreatedOk() (*time.Time, bool) {
 	return o.DateCreated.Get(), o.DateCreated.IsSet()
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *Cypher) IsSetDateCreated() bool {
-	if o != nil && o.DateCreated.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given NullableTime and assigns it to the DateCreated field.
 func (o *Cypher) SetDateCreated(v time.Time) {
 	o.DateCreated.Set(&v)
-}
-
-// SetDateCreatedNil sets the value for DateCreated to be an explicit nil
-func (o *Cypher) SetDateCreatedNil() {
-	o.DateCreated.Set(nil)
-}
-
-// UnsetDateCreated ensures that no value is present for DateCreated, not even an explicit nil
-func (o *Cypher) UnsetDateCreated() {
-	o.DateCreated.Unset()
 }
 
 // GetLastUpdated returns the LastUpdated field value if set, zero value otherwise.
@@ -249,15 +184,6 @@ func (o *Cypher) GetLastUpdatedOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *Cypher) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
@@ -283,15 +209,6 @@ func (o *Cypher) GetLastAccessedOk() (*time.Time, bool) {
 	return o.LastAccessed, true
 }
 
-// IsSetLastAccessed returns a boolean if a field has been set.
-func (o *Cypher) IsSetLastAccessed() bool {
-	if o != nil && !IsNil(o.LastAccessed) {
-		return true
-	}
-
-	return false
-}
-
 // SetLastAccessed gets a reference to the given time.Time and assigns it to the LastAccessed field.
 func (o *Cypher) SetLastAccessed(v time.Time) {
 	o.LastAccessed = &v
@@ -313,15 +230,6 @@ func (o *Cypher) GetCreatedByOk() (*string, bool) {
 		return nil, false
 	}
 	return o.CreatedBy, true
-}
-
-// IsSetCreatedBy returns a boolean if a field has been set.
-func (o *Cypher) IsSetCreatedBy() bool {
-	if o != nil && !IsNil(o.CreatedBy) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreatedBy gets a reference to the given string and assigns it to the CreatedBy field.

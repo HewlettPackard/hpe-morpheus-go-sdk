@@ -75,15 +75,6 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContai
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) SetId(v int64) {
 	o.Id = &v
@@ -108,28 +99,9 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContai
 	return o.Account.Get(), o.Account.IsSet()
 }
 
-// IsSetAccount returns a boolean if a field has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) IsSetAccount() bool {
-	if o != nil && o.Account.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAccount gets a reference to the given NullableString and assigns it to the Account field.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) SetAccount(v string) {
 	o.Account.Set(&v)
-}
-
-// SetAccountNil sets the value for Account to be an explicit nil
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) SetAccountNil() {
-	o.Account.Set(nil)
-}
-
-// UnsetAccount ensures that no value is present for Account, not even an explicit nil
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) UnsetAccount() {
-	o.Account.Unset()
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -148,15 +120,6 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContai
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -183,15 +146,6 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContai
 	return o.Labels, true
 }
 
-// IsSetLabels returns a boolean if a field has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
-}
-
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) SetLabels(v []string) {
 	o.Labels = v
@@ -213,15 +167,6 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContai
 		return nil, false
 	}
 	return o.ShortName, true
-}
-
-// IsSetShortName returns a boolean if a field has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) IsSetShortName() bool {
-	if o != nil && !IsNil(o.ShortName) {
-		return true
-	}
-
-	return false
 }
 
 // SetShortName gets a reference to the given string and assigns it to the ShortName field.
@@ -247,15 +192,6 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContai
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) SetCode(v string) {
 	o.Code = &v
@@ -279,15 +215,6 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContai
 	return o.ContainerVersion, true
 }
 
-// IsSetContainerVersion returns a boolean if a field has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) IsSetContainerVersion() bool {
-	if o != nil && !IsNil(o.ContainerVersion) {
-		return true
-	}
-
-	return false
-}
-
 // SetContainerVersion gets a reference to the given string and assigns it to the ContainerVersion field.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) SetContainerVersion(v string) {
 	o.ContainerVersion = &v
@@ -309,15 +236,6 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContai
 		return nil, false
 	}
 	return o.ProvisionType, true
-}
-
-// IsSetProvisionType returns a boolean if a field has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) IsSetProvisionType() bool {
-	if o != nil && !IsNil(o.ProvisionType) {
-		return true
-	}
-
-	return false
 }
 
 // SetProvisionType gets a reference to the given ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerTypeProvisionType and assigns it to the ProvisionType field.
@@ -344,28 +262,9 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContai
 	return o.VirtualImage.Get(), o.VirtualImage.IsSet()
 }
 
-// IsSetVirtualImage returns a boolean if a field has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) IsSetVirtualImage() bool {
-	if o != nil && o.VirtualImage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetVirtualImage gets a reference to the given NullableString and assigns it to the VirtualImage field.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) SetVirtualImage(v string) {
 	o.VirtualImage.Set(&v)
-}
-
-// SetVirtualImageNil sets the value for VirtualImage to be an explicit nil
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) SetVirtualImageNil() {
-	o.VirtualImage.Set(nil)
-}
-
-// UnsetVirtualImage ensures that no value is present for VirtualImage, not even an explicit nil
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) UnsetVirtualImage() {
-	o.VirtualImage.Unset()
 }
 
 // GetCategory returns the Category field value if set, zero value otherwise.
@@ -384,15 +283,6 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContai
 		return nil, false
 	}
 	return o.Category, true
-}
-
-// IsSetCategory returns a boolean if a field has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
-		return true
-	}
-
-	return false
 }
 
 // SetCategory gets a reference to the given string and assigns it to the Category field.
@@ -418,15 +308,6 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContai
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) SetConfig(v map[string]interface{}) {
 	o.Config = v
@@ -448,15 +329,6 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContai
 		return nil, false
 	}
 	return o.ContainerPorts, true
-}
-
-// IsSetContainerPorts returns a boolean if a field has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) IsSetContainerPorts() bool {
-	if o != nil && !IsNil(o.ContainerPorts) {
-		return true
-	}
-
-	return false
 }
 
 // SetContainerPorts gets a reference to the given []map[string]interface{} and assigns it to the ContainerPorts field.
@@ -482,15 +354,6 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContai
 	return o.ContainerScripts, true
 }
 
-// IsSetContainerScripts returns a boolean if a field has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) IsSetContainerScripts() bool {
-	if o != nil && !IsNil(o.ContainerScripts) {
-		return true
-	}
-
-	return false
-}
-
 // SetContainerScripts gets a reference to the given []map[string]interface{} and assigns it to the ContainerScripts field.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) SetContainerScripts(v []map[string]interface{}) {
 	o.ContainerScripts = v
@@ -514,15 +377,6 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContai
 	return o.ContainerTemplates, true
 }
 
-// IsSetContainerTemplates returns a boolean if a field has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) IsSetContainerTemplates() bool {
-	if o != nil && !IsNil(o.ContainerTemplates) {
-		return true
-	}
-
-	return false
-}
-
 // SetContainerTemplates gets a reference to the given []map[string]interface{} and assigns it to the ContainerTemplates field.
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) SetContainerTemplates(v []map[string]interface{}) {
 	o.ContainerTemplates = v
@@ -544,15 +398,6 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContai
 		return nil, false
 	}
 	return o.EnvironmentVariables, true
-}
-
-// IsSetEnvironmentVariables returns a boolean if a field has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) IsSetEnvironmentVariables() bool {
-	if o != nil && !IsNil(o.EnvironmentVariables) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnvironmentVariables gets a reference to the given []map[string]interface{} and assigns it to the EnvironmentVariables field.

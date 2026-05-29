@@ -68,15 +68,6 @@ func (o *GetStateInstance200ResponseAllOfInstance) GetWorkloadsOk() ([]map[strin
 	return o.Workloads, true
 }
 
-// IsSetWorkloads returns a boolean if a field has been set.
-func (o *GetStateInstance200ResponseAllOfInstance) IsSetWorkloads() bool {
-	if o != nil && !IsNil(o.Workloads) {
-		return true
-	}
-
-	return false
-}
-
 // SetWorkloads gets a reference to the given []map[string]interface{} and assigns it to the Workloads field.
 func (o *GetStateInstance200ResponseAllOfInstance) SetWorkloads(v []map[string]interface{}) {
 	o.Workloads = v
@@ -98,15 +89,6 @@ func (o *GetStateInstance200ResponseAllOfInstance) GetIacDriftOk() (*bool, bool)
 		return nil, false
 	}
 	return o.IacDrift, true
-}
-
-// IsSetIacDrift returns a boolean if a field has been set.
-func (o *GetStateInstance200ResponseAllOfInstance) IsSetIacDrift() bool {
-	if o != nil && !IsNil(o.IacDrift) {
-		return true
-	}
-
-	return false
 }
 
 // SetIacDrift gets a reference to the given bool and assigns it to the IacDrift field.
@@ -132,15 +114,6 @@ func (o *GetStateInstance200ResponseAllOfInstance) GetPlanResourcesOk() ([]map[s
 	return o.PlanResources, true
 }
 
-// IsSetPlanResources returns a boolean if a field has been set.
-func (o *GetStateInstance200ResponseAllOfInstance) IsSetPlanResources() bool {
-	if o != nil && !IsNil(o.PlanResources) {
-		return true
-	}
-
-	return false
-}
-
 // SetPlanResources gets a reference to the given []map[string]interface{} and assigns it to the PlanResources field.
 func (o *GetStateInstance200ResponseAllOfInstance) SetPlanResources(v []map[string]interface{}) {
 	o.PlanResources = v
@@ -162,15 +135,6 @@ func (o *GetStateInstance200ResponseAllOfInstance) GetSpecsOk() ([]map[string]in
 		return nil, false
 	}
 	return o.Specs, true
-}
-
-// IsSetSpecs returns a boolean if a field has been set.
-func (o *GetStateInstance200ResponseAllOfInstance) IsSetSpecs() bool {
-	if o != nil && !IsNil(o.Specs) {
-		return true
-	}
-
-	return false
 }
 
 // SetSpecs gets a reference to the given []map[string]interface{} and assigns it to the Specs field.
@@ -196,15 +160,6 @@ func (o *GetStateInstance200ResponseAllOfInstance) GetStateDataOk() (*string, bo
 	return o.StateData, true
 }
 
-// IsSetStateData returns a boolean if a field has been set.
-func (o *GetStateInstance200ResponseAllOfInstance) IsSetStateData() bool {
-	if o != nil && !IsNil(o.StateData) {
-		return true
-	}
-
-	return false
-}
-
 // SetStateData gets a reference to the given string and assigns it to the StateData field.
 func (o *GetStateInstance200ResponseAllOfInstance) SetStateData(v string) {
 	o.StateData = &v
@@ -226,15 +181,6 @@ func (o *GetStateInstance200ResponseAllOfInstance) GetPlanDataOk() (*string, boo
 		return nil, false
 	}
 	return o.PlanData, true
-}
-
-// IsSetPlanData returns a boolean if a field has been set.
-func (o *GetStateInstance200ResponseAllOfInstance) IsSetPlanData() bool {
-	if o != nil && !IsNil(o.PlanData) {
-		return true
-	}
-
-	return false
 }
 
 // SetPlanData gets a reference to the given string and assigns it to the PlanData field.
@@ -260,15 +206,6 @@ func (o *GetStateInstance200ResponseAllOfInstance) GetInputOk() (*GetStateInstan
 	return o.Input, true
 }
 
-// IsSetInput returns a boolean if a field has been set.
-func (o *GetStateInstance200ResponseAllOfInstance) IsSetInput() bool {
-	if o != nil && !IsNil(o.Input) {
-		return true
-	}
-
-	return false
-}
-
 // SetInput gets a reference to the given GetStateInstance200ResponseAllOfInstanceInput and assigns it to the Input field.
 func (o *GetStateInstance200ResponseAllOfInstance) SetInput(v GetStateInstance200ResponseAllOfInstanceInput) {
 	o.Input = &v
@@ -290,15 +227,6 @@ func (o *GetStateInstance200ResponseAllOfInstance) GetOutputOk() (*GetStateInsta
 		return nil, false
 	}
 	return o.Output, true
-}
-
-// IsSetOutput returns a boolean if a field has been set.
-func (o *GetStateInstance200ResponseAllOfInstance) IsSetOutput() bool {
-	if o != nil && !IsNil(o.Output) {
-		return true
-	}
-
-	return false
 }
 
 // SetOutput gets a reference to the given GetStateInstance200ResponseAllOfInstanceOutput and assigns it to the Output field.

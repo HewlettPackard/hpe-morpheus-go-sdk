@@ -63,15 +63,6 @@ func (o *UpdateSpecTemplateRequestSpecTemplateConfigCloudformation) GetIAMOk() (
 	return o.IAM, true
 }
 
-// IsSetIAM returns a boolean if a field has been set.
-func (o *UpdateSpecTemplateRequestSpecTemplateConfigCloudformation) IsSetIAM() bool {
-	if o != nil && !IsNil(o.IAM) {
-		return true
-	}
-
-	return false
-}
-
 // SetIAM gets a reference to the given UpdateSpecTemplateRequestSpecTemplateConfigCloudformationIAM and assigns it to the IAM field.
 func (o *UpdateSpecTemplateRequestSpecTemplateConfigCloudformation) SetIAM(v UpdateSpecTemplateRequestSpecTemplateConfigCloudformationIAM) {
 	o.IAM = &v
@@ -95,15 +86,6 @@ func (o *UpdateSpecTemplateRequestSpecTemplateConfigCloudformation) GetCAPABILIT
 	return o.CAPABILITY_NAMED_IAM, true
 }
 
-// IsSetCAPABILITY_NAMED_IAM returns a boolean if a field has been set.
-func (o *UpdateSpecTemplateRequestSpecTemplateConfigCloudformation) IsSetCAPABILITY_NAMED_IAM() bool {
-	if o != nil && !IsNil(o.CAPABILITY_NAMED_IAM) {
-		return true
-	}
-
-	return false
-}
-
 // SetCAPABILITY_NAMED_IAM gets a reference to the given UpdateSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYNAMEDIAM and assigns it to the CAPABILITY_NAMED_IAM field.
 func (o *UpdateSpecTemplateRequestSpecTemplateConfigCloudformation) SetCAPABILITY_NAMED_IAM(v UpdateSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYNAMEDIAM) {
 	o.CAPABILITY_NAMED_IAM = &v
@@ -125,15 +107,6 @@ func (o *UpdateSpecTemplateRequestSpecTemplateConfigCloudformation) GetCAPABILIT
 		return nil, false
 	}
 	return o.CAPABILITY_AUTO_EXPAND, true
-}
-
-// IsSetCAPABILITY_AUTO_EXPAND returns a boolean if a field has been set.
-func (o *UpdateSpecTemplateRequestSpecTemplateConfigCloudformation) IsSetCAPABILITY_AUTO_EXPAND() bool {
-	if o != nil && !IsNil(o.CAPABILITY_AUTO_EXPAND) {
-		return true
-	}
-
-	return false
 }
 
 // SetCAPABILITY_AUTO_EXPAND gets a reference to the given UpdateSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYAUTOEXPAND and assigns it to the CAPABILITY_AUTO_EXPAND field.

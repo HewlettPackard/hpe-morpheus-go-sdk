@@ -62,15 +62,6 @@ func (o *UpdateClusterNamespace200Response) GetNamespaceOk() (*UpdateClusterName
 	return o.Namespace, true
 }
 
-// IsSetNamespace returns a boolean if a field has been set.
-func (o *UpdateClusterNamespace200Response) IsSetNamespace() bool {
-	if o != nil && !IsNil(o.Namespace) {
-		return true
-	}
-
-	return false
-}
-
 // SetNamespace gets a reference to the given UpdateClusterNamespace200ResponseAllOfNamespace and assigns it to the Namespace field.
 func (o *UpdateClusterNamespace200Response) SetNamespace(v UpdateClusterNamespace200ResponseAllOfNamespace) {
 	o.Namespace = &v
@@ -92,15 +83,6 @@ func (o *UpdateClusterNamespace200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *UpdateClusterNamespace200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

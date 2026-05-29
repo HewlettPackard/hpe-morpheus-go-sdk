@@ -61,15 +61,6 @@ func (o *GetScaleThresholds200Response) GetScaleThresholdOk() (*GetScaleThreshol
 	return o.ScaleThreshold, true
 }
 
-// IsSetScaleThreshold returns a boolean if a field has been set.
-func (o *GetScaleThresholds200Response) IsSetScaleThreshold() bool {
-	if o != nil && !IsNil(o.ScaleThreshold) {
-		return true
-	}
-
-	return false
-}
-
 // SetScaleThreshold gets a reference to the given GetScaleThresholds200ResponseAllOfScaleThreshold and assigns it to the ScaleThreshold field.
 func (o *GetScaleThresholds200Response) SetScaleThreshold(v GetScaleThresholds200ResponseAllOfScaleThreshold) {
 	o.ScaleThreshold = &v

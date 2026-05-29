@@ -205,15 +205,6 @@ func (o *SaveDatastoreRequestDatastore) GetStorageServerOk() (*SaveDatastoreRequ
 	return o.StorageServer, true
 }
 
-// IsSetStorageServer returns a boolean if a field has been set.
-func (o *SaveDatastoreRequestDatastore) IsSetStorageServer() bool {
-	if o != nil && !IsNil(o.StorageServer) {
-		return true
-	}
-
-	return false
-}
-
 // SetStorageServer gets a reference to the given SaveDatastoreRequestDatastoreStorageServer and assigns it to the StorageServer field.
 func (o *SaveDatastoreRequestDatastore) SetStorageServer(v SaveDatastoreRequestDatastoreStorageServer) {
 	o.StorageServer = &v
@@ -235,15 +226,6 @@ func (o *SaveDatastoreRequestDatastore) GetVisibilityOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *SaveDatastoreRequestDatastore) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -269,15 +251,6 @@ func (o *SaveDatastoreRequestDatastore) GetActiveOk() (*bool, bool) {
 	return o.Active, true
 }
 
-// IsSetActive returns a boolean if a field has been set.
-func (o *SaveDatastoreRequestDatastore) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
-}
-
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *SaveDatastoreRequestDatastore) SetActive(v bool) {
 	o.Active = &v
@@ -299,15 +272,6 @@ func (o *SaveDatastoreRequestDatastore) GetDefaultStoreOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.DefaultStore, true
-}
-
-// IsSetDefaultStore returns a boolean if a field has been set.
-func (o *SaveDatastoreRequestDatastore) IsSetDefaultStore() bool {
-	if o != nil && !IsNil(o.DefaultStore) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultStore gets a reference to the given bool and assigns it to the DefaultStore field.
@@ -333,15 +297,6 @@ func (o *SaveDatastoreRequestDatastore) GetTenantPermissionsOk() (*SaveDatastore
 	return o.TenantPermissions, true
 }
 
-// IsSetTenantPermissions returns a boolean if a field has been set.
-func (o *SaveDatastoreRequestDatastore) IsSetTenantPermissions() bool {
-	if o != nil && !IsNil(o.TenantPermissions) {
-		return true
-	}
-
-	return false
-}
-
 // SetTenantPermissions gets a reference to the given SaveDatastoreRequestDatastoreTenantPermissions and assigns it to the TenantPermissions field.
 func (o *SaveDatastoreRequestDatastore) SetTenantPermissions(v SaveDatastoreRequestDatastoreTenantPermissions) {
 	o.TenantPermissions = &v
@@ -363,15 +318,6 @@ func (o *SaveDatastoreRequestDatastore) GetResourcePermissionsOk() (*SaveDatasto
 		return nil, false
 	}
 	return o.ResourcePermissions, true
-}
-
-// IsSetResourcePermissions returns a boolean if a field has been set.
-func (o *SaveDatastoreRequestDatastore) IsSetResourcePermissions() bool {
-	if o != nil && !IsNil(o.ResourcePermissions) {
-		return true
-	}
-
-	return false
 }
 
 // SetResourcePermissions gets a reference to the given SaveDatastoreRequestDatastoreResourcePermissions and assigns it to the ResourcePermissions field.
@@ -397,15 +343,6 @@ func (o *SaveDatastoreRequestDatastore) GetDatastoresOk() ([]map[string]interfac
 	return o.Datastores, true
 }
 
-// IsSetDatastores returns a boolean if a field has been set.
-func (o *SaveDatastoreRequestDatastore) IsSetDatastores() bool {
-	if o != nil && !IsNil(o.Datastores) {
-		return true
-	}
-
-	return false
-}
-
 // SetDatastores gets a reference to the given []map[string]interface{} and assigns it to the Datastores field.
 func (o *SaveDatastoreRequestDatastore) SetDatastores(v []map[string]interface{}) {
 	o.Datastores = v
@@ -427,15 +364,6 @@ func (o *SaveDatastoreRequestDatastore) GetHeartbeatTargetOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.HeartbeatTarget, true
-}
-
-// IsSetHeartbeatTarget returns a boolean if a field has been set.
-func (o *SaveDatastoreRequestDatastore) IsSetHeartbeatTarget() bool {
-	if o != nil && !IsNil(o.HeartbeatTarget) {
-		return true
-	}
-
-	return false
 }
 
 // SetHeartbeatTarget gets a reference to the given bool and assigns it to the HeartbeatTarget field.

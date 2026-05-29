@@ -71,28 +71,9 @@ func (o *TaskPuppetConfig) GetPortOk() (*string, bool) {
 	return o.Port.Get(), o.Port.IsSet()
 }
 
-// IsSetPort returns a boolean if a field has been set.
-func (o *TaskPuppetConfig) IsSetPort() bool {
-	if o != nil && o.Port.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPort gets a reference to the given NullableString and assigns it to the Port field.
 func (o *TaskPuppetConfig) SetPort(v string) {
 	o.Port.Set(&v)
-}
-
-// SetPortNil sets the value for Port to be an explicit nil
-func (o *TaskPuppetConfig) SetPortNil() {
-	o.Port.Set(nil)
-}
-
-// UnsetPort ensures that no value is present for Port, not even an explicit nil
-func (o *TaskPuppetConfig) UnsetPort() {
-	o.Port.Unset()
 }
 
 // GetHost returns the Host field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -114,28 +95,9 @@ func (o *TaskPuppetConfig) GetHostOk() (*string, bool) {
 	return o.Host.Get(), o.Host.IsSet()
 }
 
-// IsSetHost returns a boolean if a field has been set.
-func (o *TaskPuppetConfig) IsSetHost() bool {
-	if o != nil && o.Host.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetHost gets a reference to the given NullableString and assigns it to the Host field.
 func (o *TaskPuppetConfig) SetHost(v string) {
 	o.Host.Set(&v)
-}
-
-// SetHostNil sets the value for Host to be an explicit nil
-func (o *TaskPuppetConfig) SetHostNil() {
-	o.Host.Set(nil)
-}
-
-// UnsetHost ensures that no value is present for Host, not even an explicit nil
-func (o *TaskPuppetConfig) UnsetHost() {
-	o.Host.Unset()
 }
 
 // GetUsername returns the Username field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -157,28 +119,9 @@ func (o *TaskPuppetConfig) GetUsernameOk() (*string, bool) {
 	return o.Username.Get(), o.Username.IsSet()
 }
 
-// IsSetUsername returns a boolean if a field has been set.
-func (o *TaskPuppetConfig) IsSetUsername() bool {
-	if o != nil && o.Username.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUsername gets a reference to the given NullableString and assigns it to the Username field.
 func (o *TaskPuppetConfig) SetUsername(v string) {
 	o.Username.Set(&v)
-}
-
-// SetUsernameNil sets the value for Username to be an explicit nil
-func (o *TaskPuppetConfig) SetUsernameNil() {
-	o.Username.Set(nil)
-}
-
-// UnsetUsername ensures that no value is present for Username, not even an explicit nil
-func (o *TaskPuppetConfig) UnsetUsername() {
-	o.Username.Unset()
 }
 
 // GetPuppetEnvironment returns the PuppetEnvironment field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -200,28 +143,9 @@ func (o *TaskPuppetConfig) GetPuppetEnvironmentOk() (*string, bool) {
 	return o.PuppetEnvironment.Get(), o.PuppetEnvironment.IsSet()
 }
 
-// IsSetPuppetEnvironment returns a boolean if a field has been set.
-func (o *TaskPuppetConfig) IsSetPuppetEnvironment() bool {
-	if o != nil && o.PuppetEnvironment.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPuppetEnvironment gets a reference to the given NullableString and assigns it to the PuppetEnvironment field.
 func (o *TaskPuppetConfig) SetPuppetEnvironment(v string) {
 	o.PuppetEnvironment.Set(&v)
-}
-
-// SetPuppetEnvironmentNil sets the value for PuppetEnvironment to be an explicit nil
-func (o *TaskPuppetConfig) SetPuppetEnvironmentNil() {
-	o.PuppetEnvironment.Set(nil)
-}
-
-// UnsetPuppetEnvironment ensures that no value is present for PuppetEnvironment, not even an explicit nil
-func (o *TaskPuppetConfig) UnsetPuppetEnvironment() {
-	o.PuppetEnvironment.Unset()
 }
 
 // GetPuppetNodeName returns the PuppetNodeName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -243,28 +167,9 @@ func (o *TaskPuppetConfig) GetPuppetNodeNameOk() (*string, bool) {
 	return o.PuppetNodeName.Get(), o.PuppetNodeName.IsSet()
 }
 
-// IsSetPuppetNodeName returns a boolean if a field has been set.
-func (o *TaskPuppetConfig) IsSetPuppetNodeName() bool {
-	if o != nil && o.PuppetNodeName.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPuppetNodeName gets a reference to the given NullableString and assigns it to the PuppetNodeName field.
 func (o *TaskPuppetConfig) SetPuppetNodeName(v string) {
 	o.PuppetNodeName.Set(&v)
-}
-
-// SetPuppetNodeNameNil sets the value for PuppetNodeName to be an explicit nil
-func (o *TaskPuppetConfig) SetPuppetNodeNameNil() {
-	o.PuppetNodeName.Set(nil)
-}
-
-// UnsetPuppetNodeName ensures that no value is present for PuppetNodeName, not even an explicit nil
-func (o *TaskPuppetConfig) UnsetPuppetNodeName() {
-	o.PuppetNodeName.Unset()
 }
 
 // GetSshKey returns the SshKey field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -286,28 +191,9 @@ func (o *TaskPuppetConfig) GetSshKeyOk() (*string, bool) {
 	return o.SshKey.Get(), o.SshKey.IsSet()
 }
 
-// IsSetSshKey returns a boolean if a field has been set.
-func (o *TaskPuppetConfig) IsSetSshKey() bool {
-	if o != nil && o.SshKey.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSshKey gets a reference to the given NullableString and assigns it to the SshKey field.
 func (o *TaskPuppetConfig) SetSshKey(v string) {
 	o.SshKey.Set(&v)
-}
-
-// SetSshKeyNil sets the value for SshKey to be an explicit nil
-func (o *TaskPuppetConfig) SetSshKeyNil() {
-	o.SshKey.Set(nil)
-}
-
-// UnsetSshKey ensures that no value is present for SshKey, not even an explicit nil
-func (o *TaskPuppetConfig) UnsetSshKey() {
-	o.SshKey.Unset()
 }
 
 // GetLocalScriptGitId returns the LocalScriptGitId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -329,28 +215,9 @@ func (o *TaskPuppetConfig) GetLocalScriptGitIdOk() (*string, bool) {
 	return o.LocalScriptGitId.Get(), o.LocalScriptGitId.IsSet()
 }
 
-// IsSetLocalScriptGitId returns a boolean if a field has been set.
-func (o *TaskPuppetConfig) IsSetLocalScriptGitId() bool {
-	if o != nil && o.LocalScriptGitId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLocalScriptGitId gets a reference to the given NullableString and assigns it to the LocalScriptGitId field.
 func (o *TaskPuppetConfig) SetLocalScriptGitId(v string) {
 	o.LocalScriptGitId.Set(&v)
-}
-
-// SetLocalScriptGitIdNil sets the value for LocalScriptGitId to be an explicit nil
-func (o *TaskPuppetConfig) SetLocalScriptGitIdNil() {
-	o.LocalScriptGitId.Set(nil)
-}
-
-// UnsetLocalScriptGitId ensures that no value is present for LocalScriptGitId, not even an explicit nil
-func (o *TaskPuppetConfig) UnsetLocalScriptGitId() {
-	o.LocalScriptGitId.Unset()
 }
 
 // GetLocalScriptGitRef returns the LocalScriptGitRef field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -372,28 +239,9 @@ func (o *TaskPuppetConfig) GetLocalScriptGitRefOk() (*string, bool) {
 	return o.LocalScriptGitRef.Get(), o.LocalScriptGitRef.IsSet()
 }
 
-// IsSetLocalScriptGitRef returns a boolean if a field has been set.
-func (o *TaskPuppetConfig) IsSetLocalScriptGitRef() bool {
-	if o != nil && o.LocalScriptGitRef.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLocalScriptGitRef gets a reference to the given NullableString and assigns it to the LocalScriptGitRef field.
 func (o *TaskPuppetConfig) SetLocalScriptGitRef(v string) {
 	o.LocalScriptGitRef.Set(&v)
-}
-
-// SetLocalScriptGitRefNil sets the value for LocalScriptGitRef to be an explicit nil
-func (o *TaskPuppetConfig) SetLocalScriptGitRefNil() {
-	o.LocalScriptGitRef.Set(nil)
-}
-
-// UnsetLocalScriptGitRef ensures that no value is present for LocalScriptGitRef, not even an explicit nil
-func (o *TaskPuppetConfig) UnsetLocalScriptGitRef() {
-	o.LocalScriptGitRef.Unset()
 }
 
 // GetPassword returns the Password field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -415,28 +263,9 @@ func (o *TaskPuppetConfig) GetPasswordOk() (*string, bool) {
 	return o.Password.Get(), o.Password.IsSet()
 }
 
-// IsSetPassword returns a boolean if a field has been set.
-func (o *TaskPuppetConfig) IsSetPassword() bool {
-	if o != nil && o.Password.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPassword gets a reference to the given NullableString and assigns it to the Password field.
 func (o *TaskPuppetConfig) SetPassword(v string) {
 	o.Password.Set(&v)
-}
-
-// SetPasswordNil sets the value for Password to be an explicit nil
-func (o *TaskPuppetConfig) SetPasswordNil() {
-	o.Password.Set(nil)
-}
-
-// UnsetPassword ensures that no value is present for Password, not even an explicit nil
-func (o *TaskPuppetConfig) UnsetPassword() {
-	o.Password.Unset()
 }
 
 // GetPasswordHash returns the PasswordHash field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -458,28 +287,9 @@ func (o *TaskPuppetConfig) GetPasswordHashOk() (*string, bool) {
 	return o.PasswordHash.Get(), o.PasswordHash.IsSet()
 }
 
-// IsSetPasswordHash returns a boolean if a field has been set.
-func (o *TaskPuppetConfig) IsSetPasswordHash() bool {
-	if o != nil && o.PasswordHash.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPasswordHash gets a reference to the given NullableString and assigns it to the PasswordHash field.
 func (o *TaskPuppetConfig) SetPasswordHash(v string) {
 	o.PasswordHash.Set(&v)
-}
-
-// SetPasswordHashNil sets the value for PasswordHash to be an explicit nil
-func (o *TaskPuppetConfig) SetPasswordHashNil() {
-	o.PasswordHash.Set(nil)
-}
-
-// UnsetPasswordHash ensures that no value is present for PasswordHash, not even an explicit nil
-func (o *TaskPuppetConfig) UnsetPasswordHash() {
-	o.PasswordHash.Unset()
 }
 
 func (o TaskPuppetConfig) MarshalJSON() ([]byte, error) {

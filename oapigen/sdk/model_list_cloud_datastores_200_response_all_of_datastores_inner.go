@@ -70,15 +70,6 @@ func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) GetIdOk() (*int64, 
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) SetId(v int64) {
 	o.Id = &v
@@ -100,15 +91,6 @@ func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) GetNameOk() (*strin
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -135,28 +117,9 @@ func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) GetZoneOk() (*ListC
 	return o.Zone.Get(), o.Zone.IsSet()
 }
 
-// IsSetZone returns a boolean if a field has been set.
-func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) IsSetZone() bool {
-	if o != nil && o.Zone.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetZone gets a reference to the given NullableListCloudDatastores200ResponseAllOfDatastoresInnerZone and assigns it to the Zone field.
 func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) SetZone(v ListCloudDatastores200ResponseAllOfDatastoresInnerZone) {
 	o.Zone.Set(&v)
-}
-
-// SetZoneNil sets the value for Zone to be an explicit nil
-func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) SetZoneNil() {
-	o.Zone.Set(nil)
-}
-
-// UnsetZone ensures that no value is present for Zone, not even an explicit nil
-func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) UnsetZone() {
-	o.Zone.Unset()
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
@@ -175,15 +138,6 @@ func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) GetTypeOk() (*strin
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.
@@ -209,15 +163,6 @@ func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) GetFreeSpaceOk() (*
 	return o.FreeSpace, true
 }
 
-// IsSetFreeSpace returns a boolean if a field has been set.
-func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) IsSetFreeSpace() bool {
-	if o != nil && !IsNil(o.FreeSpace) {
-		return true
-	}
-
-	return false
-}
-
 // SetFreeSpace gets a reference to the given int64 and assigns it to the FreeSpace field.
 func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) SetFreeSpace(v int64) {
 	o.FreeSpace = &v
@@ -239,15 +184,6 @@ func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) GetOnlineOk() (*boo
 		return nil, false
 	}
 	return o.Online, true
-}
-
-// IsSetOnline returns a boolean if a field has been set.
-func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) IsSetOnline() bool {
-	if o != nil && !IsNil(o.Online) {
-		return true
-	}
-
-	return false
 }
 
 // SetOnline gets a reference to the given bool and assigns it to the Online field.
@@ -273,15 +209,6 @@ func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) GetActiveOk() (*boo
 	return o.Active, true
 }
 
-// IsSetActive returns a boolean if a field has been set.
-func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
-}
-
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) SetActive(v bool) {
 	o.Active = &v
@@ -303,15 +230,6 @@ func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) GetVisibilityOk() (
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -338,15 +256,6 @@ func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) GetTenantsOk() ([]L
 	return o.Tenants, true
 }
 
-// IsSetTenants returns a boolean if a field has been set.
-func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) IsSetTenants() bool {
-	if o != nil && !IsNil(o.Tenants) {
-		return true
-	}
-
-	return false
-}
-
 // SetTenants gets a reference to the given []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner and assigns it to the Tenants field.
 func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) SetTenants(v []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner) {
 	o.Tenants = v
@@ -368,15 +277,6 @@ func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) GetResourcePermissi
 		return nil, false
 	}
 	return o.ResourcePermission, true
-}
-
-// IsSetResourcePermission returns a boolean if a field has been set.
-func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) IsSetResourcePermission() bool {
-	if o != nil && !IsNil(o.ResourcePermission) {
-		return true
-	}
-
-	return false
 }
 
 // SetResourcePermission gets a reference to the given ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission and assigns it to the ResourcePermission field.

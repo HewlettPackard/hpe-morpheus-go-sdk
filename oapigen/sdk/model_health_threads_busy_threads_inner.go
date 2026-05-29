@@ -77,15 +77,6 @@ func (o *HealthThreadsBusyThreadsInner) GetThreadIdOk() (*int64, bool) {
 	return o.ThreadId, true
 }
 
-// IsSetThreadId returns a boolean if a field has been set.
-func (o *HealthThreadsBusyThreadsInner) IsSetThreadId() bool {
-	if o != nil && !IsNil(o.ThreadId) {
-		return true
-	}
-
-	return false
-}
-
 // SetThreadId gets a reference to the given int64 and assigns it to the ThreadId field.
 func (o *HealthThreadsBusyThreadsInner) SetThreadId(v int64) {
 	o.ThreadId = &v
@@ -107,15 +98,6 @@ func (o *HealthThreadsBusyThreadsInner) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *HealthThreadsBusyThreadsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -141,15 +123,6 @@ func (o *HealthThreadsBusyThreadsInner) GetCpuTimeOk() (*int64, bool) {
 	return o.CpuTime, true
 }
 
-// IsSetCpuTime returns a boolean if a field has been set.
-func (o *HealthThreadsBusyThreadsInner) IsSetCpuTime() bool {
-	if o != nil && !IsNil(o.CpuTime) {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuTime gets a reference to the given int64 and assigns it to the CpuTime field.
 func (o *HealthThreadsBusyThreadsInner) SetCpuTime(v int64) {
 	o.CpuTime = &v
@@ -171,15 +144,6 @@ func (o *HealthThreadsBusyThreadsInner) GetBlockedTimeOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.BlockedTime, true
-}
-
-// IsSetBlockedTime returns a boolean if a field has been set.
-func (o *HealthThreadsBusyThreadsInner) IsSetBlockedTime() bool {
-	if o != nil && !IsNil(o.BlockedTime) {
-		return true
-	}
-
-	return false
 }
 
 // SetBlockedTime gets a reference to the given int64 and assigns it to the BlockedTime field.
@@ -206,28 +170,9 @@ func (o *HealthThreadsBusyThreadsInner) GetLockNameOk() (*string, bool) {
 	return o.LockName.Get(), o.LockName.IsSet()
 }
 
-// IsSetLockName returns a boolean if a field has been set.
-func (o *HealthThreadsBusyThreadsInner) IsSetLockName() bool {
-	if o != nil && o.LockName.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLockName gets a reference to the given NullableString and assigns it to the LockName field.
 func (o *HealthThreadsBusyThreadsInner) SetLockName(v string) {
 	o.LockName.Set(&v)
-}
-
-// SetLockNameNil sets the value for LockName to be an explicit nil
-func (o *HealthThreadsBusyThreadsInner) SetLockNameNil() {
-	o.LockName.Set(nil)
-}
-
-// UnsetLockName ensures that no value is present for LockName, not even an explicit nil
-func (o *HealthThreadsBusyThreadsInner) UnsetLockName() {
-	o.LockName.Unset()
 }
 
 // GetLockOwnerId returns the LockOwnerId field value if set, zero value otherwise.
@@ -246,15 +191,6 @@ func (o *HealthThreadsBusyThreadsInner) GetLockOwnerIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.LockOwnerId, true
-}
-
-// IsSetLockOwnerId returns a boolean if a field has been set.
-func (o *HealthThreadsBusyThreadsInner) IsSetLockOwnerId() bool {
-	if o != nil && !IsNil(o.LockOwnerId) {
-		return true
-	}
-
-	return false
 }
 
 // SetLockOwnerId gets a reference to the given int64 and assigns it to the LockOwnerId field.
@@ -281,28 +217,9 @@ func (o *HealthThreadsBusyThreadsInner) GetLockOwnerNameOk() (*string, bool) {
 	return o.LockOwnerName.Get(), o.LockOwnerName.IsSet()
 }
 
-// IsSetLockOwnerName returns a boolean if a field has been set.
-func (o *HealthThreadsBusyThreadsInner) IsSetLockOwnerName() bool {
-	if o != nil && o.LockOwnerName.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLockOwnerName gets a reference to the given NullableString and assigns it to the LockOwnerName field.
 func (o *HealthThreadsBusyThreadsInner) SetLockOwnerName(v string) {
 	o.LockOwnerName.Set(&v)
-}
-
-// SetLockOwnerNameNil sets the value for LockOwnerName to be an explicit nil
-func (o *HealthThreadsBusyThreadsInner) SetLockOwnerNameNil() {
-	o.LockOwnerName.Set(nil)
-}
-
-// UnsetLockOwnerName ensures that no value is present for LockOwnerName, not even an explicit nil
-func (o *HealthThreadsBusyThreadsInner) UnsetLockOwnerName() {
-	o.LockOwnerName.Unset()
 }
 
 // GetState returns the State field value if set, zero value otherwise.
@@ -321,15 +238,6 @@ func (o *HealthThreadsBusyThreadsInner) GetStateOk() (*string, bool) {
 		return nil, false
 	}
 	return o.State, true
-}
-
-// IsSetState returns a boolean if a field has been set.
-func (o *HealthThreadsBusyThreadsInner) IsSetState() bool {
-	if o != nil && !IsNil(o.State) {
-		return true
-	}
-
-	return false
 }
 
 // SetState gets a reference to the given string and assigns it to the State field.
@@ -355,15 +263,6 @@ func (o *HealthThreadsBusyThreadsInner) GetWaitedCountOk() (*int64, bool) {
 	return o.WaitedCount, true
 }
 
-// IsSetWaitedCount returns a boolean if a field has been set.
-func (o *HealthThreadsBusyThreadsInner) IsSetWaitedCount() bool {
-	if o != nil && !IsNil(o.WaitedCount) {
-		return true
-	}
-
-	return false
-}
-
 // SetWaitedCount gets a reference to the given int64 and assigns it to the WaitedCount field.
 func (o *HealthThreadsBusyThreadsInner) SetWaitedCount(v int64) {
 	o.WaitedCount = &v
@@ -385,15 +284,6 @@ func (o *HealthThreadsBusyThreadsInner) GetWaitedTimeOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.WaitedTime, true
-}
-
-// IsSetWaitedTime returns a boolean if a field has been set.
-func (o *HealthThreadsBusyThreadsInner) IsSetWaitedTime() bool {
-	if o != nil && !IsNil(o.WaitedTime) {
-		return true
-	}
-
-	return false
 }
 
 // SetWaitedTime gets a reference to the given int64 and assigns it to the WaitedTime field.
@@ -419,15 +309,6 @@ func (o *HealthThreadsBusyThreadsInner) GetIsInNativeOk() (*bool, bool) {
 	return o.IsInNative, true
 }
 
-// IsSetIsInNative returns a boolean if a field has been set.
-func (o *HealthThreadsBusyThreadsInner) IsSetIsInNative() bool {
-	if o != nil && !IsNil(o.IsInNative) {
-		return true
-	}
-
-	return false
-}
-
 // SetIsInNative gets a reference to the given bool and assigns it to the IsInNative field.
 func (o *HealthThreadsBusyThreadsInner) SetIsInNative(v bool) {
 	o.IsInNative = &v
@@ -449,15 +330,6 @@ func (o *HealthThreadsBusyThreadsInner) GetIsSuspendedOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.IsSuspended, true
-}
-
-// IsSetIsSuspended returns a boolean if a field has been set.
-func (o *HealthThreadsBusyThreadsInner) IsSetIsSuspended() bool {
-	if o != nil && !IsNil(o.IsSuspended) {
-		return true
-	}
-
-	return false
 }
 
 // SetIsSuspended gets a reference to the given bool and assigns it to the IsSuspended field.
@@ -484,15 +356,6 @@ func (o *HealthThreadsBusyThreadsInner) GetLockedMonitorsOk() ([]map[string]inte
 	return o.LockedMonitors, true
 }
 
-// IsSetLockedMonitors returns a boolean if a field has been set.
-func (o *HealthThreadsBusyThreadsInner) IsSetLockedMonitors() bool {
-	if o != nil && !IsNil(o.LockedMonitors) {
-		return true
-	}
-
-	return false
-}
-
 // SetLockedMonitors gets a reference to the given []map[string]interface{} and assigns it to the LockedMonitors field.
 func (o *HealthThreadsBusyThreadsInner) SetLockedMonitors(v []map[string]interface{}) {
 	o.LockedMonitors = v
@@ -515,15 +378,6 @@ func (o *HealthThreadsBusyThreadsInner) GetLockedSynchronizersOk() ([]map[string
 		return nil, false
 	}
 	return o.LockedSynchronizers, true
-}
-
-// IsSetLockedSynchronizers returns a boolean if a field has been set.
-func (o *HealthThreadsBusyThreadsInner) IsSetLockedSynchronizers() bool {
-	if o != nil && !IsNil(o.LockedSynchronizers) {
-		return true
-	}
-
-	return false
 }
 
 // SetLockedSynchronizers gets a reference to the given []map[string]interface{} and assigns it to the LockedSynchronizers field.
@@ -550,28 +404,9 @@ func (o *HealthThreadsBusyThreadsInner) GetLockInfoOk() (*string, bool) {
 	return o.LockInfo.Get(), o.LockInfo.IsSet()
 }
 
-// IsSetLockInfo returns a boolean if a field has been set.
-func (o *HealthThreadsBusyThreadsInner) IsSetLockInfo() bool {
-	if o != nil && o.LockInfo.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLockInfo gets a reference to the given NullableString and assigns it to the LockInfo field.
 func (o *HealthThreadsBusyThreadsInner) SetLockInfo(v string) {
 	o.LockInfo.Set(&v)
-}
-
-// SetLockInfoNil sets the value for LockInfo to be an explicit nil
-func (o *HealthThreadsBusyThreadsInner) SetLockInfoNil() {
-	o.LockInfo.Set(nil)
-}
-
-// UnsetLockInfo ensures that no value is present for LockInfo, not even an explicit nil
-func (o *HealthThreadsBusyThreadsInner) UnsetLockInfo() {
-	o.LockInfo.Unset()
 }
 
 // GetCurrentLines returns the CurrentLines field value if set, zero value otherwise.
@@ -590,15 +425,6 @@ func (o *HealthThreadsBusyThreadsInner) GetCurrentLinesOk() (*string, bool) {
 		return nil, false
 	}
 	return o.CurrentLines, true
-}
-
-// IsSetCurrentLines returns a boolean if a field has been set.
-func (o *HealthThreadsBusyThreadsInner) IsSetCurrentLines() bool {
-	if o != nil && !IsNil(o.CurrentLines) {
-		return true
-	}
-
-	return false
 }
 
 // SetCurrentLines gets a reference to the given string and assigns it to the CurrentLines field.
@@ -622,15 +448,6 @@ func (o *HealthThreadsBusyThreadsInner) GetCpuPercentOk() (*float32, bool) {
 		return nil, false
 	}
 	return o.CpuPercent, true
-}
-
-// IsSetCpuPercent returns a boolean if a field has been set.
-func (o *HealthThreadsBusyThreadsInner) IsSetCpuPercent() bool {
-	if o != nil && !IsNil(o.CpuPercent) {
-		return true
-	}
-
-	return false
 }
 
 // SetCpuPercent gets a reference to the given float32 and assigns it to the CpuPercent field.

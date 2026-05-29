@@ -61,15 +61,6 @@ func (o *GetReportTypes200Response) GetReportTypesOk() ([]GetReportTypes200Respo
 	return o.ReportTypes, true
 }
 
-// IsSetReportTypes returns a boolean if a field has been set.
-func (o *GetReportTypes200Response) IsSetReportTypes() bool {
-	if o != nil && !IsNil(o.ReportTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetReportTypes gets a reference to the given []GetReportTypes200ResponseReportTypesInner and assigns it to the ReportTypes field.
 func (o *GetReportTypes200Response) SetReportTypes(v []GetReportTypes200ResponseReportTypesInner) {
 	o.ReportTypes = v

@@ -62,15 +62,6 @@ func (o *ListPowerSchedules200Response) GetSchedulesOk() ([]ListPowerSchedules20
 	return o.Schedules, true
 }
 
-// IsSetSchedules returns a boolean if a field has been set.
-func (o *ListPowerSchedules200Response) IsSetSchedules() bool {
-	if o != nil && !IsNil(o.Schedules) {
-		return true
-	}
-
-	return false
-}
-
 // SetSchedules gets a reference to the given []ListPowerSchedules200ResponseAllOfSchedulesInner and assigns it to the Schedules field.
 func (o *ListPowerSchedules200Response) SetSchedules(v []ListPowerSchedules200ResponseAllOfSchedulesInner) {
 	o.Schedules = v
@@ -92,15 +83,6 @@ func (o *ListPowerSchedules200Response) GetMetaOk() (*ListApprovals200ResponseAl
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListPowerSchedules200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

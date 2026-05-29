@@ -62,15 +62,6 @@ func (o *ListHealthLogs200Response) GetLogsOk() ([]ListHealthLogs200ResponseAllO
 	return o.Logs, true
 }
 
-// IsSetLogs returns a boolean if a field has been set.
-func (o *ListHealthLogs200Response) IsSetLogs() bool {
-	if o != nil && !IsNil(o.Logs) {
-		return true
-	}
-
-	return false
-}
-
 // SetLogs gets a reference to the given []ListHealthLogs200ResponseAllOfLogsInner and assigns it to the Logs field.
 func (o *ListHealthLogs200Response) SetLogs(v []ListHealthLogs200ResponseAllOfLogsInner) {
 	o.Logs = v
@@ -92,15 +83,6 @@ func (o *ListHealthLogs200Response) GetMetaOk() (*ListApprovals200ResponseAllOfM
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListHealthLogs200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

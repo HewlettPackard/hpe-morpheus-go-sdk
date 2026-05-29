@@ -61,15 +61,6 @@ func (o *GetSecurityScans200Response) GetSecurityScanOk() (*GetSecurityScans200R
 	return o.SecurityScan, true
 }
 
-// IsSetSecurityScan returns a boolean if a field has been set.
-func (o *GetSecurityScans200Response) IsSetSecurityScan() bool {
-	if o != nil && !IsNil(o.SecurityScan) {
-		return true
-	}
-
-	return false
-}
-
 // SetSecurityScan gets a reference to the given GetSecurityScans200ResponseAllOfSecurityScan and assigns it to the SecurityScan field.
 func (o *GetSecurityScans200Response) SetSecurityScan(v GetSecurityScans200ResponseAllOfSecurityScan) {
 	o.SecurityScan = &v

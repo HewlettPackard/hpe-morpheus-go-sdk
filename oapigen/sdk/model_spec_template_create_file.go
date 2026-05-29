@@ -96,15 +96,6 @@ func (o *SpecTemplateCreateFile) GetContentOk() (*string, bool) {
 	return o.Content, true
 }
 
-// IsSetContent returns a boolean if a field has been set.
-func (o *SpecTemplateCreateFile) IsSetContent() bool {
-	if o != nil && !IsNil(o.Content) {
-		return true
-	}
-
-	return false
-}
-
 // SetContent gets a reference to the given string and assigns it to the Content field.
 func (o *SpecTemplateCreateFile) SetContent(v string) {
 	o.Content = &v
@@ -126,15 +117,6 @@ func (o *SpecTemplateCreateFile) GetContentPathOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ContentPath, true
-}
-
-// IsSetContentPath returns a boolean if a field has been set.
-func (o *SpecTemplateCreateFile) IsSetContentPath() bool {
-	if o != nil && !IsNil(o.ContentPath) {
-		return true
-	}
-
-	return false
 }
 
 // SetContentPath gets a reference to the given string and assigns it to the ContentPath field.
@@ -160,15 +142,6 @@ func (o *SpecTemplateCreateFile) GetContentRefOk() (*string, bool) {
 	return o.ContentRef, true
 }
 
-// IsSetContentRef returns a boolean if a field has been set.
-func (o *SpecTemplateCreateFile) IsSetContentRef() bool {
-	if o != nil && !IsNil(o.ContentRef) {
-		return true
-	}
-
-	return false
-}
-
 // SetContentRef gets a reference to the given string and assigns it to the ContentRef field.
 func (o *SpecTemplateCreateFile) SetContentRef(v string) {
 	o.ContentRef = &v
@@ -190,15 +163,6 @@ func (o *SpecTemplateCreateFile) GetRepositoryOk() (*SpecTemplateCreateFileRepos
 		return nil, false
 	}
 	return o.Repository, true
-}
-
-// IsSetRepository returns a boolean if a field has been set.
-func (o *SpecTemplateCreateFile) IsSetRepository() bool {
-	if o != nil && !IsNil(o.Repository) {
-		return true
-	}
-
-	return false
 }
 
 // SetRepository gets a reference to the given SpecTemplateCreateFileRepository and assigns it to the Repository field.

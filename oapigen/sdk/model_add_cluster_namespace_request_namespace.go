@@ -96,15 +96,6 @@ func (o *AddClusterNamespaceRequestNamespace) GetDescriptionOk() (*string, bool)
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *AddClusterNamespaceRequestNamespace) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *AddClusterNamespaceRequestNamespace) SetDescription(v string) {
 	o.Description = &v
@@ -128,15 +119,6 @@ func (o *AddClusterNamespaceRequestNamespace) GetActiveOk() (*bool, bool) {
 	return o.Active, true
 }
 
-// IsSetActive returns a boolean if a field has been set.
-func (o *AddClusterNamespaceRequestNamespace) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
-}
-
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *AddClusterNamespaceRequestNamespace) SetActive(v bool) {
 	o.Active = &v
@@ -158,15 +140,6 @@ func (o *AddClusterNamespaceRequestNamespace) GetResourcePermissionsOk() (*AddCl
 		return nil, false
 	}
 	return o.ResourcePermissions, true
-}
-
-// IsSetResourcePermissions returns a boolean if a field has been set.
-func (o *AddClusterNamespaceRequestNamespace) IsSetResourcePermissions() bool {
-	if o != nil && !IsNil(o.ResourcePermissions) {
-		return true
-	}
-
-	return false
 }
 
 // SetResourcePermissions gets a reference to the given AddClusterNamespaceRequestNamespaceResourcePermissions and assigns it to the ResourcePermissions field.

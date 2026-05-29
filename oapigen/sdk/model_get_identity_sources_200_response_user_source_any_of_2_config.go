@@ -69,15 +69,6 @@ func (o *GetIdentitySources200ResponseUserSourceAnyOf2Config) GetUrlOk() (*strin
 	return o.Url, true
 }
 
-// IsSetUrl returns a boolean if a field has been set.
-func (o *GetIdentitySources200ResponseUserSourceAnyOf2Config) IsSetUrl() bool {
-	if o != nil && !IsNil(o.Url) {
-		return true
-	}
-
-	return false
-}
-
 // SetUrl gets a reference to the given string and assigns it to the Url field.
 func (o *GetIdentitySources200ResponseUserSourceAnyOf2Config) SetUrl(v string) {
 	o.Url = &v
@@ -99,15 +90,6 @@ func (o *GetIdentitySources200ResponseUserSourceAnyOf2Config) GetDomainOk() (*st
 		return nil, false
 	}
 	return o.Domain, true
-}
-
-// IsSetDomain returns a boolean if a field has been set.
-func (o *GetIdentitySources200ResponseUserSourceAnyOf2Config) IsSetDomain() bool {
-	if o != nil && !IsNil(o.Domain) {
-		return true
-	}
-
-	return false
 }
 
 // SetDomain gets a reference to the given string and assigns it to the Domain field.
@@ -133,15 +115,6 @@ func (o *GetIdentitySources200ResponseUserSourceAnyOf2Config) GetUseSSLOk() (*st
 	return o.UseSSL, true
 }
 
-// IsSetUseSSL returns a boolean if a field has been set.
-func (o *GetIdentitySources200ResponseUserSourceAnyOf2Config) IsSetUseSSL() bool {
-	if o != nil && !IsNil(o.UseSSL) {
-		return true
-	}
-
-	return false
-}
-
 // SetUseSSL gets a reference to the given string and assigns it to the UseSSL field.
 func (o *GetIdentitySources200ResponseUserSourceAnyOf2Config) SetUseSSL(v string) {
 	o.UseSSL = &v
@@ -163,15 +136,6 @@ func (o *GetIdentitySources200ResponseUserSourceAnyOf2Config) GetBindingUsername
 		return nil, false
 	}
 	return o.BindingUsername, true
-}
-
-// IsSetBindingUsername returns a boolean if a field has been set.
-func (o *GetIdentitySources200ResponseUserSourceAnyOf2Config) IsSetBindingUsername() bool {
-	if o != nil && !IsNil(o.BindingUsername) {
-		return true
-	}
-
-	return false
 }
 
 // SetBindingUsername gets a reference to the given string and assigns it to the BindingUsername field.
@@ -197,15 +161,6 @@ func (o *GetIdentitySources200ResponseUserSourceAnyOf2Config) GetBindingPassword
 	return o.BindingPassword, true
 }
 
-// IsSetBindingPassword returns a boolean if a field has been set.
-func (o *GetIdentitySources200ResponseUserSourceAnyOf2Config) IsSetBindingPassword() bool {
-	if o != nil && !IsNil(o.BindingPassword) {
-		return true
-	}
-
-	return false
-}
-
 // SetBindingPassword gets a reference to the given string and assigns it to the BindingPassword field.
 func (o *GetIdentitySources200ResponseUserSourceAnyOf2Config) SetBindingPassword(v string) {
 	o.BindingPassword = &v
@@ -227,15 +182,6 @@ func (o *GetIdentitySources200ResponseUserSourceAnyOf2Config) GetRequiredGroupOk
 		return nil, false
 	}
 	return o.RequiredGroup, true
-}
-
-// IsSetRequiredGroup returns a boolean if a field has been set.
-func (o *GetIdentitySources200ResponseUserSourceAnyOf2Config) IsSetRequiredGroup() bool {
-	if o != nil && !IsNil(o.RequiredGroup) {
-		return true
-	}
-
-	return false
 }
 
 // SetRequiredGroup gets a reference to the given string and assigns it to the RequiredGroup field.
@@ -261,15 +207,6 @@ func (o *GetIdentitySources200ResponseUserSourceAnyOf2Config) GetRequiredGroupDN
 	return o.RequiredGroupDN, true
 }
 
-// IsSetRequiredGroupDN returns a boolean if a field has been set.
-func (o *GetIdentitySources200ResponseUserSourceAnyOf2Config) IsSetRequiredGroupDN() bool {
-	if o != nil && !IsNil(o.RequiredGroupDN) {
-		return true
-	}
-
-	return false
-}
-
 // SetRequiredGroupDN gets a reference to the given string and assigns it to the RequiredGroupDN field.
 func (o *GetIdentitySources200ResponseUserSourceAnyOf2Config) SetRequiredGroupDN(v string) {
 	o.RequiredGroupDN = &v
@@ -293,15 +230,6 @@ func (o *GetIdentitySources200ResponseUserSourceAnyOf2Config) GetSearchMemberGro
 	return o.SearchMemberGroups, true
 }
 
-// IsSetSearchMemberGroups returns a boolean if a field has been set.
-func (o *GetIdentitySources200ResponseUserSourceAnyOf2Config) IsSetSearchMemberGroups() bool {
-	if o != nil && !IsNil(o.SearchMemberGroups) {
-		return true
-	}
-
-	return false
-}
-
 // SetSearchMemberGroups gets a reference to the given bool and assigns it to the SearchMemberGroups field.
 func (o *GetIdentitySources200ResponseUserSourceAnyOf2Config) SetSearchMemberGroups(v bool) {
 	o.SearchMemberGroups = &v
@@ -323,15 +251,6 @@ func (o *GetIdentitySources200ResponseUserSourceAnyOf2Config) GetBindingPassword
 		return nil, false
 	}
 	return o.BindingPasswordHash, true
-}
-
-// IsSetBindingPasswordHash returns a boolean if a field has been set.
-func (o *GetIdentitySources200ResponseUserSourceAnyOf2Config) IsSetBindingPasswordHash() bool {
-	if o != nil && !IsNil(o.BindingPasswordHash) {
-		return true
-	}
-
-	return false
 }
 
 // SetBindingPasswordHash gets a reference to the given string and assigns it to the BindingPasswordHash field.

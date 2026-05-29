@@ -61,15 +61,6 @@ func (o *AddCatalogItemTypeRequest) GetCatalogItemTypeOk() (*AddCatalogItemTypeR
 	return o.CatalogItemType, true
 }
 
-// IsSetCatalogItemType returns a boolean if a field has been set.
-func (o *AddCatalogItemTypeRequest) IsSetCatalogItemType() bool {
-	if o != nil && !IsNil(o.CatalogItemType) {
-		return true
-	}
-
-	return false
-}
-
 // SetCatalogItemType gets a reference to the given AddCatalogItemTypeRequestCatalogItemType and assigns it to the CatalogItemType field.
 func (o *AddCatalogItemTypeRequest) SetCatalogItemType(v AddCatalogItemTypeRequestCatalogItemType) {
 	o.CatalogItemType = &v

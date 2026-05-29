@@ -63,15 +63,6 @@ func (o *GetNetworkServer200ResponseNetworkServerType) GetIdOk() (*int64, bool) 
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetNetworkServer200ResponseNetworkServerType) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetNetworkServer200ResponseNetworkServerType) SetId(v int64) {
 	o.Id = &v
@@ -95,15 +86,6 @@ func (o *GetNetworkServer200ResponseNetworkServerType) GetNameOk() (*string, boo
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *GetNetworkServer200ResponseNetworkServerType) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *GetNetworkServer200ResponseNetworkServerType) SetName(v string) {
 	o.Name = &v
@@ -125,15 +107,6 @@ func (o *GetNetworkServer200ResponseNetworkServerType) GetCodeOk() (*string, boo
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *GetNetworkServer200ResponseNetworkServerType) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.

@@ -62,15 +62,6 @@ func (o *AddIncident200Response) GetIncidentOk() (*AddIncident200ResponseAllOfIn
 	return o.Incident, true
 }
 
-// IsSetIncident returns a boolean if a field has been set.
-func (o *AddIncident200Response) IsSetIncident() bool {
-	if o != nil && !IsNil(o.Incident) {
-		return true
-	}
-
-	return false
-}
-
 // SetIncident gets a reference to the given AddIncident200ResponseAllOfIncident and assigns it to the Incident field.
 func (o *AddIncident200Response) SetIncident(v AddIncident200ResponseAllOfIncident) {
 	o.Incident = &v
@@ -92,15 +83,6 @@ func (o *AddIncident200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *AddIncident200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

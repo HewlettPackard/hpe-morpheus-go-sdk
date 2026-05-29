@@ -61,15 +61,6 @@ func (o *CreateNetworkGroupRequest) GetNetworkGroupOk() (*CreateNetworkGroupRequ
 	return o.NetworkGroup, true
 }
 
-// IsSetNetworkGroup returns a boolean if a field has been set.
-func (o *CreateNetworkGroupRequest) IsSetNetworkGroup() bool {
-	if o != nil && !IsNil(o.NetworkGroup) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkGroup gets a reference to the given CreateNetworkGroupRequestNetworkGroup and assigns it to the NetworkGroup field.
 func (o *CreateNetworkGroupRequest) SetNetworkGroup(v CreateNetworkGroupRequestNetworkGroup) {
 	o.NetworkGroup = &v

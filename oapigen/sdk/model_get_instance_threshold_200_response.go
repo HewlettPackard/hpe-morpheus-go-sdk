@@ -64,28 +64,9 @@ func (o *GetInstanceThreshold200Response) GetInstanceOk() (*GetInstanceThreshold
 	return o.Instance.Get(), o.Instance.IsSet()
 }
 
-// IsSetInstance returns a boolean if a field has been set.
-func (o *GetInstanceThreshold200Response) IsSetInstance() bool {
-	if o != nil && o.Instance.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInstance gets a reference to the given NullableGetInstanceThreshold200ResponseInstance and assigns it to the Instance field.
 func (o *GetInstanceThreshold200Response) SetInstance(v GetInstanceThreshold200ResponseInstance) {
 	o.Instance.Set(&v)
-}
-
-// SetInstanceNil sets the value for Instance to be an explicit nil
-func (o *GetInstanceThreshold200Response) SetInstanceNil() {
-	o.Instance.Set(nil)
-}
-
-// UnsetInstance ensures that no value is present for Instance, not even an explicit nil
-func (o *GetInstanceThreshold200Response) UnsetInstance() {
-	o.Instance.Unset()
 }
 
 // GetInstanceThreshold returns the InstanceThreshold field value if set, zero value otherwise.
@@ -104,15 +85,6 @@ func (o *GetInstanceThreshold200Response) GetInstanceThresholdOk() (*GetInstance
 		return nil, false
 	}
 	return o.InstanceThreshold, true
-}
-
-// IsSetInstanceThreshold returns a boolean if a field has been set.
-func (o *GetInstanceThreshold200Response) IsSetInstanceThreshold() bool {
-	if o != nil && !IsNil(o.InstanceThreshold) {
-		return true
-	}
-
-	return false
 }
 
 // SetInstanceThreshold gets a reference to the given GetInstanceThreshold200ResponseInstanceThreshold and assigns it to the InstanceThreshold field.
@@ -136,15 +108,6 @@ func (o *GetInstanceThreshold200Response) GetInstanceSchedulesOk() ([]GetInstanc
 		return nil, false
 	}
 	return o.InstanceSchedules, true
-}
-
-// IsSetInstanceSchedules returns a boolean if a field has been set.
-func (o *GetInstanceThreshold200Response) IsSetInstanceSchedules() bool {
-	if o != nil && !IsNil(o.InstanceSchedules) {
-		return true
-	}
-
-	return false
 }
 
 // SetInstanceSchedules gets a reference to the given []GetInstanceThreshold200ResponseInstanceSchedulesInner and assigns it to the InstanceSchedules field.

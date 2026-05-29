@@ -71,15 +71,6 @@ func (o *PrepareAppApply200ResponseAllOfData) GetImageOk() (*string, bool) {
 	return o.Image, true
 }
 
-// IsSetImage returns a boolean if a field has been set.
-func (o *PrepareAppApply200ResponseAllOfData) IsSetImage() bool {
-	if o != nil && !IsNil(o.Image) {
-		return true
-	}
-
-	return false
-}
-
 // SetImage gets a reference to the given string and assigns it to the Image field.
 func (o *PrepareAppApply200ResponseAllOfData) SetImage(v string) {
 	o.Image = &v
@@ -101,15 +92,6 @@ func (o *PrepareAppApply200ResponseAllOfData) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *PrepareAppApply200ResponseAllOfData) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -135,15 +117,6 @@ func (o *PrepareAppApply200ResponseAllOfData) GetAutoValidateOk() (*bool, bool) 
 	return o.AutoValidate, true
 }
 
-// IsSetAutoValidate returns a boolean if a field has been set.
-func (o *PrepareAppApply200ResponseAllOfData) IsSetAutoValidate() bool {
-	if o != nil && !IsNil(o.AutoValidate) {
-		return true
-	}
-
-	return false
-}
-
 // SetAutoValidate gets a reference to the given bool and assigns it to the AutoValidate field.
 func (o *PrepareAppApply200ResponseAllOfData) SetAutoValidate(v bool) {
 	o.AutoValidate = &v
@@ -165,15 +138,6 @@ func (o *PrepareAppApply200ResponseAllOfData) GetTerraformOk() (*PrepareAppApply
 		return nil, false
 	}
 	return o.Terraform, true
-}
-
-// IsSetTerraform returns a boolean if a field has been set.
-func (o *PrepareAppApply200ResponseAllOfData) IsSetTerraform() bool {
-	if o != nil && !IsNil(o.Terraform) {
-		return true
-	}
-
-	return false
 }
 
 // SetTerraform gets a reference to the given PrepareAppApply200ResponseAllOfDataTerraform and assigns it to the Terraform field.
@@ -199,15 +163,6 @@ func (o *PrepareAppApply200ResponseAllOfData) GetTypeOk() (*string, bool) {
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *PrepareAppApply200ResponseAllOfData) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given string and assigns it to the Type field.
 func (o *PrepareAppApply200ResponseAllOfData) SetType(v string) {
 	o.Type = &v
@@ -231,15 +186,6 @@ func (o *PrepareAppApply200ResponseAllOfData) GetConfigOk() (map[string]interfac
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *PrepareAppApply200ResponseAllOfData) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
 func (o *PrepareAppApply200ResponseAllOfData) SetConfig(v map[string]interface{}) {
 	o.Config = v
@@ -261,15 +207,6 @@ func (o *PrepareAppApply200ResponseAllOfData) GetBlueprintNameOk() (*string, boo
 		return nil, false
 	}
 	return o.BlueprintName, true
-}
-
-// IsSetBlueprintName returns a boolean if a field has been set.
-func (o *PrepareAppApply200ResponseAllOfData) IsSetBlueprintName() bool {
-	if o != nil && !IsNil(o.BlueprintName) {
-		return true
-	}
-
-	return false
 }
 
 // SetBlueprintName gets a reference to the given string and assigns it to the BlueprintName field.
@@ -296,28 +233,9 @@ func (o *PrepareAppApply200ResponseAllOfData) GetDescriptionOk() (*string, bool)
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *PrepareAppApply200ResponseAllOfData) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *PrepareAppApply200ResponseAllOfData) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *PrepareAppApply200ResponseAllOfData) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *PrepareAppApply200ResponseAllOfData) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetTemplateId returns the TemplateId field value if set, zero value otherwise.
@@ -336,15 +254,6 @@ func (o *PrepareAppApply200ResponseAllOfData) GetTemplateIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.TemplateId, true
-}
-
-// IsSetTemplateId returns a boolean if a field has been set.
-func (o *PrepareAppApply200ResponseAllOfData) IsSetTemplateId() bool {
-	if o != nil && !IsNil(o.TemplateId) {
-		return true
-	}
-
-	return false
 }
 
 // SetTemplateId gets a reference to the given int64 and assigns it to the TemplateId field.
@@ -368,15 +277,6 @@ func (o *PrepareAppApply200ResponseAllOfData) GetBlueprintIdOk() (*int64, bool) 
 		return nil, false
 	}
 	return o.BlueprintId, true
-}
-
-// IsSetBlueprintId returns a boolean if a field has been set.
-func (o *PrepareAppApply200ResponseAllOfData) IsSetBlueprintId() bool {
-	if o != nil && !IsNil(o.BlueprintId) {
-		return true
-	}
-
-	return false
 }
 
 // SetBlueprintId gets a reference to the given int64 and assigns it to the BlueprintId field.
@@ -403,28 +303,9 @@ func (o *PrepareAppApply200ResponseAllOfData) GetGroupOk() (*PrepareAppApply200R
 	return o.Group.Get(), o.Group.IsSet()
 }
 
-// IsSetGroup returns a boolean if a field has been set.
-func (o *PrepareAppApply200ResponseAllOfData) IsSetGroup() bool {
-	if o != nil && o.Group.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetGroup gets a reference to the given NullablePrepareAppApply200ResponseAllOfDataGroup and assigns it to the Group field.
 func (o *PrepareAppApply200ResponseAllOfData) SetGroup(v PrepareAppApply200ResponseAllOfDataGroup) {
 	o.Group.Set(&v)
-}
-
-// SetGroupNil sets the value for Group to be an explicit nil
-func (o *PrepareAppApply200ResponseAllOfData) SetGroupNil() {
-	o.Group.Set(nil)
-}
-
-// UnsetGroup ensures that no value is present for Group, not even an explicit nil
-func (o *PrepareAppApply200ResponseAllOfData) UnsetGroup() {
-	o.Group.Unset()
 }
 
 func (o PrepareAppApply200ResponseAllOfData) MarshalJSON() ([]byte, error) {

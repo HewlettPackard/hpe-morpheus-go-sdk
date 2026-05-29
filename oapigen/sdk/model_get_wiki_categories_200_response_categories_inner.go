@@ -62,15 +62,6 @@ func (o *GetWikiCategories200ResponseCategoriesInner) GetNameOk() (*string, bool
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *GetWikiCategories200ResponseCategoriesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *GetWikiCategories200ResponseCategoriesInner) SetName(v string) {
 	o.Name = &v
@@ -92,15 +83,6 @@ func (o *GetWikiCategories200ResponseCategoriesInner) GetPageCountOk() (*int64, 
 		return nil, false
 	}
 	return o.PageCount, true
-}
-
-// IsSetPageCount returns a boolean if a field has been set.
-func (o *GetWikiCategories200ResponseCategoriesInner) IsSetPageCount() bool {
-	if o != nil && !IsNil(o.PageCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetPageCount gets a reference to the given int64 and assigns it to the PageCount field.

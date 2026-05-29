@@ -73,15 +73,6 @@ func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) GetIdOk() (*int64, b
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) SetId(v int64) {
 	o.Id = &v
@@ -106,28 +97,9 @@ func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) GetStartAddressOk() 
 	return o.StartAddress.Get(), o.StartAddress.IsSet()
 }
 
-// IsSetStartAddress returns a boolean if a field has been set.
-func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) IsSetStartAddress() bool {
-	if o != nil && o.StartAddress.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStartAddress gets a reference to the given NullableString and assigns it to the StartAddress field.
 func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) SetStartAddress(v string) {
 	o.StartAddress.Set(&v)
-}
-
-// SetStartAddressNil sets the value for StartAddress to be an explicit nil
-func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) SetStartAddressNil() {
-	o.StartAddress.Set(nil)
-}
-
-// UnsetStartAddress ensures that no value is present for StartAddress, not even an explicit nil
-func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) UnsetStartAddress() {
-	o.StartAddress.Unset()
 }
 
 // GetEndAddress returns the EndAddress field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -149,28 +121,9 @@ func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) GetEndAddressOk() (*
 	return o.EndAddress.Get(), o.EndAddress.IsSet()
 }
 
-// IsSetEndAddress returns a boolean if a field has been set.
-func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) IsSetEndAddress() bool {
-	if o != nil && o.EndAddress.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetEndAddress gets a reference to the given NullableString and assigns it to the EndAddress field.
 func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) SetEndAddress(v string) {
 	o.EndAddress.Set(&v)
-}
-
-// SetEndAddressNil sets the value for EndAddress to be an explicit nil
-func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) SetEndAddressNil() {
-	o.EndAddress.Set(nil)
-}
-
-// UnsetEndAddress ensures that no value is present for EndAddress, not even an explicit nil
-func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) UnsetEndAddress() {
-	o.EndAddress.Unset()
 }
 
 // GetInternalId returns the InternalId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -192,28 +145,9 @@ func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) GetInternalIdOk() (*
 	return o.InternalId.Get(), o.InternalId.IsSet()
 }
 
-// IsSetInternalId returns a boolean if a field has been set.
-func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) IsSetInternalId() bool {
-	if o != nil && o.InternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInternalId gets a reference to the given NullableString and assigns it to the InternalId field.
 func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) SetInternalId(v string) {
 	o.InternalId.Set(&v)
-}
-
-// SetInternalIdNil sets the value for InternalId to be an explicit nil
-func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) SetInternalIdNil() {
-	o.InternalId.Set(nil)
-}
-
-// UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
-func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) UnsetInternalId() {
-	o.InternalId.Unset()
 }
 
 // GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -235,28 +169,9 @@ func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) GetExternalIdOk() (*
 	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) IsSetExternalId() bool {
-	if o != nil && o.ExternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) SetExternalId(v string) {
 	o.ExternalId.Set(&v)
-}
-
-// SetExternalIdNil sets the value for ExternalId to be an explicit nil
-func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) SetExternalIdNil() {
-	o.ExternalId.Set(nil)
-}
-
-// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) UnsetExternalId() {
-	o.ExternalId.Unset()
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -278,28 +193,9 @@ func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) GetDescriptionOk() (
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetAddressCount returns the AddressCount field value if set, zero value otherwise.
@@ -318,15 +214,6 @@ func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) GetAddressCountOk() 
 		return nil, false
 	}
 	return o.AddressCount, true
-}
-
-// IsSetAddressCount returns a boolean if a field has been set.
-func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) IsSetAddressCount() bool {
-	if o != nil && !IsNil(o.AddressCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetAddressCount gets a reference to the given int64 and assigns it to the AddressCount field.
@@ -352,15 +239,6 @@ func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) GetActiveOk() (*bool
 	return o.Active, true
 }
 
-// IsSetActive returns a boolean if a field has been set.
-func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
-}
-
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) SetActive(v bool) {
 	o.Active = &v
@@ -384,15 +262,6 @@ func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) GetDateCreatedOk() (
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -414,15 +283,6 @@ func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) GetLastUpdatedOk() (
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
@@ -449,28 +309,9 @@ func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) GetCidrOk() (*string
 	return o.Cidr.Get(), o.Cidr.IsSet()
 }
 
-// IsSetCidr returns a boolean if a field has been set.
-func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) IsSetCidr() bool {
-	if o != nil && o.Cidr.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCidr gets a reference to the given NullableString and assigns it to the Cidr field.
 func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) SetCidr(v string) {
 	o.Cidr.Set(&v)
-}
-
-// SetCidrNil sets the value for Cidr to be an explicit nil
-func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) SetCidrNil() {
-	o.Cidr.Set(nil)
-}
-
-// UnsetCidr ensures that no value is present for Cidr, not even an explicit nil
-func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) UnsetCidr() {
-	o.Cidr.Unset()
 }
 
 // GetCidrIPv6 returns the CidrIPv6 field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -492,28 +333,9 @@ func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) GetCidrIPv6Ok() (*st
 	return o.CidrIPv6.Get(), o.CidrIPv6.IsSet()
 }
 
-// IsSetCidrIPv6 returns a boolean if a field has been set.
-func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) IsSetCidrIPv6() bool {
-	if o != nil && o.CidrIPv6.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCidrIPv6 gets a reference to the given NullableString and assigns it to the CidrIPv6 field.
 func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) SetCidrIPv6(v string) {
 	o.CidrIPv6.Set(&v)
-}
-
-// SetCidrIPv6Nil sets the value for CidrIPv6 to be an explicit nil
-func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) SetCidrIPv6Nil() {
-	o.CidrIPv6.Set(nil)
-}
-
-// UnsetCidrIPv6 ensures that no value is present for CidrIPv6, not even an explicit nil
-func (o *GetNetworkPool200ResponseNetworkPoolIpRangesInner) UnsetCidrIPv6() {
-	o.CidrIPv6.Unset()
 }
 
 func (o GetNetworkPool200ResponseNetworkPoolIpRangesInner) MarshalJSON() ([]byte, error) {

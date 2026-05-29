@@ -63,15 +63,6 @@ func (o *BudgetPolicyTypeConfiguration1) GetMaxPriceOk() (*float32, bool) {
 	return o.MaxPrice, true
 }
 
-// IsSetMaxPrice returns a boolean if a field has been set.
-func (o *BudgetPolicyTypeConfiguration1) IsSetMaxPrice() bool {
-	if o != nil && !IsNil(o.MaxPrice) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxPrice gets a reference to the given float32 and assigns it to the MaxPrice field.
 func (o *BudgetPolicyTypeConfiguration1) SetMaxPrice(v float32) {
 	o.MaxPrice = &v
@@ -95,15 +86,6 @@ func (o *BudgetPolicyTypeConfiguration1) GetMaxPriceCurrencyOk() (*string, bool)
 	return o.MaxPriceCurrency, true
 }
 
-// IsSetMaxPriceCurrency returns a boolean if a field has been set.
-func (o *BudgetPolicyTypeConfiguration1) IsSetMaxPriceCurrency() bool {
-	if o != nil && !IsNil(o.MaxPriceCurrency) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxPriceCurrency gets a reference to the given string and assigns it to the MaxPriceCurrency field.
 func (o *BudgetPolicyTypeConfiguration1) SetMaxPriceCurrency(v string) {
 	o.MaxPriceCurrency = &v
@@ -125,15 +107,6 @@ func (o *BudgetPolicyTypeConfiguration1) GetMaxPriceUnitOk() (*string, bool) {
 		return nil, false
 	}
 	return o.MaxPriceUnit, true
-}
-
-// IsSetMaxPriceUnit returns a boolean if a field has been set.
-func (o *BudgetPolicyTypeConfiguration1) IsSetMaxPriceUnit() bool {
-	if o != nil && !IsNil(o.MaxPriceUnit) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxPriceUnit gets a reference to the given string and assigns it to the MaxPriceUnit field.

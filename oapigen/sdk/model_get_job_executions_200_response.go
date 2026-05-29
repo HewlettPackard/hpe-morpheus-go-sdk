@@ -61,15 +61,6 @@ func (o *GetJobExecutions200Response) GetJobExecutionOk() (*GetJobExecutions200R
 	return o.JobExecution, true
 }
 
-// IsSetJobExecution returns a boolean if a field has been set.
-func (o *GetJobExecutions200Response) IsSetJobExecution() bool {
-	if o != nil && !IsNil(o.JobExecution) {
-		return true
-	}
-
-	return false
-}
-
 // SetJobExecution gets a reference to the given GetJobExecutions200ResponseAllOfJobExecution and assigns it to the JobExecution field.
 func (o *GetJobExecutions200Response) SetJobExecution(v GetJobExecutions200ResponseAllOfJobExecution) {
 	o.JobExecution = &v

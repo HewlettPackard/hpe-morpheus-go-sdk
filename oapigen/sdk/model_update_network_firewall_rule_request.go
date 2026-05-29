@@ -61,15 +61,6 @@ func (o *UpdateNetworkFirewallRuleRequest) GetRuleOk() (*UpdateNetworkFirewallRu
 	return o.Rule, true
 }
 
-// IsSetRule returns a boolean if a field has been set.
-func (o *UpdateNetworkFirewallRuleRequest) IsSetRule() bool {
-	if o != nil && !IsNil(o.Rule) {
-		return true
-	}
-
-	return false
-}
-
 // SetRule gets a reference to the given UpdateNetworkFirewallRuleRequestRule and assigns it to the Rule field.
 func (o *UpdateNetworkFirewallRuleRequest) SetRule(v UpdateNetworkFirewallRuleRequestRule) {
 	o.Rule = &v

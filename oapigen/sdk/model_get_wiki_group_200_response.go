@@ -61,15 +61,6 @@ func (o *GetWikiGroup200Response) GetPageOk() (*UpdateWikiApp200ResponseAllOfPag
 	return o.Page, true
 }
 
-// IsSetPage returns a boolean if a field has been set.
-func (o *GetWikiGroup200Response) IsSetPage() bool {
-	if o != nil && !IsNil(o.Page) {
-		return true
-	}
-
-	return false
-}
-
 // SetPage gets a reference to the given UpdateWikiApp200ResponseAllOfPage and assigns it to the Page field.
 func (o *GetWikiGroup200Response) SetPage(v UpdateWikiApp200ResponseAllOfPage) {
 	o.Page = &v

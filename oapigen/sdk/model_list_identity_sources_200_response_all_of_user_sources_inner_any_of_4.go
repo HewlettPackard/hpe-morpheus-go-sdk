@@ -81,15 +81,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) GetIdOk() (*
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) SetId(v int64) {
 	o.Id = &v
@@ -111,15 +102,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) GetNameOk() 
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -145,15 +127,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) GetDescripti
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) SetDescription(v string) {
 	o.Description = &v
@@ -175,15 +148,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) GetCodeOk() 
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -209,15 +173,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) GetTypeOk() 
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given string and assigns it to the Type field.
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) SetType(v string) {
 	o.Type = &v
@@ -239,15 +194,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) GetActiveOk(
 		return nil, false
 	}
 	return o.Active, true
-}
-
-// IsSetActive returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
 }
 
 // SetActive gets a reference to the given bool and assigns it to the Active field.
@@ -273,15 +219,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) GetDeletedOk
 	return o.Deleted, true
 }
 
-// IsSetDeleted returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) IsSetDeleted() bool {
-	if o != nil && !IsNil(o.Deleted) {
-		return true
-	}
-
-	return false
-}
-
 // SetDeleted gets a reference to the given bool and assigns it to the Deleted field.
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) SetDeleted(v bool) {
 	o.Deleted = &v
@@ -303,15 +240,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) GetAutoSyncO
 		return nil, false
 	}
 	return o.AutoSyncOnLogin, true
-}
-
-// IsSetAutoSyncOnLogin returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) IsSetAutoSyncOnLogin() bool {
-	if o != nil && !IsNil(o.AutoSyncOnLogin) {
-		return true
-	}
-
-	return false
 }
 
 // SetAutoSyncOnLogin gets a reference to the given bool and assigns it to the AutoSyncOnLogin field.
@@ -337,15 +265,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) GetExternalL
 	return o.ExternalLogin, true
 }
 
-// IsSetExternalLogin returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) IsSetExternalLogin() bool {
-	if o != nil && !IsNil(o.ExternalLogin) {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalLogin gets a reference to the given bool and assigns it to the ExternalLogin field.
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) SetExternalLogin(v bool) {
 	o.ExternalLogin = &v
@@ -369,15 +288,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) GetAllowCust
 	return o.AllowCustomMappings, true
 }
 
-// IsSetAllowCustomMappings returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) IsSetAllowCustomMappings() bool {
-	if o != nil && !IsNil(o.AllowCustomMappings) {
-		return true
-	}
-
-	return false
-}
-
 // SetAllowCustomMappings gets a reference to the given bool and assigns it to the AllowCustomMappings field.
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) SetAllowCustomMappings(v bool) {
 	o.AllowCustomMappings = &v
@@ -399,15 +309,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) GetManualRol
 		return nil, false
 	}
 	return o.ManualRoleAssignment, true
-}
-
-// IsSetManualRoleAssignment returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) IsSetManualRoleAssignment() bool {
-	if o != nil && !IsNil(o.ManualRoleAssignment) {
-		return true
-	}
-
-	return false
 }
 
 // SetManualRoleAssignment gets a reference to the given bool and assigns it to the ManualRoleAssignment field.
@@ -434,28 +335,9 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) GetAccountOk
 	return o.Account.Get(), o.Account.IsSet()
 }
 
-// IsSetAccount returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) IsSetAccount() bool {
-	if o != nil && o.Account.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAccount gets a reference to the given NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4Account and assigns it to the Account field.
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) SetAccount(v ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4Account) {
 	o.Account.Set(&v)
-}
-
-// SetAccountNil sets the value for Account to be an explicit nil
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) SetAccountNil() {
-	o.Account.Set(nil)
-}
-
-// UnsetAccount ensures that no value is present for Account, not even an explicit nil
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) UnsetAccount() {
-	o.Account.Unset()
 }
 
 // GetDefaultAccountRole returns the DefaultAccountRole field value if set, zero value otherwise.
@@ -474,15 +356,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) GetDefaultAc
 		return nil, false
 	}
 	return o.DefaultAccountRole, true
-}
-
-// IsSetDefaultAccountRole returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) IsSetDefaultAccountRole() bool {
-	if o != nil && !IsNil(o.DefaultAccountRole) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultAccountRole gets a reference to the given ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4DefaultAccountRole and assigns it to the DefaultAccountRole field.
@@ -508,15 +381,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) GetConfigOk(
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4Config and assigns it to the Config field.
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) SetConfig(v ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4Config) {
 	o.Config = &v
@@ -538,15 +402,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) GetRoleMappi
 		return nil, false
 	}
 	return o.RoleMappings, true
-}
-
-// IsSetRoleMappings returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) IsSetRoleMappings() bool {
-	if o != nil && !IsNil(o.RoleMappings) {
-		return true
-	}
-
-	return false
 }
 
 // SetRoleMappings gets a reference to the given []ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4RoleMappingsInner and assigns it to the RoleMappings field.
@@ -572,15 +427,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) GetSubdomain
 	return o.Subdomain, true
 }
 
-// IsSetSubdomain returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) IsSetSubdomain() bool {
-	if o != nil && !IsNil(o.Subdomain) {
-		return true
-	}
-
-	return false
-}
-
 // SetSubdomain gets a reference to the given string and assigns it to the Subdomain field.
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) SetSubdomain(v string) {
 	o.Subdomain = &v
@@ -602,15 +448,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) GetLoginURLO
 		return nil, false
 	}
 	return o.LoginURL, true
-}
-
-// IsSetLoginURL returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) IsSetLoginURL() bool {
-	if o != nil && !IsNil(o.LoginURL) {
-		return true
-	}
-
-	return false
 }
 
 // SetLoginURL gets a reference to the given string and assigns it to the LoginURL field.
@@ -636,15 +473,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) GetProviderS
 	return o.ProviderSettings, true
 }
 
-// IsSetProviderSettings returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) IsSetProviderSettings() bool {
-	if o != nil && !IsNil(o.ProviderSettings) {
-		return true
-	}
-
-	return false
-}
-
 // SetProviderSettings gets a reference to the given map[string]interface{} and assigns it to the ProviderSettings field.
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) SetProviderSettings(v map[string]interface{}) {
 	o.ProviderSettings = v
@@ -668,15 +496,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) GetDateCreat
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -698,15 +517,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) GetLastUpdat
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.

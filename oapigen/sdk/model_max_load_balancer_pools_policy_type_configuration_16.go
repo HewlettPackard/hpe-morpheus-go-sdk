@@ -61,15 +61,6 @@ func (o *MaxLoadBalancerPoolsPolicyTypeConfiguration16) GetMaxPoolsOk() (*string
 	return o.MaxPools, true
 }
 
-// IsSetMaxPools returns a boolean if a field has been set.
-func (o *MaxLoadBalancerPoolsPolicyTypeConfiguration16) IsSetMaxPools() bool {
-	if o != nil && !IsNil(o.MaxPools) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxPools gets a reference to the given string and assigns it to the MaxPools field.
 func (o *MaxLoadBalancerPoolsPolicyTypeConfiguration16) SetMaxPools(v string) {
 	o.MaxPools = &v

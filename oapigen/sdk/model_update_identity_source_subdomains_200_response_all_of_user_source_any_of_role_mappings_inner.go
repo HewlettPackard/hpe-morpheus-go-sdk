@@ -64,28 +64,9 @@ func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOfRoleMappin
 	return o.SourceRoleName.Get(), o.SourceRoleName.IsSet()
 }
 
-// IsSetSourceRoleName returns a boolean if a field has been set.
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOfRoleMappingsInner) IsSetSourceRoleName() bool {
-	if o != nil && o.SourceRoleName.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSourceRoleName gets a reference to the given NullableString and assigns it to the SourceRoleName field.
 func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOfRoleMappingsInner) SetSourceRoleName(v string) {
 	o.SourceRoleName.Set(&v)
-}
-
-// SetSourceRoleNameNil sets the value for SourceRoleName to be an explicit nil
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOfRoleMappingsInner) SetSourceRoleNameNil() {
-	o.SourceRoleName.Set(nil)
-}
-
-// UnsetSourceRoleName ensures that no value is present for SourceRoleName, not even an explicit nil
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOfRoleMappingsInner) UnsetSourceRoleName() {
-	o.SourceRoleName.Unset()
 }
 
 // GetSourceRoleFqn returns the SourceRoleFqn field value if set, zero value otherwise.
@@ -104,15 +85,6 @@ func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOfRoleMappin
 		return nil, false
 	}
 	return o.SourceRoleFqn, true
-}
-
-// IsSetSourceRoleFqn returns a boolean if a field has been set.
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOfRoleMappingsInner) IsSetSourceRoleFqn() bool {
-	if o != nil && !IsNil(o.SourceRoleFqn) {
-		return true
-	}
-
-	return false
 }
 
 // SetSourceRoleFqn gets a reference to the given string and assigns it to the SourceRoleFqn field.
@@ -136,15 +108,6 @@ func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOfRoleMappin
 		return nil, false
 	}
 	return o.MappedRole, true
-}
-
-// IsSetMappedRole returns a boolean if a field has been set.
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOfRoleMappingsInner) IsSetMappedRole() bool {
-	if o != nil && !IsNil(o.MappedRole) {
-		return true
-	}
-
-	return false
 }
 
 // SetMappedRole gets a reference to the given UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOfRoleMappingsInnerMappedRole and assigns it to the MappedRole field.

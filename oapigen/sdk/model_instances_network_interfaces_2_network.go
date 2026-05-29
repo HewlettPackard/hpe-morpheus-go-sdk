@@ -88,15 +88,6 @@ func (o *InstancesNetworkInterfaces2Network) GetPoolOk() (*InstancesNetworkInter
 	return o.Pool, true
 }
 
-// IsSetPool returns a boolean if a field has been set.
-func (o *InstancesNetworkInterfaces2Network) IsSetPool() bool {
-	if o != nil && !IsNil(o.Pool) {
-		return true
-	}
-
-	return false
-}
-
 // SetPool gets a reference to the given InstancesNetworkInterfaces2NetworkPool and assigns it to the Pool field.
 func (o *InstancesNetworkInterfaces2Network) SetPool(v InstancesNetworkInterfaces2NetworkPool) {
 	o.Pool = &v

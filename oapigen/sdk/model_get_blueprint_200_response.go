@@ -61,15 +61,6 @@ func (o *GetBlueprint200Response) GetBlueprintOk() (*GetBlueprint200ResponseBlue
 	return o.Blueprint, true
 }
 
-// IsSetBlueprint returns a boolean if a field has been set.
-func (o *GetBlueprint200Response) IsSetBlueprint() bool {
-	if o != nil && !IsNil(o.Blueprint) {
-		return true
-	}
-
-	return false
-}
-
 // SetBlueprint gets a reference to the given GetBlueprint200ResponseBlueprint and assigns it to the Blueprint field.
 func (o *GetBlueprint200Response) SetBlueprint(v GetBlueprint200ResponseBlueprint) {
 	o.Blueprint = &v

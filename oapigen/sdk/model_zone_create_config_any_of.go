@@ -143,15 +143,6 @@ func (o *ZoneCreateConfigAnyOf) GetApplianceUrlOk() (*string, bool) {
 	return o.ApplianceUrl, true
 }
 
-// IsSetApplianceUrl returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf) IsSetApplianceUrl() bool {
-	if o != nil && !IsNil(o.ApplianceUrl) {
-		return true
-	}
-
-	return false
-}
-
 // SetApplianceUrl gets a reference to the given string and assigns it to the ApplianceUrl field.
 func (o *ZoneCreateConfigAnyOf) SetApplianceUrl(v string) {
 	o.ApplianceUrl = &v
@@ -173,15 +164,6 @@ func (o *ZoneCreateConfigAnyOf) GetDatacenterNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.DatacenterName, true
-}
-
-// IsSetDatacenterName returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf) IsSetDatacenterName() bool {
-	if o != nil && !IsNil(o.DatacenterName) {
-		return true
-	}
-
-	return false
 }
 
 // SetDatacenterName gets a reference to the given string and assigns it to the DatacenterName field.
@@ -208,28 +190,9 @@ func (o *ZoneCreateConfigAnyOf) GetExternalIdOk() (*string, bool) {
 	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf) IsSetExternalId() bool {
-	if o != nil && o.ExternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *ZoneCreateConfigAnyOf) SetExternalId(v string) {
 	o.ExternalId.Set(&v)
-}
-
-// SetExternalIdNil sets the value for ExternalId to be an explicit nil
-func (o *ZoneCreateConfigAnyOf) SetExternalIdNil() {
-	o.ExternalId.Set(nil)
-}
-
-// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-func (o *ZoneCreateConfigAnyOf) UnsetExternalId() {
-	o.ExternalId.Unset()
 }
 
 // GetInventoryLevel returns the InventoryLevel field value if set, zero value otherwise.
@@ -248,15 +211,6 @@ func (o *ZoneCreateConfigAnyOf) GetInventoryLevelOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InventoryLevel, true
-}
-
-// IsSetInventoryLevel returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf) IsSetInventoryLevel() bool {
-	if o != nil && !IsNil(o.InventoryLevel) {
-		return true
-	}
-
-	return false
 }
 
 // SetInventoryLevel gets a reference to the given string and assigns it to the InventoryLevel field.
@@ -280,15 +234,6 @@ func (o *ZoneCreateConfigAnyOf) GetConsoleKeymapOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ConsoleKeymap, true
-}
-
-// IsSetConsoleKeymap returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf) IsSetConsoleKeymap() bool {
-	if o != nil && !IsNil(o.ConsoleKeymap) {
-		return true
-	}
-
-	return false
 }
 
 // SetConsoleKeymap gets a reference to the given string and assigns it to the ConsoleKeymap field.
@@ -338,15 +283,6 @@ func (o *ZoneCreateConfigAnyOf) GetAccessKeyOk() (*string, bool) {
 	return o.AccessKey, true
 }
 
-// IsSetAccessKey returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf) IsSetAccessKey() bool {
-	if o != nil && !IsNil(o.AccessKey) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccessKey gets a reference to the given string and assigns it to the AccessKey field.
 func (o *ZoneCreateConfigAnyOf) SetAccessKey(v string) {
 	o.AccessKey = &v
@@ -368,15 +304,6 @@ func (o *ZoneCreateConfigAnyOf) GetSecretKeyOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SecretKey, true
-}
-
-// IsSetSecretKey returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf) IsSetSecretKey() bool {
-	if o != nil && !IsNil(o.SecretKey) {
-		return true
-	}
-
-	return false
 }
 
 // SetSecretKey gets a reference to the given string and assigns it to the SecretKey field.
@@ -402,15 +329,6 @@ func (o *ZoneCreateConfigAnyOf) GetUseHostCredentialsOk() (*string, bool) {
 	return o.UseHostCredentials, true
 }
 
-// IsSetUseHostCredentials returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf) IsSetUseHostCredentials() bool {
-	if o != nil && !IsNil(o.UseHostCredentials) {
-		return true
-	}
-
-	return false
-}
-
 // SetUseHostCredentials gets a reference to the given string and assigns it to the UseHostCredentials field.
 func (o *ZoneCreateConfigAnyOf) SetUseHostCredentials(v string) {
 	o.UseHostCredentials = &v
@@ -432,15 +350,6 @@ func (o *ZoneCreateConfigAnyOf) GetEbsEncryptionOk() (*string, bool) {
 		return nil, false
 	}
 	return o.EbsEncryption, true
-}
-
-// IsSetEbsEncryption returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf) IsSetEbsEncryption() bool {
-	if o != nil && !IsNil(o.EbsEncryption) {
-		return true
-	}
-
-	return false
 }
 
 // SetEbsEncryption gets a reference to the given string and assigns it to the EbsEncryption field.
@@ -466,15 +375,6 @@ func (o *ZoneCreateConfigAnyOf) GetStsAssumeRoleOk() (*string, bool) {
 	return o.StsAssumeRole, true
 }
 
-// IsSetStsAssumeRole returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf) IsSetStsAssumeRole() bool {
-	if o != nil && !IsNil(o.StsAssumeRole) {
-		return true
-	}
-
-	return false
-}
-
 // SetStsAssumeRole gets a reference to the given string and assigns it to the StsAssumeRole field.
 func (o *ZoneCreateConfigAnyOf) SetStsAssumeRole(v string) {
 	o.StsAssumeRole = &v
@@ -496,15 +396,6 @@ func (o *ZoneCreateConfigAnyOf) GetConfigManagementIdOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ConfigManagementId, true
-}
-
-// IsSetConfigManagementId returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf) IsSetConfigManagementId() bool {
-	if o != nil && !IsNil(o.ConfigManagementId) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfigManagementId gets a reference to the given string and assigns it to the ConfigManagementId field.
@@ -530,15 +421,6 @@ func (o *ZoneCreateConfigAnyOf) GetVpcOk() (*string, bool) {
 	return o.Vpc, true
 }
 
-// IsSetVpc returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf) IsSetVpc() bool {
-	if o != nil && !IsNil(o.Vpc) {
-		return true
-	}
-
-	return false
-}
-
 // SetVpc gets a reference to the given string and assigns it to the Vpc field.
 func (o *ZoneCreateConfigAnyOf) SetVpc(v string) {
 	o.Vpc = &v
@@ -560,15 +442,6 @@ func (o *ZoneCreateConfigAnyOf) GetVdiGatewayOk() (*string, bool) {
 		return nil, false
 	}
 	return o.VdiGateway, true
-}
-
-// IsSetVdiGateway returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf) IsSetVdiGateway() bool {
-	if o != nil && !IsNil(o.VdiGateway) {
-		return true
-	}
-
-	return false
 }
 
 // SetVdiGateway gets a reference to the given string and assigns it to the VdiGateway field.
@@ -594,15 +467,6 @@ func (o *ZoneCreateConfigAnyOf) GetCmdbConfigOk() (*string, bool) {
 	return o.CmdbConfig, true
 }
 
-// IsSetCmdbConfig returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf) IsSetCmdbConfig() bool {
-	if o != nil && !IsNil(o.CmdbConfig) {
-		return true
-	}
-
-	return false
-}
-
 // SetCmdbConfig gets a reference to the given string and assigns it to the CmdbConfig field.
 func (o *ZoneCreateConfigAnyOf) SetCmdbConfig(v string) {
 	o.CmdbConfig = &v
@@ -624,15 +488,6 @@ func (o *ZoneCreateConfigAnyOf) GetChangeManagementConfigOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ChangeManagementConfig, true
-}
-
-// IsSetChangeManagementConfig returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf) IsSetChangeManagementConfig() bool {
-	if o != nil && !IsNil(o.ChangeManagementConfig) {
-		return true
-	}
-
-	return false
 }
 
 // SetChangeManagementConfig gets a reference to the given string and assigns it to the ChangeManagementConfig field.
@@ -659,28 +514,9 @@ func (o *ZoneCreateConfigAnyOf) GetNetworkModeOk() (*string, bool) {
 	return o.NetworkMode.Get(), o.NetworkMode.IsSet()
 }
 
-// IsSetNetworkMode returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf) IsSetNetworkMode() bool {
-	if o != nil && o.NetworkMode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkMode gets a reference to the given NullableString and assigns it to the NetworkMode field.
 func (o *ZoneCreateConfigAnyOf) SetNetworkMode(v string) {
 	o.NetworkMode.Set(&v)
-}
-
-// SetNetworkModeNil sets the value for NetworkMode to be an explicit nil
-func (o *ZoneCreateConfigAnyOf) SetNetworkModeNil() {
-	o.NetworkMode.Set(nil)
-}
-
-// UnsetNetworkMode ensures that no value is present for NetworkMode, not even an explicit nil
-func (o *ZoneCreateConfigAnyOf) UnsetNetworkMode() {
-	o.NetworkMode.Unset()
 }
 
 // GetApiProxy returns the ApiProxy field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -702,28 +538,9 @@ func (o *ZoneCreateConfigAnyOf) GetApiProxyOk() (*string, bool) {
 	return o.ApiProxy.Get(), o.ApiProxy.IsSet()
 }
 
-// IsSetApiProxy returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf) IsSetApiProxy() bool {
-	if o != nil && o.ApiProxy.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetApiProxy gets a reference to the given NullableString and assigns it to the ApiProxy field.
 func (o *ZoneCreateConfigAnyOf) SetApiProxy(v string) {
 	o.ApiProxy.Set(&v)
-}
-
-// SetApiProxyNil sets the value for ApiProxy to be an explicit nil
-func (o *ZoneCreateConfigAnyOf) SetApiProxyNil() {
-	o.ApiProxy.Set(nil)
-}
-
-// UnsetApiProxy ensures that no value is present for ApiProxy, not even an explicit nil
-func (o *ZoneCreateConfigAnyOf) UnsetApiProxy() {
-	o.ApiProxy.Unset()
 }
 
 // GetRegion returns the Region field value if set, zero value otherwise.
@@ -742,15 +559,6 @@ func (o *ZoneCreateConfigAnyOf) GetRegionOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Region, true
-}
-
-// IsSetRegion returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf) IsSetRegion() bool {
-	if o != nil && !IsNil(o.Region) {
-		return true
-	}
-
-	return false
 }
 
 // SetRegion gets a reference to the given string and assigns it to the Region field.
@@ -776,15 +584,6 @@ func (o *ZoneCreateConfigAnyOf) GetCredentialsOk() (*string, bool) {
 	return o.Credentials, true
 }
 
-// IsSetCredentials returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf) IsSetCredentials() bool {
-	if o != nil && !IsNil(o.Credentials) {
-		return true
-	}
-
-	return false
-}
-
 // SetCredentials gets a reference to the given string and assigns it to the Credentials field.
 func (o *ZoneCreateConfigAnyOf) SetCredentials(v string) {
 	o.Credentials = &v
@@ -806,15 +605,6 @@ func (o *ZoneCreateConfigAnyOf) GetCostingBucketOk() (*string, bool) {
 		return nil, false
 	}
 	return o.CostingBucket, true
-}
-
-// IsSetCostingBucket returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf) IsSetCostingBucket() bool {
-	if o != nil && !IsNil(o.CostingBucket) {
-		return true
-	}
-
-	return false
 }
 
 // SetCostingBucket gets a reference to the given string and assigns it to the CostingBucket field.
@@ -841,28 +631,9 @@ func (o *ZoneCreateConfigAnyOf) GetCostingFolderOk() (*string, bool) {
 	return o.CostingFolder.Get(), o.CostingFolder.IsSet()
 }
 
-// IsSetCostingFolder returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf) IsSetCostingFolder() bool {
-	if o != nil && o.CostingFolder.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCostingFolder gets a reference to the given NullableString and assigns it to the CostingFolder field.
 func (o *ZoneCreateConfigAnyOf) SetCostingFolder(v string) {
 	o.CostingFolder.Set(&v)
-}
-
-// SetCostingFolderNil sets the value for CostingFolder to be an explicit nil
-func (o *ZoneCreateConfigAnyOf) SetCostingFolderNil() {
-	o.CostingFolder.Set(nil)
-}
-
-// UnsetCostingFolder ensures that no value is present for CostingFolder, not even an explicit nil
-func (o *ZoneCreateConfigAnyOf) UnsetCostingFolder() {
-	o.CostingFolder.Unset()
 }
 
 // GetCostingReportName returns the CostingReportName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -884,28 +655,9 @@ func (o *ZoneCreateConfigAnyOf) GetCostingReportNameOk() (*string, bool) {
 	return o.CostingReportName.Get(), o.CostingReportName.IsSet()
 }
 
-// IsSetCostingReportName returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf) IsSetCostingReportName() bool {
-	if o != nil && o.CostingReportName.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCostingReportName gets a reference to the given NullableString and assigns it to the CostingReportName field.
 func (o *ZoneCreateConfigAnyOf) SetCostingReportName(v string) {
 	o.CostingReportName.Set(&v)
-}
-
-// SetCostingReportNameNil sets the value for CostingReportName to be an explicit nil
-func (o *ZoneCreateConfigAnyOf) SetCostingReportNameNil() {
-	o.CostingReportName.Set(nil)
-}
-
-// UnsetCostingReportName ensures that no value is present for CostingReportName, not even an explicit nil
-func (o *ZoneCreateConfigAnyOf) UnsetCostingReportName() {
-	o.CostingReportName.Unset()
 }
 
 // GetCostingKey returns the CostingKey field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -927,28 +679,9 @@ func (o *ZoneCreateConfigAnyOf) GetCostingKeyOk() (*string, bool) {
 	return o.CostingKey.Get(), o.CostingKey.IsSet()
 }
 
-// IsSetCostingKey returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf) IsSetCostingKey() bool {
-	if o != nil && o.CostingKey.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCostingKey gets a reference to the given NullableString and assigns it to the CostingKey field.
 func (o *ZoneCreateConfigAnyOf) SetCostingKey(v string) {
 	o.CostingKey.Set(&v)
-}
-
-// SetCostingKeyNil sets the value for CostingKey to be an explicit nil
-func (o *ZoneCreateConfigAnyOf) SetCostingKeyNil() {
-	o.CostingKey.Set(nil)
-}
-
-// UnsetCostingKey ensures that no value is present for CostingKey, not even an explicit nil
-func (o *ZoneCreateConfigAnyOf) UnsetCostingKey() {
-	o.CostingKey.Unset()
 }
 
 // GetCostingSecret returns the CostingSecret field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -970,28 +703,9 @@ func (o *ZoneCreateConfigAnyOf) GetCostingSecretOk() (*string, bool) {
 	return o.CostingSecret.Get(), o.CostingSecret.IsSet()
 }
 
-// IsSetCostingSecret returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf) IsSetCostingSecret() bool {
-	if o != nil && o.CostingSecret.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCostingSecret gets a reference to the given NullableString and assigns it to the CostingSecret field.
 func (o *ZoneCreateConfigAnyOf) SetCostingSecret(v string) {
 	o.CostingSecret.Set(&v)
-}
-
-// SetCostingSecretNil sets the value for CostingSecret to be an explicit nil
-func (o *ZoneCreateConfigAnyOf) SetCostingSecretNil() {
-	o.CostingSecret.Set(nil)
-}
-
-// UnsetCostingSecret ensures that no value is present for CostingSecret, not even an explicit nil
-func (o *ZoneCreateConfigAnyOf) UnsetCostingSecret() {
-	o.CostingSecret.Unset()
 }
 
 // GetDomain returns the Domain field value if set, zero value otherwise.
@@ -1010,15 +724,6 @@ func (o *ZoneCreateConfigAnyOf) GetDomainOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Domain, true
-}
-
-// IsSetDomain returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf) IsSetDomain() bool {
-	if o != nil && !IsNil(o.Domain) {
-		return true
-	}
-
-	return false
 }
 
 // SetDomain gets a reference to the given string and assigns it to the Domain field.
@@ -1044,15 +749,6 @@ func (o *ZoneCreateConfigAnyOf) GetTimezoneOk() (*string, bool) {
 	return o.Timezone, true
 }
 
-// IsSetTimezone returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf) IsSetTimezone() bool {
-	if o != nil && !IsNil(o.Timezone) {
-		return true
-	}
-
-	return false
-}
-
 // SetTimezone gets a reference to the given string and assigns it to the Timezone field.
 func (o *ZoneCreateConfigAnyOf) SetTimezone(v string) {
 	o.Timezone = &v
@@ -1074,15 +770,6 @@ func (o *ZoneCreateConfigAnyOf) GetSecurityServerOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SecurityServer, true
-}
-
-// IsSetSecurityServer returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf) IsSetSecurityServer() bool {
-	if o != nil && !IsNil(o.SecurityServer) {
-		return true
-	}
-
-	return false
 }
 
 // SetSecurityServer gets a reference to the given string and assigns it to the SecurityServer field.
@@ -1108,15 +795,6 @@ func (o *ZoneCreateConfigAnyOf) GetGuidanceOk() (*string, bool) {
 	return o.Guidance, true
 }
 
-// IsSetGuidance returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf) IsSetGuidance() bool {
-	if o != nil && !IsNil(o.Guidance) {
-		return true
-	}
-
-	return false
-}
-
 // SetGuidance gets a reference to the given string and assigns it to the Guidance field.
 func (o *ZoneCreateConfigAnyOf) SetGuidance(v string) {
 	o.Guidance = &v
@@ -1140,15 +818,6 @@ func (o *ZoneCreateConfigAnyOf) GetCostingOk() (*string, bool) {
 	return o.Costing, true
 }
 
-// IsSetCosting returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf) IsSetCosting() bool {
-	if o != nil && !IsNil(o.Costing) {
-		return true
-	}
-
-	return false
-}
-
 // SetCosting gets a reference to the given string and assigns it to the Costing field.
 func (o *ZoneCreateConfigAnyOf) SetCosting(v string) {
 	o.Costing = &v
@@ -1170,15 +839,6 @@ func (o *ZoneCreateConfigAnyOf) GetConfigCmdbDiscoveryOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ConfigCmdbDiscovery, true
-}
-
-// IsSetConfigCmdbDiscovery returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf) IsSetConfigCmdbDiscovery() bool {
-	if o != nil && !IsNil(o.ConfigCmdbDiscovery) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfigCmdbDiscovery gets a reference to the given string and assigns it to the ConfigCmdbDiscovery field.
@@ -1205,28 +865,9 @@ func (o *ZoneCreateConfigAnyOf) GetLogoOk() (*string, bool) {
 	return o.Logo.Get(), o.Logo.IsSet()
 }
 
-// IsSetLogo returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf) IsSetLogo() bool {
-	if o != nil && o.Logo.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLogo gets a reference to the given NullableString and assigns it to the Logo field.
 func (o *ZoneCreateConfigAnyOf) SetLogo(v string) {
 	o.Logo.Set(&v)
-}
-
-// SetLogoNil sets the value for Logo to be an explicit nil
-func (o *ZoneCreateConfigAnyOf) SetLogoNil() {
-	o.Logo.Set(nil)
-}
-
-// UnsetLogo ensures that no value is present for Logo, not even an explicit nil
-func (o *ZoneCreateConfigAnyOf) UnsetLogo() {
-	o.Logo.Unset()
 }
 
 // GetDarkModeLogo returns the DarkModeLogo field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1248,28 +889,9 @@ func (o *ZoneCreateConfigAnyOf) GetDarkModeLogoOk() (*string, bool) {
 	return o.DarkModeLogo.Get(), o.DarkModeLogo.IsSet()
 }
 
-// IsSetDarkModeLogo returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf) IsSetDarkModeLogo() bool {
-	if o != nil && o.DarkModeLogo.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDarkModeLogo gets a reference to the given NullableString and assigns it to the DarkModeLogo field.
 func (o *ZoneCreateConfigAnyOf) SetDarkModeLogo(v string) {
 	o.DarkModeLogo.Set(&v)
-}
-
-// SetDarkModeLogoNil sets the value for DarkModeLogo to be an explicit nil
-func (o *ZoneCreateConfigAnyOf) SetDarkModeLogoNil() {
-	o.DarkModeLogo.Set(nil)
-}
-
-// UnsetDarkModeLogo ensures that no value is present for DarkModeLogo, not even an explicit nil
-func (o *ZoneCreateConfigAnyOf) UnsetDarkModeLogo() {
-	o.DarkModeLogo.Unset()
 }
 
 // GetProxy returns the Proxy field value if set, zero value otherwise.
@@ -1288,15 +910,6 @@ func (o *ZoneCreateConfigAnyOf) GetProxyOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Proxy, true
-}
-
-// IsSetProxy returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf) IsSetProxy() bool {
-	if o != nil && !IsNil(o.Proxy) {
-		return true
-	}
-
-	return false
 }
 
 // SetProxy gets a reference to the given string and assigns it to the Proxy field.
@@ -1322,15 +935,6 @@ func (o *ZoneCreateConfigAnyOf) GetBypassProxyForCloudOk() (*string, bool) {
 	return o.BypassProxyForCloud, true
 }
 
-// IsSetBypassProxyForCloud returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf) IsSetBypassProxyForCloud() bool {
-	if o != nil && !IsNil(o.BypassProxyForCloud) {
-		return true
-	}
-
-	return false
-}
-
 // SetBypassProxyForCloud gets a reference to the given string and assigns it to the BypassProxyForCloud field.
 func (o *ZoneCreateConfigAnyOf) SetBypassProxyForCloud(v string) {
 	o.BypassProxyForCloud = &v
@@ -1354,15 +958,6 @@ func (o *ZoneCreateConfigAnyOf) GetNoProxyOk() (*string, bool) {
 	return o.NoProxy, true
 }
 
-// IsSetNoProxy returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf) IsSetNoProxy() bool {
-	if o != nil && !IsNil(o.NoProxy) {
-		return true
-	}
-
-	return false
-}
-
 // SetNoProxy gets a reference to the given string and assigns it to the NoProxy field.
 func (o *ZoneCreateConfigAnyOf) SetNoProxy(v string) {
 	o.NoProxy = &v
@@ -1384,15 +979,6 @@ func (o *ZoneCreateConfigAnyOf) GetUserDataLinuxOk() (*string, bool) {
 		return nil, false
 	}
 	return o.UserDataLinux, true
-}
-
-// IsSetUserDataLinux returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf) IsSetUserDataLinux() bool {
-	if o != nil && !IsNil(o.UserDataLinux) {
-		return true
-	}
-
-	return false
 }
 
 // SetUserDataLinux gets a reference to the given string and assigns it to the UserDataLinux field.

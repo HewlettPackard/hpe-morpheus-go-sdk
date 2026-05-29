@@ -73,15 +73,6 @@ func (o *UpdateTenantRequestAccount) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateTenantRequestAccount) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *UpdateTenantRequestAccount) SetName(v string) {
 	o.Name = &v
@@ -106,28 +97,9 @@ func (o *UpdateTenantRequestAccount) GetDescriptionOk() (*string, bool) {
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *UpdateTenantRequestAccount) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *UpdateTenantRequestAccount) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *UpdateTenantRequestAccount) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *UpdateTenantRequestAccount) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetRole returns the Role field value if set, zero value otherwise.
@@ -146,15 +118,6 @@ func (o *UpdateTenantRequestAccount) GetRoleOk() (*UpdateTenantRequestAccountRol
 		return nil, false
 	}
 	return o.Role, true
-}
-
-// IsSetRole returns a boolean if a field has been set.
-func (o *UpdateTenantRequestAccount) IsSetRole() bool {
-	if o != nil && !IsNil(o.Role) {
-		return true
-	}
-
-	return false
 }
 
 // SetRole gets a reference to the given UpdateTenantRequestAccountRole and assigns it to the Role field.
@@ -181,28 +144,9 @@ func (o *UpdateTenantRequestAccount) GetSubdomainOk() (*string, bool) {
 	return o.Subdomain.Get(), o.Subdomain.IsSet()
 }
 
-// IsSetSubdomain returns a boolean if a field has been set.
-func (o *UpdateTenantRequestAccount) IsSetSubdomain() bool {
-	if o != nil && o.Subdomain.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSubdomain gets a reference to the given NullableString and assigns it to the Subdomain field.
 func (o *UpdateTenantRequestAccount) SetSubdomain(v string) {
 	o.Subdomain.Set(&v)
-}
-
-// SetSubdomainNil sets the value for Subdomain to be an explicit nil
-func (o *UpdateTenantRequestAccount) SetSubdomainNil() {
-	o.Subdomain.Set(nil)
-}
-
-// UnsetSubdomain ensures that no value is present for Subdomain, not even an explicit nil
-func (o *UpdateTenantRequestAccount) UnsetSubdomain() {
-	o.Subdomain.Unset()
 }
 
 // GetCurrency returns the Currency field value if set, zero value otherwise.
@@ -221,15 +165,6 @@ func (o *UpdateTenantRequestAccount) GetCurrencyOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Currency, true
-}
-
-// IsSetCurrency returns a boolean if a field has been set.
-func (o *UpdateTenantRequestAccount) IsSetCurrency() bool {
-	if o != nil && !IsNil(o.Currency) {
-		return true
-	}
-
-	return false
 }
 
 // SetCurrency gets a reference to the given string and assigns it to the Currency field.

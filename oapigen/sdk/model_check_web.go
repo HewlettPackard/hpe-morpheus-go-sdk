@@ -116,28 +116,9 @@ func (o *CheckWeb) GetDescriptionOk() (*string, bool) {
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *CheckWeb) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *CheckWeb) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *CheckWeb) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *CheckWeb) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetCheckInterval returns the CheckInterval field value if set, zero value otherwise.
@@ -156,15 +137,6 @@ func (o *CheckWeb) GetCheckIntervalOk() (*int32, bool) {
 		return nil, false
 	}
 	return o.CheckInterval, true
-}
-
-// IsSetCheckInterval returns a boolean if a field has been set.
-func (o *CheckWeb) IsSetCheckInterval() bool {
-	if o != nil && !IsNil(o.CheckInterval) {
-		return true
-	}
-
-	return false
 }
 
 // SetCheckInterval gets a reference to the given int32 and assigns it to the CheckInterval field.
@@ -190,15 +162,6 @@ func (o *CheckWeb) GetInUptimeOk() (*bool, bool) {
 	return o.InUptime, true
 }
 
-// IsSetInUptime returns a boolean if a field has been set.
-func (o *CheckWeb) IsSetInUptime() bool {
-	if o != nil && !IsNil(o.InUptime) {
-		return true
-	}
-
-	return false
-}
-
 // SetInUptime gets a reference to the given bool and assigns it to the InUptime field.
 func (o *CheckWeb) SetInUptime(v bool) {
 	o.InUptime = &v
@@ -220,15 +183,6 @@ func (o *CheckWeb) GetActiveOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Active, true
-}
-
-// IsSetActive returns a boolean if a field has been set.
-func (o *CheckWeb) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
 }
 
 // SetActive gets a reference to the given bool and assigns it to the Active field.
@@ -254,15 +208,6 @@ func (o *CheckWeb) GetSeverityOk() (*string, bool) {
 	return o.Severity, true
 }
 
-// IsSetSeverity returns a boolean if a field has been set.
-func (o *CheckWeb) IsSetSeverity() bool {
-	if o != nil && !IsNil(o.Severity) {
-		return true
-	}
-
-	return false
-}
-
 // SetSeverity gets a reference to the given string and assigns it to the Severity field.
 func (o *CheckWeb) SetSeverity(v string) {
 	o.Severity = &v
@@ -286,15 +231,6 @@ func (o *CheckWeb) GetCheckTypeOk() (*WebCheck1AllOfCheckType, bool) {
 	return o.CheckType, true
 }
 
-// IsSetCheckType returns a boolean if a field has been set.
-func (o *CheckWeb) IsSetCheckType() bool {
-	if o != nil && !IsNil(o.CheckType) {
-		return true
-	}
-
-	return false
-}
-
 // SetCheckType gets a reference to the given WebCheck1AllOfCheckType and assigns it to the CheckType field.
 func (o *CheckWeb) SetCheckType(v WebCheck1AllOfCheckType) {
 	o.CheckType = &v
@@ -316,15 +252,6 @@ func (o *CheckWeb) GetConfigOk() (*WebCheck1AllOfConfig, bool) {
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *CheckWeb) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given WebCheck1AllOfConfig and assigns it to the Config field.

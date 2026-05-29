@@ -61,15 +61,6 @@ func (o *ListApplianceSettings200Response) GetApplianceSettingsOk() (*ListApplia
 	return o.ApplianceSettings, true
 }
 
-// IsSetApplianceSettings returns a boolean if a field has been set.
-func (o *ListApplianceSettings200Response) IsSetApplianceSettings() bool {
-	if o != nil && !IsNil(o.ApplianceSettings) {
-		return true
-	}
-
-	return false
-}
-
 // SetApplianceSettings gets a reference to the given ListApplianceSettings200ResponseApplianceSettings and assigns it to the ApplianceSettings field.
 func (o *ListApplianceSettings200Response) SetApplianceSettings(v ListApplianceSettings200ResponseApplianceSettings) {
 	o.ApplianceSettings = &v

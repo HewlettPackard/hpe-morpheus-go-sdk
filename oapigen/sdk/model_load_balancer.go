@@ -96,15 +96,6 @@ func (o *LoadBalancer) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *LoadBalancer) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *LoadBalancer) SetId(v int64) {
 	o.Id = &v
@@ -126,15 +117,6 @@ func (o *LoadBalancer) GetUuidOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Uuid, true
-}
-
-// IsSetUuid returns a boolean if a field has been set.
-func (o *LoadBalancer) IsSetUuid() bool {
-	if o != nil && !IsNil(o.Uuid) {
-		return true
-	}
-
-	return false
 }
 
 // SetUuid gets a reference to the given string and assigns it to the Uuid field.
@@ -160,15 +142,6 @@ func (o *LoadBalancer) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *LoadBalancer) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *LoadBalancer) SetName(v string) {
 	o.Name = &v
@@ -190,15 +163,6 @@ func (o *LoadBalancer) GetAccountIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.AccountId, true
-}
-
-// IsSetAccountId returns a boolean if a field has been set.
-func (o *LoadBalancer) IsSetAccountId() bool {
-	if o != nil && !IsNil(o.AccountId) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccountId gets a reference to the given int64 and assigns it to the AccountId field.
@@ -224,15 +188,6 @@ func (o *LoadBalancer) GetCloudOk() (*CreateLoadBalancer200ResponseLoadBalancerC
 	return o.Cloud, true
 }
 
-// IsSetCloud returns a boolean if a field has been set.
-func (o *LoadBalancer) IsSetCloud() bool {
-	if o != nil && !IsNil(o.Cloud) {
-		return true
-	}
-
-	return false
-}
-
 // SetCloud gets a reference to the given CreateLoadBalancer200ResponseLoadBalancerCloud and assigns it to the Cloud field.
 func (o *LoadBalancer) SetCloud(v CreateLoadBalancer200ResponseLoadBalancerCloud) {
 	o.Cloud = &v
@@ -254,15 +209,6 @@ func (o *LoadBalancer) GetTypeOk() (*CreateLoadBalancer200ResponseLoadBalancerTy
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *LoadBalancer) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given CreateLoadBalancer200ResponseLoadBalancerType and assigns it to the Type field.
@@ -288,15 +234,6 @@ func (o *LoadBalancer) GetOwnerOk() (*CreateLoadBalancer200ResponseLoadBalancerO
 	return o.Owner, true
 }
 
-// IsSetOwner returns a boolean if a field has been set.
-func (o *LoadBalancer) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
-		return true
-	}
-
-	return false
-}
-
 // SetOwner gets a reference to the given CreateLoadBalancer200ResponseLoadBalancerOwner and assigns it to the Owner field.
 func (o *LoadBalancer) SetOwner(v CreateLoadBalancer200ResponseLoadBalancerOwner) {
 	o.Owner = &v
@@ -318,15 +255,6 @@ func (o *LoadBalancer) GetVisibilityOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *LoadBalancer) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -352,15 +280,6 @@ func (o *LoadBalancer) GetDescriptionOk() (*string, bool) {
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *LoadBalancer) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *LoadBalancer) SetDescription(v string) {
 	o.Description = &v
@@ -384,15 +303,6 @@ func (o *LoadBalancer) GetHostOk() (*string, bool) {
 	return o.Host, true
 }
 
-// IsSetHost returns a boolean if a field has been set.
-func (o *LoadBalancer) IsSetHost() bool {
-	if o != nil && !IsNil(o.Host) {
-		return true
-	}
-
-	return false
-}
-
 // SetHost gets a reference to the given string and assigns it to the Host field.
 func (o *LoadBalancer) SetHost(v string) {
 	o.Host = &v
@@ -414,15 +324,6 @@ func (o *LoadBalancer) GetPortOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.Port, true
-}
-
-// IsSetPort returns a boolean if a field has been set.
-func (o *LoadBalancer) IsSetPort() bool {
-	if o != nil && !IsNil(o.Port) {
-		return true
-	}
-
-	return false
 }
 
 // SetPort gets a reference to the given int64 and assigns it to the Port field.
@@ -449,28 +350,9 @@ func (o *LoadBalancer) GetUsernameOk() (*string, bool) {
 	return o.Username.Get(), o.Username.IsSet()
 }
 
-// IsSetUsername returns a boolean if a field has been set.
-func (o *LoadBalancer) IsSetUsername() bool {
-	if o != nil && o.Username.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUsername gets a reference to the given NullableString and assigns it to the Username field.
 func (o *LoadBalancer) SetUsername(v string) {
 	o.Username.Set(&v)
-}
-
-// SetUsernameNil sets the value for Username to be an explicit nil
-func (o *LoadBalancer) SetUsernameNil() {
-	o.Username.Set(nil)
-}
-
-// UnsetUsername ensures that no value is present for Username, not even an explicit nil
-func (o *LoadBalancer) UnsetUsername() {
-	o.Username.Unset()
 }
 
 // GetPassword returns the Password field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -492,28 +374,9 @@ func (o *LoadBalancer) GetPasswordOk() (*string, bool) {
 	return o.Password.Get(), o.Password.IsSet()
 }
 
-// IsSetPassword returns a boolean if a field has been set.
-func (o *LoadBalancer) IsSetPassword() bool {
-	if o != nil && o.Password.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPassword gets a reference to the given NullableString and assigns it to the Password field.
 func (o *LoadBalancer) SetPassword(v string) {
 	o.Password.Set(&v)
-}
-
-// SetPasswordNil sets the value for Password to be an explicit nil
-func (o *LoadBalancer) SetPasswordNil() {
-	o.Password.Set(nil)
-}
-
-// UnsetPassword ensures that no value is present for Password, not even an explicit nil
-func (o *LoadBalancer) UnsetPassword() {
-	o.Password.Unset()
 }
 
 // GetPasswordHash returns the PasswordHash field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -535,28 +398,9 @@ func (o *LoadBalancer) GetPasswordHashOk() (*string, bool) {
 	return o.PasswordHash.Get(), o.PasswordHash.IsSet()
 }
 
-// IsSetPasswordHash returns a boolean if a field has been set.
-func (o *LoadBalancer) IsSetPasswordHash() bool {
-	if o != nil && o.PasswordHash.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPasswordHash gets a reference to the given NullableString and assigns it to the PasswordHash field.
 func (o *LoadBalancer) SetPasswordHash(v string) {
 	o.PasswordHash.Set(&v)
-}
-
-// SetPasswordHashNil sets the value for PasswordHash to be an explicit nil
-func (o *LoadBalancer) SetPasswordHashNil() {
-	o.PasswordHash.Set(nil)
-}
-
-// UnsetPasswordHash ensures that no value is present for PasswordHash, not even an explicit nil
-func (o *LoadBalancer) UnsetPasswordHash() {
-	o.PasswordHash.Unset()
 }
 
 // GetIp returns the Ip field value if set, zero value otherwise.
@@ -575,15 +419,6 @@ func (o *LoadBalancer) GetIpOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Ip, true
-}
-
-// IsSetIp returns a boolean if a field has been set.
-func (o *LoadBalancer) IsSetIp() bool {
-	if o != nil && !IsNil(o.Ip) {
-		return true
-	}
-
-	return false
 }
 
 // SetIp gets a reference to the given string and assigns it to the Ip field.
@@ -610,28 +445,9 @@ func (o *LoadBalancer) GetInternalIpOk() (*string, bool) {
 	return o.InternalIp.Get(), o.InternalIp.IsSet()
 }
 
-// IsSetInternalIp returns a boolean if a field has been set.
-func (o *LoadBalancer) IsSetInternalIp() bool {
-	if o != nil && o.InternalIp.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInternalIp gets a reference to the given NullableString and assigns it to the InternalIp field.
 func (o *LoadBalancer) SetInternalIp(v string) {
 	o.InternalIp.Set(&v)
-}
-
-// SetInternalIpNil sets the value for InternalIp to be an explicit nil
-func (o *LoadBalancer) SetInternalIpNil() {
-	o.InternalIp.Set(nil)
-}
-
-// UnsetInternalIp ensures that no value is present for InternalIp, not even an explicit nil
-func (o *LoadBalancer) UnsetInternalIp() {
-	o.InternalIp.Unset()
 }
 
 // GetExternalIp returns the ExternalIp field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -653,28 +469,9 @@ func (o *LoadBalancer) GetExternalIpOk() (*string, bool) {
 	return o.ExternalIp.Get(), o.ExternalIp.IsSet()
 }
 
-// IsSetExternalIp returns a boolean if a field has been set.
-func (o *LoadBalancer) IsSetExternalIp() bool {
-	if o != nil && o.ExternalIp.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalIp gets a reference to the given NullableString and assigns it to the ExternalIp field.
 func (o *LoadBalancer) SetExternalIp(v string) {
 	o.ExternalIp.Set(&v)
-}
-
-// SetExternalIpNil sets the value for ExternalIp to be an explicit nil
-func (o *LoadBalancer) SetExternalIpNil() {
-	o.ExternalIp.Set(nil)
-}
-
-// UnsetExternalIp ensures that no value is present for ExternalIp, not even an explicit nil
-func (o *LoadBalancer) UnsetExternalIp() {
-	o.ExternalIp.Unset()
 }
 
 // GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -696,28 +493,9 @@ func (o *LoadBalancer) GetExternalIdOk() (*string, bool) {
 	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *LoadBalancer) IsSetExternalId() bool {
-	if o != nil && o.ExternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *LoadBalancer) SetExternalId(v string) {
 	o.ExternalId.Set(&v)
-}
-
-// SetExternalIdNil sets the value for ExternalId to be an explicit nil
-func (o *LoadBalancer) SetExternalIdNil() {
-	o.ExternalId.Set(nil)
-}
-
-// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-func (o *LoadBalancer) UnsetExternalId() {
-	o.ExternalId.Unset()
 }
 
 // GetApiPort returns the ApiPort field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -739,28 +517,9 @@ func (o *LoadBalancer) GetApiPortOk() (*string, bool) {
 	return o.ApiPort.Get(), o.ApiPort.IsSet()
 }
 
-// IsSetApiPort returns a boolean if a field has been set.
-func (o *LoadBalancer) IsSetApiPort() bool {
-	if o != nil && o.ApiPort.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetApiPort gets a reference to the given NullableString and assigns it to the ApiPort field.
 func (o *LoadBalancer) SetApiPort(v string) {
 	o.ApiPort.Set(&v)
-}
-
-// SetApiPortNil sets the value for ApiPort to be an explicit nil
-func (o *LoadBalancer) SetApiPortNil() {
-	o.ApiPort.Set(nil)
-}
-
-// UnsetApiPort ensures that no value is present for ApiPort, not even an explicit nil
-func (o *LoadBalancer) UnsetApiPort() {
-	o.ApiPort.Unset()
 }
 
 // GetAdminPort returns the AdminPort field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -782,28 +541,9 @@ func (o *LoadBalancer) GetAdminPortOk() (*string, bool) {
 	return o.AdminPort.Get(), o.AdminPort.IsSet()
 }
 
-// IsSetAdminPort returns a boolean if a field has been set.
-func (o *LoadBalancer) IsSetAdminPort() bool {
-	if o != nil && o.AdminPort.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAdminPort gets a reference to the given NullableString and assigns it to the AdminPort field.
 func (o *LoadBalancer) SetAdminPort(v string) {
 	o.AdminPort.Set(&v)
-}
-
-// SetAdminPortNil sets the value for AdminPort to be an explicit nil
-func (o *LoadBalancer) SetAdminPortNil() {
-	o.AdminPort.Set(nil)
-}
-
-// UnsetAdminPort ensures that no value is present for AdminPort, not even an explicit nil
-func (o *LoadBalancer) UnsetAdminPort() {
-	o.AdminPort.Unset()
 }
 
 // GetSslEnabled returns the SslEnabled field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -825,28 +565,9 @@ func (o *LoadBalancer) GetSslEnabledOk() (*bool, bool) {
 	return o.SslEnabled.Get(), o.SslEnabled.IsSet()
 }
 
-// IsSetSslEnabled returns a boolean if a field has been set.
-func (o *LoadBalancer) IsSetSslEnabled() bool {
-	if o != nil && o.SslEnabled.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSslEnabled gets a reference to the given NullableBool and assigns it to the SslEnabled field.
 func (o *LoadBalancer) SetSslEnabled(v bool) {
 	o.SslEnabled.Set(&v)
-}
-
-// SetSslEnabledNil sets the value for SslEnabled to be an explicit nil
-func (o *LoadBalancer) SetSslEnabledNil() {
-	o.SslEnabled.Set(nil)
-}
-
-// UnsetSslEnabled ensures that no value is present for SslEnabled, not even an explicit nil
-func (o *LoadBalancer) UnsetSslEnabled() {
-	o.SslEnabled.Unset()
 }
 
 // GetSslCert returns the SslCert field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -868,28 +589,9 @@ func (o *LoadBalancer) GetSslCertOk() (*string, bool) {
 	return o.SslCert.Get(), o.SslCert.IsSet()
 }
 
-// IsSetSslCert returns a boolean if a field has been set.
-func (o *LoadBalancer) IsSetSslCert() bool {
-	if o != nil && o.SslCert.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSslCert gets a reference to the given NullableString and assigns it to the SslCert field.
 func (o *LoadBalancer) SetSslCert(v string) {
 	o.SslCert.Set(&v)
-}
-
-// SetSslCertNil sets the value for SslCert to be an explicit nil
-func (o *LoadBalancer) SetSslCertNil() {
-	o.SslCert.Set(nil)
-}
-
-// UnsetSslCert ensures that no value is present for SslCert, not even an explicit nil
-func (o *LoadBalancer) UnsetSslCert() {
-	o.SslCert.Unset()
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
@@ -908,15 +610,6 @@ func (o *LoadBalancer) GetEnabledOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *LoadBalancer) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -942,15 +635,6 @@ func (o *LoadBalancer) GetAllowVipEntryOk() (*bool, bool) {
 	return o.AllowVipEntry, true
 }
 
-// IsSetAllowVipEntry returns a boolean if a field has been set.
-func (o *LoadBalancer) IsSetAllowVipEntry() bool {
-	if o != nil && !IsNil(o.AllowVipEntry) {
-		return true
-	}
-
-	return false
-}
-
 // SetAllowVipEntry gets a reference to the given bool and assigns it to the AllowVipEntry field.
 func (o *LoadBalancer) SetAllowVipEntry(v bool) {
 	o.AllowVipEntry = &v
@@ -972,15 +656,6 @@ func (o *LoadBalancer) GetVipPoolsOk() ([]map[string]interface{}, bool) {
 		return nil, false
 	}
 	return o.VipPools, true
-}
-
-// IsSetVipPools returns a boolean if a field has been set.
-func (o *LoadBalancer) IsSetVipPools() bool {
-	if o != nil && !IsNil(o.VipPools) {
-		return true
-	}
-
-	return false
 }
 
 // SetVipPools gets a reference to the given []map[string]interface{} and assigns it to the VipPools field.
@@ -1007,28 +682,9 @@ func (o *LoadBalancer) GetVirtualServiceNameOk() (*string, bool) {
 	return o.VirtualServiceName.Get(), o.VirtualServiceName.IsSet()
 }
 
-// IsSetVirtualServiceName returns a boolean if a field has been set.
-func (o *LoadBalancer) IsSetVirtualServiceName() bool {
-	if o != nil && o.VirtualServiceName.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetVirtualServiceName gets a reference to the given NullableString and assigns it to the VirtualServiceName field.
 func (o *LoadBalancer) SetVirtualServiceName(v string) {
 	o.VirtualServiceName.Set(&v)
-}
-
-// SetVirtualServiceNameNil sets the value for VirtualServiceName to be an explicit nil
-func (o *LoadBalancer) SetVirtualServiceNameNil() {
-	o.VirtualServiceName.Set(nil)
-}
-
-// UnsetVirtualServiceName ensures that no value is present for VirtualServiceName, not even an explicit nil
-func (o *LoadBalancer) UnsetVirtualServiceName() {
-	o.VirtualServiceName.Unset()
 }
 
 // GetPoolName returns the PoolName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1050,28 +706,9 @@ func (o *LoadBalancer) GetPoolNameOk() (*string, bool) {
 	return o.PoolName.Get(), o.PoolName.IsSet()
 }
 
-// IsSetPoolName returns a boolean if a field has been set.
-func (o *LoadBalancer) IsSetPoolName() bool {
-	if o != nil && o.PoolName.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPoolName gets a reference to the given NullableString and assigns it to the PoolName field.
 func (o *LoadBalancer) SetPoolName(v string) {
 	o.PoolName.Set(&v)
-}
-
-// SetPoolNameNil sets the value for PoolName to be an explicit nil
-func (o *LoadBalancer) SetPoolNameNil() {
-	o.PoolName.Set(nil)
-}
-
-// UnsetPoolName ensures that no value is present for PoolName, not even an explicit nil
-func (o *LoadBalancer) UnsetPoolName() {
-	o.PoolName.Unset()
 }
 
 // GetServerName returns the ServerName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1093,28 +730,9 @@ func (o *LoadBalancer) GetServerNameOk() (*string, bool) {
 	return o.ServerName.Get(), o.ServerName.IsSet()
 }
 
-// IsSetServerName returns a boolean if a field has been set.
-func (o *LoadBalancer) IsSetServerName() bool {
-	if o != nil && o.ServerName.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServerName gets a reference to the given NullableString and assigns it to the ServerName field.
 func (o *LoadBalancer) SetServerName(v string) {
 	o.ServerName.Set(&v)
-}
-
-// SetServerNameNil sets the value for ServerName to be an explicit nil
-func (o *LoadBalancer) SetServerNameNil() {
-	o.ServerName.Set(nil)
-}
-
-// UnsetServerName ensures that no value is present for ServerName, not even an explicit nil
-func (o *LoadBalancer) UnsetServerName() {
-	o.ServerName.Unset()
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
@@ -1133,15 +751,6 @@ func (o *LoadBalancer) GetConfigOk() (map[string]interface{}, bool) {
 		return map[string]interface{}{}, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *LoadBalancer) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
@@ -1167,15 +776,6 @@ func (o *LoadBalancer) GetDateCreatedOk() (*time.Time, bool) {
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *LoadBalancer) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *LoadBalancer) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -1197,15 +797,6 @@ func (o *LoadBalancer) GetLastUpdatedOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *LoadBalancer) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
@@ -1231,15 +822,6 @@ func (o *LoadBalancer) GetCredentialOk() (*CreateLoadBalancer200ResponseLoadBala
 	return o.Credential, true
 }
 
-// IsSetCredential returns a boolean if a field has been set.
-func (o *LoadBalancer) IsSetCredential() bool {
-	if o != nil && !IsNil(o.Credential) {
-		return true
-	}
-
-	return false
-}
-
 // SetCredential gets a reference to the given CreateLoadBalancer200ResponseLoadBalancerCredential and assigns it to the Credential field.
 func (o *LoadBalancer) SetCredential(v CreateLoadBalancer200ResponseLoadBalancerCredential) {
 	o.Credential = &v
@@ -1261,15 +843,6 @@ func (o *LoadBalancer) GetTenantsOk() ([]CreateLoadBalancer200ResponseLoadBalanc
 		return nil, false
 	}
 	return o.Tenants, true
-}
-
-// IsSetTenants returns a boolean if a field has been set.
-func (o *LoadBalancer) IsSetTenants() bool {
-	if o != nil && !IsNil(o.Tenants) {
-		return true
-	}
-
-	return false
 }
 
 // SetTenants gets a reference to the given []CreateLoadBalancer200ResponseLoadBalancerTenantsInner and assigns it to the Tenants field.
@@ -1295,15 +868,6 @@ func (o *LoadBalancer) GetResourcePermissionOk() (*CreateLoadBalancer200Response
 	return o.ResourcePermission, true
 }
 
-// IsSetResourcePermission returns a boolean if a field has been set.
-func (o *LoadBalancer) IsSetResourcePermission() bool {
-	if o != nil && !IsNil(o.ResourcePermission) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourcePermission gets a reference to the given CreateLoadBalancer200ResponseLoadBalancerResourcePermission and assigns it to the ResourcePermission field.
 func (o *LoadBalancer) SetResourcePermission(v CreateLoadBalancer200ResponseLoadBalancerResourcePermission) {
 	o.ResourcePermission = &v
@@ -1325,15 +889,6 @@ func (o *LoadBalancer) GetInstancePriceOk() (map[string]interface{}, bool) {
 		return map[string]interface{}{}, false
 	}
 	return o.InstancePrice, true
-}
-
-// IsSetInstancePrice returns a boolean if a field has been set.
-func (o *LoadBalancer) IsSetInstancePrice() bool {
-	if o != nil && !IsNil(o.InstancePrice) {
-		return true
-	}
-
-	return false
 }
 
 // SetInstancePrice gets a reference to the given map[string]interface{} and assigns it to the InstancePrice field.

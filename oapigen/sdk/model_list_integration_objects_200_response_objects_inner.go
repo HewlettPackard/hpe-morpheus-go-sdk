@@ -66,15 +66,6 @@ func (o *ListIntegrationObjects200ResponseObjectsInner) GetIdOk() (*int64, bool)
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListIntegrationObjects200ResponseObjectsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListIntegrationObjects200ResponseObjectsInner) SetId(v int64) {
 	o.Id = &v
@@ -96,15 +87,6 @@ func (o *ListIntegrationObjects200ResponseObjectsInner) GetNameOk() (*string, bo
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListIntegrationObjects200ResponseObjectsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -130,15 +112,6 @@ func (o *ListIntegrationObjects200ResponseObjectsInner) GetTypeOk() (*string, bo
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *ListIntegrationObjects200ResponseObjectsInner) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given string and assigns it to the Type field.
 func (o *ListIntegrationObjects200ResponseObjectsInner) SetType(v string) {
 	o.Type = &v
@@ -160,15 +133,6 @@ func (o *ListIntegrationObjects200ResponseObjectsInner) GetRefTypeOk() (*string,
 		return nil, false
 	}
 	return o.RefType, true
-}
-
-// IsSetRefType returns a boolean if a field has been set.
-func (o *ListIntegrationObjects200ResponseObjectsInner) IsSetRefType() bool {
-	if o != nil && !IsNil(o.RefType) {
-		return true
-	}
-
-	return false
 }
 
 // SetRefType gets a reference to the given string and assigns it to the RefType field.
@@ -194,15 +158,6 @@ func (o *ListIntegrationObjects200ResponseObjectsInner) GetRefIdOk() (*int64, bo
 	return o.RefId, true
 }
 
-// IsSetRefId returns a boolean if a field has been set.
-func (o *ListIntegrationObjects200ResponseObjectsInner) IsSetRefId() bool {
-	if o != nil && !IsNil(o.RefId) {
-		return true
-	}
-
-	return false
-}
-
 // SetRefId gets a reference to the given int64 and assigns it to the RefId field.
 func (o *ListIntegrationObjects200ResponseObjectsInner) SetRefId(v int64) {
 	o.RefId = &v
@@ -224,15 +179,6 @@ func (o *ListIntegrationObjects200ResponseObjectsInner) GetLayoutOk() (*ListInte
 		return nil, false
 	}
 	return o.Layout, true
-}
-
-// IsSetLayout returns a boolean if a field has been set.
-func (o *ListIntegrationObjects200ResponseObjectsInner) IsSetLayout() bool {
-	if o != nil && !IsNil(o.Layout) {
-		return true
-	}
-
-	return false
 }
 
 // SetLayout gets a reference to the given ListIntegrationObjects200ResponseObjectsInnerLayout and assigns it to the Layout field.

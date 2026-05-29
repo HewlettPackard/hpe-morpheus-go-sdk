@@ -148,15 +148,6 @@ func (o *UpdateIntegrationsRequestOneOf6Integration) GetServicePasswordOk() (*st
 	return o.ServicePassword, true
 }
 
-// IsSetServicePassword returns a boolean if a field has been set.
-func (o *UpdateIntegrationsRequestOneOf6Integration) IsSetServicePassword() bool {
-	if o != nil && !IsNil(o.ServicePassword) {
-		return true
-	}
-
-	return false
-}
-
 // SetServicePassword gets a reference to the given string and assigns it to the ServicePassword field.
 func (o *UpdateIntegrationsRequestOneOf6Integration) SetServicePassword(v string) {
 	o.ServicePassword = &v
@@ -178,15 +169,6 @@ func (o *UpdateIntegrationsRequestOneOf6Integration) GetServiceTokenOk() (*strin
 		return nil, false
 	}
 	return o.ServiceToken, true
-}
-
-// IsSetServiceToken returns a boolean if a field has been set.
-func (o *UpdateIntegrationsRequestOneOf6Integration) IsSetServiceToken() bool {
-	if o != nil && !IsNil(o.ServiceToken) {
-		return true
-	}
-
-	return false
 }
 
 // SetServiceToken gets a reference to the given string and assigns it to the ServiceToken field.
@@ -212,15 +194,6 @@ func (o *UpdateIntegrationsRequestOneOf6Integration) GetServiceKeyOk() (*int64, 
 	return o.ServiceKey, true
 }
 
-// IsSetServiceKey returns a boolean if a field has been set.
-func (o *UpdateIntegrationsRequestOneOf6Integration) IsSetServiceKey() bool {
-	if o != nil && !IsNil(o.ServiceKey) {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceKey gets a reference to the given int64 and assigns it to the ServiceKey field.
 func (o *UpdateIntegrationsRequestOneOf6Integration) SetServiceKey(v int64) {
 	o.ServiceKey = &v
@@ -242,15 +215,6 @@ func (o *UpdateIntegrationsRequestOneOf6Integration) GetConfigOk() (*UpdateInteg
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *UpdateIntegrationsRequestOneOf6Integration) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given UpdateIntegrationsRequestOneOf6IntegrationConfig and assigns it to the Config field.

@@ -62,15 +62,6 @@ func (o *ListOsTypes200Response) GetOsTypesOk() ([]ListOsTypes200ResponseAllOfOs
 	return o.OsTypes, true
 }
 
-// IsSetOsTypes returns a boolean if a field has been set.
-func (o *ListOsTypes200Response) IsSetOsTypes() bool {
-	if o != nil && !IsNil(o.OsTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetOsTypes gets a reference to the given []ListOsTypes200ResponseAllOfOsTypesInner and assigns it to the OsTypes field.
 func (o *ListOsTypes200Response) SetOsTypes(v []ListOsTypes200ResponseAllOfOsTypesInner) {
 	o.OsTypes = v
@@ -92,15 +83,6 @@ func (o *ListOsTypes200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListOsTypes200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

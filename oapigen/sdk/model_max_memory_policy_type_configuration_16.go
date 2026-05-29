@@ -67,15 +67,6 @@ func (o *MaxMemoryPolicyTypeConfiguration16) GetMaxMemoryOk() (*MaxMemoryPolicyT
 	return o.MaxMemory, true
 }
 
-// IsSetMaxMemory returns a boolean if a field has been set.
-func (o *MaxMemoryPolicyTypeConfiguration16) IsSetMaxMemory() bool {
-	if o != nil && !IsNil(o.MaxMemory) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxMemory gets a reference to the given MaxMemoryPolicyTypeConfiguration16MaxMemory and assigns it to the MaxMemory field.
 func (o *MaxMemoryPolicyTypeConfiguration16) SetMaxMemory(v MaxMemoryPolicyTypeConfiguration16MaxMemory) {
 	o.MaxMemory = &v
@@ -97,15 +88,6 @@ func (o *MaxMemoryPolicyTypeConfiguration16) GetExcludeContainersOk() (*string, 
 		return nil, false
 	}
 	return o.ExcludeContainers, true
-}
-
-// IsSetExcludeContainers returns a boolean if a field has been set.
-func (o *MaxMemoryPolicyTypeConfiguration16) IsSetExcludeContainers() bool {
-	if o != nil && !IsNil(o.ExcludeContainers) {
-		return true
-	}
-
-	return false
 }
 
 // SetExcludeContainers gets a reference to the given string and assigns it to the ExcludeContainers field.

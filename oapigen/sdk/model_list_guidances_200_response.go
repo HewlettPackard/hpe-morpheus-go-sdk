@@ -62,15 +62,6 @@ func (o *ListGuidances200Response) GetDiscoveriesOk() ([]ListGuidances200Respons
 	return o.Discoveries, true
 }
 
-// IsSetDiscoveries returns a boolean if a field has been set.
-func (o *ListGuidances200Response) IsSetDiscoveries() bool {
-	if o != nil && !IsNil(o.Discoveries) {
-		return true
-	}
-
-	return false
-}
-
 // SetDiscoveries gets a reference to the given []ListGuidances200ResponseAllOfDiscoveriesInner and assigns it to the Discoveries field.
 func (o *ListGuidances200Response) SetDiscoveries(v []ListGuidances200ResponseAllOfDiscoveriesInner) {
 	o.Discoveries = v
@@ -92,15 +83,6 @@ func (o *ListGuidances200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMe
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListGuidances200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

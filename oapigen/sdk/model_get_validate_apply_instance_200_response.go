@@ -62,15 +62,6 @@ func (o *GetValidateApplyInstance200Response) GetExecutionIdOk() (*string, bool)
 	return o.ExecutionId, true
 }
 
-// IsSetExecutionId returns a boolean if a field has been set.
-func (o *GetValidateApplyInstance200Response) IsSetExecutionId() bool {
-	if o != nil && !IsNil(o.ExecutionId) {
-		return true
-	}
-
-	return false
-}
-
 // SetExecutionId gets a reference to the given string and assigns it to the ExecutionId field.
 func (o *GetValidateApplyInstance200Response) SetExecutionId(v string) {
 	o.ExecutionId = &v
@@ -92,15 +83,6 @@ func (o *GetValidateApplyInstance200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *GetValidateApplyInstance200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

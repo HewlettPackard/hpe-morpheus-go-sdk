@@ -80,15 +80,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) GetIdOk() 
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given string and assigns it to the Id field.
 func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) SetId(v string) {
 	o.Id = &v
@@ -110,15 +101,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) GetApiName
 		return nil, false
 	}
 	return o.ApiName, true
-}
-
-// IsSetApiName returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) IsSetApiName() bool {
-	if o != nil && !IsNil(o.ApiName) {
-		return true
-	}
-
-	return false
 }
 
 // SetApiName gets a reference to the given string and assigns it to the ApiName field.
@@ -144,15 +126,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) GetApiType
 	return o.ApiType, true
 }
 
-// IsSetApiType returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) IsSetApiType() bool {
-	if o != nil && !IsNil(o.ApiType) {
-		return true
-	}
-
-	return false
-}
-
 // SetApiType gets a reference to the given string and assigns it to the ApiType field.
 func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) SetApiType(v string) {
 	o.ApiType = &v
@@ -174,15 +147,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) GetExterna
 		return nil, false
 	}
 	return o.ExternalId, true
-}
-
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
-		return true
-	}
-
-	return false
 }
 
 // SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
@@ -208,15 +172,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) GetPeriodO
 	return o.Period, true
 }
 
-// IsSetPeriod returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) IsSetPeriod() bool {
-	if o != nil && !IsNil(o.Period) {
-		return true
-	}
-
-	return false
-}
-
 // SetPeriod gets a reference to the given string and assigns it to the Period field.
 func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) SetPeriod(v string) {
 	o.Period = &v
@@ -238,15 +193,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) GetNameOk(
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -272,15 +218,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) GetTypeOk(
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given string and assigns it to the Type field.
 func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) SetType(v string) {
 	o.Type = &v
@@ -302,15 +239,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) GetCategor
 		return nil, false
 	}
 	return o.Category, true
-}
-
-// IsSetCategory returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
-		return true
-	}
-
-	return false
 }
 
 // SetCategory gets a reference to the given string and assigns it to the Category field.
@@ -336,15 +264,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) GetSizeOk(
 	return o.Size, true
 }
 
-// IsSetSize returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) IsSetSize() bool {
-	if o != nil && !IsNil(o.Size) {
-		return true
-	}
-
-	return false
-}
-
 // SetSize gets a reference to the given string and assigns it to the Size field.
 func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) SetSize(v string) {
 	o.Size = &v
@@ -366,15 +285,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) GetRegionO
 		return nil, false
 	}
 	return o.Region, true
-}
-
-// IsSetRegion returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) IsSetRegion() bool {
-	if o != nil && !IsNil(o.Region) {
-		return true
-	}
-
-	return false
 }
 
 // SetRegion gets a reference to the given string and assigns it to the Region field.
@@ -400,15 +310,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) GetTermOk(
 	return o.Term, true
 }
 
-// IsSetTerm returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) IsSetTerm() bool {
-	if o != nil && !IsNil(o.Term) {
-		return true
-	}
-
-	return false
-}
-
 // SetTerm gets a reference to the given string and assigns it to the Term field.
 func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) SetTerm(v string) {
 	o.Term = &v
@@ -430,15 +331,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) GetMeterId
 		return nil, false
 	}
 	return o.MeterId, true
-}
-
-// IsSetMeterId returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) IsSetMeterId() bool {
-	if o != nil && !IsNil(o.MeterId) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeterId gets a reference to the given string and assigns it to the MeterId field.
@@ -464,15 +356,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) GetOnDeman
 	return o.OnDemandCount, true
 }
 
-// IsSetOnDemandCount returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) IsSetOnDemandCount() bool {
-	if o != nil && !IsNil(o.OnDemandCount) {
-		return true
-	}
-
-	return false
-}
-
 // SetOnDemandCount gets a reference to the given int64 and assigns it to the OnDemandCount field.
 func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) SetOnDemandCount(v int64) {
 	o.OnDemandCount = &v
@@ -494,15 +377,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) GetOnDeman
 		return nil, false
 	}
 	return o.OnDemandCost, true
-}
-
-// IsSetOnDemandCost returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) IsSetOnDemandCost() bool {
-	if o != nil && !IsNil(o.OnDemandCost) {
-		return true
-	}
-
-	return false
 }
 
 // SetOnDemandCost gets a reference to the given float32 and assigns it to the OnDemandCost field.
@@ -528,15 +402,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) GetReserve
 	return o.ReservedCount, true
 }
 
-// IsSetReservedCount returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) IsSetReservedCount() bool {
-	if o != nil && !IsNil(o.ReservedCount) {
-		return true
-	}
-
-	return false
-}
-
 // SetReservedCount gets a reference to the given int64 and assigns it to the ReservedCount field.
 func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) SetReservedCount(v int64) {
 	o.ReservedCount = &v
@@ -558,15 +423,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) GetReserve
 		return nil, false
 	}
 	return o.ReservedCost, true
-}
-
-// IsSetReservedCost returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) IsSetReservedCost() bool {
-	if o != nil && !IsNil(o.ReservedCost) {
-		return true
-	}
-
-	return false
 }
 
 // SetReservedCost gets a reference to the given int64 and assigns it to the ReservedCost field.
@@ -592,15 +448,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) GetRecomme
 	return o.RecommendedCount, true
 }
 
-// IsSetRecommendedCount returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) IsSetRecommendedCount() bool {
-	if o != nil && !IsNil(o.RecommendedCount) {
-		return true
-	}
-
-	return false
-}
-
 // SetRecommendedCount gets a reference to the given int64 and assigns it to the RecommendedCount field.
 func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) SetRecommendedCount(v int64) {
 	o.RecommendedCount = &v
@@ -622,15 +469,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) GetRecomme
 		return nil, false
 	}
 	return o.RecommendedCost, true
-}
-
-// IsSetRecommendedCost returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) IsSetRecommendedCost() bool {
-	if o != nil && !IsNil(o.RecommendedCost) {
-		return true
-	}
-
-	return false
 }
 
 // SetRecommendedCost gets a reference to the given float32 and assigns it to the RecommendedCost field.
@@ -656,15 +494,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) GetTotalSa
 	return o.TotalSavings, true
 }
 
-// IsSetTotalSavings returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) IsSetTotalSavings() bool {
-	if o != nil && !IsNil(o.TotalSavings) {
-		return true
-	}
-
-	return false
-}
-
 // SetTotalSavings gets a reference to the given float32 and assigns it to the TotalSavings field.
 func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) SetTotalSavings(v float32) {
 	o.TotalSavings = &v
@@ -686,15 +515,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) GetTotalSa
 		return nil, false
 	}
 	return o.TotalSavingsPercent, true
-}
-
-// IsSetTotalSavingsPercent returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigDetailListInner) IsSetTotalSavingsPercent() bool {
-	if o != nil && !IsNil(o.TotalSavingsPercent) {
-		return true
-	}
-
-	return false
 }
 
 // SetTotalSavingsPercent gets a reference to the given float32 and assigns it to the TotalSavingsPercent field.

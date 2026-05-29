@@ -81,15 +81,6 @@ func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) GetIdOk() (*int64, bo
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) SetId(v int64) {
 	o.Id = &v
@@ -114,28 +105,9 @@ func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) GetNameOk() (*string,
 	return o.Name.Get(), o.Name.IsSet()
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) IsSetName() bool {
-	if o != nil && o.Name.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given NullableString and assigns it to the Name field.
 func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) SetName(v string) {
 	o.Name.Set(&v)
-}
-
-// SetNameNil sets the value for Name to be an explicit nil
-func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) SetNameNil() {
-	o.Name.Set(nil)
-}
-
-// UnsetName ensures that no value is present for Name, not even an explicit nil
-func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) UnsetName() {
-	o.Name.Unset()
 }
 
 // GetRuleType returns the RuleType field value if set, zero value otherwise.
@@ -154,15 +126,6 @@ func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) GetRuleTypeOk() (*str
 		return nil, false
 	}
 	return o.RuleType, true
-}
-
-// IsSetRuleType returns a boolean if a field has been set.
-func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) IsSetRuleType() bool {
-	if o != nil && !IsNil(o.RuleType) {
-		return true
-	}
-
-	return false
 }
 
 // SetRuleType gets a reference to the given string and assigns it to the RuleType field.
@@ -186,15 +149,6 @@ func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) GetCustomRuleOk() (*b
 		return nil, false
 	}
 	return o.CustomRule, true
-}
-
-// IsSetCustomRule returns a boolean if a field has been set.
-func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) IsSetCustomRule() bool {
-	if o != nil && !IsNil(o.CustomRule) {
-		return true
-	}
-
-	return false
 }
 
 // SetCustomRule gets a reference to the given bool and assigns it to the CustomRule field.
@@ -221,28 +175,9 @@ func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) GetInstanceTypeIdOk()
 	return o.InstanceTypeId.Get(), o.InstanceTypeId.IsSet()
 }
 
-// IsSetInstanceTypeId returns a boolean if a field has been set.
-func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) IsSetInstanceTypeId() bool {
-	if o != nil && o.InstanceTypeId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInstanceTypeId gets a reference to the given NullableString and assigns it to the InstanceTypeId field.
 func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) SetInstanceTypeId(v string) {
 	o.InstanceTypeId.Set(&v)
-}
-
-// SetInstanceTypeIdNil sets the value for InstanceTypeId to be an explicit nil
-func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) SetInstanceTypeIdNil() {
-	o.InstanceTypeId.Set(nil)
-}
-
-// UnsetInstanceTypeId ensures that no value is present for InstanceTypeId, not even an explicit nil
-func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) UnsetInstanceTypeId() {
-	o.InstanceTypeId.Unset()
 }
 
 // GetDirection returns the Direction field value if set, zero value otherwise.
@@ -261,15 +196,6 @@ func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) GetDirectionOk() (*st
 		return nil, false
 	}
 	return o.Direction, true
-}
-
-// IsSetDirection returns a boolean if a field has been set.
-func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) IsSetDirection() bool {
-	if o != nil && !IsNil(o.Direction) {
-		return true
-	}
-
-	return false
 }
 
 // SetDirection gets a reference to the given string and assigns it to the Direction field.
@@ -295,15 +221,6 @@ func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) GetPolicyOk() (*strin
 	return o.Policy, true
 }
 
-// IsSetPolicy returns a boolean if a field has been set.
-func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) IsSetPolicy() bool {
-	if o != nil && !IsNil(o.Policy) {
-		return true
-	}
-
-	return false
-}
-
 // SetPolicy gets a reference to the given string and assigns it to the Policy field.
 func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) SetPolicy(v string) {
 	o.Policy = &v
@@ -325,15 +242,6 @@ func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) GetSourceTypeOk() (*s
 		return nil, false
 	}
 	return o.SourceType, true
-}
-
-// IsSetSourceType returns a boolean if a field has been set.
-func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) IsSetSourceType() bool {
-	if o != nil && !IsNil(o.SourceType) {
-		return true
-	}
-
-	return false
 }
 
 // SetSourceType gets a reference to the given string and assigns it to the SourceType field.
@@ -360,28 +268,9 @@ func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) GetSourceOk() (*strin
 	return o.Source.Get(), o.Source.IsSet()
 }
 
-// IsSetSource returns a boolean if a field has been set.
-func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) IsSetSource() bool {
-	if o != nil && o.Source.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSource gets a reference to the given NullableString and assigns it to the Source field.
 func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) SetSource(v string) {
 	o.Source.Set(&v)
-}
-
-// SetSourceNil sets the value for Source to be an explicit nil
-func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) SetSourceNil() {
-	o.Source.Set(nil)
-}
-
-// UnsetSource ensures that no value is present for Source, not even an explicit nil
-func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) UnsetSource() {
-	o.Source.Unset()
 }
 
 // GetSourceGroup returns the SourceGroup field value if set, zero value otherwise.
@@ -400,15 +289,6 @@ func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) GetSourceGroupOk() (*
 		return nil, false
 	}
 	return o.SourceGroup, true
-}
-
-// IsSetSourceGroup returns a boolean if a field has been set.
-func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) IsSetSourceGroup() bool {
-	if o != nil && !IsNil(o.SourceGroup) {
-		return true
-	}
-
-	return false
 }
 
 // SetSourceGroup gets a reference to the given ListSecurityGroupRules200ResponseAllOfRulesInnerSourceGroup and assigns it to the SourceGroup field.
@@ -432,15 +312,6 @@ func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) GetSourceTierOk() (*L
 		return nil, false
 	}
 	return o.SourceTier, true
-}
-
-// IsSetSourceTier returns a boolean if a field has been set.
-func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) IsSetSourceTier() bool {
-	if o != nil && !IsNil(o.SourceTier) {
-		return true
-	}
-
-	return false
 }
 
 // SetSourceTier gets a reference to the given ListSecurityGroupRules200ResponseAllOfRulesInnerSourceTier and assigns it to the SourceTier field.
@@ -467,28 +338,9 @@ func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) GetPortRangeOk() (*st
 	return o.PortRange.Get(), o.PortRange.IsSet()
 }
 
-// IsSetPortRange returns a boolean if a field has been set.
-func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) IsSetPortRange() bool {
-	if o != nil && o.PortRange.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPortRange gets a reference to the given NullableString and assigns it to the PortRange field.
 func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) SetPortRange(v string) {
 	o.PortRange.Set(&v)
-}
-
-// SetPortRangeNil sets the value for PortRange to be an explicit nil
-func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) SetPortRangeNil() {
-	o.PortRange.Set(nil)
-}
-
-// UnsetPortRange ensures that no value is present for PortRange, not even an explicit nil
-func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) UnsetPortRange() {
-	o.PortRange.Unset()
 }
 
 // GetSourcePortRange returns the SourcePortRange field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -510,28 +362,9 @@ func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) GetSourcePortRangeOk(
 	return o.SourcePortRange.Get(), o.SourcePortRange.IsSet()
 }
 
-// IsSetSourcePortRange returns a boolean if a field has been set.
-func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) IsSetSourcePortRange() bool {
-	if o != nil && o.SourcePortRange.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSourcePortRange gets a reference to the given NullableString and assigns it to the SourcePortRange field.
 func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) SetSourcePortRange(v string) {
 	o.SourcePortRange.Set(&v)
-}
-
-// SetSourcePortRangeNil sets the value for SourcePortRange to be an explicit nil
-func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) SetSourcePortRangeNil() {
-	o.SourcePortRange.Set(nil)
-}
-
-// UnsetSourcePortRange ensures that no value is present for SourcePortRange, not even an explicit nil
-func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) UnsetSourcePortRange() {
-	o.SourcePortRange.Unset()
 }
 
 // GetDestinationPortRange returns the DestinationPortRange field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -553,28 +386,9 @@ func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) GetDestinationPortRan
 	return o.DestinationPortRange.Get(), o.DestinationPortRange.IsSet()
 }
 
-// IsSetDestinationPortRange returns a boolean if a field has been set.
-func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) IsSetDestinationPortRange() bool {
-	if o != nil && o.DestinationPortRange.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDestinationPortRange gets a reference to the given NullableString and assigns it to the DestinationPortRange field.
 func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) SetDestinationPortRange(v string) {
 	o.DestinationPortRange.Set(&v)
-}
-
-// SetDestinationPortRangeNil sets the value for DestinationPortRange to be an explicit nil
-func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) SetDestinationPortRangeNil() {
-	o.DestinationPortRange.Set(nil)
-}
-
-// UnsetDestinationPortRange ensures that no value is present for DestinationPortRange, not even an explicit nil
-func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) UnsetDestinationPortRange() {
-	o.DestinationPortRange.Unset()
 }
 
 // GetProtocol returns the Protocol field value if set, zero value otherwise.
@@ -593,15 +407,6 @@ func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) GetProtocolOk() (*str
 		return nil, false
 	}
 	return o.Protocol, true
-}
-
-// IsSetProtocol returns a boolean if a field has been set.
-func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) IsSetProtocol() bool {
-	if o != nil && !IsNil(o.Protocol) {
-		return true
-	}
-
-	return false
 }
 
 // SetProtocol gets a reference to the given string and assigns it to the Protocol field.
@@ -625,15 +430,6 @@ func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) GetDestinationTypeOk(
 		return nil, false
 	}
 	return o.DestinationType, true
-}
-
-// IsSetDestinationType returns a boolean if a field has been set.
-func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) IsSetDestinationType() bool {
-	if o != nil && !IsNil(o.DestinationType) {
-		return true
-	}
-
-	return false
 }
 
 // SetDestinationType gets a reference to the given string and assigns it to the DestinationType field.
@@ -660,28 +456,9 @@ func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) GetDestinationOk() (*
 	return o.Destination.Get(), o.Destination.IsSet()
 }
 
-// IsSetDestination returns a boolean if a field has been set.
-func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) IsSetDestination() bool {
-	if o != nil && o.Destination.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDestination gets a reference to the given NullableString and assigns it to the Destination field.
 func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) SetDestination(v string) {
 	o.Destination.Set(&v)
-}
-
-// SetDestinationNil sets the value for Destination to be an explicit nil
-func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) SetDestinationNil() {
-	o.Destination.Set(nil)
-}
-
-// UnsetDestination ensures that no value is present for Destination, not even an explicit nil
-func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) UnsetDestination() {
-	o.Destination.Unset()
 }
 
 // GetDestinationGroup returns the DestinationGroup field value if set, zero value otherwise.
@@ -700,15 +477,6 @@ func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) GetDestinationGroupOk
 		return nil, false
 	}
 	return o.DestinationGroup, true
-}
-
-// IsSetDestinationGroup returns a boolean if a field has been set.
-func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) IsSetDestinationGroup() bool {
-	if o != nil && !IsNil(o.DestinationGroup) {
-		return true
-	}
-
-	return false
 }
 
 // SetDestinationGroup gets a reference to the given ListSecurityGroupRules200ResponseAllOfRulesInnerDestinationGroup and assigns it to the DestinationGroup field.
@@ -732,15 +500,6 @@ func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) GetDestinationTierOk(
 		return nil, false
 	}
 	return o.DestinationTier, true
-}
-
-// IsSetDestinationTier returns a boolean if a field has been set.
-func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) IsSetDestinationTier() bool {
-	if o != nil && !IsNil(o.DestinationTier) {
-		return true
-	}
-
-	return false
 }
 
 // SetDestinationTier gets a reference to the given ListSecurityGroupRules200ResponseAllOfRulesInnerDestinationTier and assigns it to the DestinationTier field.
@@ -767,28 +526,9 @@ func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) GetExternalIdOk() (*s
 	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) IsSetExternalId() bool {
-	if o != nil && o.ExternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) SetExternalId(v string) {
 	o.ExternalId.Set(&v)
-}
-
-// SetExternalIdNil sets the value for ExternalId to be an explicit nil
-func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) SetExternalIdNil() {
-	o.ExternalId.Set(nil)
-}
-
-// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) UnsetExternalId() {
-	o.ExternalId.Unset()
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -810,28 +550,9 @@ func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) GetEnabledOk() (*stri
 	return o.Enabled.Get(), o.Enabled.IsSet()
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) IsSetEnabled() bool {
-	if o != nil && o.Enabled.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given NullableString and assigns it to the Enabled field.
 func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) SetEnabled(v string) {
 	o.Enabled.Set(&v)
-}
-
-// SetEnabledNil sets the value for Enabled to be an explicit nil
-func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) SetEnabledNil() {
-	o.Enabled.Set(nil)
-}
-
-// UnsetEnabled ensures that no value is present for Enabled, not even an explicit nil
-func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) UnsetEnabled() {
-	o.Enabled.Unset()
 }
 
 func (o ListSecurityGroupRules200ResponseAllOfRulesInner) MarshalJSON() ([]byte, error) {

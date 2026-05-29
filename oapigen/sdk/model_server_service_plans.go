@@ -95,15 +95,6 @@ func (o *ServerServicePlans) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ServerServicePlans) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ServerServicePlans) SetId(v int64) {
 	o.Id = &v
@@ -125,15 +116,6 @@ func (o *ServerServicePlans) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ServerServicePlans) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -159,15 +141,6 @@ func (o *ServerServicePlans) GetValueOk() (*int64, bool) {
 	return o.Value, true
 }
 
-// IsSetValue returns a boolean if a field has been set.
-func (o *ServerServicePlans) IsSetValue() bool {
-	if o != nil && !IsNil(o.Value) {
-		return true
-	}
-
-	return false
-}
-
 // SetValue gets a reference to the given int64 and assigns it to the Value field.
 func (o *ServerServicePlans) SetValue(v int64) {
 	o.Value = &v
@@ -189,15 +162,6 @@ func (o *ServerServicePlans) GetCodeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *ServerServicePlans) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -223,15 +187,6 @@ func (o *ServerServicePlans) GetMaxStorageOk() (*int64, bool) {
 	return o.MaxStorage, true
 }
 
-// IsSetMaxStorage returns a boolean if a field has been set.
-func (o *ServerServicePlans) IsSetMaxStorage() bool {
-	if o != nil && !IsNil(o.MaxStorage) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxStorage gets a reference to the given int64 and assigns it to the MaxStorage field.
 func (o *ServerServicePlans) SetMaxStorage(v int64) {
 	o.MaxStorage = &v
@@ -253,15 +208,6 @@ func (o *ServerServicePlans) GetMaxMemoryOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.MaxMemory, true
-}
-
-// IsSetMaxMemory returns a boolean if a field has been set.
-func (o *ServerServicePlans) IsSetMaxMemory() bool {
-	if o != nil && !IsNil(o.MaxMemory) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxMemory gets a reference to the given int64 and assigns it to the MaxMemory field.
@@ -287,15 +233,6 @@ func (o *ServerServicePlans) GetMaxCpuOk() (*int64, bool) {
 	return o.MaxCpu, true
 }
 
-// IsSetMaxCpu returns a boolean if a field has been set.
-func (o *ServerServicePlans) IsSetMaxCpu() bool {
-	if o != nil && !IsNil(o.MaxCpu) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxCpu gets a reference to the given int64 and assigns it to the MaxCpu field.
 func (o *ServerServicePlans) SetMaxCpu(v int64) {
 	o.MaxCpu = &v
@@ -317,15 +254,6 @@ func (o *ServerServicePlans) GetMaxCoresOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.MaxCores, true
-}
-
-// IsSetMaxCores returns a boolean if a field has been set.
-func (o *ServerServicePlans) IsSetMaxCores() bool {
-	if o != nil && !IsNil(o.MaxCores) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxCores gets a reference to the given int64 and assigns it to the MaxCores field.
@@ -351,15 +279,6 @@ func (o *ServerServicePlans) GetMaxDataStorageOk() (*int64, bool) {
 	return o.MaxDataStorage, true
 }
 
-// IsSetMaxDataStorage returns a boolean if a field has been set.
-func (o *ServerServicePlans) IsSetMaxDataStorage() bool {
-	if o != nil && !IsNil(o.MaxDataStorage) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxDataStorage gets a reference to the given int64 and assigns it to the MaxDataStorage field.
 func (o *ServerServicePlans) SetMaxDataStorage(v int64) {
 	o.MaxDataStorage = &v
@@ -381,15 +300,6 @@ func (o *ServerServicePlans) GetCustomCpuOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.CustomCpu, true
-}
-
-// IsSetCustomCpu returns a boolean if a field has been set.
-func (o *ServerServicePlans) IsSetCustomCpu() bool {
-	if o != nil && !IsNil(o.CustomCpu) {
-		return true
-	}
-
-	return false
 }
 
 // SetCustomCpu gets a reference to the given bool and assigns it to the CustomCpu field.
@@ -415,15 +325,6 @@ func (o *ServerServicePlans) GetCustomMaxMemoryOk() (*bool, bool) {
 	return o.CustomMaxMemory, true
 }
 
-// IsSetCustomMaxMemory returns a boolean if a field has been set.
-func (o *ServerServicePlans) IsSetCustomMaxMemory() bool {
-	if o != nil && !IsNil(o.CustomMaxMemory) {
-		return true
-	}
-
-	return false
-}
-
 // SetCustomMaxMemory gets a reference to the given bool and assigns it to the CustomMaxMemory field.
 func (o *ServerServicePlans) SetCustomMaxMemory(v bool) {
 	o.CustomMaxMemory = &v
@@ -445,15 +346,6 @@ func (o *ServerServicePlans) GetCustomMaxStorageOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.CustomMaxStorage, true
-}
-
-// IsSetCustomMaxStorage returns a boolean if a field has been set.
-func (o *ServerServicePlans) IsSetCustomMaxStorage() bool {
-	if o != nil && !IsNil(o.CustomMaxStorage) {
-		return true
-	}
-
-	return false
 }
 
 // SetCustomMaxStorage gets a reference to the given bool and assigns it to the CustomMaxStorage field.
@@ -479,15 +371,6 @@ func (o *ServerServicePlans) GetCustomMaxDataStorageOk() (*bool, bool) {
 	return o.CustomMaxDataStorage, true
 }
 
-// IsSetCustomMaxDataStorage returns a boolean if a field has been set.
-func (o *ServerServicePlans) IsSetCustomMaxDataStorage() bool {
-	if o != nil && !IsNil(o.CustomMaxDataStorage) {
-		return true
-	}
-
-	return false
-}
-
 // SetCustomMaxDataStorage gets a reference to the given bool and assigns it to the CustomMaxDataStorage field.
 func (o *ServerServicePlans) SetCustomMaxDataStorage(v bool) {
 	o.CustomMaxDataStorage = &v
@@ -509,15 +392,6 @@ func (o *ServerServicePlans) GetCustomCoresPerSocketOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.CustomCoresPerSocket, true
-}
-
-// IsSetCustomCoresPerSocket returns a boolean if a field has been set.
-func (o *ServerServicePlans) IsSetCustomCoresPerSocket() bool {
-	if o != nil && !IsNil(o.CustomCoresPerSocket) {
-		return true
-	}
-
-	return false
 }
 
 // SetCustomCoresPerSocket gets a reference to the given bool and assigns it to the CustomCoresPerSocket field.
@@ -544,28 +418,9 @@ func (o *ServerServicePlans) GetCoresPerSocketOk() (*int64, bool) {
 	return o.CoresPerSocket.Get(), o.CoresPerSocket.IsSet()
 }
 
-// IsSetCoresPerSocket returns a boolean if a field has been set.
-func (o *ServerServicePlans) IsSetCoresPerSocket() bool {
-	if o != nil && o.CoresPerSocket.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCoresPerSocket gets a reference to the given NullableInt64 and assigns it to the CoresPerSocket field.
 func (o *ServerServicePlans) SetCoresPerSocket(v int64) {
 	o.CoresPerSocket.Set(&v)
-}
-
-// SetCoresPerSocketNil sets the value for CoresPerSocket to be an explicit nil
-func (o *ServerServicePlans) SetCoresPerSocketNil() {
-	o.CoresPerSocket.Set(nil)
-}
-
-// UnsetCoresPerSocket ensures that no value is present for CoresPerSocket, not even an explicit nil
-func (o *ServerServicePlans) UnsetCoresPerSocket() {
-	o.CoresPerSocket.Unset()
 }
 
 // GetStorageTypes returns the StorageTypes field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -585,15 +440,6 @@ func (o *ServerServicePlans) GetStorageTypesOk() ([]map[string]interface{}, bool
 		return nil, false
 	}
 	return o.StorageTypes, true
-}
-
-// IsSetStorageTypes returns a boolean if a field has been set.
-func (o *ServerServicePlans) IsSetStorageTypes() bool {
-	if o != nil && !IsNil(o.StorageTypes) {
-		return true
-	}
-
-	return false
 }
 
 // SetStorageTypes gets a reference to the given []map[string]interface{} and assigns it to the StorageTypes field.
@@ -620,15 +466,6 @@ func (o *ServerServicePlans) GetRootStorageTypesOk() ([]map[string]interface{}, 
 	return o.RootStorageTypes, true
 }
 
-// IsSetRootStorageTypes returns a boolean if a field has been set.
-func (o *ServerServicePlans) IsSetRootStorageTypes() bool {
-	if o != nil && !IsNil(o.RootStorageTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetRootStorageTypes gets a reference to the given []map[string]interface{} and assigns it to the RootStorageTypes field.
 func (o *ServerServicePlans) SetRootStorageTypes(v []map[string]interface{}) {
 	o.RootStorageTypes = v
@@ -650,15 +487,6 @@ func (o *ServerServicePlans) GetAddVolumesOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.AddVolumes, true
-}
-
-// IsSetAddVolumes returns a boolean if a field has been set.
-func (o *ServerServicePlans) IsSetAddVolumes() bool {
-	if o != nil && !IsNil(o.AddVolumes) {
-		return true
-	}
-
-	return false
 }
 
 // SetAddVolumes gets a reference to the given bool and assigns it to the AddVolumes field.
@@ -684,15 +512,6 @@ func (o *ServerServicePlans) GetCustomizeVolumeOk() (*bool, bool) {
 	return o.CustomizeVolume, true
 }
 
-// IsSetCustomizeVolume returns a boolean if a field has been set.
-func (o *ServerServicePlans) IsSetCustomizeVolume() bool {
-	if o != nil && !IsNil(o.CustomizeVolume) {
-		return true
-	}
-
-	return false
-}
-
 // SetCustomizeVolume gets a reference to the given bool and assigns it to the CustomizeVolume field.
 func (o *ServerServicePlans) SetCustomizeVolume(v bool) {
 	o.CustomizeVolume = &v
@@ -714,15 +533,6 @@ func (o *ServerServicePlans) GetRootDiskCustomizableOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.RootDiskCustomizable, true
-}
-
-// IsSetRootDiskCustomizable returns a boolean if a field has been set.
-func (o *ServerServicePlans) IsSetRootDiskCustomizable() bool {
-	if o != nil && !IsNil(o.RootDiskCustomizable) {
-		return true
-	}
-
-	return false
 }
 
 // SetRootDiskCustomizable gets a reference to the given bool and assigns it to the RootDiskCustomizable field.
@@ -749,28 +559,9 @@ func (o *ServerServicePlans) GetHostDiskModeOk() (*string, bool) {
 	return o.HostDiskMode.Get(), o.HostDiskMode.IsSet()
 }
 
-// IsSetHostDiskMode returns a boolean if a field has been set.
-func (o *ServerServicePlans) IsSetHostDiskMode() bool {
-	if o != nil && o.HostDiskMode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetHostDiskMode gets a reference to the given NullableString and assigns it to the HostDiskMode field.
 func (o *ServerServicePlans) SetHostDiskMode(v string) {
 	o.HostDiskMode.Set(&v)
-}
-
-// SetHostDiskModeNil sets the value for HostDiskMode to be an explicit nil
-func (o *ServerServicePlans) SetHostDiskModeNil() {
-	o.HostDiskMode.Set(nil)
-}
-
-// UnsetHostDiskMode ensures that no value is present for HostDiskMode, not even an explicit nil
-func (o *ServerServicePlans) UnsetHostDiskMode() {
-	o.HostDiskMode.Unset()
 }
 
 // GetHasDatastore returns the HasDatastore field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -792,28 +583,9 @@ func (o *ServerServicePlans) GetHasDatastoreOk() (*string, bool) {
 	return o.HasDatastore.Get(), o.HasDatastore.IsSet()
 }
 
-// IsSetHasDatastore returns a boolean if a field has been set.
-func (o *ServerServicePlans) IsSetHasDatastore() bool {
-	if o != nil && o.HasDatastore.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetHasDatastore gets a reference to the given NullableString and assigns it to the HasDatastore field.
 func (o *ServerServicePlans) SetHasDatastore(v string) {
 	o.HasDatastore.Set(&v)
-}
-
-// SetHasDatastoreNil sets the value for HasDatastore to be an explicit nil
-func (o *ServerServicePlans) SetHasDatastoreNil() {
-	o.HasDatastore.Set(nil)
-}
-
-// UnsetHasDatastore ensures that no value is present for HasDatastore, not even an explicit nil
-func (o *ServerServicePlans) UnsetHasDatastore() {
-	o.HasDatastore.Unset()
 }
 
 // GetLvmSupported returns the LvmSupported field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -835,28 +607,9 @@ func (o *ServerServicePlans) GetLvmSupportedOk() (*string, bool) {
 	return o.LvmSupported.Get(), o.LvmSupported.IsSet()
 }
 
-// IsSetLvmSupported returns a boolean if a field has been set.
-func (o *ServerServicePlans) IsSetLvmSupported() bool {
-	if o != nil && o.LvmSupported.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLvmSupported gets a reference to the given NullableString and assigns it to the LvmSupported field.
 func (o *ServerServicePlans) SetLvmSupported(v string) {
 	o.LvmSupported.Set(&v)
-}
-
-// SetLvmSupportedNil sets the value for LvmSupported to be an explicit nil
-func (o *ServerServicePlans) SetLvmSupportedNil() {
-	o.LvmSupported.Set(nil)
-}
-
-// UnsetLvmSupported ensures that no value is present for LvmSupported, not even an explicit nil
-func (o *ServerServicePlans) UnsetLvmSupported() {
-	o.LvmSupported.Unset()
 }
 
 // GetMinDisk returns the MinDisk field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -878,28 +631,9 @@ func (o *ServerServicePlans) GetMinDiskOk() (*string, bool) {
 	return o.MinDisk.Get(), o.MinDisk.IsSet()
 }
 
-// IsSetMinDisk returns a boolean if a field has been set.
-func (o *ServerServicePlans) IsSetMinDisk() bool {
-	if o != nil && o.MinDisk.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMinDisk gets a reference to the given NullableString and assigns it to the MinDisk field.
 func (o *ServerServicePlans) SetMinDisk(v string) {
 	o.MinDisk.Set(&v)
-}
-
-// SetMinDiskNil sets the value for MinDisk to be an explicit nil
-func (o *ServerServicePlans) SetMinDiskNil() {
-	o.MinDisk.Set(nil)
-}
-
-// UnsetMinDisk ensures that no value is present for MinDisk, not even an explicit nil
-func (o *ServerServicePlans) UnsetMinDisk() {
-	o.MinDisk.Unset()
 }
 
 // GetMaxDisk returns the MaxDisk field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -921,28 +655,9 @@ func (o *ServerServicePlans) GetMaxDiskOk() (*string, bool) {
 	return o.MaxDisk.Get(), o.MaxDisk.IsSet()
 }
 
-// IsSetMaxDisk returns a boolean if a field has been set.
-func (o *ServerServicePlans) IsSetMaxDisk() bool {
-	if o != nil && o.MaxDisk.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxDisk gets a reference to the given NullableString and assigns it to the MaxDisk field.
 func (o *ServerServicePlans) SetMaxDisk(v string) {
 	o.MaxDisk.Set(&v)
-}
-
-// SetMaxDiskNil sets the value for MaxDisk to be an explicit nil
-func (o *ServerServicePlans) SetMaxDiskNil() {
-	o.MaxDisk.Set(nil)
-}
-
-// UnsetMaxDisk ensures that no value is present for MaxDisk, not even an explicit nil
-func (o *ServerServicePlans) UnsetMaxDisk() {
-	o.MaxDisk.Unset()
 }
 
 // GetDatastores returns the Datastores field value if set, zero value otherwise.
@@ -961,15 +676,6 @@ func (o *ServerServicePlans) GetDatastoresOk() (*ServerServicePlansDatastores, b
 		return nil, false
 	}
 	return o.Datastores, true
-}
-
-// IsSetDatastores returns a boolean if a field has been set.
-func (o *ServerServicePlans) IsSetDatastores() bool {
-	if o != nil && !IsNil(o.Datastores) {
-		return true
-	}
-
-	return false
 }
 
 // SetDatastores gets a reference to the given ServerServicePlansDatastores and assigns it to the Datastores field.
@@ -995,15 +701,6 @@ func (o *ServerServicePlans) GetSupportsAutoDatastoreOk() (*bool, bool) {
 	return o.SupportsAutoDatastore, true
 }
 
-// IsSetSupportsAutoDatastore returns a boolean if a field has been set.
-func (o *ServerServicePlans) IsSetSupportsAutoDatastore() bool {
-	if o != nil && !IsNil(o.SupportsAutoDatastore) {
-		return true
-	}
-
-	return false
-}
-
 // SetSupportsAutoDatastore gets a reference to the given bool and assigns it to the SupportsAutoDatastore field.
 func (o *ServerServicePlans) SetSupportsAutoDatastore(v bool) {
 	o.SupportsAutoDatastore = &v
@@ -1025,15 +722,6 @@ func (o *ServerServicePlans) GetAutoOptionsOk() ([]ServerServicePlansAutoOptions
 		return nil, false
 	}
 	return o.AutoOptions, true
-}
-
-// IsSetAutoOptions returns a boolean if a field has been set.
-func (o *ServerServicePlans) IsSetAutoOptions() bool {
-	if o != nil && !IsNil(o.AutoOptions) {
-		return true
-	}
-
-	return false
 }
 
 // SetAutoOptions gets a reference to the given []ServerServicePlansAutoOptionsInner and assigns it to the AutoOptions field.
@@ -1060,15 +748,6 @@ func (o *ServerServicePlans) GetCpuOptionsOk() ([]map[string]interface{}, bool) 
 	return o.CpuOptions, true
 }
 
-// IsSetCpuOptions returns a boolean if a field has been set.
-func (o *ServerServicePlans) IsSetCpuOptions() bool {
-	if o != nil && !IsNil(o.CpuOptions) {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuOptions gets a reference to the given []map[string]interface{} and assigns it to the CpuOptions field.
 func (o *ServerServicePlans) SetCpuOptions(v []map[string]interface{}) {
 	o.CpuOptions = v
@@ -1091,15 +770,6 @@ func (o *ServerServicePlans) GetMemoryOptionsOk() ([]map[string]interface{}, boo
 		return nil, false
 	}
 	return o.MemoryOptions, true
-}
-
-// IsSetMemoryOptions returns a boolean if a field has been set.
-func (o *ServerServicePlans) IsSetMemoryOptions() bool {
-	if o != nil && !IsNil(o.MemoryOptions) {
-		return true
-	}
-
-	return false
 }
 
 // SetMemoryOptions gets a reference to the given []map[string]interface{} and assigns it to the MemoryOptions field.
@@ -1125,15 +795,6 @@ func (o *ServerServicePlans) GetRootCustomSizeOptionsOk() (map[string]interface{
 	return o.RootCustomSizeOptions, true
 }
 
-// IsSetRootCustomSizeOptions returns a boolean if a field has been set.
-func (o *ServerServicePlans) IsSetRootCustomSizeOptions() bool {
-	if o != nil && !IsNil(o.RootCustomSizeOptions) {
-		return true
-	}
-
-	return false
-}
-
 // SetRootCustomSizeOptions gets a reference to the given map[string]interface{} and assigns it to the RootCustomSizeOptions field.
 func (o *ServerServicePlans) SetRootCustomSizeOptions(v map[string]interface{}) {
 	o.RootCustomSizeOptions = v
@@ -1157,15 +818,6 @@ func (o *ServerServicePlans) GetCustomSizeOptionsOk() (map[string]interface{}, b
 	return o.CustomSizeOptions, true
 }
 
-// IsSetCustomSizeOptions returns a boolean if a field has been set.
-func (o *ServerServicePlans) IsSetCustomSizeOptions() bool {
-	if o != nil && !IsNil(o.CustomSizeOptions) {
-		return true
-	}
-
-	return false
-}
-
 // SetCustomSizeOptions gets a reference to the given map[string]interface{} and assigns it to the CustomSizeOptions field.
 func (o *ServerServicePlans) SetCustomSizeOptions(v map[string]interface{}) {
 	o.CustomSizeOptions = v
@@ -1187,15 +839,6 @@ func (o *ServerServicePlans) GetCustomCoresOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.CustomCores, true
-}
-
-// IsSetCustomCores returns a boolean if a field has been set.
-func (o *ServerServicePlans) IsSetCustomCores() bool {
-	if o != nil && !IsNil(o.CustomCores) {
-		return true
-	}
-
-	return false
 }
 
 // SetCustomCores gets a reference to the given bool and assigns it to the CustomCores field.
@@ -1222,28 +865,9 @@ func (o *ServerServicePlans) GetMaxDisksOk() (*string, bool) {
 	return o.MaxDisks.Get(), o.MaxDisks.IsSet()
 }
 
-// IsSetMaxDisks returns a boolean if a field has been set.
-func (o *ServerServicePlans) IsSetMaxDisks() bool {
-	if o != nil && o.MaxDisks.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxDisks gets a reference to the given NullableString and assigns it to the MaxDisks field.
 func (o *ServerServicePlans) SetMaxDisks(v string) {
 	o.MaxDisks.Set(&v)
-}
-
-// SetMaxDisksNil sets the value for MaxDisks to be an explicit nil
-func (o *ServerServicePlans) SetMaxDisksNil() {
-	o.MaxDisks.Set(nil)
-}
-
-// UnsetMaxDisks ensures that no value is present for MaxDisks, not even an explicit nil
-func (o *ServerServicePlans) UnsetMaxDisks() {
-	o.MaxDisks.Unset()
 }
 
 // GetMemorySizeType returns the MemorySizeType field value if set, zero value otherwise.
@@ -1262,15 +886,6 @@ func (o *ServerServicePlans) GetMemorySizeTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.MemorySizeType, true
-}
-
-// IsSetMemorySizeType returns a boolean if a field has been set.
-func (o *ServerServicePlans) IsSetMemorySizeType() bool {
-	if o != nil && !IsNil(o.MemorySizeType) {
-		return true
-	}
-
-	return false
 }
 
 // SetMemorySizeType gets a reference to the given string and assigns it to the MemorySizeType field.

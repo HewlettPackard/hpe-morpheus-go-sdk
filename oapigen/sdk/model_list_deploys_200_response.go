@@ -62,15 +62,6 @@ func (o *ListDeploys200Response) GetAppDeploysOk() ([]ListDeploys200ResponseAllO
 	return o.AppDeploys, true
 }
 
-// IsSetAppDeploys returns a boolean if a field has been set.
-func (o *ListDeploys200Response) IsSetAppDeploys() bool {
-	if o != nil && !IsNil(o.AppDeploys) {
-		return true
-	}
-
-	return false
-}
-
 // SetAppDeploys gets a reference to the given []ListDeploys200ResponseAllOfAppDeploysInner and assigns it to the AppDeploys field.
 func (o *ListDeploys200Response) SetAppDeploys(v []ListDeploys200ResponseAllOfAppDeploysInner) {
 	o.AppDeploys = v
@@ -92,15 +83,6 @@ func (o *ListDeploys200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListDeploys200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

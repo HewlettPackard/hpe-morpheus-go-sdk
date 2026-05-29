@@ -91,15 +91,6 @@ func (o *ClusterHistory) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ClusterHistory) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ClusterHistory) SetId(v int64) {
 	o.Id = &v
@@ -121,15 +112,6 @@ func (o *ClusterHistory) GetAccountIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.AccountId, true
-}
-
-// IsSetAccountId returns a boolean if a field has been set.
-func (o *ClusterHistory) IsSetAccountId() bool {
-	if o != nil && !IsNil(o.AccountId) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccountId gets a reference to the given int64 and assigns it to the AccountId field.
@@ -155,15 +137,6 @@ func (o *ClusterHistory) GetUniqueIdOk() (*string, bool) {
 	return o.UniqueId, true
 }
 
-// IsSetUniqueId returns a boolean if a field has been set.
-func (o *ClusterHistory) IsSetUniqueId() bool {
-	if o != nil && !IsNil(o.UniqueId) {
-		return true
-	}
-
-	return false
-}
-
 // SetUniqueId gets a reference to the given string and assigns it to the UniqueId field.
 func (o *ClusterHistory) SetUniqueId(v string) {
 	o.UniqueId = &v
@@ -187,15 +160,6 @@ func (o *ClusterHistory) GetProcessTypeOk() (*ClusterHistoryProcessType, bool) {
 	return o.ProcessType, true
 }
 
-// IsSetProcessType returns a boolean if a field has been set.
-func (o *ClusterHistory) IsSetProcessType() bool {
-	if o != nil && !IsNil(o.ProcessType) {
-		return true
-	}
-
-	return false
-}
-
 // SetProcessType gets a reference to the given ClusterHistoryProcessType and assigns it to the ProcessType field.
 func (o *ClusterHistory) SetProcessType(v ClusterHistoryProcessType) {
 	o.ProcessType = &v
@@ -217,15 +181,6 @@ func (o *ClusterHistory) GetDisplayNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.DisplayName, true
-}
-
-// IsSetDisplayName returns a boolean if a field has been set.
-func (o *ClusterHistory) IsSetDisplayName() bool {
-	if o != nil && !IsNil(o.DisplayName) {
-		return true
-	}
-
-	return false
 }
 
 // SetDisplayName gets a reference to the given string and assigns it to the DisplayName field.
@@ -252,28 +207,9 @@ func (o *ClusterHistory) GetDescriptionOk() (*string, bool) {
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ClusterHistory) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ClusterHistory) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *ClusterHistory) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *ClusterHistory) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetSubType returns the SubType field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -295,28 +231,9 @@ func (o *ClusterHistory) GetSubTypeOk() (*string, bool) {
 	return o.SubType.Get(), o.SubType.IsSet()
 }
 
-// IsSetSubType returns a boolean if a field has been set.
-func (o *ClusterHistory) IsSetSubType() bool {
-	if o != nil && o.SubType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSubType gets a reference to the given NullableString and assigns it to the SubType field.
 func (o *ClusterHistory) SetSubType(v string) {
 	o.SubType.Set(&v)
-}
-
-// SetSubTypeNil sets the value for SubType to be an explicit nil
-func (o *ClusterHistory) SetSubTypeNil() {
-	o.SubType.Set(nil)
-}
-
-// UnsetSubType ensures that no value is present for SubType, not even an explicit nil
-func (o *ClusterHistory) UnsetSubType() {
-	o.SubType.Unset()
 }
 
 // GetSubId returns the SubId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -338,28 +255,9 @@ func (o *ClusterHistory) GetSubIdOk() (*string, bool) {
 	return o.SubId.Get(), o.SubId.IsSet()
 }
 
-// IsSetSubId returns a boolean if a field has been set.
-func (o *ClusterHistory) IsSetSubId() bool {
-	if o != nil && o.SubId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSubId gets a reference to the given NullableString and assigns it to the SubId field.
 func (o *ClusterHistory) SetSubId(v string) {
 	o.SubId.Set(&v)
-}
-
-// SetSubIdNil sets the value for SubId to be an explicit nil
-func (o *ClusterHistory) SetSubIdNil() {
-	o.SubId.Set(nil)
-}
-
-// UnsetSubId ensures that no value is present for SubId, not even an explicit nil
-func (o *ClusterHistory) UnsetSubId() {
-	o.SubId.Unset()
 }
 
 // GetZoneId returns the ZoneId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -381,28 +279,9 @@ func (o *ClusterHistory) GetZoneIdOk() (*int64, bool) {
 	return o.ZoneId.Get(), o.ZoneId.IsSet()
 }
 
-// IsSetZoneId returns a boolean if a field has been set.
-func (o *ClusterHistory) IsSetZoneId() bool {
-	if o != nil && o.ZoneId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetZoneId gets a reference to the given NullableInt64 and assigns it to the ZoneId field.
 func (o *ClusterHistory) SetZoneId(v int64) {
 	o.ZoneId.Set(&v)
-}
-
-// SetZoneIdNil sets the value for ZoneId to be an explicit nil
-func (o *ClusterHistory) SetZoneIdNil() {
-	o.ZoneId.Set(nil)
-}
-
-// UnsetZoneId ensures that no value is present for ZoneId, not even an explicit nil
-func (o *ClusterHistory) UnsetZoneId() {
-	o.ZoneId.Unset()
 }
 
 // GetIntegrationId returns the IntegrationId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -424,28 +303,9 @@ func (o *ClusterHistory) GetIntegrationIdOk() (*int64, bool) {
 	return o.IntegrationId.Get(), o.IntegrationId.IsSet()
 }
 
-// IsSetIntegrationId returns a boolean if a field has been set.
-func (o *ClusterHistory) IsSetIntegrationId() bool {
-	if o != nil && o.IntegrationId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetIntegrationId gets a reference to the given NullableInt64 and assigns it to the IntegrationId field.
 func (o *ClusterHistory) SetIntegrationId(v int64) {
 	o.IntegrationId.Set(&v)
-}
-
-// SetIntegrationIdNil sets the value for IntegrationId to be an explicit nil
-func (o *ClusterHistory) SetIntegrationIdNil() {
-	o.IntegrationId.Set(nil)
-}
-
-// UnsetIntegrationId ensures that no value is present for IntegrationId, not even an explicit nil
-func (o *ClusterHistory) UnsetIntegrationId() {
-	o.IntegrationId.Unset()
 }
 
 // GetAppId returns the AppId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -467,28 +327,9 @@ func (o *ClusterHistory) GetAppIdOk() (*int64, bool) {
 	return o.AppId.Get(), o.AppId.IsSet()
 }
 
-// IsSetAppId returns a boolean if a field has been set.
-func (o *ClusterHistory) IsSetAppId() bool {
-	if o != nil && o.AppId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAppId gets a reference to the given NullableInt64 and assigns it to the AppId field.
 func (o *ClusterHistory) SetAppId(v int64) {
 	o.AppId.Set(&v)
-}
-
-// SetAppIdNil sets the value for AppId to be an explicit nil
-func (o *ClusterHistory) SetAppIdNil() {
-	o.AppId.Set(nil)
-}
-
-// UnsetAppId ensures that no value is present for AppId, not even an explicit nil
-func (o *ClusterHistory) UnsetAppId() {
-	o.AppId.Unset()
 }
 
 // GetInstanceId returns the InstanceId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -510,28 +351,9 @@ func (o *ClusterHistory) GetInstanceIdOk() (*int64, bool) {
 	return o.InstanceId.Get(), o.InstanceId.IsSet()
 }
 
-// IsSetInstanceId returns a boolean if a field has been set.
-func (o *ClusterHistory) IsSetInstanceId() bool {
-	if o != nil && o.InstanceId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInstanceId gets a reference to the given NullableInt64 and assigns it to the InstanceId field.
 func (o *ClusterHistory) SetInstanceId(v int64) {
 	o.InstanceId.Set(&v)
-}
-
-// SetInstanceIdNil sets the value for InstanceId to be an explicit nil
-func (o *ClusterHistory) SetInstanceIdNil() {
-	o.InstanceId.Set(nil)
-}
-
-// UnsetInstanceId ensures that no value is present for InstanceId, not even an explicit nil
-func (o *ClusterHistory) UnsetInstanceId() {
-	o.InstanceId.Unset()
 }
 
 // GetContainerId returns the ContainerId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -553,28 +375,9 @@ func (o *ClusterHistory) GetContainerIdOk() (*int64, bool) {
 	return o.ContainerId.Get(), o.ContainerId.IsSet()
 }
 
-// IsSetContainerId returns a boolean if a field has been set.
-func (o *ClusterHistory) IsSetContainerId() bool {
-	if o != nil && o.ContainerId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetContainerId gets a reference to the given NullableInt64 and assigns it to the ContainerId field.
 func (o *ClusterHistory) SetContainerId(v int64) {
 	o.ContainerId.Set(&v)
-}
-
-// SetContainerIdNil sets the value for ContainerId to be an explicit nil
-func (o *ClusterHistory) SetContainerIdNil() {
-	o.ContainerId.Set(nil)
-}
-
-// UnsetContainerId ensures that no value is present for ContainerId, not even an explicit nil
-func (o *ClusterHistory) UnsetContainerId() {
-	o.ContainerId.Unset()
 }
 
 // GetServerId returns the ServerId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -596,28 +399,9 @@ func (o *ClusterHistory) GetServerIdOk() (*int64, bool) {
 	return o.ServerId.Get(), o.ServerId.IsSet()
 }
 
-// IsSetServerId returns a boolean if a field has been set.
-func (o *ClusterHistory) IsSetServerId() bool {
-	if o != nil && o.ServerId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServerId gets a reference to the given NullableInt64 and assigns it to the ServerId field.
 func (o *ClusterHistory) SetServerId(v int64) {
 	o.ServerId.Set(&v)
-}
-
-// SetServerIdNil sets the value for ServerId to be an explicit nil
-func (o *ClusterHistory) SetServerIdNil() {
-	o.ServerId.Set(nil)
-}
-
-// UnsetServerId ensures that no value is present for ServerId, not even an explicit nil
-func (o *ClusterHistory) UnsetServerId() {
-	o.ServerId.Unset()
 }
 
 // GetContainerName returns the ContainerName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -639,28 +423,9 @@ func (o *ClusterHistory) GetContainerNameOk() (*string, bool) {
 	return o.ContainerName.Get(), o.ContainerName.IsSet()
 }
 
-// IsSetContainerName returns a boolean if a field has been set.
-func (o *ClusterHistory) IsSetContainerName() bool {
-	if o != nil && o.ContainerName.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetContainerName gets a reference to the given NullableString and assigns it to the ContainerName field.
 func (o *ClusterHistory) SetContainerName(v string) {
 	o.ContainerName.Set(&v)
-}
-
-// SetContainerNameNil sets the value for ContainerName to be an explicit nil
-func (o *ClusterHistory) SetContainerNameNil() {
-	o.ContainerName.Set(nil)
-}
-
-// UnsetContainerName ensures that no value is present for ContainerName, not even an explicit nil
-func (o *ClusterHistory) UnsetContainerName() {
-	o.ContainerName.Unset()
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -679,15 +444,6 @@ func (o *ClusterHistory) GetStatusOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *ClusterHistory) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -714,28 +470,9 @@ func (o *ClusterHistory) GetReasonOk() (*string, bool) {
 	return o.Reason.Get(), o.Reason.IsSet()
 }
 
-// IsSetReason returns a boolean if a field has been set.
-func (o *ClusterHistory) IsSetReason() bool {
-	if o != nil && o.Reason.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetReason gets a reference to the given NullableString and assigns it to the Reason field.
 func (o *ClusterHistory) SetReason(v string) {
 	o.Reason.Set(&v)
-}
-
-// SetReasonNil sets the value for Reason to be an explicit nil
-func (o *ClusterHistory) SetReasonNil() {
-	o.Reason.Set(nil)
-}
-
-// UnsetReason ensures that no value is present for Reason, not even an explicit nil
-func (o *ClusterHistory) UnsetReason() {
-	o.Reason.Unset()
 }
 
 // GetPercent returns the Percent field value if set, zero value otherwise.
@@ -754,15 +491,6 @@ func (o *ClusterHistory) GetPercentOk() (*float64, bool) {
 		return nil, false
 	}
 	return o.Percent, true
-}
-
-// IsSetPercent returns a boolean if a field has been set.
-func (o *ClusterHistory) IsSetPercent() bool {
-	if o != nil && !IsNil(o.Percent) {
-		return true
-	}
-
-	return false
 }
 
 // SetPercent gets a reference to the given float64 and assigns it to the Percent field.
@@ -786,15 +514,6 @@ func (o *ClusterHistory) GetStatusEtaOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.StatusEta, true
-}
-
-// IsSetStatusEta returns a boolean if a field has been set.
-func (o *ClusterHistory) IsSetStatusEta() bool {
-	if o != nil && !IsNil(o.StatusEta) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatusEta gets a reference to the given int64 and assigns it to the StatusEta field.
@@ -821,28 +540,9 @@ func (o *ClusterHistory) GetMessageOk() (*string, bool) {
 	return o.Message.Get(), o.Message.IsSet()
 }
 
-// IsSetMessage returns a boolean if a field has been set.
-func (o *ClusterHistory) IsSetMessage() bool {
-	if o != nil && o.Message.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMessage gets a reference to the given NullableString and assigns it to the Message field.
 func (o *ClusterHistory) SetMessage(v string) {
 	o.Message.Set(&v)
-}
-
-// SetMessageNil sets the value for Message to be an explicit nil
-func (o *ClusterHistory) SetMessageNil() {
-	o.Message.Set(nil)
-}
-
-// UnsetMessage ensures that no value is present for Message, not even an explicit nil
-func (o *ClusterHistory) UnsetMessage() {
-	o.Message.Unset()
 }
 
 // GetOutput returns the Output field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -864,28 +564,9 @@ func (o *ClusterHistory) GetOutputOk() (*string, bool) {
 	return o.Output.Get(), o.Output.IsSet()
 }
 
-// IsSetOutput returns a boolean if a field has been set.
-func (o *ClusterHistory) IsSetOutput() bool {
-	if o != nil && o.Output.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetOutput gets a reference to the given NullableString and assigns it to the Output field.
 func (o *ClusterHistory) SetOutput(v string) {
 	o.Output.Set(&v)
-}
-
-// SetOutputNil sets the value for Output to be an explicit nil
-func (o *ClusterHistory) SetOutputNil() {
-	o.Output.Set(nil)
-}
-
-// UnsetOutput ensures that no value is present for Output, not even an explicit nil
-func (o *ClusterHistory) UnsetOutput() {
-	o.Output.Unset()
 }
 
 // GetError returns the Error field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -907,28 +588,9 @@ func (o *ClusterHistory) GetErrorOk() (*string, bool) {
 	return o.Error.Get(), o.Error.IsSet()
 }
 
-// IsSetError returns a boolean if a field has been set.
-func (o *ClusterHistory) IsSetError() bool {
-	if o != nil && o.Error.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetError gets a reference to the given NullableString and assigns it to the Error field.
 func (o *ClusterHistory) SetError(v string) {
 	o.Error.Set(&v)
-}
-
-// SetErrorNil sets the value for Error to be an explicit nil
-func (o *ClusterHistory) SetErrorNil() {
-	o.Error.Set(nil)
-}
-
-// UnsetError ensures that no value is present for Error, not even an explicit nil
-func (o *ClusterHistory) UnsetError() {
-	o.Error.Unset()
 }
 
 // GetStartDate returns the StartDate field value if set, zero value otherwise.
@@ -947,15 +609,6 @@ func (o *ClusterHistory) GetStartDateOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.StartDate, true
-}
-
-// IsSetStartDate returns a boolean if a field has been set.
-func (o *ClusterHistory) IsSetStartDate() bool {
-	if o != nil && !IsNil(o.StartDate) {
-		return true
-	}
-
-	return false
 }
 
 // SetStartDate gets a reference to the given time.Time and assigns it to the StartDate field.
@@ -981,15 +634,6 @@ func (o *ClusterHistory) GetEndDateOk() (*time.Time, bool) {
 	return o.EndDate, true
 }
 
-// IsSetEndDate returns a boolean if a field has been set.
-func (o *ClusterHistory) IsSetEndDate() bool {
-	if o != nil && !IsNil(o.EndDate) {
-		return true
-	}
-
-	return false
-}
-
 // SetEndDate gets a reference to the given time.Time and assigns it to the EndDate field.
 func (o *ClusterHistory) SetEndDate(v time.Time) {
 	o.EndDate = &v
@@ -1011,15 +655,6 @@ func (o *ClusterHistory) GetDurationOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.Duration, true
-}
-
-// IsSetDuration returns a boolean if a field has been set.
-func (o *ClusterHistory) IsSetDuration() bool {
-	if o != nil && !IsNil(o.Duration) {
-		return true
-	}
-
-	return false
 }
 
 // SetDuration gets a reference to the given int64 and assigns it to the Duration field.
@@ -1045,15 +680,6 @@ func (o *ClusterHistory) GetDateCreatedOk() (*time.Time, bool) {
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *ClusterHistory) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *ClusterHistory) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -1075,15 +701,6 @@ func (o *ClusterHistory) GetLastUpdatedOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *ClusterHistory) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
@@ -1109,15 +726,6 @@ func (o *ClusterHistory) GetCreatedByOk() (*ClusterHistoryCreatedBy, bool) {
 	return o.CreatedBy, true
 }
 
-// IsSetCreatedBy returns a boolean if a field has been set.
-func (o *ClusterHistory) IsSetCreatedBy() bool {
-	if o != nil && !IsNil(o.CreatedBy) {
-		return true
-	}
-
-	return false
-}
-
 // SetCreatedBy gets a reference to the given ClusterHistoryCreatedBy and assigns it to the CreatedBy field.
 func (o *ClusterHistory) SetCreatedBy(v ClusterHistoryCreatedBy) {
 	o.CreatedBy = &v
@@ -1141,15 +749,6 @@ func (o *ClusterHistory) GetUpdatedByOk() (*ClusterHistoryUpdatedBy, bool) {
 	return o.UpdatedBy, true
 }
 
-// IsSetUpdatedBy returns a boolean if a field has been set.
-func (o *ClusterHistory) IsSetUpdatedBy() bool {
-	if o != nil && !IsNil(o.UpdatedBy) {
-		return true
-	}
-
-	return false
-}
-
 // SetUpdatedBy gets a reference to the given ClusterHistoryUpdatedBy and assigns it to the UpdatedBy field.
 func (o *ClusterHistory) SetUpdatedBy(v ClusterHistoryUpdatedBy) {
 	o.UpdatedBy = &v
@@ -1171,15 +770,6 @@ func (o *ClusterHistory) GetEventsOk() ([]ClusterHistoryEventsInner, bool) {
 		return nil, false
 	}
 	return o.Events, true
-}
-
-// IsSetEvents returns a boolean if a field has been set.
-func (o *ClusterHistory) IsSetEvents() bool {
-	if o != nil && !IsNil(o.Events) {
-		return true
-	}
-
-	return false
 }
 
 // SetEvents gets a reference to the given []ClusterHistoryEventsInner and assigns it to the Events field.

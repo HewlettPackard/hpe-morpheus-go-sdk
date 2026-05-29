@@ -156,28 +156,9 @@ func (o *UpdateDatastores200ResponseDatastore) GetCodeOk() (*string, bool) {
 	return o.Code.Get(), o.Code.IsSet()
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *UpdateDatastores200ResponseDatastore) IsSetCode() bool {
-	if o != nil && o.Code.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *UpdateDatastores200ResponseDatastore) SetCode(v string) {
 	o.Code.Set(&v)
-}
-
-// SetCodeNil sets the value for Code to be an explicit nil
-func (o *UpdateDatastores200ResponseDatastore) SetCodeNil() {
-	o.Code.Set(nil)
-}
-
-// UnsetCode ensures that no value is present for Code, not even an explicit nil
-func (o *UpdateDatastores200ResponseDatastore) UnsetCode() {
-	o.Code.Unset()
 }
 
 // GetDatastoreType returns the DatastoreType field value
@@ -222,15 +203,6 @@ func (o *UpdateDatastores200ResponseDatastore) GetConfigOk() (map[string]interfa
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *UpdateDatastores200ResponseDatastore) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
 func (o *UpdateDatastores200ResponseDatastore) SetConfig(v map[string]interface{}) {
 	o.Config = v
@@ -252,15 +224,6 @@ func (o *UpdateDatastores200ResponseDatastore) GetStorageServerOk() (*UpdateData
 		return nil, false
 	}
 	return o.StorageServer, true
-}
-
-// IsSetStorageServer returns a boolean if a field has been set.
-func (o *UpdateDatastores200ResponseDatastore) IsSetStorageServer() bool {
-	if o != nil && !IsNil(o.StorageServer) {
-		return true
-	}
-
-	return false
 }
 
 // SetStorageServer gets a reference to the given UpdateDatastores200ResponseDatastoreAllOfStorageServer and assigns it to the StorageServer field.
@@ -334,15 +297,6 @@ func (o *UpdateDatastores200ResponseDatastore) GetStatusMessageOk() (*string, bo
 	return o.StatusMessage, true
 }
 
-// IsSetStatusMessage returns a boolean if a field has been set.
-func (o *UpdateDatastores200ResponseDatastore) IsSetStatusMessage() bool {
-	if o != nil && !IsNil(o.StatusMessage) {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusMessage gets a reference to the given string and assigns it to the StatusMessage field.
 func (o *UpdateDatastores200ResponseDatastore) SetStatusMessage(v string) {
 	o.StatusMessage = &v
@@ -364,15 +318,6 @@ func (o *UpdateDatastores200ResponseDatastore) GetVisibilityOk() (*string, bool)
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *UpdateDatastores200ResponseDatastore) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -399,28 +344,9 @@ func (o *UpdateDatastores200ResponseDatastore) GetStorageSizeOk() (*int64, bool)
 	return o.StorageSize.Get(), o.StorageSize.IsSet()
 }
 
-// IsSetStorageSize returns a boolean if a field has been set.
-func (o *UpdateDatastores200ResponseDatastore) IsSetStorageSize() bool {
-	if o != nil && o.StorageSize.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStorageSize gets a reference to the given NullableInt64 and assigns it to the StorageSize field.
 func (o *UpdateDatastores200ResponseDatastore) SetStorageSize(v int64) {
 	o.StorageSize.Set(&v)
-}
-
-// SetStorageSizeNil sets the value for StorageSize to be an explicit nil
-func (o *UpdateDatastores200ResponseDatastore) SetStorageSizeNil() {
-	o.StorageSize.Set(nil)
-}
-
-// UnsetStorageSize ensures that no value is present for StorageSize, not even an explicit nil
-func (o *UpdateDatastores200ResponseDatastore) UnsetStorageSize() {
-	o.StorageSize.Unset()
 }
 
 // GetFreeSpace returns the FreeSpace field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -442,28 +368,9 @@ func (o *UpdateDatastores200ResponseDatastore) GetFreeSpaceOk() (*int64, bool) {
 	return o.FreeSpace.Get(), o.FreeSpace.IsSet()
 }
 
-// IsSetFreeSpace returns a boolean if a field has been set.
-func (o *UpdateDatastores200ResponseDatastore) IsSetFreeSpace() bool {
-	if o != nil && o.FreeSpace.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFreeSpace gets a reference to the given NullableInt64 and assigns it to the FreeSpace field.
 func (o *UpdateDatastores200ResponseDatastore) SetFreeSpace(v int64) {
 	o.FreeSpace.Set(&v)
-}
-
-// SetFreeSpaceNil sets the value for FreeSpace to be an explicit nil
-func (o *UpdateDatastores200ResponseDatastore) SetFreeSpaceNil() {
-	o.FreeSpace.Set(nil)
-}
-
-// UnsetFreeSpace ensures that no value is present for FreeSpace, not even an explicit nil
-func (o *UpdateDatastores200ResponseDatastore) UnsetFreeSpace() {
-	o.FreeSpace.Unset()
 }
 
 // GetDrsEnabled returns the DrsEnabled field value if set, zero value otherwise.
@@ -482,15 +389,6 @@ func (o *UpdateDatastores200ResponseDatastore) GetDrsEnabledOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.DrsEnabled, true
-}
-
-// IsSetDrsEnabled returns a boolean if a field has been set.
-func (o *UpdateDatastores200ResponseDatastore) IsSetDrsEnabled() bool {
-	if o != nil && !IsNil(o.DrsEnabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetDrsEnabled gets a reference to the given bool and assigns it to the DrsEnabled field.
@@ -516,15 +414,6 @@ func (o *UpdateDatastores200ResponseDatastore) GetActiveOk() (*bool, bool) {
 	return o.Active, true
 }
 
-// IsSetActive returns a boolean if a field has been set.
-func (o *UpdateDatastores200ResponseDatastore) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
-}
-
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *UpdateDatastores200ResponseDatastore) SetActive(v bool) {
 	o.Active = &v
@@ -546,15 +435,6 @@ func (o *UpdateDatastores200ResponseDatastore) GetAllowWriteOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.AllowWrite, true
-}
-
-// IsSetAllowWrite returns a boolean if a field has been set.
-func (o *UpdateDatastores200ResponseDatastore) IsSetAllowWrite() bool {
-	if o != nil && !IsNil(o.AllowWrite) {
-		return true
-	}
-
-	return false
 }
 
 // SetAllowWrite gets a reference to the given bool and assigns it to the AllowWrite field.
@@ -580,15 +460,6 @@ func (o *UpdateDatastores200ResponseDatastore) GetDefaultStoreOk() (*bool, bool)
 	return o.DefaultStore, true
 }
 
-// IsSetDefaultStore returns a boolean if a field has been set.
-func (o *UpdateDatastores200ResponseDatastore) IsSetDefaultStore() bool {
-	if o != nil && !IsNil(o.DefaultStore) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultStore gets a reference to the given bool and assigns it to the DefaultStore field.
 func (o *UpdateDatastores200ResponseDatastore) SetDefaultStore(v bool) {
 	o.DefaultStore = &v
@@ -610,15 +481,6 @@ func (o *UpdateDatastores200ResponseDatastore) GetOnlineOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Online, true
-}
-
-// IsSetOnline returns a boolean if a field has been set.
-func (o *UpdateDatastores200ResponseDatastore) IsSetOnline() bool {
-	if o != nil && !IsNil(o.Online) {
-		return true
-	}
-
-	return false
 }
 
 // SetOnline gets a reference to the given bool and assigns it to the Online field.
@@ -644,15 +506,6 @@ func (o *UpdateDatastores200ResponseDatastore) GetAllowReadOk() (*bool, bool) {
 	return o.AllowRead, true
 }
 
-// IsSetAllowRead returns a boolean if a field has been set.
-func (o *UpdateDatastores200ResponseDatastore) IsSetAllowRead() bool {
-	if o != nil && !IsNil(o.AllowRead) {
-		return true
-	}
-
-	return false
-}
-
 // SetAllowRead gets a reference to the given bool and assigns it to the AllowRead field.
 func (o *UpdateDatastores200ResponseDatastore) SetAllowRead(v bool) {
 	o.AllowRead = &v
@@ -674,15 +527,6 @@ func (o *UpdateDatastores200ResponseDatastore) GetAllowProvisionOk() (*bool, boo
 		return nil, false
 	}
 	return o.AllowProvision, true
-}
-
-// IsSetAllowProvision returns a boolean if a field has been set.
-func (o *UpdateDatastores200ResponseDatastore) IsSetAllowProvision() bool {
-	if o != nil && !IsNil(o.AllowProvision) {
-		return true
-	}
-
-	return false
 }
 
 // SetAllowProvision gets a reference to the given bool and assigns it to the AllowProvision field.
@@ -708,15 +552,6 @@ func (o *UpdateDatastores200ResponseDatastore) GetHeartBeatTargetOk() (*bool, bo
 	return o.HeartBeatTarget, true
 }
 
-// IsSetHeartBeatTarget returns a boolean if a field has been set.
-func (o *UpdateDatastores200ResponseDatastore) IsSetHeartBeatTarget() bool {
-	if o != nil && !IsNil(o.HeartBeatTarget) {
-		return true
-	}
-
-	return false
-}
-
 // SetHeartBeatTarget gets a reference to the given bool and assigns it to the HeartBeatTarget field.
 func (o *UpdateDatastores200ResponseDatastore) SetHeartBeatTarget(v bool) {
 	o.HeartBeatTarget = &v
@@ -738,15 +573,6 @@ func (o *UpdateDatastores200ResponseDatastore) GetRefTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.RefType, true
-}
-
-// IsSetRefType returns a boolean if a field has been set.
-func (o *UpdateDatastores200ResponseDatastore) IsSetRefType() bool {
-	if o != nil && !IsNil(o.RefType) {
-		return true
-	}
-
-	return false
 }
 
 // SetRefType gets a reference to the given string and assigns it to the RefType field.
@@ -772,15 +598,6 @@ func (o *UpdateDatastores200ResponseDatastore) GetRefIdOk() (*int64, bool) {
 	return o.RefId, true
 }
 
-// IsSetRefId returns a boolean if a field has been set.
-func (o *UpdateDatastores200ResponseDatastore) IsSetRefId() bool {
-	if o != nil && !IsNil(o.RefId) {
-		return true
-	}
-
-	return false
-}
-
 // SetRefId gets a reference to the given int64 and assigns it to the RefId field.
 func (o *UpdateDatastores200ResponseDatastore) SetRefId(v int64) {
 	o.RefId = &v
@@ -802,15 +619,6 @@ func (o *UpdateDatastores200ResponseDatastore) GetExternalIdOk() (*string, bool)
 		return nil, false
 	}
 	return o.ExternalId, true
-}
-
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *UpdateDatastores200ResponseDatastore) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
-		return true
-	}
-
-	return false
 }
 
 // SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
@@ -836,15 +644,6 @@ func (o *UpdateDatastores200ResponseDatastore) GetExternalPathOk() (*string, boo
 	return o.ExternalPath, true
 }
 
-// IsSetExternalPath returns a boolean if a field has been set.
-func (o *UpdateDatastores200ResponseDatastore) IsSetExternalPath() bool {
-	if o != nil && !IsNil(o.ExternalPath) {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalPath gets a reference to the given string and assigns it to the ExternalPath field.
 func (o *UpdateDatastores200ResponseDatastore) SetExternalPath(v string) {
 	o.ExternalPath = &v
@@ -866,15 +665,6 @@ func (o *UpdateDatastores200ResponseDatastore) GetExternalTypeOk() (*string, boo
 		return nil, false
 	}
 	return o.ExternalType, true
-}
-
-// IsSetExternalType returns a boolean if a field has been set.
-func (o *UpdateDatastores200ResponseDatastore) IsSetExternalType() bool {
-	if o != nil && !IsNil(o.ExternalType) {
-		return true
-	}
-
-	return false
 }
 
 // SetExternalType gets a reference to the given string and assigns it to the ExternalType field.
@@ -900,15 +690,6 @@ func (o *UpdateDatastores200ResponseDatastore) GetZoneOk() (*UpdateDatastores200
 	return o.Zone, true
 }
 
-// IsSetZone returns a boolean if a field has been set.
-func (o *UpdateDatastores200ResponseDatastore) IsSetZone() bool {
-	if o != nil && !IsNil(o.Zone) {
-		return true
-	}
-
-	return false
-}
-
 // SetZone gets a reference to the given UpdateDatastores200ResponseDatastoreAllOfZone and assigns it to the Zone field.
 func (o *UpdateDatastores200ResponseDatastore) SetZone(v UpdateDatastores200ResponseDatastoreAllOfZone) {
 	o.Zone = &v
@@ -930,15 +711,6 @@ func (o *UpdateDatastores200ResponseDatastore) GetZonePoolOk() (*UpdateDatastore
 		return nil, false
 	}
 	return o.ZonePool, true
-}
-
-// IsSetZonePool returns a boolean if a field has been set.
-func (o *UpdateDatastores200ResponseDatastore) IsSetZonePool() bool {
-	if o != nil && !IsNil(o.ZonePool) {
-		return true
-	}
-
-	return false
 }
 
 // SetZonePool gets a reference to the given UpdateDatastores200ResponseDatastoreAllOfZonePool and assigns it to the ZonePool field.
@@ -964,15 +736,6 @@ func (o *UpdateDatastores200ResponseDatastore) GetOwnerOk() (*UpdateDatastores20
 	return o.Owner, true
 }
 
-// IsSetOwner returns a boolean if a field has been set.
-func (o *UpdateDatastores200ResponseDatastore) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
-		return true
-	}
-
-	return false
-}
-
 // SetOwner gets a reference to the given UpdateDatastores200ResponseDatastoreAllOfOwner and assigns it to the Owner field.
 func (o *UpdateDatastores200ResponseDatastore) SetOwner(v UpdateDatastores200ResponseDatastoreAllOfOwner) {
 	o.Owner = &v
@@ -994,15 +757,6 @@ func (o *UpdateDatastores200ResponseDatastore) GetDatastoresOk() ([]UpdateDatast
 		return nil, false
 	}
 	return o.Datastores, true
-}
-
-// IsSetDatastores returns a boolean if a field has been set.
-func (o *UpdateDatastores200ResponseDatastore) IsSetDatastores() bool {
-	if o != nil && !IsNil(o.Datastores) {
-		return true
-	}
-
-	return false
 }
 
 // SetDatastores gets a reference to the given []UpdateDatastores200ResponseDatastoreAllOfDatastoresInner and assigns it to the Datastores field.
@@ -1028,15 +782,6 @@ func (o *UpdateDatastores200ResponseDatastore) GetLocationsOk() ([]UpdateDatasto
 	return o.Locations, true
 }
 
-// IsSetLocations returns a boolean if a field has been set.
-func (o *UpdateDatastores200ResponseDatastore) IsSetLocations() bool {
-	if o != nil && !IsNil(o.Locations) {
-		return true
-	}
-
-	return false
-}
-
 // SetLocations gets a reference to the given []UpdateDatastores200ResponseDatastoreAllOfLocationsInner and assigns it to the Locations field.
 func (o *UpdateDatastores200ResponseDatastore) SetLocations(v []UpdateDatastores200ResponseDatastoreAllOfLocationsInner) {
 	o.Locations = v
@@ -1058,15 +803,6 @@ func (o *UpdateDatastores200ResponseDatastore) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *UpdateDatastores200ResponseDatastore) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

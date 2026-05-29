@@ -63,15 +63,6 @@ func (o *GetNetworkRouter200ResponseNetworkRouterNetworkServer) GetIdOk() (*int6
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetNetworkRouter200ResponseNetworkRouterNetworkServer) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetNetworkRouter200ResponseNetworkRouterNetworkServer) SetId(v int64) {
 	o.Id = &v
@@ -95,15 +86,6 @@ func (o *GetNetworkRouter200ResponseNetworkRouterNetworkServer) GetNameOk() (*st
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *GetNetworkRouter200ResponseNetworkRouterNetworkServer) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *GetNetworkRouter200ResponseNetworkRouterNetworkServer) SetName(v string) {
 	o.Name = &v
@@ -125,15 +107,6 @@ func (o *GetNetworkRouter200ResponseNetworkRouterNetworkServer) GetIntegrationOk
 		return nil, false
 	}
 	return o.Integration, true
-}
-
-// IsSetIntegration returns a boolean if a field has been set.
-func (o *GetNetworkRouter200ResponseNetworkRouterNetworkServer) IsSetIntegration() bool {
-	if o != nil && !IsNil(o.Integration) {
-		return true
-	}
-
-	return false
 }
 
 // SetIntegration gets a reference to the given GetNetworkRouter200ResponseNetworkRouterNetworkServerIntegration and assigns it to the Integration field.

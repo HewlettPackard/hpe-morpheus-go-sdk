@@ -62,15 +62,6 @@ func (o *ListClouds200ResponseAllOfZonesInnerAccount) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListClouds200ResponseAllOfZonesInnerAccount) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListClouds200ResponseAllOfZonesInnerAccount) SetId(v int64) {
 	o.Id = &v
@@ -92,15 +83,6 @@ func (o *ListClouds200ResponseAllOfZonesInnerAccount) GetNameOk() (*string, bool
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListClouds200ResponseAllOfZonesInnerAccount) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.

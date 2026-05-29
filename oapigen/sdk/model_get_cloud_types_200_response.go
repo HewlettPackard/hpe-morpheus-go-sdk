@@ -61,15 +61,6 @@ func (o *GetCloudTypes200Response) GetZoneTypeOk() (*GetCloudTypes200ResponseZon
 	return o.ZoneType, true
 }
 
-// IsSetZoneType returns a boolean if a field has been set.
-func (o *GetCloudTypes200Response) IsSetZoneType() bool {
-	if o != nil && !IsNil(o.ZoneType) {
-		return true
-	}
-
-	return false
-}
-
 // SetZoneType gets a reference to the given GetCloudTypes200ResponseZoneType and assigns it to the ZoneType field.
 func (o *GetCloudTypes200Response) SetZoneType(v GetCloudTypes200ResponseZoneType) {
 	o.ZoneType = &v

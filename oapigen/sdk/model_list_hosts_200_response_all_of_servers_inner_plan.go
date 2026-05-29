@@ -64,28 +64,9 @@ func (o *ListHosts200ResponseAllOfServersInnerPlan) GetIdOk() (*int64, bool) {
 	return o.Id.Get(), o.Id.IsSet()
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListHosts200ResponseAllOfServersInnerPlan) IsSetId() bool {
-	if o != nil && o.Id.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given NullableInt64 and assigns it to the Id field.
 func (o *ListHosts200ResponseAllOfServersInnerPlan) SetId(v int64) {
 	o.Id.Set(&v)
-}
-
-// SetIdNil sets the value for Id to be an explicit nil
-func (o *ListHosts200ResponseAllOfServersInnerPlan) SetIdNil() {
-	o.Id.Set(nil)
-}
-
-// UnsetId ensures that no value is present for Id, not even an explicit nil
-func (o *ListHosts200ResponseAllOfServersInnerPlan) UnsetId() {
-	o.Id.Unset()
 }
 
 // GetCode returns the Code field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -107,28 +88,9 @@ func (o *ListHosts200ResponseAllOfServersInnerPlan) GetCodeOk() (*string, bool) 
 	return o.Code.Get(), o.Code.IsSet()
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *ListHosts200ResponseAllOfServersInnerPlan) IsSetCode() bool {
-	if o != nil && o.Code.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *ListHosts200ResponseAllOfServersInnerPlan) SetCode(v string) {
 	o.Code.Set(&v)
-}
-
-// SetCodeNil sets the value for Code to be an explicit nil
-func (o *ListHosts200ResponseAllOfServersInnerPlan) SetCodeNil() {
-	o.Code.Set(nil)
-}
-
-// UnsetCode ensures that no value is present for Code, not even an explicit nil
-func (o *ListHosts200ResponseAllOfServersInnerPlan) UnsetCode() {
-	o.Code.Unset()
 }
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -150,28 +112,9 @@ func (o *ListHosts200ResponseAllOfServersInnerPlan) GetNameOk() (*string, bool) 
 	return o.Name.Get(), o.Name.IsSet()
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ListHosts200ResponseAllOfServersInnerPlan) IsSetName() bool {
-	if o != nil && o.Name.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given NullableString and assigns it to the Name field.
 func (o *ListHosts200ResponseAllOfServersInnerPlan) SetName(v string) {
 	o.Name.Set(&v)
-}
-
-// SetNameNil sets the value for Name to be an explicit nil
-func (o *ListHosts200ResponseAllOfServersInnerPlan) SetNameNil() {
-	o.Name.Set(nil)
-}
-
-// UnsetName ensures that no value is present for Name, not even an explicit nil
-func (o *ListHosts200ResponseAllOfServersInnerPlan) UnsetName() {
-	o.Name.Unset()
 }
 
 func (o ListHosts200ResponseAllOfServersInnerPlan) MarshalJSON() ([]byte, error) {

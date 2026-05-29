@@ -73,15 +73,6 @@ func (o *InitializeSystemRequestSystem) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *InitializeSystemRequestSystem) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *InitializeSystemRequestSystem) SetName(v string) {
 	o.Name = &v
@@ -103,15 +94,6 @@ func (o *InitializeSystemRequestSystem) GetDescriptionOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *InitializeSystemRequestSystem) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -137,15 +119,6 @@ func (o *InitializeSystemRequestSystem) GetEnabledOk() (*bool, bool) {
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *InitializeSystemRequestSystem) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *InitializeSystemRequestSystem) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -167,15 +140,6 @@ func (o *InitializeSystemRequestSystem) GetExternalIdOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ExternalId, true
-}
-
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *InitializeSystemRequestSystem) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
-		return true
-	}
-
-	return false
 }
 
 // SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
@@ -201,15 +165,6 @@ func (o *InitializeSystemRequestSystem) GetConfigOk() (map[string]interface{}, b
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *InitializeSystemRequestSystem) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
 func (o *InitializeSystemRequestSystem) SetConfig(v map[string]interface{}) {
 	o.Config = v
@@ -233,15 +188,6 @@ func (o *InitializeSystemRequestSystem) GetLayoutOk() (*InitializeSystemRequestS
 	return o.Layout, true
 }
 
-// IsSetLayout returns a boolean if a field has been set.
-func (o *InitializeSystemRequestSystem) IsSetLayout() bool {
-	if o != nil && !IsNil(o.Layout) {
-		return true
-	}
-
-	return false
-}
-
 // SetLayout gets a reference to the given InitializeSystemRequestSystemLayout and assigns it to the Layout field.
 func (o *InitializeSystemRequestSystem) SetLayout(v InitializeSystemRequestSystemLayout) {
 	o.Layout = &v
@@ -263,15 +209,6 @@ func (o *InitializeSystemRequestSystem) GetComponentsOk() ([]InitializeSystemReq
 		return nil, false
 	}
 	return o.Components, true
-}
-
-// IsSetComponents returns a boolean if a field has been set.
-func (o *InitializeSystemRequestSystem) IsSetComponents() bool {
-	if o != nil && !IsNil(o.Components) {
-		return true
-	}
-
-	return false
 }
 
 // SetComponents gets a reference to the given []InitializeSystemRequestSystemComponentsInner and assigns it to the Components field.

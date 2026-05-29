@@ -62,15 +62,6 @@ func (o *ListCloudFolders200Response) GetFoldersOk() ([]ListCloudFolders200Respo
 	return o.Folders, true
 }
 
-// IsSetFolders returns a boolean if a field has been set.
-func (o *ListCloudFolders200Response) IsSetFolders() bool {
-	if o != nil && !IsNil(o.Folders) {
-		return true
-	}
-
-	return false
-}
-
 // SetFolders gets a reference to the given []ListCloudFolders200ResponseAllOfFoldersInner and assigns it to the Folders field.
 func (o *ListCloudFolders200Response) SetFolders(v []ListCloudFolders200ResponseAllOfFoldersInner) {
 	o.Folders = v
@@ -92,15 +83,6 @@ func (o *ListCloudFolders200Response) GetMetaOk() (*ListApprovals200ResponseAllO
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListCloudFolders200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

@@ -77,15 +77,6 @@ func (o *PolicyCloudCreatePolicyType) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *PolicyCloudCreatePolicyType) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *PolicyCloudCreatePolicyType) SetCode(v string) {
 	o.Code = &v
@@ -107,15 +98,6 @@ func (o *PolicyCloudCreatePolicyType) GetConfigOk() (*PolicyCloudCreatePolicyTyp
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *PolicyCloudCreatePolicyType) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given PolicyCloudCreatePolicyTypeConfig and assigns it to the Config field.
@@ -141,15 +123,6 @@ func (o *PolicyCloudCreatePolicyType) GetEnabledOk() (*bool, bool) {
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *PolicyCloudCreatePolicyType) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *PolicyCloudCreatePolicyType) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -171,15 +144,6 @@ func (o *PolicyCloudCreatePolicyType) GetRefTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.RefType, true
-}
-
-// IsSetRefType returns a boolean if a field has been set.
-func (o *PolicyCloudCreatePolicyType) IsSetRefType() bool {
-	if o != nil && !IsNil(o.RefType) {
-		return true
-	}
-
-	return false
 }
 
 // SetRefType gets a reference to the given string and assigns it to the RefType field.
@@ -205,15 +169,6 @@ func (o *PolicyCloudCreatePolicyType) GetRefIdOk() (*int64, bool) {
 	return o.RefId, true
 }
 
-// IsSetRefId returns a boolean if a field has been set.
-func (o *PolicyCloudCreatePolicyType) IsSetRefId() bool {
-	if o != nil && !IsNil(o.RefId) {
-		return true
-	}
-
-	return false
-}
-
 // SetRefId gets a reference to the given int64 and assigns it to the RefId field.
 func (o *PolicyCloudCreatePolicyType) SetRefId(v int64) {
 	o.RefId = &v
@@ -237,15 +192,6 @@ func (o *PolicyCloudCreatePolicyType) GetAccountsOk() ([]int64, bool) {
 	return o.Accounts, true
 }
 
-// IsSetAccounts returns a boolean if a field has been set.
-func (o *PolicyCloudCreatePolicyType) IsSetAccounts() bool {
-	if o != nil && !IsNil(o.Accounts) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccounts gets a reference to the given []int64 and assigns it to the Accounts field.
 func (o *PolicyCloudCreatePolicyType) SetAccounts(v []int64) {
 	o.Accounts = v
@@ -267,15 +213,6 @@ func (o *PolicyCloudCreatePolicyType) GetEachUserOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.EachUser, true
-}
-
-// IsSetEachUser returns a boolean if a field has been set.
-func (o *PolicyCloudCreatePolicyType) IsSetEachUser() bool {
-	if o != nil && !IsNil(o.EachUser) {
-		return true
-	}
-
-	return false
 }
 
 // SetEachUser gets a reference to the given bool and assigns it to the EachUser field.

@@ -68,15 +68,6 @@ func (o *UpdateStorageVolumesRequestStorageVolume) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateStorageVolumesRequestStorageVolume) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *UpdateStorageVolumesRequestStorageVolume) SetName(v string) {
 	o.Name = &v
@@ -98,15 +89,6 @@ func (o *UpdateStorageVolumesRequestStorageVolume) GetTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *UpdateStorageVolumesRequestStorageVolume) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.
@@ -132,15 +114,6 @@ func (o *UpdateStorageVolumesRequestStorageVolume) GetConfigOk() (map[string]int
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *UpdateStorageVolumesRequestStorageVolume) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
 func (o *UpdateStorageVolumesRequestStorageVolume) SetConfig(v map[string]interface{}) {
 	o.Config = v
@@ -164,15 +137,6 @@ func (o *UpdateStorageVolumesRequestStorageVolume) GetStorageServerOk() (*Update
 	return o.StorageServer, true
 }
 
-// IsSetStorageServer returns a boolean if a field has been set.
-func (o *UpdateStorageVolumesRequestStorageVolume) IsSetStorageServer() bool {
-	if o != nil && !IsNil(o.StorageServer) {
-		return true
-	}
-
-	return false
-}
-
 // SetStorageServer gets a reference to the given UpdateStorageVolumesRequestStorageVolumeStorageServer and assigns it to the StorageServer field.
 func (o *UpdateStorageVolumesRequestStorageVolume) SetStorageServer(v UpdateStorageVolumesRequestStorageVolumeStorageServer) {
 	o.StorageServer = &v
@@ -194,15 +158,6 @@ func (o *UpdateStorageVolumesRequestStorageVolume) GetStorageGroupOk() (*UpdateS
 		return nil, false
 	}
 	return o.StorageGroup, true
-}
-
-// IsSetStorageGroup returns a boolean if a field has been set.
-func (o *UpdateStorageVolumesRequestStorageVolume) IsSetStorageGroup() bool {
-	if o != nil && !IsNil(o.StorageGroup) {
-		return true
-	}
-
-	return false
 }
 
 // SetStorageGroup gets a reference to the given UpdateStorageVolumesRequestStorageVolumeStorageGroup and assigns it to the StorageGroup field.

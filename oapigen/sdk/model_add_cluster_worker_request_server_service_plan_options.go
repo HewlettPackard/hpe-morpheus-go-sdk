@@ -66,15 +66,6 @@ func (o *AddClusterWorkerRequestServerServicePlanOptions) GetMaxCoresOk() (*int6
 	return o.MaxCores, true
 }
 
-// IsSetMaxCores returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServerServicePlanOptions) IsSetMaxCores() bool {
-	if o != nil && !IsNil(o.MaxCores) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxCores gets a reference to the given int64 and assigns it to the MaxCores field.
 func (o *AddClusterWorkerRequestServerServicePlanOptions) SetMaxCores(v int64) {
 	o.MaxCores = &v
@@ -98,15 +89,6 @@ func (o *AddClusterWorkerRequestServerServicePlanOptions) GetCoresPerSocketOk() 
 	return o.CoresPerSocket, true
 }
 
-// IsSetCoresPerSocket returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServerServicePlanOptions) IsSetCoresPerSocket() bool {
-	if o != nil && !IsNil(o.CoresPerSocket) {
-		return true
-	}
-
-	return false
-}
-
 // SetCoresPerSocket gets a reference to the given int64 and assigns it to the CoresPerSocket field.
 func (o *AddClusterWorkerRequestServerServicePlanOptions) SetCoresPerSocket(v int64) {
 	o.CoresPerSocket = &v
@@ -128,15 +110,6 @@ func (o *AddClusterWorkerRequestServerServicePlanOptions) GetMaxMemoryOk() (*int
 		return nil, false
 	}
 	return o.MaxMemory, true
-}
-
-// IsSetMaxMemory returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServerServicePlanOptions) IsSetMaxMemory() bool {
-	if o != nil && !IsNil(o.MaxMemory) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxMemory gets a reference to the given int64 and assigns it to the MaxMemory field.

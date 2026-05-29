@@ -62,15 +62,6 @@ func (o *UpdateClouds200Response) GetZoneOk() (*UpdateClouds200ResponseAllOfZone
 	return o.Zone, true
 }
 
-// IsSetZone returns a boolean if a field has been set.
-func (o *UpdateClouds200Response) IsSetZone() bool {
-	if o != nil && !IsNil(o.Zone) {
-		return true
-	}
-
-	return false
-}
-
 // SetZone gets a reference to the given UpdateClouds200ResponseAllOfZone and assigns it to the Zone field.
 func (o *UpdateClouds200Response) SetZone(v UpdateClouds200ResponseAllOfZone) {
 	o.Zone = &v
@@ -92,15 +83,6 @@ func (o *UpdateClouds200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *UpdateClouds200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

@@ -64,15 +64,6 @@ func (o *GetEnvVariables200Response) GetEnvsOk() ([]GetEnvVariables200ResponseEn
 	return o.Envs, true
 }
 
-// IsSetEnvs returns a boolean if a field has been set.
-func (o *GetEnvVariables200Response) IsSetEnvs() bool {
-	if o != nil && !IsNil(o.Envs) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnvs gets a reference to the given []GetEnvVariables200ResponseEnvsInner and assigns it to the Envs field.
 func (o *GetEnvVariables200Response) SetEnvs(v []GetEnvVariables200ResponseEnvsInner) {
 	o.Envs = v
@@ -96,15 +87,6 @@ func (o *GetEnvVariables200Response) GetReadOnlyEnvsOk() (*map[string]GetEnvVari
 	return o.ReadOnlyEnvs, true
 }
 
-// IsSetReadOnlyEnvs returns a boolean if a field has been set.
-func (o *GetEnvVariables200Response) IsSetReadOnlyEnvs() bool {
-	if o != nil && !IsNil(o.ReadOnlyEnvs) {
-		return true
-	}
-
-	return false
-}
-
 // SetReadOnlyEnvs gets a reference to the given map[string]GetEnvVariables200ResponseReadOnlyEnvsValue and assigns it to the ReadOnlyEnvs field.
 func (o *GetEnvVariables200Response) SetReadOnlyEnvs(v map[string]GetEnvVariables200ResponseReadOnlyEnvsValue) {
 	o.ReadOnlyEnvs = &v
@@ -126,15 +108,6 @@ func (o *GetEnvVariables200Response) GetImportedEnvsOk() (*map[string]GetEnvVari
 		return nil, false
 	}
 	return o.ImportedEnvs, true
-}
-
-// IsSetImportedEnvs returns a boolean if a field has been set.
-func (o *GetEnvVariables200Response) IsSetImportedEnvs() bool {
-	if o != nil && !IsNil(o.ImportedEnvs) {
-		return true
-	}
-
-	return false
 }
 
 // SetImportedEnvs gets a reference to the given map[string]GetEnvVariables200ResponseImportedEnvsValue and assigns it to the ImportedEnvs field.

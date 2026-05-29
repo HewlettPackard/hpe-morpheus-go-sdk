@@ -124,15 +124,6 @@ func (o *Zone) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *Zone) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *Zone) SetId(v int64) {
 	o.Id = &v
@@ -154,15 +145,6 @@ func (o *Zone) GetUuidOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Uuid, true
-}
-
-// IsSetUuid returns a boolean if a field has been set.
-func (o *Zone) IsSetUuid() bool {
-	if o != nil && !IsNil(o.Uuid) {
-		return true
-	}
-
-	return false
 }
 
 // SetUuid gets a reference to the given string and assigns it to the Uuid field.
@@ -189,28 +171,9 @@ func (o *Zone) GetExternalIdOk() (*string, bool) {
 	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *Zone) IsSetExternalId() bool {
-	if o != nil && o.ExternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *Zone) SetExternalId(v string) {
 	o.ExternalId.Set(&v)
-}
-
-// SetExternalIdNil sets the value for ExternalId to be an explicit nil
-func (o *Zone) SetExternalIdNil() {
-	o.ExternalId.Set(nil)
-}
-
-// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-func (o *Zone) UnsetExternalId() {
-	o.ExternalId.Unset()
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -229,15 +192,6 @@ func (o *Zone) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *Zone) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -263,15 +217,6 @@ func (o *Zone) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *Zone) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *Zone) SetCode(v string) {
 	o.Code = &v
@@ -293,15 +238,6 @@ func (o *Zone) GetLabelsOk() ([]string, bool) {
 		return nil, false
 	}
 	return o.Labels, true
-}
-
-// IsSetLabels returns a boolean if a field has been set.
-func (o *Zone) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
 }
 
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
@@ -328,28 +264,9 @@ func (o *Zone) GetLocationOk() (*string, bool) {
 	return o.Location.Get(), o.Location.IsSet()
 }
 
-// IsSetLocation returns a boolean if a field has been set.
-func (o *Zone) IsSetLocation() bool {
-	if o != nil && o.Location.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLocation gets a reference to the given NullableString and assigns it to the Location field.
 func (o *Zone) SetLocation(v string) {
 	o.Location.Set(&v)
-}
-
-// SetLocationNil sets the value for Location to be an explicit nil
-func (o *Zone) SetLocationNil() {
-	o.Location.Set(nil)
-}
-
-// UnsetLocation ensures that no value is present for Location, not even an explicit nil
-func (o *Zone) UnsetLocation() {
-	o.Location.Unset()
 }
 
 // GetOwner returns the Owner field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -371,28 +288,9 @@ func (o *Zone) GetOwnerOk() (*ZoneOwner, bool) {
 	return o.Owner.Get(), o.Owner.IsSet()
 }
 
-// IsSetOwner returns a boolean if a field has been set.
-func (o *Zone) IsSetOwner() bool {
-	if o != nil && o.Owner.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetOwner gets a reference to the given NullableZoneOwner and assigns it to the Owner field.
 func (o *Zone) SetOwner(v ZoneOwner) {
 	o.Owner.Set(&v)
-}
-
-// SetOwnerNil sets the value for Owner to be an explicit nil
-func (o *Zone) SetOwnerNil() {
-	o.Owner.Set(nil)
-}
-
-// UnsetOwner ensures that no value is present for Owner, not even an explicit nil
-func (o *Zone) UnsetOwner() {
-	o.Owner.Unset()
 }
 
 // GetAccountId returns the AccountId field value if set, zero value otherwise.
@@ -411,15 +309,6 @@ func (o *Zone) GetAccountIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.AccountId, true
-}
-
-// IsSetAccountId returns a boolean if a field has been set.
-func (o *Zone) IsSetAccountId() bool {
-	if o != nil && !IsNil(o.AccountId) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccountId gets a reference to the given int64 and assigns it to the AccountId field.
@@ -446,28 +335,9 @@ func (o *Zone) GetAccountOk() (*ZoneAccount, bool) {
 	return o.Account.Get(), o.Account.IsSet()
 }
 
-// IsSetAccount returns a boolean if a field has been set.
-func (o *Zone) IsSetAccount() bool {
-	if o != nil && o.Account.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAccount gets a reference to the given NullableZoneAccount and assigns it to the Account field.
 func (o *Zone) SetAccount(v ZoneAccount) {
 	o.Account.Set(&v)
-}
-
-// SetAccountNil sets the value for Account to be an explicit nil
-func (o *Zone) SetAccountNil() {
-	o.Account.Set(nil)
-}
-
-// UnsetAccount ensures that no value is present for Account, not even an explicit nil
-func (o *Zone) UnsetAccount() {
-	o.Account.Unset()
 }
 
 // GetVisibility returns the Visibility field value if set, zero value otherwise.
@@ -486,15 +356,6 @@ func (o *Zone) GetVisibilityOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *Zone) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -520,15 +381,6 @@ func (o *Zone) GetEnabledOk() (*bool, bool) {
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *Zone) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *Zone) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -550,15 +402,6 @@ func (o *Zone) GetStatusOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *Zone) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -585,28 +428,9 @@ func (o *Zone) GetStatusMessageOk() (*string, bool) {
 	return o.StatusMessage.Get(), o.StatusMessage.IsSet()
 }
 
-// IsSetStatusMessage returns a boolean if a field has been set.
-func (o *Zone) IsSetStatusMessage() bool {
-	if o != nil && o.StatusMessage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusMessage gets a reference to the given NullableString and assigns it to the StatusMessage field.
 func (o *Zone) SetStatusMessage(v string) {
 	o.StatusMessage.Set(&v)
-}
-
-// SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
-func (o *Zone) SetStatusMessageNil() {
-	o.StatusMessage.Set(nil)
-}
-
-// UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
-func (o *Zone) UnsetStatusMessage() {
-	o.StatusMessage.Unset()
 }
 
 // GetStatusDate returns the StatusDate field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -628,28 +452,9 @@ func (o *Zone) GetStatusDateOk() (*time.Time, bool) {
 	return o.StatusDate.Get(), o.StatusDate.IsSet()
 }
 
-// IsSetStatusDate returns a boolean if a field has been set.
-func (o *Zone) IsSetStatusDate() bool {
-	if o != nil && o.StatusDate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusDate gets a reference to the given NullableTime and assigns it to the StatusDate field.
 func (o *Zone) SetStatusDate(v time.Time) {
 	o.StatusDate.Set(&v)
-}
-
-// SetStatusDateNil sets the value for StatusDate to be an explicit nil
-func (o *Zone) SetStatusDateNil() {
-	o.StatusDate.Set(nil)
-}
-
-// UnsetStatusDate ensures that no value is present for StatusDate, not even an explicit nil
-func (o *Zone) UnsetStatusDate() {
-	o.StatusDate.Unset()
 }
 
 // GetCostStatus returns the CostStatus field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -671,28 +476,9 @@ func (o *Zone) GetCostStatusOk() (*string, bool) {
 	return o.CostStatus.Get(), o.CostStatus.IsSet()
 }
 
-// IsSetCostStatus returns a boolean if a field has been set.
-func (o *Zone) IsSetCostStatus() bool {
-	if o != nil && o.CostStatus.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCostStatus gets a reference to the given NullableString and assigns it to the CostStatus field.
 func (o *Zone) SetCostStatus(v string) {
 	o.CostStatus.Set(&v)
-}
-
-// SetCostStatusNil sets the value for CostStatus to be an explicit nil
-func (o *Zone) SetCostStatusNil() {
-	o.CostStatus.Set(nil)
-}
-
-// UnsetCostStatus ensures that no value is present for CostStatus, not even an explicit nil
-func (o *Zone) UnsetCostStatus() {
-	o.CostStatus.Unset()
 }
 
 // GetCostStatusMessage returns the CostStatusMessage field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -714,28 +500,9 @@ func (o *Zone) GetCostStatusMessageOk() (*string, bool) {
 	return o.CostStatusMessage.Get(), o.CostStatusMessage.IsSet()
 }
 
-// IsSetCostStatusMessage returns a boolean if a field has been set.
-func (o *Zone) IsSetCostStatusMessage() bool {
-	if o != nil && o.CostStatusMessage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCostStatusMessage gets a reference to the given NullableString and assigns it to the CostStatusMessage field.
 func (o *Zone) SetCostStatusMessage(v string) {
 	o.CostStatusMessage.Set(&v)
-}
-
-// SetCostStatusMessageNil sets the value for CostStatusMessage to be an explicit nil
-func (o *Zone) SetCostStatusMessageNil() {
-	o.CostStatusMessage.Set(nil)
-}
-
-// UnsetCostStatusMessage ensures that no value is present for CostStatusMessage, not even an explicit nil
-func (o *Zone) UnsetCostStatusMessage() {
-	o.CostStatusMessage.Unset()
 }
 
 // GetCostStatusDate returns the CostStatusDate field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -757,28 +524,9 @@ func (o *Zone) GetCostStatusDateOk() (*time.Time, bool) {
 	return o.CostStatusDate.Get(), o.CostStatusDate.IsSet()
 }
 
-// IsSetCostStatusDate returns a boolean if a field has been set.
-func (o *Zone) IsSetCostStatusDate() bool {
-	if o != nil && o.CostStatusDate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCostStatusDate gets a reference to the given NullableTime and assigns it to the CostStatusDate field.
 func (o *Zone) SetCostStatusDate(v time.Time) {
 	o.CostStatusDate.Set(&v)
-}
-
-// SetCostStatusDateNil sets the value for CostStatusDate to be an explicit nil
-func (o *Zone) SetCostStatusDateNil() {
-	o.CostStatusDate.Set(nil)
-}
-
-// UnsetCostStatusDate ensures that no value is present for CostStatusDate, not even an explicit nil
-func (o *Zone) UnsetCostStatusDate() {
-	o.CostStatusDate.Unset()
 }
 
 // GetCostLastSyncDuration returns the CostLastSyncDuration field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -800,28 +548,9 @@ func (o *Zone) GetCostLastSyncDurationOk() (*int64, bool) {
 	return o.CostLastSyncDuration.Get(), o.CostLastSyncDuration.IsSet()
 }
 
-// IsSetCostLastSyncDuration returns a boolean if a field has been set.
-func (o *Zone) IsSetCostLastSyncDuration() bool {
-	if o != nil && o.CostLastSyncDuration.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCostLastSyncDuration gets a reference to the given NullableInt64 and assigns it to the CostLastSyncDuration field.
 func (o *Zone) SetCostLastSyncDuration(v int64) {
 	o.CostLastSyncDuration.Set(&v)
-}
-
-// SetCostLastSyncDurationNil sets the value for CostLastSyncDuration to be an explicit nil
-func (o *Zone) SetCostLastSyncDurationNil() {
-	o.CostLastSyncDuration.Set(nil)
-}
-
-// UnsetCostLastSyncDuration ensures that no value is present for CostLastSyncDuration, not even an explicit nil
-func (o *Zone) UnsetCostLastSyncDuration() {
-	o.CostLastSyncDuration.Unset()
 }
 
 // GetCostLastSync returns the CostLastSync field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -843,28 +572,9 @@ func (o *Zone) GetCostLastSyncOk() (*time.Time, bool) {
 	return o.CostLastSync.Get(), o.CostLastSync.IsSet()
 }
 
-// IsSetCostLastSync returns a boolean if a field has been set.
-func (o *Zone) IsSetCostLastSync() bool {
-	if o != nil && o.CostLastSync.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCostLastSync gets a reference to the given NullableTime and assigns it to the CostLastSync field.
 func (o *Zone) SetCostLastSync(v time.Time) {
 	o.CostLastSync.Set(&v)
-}
-
-// SetCostLastSyncNil sets the value for CostLastSync to be an explicit nil
-func (o *Zone) SetCostLastSyncNil() {
-	o.CostLastSync.Set(nil)
-}
-
-// UnsetCostLastSync ensures that no value is present for CostLastSync, not even an explicit nil
-func (o *Zone) UnsetCostLastSync() {
-	o.CostLastSync.Unset()
 }
 
 // GetZoneType returns the ZoneType field value if set, zero value otherwise.
@@ -883,15 +593,6 @@ func (o *Zone) GetZoneTypeOk() (*ZoneZoneType, bool) {
 		return nil, false
 	}
 	return o.ZoneType, true
-}
-
-// IsSetZoneType returns a boolean if a field has been set.
-func (o *Zone) IsSetZoneType() bool {
-	if o != nil && !IsNil(o.ZoneType) {
-		return true
-	}
-
-	return false
 }
 
 // SetZoneType gets a reference to the given ZoneZoneType and assigns it to the ZoneType field.
@@ -915,15 +616,6 @@ func (o *Zone) GetZoneTypeIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.ZoneTypeId, true
-}
-
-// IsSetZoneTypeId returns a boolean if a field has been set.
-func (o *Zone) IsSetZoneTypeId() bool {
-	if o != nil && !IsNil(o.ZoneTypeId) {
-		return true
-	}
-
-	return false
 }
 
 // SetZoneTypeId gets a reference to the given int64 and assigns it to the ZoneTypeId field.
@@ -950,28 +642,9 @@ func (o *Zone) GetGuidanceModeOk() (*string, bool) {
 	return o.GuidanceMode.Get(), o.GuidanceMode.IsSet()
 }
 
-// IsSetGuidanceMode returns a boolean if a field has been set.
-func (o *Zone) IsSetGuidanceMode() bool {
-	if o != nil && o.GuidanceMode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetGuidanceMode gets a reference to the given NullableString and assigns it to the GuidanceMode field.
 func (o *Zone) SetGuidanceMode(v string) {
 	o.GuidanceMode.Set(&v)
-}
-
-// SetGuidanceModeNil sets the value for GuidanceMode to be an explicit nil
-func (o *Zone) SetGuidanceModeNil() {
-	o.GuidanceMode.Set(nil)
-}
-
-// UnsetGuidanceMode ensures that no value is present for GuidanceMode, not even an explicit nil
-func (o *Zone) UnsetGuidanceMode() {
-	o.GuidanceMode.Unset()
 }
 
 // GetStorageMode returns the StorageMode field value if set, zero value otherwise.
@@ -990,15 +663,6 @@ func (o *Zone) GetStorageModeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.StorageMode, true
-}
-
-// IsSetStorageMode returns a boolean if a field has been set.
-func (o *Zone) IsSetStorageMode() bool {
-	if o != nil && !IsNil(o.StorageMode) {
-		return true
-	}
-
-	return false
 }
 
 // SetStorageMode gets a reference to the given string and assigns it to the StorageMode field.
@@ -1022,15 +686,6 @@ func (o *Zone) GetAgentModeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.AgentMode, true
-}
-
-// IsSetAgentMode returns a boolean if a field has been set.
-func (o *Zone) IsSetAgentMode() bool {
-	if o != nil && !IsNil(o.AgentMode) {
-		return true
-	}
-
-	return false
 }
 
 // SetAgentMode gets a reference to the given string and assigns it to the AgentMode field.
@@ -1057,28 +712,9 @@ func (o *Zone) GetUserDataLinuxOk() (*string, bool) {
 	return o.UserDataLinux.Get(), o.UserDataLinux.IsSet()
 }
 
-// IsSetUserDataLinux returns a boolean if a field has been set.
-func (o *Zone) IsSetUserDataLinux() bool {
-	if o != nil && o.UserDataLinux.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUserDataLinux gets a reference to the given NullableString and assigns it to the UserDataLinux field.
 func (o *Zone) SetUserDataLinux(v string) {
 	o.UserDataLinux.Set(&v)
-}
-
-// SetUserDataLinuxNil sets the value for UserDataLinux to be an explicit nil
-func (o *Zone) SetUserDataLinuxNil() {
-	o.UserDataLinux.Set(nil)
-}
-
-// UnsetUserDataLinux ensures that no value is present for UserDataLinux, not even an explicit nil
-func (o *Zone) UnsetUserDataLinux() {
-	o.UserDataLinux.Unset()
 }
 
 // GetUserDataWindows returns the UserDataWindows field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1100,28 +736,9 @@ func (o *Zone) GetUserDataWindowsOk() (*string, bool) {
 	return o.UserDataWindows.Get(), o.UserDataWindows.IsSet()
 }
 
-// IsSetUserDataWindows returns a boolean if a field has been set.
-func (o *Zone) IsSetUserDataWindows() bool {
-	if o != nil && o.UserDataWindows.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUserDataWindows gets a reference to the given NullableString and assigns it to the UserDataWindows field.
 func (o *Zone) SetUserDataWindows(v string) {
 	o.UserDataWindows.Set(&v)
-}
-
-// SetUserDataWindowsNil sets the value for UserDataWindows to be an explicit nil
-func (o *Zone) SetUserDataWindowsNil() {
-	o.UserDataWindows.Set(nil)
-}
-
-// UnsetUserDataWindows ensures that no value is present for UserDataWindows, not even an explicit nil
-func (o *Zone) UnsetUserDataWindows() {
-	o.UserDataWindows.Unset()
 }
 
 // GetConsoleKeymap returns the ConsoleKeymap field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1143,28 +760,9 @@ func (o *Zone) GetConsoleKeymapOk() (*string, bool) {
 	return o.ConsoleKeymap.Get(), o.ConsoleKeymap.IsSet()
 }
 
-// IsSetConsoleKeymap returns a boolean if a field has been set.
-func (o *Zone) IsSetConsoleKeymap() bool {
-	if o != nil && o.ConsoleKeymap.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetConsoleKeymap gets a reference to the given NullableString and assigns it to the ConsoleKeymap field.
 func (o *Zone) SetConsoleKeymap(v string) {
 	o.ConsoleKeymap.Set(&v)
-}
-
-// SetConsoleKeymapNil sets the value for ConsoleKeymap to be an explicit nil
-func (o *Zone) SetConsoleKeymapNil() {
-	o.ConsoleKeymap.Set(nil)
-}
-
-// UnsetConsoleKeymap ensures that no value is present for ConsoleKeymap, not even an explicit nil
-func (o *Zone) UnsetConsoleKeymap() {
-	o.ConsoleKeymap.Unset()
 }
 
 // GetContainerMode returns the ContainerMode field value if set, zero value otherwise.
@@ -1183,15 +781,6 @@ func (o *Zone) GetContainerModeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ContainerMode, true
-}
-
-// IsSetContainerMode returns a boolean if a field has been set.
-func (o *Zone) IsSetContainerMode() bool {
-	if o != nil && !IsNil(o.ContainerMode) {
-		return true
-	}
-
-	return false
 }
 
 // SetContainerMode gets a reference to the given string and assigns it to the ContainerMode field.
@@ -1218,28 +807,9 @@ func (o *Zone) GetCostingModeOk() (*string, bool) {
 	return o.CostingMode.Get(), o.CostingMode.IsSet()
 }
 
-// IsSetCostingMode returns a boolean if a field has been set.
-func (o *Zone) IsSetCostingMode() bool {
-	if o != nil && o.CostingMode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCostingMode gets a reference to the given NullableString and assigns it to the CostingMode field.
 func (o *Zone) SetCostingMode(v string) {
 	o.CostingMode.Set(&v)
-}
-
-// SetCostingModeNil sets the value for CostingMode to be an explicit nil
-func (o *Zone) SetCostingModeNil() {
-	o.CostingMode.Set(nil)
-}
-
-// UnsetCostingMode ensures that no value is present for CostingMode, not even an explicit nil
-func (o *Zone) UnsetCostingMode() {
-	o.CostingMode.Unset()
 }
 
 // GetServiceVersion returns the ServiceVersion field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1261,28 +831,9 @@ func (o *Zone) GetServiceVersionOk() (*string, bool) {
 	return o.ServiceVersion.Get(), o.ServiceVersion.IsSet()
 }
 
-// IsSetServiceVersion returns a boolean if a field has been set.
-func (o *Zone) IsSetServiceVersion() bool {
-	if o != nil && o.ServiceVersion.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceVersion gets a reference to the given NullableString and assigns it to the ServiceVersion field.
 func (o *Zone) SetServiceVersion(v string) {
 	o.ServiceVersion.Set(&v)
-}
-
-// SetServiceVersionNil sets the value for ServiceVersion to be an explicit nil
-func (o *Zone) SetServiceVersionNil() {
-	o.ServiceVersion.Set(nil)
-}
-
-// UnsetServiceVersion ensures that no value is present for ServiceVersion, not even an explicit nil
-func (o *Zone) UnsetServiceVersion() {
-	o.ServiceVersion.Unset()
 }
 
 // GetSecurityMode returns the SecurityMode field value if set, zero value otherwise.
@@ -1301,15 +852,6 @@ func (o *Zone) GetSecurityModeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SecurityMode, true
-}
-
-// IsSetSecurityMode returns a boolean if a field has been set.
-func (o *Zone) IsSetSecurityMode() bool {
-	if o != nil && !IsNil(o.SecurityMode) {
-		return true
-	}
-
-	return false
 }
 
 // SetSecurityMode gets a reference to the given string and assigns it to the SecurityMode field.
@@ -1333,15 +875,6 @@ func (o *Zone) GetInventoryLevelOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InventoryLevel, true
-}
-
-// IsSetInventoryLevel returns a boolean if a field has been set.
-func (o *Zone) IsSetInventoryLevel() bool {
-	if o != nil && !IsNil(o.InventoryLevel) {
-		return true
-	}
-
-	return false
 }
 
 // SetInventoryLevel gets a reference to the given string and assigns it to the InventoryLevel field.
@@ -1368,28 +901,9 @@ func (o *Zone) GetTimezoneOk() (*string, bool) {
 	return o.Timezone.Get(), o.Timezone.IsSet()
 }
 
-// IsSetTimezone returns a boolean if a field has been set.
-func (o *Zone) IsSetTimezone() bool {
-	if o != nil && o.Timezone.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetTimezone gets a reference to the given NullableString and assigns it to the Timezone field.
 func (o *Zone) SetTimezone(v string) {
 	o.Timezone.Set(&v)
-}
-
-// SetTimezoneNil sets the value for Timezone to be an explicit nil
-func (o *Zone) SetTimezoneNil() {
-	o.Timezone.Set(nil)
-}
-
-// UnsetTimezone ensures that no value is present for Timezone, not even an explicit nil
-func (o *Zone) UnsetTimezone() {
-	o.Timezone.Unset()
 }
 
 // GetApiProxy returns the ApiProxy field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1411,28 +925,9 @@ func (o *Zone) GetApiProxyOk() (*string, bool) {
 	return o.ApiProxy.Get(), o.ApiProxy.IsSet()
 }
 
-// IsSetApiProxy returns a boolean if a field has been set.
-func (o *Zone) IsSetApiProxy() bool {
-	if o != nil && o.ApiProxy.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetApiProxy gets a reference to the given NullableString and assigns it to the ApiProxy field.
 func (o *Zone) SetApiProxy(v string) {
 	o.ApiProxy.Set(&v)
-}
-
-// SetApiProxyNil sets the value for ApiProxy to be an explicit nil
-func (o *Zone) SetApiProxyNil() {
-	o.ApiProxy.Set(nil)
-}
-
-// UnsetApiProxy ensures that no value is present for ApiProxy, not even an explicit nil
-func (o *Zone) UnsetApiProxy() {
-	o.ApiProxy.Unset()
 }
 
 // GetProvisioningProxy returns the ProvisioningProxy field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1454,28 +949,9 @@ func (o *Zone) GetProvisioningProxyOk() (*string, bool) {
 	return o.ProvisioningProxy.Get(), o.ProvisioningProxy.IsSet()
 }
 
-// IsSetProvisioningProxy returns a boolean if a field has been set.
-func (o *Zone) IsSetProvisioningProxy() bool {
-	if o != nil && o.ProvisioningProxy.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetProvisioningProxy gets a reference to the given NullableString and assigns it to the ProvisioningProxy field.
 func (o *Zone) SetProvisioningProxy(v string) {
 	o.ProvisioningProxy.Set(&v)
-}
-
-// SetProvisioningProxyNil sets the value for ProvisioningProxy to be an explicit nil
-func (o *Zone) SetProvisioningProxyNil() {
-	o.ProvisioningProxy.Set(nil)
-}
-
-// UnsetProvisioningProxy ensures that no value is present for ProvisioningProxy, not even an explicit nil
-func (o *Zone) UnsetProvisioningProxy() {
-	o.ProvisioningProxy.Unset()
 }
 
 // GetNetworkDomain returns the NetworkDomain field value if set, zero value otherwise.
@@ -1494,15 +970,6 @@ func (o *Zone) GetNetworkDomainOk() (*ZoneNetworkDomain, bool) {
 		return nil, false
 	}
 	return o.NetworkDomain, true
-}
-
-// IsSetNetworkDomain returns a boolean if a field has been set.
-func (o *Zone) IsSetNetworkDomain() bool {
-	if o != nil && !IsNil(o.NetworkDomain) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkDomain gets a reference to the given ZoneNetworkDomain and assigns it to the NetworkDomain field.
@@ -1526,15 +993,6 @@ func (o *Zone) GetDomainNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.DomainName, true
-}
-
-// IsSetDomainName returns a boolean if a field has been set.
-func (o *Zone) IsSetDomainName() bool {
-	if o != nil && !IsNil(o.DomainName) {
-		return true
-	}
-
-	return false
 }
 
 // SetDomainName gets a reference to the given string and assigns it to the DomainName field.
@@ -1561,28 +1019,9 @@ func (o *Zone) GetRegionCodeOk() (*string, bool) {
 	return o.RegionCode.Get(), o.RegionCode.IsSet()
 }
 
-// IsSetRegionCode returns a boolean if a field has been set.
-func (o *Zone) IsSetRegionCode() bool {
-	if o != nil && o.RegionCode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRegionCode gets a reference to the given NullableString and assigns it to the RegionCode field.
 func (o *Zone) SetRegionCode(v string) {
 	o.RegionCode.Set(&v)
-}
-
-// SetRegionCodeNil sets the value for RegionCode to be an explicit nil
-func (o *Zone) SetRegionCodeNil() {
-	o.RegionCode.Set(nil)
-}
-
-// UnsetRegionCode ensures that no value is present for RegionCode, not even an explicit nil
-func (o *Zone) UnsetRegionCode() {
-	o.RegionCode.Unset()
 }
 
 // GetAutoRecoverPowerState returns the AutoRecoverPowerState field value if set, zero value otherwise.
@@ -1601,15 +1040,6 @@ func (o *Zone) GetAutoRecoverPowerStateOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.AutoRecoverPowerState, true
-}
-
-// IsSetAutoRecoverPowerState returns a boolean if a field has been set.
-func (o *Zone) IsSetAutoRecoverPowerState() bool {
-	if o != nil && !IsNil(o.AutoRecoverPowerState) {
-		return true
-	}
-
-	return false
 }
 
 // SetAutoRecoverPowerState gets a reference to the given bool and assigns it to the AutoRecoverPowerState field.
@@ -1635,15 +1065,6 @@ func (o *Zone) GetScalePriorityOk() (*int64, bool) {
 	return o.ScalePriority, true
 }
 
-// IsSetScalePriority returns a boolean if a field has been set.
-func (o *Zone) IsSetScalePriority() bool {
-	if o != nil && !IsNil(o.ScalePriority) {
-		return true
-	}
-
-	return false
-}
-
 // SetScalePriority gets a reference to the given int64 and assigns it to the ScalePriority field.
 func (o *Zone) SetScalePriority(v int64) {
 	o.ScalePriority = &v
@@ -1665,15 +1086,6 @@ func (o *Zone) GetDefaultDatastoreSyncActiveOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.DefaultDatastoreSyncActive, true
-}
-
-// IsSetDefaultDatastoreSyncActive returns a boolean if a field has been set.
-func (o *Zone) IsSetDefaultDatastoreSyncActive() bool {
-	if o != nil && !IsNil(o.DefaultDatastoreSyncActive) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultDatastoreSyncActive gets a reference to the given bool and assigns it to the DefaultDatastoreSyncActive field.
@@ -1699,15 +1111,6 @@ func (o *Zone) GetDefaultNetworkSyncActiveOk() (*bool, bool) {
 	return o.DefaultNetworkSyncActive, true
 }
 
-// IsSetDefaultNetworkSyncActive returns a boolean if a field has been set.
-func (o *Zone) IsSetDefaultNetworkSyncActive() bool {
-	if o != nil && !IsNil(o.DefaultNetworkSyncActive) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultNetworkSyncActive gets a reference to the given bool and assigns it to the DefaultNetworkSyncActive field.
 func (o *Zone) SetDefaultNetworkSyncActive(v bool) {
 	o.DefaultNetworkSyncActive = &v
@@ -1729,15 +1132,6 @@ func (o *Zone) GetDefaultFolderSyncActiveOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.DefaultFolderSyncActive, true
-}
-
-// IsSetDefaultFolderSyncActive returns a boolean if a field has been set.
-func (o *Zone) IsSetDefaultFolderSyncActive() bool {
-	if o != nil && !IsNil(o.DefaultFolderSyncActive) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultFolderSyncActive gets a reference to the given bool and assigns it to the DefaultFolderSyncActive field.
@@ -1763,15 +1157,6 @@ func (o *Zone) GetDefaultSecurityGroupSyncActiveOk() (*bool, bool) {
 	return o.DefaultSecurityGroupSyncActive, true
 }
 
-// IsSetDefaultSecurityGroupSyncActive returns a boolean if a field has been set.
-func (o *Zone) IsSetDefaultSecurityGroupSyncActive() bool {
-	if o != nil && !IsNil(o.DefaultSecurityGroupSyncActive) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultSecurityGroupSyncActive gets a reference to the given bool and assigns it to the DefaultSecurityGroupSyncActive field.
 func (o *Zone) SetDefaultSecurityGroupSyncActive(v bool) {
 	o.DefaultSecurityGroupSyncActive = &v
@@ -1793,15 +1178,6 @@ func (o *Zone) GetDefaultPoolSyncActiveOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.DefaultPoolSyncActive, true
-}
-
-// IsSetDefaultPoolSyncActive returns a boolean if a field has been set.
-func (o *Zone) IsSetDefaultPoolSyncActive() bool {
-	if o != nil && !IsNil(o.DefaultPoolSyncActive) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultPoolSyncActive gets a reference to the given bool and assigns it to the DefaultPoolSyncActive field.
@@ -1827,15 +1203,6 @@ func (o *Zone) GetDefaultPlanSyncActiveOk() (*bool, bool) {
 	return o.DefaultPlanSyncActive, true
 }
 
-// IsSetDefaultPlanSyncActive returns a boolean if a field has been set.
-func (o *Zone) IsSetDefaultPlanSyncActive() bool {
-	if o != nil && !IsNil(o.DefaultPlanSyncActive) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultPlanSyncActive gets a reference to the given bool and assigns it to the DefaultPlanSyncActive field.
 func (o *Zone) SetDefaultPlanSyncActive(v bool) {
 	o.DefaultPlanSyncActive = &v
@@ -1859,15 +1226,6 @@ func (o *Zone) GetConfigOk() (*ZoneConfig, bool) {
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *Zone) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given ZoneConfig and assigns it to the Config field.
 func (o *Zone) SetConfig(v ZoneConfig) {
 	o.Config = &v
@@ -1889,15 +1247,6 @@ func (o *Zone) GetCredentialOk() (*ZoneCredential, bool) {
 		return nil, false
 	}
 	return o.Credential, true
-}
-
-// IsSetCredential returns a boolean if a field has been set.
-func (o *Zone) IsSetCredential() bool {
-	if o != nil && !IsNil(o.Credential) {
-		return true
-	}
-
-	return false
 }
 
 // SetCredential gets a reference to the given ZoneCredential and assigns it to the Credential field.
@@ -1924,28 +1273,9 @@ func (o *Zone) GetImagePathOk() (*string, bool) {
 	return o.ImagePath.Get(), o.ImagePath.IsSet()
 }
 
-// IsSetImagePath returns a boolean if a field has been set.
-func (o *Zone) IsSetImagePath() bool {
-	if o != nil && o.ImagePath.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetImagePath gets a reference to the given NullableString and assigns it to the ImagePath field.
 func (o *Zone) SetImagePath(v string) {
 	o.ImagePath.Set(&v)
-}
-
-// SetImagePathNil sets the value for ImagePath to be an explicit nil
-func (o *Zone) SetImagePathNil() {
-	o.ImagePath.Set(nil)
-}
-
-// UnsetImagePath ensures that no value is present for ImagePath, not even an explicit nil
-func (o *Zone) UnsetImagePath() {
-	o.ImagePath.Unset()
 }
 
 // GetDarkImagePath returns the DarkImagePath field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1967,28 +1297,9 @@ func (o *Zone) GetDarkImagePathOk() (*string, bool) {
 	return o.DarkImagePath.Get(), o.DarkImagePath.IsSet()
 }
 
-// IsSetDarkImagePath returns a boolean if a field has been set.
-func (o *Zone) IsSetDarkImagePath() bool {
-	if o != nil && o.DarkImagePath.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDarkImagePath gets a reference to the given NullableString and assigns it to the DarkImagePath field.
 func (o *Zone) SetDarkImagePath(v string) {
 	o.DarkImagePath.Set(&v)
-}
-
-// SetDarkImagePathNil sets the value for DarkImagePath to be an explicit nil
-func (o *Zone) SetDarkImagePathNil() {
-	o.DarkImagePath.Set(nil)
-}
-
-// UnsetDarkImagePath ensures that no value is present for DarkImagePath, not even an explicit nil
-func (o *Zone) UnsetDarkImagePath() {
-	o.DarkImagePath.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -2007,15 +1318,6 @@ func (o *Zone) GetDateCreatedOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.DateCreated, true
-}
-
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *Zone) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
@@ -2039,15 +1341,6 @@ func (o *Zone) GetLastUpdatedOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *Zone) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
@@ -2074,28 +1367,9 @@ func (o *Zone) GetLastSyncOk() (*time.Time, bool) {
 	return o.LastSync.Get(), o.LastSync.IsSet()
 }
 
-// IsSetLastSync returns a boolean if a field has been set.
-func (o *Zone) IsSetLastSync() bool {
-	if o != nil && o.LastSync.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastSync gets a reference to the given NullableTime and assigns it to the LastSync field.
 func (o *Zone) SetLastSync(v time.Time) {
 	o.LastSync.Set(&v)
-}
-
-// SetLastSyncNil sets the value for LastSync to be an explicit nil
-func (o *Zone) SetLastSyncNil() {
-	o.LastSync.Set(nil)
-}
-
-// UnsetLastSync ensures that no value is present for LastSync, not even an explicit nil
-func (o *Zone) UnsetLastSync() {
-	o.LastSync.Unset()
 }
 
 // GetLastSyncDuration returns the LastSyncDuration field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -2117,28 +1391,9 @@ func (o *Zone) GetLastSyncDurationOk() (*int64, bool) {
 	return o.LastSyncDuration.Get(), o.LastSyncDuration.IsSet()
 }
 
-// IsSetLastSyncDuration returns a boolean if a field has been set.
-func (o *Zone) IsSetLastSyncDuration() bool {
-	if o != nil && o.LastSyncDuration.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastSyncDuration gets a reference to the given NullableInt64 and assigns it to the LastSyncDuration field.
 func (o *Zone) SetLastSyncDuration(v int64) {
 	o.LastSyncDuration.Set(&v)
-}
-
-// SetLastSyncDurationNil sets the value for LastSyncDuration to be an explicit nil
-func (o *Zone) SetLastSyncDurationNil() {
-	o.LastSyncDuration.Set(nil)
-}
-
-// UnsetLastSyncDuration ensures that no value is present for LastSyncDuration, not even an explicit nil
-func (o *Zone) UnsetLastSyncDuration() {
-	o.LastSyncDuration.Unset()
 }
 
 // GetNextRunDate returns the NextRunDate field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -2160,28 +1415,9 @@ func (o *Zone) GetNextRunDateOk() (*time.Time, bool) {
 	return o.NextRunDate.Get(), o.NextRunDate.IsSet()
 }
 
-// IsSetNextRunDate returns a boolean if a field has been set.
-func (o *Zone) IsSetNextRunDate() bool {
-	if o != nil && o.NextRunDate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNextRunDate gets a reference to the given NullableTime and assigns it to the NextRunDate field.
 func (o *Zone) SetNextRunDate(v time.Time) {
 	o.NextRunDate.Set(&v)
-}
-
-// SetNextRunDateNil sets the value for NextRunDate to be an explicit nil
-func (o *Zone) SetNextRunDateNil() {
-	o.NextRunDate.Set(nil)
-}
-
-// UnsetNextRunDate ensures that no value is present for NextRunDate, not even an explicit nil
-func (o *Zone) UnsetNextRunDate() {
-	o.NextRunDate.Unset()
 }
 
 // GetGroups returns the Groups field value if set, zero value otherwise.
@@ -2200,15 +1436,6 @@ func (o *Zone) GetGroupsOk() ([]ZoneGroupsInner, bool) {
 		return nil, false
 	}
 	return o.Groups, true
-}
-
-// IsSetGroups returns a boolean if a field has been set.
-func (o *Zone) IsSetGroups() bool {
-	if o != nil && !IsNil(o.Groups) {
-		return true
-	}
-
-	return false
 }
 
 // SetGroups gets a reference to the given []ZoneGroupsInner and assigns it to the Groups field.
@@ -2234,15 +1461,6 @@ func (o *Zone) GetSecurityServerOk() (*ZoneSecurityServer, bool) {
 	return o.SecurityServer, true
 }
 
-// IsSetSecurityServer returns a boolean if a field has been set.
-func (o *Zone) IsSetSecurityServer() bool {
-	if o != nil && !IsNil(o.SecurityServer) {
-		return true
-	}
-
-	return false
-}
-
 // SetSecurityServer gets a reference to the given ZoneSecurityServer and assigns it to the SecurityServer field.
 func (o *Zone) SetSecurityServer(v ZoneSecurityServer) {
 	o.SecurityServer = &v
@@ -2264,15 +1482,6 @@ func (o *Zone) GetNetworkServerOk() (*ZoneNetworkServer, bool) {
 		return nil, false
 	}
 	return o.NetworkServer, true
-}
-
-// IsSetNetworkServer returns a boolean if a field has been set.
-func (o *Zone) IsSetNetworkServer() bool {
-	if o != nil && !IsNil(o.NetworkServer) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkServer gets a reference to the given ZoneNetworkServer and assigns it to the NetworkServer field.
@@ -2298,15 +1507,6 @@ func (o *Zone) GetStatsOk() (*ZoneStats, bool) {
 	return o.Stats, true
 }
 
-// IsSetStats returns a boolean if a field has been set.
-func (o *Zone) IsSetStats() bool {
-	if o != nil && !IsNil(o.Stats) {
-		return true
-	}
-
-	return false
-}
-
 // SetStats gets a reference to the given ZoneStats and assigns it to the Stats field.
 func (o *Zone) SetStats(v ZoneStats) {
 	o.Stats = &v
@@ -2328,15 +1528,6 @@ func (o *Zone) GetServerCountOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.ServerCount, true
-}
-
-// IsSetServerCount returns a boolean if a field has been set.
-func (o *Zone) IsSetServerCount() bool {
-	if o != nil && !IsNil(o.ServerCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetServerCount gets a reference to the given int64 and assigns it to the ServerCount field.

@@ -64,15 +64,6 @@ func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner) Get
 	return o.RefType, true
 }
 
-// IsSetRefType returns a boolean if a field has been set.
-func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner) IsSetRefType() bool {
-	if o != nil && !IsNil(o.RefType) {
-		return true
-	}
-
-	return false
-}
-
 // SetRefType gets a reference to the given string and assigns it to the RefType field.
 func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner) SetRefType(v string) {
 	o.RefType = &v
@@ -94,15 +85,6 @@ func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner) Get
 		return nil, false
 	}
 	return o.RefId, true
-}
-
-// IsSetRefId returns a boolean if a field has been set.
-func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner) IsSetRefId() bool {
-	if o != nil && !IsNil(o.RefId) {
-		return true
-	}
-
-	return false
 }
 
 // SetRefId gets a reference to the given int64 and assigns it to the RefId field.
@@ -128,15 +110,6 @@ func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner) Get
 	return o.Status, true
 }
 
-// IsSetStatus returns a boolean if a field has been set.
-func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
-}
-
 // SetStatus gets a reference to the given string and assigns it to the Status field.
 func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner) SetStatus(v string) {
 	o.Status = &v
@@ -158,15 +131,6 @@ func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner) Get
 		return nil, false
 	}
 	return o.StatusMessage, true
-}
-
-// IsSetStatusMessage returns a boolean if a field has been set.
-func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner) IsSetStatusMessage() bool {
-	if o != nil && !IsNil(o.StatusMessage) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatusMessage gets a reference to the given string and assigns it to the StatusMessage field.

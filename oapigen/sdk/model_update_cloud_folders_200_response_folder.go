@@ -75,15 +75,6 @@ func (o *UpdateCloudFolders200ResponseFolder) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *UpdateCloudFolders200ResponseFolder) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *UpdateCloudFolders200ResponseFolder) SetId(v int64) {
 	o.Id = &v
@@ -105,15 +96,6 @@ func (o *UpdateCloudFolders200ResponseFolder) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateCloudFolders200ResponseFolder) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -139,15 +121,6 @@ func (o *UpdateCloudFolders200ResponseFolder) GetZoneOk() (*GetCloudFolders200Re
 	return o.Zone, true
 }
 
-// IsSetZone returns a boolean if a field has been set.
-func (o *UpdateCloudFolders200ResponseFolder) IsSetZone() bool {
-	if o != nil && !IsNil(o.Zone) {
-		return true
-	}
-
-	return false
-}
-
 // SetZone gets a reference to the given GetCloudFolders200ResponseAllOfFolderZone and assigns it to the Zone field.
 func (o *UpdateCloudFolders200ResponseFolder) SetZone(v GetCloudFolders200ResponseAllOfFolderZone) {
 	o.Zone = &v
@@ -169,15 +142,6 @@ func (o *UpdateCloudFolders200ResponseFolder) GetParentOk() (*GetCloudFolders200
 		return nil, false
 	}
 	return o.Parent, true
-}
-
-// IsSetParent returns a boolean if a field has been set.
-func (o *UpdateCloudFolders200ResponseFolder) IsSetParent() bool {
-	if o != nil && !IsNil(o.Parent) {
-		return true
-	}
-
-	return false
 }
 
 // SetParent gets a reference to the given GetCloudFolders200ResponseAllOfFolderParent and assigns it to the Parent field.
@@ -203,15 +167,6 @@ func (o *UpdateCloudFolders200ResponseFolder) GetTypeOk() (*string, bool) {
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *UpdateCloudFolders200ResponseFolder) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given string and assigns it to the Type field.
 func (o *UpdateCloudFolders200ResponseFolder) SetType(v string) {
 	o.Type = &v
@@ -233,15 +188,6 @@ func (o *UpdateCloudFolders200ResponseFolder) GetExternalIdOk() (*string, bool) 
 		return nil, false
 	}
 	return o.ExternalId, true
-}
-
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *UpdateCloudFolders200ResponseFolder) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
-		return true
-	}
-
-	return false
 }
 
 // SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
@@ -267,15 +213,6 @@ func (o *UpdateCloudFolders200ResponseFolder) GetVisibilityOk() (*string, bool) 
 	return o.Visibility, true
 }
 
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *UpdateCloudFolders200ResponseFolder) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
-}
-
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
 func (o *UpdateCloudFolders200ResponseFolder) SetVisibility(v string) {
 	o.Visibility = &v
@@ -297,15 +234,6 @@ func (o *UpdateCloudFolders200ResponseFolder) GetReadOnlyOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.ReadOnly, true
-}
-
-// IsSetReadOnly returns a boolean if a field has been set.
-func (o *UpdateCloudFolders200ResponseFolder) IsSetReadOnly() bool {
-	if o != nil && !IsNil(o.ReadOnly) {
-		return true
-	}
-
-	return false
 }
 
 // SetReadOnly gets a reference to the given bool and assigns it to the ReadOnly field.
@@ -331,15 +259,6 @@ func (o *UpdateCloudFolders200ResponseFolder) GetDefaultFolderOk() (*bool, bool)
 	return o.DefaultFolder, true
 }
 
-// IsSetDefaultFolder returns a boolean if a field has been set.
-func (o *UpdateCloudFolders200ResponseFolder) IsSetDefaultFolder() bool {
-	if o != nil && !IsNil(o.DefaultFolder) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultFolder gets a reference to the given bool and assigns it to the DefaultFolder field.
 func (o *UpdateCloudFolders200ResponseFolder) SetDefaultFolder(v bool) {
 	o.DefaultFolder = &v
@@ -361,15 +280,6 @@ func (o *UpdateCloudFolders200ResponseFolder) GetDefaultStoreOk() (*bool, bool) 
 		return nil, false
 	}
 	return o.DefaultStore, true
-}
-
-// IsSetDefaultStore returns a boolean if a field has been set.
-func (o *UpdateCloudFolders200ResponseFolder) IsSetDefaultStore() bool {
-	if o != nil && !IsNil(o.DefaultStore) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultStore gets a reference to the given bool and assigns it to the DefaultStore field.
@@ -395,15 +305,6 @@ func (o *UpdateCloudFolders200ResponseFolder) GetActiveOk() (*bool, bool) {
 	return o.Active, true
 }
 
-// IsSetActive returns a boolean if a field has been set.
-func (o *UpdateCloudFolders200ResponseFolder) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
-}
-
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *UpdateCloudFolders200ResponseFolder) SetActive(v bool) {
 	o.Active = &v
@@ -425,15 +326,6 @@ func (o *UpdateCloudFolders200ResponseFolder) GetTenantsOk() ([]GetCloudFolders2
 		return nil, false
 	}
 	return o.Tenants, true
-}
-
-// IsSetTenants returns a boolean if a field has been set.
-func (o *UpdateCloudFolders200ResponseFolder) IsSetTenants() bool {
-	if o != nil && !IsNil(o.Tenants) {
-		return true
-	}
-
-	return false
 }
 
 // SetTenants gets a reference to the given []GetCloudFolders200ResponseAllOfFolderTenantsInner and assigns it to the Tenants field.
@@ -459,15 +351,6 @@ func (o *UpdateCloudFolders200ResponseFolder) GetResourcePermissionsOk() (*GetCl
 	return o.ResourcePermissions, true
 }
 
-// IsSetResourcePermissions returns a boolean if a field has been set.
-func (o *UpdateCloudFolders200ResponseFolder) IsSetResourcePermissions() bool {
-	if o != nil && !IsNil(o.ResourcePermissions) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourcePermissions gets a reference to the given GetCloudFolders200ResponseAllOfFolderResourcePermissions and assigns it to the ResourcePermissions field.
 func (o *UpdateCloudFolders200ResponseFolder) SetResourcePermissions(v GetCloudFolders200ResponseAllOfFolderResourcePermissions) {
 	o.ResourcePermissions = &v
@@ -491,15 +374,6 @@ func (o *UpdateCloudFolders200ResponseFolder) GetDepthOk() (*int64, bool) {
 	return o.Depth, true
 }
 
-// IsSetDepth returns a boolean if a field has been set.
-func (o *UpdateCloudFolders200ResponseFolder) IsSetDepth() bool {
-	if o != nil && !IsNil(o.Depth) {
-		return true
-	}
-
-	return false
-}
-
 // SetDepth gets a reference to the given int64 and assigns it to the Depth field.
 func (o *UpdateCloudFolders200ResponseFolder) SetDepth(v int64) {
 	o.Depth = &v
@@ -521,15 +395,6 @@ func (o *UpdateCloudFolders200ResponseFolder) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *UpdateCloudFolders200ResponseFolder) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

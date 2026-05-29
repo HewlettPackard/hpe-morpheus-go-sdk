@@ -61,15 +61,6 @@ func (o *GetGuidanceTypes200Response) GetTypesOk() ([]GetGuidanceTypes200Respons
 	return o.Types, true
 }
 
-// IsSetTypes returns a boolean if a field has been set.
-func (o *GetGuidanceTypes200Response) IsSetTypes() bool {
-	if o != nil && !IsNil(o.Types) {
-		return true
-	}
-
-	return false
-}
-
 // SetTypes gets a reference to the given []GetGuidanceTypes200ResponseTypesInner and assigns it to the Types field.
 func (o *GetGuidanceTypes200Response) SetTypes(v []GetGuidanceTypes200ResponseTypesInner) {
 	o.Types = v

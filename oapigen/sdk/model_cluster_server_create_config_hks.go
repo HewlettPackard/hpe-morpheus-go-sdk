@@ -67,15 +67,6 @@ func (o *ClusterServerCreateConfigHKS) GetPodCidrOk() (*string, bool) {
 	return o.PodCidr, true
 }
 
-// IsSetPodCidr returns a boolean if a field has been set.
-func (o *ClusterServerCreateConfigHKS) IsSetPodCidr() bool {
-	if o != nil && !IsNil(o.PodCidr) {
-		return true
-	}
-
-	return false
-}
-
 // SetPodCidr gets a reference to the given string and assigns it to the PodCidr field.
 func (o *ClusterServerCreateConfigHKS) SetPodCidr(v string) {
 	o.PodCidr = &v
@@ -99,15 +90,6 @@ func (o *ClusterServerCreateConfigHKS) GetServiceCidrOk() (*string, bool) {
 	return o.ServiceCidr, true
 }
 
-// IsSetServiceCidr returns a boolean if a field has been set.
-func (o *ClusterServerCreateConfigHKS) IsSetServiceCidr() bool {
-	if o != nil && !IsNil(o.ServiceCidr) {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceCidr gets a reference to the given string and assigns it to the ServiceCidr field.
 func (o *ClusterServerCreateConfigHKS) SetServiceCidr(v string) {
 	o.ServiceCidr = &v
@@ -129,15 +111,6 @@ func (o *ClusterServerCreateConfigHKS) GetCreateUserOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.CreateUser, true
-}
-
-// IsSetCreateUser returns a boolean if a field has been set.
-func (o *ClusterServerCreateConfigHKS) IsSetCreateUser() bool {
-	if o != nil && !IsNil(o.CreateUser) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreateUser gets a reference to the given bool and assigns it to the CreateUser field.
@@ -164,28 +137,9 @@ func (o *ClusterServerCreateConfigHKS) GetDefaultRepoAccountOk() (*int64, bool) 
 	return o.DefaultRepoAccount.Get(), o.DefaultRepoAccount.IsSet()
 }
 
-// IsSetDefaultRepoAccount returns a boolean if a field has been set.
-func (o *ClusterServerCreateConfigHKS) IsSetDefaultRepoAccount() bool {
-	if o != nil && o.DefaultRepoAccount.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultRepoAccount gets a reference to the given NullableInt64 and assigns it to the DefaultRepoAccount field.
 func (o *ClusterServerCreateConfigHKS) SetDefaultRepoAccount(v int64) {
 	o.DefaultRepoAccount.Set(&v)
-}
-
-// SetDefaultRepoAccountNil sets the value for DefaultRepoAccount to be an explicit nil
-func (o *ClusterServerCreateConfigHKS) SetDefaultRepoAccountNil() {
-	o.DefaultRepoAccount.Set(nil)
-}
-
-// UnsetDefaultRepoAccount ensures that no value is present for DefaultRepoAccount, not even an explicit nil
-func (o *ClusterServerCreateConfigHKS) UnsetDefaultRepoAccount() {
-	o.DefaultRepoAccount.Unset()
 }
 
 // GetImageServer returns the ImageServer field value if set, zero value otherwise.
@@ -204,15 +158,6 @@ func (o *ClusterServerCreateConfigHKS) GetImageServerOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ImageServer, true
-}
-
-// IsSetImageServer returns a boolean if a field has been set.
-func (o *ClusterServerCreateConfigHKS) IsSetImageServer() bool {
-	if o != nil && !IsNil(o.ImageServer) {
-		return true
-	}
-
-	return false
 }
 
 // SetImageServer gets a reference to the given string and assigns it to the ImageServer field.

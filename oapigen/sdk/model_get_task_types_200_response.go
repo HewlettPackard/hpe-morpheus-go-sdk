@@ -61,15 +61,6 @@ func (o *GetTaskTypes200Response) GetTaskTypeOk() (*GetTaskTypes200ResponseTaskT
 	return o.TaskType, true
 }
 
-// IsSetTaskType returns a boolean if a field has been set.
-func (o *GetTaskTypes200Response) IsSetTaskType() bool {
-	if o != nil && !IsNil(o.TaskType) {
-		return true
-	}
-
-	return false
-}
-
 // SetTaskType gets a reference to the given GetTaskTypes200ResponseTaskType and assigns it to the TaskType field.
 func (o *GetTaskTypes200Response) SetTaskType(v GetTaskTypes200ResponseTaskType) {
 	o.TaskType = &v

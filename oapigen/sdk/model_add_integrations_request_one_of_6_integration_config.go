@@ -62,15 +62,6 @@ func (o *AddIntegrationsRequestOneOf6IntegrationConfig) GetCacheEnabledOk() (*bo
 	return o.CacheEnabled, true
 }
 
-// IsSetCacheEnabled returns a boolean if a field has been set.
-func (o *AddIntegrationsRequestOneOf6IntegrationConfig) IsSetCacheEnabled() bool {
-	if o != nil && !IsNil(o.CacheEnabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetCacheEnabled gets a reference to the given bool and assigns it to the CacheEnabled field.
 func (o *AddIntegrationsRequestOneOf6IntegrationConfig) SetCacheEnabled(v bool) {
 	o.CacheEnabled = &v

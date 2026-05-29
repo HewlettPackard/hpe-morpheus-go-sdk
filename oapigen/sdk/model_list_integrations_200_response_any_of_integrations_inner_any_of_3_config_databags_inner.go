@@ -62,15 +62,6 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3ConfigDatabagsIn
 	return o.Path, true
 }
 
-// IsSetPath returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3ConfigDatabagsInner) IsSetPath() bool {
-	if o != nil && !IsNil(o.Path) {
-		return true
-	}
-
-	return false
-}
-
 // SetPath gets a reference to the given string and assigns it to the Path field.
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3ConfigDatabagsInner) SetPath(v string) {
 	o.Path = &v
@@ -92,15 +83,6 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3ConfigDatabagsIn
 		return nil, false
 	}
 	return o.Key, true
-}
-
-// IsSetKey returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3ConfigDatabagsInner) IsSetKey() bool {
-	if o != nil && !IsNil(o.Key) {
-		return true
-	}
-
-	return false
 }
 
 // SetKey gets a reference to the given string and assigns it to the Key field.

@@ -62,15 +62,6 @@ func (o *GetBillingZoneIdentifier200Response) GetBillingInfoOk() (*GetBillingZon
 	return o.BillingInfo, true
 }
 
-// IsSetBillingInfo returns a boolean if a field has been set.
-func (o *GetBillingZoneIdentifier200Response) IsSetBillingInfo() bool {
-	if o != nil && !IsNil(o.BillingInfo) {
-		return true
-	}
-
-	return false
-}
-
 // SetBillingInfo gets a reference to the given GetBillingZoneIdentifier200ResponseAllOfBillingInfo and assigns it to the BillingInfo field.
 func (o *GetBillingZoneIdentifier200Response) SetBillingInfo(v GetBillingZoneIdentifier200ResponseAllOfBillingInfo) {
 	o.BillingInfo = &v
@@ -92,15 +83,6 @@ func (o *GetBillingZoneIdentifier200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *GetBillingZoneIdentifier200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

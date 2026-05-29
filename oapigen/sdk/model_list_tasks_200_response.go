@@ -62,15 +62,6 @@ func (o *ListTasks200Response) GetTasksOk() ([]ListTasks200ResponseAllOfTasksInn
 	return o.Tasks, true
 }
 
-// IsSetTasks returns a boolean if a field has been set.
-func (o *ListTasks200Response) IsSetTasks() bool {
-	if o != nil && !IsNil(o.Tasks) {
-		return true
-	}
-
-	return false
-}
-
 // SetTasks gets a reference to the given []ListTasks200ResponseAllOfTasksInner and assigns it to the Tasks field.
 func (o *ListTasks200Response) SetTasks(v []ListTasks200ResponseAllOfTasksInner) {
 	o.Tasks = v
@@ -92,15 +83,6 @@ func (o *ListTasks200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, 
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListTasks200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

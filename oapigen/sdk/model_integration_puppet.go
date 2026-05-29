@@ -74,15 +74,6 @@ func (o *IntegrationPuppet) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *IntegrationPuppet) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *IntegrationPuppet) SetId(v int64) {
 	o.Id = &v
@@ -104,15 +95,6 @@ func (o *IntegrationPuppet) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *IntegrationPuppet) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -138,15 +120,6 @@ func (o *IntegrationPuppet) GetEnabledOk() (*bool, bool) {
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *IntegrationPuppet) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *IntegrationPuppet) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -168,15 +141,6 @@ func (o *IntegrationPuppet) GetTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *IntegrationPuppet) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.
@@ -202,15 +166,6 @@ func (o *IntegrationPuppet) GetIntegrationTypeOk() (*AddIntegrations200ResponseA
 	return o.IntegrationType, true
 }
 
-// IsSetIntegrationType returns a boolean if a field has been set.
-func (o *IntegrationPuppet) IsSetIntegrationType() bool {
-	if o != nil && !IsNil(o.IntegrationType) {
-		return true
-	}
-
-	return false
-}
-
 // SetIntegrationType gets a reference to the given AddIntegrations200ResponseAllOfIntegrationOneOf11IntegrationType and assigns it to the IntegrationType field.
 func (o *IntegrationPuppet) SetIntegrationType(v AddIntegrations200ResponseAllOfIntegrationOneOf11IntegrationType) {
 	o.IntegrationType = &v
@@ -232,15 +187,6 @@ func (o *IntegrationPuppet) GetIsPluginOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.IsPlugin, true
-}
-
-// IsSetIsPlugin returns a boolean if a field has been set.
-func (o *IntegrationPuppet) IsSetIsPlugin() bool {
-	if o != nil && !IsNil(o.IsPlugin) {
-		return true
-	}
-
-	return false
 }
 
 // SetIsPlugin gets a reference to the given bool and assigns it to the IsPlugin field.
@@ -266,15 +212,6 @@ func (o *IntegrationPuppet) GetConfigOk() (*AddIntegrations200ResponseAllOfInteg
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *IntegrationPuppet) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given AddIntegrations200ResponseAllOfIntegrationOneOf11Config and assigns it to the Config field.
 func (o *IntegrationPuppet) SetConfig(v AddIntegrations200ResponseAllOfIntegrationOneOf11Config) {
 	o.Config = &v
@@ -296,15 +233,6 @@ func (o *IntegrationPuppet) GetStatusOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *IntegrationPuppet) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -331,28 +259,9 @@ func (o *IntegrationPuppet) GetStatusDateOk() (*time.Time, bool) {
 	return o.StatusDate.Get(), o.StatusDate.IsSet()
 }
 
-// IsSetStatusDate returns a boolean if a field has been set.
-func (o *IntegrationPuppet) IsSetStatusDate() bool {
-	if o != nil && o.StatusDate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusDate gets a reference to the given NullableTime and assigns it to the StatusDate field.
 func (o *IntegrationPuppet) SetStatusDate(v time.Time) {
 	o.StatusDate.Set(&v)
-}
-
-// SetStatusDateNil sets the value for StatusDate to be an explicit nil
-func (o *IntegrationPuppet) SetStatusDateNil() {
-	o.StatusDate.Set(nil)
-}
-
-// UnsetStatusDate ensures that no value is present for StatusDate, not even an explicit nil
-func (o *IntegrationPuppet) UnsetStatusDate() {
-	o.StatusDate.Unset()
 }
 
 // GetStatusMessage returns the StatusMessage field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -374,28 +283,9 @@ func (o *IntegrationPuppet) GetStatusMessageOk() (*string, bool) {
 	return o.StatusMessage.Get(), o.StatusMessage.IsSet()
 }
 
-// IsSetStatusMessage returns a boolean if a field has been set.
-func (o *IntegrationPuppet) IsSetStatusMessage() bool {
-	if o != nil && o.StatusMessage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusMessage gets a reference to the given NullableString and assigns it to the StatusMessage field.
 func (o *IntegrationPuppet) SetStatusMessage(v string) {
 	o.StatusMessage.Set(&v)
-}
-
-// SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
-func (o *IntegrationPuppet) SetStatusMessageNil() {
-	o.StatusMessage.Set(nil)
-}
-
-// UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
-func (o *IntegrationPuppet) UnsetStatusMessage() {
-	o.StatusMessage.Unset()
 }
 
 // GetLastSync returns the LastSync field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -417,28 +307,9 @@ func (o *IntegrationPuppet) GetLastSyncOk() (*string, bool) {
 	return o.LastSync.Get(), o.LastSync.IsSet()
 }
 
-// IsSetLastSync returns a boolean if a field has been set.
-func (o *IntegrationPuppet) IsSetLastSync() bool {
-	if o != nil && o.LastSync.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastSync gets a reference to the given NullableString and assigns it to the LastSync field.
 func (o *IntegrationPuppet) SetLastSync(v string) {
 	o.LastSync.Set(&v)
-}
-
-// SetLastSyncNil sets the value for LastSync to be an explicit nil
-func (o *IntegrationPuppet) SetLastSyncNil() {
-	o.LastSync.Set(nil)
-}
-
-// UnsetLastSync ensures that no value is present for LastSync, not even an explicit nil
-func (o *IntegrationPuppet) UnsetLastSync() {
-	o.LastSync.Unset()
 }
 
 // GetLastSyncDuration returns the LastSyncDuration field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -460,28 +331,9 @@ func (o *IntegrationPuppet) GetLastSyncDurationOk() (*string, bool) {
 	return o.LastSyncDuration.Get(), o.LastSyncDuration.IsSet()
 }
 
-// IsSetLastSyncDuration returns a boolean if a field has been set.
-func (o *IntegrationPuppet) IsSetLastSyncDuration() bool {
-	if o != nil && o.LastSyncDuration.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastSyncDuration gets a reference to the given NullableString and assigns it to the LastSyncDuration field.
 func (o *IntegrationPuppet) SetLastSyncDuration(v string) {
 	o.LastSyncDuration.Set(&v)
-}
-
-// SetLastSyncDurationNil sets the value for LastSyncDuration to be an explicit nil
-func (o *IntegrationPuppet) SetLastSyncDurationNil() {
-	o.LastSyncDuration.Set(nil)
-}
-
-// UnsetLastSyncDuration ensures that no value is present for LastSyncDuration, not even an explicit nil
-func (o *IntegrationPuppet) UnsetLastSyncDuration() {
-	o.LastSyncDuration.Unset()
 }
 
 // GetCredential returns the Credential field value if set, zero value otherwise.
@@ -500,15 +352,6 @@ func (o *IntegrationPuppet) GetCredentialOk() (*AddIntegrations200ResponseAllOfI
 		return nil, false
 	}
 	return o.Credential, true
-}
-
-// IsSetCredential returns a boolean if a field has been set.
-func (o *IntegrationPuppet) IsSetCredential() bool {
-	if o != nil && !IsNil(o.Credential) {
-		return true
-	}
-
-	return false
 }
 
 // SetCredential gets a reference to the given AddIntegrations200ResponseAllOfIntegrationOneOf11Credential and assigns it to the Credential field.

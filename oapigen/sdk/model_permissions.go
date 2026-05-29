@@ -63,15 +63,6 @@ func (o *Permissions) GetResourcePoolOk() (*PermissionsResourcePool, bool) {
 	return o.ResourcePool, true
 }
 
-// IsSetResourcePool returns a boolean if a field has been set.
-func (o *Permissions) IsSetResourcePool() bool {
-	if o != nil && !IsNil(o.ResourcePool) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourcePool gets a reference to the given PermissionsResourcePool and assigns it to the ResourcePool field.
 func (o *Permissions) SetResourcePool(v PermissionsResourcePool) {
 	o.ResourcePool = &v
@@ -95,15 +86,6 @@ func (o *Permissions) GetResourcePermissionsOk() (*PermissionsResourcePermission
 	return o.ResourcePermissions, true
 }
 
-// IsSetResourcePermissions returns a boolean if a field has been set.
-func (o *Permissions) IsSetResourcePermissions() bool {
-	if o != nil && !IsNil(o.ResourcePermissions) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourcePermissions gets a reference to the given PermissionsResourcePermissions and assigns it to the ResourcePermissions field.
 func (o *Permissions) SetResourcePermissions(v PermissionsResourcePermissions) {
 	o.ResourcePermissions = &v
@@ -125,15 +107,6 @@ func (o *Permissions) GetTenantPermissionsOk() (*PermissionsTenantPermissions, b
 		return nil, false
 	}
 	return o.TenantPermissions, true
-}
-
-// IsSetTenantPermissions returns a boolean if a field has been set.
-func (o *Permissions) IsSetTenantPermissions() bool {
-	if o != nil && !IsNil(o.TenantPermissions) {
-		return true
-	}
-
-	return false
 }
 
 // SetTenantPermissions gets a reference to the given PermissionsTenantPermissions and assigns it to the TenantPermissions field.

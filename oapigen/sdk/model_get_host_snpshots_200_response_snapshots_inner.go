@@ -78,15 +78,6 @@ func (o *GetHostSnpshots200ResponseSnapshotsInner) GetIdOk() (*int32, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetHostSnpshots200ResponseSnapshotsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int32 and assigns it to the Id field.
 func (o *GetHostSnpshots200ResponseSnapshotsInner) SetId(v int32) {
 	o.Id = &v
@@ -108,15 +99,6 @@ func (o *GetHostSnpshots200ResponseSnapshotsInner) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *GetHostSnpshots200ResponseSnapshotsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -143,28 +125,9 @@ func (o *GetHostSnpshots200ResponseSnapshotsInner) GetDescriptionOk() (*string, 
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *GetHostSnpshots200ResponseSnapshotsInner) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *GetHostSnpshots200ResponseSnapshotsInner) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *GetHostSnpshots200ResponseSnapshotsInner) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *GetHostSnpshots200ResponseSnapshotsInner) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -186,28 +149,9 @@ func (o *GetHostSnpshots200ResponseSnapshotsInner) GetExternalIdOk() (*string, b
 	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *GetHostSnpshots200ResponseSnapshotsInner) IsSetExternalId() bool {
-	if o != nil && o.ExternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *GetHostSnpshots200ResponseSnapshotsInner) SetExternalId(v string) {
 	o.ExternalId.Set(&v)
-}
-
-// SetExternalIdNil sets the value for ExternalId to be an explicit nil
-func (o *GetHostSnpshots200ResponseSnapshotsInner) SetExternalIdNil() {
-	o.ExternalId.Set(nil)
-}
-
-// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-func (o *GetHostSnpshots200ResponseSnapshotsInner) UnsetExternalId() {
-	o.ExternalId.Unset()
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -226,15 +170,6 @@ func (o *GetHostSnpshots200ResponseSnapshotsInner) GetStatusOk() (*string, bool)
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *GetHostSnpshots200ResponseSnapshotsInner) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -261,28 +196,9 @@ func (o *GetHostSnpshots200ResponseSnapshotsInner) GetStateOk() (*string, bool) 
 	return o.State.Get(), o.State.IsSet()
 }
 
-// IsSetState returns a boolean if a field has been set.
-func (o *GetHostSnpshots200ResponseSnapshotsInner) IsSetState() bool {
-	if o != nil && o.State.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetState gets a reference to the given NullableString and assigns it to the State field.
 func (o *GetHostSnpshots200ResponseSnapshotsInner) SetState(v string) {
 	o.State.Set(&v)
-}
-
-// SetStateNil sets the value for State to be an explicit nil
-func (o *GetHostSnpshots200ResponseSnapshotsInner) SetStateNil() {
-	o.State.Set(nil)
-}
-
-// UnsetState ensures that no value is present for State, not even an explicit nil
-func (o *GetHostSnpshots200ResponseSnapshotsInner) UnsetState() {
-	o.State.Unset()
 }
 
 // GetSnapshotType returns the SnapshotType field value if set, zero value otherwise.
@@ -301,15 +217,6 @@ func (o *GetHostSnpshots200ResponseSnapshotsInner) GetSnapshotTypeOk() (*string,
 		return nil, false
 	}
 	return o.SnapshotType, true
-}
-
-// IsSetSnapshotType returns a boolean if a field has been set.
-func (o *GetHostSnpshots200ResponseSnapshotsInner) IsSetSnapshotType() bool {
-	if o != nil && !IsNil(o.SnapshotType) {
-		return true
-	}
-
-	return false
 }
 
 // SetSnapshotType gets a reference to the given string and assigns it to the SnapshotType field.
@@ -336,28 +243,9 @@ func (o *GetHostSnpshots200ResponseSnapshotsInner) GetSnapshotCreatedOk() (*time
 	return o.SnapshotCreated.Get(), o.SnapshotCreated.IsSet()
 }
 
-// IsSetSnapshotCreated returns a boolean if a field has been set.
-func (o *GetHostSnpshots200ResponseSnapshotsInner) IsSetSnapshotCreated() bool {
-	if o != nil && o.SnapshotCreated.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSnapshotCreated gets a reference to the given NullableTime and assigns it to the SnapshotCreated field.
 func (o *GetHostSnpshots200ResponseSnapshotsInner) SetSnapshotCreated(v time.Time) {
 	o.SnapshotCreated.Set(&v)
-}
-
-// SetSnapshotCreatedNil sets the value for SnapshotCreated to be an explicit nil
-func (o *GetHostSnpshots200ResponseSnapshotsInner) SetSnapshotCreatedNil() {
-	o.SnapshotCreated.Set(nil)
-}
-
-// UnsetSnapshotCreated ensures that no value is present for SnapshotCreated, not even an explicit nil
-func (o *GetHostSnpshots200ResponseSnapshotsInner) UnsetSnapshotCreated() {
-	o.SnapshotCreated.Unset()
 }
 
 // GetZone returns the Zone field value if set, zero value otherwise.
@@ -376,15 +264,6 @@ func (o *GetHostSnpshots200ResponseSnapshotsInner) GetZoneOk() (*GetHostSnpshots
 		return nil, false
 	}
 	return o.Zone, true
-}
-
-// IsSetZone returns a boolean if a field has been set.
-func (o *GetHostSnpshots200ResponseSnapshotsInner) IsSetZone() bool {
-	if o != nil && !IsNil(o.Zone) {
-		return true
-	}
-
-	return false
 }
 
 // SetZone gets a reference to the given GetHostSnpshots200ResponseSnapshotsInnerZone and assigns it to the Zone field.
@@ -411,28 +290,9 @@ func (o *GetHostSnpshots200ResponseSnapshotsInner) GetDatastoreOk() (*string, bo
 	return o.Datastore.Get(), o.Datastore.IsSet()
 }
 
-// IsSetDatastore returns a boolean if a field has been set.
-func (o *GetHostSnpshots200ResponseSnapshotsInner) IsSetDatastore() bool {
-	if o != nil && o.Datastore.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDatastore gets a reference to the given NullableString and assigns it to the Datastore field.
 func (o *GetHostSnpshots200ResponseSnapshotsInner) SetDatastore(v string) {
 	o.Datastore.Set(&v)
-}
-
-// SetDatastoreNil sets the value for Datastore to be an explicit nil
-func (o *GetHostSnpshots200ResponseSnapshotsInner) SetDatastoreNil() {
-	o.Datastore.Set(nil)
-}
-
-// UnsetDatastore ensures that no value is present for Datastore, not even an explicit nil
-func (o *GetHostSnpshots200ResponseSnapshotsInner) UnsetDatastore() {
-	o.Datastore.Unset()
 }
 
 // GetParentSnapshot returns the ParentSnapshot field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -454,28 +314,9 @@ func (o *GetHostSnpshots200ResponseSnapshotsInner) GetParentSnapshotOk() (*strin
 	return o.ParentSnapshot.Get(), o.ParentSnapshot.IsSet()
 }
 
-// IsSetParentSnapshot returns a boolean if a field has been set.
-func (o *GetHostSnpshots200ResponseSnapshotsInner) IsSetParentSnapshot() bool {
-	if o != nil && o.ParentSnapshot.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetParentSnapshot gets a reference to the given NullableString and assigns it to the ParentSnapshot field.
 func (o *GetHostSnpshots200ResponseSnapshotsInner) SetParentSnapshot(v string) {
 	o.ParentSnapshot.Set(&v)
-}
-
-// SetParentSnapshotNil sets the value for ParentSnapshot to be an explicit nil
-func (o *GetHostSnpshots200ResponseSnapshotsInner) SetParentSnapshotNil() {
-	o.ParentSnapshot.Set(nil)
-}
-
-// UnsetParentSnapshot ensures that no value is present for ParentSnapshot, not even an explicit nil
-func (o *GetHostSnpshots200ResponseSnapshotsInner) UnsetParentSnapshot() {
-	o.ParentSnapshot.Unset()
 }
 
 // GetSnapshotFiles returns the SnapshotFiles field value if set, zero value otherwise.
@@ -494,15 +335,6 @@ func (o *GetHostSnpshots200ResponseSnapshotsInner) GetSnapshotFilesOk() ([]GetHo
 		return nil, false
 	}
 	return o.SnapshotFiles, true
-}
-
-// IsSetSnapshotFiles returns a boolean if a field has been set.
-func (o *GetHostSnpshots200ResponseSnapshotsInner) IsSetSnapshotFiles() bool {
-	if o != nil && !IsNil(o.SnapshotFiles) {
-		return true
-	}
-
-	return false
 }
 
 // SetSnapshotFiles gets a reference to the given []GetHostSnpshots200ResponseSnapshotsInnerSnapshotFilesInner and assigns it to the SnapshotFiles field.
@@ -528,15 +360,6 @@ func (o *GetHostSnpshots200ResponseSnapshotsInner) GetCurrentlyActiveOk() (*bool
 	return o.CurrentlyActive, true
 }
 
-// IsSetCurrentlyActive returns a boolean if a field has been set.
-func (o *GetHostSnpshots200ResponseSnapshotsInner) IsSetCurrentlyActive() bool {
-	if o != nil && !IsNil(o.CurrentlyActive) {
-		return true
-	}
-
-	return false
-}
-
 // SetCurrentlyActive gets a reference to the given bool and assigns it to the CurrentlyActive field.
 func (o *GetHostSnpshots200ResponseSnapshotsInner) SetCurrentlyActive(v bool) {
 	o.CurrentlyActive = &v
@@ -558,15 +381,6 @@ func (o *GetHostSnpshots200ResponseSnapshotsInner) GetMemorySnapshotOk() (*bool,
 		return nil, false
 	}
 	return o.MemorySnapshot, true
-}
-
-// IsSetMemorySnapshot returns a boolean if a field has been set.
-func (o *GetHostSnpshots200ResponseSnapshotsInner) IsSetMemorySnapshot() bool {
-	if o != nil && !IsNil(o.MemorySnapshot) {
-		return true
-	}
-
-	return false
 }
 
 // SetMemorySnapshot gets a reference to the given bool and assigns it to the MemorySnapshot field.
@@ -592,15 +406,6 @@ func (o *GetHostSnpshots200ResponseSnapshotsInner) GetForExportOk() (*bool, bool
 	return o.ForExport, true
 }
 
-// IsSetForExport returns a boolean if a field has been set.
-func (o *GetHostSnpshots200ResponseSnapshotsInner) IsSetForExport() bool {
-	if o != nil && !IsNil(o.ForExport) {
-		return true
-	}
-
-	return false
-}
-
 // SetForExport gets a reference to the given bool and assigns it to the ForExport field.
 func (o *GetHostSnpshots200ResponseSnapshotsInner) SetForExport(v bool) {
 	o.ForExport = &v
@@ -624,15 +429,6 @@ func (o *GetHostSnpshots200ResponseSnapshotsInner) GetForBackupOk() (*bool, bool
 	return o.ForBackup, true
 }
 
-// IsSetForBackup returns a boolean if a field has been set.
-func (o *GetHostSnpshots200ResponseSnapshotsInner) IsSetForBackup() bool {
-	if o != nil && !IsNil(o.ForBackup) {
-		return true
-	}
-
-	return false
-}
-
 // SetForBackup gets a reference to the given bool and assigns it to the ForBackup field.
 func (o *GetHostSnpshots200ResponseSnapshotsInner) SetForBackup(v bool) {
 	o.ForBackup = &v
@@ -654,15 +450,6 @@ func (o *GetHostSnpshots200ResponseSnapshotsInner) GetDateCreatedOk() (*time.Tim
 		return nil, false
 	}
 	return o.DateCreated, true
-}
-
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *GetHostSnpshots200ResponseSnapshotsInner) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.

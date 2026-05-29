@@ -61,15 +61,6 @@ func (o *AppStats) GetStatsOk() (*AppStatsStats, bool) {
 	return o.Stats, true
 }
 
-// IsSetStats returns a boolean if a field has been set.
-func (o *AppStats) IsSetStats() bool {
-	if o != nil && !IsNil(o.Stats) {
-		return true
-	}
-
-	return false
-}
-
 // SetStats gets a reference to the given AppStatsStats and assigns it to the Stats field.
 func (o *AppStats) SetStats(v AppStatsStats) {
 	o.Stats = &v

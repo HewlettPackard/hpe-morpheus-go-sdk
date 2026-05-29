@@ -63,15 +63,6 @@ func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile) Ge
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile) SetId(v int64) {
 	o.Id = &v
@@ -95,15 +86,6 @@ func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile) Ge
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile) SetName(v string) {
 	o.Name = &v
@@ -125,15 +107,6 @@ func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile) Ge
 		return nil, false
 	}
 	return o.FilePath, true
-}
-
-// IsSetFilePath returns a boolean if a field has been set.
-func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile) IsSetFilePath() bool {
-	if o != nil && !IsNil(o.FilePath) {
-		return true
-	}
-
-	return false
 }
 
 // SetFilePath gets a reference to the given string and assigns it to the FilePath field.

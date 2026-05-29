@@ -61,15 +61,6 @@ func (o *GetSupportBundle200Response) GetSupportBundleOk() (*GetSupportBundle200
 	return o.SupportBundle, true
 }
 
-// IsSetSupportBundle returns a boolean if a field has been set.
-func (o *GetSupportBundle200Response) IsSetSupportBundle() bool {
-	if o != nil && !IsNil(o.SupportBundle) {
-		return true
-	}
-
-	return false
-}
-
 // SetSupportBundle gets a reference to the given GetSupportBundle200ResponseSupportBundle and assigns it to the SupportBundle field.
 func (o *GetSupportBundle200Response) SetSupportBundle(v GetSupportBundle200ResponseSupportBundle) {
 	o.SupportBundle = &v

@@ -61,15 +61,6 @@ func (o *RouterQuotaPolicyTypeConfiguration4) GetMaxRoutersOk() (*string, bool) 
 	return o.MaxRouters, true
 }
 
-// IsSetMaxRouters returns a boolean if a field has been set.
-func (o *RouterQuotaPolicyTypeConfiguration4) IsSetMaxRouters() bool {
-	if o != nil && !IsNil(o.MaxRouters) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxRouters gets a reference to the given string and assigns it to the MaxRouters field.
 func (o *RouterQuotaPolicyTypeConfiguration4) SetMaxRouters(v string) {
 	o.MaxRouters = &v

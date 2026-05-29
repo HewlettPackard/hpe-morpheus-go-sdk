@@ -68,15 +68,6 @@ func (o *ServicePlanPermissionsResourcePermissions) GetDefaultStoreOk() (*bool, 
 	return o.DefaultStore, true
 }
 
-// IsSetDefaultStore returns a boolean if a field has been set.
-func (o *ServicePlanPermissionsResourcePermissions) IsSetDefaultStore() bool {
-	if o != nil && !IsNil(o.DefaultStore) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultStore gets a reference to the given bool and assigns it to the DefaultStore field.
 func (o *ServicePlanPermissionsResourcePermissions) SetDefaultStore(v bool) {
 	o.DefaultStore = &v
@@ -98,15 +89,6 @@ func (o *ServicePlanPermissionsResourcePermissions) GetAllPlansOk() (*bool, bool
 		return nil, false
 	}
 	return o.AllPlans, true
-}
-
-// IsSetAllPlans returns a boolean if a field has been set.
-func (o *ServicePlanPermissionsResourcePermissions) IsSetAllPlans() bool {
-	if o != nil && !IsNil(o.AllPlans) {
-		return true
-	}
-
-	return false
 }
 
 // SetAllPlans gets a reference to the given bool and assigns it to the AllPlans field.
@@ -132,15 +114,6 @@ func (o *ServicePlanPermissionsResourcePermissions) GetDefaultTargetOk() (*bool,
 	return o.DefaultTarget, true
 }
 
-// IsSetDefaultTarget returns a boolean if a field has been set.
-func (o *ServicePlanPermissionsResourcePermissions) IsSetDefaultTarget() bool {
-	if o != nil && !IsNil(o.DefaultTarget) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultTarget gets a reference to the given bool and assigns it to the DefaultTarget field.
 func (o *ServicePlanPermissionsResourcePermissions) SetDefaultTarget(v bool) {
 	o.DefaultTarget = &v
@@ -162,15 +135,6 @@ func (o *ServicePlanPermissionsResourcePermissions) GetCanManageOk() (*bool, boo
 		return nil, false
 	}
 	return o.CanManage, true
-}
-
-// IsSetCanManage returns a boolean if a field has been set.
-func (o *ServicePlanPermissionsResourcePermissions) IsSetCanManage() bool {
-	if o != nil && !IsNil(o.CanManage) {
-		return true
-	}
-
-	return false
 }
 
 // SetCanManage gets a reference to the given bool and assigns it to the CanManage field.
@@ -196,15 +160,6 @@ func (o *ServicePlanPermissionsResourcePermissions) GetAllOk() (*bool, bool) {
 	return o.All, true
 }
 
-// IsSetAll returns a boolean if a field has been set.
-func (o *ServicePlanPermissionsResourcePermissions) IsSetAll() bool {
-	if o != nil && !IsNil(o.All) {
-		return true
-	}
-
-	return false
-}
-
 // SetAll gets a reference to the given bool and assigns it to the All field.
 func (o *ServicePlanPermissionsResourcePermissions) SetAll(v bool) {
 	o.All = &v
@@ -226,15 +181,6 @@ func (o *ServicePlanPermissionsResourcePermissions) GetAccountOk() (*ServicePlan
 		return nil, false
 	}
 	return o.Account, true
-}
-
-// IsSetAccount returns a boolean if a field has been set.
-func (o *ServicePlanPermissionsResourcePermissions) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccount gets a reference to the given ServicePlanPermissionsResourcePermissionsAccount and assigns it to the Account field.
@@ -260,15 +206,6 @@ func (o *ServicePlanPermissionsResourcePermissions) GetSitesOk() ([]ServicePlanP
 	return o.Sites, true
 }
 
-// IsSetSites returns a boolean if a field has been set.
-func (o *ServicePlanPermissionsResourcePermissions) IsSetSites() bool {
-	if o != nil && !IsNil(o.Sites) {
-		return true
-	}
-
-	return false
-}
-
 // SetSites gets a reference to the given []ServicePlanPermissionsResourcePermissionsSitesInner and assigns it to the Sites field.
 func (o *ServicePlanPermissionsResourcePermissions) SetSites(v []ServicePlanPermissionsResourcePermissionsSitesInner) {
 	o.Sites = v
@@ -291,15 +228,6 @@ func (o *ServicePlanPermissionsResourcePermissions) GetPlansOk() ([]map[string]i
 		return nil, false
 	}
 	return o.Plans, true
-}
-
-// IsSetPlans returns a boolean if a field has been set.
-func (o *ServicePlanPermissionsResourcePermissions) IsSetPlans() bool {
-	if o != nil && !IsNil(o.Plans) {
-		return true
-	}
-
-	return false
 }
 
 // SetPlans gets a reference to the given []map[string]interface{} and assigns it to the Plans field.

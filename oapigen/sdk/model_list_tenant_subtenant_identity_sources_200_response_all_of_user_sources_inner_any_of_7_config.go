@@ -66,15 +66,6 @@ func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf
 	return o.Noninteractive, true
 }
 
-// IsSetNoninteractive returns a boolean if a field has been set.
-func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7Config) IsSetNoninteractive() bool {
-	if o != nil && !IsNil(o.Noninteractive) {
-		return true
-	}
-
-	return false
-}
-
 // SetNoninteractive gets a reference to the given bool and assigns it to the Noninteractive field.
 func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7Config) SetNoninteractive(v bool) {
 	o.Noninteractive = &v
@@ -96,15 +87,6 @@ func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf
 		return nil, false
 	}
 	return o.LoginUrl, true
-}
-
-// IsSetLoginUrl returns a boolean if a field has been set.
-func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7Config) IsSetLoginUrl() bool {
-	if o != nil && !IsNil(o.LoginUrl) {
-		return true
-	}
-
-	return false
 }
 
 // SetLoginUrl gets a reference to the given string and assigns it to the LoginUrl field.
@@ -130,15 +112,6 @@ func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf
 	return o.LogoutUrl, true
 }
 
-// IsSetLogoutUrl returns a boolean if a field has been set.
-func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7Config) IsSetLogoutUrl() bool {
-	if o != nil && !IsNil(o.LogoutUrl) {
-		return true
-	}
-
-	return false
-}
-
 // SetLogoutUrl gets a reference to the given string and assigns it to the LogoutUrl field.
 func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7Config) SetLogoutUrl(v string) {
 	o.LogoutUrl = &v
@@ -160,15 +133,6 @@ func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf
 		return nil, false
 	}
 	return o.EncryptionAlgo, true
-}
-
-// IsSetEncryptionAlgo returns a boolean if a field has been set.
-func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7Config) IsSetEncryptionAlgo() bool {
-	if o != nil && !IsNil(o.EncryptionAlgo) {
-		return true
-	}
-
-	return false
 }
 
 // SetEncryptionAlgo gets a reference to the given string and assigns it to the EncryptionAlgo field.
@@ -194,15 +158,6 @@ func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf
 	return o.EncryptionKey, true
 }
 
-// IsSetEncryptionKey returns a boolean if a field has been set.
-func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7Config) IsSetEncryptionKey() bool {
-	if o != nil && !IsNil(o.EncryptionKey) {
-		return true
-	}
-
-	return false
-}
-
 // SetEncryptionKey gets a reference to the given string and assigns it to the EncryptionKey field.
 func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7Config) SetEncryptionKey(v string) {
 	o.EncryptionKey = &v
@@ -224,15 +179,6 @@ func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf
 		return nil, false
 	}
 	return o.RequiredAttributeValue, true
-}
-
-// IsSetRequiredAttributeValue returns a boolean if a field has been set.
-func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7Config) IsSetRequiredAttributeValue() bool {
-	if o != nil && !IsNil(o.RequiredAttributeValue) {
-		return true
-	}
-
-	return false
 }
 
 // SetRequiredAttributeValue gets a reference to the given string and assigns it to the RequiredAttributeValue field.

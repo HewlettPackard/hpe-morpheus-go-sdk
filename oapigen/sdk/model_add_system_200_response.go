@@ -63,15 +63,6 @@ func (o *AddSystem200Response) GetSuccessOk() (*bool, bool) {
 	return o.Success, true
 }
 
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *AddSystem200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
-}
-
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.
 func (o *AddSystem200Response) SetSuccess(v bool) {
 	o.Success = &v
@@ -93,15 +84,6 @@ func (o *AddSystem200Response) GetIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.Id, true
-}
-
-// IsSetId returns a boolean if a field has been set.
-func (o *AddSystem200Response) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
 }
 
 // SetId gets a reference to the given int64 and assigns it to the Id field.

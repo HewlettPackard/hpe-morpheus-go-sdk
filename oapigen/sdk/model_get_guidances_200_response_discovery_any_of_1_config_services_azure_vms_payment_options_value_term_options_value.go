@@ -64,15 +64,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOpti
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValue) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValue) SetCode(v string) {
 	o.Code = &v
@@ -94,15 +85,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOpti
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValue) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -128,15 +110,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOpti
 	return o.DetailList, true
 }
 
-// IsSetDetailList returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValue) IsSetDetailList() bool {
-	if o != nil && !IsNil(o.DetailList) {
-		return true
-	}
-
-	return false
-}
-
 // SetDetailList gets a reference to the given []GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueDetailListInner and assigns it to the DetailList field.
 func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValue) SetDetailList(v []GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueDetailListInner) {
 	o.DetailList = v
@@ -158,15 +131,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOpti
 		return nil, false
 	}
 	return o.Summary, true
-}
-
-// IsSetSummary returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValue) IsSetSummary() bool {
-	if o != nil && !IsNil(o.Summary) {
-		return true
-	}
-
-	return false
 }
 
 // SetSummary gets a reference to the given GetGuidances200ResponseDiscoveryAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary and assigns it to the Summary field.

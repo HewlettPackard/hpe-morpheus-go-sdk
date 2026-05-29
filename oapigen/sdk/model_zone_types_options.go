@@ -64,15 +64,6 @@ func (o *ZoneTypesOptions) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ZoneTypesOptions) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ZoneTypesOptions) SetName(v string) {
 	o.Name = &v
@@ -94,15 +85,6 @@ func (o *ZoneTypesOptions) GetValueOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Value, true
-}
-
-// IsSetValue returns a boolean if a field has been set.
-func (o *ZoneTypesOptions) IsSetValue() bool {
-	if o != nil && !IsNil(o.Value) {
-		return true
-	}
-
-	return false
 }
 
 // SetValue gets a reference to the given string and assigns it to the Value field.
@@ -128,15 +110,6 @@ func (o *ZoneTypesOptions) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ZoneTypesOptions) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ZoneTypesOptions) SetId(v int64) {
 	o.Id = &v
@@ -158,15 +131,6 @@ func (o *ZoneTypesOptions) GetCodeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *ZoneTypesOptions) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.

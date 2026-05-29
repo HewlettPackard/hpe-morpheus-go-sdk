@@ -61,15 +61,6 @@ func (o *UpdateInvoicesRequest) GetInvoiceOk() (*UpdateInvoicesRequestInvoice, b
 	return o.Invoice, true
 }
 
-// IsSetInvoice returns a boolean if a field has been set.
-func (o *UpdateInvoicesRequest) IsSetInvoice() bool {
-	if o != nil && !IsNil(o.Invoice) {
-		return true
-	}
-
-	return false
-}
-
 // SetInvoice gets a reference to the given UpdateInvoicesRequestInvoice and assigns it to the Invoice field.
 func (o *UpdateInvoicesRequest) SetInvoice(v UpdateInvoicesRequestInvoice) {
 	o.Invoice = &v

@@ -88,15 +88,6 @@ func (o *InstanceNamePolicyTypeConfiguration9) GetNamingPatternOk() (*string, bo
 	return o.NamingPattern, true
 }
 
-// IsSetNamingPattern returns a boolean if a field has been set.
-func (o *InstanceNamePolicyTypeConfiguration9) IsSetNamingPattern() bool {
-	if o != nil && !IsNil(o.NamingPattern) {
-		return true
-	}
-
-	return false
-}
-
 // SetNamingPattern gets a reference to the given string and assigns it to the NamingPattern field.
 func (o *InstanceNamePolicyTypeConfiguration9) SetNamingPattern(v string) {
 	o.NamingPattern = &v
@@ -118,15 +109,6 @@ func (o *InstanceNamePolicyTypeConfiguration9) GetNamingConflictOk() (*bool, boo
 		return nil, false
 	}
 	return o.NamingConflict, true
-}
-
-// IsSetNamingConflict returns a boolean if a field has been set.
-func (o *InstanceNamePolicyTypeConfiguration9) IsSetNamingConflict() bool {
-	if o != nil && !IsNil(o.NamingConflict) {
-		return true
-	}
-
-	return false
 }
 
 // SetNamingConflict gets a reference to the given bool and assigns it to the NamingConflict field.

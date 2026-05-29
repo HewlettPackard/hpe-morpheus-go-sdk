@@ -62,15 +62,6 @@ func (o *MigrationUpdateNetworksInner) GetSourceNetworkOk() (*MigrationUpdateNet
 	return o.SourceNetwork, true
 }
 
-// IsSetSourceNetwork returns a boolean if a field has been set.
-func (o *MigrationUpdateNetworksInner) IsSetSourceNetwork() bool {
-	if o != nil && !IsNil(o.SourceNetwork) {
-		return true
-	}
-
-	return false
-}
-
 // SetSourceNetwork gets a reference to the given MigrationUpdateNetworksInnerSourceNetwork and assigns it to the SourceNetwork field.
 func (o *MigrationUpdateNetworksInner) SetSourceNetwork(v MigrationUpdateNetworksInnerSourceNetwork) {
 	o.SourceNetwork = &v
@@ -92,15 +83,6 @@ func (o *MigrationUpdateNetworksInner) GetDestinationNetworkOk() (*MigrationUpda
 		return nil, false
 	}
 	return o.DestinationNetwork, true
-}
-
-// IsSetDestinationNetwork returns a boolean if a field has been set.
-func (o *MigrationUpdateNetworksInner) IsSetDestinationNetwork() bool {
-	if o != nil && !IsNil(o.DestinationNetwork) {
-		return true
-	}
-
-	return false
 }
 
 // SetDestinationNetwork gets a reference to the given MigrationUpdateNetworksInnerDestinationNetwork and assigns it to the DestinationNetwork field.

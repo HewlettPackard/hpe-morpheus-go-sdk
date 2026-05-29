@@ -66,15 +66,6 @@ func (o *CatalogCartItemsInnerInstance) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *CatalogCartItemsInnerInstance) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *CatalogCartItemsInnerInstance) SetId(v int64) {
 	o.Id = &v
@@ -96,15 +87,6 @@ func (o *CatalogCartItemsInnerInstance) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *CatalogCartItemsInnerInstance) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -130,15 +112,6 @@ func (o *CatalogCartItemsInnerInstance) GetStatusOk() (*string, bool) {
 	return o.Status, true
 }
 
-// IsSetStatus returns a boolean if a field has been set.
-func (o *CatalogCartItemsInnerInstance) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
-}
-
 // SetStatus gets a reference to the given string and assigns it to the Status field.
 func (o *CatalogCartItemsInnerInstance) SetStatus(v string) {
 	o.Status = &v
@@ -160,15 +133,6 @@ func (o *CatalogCartItemsInnerInstance) GetLocationsOk() ([]string, bool) {
 		return nil, false
 	}
 	return o.Locations, true
-}
-
-// IsSetLocations returns a boolean if a field has been set.
-func (o *CatalogCartItemsInnerInstance) IsSetLocations() bool {
-	if o != nil && !IsNil(o.Locations) {
-		return true
-	}
-
-	return false
 }
 
 // SetLocations gets a reference to the given []string and assigns it to the Locations field.
@@ -194,15 +158,6 @@ func (o *CatalogCartItemsInnerInstance) GetVirtualMachinesOk() (*int64, bool) {
 	return o.VirtualMachines, true
 }
 
-// IsSetVirtualMachines returns a boolean if a field has been set.
-func (o *CatalogCartItemsInnerInstance) IsSetVirtualMachines() bool {
-	if o != nil && !IsNil(o.VirtualMachines) {
-		return true
-	}
-
-	return false
-}
-
 // SetVirtualMachines gets a reference to the given int64 and assigns it to the VirtualMachines field.
 func (o *CatalogCartItemsInnerInstance) SetVirtualMachines(v int64) {
 	o.VirtualMachines = &v
@@ -224,15 +179,6 @@ func (o *CatalogCartItemsInnerInstance) GetVersionOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Version, true
-}
-
-// IsSetVersion returns a boolean if a field has been set.
-func (o *CatalogCartItemsInnerInstance) IsSetVersion() bool {
-	if o != nil && !IsNil(o.Version) {
-		return true
-	}
-
-	return false
 }
 
 // SetVersion gets a reference to the given string and assigns it to the Version field.

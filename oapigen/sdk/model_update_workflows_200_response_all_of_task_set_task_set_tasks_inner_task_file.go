@@ -66,15 +66,6 @@ func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskFile) GetIdO
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskFile) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskFile) SetId(v int64) {
 	o.Id = &v
@@ -96,15 +87,6 @@ func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskFile) GetSou
 		return nil, false
 	}
 	return o.SourceType, true
-}
-
-// IsSetSourceType returns a boolean if a field has been set.
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskFile) IsSetSourceType() bool {
-	if o != nil && !IsNil(o.SourceType) {
-		return true
-	}
-
-	return false
 }
 
 // SetSourceType gets a reference to the given string and assigns it to the SourceType field.
@@ -131,28 +113,9 @@ func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskFile) GetCon
 	return o.ContentRef.Get(), o.ContentRef.IsSet()
 }
 
-// IsSetContentRef returns a boolean if a field has been set.
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskFile) IsSetContentRef() bool {
-	if o != nil && o.ContentRef.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetContentRef gets a reference to the given NullableString and assigns it to the ContentRef field.
 func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskFile) SetContentRef(v string) {
 	o.ContentRef.Set(&v)
-}
-
-// SetContentRefNil sets the value for ContentRef to be an explicit nil
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskFile) SetContentRefNil() {
-	o.ContentRef.Set(nil)
-}
-
-// UnsetContentRef ensures that no value is present for ContentRef, not even an explicit nil
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskFile) UnsetContentRef() {
-	o.ContentRef.Unset()
 }
 
 // GetContentPath returns the ContentPath field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -174,28 +137,9 @@ func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskFile) GetCon
 	return o.ContentPath.Get(), o.ContentPath.IsSet()
 }
 
-// IsSetContentPath returns a boolean if a field has been set.
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskFile) IsSetContentPath() bool {
-	if o != nil && o.ContentPath.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetContentPath gets a reference to the given NullableString and assigns it to the ContentPath field.
 func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskFile) SetContentPath(v string) {
 	o.ContentPath.Set(&v)
-}
-
-// SetContentPathNil sets the value for ContentPath to be an explicit nil
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskFile) SetContentPathNil() {
-	o.ContentPath.Set(nil)
-}
-
-// UnsetContentPath ensures that no value is present for ContentPath, not even an explicit nil
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskFile) UnsetContentPath() {
-	o.ContentPath.Unset()
 }
 
 // GetRepository returns the Repository field value if set, zero value otherwise.
@@ -214,15 +158,6 @@ func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskFile) GetRep
 		return nil, false
 	}
 	return o.Repository, true
-}
-
-// IsSetRepository returns a boolean if a field has been set.
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskFile) IsSetRepository() bool {
-	if o != nil && !IsNil(o.Repository) {
-		return true
-	}
-
-	return false
 }
 
 // SetRepository gets a reference to the given UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskFileRepository and assigns it to the Repository field.
@@ -249,28 +184,9 @@ func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskFile) GetCon
 	return o.Content.Get(), o.Content.IsSet()
 }
 
-// IsSetContent returns a boolean if a field has been set.
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskFile) IsSetContent() bool {
-	if o != nil && o.Content.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetContent gets a reference to the given NullableString and assigns it to the Content field.
 func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskFile) SetContent(v string) {
 	o.Content.Set(&v)
-}
-
-// SetContentNil sets the value for Content to be an explicit nil
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskFile) SetContentNil() {
-	o.Content.Set(nil)
-}
-
-// UnsetContent ensures that no value is present for Content, not even an explicit nil
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskFile) UnsetContent() {
-	o.Content.Unset()
 }
 
 func (o UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskFile) MarshalJSON() ([]byte, error) {

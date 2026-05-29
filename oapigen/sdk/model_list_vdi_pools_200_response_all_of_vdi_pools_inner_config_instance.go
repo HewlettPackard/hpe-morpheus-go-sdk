@@ -62,15 +62,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) GetUserGroupOk
 	return o.UserGroup, true
 }
 
-// IsSetUserGroup returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) IsSetUserGroup() bool {
-	if o != nil && !IsNil(o.UserGroup) {
-		return true
-	}
-
-	return false
-}
-
 // SetUserGroup gets a reference to the given ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstanceUserGroup and assigns it to the UserGroup field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) SetUserGroup(v ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstanceUserGroup) {
 	o.UserGroup = &v
@@ -92,15 +83,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) GetNetworkDoma
 		return nil, false
 	}
 	return o.NetworkDomain, true
-}
-
-// IsSetNetworkDomain returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) IsSetNetworkDomain() bool {
-	if o != nil && !IsNil(o.NetworkDomain) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkDomain gets a reference to the given ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstanceNetworkDomain and assigns it to the NetworkDomain field.

@@ -148,15 +148,6 @@ func (o *AddIntegrationsRequestOneOf6Integration) GetServicePasswordOk() (*strin
 	return o.ServicePassword, true
 }
 
-// IsSetServicePassword returns a boolean if a field has been set.
-func (o *AddIntegrationsRequestOneOf6Integration) IsSetServicePassword() bool {
-	if o != nil && !IsNil(o.ServicePassword) {
-		return true
-	}
-
-	return false
-}
-
 // SetServicePassword gets a reference to the given string and assigns it to the ServicePassword field.
 func (o *AddIntegrationsRequestOneOf6Integration) SetServicePassword(v string) {
 	o.ServicePassword = &v
@@ -178,15 +169,6 @@ func (o *AddIntegrationsRequestOneOf6Integration) GetServiceTokenOk() (*string, 
 		return nil, false
 	}
 	return o.ServiceToken, true
-}
-
-// IsSetServiceToken returns a boolean if a field has been set.
-func (o *AddIntegrationsRequestOneOf6Integration) IsSetServiceToken() bool {
-	if o != nil && !IsNil(o.ServiceToken) {
-		return true
-	}
-
-	return false
 }
 
 // SetServiceToken gets a reference to the given string and assigns it to the ServiceToken field.
@@ -212,15 +194,6 @@ func (o *AddIntegrationsRequestOneOf6Integration) GetServiceKeyOk() (*int64, boo
 	return o.ServiceKey, true
 }
 
-// IsSetServiceKey returns a boolean if a field has been set.
-func (o *AddIntegrationsRequestOneOf6Integration) IsSetServiceKey() bool {
-	if o != nil && !IsNil(o.ServiceKey) {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceKey gets a reference to the given int64 and assigns it to the ServiceKey field.
 func (o *AddIntegrationsRequestOneOf6Integration) SetServiceKey(v int64) {
 	o.ServiceKey = &v
@@ -242,15 +215,6 @@ func (o *AddIntegrationsRequestOneOf6Integration) GetConfigOk() (*AddIntegration
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *AddIntegrationsRequestOneOf6Integration) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given AddIntegrationsRequestOneOf6IntegrationConfig and assigns it to the Config field.

@@ -112,32 +112,6 @@ func (v *CurrencyCode) UnmarshalJSON(src []byte) error {
 	return NewResponseValidationError(fmt.Sprintf("%+v is not a valid CurrencyCode", value))
 }
 
-// NewCurrencyCodeFromValue returns a pointer to a valid CurrencyCode
-// for the value passed as argument, or an error if the value passed is not allowed by the enum
-func NewCurrencyCodeFromValue(v string) (*CurrencyCode, error) {
-	ev := CurrencyCode(v)
-	if ev.IsValid() {
-		return &ev, nil
-	} else {
-		return nil, fmt.Errorf("invalid value '%v' for CurrencyCode: valid values are %v", v, AllowedCurrencyCodeEnumValues)
-	}
-}
-
-// IsValid return true if the value is valid for the enum, false otherwise
-func (v CurrencyCode) IsValid() bool {
-	for _, existing := range AllowedCurrencyCodeEnumValues {
-		if existing == v {
-			return true
-		}
-	}
-	return false
-}
-
-// Ptr returns reference to CurrencyCode value
-func (v CurrencyCode) Ptr() *CurrencyCode {
-	return &v
-}
-
 type NullableCurrencyCode struct {
 	value *CurrencyCode
 	isSet bool

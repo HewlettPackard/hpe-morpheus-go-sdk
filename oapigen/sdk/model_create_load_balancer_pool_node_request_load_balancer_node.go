@@ -72,15 +72,6 @@ func (o *CreateLoadBalancerPoolNodeRequestLoadBalancerNode) GetNameOk() (*string
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *CreateLoadBalancerPoolNodeRequestLoadBalancerNode) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *CreateLoadBalancerPoolNodeRequestLoadBalancerNode) SetName(v string) {
 	o.Name = &v
@@ -102,15 +93,6 @@ func (o *CreateLoadBalancerPoolNodeRequestLoadBalancerNode) GetDescriptionOk() (
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *CreateLoadBalancerPoolNodeRequestLoadBalancerNode) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -136,15 +118,6 @@ func (o *CreateLoadBalancerPoolNodeRequestLoadBalancerNode) GetIpAddressOk() (*s
 	return o.IpAddress, true
 }
 
-// IsSetIpAddress returns a boolean if a field has been set.
-func (o *CreateLoadBalancerPoolNodeRequestLoadBalancerNode) IsSetIpAddress() bool {
-	if o != nil && !IsNil(o.IpAddress) {
-		return true
-	}
-
-	return false
-}
-
 // SetIpAddress gets a reference to the given string and assigns it to the IpAddress field.
 func (o *CreateLoadBalancerPoolNodeRequestLoadBalancerNode) SetIpAddress(v string) {
 	o.IpAddress = &v
@@ -166,15 +139,6 @@ func (o *CreateLoadBalancerPoolNodeRequestLoadBalancerNode) GetPortOk() (*int32,
 		return nil, false
 	}
 	return o.Port, true
-}
-
-// IsSetPort returns a boolean if a field has been set.
-func (o *CreateLoadBalancerPoolNodeRequestLoadBalancerNode) IsSetPort() bool {
-	if o != nil && !IsNil(o.Port) {
-		return true
-	}
-
-	return false
 }
 
 // SetPort gets a reference to the given int32 and assigns it to the Port field.
@@ -200,15 +164,6 @@ func (o *CreateLoadBalancerPoolNodeRequestLoadBalancerNode) GetWeightOk() (*int3
 	return o.Weight, true
 }
 
-// IsSetWeight returns a boolean if a field has been set.
-func (o *CreateLoadBalancerPoolNodeRequestLoadBalancerNode) IsSetWeight() bool {
-	if o != nil && !IsNil(o.Weight) {
-		return true
-	}
-
-	return false
-}
-
 // SetWeight gets a reference to the given int32 and assigns it to the Weight field.
 func (o *CreateLoadBalancerPoolNodeRequestLoadBalancerNode) SetWeight(v int32) {
 	o.Weight = &v
@@ -230,15 +185,6 @@ func (o *CreateLoadBalancerPoolNodeRequestLoadBalancerNode) GetConfigOk() (map[s
 		return map[string]interface{}{}, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *CreateLoadBalancerPoolNodeRequestLoadBalancerNode) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.

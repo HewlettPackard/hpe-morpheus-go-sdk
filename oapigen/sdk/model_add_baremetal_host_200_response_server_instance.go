@@ -66,15 +66,6 @@ func (o *AddBaremetalHost200ResponseServerInstance) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *AddBaremetalHost200ResponseServerInstance) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *AddBaremetalHost200ResponseServerInstance) SetId(v int64) {
 	o.Id = &v
@@ -96,15 +87,6 @@ func (o *AddBaremetalHost200ResponseServerInstance) GetNameOk() (*string, bool) 
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *AddBaremetalHost200ResponseServerInstance) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -130,15 +112,6 @@ func (o *AddBaremetalHost200ResponseServerInstance) GetDisplayNameOk() (*string,
 	return o.DisplayName, true
 }
 
-// IsSetDisplayName returns a boolean if a field has been set.
-func (o *AddBaremetalHost200ResponseServerInstance) IsSetDisplayName() bool {
-	if o != nil && !IsNil(o.DisplayName) {
-		return true
-	}
-
-	return false
-}
-
 // SetDisplayName gets a reference to the given string and assigns it to the DisplayName field.
 func (o *AddBaremetalHost200ResponseServerInstance) SetDisplayName(v string) {
 	o.DisplayName = &v
@@ -160,15 +133,6 @@ func (o *AddBaremetalHost200ResponseServerInstance) GetIsVpcSelectableOk() (*boo
 		return nil, false
 	}
 	return o.IsVpcSelectable, true
-}
-
-// IsSetIsVpcSelectable returns a boolean if a field has been set.
-func (o *AddBaremetalHost200ResponseServerInstance) IsSetIsVpcSelectable() bool {
-	if o != nil && !IsNil(o.IsVpcSelectable) {
-		return true
-	}
-
-	return false
 }
 
 // SetIsVpcSelectable gets a reference to the given bool and assigns it to the IsVpcSelectable field.
@@ -194,15 +158,6 @@ func (o *AddBaremetalHost200ResponseServerInstance) GetAccountIdOk() (*int64, bo
 	return o.AccountId, true
 }
 
-// IsSetAccountId returns a boolean if a field has been set.
-func (o *AddBaremetalHost200ResponseServerInstance) IsSetAccountId() bool {
-	if o != nil && !IsNil(o.AccountId) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccountId gets a reference to the given int64 and assigns it to the AccountId field.
 func (o *AddBaremetalHost200ResponseServerInstance) SetAccountId(v int64) {
 	o.AccountId = &v
@@ -224,15 +179,6 @@ func (o *AddBaremetalHost200ResponseServerInstance) GetAccountNameOk() (*string,
 		return nil, false
 	}
 	return o.AccountName, true
-}
-
-// IsSetAccountName returns a boolean if a field has been set.
-func (o *AddBaremetalHost200ResponseServerInstance) IsSetAccountName() bool {
-	if o != nil && !IsNil(o.AccountName) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccountName gets a reference to the given string and assigns it to the AccountName field.

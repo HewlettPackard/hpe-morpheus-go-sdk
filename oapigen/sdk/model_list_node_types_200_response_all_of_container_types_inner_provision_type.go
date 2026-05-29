@@ -63,15 +63,6 @@ func (o *ListNodeTypes200ResponseAllOfContainerTypesInnerProvisionType) GetIdOk(
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListNodeTypes200ResponseAllOfContainerTypesInnerProvisionType) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int32 and assigns it to the Id field.
 func (o *ListNodeTypes200ResponseAllOfContainerTypesInnerProvisionType) SetId(v int32) {
 	o.Id = &v
@@ -95,15 +86,6 @@ func (o *ListNodeTypes200ResponseAllOfContainerTypesInnerProvisionType) GetNameO
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ListNodeTypes200ResponseAllOfContainerTypesInnerProvisionType) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ListNodeTypes200ResponseAllOfContainerTypesInnerProvisionType) SetName(v string) {
 	o.Name = &v
@@ -125,15 +107,6 @@ func (o *ListNodeTypes200ResponseAllOfContainerTypesInnerProvisionType) GetCodeO
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *ListNodeTypes200ResponseAllOfContainerTypesInnerProvisionType) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.

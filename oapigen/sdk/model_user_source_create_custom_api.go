@@ -68,15 +68,6 @@ func (o *UserSourceCreateCustomApi) GetEndpointOk() (*string, bool) {
 	return o.Endpoint, true
 }
 
-// IsSetEndpoint returns a boolean if a field has been set.
-func (o *UserSourceCreateCustomApi) IsSetEndpoint() bool {
-	if o != nil && !IsNil(o.Endpoint) {
-		return true
-	}
-
-	return false
-}
-
 // SetEndpoint gets a reference to the given string and assigns it to the Endpoint field.
 func (o *UserSourceCreateCustomApi) SetEndpoint(v string) {
 	o.Endpoint = &v
@@ -98,15 +89,6 @@ func (o *UserSourceCreateCustomApi) GetApiStyleOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ApiStyle, true
-}
-
-// IsSetApiStyle returns a boolean if a field has been set.
-func (o *UserSourceCreateCustomApi) IsSetApiStyle() bool {
-	if o != nil && !IsNil(o.ApiStyle) {
-		return true
-	}
-
-	return false
 }
 
 // SetApiStyle gets a reference to the given string and assigns it to the ApiStyle field.
@@ -132,15 +114,6 @@ func (o *UserSourceCreateCustomApi) GetEncryptionAlgoOk() (*string, bool) {
 	return o.EncryptionAlgo, true
 }
 
-// IsSetEncryptionAlgo returns a boolean if a field has been set.
-func (o *UserSourceCreateCustomApi) IsSetEncryptionAlgo() bool {
-	if o != nil && !IsNil(o.EncryptionAlgo) {
-		return true
-	}
-
-	return false
-}
-
 // SetEncryptionAlgo gets a reference to the given string and assigns it to the EncryptionAlgo field.
 func (o *UserSourceCreateCustomApi) SetEncryptionAlgo(v string) {
 	o.EncryptionAlgo = &v
@@ -162,15 +135,6 @@ func (o *UserSourceCreateCustomApi) GetEncryptionKeyOk() (*string, bool) {
 		return nil, false
 	}
 	return o.EncryptionKey, true
-}
-
-// IsSetEncryptionKey returns a boolean if a field has been set.
-func (o *UserSourceCreateCustomApi) IsSetEncryptionKey() bool {
-	if o != nil && !IsNil(o.EncryptionKey) {
-		return true
-	}
-
-	return false
 }
 
 // SetEncryptionKey gets a reference to the given string and assigns it to the EncryptionKey field.

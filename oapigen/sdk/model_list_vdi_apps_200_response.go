@@ -62,15 +62,6 @@ func (o *ListVDIApps200Response) GetVdiAppsOk() ([]ListVDIApps200ResponseAllOfVd
 	return o.VdiApps, true
 }
 
-// IsSetVdiApps returns a boolean if a field has been set.
-func (o *ListVDIApps200Response) IsSetVdiApps() bool {
-	if o != nil && !IsNil(o.VdiApps) {
-		return true
-	}
-
-	return false
-}
-
 // SetVdiApps gets a reference to the given []ListVDIApps200ResponseAllOfVdiAppsInner and assigns it to the VdiApps field.
 func (o *ListVDIApps200Response) SetVdiApps(v []ListVDIApps200ResponseAllOfVdiAppsInner) {
 	o.VdiApps = v
@@ -92,15 +83,6 @@ func (o *ListVDIApps200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListVDIApps200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

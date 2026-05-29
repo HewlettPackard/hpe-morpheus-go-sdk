@@ -63,15 +63,6 @@ func (o *BackupsInstance200Response) GetInstanceOk() (*BackupsInstance200Respons
 	return o.Instance, true
 }
 
-// IsSetInstance returns a boolean if a field has been set.
-func (o *BackupsInstance200Response) IsSetInstance() bool {
-	if o != nil && !IsNil(o.Instance) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstance gets a reference to the given BackupsInstance200ResponseInstance and assigns it to the Instance field.
 func (o *BackupsInstance200Response) SetInstance(v BackupsInstance200ResponseInstance) {
 	o.Instance = &v
@@ -93,15 +84,6 @@ func (o *BackupsInstance200Response) GetBackupsOk() ([]map[string]interface{}, b
 		return nil, false
 	}
 	return o.Backups, true
-}
-
-// IsSetBackups returns a boolean if a field has been set.
-func (o *BackupsInstance200Response) IsSetBackups() bool {
-	if o != nil && !IsNil(o.Backups) {
-		return true
-	}
-
-	return false
 }
 
 // SetBackups gets a reference to the given []map[string]interface{} and assigns it to the Backups field.

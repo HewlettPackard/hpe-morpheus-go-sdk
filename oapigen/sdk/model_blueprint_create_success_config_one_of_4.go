@@ -77,15 +77,6 @@ func (o *BlueprintCreateSuccessConfigOneOf4) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *BlueprintCreateSuccessConfigOneOf4) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *BlueprintCreateSuccessConfigOneOf4) SetName(v string) {
 	o.Name = &v
@@ -107,15 +98,6 @@ func (o *BlueprintCreateSuccessConfigOneOf4) GetTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *BlueprintCreateSuccessConfigOneOf4) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.
@@ -141,15 +123,6 @@ func (o *BlueprintCreateSuccessConfigOneOf4) GetConfigOk() (*BlueprintCreateSucc
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *BlueprintCreateSuccessConfigOneOf4) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given BlueprintCreateSuccessConfigOneOf4Config and assigns it to the Config field.
 func (o *BlueprintCreateSuccessConfigOneOf4) SetConfig(v BlueprintCreateSuccessConfigOneOf4Config) {
 	o.Config = &v
@@ -171,15 +144,6 @@ func (o *BlueprintCreateSuccessConfigOneOf4) GetVisibilityOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *BlueprintCreateSuccessConfigOneOf4) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -205,15 +169,6 @@ func (o *BlueprintCreateSuccessConfigOneOf4) GetResourcePermissionOk() (map[stri
 	return o.ResourcePermission, true
 }
 
-// IsSetResourcePermission returns a boolean if a field has been set.
-func (o *BlueprintCreateSuccessConfigOneOf4) IsSetResourcePermission() bool {
-	if o != nil && !IsNil(o.ResourcePermission) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourcePermission gets a reference to the given map[string]interface{} and assigns it to the ResourcePermission field.
 func (o *BlueprintCreateSuccessConfigOneOf4) SetResourcePermission(v map[string]interface{}) {
 	o.ResourcePermission = v
@@ -237,15 +192,6 @@ func (o *BlueprintCreateSuccessConfigOneOf4) GetOwnerOk() (map[string]interface{
 	return o.Owner, true
 }
 
-// IsSetOwner returns a boolean if a field has been set.
-func (o *BlueprintCreateSuccessConfigOneOf4) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
-		return true
-	}
-
-	return false
-}
-
 // SetOwner gets a reference to the given map[string]interface{} and assigns it to the Owner field.
 func (o *BlueprintCreateSuccessConfigOneOf4) SetOwner(v map[string]interface{}) {
 	o.Owner = v
@@ -267,15 +213,6 @@ func (o *BlueprintCreateSuccessConfigOneOf4) GetTenantOk() (map[string]interface
 		return map[string]interface{}{}, false
 	}
 	return o.Tenant, true
-}
-
-// IsSetTenant returns a boolean if a field has been set.
-func (o *BlueprintCreateSuccessConfigOneOf4) IsSetTenant() bool {
-	if o != nil && !IsNil(o.Tenant) {
-		return true
-	}
-
-	return false
 }
 
 // SetTenant gets a reference to the given map[string]interface{} and assigns it to the Tenant field.

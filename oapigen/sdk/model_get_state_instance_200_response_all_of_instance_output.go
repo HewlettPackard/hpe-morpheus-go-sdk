@@ -61,15 +61,6 @@ func (o *GetStateInstance200ResponseAllOfInstanceOutput) GetOutputsOk() ([]map[s
 	return o.Outputs, true
 }
 
-// IsSetOutputs returns a boolean if a field has been set.
-func (o *GetStateInstance200ResponseAllOfInstanceOutput) IsSetOutputs() bool {
-	if o != nil && !IsNil(o.Outputs) {
-		return true
-	}
-
-	return false
-}
-
 // SetOutputs gets a reference to the given []map[string]interface{} and assigns it to the Outputs field.
 func (o *GetStateInstance200ResponseAllOfInstanceOutput) SetOutputs(v []map[string]interface{}) {
 	o.Outputs = v

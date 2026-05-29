@@ -73,15 +73,6 @@ func (o *TenantGroup) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *TenantGroup) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *TenantGroup) SetId(v int64) {
 	o.Id = &v
@@ -103,15 +94,6 @@ func (o *TenantGroup) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *TenantGroup) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -138,28 +120,9 @@ func (o *TenantGroup) GetCodeOk() (*string, bool) {
 	return o.Code.Get(), o.Code.IsSet()
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *TenantGroup) IsSetCode() bool {
-	if o != nil && o.Code.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *TenantGroup) SetCode(v string) {
 	o.Code.Set(&v)
-}
-
-// SetCodeNil sets the value for Code to be an explicit nil
-func (o *TenantGroup) SetCodeNil() {
-	o.Code.Set(nil)
-}
-
-// UnsetCode ensures that no value is present for Code, not even an explicit nil
-func (o *TenantGroup) UnsetCode() {
-	o.Code.Unset()
 }
 
 // GetLocation returns the Location field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -181,28 +144,9 @@ func (o *TenantGroup) GetLocationOk() (*string, bool) {
 	return o.Location.Get(), o.Location.IsSet()
 }
 
-// IsSetLocation returns a boolean if a field has been set.
-func (o *TenantGroup) IsSetLocation() bool {
-	if o != nil && o.Location.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLocation gets a reference to the given NullableString and assigns it to the Location field.
 func (o *TenantGroup) SetLocation(v string) {
 	o.Location.Set(&v)
-}
-
-// SetLocationNil sets the value for Location to be an explicit nil
-func (o *TenantGroup) SetLocationNil() {
-	o.Location.Set(nil)
-}
-
-// UnsetLocation ensures that no value is present for Location, not even an explicit nil
-func (o *TenantGroup) UnsetLocation() {
-	o.Location.Unset()
 }
 
 // GetAccountId returns the AccountId field value if set, zero value otherwise.
@@ -221,15 +165,6 @@ func (o *TenantGroup) GetAccountIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.AccountId, true
-}
-
-// IsSetAccountId returns a boolean if a field has been set.
-func (o *TenantGroup) IsSetAccountId() bool {
-	if o != nil && !IsNil(o.AccountId) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccountId gets a reference to the given int64 and assigns it to the AccountId field.
@@ -255,15 +190,6 @@ func (o *TenantGroup) GetVisibilityOk() (*string, bool) {
 	return o.Visibility, true
 }
 
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *TenantGroup) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
-}
-
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
 func (o *TenantGroup) SetVisibility(v string) {
 	o.Visibility = &v
@@ -285,15 +211,6 @@ func (o *TenantGroup) GetActiveOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Active, true
-}
-
-// IsSetActive returns a boolean if a field has been set.
-func (o *TenantGroup) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
 }
 
 // SetActive gets a reference to the given bool and assigns it to the Active field.
@@ -319,15 +236,6 @@ func (o *TenantGroup) GetDateCreatedOk() (*time.Time, bool) {
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *TenantGroup) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *TenantGroup) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -349,15 +257,6 @@ func (o *TenantGroup) GetLastUpdatedOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *TenantGroup) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
@@ -383,15 +282,6 @@ func (o *TenantGroup) GetZonesOk() ([]CreateTenantSubtenantGroup200ResponseAccou
 	return o.Zones, true
 }
 
-// IsSetZones returns a boolean if a field has been set.
-func (o *TenantGroup) IsSetZones() bool {
-	if o != nil && !IsNil(o.Zones) {
-		return true
-	}
-
-	return false
-}
-
 // SetZones gets a reference to the given []CreateTenantSubtenantGroup200ResponseAccountAllOfZonesInner and assigns it to the Zones field.
 func (o *TenantGroup) SetZones(v []CreateTenantSubtenantGroup200ResponseAccountAllOfZonesInner) {
 	o.Zones = v
@@ -415,15 +305,6 @@ func (o *TenantGroup) GetStatsOk() (*CreateTenantSubtenantGroup200ResponseAccoun
 	return o.Stats, true
 }
 
-// IsSetStats returns a boolean if a field has been set.
-func (o *TenantGroup) IsSetStats() bool {
-	if o != nil && !IsNil(o.Stats) {
-		return true
-	}
-
-	return false
-}
-
 // SetStats gets a reference to the given CreateTenantSubtenantGroup200ResponseAccountAllOfStats and assigns it to the Stats field.
 func (o *TenantGroup) SetStats(v CreateTenantSubtenantGroup200ResponseAccountAllOfStats) {
 	o.Stats = &v
@@ -445,15 +326,6 @@ func (o *TenantGroup) GetServerCountOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.ServerCount, true
-}
-
-// IsSetServerCount returns a boolean if a field has been set.
-func (o *TenantGroup) IsSetServerCount() bool {
-	if o != nil && !IsNil(o.ServerCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetServerCount gets a reference to the given int64 and assigns it to the ServerCount field.

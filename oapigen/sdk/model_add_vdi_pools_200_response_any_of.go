@@ -61,15 +61,6 @@ func (o *AddVDIPools200ResponseAnyOf) GetVdiPoolOk() (*AddVDIPools200ResponseAny
 	return o.VdiPool, true
 }
 
-// IsSetVdiPool returns a boolean if a field has been set.
-func (o *AddVDIPools200ResponseAnyOf) IsSetVdiPool() bool {
-	if o != nil && !IsNil(o.VdiPool) {
-		return true
-	}
-
-	return false
-}
-
 // SetVdiPool gets a reference to the given AddVDIPools200ResponseAnyOfVdiPool and assigns it to the VdiPool field.
 func (o *AddVDIPools200ResponseAnyOf) SetVdiPool(v AddVDIPools200ResponseAnyOfVdiPool) {
 	o.VdiPool = &v

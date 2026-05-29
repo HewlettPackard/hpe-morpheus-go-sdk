@@ -100,15 +100,6 @@ func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) GetIdOk() (*int64, bo
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetId(v int64) {
 	o.Id = &v
@@ -130,15 +121,6 @@ func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) GetNameOk() (*string,
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -165,28 +147,9 @@ func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) GetDescriptionOk() (*
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetCode returns the Code field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -208,28 +171,9 @@ func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) GetCodeOk() (*string,
 	return o.Code.Get(), o.Code.IsSet()
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) IsSetCode() bool {
-	if o != nil && o.Code.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetCode(v string) {
 	o.Code.Set(&v)
-}
-
-// SetCodeNil sets the value for Code to be an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetCodeNil() {
-	o.Code.Set(nil)
-}
-
-// UnsetCode ensures that no value is present for Code, not even an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) UnsetCode() {
-	o.Code.Unset()
 }
 
 // GetFieldName returns the FieldName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -251,28 +195,9 @@ func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) GetFieldNameOk() (*st
 	return o.FieldName.Get(), o.FieldName.IsSet()
 }
 
-// IsSetFieldName returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) IsSetFieldName() bool {
-	if o != nil && o.FieldName.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFieldName gets a reference to the given NullableString and assigns it to the FieldName field.
 func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetFieldName(v string) {
 	o.FieldName.Set(&v)
-}
-
-// SetFieldNameNil sets the value for FieldName to be an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetFieldNameNil() {
-	o.FieldName.Set(nil)
-}
-
-// UnsetFieldName ensures that no value is present for FieldName, not even an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) UnsetFieldName() {
-	o.FieldName.Unset()
 }
 
 // GetFieldLabel returns the FieldLabel field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -294,28 +219,9 @@ func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) GetFieldLabelOk() (*s
 	return o.FieldLabel.Get(), o.FieldLabel.IsSet()
 }
 
-// IsSetFieldLabel returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) IsSetFieldLabel() bool {
-	if o != nil && o.FieldLabel.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFieldLabel gets a reference to the given NullableString and assigns it to the FieldLabel field.
 func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetFieldLabel(v string) {
 	o.FieldLabel.Set(&v)
-}
-
-// SetFieldLabelNil sets the value for FieldLabel to be an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetFieldLabelNil() {
-	o.FieldLabel.Set(nil)
-}
-
-// UnsetFieldLabel ensures that no value is present for FieldLabel, not even an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) UnsetFieldLabel() {
-	o.FieldLabel.Unset()
 }
 
 // GetFieldCode returns the FieldCode field value if set, zero value otherwise.
@@ -334,15 +240,6 @@ func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) GetFieldCodeOk() (*st
 		return nil, false
 	}
 	return o.FieldCode, true
-}
-
-// IsSetFieldCode returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) IsSetFieldCode() bool {
-	if o != nil && !IsNil(o.FieldCode) {
-		return true
-	}
-
-	return false
 }
 
 // SetFieldCode gets a reference to the given string and assigns it to the FieldCode field.
@@ -369,28 +266,9 @@ func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) GetFieldContextOk() (
 	return o.FieldContext.Get(), o.FieldContext.IsSet()
 }
 
-// IsSetFieldContext returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) IsSetFieldContext() bool {
-	if o != nil && o.FieldContext.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFieldContext gets a reference to the given NullableString and assigns it to the FieldContext field.
 func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetFieldContext(v string) {
 	o.FieldContext.Set(&v)
-}
-
-// SetFieldContextNil sets the value for FieldContext to be an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetFieldContextNil() {
-	o.FieldContext.Set(nil)
-}
-
-// UnsetFieldContext ensures that no value is present for FieldContext, not even an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) UnsetFieldContext() {
-	o.FieldContext.Unset()
 }
 
 // GetFieldGroup returns the FieldGroup field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -412,28 +290,9 @@ func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) GetFieldGroupOk() (*s
 	return o.FieldGroup.Get(), o.FieldGroup.IsSet()
 }
 
-// IsSetFieldGroup returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) IsSetFieldGroup() bool {
-	if o != nil && o.FieldGroup.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFieldGroup gets a reference to the given NullableString and assigns it to the FieldGroup field.
 func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetFieldGroup(v string) {
 	o.FieldGroup.Set(&v)
-}
-
-// SetFieldGroupNil sets the value for FieldGroup to be an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetFieldGroupNil() {
-	o.FieldGroup.Set(nil)
-}
-
-// UnsetFieldGroup ensures that no value is present for FieldGroup, not even an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) UnsetFieldGroup() {
-	o.FieldGroup.Unset()
 }
 
 // GetFieldClass returns the FieldClass field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -455,28 +314,9 @@ func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) GetFieldClassOk() (*s
 	return o.FieldClass.Get(), o.FieldClass.IsSet()
 }
 
-// IsSetFieldClass returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) IsSetFieldClass() bool {
-	if o != nil && o.FieldClass.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFieldClass gets a reference to the given NullableString and assigns it to the FieldClass field.
 func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetFieldClass(v string) {
 	o.FieldClass.Set(&v)
-}
-
-// SetFieldClassNil sets the value for FieldClass to be an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetFieldClassNil() {
-	o.FieldClass.Set(nil)
-}
-
-// UnsetFieldClass ensures that no value is present for FieldClass, not even an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) UnsetFieldClass() {
-	o.FieldClass.Unset()
 }
 
 // GetFieldAddOn returns the FieldAddOn field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -498,28 +338,9 @@ func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) GetFieldAddOnOk() (*s
 	return o.FieldAddOn.Get(), o.FieldAddOn.IsSet()
 }
 
-// IsSetFieldAddOn returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) IsSetFieldAddOn() bool {
-	if o != nil && o.FieldAddOn.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFieldAddOn gets a reference to the given NullableString and assigns it to the FieldAddOn field.
 func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetFieldAddOn(v string) {
 	o.FieldAddOn.Set(&v)
-}
-
-// SetFieldAddOnNil sets the value for FieldAddOn to be an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetFieldAddOnNil() {
-	o.FieldAddOn.Set(nil)
-}
-
-// UnsetFieldAddOn ensures that no value is present for FieldAddOn, not even an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) UnsetFieldAddOn() {
-	o.FieldAddOn.Unset()
 }
 
 // GetFieldComponent returns the FieldComponent field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -541,28 +362,9 @@ func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) GetFieldComponentOk()
 	return o.FieldComponent.Get(), o.FieldComponent.IsSet()
 }
 
-// IsSetFieldComponent returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) IsSetFieldComponent() bool {
-	if o != nil && o.FieldComponent.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFieldComponent gets a reference to the given NullableString and assigns it to the FieldComponent field.
 func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetFieldComponent(v string) {
 	o.FieldComponent.Set(&v)
-}
-
-// SetFieldComponentNil sets the value for FieldComponent to be an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetFieldComponentNil() {
-	o.FieldComponent.Set(nil)
-}
-
-// UnsetFieldComponent ensures that no value is present for FieldComponent, not even an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) UnsetFieldComponent() {
-	o.FieldComponent.Unset()
 }
 
 // GetFieldInput returns the FieldInput field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -584,28 +386,9 @@ func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) GetFieldInputOk() (*s
 	return o.FieldInput.Get(), o.FieldInput.IsSet()
 }
 
-// IsSetFieldInput returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) IsSetFieldInput() bool {
-	if o != nil && o.FieldInput.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFieldInput gets a reference to the given NullableString and assigns it to the FieldInput field.
 func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetFieldInput(v string) {
 	o.FieldInput.Set(&v)
-}
-
-// SetFieldInputNil sets the value for FieldInput to be an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetFieldInputNil() {
-	o.FieldInput.Set(nil)
-}
-
-// UnsetFieldInput ensures that no value is present for FieldInput, not even an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) UnsetFieldInput() {
-	o.FieldInput.Unset()
 }
 
 // GetPlaceHolder returns the PlaceHolder field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -627,28 +410,9 @@ func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) GetPlaceHolderOk() (*
 	return o.PlaceHolder.Get(), o.PlaceHolder.IsSet()
 }
 
-// IsSetPlaceHolder returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) IsSetPlaceHolder() bool {
-	if o != nil && o.PlaceHolder.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPlaceHolder gets a reference to the given NullableString and assigns it to the PlaceHolder field.
 func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetPlaceHolder(v string) {
 	o.PlaceHolder.Set(&v)
-}
-
-// SetPlaceHolderNil sets the value for PlaceHolder to be an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetPlaceHolderNil() {
-	o.PlaceHolder.Set(nil)
-}
-
-// UnsetPlaceHolder ensures that no value is present for PlaceHolder, not even an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) UnsetPlaceHolder() {
-	o.PlaceHolder.Unset()
 }
 
 // GetVerifyPattern returns the VerifyPattern field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -670,28 +434,9 @@ func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) GetVerifyPatternOk() 
 	return o.VerifyPattern.Get(), o.VerifyPattern.IsSet()
 }
 
-// IsSetVerifyPattern returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) IsSetVerifyPattern() bool {
-	if o != nil && o.VerifyPattern.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetVerifyPattern gets a reference to the given NullableString and assigns it to the VerifyPattern field.
 func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetVerifyPattern(v string) {
 	o.VerifyPattern.Set(&v)
-}
-
-// SetVerifyPatternNil sets the value for VerifyPattern to be an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetVerifyPatternNil() {
-	o.VerifyPattern.Set(nil)
-}
-
-// UnsetVerifyPattern ensures that no value is present for VerifyPattern, not even an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) UnsetVerifyPattern() {
-	o.VerifyPattern.Unset()
 }
 
 // GetHelpBlock returns the HelpBlock field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -713,28 +458,9 @@ func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) GetHelpBlockOk() (*st
 	return o.HelpBlock.Get(), o.HelpBlock.IsSet()
 }
 
-// IsSetHelpBlock returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) IsSetHelpBlock() bool {
-	if o != nil && o.HelpBlock.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetHelpBlock gets a reference to the given NullableString and assigns it to the HelpBlock field.
 func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetHelpBlock(v string) {
 	o.HelpBlock.Set(&v)
-}
-
-// SetHelpBlockNil sets the value for HelpBlock to be an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetHelpBlockNil() {
-	o.HelpBlock.Set(nil)
-}
-
-// UnsetHelpBlock ensures that no value is present for HelpBlock, not even an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) UnsetHelpBlock() {
-	o.HelpBlock.Unset()
 }
 
 // GetHelpBlockFieldCode returns the HelpBlockFieldCode field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -756,28 +482,9 @@ func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) GetHelpBlockFieldCode
 	return o.HelpBlockFieldCode.Get(), o.HelpBlockFieldCode.IsSet()
 }
 
-// IsSetHelpBlockFieldCode returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) IsSetHelpBlockFieldCode() bool {
-	if o != nil && o.HelpBlockFieldCode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetHelpBlockFieldCode gets a reference to the given NullableString and assigns it to the HelpBlockFieldCode field.
 func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetHelpBlockFieldCode(v string) {
 	o.HelpBlockFieldCode.Set(&v)
-}
-
-// SetHelpBlockFieldCodeNil sets the value for HelpBlockFieldCode to be an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetHelpBlockFieldCodeNil() {
-	o.HelpBlockFieldCode.Set(nil)
-}
-
-// UnsetHelpBlockFieldCode ensures that no value is present for HelpBlockFieldCode, not even an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) UnsetHelpBlockFieldCode() {
-	o.HelpBlockFieldCode.Unset()
 }
 
 // GetDefaultValue returns the DefaultValue field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -799,28 +506,9 @@ func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) GetDefaultValueOk() (
 	return o.DefaultValue.Get(), o.DefaultValue.IsSet()
 }
 
-// IsSetDefaultValue returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) IsSetDefaultValue() bool {
-	if o != nil && o.DefaultValue.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultValue gets a reference to the given NullableString and assigns it to the DefaultValue field.
 func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetDefaultValue(v string) {
 	o.DefaultValue.Set(&v)
-}
-
-// SetDefaultValueNil sets the value for DefaultValue to be an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetDefaultValueNil() {
-	o.DefaultValue.Set(nil)
-}
-
-// UnsetDefaultValue ensures that no value is present for DefaultValue, not even an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) UnsetDefaultValue() {
-	o.DefaultValue.Unset()
 }
 
 // GetOptionSource returns the OptionSource field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -842,28 +530,9 @@ func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) GetOptionSourceOk() (
 	return o.OptionSource.Get(), o.OptionSource.IsSet()
 }
 
-// IsSetOptionSource returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) IsSetOptionSource() bool {
-	if o != nil && o.OptionSource.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetOptionSource gets a reference to the given NullableString and assigns it to the OptionSource field.
 func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetOptionSource(v string) {
 	o.OptionSource.Set(&v)
-}
-
-// SetOptionSourceNil sets the value for OptionSource to be an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetOptionSourceNil() {
-	o.OptionSource.Set(nil)
-}
-
-// UnsetOptionSource ensures that no value is present for OptionSource, not even an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) UnsetOptionSource() {
-	o.OptionSource.Unset()
 }
 
 // GetOptionSourceType returns the OptionSourceType field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -885,28 +554,9 @@ func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) GetOptionSourceTypeOk
 	return o.OptionSourceType.Get(), o.OptionSourceType.IsSet()
 }
 
-// IsSetOptionSourceType returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) IsSetOptionSourceType() bool {
-	if o != nil && o.OptionSourceType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetOptionSourceType gets a reference to the given NullableString and assigns it to the OptionSourceType field.
 func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetOptionSourceType(v string) {
 	o.OptionSourceType.Set(&v)
-}
-
-// SetOptionSourceTypeNil sets the value for OptionSourceType to be an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetOptionSourceTypeNil() {
-	o.OptionSourceType.Set(nil)
-}
-
-// UnsetOptionSourceType ensures that no value is present for OptionSourceType, not even an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) UnsetOptionSourceType() {
-	o.OptionSourceType.Unset()
 }
 
 // GetOptionList returns the OptionList field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -928,28 +578,9 @@ func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) GetOptionListOk() (*s
 	return o.OptionList.Get(), o.OptionList.IsSet()
 }
 
-// IsSetOptionList returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) IsSetOptionList() bool {
-	if o != nil && o.OptionList.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetOptionList gets a reference to the given NullableString and assigns it to the OptionList field.
 func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetOptionList(v string) {
 	o.OptionList.Set(&v)
-}
-
-// SetOptionListNil sets the value for OptionList to be an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetOptionListNil() {
-	o.OptionList.Set(nil)
-}
-
-// UnsetOptionList ensures that no value is present for OptionList, not even an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) UnsetOptionList() {
-	o.OptionList.Unset()
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
@@ -968,15 +599,6 @@ func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) GetTypeOk() (*string,
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.
@@ -1002,15 +624,6 @@ func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) GetAdvancedOk() (*boo
 	return o.Advanced, true
 }
 
-// IsSetAdvanced returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) IsSetAdvanced() bool {
-	if o != nil && !IsNil(o.Advanced) {
-		return true
-	}
-
-	return false
-}
-
 // SetAdvanced gets a reference to the given bool and assigns it to the Advanced field.
 func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetAdvanced(v bool) {
 	o.Advanced = &v
@@ -1032,15 +645,6 @@ func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) GetRequiredOk() (*boo
 		return nil, false
 	}
 	return o.Required, true
-}
-
-// IsSetRequired returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) IsSetRequired() bool {
-	if o != nil && !IsNil(o.Required) {
-		return true
-	}
-
-	return false
 }
 
 // SetRequired gets a reference to the given bool and assigns it to the Required field.
@@ -1066,15 +670,6 @@ func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) GetExportMetaOk() (*b
 	return o.ExportMeta, true
 }
 
-// IsSetExportMeta returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) IsSetExportMeta() bool {
-	if o != nil && !IsNil(o.ExportMeta) {
-		return true
-	}
-
-	return false
-}
-
 // SetExportMeta gets a reference to the given bool and assigns it to the ExportMeta field.
 func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetExportMeta(v bool) {
 	o.ExportMeta = &v
@@ -1096,15 +691,6 @@ func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) GetEditableOk() (*boo
 		return nil, false
 	}
 	return o.Editable, true
-}
-
-// IsSetEditable returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) IsSetEditable() bool {
-	if o != nil && !IsNil(o.Editable) {
-		return true
-	}
-
-	return false
 }
 
 // SetEditable gets a reference to the given bool and assigns it to the Editable field.
@@ -1130,15 +716,6 @@ func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) GetCreatableOk() (*bo
 	return o.Creatable, true
 }
 
-// IsSetCreatable returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) IsSetCreatable() bool {
-	if o != nil && !IsNil(o.Creatable) {
-		return true
-	}
-
-	return false
-}
-
 // SetCreatable gets a reference to the given bool and assigns it to the Creatable field.
 func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetCreatable(v bool) {
 	o.Creatable = &v
@@ -1162,15 +739,6 @@ func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) GetConfigOk() (*GetCl
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given GetCloudTypes200ResponseZoneTypeOptionTypesInnerConfig and assigns it to the Config field.
 func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetConfig(v GetCloudTypes200ResponseZoneTypeOptionTypesInnerConfig) {
 	o.Config = &v
@@ -1192,15 +760,6 @@ func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) GetDisplayOrderOk() (
 		return nil, false
 	}
 	return o.DisplayOrder, true
-}
-
-// IsSetDisplayOrder returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) IsSetDisplayOrder() bool {
-	if o != nil && !IsNil(o.DisplayOrder) {
-		return true
-	}
-
-	return false
 }
 
 // SetDisplayOrder gets a reference to the given int64 and assigns it to the DisplayOrder field.
@@ -1227,28 +786,9 @@ func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) GetWrapperClassOk() (
 	return o.WrapperClass.Get(), o.WrapperClass.IsSet()
 }
 
-// IsSetWrapperClass returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) IsSetWrapperClass() bool {
-	if o != nil && o.WrapperClass.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetWrapperClass gets a reference to the given NullableString and assigns it to the WrapperClass field.
 func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetWrapperClass(v string) {
 	o.WrapperClass.Set(&v)
-}
-
-// SetWrapperClassNil sets the value for WrapperClass to be an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetWrapperClassNil() {
-	o.WrapperClass.Set(nil)
-}
-
-// UnsetWrapperClass ensures that no value is present for WrapperClass, not even an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) UnsetWrapperClass() {
-	o.WrapperClass.Unset()
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
@@ -1267,15 +807,6 @@ func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) GetEnabledOk() (*bool
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -1299,15 +830,6 @@ func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) GetNoBlankOk() (*bool
 		return nil, false
 	}
 	return o.NoBlank, true
-}
-
-// IsSetNoBlank returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) IsSetNoBlank() bool {
-	if o != nil && !IsNil(o.NoBlank) {
-		return true
-	}
-
-	return false
 }
 
 // SetNoBlank gets a reference to the given bool and assigns it to the NoBlank field.
@@ -1334,28 +856,9 @@ func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) GetDependsOnCodeOk() 
 	return o.DependsOnCode.Get(), o.DependsOnCode.IsSet()
 }
 
-// IsSetDependsOnCode returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) IsSetDependsOnCode() bool {
-	if o != nil && o.DependsOnCode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDependsOnCode gets a reference to the given NullableString and assigns it to the DependsOnCode field.
 func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetDependsOnCode(v string) {
 	o.DependsOnCode.Set(&v)
-}
-
-// SetDependsOnCodeNil sets the value for DependsOnCode to be an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetDependsOnCodeNil() {
-	o.DependsOnCode.Set(nil)
-}
-
-// UnsetDependsOnCode ensures that no value is present for DependsOnCode, not even an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) UnsetDependsOnCode() {
-	o.DependsOnCode.Unset()
 }
 
 // GetVisibleOnCode returns the VisibleOnCode field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1377,28 +880,9 @@ func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) GetVisibleOnCodeOk() 
 	return o.VisibleOnCode.Get(), o.VisibleOnCode.IsSet()
 }
 
-// IsSetVisibleOnCode returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) IsSetVisibleOnCode() bool {
-	if o != nil && o.VisibleOnCode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetVisibleOnCode gets a reference to the given NullableString and assigns it to the VisibleOnCode field.
 func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetVisibleOnCode(v string) {
 	o.VisibleOnCode.Set(&v)
-}
-
-// SetVisibleOnCodeNil sets the value for VisibleOnCode to be an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetVisibleOnCodeNil() {
-	o.VisibleOnCode.Set(nil)
-}
-
-// UnsetVisibleOnCode ensures that no value is present for VisibleOnCode, not even an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) UnsetVisibleOnCode() {
-	o.VisibleOnCode.Unset()
 }
 
 // GetRequireOnCode returns the RequireOnCode field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1420,28 +904,9 @@ func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) GetRequireOnCodeOk() 
 	return o.RequireOnCode.Get(), o.RequireOnCode.IsSet()
 }
 
-// IsSetRequireOnCode returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) IsSetRequireOnCode() bool {
-	if o != nil && o.RequireOnCode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRequireOnCode gets a reference to the given NullableString and assigns it to the RequireOnCode field.
 func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetRequireOnCode(v string) {
 	o.RequireOnCode.Set(&v)
-}
-
-// SetRequireOnCodeNil sets the value for RequireOnCode to be an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetRequireOnCodeNil() {
-	o.RequireOnCode.Set(nil)
-}
-
-// UnsetRequireOnCode ensures that no value is present for RequireOnCode, not even an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) UnsetRequireOnCode() {
-	o.RequireOnCode.Unset()
 }
 
 // GetContextualDefault returns the ContextualDefault field value if set, zero value otherwise.
@@ -1460,15 +925,6 @@ func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) GetContextualDefaultO
 		return nil, false
 	}
 	return o.ContextualDefault, true
-}
-
-// IsSetContextualDefault returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) IsSetContextualDefault() bool {
-	if o != nil && !IsNil(o.ContextualDefault) {
-		return true
-	}
-
-	return false
 }
 
 // SetContextualDefault gets a reference to the given bool and assigns it to the ContextualDefault field.
@@ -1495,28 +951,9 @@ func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) GetDisplayValueOnDeta
 	return o.DisplayValueOnDetails.Get(), o.DisplayValueOnDetails.IsSet()
 }
 
-// IsSetDisplayValueOnDetails returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) IsSetDisplayValueOnDetails() bool {
-	if o != nil && o.DisplayValueOnDetails.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDisplayValueOnDetails gets a reference to the given NullableBool and assigns it to the DisplayValueOnDetails field.
 func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetDisplayValueOnDetails(v bool) {
 	o.DisplayValueOnDetails.Set(&v)
-}
-
-// SetDisplayValueOnDetailsNil sets the value for DisplayValueOnDetails to be an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetDisplayValueOnDetailsNil() {
-	o.DisplayValueOnDetails.Set(nil)
-}
-
-// UnsetDisplayValueOnDetails ensures that no value is present for DisplayValueOnDetails, not even an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) UnsetDisplayValueOnDetails() {
-	o.DisplayValueOnDetails.Unset()
 }
 
 // GetShowOnCreate returns the ShowOnCreate field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1538,28 +975,9 @@ func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) GetShowOnCreateOk() (
 	return o.ShowOnCreate.Get(), o.ShowOnCreate.IsSet()
 }
 
-// IsSetShowOnCreate returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) IsSetShowOnCreate() bool {
-	if o != nil && o.ShowOnCreate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetShowOnCreate gets a reference to the given NullableBool and assigns it to the ShowOnCreate field.
 func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetShowOnCreate(v bool) {
 	o.ShowOnCreate.Set(&v)
-}
-
-// SetShowOnCreateNil sets the value for ShowOnCreate to be an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetShowOnCreateNil() {
-	o.ShowOnCreate.Set(nil)
-}
-
-// UnsetShowOnCreate ensures that no value is present for ShowOnCreate, not even an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) UnsetShowOnCreate() {
-	o.ShowOnCreate.Unset()
 }
 
 // GetShowOnEdit returns the ShowOnEdit field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1581,28 +999,9 @@ func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) GetShowOnEditOk() (*b
 	return o.ShowOnEdit.Get(), o.ShowOnEdit.IsSet()
 }
 
-// IsSetShowOnEdit returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) IsSetShowOnEdit() bool {
-	if o != nil && o.ShowOnEdit.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetShowOnEdit gets a reference to the given NullableBool and assigns it to the ShowOnEdit field.
 func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetShowOnEdit(v bool) {
 	o.ShowOnEdit.Set(&v)
-}
-
-// SetShowOnEditNil sets the value for ShowOnEdit to be an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetShowOnEditNil() {
-	o.ShowOnEdit.Set(nil)
-}
-
-// UnsetShowOnEdit ensures that no value is present for ShowOnEdit, not even an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) UnsetShowOnEdit() {
-	o.ShowOnEdit.Unset()
 }
 
 // GetLocalCredential returns the LocalCredential field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1624,28 +1023,9 @@ func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) GetLocalCredentialOk(
 	return o.LocalCredential.Get(), o.LocalCredential.IsSet()
 }
 
-// IsSetLocalCredential returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) IsSetLocalCredential() bool {
-	if o != nil && o.LocalCredential.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLocalCredential gets a reference to the given NullableBool and assigns it to the LocalCredential field.
 func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetLocalCredential(v bool) {
 	o.LocalCredential.Set(&v)
-}
-
-// SetLocalCredentialNil sets the value for LocalCredential to be an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) SetLocalCredentialNil() {
-	o.LocalCredential.Set(nil)
-}
-
-// UnsetLocalCredential ensures that no value is present for LocalCredential, not even an explicit nil
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInner) UnsetLocalCredential() {
-	o.LocalCredential.Unset()
 }
 
 func (o GetCloudTypes200ResponseZoneTypeOptionTypesInner) MarshalJSON() ([]byte, error) {

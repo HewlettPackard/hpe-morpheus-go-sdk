@@ -92,15 +92,6 @@ func (o *AddUserRequestUser) GetFirstNameOk() (*string, bool) {
 	return o.FirstName, true
 }
 
-// IsSetFirstName returns a boolean if a field has been set.
-func (o *AddUserRequestUser) IsSetFirstName() bool {
-	if o != nil && !IsNil(o.FirstName) {
-		return true
-	}
-
-	return false
-}
-
 // SetFirstName gets a reference to the given string and assigns it to the FirstName field.
 func (o *AddUserRequestUser) SetFirstName(v string) {
 	o.FirstName = &v
@@ -122,15 +113,6 @@ func (o *AddUserRequestUser) GetLastNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.LastName, true
-}
-
-// IsSetLastName returns a boolean if a field has been set.
-func (o *AddUserRequestUser) IsSetLastName() bool {
-	if o != nil && !IsNil(o.LastName) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastName gets a reference to the given string and assigns it to the LastName field.
@@ -252,15 +234,6 @@ func (o *AddUserRequestUser) GetReceiveNotificationsOk() (*bool, bool) {
 	return o.ReceiveNotifications, true
 }
 
-// IsSetReceiveNotifications returns a boolean if a field has been set.
-func (o *AddUserRequestUser) IsSetReceiveNotifications() bool {
-	if o != nil && !IsNil(o.ReceiveNotifications) {
-		return true
-	}
-
-	return false
-}
-
 // SetReceiveNotifications gets a reference to the given bool and assigns it to the ReceiveNotifications field.
 func (o *AddUserRequestUser) SetReceiveNotifications(v bool) {
 	o.ReceiveNotifications = &v
@@ -282,15 +255,6 @@ func (o *AddUserRequestUser) GetLinuxUsernameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.LinuxUsername, true
-}
-
-// IsSetLinuxUsername returns a boolean if a field has been set.
-func (o *AddUserRequestUser) IsSetLinuxUsername() bool {
-	if o != nil && !IsNil(o.LinuxUsername) {
-		return true
-	}
-
-	return false
 }
 
 // SetLinuxUsername gets a reference to the given string and assigns it to the LinuxUsername field.
@@ -316,15 +280,6 @@ func (o *AddUserRequestUser) GetLinuxPasswordOk() (*string, bool) {
 	return o.LinuxPassword, true
 }
 
-// IsSetLinuxPassword returns a boolean if a field has been set.
-func (o *AddUserRequestUser) IsSetLinuxPassword() bool {
-	if o != nil && !IsNil(o.LinuxPassword) {
-		return true
-	}
-
-	return false
-}
-
 // SetLinuxPassword gets a reference to the given string and assigns it to the LinuxPassword field.
 func (o *AddUserRequestUser) SetLinuxPassword(v string) {
 	o.LinuxPassword = &v
@@ -346,15 +301,6 @@ func (o *AddUserRequestUser) GetLinuxKeyPairIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.LinuxKeyPairId, true
-}
-
-// IsSetLinuxKeyPairId returns a boolean if a field has been set.
-func (o *AddUserRequestUser) IsSetLinuxKeyPairId() bool {
-	if o != nil && !IsNil(o.LinuxKeyPairId) {
-		return true
-	}
-
-	return false
 }
 
 // SetLinuxKeyPairId gets a reference to the given int64 and assigns it to the LinuxKeyPairId field.
@@ -380,15 +326,6 @@ func (o *AddUserRequestUser) GetWindowsUsernameOk() (*string, bool) {
 	return o.WindowsUsername, true
 }
 
-// IsSetWindowsUsername returns a boolean if a field has been set.
-func (o *AddUserRequestUser) IsSetWindowsUsername() bool {
-	if o != nil && !IsNil(o.WindowsUsername) {
-		return true
-	}
-
-	return false
-}
-
 // SetWindowsUsername gets a reference to the given string and assigns it to the WindowsUsername field.
 func (o *AddUserRequestUser) SetWindowsUsername(v string) {
 	o.WindowsUsername = &v
@@ -410,15 +347,6 @@ func (o *AddUserRequestUser) GetWindowsPasswordOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WindowsPassword, true
-}
-
-// IsSetWindowsPassword returns a boolean if a field has been set.
-func (o *AddUserRequestUser) IsSetWindowsPassword() bool {
-	if o != nil && !IsNil(o.WindowsPassword) {
-		return true
-	}
-
-	return false
 }
 
 // SetWindowsPassword gets a reference to the given string and assigns it to the WindowsPassword field.

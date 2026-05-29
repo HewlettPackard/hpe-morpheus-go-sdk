@@ -64,15 +64,6 @@ func (o *InstanceTypeLayoutUpdatePermissionsResourcePermissions) GetAllOk() (*bo
 	return o.All, true
 }
 
-// IsSetAll returns a boolean if a field has been set.
-func (o *InstanceTypeLayoutUpdatePermissionsResourcePermissions) IsSetAll() bool {
-	if o != nil && !IsNil(o.All) {
-		return true
-	}
-
-	return false
-}
-
 // SetAll gets a reference to the given bool and assigns it to the All field.
 func (o *InstanceTypeLayoutUpdatePermissionsResourcePermissions) SetAll(v bool) {
 	o.All = &v
@@ -94,15 +85,6 @@ func (o *InstanceTypeLayoutUpdatePermissionsResourcePermissions) GetSitesOk() ([
 		return nil, false
 	}
 	return o.Sites, true
-}
-
-// IsSetSites returns a boolean if a field has been set.
-func (o *InstanceTypeLayoutUpdatePermissionsResourcePermissions) IsSetSites() bool {
-	if o != nil && !IsNil(o.Sites) {
-		return true
-	}
-
-	return false
 }
 
 // SetSites gets a reference to the given []InstanceTypeLayoutUpdatePermissionsResourcePermissionsSitesInner and assigns it to the Sites field.

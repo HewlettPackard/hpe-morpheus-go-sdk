@@ -85,15 +85,6 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) SetId(v int64) {
 	o.Id = &v
@@ -117,15 +108,6 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) SetCode(v string) {
 	o.Code = &v
@@ -147,15 +129,6 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -182,28 +155,9 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetCategory returns the Category field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -225,28 +179,9 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 	return o.Category.Get(), o.Category.IsSet()
 }
 
-// IsSetCategory returns a boolean if a field has been set.
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) IsSetCategory() bool {
-	if o != nil && o.Category.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCategory gets a reference to the given NullableString and assigns it to the Category field.
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) SetCategory(v string) {
 	o.Category.Set(&v)
-}
-
-// SetCategoryNil sets the value for Category to be an explicit nil
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) SetCategoryNil() {
-	o.Category.Set(nil)
-}
-
-// UnsetCategory ensures that no value is present for Category, not even an explicit nil
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) UnsetCategory() {
-	o.Category.Unset()
 }
 
 // GetExternalType returns the ExternalType field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -268,28 +203,9 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 	return o.ExternalType.Get(), o.ExternalType.IsSet()
 }
 
-// IsSetExternalType returns a boolean if a field has been set.
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) IsSetExternalType() bool {
-	if o != nil && o.ExternalType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalType gets a reference to the given NullableString and assigns it to the ExternalType field.
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) SetExternalType(v string) {
 	o.ExternalType.Set(&v)
-}
-
-// SetExternalTypeNil sets the value for ExternalType to be an explicit nil
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) SetExternalTypeNil() {
-	o.ExternalType.Set(nil)
-}
-
-// UnsetExternalType ensures that no value is present for ExternalType, not even an explicit nil
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) UnsetExternalType() {
-	o.ExternalType.Unset()
 }
 
 // GetCreatable returns the Creatable field value if set, zero value otherwise.
@@ -308,15 +224,6 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 		return nil, false
 	}
 	return o.Creatable, true
-}
-
-// IsSetCreatable returns a boolean if a field has been set.
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) IsSetCreatable() bool {
-	if o != nil && !IsNil(o.Creatable) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreatable gets a reference to the given bool and assigns it to the Creatable field.
@@ -342,15 +249,6 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 	return o.Overlay, true
 }
 
-// IsSetOverlay returns a boolean if a field has been set.
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) IsSetOverlay() bool {
-	if o != nil && !IsNil(o.Overlay) {
-		return true
-	}
-
-	return false
-}
-
 // SetOverlay gets a reference to the given bool and assigns it to the Overlay field.
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) SetOverlay(v bool) {
 	o.Overlay = &v
@@ -372,15 +270,6 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 		return nil, false
 	}
 	return o.NameEditable, true
-}
-
-// IsSetNameEditable returns a boolean if a field has been set.
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) IsSetNameEditable() bool {
-	if o != nil && !IsNil(o.NameEditable) {
-		return true
-	}
-
-	return false
 }
 
 // SetNameEditable gets a reference to the given bool and assigns it to the NameEditable field.
@@ -406,15 +295,6 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 	return o.CidrRequired, true
 }
 
-// IsSetCidrRequired returns a boolean if a field has been set.
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) IsSetCidrRequired() bool {
-	if o != nil && !IsNil(o.CidrRequired) {
-		return true
-	}
-
-	return false
-}
-
 // SetCidrRequired gets a reference to the given bool and assigns it to the CidrRequired field.
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) SetCidrRequired(v bool) {
 	o.CidrRequired = &v
@@ -436,15 +316,6 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 		return nil, false
 	}
 	return o.CidrEditable, true
-}
-
-// IsSetCidrEditable returns a boolean if a field has been set.
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) IsSetCidrEditable() bool {
-	if o != nil && !IsNil(o.CidrEditable) {
-		return true
-	}
-
-	return false
 }
 
 // SetCidrEditable gets a reference to the given bool and assigns it to the CidrEditable field.
@@ -470,15 +341,6 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 	return o.DhcpServerEditable, true
 }
 
-// IsSetDhcpServerEditable returns a boolean if a field has been set.
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) IsSetDhcpServerEditable() bool {
-	if o != nil && !IsNil(o.DhcpServerEditable) {
-		return true
-	}
-
-	return false
-}
-
 // SetDhcpServerEditable gets a reference to the given bool and assigns it to the DhcpServerEditable field.
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) SetDhcpServerEditable(v bool) {
 	o.DhcpServerEditable = &v
@@ -500,15 +362,6 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 		return nil, false
 	}
 	return o.DnsEditable, true
-}
-
-// IsSetDnsEditable returns a boolean if a field has been set.
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) IsSetDnsEditable() bool {
-	if o != nil && !IsNil(o.DnsEditable) {
-		return true
-	}
-
-	return false
 }
 
 // SetDnsEditable gets a reference to the given bool and assigns it to the DnsEditable field.
@@ -534,15 +387,6 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 	return o.GatewayEditable, true
 }
 
-// IsSetGatewayEditable returns a boolean if a field has been set.
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) IsSetGatewayEditable() bool {
-	if o != nil && !IsNil(o.GatewayEditable) {
-		return true
-	}
-
-	return false
-}
-
 // SetGatewayEditable gets a reference to the given bool and assigns it to the GatewayEditable field.
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) SetGatewayEditable(v bool) {
 	o.GatewayEditable = &v
@@ -564,15 +408,6 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 		return nil, false
 	}
 	return o.VlanIdEditable, true
-}
-
-// IsSetVlanIdEditable returns a boolean if a field has been set.
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) IsSetVlanIdEditable() bool {
-	if o != nil && !IsNil(o.VlanIdEditable) {
-		return true
-	}
-
-	return false
 }
 
 // SetVlanIdEditable gets a reference to the given bool and assigns it to the VlanIdEditable field.
@@ -598,15 +433,6 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 	return o.StaticOverrideEditable, true
 }
 
-// IsSetStaticOverrideEditable returns a boolean if a field has been set.
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) IsSetStaticOverrideEditable() bool {
-	if o != nil && !IsNil(o.StaticOverrideEditable) {
-		return true
-	}
-
-	return false
-}
-
 // SetStaticOverrideEditable gets a reference to the given bool and assigns it to the StaticOverrideEditable field.
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) SetStaticOverrideEditable(v bool) {
 	o.StaticOverrideEditable = &v
@@ -628,15 +454,6 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 		return nil, false
 	}
 	return o.NetworkDomainEditable, true
-}
-
-// IsSetNetworkDomainEditable returns a boolean if a field has been set.
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) IsSetNetworkDomainEditable() bool {
-	if o != nil && !IsNil(o.NetworkDomainEditable) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkDomainEditable gets a reference to the given bool and assigns it to the NetworkDomainEditable field.
@@ -662,15 +479,6 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 	return o.CanAssignPool, true
 }
 
-// IsSetCanAssignPool returns a boolean if a field has been set.
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) IsSetCanAssignPool() bool {
-	if o != nil && !IsNil(o.CanAssignPool) {
-		return true
-	}
-
-	return false
-}
-
 // SetCanAssignPool gets a reference to the given bool and assigns it to the CanAssignPool field.
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) SetCanAssignPool(v bool) {
 	o.CanAssignPool = &v
@@ -692,15 +500,6 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 		return nil, false
 	}
 	return o.Deletable, true
-}
-
-// IsSetDeletable returns a boolean if a field has been set.
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) IsSetDeletable() bool {
-	if o != nil && !IsNil(o.Deletable) {
-		return true
-	}
-
-	return false
 }
 
 // SetDeletable gets a reference to the given bool and assigns it to the Deletable field.
@@ -726,15 +525,6 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 	return o.HasNetworkServer, true
 }
 
-// IsSetHasNetworkServer returns a boolean if a field has been set.
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) IsSetHasNetworkServer() bool {
-	if o != nil && !IsNil(o.HasNetworkServer) {
-		return true
-	}
-
-	return false
-}
-
 // SetHasNetworkServer gets a reference to the given bool and assigns it to the HasNetworkServer field.
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) SetHasNetworkServer(v bool) {
 	o.HasNetworkServer = &v
@@ -756,15 +546,6 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 		return nil, false
 	}
 	return o.HasCidr, true
-}
-
-// IsSetHasCidr returns a boolean if a field has been set.
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) IsSetHasCidr() bool {
-	if o != nil && !IsNil(o.HasCidr) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasCidr gets a reference to the given bool and assigns it to the HasCidr field.
@@ -790,15 +571,6 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 	return o.HasStaticRoutes, true
 }
 
-// IsSetHasStaticRoutes returns a boolean if a field has been set.
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) IsSetHasStaticRoutes() bool {
-	if o != nil && !IsNil(o.HasStaticRoutes) {
-		return true
-	}
-
-	return false
-}
-
 // SetHasStaticRoutes gets a reference to the given bool and assigns it to the HasStaticRoutes field.
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) SetHasStaticRoutes(v bool) {
 	o.HasStaticRoutes = &v
@@ -820,15 +592,6 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 		return nil, false
 	}
 	return o.HasFloatingIps, true
-}
-
-// IsSetHasFloatingIps returns a boolean if a field has been set.
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) IsSetHasFloatingIps() bool {
-	if o != nil && !IsNil(o.HasFloatingIps) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasFloatingIps gets a reference to the given bool and assigns it to the HasFloatingIps field.
@@ -854,15 +617,6 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 	return o.OptionTypes, true
 }
 
-// IsSetOptionTypes returns a boolean if a field has been set.
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) IsSetOptionTypes() bool {
-	if o != nil && !IsNil(o.OptionTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetOptionTypes gets a reference to the given []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerOptionTypesInner and assigns it to the OptionTypes field.
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) SetOptionTypes(v []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerOptionTypesInner) {
 	o.OptionTypes = v
@@ -884,15 +638,6 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 		return nil, false
 	}
 	return o.RouteOptionTypes, true
-}
-
-// IsSetRouteOptionTypes returns a boolean if a field has been set.
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) IsSetRouteOptionTypes() bool {
-	if o != nil && !IsNil(o.RouteOptionTypes) {
-		return true
-	}
-
-	return false
 }
 
 // SetRouteOptionTypes gets a reference to the given []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner and assigns it to the RouteOptionTypes field.

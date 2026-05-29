@@ -70,28 +70,9 @@ func (o *VRealizeOrchestratorTaskConfig5) GetSshKeyOk() (*string, bool) {
 	return o.SshKey.Get(), o.SshKey.IsSet()
 }
 
-// IsSetSshKey returns a boolean if a field has been set.
-func (o *VRealizeOrchestratorTaskConfig5) IsSetSshKey() bool {
-	if o != nil && o.SshKey.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSshKey gets a reference to the given NullableString and assigns it to the SshKey field.
 func (o *VRealizeOrchestratorTaskConfig5) SetSshKey(v string) {
 	o.SshKey.Set(&v)
-}
-
-// SetSshKeyNil sets the value for SshKey to be an explicit nil
-func (o *VRealizeOrchestratorTaskConfig5) SetSshKeyNil() {
-	o.SshKey.Set(nil)
-}
-
-// UnsetSshKey ensures that no value is present for SshKey, not even an explicit nil
-func (o *VRealizeOrchestratorTaskConfig5) UnsetSshKey() {
-	o.SshKey.Unset()
 }
 
 // GetLocalScriptGitRef returns the LocalScriptGitRef field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -113,28 +94,9 @@ func (o *VRealizeOrchestratorTaskConfig5) GetLocalScriptGitRefOk() (*string, boo
 	return o.LocalScriptGitRef.Get(), o.LocalScriptGitRef.IsSet()
 }
 
-// IsSetLocalScriptGitRef returns a boolean if a field has been set.
-func (o *VRealizeOrchestratorTaskConfig5) IsSetLocalScriptGitRef() bool {
-	if o != nil && o.LocalScriptGitRef.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLocalScriptGitRef gets a reference to the given NullableString and assigns it to the LocalScriptGitRef field.
 func (o *VRealizeOrchestratorTaskConfig5) SetLocalScriptGitRef(v string) {
 	o.LocalScriptGitRef.Set(&v)
-}
-
-// SetLocalScriptGitRefNil sets the value for LocalScriptGitRef to be an explicit nil
-func (o *VRealizeOrchestratorTaskConfig5) SetLocalScriptGitRefNil() {
-	o.LocalScriptGitRef.Set(nil)
-}
-
-// UnsetLocalScriptGitRef ensures that no value is present for LocalScriptGitRef, not even an explicit nil
-func (o *VRealizeOrchestratorTaskConfig5) UnsetLocalScriptGitRef() {
-	o.LocalScriptGitRef.Unset()
 }
 
 // GetPort returns the Port field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -156,28 +118,9 @@ func (o *VRealizeOrchestratorTaskConfig5) GetPortOk() (*string, bool) {
 	return o.Port.Get(), o.Port.IsSet()
 }
 
-// IsSetPort returns a boolean if a field has been set.
-func (o *VRealizeOrchestratorTaskConfig5) IsSetPort() bool {
-	if o != nil && o.Port.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPort gets a reference to the given NullableString and assigns it to the Port field.
 func (o *VRealizeOrchestratorTaskConfig5) SetPort(v string) {
 	o.Port.Set(&v)
-}
-
-// SetPortNil sets the value for Port to be an explicit nil
-func (o *VRealizeOrchestratorTaskConfig5) SetPortNil() {
-	o.Port.Set(nil)
-}
-
-// UnsetPort ensures that no value is present for Port, not even an explicit nil
-func (o *VRealizeOrchestratorTaskConfig5) UnsetPort() {
-	o.Port.Unset()
 }
 
 // GetVroBody returns the VroBody field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -199,28 +142,9 @@ func (o *VRealizeOrchestratorTaskConfig5) GetVroBodyOk() (*string, bool) {
 	return o.VroBody.Get(), o.VroBody.IsSet()
 }
 
-// IsSetVroBody returns a boolean if a field has been set.
-func (o *VRealizeOrchestratorTaskConfig5) IsSetVroBody() bool {
-	if o != nil && o.VroBody.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetVroBody gets a reference to the given NullableString and assigns it to the VroBody field.
 func (o *VRealizeOrchestratorTaskConfig5) SetVroBody(v string) {
 	o.VroBody.Set(&v)
-}
-
-// SetVroBodyNil sets the value for VroBody to be an explicit nil
-func (o *VRealizeOrchestratorTaskConfig5) SetVroBodyNil() {
-	o.VroBody.Set(nil)
-}
-
-// UnsetVroBody ensures that no value is present for VroBody, not even an explicit nil
-func (o *VRealizeOrchestratorTaskConfig5) UnsetVroBody() {
-	o.VroBody.Unset()
 }
 
 // GetPassword returns the Password field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -242,28 +166,9 @@ func (o *VRealizeOrchestratorTaskConfig5) GetPasswordOk() (*string, bool) {
 	return o.Password.Get(), o.Password.IsSet()
 }
 
-// IsSetPassword returns a boolean if a field has been set.
-func (o *VRealizeOrchestratorTaskConfig5) IsSetPassword() bool {
-	if o != nil && o.Password.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPassword gets a reference to the given NullableString and assigns it to the Password field.
 func (o *VRealizeOrchestratorTaskConfig5) SetPassword(v string) {
 	o.Password.Set(&v)
-}
-
-// SetPasswordNil sets the value for Password to be an explicit nil
-func (o *VRealizeOrchestratorTaskConfig5) SetPasswordNil() {
-	o.Password.Set(nil)
-}
-
-// UnsetPassword ensures that no value is present for Password, not even an explicit nil
-func (o *VRealizeOrchestratorTaskConfig5) UnsetPassword() {
-	o.Password.Unset()
 }
 
 // GetPasswordHash returns the PasswordHash field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -285,28 +190,9 @@ func (o *VRealizeOrchestratorTaskConfig5) GetPasswordHashOk() (*string, bool) {
 	return o.PasswordHash.Get(), o.PasswordHash.IsSet()
 }
 
-// IsSetPasswordHash returns a boolean if a field has been set.
-func (o *VRealizeOrchestratorTaskConfig5) IsSetPasswordHash() bool {
-	if o != nil && o.PasswordHash.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPasswordHash gets a reference to the given NullableString and assigns it to the PasswordHash field.
 func (o *VRealizeOrchestratorTaskConfig5) SetPasswordHash(v string) {
 	o.PasswordHash.Set(&v)
-}
-
-// SetPasswordHashNil sets the value for PasswordHash to be an explicit nil
-func (o *VRealizeOrchestratorTaskConfig5) SetPasswordHashNil() {
-	o.PasswordHash.Set(nil)
-}
-
-// UnsetPasswordHash ensures that no value is present for PasswordHash, not even an explicit nil
-func (o *VRealizeOrchestratorTaskConfig5) UnsetPasswordHash() {
-	o.PasswordHash.Unset()
 }
 
 // GetHost returns the Host field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -328,28 +214,9 @@ func (o *VRealizeOrchestratorTaskConfig5) GetHostOk() (*string, bool) {
 	return o.Host.Get(), o.Host.IsSet()
 }
 
-// IsSetHost returns a boolean if a field has been set.
-func (o *VRealizeOrchestratorTaskConfig5) IsSetHost() bool {
-	if o != nil && o.Host.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetHost gets a reference to the given NullableString and assigns it to the Host field.
 func (o *VRealizeOrchestratorTaskConfig5) SetHost(v string) {
 	o.Host.Set(&v)
-}
-
-// SetHostNil sets the value for Host to be an explicit nil
-func (o *VRealizeOrchestratorTaskConfig5) SetHostNil() {
-	o.Host.Set(nil)
-}
-
-// UnsetHost ensures that no value is present for Host, not even an explicit nil
-func (o *VRealizeOrchestratorTaskConfig5) UnsetHost() {
-	o.Host.Unset()
 }
 
 // GetLocalScriptGitId returns the LocalScriptGitId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -371,28 +238,9 @@ func (o *VRealizeOrchestratorTaskConfig5) GetLocalScriptGitIdOk() (*string, bool
 	return o.LocalScriptGitId.Get(), o.LocalScriptGitId.IsSet()
 }
 
-// IsSetLocalScriptGitId returns a boolean if a field has been set.
-func (o *VRealizeOrchestratorTaskConfig5) IsSetLocalScriptGitId() bool {
-	if o != nil && o.LocalScriptGitId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLocalScriptGitId gets a reference to the given NullableString and assigns it to the LocalScriptGitId field.
 func (o *VRealizeOrchestratorTaskConfig5) SetLocalScriptGitId(v string) {
 	o.LocalScriptGitId.Set(&v)
-}
-
-// SetLocalScriptGitIdNil sets the value for LocalScriptGitId to be an explicit nil
-func (o *VRealizeOrchestratorTaskConfig5) SetLocalScriptGitIdNil() {
-	o.LocalScriptGitId.Set(nil)
-}
-
-// UnsetLocalScriptGitId ensures that no value is present for LocalScriptGitId, not even an explicit nil
-func (o *VRealizeOrchestratorTaskConfig5) UnsetLocalScriptGitId() {
-	o.LocalScriptGitId.Unset()
 }
 
 // GetUsername returns the Username field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -414,28 +262,9 @@ func (o *VRealizeOrchestratorTaskConfig5) GetUsernameOk() (*string, bool) {
 	return o.Username.Get(), o.Username.IsSet()
 }
 
-// IsSetUsername returns a boolean if a field has been set.
-func (o *VRealizeOrchestratorTaskConfig5) IsSetUsername() bool {
-	if o != nil && o.Username.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUsername gets a reference to the given NullableString and assigns it to the Username field.
 func (o *VRealizeOrchestratorTaskConfig5) SetUsername(v string) {
 	o.Username.Set(&v)
-}
-
-// SetUsernameNil sets the value for Username to be an explicit nil
-func (o *VRealizeOrchestratorTaskConfig5) SetUsernameNil() {
-	o.Username.Set(nil)
-}
-
-// UnsetUsername ensures that no value is present for Username, not even an explicit nil
-func (o *VRealizeOrchestratorTaskConfig5) UnsetUsername() {
-	o.Username.Unset()
 }
 
 func (o VRealizeOrchestratorTaskConfig5) MarshalJSON() ([]byte, error) {

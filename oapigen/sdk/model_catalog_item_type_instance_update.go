@@ -114,15 +114,6 @@ func (o *CatalogItemTypeInstanceUpdate) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceUpdate) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *CatalogItemTypeInstanceUpdate) SetName(v string) {
 	o.Name = &v
@@ -147,28 +138,9 @@ func (o *CatalogItemTypeInstanceUpdate) GetCodeOk() (*string, bool) {
 	return o.Code.Get(), o.Code.IsSet()
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceUpdate) IsSetCode() bool {
-	if o != nil && o.Code.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *CatalogItemTypeInstanceUpdate) SetCode(v string) {
 	o.Code.Set(&v)
-}
-
-// SetCodeNil sets the value for Code to be an explicit nil
-func (o *CatalogItemTypeInstanceUpdate) SetCodeNil() {
-	o.Code.Set(nil)
-}
-
-// UnsetCode ensures that no value is present for Code, not even an explicit nil
-func (o *CatalogItemTypeInstanceUpdate) UnsetCode() {
-	o.Code.Unset()
 }
 
 // GetCategory returns the Category field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -190,28 +162,9 @@ func (o *CatalogItemTypeInstanceUpdate) GetCategoryOk() (*string, bool) {
 	return o.Category.Get(), o.Category.IsSet()
 }
 
-// IsSetCategory returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceUpdate) IsSetCategory() bool {
-	if o != nil && o.Category.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCategory gets a reference to the given NullableString and assigns it to the Category field.
 func (o *CatalogItemTypeInstanceUpdate) SetCategory(v string) {
 	o.Category.Set(&v)
-}
-
-// SetCategoryNil sets the value for Category to be an explicit nil
-func (o *CatalogItemTypeInstanceUpdate) SetCategoryNil() {
-	o.Category.Set(nil)
-}
-
-// UnsetCategory ensures that no value is present for Category, not even an explicit nil
-func (o *CatalogItemTypeInstanceUpdate) UnsetCategory() {
-	o.Category.Unset()
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -230,15 +183,6 @@ func (o *CatalogItemTypeInstanceUpdate) GetDescriptionOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceUpdate) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -265,15 +209,6 @@ func (o *CatalogItemTypeInstanceUpdate) GetLabelsOk() ([]string, bool) {
 	return o.Labels, true
 }
 
-// IsSetLabels returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceUpdate) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
-}
-
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
 func (o *CatalogItemTypeInstanceUpdate) SetLabels(v []string) {
 	o.Labels = v
@@ -297,15 +232,6 @@ func (o *CatalogItemTypeInstanceUpdate) GetTypeOk() (*string, bool) {
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceUpdate) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given string and assigns it to the Type field.
 func (o *CatalogItemTypeInstanceUpdate) SetType(v string) {
 	o.Type = &v
@@ -327,15 +253,6 @@ func (o *CatalogItemTypeInstanceUpdate) GetVisibilityOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceUpdate) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -362,28 +279,9 @@ func (o *CatalogItemTypeInstanceUpdate) GetLayoutCodeOk() (*string, bool) {
 	return o.LayoutCode.Get(), o.LayoutCode.IsSet()
 }
 
-// IsSetLayoutCode returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceUpdate) IsSetLayoutCode() bool {
-	if o != nil && o.LayoutCode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLayoutCode gets a reference to the given NullableString and assigns it to the LayoutCode field.
 func (o *CatalogItemTypeInstanceUpdate) SetLayoutCode(v string) {
 	o.LayoutCode.Set(&v)
-}
-
-// SetLayoutCodeNil sets the value for LayoutCode to be an explicit nil
-func (o *CatalogItemTypeInstanceUpdate) SetLayoutCodeNil() {
-	o.LayoutCode.Set(nil)
-}
-
-// UnsetLayoutCode ensures that no value is present for LayoutCode, not even an explicit nil
-func (o *CatalogItemTypeInstanceUpdate) UnsetLayoutCode() {
-	o.LayoutCode.Unset()
 }
 
 // GetIconPath returns the IconPath field value if set, zero value otherwise.
@@ -402,15 +300,6 @@ func (o *CatalogItemTypeInstanceUpdate) GetIconPathOk() (*string, bool) {
 		return nil, false
 	}
 	return o.IconPath, true
-}
-
-// IsSetIconPath returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceUpdate) IsSetIconPath() bool {
-	if o != nil && !IsNil(o.IconPath) {
-		return true
-	}
-
-	return false
 }
 
 // SetIconPath gets a reference to the given string and assigns it to the IconPath field.
@@ -436,15 +325,6 @@ func (o *CatalogItemTypeInstanceUpdate) GetEnabledOk() (*bool, bool) {
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceUpdate) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *CatalogItemTypeInstanceUpdate) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -466,15 +346,6 @@ func (o *CatalogItemTypeInstanceUpdate) GetFeaturedOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Featured, true
-}
-
-// IsSetFeatured returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceUpdate) IsSetFeatured() bool {
-	if o != nil && !IsNil(o.Featured) {
-		return true
-	}
-
-	return false
 }
 
 // SetFeatured gets a reference to the given bool and assigns it to the Featured field.
@@ -500,15 +371,6 @@ func (o *CatalogItemTypeInstanceUpdate) GetAllowQuantityOk() (*bool, bool) {
 	return o.AllowQuantity, true
 }
 
-// IsSetAllowQuantity returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceUpdate) IsSetAllowQuantity() bool {
-	if o != nil && !IsNil(o.AllowQuantity) {
-		return true
-	}
-
-	return false
-}
-
 // SetAllowQuantity gets a reference to the given bool and assigns it to the AllowQuantity field.
 func (o *CatalogItemTypeInstanceUpdate) SetAllowQuantity(v bool) {
 	o.AllowQuantity = &v
@@ -530,15 +392,6 @@ func (o *CatalogItemTypeInstanceUpdate) GetConfigOk() (*InstanceConfigObject3, b
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceUpdate) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given InstanceConfigObject3 and assigns it to the Config field.
@@ -564,15 +417,6 @@ func (o *CatalogItemTypeInstanceUpdate) GetInstanceSpecOk() (*string, bool) {
 	return o.InstanceSpec, true
 }
 
-// IsSetInstanceSpec returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceUpdate) IsSetInstanceSpec() bool {
-	if o != nil && !IsNil(o.InstanceSpec) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstanceSpec gets a reference to the given string and assigns it to the InstanceSpec field.
 func (o *CatalogItemTypeInstanceUpdate) SetInstanceSpec(v string) {
 	o.InstanceSpec = &v
@@ -594,15 +438,6 @@ func (o *CatalogItemTypeInstanceUpdate) GetFormTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.FormType, true
-}
-
-// IsSetFormType returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceUpdate) IsSetFormType() bool {
-	if o != nil && !IsNil(o.FormType) {
-		return true
-	}
-
-	return false
 }
 
 // SetFormType gets a reference to the given string and assigns it to the FormType field.
@@ -628,15 +463,6 @@ func (o *CatalogItemTypeInstanceUpdate) GetFormOk() (*CatalogItemTypeInstanceUpd
 	return o.Form, true
 }
 
-// IsSetForm returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceUpdate) IsSetForm() bool {
-	if o != nil && !IsNil(o.Form) {
-		return true
-	}
-
-	return false
-}
-
 // SetForm gets a reference to the given CatalogItemTypeInstanceUpdateForm and assigns it to the Form field.
 func (o *CatalogItemTypeInstanceUpdate) SetForm(v CatalogItemTypeInstanceUpdateForm) {
 	o.Form = &v
@@ -660,15 +486,6 @@ func (o *CatalogItemTypeInstanceUpdate) GetOptionTypesOk() ([]int64, bool) {
 	return o.OptionTypes, true
 }
 
-// IsSetOptionTypes returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceUpdate) IsSetOptionTypes() bool {
-	if o != nil && !IsNil(o.OptionTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetOptionTypes gets a reference to the given []int64 and assigns it to the OptionTypes field.
 func (o *CatalogItemTypeInstanceUpdate) SetOptionTypes(v []int64) {
 	o.OptionTypes = v
@@ -690,15 +507,6 @@ func (o *CatalogItemTypeInstanceUpdate) GetContentOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Content, true
-}
-
-// IsSetContent returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceUpdate) IsSetContent() bool {
-	if o != nil && !IsNil(o.Content) {
-		return true
-	}
-
-	return false
 }
 
 // SetContent gets a reference to the given string and assigns it to the Content field.

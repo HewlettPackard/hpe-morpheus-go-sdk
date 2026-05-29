@@ -61,15 +61,6 @@ func (o *GetApprovalsItem200Response) GetApprovalItemOk() (*GetApprovalsItem200R
 	return o.ApprovalItem, true
 }
 
-// IsSetApprovalItem returns a boolean if a field has been set.
-func (o *GetApprovalsItem200Response) IsSetApprovalItem() bool {
-	if o != nil && !IsNil(o.ApprovalItem) {
-		return true
-	}
-
-	return false
-}
-
 // SetApprovalItem gets a reference to the given GetApprovalsItem200ResponseApprovalItem and assigns it to the ApprovalItem field.
 func (o *GetApprovalsItem200Response) SetApprovalItem(v GetApprovalsItem200ResponseApprovalItem) {
 	o.ApprovalItem = &v

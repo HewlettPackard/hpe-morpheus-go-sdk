@@ -77,15 +77,6 @@ func (o *ListScripts200ResponseAllOfContainerScriptsInner) GetIdOk() (*int64, bo
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListScripts200ResponseAllOfContainerScriptsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListScripts200ResponseAllOfContainerScriptsInner) SetId(v int64) {
 	o.Id = &v
@@ -107,15 +98,6 @@ func (o *ListScripts200ResponseAllOfContainerScriptsInner) GetCodeOk() (*string,
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *ListScripts200ResponseAllOfContainerScriptsInner) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -142,28 +124,9 @@ func (o *ListScripts200ResponseAllOfContainerScriptsInner) GetAccountOk() (*stri
 	return o.Account.Get(), o.Account.IsSet()
 }
 
-// IsSetAccount returns a boolean if a field has been set.
-func (o *ListScripts200ResponseAllOfContainerScriptsInner) IsSetAccount() bool {
-	if o != nil && o.Account.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAccount gets a reference to the given NullableString and assigns it to the Account field.
 func (o *ListScripts200ResponseAllOfContainerScriptsInner) SetAccount(v string) {
 	o.Account.Set(&v)
-}
-
-// SetAccountNil sets the value for Account to be an explicit nil
-func (o *ListScripts200ResponseAllOfContainerScriptsInner) SetAccountNil() {
-	o.Account.Set(nil)
-}
-
-// UnsetAccount ensures that no value is present for Account, not even an explicit nil
-func (o *ListScripts200ResponseAllOfContainerScriptsInner) UnsetAccount() {
-	o.Account.Unset()
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -182,15 +145,6 @@ func (o *ListScripts200ResponseAllOfContainerScriptsInner) GetNameOk() (*string,
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListScripts200ResponseAllOfContainerScriptsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -217,15 +171,6 @@ func (o *ListScripts200ResponseAllOfContainerScriptsInner) GetLabelsOk() ([]stri
 	return o.Labels, true
 }
 
-// IsSetLabels returns a boolean if a field has been set.
-func (o *ListScripts200ResponseAllOfContainerScriptsInner) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
-}
-
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
 func (o *ListScripts200ResponseAllOfContainerScriptsInner) SetLabels(v []string) {
 	o.Labels = v
@@ -250,28 +195,9 @@ func (o *ListScripts200ResponseAllOfContainerScriptsInner) GetCategoryOk() (*str
 	return o.Category.Get(), o.Category.IsSet()
 }
 
-// IsSetCategory returns a boolean if a field has been set.
-func (o *ListScripts200ResponseAllOfContainerScriptsInner) IsSetCategory() bool {
-	if o != nil && o.Category.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCategory gets a reference to the given NullableString and assigns it to the Category field.
 func (o *ListScripts200ResponseAllOfContainerScriptsInner) SetCategory(v string) {
 	o.Category.Set(&v)
-}
-
-// SetCategoryNil sets the value for Category to be an explicit nil
-func (o *ListScripts200ResponseAllOfContainerScriptsInner) SetCategoryNil() {
-	o.Category.Set(nil)
-}
-
-// UnsetCategory ensures that no value is present for Category, not even an explicit nil
-func (o *ListScripts200ResponseAllOfContainerScriptsInner) UnsetCategory() {
-	o.Category.Unset()
 }
 
 // GetSortOrder returns the SortOrder field value if set, zero value otherwise.
@@ -290,15 +216,6 @@ func (o *ListScripts200ResponseAllOfContainerScriptsInner) GetSortOrderOk() (*in
 		return nil, false
 	}
 	return o.SortOrder, true
-}
-
-// IsSetSortOrder returns a boolean if a field has been set.
-func (o *ListScripts200ResponseAllOfContainerScriptsInner) IsSetSortOrder() bool {
-	if o != nil && !IsNil(o.SortOrder) {
-		return true
-	}
-
-	return false
 }
 
 // SetSortOrder gets a reference to the given int64 and assigns it to the SortOrder field.
@@ -324,15 +241,6 @@ func (o *ListScripts200ResponseAllOfContainerScriptsInner) GetScriptVersionOk() 
 	return o.ScriptVersion, true
 }
 
-// IsSetScriptVersion returns a boolean if a field has been set.
-func (o *ListScripts200ResponseAllOfContainerScriptsInner) IsSetScriptVersion() bool {
-	if o != nil && !IsNil(o.ScriptVersion) {
-		return true
-	}
-
-	return false
-}
-
 // SetScriptVersion gets a reference to the given string and assigns it to the ScriptVersion field.
 func (o *ListScripts200ResponseAllOfContainerScriptsInner) SetScriptVersion(v string) {
 	o.ScriptVersion = &v
@@ -354,15 +262,6 @@ func (o *ListScripts200ResponseAllOfContainerScriptsInner) GetScriptPhaseOk() (*
 		return nil, false
 	}
 	return o.ScriptPhase, true
-}
-
-// IsSetScriptPhase returns a boolean if a field has been set.
-func (o *ListScripts200ResponseAllOfContainerScriptsInner) IsSetScriptPhase() bool {
-	if o != nil && !IsNil(o.ScriptPhase) {
-		return true
-	}
-
-	return false
 }
 
 // SetScriptPhase gets a reference to the given string and assigns it to the ScriptPhase field.
@@ -388,15 +287,6 @@ func (o *ListScripts200ResponseAllOfContainerScriptsInner) GetScriptTypeOk() (*s
 	return o.ScriptType, true
 }
 
-// IsSetScriptType returns a boolean if a field has been set.
-func (o *ListScripts200ResponseAllOfContainerScriptsInner) IsSetScriptType() bool {
-	if o != nil && !IsNil(o.ScriptType) {
-		return true
-	}
-
-	return false
-}
-
 // SetScriptType gets a reference to the given string and assigns it to the ScriptType field.
 func (o *ListScripts200ResponseAllOfContainerScriptsInner) SetScriptType(v string) {
 	o.ScriptType = &v
@@ -418,15 +308,6 @@ func (o *ListScripts200ResponseAllOfContainerScriptsInner) GetScriptOk() (*strin
 		return nil, false
 	}
 	return o.Script, true
-}
-
-// IsSetScript returns a boolean if a field has been set.
-func (o *ListScripts200ResponseAllOfContainerScriptsInner) IsSetScript() bool {
-	if o != nil && !IsNil(o.Script) {
-		return true
-	}
-
-	return false
 }
 
 // SetScript gets a reference to the given string and assigns it to the Script field.
@@ -453,28 +334,9 @@ func (o *ListScripts200ResponseAllOfContainerScriptsInner) GetScriptServiceOk() 
 	return o.ScriptService.Get(), o.ScriptService.IsSet()
 }
 
-// IsSetScriptService returns a boolean if a field has been set.
-func (o *ListScripts200ResponseAllOfContainerScriptsInner) IsSetScriptService() bool {
-	if o != nil && o.ScriptService.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetScriptService gets a reference to the given NullableString and assigns it to the ScriptService field.
 func (o *ListScripts200ResponseAllOfContainerScriptsInner) SetScriptService(v string) {
 	o.ScriptService.Set(&v)
-}
-
-// SetScriptServiceNil sets the value for ScriptService to be an explicit nil
-func (o *ListScripts200ResponseAllOfContainerScriptsInner) SetScriptServiceNil() {
-	o.ScriptService.Set(nil)
-}
-
-// UnsetScriptService ensures that no value is present for ScriptService, not even an explicit nil
-func (o *ListScripts200ResponseAllOfContainerScriptsInner) UnsetScriptService() {
-	o.ScriptService.Unset()
 }
 
 // GetScriptMethod returns the ScriptMethod field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -496,28 +358,9 @@ func (o *ListScripts200ResponseAllOfContainerScriptsInner) GetScriptMethodOk() (
 	return o.ScriptMethod.Get(), o.ScriptMethod.IsSet()
 }
 
-// IsSetScriptMethod returns a boolean if a field has been set.
-func (o *ListScripts200ResponseAllOfContainerScriptsInner) IsSetScriptMethod() bool {
-	if o != nil && o.ScriptMethod.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetScriptMethod gets a reference to the given NullableString and assigns it to the ScriptMethod field.
 func (o *ListScripts200ResponseAllOfContainerScriptsInner) SetScriptMethod(v string) {
 	o.ScriptMethod.Set(&v)
-}
-
-// SetScriptMethodNil sets the value for ScriptMethod to be an explicit nil
-func (o *ListScripts200ResponseAllOfContainerScriptsInner) SetScriptMethodNil() {
-	o.ScriptMethod.Set(nil)
-}
-
-// UnsetScriptMethod ensures that no value is present for ScriptMethod, not even an explicit nil
-func (o *ListScripts200ResponseAllOfContainerScriptsInner) UnsetScriptMethod() {
-	o.ScriptMethod.Unset()
 }
 
 // GetRunAsUser returns the RunAsUser field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -539,28 +382,9 @@ func (o *ListScripts200ResponseAllOfContainerScriptsInner) GetRunAsUserOk() (*st
 	return o.RunAsUser.Get(), o.RunAsUser.IsSet()
 }
 
-// IsSetRunAsUser returns a boolean if a field has been set.
-func (o *ListScripts200ResponseAllOfContainerScriptsInner) IsSetRunAsUser() bool {
-	if o != nil && o.RunAsUser.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRunAsUser gets a reference to the given NullableString and assigns it to the RunAsUser field.
 func (o *ListScripts200ResponseAllOfContainerScriptsInner) SetRunAsUser(v string) {
 	o.RunAsUser.Set(&v)
-}
-
-// SetRunAsUserNil sets the value for RunAsUser to be an explicit nil
-func (o *ListScripts200ResponseAllOfContainerScriptsInner) SetRunAsUserNil() {
-	o.RunAsUser.Set(nil)
-}
-
-// UnsetRunAsUser ensures that no value is present for RunAsUser, not even an explicit nil
-func (o *ListScripts200ResponseAllOfContainerScriptsInner) UnsetRunAsUser() {
-	o.RunAsUser.Unset()
 }
 
 // GetRunAsPassword returns the RunAsPassword field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -582,28 +406,9 @@ func (o *ListScripts200ResponseAllOfContainerScriptsInner) GetRunAsPasswordOk() 
 	return o.RunAsPassword.Get(), o.RunAsPassword.IsSet()
 }
 
-// IsSetRunAsPassword returns a boolean if a field has been set.
-func (o *ListScripts200ResponseAllOfContainerScriptsInner) IsSetRunAsPassword() bool {
-	if o != nil && o.RunAsPassword.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRunAsPassword gets a reference to the given NullableString and assigns it to the RunAsPassword field.
 func (o *ListScripts200ResponseAllOfContainerScriptsInner) SetRunAsPassword(v string) {
 	o.RunAsPassword.Set(&v)
-}
-
-// SetRunAsPasswordNil sets the value for RunAsPassword to be an explicit nil
-func (o *ListScripts200ResponseAllOfContainerScriptsInner) SetRunAsPasswordNil() {
-	o.RunAsPassword.Set(nil)
-}
-
-// UnsetRunAsPassword ensures that no value is present for RunAsPassword, not even an explicit nil
-func (o *ListScripts200ResponseAllOfContainerScriptsInner) UnsetRunAsPassword() {
-	o.RunAsPassword.Unset()
 }
 
 // GetSudoUser returns the SudoUser field value if set, zero value otherwise.
@@ -622,15 +427,6 @@ func (o *ListScripts200ResponseAllOfContainerScriptsInner) GetSudoUserOk() (*boo
 		return nil, false
 	}
 	return o.SudoUser, true
-}
-
-// IsSetSudoUser returns a boolean if a field has been set.
-func (o *ListScripts200ResponseAllOfContainerScriptsInner) IsSetSudoUser() bool {
-	if o != nil && !IsNil(o.SudoUser) {
-		return true
-	}
-
-	return false
 }
 
 // SetSudoUser gets a reference to the given bool and assigns it to the SudoUser field.
@@ -654,15 +450,6 @@ func (o *ListScripts200ResponseAllOfContainerScriptsInner) GetFailOnErrorOk() (*
 		return nil, false
 	}
 	return o.FailOnError, true
-}
-
-// IsSetFailOnError returns a boolean if a field has been set.
-func (o *ListScripts200ResponseAllOfContainerScriptsInner) IsSetFailOnError() bool {
-	if o != nil && !IsNil(o.FailOnError) {
-		return true
-	}
-
-	return false
 }
 
 // SetFailOnError gets a reference to the given bool and assigns it to the FailOnError field.

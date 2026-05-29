@@ -117,15 +117,6 @@ func (o *CatalogItemTypeWorkflowCreate) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *CatalogItemTypeWorkflowCreate) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *CatalogItemTypeWorkflowCreate) SetName(v string) {
 	o.Name = &v
@@ -150,28 +141,9 @@ func (o *CatalogItemTypeWorkflowCreate) GetCodeOk() (*string, bool) {
 	return o.Code.Get(), o.Code.IsSet()
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *CatalogItemTypeWorkflowCreate) IsSetCode() bool {
-	if o != nil && o.Code.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *CatalogItemTypeWorkflowCreate) SetCode(v string) {
 	o.Code.Set(&v)
-}
-
-// SetCodeNil sets the value for Code to be an explicit nil
-func (o *CatalogItemTypeWorkflowCreate) SetCodeNil() {
-	o.Code.Set(nil)
-}
-
-// UnsetCode ensures that no value is present for Code, not even an explicit nil
-func (o *CatalogItemTypeWorkflowCreate) UnsetCode() {
-	o.Code.Unset()
 }
 
 // GetCategory returns the Category field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -193,28 +165,9 @@ func (o *CatalogItemTypeWorkflowCreate) GetCategoryOk() (*string, bool) {
 	return o.Category.Get(), o.Category.IsSet()
 }
 
-// IsSetCategory returns a boolean if a field has been set.
-func (o *CatalogItemTypeWorkflowCreate) IsSetCategory() bool {
-	if o != nil && o.Category.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCategory gets a reference to the given NullableString and assigns it to the Category field.
 func (o *CatalogItemTypeWorkflowCreate) SetCategory(v string) {
 	o.Category.Set(&v)
-}
-
-// SetCategoryNil sets the value for Category to be an explicit nil
-func (o *CatalogItemTypeWorkflowCreate) SetCategoryNil() {
-	o.Category.Set(nil)
-}
-
-// UnsetCategory ensures that no value is present for Category, not even an explicit nil
-func (o *CatalogItemTypeWorkflowCreate) UnsetCategory() {
-	o.Category.Unset()
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -233,15 +186,6 @@ func (o *CatalogItemTypeWorkflowCreate) GetDescriptionOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *CatalogItemTypeWorkflowCreate) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -268,15 +212,6 @@ func (o *CatalogItemTypeWorkflowCreate) GetLabelsOk() ([]string, bool) {
 	return o.Labels, true
 }
 
-// IsSetLabels returns a boolean if a field has been set.
-func (o *CatalogItemTypeWorkflowCreate) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
-}
-
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
 func (o *CatalogItemTypeWorkflowCreate) SetLabels(v []string) {
 	o.Labels = v
@@ -300,15 +235,6 @@ func (o *CatalogItemTypeWorkflowCreate) GetTypeOk() (*string, bool) {
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *CatalogItemTypeWorkflowCreate) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given string and assigns it to the Type field.
 func (o *CatalogItemTypeWorkflowCreate) SetType(v string) {
 	o.Type = &v
@@ -330,15 +256,6 @@ func (o *CatalogItemTypeWorkflowCreate) GetVisibilityOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *CatalogItemTypeWorkflowCreate) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -365,28 +282,9 @@ func (o *CatalogItemTypeWorkflowCreate) GetLayoutCodeOk() (*string, bool) {
 	return o.LayoutCode.Get(), o.LayoutCode.IsSet()
 }
 
-// IsSetLayoutCode returns a boolean if a field has been set.
-func (o *CatalogItemTypeWorkflowCreate) IsSetLayoutCode() bool {
-	if o != nil && o.LayoutCode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLayoutCode gets a reference to the given NullableString and assigns it to the LayoutCode field.
 func (o *CatalogItemTypeWorkflowCreate) SetLayoutCode(v string) {
 	o.LayoutCode.Set(&v)
-}
-
-// SetLayoutCodeNil sets the value for LayoutCode to be an explicit nil
-func (o *CatalogItemTypeWorkflowCreate) SetLayoutCodeNil() {
-	o.LayoutCode.Set(nil)
-}
-
-// UnsetLayoutCode ensures that no value is present for LayoutCode, not even an explicit nil
-func (o *CatalogItemTypeWorkflowCreate) UnsetLayoutCode() {
-	o.LayoutCode.Unset()
 }
 
 // GetIconPath returns the IconPath field value if set, zero value otherwise.
@@ -405,15 +303,6 @@ func (o *CatalogItemTypeWorkflowCreate) GetIconPathOk() (*string, bool) {
 		return nil, false
 	}
 	return o.IconPath, true
-}
-
-// IsSetIconPath returns a boolean if a field has been set.
-func (o *CatalogItemTypeWorkflowCreate) IsSetIconPath() bool {
-	if o != nil && !IsNil(o.IconPath) {
-		return true
-	}
-
-	return false
 }
 
 // SetIconPath gets a reference to the given string and assigns it to the IconPath field.
@@ -439,15 +328,6 @@ func (o *CatalogItemTypeWorkflowCreate) GetEnabledOk() (*bool, bool) {
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *CatalogItemTypeWorkflowCreate) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *CatalogItemTypeWorkflowCreate) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -471,15 +351,6 @@ func (o *CatalogItemTypeWorkflowCreate) GetFeaturedOk() (*bool, bool) {
 	return o.Featured, true
 }
 
-// IsSetFeatured returns a boolean if a field has been set.
-func (o *CatalogItemTypeWorkflowCreate) IsSetFeatured() bool {
-	if o != nil && !IsNil(o.Featured) {
-		return true
-	}
-
-	return false
-}
-
 // SetFeatured gets a reference to the given bool and assigns it to the Featured field.
 func (o *CatalogItemTypeWorkflowCreate) SetFeatured(v bool) {
 	o.Featured = &v
@@ -501,15 +372,6 @@ func (o *CatalogItemTypeWorkflowCreate) GetAllowQuantityOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.AllowQuantity, true
-}
-
-// IsSetAllowQuantity returns a boolean if a field has been set.
-func (o *CatalogItemTypeWorkflowCreate) IsSetAllowQuantity() bool {
-	if o != nil && !IsNil(o.AllowQuantity) {
-		return true
-	}
-
-	return false
 }
 
 // SetAllowQuantity gets a reference to the given bool and assigns it to the AllowQuantity field.
@@ -559,15 +421,6 @@ func (o *CatalogItemTypeWorkflowCreate) GetContextOk() (*string, bool) {
 	return o.Context, true
 }
 
-// IsSetContext returns a boolean if a field has been set.
-func (o *CatalogItemTypeWorkflowCreate) IsSetContext() bool {
-	if o != nil && !IsNil(o.Context) {
-		return true
-	}
-
-	return false
-}
-
 // SetContext gets a reference to the given string and assigns it to the Context field.
 func (o *CatalogItemTypeWorkflowCreate) SetContext(v string) {
 	o.Context = &v
@@ -589,15 +442,6 @@ func (o *CatalogItemTypeWorkflowCreate) GetWorkflowConfigOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WorkflowConfig, true
-}
-
-// IsSetWorkflowConfig returns a boolean if a field has been set.
-func (o *CatalogItemTypeWorkflowCreate) IsSetWorkflowConfig() bool {
-	if o != nil && !IsNil(o.WorkflowConfig) {
-		return true
-	}
-
-	return false
 }
 
 // SetWorkflowConfig gets a reference to the given string and assigns it to the WorkflowConfig field.
@@ -623,15 +467,6 @@ func (o *CatalogItemTypeWorkflowCreate) GetFormTypeOk() (*string, bool) {
 	return o.FormType, true
 }
 
-// IsSetFormType returns a boolean if a field has been set.
-func (o *CatalogItemTypeWorkflowCreate) IsSetFormType() bool {
-	if o != nil && !IsNil(o.FormType) {
-		return true
-	}
-
-	return false
-}
-
 // SetFormType gets a reference to the given string and assigns it to the FormType field.
 func (o *CatalogItemTypeWorkflowCreate) SetFormType(v string) {
 	o.FormType = &v
@@ -653,15 +488,6 @@ func (o *CatalogItemTypeWorkflowCreate) GetFormOk() (*CatalogItemTypeWorkflowCre
 		return nil, false
 	}
 	return o.Form, true
-}
-
-// IsSetForm returns a boolean if a field has been set.
-func (o *CatalogItemTypeWorkflowCreate) IsSetForm() bool {
-	if o != nil && !IsNil(o.Form) {
-		return true
-	}
-
-	return false
 }
 
 // SetForm gets a reference to the given CatalogItemTypeWorkflowCreateForm and assigns it to the Form field.
@@ -687,15 +513,6 @@ func (o *CatalogItemTypeWorkflowCreate) GetOptionTypesOk() ([]int64, bool) {
 	return o.OptionTypes, true
 }
 
-// IsSetOptionTypes returns a boolean if a field has been set.
-func (o *CatalogItemTypeWorkflowCreate) IsSetOptionTypes() bool {
-	if o != nil && !IsNil(o.OptionTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetOptionTypes gets a reference to the given []int64 and assigns it to the OptionTypes field.
 func (o *CatalogItemTypeWorkflowCreate) SetOptionTypes(v []int64) {
 	o.OptionTypes = v
@@ -717,15 +534,6 @@ func (o *CatalogItemTypeWorkflowCreate) GetContentOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Content, true
-}
-
-// IsSetContent returns a boolean if a field has been set.
-func (o *CatalogItemTypeWorkflowCreate) IsSetContent() bool {
-	if o != nil && !IsNil(o.Content) {
-		return true
-	}
-
-	return false
 }
 
 // SetContent gets a reference to the given string and assigns it to the Content field.

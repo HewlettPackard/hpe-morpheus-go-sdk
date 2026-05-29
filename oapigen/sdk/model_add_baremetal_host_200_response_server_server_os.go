@@ -70,15 +70,6 @@ func (o *AddBaremetalHost200ResponseServerServerOs) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *AddBaremetalHost200ResponseServerServerOs) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *AddBaremetalHost200ResponseServerServerOs) SetId(v int64) {
 	o.Id = &v
@@ -102,15 +93,6 @@ func (o *AddBaremetalHost200ResponseServerServerOs) GetCodeOk() (*string, bool) 
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *AddBaremetalHost200ResponseServerServerOs) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *AddBaremetalHost200ResponseServerServerOs) SetCode(v string) {
 	o.Code = &v
@@ -132,15 +114,6 @@ func (o *AddBaremetalHost200ResponseServerServerOs) GetNameOk() (*string, bool) 
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *AddBaremetalHost200ResponseServerServerOs) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -167,28 +140,9 @@ func (o *AddBaremetalHost200ResponseServerServerOs) GetDescriptionOk() (*string,
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *AddBaremetalHost200ResponseServerServerOs) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *AddBaremetalHost200ResponseServerServerOs) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *AddBaremetalHost200ResponseServerServerOs) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *AddBaremetalHost200ResponseServerServerOs) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetVendor returns the Vendor field value if set, zero value otherwise.
@@ -207,15 +161,6 @@ func (o *AddBaremetalHost200ResponseServerServerOs) GetVendorOk() (*string, bool
 		return nil, false
 	}
 	return o.Vendor, true
-}
-
-// IsSetVendor returns a boolean if a field has been set.
-func (o *AddBaremetalHost200ResponseServerServerOs) IsSetVendor() bool {
-	if o != nil && !IsNil(o.Vendor) {
-		return true
-	}
-
-	return false
 }
 
 // SetVendor gets a reference to the given string and assigns it to the Vendor field.
@@ -239,15 +184,6 @@ func (o *AddBaremetalHost200ResponseServerServerOs) GetCategoryOk() (*string, bo
 		return nil, false
 	}
 	return o.Category, true
-}
-
-// IsSetCategory returns a boolean if a field has been set.
-func (o *AddBaremetalHost200ResponseServerServerOs) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
-		return true
-	}
-
-	return false
 }
 
 // SetCategory gets a reference to the given string and assigns it to the Category field.
@@ -274,28 +210,9 @@ func (o *AddBaremetalHost200ResponseServerServerOs) GetOsFamilyOk() (*string, bo
 	return o.OsFamily.Get(), o.OsFamily.IsSet()
 }
 
-// IsSetOsFamily returns a boolean if a field has been set.
-func (o *AddBaremetalHost200ResponseServerServerOs) IsSetOsFamily() bool {
-	if o != nil && o.OsFamily.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetOsFamily gets a reference to the given NullableString and assigns it to the OsFamily field.
 func (o *AddBaremetalHost200ResponseServerServerOs) SetOsFamily(v string) {
 	o.OsFamily.Set(&v)
-}
-
-// SetOsFamilyNil sets the value for OsFamily to be an explicit nil
-func (o *AddBaremetalHost200ResponseServerServerOs) SetOsFamilyNil() {
-	o.OsFamily.Set(nil)
-}
-
-// UnsetOsFamily ensures that no value is present for OsFamily, not even an explicit nil
-func (o *AddBaremetalHost200ResponseServerServerOs) UnsetOsFamily() {
-	o.OsFamily.Unset()
 }
 
 // GetOsVersion returns the OsVersion field value if set, zero value otherwise.
@@ -314,15 +231,6 @@ func (o *AddBaremetalHost200ResponseServerServerOs) GetOsVersionOk() (*string, b
 		return nil, false
 	}
 	return o.OsVersion, true
-}
-
-// IsSetOsVersion returns a boolean if a field has been set.
-func (o *AddBaremetalHost200ResponseServerServerOs) IsSetOsVersion() bool {
-	if o != nil && !IsNil(o.OsVersion) {
-		return true
-	}
-
-	return false
 }
 
 // SetOsVersion gets a reference to the given string and assigns it to the OsVersion field.
@@ -348,15 +256,6 @@ func (o *AddBaremetalHost200ResponseServerServerOs) GetBitCountOk() (*int64, boo
 	return o.BitCount, true
 }
 
-// IsSetBitCount returns a boolean if a field has been set.
-func (o *AddBaremetalHost200ResponseServerServerOs) IsSetBitCount() bool {
-	if o != nil && !IsNil(o.BitCount) {
-		return true
-	}
-
-	return false
-}
-
 // SetBitCount gets a reference to the given int64 and assigns it to the BitCount field.
 func (o *AddBaremetalHost200ResponseServerServerOs) SetBitCount(v int64) {
 	o.BitCount = &v
@@ -378,15 +277,6 @@ func (o *AddBaremetalHost200ResponseServerServerOs) GetPlatformOk() (*string, bo
 		return nil, false
 	}
 	return o.Platform, true
-}
-
-// IsSetPlatform returns a boolean if a field has been set.
-func (o *AddBaremetalHost200ResponseServerServerOs) IsSetPlatform() bool {
-	if o != nil && !IsNil(o.Platform) {
-		return true
-	}
-
-	return false
 }
 
 // SetPlatform gets a reference to the given string and assigns it to the Platform field.

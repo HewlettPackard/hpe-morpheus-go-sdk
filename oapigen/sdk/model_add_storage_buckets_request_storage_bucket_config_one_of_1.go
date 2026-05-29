@@ -64,15 +64,6 @@ func (o *AddStorageBucketsRequestStorageBucketConfigOneOf1) GetStorageAccountOk(
 	return o.StorageAccount, true
 }
 
-// IsSetStorageAccount returns a boolean if a field has been set.
-func (o *AddStorageBucketsRequestStorageBucketConfigOneOf1) IsSetStorageAccount() bool {
-	if o != nil && !IsNil(o.StorageAccount) {
-		return true
-	}
-
-	return false
-}
-
 // SetStorageAccount gets a reference to the given string and assigns it to the StorageAccount field.
 func (o *AddStorageBucketsRequestStorageBucketConfigOneOf1) SetStorageAccount(v string) {
 	o.StorageAccount = &v
@@ -94,15 +85,6 @@ func (o *AddStorageBucketsRequestStorageBucketConfigOneOf1) GetStorageKeyOk() (*
 		return nil, false
 	}
 	return o.StorageKey, true
-}
-
-// IsSetStorageKey returns a boolean if a field has been set.
-func (o *AddStorageBucketsRequestStorageBucketConfigOneOf1) IsSetStorageKey() bool {
-	if o != nil && !IsNil(o.StorageKey) {
-		return true
-	}
-
-	return false
 }
 
 // SetStorageKey gets a reference to the given string and assigns it to the StorageKey field.

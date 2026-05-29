@@ -78,15 +78,6 @@ func (o *AddIntegrationsRequestOneOf1IntegrationConfig) GetDefaultBranchOk() (*s
 	return o.DefaultBranch, true
 }
 
-// IsSetDefaultBranch returns a boolean if a field has been set.
-func (o *AddIntegrationsRequestOneOf1IntegrationConfig) IsSetDefaultBranch() bool {
-	if o != nil && !IsNil(o.DefaultBranch) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultBranch gets a reference to the given string and assigns it to the DefaultBranch field.
 func (o *AddIntegrationsRequestOneOf1IntegrationConfig) SetDefaultBranch(v string) {
 	o.DefaultBranch = &v
@@ -108,15 +99,6 @@ func (o *AddIntegrationsRequestOneOf1IntegrationConfig) GetAnsiblePlaybooksOk() 
 		return nil, false
 	}
 	return o.AnsiblePlaybooks, true
-}
-
-// IsSetAnsiblePlaybooks returns a boolean if a field has been set.
-func (o *AddIntegrationsRequestOneOf1IntegrationConfig) IsSetAnsiblePlaybooks() bool {
-	if o != nil && !IsNil(o.AnsiblePlaybooks) {
-		return true
-	}
-
-	return false
 }
 
 // SetAnsiblePlaybooks gets a reference to the given string and assigns it to the AnsiblePlaybooks field.
@@ -142,15 +124,6 @@ func (o *AddIntegrationsRequestOneOf1IntegrationConfig) GetAnsibleRolesOk() (*st
 	return o.AnsibleRoles, true
 }
 
-// IsSetAnsibleRoles returns a boolean if a field has been set.
-func (o *AddIntegrationsRequestOneOf1IntegrationConfig) IsSetAnsibleRoles() bool {
-	if o != nil && !IsNil(o.AnsibleRoles) {
-		return true
-	}
-
-	return false
-}
-
 // SetAnsibleRoles gets a reference to the given string and assigns it to the AnsibleRoles field.
 func (o *AddIntegrationsRequestOneOf1IntegrationConfig) SetAnsibleRoles(v string) {
 	o.AnsibleRoles = &v
@@ -172,15 +145,6 @@ func (o *AddIntegrationsRequestOneOf1IntegrationConfig) GetAnsibleGroupVarsOk() 
 		return nil, false
 	}
 	return o.AnsibleGroupVars, true
-}
-
-// IsSetAnsibleGroupVars returns a boolean if a field has been set.
-func (o *AddIntegrationsRequestOneOf1IntegrationConfig) IsSetAnsibleGroupVars() bool {
-	if o != nil && !IsNil(o.AnsibleGroupVars) {
-		return true
-	}
-
-	return false
 }
 
 // SetAnsibleGroupVars gets a reference to the given string and assigns it to the AnsibleGroupVars field.
@@ -206,15 +170,6 @@ func (o *AddIntegrationsRequestOneOf1IntegrationConfig) GetAnsibleHostVarsOk() (
 	return o.AnsibleHostVars, true
 }
 
-// IsSetAnsibleHostVars returns a boolean if a field has been set.
-func (o *AddIntegrationsRequestOneOf1IntegrationConfig) IsSetAnsibleHostVars() bool {
-	if o != nil && !IsNil(o.AnsibleHostVars) {
-		return true
-	}
-
-	return false
-}
-
 // SetAnsibleHostVars gets a reference to the given string and assigns it to the AnsibleHostVars field.
 func (o *AddIntegrationsRequestOneOf1IntegrationConfig) SetAnsibleHostVars(v string) {
 	o.AnsibleHostVars = &v
@@ -236,15 +191,6 @@ func (o *AddIntegrationsRequestOneOf1IntegrationConfig) GetAnsibleGalaxyEnabledO
 		return nil, false
 	}
 	return o.AnsibleGalaxyEnabled, true
-}
-
-// IsSetAnsibleGalaxyEnabled returns a boolean if a field has been set.
-func (o *AddIntegrationsRequestOneOf1IntegrationConfig) IsSetAnsibleGalaxyEnabled() bool {
-	if o != nil && !IsNil(o.AnsibleGalaxyEnabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetAnsibleGalaxyEnabled gets a reference to the given bool and assigns it to the AnsibleGalaxyEnabled field.
@@ -270,15 +216,6 @@ func (o *AddIntegrationsRequestOneOf1IntegrationConfig) GetAnsibleVerboseOk() (*
 	return o.AnsibleVerbose, true
 }
 
-// IsSetAnsibleVerbose returns a boolean if a field has been set.
-func (o *AddIntegrationsRequestOneOf1IntegrationConfig) IsSetAnsibleVerbose() bool {
-	if o != nil && !IsNil(o.AnsibleVerbose) {
-		return true
-	}
-
-	return false
-}
-
 // SetAnsibleVerbose gets a reference to the given bool and assigns it to the AnsibleVerbose field.
 func (o *AddIntegrationsRequestOneOf1IntegrationConfig) SetAnsibleVerbose(v bool) {
 	o.AnsibleVerbose = &v
@@ -302,15 +239,6 @@ func (o *AddIntegrationsRequestOneOf1IntegrationConfig) GetAnsibleCommandBusOk()
 	return o.AnsibleCommandBus, true
 }
 
-// IsSetAnsibleCommandBus returns a boolean if a field has been set.
-func (o *AddIntegrationsRequestOneOf1IntegrationConfig) IsSetAnsibleCommandBus() bool {
-	if o != nil && !IsNil(o.AnsibleCommandBus) {
-		return true
-	}
-
-	return false
-}
-
 // SetAnsibleCommandBus gets a reference to the given bool and assigns it to the AnsibleCommandBus field.
 func (o *AddIntegrationsRequestOneOf1IntegrationConfig) SetAnsibleCommandBus(v bool) {
 	o.AnsibleCommandBus = &v
@@ -332,15 +260,6 @@ func (o *AddIntegrationsRequestOneOf1IntegrationConfig) GetCacheEnabledOk() (*bo
 		return nil, false
 	}
 	return o.CacheEnabled, true
-}
-
-// IsSetCacheEnabled returns a boolean if a field has been set.
-func (o *AddIntegrationsRequestOneOf1IntegrationConfig) IsSetCacheEnabled() bool {
-	if o != nil && !IsNil(o.CacheEnabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetCacheEnabled gets a reference to the given bool and assigns it to the CacheEnabled field.

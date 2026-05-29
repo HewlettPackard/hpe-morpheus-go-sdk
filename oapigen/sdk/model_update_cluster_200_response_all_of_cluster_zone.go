@@ -63,15 +63,6 @@ func (o *UpdateCluster200ResponseAllOfClusterZone) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *UpdateCluster200ResponseAllOfClusterZone) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *UpdateCluster200ResponseAllOfClusterZone) SetId(v int64) {
 	o.Id = &v
@@ -95,15 +86,6 @@ func (o *UpdateCluster200ResponseAllOfClusterZone) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateCluster200ResponseAllOfClusterZone) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *UpdateCluster200ResponseAllOfClusterZone) SetName(v string) {
 	o.Name = &v
@@ -125,15 +107,6 @@ func (o *UpdateCluster200ResponseAllOfClusterZone) GetZoneTypeOk() (*UpdateClust
 		return nil, false
 	}
 	return o.ZoneType, true
-}
-
-// IsSetZoneType returns a boolean if a field has been set.
-func (o *UpdateCluster200ResponseAllOfClusterZone) IsSetZoneType() bool {
-	if o != nil && !IsNil(o.ZoneType) {
-		return true
-	}
-
-	return false
 }
 
 // SetZoneType gets a reference to the given UpdateCluster200ResponseAllOfClusterZoneZoneType and assigns it to the ZoneType field.

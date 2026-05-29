@@ -86,15 +86,6 @@ func (o *AzureInstanceConfiguration2) GetResourcePoolIdOk() (*string, bool) {
 	return o.ResourcePoolId, true
 }
 
-// IsSetResourcePoolId returns a boolean if a field has been set.
-func (o *AzureInstanceConfiguration2) IsSetResourcePoolId() bool {
-	if o != nil && !IsNil(o.ResourcePoolId) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourcePoolId gets a reference to the given string and assigns it to the ResourcePoolId field.
 func (o *AzureInstanceConfiguration2) SetResourcePoolId(v string) {
 	o.ResourcePoolId = &v
@@ -116,15 +107,6 @@ func (o *AzureInstanceConfiguration2) GetAzureRegionOk() (*string, bool) {
 		return nil, false
 	}
 	return o.AzureRegion, true
-}
-
-// IsSetAzureRegion returns a boolean if a field has been set.
-func (o *AzureInstanceConfiguration2) IsSetAzureRegion() bool {
-	if o != nil && !IsNil(o.AzureRegion) {
-		return true
-	}
-
-	return false
 }
 
 // SetAzureRegion gets a reference to the given string and assigns it to the AzureRegion field.
@@ -150,15 +132,6 @@ func (o *AzureInstanceConfiguration2) GetAzuresecurityGroupIdOk() (*string, bool
 	return o.AzuresecurityGroupId, true
 }
 
-// IsSetAzuresecurityGroupId returns a boolean if a field has been set.
-func (o *AzureInstanceConfiguration2) IsSetAzuresecurityGroupId() bool {
-	if o != nil && !IsNil(o.AzuresecurityGroupId) {
-		return true
-	}
-
-	return false
-}
-
 // SetAzuresecurityGroupId gets a reference to the given string and assigns it to the AzuresecurityGroupId field.
 func (o *AzureInstanceConfiguration2) SetAzuresecurityGroupId(v string) {
 	o.AzuresecurityGroupId = &v
@@ -180,15 +153,6 @@ func (o *AzureInstanceConfiguration2) GetAvailabilityOptionsOk() (*string, bool)
 		return nil, false
 	}
 	return o.AvailabilityOptions, true
-}
-
-// IsSetAvailabilityOptions returns a boolean if a field has been set.
-func (o *AzureInstanceConfiguration2) IsSetAvailabilityOptions() bool {
-	if o != nil && !IsNil(o.AvailabilityOptions) {
-		return true
-	}
-
-	return false
 }
 
 // SetAvailabilityOptions gets a reference to the given string and assigns it to the AvailabilityOptions field.
@@ -214,15 +178,6 @@ func (o *AzureInstanceConfiguration2) GetAvailabilitySetOk() (*string, bool) {
 	return o.AvailabilitySet, true
 }
 
-// IsSetAvailabilitySet returns a boolean if a field has been set.
-func (o *AzureInstanceConfiguration2) IsSetAvailabilitySet() bool {
-	if o != nil && !IsNil(o.AvailabilitySet) {
-		return true
-	}
-
-	return false
-}
-
 // SetAvailabilitySet gets a reference to the given string and assigns it to the AvailabilitySet field.
 func (o *AzureInstanceConfiguration2) SetAvailabilitySet(v string) {
 	o.AvailabilitySet = &v
@@ -244,15 +199,6 @@ func (o *AzureInstanceConfiguration2) GetAvailabilityZoneOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.AvailabilityZone, true
-}
-
-// IsSetAvailabilityZone returns a boolean if a field has been set.
-func (o *AzureInstanceConfiguration2) IsSetAvailabilityZone() bool {
-	if o != nil && !IsNil(o.AvailabilityZone) {
-		return true
-	}
-
-	return false
 }
 
 // SetAvailabilityZone gets a reference to the given int64 and assigns it to the AvailabilityZone field.
@@ -278,15 +224,6 @@ func (o *AzureInstanceConfiguration2) GetAzurefloatingIpOk() (*string, bool) {
 	return o.AzurefloatingIp, true
 }
 
-// IsSetAzurefloatingIp returns a boolean if a field has been set.
-func (o *AzureInstanceConfiguration2) IsSetAzurefloatingIp() bool {
-	if o != nil && !IsNil(o.AzurefloatingIp) {
-		return true
-	}
-
-	return false
-}
-
 // SetAzurefloatingIp gets a reference to the given string and assigns it to the AzurefloatingIp field.
 func (o *AzureInstanceConfiguration2) SetAzurefloatingIp(v string) {
 	o.AzurefloatingIp = &v
@@ -308,15 +245,6 @@ func (o *AzureInstanceConfiguration2) GetBootDiagnosticsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.BootDiagnostics, true
-}
-
-// IsSetBootDiagnostics returns a boolean if a field has been set.
-func (o *AzureInstanceConfiguration2) IsSetBootDiagnostics() bool {
-	if o != nil && !IsNil(o.BootDiagnostics) {
-		return true
-	}
-
-	return false
 }
 
 // SetBootDiagnostics gets a reference to the given string and assigns it to the BootDiagnostics field.
@@ -342,15 +270,6 @@ func (o *AzureInstanceConfiguration2) GetOsGuestDiagnosticsOk() (*string, bool) 
 	return o.OsGuestDiagnostics, true
 }
 
-// IsSetOsGuestDiagnostics returns a boolean if a field has been set.
-func (o *AzureInstanceConfiguration2) IsSetOsGuestDiagnostics() bool {
-	if o != nil && !IsNil(o.OsGuestDiagnostics) {
-		return true
-	}
-
-	return false
-}
-
 // SetOsGuestDiagnostics gets a reference to the given string and assigns it to the OsGuestDiagnostics field.
 func (o *AzureInstanceConfiguration2) SetOsGuestDiagnostics(v string) {
 	o.OsGuestDiagnostics = &v
@@ -374,15 +293,6 @@ func (o *AzureInstanceConfiguration2) GetDiagnosticsStorageAccountOk() (*string,
 	return o.DiagnosticsStorageAccount, true
 }
 
-// IsSetDiagnosticsStorageAccount returns a boolean if a field has been set.
-func (o *AzureInstanceConfiguration2) IsSetDiagnosticsStorageAccount() bool {
-	if o != nil && !IsNil(o.DiagnosticsStorageAccount) {
-		return true
-	}
-
-	return false
-}
-
 // SetDiagnosticsStorageAccount gets a reference to the given string and assigns it to the DiagnosticsStorageAccount field.
 func (o *AzureInstanceConfiguration2) SetDiagnosticsStorageAccount(v string) {
 	o.DiagnosticsStorageAccount = &v
@@ -404,15 +314,6 @@ func (o *AzureInstanceConfiguration2) GetCreateUserOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.CreateUser, true
-}
-
-// IsSetCreateUser returns a boolean if a field has been set.
-func (o *AzureInstanceConfiguration2) IsSetCreateUser() bool {
-	if o != nil && !IsNil(o.CreateUser) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreateUser gets a reference to the given bool and assigns it to the CreateUser field.

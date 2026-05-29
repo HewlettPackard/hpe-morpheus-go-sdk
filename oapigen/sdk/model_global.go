@@ -66,15 +66,6 @@ func (o *Global) GetGlobalOk() (*bool, bool) {
 	return o.Global, true
 }
 
-// IsSetGlobal returns a boolean if a field has been set.
-func (o *Global) IsSetGlobal() bool {
-	if o != nil && !IsNil(o.Global) {
-		return true
-	}
-
-	return false
-}
-
 // SetGlobal gets a reference to the given bool and assigns it to the Global field.
 func (o *Global) SetGlobal(v bool) {
 	o.Global = &v

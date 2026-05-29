@@ -63,15 +63,6 @@ func (o *ListHealth200ResponseAllOfHealthRabbitQueuesInner) GetNameOk() (*string
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthRabbitQueuesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ListHealth200ResponseAllOfHealthRabbitQueuesInner) SetName(v string) {
 	o.Name = &v
@@ -95,15 +86,6 @@ func (o *ListHealth200ResponseAllOfHealthRabbitQueuesInner) GetCountOk() (*int64
 	return o.Count, true
 }
 
-// IsSetCount returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthRabbitQueuesInner) IsSetCount() bool {
-	if o != nil && !IsNil(o.Count) {
-		return true
-	}
-
-	return false
-}
-
 // SetCount gets a reference to the given int64 and assigns it to the Count field.
 func (o *ListHealth200ResponseAllOfHealthRabbitQueuesInner) SetCount(v int64) {
 	o.Count = &v
@@ -125,15 +107,6 @@ func (o *ListHealth200ResponseAllOfHealthRabbitQueuesInner) GetStatusOk() (*stri
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthRabbitQueuesInner) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.

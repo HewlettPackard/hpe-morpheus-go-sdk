@@ -67,28 +67,9 @@ func (o *UpdateHostCloud200Response) GetMsgOk() (*string, bool) {
 	return o.Msg.Get(), o.Msg.IsSet()
 }
 
-// IsSetMsg returns a boolean if a field has been set.
-func (o *UpdateHostCloud200Response) IsSetMsg() bool {
-	if o != nil && o.Msg.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMsg gets a reference to the given NullableString and assigns it to the Msg field.
 func (o *UpdateHostCloud200Response) SetMsg(v string) {
 	o.Msg.Set(&v)
-}
-
-// SetMsgNil sets the value for Msg to be an explicit nil
-func (o *UpdateHostCloud200Response) SetMsgNil() {
-	o.Msg.Set(nil)
-}
-
-// UnsetMsg ensures that no value is present for Msg, not even an explicit nil
-func (o *UpdateHostCloud200Response) UnsetMsg() {
-	o.Msg.Unset()
 }
 
 // GetErrors returns the Errors field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -110,28 +91,9 @@ func (o *UpdateHostCloud200Response) GetErrorsOk() (*string, bool) {
 	return o.Errors.Get(), o.Errors.IsSet()
 }
 
-// IsSetErrors returns a boolean if a field has been set.
-func (o *UpdateHostCloud200Response) IsSetErrors() bool {
-	if o != nil && o.Errors.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetErrors gets a reference to the given NullableString and assigns it to the Errors field.
 func (o *UpdateHostCloud200Response) SetErrors(v string) {
 	o.Errors.Set(&v)
-}
-
-// SetErrorsNil sets the value for Errors to be an explicit nil
-func (o *UpdateHostCloud200Response) SetErrorsNil() {
-	o.Errors.Set(nil)
-}
-
-// UnsetErrors ensures that no value is present for Errors, not even an explicit nil
-func (o *UpdateHostCloud200Response) UnsetErrors() {
-	o.Errors.Unset()
 }
 
 // GetErrorCode returns the ErrorCode field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -153,28 +115,9 @@ func (o *UpdateHostCloud200Response) GetErrorCodeOk() (*string, bool) {
 	return o.ErrorCode.Get(), o.ErrorCode.IsSet()
 }
 
-// IsSetErrorCode returns a boolean if a field has been set.
-func (o *UpdateHostCloud200Response) IsSetErrorCode() bool {
-	if o != nil && o.ErrorCode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetErrorCode gets a reference to the given NullableString and assigns it to the ErrorCode field.
 func (o *UpdateHostCloud200Response) SetErrorCode(v string) {
 	o.ErrorCode.Set(&v)
-}
-
-// SetErrorCodeNil sets the value for ErrorCode to be an explicit nil
-func (o *UpdateHostCloud200Response) SetErrorCodeNil() {
-	o.ErrorCode.Set(nil)
-}
-
-// UnsetErrorCode ensures that no value is present for ErrorCode, not even an explicit nil
-func (o *UpdateHostCloud200Response) UnsetErrorCode() {
-	o.ErrorCode.Unset()
 }
 
 // GetData returns the Data field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -196,28 +139,9 @@ func (o *UpdateHostCloud200Response) GetDataOk() (*string, bool) {
 	return o.Data.Get(), o.Data.IsSet()
 }
 
-// IsSetData returns a boolean if a field has been set.
-func (o *UpdateHostCloud200Response) IsSetData() bool {
-	if o != nil && o.Data.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetData gets a reference to the given NullableString and assigns it to the Data field.
 func (o *UpdateHostCloud200Response) SetData(v string) {
 	o.Data.Set(&v)
-}
-
-// SetDataNil sets the value for Data to be an explicit nil
-func (o *UpdateHostCloud200Response) SetDataNil() {
-	o.Data.Set(nil)
-}
-
-// UnsetData ensures that no value is present for Data, not even an explicit nil
-func (o *UpdateHostCloud200Response) UnsetData() {
-	o.Data.Unset()
 }
 
 // GetInProgress returns the InProgress field value if set, zero value otherwise.
@@ -236,15 +160,6 @@ func (o *UpdateHostCloud200Response) GetInProgressOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.InProgress, true
-}
-
-// IsSetInProgress returns a boolean if a field has been set.
-func (o *UpdateHostCloud200Response) IsSetInProgress() bool {
-	if o != nil && !IsNil(o.InProgress) {
-		return true
-	}
-
-	return false
 }
 
 // SetInProgress gets a reference to the given bool and assigns it to the InProgress field.
@@ -268,15 +183,6 @@ func (o *UpdateHostCloud200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *UpdateHostCloud200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

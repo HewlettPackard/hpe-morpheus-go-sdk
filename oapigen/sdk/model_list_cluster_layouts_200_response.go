@@ -62,15 +62,6 @@ func (o *ListClusterLayouts200Response) GetLayoutsOk() ([]ListClusterLayouts200R
 	return o.Layouts, true
 }
 
-// IsSetLayouts returns a boolean if a field has been set.
-func (o *ListClusterLayouts200Response) IsSetLayouts() bool {
-	if o != nil && !IsNil(o.Layouts) {
-		return true
-	}
-
-	return false
-}
-
 // SetLayouts gets a reference to the given []ListClusterLayouts200ResponseAllOfLayoutsInner and assigns it to the Layouts field.
 func (o *ListClusterLayouts200Response) SetLayouts(v []ListClusterLayouts200ResponseAllOfLayoutsInner) {
 	o.Layouts = v
@@ -92,15 +83,6 @@ func (o *ListClusterLayouts200Response) GetMetaOk() (*ListApprovals200ResponseAl
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListClusterLayouts200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

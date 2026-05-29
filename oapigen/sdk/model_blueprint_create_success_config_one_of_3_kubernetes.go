@@ -90,15 +90,6 @@ func (o *BlueprintCreateSuccessConfigOneOf3Kubernetes) GetYamlOk() (*string, boo
 	return o.Yaml, true
 }
 
-// IsSetYaml returns a boolean if a field has been set.
-func (o *BlueprintCreateSuccessConfigOneOf3Kubernetes) IsSetYaml() bool {
-	if o != nil && !IsNil(o.Yaml) {
-		return true
-	}
-
-	return false
-}
-
 // SetYaml gets a reference to the given string and assigns it to the Yaml field.
 func (o *BlueprintCreateSuccessConfigOneOf3Kubernetes) SetYaml(v string) {
 	o.Yaml = &v
@@ -120,15 +111,6 @@ func (o *BlueprintCreateSuccessConfigOneOf3Kubernetes) GetGitOk() (*BlueprintCre
 		return nil, false
 	}
 	return o.Git, true
-}
-
-// IsSetGit returns a boolean if a field has been set.
-func (o *BlueprintCreateSuccessConfigOneOf3Kubernetes) IsSetGit() bool {
-	if o != nil && !IsNil(o.Git) {
-		return true
-	}
-
-	return false
 }
 
 // SetGit gets a reference to the given BlueprintCreateSuccessConfigOneOf3KubernetesGit and assigns it to the Git field.

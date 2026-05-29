@@ -64,15 +64,6 @@ func (o *UpdatePluginRequestPlugin) GetEnabledOk() (*bool, bool) {
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *UpdatePluginRequestPlugin) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *UpdatePluginRequestPlugin) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -94,15 +85,6 @@ func (o *UpdatePluginRequestPlugin) GetConfigOk() (map[string]interface{}, bool)
 		return map[string]interface{}{}, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *UpdatePluginRequestPlugin) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.

@@ -62,15 +62,6 @@ func (o *ListCertificates200Response) GetCertificatesOk() ([]ListCertificates200
 	return o.Certificates, true
 }
 
-// IsSetCertificates returns a boolean if a field has been set.
-func (o *ListCertificates200Response) IsSetCertificates() bool {
-	if o != nil && !IsNil(o.Certificates) {
-		return true
-	}
-
-	return false
-}
-
 // SetCertificates gets a reference to the given []ListCertificates200ResponseCertificatesInner and assigns it to the Certificates field.
 func (o *ListCertificates200Response) SetCertificates(v []ListCertificates200ResponseCertificatesInner) {
 	o.Certificates = v
@@ -92,15 +83,6 @@ func (o *ListCertificates200Response) GetCertificateCountOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.CertificateCount, true
-}
-
-// IsSetCertificateCount returns a boolean if a field has been set.
-func (o *ListCertificates200Response) IsSetCertificateCount() bool {
-	if o != nil && !IsNil(o.CertificateCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetCertificateCount gets a reference to the given int64 and assigns it to the CertificateCount field.

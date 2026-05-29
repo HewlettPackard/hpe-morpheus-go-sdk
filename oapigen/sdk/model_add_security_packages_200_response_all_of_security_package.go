@@ -72,15 +72,6 @@ func (o *AddSecurityPackages200ResponseAllOfSecurityPackage) GetIdOk() (*int64, 
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *AddSecurityPackages200ResponseAllOfSecurityPackage) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *AddSecurityPackages200ResponseAllOfSecurityPackage) SetId(v int64) {
 	o.Id = &v
@@ -102,15 +93,6 @@ func (o *AddSecurityPackages200ResponseAllOfSecurityPackage) GetNameOk() (*strin
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *AddSecurityPackages200ResponseAllOfSecurityPackage) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -137,15 +119,6 @@ func (o *AddSecurityPackages200ResponseAllOfSecurityPackage) GetLabelsOk() ([]st
 	return o.Labels, true
 }
 
-// IsSetLabels returns a boolean if a field has been set.
-func (o *AddSecurityPackages200ResponseAllOfSecurityPackage) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
-}
-
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
 func (o *AddSecurityPackages200ResponseAllOfSecurityPackage) SetLabels(v []string) {
 	o.Labels = v
@@ -167,15 +140,6 @@ func (o *AddSecurityPackages200ResponseAllOfSecurityPackage) GetDescriptionOk() 
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *AddSecurityPackages200ResponseAllOfSecurityPackage) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -201,15 +165,6 @@ func (o *AddSecurityPackages200ResponseAllOfSecurityPackage) GetTypeOk() (*AddSe
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *AddSecurityPackages200ResponseAllOfSecurityPackage) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given AddSecurityPackages200ResponseAllOfSecurityPackageType and assigns it to the Type field.
 func (o *AddSecurityPackages200ResponseAllOfSecurityPackage) SetType(v AddSecurityPackages200ResponseAllOfSecurityPackageType) {
 	o.Type = &v
@@ -231,15 +186,6 @@ func (o *AddSecurityPackages200ResponseAllOfSecurityPackage) GetEnabledOk() (*bo
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *AddSecurityPackages200ResponseAllOfSecurityPackage) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -265,15 +211,6 @@ func (o *AddSecurityPackages200ResponseAllOfSecurityPackage) GetUrlOk() (*string
 	return o.Url, true
 }
 
-// IsSetUrl returns a boolean if a field has been set.
-func (o *AddSecurityPackages200ResponseAllOfSecurityPackage) IsSetUrl() bool {
-	if o != nil && !IsNil(o.Url) {
-		return true
-	}
-
-	return false
-}
-
 // SetUrl gets a reference to the given string and assigns it to the Url field.
 func (o *AddSecurityPackages200ResponseAllOfSecurityPackage) SetUrl(v string) {
 	o.Url = &v
@@ -295,15 +232,6 @@ func (o *AddSecurityPackages200ResponseAllOfSecurityPackage) GetUuidOk() (*strin
 		return nil, false
 	}
 	return o.Uuid, true
-}
-
-// IsSetUuid returns a boolean if a field has been set.
-func (o *AddSecurityPackages200ResponseAllOfSecurityPackage) IsSetUuid() bool {
-	if o != nil && !IsNil(o.Uuid) {
-		return true
-	}
-
-	return false
 }
 
 // SetUuid gets a reference to the given string and assigns it to the Uuid field.
@@ -329,15 +257,6 @@ func (o *AddSecurityPackages200ResponseAllOfSecurityPackage) GetDateCreatedOk() 
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *AddSecurityPackages200ResponseAllOfSecurityPackage) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *AddSecurityPackages200ResponseAllOfSecurityPackage) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -361,15 +280,6 @@ func (o *AddSecurityPackages200ResponseAllOfSecurityPackage) GetLastUpdatedOk() 
 	return o.LastUpdated, true
 }
 
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *AddSecurityPackages200ResponseAllOfSecurityPackage) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
-}
-
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
 func (o *AddSecurityPackages200ResponseAllOfSecurityPackage) SetLastUpdated(v time.Time) {
 	o.LastUpdated = &v
@@ -391,15 +301,6 @@ func (o *AddSecurityPackages200ResponseAllOfSecurityPackage) GetConfigOk() (map[
 		return map[string]interface{}{}, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *AddSecurityPackages200ResponseAllOfSecurityPackage) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.

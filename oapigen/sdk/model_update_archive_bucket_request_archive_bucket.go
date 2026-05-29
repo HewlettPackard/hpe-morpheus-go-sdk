@@ -77,15 +77,6 @@ func (o *UpdateArchiveBucketRequestArchiveBucket) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateArchiveBucketRequestArchiveBucket) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *UpdateArchiveBucketRequestArchiveBucket) SetName(v string) {
 	o.Name = &v
@@ -107,15 +98,6 @@ func (o *UpdateArchiveBucketRequestArchiveBucket) GetDescriptionOk() (*string, b
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *UpdateArchiveBucketRequestArchiveBucket) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -141,15 +123,6 @@ func (o *UpdateArchiveBucketRequestArchiveBucket) GetVisibilityOk() (*string, bo
 	return o.Visibility, true
 }
 
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *UpdateArchiveBucketRequestArchiveBucket) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
-}
-
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
 func (o *UpdateArchiveBucketRequestArchiveBucket) SetVisibility(v string) {
 	o.Visibility = &v
@@ -173,15 +146,6 @@ func (o *UpdateArchiveBucketRequestArchiveBucket) GetIsPublicOk() (*bool, bool) 
 	return o.IsPublic, true
 }
 
-// IsSetIsPublic returns a boolean if a field has been set.
-func (o *UpdateArchiveBucketRequestArchiveBucket) IsSetIsPublic() bool {
-	if o != nil && !IsNil(o.IsPublic) {
-		return true
-	}
-
-	return false
-}
-
 // SetIsPublic gets a reference to the given bool and assigns it to the IsPublic field.
 func (o *UpdateArchiveBucketRequestArchiveBucket) SetIsPublic(v bool) {
 	o.IsPublic = &v
@@ -203,15 +167,6 @@ func (o *UpdateArchiveBucketRequestArchiveBucket) GetAccountsOk() (*UpdateArchiv
 		return nil, false
 	}
 	return o.Accounts, true
-}
-
-// IsSetAccounts returns a boolean if a field has been set.
-func (o *UpdateArchiveBucketRequestArchiveBucket) IsSetAccounts() bool {
-	if o != nil && !IsNil(o.Accounts) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccounts gets a reference to the given UpdateArchiveBucketRequestArchiveBucketAccounts and assigns it to the Accounts field.

@@ -62,15 +62,6 @@ func (o *UpdateChecks200Response) GetCheckOk() (*UpdateChecks200ResponseAllOfChe
 	return o.Check, true
 }
 
-// IsSetCheck returns a boolean if a field has been set.
-func (o *UpdateChecks200Response) IsSetCheck() bool {
-	if o != nil && !IsNil(o.Check) {
-		return true
-	}
-
-	return false
-}
-
 // SetCheck gets a reference to the given UpdateChecks200ResponseAllOfCheck and assigns it to the Check field.
 func (o *UpdateChecks200Response) SetCheck(v UpdateChecks200ResponseAllOfCheck) {
 	o.Check = &v
@@ -92,15 +83,6 @@ func (o *UpdateChecks200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *UpdateChecks200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

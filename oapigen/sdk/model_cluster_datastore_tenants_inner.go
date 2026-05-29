@@ -64,15 +64,6 @@ func (o *ClusterDatastoreTenantsInner) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ClusterDatastoreTenantsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ClusterDatastoreTenantsInner) SetId(v int64) {
 	o.Id = &v
@@ -94,15 +85,6 @@ func (o *ClusterDatastoreTenantsInner) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ClusterDatastoreTenantsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -128,15 +110,6 @@ func (o *ClusterDatastoreTenantsInner) GetDefaultStoreOk() (*bool, bool) {
 	return o.DefaultStore, true
 }
 
-// IsSetDefaultStore returns a boolean if a field has been set.
-func (o *ClusterDatastoreTenantsInner) IsSetDefaultStore() bool {
-	if o != nil && !IsNil(o.DefaultStore) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultStore gets a reference to the given bool and assigns it to the DefaultStore field.
 func (o *ClusterDatastoreTenantsInner) SetDefaultStore(v bool) {
 	o.DefaultStore = &v
@@ -158,15 +131,6 @@ func (o *ClusterDatastoreTenantsInner) GetDefaultTargetOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.DefaultTarget, true
-}
-
-// IsSetDefaultTarget returns a boolean if a field has been set.
-func (o *ClusterDatastoreTenantsInner) IsSetDefaultTarget() bool {
-	if o != nil && !IsNil(o.DefaultTarget) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultTarget gets a reference to the given bool and assigns it to the DefaultTarget field.

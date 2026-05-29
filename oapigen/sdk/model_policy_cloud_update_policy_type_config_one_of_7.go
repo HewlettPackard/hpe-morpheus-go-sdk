@@ -81,15 +81,6 @@ func (o *PolicyCloudUpdatePolicyTypeConfigOneOf7) GetLifecycleTypeOk() (*string,
 	return o.LifecycleType, true
 }
 
-// IsSetLifecycleType returns a boolean if a field has been set.
-func (o *PolicyCloudUpdatePolicyTypeConfigOneOf7) IsSetLifecycleType() bool {
-	if o != nil && !IsNil(o.LifecycleType) {
-		return true
-	}
-
-	return false
-}
-
 // SetLifecycleType gets a reference to the given string and assigns it to the LifecycleType field.
 func (o *PolicyCloudUpdatePolicyTypeConfigOneOf7) SetLifecycleType(v string) {
 	o.LifecycleType = &v
@@ -111,15 +102,6 @@ func (o *PolicyCloudUpdatePolicyTypeConfigOneOf7) GetLifecycleAgeOk() (*string, 
 		return nil, false
 	}
 	return o.LifecycleAge, true
-}
-
-// IsSetLifecycleAge returns a boolean if a field has been set.
-func (o *PolicyCloudUpdatePolicyTypeConfigOneOf7) IsSetLifecycleAge() bool {
-	if o != nil && !IsNil(o.LifecycleAge) {
-		return true
-	}
-
-	return false
 }
 
 // SetLifecycleAge gets a reference to the given string and assigns it to the LifecycleAge field.
@@ -145,15 +127,6 @@ func (o *PolicyCloudUpdatePolicyTypeConfigOneOf7) GetLifecycleRenewalOk() (*stri
 	return o.LifecycleRenewal, true
 }
 
-// IsSetLifecycleRenewal returns a boolean if a field has been set.
-func (o *PolicyCloudUpdatePolicyTypeConfigOneOf7) IsSetLifecycleRenewal() bool {
-	if o != nil && !IsNil(o.LifecycleRenewal) {
-		return true
-	}
-
-	return false
-}
-
 // SetLifecycleRenewal gets a reference to the given string and assigns it to the LifecycleRenewal field.
 func (o *PolicyCloudUpdatePolicyTypeConfigOneOf7) SetLifecycleRenewal(v string) {
 	o.LifecycleRenewal = &v
@@ -175,15 +148,6 @@ func (o *PolicyCloudUpdatePolicyTypeConfigOneOf7) GetLifecycleNotifyOk() (*strin
 		return nil, false
 	}
 	return o.LifecycleNotify, true
-}
-
-// IsSetLifecycleNotify returns a boolean if a field has been set.
-func (o *PolicyCloudUpdatePolicyTypeConfigOneOf7) IsSetLifecycleNotify() bool {
-	if o != nil && !IsNil(o.LifecycleNotify) {
-		return true
-	}
-
-	return false
 }
 
 // SetLifecycleNotify gets a reference to the given string and assigns it to the LifecycleNotify field.
@@ -209,15 +173,6 @@ func (o *PolicyCloudUpdatePolicyTypeConfigOneOf7) GetLifecycleMessageOk() (*stri
 	return o.LifecycleMessage, true
 }
 
-// IsSetLifecycleMessage returns a boolean if a field has been set.
-func (o *PolicyCloudUpdatePolicyTypeConfigOneOf7) IsSetLifecycleMessage() bool {
-	if o != nil && !IsNil(o.LifecycleMessage) {
-		return true
-	}
-
-	return false
-}
-
 // SetLifecycleMessage gets a reference to the given string and assigns it to the LifecycleMessage field.
 func (o *PolicyCloudUpdatePolicyTypeConfigOneOf7) SetLifecycleMessage(v string) {
 	o.LifecycleMessage = &v
@@ -239,15 +194,6 @@ func (o *PolicyCloudUpdatePolicyTypeConfigOneOf7) GetLifecycleAutoRenewOk() (*st
 		return nil, false
 	}
 	return o.LifecycleAutoRenew, true
-}
-
-// IsSetLifecycleAutoRenew returns a boolean if a field has been set.
-func (o *PolicyCloudUpdatePolicyTypeConfigOneOf7) IsSetLifecycleAutoRenew() bool {
-	if o != nil && !IsNil(o.LifecycleAutoRenew) {
-		return true
-	}
-
-	return false
 }
 
 // SetLifecycleAutoRenew gets a reference to the given string and assigns it to the LifecycleAutoRenew field.
@@ -273,15 +219,6 @@ func (o *PolicyCloudUpdatePolicyTypeConfigOneOf7) GetLifecycleAllowExtendOk() (*
 	return o.LifecycleAllowExtend, true
 }
 
-// IsSetLifecycleAllowExtend returns a boolean if a field has been set.
-func (o *PolicyCloudUpdatePolicyTypeConfigOneOf7) IsSetLifecycleAllowExtend() bool {
-	if o != nil && !IsNil(o.LifecycleAllowExtend) {
-		return true
-	}
-
-	return false
-}
-
 // SetLifecycleAllowExtend gets a reference to the given string and assigns it to the LifecycleAllowExtend field.
 func (o *PolicyCloudUpdatePolicyTypeConfigOneOf7) SetLifecycleAllowExtend(v string) {
 	o.LifecycleAllowExtend = &v
@@ -303,15 +240,6 @@ func (o *PolicyCloudUpdatePolicyTypeConfigOneOf7) GetLifecycleExtensionsBeforeAp
 		return nil, false
 	}
 	return o.LifecycleExtensionsBeforeApproval, true
-}
-
-// IsSetLifecycleExtensionsBeforeApproval returns a boolean if a field has been set.
-func (o *PolicyCloudUpdatePolicyTypeConfigOneOf7) IsSetLifecycleExtensionsBeforeApproval() bool {
-	if o != nil && !IsNil(o.LifecycleExtensionsBeforeApproval) {
-		return true
-	}
-
-	return false
 }
 
 // SetLifecycleExtensionsBeforeApproval gets a reference to the given string and assigns it to the LifecycleExtensionsBeforeApproval field.
@@ -337,15 +265,6 @@ func (o *PolicyCloudUpdatePolicyTypeConfigOneOf7) GetAccountIntegrationIdOk() (*
 	return o.AccountIntegrationId, true
 }
 
-// IsSetAccountIntegrationId returns a boolean if a field has been set.
-func (o *PolicyCloudUpdatePolicyTypeConfigOneOf7) IsSetAccountIntegrationId() bool {
-	if o != nil && !IsNil(o.AccountIntegrationId) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccountIntegrationId gets a reference to the given string and assigns it to the AccountIntegrationId field.
 func (o *PolicyCloudUpdatePolicyTypeConfigOneOf7) SetAccountIntegrationId(v string) {
 	o.AccountIntegrationId = &v
@@ -367,15 +286,6 @@ func (o *PolicyCloudUpdatePolicyTypeConfigOneOf7) GetLifecycleHideFixedOk() (*bo
 		return nil, false
 	}
 	return o.LifecycleHideFixed, true
-}
-
-// IsSetLifecycleHideFixed returns a boolean if a field has been set.
-func (o *PolicyCloudUpdatePolicyTypeConfigOneOf7) IsSetLifecycleHideFixed() bool {
-	if o != nil && !IsNil(o.LifecycleHideFixed) {
-		return true
-	}
-
-	return false
 }
 
 // SetLifecycleHideFixed gets a reference to the given bool and assigns it to the LifecycleHideFixed field.
@@ -401,15 +311,6 @@ func (o *PolicyCloudUpdatePolicyTypeConfigOneOf7) GetLifecycleWorkflowIdOk() (*s
 	return o.LifecycleWorkflowId, true
 }
 
-// IsSetLifecycleWorkflowId returns a boolean if a field has been set.
-func (o *PolicyCloudUpdatePolicyTypeConfigOneOf7) IsSetLifecycleWorkflowId() bool {
-	if o != nil && !IsNil(o.LifecycleWorkflowId) {
-		return true
-	}
-
-	return false
-}
-
 // SetLifecycleWorkflowId gets a reference to the given string and assigns it to the LifecycleWorkflowId field.
 func (o *PolicyCloudUpdatePolicyTypeConfigOneOf7) SetLifecycleWorkflowId(v string) {
 	o.LifecycleWorkflowId = &v
@@ -433,15 +334,6 @@ func (o *PolicyCloudUpdatePolicyTypeConfigOneOf7) GetFlowIdOk() (*string, bool) 
 	return o.FlowId, true
 }
 
-// IsSetFlowId returns a boolean if a field has been set.
-func (o *PolicyCloudUpdatePolicyTypeConfigOneOf7) IsSetFlowId() bool {
-	if o != nil && !IsNil(o.FlowId) {
-		return true
-	}
-
-	return false
-}
-
 // SetFlowId gets a reference to the given string and assigns it to the FlowId field.
 func (o *PolicyCloudUpdatePolicyTypeConfigOneOf7) SetFlowId(v string) {
 	o.FlowId = &v
@@ -463,15 +355,6 @@ func (o *PolicyCloudUpdatePolicyTypeConfigOneOf7) GetWorkflowTypeOk() (*string, 
 		return nil, false
 	}
 	return o.WorkflowType, true
-}
-
-// IsSetWorkflowType returns a boolean if a field has been set.
-func (o *PolicyCloudUpdatePolicyTypeConfigOneOf7) IsSetWorkflowType() bool {
-	if o != nil && !IsNil(o.WorkflowType) {
-		return true
-	}
-
-	return false
 }
 
 // SetWorkflowType gets a reference to the given string and assigns it to the WorkflowType field.

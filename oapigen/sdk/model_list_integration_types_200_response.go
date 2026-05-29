@@ -62,15 +62,6 @@ func (o *ListIntegrationTypes200Response) GetIntegrationTypesOk() ([]ListIntegra
 	return o.IntegrationTypes, true
 }
 
-// IsSetIntegrationTypes returns a boolean if a field has been set.
-func (o *ListIntegrationTypes200Response) IsSetIntegrationTypes() bool {
-	if o != nil && !IsNil(o.IntegrationTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetIntegrationTypes gets a reference to the given []ListIntegrationTypes200ResponseAllOfIntegrationTypesInner and assigns it to the IntegrationTypes field.
 func (o *ListIntegrationTypes200Response) SetIntegrationTypes(v []ListIntegrationTypes200ResponseAllOfIntegrationTypesInner) {
 	o.IntegrationTypes = v
@@ -92,15 +83,6 @@ func (o *ListIntegrationTypes200Response) GetMetaOk() (*ListApprovals200Response
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListIntegrationTypes200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

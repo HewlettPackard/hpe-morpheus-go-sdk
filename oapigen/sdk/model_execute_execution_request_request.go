@@ -93,15 +93,6 @@ func (o *ExecuteExecutionRequestRequest) GetSendKeysOk() (*bool, bool) {
 	return o.SendKeys, true
 }
 
-// IsSetSendKeys returns a boolean if a field has been set.
-func (o *ExecuteExecutionRequestRequest) IsSetSendKeys() bool {
-	if o != nil && !IsNil(o.SendKeys) {
-		return true
-	}
-
-	return false
-}
-
 // SetSendKeys gets a reference to the given bool and assigns it to the SendKeys field.
 func (o *ExecuteExecutionRequestRequest) SetSendKeys(v bool) {
 	o.SendKeys = &v

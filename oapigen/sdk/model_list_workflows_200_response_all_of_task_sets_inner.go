@@ -75,15 +75,6 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInner) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInner) SetId(v int64) {
 	o.Id = &v
@@ -107,15 +98,6 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInner) GetNameOk() (*string, bool)
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInner) SetName(v string) {
 	o.Name = &v
@@ -137,15 +119,6 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInner) GetTypeOk() (*string, bool)
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInner) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.
@@ -172,28 +145,9 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInner) GetDescriptionOk() (*string
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInner) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInner) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInner) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInner) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetLabels returns the Labels field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -213,15 +167,6 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInner) GetLabelsOk() ([]string, bo
 		return nil, false
 	}
 	return o.Labels, true
-}
-
-// IsSetLabels returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInner) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
 }
 
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
@@ -247,15 +192,6 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInner) GetDateCreatedOk() (*time.T
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInner) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInner) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -279,15 +215,6 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInner) GetLastUpdatedOk() (*time.T
 	return o.LastUpdated, true
 }
 
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInner) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
-}
-
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInner) SetLastUpdated(v time.Time) {
 	o.LastUpdated = &v
@@ -309,15 +236,6 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInner) GetAccountIdOk() (*int64, b
 		return nil, false
 	}
 	return o.AccountId, true
-}
-
-// IsSetAccountId returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInner) IsSetAccountId() bool {
-	if o != nil && !IsNil(o.AccountId) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccountId gets a reference to the given int64 and assigns it to the AccountId field.
@@ -344,28 +262,9 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInner) GetPlatformOk() (*string, b
 	return o.Platform.Get(), o.Platform.IsSet()
 }
 
-// IsSetPlatform returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInner) IsSetPlatform() bool {
-	if o != nil && o.Platform.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPlatform gets a reference to the given NullableString and assigns it to the Platform field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInner) SetPlatform(v string) {
 	o.Platform.Set(&v)
-}
-
-// SetPlatformNil sets the value for Platform to be an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInner) SetPlatformNil() {
-	o.Platform.Set(nil)
-}
-
-// UnsetPlatform ensures that no value is present for Platform, not even an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInner) UnsetPlatform() {
-	o.Platform.Unset()
 }
 
 // GetVisibility returns the Visibility field value if set, zero value otherwise.
@@ -384,15 +283,6 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInner) GetVisibilityOk() (*string,
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInner) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -418,15 +308,6 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInner) GetAllowCustomConfigOk() (*
 	return o.AllowCustomConfig, true
 }
 
-// IsSetAllowCustomConfig returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInner) IsSetAllowCustomConfig() bool {
-	if o != nil && !IsNil(o.AllowCustomConfig) {
-		return true
-	}
-
-	return false
-}
-
 // SetAllowCustomConfig gets a reference to the given bool and assigns it to the AllowCustomConfig field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInner) SetAllowCustomConfig(v bool) {
 	o.AllowCustomConfig = &v
@@ -448,15 +329,6 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInner) GetTasksOk() ([]int64, bool
 		return nil, false
 	}
 	return o.Tasks, true
-}
-
-// IsSetTasks returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInner) IsSetTasks() bool {
-	if o != nil && !IsNil(o.Tasks) {
-		return true
-	}
-
-	return false
 }
 
 // SetTasks gets a reference to the given []int64 and assigns it to the Tasks field.
@@ -483,15 +355,6 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInner) GetOptionTypesOk() ([]ListW
 	return o.OptionTypes, true
 }
 
-// IsSetOptionTypes returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInner) IsSetOptionTypes() bool {
-	if o != nil && !IsNil(o.OptionTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetOptionTypes gets a reference to the given []ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner and assigns it to the OptionTypes field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInner) SetOptionTypes(v []ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) {
 	o.OptionTypes = v
@@ -513,15 +376,6 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInner) GetTaskSetTasksOk() ([]List
 		return nil, false
 	}
 	return o.TaskSetTasks, true
-}
-
-// IsSetTaskSetTasks returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInner) IsSetTaskSetTasks() bool {
-	if o != nil && !IsNil(o.TaskSetTasks) {
-		return true
-	}
-
-	return false
 }
 
 // SetTaskSetTasks gets a reference to the given []ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInner and assigns it to the TaskSetTasks field.

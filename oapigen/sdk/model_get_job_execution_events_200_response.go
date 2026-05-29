@@ -61,15 +61,6 @@ func (o *GetJobExecutionEvents200Response) GetProcessEventOk() (*GetJobExecution
 	return o.ProcessEvent, true
 }
 
-// IsSetProcessEvent returns a boolean if a field has been set.
-func (o *GetJobExecutionEvents200Response) IsSetProcessEvent() bool {
-	if o != nil && !IsNil(o.ProcessEvent) {
-		return true
-	}
-
-	return false
-}
-
 // SetProcessEvent gets a reference to the given GetJobExecutionEvents200ResponseAllOfProcessEvent and assigns it to the ProcessEvent field.
 func (o *GetJobExecutionEvents200Response) SetProcessEvent(v GetJobExecutionEvents200ResponseAllOfProcessEvent) {
 	o.ProcessEvent = &v

@@ -66,15 +66,6 @@ func (o *UserSourceCreateOkta) GetUrlOk() (*string, bool) {
 	return o.Url, true
 }
 
-// IsSetUrl returns a boolean if a field has been set.
-func (o *UserSourceCreateOkta) IsSetUrl() bool {
-	if o != nil && !IsNil(o.Url) {
-		return true
-	}
-
-	return false
-}
-
 // SetUrl gets a reference to the given string and assigns it to the Url field.
 func (o *UserSourceCreateOkta) SetUrl(v string) {
 	o.Url = &v
@@ -98,15 +89,6 @@ func (o *UserSourceCreateOkta) GetAdministratorAPITokenOk() (*string, bool) {
 	return o.AdministratorAPIToken, true
 }
 
-// IsSetAdministratorAPIToken returns a boolean if a field has been set.
-func (o *UserSourceCreateOkta) IsSetAdministratorAPIToken() bool {
-	if o != nil && !IsNil(o.AdministratorAPIToken) {
-		return true
-	}
-
-	return false
-}
-
 // SetAdministratorAPIToken gets a reference to the given string and assigns it to the AdministratorAPIToken field.
 func (o *UserSourceCreateOkta) SetAdministratorAPIToken(v string) {
 	o.AdministratorAPIToken = &v
@@ -128,15 +110,6 @@ func (o *UserSourceCreateOkta) GetRequiredGroupOk() (*string, bool) {
 		return nil, false
 	}
 	return o.RequiredGroup, true
-}
-
-// IsSetRequiredGroup returns a boolean if a field has been set.
-func (o *UserSourceCreateOkta) IsSetRequiredGroup() bool {
-	if o != nil && !IsNil(o.RequiredGroup) {
-		return true
-	}
-
-	return false
 }
 
 // SetRequiredGroup gets a reference to the given string and assigns it to the RequiredGroup field.

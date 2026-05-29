@@ -62,15 +62,6 @@ func (o *AddGroups200ResponseAllOfGroupStats) GetInstanceCountsOk() (*AddGroups2
 	return o.InstanceCounts, true
 }
 
-// IsSetInstanceCounts returns a boolean if a field has been set.
-func (o *AddGroups200ResponseAllOfGroupStats) IsSetInstanceCounts() bool {
-	if o != nil && !IsNil(o.InstanceCounts) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstanceCounts gets a reference to the given AddGroups200ResponseAllOfGroupStatsInstanceCounts and assigns it to the InstanceCounts field.
 func (o *AddGroups200ResponseAllOfGroupStats) SetInstanceCounts(v AddGroups200ResponseAllOfGroupStatsInstanceCounts) {
 	o.InstanceCounts = &v
@@ -92,15 +83,6 @@ func (o *AddGroups200ResponseAllOfGroupStats) GetServerCountsOk() (*AddGroups200
 		return nil, false
 	}
 	return o.ServerCounts, true
-}
-
-// IsSetServerCounts returns a boolean if a field has been set.
-func (o *AddGroups200ResponseAllOfGroupStats) IsSetServerCounts() bool {
-	if o != nil && !IsNil(o.ServerCounts) {
-		return true
-	}
-
-	return false
 }
 
 // SetServerCounts gets a reference to the given AddGroups200ResponseAllOfGroupStatsServerCounts and assigns it to the ServerCounts field.

@@ -64,15 +64,6 @@ func (o *UpdateInstanceRequestConfig) GetCustomOptionsOk() (map[string]interface
 	return o.CustomOptions, true
 }
 
-// IsSetCustomOptions returns a boolean if a field has been set.
-func (o *UpdateInstanceRequestConfig) IsSetCustomOptions() bool {
-	if o != nil && !IsNil(o.CustomOptions) {
-		return true
-	}
-
-	return false
-}
-
 // SetCustomOptions gets a reference to the given map[string]interface{} and assigns it to the CustomOptions field.
 func (o *UpdateInstanceRequestConfig) SetCustomOptions(v map[string]interface{}) {
 	o.CustomOptions = v
@@ -97,28 +88,9 @@ func (o *UpdateInstanceRequestConfig) GetUserDataOk() (*string, bool) {
 	return o.UserData.Get(), o.UserData.IsSet()
 }
 
-// IsSetUserData returns a boolean if a field has been set.
-func (o *UpdateInstanceRequestConfig) IsSetUserData() bool {
-	if o != nil && o.UserData.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUserData gets a reference to the given NullableString and assigns it to the UserData field.
 func (o *UpdateInstanceRequestConfig) SetUserData(v string) {
 	o.UserData.Set(&v)
-}
-
-// SetUserDataNil sets the value for UserData to be an explicit nil
-func (o *UpdateInstanceRequestConfig) SetUserDataNil() {
-	o.UserData.Set(nil)
-}
-
-// UnsetUserData ensures that no value is present for UserData, not even an explicit nil
-func (o *UpdateInstanceRequestConfig) UnsetUserData() {
-	o.UserData.Unset()
 }
 
 func (o UpdateInstanceRequestConfig) MarshalJSON() ([]byte, error) {

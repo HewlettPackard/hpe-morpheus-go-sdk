@@ -79,15 +79,6 @@ func (o *BlueprintCFTCreateSuccess) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *BlueprintCFTCreateSuccess) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *BlueprintCFTCreateSuccess) SetName(v string) {
 	o.Name = &v
@@ -109,15 +100,6 @@ func (o *BlueprintCFTCreateSuccess) GetImageOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Image, true
-}
-
-// IsSetImage returns a boolean if a field has been set.
-func (o *BlueprintCFTCreateSuccess) IsSetImage() bool {
-	if o != nil && !IsNil(o.Image) {
-		return true
-	}
-
-	return false
 }
 
 // SetImage gets a reference to the given string and assigns it to the Image field.
@@ -143,15 +125,6 @@ func (o *BlueprintCFTCreateSuccess) GetTypeOk() (*string, bool) {
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *BlueprintCFTCreateSuccess) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given string and assigns it to the Type field.
 func (o *BlueprintCFTCreateSuccess) SetType(v string) {
 	o.Type = &v
@@ -173,15 +146,6 @@ func (o *BlueprintCFTCreateSuccess) GetCloudFormationOk() (*BlueprintCFTCreateSu
 		return nil, false
 	}
 	return o.CloudFormation, true
-}
-
-// IsSetCloudFormation returns a boolean if a field has been set.
-func (o *BlueprintCFTCreateSuccess) IsSetCloudFormation() bool {
-	if o != nil && !IsNil(o.CloudFormation) {
-		return true
-	}
-
-	return false
 }
 
 // SetCloudFormation gets a reference to the given BlueprintCFTCreateSuccessCloudFormation and assigns it to the CloudFormation field.
@@ -207,15 +171,6 @@ func (o *BlueprintCFTCreateSuccess) GetVisibilityOk() (*string, bool) {
 	return o.Visibility, true
 }
 
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *BlueprintCFTCreateSuccess) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
-}
-
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
 func (o *BlueprintCFTCreateSuccess) SetVisibility(v string) {
 	o.Visibility = &v
@@ -237,15 +192,6 @@ func (o *BlueprintCFTCreateSuccess) GetResourcePermissionOk() (map[string]interf
 		return map[string]interface{}{}, false
 	}
 	return o.ResourcePermission, true
-}
-
-// IsSetResourcePermission returns a boolean if a field has been set.
-func (o *BlueprintCFTCreateSuccess) IsSetResourcePermission() bool {
-	if o != nil && !IsNil(o.ResourcePermission) {
-		return true
-	}
-
-	return false
 }
 
 // SetResourcePermission gets a reference to the given map[string]interface{} and assigns it to the ResourcePermission field.
@@ -271,15 +217,6 @@ func (o *BlueprintCFTCreateSuccess) GetOwnerOk() (map[string]interface{}, bool) 
 	return o.Owner, true
 }
 
-// IsSetOwner returns a boolean if a field has been set.
-func (o *BlueprintCFTCreateSuccess) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
-		return true
-	}
-
-	return false
-}
-
 // SetOwner gets a reference to the given map[string]interface{} and assigns it to the Owner field.
 func (o *BlueprintCFTCreateSuccess) SetOwner(v map[string]interface{}) {
 	o.Owner = v
@@ -301,15 +238,6 @@ func (o *BlueprintCFTCreateSuccess) GetTenantOk() (map[string]interface{}, bool)
 		return map[string]interface{}{}, false
 	}
 	return o.Tenant, true
-}
-
-// IsSetTenant returns a boolean if a field has been set.
-func (o *BlueprintCFTCreateSuccess) IsSetTenant() bool {
-	if o != nil && !IsNil(o.Tenant) {
-		return true
-	}
-
-	return false
 }
 
 // SetTenant gets a reference to the given map[string]interface{} and assigns it to the Tenant field.

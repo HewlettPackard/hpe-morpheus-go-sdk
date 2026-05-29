@@ -68,15 +68,6 @@ func (o *PermissionsResourcePermissions) GetDefaultStoreOk() (*bool, bool) {
 	return o.DefaultStore, true
 }
 
-// IsSetDefaultStore returns a boolean if a field has been set.
-func (o *PermissionsResourcePermissions) IsSetDefaultStore() bool {
-	if o != nil && !IsNil(o.DefaultStore) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultStore gets a reference to the given bool and assigns it to the DefaultStore field.
 func (o *PermissionsResourcePermissions) SetDefaultStore(v bool) {
 	o.DefaultStore = &v
@@ -98,15 +89,6 @@ func (o *PermissionsResourcePermissions) GetDefaultTargetOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.DefaultTarget, true
-}
-
-// IsSetDefaultTarget returns a boolean if a field has been set.
-func (o *PermissionsResourcePermissions) IsSetDefaultTarget() bool {
-	if o != nil && !IsNil(o.DefaultTarget) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultTarget gets a reference to the given bool and assigns it to the DefaultTarget field.
@@ -132,15 +114,6 @@ func (o *PermissionsResourcePermissions) GetCanManageOk() (*bool, bool) {
 	return o.CanManage, true
 }
 
-// IsSetCanManage returns a boolean if a field has been set.
-func (o *PermissionsResourcePermissions) IsSetCanManage() bool {
-	if o != nil && !IsNil(o.CanManage) {
-		return true
-	}
-
-	return false
-}
-
 // SetCanManage gets a reference to the given bool and assigns it to the CanManage field.
 func (o *PermissionsResourcePermissions) SetCanManage(v bool) {
 	o.CanManage = &v
@@ -164,15 +137,6 @@ func (o *PermissionsResourcePermissions) GetAllOk() (*bool, bool) {
 	return o.All, true
 }
 
-// IsSetAll returns a boolean if a field has been set.
-func (o *PermissionsResourcePermissions) IsSetAll() bool {
-	if o != nil && !IsNil(o.All) {
-		return true
-	}
-
-	return false
-}
-
 // SetAll gets a reference to the given bool and assigns it to the All field.
 func (o *PermissionsResourcePermissions) SetAll(v bool) {
 	o.All = &v
@@ -194,15 +158,6 @@ func (o *PermissionsResourcePermissions) GetAccountOk() (*ListCloudFolders200Res
 		return nil, false
 	}
 	return o.Account, true
-}
-
-// IsSetAccount returns a boolean if a field has been set.
-func (o *PermissionsResourcePermissions) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccount gets a reference to the given ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsAccount and assigns it to the Account field.
@@ -229,15 +184,6 @@ func (o *PermissionsResourcePermissions) GetSitesOk() ([]ListCloudFolders200Resp
 	return o.Sites, true
 }
 
-// IsSetSites returns a boolean if a field has been set.
-func (o *PermissionsResourcePermissions) IsSetSites() bool {
-	if o != nil && !IsNil(o.Sites) {
-		return true
-	}
-
-	return false
-}
-
 // SetSites gets a reference to the given []ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsSitesInner and assigns it to the Sites field.
 func (o *PermissionsResourcePermissions) SetSites(v []ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsSitesInner) {
 	o.Sites = v
@@ -259,15 +205,6 @@ func (o *PermissionsResourcePermissions) GetAllPlansOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.AllPlans, true
-}
-
-// IsSetAllPlans returns a boolean if a field has been set.
-func (o *PermissionsResourcePermissions) IsSetAllPlans() bool {
-	if o != nil && !IsNil(o.AllPlans) {
-		return true
-	}
-
-	return false
 }
 
 // SetAllPlans gets a reference to the given bool and assigns it to the AllPlans field.
@@ -292,15 +229,6 @@ func (o *PermissionsResourcePermissions) GetPlansOk() ([]ListCloudFolders200Resp
 		return nil, false
 	}
 	return o.Plans, true
-}
-
-// IsSetPlans returns a boolean if a field has been set.
-func (o *PermissionsResourcePermissions) IsSetPlans() bool {
-	if o != nil && !IsNil(o.Plans) {
-		return true
-	}
-
-	return false
 }
 
 // SetPlans gets a reference to the given []ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsPlansInner and assigns it to the Plans field.

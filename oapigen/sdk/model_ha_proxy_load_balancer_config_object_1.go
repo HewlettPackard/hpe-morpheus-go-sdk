@@ -62,15 +62,6 @@ func (o *HAProxyLoadBalancerConfigObject1) GetPlanOk() (*HAProxyLoadBalancerConf
 	return o.Plan, true
 }
 
-// IsSetPlan returns a boolean if a field has been set.
-func (o *HAProxyLoadBalancerConfigObject1) IsSetPlan() bool {
-	if o != nil && !IsNil(o.Plan) {
-		return true
-	}
-
-	return false
-}
-
 // SetPlan gets a reference to the given HAProxyLoadBalancerConfigObject1Plan and assigns it to the Plan field.
 func (o *HAProxyLoadBalancerConfigObject1) SetPlan(v HAProxyLoadBalancerConfigObject1Plan) {
 	o.Plan = &v
@@ -92,15 +83,6 @@ func (o *HAProxyLoadBalancerConfigObject1) GetPoolOk() (*HAProxyLoadBalancerConf
 		return nil, false
 	}
 	return o.Pool, true
-}
-
-// IsSetPool returns a boolean if a field has been set.
-func (o *HAProxyLoadBalancerConfigObject1) IsSetPool() bool {
-	if o != nil && !IsNil(o.Pool) {
-		return true
-	}
-
-	return false
 }
 
 // SetPool gets a reference to the given HAProxyLoadBalancerConfigObject1Pool and assigns it to the Pool field.

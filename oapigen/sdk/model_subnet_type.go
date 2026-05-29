@@ -69,15 +69,6 @@ func (o *SubnetType) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *SubnetType) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *SubnetType) SetId(v int64) {
 	o.Id = &v
@@ -99,15 +90,6 @@ func (o *SubnetType) GetCodeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *SubnetType) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -133,15 +115,6 @@ func (o *SubnetType) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *SubnetType) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *SubnetType) SetName(v string) {
 	o.Name = &v
@@ -163,15 +136,6 @@ func (o *SubnetType) GetDescriptionOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *SubnetType) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -197,15 +161,6 @@ func (o *SubnetType) GetCreatableOk() (*bool, bool) {
 	return o.Creatable, true
 }
 
-// IsSetCreatable returns a boolean if a field has been set.
-func (o *SubnetType) IsSetCreatable() bool {
-	if o != nil && !IsNil(o.Creatable) {
-		return true
-	}
-
-	return false
-}
-
 // SetCreatable gets a reference to the given bool and assigns it to the Creatable field.
 func (o *SubnetType) SetCreatable(v bool) {
 	o.Creatable = &v
@@ -227,15 +182,6 @@ func (o *SubnetType) GetDeletableOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Deletable, true
-}
-
-// IsSetDeletable returns a boolean if a field has been set.
-func (o *SubnetType) IsSetDeletable() bool {
-	if o != nil && !IsNil(o.Deletable) {
-		return true
-	}
-
-	return false
 }
 
 // SetDeletable gets a reference to the given bool and assigns it to the Deletable field.
@@ -261,15 +207,6 @@ func (o *SubnetType) GetDhcpServerEditableOk() (*bool, bool) {
 	return o.DhcpServerEditable, true
 }
 
-// IsSetDhcpServerEditable returns a boolean if a field has been set.
-func (o *SubnetType) IsSetDhcpServerEditable() bool {
-	if o != nil && !IsNil(o.DhcpServerEditable) {
-		return true
-	}
-
-	return false
-}
-
 // SetDhcpServerEditable gets a reference to the given bool and assigns it to the DhcpServerEditable field.
 func (o *SubnetType) SetDhcpServerEditable(v bool) {
 	o.DhcpServerEditable = &v
@@ -293,15 +230,6 @@ func (o *SubnetType) GetCanAssignPoolOk() (*bool, bool) {
 	return o.CanAssignPool, true
 }
 
-// IsSetCanAssignPool returns a boolean if a field has been set.
-func (o *SubnetType) IsSetCanAssignPool() bool {
-	if o != nil && !IsNil(o.CanAssignPool) {
-		return true
-	}
-
-	return false
-}
-
 // SetCanAssignPool gets a reference to the given bool and assigns it to the CanAssignPool field.
 func (o *SubnetType) SetCanAssignPool(v bool) {
 	o.CanAssignPool = &v
@@ -323,15 +251,6 @@ func (o *SubnetType) GetOptionTypesOk() ([]SubnetTypeOptionTypesInner, bool) {
 		return nil, false
 	}
 	return o.OptionTypes, true
-}
-
-// IsSetOptionTypes returns a boolean if a field has been set.
-func (o *SubnetType) IsSetOptionTypes() bool {
-	if o != nil && !IsNil(o.OptionTypes) {
-		return true
-	}
-
-	return false
 }
 
 // SetOptionTypes gets a reference to the given []SubnetTypeOptionTypesInner and assigns it to the OptionTypes field.

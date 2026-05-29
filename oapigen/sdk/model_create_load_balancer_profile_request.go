@@ -61,15 +61,6 @@ func (o *CreateLoadBalancerProfileRequest) GetLoadBalancerProfileOk() (*CreateLo
 	return o.LoadBalancerProfile, true
 }
 
-// IsSetLoadBalancerProfile returns a boolean if a field has been set.
-func (o *CreateLoadBalancerProfileRequest) IsSetLoadBalancerProfile() bool {
-	if o != nil && !IsNil(o.LoadBalancerProfile) {
-		return true
-	}
-
-	return false
-}
-
 // SetLoadBalancerProfile gets a reference to the given CreateLoadBalancerProfileRequestLoadBalancerProfile and assigns it to the LoadBalancerProfile field.
 func (o *CreateLoadBalancerProfileRequest) SetLoadBalancerProfile(v CreateLoadBalancerProfileRequestLoadBalancerProfile) {
 	o.LoadBalancerProfile = &v

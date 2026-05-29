@@ -62,15 +62,6 @@ func (o *ListHealth200Response) GetHealthOk() (*ListHealth200ResponseAllOfHealth
 	return o.Health, true
 }
 
-// IsSetHealth returns a boolean if a field has been set.
-func (o *ListHealth200Response) IsSetHealth() bool {
-	if o != nil && !IsNil(o.Health) {
-		return true
-	}
-
-	return false
-}
-
 // SetHealth gets a reference to the given ListHealth200ResponseAllOfHealth and assigns it to the Health field.
 func (o *ListHealth200Response) SetHealth(v ListHealth200ResponseAllOfHealth) {
 	o.Health = &v
@@ -92,15 +83,6 @@ func (o *ListHealth200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta,
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListHealth200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

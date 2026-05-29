@@ -66,15 +66,6 @@ func (o *ListBackupJobs200ResponseAllOfJobsInnerSchedule) GetIdOk() (*int64, boo
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListBackupJobs200ResponseAllOfJobsInnerSchedule) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListBackupJobs200ResponseAllOfJobsInnerSchedule) SetId(v int64) {
 	o.Id = &v
@@ -98,15 +89,6 @@ func (o *ListBackupJobs200ResponseAllOfJobsInnerSchedule) GetNameOk() (*string, 
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ListBackupJobs200ResponseAllOfJobsInnerSchedule) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ListBackupJobs200ResponseAllOfJobsInnerSchedule) SetName(v string) {
 	o.Name = &v
@@ -128,15 +110,6 @@ func (o *ListBackupJobs200ResponseAllOfJobsInnerSchedule) GetCronOk() (*string, 
 		return nil, false
 	}
 	return o.Cron, true
-}
-
-// IsSetCron returns a boolean if a field has been set.
-func (o *ListBackupJobs200ResponseAllOfJobsInnerSchedule) IsSetCron() bool {
-	if o != nil && !IsNil(o.Cron) {
-		return true
-	}
-
-	return false
 }
 
 // SetCron gets a reference to the given string and assigns it to the Cron field.

@@ -64,15 +64,6 @@ func (o *GetImageBuild200ResponseImageBuildConfigConfig) GetTemplateOk() (*int64
 	return o.Template, true
 }
 
-// IsSetTemplate returns a boolean if a field has been set.
-func (o *GetImageBuild200ResponseImageBuildConfigConfig) IsSetTemplate() bool {
-	if o != nil && !IsNil(o.Template) {
-		return true
-	}
-
-	return false
-}
-
 // SetTemplate gets a reference to the given int64 and assigns it to the Template field.
 func (o *GetImageBuild200ResponseImageBuildConfigConfig) SetTemplate(v int64) {
 	o.Template = &v
@@ -94,15 +85,6 @@ func (o *GetImageBuild200ResponseImageBuildConfigConfig) GetVmwareFolderIdOk() (
 		return nil, false
 	}
 	return o.VmwareFolderId, true
-}
-
-// IsSetVmwareFolderId returns a boolean if a field has been set.
-func (o *GetImageBuild200ResponseImageBuildConfigConfig) IsSetVmwareFolderId() bool {
-	if o != nil && !IsNil(o.VmwareFolderId) {
-		return true
-	}
-
-	return false
 }
 
 // SetVmwareFolderId gets a reference to the given string and assigns it to the VmwareFolderId field.
@@ -128,15 +110,6 @@ func (o *GetImageBuild200ResponseImageBuildConfigConfig) GetResourcePoolIdOk() (
 	return o.ResourcePoolId, true
 }
 
-// IsSetResourcePoolId returns a boolean if a field has been set.
-func (o *GetImageBuild200ResponseImageBuildConfigConfig) IsSetResourcePoolId() bool {
-	if o != nil && !IsNil(o.ResourcePoolId) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourcePoolId gets a reference to the given int64 and assigns it to the ResourcePoolId field.
 func (o *GetImageBuild200ResponseImageBuildConfigConfig) SetResourcePoolId(v int64) {
 	o.ResourcePoolId = &v
@@ -158,15 +131,6 @@ func (o *GetImageBuild200ResponseImageBuildConfigConfig) GetNestedVirtualization
 		return nil, false
 	}
 	return o.NestedVirtualization, true
-}
-
-// IsSetNestedVirtualization returns a boolean if a field has been set.
-func (o *GetImageBuild200ResponseImageBuildConfigConfig) IsSetNestedVirtualization() bool {
-	if o != nil && !IsNil(o.NestedVirtualization) {
-		return true
-	}
-
-	return false
 }
 
 // SetNestedVirtualization gets a reference to the given string and assigns it to the NestedVirtualization field.

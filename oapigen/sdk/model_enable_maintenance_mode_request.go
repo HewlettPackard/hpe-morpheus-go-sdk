@@ -61,15 +61,6 @@ func (o *EnableMaintenanceModeRequest) GetServerOk() (*EnableMaintenanceModeRequ
 	return o.Server, true
 }
 
-// IsSetServer returns a boolean if a field has been set.
-func (o *EnableMaintenanceModeRequest) IsSetServer() bool {
-	if o != nil && !IsNil(o.Server) {
-		return true
-	}
-
-	return false
-}
-
 // SetServer gets a reference to the given EnableMaintenanceModeRequestServer and assigns it to the Server field.
 func (o *EnableMaintenanceModeRequest) SetServer(v EnableMaintenanceModeRequestServer) {
 	o.Server = &v

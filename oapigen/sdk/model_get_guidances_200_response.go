@@ -61,15 +61,6 @@ func (o *GetGuidances200Response) GetDiscoveryOk() (*GetGuidances200ResponseDisc
 	return o.Discovery, true
 }
 
-// IsSetDiscovery returns a boolean if a field has been set.
-func (o *GetGuidances200Response) IsSetDiscovery() bool {
-	if o != nil && !IsNil(o.Discovery) {
-		return true
-	}
-
-	return false
-}
-
 // SetDiscovery gets a reference to the given GetGuidances200ResponseDiscovery and assigns it to the Discovery field.
 func (o *GetGuidances200Response) SetDiscovery(v GetGuidances200ResponseDiscovery) {
 	o.Discovery = &v

@@ -70,15 +70,6 @@ func (o *AppUpdate) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *AppUpdate) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *AppUpdate) SetName(v string) {
 	o.Name = &v
@@ -100,15 +91,6 @@ func (o *AppUpdate) GetDescriptionOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *AppUpdate) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -135,15 +117,6 @@ func (o *AppUpdate) GetLabelsOk() ([]string, bool) {
 	return o.Labels, true
 }
 
-// IsSetLabels returns a boolean if a field has been set.
-func (o *AppUpdate) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
-}
-
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
 func (o *AppUpdate) SetLabels(v []string) {
 	o.Labels = v
@@ -167,15 +140,6 @@ func (o *AppUpdate) GetEnvironmentOk() (*string, bool) {
 	return o.Environment, true
 }
 
-// IsSetEnvironment returns a boolean if a field has been set.
-func (o *AppUpdate) IsSetEnvironment() bool {
-	if o != nil && !IsNil(o.Environment) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnvironment gets a reference to the given string and assigns it to the Environment field.
 func (o *AppUpdate) SetEnvironment(v string) {
 	o.Environment = &v
@@ -197,15 +161,6 @@ func (o *AppUpdate) GetOwnerIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.OwnerId, true
-}
-
-// IsSetOwnerId returns a boolean if a field has been set.
-func (o *AppUpdate) IsSetOwnerId() bool {
-	if o != nil && !IsNil(o.OwnerId) {
-		return true
-	}
-
-	return false
 }
 
 // SetOwnerId gets a reference to the given int64 and assigns it to the OwnerId field.

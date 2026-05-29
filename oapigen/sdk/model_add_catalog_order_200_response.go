@@ -62,15 +62,6 @@ func (o *AddCatalogOrder200Response) GetOrderOk() (*AddCatalogOrder200ResponseAl
 	return o.Order, true
 }
 
-// IsSetOrder returns a boolean if a field has been set.
-func (o *AddCatalogOrder200Response) IsSetOrder() bool {
-	if o != nil && !IsNil(o.Order) {
-		return true
-	}
-
-	return false
-}
-
 // SetOrder gets a reference to the given AddCatalogOrder200ResponseAllOfOrder and assigns it to the Order field.
 func (o *AddCatalogOrder200Response) SetOrder(v AddCatalogOrder200ResponseAllOfOrder) {
 	o.Order = &v
@@ -92,15 +83,6 @@ func (o *AddCatalogOrder200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *AddCatalogOrder200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

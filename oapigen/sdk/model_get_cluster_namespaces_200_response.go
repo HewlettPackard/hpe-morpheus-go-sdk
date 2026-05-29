@@ -62,15 +62,6 @@ func (o *GetClusterNamespaces200Response) GetNamespacesOk() ([]GetClusterNamespa
 	return o.Namespaces, true
 }
 
-// IsSetNamespaces returns a boolean if a field has been set.
-func (o *GetClusterNamespaces200Response) IsSetNamespaces() bool {
-	if o != nil && !IsNil(o.Namespaces) {
-		return true
-	}
-
-	return false
-}
-
 // SetNamespaces gets a reference to the given []GetClusterNamespaces200ResponseAllOfNamespacesInner and assigns it to the Namespaces field.
 func (o *GetClusterNamespaces200Response) SetNamespaces(v []GetClusterNamespaces200ResponseAllOfNamespacesInner) {
 	o.Namespaces = v
@@ -92,15 +83,6 @@ func (o *GetClusterNamespaces200Response) GetMetaOk() (*ListApprovals200Response
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *GetClusterNamespaces200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

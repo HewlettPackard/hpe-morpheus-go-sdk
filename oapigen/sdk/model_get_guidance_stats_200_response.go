@@ -61,15 +61,6 @@ func (o *GetGuidanceStats200Response) GetStatsOk() (*GetGuidanceStats200Response
 	return o.Stats, true
 }
 
-// IsSetStats returns a boolean if a field has been set.
-func (o *GetGuidanceStats200Response) IsSetStats() bool {
-	if o != nil && !IsNil(o.Stats) {
-		return true
-	}
-
-	return false
-}
-
 // SetStats gets a reference to the given GetGuidanceStats200ResponseStats and assigns it to the Stats field.
 func (o *GetGuidanceStats200Response) SetStats(v GetGuidanceStats200ResponseStats) {
 	o.Stats = &v

@@ -63,15 +63,6 @@ func (o *GetJobs200ResponseAllOfJobAnyOf1CreatedBy) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetJobs200ResponseAllOfJobAnyOf1CreatedBy) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetJobs200ResponseAllOfJobAnyOf1CreatedBy) SetId(v int64) {
 	o.Id = &v
@@ -95,15 +86,6 @@ func (o *GetJobs200ResponseAllOfJobAnyOf1CreatedBy) GetUsernameOk() (*string, bo
 	return o.Username, true
 }
 
-// IsSetUsername returns a boolean if a field has been set.
-func (o *GetJobs200ResponseAllOfJobAnyOf1CreatedBy) IsSetUsername() bool {
-	if o != nil && !IsNil(o.Username) {
-		return true
-	}
-
-	return false
-}
-
 // SetUsername gets a reference to the given string and assigns it to the Username field.
 func (o *GetJobs200ResponseAllOfJobAnyOf1CreatedBy) SetUsername(v string) {
 	o.Username = &v
@@ -125,15 +107,6 @@ func (o *GetJobs200ResponseAllOfJobAnyOf1CreatedBy) GetDisplayNameOk() (*string,
 		return nil, false
 	}
 	return o.DisplayName, true
-}
-
-// IsSetDisplayName returns a boolean if a field has been set.
-func (o *GetJobs200ResponseAllOfJobAnyOf1CreatedBy) IsSetDisplayName() bool {
-	if o != nil && !IsNil(o.DisplayName) {
-		return true
-	}
-
-	return false
 }
 
 // SetDisplayName gets a reference to the given string and assigns it to the DisplayName field.

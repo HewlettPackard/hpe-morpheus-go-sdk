@@ -70,15 +70,6 @@ func (o *ZoneDatastoreCreate) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ZoneDatastoreCreate) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ZoneDatastoreCreate) SetName(v string) {
 	o.Name = &v
@@ -100,15 +91,6 @@ func (o *ZoneDatastoreCreate) GetDatastoreTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.DatastoreType, true
-}
-
-// IsSetDatastoreType returns a boolean if a field has been set.
-func (o *ZoneDatastoreCreate) IsSetDatastoreType() bool {
-	if o != nil && !IsNil(o.DatastoreType) {
-		return true
-	}
-
-	return false
 }
 
 // SetDatastoreType gets a reference to the given string and assigns it to the DatastoreType field.
@@ -134,15 +116,6 @@ func (o *ZoneDatastoreCreate) GetStorageServerOk() (*ZoneDatastoreCreateStorageS
 	return o.StorageServer, true
 }
 
-// IsSetStorageServer returns a boolean if a field has been set.
-func (o *ZoneDatastoreCreate) IsSetStorageServer() bool {
-	if o != nil && !IsNil(o.StorageServer) {
-		return true
-	}
-
-	return false
-}
-
 // SetStorageServer gets a reference to the given ZoneDatastoreCreateStorageServer and assigns it to the StorageServer field.
 func (o *ZoneDatastoreCreate) SetStorageServer(v ZoneDatastoreCreateStorageServer) {
 	o.StorageServer = &v
@@ -164,15 +137,6 @@ func (o *ZoneDatastoreCreate) GetVisibilityOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *ZoneDatastoreCreate) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -198,15 +162,6 @@ func (o *ZoneDatastoreCreate) GetActiveOk() (*bool, bool) {
 	return o.Active, true
 }
 
-// IsSetActive returns a boolean if a field has been set.
-func (o *ZoneDatastoreCreate) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
-}
-
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *ZoneDatastoreCreate) SetActive(v bool) {
 	o.Active = &v
@@ -228,15 +183,6 @@ func (o *ZoneDatastoreCreate) GetDefaultStoreOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.DefaultStore, true
-}
-
-// IsSetDefaultStore returns a boolean if a field has been set.
-func (o *ZoneDatastoreCreate) IsSetDefaultStore() bool {
-	if o != nil && !IsNil(o.DefaultStore) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultStore gets a reference to the given bool and assigns it to the DefaultStore field.
@@ -262,15 +208,6 @@ func (o *ZoneDatastoreCreate) GetTenantsOk() ([]ZoneDatastoreCreateTenantsInner,
 	return o.Tenants, true
 }
 
-// IsSetTenants returns a boolean if a field has been set.
-func (o *ZoneDatastoreCreate) IsSetTenants() bool {
-	if o != nil && !IsNil(o.Tenants) {
-		return true
-	}
-
-	return false
-}
-
 // SetTenants gets a reference to the given []ZoneDatastoreCreateTenantsInner and assigns it to the Tenants field.
 func (o *ZoneDatastoreCreate) SetTenants(v []ZoneDatastoreCreateTenantsInner) {
 	o.Tenants = v
@@ -294,15 +231,6 @@ func (o *ZoneDatastoreCreate) GetResourcePermissionsOk() (*ZoneDatastoreCreateRe
 	return o.ResourcePermissions, true
 }
 
-// IsSetResourcePermissions returns a boolean if a field has been set.
-func (o *ZoneDatastoreCreate) IsSetResourcePermissions() bool {
-	if o != nil && !IsNil(o.ResourcePermissions) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourcePermissions gets a reference to the given ZoneDatastoreCreateResourcePermissions and assigns it to the ResourcePermissions field.
 func (o *ZoneDatastoreCreate) SetResourcePermissions(v ZoneDatastoreCreateResourcePermissions) {
 	o.ResourcePermissions = &v
@@ -324,15 +252,6 @@ func (o *ZoneDatastoreCreate) GetDatastoresOk() ([]map[string]interface{}, bool)
 		return nil, false
 	}
 	return o.Datastores, true
-}
-
-// IsSetDatastores returns a boolean if a field has been set.
-func (o *ZoneDatastoreCreate) IsSetDatastores() bool {
-	if o != nil && !IsNil(o.Datastores) {
-		return true
-	}
-
-	return false
 }
 
 // SetDatastores gets a reference to the given []map[string]interface{} and assigns it to the Datastores field.

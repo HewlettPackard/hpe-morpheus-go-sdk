@@ -75,15 +75,6 @@ func (o *ClusterMastersVolumesInner) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ClusterMastersVolumesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ClusterMastersVolumesInner) SetId(v int64) {
 	o.Id = &v
@@ -105,15 +96,6 @@ func (o *ClusterMastersVolumesInner) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ClusterMastersVolumesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -140,28 +122,9 @@ func (o *ClusterMastersVolumesInner) GetControllerIdOk() (*string, bool) {
 	return o.ControllerId.Get(), o.ControllerId.IsSet()
 }
 
-// IsSetControllerId returns a boolean if a field has been set.
-func (o *ClusterMastersVolumesInner) IsSetControllerId() bool {
-	if o != nil && o.ControllerId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetControllerId gets a reference to the given NullableString and assigns it to the ControllerId field.
 func (o *ClusterMastersVolumesInner) SetControllerId(v string) {
 	o.ControllerId.Set(&v)
-}
-
-// SetControllerIdNil sets the value for ControllerId to be an explicit nil
-func (o *ClusterMastersVolumesInner) SetControllerIdNil() {
-	o.ControllerId.Set(nil)
-}
-
-// UnsetControllerId ensures that no value is present for ControllerId, not even an explicit nil
-func (o *ClusterMastersVolumesInner) UnsetControllerId() {
-	o.ControllerId.Unset()
 }
 
 // GetControllerMountPoint returns the ControllerMountPoint field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -183,28 +146,9 @@ func (o *ClusterMastersVolumesInner) GetControllerMountPointOk() (*string, bool)
 	return o.ControllerMountPoint.Get(), o.ControllerMountPoint.IsSet()
 }
 
-// IsSetControllerMountPoint returns a boolean if a field has been set.
-func (o *ClusterMastersVolumesInner) IsSetControllerMountPoint() bool {
-	if o != nil && o.ControllerMountPoint.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetControllerMountPoint gets a reference to the given NullableString and assigns it to the ControllerMountPoint field.
 func (o *ClusterMastersVolumesInner) SetControllerMountPoint(v string) {
 	o.ControllerMountPoint.Set(&v)
-}
-
-// SetControllerMountPointNil sets the value for ControllerMountPoint to be an explicit nil
-func (o *ClusterMastersVolumesInner) SetControllerMountPointNil() {
-	o.ControllerMountPoint.Set(nil)
-}
-
-// UnsetControllerMountPoint ensures that no value is present for ControllerMountPoint, not even an explicit nil
-func (o *ClusterMastersVolumesInner) UnsetControllerMountPoint() {
-	o.ControllerMountPoint.Unset()
 }
 
 // GetResizeable returns the Resizeable field value if set, zero value otherwise.
@@ -223,15 +167,6 @@ func (o *ClusterMastersVolumesInner) GetResizeableOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Resizeable, true
-}
-
-// IsSetResizeable returns a boolean if a field has been set.
-func (o *ClusterMastersVolumesInner) IsSetResizeable() bool {
-	if o != nil && !IsNil(o.Resizeable) {
-		return true
-	}
-
-	return false
 }
 
 // SetResizeable gets a reference to the given bool and assigns it to the Resizeable field.
@@ -257,15 +192,6 @@ func (o *ClusterMastersVolumesInner) GetPlanResizableOk() (*bool, bool) {
 	return o.PlanResizable, true
 }
 
-// IsSetPlanResizable returns a boolean if a field has been set.
-func (o *ClusterMastersVolumesInner) IsSetPlanResizable() bool {
-	if o != nil && !IsNil(o.PlanResizable) {
-		return true
-	}
-
-	return false
-}
-
 // SetPlanResizable gets a reference to the given bool and assigns it to the PlanResizable field.
 func (o *ClusterMastersVolumesInner) SetPlanResizable(v bool) {
 	o.PlanResizable = &v
@@ -287,15 +213,6 @@ func (o *ClusterMastersVolumesInner) GetRootVolumeOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.RootVolume, true
-}
-
-// IsSetRootVolume returns a boolean if a field has been set.
-func (o *ClusterMastersVolumesInner) IsSetRootVolume() bool {
-	if o != nil && !IsNil(o.RootVolume) {
-		return true
-	}
-
-	return false
 }
 
 // SetRootVolume gets a reference to the given bool and assigns it to the RootVolume field.
@@ -322,28 +239,9 @@ func (o *ClusterMastersVolumesInner) GetUnitNumberOk() (*string, bool) {
 	return o.UnitNumber.Get(), o.UnitNumber.IsSet()
 }
 
-// IsSetUnitNumber returns a boolean if a field has been set.
-func (o *ClusterMastersVolumesInner) IsSetUnitNumber() bool {
-	if o != nil && o.UnitNumber.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUnitNumber gets a reference to the given NullableString and assigns it to the UnitNumber field.
 func (o *ClusterMastersVolumesInner) SetUnitNumber(v string) {
 	o.UnitNumber.Set(&v)
-}
-
-// SetUnitNumberNil sets the value for UnitNumber to be an explicit nil
-func (o *ClusterMastersVolumesInner) SetUnitNumberNil() {
-	o.UnitNumber.Set(nil)
-}
-
-// UnsetUnitNumber ensures that no value is present for UnitNumber, not even an explicit nil
-func (o *ClusterMastersVolumesInner) UnsetUnitNumber() {
-	o.UnitNumber.Unset()
 }
 
 // GetTypeId returns the TypeId field value if set, zero value otherwise.
@@ -362,15 +260,6 @@ func (o *ClusterMastersVolumesInner) GetTypeIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.TypeId, true
-}
-
-// IsSetTypeId returns a boolean if a field has been set.
-func (o *ClusterMastersVolumesInner) IsSetTypeId() bool {
-	if o != nil && !IsNil(o.TypeId) {
-		return true
-	}
-
-	return false
 }
 
 // SetTypeId gets a reference to the given int64 and assigns it to the TypeId field.
@@ -394,15 +283,6 @@ func (o *ClusterMastersVolumesInner) GetConfigurableIOPSOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.ConfigurableIOPS, true
-}
-
-// IsSetConfigurableIOPS returns a boolean if a field has been set.
-func (o *ClusterMastersVolumesInner) IsSetConfigurableIOPS() bool {
-	if o != nil && !IsNil(o.ConfigurableIOPS) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfigurableIOPS gets a reference to the given bool and assigns it to the ConfigurableIOPS field.
@@ -429,28 +309,9 @@ func (o *ClusterMastersVolumesInner) GetDatastoreIdOk() (*string, bool) {
 	return o.DatastoreId.Get(), o.DatastoreId.IsSet()
 }
 
-// IsSetDatastoreId returns a boolean if a field has been set.
-func (o *ClusterMastersVolumesInner) IsSetDatastoreId() bool {
-	if o != nil && o.DatastoreId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDatastoreId gets a reference to the given NullableString and assigns it to the DatastoreId field.
 func (o *ClusterMastersVolumesInner) SetDatastoreId(v string) {
 	o.DatastoreId.Set(&v)
-}
-
-// SetDatastoreIdNil sets the value for DatastoreId to be an explicit nil
-func (o *ClusterMastersVolumesInner) SetDatastoreIdNil() {
-	o.DatastoreId.Set(nil)
-}
-
-// UnsetDatastoreId ensures that no value is present for DatastoreId, not even an explicit nil
-func (o *ClusterMastersVolumesInner) UnsetDatastoreId() {
-	o.DatastoreId.Unset()
 }
 
 // GetMaxStorage returns the MaxStorage field value if set, zero value otherwise.
@@ -469,15 +330,6 @@ func (o *ClusterMastersVolumesInner) GetMaxStorageOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.MaxStorage, true
-}
-
-// IsSetMaxStorage returns a boolean if a field has been set.
-func (o *ClusterMastersVolumesInner) IsSetMaxStorage() bool {
-	if o != nil && !IsNil(o.MaxStorage) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxStorage gets a reference to the given int64 and assigns it to the MaxStorage field.
@@ -501,15 +353,6 @@ func (o *ClusterMastersVolumesInner) GetDisplayOrderOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.DisplayOrder, true
-}
-
-// IsSetDisplayOrder returns a boolean if a field has been set.
-func (o *ClusterMastersVolumesInner) IsSetDisplayOrder() bool {
-	if o != nil && !IsNil(o.DisplayOrder) {
-		return true
-	}
-
-	return false
 }
 
 // SetDisplayOrder gets a reference to the given int64 and assigns it to the DisplayOrder field.
@@ -536,28 +379,9 @@ func (o *ClusterMastersVolumesInner) GetMaxIOPSOk() (*string, bool) {
 	return o.MaxIOPS.Get(), o.MaxIOPS.IsSet()
 }
 
-// IsSetMaxIOPS returns a boolean if a field has been set.
-func (o *ClusterMastersVolumesInner) IsSetMaxIOPS() bool {
-	if o != nil && o.MaxIOPS.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxIOPS gets a reference to the given NullableString and assigns it to the MaxIOPS field.
 func (o *ClusterMastersVolumesInner) SetMaxIOPS(v string) {
 	o.MaxIOPS.Set(&v)
-}
-
-// SetMaxIOPSNil sets the value for MaxIOPS to be an explicit nil
-func (o *ClusterMastersVolumesInner) SetMaxIOPSNil() {
-	o.MaxIOPS.Set(nil)
-}
-
-// UnsetMaxIOPS ensures that no value is present for MaxIOPS, not even an explicit nil
-func (o *ClusterMastersVolumesInner) UnsetMaxIOPS() {
-	o.MaxIOPS.Unset()
 }
 
 // GetUuid returns the Uuid field value if set, zero value otherwise.
@@ -576,15 +400,6 @@ func (o *ClusterMastersVolumesInner) GetUuidOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Uuid, true
-}
-
-// IsSetUuid returns a boolean if a field has been set.
-func (o *ClusterMastersVolumesInner) IsSetUuid() bool {
-	if o != nil && !IsNil(o.Uuid) {
-		return true
-	}
-
-	return false
 }
 
 // SetUuid gets a reference to the given string and assigns it to the Uuid field.

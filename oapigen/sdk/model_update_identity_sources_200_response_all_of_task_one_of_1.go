@@ -81,15 +81,6 @@ func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) GetIdOk() (*int64, boo
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) SetId(v int64) {
 	o.Id = &v
@@ -111,15 +102,6 @@ func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) GetNameOk() (*string, 
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -145,15 +127,6 @@ func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) GetDescriptionOk() (*s
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) SetDescription(v string) {
 	o.Description = &v
@@ -175,15 +148,6 @@ func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) GetCodeOk() (*string, 
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -209,15 +173,6 @@ func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) GetTypeOk() (*string, 
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given string and assigns it to the Type field.
 func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) SetType(v string) {
 	o.Type = &v
@@ -239,15 +194,6 @@ func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) GetActiveOk() (*bool, 
 		return nil, false
 	}
 	return o.Active, true
-}
-
-// IsSetActive returns a boolean if a field has been set.
-func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
 }
 
 // SetActive gets a reference to the given bool and assigns it to the Active field.
@@ -273,15 +219,6 @@ func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) GetDeletedOk() (*bool,
 	return o.Deleted, true
 }
 
-// IsSetDeleted returns a boolean if a field has been set.
-func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) IsSetDeleted() bool {
-	if o != nil && !IsNil(o.Deleted) {
-		return true
-	}
-
-	return false
-}
-
 // SetDeleted gets a reference to the given bool and assigns it to the Deleted field.
 func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) SetDeleted(v bool) {
 	o.Deleted = &v
@@ -303,15 +240,6 @@ func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) GetAutoSyncOnLoginOk()
 		return nil, false
 	}
 	return o.AutoSyncOnLogin, true
-}
-
-// IsSetAutoSyncOnLogin returns a boolean if a field has been set.
-func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) IsSetAutoSyncOnLogin() bool {
-	if o != nil && !IsNil(o.AutoSyncOnLogin) {
-		return true
-	}
-
-	return false
 }
 
 // SetAutoSyncOnLogin gets a reference to the given bool and assigns it to the AutoSyncOnLogin field.
@@ -337,15 +265,6 @@ func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) GetExternalLoginOk() (
 	return o.ExternalLogin, true
 }
 
-// IsSetExternalLogin returns a boolean if a field has been set.
-func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) IsSetExternalLogin() bool {
-	if o != nil && !IsNil(o.ExternalLogin) {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalLogin gets a reference to the given bool and assigns it to the ExternalLogin field.
 func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) SetExternalLogin(v bool) {
 	o.ExternalLogin = &v
@@ -367,15 +286,6 @@ func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) GetAllowCustomMappings
 		return nil, false
 	}
 	return o.AllowCustomMappings, true
-}
-
-// IsSetAllowCustomMappings returns a boolean if a field has been set.
-func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) IsSetAllowCustomMappings() bool {
-	if o != nil && !IsNil(o.AllowCustomMappings) {
-		return true
-	}
-
-	return false
 }
 
 // SetAllowCustomMappings gets a reference to the given bool and assigns it to the AllowCustomMappings field.
@@ -401,15 +311,6 @@ func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) GetManualRoleAssignmen
 	return o.ManualRoleAssignment, true
 }
 
-// IsSetManualRoleAssignment returns a boolean if a field has been set.
-func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) IsSetManualRoleAssignment() bool {
-	if o != nil && !IsNil(o.ManualRoleAssignment) {
-		return true
-	}
-
-	return false
-}
-
 // SetManualRoleAssignment gets a reference to the given bool and assigns it to the ManualRoleAssignment field.
 func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) SetManualRoleAssignment(v bool) {
 	o.ManualRoleAssignment = &v
@@ -431,15 +332,6 @@ func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) GetAccountOk() (*Updat
 		return nil, false
 	}
 	return o.Account, true
-}
-
-// IsSetAccount returns a boolean if a field has been set.
-func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccount gets a reference to the given UpdateIdentitySources200ResponseAllOfTaskOneOf1Account and assigns it to the Account field.
@@ -465,15 +357,6 @@ func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) GetDefaultAccountRoleO
 	return o.DefaultAccountRole, true
 }
 
-// IsSetDefaultAccountRole returns a boolean if a field has been set.
-func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) IsSetDefaultAccountRole() bool {
-	if o != nil && !IsNil(o.DefaultAccountRole) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultAccountRole gets a reference to the given UpdateIdentitySources200ResponseAllOfTaskOneOf1DefaultAccountRole and assigns it to the DefaultAccountRole field.
 func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) SetDefaultAccountRole(v UpdateIdentitySources200ResponseAllOfTaskOneOf1DefaultAccountRole) {
 	o.DefaultAccountRole = &v
@@ -495,15 +378,6 @@ func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) GetConfigOk() (*Update
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given UpdateIdentitySources200ResponseAllOfTaskOneOf1Config and assigns it to the Config field.
@@ -529,15 +403,6 @@ func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) GetRoleMappingsOk() ([
 	return o.RoleMappings, true
 }
 
-// IsSetRoleMappings returns a boolean if a field has been set.
-func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) IsSetRoleMappings() bool {
-	if o != nil && !IsNil(o.RoleMappings) {
-		return true
-	}
-
-	return false
-}
-
 // SetRoleMappings gets a reference to the given []UpdateIdentitySources200ResponseAllOfTaskOneOf1RoleMappingsInner and assigns it to the RoleMappings field.
 func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) SetRoleMappings(v []UpdateIdentitySources200ResponseAllOfTaskOneOf1RoleMappingsInner) {
 	o.RoleMappings = v
@@ -559,15 +424,6 @@ func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) GetSubdomainOk() (*str
 		return nil, false
 	}
 	return o.Subdomain, true
-}
-
-// IsSetSubdomain returns a boolean if a field has been set.
-func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) IsSetSubdomain() bool {
-	if o != nil && !IsNil(o.Subdomain) {
-		return true
-	}
-
-	return false
 }
 
 // SetSubdomain gets a reference to the given string and assigns it to the Subdomain field.
@@ -593,15 +449,6 @@ func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) GetLoginURLOk() (*stri
 	return o.LoginURL, true
 }
 
-// IsSetLoginURL returns a boolean if a field has been set.
-func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) IsSetLoginURL() bool {
-	if o != nil && !IsNil(o.LoginURL) {
-		return true
-	}
-
-	return false
-}
-
 // SetLoginURL gets a reference to the given string and assigns it to the LoginURL field.
 func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) SetLoginURL(v string) {
 	o.LoginURL = &v
@@ -623,15 +470,6 @@ func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) GetProviderSettingsOk(
 		return map[string]interface{}{}, false
 	}
 	return o.ProviderSettings, true
-}
-
-// IsSetProviderSettings returns a boolean if a field has been set.
-func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) IsSetProviderSettings() bool {
-	if o != nil && !IsNil(o.ProviderSettings) {
-		return true
-	}
-
-	return false
 }
 
 // SetProviderSettings gets a reference to the given map[string]interface{} and assigns it to the ProviderSettings field.
@@ -657,15 +495,6 @@ func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) GetDateCreatedOk() (*t
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -687,15 +516,6 @@ func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) GetLastUpdatedOk() (*t
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *UpdateIdentitySources200ResponseAllOfTaskOneOf1) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.

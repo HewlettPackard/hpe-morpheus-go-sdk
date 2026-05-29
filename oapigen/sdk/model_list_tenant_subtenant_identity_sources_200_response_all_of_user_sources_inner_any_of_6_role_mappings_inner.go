@@ -63,15 +63,6 @@ func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf
 	return o.SourceRoleName, true
 }
 
-// IsSetSourceRoleName returns a boolean if a field has been set.
-func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6RoleMappingsInner) IsSetSourceRoleName() bool {
-	if o != nil && !IsNil(o.SourceRoleName) {
-		return true
-	}
-
-	return false
-}
-
 // SetSourceRoleName gets a reference to the given string and assigns it to the SourceRoleName field.
 func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6RoleMappingsInner) SetSourceRoleName(v string) {
 	o.SourceRoleName = &v
@@ -96,28 +87,9 @@ func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf
 	return o.SourceRoleFqn.Get(), o.SourceRoleFqn.IsSet()
 }
 
-// IsSetSourceRoleFqn returns a boolean if a field has been set.
-func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6RoleMappingsInner) IsSetSourceRoleFqn() bool {
-	if o != nil && o.SourceRoleFqn.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSourceRoleFqn gets a reference to the given NullableString and assigns it to the SourceRoleFqn field.
 func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6RoleMappingsInner) SetSourceRoleFqn(v string) {
 	o.SourceRoleFqn.Set(&v)
-}
-
-// SetSourceRoleFqnNil sets the value for SourceRoleFqn to be an explicit nil
-func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6RoleMappingsInner) SetSourceRoleFqnNil() {
-	o.SourceRoleFqn.Set(nil)
-}
-
-// UnsetSourceRoleFqn ensures that no value is present for SourceRoleFqn, not even an explicit nil
-func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6RoleMappingsInner) UnsetSourceRoleFqn() {
-	o.SourceRoleFqn.Unset()
 }
 
 // GetMappedRole returns the MappedRole field value if set, zero value otherwise.
@@ -136,15 +108,6 @@ func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf
 		return nil, false
 	}
 	return o.MappedRole, true
-}
-
-// IsSetMappedRole returns a boolean if a field has been set.
-func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6RoleMappingsInner) IsSetMappedRole() bool {
-	if o != nil && !IsNil(o.MappedRole) {
-		return true
-	}
-
-	return false
 }
 
 // SetMappedRole gets a reference to the given ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6RoleMappingsInnerMappedRole and assigns it to the MappedRole field.

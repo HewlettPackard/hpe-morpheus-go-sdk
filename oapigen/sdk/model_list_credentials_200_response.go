@@ -62,15 +62,6 @@ func (o *ListCredentials200Response) GetCredentialsOk() ([]ListCredentials200Res
 	return o.Credentials, true
 }
 
-// IsSetCredentials returns a boolean if a field has been set.
-func (o *ListCredentials200Response) IsSetCredentials() bool {
-	if o != nil && !IsNil(o.Credentials) {
-		return true
-	}
-
-	return false
-}
-
 // SetCredentials gets a reference to the given []ListCredentials200ResponseAllOfCredentialsInner and assigns it to the Credentials field.
 func (o *ListCredentials200Response) SetCredentials(v []ListCredentials200ResponseAllOfCredentialsInner) {
 	o.Credentials = v
@@ -92,15 +83,6 @@ func (o *ListCredentials200Response) GetMetaOk() (*ListApprovals200ResponseAllOf
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListCredentials200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

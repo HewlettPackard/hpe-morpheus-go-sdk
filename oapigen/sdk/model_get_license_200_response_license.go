@@ -127,15 +127,6 @@ func (o *GetLicense200ResponseLicense) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetLicense200ResponseLicense) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetLicense200ResponseLicense) SetId(v int64) {
 	o.Id = &v
@@ -157,15 +148,6 @@ func (o *GetLicense200ResponseLicense) GetKeyIdOk() (*string, bool) {
 		return nil, false
 	}
 	return o.KeyId, true
-}
-
-// IsSetKeyId returns a boolean if a field has been set.
-func (o *GetLicense200ResponseLicense) IsSetKeyId() bool {
-	if o != nil && !IsNil(o.KeyId) {
-		return true
-	}
-
-	return false
 }
 
 // SetKeyId gets a reference to the given string and assigns it to the KeyId field.
@@ -191,15 +173,6 @@ func (o *GetLicense200ResponseLicense) GetHashOk() (*string, bool) {
 	return o.Hash, true
 }
 
-// IsSetHash returns a boolean if a field has been set.
-func (o *GetLicense200ResponseLicense) IsSetHash() bool {
-	if o != nil && !IsNil(o.Hash) {
-		return true
-	}
-
-	return false
-}
-
 // SetHash gets a reference to the given string and assigns it to the Hash field.
 func (o *GetLicense200ResponseLicense) SetHash(v string) {
 	o.Hash = &v
@@ -221,15 +194,6 @@ func (o *GetLicense200ResponseLicense) GetLicenseVersionOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.LicenseVersion, true
-}
-
-// IsSetLicenseVersion returns a boolean if a field has been set.
-func (o *GetLicense200ResponseLicense) IsSetLicenseVersion() bool {
-	if o != nil && !IsNil(o.LicenseVersion) {
-		return true
-	}
-
-	return false
 }
 
 // SetLicenseVersion gets a reference to the given int64 and assigns it to the LicenseVersion field.
@@ -255,15 +219,6 @@ func (o *GetLicense200ResponseLicense) GetProductTierOk() (*string, bool) {
 	return o.ProductTier, true
 }
 
-// IsSetProductTier returns a boolean if a field has been set.
-func (o *GetLicense200ResponseLicense) IsSetProductTier() bool {
-	if o != nil && !IsNil(o.ProductTier) {
-		return true
-	}
-
-	return false
-}
-
 // SetProductTier gets a reference to the given string and assigns it to the ProductTier field.
 func (o *GetLicense200ResponseLicense) SetProductTier(v string) {
 	o.ProductTier = &v
@@ -285,15 +240,6 @@ func (o *GetLicense200ResponseLicense) GetStartDateOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.StartDate, true
-}
-
-// IsSetStartDate returns a boolean if a field has been set.
-func (o *GetLicense200ResponseLicense) IsSetStartDate() bool {
-	if o != nil && !IsNil(o.StartDate) {
-		return true
-	}
-
-	return false
 }
 
 // SetStartDate gets a reference to the given time.Time and assigns it to the StartDate field.
@@ -319,15 +265,6 @@ func (o *GetLicense200ResponseLicense) GetEndDateOk() (*time.Time, bool) {
 	return o.EndDate, true
 }
 
-// IsSetEndDate returns a boolean if a field has been set.
-func (o *GetLicense200ResponseLicense) IsSetEndDate() bool {
-	if o != nil && !IsNil(o.EndDate) {
-		return true
-	}
-
-	return false
-}
-
 // SetEndDate gets a reference to the given time.Time and assigns it to the EndDate field.
 func (o *GetLicense200ResponseLicense) SetEndDate(v time.Time) {
 	o.EndDate = &v
@@ -349,15 +286,6 @@ func (o *GetLicense200ResponseLicense) GetMaxInstancesOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.MaxInstances, true
-}
-
-// IsSetMaxInstances returns a boolean if a field has been set.
-func (o *GetLicense200ResponseLicense) IsSetMaxInstances() bool {
-	if o != nil && !IsNil(o.MaxInstances) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxInstances gets a reference to the given int64 and assigns it to the MaxInstances field.
@@ -383,15 +311,6 @@ func (o *GetLicense200ResponseLicense) GetMaxMemoryOk() (*int64, bool) {
 	return o.MaxMemory, true
 }
 
-// IsSetMaxMemory returns a boolean if a field has been set.
-func (o *GetLicense200ResponseLicense) IsSetMaxMemory() bool {
-	if o != nil && !IsNil(o.MaxMemory) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxMemory gets a reference to the given int64 and assigns it to the MaxMemory field.
 func (o *GetLicense200ResponseLicense) SetMaxMemory(v int64) {
 	o.MaxMemory = &v
@@ -415,15 +334,6 @@ func (o *GetLicense200ResponseLicense) GetMaxStorageOk() (*int64, bool) {
 	return o.MaxStorage, true
 }
 
-// IsSetMaxStorage returns a boolean if a field has been set.
-func (o *GetLicense200ResponseLicense) IsSetMaxStorage() bool {
-	if o != nil && !IsNil(o.MaxStorage) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxStorage gets a reference to the given int64 and assigns it to the MaxStorage field.
 func (o *GetLicense200ResponseLicense) SetMaxStorage(v int64) {
 	o.MaxStorage = &v
@@ -445,15 +355,6 @@ func (o *GetLicense200ResponseLicense) GetLimitTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.LimitType, true
-}
-
-// IsSetLimitType returns a boolean if a field has been set.
-func (o *GetLicense200ResponseLicense) IsSetLimitType() bool {
-	if o != nil && !IsNil(o.LimitType) {
-		return true
-	}
-
-	return false
 }
 
 // SetLimitType gets a reference to the given string and assigns it to the LimitType field.
@@ -480,28 +381,9 @@ func (o *GetLicense200ResponseLicense) GetMaxManagedServersOk() (*int64, bool) {
 	return o.MaxManagedServers.Get(), o.MaxManagedServers.IsSet()
 }
 
-// IsSetMaxManagedServers returns a boolean if a field has been set.
-func (o *GetLicense200ResponseLicense) IsSetMaxManagedServers() bool {
-	if o != nil && o.MaxManagedServers.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxManagedServers gets a reference to the given NullableInt64 and assigns it to the MaxManagedServers field.
 func (o *GetLicense200ResponseLicense) SetMaxManagedServers(v int64) {
 	o.MaxManagedServers.Set(&v)
-}
-
-// SetMaxManagedServersNil sets the value for MaxManagedServers to be an explicit nil
-func (o *GetLicense200ResponseLicense) SetMaxManagedServersNil() {
-	o.MaxManagedServers.Set(nil)
-}
-
-// UnsetMaxManagedServers ensures that no value is present for MaxManagedServers, not even an explicit nil
-func (o *GetLicense200ResponseLicense) UnsetMaxManagedServers() {
-	o.MaxManagedServers.Unset()
 }
 
 // GetMaxDiscoveredServers returns the MaxDiscoveredServers field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -523,28 +405,9 @@ func (o *GetLicense200ResponseLicense) GetMaxDiscoveredServersOk() (*int64, bool
 	return o.MaxDiscoveredServers.Get(), o.MaxDiscoveredServers.IsSet()
 }
 
-// IsSetMaxDiscoveredServers returns a boolean if a field has been set.
-func (o *GetLicense200ResponseLicense) IsSetMaxDiscoveredServers() bool {
-	if o != nil && o.MaxDiscoveredServers.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxDiscoveredServers gets a reference to the given NullableInt64 and assigns it to the MaxDiscoveredServers field.
 func (o *GetLicense200ResponseLicense) SetMaxDiscoveredServers(v int64) {
 	o.MaxDiscoveredServers.Set(&v)
-}
-
-// SetMaxDiscoveredServersNil sets the value for MaxDiscoveredServers to be an explicit nil
-func (o *GetLicense200ResponseLicense) SetMaxDiscoveredServersNil() {
-	o.MaxDiscoveredServers.Set(nil)
-}
-
-// UnsetMaxDiscoveredServers ensures that no value is present for MaxDiscoveredServers, not even an explicit nil
-func (o *GetLicense200ResponseLicense) UnsetMaxDiscoveredServers() {
-	o.MaxDiscoveredServers.Unset()
 }
 
 // GetMaxHosts returns the MaxHosts field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -566,28 +429,9 @@ func (o *GetLicense200ResponseLicense) GetMaxHostsOk() (*int64, bool) {
 	return o.MaxHosts.Get(), o.MaxHosts.IsSet()
 }
 
-// IsSetMaxHosts returns a boolean if a field has been set.
-func (o *GetLicense200ResponseLicense) IsSetMaxHosts() bool {
-	if o != nil && o.MaxHosts.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxHosts gets a reference to the given NullableInt64 and assigns it to the MaxHosts field.
 func (o *GetLicense200ResponseLicense) SetMaxHosts(v int64) {
 	o.MaxHosts.Set(&v)
-}
-
-// SetMaxHostsNil sets the value for MaxHosts to be an explicit nil
-func (o *GetLicense200ResponseLicense) SetMaxHostsNil() {
-	o.MaxHosts.Set(nil)
-}
-
-// UnsetMaxHosts ensures that no value is present for MaxHosts, not even an explicit nil
-func (o *GetLicense200ResponseLicense) UnsetMaxHosts() {
-	o.MaxHosts.Unset()
 }
 
 // GetMaxMvm returns the MaxMvm field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -609,28 +453,9 @@ func (o *GetLicense200ResponseLicense) GetMaxMvmOk() (*int64, bool) {
 	return o.MaxMvm.Get(), o.MaxMvm.IsSet()
 }
 
-// IsSetMaxMvm returns a boolean if a field has been set.
-func (o *GetLicense200ResponseLicense) IsSetMaxMvm() bool {
-	if o != nil && o.MaxMvm.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxMvm gets a reference to the given NullableInt64 and assigns it to the MaxMvm field.
 func (o *GetLicense200ResponseLicense) SetMaxMvm(v int64) {
 	o.MaxMvm.Set(&v)
-}
-
-// SetMaxMvmNil sets the value for MaxMvm to be an explicit nil
-func (o *GetLicense200ResponseLicense) SetMaxMvmNil() {
-	o.MaxMvm.Set(nil)
-}
-
-// UnsetMaxMvm ensures that no value is present for MaxMvm, not even an explicit nil
-func (o *GetLicense200ResponseLicense) UnsetMaxMvm() {
-	o.MaxMvm.Unset()
 }
 
 // GetMaxMvmSockets returns the MaxMvmSockets field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -652,28 +477,9 @@ func (o *GetLicense200ResponseLicense) GetMaxMvmSocketsOk() (*int64, bool) {
 	return o.MaxMvmSockets.Get(), o.MaxMvmSockets.IsSet()
 }
 
-// IsSetMaxMvmSockets returns a boolean if a field has been set.
-func (o *GetLicense200ResponseLicense) IsSetMaxMvmSockets() bool {
-	if o != nil && o.MaxMvmSockets.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxMvmSockets gets a reference to the given NullableInt64 and assigns it to the MaxMvmSockets field.
 func (o *GetLicense200ResponseLicense) SetMaxMvmSockets(v int64) {
 	o.MaxMvmSockets.Set(&v)
-}
-
-// SetMaxMvmSocketsNil sets the value for MaxMvmSockets to be an explicit nil
-func (o *GetLicense200ResponseLicense) SetMaxMvmSocketsNil() {
-	o.MaxMvmSockets.Set(nil)
-}
-
-// UnsetMaxMvmSockets ensures that no value is present for MaxMvmSockets, not even an explicit nil
-func (o *GetLicense200ResponseLicense) UnsetMaxMvmSockets() {
-	o.MaxMvmSockets.Unset()
 }
 
 // GetMaxSockets returns the MaxSockets field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -695,28 +501,9 @@ func (o *GetLicense200ResponseLicense) GetMaxSocketsOk() (*int64, bool) {
 	return o.MaxSockets.Get(), o.MaxSockets.IsSet()
 }
 
-// IsSetMaxSockets returns a boolean if a field has been set.
-func (o *GetLicense200ResponseLicense) IsSetMaxSockets() bool {
-	if o != nil && o.MaxSockets.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxSockets gets a reference to the given NullableInt64 and assigns it to the MaxSockets field.
 func (o *GetLicense200ResponseLicense) SetMaxSockets(v int64) {
 	o.MaxSockets.Set(&v)
-}
-
-// SetMaxSocketsNil sets the value for MaxSockets to be an explicit nil
-func (o *GetLicense200ResponseLicense) SetMaxSocketsNil() {
-	o.MaxSockets.Set(nil)
-}
-
-// UnsetMaxSockets ensures that no value is present for MaxSockets, not even an explicit nil
-func (o *GetLicense200ResponseLicense) UnsetMaxSockets() {
-	o.MaxSockets.Unset()
 }
 
 // GetMaxIac returns the MaxIac field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -738,28 +525,9 @@ func (o *GetLicense200ResponseLicense) GetMaxIacOk() (*int64, bool) {
 	return o.MaxIac.Get(), o.MaxIac.IsSet()
 }
 
-// IsSetMaxIac returns a boolean if a field has been set.
-func (o *GetLicense200ResponseLicense) IsSetMaxIac() bool {
-	if o != nil && o.MaxIac.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxIac gets a reference to the given NullableInt64 and assigns it to the MaxIac field.
 func (o *GetLicense200ResponseLicense) SetMaxIac(v int64) {
 	o.MaxIac.Set(&v)
-}
-
-// SetMaxIacNil sets the value for MaxIac to be an explicit nil
-func (o *GetLicense200ResponseLicense) SetMaxIacNil() {
-	o.MaxIac.Set(nil)
-}
-
-// UnsetMaxIac ensures that no value is present for MaxIac, not even an explicit nil
-func (o *GetLicense200ResponseLicense) UnsetMaxIac() {
-	o.MaxIac.Unset()
 }
 
 // GetMaxXaas returns the MaxXaas field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -781,28 +549,9 @@ func (o *GetLicense200ResponseLicense) GetMaxXaasOk() (*int64, bool) {
 	return o.MaxXaas.Get(), o.MaxXaas.IsSet()
 }
 
-// IsSetMaxXaas returns a boolean if a field has been set.
-func (o *GetLicense200ResponseLicense) IsSetMaxXaas() bool {
-	if o != nil && o.MaxXaas.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxXaas gets a reference to the given NullableInt64 and assigns it to the MaxXaas field.
 func (o *GetLicense200ResponseLicense) SetMaxXaas(v int64) {
 	o.MaxXaas.Set(&v)
-}
-
-// SetMaxXaasNil sets the value for MaxXaas to be an explicit nil
-func (o *GetLicense200ResponseLicense) SetMaxXaasNil() {
-	o.MaxXaas.Set(nil)
-}
-
-// UnsetMaxXaas ensures that no value is present for MaxXaas, not even an explicit nil
-func (o *GetLicense200ResponseLicense) UnsetMaxXaas() {
-	o.MaxXaas.Unset()
 }
 
 // GetMaxExecutions returns the MaxExecutions field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -824,28 +573,9 @@ func (o *GetLicense200ResponseLicense) GetMaxExecutionsOk() (*int64, bool) {
 	return o.MaxExecutions.Get(), o.MaxExecutions.IsSet()
 }
 
-// IsSetMaxExecutions returns a boolean if a field has been set.
-func (o *GetLicense200ResponseLicense) IsSetMaxExecutions() bool {
-	if o != nil && o.MaxExecutions.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxExecutions gets a reference to the given NullableInt64 and assigns it to the MaxExecutions field.
 func (o *GetLicense200ResponseLicense) SetMaxExecutions(v int64) {
 	o.MaxExecutions.Set(&v)
-}
-
-// SetMaxExecutionsNil sets the value for MaxExecutions to be an explicit nil
-func (o *GetLicense200ResponseLicense) SetMaxExecutionsNil() {
-	o.MaxExecutions.Set(nil)
-}
-
-// UnsetMaxExecutions ensures that no value is present for MaxExecutions, not even an explicit nil
-func (o *GetLicense200ResponseLicense) UnsetMaxExecutions() {
-	o.MaxExecutions.Unset()
 }
 
 // GetMaxDistributedWorkers returns the MaxDistributedWorkers field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -867,28 +597,9 @@ func (o *GetLicense200ResponseLicense) GetMaxDistributedWorkersOk() (*int64, boo
 	return o.MaxDistributedWorkers.Get(), o.MaxDistributedWorkers.IsSet()
 }
 
-// IsSetMaxDistributedWorkers returns a boolean if a field has been set.
-func (o *GetLicense200ResponseLicense) IsSetMaxDistributedWorkers() bool {
-	if o != nil && o.MaxDistributedWorkers.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxDistributedWorkers gets a reference to the given NullableInt64 and assigns it to the MaxDistributedWorkers field.
 func (o *GetLicense200ResponseLicense) SetMaxDistributedWorkers(v int64) {
 	o.MaxDistributedWorkers.Set(&v)
-}
-
-// SetMaxDistributedWorkersNil sets the value for MaxDistributedWorkers to be an explicit nil
-func (o *GetLicense200ResponseLicense) SetMaxDistributedWorkersNil() {
-	o.MaxDistributedWorkers.Set(nil)
-}
-
-// UnsetMaxDistributedWorkers ensures that no value is present for MaxDistributedWorkers, not even an explicit nil
-func (o *GetLicense200ResponseLicense) UnsetMaxDistributedWorkers() {
-	o.MaxDistributedWorkers.Unset()
 }
 
 // GetMaxDiscoveredObjects returns the MaxDiscoveredObjects field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -910,28 +621,9 @@ func (o *GetLicense200ResponseLicense) GetMaxDiscoveredObjectsOk() (*int64, bool
 	return o.MaxDiscoveredObjects.Get(), o.MaxDiscoveredObjects.IsSet()
 }
 
-// IsSetMaxDiscoveredObjects returns a boolean if a field has been set.
-func (o *GetLicense200ResponseLicense) IsSetMaxDiscoveredObjects() bool {
-	if o != nil && o.MaxDiscoveredObjects.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxDiscoveredObjects gets a reference to the given NullableInt64 and assigns it to the MaxDiscoveredObjects field.
 func (o *GetLicense200ResponseLicense) SetMaxDiscoveredObjects(v int64) {
 	o.MaxDiscoveredObjects.Set(&v)
-}
-
-// SetMaxDiscoveredObjectsNil sets the value for MaxDiscoveredObjects to be an explicit nil
-func (o *GetLicense200ResponseLicense) SetMaxDiscoveredObjectsNil() {
-	o.MaxDiscoveredObjects.Set(nil)
-}
-
-// UnsetMaxDiscoveredObjects ensures that no value is present for MaxDiscoveredObjects, not even an explicit nil
-func (o *GetLicense200ResponseLicense) UnsetMaxDiscoveredObjects() {
-	o.MaxDiscoveredObjects.Unset()
 }
 
 // GetHardLimit returns the HardLimit field value if set, zero value otherwise.
@@ -950,15 +642,6 @@ func (o *GetLicense200ResponseLicense) GetHardLimitOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.HardLimit, true
-}
-
-// IsSetHardLimit returns a boolean if a field has been set.
-func (o *GetLicense200ResponseLicense) IsSetHardLimit() bool {
-	if o != nil && !IsNil(o.HardLimit) {
-		return true
-	}
-
-	return false
 }
 
 // SetHardLimit gets a reference to the given bool and assigns it to the HardLimit field.
@@ -984,15 +667,6 @@ func (o *GetLicense200ResponseLicense) GetFreeTrialOk() (*bool, bool) {
 	return o.FreeTrial, true
 }
 
-// IsSetFreeTrial returns a boolean if a field has been set.
-func (o *GetLicense200ResponseLicense) IsSetFreeTrial() bool {
-	if o != nil && !IsNil(o.FreeTrial) {
-		return true
-	}
-
-	return false
-}
-
 // SetFreeTrial gets a reference to the given bool and assigns it to the FreeTrial field.
 func (o *GetLicense200ResponseLicense) SetFreeTrial(v bool) {
 	o.FreeTrial = &v
@@ -1014,15 +688,6 @@ func (o *GetLicense200ResponseLicense) GetMultiTenantOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.MultiTenant, true
-}
-
-// IsSetMultiTenant returns a boolean if a field has been set.
-func (o *GetLicense200ResponseLicense) IsSetMultiTenant() bool {
-	if o != nil && !IsNil(o.MultiTenant) {
-		return true
-	}
-
-	return false
 }
 
 // SetMultiTenant gets a reference to the given bool and assigns it to the MultiTenant field.
@@ -1048,15 +713,6 @@ func (o *GetLicense200ResponseLicense) GetWhitelabelOk() (*bool, bool) {
 	return o.Whitelabel, true
 }
 
-// IsSetWhitelabel returns a boolean if a field has been set.
-func (o *GetLicense200ResponseLicense) IsSetWhitelabel() bool {
-	if o != nil && !IsNil(o.Whitelabel) {
-		return true
-	}
-
-	return false
-}
-
 // SetWhitelabel gets a reference to the given bool and assigns it to the Whitelabel field.
 func (o *GetLicense200ResponseLicense) SetWhitelabel(v bool) {
 	o.Whitelabel = &v
@@ -1078,15 +734,6 @@ func (o *GetLicense200ResponseLicense) GetReportStatusOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.ReportStatus, true
-}
-
-// IsSetReportStatus returns a boolean if a field has been set.
-func (o *GetLicense200ResponseLicense) IsSetReportStatus() bool {
-	if o != nil && !IsNil(o.ReportStatus) {
-		return true
-	}
-
-	return false
 }
 
 // SetReportStatus gets a reference to the given bool and assigns it to the ReportStatus field.
@@ -1112,15 +759,6 @@ func (o *GetLicense200ResponseLicense) GetSupportLevelOk() (*string, bool) {
 	return o.SupportLevel, true
 }
 
-// IsSetSupportLevel returns a boolean if a field has been set.
-func (o *GetLicense200ResponseLicense) IsSetSupportLevel() bool {
-	if o != nil && !IsNil(o.SupportLevel) {
-		return true
-	}
-
-	return false
-}
-
 // SetSupportLevel gets a reference to the given string and assigns it to the SupportLevel field.
 func (o *GetLicense200ResponseLicense) SetSupportLevel(v string) {
 	o.SupportLevel = &v
@@ -1142,15 +780,6 @@ func (o *GetLicense200ResponseLicense) GetAccountNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.AccountName, true
-}
-
-// IsSetAccountName returns a boolean if a field has been set.
-func (o *GetLicense200ResponseLicense) IsSetAccountName() bool {
-	if o != nil && !IsNil(o.AccountName) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccountName gets a reference to the given string and assigns it to the AccountName field.
@@ -1177,15 +806,6 @@ func (o *GetLicense200ResponseLicense) GetConfigOk() (map[string]interface{}, bo
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *GetLicense200ResponseLicense) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
 func (o *GetLicense200ResponseLicense) SetConfig(v map[string]interface{}) {
 	o.Config = v
@@ -1210,28 +830,9 @@ func (o *GetLicense200ResponseLicense) GetAmazonProductCodesOk() (*string, bool)
 	return o.AmazonProductCodes.Get(), o.AmazonProductCodes.IsSet()
 }
 
-// IsSetAmazonProductCodes returns a boolean if a field has been set.
-func (o *GetLicense200ResponseLicense) IsSetAmazonProductCodes() bool {
-	if o != nil && o.AmazonProductCodes.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAmazonProductCodes gets a reference to the given NullableString and assigns it to the AmazonProductCodes field.
 func (o *GetLicense200ResponseLicense) SetAmazonProductCodes(v string) {
 	o.AmazonProductCodes.Set(&v)
-}
-
-// SetAmazonProductCodesNil sets the value for AmazonProductCodes to be an explicit nil
-func (o *GetLicense200ResponseLicense) SetAmazonProductCodesNil() {
-	o.AmazonProductCodes.Set(nil)
-}
-
-// UnsetAmazonProductCodes ensures that no value is present for AmazonProductCodes, not even an explicit nil
-func (o *GetLicense200ResponseLicense) UnsetAmazonProductCodes() {
-	o.AmazonProductCodes.Unset()
 }
 
 // GetFeatures returns the Features field value if set, zero value otherwise.
@@ -1250,15 +851,6 @@ func (o *GetLicense200ResponseLicense) GetFeaturesOk() (*GetLicense200ResponseLi
 		return nil, false
 	}
 	return o.Features, true
-}
-
-// IsSetFeatures returns a boolean if a field has been set.
-func (o *GetLicense200ResponseLicense) IsSetFeatures() bool {
-	if o != nil && !IsNil(o.Features) {
-		return true
-	}
-
-	return false
 }
 
 // SetFeatures gets a reference to the given GetLicense200ResponseLicenseFeatures and assigns it to the Features field.
@@ -1285,28 +877,9 @@ func (o *GetLicense200ResponseLicense) GetZoneTypesOk() (*string, bool) {
 	return o.ZoneTypes.Get(), o.ZoneTypes.IsSet()
 }
 
-// IsSetZoneTypes returns a boolean if a field has been set.
-func (o *GetLicense200ResponseLicense) IsSetZoneTypes() bool {
-	if o != nil && o.ZoneTypes.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetZoneTypes gets a reference to the given NullableString and assigns it to the ZoneTypes field.
 func (o *GetLicense200ResponseLicense) SetZoneTypes(v string) {
 	o.ZoneTypes.Set(&v)
-}
-
-// SetZoneTypesNil sets the value for ZoneTypes to be an explicit nil
-func (o *GetLicense200ResponseLicense) SetZoneTypesNil() {
-	o.ZoneTypes.Set(nil)
-}
-
-// UnsetZoneTypes ensures that no value is present for ZoneTypes, not even an explicit nil
-func (o *GetLicense200ResponseLicense) UnsetZoneTypes() {
-	o.ZoneTypes.Unset()
 }
 
 // GetLastUpdated returns the LastUpdated field value if set, zero value otherwise.
@@ -1325,15 +898,6 @@ func (o *GetLicense200ResponseLicense) GetLastUpdatedOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *GetLicense200ResponseLicense) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
@@ -1357,15 +921,6 @@ func (o *GetLicense200ResponseLicense) GetDateCreatedOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.DateCreated, true
-}
-
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *GetLicense200ResponseLicense) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
@@ -1392,28 +947,9 @@ func (o *GetLicense200ResponseLicense) GetRecalculationDateOk() (*time.Time, boo
 	return o.RecalculationDate.Get(), o.RecalculationDate.IsSet()
 }
 
-// IsSetRecalculationDate returns a boolean if a field has been set.
-func (o *GetLicense200ResponseLicense) IsSetRecalculationDate() bool {
-	if o != nil && o.RecalculationDate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRecalculationDate gets a reference to the given NullableTime and assigns it to the RecalculationDate field.
 func (o *GetLicense200ResponseLicense) SetRecalculationDate(v time.Time) {
 	o.RecalculationDate.Set(&v)
-}
-
-// SetRecalculationDateNil sets the value for RecalculationDate to be an explicit nil
-func (o *GetLicense200ResponseLicense) SetRecalculationDateNil() {
-	o.RecalculationDate.Set(nil)
-}
-
-// UnsetRecalculationDate ensures that no value is present for RecalculationDate, not even an explicit nil
-func (o *GetLicense200ResponseLicense) UnsetRecalculationDate() {
-	o.RecalculationDate.Unset()
 }
 
 func (o GetLicense200ResponseLicense) MarshalJSON() ([]byte, error) {

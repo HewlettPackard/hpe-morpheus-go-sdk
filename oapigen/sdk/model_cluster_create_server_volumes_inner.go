@@ -86,15 +86,6 @@ func (o *ClusterCreateServerVolumesInner) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ClusterCreateServerVolumesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ClusterCreateServerVolumesInner) SetId(v int64) {
 	o.Id = &v
@@ -116,15 +107,6 @@ func (o *ClusterCreateServerVolumesInner) GetRootVolumeOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.RootVolume, true
-}
-
-// IsSetRootVolume returns a boolean if a field has been set.
-func (o *ClusterCreateServerVolumesInner) IsSetRootVolume() bool {
-	if o != nil && !IsNil(o.RootVolume) {
-		return true
-	}
-
-	return false
 }
 
 // SetRootVolume gets a reference to the given bool and assigns it to the RootVolume field.
@@ -174,15 +156,6 @@ func (o *ClusterCreateServerVolumesInner) GetSizeOk() (*int64, bool) {
 	return o.Size, true
 }
 
-// IsSetSize returns a boolean if a field has been set.
-func (o *ClusterCreateServerVolumesInner) IsSetSize() bool {
-	if o != nil && !IsNil(o.Size) {
-		return true
-	}
-
-	return false
-}
-
 // SetSize gets a reference to the given int64 and assigns it to the Size field.
 func (o *ClusterCreateServerVolumesInner) SetSize(v int64) {
 	o.Size = &v
@@ -207,28 +180,9 @@ func (o *ClusterCreateServerVolumesInner) GetSizeIdOk() (*string, bool) {
 	return o.SizeId.Get(), o.SizeId.IsSet()
 }
 
-// IsSetSizeId returns a boolean if a field has been set.
-func (o *ClusterCreateServerVolumesInner) IsSetSizeId() bool {
-	if o != nil && o.SizeId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSizeId gets a reference to the given NullableString and assigns it to the SizeId field.
 func (o *ClusterCreateServerVolumesInner) SetSizeId(v string) {
 	o.SizeId.Set(&v)
-}
-
-// SetSizeIdNil sets the value for SizeId to be an explicit nil
-func (o *ClusterCreateServerVolumesInner) SetSizeIdNil() {
-	o.SizeId.Set(nil)
-}
-
-// UnsetSizeId ensures that no value is present for SizeId, not even an explicit nil
-func (o *ClusterCreateServerVolumesInner) UnsetSizeId() {
-	o.SizeId.Unset()
 }
 
 // GetStorageType returns the StorageType field value if set, zero value otherwise.
@@ -247,15 +201,6 @@ func (o *ClusterCreateServerVolumesInner) GetStorageTypeOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.StorageType, true
-}
-
-// IsSetStorageType returns a boolean if a field has been set.
-func (o *ClusterCreateServerVolumesInner) IsSetStorageType() bool {
-	if o != nil && !IsNil(o.StorageType) {
-		return true
-	}
-
-	return false
 }
 
 // SetStorageType gets a reference to the given int64 and assigns it to the StorageType field.

@@ -73,15 +73,6 @@ func (o *Report) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *Report) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *Report) SetId(v int64) {
 	o.Id = &v
@@ -103,15 +94,6 @@ func (o *Report) GetTypeOk() (*RunReports200ResponseAllOfReportResultType, bool)
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *Report) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given RunReports200ResponseAllOfReportResultType and assigns it to the Type field.
@@ -138,28 +120,9 @@ func (o *Report) GetReportTitleOk() (*string, bool) {
 	return o.ReportTitle.Get(), o.ReportTitle.IsSet()
 }
 
-// IsSetReportTitle returns a boolean if a field has been set.
-func (o *Report) IsSetReportTitle() bool {
-	if o != nil && o.ReportTitle.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetReportTitle gets a reference to the given NullableString and assigns it to the ReportTitle field.
 func (o *Report) SetReportTitle(v string) {
 	o.ReportTitle.Set(&v)
-}
-
-// SetReportTitleNil sets the value for ReportTitle to be an explicit nil
-func (o *Report) SetReportTitleNil() {
-	o.ReportTitle.Set(nil)
-}
-
-// UnsetReportTitle ensures that no value is present for ReportTitle, not even an explicit nil
-func (o *Report) UnsetReportTitle() {
-	o.ReportTitle.Unset()
 }
 
 // GetFilterTitle returns the FilterTitle field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -181,28 +144,9 @@ func (o *Report) GetFilterTitleOk() (*string, bool) {
 	return o.FilterTitle.Get(), o.FilterTitle.IsSet()
 }
 
-// IsSetFilterTitle returns a boolean if a field has been set.
-func (o *Report) IsSetFilterTitle() bool {
-	if o != nil && o.FilterTitle.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFilterTitle gets a reference to the given NullableString and assigns it to the FilterTitle field.
 func (o *Report) SetFilterTitle(v string) {
 	o.FilterTitle.Set(&v)
-}
-
-// SetFilterTitleNil sets the value for FilterTitle to be an explicit nil
-func (o *Report) SetFilterTitleNil() {
-	o.FilterTitle.Set(nil)
-}
-
-// UnsetFilterTitle ensures that no value is present for FilterTitle, not even an explicit nil
-func (o *Report) UnsetFilterTitle() {
-	o.FilterTitle.Unset()
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -221,15 +165,6 @@ func (o *Report) GetStatusOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *Report) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -255,15 +190,6 @@ func (o *Report) GetDateCreatedOk() (*time.Time, bool) {
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *Report) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *Report) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -285,15 +211,6 @@ func (o *Report) GetLastUpdatedOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *Report) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
@@ -320,28 +237,9 @@ func (o *Report) GetStartDateOk() (*time.Time, bool) {
 	return o.StartDate.Get(), o.StartDate.IsSet()
 }
 
-// IsSetStartDate returns a boolean if a field has been set.
-func (o *Report) IsSetStartDate() bool {
-	if o != nil && o.StartDate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStartDate gets a reference to the given NullableTime and assigns it to the StartDate field.
 func (o *Report) SetStartDate(v time.Time) {
 	o.StartDate.Set(&v)
-}
-
-// SetStartDateNil sets the value for StartDate to be an explicit nil
-func (o *Report) SetStartDateNil() {
-	o.StartDate.Set(nil)
-}
-
-// UnsetStartDate ensures that no value is present for StartDate, not even an explicit nil
-func (o *Report) UnsetStartDate() {
-	o.StartDate.Unset()
 }
 
 // GetEndDate returns the EndDate field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -363,28 +261,9 @@ func (o *Report) GetEndDateOk() (*time.Time, bool) {
 	return o.EndDate.Get(), o.EndDate.IsSet()
 }
 
-// IsSetEndDate returns a boolean if a field has been set.
-func (o *Report) IsSetEndDate() bool {
-	if o != nil && o.EndDate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetEndDate gets a reference to the given NullableTime and assigns it to the EndDate field.
 func (o *Report) SetEndDate(v time.Time) {
 	o.EndDate.Set(&v)
-}
-
-// SetEndDateNil sets the value for EndDate to be an explicit nil
-func (o *Report) SetEndDateNil() {
-	o.EndDate.Set(nil)
-}
-
-// UnsetEndDate ensures that no value is present for EndDate, not even an explicit nil
-func (o *Report) UnsetEndDate() {
-	o.EndDate.Unset()
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
@@ -403,15 +282,6 @@ func (o *Report) GetConfigOk() (*RunReports200ResponseAllOfReportResultConfig, b
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *Report) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given RunReports200ResponseAllOfReportResultConfig and assigns it to the Config field.
@@ -437,15 +307,6 @@ func (o *Report) GetCreatedByOk() (*RunReports200ResponseAllOfReportResultCreate
 	return o.CreatedBy, true
 }
 
-// IsSetCreatedBy returns a boolean if a field has been set.
-func (o *Report) IsSetCreatedBy() bool {
-	if o != nil && !IsNil(o.CreatedBy) {
-		return true
-	}
-
-	return false
-}
-
 // SetCreatedBy gets a reference to the given RunReports200ResponseAllOfReportResultCreatedBy and assigns it to the CreatedBy field.
 func (o *Report) SetCreatedBy(v RunReports200ResponseAllOfReportResultCreatedBy) {
 	o.CreatedBy = &v
@@ -467,15 +328,6 @@ func (o *Report) GetRowsOk() ([]RunReports200ResponseAllOfReportResultRowsInner,
 		return nil, false
 	}
 	return o.Rows, true
-}
-
-// IsSetRows returns a boolean if a field has been set.
-func (o *Report) IsSetRows() bool {
-	if o != nil && !IsNil(o.Rows) {
-		return true
-	}
-
-	return false
 }
 
 // SetRows gets a reference to the given []RunReports200ResponseAllOfReportResultRowsInner and assigns it to the Rows field.

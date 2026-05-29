@@ -67,15 +67,6 @@ func (o *GetCypherKey200Response) GetSuccessOk() (*bool, bool) {
 	return o.Success, true
 }
 
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *GetCypherKey200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
-}
-
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.
 func (o *GetCypherKey200Response) SetSuccess(v bool) {
 	o.Success = &v
@@ -97,15 +88,6 @@ func (o *GetCypherKey200Response) GetDataOk() (*GetCypherKey200ResponseAllOfData
 		return nil, false
 	}
 	return o.Data, true
-}
-
-// IsSetData returns a boolean if a field has been set.
-func (o *GetCypherKey200Response) IsSetData() bool {
-	if o != nil && !IsNil(o.Data) {
-		return true
-	}
-
-	return false
 }
 
 // SetData gets a reference to the given GetCypherKey200ResponseAllOfData and assigns it to the Data field.
@@ -131,15 +113,6 @@ func (o *GetCypherKey200Response) GetTypeOk() (*string, bool) {
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *GetCypherKey200Response) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given string and assigns it to the Type field.
 func (o *GetCypherKey200Response) SetType(v string) {
 	o.Type = &v
@@ -163,15 +136,6 @@ func (o *GetCypherKey200Response) GetLeaseDurationOk() (*int32, bool) {
 	return o.LeaseDuration, true
 }
 
-// IsSetLeaseDuration returns a boolean if a field has been set.
-func (o *GetCypherKey200Response) IsSetLeaseDuration() bool {
-	if o != nil && !IsNil(o.LeaseDuration) {
-		return true
-	}
-
-	return false
-}
-
 // SetLeaseDuration gets a reference to the given int32 and assigns it to the LeaseDuration field.
 func (o *GetCypherKey200Response) SetLeaseDuration(v int32) {
 	o.LeaseDuration = &v
@@ -193,15 +157,6 @@ func (o *GetCypherKey200Response) GetCypherOk() (*GetCypherKey200ResponseAllOfCy
 		return nil, false
 	}
 	return o.Cypher, true
-}
-
-// IsSetCypher returns a boolean if a field has been set.
-func (o *GetCypherKey200Response) IsSetCypher() bool {
-	if o != nil && !IsNil(o.Cypher) {
-		return true
-	}
-
-	return false
 }
 
 // SetCypher gets a reference to the given GetCypherKey200ResponseAllOfCypher and assigns it to the Cypher field.

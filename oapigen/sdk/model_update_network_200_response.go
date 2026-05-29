@@ -64,15 +64,6 @@ func (o *UpdateNetwork200Response) GetNetworkOk() (*UpdateNetwork200ResponseAllO
 	return o.Network, true
 }
 
-// IsSetNetwork returns a boolean if a field has been set.
-func (o *UpdateNetwork200Response) IsSetNetwork() bool {
-	if o != nil && !IsNil(o.Network) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetwork gets a reference to the given UpdateNetwork200ResponseAllOfNetwork and assigns it to the Network field.
 func (o *UpdateNetwork200Response) SetNetwork(v UpdateNetwork200ResponseAllOfNetwork) {
 	o.Network = &v
@@ -96,15 +87,6 @@ func (o *UpdateNetwork200Response) GetErrorsOk() (map[string]interface{}, bool) 
 	return o.Errors, true
 }
 
-// IsSetErrors returns a boolean if a field has been set.
-func (o *UpdateNetwork200Response) IsSetErrors() bool {
-	if o != nil && !IsNil(o.Errors) {
-		return true
-	}
-
-	return false
-}
-
 // SetErrors gets a reference to the given map[string]interface{} and assigns it to the Errors field.
 func (o *UpdateNetwork200Response) SetErrors(v map[string]interface{}) {
 	o.Errors = v
@@ -126,15 +108,6 @@ func (o *UpdateNetwork200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *UpdateNetwork200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.
@@ -161,28 +134,9 @@ func (o *UpdateNetwork200Response) GetMsgOk() (*string, bool) {
 	return o.Msg.Get(), o.Msg.IsSet()
 }
 
-// IsSetMsg returns a boolean if a field has been set.
-func (o *UpdateNetwork200Response) IsSetMsg() bool {
-	if o != nil && o.Msg.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMsg gets a reference to the given NullableString and assigns it to the Msg field.
 func (o *UpdateNetwork200Response) SetMsg(v string) {
 	o.Msg.Set(&v)
-}
-
-// SetMsgNil sets the value for Msg to be an explicit nil
-func (o *UpdateNetwork200Response) SetMsgNil() {
-	o.Msg.Set(nil)
-}
-
-// UnsetMsg ensures that no value is present for Msg, not even an explicit nil
-func (o *UpdateNetwork200Response) UnsetMsg() {
-	o.Msg.Unset()
 }
 
 func (o UpdateNetwork200Response) MarshalJSON() ([]byte, error) {

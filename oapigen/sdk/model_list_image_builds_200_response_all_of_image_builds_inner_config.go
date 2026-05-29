@@ -67,15 +67,6 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfig) GetInstanceOk() 
 	return o.Instance, true
 }
 
-// IsSetInstance returns a boolean if a field has been set.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfig) IsSetInstance() bool {
-	if o != nil && !IsNil(o.Instance) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstance gets a reference to the given ListImageBuilds200ResponseAllOfImageBuildsInnerConfigInstance and assigns it to the Instance field.
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfig) SetInstance(v ListImageBuilds200ResponseAllOfImageBuildsInnerConfigInstance) {
 	o.Instance = &v
@@ -97,15 +88,6 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfig) GetNetworkInterf
 		return nil, false
 	}
 	return o.NetworkInterfaces, true
-}
-
-// IsSetNetworkInterfaces returns a boolean if a field has been set.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfig) IsSetNetworkInterfaces() bool {
-	if o != nil && !IsNil(o.NetworkInterfaces) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkInterfaces gets a reference to the given []ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner and assigns it to the NetworkInterfaces field.
@@ -131,15 +113,6 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfig) GetVolumesOk() (
 	return o.Volumes, true
 }
 
-// IsSetVolumes returns a boolean if a field has been set.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfig) IsSetVolumes() bool {
-	if o != nil && !IsNil(o.Volumes) {
-		return true
-	}
-
-	return false
-}
-
 // SetVolumes gets a reference to the given []ListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner and assigns it to the Volumes field.
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfig) SetVolumes(v []ListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner) {
 	o.Volumes = v
@@ -161,15 +134,6 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfig) GetStorageContro
 		return nil, false
 	}
 	return o.StorageControllers, true
-}
-
-// IsSetStorageControllers returns a boolean if a field has been set.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfig) IsSetStorageControllers() bool {
-	if o != nil && !IsNil(o.StorageControllers) {
-		return true
-	}
-
-	return false
 }
 
 // SetStorageControllers gets a reference to the given []map[string]interface{} and assigns it to the StorageControllers field.
@@ -195,15 +159,6 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfig) GetZoneIdOk() (*
 	return o.ZoneId, true
 }
 
-// IsSetZoneId returns a boolean if a field has been set.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfig) IsSetZoneId() bool {
-	if o != nil && !IsNil(o.ZoneId) {
-		return true
-	}
-
-	return false
-}
-
 // SetZoneId gets a reference to the given int64 and assigns it to the ZoneId field.
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfig) SetZoneId(v int64) {
 	o.ZoneId = &v
@@ -227,15 +182,6 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfig) GetConfigOk() (*
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfig) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given ListImageBuilds200ResponseAllOfImageBuildsInnerConfigConfig and assigns it to the Config field.
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfig) SetConfig(v ListImageBuilds200ResponseAllOfImageBuildsInnerConfigConfig) {
 	o.Config = &v
@@ -257,15 +203,6 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfig) GetPlanOk() (*Li
 		return nil, false
 	}
 	return o.Plan, true
-}
-
-// IsSetPlan returns a boolean if a field has been set.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfig) IsSetPlan() bool {
-	if o != nil && !IsNil(o.Plan) {
-		return true
-	}
-
-	return false
 }
 
 // SetPlan gets a reference to the given ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan and assigns it to the Plan field.

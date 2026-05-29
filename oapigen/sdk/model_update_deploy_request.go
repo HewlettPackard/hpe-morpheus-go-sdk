@@ -61,15 +61,6 @@ func (o *UpdateDeployRequest) GetAppDeployOk() (*UpdateDeployRequestAppDeploy, b
 	return o.AppDeploy, true
 }
 
-// IsSetAppDeploy returns a boolean if a field has been set.
-func (o *UpdateDeployRequest) IsSetAppDeploy() bool {
-	if o != nil && !IsNil(o.AppDeploy) {
-		return true
-	}
-
-	return false
-}
-
 // SetAppDeploy gets a reference to the given UpdateDeployRequestAppDeploy and assigns it to the AppDeploy field.
 func (o *UpdateDeployRequest) SetAppDeploy(v UpdateDeployRequestAppDeploy) {
 	o.AppDeploy = &v

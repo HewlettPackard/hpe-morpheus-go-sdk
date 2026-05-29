@@ -121,15 +121,6 @@ func (o *AddBudgetsRequestBudget) GetDescriptionOk() (*string, bool) {
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *AddBudgetsRequestBudget) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *AddBudgetsRequestBudget) SetDescription(v string) {
 	o.Description = &v
@@ -151,15 +142,6 @@ func (o *AddBudgetsRequestBudget) GetScopeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Scope, true
-}
-
-// IsSetScope returns a boolean if a field has been set.
-func (o *AddBudgetsRequestBudget) IsSetScope() bool {
-	if o != nil && !IsNil(o.Scope) {
-		return true
-	}
-
-	return false
 }
 
 // SetScope gets a reference to the given string and assigns it to the Scope field.
@@ -185,15 +167,6 @@ func (o *AddBudgetsRequestBudget) GetPeriodOk() (*string, bool) {
 	return o.Period, true
 }
 
-// IsSetPeriod returns a boolean if a field has been set.
-func (o *AddBudgetsRequestBudget) IsSetPeriod() bool {
-	if o != nil && !IsNil(o.Period) {
-		return true
-	}
-
-	return false
-}
-
 // SetPeriod gets a reference to the given string and assigns it to the Period field.
 func (o *AddBudgetsRequestBudget) SetPeriod(v string) {
 	o.Period = &v
@@ -215,15 +188,6 @@ func (o *AddBudgetsRequestBudget) GetYearOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.Year, true
-}
-
-// IsSetYear returns a boolean if a field has been set.
-func (o *AddBudgetsRequestBudget) IsSetYear() bool {
-	if o != nil && !IsNil(o.Year) {
-		return true
-	}
-
-	return false
 }
 
 // SetYear gets a reference to the given int64 and assigns it to the Year field.
@@ -249,15 +213,6 @@ func (o *AddBudgetsRequestBudget) GetStartDateOk() (*time.Time, bool) {
 	return o.StartDate, true
 }
 
-// IsSetStartDate returns a boolean if a field has been set.
-func (o *AddBudgetsRequestBudget) IsSetStartDate() bool {
-	if o != nil && !IsNil(o.StartDate) {
-		return true
-	}
-
-	return false
-}
-
 // SetStartDate gets a reference to the given time.Time and assigns it to the StartDate field.
 func (o *AddBudgetsRequestBudget) SetStartDate(v time.Time) {
 	o.StartDate = &v
@@ -279,15 +234,6 @@ func (o *AddBudgetsRequestBudget) GetEndDateOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.EndDate, true
-}
-
-// IsSetEndDate returns a boolean if a field has been set.
-func (o *AddBudgetsRequestBudget) IsSetEndDate() bool {
-	if o != nil && !IsNil(o.EndDate) {
-		return true
-	}
-
-	return false
 }
 
 // SetEndDate gets a reference to the given time.Time and assigns it to the EndDate field.
@@ -313,15 +259,6 @@ func (o *AddBudgetsRequestBudget) GetIntervalOk() (*string, bool) {
 	return o.Interval, true
 }
 
-// IsSetInterval returns a boolean if a field has been set.
-func (o *AddBudgetsRequestBudget) IsSetInterval() bool {
-	if o != nil && !IsNil(o.Interval) {
-		return true
-	}
-
-	return false
-}
-
 // SetInterval gets a reference to the given string and assigns it to the Interval field.
 func (o *AddBudgetsRequestBudget) SetInterval(v string) {
 	o.Interval = &v
@@ -343,15 +280,6 @@ func (o *AddBudgetsRequestBudget) GetScopeTenantIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.ScopeTenantId, true
-}
-
-// IsSetScopeTenantId returns a boolean if a field has been set.
-func (o *AddBudgetsRequestBudget) IsSetScopeTenantId() bool {
-	if o != nil && !IsNil(o.ScopeTenantId) {
-		return true
-	}
-
-	return false
 }
 
 // SetScopeTenantId gets a reference to the given int64 and assigns it to the ScopeTenantId field.
@@ -377,15 +305,6 @@ func (o *AddBudgetsRequestBudget) GetScopeGroupIdOk() (*int64, bool) {
 	return o.ScopeGroupId, true
 }
 
-// IsSetScopeGroupId returns a boolean if a field has been set.
-func (o *AddBudgetsRequestBudget) IsSetScopeGroupId() bool {
-	if o != nil && !IsNil(o.ScopeGroupId) {
-		return true
-	}
-
-	return false
-}
-
 // SetScopeGroupId gets a reference to the given int64 and assigns it to the ScopeGroupId field.
 func (o *AddBudgetsRequestBudget) SetScopeGroupId(v int64) {
 	o.ScopeGroupId = &v
@@ -407,15 +326,6 @@ func (o *AddBudgetsRequestBudget) GetScopeCloudIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.ScopeCloudId, true
-}
-
-// IsSetScopeCloudId returns a boolean if a field has been set.
-func (o *AddBudgetsRequestBudget) IsSetScopeCloudId() bool {
-	if o != nil && !IsNil(o.ScopeCloudId) {
-		return true
-	}
-
-	return false
 }
 
 // SetScopeCloudId gets a reference to the given int64 and assigns it to the ScopeCloudId field.
@@ -441,15 +351,6 @@ func (o *AddBudgetsRequestBudget) GetScopeUserIdOk() (*int64, bool) {
 	return o.ScopeUserId, true
 }
 
-// IsSetScopeUserId returns a boolean if a field has been set.
-func (o *AddBudgetsRequestBudget) IsSetScopeUserId() bool {
-	if o != nil && !IsNil(o.ScopeUserId) {
-		return true
-	}
-
-	return false
-}
-
 // SetScopeUserId gets a reference to the given int64 and assigns it to the ScopeUserId field.
 func (o *AddBudgetsRequestBudget) SetScopeUserId(v int64) {
 	o.ScopeUserId = &v
@@ -471,15 +372,6 @@ func (o *AddBudgetsRequestBudget) GetCostsOk() ([]int64, bool) {
 		return nil, false
 	}
 	return o.Costs, true
-}
-
-// IsSetCosts returns a boolean if a field has been set.
-func (o *AddBudgetsRequestBudget) IsSetCosts() bool {
-	if o != nil && !IsNil(o.Costs) {
-		return true
-	}
-
-	return false
 }
 
 // SetCosts gets a reference to the given []int64 and assigns it to the Costs field.
@@ -505,15 +397,6 @@ func (o *AddBudgetsRequestBudget) GetEnabledOk() (*bool, bool) {
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *AddBudgetsRequestBudget) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *AddBudgetsRequestBudget) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -535,15 +418,6 @@ func (o *AddBudgetsRequestBudget) GetForecastTypeOk() (*AddBudgetsRequestBudgetF
 		return nil, false
 	}
 	return o.ForecastType, true
-}
-
-// IsSetForecastType returns a boolean if a field has been set.
-func (o *AddBudgetsRequestBudget) IsSetForecastType() bool {
-	if o != nil && !IsNil(o.ForecastType) {
-		return true
-	}
-
-	return false
 }
 
 // SetForecastType gets a reference to the given AddBudgetsRequestBudgetForecastType and assigns it to the ForecastType field.

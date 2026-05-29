@@ -62,15 +62,6 @@ func (o *GetInvoiceLineItems200Response) GetLineItemOk() (*GetInvoiceLineItems20
 	return o.LineItem, true
 }
 
-// IsSetLineItem returns a boolean if a field has been set.
-func (o *GetInvoiceLineItems200Response) IsSetLineItem() bool {
-	if o != nil && !IsNil(o.LineItem) {
-		return true
-	}
-
-	return false
-}
-
 // SetLineItem gets a reference to the given GetInvoiceLineItems200ResponseAllOfLineItem and assigns it to the LineItem field.
 func (o *GetInvoiceLineItems200Response) SetLineItem(v GetInvoiceLineItems200ResponseAllOfLineItem) {
 	o.LineItem = &v
@@ -92,15 +83,6 @@ func (o *GetInvoiceLineItems200Response) GetMasterAccountOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.MasterAccount, true
-}
-
-// IsSetMasterAccount returns a boolean if a field has been set.
-func (o *GetInvoiceLineItems200Response) IsSetMasterAccount() bool {
-	if o != nil && !IsNil(o.MasterAccount) {
-		return true
-	}
-
-	return false
 }
 
 // SetMasterAccount gets a reference to the given bool and assigns it to the MasterAccount field.

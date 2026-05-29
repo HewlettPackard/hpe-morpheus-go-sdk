@@ -62,15 +62,6 @@ func (o *ListNodeTypes200Response) GetContainerTypesOk() ([]ListNodeTypes200Resp
 	return o.ContainerTypes, true
 }
 
-// IsSetContainerTypes returns a boolean if a field has been set.
-func (o *ListNodeTypes200Response) IsSetContainerTypes() bool {
-	if o != nil && !IsNil(o.ContainerTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetContainerTypes gets a reference to the given []ListNodeTypes200ResponseAllOfContainerTypesInner and assigns it to the ContainerTypes field.
 func (o *ListNodeTypes200Response) SetContainerTypes(v []ListNodeTypes200ResponseAllOfContainerTypesInner) {
 	o.ContainerTypes = v
@@ -92,15 +83,6 @@ func (o *ListNodeTypes200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMe
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListNodeTypes200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

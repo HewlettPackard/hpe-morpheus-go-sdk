@@ -63,15 +63,6 @@ func (o *ClusterDatastoreResourcePermissionsPlansInner) GetIdOk() (*int64, bool)
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ClusterDatastoreResourcePermissionsPlansInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ClusterDatastoreResourcePermissionsPlansInner) SetId(v int64) {
 	o.Id = &v
@@ -95,15 +86,6 @@ func (o *ClusterDatastoreResourcePermissionsPlansInner) GetNameOk() (*string, bo
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ClusterDatastoreResourcePermissionsPlansInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ClusterDatastoreResourcePermissionsPlansInner) SetName(v string) {
 	o.Name = &v
@@ -125,15 +107,6 @@ func (o *ClusterDatastoreResourcePermissionsPlansInner) GetDefaultOk() (*bool, b
 		return nil, false
 	}
 	return o.Default, true
-}
-
-// IsSetDefault returns a boolean if a field has been set.
-func (o *ClusterDatastoreResourcePermissionsPlansInner) IsSetDefault() bool {
-	if o != nil && !IsNil(o.Default) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefault gets a reference to the given bool and assigns it to the Default field.

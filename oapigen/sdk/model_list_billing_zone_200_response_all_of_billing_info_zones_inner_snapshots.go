@@ -64,15 +64,6 @@ func (o *ListBillingZone200ResponseAllOfBillingInfoZonesInnerSnapshots) GetPrice
 	return o.Price, true
 }
 
-// IsSetPrice returns a boolean if a field has been set.
-func (o *ListBillingZone200ResponseAllOfBillingInfoZonesInnerSnapshots) IsSetPrice() bool {
-	if o != nil && !IsNil(o.Price) {
-		return true
-	}
-
-	return false
-}
-
 // SetPrice gets a reference to the given float32 and assigns it to the Price field.
 func (o *ListBillingZone200ResponseAllOfBillingInfoZonesInnerSnapshots) SetPrice(v float32) {
 	o.Price = &v
@@ -94,15 +85,6 @@ func (o *ListBillingZone200ResponseAllOfBillingInfoZonesInnerSnapshots) GetCostO
 		return nil, false
 	}
 	return o.Cost, true
-}
-
-// IsSetCost returns a boolean if a field has been set.
-func (o *ListBillingZone200ResponseAllOfBillingInfoZonesInnerSnapshots) IsSetCost() bool {
-	if o != nil && !IsNil(o.Cost) {
-		return true
-	}
-
-	return false
 }
 
 // SetCost gets a reference to the given float32 and assigns it to the Cost field.
@@ -128,15 +110,6 @@ func (o *ListBillingZone200ResponseAllOfBillingInfoZonesInnerSnapshots) GetSnaps
 	return o.Snapshots, true
 }
 
-// IsSetSnapshots returns a boolean if a field has been set.
-func (o *ListBillingZone200ResponseAllOfBillingInfoZonesInnerSnapshots) IsSetSnapshots() bool {
-	if o != nil && !IsNil(o.Snapshots) {
-		return true
-	}
-
-	return false
-}
-
 // SetSnapshots gets a reference to the given []map[string]interface{} and assigns it to the Snapshots field.
 func (o *ListBillingZone200ResponseAllOfBillingInfoZonesInnerSnapshots) SetSnapshots(v []map[string]interface{}) {
 	o.Snapshots = v
@@ -158,15 +131,6 @@ func (o *ListBillingZone200ResponseAllOfBillingInfoZonesInnerSnapshots) GetCount
 		return nil, false
 	}
 	return o.Count, true
-}
-
-// IsSetCount returns a boolean if a field has been set.
-func (o *ListBillingZone200ResponseAllOfBillingInfoZonesInnerSnapshots) IsSetCount() bool {
-	if o != nil && !IsNil(o.Count) {
-		return true
-	}
-
-	return false
 }
 
 // SetCount gets a reference to the given int64 and assigns it to the Count field.

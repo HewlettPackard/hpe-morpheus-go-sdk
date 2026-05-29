@@ -74,15 +74,6 @@ func (o *AddInstanceDeployRequestAppDeploy) GetDeploymentIdOk() (*int64, bool) {
 	return o.DeploymentId, true
 }
 
-// IsSetDeploymentId returns a boolean if a field has been set.
-func (o *AddInstanceDeployRequestAppDeploy) IsSetDeploymentId() bool {
-	if o != nil && !IsNil(o.DeploymentId) {
-		return true
-	}
-
-	return false
-}
-
 // SetDeploymentId gets a reference to the given int64 and assigns it to the DeploymentId field.
 func (o *AddInstanceDeployRequestAppDeploy) SetDeploymentId(v int64) {
 	o.DeploymentId = &v
@@ -104,15 +95,6 @@ func (o *AddInstanceDeployRequestAppDeploy) GetVersionOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Version, true
-}
-
-// IsSetVersion returns a boolean if a field has been set.
-func (o *AddInstanceDeployRequestAppDeploy) IsSetVersion() bool {
-	if o != nil && !IsNil(o.Version) {
-		return true
-	}
-
-	return false
 }
 
 // SetVersion gets a reference to the given string and assigns it to the Version field.
@@ -138,15 +120,6 @@ func (o *AddInstanceDeployRequestAppDeploy) GetVersionIdOk() (*int64, bool) {
 	return o.VersionId, true
 }
 
-// IsSetVersionId returns a boolean if a field has been set.
-func (o *AddInstanceDeployRequestAppDeploy) IsSetVersionId() bool {
-	if o != nil && !IsNil(o.VersionId) {
-		return true
-	}
-
-	return false
-}
-
 // SetVersionId gets a reference to the given int64 and assigns it to the VersionId field.
 func (o *AddInstanceDeployRequestAppDeploy) SetVersionId(v int64) {
 	o.VersionId = &v
@@ -170,15 +143,6 @@ func (o *AddInstanceDeployRequestAppDeploy) GetConfigOk() (map[string]interface{
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *AddInstanceDeployRequestAppDeploy) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
 func (o *AddInstanceDeployRequestAppDeploy) SetConfig(v map[string]interface{}) {
 	o.Config = v
@@ -200,15 +164,6 @@ func (o *AddInstanceDeployRequestAppDeploy) GetStageOnlyOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.StageOnly, true
-}
-
-// IsSetStageOnly returns a boolean if a field has been set.
-func (o *AddInstanceDeployRequestAppDeploy) IsSetStageOnly() bool {
-	if o != nil && !IsNil(o.StageOnly) {
-		return true
-	}
-
-	return false
 }
 
 // SetStageOnly gets a reference to the given bool and assigns it to the StageOnly field.

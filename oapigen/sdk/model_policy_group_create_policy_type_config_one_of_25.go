@@ -61,15 +61,6 @@ func (o *PolicyGroupCreatePolicyTypeConfigOneOf25) GetRequiredNetworksOk() ([]in
 	return o.RequiredNetworks, true
 }
 
-// IsSetRequiredNetworks returns a boolean if a field has been set.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf25) IsSetRequiredNetworks() bool {
-	if o != nil && !IsNil(o.RequiredNetworks) {
-		return true
-	}
-
-	return false
-}
-
 // SetRequiredNetworks gets a reference to the given []int64 and assigns it to the RequiredNetworks field.
 func (o *PolicyGroupCreatePolicyTypeConfigOneOf25) SetRequiredNetworks(v []int64) {
 	o.RequiredNetworks = v

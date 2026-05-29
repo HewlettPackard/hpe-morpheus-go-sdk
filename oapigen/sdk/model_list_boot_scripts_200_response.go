@@ -63,15 +63,6 @@ func (o *ListBootScripts200Response) GetBootScriptsOk() ([]ListBootScripts200Res
 	return o.BootScripts, true
 }
 
-// IsSetBootScripts returns a boolean if a field has been set.
-func (o *ListBootScripts200Response) IsSetBootScripts() bool {
-	if o != nil && !IsNil(o.BootScripts) {
-		return true
-	}
-
-	return false
-}
-
 // SetBootScripts gets a reference to the given []ListBootScripts200ResponseAllOfBootScriptsInner and assigns it to the BootScripts field.
 func (o *ListBootScripts200Response) SetBootScripts(v []ListBootScripts200ResponseAllOfBootScriptsInner) {
 	o.BootScripts = v
@@ -95,15 +86,6 @@ func (o *ListBootScripts200Response) GetBootScriptCountOk() (*int64, bool) {
 	return o.BootScriptCount, true
 }
 
-// IsSetBootScriptCount returns a boolean if a field has been set.
-func (o *ListBootScripts200Response) IsSetBootScriptCount() bool {
-	if o != nil && !IsNil(o.BootScriptCount) {
-		return true
-	}
-
-	return false
-}
-
 // SetBootScriptCount gets a reference to the given int64 and assigns it to the BootScriptCount field.
 func (o *ListBootScripts200Response) SetBootScriptCount(v int64) {
 	o.BootScriptCount = &v
@@ -125,15 +107,6 @@ func (o *ListBootScripts200Response) GetMetaOk() (*ListApprovals200ResponseAllOf
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListBootScripts200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

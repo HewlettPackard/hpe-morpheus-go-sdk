@@ -62,15 +62,6 @@ func (o *ListPolicies200ResponseAllOfPoliciesInnerRole) GetIdOk() (*int64, bool)
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerRole) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListPolicies200ResponseAllOfPoliciesInnerRole) SetId(v int64) {
 	o.Id = &v
@@ -92,15 +83,6 @@ func (o *ListPolicies200ResponseAllOfPoliciesInnerRole) GetAuthorityOk() (*strin
 		return nil, false
 	}
 	return o.Authority, true
-}
-
-// IsSetAuthority returns a boolean if a field has been set.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerRole) IsSetAuthority() bool {
-	if o != nil && !IsNil(o.Authority) {
-		return true
-	}
-
-	return false
 }
 
 // SetAuthority gets a reference to the given string and assigns it to the Authority field.

@@ -62,15 +62,6 @@ func (o *UpdateClusterDatastore200Response) GetDatastoreOk() (*GetClusterDatasto
 	return o.Datastore, true
 }
 
-// IsSetDatastore returns a boolean if a field has been set.
-func (o *UpdateClusterDatastore200Response) IsSetDatastore() bool {
-	if o != nil && !IsNil(o.Datastore) {
-		return true
-	}
-
-	return false
-}
-
 // SetDatastore gets a reference to the given GetClusterDatastore200ResponseDatastore and assigns it to the Datastore field.
 func (o *UpdateClusterDatastore200Response) SetDatastore(v GetClusterDatastore200ResponseDatastore) {
 	o.Datastore = &v
@@ -92,15 +83,6 @@ func (o *UpdateClusterDatastore200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *UpdateClusterDatastore200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

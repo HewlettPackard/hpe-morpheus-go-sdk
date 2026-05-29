@@ -64,15 +64,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOf) GetNetworkInterfaceO
 	return o.NetworkInterface, true
 }
 
-// IsSetNetworkInterface returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOf) IsSetNetworkInterface() bool {
-	if o != nil && !IsNil(o.NetworkInterface) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkInterface gets a reference to the given UpdateServerNetworkInterface200ResponseAllOfOneOfNetworkInterface and assigns it to the NetworkInterface field.
 func (o *UpdateServerNetworkInterface200ResponseAllOfOneOf) SetNetworkInterface(v UpdateServerNetworkInterface200ResponseAllOfOneOfNetworkInterface) {
 	o.NetworkInterface = &v
@@ -94,15 +85,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOf) GetInterfaceTypeOk()
 		return nil, false
 	}
 	return o.InterfaceType, true
-}
-
-// IsSetInterfaceType returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOf) IsSetInterfaceType() bool {
-	if o != nil && !IsNil(o.InterfaceType) {
-		return true
-	}
-
-	return false
 }
 
 // SetInterfaceType gets a reference to the given string and assigns it to the InterfaceType field.
@@ -128,15 +110,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOf) GetNetIdOk() (*int64
 	return o.NetId, true
 }
 
-// IsSetNetId returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOf) IsSetNetId() bool {
-	if o != nil && !IsNil(o.NetId) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetId gets a reference to the given int64 and assigns it to the NetId field.
 func (o *UpdateServerNetworkInterface200ResponseAllOfOneOf) SetNetId(v int64) {
 	o.NetId = &v
@@ -158,15 +131,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOf) GetServerOk() (*Upda
 		return nil, false
 	}
 	return o.Server, true
-}
-
-// IsSetServer returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOf) IsSetServer() bool {
-	if o != nil && !IsNil(o.Server) {
-		return true
-	}
-
-	return false
 }
 
 // SetServer gets a reference to the given UpdateServerNetworkInterface200ResponseAllOfOneOfServer and assigns it to the Server field.

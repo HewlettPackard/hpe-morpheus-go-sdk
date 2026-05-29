@@ -61,15 +61,6 @@ func (o *GetKeyPairs200Response) GetAccountOk() (*GetKeyPairs200ResponseAccount,
 	return o.Account, true
 }
 
-// IsSetAccount returns a boolean if a field has been set.
-func (o *GetKeyPairs200Response) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccount gets a reference to the given GetKeyPairs200ResponseAccount and assigns it to the Account field.
 func (o *GetKeyPairs200Response) SetAccount(v GetKeyPairs200ResponseAccount) {
 	o.Account = &v

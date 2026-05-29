@@ -62,15 +62,6 @@ func (o *ListClusterStatefulSets200Response) GetStatefulsetsOk() ([]ListClusterS
 	return o.Statefulsets, true
 }
 
-// IsSetStatefulsets returns a boolean if a field has been set.
-func (o *ListClusterStatefulSets200Response) IsSetStatefulsets() bool {
-	if o != nil && !IsNil(o.Statefulsets) {
-		return true
-	}
-
-	return false
-}
-
 // SetStatefulsets gets a reference to the given []ListClusterStatefulSets200ResponseAllOfStatefulsetsInner and assigns it to the Statefulsets field.
 func (o *ListClusterStatefulSets200Response) SetStatefulsets(v []ListClusterStatefulSets200ResponseAllOfStatefulsetsInner) {
 	o.Statefulsets = v
@@ -92,15 +83,6 @@ func (o *ListClusterStatefulSets200Response) GetMetaOk() (*ListApprovals200Respo
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListClusterStatefulSets200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

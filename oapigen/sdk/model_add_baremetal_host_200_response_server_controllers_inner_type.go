@@ -63,15 +63,6 @@ func (o *AddBaremetalHost200ResponseServerControllersInnerType) GetIdOk() (*int6
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *AddBaremetalHost200ResponseServerControllersInnerType) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *AddBaremetalHost200ResponseServerControllersInnerType) SetId(v int64) {
 	o.Id = &v
@@ -95,15 +86,6 @@ func (o *AddBaremetalHost200ResponseServerControllersInnerType) GetCodeOk() (*st
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *AddBaremetalHost200ResponseServerControllersInnerType) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *AddBaremetalHost200ResponseServerControllersInnerType) SetCode(v string) {
 	o.Code = &v
@@ -125,15 +107,6 @@ func (o *AddBaremetalHost200ResponseServerControllersInnerType) GetNameOk() (*st
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *AddBaremetalHost200ResponseServerControllersInnerType) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.

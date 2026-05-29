@@ -64,15 +64,6 @@ func (o *GetJobExecutions200ResponseAllOfJobExecutionJob) GetIdOk() (*int64, boo
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetJobExecutions200ResponseAllOfJobExecutionJob) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetJobExecutions200ResponseAllOfJobExecutionJob) SetId(v int64) {
 	o.Id = &v
@@ -94,15 +85,6 @@ func (o *GetJobExecutions200ResponseAllOfJobExecutionJob) GetNameOk() (*string, 
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *GetJobExecutions200ResponseAllOfJobExecutionJob) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -129,28 +111,9 @@ func (o *GetJobExecutions200ResponseAllOfJobExecutionJob) GetDescriptionOk() (*s
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *GetJobExecutions200ResponseAllOfJobExecutionJob) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *GetJobExecutions200ResponseAllOfJobExecutionJob) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *GetJobExecutions200ResponseAllOfJobExecutionJob) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *GetJobExecutions200ResponseAllOfJobExecutionJob) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
@@ -169,15 +132,6 @@ func (o *GetJobExecutions200ResponseAllOfJobExecutionJob) GetTypeOk() (*GetJobEx
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *GetJobExecutions200ResponseAllOfJobExecutionJob) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given GetJobExecutions200ResponseAllOfJobExecutionJobType and assigns it to the Type field.

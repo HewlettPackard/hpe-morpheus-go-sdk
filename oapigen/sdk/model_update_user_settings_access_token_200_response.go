@@ -62,15 +62,6 @@ func (o *UpdateUserSettingsAccessToken200Response) GetTokenOk() (*string, bool) 
 	return o.Token, true
 }
 
-// IsSetToken returns a boolean if a field has been set.
-func (o *UpdateUserSettingsAccessToken200Response) IsSetToken() bool {
-	if o != nil && !IsNil(o.Token) {
-		return true
-	}
-
-	return false
-}
-
 // SetToken gets a reference to the given string and assigns it to the Token field.
 func (o *UpdateUserSettingsAccessToken200Response) SetToken(v string) {
 	o.Token = &v
@@ -92,15 +83,6 @@ func (o *UpdateUserSettingsAccessToken200Response) GetSuccessOk() (*bool, bool) 
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *UpdateUserSettingsAccessToken200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

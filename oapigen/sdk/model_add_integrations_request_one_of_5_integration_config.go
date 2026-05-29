@@ -64,15 +64,6 @@ func (o *AddIntegrationsRequestOneOf5IntegrationConfig) GetDefaultBranchOk() (*s
 	return o.DefaultBranch, true
 }
 
-// IsSetDefaultBranch returns a boolean if a field has been set.
-func (o *AddIntegrationsRequestOneOf5IntegrationConfig) IsSetDefaultBranch() bool {
-	if o != nil && !IsNil(o.DefaultBranch) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultBranch gets a reference to the given string and assigns it to the DefaultBranch field.
 func (o *AddIntegrationsRequestOneOf5IntegrationConfig) SetDefaultBranch(v string) {
 	o.DefaultBranch = &v
@@ -94,15 +85,6 @@ func (o *AddIntegrationsRequestOneOf5IntegrationConfig) GetCacheEnabledOk() (*bo
 		return nil, false
 	}
 	return o.CacheEnabled, true
-}
-
-// IsSetCacheEnabled returns a boolean if a field has been set.
-func (o *AddIntegrationsRequestOneOf5IntegrationConfig) IsSetCacheEnabled() bool {
-	if o != nil && !IsNil(o.CacheEnabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetCacheEnabled gets a reference to the given bool and assigns it to the CacheEnabled field.

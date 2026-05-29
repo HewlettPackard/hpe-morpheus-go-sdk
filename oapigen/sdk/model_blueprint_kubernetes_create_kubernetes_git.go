@@ -68,15 +68,6 @@ func (o *BlueprintKubernetesCreateKubernetesGit) GetRepoIdOk() (*int64, bool) {
 	return o.RepoId, true
 }
 
-// IsSetRepoId returns a boolean if a field has been set.
-func (o *BlueprintKubernetesCreateKubernetesGit) IsSetRepoId() bool {
-	if o != nil && !IsNil(o.RepoId) {
-		return true
-	}
-
-	return false
-}
-
 // SetRepoId gets a reference to the given int64 and assigns it to the RepoId field.
 func (o *BlueprintKubernetesCreateKubernetesGit) SetRepoId(v int64) {
 	o.RepoId = &v
@@ -98,15 +89,6 @@ func (o *BlueprintKubernetesCreateKubernetesGit) GetPathOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Path, true
-}
-
-// IsSetPath returns a boolean if a field has been set.
-func (o *BlueprintKubernetesCreateKubernetesGit) IsSetPath() bool {
-	if o != nil && !IsNil(o.Path) {
-		return true
-	}
-
-	return false
 }
 
 // SetPath gets a reference to the given string and assigns it to the Path field.
@@ -132,15 +114,6 @@ func (o *BlueprintKubernetesCreateKubernetesGit) GetIntegrationIdOk() (*int64, b
 	return o.IntegrationId, true
 }
 
-// IsSetIntegrationId returns a boolean if a field has been set.
-func (o *BlueprintKubernetesCreateKubernetesGit) IsSetIntegrationId() bool {
-	if o != nil && !IsNil(o.IntegrationId) {
-		return true
-	}
-
-	return false
-}
-
 // SetIntegrationId gets a reference to the given int64 and assigns it to the IntegrationId field.
 func (o *BlueprintKubernetesCreateKubernetesGit) SetIntegrationId(v int64) {
 	o.IntegrationId = &v
@@ -162,15 +135,6 @@ func (o *BlueprintKubernetesCreateKubernetesGit) GetBranchOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Branch, true
-}
-
-// IsSetBranch returns a boolean if a field has been set.
-func (o *BlueprintKubernetesCreateKubernetesGit) IsSetBranch() bool {
-	if o != nil && !IsNil(o.Branch) {
-		return true
-	}
-
-	return false
 }
 
 // SetBranch gets a reference to the given string and assigns it to the Branch field.

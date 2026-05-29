@@ -68,28 +68,9 @@ func (o *ListCredentials200ResponseAllOfCredentialsInnerConfig) GetClientSecretO
 	return o.ClientSecret.Get(), o.ClientSecret.IsSet()
 }
 
-// IsSetClientSecret returns a boolean if a field has been set.
-func (o *ListCredentials200ResponseAllOfCredentialsInnerConfig) IsSetClientSecret() bool {
-	if o != nil && o.ClientSecret.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetClientSecret gets a reference to the given NullableString and assigns it to the ClientSecret field.
 func (o *ListCredentials200ResponseAllOfCredentialsInnerConfig) SetClientSecret(v string) {
 	o.ClientSecret.Set(&v)
-}
-
-// SetClientSecretNil sets the value for ClientSecret to be an explicit nil
-func (o *ListCredentials200ResponseAllOfCredentialsInnerConfig) SetClientSecretNil() {
-	o.ClientSecret.Set(nil)
-}
-
-// UnsetClientSecret ensures that no value is present for ClientSecret, not even an explicit nil
-func (o *ListCredentials200ResponseAllOfCredentialsInnerConfig) UnsetClientSecret() {
-	o.ClientSecret.Unset()
 }
 
 // GetClientId returns the ClientId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -111,28 +92,9 @@ func (o *ListCredentials200ResponseAllOfCredentialsInnerConfig) GetClientIdOk() 
 	return o.ClientId.Get(), o.ClientId.IsSet()
 }
 
-// IsSetClientId returns a boolean if a field has been set.
-func (o *ListCredentials200ResponseAllOfCredentialsInnerConfig) IsSetClientId() bool {
-	if o != nil && o.ClientId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetClientId gets a reference to the given NullableString and assigns it to the ClientId field.
 func (o *ListCredentials200ResponseAllOfCredentialsInnerConfig) SetClientId(v string) {
 	o.ClientId.Set(&v)
-}
-
-// SetClientIdNil sets the value for ClientId to be an explicit nil
-func (o *ListCredentials200ResponseAllOfCredentialsInnerConfig) SetClientIdNil() {
-	o.ClientId.Set(nil)
-}
-
-// UnsetClientId ensures that no value is present for ClientId, not even an explicit nil
-func (o *ListCredentials200ResponseAllOfCredentialsInnerConfig) UnsetClientId() {
-	o.ClientId.Unset()
 }
 
 // GetClientAuth returns the ClientAuth field value if set, zero value otherwise.
@@ -151,15 +113,6 @@ func (o *ListCredentials200ResponseAllOfCredentialsInnerConfig) GetClientAuthOk(
 		return nil, false
 	}
 	return o.ClientAuth, true
-}
-
-// IsSetClientAuth returns a boolean if a field has been set.
-func (o *ListCredentials200ResponseAllOfCredentialsInnerConfig) IsSetClientAuth() bool {
-	if o != nil && !IsNil(o.ClientAuth) {
-		return true
-	}
-
-	return false
 }
 
 // SetClientAuth gets a reference to the given string and assigns it to the ClientAuth field.
@@ -185,15 +138,6 @@ func (o *ListCredentials200ResponseAllOfCredentialsInnerConfig) GetScopeOk() (*s
 	return o.Scope, true
 }
 
-// IsSetScope returns a boolean if a field has been set.
-func (o *ListCredentials200ResponseAllOfCredentialsInnerConfig) IsSetScope() bool {
-	if o != nil && !IsNil(o.Scope) {
-		return true
-	}
-
-	return false
-}
-
 // SetScope gets a reference to the given string and assigns it to the Scope field.
 func (o *ListCredentials200ResponseAllOfCredentialsInnerConfig) SetScope(v string) {
 	o.Scope = &v
@@ -217,15 +161,6 @@ func (o *ListCredentials200ResponseAllOfCredentialsInnerConfig) GetGrantTypeOk()
 	return o.GrantType, true
 }
 
-// IsSetGrantType returns a boolean if a field has been set.
-func (o *ListCredentials200ResponseAllOfCredentialsInnerConfig) IsSetGrantType() bool {
-	if o != nil && !IsNil(o.GrantType) {
-		return true
-	}
-
-	return false
-}
-
 // SetGrantType gets a reference to the given string and assigns it to the GrantType field.
 func (o *ListCredentials200ResponseAllOfCredentialsInnerConfig) SetGrantType(v string) {
 	o.GrantType = &v
@@ -247,15 +182,6 @@ func (o *ListCredentials200ResponseAllOfCredentialsInnerConfig) GetAccessTokenUr
 		return nil, false
 	}
 	return o.AccessTokenUrl, true
-}
-
-// IsSetAccessTokenUrl returns a boolean if a field has been set.
-func (o *ListCredentials200ResponseAllOfCredentialsInnerConfig) IsSetAccessTokenUrl() bool {
-	if o != nil && !IsNil(o.AccessTokenUrl) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccessTokenUrl gets a reference to the given string and assigns it to the AccessTokenUrl field.
@@ -282,28 +208,9 @@ func (o *ListCredentials200ResponseAllOfCredentialsInnerConfig) GetClientSecretH
 	return o.ClientSecretHash.Get(), o.ClientSecretHash.IsSet()
 }
 
-// IsSetClientSecretHash returns a boolean if a field has been set.
-func (o *ListCredentials200ResponseAllOfCredentialsInnerConfig) IsSetClientSecretHash() bool {
-	if o != nil && o.ClientSecretHash.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetClientSecretHash gets a reference to the given NullableString and assigns it to the ClientSecretHash field.
 func (o *ListCredentials200ResponseAllOfCredentialsInnerConfig) SetClientSecretHash(v string) {
 	o.ClientSecretHash.Set(&v)
-}
-
-// SetClientSecretHashNil sets the value for ClientSecretHash to be an explicit nil
-func (o *ListCredentials200ResponseAllOfCredentialsInnerConfig) SetClientSecretHashNil() {
-	o.ClientSecretHash.Set(nil)
-}
-
-// UnsetClientSecretHash ensures that no value is present for ClientSecretHash, not even an explicit nil
-func (o *ListCredentials200ResponseAllOfCredentialsInnerConfig) UnsetClientSecretHash() {
-	o.ClientSecretHash.Unset()
 }
 
 func (o ListCredentials200ResponseAllOfCredentialsInnerConfig) MarshalJSON() ([]byte, error) {

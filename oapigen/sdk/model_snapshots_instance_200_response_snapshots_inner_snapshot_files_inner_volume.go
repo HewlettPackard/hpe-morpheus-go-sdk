@@ -61,15 +61,6 @@ func (o *SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume) Get
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int32 and assigns it to the Id field.
 func (o *SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume) SetId(v int32) {
 	o.Id = &v

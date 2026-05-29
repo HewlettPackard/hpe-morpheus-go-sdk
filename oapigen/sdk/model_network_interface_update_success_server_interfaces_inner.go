@@ -96,15 +96,6 @@ func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) GetIdOk() (*int64, 
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) SetId(v int64) {
 	o.Id = &v
@@ -126,15 +117,6 @@ func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) GetAddressesOk() ([
 		return nil, false
 	}
 	return o.Addresses, true
-}
-
-// IsSetAddresses returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) IsSetAddresses() bool {
-	if o != nil && !IsNil(o.Addresses) {
-		return true
-	}
-
-	return false
 }
 
 // SetAddresses gets a reference to the given []NetworkInterfaceUpdateSuccessServerInterfacesInnerAddressesInner and assigns it to the Addresses field.
@@ -161,28 +143,9 @@ func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) GetInternalIdOk() (
 	return o.InternalId.Get(), o.InternalId.IsSet()
 }
 
-// IsSetInternalId returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) IsSetInternalId() bool {
-	if o != nil && o.InternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInternalId gets a reference to the given NullableString and assigns it to the InternalId field.
 func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) SetInternalId(v string) {
 	o.InternalId.Set(&v)
-}
-
-// SetInternalIdNil sets the value for InternalId to be an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) SetInternalIdNil() {
-	o.InternalId.Set(nil)
-}
-
-// UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) UnsetInternalId() {
-	o.InternalId.Unset()
 }
 
 // GetInterfaceId returns the InterfaceId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -204,28 +167,9 @@ func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) GetInterfaceIdOk() 
 	return o.InterfaceId.Get(), o.InterfaceId.IsSet()
 }
 
-// IsSetInterfaceId returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) IsSetInterfaceId() bool {
-	if o != nil && o.InterfaceId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInterfaceId gets a reference to the given NullableString and assigns it to the InterfaceId field.
 func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) SetInterfaceId(v string) {
 	o.InterfaceId.Set(&v)
-}
-
-// SetInterfaceIdNil sets the value for InterfaceId to be an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) SetInterfaceIdNil() {
-	o.InterfaceId.Set(nil)
-}
-
-// UnsetInterfaceId ensures that no value is present for InterfaceId, not even an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) UnsetInterfaceId() {
-	o.InterfaceId.Unset()
 }
 
 // GetDisplayOrder returns the DisplayOrder field value if set, zero value otherwise.
@@ -244,15 +188,6 @@ func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) GetDisplayOrderOk()
 		return nil, false
 	}
 	return o.DisplayOrder, true
-}
-
-// IsSetDisplayOrder returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) IsSetDisplayOrder() bool {
-	if o != nil && !IsNil(o.DisplayOrder) {
-		return true
-	}
-
-	return false
 }
 
 // SetDisplayOrder gets a reference to the given int64 and assigns it to the DisplayOrder field.
@@ -279,15 +214,6 @@ func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) GetNetworkPoolOk() 
 	return o.NetworkPool, true
 }
 
-// IsSetNetworkPool returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) IsSetNetworkPool() bool {
-	if o != nil && !IsNil(o.NetworkPool) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkPool gets a reference to the given map[string]interface{} and assigns it to the NetworkPool field.
 func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) SetNetworkPool(v map[string]interface{}) {
 	o.NetworkPool = v
@@ -309,15 +235,6 @@ func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) GetDhcpOk() (*bool,
 		return nil, false
 	}
 	return o.Dhcp, true
-}
-
-// IsSetDhcp returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) IsSetDhcp() bool {
-	if o != nil && !IsNil(o.Dhcp) {
-		return true
-	}
-
-	return false
 }
 
 // SetDhcp gets a reference to the given bool and assigns it to the Dhcp field.
@@ -343,15 +260,6 @@ func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) GetUuidOk() (*strin
 	return o.Uuid, true
 }
 
-// IsSetUuid returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) IsSetUuid() bool {
-	if o != nil && !IsNil(o.Uuid) {
-		return true
-	}
-
-	return false
-}
-
 // SetUuid gets a reference to the given string and assigns it to the Uuid field.
 func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) SetUuid(v string) {
 	o.Uuid = &v
@@ -375,15 +283,6 @@ func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) GetActiveOk() (*boo
 	return o.Active, true
 }
 
-// IsSetActive returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
-}
-
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) SetActive(v bool) {
 	o.Active = &v
@@ -405,15 +304,6 @@ func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) GetUniqueIdOk() (*s
 		return nil, false
 	}
 	return o.UniqueId, true
-}
-
-// IsSetUniqueId returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) IsSetUniqueId() bool {
-	if o != nil && !IsNil(o.UniqueId) {
-		return true
-	}
-
-	return false
 }
 
 // SetUniqueId gets a reference to the given string and assigns it to the UniqueId field.
@@ -440,28 +330,9 @@ func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) GetSubnetOk() (*str
 	return o.Subnet.Get(), o.Subnet.IsSet()
 }
 
-// IsSetSubnet returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) IsSetSubnet() bool {
-	if o != nil && o.Subnet.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSubnet gets a reference to the given NullableString and assigns it to the Subnet field.
 func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) SetSubnet(v string) {
 	o.Subnet.Set(&v)
-}
-
-// SetSubnetNil sets the value for Subnet to be an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) SetSubnetNil() {
-	o.Subnet.Set(nil)
-}
-
-// UnsetSubnet ensures that no value is present for Subnet, not even an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) UnsetSubnet() {
-	o.Subnet.Unset()
 }
 
 // GetReplaceHostRecord returns the ReplaceHostRecord field value if set, zero value otherwise.
@@ -480,15 +351,6 @@ func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) GetReplaceHostRecor
 		return nil, false
 	}
 	return o.ReplaceHostRecord, true
-}
-
-// IsSetReplaceHostRecord returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) IsSetReplaceHostRecord() bool {
-	if o != nil && !IsNil(o.ReplaceHostRecord) {
-		return true
-	}
-
-	return false
 }
 
 // SetReplaceHostRecord gets a reference to the given bool and assigns it to the ReplaceHostRecord field.
@@ -512,15 +374,6 @@ func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) GetIpModeOk() (*str
 		return nil, false
 	}
 	return o.IpMode, true
-}
-
-// IsSetIpMode returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) IsSetIpMode() bool {
-	if o != nil && !IsNil(o.IpMode) {
-		return true
-	}
-
-	return false
 }
 
 // SetIpMode gets a reference to the given string and assigns it to the IpMode field.
@@ -547,28 +400,9 @@ func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) GetVersionOk() (*st
 	return o.Version.Get(), o.Version.IsSet()
 }
 
-// IsSetVersion returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) IsSetVersion() bool {
-	if o != nil && o.Version.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetVersion gets a reference to the given NullableString and assigns it to the Version field.
 func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) SetVersion(v string) {
 	o.Version.Set(&v)
-}
-
-// SetVersionNil sets the value for Version to be an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) SetVersionNil() {
-	o.Version.Set(nil)
-}
-
-// UnsetVersion ensures that no value is present for Version, not even an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) UnsetVersion() {
-	o.Version.Unset()
 }
 
 // GetIpSubnet returns the IpSubnet field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -590,28 +424,9 @@ func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) GetIpSubnetOk() (*s
 	return o.IpSubnet.Get(), o.IpSubnet.IsSet()
 }
 
-// IsSetIpSubnet returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) IsSetIpSubnet() bool {
-	if o != nil && o.IpSubnet.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetIpSubnet gets a reference to the given NullableString and assigns it to the IpSubnet field.
 func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) SetIpSubnet(v string) {
 	o.IpSubnet.Set(&v)
-}
-
-// SetIpSubnetNil sets the value for IpSubnet to be an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) SetIpSubnetNil() {
-	o.IpSubnet.Set(nil)
-}
-
-// UnsetIpSubnet ensures that no value is present for IpSubnet, not even an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) UnsetIpSubnet() {
-	o.IpSubnet.Unset()
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -633,28 +448,9 @@ func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) GetConfigOk() (*str
 	return o.Config.Get(), o.Config.IsSet()
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) IsSetConfig() bool {
-	if o != nil && o.Config.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given NullableString and assigns it to the Config field.
 func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) SetConfig(v string) {
 	o.Config.Set(&v)
-}
-
-// SetConfigNil sets the value for Config to be an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) SetConfigNil() {
-	o.Config.Set(nil)
-}
-
-// UnsetConfig ensures that no value is present for Config, not even an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) UnsetConfig() {
-	o.Config.Unset()
 }
 
 // GetPublicIpAddress returns the PublicIpAddress field value if set, zero value otherwise.
@@ -673,15 +469,6 @@ func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) GetPublicIpAddressO
 		return nil, false
 	}
 	return o.PublicIpAddress, true
-}
-
-// IsSetPublicIpAddress returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) IsSetPublicIpAddress() bool {
-	if o != nil && !IsNil(o.PublicIpAddress) {
-		return true
-	}
-
-	return false
 }
 
 // SetPublicIpAddress gets a reference to the given string and assigns it to the PublicIpAddress field.
@@ -708,28 +495,9 @@ func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) GetFabricIdOk() (*s
 	return o.FabricId.Get(), o.FabricId.IsSet()
 }
 
-// IsSetFabricId returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) IsSetFabricId() bool {
-	if o != nil && o.FabricId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFabricId gets a reference to the given NullableString and assigns it to the FabricId field.
 func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) SetFabricId(v string) {
 	o.FabricId.Set(&v)
-}
-
-// SetFabricIdNil sets the value for FabricId to be an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) SetFabricIdNil() {
-	o.FabricId.Set(nil)
-}
-
-// UnsetFabricId ensures that no value is present for FabricId, not even an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) UnsetFabricId() {
-	o.FabricId.Unset()
 }
 
 // GetIpv6Subnet returns the Ipv6Subnet field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -751,28 +519,9 @@ func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) GetIpv6SubnetOk() (
 	return o.Ipv6Subnet.Get(), o.Ipv6Subnet.IsSet()
 }
 
-// IsSetIpv6Subnet returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) IsSetIpv6Subnet() bool {
-	if o != nil && o.Ipv6Subnet.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetIpv6Subnet gets a reference to the given NullableString and assigns it to the Ipv6Subnet field.
 func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) SetIpv6Subnet(v string) {
 	o.Ipv6Subnet.Set(&v)
-}
-
-// SetIpv6SubnetNil sets the value for Ipv6Subnet to be an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) SetIpv6SubnetNil() {
-	o.Ipv6Subnet.Set(nil)
-}
-
-// UnsetIpv6Subnet ensures that no value is present for Ipv6Subnet, not even an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) UnsetIpv6Subnet() {
-	o.Ipv6Subnet.Unset()
 }
 
 // GetMacAddress returns the MacAddress field value if set, zero value otherwise.
@@ -791,15 +540,6 @@ func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) GetMacAddressOk() (
 		return nil, false
 	}
 	return o.MacAddress, true
-}
-
-// IsSetMacAddress returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) IsSetMacAddress() bool {
-	if o != nil && !IsNil(o.MacAddress) {
-		return true
-	}
-
-	return false
 }
 
 // SetMacAddress gets a reference to the given string and assigns it to the MacAddress field.
@@ -826,28 +566,9 @@ func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) GetPublicIpv6Addres
 	return o.PublicIpv6Address.Get(), o.PublicIpv6Address.IsSet()
 }
 
-// IsSetPublicIpv6Address returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) IsSetPublicIpv6Address() bool {
-	if o != nil && o.PublicIpv6Address.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPublicIpv6Address gets a reference to the given NullableString and assigns it to the PublicIpv6Address field.
 func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) SetPublicIpv6Address(v string) {
 	o.PublicIpv6Address.Set(&v)
-}
-
-// SetPublicIpv6AddressNil sets the value for PublicIpv6Address to be an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) SetPublicIpv6AddressNil() {
-	o.PublicIpv6Address.Set(nil)
-}
-
-// UnsetPublicIpv6Address ensures that no value is present for PublicIpv6Address, not even an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) UnsetPublicIpv6Address() {
-	o.PublicIpv6Address.Unset()
 }
 
 // GetRefType returns the RefType field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -869,28 +590,9 @@ func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) GetRefTypeOk() (*st
 	return o.RefType.Get(), o.RefType.IsSet()
 }
 
-// IsSetRefType returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) IsSetRefType() bool {
-	if o != nil && o.RefType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRefType gets a reference to the given NullableString and assigns it to the RefType field.
 func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) SetRefType(v string) {
 	o.RefType.Set(&v)
-}
-
-// SetRefTypeNil sets the value for RefType to be an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) SetRefTypeNil() {
-	o.RefType.Set(nil)
-}
-
-// UnsetRefType ensures that no value is present for RefType, not even an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) UnsetRefType() {
-	o.RefType.Unset()
 }
 
 // GetNetworkGroup returns the NetworkGroup field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -912,28 +614,9 @@ func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) GetNetworkGroupOk()
 	return o.NetworkGroup.Get(), o.NetworkGroup.IsSet()
 }
 
-// IsSetNetworkGroup returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) IsSetNetworkGroup() bool {
-	if o != nil && o.NetworkGroup.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkGroup gets a reference to the given NullableString and assigns it to the NetworkGroup field.
 func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) SetNetworkGroup(v string) {
 	o.NetworkGroup.Set(&v)
-}
-
-// SetNetworkGroupNil sets the value for NetworkGroup to be an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) SetNetworkGroupNil() {
-	o.NetworkGroup.Set(nil)
-}
-
-// UnsetNetworkGroup ensures that no value is present for NetworkGroup, not even an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) UnsetNetworkGroup() {
-	o.NetworkGroup.Unset()
 }
 
 // GetRefId returns the RefId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -955,28 +638,9 @@ func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) GetRefIdOk() (*stri
 	return o.RefId.Get(), o.RefId.IsSet()
 }
 
-// IsSetRefId returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) IsSetRefId() bool {
-	if o != nil && o.RefId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRefId gets a reference to the given NullableString and assigns it to the RefId field.
 func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) SetRefId(v string) {
 	o.RefId.Set(&v)
-}
-
-// SetRefIdNil sets the value for RefId to be an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) SetRefIdNil() {
-	o.RefId.Set(nil)
-}
-
-// UnsetRefId ensures that no value is present for RefId, not even an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) UnsetRefId() {
-	o.RefId.Unset()
 }
 
 // GetNetworkDomain returns the NetworkDomain field value if set, zero value otherwise.
@@ -995,15 +659,6 @@ func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) GetNetworkDomainOk(
 		return nil, false
 	}
 	return o.NetworkDomain, true
-}
-
-// IsSetNetworkDomain returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) IsSetNetworkDomain() bool {
-	if o != nil && !IsNil(o.NetworkDomain) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkDomain gets a reference to the given NetworkInterfaceUpdateSuccessServerInterfacesInnerNetworkDomain and assigns it to the NetworkDomain field.
@@ -1029,15 +684,6 @@ func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) GetNameOk() (*strin
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) SetName(v string) {
 	o.Name = &v
@@ -1059,15 +705,6 @@ func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) GetPrimaryInterface
 		return nil, false
 	}
 	return o.PrimaryInterface, true
-}
-
-// IsSetPrimaryInterface returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) IsSetPrimaryInterface() bool {
-	if o != nil && !IsNil(o.PrimaryInterface) {
-		return true
-	}
-
-	return false
 }
 
 // SetPrimaryInterface gets a reference to the given bool and assigns it to the PrimaryInterface field.
@@ -1094,15 +731,6 @@ func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) GetNetworkPoolIPv6O
 	return o.NetworkPoolIPv6, true
 }
 
-// IsSetNetworkPoolIPv6 returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) IsSetNetworkPoolIPv6() bool {
-	if o != nil && !IsNil(o.NetworkPoolIPv6) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkPoolIPv6 gets a reference to the given map[string]interface{} and assigns it to the NetworkPoolIPv6 field.
 func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) SetNetworkPoolIPv6(v map[string]interface{}) {
 	o.NetworkPoolIPv6 = v
@@ -1124,15 +752,6 @@ func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) GetNetworkOk() (*Ne
 		return nil, false
 	}
 	return o.Network, true
-}
-
-// IsSetNetwork returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) IsSetNetwork() bool {
-	if o != nil && !IsNil(o.Network) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetwork gets a reference to the given NetworkInterfaceUpdateSuccessServerInterfacesInnerNetwork and assigns it to the Network field.
@@ -1159,28 +778,9 @@ func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) GetVlanIdOk() (*str
 	return o.VlanId.Get(), o.VlanId.IsSet()
 }
 
-// IsSetVlanId returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) IsSetVlanId() bool {
-	if o != nil && o.VlanId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetVlanId gets a reference to the given NullableString and assigns it to the VlanId field.
 func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) SetVlanId(v string) {
 	o.VlanId.Set(&v)
-}
-
-// SetVlanIdNil sets the value for VlanId to be an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) SetVlanIdNil() {
-	o.VlanId.Set(nil)
-}
-
-// UnsetVlanId ensures that no value is present for VlanId, not even an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) UnsetVlanId() {
-	o.VlanId.Unset()
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
@@ -1199,15 +799,6 @@ func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) GetTypeOk() (*Netwo
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given NetworkInterfaceUpdateSuccessServerInterfacesInnerType and assigns it to the Type field.
@@ -1234,28 +825,9 @@ func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) GetNetworkPositionO
 	return o.NetworkPosition.Get(), o.NetworkPosition.IsSet()
 }
 
-// IsSetNetworkPosition returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) IsSetNetworkPosition() bool {
-	if o != nil && o.NetworkPosition.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkPosition gets a reference to the given NullableString and assigns it to the NetworkPosition field.
 func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) SetNetworkPosition(v string) {
 	o.NetworkPosition.Set(&v)
-}
-
-// SetNetworkPositionNil sets the value for NetworkPosition to be an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) SetNetworkPositionNil() {
-	o.NetworkPosition.Set(nil)
-}
-
-// UnsetNetworkPosition ensures that no value is present for NetworkPosition, not even an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) UnsetNetworkPosition() {
-	o.NetworkPosition.Unset()
 }
 
 // GetPoolAssigned returns the PoolAssigned field value if set, zero value otherwise.
@@ -1274,15 +846,6 @@ func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) GetPoolAssignedOk()
 		return nil, false
 	}
 	return o.PoolAssigned, true
-}
-
-// IsSetPoolAssigned returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) IsSetPoolAssigned() bool {
-	if o != nil && !IsNil(o.PoolAssigned) {
-		return true
-	}
-
-	return false
 }
 
 // SetPoolAssigned gets a reference to the given bool and assigns it to the PoolAssigned field.
@@ -1306,15 +869,6 @@ func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) GetDescriptionOk() 
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -1341,28 +895,9 @@ func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) GetExternalTypeOk()
 	return o.ExternalType.Get(), o.ExternalType.IsSet()
 }
 
-// IsSetExternalType returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) IsSetExternalType() bool {
-	if o != nil && o.ExternalType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalType gets a reference to the given NullableString and assigns it to the ExternalType field.
 func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) SetExternalType(v string) {
 	o.ExternalType.Set(&v)
-}
-
-// SetExternalTypeNil sets the value for ExternalType to be an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) SetExternalTypeNil() {
-	o.ExternalType.Set(nil)
-}
-
-// UnsetExternalType ensures that no value is present for ExternalType, not even an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) UnsetExternalType() {
-	o.ExternalType.Unset()
 }
 
 // GetExternalId returns the ExternalId field value if set, zero value otherwise.
@@ -1381,15 +916,6 @@ func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) GetExternalIdOk() (
 		return nil, false
 	}
 	return o.ExternalId, true
-}
-
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServerInterfacesInner) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
-		return true
-	}
-
-	return false
 }
 
 // SetExternalId gets a reference to the given string and assigns it to the ExternalId field.

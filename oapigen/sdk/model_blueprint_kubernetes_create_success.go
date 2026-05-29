@@ -80,15 +80,6 @@ func (o *BlueprintKubernetesCreateSuccess) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *BlueprintKubernetesCreateSuccess) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *BlueprintKubernetesCreateSuccess) SetName(v string) {
 	o.Name = &v
@@ -110,15 +101,6 @@ func (o *BlueprintKubernetesCreateSuccess) GetImageOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Image, true
-}
-
-// IsSetImage returns a boolean if a field has been set.
-func (o *BlueprintKubernetesCreateSuccess) IsSetImage() bool {
-	if o != nil && !IsNil(o.Image) {
-		return true
-	}
-
-	return false
 }
 
 // SetImage gets a reference to the given string and assigns it to the Image field.
@@ -144,15 +126,6 @@ func (o *BlueprintKubernetesCreateSuccess) GetTypeOk() (*string, bool) {
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *BlueprintKubernetesCreateSuccess) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given string and assigns it to the Type field.
 func (o *BlueprintKubernetesCreateSuccess) SetType(v string) {
 	o.Type = &v
@@ -174,15 +147,6 @@ func (o *BlueprintKubernetesCreateSuccess) GetKubernetesOk() (*BlueprintKubernet
 		return nil, false
 	}
 	return o.Kubernetes, true
-}
-
-// IsSetKubernetes returns a boolean if a field has been set.
-func (o *BlueprintKubernetesCreateSuccess) IsSetKubernetes() bool {
-	if o != nil && !IsNil(o.Kubernetes) {
-		return true
-	}
-
-	return false
 }
 
 // SetKubernetes gets a reference to the given BlueprintKubernetesCreateSuccessKubernetes and assigns it to the Kubernetes field.
@@ -208,15 +172,6 @@ func (o *BlueprintKubernetesCreateSuccess) GetConfigOk() (*BlueprintKubernetesCr
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *BlueprintKubernetesCreateSuccess) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given BlueprintKubernetesCreateSuccessConfig and assigns it to the Config field.
 func (o *BlueprintKubernetesCreateSuccess) SetConfig(v BlueprintKubernetesCreateSuccessConfig) {
 	o.Config = &v
@@ -238,15 +193,6 @@ func (o *BlueprintKubernetesCreateSuccess) GetVisibilityOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *BlueprintKubernetesCreateSuccess) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -272,15 +218,6 @@ func (o *BlueprintKubernetesCreateSuccess) GetResourcePermissionOk() (map[string
 	return o.ResourcePermission, true
 }
 
-// IsSetResourcePermission returns a boolean if a field has been set.
-func (o *BlueprintKubernetesCreateSuccess) IsSetResourcePermission() bool {
-	if o != nil && !IsNil(o.ResourcePermission) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourcePermission gets a reference to the given map[string]interface{} and assigns it to the ResourcePermission field.
 func (o *BlueprintKubernetesCreateSuccess) SetResourcePermission(v map[string]interface{}) {
 	o.ResourcePermission = v
@@ -304,15 +241,6 @@ func (o *BlueprintKubernetesCreateSuccess) GetOwnerOk() (map[string]interface{},
 	return o.Owner, true
 }
 
-// IsSetOwner returns a boolean if a field has been set.
-func (o *BlueprintKubernetesCreateSuccess) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
-		return true
-	}
-
-	return false
-}
-
 // SetOwner gets a reference to the given map[string]interface{} and assigns it to the Owner field.
 func (o *BlueprintKubernetesCreateSuccess) SetOwner(v map[string]interface{}) {
 	o.Owner = v
@@ -334,15 +262,6 @@ func (o *BlueprintKubernetesCreateSuccess) GetTenantOk() (map[string]interface{}
 		return map[string]interface{}{}, false
 	}
 	return o.Tenant, true
-}
-
-// IsSetTenant returns a boolean if a field has been set.
-func (o *BlueprintKubernetesCreateSuccess) IsSetTenant() bool {
-	if o != nil && !IsNil(o.Tenant) {
-		return true
-	}
-
-	return false
 }
 
 // SetTenant gets a reference to the given map[string]interface{} and assigns it to the Tenant field.

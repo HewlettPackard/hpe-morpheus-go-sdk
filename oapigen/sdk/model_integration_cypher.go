@@ -77,15 +77,6 @@ func (o *IntegrationCypher) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *IntegrationCypher) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *IntegrationCypher) SetId(v int64) {
 	o.Id = &v
@@ -107,15 +98,6 @@ func (o *IntegrationCypher) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *IntegrationCypher) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -141,15 +123,6 @@ func (o *IntegrationCypher) GetEnabledOk() (*bool, bool) {
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *IntegrationCypher) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *IntegrationCypher) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -171,15 +144,6 @@ func (o *IntegrationCypher) GetTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *IntegrationCypher) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.
@@ -205,15 +169,6 @@ func (o *IntegrationCypher) GetIntegrationTypeOk() (*AddIntegrations200ResponseA
 	return o.IntegrationType, true
 }
 
-// IsSetIntegrationType returns a boolean if a field has been set.
-func (o *IntegrationCypher) IsSetIntegrationType() bool {
-	if o != nil && !IsNil(o.IntegrationType) {
-		return true
-	}
-
-	return false
-}
-
 // SetIntegrationType gets a reference to the given AddIntegrations200ResponseAllOfIntegrationOneOf5IntegrationType and assigns it to the IntegrationType field.
 func (o *IntegrationCypher) SetIntegrationType(v AddIntegrations200ResponseAllOfIntegrationOneOf5IntegrationType) {
 	o.IntegrationType = &v
@@ -235,15 +190,6 @@ func (o *IntegrationCypher) GetUrlOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Url, true
-}
-
-// IsSetUrl returns a boolean if a field has been set.
-func (o *IntegrationCypher) IsSetUrl() bool {
-	if o != nil && !IsNil(o.Url) {
-		return true
-	}
-
-	return false
 }
 
 // SetUrl gets a reference to the given string and assigns it to the Url field.
@@ -269,15 +215,6 @@ func (o *IntegrationCypher) GetTokenOk() (*string, bool) {
 	return o.Token, true
 }
 
-// IsSetToken returns a boolean if a field has been set.
-func (o *IntegrationCypher) IsSetToken() bool {
-	if o != nil && !IsNil(o.Token) {
-		return true
-	}
-
-	return false
-}
-
 // SetToken gets a reference to the given string and assigns it to the Token field.
 func (o *IntegrationCypher) SetToken(v string) {
 	o.Token = &v
@@ -301,15 +238,6 @@ func (o *IntegrationCypher) GetTokenHashOk() (*string, bool) {
 	return o.TokenHash, true
 }
 
-// IsSetTokenHash returns a boolean if a field has been set.
-func (o *IntegrationCypher) IsSetTokenHash() bool {
-	if o != nil && !IsNil(o.TokenHash) {
-		return true
-	}
-
-	return false
-}
-
 // SetTokenHash gets a reference to the given string and assigns it to the TokenHash field.
 func (o *IntegrationCypher) SetTokenHash(v string) {
 	o.TokenHash = &v
@@ -331,15 +259,6 @@ func (o *IntegrationCypher) GetIsPluginOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.IsPlugin, true
-}
-
-// IsSetIsPlugin returns a boolean if a field has been set.
-func (o *IntegrationCypher) IsSetIsPlugin() bool {
-	if o != nil && !IsNil(o.IsPlugin) {
-		return true
-	}
-
-	return false
 }
 
 // SetIsPlugin gets a reference to the given bool and assigns it to the IsPlugin field.
@@ -366,15 +285,6 @@ func (o *IntegrationCypher) GetConfigOk() (map[string]interface{}, bool) {
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *IntegrationCypher) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
 func (o *IntegrationCypher) SetConfig(v map[string]interface{}) {
 	o.Config = v
@@ -398,15 +308,6 @@ func (o *IntegrationCypher) GetStatusOk() (*string, bool) {
 	return o.Status, true
 }
 
-// IsSetStatus returns a boolean if a field has been set.
-func (o *IntegrationCypher) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
-}
-
 // SetStatus gets a reference to the given string and assigns it to the Status field.
 func (o *IntegrationCypher) SetStatus(v string) {
 	o.Status = &v
@@ -428,15 +329,6 @@ func (o *IntegrationCypher) GetStatusDateOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.StatusDate, true
-}
-
-// IsSetStatusDate returns a boolean if a field has been set.
-func (o *IntegrationCypher) IsSetStatusDate() bool {
-	if o != nil && !IsNil(o.StatusDate) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatusDate gets a reference to the given time.Time and assigns it to the StatusDate field.
@@ -463,28 +355,9 @@ func (o *IntegrationCypher) GetStatusMessageOk() (*string, bool) {
 	return o.StatusMessage.Get(), o.StatusMessage.IsSet()
 }
 
-// IsSetStatusMessage returns a boolean if a field has been set.
-func (o *IntegrationCypher) IsSetStatusMessage() bool {
-	if o != nil && o.StatusMessage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusMessage gets a reference to the given NullableString and assigns it to the StatusMessage field.
 func (o *IntegrationCypher) SetStatusMessage(v string) {
 	o.StatusMessage.Set(&v)
-}
-
-// SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
-func (o *IntegrationCypher) SetStatusMessageNil() {
-	o.StatusMessage.Set(nil)
-}
-
-// UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
-func (o *IntegrationCypher) UnsetStatusMessage() {
-	o.StatusMessage.Unset()
 }
 
 // GetLastSync returns the LastSync field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -506,28 +379,9 @@ func (o *IntegrationCypher) GetLastSyncOk() (*string, bool) {
 	return o.LastSync.Get(), o.LastSync.IsSet()
 }
 
-// IsSetLastSync returns a boolean if a field has been set.
-func (o *IntegrationCypher) IsSetLastSync() bool {
-	if o != nil && o.LastSync.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastSync gets a reference to the given NullableString and assigns it to the LastSync field.
 func (o *IntegrationCypher) SetLastSync(v string) {
 	o.LastSync.Set(&v)
-}
-
-// SetLastSyncNil sets the value for LastSync to be an explicit nil
-func (o *IntegrationCypher) SetLastSyncNil() {
-	o.LastSync.Set(nil)
-}
-
-// UnsetLastSync ensures that no value is present for LastSync, not even an explicit nil
-func (o *IntegrationCypher) UnsetLastSync() {
-	o.LastSync.Unset()
 }
 
 // GetLastSyncDuration returns the LastSyncDuration field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -549,28 +403,9 @@ func (o *IntegrationCypher) GetLastSyncDurationOk() (*string, bool) {
 	return o.LastSyncDuration.Get(), o.LastSyncDuration.IsSet()
 }
 
-// IsSetLastSyncDuration returns a boolean if a field has been set.
-func (o *IntegrationCypher) IsSetLastSyncDuration() bool {
-	if o != nil && o.LastSyncDuration.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastSyncDuration gets a reference to the given NullableString and assigns it to the LastSyncDuration field.
 func (o *IntegrationCypher) SetLastSyncDuration(v string) {
 	o.LastSyncDuration.Set(&v)
-}
-
-// SetLastSyncDurationNil sets the value for LastSyncDuration to be an explicit nil
-func (o *IntegrationCypher) SetLastSyncDurationNil() {
-	o.LastSyncDuration.Set(nil)
-}
-
-// UnsetLastSyncDuration ensures that no value is present for LastSyncDuration, not even an explicit nil
-func (o *IntegrationCypher) UnsetLastSyncDuration() {
-	o.LastSyncDuration.Unset()
 }
 
 // GetCredential returns the Credential field value if set, zero value otherwise.
@@ -589,15 +424,6 @@ func (o *IntegrationCypher) GetCredentialOk() (*AddIntegrations200ResponseAllOfI
 		return nil, false
 	}
 	return o.Credential, true
-}
-
-// IsSetCredential returns a boolean if a field has been set.
-func (o *IntegrationCypher) IsSetCredential() bool {
-	if o != nil && !IsNil(o.Credential) {
-		return true
-	}
-
-	return false
 }
 
 // SetCredential gets a reference to the given AddIntegrations200ResponseAllOfIntegrationOneOf5Credential and assigns it to the Credential field.

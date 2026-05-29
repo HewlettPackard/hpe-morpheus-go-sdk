@@ -111,15 +111,6 @@ func (o *CloudCreateConfigVsphere) GetApplianceUrlOk() (*string, bool) {
 	return o.ApplianceUrl, true
 }
 
-// IsSetApplianceUrl returns a boolean if a field has been set.
-func (o *CloudCreateConfigVsphere) IsSetApplianceUrl() bool {
-	if o != nil && !IsNil(o.ApplianceUrl) {
-		return true
-	}
-
-	return false
-}
-
 // SetApplianceUrl gets a reference to the given string and assigns it to the ApplianceUrl field.
 func (o *CloudCreateConfigVsphere) SetApplianceUrl(v string) {
 	o.ApplianceUrl = &v
@@ -141,15 +132,6 @@ func (o *CloudCreateConfigVsphere) GetDatacenterNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.DatacenterName, true
-}
-
-// IsSetDatacenterName returns a boolean if a field has been set.
-func (o *CloudCreateConfigVsphere) IsSetDatacenterName() bool {
-	if o != nil && !IsNil(o.DatacenterName) {
-		return true
-	}
-
-	return false
 }
 
 // SetDatacenterName gets a reference to the given string and assigns it to the DatacenterName field.
@@ -176,28 +158,9 @@ func (o *CloudCreateConfigVsphere) GetExternalIdOk() (*string, bool) {
 	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *CloudCreateConfigVsphere) IsSetExternalId() bool {
-	if o != nil && o.ExternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *CloudCreateConfigVsphere) SetExternalId(v string) {
 	o.ExternalId.Set(&v)
-}
-
-// SetExternalIdNil sets the value for ExternalId to be an explicit nil
-func (o *CloudCreateConfigVsphere) SetExternalIdNil() {
-	o.ExternalId.Set(nil)
-}
-
-// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-func (o *CloudCreateConfigVsphere) UnsetExternalId() {
-	o.ExternalId.Unset()
 }
 
 // GetInventoryLevel returns the InventoryLevel field value if set, zero value otherwise.
@@ -216,15 +179,6 @@ func (o *CloudCreateConfigVsphere) GetInventoryLevelOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InventoryLevel, true
-}
-
-// IsSetInventoryLevel returns a boolean if a field has been set.
-func (o *CloudCreateConfigVsphere) IsSetInventoryLevel() bool {
-	if o != nil && !IsNil(o.InventoryLevel) {
-		return true
-	}
-
-	return false
 }
 
 // SetInventoryLevel gets a reference to the given string and assigns it to the InventoryLevel field.
@@ -248,15 +202,6 @@ func (o *CloudCreateConfigVsphere) GetConsoleKeymapOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ConsoleKeymap, true
-}
-
-// IsSetConsoleKeymap returns a boolean if a field has been set.
-func (o *CloudCreateConfigVsphere) IsSetConsoleKeymap() bool {
-	if o != nil && !IsNil(o.ConsoleKeymap) {
-		return true
-	}
-
-	return false
 }
 
 // SetConsoleKeymap gets a reference to the given string and assigns it to the ConsoleKeymap field.
@@ -354,15 +299,6 @@ func (o *CloudCreateConfigVsphere) GetClusterOk() (*string, bool) {
 	return o.Cluster, true
 }
 
-// IsSetCluster returns a boolean if a field has been set.
-func (o *CloudCreateConfigVsphere) IsSetCluster() bool {
-	if o != nil && !IsNil(o.Cluster) {
-		return true
-	}
-
-	return false
-}
-
 // SetCluster gets a reference to the given string and assigns it to the Cluster field.
 func (o *CloudCreateConfigVsphere) SetCluster(v string) {
 	o.Cluster = &v
@@ -386,15 +322,6 @@ func (o *CloudCreateConfigVsphere) GetConfigManagementIdOk() (*string, bool) {
 	return o.ConfigManagementId, true
 }
 
-// IsSetConfigManagementId returns a boolean if a field has been set.
-func (o *CloudCreateConfigVsphere) IsSetConfigManagementId() bool {
-	if o != nil && !IsNil(o.ConfigManagementId) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfigManagementId gets a reference to the given string and assigns it to the ConfigManagementId field.
 func (o *CloudCreateConfigVsphere) SetConfigManagementId(v string) {
 	o.ConfigManagementId = &v
@@ -416,15 +343,6 @@ func (o *CloudCreateConfigVsphere) GetResourcePoolOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ResourcePool, true
-}
-
-// IsSetResourcePool returns a boolean if a field has been set.
-func (o *CloudCreateConfigVsphere) IsSetResourcePool() bool {
-	if o != nil && !IsNil(o.ResourcePool) {
-		return true
-	}
-
-	return false
 }
 
 // SetResourcePool gets a reference to the given string and assigns it to the ResourcePool field.
@@ -451,28 +369,9 @@ func (o *CloudCreateConfigVsphere) GetRpcModeOk() (*CloudCreateConfigVsphereRpcM
 	return o.RpcMode.Get(), o.RpcMode.IsSet()
 }
 
-// IsSetRpcMode returns a boolean if a field has been set.
-func (o *CloudCreateConfigVsphere) IsSetRpcMode() bool {
-	if o != nil && o.RpcMode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRpcMode gets a reference to the given NullableCloudCreateConfigVsphereRpcMode and assigns it to the RpcMode field.
 func (o *CloudCreateConfigVsphere) SetRpcMode(v CloudCreateConfigVsphereRpcMode) {
 	o.RpcMode.Set(&v)
-}
-
-// SetRpcModeNil sets the value for RpcMode to be an explicit nil
-func (o *CloudCreateConfigVsphere) SetRpcModeNil() {
-	o.RpcMode.Set(nil)
-}
-
-// UnsetRpcMode ensures that no value is present for RpcMode, not even an explicit nil
-func (o *CloudCreateConfigVsphere) UnsetRpcMode() {
-	o.RpcMode.Unset()
 }
 
 // GetStorageType returns the StorageType field value if set, zero value otherwise.
@@ -491,15 +390,6 @@ func (o *CloudCreateConfigVsphere) GetStorageTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.StorageType, true
-}
-
-// IsSetStorageType returns a boolean if a field has been set.
-func (o *CloudCreateConfigVsphere) IsSetStorageType() bool {
-	if o != nil && !IsNil(o.StorageType) {
-		return true
-	}
-
-	return false
 }
 
 // SetStorageType gets a reference to the given string and assigns it to the StorageType field.
@@ -523,15 +413,6 @@ func (o *CloudCreateConfigVsphere) GetCertificateProviderOk() (*string, bool) {
 		return nil, false
 	}
 	return o.CertificateProvider, true
-}
-
-// IsSetCertificateProvider returns a boolean if a field has been set.
-func (o *CloudCreateConfigVsphere) IsSetCertificateProvider() bool {
-	if o != nil && !IsNil(o.CertificateProvider) {
-		return true
-	}
-
-	return false
 }
 
 // SetCertificateProvider gets a reference to the given string and assigns it to the CertificateProvider field.
@@ -558,28 +439,9 @@ func (o *CloudCreateConfigVsphere) GetEnableVncOk() (*string, bool) {
 	return o.EnableVnc.Get(), o.EnableVnc.IsSet()
 }
 
-// IsSetEnableVnc returns a boolean if a field has been set.
-func (o *CloudCreateConfigVsphere) IsSetEnableVnc() bool {
-	if o != nil && o.EnableVnc.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetEnableVnc gets a reference to the given NullableString and assigns it to the EnableVnc field.
 func (o *CloudCreateConfigVsphere) SetEnableVnc(v string) {
 	o.EnableVnc.Set(&v)
-}
-
-// SetEnableVncNil sets the value for EnableVnc to be an explicit nil
-func (o *CloudCreateConfigVsphere) SetEnableVncNil() {
-	o.EnableVnc.Set(nil)
-}
-
-// UnsetEnableVnc ensures that no value is present for EnableVnc, not even an explicit nil
-func (o *CloudCreateConfigVsphere) UnsetEnableVnc() {
-	o.EnableVnc.Unset()
 }
 
 // GetHideHostSelection returns the HideHostSelection field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -601,28 +463,9 @@ func (o *CloudCreateConfigVsphere) GetHideHostSelectionOk() (*string, bool) {
 	return o.HideHostSelection.Get(), o.HideHostSelection.IsSet()
 }
 
-// IsSetHideHostSelection returns a boolean if a field has been set.
-func (o *CloudCreateConfigVsphere) IsSetHideHostSelection() bool {
-	if o != nil && o.HideHostSelection.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetHideHostSelection gets a reference to the given NullableString and assigns it to the HideHostSelection field.
 func (o *CloudCreateConfigVsphere) SetHideHostSelection(v string) {
 	o.HideHostSelection.Set(&v)
-}
-
-// SetHideHostSelectionNil sets the value for HideHostSelection to be an explicit nil
-func (o *CloudCreateConfigVsphere) SetHideHostSelectionNil() {
-	o.HideHostSelection.Set(nil)
-}
-
-// UnsetHideHostSelection ensures that no value is present for HideHostSelection, not even an explicit nil
-func (o *CloudCreateConfigVsphere) UnsetHideHostSelection() {
-	o.HideHostSelection.Unset()
 }
 
 // GetEnableDiskTypeSelection returns the EnableDiskTypeSelection field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -644,28 +487,9 @@ func (o *CloudCreateConfigVsphere) GetEnableDiskTypeSelectionOk() (*string, bool
 	return o.EnableDiskTypeSelection.Get(), o.EnableDiskTypeSelection.IsSet()
 }
 
-// IsSetEnableDiskTypeSelection returns a boolean if a field has been set.
-func (o *CloudCreateConfigVsphere) IsSetEnableDiskTypeSelection() bool {
-	if o != nil && o.EnableDiskTypeSelection.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetEnableDiskTypeSelection gets a reference to the given NullableString and assigns it to the EnableDiskTypeSelection field.
 func (o *CloudCreateConfigVsphere) SetEnableDiskTypeSelection(v string) {
 	o.EnableDiskTypeSelection.Set(&v)
-}
-
-// SetEnableDiskTypeSelectionNil sets the value for EnableDiskTypeSelection to be an explicit nil
-func (o *CloudCreateConfigVsphere) SetEnableDiskTypeSelectionNil() {
-	o.EnableDiskTypeSelection.Set(nil)
-}
-
-// UnsetEnableDiskTypeSelection ensures that no value is present for EnableDiskTypeSelection, not even an explicit nil
-func (o *CloudCreateConfigVsphere) UnsetEnableDiskTypeSelection() {
-	o.EnableDiskTypeSelection.Unset()
 }
 
 // GetEnableStorageTypeSelection returns the EnableStorageTypeSelection field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -687,28 +511,9 @@ func (o *CloudCreateConfigVsphere) GetEnableStorageTypeSelectionOk() (*string, b
 	return o.EnableStorageTypeSelection.Get(), o.EnableStorageTypeSelection.IsSet()
 }
 
-// IsSetEnableStorageTypeSelection returns a boolean if a field has been set.
-func (o *CloudCreateConfigVsphere) IsSetEnableStorageTypeSelection() bool {
-	if o != nil && o.EnableStorageTypeSelection.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetEnableStorageTypeSelection gets a reference to the given NullableString and assigns it to the EnableStorageTypeSelection field.
 func (o *CloudCreateConfigVsphere) SetEnableStorageTypeSelection(v string) {
 	o.EnableStorageTypeSelection.Set(&v)
-}
-
-// SetEnableStorageTypeSelectionNil sets the value for EnableStorageTypeSelection to be an explicit nil
-func (o *CloudCreateConfigVsphere) SetEnableStorageTypeSelectionNil() {
-	o.EnableStorageTypeSelection.Set(nil)
-}
-
-// UnsetEnableStorageTypeSelection ensures that no value is present for EnableStorageTypeSelection, not even an explicit nil
-func (o *CloudCreateConfigVsphere) UnsetEnableStorageTypeSelection() {
-	o.EnableStorageTypeSelection.Unset()
 }
 
 // GetEnableNetworkTypeSelection returns the EnableNetworkTypeSelection field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -730,28 +535,9 @@ func (o *CloudCreateConfigVsphere) GetEnableNetworkTypeSelectionOk() (*CloudCrea
 	return o.EnableNetworkTypeSelection.Get(), o.EnableNetworkTypeSelection.IsSet()
 }
 
-// IsSetEnableNetworkTypeSelection returns a boolean if a field has been set.
-func (o *CloudCreateConfigVsphere) IsSetEnableNetworkTypeSelection() bool {
-	if o != nil && o.EnableNetworkTypeSelection.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetEnableNetworkTypeSelection gets a reference to the given NullableCloudCreateConfigVsphereEnableNetworkTypeSelection and assigns it to the EnableNetworkTypeSelection field.
 func (o *CloudCreateConfigVsphere) SetEnableNetworkTypeSelection(v CloudCreateConfigVsphereEnableNetworkTypeSelection) {
 	o.EnableNetworkTypeSelection.Set(&v)
-}
-
-// SetEnableNetworkTypeSelectionNil sets the value for EnableNetworkTypeSelection to be an explicit nil
-func (o *CloudCreateConfigVsphere) SetEnableNetworkTypeSelectionNil() {
-	o.EnableNetworkTypeSelection.Set(nil)
-}
-
-// UnsetEnableNetworkTypeSelection ensures that no value is present for EnableNetworkTypeSelection, not even an explicit nil
-func (o *CloudCreateConfigVsphere) UnsetEnableNetworkTypeSelection() {
-	o.EnableNetworkTypeSelection.Unset()
 }
 
 // GetUsername returns the Username field value if set, zero value otherwise.
@@ -770,15 +556,6 @@ func (o *CloudCreateConfigVsphere) GetUsernameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Username, true
-}
-
-// IsSetUsername returns a boolean if a field has been set.
-func (o *CloudCreateConfigVsphere) IsSetUsername() bool {
-	if o != nil && !IsNil(o.Username) {
-		return true
-	}
-
-	return false
 }
 
 // SetUsername gets a reference to the given string and assigns it to the Username field.
@@ -802,15 +579,6 @@ func (o *CloudCreateConfigVsphere) GetPasswordOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Password, true
-}
-
-// IsSetPassword returns a boolean if a field has been set.
-func (o *CloudCreateConfigVsphere) IsSetPassword() bool {
-	if o != nil && !IsNil(o.Password) {
-		return true
-	}
-
-	return false
 }
 
 // SetPassword gets a reference to the given string and assigns it to the Password field.

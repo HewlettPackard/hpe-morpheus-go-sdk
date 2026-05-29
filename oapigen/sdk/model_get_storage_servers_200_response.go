@@ -61,15 +61,6 @@ func (o *GetStorageServers200Response) GetStorageServerOk() (*GetStorageServers2
 	return o.StorageServer, true
 }
 
-// IsSetStorageServer returns a boolean if a field has been set.
-func (o *GetStorageServers200Response) IsSetStorageServer() bool {
-	if o != nil && !IsNil(o.StorageServer) {
-		return true
-	}
-
-	return false
-}
-
 // SetStorageServer gets a reference to the given GetStorageServers200ResponseStorageServer and assigns it to the StorageServer field.
 func (o *GetStorageServers200Response) SetStorageServer(v GetStorageServers200ResponseStorageServer) {
 	o.StorageServer = &v

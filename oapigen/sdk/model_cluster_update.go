@@ -85,15 +85,6 @@ func (o *ClusterUpdate) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ClusterUpdate) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ClusterUpdate) SetName(v string) {
 	o.Name = &v
@@ -115,15 +106,6 @@ func (o *ClusterUpdate) GetDescriptionOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ClusterUpdate) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -150,15 +132,6 @@ func (o *ClusterUpdate) GetLabelsOk() ([]string, bool) {
 	return o.Labels, true
 }
 
-// IsSetLabels returns a boolean if a field has been set.
-func (o *ClusterUpdate) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
-}
-
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
 func (o *ClusterUpdate) SetLabels(v []string) {
 	o.Labels = v
@@ -180,15 +153,6 @@ func (o *ClusterUpdate) GetEnabledOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *ClusterUpdate) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -214,15 +178,6 @@ func (o *ClusterUpdate) GetUseAgentOk() (*bool, bool) {
 	return o.UseAgent, true
 }
 
-// IsSetUseAgent returns a boolean if a field has been set.
-func (o *ClusterUpdate) IsSetUseAgent() bool {
-	if o != nil && !IsNil(o.UseAgent) {
-		return true
-	}
-
-	return false
-}
-
 // SetUseAgent gets a reference to the given bool and assigns it to the UseAgent field.
 func (o *ClusterUpdate) SetUseAgent(v bool) {
 	o.UseAgent = &v
@@ -244,15 +199,6 @@ func (o *ClusterUpdate) GetServiceUrlOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ServiceUrl, true
-}
-
-// IsSetServiceUrl returns a boolean if a field has been set.
-func (o *ClusterUpdate) IsSetServiceUrl() bool {
-	if o != nil && !IsNil(o.ServiceUrl) {
-		return true
-	}
-
-	return false
 }
 
 // SetServiceUrl gets a reference to the given string and assigns it to the ServiceUrl field.
@@ -278,15 +224,6 @@ func (o *ClusterUpdate) GetServiceTokenOk() (*string, bool) {
 	return o.ServiceToken, true
 }
 
-// IsSetServiceToken returns a boolean if a field has been set.
-func (o *ClusterUpdate) IsSetServiceToken() bool {
-	if o != nil && !IsNil(o.ServiceToken) {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceToken gets a reference to the given string and assigns it to the ServiceToken field.
 func (o *ClusterUpdate) SetServiceToken(v string) {
 	o.ServiceToken = &v
@@ -308,15 +245,6 @@ func (o *ClusterUpdate) GetRefreshOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Refresh, true
-}
-
-// IsSetRefresh returns a boolean if a field has been set.
-func (o *ClusterUpdate) IsSetRefresh() bool {
-	if o != nil && !IsNil(o.Refresh) {
-		return true
-	}
-
-	return false
 }
 
 // SetRefresh gets a reference to the given bool and assigns it to the Refresh field.
@@ -342,15 +270,6 @@ func (o *ClusterUpdate) GetManagedOk() (*bool, bool) {
 	return o.Managed, true
 }
 
-// IsSetManaged returns a boolean if a field has been set.
-func (o *ClusterUpdate) IsSetManaged() bool {
-	if o != nil && !IsNil(o.Managed) {
-		return true
-	}
-
-	return false
-}
-
 // SetManaged gets a reference to the given bool and assigns it to the Managed field.
 func (o *ClusterUpdate) SetManaged(v bool) {
 	o.Managed = &v
@@ -372,15 +291,6 @@ func (o *ClusterUpdate) GetAutoRecoverPowerStateOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.AutoRecoverPowerState, true
-}
-
-// IsSetAutoRecoverPowerState returns a boolean if a field has been set.
-func (o *ClusterUpdate) IsSetAutoRecoverPowerState() bool {
-	if o != nil && !IsNil(o.AutoRecoverPowerState) {
-		return true
-	}
-
-	return false
 }
 
 // SetAutoRecoverPowerState gets a reference to the given bool and assigns it to the AutoRecoverPowerState field.
@@ -406,15 +316,6 @@ func (o *ClusterUpdate) GetCpuPlacementModeOk() (*string, bool) {
 	return o.CpuPlacementMode, true
 }
 
-// IsSetCpuPlacementMode returns a boolean if a field has been set.
-func (o *ClusterUpdate) IsSetCpuPlacementMode() bool {
-	if o != nil && !IsNil(o.CpuPlacementMode) {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuPlacementMode gets a reference to the given string and assigns it to the CpuPlacementMode field.
 func (o *ClusterUpdate) SetCpuPlacementMode(v string) {
 	o.CpuPlacementMode = &v
@@ -438,15 +339,6 @@ func (o *ClusterUpdate) GetIntegrationsOk() ([]ClusterUpdateIntegrationsInner, b
 	return o.Integrations, true
 }
 
-// IsSetIntegrations returns a boolean if a field has been set.
-func (o *ClusterUpdate) IsSetIntegrations() bool {
-	if o != nil && !IsNil(o.Integrations) {
-		return true
-	}
-
-	return false
-}
-
 // SetIntegrations gets a reference to the given []ClusterUpdateIntegrationsInner and assigns it to the Integrations field.
 func (o *ClusterUpdate) SetIntegrations(v []ClusterUpdateIntegrationsInner) {
 	o.Integrations = v
@@ -468,15 +360,6 @@ func (o *ClusterUpdate) GetConfigOk() (*ClusterUpdateConfig, bool) {
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *ClusterUpdate) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given ClusterUpdateConfig and assigns it to the Config field.

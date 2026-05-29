@@ -66,15 +66,6 @@ func (o *UpdateInstanceNetworkInterface200Response) GetNetworkInterfaceOk() (*Up
 	return o.NetworkInterface, true
 }
 
-// IsSetNetworkInterface returns a boolean if a field has been set.
-func (o *UpdateInstanceNetworkInterface200Response) IsSetNetworkInterface() bool {
-	if o != nil && !IsNil(o.NetworkInterface) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkInterface gets a reference to the given UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface and assigns it to the NetworkInterface field.
 func (o *UpdateInstanceNetworkInterface200Response) SetNetworkInterface(v UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) {
 	o.NetworkInterface = &v
@@ -96,15 +87,6 @@ func (o *UpdateInstanceNetworkInterface200Response) GetInterfaceTypeOk() (*strin
 		return nil, false
 	}
 	return o.InterfaceType, true
-}
-
-// IsSetInterfaceType returns a boolean if a field has been set.
-func (o *UpdateInstanceNetworkInterface200Response) IsSetInterfaceType() bool {
-	if o != nil && !IsNil(o.InterfaceType) {
-		return true
-	}
-
-	return false
 }
 
 // SetInterfaceType gets a reference to the given string and assigns it to the InterfaceType field.
@@ -130,15 +112,6 @@ func (o *UpdateInstanceNetworkInterface200Response) GetNetIdOk() (*int64, bool) 
 	return o.NetId, true
 }
 
-// IsSetNetId returns a boolean if a field has been set.
-func (o *UpdateInstanceNetworkInterface200Response) IsSetNetId() bool {
-	if o != nil && !IsNil(o.NetId) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetId gets a reference to the given int64 and assigns it to the NetId field.
 func (o *UpdateInstanceNetworkInterface200Response) SetNetId(v int64) {
 	o.NetId = &v
@@ -160,15 +133,6 @@ func (o *UpdateInstanceNetworkInterface200Response) GetServerOk() (*UpdateInstan
 		return nil, false
 	}
 	return o.Server, true
-}
-
-// IsSetServer returns a boolean if a field has been set.
-func (o *UpdateInstanceNetworkInterface200Response) IsSetServer() bool {
-	if o != nil && !IsNil(o.Server) {
-		return true
-	}
-
-	return false
 }
 
 // SetServer gets a reference to the given UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer and assigns it to the Server field.
@@ -194,15 +158,6 @@ func (o *UpdateInstanceNetworkInterface200Response) GetSuccessOk() (*bool, bool)
 	return o.Success, true
 }
 
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *UpdateInstanceNetworkInterface200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
-}
-
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.
 func (o *UpdateInstanceNetworkInterface200Response) SetSuccess(v bool) {
 	o.Success = &v
@@ -225,15 +180,6 @@ func (o *UpdateInstanceNetworkInterface200Response) GetErrorsOk() (map[string]in
 		return map[string]interface{}{}, false
 	}
 	return o.Errors, true
-}
-
-// IsSetErrors returns a boolean if a field has been set.
-func (o *UpdateInstanceNetworkInterface200Response) IsSetErrors() bool {
-	if o != nil && !IsNil(o.Errors) {
-		return true
-	}
-
-	return false
 }
 
 // SetErrors gets a reference to the given map[string]interface{} and assigns it to the Errors field.

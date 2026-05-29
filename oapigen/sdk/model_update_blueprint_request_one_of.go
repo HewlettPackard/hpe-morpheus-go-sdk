@@ -96,15 +96,6 @@ func (o *UpdateBlueprintRequestOneOf) GetImageOk() (*string, bool) {
 	return o.Image, true
 }
 
-// IsSetImage returns a boolean if a field has been set.
-func (o *UpdateBlueprintRequestOneOf) IsSetImage() bool {
-	if o != nil && !IsNil(o.Image) {
-		return true
-	}
-
-	return false
-}
-
 // SetImage gets a reference to the given string and assigns it to the Image field.
 func (o *UpdateBlueprintRequestOneOf) SetImage(v string) {
 	o.Image = &v
@@ -151,15 +142,6 @@ func (o *UpdateBlueprintRequestOneOf) GetLabelsOk() ([]string, bool) {
 		return nil, false
 	}
 	return o.Labels, true
-}
-
-// IsSetLabels returns a boolean if a field has been set.
-func (o *UpdateBlueprintRequestOneOf) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
 }
 
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.

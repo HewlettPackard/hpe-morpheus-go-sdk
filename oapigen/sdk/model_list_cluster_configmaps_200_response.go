@@ -62,15 +62,6 @@ func (o *ListClusterConfigmaps200Response) GetConfigmapsOk() ([]ListClusterConfi
 	return o.Configmaps, true
 }
 
-// IsSetConfigmaps returns a boolean if a field has been set.
-func (o *ListClusterConfigmaps200Response) IsSetConfigmaps() bool {
-	if o != nil && !IsNil(o.Configmaps) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfigmaps gets a reference to the given []ListClusterConfigmaps200ResponseAllOfConfigmapsInner and assigns it to the Configmaps field.
 func (o *ListClusterConfigmaps200Response) SetConfigmaps(v []ListClusterConfigmaps200ResponseAllOfConfigmapsInner) {
 	o.Configmaps = v
@@ -92,15 +83,6 @@ func (o *ListClusterConfigmaps200Response) GetMetaOk() (*ListApprovals200Respons
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListClusterConfigmaps200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

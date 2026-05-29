@@ -62,15 +62,6 @@ func (o *GetCatalogType200Response) GetCatalogItemTypesOk() ([]GetCatalogType200
 	return o.CatalogItemTypes, true
 }
 
-// IsSetCatalogItemTypes returns a boolean if a field has been set.
-func (o *GetCatalogType200Response) IsSetCatalogItemTypes() bool {
-	if o != nil && !IsNil(o.CatalogItemTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetCatalogItemTypes gets a reference to the given []GetCatalogType200ResponseAllOfCatalogItemTypesInner and assigns it to the CatalogItemTypes field.
 func (o *GetCatalogType200Response) SetCatalogItemTypes(v []GetCatalogType200ResponseAllOfCatalogItemTypesInner) {
 	o.CatalogItemTypes = v
@@ -92,15 +83,6 @@ func (o *GetCatalogType200Response) GetMetaOk() (*ListApprovals200ResponseAllOfM
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *GetCatalogType200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

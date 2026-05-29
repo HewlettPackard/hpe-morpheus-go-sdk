@@ -99,15 +99,6 @@ func (o *AddPowerSchedules200ResponseAllOfSchedule) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *AddPowerSchedules200ResponseAllOfSchedule) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *AddPowerSchedules200ResponseAllOfSchedule) SetId(v int64) {
 	o.Id = &v
@@ -129,15 +120,6 @@ func (o *AddPowerSchedules200ResponseAllOfSchedule) GetNameOk() (*string, bool) 
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *AddPowerSchedules200ResponseAllOfSchedule) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -164,28 +146,9 @@ func (o *AddPowerSchedules200ResponseAllOfSchedule) GetDescriptionOk() (*string,
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *AddPowerSchedules200ResponseAllOfSchedule) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *AddPowerSchedules200ResponseAllOfSchedule) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *AddPowerSchedules200ResponseAllOfSchedule) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *AddPowerSchedules200ResponseAllOfSchedule) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetVisibility returns the Visibility field value if set, zero value otherwise.
@@ -204,15 +167,6 @@ func (o *AddPowerSchedules200ResponseAllOfSchedule) GetVisibilityOk() (*string, 
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *AddPowerSchedules200ResponseAllOfSchedule) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -238,15 +192,6 @@ func (o *AddPowerSchedules200ResponseAllOfSchedule) GetEnabledOk() (*bool, bool)
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *AddPowerSchedules200ResponseAllOfSchedule) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *AddPowerSchedules200ResponseAllOfSchedule) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -268,15 +213,6 @@ func (o *AddPowerSchedules200ResponseAllOfSchedule) GetScheduleTypeOk() (*string
 		return nil, false
 	}
 	return o.ScheduleType, true
-}
-
-// IsSetScheduleType returns a boolean if a field has been set.
-func (o *AddPowerSchedules200ResponseAllOfSchedule) IsSetScheduleType() bool {
-	if o != nil && !IsNil(o.ScheduleType) {
-		return true
-	}
-
-	return false
 }
 
 // SetScheduleType gets a reference to the given string and assigns it to the ScheduleType field.
@@ -302,15 +238,6 @@ func (o *AddPowerSchedules200ResponseAllOfSchedule) GetScheduleTimezoneOk() (*st
 	return o.ScheduleTimezone, true
 }
 
-// IsSetScheduleTimezone returns a boolean if a field has been set.
-func (o *AddPowerSchedules200ResponseAllOfSchedule) IsSetScheduleTimezone() bool {
-	if o != nil && !IsNil(o.ScheduleTimezone) {
-		return true
-	}
-
-	return false
-}
-
 // SetScheduleTimezone gets a reference to the given string and assigns it to the ScheduleTimezone field.
 func (o *AddPowerSchedules200ResponseAllOfSchedule) SetScheduleTimezone(v string) {
 	o.ScheduleTimezone = &v
@@ -332,15 +259,6 @@ func (o *AddPowerSchedules200ResponseAllOfSchedule) GetMondayOnOk() (*int64, boo
 		return nil, false
 	}
 	return o.MondayOn, true
-}
-
-// IsSetMondayOn returns a boolean if a field has been set.
-func (o *AddPowerSchedules200ResponseAllOfSchedule) IsSetMondayOn() bool {
-	if o != nil && !IsNil(o.MondayOn) {
-		return true
-	}
-
-	return false
 }
 
 // SetMondayOn gets a reference to the given int64 and assigns it to the MondayOn field.
@@ -366,15 +284,6 @@ func (o *AddPowerSchedules200ResponseAllOfSchedule) GetMondayOnTimeOk() (*string
 	return o.MondayOnTime, true
 }
 
-// IsSetMondayOnTime returns a boolean if a field has been set.
-func (o *AddPowerSchedules200ResponseAllOfSchedule) IsSetMondayOnTime() bool {
-	if o != nil && !IsNil(o.MondayOnTime) {
-		return true
-	}
-
-	return false
-}
-
 // SetMondayOnTime gets a reference to the given string and assigns it to the MondayOnTime field.
 func (o *AddPowerSchedules200ResponseAllOfSchedule) SetMondayOnTime(v string) {
 	o.MondayOnTime = &v
@@ -396,15 +305,6 @@ func (o *AddPowerSchedules200ResponseAllOfSchedule) GetMondayOffOk() (*int64, bo
 		return nil, false
 	}
 	return o.MondayOff, true
-}
-
-// IsSetMondayOff returns a boolean if a field has been set.
-func (o *AddPowerSchedules200ResponseAllOfSchedule) IsSetMondayOff() bool {
-	if o != nil && !IsNil(o.MondayOff) {
-		return true
-	}
-
-	return false
 }
 
 // SetMondayOff gets a reference to the given int64 and assigns it to the MondayOff field.
@@ -430,15 +330,6 @@ func (o *AddPowerSchedules200ResponseAllOfSchedule) GetMondayOffTimeOk() (*strin
 	return o.MondayOffTime, true
 }
 
-// IsSetMondayOffTime returns a boolean if a field has been set.
-func (o *AddPowerSchedules200ResponseAllOfSchedule) IsSetMondayOffTime() bool {
-	if o != nil && !IsNil(o.MondayOffTime) {
-		return true
-	}
-
-	return false
-}
-
 // SetMondayOffTime gets a reference to the given string and assigns it to the MondayOffTime field.
 func (o *AddPowerSchedules200ResponseAllOfSchedule) SetMondayOffTime(v string) {
 	o.MondayOffTime = &v
@@ -460,15 +351,6 @@ func (o *AddPowerSchedules200ResponseAllOfSchedule) GetTuesdayOnOk() (*int64, bo
 		return nil, false
 	}
 	return o.TuesdayOn, true
-}
-
-// IsSetTuesdayOn returns a boolean if a field has been set.
-func (o *AddPowerSchedules200ResponseAllOfSchedule) IsSetTuesdayOn() bool {
-	if o != nil && !IsNil(o.TuesdayOn) {
-		return true
-	}
-
-	return false
 }
 
 // SetTuesdayOn gets a reference to the given int64 and assigns it to the TuesdayOn field.
@@ -494,15 +376,6 @@ func (o *AddPowerSchedules200ResponseAllOfSchedule) GetTuesdayOnTimeOk() (*strin
 	return o.TuesdayOnTime, true
 }
 
-// IsSetTuesdayOnTime returns a boolean if a field has been set.
-func (o *AddPowerSchedules200ResponseAllOfSchedule) IsSetTuesdayOnTime() bool {
-	if o != nil && !IsNil(o.TuesdayOnTime) {
-		return true
-	}
-
-	return false
-}
-
 // SetTuesdayOnTime gets a reference to the given string and assigns it to the TuesdayOnTime field.
 func (o *AddPowerSchedules200ResponseAllOfSchedule) SetTuesdayOnTime(v string) {
 	o.TuesdayOnTime = &v
@@ -524,15 +397,6 @@ func (o *AddPowerSchedules200ResponseAllOfSchedule) GetTuesdayOffOk() (*int64, b
 		return nil, false
 	}
 	return o.TuesdayOff, true
-}
-
-// IsSetTuesdayOff returns a boolean if a field has been set.
-func (o *AddPowerSchedules200ResponseAllOfSchedule) IsSetTuesdayOff() bool {
-	if o != nil && !IsNil(o.TuesdayOff) {
-		return true
-	}
-
-	return false
 }
 
 // SetTuesdayOff gets a reference to the given int64 and assigns it to the TuesdayOff field.
@@ -558,15 +422,6 @@ func (o *AddPowerSchedules200ResponseAllOfSchedule) GetTuesdayOffTimeOk() (*stri
 	return o.TuesdayOffTime, true
 }
 
-// IsSetTuesdayOffTime returns a boolean if a field has been set.
-func (o *AddPowerSchedules200ResponseAllOfSchedule) IsSetTuesdayOffTime() bool {
-	if o != nil && !IsNil(o.TuesdayOffTime) {
-		return true
-	}
-
-	return false
-}
-
 // SetTuesdayOffTime gets a reference to the given string and assigns it to the TuesdayOffTime field.
 func (o *AddPowerSchedules200ResponseAllOfSchedule) SetTuesdayOffTime(v string) {
 	o.TuesdayOffTime = &v
@@ -588,15 +443,6 @@ func (o *AddPowerSchedules200ResponseAllOfSchedule) GetWednesdayOnOk() (*int64, 
 		return nil, false
 	}
 	return o.WednesdayOn, true
-}
-
-// IsSetWednesdayOn returns a boolean if a field has been set.
-func (o *AddPowerSchedules200ResponseAllOfSchedule) IsSetWednesdayOn() bool {
-	if o != nil && !IsNil(o.WednesdayOn) {
-		return true
-	}
-
-	return false
 }
 
 // SetWednesdayOn gets a reference to the given int64 and assigns it to the WednesdayOn field.
@@ -622,15 +468,6 @@ func (o *AddPowerSchedules200ResponseAllOfSchedule) GetWednesdayOnTimeOk() (*str
 	return o.WednesdayOnTime, true
 }
 
-// IsSetWednesdayOnTime returns a boolean if a field has been set.
-func (o *AddPowerSchedules200ResponseAllOfSchedule) IsSetWednesdayOnTime() bool {
-	if o != nil && !IsNil(o.WednesdayOnTime) {
-		return true
-	}
-
-	return false
-}
-
 // SetWednesdayOnTime gets a reference to the given string and assigns it to the WednesdayOnTime field.
 func (o *AddPowerSchedules200ResponseAllOfSchedule) SetWednesdayOnTime(v string) {
 	o.WednesdayOnTime = &v
@@ -652,15 +489,6 @@ func (o *AddPowerSchedules200ResponseAllOfSchedule) GetWednesdayOffOk() (*int64,
 		return nil, false
 	}
 	return o.WednesdayOff, true
-}
-
-// IsSetWednesdayOff returns a boolean if a field has been set.
-func (o *AddPowerSchedules200ResponseAllOfSchedule) IsSetWednesdayOff() bool {
-	if o != nil && !IsNil(o.WednesdayOff) {
-		return true
-	}
-
-	return false
 }
 
 // SetWednesdayOff gets a reference to the given int64 and assigns it to the WednesdayOff field.
@@ -686,15 +514,6 @@ func (o *AddPowerSchedules200ResponseAllOfSchedule) GetWednesdayOffTimeOk() (*st
 	return o.WednesdayOffTime, true
 }
 
-// IsSetWednesdayOffTime returns a boolean if a field has been set.
-func (o *AddPowerSchedules200ResponseAllOfSchedule) IsSetWednesdayOffTime() bool {
-	if o != nil && !IsNil(o.WednesdayOffTime) {
-		return true
-	}
-
-	return false
-}
-
 // SetWednesdayOffTime gets a reference to the given string and assigns it to the WednesdayOffTime field.
 func (o *AddPowerSchedules200ResponseAllOfSchedule) SetWednesdayOffTime(v string) {
 	o.WednesdayOffTime = &v
@@ -716,15 +535,6 @@ func (o *AddPowerSchedules200ResponseAllOfSchedule) GetThursdayOnOk() (*int64, b
 		return nil, false
 	}
 	return o.ThursdayOn, true
-}
-
-// IsSetThursdayOn returns a boolean if a field has been set.
-func (o *AddPowerSchedules200ResponseAllOfSchedule) IsSetThursdayOn() bool {
-	if o != nil && !IsNil(o.ThursdayOn) {
-		return true
-	}
-
-	return false
 }
 
 // SetThursdayOn gets a reference to the given int64 and assigns it to the ThursdayOn field.
@@ -750,15 +560,6 @@ func (o *AddPowerSchedules200ResponseAllOfSchedule) GetThursdayOnTimeOk() (*stri
 	return o.ThursdayOnTime, true
 }
 
-// IsSetThursdayOnTime returns a boolean if a field has been set.
-func (o *AddPowerSchedules200ResponseAllOfSchedule) IsSetThursdayOnTime() bool {
-	if o != nil && !IsNil(o.ThursdayOnTime) {
-		return true
-	}
-
-	return false
-}
-
 // SetThursdayOnTime gets a reference to the given string and assigns it to the ThursdayOnTime field.
 func (o *AddPowerSchedules200ResponseAllOfSchedule) SetThursdayOnTime(v string) {
 	o.ThursdayOnTime = &v
@@ -780,15 +581,6 @@ func (o *AddPowerSchedules200ResponseAllOfSchedule) GetThursdayOffOk() (*int64, 
 		return nil, false
 	}
 	return o.ThursdayOff, true
-}
-
-// IsSetThursdayOff returns a boolean if a field has been set.
-func (o *AddPowerSchedules200ResponseAllOfSchedule) IsSetThursdayOff() bool {
-	if o != nil && !IsNil(o.ThursdayOff) {
-		return true
-	}
-
-	return false
 }
 
 // SetThursdayOff gets a reference to the given int64 and assigns it to the ThursdayOff field.
@@ -814,15 +606,6 @@ func (o *AddPowerSchedules200ResponseAllOfSchedule) GetThursdayOffTimeOk() (*str
 	return o.ThursdayOffTime, true
 }
 
-// IsSetThursdayOffTime returns a boolean if a field has been set.
-func (o *AddPowerSchedules200ResponseAllOfSchedule) IsSetThursdayOffTime() bool {
-	if o != nil && !IsNil(o.ThursdayOffTime) {
-		return true
-	}
-
-	return false
-}
-
 // SetThursdayOffTime gets a reference to the given string and assigns it to the ThursdayOffTime field.
 func (o *AddPowerSchedules200ResponseAllOfSchedule) SetThursdayOffTime(v string) {
 	o.ThursdayOffTime = &v
@@ -844,15 +627,6 @@ func (o *AddPowerSchedules200ResponseAllOfSchedule) GetFridayOnOk() (*int64, boo
 		return nil, false
 	}
 	return o.FridayOn, true
-}
-
-// IsSetFridayOn returns a boolean if a field has been set.
-func (o *AddPowerSchedules200ResponseAllOfSchedule) IsSetFridayOn() bool {
-	if o != nil && !IsNil(o.FridayOn) {
-		return true
-	}
-
-	return false
 }
 
 // SetFridayOn gets a reference to the given int64 and assigns it to the FridayOn field.
@@ -878,15 +652,6 @@ func (o *AddPowerSchedules200ResponseAllOfSchedule) GetFridayOnTimeOk() (*string
 	return o.FridayOnTime, true
 }
 
-// IsSetFridayOnTime returns a boolean if a field has been set.
-func (o *AddPowerSchedules200ResponseAllOfSchedule) IsSetFridayOnTime() bool {
-	if o != nil && !IsNil(o.FridayOnTime) {
-		return true
-	}
-
-	return false
-}
-
 // SetFridayOnTime gets a reference to the given string and assigns it to the FridayOnTime field.
 func (o *AddPowerSchedules200ResponseAllOfSchedule) SetFridayOnTime(v string) {
 	o.FridayOnTime = &v
@@ -908,15 +673,6 @@ func (o *AddPowerSchedules200ResponseAllOfSchedule) GetFridayOffOk() (*int64, bo
 		return nil, false
 	}
 	return o.FridayOff, true
-}
-
-// IsSetFridayOff returns a boolean if a field has been set.
-func (o *AddPowerSchedules200ResponseAllOfSchedule) IsSetFridayOff() bool {
-	if o != nil && !IsNil(o.FridayOff) {
-		return true
-	}
-
-	return false
 }
 
 // SetFridayOff gets a reference to the given int64 and assigns it to the FridayOff field.
@@ -942,15 +698,6 @@ func (o *AddPowerSchedules200ResponseAllOfSchedule) GetFridayOffTimeOk() (*strin
 	return o.FridayOffTime, true
 }
 
-// IsSetFridayOffTime returns a boolean if a field has been set.
-func (o *AddPowerSchedules200ResponseAllOfSchedule) IsSetFridayOffTime() bool {
-	if o != nil && !IsNil(o.FridayOffTime) {
-		return true
-	}
-
-	return false
-}
-
 // SetFridayOffTime gets a reference to the given string and assigns it to the FridayOffTime field.
 func (o *AddPowerSchedules200ResponseAllOfSchedule) SetFridayOffTime(v string) {
 	o.FridayOffTime = &v
@@ -972,15 +719,6 @@ func (o *AddPowerSchedules200ResponseAllOfSchedule) GetSaturdayOnOk() (*int64, b
 		return nil, false
 	}
 	return o.SaturdayOn, true
-}
-
-// IsSetSaturdayOn returns a boolean if a field has been set.
-func (o *AddPowerSchedules200ResponseAllOfSchedule) IsSetSaturdayOn() bool {
-	if o != nil && !IsNil(o.SaturdayOn) {
-		return true
-	}
-
-	return false
 }
 
 // SetSaturdayOn gets a reference to the given int64 and assigns it to the SaturdayOn field.
@@ -1006,15 +744,6 @@ func (o *AddPowerSchedules200ResponseAllOfSchedule) GetSaturdayOnTimeOk() (*stri
 	return o.SaturdayOnTime, true
 }
 
-// IsSetSaturdayOnTime returns a boolean if a field has been set.
-func (o *AddPowerSchedules200ResponseAllOfSchedule) IsSetSaturdayOnTime() bool {
-	if o != nil && !IsNil(o.SaturdayOnTime) {
-		return true
-	}
-
-	return false
-}
-
 // SetSaturdayOnTime gets a reference to the given string and assigns it to the SaturdayOnTime field.
 func (o *AddPowerSchedules200ResponseAllOfSchedule) SetSaturdayOnTime(v string) {
 	o.SaturdayOnTime = &v
@@ -1036,15 +765,6 @@ func (o *AddPowerSchedules200ResponseAllOfSchedule) GetSaturdayOffOk() (*int64, 
 		return nil, false
 	}
 	return o.SaturdayOff, true
-}
-
-// IsSetSaturdayOff returns a boolean if a field has been set.
-func (o *AddPowerSchedules200ResponseAllOfSchedule) IsSetSaturdayOff() bool {
-	if o != nil && !IsNil(o.SaturdayOff) {
-		return true
-	}
-
-	return false
 }
 
 // SetSaturdayOff gets a reference to the given int64 and assigns it to the SaturdayOff field.
@@ -1070,15 +790,6 @@ func (o *AddPowerSchedules200ResponseAllOfSchedule) GetSaturdayOffTimeOk() (*str
 	return o.SaturdayOffTime, true
 }
 
-// IsSetSaturdayOffTime returns a boolean if a field has been set.
-func (o *AddPowerSchedules200ResponseAllOfSchedule) IsSetSaturdayOffTime() bool {
-	if o != nil && !IsNil(o.SaturdayOffTime) {
-		return true
-	}
-
-	return false
-}
-
 // SetSaturdayOffTime gets a reference to the given string and assigns it to the SaturdayOffTime field.
 func (o *AddPowerSchedules200ResponseAllOfSchedule) SetSaturdayOffTime(v string) {
 	o.SaturdayOffTime = &v
@@ -1100,15 +811,6 @@ func (o *AddPowerSchedules200ResponseAllOfSchedule) GetSundayOnOk() (*int64, boo
 		return nil, false
 	}
 	return o.SundayOn, true
-}
-
-// IsSetSundayOn returns a boolean if a field has been set.
-func (o *AddPowerSchedules200ResponseAllOfSchedule) IsSetSundayOn() bool {
-	if o != nil && !IsNil(o.SundayOn) {
-		return true
-	}
-
-	return false
 }
 
 // SetSundayOn gets a reference to the given int64 and assigns it to the SundayOn field.
@@ -1134,15 +836,6 @@ func (o *AddPowerSchedules200ResponseAllOfSchedule) GetSundayOnTimeOk() (*string
 	return o.SundayOnTime, true
 }
 
-// IsSetSundayOnTime returns a boolean if a field has been set.
-func (o *AddPowerSchedules200ResponseAllOfSchedule) IsSetSundayOnTime() bool {
-	if o != nil && !IsNil(o.SundayOnTime) {
-		return true
-	}
-
-	return false
-}
-
 // SetSundayOnTime gets a reference to the given string and assigns it to the SundayOnTime field.
 func (o *AddPowerSchedules200ResponseAllOfSchedule) SetSundayOnTime(v string) {
 	o.SundayOnTime = &v
@@ -1164,15 +857,6 @@ func (o *AddPowerSchedules200ResponseAllOfSchedule) GetSundayOffOk() (*int64, bo
 		return nil, false
 	}
 	return o.SundayOff, true
-}
-
-// IsSetSundayOff returns a boolean if a field has been set.
-func (o *AddPowerSchedules200ResponseAllOfSchedule) IsSetSundayOff() bool {
-	if o != nil && !IsNil(o.SundayOff) {
-		return true
-	}
-
-	return false
 }
 
 // SetSundayOff gets a reference to the given int64 and assigns it to the SundayOff field.
@@ -1198,15 +882,6 @@ func (o *AddPowerSchedules200ResponseAllOfSchedule) GetSundayOffTimeOk() (*strin
 	return o.SundayOffTime, true
 }
 
-// IsSetSundayOffTime returns a boolean if a field has been set.
-func (o *AddPowerSchedules200ResponseAllOfSchedule) IsSetSundayOffTime() bool {
-	if o != nil && !IsNil(o.SundayOffTime) {
-		return true
-	}
-
-	return false
-}
-
 // SetSundayOffTime gets a reference to the given string and assigns it to the SundayOffTime field.
 func (o *AddPowerSchedules200ResponseAllOfSchedule) SetSundayOffTime(v string) {
 	o.SundayOffTime = &v
@@ -1228,15 +903,6 @@ func (o *AddPowerSchedules200ResponseAllOfSchedule) GetTotalMonthlyHoursSavedOk(
 		return nil, false
 	}
 	return o.TotalMonthlyHoursSaved, true
-}
-
-// IsSetTotalMonthlyHoursSaved returns a boolean if a field has been set.
-func (o *AddPowerSchedules200ResponseAllOfSchedule) IsSetTotalMonthlyHoursSaved() bool {
-	if o != nil && !IsNil(o.TotalMonthlyHoursSaved) {
-		return true
-	}
-
-	return false
 }
 
 // SetTotalMonthlyHoursSaved gets a reference to the given float32 and assigns it to the TotalMonthlyHoursSaved field.
@@ -1262,15 +928,6 @@ func (o *AddPowerSchedules200ResponseAllOfSchedule) GetDateCreatedOk() (*time.Ti
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *AddPowerSchedules200ResponseAllOfSchedule) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *AddPowerSchedules200ResponseAllOfSchedule) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -1292,15 +949,6 @@ func (o *AddPowerSchedules200ResponseAllOfSchedule) GetLastUpdatedOk() (*time.Ti
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *AddPowerSchedules200ResponseAllOfSchedule) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.

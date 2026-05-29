@@ -61,15 +61,6 @@ func (o *AddIntegrationSnowObjectsRequest) GetObjectOk() (*AddIntegrationSnowObj
 	return o.Object, true
 }
 
-// IsSetObject returns a boolean if a field has been set.
-func (o *AddIntegrationSnowObjectsRequest) IsSetObject() bool {
-	if o != nil && !IsNil(o.Object) {
-		return true
-	}
-
-	return false
-}
-
 // SetObject gets a reference to the given AddIntegrationSnowObjectsRequestObject and assigns it to the Object field.
 func (o *AddIntegrationSnowObjectsRequest) SetObject(v AddIntegrationSnowObjectsRequestObject) {
 	o.Object = &v

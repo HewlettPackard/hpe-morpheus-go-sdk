@@ -64,15 +64,6 @@ func (o *GetAppState200ResponseAllOfInputVariablesInner) GetNameOk() (*string, b
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *GetAppState200ResponseAllOfInputVariablesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *GetAppState200ResponseAllOfInputVariablesInner) SetName(v string) {
 	o.Name = &v
@@ -97,28 +88,9 @@ func (o *GetAppState200ResponseAllOfInputVariablesInner) GetValueOk() (*string, 
 	return o.Value.Get(), o.Value.IsSet()
 }
 
-// IsSetValue returns a boolean if a field has been set.
-func (o *GetAppState200ResponseAllOfInputVariablesInner) IsSetValue() bool {
-	if o != nil && o.Value.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetValue gets a reference to the given NullableString and assigns it to the Value field.
 func (o *GetAppState200ResponseAllOfInputVariablesInner) SetValue(v string) {
 	o.Value.Set(&v)
-}
-
-// SetValueNil sets the value for Value to be an explicit nil
-func (o *GetAppState200ResponseAllOfInputVariablesInner) SetValueNil() {
-	o.Value.Set(nil)
-}
-
-// UnsetValue ensures that no value is present for Value, not even an explicit nil
-func (o *GetAppState200ResponseAllOfInputVariablesInner) UnsetValue() {
-	o.Value.Unset()
 }
 
 // GetSensitive returns the Sensitive field value if set, zero value otherwise.
@@ -137,15 +109,6 @@ func (o *GetAppState200ResponseAllOfInputVariablesInner) GetSensitiveOk() (*bool
 		return nil, false
 	}
 	return o.Sensitive, true
-}
-
-// IsSetSensitive returns a boolean if a field has been set.
-func (o *GetAppState200ResponseAllOfInputVariablesInner) IsSetSensitive() bool {
-	if o != nil && !IsNil(o.Sensitive) {
-		return true
-	}
-
-	return false
 }
 
 // SetSensitive gets a reference to the given bool and assigns it to the Sensitive field.
@@ -169,15 +132,6 @@ func (o *GetAppState200ResponseAllOfInputVariablesInner) GetTypeOk() (*string, b
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *GetAppState200ResponseAllOfInputVariablesInner) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.

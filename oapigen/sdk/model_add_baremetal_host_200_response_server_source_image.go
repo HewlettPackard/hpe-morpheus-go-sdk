@@ -63,15 +63,6 @@ func (o *AddBaremetalHost200ResponseServerSourceImage) GetIdOk() (*int64, bool) 
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *AddBaremetalHost200ResponseServerSourceImage) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *AddBaremetalHost200ResponseServerSourceImage) SetId(v int64) {
 	o.Id = &v
@@ -95,15 +86,6 @@ func (o *AddBaremetalHost200ResponseServerSourceImage) GetCodeOk() (*string, boo
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *AddBaremetalHost200ResponseServerSourceImage) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *AddBaremetalHost200ResponseServerSourceImage) SetCode(v string) {
 	o.Code = &v
@@ -125,15 +107,6 @@ func (o *AddBaremetalHost200ResponseServerSourceImage) GetNameOk() (*string, boo
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *AddBaremetalHost200ResponseServerSourceImage) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.

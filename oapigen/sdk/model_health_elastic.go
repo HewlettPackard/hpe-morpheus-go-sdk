@@ -67,15 +67,6 @@ func (o *HealthElastic) GetSuccessOk() (*bool, bool) {
 	return o.Success, true
 }
 
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *HealthElastic) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
-}
-
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.
 func (o *HealthElastic) SetSuccess(v bool) {
 	o.Success = &v
@@ -97,15 +88,6 @@ func (o *HealthElastic) GetStatusOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *HealthElastic) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -131,15 +113,6 @@ func (o *HealthElastic) GetMasterOk() (*HealthElasticMaster, bool) {
 	return o.Master, true
 }
 
-// IsSetMaster returns a boolean if a field has been set.
-func (o *HealthElastic) IsSetMaster() bool {
-	if o != nil && !IsNil(o.Master) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaster gets a reference to the given HealthElasticMaster and assigns it to the Master field.
 func (o *HealthElastic) SetMaster(v HealthElasticMaster) {
 	o.Master = &v
@@ -163,15 +136,6 @@ func (o *HealthElastic) GetNodesOk() ([]HealthElasticNodesInner, bool) {
 	return o.Nodes, true
 }
 
-// IsSetNodes returns a boolean if a field has been set.
-func (o *HealthElastic) IsSetNodes() bool {
-	if o != nil && !IsNil(o.Nodes) {
-		return true
-	}
-
-	return false
-}
-
 // SetNodes gets a reference to the given []HealthElasticNodesInner and assigns it to the Nodes field.
 func (o *HealthElastic) SetNodes(v []HealthElasticNodesInner) {
 	o.Nodes = v
@@ -193,15 +157,6 @@ func (o *HealthElastic) GetStatsOk() (*HealthElasticStats, bool) {
 		return nil, false
 	}
 	return o.Stats, true
-}
-
-// IsSetStats returns a boolean if a field has been set.
-func (o *HealthElastic) IsSetStats() bool {
-	if o != nil && !IsNil(o.Stats) {
-		return true
-	}
-
-	return false
 }
 
 // SetStats gets a reference to the given HealthElasticStats and assigns it to the Stats field.
@@ -228,15 +183,6 @@ func (o *HealthElastic) GetIndicesOk() ([]map[string]interface{}, bool) {
 	return o.Indices, true
 }
 
-// IsSetIndices returns a boolean if a field has been set.
-func (o *HealthElastic) IsSetIndices() bool {
-	if o != nil && !IsNil(o.Indices) {
-		return true
-	}
-
-	return false
-}
-
 // SetIndices gets a reference to the given []map[string]interface{} and assigns it to the Indices field.
 func (o *HealthElastic) SetIndices(v []map[string]interface{}) {
 	o.Indices = v
@@ -259,15 +205,6 @@ func (o *HealthElastic) GetBadIndicesOk() ([]map[string]interface{}, bool) {
 		return nil, false
 	}
 	return o.BadIndices, true
-}
-
-// IsSetBadIndices returns a boolean if a field has been set.
-func (o *HealthElastic) IsSetBadIndices() bool {
-	if o != nil && !IsNil(o.BadIndices) {
-		return true
-	}
-
-	return false
 }
 
 // SetBadIndices gets a reference to the given []map[string]interface{} and assigns it to the BadIndices field.

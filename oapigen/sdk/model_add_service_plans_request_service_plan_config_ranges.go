@@ -84,15 +84,6 @@ func (o *AddServicePlansRequestServicePlanConfigRanges) GetMinStorageOk() (*int6
 	return o.MinStorage, true
 }
 
-// IsSetMinStorage returns a boolean if a field has been set.
-func (o *AddServicePlansRequestServicePlanConfigRanges) IsSetMinStorage() bool {
-	if o != nil && !IsNil(o.MinStorage) {
-		return true
-	}
-
-	return false
-}
-
 // SetMinStorage gets a reference to the given int64 and assigns it to the MinStorage field.
 func (o *AddServicePlansRequestServicePlanConfigRanges) SetMinStorage(v int64) {
 	o.MinStorage = &v
@@ -114,15 +105,6 @@ func (o *AddServicePlansRequestServicePlanConfigRanges) GetMaxStorageOk() (*int6
 		return nil, false
 	}
 	return o.MaxStorage, true
-}
-
-// IsSetMaxStorage returns a boolean if a field has been set.
-func (o *AddServicePlansRequestServicePlanConfigRanges) IsSetMaxStorage() bool {
-	if o != nil && !IsNil(o.MaxStorage) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxStorage gets a reference to the given int64 and assigns it to the MaxStorage field.
@@ -148,15 +130,6 @@ func (o *AddServicePlansRequestServicePlanConfigRanges) GetMinPerDiskSizeOk() (*
 	return o.MinPerDiskSize, true
 }
 
-// IsSetMinPerDiskSize returns a boolean if a field has been set.
-func (o *AddServicePlansRequestServicePlanConfigRanges) IsSetMinPerDiskSize() bool {
-	if o != nil && !IsNil(o.MinPerDiskSize) {
-		return true
-	}
-
-	return false
-}
-
 // SetMinPerDiskSize gets a reference to the given int64 and assigns it to the MinPerDiskSize field.
 func (o *AddServicePlansRequestServicePlanConfigRanges) SetMinPerDiskSize(v int64) {
 	o.MinPerDiskSize = &v
@@ -178,15 +151,6 @@ func (o *AddServicePlansRequestServicePlanConfigRanges) GetMaxPerDiskSizeOk() (*
 		return nil, false
 	}
 	return o.MaxPerDiskSize, true
-}
-
-// IsSetMaxPerDiskSize returns a boolean if a field has been set.
-func (o *AddServicePlansRequestServicePlanConfigRanges) IsSetMaxPerDiskSize() bool {
-	if o != nil && !IsNil(o.MaxPerDiskSize) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxPerDiskSize gets a reference to the given int64 and assigns it to the MaxPerDiskSize field.
@@ -212,15 +176,6 @@ func (o *AddServicePlansRequestServicePlanConfigRanges) GetMinMemoryOk() (*int64
 	return o.MinMemory, true
 }
 
-// IsSetMinMemory returns a boolean if a field has been set.
-func (o *AddServicePlansRequestServicePlanConfigRanges) IsSetMinMemory() bool {
-	if o != nil && !IsNil(o.MinMemory) {
-		return true
-	}
-
-	return false
-}
-
 // SetMinMemory gets a reference to the given int64 and assigns it to the MinMemory field.
 func (o *AddServicePlansRequestServicePlanConfigRanges) SetMinMemory(v int64) {
 	o.MinMemory = &v
@@ -242,15 +197,6 @@ func (o *AddServicePlansRequestServicePlanConfigRanges) GetMaxMemoryOk() (*int64
 		return nil, false
 	}
 	return o.MaxMemory, true
-}
-
-// IsSetMaxMemory returns a boolean if a field has been set.
-func (o *AddServicePlansRequestServicePlanConfigRanges) IsSetMaxMemory() bool {
-	if o != nil && !IsNil(o.MaxMemory) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxMemory gets a reference to the given int64 and assigns it to the MaxMemory field.
@@ -276,15 +222,6 @@ func (o *AddServicePlansRequestServicePlanConfigRanges) GetMinCoresOk() (*int64,
 	return o.MinCores, true
 }
 
-// IsSetMinCores returns a boolean if a field has been set.
-func (o *AddServicePlansRequestServicePlanConfigRanges) IsSetMinCores() bool {
-	if o != nil && !IsNil(o.MinCores) {
-		return true
-	}
-
-	return false
-}
-
 // SetMinCores gets a reference to the given int64 and assigns it to the MinCores field.
 func (o *AddServicePlansRequestServicePlanConfigRanges) SetMinCores(v int64) {
 	o.MinCores = &v
@@ -306,15 +243,6 @@ func (o *AddServicePlansRequestServicePlanConfigRanges) GetMaxCoresOk() (*int64,
 		return nil, false
 	}
 	return o.MaxCores, true
-}
-
-// IsSetMaxCores returns a boolean if a field has been set.
-func (o *AddServicePlansRequestServicePlanConfigRanges) IsSetMaxCores() bool {
-	if o != nil && !IsNil(o.MaxCores) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxCores gets a reference to the given int64 and assigns it to the MaxCores field.
@@ -340,15 +268,6 @@ func (o *AddServicePlansRequestServicePlanConfigRanges) GetMinSocketsOk() (*int6
 	return o.MinSockets, true
 }
 
-// IsSetMinSockets returns a boolean if a field has been set.
-func (o *AddServicePlansRequestServicePlanConfigRanges) IsSetMinSockets() bool {
-	if o != nil && !IsNil(o.MinSockets) {
-		return true
-	}
-
-	return false
-}
-
 // SetMinSockets gets a reference to the given int64 and assigns it to the MinSockets field.
 func (o *AddServicePlansRequestServicePlanConfigRanges) SetMinSockets(v int64) {
 	o.MinSockets = &v
@@ -370,15 +289,6 @@ func (o *AddServicePlansRequestServicePlanConfigRanges) GetMaxSocketsOk() (*int6
 		return nil, false
 	}
 	return o.MaxSockets, true
-}
-
-// IsSetMaxSockets returns a boolean if a field has been set.
-func (o *AddServicePlansRequestServicePlanConfigRanges) IsSetMaxSockets() bool {
-	if o != nil && !IsNil(o.MaxSockets) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxSockets gets a reference to the given int64 and assigns it to the MaxSockets field.
@@ -404,15 +314,6 @@ func (o *AddServicePlansRequestServicePlanConfigRanges) GetMinCoresPerSocketOk()
 	return o.MinCoresPerSocket, true
 }
 
-// IsSetMinCoresPerSocket returns a boolean if a field has been set.
-func (o *AddServicePlansRequestServicePlanConfigRanges) IsSetMinCoresPerSocket() bool {
-	if o != nil && !IsNil(o.MinCoresPerSocket) {
-		return true
-	}
-
-	return false
-}
-
 // SetMinCoresPerSocket gets a reference to the given int64 and assigns it to the MinCoresPerSocket field.
 func (o *AddServicePlansRequestServicePlanConfigRanges) SetMinCoresPerSocket(v int64) {
 	o.MinCoresPerSocket = &v
@@ -434,15 +335,6 @@ func (o *AddServicePlansRequestServicePlanConfigRanges) GetMaxCoresPerSocketOk()
 		return nil, false
 	}
 	return o.MaxCoresPerSocket, true
-}
-
-// IsSetMaxCoresPerSocket returns a boolean if a field has been set.
-func (o *AddServicePlansRequestServicePlanConfigRanges) IsSetMaxCoresPerSocket() bool {
-	if o != nil && !IsNil(o.MaxCoresPerSocket) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxCoresPerSocket gets a reference to the given int64 and assigns it to the MaxCoresPerSocket field.

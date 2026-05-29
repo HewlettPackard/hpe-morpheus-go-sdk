@@ -74,15 +74,6 @@ func (o *UserSourceCreateUserSourceConfigOneOf6) GetLoginUrlOk() (*string, bool)
 	return o.LoginUrl, true
 }
 
-// IsSetLoginUrl returns a boolean if a field has been set.
-func (o *UserSourceCreateUserSourceConfigOneOf6) IsSetLoginUrl() bool {
-	if o != nil && !IsNil(o.LoginUrl) {
-		return true
-	}
-
-	return false
-}
-
 // SetLoginUrl gets a reference to the given string and assigns it to the LoginUrl field.
 func (o *UserSourceCreateUserSourceConfigOneOf6) SetLoginUrl(v string) {
 	o.LoginUrl = &v
@@ -104,15 +95,6 @@ func (o *UserSourceCreateUserSourceConfigOneOf6) GetDoNotIncludeSAMLRequestOk() 
 		return nil, false
 	}
 	return o.DoNotIncludeSAMLRequest, true
-}
-
-// IsSetDoNotIncludeSAMLRequest returns a boolean if a field has been set.
-func (o *UserSourceCreateUserSourceConfigOneOf6) IsSetDoNotIncludeSAMLRequest() bool {
-	if o != nil && !IsNil(o.DoNotIncludeSAMLRequest) {
-		return true
-	}
-
-	return false
 }
 
 // SetDoNotIncludeSAMLRequest gets a reference to the given bool and assigns it to the DoNotIncludeSAMLRequest field.
@@ -138,15 +120,6 @@ func (o *UserSourceCreateUserSourceConfigOneOf6) GetLogoutOk() (*string, bool) {
 	return o.Logout, true
 }
 
-// IsSetLogout returns a boolean if a field has been set.
-func (o *UserSourceCreateUserSourceConfigOneOf6) IsSetLogout() bool {
-	if o != nil && !IsNil(o.Logout) {
-		return true
-	}
-
-	return false
-}
-
 // SetLogout gets a reference to the given string and assigns it to the Logout field.
 func (o *UserSourceCreateUserSourceConfigOneOf6) SetLogout(v string) {
 	o.Logout = &v
@@ -170,15 +143,6 @@ func (o *UserSourceCreateUserSourceConfigOneOf6) GetEncryptionAlgoOk() (*string,
 	return o.EncryptionAlgo, true
 }
 
-// IsSetEncryptionAlgo returns a boolean if a field has been set.
-func (o *UserSourceCreateUserSourceConfigOneOf6) IsSetEncryptionAlgo() bool {
-	if o != nil && !IsNil(o.EncryptionAlgo) {
-		return true
-	}
-
-	return false
-}
-
 // SetEncryptionAlgo gets a reference to the given string and assigns it to the EncryptionAlgo field.
 func (o *UserSourceCreateUserSourceConfigOneOf6) SetEncryptionAlgo(v string) {
 	o.EncryptionAlgo = &v
@@ -200,15 +164,6 @@ func (o *UserSourceCreateUserSourceConfigOneOf6) GetEncryptionKeyOk() (*string, 
 		return nil, false
 	}
 	return o.EncryptionKey, true
-}
-
-// IsSetEncryptionKey returns a boolean if a field has been set.
-func (o *UserSourceCreateUserSourceConfigOneOf6) IsSetEncryptionKey() bool {
-	if o != nil && !IsNil(o.EncryptionKey) {
-		return true
-	}
-
-	return false
 }
 
 // SetEncryptionKey gets a reference to the given string and assigns it to the EncryptionKey field.

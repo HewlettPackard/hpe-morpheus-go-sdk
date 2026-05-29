@@ -62,15 +62,6 @@ func (o *Ping) GetSuccessOk() (*bool, bool) {
 	return o.Success, true
 }
 
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *Ping) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
-}
-
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.
 func (o *Ping) SetSuccess(v bool) {
 	o.Success = &v
@@ -92,15 +83,6 @@ func (o *Ping) GetBuildVersionOk() (*string, bool) {
 		return nil, false
 	}
 	return o.BuildVersion, true
-}
-
-// IsSetBuildVersion returns a boolean if a field has been set.
-func (o *Ping) IsSetBuildVersion() bool {
-	if o != nil && !IsNil(o.BuildVersion) {
-		return true
-	}
-
-	return false
 }
 
 // SetBuildVersion gets a reference to the given string and assigns it to the BuildVersion field.

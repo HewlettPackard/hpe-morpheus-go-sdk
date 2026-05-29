@@ -61,15 +61,6 @@ func (o *GetExecuteSchedules200Response) GetScheduleOk() (*GetExecuteSchedules20
 	return o.Schedule, true
 }
 
-// IsSetSchedule returns a boolean if a field has been set.
-func (o *GetExecuteSchedules200Response) IsSetSchedule() bool {
-	if o != nil && !IsNil(o.Schedule) {
-		return true
-	}
-
-	return false
-}
-
 // SetSchedule gets a reference to the given GetExecuteSchedules200ResponseAllOfSchedule and assigns it to the Schedule field.
 func (o *GetExecuteSchedules200Response) SetSchedule(v GetExecuteSchedules200ResponseAllOfSchedule) {
 	o.Schedule = &v

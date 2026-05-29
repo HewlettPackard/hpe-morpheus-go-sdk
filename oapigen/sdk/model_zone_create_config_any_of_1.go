@@ -91,15 +91,6 @@ func (o *ZoneCreateConfigAnyOf1) GetApplianceUrlOk() (*string, bool) {
 	return o.ApplianceUrl, true
 }
 
-// IsSetApplianceUrl returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf1) IsSetApplianceUrl() bool {
-	if o != nil && !IsNil(o.ApplianceUrl) {
-		return true
-	}
-
-	return false
-}
-
 // SetApplianceUrl gets a reference to the given string and assigns it to the ApplianceUrl field.
 func (o *ZoneCreateConfigAnyOf1) SetApplianceUrl(v string) {
 	o.ApplianceUrl = &v
@@ -121,15 +112,6 @@ func (o *ZoneCreateConfigAnyOf1) GetDatacenterNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.DatacenterName, true
-}
-
-// IsSetDatacenterName returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf1) IsSetDatacenterName() bool {
-	if o != nil && !IsNil(o.DatacenterName) {
-		return true
-	}
-
-	return false
 }
 
 // SetDatacenterName gets a reference to the given string and assigns it to the DatacenterName field.
@@ -156,28 +138,9 @@ func (o *ZoneCreateConfigAnyOf1) GetExternalIdOk() (*string, bool) {
 	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf1) IsSetExternalId() bool {
-	if o != nil && o.ExternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *ZoneCreateConfigAnyOf1) SetExternalId(v string) {
 	o.ExternalId.Set(&v)
-}
-
-// SetExternalIdNil sets the value for ExternalId to be an explicit nil
-func (o *ZoneCreateConfigAnyOf1) SetExternalIdNil() {
-	o.ExternalId.Set(nil)
-}
-
-// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-func (o *ZoneCreateConfigAnyOf1) UnsetExternalId() {
-	o.ExternalId.Unset()
 }
 
 // GetCloudType returns the CloudType field value if set, zero value otherwise.
@@ -196,15 +159,6 @@ func (o *ZoneCreateConfigAnyOf1) GetCloudTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.CloudType, true
-}
-
-// IsSetCloudType returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf1) IsSetCloudType() bool {
-	if o != nil && !IsNil(o.CloudType) {
-		return true
-	}
-
-	return false
 }
 
 // SetCloudType gets a reference to the given string and assigns it to the CloudType field.
@@ -230,15 +184,6 @@ func (o *ZoneCreateConfigAnyOf1) GetInventoryLevelOk() (*string, bool) {
 	return o.InventoryLevel, true
 }
 
-// IsSetInventoryLevel returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf1) IsSetInventoryLevel() bool {
-	if o != nil && !IsNil(o.InventoryLevel) {
-		return true
-	}
-
-	return false
-}
-
 // SetInventoryLevel gets a reference to the given string and assigns it to the InventoryLevel field.
 func (o *ZoneCreateConfigAnyOf1) SetInventoryLevel(v string) {
 	o.InventoryLevel = &v
@@ -260,15 +205,6 @@ func (o *ZoneCreateConfigAnyOf1) GetImportExistingOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ImportExisting, true
-}
-
-// IsSetImportExisting returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf1) IsSetImportExisting() bool {
-	if o != nil && !IsNil(o.ImportExisting) {
-		return true
-	}
-
-	return false
 }
 
 // SetImportExisting gets a reference to the given string and assigns it to the ImportExisting field.
@@ -294,15 +230,6 @@ func (o *ZoneCreateConfigAnyOf1) GetConsoleKeymapOk() (*string, bool) {
 	return o.ConsoleKeymap, true
 }
 
-// IsSetConsoleKeymap returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf1) IsSetConsoleKeymap() bool {
-	if o != nil && !IsNil(o.ConsoleKeymap) {
-		return true
-	}
-
-	return false
-}
-
 // SetConsoleKeymap gets a reference to the given string and assigns it to the ConsoleKeymap field.
 func (o *ZoneCreateConfigAnyOf1) SetConsoleKeymap(v string) {
 	o.ConsoleKeymap = &v
@@ -324,15 +251,6 @@ func (o *ZoneCreateConfigAnyOf1) GetSubscriberIdOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SubscriberId, true
-}
-
-// IsSetSubscriberId returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf1) IsSetSubscriberId() bool {
-	if o != nil && !IsNil(o.SubscriberId) {
-		return true
-	}
-
-	return false
 }
 
 // SetSubscriberId gets a reference to the given string and assigns it to the SubscriberId field.
@@ -358,15 +276,6 @@ func (o *ZoneCreateConfigAnyOf1) GetTenantIdOk() (*string, bool) {
 	return o.TenantId, true
 }
 
-// IsSetTenantId returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf1) IsSetTenantId() bool {
-	if o != nil && !IsNil(o.TenantId) {
-		return true
-	}
-
-	return false
-}
-
 // SetTenantId gets a reference to the given string and assigns it to the TenantId field.
 func (o *ZoneCreateConfigAnyOf1) SetTenantId(v string) {
 	o.TenantId = &v
@@ -388,15 +297,6 @@ func (o *ZoneCreateConfigAnyOf1) GetClientIdOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ClientId, true
-}
-
-// IsSetClientId returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf1) IsSetClientId() bool {
-	if o != nil && !IsNil(o.ClientId) {
-		return true
-	}
-
-	return false
 }
 
 // SetClientId gets a reference to the given string and assigns it to the ClientId field.
@@ -422,15 +322,6 @@ func (o *ZoneCreateConfigAnyOf1) GetClientSecretOk() (*string, bool) {
 	return o.ClientSecret, true
 }
 
-// IsSetClientSecret returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf1) IsSetClientSecret() bool {
-	if o != nil && !IsNil(o.ClientSecret) {
-		return true
-	}
-
-	return false
-}
-
 // SetClientSecret gets a reference to the given string and assigns it to the ClientSecret field.
 func (o *ZoneCreateConfigAnyOf1) SetClientSecret(v string) {
 	o.ClientSecret = &v
@@ -454,15 +345,6 @@ func (o *ZoneCreateConfigAnyOf1) GetResourceGroupOk() (*string, bool) {
 	return o.ResourceGroup, true
 }
 
-// IsSetResourceGroup returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf1) IsSetResourceGroup() bool {
-	if o != nil && !IsNil(o.ResourceGroup) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourceGroup gets a reference to the given string and assigns it to the ResourceGroup field.
 func (o *ZoneCreateConfigAnyOf1) SetResourceGroup(v string) {
 	o.ResourceGroup = &v
@@ -484,15 +366,6 @@ func (o *ZoneCreateConfigAnyOf1) GetStorageAccountOk() (*string, bool) {
 		return nil, false
 	}
 	return o.StorageAccount, true
-}
-
-// IsSetStorageAccount returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf1) IsSetStorageAccount() bool {
-	if o != nil && !IsNil(o.StorageAccount) {
-		return true
-	}
-
-	return false
 }
 
 // SetStorageAccount gets a reference to the given string and assigns it to the StorageAccount field.
@@ -519,28 +392,9 @@ func (o *ZoneCreateConfigAnyOf1) GetRpcModeOk() (*string, bool) {
 	return o.RpcMode.Get(), o.RpcMode.IsSet()
 }
 
-// IsSetRpcMode returns a boolean if a field has been set.
-func (o *ZoneCreateConfigAnyOf1) IsSetRpcMode() bool {
-	if o != nil && o.RpcMode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRpcMode gets a reference to the given NullableString and assigns it to the RpcMode field.
 func (o *ZoneCreateConfigAnyOf1) SetRpcMode(v string) {
 	o.RpcMode.Set(&v)
-}
-
-// SetRpcModeNil sets the value for RpcMode to be an explicit nil
-func (o *ZoneCreateConfigAnyOf1) SetRpcModeNil() {
-	o.RpcMode.Set(nil)
-}
-
-// UnsetRpcMode ensures that no value is present for RpcMode, not even an explicit nil
-func (o *ZoneCreateConfigAnyOf1) UnsetRpcMode() {
-	o.RpcMode.Unset()
 }
 
 func (o ZoneCreateConfigAnyOf1) MarshalJSON() ([]byte, error) {

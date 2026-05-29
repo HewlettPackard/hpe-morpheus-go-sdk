@@ -61,15 +61,6 @@ func (o *GetLayout200Response) GetInstanceTypeLayoutOk() (*GetLayout200ResponseI
 	return o.InstanceTypeLayout, true
 }
 
-// IsSetInstanceTypeLayout returns a boolean if a field has been set.
-func (o *GetLayout200Response) IsSetInstanceTypeLayout() bool {
-	if o != nil && !IsNil(o.InstanceTypeLayout) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstanceTypeLayout gets a reference to the given GetLayout200ResponseInstanceTypeLayout and assigns it to the InstanceTypeLayout field.
 func (o *GetLayout200Response) SetInstanceTypeLayout(v GetLayout200ResponseInstanceTypeLayout) {
 	o.InstanceTypeLayout = &v

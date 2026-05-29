@@ -61,15 +61,6 @@ func (o *GetNetworkDhcpServer200Response) GetNetworkDhcpServerOk() (*GetNetworkD
 	return o.NetworkDhcpServer, true
 }
 
-// IsSetNetworkDhcpServer returns a boolean if a field has been set.
-func (o *GetNetworkDhcpServer200Response) IsSetNetworkDhcpServer() bool {
-	if o != nil && !IsNil(o.NetworkDhcpServer) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkDhcpServer gets a reference to the given GetNetworkDhcpServer200ResponseNetworkDhcpServer and assigns it to the NetworkDhcpServer field.
 func (o *GetNetworkDhcpServer200Response) SetNetworkDhcpServer(v GetNetworkDhcpServer200ResponseNetworkDhcpServer) {
 	o.NetworkDhcpServer = &v

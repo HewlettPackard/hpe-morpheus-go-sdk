@@ -62,15 +62,6 @@ func (o *UpdateHostCloudRequestServersInner) GetSourceOk() (*int64, bool) {
 	return o.Source, true
 }
 
-// IsSetSource returns a boolean if a field has been set.
-func (o *UpdateHostCloudRequestServersInner) IsSetSource() bool {
-	if o != nil && !IsNil(o.Source) {
-		return true
-	}
-
-	return false
-}
-
 // SetSource gets a reference to the given int64 and assigns it to the Source field.
 func (o *UpdateHostCloudRequestServersInner) SetSource(v int64) {
 	o.Source = &v
@@ -92,15 +83,6 @@ func (o *UpdateHostCloudRequestServersInner) GetTargetOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.Target, true
-}
-
-// IsSetTarget returns a boolean if a field has been set.
-func (o *UpdateHostCloudRequestServersInner) IsSetTarget() bool {
-	if o != nil && !IsNil(o.Target) {
-		return true
-	}
-
-	return false
 }
 
 // SetTarget gets a reference to the given int64 and assigns it to the Target field.

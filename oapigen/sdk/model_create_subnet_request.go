@@ -62,15 +62,6 @@ func (o *CreateSubnetRequest) GetSubnetOk() (*CreateSubnetRequestSubnet, bool) {
 	return o.Subnet, true
 }
 
-// IsSetSubnet returns a boolean if a field has been set.
-func (o *CreateSubnetRequest) IsSetSubnet() bool {
-	if o != nil && !IsNil(o.Subnet) {
-		return true
-	}
-
-	return false
-}
-
 // SetSubnet gets a reference to the given CreateSubnetRequestSubnet and assigns it to the Subnet field.
 func (o *CreateSubnetRequest) SetSubnet(v CreateSubnetRequestSubnet) {
 	o.Subnet = &v
@@ -92,15 +83,6 @@ func (o *CreateSubnetRequest) GetResourcePermissionOk() (*CreateSubnetRequestRes
 		return nil, false
 	}
 	return o.ResourcePermission, true
-}
-
-// IsSetResourcePermission returns a boolean if a field has been set.
-func (o *CreateSubnetRequest) IsSetResourcePermission() bool {
-	if o != nil && !IsNil(o.ResourcePermission) {
-		return true
-	}
-
-	return false
 }
 
 // SetResourcePermission gets a reference to the given CreateSubnetRequestResourcePermission and assigns it to the ResourcePermission field.

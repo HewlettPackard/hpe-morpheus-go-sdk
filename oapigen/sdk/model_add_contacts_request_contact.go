@@ -93,15 +93,6 @@ func (o *AddContactsRequestContact) GetEmailAddressOk() (*string, bool) {
 	return o.EmailAddress, true
 }
 
-// IsSetEmailAddress returns a boolean if a field has been set.
-func (o *AddContactsRequestContact) IsSetEmailAddress() bool {
-	if o != nil && !IsNil(o.EmailAddress) {
-		return true
-	}
-
-	return false
-}
-
 // SetEmailAddress gets a reference to the given string and assigns it to the EmailAddress field.
 func (o *AddContactsRequestContact) SetEmailAddress(v string) {
 	o.EmailAddress = &v
@@ -125,15 +116,6 @@ func (o *AddContactsRequestContact) GetSmsAddressOk() (*string, bool) {
 	return o.SmsAddress, true
 }
 
-// IsSetSmsAddress returns a boolean if a field has been set.
-func (o *AddContactsRequestContact) IsSetSmsAddress() bool {
-	if o != nil && !IsNil(o.SmsAddress) {
-		return true
-	}
-
-	return false
-}
-
 // SetSmsAddress gets a reference to the given string and assigns it to the SmsAddress field.
 func (o *AddContactsRequestContact) SetSmsAddress(v string) {
 	o.SmsAddress = &v
@@ -155,15 +137,6 @@ func (o *AddContactsRequestContact) GetSlackHookOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SlackHook, true
-}
-
-// IsSetSlackHook returns a boolean if a field has been set.
-func (o *AddContactsRequestContact) IsSetSlackHook() bool {
-	if o != nil && !IsNil(o.SlackHook) {
-		return true
-	}
-
-	return false
 }
 
 // SetSlackHook gets a reference to the given string and assigns it to the SlackHook field.

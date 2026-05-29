@@ -66,15 +66,6 @@ func (o *UpdateVDIGatewaysRequestVdiGatewayOneOf) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateVDIGatewaysRequestVdiGatewayOneOf) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *UpdateVDIGatewaysRequestVdiGatewayOneOf) SetName(v string) {
 	o.Name = &v
@@ -98,15 +89,6 @@ func (o *UpdateVDIGatewaysRequestVdiGatewayOneOf) GetDescriptionOk() (*string, b
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *UpdateVDIGatewaysRequestVdiGatewayOneOf) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *UpdateVDIGatewaysRequestVdiGatewayOneOf) SetDescription(v string) {
 	o.Description = &v
@@ -128,15 +110,6 @@ func (o *UpdateVDIGatewaysRequestVdiGatewayOneOf) GetGatewayUrlOk() (*string, bo
 		return nil, false
 	}
 	return o.GatewayUrl, true
-}
-
-// IsSetGatewayUrl returns a boolean if a field has been set.
-func (o *UpdateVDIGatewaysRequestVdiGatewayOneOf) IsSetGatewayUrl() bool {
-	if o != nil && !IsNil(o.GatewayUrl) {
-		return true
-	}
-
-	return false
 }
 
 // SetGatewayUrl gets a reference to the given string and assigns it to the GatewayUrl field.

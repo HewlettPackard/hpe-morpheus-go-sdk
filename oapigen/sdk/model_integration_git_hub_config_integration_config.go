@@ -62,15 +62,6 @@ func (o *IntegrationGitHubConfigIntegrationConfig) GetCacheEnabledOk() (*bool, b
 	return o.CacheEnabled, true
 }
 
-// IsSetCacheEnabled returns a boolean if a field has been set.
-func (o *IntegrationGitHubConfigIntegrationConfig) IsSetCacheEnabled() bool {
-	if o != nil && !IsNil(o.CacheEnabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetCacheEnabled gets a reference to the given bool and assigns it to the CacheEnabled field.
 func (o *IntegrationGitHubConfigIntegrationConfig) SetCacheEnabled(v bool) {
 	o.CacheEnabled = &v

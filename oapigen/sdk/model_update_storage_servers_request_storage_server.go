@@ -93,15 +93,6 @@ func (o *UpdateStorageServersRequestStorageServer) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateStorageServersRequestStorageServer) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *UpdateStorageServersRequestStorageServer) SetName(v string) {
 	o.Name = &v
@@ -123,15 +114,6 @@ func (o *UpdateStorageServersRequestStorageServer) GetTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *UpdateStorageServersRequestStorageServer) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.
@@ -157,15 +139,6 @@ func (o *UpdateStorageServersRequestStorageServer) GetDescriptionOk() (*string, 
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *UpdateStorageServersRequestStorageServer) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *UpdateStorageServersRequestStorageServer) SetDescription(v string) {
 	o.Description = &v
@@ -187,15 +160,6 @@ func (o *UpdateStorageServersRequestStorageServer) GetEnabledOk() (*bool, bool) 
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *UpdateStorageServersRequestStorageServer) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -221,15 +185,6 @@ func (o *UpdateStorageServersRequestStorageServer) GetConfigOk() (map[string]int
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *UpdateStorageServersRequestStorageServer) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
 func (o *UpdateStorageServersRequestStorageServer) SetConfig(v map[string]interface{}) {
 	o.Config = v
@@ -251,15 +206,6 @@ func (o *UpdateStorageServersRequestStorageServer) GetVisibilityOk() (*string, b
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *UpdateStorageServersRequestStorageServer) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -285,15 +231,6 @@ func (o *UpdateStorageServersRequestStorageServer) GetServiceHostOk() (*string, 
 	return o.ServiceHost, true
 }
 
-// IsSetServiceHost returns a boolean if a field has been set.
-func (o *UpdateStorageServersRequestStorageServer) IsSetServiceHost() bool {
-	if o != nil && !IsNil(o.ServiceHost) {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceHost gets a reference to the given string and assigns it to the ServiceHost field.
 func (o *UpdateStorageServersRequestStorageServer) SetServiceHost(v string) {
 	o.ServiceHost = &v
@@ -315,15 +252,6 @@ func (o *UpdateStorageServersRequestStorageServer) GetServiceUrlOk() (*string, b
 		return nil, false
 	}
 	return o.ServiceUrl, true
-}
-
-// IsSetServiceUrl returns a boolean if a field has been set.
-func (o *UpdateStorageServersRequestStorageServer) IsSetServiceUrl() bool {
-	if o != nil && !IsNil(o.ServiceUrl) {
-		return true
-	}
-
-	return false
 }
 
 // SetServiceUrl gets a reference to the given string and assigns it to the ServiceUrl field.
@@ -349,15 +277,6 @@ func (o *UpdateStorageServersRequestStorageServer) GetServiceUsernameOk() (*stri
 	return o.ServiceUsername, true
 }
 
-// IsSetServiceUsername returns a boolean if a field has been set.
-func (o *UpdateStorageServersRequestStorageServer) IsSetServiceUsername() bool {
-	if o != nil && !IsNil(o.ServiceUsername) {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceUsername gets a reference to the given string and assigns it to the ServiceUsername field.
 func (o *UpdateStorageServersRequestStorageServer) SetServiceUsername(v string) {
 	o.ServiceUsername = &v
@@ -379,15 +298,6 @@ func (o *UpdateStorageServersRequestStorageServer) GetServicePasswordOk() (*stri
 		return nil, false
 	}
 	return o.ServicePassword, true
-}
-
-// IsSetServicePassword returns a boolean if a field has been set.
-func (o *UpdateStorageServersRequestStorageServer) IsSetServicePassword() bool {
-	if o != nil && !IsNil(o.ServicePassword) {
-		return true
-	}
-
-	return false
 }
 
 // SetServicePassword gets a reference to the given string and assigns it to the ServicePassword field.
@@ -413,15 +323,6 @@ func (o *UpdateStorageServersRequestStorageServer) GetServicePortOk() (*int32, b
 	return o.ServicePort, true
 }
 
-// IsSetServicePort returns a boolean if a field has been set.
-func (o *UpdateStorageServersRequestStorageServer) IsSetServicePort() bool {
-	if o != nil && !IsNil(o.ServicePort) {
-		return true
-	}
-
-	return false
-}
-
 // SetServicePort gets a reference to the given int32 and assigns it to the ServicePort field.
 func (o *UpdateStorageServersRequestStorageServer) SetServicePort(v int32) {
 	o.ServicePort = &v
@@ -445,15 +346,6 @@ func (o *UpdateStorageServersRequestStorageServer) GetCredentialOk() (*UpdateSto
 	return o.Credential, true
 }
 
-// IsSetCredential returns a boolean if a field has been set.
-func (o *UpdateStorageServersRequestStorageServer) IsSetCredential() bool {
-	if o != nil && !IsNil(o.Credential) {
-		return true
-	}
-
-	return false
-}
-
 // SetCredential gets a reference to the given UpdateStorageServersRequestStorageServerCredential and assigns it to the Credential field.
 func (o *UpdateStorageServersRequestStorageServer) SetCredential(v UpdateStorageServersRequestStorageServerCredential) {
 	o.Credential = &v
@@ -475,15 +367,6 @@ func (o *UpdateStorageServersRequestStorageServer) GetTenantsOk() ([]UpdateStora
 		return nil, false
 	}
 	return o.Tenants, true
-}
-
-// IsSetTenants returns a boolean if a field has been set.
-func (o *UpdateStorageServersRequestStorageServer) IsSetTenants() bool {
-	if o != nil && !IsNil(o.Tenants) {
-		return true
-	}
-
-	return false
 }
 
 // SetTenants gets a reference to the given []UpdateStorageServersRequestStorageServerTenantsInner and assigns it to the Tenants field.

@@ -61,15 +61,6 @@ func (o *UpdateTasksRequestTaskCredentialOneOf) GetTypeOk() (*string, bool) {
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *UpdateTasksRequestTaskCredentialOneOf) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given string and assigns it to the Type field.
 func (o *UpdateTasksRequestTaskCredentialOneOf) SetType(v string) {
 	o.Type = &v

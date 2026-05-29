@@ -79,15 +79,6 @@ func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) GetIdOk() (*int64,
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) SetId(v int64) {
 	o.Id = &v
@@ -109,15 +100,6 @@ func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) GetSecurityPackage
 		return nil, false
 	}
 	return o.SecurityPackage, true
-}
-
-// IsSetSecurityPackage returns a boolean if a field has been set.
-func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) IsSetSecurityPackage() bool {
-	if o != nil && !IsNil(o.SecurityPackage) {
-		return true
-	}
-
-	return false
 }
 
 // SetSecurityPackage gets a reference to the given ListSecurityScans200ResponseAllOfSecurityScansInnerSecurityPackage and assigns it to the SecurityPackage field.
@@ -143,15 +125,6 @@ func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) GetStatusOk() (*st
 	return o.Status, true
 }
 
-// IsSetStatus returns a boolean if a field has been set.
-func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
-}
-
 // SetStatus gets a reference to the given string and assigns it to the Status field.
 func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) SetStatus(v string) {
 	o.Status = &v
@@ -173,15 +146,6 @@ func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) GetScanDateOk() (*
 		return nil, false
 	}
 	return o.ScanDate, true
-}
-
-// IsSetScanDate returns a boolean if a field has been set.
-func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) IsSetScanDate() bool {
-	if o != nil && !IsNil(o.ScanDate) {
-		return true
-	}
-
-	return false
 }
 
 // SetScanDate gets a reference to the given time.Time and assigns it to the ScanDate field.
@@ -207,15 +171,6 @@ func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) GetScanDurationOk(
 	return o.ScanDuration, true
 }
 
-// IsSetScanDuration returns a boolean if a field has been set.
-func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) IsSetScanDuration() bool {
-	if o != nil && !IsNil(o.ScanDuration) {
-		return true
-	}
-
-	return false
-}
-
 // SetScanDuration gets a reference to the given int64 and assigns it to the ScanDuration field.
 func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) SetScanDuration(v int64) {
 	o.ScanDuration = &v
@@ -237,15 +192,6 @@ func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) GetTestCountOk() (
 		return nil, false
 	}
 	return o.TestCount, true
-}
-
-// IsSetTestCount returns a boolean if a field has been set.
-func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) IsSetTestCount() bool {
-	if o != nil && !IsNil(o.TestCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetTestCount gets a reference to the given int64 and assigns it to the TestCount field.
@@ -271,15 +217,6 @@ func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) GetRunCountOk() (*
 	return o.RunCount, true
 }
 
-// IsSetRunCount returns a boolean if a field has been set.
-func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) IsSetRunCount() bool {
-	if o != nil && !IsNil(o.RunCount) {
-		return true
-	}
-
-	return false
-}
-
 // SetRunCount gets a reference to the given int64 and assigns it to the RunCount field.
 func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) SetRunCount(v int64) {
 	o.RunCount = &v
@@ -301,15 +238,6 @@ func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) GetPassCountOk() (
 		return nil, false
 	}
 	return o.PassCount, true
-}
-
-// IsSetPassCount returns a boolean if a field has been set.
-func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) IsSetPassCount() bool {
-	if o != nil && !IsNil(o.PassCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetPassCount gets a reference to the given int64 and assigns it to the PassCount field.
@@ -335,15 +263,6 @@ func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) GetFailCountOk() (
 	return o.FailCount, true
 }
 
-// IsSetFailCount returns a boolean if a field has been set.
-func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) IsSetFailCount() bool {
-	if o != nil && !IsNil(o.FailCount) {
-		return true
-	}
-
-	return false
-}
-
 // SetFailCount gets a reference to the given int64 and assigns it to the FailCount field.
 func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) SetFailCount(v int64) {
 	o.FailCount = &v
@@ -367,15 +286,6 @@ func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) GetOtherCountOk() 
 	return o.OtherCount, true
 }
 
-// IsSetOtherCount returns a boolean if a field has been set.
-func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) IsSetOtherCount() bool {
-	if o != nil && !IsNil(o.OtherCount) {
-		return true
-	}
-
-	return false
-}
-
 // SetOtherCount gets a reference to the given int64 and assigns it to the OtherCount field.
 func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) SetOtherCount(v int64) {
 	o.OtherCount = &v
@@ -397,15 +307,6 @@ func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) GetScanScoreOk() (
 		return nil, false
 	}
 	return o.ScanScore, true
-}
-
-// IsSetScanScore returns a boolean if a field has been set.
-func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) IsSetScanScore() bool {
-	if o != nil && !IsNil(o.ScanScore) {
-		return true
-	}
-
-	return false
 }
 
 // SetScanScore gets a reference to the given float32 and assigns it to the ScanScore field.
@@ -432,28 +333,9 @@ func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) GetExternalIdOk() 
 	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) IsSetExternalId() bool {
-	if o != nil && o.ExternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) SetExternalId(v string) {
 	o.ExternalId.Set(&v)
-}
-
-// SetExternalIdNil sets the value for ExternalId to be an explicit nil
-func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) SetExternalIdNil() {
-	o.ExternalId.Set(nil)
-}
-
-// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) UnsetExternalId() {
-	o.ExternalId.Unset()
 }
 
 // GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
@@ -472,15 +354,6 @@ func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) GetCreatedByOk() (
 		return nil, false
 	}
 	return o.CreatedBy, true
-}
-
-// IsSetCreatedBy returns a boolean if a field has been set.
-func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) IsSetCreatedBy() bool {
-	if o != nil && !IsNil(o.CreatedBy) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreatedBy gets a reference to the given string and assigns it to the CreatedBy field.
@@ -506,15 +379,6 @@ func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) GetUpdatedByOk() (
 	return o.UpdatedBy, true
 }
 
-// IsSetUpdatedBy returns a boolean if a field has been set.
-func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) IsSetUpdatedBy() bool {
-	if o != nil && !IsNil(o.UpdatedBy) {
-		return true
-	}
-
-	return false
-}
-
 // SetUpdatedBy gets a reference to the given string and assigns it to the UpdatedBy field.
 func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) SetUpdatedBy(v string) {
 	o.UpdatedBy = &v
@@ -536,15 +400,6 @@ func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) GetDateCreatedOk()
 		return nil, false
 	}
 	return o.DateCreated, true
-}
-
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
@@ -570,15 +425,6 @@ func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) GetLastUpdatedOk()
 	return o.LastUpdated, true
 }
 
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
-}
-
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
 func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) SetLastUpdated(v time.Time) {
 	o.LastUpdated = &v
@@ -600,15 +446,6 @@ func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) GetResultsOk() (ma
 		return map[string]interface{}{}, false
 	}
 	return o.Results, true
-}
-
-// IsSetResults returns a boolean if a field has been set.
-func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) IsSetResults() bool {
-	if o != nil && !IsNil(o.Results) {
-		return true
-	}
-
-	return false
 }
 
 // SetResults gets a reference to the given map[string]interface{} and assigns it to the Results field.

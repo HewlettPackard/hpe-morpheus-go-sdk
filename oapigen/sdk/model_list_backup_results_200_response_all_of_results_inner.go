@@ -86,15 +86,6 @@ func (o *ListBackupResults200ResponseAllOfResultsInner) GetIdOk() (*int64, bool)
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListBackupResults200ResponseAllOfResultsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListBackupResults200ResponseAllOfResultsInner) SetId(v int64) {
 	o.Id = &v
@@ -116,15 +107,6 @@ func (o *ListBackupResults200ResponseAllOfResultsInner) GetBackupOk() (*ListBack
 		return nil, false
 	}
 	return o.Backup, true
-}
-
-// IsSetBackup returns a boolean if a field has been set.
-func (o *ListBackupResults200ResponseAllOfResultsInner) IsSetBackup() bool {
-	if o != nil && !IsNil(o.Backup) {
-		return true
-	}
-
-	return false
 }
 
 // SetBackup gets a reference to the given ListBackupResults200ResponseAllOfResultsInnerBackup and assigns it to the Backup field.
@@ -151,28 +133,9 @@ func (o *ListBackupResults200ResponseAllOfResultsInner) GetBackupSetIdOk() (*str
 	return o.BackupSetId.Get(), o.BackupSetId.IsSet()
 }
 
-// IsSetBackupSetId returns a boolean if a field has been set.
-func (o *ListBackupResults200ResponseAllOfResultsInner) IsSetBackupSetId() bool {
-	if o != nil && o.BackupSetId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetBackupSetId gets a reference to the given NullableString and assigns it to the BackupSetId field.
 func (o *ListBackupResults200ResponseAllOfResultsInner) SetBackupSetId(v string) {
 	o.BackupSetId.Set(&v)
-}
-
-// SetBackupSetIdNil sets the value for BackupSetId to be an explicit nil
-func (o *ListBackupResults200ResponseAllOfResultsInner) SetBackupSetIdNil() {
-	o.BackupSetId.Set(nil)
-}
-
-// UnsetBackupSetId ensures that no value is present for BackupSetId, not even an explicit nil
-func (o *ListBackupResults200ResponseAllOfResultsInner) UnsetBackupSetId() {
-	o.BackupSetId.Unset()
 }
 
 // GetInstanceId returns the InstanceId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -194,28 +157,9 @@ func (o *ListBackupResults200ResponseAllOfResultsInner) GetInstanceIdOk() (*int6
 	return o.InstanceId.Get(), o.InstanceId.IsSet()
 }
 
-// IsSetInstanceId returns a boolean if a field has been set.
-func (o *ListBackupResults200ResponseAllOfResultsInner) IsSetInstanceId() bool {
-	if o != nil && o.InstanceId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInstanceId gets a reference to the given NullableInt64 and assigns it to the InstanceId field.
 func (o *ListBackupResults200ResponseAllOfResultsInner) SetInstanceId(v int64) {
 	o.InstanceId.Set(&v)
-}
-
-// SetInstanceIdNil sets the value for InstanceId to be an explicit nil
-func (o *ListBackupResults200ResponseAllOfResultsInner) SetInstanceIdNil() {
-	o.InstanceId.Set(nil)
-}
-
-// UnsetInstanceId ensures that no value is present for InstanceId, not even an explicit nil
-func (o *ListBackupResults200ResponseAllOfResultsInner) UnsetInstanceId() {
-	o.InstanceId.Unset()
 }
 
 // GetContainerId returns the ContainerId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -237,28 +181,9 @@ func (o *ListBackupResults200ResponseAllOfResultsInner) GetContainerIdOk() (*int
 	return o.ContainerId.Get(), o.ContainerId.IsSet()
 }
 
-// IsSetContainerId returns a boolean if a field has been set.
-func (o *ListBackupResults200ResponseAllOfResultsInner) IsSetContainerId() bool {
-	if o != nil && o.ContainerId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetContainerId gets a reference to the given NullableInt64 and assigns it to the ContainerId field.
 func (o *ListBackupResults200ResponseAllOfResultsInner) SetContainerId(v int64) {
 	o.ContainerId.Set(&v)
-}
-
-// SetContainerIdNil sets the value for ContainerId to be an explicit nil
-func (o *ListBackupResults200ResponseAllOfResultsInner) SetContainerIdNil() {
-	o.ContainerId.Set(nil)
-}
-
-// UnsetContainerId ensures that no value is present for ContainerId, not even an explicit nil
-func (o *ListBackupResults200ResponseAllOfResultsInner) UnsetContainerId() {
-	o.ContainerId.Unset()
 }
 
 // GetServerId returns the ServerId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -280,28 +205,9 @@ func (o *ListBackupResults200ResponseAllOfResultsInner) GetServerIdOk() (*int64,
 	return o.ServerId.Get(), o.ServerId.IsSet()
 }
 
-// IsSetServerId returns a boolean if a field has been set.
-func (o *ListBackupResults200ResponseAllOfResultsInner) IsSetServerId() bool {
-	if o != nil && o.ServerId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServerId gets a reference to the given NullableInt64 and assigns it to the ServerId field.
 func (o *ListBackupResults200ResponseAllOfResultsInner) SetServerId(v int64) {
 	o.ServerId.Set(&v)
-}
-
-// SetServerIdNil sets the value for ServerId to be an explicit nil
-func (o *ListBackupResults200ResponseAllOfResultsInner) SetServerIdNil() {
-	o.ServerId.Set(nil)
-}
-
-// UnsetServerId ensures that no value is present for ServerId, not even an explicit nil
-func (o *ListBackupResults200ResponseAllOfResultsInner) UnsetServerId() {
-	o.ServerId.Unset()
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -323,28 +229,9 @@ func (o *ListBackupResults200ResponseAllOfResultsInner) GetStatusOk() (*string, 
 	return o.Status.Get(), o.Status.IsSet()
 }
 
-// IsSetStatus returns a boolean if a field has been set.
-func (o *ListBackupResults200ResponseAllOfResultsInner) IsSetStatus() bool {
-	if o != nil && o.Status.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatus gets a reference to the given NullableString and assigns it to the Status field.
 func (o *ListBackupResults200ResponseAllOfResultsInner) SetStatus(v string) {
 	o.Status.Set(&v)
-}
-
-// SetStatusNil sets the value for Status to be an explicit nil
-func (o *ListBackupResults200ResponseAllOfResultsInner) SetStatusNil() {
-	o.Status.Set(nil)
-}
-
-// UnsetStatus ensures that no value is present for Status, not even an explicit nil
-func (o *ListBackupResults200ResponseAllOfResultsInner) UnsetStatus() {
-	o.Status.Unset()
 }
 
 // GetErrorMessage returns the ErrorMessage field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -366,28 +253,9 @@ func (o *ListBackupResults200ResponseAllOfResultsInner) GetErrorMessageOk() (*st
 	return o.ErrorMessage.Get(), o.ErrorMessage.IsSet()
 }
 
-// IsSetErrorMessage returns a boolean if a field has been set.
-func (o *ListBackupResults200ResponseAllOfResultsInner) IsSetErrorMessage() bool {
-	if o != nil && o.ErrorMessage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetErrorMessage gets a reference to the given NullableString and assigns it to the ErrorMessage field.
 func (o *ListBackupResults200ResponseAllOfResultsInner) SetErrorMessage(v string) {
 	o.ErrorMessage.Set(&v)
-}
-
-// SetErrorMessageNil sets the value for ErrorMessage to be an explicit nil
-func (o *ListBackupResults200ResponseAllOfResultsInner) SetErrorMessageNil() {
-	o.ErrorMessage.Set(nil)
-}
-
-// UnsetErrorMessage ensures that no value is present for ErrorMessage, not even an explicit nil
-func (o *ListBackupResults200ResponseAllOfResultsInner) UnsetErrorMessage() {
-	o.ErrorMessage.Unset()
 }
 
 // GetStartDate returns the StartDate field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -409,28 +277,9 @@ func (o *ListBackupResults200ResponseAllOfResultsInner) GetStartDateOk() (*time.
 	return o.StartDate.Get(), o.StartDate.IsSet()
 }
 
-// IsSetStartDate returns a boolean if a field has been set.
-func (o *ListBackupResults200ResponseAllOfResultsInner) IsSetStartDate() bool {
-	if o != nil && o.StartDate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStartDate gets a reference to the given NullableTime and assigns it to the StartDate field.
 func (o *ListBackupResults200ResponseAllOfResultsInner) SetStartDate(v time.Time) {
 	o.StartDate.Set(&v)
-}
-
-// SetStartDateNil sets the value for StartDate to be an explicit nil
-func (o *ListBackupResults200ResponseAllOfResultsInner) SetStartDateNil() {
-	o.StartDate.Set(nil)
-}
-
-// UnsetStartDate ensures that no value is present for StartDate, not even an explicit nil
-func (o *ListBackupResults200ResponseAllOfResultsInner) UnsetStartDate() {
-	o.StartDate.Unset()
 }
 
 // GetEndDate returns the EndDate field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -452,28 +301,9 @@ func (o *ListBackupResults200ResponseAllOfResultsInner) GetEndDateOk() (*time.Ti
 	return o.EndDate.Get(), o.EndDate.IsSet()
 }
 
-// IsSetEndDate returns a boolean if a field has been set.
-func (o *ListBackupResults200ResponseAllOfResultsInner) IsSetEndDate() bool {
-	if o != nil && o.EndDate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetEndDate gets a reference to the given NullableTime and assigns it to the EndDate field.
 func (o *ListBackupResults200ResponseAllOfResultsInner) SetEndDate(v time.Time) {
 	o.EndDate.Set(&v)
-}
-
-// SetEndDateNil sets the value for EndDate to be an explicit nil
-func (o *ListBackupResults200ResponseAllOfResultsInner) SetEndDateNil() {
-	o.EndDate.Set(nil)
-}
-
-// UnsetEndDate ensures that no value is present for EndDate, not even an explicit nil
-func (o *ListBackupResults200ResponseAllOfResultsInner) UnsetEndDate() {
-	o.EndDate.Unset()
 }
 
 // GetDurationMillis returns the DurationMillis field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -495,28 +325,9 @@ func (o *ListBackupResults200ResponseAllOfResultsInner) GetDurationMillisOk() (*
 	return o.DurationMillis.Get(), o.DurationMillis.IsSet()
 }
 
-// IsSetDurationMillis returns a boolean if a field has been set.
-func (o *ListBackupResults200ResponseAllOfResultsInner) IsSetDurationMillis() bool {
-	if o != nil && o.DurationMillis.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDurationMillis gets a reference to the given NullableInt64 and assigns it to the DurationMillis field.
 func (o *ListBackupResults200ResponseAllOfResultsInner) SetDurationMillis(v int64) {
 	o.DurationMillis.Set(&v)
-}
-
-// SetDurationMillisNil sets the value for DurationMillis to be an explicit nil
-func (o *ListBackupResults200ResponseAllOfResultsInner) SetDurationMillisNil() {
-	o.DurationMillis.Set(nil)
-}
-
-// UnsetDurationMillis ensures that no value is present for DurationMillis, not even an explicit nil
-func (o *ListBackupResults200ResponseAllOfResultsInner) UnsetDurationMillis() {
-	o.DurationMillis.Unset()
 }
 
 // GetSizeInBytes returns the SizeInBytes field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -538,28 +349,9 @@ func (o *ListBackupResults200ResponseAllOfResultsInner) GetSizeInBytesOk() (*int
 	return o.SizeInBytes.Get(), o.SizeInBytes.IsSet()
 }
 
-// IsSetSizeInBytes returns a boolean if a field has been set.
-func (o *ListBackupResults200ResponseAllOfResultsInner) IsSetSizeInBytes() bool {
-	if o != nil && o.SizeInBytes.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSizeInBytes gets a reference to the given NullableInt64 and assigns it to the SizeInBytes field.
 func (o *ListBackupResults200ResponseAllOfResultsInner) SetSizeInBytes(v int64) {
 	o.SizeInBytes.Set(&v)
-}
-
-// SetSizeInBytesNil sets the value for SizeInBytes to be an explicit nil
-func (o *ListBackupResults200ResponseAllOfResultsInner) SetSizeInBytesNil() {
-	o.SizeInBytes.Set(nil)
-}
-
-// UnsetSizeInBytes ensures that no value is present for SizeInBytes, not even an explicit nil
-func (o *ListBackupResults200ResponseAllOfResultsInner) UnsetSizeInBytes() {
-	o.SizeInBytes.Unset()
 }
 
 // GetSizeInMb returns the SizeInMb field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -581,28 +373,9 @@ func (o *ListBackupResults200ResponseAllOfResultsInner) GetSizeInMbOk() (*int64,
 	return o.SizeInMb.Get(), o.SizeInMb.IsSet()
 }
 
-// IsSetSizeInMb returns a boolean if a field has been set.
-func (o *ListBackupResults200ResponseAllOfResultsInner) IsSetSizeInMb() bool {
-	if o != nil && o.SizeInMb.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSizeInMb gets a reference to the given NullableInt64 and assigns it to the SizeInMb field.
 func (o *ListBackupResults200ResponseAllOfResultsInner) SetSizeInMb(v int64) {
 	o.SizeInMb.Set(&v)
-}
-
-// SetSizeInMbNil sets the value for SizeInMb to be an explicit nil
-func (o *ListBackupResults200ResponseAllOfResultsInner) SetSizeInMbNil() {
-	o.SizeInMb.Set(nil)
-}
-
-// UnsetSizeInMb ensures that no value is present for SizeInMb, not even an explicit nil
-func (o *ListBackupResults200ResponseAllOfResultsInner) UnsetSizeInMb() {
-	o.SizeInMb.Unset()
 }
 
 // GetVolumePath returns the VolumePath field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -624,28 +397,9 @@ func (o *ListBackupResults200ResponseAllOfResultsInner) GetVolumePathOk() (*stri
 	return o.VolumePath.Get(), o.VolumePath.IsSet()
 }
 
-// IsSetVolumePath returns a boolean if a field has been set.
-func (o *ListBackupResults200ResponseAllOfResultsInner) IsSetVolumePath() bool {
-	if o != nil && o.VolumePath.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetVolumePath gets a reference to the given NullableString and assigns it to the VolumePath field.
 func (o *ListBackupResults200ResponseAllOfResultsInner) SetVolumePath(v string) {
 	o.VolumePath.Set(&v)
-}
-
-// SetVolumePathNil sets the value for VolumePath to be an explicit nil
-func (o *ListBackupResults200ResponseAllOfResultsInner) SetVolumePathNil() {
-	o.VolumePath.Set(nil)
-}
-
-// UnsetVolumePath ensures that no value is present for VolumePath, not even an explicit nil
-func (o *ListBackupResults200ResponseAllOfResultsInner) UnsetVolumePath() {
-	o.VolumePath.Unset()
 }
 
 // GetResultArchive returns the ResultArchive field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -667,28 +421,9 @@ func (o *ListBackupResults200ResponseAllOfResultsInner) GetResultArchiveOk() (*s
 	return o.ResultArchive.Get(), o.ResultArchive.IsSet()
 }
 
-// IsSetResultArchive returns a boolean if a field has been set.
-func (o *ListBackupResults200ResponseAllOfResultsInner) IsSetResultArchive() bool {
-	if o != nil && o.ResultArchive.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetResultArchive gets a reference to the given NullableString and assigns it to the ResultArchive field.
 func (o *ListBackupResults200ResponseAllOfResultsInner) SetResultArchive(v string) {
 	o.ResultArchive.Set(&v)
-}
-
-// SetResultArchiveNil sets the value for ResultArchive to be an explicit nil
-func (o *ListBackupResults200ResponseAllOfResultsInner) SetResultArchiveNil() {
-	o.ResultArchive.Set(nil)
-}
-
-// UnsetResultArchive ensures that no value is present for ResultArchive, not even an explicit nil
-func (o *ListBackupResults200ResponseAllOfResultsInner) UnsetResultArchive() {
-	o.ResultArchive.Unset()
 }
 
 // GetResultPath returns the ResultPath field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -710,28 +445,9 @@ func (o *ListBackupResults200ResponseAllOfResultsInner) GetResultPathOk() (*stri
 	return o.ResultPath.Get(), o.ResultPath.IsSet()
 }
 
-// IsSetResultPath returns a boolean if a field has been set.
-func (o *ListBackupResults200ResponseAllOfResultsInner) IsSetResultPath() bool {
-	if o != nil && o.ResultPath.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetResultPath gets a reference to the given NullableString and assigns it to the ResultPath field.
 func (o *ListBackupResults200ResponseAllOfResultsInner) SetResultPath(v string) {
 	o.ResultPath.Set(&v)
-}
-
-// SetResultPathNil sets the value for ResultPath to be an explicit nil
-func (o *ListBackupResults200ResponseAllOfResultsInner) SetResultPathNil() {
-	o.ResultPath.Set(nil)
-}
-
-// UnsetResultPath ensures that no value is present for ResultPath, not even an explicit nil
-func (o *ListBackupResults200ResponseAllOfResultsInner) UnsetResultPath() {
-	o.ResultPath.Unset()
 }
 
 // GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -753,28 +469,9 @@ func (o *ListBackupResults200ResponseAllOfResultsInner) GetExternalIdOk() (*stri
 	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *ListBackupResults200ResponseAllOfResultsInner) IsSetExternalId() bool {
-	if o != nil && o.ExternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *ListBackupResults200ResponseAllOfResultsInner) SetExternalId(v string) {
 	o.ExternalId.Set(&v)
-}
-
-// SetExternalIdNil sets the value for ExternalId to be an explicit nil
-func (o *ListBackupResults200ResponseAllOfResultsInner) SetExternalIdNil() {
-	o.ExternalId.Set(nil)
-}
-
-// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-func (o *ListBackupResults200ResponseAllOfResultsInner) UnsetExternalId() {
-	o.ExternalId.Unset()
 }
 
 // GetSnapshotId returns the SnapshotId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -796,28 +493,9 @@ func (o *ListBackupResults200ResponseAllOfResultsInner) GetSnapshotIdOk() (*stri
 	return o.SnapshotId.Get(), o.SnapshotId.IsSet()
 }
 
-// IsSetSnapshotId returns a boolean if a field has been set.
-func (o *ListBackupResults200ResponseAllOfResultsInner) IsSetSnapshotId() bool {
-	if o != nil && o.SnapshotId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSnapshotId gets a reference to the given NullableString and assigns it to the SnapshotId field.
 func (o *ListBackupResults200ResponseAllOfResultsInner) SetSnapshotId(v string) {
 	o.SnapshotId.Set(&v)
-}
-
-// SetSnapshotIdNil sets the value for SnapshotId to be an explicit nil
-func (o *ListBackupResults200ResponseAllOfResultsInner) SetSnapshotIdNil() {
-	o.SnapshotId.Set(nil)
-}
-
-// UnsetSnapshotId ensures that no value is present for SnapshotId, not even an explicit nil
-func (o *ListBackupResults200ResponseAllOfResultsInner) UnsetSnapshotId() {
-	o.SnapshotId.Unset()
 }
 
 // GetSnapshotExternalId returns the SnapshotExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -839,28 +517,9 @@ func (o *ListBackupResults200ResponseAllOfResultsInner) GetSnapshotExternalIdOk(
 	return o.SnapshotExternalId.Get(), o.SnapshotExternalId.IsSet()
 }
 
-// IsSetSnapshotExternalId returns a boolean if a field has been set.
-func (o *ListBackupResults200ResponseAllOfResultsInner) IsSetSnapshotExternalId() bool {
-	if o != nil && o.SnapshotExternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSnapshotExternalId gets a reference to the given NullableString and assigns it to the SnapshotExternalId field.
 func (o *ListBackupResults200ResponseAllOfResultsInner) SetSnapshotExternalId(v string) {
 	o.SnapshotExternalId.Set(&v)
-}
-
-// SetSnapshotExternalIdNil sets the value for SnapshotExternalId to be an explicit nil
-func (o *ListBackupResults200ResponseAllOfResultsInner) SetSnapshotExternalIdNil() {
-	o.SnapshotExternalId.Set(nil)
-}
-
-// UnsetSnapshotExternalId ensures that no value is present for SnapshotExternalId, not even an explicit nil
-func (o *ListBackupResults200ResponseAllOfResultsInner) UnsetSnapshotExternalId() {
-	o.SnapshotExternalId.Unset()
 }
 
 // GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
@@ -879,15 +538,6 @@ func (o *ListBackupResults200ResponseAllOfResultsInner) GetCreatedByOk() (*ListB
 		return nil, false
 	}
 	return o.CreatedBy, true
-}
-
-// IsSetCreatedBy returns a boolean if a field has been set.
-func (o *ListBackupResults200ResponseAllOfResultsInner) IsSetCreatedBy() bool {
-	if o != nil && !IsNil(o.CreatedBy) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreatedBy gets a reference to the given ListBackupResults200ResponseAllOfResultsInnerCreatedBy and assigns it to the CreatedBy field.
@@ -913,15 +563,6 @@ func (o *ListBackupResults200ResponseAllOfResultsInner) GetDateCreatedOk() (*tim
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *ListBackupResults200ResponseAllOfResultsInner) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *ListBackupResults200ResponseAllOfResultsInner) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -943,15 +584,6 @@ func (o *ListBackupResults200ResponseAllOfResultsInner) GetLastUpdatedOk() (*tim
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *ListBackupResults200ResponseAllOfResultsInner) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.

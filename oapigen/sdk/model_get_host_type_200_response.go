@@ -61,15 +61,6 @@ func (o *GetHostType200Response) GetServerTypeOk() (*GetHostType200ResponseServe
 	return o.ServerType, true
 }
 
-// IsSetServerType returns a boolean if a field has been set.
-func (o *GetHostType200Response) IsSetServerType() bool {
-	if o != nil && !IsNil(o.ServerType) {
-		return true
-	}
-
-	return false
-}
-
 // SetServerType gets a reference to the given GetHostType200ResponseServerType and assigns it to the ServerType field.
 func (o *GetHostType200Response) SetServerType(v GetHostType200ResponseServerType) {
 	o.ServerType = &v

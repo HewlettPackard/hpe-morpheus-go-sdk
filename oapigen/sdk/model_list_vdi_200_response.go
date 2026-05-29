@@ -62,15 +62,6 @@ func (o *ListVdi200Response) GetDesktopsOk() ([]ListVdi200ResponseAllOfDesktopsI
 	return o.Desktops, true
 }
 
-// IsSetDesktops returns a boolean if a field has been set.
-func (o *ListVdi200Response) IsSetDesktops() bool {
-	if o != nil && !IsNil(o.Desktops) {
-		return true
-	}
-
-	return false
-}
-
 // SetDesktops gets a reference to the given []ListVdi200ResponseAllOfDesktopsInner and assigns it to the Desktops field.
 func (o *ListVdi200Response) SetDesktops(v []ListVdi200ResponseAllOfDesktopsInner) {
 	o.Desktops = v
@@ -92,15 +83,6 @@ func (o *ListVdi200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, bo
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListVdi200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

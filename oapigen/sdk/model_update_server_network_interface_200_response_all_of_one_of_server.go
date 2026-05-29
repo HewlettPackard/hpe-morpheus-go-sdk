@@ -93,15 +93,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) GetIdOk() (*in
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) SetId(v int64) {
 	o.Id = &v
@@ -123,15 +114,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) GetExternalIdO
 		return nil, false
 	}
 	return o.ExternalId, true
-}
-
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
-		return true
-	}
-
-	return false
 }
 
 // SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
@@ -157,15 +139,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) GetAccountIdOk
 	return o.AccountId, true
 }
 
-// IsSetAccountId returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) IsSetAccountId() bool {
-	if o != nil && !IsNil(o.AccountId) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccountId gets a reference to the given int64 and assigns it to the AccountId field.
 func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) SetAccountId(v int64) {
 	o.AccountId = &v
@@ -187,15 +160,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) GetNameOk() (*
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -221,15 +185,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) GetDisplayName
 	return o.DisplayName, true
 }
 
-// IsSetDisplayName returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) IsSetDisplayName() bool {
-	if o != nil && !IsNil(o.DisplayName) {
-		return true
-	}
-
-	return false
-}
-
 // SetDisplayName gets a reference to the given string and assigns it to the DisplayName field.
 func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) SetDisplayName(v string) {
 	o.DisplayName = &v
@@ -251,15 +206,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) GetVisibilityO
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -286,28 +232,9 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) GetDescription
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetZoneId returns the ZoneId field value if set, zero value otherwise.
@@ -326,15 +253,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) GetZoneIdOk() 
 		return nil, false
 	}
 	return o.ZoneId, true
-}
-
-// IsSetZoneId returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) IsSetZoneId() bool {
-	if o != nil && !IsNil(o.ZoneId) {
-		return true
-	}
-
-	return false
 }
 
 // SetZoneId gets a reference to the given int64 and assigns it to the ZoneId field.
@@ -360,15 +278,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) GetSiteIdOk() 
 	return o.SiteId, true
 }
 
-// IsSetSiteId returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) IsSetSiteId() bool {
-	if o != nil && !IsNil(o.SiteId) {
-		return true
-	}
-
-	return false
-}
-
 // SetSiteId gets a reference to the given int64 and assigns it to the SiteId field.
 func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) SetSiteId(v int64) {
 	o.SiteId = &v
@@ -390,15 +299,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) GetSshHostOk()
 		return nil, false
 	}
 	return o.SshHost, true
-}
-
-// IsSetSshHost returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) IsSetSshHost() bool {
-	if o != nil && !IsNil(o.SshHost) {
-		return true
-	}
-
-	return false
 }
 
 // SetSshHost gets a reference to the given string and assigns it to the SshHost field.
@@ -424,15 +324,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) GetSshPortOk()
 	return o.SshPort, true
 }
 
-// IsSetSshPort returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) IsSetSshPort() bool {
-	if o != nil && !IsNil(o.SshPort) {
-		return true
-	}
-
-	return false
-}
-
 // SetSshPort gets a reference to the given int64 and assigns it to the SshPort field.
 func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) SetSshPort(v int64) {
 	o.SshPort = &v
@@ -456,15 +347,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) GetExternalIpO
 	return o.ExternalIp, true
 }
 
-// IsSetExternalIp returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) IsSetExternalIp() bool {
-	if o != nil && !IsNil(o.ExternalIp) {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalIp gets a reference to the given string and assigns it to the ExternalIp field.
 func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) SetExternalIp(v string) {
 	o.ExternalIp = &v
@@ -486,15 +368,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) GetInternalIpO
 		return nil, false
 	}
 	return o.InternalIp, true
-}
-
-// IsSetInternalIp returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) IsSetInternalIp() bool {
-	if o != nil && !IsNil(o.InternalIp) {
-		return true
-	}
-
-	return false
 }
 
 // SetInternalIp gets a reference to the given string and assigns it to the InternalIp field.
@@ -521,28 +394,9 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) GetVolumeIdOk(
 	return o.VolumeId.Get(), o.VolumeId.IsSet()
 }
 
-// IsSetVolumeId returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) IsSetVolumeId() bool {
-	if o != nil && o.VolumeId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetVolumeId gets a reference to the given NullableString and assigns it to the VolumeId field.
 func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) SetVolumeId(v string) {
 	o.VolumeId.Set(&v)
-}
-
-// SetVolumeIdNil sets the value for VolumeId to be an explicit nil
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) SetVolumeIdNil() {
-	o.VolumeId.Set(nil)
-}
-
-// UnsetVolumeId ensures that no value is present for VolumeId, not even an explicit nil
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) UnsetVolumeId() {
-	o.VolumeId.Unset()
 }
 
 // GetPlatform returns the Platform field value if set, zero value otherwise.
@@ -561,15 +415,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) GetPlatformOk(
 		return nil, false
 	}
 	return o.Platform, true
-}
-
-// IsSetPlatform returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) IsSetPlatform() bool {
-	if o != nil && !IsNil(o.Platform) {
-		return true
-	}
-
-	return false
 }
 
 // SetPlatform gets a reference to the given string and assigns it to the Platform field.
@@ -595,15 +440,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) GetPlatformVer
 	return o.PlatformVersion, true
 }
 
-// IsSetPlatformVersion returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) IsSetPlatformVersion() bool {
-	if o != nil && !IsNil(o.PlatformVersion) {
-		return true
-	}
-
-	return false
-}
-
 // SetPlatformVersion gets a reference to the given string and assigns it to the PlatformVersion field.
 func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) SetPlatformVersion(v string) {
 	o.PlatformVersion = &v
@@ -625,15 +461,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) GetSshUsername
 		return nil, false
 	}
 	return o.SshUsername, true
-}
-
-// IsSetSshUsername returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) IsSetSshUsername() bool {
-	if o != nil && !IsNil(o.SshUsername) {
-		return true
-	}
-
-	return false
 }
 
 // SetSshUsername gets a reference to the given string and assigns it to the SshUsername field.
@@ -659,15 +486,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) GetSshPassword
 	return o.SshPassword, true
 }
 
-// IsSetSshPassword returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) IsSetSshPassword() bool {
-	if o != nil && !IsNil(o.SshPassword) {
-		return true
-	}
-
-	return false
-}
-
 // SetSshPassword gets a reference to the given string and assigns it to the SshPassword field.
 func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) SetSshPassword(v string) {
 	o.SshPassword = &v
@@ -689,15 +507,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) GetOsDeviceOk(
 		return nil, false
 	}
 	return o.OsDevice, true
-}
-
-// IsSetOsDevice returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) IsSetOsDevice() bool {
-	if o != nil && !IsNil(o.OsDevice) {
-		return true
-	}
-
-	return false
 }
 
 // SetOsDevice gets a reference to the given string and assigns it to the OsDevice field.
@@ -723,15 +532,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) GetDataDeviceO
 	return o.DataDevice, true
 }
 
-// IsSetDataDevice returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) IsSetDataDevice() bool {
-	if o != nil && !IsNil(o.DataDevice) {
-		return true
-	}
-
-	return false
-}
-
 // SetDataDevice gets a reference to the given string and assigns it to the DataDevice field.
 func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) SetDataDevice(v string) {
 	o.DataDevice = &v
@@ -753,15 +553,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) GetLvmEnabledO
 		return nil, false
 	}
 	return o.LvmEnabled, true
-}
-
-// IsSetLvmEnabled returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) IsSetLvmEnabled() bool {
-	if o != nil && !IsNil(o.LvmEnabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetLvmEnabled gets a reference to the given bool and assigns it to the LvmEnabled field.
@@ -787,15 +578,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) GetApiKeyOk() 
 	return o.ApiKey, true
 }
 
-// IsSetApiKey returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) IsSetApiKey() bool {
-	if o != nil && !IsNil(o.ApiKey) {
-		return true
-	}
-
-	return false
-}
-
 // SetApiKey gets a reference to the given string and assigns it to the ApiKey field.
 func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) SetApiKey(v string) {
 	o.ApiKey = &v
@@ -817,15 +599,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) GetSoftwareRai
 		return nil, false
 	}
 	return o.SoftwareRaid, true
-}
-
-// IsSetSoftwareRaid returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) IsSetSoftwareRaid() bool {
-	if o != nil && !IsNil(o.SoftwareRaid) {
-		return true
-	}
-
-	return false
 }
 
 // SetSoftwareRaid gets a reference to the given bool and assigns it to the SoftwareRaid field.
@@ -851,15 +624,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) GetConfigOk() 
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given string and assigns it to the Config field.
 func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) SetConfig(v string) {
 	o.Config = &v
@@ -881,15 +645,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) GetCapacityInf
 		return nil, false
 	}
 	return o.CapacityInfo, true
-}
-
-// IsSetCapacityInfo returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) IsSetCapacityInfo() bool {
-	if o != nil && !IsNil(o.CapacityInfo) {
-		return true
-	}
-
-	return false
 }
 
 // SetCapacityInfo gets a reference to the given UpdateServerNetworkInterface200ResponseAllOfOneOfServerCapacityInfo and assigns it to the CapacityInfo field.
@@ -915,15 +670,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) GetDateCreated
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -945,15 +691,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) GetLastUpdated
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
@@ -979,15 +716,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) GetLastStatsOk
 	return o.LastStats, true
 }
 
-// IsSetLastStats returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) IsSetLastStats() bool {
-	if o != nil && !IsNil(o.LastStats) {
-		return true
-	}
-
-	return false
-}
-
 // SetLastStats gets a reference to the given string and assigns it to the LastStats field.
 func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) SetLastStats(v string) {
 	o.LastStats = &v
@@ -1009,15 +737,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) GetStatusOk() 
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -1043,15 +762,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) GetComputeServ
 	return o.ComputeServerType, true
 }
 
-// IsSetComputeServerType returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) IsSetComputeServerType() bool {
-	if o != nil && !IsNil(o.ComputeServerType) {
-		return true
-	}
-
-	return false
-}
-
 // SetComputeServerType gets a reference to the given UpdateServerNetworkInterface200ResponseAllOfOneOfServerComputeServerType and assigns it to the ComputeServerType field.
 func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) SetComputeServerType(v UpdateServerNetworkInterface200ResponseAllOfOneOfServerComputeServerType) {
 	o.ComputeServerType = &v
@@ -1075,15 +785,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) GetInterfacesO
 	return o.Interfaces, true
 }
 
-// IsSetInterfaces returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) IsSetInterfaces() bool {
-	if o != nil && !IsNil(o.Interfaces) {
-		return true
-	}
-
-	return false
-}
-
 // SetInterfaces gets a reference to the given []UpdateServerNetworkInterface200ResponseAllOfOneOfServerInterfacesInner and assigns it to the Interfaces field.
 func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) SetInterfaces(v []UpdateServerNetworkInterface200ResponseAllOfOneOfServerInterfacesInner) {
 	o.Interfaces = v
@@ -1105,15 +806,6 @@ func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) GetZoneOk() (*
 		return nil, false
 	}
 	return o.Zone, true
-}
-
-// IsSetZone returns a boolean if a field has been set.
-func (o *UpdateServerNetworkInterface200ResponseAllOfOneOfServer) IsSetZone() bool {
-	if o != nil && !IsNil(o.Zone) {
-		return true
-	}
-
-	return false
 }
 
 // SetZone gets a reference to the given UpdateServerNetworkInterface200ResponseAllOfOneOfServerZone and assigns it to the Zone field.

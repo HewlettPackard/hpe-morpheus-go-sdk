@@ -62,15 +62,6 @@ func (o *UpdateWikiCluster200Response) GetPageOk() (*UpdateWikiCluster200Respons
 	return o.Page, true
 }
 
-// IsSetPage returns a boolean if a field has been set.
-func (o *UpdateWikiCluster200Response) IsSetPage() bool {
-	if o != nil && !IsNil(o.Page) {
-		return true
-	}
-
-	return false
-}
-
 // SetPage gets a reference to the given UpdateWikiCluster200ResponseAllOfPage and assigns it to the Page field.
 func (o *UpdateWikiCluster200Response) SetPage(v UpdateWikiCluster200ResponseAllOfPage) {
 	o.Page = &v
@@ -92,15 +83,6 @@ func (o *UpdateWikiCluster200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *UpdateWikiCluster200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

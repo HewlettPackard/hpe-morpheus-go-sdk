@@ -93,15 +93,6 @@ func (o *CreateTenantSubtenantGroupRequestGroup) GetDescriptionOk() (*string, bo
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *CreateTenantSubtenantGroupRequestGroup) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *CreateTenantSubtenantGroupRequestGroup) SetDescription(v string) {
 	o.Description = &v
@@ -125,15 +116,6 @@ func (o *CreateTenantSubtenantGroupRequestGroup) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *CreateTenantSubtenantGroupRequestGroup) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *CreateTenantSubtenantGroupRequestGroup) SetCode(v string) {
 	o.Code = &v
@@ -155,15 +137,6 @@ func (o *CreateTenantSubtenantGroupRequestGroup) GetLocationOk() (*string, bool)
 		return nil, false
 	}
 	return o.Location, true
-}
-
-// IsSetLocation returns a boolean if a field has been set.
-func (o *CreateTenantSubtenantGroupRequestGroup) IsSetLocation() bool {
-	if o != nil && !IsNil(o.Location) {
-		return true
-	}
-
-	return false
 }
 
 // SetLocation gets a reference to the given string and assigns it to the Location field.

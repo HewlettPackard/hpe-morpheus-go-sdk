@@ -67,15 +67,6 @@ func (o *ListBackups200ResponseAllOfBackupsInnerLastResult) GetIdOk() (*int64, b
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListBackups200ResponseAllOfBackupsInnerLastResult) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListBackups200ResponseAllOfBackupsInnerLastResult) SetId(v int64) {
 	o.Id = &v
@@ -99,15 +90,6 @@ func (o *ListBackups200ResponseAllOfBackupsInnerLastResult) GetNameOk() (*string
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ListBackups200ResponseAllOfBackupsInnerLastResult) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ListBackups200ResponseAllOfBackupsInnerLastResult) SetName(v string) {
 	o.Name = &v
@@ -129,15 +111,6 @@ func (o *ListBackups200ResponseAllOfBackupsInnerLastResult) GetDateCreatedOk() (
 		return nil, false
 	}
 	return o.DateCreated, true
-}
-
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *ListBackups200ResponseAllOfBackupsInnerLastResult) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.

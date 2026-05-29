@@ -62,15 +62,6 @@ func (o *ListClusterServices200Response) GetServicesOk() ([]ListClusterServices2
 	return o.Services, true
 }
 
-// IsSetServices returns a boolean if a field has been set.
-func (o *ListClusterServices200Response) IsSetServices() bool {
-	if o != nil && !IsNil(o.Services) {
-		return true
-	}
-
-	return false
-}
-
 // SetServices gets a reference to the given []ListClusterServices200ResponseAllOfServicesInner and assigns it to the Services field.
 func (o *ListClusterServices200Response) SetServices(v []ListClusterServices200ResponseAllOfServicesInner) {
 	o.Services = v
@@ -92,15 +83,6 @@ func (o *ListClusterServices200Response) GetMetaOk() (*ListApprovals200ResponseA
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListClusterServices200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

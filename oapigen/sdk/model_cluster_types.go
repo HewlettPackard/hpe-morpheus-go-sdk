@@ -82,15 +82,6 @@ func (o *ClusterTypes) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ClusterTypes) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ClusterTypes) SetId(v int64) {
 	o.Id = &v
@@ -112,15 +103,6 @@ func (o *ClusterTypes) GetDeployTargetServiceOk() (*string, bool) {
 		return nil, false
 	}
 	return o.DeployTargetService, true
-}
-
-// IsSetDeployTargetService returns a boolean if a field has been set.
-func (o *ClusterTypes) IsSetDeployTargetService() bool {
-	if o != nil && !IsNil(o.DeployTargetService) {
-		return true
-	}
-
-	return false
 }
 
 // SetDeployTargetService gets a reference to the given string and assigns it to the DeployTargetService field.
@@ -146,15 +128,6 @@ func (o *ClusterTypes) GetShortNameOk() (*string, bool) {
 	return o.ShortName, true
 }
 
-// IsSetShortName returns a boolean if a field has been set.
-func (o *ClusterTypes) IsSetShortName() bool {
-	if o != nil && !IsNil(o.ShortName) {
-		return true
-	}
-
-	return false
-}
-
 // SetShortName gets a reference to the given string and assigns it to the ShortName field.
 func (o *ClusterTypes) SetShortName(v string) {
 	o.ShortName = &v
@@ -176,15 +149,6 @@ func (o *ClusterTypes) GetProviderTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ProviderType, true
-}
-
-// IsSetProviderType returns a boolean if a field has been set.
-func (o *ClusterTypes) IsSetProviderType() bool {
-	if o != nil && !IsNil(o.ProviderType) {
-		return true
-	}
-
-	return false
 }
 
 // SetProviderType gets a reference to the given string and assigns it to the ProviderType field.
@@ -210,15 +174,6 @@ func (o *ClusterTypes) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *ClusterTypes) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *ClusterTypes) SetCode(v string) {
 	o.Code = &v
@@ -240,15 +195,6 @@ func (o *ClusterTypes) GetHostServiceOk() (*string, bool) {
 		return nil, false
 	}
 	return o.HostService, true
-}
-
-// IsSetHostService returns a boolean if a field has been set.
-func (o *ClusterTypes) IsSetHostService() bool {
-	if o != nil && !IsNil(o.HostService) {
-		return true
-	}
-
-	return false
 }
 
 // SetHostService gets a reference to the given string and assigns it to the HostService field.
@@ -274,15 +220,6 @@ func (o *ClusterTypes) GetManagedOk() (*bool, bool) {
 	return o.Managed, true
 }
 
-// IsSetManaged returns a boolean if a field has been set.
-func (o *ClusterTypes) IsSetManaged() bool {
-	if o != nil && !IsNil(o.Managed) {
-		return true
-	}
-
-	return false
-}
-
 // SetManaged gets a reference to the given bool and assigns it to the Managed field.
 func (o *ClusterTypes) SetManaged(v bool) {
 	o.Managed = &v
@@ -304,15 +241,6 @@ func (o *ClusterTypes) GetHasMastersOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.HasMasters, true
-}
-
-// IsSetHasMasters returns a boolean if a field has been set.
-func (o *ClusterTypes) IsSetHasMasters() bool {
-	if o != nil && !IsNil(o.HasMasters) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasMasters gets a reference to the given bool and assigns it to the HasMasters field.
@@ -338,15 +266,6 @@ func (o *ClusterTypes) GetHasWorkersOk() (*bool, bool) {
 	return o.HasWorkers, true
 }
 
-// IsSetHasWorkers returns a boolean if a field has been set.
-func (o *ClusterTypes) IsSetHasWorkers() bool {
-	if o != nil && !IsNil(o.HasWorkers) {
-		return true
-	}
-
-	return false
-}
-
 // SetHasWorkers gets a reference to the given bool and assigns it to the HasWorkers field.
 func (o *ClusterTypes) SetHasWorkers(v bool) {
 	o.HasWorkers = &v
@@ -368,15 +287,6 @@ func (o *ClusterTypes) GetViewSetOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ViewSet, true
-}
-
-// IsSetViewSet returns a boolean if a field has been set.
-func (o *ClusterTypes) IsSetViewSet() bool {
-	if o != nil && !IsNil(o.ViewSet) {
-		return true
-	}
-
-	return false
 }
 
 // SetViewSet gets a reference to the given string and assigns it to the ViewSet field.
@@ -402,15 +312,6 @@ func (o *ClusterTypes) GetImageCodeOk() (*string, bool) {
 	return o.ImageCode, true
 }
 
-// IsSetImageCode returns a boolean if a field has been set.
-func (o *ClusterTypes) IsSetImageCode() bool {
-	if o != nil && !IsNil(o.ImageCode) {
-		return true
-	}
-
-	return false
-}
-
 // SetImageCode gets a reference to the given string and assigns it to the ImageCode field.
 func (o *ClusterTypes) SetImageCode(v string) {
 	o.ImageCode = &v
@@ -432,15 +333,6 @@ func (o *ClusterTypes) GetKubeCtlLocalOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.KubeCtlLocal, true
-}
-
-// IsSetKubeCtlLocal returns a boolean if a field has been set.
-func (o *ClusterTypes) IsSetKubeCtlLocal() bool {
-	if o != nil && !IsNil(o.KubeCtlLocal) {
-		return true
-	}
-
-	return false
 }
 
 // SetKubeCtlLocal gets a reference to the given bool and assigns it to the KubeCtlLocal field.
@@ -466,15 +358,6 @@ func (o *ClusterTypes) GetHasDatastoreOk() (*bool, bool) {
 	return o.HasDatastore, true
 }
 
-// IsSetHasDatastore returns a boolean if a field has been set.
-func (o *ClusterTypes) IsSetHasDatastore() bool {
-	if o != nil && !IsNil(o.HasDatastore) {
-		return true
-	}
-
-	return false
-}
-
 // SetHasDatastore gets a reference to the given bool and assigns it to the HasDatastore field.
 func (o *ClusterTypes) SetHasDatastore(v bool) {
 	o.HasDatastore = &v
@@ -496,15 +379,6 @@ func (o *ClusterTypes) GetSupportsCloudScalingOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.SupportsCloudScaling, true
-}
-
-// IsSetSupportsCloudScaling returns a boolean if a field has been set.
-func (o *ClusterTypes) IsSetSupportsCloudScaling() bool {
-	if o != nil && !IsNil(o.SupportsCloudScaling) {
-		return true
-	}
-
-	return false
 }
 
 // SetSupportsCloudScaling gets a reference to the given bool and assigns it to the SupportsCloudScaling field.
@@ -530,15 +404,6 @@ func (o *ClusterTypes) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ClusterTypes) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ClusterTypes) SetName(v string) {
 	o.Name = &v
@@ -560,15 +425,6 @@ func (o *ClusterTypes) GetHasDefaultDataDiskOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.HasDefaultDataDisk, true
-}
-
-// IsSetHasDefaultDataDisk returns a boolean if a field has been set.
-func (o *ClusterTypes) IsSetHasDefaultDataDisk() bool {
-	if o != nil && !IsNil(o.HasDefaultDataDisk) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasDefaultDataDisk gets a reference to the given bool and assigns it to the HasDefaultDataDisk field.
@@ -594,15 +450,6 @@ func (o *ClusterTypes) GetCanManageOk() (*bool, bool) {
 	return o.CanManage, true
 }
 
-// IsSetCanManage returns a boolean if a field has been set.
-func (o *ClusterTypes) IsSetCanManage() bool {
-	if o != nil && !IsNil(o.CanManage) {
-		return true
-	}
-
-	return false
-}
-
 // SetCanManage gets a reference to the given bool and assigns it to the CanManage field.
 func (o *ClusterTypes) SetCanManage(v bool) {
 	o.CanManage = &v
@@ -624,15 +471,6 @@ func (o *ClusterTypes) GetHasClusterOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.HasCluster, true
-}
-
-// IsSetHasCluster returns a boolean if a field has been set.
-func (o *ClusterTypes) IsSetHasCluster() bool {
-	if o != nil && !IsNil(o.HasCluster) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasCluster gets a reference to the given bool and assigns it to the HasCluster field.
@@ -658,15 +496,6 @@ func (o *ClusterTypes) GetDescriptionOk() (*string, bool) {
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ClusterTypes) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *ClusterTypes) SetDescription(v string) {
 	o.Description = &v
@@ -688,15 +517,6 @@ func (o *ClusterTypes) GetOptionTypesOk() ([]ClusterTypesOptionTypesInner, bool)
 		return nil, false
 	}
 	return o.OptionTypes, true
-}
-
-// IsSetOptionTypes returns a boolean if a field has been set.
-func (o *ClusterTypes) IsSetOptionTypes() bool {
-	if o != nil && !IsNil(o.OptionTypes) {
-		return true
-	}
-
-	return false
 }
 
 // SetOptionTypes gets a reference to the given []ClusterTypesOptionTypesInner and assigns it to the OptionTypes field.
@@ -722,15 +542,6 @@ func (o *ClusterTypes) GetControllerTypesOk() ([]ClusterTypesControllerTypesInne
 	return o.ControllerTypes, true
 }
 
-// IsSetControllerTypes returns a boolean if a field has been set.
-func (o *ClusterTypes) IsSetControllerTypes() bool {
-	if o != nil && !IsNil(o.ControllerTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetControllerTypes gets a reference to the given []ClusterTypesControllerTypesInner and assigns it to the ControllerTypes field.
 func (o *ClusterTypes) SetControllerTypes(v []ClusterTypesControllerTypesInner) {
 	o.ControllerTypes = v
@@ -752,15 +563,6 @@ func (o *ClusterTypes) GetWorkerTypesOk() ([]ClusterTypesWorkerTypesInner, bool)
 		return nil, false
 	}
 	return o.WorkerTypes, true
-}
-
-// IsSetWorkerTypes returns a boolean if a field has been set.
-func (o *ClusterTypes) IsSetWorkerTypes() bool {
-	if o != nil && !IsNil(o.WorkerTypes) {
-		return true
-	}
-
-	return false
 }
 
 // SetWorkerTypes gets a reference to the given []ClusterTypesWorkerTypesInner and assigns it to the WorkerTypes field.

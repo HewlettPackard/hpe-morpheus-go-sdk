@@ -185,15 +185,6 @@ func (o *MySqlCheck1AllOfConfig) GetCheckOperatorOk() (*string, bool) {
 	return o.CheckOperator, true
 }
 
-// IsSetCheckOperator returns a boolean if a field has been set.
-func (o *MySqlCheck1AllOfConfig) IsSetCheckOperator() bool {
-	if o != nil && !IsNil(o.CheckOperator) {
-		return true
-	}
-
-	return false
-}
-
 // SetCheckOperator gets a reference to the given string and assigns it to the CheckOperator field.
 func (o *MySqlCheck1AllOfConfig) SetCheckOperator(v string) {
 	o.CheckOperator = &v
@@ -239,15 +230,6 @@ func (o *MySqlCheck1AllOfConfig) GetCheckResultOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.CheckResult, true
-}
-
-// IsSetCheckResult returns a boolean if a field has been set.
-func (o *MySqlCheck1AllOfConfig) IsSetCheckResult() bool {
-	if o != nil && !IsNil(o.CheckResult) {
-		return true
-	}
-
-	return false
 }
 
 // SetCheckResult gets a reference to the given int64 and assigns it to the CheckResult field.
@@ -297,15 +279,6 @@ func (o *MySqlCheck1AllOfConfig) GetDbPasswordHashOk() (*string, bool) {
 	return o.DbPasswordHash, true
 }
 
-// IsSetDbPasswordHash returns a boolean if a field has been set.
-func (o *MySqlCheck1AllOfConfig) IsSetDbPasswordHash() bool {
-	if o != nil && !IsNil(o.DbPasswordHash) {
-		return true
-	}
-
-	return false
-}
-
 // SetDbPasswordHash gets a reference to the given string and assigns it to the DbPasswordHash field.
 func (o *MySqlCheck1AllOfConfig) SetDbPasswordHash(v string) {
 	o.DbPasswordHash = &v
@@ -327,15 +300,6 @@ func (o *MySqlCheck1AllOfConfig) GetTunnelOnOk() (*string, bool) {
 		return nil, false
 	}
 	return o.TunnelOn, true
-}
-
-// IsSetTunnelOn returns a boolean if a field has been set.
-func (o *MySqlCheck1AllOfConfig) IsSetTunnelOn() bool {
-	if o != nil && !IsNil(o.TunnelOn) {
-		return true
-	}
-
-	return false
 }
 
 // SetTunnelOn gets a reference to the given string and assigns it to the TunnelOn field.
@@ -361,15 +325,6 @@ func (o *MySqlCheck1AllOfConfig) GetSshHostOk() (*string, bool) {
 	return o.SshHost, true
 }
 
-// IsSetSshHost returns a boolean if a field has been set.
-func (o *MySqlCheck1AllOfConfig) IsSetSshHost() bool {
-	if o != nil && !IsNil(o.SshHost) {
-		return true
-	}
-
-	return false
-}
-
 // SetSshHost gets a reference to the given string and assigns it to the SshHost field.
 func (o *MySqlCheck1AllOfConfig) SetSshHost(v string) {
 	o.SshHost = &v
@@ -391,15 +346,6 @@ func (o *MySqlCheck1AllOfConfig) GetSshPortOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.SshPort, true
-}
-
-// IsSetSshPort returns a boolean if a field has been set.
-func (o *MySqlCheck1AllOfConfig) IsSetSshPort() bool {
-	if o != nil && !IsNil(o.SshPort) {
-		return true
-	}
-
-	return false
 }
 
 // SetSshPort gets a reference to the given int64 and assigns it to the SshPort field.
@@ -425,15 +371,6 @@ func (o *MySqlCheck1AllOfConfig) GetSshUserOk() (*string, bool) {
 	return o.SshUser, true
 }
 
-// IsSetSshUser returns a boolean if a field has been set.
-func (o *MySqlCheck1AllOfConfig) IsSetSshUser() bool {
-	if o != nil && !IsNil(o.SshUser) {
-		return true
-	}
-
-	return false
-}
-
 // SetSshUser gets a reference to the given string and assigns it to the SshUser field.
 func (o *MySqlCheck1AllOfConfig) SetSshUser(v string) {
 	o.SshUser = &v
@@ -455,15 +392,6 @@ func (o *MySqlCheck1AllOfConfig) GetSshPasswordOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SshPassword, true
-}
-
-// IsSetSshPassword returns a boolean if a field has been set.
-func (o *MySqlCheck1AllOfConfig) IsSetSshPassword() bool {
-	if o != nil && !IsNil(o.SshPassword) {
-		return true
-	}
-
-	return false
 }
 
 // SetSshPassword gets a reference to the given string and assigns it to the SshPassword field.

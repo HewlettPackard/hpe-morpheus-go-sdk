@@ -64,15 +64,6 @@ func (o *GetAlerts200Response) GetAlertOk() (*GetAlerts200ResponseAllOfAlert, bo
 	return o.Alert, true
 }
 
-// IsSetAlert returns a boolean if a field has been set.
-func (o *GetAlerts200Response) IsSetAlert() bool {
-	if o != nil && !IsNil(o.Alert) {
-		return true
-	}
-
-	return false
-}
-
 // SetAlert gets a reference to the given GetAlerts200ResponseAllOfAlert and assigns it to the Alert field.
 func (o *GetAlerts200Response) SetAlert(v GetAlerts200ResponseAllOfAlert) {
 	o.Alert = &v
@@ -94,15 +85,6 @@ func (o *GetAlerts200Response) GetChecksOk() ([]GetAlerts200ResponseAllOfChecksI
 		return nil, false
 	}
 	return o.Checks, true
-}
-
-// IsSetChecks returns a boolean if a field has been set.
-func (o *GetAlerts200Response) IsSetChecks() bool {
-	if o != nil && !IsNil(o.Checks) {
-		return true
-	}
-
-	return false
 }
 
 // SetChecks gets a reference to the given []GetAlerts200ResponseAllOfChecksInner and assigns it to the Checks field.
@@ -128,15 +110,6 @@ func (o *GetAlerts200Response) GetCheckGroupsOk() ([]GetAlerts200ResponseAllOfCh
 	return o.CheckGroups, true
 }
 
-// IsSetCheckGroups returns a boolean if a field has been set.
-func (o *GetAlerts200Response) IsSetCheckGroups() bool {
-	if o != nil && !IsNil(o.CheckGroups) {
-		return true
-	}
-
-	return false
-}
-
 // SetCheckGroups gets a reference to the given []GetAlerts200ResponseAllOfCheckGroupsInner and assigns it to the CheckGroups field.
 func (o *GetAlerts200Response) SetCheckGroups(v []GetAlerts200ResponseAllOfCheckGroupsInner) {
 	o.CheckGroups = v
@@ -158,15 +131,6 @@ func (o *GetAlerts200Response) GetAppsOk() ([]GetAlerts200ResponseAllOfAppsInner
 		return nil, false
 	}
 	return o.Apps, true
-}
-
-// IsSetApps returns a boolean if a field has been set.
-func (o *GetAlerts200Response) IsSetApps() bool {
-	if o != nil && !IsNil(o.Apps) {
-		return true
-	}
-
-	return false
 }
 
 // SetApps gets a reference to the given []GetAlerts200ResponseAllOfAppsInner and assigns it to the Apps field.

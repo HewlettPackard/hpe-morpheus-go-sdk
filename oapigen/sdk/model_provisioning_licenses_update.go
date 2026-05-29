@@ -76,15 +76,6 @@ func (o *ProvisioningLicensesUpdate) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ProvisioningLicensesUpdate) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ProvisioningLicensesUpdate) SetName(v string) {
 	o.Name = &v
@@ -106,15 +97,6 @@ func (o *ProvisioningLicensesUpdate) GetLicenseVersionOk() (*string, bool) {
 		return nil, false
 	}
 	return o.LicenseVersion, true
-}
-
-// IsSetLicenseVersion returns a boolean if a field has been set.
-func (o *ProvisioningLicensesUpdate) IsSetLicenseVersion() bool {
-	if o != nil && !IsNil(o.LicenseVersion) {
-		return true
-	}
-
-	return false
 }
 
 // SetLicenseVersion gets a reference to the given string and assigns it to the LicenseVersion field.
@@ -140,15 +122,6 @@ func (o *ProvisioningLicensesUpdate) GetCopiesOk() (*int64, bool) {
 	return o.Copies, true
 }
 
-// IsSetCopies returns a boolean if a field has been set.
-func (o *ProvisioningLicensesUpdate) IsSetCopies() bool {
-	if o != nil && !IsNil(o.Copies) {
-		return true
-	}
-
-	return false
-}
-
 // SetCopies gets a reference to the given int64 and assigns it to the Copies field.
 func (o *ProvisioningLicensesUpdate) SetCopies(v int64) {
 	o.Copies = &v
@@ -170,15 +143,6 @@ func (o *ProvisioningLicensesUpdate) GetDescriptionOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ProvisioningLicensesUpdate) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -204,15 +168,6 @@ func (o *ProvisioningLicensesUpdate) GetVirtualImagesOk() ([]int64, bool) {
 	return o.VirtualImages, true
 }
 
-// IsSetVirtualImages returns a boolean if a field has been set.
-func (o *ProvisioningLicensesUpdate) IsSetVirtualImages() bool {
-	if o != nil && !IsNil(o.VirtualImages) {
-		return true
-	}
-
-	return false
-}
-
 // SetVirtualImages gets a reference to the given []int64 and assigns it to the VirtualImages field.
 func (o *ProvisioningLicensesUpdate) SetVirtualImages(v []int64) {
 	o.VirtualImages = v
@@ -234,15 +189,6 @@ func (o *ProvisioningLicensesUpdate) GetTenantsOk() ([]int64, bool) {
 		return nil, false
 	}
 	return o.Tenants, true
-}
-
-// IsSetTenants returns a boolean if a field has been set.
-func (o *ProvisioningLicensesUpdate) IsSetTenants() bool {
-	if o != nil && !IsNil(o.Tenants) {
-		return true
-	}
-
-	return false
 }
 
 // SetTenants gets a reference to the given []int64 and assigns it to the Tenants field.

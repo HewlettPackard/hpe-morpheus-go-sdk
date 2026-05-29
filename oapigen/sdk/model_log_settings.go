@@ -64,15 +64,6 @@ func (o *LogSettings) GetEnabledOk() (*bool, bool) {
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *LogSettings) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *LogSettings) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -94,15 +85,6 @@ func (o *LogSettings) GetRetentionDaysOk() (*string, bool) {
 		return nil, false
 	}
 	return o.RetentionDays, true
-}
-
-// IsSetRetentionDays returns a boolean if a field has been set.
-func (o *LogSettings) IsSetRetentionDays() bool {
-	if o != nil && !IsNil(o.RetentionDays) {
-		return true
-	}
-
-	return false
 }
 
 // SetRetentionDays gets a reference to the given string and assigns it to the RetentionDays field.
@@ -129,15 +111,6 @@ func (o *LogSettings) GetSyslogRulesOk() ([]map[string]interface{}, bool) {
 	return o.SyslogRules, true
 }
 
-// IsSetSyslogRules returns a boolean if a field has been set.
-func (o *LogSettings) IsSetSyslogRules() bool {
-	if o != nil && !IsNil(o.SyslogRules) {
-		return true
-	}
-
-	return false
-}
-
 // SetSyslogRules gets a reference to the given []map[string]interface{} and assigns it to the SyslogRules field.
 func (o *LogSettings) SetSyslogRules(v []map[string]interface{}) {
 	o.SyslogRules = v
@@ -160,15 +133,6 @@ func (o *LogSettings) GetIntegrationsOk() ([]map[string]interface{}, bool) {
 		return nil, false
 	}
 	return o.Integrations, true
-}
-
-// IsSetIntegrations returns a boolean if a field has been set.
-func (o *LogSettings) IsSetIntegrations() bool {
-	if o != nil && !IsNil(o.Integrations) {
-		return true
-	}
-
-	return false
 }
 
 // SetIntegrations gets a reference to the given []map[string]interface{} and assigns it to the Integrations field.

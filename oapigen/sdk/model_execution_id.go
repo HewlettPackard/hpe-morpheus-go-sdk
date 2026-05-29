@@ -61,15 +61,6 @@ func (o *ExecutionId) GetExecutionIdOk() (*string, bool) {
 	return o.ExecutionId, true
 }
 
-// IsSetExecutionId returns a boolean if a field has been set.
-func (o *ExecutionId) IsSetExecutionId() bool {
-	if o != nil && !IsNil(o.ExecutionId) {
-		return true
-	}
-
-	return false
-}
-
 // SetExecutionId gets a reference to the given string and assigns it to the ExecutionId field.
 func (o *ExecutionId) SetExecutionId(v string) {
 	o.ExecutionId = &v

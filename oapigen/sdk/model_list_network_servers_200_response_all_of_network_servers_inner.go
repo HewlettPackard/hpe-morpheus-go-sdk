@@ -120,15 +120,6 @@ func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetIdOk() (*int6
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetId(v int64) {
 	o.Id = &v
@@ -150,15 +141,6 @@ func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetNameOk() (*st
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -185,28 +167,9 @@ func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetDescriptionOk
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
@@ -225,15 +188,6 @@ func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetTypeOk() (*Li
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given ListNetworkServers200ResponseAllOfNetworkServersInnerType and assigns it to the Type field.
@@ -259,15 +213,6 @@ func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetIntegrationOk
 	return o.Integration, true
 }
 
-// IsSetIntegration returns a boolean if a field has been set.
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) IsSetIntegration() bool {
-	if o != nil && !IsNil(o.Integration) {
-		return true
-	}
-
-	return false
-}
-
 // SetIntegration gets a reference to the given ListNetworkServers200ResponseAllOfNetworkServersInnerIntegration and assigns it to the Integration field.
 func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetIntegration(v ListNetworkServers200ResponseAllOfNetworkServersInnerIntegration) {
 	o.Integration = &v
@@ -291,15 +236,6 @@ func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetAccountOk() (
 	return o.Account, true
 }
 
-// IsSetAccount returns a boolean if a field has been set.
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccount gets a reference to the given ListNetworkServers200ResponseAllOfNetworkServersInnerAccount and assigns it to the Account field.
 func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetAccount(v ListNetworkServers200ResponseAllOfNetworkServersInnerAccount) {
 	o.Account = &v
@@ -321,15 +257,6 @@ func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetVisibilityOk(
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -356,28 +283,9 @@ func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetInternalIdOk(
 	return o.InternalId.Get(), o.InternalId.IsSet()
 }
 
-// IsSetInternalId returns a boolean if a field has been set.
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) IsSetInternalId() bool {
-	if o != nil && o.InternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInternalId gets a reference to the given NullableString and assigns it to the InternalId field.
 func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetInternalId(v string) {
 	o.InternalId.Set(&v)
-}
-
-// SetInternalIdNil sets the value for InternalId to be an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetInternalIdNil() {
-	o.InternalId.Set(nil)
-}
-
-// UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetInternalId() {
-	o.InternalId.Unset()
 }
 
 // GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -399,28 +307,9 @@ func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetExternalIdOk(
 	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) IsSetExternalId() bool {
-	if o != nil && o.ExternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetExternalId(v string) {
 	o.ExternalId.Set(&v)
-}
-
-// SetExternalIdNil sets the value for ExternalId to be an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetExternalIdNil() {
-	o.ExternalId.Set(nil)
-}
-
-// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetExternalId() {
-	o.ExternalId.Unset()
 }
 
 // GetServiceUrl returns the ServiceUrl field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -442,28 +331,9 @@ func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetServiceUrlOk(
 	return o.ServiceUrl.Get(), o.ServiceUrl.IsSet()
 }
 
-// IsSetServiceUrl returns a boolean if a field has been set.
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) IsSetServiceUrl() bool {
-	if o != nil && o.ServiceUrl.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceUrl gets a reference to the given NullableString and assigns it to the ServiceUrl field.
 func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetServiceUrl(v string) {
 	o.ServiceUrl.Set(&v)
-}
-
-// SetServiceUrlNil sets the value for ServiceUrl to be an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetServiceUrlNil() {
-	o.ServiceUrl.Set(nil)
-}
-
-// UnsetServiceUrl ensures that no value is present for ServiceUrl, not even an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetServiceUrl() {
-	o.ServiceUrl.Unset()
 }
 
 // GetServiceHost returns the ServiceHost field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -485,28 +355,9 @@ func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetServiceHostOk
 	return o.ServiceHost.Get(), o.ServiceHost.IsSet()
 }
 
-// IsSetServiceHost returns a boolean if a field has been set.
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) IsSetServiceHost() bool {
-	if o != nil && o.ServiceHost.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceHost gets a reference to the given NullableString and assigns it to the ServiceHost field.
 func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetServiceHost(v string) {
 	o.ServiceHost.Set(&v)
-}
-
-// SetServiceHostNil sets the value for ServiceHost to be an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetServiceHostNil() {
-	o.ServiceHost.Set(nil)
-}
-
-// UnsetServiceHost ensures that no value is present for ServiceHost, not even an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetServiceHost() {
-	o.ServiceHost.Unset()
 }
 
 // GetServicePort returns the ServicePort field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -528,28 +379,9 @@ func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetServicePortOk
 	return o.ServicePort.Get(), o.ServicePort.IsSet()
 }
 
-// IsSetServicePort returns a boolean if a field has been set.
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) IsSetServicePort() bool {
-	if o != nil && o.ServicePort.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServicePort gets a reference to the given NullableInt32 and assigns it to the ServicePort field.
 func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetServicePort(v int32) {
 	o.ServicePort.Set(&v)
-}
-
-// SetServicePortNil sets the value for ServicePort to be an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetServicePortNil() {
-	o.ServicePort.Set(nil)
-}
-
-// UnsetServicePort ensures that no value is present for ServicePort, not even an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetServicePort() {
-	o.ServicePort.Unset()
 }
 
 // GetServiceMode returns the ServiceMode field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -571,28 +403,9 @@ func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetServiceModeOk
 	return o.ServiceMode.Get(), o.ServiceMode.IsSet()
 }
 
-// IsSetServiceMode returns a boolean if a field has been set.
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) IsSetServiceMode() bool {
-	if o != nil && o.ServiceMode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceMode gets a reference to the given NullableString and assigns it to the ServiceMode field.
 func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetServiceMode(v string) {
 	o.ServiceMode.Set(&v)
-}
-
-// SetServiceModeNil sets the value for ServiceMode to be an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetServiceModeNil() {
-	o.ServiceMode.Set(nil)
-}
-
-// UnsetServiceMode ensures that no value is present for ServiceMode, not even an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetServiceMode() {
-	o.ServiceMode.Unset()
 }
 
 // GetServicePath returns the ServicePath field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -614,28 +427,9 @@ func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetServicePathOk
 	return o.ServicePath.Get(), o.ServicePath.IsSet()
 }
 
-// IsSetServicePath returns a boolean if a field has been set.
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) IsSetServicePath() bool {
-	if o != nil && o.ServicePath.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServicePath gets a reference to the given NullableString and assigns it to the ServicePath field.
 func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetServicePath(v string) {
 	o.ServicePath.Set(&v)
-}
-
-// SetServicePathNil sets the value for ServicePath to be an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetServicePathNil() {
-	o.ServicePath.Set(nil)
-}
-
-// UnsetServicePath ensures that no value is present for ServicePath, not even an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetServicePath() {
-	o.ServicePath.Unset()
 }
 
 // GetServiceUsername returns the ServiceUsername field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -657,28 +451,9 @@ func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetServiceUserna
 	return o.ServiceUsername.Get(), o.ServiceUsername.IsSet()
 }
 
-// IsSetServiceUsername returns a boolean if a field has been set.
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) IsSetServiceUsername() bool {
-	if o != nil && o.ServiceUsername.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceUsername gets a reference to the given NullableString and assigns it to the ServiceUsername field.
 func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetServiceUsername(v string) {
 	o.ServiceUsername.Set(&v)
-}
-
-// SetServiceUsernameNil sets the value for ServiceUsername to be an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetServiceUsernameNil() {
-	o.ServiceUsername.Set(nil)
-}
-
-// UnsetServiceUsername ensures that no value is present for ServiceUsername, not even an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetServiceUsername() {
-	o.ServiceUsername.Unset()
 }
 
 // GetServicePassword returns the ServicePassword field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -700,28 +475,9 @@ func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetServicePasswo
 	return o.ServicePassword.Get(), o.ServicePassword.IsSet()
 }
 
-// IsSetServicePassword returns a boolean if a field has been set.
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) IsSetServicePassword() bool {
-	if o != nil && o.ServicePassword.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServicePassword gets a reference to the given NullableString and assigns it to the ServicePassword field.
 func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetServicePassword(v string) {
 	o.ServicePassword.Set(&v)
-}
-
-// SetServicePasswordNil sets the value for ServicePassword to be an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetServicePasswordNil() {
-	o.ServicePassword.Set(nil)
-}
-
-// UnsetServicePassword ensures that no value is present for ServicePassword, not even an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetServicePassword() {
-	o.ServicePassword.Unset()
 }
 
 // GetServicePasswordHash returns the ServicePasswordHash field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -743,28 +499,9 @@ func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetServicePasswo
 	return o.ServicePasswordHash.Get(), o.ServicePasswordHash.IsSet()
 }
 
-// IsSetServicePasswordHash returns a boolean if a field has been set.
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) IsSetServicePasswordHash() bool {
-	if o != nil && o.ServicePasswordHash.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServicePasswordHash gets a reference to the given NullableString and assigns it to the ServicePasswordHash field.
 func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetServicePasswordHash(v string) {
 	o.ServicePasswordHash.Set(&v)
-}
-
-// SetServicePasswordHashNil sets the value for ServicePasswordHash to be an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetServicePasswordHashNil() {
-	o.ServicePasswordHash.Set(nil)
-}
-
-// UnsetServicePasswordHash ensures that no value is present for ServicePasswordHash, not even an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetServicePasswordHash() {
-	o.ServicePasswordHash.Unset()
 }
 
 // GetServiceToken returns the ServiceToken field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -786,28 +523,9 @@ func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetServiceTokenO
 	return o.ServiceToken.Get(), o.ServiceToken.IsSet()
 }
 
-// IsSetServiceToken returns a boolean if a field has been set.
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) IsSetServiceToken() bool {
-	if o != nil && o.ServiceToken.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceToken gets a reference to the given NullableString and assigns it to the ServiceToken field.
 func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetServiceToken(v string) {
 	o.ServiceToken.Set(&v)
-}
-
-// SetServiceTokenNil sets the value for ServiceToken to be an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetServiceTokenNil() {
-	o.ServiceToken.Set(nil)
-}
-
-// UnsetServiceToken ensures that no value is present for ServiceToken, not even an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetServiceToken() {
-	o.ServiceToken.Unset()
 }
 
 // GetServiceTokenHash returns the ServiceTokenHash field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -829,28 +547,9 @@ func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetServiceTokenH
 	return o.ServiceTokenHash.Get(), o.ServiceTokenHash.IsSet()
 }
 
-// IsSetServiceTokenHash returns a boolean if a field has been set.
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) IsSetServiceTokenHash() bool {
-	if o != nil && o.ServiceTokenHash.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceTokenHash gets a reference to the given NullableString and assigns it to the ServiceTokenHash field.
 func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetServiceTokenHash(v string) {
 	o.ServiceTokenHash.Set(&v)
-}
-
-// SetServiceTokenHashNil sets the value for ServiceTokenHash to be an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetServiceTokenHashNil() {
-	o.ServiceTokenHash.Set(nil)
-}
-
-// UnsetServiceTokenHash ensures that no value is present for ServiceTokenHash, not even an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetServiceTokenHash() {
-	o.ServiceTokenHash.Unset()
 }
 
 // GetApiPort returns the ApiPort field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -872,28 +571,9 @@ func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetApiPortOk() (
 	return o.ApiPort.Get(), o.ApiPort.IsSet()
 }
 
-// IsSetApiPort returns a boolean if a field has been set.
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) IsSetApiPort() bool {
-	if o != nil && o.ApiPort.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetApiPort gets a reference to the given NullableInt32 and assigns it to the ApiPort field.
 func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetApiPort(v int32) {
 	o.ApiPort.Set(&v)
-}
-
-// SetApiPortNil sets the value for ApiPort to be an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetApiPortNil() {
-	o.ApiPort.Set(nil)
-}
-
-// UnsetApiPort ensures that no value is present for ApiPort, not even an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetApiPort() {
-	o.ApiPort.Unset()
 }
 
 // GetAdminPort returns the AdminPort field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -915,28 +595,9 @@ func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetAdminPortOk()
 	return o.AdminPort.Get(), o.AdminPort.IsSet()
 }
 
-// IsSetAdminPort returns a boolean if a field has been set.
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) IsSetAdminPort() bool {
-	if o != nil && o.AdminPort.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAdminPort gets a reference to the given NullableInt32 and assigns it to the AdminPort field.
 func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetAdminPort(v int32) {
 	o.AdminPort.Set(&v)
-}
-
-// SetAdminPortNil sets the value for AdminPort to be an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetAdminPortNil() {
-	o.AdminPort.Set(nil)
-}
-
-// UnsetAdminPort ensures that no value is present for AdminPort, not even an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetAdminPort() {
-	o.AdminPort.Unset()
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -955,15 +616,6 @@ func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetStatusOk() (*
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -990,28 +642,9 @@ func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetStatusMessage
 	return o.StatusMessage.Get(), o.StatusMessage.IsSet()
 }
 
-// IsSetStatusMessage returns a boolean if a field has been set.
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) IsSetStatusMessage() bool {
-	if o != nil && o.StatusMessage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusMessage gets a reference to the given NullableString and assigns it to the StatusMessage field.
 func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetStatusMessage(v string) {
 	o.StatusMessage.Set(&v)
-}
-
-// SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetStatusMessageNil() {
-	o.StatusMessage.Set(nil)
-}
-
-// UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetStatusMessage() {
-	o.StatusMessage.Unset()
 }
 
 // GetStatusDate returns the StatusDate field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1033,28 +666,9 @@ func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetStatusDateOk(
 	return o.StatusDate.Get(), o.StatusDate.IsSet()
 }
 
-// IsSetStatusDate returns a boolean if a field has been set.
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) IsSetStatusDate() bool {
-	if o != nil && o.StatusDate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusDate gets a reference to the given NullableTime and assigns it to the StatusDate field.
 func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetStatusDate(v time.Time) {
 	o.StatusDate.Set(&v)
-}
-
-// SetStatusDateNil sets the value for StatusDate to be an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetStatusDateNil() {
-	o.StatusDate.Set(nil)
-}
-
-// UnsetStatusDate ensures that no value is present for StatusDate, not even an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetStatusDate() {
-	o.StatusDate.Unset()
 }
 
 // GetLastSync returns the LastSync field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1076,28 +690,9 @@ func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetLastSyncOk() 
 	return o.LastSync.Get(), o.LastSync.IsSet()
 }
 
-// IsSetLastSync returns a boolean if a field has been set.
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) IsSetLastSync() bool {
-	if o != nil && o.LastSync.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastSync gets a reference to the given NullableTime and assigns it to the LastSync field.
 func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetLastSync(v time.Time) {
 	o.LastSync.Set(&v)
-}
-
-// SetLastSyncNil sets the value for LastSync to be an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetLastSyncNil() {
-	o.LastSync.Set(nil)
-}
-
-// UnsetLastSync ensures that no value is present for LastSync, not even an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetLastSync() {
-	o.LastSync.Unset()
 }
 
 // GetNextRunDate returns the NextRunDate field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1119,28 +714,9 @@ func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetNextRunDateOk
 	return o.NextRunDate.Get(), o.NextRunDate.IsSet()
 }
 
-// IsSetNextRunDate returns a boolean if a field has been set.
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) IsSetNextRunDate() bool {
-	if o != nil && o.NextRunDate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNextRunDate gets a reference to the given NullableTime and assigns it to the NextRunDate field.
 func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetNextRunDate(v time.Time) {
 	o.NextRunDate.Set(&v)
-}
-
-// SetNextRunDateNil sets the value for NextRunDate to be an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetNextRunDateNil() {
-	o.NextRunDate.Set(nil)
-}
-
-// UnsetNextRunDate ensures that no value is present for NextRunDate, not even an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetNextRunDate() {
-	o.NextRunDate.Unset()
 }
 
 // GetLastSyncDuration returns the LastSyncDuration field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1162,28 +738,9 @@ func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetLastSyncDurat
 	return o.LastSyncDuration.Get(), o.LastSyncDuration.IsSet()
 }
 
-// IsSetLastSyncDuration returns a boolean if a field has been set.
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) IsSetLastSyncDuration() bool {
-	if o != nil && o.LastSyncDuration.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastSyncDuration gets a reference to the given NullableInt64 and assigns it to the LastSyncDuration field.
 func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetLastSyncDuration(v int64) {
 	o.LastSyncDuration.Set(&v)
-}
-
-// SetLastSyncDurationNil sets the value for LastSyncDuration to be an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetLastSyncDurationNil() {
-	o.LastSyncDuration.Set(nil)
-}
-
-// UnsetLastSyncDuration ensures that no value is present for LastSyncDuration, not even an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetLastSyncDuration() {
-	o.LastSyncDuration.Unset()
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
@@ -1202,15 +759,6 @@ func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetConfigOk() (m
 		return map[string]interface{}{}, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
@@ -1237,28 +785,9 @@ func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetNetworkFilter
 	return o.NetworkFilter.Get(), o.NetworkFilter.IsSet()
 }
 
-// IsSetNetworkFilter returns a boolean if a field has been set.
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) IsSetNetworkFilter() bool {
-	if o != nil && o.NetworkFilter.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkFilter gets a reference to the given NullableString and assigns it to the NetworkFilter field.
 func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetNetworkFilter(v string) {
 	o.NetworkFilter.Set(&v)
-}
-
-// SetNetworkFilterNil sets the value for NetworkFilter to be an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetNetworkFilterNil() {
-	o.NetworkFilter.Set(nil)
-}
-
-// UnsetNetworkFilter ensures that no value is present for NetworkFilter, not even an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetNetworkFilter() {
-	o.NetworkFilter.Unset()
 }
 
 // GetTenantMatch returns the TenantMatch field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1280,28 +809,9 @@ func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetTenantMatchOk
 	return o.TenantMatch.Get(), o.TenantMatch.IsSet()
 }
 
-// IsSetTenantMatch returns a boolean if a field has been set.
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) IsSetTenantMatch() bool {
-	if o != nil && o.TenantMatch.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetTenantMatch gets a reference to the given NullableString and assigns it to the TenantMatch field.
 func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetTenantMatch(v string) {
 	o.TenantMatch.Set(&v)
-}
-
-// SetTenantMatchNil sets the value for TenantMatch to be an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetTenantMatchNil() {
-	o.TenantMatch.Set(nil)
-}
-
-// UnsetTenantMatch ensures that no value is present for TenantMatch, not even an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetTenantMatch() {
-	o.TenantMatch.Unset()
 }
 
 // GetZoneId returns the ZoneId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1323,28 +833,9 @@ func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetZoneIdOk() (*
 	return o.ZoneId.Get(), o.ZoneId.IsSet()
 }
 
-// IsSetZoneId returns a boolean if a field has been set.
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) IsSetZoneId() bool {
-	if o != nil && o.ZoneId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetZoneId gets a reference to the given NullableInt64 and assigns it to the ZoneId field.
 func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetZoneId(v int64) {
 	o.ZoneId.Set(&v)
-}
-
-// SetZoneIdNil sets the value for ZoneId to be an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetZoneIdNil() {
-	o.ZoneId.Set(nil)
-}
-
-// UnsetZoneId ensures that no value is present for ZoneId, not even an explicit nil
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnsetZoneId() {
-	o.ZoneId.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -1363,15 +854,6 @@ func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetDateCreatedOk
 		return nil, false
 	}
 	return o.DateCreated, true
-}
-
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
@@ -1397,15 +879,6 @@ func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetLastUpdatedOk
 	return o.LastUpdated, true
 }
 
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
-}
-
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
 func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetLastUpdated(v time.Time) {
 	o.LastUpdated = &v
@@ -1427,15 +900,6 @@ func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetEnabledOk() (
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -1461,15 +925,6 @@ func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetVisibleOk() (
 	return o.Visible, true
 }
 
-// IsSetVisible returns a boolean if a field has been set.
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) IsSetVisible() bool {
-	if o != nil && !IsNil(o.Visible) {
-		return true
-	}
-
-	return false
-}
-
 // SetVisible gets a reference to the given bool and assigns it to the Visible field.
 func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetVisible(v bool) {
 	o.Visible = &v
@@ -1493,15 +948,6 @@ func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetCredentialOk(
 	return o.Credential, true
 }
 
-// IsSetCredential returns a boolean if a field has been set.
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) IsSetCredential() bool {
-	if o != nil && !IsNil(o.Credential) {
-		return true
-	}
-
-	return false
-}
-
 // SetCredential gets a reference to the given ListNetworkServers200ResponseAllOfNetworkServersInnerCredential and assigns it to the Credential field.
 func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) SetCredential(v ListNetworkServers200ResponseAllOfNetworkServersInnerCredential) {
 	o.Credential = &v
@@ -1523,15 +969,6 @@ func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) GetTenantsOk() (
 		return nil, false
 	}
 	return o.Tenants, true
-}
-
-// IsSetTenants returns a boolean if a field has been set.
-func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) IsSetTenants() bool {
-	if o != nil && !IsNil(o.Tenants) {
-		return true
-	}
-
-	return false
 }
 
 // SetTenants gets a reference to the given []ListNetworkServers200ResponseAllOfNetworkServersInnerTenantsInner and assigns it to the Tenants field.

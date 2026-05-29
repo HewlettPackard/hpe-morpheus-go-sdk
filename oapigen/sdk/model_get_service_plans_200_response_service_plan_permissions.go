@@ -62,15 +62,6 @@ func (o *GetServicePlans200ResponseServicePlanPermissions) GetResourcePermission
 	return o.ResourcePermissions, true
 }
 
-// IsSetResourcePermissions returns a boolean if a field has been set.
-func (o *GetServicePlans200ResponseServicePlanPermissions) IsSetResourcePermissions() bool {
-	if o != nil && !IsNil(o.ResourcePermissions) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourcePermissions gets a reference to the given GetServicePlans200ResponseServicePlanPermissionsResourcePermissions and assigns it to the ResourcePermissions field.
 func (o *GetServicePlans200ResponseServicePlanPermissions) SetResourcePermissions(v GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) {
 	o.ResourcePermissions = &v
@@ -92,15 +83,6 @@ func (o *GetServicePlans200ResponseServicePlanPermissions) GetTenantPermissionsO
 		return nil, false
 	}
 	return o.TenantPermissions, true
-}
-
-// IsSetTenantPermissions returns a boolean if a field has been set.
-func (o *GetServicePlans200ResponseServicePlanPermissions) IsSetTenantPermissions() bool {
-	if o != nil && !IsNil(o.TenantPermissions) {
-		return true
-	}
-
-	return false
 }
 
 // SetTenantPermissions gets a reference to the given GetServicePlans200ResponseServicePlanPermissionsTenantPermissions and assigns it to the TenantPermissions field.

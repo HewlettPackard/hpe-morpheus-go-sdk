@@ -62,15 +62,6 @@ func (o *BackupCreationPolicyTypeConfiguration16) GetCreateBackupTypeOk() (*stri
 	return o.CreateBackupType, true
 }
 
-// IsSetCreateBackupType returns a boolean if a field has been set.
-func (o *BackupCreationPolicyTypeConfiguration16) IsSetCreateBackupType() bool {
-	if o != nil && !IsNil(o.CreateBackupType) {
-		return true
-	}
-
-	return false
-}
-
 // SetCreateBackupType gets a reference to the given string and assigns it to the CreateBackupType field.
 func (o *BackupCreationPolicyTypeConfiguration16) SetCreateBackupType(v string) {
 	o.CreateBackupType = &v
@@ -92,15 +83,6 @@ func (o *BackupCreationPolicyTypeConfiguration16) GetCreateBackupOk() (*bool, bo
 		return nil, false
 	}
 	return o.CreateBackup, true
-}
-
-// IsSetCreateBackup returns a boolean if a field has been set.
-func (o *BackupCreationPolicyTypeConfiguration16) IsSetCreateBackup() bool {
-	if o != nil && !IsNil(o.CreateBackup) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreateBackup gets a reference to the given bool and assigns it to the CreateBackup field.

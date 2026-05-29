@@ -95,15 +95,6 @@ func (o *RunReportsRequestReport) GetStartDateOk() (*string, bool) {
 	return o.StartDate, true
 }
 
-// IsSetStartDate returns a boolean if a field has been set.
-func (o *RunReportsRequestReport) IsSetStartDate() bool {
-	if o != nil && !IsNil(o.StartDate) {
-		return true
-	}
-
-	return false
-}
-
 // SetStartDate gets a reference to the given string and assigns it to the StartDate field.
 func (o *RunReportsRequestReport) SetStartDate(v string) {
 	o.StartDate = &v
@@ -125,15 +116,6 @@ func (o *RunReportsRequestReport) GetEndDateOk() (*string, bool) {
 		return nil, false
 	}
 	return o.EndDate, true
-}
-
-// IsSetEndDate returns a boolean if a field has been set.
-func (o *RunReportsRequestReport) IsSetEndDate() bool {
-	if o != nil && !IsNil(o.EndDate) {
-		return true
-	}
-
-	return false
 }
 
 // SetEndDate gets a reference to the given string and assigns it to the EndDate field.
@@ -159,15 +141,6 @@ func (o *RunReportsRequestReport) GetStartMonthOk() (*string, bool) {
 	return o.StartMonth, true
 }
 
-// IsSetStartMonth returns a boolean if a field has been set.
-func (o *RunReportsRequestReport) IsSetStartMonth() bool {
-	if o != nil && !IsNil(o.StartMonth) {
-		return true
-	}
-
-	return false
-}
-
 // SetStartMonth gets a reference to the given string and assigns it to the StartMonth field.
 func (o *RunReportsRequestReport) SetStartMonth(v string) {
 	o.StartMonth = &v
@@ -189,15 +162,6 @@ func (o *RunReportsRequestReport) GetEndMonthOk() (*string, bool) {
 		return nil, false
 	}
 	return o.EndMonth, true
-}
-
-// IsSetEndMonth returns a boolean if a field has been set.
-func (o *RunReportsRequestReport) IsSetEndMonth() bool {
-	if o != nil && !IsNil(o.EndMonth) {
-		return true
-	}
-
-	return false
 }
 
 // SetEndMonth gets a reference to the given string and assigns it to the EndMonth field.
@@ -223,15 +187,6 @@ func (o *RunReportsRequestReport) GetGroupIdOk() (*float32, bool) {
 	return o.GroupId, true
 }
 
-// IsSetGroupId returns a boolean if a field has been set.
-func (o *RunReportsRequestReport) IsSetGroupId() bool {
-	if o != nil && !IsNil(o.GroupId) {
-		return true
-	}
-
-	return false
-}
-
 // SetGroupId gets a reference to the given float32 and assigns it to the GroupId field.
 func (o *RunReportsRequestReport) SetGroupId(v float32) {
 	o.GroupId = &v
@@ -253,15 +208,6 @@ func (o *RunReportsRequestReport) GetCloudIdOk() (*float32, bool) {
 		return nil, false
 	}
 	return o.CloudId, true
-}
-
-// IsSetCloudId returns a boolean if a field has been set.
-func (o *RunReportsRequestReport) IsSetCloudId() bool {
-	if o != nil && !IsNil(o.CloudId) {
-		return true
-	}
-
-	return false
 }
 
 // SetCloudId gets a reference to the given float32 and assigns it to the CloudId field.

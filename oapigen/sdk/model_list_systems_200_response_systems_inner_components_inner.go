@@ -66,15 +66,6 @@ func (o *ListSystems200ResponseSystemsInnerComponentsInner) GetIdOk() (*int64, b
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListSystems200ResponseSystemsInnerComponentsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListSystems200ResponseSystemsInnerComponentsInner) SetId(v int64) {
 	o.Id = &v
@@ -96,15 +87,6 @@ func (o *ListSystems200ResponseSystemsInnerComponentsInner) GetNameOk() (*string
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListSystems200ResponseSystemsInnerComponentsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -130,15 +112,6 @@ func (o *ListSystems200ResponseSystemsInnerComponentsInner) GetTypeOk() (*ListSy
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *ListSystems200ResponseSystemsInnerComponentsInner) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given ListSystems200ResponseSystemsInnerComponentsInnerType and assigns it to the Type field.
 func (o *ListSystems200ResponseSystemsInnerComponentsInner) SetType(v ListSystems200ResponseSystemsInnerComponentsInnerType) {
 	o.Type = &v
@@ -160,15 +133,6 @@ func (o *ListSystems200ResponseSystemsInnerComponentsInner) GetStatusOk() (*stri
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *ListSystems200ResponseSystemsInnerComponentsInner) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -195,28 +159,9 @@ func (o *ListSystems200ResponseSystemsInnerComponentsInner) GetExternalIdOk() (*
 	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *ListSystems200ResponseSystemsInnerComponentsInner) IsSetExternalId() bool {
-	if o != nil && o.ExternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *ListSystems200ResponseSystemsInnerComponentsInner) SetExternalId(v string) {
 	o.ExternalId.Set(&v)
-}
-
-// SetExternalIdNil sets the value for ExternalId to be an explicit nil
-func (o *ListSystems200ResponseSystemsInnerComponentsInner) SetExternalIdNil() {
-	o.ExternalId.Set(nil)
-}
-
-// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-func (o *ListSystems200ResponseSystemsInnerComponentsInner) UnsetExternalId() {
-	o.ExternalId.Unset()
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
@@ -235,15 +180,6 @@ func (o *ListSystems200ResponseSystemsInnerComponentsInner) GetConfigOk() (*map[
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *ListSystems200ResponseSystemsInnerComponentsInner) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.

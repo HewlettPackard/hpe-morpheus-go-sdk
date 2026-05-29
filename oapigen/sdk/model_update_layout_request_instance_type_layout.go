@@ -102,15 +102,6 @@ func (o *UpdateLayoutRequestInstanceTypeLayout) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateLayoutRequestInstanceTypeLayout) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *UpdateLayoutRequestInstanceTypeLayout) SetName(v string) {
 	o.Name = &v
@@ -133,15 +124,6 @@ func (o *UpdateLayoutRequestInstanceTypeLayout) GetLabelsOk() ([]string, bool) {
 		return nil, false
 	}
 	return o.Labels, true
-}
-
-// IsSetLabels returns a boolean if a field has been set.
-func (o *UpdateLayoutRequestInstanceTypeLayout) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
 }
 
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
@@ -167,15 +149,6 @@ func (o *UpdateLayoutRequestInstanceTypeLayout) GetInstanceVersionOk() (*string,
 	return o.InstanceVersion, true
 }
 
-// IsSetInstanceVersion returns a boolean if a field has been set.
-func (o *UpdateLayoutRequestInstanceTypeLayout) IsSetInstanceVersion() bool {
-	if o != nil && !IsNil(o.InstanceVersion) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstanceVersion gets a reference to the given string and assigns it to the InstanceVersion field.
 func (o *UpdateLayoutRequestInstanceTypeLayout) SetInstanceVersion(v string) {
 	o.InstanceVersion = &v
@@ -197,15 +170,6 @@ func (o *UpdateLayoutRequestInstanceTypeLayout) GetDescriptionOk() (*string, boo
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *UpdateLayoutRequestInstanceTypeLayout) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -231,15 +195,6 @@ func (o *UpdateLayoutRequestInstanceTypeLayout) GetSortOrderOk() (*int64, bool) 
 	return o.SortOrder, true
 }
 
-// IsSetSortOrder returns a boolean if a field has been set.
-func (o *UpdateLayoutRequestInstanceTypeLayout) IsSetSortOrder() bool {
-	if o != nil && !IsNil(o.SortOrder) {
-		return true
-	}
-
-	return false
-}
-
 // SetSortOrder gets a reference to the given int64 and assigns it to the SortOrder field.
 func (o *UpdateLayoutRequestInstanceTypeLayout) SetSortOrder(v int64) {
 	o.SortOrder = &v
@@ -261,15 +216,6 @@ func (o *UpdateLayoutRequestInstanceTypeLayout) GetCreatableOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Creatable, true
-}
-
-// IsSetCreatable returns a boolean if a field has been set.
-func (o *UpdateLayoutRequestInstanceTypeLayout) IsSetCreatable() bool {
-	if o != nil && !IsNil(o.Creatable) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreatable gets a reference to the given bool and assigns it to the Creatable field.
@@ -295,15 +241,6 @@ func (o *UpdateLayoutRequestInstanceTypeLayout) GetProvisionTypeCodeOk() (*strin
 	return o.ProvisionTypeCode, true
 }
 
-// IsSetProvisionTypeCode returns a boolean if a field has been set.
-func (o *UpdateLayoutRequestInstanceTypeLayout) IsSetProvisionTypeCode() bool {
-	if o != nil && !IsNil(o.ProvisionTypeCode) {
-		return true
-	}
-
-	return false
-}
-
 // SetProvisionTypeCode gets a reference to the given string and assigns it to the ProvisionTypeCode field.
 func (o *UpdateLayoutRequestInstanceTypeLayout) SetProvisionTypeCode(v string) {
 	o.ProvisionTypeCode = &v
@@ -325,15 +262,6 @@ func (o *UpdateLayoutRequestInstanceTypeLayout) GetMemoryRequirementOk() (*strin
 		return nil, false
 	}
 	return o.MemoryRequirement, true
-}
-
-// IsSetMemoryRequirement returns a boolean if a field has been set.
-func (o *UpdateLayoutRequestInstanceTypeLayout) IsSetMemoryRequirement() bool {
-	if o != nil && !IsNil(o.MemoryRequirement) {
-		return true
-	}
-
-	return false
 }
 
 // SetMemoryRequirement gets a reference to the given string and assigns it to the MemoryRequirement field.
@@ -359,15 +287,6 @@ func (o *UpdateLayoutRequestInstanceTypeLayout) GetHasAutoScaleOk() (*bool, bool
 	return o.HasAutoScale, true
 }
 
-// IsSetHasAutoScale returns a boolean if a field has been set.
-func (o *UpdateLayoutRequestInstanceTypeLayout) IsSetHasAutoScale() bool {
-	if o != nil && !IsNil(o.HasAutoScale) {
-		return true
-	}
-
-	return false
-}
-
 // SetHasAutoScale gets a reference to the given bool and assigns it to the HasAutoScale field.
 func (o *UpdateLayoutRequestInstanceTypeLayout) SetHasAutoScale(v bool) {
 	o.HasAutoScale = &v
@@ -389,15 +308,6 @@ func (o *UpdateLayoutRequestInstanceTypeLayout) GetSupportsConvertToManagedOk() 
 		return nil, false
 	}
 	return o.SupportsConvertToManaged, true
-}
-
-// IsSetSupportsConvertToManaged returns a boolean if a field has been set.
-func (o *UpdateLayoutRequestInstanceTypeLayout) IsSetSupportsConvertToManaged() bool {
-	if o != nil && !IsNil(o.SupportsConvertToManaged) {
-		return true
-	}
-
-	return false
 }
 
 // SetSupportsConvertToManaged gets a reference to the given bool and assigns it to the SupportsConvertToManaged field.
@@ -423,15 +333,6 @@ func (o *UpdateLayoutRequestInstanceTypeLayout) GetContainerTypesOk() ([]int64, 
 	return o.ContainerTypes, true
 }
 
-// IsSetContainerTypes returns a boolean if a field has been set.
-func (o *UpdateLayoutRequestInstanceTypeLayout) IsSetContainerTypes() bool {
-	if o != nil && !IsNil(o.ContainerTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetContainerTypes gets a reference to the given []int64 and assigns it to the ContainerTypes field.
 func (o *UpdateLayoutRequestInstanceTypeLayout) SetContainerTypes(v []int64) {
 	o.ContainerTypes = v
@@ -453,15 +354,6 @@ func (o *UpdateLayoutRequestInstanceTypeLayout) GetOptionTypesOk() ([]int64, boo
 		return nil, false
 	}
 	return o.OptionTypes, true
-}
-
-// IsSetOptionTypes returns a boolean if a field has been set.
-func (o *UpdateLayoutRequestInstanceTypeLayout) IsSetOptionTypes() bool {
-	if o != nil && !IsNil(o.OptionTypes) {
-		return true
-	}
-
-	return false
 }
 
 // SetOptionTypes gets a reference to the given []int64 and assigns it to the OptionTypes field.
@@ -487,15 +379,6 @@ func (o *UpdateLayoutRequestInstanceTypeLayout) GetSpecTemplatesOk() ([]int64, b
 	return o.SpecTemplates, true
 }
 
-// IsSetSpecTemplates returns a boolean if a field has been set.
-func (o *UpdateLayoutRequestInstanceTypeLayout) IsSetSpecTemplates() bool {
-	if o != nil && !IsNil(o.SpecTemplates) {
-		return true
-	}
-
-	return false
-}
-
 // SetSpecTemplates gets a reference to the given []int64 and assigns it to the SpecTemplates field.
 func (o *UpdateLayoutRequestInstanceTypeLayout) SetSpecTemplates(v []int64) {
 	o.SpecTemplates = v
@@ -517,15 +400,6 @@ func (o *UpdateLayoutRequestInstanceTypeLayout) GetEnvironmentVariablesOk() ([]U
 		return nil, false
 	}
 	return o.EnvironmentVariables, true
-}
-
-// IsSetEnvironmentVariables returns a boolean if a field has been set.
-func (o *UpdateLayoutRequestInstanceTypeLayout) IsSetEnvironmentVariables() bool {
-	if o != nil && !IsNil(o.EnvironmentVariables) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnvironmentVariables gets a reference to the given []UpdateLayoutRequestInstanceTypeLayoutEnvironmentVariablesInner and assigns it to the EnvironmentVariables field.
@@ -551,15 +425,6 @@ func (o *UpdateLayoutRequestInstanceTypeLayout) GetPriceSetsOk() ([]UpdateLayout
 	return o.PriceSets, true
 }
 
-// IsSetPriceSets returns a boolean if a field has been set.
-func (o *UpdateLayoutRequestInstanceTypeLayout) IsSetPriceSets() bool {
-	if o != nil && !IsNil(o.PriceSets) {
-		return true
-	}
-
-	return false
-}
-
 // SetPriceSets gets a reference to the given []UpdateLayoutRequestInstanceTypeLayoutPriceSetsInner and assigns it to the PriceSets field.
 func (o *UpdateLayoutRequestInstanceTypeLayout) SetPriceSets(v []UpdateLayoutRequestInstanceTypeLayoutPriceSetsInner) {
 	o.PriceSets = v
@@ -581,15 +446,6 @@ func (o *UpdateLayoutRequestInstanceTypeLayout) GetPermissionsOk() (*UpdateLayou
 		return nil, false
 	}
 	return o.Permissions, true
-}
-
-// IsSetPermissions returns a boolean if a field has been set.
-func (o *UpdateLayoutRequestInstanceTypeLayout) IsSetPermissions() bool {
-	if o != nil && !IsNil(o.Permissions) {
-		return true
-	}
-
-	return false
 }
 
 // SetPermissions gets a reference to the given UpdateLayoutRequestInstanceTypeLayoutPermissions and assigns it to the Permissions field.

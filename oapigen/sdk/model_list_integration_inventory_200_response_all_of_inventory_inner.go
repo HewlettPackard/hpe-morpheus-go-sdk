@@ -66,15 +66,6 @@ func (o *ListIntegrationInventory200ResponseAllOfInventoryInner) GetIdOk() (*int
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListIntegrationInventory200ResponseAllOfInventoryInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListIntegrationInventory200ResponseAllOfInventoryInner) SetId(v int64) {
 	o.Id = &v
@@ -96,15 +87,6 @@ func (o *ListIntegrationInventory200ResponseAllOfInventoryInner) GetNameOk() (*s
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListIntegrationInventory200ResponseAllOfInventoryInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -131,28 +113,9 @@ func (o *ListIntegrationInventory200ResponseAllOfInventoryInner) GetDescriptionO
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ListIntegrationInventory200ResponseAllOfInventoryInner) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListIntegrationInventory200ResponseAllOfInventoryInner) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *ListIntegrationInventory200ResponseAllOfInventoryInner) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *ListIntegrationInventory200ResponseAllOfInventoryInner) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -174,28 +137,9 @@ func (o *ListIntegrationInventory200ResponseAllOfInventoryInner) GetExternalIdOk
 	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *ListIntegrationInventory200ResponseAllOfInventoryInner) IsSetExternalId() bool {
-	if o != nil && o.ExternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *ListIntegrationInventory200ResponseAllOfInventoryInner) SetExternalId(v string) {
 	o.ExternalId.Set(&v)
-}
-
-// SetExternalIdNil sets the value for ExternalId to be an explicit nil
-func (o *ListIntegrationInventory200ResponseAllOfInventoryInner) SetExternalIdNil() {
-	o.ExternalId.Set(nil)
-}
-
-// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-func (o *ListIntegrationInventory200ResponseAllOfInventoryInner) UnsetExternalId() {
-	o.ExternalId.Unset()
 }
 
 // GetOwner returns the Owner field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -217,28 +161,9 @@ func (o *ListIntegrationInventory200ResponseAllOfInventoryInner) GetOwnerOk() (*
 	return o.Owner.Get(), o.Owner.IsSet()
 }
 
-// IsSetOwner returns a boolean if a field has been set.
-func (o *ListIntegrationInventory200ResponseAllOfInventoryInner) IsSetOwner() bool {
-	if o != nil && o.Owner.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetOwner gets a reference to the given NullableListIntegrationInventory200ResponseAllOfInventoryInnerOwner and assigns it to the Owner field.
 func (o *ListIntegrationInventory200ResponseAllOfInventoryInner) SetOwner(v ListIntegrationInventory200ResponseAllOfInventoryInnerOwner) {
 	o.Owner.Set(&v)
-}
-
-// SetOwnerNil sets the value for Owner to be an explicit nil
-func (o *ListIntegrationInventory200ResponseAllOfInventoryInner) SetOwnerNil() {
-	o.Owner.Set(nil)
-}
-
-// UnsetOwner ensures that no value is present for Owner, not even an explicit nil
-func (o *ListIntegrationInventory200ResponseAllOfInventoryInner) UnsetOwner() {
-	o.Owner.Unset()
 }
 
 // GetTenants returns the Tenants field value if set, zero value otherwise.
@@ -257,15 +182,6 @@ func (o *ListIntegrationInventory200ResponseAllOfInventoryInner) GetTenantsOk() 
 		return nil, false
 	}
 	return o.Tenants, true
-}
-
-// IsSetTenants returns a boolean if a field has been set.
-func (o *ListIntegrationInventory200ResponseAllOfInventoryInner) IsSetTenants() bool {
-	if o != nil && !IsNil(o.Tenants) {
-		return true
-	}
-
-	return false
 }
 
 // SetTenants gets a reference to the given []ListIntegrationInventory200ResponseAllOfInventoryInnerTenantsInner and assigns it to the Tenants field.

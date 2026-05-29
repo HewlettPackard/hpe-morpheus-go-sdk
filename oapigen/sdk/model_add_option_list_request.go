@@ -61,15 +61,6 @@ func (o *AddOptionListRequest) GetOptionTypeListOk() (*AddOptionListRequestOptio
 	return o.OptionTypeList, true
 }
 
-// IsSetOptionTypeList returns a boolean if a field has been set.
-func (o *AddOptionListRequest) IsSetOptionTypeList() bool {
-	if o != nil && !IsNil(o.OptionTypeList) {
-		return true
-	}
-
-	return false
-}
-
 // SetOptionTypeList gets a reference to the given AddOptionListRequestOptionTypeList and assigns it to the OptionTypeList field.
 func (o *AddOptionListRequest) SetOptionTypeList(v AddOptionListRequestOptionTypeList) {
 	o.OptionTypeList = &v

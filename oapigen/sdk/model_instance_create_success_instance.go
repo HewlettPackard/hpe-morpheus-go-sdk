@@ -143,15 +143,6 @@ func (o *InstanceCreateSuccessInstance) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *InstanceCreateSuccessInstance) SetId(v int64) {
 	o.Id = &v
@@ -175,15 +166,6 @@ func (o *InstanceCreateSuccessInstance) GetUuidOk() (*string, bool) {
 	return o.Uuid, true
 }
 
-// IsSetUuid returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetUuid() bool {
-	if o != nil && !IsNil(o.Uuid) {
-		return true
-	}
-
-	return false
-}
-
 // SetUuid gets a reference to the given string and assigns it to the Uuid field.
 func (o *InstanceCreateSuccessInstance) SetUuid(v string) {
 	o.Uuid = &v
@@ -205,15 +187,6 @@ func (o *InstanceCreateSuccessInstance) GetAccountIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.AccountId, true
-}
-
-// IsSetAccountId returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetAccountId() bool {
-	if o != nil && !IsNil(o.AccountId) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccountId gets a reference to the given int64 and assigns it to the AccountId field.
@@ -240,28 +213,9 @@ func (o *InstanceCreateSuccessInstance) GetTenantOk() (*InstanceCreateSuccessIns
 	return o.Tenant.Get(), o.Tenant.IsSet()
 }
 
-// IsSetTenant returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetTenant() bool {
-	if o != nil && o.Tenant.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetTenant gets a reference to the given NullableInstanceCreateSuccessInstanceTenant and assigns it to the Tenant field.
 func (o *InstanceCreateSuccessInstance) SetTenant(v InstanceCreateSuccessInstanceTenant) {
 	o.Tenant.Set(&v)
-}
-
-// SetTenantNil sets the value for Tenant to be an explicit nil
-func (o *InstanceCreateSuccessInstance) SetTenantNil() {
-	o.Tenant.Set(nil)
-}
-
-// UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
-func (o *InstanceCreateSuccessInstance) UnsetTenant() {
-	o.Tenant.Unset()
 }
 
 // GetInstanceType returns the InstanceType field value if set, zero value otherwise.
@@ -280,15 +234,6 @@ func (o *InstanceCreateSuccessInstance) GetInstanceTypeOk() (*InstanceCreateSucc
 		return nil, false
 	}
 	return o.InstanceType, true
-}
-
-// IsSetInstanceType returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetInstanceType() bool {
-	if o != nil && !IsNil(o.InstanceType) {
-		return true
-	}
-
-	return false
 }
 
 // SetInstanceType gets a reference to the given InstanceCreateSuccessInstanceInstanceType and assigns it to the InstanceType field.
@@ -315,28 +260,9 @@ func (o *InstanceCreateSuccessInstance) GetGroupOk() (*InstanceCreateSuccessInst
 	return o.Group.Get(), o.Group.IsSet()
 }
 
-// IsSetGroup returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetGroup() bool {
-	if o != nil && o.Group.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetGroup gets a reference to the given NullableInstanceCreateSuccessInstanceGroup and assigns it to the Group field.
 func (o *InstanceCreateSuccessInstance) SetGroup(v InstanceCreateSuccessInstanceGroup) {
 	o.Group.Set(&v)
-}
-
-// SetGroupNil sets the value for Group to be an explicit nil
-func (o *InstanceCreateSuccessInstance) SetGroupNil() {
-	o.Group.Set(nil)
-}
-
-// UnsetGroup ensures that no value is present for Group, not even an explicit nil
-func (o *InstanceCreateSuccessInstance) UnsetGroup() {
-	o.Group.Unset()
 }
 
 // GetCloud returns the Cloud field value if set, zero value otherwise.
@@ -355,15 +281,6 @@ func (o *InstanceCreateSuccessInstance) GetCloudOk() (*InstanceCreateSuccessInst
 		return nil, false
 	}
 	return o.Cloud, true
-}
-
-// IsSetCloud returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetCloud() bool {
-	if o != nil && !IsNil(o.Cloud) {
-		return true
-	}
-
-	return false
 }
 
 // SetCloud gets a reference to the given InstanceCreateSuccessInstanceCloud and assigns it to the Cloud field.
@@ -389,15 +306,6 @@ func (o *InstanceCreateSuccessInstance) GetClusterOk() (*InstanceCreateSuccessIn
 	return o.Cluster, true
 }
 
-// IsSetCluster returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetCluster() bool {
-	if o != nil && !IsNil(o.Cluster) {
-		return true
-	}
-
-	return false
-}
-
 // SetCluster gets a reference to the given InstanceCreateSuccessInstanceCluster and assigns it to the Cluster field.
 func (o *InstanceCreateSuccessInstance) SetCluster(v InstanceCreateSuccessInstanceCluster) {
 	o.Cluster = &v
@@ -419,15 +327,6 @@ func (o *InstanceCreateSuccessInstance) GetContainersOk() ([]int64, bool) {
 		return nil, false
 	}
 	return o.Containers, true
-}
-
-// IsSetContainers returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetContainers() bool {
-	if o != nil && !IsNil(o.Containers) {
-		return true
-	}
-
-	return false
 }
 
 // SetContainers gets a reference to the given []int64 and assigns it to the Containers field.
@@ -453,15 +352,6 @@ func (o *InstanceCreateSuccessInstance) GetServersOk() ([]int64, bool) {
 	return o.Servers, true
 }
 
-// IsSetServers returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetServers() bool {
-	if o != nil && !IsNil(o.Servers) {
-		return true
-	}
-
-	return false
-}
-
 // SetServers gets a reference to the given []int64 and assigns it to the Servers field.
 func (o *InstanceCreateSuccessInstance) SetServers(v []int64) {
 	o.Servers = v
@@ -483,15 +373,6 @@ func (o *InstanceCreateSuccessInstance) GetConnectionInfoOk() ([]AddInstance200R
 		return nil, false
 	}
 	return o.ConnectionInfo, true
-}
-
-// IsSetConnectionInfo returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetConnectionInfo() bool {
-	if o != nil && !IsNil(o.ConnectionInfo) {
-		return true
-	}
-
-	return false
 }
 
 // SetConnectionInfo gets a reference to the given []AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner and assigns it to the ConnectionInfo field.
@@ -517,15 +398,6 @@ func (o *InstanceCreateSuccessInstance) GetLayoutOk() (*InstanceCreateSuccessIns
 	return o.Layout, true
 }
 
-// IsSetLayout returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetLayout() bool {
-	if o != nil && !IsNil(o.Layout) {
-		return true
-	}
-
-	return false
-}
-
 // SetLayout gets a reference to the given InstanceCreateSuccessInstanceLayout and assigns it to the Layout field.
 func (o *InstanceCreateSuccessInstance) SetLayout(v InstanceCreateSuccessInstanceLayout) {
 	o.Layout = &v
@@ -547,15 +419,6 @@ func (o *InstanceCreateSuccessInstance) GetPlanOk() (*InstanceCreateSuccessInsta
 		return nil, false
 	}
 	return o.Plan, true
-}
-
-// IsSetPlan returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetPlan() bool {
-	if o != nil && !IsNil(o.Plan) {
-		return true
-	}
-
-	return false
 }
 
 // SetPlan gets a reference to the given InstanceCreateSuccessInstancePlan and assigns it to the Plan field.
@@ -581,15 +444,6 @@ func (o *InstanceCreateSuccessInstance) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *InstanceCreateSuccessInstance) SetName(v string) {
 	o.Name = &v
@@ -611,15 +465,6 @@ func (o *InstanceCreateSuccessInstance) GetDisplayNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.DisplayName, true
-}
-
-// IsSetDisplayName returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetDisplayName() bool {
-	if o != nil && !IsNil(o.DisplayName) {
-		return true
-	}
-
-	return false
 }
 
 // SetDisplayName gets a reference to the given string and assigns it to the DisplayName field.
@@ -646,28 +491,9 @@ func (o *InstanceCreateSuccessInstance) GetDescriptionOk() (*string, bool) {
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *InstanceCreateSuccessInstance) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *InstanceCreateSuccessInstance) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *InstanceCreateSuccessInstance) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetEnvironment returns the Environment field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -689,28 +515,9 @@ func (o *InstanceCreateSuccessInstance) GetEnvironmentOk() (*string, bool) {
 	return o.Environment.Get(), o.Environment.IsSet()
 }
 
-// IsSetEnvironment returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetEnvironment() bool {
-	if o != nil && o.Environment.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetEnvironment gets a reference to the given NullableString and assigns it to the Environment field.
 func (o *InstanceCreateSuccessInstance) SetEnvironment(v string) {
 	o.Environment.Set(&v)
-}
-
-// SetEnvironmentNil sets the value for Environment to be an explicit nil
-func (o *InstanceCreateSuccessInstance) SetEnvironmentNil() {
-	o.Environment.Set(nil)
-}
-
-// UnsetEnvironment ensures that no value is present for Environment, not even an explicit nil
-func (o *InstanceCreateSuccessInstance) UnsetEnvironment() {
-	o.Environment.Unset()
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
@@ -729,15 +536,6 @@ func (o *InstanceCreateSuccessInstance) GetConfigOk() (*InstanceCreateSuccessIns
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given InstanceCreateSuccessInstanceConfig and assigns it to the Config field.
@@ -764,28 +562,9 @@ func (o *InstanceCreateSuccessInstance) GetConfigGroupOk() (*string, bool) {
 	return o.ConfigGroup.Get(), o.ConfigGroup.IsSet()
 }
 
-// IsSetConfigGroup returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetConfigGroup() bool {
-	if o != nil && o.ConfigGroup.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetConfigGroup gets a reference to the given NullableString and assigns it to the ConfigGroup field.
 func (o *InstanceCreateSuccessInstance) SetConfigGroup(v string) {
 	o.ConfigGroup.Set(&v)
-}
-
-// SetConfigGroupNil sets the value for ConfigGroup to be an explicit nil
-func (o *InstanceCreateSuccessInstance) SetConfigGroupNil() {
-	o.ConfigGroup.Set(nil)
-}
-
-// UnsetConfigGroup ensures that no value is present for ConfigGroup, not even an explicit nil
-func (o *InstanceCreateSuccessInstance) UnsetConfigGroup() {
-	o.ConfigGroup.Unset()
 }
 
 // GetConfigId returns the ConfigId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -807,28 +586,9 @@ func (o *InstanceCreateSuccessInstance) GetConfigIdOk() (*string, bool) {
 	return o.ConfigId.Get(), o.ConfigId.IsSet()
 }
 
-// IsSetConfigId returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetConfigId() bool {
-	if o != nil && o.ConfigId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetConfigId gets a reference to the given NullableString and assigns it to the ConfigId field.
 func (o *InstanceCreateSuccessInstance) SetConfigId(v string) {
 	o.ConfigId.Set(&v)
-}
-
-// SetConfigIdNil sets the value for ConfigId to be an explicit nil
-func (o *InstanceCreateSuccessInstance) SetConfigIdNil() {
-	o.ConfigId.Set(nil)
-}
-
-// UnsetConfigId ensures that no value is present for ConfigId, not even an explicit nil
-func (o *InstanceCreateSuccessInstance) UnsetConfigId() {
-	o.ConfigId.Unset()
 }
 
 // GetConfigRole returns the ConfigRole field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -850,28 +610,9 @@ func (o *InstanceCreateSuccessInstance) GetConfigRoleOk() (*string, bool) {
 	return o.ConfigRole.Get(), o.ConfigRole.IsSet()
 }
 
-// IsSetConfigRole returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetConfigRole() bool {
-	if o != nil && o.ConfigRole.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetConfigRole gets a reference to the given NullableString and assigns it to the ConfigRole field.
 func (o *InstanceCreateSuccessInstance) SetConfigRole(v string) {
 	o.ConfigRole.Set(&v)
-}
-
-// SetConfigRoleNil sets the value for ConfigRole to be an explicit nil
-func (o *InstanceCreateSuccessInstance) SetConfigRoleNil() {
-	o.ConfigRole.Set(nil)
-}
-
-// UnsetConfigRole ensures that no value is present for ConfigRole, not even an explicit nil
-func (o *InstanceCreateSuccessInstance) UnsetConfigRole() {
-	o.ConfigRole.Unset()
 }
 
 // GetVolumes returns the Volumes field value if set, zero value otherwise.
@@ -890,15 +631,6 @@ func (o *InstanceCreateSuccessInstance) GetVolumesOk() ([]AddInstance200Response
 		return nil, false
 	}
 	return o.Volumes, true
-}
-
-// IsSetVolumes returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetVolumes() bool {
-	if o != nil && !IsNil(o.Volumes) {
-		return true
-	}
-
-	return false
 }
 
 // SetVolumes gets a reference to the given []AddInstance200ResponseAllOfOneOfInstanceVolumesInner and assigns it to the Volumes field.
@@ -924,15 +656,6 @@ func (o *InstanceCreateSuccessInstance) GetControllersOk() ([]ListInstances200Re
 	return o.Controllers, true
 }
 
-// IsSetControllers returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetControllers() bool {
-	if o != nil && !IsNil(o.Controllers) {
-		return true
-	}
-
-	return false
-}
-
 // SetControllers gets a reference to the given []ListInstances200ResponseAllOfInstancesInnerControllersInner and assigns it to the Controllers field.
 func (o *InstanceCreateSuccessInstance) SetControllers(v []ListInstances200ResponseAllOfInstancesInnerControllersInner) {
 	o.Controllers = v
@@ -954,15 +677,6 @@ func (o *InstanceCreateSuccessInstance) GetInterfacesOk() ([]AddInstance200Respo
 		return nil, false
 	}
 	return o.Interfaces, true
-}
-
-// IsSetInterfaces returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetInterfaces() bool {
-	if o != nil && !IsNil(o.Interfaces) {
-		return true
-	}
-
-	return false
 }
 
 // SetInterfaces gets a reference to the given []AddInstance200ResponseAllOfOneOfInstanceInterfacesInner and assigns it to the Interfaces field.
@@ -988,15 +702,6 @@ func (o *InstanceCreateSuccessInstance) GetCustomOptionsOk() (map[string]interfa
 	return o.CustomOptions, true
 }
 
-// IsSetCustomOptions returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetCustomOptions() bool {
-	if o != nil && !IsNil(o.CustomOptions) {
-		return true
-	}
-
-	return false
-}
-
 // SetCustomOptions gets a reference to the given map[string]interface{} and assigns it to the CustomOptions field.
 func (o *InstanceCreateSuccessInstance) SetCustomOptions(v map[string]interface{}) {
 	o.CustomOptions = v
@@ -1018,15 +723,6 @@ func (o *InstanceCreateSuccessInstance) GetInstanceVersionOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InstanceVersion, true
-}
-
-// IsSetInstanceVersion returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetInstanceVersion() bool {
-	if o != nil && !IsNil(o.InstanceVersion) {
-		return true
-	}
-
-	return false
 }
 
 // SetInstanceVersion gets a reference to the given string and assigns it to the InstanceVersion field.
@@ -1053,15 +749,6 @@ func (o *InstanceCreateSuccessInstance) GetLabelsOk() ([]string, bool) {
 	return o.Labels, true
 }
 
-// IsSetLabels returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
-}
-
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
 func (o *InstanceCreateSuccessInstance) SetLabels(v []string) {
 	o.Labels = v
@@ -1083,15 +770,6 @@ func (o *InstanceCreateSuccessInstance) GetTagsOk() ([]AddInstance200ResponseAll
 		return nil, false
 	}
 	return o.Tags, true
-}
-
-// IsSetTags returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetTags() bool {
-	if o != nil && !IsNil(o.Tags) {
-		return true
-	}
-
-	return false
 }
 
 // SetTags gets a reference to the given []AddInstance200ResponseAllOfOneOfInstanceTagsInner and assigns it to the Tags field.
@@ -1117,15 +795,6 @@ func (o *InstanceCreateSuccessInstance) GetEvarsOk() ([]AddInstance200ResponseAl
 	return o.Evars, true
 }
 
-// IsSetEvars returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetEvars() bool {
-	if o != nil && !IsNil(o.Evars) {
-		return true
-	}
-
-	return false
-}
-
 // SetEvars gets a reference to the given []AddInstance200ResponseAllOfOneOfInstanceEvarsInner and assigns it to the Evars field.
 func (o *InstanceCreateSuccessInstance) SetEvars(v []AddInstance200ResponseAllOfOneOfInstanceEvarsInner) {
 	o.Evars = v
@@ -1147,15 +816,6 @@ func (o *InstanceCreateSuccessInstance) GetMaxMemoryOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.MaxMemory, true
-}
-
-// IsSetMaxMemory returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetMaxMemory() bool {
-	if o != nil && !IsNil(o.MaxMemory) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxMemory gets a reference to the given int64 and assigns it to the MaxMemory field.
@@ -1181,15 +841,6 @@ func (o *InstanceCreateSuccessInstance) GetMaxStorageOk() (*int64, bool) {
 	return o.MaxStorage, true
 }
 
-// IsSetMaxStorage returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetMaxStorage() bool {
-	if o != nil && !IsNil(o.MaxStorage) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxStorage gets a reference to the given int64 and assigns it to the MaxStorage field.
 func (o *InstanceCreateSuccessInstance) SetMaxStorage(v int64) {
 	o.MaxStorage = &v
@@ -1211,15 +862,6 @@ func (o *InstanceCreateSuccessInstance) GetMaxCoresOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.MaxCores, true
-}
-
-// IsSetMaxCores returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetMaxCores() bool {
-	if o != nil && !IsNil(o.MaxCores) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxCores gets a reference to the given int64 and assigns it to the MaxCores field.
@@ -1246,28 +888,9 @@ func (o *InstanceCreateSuccessInstance) GetCoresPerSocketOk() (*int64, bool) {
 	return o.CoresPerSocket.Get(), o.CoresPerSocket.IsSet()
 }
 
-// IsSetCoresPerSocket returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetCoresPerSocket() bool {
-	if o != nil && o.CoresPerSocket.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCoresPerSocket gets a reference to the given NullableInt64 and assigns it to the CoresPerSocket field.
 func (o *InstanceCreateSuccessInstance) SetCoresPerSocket(v int64) {
 	o.CoresPerSocket.Set(&v)
-}
-
-// SetCoresPerSocketNil sets the value for CoresPerSocket to be an explicit nil
-func (o *InstanceCreateSuccessInstance) SetCoresPerSocketNil() {
-	o.CoresPerSocket.Set(nil)
-}
-
-// UnsetCoresPerSocket ensures that no value is present for CoresPerSocket, not even an explicit nil
-func (o *InstanceCreateSuccessInstance) UnsetCoresPerSocket() {
-	o.CoresPerSocket.Unset()
 }
 
 // GetMaxCpu returns the MaxCpu field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1289,28 +912,9 @@ func (o *InstanceCreateSuccessInstance) GetMaxCpuOk() (*int64, bool) {
 	return o.MaxCpu.Get(), o.MaxCpu.IsSet()
 }
 
-// IsSetMaxCpu returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetMaxCpu() bool {
-	if o != nil && o.MaxCpu.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxCpu gets a reference to the given NullableInt64 and assigns it to the MaxCpu field.
 func (o *InstanceCreateSuccessInstance) SetMaxCpu(v int64) {
 	o.MaxCpu.Set(&v)
-}
-
-// SetMaxCpuNil sets the value for MaxCpu to be an explicit nil
-func (o *InstanceCreateSuccessInstance) SetMaxCpuNil() {
-	o.MaxCpu.Set(nil)
-}
-
-// UnsetMaxCpu ensures that no value is present for MaxCpu, not even an explicit nil
-func (o *InstanceCreateSuccessInstance) UnsetMaxCpu() {
-	o.MaxCpu.Unset()
 }
 
 // GetHourlyCost returns the HourlyCost field value if set, zero value otherwise.
@@ -1329,15 +933,6 @@ func (o *InstanceCreateSuccessInstance) GetHourlyCostOk() (*float32, bool) {
 		return nil, false
 	}
 	return o.HourlyCost, true
-}
-
-// IsSetHourlyCost returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetHourlyCost() bool {
-	if o != nil && !IsNil(o.HourlyCost) {
-		return true
-	}
-
-	return false
 }
 
 // SetHourlyCost gets a reference to the given float32 and assigns it to the HourlyCost field.
@@ -1363,15 +958,6 @@ func (o *InstanceCreateSuccessInstance) GetHourlyPriceOk() (*float32, bool) {
 	return o.HourlyPrice, true
 }
 
-// IsSetHourlyPrice returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetHourlyPrice() bool {
-	if o != nil && !IsNil(o.HourlyPrice) {
-		return true
-	}
-
-	return false
-}
-
 // SetHourlyPrice gets a reference to the given float32 and assigns it to the HourlyPrice field.
 func (o *InstanceCreateSuccessInstance) SetHourlyPrice(v float32) {
 	o.HourlyPrice = &v
@@ -1393,15 +979,6 @@ func (o *InstanceCreateSuccessInstance) GetInstancePriceOk() (*InstanceCreateSuc
 		return nil, false
 	}
 	return o.InstancePrice, true
-}
-
-// IsSetInstancePrice returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetInstancePrice() bool {
-	if o != nil && !IsNil(o.InstancePrice) {
-		return true
-	}
-
-	return false
 }
 
 // SetInstancePrice gets a reference to the given InstanceCreateSuccessInstanceInstancePrice and assigns it to the InstancePrice field.
@@ -1427,15 +1004,6 @@ func (o *InstanceCreateSuccessInstance) GetDateCreatedOk() (*time.Time, bool) {
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *InstanceCreateSuccessInstance) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -1459,15 +1027,6 @@ func (o *InstanceCreateSuccessInstance) GetLastUpdatedOk() (*time.Time, bool) {
 	return o.LastUpdated, true
 }
 
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
-}
-
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
 func (o *InstanceCreateSuccessInstance) SetLastUpdated(v time.Time) {
 	o.LastUpdated = &v
@@ -1489,15 +1048,6 @@ func (o *InstanceCreateSuccessInstance) GetHostNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.HostName, true
-}
-
-// IsSetHostName returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetHostName() bool {
-	if o != nil && !IsNil(o.HostName) {
-		return true
-	}
-
-	return false
 }
 
 // SetHostName gets a reference to the given string and assigns it to the HostName field.
@@ -1524,28 +1074,9 @@ func (o *InstanceCreateSuccessInstance) GetDomainNameOk() (*string, bool) {
 	return o.DomainName.Get(), o.DomainName.IsSet()
 }
 
-// IsSetDomainName returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetDomainName() bool {
-	if o != nil && o.DomainName.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDomainName gets a reference to the given NullableString and assigns it to the DomainName field.
 func (o *InstanceCreateSuccessInstance) SetDomainName(v string) {
 	o.DomainName.Set(&v)
-}
-
-// SetDomainNameNil sets the value for DomainName to be an explicit nil
-func (o *InstanceCreateSuccessInstance) SetDomainNameNil() {
-	o.DomainName.Set(nil)
-}
-
-// UnsetDomainName ensures that no value is present for DomainName, not even an explicit nil
-func (o *InstanceCreateSuccessInstance) UnsetDomainName() {
-	o.DomainName.Unset()
 }
 
 // GetEnvironmentPrefix returns the EnvironmentPrefix field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1567,28 +1098,9 @@ func (o *InstanceCreateSuccessInstance) GetEnvironmentPrefixOk() (*string, bool)
 	return o.EnvironmentPrefix.Get(), o.EnvironmentPrefix.IsSet()
 }
 
-// IsSetEnvironmentPrefix returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetEnvironmentPrefix() bool {
-	if o != nil && o.EnvironmentPrefix.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetEnvironmentPrefix gets a reference to the given NullableString and assigns it to the EnvironmentPrefix field.
 func (o *InstanceCreateSuccessInstance) SetEnvironmentPrefix(v string) {
 	o.EnvironmentPrefix.Set(&v)
-}
-
-// SetEnvironmentPrefixNil sets the value for EnvironmentPrefix to be an explicit nil
-func (o *InstanceCreateSuccessInstance) SetEnvironmentPrefixNil() {
-	o.EnvironmentPrefix.Set(nil)
-}
-
-// UnsetEnvironmentPrefix ensures that no value is present for EnvironmentPrefix, not even an explicit nil
-func (o *InstanceCreateSuccessInstance) UnsetEnvironmentPrefix() {
-	o.EnvironmentPrefix.Unset()
 }
 
 // GetFirewallEnabled returns the FirewallEnabled field value if set, zero value otherwise.
@@ -1607,15 +1119,6 @@ func (o *InstanceCreateSuccessInstance) GetFirewallEnabledOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.FirewallEnabled, true
-}
-
-// IsSetFirewallEnabled returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetFirewallEnabled() bool {
-	if o != nil && !IsNil(o.FirewallEnabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetFirewallEnabled gets a reference to the given bool and assigns it to the FirewallEnabled field.
@@ -1641,15 +1144,6 @@ func (o *InstanceCreateSuccessInstance) GetNetworkLevelOk() (*string, bool) {
 	return o.NetworkLevel, true
 }
 
-// IsSetNetworkLevel returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetNetworkLevel() bool {
-	if o != nil && !IsNil(o.NetworkLevel) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkLevel gets a reference to the given string and assigns it to the NetworkLevel field.
 func (o *InstanceCreateSuccessInstance) SetNetworkLevel(v string) {
 	o.NetworkLevel = &v
@@ -1671,15 +1165,6 @@ func (o *InstanceCreateSuccessInstance) GetAutoScaleOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.AutoScale, true
-}
-
-// IsSetAutoScale returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetAutoScale() bool {
-	if o != nil && !IsNil(o.AutoScale) {
-		return true
-	}
-
-	return false
 }
 
 // SetAutoScale gets a reference to the given bool and assigns it to the AutoScale field.
@@ -1706,28 +1191,9 @@ func (o *InstanceCreateSuccessInstance) GetInstanceContextOk() (*string, bool) {
 	return o.InstanceContext.Get(), o.InstanceContext.IsSet()
 }
 
-// IsSetInstanceContext returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetInstanceContext() bool {
-	if o != nil && o.InstanceContext.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInstanceContext gets a reference to the given NullableString and assigns it to the InstanceContext field.
 func (o *InstanceCreateSuccessInstance) SetInstanceContext(v string) {
 	o.InstanceContext.Set(&v)
-}
-
-// SetInstanceContextNil sets the value for InstanceContext to be an explicit nil
-func (o *InstanceCreateSuccessInstance) SetInstanceContextNil() {
-	o.InstanceContext.Set(nil)
-}
-
-// UnsetInstanceContext ensures that no value is present for InstanceContext, not even an explicit nil
-func (o *InstanceCreateSuccessInstance) UnsetInstanceContext() {
-	o.InstanceContext.Unset()
 }
 
 // GetCurrentDeployId returns the CurrentDeployId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1749,28 +1215,9 @@ func (o *InstanceCreateSuccessInstance) GetCurrentDeployIdOk() (*string, bool) {
 	return o.CurrentDeployId.Get(), o.CurrentDeployId.IsSet()
 }
 
-// IsSetCurrentDeployId returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetCurrentDeployId() bool {
-	if o != nil && o.CurrentDeployId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCurrentDeployId gets a reference to the given NullableString and assigns it to the CurrentDeployId field.
 func (o *InstanceCreateSuccessInstance) SetCurrentDeployId(v string) {
 	o.CurrentDeployId.Set(&v)
-}
-
-// SetCurrentDeployIdNil sets the value for CurrentDeployId to be an explicit nil
-func (o *InstanceCreateSuccessInstance) SetCurrentDeployIdNil() {
-	o.CurrentDeployId.Set(nil)
-}
-
-// UnsetCurrentDeployId ensures that no value is present for CurrentDeployId, not even an explicit nil
-func (o *InstanceCreateSuccessInstance) UnsetCurrentDeployId() {
-	o.CurrentDeployId.Unset()
 }
 
 // GetLocked returns the Locked field value if set, zero value otherwise.
@@ -1789,15 +1236,6 @@ func (o *InstanceCreateSuccessInstance) GetLockedOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Locked, true
-}
-
-// IsSetLocked returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetLocked() bool {
-	if o != nil && !IsNil(o.Locked) {
-		return true
-	}
-
-	return false
 }
 
 // SetLocked gets a reference to the given bool and assigns it to the Locked field.
@@ -1821,15 +1259,6 @@ func (o *InstanceCreateSuccessInstance) GetStatusOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -1856,28 +1285,9 @@ func (o *InstanceCreateSuccessInstance) GetStatusMessageOk() (*string, bool) {
 	return o.StatusMessage.Get(), o.StatusMessage.IsSet()
 }
 
-// IsSetStatusMessage returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetStatusMessage() bool {
-	if o != nil && o.StatusMessage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusMessage gets a reference to the given NullableString and assigns it to the StatusMessage field.
 func (o *InstanceCreateSuccessInstance) SetStatusMessage(v string) {
 	o.StatusMessage.Set(&v)
-}
-
-// SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
-func (o *InstanceCreateSuccessInstance) SetStatusMessageNil() {
-	o.StatusMessage.Set(nil)
-}
-
-// UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
-func (o *InstanceCreateSuccessInstance) UnsetStatusMessage() {
-	o.StatusMessage.Unset()
 }
 
 // GetErrorMessage returns the ErrorMessage field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1899,28 +1309,9 @@ func (o *InstanceCreateSuccessInstance) GetErrorMessageOk() (*string, bool) {
 	return o.ErrorMessage.Get(), o.ErrorMessage.IsSet()
 }
 
-// IsSetErrorMessage returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetErrorMessage() bool {
-	if o != nil && o.ErrorMessage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetErrorMessage gets a reference to the given NullableString and assigns it to the ErrorMessage field.
 func (o *InstanceCreateSuccessInstance) SetErrorMessage(v string) {
 	o.ErrorMessage.Set(&v)
-}
-
-// SetErrorMessageNil sets the value for ErrorMessage to be an explicit nil
-func (o *InstanceCreateSuccessInstance) SetErrorMessageNil() {
-	o.ErrorMessage.Set(nil)
-}
-
-// UnsetErrorMessage ensures that no value is present for ErrorMessage, not even an explicit nil
-func (o *InstanceCreateSuccessInstance) UnsetErrorMessage() {
-	o.ErrorMessage.Unset()
 }
 
 // GetStatusDate returns the StatusDate field value if set, zero value otherwise.
@@ -1939,15 +1330,6 @@ func (o *InstanceCreateSuccessInstance) GetStatusDateOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.StatusDate, true
-}
-
-// IsSetStatusDate returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetStatusDate() bool {
-	if o != nil && !IsNil(o.StatusDate) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatusDate gets a reference to the given time.Time and assigns it to the StatusDate field.
@@ -1974,28 +1356,9 @@ func (o *InstanceCreateSuccessInstance) GetStatusPercentOk() (*string, bool) {
 	return o.StatusPercent.Get(), o.StatusPercent.IsSet()
 }
 
-// IsSetStatusPercent returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetStatusPercent() bool {
-	if o != nil && o.StatusPercent.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusPercent gets a reference to the given NullableString and assigns it to the StatusPercent field.
 func (o *InstanceCreateSuccessInstance) SetStatusPercent(v string) {
 	o.StatusPercent.Set(&v)
-}
-
-// SetStatusPercentNil sets the value for StatusPercent to be an explicit nil
-func (o *InstanceCreateSuccessInstance) SetStatusPercentNil() {
-	o.StatusPercent.Set(nil)
-}
-
-// UnsetStatusPercent ensures that no value is present for StatusPercent, not even an explicit nil
-func (o *InstanceCreateSuccessInstance) UnsetStatusPercent() {
-	o.StatusPercent.Unset()
 }
 
 // GetStatusEta returns the StatusEta field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -2017,28 +1380,9 @@ func (o *InstanceCreateSuccessInstance) GetStatusEtaOk() (*string, bool) {
 	return o.StatusEta.Get(), o.StatusEta.IsSet()
 }
 
-// IsSetStatusEta returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetStatusEta() bool {
-	if o != nil && o.StatusEta.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusEta gets a reference to the given NullableString and assigns it to the StatusEta field.
 func (o *InstanceCreateSuccessInstance) SetStatusEta(v string) {
 	o.StatusEta.Set(&v)
-}
-
-// SetStatusEtaNil sets the value for StatusEta to be an explicit nil
-func (o *InstanceCreateSuccessInstance) SetStatusEtaNil() {
-	o.StatusEta.Set(nil)
-}
-
-// UnsetStatusEta ensures that no value is present for StatusEta, not even an explicit nil
-func (o *InstanceCreateSuccessInstance) UnsetStatusEta() {
-	o.StatusEta.Unset()
 }
 
 // GetUserStatus returns the UserStatus field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -2060,28 +1404,9 @@ func (o *InstanceCreateSuccessInstance) GetUserStatusOk() (*string, bool) {
 	return o.UserStatus.Get(), o.UserStatus.IsSet()
 }
 
-// IsSetUserStatus returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetUserStatus() bool {
-	if o != nil && o.UserStatus.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUserStatus gets a reference to the given NullableString and assigns it to the UserStatus field.
 func (o *InstanceCreateSuccessInstance) SetUserStatus(v string) {
 	o.UserStatus.Set(&v)
-}
-
-// SetUserStatusNil sets the value for UserStatus to be an explicit nil
-func (o *InstanceCreateSuccessInstance) SetUserStatusNil() {
-	o.UserStatus.Set(nil)
-}
-
-// UnsetUserStatus ensures that no value is present for UserStatus, not even an explicit nil
-func (o *InstanceCreateSuccessInstance) UnsetUserStatus() {
-	o.UserStatus.Unset()
 }
 
 // GetExpireDays returns the ExpireDays field value if set, zero value otherwise.
@@ -2100,15 +1425,6 @@ func (o *InstanceCreateSuccessInstance) GetExpireDaysOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.ExpireDays, true
-}
-
-// IsSetExpireDays returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetExpireDays() bool {
-	if o != nil && !IsNil(o.ExpireDays) {
-		return true
-	}
-
-	return false
 }
 
 // SetExpireDays gets a reference to the given int64 and assigns it to the ExpireDays field.
@@ -2134,15 +1450,6 @@ func (o *InstanceCreateSuccessInstance) GetRenewDaysOk() (*int64, bool) {
 	return o.RenewDays, true
 }
 
-// IsSetRenewDays returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetRenewDays() bool {
-	if o != nil && !IsNil(o.RenewDays) {
-		return true
-	}
-
-	return false
-}
-
 // SetRenewDays gets a reference to the given int64 and assigns it to the RenewDays field.
 func (o *InstanceCreateSuccessInstance) SetRenewDays(v int64) {
 	o.RenewDays = &v
@@ -2164,15 +1471,6 @@ func (o *InstanceCreateSuccessInstance) GetExpireCountOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.ExpireCount, true
-}
-
-// IsSetExpireCount returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetExpireCount() bool {
-	if o != nil && !IsNil(o.ExpireCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetExpireCount gets a reference to the given int64 and assigns it to the ExpireCount field.
@@ -2198,15 +1496,6 @@ func (o *InstanceCreateSuccessInstance) GetExpireDateOk() (*time.Time, bool) {
 	return o.ExpireDate, true
 }
 
-// IsSetExpireDate returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetExpireDate() bool {
-	if o != nil && !IsNil(o.ExpireDate) {
-		return true
-	}
-
-	return false
-}
-
 // SetExpireDate gets a reference to the given time.Time and assigns it to the ExpireDate field.
 func (o *InstanceCreateSuccessInstance) SetExpireDate(v time.Time) {
 	o.ExpireDate = &v
@@ -2228,15 +1517,6 @@ func (o *InstanceCreateSuccessInstance) GetExpireWarningDateOk() (*time.Time, bo
 		return nil, false
 	}
 	return o.ExpireWarningDate, true
-}
-
-// IsSetExpireWarningDate returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetExpireWarningDate() bool {
-	if o != nil && !IsNil(o.ExpireWarningDate) {
-		return true
-	}
-
-	return false
 }
 
 // SetExpireWarningDate gets a reference to the given time.Time and assigns it to the ExpireWarningDate field.
@@ -2262,15 +1542,6 @@ func (o *InstanceCreateSuccessInstance) GetExpireWarningSentOk() (*bool, bool) {
 	return o.ExpireWarningSent, true
 }
 
-// IsSetExpireWarningSent returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetExpireWarningSent() bool {
-	if o != nil && !IsNil(o.ExpireWarningSent) {
-		return true
-	}
-
-	return false
-}
-
 // SetExpireWarningSent gets a reference to the given bool and assigns it to the ExpireWarningSent field.
 func (o *InstanceCreateSuccessInstance) SetExpireWarningSent(v bool) {
 	o.ExpireWarningSent = &v
@@ -2292,15 +1563,6 @@ func (o *InstanceCreateSuccessInstance) GetShutdownDaysOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.ShutdownDays, true
-}
-
-// IsSetShutdownDays returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetShutdownDays() bool {
-	if o != nil && !IsNil(o.ShutdownDays) {
-		return true
-	}
-
-	return false
 }
 
 // SetShutdownDays gets a reference to the given int64 and assigns it to the ShutdownDays field.
@@ -2326,15 +1588,6 @@ func (o *InstanceCreateSuccessInstance) GetShutdownRenewDaysOk() (*int64, bool) 
 	return o.ShutdownRenewDays, true
 }
 
-// IsSetShutdownRenewDays returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetShutdownRenewDays() bool {
-	if o != nil && !IsNil(o.ShutdownRenewDays) {
-		return true
-	}
-
-	return false
-}
-
 // SetShutdownRenewDays gets a reference to the given int64 and assigns it to the ShutdownRenewDays field.
 func (o *InstanceCreateSuccessInstance) SetShutdownRenewDays(v int64) {
 	o.ShutdownRenewDays = &v
@@ -2356,15 +1609,6 @@ func (o *InstanceCreateSuccessInstance) GetShutdownCountOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.ShutdownCount, true
-}
-
-// IsSetShutdownCount returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetShutdownCount() bool {
-	if o != nil && !IsNil(o.ShutdownCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetShutdownCount gets a reference to the given int64 and assigns it to the ShutdownCount field.
@@ -2390,15 +1634,6 @@ func (o *InstanceCreateSuccessInstance) GetShutdownDateOk() (*time.Time, bool) {
 	return o.ShutdownDate, true
 }
 
-// IsSetShutdownDate returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetShutdownDate() bool {
-	if o != nil && !IsNil(o.ShutdownDate) {
-		return true
-	}
-
-	return false
-}
-
 // SetShutdownDate gets a reference to the given time.Time and assigns it to the ShutdownDate field.
 func (o *InstanceCreateSuccessInstance) SetShutdownDate(v time.Time) {
 	o.ShutdownDate = &v
@@ -2422,15 +1657,6 @@ func (o *InstanceCreateSuccessInstance) GetShutdownWarningDateOk() (*time.Time, 
 	return o.ShutdownWarningDate, true
 }
 
-// IsSetShutdownWarningDate returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetShutdownWarningDate() bool {
-	if o != nil && !IsNil(o.ShutdownWarningDate) {
-		return true
-	}
-
-	return false
-}
-
 // SetShutdownWarningDate gets a reference to the given time.Time and assigns it to the ShutdownWarningDate field.
 func (o *InstanceCreateSuccessInstance) SetShutdownWarningDate(v time.Time) {
 	o.ShutdownWarningDate = &v
@@ -2452,15 +1678,6 @@ func (o *InstanceCreateSuccessInstance) GetShutdownWarningSentOk() (*bool, bool)
 		return nil, false
 	}
 	return o.ShutdownWarningSent, true
-}
-
-// IsSetShutdownWarningSent returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetShutdownWarningSent() bool {
-	if o != nil && !IsNil(o.ShutdownWarningSent) {
-		return true
-	}
-
-	return false
 }
 
 // SetShutdownWarningSent gets a reference to the given bool and assigns it to the ShutdownWarningSent field.
@@ -2487,28 +1704,9 @@ func (o *InstanceCreateSuccessInstance) GetRemovalDateOk() (*time.Time, bool) {
 	return o.RemovalDate.Get(), o.RemovalDate.IsSet()
 }
 
-// IsSetRemovalDate returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetRemovalDate() bool {
-	if o != nil && o.RemovalDate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRemovalDate gets a reference to the given NullableTime and assigns it to the RemovalDate field.
 func (o *InstanceCreateSuccessInstance) SetRemovalDate(v time.Time) {
 	o.RemovalDate.Set(&v)
-}
-
-// SetRemovalDateNil sets the value for RemovalDate to be an explicit nil
-func (o *InstanceCreateSuccessInstance) SetRemovalDateNil() {
-	o.RemovalDate.Set(nil)
-}
-
-// UnsetRemovalDate ensures that no value is present for RemovalDate, not even an explicit nil
-func (o *InstanceCreateSuccessInstance) UnsetRemovalDate() {
-	o.RemovalDate.Unset()
 }
 
 // GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
@@ -2527,15 +1725,6 @@ func (o *InstanceCreateSuccessInstance) GetCreatedByOk() (*InstanceCreateSuccess
 		return nil, false
 	}
 	return o.CreatedBy, true
-}
-
-// IsSetCreatedBy returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetCreatedBy() bool {
-	if o != nil && !IsNil(o.CreatedBy) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreatedBy gets a reference to the given InstanceCreateSuccessInstanceCreatedBy and assigns it to the CreatedBy field.
@@ -2559,15 +1748,6 @@ func (o *InstanceCreateSuccessInstance) GetOwnerOk() (*InstanceCreateSuccessInst
 		return nil, false
 	}
 	return o.Owner, true
-}
-
-// IsSetOwner returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
-		return true
-	}
-
-	return false
 }
 
 // SetOwner gets a reference to the given InstanceCreateSuccessInstanceOwner and assigns it to the Owner field.
@@ -2594,28 +1774,9 @@ func (o *InstanceCreateSuccessInstance) GetNotesOk() (*string, bool) {
 	return o.Notes.Get(), o.Notes.IsSet()
 }
 
-// IsSetNotes returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetNotes() bool {
-	if o != nil && o.Notes.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNotes gets a reference to the given NullableString and assigns it to the Notes field.
 func (o *InstanceCreateSuccessInstance) SetNotes(v string) {
 	o.Notes.Set(&v)
-}
-
-// SetNotesNil sets the value for Notes to be an explicit nil
-func (o *InstanceCreateSuccessInstance) SetNotesNil() {
-	o.Notes.Set(nil)
-}
-
-// UnsetNotes ensures that no value is present for Notes, not even an explicit nil
-func (o *InstanceCreateSuccessInstance) UnsetNotes() {
-	o.Notes.Unset()
 }
 
 // GetStats returns the Stats field value if set, zero value otherwise.
@@ -2634,15 +1795,6 @@ func (o *InstanceCreateSuccessInstance) GetStatsOk() (*InstanceCreateSuccessInst
 		return nil, false
 	}
 	return o.Stats, true
-}
-
-// IsSetStats returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetStats() bool {
-	if o != nil && !IsNil(o.Stats) {
-		return true
-	}
-
-	return false
 }
 
 // SetStats gets a reference to the given InstanceCreateSuccessInstanceStats and assigns it to the Stats field.
@@ -2669,28 +1821,9 @@ func (o *InstanceCreateSuccessInstance) GetPowerScheduleOk() (*string, bool) {
 	return o.PowerSchedule.Get(), o.PowerSchedule.IsSet()
 }
 
-// IsSetPowerSchedule returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetPowerSchedule() bool {
-	if o != nil && o.PowerSchedule.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPowerSchedule gets a reference to the given NullableString and assigns it to the PowerSchedule field.
 func (o *InstanceCreateSuccessInstance) SetPowerSchedule(v string) {
 	o.PowerSchedule.Set(&v)
-}
-
-// SetPowerScheduleNil sets the value for PowerSchedule to be an explicit nil
-func (o *InstanceCreateSuccessInstance) SetPowerScheduleNil() {
-	o.PowerSchedule.Set(nil)
-}
-
-// UnsetPowerSchedule ensures that no value is present for PowerSchedule, not even an explicit nil
-func (o *InstanceCreateSuccessInstance) UnsetPowerSchedule() {
-	o.PowerSchedule.Unset()
 }
 
 // GetIsScalable returns the IsScalable field value if set, zero value otherwise.
@@ -2709,15 +1842,6 @@ func (o *InstanceCreateSuccessInstance) GetIsScalableOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.IsScalable, true
-}
-
-// IsSetIsScalable returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetIsScalable() bool {
-	if o != nil && !IsNil(o.IsScalable) {
-		return true
-	}
-
-	return false
 }
 
 // SetIsScalable gets a reference to the given bool and assigns it to the IsScalable field.
@@ -2744,15 +1868,6 @@ func (o *InstanceCreateSuccessInstance) GetInstanceThresholdOk() (map[string]int
 	return o.InstanceThreshold, true
 }
 
-// IsSetInstanceThreshold returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetInstanceThreshold() bool {
-	if o != nil && !IsNil(o.InstanceThreshold) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstanceThreshold gets a reference to the given map[string]interface{} and assigns it to the InstanceThreshold field.
 func (o *InstanceCreateSuccessInstance) SetInstanceThreshold(v map[string]interface{}) {
 	o.InstanceThreshold = v
@@ -2774,15 +1889,6 @@ func (o *InstanceCreateSuccessInstance) GetIsBusyOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.IsBusy, true
-}
-
-// IsSetIsBusy returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetIsBusy() bool {
-	if o != nil && !IsNil(o.IsBusy) {
-		return true
-	}
-
-	return false
 }
 
 // SetIsBusy gets a reference to the given bool and assigns it to the IsBusy field.
@@ -2809,15 +1915,6 @@ func (o *InstanceCreateSuccessInstance) GetAppsOk() ([]map[string]interface{}, b
 	return o.Apps, true
 }
 
-// IsSetApps returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetApps() bool {
-	if o != nil && !IsNil(o.Apps) {
-		return true
-	}
-
-	return false
-}
-
 // SetApps gets a reference to the given []map[string]interface{} and assigns it to the Apps field.
 func (o *InstanceCreateSuccessInstance) SetApps(v []map[string]interface{}) {
 	o.Apps = v
@@ -2840,15 +1937,6 @@ func (o *InstanceCreateSuccessInstance) GetCurrentLoadBalancerInstancesOk() ([]m
 		return nil, false
 	}
 	return o.CurrentLoadBalancerInstances, true
-}
-
-// IsSetCurrentLoadBalancerInstances returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetCurrentLoadBalancerInstances() bool {
-	if o != nil && !IsNil(o.CurrentLoadBalancerInstances) {
-		return true
-	}
-
-	return false
 }
 
 // SetCurrentLoadBalancerInstances gets a reference to the given []map[string]interface{} and assigns it to the CurrentLoadBalancerInstances field.
@@ -2874,15 +1962,6 @@ func (o *InstanceCreateSuccessInstance) GetCurrentLoadBalancerContainersInOk() (
 	return o.CurrentLoadBalancerContainersIn, true
 }
 
-// IsSetCurrentLoadBalancerContainersIn returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetCurrentLoadBalancerContainersIn() bool {
-	if o != nil && !IsNil(o.CurrentLoadBalancerContainersIn) {
-		return true
-	}
-
-	return false
-}
-
 // SetCurrentLoadBalancerContainersIn gets a reference to the given int32 and assigns it to the CurrentLoadBalancerContainersIn field.
 func (o *InstanceCreateSuccessInstance) SetCurrentLoadBalancerContainersIn(v int32) {
 	o.CurrentLoadBalancerContainersIn = &v
@@ -2904,15 +1983,6 @@ func (o *InstanceCreateSuccessInstance) GetCurrentLoadBalancerContainersOutOk() 
 		return nil, false
 	}
 	return o.CurrentLoadBalancerContainersOut, true
-}
-
-// IsSetCurrentLoadBalancerContainersOut returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetCurrentLoadBalancerContainersOut() bool {
-	if o != nil && !IsNil(o.CurrentLoadBalancerContainersOut) {
-		return true
-	}
-
-	return false
 }
 
 // SetCurrentLoadBalancerContainersOut gets a reference to the given int32 and assigns it to the CurrentLoadBalancerContainersOut field.
@@ -2938,15 +2008,6 @@ func (o *InstanceCreateSuccessInstance) GetLastDeployOk() (*map[string]interface
 	return o.LastDeploy, true
 }
 
-// IsSetLastDeploy returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetLastDeploy() bool {
-	if o != nil && !IsNil(o.LastDeploy) {
-		return true
-	}
-
-	return false
-}
-
 // SetLastDeploy gets a reference to the given map[string]interface{} and assigns it to the LastDeploy field.
 func (o *InstanceCreateSuccessInstance) SetLastDeploy(v map[string]interface{}) {
 	o.LastDeploy = &v
@@ -2968,15 +2029,6 @@ func (o *InstanceCreateSuccessInstance) GetContainerDetailsOk() ([]InstanceConta
 		return nil, false
 	}
 	return o.ContainerDetails, true
-}
-
-// IsSetContainerDetails returns a boolean if a field has been set.
-func (o *InstanceCreateSuccessInstance) IsSetContainerDetails() bool {
-	if o != nil && !IsNil(o.ContainerDetails) {
-		return true
-	}
-
-	return false
 }
 
 // SetContainerDetails gets a reference to the given []InstanceContainer4 and assigns it to the ContainerDetails field.

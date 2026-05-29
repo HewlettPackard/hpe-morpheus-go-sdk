@@ -61,15 +61,6 @@ func (o *GetSystem200Response) GetSystemOk() (*GetSystem200ResponseSystem, bool)
 	return o.System, true
 }
 
-// IsSetSystem returns a boolean if a field has been set.
-func (o *GetSystem200Response) IsSetSystem() bool {
-	if o != nil && !IsNil(o.System) {
-		return true
-	}
-
-	return false
-}
-
 // SetSystem gets a reference to the given GetSystem200ResponseSystem and assigns it to the System field.
 func (o *GetSystem200Response) SetSystem(v GetSystem200ResponseSystem) {
 	o.System = &v

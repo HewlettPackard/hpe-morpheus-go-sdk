@@ -61,15 +61,6 @@ func (o *GetVdi200Response) GetDesktopOk() (*GetVdi200ResponseDesktop, bool) {
 	return o.Desktop, true
 }
 
-// IsSetDesktop returns a boolean if a field has been set.
-func (o *GetVdi200Response) IsSetDesktop() bool {
-	if o != nil && !IsNil(o.Desktop) {
-		return true
-	}
-
-	return false
-}
-
 // SetDesktop gets a reference to the given GetVdi200ResponseDesktop and assigns it to the Desktop field.
 func (o *GetVdi200Response) SetDesktop(v GetVdi200ResponseDesktop) {
 	o.Desktop = &v

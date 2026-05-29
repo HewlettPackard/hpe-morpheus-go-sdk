@@ -74,15 +74,6 @@ func (o *Health) GetSuccessOk() (*bool, bool) {
 	return o.Success, true
 }
 
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *Health) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
-}
-
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.
 func (o *Health) SetSuccess(v bool) {
 	o.Success = &v
@@ -104,15 +95,6 @@ func (o *Health) GetStatusMessageOk() (*string, bool) {
 		return nil, false
 	}
 	return o.StatusMessage, true
-}
-
-// IsSetStatusMessage returns a boolean if a field has been set.
-func (o *Health) IsSetStatusMessage() bool {
-	if o != nil && !IsNil(o.StatusMessage) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatusMessage gets a reference to the given string and assigns it to the StatusMessage field.
@@ -138,15 +120,6 @@ func (o *Health) GetApplianceUrlOk() (*string, bool) {
 	return o.ApplianceUrl, true
 }
 
-// IsSetApplianceUrl returns a boolean if a field has been set.
-func (o *Health) IsSetApplianceUrl() bool {
-	if o != nil && !IsNil(o.ApplianceUrl) {
-		return true
-	}
-
-	return false
-}
-
 // SetApplianceUrl gets a reference to the given string and assigns it to the ApplianceUrl field.
 func (o *Health) SetApplianceUrl(v string) {
 	o.ApplianceUrl = &v
@@ -168,15 +141,6 @@ func (o *Health) GetBuildVersionOk() (*string, bool) {
 		return nil, false
 	}
 	return o.BuildVersion, true
-}
-
-// IsSetBuildVersion returns a boolean if a field has been set.
-func (o *Health) IsSetBuildVersion() bool {
-	if o != nil && !IsNil(o.BuildVersion) {
-		return true
-	}
-
-	return false
 }
 
 // SetBuildVersion gets a reference to the given string and assigns it to the BuildVersion field.
@@ -202,15 +166,6 @@ func (o *Health) GetUuidOk() (*string, bool) {
 	return o.Uuid, true
 }
 
-// IsSetUuid returns a boolean if a field has been set.
-func (o *Health) IsSetUuid() bool {
-	if o != nil && !IsNil(o.Uuid) {
-		return true
-	}
-
-	return false
-}
-
 // SetUuid gets a reference to the given string and assigns it to the Uuid field.
 func (o *Health) SetUuid(v string) {
 	o.Uuid = &v
@@ -232,15 +187,6 @@ func (o *Health) GetSetupNeededOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.SetupNeeded, true
-}
-
-// IsSetSetupNeeded returns a boolean if a field has been set.
-func (o *Health) IsSetSetupNeeded() bool {
-	if o != nil && !IsNil(o.SetupNeeded) {
-		return true
-	}
-
-	return false
 }
 
 // SetSetupNeeded gets a reference to the given bool and assigns it to the SetupNeeded field.
@@ -266,15 +212,6 @@ func (o *Health) GetDateOk() (*time.Time, bool) {
 	return o.Date, true
 }
 
-// IsSetDate returns a boolean if a field has been set.
-func (o *Health) IsSetDate() bool {
-	if o != nil && !IsNil(o.Date) {
-		return true
-	}
-
-	return false
-}
-
 // SetDate gets a reference to the given time.Time and assigns it to the Date field.
 func (o *Health) SetDate(v time.Time) {
 	o.Date = &v
@@ -296,15 +233,6 @@ func (o *Health) GetCpuOk() (*HealthCpu, bool) {
 		return nil, false
 	}
 	return o.Cpu, true
-}
-
-// IsSetCpu returns a boolean if a field has been set.
-func (o *Health) IsSetCpu() bool {
-	if o != nil && !IsNil(o.Cpu) {
-		return true
-	}
-
-	return false
 }
 
 // SetCpu gets a reference to the given HealthCpu and assigns it to the Cpu field.
@@ -330,15 +258,6 @@ func (o *Health) GetMemoryOk() (*HealthMemory, bool) {
 	return o.Memory, true
 }
 
-// IsSetMemory returns a boolean if a field has been set.
-func (o *Health) IsSetMemory() bool {
-	if o != nil && !IsNil(o.Memory) {
-		return true
-	}
-
-	return false
-}
-
 // SetMemory gets a reference to the given HealthMemory and assigns it to the Memory field.
 func (o *Health) SetMemory(v HealthMemory) {
 	o.Memory = &v
@@ -360,15 +279,6 @@ func (o *Health) GetThreadsOk() (*HealthThreads, bool) {
 		return nil, false
 	}
 	return o.Threads, true
-}
-
-// IsSetThreads returns a boolean if a field has been set.
-func (o *Health) IsSetThreads() bool {
-	if o != nil && !IsNil(o.Threads) {
-		return true
-	}
-
-	return false
 }
 
 // SetThreads gets a reference to the given HealthThreads and assigns it to the Threads field.
@@ -394,15 +304,6 @@ func (o *Health) GetDatabaseOk() (*HealthDatabase, bool) {
 	return o.Database, true
 }
 
-// IsSetDatabase returns a boolean if a field has been set.
-func (o *Health) IsSetDatabase() bool {
-	if o != nil && !IsNil(o.Database) {
-		return true
-	}
-
-	return false
-}
-
 // SetDatabase gets a reference to the given HealthDatabase and assigns it to the Database field.
 func (o *Health) SetDatabase(v HealthDatabase) {
 	o.Database = &v
@@ -426,15 +327,6 @@ func (o *Health) GetElasticOk() (*HealthElastic, bool) {
 	return o.Elastic, true
 }
 
-// IsSetElastic returns a boolean if a field has been set.
-func (o *Health) IsSetElastic() bool {
-	if o != nil && !IsNil(o.Elastic) {
-		return true
-	}
-
-	return false
-}
-
 // SetElastic gets a reference to the given HealthElastic and assigns it to the Elastic field.
 func (o *Health) SetElastic(v HealthElastic) {
 	o.Elastic = &v
@@ -456,15 +348,6 @@ func (o *Health) GetRabbitOk() (*HealthRabbit, bool) {
 		return nil, false
 	}
 	return o.Rabbit, true
-}
-
-// IsSetRabbit returns a boolean if a field has been set.
-func (o *Health) IsSetRabbit() bool {
-	if o != nil && !IsNil(o.Rabbit) {
-		return true
-	}
-
-	return false
 }
 
 // SetRabbit gets a reference to the given HealthRabbit and assigns it to the Rabbit field.

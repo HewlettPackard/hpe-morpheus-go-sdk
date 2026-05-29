@@ -184,15 +184,6 @@ func (o *SQLConfig1) GetDbPasswordHashOk() (*string, bool) {
 	return o.DbPasswordHash, true
 }
 
-// IsSetDbPasswordHash returns a boolean if a field has been set.
-func (o *SQLConfig1) IsSetDbPasswordHash() bool {
-	if o != nil && !IsNil(o.DbPasswordHash) {
-		return true
-	}
-
-	return false
-}
-
 // SetDbPasswordHash gets a reference to the given string and assigns it to the DbPasswordHash field.
 func (o *SQLConfig1) SetDbPasswordHash(v string) {
 	o.DbPasswordHash = &v
@@ -264,15 +255,6 @@ func (o *SQLConfig1) GetCheckOperatorOk() (*string, bool) {
 	return o.CheckOperator, true
 }
 
-// IsSetCheckOperator returns a boolean if a field has been set.
-func (o *SQLConfig1) IsSetCheckOperator() bool {
-	if o != nil && !IsNil(o.CheckOperator) {
-		return true
-	}
-
-	return false
-}
-
 // SetCheckOperator gets a reference to the given string and assigns it to the CheckOperator field.
 func (o *SQLConfig1) SetCheckOperator(v string) {
 	o.CheckOperator = &v
@@ -294,15 +276,6 @@ func (o *SQLConfig1) GetCheckResultOk() (*float32, bool) {
 		return nil, false
 	}
 	return o.CheckResult, true
-}
-
-// IsSetCheckResult returns a boolean if a field has been set.
-func (o *SQLConfig1) IsSetCheckResult() bool {
-	if o != nil && !IsNil(o.CheckResult) {
-		return true
-	}
-
-	return false
 }
 
 // SetCheckResult gets a reference to the given float32 and assigns it to the CheckResult field.
@@ -328,15 +301,6 @@ func (o *SQLConfig1) GetCheckUserOk() (*string, bool) {
 	return o.CheckUser, true
 }
 
-// IsSetCheckUser returns a boolean if a field has been set.
-func (o *SQLConfig1) IsSetCheckUser() bool {
-	if o != nil && !IsNil(o.CheckUser) {
-		return true
-	}
-
-	return false
-}
-
 // SetCheckUser gets a reference to the given string and assigns it to the CheckUser field.
 func (o *SQLConfig1) SetCheckUser(v string) {
 	o.CheckUser = &v
@@ -358,15 +322,6 @@ func (o *SQLConfig1) GetTextCheckOnOk() (*string, bool) {
 		return nil, false
 	}
 	return o.TextCheckOn, true
-}
-
-// IsSetTextCheckOn returns a boolean if a field has been set.
-func (o *SQLConfig1) IsSetTextCheckOn() bool {
-	if o != nil && !IsNil(o.TextCheckOn) {
-		return true
-	}
-
-	return false
 }
 
 // SetTextCheckOn gets a reference to the given string and assigns it to the TextCheckOn field.
@@ -392,15 +347,6 @@ func (o *SQLConfig1) GetCheckPasswordOk() (*string, bool) {
 	return o.CheckPassword, true
 }
 
-// IsSetCheckPassword returns a boolean if a field has been set.
-func (o *SQLConfig1) IsSetCheckPassword() bool {
-	if o != nil && !IsNil(o.CheckPassword) {
-		return true
-	}
-
-	return false
-}
-
 // SetCheckPassword gets a reference to the given string and assigns it to the CheckPassword field.
 func (o *SQLConfig1) SetCheckPassword(v string) {
 	o.CheckPassword = &v
@@ -424,15 +370,6 @@ func (o *SQLConfig1) GetWebTextMatchOk() (*string, bool) {
 	return o.WebTextMatch, true
 }
 
-// IsSetWebTextMatch returns a boolean if a field has been set.
-func (o *SQLConfig1) IsSetWebTextMatch() bool {
-	if o != nil && !IsNil(o.WebTextMatch) {
-		return true
-	}
-
-	return false
-}
-
 // SetWebTextMatch gets a reference to the given string and assigns it to the WebTextMatch field.
 func (o *SQLConfig1) SetWebTextMatch(v string) {
 	o.WebTextMatch = &v
@@ -454,15 +391,6 @@ func (o *SQLConfig1) GetCheckPasswordHashOk() (*string, bool) {
 		return nil, false
 	}
 	return o.CheckPasswordHash, true
-}
-
-// IsSetCheckPasswordHash returns a boolean if a field has been set.
-func (o *SQLConfig1) IsSetCheckPasswordHash() bool {
-	if o != nil && !IsNil(o.CheckPasswordHash) {
-		return true
-	}
-
-	return false
 }
 
 // SetCheckPasswordHash gets a reference to the given string and assigns it to the CheckPasswordHash field.

@@ -62,15 +62,6 @@ func (o *RefreshIntegrations200Response) GetIntegrationOk() (*GetIntegrations200
 	return o.Integration, true
 }
 
-// IsSetIntegration returns a boolean if a field has been set.
-func (o *RefreshIntegrations200Response) IsSetIntegration() bool {
-	if o != nil && !IsNil(o.Integration) {
-		return true
-	}
-
-	return false
-}
-
 // SetIntegration gets a reference to the given GetIntegrations200ResponseAllOfIntegration and assigns it to the Integration field.
 func (o *RefreshIntegrations200Response) SetIntegration(v GetIntegrations200ResponseAllOfIntegration) {
 	o.Integration = &v
@@ -92,15 +83,6 @@ func (o *RefreshIntegrations200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *RefreshIntegrations200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

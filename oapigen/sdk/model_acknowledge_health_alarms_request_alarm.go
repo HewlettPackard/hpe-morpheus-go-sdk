@@ -95,15 +95,6 @@ func (o *AcknowledgeHealthAlarmsRequestAlarm) GetIdsOk() ([]int64, bool) {
 	return o.Ids, true
 }
 
-// IsSetIds returns a boolean if a field has been set.
-func (o *AcknowledgeHealthAlarmsRequestAlarm) IsSetIds() bool {
-	if o != nil && !IsNil(o.Ids) {
-		return true
-	}
-
-	return false
-}
-
 // SetIds gets a reference to the given []int64 and assigns it to the Ids field.
 func (o *AcknowledgeHealthAlarmsRequestAlarm) SetIds(v []int64) {
 	o.Ids = v
@@ -125,15 +116,6 @@ func (o *AcknowledgeHealthAlarmsRequestAlarm) GetAllOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.All, true
-}
-
-// IsSetAll returns a boolean if a field has been set.
-func (o *AcknowledgeHealthAlarmsRequestAlarm) IsSetAll() bool {
-	if o != nil && !IsNil(o.All) {
-		return true
-	}
-
-	return false
 }
 
 // SetAll gets a reference to the given bool and assigns it to the All field.

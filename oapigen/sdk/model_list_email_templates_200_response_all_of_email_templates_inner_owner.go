@@ -63,28 +63,9 @@ func (o *ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) GetIdOk() (
 	return o.Id.Get(), o.Id.IsSet()
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) IsSetId() bool {
-	if o != nil && o.Id.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given NullableInt64 and assigns it to the Id field.
 func (o *ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) SetId(v int64) {
 	o.Id.Set(&v)
-}
-
-// SetIdNil sets the value for Id to be an explicit nil
-func (o *ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) SetIdNil() {
-	o.Id.Set(nil)
-}
-
-// UnsetId ensures that no value is present for Id, not even an explicit nil
-func (o *ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) UnsetId() {
-	o.Id.Unset()
 }
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -106,28 +87,9 @@ func (o *ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) GetNameOk()
 	return o.Name.Get(), o.Name.IsSet()
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) IsSetName() bool {
-	if o != nil && o.Name.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given NullableString and assigns it to the Name field.
 func (o *ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) SetName(v string) {
 	o.Name.Set(&v)
-}
-
-// SetNameNil sets the value for Name to be an explicit nil
-func (o *ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) SetNameNil() {
-	o.Name.Set(nil)
-}
-
-// UnsetName ensures that no value is present for Name, not even an explicit nil
-func (o *ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) UnsetName() {
-	o.Name.Unset()
 }
 
 func (o ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) MarshalJSON() ([]byte, error) {

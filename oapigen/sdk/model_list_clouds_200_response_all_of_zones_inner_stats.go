@@ -61,15 +61,6 @@ func (o *ListClouds200ResponseAllOfZonesInnerStats) GetServerCountsOk() (*ListCl
 	return o.ServerCounts, true
 }
 
-// IsSetServerCounts returns a boolean if a field has been set.
-func (o *ListClouds200ResponseAllOfZonesInnerStats) IsSetServerCounts() bool {
-	if o != nil && !IsNil(o.ServerCounts) {
-		return true
-	}
-
-	return false
-}
-
 // SetServerCounts gets a reference to the given ListClouds200ResponseAllOfZonesInnerStatsServerCounts and assigns it to the ServerCounts field.
 func (o *ListClouds200ResponseAllOfZonesInnerStats) SetServerCounts(v ListClouds200ResponseAllOfZonesInnerStatsServerCounts) {
 	o.ServerCounts = &v

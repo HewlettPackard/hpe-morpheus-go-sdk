@@ -62,15 +62,6 @@ func (o *UpdateScript200Response) GetSuccessOk() (*bool, bool) {
 	return o.Success, true
 }
 
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *UpdateScript200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
-}
-
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.
 func (o *UpdateScript200Response) SetSuccess(v bool) {
 	o.Success = &v
@@ -92,15 +83,6 @@ func (o *UpdateScript200Response) GetContainerScriptOk() (*UpdateScript200Respon
 		return nil, false
 	}
 	return o.ContainerScript, true
-}
-
-// IsSetContainerScript returns a boolean if a field has been set.
-func (o *UpdateScript200Response) IsSetContainerScript() bool {
-	if o != nil && !IsNil(o.ContainerScript) {
-		return true
-	}
-
-	return false
 }
 
 // SetContainerScript gets a reference to the given UpdateScript200ResponseContainerScript and assigns it to the ContainerScript field.

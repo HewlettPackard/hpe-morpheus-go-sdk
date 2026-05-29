@@ -88,15 +88,6 @@ func (o *ClusterResourceNamePolicyTypeConfiguration7) GetServerNamingPatternOk()
 	return o.ServerNamingPattern, true
 }
 
-// IsSetServerNamingPattern returns a boolean if a field has been set.
-func (o *ClusterResourceNamePolicyTypeConfiguration7) IsSetServerNamingPattern() bool {
-	if o != nil && !IsNil(o.ServerNamingPattern) {
-		return true
-	}
-
-	return false
-}
-
 // SetServerNamingPattern gets a reference to the given string and assigns it to the ServerNamingPattern field.
 func (o *ClusterResourceNamePolicyTypeConfiguration7) SetServerNamingPattern(v string) {
 	o.ServerNamingPattern = &v
@@ -118,15 +109,6 @@ func (o *ClusterResourceNamePolicyTypeConfiguration7) GetServerNamingConflictOk(
 		return nil, false
 	}
 	return o.ServerNamingConflict, true
-}
-
-// IsSetServerNamingConflict returns a boolean if a field has been set.
-func (o *ClusterResourceNamePolicyTypeConfiguration7) IsSetServerNamingConflict() bool {
-	if o != nil && !IsNil(o.ServerNamingConflict) {
-		return true
-	}
-
-	return false
 }
 
 // SetServerNamingConflict gets a reference to the given bool and assigns it to the ServerNamingConflict field.

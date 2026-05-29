@@ -74,15 +74,6 @@ func (o *ReportTypesInner) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ReportTypesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ReportTypesInner) SetId(v int64) {
 	o.Id = &v
@@ -104,15 +95,6 @@ func (o *ReportTypesInner) GetCodeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *ReportTypesInner) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -138,15 +120,6 @@ func (o *ReportTypesInner) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ReportTypesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ReportTypesInner) SetName(v string) {
 	o.Name = &v
@@ -168,15 +141,6 @@ func (o *ReportTypesInner) GetDescriptionOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ReportTypesInner) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -202,15 +166,6 @@ func (o *ReportTypesInner) GetCategoryOk() (*string, bool) {
 	return o.Category, true
 }
 
-// IsSetCategory returns a boolean if a field has been set.
-func (o *ReportTypesInner) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
-		return true
-	}
-
-	return false
-}
-
 // SetCategory gets a reference to the given string and assigns it to the Category field.
 func (o *ReportTypesInner) SetCategory(v string) {
 	o.Category = &v
@@ -232,15 +187,6 @@ func (o *ReportTypesInner) GetVisibleOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Visible, true
-}
-
-// IsSetVisible returns a boolean if a field has been set.
-func (o *ReportTypesInner) IsSetVisible() bool {
-	if o != nil && !IsNil(o.Visible) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisible gets a reference to the given bool and assigns it to the Visible field.
@@ -266,15 +212,6 @@ func (o *ReportTypesInner) GetMasterOnlyOk() (*bool, bool) {
 	return o.MasterOnly, true
 }
 
-// IsSetMasterOnly returns a boolean if a field has been set.
-func (o *ReportTypesInner) IsSetMasterOnly() bool {
-	if o != nil && !IsNil(o.MasterOnly) {
-		return true
-	}
-
-	return false
-}
-
 // SetMasterOnly gets a reference to the given bool and assigns it to the MasterOnly field.
 func (o *ReportTypesInner) SetMasterOnly(v bool) {
 	o.MasterOnly = &v
@@ -298,15 +235,6 @@ func (o *ReportTypesInner) GetOwnerOnlyOk() (*bool, bool) {
 	return o.OwnerOnly, true
 }
 
-// IsSetOwnerOnly returns a boolean if a field has been set.
-func (o *ReportTypesInner) IsSetOwnerOnly() bool {
-	if o != nil && !IsNil(o.OwnerOnly) {
-		return true
-	}
-
-	return false
-}
-
 // SetOwnerOnly gets a reference to the given bool and assigns it to the OwnerOnly field.
 func (o *ReportTypesInner) SetOwnerOnly(v bool) {
 	o.OwnerOnly = &v
@@ -328,15 +256,6 @@ func (o *ReportTypesInner) GetSupportsAllZoneTypesOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.SupportsAllZoneTypes, true
-}
-
-// IsSetSupportsAllZoneTypes returns a boolean if a field has been set.
-func (o *ReportTypesInner) IsSetSupportsAllZoneTypes() bool {
-	if o != nil && !IsNil(o.SupportsAllZoneTypes) {
-		return true
-	}
-
-	return false
 }
 
 // SetSupportsAllZoneTypes gets a reference to the given bool and assigns it to the SupportsAllZoneTypes field.
@@ -363,28 +282,9 @@ func (o *ReportTypesInner) GetIsPluginOk() (*bool, bool) {
 	return o.IsPlugin.Get(), o.IsPlugin.IsSet()
 }
 
-// IsSetIsPlugin returns a boolean if a field has been set.
-func (o *ReportTypesInner) IsSetIsPlugin() bool {
-	if o != nil && o.IsPlugin.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetIsPlugin gets a reference to the given NullableBool and assigns it to the IsPlugin field.
 func (o *ReportTypesInner) SetIsPlugin(v bool) {
 	o.IsPlugin.Set(&v)
-}
-
-// SetIsPluginNil sets the value for IsPlugin to be an explicit nil
-func (o *ReportTypesInner) SetIsPluginNil() {
-	o.IsPlugin.Set(nil)
-}
-
-// UnsetIsPlugin ensures that no value is present for IsPlugin, not even an explicit nil
-func (o *ReportTypesInner) UnsetIsPlugin() {
-	o.IsPlugin.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -403,15 +303,6 @@ func (o *ReportTypesInner) GetDateCreatedOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.DateCreated, true
-}
-
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *ReportTypesInner) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
@@ -437,15 +328,6 @@ func (o *ReportTypesInner) GetOptionTypesOk() ([]ReportTypesInnerOptionTypesInne
 	return o.OptionTypes, true
 }
 
-// IsSetOptionTypes returns a boolean if a field has been set.
-func (o *ReportTypesInner) IsSetOptionTypes() bool {
-	if o != nil && !IsNil(o.OptionTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetOptionTypes gets a reference to the given []ReportTypesInnerOptionTypesInner and assigns it to the OptionTypes field.
 func (o *ReportTypesInner) SetOptionTypes(v []ReportTypesInnerOptionTypesInner) {
 	o.OptionTypes = v
@@ -467,15 +349,6 @@ func (o *ReportTypesInner) GetSupportedZoneTypesOk() ([]ReportTypesInnerSupporte
 		return nil, false
 	}
 	return o.SupportedZoneTypes, true
-}
-
-// IsSetSupportedZoneTypes returns a boolean if a field has been set.
-func (o *ReportTypesInner) IsSetSupportedZoneTypes() bool {
-	if o != nil && !IsNil(o.SupportedZoneTypes) {
-		return true
-	}
-
-	return false
 }
 
 // SetSupportedZoneTypes gets a reference to the given []ReportTypesInnerSupportedZoneTypesInner and assigns it to the SupportedZoneTypes field.

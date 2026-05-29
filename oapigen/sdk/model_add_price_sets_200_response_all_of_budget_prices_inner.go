@@ -81,15 +81,6 @@ func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) GetIdOk() (*int64, bool)
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) SetId(v int64) {
 	o.Id = &v
@@ -111,15 +102,6 @@ func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) GetNameOk() (*string, bo
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -145,15 +127,6 @@ func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) GetCodeOk() (*string, bo
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) SetCode(v string) {
 	o.Code = &v
@@ -175,15 +148,6 @@ func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) GetActiveOk() (*bool, bo
 		return nil, false
 	}
 	return o.Active, true
-}
-
-// IsSetActive returns a boolean if a field has been set.
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
 }
 
 // SetActive gets a reference to the given bool and assigns it to the Active field.
@@ -209,15 +173,6 @@ func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) GetPriceTypeOk() (*strin
 	return o.PriceType, true
 }
 
-// IsSetPriceType returns a boolean if a field has been set.
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) IsSetPriceType() bool {
-	if o != nil && !IsNil(o.PriceType) {
-		return true
-	}
-
-	return false
-}
-
 // SetPriceType gets a reference to the given string and assigns it to the PriceType field.
 func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) SetPriceType(v string) {
 	o.PriceType = &v
@@ -239,15 +194,6 @@ func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) GetPriceUnitOk() (*strin
 		return nil, false
 	}
 	return o.PriceUnit, true
-}
-
-// IsSetPriceUnit returns a boolean if a field has been set.
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) IsSetPriceUnit() bool {
-	if o != nil && !IsNil(o.PriceUnit) {
-		return true
-	}
-
-	return false
 }
 
 // SetPriceUnit gets a reference to the given string and assigns it to the PriceUnit field.
@@ -274,28 +220,9 @@ func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) GetAdditionalPriceUnitOk
 	return o.AdditionalPriceUnit.Get(), o.AdditionalPriceUnit.IsSet()
 }
 
-// IsSetAdditionalPriceUnit returns a boolean if a field has been set.
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) IsSetAdditionalPriceUnit() bool {
-	if o != nil && o.AdditionalPriceUnit.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAdditionalPriceUnit gets a reference to the given NullableString and assigns it to the AdditionalPriceUnit field.
 func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) SetAdditionalPriceUnit(v string) {
 	o.AdditionalPriceUnit.Set(&v)
-}
-
-// SetAdditionalPriceUnitNil sets the value for AdditionalPriceUnit to be an explicit nil
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) SetAdditionalPriceUnitNil() {
-	o.AdditionalPriceUnit.Set(nil)
-}
-
-// UnsetAdditionalPriceUnit ensures that no value is present for AdditionalPriceUnit, not even an explicit nil
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) UnsetAdditionalPriceUnit() {
-	o.AdditionalPriceUnit.Unset()
 }
 
 // GetPrice returns the Price field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -317,28 +244,9 @@ func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) GetPriceOk() (*float32, 
 	return o.Price.Get(), o.Price.IsSet()
 }
 
-// IsSetPrice returns a boolean if a field has been set.
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) IsSetPrice() bool {
-	if o != nil && o.Price.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPrice gets a reference to the given NullableFloat32 and assigns it to the Price field.
 func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) SetPrice(v float32) {
 	o.Price.Set(&v)
-}
-
-// SetPriceNil sets the value for Price to be an explicit nil
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) SetPriceNil() {
-	o.Price.Set(nil)
-}
-
-// UnsetPrice ensures that no value is present for Price, not even an explicit nil
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) UnsetPrice() {
-	o.Price.Unset()
 }
 
 // GetCustomPrice returns the CustomPrice field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -360,28 +268,9 @@ func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) GetCustomPriceOk() (*flo
 	return o.CustomPrice.Get(), o.CustomPrice.IsSet()
 }
 
-// IsSetCustomPrice returns a boolean if a field has been set.
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) IsSetCustomPrice() bool {
-	if o != nil && o.CustomPrice.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCustomPrice gets a reference to the given NullableFloat32 and assigns it to the CustomPrice field.
 func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) SetCustomPrice(v float32) {
 	o.CustomPrice.Set(&v)
-}
-
-// SetCustomPriceNil sets the value for CustomPrice to be an explicit nil
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) SetCustomPriceNil() {
-	o.CustomPrice.Set(nil)
-}
-
-// UnsetCustomPrice ensures that no value is present for CustomPrice, not even an explicit nil
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) UnsetCustomPrice() {
-	o.CustomPrice.Unset()
 }
 
 // GetMarkupType returns the MarkupType field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -403,28 +292,9 @@ func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) GetMarkupTypeOk() (*stri
 	return o.MarkupType.Get(), o.MarkupType.IsSet()
 }
 
-// IsSetMarkupType returns a boolean if a field has been set.
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) IsSetMarkupType() bool {
-	if o != nil && o.MarkupType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMarkupType gets a reference to the given NullableString and assigns it to the MarkupType field.
 func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) SetMarkupType(v string) {
 	o.MarkupType.Set(&v)
-}
-
-// SetMarkupTypeNil sets the value for MarkupType to be an explicit nil
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) SetMarkupTypeNil() {
-	o.MarkupType.Set(nil)
-}
-
-// UnsetMarkupType ensures that no value is present for MarkupType, not even an explicit nil
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) UnsetMarkupType() {
-	o.MarkupType.Unset()
 }
 
 // GetMarkup returns the Markup field value if set, zero value otherwise.
@@ -443,15 +313,6 @@ func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) GetMarkupOk() (*int64, b
 		return nil, false
 	}
 	return o.Markup, true
-}
-
-// IsSetMarkup returns a boolean if a field has been set.
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) IsSetMarkup() bool {
-	if o != nil && !IsNil(o.Markup) {
-		return true
-	}
-
-	return false
 }
 
 // SetMarkup gets a reference to the given int64 and assigns it to the Markup field.
@@ -478,28 +339,9 @@ func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) GetMarkupPercentOk() (*f
 	return o.MarkupPercent.Get(), o.MarkupPercent.IsSet()
 }
 
-// IsSetMarkupPercent returns a boolean if a field has been set.
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) IsSetMarkupPercent() bool {
-	if o != nil && o.MarkupPercent.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMarkupPercent gets a reference to the given NullableFloat32 and assigns it to the MarkupPercent field.
 func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) SetMarkupPercent(v float32) {
 	o.MarkupPercent.Set(&v)
-}
-
-// SetMarkupPercentNil sets the value for MarkupPercent to be an explicit nil
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) SetMarkupPercentNil() {
-	o.MarkupPercent.Set(nil)
-}
-
-// UnsetMarkupPercent ensures that no value is present for MarkupPercent, not even an explicit nil
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) UnsetMarkupPercent() {
-	o.MarkupPercent.Unset()
 }
 
 // GetCost returns the Cost field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -521,28 +363,9 @@ func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) GetCostOk() (*float32, b
 	return o.Cost.Get(), o.Cost.IsSet()
 }
 
-// IsSetCost returns a boolean if a field has been set.
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) IsSetCost() bool {
-	if o != nil && o.Cost.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCost gets a reference to the given NullableFloat32 and assigns it to the Cost field.
 func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) SetCost(v float32) {
 	o.Cost.Set(&v)
-}
-
-// SetCostNil sets the value for Cost to be an explicit nil
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) SetCostNil() {
-	o.Cost.Set(nil)
-}
-
-// UnsetCost ensures that no value is present for Cost, not even an explicit nil
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) UnsetCost() {
-	o.Cost.Unset()
 }
 
 // GetCurrency returns the Currency field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -564,28 +387,9 @@ func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) GetCurrencyOk() (*string
 	return o.Currency.Get(), o.Currency.IsSet()
 }
 
-// IsSetCurrency returns a boolean if a field has been set.
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) IsSetCurrency() bool {
-	if o != nil && o.Currency.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCurrency gets a reference to the given NullableString and assigns it to the Currency field.
 func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) SetCurrency(v string) {
 	o.Currency.Set(&v)
-}
-
-// SetCurrencyNil sets the value for Currency to be an explicit nil
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) SetCurrencyNil() {
-	o.Currency.Set(nil)
-}
-
-// UnsetCurrency ensures that no value is present for Currency, not even an explicit nil
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) UnsetCurrency() {
-	o.Currency.Unset()
 }
 
 // GetIncurCharges returns the IncurCharges field value if set, zero value otherwise.
@@ -604,15 +408,6 @@ func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) GetIncurChargesOk() (*st
 		return nil, false
 	}
 	return o.IncurCharges, true
-}
-
-// IsSetIncurCharges returns a boolean if a field has been set.
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) IsSetIncurCharges() bool {
-	if o != nil && !IsNil(o.IncurCharges) {
-		return true
-	}
-
-	return false
 }
 
 // SetIncurCharges gets a reference to the given string and assigns it to the IncurCharges field.
@@ -639,28 +434,9 @@ func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) GetPlatformOk() (*string
 	return o.Platform.Get(), o.Platform.IsSet()
 }
 
-// IsSetPlatform returns a boolean if a field has been set.
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) IsSetPlatform() bool {
-	if o != nil && o.Platform.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPlatform gets a reference to the given NullableString and assigns it to the Platform field.
 func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) SetPlatform(v string) {
 	o.Platform.Set(&v)
-}
-
-// SetPlatformNil sets the value for Platform to be an explicit nil
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) SetPlatformNil() {
-	o.Platform.Set(nil)
-}
-
-// UnsetPlatform ensures that no value is present for Platform, not even an explicit nil
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) UnsetPlatform() {
-	o.Platform.Unset()
 }
 
 // GetSoftware returns the Software field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -682,28 +458,9 @@ func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) GetSoftwareOk() (*string
 	return o.Software.Get(), o.Software.IsSet()
 }
 
-// IsSetSoftware returns a boolean if a field has been set.
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) IsSetSoftware() bool {
-	if o != nil && o.Software.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSoftware gets a reference to the given NullableString and assigns it to the Software field.
 func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) SetSoftware(v string) {
 	o.Software.Set(&v)
-}
-
-// SetSoftwareNil sets the value for Software to be an explicit nil
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) SetSoftwareNil() {
-	o.Software.Set(nil)
-}
-
-// UnsetSoftware ensures that no value is present for Software, not even an explicit nil
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) UnsetSoftware() {
-	o.Software.Unset()
 }
 
 // GetVolumeType returns the VolumeType field value if set, zero value otherwise.
@@ -722,15 +479,6 @@ func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) GetVolumeTypeOk() (*AddP
 		return nil, false
 	}
 	return o.VolumeType, true
-}
-
-// IsSetVolumeType returns a boolean if a field has been set.
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) IsSetVolumeType() bool {
-	if o != nil && !IsNil(o.VolumeType) {
-		return true
-	}
-
-	return false
 }
 
 // SetVolumeType gets a reference to the given AddPriceSets200ResponseAllOfBudgetPricesInnerVolumeType and assigns it to the VolumeType field.
@@ -757,28 +505,9 @@ func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) GetDatastoreOk() (*strin
 	return o.Datastore.Get(), o.Datastore.IsSet()
 }
 
-// IsSetDatastore returns a boolean if a field has been set.
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) IsSetDatastore() bool {
-	if o != nil && o.Datastore.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDatastore gets a reference to the given NullableString and assigns it to the Datastore field.
 func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) SetDatastore(v string) {
 	o.Datastore.Set(&v)
-}
-
-// SetDatastoreNil sets the value for Datastore to be an explicit nil
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) SetDatastoreNil() {
-	o.Datastore.Set(nil)
-}
-
-// UnsetDatastore ensures that no value is present for Datastore, not even an explicit nil
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) UnsetDatastore() {
-	o.Datastore.Unset()
 }
 
 // GetCrossCloudApply returns the CrossCloudApply field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -800,28 +529,9 @@ func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) GetCrossCloudApplyOk() (
 	return o.CrossCloudApply.Get(), o.CrossCloudApply.IsSet()
 }
 
-// IsSetCrossCloudApply returns a boolean if a field has been set.
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) IsSetCrossCloudApply() bool {
-	if o != nil && o.CrossCloudApply.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCrossCloudApply gets a reference to the given NullableBool and assigns it to the CrossCloudApply field.
 func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) SetCrossCloudApply(v bool) {
 	o.CrossCloudApply.Set(&v)
-}
-
-// SetCrossCloudApplyNil sets the value for CrossCloudApply to be an explicit nil
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) SetCrossCloudApplyNil() {
-	o.CrossCloudApply.Set(nil)
-}
-
-// UnsetCrossCloudApply ensures that no value is present for CrossCloudApply, not even an explicit nil
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) UnsetCrossCloudApply() {
-	o.CrossCloudApply.Unset()
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -843,28 +553,9 @@ func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) GetAccountOk() (*string,
 	return o.Account.Get(), o.Account.IsSet()
 }
 
-// IsSetAccount returns a boolean if a field has been set.
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) IsSetAccount() bool {
-	if o != nil && o.Account.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAccount gets a reference to the given NullableString and assigns it to the Account field.
 func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) SetAccount(v string) {
 	o.Account.Set(&v)
-}
-
-// SetAccountNil sets the value for Account to be an explicit nil
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) SetAccountNil() {
-	o.Account.Set(nil)
-}
-
-// UnsetAccount ensures that no value is present for Account, not even an explicit nil
-func (o *AddPriceSets200ResponseAllOfBudgetPricesInner) UnsetAccount() {
-	o.Account.Unset()
 }
 
 func (o AddPriceSets200ResponseAllOfBudgetPricesInner) MarshalJSON() ([]byte, error) {

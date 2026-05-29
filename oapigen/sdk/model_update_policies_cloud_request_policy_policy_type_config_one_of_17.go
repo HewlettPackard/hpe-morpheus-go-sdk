@@ -61,15 +61,6 @@ func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf17) GetMaxSnapshot
 	return o.MaxSnapshots, true
 }
 
-// IsSetMaxSnapshots returns a boolean if a field has been set.
-func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf17) IsSetMaxSnapshots() bool {
-	if o != nil && !IsNil(o.MaxSnapshots) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxSnapshots gets a reference to the given string and assigns it to the MaxSnapshots field.
 func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf17) SetMaxSnapshots(v string) {
 	o.MaxSnapshots = &v

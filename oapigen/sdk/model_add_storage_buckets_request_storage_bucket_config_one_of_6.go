@@ -66,15 +66,6 @@ func (o *AddStorageBucketsRequestStorageBucketConfigOneOf6) GetUsernameOk() (*st
 	return o.Username, true
 }
 
-// IsSetUsername returns a boolean if a field has been set.
-func (o *AddStorageBucketsRequestStorageBucketConfigOneOf6) IsSetUsername() bool {
-	if o != nil && !IsNil(o.Username) {
-		return true
-	}
-
-	return false
-}
-
 // SetUsername gets a reference to the given string and assigns it to the Username field.
 func (o *AddStorageBucketsRequestStorageBucketConfigOneOf6) SetUsername(v string) {
 	o.Username = &v
@@ -98,15 +89,6 @@ func (o *AddStorageBucketsRequestStorageBucketConfigOneOf6) GetApiKeyOk() (*stri
 	return o.ApiKey, true
 }
 
-// IsSetApiKey returns a boolean if a field has been set.
-func (o *AddStorageBucketsRequestStorageBucketConfigOneOf6) IsSetApiKey() bool {
-	if o != nil && !IsNil(o.ApiKey) {
-		return true
-	}
-
-	return false
-}
-
 // SetApiKey gets a reference to the given string and assigns it to the ApiKey field.
 func (o *AddStorageBucketsRequestStorageBucketConfigOneOf6) SetApiKey(v string) {
 	o.ApiKey = &v
@@ -128,15 +110,6 @@ func (o *AddStorageBucketsRequestStorageBucketConfigOneOf6) GetRegionOk() (*stri
 		return nil, false
 	}
 	return o.Region, true
-}
-
-// IsSetRegion returns a boolean if a field has been set.
-func (o *AddStorageBucketsRequestStorageBucketConfigOneOf6) IsSetRegion() bool {
-	if o != nil && !IsNil(o.Region) {
-		return true
-	}
-
-	return false
 }
 
 // SetRegion gets a reference to the given string and assigns it to the Region field.

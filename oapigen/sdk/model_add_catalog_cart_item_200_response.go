@@ -62,15 +62,6 @@ func (o *AddCatalogCartItem200Response) GetItemOk() (*AddCatalogCartItem200Respo
 	return o.Item, true
 }
 
-// IsSetItem returns a boolean if a field has been set.
-func (o *AddCatalogCartItem200Response) IsSetItem() bool {
-	if o != nil && !IsNil(o.Item) {
-		return true
-	}
-
-	return false
-}
-
 // SetItem gets a reference to the given AddCatalogCartItem200ResponseAllOfItem and assigns it to the Item field.
 func (o *AddCatalogCartItem200Response) SetItem(v AddCatalogCartItem200ResponseAllOfItem) {
 	o.Item = &v
@@ -92,15 +83,6 @@ func (o *AddCatalogCartItem200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *AddCatalogCartItem200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

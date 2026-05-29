@@ -63,15 +63,6 @@ func (o *GetNetworkDhcpRelays200Response) GetNetworkDhcpRelaysOk() (*interface{}
 	return &o.NetworkDhcpRelays, true
 }
 
-// IsSetNetworkDhcpRelays returns a boolean if a field has been set.
-func (o *GetNetworkDhcpRelays200Response) IsSetNetworkDhcpRelays() bool {
-	if o != nil && !IsNil(o.NetworkDhcpRelays) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkDhcpRelays gets a reference to the given interface{} and assigns it to the NetworkDhcpRelays field.
 func (o *GetNetworkDhcpRelays200Response) SetNetworkDhcpRelays(v interface{}) {
 	o.NetworkDhcpRelays = v
@@ -93,15 +84,6 @@ func (o *GetNetworkDhcpRelays200Response) GetMetaOk() (*ListApprovals200Response
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *GetNetworkDhcpRelays200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

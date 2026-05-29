@@ -62,15 +62,6 @@ func (o *CreateInstanceSchedule200Response) GetInstanceScheduleOk() (*CreateInst
 	return o.InstanceSchedule, true
 }
 
-// IsSetInstanceSchedule returns a boolean if a field has been set.
-func (o *CreateInstanceSchedule200Response) IsSetInstanceSchedule() bool {
-	if o != nil && !IsNil(o.InstanceSchedule) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstanceSchedule gets a reference to the given CreateInstanceSchedule200ResponseAllOfInstanceSchedule and assigns it to the InstanceSchedule field.
 func (o *CreateInstanceSchedule200Response) SetInstanceSchedule(v CreateInstanceSchedule200ResponseAllOfInstanceSchedule) {
 	o.InstanceSchedule = &v
@@ -92,15 +83,6 @@ func (o *CreateInstanceSchedule200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *CreateInstanceSchedule200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

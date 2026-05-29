@@ -62,15 +62,6 @@ func (o *GetBudgets200Response) GetBudgetOk() (*GetBudgets200ResponseAllOfBudget
 	return o.Budget, true
 }
 
-// IsSetBudget returns a boolean if a field has been set.
-func (o *GetBudgets200Response) IsSetBudget() bool {
-	if o != nil && !IsNil(o.Budget) {
-		return true
-	}
-
-	return false
-}
-
 // SetBudget gets a reference to the given GetBudgets200ResponseAllOfBudget and assigns it to the Budget field.
 func (o *GetBudgets200Response) SetBudget(v GetBudgets200ResponseAllOfBudget) {
 	o.Budget = &v
@@ -92,15 +83,6 @@ func (o *GetBudgets200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *GetBudgets200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

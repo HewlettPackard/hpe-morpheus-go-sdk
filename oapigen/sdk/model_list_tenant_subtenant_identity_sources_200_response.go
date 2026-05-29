@@ -62,15 +62,6 @@ func (o *ListTenantSubtenantIdentitySources200Response) GetUserSourcesOk() ([]Li
 	return o.UserSources, true
 }
 
-// IsSetUserSources returns a boolean if a field has been set.
-func (o *ListTenantSubtenantIdentitySources200Response) IsSetUserSources() bool {
-	if o != nil && !IsNil(o.UserSources) {
-		return true
-	}
-
-	return false
-}
-
 // SetUserSources gets a reference to the given []ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInner and assigns it to the UserSources field.
 func (o *ListTenantSubtenantIdentitySources200Response) SetUserSources(v []ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInner) {
 	o.UserSources = v
@@ -92,15 +83,6 @@ func (o *ListTenantSubtenantIdentitySources200Response) GetMetaOk() (*ListTenant
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListTenantSubtenantIdentitySources200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListTenantSubtenantIdentitySources200ResponseAllOfMeta and assigns it to the Meta field.

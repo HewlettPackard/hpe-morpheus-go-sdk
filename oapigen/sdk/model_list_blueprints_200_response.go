@@ -62,15 +62,6 @@ func (o *ListBlueprints200Response) GetBlueprintsOk() ([]ListBlueprints200Respon
 	return o.Blueprints, true
 }
 
-// IsSetBlueprints returns a boolean if a field has been set.
-func (o *ListBlueprints200Response) IsSetBlueprints() bool {
-	if o != nil && !IsNil(o.Blueprints) {
-		return true
-	}
-
-	return false
-}
-
 // SetBlueprints gets a reference to the given []ListBlueprints200ResponseAllOfBlueprintsInner and assigns it to the Blueprints field.
 func (o *ListBlueprints200Response) SetBlueprints(v []ListBlueprints200ResponseAllOfBlueprintsInner) {
 	o.Blueprints = v
@@ -92,15 +83,6 @@ func (o *ListBlueprints200Response) GetMetaOk() (*ListApprovals200ResponseAllOfM
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListBlueprints200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

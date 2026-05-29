@@ -62,15 +62,6 @@ func (o *AllocateNetworkFloatingIp200Response) GetSuccessOk() (*bool, bool) {
 	return o.Success, true
 }
 
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *AllocateNetworkFloatingIp200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
-}
-
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.
 func (o *AllocateNetworkFloatingIp200Response) SetSuccess(v bool) {
 	o.Success = &v
@@ -92,15 +83,6 @@ func (o *AllocateNetworkFloatingIp200Response) GetNetworkFloatingIpOk() (*Alloca
 		return nil, false
 	}
 	return o.NetworkFloatingIp, true
-}
-
-// IsSetNetworkFloatingIp returns a boolean if a field has been set.
-func (o *AllocateNetworkFloatingIp200Response) IsSetNetworkFloatingIp() bool {
-	if o != nil && !IsNil(o.NetworkFloatingIp) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkFloatingIp gets a reference to the given AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp and assigns it to the NetworkFloatingIp field.

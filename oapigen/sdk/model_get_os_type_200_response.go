@@ -61,15 +61,6 @@ func (o *GetOsType200Response) GetOsTypeOk() (*GetOsType200ResponseOsType, bool)
 	return o.OsType, true
 }
 
-// IsSetOsType returns a boolean if a field has been set.
-func (o *GetOsType200Response) IsSetOsType() bool {
-	if o != nil && !IsNil(o.OsType) {
-		return true
-	}
-
-	return false
-}
-
 // SetOsType gets a reference to the given GetOsType200ResponseOsType and assigns it to the OsType field.
 func (o *GetOsType200Response) SetOsType(v GetOsType200ResponseOsType) {
 	o.OsType = &v

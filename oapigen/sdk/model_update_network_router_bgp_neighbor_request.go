@@ -61,15 +61,6 @@ func (o *UpdateNetworkRouterBgpNeighborRequest) GetNetworkRouterBgpNeighborOk() 
 	return o.NetworkRouterBgpNeighbor, true
 }
 
-// IsSetNetworkRouterBgpNeighbor returns a boolean if a field has been set.
-func (o *UpdateNetworkRouterBgpNeighborRequest) IsSetNetworkRouterBgpNeighbor() bool {
-	if o != nil && !IsNil(o.NetworkRouterBgpNeighbor) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkRouterBgpNeighbor gets a reference to the given UpdateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor and assigns it to the NetworkRouterBgpNeighbor field.
 func (o *UpdateNetworkRouterBgpNeighborRequest) SetNetworkRouterBgpNeighbor(v UpdateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) {
 	o.NetworkRouterBgpNeighbor = &v

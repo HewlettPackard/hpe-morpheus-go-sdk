@@ -74,15 +74,6 @@ func (o *ClusterCreateConfigTemplateParameter) GetDnsPrefixOk() (*string, bool) 
 	return o.DnsPrefix, true
 }
 
-// IsSetDnsPrefix returns a boolean if a field has been set.
-func (o *ClusterCreateConfigTemplateParameter) IsSetDnsPrefix() bool {
-	if o != nil && !IsNil(o.DnsPrefix) {
-		return true
-	}
-
-	return false
-}
-
 // SetDnsPrefix gets a reference to the given string and assigns it to the DnsPrefix field.
 func (o *ClusterCreateConfigTemplateParameter) SetDnsPrefix(v string) {
 	o.DnsPrefix = &v
@@ -104,15 +95,6 @@ func (o *ClusterCreateConfigTemplateParameter) GetOnDiskSizeGBOk() (*int64, bool
 		return nil, false
 	}
 	return o.OnDiskSizeGB, true
-}
-
-// IsSetOnDiskSizeGB returns a boolean if a field has been set.
-func (o *ClusterCreateConfigTemplateParameter) IsSetOnDiskSizeGB() bool {
-	if o != nil && !IsNil(o.OnDiskSizeGB) {
-		return true
-	}
-
-	return false
 }
 
 // SetOnDiskSizeGB gets a reference to the given int64 and assigns it to the OnDiskSizeGB field.
@@ -138,15 +120,6 @@ func (o *ClusterCreateConfigTemplateParameter) GetNodeVMSizeOk() (*int64, bool) 
 	return o.NodeVMSize, true
 }
 
-// IsSetNodeVMSize returns a boolean if a field has been set.
-func (o *ClusterCreateConfigTemplateParameter) IsSetNodeVMSize() bool {
-	if o != nil && !IsNil(o.NodeVMSize) {
-		return true
-	}
-
-	return false
-}
-
 // SetNodeVMSize gets a reference to the given int64 and assigns it to the NodeVMSize field.
 func (o *ClusterCreateConfigTemplateParameter) SetNodeVMSize(v int64) {
 	o.NodeVMSize = &v
@@ -168,15 +141,6 @@ func (o *ClusterCreateConfigTemplateParameter) GetVnetSubnetIDOk() (*string, boo
 		return nil, false
 	}
 	return o.VnetSubnetID, true
-}
-
-// IsSetVnetSubnetID returns a boolean if a field has been set.
-func (o *ClusterCreateConfigTemplateParameter) IsSetVnetSubnetID() bool {
-	if o != nil && !IsNil(o.VnetSubnetID) {
-		return true
-	}
-
-	return false
 }
 
 // SetVnetSubnetID gets a reference to the given string and assigns it to the VnetSubnetID field.
@@ -202,15 +166,6 @@ func (o *ClusterCreateConfigTemplateParameter) GetServiceCidrOk() (*string, bool
 	return o.ServiceCidr, true
 }
 
-// IsSetServiceCidr returns a boolean if a field has been set.
-func (o *ClusterCreateConfigTemplateParameter) IsSetServiceCidr() bool {
-	if o != nil && !IsNil(o.ServiceCidr) {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceCidr gets a reference to the given string and assigns it to the ServiceCidr field.
 func (o *ClusterCreateConfigTemplateParameter) SetServiceCidr(v string) {
 	o.ServiceCidr = &v
@@ -234,15 +189,6 @@ func (o *ClusterCreateConfigTemplateParameter) GetDnsServiceIPOk() (*string, boo
 	return o.DnsServiceIP, true
 }
 
-// IsSetDnsServiceIP returns a boolean if a field has been set.
-func (o *ClusterCreateConfigTemplateParameter) IsSetDnsServiceIP() bool {
-	if o != nil && !IsNil(o.DnsServiceIP) {
-		return true
-	}
-
-	return false
-}
-
 // SetDnsServiceIP gets a reference to the given string and assigns it to the DnsServiceIP field.
 func (o *ClusterCreateConfigTemplateParameter) SetDnsServiceIP(v string) {
 	o.DnsServiceIP = &v
@@ -264,15 +210,6 @@ func (o *ClusterCreateConfigTemplateParameter) GetDockerBridgeCidrOk() (*string,
 		return nil, false
 	}
 	return o.DockerBridgeCidr, true
-}
-
-// IsSetDockerBridgeCidr returns a boolean if a field has been set.
-func (o *ClusterCreateConfigTemplateParameter) IsSetDockerBridgeCidr() bool {
-	if o != nil && !IsNil(o.DockerBridgeCidr) {
-		return true
-	}
-
-	return false
 }
 
 // SetDockerBridgeCidr gets a reference to the given string and assigns it to the DockerBridgeCidr field.

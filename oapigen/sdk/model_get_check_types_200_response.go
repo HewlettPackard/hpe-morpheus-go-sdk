@@ -61,15 +61,6 @@ func (o *GetCheckTypes200Response) GetCheckTypeOk() (*GetCheckTypes200ResponseCh
 	return o.CheckType, true
 }
 
-// IsSetCheckType returns a boolean if a field has been set.
-func (o *GetCheckTypes200Response) IsSetCheckType() bool {
-	if o != nil && !IsNil(o.CheckType) {
-		return true
-	}
-
-	return false
-}
-
 // SetCheckType gets a reference to the given GetCheckTypes200ResponseCheckType and assigns it to the CheckType field.
 func (o *GetCheckTypes200Response) SetCheckType(v GetCheckTypes200ResponseCheckType) {
 	o.CheckType = &v

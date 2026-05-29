@@ -81,15 +81,6 @@ func (o *InstanceUpdateInstance) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *InstanceUpdateInstance) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *InstanceUpdateInstance) SetName(v string) {
 	o.Name = &v
@@ -111,15 +102,6 @@ func (o *InstanceUpdateInstance) GetDescriptionOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *InstanceUpdateInstance) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -145,15 +127,6 @@ func (o *InstanceUpdateInstance) GetInstanceContextOk() (*string, bool) {
 	return o.InstanceContext, true
 }
 
-// IsSetInstanceContext returns a boolean if a field has been set.
-func (o *InstanceUpdateInstance) IsSetInstanceContext() bool {
-	if o != nil && !IsNil(o.InstanceContext) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstanceContext gets a reference to the given string and assigns it to the InstanceContext field.
 func (o *InstanceUpdateInstance) SetInstanceContext(v string) {
 	o.InstanceContext = &v
@@ -175,15 +148,6 @@ func (o *InstanceUpdateInstance) GetLabelsOk() ([]string, bool) {
 		return nil, false
 	}
 	return o.Labels, true
-}
-
-// IsSetLabels returns a boolean if a field has been set.
-func (o *InstanceUpdateInstance) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
 }
 
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
@@ -209,15 +173,6 @@ func (o *InstanceUpdateInstance) GetTagsOk() ([]InstanceUpdateInstanceTagsInner,
 	return o.Tags, true
 }
 
-// IsSetTags returns a boolean if a field has been set.
-func (o *InstanceUpdateInstance) IsSetTags() bool {
-	if o != nil && !IsNil(o.Tags) {
-		return true
-	}
-
-	return false
-}
-
 // SetTags gets a reference to the given []InstanceUpdateInstanceTagsInner and assigns it to the Tags field.
 func (o *InstanceUpdateInstance) SetTags(v []InstanceUpdateInstanceTagsInner) {
 	o.Tags = v
@@ -239,15 +194,6 @@ func (o *InstanceUpdateInstance) GetAddTagsOk() ([]InstanceUpdateInstanceAddTags
 		return nil, false
 	}
 	return o.AddTags, true
-}
-
-// IsSetAddTags returns a boolean if a field has been set.
-func (o *InstanceUpdateInstance) IsSetAddTags() bool {
-	if o != nil && !IsNil(o.AddTags) {
-		return true
-	}
-
-	return false
 }
 
 // SetAddTags gets a reference to the given []InstanceUpdateInstanceAddTagsInner and assigns it to the AddTags field.
@@ -273,15 +219,6 @@ func (o *InstanceUpdateInstance) GetRemoveTagsOk() ([]InstanceUpdateInstanceRemo
 	return o.RemoveTags, true
 }
 
-// IsSetRemoveTags returns a boolean if a field has been set.
-func (o *InstanceUpdateInstance) IsSetRemoveTags() bool {
-	if o != nil && !IsNil(o.RemoveTags) {
-		return true
-	}
-
-	return false
-}
-
 // SetRemoveTags gets a reference to the given []InstanceUpdateInstanceRemoveTagsInner and assigns it to the RemoveTags field.
 func (o *InstanceUpdateInstance) SetRemoveTags(v []InstanceUpdateInstanceRemoveTagsInner) {
 	o.RemoveTags = v
@@ -303,15 +240,6 @@ func (o *InstanceUpdateInstance) GetPowerScheduleTypeOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.PowerScheduleType, true
-}
-
-// IsSetPowerScheduleType returns a boolean if a field has been set.
-func (o *InstanceUpdateInstance) IsSetPowerScheduleType() bool {
-	if o != nil && !IsNil(o.PowerScheduleType) {
-		return true
-	}
-
-	return false
 }
 
 // SetPowerScheduleType gets a reference to the given int64 and assigns it to the PowerScheduleType field.
@@ -337,15 +265,6 @@ func (o *InstanceUpdateInstance) GetSiteOk() (*InstanceUpdateInstanceSite, bool)
 	return o.Site, true
 }
 
-// IsSetSite returns a boolean if a field has been set.
-func (o *InstanceUpdateInstance) IsSetSite() bool {
-	if o != nil && !IsNil(o.Site) {
-		return true
-	}
-
-	return false
-}
-
 // SetSite gets a reference to the given InstanceUpdateInstanceSite and assigns it to the Site field.
 func (o *InstanceUpdateInstance) SetSite(v InstanceUpdateInstanceSite) {
 	o.Site = &v
@@ -369,15 +288,6 @@ func (o *InstanceUpdateInstance) GetOwnerIdOk() (*int64, bool) {
 	return o.OwnerId, true
 }
 
-// IsSetOwnerId returns a boolean if a field has been set.
-func (o *InstanceUpdateInstance) IsSetOwnerId() bool {
-	if o != nil && !IsNil(o.OwnerId) {
-		return true
-	}
-
-	return false
-}
-
 // SetOwnerId gets a reference to the given int64 and assigns it to the OwnerId field.
 func (o *InstanceUpdateInstance) SetOwnerId(v int64) {
 	o.OwnerId = &v
@@ -399,15 +309,6 @@ func (o *InstanceUpdateInstance) GetDisplayNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.DisplayName, true
-}
-
-// IsSetDisplayName returns a boolean if a field has been set.
-func (o *InstanceUpdateInstance) IsSetDisplayName() bool {
-	if o != nil && !IsNil(o.DisplayName) {
-		return true
-	}
-
-	return false
 }
 
 // SetDisplayName gets a reference to the given string and assigns it to the DisplayName field.

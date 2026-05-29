@@ -64,15 +64,6 @@ func (o *HealthElasticMaster) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *HealthElasticMaster) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given string and assigns it to the Id field.
 func (o *HealthElasticMaster) SetId(v string) {
 	o.Id = &v
@@ -94,15 +85,6 @@ func (o *HealthElasticMaster) GetHostOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Host, true
-}
-
-// IsSetHost returns a boolean if a field has been set.
-func (o *HealthElasticMaster) IsSetHost() bool {
-	if o != nil && !IsNil(o.Host) {
-		return true
-	}
-
-	return false
 }
 
 // SetHost gets a reference to the given string and assigns it to the Host field.
@@ -128,15 +110,6 @@ func (o *HealthElasticMaster) GetIpOk() (*string, bool) {
 	return o.Ip, true
 }
 
-// IsSetIp returns a boolean if a field has been set.
-func (o *HealthElasticMaster) IsSetIp() bool {
-	if o != nil && !IsNil(o.Ip) {
-		return true
-	}
-
-	return false
-}
-
 // SetIp gets a reference to the given string and assigns it to the Ip field.
 func (o *HealthElasticMaster) SetIp(v string) {
 	o.Ip = &v
@@ -158,15 +131,6 @@ func (o *HealthElasticMaster) GetNodeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Node, true
-}
-
-// IsSetNode returns a boolean if a field has been set.
-func (o *HealthElasticMaster) IsSetNode() bool {
-	if o != nil && !IsNil(o.Node) {
-		return true
-	}
-
-	return false
 }
 
 // SetNode gets a reference to the given string and assigns it to the Node field.

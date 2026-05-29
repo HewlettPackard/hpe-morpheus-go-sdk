@@ -62,15 +62,6 @@ func (o *LeaseAgentToken200ResponseHeaders) GetX_LEASE_TOKENOk() (*string, bool)
 	return o.X_LEASE_TOKEN, true
 }
 
-// IsSetX_LEASE_TOKEN returns a boolean if a field has been set.
-func (o *LeaseAgentToken200ResponseHeaders) IsSetX_LEASE_TOKEN() bool {
-	if o != nil && !IsNil(o.X_LEASE_TOKEN) {
-		return true
-	}
-
-	return false
-}
-
 // SetX_LEASE_TOKEN gets a reference to the given string and assigns it to the X_LEASE_TOKEN field.
 func (o *LeaseAgentToken200ResponseHeaders) SetX_LEASE_TOKEN(v string) {
 	o.X_LEASE_TOKEN = &v

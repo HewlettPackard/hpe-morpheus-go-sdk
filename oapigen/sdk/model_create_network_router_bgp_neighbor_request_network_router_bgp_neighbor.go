@@ -136,15 +136,6 @@ func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) GetDescr
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) SetDescription(v string) {
 	o.Description = &v
@@ -166,15 +157,6 @@ func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) GetForwa
 		return nil, false
 	}
 	return o.ForwardingAddress, true
-}
-
-// IsSetForwardingAddress returns a boolean if a field has been set.
-func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) IsSetForwardingAddress() bool {
-	if o != nil && !IsNil(o.ForwardingAddress) {
-		return true
-	}
-
-	return false
 }
 
 // SetForwardingAddress gets a reference to the given string and assigns it to the ForwardingAddress field.
@@ -200,15 +182,6 @@ func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) GetProto
 	return o.ProtocolAddress, true
 }
 
-// IsSetProtocolAddress returns a boolean if a field has been set.
-func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) IsSetProtocolAddress() bool {
-	if o != nil && !IsNil(o.ProtocolAddress) {
-		return true
-	}
-
-	return false
-}
-
 // SetProtocolAddress gets a reference to the given string and assigns it to the ProtocolAddress field.
 func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) SetProtocolAddress(v string) {
 	o.ProtocolAddress = &v
@@ -230,15 +203,6 @@ func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) GetRemot
 		return nil, false
 	}
 	return o.RemoteAs, true
-}
-
-// IsSetRemoteAs returns a boolean if a field has been set.
-func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) IsSetRemoteAs() bool {
-	if o != nil && !IsNil(o.RemoteAs) {
-		return true
-	}
-
-	return false
 }
 
 // SetRemoteAs gets a reference to the given string and assigns it to the RemoteAs field.
@@ -264,15 +228,6 @@ func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) GetWeigh
 	return o.Weight, true
 }
 
-// IsSetWeight returns a boolean if a field has been set.
-func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) IsSetWeight() bool {
-	if o != nil && !IsNil(o.Weight) {
-		return true
-	}
-
-	return false
-}
-
 // SetWeight gets a reference to the given int64 and assigns it to the Weight field.
 func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) SetWeight(v int64) {
 	o.Weight = &v
@@ -294,15 +249,6 @@ func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) GetKeepA
 		return nil, false
 	}
 	return o.KeepAlive, true
-}
-
-// IsSetKeepAlive returns a boolean if a field has been set.
-func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) IsSetKeepAlive() bool {
-	if o != nil && !IsNil(o.KeepAlive) {
-		return true
-	}
-
-	return false
 }
 
 // SetKeepAlive gets a reference to the given int64 and assigns it to the KeepAlive field.
@@ -328,15 +274,6 @@ func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) GetHoldD
 	return o.HoldDown, true
 }
 
-// IsSetHoldDown returns a boolean if a field has been set.
-func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) IsSetHoldDown() bool {
-	if o != nil && !IsNil(o.HoldDown) {
-		return true
-	}
-
-	return false
-}
-
 // SetHoldDown gets a reference to the given int64 and assigns it to the HoldDown field.
 func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) SetHoldDown(v int64) {
 	o.HoldDown = &v
@@ -358,15 +295,6 @@ func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) GetPassw
 		return nil, false
 	}
 	return o.Password, true
-}
-
-// IsSetPassword returns a boolean if a field has been set.
-func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) IsSetPassword() bool {
-	if o != nil && !IsNil(o.Password) {
-		return true
-	}
-
-	return false
 }
 
 // SetPassword gets a reference to the given string and assigns it to the Password field.
@@ -392,15 +320,6 @@ func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) GetRoute
 	return o.RouteFilteringType, true
 }
 
-// IsSetRouteFilteringType returns a boolean if a field has been set.
-func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) IsSetRouteFilteringType() bool {
-	if o != nil && !IsNil(o.RouteFilteringType) {
-		return true
-	}
-
-	return false
-}
-
 // SetRouteFilteringType gets a reference to the given string and assigns it to the RouteFilteringType field.
 func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) SetRouteFilteringType(v string) {
 	o.RouteFilteringType = &v
@@ -422,15 +341,6 @@ func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) GetRoute
 		return nil, false
 	}
 	return o.RouteFilteringIn, true
-}
-
-// IsSetRouteFilteringIn returns a boolean if a field has been set.
-func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) IsSetRouteFilteringIn() bool {
-	if o != nil && !IsNil(o.RouteFilteringIn) {
-		return true
-	}
-
-	return false
 }
 
 // SetRouteFilteringIn gets a reference to the given string and assigns it to the RouteFilteringIn field.
@@ -456,15 +366,6 @@ func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) GetRoute
 	return o.RouteFilteringOut, true
 }
 
-// IsSetRouteFilteringOut returns a boolean if a field has been set.
-func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) IsSetRouteFilteringOut() bool {
-	if o != nil && !IsNil(o.RouteFilteringOut) {
-		return true
-	}
-
-	return false
-}
-
 // SetRouteFilteringOut gets a reference to the given string and assigns it to the RouteFilteringOut field.
 func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) SetRouteFilteringOut(v string) {
 	o.RouteFilteringOut = &v
@@ -486,15 +387,6 @@ func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) GetBfdEn
 		return nil, false
 	}
 	return o.BfdEnabled, true
-}
-
-// IsSetBfdEnabled returns a boolean if a field has been set.
-func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) IsSetBfdEnabled() bool {
-	if o != nil && !IsNil(o.BfdEnabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetBfdEnabled gets a reference to the given CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighborBfdEnabled and assigns it to the BfdEnabled field.
@@ -520,15 +412,6 @@ func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) GetBfdIn
 	return o.BfdInterval, true
 }
 
-// IsSetBfdInterval returns a boolean if a field has been set.
-func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) IsSetBfdInterval() bool {
-	if o != nil && !IsNil(o.BfdInterval) {
-		return true
-	}
-
-	return false
-}
-
 // SetBfdInterval gets a reference to the given int64 and assigns it to the BfdInterval field.
 func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) SetBfdInterval(v int64) {
 	o.BfdInterval = &v
@@ -550,15 +433,6 @@ func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) GetBfdMu
 		return nil, false
 	}
 	return o.BfdMultiple, true
-}
-
-// IsSetBfdMultiple returns a boolean if a field has been set.
-func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) IsSetBfdMultiple() bool {
-	if o != nil && !IsNil(o.BfdMultiple) {
-		return true
-	}
-
-	return false
 }
 
 // SetBfdMultiple gets a reference to the given int64 and assigns it to the BfdMultiple field.
@@ -584,15 +458,6 @@ func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) GetAllow
 	return o.AllowAsIn, true
 }
 
-// IsSetAllowAsIn returns a boolean if a field has been set.
-func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) IsSetAllowAsIn() bool {
-	if o != nil && !IsNil(o.AllowAsIn) {
-		return true
-	}
-
-	return false
-}
-
 // SetAllowAsIn gets a reference to the given CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighborAllowAsIn and assigns it to the AllowAsIn field.
 func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) SetAllowAsIn(v CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighborAllowAsIn) {
 	o.AllowAsIn = &v
@@ -614,15 +479,6 @@ func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) GetHopLi
 		return nil, false
 	}
 	return o.HopLimit, true
-}
-
-// IsSetHopLimit returns a boolean if a field has been set.
-func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) IsSetHopLimit() bool {
-	if o != nil && !IsNil(o.HopLimit) {
-		return true
-	}
-
-	return false
 }
 
 // SetHopLimit gets a reference to the given int64 and assigns it to the HopLimit field.
@@ -648,15 +504,6 @@ func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) GetResta
 	return o.RestartMode, true
 }
 
-// IsSetRestartMode returns a boolean if a field has been set.
-func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) IsSetRestartMode() bool {
-	if o != nil && !IsNil(o.RestartMode) {
-		return true
-	}
-
-	return false
-}
-
 // SetRestartMode gets a reference to the given string and assigns it to the RestartMode field.
 func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) SetRestartMode(v string) {
 	o.RestartMode = &v
@@ -678,15 +525,6 @@ func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) GetConfi
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighbor) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given CreateNetworkRouterBgpNeighborRequestNetworkRouterBgpNeighborConfig and assigns it to the Config field.

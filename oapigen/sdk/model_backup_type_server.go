@@ -129,15 +129,6 @@ func (o *BackupTypeServer) GetServerIdOk() (*int64, bool) {
 	return o.ServerId, true
 }
 
-// IsSetServerId returns a boolean if a field has been set.
-func (o *BackupTypeServer) IsSetServerId() bool {
-	if o != nil && !IsNil(o.ServerId) {
-		return true
-	}
-
-	return false
-}
-
 // SetServerId gets a reference to the given int64 and assigns it to the ServerId field.
 func (o *BackupTypeServer) SetServerId(v int64) {
 	o.ServerId = &v
@@ -209,15 +200,6 @@ func (o *BackupTypeServer) GetJobIdOk() (*int64, bool) {
 	return o.JobId, true
 }
 
-// IsSetJobId returns a boolean if a field has been set.
-func (o *BackupTypeServer) IsSetJobId() bool {
-	if o != nil && !IsNil(o.JobId) {
-		return true
-	}
-
-	return false
-}
-
 // SetJobId gets a reference to the given int64 and assigns it to the JobId field.
 func (o *BackupTypeServer) SetJobId(v int64) {
 	o.JobId = &v
@@ -239,15 +221,6 @@ func (o *BackupTypeServer) GetJobNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.JobName, true
-}
-
-// IsSetJobName returns a boolean if a field has been set.
-func (o *BackupTypeServer) IsSetJobName() bool {
-	if o != nil && !IsNil(o.JobName) {
-		return true
-	}
-
-	return false
 }
 
 // SetJobName gets a reference to the given string and assigns it to the JobName field.
@@ -273,15 +246,6 @@ func (o *BackupTypeServer) GetJobScheduleOk() (*int64, bool) {
 	return o.JobSchedule, true
 }
 
-// IsSetJobSchedule returns a boolean if a field has been set.
-func (o *BackupTypeServer) IsSetJobSchedule() bool {
-	if o != nil && !IsNil(o.JobSchedule) {
-		return true
-	}
-
-	return false
-}
-
 // SetJobSchedule gets a reference to the given int64 and assigns it to the JobSchedule field.
 func (o *BackupTypeServer) SetJobSchedule(v int64) {
 	o.JobSchedule = &v
@@ -303,15 +267,6 @@ func (o *BackupTypeServer) GetRetentionCountOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.RetentionCount, true
-}
-
-// IsSetRetentionCount returns a boolean if a field has been set.
-func (o *BackupTypeServer) IsSetRetentionCount() bool {
-	if o != nil && !IsNil(o.RetentionCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetRetentionCount gets a reference to the given int64 and assigns it to the RetentionCount field.

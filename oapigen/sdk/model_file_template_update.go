@@ -80,15 +80,6 @@ func (o *FileTemplateUpdate) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *FileTemplateUpdate) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *FileTemplateUpdate) SetName(v string) {
 	o.Name = &v
@@ -111,15 +102,6 @@ func (o *FileTemplateUpdate) GetLabelsOk() ([]string, bool) {
 		return nil, false
 	}
 	return o.Labels, true
-}
-
-// IsSetLabels returns a boolean if a field has been set.
-func (o *FileTemplateUpdate) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
 }
 
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
@@ -145,15 +127,6 @@ func (o *FileTemplateUpdate) GetFileNameOk() (*string, bool) {
 	return o.FileName, true
 }
 
-// IsSetFileName returns a boolean if a field has been set.
-func (o *FileTemplateUpdate) IsSetFileName() bool {
-	if o != nil && !IsNil(o.FileName) {
-		return true
-	}
-
-	return false
-}
-
 // SetFileName gets a reference to the given string and assigns it to the FileName field.
 func (o *FileTemplateUpdate) SetFileName(v string) {
 	o.FileName = &v
@@ -175,15 +148,6 @@ func (o *FileTemplateUpdate) GetFilePathOk() (*string, bool) {
 		return nil, false
 	}
 	return o.FilePath, true
-}
-
-// IsSetFilePath returns a boolean if a field has been set.
-func (o *FileTemplateUpdate) IsSetFilePath() bool {
-	if o != nil && !IsNil(o.FilePath) {
-		return true
-	}
-
-	return false
 }
 
 // SetFilePath gets a reference to the given string and assigns it to the FilePath field.
@@ -209,15 +173,6 @@ func (o *FileTemplateUpdate) GetCategoryOk() (*string, bool) {
 	return o.Category, true
 }
 
-// IsSetCategory returns a boolean if a field has been set.
-func (o *FileTemplateUpdate) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
-		return true
-	}
-
-	return false
-}
-
 // SetCategory gets a reference to the given string and assigns it to the Category field.
 func (o *FileTemplateUpdate) SetCategory(v string) {
 	o.Category = &v
@@ -239,15 +194,6 @@ func (o *FileTemplateUpdate) GetTemplatePhaseOk() (*string, bool) {
 		return nil, false
 	}
 	return o.TemplatePhase, true
-}
-
-// IsSetTemplatePhase returns a boolean if a field has been set.
-func (o *FileTemplateUpdate) IsSetTemplatePhase() bool {
-	if o != nil && !IsNil(o.TemplatePhase) {
-		return true
-	}
-
-	return false
 }
 
 // SetTemplatePhase gets a reference to the given string and assigns it to the TemplatePhase field.
@@ -273,15 +219,6 @@ func (o *FileTemplateUpdate) GetTemplateOk() (*string, bool) {
 	return o.Template, true
 }
 
-// IsSetTemplate returns a boolean if a field has been set.
-func (o *FileTemplateUpdate) IsSetTemplate() bool {
-	if o != nil && !IsNil(o.Template) {
-		return true
-	}
-
-	return false
-}
-
 // SetTemplate gets a reference to the given string and assigns it to the Template field.
 func (o *FileTemplateUpdate) SetTemplate(v string) {
 	o.Template = &v
@@ -303,15 +240,6 @@ func (o *FileTemplateUpdate) GetFileOwnerOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.FileOwner, true
-}
-
-// IsSetFileOwner returns a boolean if a field has been set.
-func (o *FileTemplateUpdate) IsSetFileOwner() bool {
-	if o != nil && !IsNil(o.FileOwner) {
-		return true
-	}
-
-	return false
 }
 
 // SetFileOwner gets a reference to the given int64 and assigns it to the FileOwner field.
@@ -337,15 +265,6 @@ func (o *FileTemplateUpdate) GetSettingNameOk() (*string, bool) {
 	return o.SettingName, true
 }
 
-// IsSetSettingName returns a boolean if a field has been set.
-func (o *FileTemplateUpdate) IsSetSettingName() bool {
-	if o != nil && !IsNil(o.SettingName) {
-		return true
-	}
-
-	return false
-}
-
 // SetSettingName gets a reference to the given string and assigns it to the SettingName field.
 func (o *FileTemplateUpdate) SetSettingName(v string) {
 	o.SettingName = &v
@@ -367,15 +286,6 @@ func (o *FileTemplateUpdate) GetSettingCategoryOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SettingCategory, true
-}
-
-// IsSetSettingCategory returns a boolean if a field has been set.
-func (o *FileTemplateUpdate) IsSetSettingCategory() bool {
-	if o != nil && !IsNil(o.SettingCategory) {
-		return true
-	}
-
-	return false
 }
 
 // SetSettingCategory gets a reference to the given string and assigns it to the SettingCategory field.

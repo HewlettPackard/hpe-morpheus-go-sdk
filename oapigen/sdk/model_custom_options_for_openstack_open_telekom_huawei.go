@@ -62,15 +62,6 @@ func (o *CustomOptionsForOpenstackOpenTelekomHuawei) GetResourcePoolIdOk() (*int
 	return o.ResourcePoolId, true
 }
 
-// IsSetResourcePoolId returns a boolean if a field has been set.
-func (o *CustomOptionsForOpenstackOpenTelekomHuawei) IsSetResourcePoolId() bool {
-	if o != nil && !IsNil(o.ResourcePoolId) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourcePoolId gets a reference to the given int64 and assigns it to the ResourcePoolId field.
 func (o *CustomOptionsForOpenstackOpenTelekomHuawei) SetResourcePoolId(v int64) {
 	o.ResourcePoolId = &v

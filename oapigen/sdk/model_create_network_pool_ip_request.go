@@ -61,15 +61,6 @@ func (o *CreateNetworkPoolIpRequest) GetNetworkPoolIpOk() (*CreateNetworkPoolIpR
 	return o.NetworkPoolIp, true
 }
 
-// IsSetNetworkPoolIp returns a boolean if a field has been set.
-func (o *CreateNetworkPoolIpRequest) IsSetNetworkPoolIp() bool {
-	if o != nil && !IsNil(o.NetworkPoolIp) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkPoolIp gets a reference to the given CreateNetworkPoolIpRequestNetworkPoolIp and assigns it to the NetworkPoolIp field.
 func (o *CreateNetworkPoolIpRequest) SetNetworkPoolIp(v CreateNetworkPoolIpRequestNetworkPoolIp) {
 	o.NetworkPoolIp = &v

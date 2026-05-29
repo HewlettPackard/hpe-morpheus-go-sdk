@@ -62,15 +62,6 @@ func (o *AddCatalogItemType200Response) GetCatalogItemTypeOk() (*AddCatalogItemT
 	return o.CatalogItemType, true
 }
 
-// IsSetCatalogItemType returns a boolean if a field has been set.
-func (o *AddCatalogItemType200Response) IsSetCatalogItemType() bool {
-	if o != nil && !IsNil(o.CatalogItemType) {
-		return true
-	}
-
-	return false
-}
-
 // SetCatalogItemType gets a reference to the given AddCatalogItemType200ResponseAllOfCatalogItemType and assigns it to the CatalogItemType field.
 func (o *AddCatalogItemType200Response) SetCatalogItemType(v AddCatalogItemType200ResponseAllOfCatalogItemType) {
 	o.CatalogItemType = &v
@@ -92,15 +83,6 @@ func (o *AddCatalogItemType200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *AddCatalogItemType200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

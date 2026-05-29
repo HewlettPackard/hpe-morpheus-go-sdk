@@ -61,15 +61,6 @@ func (o *AddNodeTypeRequest) GetContainerTypeOk() (*AddNodeTypeRequestContainerT
 	return o.ContainerType, true
 }
 
-// IsSetContainerType returns a boolean if a field has been set.
-func (o *AddNodeTypeRequest) IsSetContainerType() bool {
-	if o != nil && !IsNil(o.ContainerType) {
-		return true
-	}
-
-	return false
-}
-
 // SetContainerType gets a reference to the given AddNodeTypeRequestContainerType and assigns it to the ContainerType field.
 func (o *AddNodeTypeRequest) SetContainerType(v AddNodeTypeRequestContainerType) {
 	o.ContainerType = &v

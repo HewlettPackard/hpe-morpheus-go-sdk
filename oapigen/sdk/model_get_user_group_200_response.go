@@ -61,15 +61,6 @@ func (o *GetUserGroup200Response) GetUserGroupOk() (*GetUserGroup200ResponseUser
 	return o.UserGroup, true
 }
 
-// IsSetUserGroup returns a boolean if a field has been set.
-func (o *GetUserGroup200Response) IsSetUserGroup() bool {
-	if o != nil && !IsNil(o.UserGroup) {
-		return true
-	}
-
-	return false
-}
-
 // SetUserGroup gets a reference to the given GetUserGroup200ResponseUserGroup and assigns it to the UserGroup field.
 func (o *GetUserGroup200Response) SetUserGroup(v GetUserGroup200ResponseUserGroup) {
 	o.UserGroup = &v

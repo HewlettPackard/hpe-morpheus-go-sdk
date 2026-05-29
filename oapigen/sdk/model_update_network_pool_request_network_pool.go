@@ -67,15 +67,6 @@ func (o *UpdateNetworkPoolRequestNetworkPool) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateNetworkPoolRequestNetworkPool) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *UpdateNetworkPoolRequestNetworkPool) SetName(v string) {
 	o.Name = &v
@@ -97,15 +88,6 @@ func (o *UpdateNetworkPoolRequestNetworkPool) GetTypeOk() (*UpdateNetworkPoolReq
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *UpdateNetworkPoolRequestNetworkPool) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given UpdateNetworkPoolRequestNetworkPoolType and assigns it to the Type field.
@@ -131,15 +113,6 @@ func (o *UpdateNetworkPoolRequestNetworkPool) GetIpRangesOk() ([]UpdateNetworkPo
 	return o.IpRanges, true
 }
 
-// IsSetIpRanges returns a boolean if a field has been set.
-func (o *UpdateNetworkPoolRequestNetworkPool) IsSetIpRanges() bool {
-	if o != nil && !IsNil(o.IpRanges) {
-		return true
-	}
-
-	return false
-}
-
 // SetIpRanges gets a reference to the given []UpdateNetworkPoolRequestNetworkPoolIpRangesInner and assigns it to the IpRanges field.
 func (o *UpdateNetworkPoolRequestNetworkPool) SetIpRanges(v []UpdateNetworkPoolRequestNetworkPoolIpRangesInner) {
 	o.IpRanges = v
@@ -161,15 +134,6 @@ func (o *UpdateNetworkPoolRequestNetworkPool) GetConfigOk() (map[string]interfac
 		return map[string]interface{}{}, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *UpdateNetworkPoolRequestNetworkPool) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.

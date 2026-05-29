@@ -77,28 +77,9 @@ func (o *HTTPTaskConfig1) GetWebPasswordOk() (*string, bool) {
 	return o.WebPassword.Get(), o.WebPassword.IsSet()
 }
 
-// IsSetWebPassword returns a boolean if a field has been set.
-func (o *HTTPTaskConfig1) IsSetWebPassword() bool {
-	if o != nil && o.WebPassword.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetWebPassword gets a reference to the given NullableString and assigns it to the WebPassword field.
 func (o *HTTPTaskConfig1) SetWebPassword(v string) {
 	o.WebPassword.Set(&v)
-}
-
-// SetWebPasswordNil sets the value for WebPassword to be an explicit nil
-func (o *HTTPTaskConfig1) SetWebPasswordNil() {
-	o.WebPassword.Set(nil)
-}
-
-// UnsetWebPassword ensures that no value is present for WebPassword, not even an explicit nil
-func (o *HTTPTaskConfig1) UnsetWebPassword() {
-	o.WebPassword.Unset()
 }
 
 // GetWebPasswordHash returns the WebPasswordHash field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -120,28 +101,9 @@ func (o *HTTPTaskConfig1) GetWebPasswordHashOk() (*string, bool) {
 	return o.WebPasswordHash.Get(), o.WebPasswordHash.IsSet()
 }
 
-// IsSetWebPasswordHash returns a boolean if a field has been set.
-func (o *HTTPTaskConfig1) IsSetWebPasswordHash() bool {
-	if o != nil && o.WebPasswordHash.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetWebPasswordHash gets a reference to the given NullableString and assigns it to the WebPasswordHash field.
 func (o *HTTPTaskConfig1) SetWebPasswordHash(v string) {
 	o.WebPasswordHash.Set(&v)
-}
-
-// SetWebPasswordHashNil sets the value for WebPasswordHash to be an explicit nil
-func (o *HTTPTaskConfig1) SetWebPasswordHashNil() {
-	o.WebPasswordHash.Set(nil)
-}
-
-// UnsetWebPasswordHash ensures that no value is present for WebPasswordHash, not even an explicit nil
-func (o *HTTPTaskConfig1) UnsetWebPasswordHash() {
-	o.WebPasswordHash.Unset()
 }
 
 // GetLocalScriptGitId returns the LocalScriptGitId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -163,28 +125,9 @@ func (o *HTTPTaskConfig1) GetLocalScriptGitIdOk() (*string, bool) {
 	return o.LocalScriptGitId.Get(), o.LocalScriptGitId.IsSet()
 }
 
-// IsSetLocalScriptGitId returns a boolean if a field has been set.
-func (o *HTTPTaskConfig1) IsSetLocalScriptGitId() bool {
-	if o != nil && o.LocalScriptGitId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLocalScriptGitId gets a reference to the given NullableString and assigns it to the LocalScriptGitId field.
 func (o *HTTPTaskConfig1) SetLocalScriptGitId(v string) {
 	o.LocalScriptGitId.Set(&v)
-}
-
-// SetLocalScriptGitIdNil sets the value for LocalScriptGitId to be an explicit nil
-func (o *HTTPTaskConfig1) SetLocalScriptGitIdNil() {
-	o.LocalScriptGitId.Set(nil)
-}
-
-// UnsetLocalScriptGitId ensures that no value is present for LocalScriptGitId, not even an explicit nil
-func (o *HTTPTaskConfig1) UnsetLocalScriptGitId() {
-	o.LocalScriptGitId.Unset()
 }
 
 // GetLocalScriptGitRef returns the LocalScriptGitRef field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -206,28 +149,9 @@ func (o *HTTPTaskConfig1) GetLocalScriptGitRefOk() (*string, bool) {
 	return o.LocalScriptGitRef.Get(), o.LocalScriptGitRef.IsSet()
 }
 
-// IsSetLocalScriptGitRef returns a boolean if a field has been set.
-func (o *HTTPTaskConfig1) IsSetLocalScriptGitRef() bool {
-	if o != nil && o.LocalScriptGitRef.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLocalScriptGitRef gets a reference to the given NullableString and assigns it to the LocalScriptGitRef field.
 func (o *HTTPTaskConfig1) SetLocalScriptGitRef(v string) {
 	o.LocalScriptGitRef.Set(&v)
-}
-
-// SetLocalScriptGitRefNil sets the value for LocalScriptGitRef to be an explicit nil
-func (o *HTTPTaskConfig1) SetLocalScriptGitRefNil() {
-	o.LocalScriptGitRef.Set(nil)
-}
-
-// UnsetLocalScriptGitRef ensures that no value is present for LocalScriptGitRef, not even an explicit nil
-func (o *HTTPTaskConfig1) UnsetLocalScriptGitRef() {
-	o.LocalScriptGitRef.Unset()
 }
 
 // GetWebUser returns the WebUser field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -249,28 +173,9 @@ func (o *HTTPTaskConfig1) GetWebUserOk() (*string, bool) {
 	return o.WebUser.Get(), o.WebUser.IsSet()
 }
 
-// IsSetWebUser returns a boolean if a field has been set.
-func (o *HTTPTaskConfig1) IsSetWebUser() bool {
-	if o != nil && o.WebUser.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetWebUser gets a reference to the given NullableString and assigns it to the WebUser field.
 func (o *HTTPTaskConfig1) SetWebUser(v string) {
 	o.WebUser.Set(&v)
-}
-
-// SetWebUserNil sets the value for WebUser to be an explicit nil
-func (o *HTTPTaskConfig1) SetWebUserNil() {
-	o.WebUser.Set(nil)
-}
-
-// UnsetWebUser ensures that no value is present for WebUser, not even an explicit nil
-func (o *HTTPTaskConfig1) UnsetWebUser() {
-	o.WebUser.Unset()
 }
 
 // GetWebBody returns the WebBody field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -292,28 +197,9 @@ func (o *HTTPTaskConfig1) GetWebBodyOk() (*string, bool) {
 	return o.WebBody.Get(), o.WebBody.IsSet()
 }
 
-// IsSetWebBody returns a boolean if a field has been set.
-func (o *HTTPTaskConfig1) IsSetWebBody() bool {
-	if o != nil && o.WebBody.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetWebBody gets a reference to the given NullableString and assigns it to the WebBody field.
 func (o *HTTPTaskConfig1) SetWebBody(v string) {
 	o.WebBody.Set(&v)
-}
-
-// SetWebBodyNil sets the value for WebBody to be an explicit nil
-func (o *HTTPTaskConfig1) SetWebBodyNil() {
-	o.WebBody.Set(nil)
-}
-
-// UnsetWebBody ensures that no value is present for WebBody, not even an explicit nil
-func (o *HTTPTaskConfig1) UnsetWebBody() {
-	o.WebBody.Unset()
 }
 
 // GetWebHeaders returns the WebHeaders field value if set, zero value otherwise.
@@ -332,15 +218,6 @@ func (o *HTTPTaskConfig1) GetWebHeadersOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WebHeaders, true
-}
-
-// IsSetWebHeaders returns a boolean if a field has been set.
-func (o *HTTPTaskConfig1) IsSetWebHeaders() bool {
-	if o != nil && !IsNil(o.WebHeaders) {
-		return true
-	}
-
-	return false
 }
 
 // SetWebHeaders gets a reference to the given string and assigns it to the WebHeaders field.
@@ -367,28 +244,9 @@ func (o *HTTPTaskConfig1) GetPasswordOk() (*string, bool) {
 	return o.Password.Get(), o.Password.IsSet()
 }
 
-// IsSetPassword returns a boolean if a field has been set.
-func (o *HTTPTaskConfig1) IsSetPassword() bool {
-	if o != nil && o.Password.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPassword gets a reference to the given NullableString and assigns it to the Password field.
 func (o *HTTPTaskConfig1) SetPassword(v string) {
 	o.Password.Set(&v)
-}
-
-// SetPasswordNil sets the value for Password to be an explicit nil
-func (o *HTTPTaskConfig1) SetPasswordNil() {
-	o.Password.Set(nil)
-}
-
-// UnsetPassword ensures that no value is present for Password, not even an explicit nil
-func (o *HTTPTaskConfig1) UnsetPassword() {
-	o.Password.Unset()
 }
 
 // GetPasswordHash returns the PasswordHash field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -410,28 +268,9 @@ func (o *HTTPTaskConfig1) GetPasswordHashOk() (*string, bool) {
 	return o.PasswordHash.Get(), o.PasswordHash.IsSet()
 }
 
-// IsSetPasswordHash returns a boolean if a field has been set.
-func (o *HTTPTaskConfig1) IsSetPasswordHash() bool {
-	if o != nil && o.PasswordHash.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPasswordHash gets a reference to the given NullableString and assigns it to the PasswordHash field.
 func (o *HTTPTaskConfig1) SetPasswordHash(v string) {
 	o.PasswordHash.Set(&v)
-}
-
-// SetPasswordHashNil sets the value for PasswordHash to be an explicit nil
-func (o *HTTPTaskConfig1) SetPasswordHashNil() {
-	o.PasswordHash.Set(nil)
-}
-
-// UnsetPasswordHash ensures that no value is present for PasswordHash, not even an explicit nil
-func (o *HTTPTaskConfig1) UnsetPasswordHash() {
-	o.PasswordHash.Unset()
 }
 
 // GetUsername returns the Username field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -453,28 +292,9 @@ func (o *HTTPTaskConfig1) GetUsernameOk() (*string, bool) {
 	return o.Username.Get(), o.Username.IsSet()
 }
 
-// IsSetUsername returns a boolean if a field has been set.
-func (o *HTTPTaskConfig1) IsSetUsername() bool {
-	if o != nil && o.Username.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUsername gets a reference to the given NullableString and assigns it to the Username field.
 func (o *HTTPTaskConfig1) SetUsername(v string) {
 	o.Username.Set(&v)
-}
-
-// SetUsernameNil sets the value for Username to be an explicit nil
-func (o *HTTPTaskConfig1) SetUsernameNil() {
-	o.Username.Set(nil)
-}
-
-// UnsetUsername ensures that no value is present for Username, not even an explicit nil
-func (o *HTTPTaskConfig1) UnsetUsername() {
-	o.Username.Unset()
 }
 
 // GetIgnoreSSL returns the IgnoreSSL field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -496,28 +316,9 @@ func (o *HTTPTaskConfig1) GetIgnoreSSLOk() (*string, bool) {
 	return o.IgnoreSSL.Get(), o.IgnoreSSL.IsSet()
 }
 
-// IsSetIgnoreSSL returns a boolean if a field has been set.
-func (o *HTTPTaskConfig1) IsSetIgnoreSSL() bool {
-	if o != nil && o.IgnoreSSL.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetIgnoreSSL gets a reference to the given NullableString and assigns it to the IgnoreSSL field.
 func (o *HTTPTaskConfig1) SetIgnoreSSL(v string) {
 	o.IgnoreSSL.Set(&v)
-}
-
-// SetIgnoreSSLNil sets the value for IgnoreSSL to be an explicit nil
-func (o *HTTPTaskConfig1) SetIgnoreSSLNil() {
-	o.IgnoreSSL.Set(nil)
-}
-
-// UnsetIgnoreSSL ensures that no value is present for IgnoreSSL, not even an explicit nil
-func (o *HTTPTaskConfig1) UnsetIgnoreSSL() {
-	o.IgnoreSSL.Unset()
 }
 
 // GetWebMethod returns the WebMethod field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -539,28 +340,9 @@ func (o *HTTPTaskConfig1) GetWebMethodOk() (*string, bool) {
 	return o.WebMethod.Get(), o.WebMethod.IsSet()
 }
 
-// IsSetWebMethod returns a boolean if a field has been set.
-func (o *HTTPTaskConfig1) IsSetWebMethod() bool {
-	if o != nil && o.WebMethod.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetWebMethod gets a reference to the given NullableString and assigns it to the WebMethod field.
 func (o *HTTPTaskConfig1) SetWebMethod(v string) {
 	o.WebMethod.Set(&v)
-}
-
-// SetWebMethodNil sets the value for WebMethod to be an explicit nil
-func (o *HTTPTaskConfig1) SetWebMethodNil() {
-	o.WebMethod.Set(nil)
-}
-
-// UnsetWebMethod ensures that no value is present for WebMethod, not even an explicit nil
-func (o *HTTPTaskConfig1) UnsetWebMethod() {
-	o.WebMethod.Unset()
 }
 
 // GetWebUrl returns the WebUrl field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -582,28 +364,9 @@ func (o *HTTPTaskConfig1) GetWebUrlOk() (*string, bool) {
 	return o.WebUrl.Get(), o.WebUrl.IsSet()
 }
 
-// IsSetWebUrl returns a boolean if a field has been set.
-func (o *HTTPTaskConfig1) IsSetWebUrl() bool {
-	if o != nil && o.WebUrl.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetWebUrl gets a reference to the given NullableString and assigns it to the WebUrl field.
 func (o *HTTPTaskConfig1) SetWebUrl(v string) {
 	o.WebUrl.Set(&v)
-}
-
-// SetWebUrlNil sets the value for WebUrl to be an explicit nil
-func (o *HTTPTaskConfig1) SetWebUrlNil() {
-	o.WebUrl.Set(nil)
-}
-
-// UnsetWebUrl ensures that no value is present for WebUrl, not even an explicit nil
-func (o *HTTPTaskConfig1) UnsetWebUrl() {
-	o.WebUrl.Unset()
 }
 
 // GetHost returns the Host field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -625,28 +388,9 @@ func (o *HTTPTaskConfig1) GetHostOk() (*string, bool) {
 	return o.Host.Get(), o.Host.IsSet()
 }
 
-// IsSetHost returns a boolean if a field has been set.
-func (o *HTTPTaskConfig1) IsSetHost() bool {
-	if o != nil && o.Host.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetHost gets a reference to the given NullableString and assigns it to the Host field.
 func (o *HTTPTaskConfig1) SetHost(v string) {
 	o.Host.Set(&v)
-}
-
-// SetHostNil sets the value for Host to be an explicit nil
-func (o *HTTPTaskConfig1) SetHostNil() {
-	o.Host.Set(nil)
-}
-
-// UnsetHost ensures that no value is present for Host, not even an explicit nil
-func (o *HTTPTaskConfig1) UnsetHost() {
-	o.Host.Unset()
 }
 
 // GetPort returns the Port field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -668,28 +412,9 @@ func (o *HTTPTaskConfig1) GetPortOk() (*string, bool) {
 	return o.Port.Get(), o.Port.IsSet()
 }
 
-// IsSetPort returns a boolean if a field has been set.
-func (o *HTTPTaskConfig1) IsSetPort() bool {
-	if o != nil && o.Port.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPort gets a reference to the given NullableString and assigns it to the Port field.
 func (o *HTTPTaskConfig1) SetPort(v string) {
 	o.Port.Set(&v)
-}
-
-// SetPortNil sets the value for Port to be an explicit nil
-func (o *HTTPTaskConfig1) SetPortNil() {
-	o.Port.Set(nil)
-}
-
-// UnsetPort ensures that no value is present for Port, not even an explicit nil
-func (o *HTTPTaskConfig1) UnsetPort() {
-	o.Port.Unset()
 }
 
 // GetSshKey returns the SshKey field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -711,28 +436,9 @@ func (o *HTTPTaskConfig1) GetSshKeyOk() (*string, bool) {
 	return o.SshKey.Get(), o.SshKey.IsSet()
 }
 
-// IsSetSshKey returns a boolean if a field has been set.
-func (o *HTTPTaskConfig1) IsSetSshKey() bool {
-	if o != nil && o.SshKey.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSshKey gets a reference to the given NullableString and assigns it to the SshKey field.
 func (o *HTTPTaskConfig1) SetSshKey(v string) {
 	o.SshKey.Set(&v)
-}
-
-// SetSshKeyNil sets the value for SshKey to be an explicit nil
-func (o *HTTPTaskConfig1) SetSshKeyNil() {
-	o.SshKey.Set(nil)
-}
-
-// UnsetSshKey ensures that no value is present for SshKey, not even an explicit nil
-func (o *HTTPTaskConfig1) UnsetSshKey() {
-	o.SshKey.Unset()
 }
 
 func (o HTTPTaskConfig1) MarshalJSON() ([]byte, error) {

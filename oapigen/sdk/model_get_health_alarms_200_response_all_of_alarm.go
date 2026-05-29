@@ -65,15 +65,6 @@ func (o *GetHealthAlarms200ResponseAllOfAlarm) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetHealthAlarms200ResponseAllOfAlarm) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetHealthAlarms200ResponseAllOfAlarm) SetId(v int64) {
 	o.Id = &v
@@ -95,15 +86,6 @@ func (o *GetHealthAlarms200ResponseAllOfAlarm) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *GetHealthAlarms200ResponseAllOfAlarm) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -129,15 +111,6 @@ func (o *GetHealthAlarms200ResponseAllOfAlarm) GetDateCreatedOk() (*time.Time, b
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *GetHealthAlarms200ResponseAllOfAlarm) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *GetHealthAlarms200ResponseAllOfAlarm) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -159,15 +132,6 @@ func (o *GetHealthAlarms200ResponseAllOfAlarm) GetLastUpdatedOk() (*time.Time, b
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *GetHealthAlarms200ResponseAllOfAlarm) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.

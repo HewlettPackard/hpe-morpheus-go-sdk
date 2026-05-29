@@ -66,15 +66,6 @@ func (o *ClusterDatastoreUpdatePermissionsTenantPermissions) GetAccountsOk() ([]
 	return o.Accounts, true
 }
 
-// IsSetAccounts returns a boolean if a field has been set.
-func (o *ClusterDatastoreUpdatePermissionsTenantPermissions) IsSetAccounts() bool {
-	if o != nil && !IsNil(o.Accounts) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccounts gets a reference to the given []int64 and assigns it to the Accounts field.
 func (o *ClusterDatastoreUpdatePermissionsTenantPermissions) SetAccounts(v []int64) {
 	o.Accounts = v
@@ -98,15 +89,6 @@ func (o *ClusterDatastoreUpdatePermissionsTenantPermissions) GetDefaultTargetOk(
 	return o.DefaultTarget, true
 }
 
-// IsSetDefaultTarget returns a boolean if a field has been set.
-func (o *ClusterDatastoreUpdatePermissionsTenantPermissions) IsSetDefaultTarget() bool {
-	if o != nil && !IsNil(o.DefaultTarget) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultTarget gets a reference to the given []int64 and assigns it to the DefaultTarget field.
 func (o *ClusterDatastoreUpdatePermissionsTenantPermissions) SetDefaultTarget(v []int64) {
 	o.DefaultTarget = v
@@ -128,15 +110,6 @@ func (o *ClusterDatastoreUpdatePermissionsTenantPermissions) GetDefaultStoreOk()
 		return nil, false
 	}
 	return o.DefaultStore, true
-}
-
-// IsSetDefaultStore returns a boolean if a field has been set.
-func (o *ClusterDatastoreUpdatePermissionsTenantPermissions) IsSetDefaultStore() bool {
-	if o != nil && !IsNil(o.DefaultStore) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultStore gets a reference to the given []int64 and assigns it to the DefaultStore field.

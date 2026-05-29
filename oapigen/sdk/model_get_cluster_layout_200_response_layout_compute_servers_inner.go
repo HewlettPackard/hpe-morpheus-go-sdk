@@ -81,15 +81,6 @@ func (o *GetClusterLayout200ResponseLayoutComputeServersInner) GetIdOk() (*int64
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetClusterLayout200ResponseLayoutComputeServersInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetClusterLayout200ResponseLayoutComputeServersInner) SetId(v int64) {
 	o.Id = &v
@@ -111,15 +102,6 @@ func (o *GetClusterLayout200ResponseLayoutComputeServersInner) GetPriorityOrderO
 		return nil, false
 	}
 	return o.PriorityOrder, true
-}
-
-// IsSetPriorityOrder returns a boolean if a field has been set.
-func (o *GetClusterLayout200ResponseLayoutComputeServersInner) IsSetPriorityOrder() bool {
-	if o != nil && !IsNil(o.PriorityOrder) {
-		return true
-	}
-
-	return false
 }
 
 // SetPriorityOrder gets a reference to the given int64 and assigns it to the PriorityOrder field.
@@ -145,15 +127,6 @@ func (o *GetClusterLayout200ResponseLayoutComputeServersInner) GetNodeCountOk() 
 	return o.NodeCount, true
 }
 
-// IsSetNodeCount returns a boolean if a field has been set.
-func (o *GetClusterLayout200ResponseLayoutComputeServersInner) IsSetNodeCount() bool {
-	if o != nil && !IsNil(o.NodeCount) {
-		return true
-	}
-
-	return false
-}
-
 // SetNodeCount gets a reference to the given int64 and assigns it to the NodeCount field.
 func (o *GetClusterLayout200ResponseLayoutComputeServersInner) SetNodeCount(v int64) {
 	o.NodeCount = &v
@@ -177,15 +150,6 @@ func (o *GetClusterLayout200ResponseLayoutComputeServersInner) GetNodeTypeOk() (
 	return o.NodeType, true
 }
 
-// IsSetNodeType returns a boolean if a field has been set.
-func (o *GetClusterLayout200ResponseLayoutComputeServersInner) IsSetNodeType() bool {
-	if o != nil && !IsNil(o.NodeType) {
-		return true
-	}
-
-	return false
-}
-
 // SetNodeType gets a reference to the given string and assigns it to the NodeType field.
 func (o *GetClusterLayout200ResponseLayoutComputeServersInner) SetNodeType(v string) {
 	o.NodeType = &v
@@ -207,15 +171,6 @@ func (o *GetClusterLayout200ResponseLayoutComputeServersInner) GetMinNodeCountOk
 		return nil, false
 	}
 	return o.MinNodeCount, true
-}
-
-// IsSetMinNodeCount returns a boolean if a field has been set.
-func (o *GetClusterLayout200ResponseLayoutComputeServersInner) IsSetMinNodeCount() bool {
-	if o != nil && !IsNil(o.MinNodeCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetMinNodeCount gets a reference to the given int64 and assigns it to the MinNodeCount field.
@@ -242,28 +197,9 @@ func (o *GetClusterLayout200ResponseLayoutComputeServersInner) GetMaxNodeCountOk
 	return o.MaxNodeCount.Get(), o.MaxNodeCount.IsSet()
 }
 
-// IsSetMaxNodeCount returns a boolean if a field has been set.
-func (o *GetClusterLayout200ResponseLayoutComputeServersInner) IsSetMaxNodeCount() bool {
-	if o != nil && o.MaxNodeCount.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxNodeCount gets a reference to the given NullableString and assigns it to the MaxNodeCount field.
 func (o *GetClusterLayout200ResponseLayoutComputeServersInner) SetMaxNodeCount(v string) {
 	o.MaxNodeCount.Set(&v)
-}
-
-// SetMaxNodeCountNil sets the value for MaxNodeCount to be an explicit nil
-func (o *GetClusterLayout200ResponseLayoutComputeServersInner) SetMaxNodeCountNil() {
-	o.MaxNodeCount.Set(nil)
-}
-
-// UnsetMaxNodeCount ensures that no value is present for MaxNodeCount, not even an explicit nil
-func (o *GetClusterLayout200ResponseLayoutComputeServersInner) UnsetMaxNodeCount() {
-	o.MaxNodeCount.Unset()
 }
 
 // GetDynamicCount returns the DynamicCount field value if set, zero value otherwise.
@@ -282,15 +218,6 @@ func (o *GetClusterLayout200ResponseLayoutComputeServersInner) GetDynamicCountOk
 		return nil, false
 	}
 	return o.DynamicCount, true
-}
-
-// IsSetDynamicCount returns a boolean if a field has been set.
-func (o *GetClusterLayout200ResponseLayoutComputeServersInner) IsSetDynamicCount() bool {
-	if o != nil && !IsNil(o.DynamicCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetDynamicCount gets a reference to the given bool and assigns it to the DynamicCount field.
@@ -316,15 +243,6 @@ func (o *GetClusterLayout200ResponseLayoutComputeServersInner) GetInstallContain
 	return o.InstallContainerRuntime, true
 }
 
-// IsSetInstallContainerRuntime returns a boolean if a field has been set.
-func (o *GetClusterLayout200ResponseLayoutComputeServersInner) IsSetInstallContainerRuntime() bool {
-	if o != nil && !IsNil(o.InstallContainerRuntime) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstallContainerRuntime gets a reference to the given bool and assigns it to the InstallContainerRuntime field.
 func (o *GetClusterLayout200ResponseLayoutComputeServersInner) SetInstallContainerRuntime(v bool) {
 	o.InstallContainerRuntime = &v
@@ -346,15 +264,6 @@ func (o *GetClusterLayout200ResponseLayoutComputeServersInner) GetInstallStorage
 		return nil, false
 	}
 	return o.InstallStorageRuntime, true
-}
-
-// IsSetInstallStorageRuntime returns a boolean if a field has been set.
-func (o *GetClusterLayout200ResponseLayoutComputeServersInner) IsSetInstallStorageRuntime() bool {
-	if o != nil && !IsNil(o.InstallStorageRuntime) {
-		return true
-	}
-
-	return false
 }
 
 // SetInstallStorageRuntime gets a reference to the given bool and assigns it to the InstallStorageRuntime field.
@@ -380,15 +289,6 @@ func (o *GetClusterLayout200ResponseLayoutComputeServersInner) GetNameOk() (*str
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *GetClusterLayout200ResponseLayoutComputeServersInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *GetClusterLayout200ResponseLayoutComputeServersInner) SetName(v string) {
 	o.Name = &v
@@ -412,15 +312,6 @@ func (o *GetClusterLayout200ResponseLayoutComputeServersInner) GetCodeOk() (*str
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *GetClusterLayout200ResponseLayoutComputeServersInner) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *GetClusterLayout200ResponseLayoutComputeServersInner) SetCode(v string) {
 	o.Code = &v
@@ -442,15 +333,6 @@ func (o *GetClusterLayout200ResponseLayoutComputeServersInner) GetCategoryOk() (
 		return nil, false
 	}
 	return o.Category, true
-}
-
-// IsSetCategory returns a boolean if a field has been set.
-func (o *GetClusterLayout200ResponseLayoutComputeServersInner) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
-		return true
-	}
-
-	return false
 }
 
 // SetCategory gets a reference to the given string and assigns it to the Category field.
@@ -477,28 +359,9 @@ func (o *GetClusterLayout200ResponseLayoutComputeServersInner) GetConfigOk() (*s
 	return o.Config.Get(), o.Config.IsSet()
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *GetClusterLayout200ResponseLayoutComputeServersInner) IsSetConfig() bool {
-	if o != nil && o.Config.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given NullableString and assigns it to the Config field.
 func (o *GetClusterLayout200ResponseLayoutComputeServersInner) SetConfig(v string) {
 	o.Config.Set(&v)
-}
-
-// SetConfigNil sets the value for Config to be an explicit nil
-func (o *GetClusterLayout200ResponseLayoutComputeServersInner) SetConfigNil() {
-	o.Config.Set(nil)
-}
-
-// UnsetConfig ensures that no value is present for Config, not even an explicit nil
-func (o *GetClusterLayout200ResponseLayoutComputeServersInner) UnsetConfig() {
-	o.Config.Unset()
 }
 
 // GetContainerType returns the ContainerType field value if set, zero value otherwise.
@@ -517,15 +380,6 @@ func (o *GetClusterLayout200ResponseLayoutComputeServersInner) GetContainerTypeO
 		return nil, false
 	}
 	return o.ContainerType, true
-}
-
-// IsSetContainerType returns a boolean if a field has been set.
-func (o *GetClusterLayout200ResponseLayoutComputeServersInner) IsSetContainerType() bool {
-	if o != nil && !IsNil(o.ContainerType) {
-		return true
-	}
-
-	return false
 }
 
 // SetContainerType gets a reference to the given GetClusterLayout200ResponseLayoutComputeServersInnerContainerType and assigns it to the ContainerType field.
@@ -549,15 +403,6 @@ func (o *GetClusterLayout200ResponseLayoutComputeServersInner) GetComputeServerT
 		return nil, false
 	}
 	return o.ComputeServerType, true
-}
-
-// IsSetComputeServerType returns a boolean if a field has been set.
-func (o *GetClusterLayout200ResponseLayoutComputeServersInner) IsSetComputeServerType() bool {
-	if o != nil && !IsNil(o.ComputeServerType) {
-		return true
-	}
-
-	return false
 }
 
 // SetComputeServerType gets a reference to the given GetClusterLayout200ResponseLayoutComputeServersInnerComputeServerType and assigns it to the ComputeServerType field.
@@ -584,28 +429,9 @@ func (o *GetClusterLayout200ResponseLayoutComputeServersInner) GetProvisionServi
 	return o.ProvisionService.Get(), o.ProvisionService.IsSet()
 }
 
-// IsSetProvisionService returns a boolean if a field has been set.
-func (o *GetClusterLayout200ResponseLayoutComputeServersInner) IsSetProvisionService() bool {
-	if o != nil && o.ProvisionService.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetProvisionService gets a reference to the given NullableString and assigns it to the ProvisionService field.
 func (o *GetClusterLayout200ResponseLayoutComputeServersInner) SetProvisionService(v string) {
 	o.ProvisionService.Set(&v)
-}
-
-// SetProvisionServiceNil sets the value for ProvisionService to be an explicit nil
-func (o *GetClusterLayout200ResponseLayoutComputeServersInner) SetProvisionServiceNil() {
-	o.ProvisionService.Set(nil)
-}
-
-// UnsetProvisionService ensures that no value is present for ProvisionService, not even an explicit nil
-func (o *GetClusterLayout200ResponseLayoutComputeServersInner) UnsetProvisionService() {
-	o.ProvisionService.Unset()
 }
 
 // GetPlanCategory returns the PlanCategory field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -627,28 +453,9 @@ func (o *GetClusterLayout200ResponseLayoutComputeServersInner) GetPlanCategoryOk
 	return o.PlanCategory.Get(), o.PlanCategory.IsSet()
 }
 
-// IsSetPlanCategory returns a boolean if a field has been set.
-func (o *GetClusterLayout200ResponseLayoutComputeServersInner) IsSetPlanCategory() bool {
-	if o != nil && o.PlanCategory.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPlanCategory gets a reference to the given NullableString and assigns it to the PlanCategory field.
 func (o *GetClusterLayout200ResponseLayoutComputeServersInner) SetPlanCategory(v string) {
 	o.PlanCategory.Set(&v)
-}
-
-// SetPlanCategoryNil sets the value for PlanCategory to be an explicit nil
-func (o *GetClusterLayout200ResponseLayoutComputeServersInner) SetPlanCategoryNil() {
-	o.PlanCategory.Set(nil)
-}
-
-// UnsetPlanCategory ensures that no value is present for PlanCategory, not even an explicit nil
-func (o *GetClusterLayout200ResponseLayoutComputeServersInner) UnsetPlanCategory() {
-	o.PlanCategory.Unset()
 }
 
 // GetNamePrefix returns the NamePrefix field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -670,28 +477,9 @@ func (o *GetClusterLayout200ResponseLayoutComputeServersInner) GetNamePrefixOk()
 	return o.NamePrefix.Get(), o.NamePrefix.IsSet()
 }
 
-// IsSetNamePrefix returns a boolean if a field has been set.
-func (o *GetClusterLayout200ResponseLayoutComputeServersInner) IsSetNamePrefix() bool {
-	if o != nil && o.NamePrefix.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNamePrefix gets a reference to the given NullableString and assigns it to the NamePrefix field.
 func (o *GetClusterLayout200ResponseLayoutComputeServersInner) SetNamePrefix(v string) {
 	o.NamePrefix.Set(&v)
-}
-
-// SetNamePrefixNil sets the value for NamePrefix to be an explicit nil
-func (o *GetClusterLayout200ResponseLayoutComputeServersInner) SetNamePrefixNil() {
-	o.NamePrefix.Set(nil)
-}
-
-// UnsetNamePrefix ensures that no value is present for NamePrefix, not even an explicit nil
-func (o *GetClusterLayout200ResponseLayoutComputeServersInner) UnsetNamePrefix() {
-	o.NamePrefix.Unset()
 }
 
 // GetNameSuffix returns the NameSuffix field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -713,28 +501,9 @@ func (o *GetClusterLayout200ResponseLayoutComputeServersInner) GetNameSuffixOk()
 	return o.NameSuffix.Get(), o.NameSuffix.IsSet()
 }
 
-// IsSetNameSuffix returns a boolean if a field has been set.
-func (o *GetClusterLayout200ResponseLayoutComputeServersInner) IsSetNameSuffix() bool {
-	if o != nil && o.NameSuffix.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNameSuffix gets a reference to the given NullableString and assigns it to the NameSuffix field.
 func (o *GetClusterLayout200ResponseLayoutComputeServersInner) SetNameSuffix(v string) {
 	o.NameSuffix.Set(&v)
-}
-
-// SetNameSuffixNil sets the value for NameSuffix to be an explicit nil
-func (o *GetClusterLayout200ResponseLayoutComputeServersInner) SetNameSuffixNil() {
-	o.NameSuffix.Set(nil)
-}
-
-// UnsetNameSuffix ensures that no value is present for NameSuffix, not even an explicit nil
-func (o *GetClusterLayout200ResponseLayoutComputeServersInner) UnsetNameSuffix() {
-	o.NameSuffix.Unset()
 }
 
 // GetForceNameIndex returns the ForceNameIndex field value if set, zero value otherwise.
@@ -753,15 +522,6 @@ func (o *GetClusterLayout200ResponseLayoutComputeServersInner) GetForceNameIndex
 		return nil, false
 	}
 	return o.ForceNameIndex, true
-}
-
-// IsSetForceNameIndex returns a boolean if a field has been set.
-func (o *GetClusterLayout200ResponseLayoutComputeServersInner) IsSetForceNameIndex() bool {
-	if o != nil && !IsNil(o.ForceNameIndex) {
-		return true
-	}
-
-	return false
 }
 
 // SetForceNameIndex gets a reference to the given bool and assigns it to the ForceNameIndex field.
@@ -785,15 +545,6 @@ func (o *GetClusterLayout200ResponseLayoutComputeServersInner) GetLoadBalanceOk(
 		return nil, false
 	}
 	return o.LoadBalance, true
-}
-
-// IsSetLoadBalance returns a boolean if a field has been set.
-func (o *GetClusterLayout200ResponseLayoutComputeServersInner) IsSetLoadBalance() bool {
-	if o != nil && !IsNil(o.LoadBalance) {
-		return true
-	}
-
-	return false
 }
 
 // SetLoadBalance gets a reference to the given bool and assigns it to the LoadBalance field.

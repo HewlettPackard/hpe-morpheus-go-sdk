@@ -62,15 +62,6 @@ func (o *GetArchiveFileDetail200Response) GetArchiveFileOk() (*GetArchiveFileDet
 	return o.ArchiveFile, true
 }
 
-// IsSetArchiveFile returns a boolean if a field has been set.
-func (o *GetArchiveFileDetail200Response) IsSetArchiveFile() bool {
-	if o != nil && !IsNil(o.ArchiveFile) {
-		return true
-	}
-
-	return false
-}
-
 // SetArchiveFile gets a reference to the given GetArchiveFileDetail200ResponseArchiveFile and assigns it to the ArchiveFile field.
 func (o *GetArchiveFileDetail200Response) SetArchiveFile(v GetArchiveFileDetail200ResponseArchiveFile) {
 	o.ArchiveFile = &v
@@ -92,15 +83,6 @@ func (o *GetArchiveFileDetail200Response) GetIsOwnerOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.IsOwner, true
-}
-
-// IsSetIsOwner returns a boolean if a field has been set.
-func (o *GetArchiveFileDetail200Response) IsSetIsOwner() bool {
-	if o != nil && !IsNil(o.IsOwner) {
-		return true
-	}
-
-	return false
 }
 
 // SetIsOwner gets a reference to the given bool and assigns it to the IsOwner field.

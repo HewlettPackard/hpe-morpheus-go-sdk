@@ -75,15 +75,6 @@ func (o *InstanceContainerServerInterfacesInner) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *InstanceContainerServerInterfacesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *InstanceContainerServerInterfacesInner) SetId(v int64) {
 	o.Id = &v
@@ -105,15 +96,6 @@ func (o *InstanceContainerServerInterfacesInner) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *InstanceContainerServerInterfacesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -139,15 +121,6 @@ func (o *InstanceContainerServerInterfacesInner) GetUniqueIdOk() (*string, bool)
 	return o.UniqueId, true
 }
 
-// IsSetUniqueId returns a boolean if a field has been set.
-func (o *InstanceContainerServerInterfacesInner) IsSetUniqueId() bool {
-	if o != nil && !IsNil(o.UniqueId) {
-		return true
-	}
-
-	return false
-}
-
 // SetUniqueId gets a reference to the given string and assigns it to the UniqueId field.
 func (o *InstanceContainerServerInterfacesInner) SetUniqueId(v string) {
 	o.UniqueId = &v
@@ -169,15 +142,6 @@ func (o *InstanceContainerServerInterfacesInner) GetPublicIpAddressOk() (*string
 		return nil, false
 	}
 	return o.PublicIpAddress, true
-}
-
-// IsSetPublicIpAddress returns a boolean if a field has been set.
-func (o *InstanceContainerServerInterfacesInner) IsSetPublicIpAddress() bool {
-	if o != nil && !IsNil(o.PublicIpAddress) {
-		return true
-	}
-
-	return false
 }
 
 // SetPublicIpAddress gets a reference to the given string and assigns it to the PublicIpAddress field.
@@ -203,15 +167,6 @@ func (o *InstanceContainerServerInterfacesInner) GetIpAddressOk() (*string, bool
 	return o.IpAddress, true
 }
 
-// IsSetIpAddress returns a boolean if a field has been set.
-func (o *InstanceContainerServerInterfacesInner) IsSetIpAddress() bool {
-	if o != nil && !IsNil(o.IpAddress) {
-		return true
-	}
-
-	return false
-}
-
 // SetIpAddress gets a reference to the given string and assigns it to the IpAddress field.
 func (o *InstanceContainerServerInterfacesInner) SetIpAddress(v string) {
 	o.IpAddress = &v
@@ -233,15 +188,6 @@ func (o *InstanceContainerServerInterfacesInner) GetDhcpOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Dhcp, true
-}
-
-// IsSetDhcp returns a boolean if a field has been set.
-func (o *InstanceContainerServerInterfacesInner) IsSetDhcp() bool {
-	if o != nil && !IsNil(o.Dhcp) {
-		return true
-	}
-
-	return false
 }
 
 // SetDhcp gets a reference to the given bool and assigns it to the Dhcp field.
@@ -267,15 +213,6 @@ func (o *InstanceContainerServerInterfacesInner) GetActiveOk() (*bool, bool) {
 	return o.Active, true
 }
 
-// IsSetActive returns a boolean if a field has been set.
-func (o *InstanceContainerServerInterfacesInner) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
-}
-
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *InstanceContainerServerInterfacesInner) SetActive(v bool) {
 	o.Active = &v
@@ -299,15 +236,6 @@ func (o *InstanceContainerServerInterfacesInner) GetPoolAssignedOk() (*bool, boo
 	return o.PoolAssigned, true
 }
 
-// IsSetPoolAssigned returns a boolean if a field has been set.
-func (o *InstanceContainerServerInterfacesInner) IsSetPoolAssigned() bool {
-	if o != nil && !IsNil(o.PoolAssigned) {
-		return true
-	}
-
-	return false
-}
-
 // SetPoolAssigned gets a reference to the given bool and assigns it to the PoolAssigned field.
 func (o *InstanceContainerServerInterfacesInner) SetPoolAssigned(v bool) {
 	o.PoolAssigned = &v
@@ -329,15 +257,6 @@ func (o *InstanceContainerServerInterfacesInner) GetPrimaryInterfaceOk() (*bool,
 		return nil, false
 	}
 	return o.PrimaryInterface, true
-}
-
-// IsSetPrimaryInterface returns a boolean if a field has been set.
-func (o *InstanceContainerServerInterfacesInner) IsSetPrimaryInterface() bool {
-	if o != nil && !IsNil(o.PrimaryInterface) {
-		return true
-	}
-
-	return false
 }
 
 // SetPrimaryInterface gets a reference to the given bool and assigns it to the PrimaryInterface field.
@@ -364,28 +283,9 @@ func (o *InstanceContainerServerInterfacesInner) GetNetworkOk() (*InstanceContai
 	return o.Network.Get(), o.Network.IsSet()
 }
 
-// IsSetNetwork returns a boolean if a field has been set.
-func (o *InstanceContainerServerInterfacesInner) IsSetNetwork() bool {
-	if o != nil && o.Network.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNetwork gets a reference to the given NullableInstanceContainerServerInterfacesInnerNetwork and assigns it to the Network field.
 func (o *InstanceContainerServerInterfacesInner) SetNetwork(v InstanceContainerServerInterfacesInnerNetwork) {
 	o.Network.Set(&v)
-}
-
-// SetNetworkNil sets the value for Network to be an explicit nil
-func (o *InstanceContainerServerInterfacesInner) SetNetworkNil() {
-	o.Network.Set(nil)
-}
-
-// UnsetNetwork ensures that no value is present for Network, not even an explicit nil
-func (o *InstanceContainerServerInterfacesInner) UnsetNetwork() {
-	o.Network.Unset()
 }
 
 // GetNetworkGroup returns the NetworkGroup field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -407,28 +307,9 @@ func (o *InstanceContainerServerInterfacesInner) GetNetworkGroupOk() (*InstanceC
 	return o.NetworkGroup.Get(), o.NetworkGroup.IsSet()
 }
 
-// IsSetNetworkGroup returns a boolean if a field has been set.
-func (o *InstanceContainerServerInterfacesInner) IsSetNetworkGroup() bool {
-	if o != nil && o.NetworkGroup.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkGroup gets a reference to the given NullableInstanceContainerServerInterfacesInnerNetworkGroup and assigns it to the NetworkGroup field.
 func (o *InstanceContainerServerInterfacesInner) SetNetworkGroup(v InstanceContainerServerInterfacesInnerNetworkGroup) {
 	o.NetworkGroup.Set(&v)
-}
-
-// SetNetworkGroupNil sets the value for NetworkGroup to be an explicit nil
-func (o *InstanceContainerServerInterfacesInner) SetNetworkGroupNil() {
-	o.NetworkGroup.Set(nil)
-}
-
-// UnsetNetworkGroup ensures that no value is present for NetworkGroup, not even an explicit nil
-func (o *InstanceContainerServerInterfacesInner) UnsetNetworkGroup() {
-	o.NetworkGroup.Unset()
 }
 
 // GetNetworkPool returns the NetworkPool field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -450,28 +331,9 @@ func (o *InstanceContainerServerInterfacesInner) GetNetworkPoolOk() (*InstanceCo
 	return o.NetworkPool.Get(), o.NetworkPool.IsSet()
 }
 
-// IsSetNetworkPool returns a boolean if a field has been set.
-func (o *InstanceContainerServerInterfacesInner) IsSetNetworkPool() bool {
-	if o != nil && o.NetworkPool.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkPool gets a reference to the given NullableInstanceContainerServerInterfacesInnerNetworkPool and assigns it to the NetworkPool field.
 func (o *InstanceContainerServerInterfacesInner) SetNetworkPool(v InstanceContainerServerInterfacesInnerNetworkPool) {
 	o.NetworkPool.Set(&v)
-}
-
-// SetNetworkPoolNil sets the value for NetworkPool to be an explicit nil
-func (o *InstanceContainerServerInterfacesInner) SetNetworkPoolNil() {
-	o.NetworkPool.Set(nil)
-}
-
-// UnsetNetworkPool ensures that no value is present for NetworkPool, not even an explicit nil
-func (o *InstanceContainerServerInterfacesInner) UnsetNetworkPool() {
-	o.NetworkPool.Unset()
 }
 
 // GetIpMode returns the IpMode field value if set, zero value otherwise.
@@ -490,15 +352,6 @@ func (o *InstanceContainerServerInterfacesInner) GetIpModeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.IpMode, true
-}
-
-// IsSetIpMode returns a boolean if a field has been set.
-func (o *InstanceContainerServerInterfacesInner) IsSetIpMode() bool {
-	if o != nil && !IsNil(o.IpMode) {
-		return true
-	}
-
-	return false
 }
 
 // SetIpMode gets a reference to the given string and assigns it to the IpMode field.
@@ -524,15 +377,6 @@ func (o *InstanceContainerServerInterfacesInner) GetMacAddressOk() (*string, boo
 	return o.MacAddress, true
 }
 
-// IsSetMacAddress returns a boolean if a field has been set.
-func (o *InstanceContainerServerInterfacesInner) IsSetMacAddress() bool {
-	if o != nil && !IsNil(o.MacAddress) {
-		return true
-	}
-
-	return false
-}
-
 // SetMacAddress gets a reference to the given string and assigns it to the MacAddress field.
 func (o *InstanceContainerServerInterfacesInner) SetMacAddress(v string) {
 	o.MacAddress = &v
@@ -554,15 +398,6 @@ func (o *InstanceContainerServerInterfacesInner) GetInterfacesOk() ([]InstanceCo
 		return nil, false
 	}
 	return o.Interfaces, true
-}
-
-// IsSetInterfaces returns a boolean if a field has been set.
-func (o *InstanceContainerServerInterfacesInner) IsSetInterfaces() bool {
-	if o != nil && !IsNil(o.Interfaces) {
-		return true
-	}
-
-	return false
 }
 
 // SetInterfaces gets a reference to the given []InstanceContainerServerInstancesInnerInner and assigns it to the Interfaces field.

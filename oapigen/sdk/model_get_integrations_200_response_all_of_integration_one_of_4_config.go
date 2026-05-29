@@ -67,15 +67,6 @@ func (o *GetIntegrations200ResponseAllOfIntegrationOneOf4Config) GetCherwellCust
 	return o.CherwellCustomCmdbMapping, true
 }
 
-// IsSetCherwellCustomCmdbMapping returns a boolean if a field has been set.
-func (o *GetIntegrations200ResponseAllOfIntegrationOneOf4Config) IsSetCherwellCustomCmdbMapping() bool {
-	if o != nil && !IsNil(o.CherwellCustomCmdbMapping) {
-		return true
-	}
-
-	return false
-}
-
 // SetCherwellCustomCmdbMapping gets a reference to the given string and assigns it to the CherwellCustomCmdbMapping field.
 func (o *GetIntegrations200ResponseAllOfIntegrationOneOf4Config) SetCherwellCustomCmdbMapping(v string) {
 	o.CherwellCustomCmdbMapping = &v
@@ -97,15 +88,6 @@ func (o *GetIntegrations200ResponseAllOfIntegrationOneOf4Config) GetCherwellClie
 		return nil, false
 	}
 	return o.CherwellClientKey, true
-}
-
-// IsSetCherwellClientKey returns a boolean if a field has been set.
-func (o *GetIntegrations200ResponseAllOfIntegrationOneOf4Config) IsSetCherwellClientKey() bool {
-	if o != nil && !IsNil(o.CherwellClientKey) {
-		return true
-	}
-
-	return false
 }
 
 // SetCherwellClientKey gets a reference to the given string and assigns it to the CherwellClientKey field.
@@ -131,15 +113,6 @@ func (o *GetIntegrations200ResponseAllOfIntegrationOneOf4Config) GetCherwellCrea
 	return o.CherwellCreatedBy, true
 }
 
-// IsSetCherwellCreatedBy returns a boolean if a field has been set.
-func (o *GetIntegrations200ResponseAllOfIntegrationOneOf4Config) IsSetCherwellCreatedBy() bool {
-	if o != nil && !IsNil(o.CherwellCreatedBy) {
-		return true
-	}
-
-	return false
-}
-
 // SetCherwellCreatedBy gets a reference to the given string and assigns it to the CherwellCreatedBy field.
 func (o *GetIntegrations200ResponseAllOfIntegrationOneOf4Config) SetCherwellCreatedBy(v string) {
 	o.CherwellCreatedBy = &v
@@ -163,15 +136,6 @@ func (o *GetIntegrations200ResponseAllOfIntegrationOneOf4Config) GetCherwellStar
 	return o.CherwellStartDate, true
 }
 
-// IsSetCherwellStartDate returns a boolean if a field has been set.
-func (o *GetIntegrations200ResponseAllOfIntegrationOneOf4Config) IsSetCherwellStartDate() bool {
-	if o != nil && !IsNil(o.CherwellStartDate) {
-		return true
-	}
-
-	return false
-}
-
 // SetCherwellStartDate gets a reference to the given string and assigns it to the CherwellStartDate field.
 func (o *GetIntegrations200ResponseAllOfIntegrationOneOf4Config) SetCherwellStartDate(v string) {
 	o.CherwellStartDate = &v
@@ -193,15 +157,6 @@ func (o *GetIntegrations200ResponseAllOfIntegrationOneOf4Config) GetCherwellEndD
 		return nil, false
 	}
 	return o.CherwellEndDate, true
-}
-
-// IsSetCherwellEndDate returns a boolean if a field has been set.
-func (o *GetIntegrations200ResponseAllOfIntegrationOneOf4Config) IsSetCherwellEndDate() bool {
-	if o != nil && !IsNil(o.CherwellEndDate) {
-		return true
-	}
-
-	return false
 }
 
 // SetCherwellEndDate gets a reference to the given string and assigns it to the CherwellEndDate field.
@@ -228,28 +183,9 @@ func (o *GetIntegrations200ResponseAllOfIntegrationOneOf4Config) GetCherwellIgno
 	return o.CherwellIgnoreSSLErrors.Get(), o.CherwellIgnoreSSLErrors.IsSet()
 }
 
-// IsSetCherwellIgnoreSSLErrors returns a boolean if a field has been set.
-func (o *GetIntegrations200ResponseAllOfIntegrationOneOf4Config) IsSetCherwellIgnoreSSLErrors() bool {
-	if o != nil && o.CherwellIgnoreSSLErrors.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCherwellIgnoreSSLErrors gets a reference to the given NullableString and assigns it to the CherwellIgnoreSSLErrors field.
 func (o *GetIntegrations200ResponseAllOfIntegrationOneOf4Config) SetCherwellIgnoreSSLErrors(v string) {
 	o.CherwellIgnoreSSLErrors.Set(&v)
-}
-
-// SetCherwellIgnoreSSLErrorsNil sets the value for CherwellIgnoreSSLErrors to be an explicit nil
-func (o *GetIntegrations200ResponseAllOfIntegrationOneOf4Config) SetCherwellIgnoreSSLErrorsNil() {
-	o.CherwellIgnoreSSLErrors.Set(nil)
-}
-
-// UnsetCherwellIgnoreSSLErrors ensures that no value is present for CherwellIgnoreSSLErrors, not even an explicit nil
-func (o *GetIntegrations200ResponseAllOfIntegrationOneOf4Config) UnsetCherwellIgnoreSSLErrors() {
-	o.CherwellIgnoreSSLErrors.Unset()
 }
 
 // GetCherwellBusinessObject returns the CherwellBusinessObject field value if set, zero value otherwise.
@@ -268,15 +204,6 @@ func (o *GetIntegrations200ResponseAllOfIntegrationOneOf4Config) GetCherwellBusi
 		return nil, false
 	}
 	return o.CherwellBusinessObject, true
-}
-
-// IsSetCherwellBusinessObject returns a boolean if a field has been set.
-func (o *GetIntegrations200ResponseAllOfIntegrationOneOf4Config) IsSetCherwellBusinessObject() bool {
-	if o != nil && !IsNil(o.CherwellBusinessObject) {
-		return true
-	}
-
-	return false
 }
 
 // SetCherwellBusinessObject gets a reference to the given string and assigns it to the CherwellBusinessObject field.

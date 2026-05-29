@@ -63,15 +63,6 @@ func (o *InstanceClone) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *InstanceClone) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *InstanceClone) SetName(v string) {
 	o.Name = &v
@@ -93,15 +84,6 @@ func (o *InstanceClone) GetGroupOk() (*InstanceCloneGroup, bool) {
 		return nil, false
 	}
 	return o.Group, true
-}
-
-// IsSetGroup returns a boolean if a field has been set.
-func (o *InstanceClone) IsSetGroup() bool {
-	if o != nil && !IsNil(o.Group) {
-		return true
-	}
-
-	return false
 }
 
 // SetGroup gets a reference to the given InstanceCloneGroup and assigns it to the Group field.

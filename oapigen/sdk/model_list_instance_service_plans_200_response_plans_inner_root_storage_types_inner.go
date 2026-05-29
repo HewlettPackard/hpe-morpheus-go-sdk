@@ -88,15 +88,6 @@ func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) Get
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int32 and assigns it to the Id field.
 func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) SetId(v int32) {
 	o.Id = &v
@@ -118,15 +109,6 @@ func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) Get
 		return nil, false
 	}
 	return o.Editable, true
-}
-
-// IsSetEditable returns a boolean if a field has been set.
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) IsSetEditable() bool {
-	if o != nil && !IsNil(o.Editable) {
-		return true
-	}
-
-	return false
 }
 
 // SetEditable gets a reference to the given bool and assigns it to the Editable field.
@@ -153,15 +135,6 @@ func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) Get
 	return o.OptionTypes, true
 }
 
-// IsSetOptionTypes returns a boolean if a field has been set.
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) IsSetOptionTypes() bool {
-	if o != nil && !IsNil(o.OptionTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetOptionTypes gets a reference to the given []map[string]interface{} and assigns it to the OptionTypes field.
 func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) SetOptionTypes(v []map[string]interface{}) {
 	o.OptionTypes = v
@@ -183,15 +156,6 @@ func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) Get
 		return nil, false
 	}
 	return o.DisplayOrder, true
-}
-
-// IsSetDisplayOrder returns a boolean if a field has been set.
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) IsSetDisplayOrder() bool {
-	if o != nil && !IsNil(o.DisplayOrder) {
-		return true
-	}
-
-	return false
 }
 
 // SetDisplayOrder gets a reference to the given int32 and assigns it to the DisplayOrder field.
@@ -217,15 +181,6 @@ func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) Get
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) SetCode(v string) {
 	o.Code = &v
@@ -247,15 +202,6 @@ func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) Get
 		return nil, false
 	}
 	return o.VolumeType, true
-}
-
-// IsSetVolumeType returns a boolean if a field has been set.
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) IsSetVolumeType() bool {
-	if o != nil && !IsNil(o.VolumeType) {
-		return true
-	}
-
-	return false
 }
 
 // SetVolumeType gets a reference to the given string and assigns it to the VolumeType field.
@@ -282,28 +228,9 @@ func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) Get
 	return o.MinStorage.Get(), o.MinStorage.IsSet()
 }
 
-// IsSetMinStorage returns a boolean if a field has been set.
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) IsSetMinStorage() bool {
-	if o != nil && o.MinStorage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMinStorage gets a reference to the given NullableString and assigns it to the MinStorage field.
 func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) SetMinStorage(v string) {
 	o.MinStorage.Set(&v)
-}
-
-// SetMinStorageNil sets the value for MinStorage to be an explicit nil
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) SetMinStorageNil() {
-	o.MinStorage.Set(nil)
-}
-
-// UnsetMinStorage ensures that no value is present for MinStorage, not even an explicit nil
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) UnsetMinStorage() {
-	o.MinStorage.Unset()
 }
 
 // GetDeletable returns the Deletable field value if set, zero value otherwise.
@@ -322,15 +249,6 @@ func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) Get
 		return nil, false
 	}
 	return o.Deletable, true
-}
-
-// IsSetDeletable returns a boolean if a field has been set.
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) IsSetDeletable() bool {
-	if o != nil && !IsNil(o.Deletable) {
-		return true
-	}
-
-	return false
 }
 
 // SetDeletable gets a reference to the given bool and assigns it to the Deletable field.
@@ -354,15 +272,6 @@ func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) Get
 		return nil, false
 	}
 	return o.DefaultType, true
-}
-
-// IsSetDefaultType returns a boolean if a field has been set.
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) IsSetDefaultType() bool {
-	if o != nil && !IsNil(o.DefaultType) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultType gets a reference to the given bool and assigns it to the DefaultType field.
@@ -389,28 +298,9 @@ func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) Get
 	return o.CreateDatastore.Get(), o.CreateDatastore.IsSet()
 }
 
-// IsSetCreateDatastore returns a boolean if a field has been set.
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) IsSetCreateDatastore() bool {
-	if o != nil && o.CreateDatastore.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCreateDatastore gets a reference to the given NullableString and assigns it to the CreateDatastore field.
 func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) SetCreateDatastore(v string) {
 	o.CreateDatastore.Set(&v)
-}
-
-// SetCreateDatastoreNil sets the value for CreateDatastore to be an explicit nil
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) SetCreateDatastoreNil() {
-	o.CreateDatastore.Set(nil)
-}
-
-// UnsetCreateDatastore ensures that no value is present for CreateDatastore, not even an explicit nil
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) UnsetCreateDatastore() {
-	o.CreateDatastore.Unset()
 }
 
 // GetResizable returns the Resizable field value if set, zero value otherwise.
@@ -429,15 +319,6 @@ func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) Get
 		return nil, false
 	}
 	return o.Resizable, true
-}
-
-// IsSetResizable returns a boolean if a field has been set.
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) IsSetResizable() bool {
-	if o != nil && !IsNil(o.Resizable) {
-		return true
-	}
-
-	return false
 }
 
 // SetResizable gets a reference to the given bool and assigns it to the Resizable field.
@@ -464,28 +345,9 @@ func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) Get
 	return o.StorageType.Get(), o.StorageType.IsSet()
 }
 
-// IsSetStorageType returns a boolean if a field has been set.
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) IsSetStorageType() bool {
-	if o != nil && o.StorageType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStorageType gets a reference to the given NullableString and assigns it to the StorageType field.
 func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) SetStorageType(v string) {
 	o.StorageType.Set(&v)
-}
-
-// SetStorageTypeNil sets the value for StorageType to be an explicit nil
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) SetStorageTypeNil() {
-	o.StorageType.Set(nil)
-}
-
-// UnsetStorageType ensures that no value is present for StorageType, not even an explicit nil
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) UnsetStorageType() {
-	o.StorageType.Unset()
 }
 
 // GetAllowSearch returns the AllowSearch field value if set, zero value otherwise.
@@ -504,15 +366,6 @@ func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) Get
 		return nil, false
 	}
 	return o.AllowSearch, true
-}
-
-// IsSetAllowSearch returns a boolean if a field has been set.
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) IsSetAllowSearch() bool {
-	if o != nil && !IsNil(o.AllowSearch) {
-		return true
-	}
-
-	return false
 }
 
 // SetAllowSearch gets a reference to the given bool and assigns it to the AllowSearch field.
@@ -539,28 +392,9 @@ func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) Get
 	return o.VolumeOptionSource.Get(), o.VolumeOptionSource.IsSet()
 }
 
-// IsSetVolumeOptionSource returns a boolean if a field has been set.
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) IsSetVolumeOptionSource() bool {
-	if o != nil && o.VolumeOptionSource.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetVolumeOptionSource gets a reference to the given NullableString and assigns it to the VolumeOptionSource field.
 func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) SetVolumeOptionSource(v string) {
 	o.VolumeOptionSource.Set(&v)
-}
-
-// SetVolumeOptionSourceNil sets the value for VolumeOptionSource to be an explicit nil
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) SetVolumeOptionSourceNil() {
-	o.VolumeOptionSource.Set(nil)
-}
-
-// UnsetVolumeOptionSource ensures that no value is present for VolumeOptionSource, not even an explicit nil
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) UnsetVolumeOptionSource() {
-	o.VolumeOptionSource.Unset()
 }
 
 // GetDisplayName returns the DisplayName field value if set, zero value otherwise.
@@ -579,15 +413,6 @@ func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) Get
 		return nil, false
 	}
 	return o.DisplayName, true
-}
-
-// IsSetDisplayName returns a boolean if a field has been set.
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) IsSetDisplayName() bool {
-	if o != nil && !IsNil(o.DisplayName) {
-		return true
-	}
-
-	return false
 }
 
 // SetDisplayName gets a reference to the given string and assigns it to the DisplayName field.
@@ -614,28 +439,9 @@ func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) Get
 	return o.MinIOPS.Get(), o.MinIOPS.IsSet()
 }
 
-// IsSetMinIOPS returns a boolean if a field has been set.
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) IsSetMinIOPS() bool {
-	if o != nil && o.MinIOPS.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMinIOPS gets a reference to the given NullableString and assigns it to the MinIOPS field.
 func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) SetMinIOPS(v string) {
 	o.MinIOPS.Set(&v)
-}
-
-// SetMinIOPSNil sets the value for MinIOPS to be an explicit nil
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) SetMinIOPSNil() {
-	o.MinIOPS.Set(nil)
-}
-
-// UnsetMinIOPS ensures that no value is present for MinIOPS, not even an explicit nil
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) UnsetMinIOPS() {
-	o.MinIOPS.Unset()
 }
 
 // GetMaxIOPS returns the MaxIOPS field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -657,28 +463,9 @@ func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) Get
 	return o.MaxIOPS.Get(), o.MaxIOPS.IsSet()
 }
 
-// IsSetMaxIOPS returns a boolean if a field has been set.
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) IsSetMaxIOPS() bool {
-	if o != nil && o.MaxIOPS.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxIOPS gets a reference to the given NullableString and assigns it to the MaxIOPS field.
 func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) SetMaxIOPS(v string) {
 	o.MaxIOPS.Set(&v)
-}
-
-// SetMaxIOPSNil sets the value for MaxIOPS to be an explicit nil
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) SetMaxIOPSNil() {
-	o.MaxIOPS.Set(nil)
-}
-
-// UnsetMaxIOPS ensures that no value is present for MaxIOPS, not even an explicit nil
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) UnsetMaxIOPS() {
-	o.MaxIOPS.Unset()
 }
 
 // GetHasDatastore returns the HasDatastore field value if set, zero value otherwise.
@@ -697,15 +484,6 @@ func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) Get
 		return nil, false
 	}
 	return o.HasDatastore, true
-}
-
-// IsSetHasDatastore returns a boolean if a field has been set.
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) IsSetHasDatastore() bool {
-	if o != nil && !IsNil(o.HasDatastore) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasDatastore gets a reference to the given bool and assigns it to the HasDatastore field.
@@ -731,15 +509,6 @@ func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) Get
 	return o.CustomSize, true
 }
 
-// IsSetCustomSize returns a boolean if a field has been set.
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) IsSetCustomSize() bool {
-	if o != nil && !IsNil(o.CustomSize) {
-		return true
-	}
-
-	return false
-}
-
 // SetCustomSize gets a reference to the given bool and assigns it to the CustomSize field.
 func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) SetCustomSize(v bool) {
 	o.CustomSize = &v
@@ -761,15 +530,6 @@ func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) Get
 		return nil, false
 	}
 	return o.AutoDelete, true
-}
-
-// IsSetAutoDelete returns a boolean if a field has been set.
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) IsSetAutoDelete() bool {
-	if o != nil && !IsNil(o.AutoDelete) {
-		return true
-	}
-
-	return false
 }
 
 // SetAutoDelete gets a reference to the given bool and assigns it to the AutoDelete field.
@@ -795,15 +555,6 @@ func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) Get
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) SetName(v string) {
 	o.Name = &v
@@ -825,15 +576,6 @@ func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) Get
 		return nil, false
 	}
 	return o.ConfigurableIOPS, true
-}
-
-// IsSetConfigurableIOPS returns a boolean if a field has been set.
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) IsSetConfigurableIOPS() bool {
-	if o != nil && !IsNil(o.ConfigurableIOPS) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfigurableIOPS gets a reference to the given bool and assigns it to the ConfigurableIOPS field.
@@ -859,15 +601,6 @@ func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) Get
 	return o.CustomLabel, true
 }
 
-// IsSetCustomLabel returns a boolean if a field has been set.
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) IsSetCustomLabel() bool {
-	if o != nil && !IsNil(o.CustomLabel) {
-		return true
-	}
-
-	return false
-}
-
 // SetCustomLabel gets a reference to the given bool and assigns it to the CustomLabel field.
 func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) SetCustomLabel(v bool) {
 	o.CustomLabel = &v
@@ -889,15 +622,6 @@ func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) Get
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -924,28 +648,9 @@ func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) Get
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetVolumeCategory returns the VolumeCategory field value if set, zero value otherwise.
@@ -964,15 +669,6 @@ func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) Get
 		return nil, false
 	}
 	return o.VolumeCategory, true
-}
-
-// IsSetVolumeCategory returns a boolean if a field has been set.
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) IsSetVolumeCategory() bool {
-	if o != nil && !IsNil(o.VolumeCategory) {
-		return true
-	}
-
-	return false
 }
 
 // SetVolumeCategory gets a reference to the given string and assigns it to the VolumeCategory field.
@@ -999,28 +695,9 @@ func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) Get
 	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) IsSetExternalId() bool {
-	if o != nil && o.ExternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) SetExternalId(v string) {
 	o.ExternalId.Set(&v)
-}
-
-// SetExternalIdNil sets the value for ExternalId to be an explicit nil
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) SetExternalIdNil() {
-	o.ExternalId.Set(nil)
-}
-
-// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) UnsetExternalId() {
-	o.ExternalId.Unset()
 }
 
 // GetMaxStorage returns the MaxStorage field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1042,28 +719,9 @@ func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) Get
 	return o.MaxStorage.Get(), o.MaxStorage.IsSet()
 }
 
-// IsSetMaxStorage returns a boolean if a field has been set.
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) IsSetMaxStorage() bool {
-	if o != nil && o.MaxStorage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxStorage gets a reference to the given NullableString and assigns it to the MaxStorage field.
 func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) SetMaxStorage(v string) {
 	o.MaxStorage.Set(&v)
-}
-
-// SetMaxStorageNil sets the value for MaxStorage to be an explicit nil
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) SetMaxStorageNil() {
-	o.MaxStorage.Set(nil)
-}
-
-// UnsetMaxStorage ensures that no value is present for MaxStorage, not even an explicit nil
-func (o *ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) UnsetMaxStorage() {
-	o.MaxStorage.Unset()
 }
 
 func (o ListInstanceServicePlans200ResponsePlansInnerRootStorageTypesInner) MarshalJSON() ([]byte, error) {

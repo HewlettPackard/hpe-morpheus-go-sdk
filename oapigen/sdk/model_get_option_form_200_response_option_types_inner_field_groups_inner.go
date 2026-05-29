@@ -69,15 +69,6 @@ func (o *GetOptionForm200ResponseOptionTypesInnerFieldGroupsInner) GetIdOk() (*i
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetOptionForm200ResponseOptionTypesInnerFieldGroupsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetOptionForm200ResponseOptionTypesInnerFieldGroupsInner) SetId(v int64) {
 	o.Id = &v
@@ -101,15 +92,6 @@ func (o *GetOptionForm200ResponseOptionTypesInnerFieldGroupsInner) GetNameOk() (
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *GetOptionForm200ResponseOptionTypesInnerFieldGroupsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *GetOptionForm200ResponseOptionTypesInnerFieldGroupsInner) SetName(v string) {
 	o.Name = &v
@@ -131,15 +113,6 @@ func (o *GetOptionForm200ResponseOptionTypesInnerFieldGroupsInner) GetCodeOk() (
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *GetOptionForm200ResponseOptionTypesInnerFieldGroupsInner) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -166,28 +139,9 @@ func (o *GetOptionForm200ResponseOptionTypesInnerFieldGroupsInner) GetDescriptio
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *GetOptionForm200ResponseOptionTypesInnerFieldGroupsInner) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *GetOptionForm200ResponseOptionTypesInnerFieldGroupsInner) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *GetOptionForm200ResponseOptionTypesInnerFieldGroupsInner) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *GetOptionForm200ResponseOptionTypesInnerFieldGroupsInner) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetLocalizedName returns the LocalizedName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -209,28 +163,9 @@ func (o *GetOptionForm200ResponseOptionTypesInnerFieldGroupsInner) GetLocalizedN
 	return o.LocalizedName.Get(), o.LocalizedName.IsSet()
 }
 
-// IsSetLocalizedName returns a boolean if a field has been set.
-func (o *GetOptionForm200ResponseOptionTypesInnerFieldGroupsInner) IsSetLocalizedName() bool {
-	if o != nil && o.LocalizedName.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLocalizedName gets a reference to the given NullableString and assigns it to the LocalizedName field.
 func (o *GetOptionForm200ResponseOptionTypesInnerFieldGroupsInner) SetLocalizedName(v string) {
 	o.LocalizedName.Set(&v)
-}
-
-// SetLocalizedNameNil sets the value for LocalizedName to be an explicit nil
-func (o *GetOptionForm200ResponseOptionTypesInnerFieldGroupsInner) SetLocalizedNameNil() {
-	o.LocalizedName.Set(nil)
-}
-
-// UnsetLocalizedName ensures that no value is present for LocalizedName, not even an explicit nil
-func (o *GetOptionForm200ResponseOptionTypesInnerFieldGroupsInner) UnsetLocalizedName() {
-	o.LocalizedName.Unset()
 }
 
 // GetCollapsible returns the Collapsible field value if set, zero value otherwise.
@@ -249,15 +184,6 @@ func (o *GetOptionForm200ResponseOptionTypesInnerFieldGroupsInner) GetCollapsibl
 		return nil, false
 	}
 	return o.Collapsible, true
-}
-
-// IsSetCollapsible returns a boolean if a field has been set.
-func (o *GetOptionForm200ResponseOptionTypesInnerFieldGroupsInner) IsSetCollapsible() bool {
-	if o != nil && !IsNil(o.Collapsible) {
-		return true
-	}
-
-	return false
 }
 
 // SetCollapsible gets a reference to the given bool and assigns it to the Collapsible field.
@@ -281,15 +207,6 @@ func (o *GetOptionForm200ResponseOptionTypesInnerFieldGroupsInner) GetDefaultCol
 		return nil, false
 	}
 	return o.DefaultCollapsed, true
-}
-
-// IsSetDefaultCollapsed returns a boolean if a field has been set.
-func (o *GetOptionForm200ResponseOptionTypesInnerFieldGroupsInner) IsSetDefaultCollapsed() bool {
-	if o != nil && !IsNil(o.DefaultCollapsed) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultCollapsed gets a reference to the given bool and assigns it to the DefaultCollapsed field.
@@ -316,28 +233,9 @@ func (o *GetOptionForm200ResponseOptionTypesInnerFieldGroupsInner) GetVisibleOnC
 	return o.VisibleOnCode.Get(), o.VisibleOnCode.IsSet()
 }
 
-// IsSetVisibleOnCode returns a boolean if a field has been set.
-func (o *GetOptionForm200ResponseOptionTypesInnerFieldGroupsInner) IsSetVisibleOnCode() bool {
-	if o != nil && o.VisibleOnCode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetVisibleOnCode gets a reference to the given NullableString and assigns it to the VisibleOnCode field.
 func (o *GetOptionForm200ResponseOptionTypesInnerFieldGroupsInner) SetVisibleOnCode(v string) {
 	o.VisibleOnCode.Set(&v)
-}
-
-// SetVisibleOnCodeNil sets the value for VisibleOnCode to be an explicit nil
-func (o *GetOptionForm200ResponseOptionTypesInnerFieldGroupsInner) SetVisibleOnCodeNil() {
-	o.VisibleOnCode.Set(nil)
-}
-
-// UnsetVisibleOnCode ensures that no value is present for VisibleOnCode, not even an explicit nil
-func (o *GetOptionForm200ResponseOptionTypesInnerFieldGroupsInner) UnsetVisibleOnCode() {
-	o.VisibleOnCode.Unset()
 }
 
 // GetOptions returns the Options field value if set, zero value otherwise.
@@ -356,15 +254,6 @@ func (o *GetOptionForm200ResponseOptionTypesInnerFieldGroupsInner) GetOptionsOk(
 		return nil, false
 	}
 	return o.Options, true
-}
-
-// IsSetOptions returns a boolean if a field has been set.
-func (o *GetOptionForm200ResponseOptionTypesInnerFieldGroupsInner) IsSetOptions() bool {
-	if o != nil && !IsNil(o.Options) {
-		return true
-	}
-
-	return false
 }
 
 // SetOptions gets a reference to the given []GetOptionForm200ResponseOptionTypesInnerFieldGroupsInnerOptionsInner and assigns it to the Options field.

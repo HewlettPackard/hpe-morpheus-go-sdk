@@ -61,15 +61,6 @@ func (o *CreateNetworkTransportZoneRequest) GetNetworkScopeOk() (*CreateNetworkT
 	return o.NetworkScope, true
 }
 
-// IsSetNetworkScope returns a boolean if a field has been set.
-func (o *CreateNetworkTransportZoneRequest) IsSetNetworkScope() bool {
-	if o != nil && !IsNil(o.NetworkScope) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkScope gets a reference to the given CreateNetworkTransportZoneRequestNetworkScope and assigns it to the NetworkScope field.
 func (o *CreateNetworkTransportZoneRequest) SetNetworkScope(v CreateNetworkTransportZoneRequestNetworkScope) {
 	o.NetworkScope = &v

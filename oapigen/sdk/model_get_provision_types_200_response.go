@@ -61,15 +61,6 @@ func (o *GetProvisionTypes200Response) GetProvisionTypeOk() (*GetProvisionTypes2
 	return o.ProvisionType, true
 }
 
-// IsSetProvisionType returns a boolean if a field has been set.
-func (o *GetProvisionTypes200Response) IsSetProvisionType() bool {
-	if o != nil && !IsNil(o.ProvisionType) {
-		return true
-	}
-
-	return false
-}
-
 // SetProvisionType gets a reference to the given GetProvisionTypes200ResponseProvisionType and assigns it to the ProvisionType field.
 func (o *GetProvisionTypes200Response) SetProvisionType(v GetProvisionTypes200ResponseProvisionType) {
 	o.ProvisionType = &v

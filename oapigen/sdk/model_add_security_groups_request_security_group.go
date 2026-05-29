@@ -105,15 +105,6 @@ func (o *AddSecurityGroupsRequestSecurityGroup) GetDescriptionOk() (*string, boo
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *AddSecurityGroupsRequestSecurityGroup) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *AddSecurityGroupsRequestSecurityGroup) SetDescription(v string) {
 	o.Description = &v
@@ -161,15 +152,6 @@ func (o *AddSecurityGroupsRequestSecurityGroup) GetActiveOk() (*bool, bool) {
 	return o.Active, true
 }
 
-// IsSetActive returns a boolean if a field has been set.
-func (o *AddSecurityGroupsRequestSecurityGroup) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
-}
-
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *AddSecurityGroupsRequestSecurityGroup) SetActive(v bool) {
 	o.Active = &v
@@ -191,15 +173,6 @@ func (o *AddSecurityGroupsRequestSecurityGroup) GetVisibilityOk() (*string, bool
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *AddSecurityGroupsRequestSecurityGroup) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -225,15 +198,6 @@ func (o *AddSecurityGroupsRequestSecurityGroup) GetNetworkServerIdOk() (*int64, 
 	return o.NetworkServerId, true
 }
 
-// IsSetNetworkServerId returns a boolean if a field has been set.
-func (o *AddSecurityGroupsRequestSecurityGroup) IsSetNetworkServerId() bool {
-	if o != nil && !IsNil(o.NetworkServerId) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkServerId gets a reference to the given int64 and assigns it to the NetworkServerId field.
 func (o *AddSecurityGroupsRequestSecurityGroup) SetNetworkServerId(v int64) {
 	o.NetworkServerId = &v
@@ -255,15 +219,6 @@ func (o *AddSecurityGroupsRequestSecurityGroup) GetCustomOptionsOk() (*AddSecuri
 		return nil, false
 	}
 	return o.CustomOptions, true
-}
-
-// IsSetCustomOptions returns a boolean if a field has been set.
-func (o *AddSecurityGroupsRequestSecurityGroup) IsSetCustomOptions() bool {
-	if o != nil && !IsNil(o.CustomOptions) {
-		return true
-	}
-
-	return false
 }
 
 // SetCustomOptions gets a reference to the given AddSecurityGroupsRequestSecurityGroupCustomOptions and assigns it to the CustomOptions field.
@@ -289,15 +244,6 @@ func (o *AddSecurityGroupsRequestSecurityGroup) GetTenantPermissionsOk() (*AddSe
 	return o.TenantPermissions, true
 }
 
-// IsSetTenantPermissions returns a boolean if a field has been set.
-func (o *AddSecurityGroupsRequestSecurityGroup) IsSetTenantPermissions() bool {
-	if o != nil && !IsNil(o.TenantPermissions) {
-		return true
-	}
-
-	return false
-}
-
 // SetTenantPermissions gets a reference to the given AddSecurityGroupsRequestSecurityGroupTenantPermissions and assigns it to the TenantPermissions field.
 func (o *AddSecurityGroupsRequestSecurityGroup) SetTenantPermissions(v AddSecurityGroupsRequestSecurityGroupTenantPermissions) {
 	o.TenantPermissions = &v
@@ -319,15 +265,6 @@ func (o *AddSecurityGroupsRequestSecurityGroup) GetResourcePermissionsOk() (*Add
 		return nil, false
 	}
 	return o.ResourcePermissions, true
-}
-
-// IsSetResourcePermissions returns a boolean if a field has been set.
-func (o *AddSecurityGroupsRequestSecurityGroup) IsSetResourcePermissions() bool {
-	if o != nil && !IsNil(o.ResourcePermissions) {
-		return true
-	}
-
-	return false
 }
 
 // SetResourcePermissions gets a reference to the given AddSecurityGroupsRequestSecurityGroupResourcePermissions and assigns it to the ResourcePermissions field.

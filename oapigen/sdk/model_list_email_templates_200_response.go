@@ -62,15 +62,6 @@ func (o *ListEmailTemplates200Response) GetEmailTemplatesOk() ([]ListEmailTempla
 	return o.EmailTemplates, true
 }
 
-// IsSetEmailTemplates returns a boolean if a field has been set.
-func (o *ListEmailTemplates200Response) IsSetEmailTemplates() bool {
-	if o != nil && !IsNil(o.EmailTemplates) {
-		return true
-	}
-
-	return false
-}
-
 // SetEmailTemplates gets a reference to the given []ListEmailTemplates200ResponseAllOfEmailTemplatesInner and assigns it to the EmailTemplates field.
 func (o *ListEmailTemplates200Response) SetEmailTemplates(v []ListEmailTemplates200ResponseAllOfEmailTemplatesInner) {
 	o.EmailTemplates = v
@@ -92,15 +83,6 @@ func (o *ListEmailTemplates200Response) GetMetaOk() (*ListApprovals200ResponseAl
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListEmailTemplates200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

@@ -555,15 +555,6 @@ func (o *HealthDatabaseStats) GetAbortedClientsOk() (*string, bool) {
 	return o.AbortedClients, true
 }
 
-// IsSetAbortedClients returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetAbortedClients() bool {
-	if o != nil && !IsNil(o.AbortedClients) {
-		return true
-	}
-
-	return false
-}
-
 // SetAbortedClients gets a reference to the given string and assigns it to the AbortedClients field.
 func (o *HealthDatabaseStats) SetAbortedClients(v string) {
 	o.AbortedClients = &v
@@ -585,15 +576,6 @@ func (o *HealthDatabaseStats) GetAbortedConnectsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.AbortedConnects, true
-}
-
-// IsSetAbortedConnects returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetAbortedConnects() bool {
-	if o != nil && !IsNil(o.AbortedConnects) {
-		return true
-	}
-
-	return false
 }
 
 // SetAbortedConnects gets a reference to the given string and assigns it to the AbortedConnects field.
@@ -619,15 +601,6 @@ func (o *HealthDatabaseStats) GetBinlogSnapshotFileOk() (*string, bool) {
 	return o.BinlogSnapshotFile, true
 }
 
-// IsSetBinlogSnapshotFile returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetBinlogSnapshotFile() bool {
-	if o != nil && !IsNil(o.BinlogSnapshotFile) {
-		return true
-	}
-
-	return false
-}
-
 // SetBinlogSnapshotFile gets a reference to the given string and assigns it to the BinlogSnapshotFile field.
 func (o *HealthDatabaseStats) SetBinlogSnapshotFile(v string) {
 	o.BinlogSnapshotFile = &v
@@ -649,15 +622,6 @@ func (o *HealthDatabaseStats) GetBinlogSnapshotPositionOk() (*string, bool) {
 		return nil, false
 	}
 	return o.BinlogSnapshotPosition, true
-}
-
-// IsSetBinlogSnapshotPosition returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetBinlogSnapshotPosition() bool {
-	if o != nil && !IsNil(o.BinlogSnapshotPosition) {
-		return true
-	}
-
-	return false
 }
 
 // SetBinlogSnapshotPosition gets a reference to the given string and assigns it to the BinlogSnapshotPosition field.
@@ -683,15 +647,6 @@ func (o *HealthDatabaseStats) GetBinlogCacheDiskUseOk() (*string, bool) {
 	return o.BinlogCacheDiskUse, true
 }
 
-// IsSetBinlogCacheDiskUse returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetBinlogCacheDiskUse() bool {
-	if o != nil && !IsNil(o.BinlogCacheDiskUse) {
-		return true
-	}
-
-	return false
-}
-
 // SetBinlogCacheDiskUse gets a reference to the given string and assigns it to the BinlogCacheDiskUse field.
 func (o *HealthDatabaseStats) SetBinlogCacheDiskUse(v string) {
 	o.BinlogCacheDiskUse = &v
@@ -713,15 +668,6 @@ func (o *HealthDatabaseStats) GetBinlogCacheUseOk() (*string, bool) {
 		return nil, false
 	}
 	return o.BinlogCacheUse, true
-}
-
-// IsSetBinlogCacheUse returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetBinlogCacheUse() bool {
-	if o != nil && !IsNil(o.BinlogCacheUse) {
-		return true
-	}
-
-	return false
 }
 
 // SetBinlogCacheUse gets a reference to the given string and assigns it to the BinlogCacheUse field.
@@ -747,15 +693,6 @@ func (o *HealthDatabaseStats) GetBinlogSnapshotGtidExecutedOk() (*string, bool) 
 	return o.BinlogSnapshotGtidExecuted, true
 }
 
-// IsSetBinlogSnapshotGtidExecuted returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetBinlogSnapshotGtidExecuted() bool {
-	if o != nil && !IsNil(o.BinlogSnapshotGtidExecuted) {
-		return true
-	}
-
-	return false
-}
-
 // SetBinlogSnapshotGtidExecuted gets a reference to the given string and assigns it to the BinlogSnapshotGtidExecuted field.
 func (o *HealthDatabaseStats) SetBinlogSnapshotGtidExecuted(v string) {
 	o.BinlogSnapshotGtidExecuted = &v
@@ -777,15 +714,6 @@ func (o *HealthDatabaseStats) GetBinlogStmtCacheDiskUseOk() (*string, bool) {
 		return nil, false
 	}
 	return o.BinlogStmtCacheDiskUse, true
-}
-
-// IsSetBinlogStmtCacheDiskUse returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetBinlogStmtCacheDiskUse() bool {
-	if o != nil && !IsNil(o.BinlogStmtCacheDiskUse) {
-		return true
-	}
-
-	return false
 }
 
 // SetBinlogStmtCacheDiskUse gets a reference to the given string and assigns it to the BinlogStmtCacheDiskUse field.
@@ -811,15 +739,6 @@ func (o *HealthDatabaseStats) GetBinlogStmtCacheUseOk() (*string, bool) {
 	return o.BinlogStmtCacheUse, true
 }
 
-// IsSetBinlogStmtCacheUse returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetBinlogStmtCacheUse() bool {
-	if o != nil && !IsNil(o.BinlogStmtCacheUse) {
-		return true
-	}
-
-	return false
-}
-
 // SetBinlogStmtCacheUse gets a reference to the given string and assigns it to the BinlogStmtCacheUse field.
 func (o *HealthDatabaseStats) SetBinlogStmtCacheUse(v string) {
 	o.BinlogStmtCacheUse = &v
@@ -841,15 +760,6 @@ func (o *HealthDatabaseStats) GetBytesReceivedOk() (*string, bool) {
 		return nil, false
 	}
 	return o.BytesReceived, true
-}
-
-// IsSetBytesReceived returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetBytesReceived() bool {
-	if o != nil && !IsNil(o.BytesReceived) {
-		return true
-	}
-
-	return false
 }
 
 // SetBytesReceived gets a reference to the given string and assigns it to the BytesReceived field.
@@ -875,15 +785,6 @@ func (o *HealthDatabaseStats) GetBytesSentOk() (*string, bool) {
 	return o.BytesSent, true
 }
 
-// IsSetBytesSent returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetBytesSent() bool {
-	if o != nil && !IsNil(o.BytesSent) {
-		return true
-	}
-
-	return false
-}
-
 // SetBytesSent gets a reference to the given string and assigns it to the BytesSent field.
 func (o *HealthDatabaseStats) SetBytesSent(v string) {
 	o.BytesSent = &v
@@ -905,15 +806,6 @@ func (o *HealthDatabaseStats) GetComAdminCommandsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComAdminCommands, true
-}
-
-// IsSetComAdminCommands returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComAdminCommands() bool {
-	if o != nil && !IsNil(o.ComAdminCommands) {
-		return true
-	}
-
-	return false
 }
 
 // SetComAdminCommands gets a reference to the given string and assigns it to the ComAdminCommands field.
@@ -939,15 +831,6 @@ func (o *HealthDatabaseStats) GetComAssignToKeycacheOk() (*string, bool) {
 	return o.ComAssignToKeycache, true
 }
 
-// IsSetComAssignToKeycache returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComAssignToKeycache() bool {
-	if o != nil && !IsNil(o.ComAssignToKeycache) {
-		return true
-	}
-
-	return false
-}
-
 // SetComAssignToKeycache gets a reference to the given string and assigns it to the ComAssignToKeycache field.
 func (o *HealthDatabaseStats) SetComAssignToKeycache(v string) {
 	o.ComAssignToKeycache = &v
@@ -969,15 +852,6 @@ func (o *HealthDatabaseStats) GetComAlterDbOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComAlterDb, true
-}
-
-// IsSetComAlterDb returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComAlterDb() bool {
-	if o != nil && !IsNil(o.ComAlterDb) {
-		return true
-	}
-
-	return false
 }
 
 // SetComAlterDb gets a reference to the given string and assigns it to the ComAlterDb field.
@@ -1003,15 +877,6 @@ func (o *HealthDatabaseStats) GetComAlterDbUpgradeOk() (*string, bool) {
 	return o.ComAlterDbUpgrade, true
 }
 
-// IsSetComAlterDbUpgrade returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComAlterDbUpgrade() bool {
-	if o != nil && !IsNil(o.ComAlterDbUpgrade) {
-		return true
-	}
-
-	return false
-}
-
 // SetComAlterDbUpgrade gets a reference to the given string and assigns it to the ComAlterDbUpgrade field.
 func (o *HealthDatabaseStats) SetComAlterDbUpgrade(v string) {
 	o.ComAlterDbUpgrade = &v
@@ -1033,15 +898,6 @@ func (o *HealthDatabaseStats) GetComAlterEventOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComAlterEvent, true
-}
-
-// IsSetComAlterEvent returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComAlterEvent() bool {
-	if o != nil && !IsNil(o.ComAlterEvent) {
-		return true
-	}
-
-	return false
 }
 
 // SetComAlterEvent gets a reference to the given string and assigns it to the ComAlterEvent field.
@@ -1067,15 +923,6 @@ func (o *HealthDatabaseStats) GetComAlterFunctionOk() (*string, bool) {
 	return o.ComAlterFunction, true
 }
 
-// IsSetComAlterFunction returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComAlterFunction() bool {
-	if o != nil && !IsNil(o.ComAlterFunction) {
-		return true
-	}
-
-	return false
-}
-
 // SetComAlterFunction gets a reference to the given string and assigns it to the ComAlterFunction field.
 func (o *HealthDatabaseStats) SetComAlterFunction(v string) {
 	o.ComAlterFunction = &v
@@ -1097,15 +944,6 @@ func (o *HealthDatabaseStats) GetComAlterInstanceOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComAlterInstance, true
-}
-
-// IsSetComAlterInstance returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComAlterInstance() bool {
-	if o != nil && !IsNil(o.ComAlterInstance) {
-		return true
-	}
-
-	return false
 }
 
 // SetComAlterInstance gets a reference to the given string and assigns it to the ComAlterInstance field.
@@ -1131,15 +969,6 @@ func (o *HealthDatabaseStats) GetComAlterProcedureOk() (*string, bool) {
 	return o.ComAlterProcedure, true
 }
 
-// IsSetComAlterProcedure returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComAlterProcedure() bool {
-	if o != nil && !IsNil(o.ComAlterProcedure) {
-		return true
-	}
-
-	return false
-}
-
 // SetComAlterProcedure gets a reference to the given string and assigns it to the ComAlterProcedure field.
 func (o *HealthDatabaseStats) SetComAlterProcedure(v string) {
 	o.ComAlterProcedure = &v
@@ -1161,15 +990,6 @@ func (o *HealthDatabaseStats) GetComAlterServerOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComAlterServer, true
-}
-
-// IsSetComAlterServer returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComAlterServer() bool {
-	if o != nil && !IsNil(o.ComAlterServer) {
-		return true
-	}
-
-	return false
 }
 
 // SetComAlterServer gets a reference to the given string and assigns it to the ComAlterServer field.
@@ -1195,15 +1015,6 @@ func (o *HealthDatabaseStats) GetComAlterTableOk() (*string, bool) {
 	return o.ComAlterTable, true
 }
 
-// IsSetComAlterTable returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComAlterTable() bool {
-	if o != nil && !IsNil(o.ComAlterTable) {
-		return true
-	}
-
-	return false
-}
-
 // SetComAlterTable gets a reference to the given string and assigns it to the ComAlterTable field.
 func (o *HealthDatabaseStats) SetComAlterTable(v string) {
 	o.ComAlterTable = &v
@@ -1225,15 +1036,6 @@ func (o *HealthDatabaseStats) GetComAlterTablespaceOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComAlterTablespace, true
-}
-
-// IsSetComAlterTablespace returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComAlterTablespace() bool {
-	if o != nil && !IsNil(o.ComAlterTablespace) {
-		return true
-	}
-
-	return false
 }
 
 // SetComAlterTablespace gets a reference to the given string and assigns it to the ComAlterTablespace field.
@@ -1259,15 +1061,6 @@ func (o *HealthDatabaseStats) GetComAlterUserOk() (*string, bool) {
 	return o.ComAlterUser, true
 }
 
-// IsSetComAlterUser returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComAlterUser() bool {
-	if o != nil && !IsNil(o.ComAlterUser) {
-		return true
-	}
-
-	return false
-}
-
 // SetComAlterUser gets a reference to the given string and assigns it to the ComAlterUser field.
 func (o *HealthDatabaseStats) SetComAlterUser(v string) {
 	o.ComAlterUser = &v
@@ -1289,15 +1082,6 @@ func (o *HealthDatabaseStats) GetComAnalyzeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComAnalyze, true
-}
-
-// IsSetComAnalyze returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComAnalyze() bool {
-	if o != nil && !IsNil(o.ComAnalyze) {
-		return true
-	}
-
-	return false
 }
 
 // SetComAnalyze gets a reference to the given string and assigns it to the ComAnalyze field.
@@ -1323,15 +1107,6 @@ func (o *HealthDatabaseStats) GetComBeginOk() (*string, bool) {
 	return o.ComBegin, true
 }
 
-// IsSetComBegin returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComBegin() bool {
-	if o != nil && !IsNil(o.ComBegin) {
-		return true
-	}
-
-	return false
-}
-
 // SetComBegin gets a reference to the given string and assigns it to the ComBegin field.
 func (o *HealthDatabaseStats) SetComBegin(v string) {
 	o.ComBegin = &v
@@ -1353,15 +1128,6 @@ func (o *HealthDatabaseStats) GetComBinlogOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComBinlog, true
-}
-
-// IsSetComBinlog returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComBinlog() bool {
-	if o != nil && !IsNil(o.ComBinlog) {
-		return true
-	}
-
-	return false
 }
 
 // SetComBinlog gets a reference to the given string and assigns it to the ComBinlog field.
@@ -1387,15 +1153,6 @@ func (o *HealthDatabaseStats) GetComCallProcedureOk() (*string, bool) {
 	return o.ComCallProcedure, true
 }
 
-// IsSetComCallProcedure returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComCallProcedure() bool {
-	if o != nil && !IsNil(o.ComCallProcedure) {
-		return true
-	}
-
-	return false
-}
-
 // SetComCallProcedure gets a reference to the given string and assigns it to the ComCallProcedure field.
 func (o *HealthDatabaseStats) SetComCallProcedure(v string) {
 	o.ComCallProcedure = &v
@@ -1417,15 +1174,6 @@ func (o *HealthDatabaseStats) GetComChangeDbOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComChangeDb, true
-}
-
-// IsSetComChangeDb returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComChangeDb() bool {
-	if o != nil && !IsNil(o.ComChangeDb) {
-		return true
-	}
-
-	return false
 }
 
 // SetComChangeDb gets a reference to the given string and assigns it to the ComChangeDb field.
@@ -1451,15 +1199,6 @@ func (o *HealthDatabaseStats) GetComChangeMasterOk() (*string, bool) {
 	return o.ComChangeMaster, true
 }
 
-// IsSetComChangeMaster returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComChangeMaster() bool {
-	if o != nil && !IsNil(o.ComChangeMaster) {
-		return true
-	}
-
-	return false
-}
-
 // SetComChangeMaster gets a reference to the given string and assigns it to the ComChangeMaster field.
 func (o *HealthDatabaseStats) SetComChangeMaster(v string) {
 	o.ComChangeMaster = &v
@@ -1481,15 +1220,6 @@ func (o *HealthDatabaseStats) GetComChangeReplFilterOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComChangeReplFilter, true
-}
-
-// IsSetComChangeReplFilter returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComChangeReplFilter() bool {
-	if o != nil && !IsNil(o.ComChangeReplFilter) {
-		return true
-	}
-
-	return false
 }
 
 // SetComChangeReplFilter gets a reference to the given string and assigns it to the ComChangeReplFilter field.
@@ -1515,15 +1245,6 @@ func (o *HealthDatabaseStats) GetComCheckOk() (*string, bool) {
 	return o.ComCheck, true
 }
 
-// IsSetComCheck returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComCheck() bool {
-	if o != nil && !IsNil(o.ComCheck) {
-		return true
-	}
-
-	return false
-}
-
 // SetComCheck gets a reference to the given string and assigns it to the ComCheck field.
 func (o *HealthDatabaseStats) SetComCheck(v string) {
 	o.ComCheck = &v
@@ -1545,15 +1266,6 @@ func (o *HealthDatabaseStats) GetComChecksumOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComChecksum, true
-}
-
-// IsSetComChecksum returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComChecksum() bool {
-	if o != nil && !IsNil(o.ComChecksum) {
-		return true
-	}
-
-	return false
 }
 
 // SetComChecksum gets a reference to the given string and assigns it to the ComChecksum field.
@@ -1579,15 +1291,6 @@ func (o *HealthDatabaseStats) GetComCommitOk() (*string, bool) {
 	return o.ComCommit, true
 }
 
-// IsSetComCommit returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComCommit() bool {
-	if o != nil && !IsNil(o.ComCommit) {
-		return true
-	}
-
-	return false
-}
-
 // SetComCommit gets a reference to the given string and assigns it to the ComCommit field.
 func (o *HealthDatabaseStats) SetComCommit(v string) {
 	o.ComCommit = &v
@@ -1609,15 +1312,6 @@ func (o *HealthDatabaseStats) GetComCreateCompressionDictionaryOk() (*string, bo
 		return nil, false
 	}
 	return o.ComCreateCompressionDictionary, true
-}
-
-// IsSetComCreateCompressionDictionary returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComCreateCompressionDictionary() bool {
-	if o != nil && !IsNil(o.ComCreateCompressionDictionary) {
-		return true
-	}
-
-	return false
 }
 
 // SetComCreateCompressionDictionary gets a reference to the given string and assigns it to the ComCreateCompressionDictionary field.
@@ -1643,15 +1337,6 @@ func (o *HealthDatabaseStats) GetComCreateDbOk() (*string, bool) {
 	return o.ComCreateDb, true
 }
 
-// IsSetComCreateDb returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComCreateDb() bool {
-	if o != nil && !IsNil(o.ComCreateDb) {
-		return true
-	}
-
-	return false
-}
-
 // SetComCreateDb gets a reference to the given string and assigns it to the ComCreateDb field.
 func (o *HealthDatabaseStats) SetComCreateDb(v string) {
 	o.ComCreateDb = &v
@@ -1673,15 +1358,6 @@ func (o *HealthDatabaseStats) GetComCreateEventOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComCreateEvent, true
-}
-
-// IsSetComCreateEvent returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComCreateEvent() bool {
-	if o != nil && !IsNil(o.ComCreateEvent) {
-		return true
-	}
-
-	return false
 }
 
 // SetComCreateEvent gets a reference to the given string and assigns it to the ComCreateEvent field.
@@ -1707,15 +1383,6 @@ func (o *HealthDatabaseStats) GetComCreateFunctionOk() (*string, bool) {
 	return o.ComCreateFunction, true
 }
 
-// IsSetComCreateFunction returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComCreateFunction() bool {
-	if o != nil && !IsNil(o.ComCreateFunction) {
-		return true
-	}
-
-	return false
-}
-
 // SetComCreateFunction gets a reference to the given string and assigns it to the ComCreateFunction field.
 func (o *HealthDatabaseStats) SetComCreateFunction(v string) {
 	o.ComCreateFunction = &v
@@ -1737,15 +1404,6 @@ func (o *HealthDatabaseStats) GetComCreateIndexOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComCreateIndex, true
-}
-
-// IsSetComCreateIndex returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComCreateIndex() bool {
-	if o != nil && !IsNil(o.ComCreateIndex) {
-		return true
-	}
-
-	return false
 }
 
 // SetComCreateIndex gets a reference to the given string and assigns it to the ComCreateIndex field.
@@ -1771,15 +1429,6 @@ func (o *HealthDatabaseStats) GetComCreateProcedureOk() (*string, bool) {
 	return o.ComCreateProcedure, true
 }
 
-// IsSetComCreateProcedure returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComCreateProcedure() bool {
-	if o != nil && !IsNil(o.ComCreateProcedure) {
-		return true
-	}
-
-	return false
-}
-
 // SetComCreateProcedure gets a reference to the given string and assigns it to the ComCreateProcedure field.
 func (o *HealthDatabaseStats) SetComCreateProcedure(v string) {
 	o.ComCreateProcedure = &v
@@ -1801,15 +1450,6 @@ func (o *HealthDatabaseStats) GetComCreateServerOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComCreateServer, true
-}
-
-// IsSetComCreateServer returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComCreateServer() bool {
-	if o != nil && !IsNil(o.ComCreateServer) {
-		return true
-	}
-
-	return false
 }
 
 // SetComCreateServer gets a reference to the given string and assigns it to the ComCreateServer field.
@@ -1835,15 +1475,6 @@ func (o *HealthDatabaseStats) GetComCreateTableOk() (*string, bool) {
 	return o.ComCreateTable, true
 }
 
-// IsSetComCreateTable returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComCreateTable() bool {
-	if o != nil && !IsNil(o.ComCreateTable) {
-		return true
-	}
-
-	return false
-}
-
 // SetComCreateTable gets a reference to the given string and assigns it to the ComCreateTable field.
 func (o *HealthDatabaseStats) SetComCreateTable(v string) {
 	o.ComCreateTable = &v
@@ -1865,15 +1496,6 @@ func (o *HealthDatabaseStats) GetComCreateTriggerOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComCreateTrigger, true
-}
-
-// IsSetComCreateTrigger returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComCreateTrigger() bool {
-	if o != nil && !IsNil(o.ComCreateTrigger) {
-		return true
-	}
-
-	return false
 }
 
 // SetComCreateTrigger gets a reference to the given string and assigns it to the ComCreateTrigger field.
@@ -1899,15 +1521,6 @@ func (o *HealthDatabaseStats) GetComCreateUdfOk() (*string, bool) {
 	return o.ComCreateUdf, true
 }
 
-// IsSetComCreateUdf returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComCreateUdf() bool {
-	if o != nil && !IsNil(o.ComCreateUdf) {
-		return true
-	}
-
-	return false
-}
-
 // SetComCreateUdf gets a reference to the given string and assigns it to the ComCreateUdf field.
 func (o *HealthDatabaseStats) SetComCreateUdf(v string) {
 	o.ComCreateUdf = &v
@@ -1929,15 +1542,6 @@ func (o *HealthDatabaseStats) GetComCreateUserOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComCreateUser, true
-}
-
-// IsSetComCreateUser returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComCreateUser() bool {
-	if o != nil && !IsNil(o.ComCreateUser) {
-		return true
-	}
-
-	return false
 }
 
 // SetComCreateUser gets a reference to the given string and assigns it to the ComCreateUser field.
@@ -1963,15 +1567,6 @@ func (o *HealthDatabaseStats) GetComCreateViewOk() (*string, bool) {
 	return o.ComCreateView, true
 }
 
-// IsSetComCreateView returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComCreateView() bool {
-	if o != nil && !IsNil(o.ComCreateView) {
-		return true
-	}
-
-	return false
-}
-
 // SetComCreateView gets a reference to the given string and assigns it to the ComCreateView field.
 func (o *HealthDatabaseStats) SetComCreateView(v string) {
 	o.ComCreateView = &v
@@ -1993,15 +1588,6 @@ func (o *HealthDatabaseStats) GetComDeallocSqlOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComDeallocSql, true
-}
-
-// IsSetComDeallocSql returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComDeallocSql() bool {
-	if o != nil && !IsNil(o.ComDeallocSql) {
-		return true
-	}
-
-	return false
 }
 
 // SetComDeallocSql gets a reference to the given string and assigns it to the ComDeallocSql field.
@@ -2027,15 +1613,6 @@ func (o *HealthDatabaseStats) GetComDeleteOk() (*string, bool) {
 	return o.ComDelete, true
 }
 
-// IsSetComDelete returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComDelete() bool {
-	if o != nil && !IsNil(o.ComDelete) {
-		return true
-	}
-
-	return false
-}
-
 // SetComDelete gets a reference to the given string and assigns it to the ComDelete field.
 func (o *HealthDatabaseStats) SetComDelete(v string) {
 	o.ComDelete = &v
@@ -2057,15 +1634,6 @@ func (o *HealthDatabaseStats) GetComDeleteMultiOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComDeleteMulti, true
-}
-
-// IsSetComDeleteMulti returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComDeleteMulti() bool {
-	if o != nil && !IsNil(o.ComDeleteMulti) {
-		return true
-	}
-
-	return false
 }
 
 // SetComDeleteMulti gets a reference to the given string and assigns it to the ComDeleteMulti field.
@@ -2091,15 +1659,6 @@ func (o *HealthDatabaseStats) GetComDoOk() (*string, bool) {
 	return o.ComDo, true
 }
 
-// IsSetComDo returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComDo() bool {
-	if o != nil && !IsNil(o.ComDo) {
-		return true
-	}
-
-	return false
-}
-
 // SetComDo gets a reference to the given string and assigns it to the ComDo field.
 func (o *HealthDatabaseStats) SetComDo(v string) {
 	o.ComDo = &v
@@ -2121,15 +1680,6 @@ func (o *HealthDatabaseStats) GetComDropCompressionDictionaryOk() (*string, bool
 		return nil, false
 	}
 	return o.ComDropCompressionDictionary, true
-}
-
-// IsSetComDropCompressionDictionary returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComDropCompressionDictionary() bool {
-	if o != nil && !IsNil(o.ComDropCompressionDictionary) {
-		return true
-	}
-
-	return false
 }
 
 // SetComDropCompressionDictionary gets a reference to the given string and assigns it to the ComDropCompressionDictionary field.
@@ -2155,15 +1705,6 @@ func (o *HealthDatabaseStats) GetComDropDbOk() (*string, bool) {
 	return o.ComDropDb, true
 }
 
-// IsSetComDropDb returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComDropDb() bool {
-	if o != nil && !IsNil(o.ComDropDb) {
-		return true
-	}
-
-	return false
-}
-
 // SetComDropDb gets a reference to the given string and assigns it to the ComDropDb field.
 func (o *HealthDatabaseStats) SetComDropDb(v string) {
 	o.ComDropDb = &v
@@ -2185,15 +1726,6 @@ func (o *HealthDatabaseStats) GetComDropEventOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComDropEvent, true
-}
-
-// IsSetComDropEvent returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComDropEvent() bool {
-	if o != nil && !IsNil(o.ComDropEvent) {
-		return true
-	}
-
-	return false
 }
 
 // SetComDropEvent gets a reference to the given string and assigns it to the ComDropEvent field.
@@ -2219,15 +1751,6 @@ func (o *HealthDatabaseStats) GetComDropFunctionOk() (*string, bool) {
 	return o.ComDropFunction, true
 }
 
-// IsSetComDropFunction returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComDropFunction() bool {
-	if o != nil && !IsNil(o.ComDropFunction) {
-		return true
-	}
-
-	return false
-}
-
 // SetComDropFunction gets a reference to the given string and assigns it to the ComDropFunction field.
 func (o *HealthDatabaseStats) SetComDropFunction(v string) {
 	o.ComDropFunction = &v
@@ -2249,15 +1772,6 @@ func (o *HealthDatabaseStats) GetComDropIndexOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComDropIndex, true
-}
-
-// IsSetComDropIndex returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComDropIndex() bool {
-	if o != nil && !IsNil(o.ComDropIndex) {
-		return true
-	}
-
-	return false
 }
 
 // SetComDropIndex gets a reference to the given string and assigns it to the ComDropIndex field.
@@ -2283,15 +1797,6 @@ func (o *HealthDatabaseStats) GetComDropProcedureOk() (*string, bool) {
 	return o.ComDropProcedure, true
 }
 
-// IsSetComDropProcedure returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComDropProcedure() bool {
-	if o != nil && !IsNil(o.ComDropProcedure) {
-		return true
-	}
-
-	return false
-}
-
 // SetComDropProcedure gets a reference to the given string and assigns it to the ComDropProcedure field.
 func (o *HealthDatabaseStats) SetComDropProcedure(v string) {
 	o.ComDropProcedure = &v
@@ -2313,15 +1818,6 @@ func (o *HealthDatabaseStats) GetComDropServerOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComDropServer, true
-}
-
-// IsSetComDropServer returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComDropServer() bool {
-	if o != nil && !IsNil(o.ComDropServer) {
-		return true
-	}
-
-	return false
 }
 
 // SetComDropServer gets a reference to the given string and assigns it to the ComDropServer field.
@@ -2347,15 +1843,6 @@ func (o *HealthDatabaseStats) GetComDropTableOk() (*string, bool) {
 	return o.ComDropTable, true
 }
 
-// IsSetComDropTable returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComDropTable() bool {
-	if o != nil && !IsNil(o.ComDropTable) {
-		return true
-	}
-
-	return false
-}
-
 // SetComDropTable gets a reference to the given string and assigns it to the ComDropTable field.
 func (o *HealthDatabaseStats) SetComDropTable(v string) {
 	o.ComDropTable = &v
@@ -2377,15 +1864,6 @@ func (o *HealthDatabaseStats) GetComDropTriggerOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComDropTrigger, true
-}
-
-// IsSetComDropTrigger returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComDropTrigger() bool {
-	if o != nil && !IsNil(o.ComDropTrigger) {
-		return true
-	}
-
-	return false
 }
 
 // SetComDropTrigger gets a reference to the given string and assigns it to the ComDropTrigger field.
@@ -2411,15 +1889,6 @@ func (o *HealthDatabaseStats) GetComDropUserOk() (*string, bool) {
 	return o.ComDropUser, true
 }
 
-// IsSetComDropUser returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComDropUser() bool {
-	if o != nil && !IsNil(o.ComDropUser) {
-		return true
-	}
-
-	return false
-}
-
 // SetComDropUser gets a reference to the given string and assigns it to the ComDropUser field.
 func (o *HealthDatabaseStats) SetComDropUser(v string) {
 	o.ComDropUser = &v
@@ -2441,15 +1910,6 @@ func (o *HealthDatabaseStats) GetComDropViewOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComDropView, true
-}
-
-// IsSetComDropView returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComDropView() bool {
-	if o != nil && !IsNil(o.ComDropView) {
-		return true
-	}
-
-	return false
 }
 
 // SetComDropView gets a reference to the given string and assigns it to the ComDropView field.
@@ -2475,15 +1935,6 @@ func (o *HealthDatabaseStats) GetComEmptyQueryOk() (*string, bool) {
 	return o.ComEmptyQuery, true
 }
 
-// IsSetComEmptyQuery returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComEmptyQuery() bool {
-	if o != nil && !IsNil(o.ComEmptyQuery) {
-		return true
-	}
-
-	return false
-}
-
 // SetComEmptyQuery gets a reference to the given string and assigns it to the ComEmptyQuery field.
 func (o *HealthDatabaseStats) SetComEmptyQuery(v string) {
 	o.ComEmptyQuery = &v
@@ -2505,15 +1956,6 @@ func (o *HealthDatabaseStats) GetComExecuteSqlOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComExecuteSql, true
-}
-
-// IsSetComExecuteSql returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComExecuteSql() bool {
-	if o != nil && !IsNil(o.ComExecuteSql) {
-		return true
-	}
-
-	return false
 }
 
 // SetComExecuteSql gets a reference to the given string and assigns it to the ComExecuteSql field.
@@ -2539,15 +1981,6 @@ func (o *HealthDatabaseStats) GetComExplainOtherOk() (*string, bool) {
 	return o.ComExplainOther, true
 }
 
-// IsSetComExplainOther returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComExplainOther() bool {
-	if o != nil && !IsNil(o.ComExplainOther) {
-		return true
-	}
-
-	return false
-}
-
 // SetComExplainOther gets a reference to the given string and assigns it to the ComExplainOther field.
 func (o *HealthDatabaseStats) SetComExplainOther(v string) {
 	o.ComExplainOther = &v
@@ -2569,15 +2002,6 @@ func (o *HealthDatabaseStats) GetComFlushOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComFlush, true
-}
-
-// IsSetComFlush returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComFlush() bool {
-	if o != nil && !IsNil(o.ComFlush) {
-		return true
-	}
-
-	return false
 }
 
 // SetComFlush gets a reference to the given string and assigns it to the ComFlush field.
@@ -2603,15 +2027,6 @@ func (o *HealthDatabaseStats) GetComGetDiagnosticsOk() (*string, bool) {
 	return o.ComGetDiagnostics, true
 }
 
-// IsSetComGetDiagnostics returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComGetDiagnostics() bool {
-	if o != nil && !IsNil(o.ComGetDiagnostics) {
-		return true
-	}
-
-	return false
-}
-
 // SetComGetDiagnostics gets a reference to the given string and assigns it to the ComGetDiagnostics field.
 func (o *HealthDatabaseStats) SetComGetDiagnostics(v string) {
 	o.ComGetDiagnostics = &v
@@ -2633,15 +2048,6 @@ func (o *HealthDatabaseStats) GetComGrantOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComGrant, true
-}
-
-// IsSetComGrant returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComGrant() bool {
-	if o != nil && !IsNil(o.ComGrant) {
-		return true
-	}
-
-	return false
 }
 
 // SetComGrant gets a reference to the given string and assigns it to the ComGrant field.
@@ -2667,15 +2073,6 @@ func (o *HealthDatabaseStats) GetComHaCloseOk() (*string, bool) {
 	return o.ComHaClose, true
 }
 
-// IsSetComHaClose returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComHaClose() bool {
-	if o != nil && !IsNil(o.ComHaClose) {
-		return true
-	}
-
-	return false
-}
-
 // SetComHaClose gets a reference to the given string and assigns it to the ComHaClose field.
 func (o *HealthDatabaseStats) SetComHaClose(v string) {
 	o.ComHaClose = &v
@@ -2697,15 +2094,6 @@ func (o *HealthDatabaseStats) GetComHaOpenOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComHaOpen, true
-}
-
-// IsSetComHaOpen returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComHaOpen() bool {
-	if o != nil && !IsNil(o.ComHaOpen) {
-		return true
-	}
-
-	return false
 }
 
 // SetComHaOpen gets a reference to the given string and assigns it to the ComHaOpen field.
@@ -2731,15 +2119,6 @@ func (o *HealthDatabaseStats) GetComHaReadOk() (*string, bool) {
 	return o.ComHaRead, true
 }
 
-// IsSetComHaRead returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComHaRead() bool {
-	if o != nil && !IsNil(o.ComHaRead) {
-		return true
-	}
-
-	return false
-}
-
 // SetComHaRead gets a reference to the given string and assigns it to the ComHaRead field.
 func (o *HealthDatabaseStats) SetComHaRead(v string) {
 	o.ComHaRead = &v
@@ -2761,15 +2140,6 @@ func (o *HealthDatabaseStats) GetComHelpOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComHelp, true
-}
-
-// IsSetComHelp returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComHelp() bool {
-	if o != nil && !IsNil(o.ComHelp) {
-		return true
-	}
-
-	return false
 }
 
 // SetComHelp gets a reference to the given string and assigns it to the ComHelp field.
@@ -2795,15 +2165,6 @@ func (o *HealthDatabaseStats) GetComInsertOk() (*string, bool) {
 	return o.ComInsert, true
 }
 
-// IsSetComInsert returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComInsert() bool {
-	if o != nil && !IsNil(o.ComInsert) {
-		return true
-	}
-
-	return false
-}
-
 // SetComInsert gets a reference to the given string and assigns it to the ComInsert field.
 func (o *HealthDatabaseStats) SetComInsert(v string) {
 	o.ComInsert = &v
@@ -2825,15 +2186,6 @@ func (o *HealthDatabaseStats) GetComInsertSelectOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComInsertSelect, true
-}
-
-// IsSetComInsertSelect returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComInsertSelect() bool {
-	if o != nil && !IsNil(o.ComInsertSelect) {
-		return true
-	}
-
-	return false
 }
 
 // SetComInsertSelect gets a reference to the given string and assigns it to the ComInsertSelect field.
@@ -2859,15 +2211,6 @@ func (o *HealthDatabaseStats) GetComInstallPluginOk() (*string, bool) {
 	return o.ComInstallPlugin, true
 }
 
-// IsSetComInstallPlugin returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComInstallPlugin() bool {
-	if o != nil && !IsNil(o.ComInstallPlugin) {
-		return true
-	}
-
-	return false
-}
-
 // SetComInstallPlugin gets a reference to the given string and assigns it to the ComInstallPlugin field.
 func (o *HealthDatabaseStats) SetComInstallPlugin(v string) {
 	o.ComInstallPlugin = &v
@@ -2889,15 +2232,6 @@ func (o *HealthDatabaseStats) GetComKillOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComKill, true
-}
-
-// IsSetComKill returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComKill() bool {
-	if o != nil && !IsNil(o.ComKill) {
-		return true
-	}
-
-	return false
 }
 
 // SetComKill gets a reference to the given string and assigns it to the ComKill field.
@@ -2923,15 +2257,6 @@ func (o *HealthDatabaseStats) GetComLoadOk() (*string, bool) {
 	return o.ComLoad, true
 }
 
-// IsSetComLoad returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComLoad() bool {
-	if o != nil && !IsNil(o.ComLoad) {
-		return true
-	}
-
-	return false
-}
-
 // SetComLoad gets a reference to the given string and assigns it to the ComLoad field.
 func (o *HealthDatabaseStats) SetComLoad(v string) {
 	o.ComLoad = &v
@@ -2953,15 +2278,6 @@ func (o *HealthDatabaseStats) GetComLockTablesOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComLockTables, true
-}
-
-// IsSetComLockTables returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComLockTables() bool {
-	if o != nil && !IsNil(o.ComLockTables) {
-		return true
-	}
-
-	return false
 }
 
 // SetComLockTables gets a reference to the given string and assigns it to the ComLockTables field.
@@ -2987,15 +2303,6 @@ func (o *HealthDatabaseStats) GetComLockTablesForBackupOk() (*string, bool) {
 	return o.ComLockTablesForBackup, true
 }
 
-// IsSetComLockTablesForBackup returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComLockTablesForBackup() bool {
-	if o != nil && !IsNil(o.ComLockTablesForBackup) {
-		return true
-	}
-
-	return false
-}
-
 // SetComLockTablesForBackup gets a reference to the given string and assigns it to the ComLockTablesForBackup field.
 func (o *HealthDatabaseStats) SetComLockTablesForBackup(v string) {
 	o.ComLockTablesForBackup = &v
@@ -3017,15 +2324,6 @@ func (o *HealthDatabaseStats) GetComLockBinlogForBackupOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComLockBinlogForBackup, true
-}
-
-// IsSetComLockBinlogForBackup returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComLockBinlogForBackup() bool {
-	if o != nil && !IsNil(o.ComLockBinlogForBackup) {
-		return true
-	}
-
-	return false
 }
 
 // SetComLockBinlogForBackup gets a reference to the given string and assigns it to the ComLockBinlogForBackup field.
@@ -3051,15 +2349,6 @@ func (o *HealthDatabaseStats) GetComOptimizeOk() (*string, bool) {
 	return o.ComOptimize, true
 }
 
-// IsSetComOptimize returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComOptimize() bool {
-	if o != nil && !IsNil(o.ComOptimize) {
-		return true
-	}
-
-	return false
-}
-
 // SetComOptimize gets a reference to the given string and assigns it to the ComOptimize field.
 func (o *HealthDatabaseStats) SetComOptimize(v string) {
 	o.ComOptimize = &v
@@ -3081,15 +2370,6 @@ func (o *HealthDatabaseStats) GetComPreloadKeysOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComPreloadKeys, true
-}
-
-// IsSetComPreloadKeys returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComPreloadKeys() bool {
-	if o != nil && !IsNil(o.ComPreloadKeys) {
-		return true
-	}
-
-	return false
 }
 
 // SetComPreloadKeys gets a reference to the given string and assigns it to the ComPreloadKeys field.
@@ -3115,15 +2395,6 @@ func (o *HealthDatabaseStats) GetComPrepareSqlOk() (*string, bool) {
 	return o.ComPrepareSql, true
 }
 
-// IsSetComPrepareSql returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComPrepareSql() bool {
-	if o != nil && !IsNil(o.ComPrepareSql) {
-		return true
-	}
-
-	return false
-}
-
 // SetComPrepareSql gets a reference to the given string and assigns it to the ComPrepareSql field.
 func (o *HealthDatabaseStats) SetComPrepareSql(v string) {
 	o.ComPrepareSql = &v
@@ -3145,15 +2416,6 @@ func (o *HealthDatabaseStats) GetComPurgeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComPurge, true
-}
-
-// IsSetComPurge returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComPurge() bool {
-	if o != nil && !IsNil(o.ComPurge) {
-		return true
-	}
-
-	return false
 }
 
 // SetComPurge gets a reference to the given string and assigns it to the ComPurge field.
@@ -3179,15 +2441,6 @@ func (o *HealthDatabaseStats) GetComPurgeBeforeDateOk() (*string, bool) {
 	return o.ComPurgeBeforeDate, true
 }
 
-// IsSetComPurgeBeforeDate returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComPurgeBeforeDate() bool {
-	if o != nil && !IsNil(o.ComPurgeBeforeDate) {
-		return true
-	}
-
-	return false
-}
-
 // SetComPurgeBeforeDate gets a reference to the given string and assigns it to the ComPurgeBeforeDate field.
 func (o *HealthDatabaseStats) SetComPurgeBeforeDate(v string) {
 	o.ComPurgeBeforeDate = &v
@@ -3209,15 +2462,6 @@ func (o *HealthDatabaseStats) GetComReleaseSavepointOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComReleaseSavepoint, true
-}
-
-// IsSetComReleaseSavepoint returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComReleaseSavepoint() bool {
-	if o != nil && !IsNil(o.ComReleaseSavepoint) {
-		return true
-	}
-
-	return false
 }
 
 // SetComReleaseSavepoint gets a reference to the given string and assigns it to the ComReleaseSavepoint field.
@@ -3243,15 +2487,6 @@ func (o *HealthDatabaseStats) GetComRenameTableOk() (*string, bool) {
 	return o.ComRenameTable, true
 }
 
-// IsSetComRenameTable returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComRenameTable() bool {
-	if o != nil && !IsNil(o.ComRenameTable) {
-		return true
-	}
-
-	return false
-}
-
 // SetComRenameTable gets a reference to the given string and assigns it to the ComRenameTable field.
 func (o *HealthDatabaseStats) SetComRenameTable(v string) {
 	o.ComRenameTable = &v
@@ -3273,15 +2508,6 @@ func (o *HealthDatabaseStats) GetComRenameUserOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComRenameUser, true
-}
-
-// IsSetComRenameUser returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComRenameUser() bool {
-	if o != nil && !IsNil(o.ComRenameUser) {
-		return true
-	}
-
-	return false
 }
 
 // SetComRenameUser gets a reference to the given string and assigns it to the ComRenameUser field.
@@ -3307,15 +2533,6 @@ func (o *HealthDatabaseStats) GetComRepairOk() (*string, bool) {
 	return o.ComRepair, true
 }
 
-// IsSetComRepair returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComRepair() bool {
-	if o != nil && !IsNil(o.ComRepair) {
-		return true
-	}
-
-	return false
-}
-
 // SetComRepair gets a reference to the given string and assigns it to the ComRepair field.
 func (o *HealthDatabaseStats) SetComRepair(v string) {
 	o.ComRepair = &v
@@ -3337,15 +2554,6 @@ func (o *HealthDatabaseStats) GetComReplaceOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComReplace, true
-}
-
-// IsSetComReplace returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComReplace() bool {
-	if o != nil && !IsNil(o.ComReplace) {
-		return true
-	}
-
-	return false
 }
 
 // SetComReplace gets a reference to the given string and assigns it to the ComReplace field.
@@ -3371,15 +2579,6 @@ func (o *HealthDatabaseStats) GetComReplaceSelectOk() (*string, bool) {
 	return o.ComReplaceSelect, true
 }
 
-// IsSetComReplaceSelect returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComReplaceSelect() bool {
-	if o != nil && !IsNil(o.ComReplaceSelect) {
-		return true
-	}
-
-	return false
-}
-
 // SetComReplaceSelect gets a reference to the given string and assigns it to the ComReplaceSelect field.
 func (o *HealthDatabaseStats) SetComReplaceSelect(v string) {
 	o.ComReplaceSelect = &v
@@ -3401,15 +2600,6 @@ func (o *HealthDatabaseStats) GetComResetOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComReset, true
-}
-
-// IsSetComReset returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComReset() bool {
-	if o != nil && !IsNil(o.ComReset) {
-		return true
-	}
-
-	return false
 }
 
 // SetComReset gets a reference to the given string and assigns it to the ComReset field.
@@ -3435,15 +2625,6 @@ func (o *HealthDatabaseStats) GetComResignalOk() (*string, bool) {
 	return o.ComResignal, true
 }
 
-// IsSetComResignal returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComResignal() bool {
-	if o != nil && !IsNil(o.ComResignal) {
-		return true
-	}
-
-	return false
-}
-
 // SetComResignal gets a reference to the given string and assigns it to the ComResignal field.
 func (o *HealthDatabaseStats) SetComResignal(v string) {
 	o.ComResignal = &v
@@ -3465,15 +2646,6 @@ func (o *HealthDatabaseStats) GetComRevokeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComRevoke, true
-}
-
-// IsSetComRevoke returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComRevoke() bool {
-	if o != nil && !IsNil(o.ComRevoke) {
-		return true
-	}
-
-	return false
 }
 
 // SetComRevoke gets a reference to the given string and assigns it to the ComRevoke field.
@@ -3499,15 +2671,6 @@ func (o *HealthDatabaseStats) GetComRevokeAllOk() (*string, bool) {
 	return o.ComRevokeAll, true
 }
 
-// IsSetComRevokeAll returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComRevokeAll() bool {
-	if o != nil && !IsNil(o.ComRevokeAll) {
-		return true
-	}
-
-	return false
-}
-
 // SetComRevokeAll gets a reference to the given string and assigns it to the ComRevokeAll field.
 func (o *HealthDatabaseStats) SetComRevokeAll(v string) {
 	o.ComRevokeAll = &v
@@ -3529,15 +2692,6 @@ func (o *HealthDatabaseStats) GetComRollbackOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComRollback, true
-}
-
-// IsSetComRollback returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComRollback() bool {
-	if o != nil && !IsNil(o.ComRollback) {
-		return true
-	}
-
-	return false
 }
 
 // SetComRollback gets a reference to the given string and assigns it to the ComRollback field.
@@ -3563,15 +2717,6 @@ func (o *HealthDatabaseStats) GetComRollbackToSavepointOk() (*string, bool) {
 	return o.ComRollbackToSavepoint, true
 }
 
-// IsSetComRollbackToSavepoint returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComRollbackToSavepoint() bool {
-	if o != nil && !IsNil(o.ComRollbackToSavepoint) {
-		return true
-	}
-
-	return false
-}
-
 // SetComRollbackToSavepoint gets a reference to the given string and assigns it to the ComRollbackToSavepoint field.
 func (o *HealthDatabaseStats) SetComRollbackToSavepoint(v string) {
 	o.ComRollbackToSavepoint = &v
@@ -3593,15 +2738,6 @@ func (o *HealthDatabaseStats) GetComSavepointOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComSavepoint, true
-}
-
-// IsSetComSavepoint returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComSavepoint() bool {
-	if o != nil && !IsNil(o.ComSavepoint) {
-		return true
-	}
-
-	return false
 }
 
 // SetComSavepoint gets a reference to the given string and assigns it to the ComSavepoint field.
@@ -3627,15 +2763,6 @@ func (o *HealthDatabaseStats) GetComSelectOk() (*string, bool) {
 	return o.ComSelect, true
 }
 
-// IsSetComSelect returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComSelect() bool {
-	if o != nil && !IsNil(o.ComSelect) {
-		return true
-	}
-
-	return false
-}
-
 // SetComSelect gets a reference to the given string and assigns it to the ComSelect field.
 func (o *HealthDatabaseStats) SetComSelect(v string) {
 	o.ComSelect = &v
@@ -3657,15 +2784,6 @@ func (o *HealthDatabaseStats) GetComSetOptionOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComSetOption, true
-}
-
-// IsSetComSetOption returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComSetOption() bool {
-	if o != nil && !IsNil(o.ComSetOption) {
-		return true
-	}
-
-	return false
 }
 
 // SetComSetOption gets a reference to the given string and assigns it to the ComSetOption field.
@@ -3691,15 +2809,6 @@ func (o *HealthDatabaseStats) GetComSignalOk() (*string, bool) {
 	return o.ComSignal, true
 }
 
-// IsSetComSignal returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComSignal() bool {
-	if o != nil && !IsNil(o.ComSignal) {
-		return true
-	}
-
-	return false
-}
-
 // SetComSignal gets a reference to the given string and assigns it to the ComSignal field.
 func (o *HealthDatabaseStats) SetComSignal(v string) {
 	o.ComSignal = &v
@@ -3721,15 +2830,6 @@ func (o *HealthDatabaseStats) GetComShowBinlogEventsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComShowBinlogEvents, true
-}
-
-// IsSetComShowBinlogEvents returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowBinlogEvents() bool {
-	if o != nil && !IsNil(o.ComShowBinlogEvents) {
-		return true
-	}
-
-	return false
 }
 
 // SetComShowBinlogEvents gets a reference to the given string and assigns it to the ComShowBinlogEvents field.
@@ -3755,15 +2855,6 @@ func (o *HealthDatabaseStats) GetComShowBinlogsOk() (*string, bool) {
 	return o.ComShowBinlogs, true
 }
 
-// IsSetComShowBinlogs returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowBinlogs() bool {
-	if o != nil && !IsNil(o.ComShowBinlogs) {
-		return true
-	}
-
-	return false
-}
-
 // SetComShowBinlogs gets a reference to the given string and assigns it to the ComShowBinlogs field.
 func (o *HealthDatabaseStats) SetComShowBinlogs(v string) {
 	o.ComShowBinlogs = &v
@@ -3785,15 +2876,6 @@ func (o *HealthDatabaseStats) GetComShowCharsetsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComShowCharsets, true
-}
-
-// IsSetComShowCharsets returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowCharsets() bool {
-	if o != nil && !IsNil(o.ComShowCharsets) {
-		return true
-	}
-
-	return false
 }
 
 // SetComShowCharsets gets a reference to the given string and assigns it to the ComShowCharsets field.
@@ -3819,15 +2901,6 @@ func (o *HealthDatabaseStats) GetComShowClientStatisticsOk() (*string, bool) {
 	return o.ComShowClientStatistics, true
 }
 
-// IsSetComShowClientStatistics returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowClientStatistics() bool {
-	if o != nil && !IsNil(o.ComShowClientStatistics) {
-		return true
-	}
-
-	return false
-}
-
 // SetComShowClientStatistics gets a reference to the given string and assigns it to the ComShowClientStatistics field.
 func (o *HealthDatabaseStats) SetComShowClientStatistics(v string) {
 	o.ComShowClientStatistics = &v
@@ -3849,15 +2922,6 @@ func (o *HealthDatabaseStats) GetComShowCollationsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComShowCollations, true
-}
-
-// IsSetComShowCollations returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowCollations() bool {
-	if o != nil && !IsNil(o.ComShowCollations) {
-		return true
-	}
-
-	return false
 }
 
 // SetComShowCollations gets a reference to the given string and assigns it to the ComShowCollations field.
@@ -3883,15 +2947,6 @@ func (o *HealthDatabaseStats) GetComShowCreateDbOk() (*string, bool) {
 	return o.ComShowCreateDb, true
 }
 
-// IsSetComShowCreateDb returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowCreateDb() bool {
-	if o != nil && !IsNil(o.ComShowCreateDb) {
-		return true
-	}
-
-	return false
-}
-
 // SetComShowCreateDb gets a reference to the given string and assigns it to the ComShowCreateDb field.
 func (o *HealthDatabaseStats) SetComShowCreateDb(v string) {
 	o.ComShowCreateDb = &v
@@ -3913,15 +2968,6 @@ func (o *HealthDatabaseStats) GetComShowCreateEventOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComShowCreateEvent, true
-}
-
-// IsSetComShowCreateEvent returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowCreateEvent() bool {
-	if o != nil && !IsNil(o.ComShowCreateEvent) {
-		return true
-	}
-
-	return false
 }
 
 // SetComShowCreateEvent gets a reference to the given string and assigns it to the ComShowCreateEvent field.
@@ -3947,15 +2993,6 @@ func (o *HealthDatabaseStats) GetComShowCreateFuncOk() (*string, bool) {
 	return o.ComShowCreateFunc, true
 }
 
-// IsSetComShowCreateFunc returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowCreateFunc() bool {
-	if o != nil && !IsNil(o.ComShowCreateFunc) {
-		return true
-	}
-
-	return false
-}
-
 // SetComShowCreateFunc gets a reference to the given string and assigns it to the ComShowCreateFunc field.
 func (o *HealthDatabaseStats) SetComShowCreateFunc(v string) {
 	o.ComShowCreateFunc = &v
@@ -3977,15 +3014,6 @@ func (o *HealthDatabaseStats) GetComShowCreateProcOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComShowCreateProc, true
-}
-
-// IsSetComShowCreateProc returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowCreateProc() bool {
-	if o != nil && !IsNil(o.ComShowCreateProc) {
-		return true
-	}
-
-	return false
 }
 
 // SetComShowCreateProc gets a reference to the given string and assigns it to the ComShowCreateProc field.
@@ -4011,15 +3039,6 @@ func (o *HealthDatabaseStats) GetComShowCreateTableOk() (*string, bool) {
 	return o.ComShowCreateTable, true
 }
 
-// IsSetComShowCreateTable returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowCreateTable() bool {
-	if o != nil && !IsNil(o.ComShowCreateTable) {
-		return true
-	}
-
-	return false
-}
-
 // SetComShowCreateTable gets a reference to the given string and assigns it to the ComShowCreateTable field.
 func (o *HealthDatabaseStats) SetComShowCreateTable(v string) {
 	o.ComShowCreateTable = &v
@@ -4041,15 +3060,6 @@ func (o *HealthDatabaseStats) GetComShowCreateTriggerOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComShowCreateTrigger, true
-}
-
-// IsSetComShowCreateTrigger returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowCreateTrigger() bool {
-	if o != nil && !IsNil(o.ComShowCreateTrigger) {
-		return true
-	}
-
-	return false
 }
 
 // SetComShowCreateTrigger gets a reference to the given string and assigns it to the ComShowCreateTrigger field.
@@ -4075,15 +3085,6 @@ func (o *HealthDatabaseStats) GetComShowDatabasesOk() (*string, bool) {
 	return o.ComShowDatabases, true
 }
 
-// IsSetComShowDatabases returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowDatabases() bool {
-	if o != nil && !IsNil(o.ComShowDatabases) {
-		return true
-	}
-
-	return false
-}
-
 // SetComShowDatabases gets a reference to the given string and assigns it to the ComShowDatabases field.
 func (o *HealthDatabaseStats) SetComShowDatabases(v string) {
 	o.ComShowDatabases = &v
@@ -4105,15 +3106,6 @@ func (o *HealthDatabaseStats) GetComShowEngineLogsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComShowEngineLogs, true
-}
-
-// IsSetComShowEngineLogs returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowEngineLogs() bool {
-	if o != nil && !IsNil(o.ComShowEngineLogs) {
-		return true
-	}
-
-	return false
 }
 
 // SetComShowEngineLogs gets a reference to the given string and assigns it to the ComShowEngineLogs field.
@@ -4139,15 +3131,6 @@ func (o *HealthDatabaseStats) GetComShowEngineMutexOk() (*string, bool) {
 	return o.ComShowEngineMutex, true
 }
 
-// IsSetComShowEngineMutex returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowEngineMutex() bool {
-	if o != nil && !IsNil(o.ComShowEngineMutex) {
-		return true
-	}
-
-	return false
-}
-
 // SetComShowEngineMutex gets a reference to the given string and assigns it to the ComShowEngineMutex field.
 func (o *HealthDatabaseStats) SetComShowEngineMutex(v string) {
 	o.ComShowEngineMutex = &v
@@ -4169,15 +3152,6 @@ func (o *HealthDatabaseStats) GetComShowEngineStatusOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComShowEngineStatus, true
-}
-
-// IsSetComShowEngineStatus returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowEngineStatus() bool {
-	if o != nil && !IsNil(o.ComShowEngineStatus) {
-		return true
-	}
-
-	return false
 }
 
 // SetComShowEngineStatus gets a reference to the given string and assigns it to the ComShowEngineStatus field.
@@ -4203,15 +3177,6 @@ func (o *HealthDatabaseStats) GetComShowEventsOk() (*string, bool) {
 	return o.ComShowEvents, true
 }
 
-// IsSetComShowEvents returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowEvents() bool {
-	if o != nil && !IsNil(o.ComShowEvents) {
-		return true
-	}
-
-	return false
-}
-
 // SetComShowEvents gets a reference to the given string and assigns it to the ComShowEvents field.
 func (o *HealthDatabaseStats) SetComShowEvents(v string) {
 	o.ComShowEvents = &v
@@ -4233,15 +3198,6 @@ func (o *HealthDatabaseStats) GetComShowErrorsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComShowErrors, true
-}
-
-// IsSetComShowErrors returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowErrors() bool {
-	if o != nil && !IsNil(o.ComShowErrors) {
-		return true
-	}
-
-	return false
 }
 
 // SetComShowErrors gets a reference to the given string and assigns it to the ComShowErrors field.
@@ -4267,15 +3223,6 @@ func (o *HealthDatabaseStats) GetComShowFieldsOk() (*string, bool) {
 	return o.ComShowFields, true
 }
 
-// IsSetComShowFields returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowFields() bool {
-	if o != nil && !IsNil(o.ComShowFields) {
-		return true
-	}
-
-	return false
-}
-
 // SetComShowFields gets a reference to the given string and assigns it to the ComShowFields field.
 func (o *HealthDatabaseStats) SetComShowFields(v string) {
 	o.ComShowFields = &v
@@ -4297,15 +3244,6 @@ func (o *HealthDatabaseStats) GetComShowFunctionCodeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComShowFunctionCode, true
-}
-
-// IsSetComShowFunctionCode returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowFunctionCode() bool {
-	if o != nil && !IsNil(o.ComShowFunctionCode) {
-		return true
-	}
-
-	return false
 }
 
 // SetComShowFunctionCode gets a reference to the given string and assigns it to the ComShowFunctionCode field.
@@ -4331,15 +3269,6 @@ func (o *HealthDatabaseStats) GetComShowFunctionStatusOk() (*string, bool) {
 	return o.ComShowFunctionStatus, true
 }
 
-// IsSetComShowFunctionStatus returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowFunctionStatus() bool {
-	if o != nil && !IsNil(o.ComShowFunctionStatus) {
-		return true
-	}
-
-	return false
-}
-
 // SetComShowFunctionStatus gets a reference to the given string and assigns it to the ComShowFunctionStatus field.
 func (o *HealthDatabaseStats) SetComShowFunctionStatus(v string) {
 	o.ComShowFunctionStatus = &v
@@ -4361,15 +3290,6 @@ func (o *HealthDatabaseStats) GetComShowGrantsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComShowGrants, true
-}
-
-// IsSetComShowGrants returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowGrants() bool {
-	if o != nil && !IsNil(o.ComShowGrants) {
-		return true
-	}
-
-	return false
 }
 
 // SetComShowGrants gets a reference to the given string and assigns it to the ComShowGrants field.
@@ -4395,15 +3315,6 @@ func (o *HealthDatabaseStats) GetComShowIndexStatisticsOk() (*string, bool) {
 	return o.ComShowIndexStatistics, true
 }
 
-// IsSetComShowIndexStatistics returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowIndexStatistics() bool {
-	if o != nil && !IsNil(o.ComShowIndexStatistics) {
-		return true
-	}
-
-	return false
-}
-
 // SetComShowIndexStatistics gets a reference to the given string and assigns it to the ComShowIndexStatistics field.
 func (o *HealthDatabaseStats) SetComShowIndexStatistics(v string) {
 	o.ComShowIndexStatistics = &v
@@ -4425,15 +3336,6 @@ func (o *HealthDatabaseStats) GetComShowKeysOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComShowKeys, true
-}
-
-// IsSetComShowKeys returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowKeys() bool {
-	if o != nil && !IsNil(o.ComShowKeys) {
-		return true
-	}
-
-	return false
 }
 
 // SetComShowKeys gets a reference to the given string and assigns it to the ComShowKeys field.
@@ -4459,15 +3361,6 @@ func (o *HealthDatabaseStats) GetComShowMasterStatusOk() (*string, bool) {
 	return o.ComShowMasterStatus, true
 }
 
-// IsSetComShowMasterStatus returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowMasterStatus() bool {
-	if o != nil && !IsNil(o.ComShowMasterStatus) {
-		return true
-	}
-
-	return false
-}
-
 // SetComShowMasterStatus gets a reference to the given string and assigns it to the ComShowMasterStatus field.
 func (o *HealthDatabaseStats) SetComShowMasterStatus(v string) {
 	o.ComShowMasterStatus = &v
@@ -4489,15 +3382,6 @@ func (o *HealthDatabaseStats) GetComShowOpenTablesOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComShowOpenTables, true
-}
-
-// IsSetComShowOpenTables returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowOpenTables() bool {
-	if o != nil && !IsNil(o.ComShowOpenTables) {
-		return true
-	}
-
-	return false
 }
 
 // SetComShowOpenTables gets a reference to the given string and assigns it to the ComShowOpenTables field.
@@ -4523,15 +3407,6 @@ func (o *HealthDatabaseStats) GetComShowPluginsOk() (*string, bool) {
 	return o.ComShowPlugins, true
 }
 
-// IsSetComShowPlugins returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowPlugins() bool {
-	if o != nil && !IsNil(o.ComShowPlugins) {
-		return true
-	}
-
-	return false
-}
-
 // SetComShowPlugins gets a reference to the given string and assigns it to the ComShowPlugins field.
 func (o *HealthDatabaseStats) SetComShowPlugins(v string) {
 	o.ComShowPlugins = &v
@@ -4553,15 +3428,6 @@ func (o *HealthDatabaseStats) GetComShowPrivilegesOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComShowPrivileges, true
-}
-
-// IsSetComShowPrivileges returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowPrivileges() bool {
-	if o != nil && !IsNil(o.ComShowPrivileges) {
-		return true
-	}
-
-	return false
 }
 
 // SetComShowPrivileges gets a reference to the given string and assigns it to the ComShowPrivileges field.
@@ -4587,15 +3453,6 @@ func (o *HealthDatabaseStats) GetComShowProcedureCodeOk() (*string, bool) {
 	return o.ComShowProcedureCode, true
 }
 
-// IsSetComShowProcedureCode returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowProcedureCode() bool {
-	if o != nil && !IsNil(o.ComShowProcedureCode) {
-		return true
-	}
-
-	return false
-}
-
 // SetComShowProcedureCode gets a reference to the given string and assigns it to the ComShowProcedureCode field.
 func (o *HealthDatabaseStats) SetComShowProcedureCode(v string) {
 	o.ComShowProcedureCode = &v
@@ -4617,15 +3474,6 @@ func (o *HealthDatabaseStats) GetComShowProcedureStatusOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComShowProcedureStatus, true
-}
-
-// IsSetComShowProcedureStatus returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowProcedureStatus() bool {
-	if o != nil && !IsNil(o.ComShowProcedureStatus) {
-		return true
-	}
-
-	return false
 }
 
 // SetComShowProcedureStatus gets a reference to the given string and assigns it to the ComShowProcedureStatus field.
@@ -4651,15 +3499,6 @@ func (o *HealthDatabaseStats) GetComShowProcesslistOk() (*string, bool) {
 	return o.ComShowProcesslist, true
 }
 
-// IsSetComShowProcesslist returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowProcesslist() bool {
-	if o != nil && !IsNil(o.ComShowProcesslist) {
-		return true
-	}
-
-	return false
-}
-
 // SetComShowProcesslist gets a reference to the given string and assigns it to the ComShowProcesslist field.
 func (o *HealthDatabaseStats) SetComShowProcesslist(v string) {
 	o.ComShowProcesslist = &v
@@ -4681,15 +3520,6 @@ func (o *HealthDatabaseStats) GetComShowProfileOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComShowProfile, true
-}
-
-// IsSetComShowProfile returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowProfile() bool {
-	if o != nil && !IsNil(o.ComShowProfile) {
-		return true
-	}
-
-	return false
 }
 
 // SetComShowProfile gets a reference to the given string and assigns it to the ComShowProfile field.
@@ -4715,15 +3545,6 @@ func (o *HealthDatabaseStats) GetComShowProfilesOk() (*string, bool) {
 	return o.ComShowProfiles, true
 }
 
-// IsSetComShowProfiles returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowProfiles() bool {
-	if o != nil && !IsNil(o.ComShowProfiles) {
-		return true
-	}
-
-	return false
-}
-
 // SetComShowProfiles gets a reference to the given string and assigns it to the ComShowProfiles field.
 func (o *HealthDatabaseStats) SetComShowProfiles(v string) {
 	o.ComShowProfiles = &v
@@ -4745,15 +3566,6 @@ func (o *HealthDatabaseStats) GetComShowRelaylogEventsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComShowRelaylogEvents, true
-}
-
-// IsSetComShowRelaylogEvents returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowRelaylogEvents() bool {
-	if o != nil && !IsNil(o.ComShowRelaylogEvents) {
-		return true
-	}
-
-	return false
 }
 
 // SetComShowRelaylogEvents gets a reference to the given string and assigns it to the ComShowRelaylogEvents field.
@@ -4779,15 +3591,6 @@ func (o *HealthDatabaseStats) GetComShowSlaveHostsOk() (*string, bool) {
 	return o.ComShowSlaveHosts, true
 }
 
-// IsSetComShowSlaveHosts returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowSlaveHosts() bool {
-	if o != nil && !IsNil(o.ComShowSlaveHosts) {
-		return true
-	}
-
-	return false
-}
-
 // SetComShowSlaveHosts gets a reference to the given string and assigns it to the ComShowSlaveHosts field.
 func (o *HealthDatabaseStats) SetComShowSlaveHosts(v string) {
 	o.ComShowSlaveHosts = &v
@@ -4809,15 +3612,6 @@ func (o *HealthDatabaseStats) GetComShowSlaveStatusOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComShowSlaveStatus, true
-}
-
-// IsSetComShowSlaveStatus returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowSlaveStatus() bool {
-	if o != nil && !IsNil(o.ComShowSlaveStatus) {
-		return true
-	}
-
-	return false
 }
 
 // SetComShowSlaveStatus gets a reference to the given string and assigns it to the ComShowSlaveStatus field.
@@ -4843,15 +3637,6 @@ func (o *HealthDatabaseStats) GetComShowStatusOk() (*string, bool) {
 	return o.ComShowStatus, true
 }
 
-// IsSetComShowStatus returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowStatus() bool {
-	if o != nil && !IsNil(o.ComShowStatus) {
-		return true
-	}
-
-	return false
-}
-
 // SetComShowStatus gets a reference to the given string and assigns it to the ComShowStatus field.
 func (o *HealthDatabaseStats) SetComShowStatus(v string) {
 	o.ComShowStatus = &v
@@ -4873,15 +3658,6 @@ func (o *HealthDatabaseStats) GetComShowStorageEnginesOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComShowStorageEngines, true
-}
-
-// IsSetComShowStorageEngines returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowStorageEngines() bool {
-	if o != nil && !IsNil(o.ComShowStorageEngines) {
-		return true
-	}
-
-	return false
 }
 
 // SetComShowStorageEngines gets a reference to the given string and assigns it to the ComShowStorageEngines field.
@@ -4907,15 +3683,6 @@ func (o *HealthDatabaseStats) GetComShowTableStatisticsOk() (*string, bool) {
 	return o.ComShowTableStatistics, true
 }
 
-// IsSetComShowTableStatistics returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowTableStatistics() bool {
-	if o != nil && !IsNil(o.ComShowTableStatistics) {
-		return true
-	}
-
-	return false
-}
-
 // SetComShowTableStatistics gets a reference to the given string and assigns it to the ComShowTableStatistics field.
 func (o *HealthDatabaseStats) SetComShowTableStatistics(v string) {
 	o.ComShowTableStatistics = &v
@@ -4937,15 +3704,6 @@ func (o *HealthDatabaseStats) GetComShowTableStatusOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComShowTableStatus, true
-}
-
-// IsSetComShowTableStatus returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowTableStatus() bool {
-	if o != nil && !IsNil(o.ComShowTableStatus) {
-		return true
-	}
-
-	return false
 }
 
 // SetComShowTableStatus gets a reference to the given string and assigns it to the ComShowTableStatus field.
@@ -4971,15 +3729,6 @@ func (o *HealthDatabaseStats) GetComShowTablesOk() (*string, bool) {
 	return o.ComShowTables, true
 }
 
-// IsSetComShowTables returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowTables() bool {
-	if o != nil && !IsNil(o.ComShowTables) {
-		return true
-	}
-
-	return false
-}
-
 // SetComShowTables gets a reference to the given string and assigns it to the ComShowTables field.
 func (o *HealthDatabaseStats) SetComShowTables(v string) {
 	o.ComShowTables = &v
@@ -5001,15 +3750,6 @@ func (o *HealthDatabaseStats) GetComShowThreadStatisticsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComShowThreadStatistics, true
-}
-
-// IsSetComShowThreadStatistics returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowThreadStatistics() bool {
-	if o != nil && !IsNil(o.ComShowThreadStatistics) {
-		return true
-	}
-
-	return false
 }
 
 // SetComShowThreadStatistics gets a reference to the given string and assigns it to the ComShowThreadStatistics field.
@@ -5035,15 +3775,6 @@ func (o *HealthDatabaseStats) GetComShowTriggersOk() (*string, bool) {
 	return o.ComShowTriggers, true
 }
 
-// IsSetComShowTriggers returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowTriggers() bool {
-	if o != nil && !IsNil(o.ComShowTriggers) {
-		return true
-	}
-
-	return false
-}
-
 // SetComShowTriggers gets a reference to the given string and assigns it to the ComShowTriggers field.
 func (o *HealthDatabaseStats) SetComShowTriggers(v string) {
 	o.ComShowTriggers = &v
@@ -5065,15 +3796,6 @@ func (o *HealthDatabaseStats) GetComShowUserStatisticsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComShowUserStatistics, true
-}
-
-// IsSetComShowUserStatistics returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowUserStatistics() bool {
-	if o != nil && !IsNil(o.ComShowUserStatistics) {
-		return true
-	}
-
-	return false
 }
 
 // SetComShowUserStatistics gets a reference to the given string and assigns it to the ComShowUserStatistics field.
@@ -5099,15 +3821,6 @@ func (o *HealthDatabaseStats) GetComShowVariablesOk() (*string, bool) {
 	return o.ComShowVariables, true
 }
 
-// IsSetComShowVariables returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowVariables() bool {
-	if o != nil && !IsNil(o.ComShowVariables) {
-		return true
-	}
-
-	return false
-}
-
 // SetComShowVariables gets a reference to the given string and assigns it to the ComShowVariables field.
 func (o *HealthDatabaseStats) SetComShowVariables(v string) {
 	o.ComShowVariables = &v
@@ -5129,15 +3842,6 @@ func (o *HealthDatabaseStats) GetComShowWarningsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComShowWarnings, true
-}
-
-// IsSetComShowWarnings returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowWarnings() bool {
-	if o != nil && !IsNil(o.ComShowWarnings) {
-		return true
-	}
-
-	return false
 }
 
 // SetComShowWarnings gets a reference to the given string and assigns it to the ComShowWarnings field.
@@ -5163,15 +3867,6 @@ func (o *HealthDatabaseStats) GetComShowCreateUserOk() (*string, bool) {
 	return o.ComShowCreateUser, true
 }
 
-// IsSetComShowCreateUser returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShowCreateUser() bool {
-	if o != nil && !IsNil(o.ComShowCreateUser) {
-		return true
-	}
-
-	return false
-}
-
 // SetComShowCreateUser gets a reference to the given string and assigns it to the ComShowCreateUser field.
 func (o *HealthDatabaseStats) SetComShowCreateUser(v string) {
 	o.ComShowCreateUser = &v
@@ -5193,15 +3888,6 @@ func (o *HealthDatabaseStats) GetComShutdownOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComShutdown, true
-}
-
-// IsSetComShutdown returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComShutdown() bool {
-	if o != nil && !IsNil(o.ComShutdown) {
-		return true
-	}
-
-	return false
 }
 
 // SetComShutdown gets a reference to the given string and assigns it to the ComShutdown field.
@@ -5227,15 +3913,6 @@ func (o *HealthDatabaseStats) GetComSlaveStartOk() (*string, bool) {
 	return o.ComSlaveStart, true
 }
 
-// IsSetComSlaveStart returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComSlaveStart() bool {
-	if o != nil && !IsNil(o.ComSlaveStart) {
-		return true
-	}
-
-	return false
-}
-
 // SetComSlaveStart gets a reference to the given string and assigns it to the ComSlaveStart field.
 func (o *HealthDatabaseStats) SetComSlaveStart(v string) {
 	o.ComSlaveStart = &v
@@ -5257,15 +3934,6 @@ func (o *HealthDatabaseStats) GetComSlaveStopOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComSlaveStop, true
-}
-
-// IsSetComSlaveStop returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComSlaveStop() bool {
-	if o != nil && !IsNil(o.ComSlaveStop) {
-		return true
-	}
-
-	return false
 }
 
 // SetComSlaveStop gets a reference to the given string and assigns it to the ComSlaveStop field.
@@ -5291,15 +3959,6 @@ func (o *HealthDatabaseStats) GetComGroupReplicationStartOk() (*string, bool) {
 	return o.ComGroupReplicationStart, true
 }
 
-// IsSetComGroupReplicationStart returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComGroupReplicationStart() bool {
-	if o != nil && !IsNil(o.ComGroupReplicationStart) {
-		return true
-	}
-
-	return false
-}
-
 // SetComGroupReplicationStart gets a reference to the given string and assigns it to the ComGroupReplicationStart field.
 func (o *HealthDatabaseStats) SetComGroupReplicationStart(v string) {
 	o.ComGroupReplicationStart = &v
@@ -5321,15 +3980,6 @@ func (o *HealthDatabaseStats) GetComGroupReplicationStopOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComGroupReplicationStop, true
-}
-
-// IsSetComGroupReplicationStop returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComGroupReplicationStop() bool {
-	if o != nil && !IsNil(o.ComGroupReplicationStop) {
-		return true
-	}
-
-	return false
 }
 
 // SetComGroupReplicationStop gets a reference to the given string and assigns it to the ComGroupReplicationStop field.
@@ -5355,15 +4005,6 @@ func (o *HealthDatabaseStats) GetComStmtExecuteOk() (*string, bool) {
 	return o.ComStmtExecute, true
 }
 
-// IsSetComStmtExecute returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComStmtExecute() bool {
-	if o != nil && !IsNil(o.ComStmtExecute) {
-		return true
-	}
-
-	return false
-}
-
 // SetComStmtExecute gets a reference to the given string and assigns it to the ComStmtExecute field.
 func (o *HealthDatabaseStats) SetComStmtExecute(v string) {
 	o.ComStmtExecute = &v
@@ -5385,15 +4026,6 @@ func (o *HealthDatabaseStats) GetComStmtCloseOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComStmtClose, true
-}
-
-// IsSetComStmtClose returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComStmtClose() bool {
-	if o != nil && !IsNil(o.ComStmtClose) {
-		return true
-	}
-
-	return false
 }
 
 // SetComStmtClose gets a reference to the given string and assigns it to the ComStmtClose field.
@@ -5419,15 +4051,6 @@ func (o *HealthDatabaseStats) GetComStmtFetchOk() (*string, bool) {
 	return o.ComStmtFetch, true
 }
 
-// IsSetComStmtFetch returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComStmtFetch() bool {
-	if o != nil && !IsNil(o.ComStmtFetch) {
-		return true
-	}
-
-	return false
-}
-
 // SetComStmtFetch gets a reference to the given string and assigns it to the ComStmtFetch field.
 func (o *HealthDatabaseStats) SetComStmtFetch(v string) {
 	o.ComStmtFetch = &v
@@ -5449,15 +4072,6 @@ func (o *HealthDatabaseStats) GetComStmtPrepareOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComStmtPrepare, true
-}
-
-// IsSetComStmtPrepare returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComStmtPrepare() bool {
-	if o != nil && !IsNil(o.ComStmtPrepare) {
-		return true
-	}
-
-	return false
 }
 
 // SetComStmtPrepare gets a reference to the given string and assigns it to the ComStmtPrepare field.
@@ -5483,15 +4097,6 @@ func (o *HealthDatabaseStats) GetComStmtResetOk() (*string, bool) {
 	return o.ComStmtReset, true
 }
 
-// IsSetComStmtReset returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComStmtReset() bool {
-	if o != nil && !IsNil(o.ComStmtReset) {
-		return true
-	}
-
-	return false
-}
-
 // SetComStmtReset gets a reference to the given string and assigns it to the ComStmtReset field.
 func (o *HealthDatabaseStats) SetComStmtReset(v string) {
 	o.ComStmtReset = &v
@@ -5513,15 +4118,6 @@ func (o *HealthDatabaseStats) GetComStmtSendLongDataOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComStmtSendLongData, true
-}
-
-// IsSetComStmtSendLongData returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComStmtSendLongData() bool {
-	if o != nil && !IsNil(o.ComStmtSendLongData) {
-		return true
-	}
-
-	return false
 }
 
 // SetComStmtSendLongData gets a reference to the given string and assigns it to the ComStmtSendLongData field.
@@ -5547,15 +4143,6 @@ func (o *HealthDatabaseStats) GetComTruncateOk() (*string, bool) {
 	return o.ComTruncate, true
 }
 
-// IsSetComTruncate returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComTruncate() bool {
-	if o != nil && !IsNil(o.ComTruncate) {
-		return true
-	}
-
-	return false
-}
-
 // SetComTruncate gets a reference to the given string and assigns it to the ComTruncate field.
 func (o *HealthDatabaseStats) SetComTruncate(v string) {
 	o.ComTruncate = &v
@@ -5577,15 +4164,6 @@ func (o *HealthDatabaseStats) GetComUninstallPluginOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComUninstallPlugin, true
-}
-
-// IsSetComUninstallPlugin returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComUninstallPlugin() bool {
-	if o != nil && !IsNil(o.ComUninstallPlugin) {
-		return true
-	}
-
-	return false
 }
 
 // SetComUninstallPlugin gets a reference to the given string and assigns it to the ComUninstallPlugin field.
@@ -5611,15 +4189,6 @@ func (o *HealthDatabaseStats) GetComUnlockBinlogOk() (*string, bool) {
 	return o.ComUnlockBinlog, true
 }
 
-// IsSetComUnlockBinlog returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComUnlockBinlog() bool {
-	if o != nil && !IsNil(o.ComUnlockBinlog) {
-		return true
-	}
-
-	return false
-}
-
 // SetComUnlockBinlog gets a reference to the given string and assigns it to the ComUnlockBinlog field.
 func (o *HealthDatabaseStats) SetComUnlockBinlog(v string) {
 	o.ComUnlockBinlog = &v
@@ -5641,15 +4210,6 @@ func (o *HealthDatabaseStats) GetComUnlockTablesOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComUnlockTables, true
-}
-
-// IsSetComUnlockTables returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComUnlockTables() bool {
-	if o != nil && !IsNil(o.ComUnlockTables) {
-		return true
-	}
-
-	return false
 }
 
 // SetComUnlockTables gets a reference to the given string and assigns it to the ComUnlockTables field.
@@ -5675,15 +4235,6 @@ func (o *HealthDatabaseStats) GetComUpdateOk() (*string, bool) {
 	return o.ComUpdate, true
 }
 
-// IsSetComUpdate returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComUpdate() bool {
-	if o != nil && !IsNil(o.ComUpdate) {
-		return true
-	}
-
-	return false
-}
-
 // SetComUpdate gets a reference to the given string and assigns it to the ComUpdate field.
 func (o *HealthDatabaseStats) SetComUpdate(v string) {
 	o.ComUpdate = &v
@@ -5705,15 +4256,6 @@ func (o *HealthDatabaseStats) GetComUpdateMultiOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComUpdateMulti, true
-}
-
-// IsSetComUpdateMulti returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComUpdateMulti() bool {
-	if o != nil && !IsNil(o.ComUpdateMulti) {
-		return true
-	}
-
-	return false
 }
 
 // SetComUpdateMulti gets a reference to the given string and assigns it to the ComUpdateMulti field.
@@ -5739,15 +4281,6 @@ func (o *HealthDatabaseStats) GetComXaCommitOk() (*string, bool) {
 	return o.ComXaCommit, true
 }
 
-// IsSetComXaCommit returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComXaCommit() bool {
-	if o != nil && !IsNil(o.ComXaCommit) {
-		return true
-	}
-
-	return false
-}
-
 // SetComXaCommit gets a reference to the given string and assigns it to the ComXaCommit field.
 func (o *HealthDatabaseStats) SetComXaCommit(v string) {
 	o.ComXaCommit = &v
@@ -5769,15 +4302,6 @@ func (o *HealthDatabaseStats) GetComXaEndOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComXaEnd, true
-}
-
-// IsSetComXaEnd returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComXaEnd() bool {
-	if o != nil && !IsNil(o.ComXaEnd) {
-		return true
-	}
-
-	return false
 }
 
 // SetComXaEnd gets a reference to the given string and assigns it to the ComXaEnd field.
@@ -5803,15 +4327,6 @@ func (o *HealthDatabaseStats) GetComXaPrepareOk() (*string, bool) {
 	return o.ComXaPrepare, true
 }
 
-// IsSetComXaPrepare returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComXaPrepare() bool {
-	if o != nil && !IsNil(o.ComXaPrepare) {
-		return true
-	}
-
-	return false
-}
-
 // SetComXaPrepare gets a reference to the given string and assigns it to the ComXaPrepare field.
 func (o *HealthDatabaseStats) SetComXaPrepare(v string) {
 	o.ComXaPrepare = &v
@@ -5833,15 +4348,6 @@ func (o *HealthDatabaseStats) GetComXaRecoverOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComXaRecover, true
-}
-
-// IsSetComXaRecover returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComXaRecover() bool {
-	if o != nil && !IsNil(o.ComXaRecover) {
-		return true
-	}
-
-	return false
 }
 
 // SetComXaRecover gets a reference to the given string and assigns it to the ComXaRecover field.
@@ -5867,15 +4373,6 @@ func (o *HealthDatabaseStats) GetComXaRollbackOk() (*string, bool) {
 	return o.ComXaRollback, true
 }
 
-// IsSetComXaRollback returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComXaRollback() bool {
-	if o != nil && !IsNil(o.ComXaRollback) {
-		return true
-	}
-
-	return false
-}
-
 // SetComXaRollback gets a reference to the given string and assigns it to the ComXaRollback field.
 func (o *HealthDatabaseStats) SetComXaRollback(v string) {
 	o.ComXaRollback = &v
@@ -5897,15 +4394,6 @@ func (o *HealthDatabaseStats) GetComXaStartOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ComXaStart, true
-}
-
-// IsSetComXaStart returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComXaStart() bool {
-	if o != nil && !IsNil(o.ComXaStart) {
-		return true
-	}
-
-	return false
 }
 
 // SetComXaStart gets a reference to the given string and assigns it to the ComXaStart field.
@@ -5931,15 +4419,6 @@ func (o *HealthDatabaseStats) GetComStmtReprepareOk() (*string, bool) {
 	return o.ComStmtReprepare, true
 }
 
-// IsSetComStmtReprepare returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetComStmtReprepare() bool {
-	if o != nil && !IsNil(o.ComStmtReprepare) {
-		return true
-	}
-
-	return false
-}
-
 // SetComStmtReprepare gets a reference to the given string and assigns it to the ComStmtReprepare field.
 func (o *HealthDatabaseStats) SetComStmtReprepare(v string) {
 	o.ComStmtReprepare = &v
@@ -5961,15 +4440,6 @@ func (o *HealthDatabaseStats) GetCompressionOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Compression, true
-}
-
-// IsSetCompression returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetCompression() bool {
-	if o != nil && !IsNil(o.Compression) {
-		return true
-	}
-
-	return false
 }
 
 // SetCompression gets a reference to the given string and assigns it to the Compression field.
@@ -5995,15 +4465,6 @@ func (o *HealthDatabaseStats) GetConnectionErrorsAcceptOk() (*string, bool) {
 	return o.ConnectionErrorsAccept, true
 }
 
-// IsSetConnectionErrorsAccept returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetConnectionErrorsAccept() bool {
-	if o != nil && !IsNil(o.ConnectionErrorsAccept) {
-		return true
-	}
-
-	return false
-}
-
 // SetConnectionErrorsAccept gets a reference to the given string and assigns it to the ConnectionErrorsAccept field.
 func (o *HealthDatabaseStats) SetConnectionErrorsAccept(v string) {
 	o.ConnectionErrorsAccept = &v
@@ -6025,15 +4486,6 @@ func (o *HealthDatabaseStats) GetConnectionErrorsInternalOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ConnectionErrorsInternal, true
-}
-
-// IsSetConnectionErrorsInternal returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetConnectionErrorsInternal() bool {
-	if o != nil && !IsNil(o.ConnectionErrorsInternal) {
-		return true
-	}
-
-	return false
 }
 
 // SetConnectionErrorsInternal gets a reference to the given string and assigns it to the ConnectionErrorsInternal field.
@@ -6059,15 +4511,6 @@ func (o *HealthDatabaseStats) GetConnectionErrorsMaxConnectionsOk() (*string, bo
 	return o.ConnectionErrorsMaxConnections, true
 }
 
-// IsSetConnectionErrorsMaxConnections returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetConnectionErrorsMaxConnections() bool {
-	if o != nil && !IsNil(o.ConnectionErrorsMaxConnections) {
-		return true
-	}
-
-	return false
-}
-
 // SetConnectionErrorsMaxConnections gets a reference to the given string and assigns it to the ConnectionErrorsMaxConnections field.
 func (o *HealthDatabaseStats) SetConnectionErrorsMaxConnections(v string) {
 	o.ConnectionErrorsMaxConnections = &v
@@ -6089,15 +4532,6 @@ func (o *HealthDatabaseStats) GetConnectionErrorsPeerAddressOk() (*string, bool)
 		return nil, false
 	}
 	return o.ConnectionErrorsPeerAddress, true
-}
-
-// IsSetConnectionErrorsPeerAddress returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetConnectionErrorsPeerAddress() bool {
-	if o != nil && !IsNil(o.ConnectionErrorsPeerAddress) {
-		return true
-	}
-
-	return false
 }
 
 // SetConnectionErrorsPeerAddress gets a reference to the given string and assigns it to the ConnectionErrorsPeerAddress field.
@@ -6123,15 +4557,6 @@ func (o *HealthDatabaseStats) GetConnectionErrorsSelectOk() (*string, bool) {
 	return o.ConnectionErrorsSelect, true
 }
 
-// IsSetConnectionErrorsSelect returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetConnectionErrorsSelect() bool {
-	if o != nil && !IsNil(o.ConnectionErrorsSelect) {
-		return true
-	}
-
-	return false
-}
-
 // SetConnectionErrorsSelect gets a reference to the given string and assigns it to the ConnectionErrorsSelect field.
 func (o *HealthDatabaseStats) SetConnectionErrorsSelect(v string) {
 	o.ConnectionErrorsSelect = &v
@@ -6153,15 +4578,6 @@ func (o *HealthDatabaseStats) GetConnectionErrorsTcpwrapOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ConnectionErrorsTcpwrap, true
-}
-
-// IsSetConnectionErrorsTcpwrap returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetConnectionErrorsTcpwrap() bool {
-	if o != nil && !IsNil(o.ConnectionErrorsTcpwrap) {
-		return true
-	}
-
-	return false
 }
 
 // SetConnectionErrorsTcpwrap gets a reference to the given string and assigns it to the ConnectionErrorsTcpwrap field.
@@ -6187,15 +4603,6 @@ func (o *HealthDatabaseStats) GetConnectionsOk() (*string, bool) {
 	return o.Connections, true
 }
 
-// IsSetConnections returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetConnections() bool {
-	if o != nil && !IsNil(o.Connections) {
-		return true
-	}
-
-	return false
-}
-
 // SetConnections gets a reference to the given string and assigns it to the Connections field.
 func (o *HealthDatabaseStats) SetConnections(v string) {
 	o.Connections = &v
@@ -6217,15 +4624,6 @@ func (o *HealthDatabaseStats) GetCreatedTmpDiskTablesOk() (*string, bool) {
 		return nil, false
 	}
 	return o.CreatedTmpDiskTables, true
-}
-
-// IsSetCreatedTmpDiskTables returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetCreatedTmpDiskTables() bool {
-	if o != nil && !IsNil(o.CreatedTmpDiskTables) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreatedTmpDiskTables gets a reference to the given string and assigns it to the CreatedTmpDiskTables field.
@@ -6251,15 +4649,6 @@ func (o *HealthDatabaseStats) GetCreatedTmpFilesOk() (*string, bool) {
 	return o.CreatedTmpFiles, true
 }
 
-// IsSetCreatedTmpFiles returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetCreatedTmpFiles() bool {
-	if o != nil && !IsNil(o.CreatedTmpFiles) {
-		return true
-	}
-
-	return false
-}
-
 // SetCreatedTmpFiles gets a reference to the given string and assigns it to the CreatedTmpFiles field.
 func (o *HealthDatabaseStats) SetCreatedTmpFiles(v string) {
 	o.CreatedTmpFiles = &v
@@ -6281,15 +4670,6 @@ func (o *HealthDatabaseStats) GetCreatedTmpTablesOk() (*string, bool) {
 		return nil, false
 	}
 	return o.CreatedTmpTables, true
-}
-
-// IsSetCreatedTmpTables returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetCreatedTmpTables() bool {
-	if o != nil && !IsNil(o.CreatedTmpTables) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreatedTmpTables gets a reference to the given string and assigns it to the CreatedTmpTables field.
@@ -6315,15 +4695,6 @@ func (o *HealthDatabaseStats) GetDelayedErrorsOk() (*string, bool) {
 	return o.DelayedErrors, true
 }
 
-// IsSetDelayedErrors returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetDelayedErrors() bool {
-	if o != nil && !IsNil(o.DelayedErrors) {
-		return true
-	}
-
-	return false
-}
-
 // SetDelayedErrors gets a reference to the given string and assigns it to the DelayedErrors field.
 func (o *HealthDatabaseStats) SetDelayedErrors(v string) {
 	o.DelayedErrors = &v
@@ -6345,15 +4716,6 @@ func (o *HealthDatabaseStats) GetDelayedInsertThreadsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.DelayedInsertThreads, true
-}
-
-// IsSetDelayedInsertThreads returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetDelayedInsertThreads() bool {
-	if o != nil && !IsNil(o.DelayedInsertThreads) {
-		return true
-	}
-
-	return false
 }
 
 // SetDelayedInsertThreads gets a reference to the given string and assigns it to the DelayedInsertThreads field.
@@ -6379,15 +4741,6 @@ func (o *HealthDatabaseStats) GetDelayedWritesOk() (*string, bool) {
 	return o.DelayedWrites, true
 }
 
-// IsSetDelayedWrites returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetDelayedWrites() bool {
-	if o != nil && !IsNil(o.DelayedWrites) {
-		return true
-	}
-
-	return false
-}
-
 // SetDelayedWrites gets a reference to the given string and assigns it to the DelayedWrites field.
 func (o *HealthDatabaseStats) SetDelayedWrites(v string) {
 	o.DelayedWrites = &v
@@ -6409,15 +4762,6 @@ func (o *HealthDatabaseStats) GetFlushCommandsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.FlushCommands, true
-}
-
-// IsSetFlushCommands returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetFlushCommands() bool {
-	if o != nil && !IsNil(o.FlushCommands) {
-		return true
-	}
-
-	return false
 }
 
 // SetFlushCommands gets a reference to the given string and assigns it to the FlushCommands field.
@@ -6443,15 +4787,6 @@ func (o *HealthDatabaseStats) GetHandlerCommitOk() (*string, bool) {
 	return o.HandlerCommit, true
 }
 
-// IsSetHandlerCommit returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetHandlerCommit() bool {
-	if o != nil && !IsNil(o.HandlerCommit) {
-		return true
-	}
-
-	return false
-}
-
 // SetHandlerCommit gets a reference to the given string and assigns it to the HandlerCommit field.
 func (o *HealthDatabaseStats) SetHandlerCommit(v string) {
 	o.HandlerCommit = &v
@@ -6473,15 +4808,6 @@ func (o *HealthDatabaseStats) GetHandlerDeleteOk() (*string, bool) {
 		return nil, false
 	}
 	return o.HandlerDelete, true
-}
-
-// IsSetHandlerDelete returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetHandlerDelete() bool {
-	if o != nil && !IsNil(o.HandlerDelete) {
-		return true
-	}
-
-	return false
 }
 
 // SetHandlerDelete gets a reference to the given string and assigns it to the HandlerDelete field.
@@ -6507,15 +4833,6 @@ func (o *HealthDatabaseStats) GetHandlerDiscoverOk() (*string, bool) {
 	return o.HandlerDiscover, true
 }
 
-// IsSetHandlerDiscover returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetHandlerDiscover() bool {
-	if o != nil && !IsNil(o.HandlerDiscover) {
-		return true
-	}
-
-	return false
-}
-
 // SetHandlerDiscover gets a reference to the given string and assigns it to the HandlerDiscover field.
 func (o *HealthDatabaseStats) SetHandlerDiscover(v string) {
 	o.HandlerDiscover = &v
@@ -6537,15 +4854,6 @@ func (o *HealthDatabaseStats) GetHandlerExternalLockOk() (*string, bool) {
 		return nil, false
 	}
 	return o.HandlerExternalLock, true
-}
-
-// IsSetHandlerExternalLock returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetHandlerExternalLock() bool {
-	if o != nil && !IsNil(o.HandlerExternalLock) {
-		return true
-	}
-
-	return false
 }
 
 // SetHandlerExternalLock gets a reference to the given string and assigns it to the HandlerExternalLock field.
@@ -6571,15 +4879,6 @@ func (o *HealthDatabaseStats) GetHandlerMrrInitOk() (*string, bool) {
 	return o.HandlerMrrInit, true
 }
 
-// IsSetHandlerMrrInit returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetHandlerMrrInit() bool {
-	if o != nil && !IsNil(o.HandlerMrrInit) {
-		return true
-	}
-
-	return false
-}
-
 // SetHandlerMrrInit gets a reference to the given string and assigns it to the HandlerMrrInit field.
 func (o *HealthDatabaseStats) SetHandlerMrrInit(v string) {
 	o.HandlerMrrInit = &v
@@ -6601,15 +4900,6 @@ func (o *HealthDatabaseStats) GetHandlerPrepareOk() (*string, bool) {
 		return nil, false
 	}
 	return o.HandlerPrepare, true
-}
-
-// IsSetHandlerPrepare returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetHandlerPrepare() bool {
-	if o != nil && !IsNil(o.HandlerPrepare) {
-		return true
-	}
-
-	return false
 }
 
 // SetHandlerPrepare gets a reference to the given string and assigns it to the HandlerPrepare field.
@@ -6635,15 +4925,6 @@ func (o *HealthDatabaseStats) GetHandlerReadFirstOk() (*string, bool) {
 	return o.HandlerReadFirst, true
 }
 
-// IsSetHandlerReadFirst returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetHandlerReadFirst() bool {
-	if o != nil && !IsNil(o.HandlerReadFirst) {
-		return true
-	}
-
-	return false
-}
-
 // SetHandlerReadFirst gets a reference to the given string and assigns it to the HandlerReadFirst field.
 func (o *HealthDatabaseStats) SetHandlerReadFirst(v string) {
 	o.HandlerReadFirst = &v
@@ -6665,15 +4946,6 @@ func (o *HealthDatabaseStats) GetHandlerReadKeyOk() (*string, bool) {
 		return nil, false
 	}
 	return o.HandlerReadKey, true
-}
-
-// IsSetHandlerReadKey returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetHandlerReadKey() bool {
-	if o != nil && !IsNil(o.HandlerReadKey) {
-		return true
-	}
-
-	return false
 }
 
 // SetHandlerReadKey gets a reference to the given string and assigns it to the HandlerReadKey field.
@@ -6699,15 +4971,6 @@ func (o *HealthDatabaseStats) GetHandlerReadLastOk() (*string, bool) {
 	return o.HandlerReadLast, true
 }
 
-// IsSetHandlerReadLast returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetHandlerReadLast() bool {
-	if o != nil && !IsNil(o.HandlerReadLast) {
-		return true
-	}
-
-	return false
-}
-
 // SetHandlerReadLast gets a reference to the given string and assigns it to the HandlerReadLast field.
 func (o *HealthDatabaseStats) SetHandlerReadLast(v string) {
 	o.HandlerReadLast = &v
@@ -6729,15 +4992,6 @@ func (o *HealthDatabaseStats) GetHandlerReadNextOk() (*string, bool) {
 		return nil, false
 	}
 	return o.HandlerReadNext, true
-}
-
-// IsSetHandlerReadNext returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetHandlerReadNext() bool {
-	if o != nil && !IsNil(o.HandlerReadNext) {
-		return true
-	}
-
-	return false
 }
 
 // SetHandlerReadNext gets a reference to the given string and assigns it to the HandlerReadNext field.
@@ -6763,15 +5017,6 @@ func (o *HealthDatabaseStats) GetHandlerReadPrevOk() (*string, bool) {
 	return o.HandlerReadPrev, true
 }
 
-// IsSetHandlerReadPrev returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetHandlerReadPrev() bool {
-	if o != nil && !IsNil(o.HandlerReadPrev) {
-		return true
-	}
-
-	return false
-}
-
 // SetHandlerReadPrev gets a reference to the given string and assigns it to the HandlerReadPrev field.
 func (o *HealthDatabaseStats) SetHandlerReadPrev(v string) {
 	o.HandlerReadPrev = &v
@@ -6793,15 +5038,6 @@ func (o *HealthDatabaseStats) GetHandlerReadRndOk() (*string, bool) {
 		return nil, false
 	}
 	return o.HandlerReadRnd, true
-}
-
-// IsSetHandlerReadRnd returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetHandlerReadRnd() bool {
-	if o != nil && !IsNil(o.HandlerReadRnd) {
-		return true
-	}
-
-	return false
 }
 
 // SetHandlerReadRnd gets a reference to the given string and assigns it to the HandlerReadRnd field.
@@ -6827,15 +5063,6 @@ func (o *HealthDatabaseStats) GetHandlerReadRndNextOk() (*string, bool) {
 	return o.HandlerReadRndNext, true
 }
 
-// IsSetHandlerReadRndNext returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetHandlerReadRndNext() bool {
-	if o != nil && !IsNil(o.HandlerReadRndNext) {
-		return true
-	}
-
-	return false
-}
-
 // SetHandlerReadRndNext gets a reference to the given string and assigns it to the HandlerReadRndNext field.
 func (o *HealthDatabaseStats) SetHandlerReadRndNext(v string) {
 	o.HandlerReadRndNext = &v
@@ -6857,15 +5084,6 @@ func (o *HealthDatabaseStats) GetHandlerRollbackOk() (*string, bool) {
 		return nil, false
 	}
 	return o.HandlerRollback, true
-}
-
-// IsSetHandlerRollback returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetHandlerRollback() bool {
-	if o != nil && !IsNil(o.HandlerRollback) {
-		return true
-	}
-
-	return false
 }
 
 // SetHandlerRollback gets a reference to the given string and assigns it to the HandlerRollback field.
@@ -6891,15 +5109,6 @@ func (o *HealthDatabaseStats) GetHandlerSavepointOk() (*string, bool) {
 	return o.HandlerSavepoint, true
 }
 
-// IsSetHandlerSavepoint returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetHandlerSavepoint() bool {
-	if o != nil && !IsNil(o.HandlerSavepoint) {
-		return true
-	}
-
-	return false
-}
-
 // SetHandlerSavepoint gets a reference to the given string and assigns it to the HandlerSavepoint field.
 func (o *HealthDatabaseStats) SetHandlerSavepoint(v string) {
 	o.HandlerSavepoint = &v
@@ -6921,15 +5130,6 @@ func (o *HealthDatabaseStats) GetHandlerSavepointRollbackOk() (*string, bool) {
 		return nil, false
 	}
 	return o.HandlerSavepointRollback, true
-}
-
-// IsSetHandlerSavepointRollback returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetHandlerSavepointRollback() bool {
-	if o != nil && !IsNil(o.HandlerSavepointRollback) {
-		return true
-	}
-
-	return false
 }
 
 // SetHandlerSavepointRollback gets a reference to the given string and assigns it to the HandlerSavepointRollback field.
@@ -6955,15 +5155,6 @@ func (o *HealthDatabaseStats) GetHandlerUpdateOk() (*string, bool) {
 	return o.HandlerUpdate, true
 }
 
-// IsSetHandlerUpdate returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetHandlerUpdate() bool {
-	if o != nil && !IsNil(o.HandlerUpdate) {
-		return true
-	}
-
-	return false
-}
-
 // SetHandlerUpdate gets a reference to the given string and assigns it to the HandlerUpdate field.
 func (o *HealthDatabaseStats) SetHandlerUpdate(v string) {
 	o.HandlerUpdate = &v
@@ -6985,15 +5176,6 @@ func (o *HealthDatabaseStats) GetHandlerWriteOk() (*string, bool) {
 		return nil, false
 	}
 	return o.HandlerWrite, true
-}
-
-// IsSetHandlerWrite returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetHandlerWrite() bool {
-	if o != nil && !IsNil(o.HandlerWrite) {
-		return true
-	}
-
-	return false
 }
 
 // SetHandlerWrite gets a reference to the given string and assigns it to the HandlerWrite field.
@@ -7019,15 +5201,6 @@ func (o *HealthDatabaseStats) GetInnodbBackgroundLogSyncOk() (*string, bool) {
 	return o.InnodbBackgroundLogSync, true
 }
 
-// IsSetInnodbBackgroundLogSync returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbBackgroundLogSync() bool {
-	if o != nil && !IsNil(o.InnodbBackgroundLogSync) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbBackgroundLogSync gets a reference to the given string and assigns it to the InnodbBackgroundLogSync field.
 func (o *HealthDatabaseStats) SetInnodbBackgroundLogSync(v string) {
 	o.InnodbBackgroundLogSync = &v
@@ -7049,15 +5222,6 @@ func (o *HealthDatabaseStats) GetInnodbBufferPoolDumpStatusOk() (*string, bool) 
 		return nil, false
 	}
 	return o.InnodbBufferPoolDumpStatus, true
-}
-
-// IsSetInnodbBufferPoolDumpStatus returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbBufferPoolDumpStatus() bool {
-	if o != nil && !IsNil(o.InnodbBufferPoolDumpStatus) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbBufferPoolDumpStatus gets a reference to the given string and assigns it to the InnodbBufferPoolDumpStatus field.
@@ -7083,15 +5247,6 @@ func (o *HealthDatabaseStats) GetInnodbBufferPoolLoadStatusOk() (*string, bool) 
 	return o.InnodbBufferPoolLoadStatus, true
 }
 
-// IsSetInnodbBufferPoolLoadStatus returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbBufferPoolLoadStatus() bool {
-	if o != nil && !IsNil(o.InnodbBufferPoolLoadStatus) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbBufferPoolLoadStatus gets a reference to the given string and assigns it to the InnodbBufferPoolLoadStatus field.
 func (o *HealthDatabaseStats) SetInnodbBufferPoolLoadStatus(v string) {
 	o.InnodbBufferPoolLoadStatus = &v
@@ -7113,15 +5268,6 @@ func (o *HealthDatabaseStats) GetInnodbBufferPoolResizeStatusOk() (*string, bool
 		return nil, false
 	}
 	return o.InnodbBufferPoolResizeStatus, true
-}
-
-// IsSetInnodbBufferPoolResizeStatus returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbBufferPoolResizeStatus() bool {
-	if o != nil && !IsNil(o.InnodbBufferPoolResizeStatus) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbBufferPoolResizeStatus gets a reference to the given string and assigns it to the InnodbBufferPoolResizeStatus field.
@@ -7147,15 +5293,6 @@ func (o *HealthDatabaseStats) GetInnodbBufferPoolPagesDataOk() (*string, bool) {
 	return o.InnodbBufferPoolPagesData, true
 }
 
-// IsSetInnodbBufferPoolPagesData returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbBufferPoolPagesData() bool {
-	if o != nil && !IsNil(o.InnodbBufferPoolPagesData) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbBufferPoolPagesData gets a reference to the given string and assigns it to the InnodbBufferPoolPagesData field.
 func (o *HealthDatabaseStats) SetInnodbBufferPoolPagesData(v string) {
 	o.InnodbBufferPoolPagesData = &v
@@ -7177,15 +5314,6 @@ func (o *HealthDatabaseStats) GetInnodbBufferPoolBytesDataOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InnodbBufferPoolBytesData, true
-}
-
-// IsSetInnodbBufferPoolBytesData returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbBufferPoolBytesData() bool {
-	if o != nil && !IsNil(o.InnodbBufferPoolBytesData) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbBufferPoolBytesData gets a reference to the given string and assigns it to the InnodbBufferPoolBytesData field.
@@ -7211,15 +5339,6 @@ func (o *HealthDatabaseStats) GetInnodbBufferPoolPagesDirtyOk() (*string, bool) 
 	return o.InnodbBufferPoolPagesDirty, true
 }
 
-// IsSetInnodbBufferPoolPagesDirty returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbBufferPoolPagesDirty() bool {
-	if o != nil && !IsNil(o.InnodbBufferPoolPagesDirty) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbBufferPoolPagesDirty gets a reference to the given string and assigns it to the InnodbBufferPoolPagesDirty field.
 func (o *HealthDatabaseStats) SetInnodbBufferPoolPagesDirty(v string) {
 	o.InnodbBufferPoolPagesDirty = &v
@@ -7241,15 +5360,6 @@ func (o *HealthDatabaseStats) GetInnodbBufferPoolBytesDirtyOk() (*string, bool) 
 		return nil, false
 	}
 	return o.InnodbBufferPoolBytesDirty, true
-}
-
-// IsSetInnodbBufferPoolBytesDirty returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbBufferPoolBytesDirty() bool {
-	if o != nil && !IsNil(o.InnodbBufferPoolBytesDirty) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbBufferPoolBytesDirty gets a reference to the given string and assigns it to the InnodbBufferPoolBytesDirty field.
@@ -7275,15 +5385,6 @@ func (o *HealthDatabaseStats) GetInnodbBufferPoolPagesFlushedOk() (*string, bool
 	return o.InnodbBufferPoolPagesFlushed, true
 }
 
-// IsSetInnodbBufferPoolPagesFlushed returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbBufferPoolPagesFlushed() bool {
-	if o != nil && !IsNil(o.InnodbBufferPoolPagesFlushed) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbBufferPoolPagesFlushed gets a reference to the given string and assigns it to the InnodbBufferPoolPagesFlushed field.
 func (o *HealthDatabaseStats) SetInnodbBufferPoolPagesFlushed(v string) {
 	o.InnodbBufferPoolPagesFlushed = &v
@@ -7305,15 +5406,6 @@ func (o *HealthDatabaseStats) GetInnodbBufferPoolPagesFreeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InnodbBufferPoolPagesFree, true
-}
-
-// IsSetInnodbBufferPoolPagesFree returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbBufferPoolPagesFree() bool {
-	if o != nil && !IsNil(o.InnodbBufferPoolPagesFree) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbBufferPoolPagesFree gets a reference to the given string and assigns it to the InnodbBufferPoolPagesFree field.
@@ -7339,15 +5431,6 @@ func (o *HealthDatabaseStats) GetInnodbBufferPoolPagesLRUFlushedOk() (*string, b
 	return o.InnodbBufferPoolPagesLRUFlushed, true
 }
 
-// IsSetInnodbBufferPoolPagesLRUFlushed returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbBufferPoolPagesLRUFlushed() bool {
-	if o != nil && !IsNil(o.InnodbBufferPoolPagesLRUFlushed) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbBufferPoolPagesLRUFlushed gets a reference to the given string and assigns it to the InnodbBufferPoolPagesLRUFlushed field.
 func (o *HealthDatabaseStats) SetInnodbBufferPoolPagesLRUFlushed(v string) {
 	o.InnodbBufferPoolPagesLRUFlushed = &v
@@ -7369,15 +5452,6 @@ func (o *HealthDatabaseStats) GetInnodbBufferPoolPagesMadeNotYoungOk() (*string,
 		return nil, false
 	}
 	return o.InnodbBufferPoolPagesMadeNotYoung, true
-}
-
-// IsSetInnodbBufferPoolPagesMadeNotYoung returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbBufferPoolPagesMadeNotYoung() bool {
-	if o != nil && !IsNil(o.InnodbBufferPoolPagesMadeNotYoung) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbBufferPoolPagesMadeNotYoung gets a reference to the given string and assigns it to the InnodbBufferPoolPagesMadeNotYoung field.
@@ -7403,15 +5477,6 @@ func (o *HealthDatabaseStats) GetInnodbBufferPoolPagesMadeYoungOk() (*string, bo
 	return o.InnodbBufferPoolPagesMadeYoung, true
 }
 
-// IsSetInnodbBufferPoolPagesMadeYoung returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbBufferPoolPagesMadeYoung() bool {
-	if o != nil && !IsNil(o.InnodbBufferPoolPagesMadeYoung) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbBufferPoolPagesMadeYoung gets a reference to the given string and assigns it to the InnodbBufferPoolPagesMadeYoung field.
 func (o *HealthDatabaseStats) SetInnodbBufferPoolPagesMadeYoung(v string) {
 	o.InnodbBufferPoolPagesMadeYoung = &v
@@ -7433,15 +5498,6 @@ func (o *HealthDatabaseStats) GetInnodbBufferPoolPagesMiscOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InnodbBufferPoolPagesMisc, true
-}
-
-// IsSetInnodbBufferPoolPagesMisc returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbBufferPoolPagesMisc() bool {
-	if o != nil && !IsNil(o.InnodbBufferPoolPagesMisc) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbBufferPoolPagesMisc gets a reference to the given string and assigns it to the InnodbBufferPoolPagesMisc field.
@@ -7467,15 +5523,6 @@ func (o *HealthDatabaseStats) GetInnodbBufferPoolPagesOldOk() (*string, bool) {
 	return o.InnodbBufferPoolPagesOld, true
 }
 
-// IsSetInnodbBufferPoolPagesOld returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbBufferPoolPagesOld() bool {
-	if o != nil && !IsNil(o.InnodbBufferPoolPagesOld) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbBufferPoolPagesOld gets a reference to the given string and assigns it to the InnodbBufferPoolPagesOld field.
 func (o *HealthDatabaseStats) SetInnodbBufferPoolPagesOld(v string) {
 	o.InnodbBufferPoolPagesOld = &v
@@ -7497,15 +5544,6 @@ func (o *HealthDatabaseStats) GetInnodbBufferPoolPagesTotalOk() (*string, bool) 
 		return nil, false
 	}
 	return o.InnodbBufferPoolPagesTotal, true
-}
-
-// IsSetInnodbBufferPoolPagesTotal returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbBufferPoolPagesTotal() bool {
-	if o != nil && !IsNil(o.InnodbBufferPoolPagesTotal) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbBufferPoolPagesTotal gets a reference to the given string and assigns it to the InnodbBufferPoolPagesTotal field.
@@ -7531,15 +5569,6 @@ func (o *HealthDatabaseStats) GetInnodbBufferPoolReadAheadRndOk() (*string, bool
 	return o.InnodbBufferPoolReadAheadRnd, true
 }
 
-// IsSetInnodbBufferPoolReadAheadRnd returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbBufferPoolReadAheadRnd() bool {
-	if o != nil && !IsNil(o.InnodbBufferPoolReadAheadRnd) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbBufferPoolReadAheadRnd gets a reference to the given string and assigns it to the InnodbBufferPoolReadAheadRnd field.
 func (o *HealthDatabaseStats) SetInnodbBufferPoolReadAheadRnd(v string) {
 	o.InnodbBufferPoolReadAheadRnd = &v
@@ -7561,15 +5590,6 @@ func (o *HealthDatabaseStats) GetInnodbBufferPoolReadAheadOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InnodbBufferPoolReadAhead, true
-}
-
-// IsSetInnodbBufferPoolReadAhead returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbBufferPoolReadAhead() bool {
-	if o != nil && !IsNil(o.InnodbBufferPoolReadAhead) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbBufferPoolReadAhead gets a reference to the given string and assigns it to the InnodbBufferPoolReadAhead field.
@@ -7595,15 +5615,6 @@ func (o *HealthDatabaseStats) GetInnodbBufferPoolReadAheadEvictedOk() (*string, 
 	return o.InnodbBufferPoolReadAheadEvicted, true
 }
 
-// IsSetInnodbBufferPoolReadAheadEvicted returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbBufferPoolReadAheadEvicted() bool {
-	if o != nil && !IsNil(o.InnodbBufferPoolReadAheadEvicted) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbBufferPoolReadAheadEvicted gets a reference to the given string and assigns it to the InnodbBufferPoolReadAheadEvicted field.
 func (o *HealthDatabaseStats) SetInnodbBufferPoolReadAheadEvicted(v string) {
 	o.InnodbBufferPoolReadAheadEvicted = &v
@@ -7625,15 +5636,6 @@ func (o *HealthDatabaseStats) GetInnodbBufferPoolReadRequestsOk() (*string, bool
 		return nil, false
 	}
 	return o.InnodbBufferPoolReadRequests, true
-}
-
-// IsSetInnodbBufferPoolReadRequests returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbBufferPoolReadRequests() bool {
-	if o != nil && !IsNil(o.InnodbBufferPoolReadRequests) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbBufferPoolReadRequests gets a reference to the given string and assigns it to the InnodbBufferPoolReadRequests field.
@@ -7659,15 +5661,6 @@ func (o *HealthDatabaseStats) GetInnodbBufferPoolReadsOk() (*string, bool) {
 	return o.InnodbBufferPoolReads, true
 }
 
-// IsSetInnodbBufferPoolReads returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbBufferPoolReads() bool {
-	if o != nil && !IsNil(o.InnodbBufferPoolReads) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbBufferPoolReads gets a reference to the given string and assigns it to the InnodbBufferPoolReads field.
 func (o *HealthDatabaseStats) SetInnodbBufferPoolReads(v string) {
 	o.InnodbBufferPoolReads = &v
@@ -7689,15 +5682,6 @@ func (o *HealthDatabaseStats) GetInnodbBufferPoolWaitFreeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InnodbBufferPoolWaitFree, true
-}
-
-// IsSetInnodbBufferPoolWaitFree returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbBufferPoolWaitFree() bool {
-	if o != nil && !IsNil(o.InnodbBufferPoolWaitFree) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbBufferPoolWaitFree gets a reference to the given string and assigns it to the InnodbBufferPoolWaitFree field.
@@ -7723,15 +5707,6 @@ func (o *HealthDatabaseStats) GetInnodbBufferPoolWriteRequestsOk() (*string, boo
 	return o.InnodbBufferPoolWriteRequests, true
 }
 
-// IsSetInnodbBufferPoolWriteRequests returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbBufferPoolWriteRequests() bool {
-	if o != nil && !IsNil(o.InnodbBufferPoolWriteRequests) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbBufferPoolWriteRequests gets a reference to the given string and assigns it to the InnodbBufferPoolWriteRequests field.
 func (o *HealthDatabaseStats) SetInnodbBufferPoolWriteRequests(v string) {
 	o.InnodbBufferPoolWriteRequests = &v
@@ -7753,15 +5728,6 @@ func (o *HealthDatabaseStats) GetInnodbCheckpointAgeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InnodbCheckpointAge, true
-}
-
-// IsSetInnodbCheckpointAge returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbCheckpointAge() bool {
-	if o != nil && !IsNil(o.InnodbCheckpointAge) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbCheckpointAge gets a reference to the given string and assigns it to the InnodbCheckpointAge field.
@@ -7787,15 +5753,6 @@ func (o *HealthDatabaseStats) GetInnodbCheckpointMaxAgeOk() (*string, bool) {
 	return o.InnodbCheckpointMaxAge, true
 }
 
-// IsSetInnodbCheckpointMaxAge returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbCheckpointMaxAge() bool {
-	if o != nil && !IsNil(o.InnodbCheckpointMaxAge) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbCheckpointMaxAge gets a reference to the given string and assigns it to the InnodbCheckpointMaxAge field.
 func (o *HealthDatabaseStats) SetInnodbCheckpointMaxAge(v string) {
 	o.InnodbCheckpointMaxAge = &v
@@ -7817,15 +5774,6 @@ func (o *HealthDatabaseStats) GetInnodbDataFsyncsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InnodbDataFsyncs, true
-}
-
-// IsSetInnodbDataFsyncs returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbDataFsyncs() bool {
-	if o != nil && !IsNil(o.InnodbDataFsyncs) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbDataFsyncs gets a reference to the given string and assigns it to the InnodbDataFsyncs field.
@@ -7851,15 +5799,6 @@ func (o *HealthDatabaseStats) GetInnodbDataPendingFsyncsOk() (*string, bool) {
 	return o.InnodbDataPendingFsyncs, true
 }
 
-// IsSetInnodbDataPendingFsyncs returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbDataPendingFsyncs() bool {
-	if o != nil && !IsNil(o.InnodbDataPendingFsyncs) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbDataPendingFsyncs gets a reference to the given string and assigns it to the InnodbDataPendingFsyncs field.
 func (o *HealthDatabaseStats) SetInnodbDataPendingFsyncs(v string) {
 	o.InnodbDataPendingFsyncs = &v
@@ -7881,15 +5820,6 @@ func (o *HealthDatabaseStats) GetInnodbDataPendingReadsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InnodbDataPendingReads, true
-}
-
-// IsSetInnodbDataPendingReads returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbDataPendingReads() bool {
-	if o != nil && !IsNil(o.InnodbDataPendingReads) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbDataPendingReads gets a reference to the given string and assigns it to the InnodbDataPendingReads field.
@@ -7915,15 +5845,6 @@ func (o *HealthDatabaseStats) GetInnodbDataPendingWritesOk() (*string, bool) {
 	return o.InnodbDataPendingWrites, true
 }
 
-// IsSetInnodbDataPendingWrites returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbDataPendingWrites() bool {
-	if o != nil && !IsNil(o.InnodbDataPendingWrites) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbDataPendingWrites gets a reference to the given string and assigns it to the InnodbDataPendingWrites field.
 func (o *HealthDatabaseStats) SetInnodbDataPendingWrites(v string) {
 	o.InnodbDataPendingWrites = &v
@@ -7945,15 +5866,6 @@ func (o *HealthDatabaseStats) GetInnodbDataReadOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InnodbDataRead, true
-}
-
-// IsSetInnodbDataRead returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbDataRead() bool {
-	if o != nil && !IsNil(o.InnodbDataRead) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbDataRead gets a reference to the given string and assigns it to the InnodbDataRead field.
@@ -7979,15 +5891,6 @@ func (o *HealthDatabaseStats) GetInnodbDataReadsOk() (*string, bool) {
 	return o.InnodbDataReads, true
 }
 
-// IsSetInnodbDataReads returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbDataReads() bool {
-	if o != nil && !IsNil(o.InnodbDataReads) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbDataReads gets a reference to the given string and assigns it to the InnodbDataReads field.
 func (o *HealthDatabaseStats) SetInnodbDataReads(v string) {
 	o.InnodbDataReads = &v
@@ -8009,15 +5912,6 @@ func (o *HealthDatabaseStats) GetInnodbDataWritesOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InnodbDataWrites, true
-}
-
-// IsSetInnodbDataWrites returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbDataWrites() bool {
-	if o != nil && !IsNil(o.InnodbDataWrites) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbDataWrites gets a reference to the given string and assigns it to the InnodbDataWrites field.
@@ -8043,15 +5937,6 @@ func (o *HealthDatabaseStats) GetInnodbDataWrittenOk() (*string, bool) {
 	return o.InnodbDataWritten, true
 }
 
-// IsSetInnodbDataWritten returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbDataWritten() bool {
-	if o != nil && !IsNil(o.InnodbDataWritten) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbDataWritten gets a reference to the given string and assigns it to the InnodbDataWritten field.
 func (o *HealthDatabaseStats) SetInnodbDataWritten(v string) {
 	o.InnodbDataWritten = &v
@@ -8073,15 +5958,6 @@ func (o *HealthDatabaseStats) GetInnodbDblwrPagesWrittenOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InnodbDblwrPagesWritten, true
-}
-
-// IsSetInnodbDblwrPagesWritten returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbDblwrPagesWritten() bool {
-	if o != nil && !IsNil(o.InnodbDblwrPagesWritten) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbDblwrPagesWritten gets a reference to the given string and assigns it to the InnodbDblwrPagesWritten field.
@@ -8107,15 +5983,6 @@ func (o *HealthDatabaseStats) GetInnodbDblwrWritesOk() (*string, bool) {
 	return o.InnodbDblwrWrites, true
 }
 
-// IsSetInnodbDblwrWrites returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbDblwrWrites() bool {
-	if o != nil && !IsNil(o.InnodbDblwrWrites) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbDblwrWrites gets a reference to the given string and assigns it to the InnodbDblwrWrites field.
 func (o *HealthDatabaseStats) SetInnodbDblwrWrites(v string) {
 	o.InnodbDblwrWrites = &v
@@ -8137,15 +6004,6 @@ func (o *HealthDatabaseStats) GetInnodbIbufFreeListOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InnodbIbufFreeList, true
-}
-
-// IsSetInnodbIbufFreeList returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbIbufFreeList() bool {
-	if o != nil && !IsNil(o.InnodbIbufFreeList) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbIbufFreeList gets a reference to the given string and assigns it to the InnodbIbufFreeList field.
@@ -8171,15 +6029,6 @@ func (o *HealthDatabaseStats) GetInnodbIbufSegmentSizeOk() (*string, bool) {
 	return o.InnodbIbufSegmentSize, true
 }
 
-// IsSetInnodbIbufSegmentSize returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbIbufSegmentSize() bool {
-	if o != nil && !IsNil(o.InnodbIbufSegmentSize) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbIbufSegmentSize gets a reference to the given string and assigns it to the InnodbIbufSegmentSize field.
 func (o *HealthDatabaseStats) SetInnodbIbufSegmentSize(v string) {
 	o.InnodbIbufSegmentSize = &v
@@ -8201,15 +6050,6 @@ func (o *HealthDatabaseStats) GetInnodbLogWaitsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InnodbLogWaits, true
-}
-
-// IsSetInnodbLogWaits returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbLogWaits() bool {
-	if o != nil && !IsNil(o.InnodbLogWaits) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbLogWaits gets a reference to the given string and assigns it to the InnodbLogWaits field.
@@ -8235,15 +6075,6 @@ func (o *HealthDatabaseStats) GetInnodbLogWriteRequestsOk() (*string, bool) {
 	return o.InnodbLogWriteRequests, true
 }
 
-// IsSetInnodbLogWriteRequests returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbLogWriteRequests() bool {
-	if o != nil && !IsNil(o.InnodbLogWriteRequests) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbLogWriteRequests gets a reference to the given string and assigns it to the InnodbLogWriteRequests field.
 func (o *HealthDatabaseStats) SetInnodbLogWriteRequests(v string) {
 	o.InnodbLogWriteRequests = &v
@@ -8265,15 +6096,6 @@ func (o *HealthDatabaseStats) GetInnodbLogWritesOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InnodbLogWrites, true
-}
-
-// IsSetInnodbLogWrites returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbLogWrites() bool {
-	if o != nil && !IsNil(o.InnodbLogWrites) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbLogWrites gets a reference to the given string and assigns it to the InnodbLogWrites field.
@@ -8299,15 +6121,6 @@ func (o *HealthDatabaseStats) GetInnodbLsnCurrentOk() (*string, bool) {
 	return o.InnodbLsnCurrent, true
 }
 
-// IsSetInnodbLsnCurrent returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbLsnCurrent() bool {
-	if o != nil && !IsNil(o.InnodbLsnCurrent) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbLsnCurrent gets a reference to the given string and assigns it to the InnodbLsnCurrent field.
 func (o *HealthDatabaseStats) SetInnodbLsnCurrent(v string) {
 	o.InnodbLsnCurrent = &v
@@ -8329,15 +6142,6 @@ func (o *HealthDatabaseStats) GetInnodbLsnFlushedOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InnodbLsnFlushed, true
-}
-
-// IsSetInnodbLsnFlushed returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbLsnFlushed() bool {
-	if o != nil && !IsNil(o.InnodbLsnFlushed) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbLsnFlushed gets a reference to the given string and assigns it to the InnodbLsnFlushed field.
@@ -8363,15 +6167,6 @@ func (o *HealthDatabaseStats) GetInnodbLsnLastCheckpointOk() (*string, bool) {
 	return o.InnodbLsnLastCheckpoint, true
 }
 
-// IsSetInnodbLsnLastCheckpoint returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbLsnLastCheckpoint() bool {
-	if o != nil && !IsNil(o.InnodbLsnLastCheckpoint) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbLsnLastCheckpoint gets a reference to the given string and assigns it to the InnodbLsnLastCheckpoint field.
 func (o *HealthDatabaseStats) SetInnodbLsnLastCheckpoint(v string) {
 	o.InnodbLsnLastCheckpoint = &v
@@ -8393,15 +6188,6 @@ func (o *HealthDatabaseStats) GetInnodbMasterThreadActiveLoopsOk() (*string, boo
 		return nil, false
 	}
 	return o.InnodbMasterThreadActiveLoops, true
-}
-
-// IsSetInnodbMasterThreadActiveLoops returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbMasterThreadActiveLoops() bool {
-	if o != nil && !IsNil(o.InnodbMasterThreadActiveLoops) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbMasterThreadActiveLoops gets a reference to the given string and assigns it to the InnodbMasterThreadActiveLoops field.
@@ -8427,15 +6213,6 @@ func (o *HealthDatabaseStats) GetInnodbMasterThreadIdleLoopsOk() (*string, bool)
 	return o.InnodbMasterThreadIdleLoops, true
 }
 
-// IsSetInnodbMasterThreadIdleLoops returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbMasterThreadIdleLoops() bool {
-	if o != nil && !IsNil(o.InnodbMasterThreadIdleLoops) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbMasterThreadIdleLoops gets a reference to the given string and assigns it to the InnodbMasterThreadIdleLoops field.
 func (o *HealthDatabaseStats) SetInnodbMasterThreadIdleLoops(v string) {
 	o.InnodbMasterThreadIdleLoops = &v
@@ -8457,15 +6234,6 @@ func (o *HealthDatabaseStats) GetInnodbMaxTrxIdOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InnodbMaxTrxId, true
-}
-
-// IsSetInnodbMaxTrxId returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbMaxTrxId() bool {
-	if o != nil && !IsNil(o.InnodbMaxTrxId) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbMaxTrxId gets a reference to the given string and assigns it to the InnodbMaxTrxId field.
@@ -8491,15 +6259,6 @@ func (o *HealthDatabaseStats) GetInnodbMemAdaptiveHashOk() (*string, bool) {
 	return o.InnodbMemAdaptiveHash, true
 }
 
-// IsSetInnodbMemAdaptiveHash returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbMemAdaptiveHash() bool {
-	if o != nil && !IsNil(o.InnodbMemAdaptiveHash) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbMemAdaptiveHash gets a reference to the given string and assigns it to the InnodbMemAdaptiveHash field.
 func (o *HealthDatabaseStats) SetInnodbMemAdaptiveHash(v string) {
 	o.InnodbMemAdaptiveHash = &v
@@ -8521,15 +6280,6 @@ func (o *HealthDatabaseStats) GetInnodbMemDictionaryOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InnodbMemDictionary, true
-}
-
-// IsSetInnodbMemDictionary returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbMemDictionary() bool {
-	if o != nil && !IsNil(o.InnodbMemDictionary) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbMemDictionary gets a reference to the given string and assigns it to the InnodbMemDictionary field.
@@ -8555,15 +6305,6 @@ func (o *HealthDatabaseStats) GetInnodbOldestViewLowLimitTrxIdOk() (*string, boo
 	return o.InnodbOldestViewLowLimitTrxId, true
 }
 
-// IsSetInnodbOldestViewLowLimitTrxId returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbOldestViewLowLimitTrxId() bool {
-	if o != nil && !IsNil(o.InnodbOldestViewLowLimitTrxId) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbOldestViewLowLimitTrxId gets a reference to the given string and assigns it to the InnodbOldestViewLowLimitTrxId field.
 func (o *HealthDatabaseStats) SetInnodbOldestViewLowLimitTrxId(v string) {
 	o.InnodbOldestViewLowLimitTrxId = &v
@@ -8585,15 +6326,6 @@ func (o *HealthDatabaseStats) GetInnodbOsLogFsyncsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InnodbOsLogFsyncs, true
-}
-
-// IsSetInnodbOsLogFsyncs returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbOsLogFsyncs() bool {
-	if o != nil && !IsNil(o.InnodbOsLogFsyncs) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbOsLogFsyncs gets a reference to the given string and assigns it to the InnodbOsLogFsyncs field.
@@ -8619,15 +6351,6 @@ func (o *HealthDatabaseStats) GetInnodbOsLogPendingFsyncsOk() (*string, bool) {
 	return o.InnodbOsLogPendingFsyncs, true
 }
 
-// IsSetInnodbOsLogPendingFsyncs returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbOsLogPendingFsyncs() bool {
-	if o != nil && !IsNil(o.InnodbOsLogPendingFsyncs) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbOsLogPendingFsyncs gets a reference to the given string and assigns it to the InnodbOsLogPendingFsyncs field.
 func (o *HealthDatabaseStats) SetInnodbOsLogPendingFsyncs(v string) {
 	o.InnodbOsLogPendingFsyncs = &v
@@ -8649,15 +6372,6 @@ func (o *HealthDatabaseStats) GetInnodbOsLogPendingWritesOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InnodbOsLogPendingWrites, true
-}
-
-// IsSetInnodbOsLogPendingWrites returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbOsLogPendingWrites() bool {
-	if o != nil && !IsNil(o.InnodbOsLogPendingWrites) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbOsLogPendingWrites gets a reference to the given string and assigns it to the InnodbOsLogPendingWrites field.
@@ -8683,15 +6397,6 @@ func (o *HealthDatabaseStats) GetInnodbOsLogWrittenOk() (*string, bool) {
 	return o.InnodbOsLogWritten, true
 }
 
-// IsSetInnodbOsLogWritten returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbOsLogWritten() bool {
-	if o != nil && !IsNil(o.InnodbOsLogWritten) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbOsLogWritten gets a reference to the given string and assigns it to the InnodbOsLogWritten field.
 func (o *HealthDatabaseStats) SetInnodbOsLogWritten(v string) {
 	o.InnodbOsLogWritten = &v
@@ -8713,15 +6418,6 @@ func (o *HealthDatabaseStats) GetInnodbPageSizeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InnodbPageSize, true
-}
-
-// IsSetInnodbPageSize returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbPageSize() bool {
-	if o != nil && !IsNil(o.InnodbPageSize) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbPageSize gets a reference to the given string and assigns it to the InnodbPageSize field.
@@ -8747,15 +6443,6 @@ func (o *HealthDatabaseStats) GetInnodbPagesCreatedOk() (*string, bool) {
 	return o.InnodbPagesCreated, true
 }
 
-// IsSetInnodbPagesCreated returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbPagesCreated() bool {
-	if o != nil && !IsNil(o.InnodbPagesCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbPagesCreated gets a reference to the given string and assigns it to the InnodbPagesCreated field.
 func (o *HealthDatabaseStats) SetInnodbPagesCreated(v string) {
 	o.InnodbPagesCreated = &v
@@ -8777,15 +6464,6 @@ func (o *HealthDatabaseStats) GetInnodbPagesReadOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InnodbPagesRead, true
-}
-
-// IsSetInnodbPagesRead returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbPagesRead() bool {
-	if o != nil && !IsNil(o.InnodbPagesRead) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbPagesRead gets a reference to the given string and assigns it to the InnodbPagesRead field.
@@ -8811,15 +6489,6 @@ func (o *HealthDatabaseStats) GetInnodbPages0ReadOk() (*string, bool) {
 	return o.InnodbPages0Read, true
 }
 
-// IsSetInnodbPages0Read returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbPages0Read() bool {
-	if o != nil && !IsNil(o.InnodbPages0Read) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbPages0Read gets a reference to the given string and assigns it to the InnodbPages0Read field.
 func (o *HealthDatabaseStats) SetInnodbPages0Read(v string) {
 	o.InnodbPages0Read = &v
@@ -8841,15 +6510,6 @@ func (o *HealthDatabaseStats) GetInnodbPagesWrittenOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InnodbPagesWritten, true
-}
-
-// IsSetInnodbPagesWritten returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbPagesWritten() bool {
-	if o != nil && !IsNil(o.InnodbPagesWritten) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbPagesWritten gets a reference to the given string and assigns it to the InnodbPagesWritten field.
@@ -8875,15 +6535,6 @@ func (o *HealthDatabaseStats) GetInnodbPurgeTrxIdOk() (*string, bool) {
 	return o.InnodbPurgeTrxId, true
 }
 
-// IsSetInnodbPurgeTrxId returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbPurgeTrxId() bool {
-	if o != nil && !IsNil(o.InnodbPurgeTrxId) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbPurgeTrxId gets a reference to the given string and assigns it to the InnodbPurgeTrxId field.
 func (o *HealthDatabaseStats) SetInnodbPurgeTrxId(v string) {
 	o.InnodbPurgeTrxId = &v
@@ -8905,15 +6556,6 @@ func (o *HealthDatabaseStats) GetInnodbPurgeUndoNoOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InnodbPurgeUndoNo, true
-}
-
-// IsSetInnodbPurgeUndoNo returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbPurgeUndoNo() bool {
-	if o != nil && !IsNil(o.InnodbPurgeUndoNo) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbPurgeUndoNo gets a reference to the given string and assigns it to the InnodbPurgeUndoNo field.
@@ -8939,15 +6581,6 @@ func (o *HealthDatabaseStats) GetInnodbRowLockCurrentWaitsOk() (*string, bool) {
 	return o.InnodbRowLockCurrentWaits, true
 }
 
-// IsSetInnodbRowLockCurrentWaits returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbRowLockCurrentWaits() bool {
-	if o != nil && !IsNil(o.InnodbRowLockCurrentWaits) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbRowLockCurrentWaits gets a reference to the given string and assigns it to the InnodbRowLockCurrentWaits field.
 func (o *HealthDatabaseStats) SetInnodbRowLockCurrentWaits(v string) {
 	o.InnodbRowLockCurrentWaits = &v
@@ -8969,15 +6602,6 @@ func (o *HealthDatabaseStats) GetInnodbRowLockTimeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InnodbRowLockTime, true
-}
-
-// IsSetInnodbRowLockTime returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbRowLockTime() bool {
-	if o != nil && !IsNil(o.InnodbRowLockTime) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbRowLockTime gets a reference to the given string and assigns it to the InnodbRowLockTime field.
@@ -9003,15 +6627,6 @@ func (o *HealthDatabaseStats) GetInnodbRowLockTimeAvgOk() (*string, bool) {
 	return o.InnodbRowLockTimeAvg, true
 }
 
-// IsSetInnodbRowLockTimeAvg returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbRowLockTimeAvg() bool {
-	if o != nil && !IsNil(o.InnodbRowLockTimeAvg) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbRowLockTimeAvg gets a reference to the given string and assigns it to the InnodbRowLockTimeAvg field.
 func (o *HealthDatabaseStats) SetInnodbRowLockTimeAvg(v string) {
 	o.InnodbRowLockTimeAvg = &v
@@ -9033,15 +6648,6 @@ func (o *HealthDatabaseStats) GetInnodbRowLockTimeMaxOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InnodbRowLockTimeMax, true
-}
-
-// IsSetInnodbRowLockTimeMax returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbRowLockTimeMax() bool {
-	if o != nil && !IsNil(o.InnodbRowLockTimeMax) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbRowLockTimeMax gets a reference to the given string and assigns it to the InnodbRowLockTimeMax field.
@@ -9067,15 +6673,6 @@ func (o *HealthDatabaseStats) GetInnodbRowLockWaitsOk() (*string, bool) {
 	return o.InnodbRowLockWaits, true
 }
 
-// IsSetInnodbRowLockWaits returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbRowLockWaits() bool {
-	if o != nil && !IsNil(o.InnodbRowLockWaits) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbRowLockWaits gets a reference to the given string and assigns it to the InnodbRowLockWaits field.
 func (o *HealthDatabaseStats) SetInnodbRowLockWaits(v string) {
 	o.InnodbRowLockWaits = &v
@@ -9097,15 +6694,6 @@ func (o *HealthDatabaseStats) GetInnodbRowsDeletedOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InnodbRowsDeleted, true
-}
-
-// IsSetInnodbRowsDeleted returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbRowsDeleted() bool {
-	if o != nil && !IsNil(o.InnodbRowsDeleted) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbRowsDeleted gets a reference to the given string and assigns it to the InnodbRowsDeleted field.
@@ -9131,15 +6719,6 @@ func (o *HealthDatabaseStats) GetInnodbRowsInsertedOk() (*string, bool) {
 	return o.InnodbRowsInserted, true
 }
 
-// IsSetInnodbRowsInserted returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbRowsInserted() bool {
-	if o != nil && !IsNil(o.InnodbRowsInserted) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbRowsInserted gets a reference to the given string and assigns it to the InnodbRowsInserted field.
 func (o *HealthDatabaseStats) SetInnodbRowsInserted(v string) {
 	o.InnodbRowsInserted = &v
@@ -9161,15 +6740,6 @@ func (o *HealthDatabaseStats) GetInnodbRowsReadOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InnodbRowsRead, true
-}
-
-// IsSetInnodbRowsRead returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbRowsRead() bool {
-	if o != nil && !IsNil(o.InnodbRowsRead) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbRowsRead gets a reference to the given string and assigns it to the InnodbRowsRead field.
@@ -9195,15 +6765,6 @@ func (o *HealthDatabaseStats) GetInnodbRowsUpdatedOk() (*string, bool) {
 	return o.InnodbRowsUpdated, true
 }
 
-// IsSetInnodbRowsUpdated returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbRowsUpdated() bool {
-	if o != nil && !IsNil(o.InnodbRowsUpdated) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbRowsUpdated gets a reference to the given string and assigns it to the InnodbRowsUpdated field.
 func (o *HealthDatabaseStats) SetInnodbRowsUpdated(v string) {
 	o.InnodbRowsUpdated = &v
@@ -9225,15 +6786,6 @@ func (o *HealthDatabaseStats) GetInnodbNumOpenFilesOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InnodbNumOpenFiles, true
-}
-
-// IsSetInnodbNumOpenFiles returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbNumOpenFiles() bool {
-	if o != nil && !IsNil(o.InnodbNumOpenFiles) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbNumOpenFiles gets a reference to the given string and assigns it to the InnodbNumOpenFiles field.
@@ -9259,15 +6811,6 @@ func (o *HealthDatabaseStats) GetInnodbTruncatedStatusWritesOk() (*string, bool)
 	return o.InnodbTruncatedStatusWrites, true
 }
 
-// IsSetInnodbTruncatedStatusWrites returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbTruncatedStatusWrites() bool {
-	if o != nil && !IsNil(o.InnodbTruncatedStatusWrites) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbTruncatedStatusWrites gets a reference to the given string and assigns it to the InnodbTruncatedStatusWrites field.
 func (o *HealthDatabaseStats) SetInnodbTruncatedStatusWrites(v string) {
 	o.InnodbTruncatedStatusWrites = &v
@@ -9289,15 +6832,6 @@ func (o *HealthDatabaseStats) GetInnodbAvailableUndoLogsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InnodbAvailableUndoLogs, true
-}
-
-// IsSetInnodbAvailableUndoLogs returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbAvailableUndoLogs() bool {
-	if o != nil && !IsNil(o.InnodbAvailableUndoLogs) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbAvailableUndoLogs gets a reference to the given string and assigns it to the InnodbAvailableUndoLogs field.
@@ -9323,15 +6857,6 @@ func (o *HealthDatabaseStats) GetInnodbSecondaryIndexTriggeredClusterReadsOk() (
 	return o.InnodbSecondaryIndexTriggeredClusterReads, true
 }
 
-// IsSetInnodbSecondaryIndexTriggeredClusterReads returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbSecondaryIndexTriggeredClusterReads() bool {
-	if o != nil && !IsNil(o.InnodbSecondaryIndexTriggeredClusterReads) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbSecondaryIndexTriggeredClusterReads gets a reference to the given string and assigns it to the InnodbSecondaryIndexTriggeredClusterReads field.
 func (o *HealthDatabaseStats) SetInnodbSecondaryIndexTriggeredClusterReads(v string) {
 	o.InnodbSecondaryIndexTriggeredClusterReads = &v
@@ -9353,15 +6878,6 @@ func (o *HealthDatabaseStats) GetInnodbSecondaryIndexTriggeredClusterReadsAvoide
 		return nil, false
 	}
 	return o.InnodbSecondaryIndexTriggeredClusterReadsAvoided, true
-}
-
-// IsSetInnodbSecondaryIndexTriggeredClusterReadsAvoided returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbSecondaryIndexTriggeredClusterReadsAvoided() bool {
-	if o != nil && !IsNil(o.InnodbSecondaryIndexTriggeredClusterReadsAvoided) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbSecondaryIndexTriggeredClusterReadsAvoided gets a reference to the given string and assigns it to the InnodbSecondaryIndexTriggeredClusterReadsAvoided field.
@@ -9387,15 +6903,6 @@ func (o *HealthDatabaseStats) GetInnodbBufferedAioSubmittedOk() (*string, bool) 
 	return o.InnodbBufferedAioSubmitted, true
 }
 
-// IsSetInnodbBufferedAioSubmitted returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbBufferedAioSubmitted() bool {
-	if o != nil && !IsNil(o.InnodbBufferedAioSubmitted) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbBufferedAioSubmitted gets a reference to the given string and assigns it to the InnodbBufferedAioSubmitted field.
 func (o *HealthDatabaseStats) SetInnodbBufferedAioSubmitted(v string) {
 	o.InnodbBufferedAioSubmitted = &v
@@ -9417,15 +6924,6 @@ func (o *HealthDatabaseStats) GetInnodbScanPagesContiguousOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InnodbScanPagesContiguous, true
-}
-
-// IsSetInnodbScanPagesContiguous returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbScanPagesContiguous() bool {
-	if o != nil && !IsNil(o.InnodbScanPagesContiguous) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbScanPagesContiguous gets a reference to the given string and assigns it to the InnodbScanPagesContiguous field.
@@ -9451,15 +6949,6 @@ func (o *HealthDatabaseStats) GetInnodbScanPagesDisjointedOk() (*string, bool) {
 	return o.InnodbScanPagesDisjointed, true
 }
 
-// IsSetInnodbScanPagesDisjointed returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbScanPagesDisjointed() bool {
-	if o != nil && !IsNil(o.InnodbScanPagesDisjointed) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbScanPagesDisjointed gets a reference to the given string and assigns it to the InnodbScanPagesDisjointed field.
 func (o *HealthDatabaseStats) SetInnodbScanPagesDisjointed(v string) {
 	o.InnodbScanPagesDisjointed = &v
@@ -9481,15 +6970,6 @@ func (o *HealthDatabaseStats) GetInnodbScanPagesTotalSeekDistanceOk() (*string, 
 		return nil, false
 	}
 	return o.InnodbScanPagesTotalSeekDistance, true
-}
-
-// IsSetInnodbScanPagesTotalSeekDistance returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbScanPagesTotalSeekDistance() bool {
-	if o != nil && !IsNil(o.InnodbScanPagesTotalSeekDistance) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbScanPagesTotalSeekDistance gets a reference to the given string and assigns it to the InnodbScanPagesTotalSeekDistance field.
@@ -9515,15 +6995,6 @@ func (o *HealthDatabaseStats) GetInnodbScanDataSizeOk() (*string, bool) {
 	return o.InnodbScanDataSize, true
 }
 
-// IsSetInnodbScanDataSize returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbScanDataSize() bool {
-	if o != nil && !IsNil(o.InnodbScanDataSize) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbScanDataSize gets a reference to the given string and assigns it to the InnodbScanDataSize field.
 func (o *HealthDatabaseStats) SetInnodbScanDataSize(v string) {
 	o.InnodbScanDataSize = &v
@@ -9545,15 +7016,6 @@ func (o *HealthDatabaseStats) GetInnodbScanDeletedRecsSizeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InnodbScanDeletedRecsSize, true
-}
-
-// IsSetInnodbScanDeletedRecsSize returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbScanDeletedRecsSize() bool {
-	if o != nil && !IsNil(o.InnodbScanDeletedRecsSize) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbScanDeletedRecsSize gets a reference to the given string and assigns it to the InnodbScanDeletedRecsSize field.
@@ -9579,15 +7041,6 @@ func (o *HealthDatabaseStats) GetInnodbScrubBackgroundPageReorganizationsOk() (*
 	return o.InnodbScrubBackgroundPageReorganizations, true
 }
 
-// IsSetInnodbScrubBackgroundPageReorganizations returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbScrubBackgroundPageReorganizations() bool {
-	if o != nil && !IsNil(o.InnodbScrubBackgroundPageReorganizations) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbScrubBackgroundPageReorganizations gets a reference to the given string and assigns it to the InnodbScrubBackgroundPageReorganizations field.
 func (o *HealthDatabaseStats) SetInnodbScrubBackgroundPageReorganizations(v string) {
 	o.InnodbScrubBackgroundPageReorganizations = &v
@@ -9609,15 +7062,6 @@ func (o *HealthDatabaseStats) GetInnodbScrubBackgroundPageSplitsOk() (*string, b
 		return nil, false
 	}
 	return o.InnodbScrubBackgroundPageSplits, true
-}
-
-// IsSetInnodbScrubBackgroundPageSplits returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbScrubBackgroundPageSplits() bool {
-	if o != nil && !IsNil(o.InnodbScrubBackgroundPageSplits) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbScrubBackgroundPageSplits gets a reference to the given string and assigns it to the InnodbScrubBackgroundPageSplits field.
@@ -9643,15 +7087,6 @@ func (o *HealthDatabaseStats) GetInnodbScrubBackgroundPageSplitFailuresUnderflow
 	return o.InnodbScrubBackgroundPageSplitFailuresUnderflow, true
 }
 
-// IsSetInnodbScrubBackgroundPageSplitFailuresUnderflow returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbScrubBackgroundPageSplitFailuresUnderflow() bool {
-	if o != nil && !IsNil(o.InnodbScrubBackgroundPageSplitFailuresUnderflow) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbScrubBackgroundPageSplitFailuresUnderflow gets a reference to the given string and assigns it to the InnodbScrubBackgroundPageSplitFailuresUnderflow field.
 func (o *HealthDatabaseStats) SetInnodbScrubBackgroundPageSplitFailuresUnderflow(v string) {
 	o.InnodbScrubBackgroundPageSplitFailuresUnderflow = &v
@@ -9673,15 +7108,6 @@ func (o *HealthDatabaseStats) GetInnodbScrubBackgroundPageSplitFailuresOutOfFile
 		return nil, false
 	}
 	return o.InnodbScrubBackgroundPageSplitFailuresOutOfFilespace, true
-}
-
-// IsSetInnodbScrubBackgroundPageSplitFailuresOutOfFilespace returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbScrubBackgroundPageSplitFailuresOutOfFilespace() bool {
-	if o != nil && !IsNil(o.InnodbScrubBackgroundPageSplitFailuresOutOfFilespace) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbScrubBackgroundPageSplitFailuresOutOfFilespace gets a reference to the given string and assigns it to the InnodbScrubBackgroundPageSplitFailuresOutOfFilespace field.
@@ -9707,15 +7133,6 @@ func (o *HealthDatabaseStats) GetInnodbScrubBackgroundPageSplitFailuresMissingIn
 	return o.InnodbScrubBackgroundPageSplitFailuresMissingIndex, true
 }
 
-// IsSetInnodbScrubBackgroundPageSplitFailuresMissingIndex returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbScrubBackgroundPageSplitFailuresMissingIndex() bool {
-	if o != nil && !IsNil(o.InnodbScrubBackgroundPageSplitFailuresMissingIndex) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbScrubBackgroundPageSplitFailuresMissingIndex gets a reference to the given string and assigns it to the InnodbScrubBackgroundPageSplitFailuresMissingIndex field.
 func (o *HealthDatabaseStats) SetInnodbScrubBackgroundPageSplitFailuresMissingIndex(v string) {
 	o.InnodbScrubBackgroundPageSplitFailuresMissingIndex = &v
@@ -9737,15 +7154,6 @@ func (o *HealthDatabaseStats) GetInnodbScrubBackgroundPageSplitFailuresUnknownOk
 		return nil, false
 	}
 	return o.InnodbScrubBackgroundPageSplitFailuresUnknown, true
-}
-
-// IsSetInnodbScrubBackgroundPageSplitFailuresUnknown returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbScrubBackgroundPageSplitFailuresUnknown() bool {
-	if o != nil && !IsNil(o.InnodbScrubBackgroundPageSplitFailuresUnknown) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbScrubBackgroundPageSplitFailuresUnknown gets a reference to the given string and assigns it to the InnodbScrubBackgroundPageSplitFailuresUnknown field.
@@ -9771,15 +7179,6 @@ func (o *HealthDatabaseStats) GetInnodbScrubLogOk() (*string, bool) {
 	return o.InnodbScrubLog, true
 }
 
-// IsSetInnodbScrubLog returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbScrubLog() bool {
-	if o != nil && !IsNil(o.InnodbScrubLog) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbScrubLog gets a reference to the given string and assigns it to the InnodbScrubLog field.
 func (o *HealthDatabaseStats) SetInnodbScrubLog(v string) {
 	o.InnodbScrubLog = &v
@@ -9801,15 +7200,6 @@ func (o *HealthDatabaseStats) GetInnodbEncryptionRotationPagesReadFromCacheOk() 
 		return nil, false
 	}
 	return o.InnodbEncryptionRotationPagesReadFromCache, true
-}
-
-// IsSetInnodbEncryptionRotationPagesReadFromCache returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbEncryptionRotationPagesReadFromCache() bool {
-	if o != nil && !IsNil(o.InnodbEncryptionRotationPagesReadFromCache) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbEncryptionRotationPagesReadFromCache gets a reference to the given string and assigns it to the InnodbEncryptionRotationPagesReadFromCache field.
@@ -9835,15 +7225,6 @@ func (o *HealthDatabaseStats) GetInnodbEncryptionRotationPagesReadFromDiskOk() (
 	return o.InnodbEncryptionRotationPagesReadFromDisk, true
 }
 
-// IsSetInnodbEncryptionRotationPagesReadFromDisk returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbEncryptionRotationPagesReadFromDisk() bool {
-	if o != nil && !IsNil(o.InnodbEncryptionRotationPagesReadFromDisk) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbEncryptionRotationPagesReadFromDisk gets a reference to the given string and assigns it to the InnodbEncryptionRotationPagesReadFromDisk field.
 func (o *HealthDatabaseStats) SetInnodbEncryptionRotationPagesReadFromDisk(v string) {
 	o.InnodbEncryptionRotationPagesReadFromDisk = &v
@@ -9865,15 +7246,6 @@ func (o *HealthDatabaseStats) GetInnodbEncryptionRotationPagesModifiedOk() (*str
 		return nil, false
 	}
 	return o.InnodbEncryptionRotationPagesModified, true
-}
-
-// IsSetInnodbEncryptionRotationPagesModified returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbEncryptionRotationPagesModified() bool {
-	if o != nil && !IsNil(o.InnodbEncryptionRotationPagesModified) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbEncryptionRotationPagesModified gets a reference to the given string and assigns it to the InnodbEncryptionRotationPagesModified field.
@@ -9899,15 +7271,6 @@ func (o *HealthDatabaseStats) GetInnodbEncryptionRotationPagesFlushedOk() (*stri
 	return o.InnodbEncryptionRotationPagesFlushed, true
 }
 
-// IsSetInnodbEncryptionRotationPagesFlushed returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbEncryptionRotationPagesFlushed() bool {
-	if o != nil && !IsNil(o.InnodbEncryptionRotationPagesFlushed) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbEncryptionRotationPagesFlushed gets a reference to the given string and assigns it to the InnodbEncryptionRotationPagesFlushed field.
 func (o *HealthDatabaseStats) SetInnodbEncryptionRotationPagesFlushed(v string) {
 	o.InnodbEncryptionRotationPagesFlushed = &v
@@ -9929,15 +7292,6 @@ func (o *HealthDatabaseStats) GetInnodbEncryptionRotationEstimatedIopsOk() (*str
 		return nil, false
 	}
 	return o.InnodbEncryptionRotationEstimatedIops, true
-}
-
-// IsSetInnodbEncryptionRotationEstimatedIops returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbEncryptionRotationEstimatedIops() bool {
-	if o != nil && !IsNil(o.InnodbEncryptionRotationEstimatedIops) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbEncryptionRotationEstimatedIops gets a reference to the given string and assigns it to the InnodbEncryptionRotationEstimatedIops field.
@@ -9963,15 +7317,6 @@ func (o *HealthDatabaseStats) GetInnodbEncryptionKeyRotationListLengthOk() (*str
 	return o.InnodbEncryptionKeyRotationListLength, true
 }
 
-// IsSetInnodbEncryptionKeyRotationListLength returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbEncryptionKeyRotationListLength() bool {
-	if o != nil && !IsNil(o.InnodbEncryptionKeyRotationListLength) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbEncryptionKeyRotationListLength gets a reference to the given string and assigns it to the InnodbEncryptionKeyRotationListLength field.
 func (o *HealthDatabaseStats) SetInnodbEncryptionKeyRotationListLength(v string) {
 	o.InnodbEncryptionKeyRotationListLength = &v
@@ -9993,15 +7338,6 @@ func (o *HealthDatabaseStats) GetInnodbEncryptionNMergeBlocksEncryptedOk() (*str
 		return nil, false
 	}
 	return o.InnodbEncryptionNMergeBlocksEncrypted, true
-}
-
-// IsSetInnodbEncryptionNMergeBlocksEncrypted returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbEncryptionNMergeBlocksEncrypted() bool {
-	if o != nil && !IsNil(o.InnodbEncryptionNMergeBlocksEncrypted) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbEncryptionNMergeBlocksEncrypted gets a reference to the given string and assigns it to the InnodbEncryptionNMergeBlocksEncrypted field.
@@ -10027,15 +7363,6 @@ func (o *HealthDatabaseStats) GetInnodbEncryptionNMergeBlocksDecryptedOk() (*str
 	return o.InnodbEncryptionNMergeBlocksDecrypted, true
 }
 
-// IsSetInnodbEncryptionNMergeBlocksDecrypted returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbEncryptionNMergeBlocksDecrypted() bool {
-	if o != nil && !IsNil(o.InnodbEncryptionNMergeBlocksDecrypted) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbEncryptionNMergeBlocksDecrypted gets a reference to the given string and assigns it to the InnodbEncryptionNMergeBlocksDecrypted field.
 func (o *HealthDatabaseStats) SetInnodbEncryptionNMergeBlocksDecrypted(v string) {
 	o.InnodbEncryptionNMergeBlocksDecrypted = &v
@@ -10057,15 +7384,6 @@ func (o *HealthDatabaseStats) GetInnodbEncryptionNRowlogBlocksEncryptedOk() (*st
 		return nil, false
 	}
 	return o.InnodbEncryptionNRowlogBlocksEncrypted, true
-}
-
-// IsSetInnodbEncryptionNRowlogBlocksEncrypted returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbEncryptionNRowlogBlocksEncrypted() bool {
-	if o != nil && !IsNil(o.InnodbEncryptionNRowlogBlocksEncrypted) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbEncryptionNRowlogBlocksEncrypted gets a reference to the given string and assigns it to the InnodbEncryptionNRowlogBlocksEncrypted field.
@@ -10091,15 +7409,6 @@ func (o *HealthDatabaseStats) GetInnodbEncryptionNRowlogBlocksDecryptedOk() (*st
 	return o.InnodbEncryptionNRowlogBlocksDecrypted, true
 }
 
-// IsSetInnodbEncryptionNRowlogBlocksDecrypted returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbEncryptionNRowlogBlocksDecrypted() bool {
-	if o != nil && !IsNil(o.InnodbEncryptionNRowlogBlocksDecrypted) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbEncryptionNRowlogBlocksDecrypted gets a reference to the given string and assigns it to the InnodbEncryptionNRowlogBlocksDecrypted field.
 func (o *HealthDatabaseStats) SetInnodbEncryptionNRowlogBlocksDecrypted(v string) {
 	o.InnodbEncryptionNRowlogBlocksDecrypted = &v
@@ -10121,15 +7430,6 @@ func (o *HealthDatabaseStats) GetInnodbNumPagesEncryptedOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InnodbNumPagesEncrypted, true
-}
-
-// IsSetInnodbNumPagesEncrypted returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbNumPagesEncrypted() bool {
-	if o != nil && !IsNil(o.InnodbNumPagesEncrypted) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbNumPagesEncrypted gets a reference to the given string and assigns it to the InnodbNumPagesEncrypted field.
@@ -10155,15 +7455,6 @@ func (o *HealthDatabaseStats) GetInnodbNumPagesDecryptedOk() (*string, bool) {
 	return o.InnodbNumPagesDecrypted, true
 }
 
-// IsSetInnodbNumPagesDecrypted returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbNumPagesDecrypted() bool {
-	if o != nil && !IsNil(o.InnodbNumPagesDecrypted) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbNumPagesDecrypted gets a reference to the given string and assigns it to the InnodbNumPagesDecrypted field.
 func (o *HealthDatabaseStats) SetInnodbNumPagesDecrypted(v string) {
 	o.InnodbNumPagesDecrypted = &v
@@ -10185,15 +7476,6 @@ func (o *HealthDatabaseStats) GetInnodbEncryptionRedoKeyVersionOk() (*string, bo
 		return nil, false
 	}
 	return o.InnodbEncryptionRedoKeyVersion, true
-}
-
-// IsSetInnodbEncryptionRedoKeyVersion returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetInnodbEncryptionRedoKeyVersion() bool {
-	if o != nil && !IsNil(o.InnodbEncryptionRedoKeyVersion) {
-		return true
-	}
-
-	return false
 }
 
 // SetInnodbEncryptionRedoKeyVersion gets a reference to the given string and assigns it to the InnodbEncryptionRedoKeyVersion field.
@@ -10219,15 +7501,6 @@ func (o *HealthDatabaseStats) GetKeyBlocksNotFlushedOk() (*string, bool) {
 	return o.KeyBlocksNotFlushed, true
 }
 
-// IsSetKeyBlocksNotFlushed returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetKeyBlocksNotFlushed() bool {
-	if o != nil && !IsNil(o.KeyBlocksNotFlushed) {
-		return true
-	}
-
-	return false
-}
-
 // SetKeyBlocksNotFlushed gets a reference to the given string and assigns it to the KeyBlocksNotFlushed field.
 func (o *HealthDatabaseStats) SetKeyBlocksNotFlushed(v string) {
 	o.KeyBlocksNotFlushed = &v
@@ -10249,15 +7522,6 @@ func (o *HealthDatabaseStats) GetKeyBlocksUnusedOk() (*string, bool) {
 		return nil, false
 	}
 	return o.KeyBlocksUnused, true
-}
-
-// IsSetKeyBlocksUnused returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetKeyBlocksUnused() bool {
-	if o != nil && !IsNil(o.KeyBlocksUnused) {
-		return true
-	}
-
-	return false
 }
 
 // SetKeyBlocksUnused gets a reference to the given string and assigns it to the KeyBlocksUnused field.
@@ -10283,15 +7547,6 @@ func (o *HealthDatabaseStats) GetKeyBlocksUsedOk() (*string, bool) {
 	return o.KeyBlocksUsed, true
 }
 
-// IsSetKeyBlocksUsed returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetKeyBlocksUsed() bool {
-	if o != nil && !IsNil(o.KeyBlocksUsed) {
-		return true
-	}
-
-	return false
-}
-
 // SetKeyBlocksUsed gets a reference to the given string and assigns it to the KeyBlocksUsed field.
 func (o *HealthDatabaseStats) SetKeyBlocksUsed(v string) {
 	o.KeyBlocksUsed = &v
@@ -10313,15 +7568,6 @@ func (o *HealthDatabaseStats) GetKeyReadRequestsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.KeyReadRequests, true
-}
-
-// IsSetKeyReadRequests returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetKeyReadRequests() bool {
-	if o != nil && !IsNil(o.KeyReadRequests) {
-		return true
-	}
-
-	return false
 }
 
 // SetKeyReadRequests gets a reference to the given string and assigns it to the KeyReadRequests field.
@@ -10347,15 +7593,6 @@ func (o *HealthDatabaseStats) GetKeyReadsOk() (*string, bool) {
 	return o.KeyReads, true
 }
 
-// IsSetKeyReads returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetKeyReads() bool {
-	if o != nil && !IsNil(o.KeyReads) {
-		return true
-	}
-
-	return false
-}
-
 // SetKeyReads gets a reference to the given string and assigns it to the KeyReads field.
 func (o *HealthDatabaseStats) SetKeyReads(v string) {
 	o.KeyReads = &v
@@ -10377,15 +7614,6 @@ func (o *HealthDatabaseStats) GetKeyWriteRequestsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.KeyWriteRequests, true
-}
-
-// IsSetKeyWriteRequests returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetKeyWriteRequests() bool {
-	if o != nil && !IsNil(o.KeyWriteRequests) {
-		return true
-	}
-
-	return false
 }
 
 // SetKeyWriteRequests gets a reference to the given string and assigns it to the KeyWriteRequests field.
@@ -10411,15 +7639,6 @@ func (o *HealthDatabaseStats) GetKeyWritesOk() (*string, bool) {
 	return o.KeyWrites, true
 }
 
-// IsSetKeyWrites returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetKeyWrites() bool {
-	if o != nil && !IsNil(o.KeyWrites) {
-		return true
-	}
-
-	return false
-}
-
 // SetKeyWrites gets a reference to the given string and assigns it to the KeyWrites field.
 func (o *HealthDatabaseStats) SetKeyWrites(v string) {
 	o.KeyWrites = &v
@@ -10441,15 +7660,6 @@ func (o *HealthDatabaseStats) GetLastQueryCostOk() (*string, bool) {
 		return nil, false
 	}
 	return o.LastQueryCost, true
-}
-
-// IsSetLastQueryCost returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetLastQueryCost() bool {
-	if o != nil && !IsNil(o.LastQueryCost) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastQueryCost gets a reference to the given string and assigns it to the LastQueryCost field.
@@ -10475,15 +7685,6 @@ func (o *HealthDatabaseStats) GetLastQueryPartialPlansOk() (*string, bool) {
 	return o.LastQueryPartialPlans, true
 }
 
-// IsSetLastQueryPartialPlans returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetLastQueryPartialPlans() bool {
-	if o != nil && !IsNil(o.LastQueryPartialPlans) {
-		return true
-	}
-
-	return false
-}
-
 // SetLastQueryPartialPlans gets a reference to the given string and assigns it to the LastQueryPartialPlans field.
 func (o *HealthDatabaseStats) SetLastQueryPartialPlans(v string) {
 	o.LastQueryPartialPlans = &v
@@ -10505,15 +7706,6 @@ func (o *HealthDatabaseStats) GetLockedConnectsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.LockedConnects, true
-}
-
-// IsSetLockedConnects returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetLockedConnects() bool {
-	if o != nil && !IsNil(o.LockedConnects) {
-		return true
-	}
-
-	return false
 }
 
 // SetLockedConnects gets a reference to the given string and assigns it to the LockedConnects field.
@@ -10539,15 +7731,6 @@ func (o *HealthDatabaseStats) GetMaxExecutionTimeExceededOk() (*string, bool) {
 	return o.MaxExecutionTimeExceeded, true
 }
 
-// IsSetMaxExecutionTimeExceeded returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetMaxExecutionTimeExceeded() bool {
-	if o != nil && !IsNil(o.MaxExecutionTimeExceeded) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxExecutionTimeExceeded gets a reference to the given string and assigns it to the MaxExecutionTimeExceeded field.
 func (o *HealthDatabaseStats) SetMaxExecutionTimeExceeded(v string) {
 	o.MaxExecutionTimeExceeded = &v
@@ -10569,15 +7752,6 @@ func (o *HealthDatabaseStats) GetMaxExecutionTimeSetOk() (*string, bool) {
 		return nil, false
 	}
 	return o.MaxExecutionTimeSet, true
-}
-
-// IsSetMaxExecutionTimeSet returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetMaxExecutionTimeSet() bool {
-	if o != nil && !IsNil(o.MaxExecutionTimeSet) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxExecutionTimeSet gets a reference to the given string and assigns it to the MaxExecutionTimeSet field.
@@ -10603,15 +7777,6 @@ func (o *HealthDatabaseStats) GetMaxExecutionTimeSetFailedOk() (*string, bool) {
 	return o.MaxExecutionTimeSetFailed, true
 }
 
-// IsSetMaxExecutionTimeSetFailed returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetMaxExecutionTimeSetFailed() bool {
-	if o != nil && !IsNil(o.MaxExecutionTimeSetFailed) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxExecutionTimeSetFailed gets a reference to the given string and assigns it to the MaxExecutionTimeSetFailed field.
 func (o *HealthDatabaseStats) SetMaxExecutionTimeSetFailed(v string) {
 	o.MaxExecutionTimeSetFailed = &v
@@ -10633,15 +7798,6 @@ func (o *HealthDatabaseStats) GetMaxUsedConnectionsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.MaxUsedConnections, true
-}
-
-// IsSetMaxUsedConnections returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetMaxUsedConnections() bool {
-	if o != nil && !IsNil(o.MaxUsedConnections) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxUsedConnections gets a reference to the given string and assigns it to the MaxUsedConnections field.
@@ -10667,15 +7823,6 @@ func (o *HealthDatabaseStats) GetMaxUsedConnectionsTimeOk() (*string, bool) {
 	return o.MaxUsedConnectionsTime, true
 }
 
-// IsSetMaxUsedConnectionsTime returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetMaxUsedConnectionsTime() bool {
-	if o != nil && !IsNil(o.MaxUsedConnectionsTime) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxUsedConnectionsTime gets a reference to the given string and assigns it to the MaxUsedConnectionsTime field.
 func (o *HealthDatabaseStats) SetMaxUsedConnectionsTime(v string) {
 	o.MaxUsedConnectionsTime = &v
@@ -10697,15 +7844,6 @@ func (o *HealthDatabaseStats) GetNotFlushedDelayedRowsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.NotFlushedDelayedRows, true
-}
-
-// IsSetNotFlushedDelayedRows returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetNotFlushedDelayedRows() bool {
-	if o != nil && !IsNil(o.NotFlushedDelayedRows) {
-		return true
-	}
-
-	return false
 }
 
 // SetNotFlushedDelayedRows gets a reference to the given string and assigns it to the NotFlushedDelayedRows field.
@@ -10731,15 +7869,6 @@ func (o *HealthDatabaseStats) GetOngoingAnonymousTransactionCountOk() (*string, 
 	return o.OngoingAnonymousTransactionCount, true
 }
 
-// IsSetOngoingAnonymousTransactionCount returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetOngoingAnonymousTransactionCount() bool {
-	if o != nil && !IsNil(o.OngoingAnonymousTransactionCount) {
-		return true
-	}
-
-	return false
-}
-
 // SetOngoingAnonymousTransactionCount gets a reference to the given string and assigns it to the OngoingAnonymousTransactionCount field.
 func (o *HealthDatabaseStats) SetOngoingAnonymousTransactionCount(v string) {
 	o.OngoingAnonymousTransactionCount = &v
@@ -10761,15 +7890,6 @@ func (o *HealthDatabaseStats) GetOpenFilesOk() (*string, bool) {
 		return nil, false
 	}
 	return o.OpenFiles, true
-}
-
-// IsSetOpenFiles returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetOpenFiles() bool {
-	if o != nil && !IsNil(o.OpenFiles) {
-		return true
-	}
-
-	return false
 }
 
 // SetOpenFiles gets a reference to the given string and assigns it to the OpenFiles field.
@@ -10795,15 +7915,6 @@ func (o *HealthDatabaseStats) GetOpenStreamsOk() (*string, bool) {
 	return o.OpenStreams, true
 }
 
-// IsSetOpenStreams returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetOpenStreams() bool {
-	if o != nil && !IsNil(o.OpenStreams) {
-		return true
-	}
-
-	return false
-}
-
 // SetOpenStreams gets a reference to the given string and assigns it to the OpenStreams field.
 func (o *HealthDatabaseStats) SetOpenStreams(v string) {
 	o.OpenStreams = &v
@@ -10825,15 +7936,6 @@ func (o *HealthDatabaseStats) GetOpenTableDefinitionsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.OpenTableDefinitions, true
-}
-
-// IsSetOpenTableDefinitions returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetOpenTableDefinitions() bool {
-	if o != nil && !IsNil(o.OpenTableDefinitions) {
-		return true
-	}
-
-	return false
 }
 
 // SetOpenTableDefinitions gets a reference to the given string and assigns it to the OpenTableDefinitions field.
@@ -10859,15 +7961,6 @@ func (o *HealthDatabaseStats) GetOpenTablesOk() (*string, bool) {
 	return o.OpenTables, true
 }
 
-// IsSetOpenTables returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetOpenTables() bool {
-	if o != nil && !IsNil(o.OpenTables) {
-		return true
-	}
-
-	return false
-}
-
 // SetOpenTables gets a reference to the given string and assigns it to the OpenTables field.
 func (o *HealthDatabaseStats) SetOpenTables(v string) {
 	o.OpenTables = &v
@@ -10889,15 +7982,6 @@ func (o *HealthDatabaseStats) GetOpenedFilesOk() (*string, bool) {
 		return nil, false
 	}
 	return o.OpenedFiles, true
-}
-
-// IsSetOpenedFiles returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetOpenedFiles() bool {
-	if o != nil && !IsNil(o.OpenedFiles) {
-		return true
-	}
-
-	return false
 }
 
 // SetOpenedFiles gets a reference to the given string and assigns it to the OpenedFiles field.
@@ -10923,15 +8007,6 @@ func (o *HealthDatabaseStats) GetOpenedTableDefinitionsOk() (*string, bool) {
 	return o.OpenedTableDefinitions, true
 }
 
-// IsSetOpenedTableDefinitions returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetOpenedTableDefinitions() bool {
-	if o != nil && !IsNil(o.OpenedTableDefinitions) {
-		return true
-	}
-
-	return false
-}
-
 // SetOpenedTableDefinitions gets a reference to the given string and assigns it to the OpenedTableDefinitions field.
 func (o *HealthDatabaseStats) SetOpenedTableDefinitions(v string) {
 	o.OpenedTableDefinitions = &v
@@ -10953,15 +8028,6 @@ func (o *HealthDatabaseStats) GetOpenedTablesOk() (*string, bool) {
 		return nil, false
 	}
 	return o.OpenedTables, true
-}
-
-// IsSetOpenedTables returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetOpenedTables() bool {
-	if o != nil && !IsNil(o.OpenedTables) {
-		return true
-	}
-
-	return false
 }
 
 // SetOpenedTables gets a reference to the given string and assigns it to the OpenedTables field.
@@ -10987,15 +8053,6 @@ func (o *HealthDatabaseStats) GetPerformanceSchemaAccountsLostOk() (*string, boo
 	return o.PerformanceSchemaAccountsLost, true
 }
 
-// IsSetPerformanceSchemaAccountsLost returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetPerformanceSchemaAccountsLost() bool {
-	if o != nil && !IsNil(o.PerformanceSchemaAccountsLost) {
-		return true
-	}
-
-	return false
-}
-
 // SetPerformanceSchemaAccountsLost gets a reference to the given string and assigns it to the PerformanceSchemaAccountsLost field.
 func (o *HealthDatabaseStats) SetPerformanceSchemaAccountsLost(v string) {
 	o.PerformanceSchemaAccountsLost = &v
@@ -11017,15 +8074,6 @@ func (o *HealthDatabaseStats) GetPerformanceSchemaCondClassesLostOk() (*string, 
 		return nil, false
 	}
 	return o.PerformanceSchemaCondClassesLost, true
-}
-
-// IsSetPerformanceSchemaCondClassesLost returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetPerformanceSchemaCondClassesLost() bool {
-	if o != nil && !IsNil(o.PerformanceSchemaCondClassesLost) {
-		return true
-	}
-
-	return false
 }
 
 // SetPerformanceSchemaCondClassesLost gets a reference to the given string and assigns it to the PerformanceSchemaCondClassesLost field.
@@ -11051,15 +8099,6 @@ func (o *HealthDatabaseStats) GetPerformanceSchemaCondInstancesLostOk() (*string
 	return o.PerformanceSchemaCondInstancesLost, true
 }
 
-// IsSetPerformanceSchemaCondInstancesLost returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetPerformanceSchemaCondInstancesLost() bool {
-	if o != nil && !IsNil(o.PerformanceSchemaCondInstancesLost) {
-		return true
-	}
-
-	return false
-}
-
 // SetPerformanceSchemaCondInstancesLost gets a reference to the given string and assigns it to the PerformanceSchemaCondInstancesLost field.
 func (o *HealthDatabaseStats) SetPerformanceSchemaCondInstancesLost(v string) {
 	o.PerformanceSchemaCondInstancesLost = &v
@@ -11081,15 +8120,6 @@ func (o *HealthDatabaseStats) GetPerformanceSchemaDigestLostOk() (*string, bool)
 		return nil, false
 	}
 	return o.PerformanceSchemaDigestLost, true
-}
-
-// IsSetPerformanceSchemaDigestLost returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetPerformanceSchemaDigestLost() bool {
-	if o != nil && !IsNil(o.PerformanceSchemaDigestLost) {
-		return true
-	}
-
-	return false
 }
 
 // SetPerformanceSchemaDigestLost gets a reference to the given string and assigns it to the PerformanceSchemaDigestLost field.
@@ -11115,15 +8145,6 @@ func (o *HealthDatabaseStats) GetPerformanceSchemaFileClassesLostOk() (*string, 
 	return o.PerformanceSchemaFileClassesLost, true
 }
 
-// IsSetPerformanceSchemaFileClassesLost returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetPerformanceSchemaFileClassesLost() bool {
-	if o != nil && !IsNil(o.PerformanceSchemaFileClassesLost) {
-		return true
-	}
-
-	return false
-}
-
 // SetPerformanceSchemaFileClassesLost gets a reference to the given string and assigns it to the PerformanceSchemaFileClassesLost field.
 func (o *HealthDatabaseStats) SetPerformanceSchemaFileClassesLost(v string) {
 	o.PerformanceSchemaFileClassesLost = &v
@@ -11145,15 +8166,6 @@ func (o *HealthDatabaseStats) GetPerformanceSchemaFileHandlesLostOk() (*string, 
 		return nil, false
 	}
 	return o.PerformanceSchemaFileHandlesLost, true
-}
-
-// IsSetPerformanceSchemaFileHandlesLost returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetPerformanceSchemaFileHandlesLost() bool {
-	if o != nil && !IsNil(o.PerformanceSchemaFileHandlesLost) {
-		return true
-	}
-
-	return false
 }
 
 // SetPerformanceSchemaFileHandlesLost gets a reference to the given string and assigns it to the PerformanceSchemaFileHandlesLost field.
@@ -11179,15 +8191,6 @@ func (o *HealthDatabaseStats) GetPerformanceSchemaFileInstancesLostOk() (*string
 	return o.PerformanceSchemaFileInstancesLost, true
 }
 
-// IsSetPerformanceSchemaFileInstancesLost returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetPerformanceSchemaFileInstancesLost() bool {
-	if o != nil && !IsNil(o.PerformanceSchemaFileInstancesLost) {
-		return true
-	}
-
-	return false
-}
-
 // SetPerformanceSchemaFileInstancesLost gets a reference to the given string and assigns it to the PerformanceSchemaFileInstancesLost field.
 func (o *HealthDatabaseStats) SetPerformanceSchemaFileInstancesLost(v string) {
 	o.PerformanceSchemaFileInstancesLost = &v
@@ -11209,15 +8212,6 @@ func (o *HealthDatabaseStats) GetPerformanceSchemaHostsLostOk() (*string, bool) 
 		return nil, false
 	}
 	return o.PerformanceSchemaHostsLost, true
-}
-
-// IsSetPerformanceSchemaHostsLost returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetPerformanceSchemaHostsLost() bool {
-	if o != nil && !IsNil(o.PerformanceSchemaHostsLost) {
-		return true
-	}
-
-	return false
 }
 
 // SetPerformanceSchemaHostsLost gets a reference to the given string and assigns it to the PerformanceSchemaHostsLost field.
@@ -11243,15 +8237,6 @@ func (o *HealthDatabaseStats) GetPerformanceSchemaIndexStatLostOk() (*string, bo
 	return o.PerformanceSchemaIndexStatLost, true
 }
 
-// IsSetPerformanceSchemaIndexStatLost returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetPerformanceSchemaIndexStatLost() bool {
-	if o != nil && !IsNil(o.PerformanceSchemaIndexStatLost) {
-		return true
-	}
-
-	return false
-}
-
 // SetPerformanceSchemaIndexStatLost gets a reference to the given string and assigns it to the PerformanceSchemaIndexStatLost field.
 func (o *HealthDatabaseStats) SetPerformanceSchemaIndexStatLost(v string) {
 	o.PerformanceSchemaIndexStatLost = &v
@@ -11273,15 +8258,6 @@ func (o *HealthDatabaseStats) GetPerformanceSchemaLockerLostOk() (*string, bool)
 		return nil, false
 	}
 	return o.PerformanceSchemaLockerLost, true
-}
-
-// IsSetPerformanceSchemaLockerLost returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetPerformanceSchemaLockerLost() bool {
-	if o != nil && !IsNil(o.PerformanceSchemaLockerLost) {
-		return true
-	}
-
-	return false
 }
 
 // SetPerformanceSchemaLockerLost gets a reference to the given string and assigns it to the PerformanceSchemaLockerLost field.
@@ -11307,15 +8283,6 @@ func (o *HealthDatabaseStats) GetPerformanceSchemaMemoryClassesLostOk() (*string
 	return o.PerformanceSchemaMemoryClassesLost, true
 }
 
-// IsSetPerformanceSchemaMemoryClassesLost returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetPerformanceSchemaMemoryClassesLost() bool {
-	if o != nil && !IsNil(o.PerformanceSchemaMemoryClassesLost) {
-		return true
-	}
-
-	return false
-}
-
 // SetPerformanceSchemaMemoryClassesLost gets a reference to the given string and assigns it to the PerformanceSchemaMemoryClassesLost field.
 func (o *HealthDatabaseStats) SetPerformanceSchemaMemoryClassesLost(v string) {
 	o.PerformanceSchemaMemoryClassesLost = &v
@@ -11337,15 +8304,6 @@ func (o *HealthDatabaseStats) GetPerformanceSchemaMetadataLockLostOk() (*string,
 		return nil, false
 	}
 	return o.PerformanceSchemaMetadataLockLost, true
-}
-
-// IsSetPerformanceSchemaMetadataLockLost returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetPerformanceSchemaMetadataLockLost() bool {
-	if o != nil && !IsNil(o.PerformanceSchemaMetadataLockLost) {
-		return true
-	}
-
-	return false
 }
 
 // SetPerformanceSchemaMetadataLockLost gets a reference to the given string and assigns it to the PerformanceSchemaMetadataLockLost field.
@@ -11371,15 +8329,6 @@ func (o *HealthDatabaseStats) GetPerformanceSchemaMutexClassesLostOk() (*string,
 	return o.PerformanceSchemaMutexClassesLost, true
 }
 
-// IsSetPerformanceSchemaMutexClassesLost returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetPerformanceSchemaMutexClassesLost() bool {
-	if o != nil && !IsNil(o.PerformanceSchemaMutexClassesLost) {
-		return true
-	}
-
-	return false
-}
-
 // SetPerformanceSchemaMutexClassesLost gets a reference to the given string and assigns it to the PerformanceSchemaMutexClassesLost field.
 func (o *HealthDatabaseStats) SetPerformanceSchemaMutexClassesLost(v string) {
 	o.PerformanceSchemaMutexClassesLost = &v
@@ -11401,15 +8350,6 @@ func (o *HealthDatabaseStats) GetPerformanceSchemaMutexInstancesLostOk() (*strin
 		return nil, false
 	}
 	return o.PerformanceSchemaMutexInstancesLost, true
-}
-
-// IsSetPerformanceSchemaMutexInstancesLost returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetPerformanceSchemaMutexInstancesLost() bool {
-	if o != nil && !IsNil(o.PerformanceSchemaMutexInstancesLost) {
-		return true
-	}
-
-	return false
 }
 
 // SetPerformanceSchemaMutexInstancesLost gets a reference to the given string and assigns it to the PerformanceSchemaMutexInstancesLost field.
@@ -11435,15 +8375,6 @@ func (o *HealthDatabaseStats) GetPerformanceSchemaNestedStatementLostOk() (*stri
 	return o.PerformanceSchemaNestedStatementLost, true
 }
 
-// IsSetPerformanceSchemaNestedStatementLost returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetPerformanceSchemaNestedStatementLost() bool {
-	if o != nil && !IsNil(o.PerformanceSchemaNestedStatementLost) {
-		return true
-	}
-
-	return false
-}
-
 // SetPerformanceSchemaNestedStatementLost gets a reference to the given string and assigns it to the PerformanceSchemaNestedStatementLost field.
 func (o *HealthDatabaseStats) SetPerformanceSchemaNestedStatementLost(v string) {
 	o.PerformanceSchemaNestedStatementLost = &v
@@ -11465,15 +8396,6 @@ func (o *HealthDatabaseStats) GetPerformanceSchemaPreparedStatementsLostOk() (*s
 		return nil, false
 	}
 	return o.PerformanceSchemaPreparedStatementsLost, true
-}
-
-// IsSetPerformanceSchemaPreparedStatementsLost returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetPerformanceSchemaPreparedStatementsLost() bool {
-	if o != nil && !IsNil(o.PerformanceSchemaPreparedStatementsLost) {
-		return true
-	}
-
-	return false
 }
 
 // SetPerformanceSchemaPreparedStatementsLost gets a reference to the given string and assigns it to the PerformanceSchemaPreparedStatementsLost field.
@@ -11499,15 +8421,6 @@ func (o *HealthDatabaseStats) GetPerformanceSchemaProgramLostOk() (*string, bool
 	return o.PerformanceSchemaProgramLost, true
 }
 
-// IsSetPerformanceSchemaProgramLost returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetPerformanceSchemaProgramLost() bool {
-	if o != nil && !IsNil(o.PerformanceSchemaProgramLost) {
-		return true
-	}
-
-	return false
-}
-
 // SetPerformanceSchemaProgramLost gets a reference to the given string and assigns it to the PerformanceSchemaProgramLost field.
 func (o *HealthDatabaseStats) SetPerformanceSchemaProgramLost(v string) {
 	o.PerformanceSchemaProgramLost = &v
@@ -11529,15 +8442,6 @@ func (o *HealthDatabaseStats) GetPerformanceSchemaRwlockClassesLostOk() (*string
 		return nil, false
 	}
 	return o.PerformanceSchemaRwlockClassesLost, true
-}
-
-// IsSetPerformanceSchemaRwlockClassesLost returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetPerformanceSchemaRwlockClassesLost() bool {
-	if o != nil && !IsNil(o.PerformanceSchemaRwlockClassesLost) {
-		return true
-	}
-
-	return false
 }
 
 // SetPerformanceSchemaRwlockClassesLost gets a reference to the given string and assigns it to the PerformanceSchemaRwlockClassesLost field.
@@ -11563,15 +8467,6 @@ func (o *HealthDatabaseStats) GetPerformanceSchemaRwlockInstancesLostOk() (*stri
 	return o.PerformanceSchemaRwlockInstancesLost, true
 }
 
-// IsSetPerformanceSchemaRwlockInstancesLost returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetPerformanceSchemaRwlockInstancesLost() bool {
-	if o != nil && !IsNil(o.PerformanceSchemaRwlockInstancesLost) {
-		return true
-	}
-
-	return false
-}
-
 // SetPerformanceSchemaRwlockInstancesLost gets a reference to the given string and assigns it to the PerformanceSchemaRwlockInstancesLost field.
 func (o *HealthDatabaseStats) SetPerformanceSchemaRwlockInstancesLost(v string) {
 	o.PerformanceSchemaRwlockInstancesLost = &v
@@ -11593,15 +8488,6 @@ func (o *HealthDatabaseStats) GetPerformanceSchemaSessionConnectAttrsLostOk() (*
 		return nil, false
 	}
 	return o.PerformanceSchemaSessionConnectAttrsLost, true
-}
-
-// IsSetPerformanceSchemaSessionConnectAttrsLost returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetPerformanceSchemaSessionConnectAttrsLost() bool {
-	if o != nil && !IsNil(o.PerformanceSchemaSessionConnectAttrsLost) {
-		return true
-	}
-
-	return false
 }
 
 // SetPerformanceSchemaSessionConnectAttrsLost gets a reference to the given string and assigns it to the PerformanceSchemaSessionConnectAttrsLost field.
@@ -11627,15 +8513,6 @@ func (o *HealthDatabaseStats) GetPerformanceSchemaSocketClassesLostOk() (*string
 	return o.PerformanceSchemaSocketClassesLost, true
 }
 
-// IsSetPerformanceSchemaSocketClassesLost returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetPerformanceSchemaSocketClassesLost() bool {
-	if o != nil && !IsNil(o.PerformanceSchemaSocketClassesLost) {
-		return true
-	}
-
-	return false
-}
-
 // SetPerformanceSchemaSocketClassesLost gets a reference to the given string and assigns it to the PerformanceSchemaSocketClassesLost field.
 func (o *HealthDatabaseStats) SetPerformanceSchemaSocketClassesLost(v string) {
 	o.PerformanceSchemaSocketClassesLost = &v
@@ -11657,15 +8534,6 @@ func (o *HealthDatabaseStats) GetPerformanceSchemaSocketInstancesLostOk() (*stri
 		return nil, false
 	}
 	return o.PerformanceSchemaSocketInstancesLost, true
-}
-
-// IsSetPerformanceSchemaSocketInstancesLost returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetPerformanceSchemaSocketInstancesLost() bool {
-	if o != nil && !IsNil(o.PerformanceSchemaSocketInstancesLost) {
-		return true
-	}
-
-	return false
 }
 
 // SetPerformanceSchemaSocketInstancesLost gets a reference to the given string and assigns it to the PerformanceSchemaSocketInstancesLost field.
@@ -11691,15 +8559,6 @@ func (o *HealthDatabaseStats) GetPerformanceSchemaStageClassesLostOk() (*string,
 	return o.PerformanceSchemaStageClassesLost, true
 }
 
-// IsSetPerformanceSchemaStageClassesLost returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetPerformanceSchemaStageClassesLost() bool {
-	if o != nil && !IsNil(o.PerformanceSchemaStageClassesLost) {
-		return true
-	}
-
-	return false
-}
-
 // SetPerformanceSchemaStageClassesLost gets a reference to the given string and assigns it to the PerformanceSchemaStageClassesLost field.
 func (o *HealthDatabaseStats) SetPerformanceSchemaStageClassesLost(v string) {
 	o.PerformanceSchemaStageClassesLost = &v
@@ -11721,15 +8580,6 @@ func (o *HealthDatabaseStats) GetPerformanceSchemaStatementClassesLostOk() (*str
 		return nil, false
 	}
 	return o.PerformanceSchemaStatementClassesLost, true
-}
-
-// IsSetPerformanceSchemaStatementClassesLost returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetPerformanceSchemaStatementClassesLost() bool {
-	if o != nil && !IsNil(o.PerformanceSchemaStatementClassesLost) {
-		return true
-	}
-
-	return false
 }
 
 // SetPerformanceSchemaStatementClassesLost gets a reference to the given string and assigns it to the PerformanceSchemaStatementClassesLost field.
@@ -11755,15 +8605,6 @@ func (o *HealthDatabaseStats) GetPerformanceSchemaTableHandlesLostOk() (*string,
 	return o.PerformanceSchemaTableHandlesLost, true
 }
 
-// IsSetPerformanceSchemaTableHandlesLost returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetPerformanceSchemaTableHandlesLost() bool {
-	if o != nil && !IsNil(o.PerformanceSchemaTableHandlesLost) {
-		return true
-	}
-
-	return false
-}
-
 // SetPerformanceSchemaTableHandlesLost gets a reference to the given string and assigns it to the PerformanceSchemaTableHandlesLost field.
 func (o *HealthDatabaseStats) SetPerformanceSchemaTableHandlesLost(v string) {
 	o.PerformanceSchemaTableHandlesLost = &v
@@ -11785,15 +8626,6 @@ func (o *HealthDatabaseStats) GetPerformanceSchemaTableInstancesLostOk() (*strin
 		return nil, false
 	}
 	return o.PerformanceSchemaTableInstancesLost, true
-}
-
-// IsSetPerformanceSchemaTableInstancesLost returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetPerformanceSchemaTableInstancesLost() bool {
-	if o != nil && !IsNil(o.PerformanceSchemaTableInstancesLost) {
-		return true
-	}
-
-	return false
 }
 
 // SetPerformanceSchemaTableInstancesLost gets a reference to the given string and assigns it to the PerformanceSchemaTableInstancesLost field.
@@ -11819,15 +8651,6 @@ func (o *HealthDatabaseStats) GetPerformanceSchemaTableLockStatLostOk() (*string
 	return o.PerformanceSchemaTableLockStatLost, true
 }
 
-// IsSetPerformanceSchemaTableLockStatLost returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetPerformanceSchemaTableLockStatLost() bool {
-	if o != nil && !IsNil(o.PerformanceSchemaTableLockStatLost) {
-		return true
-	}
-
-	return false
-}
-
 // SetPerformanceSchemaTableLockStatLost gets a reference to the given string and assigns it to the PerformanceSchemaTableLockStatLost field.
 func (o *HealthDatabaseStats) SetPerformanceSchemaTableLockStatLost(v string) {
 	o.PerformanceSchemaTableLockStatLost = &v
@@ -11849,15 +8672,6 @@ func (o *HealthDatabaseStats) GetPerformanceSchemaThreadClassesLostOk() (*string
 		return nil, false
 	}
 	return o.PerformanceSchemaThreadClassesLost, true
-}
-
-// IsSetPerformanceSchemaThreadClassesLost returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetPerformanceSchemaThreadClassesLost() bool {
-	if o != nil && !IsNil(o.PerformanceSchemaThreadClassesLost) {
-		return true
-	}
-
-	return false
 }
 
 // SetPerformanceSchemaThreadClassesLost gets a reference to the given string and assigns it to the PerformanceSchemaThreadClassesLost field.
@@ -11883,15 +8697,6 @@ func (o *HealthDatabaseStats) GetPerformanceSchemaThreadInstancesLostOk() (*stri
 	return o.PerformanceSchemaThreadInstancesLost, true
 }
 
-// IsSetPerformanceSchemaThreadInstancesLost returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetPerformanceSchemaThreadInstancesLost() bool {
-	if o != nil && !IsNil(o.PerformanceSchemaThreadInstancesLost) {
-		return true
-	}
-
-	return false
-}
-
 // SetPerformanceSchemaThreadInstancesLost gets a reference to the given string and assigns it to the PerformanceSchemaThreadInstancesLost field.
 func (o *HealthDatabaseStats) SetPerformanceSchemaThreadInstancesLost(v string) {
 	o.PerformanceSchemaThreadInstancesLost = &v
@@ -11913,15 +8718,6 @@ func (o *HealthDatabaseStats) GetPerformanceSchemaUsersLostOk() (*string, bool) 
 		return nil, false
 	}
 	return o.PerformanceSchemaUsersLost, true
-}
-
-// IsSetPerformanceSchemaUsersLost returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetPerformanceSchemaUsersLost() bool {
-	if o != nil && !IsNil(o.PerformanceSchemaUsersLost) {
-		return true
-	}
-
-	return false
 }
 
 // SetPerformanceSchemaUsersLost gets a reference to the given string and assigns it to the PerformanceSchemaUsersLost field.
@@ -11947,15 +8743,6 @@ func (o *HealthDatabaseStats) GetPreparedStmtCountOk() (*string, bool) {
 	return o.PreparedStmtCount, true
 }
 
-// IsSetPreparedStmtCount returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetPreparedStmtCount() bool {
-	if o != nil && !IsNil(o.PreparedStmtCount) {
-		return true
-	}
-
-	return false
-}
-
 // SetPreparedStmtCount gets a reference to the given string and assigns it to the PreparedStmtCount field.
 func (o *HealthDatabaseStats) SetPreparedStmtCount(v string) {
 	o.PreparedStmtCount = &v
@@ -11977,15 +8764,6 @@ func (o *HealthDatabaseStats) GetQcacheFreeBlocksOk() (*string, bool) {
 		return nil, false
 	}
 	return o.QcacheFreeBlocks, true
-}
-
-// IsSetQcacheFreeBlocks returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetQcacheFreeBlocks() bool {
-	if o != nil && !IsNil(o.QcacheFreeBlocks) {
-		return true
-	}
-
-	return false
 }
 
 // SetQcacheFreeBlocks gets a reference to the given string and assigns it to the QcacheFreeBlocks field.
@@ -12011,15 +8789,6 @@ func (o *HealthDatabaseStats) GetQcacheFreeMemoryOk() (*string, bool) {
 	return o.QcacheFreeMemory, true
 }
 
-// IsSetQcacheFreeMemory returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetQcacheFreeMemory() bool {
-	if o != nil && !IsNil(o.QcacheFreeMemory) {
-		return true
-	}
-
-	return false
-}
-
 // SetQcacheFreeMemory gets a reference to the given string and assigns it to the QcacheFreeMemory field.
 func (o *HealthDatabaseStats) SetQcacheFreeMemory(v string) {
 	o.QcacheFreeMemory = &v
@@ -12041,15 +8810,6 @@ func (o *HealthDatabaseStats) GetQcacheHitsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.QcacheHits, true
-}
-
-// IsSetQcacheHits returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetQcacheHits() bool {
-	if o != nil && !IsNil(o.QcacheHits) {
-		return true
-	}
-
-	return false
 }
 
 // SetQcacheHits gets a reference to the given string and assigns it to the QcacheHits field.
@@ -12075,15 +8835,6 @@ func (o *HealthDatabaseStats) GetQcacheInsertsOk() (*string, bool) {
 	return o.QcacheInserts, true
 }
 
-// IsSetQcacheInserts returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetQcacheInserts() bool {
-	if o != nil && !IsNil(o.QcacheInserts) {
-		return true
-	}
-
-	return false
-}
-
 // SetQcacheInserts gets a reference to the given string and assigns it to the QcacheInserts field.
 func (o *HealthDatabaseStats) SetQcacheInserts(v string) {
 	o.QcacheInserts = &v
@@ -12105,15 +8856,6 @@ func (o *HealthDatabaseStats) GetQcacheLowmemPrunesOk() (*string, bool) {
 		return nil, false
 	}
 	return o.QcacheLowmemPrunes, true
-}
-
-// IsSetQcacheLowmemPrunes returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetQcacheLowmemPrunes() bool {
-	if o != nil && !IsNil(o.QcacheLowmemPrunes) {
-		return true
-	}
-
-	return false
 }
 
 // SetQcacheLowmemPrunes gets a reference to the given string and assigns it to the QcacheLowmemPrunes field.
@@ -12139,15 +8881,6 @@ func (o *HealthDatabaseStats) GetQcacheNotCachedOk() (*string, bool) {
 	return o.QcacheNotCached, true
 }
 
-// IsSetQcacheNotCached returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetQcacheNotCached() bool {
-	if o != nil && !IsNil(o.QcacheNotCached) {
-		return true
-	}
-
-	return false
-}
-
 // SetQcacheNotCached gets a reference to the given string and assigns it to the QcacheNotCached field.
 func (o *HealthDatabaseStats) SetQcacheNotCached(v string) {
 	o.QcacheNotCached = &v
@@ -12169,15 +8902,6 @@ func (o *HealthDatabaseStats) GetQcacheQueriesInCacheOk() (*string, bool) {
 		return nil, false
 	}
 	return o.QcacheQueriesInCache, true
-}
-
-// IsSetQcacheQueriesInCache returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetQcacheQueriesInCache() bool {
-	if o != nil && !IsNil(o.QcacheQueriesInCache) {
-		return true
-	}
-
-	return false
 }
 
 // SetQcacheQueriesInCache gets a reference to the given string and assigns it to the QcacheQueriesInCache field.
@@ -12203,15 +8927,6 @@ func (o *HealthDatabaseStats) GetQcacheTotalBlocksOk() (*string, bool) {
 	return o.QcacheTotalBlocks, true
 }
 
-// IsSetQcacheTotalBlocks returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetQcacheTotalBlocks() bool {
-	if o != nil && !IsNil(o.QcacheTotalBlocks) {
-		return true
-	}
-
-	return false
-}
-
 // SetQcacheTotalBlocks gets a reference to the given string and assigns it to the QcacheTotalBlocks field.
 func (o *HealthDatabaseStats) SetQcacheTotalBlocks(v string) {
 	o.QcacheTotalBlocks = &v
@@ -12233,15 +8948,6 @@ func (o *HealthDatabaseStats) GetQueriesOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Queries, true
-}
-
-// IsSetQueries returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetQueries() bool {
-	if o != nil && !IsNil(o.Queries) {
-		return true
-	}
-
-	return false
 }
 
 // SetQueries gets a reference to the given string and assigns it to the Queries field.
@@ -12267,15 +8973,6 @@ func (o *HealthDatabaseStats) GetQuestionsOk() (*string, bool) {
 	return o.Questions, true
 }
 
-// IsSetQuestions returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetQuestions() bool {
-	if o != nil && !IsNil(o.Questions) {
-		return true
-	}
-
-	return false
-}
-
 // SetQuestions gets a reference to the given string and assigns it to the Questions field.
 func (o *HealthDatabaseStats) SetQuestions(v string) {
 	o.Questions = &v
@@ -12297,15 +8994,6 @@ func (o *HealthDatabaseStats) GetRsaPublicKeyOk() (*string, bool) {
 		return nil, false
 	}
 	return o.RsaPublicKey, true
-}
-
-// IsSetRsaPublicKey returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetRsaPublicKey() bool {
-	if o != nil && !IsNil(o.RsaPublicKey) {
-		return true
-	}
-
-	return false
 }
 
 // SetRsaPublicKey gets a reference to the given string and assigns it to the RsaPublicKey field.
@@ -12331,15 +9019,6 @@ func (o *HealthDatabaseStats) GetSelectFullJoinOk() (*string, bool) {
 	return o.SelectFullJoin, true
 }
 
-// IsSetSelectFullJoin returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetSelectFullJoin() bool {
-	if o != nil && !IsNil(o.SelectFullJoin) {
-		return true
-	}
-
-	return false
-}
-
 // SetSelectFullJoin gets a reference to the given string and assigns it to the SelectFullJoin field.
 func (o *HealthDatabaseStats) SetSelectFullJoin(v string) {
 	o.SelectFullJoin = &v
@@ -12361,15 +9040,6 @@ func (o *HealthDatabaseStats) GetSelectFullRangeJoinOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SelectFullRangeJoin, true
-}
-
-// IsSetSelectFullRangeJoin returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetSelectFullRangeJoin() bool {
-	if o != nil && !IsNil(o.SelectFullRangeJoin) {
-		return true
-	}
-
-	return false
 }
 
 // SetSelectFullRangeJoin gets a reference to the given string and assigns it to the SelectFullRangeJoin field.
@@ -12395,15 +9065,6 @@ func (o *HealthDatabaseStats) GetSelectRangeOk() (*string, bool) {
 	return o.SelectRange, true
 }
 
-// IsSetSelectRange returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetSelectRange() bool {
-	if o != nil && !IsNil(o.SelectRange) {
-		return true
-	}
-
-	return false
-}
-
 // SetSelectRange gets a reference to the given string and assigns it to the SelectRange field.
 func (o *HealthDatabaseStats) SetSelectRange(v string) {
 	o.SelectRange = &v
@@ -12425,15 +9086,6 @@ func (o *HealthDatabaseStats) GetSelectRangeCheckOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SelectRangeCheck, true
-}
-
-// IsSetSelectRangeCheck returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetSelectRangeCheck() bool {
-	if o != nil && !IsNil(o.SelectRangeCheck) {
-		return true
-	}
-
-	return false
 }
 
 // SetSelectRangeCheck gets a reference to the given string and assigns it to the SelectRangeCheck field.
@@ -12459,15 +9111,6 @@ func (o *HealthDatabaseStats) GetSelectScanOk() (*string, bool) {
 	return o.SelectScan, true
 }
 
-// IsSetSelectScan returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetSelectScan() bool {
-	if o != nil && !IsNil(o.SelectScan) {
-		return true
-	}
-
-	return false
-}
-
 // SetSelectScan gets a reference to the given string and assigns it to the SelectScan field.
 func (o *HealthDatabaseStats) SetSelectScan(v string) {
 	o.SelectScan = &v
@@ -12489,15 +9132,6 @@ func (o *HealthDatabaseStats) GetSlaveOpenTempTablesOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SlaveOpenTempTables, true
-}
-
-// IsSetSlaveOpenTempTables returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetSlaveOpenTempTables() bool {
-	if o != nil && !IsNil(o.SlaveOpenTempTables) {
-		return true
-	}
-
-	return false
 }
 
 // SetSlaveOpenTempTables gets a reference to the given string and assigns it to the SlaveOpenTempTables field.
@@ -12523,15 +9157,6 @@ func (o *HealthDatabaseStats) GetSlowLaunchThreadsOk() (*string, bool) {
 	return o.SlowLaunchThreads, true
 }
 
-// IsSetSlowLaunchThreads returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetSlowLaunchThreads() bool {
-	if o != nil && !IsNil(o.SlowLaunchThreads) {
-		return true
-	}
-
-	return false
-}
-
 // SetSlowLaunchThreads gets a reference to the given string and assigns it to the SlowLaunchThreads field.
 func (o *HealthDatabaseStats) SetSlowLaunchThreads(v string) {
 	o.SlowLaunchThreads = &v
@@ -12553,15 +9178,6 @@ func (o *HealthDatabaseStats) GetSlowQueriesOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SlowQueries, true
-}
-
-// IsSetSlowQueries returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetSlowQueries() bool {
-	if o != nil && !IsNil(o.SlowQueries) {
-		return true
-	}
-
-	return false
 }
 
 // SetSlowQueries gets a reference to the given string and assigns it to the SlowQueries field.
@@ -12587,15 +9203,6 @@ func (o *HealthDatabaseStats) GetSortMergePassesOk() (*string, bool) {
 	return o.SortMergePasses, true
 }
 
-// IsSetSortMergePasses returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetSortMergePasses() bool {
-	if o != nil && !IsNil(o.SortMergePasses) {
-		return true
-	}
-
-	return false
-}
-
 // SetSortMergePasses gets a reference to the given string and assigns it to the SortMergePasses field.
 func (o *HealthDatabaseStats) SetSortMergePasses(v string) {
 	o.SortMergePasses = &v
@@ -12617,15 +9224,6 @@ func (o *HealthDatabaseStats) GetSortRangeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SortRange, true
-}
-
-// IsSetSortRange returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetSortRange() bool {
-	if o != nil && !IsNil(o.SortRange) {
-		return true
-	}
-
-	return false
 }
 
 // SetSortRange gets a reference to the given string and assigns it to the SortRange field.
@@ -12651,15 +9249,6 @@ func (o *HealthDatabaseStats) GetSortRowsOk() (*string, bool) {
 	return o.SortRows, true
 }
 
-// IsSetSortRows returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetSortRows() bool {
-	if o != nil && !IsNil(o.SortRows) {
-		return true
-	}
-
-	return false
-}
-
 // SetSortRows gets a reference to the given string and assigns it to the SortRows field.
 func (o *HealthDatabaseStats) SetSortRows(v string) {
 	o.SortRows = &v
@@ -12681,15 +9270,6 @@ func (o *HealthDatabaseStats) GetSortScanOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SortScan, true
-}
-
-// IsSetSortScan returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetSortScan() bool {
-	if o != nil && !IsNil(o.SortScan) {
-		return true
-	}
-
-	return false
 }
 
 // SetSortScan gets a reference to the given string and assigns it to the SortScan field.
@@ -12715,15 +9295,6 @@ func (o *HealthDatabaseStats) GetSslAcceptRenegotiatesOk() (*string, bool) {
 	return o.SslAcceptRenegotiates, true
 }
 
-// IsSetSslAcceptRenegotiates returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetSslAcceptRenegotiates() bool {
-	if o != nil && !IsNil(o.SslAcceptRenegotiates) {
-		return true
-	}
-
-	return false
-}
-
 // SetSslAcceptRenegotiates gets a reference to the given string and assigns it to the SslAcceptRenegotiates field.
 func (o *HealthDatabaseStats) SetSslAcceptRenegotiates(v string) {
 	o.SslAcceptRenegotiates = &v
@@ -12745,15 +9316,6 @@ func (o *HealthDatabaseStats) GetSslAcceptsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SslAccepts, true
-}
-
-// IsSetSslAccepts returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetSslAccepts() bool {
-	if o != nil && !IsNil(o.SslAccepts) {
-		return true
-	}
-
-	return false
 }
 
 // SetSslAccepts gets a reference to the given string and assigns it to the SslAccepts field.
@@ -12779,15 +9341,6 @@ func (o *HealthDatabaseStats) GetSslCallbackCacheHitsOk() (*string, bool) {
 	return o.SslCallbackCacheHits, true
 }
 
-// IsSetSslCallbackCacheHits returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetSslCallbackCacheHits() bool {
-	if o != nil && !IsNil(o.SslCallbackCacheHits) {
-		return true
-	}
-
-	return false
-}
-
 // SetSslCallbackCacheHits gets a reference to the given string and assigns it to the SslCallbackCacheHits field.
 func (o *HealthDatabaseStats) SetSslCallbackCacheHits(v string) {
 	o.SslCallbackCacheHits = &v
@@ -12809,15 +9362,6 @@ func (o *HealthDatabaseStats) GetSslCipherOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SslCipher, true
-}
-
-// IsSetSslCipher returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetSslCipher() bool {
-	if o != nil && !IsNil(o.SslCipher) {
-		return true
-	}
-
-	return false
 }
 
 // SetSslCipher gets a reference to the given string and assigns it to the SslCipher field.
@@ -12843,15 +9387,6 @@ func (o *HealthDatabaseStats) GetSslCipherListOk() (*string, bool) {
 	return o.SslCipherList, true
 }
 
-// IsSetSslCipherList returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetSslCipherList() bool {
-	if o != nil && !IsNil(o.SslCipherList) {
-		return true
-	}
-
-	return false
-}
-
 // SetSslCipherList gets a reference to the given string and assigns it to the SslCipherList field.
 func (o *HealthDatabaseStats) SetSslCipherList(v string) {
 	o.SslCipherList = &v
@@ -12873,15 +9408,6 @@ func (o *HealthDatabaseStats) GetSslClientConnectsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SslClientConnects, true
-}
-
-// IsSetSslClientConnects returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetSslClientConnects() bool {
-	if o != nil && !IsNil(o.SslClientConnects) {
-		return true
-	}
-
-	return false
 }
 
 // SetSslClientConnects gets a reference to the given string and assigns it to the SslClientConnects field.
@@ -12907,15 +9433,6 @@ func (o *HealthDatabaseStats) GetSslConnectRenegotiatesOk() (*string, bool) {
 	return o.SslConnectRenegotiates, true
 }
 
-// IsSetSslConnectRenegotiates returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetSslConnectRenegotiates() bool {
-	if o != nil && !IsNil(o.SslConnectRenegotiates) {
-		return true
-	}
-
-	return false
-}
-
 // SetSslConnectRenegotiates gets a reference to the given string and assigns it to the SslConnectRenegotiates field.
 func (o *HealthDatabaseStats) SetSslConnectRenegotiates(v string) {
 	o.SslConnectRenegotiates = &v
@@ -12937,15 +9454,6 @@ func (o *HealthDatabaseStats) GetSslCtxVerifyDepthOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SslCtxVerifyDepth, true
-}
-
-// IsSetSslCtxVerifyDepth returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetSslCtxVerifyDepth() bool {
-	if o != nil && !IsNil(o.SslCtxVerifyDepth) {
-		return true
-	}
-
-	return false
 }
 
 // SetSslCtxVerifyDepth gets a reference to the given string and assigns it to the SslCtxVerifyDepth field.
@@ -12971,15 +9479,6 @@ func (o *HealthDatabaseStats) GetSslCtxVerifyModeOk() (*string, bool) {
 	return o.SslCtxVerifyMode, true
 }
 
-// IsSetSslCtxVerifyMode returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetSslCtxVerifyMode() bool {
-	if o != nil && !IsNil(o.SslCtxVerifyMode) {
-		return true
-	}
-
-	return false
-}
-
 // SetSslCtxVerifyMode gets a reference to the given string and assigns it to the SslCtxVerifyMode field.
 func (o *HealthDatabaseStats) SetSslCtxVerifyMode(v string) {
 	o.SslCtxVerifyMode = &v
@@ -13001,15 +9500,6 @@ func (o *HealthDatabaseStats) GetSslDefaultTimeoutOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SslDefaultTimeout, true
-}
-
-// IsSetSslDefaultTimeout returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetSslDefaultTimeout() bool {
-	if o != nil && !IsNil(o.SslDefaultTimeout) {
-		return true
-	}
-
-	return false
 }
 
 // SetSslDefaultTimeout gets a reference to the given string and assigns it to the SslDefaultTimeout field.
@@ -13035,15 +9525,6 @@ func (o *HealthDatabaseStats) GetSslFinishedAcceptsOk() (*string, bool) {
 	return o.SslFinishedAccepts, true
 }
 
-// IsSetSslFinishedAccepts returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetSslFinishedAccepts() bool {
-	if o != nil && !IsNil(o.SslFinishedAccepts) {
-		return true
-	}
-
-	return false
-}
-
 // SetSslFinishedAccepts gets a reference to the given string and assigns it to the SslFinishedAccepts field.
 func (o *HealthDatabaseStats) SetSslFinishedAccepts(v string) {
 	o.SslFinishedAccepts = &v
@@ -13065,15 +9546,6 @@ func (o *HealthDatabaseStats) GetSslFinishedConnectsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SslFinishedConnects, true
-}
-
-// IsSetSslFinishedConnects returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetSslFinishedConnects() bool {
-	if o != nil && !IsNil(o.SslFinishedConnects) {
-		return true
-	}
-
-	return false
 }
 
 // SetSslFinishedConnects gets a reference to the given string and assigns it to the SslFinishedConnects field.
@@ -13099,15 +9571,6 @@ func (o *HealthDatabaseStats) GetSslServerNotAfterOk() (*string, bool) {
 	return o.SslServerNotAfter, true
 }
 
-// IsSetSslServerNotAfter returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetSslServerNotAfter() bool {
-	if o != nil && !IsNil(o.SslServerNotAfter) {
-		return true
-	}
-
-	return false
-}
-
 // SetSslServerNotAfter gets a reference to the given string and assigns it to the SslServerNotAfter field.
 func (o *HealthDatabaseStats) SetSslServerNotAfter(v string) {
 	o.SslServerNotAfter = &v
@@ -13129,15 +9592,6 @@ func (o *HealthDatabaseStats) GetSslServerNotBeforeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SslServerNotBefore, true
-}
-
-// IsSetSslServerNotBefore returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetSslServerNotBefore() bool {
-	if o != nil && !IsNil(o.SslServerNotBefore) {
-		return true
-	}
-
-	return false
 }
 
 // SetSslServerNotBefore gets a reference to the given string and assigns it to the SslServerNotBefore field.
@@ -13163,15 +9617,6 @@ func (o *HealthDatabaseStats) GetSslSessionCacheHitsOk() (*string, bool) {
 	return o.SslSessionCacheHits, true
 }
 
-// IsSetSslSessionCacheHits returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetSslSessionCacheHits() bool {
-	if o != nil && !IsNil(o.SslSessionCacheHits) {
-		return true
-	}
-
-	return false
-}
-
 // SetSslSessionCacheHits gets a reference to the given string and assigns it to the SslSessionCacheHits field.
 func (o *HealthDatabaseStats) SetSslSessionCacheHits(v string) {
 	o.SslSessionCacheHits = &v
@@ -13193,15 +9638,6 @@ func (o *HealthDatabaseStats) GetSslSessionCacheMissesOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SslSessionCacheMisses, true
-}
-
-// IsSetSslSessionCacheMisses returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetSslSessionCacheMisses() bool {
-	if o != nil && !IsNil(o.SslSessionCacheMisses) {
-		return true
-	}
-
-	return false
 }
 
 // SetSslSessionCacheMisses gets a reference to the given string and assigns it to the SslSessionCacheMisses field.
@@ -13227,15 +9663,6 @@ func (o *HealthDatabaseStats) GetSslSessionCacheModeOk() (*string, bool) {
 	return o.SslSessionCacheMode, true
 }
 
-// IsSetSslSessionCacheMode returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetSslSessionCacheMode() bool {
-	if o != nil && !IsNil(o.SslSessionCacheMode) {
-		return true
-	}
-
-	return false
-}
-
 // SetSslSessionCacheMode gets a reference to the given string and assigns it to the SslSessionCacheMode field.
 func (o *HealthDatabaseStats) SetSslSessionCacheMode(v string) {
 	o.SslSessionCacheMode = &v
@@ -13257,15 +9684,6 @@ func (o *HealthDatabaseStats) GetSslSessionCacheOverflowsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SslSessionCacheOverflows, true
-}
-
-// IsSetSslSessionCacheOverflows returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetSslSessionCacheOverflows() bool {
-	if o != nil && !IsNil(o.SslSessionCacheOverflows) {
-		return true
-	}
-
-	return false
 }
 
 // SetSslSessionCacheOverflows gets a reference to the given string and assigns it to the SslSessionCacheOverflows field.
@@ -13291,15 +9709,6 @@ func (o *HealthDatabaseStats) GetSslSessionCacheSizeOk() (*string, bool) {
 	return o.SslSessionCacheSize, true
 }
 
-// IsSetSslSessionCacheSize returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetSslSessionCacheSize() bool {
-	if o != nil && !IsNil(o.SslSessionCacheSize) {
-		return true
-	}
-
-	return false
-}
-
 // SetSslSessionCacheSize gets a reference to the given string and assigns it to the SslSessionCacheSize field.
 func (o *HealthDatabaseStats) SetSslSessionCacheSize(v string) {
 	o.SslSessionCacheSize = &v
@@ -13321,15 +9730,6 @@ func (o *HealthDatabaseStats) GetSslSessionCacheTimeoutsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SslSessionCacheTimeouts, true
-}
-
-// IsSetSslSessionCacheTimeouts returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetSslSessionCacheTimeouts() bool {
-	if o != nil && !IsNil(o.SslSessionCacheTimeouts) {
-		return true
-	}
-
-	return false
 }
 
 // SetSslSessionCacheTimeouts gets a reference to the given string and assigns it to the SslSessionCacheTimeouts field.
@@ -13355,15 +9755,6 @@ func (o *HealthDatabaseStats) GetSslSessionsReusedOk() (*string, bool) {
 	return o.SslSessionsReused, true
 }
 
-// IsSetSslSessionsReused returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetSslSessionsReused() bool {
-	if o != nil && !IsNil(o.SslSessionsReused) {
-		return true
-	}
-
-	return false
-}
-
 // SetSslSessionsReused gets a reference to the given string and assigns it to the SslSessionsReused field.
 func (o *HealthDatabaseStats) SetSslSessionsReused(v string) {
 	o.SslSessionsReused = &v
@@ -13385,15 +9776,6 @@ func (o *HealthDatabaseStats) GetSslUsedSessionCacheEntriesOk() (*string, bool) 
 		return nil, false
 	}
 	return o.SslUsedSessionCacheEntries, true
-}
-
-// IsSetSslUsedSessionCacheEntries returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetSslUsedSessionCacheEntries() bool {
-	if o != nil && !IsNil(o.SslUsedSessionCacheEntries) {
-		return true
-	}
-
-	return false
 }
 
 // SetSslUsedSessionCacheEntries gets a reference to the given string and assigns it to the SslUsedSessionCacheEntries field.
@@ -13419,15 +9801,6 @@ func (o *HealthDatabaseStats) GetSslVerifyDepthOk() (*string, bool) {
 	return o.SslVerifyDepth, true
 }
 
-// IsSetSslVerifyDepth returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetSslVerifyDepth() bool {
-	if o != nil && !IsNil(o.SslVerifyDepth) {
-		return true
-	}
-
-	return false
-}
-
 // SetSslVerifyDepth gets a reference to the given string and assigns it to the SslVerifyDepth field.
 func (o *HealthDatabaseStats) SetSslVerifyDepth(v string) {
 	o.SslVerifyDepth = &v
@@ -13449,15 +9822,6 @@ func (o *HealthDatabaseStats) GetSslVerifyModeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SslVerifyMode, true
-}
-
-// IsSetSslVerifyMode returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetSslVerifyMode() bool {
-	if o != nil && !IsNil(o.SslVerifyMode) {
-		return true
-	}
-
-	return false
 }
 
 // SetSslVerifyMode gets a reference to the given string and assigns it to the SslVerifyMode field.
@@ -13483,15 +9847,6 @@ func (o *HealthDatabaseStats) GetSslVersionOk() (*string, bool) {
 	return o.SslVersion, true
 }
 
-// IsSetSslVersion returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetSslVersion() bool {
-	if o != nil && !IsNil(o.SslVersion) {
-		return true
-	}
-
-	return false
-}
-
 // SetSslVersion gets a reference to the given string and assigns it to the SslVersion field.
 func (o *HealthDatabaseStats) SetSslVersion(v string) {
 	o.SslVersion = &v
@@ -13513,15 +9868,6 @@ func (o *HealthDatabaseStats) GetTableLocksImmediateOk() (*string, bool) {
 		return nil, false
 	}
 	return o.TableLocksImmediate, true
-}
-
-// IsSetTableLocksImmediate returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetTableLocksImmediate() bool {
-	if o != nil && !IsNil(o.TableLocksImmediate) {
-		return true
-	}
-
-	return false
 }
 
 // SetTableLocksImmediate gets a reference to the given string and assigns it to the TableLocksImmediate field.
@@ -13547,15 +9893,6 @@ func (o *HealthDatabaseStats) GetTableLocksWaitedOk() (*string, bool) {
 	return o.TableLocksWaited, true
 }
 
-// IsSetTableLocksWaited returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetTableLocksWaited() bool {
-	if o != nil && !IsNil(o.TableLocksWaited) {
-		return true
-	}
-
-	return false
-}
-
 // SetTableLocksWaited gets a reference to the given string and assigns it to the TableLocksWaited field.
 func (o *HealthDatabaseStats) SetTableLocksWaited(v string) {
 	o.TableLocksWaited = &v
@@ -13577,15 +9914,6 @@ func (o *HealthDatabaseStats) GetTableOpenCacheHitsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.TableOpenCacheHits, true
-}
-
-// IsSetTableOpenCacheHits returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetTableOpenCacheHits() bool {
-	if o != nil && !IsNil(o.TableOpenCacheHits) {
-		return true
-	}
-
-	return false
 }
 
 // SetTableOpenCacheHits gets a reference to the given string and assigns it to the TableOpenCacheHits field.
@@ -13611,15 +9939,6 @@ func (o *HealthDatabaseStats) GetTableOpenCacheMissesOk() (*string, bool) {
 	return o.TableOpenCacheMisses, true
 }
 
-// IsSetTableOpenCacheMisses returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetTableOpenCacheMisses() bool {
-	if o != nil && !IsNil(o.TableOpenCacheMisses) {
-		return true
-	}
-
-	return false
-}
-
 // SetTableOpenCacheMisses gets a reference to the given string and assigns it to the TableOpenCacheMisses field.
 func (o *HealthDatabaseStats) SetTableOpenCacheMisses(v string) {
 	o.TableOpenCacheMisses = &v
@@ -13641,15 +9960,6 @@ func (o *HealthDatabaseStats) GetTableOpenCacheOverflowsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.TableOpenCacheOverflows, true
-}
-
-// IsSetTableOpenCacheOverflows returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetTableOpenCacheOverflows() bool {
-	if o != nil && !IsNil(o.TableOpenCacheOverflows) {
-		return true
-	}
-
-	return false
 }
 
 // SetTableOpenCacheOverflows gets a reference to the given string and assigns it to the TableOpenCacheOverflows field.
@@ -13675,15 +9985,6 @@ func (o *HealthDatabaseStats) GetTcLogMaxPagesUsedOk() (*string, bool) {
 	return o.TcLogMaxPagesUsed, true
 }
 
-// IsSetTcLogMaxPagesUsed returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetTcLogMaxPagesUsed() bool {
-	if o != nil && !IsNil(o.TcLogMaxPagesUsed) {
-		return true
-	}
-
-	return false
-}
-
 // SetTcLogMaxPagesUsed gets a reference to the given string and assigns it to the TcLogMaxPagesUsed field.
 func (o *HealthDatabaseStats) SetTcLogMaxPagesUsed(v string) {
 	o.TcLogMaxPagesUsed = &v
@@ -13705,15 +10006,6 @@ func (o *HealthDatabaseStats) GetTcLogPageSizeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.TcLogPageSize, true
-}
-
-// IsSetTcLogPageSize returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetTcLogPageSize() bool {
-	if o != nil && !IsNil(o.TcLogPageSize) {
-		return true
-	}
-
-	return false
 }
 
 // SetTcLogPageSize gets a reference to the given string and assigns it to the TcLogPageSize field.
@@ -13739,15 +10031,6 @@ func (o *HealthDatabaseStats) GetTcLogPageWaitsOk() (*string, bool) {
 	return o.TcLogPageWaits, true
 }
 
-// IsSetTcLogPageWaits returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetTcLogPageWaits() bool {
-	if o != nil && !IsNil(o.TcLogPageWaits) {
-		return true
-	}
-
-	return false
-}
-
 // SetTcLogPageWaits gets a reference to the given string and assigns it to the TcLogPageWaits field.
 func (o *HealthDatabaseStats) SetTcLogPageWaits(v string) {
 	o.TcLogPageWaits = &v
@@ -13769,15 +10052,6 @@ func (o *HealthDatabaseStats) GetThreadpoolIdleThreadsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ThreadpoolIdleThreads, true
-}
-
-// IsSetThreadpoolIdleThreads returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetThreadpoolIdleThreads() bool {
-	if o != nil && !IsNil(o.ThreadpoolIdleThreads) {
-		return true
-	}
-
-	return false
 }
 
 // SetThreadpoolIdleThreads gets a reference to the given string and assigns it to the ThreadpoolIdleThreads field.
@@ -13803,15 +10077,6 @@ func (o *HealthDatabaseStats) GetThreadpoolThreadsOk() (*string, bool) {
 	return o.ThreadpoolThreads, true
 }
 
-// IsSetThreadpoolThreads returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetThreadpoolThreads() bool {
-	if o != nil && !IsNil(o.ThreadpoolThreads) {
-		return true
-	}
-
-	return false
-}
-
 // SetThreadpoolThreads gets a reference to the given string and assigns it to the ThreadpoolThreads field.
 func (o *HealthDatabaseStats) SetThreadpoolThreads(v string) {
 	o.ThreadpoolThreads = &v
@@ -13833,15 +10098,6 @@ func (o *HealthDatabaseStats) GetThreadsCachedOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ThreadsCached, true
-}
-
-// IsSetThreadsCached returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetThreadsCached() bool {
-	if o != nil && !IsNil(o.ThreadsCached) {
-		return true
-	}
-
-	return false
 }
 
 // SetThreadsCached gets a reference to the given string and assigns it to the ThreadsCached field.
@@ -13867,15 +10123,6 @@ func (o *HealthDatabaseStats) GetThreadsConnectedOk() (*string, bool) {
 	return o.ThreadsConnected, true
 }
 
-// IsSetThreadsConnected returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetThreadsConnected() bool {
-	if o != nil && !IsNil(o.ThreadsConnected) {
-		return true
-	}
-
-	return false
-}
-
 // SetThreadsConnected gets a reference to the given string and assigns it to the ThreadsConnected field.
 func (o *HealthDatabaseStats) SetThreadsConnected(v string) {
 	o.ThreadsConnected = &v
@@ -13897,15 +10144,6 @@ func (o *HealthDatabaseStats) GetThreadsCreatedOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ThreadsCreated, true
-}
-
-// IsSetThreadsCreated returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetThreadsCreated() bool {
-	if o != nil && !IsNil(o.ThreadsCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetThreadsCreated gets a reference to the given string and assigns it to the ThreadsCreated field.
@@ -13931,15 +10169,6 @@ func (o *HealthDatabaseStats) GetThreadsRunningOk() (*string, bool) {
 	return o.ThreadsRunning, true
 }
 
-// IsSetThreadsRunning returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetThreadsRunning() bool {
-	if o != nil && !IsNil(o.ThreadsRunning) {
-		return true
-	}
-
-	return false
-}
-
 // SetThreadsRunning gets a reference to the given string and assigns it to the ThreadsRunning field.
 func (o *HealthDatabaseStats) SetThreadsRunning(v string) {
 	o.ThreadsRunning = &v
@@ -13961,15 +10190,6 @@ func (o *HealthDatabaseStats) GetUptimeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Uptime, true
-}
-
-// IsSetUptime returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetUptime() bool {
-	if o != nil && !IsNil(o.Uptime) {
-		return true
-	}
-
-	return false
 }
 
 // SetUptime gets a reference to the given string and assigns it to the Uptime field.
@@ -13995,15 +10215,6 @@ func (o *HealthDatabaseStats) GetUptimeSinceFlushStatusOk() (*string, bool) {
 	return o.UptimeSinceFlushStatus, true
 }
 
-// IsSetUptimeSinceFlushStatus returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetUptimeSinceFlushStatus() bool {
-	if o != nil && !IsNil(o.UptimeSinceFlushStatus) {
-		return true
-	}
-
-	return false
-}
-
 // SetUptimeSinceFlushStatus gets a reference to the given string and assigns it to the UptimeSinceFlushStatus field.
 func (o *HealthDatabaseStats) SetUptimeSinceFlushStatus(v string) {
 	o.UptimeSinceFlushStatus = &v
@@ -14025,15 +10236,6 @@ func (o *HealthDatabaseStats) GetWsrepLocalStateUuidOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WsrepLocalStateUuid, true
-}
-
-// IsSetWsrepLocalStateUuid returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepLocalStateUuid() bool {
-	if o != nil && !IsNil(o.WsrepLocalStateUuid) {
-		return true
-	}
-
-	return false
 }
 
 // SetWsrepLocalStateUuid gets a reference to the given string and assigns it to the WsrepLocalStateUuid field.
@@ -14059,15 +10261,6 @@ func (o *HealthDatabaseStats) GetWsrepProtocolVersionOk() (*string, bool) {
 	return o.WsrepProtocolVersion, true
 }
 
-// IsSetWsrepProtocolVersion returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepProtocolVersion() bool {
-	if o != nil && !IsNil(o.WsrepProtocolVersion) {
-		return true
-	}
-
-	return false
-}
-
 // SetWsrepProtocolVersion gets a reference to the given string and assigns it to the WsrepProtocolVersion field.
 func (o *HealthDatabaseStats) SetWsrepProtocolVersion(v string) {
 	o.WsrepProtocolVersion = &v
@@ -14089,15 +10282,6 @@ func (o *HealthDatabaseStats) GetWsrepLastAppliedOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WsrepLastApplied, true
-}
-
-// IsSetWsrepLastApplied returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepLastApplied() bool {
-	if o != nil && !IsNil(o.WsrepLastApplied) {
-		return true
-	}
-
-	return false
 }
 
 // SetWsrepLastApplied gets a reference to the given string and assigns it to the WsrepLastApplied field.
@@ -14123,15 +10307,6 @@ func (o *HealthDatabaseStats) GetWsrepLastCommittedOk() (*string, bool) {
 	return o.WsrepLastCommitted, true
 }
 
-// IsSetWsrepLastCommitted returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepLastCommitted() bool {
-	if o != nil && !IsNil(o.WsrepLastCommitted) {
-		return true
-	}
-
-	return false
-}
-
 // SetWsrepLastCommitted gets a reference to the given string and assigns it to the WsrepLastCommitted field.
 func (o *HealthDatabaseStats) SetWsrepLastCommitted(v string) {
 	o.WsrepLastCommitted = &v
@@ -14153,15 +10328,6 @@ func (o *HealthDatabaseStats) GetWsrepReplicatedOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WsrepReplicated, true
-}
-
-// IsSetWsrepReplicated returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepReplicated() bool {
-	if o != nil && !IsNil(o.WsrepReplicated) {
-		return true
-	}
-
-	return false
 }
 
 // SetWsrepReplicated gets a reference to the given string and assigns it to the WsrepReplicated field.
@@ -14187,15 +10353,6 @@ func (o *HealthDatabaseStats) GetWsrepReplicatedBytesOk() (*string, bool) {
 	return o.WsrepReplicatedBytes, true
 }
 
-// IsSetWsrepReplicatedBytes returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepReplicatedBytes() bool {
-	if o != nil && !IsNil(o.WsrepReplicatedBytes) {
-		return true
-	}
-
-	return false
-}
-
 // SetWsrepReplicatedBytes gets a reference to the given string and assigns it to the WsrepReplicatedBytes field.
 func (o *HealthDatabaseStats) SetWsrepReplicatedBytes(v string) {
 	o.WsrepReplicatedBytes = &v
@@ -14217,15 +10374,6 @@ func (o *HealthDatabaseStats) GetWsrepReplKeysOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WsrepReplKeys, true
-}
-
-// IsSetWsrepReplKeys returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepReplKeys() bool {
-	if o != nil && !IsNil(o.WsrepReplKeys) {
-		return true
-	}
-
-	return false
 }
 
 // SetWsrepReplKeys gets a reference to the given string and assigns it to the WsrepReplKeys field.
@@ -14251,15 +10399,6 @@ func (o *HealthDatabaseStats) GetWsrepReplKeysBytesOk() (*string, bool) {
 	return o.WsrepReplKeysBytes, true
 }
 
-// IsSetWsrepReplKeysBytes returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepReplKeysBytes() bool {
-	if o != nil && !IsNil(o.WsrepReplKeysBytes) {
-		return true
-	}
-
-	return false
-}
-
 // SetWsrepReplKeysBytes gets a reference to the given string and assigns it to the WsrepReplKeysBytes field.
 func (o *HealthDatabaseStats) SetWsrepReplKeysBytes(v string) {
 	o.WsrepReplKeysBytes = &v
@@ -14281,15 +10420,6 @@ func (o *HealthDatabaseStats) GetWsrepReplDataBytesOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WsrepReplDataBytes, true
-}
-
-// IsSetWsrepReplDataBytes returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepReplDataBytes() bool {
-	if o != nil && !IsNil(o.WsrepReplDataBytes) {
-		return true
-	}
-
-	return false
 }
 
 // SetWsrepReplDataBytes gets a reference to the given string and assigns it to the WsrepReplDataBytes field.
@@ -14315,15 +10445,6 @@ func (o *HealthDatabaseStats) GetWsrepReplOtherBytesOk() (*string, bool) {
 	return o.WsrepReplOtherBytes, true
 }
 
-// IsSetWsrepReplOtherBytes returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepReplOtherBytes() bool {
-	if o != nil && !IsNil(o.WsrepReplOtherBytes) {
-		return true
-	}
-
-	return false
-}
-
 // SetWsrepReplOtherBytes gets a reference to the given string and assigns it to the WsrepReplOtherBytes field.
 func (o *HealthDatabaseStats) SetWsrepReplOtherBytes(v string) {
 	o.WsrepReplOtherBytes = &v
@@ -14345,15 +10466,6 @@ func (o *HealthDatabaseStats) GetWsrepReceivedOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WsrepReceived, true
-}
-
-// IsSetWsrepReceived returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepReceived() bool {
-	if o != nil && !IsNil(o.WsrepReceived) {
-		return true
-	}
-
-	return false
 }
 
 // SetWsrepReceived gets a reference to the given string and assigns it to the WsrepReceived field.
@@ -14379,15 +10491,6 @@ func (o *HealthDatabaseStats) GetWsrepReceivedBytesOk() (*string, bool) {
 	return o.WsrepReceivedBytes, true
 }
 
-// IsSetWsrepReceivedBytes returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepReceivedBytes() bool {
-	if o != nil && !IsNil(o.WsrepReceivedBytes) {
-		return true
-	}
-
-	return false
-}
-
 // SetWsrepReceivedBytes gets a reference to the given string and assigns it to the WsrepReceivedBytes field.
 func (o *HealthDatabaseStats) SetWsrepReceivedBytes(v string) {
 	o.WsrepReceivedBytes = &v
@@ -14409,15 +10512,6 @@ func (o *HealthDatabaseStats) GetWsrepLocalCommitsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WsrepLocalCommits, true
-}
-
-// IsSetWsrepLocalCommits returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepLocalCommits() bool {
-	if o != nil && !IsNil(o.WsrepLocalCommits) {
-		return true
-	}
-
-	return false
 }
 
 // SetWsrepLocalCommits gets a reference to the given string and assigns it to the WsrepLocalCommits field.
@@ -14443,15 +10537,6 @@ func (o *HealthDatabaseStats) GetWsrepLocalCertFailuresOk() (*string, bool) {
 	return o.WsrepLocalCertFailures, true
 }
 
-// IsSetWsrepLocalCertFailures returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepLocalCertFailures() bool {
-	if o != nil && !IsNil(o.WsrepLocalCertFailures) {
-		return true
-	}
-
-	return false
-}
-
 // SetWsrepLocalCertFailures gets a reference to the given string and assigns it to the WsrepLocalCertFailures field.
 func (o *HealthDatabaseStats) SetWsrepLocalCertFailures(v string) {
 	o.WsrepLocalCertFailures = &v
@@ -14473,15 +10558,6 @@ func (o *HealthDatabaseStats) GetWsrepLocalReplaysOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WsrepLocalReplays, true
-}
-
-// IsSetWsrepLocalReplays returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepLocalReplays() bool {
-	if o != nil && !IsNil(o.WsrepLocalReplays) {
-		return true
-	}
-
-	return false
 }
 
 // SetWsrepLocalReplays gets a reference to the given string and assigns it to the WsrepLocalReplays field.
@@ -14507,15 +10583,6 @@ func (o *HealthDatabaseStats) GetWsrepLocalSendQueueOk() (*string, bool) {
 	return o.WsrepLocalSendQueue, true
 }
 
-// IsSetWsrepLocalSendQueue returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepLocalSendQueue() bool {
-	if o != nil && !IsNil(o.WsrepLocalSendQueue) {
-		return true
-	}
-
-	return false
-}
-
 // SetWsrepLocalSendQueue gets a reference to the given string and assigns it to the WsrepLocalSendQueue field.
 func (o *HealthDatabaseStats) SetWsrepLocalSendQueue(v string) {
 	o.WsrepLocalSendQueue = &v
@@ -14537,15 +10604,6 @@ func (o *HealthDatabaseStats) GetWsrepLocalSendQueueMaxOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WsrepLocalSendQueueMax, true
-}
-
-// IsSetWsrepLocalSendQueueMax returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepLocalSendQueueMax() bool {
-	if o != nil && !IsNil(o.WsrepLocalSendQueueMax) {
-		return true
-	}
-
-	return false
 }
 
 // SetWsrepLocalSendQueueMax gets a reference to the given string and assigns it to the WsrepLocalSendQueueMax field.
@@ -14571,15 +10629,6 @@ func (o *HealthDatabaseStats) GetWsrepLocalSendQueueMinOk() (*string, bool) {
 	return o.WsrepLocalSendQueueMin, true
 }
 
-// IsSetWsrepLocalSendQueueMin returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepLocalSendQueueMin() bool {
-	if o != nil && !IsNil(o.WsrepLocalSendQueueMin) {
-		return true
-	}
-
-	return false
-}
-
 // SetWsrepLocalSendQueueMin gets a reference to the given string and assigns it to the WsrepLocalSendQueueMin field.
 func (o *HealthDatabaseStats) SetWsrepLocalSendQueueMin(v string) {
 	o.WsrepLocalSendQueueMin = &v
@@ -14601,15 +10650,6 @@ func (o *HealthDatabaseStats) GetWsrepLocalSendQueueAvgOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WsrepLocalSendQueueAvg, true
-}
-
-// IsSetWsrepLocalSendQueueAvg returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepLocalSendQueueAvg() bool {
-	if o != nil && !IsNil(o.WsrepLocalSendQueueAvg) {
-		return true
-	}
-
-	return false
 }
 
 // SetWsrepLocalSendQueueAvg gets a reference to the given string and assigns it to the WsrepLocalSendQueueAvg field.
@@ -14635,15 +10675,6 @@ func (o *HealthDatabaseStats) GetWsrepLocalRecvQueueOk() (*string, bool) {
 	return o.WsrepLocalRecvQueue, true
 }
 
-// IsSetWsrepLocalRecvQueue returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepLocalRecvQueue() bool {
-	if o != nil && !IsNil(o.WsrepLocalRecvQueue) {
-		return true
-	}
-
-	return false
-}
-
 // SetWsrepLocalRecvQueue gets a reference to the given string and assigns it to the WsrepLocalRecvQueue field.
 func (o *HealthDatabaseStats) SetWsrepLocalRecvQueue(v string) {
 	o.WsrepLocalRecvQueue = &v
@@ -14665,15 +10696,6 @@ func (o *HealthDatabaseStats) GetWsrepLocalRecvQueueMaxOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WsrepLocalRecvQueueMax, true
-}
-
-// IsSetWsrepLocalRecvQueueMax returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepLocalRecvQueueMax() bool {
-	if o != nil && !IsNil(o.WsrepLocalRecvQueueMax) {
-		return true
-	}
-
-	return false
 }
 
 // SetWsrepLocalRecvQueueMax gets a reference to the given string and assigns it to the WsrepLocalRecvQueueMax field.
@@ -14699,15 +10721,6 @@ func (o *HealthDatabaseStats) GetWsrepLocalRecvQueueMinOk() (*string, bool) {
 	return o.WsrepLocalRecvQueueMin, true
 }
 
-// IsSetWsrepLocalRecvQueueMin returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepLocalRecvQueueMin() bool {
-	if o != nil && !IsNil(o.WsrepLocalRecvQueueMin) {
-		return true
-	}
-
-	return false
-}
-
 // SetWsrepLocalRecvQueueMin gets a reference to the given string and assigns it to the WsrepLocalRecvQueueMin field.
 func (o *HealthDatabaseStats) SetWsrepLocalRecvQueueMin(v string) {
 	o.WsrepLocalRecvQueueMin = &v
@@ -14729,15 +10742,6 @@ func (o *HealthDatabaseStats) GetWsrepLocalRecvQueueAvgOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WsrepLocalRecvQueueAvg, true
-}
-
-// IsSetWsrepLocalRecvQueueAvg returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepLocalRecvQueueAvg() bool {
-	if o != nil && !IsNil(o.WsrepLocalRecvQueueAvg) {
-		return true
-	}
-
-	return false
 }
 
 // SetWsrepLocalRecvQueueAvg gets a reference to the given string and assigns it to the WsrepLocalRecvQueueAvg field.
@@ -14763,15 +10767,6 @@ func (o *HealthDatabaseStats) GetWsrepLocalCachedDowntoOk() (*string, bool) {
 	return o.WsrepLocalCachedDownto, true
 }
 
-// IsSetWsrepLocalCachedDownto returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepLocalCachedDownto() bool {
-	if o != nil && !IsNil(o.WsrepLocalCachedDownto) {
-		return true
-	}
-
-	return false
-}
-
 // SetWsrepLocalCachedDownto gets a reference to the given string and assigns it to the WsrepLocalCachedDownto field.
 func (o *HealthDatabaseStats) SetWsrepLocalCachedDownto(v string) {
 	o.WsrepLocalCachedDownto = &v
@@ -14793,15 +10788,6 @@ func (o *HealthDatabaseStats) GetWsrepFlowControlPausedNsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WsrepFlowControlPausedNs, true
-}
-
-// IsSetWsrepFlowControlPausedNs returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepFlowControlPausedNs() bool {
-	if o != nil && !IsNil(o.WsrepFlowControlPausedNs) {
-		return true
-	}
-
-	return false
 }
 
 // SetWsrepFlowControlPausedNs gets a reference to the given string and assigns it to the WsrepFlowControlPausedNs field.
@@ -14827,15 +10813,6 @@ func (o *HealthDatabaseStats) GetWsrepFlowControlPausedOk() (*string, bool) {
 	return o.WsrepFlowControlPaused, true
 }
 
-// IsSetWsrepFlowControlPaused returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepFlowControlPaused() bool {
-	if o != nil && !IsNil(o.WsrepFlowControlPaused) {
-		return true
-	}
-
-	return false
-}
-
 // SetWsrepFlowControlPaused gets a reference to the given string and assigns it to the WsrepFlowControlPaused field.
 func (o *HealthDatabaseStats) SetWsrepFlowControlPaused(v string) {
 	o.WsrepFlowControlPaused = &v
@@ -14857,15 +10834,6 @@ func (o *HealthDatabaseStats) GetWsrepFlowControlSentOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WsrepFlowControlSent, true
-}
-
-// IsSetWsrepFlowControlSent returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepFlowControlSent() bool {
-	if o != nil && !IsNil(o.WsrepFlowControlSent) {
-		return true
-	}
-
-	return false
 }
 
 // SetWsrepFlowControlSent gets a reference to the given string and assigns it to the WsrepFlowControlSent field.
@@ -14891,15 +10859,6 @@ func (o *HealthDatabaseStats) GetWsrepFlowControlRecvOk() (*string, bool) {
 	return o.WsrepFlowControlRecv, true
 }
 
-// IsSetWsrepFlowControlRecv returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepFlowControlRecv() bool {
-	if o != nil && !IsNil(o.WsrepFlowControlRecv) {
-		return true
-	}
-
-	return false
-}
-
 // SetWsrepFlowControlRecv gets a reference to the given string and assigns it to the WsrepFlowControlRecv field.
 func (o *HealthDatabaseStats) SetWsrepFlowControlRecv(v string) {
 	o.WsrepFlowControlRecv = &v
@@ -14921,15 +10880,6 @@ func (o *HealthDatabaseStats) GetWsrepFlowControlIntervalOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WsrepFlowControlInterval, true
-}
-
-// IsSetWsrepFlowControlInterval returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepFlowControlInterval() bool {
-	if o != nil && !IsNil(o.WsrepFlowControlInterval) {
-		return true
-	}
-
-	return false
 }
 
 // SetWsrepFlowControlInterval gets a reference to the given string and assigns it to the WsrepFlowControlInterval field.
@@ -14955,15 +10905,6 @@ func (o *HealthDatabaseStats) GetWsrepFlowControlIntervalLowOk() (*string, bool)
 	return o.WsrepFlowControlIntervalLow, true
 }
 
-// IsSetWsrepFlowControlIntervalLow returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepFlowControlIntervalLow() bool {
-	if o != nil && !IsNil(o.WsrepFlowControlIntervalLow) {
-		return true
-	}
-
-	return false
-}
-
 // SetWsrepFlowControlIntervalLow gets a reference to the given string and assigns it to the WsrepFlowControlIntervalLow field.
 func (o *HealthDatabaseStats) SetWsrepFlowControlIntervalLow(v string) {
 	o.WsrepFlowControlIntervalLow = &v
@@ -14985,15 +10926,6 @@ func (o *HealthDatabaseStats) GetWsrepFlowControlIntervalHighOk() (*string, bool
 		return nil, false
 	}
 	return o.WsrepFlowControlIntervalHigh, true
-}
-
-// IsSetWsrepFlowControlIntervalHigh returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepFlowControlIntervalHigh() bool {
-	if o != nil && !IsNil(o.WsrepFlowControlIntervalHigh) {
-		return true
-	}
-
-	return false
 }
 
 // SetWsrepFlowControlIntervalHigh gets a reference to the given string and assigns it to the WsrepFlowControlIntervalHigh field.
@@ -15019,15 +10951,6 @@ func (o *HealthDatabaseStats) GetWsrepFlowControlStatusOk() (*string, bool) {
 	return o.WsrepFlowControlStatus, true
 }
 
-// IsSetWsrepFlowControlStatus returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepFlowControlStatus() bool {
-	if o != nil && !IsNil(o.WsrepFlowControlStatus) {
-		return true
-	}
-
-	return false
-}
-
 // SetWsrepFlowControlStatus gets a reference to the given string and assigns it to the WsrepFlowControlStatus field.
 func (o *HealthDatabaseStats) SetWsrepFlowControlStatus(v string) {
 	o.WsrepFlowControlStatus = &v
@@ -15049,15 +10972,6 @@ func (o *HealthDatabaseStats) GetWsrepFlowControlActiveOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WsrepFlowControlActive, true
-}
-
-// IsSetWsrepFlowControlActive returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepFlowControlActive() bool {
-	if o != nil && !IsNil(o.WsrepFlowControlActive) {
-		return true
-	}
-
-	return false
 }
 
 // SetWsrepFlowControlActive gets a reference to the given string and assigns it to the WsrepFlowControlActive field.
@@ -15083,15 +10997,6 @@ func (o *HealthDatabaseStats) GetWsrepFlowControlRequestedOk() (*string, bool) {
 	return o.WsrepFlowControlRequested, true
 }
 
-// IsSetWsrepFlowControlRequested returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepFlowControlRequested() bool {
-	if o != nil && !IsNil(o.WsrepFlowControlRequested) {
-		return true
-	}
-
-	return false
-}
-
 // SetWsrepFlowControlRequested gets a reference to the given string and assigns it to the WsrepFlowControlRequested field.
 func (o *HealthDatabaseStats) SetWsrepFlowControlRequested(v string) {
 	o.WsrepFlowControlRequested = &v
@@ -15113,15 +11018,6 @@ func (o *HealthDatabaseStats) GetWsrepCertDepsDistanceOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WsrepCertDepsDistance, true
-}
-
-// IsSetWsrepCertDepsDistance returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepCertDepsDistance() bool {
-	if o != nil && !IsNil(o.WsrepCertDepsDistance) {
-		return true
-	}
-
-	return false
 }
 
 // SetWsrepCertDepsDistance gets a reference to the given string and assigns it to the WsrepCertDepsDistance field.
@@ -15147,15 +11043,6 @@ func (o *HealthDatabaseStats) GetWsrepApplyOooeOk() (*string, bool) {
 	return o.WsrepApplyOooe, true
 }
 
-// IsSetWsrepApplyOooe returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepApplyOooe() bool {
-	if o != nil && !IsNil(o.WsrepApplyOooe) {
-		return true
-	}
-
-	return false
-}
-
 // SetWsrepApplyOooe gets a reference to the given string and assigns it to the WsrepApplyOooe field.
 func (o *HealthDatabaseStats) SetWsrepApplyOooe(v string) {
 	o.WsrepApplyOooe = &v
@@ -15177,15 +11064,6 @@ func (o *HealthDatabaseStats) GetWsrepApplyOoolOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WsrepApplyOool, true
-}
-
-// IsSetWsrepApplyOool returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepApplyOool() bool {
-	if o != nil && !IsNil(o.WsrepApplyOool) {
-		return true
-	}
-
-	return false
 }
 
 // SetWsrepApplyOool gets a reference to the given string and assigns it to the WsrepApplyOool field.
@@ -15211,15 +11089,6 @@ func (o *HealthDatabaseStats) GetWsrepApplyWindowOk() (*string, bool) {
 	return o.WsrepApplyWindow, true
 }
 
-// IsSetWsrepApplyWindow returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepApplyWindow() bool {
-	if o != nil && !IsNil(o.WsrepApplyWindow) {
-		return true
-	}
-
-	return false
-}
-
 // SetWsrepApplyWindow gets a reference to the given string and assigns it to the WsrepApplyWindow field.
 func (o *HealthDatabaseStats) SetWsrepApplyWindow(v string) {
 	o.WsrepApplyWindow = &v
@@ -15241,15 +11110,6 @@ func (o *HealthDatabaseStats) GetWsrepCommitOooeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WsrepCommitOooe, true
-}
-
-// IsSetWsrepCommitOooe returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepCommitOooe() bool {
-	if o != nil && !IsNil(o.WsrepCommitOooe) {
-		return true
-	}
-
-	return false
 }
 
 // SetWsrepCommitOooe gets a reference to the given string and assigns it to the WsrepCommitOooe field.
@@ -15275,15 +11135,6 @@ func (o *HealthDatabaseStats) GetWsrepCommitOoolOk() (*string, bool) {
 	return o.WsrepCommitOool, true
 }
 
-// IsSetWsrepCommitOool returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepCommitOool() bool {
-	if o != nil && !IsNil(o.WsrepCommitOool) {
-		return true
-	}
-
-	return false
-}
-
 // SetWsrepCommitOool gets a reference to the given string and assigns it to the WsrepCommitOool field.
 func (o *HealthDatabaseStats) SetWsrepCommitOool(v string) {
 	o.WsrepCommitOool = &v
@@ -15305,15 +11156,6 @@ func (o *HealthDatabaseStats) GetWsrepCommitWindowOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WsrepCommitWindow, true
-}
-
-// IsSetWsrepCommitWindow returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepCommitWindow() bool {
-	if o != nil && !IsNil(o.WsrepCommitWindow) {
-		return true
-	}
-
-	return false
 }
 
 // SetWsrepCommitWindow gets a reference to the given string and assigns it to the WsrepCommitWindow field.
@@ -15339,15 +11181,6 @@ func (o *HealthDatabaseStats) GetWsrepLocalStateOk() (*string, bool) {
 	return o.WsrepLocalState, true
 }
 
-// IsSetWsrepLocalState returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepLocalState() bool {
-	if o != nil && !IsNil(o.WsrepLocalState) {
-		return true
-	}
-
-	return false
-}
-
 // SetWsrepLocalState gets a reference to the given string and assigns it to the WsrepLocalState field.
 func (o *HealthDatabaseStats) SetWsrepLocalState(v string) {
 	o.WsrepLocalState = &v
@@ -15369,15 +11202,6 @@ func (o *HealthDatabaseStats) GetWsrepLocalStateCommentOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WsrepLocalStateComment, true
-}
-
-// IsSetWsrepLocalStateComment returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepLocalStateComment() bool {
-	if o != nil && !IsNil(o.WsrepLocalStateComment) {
-		return true
-	}
-
-	return false
 }
 
 // SetWsrepLocalStateComment gets a reference to the given string and assigns it to the WsrepLocalStateComment field.
@@ -15403,15 +11227,6 @@ func (o *HealthDatabaseStats) GetWsrepCertIndexSizeOk() (*string, bool) {
 	return o.WsrepCertIndexSize, true
 }
 
-// IsSetWsrepCertIndexSize returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepCertIndexSize() bool {
-	if o != nil && !IsNil(o.WsrepCertIndexSize) {
-		return true
-	}
-
-	return false
-}
-
 // SetWsrepCertIndexSize gets a reference to the given string and assigns it to the WsrepCertIndexSize field.
 func (o *HealthDatabaseStats) SetWsrepCertIndexSize(v string) {
 	o.WsrepCertIndexSize = &v
@@ -15433,15 +11248,6 @@ func (o *HealthDatabaseStats) GetWsrepCertBucketCountOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WsrepCertBucketCount, true
-}
-
-// IsSetWsrepCertBucketCount returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepCertBucketCount() bool {
-	if o != nil && !IsNil(o.WsrepCertBucketCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetWsrepCertBucketCount gets a reference to the given string and assigns it to the WsrepCertBucketCount field.
@@ -15467,15 +11273,6 @@ func (o *HealthDatabaseStats) GetWsrepGcachePoolSizeOk() (*string, bool) {
 	return o.WsrepGcachePoolSize, true
 }
 
-// IsSetWsrepGcachePoolSize returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepGcachePoolSize() bool {
-	if o != nil && !IsNil(o.WsrepGcachePoolSize) {
-		return true
-	}
-
-	return false
-}
-
 // SetWsrepGcachePoolSize gets a reference to the given string and assigns it to the WsrepGcachePoolSize field.
 func (o *HealthDatabaseStats) SetWsrepGcachePoolSize(v string) {
 	o.WsrepGcachePoolSize = &v
@@ -15497,15 +11294,6 @@ func (o *HealthDatabaseStats) GetWsrepCausalReadsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WsrepCausalReads, true
-}
-
-// IsSetWsrepCausalReads returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepCausalReads() bool {
-	if o != nil && !IsNil(o.WsrepCausalReads) {
-		return true
-	}
-
-	return false
 }
 
 // SetWsrepCausalReads gets a reference to the given string and assigns it to the WsrepCausalReads field.
@@ -15531,15 +11319,6 @@ func (o *HealthDatabaseStats) GetWsrepCertIntervalOk() (*string, bool) {
 	return o.WsrepCertInterval, true
 }
 
-// IsSetWsrepCertInterval returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepCertInterval() bool {
-	if o != nil && !IsNil(o.WsrepCertInterval) {
-		return true
-	}
-
-	return false
-}
-
 // SetWsrepCertInterval gets a reference to the given string and assigns it to the WsrepCertInterval field.
 func (o *HealthDatabaseStats) SetWsrepCertInterval(v string) {
 	o.WsrepCertInterval = &v
@@ -15561,15 +11340,6 @@ func (o *HealthDatabaseStats) GetWsrepOpenTransactionsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WsrepOpenTransactions, true
-}
-
-// IsSetWsrepOpenTransactions returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepOpenTransactions() bool {
-	if o != nil && !IsNil(o.WsrepOpenTransactions) {
-		return true
-	}
-
-	return false
 }
 
 // SetWsrepOpenTransactions gets a reference to the given string and assigns it to the WsrepOpenTransactions field.
@@ -15595,15 +11365,6 @@ func (o *HealthDatabaseStats) GetWsrepOpenConnectionsOk() (*string, bool) {
 	return o.WsrepOpenConnections, true
 }
 
-// IsSetWsrepOpenConnections returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepOpenConnections() bool {
-	if o != nil && !IsNil(o.WsrepOpenConnections) {
-		return true
-	}
-
-	return false
-}
-
 // SetWsrepOpenConnections gets a reference to the given string and assigns it to the WsrepOpenConnections field.
 func (o *HealthDatabaseStats) SetWsrepOpenConnections(v string) {
 	o.WsrepOpenConnections = &v
@@ -15625,15 +11386,6 @@ func (o *HealthDatabaseStats) GetWsrepIstReceiveStatusOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WsrepIstReceiveStatus, true
-}
-
-// IsSetWsrepIstReceiveStatus returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepIstReceiveStatus() bool {
-	if o != nil && !IsNil(o.WsrepIstReceiveStatus) {
-		return true
-	}
-
-	return false
 }
 
 // SetWsrepIstReceiveStatus gets a reference to the given string and assigns it to the WsrepIstReceiveStatus field.
@@ -15659,15 +11411,6 @@ func (o *HealthDatabaseStats) GetWsrepIstReceiveSeqnoStartOk() (*string, bool) {
 	return o.WsrepIstReceiveSeqnoStart, true
 }
 
-// IsSetWsrepIstReceiveSeqnoStart returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepIstReceiveSeqnoStart() bool {
-	if o != nil && !IsNil(o.WsrepIstReceiveSeqnoStart) {
-		return true
-	}
-
-	return false
-}
-
 // SetWsrepIstReceiveSeqnoStart gets a reference to the given string and assigns it to the WsrepIstReceiveSeqnoStart field.
 func (o *HealthDatabaseStats) SetWsrepIstReceiveSeqnoStart(v string) {
 	o.WsrepIstReceiveSeqnoStart = &v
@@ -15689,15 +11432,6 @@ func (o *HealthDatabaseStats) GetWsrepIstReceiveSeqnoCurrentOk() (*string, bool)
 		return nil, false
 	}
 	return o.WsrepIstReceiveSeqnoCurrent, true
-}
-
-// IsSetWsrepIstReceiveSeqnoCurrent returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepIstReceiveSeqnoCurrent() bool {
-	if o != nil && !IsNil(o.WsrepIstReceiveSeqnoCurrent) {
-		return true
-	}
-
-	return false
 }
 
 // SetWsrepIstReceiveSeqnoCurrent gets a reference to the given string and assigns it to the WsrepIstReceiveSeqnoCurrent field.
@@ -15723,15 +11457,6 @@ func (o *HealthDatabaseStats) GetWsrepIstReceiveSeqnoEndOk() (*string, bool) {
 	return o.WsrepIstReceiveSeqnoEnd, true
 }
 
-// IsSetWsrepIstReceiveSeqnoEnd returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepIstReceiveSeqnoEnd() bool {
-	if o != nil && !IsNil(o.WsrepIstReceiveSeqnoEnd) {
-		return true
-	}
-
-	return false
-}
-
 // SetWsrepIstReceiveSeqnoEnd gets a reference to the given string and assigns it to the WsrepIstReceiveSeqnoEnd field.
 func (o *HealthDatabaseStats) SetWsrepIstReceiveSeqnoEnd(v string) {
 	o.WsrepIstReceiveSeqnoEnd = &v
@@ -15753,15 +11478,6 @@ func (o *HealthDatabaseStats) GetWsrepIncomingAddressesOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WsrepIncomingAddresses, true
-}
-
-// IsSetWsrepIncomingAddresses returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepIncomingAddresses() bool {
-	if o != nil && !IsNil(o.WsrepIncomingAddresses) {
-		return true
-	}
-
-	return false
 }
 
 // SetWsrepIncomingAddresses gets a reference to the given string and assigns it to the WsrepIncomingAddresses field.
@@ -15787,15 +11503,6 @@ func (o *HealthDatabaseStats) GetWsrepClusterWeightOk() (*string, bool) {
 	return o.WsrepClusterWeight, true
 }
 
-// IsSetWsrepClusterWeight returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepClusterWeight() bool {
-	if o != nil && !IsNil(o.WsrepClusterWeight) {
-		return true
-	}
-
-	return false
-}
-
 // SetWsrepClusterWeight gets a reference to the given string and assigns it to the WsrepClusterWeight field.
 func (o *HealthDatabaseStats) SetWsrepClusterWeight(v string) {
 	o.WsrepClusterWeight = &v
@@ -15817,15 +11524,6 @@ func (o *HealthDatabaseStats) GetWsrepDesyncCountOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WsrepDesyncCount, true
-}
-
-// IsSetWsrepDesyncCount returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepDesyncCount() bool {
-	if o != nil && !IsNil(o.WsrepDesyncCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetWsrepDesyncCount gets a reference to the given string and assigns it to the WsrepDesyncCount field.
@@ -15851,15 +11549,6 @@ func (o *HealthDatabaseStats) GetWsrepEvsDelayedOk() (*string, bool) {
 	return o.WsrepEvsDelayed, true
 }
 
-// IsSetWsrepEvsDelayed returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepEvsDelayed() bool {
-	if o != nil && !IsNil(o.WsrepEvsDelayed) {
-		return true
-	}
-
-	return false
-}
-
 // SetWsrepEvsDelayed gets a reference to the given string and assigns it to the WsrepEvsDelayed field.
 func (o *HealthDatabaseStats) SetWsrepEvsDelayed(v string) {
 	o.WsrepEvsDelayed = &v
@@ -15881,15 +11570,6 @@ func (o *HealthDatabaseStats) GetWsrepEvsEvictListOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WsrepEvsEvictList, true
-}
-
-// IsSetWsrepEvsEvictList returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepEvsEvictList() bool {
-	if o != nil && !IsNil(o.WsrepEvsEvictList) {
-		return true
-	}
-
-	return false
 }
 
 // SetWsrepEvsEvictList gets a reference to the given string and assigns it to the WsrepEvsEvictList field.
@@ -15915,15 +11595,6 @@ func (o *HealthDatabaseStats) GetWsrepEvsReplLatencyOk() (*string, bool) {
 	return o.WsrepEvsReplLatency, true
 }
 
-// IsSetWsrepEvsReplLatency returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepEvsReplLatency() bool {
-	if o != nil && !IsNil(o.WsrepEvsReplLatency) {
-		return true
-	}
-
-	return false
-}
-
 // SetWsrepEvsReplLatency gets a reference to the given string and assigns it to the WsrepEvsReplLatency field.
 func (o *HealthDatabaseStats) SetWsrepEvsReplLatency(v string) {
 	o.WsrepEvsReplLatency = &v
@@ -15945,15 +11616,6 @@ func (o *HealthDatabaseStats) GetWsrepEvsStateOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WsrepEvsState, true
-}
-
-// IsSetWsrepEvsState returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepEvsState() bool {
-	if o != nil && !IsNil(o.WsrepEvsState) {
-		return true
-	}
-
-	return false
 }
 
 // SetWsrepEvsState gets a reference to the given string and assigns it to the WsrepEvsState field.
@@ -15979,15 +11641,6 @@ func (o *HealthDatabaseStats) GetWsrepGcommUuidOk() (*string, bool) {
 	return o.WsrepGcommUuid, true
 }
 
-// IsSetWsrepGcommUuid returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepGcommUuid() bool {
-	if o != nil && !IsNil(o.WsrepGcommUuid) {
-		return true
-	}
-
-	return false
-}
-
 // SetWsrepGcommUuid gets a reference to the given string and assigns it to the WsrepGcommUuid field.
 func (o *HealthDatabaseStats) SetWsrepGcommUuid(v string) {
 	o.WsrepGcommUuid = &v
@@ -16009,15 +11662,6 @@ func (o *HealthDatabaseStats) GetWsrepGmcastSegmentOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WsrepGmcastSegment, true
-}
-
-// IsSetWsrepGmcastSegment returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepGmcastSegment() bool {
-	if o != nil && !IsNil(o.WsrepGmcastSegment) {
-		return true
-	}
-
-	return false
 }
 
 // SetWsrepGmcastSegment gets a reference to the given string and assigns it to the WsrepGmcastSegment field.
@@ -16043,15 +11687,6 @@ func (o *HealthDatabaseStats) GetWsrepClusterConfIdOk() (*string, bool) {
 	return o.WsrepClusterConfId, true
 }
 
-// IsSetWsrepClusterConfId returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepClusterConfId() bool {
-	if o != nil && !IsNil(o.WsrepClusterConfId) {
-		return true
-	}
-
-	return false
-}
-
 // SetWsrepClusterConfId gets a reference to the given string and assigns it to the WsrepClusterConfId field.
 func (o *HealthDatabaseStats) SetWsrepClusterConfId(v string) {
 	o.WsrepClusterConfId = &v
@@ -16073,15 +11708,6 @@ func (o *HealthDatabaseStats) GetWsrepClusterSizeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WsrepClusterSize, true
-}
-
-// IsSetWsrepClusterSize returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepClusterSize() bool {
-	if o != nil && !IsNil(o.WsrepClusterSize) {
-		return true
-	}
-
-	return false
 }
 
 // SetWsrepClusterSize gets a reference to the given string and assigns it to the WsrepClusterSize field.
@@ -16107,15 +11733,6 @@ func (o *HealthDatabaseStats) GetWsrepClusterStateUuidOk() (*string, bool) {
 	return o.WsrepClusterStateUuid, true
 }
 
-// IsSetWsrepClusterStateUuid returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepClusterStateUuid() bool {
-	if o != nil && !IsNil(o.WsrepClusterStateUuid) {
-		return true
-	}
-
-	return false
-}
-
 // SetWsrepClusterStateUuid gets a reference to the given string and assigns it to the WsrepClusterStateUuid field.
 func (o *HealthDatabaseStats) SetWsrepClusterStateUuid(v string) {
 	o.WsrepClusterStateUuid = &v
@@ -16137,15 +11754,6 @@ func (o *HealthDatabaseStats) GetWsrepClusterStatusOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WsrepClusterStatus, true
-}
-
-// IsSetWsrepClusterStatus returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepClusterStatus() bool {
-	if o != nil && !IsNil(o.WsrepClusterStatus) {
-		return true
-	}
-
-	return false
 }
 
 // SetWsrepClusterStatus gets a reference to the given string and assigns it to the WsrepClusterStatus field.
@@ -16171,15 +11779,6 @@ func (o *HealthDatabaseStats) GetWsrepConnectedOk() (*string, bool) {
 	return o.WsrepConnected, true
 }
 
-// IsSetWsrepConnected returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepConnected() bool {
-	if o != nil && !IsNil(o.WsrepConnected) {
-		return true
-	}
-
-	return false
-}
-
 // SetWsrepConnected gets a reference to the given string and assigns it to the WsrepConnected field.
 func (o *HealthDatabaseStats) SetWsrepConnected(v string) {
 	o.WsrepConnected = &v
@@ -16201,15 +11800,6 @@ func (o *HealthDatabaseStats) GetWsrepLocalBfAbortsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WsrepLocalBfAborts, true
-}
-
-// IsSetWsrepLocalBfAborts returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepLocalBfAborts() bool {
-	if o != nil && !IsNil(o.WsrepLocalBfAborts) {
-		return true
-	}
-
-	return false
 }
 
 // SetWsrepLocalBfAborts gets a reference to the given string and assigns it to the WsrepLocalBfAborts field.
@@ -16235,15 +11825,6 @@ func (o *HealthDatabaseStats) GetWsrepLocalIndexOk() (*string, bool) {
 	return o.WsrepLocalIndex, true
 }
 
-// IsSetWsrepLocalIndex returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepLocalIndex() bool {
-	if o != nil && !IsNil(o.WsrepLocalIndex) {
-		return true
-	}
-
-	return false
-}
-
 // SetWsrepLocalIndex gets a reference to the given string and assigns it to the WsrepLocalIndex field.
 func (o *HealthDatabaseStats) SetWsrepLocalIndex(v string) {
 	o.WsrepLocalIndex = &v
@@ -16265,15 +11846,6 @@ func (o *HealthDatabaseStats) GetWsrepProviderNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WsrepProviderName, true
-}
-
-// IsSetWsrepProviderName returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepProviderName() bool {
-	if o != nil && !IsNil(o.WsrepProviderName) {
-		return true
-	}
-
-	return false
 }
 
 // SetWsrepProviderName gets a reference to the given string and assigns it to the WsrepProviderName field.
@@ -16299,15 +11871,6 @@ func (o *HealthDatabaseStats) GetWsrepProviderVendorOk() (*string, bool) {
 	return o.WsrepProviderVendor, true
 }
 
-// IsSetWsrepProviderVendor returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepProviderVendor() bool {
-	if o != nil && !IsNil(o.WsrepProviderVendor) {
-		return true
-	}
-
-	return false
-}
-
 // SetWsrepProviderVendor gets a reference to the given string and assigns it to the WsrepProviderVendor field.
 func (o *HealthDatabaseStats) SetWsrepProviderVendor(v string) {
 	o.WsrepProviderVendor = &v
@@ -16331,15 +11894,6 @@ func (o *HealthDatabaseStats) GetWsrepProviderVersionOk() (*string, bool) {
 	return o.WsrepProviderVersion, true
 }
 
-// IsSetWsrepProviderVersion returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepProviderVersion() bool {
-	if o != nil && !IsNil(o.WsrepProviderVersion) {
-		return true
-	}
-
-	return false
-}
-
 // SetWsrepProviderVersion gets a reference to the given string and assigns it to the WsrepProviderVersion field.
 func (o *HealthDatabaseStats) SetWsrepProviderVersion(v string) {
 	o.WsrepProviderVersion = &v
@@ -16361,15 +11915,6 @@ func (o *HealthDatabaseStats) GetWsrepReadyOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WsrepReady, true
-}
-
-// IsSetWsrepReady returns a boolean if a field has been set.
-func (o *HealthDatabaseStats) IsSetWsrepReady() bool {
-	if o != nil && !IsNil(o.WsrepReady) {
-		return true
-	}
-
-	return false
 }
 
 // SetWsrepReady gets a reference to the given string and assigns it to the WsrepReady field.

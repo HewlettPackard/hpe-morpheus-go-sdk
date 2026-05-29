@@ -61,15 +61,6 @@ func (o *CreateNetworkDhcpServerRequest) GetNetworkDhcpServerOk() (*CreateNetwor
 	return o.NetworkDhcpServer, true
 }
 
-// IsSetNetworkDhcpServer returns a boolean if a field has been set.
-func (o *CreateNetworkDhcpServerRequest) IsSetNetworkDhcpServer() bool {
-	if o != nil && !IsNil(o.NetworkDhcpServer) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkDhcpServer gets a reference to the given CreateNetworkDhcpServerRequestNetworkDhcpServer and assigns it to the NetworkDhcpServer field.
 func (o *CreateNetworkDhcpServerRequest) SetNetworkDhcpServer(v CreateNetworkDhcpServerRequestNetworkDhcpServer) {
 	o.NetworkDhcpServer = &v

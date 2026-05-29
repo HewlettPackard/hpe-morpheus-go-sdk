@@ -62,15 +62,6 @@ func (o *GetAppState200ResponseAllOfSpecsInnerTemplate) GetNameOk() (*string, bo
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *GetAppState200ResponseAllOfSpecsInnerTemplate) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *GetAppState200ResponseAllOfSpecsInnerTemplate) SetName(v string) {
 	o.Name = &v
@@ -92,15 +83,6 @@ func (o *GetAppState200ResponseAllOfSpecsInnerTemplate) GetTypeOk() (*string, bo
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *GetAppState200ResponseAllOfSpecsInnerTemplate) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.

@@ -61,15 +61,6 @@ func (o *GetUser200Response) GetUserOk() (*GetUser200ResponseUser, bool) {
 	return o.User, true
 }
 
-// IsSetUser returns a boolean if a field has been set.
-func (o *GetUser200Response) IsSetUser() bool {
-	if o != nil && !IsNil(o.User) {
-		return true
-	}
-
-	return false
-}
-
 // SetUser gets a reference to the given GetUser200ResponseUser and assigns it to the User field.
 func (o *GetUser200Response) SetUser(v GetUser200ResponseUser) {
 	o.User = &v

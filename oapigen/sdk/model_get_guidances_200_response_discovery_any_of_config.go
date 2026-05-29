@@ -102,15 +102,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) GetExistsOk() (*bool, bool
 	return o.Exists, true
 }
 
-// IsSetExists returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) IsSetExists() bool {
-	if o != nil && !IsNil(o.Exists) {
-		return true
-	}
-
-	return false
-}
-
 // SetExists gets a reference to the given bool and assigns it to the Exists field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetExists(v bool) {
 	o.Exists = &v
@@ -132,15 +123,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) GetObjectIdOk() (*int64, b
 		return nil, false
 	}
 	return o.ObjectId, true
-}
-
-// IsSetObjectId returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) IsSetObjectId() bool {
-	if o != nil && !IsNil(o.ObjectId) {
-		return true
-	}
-
-	return false
 }
 
 // SetObjectId gets a reference to the given int64 and assigns it to the ObjectId field.
@@ -167,28 +149,9 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) GetCpuTotalTimeCountOk() (
 	return o.CpuTotalTimeCount.Get(), o.CpuTotalTimeCount.IsSet()
 }
 
-// IsSetCpuTotalTimeCount returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) IsSetCpuTotalTimeCount() bool {
-	if o != nil && o.CpuTotalTimeCount.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuTotalTimeCount gets a reference to the given NullableFloat32 and assigns it to the CpuTotalTimeCount field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuTotalTimeCount(v float32) {
 	o.CpuTotalTimeCount.Set(&v)
-}
-
-// SetCpuTotalTimeCountNil sets the value for CpuTotalTimeCount to be an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuTotalTimeCountNil() {
-	o.CpuTotalTimeCount.Set(nil)
-}
-
-// UnsetCpuTotalTimeCount ensures that no value is present for CpuTotalTimeCount, not even an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) UnsetCpuTotalTimeCount() {
-	o.CpuTotalTimeCount.Unset()
 }
 
 // GetCpuTotalTimeMin returns the CpuTotalTimeMin field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -210,28 +173,9 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) GetCpuTotalTimeMinOk() (*f
 	return o.CpuTotalTimeMin.Get(), o.CpuTotalTimeMin.IsSet()
 }
 
-// IsSetCpuTotalTimeMin returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) IsSetCpuTotalTimeMin() bool {
-	if o != nil && o.CpuTotalTimeMin.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuTotalTimeMin gets a reference to the given NullableFloat32 and assigns it to the CpuTotalTimeMin field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuTotalTimeMin(v float32) {
 	o.CpuTotalTimeMin.Set(&v)
-}
-
-// SetCpuTotalTimeMinNil sets the value for CpuTotalTimeMin to be an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuTotalTimeMinNil() {
-	o.CpuTotalTimeMin.Set(nil)
-}
-
-// UnsetCpuTotalTimeMin ensures that no value is present for CpuTotalTimeMin, not even an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) UnsetCpuTotalTimeMin() {
-	o.CpuTotalTimeMin.Unset()
 }
 
 // GetCpuTotalTimeMax returns the CpuTotalTimeMax field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -253,28 +197,9 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) GetCpuTotalTimeMaxOk() (*f
 	return o.CpuTotalTimeMax.Get(), o.CpuTotalTimeMax.IsSet()
 }
 
-// IsSetCpuTotalTimeMax returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) IsSetCpuTotalTimeMax() bool {
-	if o != nil && o.CpuTotalTimeMax.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuTotalTimeMax gets a reference to the given NullableFloat32 and assigns it to the CpuTotalTimeMax field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuTotalTimeMax(v float32) {
 	o.CpuTotalTimeMax.Set(&v)
-}
-
-// SetCpuTotalTimeMaxNil sets the value for CpuTotalTimeMax to be an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuTotalTimeMaxNil() {
-	o.CpuTotalTimeMax.Set(nil)
-}
-
-// UnsetCpuTotalTimeMax ensures that no value is present for CpuTotalTimeMax, not even an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) UnsetCpuTotalTimeMax() {
-	o.CpuTotalTimeMax.Unset()
 }
 
 // GetCpuTotalTimeAvg returns the CpuTotalTimeAvg field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -296,28 +221,9 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) GetCpuTotalTimeAvgOk() (*f
 	return o.CpuTotalTimeAvg.Get(), o.CpuTotalTimeAvg.IsSet()
 }
 
-// IsSetCpuTotalTimeAvg returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) IsSetCpuTotalTimeAvg() bool {
-	if o != nil && o.CpuTotalTimeAvg.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuTotalTimeAvg gets a reference to the given NullableFloat32 and assigns it to the CpuTotalTimeAvg field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuTotalTimeAvg(v float32) {
 	o.CpuTotalTimeAvg.Set(&v)
-}
-
-// SetCpuTotalTimeAvgNil sets the value for CpuTotalTimeAvg to be an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuTotalTimeAvgNil() {
-	o.CpuTotalTimeAvg.Set(nil)
-}
-
-// UnsetCpuTotalTimeAvg ensures that no value is present for CpuTotalTimeAvg, not even an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) UnsetCpuTotalTimeAvg() {
-	o.CpuTotalTimeAvg.Unset()
 }
 
 // GetCpuTotalTimeSum returns the CpuTotalTimeSum field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -339,28 +245,9 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) GetCpuTotalTimeSumOk() (*f
 	return o.CpuTotalTimeSum.Get(), o.CpuTotalTimeSum.IsSet()
 }
 
-// IsSetCpuTotalTimeSum returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) IsSetCpuTotalTimeSum() bool {
-	if o != nil && o.CpuTotalTimeSum.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuTotalTimeSum gets a reference to the given NullableFloat32 and assigns it to the CpuTotalTimeSum field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuTotalTimeSum(v float32) {
 	o.CpuTotalTimeSum.Set(&v)
-}
-
-// SetCpuTotalTimeSumNil sets the value for CpuTotalTimeSum to be an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuTotalTimeSumNil() {
-	o.CpuTotalTimeSum.Set(nil)
-}
-
-// UnsetCpuTotalTimeSum ensures that no value is present for CpuTotalTimeSum, not even an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) UnsetCpuTotalTimeSum() {
-	o.CpuTotalTimeSum.Unset()
 }
 
 // GetCpuIdleTimeCount returns the CpuIdleTimeCount field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -382,28 +269,9 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) GetCpuIdleTimeCountOk() (*
 	return o.CpuIdleTimeCount.Get(), o.CpuIdleTimeCount.IsSet()
 }
 
-// IsSetCpuIdleTimeCount returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) IsSetCpuIdleTimeCount() bool {
-	if o != nil && o.CpuIdleTimeCount.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuIdleTimeCount gets a reference to the given NullableFloat32 and assigns it to the CpuIdleTimeCount field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuIdleTimeCount(v float32) {
 	o.CpuIdleTimeCount.Set(&v)
-}
-
-// SetCpuIdleTimeCountNil sets the value for CpuIdleTimeCount to be an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuIdleTimeCountNil() {
-	o.CpuIdleTimeCount.Set(nil)
-}
-
-// UnsetCpuIdleTimeCount ensures that no value is present for CpuIdleTimeCount, not even an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) UnsetCpuIdleTimeCount() {
-	o.CpuIdleTimeCount.Unset()
 }
 
 // GetCpuIdleTimeMin returns the CpuIdleTimeMin field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -425,28 +293,9 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) GetCpuIdleTimeMinOk() (*fl
 	return o.CpuIdleTimeMin.Get(), o.CpuIdleTimeMin.IsSet()
 }
 
-// IsSetCpuIdleTimeMin returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) IsSetCpuIdleTimeMin() bool {
-	if o != nil && o.CpuIdleTimeMin.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuIdleTimeMin gets a reference to the given NullableFloat32 and assigns it to the CpuIdleTimeMin field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuIdleTimeMin(v float32) {
 	o.CpuIdleTimeMin.Set(&v)
-}
-
-// SetCpuIdleTimeMinNil sets the value for CpuIdleTimeMin to be an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuIdleTimeMinNil() {
-	o.CpuIdleTimeMin.Set(nil)
-}
-
-// UnsetCpuIdleTimeMin ensures that no value is present for CpuIdleTimeMin, not even an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) UnsetCpuIdleTimeMin() {
-	o.CpuIdleTimeMin.Unset()
 }
 
 // GetCpuIdleTimeMax returns the CpuIdleTimeMax field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -468,28 +317,9 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) GetCpuIdleTimeMaxOk() (*fl
 	return o.CpuIdleTimeMax.Get(), o.CpuIdleTimeMax.IsSet()
 }
 
-// IsSetCpuIdleTimeMax returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) IsSetCpuIdleTimeMax() bool {
-	if o != nil && o.CpuIdleTimeMax.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuIdleTimeMax gets a reference to the given NullableFloat32 and assigns it to the CpuIdleTimeMax field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuIdleTimeMax(v float32) {
 	o.CpuIdleTimeMax.Set(&v)
-}
-
-// SetCpuIdleTimeMaxNil sets the value for CpuIdleTimeMax to be an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuIdleTimeMaxNil() {
-	o.CpuIdleTimeMax.Set(nil)
-}
-
-// UnsetCpuIdleTimeMax ensures that no value is present for CpuIdleTimeMax, not even an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) UnsetCpuIdleTimeMax() {
-	o.CpuIdleTimeMax.Unset()
 }
 
 // GetCpuIdleTimeAvg returns the CpuIdleTimeAvg field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -511,28 +341,9 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) GetCpuIdleTimeAvgOk() (*fl
 	return o.CpuIdleTimeAvg.Get(), o.CpuIdleTimeAvg.IsSet()
 }
 
-// IsSetCpuIdleTimeAvg returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) IsSetCpuIdleTimeAvg() bool {
-	if o != nil && o.CpuIdleTimeAvg.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuIdleTimeAvg gets a reference to the given NullableFloat32 and assigns it to the CpuIdleTimeAvg field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuIdleTimeAvg(v float32) {
 	o.CpuIdleTimeAvg.Set(&v)
-}
-
-// SetCpuIdleTimeAvgNil sets the value for CpuIdleTimeAvg to be an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuIdleTimeAvgNil() {
-	o.CpuIdleTimeAvg.Set(nil)
-}
-
-// UnsetCpuIdleTimeAvg ensures that no value is present for CpuIdleTimeAvg, not even an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) UnsetCpuIdleTimeAvg() {
-	o.CpuIdleTimeAvg.Unset()
 }
 
 // GetCpuIdleTimeSum returns the CpuIdleTimeSum field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -554,28 +365,9 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) GetCpuIdleTimeSumOk() (*fl
 	return o.CpuIdleTimeSum.Get(), o.CpuIdleTimeSum.IsSet()
 }
 
-// IsSetCpuIdleTimeSum returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) IsSetCpuIdleTimeSum() bool {
-	if o != nil && o.CpuIdleTimeSum.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuIdleTimeSum gets a reference to the given NullableFloat32 and assigns it to the CpuIdleTimeSum field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuIdleTimeSum(v float32) {
 	o.CpuIdleTimeSum.Set(&v)
-}
-
-// SetCpuIdleTimeSumNil sets the value for CpuIdleTimeSum to be an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuIdleTimeSumNil() {
-	o.CpuIdleTimeSum.Set(nil)
-}
-
-// UnsetCpuIdleTimeSum ensures that no value is present for CpuIdleTimeSum, not even an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) UnsetCpuIdleTimeSum() {
-	o.CpuIdleTimeSum.Unset()
 }
 
 // GetCpuUsageCount returns the CpuUsageCount field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -597,28 +389,9 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) GetCpuUsageCountOk() (*flo
 	return o.CpuUsageCount.Get(), o.CpuUsageCount.IsSet()
 }
 
-// IsSetCpuUsageCount returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) IsSetCpuUsageCount() bool {
-	if o != nil && o.CpuUsageCount.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuUsageCount gets a reference to the given NullableFloat32 and assigns it to the CpuUsageCount field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuUsageCount(v float32) {
 	o.CpuUsageCount.Set(&v)
-}
-
-// SetCpuUsageCountNil sets the value for CpuUsageCount to be an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuUsageCountNil() {
-	o.CpuUsageCount.Set(nil)
-}
-
-// UnsetCpuUsageCount ensures that no value is present for CpuUsageCount, not even an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) UnsetCpuUsageCount() {
-	o.CpuUsageCount.Unset()
 }
 
 // GetCpuUsageMin returns the CpuUsageMin field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -640,28 +413,9 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) GetCpuUsageMinOk() (*float
 	return o.CpuUsageMin.Get(), o.CpuUsageMin.IsSet()
 }
 
-// IsSetCpuUsageMin returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) IsSetCpuUsageMin() bool {
-	if o != nil && o.CpuUsageMin.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuUsageMin gets a reference to the given NullableFloat32 and assigns it to the CpuUsageMin field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuUsageMin(v float32) {
 	o.CpuUsageMin.Set(&v)
-}
-
-// SetCpuUsageMinNil sets the value for CpuUsageMin to be an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuUsageMinNil() {
-	o.CpuUsageMin.Set(nil)
-}
-
-// UnsetCpuUsageMin ensures that no value is present for CpuUsageMin, not even an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) UnsetCpuUsageMin() {
-	o.CpuUsageMin.Unset()
 }
 
 // GetCpuUsageMax returns the CpuUsageMax field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -683,28 +437,9 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) GetCpuUsageMaxOk() (*float
 	return o.CpuUsageMax.Get(), o.CpuUsageMax.IsSet()
 }
 
-// IsSetCpuUsageMax returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) IsSetCpuUsageMax() bool {
-	if o != nil && o.CpuUsageMax.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuUsageMax gets a reference to the given NullableFloat32 and assigns it to the CpuUsageMax field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuUsageMax(v float32) {
 	o.CpuUsageMax.Set(&v)
-}
-
-// SetCpuUsageMaxNil sets the value for CpuUsageMax to be an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuUsageMaxNil() {
-	o.CpuUsageMax.Set(nil)
-}
-
-// UnsetCpuUsageMax ensures that no value is present for CpuUsageMax, not even an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) UnsetCpuUsageMax() {
-	o.CpuUsageMax.Unset()
 }
 
 // GetCpuUsageAvg returns the CpuUsageAvg field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -726,28 +461,9 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) GetCpuUsageAvgOk() (*float
 	return o.CpuUsageAvg.Get(), o.CpuUsageAvg.IsSet()
 }
 
-// IsSetCpuUsageAvg returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) IsSetCpuUsageAvg() bool {
-	if o != nil && o.CpuUsageAvg.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuUsageAvg gets a reference to the given NullableFloat32 and assigns it to the CpuUsageAvg field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuUsageAvg(v float32) {
 	o.CpuUsageAvg.Set(&v)
-}
-
-// SetCpuUsageAvgNil sets the value for CpuUsageAvg to be an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuUsageAvgNil() {
-	o.CpuUsageAvg.Set(nil)
-}
-
-// UnsetCpuUsageAvg ensures that no value is present for CpuUsageAvg, not even an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) UnsetCpuUsageAvg() {
-	o.CpuUsageAvg.Unset()
 }
 
 // GetCpuUsageSum returns the CpuUsageSum field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -769,28 +485,9 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) GetCpuUsageSumOk() (*float
 	return o.CpuUsageSum.Get(), o.CpuUsageSum.IsSet()
 }
 
-// IsSetCpuUsageSum returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) IsSetCpuUsageSum() bool {
-	if o != nil && o.CpuUsageSum.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuUsageSum gets a reference to the given NullableFloat32 and assigns it to the CpuUsageSum field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuUsageSum(v float32) {
 	o.CpuUsageSum.Set(&v)
-}
-
-// SetCpuUsageSumNil sets the value for CpuUsageSum to be an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuUsageSumNil() {
-	o.CpuUsageSum.Set(nil)
-}
-
-// UnsetCpuUsageSum ensures that no value is present for CpuUsageSum, not even an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) UnsetCpuUsageSum() {
-	o.CpuUsageSum.Unset()
 }
 
 // GetMaxMemoryCount returns the MaxMemoryCount field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -812,28 +509,9 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) GetMaxMemoryCountOk() (*fl
 	return o.MaxMemoryCount.Get(), o.MaxMemoryCount.IsSet()
 }
 
-// IsSetMaxMemoryCount returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) IsSetMaxMemoryCount() bool {
-	if o != nil && o.MaxMemoryCount.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxMemoryCount gets a reference to the given NullableFloat32 and assigns it to the MaxMemoryCount field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetMaxMemoryCount(v float32) {
 	o.MaxMemoryCount.Set(&v)
-}
-
-// SetMaxMemoryCountNil sets the value for MaxMemoryCount to be an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetMaxMemoryCountNil() {
-	o.MaxMemoryCount.Set(nil)
-}
-
-// UnsetMaxMemoryCount ensures that no value is present for MaxMemoryCount, not even an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) UnsetMaxMemoryCount() {
-	o.MaxMemoryCount.Unset()
 }
 
 // GetMaxMemoryMin returns the MaxMemoryMin field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -855,28 +533,9 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) GetMaxMemoryMinOk() (*floa
 	return o.MaxMemoryMin.Get(), o.MaxMemoryMin.IsSet()
 }
 
-// IsSetMaxMemoryMin returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) IsSetMaxMemoryMin() bool {
-	if o != nil && o.MaxMemoryMin.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxMemoryMin gets a reference to the given NullableFloat32 and assigns it to the MaxMemoryMin field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetMaxMemoryMin(v float32) {
 	o.MaxMemoryMin.Set(&v)
-}
-
-// SetMaxMemoryMinNil sets the value for MaxMemoryMin to be an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetMaxMemoryMinNil() {
-	o.MaxMemoryMin.Set(nil)
-}
-
-// UnsetMaxMemoryMin ensures that no value is present for MaxMemoryMin, not even an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) UnsetMaxMemoryMin() {
-	o.MaxMemoryMin.Unset()
 }
 
 // GetMaxMemoryMax returns the MaxMemoryMax field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -898,28 +557,9 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) GetMaxMemoryMaxOk() (*floa
 	return o.MaxMemoryMax.Get(), o.MaxMemoryMax.IsSet()
 }
 
-// IsSetMaxMemoryMax returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) IsSetMaxMemoryMax() bool {
-	if o != nil && o.MaxMemoryMax.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxMemoryMax gets a reference to the given NullableFloat32 and assigns it to the MaxMemoryMax field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetMaxMemoryMax(v float32) {
 	o.MaxMemoryMax.Set(&v)
-}
-
-// SetMaxMemoryMaxNil sets the value for MaxMemoryMax to be an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetMaxMemoryMaxNil() {
-	o.MaxMemoryMax.Set(nil)
-}
-
-// UnsetMaxMemoryMax ensures that no value is present for MaxMemoryMax, not even an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) UnsetMaxMemoryMax() {
-	o.MaxMemoryMax.Unset()
 }
 
 // GetMaxMemoryAvg returns the MaxMemoryAvg field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -941,28 +581,9 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) GetMaxMemoryAvgOk() (*floa
 	return o.MaxMemoryAvg.Get(), o.MaxMemoryAvg.IsSet()
 }
 
-// IsSetMaxMemoryAvg returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) IsSetMaxMemoryAvg() bool {
-	if o != nil && o.MaxMemoryAvg.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxMemoryAvg gets a reference to the given NullableFloat32 and assigns it to the MaxMemoryAvg field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetMaxMemoryAvg(v float32) {
 	o.MaxMemoryAvg.Set(&v)
-}
-
-// SetMaxMemoryAvgNil sets the value for MaxMemoryAvg to be an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetMaxMemoryAvgNil() {
-	o.MaxMemoryAvg.Set(nil)
-}
-
-// UnsetMaxMemoryAvg ensures that no value is present for MaxMemoryAvg, not even an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) UnsetMaxMemoryAvg() {
-	o.MaxMemoryAvg.Unset()
 }
 
 // GetMaxMemorySum returns the MaxMemorySum field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -984,28 +605,9 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) GetMaxMemorySumOk() (*floa
 	return o.MaxMemorySum.Get(), o.MaxMemorySum.IsSet()
 }
 
-// IsSetMaxMemorySum returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) IsSetMaxMemorySum() bool {
-	if o != nil && o.MaxMemorySum.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxMemorySum gets a reference to the given NullableFloat32 and assigns it to the MaxMemorySum field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetMaxMemorySum(v float32) {
 	o.MaxMemorySum.Set(&v)
-}
-
-// SetMaxMemorySumNil sets the value for MaxMemorySum to be an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetMaxMemorySumNil() {
-	o.MaxMemorySum.Set(nil)
-}
-
-// UnsetMaxMemorySum ensures that no value is present for MaxMemorySum, not even an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) UnsetMaxMemorySum() {
-	o.MaxMemorySum.Unset()
 }
 
 // GetCpuUserTimeCount returns the CpuUserTimeCount field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1027,28 +629,9 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) GetCpuUserTimeCountOk() (*
 	return o.CpuUserTimeCount.Get(), o.CpuUserTimeCount.IsSet()
 }
 
-// IsSetCpuUserTimeCount returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) IsSetCpuUserTimeCount() bool {
-	if o != nil && o.CpuUserTimeCount.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuUserTimeCount gets a reference to the given NullableFloat32 and assigns it to the CpuUserTimeCount field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuUserTimeCount(v float32) {
 	o.CpuUserTimeCount.Set(&v)
-}
-
-// SetCpuUserTimeCountNil sets the value for CpuUserTimeCount to be an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuUserTimeCountNil() {
-	o.CpuUserTimeCount.Set(nil)
-}
-
-// UnsetCpuUserTimeCount ensures that no value is present for CpuUserTimeCount, not even an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) UnsetCpuUserTimeCount() {
-	o.CpuUserTimeCount.Unset()
 }
 
 // GetCpuUserTimeMin returns the CpuUserTimeMin field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1070,28 +653,9 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) GetCpuUserTimeMinOk() (*fl
 	return o.CpuUserTimeMin.Get(), o.CpuUserTimeMin.IsSet()
 }
 
-// IsSetCpuUserTimeMin returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) IsSetCpuUserTimeMin() bool {
-	if o != nil && o.CpuUserTimeMin.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuUserTimeMin gets a reference to the given NullableFloat32 and assigns it to the CpuUserTimeMin field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuUserTimeMin(v float32) {
 	o.CpuUserTimeMin.Set(&v)
-}
-
-// SetCpuUserTimeMinNil sets the value for CpuUserTimeMin to be an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuUserTimeMinNil() {
-	o.CpuUserTimeMin.Set(nil)
-}
-
-// UnsetCpuUserTimeMin ensures that no value is present for CpuUserTimeMin, not even an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) UnsetCpuUserTimeMin() {
-	o.CpuUserTimeMin.Unset()
 }
 
 // GetCpuUserTimeMax returns the CpuUserTimeMax field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1113,28 +677,9 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) GetCpuUserTimeMaxOk() (*fl
 	return o.CpuUserTimeMax.Get(), o.CpuUserTimeMax.IsSet()
 }
 
-// IsSetCpuUserTimeMax returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) IsSetCpuUserTimeMax() bool {
-	if o != nil && o.CpuUserTimeMax.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuUserTimeMax gets a reference to the given NullableFloat32 and assigns it to the CpuUserTimeMax field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuUserTimeMax(v float32) {
 	o.CpuUserTimeMax.Set(&v)
-}
-
-// SetCpuUserTimeMaxNil sets the value for CpuUserTimeMax to be an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuUserTimeMaxNil() {
-	o.CpuUserTimeMax.Set(nil)
-}
-
-// UnsetCpuUserTimeMax ensures that no value is present for CpuUserTimeMax, not even an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) UnsetCpuUserTimeMax() {
-	o.CpuUserTimeMax.Unset()
 }
 
 // GetCpuUserTimeAvg returns the CpuUserTimeAvg field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1156,28 +701,9 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) GetCpuUserTimeAvgOk() (*fl
 	return o.CpuUserTimeAvg.Get(), o.CpuUserTimeAvg.IsSet()
 }
 
-// IsSetCpuUserTimeAvg returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) IsSetCpuUserTimeAvg() bool {
-	if o != nil && o.CpuUserTimeAvg.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuUserTimeAvg gets a reference to the given NullableFloat32 and assigns it to the CpuUserTimeAvg field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuUserTimeAvg(v float32) {
 	o.CpuUserTimeAvg.Set(&v)
-}
-
-// SetCpuUserTimeAvgNil sets the value for CpuUserTimeAvg to be an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuUserTimeAvgNil() {
-	o.CpuUserTimeAvg.Set(nil)
-}
-
-// UnsetCpuUserTimeAvg ensures that no value is present for CpuUserTimeAvg, not even an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) UnsetCpuUserTimeAvg() {
-	o.CpuUserTimeAvg.Unset()
 }
 
 // GetCpuUserTimeSum returns the CpuUserTimeSum field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1199,28 +725,9 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) GetCpuUserTimeSumOk() (*fl
 	return o.CpuUserTimeSum.Get(), o.CpuUserTimeSum.IsSet()
 }
 
-// IsSetCpuUserTimeSum returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) IsSetCpuUserTimeSum() bool {
-	if o != nil && o.CpuUserTimeSum.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuUserTimeSum gets a reference to the given NullableFloat32 and assigns it to the CpuUserTimeSum field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuUserTimeSum(v float32) {
 	o.CpuUserTimeSum.Set(&v)
-}
-
-// SetCpuUserTimeSumNil sets the value for CpuUserTimeSum to be an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuUserTimeSumNil() {
-	o.CpuUserTimeSum.Set(nil)
-}
-
-// UnsetCpuUserTimeSum ensures that no value is present for CpuUserTimeSum, not even an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) UnsetCpuUserTimeSum() {
-	o.CpuUserTimeSum.Unset()
 }
 
 // GetCpuSystemTimeCount returns the CpuSystemTimeCount field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1242,28 +749,9 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) GetCpuSystemTimeCountOk() 
 	return o.CpuSystemTimeCount.Get(), o.CpuSystemTimeCount.IsSet()
 }
 
-// IsSetCpuSystemTimeCount returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) IsSetCpuSystemTimeCount() bool {
-	if o != nil && o.CpuSystemTimeCount.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuSystemTimeCount gets a reference to the given NullableFloat32 and assigns it to the CpuSystemTimeCount field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuSystemTimeCount(v float32) {
 	o.CpuSystemTimeCount.Set(&v)
-}
-
-// SetCpuSystemTimeCountNil sets the value for CpuSystemTimeCount to be an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuSystemTimeCountNil() {
-	o.CpuSystemTimeCount.Set(nil)
-}
-
-// UnsetCpuSystemTimeCount ensures that no value is present for CpuSystemTimeCount, not even an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) UnsetCpuSystemTimeCount() {
-	o.CpuSystemTimeCount.Unset()
 }
 
 // GetCpuSystemTimeMin returns the CpuSystemTimeMin field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1285,28 +773,9 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) GetCpuSystemTimeMinOk() (*
 	return o.CpuSystemTimeMin.Get(), o.CpuSystemTimeMin.IsSet()
 }
 
-// IsSetCpuSystemTimeMin returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) IsSetCpuSystemTimeMin() bool {
-	if o != nil && o.CpuSystemTimeMin.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuSystemTimeMin gets a reference to the given NullableFloat32 and assigns it to the CpuSystemTimeMin field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuSystemTimeMin(v float32) {
 	o.CpuSystemTimeMin.Set(&v)
-}
-
-// SetCpuSystemTimeMinNil sets the value for CpuSystemTimeMin to be an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuSystemTimeMinNil() {
-	o.CpuSystemTimeMin.Set(nil)
-}
-
-// UnsetCpuSystemTimeMin ensures that no value is present for CpuSystemTimeMin, not even an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) UnsetCpuSystemTimeMin() {
-	o.CpuSystemTimeMin.Unset()
 }
 
 // GetCpuSystemTimeMax returns the CpuSystemTimeMax field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1328,28 +797,9 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) GetCpuSystemTimeMaxOk() (*
 	return o.CpuSystemTimeMax.Get(), o.CpuSystemTimeMax.IsSet()
 }
 
-// IsSetCpuSystemTimeMax returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) IsSetCpuSystemTimeMax() bool {
-	if o != nil && o.CpuSystemTimeMax.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuSystemTimeMax gets a reference to the given NullableFloat32 and assigns it to the CpuSystemTimeMax field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuSystemTimeMax(v float32) {
 	o.CpuSystemTimeMax.Set(&v)
-}
-
-// SetCpuSystemTimeMaxNil sets the value for CpuSystemTimeMax to be an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuSystemTimeMaxNil() {
-	o.CpuSystemTimeMax.Set(nil)
-}
-
-// UnsetCpuSystemTimeMax ensures that no value is present for CpuSystemTimeMax, not even an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) UnsetCpuSystemTimeMax() {
-	o.CpuSystemTimeMax.Unset()
 }
 
 // GetCpuSystemTimeAvg returns the CpuSystemTimeAvg field value if set, zero value otherwise.
@@ -1368,15 +818,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) GetCpuSystemTimeAvgOk() (*
 		return nil, false
 	}
 	return o.CpuSystemTimeAvg, true
-}
-
-// IsSetCpuSystemTimeAvg returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) IsSetCpuSystemTimeAvg() bool {
-	if o != nil && !IsNil(o.CpuSystemTimeAvg) {
-		return true
-	}
-
-	return false
 }
 
 // SetCpuSystemTimeAvg gets a reference to the given float32 and assigns it to the CpuSystemTimeAvg field.
@@ -1403,28 +844,9 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) GetCpuSystemTimeSumOk() (*
 	return o.CpuSystemTimeSum.Get(), o.CpuSystemTimeSum.IsSet()
 }
 
-// IsSetCpuSystemTimeSum returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) IsSetCpuSystemTimeSum() bool {
-	if o != nil && o.CpuSystemTimeSum.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuSystemTimeSum gets a reference to the given NullableFloat32 and assigns it to the CpuSystemTimeSum field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuSystemTimeSum(v float32) {
 	o.CpuSystemTimeSum.Set(&v)
-}
-
-// SetCpuSystemTimeSumNil sets the value for CpuSystemTimeSum to be an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetCpuSystemTimeSumNil() {
-	o.CpuSystemTimeSum.Set(nil)
-}
-
-// UnsetCpuSystemTimeSum ensures that no value is present for CpuSystemTimeSum, not even an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) UnsetCpuSystemTimeSum() {
-	o.CpuSystemTimeSum.Unset()
 }
 
 // GetUsedMemoryCount returns the UsedMemoryCount field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1446,28 +868,9 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) GetUsedMemoryCountOk() (*f
 	return o.UsedMemoryCount.Get(), o.UsedMemoryCount.IsSet()
 }
 
-// IsSetUsedMemoryCount returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) IsSetUsedMemoryCount() bool {
-	if o != nil && o.UsedMemoryCount.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUsedMemoryCount gets a reference to the given NullableFloat32 and assigns it to the UsedMemoryCount field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetUsedMemoryCount(v float32) {
 	o.UsedMemoryCount.Set(&v)
-}
-
-// SetUsedMemoryCountNil sets the value for UsedMemoryCount to be an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetUsedMemoryCountNil() {
-	o.UsedMemoryCount.Set(nil)
-}
-
-// UnsetUsedMemoryCount ensures that no value is present for UsedMemoryCount, not even an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) UnsetUsedMemoryCount() {
-	o.UsedMemoryCount.Unset()
 }
 
 // GetUsedMemoryMin returns the UsedMemoryMin field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1489,28 +892,9 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) GetUsedMemoryMinOk() (*flo
 	return o.UsedMemoryMin.Get(), o.UsedMemoryMin.IsSet()
 }
 
-// IsSetUsedMemoryMin returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) IsSetUsedMemoryMin() bool {
-	if o != nil && o.UsedMemoryMin.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUsedMemoryMin gets a reference to the given NullableFloat32 and assigns it to the UsedMemoryMin field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetUsedMemoryMin(v float32) {
 	o.UsedMemoryMin.Set(&v)
-}
-
-// SetUsedMemoryMinNil sets the value for UsedMemoryMin to be an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetUsedMemoryMinNil() {
-	o.UsedMemoryMin.Set(nil)
-}
-
-// UnsetUsedMemoryMin ensures that no value is present for UsedMemoryMin, not even an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) UnsetUsedMemoryMin() {
-	o.UsedMemoryMin.Unset()
 }
 
 // GetUsedMemoryMax returns the UsedMemoryMax field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1532,28 +916,9 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) GetUsedMemoryMaxOk() (*flo
 	return o.UsedMemoryMax.Get(), o.UsedMemoryMax.IsSet()
 }
 
-// IsSetUsedMemoryMax returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) IsSetUsedMemoryMax() bool {
-	if o != nil && o.UsedMemoryMax.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUsedMemoryMax gets a reference to the given NullableFloat32 and assigns it to the UsedMemoryMax field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetUsedMemoryMax(v float32) {
 	o.UsedMemoryMax.Set(&v)
-}
-
-// SetUsedMemoryMaxNil sets the value for UsedMemoryMax to be an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetUsedMemoryMaxNil() {
-	o.UsedMemoryMax.Set(nil)
-}
-
-// UnsetUsedMemoryMax ensures that no value is present for UsedMemoryMax, not even an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) UnsetUsedMemoryMax() {
-	o.UsedMemoryMax.Unset()
 }
 
 // GetUsedMemoryAvg returns the UsedMemoryAvg field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1575,28 +940,9 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) GetUsedMemoryAvgOk() (*flo
 	return o.UsedMemoryAvg.Get(), o.UsedMemoryAvg.IsSet()
 }
 
-// IsSetUsedMemoryAvg returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) IsSetUsedMemoryAvg() bool {
-	if o != nil && o.UsedMemoryAvg.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUsedMemoryAvg gets a reference to the given NullableFloat32 and assigns it to the UsedMemoryAvg field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetUsedMemoryAvg(v float32) {
 	o.UsedMemoryAvg.Set(&v)
-}
-
-// SetUsedMemoryAvgNil sets the value for UsedMemoryAvg to be an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetUsedMemoryAvgNil() {
-	o.UsedMemoryAvg.Set(nil)
-}
-
-// UnsetUsedMemoryAvg ensures that no value is present for UsedMemoryAvg, not even an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) UnsetUsedMemoryAvg() {
-	o.UsedMemoryAvg.Unset()
 }
 
 // GetUsedMemorySum returns the UsedMemorySum field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1618,28 +964,9 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) GetUsedMemorySumOk() (*flo
 	return o.UsedMemorySum.Get(), o.UsedMemorySum.IsSet()
 }
 
-// IsSetUsedMemorySum returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) IsSetUsedMemorySum() bool {
-	if o != nil && o.UsedMemorySum.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUsedMemorySum gets a reference to the given NullableFloat32 and assigns it to the UsedMemorySum field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetUsedMemorySum(v float32) {
 	o.UsedMemorySum.Set(&v)
-}
-
-// SetUsedMemorySumNil sets the value for UsedMemorySum to be an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetUsedMemorySumNil() {
-	o.UsedMemorySum.Set(nil)
-}
-
-// UnsetUsedMemorySum ensures that no value is present for UsedMemorySum, not even an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) UnsetUsedMemorySum() {
-	o.UsedMemorySum.Unset()
 }
 
 // GetFreeMemoryCount returns the FreeMemoryCount field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1661,28 +988,9 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) GetFreeMemoryCountOk() (*f
 	return o.FreeMemoryCount.Get(), o.FreeMemoryCount.IsSet()
 }
 
-// IsSetFreeMemoryCount returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) IsSetFreeMemoryCount() bool {
-	if o != nil && o.FreeMemoryCount.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFreeMemoryCount gets a reference to the given NullableFloat32 and assigns it to the FreeMemoryCount field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetFreeMemoryCount(v float32) {
 	o.FreeMemoryCount.Set(&v)
-}
-
-// SetFreeMemoryCountNil sets the value for FreeMemoryCount to be an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetFreeMemoryCountNil() {
-	o.FreeMemoryCount.Set(nil)
-}
-
-// UnsetFreeMemoryCount ensures that no value is present for FreeMemoryCount, not even an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) UnsetFreeMemoryCount() {
-	o.FreeMemoryCount.Unset()
 }
 
 // GetFreeMemoryMin returns the FreeMemoryMin field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1704,28 +1012,9 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) GetFreeMemoryMinOk() (*flo
 	return o.FreeMemoryMin.Get(), o.FreeMemoryMin.IsSet()
 }
 
-// IsSetFreeMemoryMin returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) IsSetFreeMemoryMin() bool {
-	if o != nil && o.FreeMemoryMin.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFreeMemoryMin gets a reference to the given NullableFloat32 and assigns it to the FreeMemoryMin field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetFreeMemoryMin(v float32) {
 	o.FreeMemoryMin.Set(&v)
-}
-
-// SetFreeMemoryMinNil sets the value for FreeMemoryMin to be an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetFreeMemoryMinNil() {
-	o.FreeMemoryMin.Set(nil)
-}
-
-// UnsetFreeMemoryMin ensures that no value is present for FreeMemoryMin, not even an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) UnsetFreeMemoryMin() {
-	o.FreeMemoryMin.Unset()
 }
 
 // GetFreeMemoryMax returns the FreeMemoryMax field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1747,28 +1036,9 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) GetFreeMemoryMaxOk() (*flo
 	return o.FreeMemoryMax.Get(), o.FreeMemoryMax.IsSet()
 }
 
-// IsSetFreeMemoryMax returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) IsSetFreeMemoryMax() bool {
-	if o != nil && o.FreeMemoryMax.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFreeMemoryMax gets a reference to the given NullableFloat32 and assigns it to the FreeMemoryMax field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetFreeMemoryMax(v float32) {
 	o.FreeMemoryMax.Set(&v)
-}
-
-// SetFreeMemoryMaxNil sets the value for FreeMemoryMax to be an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetFreeMemoryMaxNil() {
-	o.FreeMemoryMax.Set(nil)
-}
-
-// UnsetFreeMemoryMax ensures that no value is present for FreeMemoryMax, not even an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) UnsetFreeMemoryMax() {
-	o.FreeMemoryMax.Unset()
 }
 
 // GetFreeMemoryAvg returns the FreeMemoryAvg field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1790,28 +1060,9 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) GetFreeMemoryAvgOk() (*flo
 	return o.FreeMemoryAvg.Get(), o.FreeMemoryAvg.IsSet()
 }
 
-// IsSetFreeMemoryAvg returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) IsSetFreeMemoryAvg() bool {
-	if o != nil && o.FreeMemoryAvg.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFreeMemoryAvg gets a reference to the given NullableFloat32 and assigns it to the FreeMemoryAvg field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetFreeMemoryAvg(v float32) {
 	o.FreeMemoryAvg.Set(&v)
-}
-
-// SetFreeMemoryAvgNil sets the value for FreeMemoryAvg to be an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetFreeMemoryAvgNil() {
-	o.FreeMemoryAvg.Set(nil)
-}
-
-// UnsetFreeMemoryAvg ensures that no value is present for FreeMemoryAvg, not even an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) UnsetFreeMemoryAvg() {
-	o.FreeMemoryAvg.Unset()
 }
 
 // GetFreeMemorySum returns the FreeMemorySum field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1833,28 +1084,9 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) GetFreeMemorySumOk() (*flo
 	return o.FreeMemorySum.Get(), o.FreeMemorySum.IsSet()
 }
 
-// IsSetFreeMemorySum returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) IsSetFreeMemorySum() bool {
-	if o != nil && o.FreeMemorySum.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFreeMemorySum gets a reference to the given NullableFloat32 and assigns it to the FreeMemorySum field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetFreeMemorySum(v float32) {
 	o.FreeMemorySum.Set(&v)
-}
-
-// SetFreeMemorySumNil sets the value for FreeMemorySum to be an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) SetFreeMemorySumNil() {
-	o.FreeMemorySum.Set(nil)
-}
-
-// UnsetFreeMemorySum ensures that no value is present for FreeMemorySum, not even an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOfConfig) UnsetFreeMemorySum() {
-	o.FreeMemorySum.Unset()
 }
 
 func (o GetGuidances200ResponseDiscoveryAnyOfConfig) MarshalJSON() ([]byte, error) {

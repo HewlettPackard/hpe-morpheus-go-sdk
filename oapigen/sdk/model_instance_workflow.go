@@ -67,15 +67,6 @@ func (o *InstanceWorkflow) GetTaskSetOk() (*InstanceWorkflowTaskSet, bool) {
 	return o.TaskSet, true
 }
 
-// IsSetTaskSet returns a boolean if a field has been set.
-func (o *InstanceWorkflow) IsSetTaskSet() bool {
-	if o != nil && !IsNil(o.TaskSet) {
-		return true
-	}
-
-	return false
-}
-
 // SetTaskSet gets a reference to the given InstanceWorkflowTaskSet and assigns it to the TaskSet field.
 func (o *InstanceWorkflow) SetTaskSet(v InstanceWorkflowTaskSet) {
 	o.TaskSet = &v
@@ -97,15 +88,6 @@ func (o *InstanceWorkflow) GetTaskPhaseOk() (*string, bool) {
 		return nil, false
 	}
 	return o.TaskPhase, true
-}
-
-// IsSetTaskPhase returns a boolean if a field has been set.
-func (o *InstanceWorkflow) IsSetTaskPhase() bool {
-	if o != nil && !IsNil(o.TaskPhase) {
-		return true
-	}
-
-	return false
 }
 
 // SetTaskPhase gets a reference to the given string and assigns it to the TaskPhase field.

@@ -64,15 +64,6 @@ func (o *GuidanceAzureReservationsConfig) GetSuccessOk() (*bool, bool) {
 	return o.Success, true
 }
 
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *GuidanceAzureReservationsConfig) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
-}
-
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.
 func (o *GuidanceAzureReservationsConfig) SetSuccess(v bool) {
 	o.Success = &v
@@ -94,15 +85,6 @@ func (o *GuidanceAzureReservationsConfig) GetDetailListOk() ([]GuidanceAzureRese
 		return nil, false
 	}
 	return o.DetailList, true
-}
-
-// IsSetDetailList returns a boolean if a field has been set.
-func (o *GuidanceAzureReservationsConfig) IsSetDetailList() bool {
-	if o != nil && !IsNil(o.DetailList) {
-		return true
-	}
-
-	return false
 }
 
 // SetDetailList gets a reference to the given []GuidanceAzureReservationsConfigDetailListInner and assigns it to the DetailList field.
@@ -128,15 +110,6 @@ func (o *GuidanceAzureReservationsConfig) GetServicesOk() (*GuidanceAzureReserva
 	return o.Services, true
 }
 
-// IsSetServices returns a boolean if a field has been set.
-func (o *GuidanceAzureReservationsConfig) IsSetServices() bool {
-	if o != nil && !IsNil(o.Services) {
-		return true
-	}
-
-	return false
-}
-
 // SetServices gets a reference to the given GuidanceAzureReservationsConfigServices and assigns it to the Services field.
 func (o *GuidanceAzureReservationsConfig) SetServices(v GuidanceAzureReservationsConfigServices) {
 	o.Services = &v
@@ -158,15 +131,6 @@ func (o *GuidanceAzureReservationsConfig) GetSummaryOk() (*GuidanceAzureReservat
 		return nil, false
 	}
 	return o.Summary, true
-}
-
-// IsSetSummary returns a boolean if a field has been set.
-func (o *GuidanceAzureReservationsConfig) IsSetSummary() bool {
-	if o != nil && !IsNil(o.Summary) {
-		return true
-	}
-
-	return false
 }
 
 // SetSummary gets a reference to the given GuidanceAzureReservationsConfigSummary and assigns it to the Summary field.

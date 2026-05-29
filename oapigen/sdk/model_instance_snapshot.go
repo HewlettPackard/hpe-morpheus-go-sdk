@@ -61,15 +61,6 @@ func (o *InstanceSnapshot) GetSnapshotOk() (*InstanceSnapshotSnapshot, bool) {
 	return o.Snapshot, true
 }
 
-// IsSetSnapshot returns a boolean if a field has been set.
-func (o *InstanceSnapshot) IsSetSnapshot() bool {
-	if o != nil && !IsNil(o.Snapshot) {
-		return true
-	}
-
-	return false
-}
-
 // SetSnapshot gets a reference to the given InstanceSnapshotSnapshot and assigns it to the Snapshot field.
 func (o *InstanceSnapshot) SetSnapshot(v InstanceSnapshotSnapshot) {
 	o.Snapshot = &v

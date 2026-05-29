@@ -136,15 +136,6 @@ func (o *UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInnerThreshold)
 	return o.AutoUp, true
 }
 
-// IsSetAutoUp returns a boolean if a field has been set.
-func (o *UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInnerThreshold) IsSetAutoUp() bool {
-	if o != nil && !IsNil(o.AutoUp) {
-		return true
-	}
-
-	return false
-}
-
 // SetAutoUp gets a reference to the given bool and assigns it to the AutoUp field.
 func (o *UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInnerThreshold) SetAutoUp(v bool) {
 	o.AutoUp = &v
@@ -166,15 +157,6 @@ func (o *UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInnerThreshold)
 		return nil, false
 	}
 	return o.AutoDown, true
-}
-
-// IsSetAutoDown returns a boolean if a field has been set.
-func (o *UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInnerThreshold) IsSetAutoDown() bool {
-	if o != nil && !IsNil(o.AutoDown) {
-		return true
-	}
-
-	return false
 }
 
 // SetAutoDown gets a reference to the given bool and assigns it to the AutoDown field.
@@ -200,15 +182,6 @@ func (o *UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInnerThreshold)
 	return o.MinCount, true
 }
 
-// IsSetMinCount returns a boolean if a field has been set.
-func (o *UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInnerThreshold) IsSetMinCount() bool {
-	if o != nil && !IsNil(o.MinCount) {
-		return true
-	}
-
-	return false
-}
-
 // SetMinCount gets a reference to the given int32 and assigns it to the MinCount field.
 func (o *UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInnerThreshold) SetMinCount(v int32) {
 	o.MinCount = &v
@@ -230,15 +203,6 @@ func (o *UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInnerThreshold)
 		return nil, false
 	}
 	return o.MaxCount, true
-}
-
-// IsSetMaxCount returns a boolean if a field has been set.
-func (o *UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInnerThreshold) IsSetMaxCount() bool {
-	if o != nil && !IsNil(o.MaxCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxCount gets a reference to the given int32 and assigns it to the MaxCount field.
@@ -264,15 +228,6 @@ func (o *UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInnerThreshold)
 	return o.ScaleIncrement, true
 }
 
-// IsSetScaleIncrement returns a boolean if a field has been set.
-func (o *UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInnerThreshold) IsSetScaleIncrement() bool {
-	if o != nil && !IsNil(o.ScaleIncrement) {
-		return true
-	}
-
-	return false
-}
-
 // SetScaleIncrement gets a reference to the given int64 and assigns it to the ScaleIncrement field.
 func (o *UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInnerThreshold) SetScaleIncrement(v int64) {
 	o.ScaleIncrement = &v
@@ -294,15 +249,6 @@ func (o *UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInnerThreshold)
 		return nil, false
 	}
 	return o.CpuEnabled, true
-}
-
-// IsSetCpuEnabled returns a boolean if a field has been set.
-func (o *UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInnerThreshold) IsSetCpuEnabled() bool {
-	if o != nil && !IsNil(o.CpuEnabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetCpuEnabled gets a reference to the given bool and assigns it to the CpuEnabled field.
@@ -328,15 +274,6 @@ func (o *UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInnerThreshold)
 	return o.MinCpu, true
 }
 
-// IsSetMinCpu returns a boolean if a field has been set.
-func (o *UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInnerThreshold) IsSetMinCpu() bool {
-	if o != nil && !IsNil(o.MinCpu) {
-		return true
-	}
-
-	return false
-}
-
 // SetMinCpu gets a reference to the given float64 and assigns it to the MinCpu field.
 func (o *UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInnerThreshold) SetMinCpu(v float64) {
 	o.MinCpu = &v
@@ -358,15 +295,6 @@ func (o *UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInnerThreshold)
 		return nil, false
 	}
 	return o.MaxCpu, true
-}
-
-// IsSetMaxCpu returns a boolean if a field has been set.
-func (o *UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInnerThreshold) IsSetMaxCpu() bool {
-	if o != nil && !IsNil(o.MaxCpu) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxCpu gets a reference to the given float64 and assigns it to the MaxCpu field.
@@ -392,15 +320,6 @@ func (o *UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInnerThreshold)
 	return o.MemoryEnabled, true
 }
 
-// IsSetMemoryEnabled returns a boolean if a field has been set.
-func (o *UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInnerThreshold) IsSetMemoryEnabled() bool {
-	if o != nil && !IsNil(o.MemoryEnabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetMemoryEnabled gets a reference to the given bool and assigns it to the MemoryEnabled field.
 func (o *UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInnerThreshold) SetMemoryEnabled(v bool) {
 	o.MemoryEnabled = &v
@@ -422,15 +341,6 @@ func (o *UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInnerThreshold)
 		return nil, false
 	}
 	return o.MinMemory, true
-}
-
-// IsSetMinMemory returns a boolean if a field has been set.
-func (o *UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInnerThreshold) IsSetMinMemory() bool {
-	if o != nil && !IsNil(o.MinMemory) {
-		return true
-	}
-
-	return false
 }
 
 // SetMinMemory gets a reference to the given float64 and assigns it to the MinMemory field.
@@ -456,15 +366,6 @@ func (o *UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInnerThreshold)
 	return o.MaxMemory, true
 }
 
-// IsSetMaxMemory returns a boolean if a field has been set.
-func (o *UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInnerThreshold) IsSetMaxMemory() bool {
-	if o != nil && !IsNil(o.MaxMemory) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxMemory gets a reference to the given float64 and assigns it to the MaxMemory field.
 func (o *UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInnerThreshold) SetMaxMemory(v float64) {
 	o.MaxMemory = &v
@@ -486,15 +387,6 @@ func (o *UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInnerThreshold)
 		return nil, false
 	}
 	return o.DiskEnabled, true
-}
-
-// IsSetDiskEnabled returns a boolean if a field has been set.
-func (o *UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInnerThreshold) IsSetDiskEnabled() bool {
-	if o != nil && !IsNil(o.DiskEnabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetDiskEnabled gets a reference to the given bool and assigns it to the DiskEnabled field.
@@ -520,15 +412,6 @@ func (o *UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInnerThreshold)
 	return o.MinDisk, true
 }
 
-// IsSetMinDisk returns a boolean if a field has been set.
-func (o *UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInnerThreshold) IsSetMinDisk() bool {
-	if o != nil && !IsNil(o.MinDisk) {
-		return true
-	}
-
-	return false
-}
-
 // SetMinDisk gets a reference to the given float64 and assigns it to the MinDisk field.
 func (o *UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInnerThreshold) SetMinDisk(v float64) {
 	o.MinDisk = &v
@@ -550,15 +433,6 @@ func (o *UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInnerThreshold)
 		return nil, false
 	}
 	return o.MaxDisk, true
-}
-
-// IsSetMaxDisk returns a boolean if a field has been set.
-func (o *UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInnerThreshold) IsSetMaxDisk() bool {
-	if o != nil && !IsNil(o.MaxDisk) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxDisk gets a reference to the given float64 and assigns it to the MaxDisk field.

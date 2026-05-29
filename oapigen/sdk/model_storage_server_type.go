@@ -90,15 +90,6 @@ func (o *StorageServerType) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *StorageServerType) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *StorageServerType) SetId(v int64) {
 	o.Id = &v
@@ -120,15 +111,6 @@ func (o *StorageServerType) GetCodeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *StorageServerType) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -154,15 +136,6 @@ func (o *StorageServerType) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *StorageServerType) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *StorageServerType) SetName(v string) {
 	o.Name = &v
@@ -184,15 +157,6 @@ func (o *StorageServerType) GetDescriptionOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *StorageServerType) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -218,15 +182,6 @@ func (o *StorageServerType) GetEnabledOk() (*bool, bool) {
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *StorageServerType) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *StorageServerType) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -248,15 +203,6 @@ func (o *StorageServerType) GetCreatableOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Creatable, true
-}
-
-// IsSetCreatable returns a boolean if a field has been set.
-func (o *StorageServerType) IsSetCreatable() bool {
-	if o != nil && !IsNil(o.Creatable) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreatable gets a reference to the given bool and assigns it to the Creatable field.
@@ -282,15 +228,6 @@ func (o *StorageServerType) GetHasNamespacesOk() (*bool, bool) {
 	return o.HasNamespaces, true
 }
 
-// IsSetHasNamespaces returns a boolean if a field has been set.
-func (o *StorageServerType) IsSetHasNamespaces() bool {
-	if o != nil && !IsNil(o.HasNamespaces) {
-		return true
-	}
-
-	return false
-}
-
 // SetHasNamespaces gets a reference to the given bool and assigns it to the HasNamespaces field.
 func (o *StorageServerType) SetHasNamespaces(v bool) {
 	o.HasNamespaces = &v
@@ -312,15 +249,6 @@ func (o *StorageServerType) GetHasGroupsOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.HasGroups, true
-}
-
-// IsSetHasGroups returns a boolean if a field has been set.
-func (o *StorageServerType) IsSetHasGroups() bool {
-	if o != nil && !IsNil(o.HasGroups) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasGroups gets a reference to the given bool and assigns it to the HasGroups field.
@@ -346,15 +274,6 @@ func (o *StorageServerType) GetHasBlockOk() (*bool, bool) {
 	return o.HasBlock, true
 }
 
-// IsSetHasBlock returns a boolean if a field has been set.
-func (o *StorageServerType) IsSetHasBlock() bool {
-	if o != nil && !IsNil(o.HasBlock) {
-		return true
-	}
-
-	return false
-}
-
 // SetHasBlock gets a reference to the given bool and assigns it to the HasBlock field.
 func (o *StorageServerType) SetHasBlock(v bool) {
 	o.HasBlock = &v
@@ -376,15 +295,6 @@ func (o *StorageServerType) GetHasObjectOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.HasObject, true
-}
-
-// IsSetHasObject returns a boolean if a field has been set.
-func (o *StorageServerType) IsSetHasObject() bool {
-	if o != nil && !IsNil(o.HasObject) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasObject gets a reference to the given bool and assigns it to the HasObject field.
@@ -410,15 +320,6 @@ func (o *StorageServerType) GetHasFileOk() (*bool, bool) {
 	return o.HasFile, true
 }
 
-// IsSetHasFile returns a boolean if a field has been set.
-func (o *StorageServerType) IsSetHasFile() bool {
-	if o != nil && !IsNil(o.HasFile) {
-		return true
-	}
-
-	return false
-}
-
 // SetHasFile gets a reference to the given bool and assigns it to the HasFile field.
 func (o *StorageServerType) SetHasFile(v bool) {
 	o.HasFile = &v
@@ -440,15 +341,6 @@ func (o *StorageServerType) GetHasDatastoreOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.HasDatastore, true
-}
-
-// IsSetHasDatastore returns a boolean if a field has been set.
-func (o *StorageServerType) IsSetHasDatastore() bool {
-	if o != nil && !IsNil(o.HasDatastore) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasDatastore gets a reference to the given bool and assigns it to the HasDatastore field.
@@ -474,15 +366,6 @@ func (o *StorageServerType) GetHasDisksOk() (*bool, bool) {
 	return o.HasDisks, true
 }
 
-// IsSetHasDisks returns a boolean if a field has been set.
-func (o *StorageServerType) IsSetHasDisks() bool {
-	if o != nil && !IsNil(o.HasDisks) {
-		return true
-	}
-
-	return false
-}
-
 // SetHasDisks gets a reference to the given bool and assigns it to the HasDisks field.
 func (o *StorageServerType) SetHasDisks(v bool) {
 	o.HasDisks = &v
@@ -504,15 +387,6 @@ func (o *StorageServerType) GetHasHostsOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.HasHosts, true
-}
-
-// IsSetHasHosts returns a boolean if a field has been set.
-func (o *StorageServerType) IsSetHasHosts() bool {
-	if o != nil && !IsNil(o.HasHosts) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasHosts gets a reference to the given bool and assigns it to the HasHosts field.
@@ -538,15 +412,6 @@ func (o *StorageServerType) GetCreateNamespacesOk() (*bool, bool) {
 	return o.CreateNamespaces, true
 }
 
-// IsSetCreateNamespaces returns a boolean if a field has been set.
-func (o *StorageServerType) IsSetCreateNamespaces() bool {
-	if o != nil && !IsNil(o.CreateNamespaces) {
-		return true
-	}
-
-	return false
-}
-
 // SetCreateNamespaces gets a reference to the given bool and assigns it to the CreateNamespaces field.
 func (o *StorageServerType) SetCreateNamespaces(v bool) {
 	o.CreateNamespaces = &v
@@ -568,15 +433,6 @@ func (o *StorageServerType) GetCreateGroupOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.CreateGroup, true
-}
-
-// IsSetCreateGroup returns a boolean if a field has been set.
-func (o *StorageServerType) IsSetCreateGroup() bool {
-	if o != nil && !IsNil(o.CreateGroup) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreateGroup gets a reference to the given bool and assigns it to the CreateGroup field.
@@ -602,15 +458,6 @@ func (o *StorageServerType) GetCreateBlockOk() (*bool, bool) {
 	return o.CreateBlock, true
 }
 
-// IsSetCreateBlock returns a boolean if a field has been set.
-func (o *StorageServerType) IsSetCreateBlock() bool {
-	if o != nil && !IsNil(o.CreateBlock) {
-		return true
-	}
-
-	return false
-}
-
 // SetCreateBlock gets a reference to the given bool and assigns it to the CreateBlock field.
 func (o *StorageServerType) SetCreateBlock(v bool) {
 	o.CreateBlock = &v
@@ -632,15 +479,6 @@ func (o *StorageServerType) GetCreateObjectOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.CreateObject, true
-}
-
-// IsSetCreateObject returns a boolean if a field has been set.
-func (o *StorageServerType) IsSetCreateObject() bool {
-	if o != nil && !IsNil(o.CreateObject) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreateObject gets a reference to the given bool and assigns it to the CreateObject field.
@@ -666,15 +504,6 @@ func (o *StorageServerType) GetCreateFileOk() (*bool, bool) {
 	return o.CreateFile, true
 }
 
-// IsSetCreateFile returns a boolean if a field has been set.
-func (o *StorageServerType) IsSetCreateFile() bool {
-	if o != nil && !IsNil(o.CreateFile) {
-		return true
-	}
-
-	return false
-}
-
 // SetCreateFile gets a reference to the given bool and assigns it to the CreateFile field.
 func (o *StorageServerType) SetCreateFile(v bool) {
 	o.CreateFile = &v
@@ -696,15 +525,6 @@ func (o *StorageServerType) GetCreateDatastoreOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.CreateDatastore, true
-}
-
-// IsSetCreateDatastore returns a boolean if a field has been set.
-func (o *StorageServerType) IsSetCreateDatastore() bool {
-	if o != nil && !IsNil(o.CreateDatastore) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreateDatastore gets a reference to the given bool and assigns it to the CreateDatastore field.
@@ -730,15 +550,6 @@ func (o *StorageServerType) GetCreateDiskOk() (*bool, bool) {
 	return o.CreateDisk, true
 }
 
-// IsSetCreateDisk returns a boolean if a field has been set.
-func (o *StorageServerType) IsSetCreateDisk() bool {
-	if o != nil && !IsNil(o.CreateDisk) {
-		return true
-	}
-
-	return false
-}
-
 // SetCreateDisk gets a reference to the given bool and assigns it to the CreateDisk field.
 func (o *StorageServerType) SetCreateDisk(v bool) {
 	o.CreateDisk = &v
@@ -760,15 +571,6 @@ func (o *StorageServerType) GetCreateHostOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.CreateHost, true
-}
-
-// IsSetCreateHost returns a boolean if a field has been set.
-func (o *StorageServerType) IsSetCreateHost() bool {
-	if o != nil && !IsNil(o.CreateHost) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreateHost gets a reference to the given bool and assigns it to the CreateHost field.
@@ -795,28 +597,9 @@ func (o *StorageServerType) GetIconCodeOk() (*string, bool) {
 	return o.IconCode.Get(), o.IconCode.IsSet()
 }
 
-// IsSetIconCode returns a boolean if a field has been set.
-func (o *StorageServerType) IsSetIconCode() bool {
-	if o != nil && o.IconCode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetIconCode gets a reference to the given NullableString and assigns it to the IconCode field.
 func (o *StorageServerType) SetIconCode(v string) {
 	o.IconCode.Set(&v)
-}
-
-// SetIconCodeNil sets the value for IconCode to be an explicit nil
-func (o *StorageServerType) SetIconCodeNil() {
-	o.IconCode.Set(nil)
-}
-
-// UnsetIconCode ensures that no value is present for IconCode, not even an explicit nil
-func (o *StorageServerType) UnsetIconCode() {
-	o.IconCode.Unset()
 }
 
 // GetHasFileBrowser returns the HasFileBrowser field value if set, zero value otherwise.
@@ -835,15 +618,6 @@ func (o *StorageServerType) GetHasFileBrowserOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.HasFileBrowser, true
-}
-
-// IsSetHasFileBrowser returns a boolean if a field has been set.
-func (o *StorageServerType) IsSetHasFileBrowser() bool {
-	if o != nil && !IsNil(o.HasFileBrowser) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasFileBrowser gets a reference to the given bool and assigns it to the HasFileBrowser field.
@@ -869,15 +643,6 @@ func (o *StorageServerType) GetOptionTypesOk() ([]GetStorageServerTypes200Respon
 	return o.OptionTypes, true
 }
 
-// IsSetOptionTypes returns a boolean if a field has been set.
-func (o *StorageServerType) IsSetOptionTypes() bool {
-	if o != nil && !IsNil(o.OptionTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetOptionTypes gets a reference to the given []GetStorageServerTypes200ResponseStorageServerTypeOptionTypesInner and assigns it to the OptionTypes field.
 func (o *StorageServerType) SetOptionTypes(v []GetStorageServerTypes200ResponseStorageServerTypeOptionTypesInner) {
 	o.OptionTypes = v
@@ -899,15 +664,6 @@ func (o *StorageServerType) GetGroupOptionTypesOk() ([]GetStorageServerTypes200R
 		return nil, false
 	}
 	return o.GroupOptionTypes, true
-}
-
-// IsSetGroupOptionTypes returns a boolean if a field has been set.
-func (o *StorageServerType) IsSetGroupOptionTypes() bool {
-	if o != nil && !IsNil(o.GroupOptionTypes) {
-		return true
-	}
-
-	return false
 }
 
 // SetGroupOptionTypes gets a reference to the given []GetStorageServerTypes200ResponseStorageServerTypeGroupOptionTypesInner and assigns it to the GroupOptionTypes field.
@@ -934,15 +690,6 @@ func (o *StorageServerType) GetBucketOptionTypesOk() ([]map[string]interface{}, 
 	return o.BucketOptionTypes, true
 }
 
-// IsSetBucketOptionTypes returns a boolean if a field has been set.
-func (o *StorageServerType) IsSetBucketOptionTypes() bool {
-	if o != nil && !IsNil(o.BucketOptionTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetBucketOptionTypes gets a reference to the given []map[string]interface{} and assigns it to the BucketOptionTypes field.
 func (o *StorageServerType) SetBucketOptionTypes(v []map[string]interface{}) {
 	o.BucketOptionTypes = v
@@ -965,15 +712,6 @@ func (o *StorageServerType) GetShareOptionTypesOk() ([]map[string]interface{}, b
 		return nil, false
 	}
 	return o.ShareOptionTypes, true
-}
-
-// IsSetShareOptionTypes returns a boolean if a field has been set.
-func (o *StorageServerType) IsSetShareOptionTypes() bool {
-	if o != nil && !IsNil(o.ShareOptionTypes) {
-		return true
-	}
-
-	return false
 }
 
 // SetShareOptionTypes gets a reference to the given []map[string]interface{} and assigns it to the ShareOptionTypes field.
@@ -1000,15 +738,6 @@ func (o *StorageServerType) GetShareAccessOptionTypesOk() ([]map[string]interfac
 	return o.ShareAccessOptionTypes, true
 }
 
-// IsSetShareAccessOptionTypes returns a boolean if a field has been set.
-func (o *StorageServerType) IsSetShareAccessOptionTypes() bool {
-	if o != nil && !IsNil(o.ShareAccessOptionTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetShareAccessOptionTypes gets a reference to the given []map[string]interface{} and assigns it to the ShareAccessOptionTypes field.
 func (o *StorageServerType) SetShareAccessOptionTypes(v []map[string]interface{}) {
 	o.ShareAccessOptionTypes = v
@@ -1030,15 +759,6 @@ func (o *StorageServerType) GetStorageVolumeTypesOk() ([]GetStorageServerTypes20
 		return nil, false
 	}
 	return o.StorageVolumeTypes, true
-}
-
-// IsSetStorageVolumeTypes returns a boolean if a field has been set.
-func (o *StorageServerType) IsSetStorageVolumeTypes() bool {
-	if o != nil && !IsNil(o.StorageVolumeTypes) {
-		return true
-	}
-
-	return false
 }
 
 // SetStorageVolumeTypes gets a reference to the given []GetStorageServerTypes200ResponseStorageServerTypeStorageVolumeTypesInner and assigns it to the StorageVolumeTypes field.

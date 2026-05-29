@@ -111,15 +111,6 @@ func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) GetIdOk() (*i
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) SetId(v int64) {
 	o.Id = &v
@@ -141,15 +132,6 @@ func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) GetTypeOk() (
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given CreateNetworkPoolServer200ResponseAllOfNetworkPoolServerType and assigns it to the Type field.
@@ -175,15 +157,6 @@ func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) GetNameOk() (
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) SetName(v string) {
 	o.Name = &v
@@ -205,15 +178,6 @@ func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) GetEnabledOk(
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -240,28 +204,9 @@ func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) GetServiceUrl
 	return o.ServiceUrl.Get(), o.ServiceUrl.IsSet()
 }
 
-// IsSetServiceUrl returns a boolean if a field has been set.
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) IsSetServiceUrl() bool {
-	if o != nil && o.ServiceUrl.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceUrl gets a reference to the given NullableString and assigns it to the ServiceUrl field.
 func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) SetServiceUrl(v string) {
 	o.ServiceUrl.Set(&v)
-}
-
-// SetServiceUrlNil sets the value for ServiceUrl to be an explicit nil
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) SetServiceUrlNil() {
-	o.ServiceUrl.Set(nil)
-}
-
-// UnsetServiceUrl ensures that no value is present for ServiceUrl, not even an explicit nil
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) UnsetServiceUrl() {
-	o.ServiceUrl.Unset()
 }
 
 // GetServiceHost returns the ServiceHost field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -283,28 +228,9 @@ func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) GetServiceHos
 	return o.ServiceHost.Get(), o.ServiceHost.IsSet()
 }
 
-// IsSetServiceHost returns a boolean if a field has been set.
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) IsSetServiceHost() bool {
-	if o != nil && o.ServiceHost.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceHost gets a reference to the given NullableString and assigns it to the ServiceHost field.
 func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) SetServiceHost(v string) {
 	o.ServiceHost.Set(&v)
-}
-
-// SetServiceHostNil sets the value for ServiceHost to be an explicit nil
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) SetServiceHostNil() {
-	o.ServiceHost.Set(nil)
-}
-
-// UnsetServiceHost ensures that no value is present for ServiceHost, not even an explicit nil
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) UnsetServiceHost() {
-	o.ServiceHost.Unset()
 }
 
 // GetServicePort returns the ServicePort field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -326,28 +252,9 @@ func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) GetServicePor
 	return o.ServicePort.Get(), o.ServicePort.IsSet()
 }
 
-// IsSetServicePort returns a boolean if a field has been set.
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) IsSetServicePort() bool {
-	if o != nil && o.ServicePort.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServicePort gets a reference to the given NullableInt32 and assigns it to the ServicePort field.
 func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) SetServicePort(v int32) {
 	o.ServicePort.Set(&v)
-}
-
-// SetServicePortNil sets the value for ServicePort to be an explicit nil
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) SetServicePortNil() {
-	o.ServicePort.Set(nil)
-}
-
-// UnsetServicePort ensures that no value is present for ServicePort, not even an explicit nil
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) UnsetServicePort() {
-	o.ServicePort.Unset()
 }
 
 // GetServiceMode returns the ServiceMode field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -369,28 +276,9 @@ func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) GetServiceMod
 	return o.ServiceMode.Get(), o.ServiceMode.IsSet()
 }
 
-// IsSetServiceMode returns a boolean if a field has been set.
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) IsSetServiceMode() bool {
-	if o != nil && o.ServiceMode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceMode gets a reference to the given NullableString and assigns it to the ServiceMode field.
 func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) SetServiceMode(v string) {
 	o.ServiceMode.Set(&v)
-}
-
-// SetServiceModeNil sets the value for ServiceMode to be an explicit nil
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) SetServiceModeNil() {
-	o.ServiceMode.Set(nil)
-}
-
-// UnsetServiceMode ensures that no value is present for ServiceMode, not even an explicit nil
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) UnsetServiceMode() {
-	o.ServiceMode.Unset()
 }
 
 // GetServiceUsername returns the ServiceUsername field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -412,28 +300,9 @@ func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) GetServiceUse
 	return o.ServiceUsername.Get(), o.ServiceUsername.IsSet()
 }
 
-// IsSetServiceUsername returns a boolean if a field has been set.
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) IsSetServiceUsername() bool {
-	if o != nil && o.ServiceUsername.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceUsername gets a reference to the given NullableString and assigns it to the ServiceUsername field.
 func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) SetServiceUsername(v string) {
 	o.ServiceUsername.Set(&v)
-}
-
-// SetServiceUsernameNil sets the value for ServiceUsername to be an explicit nil
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) SetServiceUsernameNil() {
-	o.ServiceUsername.Set(nil)
-}
-
-// UnsetServiceUsername ensures that no value is present for ServiceUsername, not even an explicit nil
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) UnsetServiceUsername() {
-	o.ServiceUsername.Unset()
 }
 
 // GetServicePassword returns the ServicePassword field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -455,28 +324,9 @@ func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) GetServicePas
 	return o.ServicePassword.Get(), o.ServicePassword.IsSet()
 }
 
-// IsSetServicePassword returns a boolean if a field has been set.
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) IsSetServicePassword() bool {
-	if o != nil && o.ServicePassword.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServicePassword gets a reference to the given NullableString and assigns it to the ServicePassword field.
 func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) SetServicePassword(v string) {
 	o.ServicePassword.Set(&v)
-}
-
-// SetServicePasswordNil sets the value for ServicePassword to be an explicit nil
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) SetServicePasswordNil() {
-	o.ServicePassword.Set(nil)
-}
-
-// UnsetServicePassword ensures that no value is present for ServicePassword, not even an explicit nil
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) UnsetServicePassword() {
-	o.ServicePassword.Unset()
 }
 
 // GetServicePasswordHash returns the ServicePasswordHash field value if set, zero value otherwise.
@@ -495,15 +345,6 @@ func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) GetServicePas
 		return nil, false
 	}
 	return o.ServicePasswordHash, true
-}
-
-// IsSetServicePasswordHash returns a boolean if a field has been set.
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) IsSetServicePasswordHash() bool {
-	if o != nil && !IsNil(o.ServicePasswordHash) {
-		return true
-	}
-
-	return false
 }
 
 // SetServicePasswordHash gets a reference to the given string and assigns it to the ServicePasswordHash field.
@@ -530,28 +371,9 @@ func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) GetServiceThr
 	return o.ServiceThrottleRate.Get(), o.ServiceThrottleRate.IsSet()
 }
 
-// IsSetServiceThrottleRate returns a boolean if a field has been set.
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) IsSetServiceThrottleRate() bool {
-	if o != nil && o.ServiceThrottleRate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceThrottleRate gets a reference to the given NullableInt64 and assigns it to the ServiceThrottleRate field.
 func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) SetServiceThrottleRate(v int64) {
 	o.ServiceThrottleRate.Set(&v)
-}
-
-// SetServiceThrottleRateNil sets the value for ServiceThrottleRate to be an explicit nil
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) SetServiceThrottleRateNil() {
-	o.ServiceThrottleRate.Set(nil)
-}
-
-// UnsetServiceThrottleRate ensures that no value is present for ServiceThrottleRate, not even an explicit nil
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) UnsetServiceThrottleRate() {
-	o.ServiceThrottleRate.Unset()
 }
 
 // GetIgnoreSsl returns the IgnoreSsl field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -573,28 +395,9 @@ func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) GetIgnoreSslO
 	return o.IgnoreSsl.Get(), o.IgnoreSsl.IsSet()
 }
 
-// IsSetIgnoreSsl returns a boolean if a field has been set.
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) IsSetIgnoreSsl() bool {
-	if o != nil && o.IgnoreSsl.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetIgnoreSsl gets a reference to the given NullableBool and assigns it to the IgnoreSsl field.
 func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) SetIgnoreSsl(v bool) {
 	o.IgnoreSsl.Set(&v)
-}
-
-// SetIgnoreSslNil sets the value for IgnoreSsl to be an explicit nil
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) SetIgnoreSslNil() {
-	o.IgnoreSsl.Set(nil)
-}
-
-// UnsetIgnoreSsl ensures that no value is present for IgnoreSsl, not even an explicit nil
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) UnsetIgnoreSsl() {
-	o.IgnoreSsl.Unset()
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -613,15 +416,6 @@ func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) GetStatusOk()
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -648,28 +442,9 @@ func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) GetStatusMess
 	return o.StatusMessage.Get(), o.StatusMessage.IsSet()
 }
 
-// IsSetStatusMessage returns a boolean if a field has been set.
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) IsSetStatusMessage() bool {
-	if o != nil && o.StatusMessage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusMessage gets a reference to the given NullableString and assigns it to the StatusMessage field.
 func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) SetStatusMessage(v string) {
 	o.StatusMessage.Set(&v)
-}
-
-// SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) SetStatusMessageNil() {
-	o.StatusMessage.Set(nil)
-}
-
-// UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) UnsetStatusMessage() {
-	o.StatusMessage.Unset()
 }
 
 // GetStatusDate returns the StatusDate field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -691,28 +466,9 @@ func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) GetStatusDate
 	return o.StatusDate.Get(), o.StatusDate.IsSet()
 }
 
-// IsSetStatusDate returns a boolean if a field has been set.
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) IsSetStatusDate() bool {
-	if o != nil && o.StatusDate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusDate gets a reference to the given NullableTime and assigns it to the StatusDate field.
 func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) SetStatusDate(v time.Time) {
 	o.StatusDate.Set(&v)
-}
-
-// SetStatusDateNil sets the value for StatusDate to be an explicit nil
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) SetStatusDateNil() {
-	o.StatusDate.Set(nil)
-}
-
-// UnsetStatusDate ensures that no value is present for StatusDate, not even an explicit nil
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) UnsetStatusDate() {
-	o.StatusDate.Unset()
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
@@ -731,15 +487,6 @@ func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) GetConfigOk()
 		return map[string]interface{}{}, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
@@ -766,28 +513,9 @@ func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) GetNetworkFil
 	return o.NetworkFilter.Get(), o.NetworkFilter.IsSet()
 }
 
-// IsSetNetworkFilter returns a boolean if a field has been set.
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) IsSetNetworkFilter() bool {
-	if o != nil && o.NetworkFilter.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkFilter gets a reference to the given NullableString and assigns it to the NetworkFilter field.
 func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) SetNetworkFilter(v string) {
 	o.NetworkFilter.Set(&v)
-}
-
-// SetNetworkFilterNil sets the value for NetworkFilter to be an explicit nil
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) SetNetworkFilterNil() {
-	o.NetworkFilter.Set(nil)
-}
-
-// UnsetNetworkFilter ensures that no value is present for NetworkFilter, not even an explicit nil
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) UnsetNetworkFilter() {
-	o.NetworkFilter.Unset()
 }
 
 // GetZoneFilter returns the ZoneFilter field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -809,28 +537,9 @@ func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) GetZoneFilter
 	return o.ZoneFilter.Get(), o.ZoneFilter.IsSet()
 }
 
-// IsSetZoneFilter returns a boolean if a field has been set.
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) IsSetZoneFilter() bool {
-	if o != nil && o.ZoneFilter.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetZoneFilter gets a reference to the given NullableString and assigns it to the ZoneFilter field.
 func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) SetZoneFilter(v string) {
 	o.ZoneFilter.Set(&v)
-}
-
-// SetZoneFilterNil sets the value for ZoneFilter to be an explicit nil
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) SetZoneFilterNil() {
-	o.ZoneFilter.Set(nil)
-}
-
-// UnsetZoneFilter ensures that no value is present for ZoneFilter, not even an explicit nil
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) UnsetZoneFilter() {
-	o.ZoneFilter.Unset()
 }
 
 // GetTenantMatch returns the TenantMatch field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -852,28 +561,9 @@ func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) GetTenantMatc
 	return o.TenantMatch.Get(), o.TenantMatch.IsSet()
 }
 
-// IsSetTenantMatch returns a boolean if a field has been set.
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) IsSetTenantMatch() bool {
-	if o != nil && o.TenantMatch.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetTenantMatch gets a reference to the given NullableString and assigns it to the TenantMatch field.
 func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) SetTenantMatch(v string) {
 	o.TenantMatch.Set(&v)
-}
-
-// SetTenantMatchNil sets the value for TenantMatch to be an explicit nil
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) SetTenantMatchNil() {
-	o.TenantMatch.Set(nil)
-}
-
-// UnsetTenantMatch ensures that no value is present for TenantMatch, not even an explicit nil
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) UnsetTenantMatch() {
-	o.TenantMatch.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -892,15 +582,6 @@ func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) GetDateCreate
 		return nil, false
 	}
 	return o.DateCreated, true
-}
-
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
@@ -926,15 +607,6 @@ func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) GetLastUpdate
 	return o.LastUpdated, true
 }
 
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
-}
-
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
 func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) SetLastUpdated(v time.Time) {
 	o.LastUpdated = &v
@@ -956,15 +628,6 @@ func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) GetAccountOk(
 		return nil, false
 	}
 	return o.Account, true
-}
-
-// IsSetAccount returns a boolean if a field has been set.
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccount gets a reference to the given CreateNetworkPoolServer200ResponseAllOfNetworkPoolServerAccount and assigns it to the Account field.
@@ -990,15 +653,6 @@ func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) GetIntegratio
 	return o.Integration, true
 }
 
-// IsSetIntegration returns a boolean if a field has been set.
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) IsSetIntegration() bool {
-	if o != nil && !IsNil(o.Integration) {
-		return true
-	}
-
-	return false
-}
-
 // SetIntegration gets a reference to the given CreateNetworkPoolServer200ResponseAllOfNetworkPoolServerIntegration and assigns it to the Integration field.
 func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) SetIntegration(v CreateNetworkPoolServer200ResponseAllOfNetworkPoolServerIntegration) {
 	o.Integration = &v
@@ -1022,15 +676,6 @@ func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) GetPoolsOk() 
 	return o.Pools, true
 }
 
-// IsSetPools returns a boolean if a field has been set.
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) IsSetPools() bool {
-	if o != nil && !IsNil(o.Pools) {
-		return true
-	}
-
-	return false
-}
-
 // SetPools gets a reference to the given []CreateNetworkPoolServer200ResponseAllOfNetworkPoolServerPoolsInner and assigns it to the Pools field.
 func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) SetPools(v []CreateNetworkPoolServer200ResponseAllOfNetworkPoolServerPoolsInner) {
 	o.Pools = v
@@ -1052,15 +697,6 @@ func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) GetCredential
 		return nil, false
 	}
 	return o.Credential, true
-}
-
-// IsSetCredential returns a boolean if a field has been set.
-func (o *CreateNetworkPoolServer200ResponseAllOfNetworkPoolServer) IsSetCredential() bool {
-	if o != nil && !IsNil(o.Credential) {
-		return true
-	}
-
-	return false
 }
 
 // SetCredential gets a reference to the given CreateNetworkPoolServer200ResponseAllOfNetworkPoolServerCredential and assigns it to the Credential field.

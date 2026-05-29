@@ -69,15 +69,6 @@ func (o *ListOptionForms200ResponseAllOfOptionTypesInner) GetIdOk() (*int64, boo
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListOptionForms200ResponseAllOfOptionTypesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListOptionForms200ResponseAllOfOptionTypesInner) SetId(v int64) {
 	o.Id = &v
@@ -101,15 +92,6 @@ func (o *ListOptionForms200ResponseAllOfOptionTypesInner) GetNameOk() (*string, 
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ListOptionForms200ResponseAllOfOptionTypesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ListOptionForms200ResponseAllOfOptionTypesInner) SetName(v string) {
 	o.Name = &v
@@ -131,15 +113,6 @@ func (o *ListOptionForms200ResponseAllOfOptionTypesInner) GetCodeOk() (*string, 
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *ListOptionForms200ResponseAllOfOptionTypesInner) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -166,28 +139,9 @@ func (o *ListOptionForms200ResponseAllOfOptionTypesInner) GetDescriptionOk() (*s
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ListOptionForms200ResponseAllOfOptionTypesInner) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListOptionForms200ResponseAllOfOptionTypesInner) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *ListOptionForms200ResponseAllOfOptionTypesInner) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *ListOptionForms200ResponseAllOfOptionTypesInner) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetContext returns the Context field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -209,28 +163,9 @@ func (o *ListOptionForms200ResponseAllOfOptionTypesInner) GetContextOk() (*strin
 	return o.Context.Get(), o.Context.IsSet()
 }
 
-// IsSetContext returns a boolean if a field has been set.
-func (o *ListOptionForms200ResponseAllOfOptionTypesInner) IsSetContext() bool {
-	if o != nil && o.Context.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetContext gets a reference to the given NullableString and assigns it to the Context field.
 func (o *ListOptionForms200ResponseAllOfOptionTypesInner) SetContext(v string) {
 	o.Context.Set(&v)
-}
-
-// SetContextNil sets the value for Context to be an explicit nil
-func (o *ListOptionForms200ResponseAllOfOptionTypesInner) SetContextNil() {
-	o.Context.Set(nil)
-}
-
-// UnsetContext ensures that no value is present for Context, not even an explicit nil
-func (o *ListOptionForms200ResponseAllOfOptionTypesInner) UnsetContext() {
-	o.Context.Unset()
 }
 
 // GetLocked returns the Locked field value if set, zero value otherwise.
@@ -249,15 +184,6 @@ func (o *ListOptionForms200ResponseAllOfOptionTypesInner) GetLockedOk() (*bool, 
 		return nil, false
 	}
 	return o.Locked, true
-}
-
-// IsSetLocked returns a boolean if a field has been set.
-func (o *ListOptionForms200ResponseAllOfOptionTypesInner) IsSetLocked() bool {
-	if o != nil && !IsNil(o.Locked) {
-		return true
-	}
-
-	return false
 }
 
 // SetLocked gets a reference to the given bool and assigns it to the Locked field.
@@ -284,15 +210,6 @@ func (o *ListOptionForms200ResponseAllOfOptionTypesInner) GetLabelsOk() ([]strin
 	return o.Labels, true
 }
 
-// IsSetLabels returns a boolean if a field has been set.
-func (o *ListOptionForms200ResponseAllOfOptionTypesInner) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
-}
-
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
 func (o *ListOptionForms200ResponseAllOfOptionTypesInner) SetLabels(v []string) {
 	o.Labels = v
@@ -316,15 +233,6 @@ func (o *ListOptionForms200ResponseAllOfOptionTypesInner) GetOptionsOk() ([]List
 	return o.Options, true
 }
 
-// IsSetOptions returns a boolean if a field has been set.
-func (o *ListOptionForms200ResponseAllOfOptionTypesInner) IsSetOptions() bool {
-	if o != nil && !IsNil(o.Options) {
-		return true
-	}
-
-	return false
-}
-
 // SetOptions gets a reference to the given []ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner and assigns it to the Options field.
 func (o *ListOptionForms200ResponseAllOfOptionTypesInner) SetOptions(v []ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) {
 	o.Options = v
@@ -346,15 +254,6 @@ func (o *ListOptionForms200ResponseAllOfOptionTypesInner) GetFieldGroupsOk() ([]
 		return nil, false
 	}
 	return o.FieldGroups, true
-}
-
-// IsSetFieldGroups returns a boolean if a field has been set.
-func (o *ListOptionForms200ResponseAllOfOptionTypesInner) IsSetFieldGroups() bool {
-	if o != nil && !IsNil(o.FieldGroups) {
-		return true
-	}
-
-	return false
 }
 
 // SetFieldGroups gets a reference to the given []ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner and assigns it to the FieldGroups field.

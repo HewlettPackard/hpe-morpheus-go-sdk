@@ -118,15 +118,6 @@ func (o *SecurityScanJob) GetLabelsOk() ([]string, bool) {
 	return o.Labels, true
 }
 
-// IsSetLabels returns a boolean if a field has been set.
-func (o *SecurityScanJob) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
-}
-
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
 func (o *SecurityScanJob) SetLabels(v []string) {
 	o.Labels = v
@@ -148,15 +139,6 @@ func (o *SecurityScanJob) GetEnabledOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *SecurityScanJob) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -207,28 +189,9 @@ func (o *SecurityScanJob) GetScanPathOk() (*string, bool) {
 	return o.ScanPath.Get(), o.ScanPath.IsSet()
 }
 
-// IsSetScanPath returns a boolean if a field has been set.
-func (o *SecurityScanJob) IsSetScanPath() bool {
-	if o != nil && o.ScanPath.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetScanPath gets a reference to the given NullableString and assigns it to the ScanPath field.
 func (o *SecurityScanJob) SetScanPath(v string) {
 	o.ScanPath.Set(&v)
-}
-
-// SetScanPathNil sets the value for ScanPath to be an explicit nil
-func (o *SecurityScanJob) SetScanPathNil() {
-	o.ScanPath.Set(nil)
-}
-
-// UnsetScanPath ensures that no value is present for ScanPath, not even an explicit nil
-func (o *SecurityScanJob) UnsetScanPath() {
-	o.ScanPath.Unset()
 }
 
 // GetSecurityProfile returns the SecurityProfile field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -250,28 +213,9 @@ func (o *SecurityScanJob) GetSecurityProfileOk() (*string, bool) {
 	return o.SecurityProfile.Get(), o.SecurityProfile.IsSet()
 }
 
-// IsSetSecurityProfile returns a boolean if a field has been set.
-func (o *SecurityScanJob) IsSetSecurityProfile() bool {
-	if o != nil && o.SecurityProfile.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSecurityProfile gets a reference to the given NullableString and assigns it to the SecurityProfile field.
 func (o *SecurityScanJob) SetSecurityProfile(v string) {
 	o.SecurityProfile.Set(&v)
-}
-
-// SetSecurityProfileNil sets the value for SecurityProfile to be an explicit nil
-func (o *SecurityScanJob) SetSecurityProfileNil() {
-	o.SecurityProfile.Set(nil)
-}
-
-// UnsetSecurityProfile ensures that no value is present for SecurityProfile, not even an explicit nil
-func (o *SecurityScanJob) UnsetSecurityProfile() {
-	o.SecurityProfile.Unset()
 }
 
 // GetTargetType returns the TargetType field value
@@ -366,15 +310,6 @@ func (o *SecurityScanJob) GetCustomOptionsOk() (map[string]interface{}, bool) {
 	return o.CustomOptions, true
 }
 
-// IsSetCustomOptions returns a boolean if a field has been set.
-func (o *SecurityScanJob) IsSetCustomOptions() bool {
-	if o != nil && !IsNil(o.CustomOptions) {
-		return true
-	}
-
-	return false
-}
-
 // SetCustomOptions gets a reference to the given map[string]interface{} and assigns it to the CustomOptions field.
 func (o *SecurityScanJob) SetCustomOptions(v map[string]interface{}) {
 	o.CustomOptions = v
@@ -396,15 +331,6 @@ func (o *SecurityScanJob) GetCustomConfigOk() (*string, bool) {
 		return nil, false
 	}
 	return o.CustomConfig, true
-}
-
-// IsSetCustomConfig returns a boolean if a field has been set.
-func (o *SecurityScanJob) IsSetCustomConfig() bool {
-	if o != nil && !IsNil(o.CustomConfig) {
-		return true
-	}
-
-	return false
 }
 
 // SetCustomConfig gets a reference to the given string and assigns it to the CustomConfig field.
@@ -430,15 +356,6 @@ func (o *SecurityScanJob) GetDateTimeOk() (*time.Time, bool) {
 	return o.DateTime, true
 }
 
-// IsSetDateTime returns a boolean if a field has been set.
-func (o *SecurityScanJob) IsSetDateTime() bool {
-	if o != nil && !IsNil(o.DateTime) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateTime gets a reference to the given time.Time and assigns it to the DateTime field.
 func (o *SecurityScanJob) SetDateTime(v time.Time) {
 	o.DateTime = &v
@@ -460,15 +377,6 @@ func (o *SecurityScanJob) GetRunOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Run, true
-}
-
-// IsSetRun returns a boolean if a field has been set.
-func (o *SecurityScanJob) IsSetRun() bool {
-	if o != nil && !IsNil(o.Run) {
-		return true
-	}
-
-	return false
 }
 
 // SetRun gets a reference to the given bool and assigns it to the Run field.

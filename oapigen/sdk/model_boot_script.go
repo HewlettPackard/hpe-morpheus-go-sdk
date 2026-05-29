@@ -67,15 +67,6 @@ func (o *BootScript) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *BootScript) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *BootScript) SetId(v int64) {
 	o.Id = &v
@@ -99,15 +90,6 @@ func (o *BootScript) GetAccountOk() (*AddBootScript200ResponseAllOfBootScriptAcc
 	return o.Account, true
 }
 
-// IsSetAccount returns a boolean if a field has been set.
-func (o *BootScript) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccount gets a reference to the given AddBootScript200ResponseAllOfBootScriptAccount and assigns it to the Account field.
 func (o *BootScript) SetAccount(v AddBootScript200ResponseAllOfBootScriptAccount) {
 	o.Account = &v
@@ -129,15 +111,6 @@ func (o *BootScript) GetFileNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.FileName, true
-}
-
-// IsSetFileName returns a boolean if a field has been set.
-func (o *BootScript) IsSetFileName() bool {
-	if o != nil && !IsNil(o.FileName) {
-		return true
-	}
-
-	return false
 }
 
 // SetFileName gets a reference to the given string and assigns it to the FileName field.
@@ -164,28 +137,9 @@ func (o *BootScript) GetDescriptionOk() (*string, bool) {
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *BootScript) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *BootScript) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *BootScript) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *BootScript) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetContent returns the Content field value if set, zero value otherwise.
@@ -204,15 +158,6 @@ func (o *BootScript) GetContentOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Content, true
-}
-
-// IsSetContent returns a boolean if a field has been set.
-func (o *BootScript) IsSetContent() bool {
-	if o != nil && !IsNil(o.Content) {
-		return true
-	}
-
-	return false
 }
 
 // SetContent gets a reference to the given string and assigns it to the Content field.
@@ -238,15 +183,6 @@ func (o *BootScript) GetCreatedByOk() (*AddBootScript200ResponseAllOfBootScriptC
 	return o.CreatedBy, true
 }
 
-// IsSetCreatedBy returns a boolean if a field has been set.
-func (o *BootScript) IsSetCreatedBy() bool {
-	if o != nil && !IsNil(o.CreatedBy) {
-		return true
-	}
-
-	return false
-}
-
 // SetCreatedBy gets a reference to the given AddBootScript200ResponseAllOfBootScriptCreatedBy and assigns it to the CreatedBy field.
 func (o *BootScript) SetCreatedBy(v AddBootScript200ResponseAllOfBootScriptCreatedBy) {
 	o.CreatedBy = &v
@@ -268,15 +204,6 @@ func (o *BootScript) GetVisibilityOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *BootScript) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.

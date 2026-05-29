@@ -75,28 +75,9 @@ func (o *AnsiblePlaybookTaskConfig4) GetAnsibleOptionsOk() (*string, bool) {
 	return o.AnsibleOptions.Get(), o.AnsibleOptions.IsSet()
 }
 
-// IsSetAnsibleOptions returns a boolean if a field has been set.
-func (o *AnsiblePlaybookTaskConfig4) IsSetAnsibleOptions() bool {
-	if o != nil && o.AnsibleOptions.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAnsibleOptions gets a reference to the given NullableString and assigns it to the AnsibleOptions field.
 func (o *AnsiblePlaybookTaskConfig4) SetAnsibleOptions(v string) {
 	o.AnsibleOptions.Set(&v)
-}
-
-// SetAnsibleOptionsNil sets the value for AnsibleOptions to be an explicit nil
-func (o *AnsiblePlaybookTaskConfig4) SetAnsibleOptionsNil() {
-	o.AnsibleOptions.Set(nil)
-}
-
-// UnsetAnsibleOptions ensures that no value is present for AnsibleOptions, not even an explicit nil
-func (o *AnsiblePlaybookTaskConfig4) UnsetAnsibleOptions() {
-	o.AnsibleOptions.Unset()
 }
 
 // GetAnsiblePlaybook returns the AnsiblePlaybook field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -118,28 +99,9 @@ func (o *AnsiblePlaybookTaskConfig4) GetAnsiblePlaybookOk() (*string, bool) {
 	return o.AnsiblePlaybook.Get(), o.AnsiblePlaybook.IsSet()
 }
 
-// IsSetAnsiblePlaybook returns a boolean if a field has been set.
-func (o *AnsiblePlaybookTaskConfig4) IsSetAnsiblePlaybook() bool {
-	if o != nil && o.AnsiblePlaybook.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAnsiblePlaybook gets a reference to the given NullableString and assigns it to the AnsiblePlaybook field.
 func (o *AnsiblePlaybookTaskConfig4) SetAnsiblePlaybook(v string) {
 	o.AnsiblePlaybook.Set(&v)
-}
-
-// SetAnsiblePlaybookNil sets the value for AnsiblePlaybook to be an explicit nil
-func (o *AnsiblePlaybookTaskConfig4) SetAnsiblePlaybookNil() {
-	o.AnsiblePlaybook.Set(nil)
-}
-
-// UnsetAnsiblePlaybook ensures that no value is present for AnsiblePlaybook, not even an explicit nil
-func (o *AnsiblePlaybookTaskConfig4) UnsetAnsiblePlaybook() {
-	o.AnsiblePlaybook.Unset()
 }
 
 // GetSshKey returns the SshKey field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -161,28 +123,9 @@ func (o *AnsiblePlaybookTaskConfig4) GetSshKeyOk() (*string, bool) {
 	return o.SshKey.Get(), o.SshKey.IsSet()
 }
 
-// IsSetSshKey returns a boolean if a field has been set.
-func (o *AnsiblePlaybookTaskConfig4) IsSetSshKey() bool {
-	if o != nil && o.SshKey.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSshKey gets a reference to the given NullableString and assigns it to the SshKey field.
 func (o *AnsiblePlaybookTaskConfig4) SetSshKey(v string) {
 	o.SshKey.Set(&v)
-}
-
-// SetSshKeyNil sets the value for SshKey to be an explicit nil
-func (o *AnsiblePlaybookTaskConfig4) SetSshKeyNil() {
-	o.SshKey.Set(nil)
-}
-
-// UnsetSshKey ensures that no value is present for SshKey, not even an explicit nil
-func (o *AnsiblePlaybookTaskConfig4) UnsetSshKey() {
-	o.SshKey.Unset()
 }
 
 // GetPort returns the Port field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -204,28 +147,9 @@ func (o *AnsiblePlaybookTaskConfig4) GetPortOk() (*string, bool) {
 	return o.Port.Get(), o.Port.IsSet()
 }
 
-// IsSetPort returns a boolean if a field has been set.
-func (o *AnsiblePlaybookTaskConfig4) IsSetPort() bool {
-	if o != nil && o.Port.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPort gets a reference to the given NullableString and assigns it to the Port field.
 func (o *AnsiblePlaybookTaskConfig4) SetPort(v string) {
 	o.Port.Set(&v)
-}
-
-// SetPortNil sets the value for Port to be an explicit nil
-func (o *AnsiblePlaybookTaskConfig4) SetPortNil() {
-	o.Port.Set(nil)
-}
-
-// UnsetPort ensures that no value is present for Port, not even an explicit nil
-func (o *AnsiblePlaybookTaskConfig4) UnsetPort() {
-	o.Port.Unset()
 }
 
 // GetLocalScriptGitRef returns the LocalScriptGitRef field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -247,28 +171,9 @@ func (o *AnsiblePlaybookTaskConfig4) GetLocalScriptGitRefOk() (*string, bool) {
 	return o.LocalScriptGitRef.Get(), o.LocalScriptGitRef.IsSet()
 }
 
-// IsSetLocalScriptGitRef returns a boolean if a field has been set.
-func (o *AnsiblePlaybookTaskConfig4) IsSetLocalScriptGitRef() bool {
-	if o != nil && o.LocalScriptGitRef.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLocalScriptGitRef gets a reference to the given NullableString and assigns it to the LocalScriptGitRef field.
 func (o *AnsiblePlaybookTaskConfig4) SetLocalScriptGitRef(v string) {
 	o.LocalScriptGitRef.Set(&v)
-}
-
-// SetLocalScriptGitRefNil sets the value for LocalScriptGitRef to be an explicit nil
-func (o *AnsiblePlaybookTaskConfig4) SetLocalScriptGitRefNil() {
-	o.LocalScriptGitRef.Set(nil)
-}
-
-// UnsetLocalScriptGitRef ensures that no value is present for LocalScriptGitRef, not even an explicit nil
-func (o *AnsiblePlaybookTaskConfig4) UnsetLocalScriptGitRef() {
-	o.LocalScriptGitRef.Unset()
 }
 
 // GetPassword returns the Password field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -290,28 +195,9 @@ func (o *AnsiblePlaybookTaskConfig4) GetPasswordOk() (*string, bool) {
 	return o.Password.Get(), o.Password.IsSet()
 }
 
-// IsSetPassword returns a boolean if a field has been set.
-func (o *AnsiblePlaybookTaskConfig4) IsSetPassword() bool {
-	if o != nil && o.Password.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPassword gets a reference to the given NullableString and assigns it to the Password field.
 func (o *AnsiblePlaybookTaskConfig4) SetPassword(v string) {
 	o.Password.Set(&v)
-}
-
-// SetPasswordNil sets the value for Password to be an explicit nil
-func (o *AnsiblePlaybookTaskConfig4) SetPasswordNil() {
-	o.Password.Set(nil)
-}
-
-// UnsetPassword ensures that no value is present for Password, not even an explicit nil
-func (o *AnsiblePlaybookTaskConfig4) UnsetPassword() {
-	o.Password.Unset()
 }
 
 // GetPasswordHash returns the PasswordHash field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -333,28 +219,9 @@ func (o *AnsiblePlaybookTaskConfig4) GetPasswordHashOk() (*string, bool) {
 	return o.PasswordHash.Get(), o.PasswordHash.IsSet()
 }
 
-// IsSetPasswordHash returns a boolean if a field has been set.
-func (o *AnsiblePlaybookTaskConfig4) IsSetPasswordHash() bool {
-	if o != nil && o.PasswordHash.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPasswordHash gets a reference to the given NullableString and assigns it to the PasswordHash field.
 func (o *AnsiblePlaybookTaskConfig4) SetPasswordHash(v string) {
 	o.PasswordHash.Set(&v)
-}
-
-// SetPasswordHashNil sets the value for PasswordHash to be an explicit nil
-func (o *AnsiblePlaybookTaskConfig4) SetPasswordHashNil() {
-	o.PasswordHash.Set(nil)
-}
-
-// UnsetPasswordHash ensures that no value is present for PasswordHash, not even an explicit nil
-func (o *AnsiblePlaybookTaskConfig4) UnsetPasswordHash() {
-	o.PasswordHash.Unset()
 }
 
 // GetLocalScriptGitId returns the LocalScriptGitId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -376,28 +243,9 @@ func (o *AnsiblePlaybookTaskConfig4) GetLocalScriptGitIdOk() (*string, bool) {
 	return o.LocalScriptGitId.Get(), o.LocalScriptGitId.IsSet()
 }
 
-// IsSetLocalScriptGitId returns a boolean if a field has been set.
-func (o *AnsiblePlaybookTaskConfig4) IsSetLocalScriptGitId() bool {
-	if o != nil && o.LocalScriptGitId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLocalScriptGitId gets a reference to the given NullableString and assigns it to the LocalScriptGitId field.
 func (o *AnsiblePlaybookTaskConfig4) SetLocalScriptGitId(v string) {
 	o.LocalScriptGitId.Set(&v)
-}
-
-// SetLocalScriptGitIdNil sets the value for LocalScriptGitId to be an explicit nil
-func (o *AnsiblePlaybookTaskConfig4) SetLocalScriptGitIdNil() {
-	o.LocalScriptGitId.Set(nil)
-}
-
-// UnsetLocalScriptGitId ensures that no value is present for LocalScriptGitId, not even an explicit nil
-func (o *AnsiblePlaybookTaskConfig4) UnsetLocalScriptGitId() {
-	o.LocalScriptGitId.Unset()
 }
 
 // GetAnsibleGitId returns the AnsibleGitId field value if set, zero value otherwise.
@@ -416,15 +264,6 @@ func (o *AnsiblePlaybookTaskConfig4) GetAnsibleGitIdOk() (*string, bool) {
 		return nil, false
 	}
 	return o.AnsibleGitId, true
-}
-
-// IsSetAnsibleGitId returns a boolean if a field has been set.
-func (o *AnsiblePlaybookTaskConfig4) IsSetAnsibleGitId() bool {
-	if o != nil && !IsNil(o.AnsibleGitId) {
-		return true
-	}
-
-	return false
 }
 
 // SetAnsibleGitId gets a reference to the given string and assigns it to the AnsibleGitId field.
@@ -451,28 +290,9 @@ func (o *AnsiblePlaybookTaskConfig4) GetHostOk() (*string, bool) {
 	return o.Host.Get(), o.Host.IsSet()
 }
 
-// IsSetHost returns a boolean if a field has been set.
-func (o *AnsiblePlaybookTaskConfig4) IsSetHost() bool {
-	if o != nil && o.Host.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetHost gets a reference to the given NullableString and assigns it to the Host field.
 func (o *AnsiblePlaybookTaskConfig4) SetHost(v string) {
 	o.Host.Set(&v)
-}
-
-// SetHostNil sets the value for Host to be an explicit nil
-func (o *AnsiblePlaybookTaskConfig4) SetHostNil() {
-	o.Host.Set(nil)
-}
-
-// UnsetHost ensures that no value is present for Host, not even an explicit nil
-func (o *AnsiblePlaybookTaskConfig4) UnsetHost() {
-	o.Host.Unset()
 }
 
 // GetAnsibleSkipTags returns the AnsibleSkipTags field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -494,28 +314,9 @@ func (o *AnsiblePlaybookTaskConfig4) GetAnsibleSkipTagsOk() (*string, bool) {
 	return o.AnsibleSkipTags.Get(), o.AnsibleSkipTags.IsSet()
 }
 
-// IsSetAnsibleSkipTags returns a boolean if a field has been set.
-func (o *AnsiblePlaybookTaskConfig4) IsSetAnsibleSkipTags() bool {
-	if o != nil && o.AnsibleSkipTags.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAnsibleSkipTags gets a reference to the given NullableString and assigns it to the AnsibleSkipTags field.
 func (o *AnsiblePlaybookTaskConfig4) SetAnsibleSkipTags(v string) {
 	o.AnsibleSkipTags.Set(&v)
-}
-
-// SetAnsibleSkipTagsNil sets the value for AnsibleSkipTags to be an explicit nil
-func (o *AnsiblePlaybookTaskConfig4) SetAnsibleSkipTagsNil() {
-	o.AnsibleSkipTags.Set(nil)
-}
-
-// UnsetAnsibleSkipTags ensures that no value is present for AnsibleSkipTags, not even an explicit nil
-func (o *AnsiblePlaybookTaskConfig4) UnsetAnsibleSkipTags() {
-	o.AnsibleSkipTags.Unset()
 }
 
 // GetAnsibleTags returns the AnsibleTags field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -537,28 +338,9 @@ func (o *AnsiblePlaybookTaskConfig4) GetAnsibleTagsOk() (*string, bool) {
 	return o.AnsibleTags.Get(), o.AnsibleTags.IsSet()
 }
 
-// IsSetAnsibleTags returns a boolean if a field has been set.
-func (o *AnsiblePlaybookTaskConfig4) IsSetAnsibleTags() bool {
-	if o != nil && o.AnsibleTags.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAnsibleTags gets a reference to the given NullableString and assigns it to the AnsibleTags field.
 func (o *AnsiblePlaybookTaskConfig4) SetAnsibleTags(v string) {
 	o.AnsibleTags.Set(&v)
-}
-
-// SetAnsibleTagsNil sets the value for AnsibleTags to be an explicit nil
-func (o *AnsiblePlaybookTaskConfig4) SetAnsibleTagsNil() {
-	o.AnsibleTags.Set(nil)
-}
-
-// UnsetAnsibleTags ensures that no value is present for AnsibleTags, not even an explicit nil
-func (o *AnsiblePlaybookTaskConfig4) UnsetAnsibleTags() {
-	o.AnsibleTags.Unset()
 }
 
 // GetUsername returns the Username field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -580,28 +362,9 @@ func (o *AnsiblePlaybookTaskConfig4) GetUsernameOk() (*string, bool) {
 	return o.Username.Get(), o.Username.IsSet()
 }
 
-// IsSetUsername returns a boolean if a field has been set.
-func (o *AnsiblePlaybookTaskConfig4) IsSetUsername() bool {
-	if o != nil && o.Username.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUsername gets a reference to the given NullableString and assigns it to the Username field.
 func (o *AnsiblePlaybookTaskConfig4) SetUsername(v string) {
 	o.Username.Set(&v)
-}
-
-// SetUsernameNil sets the value for Username to be an explicit nil
-func (o *AnsiblePlaybookTaskConfig4) SetUsernameNil() {
-	o.Username.Set(nil)
-}
-
-// UnsetUsername ensures that no value is present for Username, not even an explicit nil
-func (o *AnsiblePlaybookTaskConfig4) UnsetUsername() {
-	o.Username.Unset()
 }
 
 // GetAnsibleGitRef returns the AnsibleGitRef field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -623,28 +386,9 @@ func (o *AnsiblePlaybookTaskConfig4) GetAnsibleGitRefOk() (*string, bool) {
 	return o.AnsibleGitRef.Get(), o.AnsibleGitRef.IsSet()
 }
 
-// IsSetAnsibleGitRef returns a boolean if a field has been set.
-func (o *AnsiblePlaybookTaskConfig4) IsSetAnsibleGitRef() bool {
-	if o != nil && o.AnsibleGitRef.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAnsibleGitRef gets a reference to the given NullableString and assigns it to the AnsibleGitRef field.
 func (o *AnsiblePlaybookTaskConfig4) SetAnsibleGitRef(v string) {
 	o.AnsibleGitRef.Set(&v)
-}
-
-// SetAnsibleGitRefNil sets the value for AnsibleGitRef to be an explicit nil
-func (o *AnsiblePlaybookTaskConfig4) SetAnsibleGitRefNil() {
-	o.AnsibleGitRef.Set(nil)
-}
-
-// UnsetAnsibleGitRef ensures that no value is present for AnsibleGitRef, not even an explicit nil
-func (o *AnsiblePlaybookTaskConfig4) UnsetAnsibleGitRef() {
-	o.AnsibleGitRef.Unset()
 }
 
 func (o AnsiblePlaybookTaskConfig4) MarshalJSON() ([]byte, error) {

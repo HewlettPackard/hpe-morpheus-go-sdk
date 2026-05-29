@@ -87,15 +87,6 @@ func (o *BackupCreationPolicyTypeConfiguration5) GetCreateBackupOk() (*bool, boo
 	return o.CreateBackup, true
 }
 
-// IsSetCreateBackup returns a boolean if a field has been set.
-func (o *BackupCreationPolicyTypeConfiguration5) IsSetCreateBackup() bool {
-	if o != nil && !IsNil(o.CreateBackup) {
-		return true
-	}
-
-	return false
-}
-
 // SetCreateBackup gets a reference to the given bool and assigns it to the CreateBackup field.
 func (o *BackupCreationPolicyTypeConfiguration5) SetCreateBackup(v bool) {
 	o.CreateBackup = &v

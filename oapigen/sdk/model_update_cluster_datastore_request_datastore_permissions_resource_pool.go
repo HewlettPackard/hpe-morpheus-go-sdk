@@ -62,15 +62,6 @@ func (o *UpdateClusterDatastoreRequestDatastorePermissionsResourcePool) GetVisib
 	return o.Visibility, true
 }
 
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *UpdateClusterDatastoreRequestDatastorePermissionsResourcePool) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
-}
-
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
 func (o *UpdateClusterDatastoreRequestDatastorePermissionsResourcePool) SetVisibility(v string) {
 	o.Visibility = &v

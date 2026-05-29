@@ -68,28 +68,9 @@ func (o *CreateNetworks200ResponseAllOfNetworkConfig) GetVlanIDsOk() (*string, b
 	return o.VlanIDs.Get(), o.VlanIDs.IsSet()
 }
 
-// IsSetVlanIDs returns a boolean if a field has been set.
-func (o *CreateNetworks200ResponseAllOfNetworkConfig) IsSetVlanIDs() bool {
-	if o != nil && o.VlanIDs.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetVlanIDs gets a reference to the given NullableString and assigns it to the VlanIDs field.
 func (o *CreateNetworks200ResponseAllOfNetworkConfig) SetVlanIDs(v string) {
 	o.VlanIDs.Set(&v)
-}
-
-// SetVlanIDsNil sets the value for VlanIDs to be an explicit nil
-func (o *CreateNetworks200ResponseAllOfNetworkConfig) SetVlanIDsNil() {
-	o.VlanIDs.Set(nil)
-}
-
-// UnsetVlanIDs ensures that no value is present for VlanIDs, not even an explicit nil
-func (o *CreateNetworks200ResponseAllOfNetworkConfig) UnsetVlanIDs() {
-	o.VlanIDs.Unset()
 }
 
 // GetConnectedGateway returns the ConnectedGateway field value if set, zero value otherwise.
@@ -108,15 +89,6 @@ func (o *CreateNetworks200ResponseAllOfNetworkConfig) GetConnectedGatewayOk() (*
 		return nil, false
 	}
 	return o.ConnectedGateway, true
-}
-
-// IsSetConnectedGateway returns a boolean if a field has been set.
-func (o *CreateNetworks200ResponseAllOfNetworkConfig) IsSetConnectedGateway() bool {
-	if o != nil && !IsNil(o.ConnectedGateway) {
-		return true
-	}
-
-	return false
 }
 
 // SetConnectedGateway gets a reference to the given string and assigns it to the ConnectedGateway field.
@@ -142,15 +114,6 @@ func (o *CreateNetworks200ResponseAllOfNetworkConfig) GetSubnetIpManagementTypeO
 	return o.SubnetIpManagementType, true
 }
 
-// IsSetSubnetIpManagementType returns a boolean if a field has been set.
-func (o *CreateNetworks200ResponseAllOfNetworkConfig) IsSetSubnetIpManagementType() bool {
-	if o != nil && !IsNil(o.SubnetIpManagementType) {
-		return true
-	}
-
-	return false
-}
-
 // SetSubnetIpManagementType gets a reference to the given string and assigns it to the SubnetIpManagementType field.
 func (o *CreateNetworks200ResponseAllOfNetworkConfig) SetSubnetIpManagementType(v string) {
 	o.SubnetIpManagementType = &v
@@ -172,15 +135,6 @@ func (o *CreateNetworks200ResponseAllOfNetworkConfig) GetSubnetIpServerIdOk() (*
 		return nil, false
 	}
 	return o.SubnetIpServerId, true
-}
-
-// IsSetSubnetIpServerId returns a boolean if a field has been set.
-func (o *CreateNetworks200ResponseAllOfNetworkConfig) IsSetSubnetIpServerId() bool {
-	if o != nil && !IsNil(o.SubnetIpServerId) {
-		return true
-	}
-
-	return false
 }
 
 // SetSubnetIpServerId gets a reference to the given string and assigns it to the SubnetIpServerId field.
@@ -206,15 +160,6 @@ func (o *CreateNetworks200ResponseAllOfNetworkConfig) GetDhcpRangeOk() (*string,
 	return o.DhcpRange, true
 }
 
-// IsSetDhcpRange returns a boolean if a field has been set.
-func (o *CreateNetworks200ResponseAllOfNetworkConfig) IsSetDhcpRange() bool {
-	if o != nil && !IsNil(o.DhcpRange) {
-		return true
-	}
-
-	return false
-}
-
 // SetDhcpRange gets a reference to the given string and assigns it to the DhcpRange field.
 func (o *CreateNetworks200ResponseAllOfNetworkConfig) SetDhcpRange(v string) {
 	o.DhcpRange = &v
@@ -238,15 +183,6 @@ func (o *CreateNetworks200ResponseAllOfNetworkConfig) GetSubnetDhcpServerAddress
 	return o.SubnetDhcpServerAddress, true
 }
 
-// IsSetSubnetDhcpServerAddress returns a boolean if a field has been set.
-func (o *CreateNetworks200ResponseAllOfNetworkConfig) IsSetSubnetDhcpServerAddress() bool {
-	if o != nil && !IsNil(o.SubnetDhcpServerAddress) {
-		return true
-	}
-
-	return false
-}
-
 // SetSubnetDhcpServerAddress gets a reference to the given string and assigns it to the SubnetDhcpServerAddress field.
 func (o *CreateNetworks200ResponseAllOfNetworkConfig) SetSubnetDhcpServerAddress(v string) {
 	o.SubnetDhcpServerAddress = &v
@@ -268,15 +204,6 @@ func (o *CreateNetworks200ResponseAllOfNetworkConfig) GetSubnetDhcpLeaseTimeOk()
 		return nil, false
 	}
 	return o.SubnetDhcpLeaseTime, true
-}
-
-// IsSetSubnetDhcpLeaseTime returns a boolean if a field has been set.
-func (o *CreateNetworks200ResponseAllOfNetworkConfig) IsSetSubnetDhcpLeaseTime() bool {
-	if o != nil && !IsNil(o.SubnetDhcpLeaseTime) {
-		return true
-	}
-
-	return false
 }
 
 // SetSubnetDhcpLeaseTime gets a reference to the given string and assigns it to the SubnetDhcpLeaseTime field.

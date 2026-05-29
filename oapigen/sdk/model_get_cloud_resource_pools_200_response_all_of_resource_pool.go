@@ -80,15 +80,6 @@ func (o *GetCloudResourcePools200ResponseAllOfResourcePool) GetIdOk() (*int64, b
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetCloudResourcePools200ResponseAllOfResourcePool) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetCloudResourcePools200ResponseAllOfResourcePool) SetId(v int64) {
 	o.Id = &v
@@ -113,28 +104,9 @@ func (o *GetCloudResourcePools200ResponseAllOfResourcePool) GetDescriptionOk() (
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *GetCloudResourcePools200ResponseAllOfResourcePool) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *GetCloudResourcePools200ResponseAllOfResourcePool) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *GetCloudResourcePools200ResponseAllOfResourcePool) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *GetCloudResourcePools200ResponseAllOfResourcePool) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetZone returns the Zone field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -156,28 +128,9 @@ func (o *GetCloudResourcePools200ResponseAllOfResourcePool) GetZoneOk() (*GetClo
 	return o.Zone.Get(), o.Zone.IsSet()
 }
 
-// IsSetZone returns a boolean if a field has been set.
-func (o *GetCloudResourcePools200ResponseAllOfResourcePool) IsSetZone() bool {
-	if o != nil && o.Zone.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetZone gets a reference to the given NullableGetCloudResourcePools200ResponseAllOfResourcePoolZone and assigns it to the Zone field.
 func (o *GetCloudResourcePools200ResponseAllOfResourcePool) SetZone(v GetCloudResourcePools200ResponseAllOfResourcePoolZone) {
 	o.Zone.Set(&v)
-}
-
-// SetZoneNil sets the value for Zone to be an explicit nil
-func (o *GetCloudResourcePools200ResponseAllOfResourcePool) SetZoneNil() {
-	o.Zone.Set(nil)
-}
-
-// UnsetZone ensures that no value is present for Zone, not even an explicit nil
-func (o *GetCloudResourcePools200ResponseAllOfResourcePool) UnsetZone() {
-	o.Zone.Unset()
 }
 
 // GetParent returns the Parent field value if set, zero value otherwise.
@@ -196,15 +149,6 @@ func (o *GetCloudResourcePools200ResponseAllOfResourcePool) GetParentOk() (*GetC
 		return nil, false
 	}
 	return o.Parent, true
-}
-
-// IsSetParent returns a boolean if a field has been set.
-func (o *GetCloudResourcePools200ResponseAllOfResourcePool) IsSetParent() bool {
-	if o != nil && !IsNil(o.Parent) {
-		return true
-	}
-
-	return false
 }
 
 // SetParent gets a reference to the given GetCloudResourcePools200ResponseAllOfResourcePoolParent and assigns it to the Parent field.
@@ -230,15 +174,6 @@ func (o *GetCloudResourcePools200ResponseAllOfResourcePool) GetTypeOk() (*string
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *GetCloudResourcePools200ResponseAllOfResourcePool) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given string and assigns it to the Type field.
 func (o *GetCloudResourcePools200ResponseAllOfResourcePool) SetType(v string) {
 	o.Type = &v
@@ -260,15 +195,6 @@ func (o *GetCloudResourcePools200ResponseAllOfResourcePool) GetExternalIdOk() (*
 		return nil, false
 	}
 	return o.ExternalId, true
-}
-
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *GetCloudResourcePools200ResponseAllOfResourcePool) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
-		return true
-	}
-
-	return false
 }
 
 // SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
@@ -295,28 +221,9 @@ func (o *GetCloudResourcePools200ResponseAllOfResourcePool) GetRegionCodeOk() (*
 	return o.RegionCode.Get(), o.RegionCode.IsSet()
 }
 
-// IsSetRegionCode returns a boolean if a field has been set.
-func (o *GetCloudResourcePools200ResponseAllOfResourcePool) IsSetRegionCode() bool {
-	if o != nil && o.RegionCode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRegionCode gets a reference to the given NullableString and assigns it to the RegionCode field.
 func (o *GetCloudResourcePools200ResponseAllOfResourcePool) SetRegionCode(v string) {
 	o.RegionCode.Set(&v)
-}
-
-// SetRegionCodeNil sets the value for RegionCode to be an explicit nil
-func (o *GetCloudResourcePools200ResponseAllOfResourcePool) SetRegionCodeNil() {
-	o.RegionCode.Set(nil)
-}
-
-// UnsetRegionCode ensures that no value is present for RegionCode, not even an explicit nil
-func (o *GetCloudResourcePools200ResponseAllOfResourcePool) UnsetRegionCode() {
-	o.RegionCode.Unset()
 }
 
 // GetIacId returns the IacId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -338,28 +245,9 @@ func (o *GetCloudResourcePools200ResponseAllOfResourcePool) GetIacIdOk() (*strin
 	return o.IacId.Get(), o.IacId.IsSet()
 }
 
-// IsSetIacId returns a boolean if a field has been set.
-func (o *GetCloudResourcePools200ResponseAllOfResourcePool) IsSetIacId() bool {
-	if o != nil && o.IacId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetIacId gets a reference to the given NullableString and assigns it to the IacId field.
 func (o *GetCloudResourcePools200ResponseAllOfResourcePool) SetIacId(v string) {
 	o.IacId.Set(&v)
-}
-
-// SetIacIdNil sets the value for IacId to be an explicit nil
-func (o *GetCloudResourcePools200ResponseAllOfResourcePool) SetIacIdNil() {
-	o.IacId.Set(nil)
-}
-
-// UnsetIacId ensures that no value is present for IacId, not even an explicit nil
-func (o *GetCloudResourcePools200ResponseAllOfResourcePool) UnsetIacId() {
-	o.IacId.Unset()
 }
 
 // GetVisibility returns the Visibility field value if set, zero value otherwise.
@@ -378,15 +266,6 @@ func (o *GetCloudResourcePools200ResponseAllOfResourcePool) GetVisibilityOk() (*
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *GetCloudResourcePools200ResponseAllOfResourcePool) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -412,15 +291,6 @@ func (o *GetCloudResourcePools200ResponseAllOfResourcePool) GetReadOnlyOk() (*bo
 	return o.ReadOnly, true
 }
 
-// IsSetReadOnly returns a boolean if a field has been set.
-func (o *GetCloudResourcePools200ResponseAllOfResourcePool) IsSetReadOnly() bool {
-	if o != nil && !IsNil(o.ReadOnly) {
-		return true
-	}
-
-	return false
-}
-
 // SetReadOnly gets a reference to the given bool and assigns it to the ReadOnly field.
 func (o *GetCloudResourcePools200ResponseAllOfResourcePool) SetReadOnly(v bool) {
 	o.ReadOnly = &v
@@ -442,15 +312,6 @@ func (o *GetCloudResourcePools200ResponseAllOfResourcePool) GetDefaultPoolOk() (
 		return nil, false
 	}
 	return o.DefaultPool, true
-}
-
-// IsSetDefaultPool returns a boolean if a field has been set.
-func (o *GetCloudResourcePools200ResponseAllOfResourcePool) IsSetDefaultPool() bool {
-	if o != nil && !IsNil(o.DefaultPool) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultPool gets a reference to the given bool and assigns it to the DefaultPool field.
@@ -476,15 +337,6 @@ func (o *GetCloudResourcePools200ResponseAllOfResourcePool) GetActiveOk() (*bool
 	return o.Active, true
 }
 
-// IsSetActive returns a boolean if a field has been set.
-func (o *GetCloudResourcePools200ResponseAllOfResourcePool) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
-}
-
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *GetCloudResourcePools200ResponseAllOfResourcePool) SetActive(v bool) {
 	o.Active = &v
@@ -506,15 +358,6 @@ func (o *GetCloudResourcePools200ResponseAllOfResourcePool) GetStatusOk() (*stri
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *GetCloudResourcePools200ResponseAllOfResourcePool) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -540,15 +383,6 @@ func (o *GetCloudResourcePools200ResponseAllOfResourcePool) GetInventoryOk() (*b
 	return o.Inventory, true
 }
 
-// IsSetInventory returns a boolean if a field has been set.
-func (o *GetCloudResourcePools200ResponseAllOfResourcePool) IsSetInventory() bool {
-	if o != nil && !IsNil(o.Inventory) {
-		return true
-	}
-
-	return false
-}
-
 // SetInventory gets a reference to the given bool and assigns it to the Inventory field.
 func (o *GetCloudResourcePools200ResponseAllOfResourcePool) SetInventory(v bool) {
 	o.Inventory = &v
@@ -572,15 +406,6 @@ func (o *GetCloudResourcePools200ResponseAllOfResourcePool) GetConfigOk() (*GetC
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *GetCloudResourcePools200ResponseAllOfResourcePool) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given GetCloudResourcePools200ResponseAllOfResourcePoolConfig and assigns it to the Config field.
 func (o *GetCloudResourcePools200ResponseAllOfResourcePool) SetConfig(v GetCloudResourcePools200ResponseAllOfResourcePoolConfig) {
 	o.Config = &v
@@ -602,15 +427,6 @@ func (o *GetCloudResourcePools200ResponseAllOfResourcePool) GetNameOk() (*string
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *GetCloudResourcePools200ResponseAllOfResourcePool) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -637,28 +453,9 @@ func (o *GetCloudResourcePools200ResponseAllOfResourcePool) GetDisplayNameOk() (
 	return o.DisplayName.Get(), o.DisplayName.IsSet()
 }
 
-// IsSetDisplayName returns a boolean if a field has been set.
-func (o *GetCloudResourcePools200ResponseAllOfResourcePool) IsSetDisplayName() bool {
-	if o != nil && o.DisplayName.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDisplayName gets a reference to the given NullableString and assigns it to the DisplayName field.
 func (o *GetCloudResourcePools200ResponseAllOfResourcePool) SetDisplayName(v string) {
 	o.DisplayName.Set(&v)
-}
-
-// SetDisplayNameNil sets the value for DisplayName to be an explicit nil
-func (o *GetCloudResourcePools200ResponseAllOfResourcePool) SetDisplayNameNil() {
-	o.DisplayName.Set(nil)
-}
-
-// UnsetDisplayName ensures that no value is present for DisplayName, not even an explicit nil
-func (o *GetCloudResourcePools200ResponseAllOfResourcePool) UnsetDisplayName() {
-	o.DisplayName.Unset()
 }
 
 // GetTenants returns the Tenants field value if set, zero value otherwise.
@@ -677,15 +474,6 @@ func (o *GetCloudResourcePools200ResponseAllOfResourcePool) GetTenantsOk() ([]Ge
 		return nil, false
 	}
 	return o.Tenants, true
-}
-
-// IsSetTenants returns a boolean if a field has been set.
-func (o *GetCloudResourcePools200ResponseAllOfResourcePool) IsSetTenants() bool {
-	if o != nil && !IsNil(o.Tenants) {
-		return true
-	}
-
-	return false
 }
 
 // SetTenants gets a reference to the given []GetCloudResourcePools200ResponseAllOfResourcePoolTenantsInner and assigns it to the Tenants field.
@@ -711,15 +499,6 @@ func (o *GetCloudResourcePools200ResponseAllOfResourcePool) GetResourcePermissio
 	return o.ResourcePermission, true
 }
 
-// IsSetResourcePermission returns a boolean if a field has been set.
-func (o *GetCloudResourcePools200ResponseAllOfResourcePool) IsSetResourcePermission() bool {
-	if o != nil && !IsNil(o.ResourcePermission) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourcePermission gets a reference to the given GetCloudResourcePools200ResponseAllOfResourcePoolResourcePermission and assigns it to the ResourcePermission field.
 func (o *GetCloudResourcePools200ResponseAllOfResourcePool) SetResourcePermission(v GetCloudResourcePools200ResponseAllOfResourcePoolResourcePermission) {
 	o.ResourcePermission = &v
@@ -741,15 +520,6 @@ func (o *GetCloudResourcePools200ResponseAllOfResourcePool) GetDepthOk() (*int64
 		return nil, false
 	}
 	return o.Depth, true
-}
-
-// IsSetDepth returns a boolean if a field has been set.
-func (o *GetCloudResourcePools200ResponseAllOfResourcePool) IsSetDepth() bool {
-	if o != nil && !IsNil(o.Depth) {
-		return true
-	}
-
-	return false
 }
 
 // SetDepth gets a reference to the given int64 and assigns it to the Depth field.

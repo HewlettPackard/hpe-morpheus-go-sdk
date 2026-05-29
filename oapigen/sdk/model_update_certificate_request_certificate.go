@@ -86,15 +86,6 @@ func (o *UpdateCertificateRequestCertificate) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateCertificateRequestCertificate) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *UpdateCertificateRequestCertificate) SetName(v string) {
 	o.Name = &v
@@ -116,15 +107,6 @@ func (o *UpdateCertificateRequestCertificate) GetDescriptionOk() (*string, bool)
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *UpdateCertificateRequestCertificate) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -150,15 +132,6 @@ func (o *UpdateCertificateRequestCertificate) GetCertFileOk() (*string, bool) {
 	return o.CertFile, true
 }
 
-// IsSetCertFile returns a boolean if a field has been set.
-func (o *UpdateCertificateRequestCertificate) IsSetCertFile() bool {
-	if o != nil && !IsNil(o.CertFile) {
-		return true
-	}
-
-	return false
-}
-
 // SetCertFile gets a reference to the given string and assigns it to the CertFile field.
 func (o *UpdateCertificateRequestCertificate) SetCertFile(v string) {
 	o.CertFile = &v
@@ -180,15 +153,6 @@ func (o *UpdateCertificateRequestCertificate) GetKeyFileOk() (*string, bool) {
 		return nil, false
 	}
 	return o.KeyFile, true
-}
-
-// IsSetKeyFile returns a boolean if a field has been set.
-func (o *UpdateCertificateRequestCertificate) IsSetKeyFile() bool {
-	if o != nil && !IsNil(o.KeyFile) {
-		return true
-	}
-
-	return false
 }
 
 // SetKeyFile gets a reference to the given string and assigns it to the KeyFile field.
@@ -214,15 +178,6 @@ func (o *UpdateCertificateRequestCertificate) GetChainFileOk() (*string, bool) {
 	return o.ChainFile, true
 }
 
-// IsSetChainFile returns a boolean if a field has been set.
-func (o *UpdateCertificateRequestCertificate) IsSetChainFile() bool {
-	if o != nil && !IsNil(o.ChainFile) {
-		return true
-	}
-
-	return false
-}
-
 // SetChainFile gets a reference to the given string and assigns it to the ChainFile field.
 func (o *UpdateCertificateRequestCertificate) SetChainFile(v string) {
 	o.ChainFile = &v
@@ -244,15 +199,6 @@ func (o *UpdateCertificateRequestCertificate) GetDomainNameOk() (*string, bool) 
 		return nil, false
 	}
 	return o.DomainName, true
-}
-
-// IsSetDomainName returns a boolean if a field has been set.
-func (o *UpdateCertificateRequestCertificate) IsSetDomainName() bool {
-	if o != nil && !IsNil(o.DomainName) {
-		return true
-	}
-
-	return false
 }
 
 // SetDomainName gets a reference to the given string and assigns it to the DomainName field.
@@ -278,15 +224,6 @@ func (o *UpdateCertificateRequestCertificate) GetWildcardOk() (*bool, bool) {
 	return o.Wildcard, true
 }
 
-// IsSetWildcard returns a boolean if a field has been set.
-func (o *UpdateCertificateRequestCertificate) IsSetWildcard() bool {
-	if o != nil && !IsNil(o.Wildcard) {
-		return true
-	}
-
-	return false
-}
-
 // SetWildcard gets a reference to the given bool and assigns it to the Wildcard field.
 func (o *UpdateCertificateRequestCertificate) SetWildcard(v bool) {
 	o.Wildcard = &v
@@ -310,15 +247,6 @@ func (o *UpdateCertificateRequestCertificate) GetTypeOk() (*string, bool) {
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *UpdateCertificateRequestCertificate) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given string and assigns it to the Type field.
 func (o *UpdateCertificateRequestCertificate) SetType(v string) {
 	o.Type = &v
@@ -340,15 +268,6 @@ func (o *UpdateCertificateRequestCertificate) GetIntegrationIdOk() (*int64, bool
 		return nil, false
 	}
 	return o.IntegrationId, true
-}
-
-// IsSetIntegrationId returns a boolean if a field has been set.
-func (o *UpdateCertificateRequestCertificate) IsSetIntegrationId() bool {
-	if o != nil && !IsNil(o.IntegrationId) {
-		return true
-	}
-
-	return false
 }
 
 // SetIntegrationId gets a reference to the given int64 and assigns it to the IntegrationId field.

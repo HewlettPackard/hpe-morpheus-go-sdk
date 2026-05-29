@@ -62,15 +62,6 @@ func (o *ListClusterVolumeclaims200Response) GetVolumeclaimsOk() ([]ListClusterV
 	return o.Volumeclaims, true
 }
 
-// IsSetVolumeclaims returns a boolean if a field has been set.
-func (o *ListClusterVolumeclaims200Response) IsSetVolumeclaims() bool {
-	if o != nil && !IsNil(o.Volumeclaims) {
-		return true
-	}
-
-	return false
-}
-
 // SetVolumeclaims gets a reference to the given []ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner and assigns it to the Volumeclaims field.
 func (o *ListClusterVolumeclaims200Response) SetVolumeclaims(v []ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner) {
 	o.Volumeclaims = v
@@ -92,15 +83,6 @@ func (o *ListClusterVolumeclaims200Response) GetMetaOk() (*ListApprovals200Respo
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListClusterVolumeclaims200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

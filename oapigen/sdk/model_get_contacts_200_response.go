@@ -61,15 +61,6 @@ func (o *GetContacts200Response) GetContactOk() (*GetContacts200ResponseContact,
 	return o.Contact, true
 }
 
-// IsSetContact returns a boolean if a field has been set.
-func (o *GetContacts200Response) IsSetContact() bool {
-	if o != nil && !IsNil(o.Contact) {
-		return true
-	}
-
-	return false
-}
-
 // SetContact gets a reference to the given GetContacts200ResponseContact and assigns it to the Contact field.
 func (o *GetContacts200Response) SetContact(v GetContacts200ResponseContact) {
 	o.Contact = &v

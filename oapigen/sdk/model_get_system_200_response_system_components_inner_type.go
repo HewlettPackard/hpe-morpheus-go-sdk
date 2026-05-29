@@ -63,15 +63,6 @@ func (o *GetSystem200ResponseSystemComponentsInnerType) GetIdOk() (*int64, bool)
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetSystem200ResponseSystemComponentsInnerType) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetSystem200ResponseSystemComponentsInnerType) SetId(v int64) {
 	o.Id = &v
@@ -95,15 +86,6 @@ func (o *GetSystem200ResponseSystemComponentsInnerType) GetCodeOk() (*string, bo
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *GetSystem200ResponseSystemComponentsInnerType) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *GetSystem200ResponseSystemComponentsInnerType) SetCode(v string) {
 	o.Code = &v
@@ -125,15 +107,6 @@ func (o *GetSystem200ResponseSystemComponentsInnerType) GetNameOk() (*string, bo
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *GetSystem200ResponseSystemComponentsInnerType) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.

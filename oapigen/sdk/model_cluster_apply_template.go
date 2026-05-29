@@ -62,15 +62,6 @@ func (o *ClusterApplyTemplate) GetSuccessOk() (*bool, bool) {
 	return o.Success, true
 }
 
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *ClusterApplyTemplate) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
-}
-
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.
 func (o *ClusterApplyTemplate) SetSuccess(v bool) {
 	o.Success = &v
@@ -92,15 +83,6 @@ func (o *ClusterApplyTemplate) GetExecutionIdOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ExecutionId, true
-}
-
-// IsSetExecutionId returns a boolean if a field has been set.
-func (o *ClusterApplyTemplate) IsSetExecutionId() bool {
-	if o != nil && !IsNil(o.ExecutionId) {
-		return true
-	}
-
-	return false
 }
 
 // SetExecutionId gets a reference to the given string and assigns it to the ExecutionId field.

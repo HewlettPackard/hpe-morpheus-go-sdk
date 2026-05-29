@@ -63,15 +63,6 @@ func (o *UpdatePoliciesGroup200ResponseAllOfPolicyPolicyType) GetIdOk() (*int64,
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *UpdatePoliciesGroup200ResponseAllOfPolicyPolicyType) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *UpdatePoliciesGroup200ResponseAllOfPolicyPolicyType) SetId(v int64) {
 	o.Id = &v
@@ -95,15 +86,6 @@ func (o *UpdatePoliciesGroup200ResponseAllOfPolicyPolicyType) GetCodeOk() (*stri
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *UpdatePoliciesGroup200ResponseAllOfPolicyPolicyType) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *UpdatePoliciesGroup200ResponseAllOfPolicyPolicyType) SetCode(v string) {
 	o.Code = &v
@@ -125,15 +107,6 @@ func (o *UpdatePoliciesGroup200ResponseAllOfPolicyPolicyType) GetNameOk() (*stri
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdatePoliciesGroup200ResponseAllOfPolicyPolicyType) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.

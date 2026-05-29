@@ -62,15 +62,6 @@ func (o *ListInstanceServicePlans200ResponsePlansInnerDatastores) GetClusterOk()
 	return o.Cluster, true
 }
 
-// IsSetCluster returns a boolean if a field has been set.
-func (o *ListInstanceServicePlans200ResponsePlansInnerDatastores) IsSetCluster() bool {
-	if o != nil && !IsNil(o.Cluster) {
-		return true
-	}
-
-	return false
-}
-
 // SetCluster gets a reference to the given []ListInstanceServicePlans200ResponsePlansInnerDatastoresClusterInner and assigns it to the Cluster field.
 func (o *ListInstanceServicePlans200ResponsePlansInnerDatastores) SetCluster(v []ListInstanceServicePlans200ResponsePlansInnerDatastoresClusterInner) {
 	o.Cluster = v
@@ -92,15 +83,6 @@ func (o *ListInstanceServicePlans200ResponsePlansInnerDatastores) GetStoreOk() (
 		return nil, false
 	}
 	return o.Store, true
-}
-
-// IsSetStore returns a boolean if a field has been set.
-func (o *ListInstanceServicePlans200ResponsePlansInnerDatastores) IsSetStore() bool {
-	if o != nil && !IsNil(o.Store) {
-		return true
-	}
-
-	return false
 }
 
 // SetStore gets a reference to the given []ListInstanceServicePlans200ResponsePlansInnerDatastoresStoreInner and assigns it to the Store field.

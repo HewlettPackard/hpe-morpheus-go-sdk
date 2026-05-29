@@ -64,15 +64,6 @@ func (o *UserSourceCreationMapInnerMappedRole) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *UserSourceCreationMapInnerMappedRole) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *UserSourceCreationMapInnerMappedRole) SetId(v int64) {
 	o.Id = &v
@@ -94,15 +85,6 @@ func (o *UserSourceCreationMapInnerMappedRole) GetAuthorityOk() (*string, bool) 
 		return nil, false
 	}
 	return o.Authority, true
-}
-
-// IsSetAuthority returns a boolean if a field has been set.
-func (o *UserSourceCreationMapInnerMappedRole) IsSetAuthority() bool {
-	if o != nil && !IsNil(o.Authority) {
-		return true
-	}
-
-	return false
 }
 
 // SetAuthority gets a reference to the given string and assigns it to the Authority field.

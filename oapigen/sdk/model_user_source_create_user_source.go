@@ -79,15 +79,6 @@ func (o *UserSourceCreateUserSource) GetAccountOk() (*UserSourceCreateUserSource
 	return o.Account, true
 }
 
-// IsSetAccount returns a boolean if a field has been set.
-func (o *UserSourceCreateUserSource) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccount gets a reference to the given UserSourceCreateUserSourceAccount and assigns it to the Account field.
 func (o *UserSourceCreateUserSource) SetAccount(v UserSourceCreateUserSourceAccount) {
 	o.Account = &v
@@ -159,15 +150,6 @@ func (o *UserSourceCreateUserSource) GetDescriptionOk() (*string, bool) {
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *UserSourceCreateUserSource) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *UserSourceCreateUserSource) SetDescription(v string) {
 	o.Description = &v
@@ -191,15 +173,6 @@ func (o *UserSourceCreateUserSource) GetDefaultAccountRoleOk() (*UserSourceCreat
 	return o.DefaultAccountRole, true
 }
 
-// IsSetDefaultAccountRole returns a boolean if a field has been set.
-func (o *UserSourceCreateUserSource) IsSetDefaultAccountRole() bool {
-	if o != nil && !IsNil(o.DefaultAccountRole) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultAccountRole gets a reference to the given UserSourceCreateUserSourceDefaultAccountRole and assigns it to the DefaultAccountRole field.
 func (o *UserSourceCreateUserSource) SetDefaultAccountRole(v UserSourceCreateUserSourceDefaultAccountRole) {
 	o.DefaultAccountRole = &v
@@ -221,15 +194,6 @@ func (o *UserSourceCreateUserSource) GetRoleMappingsOk() (*UserSourceCreateUserS
 		return nil, false
 	}
 	return o.RoleMappings, true
-}
-
-// IsSetRoleMappings returns a boolean if a field has been set.
-func (o *UserSourceCreateUserSource) IsSetRoleMappings() bool {
-	if o != nil && !IsNil(o.RoleMappings) {
-		return true
-	}
-
-	return false
 }
 
 // SetRoleMappings gets a reference to the given UserSourceCreateUserSourceRoleMappings and assigns it to the RoleMappings field.
@@ -257,15 +221,6 @@ func (o *UserSourceCreateUserSource) GetRoleMappingNamesOk() (map[string]string,
 	return o.RoleMappingNames, true
 }
 
-// IsSetRoleMappingNames returns a boolean if a field has been set.
-func (o *UserSourceCreateUserSource) IsSetRoleMappingNames() bool {
-	if o != nil && !IsNil(o.RoleMappingNames) {
-		return true
-	}
-
-	return false
-}
-
 // SetRoleMappingNames gets a reference to the given map[string]string and assigns it to the RoleMappingNames field.
 // Deprecated
 func (o *UserSourceCreateUserSource) SetRoleMappingNames(v map[string]string) {
@@ -288,15 +243,6 @@ func (o *UserSourceCreateUserSource) GetAllowCustomMappingsOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.AllowCustomMappings, true
-}
-
-// IsSetAllowCustomMappings returns a boolean if a field has been set.
-func (o *UserSourceCreateUserSource) IsSetAllowCustomMappings() bool {
-	if o != nil && !IsNil(o.AllowCustomMappings) {
-		return true
-	}
-
-	return false
 }
 
 // SetAllowCustomMappings gets a reference to the given bool and assigns it to the AllowCustomMappings field.
@@ -322,15 +268,6 @@ func (o *UserSourceCreateUserSource) GetManualRoleAssignmentOk() (*bool, bool) {
 	return o.ManualRoleAssignment, true
 }
 
-// IsSetManualRoleAssignment returns a boolean if a field has been set.
-func (o *UserSourceCreateUserSource) IsSetManualRoleAssignment() bool {
-	if o != nil && !IsNil(o.ManualRoleAssignment) {
-		return true
-	}
-
-	return false
-}
-
 // SetManualRoleAssignment gets a reference to the given bool and assigns it to the ManualRoleAssignment field.
 func (o *UserSourceCreateUserSource) SetManualRoleAssignment(v bool) {
 	o.ManualRoleAssignment = &v
@@ -352,15 +289,6 @@ func (o *UserSourceCreateUserSource) GetConfigOk() (*UserSourceCreateUserSourceC
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *UserSourceCreateUserSource) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given UserSourceCreateUserSourceConfig and assigns it to the Config field.

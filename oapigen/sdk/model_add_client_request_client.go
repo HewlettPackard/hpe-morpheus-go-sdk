@@ -97,15 +97,6 @@ func (o *AddClientRequestClient) GetClientSecretOk() (*string, bool) {
 	return o.ClientSecret, true
 }
 
-// IsSetClientSecret returns a boolean if a field has been set.
-func (o *AddClientRequestClient) IsSetClientSecret() bool {
-	if o != nil && !IsNil(o.ClientSecret) {
-		return true
-	}
-
-	return false
-}
-
 // SetClientSecret gets a reference to the given string and assigns it to the ClientSecret field.
 func (o *AddClientRequestClient) SetClientSecret(v string) {
 	o.ClientSecret = &v
@@ -179,15 +170,6 @@ func (o *AddClientRequestClient) GetRedirectUrisOk() ([]string, bool) {
 		return nil, false
 	}
 	return o.RedirectUris, true
-}
-
-// IsSetRedirectUris returns a boolean if a field has been set.
-func (o *AddClientRequestClient) IsSetRedirectUris() bool {
-	if o != nil && !IsNil(o.RedirectUris) {
-		return true
-	}
-
-	return false
 }
 
 // SetRedirectUris gets a reference to the given []string and assigns it to the RedirectUris field.

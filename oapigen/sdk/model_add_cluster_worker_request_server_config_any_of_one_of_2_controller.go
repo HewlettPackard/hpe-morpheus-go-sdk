@@ -63,15 +63,6 @@ func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf2Controller) GetRoleOk() (
 	return o.Role, true
 }
 
-// IsSetRole returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf2Controller) IsSetRole() bool {
-	if o != nil && !IsNil(o.Role) {
-		return true
-	}
-
-	return false
-}
-
 // SetRole gets a reference to the given AddClusterWorkerRequestServerConfigAnyOfOneOf2ControllerRole and assigns it to the Role field.
 func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf2Controller) SetRole(v AddClusterWorkerRequestServerConfigAnyOfOneOf2ControllerRole) {
 	o.Role = &v
@@ -95,15 +86,6 @@ func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf2Controller) GetNetworkOk(
 	return o.Network, true
 }
 
-// IsSetNetwork returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf2Controller) IsSetNetwork() bool {
-	if o != nil && !IsNil(o.Network) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetwork gets a reference to the given AddClusterWorkerRequestServerConfigAnyOfOneOf2ControllerNetwork and assigns it to the Network field.
 func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf2Controller) SetNetwork(v AddClusterWorkerRequestServerConfigAnyOfOneOf2ControllerNetwork) {
 	o.Network = &v
@@ -125,15 +107,6 @@ func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf2Controller) GetSecurityGr
 		return nil, false
 	}
 	return o.SecurityGroup, true
-}
-
-// IsSetSecurityGroup returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf2Controller) IsSetSecurityGroup() bool {
-	if o != nil && !IsNil(o.SecurityGroup) {
-		return true
-	}
-
-	return false
 }
 
 // SetSecurityGroup gets a reference to the given AddClusterWorkerRequestServerConfigAnyOfOneOf2ControllerSecurityGroup and assigns it to the SecurityGroup field.

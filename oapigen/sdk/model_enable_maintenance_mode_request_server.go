@@ -74,15 +74,6 @@ func (o *EnableMaintenanceModeRequestServer) GetIgnoreDaemonsetsOk() (*bool, boo
 	return o.IgnoreDaemonsets, true
 }
 
-// IsSetIgnoreDaemonsets returns a boolean if a field has been set.
-func (o *EnableMaintenanceModeRequestServer) IsSetIgnoreDaemonsets() bool {
-	if o != nil && !IsNil(o.IgnoreDaemonsets) {
-		return true
-	}
-
-	return false
-}
-
 // SetIgnoreDaemonsets gets a reference to the given bool and assigns it to the IgnoreDaemonsets field.
 func (o *EnableMaintenanceModeRequestServer) SetIgnoreDaemonsets(v bool) {
 	o.IgnoreDaemonsets = &v
@@ -104,15 +95,6 @@ func (o *EnableMaintenanceModeRequestServer) GetForceOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Force, true
-}
-
-// IsSetForce returns a boolean if a field has been set.
-func (o *EnableMaintenanceModeRequestServer) IsSetForce() bool {
-	if o != nil && !IsNil(o.Force) {
-		return true
-	}
-
-	return false
 }
 
 // SetForce gets a reference to the given bool and assigns it to the Force field.
@@ -138,15 +120,6 @@ func (o *EnableMaintenanceModeRequestServer) GetDeleteEmptyDirOk() (*bool, bool)
 	return o.DeleteEmptyDir, true
 }
 
-// IsSetDeleteEmptyDir returns a boolean if a field has been set.
-func (o *EnableMaintenanceModeRequestServer) IsSetDeleteEmptyDir() bool {
-	if o != nil && !IsNil(o.DeleteEmptyDir) {
-		return true
-	}
-
-	return false
-}
-
 // SetDeleteEmptyDir gets a reference to the given bool and assigns it to the DeleteEmptyDir field.
 func (o *EnableMaintenanceModeRequestServer) SetDeleteEmptyDir(v bool) {
 	o.DeleteEmptyDir = &v
@@ -170,15 +143,6 @@ func (o *EnableMaintenanceModeRequestServer) GetDeleteLocalDataOk() (*bool, bool
 	return o.DeleteLocalData, true
 }
 
-// IsSetDeleteLocalData returns a boolean if a field has been set.
-func (o *EnableMaintenanceModeRequestServer) IsSetDeleteLocalData() bool {
-	if o != nil && !IsNil(o.DeleteLocalData) {
-		return true
-	}
-
-	return false
-}
-
 // SetDeleteLocalData gets a reference to the given bool and assigns it to the DeleteLocalData field.
 func (o *EnableMaintenanceModeRequestServer) SetDeleteLocalData(v bool) {
 	o.DeleteLocalData = &v
@@ -200,15 +164,6 @@ func (o *EnableMaintenanceModeRequestServer) GetMovePoweredOffOk() (*bool, bool)
 		return nil, false
 	}
 	return o.MovePoweredOff, true
-}
-
-// IsSetMovePoweredOff returns a boolean if a field has been set.
-func (o *EnableMaintenanceModeRequestServer) IsSetMovePoweredOff() bool {
-	if o != nil && !IsNil(o.MovePoweredOff) {
-		return true
-	}
-
-	return false
 }
 
 // SetMovePoweredOff gets a reference to the given bool and assigns it to the MovePoweredOff field.

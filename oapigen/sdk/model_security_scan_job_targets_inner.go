@@ -61,15 +61,6 @@ func (o *SecurityScanJobTargetsInner) GetRefIdOk() (*int64, bool) {
 	return o.RefId, true
 }
 
-// IsSetRefId returns a boolean if a field has been set.
-func (o *SecurityScanJobTargetsInner) IsSetRefId() bool {
-	if o != nil && !IsNil(o.RefId) {
-		return true
-	}
-
-	return false
-}
-
 // SetRefId gets a reference to the given int64 and assigns it to the RefId field.
 func (o *SecurityScanJobTargetsInner) SetRefId(v int64) {
 	o.RefId = &v

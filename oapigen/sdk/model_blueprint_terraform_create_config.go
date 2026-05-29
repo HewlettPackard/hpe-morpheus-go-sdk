@@ -62,15 +62,6 @@ func (o *BlueprintTerraformCreateConfig) GetSpecsOk() ([]BlueprintTerraformCreat
 	return o.Specs, true
 }
 
-// IsSetSpecs returns a boolean if a field has been set.
-func (o *BlueprintTerraformCreateConfig) IsSetSpecs() bool {
-	if o != nil && !IsNil(o.Specs) {
-		return true
-	}
-
-	return false
-}
-
 // SetSpecs gets a reference to the given []BlueprintTerraformCreateConfigSpecsInner and assigns it to the Specs field.
 func (o *BlueprintTerraformCreateConfig) SetSpecs(v []BlueprintTerraformCreateConfigSpecsInner) {
 	o.Specs = v

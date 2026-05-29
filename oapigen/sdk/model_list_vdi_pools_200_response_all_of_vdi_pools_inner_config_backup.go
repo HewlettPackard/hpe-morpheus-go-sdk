@@ -64,15 +64,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigBackup) GetCreateBackupO
 	return o.CreateBackup, true
 }
 
-// IsSetCreateBackup returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigBackup) IsSetCreateBackup() bool {
-	if o != nil && !IsNil(o.CreateBackup) {
-		return true
-	}
-
-	return false
-}
-
 // SetCreateBackup gets a reference to the given bool and assigns it to the CreateBackup field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigBackup) SetCreateBackup(v bool) {
 	o.CreateBackup = &v
@@ -94,15 +85,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigBackup) GetJobActionOk()
 		return nil, false
 	}
 	return o.JobAction, true
-}
-
-// IsSetJobAction returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigBackup) IsSetJobAction() bool {
-	if o != nil && !IsNil(o.JobAction) {
-		return true
-	}
-
-	return false
 }
 
 // SetJobAction gets a reference to the given string and assigns it to the JobAction field.
@@ -128,15 +110,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigBackup) GetJobRetentionC
 	return o.JobRetentionCount, true
 }
 
-// IsSetJobRetentionCount returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigBackup) IsSetJobRetentionCount() bool {
-	if o != nil && !IsNil(o.JobRetentionCount) {
-		return true
-	}
-
-	return false
-}
-
 // SetJobRetentionCount gets a reference to the given string and assigns it to the JobRetentionCount field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigBackup) SetJobRetentionCount(v string) {
 	o.JobRetentionCount = &v
@@ -158,15 +131,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigBackup) GetProviderBacku
 		return nil, false
 	}
 	return o.ProviderBackupType, true
-}
-
-// IsSetProviderBackupType returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigBackup) IsSetProviderBackupType() bool {
-	if o != nil && !IsNil(o.ProviderBackupType) {
-		return true
-	}
-
-	return false
 }
 
 // SetProviderBackupType gets a reference to the given int64 and assigns it to the ProviderBackupType field.

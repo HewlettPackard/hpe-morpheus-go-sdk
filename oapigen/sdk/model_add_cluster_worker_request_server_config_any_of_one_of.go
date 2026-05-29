@@ -67,15 +67,6 @@ func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf) GetNodeCountOk() (*int64
 	return o.NodeCount, true
 }
 
-// IsSetNodeCount returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf) IsSetNodeCount() bool {
-	if o != nil && !IsNil(o.NodeCount) {
-		return true
-	}
-
-	return false
-}
-
 // SetNodeCount gets a reference to the given int64 and assigns it to the NodeCount field.
 func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf) SetNodeCount(v int64) {
 	o.NodeCount = &v
@@ -97,15 +88,6 @@ func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf) GetCreateUserOk() (*bool
 		return nil, false
 	}
 	return o.CreateUser, true
-}
-
-// IsSetCreateUser returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf) IsSetCreateUser() bool {
-	if o != nil && !IsNil(o.CreateUser) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreateUser gets a reference to the given bool and assigns it to the CreateUser field.
@@ -132,28 +114,9 @@ func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf) GetDefaultRepoAccountOk(
 	return o.DefaultRepoAccount.Get(), o.DefaultRepoAccount.IsSet()
 }
 
-// IsSetDefaultRepoAccount returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf) IsSetDefaultRepoAccount() bool {
-	if o != nil && o.DefaultRepoAccount.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultRepoAccount gets a reference to the given NullableInt64 and assigns it to the DefaultRepoAccount field.
 func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf) SetDefaultRepoAccount(v int64) {
 	o.DefaultRepoAccount.Set(&v)
-}
-
-// SetDefaultRepoAccountNil sets the value for DefaultRepoAccount to be an explicit nil
-func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf) SetDefaultRepoAccountNil() {
-	o.DefaultRepoAccount.Set(nil)
-}
-
-// UnsetDefaultRepoAccount ensures that no value is present for DefaultRepoAccount, not even an explicit nil
-func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf) UnsetDefaultRepoAccount() {
-	o.DefaultRepoAccount.Unset()
 }
 
 // GetImageServer returns the ImageServer field value if set, zero value otherwise.
@@ -172,15 +135,6 @@ func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf) GetImageServerOk() (*str
 		return nil, false
 	}
 	return o.ImageServer, true
-}
-
-// IsSetImageServer returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServerConfigAnyOfOneOf) IsSetImageServer() bool {
-	if o != nil && !IsNil(o.ImageServer) {
-		return true
-	}
-
-	return false
 }
 
 // SetImageServer gets a reference to the given string and assigns it to the ImageServer field.

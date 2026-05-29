@@ -77,15 +77,6 @@ func (o *SystemUpdate) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *SystemUpdate) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *SystemUpdate) SetName(v string) {
 	o.Name = &v
@@ -107,15 +98,6 @@ func (o *SystemUpdate) GetDescriptionOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *SystemUpdate) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -141,15 +123,6 @@ func (o *SystemUpdate) GetEnabledOk() (*bool, bool) {
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *SystemUpdate) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *SystemUpdate) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -171,15 +144,6 @@ func (o *SystemUpdate) GetExternalIdOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ExternalId, true
-}
-
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *SystemUpdate) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
-		return true
-	}
-
-	return false
 }
 
 // SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
@@ -205,15 +169,6 @@ func (o *SystemUpdate) GetConfigOk() (map[string]interface{}, bool) {
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *SystemUpdate) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
 func (o *SystemUpdate) SetConfig(v map[string]interface{}) {
 	o.Config = v
@@ -235,15 +190,6 @@ func (o *SystemUpdate) GetStatusOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *SystemUpdate) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -269,15 +215,6 @@ func (o *SystemUpdate) GetStatusMessageOk() (*string, bool) {
 	return o.StatusMessage, true
 }
 
-// IsSetStatusMessage returns a boolean if a field has been set.
-func (o *SystemUpdate) IsSetStatusMessage() bool {
-	if o != nil && !IsNil(o.StatusMessage) {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusMessage gets a reference to the given string and assigns it to the StatusMessage field.
 func (o *SystemUpdate) SetStatusMessage(v string) {
 	o.StatusMessage = &v
@@ -301,15 +238,6 @@ func (o *SystemUpdate) GetLayoutOk() (*SystemUpdateLayout, bool) {
 	return o.Layout, true
 }
 
-// IsSetLayout returns a boolean if a field has been set.
-func (o *SystemUpdate) IsSetLayout() bool {
-	if o != nil && !IsNil(o.Layout) {
-		return true
-	}
-
-	return false
-}
-
 // SetLayout gets a reference to the given SystemUpdateLayout and assigns it to the Layout field.
 func (o *SystemUpdate) SetLayout(v SystemUpdateLayout) {
 	o.Layout = &v
@@ -331,15 +259,6 @@ func (o *SystemUpdate) GetComponentsOk() ([]SystemUpdateComponentsInner, bool) {
 		return nil, false
 	}
 	return o.Components, true
-}
-
-// IsSetComponents returns a boolean if a field has been set.
-func (o *SystemUpdate) IsSetComponents() bool {
-	if o != nil && !IsNil(o.Components) {
-		return true
-	}
-
-	return false
 }
 
 // SetComponents gets a reference to the given []SystemUpdateComponentsInner and assigns it to the Components field.

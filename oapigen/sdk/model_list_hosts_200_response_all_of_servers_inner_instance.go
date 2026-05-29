@@ -66,15 +66,6 @@ func (o *ListHosts200ResponseAllOfServersInnerInstance) GetIdOk() (*int64, bool)
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListHosts200ResponseAllOfServersInnerInstance) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListHosts200ResponseAllOfServersInnerInstance) SetId(v int64) {
 	o.Id = &v
@@ -96,15 +87,6 @@ func (o *ListHosts200ResponseAllOfServersInnerInstance) GetNameOk() (*string, bo
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListHosts200ResponseAllOfServersInnerInstance) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -130,15 +112,6 @@ func (o *ListHosts200ResponseAllOfServersInnerInstance) GetDisplayNameOk() (*str
 	return o.DisplayName, true
 }
 
-// IsSetDisplayName returns a boolean if a field has been set.
-func (o *ListHosts200ResponseAllOfServersInnerInstance) IsSetDisplayName() bool {
-	if o != nil && !IsNil(o.DisplayName) {
-		return true
-	}
-
-	return false
-}
-
 // SetDisplayName gets a reference to the given string and assigns it to the DisplayName field.
 func (o *ListHosts200ResponseAllOfServersInnerInstance) SetDisplayName(v string) {
 	o.DisplayName = &v
@@ -160,15 +133,6 @@ func (o *ListHosts200ResponseAllOfServersInnerInstance) GetIsVpcSelectableOk() (
 		return nil, false
 	}
 	return o.IsVpcSelectable, true
-}
-
-// IsSetIsVpcSelectable returns a boolean if a field has been set.
-func (o *ListHosts200ResponseAllOfServersInnerInstance) IsSetIsVpcSelectable() bool {
-	if o != nil && !IsNil(o.IsVpcSelectable) {
-		return true
-	}
-
-	return false
 }
 
 // SetIsVpcSelectable gets a reference to the given bool and assigns it to the IsVpcSelectable field.
@@ -194,15 +158,6 @@ func (o *ListHosts200ResponseAllOfServersInnerInstance) GetAccountIdOk() (*int64
 	return o.AccountId, true
 }
 
-// IsSetAccountId returns a boolean if a field has been set.
-func (o *ListHosts200ResponseAllOfServersInnerInstance) IsSetAccountId() bool {
-	if o != nil && !IsNil(o.AccountId) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccountId gets a reference to the given int64 and assigns it to the AccountId field.
 func (o *ListHosts200ResponseAllOfServersInnerInstance) SetAccountId(v int64) {
 	o.AccountId = &v
@@ -224,15 +179,6 @@ func (o *ListHosts200ResponseAllOfServersInnerInstance) GetAccountNameOk() (*str
 		return nil, false
 	}
 	return o.AccountName, true
-}
-
-// IsSetAccountName returns a boolean if a field has been set.
-func (o *ListHosts200ResponseAllOfServersInnerInstance) IsSetAccountName() bool {
-	if o != nil && !IsNil(o.AccountName) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccountName gets a reference to the given string and assigns it to the AccountName field.

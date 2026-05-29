@@ -64,15 +64,6 @@ func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInnerNetwor
 	return o.IdName, true
 }
 
-// IsSetIdName returns a boolean if a field has been set.
-func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInnerNetwork) IsSetIdName() bool {
-	if o != nil && !IsNil(o.IdName) {
-		return true
-	}
-
-	return false
-}
-
 // SetIdName gets a reference to the given string and assigns it to the IdName field.
 func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInnerNetwork) SetIdName(v string) {
 	o.IdName = &v
@@ -94,15 +85,6 @@ func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInnerNetwor
 		return nil, false
 	}
 	return o.Pool, true
-}
-
-// IsSetPool returns a boolean if a field has been set.
-func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInnerNetwork) IsSetPool() bool {
-	if o != nil && !IsNil(o.Pool) {
-		return true
-	}
-
-	return false
 }
 
 // SetPool gets a reference to the given UpdateVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInnerNetworkPool and assigns it to the Pool field.
@@ -128,15 +110,6 @@ func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInnerNetwor
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInnerNetwork) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given string and assigns it to the Id field.
 func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInnerNetwork) SetId(v string) {
 	o.Id = &v
@@ -158,15 +131,6 @@ func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInnerNetwor
 		return nil, false
 	}
 	return o.HasPool, true
-}
-
-// IsSetHasPool returns a boolean if a field has been set.
-func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInnerNetwork) IsSetHasPool() bool {
-	if o != nil && !IsNil(o.HasPool) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasPool gets a reference to the given bool and assigns it to the HasPool field.

@@ -62,15 +62,6 @@ func (o *ListReports200Response) GetReportResultsOk() ([]ListReports200ResponseA
 	return o.ReportResults, true
 }
 
-// IsSetReportResults returns a boolean if a field has been set.
-func (o *ListReports200Response) IsSetReportResults() bool {
-	if o != nil && !IsNil(o.ReportResults) {
-		return true
-	}
-
-	return false
-}
-
 // SetReportResults gets a reference to the given []ListReports200ResponseAllOfReportResultsInner and assigns it to the ReportResults field.
 func (o *ListReports200Response) SetReportResults(v []ListReports200ResponseAllOfReportResultsInner) {
 	o.ReportResults = v
@@ -92,15 +83,6 @@ func (o *ListReports200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListReports200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

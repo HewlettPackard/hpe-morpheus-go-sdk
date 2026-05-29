@@ -72,15 +72,6 @@ func (o *ResizeInstanceRequest) GetInstanceOk() (*ResizeInstanceRequestInstance,
 	return o.Instance, true
 }
 
-// IsSetInstance returns a boolean if a field has been set.
-func (o *ResizeInstanceRequest) IsSetInstance() bool {
-	if o != nil && !IsNil(o.Instance) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstance gets a reference to the given ResizeInstanceRequestInstance and assigns it to the Instance field.
 func (o *ResizeInstanceRequest) SetInstance(v ResizeInstanceRequestInstance) {
 	o.Instance = &v
@@ -102,15 +93,6 @@ func (o *ResizeInstanceRequest) GetServicePlanOptionsOk() (*ResizeInstanceReques
 		return nil, false
 	}
 	return o.ServicePlanOptions, true
-}
-
-// IsSetServicePlanOptions returns a boolean if a field has been set.
-func (o *ResizeInstanceRequest) IsSetServicePlanOptions() bool {
-	if o != nil && !IsNil(o.ServicePlanOptions) {
-		return true
-	}
-
-	return false
 }
 
 // SetServicePlanOptions gets a reference to the given ResizeInstanceRequestServicePlanOptions and assigns it to the ServicePlanOptions field.
@@ -136,15 +118,6 @@ func (o *ResizeInstanceRequest) GetVolumesOk() ([]ResizeInstanceRequestVolumesIn
 	return o.Volumes, true
 }
 
-// IsSetVolumes returns a boolean if a field has been set.
-func (o *ResizeInstanceRequest) IsSetVolumes() bool {
-	if o != nil && !IsNil(o.Volumes) {
-		return true
-	}
-
-	return false
-}
-
 // SetVolumes gets a reference to the given []ResizeInstanceRequestVolumesInner and assigns it to the Volumes field.
 func (o *ResizeInstanceRequest) SetVolumes(v []ResizeInstanceRequestVolumesInner) {
 	o.Volumes = v
@@ -168,15 +141,6 @@ func (o *ResizeInstanceRequest) GetDeleteOriginalVolumesOk() (*bool, bool) {
 	return o.DeleteOriginalVolumes, true
 }
 
-// IsSetDeleteOriginalVolumes returns a boolean if a field has been set.
-func (o *ResizeInstanceRequest) IsSetDeleteOriginalVolumes() bool {
-	if o != nil && !IsNil(o.DeleteOriginalVolumes) {
-		return true
-	}
-
-	return false
-}
-
 // SetDeleteOriginalVolumes gets a reference to the given bool and assigns it to the DeleteOriginalVolumes field.
 func (o *ResizeInstanceRequest) SetDeleteOriginalVolumes(v bool) {
 	o.DeleteOriginalVolumes = &v
@@ -198,15 +162,6 @@ func (o *ResizeInstanceRequest) GetNetworkInterfacesOk() ([]InstancesNetworkInte
 		return nil, false
 	}
 	return o.NetworkInterfaces, true
-}
-
-// IsSetNetworkInterfaces returns a boolean if a field has been set.
-func (o *ResizeInstanceRequest) IsSetNetworkInterfaces() bool {
-	if o != nil && !IsNil(o.NetworkInterfaces) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkInterfaces gets a reference to the given []InstancesNetworkInterfaces3 and assigns it to the NetworkInterfaces field.

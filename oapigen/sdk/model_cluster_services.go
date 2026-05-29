@@ -72,15 +72,6 @@ func (o *ClusterServices) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ClusterServices) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ClusterServices) SetId(v int64) {
 	o.Id = &v
@@ -102,15 +93,6 @@ func (o *ClusterServices) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ClusterServices) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -137,28 +119,9 @@ func (o *ClusterServices) GetTypeOk() (*string, bool) {
 	return o.Type.Get(), o.Type.IsSet()
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *ClusterServices) IsSetType() bool {
-	if o != nil && o.Type.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given NullableString and assigns it to the Type field.
 func (o *ClusterServices) SetType(v string) {
 	o.Type.Set(&v)
-}
-
-// SetTypeNil sets the value for Type to be an explicit nil
-func (o *ClusterServices) SetTypeNil() {
-	o.Type.Set(nil)
-}
-
-// UnsetType ensures that no value is present for Type, not even an explicit nil
-func (o *ClusterServices) UnsetType() {
-	o.Type.Unset()
 }
 
 // GetCode returns the Code field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -180,28 +143,9 @@ func (o *ClusterServices) GetCodeOk() (*string, bool) {
 	return o.Code.Get(), o.Code.IsSet()
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *ClusterServices) IsSetCode() bool {
-	if o != nil && o.Code.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *ClusterServices) SetCode(v string) {
 	o.Code.Set(&v)
-}
-
-// SetCodeNil sets the value for Code to be an explicit nil
-func (o *ClusterServices) SetCodeNil() {
-	o.Code.Set(nil)
-}
-
-// UnsetCode ensures that no value is present for Code, not even an explicit nil
-func (o *ClusterServices) UnsetCode() {
-	o.Code.Unset()
 }
 
 // GetExternalIp returns the ExternalIp field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -223,28 +167,9 @@ func (o *ClusterServices) GetExternalIpOk() (*string, bool) {
 	return o.ExternalIp.Get(), o.ExternalIp.IsSet()
 }
 
-// IsSetExternalIp returns a boolean if a field has been set.
-func (o *ClusterServices) IsSetExternalIp() bool {
-	if o != nil && o.ExternalIp.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalIp gets a reference to the given NullableString and assigns it to the ExternalIp field.
 func (o *ClusterServices) SetExternalIp(v string) {
 	o.ExternalIp.Set(&v)
-}
-
-// SetExternalIpNil sets the value for ExternalIp to be an explicit nil
-func (o *ClusterServices) SetExternalIpNil() {
-	o.ExternalIp.Set(nil)
-}
-
-// UnsetExternalIp ensures that no value is present for ExternalIp, not even an explicit nil
-func (o *ClusterServices) UnsetExternalIp() {
-	o.ExternalIp.Unset()
 }
 
 // GetInternalIp returns the InternalIp field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -266,28 +191,9 @@ func (o *ClusterServices) GetInternalIpOk() (*string, bool) {
 	return o.InternalIp.Get(), o.InternalIp.IsSet()
 }
 
-// IsSetInternalIp returns a boolean if a field has been set.
-func (o *ClusterServices) IsSetInternalIp() bool {
-	if o != nil && o.InternalIp.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInternalIp gets a reference to the given NullableString and assigns it to the InternalIp field.
 func (o *ClusterServices) SetInternalIp(v string) {
 	o.InternalIp.Set(&v)
-}
-
-// SetInternalIpNil sets the value for InternalIp to be an explicit nil
-func (o *ClusterServices) SetInternalIpNil() {
-	o.InternalIp.Set(nil)
-}
-
-// UnsetInternalIp ensures that no value is present for InternalIp, not even an explicit nil
-func (o *ClusterServices) UnsetInternalIp() {
-	o.InternalIp.Unset()
 }
 
 // GetExternalPort returns the ExternalPort field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -309,28 +215,9 @@ func (o *ClusterServices) GetExternalPortOk() (*string, bool) {
 	return o.ExternalPort.Get(), o.ExternalPort.IsSet()
 }
 
-// IsSetExternalPort returns a boolean if a field has been set.
-func (o *ClusterServices) IsSetExternalPort() bool {
-	if o != nil && o.ExternalPort.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalPort gets a reference to the given NullableString and assigns it to the ExternalPort field.
 func (o *ClusterServices) SetExternalPort(v string) {
 	o.ExternalPort.Set(&v)
-}
-
-// SetExternalPortNil sets the value for ExternalPort to be an explicit nil
-func (o *ClusterServices) SetExternalPortNil() {
-	o.ExternalPort.Set(nil)
-}
-
-// UnsetExternalPort ensures that no value is present for ExternalPort, not even an explicit nil
-func (o *ClusterServices) UnsetExternalPort() {
-	o.ExternalPort.Unset()
 }
 
 // GetInternalPort returns the InternalPort field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -352,28 +239,9 @@ func (o *ClusterServices) GetInternalPortOk() (*string, bool) {
 	return o.InternalPort.Get(), o.InternalPort.IsSet()
 }
 
-// IsSetInternalPort returns a boolean if a field has been set.
-func (o *ClusterServices) IsSetInternalPort() bool {
-	if o != nil && o.InternalPort.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInternalPort gets a reference to the given NullableString and assigns it to the InternalPort field.
 func (o *ClusterServices) SetInternalPort(v string) {
 	o.InternalPort.Set(&v)
-}
-
-// SetInternalPortNil sets the value for InternalPort to be an explicit nil
-func (o *ClusterServices) SetInternalPortNil() {
-	o.InternalPort.Set(nil)
-}
-
-// UnsetInternalPort ensures that no value is present for InternalPort, not even an explicit nil
-func (o *ClusterServices) UnsetInternalPort() {
-	o.InternalPort.Unset()
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -395,28 +263,9 @@ func (o *ClusterServices) GetStatusOk() (*string, bool) {
 	return o.Status.Get(), o.Status.IsSet()
 }
 
-// IsSetStatus returns a boolean if a field has been set.
-func (o *ClusterServices) IsSetStatus() bool {
-	if o != nil && o.Status.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatus gets a reference to the given NullableString and assigns it to the Status field.
 func (o *ClusterServices) SetStatus(v string) {
 	o.Status.Set(&v)
-}
-
-// SetStatusNil sets the value for Status to be an explicit nil
-func (o *ClusterServices) SetStatusNil() {
-	o.Status.Set(nil)
-}
-
-// UnsetStatus ensures that no value is present for Status, not even an explicit nil
-func (o *ClusterServices) UnsetStatus() {
-	o.Status.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -438,28 +287,9 @@ func (o *ClusterServices) GetDateCreatedOk() (*time.Time, bool) {
 	return o.DateCreated.Get(), o.DateCreated.IsSet()
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *ClusterServices) IsSetDateCreated() bool {
-	if o != nil && o.DateCreated.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given NullableTime and assigns it to the DateCreated field.
 func (o *ClusterServices) SetDateCreated(v time.Time) {
 	o.DateCreated.Set(&v)
-}
-
-// SetDateCreatedNil sets the value for DateCreated to be an explicit nil
-func (o *ClusterServices) SetDateCreatedNil() {
-	o.DateCreated.Set(nil)
-}
-
-// UnsetDateCreated ensures that no value is present for DateCreated, not even an explicit nil
-func (o *ClusterServices) UnsetDateCreated() {
-	o.DateCreated.Unset()
 }
 
 // GetLastUpdated returns the LastUpdated field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -481,28 +311,9 @@ func (o *ClusterServices) GetLastUpdatedOk() (*time.Time, bool) {
 	return o.LastUpdated.Get(), o.LastUpdated.IsSet()
 }
 
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *ClusterServices) IsSetLastUpdated() bool {
-	if o != nil && o.LastUpdated.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastUpdated gets a reference to the given NullableTime and assigns it to the LastUpdated field.
 func (o *ClusterServices) SetLastUpdated(v time.Time) {
 	o.LastUpdated.Set(&v)
-}
-
-// SetLastUpdatedNil sets the value for LastUpdated to be an explicit nil
-func (o *ClusterServices) SetLastUpdatedNil() {
-	o.LastUpdated.Set(nil)
-}
-
-// UnsetLastUpdated ensures that no value is present for LastUpdated, not even an explicit nil
-func (o *ClusterServices) UnsetLastUpdated() {
-	o.LastUpdated.Unset()
 }
 
 func (o ClusterServices) MarshalJSON() ([]byte, error) {

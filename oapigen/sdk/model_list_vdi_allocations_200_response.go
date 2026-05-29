@@ -62,15 +62,6 @@ func (o *ListVDIAllocations200Response) GetVdiAllocationsOk() ([]ListVDIAllocati
 	return o.VdiAllocations, true
 }
 
-// IsSetVdiAllocations returns a boolean if a field has been set.
-func (o *ListVDIAllocations200Response) IsSetVdiAllocations() bool {
-	if o != nil && !IsNil(o.VdiAllocations) {
-		return true
-	}
-
-	return false
-}
-
 // SetVdiAllocations gets a reference to the given []ListVDIAllocations200ResponseAllOfVdiAllocationsInner and assigns it to the VdiAllocations field.
 func (o *ListVDIAllocations200Response) SetVdiAllocations(v []ListVDIAllocations200ResponseAllOfVdiAllocationsInner) {
 	o.VdiAllocations = v
@@ -92,15 +83,6 @@ func (o *ListVDIAllocations200Response) GetMetaOk() (*ListApprovals200ResponseAl
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListVDIAllocations200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

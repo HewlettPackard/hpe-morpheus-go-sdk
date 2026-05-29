@@ -68,15 +68,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) G
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *AddLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) SetId(v int64) {
 	o.Id = &v
@@ -98,15 +89,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) G
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -132,15 +114,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) G
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *AddLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) SetName(v string) {
 	o.Name = &v
@@ -162,15 +135,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) G
 		return nil, false
 	}
 	return o.DisplayOrder, true
-}
-
-// IsSetDisplayOrder returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) IsSetDisplayOrder() bool {
-	if o != nil && !IsNil(o.DisplayOrder) {
-		return true
-	}
-
-	return false
 }
 
 // SetDisplayOrder gets a reference to the given int64 and assigns it to the DisplayOrder field.
@@ -196,15 +160,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) G
 	return o.DefaultType, true
 }
 
-// IsSetDefaultType returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) IsSetDefaultType() bool {
-	if o != nil && !IsNil(o.DefaultType) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultType gets a reference to the given bool and assigns it to the DefaultType field.
 func (o *AddLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) SetDefaultType(v bool) {
 	o.DefaultType = &v
@@ -228,15 +183,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) G
 	return o.CustomLabel, true
 }
 
-// IsSetCustomLabel returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) IsSetCustomLabel() bool {
-	if o != nil && !IsNil(o.CustomLabel) {
-		return true
-	}
-
-	return false
-}
-
 // SetCustomLabel gets a reference to the given bool and assigns it to the CustomLabel field.
 func (o *AddLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) SetCustomLabel(v bool) {
 	o.CustomLabel = &v
@@ -258,15 +204,6 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) G
 		return nil, false
 	}
 	return o.CustomSize, true
-}
-
-// IsSetCustomSize returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) IsSetCustomSize() bool {
-	if o != nil && !IsNil(o.CustomSize) {
-		return true
-	}
-
-	return false
 }
 
 // SetCustomSize gets a reference to the given bool and assigns it to the CustomSize field.
@@ -293,28 +230,9 @@ func (o *AddLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) G
 	return o.CustomSizeOptions.Get(), o.CustomSizeOptions.IsSet()
 }
 
-// IsSetCustomSizeOptions returns a boolean if a field has been set.
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) IsSetCustomSizeOptions() bool {
-	if o != nil && o.CustomSizeOptions.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCustomSizeOptions gets a reference to the given NullableString and assigns it to the CustomSizeOptions field.
 func (o *AddLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) SetCustomSizeOptions(v string) {
 	o.CustomSizeOptions.Set(&v)
-}
-
-// SetCustomSizeOptionsNil sets the value for CustomSizeOptions to be an explicit nil
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) SetCustomSizeOptionsNil() {
-	o.CustomSizeOptions.Set(nil)
-}
-
-// UnsetCustomSizeOptions ensures that no value is present for CustomSizeOptions, not even an explicit nil
-func (o *AddLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) UnsetCustomSizeOptions() {
-	o.CustomSizeOptions.Unset()
 }
 
 func (o AddLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) MarshalJSON() ([]byte, error) {

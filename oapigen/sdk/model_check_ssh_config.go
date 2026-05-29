@@ -74,15 +74,6 @@ func (o *CheckSshConfig) GetTunnelOnOk() (*string, bool) {
 	return o.TunnelOn, true
 }
 
-// IsSetTunnelOn returns a boolean if a field has been set.
-func (o *CheckSshConfig) IsSetTunnelOn() bool {
-	if o != nil && !IsNil(o.TunnelOn) {
-		return true
-	}
-
-	return false
-}
-
 // SetTunnelOn gets a reference to the given string and assigns it to the TunnelOn field.
 func (o *CheckSshConfig) SetTunnelOn(v string) {
 	o.TunnelOn = &v
@@ -104,15 +95,6 @@ func (o *CheckSshConfig) GetSshHostOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SshHost, true
-}
-
-// IsSetSshHost returns a boolean if a field has been set.
-func (o *CheckSshConfig) IsSetSshHost() bool {
-	if o != nil && !IsNil(o.SshHost) {
-		return true
-	}
-
-	return false
 }
 
 // SetSshHost gets a reference to the given string and assigns it to the SshHost field.
@@ -138,15 +120,6 @@ func (o *CheckSshConfig) GetSshPortOk() (*int64, bool) {
 	return o.SshPort, true
 }
 
-// IsSetSshPort returns a boolean if a field has been set.
-func (o *CheckSshConfig) IsSetSshPort() bool {
-	if o != nil && !IsNil(o.SshPort) {
-		return true
-	}
-
-	return false
-}
-
 // SetSshPort gets a reference to the given int64 and assigns it to the SshPort field.
 func (o *CheckSshConfig) SetSshPort(v int64) {
 	o.SshPort = &v
@@ -170,15 +143,6 @@ func (o *CheckSshConfig) GetSshUserOk() (*string, bool) {
 	return o.SshUser, true
 }
 
-// IsSetSshUser returns a boolean if a field has been set.
-func (o *CheckSshConfig) IsSetSshUser() bool {
-	if o != nil && !IsNil(o.SshUser) {
-		return true
-	}
-
-	return false
-}
-
 // SetSshUser gets a reference to the given string and assigns it to the SshUser field.
 func (o *CheckSshConfig) SetSshUser(v string) {
 	o.SshUser = &v
@@ -200,15 +164,6 @@ func (o *CheckSshConfig) GetSshPasswordOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SshPassword, true
-}
-
-// IsSetSshPassword returns a boolean if a field has been set.
-func (o *CheckSshConfig) IsSetSshPassword() bool {
-	if o != nil && !IsNil(o.SshPassword) {
-		return true
-	}
-
-	return false
 }
 
 // SetSshPassword gets a reference to the given string and assigns it to the SshPassword field.

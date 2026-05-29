@@ -63,15 +63,6 @@ func (o *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainers
 	return o.Size, true
 }
 
-// IsSetSize returns a boolean if a field has been set.
-func (o *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInner) IsSetSize() bool {
-	if o != nil && !IsNil(o.Size) {
-		return true
-	}
-
-	return false
-}
-
 // SetSize gets a reference to the given int64 and assigns it to the Size field.
 func (o *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInner) SetSize(v int64) {
 	o.Size = &v
@@ -95,15 +86,6 @@ func (o *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainers
 	return o.TypeCode, true
 }
 
-// IsSetTypeCode returns a boolean if a field has been set.
-func (o *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInner) IsSetTypeCode() bool {
-	if o != nil && !IsNil(o.TypeCode) {
-		return true
-	}
-
-	return false
-}
-
 // SetTypeCode gets a reference to the given string and assigns it to the TypeCode field.
 func (o *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInner) SetTypeCode(v string) {
 	o.TypeCode = &v
@@ -125,15 +107,6 @@ func (o *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainers
 		return nil, false
 	}
 	return o.Datastore, true
-}
-
-// IsSetDatastore returns a boolean if a field has been set.
-func (o *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInner) IsSetDatastore() bool {
-	if o != nil && !IsNil(o.Datastore) {
-		return true
-	}
-
-	return false
 }
 
 // SetDatastore gets a reference to the given ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInnerDatastore and assigns it to the Datastore field.

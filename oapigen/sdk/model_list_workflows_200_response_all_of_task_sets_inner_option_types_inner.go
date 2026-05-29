@@ -100,15 +100,6 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetIdOk() (
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetId(v int64) {
 	o.Id = &v
@@ -130,15 +121,6 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetNameOk()
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -165,28 +147,9 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetDescript
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetCode returns the Code field value if set, zero value otherwise.
@@ -205,15 +168,6 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetCodeOk()
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -239,15 +193,6 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetFieldNam
 	return o.FieldName, true
 }
 
-// IsSetFieldName returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) IsSetFieldName() bool {
-	if o != nil && !IsNil(o.FieldName) {
-		return true
-	}
-
-	return false
-}
-
 // SetFieldName gets a reference to the given string and assigns it to the FieldName field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetFieldName(v string) {
 	o.FieldName = &v
@@ -269,15 +214,6 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetFieldLab
 		return nil, false
 	}
 	return o.FieldLabel, true
-}
-
-// IsSetFieldLabel returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) IsSetFieldLabel() bool {
-	if o != nil && !IsNil(o.FieldLabel) {
-		return true
-	}
-
-	return false
 }
 
 // SetFieldLabel gets a reference to the given string and assigns it to the FieldLabel field.
@@ -304,28 +240,9 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetFieldCod
 	return o.FieldCode.Get(), o.FieldCode.IsSet()
 }
 
-// IsSetFieldCode returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) IsSetFieldCode() bool {
-	if o != nil && o.FieldCode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFieldCode gets a reference to the given NullableString and assigns it to the FieldCode field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetFieldCode(v string) {
 	o.FieldCode.Set(&v)
-}
-
-// SetFieldCodeNil sets the value for FieldCode to be an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetFieldCodeNil() {
-	o.FieldCode.Set(nil)
-}
-
-// UnsetFieldCode ensures that no value is present for FieldCode, not even an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetFieldCode() {
-	o.FieldCode.Unset()
 }
 
 // GetFieldContext returns the FieldContext field value if set, zero value otherwise.
@@ -344,15 +261,6 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetFieldCon
 		return nil, false
 	}
 	return o.FieldContext, true
-}
-
-// IsSetFieldContext returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) IsSetFieldContext() bool {
-	if o != nil && !IsNil(o.FieldContext) {
-		return true
-	}
-
-	return false
 }
 
 // SetFieldContext gets a reference to the given string and assigns it to the FieldContext field.
@@ -379,28 +287,9 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetFieldGro
 	return o.FieldGroup.Get(), o.FieldGroup.IsSet()
 }
 
-// IsSetFieldGroup returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) IsSetFieldGroup() bool {
-	if o != nil && o.FieldGroup.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFieldGroup gets a reference to the given NullableString and assigns it to the FieldGroup field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetFieldGroup(v string) {
 	o.FieldGroup.Set(&v)
-}
-
-// SetFieldGroupNil sets the value for FieldGroup to be an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetFieldGroupNil() {
-	o.FieldGroup.Set(nil)
-}
-
-// UnsetFieldGroup ensures that no value is present for FieldGroup, not even an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetFieldGroup() {
-	o.FieldGroup.Unset()
 }
 
 // GetFieldClass returns the FieldClass field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -422,28 +311,9 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetFieldCla
 	return o.FieldClass.Get(), o.FieldClass.IsSet()
 }
 
-// IsSetFieldClass returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) IsSetFieldClass() bool {
-	if o != nil && o.FieldClass.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFieldClass gets a reference to the given NullableString and assigns it to the FieldClass field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetFieldClass(v string) {
 	o.FieldClass.Set(&v)
-}
-
-// SetFieldClassNil sets the value for FieldClass to be an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetFieldClassNil() {
-	o.FieldClass.Set(nil)
-}
-
-// UnsetFieldClass ensures that no value is present for FieldClass, not even an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetFieldClass() {
-	o.FieldClass.Unset()
 }
 
 // GetFieldAddOn returns the FieldAddOn field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -465,28 +335,9 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetFieldAdd
 	return o.FieldAddOn.Get(), o.FieldAddOn.IsSet()
 }
 
-// IsSetFieldAddOn returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) IsSetFieldAddOn() bool {
-	if o != nil && o.FieldAddOn.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFieldAddOn gets a reference to the given NullableString and assigns it to the FieldAddOn field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetFieldAddOn(v string) {
 	o.FieldAddOn.Set(&v)
-}
-
-// SetFieldAddOnNil sets the value for FieldAddOn to be an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetFieldAddOnNil() {
-	o.FieldAddOn.Set(nil)
-}
-
-// UnsetFieldAddOn ensures that no value is present for FieldAddOn, not even an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetFieldAddOn() {
-	o.FieldAddOn.Unset()
 }
 
 // GetFieldComponent returns the FieldComponent field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -508,28 +359,9 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetFieldCom
 	return o.FieldComponent.Get(), o.FieldComponent.IsSet()
 }
 
-// IsSetFieldComponent returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) IsSetFieldComponent() bool {
-	if o != nil && o.FieldComponent.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFieldComponent gets a reference to the given NullableString and assigns it to the FieldComponent field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetFieldComponent(v string) {
 	o.FieldComponent.Set(&v)
-}
-
-// SetFieldComponentNil sets the value for FieldComponent to be an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetFieldComponentNil() {
-	o.FieldComponent.Set(nil)
-}
-
-// UnsetFieldComponent ensures that no value is present for FieldComponent, not even an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetFieldComponent() {
-	o.FieldComponent.Unset()
 }
 
 // GetFieldInput returns the FieldInput field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -551,28 +383,9 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetFieldInp
 	return o.FieldInput.Get(), o.FieldInput.IsSet()
 }
 
-// IsSetFieldInput returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) IsSetFieldInput() bool {
-	if o != nil && o.FieldInput.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFieldInput gets a reference to the given NullableString and assigns it to the FieldInput field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetFieldInput(v string) {
 	o.FieldInput.Set(&v)
-}
-
-// SetFieldInputNil sets the value for FieldInput to be an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetFieldInputNil() {
-	o.FieldInput.Set(nil)
-}
-
-// UnsetFieldInput ensures that no value is present for FieldInput, not even an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetFieldInput() {
-	o.FieldInput.Unset()
 }
 
 // GetPlaceHolder returns the PlaceHolder field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -594,28 +407,9 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetPlaceHol
 	return o.PlaceHolder.Get(), o.PlaceHolder.IsSet()
 }
 
-// IsSetPlaceHolder returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) IsSetPlaceHolder() bool {
-	if o != nil && o.PlaceHolder.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPlaceHolder gets a reference to the given NullableString and assigns it to the PlaceHolder field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetPlaceHolder(v string) {
 	o.PlaceHolder.Set(&v)
-}
-
-// SetPlaceHolderNil sets the value for PlaceHolder to be an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetPlaceHolderNil() {
-	o.PlaceHolder.Set(nil)
-}
-
-// UnsetPlaceHolder ensures that no value is present for PlaceHolder, not even an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetPlaceHolder() {
-	o.PlaceHolder.Unset()
 }
 
 // GetVerifyPattern returns the VerifyPattern field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -637,28 +431,9 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetVerifyPa
 	return o.VerifyPattern.Get(), o.VerifyPattern.IsSet()
 }
 
-// IsSetVerifyPattern returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) IsSetVerifyPattern() bool {
-	if o != nil && o.VerifyPattern.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetVerifyPattern gets a reference to the given NullableString and assigns it to the VerifyPattern field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetVerifyPattern(v string) {
 	o.VerifyPattern.Set(&v)
-}
-
-// SetVerifyPatternNil sets the value for VerifyPattern to be an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetVerifyPatternNil() {
-	o.VerifyPattern.Set(nil)
-}
-
-// UnsetVerifyPattern ensures that no value is present for VerifyPattern, not even an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetVerifyPattern() {
-	o.VerifyPattern.Unset()
 }
 
 // GetHelpBlock returns the HelpBlock field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -680,28 +455,9 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetHelpBloc
 	return o.HelpBlock.Get(), o.HelpBlock.IsSet()
 }
 
-// IsSetHelpBlock returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) IsSetHelpBlock() bool {
-	if o != nil && o.HelpBlock.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetHelpBlock gets a reference to the given NullableString and assigns it to the HelpBlock field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetHelpBlock(v string) {
 	o.HelpBlock.Set(&v)
-}
-
-// SetHelpBlockNil sets the value for HelpBlock to be an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetHelpBlockNil() {
-	o.HelpBlock.Set(nil)
-}
-
-// UnsetHelpBlock ensures that no value is present for HelpBlock, not even an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetHelpBlock() {
-	o.HelpBlock.Unset()
 }
 
 // GetHelpBlockFieldCode returns the HelpBlockFieldCode field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -723,28 +479,9 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetHelpBloc
 	return o.HelpBlockFieldCode.Get(), o.HelpBlockFieldCode.IsSet()
 }
 
-// IsSetHelpBlockFieldCode returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) IsSetHelpBlockFieldCode() bool {
-	if o != nil && o.HelpBlockFieldCode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetHelpBlockFieldCode gets a reference to the given NullableString and assigns it to the HelpBlockFieldCode field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetHelpBlockFieldCode(v string) {
 	o.HelpBlockFieldCode.Set(&v)
-}
-
-// SetHelpBlockFieldCodeNil sets the value for HelpBlockFieldCode to be an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetHelpBlockFieldCodeNil() {
-	o.HelpBlockFieldCode.Set(nil)
-}
-
-// UnsetHelpBlockFieldCode ensures that no value is present for HelpBlockFieldCode, not even an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetHelpBlockFieldCode() {
-	o.HelpBlockFieldCode.Unset()
 }
 
 // GetDefaultValue returns the DefaultValue field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -766,28 +503,9 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetDefaultV
 	return o.DefaultValue.Get(), o.DefaultValue.IsSet()
 }
 
-// IsSetDefaultValue returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) IsSetDefaultValue() bool {
-	if o != nil && o.DefaultValue.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultValue gets a reference to the given NullableString and assigns it to the DefaultValue field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetDefaultValue(v string) {
 	o.DefaultValue.Set(&v)
-}
-
-// SetDefaultValueNil sets the value for DefaultValue to be an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetDefaultValueNil() {
-	o.DefaultValue.Set(nil)
-}
-
-// UnsetDefaultValue ensures that no value is present for DefaultValue, not even an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetDefaultValue() {
-	o.DefaultValue.Unset()
 }
 
 // GetOptionSource returns the OptionSource field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -809,28 +527,9 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetOptionSo
 	return o.OptionSource.Get(), o.OptionSource.IsSet()
 }
 
-// IsSetOptionSource returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) IsSetOptionSource() bool {
-	if o != nil && o.OptionSource.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetOptionSource gets a reference to the given NullableString and assigns it to the OptionSource field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetOptionSource(v string) {
 	o.OptionSource.Set(&v)
-}
-
-// SetOptionSourceNil sets the value for OptionSource to be an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetOptionSourceNil() {
-	o.OptionSource.Set(nil)
-}
-
-// UnsetOptionSource ensures that no value is present for OptionSource, not even an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetOptionSource() {
-	o.OptionSource.Unset()
 }
 
 // GetOptionSourceType returns the OptionSourceType field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -852,28 +551,9 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetOptionSo
 	return o.OptionSourceType.Get(), o.OptionSourceType.IsSet()
 }
 
-// IsSetOptionSourceType returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) IsSetOptionSourceType() bool {
-	if o != nil && o.OptionSourceType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetOptionSourceType gets a reference to the given NullableString and assigns it to the OptionSourceType field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetOptionSourceType(v string) {
 	o.OptionSourceType.Set(&v)
-}
-
-// SetOptionSourceTypeNil sets the value for OptionSourceType to be an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetOptionSourceTypeNil() {
-	o.OptionSourceType.Set(nil)
-}
-
-// UnsetOptionSourceType ensures that no value is present for OptionSourceType, not even an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetOptionSourceType() {
-	o.OptionSourceType.Unset()
 }
 
 // GetOptionList returns the OptionList field value if set, zero value otherwise.
@@ -892,15 +572,6 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetOptionLi
 		return nil, false
 	}
 	return o.OptionList, true
-}
-
-// IsSetOptionList returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) IsSetOptionList() bool {
-	if o != nil && !IsNil(o.OptionList) {
-		return true
-	}
-
-	return false
 }
 
 // SetOptionList gets a reference to the given ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInnerOptionList and assigns it to the OptionList field.
@@ -926,15 +597,6 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetTypeOk()
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given string and assigns it to the Type field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetType(v string) {
 	o.Type = &v
@@ -956,15 +618,6 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetAdvanced
 		return nil, false
 	}
 	return o.Advanced, true
-}
-
-// IsSetAdvanced returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) IsSetAdvanced() bool {
-	if o != nil && !IsNil(o.Advanced) {
-		return true
-	}
-
-	return false
 }
 
 // SetAdvanced gets a reference to the given bool and assigns it to the Advanced field.
@@ -990,15 +643,6 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetRequired
 	return o.Required, true
 }
 
-// IsSetRequired returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) IsSetRequired() bool {
-	if o != nil && !IsNil(o.Required) {
-		return true
-	}
-
-	return false
-}
-
 // SetRequired gets a reference to the given bool and assigns it to the Required field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetRequired(v bool) {
 	o.Required = &v
@@ -1020,15 +664,6 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetExportMe
 		return nil, false
 	}
 	return o.ExportMeta, true
-}
-
-// IsSetExportMeta returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) IsSetExportMeta() bool {
-	if o != nil && !IsNil(o.ExportMeta) {
-		return true
-	}
-
-	return false
 }
 
 // SetExportMeta gets a reference to the given bool and assigns it to the ExportMeta field.
@@ -1054,15 +689,6 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetEditable
 	return o.Editable, true
 }
 
-// IsSetEditable returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) IsSetEditable() bool {
-	if o != nil && !IsNil(o.Editable) {
-		return true
-	}
-
-	return false
-}
-
 // SetEditable gets a reference to the given bool and assigns it to the Editable field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetEditable(v bool) {
 	o.Editable = &v
@@ -1084,15 +710,6 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetCreatabl
 		return nil, false
 	}
 	return o.Creatable, true
-}
-
-// IsSetCreatable returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) IsSetCreatable() bool {
-	if o != nil && !IsNil(o.Creatable) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreatable gets a reference to the given bool and assigns it to the Creatable field.
@@ -1118,15 +735,6 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetConfigOk
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetConfig(v map[string]interface{}) {
 	o.Config = v
@@ -1148,15 +756,6 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetDisplayO
 		return nil, false
 	}
 	return o.DisplayOrder, true
-}
-
-// IsSetDisplayOrder returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) IsSetDisplayOrder() bool {
-	if o != nil && !IsNil(o.DisplayOrder) {
-		return true
-	}
-
-	return false
 }
 
 // SetDisplayOrder gets a reference to the given int64 and assigns it to the DisplayOrder field.
@@ -1183,28 +782,9 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetWrapperC
 	return o.WrapperClass.Get(), o.WrapperClass.IsSet()
 }
 
-// IsSetWrapperClass returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) IsSetWrapperClass() bool {
-	if o != nil && o.WrapperClass.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetWrapperClass gets a reference to the given NullableString and assigns it to the WrapperClass field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetWrapperClass(v string) {
 	o.WrapperClass.Set(&v)
-}
-
-// SetWrapperClassNil sets the value for WrapperClass to be an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetWrapperClassNil() {
-	o.WrapperClass.Set(nil)
-}
-
-// UnsetWrapperClass ensures that no value is present for WrapperClass, not even an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetWrapperClass() {
-	o.WrapperClass.Unset()
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
@@ -1223,15 +803,6 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetEnabledO
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -1255,15 +826,6 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetNoBlankO
 		return nil, false
 	}
 	return o.NoBlank, true
-}
-
-// IsSetNoBlank returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) IsSetNoBlank() bool {
-	if o != nil && !IsNil(o.NoBlank) {
-		return true
-	}
-
-	return false
 }
 
 // SetNoBlank gets a reference to the given bool and assigns it to the NoBlank field.
@@ -1290,28 +852,9 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetDependsO
 	return o.DependsOnCode.Get(), o.DependsOnCode.IsSet()
 }
 
-// IsSetDependsOnCode returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) IsSetDependsOnCode() bool {
-	if o != nil && o.DependsOnCode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDependsOnCode gets a reference to the given NullableString and assigns it to the DependsOnCode field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetDependsOnCode(v string) {
 	o.DependsOnCode.Set(&v)
-}
-
-// SetDependsOnCodeNil sets the value for DependsOnCode to be an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetDependsOnCodeNil() {
-	o.DependsOnCode.Set(nil)
-}
-
-// UnsetDependsOnCode ensures that no value is present for DependsOnCode, not even an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetDependsOnCode() {
-	o.DependsOnCode.Unset()
 }
 
 // GetVisibleOnCode returns the VisibleOnCode field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1333,28 +876,9 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetVisibleO
 	return o.VisibleOnCode.Get(), o.VisibleOnCode.IsSet()
 }
 
-// IsSetVisibleOnCode returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) IsSetVisibleOnCode() bool {
-	if o != nil && o.VisibleOnCode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetVisibleOnCode gets a reference to the given NullableString and assigns it to the VisibleOnCode field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetVisibleOnCode(v string) {
 	o.VisibleOnCode.Set(&v)
-}
-
-// SetVisibleOnCodeNil sets the value for VisibleOnCode to be an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetVisibleOnCodeNil() {
-	o.VisibleOnCode.Set(nil)
-}
-
-// UnsetVisibleOnCode ensures that no value is present for VisibleOnCode, not even an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetVisibleOnCode() {
-	o.VisibleOnCode.Unset()
 }
 
 // GetRequireOnCode returns the RequireOnCode field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1376,28 +900,9 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetRequireO
 	return o.RequireOnCode.Get(), o.RequireOnCode.IsSet()
 }
 
-// IsSetRequireOnCode returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) IsSetRequireOnCode() bool {
-	if o != nil && o.RequireOnCode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRequireOnCode gets a reference to the given NullableString and assigns it to the RequireOnCode field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetRequireOnCode(v string) {
 	o.RequireOnCode.Set(&v)
-}
-
-// SetRequireOnCodeNil sets the value for RequireOnCode to be an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetRequireOnCodeNil() {
-	o.RequireOnCode.Set(nil)
-}
-
-// UnsetRequireOnCode ensures that no value is present for RequireOnCode, not even an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetRequireOnCode() {
-	o.RequireOnCode.Unset()
 }
 
 // GetContextualDefault returns the ContextualDefault field value if set, zero value otherwise.
@@ -1416,15 +921,6 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetContextu
 		return nil, false
 	}
 	return o.ContextualDefault, true
-}
-
-// IsSetContextualDefault returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) IsSetContextualDefault() bool {
-	if o != nil && !IsNil(o.ContextualDefault) {
-		return true
-	}
-
-	return false
 }
 
 // SetContextualDefault gets a reference to the given bool and assigns it to the ContextualDefault field.
@@ -1451,28 +947,9 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetDisplayV
 	return o.DisplayValueOnDetails.Get(), o.DisplayValueOnDetails.IsSet()
 }
 
-// IsSetDisplayValueOnDetails returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) IsSetDisplayValueOnDetails() bool {
-	if o != nil && o.DisplayValueOnDetails.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDisplayValueOnDetails gets a reference to the given NullableBool and assigns it to the DisplayValueOnDetails field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetDisplayValueOnDetails(v bool) {
 	o.DisplayValueOnDetails.Set(&v)
-}
-
-// SetDisplayValueOnDetailsNil sets the value for DisplayValueOnDetails to be an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetDisplayValueOnDetailsNil() {
-	o.DisplayValueOnDetails.Set(nil)
-}
-
-// UnsetDisplayValueOnDetails ensures that no value is present for DisplayValueOnDetails, not even an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetDisplayValueOnDetails() {
-	o.DisplayValueOnDetails.Unset()
 }
 
 // GetShowOnCreate returns the ShowOnCreate field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1494,28 +971,9 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetShowOnCr
 	return o.ShowOnCreate.Get(), o.ShowOnCreate.IsSet()
 }
 
-// IsSetShowOnCreate returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) IsSetShowOnCreate() bool {
-	if o != nil && o.ShowOnCreate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetShowOnCreate gets a reference to the given NullableBool and assigns it to the ShowOnCreate field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetShowOnCreate(v bool) {
 	o.ShowOnCreate.Set(&v)
-}
-
-// SetShowOnCreateNil sets the value for ShowOnCreate to be an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetShowOnCreateNil() {
-	o.ShowOnCreate.Set(nil)
-}
-
-// UnsetShowOnCreate ensures that no value is present for ShowOnCreate, not even an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetShowOnCreate() {
-	o.ShowOnCreate.Unset()
 }
 
 // GetShowOnEdit returns the ShowOnEdit field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1537,28 +995,9 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetShowOnEd
 	return o.ShowOnEdit.Get(), o.ShowOnEdit.IsSet()
 }
 
-// IsSetShowOnEdit returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) IsSetShowOnEdit() bool {
-	if o != nil && o.ShowOnEdit.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetShowOnEdit gets a reference to the given NullableBool and assigns it to the ShowOnEdit field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetShowOnEdit(v bool) {
 	o.ShowOnEdit.Set(&v)
-}
-
-// SetShowOnEditNil sets the value for ShowOnEdit to be an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetShowOnEditNil() {
-	o.ShowOnEdit.Set(nil)
-}
-
-// UnsetShowOnEdit ensures that no value is present for ShowOnEdit, not even an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetShowOnEdit() {
-	o.ShowOnEdit.Unset()
 }
 
 // GetLocalCredential returns the LocalCredential field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1580,28 +1019,9 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) GetLocalCre
 	return o.LocalCredential.Get(), o.LocalCredential.IsSet()
 }
 
-// IsSetLocalCredential returns a boolean if a field has been set.
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) IsSetLocalCredential() bool {
-	if o != nil && o.LocalCredential.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLocalCredential gets a reference to the given NullableString and assigns it to the LocalCredential field.
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetLocalCredential(v string) {
 	o.LocalCredential.Set(&v)
-}
-
-// SetLocalCredentialNil sets the value for LocalCredential to be an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) SetLocalCredentialNil() {
-	o.LocalCredential.Set(nil)
-}
-
-// UnsetLocalCredential ensures that no value is present for LocalCredential, not even an explicit nil
-func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnsetLocalCredential() {
-	o.LocalCredential.Unset()
 }
 
 func (o ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) MarshalJSON() ([]byte, error) {

@@ -63,15 +63,6 @@ func (o *HealthDatabaseSlowQueriesInner) GetCountOk() (*int64, bool) {
 	return o.Count, true
 }
 
-// IsSetCount returns a boolean if a field has been set.
-func (o *HealthDatabaseSlowQueriesInner) IsSetCount() bool {
-	if o != nil && !IsNil(o.Count) {
-		return true
-	}
-
-	return false
-}
-
 // SetCount gets a reference to the given int64 and assigns it to the Count field.
 func (o *HealthDatabaseSlowQueriesInner) SetCount(v int64) {
 	o.Count = &v
@@ -95,15 +86,6 @@ func (o *HealthDatabaseSlowQueriesInner) GetTimeOk() (*int64, bool) {
 	return o.Time, true
 }
 
-// IsSetTime returns a boolean if a field has been set.
-func (o *HealthDatabaseSlowQueriesInner) IsSetTime() bool {
-	if o != nil && !IsNil(o.Time) {
-		return true
-	}
-
-	return false
-}
-
 // SetTime gets a reference to the given int64 and assigns it to the Time field.
 func (o *HealthDatabaseSlowQueriesInner) SetTime(v int64) {
 	o.Time = &v
@@ -125,15 +107,6 @@ func (o *HealthDatabaseSlowQueriesInner) GetQueryOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Query, true
-}
-
-// IsSetQuery returns a boolean if a field has been set.
-func (o *HealthDatabaseSlowQueriesInner) IsSetQuery() bool {
-	if o != nil && !IsNil(o.Query) {
-		return true
-	}
-
-	return false
 }
 
 // SetQuery gets a reference to the given string and assigns it to the Query field.

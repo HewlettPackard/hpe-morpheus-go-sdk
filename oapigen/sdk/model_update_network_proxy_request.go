@@ -61,15 +61,6 @@ func (o *UpdateNetworkProxyRequest) GetNetworkProxyOk() (*UpdateNetworkProxyRequ
 	return o.NetworkProxy, true
 }
 
-// IsSetNetworkProxy returns a boolean if a field has been set.
-func (o *UpdateNetworkProxyRequest) IsSetNetworkProxy() bool {
-	if o != nil && !IsNil(o.NetworkProxy) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkProxy gets a reference to the given UpdateNetworkProxyRequestNetworkProxy and assigns it to the NetworkProxy field.
 func (o *UpdateNetworkProxyRequest) SetNetworkProxy(v UpdateNetworkProxyRequestNetworkProxy) {
 	o.NetworkProxy = &v

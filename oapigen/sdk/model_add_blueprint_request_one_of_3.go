@@ -97,15 +97,6 @@ func (o *AddBlueprintRequestOneOf3) GetImageOk() (*string, bool) {
 	return o.Image, true
 }
 
-// IsSetImage returns a boolean if a field has been set.
-func (o *AddBlueprintRequestOneOf3) IsSetImage() bool {
-	if o != nil && !IsNil(o.Image) {
-		return true
-	}
-
-	return false
-}
-
 // SetImage gets a reference to the given string and assigns it to the Image field.
 func (o *AddBlueprintRequestOneOf3) SetImage(v string) {
 	o.Image = &v
@@ -154,15 +145,6 @@ func (o *AddBlueprintRequestOneOf3) GetLabelsOk() ([]string, bool) {
 	return o.Labels, true
 }
 
-// IsSetLabels returns a boolean if a field has been set.
-func (o *AddBlueprintRequestOneOf3) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
-}
-
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
 func (o *AddBlueprintRequestOneOf3) SetLabels(v []string) {
 	o.Labels = v
@@ -208,15 +190,6 @@ func (o *AddBlueprintRequestOneOf3) GetConfigOk() (*AddBlueprintRequestOneOf3Con
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *AddBlueprintRequestOneOf3) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given AddBlueprintRequestOneOf3Config and assigns it to the Config field.

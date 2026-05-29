@@ -66,15 +66,6 @@ func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf5) GetKeyPatternOk
 	return o.KeyPattern, true
 }
 
-// IsSetKeyPattern returns a boolean if a field has been set.
-func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf5) IsSetKeyPattern() bool {
-	if o != nil && !IsNil(o.KeyPattern) {
-		return true
-	}
-
-	return false
-}
-
 // SetKeyPattern gets a reference to the given string and assigns it to the KeyPattern field.
 func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf5) SetKeyPattern(v string) {
 	o.KeyPattern = &v
@@ -96,15 +87,6 @@ func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf5) GetReadOk() (*b
 		return nil, false
 	}
 	return o.Read, true
-}
-
-// IsSetRead returns a boolean if a field has been set.
-func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf5) IsSetRead() bool {
-	if o != nil && !IsNil(o.Read) {
-		return true
-	}
-
-	return false
 }
 
 // SetRead gets a reference to the given bool and assigns it to the Read field.
@@ -130,15 +112,6 @@ func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf5) GetWriteOk() (*
 	return o.Write, true
 }
 
-// IsSetWrite returns a boolean if a field has been set.
-func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf5) IsSetWrite() bool {
-	if o != nil && !IsNil(o.Write) {
-		return true
-	}
-
-	return false
-}
-
 // SetWrite gets a reference to the given bool and assigns it to the Write field.
 func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf5) SetWrite(v bool) {
 	o.Write = &v
@@ -160,15 +133,6 @@ func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf5) GetUpdateOk() (
 		return nil, false
 	}
 	return o.Update, true
-}
-
-// IsSetUpdate returns a boolean if a field has been set.
-func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf5) IsSetUpdate() bool {
-	if o != nil && !IsNil(o.Update) {
-		return true
-	}
-
-	return false
 }
 
 // SetUpdate gets a reference to the given bool and assigns it to the Update field.
@@ -194,15 +158,6 @@ func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf5) GetDeleteOk() (
 	return o.Delete, true
 }
 
-// IsSetDelete returns a boolean if a field has been set.
-func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf5) IsSetDelete() bool {
-	if o != nil && !IsNil(o.Delete) {
-		return true
-	}
-
-	return false
-}
-
 // SetDelete gets a reference to the given bool and assigns it to the Delete field.
 func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf5) SetDelete(v bool) {
 	o.Delete = &v
@@ -224,15 +179,6 @@ func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf5) GetListOk() (*b
 		return nil, false
 	}
 	return o.List, true
-}
-
-// IsSetList returns a boolean if a field has been set.
-func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf5) IsSetList() bool {
-	if o != nil && !IsNil(o.List) {
-		return true
-	}
-
-	return false
 }
 
 // SetList gets a reference to the given bool and assigns it to the List field.

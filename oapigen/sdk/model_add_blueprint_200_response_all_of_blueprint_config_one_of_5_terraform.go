@@ -94,15 +94,6 @@ func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf5Terraform) GetJsonOk()
 	return o.Json, true
 }
 
-// IsSetJson returns a boolean if a field has been set.
-func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf5Terraform) IsSetJson() bool {
-	if o != nil && !IsNil(o.Json) {
-		return true
-	}
-
-	return false
-}
-
 // SetJson gets a reference to the given string and assigns it to the Json field.
 func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf5Terraform) SetJson(v string) {
 	o.Json = &v
@@ -124,15 +115,6 @@ func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf5Terraform) GetTfOk() (
 		return nil, false
 	}
 	return o.Tf, true
-}
-
-// IsSetTf returns a boolean if a field has been set.
-func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf5Terraform) IsSetTf() bool {
-	if o != nil && !IsNil(o.Tf) {
-		return true
-	}
-
-	return false
 }
 
 // SetTf gets a reference to the given string and assigns it to the Tf field.
@@ -158,15 +140,6 @@ func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf5Terraform) GetGitOk() 
 	return o.Git, true
 }
 
-// IsSetGit returns a boolean if a field has been set.
-func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf5Terraform) IsSetGit() bool {
-	if o != nil && !IsNil(o.Git) {
-		return true
-	}
-
-	return false
-}
-
 // SetGit gets a reference to the given AddBlueprint200ResponseAllOfBlueprintConfigOneOf5TerraformGit and assigns it to the Git field.
 func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf5Terraform) SetGit(v AddBlueprint200ResponseAllOfBlueprintConfigOneOf5TerraformGit) {
 	o.Git = &v
@@ -188,15 +161,6 @@ func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf5Terraform) GetTfvarSec
 		return nil, false
 	}
 	return o.TfvarSecret, true
-}
-
-// IsSetTfvarSecret returns a boolean if a field has been set.
-func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf5Terraform) IsSetTfvarSecret() bool {
-	if o != nil && !IsNil(o.TfvarSecret) {
-		return true
-	}
-
-	return false
 }
 
 // SetTfvarSecret gets a reference to the given string and assigns it to the TfvarSecret field.

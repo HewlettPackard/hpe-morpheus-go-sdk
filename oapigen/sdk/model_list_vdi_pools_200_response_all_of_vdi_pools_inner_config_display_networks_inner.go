@@ -64,15 +64,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner) Ge
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner) SetName(v string) {
 	o.Name = &v
@@ -94,15 +85,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner) Ge
 		return nil, false
 	}
 	return o.IpMode, true
-}
-
-// IsSetIpMode returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner) IsSetIpMode() bool {
-	if o != nil && !IsNil(o.IpMode) {
-		return true
-	}
-
-	return false
 }
 
 // SetIpMode gets a reference to the given string and assigns it to the IpMode field.
@@ -129,28 +111,9 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner) Ge
 	return o.Pool.Get(), o.Pool.IsSet()
 }
 
-// IsSetPool returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner) IsSetPool() bool {
-	if o != nil && o.Pool.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPool gets a reference to the given NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInnerPool and assigns it to the Pool field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner) SetPool(v ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInnerPool) {
 	o.Pool.Set(&v)
-}
-
-// SetPoolNil sets the value for Pool to be an explicit nil
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner) SetPoolNil() {
-	o.Pool.Set(nil)
-}
-
-// UnsetPool ensures that no value is present for Pool, not even an explicit nil
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner) UnsetPool() {
-	o.Pool.Unset()
 }
 
 // GetUsePool returns the UsePool field value if set, zero value otherwise.
@@ -169,15 +132,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner) Ge
 		return nil, false
 	}
 	return o.UsePool, true
-}
-
-// IsSetUsePool returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner) IsSetUsePool() bool {
-	if o != nil && !IsNil(o.UsePool) {
-		return true
-	}
-
-	return false
 }
 
 // SetUsePool gets a reference to the given bool and assigns it to the UsePool field.

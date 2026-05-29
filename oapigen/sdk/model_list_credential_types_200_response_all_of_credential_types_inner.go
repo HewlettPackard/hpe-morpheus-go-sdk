@@ -68,15 +68,6 @@ func (o *ListCredentialTypes200ResponseAllOfCredentialTypesInner) GetIdOk() (*in
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListCredentialTypes200ResponseAllOfCredentialTypesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListCredentialTypes200ResponseAllOfCredentialTypesInner) SetId(v int64) {
 	o.Id = &v
@@ -100,15 +91,6 @@ func (o *ListCredentialTypes200ResponseAllOfCredentialTypesInner) GetCodeOk() (*
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *ListCredentialTypes200ResponseAllOfCredentialTypesInner) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *ListCredentialTypes200ResponseAllOfCredentialTypesInner) SetCode(v string) {
 	o.Code = &v
@@ -130,15 +112,6 @@ func (o *ListCredentialTypes200ResponseAllOfCredentialTypesInner) GetNameOk() (*
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListCredentialTypes200ResponseAllOfCredentialTypesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -165,28 +138,9 @@ func (o *ListCredentialTypes200ResponseAllOfCredentialTypesInner) GetDescription
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ListCredentialTypes200ResponseAllOfCredentialTypesInner) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListCredentialTypes200ResponseAllOfCredentialTypesInner) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *ListCredentialTypes200ResponseAllOfCredentialTypesInner) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *ListCredentialTypes200ResponseAllOfCredentialTypesInner) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
@@ -205,15 +159,6 @@ func (o *ListCredentialTypes200ResponseAllOfCredentialTypesInner) GetEnabledOk()
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *ListCredentialTypes200ResponseAllOfCredentialTypesInner) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -239,15 +184,6 @@ func (o *ListCredentialTypes200ResponseAllOfCredentialTypesInner) GetCreatableOk
 	return o.Creatable, true
 }
 
-// IsSetCreatable returns a boolean if a field has been set.
-func (o *ListCredentialTypes200ResponseAllOfCredentialTypesInner) IsSetCreatable() bool {
-	if o != nil && !IsNil(o.Creatable) {
-		return true
-	}
-
-	return false
-}
-
 // SetCreatable gets a reference to the given bool and assigns it to the Creatable field.
 func (o *ListCredentialTypes200ResponseAllOfCredentialTypesInner) SetCreatable(v bool) {
 	o.Creatable = &v
@@ -271,15 +207,6 @@ func (o *ListCredentialTypes200ResponseAllOfCredentialTypesInner) GetEditableOk(
 	return o.Editable, true
 }
 
-// IsSetEditable returns a boolean if a field has been set.
-func (o *ListCredentialTypes200ResponseAllOfCredentialTypesInner) IsSetEditable() bool {
-	if o != nil && !IsNil(o.Editable) {
-		return true
-	}
-
-	return false
-}
-
 // SetEditable gets a reference to the given bool and assigns it to the Editable field.
 func (o *ListCredentialTypes200ResponseAllOfCredentialTypesInner) SetEditable(v bool) {
 	o.Editable = &v
@@ -301,15 +228,6 @@ func (o *ListCredentialTypes200ResponseAllOfCredentialTypesInner) GetOptionTypes
 		return nil, false
 	}
 	return o.OptionTypes, true
-}
-
-// IsSetOptionTypes returns a boolean if a field has been set.
-func (o *ListCredentialTypes200ResponseAllOfCredentialTypesInner) IsSetOptionTypes() bool {
-	if o != nil && !IsNil(o.OptionTypes) {
-		return true
-	}
-
-	return false
 }
 
 // SetOptionTypes gets a reference to the given []ListCredentialTypes200ResponseAllOfCredentialTypesInnerOptionTypesInner and assigns it to the OptionTypes field.

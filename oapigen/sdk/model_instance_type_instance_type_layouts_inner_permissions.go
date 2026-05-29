@@ -61,15 +61,6 @@ func (o *InstanceTypeInstanceTypeLayoutsInnerPermissions) GetResourcePermissions
 	return o.ResourcePermissions, true
 }
 
-// IsSetResourcePermissions returns a boolean if a field has been set.
-func (o *InstanceTypeInstanceTypeLayoutsInnerPermissions) IsSetResourcePermissions() bool {
-	if o != nil && !IsNil(o.ResourcePermissions) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourcePermissions gets a reference to the given InstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions and assigns it to the ResourcePermissions field.
 func (o *InstanceTypeInstanceTypeLayoutsInnerPermissions) SetResourcePermissions(v InstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions) {
 	o.ResourcePermissions = &v

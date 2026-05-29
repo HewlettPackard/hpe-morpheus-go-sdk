@@ -62,15 +62,6 @@ func (o *UpdateStorageVolumes200Response) GetStorageVolumeOk() (*UpdateStorageVo
 	return o.StorageVolume, true
 }
 
-// IsSetStorageVolume returns a boolean if a field has been set.
-func (o *UpdateStorageVolumes200Response) IsSetStorageVolume() bool {
-	if o != nil && !IsNil(o.StorageVolume) {
-		return true
-	}
-
-	return false
-}
-
 // SetStorageVolume gets a reference to the given UpdateStorageVolumes200ResponseAllOfStorageVolume and assigns it to the StorageVolume field.
 func (o *UpdateStorageVolumes200Response) SetStorageVolume(v UpdateStorageVolumes200ResponseAllOfStorageVolume) {
 	o.StorageVolume = &v
@@ -92,15 +83,6 @@ func (o *UpdateStorageVolumes200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *UpdateStorageVolumes200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

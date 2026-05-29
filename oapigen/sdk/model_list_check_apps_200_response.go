@@ -62,15 +62,6 @@ func (o *ListCheckApps200Response) GetMonitorAppsOk() ([]ListCheckApps200Respons
 	return o.MonitorApps, true
 }
 
-// IsSetMonitorApps returns a boolean if a field has been set.
-func (o *ListCheckApps200Response) IsSetMonitorApps() bool {
-	if o != nil && !IsNil(o.MonitorApps) {
-		return true
-	}
-
-	return false
-}
-
 // SetMonitorApps gets a reference to the given []ListCheckApps200ResponseAllOfMonitorAppsInner and assigns it to the MonitorApps field.
 func (o *ListCheckApps200Response) SetMonitorApps(v []ListCheckApps200ResponseAllOfMonitorAppsInner) {
 	o.MonitorApps = v
@@ -92,15 +83,6 @@ func (o *ListCheckApps200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMe
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListCheckApps200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

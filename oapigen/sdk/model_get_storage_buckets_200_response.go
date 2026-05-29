@@ -61,15 +61,6 @@ func (o *GetStorageBuckets200Response) GetStorageBucketOk() (*GetStorageBuckets2
 	return o.StorageBucket, true
 }
 
-// IsSetStorageBucket returns a boolean if a field has been set.
-func (o *GetStorageBuckets200Response) IsSetStorageBucket() bool {
-	if o != nil && !IsNil(o.StorageBucket) {
-		return true
-	}
-
-	return false
-}
-
 // SetStorageBucket gets a reference to the given GetStorageBuckets200ResponseStorageBucket and assigns it to the StorageBucket field.
 func (o *GetStorageBuckets200Response) SetStorageBucket(v GetStorageBuckets200ResponseStorageBucket) {
 	o.StorageBucket = &v

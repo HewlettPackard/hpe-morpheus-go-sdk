@@ -67,15 +67,6 @@ func (o *CredentialConfig) GetClientSecretOk() (*string, bool) {
 	return o.ClientSecret, true
 }
 
-// IsSetClientSecret returns a boolean if a field has been set.
-func (o *CredentialConfig) IsSetClientSecret() bool {
-	if o != nil && !IsNil(o.ClientSecret) {
-		return true
-	}
-
-	return false
-}
-
 // SetClientSecret gets a reference to the given string and assigns it to the ClientSecret field.
 func (o *CredentialConfig) SetClientSecret(v string) {
 	o.ClientSecret = &v
@@ -97,15 +88,6 @@ func (o *CredentialConfig) GetClientIdOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ClientId, true
-}
-
-// IsSetClientId returns a boolean if a field has been set.
-func (o *CredentialConfig) IsSetClientId() bool {
-	if o != nil && !IsNil(o.ClientId) {
-		return true
-	}
-
-	return false
 }
 
 // SetClientId gets a reference to the given string and assigns it to the ClientId field.
@@ -131,15 +113,6 @@ func (o *CredentialConfig) GetClientAuthOk() (*string, bool) {
 	return o.ClientAuth, true
 }
 
-// IsSetClientAuth returns a boolean if a field has been set.
-func (o *CredentialConfig) IsSetClientAuth() bool {
-	if o != nil && !IsNil(o.ClientAuth) {
-		return true
-	}
-
-	return false
-}
-
 // SetClientAuth gets a reference to the given string and assigns it to the ClientAuth field.
 func (o *CredentialConfig) SetClientAuth(v string) {
 	o.ClientAuth = &v
@@ -161,15 +134,6 @@ func (o *CredentialConfig) GetScopeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Scope, true
-}
-
-// IsSetScope returns a boolean if a field has been set.
-func (o *CredentialConfig) IsSetScope() bool {
-	if o != nil && !IsNil(o.Scope) {
-		return true
-	}
-
-	return false
 }
 
 // SetScope gets a reference to the given string and assigns it to the Scope field.
@@ -195,15 +159,6 @@ func (o *CredentialConfig) GetGrantTypeOk() (*string, bool) {
 	return o.GrantType, true
 }
 
-// IsSetGrantType returns a boolean if a field has been set.
-func (o *CredentialConfig) IsSetGrantType() bool {
-	if o != nil && !IsNil(o.GrantType) {
-		return true
-	}
-
-	return false
-}
-
 // SetGrantType gets a reference to the given string and assigns it to the GrantType field.
 func (o *CredentialConfig) SetGrantType(v string) {
 	o.GrantType = &v
@@ -227,15 +182,6 @@ func (o *CredentialConfig) GetAccessTokenUrlOk() (*string, bool) {
 	return o.AccessTokenUrl, true
 }
 
-// IsSetAccessTokenUrl returns a boolean if a field has been set.
-func (o *CredentialConfig) IsSetAccessTokenUrl() bool {
-	if o != nil && !IsNil(o.AccessTokenUrl) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccessTokenUrl gets a reference to the given string and assigns it to the AccessTokenUrl field.
 func (o *CredentialConfig) SetAccessTokenUrl(v string) {
 	o.AccessTokenUrl = &v
@@ -257,15 +203,6 @@ func (o *CredentialConfig) GetClientSecretHashOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ClientSecretHash, true
-}
-
-// IsSetClientSecretHash returns a boolean if a field has been set.
-func (o *CredentialConfig) IsSetClientSecretHash() bool {
-	if o != nil && !IsNil(o.ClientSecretHash) {
-		return true
-	}
-
-	return false
 }
 
 // SetClientSecretHash gets a reference to the given string and assigns it to the ClientSecretHash field.

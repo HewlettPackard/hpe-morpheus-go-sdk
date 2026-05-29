@@ -75,15 +75,6 @@ func (o *AddPolicies200ResponseAllOfPolicy) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *AddPolicies200ResponseAllOfPolicy) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *AddPolicies200ResponseAllOfPolicy) SetId(v int64) {
 	o.Id = &v
@@ -105,15 +96,6 @@ func (o *AddPolicies200ResponseAllOfPolicy) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *AddPolicies200ResponseAllOfPolicy) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -140,28 +122,9 @@ func (o *AddPolicies200ResponseAllOfPolicy) GetDescriptionOk() (*string, bool) {
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *AddPolicies200ResponseAllOfPolicy) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *AddPolicies200ResponseAllOfPolicy) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *AddPolicies200ResponseAllOfPolicy) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *AddPolicies200ResponseAllOfPolicy) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetPolicyType returns the PolicyType field value if set, zero value otherwise.
@@ -180,15 +143,6 @@ func (o *AddPolicies200ResponseAllOfPolicy) GetPolicyTypeOk() (*AddPolicies200Re
 		return nil, false
 	}
 	return o.PolicyType, true
-}
-
-// IsSetPolicyType returns a boolean if a field has been set.
-func (o *AddPolicies200ResponseAllOfPolicy) IsSetPolicyType() bool {
-	if o != nil && !IsNil(o.PolicyType) {
-		return true
-	}
-
-	return false
 }
 
 // SetPolicyType gets a reference to the given AddPolicies200ResponseAllOfPolicyPolicyType and assigns it to the PolicyType field.
@@ -214,15 +168,6 @@ func (o *AddPolicies200ResponseAllOfPolicy) GetZoneOk() (*AddPolicies200Response
 	return o.Zone, true
 }
 
-// IsSetZone returns a boolean if a field has been set.
-func (o *AddPolicies200ResponseAllOfPolicy) IsSetZone() bool {
-	if o != nil && !IsNil(o.Zone) {
-		return true
-	}
-
-	return false
-}
-
 // SetZone gets a reference to the given AddPolicies200ResponseAllOfPolicyZone and assigns it to the Zone field.
 func (o *AddPolicies200ResponseAllOfPolicy) SetZone(v AddPolicies200ResponseAllOfPolicyZone) {
 	o.Zone = &v
@@ -244,15 +189,6 @@ func (o *AddPolicies200ResponseAllOfPolicy) GetSiteOk() (*AddPolicies200Response
 		return nil, false
 	}
 	return o.Site, true
-}
-
-// IsSetSite returns a boolean if a field has been set.
-func (o *AddPolicies200ResponseAllOfPolicy) IsSetSite() bool {
-	if o != nil && !IsNil(o.Site) {
-		return true
-	}
-
-	return false
 }
 
 // SetSite gets a reference to the given AddPolicies200ResponseAllOfPolicySite and assigns it to the Site field.
@@ -278,15 +214,6 @@ func (o *AddPolicies200ResponseAllOfPolicy) GetUserOk() (*AddPolicies200Response
 	return o.User, true
 }
 
-// IsSetUser returns a boolean if a field has been set.
-func (o *AddPolicies200ResponseAllOfPolicy) IsSetUser() bool {
-	if o != nil && !IsNil(o.User) {
-		return true
-	}
-
-	return false
-}
-
 // SetUser gets a reference to the given AddPolicies200ResponseAllOfPolicyUser and assigns it to the User field.
 func (o *AddPolicies200ResponseAllOfPolicy) SetUser(v AddPolicies200ResponseAllOfPolicyUser) {
 	o.User = &v
@@ -308,15 +235,6 @@ func (o *AddPolicies200ResponseAllOfPolicy) GetRoleOk() (*AddPolicies200Response
 		return nil, false
 	}
 	return o.Role, true
-}
-
-// IsSetRole returns a boolean if a field has been set.
-func (o *AddPolicies200ResponseAllOfPolicy) IsSetRole() bool {
-	if o != nil && !IsNil(o.Role) {
-		return true
-	}
-
-	return false
 }
 
 // SetRole gets a reference to the given AddPolicies200ResponseAllOfPolicyRole and assigns it to the Role field.
@@ -343,28 +261,9 @@ func (o *AddPolicies200ResponseAllOfPolicy) GetRefTypeOk() (*string, bool) {
 	return o.RefType.Get(), o.RefType.IsSet()
 }
 
-// IsSetRefType returns a boolean if a field has been set.
-func (o *AddPolicies200ResponseAllOfPolicy) IsSetRefType() bool {
-	if o != nil && o.RefType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRefType gets a reference to the given NullableString and assigns it to the RefType field.
 func (o *AddPolicies200ResponseAllOfPolicy) SetRefType(v string) {
 	o.RefType.Set(&v)
-}
-
-// SetRefTypeNil sets the value for RefType to be an explicit nil
-func (o *AddPolicies200ResponseAllOfPolicy) SetRefTypeNil() {
-	o.RefType.Set(nil)
-}
-
-// UnsetRefType ensures that no value is present for RefType, not even an explicit nil
-func (o *AddPolicies200ResponseAllOfPolicy) UnsetRefType() {
-	o.RefType.Unset()
 }
 
 // GetRefId returns the RefId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -386,28 +285,9 @@ func (o *AddPolicies200ResponseAllOfPolicy) GetRefIdOk() (*int64, bool) {
 	return o.RefId.Get(), o.RefId.IsSet()
 }
 
-// IsSetRefId returns a boolean if a field has been set.
-func (o *AddPolicies200ResponseAllOfPolicy) IsSetRefId() bool {
-	if o != nil && o.RefId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRefId gets a reference to the given NullableInt64 and assigns it to the RefId field.
 func (o *AddPolicies200ResponseAllOfPolicy) SetRefId(v int64) {
 	o.RefId.Set(&v)
-}
-
-// SetRefIdNil sets the value for RefId to be an explicit nil
-func (o *AddPolicies200ResponseAllOfPolicy) SetRefIdNil() {
-	o.RefId.Set(nil)
-}
-
-// UnsetRefId ensures that no value is present for RefId, not even an explicit nil
-func (o *AddPolicies200ResponseAllOfPolicy) UnsetRefId() {
-	o.RefId.Unset()
 }
 
 // GetEachUser returns the EachUser field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -429,28 +309,9 @@ func (o *AddPolicies200ResponseAllOfPolicy) GetEachUserOk() (*bool, bool) {
 	return o.EachUser.Get(), o.EachUser.IsSet()
 }
 
-// IsSetEachUser returns a boolean if a field has been set.
-func (o *AddPolicies200ResponseAllOfPolicy) IsSetEachUser() bool {
-	if o != nil && o.EachUser.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetEachUser gets a reference to the given NullableBool and assigns it to the EachUser field.
 func (o *AddPolicies200ResponseAllOfPolicy) SetEachUser(v bool) {
 	o.EachUser.Set(&v)
-}
-
-// SetEachUserNil sets the value for EachUser to be an explicit nil
-func (o *AddPolicies200ResponseAllOfPolicy) SetEachUserNil() {
-	o.EachUser.Set(nil)
-}
-
-// UnsetEachUser ensures that no value is present for EachUser, not even an explicit nil
-func (o *AddPolicies200ResponseAllOfPolicy) UnsetEachUser() {
-	o.EachUser.Unset()
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
@@ -469,15 +330,6 @@ func (o *AddPolicies200ResponseAllOfPolicy) GetConfigOk() (*AddPolicies200Respon
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *AddPolicies200ResponseAllOfPolicy) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given AddPolicies200ResponseAllOfPolicyConfig and assigns it to the Config field.
@@ -501,15 +353,6 @@ func (o *AddPolicies200ResponseAllOfPolicy) GetEnabledOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *AddPolicies200ResponseAllOfPolicy) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -536,28 +379,9 @@ func (o *AddPolicies200ResponseAllOfPolicy) GetOwnerOk() (*AddPolicies200Respons
 	return o.Owner.Get(), o.Owner.IsSet()
 }
 
-// IsSetOwner returns a boolean if a field has been set.
-func (o *AddPolicies200ResponseAllOfPolicy) IsSetOwner() bool {
-	if o != nil && o.Owner.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetOwner gets a reference to the given NullableAddPolicies200ResponseAllOfPolicyOwner and assigns it to the Owner field.
 func (o *AddPolicies200ResponseAllOfPolicy) SetOwner(v AddPolicies200ResponseAllOfPolicyOwner) {
 	o.Owner.Set(&v)
-}
-
-// SetOwnerNil sets the value for Owner to be an explicit nil
-func (o *AddPolicies200ResponseAllOfPolicy) SetOwnerNil() {
-	o.Owner.Set(nil)
-}
-
-// UnsetOwner ensures that no value is present for Owner, not even an explicit nil
-func (o *AddPolicies200ResponseAllOfPolicy) UnsetOwner() {
-	o.Owner.Unset()
 }
 
 // GetAccounts returns the Accounts field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -577,15 +401,6 @@ func (o *AddPolicies200ResponseAllOfPolicy) GetAccountsOk() ([]ListPolicies200Re
 		return nil, false
 	}
 	return o.Accounts, true
-}
-
-// IsSetAccounts returns a boolean if a field has been set.
-func (o *AddPolicies200ResponseAllOfPolicy) IsSetAccounts() bool {
-	if o != nil && !IsNil(o.Accounts) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccounts gets a reference to the given []ListPolicies200ResponseAllOfPoliciesInnerAccountsInner and assigns it to the Accounts field.

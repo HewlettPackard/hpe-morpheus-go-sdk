@@ -62,15 +62,6 @@ func (o *AddUserGroup200Response) GetUserGroupOk() (*AddUserGroup200ResponseAllO
 	return o.UserGroup, true
 }
 
-// IsSetUserGroup returns a boolean if a field has been set.
-func (o *AddUserGroup200Response) IsSetUserGroup() bool {
-	if o != nil && !IsNil(o.UserGroup) {
-		return true
-	}
-
-	return false
-}
-
 // SetUserGroup gets a reference to the given AddUserGroup200ResponseAllOfUserGroup and assigns it to the UserGroup field.
 func (o *AddUserGroup200Response) SetUserGroup(v AddUserGroup200ResponseAllOfUserGroup) {
 	o.UserGroup = &v
@@ -92,15 +83,6 @@ func (o *AddUserGroup200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *AddUserGroup200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

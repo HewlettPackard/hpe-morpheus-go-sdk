@@ -140,15 +140,6 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetId(v int64) {
 	o.Id = &v
@@ -170,15 +161,6 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -205,28 +187,9 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetDisplayNameOk() (*string, bool
 	return o.DisplayName.Get(), o.DisplayName.IsSet()
 }
 
-// IsSetDisplayName returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetDisplayName() bool {
-	if o != nil && o.DisplayName.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDisplayName gets a reference to the given NullableString and assigns it to the DisplayName field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetDisplayName(v string) {
 	o.DisplayName.Set(&v)
-}
-
-// SetDisplayNameNil sets the value for DisplayName to be an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) SetDisplayNameNil() {
-	o.DisplayName.Set(nil)
-}
-
-// UnsetDisplayName ensures that no value is present for DisplayName, not even an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) UnsetDisplayName() {
-	o.DisplayName.Unset()
 }
 
 // GetLabels returns the Labels field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -246,15 +209,6 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetLabelsOk() ([]string, bool) {
 		return nil, false
 	}
 	return o.Labels, true
-}
-
-// IsSetLabels returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
 }
 
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
@@ -280,15 +234,6 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetGroupOk() (*UpdateNetwork200Re
 	return o.Group, true
 }
 
-// IsSetGroup returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetGroup() bool {
-	if o != nil && !IsNil(o.Group) {
-		return true
-	}
-
-	return false
-}
-
 // SetGroup gets a reference to the given UpdateNetwork200ResponseAllOfNetworkGroup and assigns it to the Group field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetGroup(v UpdateNetwork200ResponseAllOfNetworkGroup) {
 	o.Group = &v
@@ -310,15 +255,6 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetZoneOk() (*UpdateNetwork200Res
 		return nil, false
 	}
 	return o.Zone, true
-}
-
-// IsSetZone returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetZone() bool {
-	if o != nil && !IsNil(o.Zone) {
-		return true
-	}
-
-	return false
 }
 
 // SetZone gets a reference to the given UpdateNetwork200ResponseAllOfNetworkZone and assigns it to the Zone field.
@@ -344,15 +280,6 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetTypeOk() (*UpdateNetwork200Res
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given UpdateNetwork200ResponseAllOfNetworkType and assigns it to the Type field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetType(v UpdateNetwork200ResponseAllOfNetworkType) {
 	o.Type = &v
@@ -374,15 +301,6 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetOwnerOk() (*UpdateNetwork200Re
 		return nil, false
 	}
 	return o.Owner, true
-}
-
-// IsSetOwner returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
-		return true
-	}
-
-	return false
 }
 
 // SetOwner gets a reference to the given UpdateNetwork200ResponseAllOfNetworkOwner and assigns it to the Owner field.
@@ -409,28 +327,9 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetCodeOk() (*string, bool) {
 	return o.Code.Get(), o.Code.IsSet()
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetCode() bool {
-	if o != nil && o.Code.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetCode(v string) {
 	o.Code.Set(&v)
-}
-
-// SetCodeNil sets the value for Code to be an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) SetCodeNil() {
-	o.Code.Set(nil)
-}
-
-// UnsetCode ensures that no value is present for Code, not even an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) UnsetCode() {
-	o.Code.Unset()
 }
 
 // GetIpv4Enabled returns the Ipv4Enabled field value if set, zero value otherwise.
@@ -449,15 +348,6 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetIpv4EnabledOk() (*bool, bool) 
 		return nil, false
 	}
 	return o.Ipv4Enabled, true
-}
-
-// IsSetIpv4Enabled returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetIpv4Enabled() bool {
-	if o != nil && !IsNil(o.Ipv4Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetIpv4Enabled gets a reference to the given bool and assigns it to the Ipv4Enabled field.
@@ -481,15 +371,6 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetIpv6EnabledOk() (*bool, bool) 
 		return nil, false
 	}
 	return o.Ipv6Enabled, true
-}
-
-// IsSetIpv6Enabled returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetIpv6Enabled() bool {
-	if o != nil && !IsNil(o.Ipv6Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetIpv6Enabled gets a reference to the given bool and assigns it to the Ipv6Enabled field.
@@ -516,28 +397,9 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetCategoryOk() (*string, bool) {
 	return o.Category.Get(), o.Category.IsSet()
 }
 
-// IsSetCategory returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetCategory() bool {
-	if o != nil && o.Category.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCategory gets a reference to the given NullableString and assigns it to the Category field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetCategory(v string) {
 	o.Category.Set(&v)
-}
-
-// SetCategoryNil sets the value for Category to be an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) SetCategoryNil() {
-	o.Category.Set(nil)
-}
-
-// UnsetCategory ensures that no value is present for Category, not even an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) UnsetCategory() {
-	o.Category.Unset()
 }
 
 // GetInterfaceName returns the InterfaceName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -559,28 +421,9 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetInterfaceNameOk() (*string, bo
 	return o.InterfaceName.Get(), o.InterfaceName.IsSet()
 }
 
-// IsSetInterfaceName returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetInterfaceName() bool {
-	if o != nil && o.InterfaceName.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInterfaceName gets a reference to the given NullableString and assigns it to the InterfaceName field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetInterfaceName(v string) {
 	o.InterfaceName.Set(&v)
-}
-
-// SetInterfaceNameNil sets the value for InterfaceName to be an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) SetInterfaceNameNil() {
-	o.InterfaceName.Set(nil)
-}
-
-// UnsetInterfaceName ensures that no value is present for InterfaceName, not even an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) UnsetInterfaceName() {
-	o.InterfaceName.Unset()
 }
 
 // GetBridgeName returns the BridgeName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -602,28 +445,9 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetBridgeNameOk() (*string, bool)
 	return o.BridgeName.Get(), o.BridgeName.IsSet()
 }
 
-// IsSetBridgeName returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetBridgeName() bool {
-	if o != nil && o.BridgeName.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetBridgeName gets a reference to the given NullableString and assigns it to the BridgeName field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetBridgeName(v string) {
 	o.BridgeName.Set(&v)
-}
-
-// SetBridgeNameNil sets the value for BridgeName to be an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) SetBridgeNameNil() {
-	o.BridgeName.Set(nil)
-}
-
-// UnsetBridgeName ensures that no value is present for BridgeName, not even an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) UnsetBridgeName() {
-	o.BridgeName.Unset()
 }
 
 // GetBridgeInterface returns the BridgeInterface field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -645,28 +469,9 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetBridgeInterfaceOk() (*string, 
 	return o.BridgeInterface.Get(), o.BridgeInterface.IsSet()
 }
 
-// IsSetBridgeInterface returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetBridgeInterface() bool {
-	if o != nil && o.BridgeInterface.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetBridgeInterface gets a reference to the given NullableString and assigns it to the BridgeInterface field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetBridgeInterface(v string) {
 	o.BridgeInterface.Set(&v)
-}
-
-// SetBridgeInterfaceNil sets the value for BridgeInterface to be an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) SetBridgeInterfaceNil() {
-	o.BridgeInterface.Set(nil)
-}
-
-// UnsetBridgeInterface ensures that no value is present for BridgeInterface, not even an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) UnsetBridgeInterface() {
-	o.BridgeInterface.Unset()
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -688,28 +493,9 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetDescriptionOk() (*string, bool
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -731,28 +517,9 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetExternalIdOk() (*string, bool)
 	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetExternalId() bool {
-	if o != nil && o.ExternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetExternalId(v string) {
 	o.ExternalId.Set(&v)
-}
-
-// SetExternalIdNil sets the value for ExternalId to be an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) SetExternalIdNil() {
-	o.ExternalId.Set(nil)
-}
-
-// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) UnsetExternalId() {
-	o.ExternalId.Unset()
 }
 
 // GetInternalId returns the InternalId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -774,28 +541,9 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetInternalIdOk() (*string, bool)
 	return o.InternalId.Get(), o.InternalId.IsSet()
 }
 
-// IsSetInternalId returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetInternalId() bool {
-	if o != nil && o.InternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInternalId gets a reference to the given NullableString and assigns it to the InternalId field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetInternalId(v string) {
 	o.InternalId.Set(&v)
-}
-
-// SetInternalIdNil sets the value for InternalId to be an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) SetInternalIdNil() {
-	o.InternalId.Set(nil)
-}
-
-// UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) UnsetInternalId() {
-	o.InternalId.Unset()
 }
 
 // GetUniqueId returns the UniqueId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -817,28 +565,9 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetUniqueIdOk() (*string, bool) {
 	return o.UniqueId.Get(), o.UniqueId.IsSet()
 }
 
-// IsSetUniqueId returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetUniqueId() bool {
-	if o != nil && o.UniqueId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUniqueId gets a reference to the given NullableString and assigns it to the UniqueId field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetUniqueId(v string) {
 	o.UniqueId.Set(&v)
-}
-
-// SetUniqueIdNil sets the value for UniqueId to be an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) SetUniqueIdNil() {
-	o.UniqueId.Set(nil)
-}
-
-// UnsetUniqueId ensures that no value is present for UniqueId, not even an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) UnsetUniqueId() {
-	o.UniqueId.Unset()
 }
 
 // GetExternalType returns the ExternalType field value if set, zero value otherwise.
@@ -857,15 +586,6 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetExternalTypeOk() (*string, boo
 		return nil, false
 	}
 	return o.ExternalType, true
-}
-
-// IsSetExternalType returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetExternalType() bool {
-	if o != nil && !IsNil(o.ExternalType) {
-		return true
-	}
-
-	return false
 }
 
 // SetExternalType gets a reference to the given string and assigns it to the ExternalType field.
@@ -892,28 +612,9 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetRefUrlOk() (*string, bool) {
 	return o.RefUrl.Get(), o.RefUrl.IsSet()
 }
 
-// IsSetRefUrl returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetRefUrl() bool {
-	if o != nil && o.RefUrl.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRefUrl gets a reference to the given NullableString and assigns it to the RefUrl field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetRefUrl(v string) {
 	o.RefUrl.Set(&v)
-}
-
-// SetRefUrlNil sets the value for RefUrl to be an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) SetRefUrlNil() {
-	o.RefUrl.Set(nil)
-}
-
-// UnsetRefUrl ensures that no value is present for RefUrl, not even an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) UnsetRefUrl() {
-	o.RefUrl.Unset()
 }
 
 // GetRefType returns the RefType field value if set, zero value otherwise.
@@ -932,15 +633,6 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetRefTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.RefType, true
-}
-
-// IsSetRefType returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetRefType() bool {
-	if o != nil && !IsNil(o.RefType) {
-		return true
-	}
-
-	return false
 }
 
 // SetRefType gets a reference to the given string and assigns it to the RefType field.
@@ -964,15 +656,6 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetRefIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.RefId, true
-}
-
-// IsSetRefId returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetRefId() bool {
-	if o != nil && !IsNil(o.RefId) {
-		return true
-	}
-
-	return false
 }
 
 // SetRefId gets a reference to the given int64 and assigns it to the RefId field.
@@ -999,28 +682,9 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetVlanIdOk() (*int64, bool) {
 	return o.VlanId.Get(), o.VlanId.IsSet()
 }
 
-// IsSetVlanId returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetVlanId() bool {
-	if o != nil && o.VlanId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetVlanId gets a reference to the given NullableInt64 and assigns it to the VlanId field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetVlanId(v int64) {
 	o.VlanId.Set(&v)
-}
-
-// SetVlanIdNil sets the value for VlanId to be an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) SetVlanIdNil() {
-	o.VlanId.Set(nil)
-}
-
-// UnsetVlanId ensures that no value is present for VlanId, not even an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) UnsetVlanId() {
-	o.VlanId.Unset()
 }
 
 // GetVswitchName returns the VswitchName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1042,28 +706,9 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetVswitchNameOk() (*string, bool
 	return o.VswitchName.Get(), o.VswitchName.IsSet()
 }
 
-// IsSetVswitchName returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetVswitchName() bool {
-	if o != nil && o.VswitchName.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetVswitchName gets a reference to the given NullableString and assigns it to the VswitchName field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetVswitchName(v string) {
 	o.VswitchName.Set(&v)
-}
-
-// SetVswitchNameNil sets the value for VswitchName to be an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) SetVswitchNameNil() {
-	o.VswitchName.Set(nil)
-}
-
-// UnsetVswitchName ensures that no value is present for VswitchName, not even an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) UnsetVswitchName() {
-	o.VswitchName.Unset()
 }
 
 // GetDhcpServer returns the DhcpServer field value if set, zero value otherwise.
@@ -1082,15 +727,6 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetDhcpServerOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.DhcpServer, true
-}
-
-// IsSetDhcpServer returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetDhcpServer() bool {
-	if o != nil && !IsNil(o.DhcpServer) {
-		return true
-	}
-
-	return false
 }
 
 // SetDhcpServer gets a reference to the given bool and assigns it to the DhcpServer field.
@@ -1117,28 +753,9 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetDhcpIpOk() (*string, bool) {
 	return o.DhcpIp.Get(), o.DhcpIp.IsSet()
 }
 
-// IsSetDhcpIp returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetDhcpIp() bool {
-	if o != nil && o.DhcpIp.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDhcpIp gets a reference to the given NullableString and assigns it to the DhcpIp field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetDhcpIp(v string) {
 	o.DhcpIp.Set(&v)
-}
-
-// SetDhcpIpNil sets the value for DhcpIp to be an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) SetDhcpIpNil() {
-	o.DhcpIp.Set(nil)
-}
-
-// UnsetDhcpIp ensures that no value is present for DhcpIp, not even an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) UnsetDhcpIp() {
-	o.DhcpIp.Unset()
 }
 
 // GetDhcpServerIPv6 returns the DhcpServerIPv6 field value if set, zero value otherwise.
@@ -1157,15 +774,6 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetDhcpServerIPv6Ok() (*bool, boo
 		return nil, false
 	}
 	return o.DhcpServerIPv6, true
-}
-
-// IsSetDhcpServerIPv6 returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetDhcpServerIPv6() bool {
-	if o != nil && !IsNil(o.DhcpServerIPv6) {
-		return true
-	}
-
-	return false
 }
 
 // SetDhcpServerIPv6 gets a reference to the given bool and assigns it to the DhcpServerIPv6 field.
@@ -1192,28 +800,9 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetGatewayOk() (*string, bool) {
 	return o.Gateway.Get(), o.Gateway.IsSet()
 }
 
-// IsSetGateway returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetGateway() bool {
-	if o != nil && o.Gateway.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetGateway gets a reference to the given NullableString and assigns it to the Gateway field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetGateway(v string) {
 	o.Gateway.Set(&v)
-}
-
-// SetGatewayNil sets the value for Gateway to be an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) SetGatewayNil() {
-	o.Gateway.Set(nil)
-}
-
-// UnsetGateway ensures that no value is present for Gateway, not even an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) UnsetGateway() {
-	o.Gateway.Unset()
 }
 
 // GetNetmask returns the Netmask field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1235,28 +824,9 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetNetmaskOk() (*string, bool) {
 	return o.Netmask.Get(), o.Netmask.IsSet()
 }
 
-// IsSetNetmask returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetNetmask() bool {
-	if o != nil && o.Netmask.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNetmask gets a reference to the given NullableString and assigns it to the Netmask field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetNetmask(v string) {
 	o.Netmask.Set(&v)
-}
-
-// SetNetmaskNil sets the value for Netmask to be an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) SetNetmaskNil() {
-	o.Netmask.Set(nil)
-}
-
-// UnsetNetmask ensures that no value is present for Netmask, not even an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) UnsetNetmask() {
-	o.Netmask.Unset()
 }
 
 // GetBroadcast returns the Broadcast field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1278,28 +848,9 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetBroadcastOk() (*string, bool) 
 	return o.Broadcast.Get(), o.Broadcast.IsSet()
 }
 
-// IsSetBroadcast returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetBroadcast() bool {
-	if o != nil && o.Broadcast.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetBroadcast gets a reference to the given NullableString and assigns it to the Broadcast field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetBroadcast(v string) {
 	o.Broadcast.Set(&v)
-}
-
-// SetBroadcastNil sets the value for Broadcast to be an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) SetBroadcastNil() {
-	o.Broadcast.Set(nil)
-}
-
-// UnsetBroadcast ensures that no value is present for Broadcast, not even an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) UnsetBroadcast() {
-	o.Broadcast.Unset()
 }
 
 // GetSubnetAddress returns the SubnetAddress field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1321,28 +872,9 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetSubnetAddressOk() (*string, bo
 	return o.SubnetAddress.Get(), o.SubnetAddress.IsSet()
 }
 
-// IsSetSubnetAddress returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetSubnetAddress() bool {
-	if o != nil && o.SubnetAddress.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSubnetAddress gets a reference to the given NullableString and assigns it to the SubnetAddress field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetSubnetAddress(v string) {
 	o.SubnetAddress.Set(&v)
-}
-
-// SetSubnetAddressNil sets the value for SubnetAddress to be an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) SetSubnetAddressNil() {
-	o.SubnetAddress.Set(nil)
-}
-
-// UnsetSubnetAddress ensures that no value is present for SubnetAddress, not even an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) UnsetSubnetAddress() {
-	o.SubnetAddress.Unset()
 }
 
 // GetDnsPrimary returns the DnsPrimary field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1364,28 +896,9 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetDnsPrimaryOk() (*string, bool)
 	return o.DnsPrimary.Get(), o.DnsPrimary.IsSet()
 }
 
-// IsSetDnsPrimary returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetDnsPrimary() bool {
-	if o != nil && o.DnsPrimary.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDnsPrimary gets a reference to the given NullableString and assigns it to the DnsPrimary field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetDnsPrimary(v string) {
 	o.DnsPrimary.Set(&v)
-}
-
-// SetDnsPrimaryNil sets the value for DnsPrimary to be an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) SetDnsPrimaryNil() {
-	o.DnsPrimary.Set(nil)
-}
-
-// UnsetDnsPrimary ensures that no value is present for DnsPrimary, not even an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) UnsetDnsPrimary() {
-	o.DnsPrimary.Unset()
 }
 
 // GetDnsSecondary returns the DnsSecondary field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1407,28 +920,9 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetDnsSecondaryOk() (*string, boo
 	return o.DnsSecondary.Get(), o.DnsSecondary.IsSet()
 }
 
-// IsSetDnsSecondary returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetDnsSecondary() bool {
-	if o != nil && o.DnsSecondary.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDnsSecondary gets a reference to the given NullableString and assigns it to the DnsSecondary field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetDnsSecondary(v string) {
 	o.DnsSecondary.Set(&v)
-}
-
-// SetDnsSecondaryNil sets the value for DnsSecondary to be an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) SetDnsSecondaryNil() {
-	o.DnsSecondary.Set(nil)
-}
-
-// UnsetDnsSecondary ensures that no value is present for DnsSecondary, not even an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) UnsetDnsSecondary() {
-	o.DnsSecondary.Unset()
 }
 
 // GetCidr returns the Cidr field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1450,28 +944,9 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetCidrOk() (*string, bool) {
 	return o.Cidr.Get(), o.Cidr.IsSet()
 }
 
-// IsSetCidr returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetCidr() bool {
-	if o != nil && o.Cidr.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCidr gets a reference to the given NullableString and assigns it to the Cidr field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetCidr(v string) {
 	o.Cidr.Set(&v)
-}
-
-// SetCidrNil sets the value for Cidr to be an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) SetCidrNil() {
-	o.Cidr.Set(nil)
-}
-
-// UnsetCidr ensures that no value is present for Cidr, not even an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) UnsetCidr() {
-	o.Cidr.Unset()
 }
 
 // GetGatewayIPv6 returns the GatewayIPv6 field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1493,28 +968,9 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetGatewayIPv6Ok() (*string, bool
 	return o.GatewayIPv6.Get(), o.GatewayIPv6.IsSet()
 }
 
-// IsSetGatewayIPv6 returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetGatewayIPv6() bool {
-	if o != nil && o.GatewayIPv6.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetGatewayIPv6 gets a reference to the given NullableString and assigns it to the GatewayIPv6 field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetGatewayIPv6(v string) {
 	o.GatewayIPv6.Set(&v)
-}
-
-// SetGatewayIPv6Nil sets the value for GatewayIPv6 to be an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) SetGatewayIPv6Nil() {
-	o.GatewayIPv6.Set(nil)
-}
-
-// UnsetGatewayIPv6 ensures that no value is present for GatewayIPv6, not even an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) UnsetGatewayIPv6() {
-	o.GatewayIPv6.Unset()
 }
 
 // GetNetmaskIPv6 returns the NetmaskIPv6 field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1536,28 +992,9 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetNetmaskIPv6Ok() (*string, bool
 	return o.NetmaskIPv6.Get(), o.NetmaskIPv6.IsSet()
 }
 
-// IsSetNetmaskIPv6 returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetNetmaskIPv6() bool {
-	if o != nil && o.NetmaskIPv6.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNetmaskIPv6 gets a reference to the given NullableString and assigns it to the NetmaskIPv6 field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetNetmaskIPv6(v string) {
 	o.NetmaskIPv6.Set(&v)
-}
-
-// SetNetmaskIPv6Nil sets the value for NetmaskIPv6 to be an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) SetNetmaskIPv6Nil() {
-	o.NetmaskIPv6.Set(nil)
-}
-
-// UnsetNetmaskIPv6 ensures that no value is present for NetmaskIPv6, not even an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) UnsetNetmaskIPv6() {
-	o.NetmaskIPv6.Unset()
 }
 
 // GetDnsPrimaryIPv6 returns the DnsPrimaryIPv6 field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1579,28 +1016,9 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetDnsPrimaryIPv6Ok() (*string, b
 	return o.DnsPrimaryIPv6.Get(), o.DnsPrimaryIPv6.IsSet()
 }
 
-// IsSetDnsPrimaryIPv6 returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetDnsPrimaryIPv6() bool {
-	if o != nil && o.DnsPrimaryIPv6.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDnsPrimaryIPv6 gets a reference to the given NullableString and assigns it to the DnsPrimaryIPv6 field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetDnsPrimaryIPv6(v string) {
 	o.DnsPrimaryIPv6.Set(&v)
-}
-
-// SetDnsPrimaryIPv6Nil sets the value for DnsPrimaryIPv6 to be an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) SetDnsPrimaryIPv6Nil() {
-	o.DnsPrimaryIPv6.Set(nil)
-}
-
-// UnsetDnsPrimaryIPv6 ensures that no value is present for DnsPrimaryIPv6, not even an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) UnsetDnsPrimaryIPv6() {
-	o.DnsPrimaryIPv6.Unset()
 }
 
 // GetDnsSecondaryIPv6 returns the DnsSecondaryIPv6 field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1622,28 +1040,9 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetDnsSecondaryIPv6Ok() (*string,
 	return o.DnsSecondaryIPv6.Get(), o.DnsSecondaryIPv6.IsSet()
 }
 
-// IsSetDnsSecondaryIPv6 returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetDnsSecondaryIPv6() bool {
-	if o != nil && o.DnsSecondaryIPv6.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDnsSecondaryIPv6 gets a reference to the given NullableString and assigns it to the DnsSecondaryIPv6 field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetDnsSecondaryIPv6(v string) {
 	o.DnsSecondaryIPv6.Set(&v)
-}
-
-// SetDnsSecondaryIPv6Nil sets the value for DnsSecondaryIPv6 to be an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) SetDnsSecondaryIPv6Nil() {
-	o.DnsSecondaryIPv6.Set(nil)
-}
-
-// UnsetDnsSecondaryIPv6 ensures that no value is present for DnsSecondaryIPv6, not even an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) UnsetDnsSecondaryIPv6() {
-	o.DnsSecondaryIPv6.Unset()
 }
 
 // GetCidrIPv6 returns the CidrIPv6 field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1665,28 +1064,9 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetCidrIPv6Ok() (*string, bool) {
 	return o.CidrIPv6.Get(), o.CidrIPv6.IsSet()
 }
 
-// IsSetCidrIPv6 returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetCidrIPv6() bool {
-	if o != nil && o.CidrIPv6.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCidrIPv6 gets a reference to the given NullableString and assigns it to the CidrIPv6 field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetCidrIPv6(v string) {
 	o.CidrIPv6.Set(&v)
-}
-
-// SetCidrIPv6Nil sets the value for CidrIPv6 to be an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) SetCidrIPv6Nil() {
-	o.CidrIPv6.Set(nil)
-}
-
-// UnsetCidrIPv6 ensures that no value is present for CidrIPv6, not even an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) UnsetCidrIPv6() {
-	o.CidrIPv6.Unset()
 }
 
 // GetTftpServer returns the TftpServer field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1708,28 +1088,9 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetTftpServerOk() (*string, bool)
 	return o.TftpServer.Get(), o.TftpServer.IsSet()
 }
 
-// IsSetTftpServer returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetTftpServer() bool {
-	if o != nil && o.TftpServer.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetTftpServer gets a reference to the given NullableString and assigns it to the TftpServer field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetTftpServer(v string) {
 	o.TftpServer.Set(&v)
-}
-
-// SetTftpServerNil sets the value for TftpServer to be an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) SetTftpServerNil() {
-	o.TftpServer.Set(nil)
-}
-
-// UnsetTftpServer ensures that no value is present for TftpServer, not even an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) UnsetTftpServer() {
-	o.TftpServer.Unset()
 }
 
 // GetBootFile returns the BootFile field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1751,28 +1112,9 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetBootFileOk() (*string, bool) {
 	return o.BootFile.Get(), o.BootFile.IsSet()
 }
 
-// IsSetBootFile returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetBootFile() bool {
-	if o != nil && o.BootFile.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetBootFile gets a reference to the given NullableString and assigns it to the BootFile field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetBootFile(v string) {
 	o.BootFile.Set(&v)
-}
-
-// SetBootFileNil sets the value for BootFile to be an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) SetBootFileNil() {
-	o.BootFile.Set(nil)
-}
-
-// UnsetBootFile ensures that no value is present for BootFile, not even an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) UnsetBootFile() {
-	o.BootFile.Unset()
 }
 
 // GetSwitchId returns the SwitchId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1794,28 +1136,9 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetSwitchIdOk() (*string, bool) {
 	return o.SwitchId.Get(), o.SwitchId.IsSet()
 }
 
-// IsSetSwitchId returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetSwitchId() bool {
-	if o != nil && o.SwitchId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSwitchId gets a reference to the given NullableString and assigns it to the SwitchId field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetSwitchId(v string) {
 	o.SwitchId.Set(&v)
-}
-
-// SetSwitchIdNil sets the value for SwitchId to be an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) SetSwitchIdNil() {
-	o.SwitchId.Set(nil)
-}
-
-// UnsetSwitchId ensures that no value is present for SwitchId, not even an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) UnsetSwitchId() {
-	o.SwitchId.Unset()
 }
 
 // GetFabricId returns the FabricId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1837,28 +1160,9 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetFabricIdOk() (*string, bool) {
 	return o.FabricId.Get(), o.FabricId.IsSet()
 }
 
-// IsSetFabricId returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetFabricId() bool {
-	if o != nil && o.FabricId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFabricId gets a reference to the given NullableString and assigns it to the FabricId field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetFabricId(v string) {
 	o.FabricId.Set(&v)
-}
-
-// SetFabricIdNil sets the value for FabricId to be an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) SetFabricIdNil() {
-	o.FabricId.Set(nil)
-}
-
-// UnsetFabricId ensures that no value is present for FabricId, not even an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) UnsetFabricId() {
-	o.FabricId.Unset()
 }
 
 // GetNetworkRole returns the NetworkRole field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1880,28 +1184,9 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetNetworkRoleOk() (*string, bool
 	return o.NetworkRole.Get(), o.NetworkRole.IsSet()
 }
 
-// IsSetNetworkRole returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetNetworkRole() bool {
-	if o != nil && o.NetworkRole.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkRole gets a reference to the given NullableString and assigns it to the NetworkRole field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetNetworkRole(v string) {
 	o.NetworkRole.Set(&v)
-}
-
-// SetNetworkRoleNil sets the value for NetworkRole to be an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) SetNetworkRoleNil() {
-	o.NetworkRole.Set(nil)
-}
-
-// UnsetNetworkRole ensures that no value is present for NetworkRole, not even an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) UnsetNetworkRole() {
-	o.NetworkRole.Unset()
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1923,28 +1208,9 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetStatusOk() (*string, bool) {
 	return o.Status.Get(), o.Status.IsSet()
 }
 
-// IsSetStatus returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetStatus() bool {
-	if o != nil && o.Status.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatus gets a reference to the given NullableString and assigns it to the Status field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetStatus(v string) {
 	o.Status.Set(&v)
-}
-
-// SetStatusNil sets the value for Status to be an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) SetStatusNil() {
-	o.Status.Set(nil)
-}
-
-// UnsetStatus ensures that no value is present for Status, not even an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) UnsetStatus() {
-	o.Status.Unset()
 }
 
 // GetAvailabilityZone returns the AvailabilityZone field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1966,28 +1232,9 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetAvailabilityZoneOk() (*string,
 	return o.AvailabilityZone.Get(), o.AvailabilityZone.IsSet()
 }
 
-// IsSetAvailabilityZone returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetAvailabilityZone() bool {
-	if o != nil && o.AvailabilityZone.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAvailabilityZone gets a reference to the given NullableString and assigns it to the AvailabilityZone field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetAvailabilityZone(v string) {
 	o.AvailabilityZone.Set(&v)
-}
-
-// SetAvailabilityZoneNil sets the value for AvailabilityZone to be an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) SetAvailabilityZoneNil() {
-	o.AvailabilityZone.Set(nil)
-}
-
-// UnsetAvailabilityZone ensures that no value is present for AvailabilityZone, not even an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) UnsetAvailabilityZone() {
-	o.AvailabilityZone.Unset()
 }
 
 // GetPool returns the Pool field value if set, zero value otherwise.
@@ -2006,15 +1253,6 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetPoolOk() (*UpdateNetwork200Res
 		return nil, false
 	}
 	return o.Pool, true
-}
-
-// IsSetPool returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetPool() bool {
-	if o != nil && !IsNil(o.Pool) {
-		return true
-	}
-
-	return false
 }
 
 // SetPool gets a reference to the given UpdateNetwork200ResponseAllOfNetworkPool and assigns it to the Pool field.
@@ -2040,15 +1278,6 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetPoolIPv6Ok() (*UpdateNetwork20
 	return o.PoolIPv6, true
 }
 
-// IsSetPoolIPv6 returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetPoolIPv6() bool {
-	if o != nil && !IsNil(o.PoolIPv6) {
-		return true
-	}
-
-	return false
-}
-
 // SetPoolIPv6 gets a reference to the given UpdateNetwork200ResponseAllOfNetworkPoolIPv6 and assigns it to the PoolIPv6 field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetPoolIPv6(v UpdateNetwork200ResponseAllOfNetworkPoolIPv6) {
 	o.PoolIPv6 = &v
@@ -2072,15 +1301,6 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetNetworkProxyOk() (*UpdateNetwo
 	return o.NetworkProxy, true
 }
 
-// IsSetNetworkProxy returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetNetworkProxy() bool {
-	if o != nil && !IsNil(o.NetworkProxy) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkProxy gets a reference to the given UpdateNetwork200ResponseAllOfNetworkNetworkProxy and assigns it to the NetworkProxy field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetNetworkProxy(v UpdateNetwork200ResponseAllOfNetworkNetworkProxy) {
 	o.NetworkProxy = &v
@@ -2102,15 +1322,6 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetNetworkDomainOk() (*UpdateNetw
 		return nil, false
 	}
 	return o.NetworkDomain, true
-}
-
-// IsSetNetworkDomain returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetNetworkDomain() bool {
-	if o != nil && !IsNil(o.NetworkDomain) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkDomain gets a reference to the given UpdateNetwork200ResponseAllOfNetworkNetworkDomain and assigns it to the NetworkDomain field.
@@ -2137,28 +1348,9 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetSearchDomainsOk() (*string, bo
 	return o.SearchDomains.Get(), o.SearchDomains.IsSet()
 }
 
-// IsSetSearchDomains returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetSearchDomains() bool {
-	if o != nil && o.SearchDomains.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSearchDomains gets a reference to the given NullableString and assigns it to the SearchDomains field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetSearchDomains(v string) {
 	o.SearchDomains.Set(&v)
-}
-
-// SetSearchDomainsNil sets the value for SearchDomains to be an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) SetSearchDomainsNil() {
-	o.SearchDomains.Set(nil)
-}
-
-// UnsetSearchDomains ensures that no value is present for SearchDomains, not even an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) UnsetSearchDomains() {
-	o.SearchDomains.Unset()
 }
 
 // GetPrefixLength returns the PrefixLength field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -2180,28 +1372,9 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetPrefixLengthOk() (*string, boo
 	return o.PrefixLength.Get(), o.PrefixLength.IsSet()
 }
 
-// IsSetPrefixLength returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetPrefixLength() bool {
-	if o != nil && o.PrefixLength.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPrefixLength gets a reference to the given NullableString and assigns it to the PrefixLength field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetPrefixLength(v string) {
 	o.PrefixLength.Set(&v)
-}
-
-// SetPrefixLengthNil sets the value for PrefixLength to be an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) SetPrefixLengthNil() {
-	o.PrefixLength.Set(nil)
-}
-
-// UnsetPrefixLength ensures that no value is present for PrefixLength, not even an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) UnsetPrefixLength() {
-	o.PrefixLength.Unset()
 }
 
 // GetVisibility returns the Visibility field value if set, zero value otherwise.
@@ -2220,15 +1393,6 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetVisibilityOk() (*string, bool)
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -2254,15 +1418,6 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetEnableAdminOk() (*bool, bool) 
 	return o.EnableAdmin, true
 }
 
-// IsSetEnableAdmin returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetEnableAdmin() bool {
-	if o != nil && !IsNil(o.EnableAdmin) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnableAdmin gets a reference to the given bool and assigns it to the EnableAdmin field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetEnableAdmin(v bool) {
 	o.EnableAdmin = &v
@@ -2284,15 +1439,6 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetActiveOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Active, true
-}
-
-// IsSetActive returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
 }
 
 // SetActive gets a reference to the given bool and assigns it to the Active field.
@@ -2318,15 +1464,6 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetDefaultNetworkOk() (*bool, boo
 	return o.DefaultNetwork, true
 }
 
-// IsSetDefaultNetwork returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetDefaultNetwork() bool {
-	if o != nil && !IsNil(o.DefaultNetwork) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultNetwork gets a reference to the given bool and assigns it to the DefaultNetwork field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetDefaultNetwork(v bool) {
 	o.DefaultNetwork = &v
@@ -2348,15 +1485,6 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetAssignPublicIpOk() (*bool, boo
 		return nil, false
 	}
 	return o.AssignPublicIp, true
-}
-
-// IsSetAssignPublicIp returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetAssignPublicIp() bool {
-	if o != nil && !IsNil(o.AssignPublicIp) {
-		return true
-	}
-
-	return false
 }
 
 // SetAssignPublicIp gets a reference to the given bool and assigns it to the AssignPublicIp field.
@@ -2383,28 +1511,9 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetNoProxyOk() (*string, bool) {
 	return o.NoProxy.Get(), o.NoProxy.IsSet()
 }
 
-// IsSetNoProxy returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetNoProxy() bool {
-	if o != nil && o.NoProxy.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNoProxy gets a reference to the given NullableString and assigns it to the NoProxy field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetNoProxy(v string) {
 	o.NoProxy.Set(&v)
-}
-
-// SetNoProxyNil sets the value for NoProxy to be an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) SetNoProxyNil() {
-	o.NoProxy.Set(nil)
-}
-
-// UnsetNoProxy ensures that no value is present for NoProxy, not even an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetwork) UnsetNoProxy() {
-	o.NoProxy.Unset()
 }
 
 // GetApplianceUrlProxyBypass returns the ApplianceUrlProxyBypass field value if set, zero value otherwise.
@@ -2423,15 +1532,6 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetApplianceUrlProxyBypassOk() (*
 		return nil, false
 	}
 	return o.ApplianceUrlProxyBypass, true
-}
-
-// IsSetApplianceUrlProxyBypass returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetApplianceUrlProxyBypass() bool {
-	if o != nil && !IsNil(o.ApplianceUrlProxyBypass) {
-		return true
-	}
-
-	return false
 }
 
 // SetApplianceUrlProxyBypass gets a reference to the given bool and assigns it to the ApplianceUrlProxyBypass field.
@@ -2457,15 +1557,6 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetZonePoolOk() (*UpdateNetwork20
 	return o.ZonePool, true
 }
 
-// IsSetZonePool returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetZonePool() bool {
-	if o != nil && !IsNil(o.ZonePool) {
-		return true
-	}
-
-	return false
-}
-
 // SetZonePool gets a reference to the given UpdateNetwork200ResponseAllOfNetworkZonePool and assigns it to the ZonePool field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetZonePool(v UpdateNetwork200ResponseAllOfNetworkZonePool) {
 	o.ZonePool = &v
@@ -2487,15 +1578,6 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetAllowStaticOverrideOk() (*bool
 		return nil, false
 	}
 	return o.AllowStaticOverride, true
-}
-
-// IsSetAllowStaticOverride returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetAllowStaticOverride() bool {
-	if o != nil && !IsNil(o.AllowStaticOverride) {
-		return true
-	}
-
-	return false
 }
 
 // SetAllowStaticOverride gets a reference to the given bool and assigns it to the AllowStaticOverride field.
@@ -2521,15 +1603,6 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetConfigOk() (*UpdateNetwork200R
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given UpdateNetwork200ResponseAllOfNetworkConfig and assigns it to the Config field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetConfig(v UpdateNetwork200ResponseAllOfNetworkConfig) {
 	o.Config = &v
@@ -2553,15 +1626,6 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetTenantsOk() ([]UpdateNetwork20
 	return o.Tenants, true
 }
 
-// IsSetTenants returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetTenants() bool {
-	if o != nil && !IsNil(o.Tenants) {
-		return true
-	}
-
-	return false
-}
-
 // SetTenants gets a reference to the given []UpdateNetwork200ResponseAllOfNetworkTenantsInner and assigns it to the Tenants field.
 func (o *UpdateNetwork200ResponseAllOfNetwork) SetTenants(v []UpdateNetwork200ResponseAllOfNetworkTenantsInner) {
 	o.Tenants = v
@@ -2583,15 +1647,6 @@ func (o *UpdateNetwork200ResponseAllOfNetwork) GetResourcePermissionOk() (*Updat
 		return nil, false
 	}
 	return o.ResourcePermission, true
-}
-
-// IsSetResourcePermission returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetwork) IsSetResourcePermission() bool {
-	if o != nil && !IsNil(o.ResourcePermission) {
-		return true
-	}
-
-	return false
 }
 
 // SetResourcePermission gets a reference to the given UpdateNetwork200ResponseAllOfNetworkResourcePermission and assigns it to the ResourcePermission field.

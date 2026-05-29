@@ -86,15 +86,6 @@ func (o *ClusterDatastores) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ClusterDatastores) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ClusterDatastores) SetId(v int64) {
 	o.Id = &v
@@ -116,15 +107,6 @@ func (o *ClusterDatastores) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ClusterDatastores) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -151,28 +133,9 @@ func (o *ClusterDatastores) GetCodeOk() (*string, bool) {
 	return o.Code.Get(), o.Code.IsSet()
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *ClusterDatastores) IsSetCode() bool {
-	if o != nil && o.Code.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *ClusterDatastores) SetCode(v string) {
 	o.Code.Set(&v)
-}
-
-// SetCodeNil sets the value for Code to be an explicit nil
-func (o *ClusterDatastores) SetCodeNil() {
-	o.Code.Set(nil)
-}
-
-// UnsetCode ensures that no value is present for Code, not even an explicit nil
-func (o *ClusterDatastores) UnsetCode() {
-	o.Code.Unset()
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
@@ -191,15 +154,6 @@ func (o *ClusterDatastores) GetTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *ClusterDatastores) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.
@@ -223,15 +177,6 @@ func (o *ClusterDatastores) GetVisibilityOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *ClusterDatastores) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -258,28 +203,9 @@ func (o *ClusterDatastores) GetStorageSizeOk() (*int64, bool) {
 	return o.StorageSize.Get(), o.StorageSize.IsSet()
 }
 
-// IsSetStorageSize returns a boolean if a field has been set.
-func (o *ClusterDatastores) IsSetStorageSize() bool {
-	if o != nil && o.StorageSize.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStorageSize gets a reference to the given NullableInt64 and assigns it to the StorageSize field.
 func (o *ClusterDatastores) SetStorageSize(v int64) {
 	o.StorageSize.Set(&v)
-}
-
-// SetStorageSizeNil sets the value for StorageSize to be an explicit nil
-func (o *ClusterDatastores) SetStorageSizeNil() {
-	o.StorageSize.Set(nil)
-}
-
-// UnsetStorageSize ensures that no value is present for StorageSize, not even an explicit nil
-func (o *ClusterDatastores) UnsetStorageSize() {
-	o.StorageSize.Unset()
 }
 
 // GetFreeSpace returns the FreeSpace field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -301,28 +227,9 @@ func (o *ClusterDatastores) GetFreeSpaceOk() (*int64, bool) {
 	return o.FreeSpace.Get(), o.FreeSpace.IsSet()
 }
 
-// IsSetFreeSpace returns a boolean if a field has been set.
-func (o *ClusterDatastores) IsSetFreeSpace() bool {
-	if o != nil && o.FreeSpace.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFreeSpace gets a reference to the given NullableInt64 and assigns it to the FreeSpace field.
 func (o *ClusterDatastores) SetFreeSpace(v int64) {
 	o.FreeSpace.Set(&v)
-}
-
-// SetFreeSpaceNil sets the value for FreeSpace to be an explicit nil
-func (o *ClusterDatastores) SetFreeSpaceNil() {
-	o.FreeSpace.Set(nil)
-}
-
-// UnsetFreeSpace ensures that no value is present for FreeSpace, not even an explicit nil
-func (o *ClusterDatastores) UnsetFreeSpace() {
-	o.FreeSpace.Unset()
 }
 
 // GetDrsEnabled returns the DrsEnabled field value if set, zero value otherwise.
@@ -341,15 +248,6 @@ func (o *ClusterDatastores) GetDrsEnabledOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.DrsEnabled, true
-}
-
-// IsSetDrsEnabled returns a boolean if a field has been set.
-func (o *ClusterDatastores) IsSetDrsEnabled() bool {
-	if o != nil && !IsNil(o.DrsEnabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetDrsEnabled gets a reference to the given bool and assigns it to the DrsEnabled field.
@@ -375,15 +273,6 @@ func (o *ClusterDatastores) GetActiveOk() (*bool, bool) {
 	return o.Active, true
 }
 
-// IsSetActive returns a boolean if a field has been set.
-func (o *ClusterDatastores) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
-}
-
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *ClusterDatastores) SetActive(v bool) {
 	o.Active = &v
@@ -405,15 +294,6 @@ func (o *ClusterDatastores) GetAllowWriteOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.AllowWrite, true
-}
-
-// IsSetAllowWrite returns a boolean if a field has been set.
-func (o *ClusterDatastores) IsSetAllowWrite() bool {
-	if o != nil && !IsNil(o.AllowWrite) {
-		return true
-	}
-
-	return false
 }
 
 // SetAllowWrite gets a reference to the given bool and assigns it to the AllowWrite field.
@@ -439,15 +319,6 @@ func (o *ClusterDatastores) GetDefaultStoreOk() (*bool, bool) {
 	return o.DefaultStore, true
 }
 
-// IsSetDefaultStore returns a boolean if a field has been set.
-func (o *ClusterDatastores) IsSetDefaultStore() bool {
-	if o != nil && !IsNil(o.DefaultStore) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultStore gets a reference to the given bool and assigns it to the DefaultStore field.
 func (o *ClusterDatastores) SetDefaultStore(v bool) {
 	o.DefaultStore = &v
@@ -469,15 +340,6 @@ func (o *ClusterDatastores) GetOnlineOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Online, true
-}
-
-// IsSetOnline returns a boolean if a field has been set.
-func (o *ClusterDatastores) IsSetOnline() bool {
-	if o != nil && !IsNil(o.Online) {
-		return true
-	}
-
-	return false
 }
 
 // SetOnline gets a reference to the given bool and assigns it to the Online field.
@@ -503,15 +365,6 @@ func (o *ClusterDatastores) GetAllowReadOk() (*bool, bool) {
 	return o.AllowRead, true
 }
 
-// IsSetAllowRead returns a boolean if a field has been set.
-func (o *ClusterDatastores) IsSetAllowRead() bool {
-	if o != nil && !IsNil(o.AllowRead) {
-		return true
-	}
-
-	return false
-}
-
 // SetAllowRead gets a reference to the given bool and assigns it to the AllowRead field.
 func (o *ClusterDatastores) SetAllowRead(v bool) {
 	o.AllowRead = &v
@@ -533,15 +386,6 @@ func (o *ClusterDatastores) GetAllowProvisionOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.AllowProvision, true
-}
-
-// IsSetAllowProvision returns a boolean if a field has been set.
-func (o *ClusterDatastores) IsSetAllowProvision() bool {
-	if o != nil && !IsNil(o.AllowProvision) {
-		return true
-	}
-
-	return false
 }
 
 // SetAllowProvision gets a reference to the given bool and assigns it to the AllowProvision field.
@@ -567,15 +411,6 @@ func (o *ClusterDatastores) GetRefTypeOk() (*string, bool) {
 	return o.RefType, true
 }
 
-// IsSetRefType returns a boolean if a field has been set.
-func (o *ClusterDatastores) IsSetRefType() bool {
-	if o != nil && !IsNil(o.RefType) {
-		return true
-	}
-
-	return false
-}
-
 // SetRefType gets a reference to the given string and assigns it to the RefType field.
 func (o *ClusterDatastores) SetRefType(v string) {
 	o.RefType = &v
@@ -597,15 +432,6 @@ func (o *ClusterDatastores) GetRefIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.RefId, true
-}
-
-// IsSetRefId returns a boolean if a field has been set.
-func (o *ClusterDatastores) IsSetRefId() bool {
-	if o != nil && !IsNil(o.RefId) {
-		return true
-	}
-
-	return false
 }
 
 // SetRefId gets a reference to the given int64 and assigns it to the RefId field.
@@ -631,15 +457,6 @@ func (o *ClusterDatastores) GetExternalIdOk() (*string, bool) {
 	return o.ExternalId, true
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *ClusterDatastores) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
 func (o *ClusterDatastores) SetExternalId(v string) {
 	o.ExternalId = &v
@@ -661,15 +478,6 @@ func (o *ClusterDatastores) GetStatusOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *ClusterDatastores) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -695,15 +503,6 @@ func (o *ClusterDatastores) GetStatusMessageOk() (*string, bool) {
 	return o.StatusMessage, true
 }
 
-// IsSetStatusMessage returns a boolean if a field has been set.
-func (o *ClusterDatastores) IsSetStatusMessage() bool {
-	if o != nil && !IsNil(o.StatusMessage) {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusMessage gets a reference to the given string and assigns it to the StatusMessage field.
 func (o *ClusterDatastores) SetStatusMessage(v string) {
 	o.StatusMessage = &v
@@ -725,15 +524,6 @@ func (o *ClusterDatastores) GetZoneOk() (*ClusterDatastoresZone, bool) {
 		return nil, false
 	}
 	return o.Zone, true
-}
-
-// IsSetZone returns a boolean if a field has been set.
-func (o *ClusterDatastores) IsSetZone() bool {
-	if o != nil && !IsNil(o.Zone) {
-		return true
-	}
-
-	return false
 }
 
 // SetZone gets a reference to the given ClusterDatastoresZone and assigns it to the Zone field.
@@ -759,15 +549,6 @@ func (o *ClusterDatastores) GetZonePoolOk() (*ClusterDatastoresZonePool, bool) {
 	return o.ZonePool, true
 }
 
-// IsSetZonePool returns a boolean if a field has been set.
-func (o *ClusterDatastores) IsSetZonePool() bool {
-	if o != nil && !IsNil(o.ZonePool) {
-		return true
-	}
-
-	return false
-}
-
 // SetZonePool gets a reference to the given ClusterDatastoresZonePool and assigns it to the ZonePool field.
 func (o *ClusterDatastores) SetZonePool(v ClusterDatastoresZonePool) {
 	o.ZonePool = &v
@@ -791,15 +572,6 @@ func (o *ClusterDatastores) GetOwnerOk() (*ClusterDatastoresOwner, bool) {
 	return o.Owner, true
 }
 
-// IsSetOwner returns a boolean if a field has been set.
-func (o *ClusterDatastores) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
-		return true
-	}
-
-	return false
-}
-
 // SetOwner gets a reference to the given ClusterDatastoresOwner and assigns it to the Owner field.
 func (o *ClusterDatastores) SetOwner(v ClusterDatastoresOwner) {
 	o.Owner = &v
@@ -821,15 +593,6 @@ func (o *ClusterDatastores) GetTenantsOk() ([]ClusterDatastoresTenantsInner, boo
 		return nil, false
 	}
 	return o.Tenants, true
-}
-
-// IsSetTenants returns a boolean if a field has been set.
-func (o *ClusterDatastores) IsSetTenants() bool {
-	if o != nil && !IsNil(o.Tenants) {
-		return true
-	}
-
-	return false
 }
 
 // SetTenants gets a reference to the given []ClusterDatastoresTenantsInner and assigns it to the Tenants field.
@@ -856,15 +619,6 @@ func (o *ClusterDatastores) GetDatastoresOk() ([]map[string]interface{}, bool) {
 	return o.Datastores, true
 }
 
-// IsSetDatastores returns a boolean if a field has been set.
-func (o *ClusterDatastores) IsSetDatastores() bool {
-	if o != nil && !IsNil(o.Datastores) {
-		return true
-	}
-
-	return false
-}
-
 // SetDatastores gets a reference to the given []map[string]interface{} and assigns it to the Datastores field.
 func (o *ClusterDatastores) SetDatastores(v []map[string]interface{}) {
 	o.Datastores = v
@@ -888,15 +642,6 @@ func (o *ClusterDatastores) GetLocationsOk() ([]ClusterDatastoresLocationsInner,
 	return o.Locations, true
 }
 
-// IsSetLocations returns a boolean if a field has been set.
-func (o *ClusterDatastores) IsSetLocations() bool {
-	if o != nil && !IsNil(o.Locations) {
-		return true
-	}
-
-	return false
-}
-
 // SetLocations gets a reference to the given []ClusterDatastoresLocationsInner and assigns it to the Locations field.
 func (o *ClusterDatastores) SetLocations(v []ClusterDatastoresLocationsInner) {
 	o.Locations = v
@@ -918,15 +663,6 @@ func (o *ClusterDatastores) GetResourcePermissionsOk() (*ClusterDatastoresResour
 		return nil, false
 	}
 	return o.ResourcePermissions, true
-}
-
-// IsSetResourcePermissions returns a boolean if a field has been set.
-func (o *ClusterDatastores) IsSetResourcePermissions() bool {
-	if o != nil && !IsNil(o.ResourcePermissions) {
-		return true
-	}
-
-	return false
 }
 
 // SetResourcePermissions gets a reference to the given ClusterDatastoresResourcePermissions and assigns it to the ResourcePermissions field.

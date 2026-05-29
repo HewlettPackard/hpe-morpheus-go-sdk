@@ -91,15 +91,6 @@ func (o *CloudCreateConfigAzure) GetApplianceUrlOk() (*string, bool) {
 	return o.ApplianceUrl, true
 }
 
-// IsSetApplianceUrl returns a boolean if a field has been set.
-func (o *CloudCreateConfigAzure) IsSetApplianceUrl() bool {
-	if o != nil && !IsNil(o.ApplianceUrl) {
-		return true
-	}
-
-	return false
-}
-
 // SetApplianceUrl gets a reference to the given string and assigns it to the ApplianceUrl field.
 func (o *CloudCreateConfigAzure) SetApplianceUrl(v string) {
 	o.ApplianceUrl = &v
@@ -121,15 +112,6 @@ func (o *CloudCreateConfigAzure) GetDatacenterNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.DatacenterName, true
-}
-
-// IsSetDatacenterName returns a boolean if a field has been set.
-func (o *CloudCreateConfigAzure) IsSetDatacenterName() bool {
-	if o != nil && !IsNil(o.DatacenterName) {
-		return true
-	}
-
-	return false
 }
 
 // SetDatacenterName gets a reference to the given string and assigns it to the DatacenterName field.
@@ -156,28 +138,9 @@ func (o *CloudCreateConfigAzure) GetExternalIdOk() (*string, bool) {
 	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *CloudCreateConfigAzure) IsSetExternalId() bool {
-	if o != nil && o.ExternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *CloudCreateConfigAzure) SetExternalId(v string) {
 	o.ExternalId.Set(&v)
-}
-
-// SetExternalIdNil sets the value for ExternalId to be an explicit nil
-func (o *CloudCreateConfigAzure) SetExternalIdNil() {
-	o.ExternalId.Set(nil)
-}
-
-// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-func (o *CloudCreateConfigAzure) UnsetExternalId() {
-	o.ExternalId.Unset()
 }
 
 // GetCloudType returns the CloudType field value if set, zero value otherwise.
@@ -196,15 +159,6 @@ func (o *CloudCreateConfigAzure) GetCloudTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.CloudType, true
-}
-
-// IsSetCloudType returns a boolean if a field has been set.
-func (o *CloudCreateConfigAzure) IsSetCloudType() bool {
-	if o != nil && !IsNil(o.CloudType) {
-		return true
-	}
-
-	return false
 }
 
 // SetCloudType gets a reference to the given string and assigns it to the CloudType field.
@@ -230,15 +184,6 @@ func (o *CloudCreateConfigAzure) GetInventoryLevelOk() (*string, bool) {
 	return o.InventoryLevel, true
 }
 
-// IsSetInventoryLevel returns a boolean if a field has been set.
-func (o *CloudCreateConfigAzure) IsSetInventoryLevel() bool {
-	if o != nil && !IsNil(o.InventoryLevel) {
-		return true
-	}
-
-	return false
-}
-
 // SetInventoryLevel gets a reference to the given string and assigns it to the InventoryLevel field.
 func (o *CloudCreateConfigAzure) SetInventoryLevel(v string) {
 	o.InventoryLevel = &v
@@ -260,15 +205,6 @@ func (o *CloudCreateConfigAzure) GetImportExistingOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ImportExisting, true
-}
-
-// IsSetImportExisting returns a boolean if a field has been set.
-func (o *CloudCreateConfigAzure) IsSetImportExisting() bool {
-	if o != nil && !IsNil(o.ImportExisting) {
-		return true
-	}
-
-	return false
 }
 
 // SetImportExisting gets a reference to the given string and assigns it to the ImportExisting field.
@@ -294,15 +230,6 @@ func (o *CloudCreateConfigAzure) GetConsoleKeymapOk() (*string, bool) {
 	return o.ConsoleKeymap, true
 }
 
-// IsSetConsoleKeymap returns a boolean if a field has been set.
-func (o *CloudCreateConfigAzure) IsSetConsoleKeymap() bool {
-	if o != nil && !IsNil(o.ConsoleKeymap) {
-		return true
-	}
-
-	return false
-}
-
 // SetConsoleKeymap gets a reference to the given string and assigns it to the ConsoleKeymap field.
 func (o *CloudCreateConfigAzure) SetConsoleKeymap(v string) {
 	o.ConsoleKeymap = &v
@@ -324,15 +251,6 @@ func (o *CloudCreateConfigAzure) GetSubscriberIdOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SubscriberId, true
-}
-
-// IsSetSubscriberId returns a boolean if a field has been set.
-func (o *CloudCreateConfigAzure) IsSetSubscriberId() bool {
-	if o != nil && !IsNil(o.SubscriberId) {
-		return true
-	}
-
-	return false
 }
 
 // SetSubscriberId gets a reference to the given string and assigns it to the SubscriberId field.
@@ -358,15 +276,6 @@ func (o *CloudCreateConfigAzure) GetTenantIdOk() (*string, bool) {
 	return o.TenantId, true
 }
 
-// IsSetTenantId returns a boolean if a field has been set.
-func (o *CloudCreateConfigAzure) IsSetTenantId() bool {
-	if o != nil && !IsNil(o.TenantId) {
-		return true
-	}
-
-	return false
-}
-
 // SetTenantId gets a reference to the given string and assigns it to the TenantId field.
 func (o *CloudCreateConfigAzure) SetTenantId(v string) {
 	o.TenantId = &v
@@ -388,15 +297,6 @@ func (o *CloudCreateConfigAzure) GetClientIdOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ClientId, true
-}
-
-// IsSetClientId returns a boolean if a field has been set.
-func (o *CloudCreateConfigAzure) IsSetClientId() bool {
-	if o != nil && !IsNil(o.ClientId) {
-		return true
-	}
-
-	return false
 }
 
 // SetClientId gets a reference to the given string and assigns it to the ClientId field.
@@ -422,15 +322,6 @@ func (o *CloudCreateConfigAzure) GetClientSecretOk() (*string, bool) {
 	return o.ClientSecret, true
 }
 
-// IsSetClientSecret returns a boolean if a field has been set.
-func (o *CloudCreateConfigAzure) IsSetClientSecret() bool {
-	if o != nil && !IsNil(o.ClientSecret) {
-		return true
-	}
-
-	return false
-}
-
 // SetClientSecret gets a reference to the given string and assigns it to the ClientSecret field.
 func (o *CloudCreateConfigAzure) SetClientSecret(v string) {
 	o.ClientSecret = &v
@@ -454,15 +345,6 @@ func (o *CloudCreateConfigAzure) GetResourceGroupOk() (*string, bool) {
 	return o.ResourceGroup, true
 }
 
-// IsSetResourceGroup returns a boolean if a field has been set.
-func (o *CloudCreateConfigAzure) IsSetResourceGroup() bool {
-	if o != nil && !IsNil(o.ResourceGroup) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourceGroup gets a reference to the given string and assigns it to the ResourceGroup field.
 func (o *CloudCreateConfigAzure) SetResourceGroup(v string) {
 	o.ResourceGroup = &v
@@ -484,15 +366,6 @@ func (o *CloudCreateConfigAzure) GetStorageAccountOk() (*string, bool) {
 		return nil, false
 	}
 	return o.StorageAccount, true
-}
-
-// IsSetStorageAccount returns a boolean if a field has been set.
-func (o *CloudCreateConfigAzure) IsSetStorageAccount() bool {
-	if o != nil && !IsNil(o.StorageAccount) {
-		return true
-	}
-
-	return false
 }
 
 // SetStorageAccount gets a reference to the given string and assigns it to the StorageAccount field.
@@ -519,28 +392,9 @@ func (o *CloudCreateConfigAzure) GetRpcModeOk() (*string, bool) {
 	return o.RpcMode.Get(), o.RpcMode.IsSet()
 }
 
-// IsSetRpcMode returns a boolean if a field has been set.
-func (o *CloudCreateConfigAzure) IsSetRpcMode() bool {
-	if o != nil && o.RpcMode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRpcMode gets a reference to the given NullableString and assigns it to the RpcMode field.
 func (o *CloudCreateConfigAzure) SetRpcMode(v string) {
 	o.RpcMode.Set(&v)
-}
-
-// SetRpcModeNil sets the value for RpcMode to be an explicit nil
-func (o *CloudCreateConfigAzure) SetRpcModeNil() {
-	o.RpcMode.Set(nil)
-}
-
-// UnsetRpcMode ensures that no value is present for RpcMode, not even an explicit nil
-func (o *CloudCreateConfigAzure) UnsetRpcMode() {
-	o.RpcMode.Unset()
 }
 
 func (o CloudCreateConfigAzure) MarshalJSON() ([]byte, error) {

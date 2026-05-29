@@ -64,15 +64,6 @@ func (o *InstanceEnvs) GetEnvsOk() ([]InstanceEnvsEnvsInner, bool) {
 	return o.Envs, true
 }
 
-// IsSetEnvs returns a boolean if a field has been set.
-func (o *InstanceEnvs) IsSetEnvs() bool {
-	if o != nil && !IsNil(o.Envs) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnvs gets a reference to the given []InstanceEnvsEnvsInner and assigns it to the Envs field.
 func (o *InstanceEnvs) SetEnvs(v []InstanceEnvsEnvsInner) {
 	o.Envs = v
@@ -96,15 +87,6 @@ func (o *InstanceEnvs) GetReadOnlyEnvsOk() (*map[string]InstanceEnvsReadOnlyEnvs
 	return o.ReadOnlyEnvs, true
 }
 
-// IsSetReadOnlyEnvs returns a boolean if a field has been set.
-func (o *InstanceEnvs) IsSetReadOnlyEnvs() bool {
-	if o != nil && !IsNil(o.ReadOnlyEnvs) {
-		return true
-	}
-
-	return false
-}
-
 // SetReadOnlyEnvs gets a reference to the given map[string]InstanceEnvsReadOnlyEnvsValue and assigns it to the ReadOnlyEnvs field.
 func (o *InstanceEnvs) SetReadOnlyEnvs(v map[string]InstanceEnvsReadOnlyEnvsValue) {
 	o.ReadOnlyEnvs = &v
@@ -126,15 +108,6 @@ func (o *InstanceEnvs) GetImportedEnvsOk() (*map[string]InstanceEnvsImportedEnvs
 		return nil, false
 	}
 	return o.ImportedEnvs, true
-}
-
-// IsSetImportedEnvs returns a boolean if a field has been set.
-func (o *InstanceEnvs) IsSetImportedEnvs() bool {
-	if o != nil && !IsNil(o.ImportedEnvs) {
-		return true
-	}
-
-	return false
 }
 
 // SetImportedEnvs gets a reference to the given map[string]InstanceEnvsImportedEnvsValue and assigns it to the ImportedEnvs field.

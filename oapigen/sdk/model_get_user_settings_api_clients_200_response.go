@@ -61,15 +61,6 @@ func (o *GetUserSettingsApiClients200Response) GetClientsOk() ([]GetUserSettings
 	return o.Clients, true
 }
 
-// IsSetClients returns a boolean if a field has been set.
-func (o *GetUserSettingsApiClients200Response) IsSetClients() bool {
-	if o != nil && !IsNil(o.Clients) {
-		return true
-	}
-
-	return false
-}
-
 // SetClients gets a reference to the given []GetUserSettingsApiClients200ResponseClientsInner and assigns it to the Clients field.
 func (o *GetUserSettingsApiClients200Response) SetClients(v []GetUserSettingsApiClients200ResponseClientsInner) {
 	o.Clients = v

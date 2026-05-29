@@ -93,15 +93,6 @@ func (o *UpdateJobsRequestJob) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateJobsRequestJob) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *UpdateJobsRequestJob) SetName(v string) {
 	o.Name = &v
@@ -124,15 +115,6 @@ func (o *UpdateJobsRequestJob) GetLabelsOk() ([]string, bool) {
 		return nil, false
 	}
 	return o.Labels, true
-}
-
-// IsSetLabels returns a boolean if a field has been set.
-func (o *UpdateJobsRequestJob) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
 }
 
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
@@ -158,15 +140,6 @@ func (o *UpdateJobsRequestJob) GetEnabledOk() (*bool, bool) {
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *UpdateJobsRequestJob) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *UpdateJobsRequestJob) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -190,15 +163,6 @@ func (o *UpdateJobsRequestJob) GetTaskOk() (*UpdateJobsRequestJobTask, bool) {
 	return o.Task, true
 }
 
-// IsSetTask returns a boolean if a field has been set.
-func (o *UpdateJobsRequestJob) IsSetTask() bool {
-	if o != nil && !IsNil(o.Task) {
-		return true
-	}
-
-	return false
-}
-
 // SetTask gets a reference to the given UpdateJobsRequestJobTask and assigns it to the Task field.
 func (o *UpdateJobsRequestJob) SetTask(v UpdateJobsRequestJobTask) {
 	o.Task = &v
@@ -220,15 +184,6 @@ func (o *UpdateJobsRequestJob) GetWorkflowOk() (*UpdateJobsRequestJobWorkflow, b
 		return nil, false
 	}
 	return o.Workflow, true
-}
-
-// IsSetWorkflow returns a boolean if a field has been set.
-func (o *UpdateJobsRequestJob) IsSetWorkflow() bool {
-	if o != nil && !IsNil(o.Workflow) {
-		return true
-	}
-
-	return false
 }
 
 // SetWorkflow gets a reference to the given UpdateJobsRequestJobWorkflow and assigns it to the Workflow field.
@@ -255,28 +210,9 @@ func (o *UpdateJobsRequestJob) GetScanPathOk() (*string, bool) {
 	return o.ScanPath.Get(), o.ScanPath.IsSet()
 }
 
-// IsSetScanPath returns a boolean if a field has been set.
-func (o *UpdateJobsRequestJob) IsSetScanPath() bool {
-	if o != nil && o.ScanPath.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetScanPath gets a reference to the given NullableString and assigns it to the ScanPath field.
 func (o *UpdateJobsRequestJob) SetScanPath(v string) {
 	o.ScanPath.Set(&v)
-}
-
-// SetScanPathNil sets the value for ScanPath to be an explicit nil
-func (o *UpdateJobsRequestJob) SetScanPathNil() {
-	o.ScanPath.Set(nil)
-}
-
-// UnsetScanPath ensures that no value is present for ScanPath, not even an explicit nil
-func (o *UpdateJobsRequestJob) UnsetScanPath() {
-	o.ScanPath.Unset()
 }
 
 // GetSecurityProfile returns the SecurityProfile field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -298,28 +234,9 @@ func (o *UpdateJobsRequestJob) GetSecurityProfileOk() (*string, bool) {
 	return o.SecurityProfile.Get(), o.SecurityProfile.IsSet()
 }
 
-// IsSetSecurityProfile returns a boolean if a field has been set.
-func (o *UpdateJobsRequestJob) IsSetSecurityProfile() bool {
-	if o != nil && o.SecurityProfile.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSecurityProfile gets a reference to the given NullableString and assigns it to the SecurityProfile field.
 func (o *UpdateJobsRequestJob) SetSecurityProfile(v string) {
 	o.SecurityProfile.Set(&v)
-}
-
-// SetSecurityProfileNil sets the value for SecurityProfile to be an explicit nil
-func (o *UpdateJobsRequestJob) SetSecurityProfileNil() {
-	o.SecurityProfile.Set(nil)
-}
-
-// UnsetSecurityProfile ensures that no value is present for SecurityProfile, not even an explicit nil
-func (o *UpdateJobsRequestJob) UnsetSecurityProfile() {
-	o.SecurityProfile.Unset()
 }
 
 // GetTargetType returns the TargetType field value if set, zero value otherwise.
@@ -338,15 +255,6 @@ func (o *UpdateJobsRequestJob) GetTargetTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.TargetType, true
-}
-
-// IsSetTargetType returns a boolean if a field has been set.
-func (o *UpdateJobsRequestJob) IsSetTargetType() bool {
-	if o != nil && !IsNil(o.TargetType) {
-		return true
-	}
-
-	return false
 }
 
 // SetTargetType gets a reference to the given string and assigns it to the TargetType field.
@@ -373,15 +281,6 @@ func (o *UpdateJobsRequestJob) GetTargetsOk() ([]UpdateJobsRequestJobTargetsInne
 	return o.Targets, true
 }
 
-// IsSetTargets returns a boolean if a field has been set.
-func (o *UpdateJobsRequestJob) IsSetTargets() bool {
-	if o != nil && !IsNil(o.Targets) {
-		return true
-	}
-
-	return false
-}
-
 // SetTargets gets a reference to the given []UpdateJobsRequestJobTargetsInner and assigns it to the Targets field.
 func (o *UpdateJobsRequestJob) SetTargets(v []UpdateJobsRequestJobTargetsInner) {
 	o.Targets = v
@@ -403,15 +302,6 @@ func (o *UpdateJobsRequestJob) GetInstanceLabelOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InstanceLabel, true
-}
-
-// IsSetInstanceLabel returns a boolean if a field has been set.
-func (o *UpdateJobsRequestJob) IsSetInstanceLabel() bool {
-	if o != nil && !IsNil(o.InstanceLabel) {
-		return true
-	}
-
-	return false
 }
 
 // SetInstanceLabel gets a reference to the given string and assigns it to the InstanceLabel field.
@@ -437,15 +327,6 @@ func (o *UpdateJobsRequestJob) GetServerLabelOk() (*string, bool) {
 	return o.ServerLabel, true
 }
 
-// IsSetServerLabel returns a boolean if a field has been set.
-func (o *UpdateJobsRequestJob) IsSetServerLabel() bool {
-	if o != nil && !IsNil(o.ServerLabel) {
-		return true
-	}
-
-	return false
-}
-
 // SetServerLabel gets a reference to the given string and assigns it to the ServerLabel field.
 func (o *UpdateJobsRequestJob) SetServerLabel(v string) {
 	o.ServerLabel = &v
@@ -467,15 +348,6 @@ func (o *UpdateJobsRequestJob) GetScheduleModeOk() (*UpdateJobsRequestJobSchedul
 		return nil, false
 	}
 	return o.ScheduleMode, true
-}
-
-// IsSetScheduleMode returns a boolean if a field has been set.
-func (o *UpdateJobsRequestJob) IsSetScheduleMode() bool {
-	if o != nil && !IsNil(o.ScheduleMode) {
-		return true
-	}
-
-	return false
 }
 
 // SetScheduleMode gets a reference to the given UpdateJobsRequestJobScheduleMode and assigns it to the ScheduleMode field.
@@ -501,15 +373,6 @@ func (o *UpdateJobsRequestJob) GetCustomOptionsOk() (map[string]interface{}, boo
 	return o.CustomOptions, true
 }
 
-// IsSetCustomOptions returns a boolean if a field has been set.
-func (o *UpdateJobsRequestJob) IsSetCustomOptions() bool {
-	if o != nil && !IsNil(o.CustomOptions) {
-		return true
-	}
-
-	return false
-}
-
 // SetCustomOptions gets a reference to the given map[string]interface{} and assigns it to the CustomOptions field.
 func (o *UpdateJobsRequestJob) SetCustomOptions(v map[string]interface{}) {
 	o.CustomOptions = v
@@ -531,15 +394,6 @@ func (o *UpdateJobsRequestJob) GetCustomConfigOk() (*string, bool) {
 		return nil, false
 	}
 	return o.CustomConfig, true
-}
-
-// IsSetCustomConfig returns a boolean if a field has been set.
-func (o *UpdateJobsRequestJob) IsSetCustomConfig() bool {
-	if o != nil && !IsNil(o.CustomConfig) {
-		return true
-	}
-
-	return false
 }
 
 // SetCustomConfig gets a reference to the given string and assigns it to the CustomConfig field.
@@ -565,15 +419,6 @@ func (o *UpdateJobsRequestJob) GetDateTimeOk() (*time.Time, bool) {
 	return o.DateTime, true
 }
 
-// IsSetDateTime returns a boolean if a field has been set.
-func (o *UpdateJobsRequestJob) IsSetDateTime() bool {
-	if o != nil && !IsNil(o.DateTime) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateTime gets a reference to the given time.Time and assigns it to the DateTime field.
 func (o *UpdateJobsRequestJob) SetDateTime(v time.Time) {
 	o.DateTime = &v
@@ -595,15 +440,6 @@ func (o *UpdateJobsRequestJob) GetRunOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Run, true
-}
-
-// IsSetRun returns a boolean if a field has been set.
-func (o *UpdateJobsRequestJob) IsSetRun() bool {
-	if o != nil && !IsNil(o.Run) {
-		return true
-	}
-
-	return false
 }
 
 // SetRun gets a reference to the given bool and assigns it to the Run field.

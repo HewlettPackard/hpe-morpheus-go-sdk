@@ -63,15 +63,6 @@ func (o *GetNetworkDomains200Response) GetNetworkDomainsOk() (*interface{}, bool
 	return &o.NetworkDomains, true
 }
 
-// IsSetNetworkDomains returns a boolean if a field has been set.
-func (o *GetNetworkDomains200Response) IsSetNetworkDomains() bool {
-	if o != nil && !IsNil(o.NetworkDomains) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkDomains gets a reference to the given interface{} and assigns it to the NetworkDomains field.
 func (o *GetNetworkDomains200Response) SetNetworkDomains(v interface{}) {
 	o.NetworkDomains = v
@@ -93,15 +84,6 @@ func (o *GetNetworkDomains200Response) GetMetaOk() (*ListApprovals200ResponseAll
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *GetNetworkDomains200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

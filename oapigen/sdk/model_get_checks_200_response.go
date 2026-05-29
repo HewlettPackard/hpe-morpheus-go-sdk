@@ -61,15 +61,6 @@ func (o *GetChecks200Response) GetCheckOk() (*GetChecks200ResponseCheck, bool) {
 	return o.Check, true
 }
 
-// IsSetCheck returns a boolean if a field has been set.
-func (o *GetChecks200Response) IsSetCheck() bool {
-	if o != nil && !IsNil(o.Check) {
-		return true
-	}
-
-	return false
-}
-
 // SetCheck gets a reference to the given GetChecks200ResponseCheck and assigns it to the Check field.
 func (o *GetChecks200Response) SetCheck(v GetChecks200ResponseCheck) {
 	o.Check = &v

@@ -67,28 +67,9 @@ func (o *ZoneResourcePoolConfigAnyOf1) GetProjectIdOk() (*string, bool) {
 	return o.ProjectId.Get(), o.ProjectId.IsSet()
 }
 
-// IsSetProjectId returns a boolean if a field has been set.
-func (o *ZoneResourcePoolConfigAnyOf1) IsSetProjectId() bool {
-	if o != nil && o.ProjectId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetProjectId gets a reference to the given NullableString and assigns it to the ProjectId field.
 func (o *ZoneResourcePoolConfigAnyOf1) SetProjectId(v string) {
 	o.ProjectId.Set(&v)
-}
-
-// SetProjectIdNil sets the value for ProjectId to be an explicit nil
-func (o *ZoneResourcePoolConfigAnyOf1) SetProjectIdNil() {
-	o.ProjectId.Set(nil)
-}
-
-// UnsetProjectId ensures that no value is present for ProjectId, not even an explicit nil
-func (o *ZoneResourcePoolConfigAnyOf1) UnsetProjectId() {
-	o.ProjectId.Unset()
 }
 
 // GetParent returns the Parent field value

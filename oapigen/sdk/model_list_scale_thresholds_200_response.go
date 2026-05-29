@@ -62,15 +62,6 @@ func (o *ListScaleThresholds200Response) GetScaleThresholdsOk() ([]ListScaleThre
 	return o.ScaleThresholds, true
 }
 
-// IsSetScaleThresholds returns a boolean if a field has been set.
-func (o *ListScaleThresholds200Response) IsSetScaleThresholds() bool {
-	if o != nil && !IsNil(o.ScaleThresholds) {
-		return true
-	}
-
-	return false
-}
-
 // SetScaleThresholds gets a reference to the given []ListScaleThresholds200ResponseAllOfScaleThresholdsInner and assigns it to the ScaleThresholds field.
 func (o *ListScaleThresholds200Response) SetScaleThresholds(v []ListScaleThresholds200ResponseAllOfScaleThresholdsInner) {
 	o.ScaleThresholds = v
@@ -92,15 +83,6 @@ func (o *ListScaleThresholds200Response) GetMetaOk() (*ListApprovals200ResponseA
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListScaleThresholds200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

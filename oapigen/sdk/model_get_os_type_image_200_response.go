@@ -61,15 +61,6 @@ func (o *GetOsTypeImage200Response) GetOsTypeImageOk() (*GetOsTypeImage200Respon
 	return o.OsTypeImage, true
 }
 
-// IsSetOsTypeImage returns a boolean if a field has been set.
-func (o *GetOsTypeImage200Response) IsSetOsTypeImage() bool {
-	if o != nil && !IsNil(o.OsTypeImage) {
-		return true
-	}
-
-	return false
-}
-
 // SetOsTypeImage gets a reference to the given GetOsTypeImage200ResponseOsTypeImage and assigns it to the OsTypeImage field.
 func (o *GetOsTypeImage200Response) SetOsTypeImage(v GetOsTypeImage200ResponseOsTypeImage) {
 	o.OsTypeImage = &v

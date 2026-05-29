@@ -61,15 +61,6 @@ func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6) GetRemovalAgeOk() 
 	return o.RemovalAge, true
 }
 
-// IsSetRemovalAge returns a boolean if a field has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6) IsSetRemovalAge() bool {
-	if o != nil && !IsNil(o.RemovalAge) {
-		return true
-	}
-
-	return false
-}
-
 // SetRemovalAge gets a reference to the given string and assigns it to the RemovalAge field.
 func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6) SetRemovalAge(v string) {
 	o.RemovalAge = &v

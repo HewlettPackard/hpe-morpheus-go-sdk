@@ -75,15 +75,6 @@ func (o *GuidanceVmwareSizingResourceVolumesInner) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingResourceVolumesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GuidanceVmwareSizingResourceVolumesInner) SetId(v int64) {
 	o.Id = &v
@@ -105,15 +96,6 @@ func (o *GuidanceVmwareSizingResourceVolumesInner) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingResourceVolumesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -139,15 +121,6 @@ func (o *GuidanceVmwareSizingResourceVolumesInner) GetControllerIdOk() (*int64, 
 	return o.ControllerId, true
 }
 
-// IsSetControllerId returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingResourceVolumesInner) IsSetControllerId() bool {
-	if o != nil && !IsNil(o.ControllerId) {
-		return true
-	}
-
-	return false
-}
-
 // SetControllerId gets a reference to the given int64 and assigns it to the ControllerId field.
 func (o *GuidanceVmwareSizingResourceVolumesInner) SetControllerId(v int64) {
 	o.ControllerId = &v
@@ -169,15 +142,6 @@ func (o *GuidanceVmwareSizingResourceVolumesInner) GetControllerMountPointOk() (
 		return nil, false
 	}
 	return o.ControllerMountPoint, true
-}
-
-// IsSetControllerMountPoint returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingResourceVolumesInner) IsSetControllerMountPoint() bool {
-	if o != nil && !IsNil(o.ControllerMountPoint) {
-		return true
-	}
-
-	return false
 }
 
 // SetControllerMountPoint gets a reference to the given string and assigns it to the ControllerMountPoint field.
@@ -203,15 +167,6 @@ func (o *GuidanceVmwareSizingResourceVolumesInner) GetResizeableOk() (*bool, boo
 	return o.Resizeable, true
 }
 
-// IsSetResizeable returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingResourceVolumesInner) IsSetResizeable() bool {
-	if o != nil && !IsNil(o.Resizeable) {
-		return true
-	}
-
-	return false
-}
-
 // SetResizeable gets a reference to the given bool and assigns it to the Resizeable field.
 func (o *GuidanceVmwareSizingResourceVolumesInner) SetResizeable(v bool) {
 	o.Resizeable = &v
@@ -233,15 +188,6 @@ func (o *GuidanceVmwareSizingResourceVolumesInner) GetPlanResizableOk() (*bool, 
 		return nil, false
 	}
 	return o.PlanResizable, true
-}
-
-// IsSetPlanResizable returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingResourceVolumesInner) IsSetPlanResizable() bool {
-	if o != nil && !IsNil(o.PlanResizable) {
-		return true
-	}
-
-	return false
 }
 
 // SetPlanResizable gets a reference to the given bool and assigns it to the PlanResizable field.
@@ -267,15 +213,6 @@ func (o *GuidanceVmwareSizingResourceVolumesInner) GetRootVolumeOk() (*bool, boo
 	return o.RootVolume, true
 }
 
-// IsSetRootVolume returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingResourceVolumesInner) IsSetRootVolume() bool {
-	if o != nil && !IsNil(o.RootVolume) {
-		return true
-	}
-
-	return false
-}
-
 // SetRootVolume gets a reference to the given bool and assigns it to the RootVolume field.
 func (o *GuidanceVmwareSizingResourceVolumesInner) SetRootVolume(v bool) {
 	o.RootVolume = &v
@@ -297,15 +234,6 @@ func (o *GuidanceVmwareSizingResourceVolumesInner) GetUnitNumberOk() (*string, b
 		return nil, false
 	}
 	return o.UnitNumber, true
-}
-
-// IsSetUnitNumber returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingResourceVolumesInner) IsSetUnitNumber() bool {
-	if o != nil && !IsNil(o.UnitNumber) {
-		return true
-	}
-
-	return false
 }
 
 // SetUnitNumber gets a reference to the given string and assigns it to the UnitNumber field.
@@ -331,15 +259,6 @@ func (o *GuidanceVmwareSizingResourceVolumesInner) GetTypeIdOk() (*int64, bool) 
 	return o.TypeId, true
 }
 
-// IsSetTypeId returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingResourceVolumesInner) IsSetTypeId() bool {
-	if o != nil && !IsNil(o.TypeId) {
-		return true
-	}
-
-	return false
-}
-
 // SetTypeId gets a reference to the given int64 and assigns it to the TypeId field.
 func (o *GuidanceVmwareSizingResourceVolumesInner) SetTypeId(v int64) {
 	o.TypeId = &v
@@ -361,15 +280,6 @@ func (o *GuidanceVmwareSizingResourceVolumesInner) GetConfigurableIOPSOk() (*boo
 		return nil, false
 	}
 	return o.ConfigurableIOPS, true
-}
-
-// IsSetConfigurableIOPS returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingResourceVolumesInner) IsSetConfigurableIOPS() bool {
-	if o != nil && !IsNil(o.ConfigurableIOPS) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfigurableIOPS gets a reference to the given bool and assigns it to the ConfigurableIOPS field.
@@ -395,15 +305,6 @@ func (o *GuidanceVmwareSizingResourceVolumesInner) GetDatastoreIdOk() (*int64, b
 	return o.DatastoreId, true
 }
 
-// IsSetDatastoreId returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingResourceVolumesInner) IsSetDatastoreId() bool {
-	if o != nil && !IsNil(o.DatastoreId) {
-		return true
-	}
-
-	return false
-}
-
 // SetDatastoreId gets a reference to the given int64 and assigns it to the DatastoreId field.
 func (o *GuidanceVmwareSizingResourceVolumesInner) SetDatastoreId(v int64) {
 	o.DatastoreId = &v
@@ -427,15 +328,6 @@ func (o *GuidanceVmwareSizingResourceVolumesInner) GetMaxStorageOk() (*int64, bo
 	return o.MaxStorage, true
 }
 
-// IsSetMaxStorage returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingResourceVolumesInner) IsSetMaxStorage() bool {
-	if o != nil && !IsNil(o.MaxStorage) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxStorage gets a reference to the given int64 and assigns it to the MaxStorage field.
 func (o *GuidanceVmwareSizingResourceVolumesInner) SetMaxStorage(v int64) {
 	o.MaxStorage = &v
@@ -457,15 +349,6 @@ func (o *GuidanceVmwareSizingResourceVolumesInner) GetDisplayOrderOk() (*int64, 
 		return nil, false
 	}
 	return o.DisplayOrder, true
-}
-
-// IsSetDisplayOrder returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingResourceVolumesInner) IsSetDisplayOrder() bool {
-	if o != nil && !IsNil(o.DisplayOrder) {
-		return true
-	}
-
-	return false
 }
 
 // SetDisplayOrder gets a reference to the given int64 and assigns it to the DisplayOrder field.
@@ -492,28 +375,9 @@ func (o *GuidanceVmwareSizingResourceVolumesInner) GetMaxIOPSOk() (*string, bool
 	return o.MaxIOPS.Get(), o.MaxIOPS.IsSet()
 }
 
-// IsSetMaxIOPS returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingResourceVolumesInner) IsSetMaxIOPS() bool {
-	if o != nil && o.MaxIOPS.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxIOPS gets a reference to the given NullableString and assigns it to the MaxIOPS field.
 func (o *GuidanceVmwareSizingResourceVolumesInner) SetMaxIOPS(v string) {
 	o.MaxIOPS.Set(&v)
-}
-
-// SetMaxIOPSNil sets the value for MaxIOPS to be an explicit nil
-func (o *GuidanceVmwareSizingResourceVolumesInner) SetMaxIOPSNil() {
-	o.MaxIOPS.Set(nil)
-}
-
-// UnsetMaxIOPS ensures that no value is present for MaxIOPS, not even an explicit nil
-func (o *GuidanceVmwareSizingResourceVolumesInner) UnsetMaxIOPS() {
-	o.MaxIOPS.Unset()
 }
 
 // GetUuid returns the Uuid field value if set, zero value otherwise.
@@ -532,15 +396,6 @@ func (o *GuidanceVmwareSizingResourceVolumesInner) GetUuidOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Uuid, true
-}
-
-// IsSetUuid returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingResourceVolumesInner) IsSetUuid() bool {
-	if o != nil && !IsNil(o.Uuid) {
-		return true
-	}
-
-	return false
 }
 
 // SetUuid gets a reference to the given string and assigns it to the Uuid field.

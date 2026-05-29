@@ -62,15 +62,6 @@ func (o *GetImageBuild200Response) GetImageBuildOk() (*GetImageBuild200ResponseI
 	return o.ImageBuild, true
 }
 
-// IsSetImageBuild returns a boolean if a field has been set.
-func (o *GetImageBuild200Response) IsSetImageBuild() bool {
-	if o != nil && !IsNil(o.ImageBuild) {
-		return true
-	}
-
-	return false
-}
-
 // SetImageBuild gets a reference to the given GetImageBuild200ResponseImageBuild and assigns it to the ImageBuild field.
 func (o *GetImageBuild200Response) SetImageBuild(v GetImageBuild200ResponseImageBuild) {
 	o.ImageBuild = &v
@@ -92,15 +83,6 @@ func (o *GetImageBuild200Response) GetImageBuildExecutionsOk() ([]GetImageBuild2
 		return nil, false
 	}
 	return o.ImageBuildExecutions, true
-}
-
-// IsSetImageBuildExecutions returns a boolean if a field has been set.
-func (o *GetImageBuild200Response) IsSetImageBuildExecutions() bool {
-	if o != nil && !IsNil(o.ImageBuildExecutions) {
-		return true
-	}
-
-	return false
 }
 
 // SetImageBuildExecutions gets a reference to the given []GetImageBuild200ResponseImageBuildExecutionsInner and assigns it to the ImageBuildExecutions field.

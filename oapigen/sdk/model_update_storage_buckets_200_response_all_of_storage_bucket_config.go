@@ -66,15 +66,6 @@ func (o *UpdateStorageBuckets200ResponseAllOfStorageBucketConfig) GetAccessKeyOk
 	return o.AccessKey, true
 }
 
-// IsSetAccessKey returns a boolean if a field has been set.
-func (o *UpdateStorageBuckets200ResponseAllOfStorageBucketConfig) IsSetAccessKey() bool {
-	if o != nil && !IsNil(o.AccessKey) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccessKey gets a reference to the given string and assigns it to the AccessKey field.
 func (o *UpdateStorageBuckets200ResponseAllOfStorageBucketConfig) SetAccessKey(v string) {
 	o.AccessKey = &v
@@ -96,15 +87,6 @@ func (o *UpdateStorageBuckets200ResponseAllOfStorageBucketConfig) GetSecretKeyOk
 		return nil, false
 	}
 	return o.SecretKey, true
-}
-
-// IsSetSecretKey returns a boolean if a field has been set.
-func (o *UpdateStorageBuckets200ResponseAllOfStorageBucketConfig) IsSetSecretKey() bool {
-	if o != nil && !IsNil(o.SecretKey) {
-		return true
-	}
-
-	return false
 }
 
 // SetSecretKey gets a reference to the given string and assigns it to the SecretKey field.
@@ -130,15 +112,6 @@ func (o *UpdateStorageBuckets200ResponseAllOfStorageBucketConfig) GetStsAssumeRo
 	return o.StsAssumeRole, true
 }
 
-// IsSetStsAssumeRole returns a boolean if a field has been set.
-func (o *UpdateStorageBuckets200ResponseAllOfStorageBucketConfig) IsSetStsAssumeRole() bool {
-	if o != nil && !IsNil(o.StsAssumeRole) {
-		return true
-	}
-
-	return false
-}
-
 // SetStsAssumeRole gets a reference to the given string and assigns it to the StsAssumeRole field.
 func (o *UpdateStorageBuckets200ResponseAllOfStorageBucketConfig) SetStsAssumeRole(v string) {
 	o.StsAssumeRole = &v
@@ -160,15 +133,6 @@ func (o *UpdateStorageBuckets200ResponseAllOfStorageBucketConfig) GetUseHostCred
 		return nil, false
 	}
 	return o.UseHostCredentials, true
-}
-
-// IsSetUseHostCredentials returns a boolean if a field has been set.
-func (o *UpdateStorageBuckets200ResponseAllOfStorageBucketConfig) IsSetUseHostCredentials() bool {
-	if o != nil && !IsNil(o.UseHostCredentials) {
-		return true
-	}
-
-	return false
 }
 
 // SetUseHostCredentials gets a reference to the given bool and assigns it to the UseHostCredentials field.
@@ -194,15 +158,6 @@ func (o *UpdateStorageBuckets200ResponseAllOfStorageBucketConfig) GetEndpointOk(
 	return o.Endpoint, true
 }
 
-// IsSetEndpoint returns a boolean if a field has been set.
-func (o *UpdateStorageBuckets200ResponseAllOfStorageBucketConfig) IsSetEndpoint() bool {
-	if o != nil && !IsNil(o.Endpoint) {
-		return true
-	}
-
-	return false
-}
-
 // SetEndpoint gets a reference to the given string and assigns it to the Endpoint field.
 func (o *UpdateStorageBuckets200ResponseAllOfStorageBucketConfig) SetEndpoint(v string) {
 	o.Endpoint = &v
@@ -224,15 +179,6 @@ func (o *UpdateStorageBuckets200ResponseAllOfStorageBucketConfig) GetSecretKeyHa
 		return nil, false
 	}
 	return o.SecretKeyHash, true
-}
-
-// IsSetSecretKeyHash returns a boolean if a field has been set.
-func (o *UpdateStorageBuckets200ResponseAllOfStorageBucketConfig) IsSetSecretKeyHash() bool {
-	if o != nil && !IsNil(o.SecretKeyHash) {
-		return true
-	}
-
-	return false
 }
 
 // SetSecretKeyHash gets a reference to the given string and assigns it to the SecretKeyHash field.

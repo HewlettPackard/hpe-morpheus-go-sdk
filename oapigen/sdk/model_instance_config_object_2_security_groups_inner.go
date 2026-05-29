@@ -62,15 +62,6 @@ func (o *InstanceConfigObject2SecurityGroupsInner) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *InstanceConfigObject2SecurityGroupsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given string and assigns it to the Id field.
 func (o *InstanceConfigObject2SecurityGroupsInner) SetId(v string) {
 	o.Id = &v

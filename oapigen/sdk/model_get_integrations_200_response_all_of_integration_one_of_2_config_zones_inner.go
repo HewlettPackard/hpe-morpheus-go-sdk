@@ -62,15 +62,6 @@ func (o *GetIntegrations200ResponseAllOfIntegrationOneOf2ConfigZonesInner) GetZo
 	return o.ZoneName, true
 }
 
-// IsSetZoneName returns a boolean if a field has been set.
-func (o *GetIntegrations200ResponseAllOfIntegrationOneOf2ConfigZonesInner) IsSetZoneName() bool {
-	if o != nil && !IsNil(o.ZoneName) {
-		return true
-	}
-
-	return false
-}
-
 // SetZoneName gets a reference to the given string and assigns it to the ZoneName field.
 func (o *GetIntegrations200ResponseAllOfIntegrationOneOf2ConfigZonesInner) SetZoneName(v string) {
 	o.ZoneName = &v
@@ -92,15 +83,6 @@ func (o *GetIntegrations200ResponseAllOfIntegrationOneOf2ConfigZonesInner) GetRe
 		return nil, false
 	}
 	return o.ReverseZone, true
-}
-
-// IsSetReverseZone returns a boolean if a field has been set.
-func (o *GetIntegrations200ResponseAllOfIntegrationOneOf2ConfigZonesInner) IsSetReverseZone() bool {
-	if o != nil && !IsNil(o.ReverseZone) {
-		return true
-	}
-
-	return false
 }
 
 // SetReverseZone gets a reference to the given string and assigns it to the ReverseZone field.

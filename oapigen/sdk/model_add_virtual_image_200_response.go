@@ -62,15 +62,6 @@ func (o *AddVirtualImage200Response) GetVirtualImageOk() (*AddVirtualImage200Res
 	return o.VirtualImage, true
 }
 
-// IsSetVirtualImage returns a boolean if a field has been set.
-func (o *AddVirtualImage200Response) IsSetVirtualImage() bool {
-	if o != nil && !IsNil(o.VirtualImage) {
-		return true
-	}
-
-	return false
-}
-
 // SetVirtualImage gets a reference to the given AddVirtualImage200ResponseAllOfVirtualImage and assigns it to the VirtualImage field.
 func (o *AddVirtualImage200Response) SetVirtualImage(v AddVirtualImage200ResponseAllOfVirtualImage) {
 	o.VirtualImage = &v
@@ -92,15 +83,6 @@ func (o *AddVirtualImage200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *AddVirtualImage200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

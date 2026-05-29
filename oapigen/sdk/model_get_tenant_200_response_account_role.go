@@ -63,15 +63,6 @@ func (o *GetTenant200ResponseAccountRole) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetTenant200ResponseAccountRole) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetTenant200ResponseAccountRole) SetId(v int64) {
 	o.Id = &v
@@ -93,15 +84,6 @@ func (o *GetTenant200ResponseAccountRole) GetAuthorityOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Authority, true
-}
-
-// IsSetAuthority returns a boolean if a field has been set.
-func (o *GetTenant200ResponseAccountRole) IsSetAuthority() bool {
-	if o != nil && !IsNil(o.Authority) {
-		return true
-	}
-
-	return false
 }
 
 // SetAuthority gets a reference to the given string and assigns it to the Authority field.
@@ -128,28 +110,9 @@ func (o *GetTenant200ResponseAccountRole) GetDescriptionOk() (*string, bool) {
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *GetTenant200ResponseAccountRole) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *GetTenant200ResponseAccountRole) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *GetTenant200ResponseAccountRole) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *GetTenant200ResponseAccountRole) UnsetDescription() {
-	o.Description.Unset()
 }
 
 func (o GetTenant200ResponseAccountRole) MarshalJSON() ([]byte, error) {

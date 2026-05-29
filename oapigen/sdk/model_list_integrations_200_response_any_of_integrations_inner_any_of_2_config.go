@@ -61,15 +61,6 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2Config) GetZones
 	return o.Zones, true
 }
 
-// IsSetZones returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2Config) IsSetZones() bool {
-	if o != nil && !IsNil(o.Zones) {
-		return true
-	}
-
-	return false
-}
-
 // SetZones gets a reference to the given []ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2ConfigZonesInner and assigns it to the Zones field.
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2Config) SetZones(v []ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2ConfigZonesInner) {
 	o.Zones = v

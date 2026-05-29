@@ -68,15 +68,6 @@ func (o *AddWorkflowsRequestTaskSetTasksInner) GetTaskIdOk() (*int64, bool) {
 	return o.TaskId, true
 }
 
-// IsSetTaskId returns a boolean if a field has been set.
-func (o *AddWorkflowsRequestTaskSetTasksInner) IsSetTaskId() bool {
-	if o != nil && !IsNil(o.TaskId) {
-		return true
-	}
-
-	return false
-}
-
 // SetTaskId gets a reference to the given int64 and assigns it to the TaskId field.
 func (o *AddWorkflowsRequestTaskSetTasksInner) SetTaskId(v int64) {
 	o.TaskId = &v
@@ -98,15 +89,6 @@ func (o *AddWorkflowsRequestTaskSetTasksInner) GetTaskPhaseOk() (*string, bool) 
 		return nil, false
 	}
 	return o.TaskPhase, true
-}
-
-// IsSetTaskPhase returns a boolean if a field has been set.
-func (o *AddWorkflowsRequestTaskSetTasksInner) IsSetTaskPhase() bool {
-	if o != nil && !IsNil(o.TaskPhase) {
-		return true
-	}
-
-	return false
 }
 
 // SetTaskPhase gets a reference to the given string and assigns it to the TaskPhase field.

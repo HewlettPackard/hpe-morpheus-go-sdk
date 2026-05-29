@@ -64,15 +64,6 @@ func (o *GetVDIPools200ResponseVdiPoolConfigDisplayNetworksInner) GetNameOk() (*
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *GetVDIPools200ResponseVdiPoolConfigDisplayNetworksInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *GetVDIPools200ResponseVdiPoolConfigDisplayNetworksInner) SetName(v string) {
 	o.Name = &v
@@ -94,15 +85,6 @@ func (o *GetVDIPools200ResponseVdiPoolConfigDisplayNetworksInner) GetIpModeOk() 
 		return nil, false
 	}
 	return o.IpMode, true
-}
-
-// IsSetIpMode returns a boolean if a field has been set.
-func (o *GetVDIPools200ResponseVdiPoolConfigDisplayNetworksInner) IsSetIpMode() bool {
-	if o != nil && !IsNil(o.IpMode) {
-		return true
-	}
-
-	return false
 }
 
 // SetIpMode gets a reference to the given string and assigns it to the IpMode field.
@@ -128,15 +110,6 @@ func (o *GetVDIPools200ResponseVdiPoolConfigDisplayNetworksInner) GetPoolOk() (*
 	return o.Pool, true
 }
 
-// IsSetPool returns a boolean if a field has been set.
-func (o *GetVDIPools200ResponseVdiPoolConfigDisplayNetworksInner) IsSetPool() bool {
-	if o != nil && !IsNil(o.Pool) {
-		return true
-	}
-
-	return false
-}
-
 // SetPool gets a reference to the given GetVDIPools200ResponseVdiPoolConfigDisplayNetworksInnerPool and assigns it to the Pool field.
 func (o *GetVDIPools200ResponseVdiPoolConfigDisplayNetworksInner) SetPool(v GetVDIPools200ResponseVdiPoolConfigDisplayNetworksInnerPool) {
 	o.Pool = &v
@@ -158,15 +131,6 @@ func (o *GetVDIPools200ResponseVdiPoolConfigDisplayNetworksInner) GetUsePoolOk()
 		return nil, false
 	}
 	return o.UsePool, true
-}
-
-// IsSetUsePool returns a boolean if a field has been set.
-func (o *GetVDIPools200ResponseVdiPoolConfigDisplayNetworksInner) IsSetUsePool() bool {
-	if o != nil && !IsNil(o.UsePool) {
-		return true
-	}
-
-	return false
 }
 
 // SetUsePool gets a reference to the given bool and assigns it to the UsePool field.

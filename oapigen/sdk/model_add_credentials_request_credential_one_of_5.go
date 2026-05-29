@@ -128,15 +128,6 @@ func (o *AddCredentialsRequestCredentialOneOf5) GetDescriptionOk() (*string, boo
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *AddCredentialsRequestCredentialOneOf5) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *AddCredentialsRequestCredentialOneOf5) SetDescription(v string) {
 	o.Description = &v
@@ -160,15 +151,6 @@ func (o *AddCredentialsRequestCredentialOneOf5) GetEnabledOk() (*bool, bool) {
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *AddCredentialsRequestCredentialOneOf5) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *AddCredentialsRequestCredentialOneOf5) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -190,15 +172,6 @@ func (o *AddCredentialsRequestCredentialOneOf5) GetIntegrationOk() (*AddCredenti
 		return nil, false
 	}
 	return o.Integration, true
-}
-
-// IsSetIntegration returns a boolean if a field has been set.
-func (o *AddCredentialsRequestCredentialOneOf5) IsSetIntegration() bool {
-	if o != nil && !IsNil(o.Integration) {
-		return true
-	}
-
-	return false
 }
 
 // SetIntegration gets a reference to the given AddCredentialsRequestCredentialOneOf5Integration and assigns it to the Integration field.

@@ -71,15 +71,6 @@ func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) 
 	return o.AllGroups, true
 }
 
-// IsSetAllGroups returns a boolean if a field has been set.
-func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) IsSetAllGroups() bool {
-	if o != nil && !IsNil(o.AllGroups) {
-		return true
-	}
-
-	return false
-}
-
 // SetAllGroups gets a reference to the given bool and assigns it to the AllGroups field.
 func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) SetAllGroups(v bool) {
 	o.AllGroups = &v
@@ -101,15 +92,6 @@ func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) 
 		return nil, false
 	}
 	return o.DefaultStore, true
-}
-
-// IsSetDefaultStore returns a boolean if a field has been set.
-func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) IsSetDefaultStore() bool {
-	if o != nil && !IsNil(o.DefaultStore) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultStore gets a reference to the given bool and assigns it to the DefaultStore field.
@@ -135,15 +117,6 @@ func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) 
 	return o.AllPlans, true
 }
 
-// IsSetAllPlans returns a boolean if a field has been set.
-func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) IsSetAllPlans() bool {
-	if o != nil && !IsNil(o.AllPlans) {
-		return true
-	}
-
-	return false
-}
-
 // SetAllPlans gets a reference to the given bool and assigns it to the AllPlans field.
 func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) SetAllPlans(v bool) {
 	o.AllPlans = &v
@@ -165,15 +138,6 @@ func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) 
 		return nil, false
 	}
 	return o.DefaultTarget, true
-}
-
-// IsSetDefaultTarget returns a boolean if a field has been set.
-func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) IsSetDefaultTarget() bool {
-	if o != nil && !IsNil(o.DefaultTarget) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultTarget gets a reference to the given bool and assigns it to the DefaultTarget field.
@@ -199,15 +163,6 @@ func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) 
 	return o.MorpheusResourceType, true
 }
 
-// IsSetMorpheusResourceType returns a boolean if a field has been set.
-func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) IsSetMorpheusResourceType() bool {
-	if o != nil && !IsNil(o.MorpheusResourceType) {
-		return true
-	}
-
-	return false
-}
-
 // SetMorpheusResourceType gets a reference to the given string and assigns it to the MorpheusResourceType field.
 func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) SetMorpheusResourceType(v string) {
 	o.MorpheusResourceType = &v
@@ -229,15 +184,6 @@ func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) 
 		return nil, false
 	}
 	return o.MorpheusResourceId, true
-}
-
-// IsSetMorpheusResourceId returns a boolean if a field has been set.
-func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) IsSetMorpheusResourceId() bool {
-	if o != nil && !IsNil(o.MorpheusResourceId) {
-		return true
-	}
-
-	return false
 }
 
 // SetMorpheusResourceId gets a reference to the given int64 and assigns it to the MorpheusResourceId field.
@@ -263,15 +209,6 @@ func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) 
 	return o.CanManage, true
 }
 
-// IsSetCanManage returns a boolean if a field has been set.
-func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) IsSetCanManage() bool {
-	if o != nil && !IsNil(o.CanManage) {
-		return true
-	}
-
-	return false
-}
-
 // SetCanManage gets a reference to the given bool and assigns it to the CanManage field.
 func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) SetCanManage(v bool) {
 	o.CanManage = &v
@@ -293,15 +230,6 @@ func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) 
 		return nil, false
 	}
 	return o.All, true
-}
-
-// IsSetAll returns a boolean if a field has been set.
-func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) IsSetAll() bool {
-	if o != nil && !IsNil(o.All) {
-		return true
-	}
-
-	return false
 }
 
 // SetAll gets a reference to the given bool and assigns it to the All field.
@@ -327,15 +255,6 @@ func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) 
 	return o.Account, true
 }
 
-// IsSetAccount returns a boolean if a field has been set.
-func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccount gets a reference to the given GetClusterNamespace200ResponseNamespacePermissionsResourcePermissionsAccount and assigns it to the Account field.
 func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) SetAccount(v GetClusterNamespace200ResponseNamespacePermissionsResourcePermissionsAccount) {
 	o.Account = &v
@@ -359,15 +278,6 @@ func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) 
 	return o.Sites, true
 }
 
-// IsSetSites returns a boolean if a field has been set.
-func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) IsSetSites() bool {
-	if o != nil && !IsNil(o.Sites) {
-		return true
-	}
-
-	return false
-}
-
 // SetSites gets a reference to the given []GetClusterNamespace200ResponseNamespacePermissionsResourcePermissionsSitesInner and assigns it to the Sites field.
 func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) SetSites(v []GetClusterNamespace200ResponseNamespacePermissionsResourcePermissionsSitesInner) {
 	o.Sites = v
@@ -389,15 +299,6 @@ func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) 
 		return nil, false
 	}
 	return o.Plans, true
-}
-
-// IsSetPlans returns a boolean if a field has been set.
-func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) IsSetPlans() bool {
-	if o != nil && !IsNil(o.Plans) {
-		return true
-	}
-
-	return false
 }
 
 // SetPlans gets a reference to the given []GetClusterNamespace200ResponseNamespacePermissionsResourcePermissionsPlansInner and assigns it to the Plans field.

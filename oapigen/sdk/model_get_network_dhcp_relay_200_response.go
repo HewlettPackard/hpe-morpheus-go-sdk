@@ -61,15 +61,6 @@ func (o *GetNetworkDhcpRelay200Response) GetNetworkDhcpRelayOk() (*GetNetworkDhc
 	return o.NetworkDhcpRelay, true
 }
 
-// IsSetNetworkDhcpRelay returns a boolean if a field has been set.
-func (o *GetNetworkDhcpRelay200Response) IsSetNetworkDhcpRelay() bool {
-	if o != nil && !IsNil(o.NetworkDhcpRelay) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkDhcpRelay gets a reference to the given GetNetworkDhcpRelay200ResponseNetworkDhcpRelay and assigns it to the NetworkDhcpRelay field.
 func (o *GetNetworkDhcpRelay200Response) SetNetworkDhcpRelay(v GetNetworkDhcpRelay200ResponseNetworkDhcpRelay) {
 	o.NetworkDhcpRelay = &v

@@ -74,15 +74,6 @@ func (o *ListHealth200ResponseAllOfHealthDatabase) GetSuccessOk() (*bool, bool) 
 	return o.Success, true
 }
 
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthDatabase) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
-}
-
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.
 func (o *ListHealth200ResponseAllOfHealthDatabase) SetSuccess(v bool) {
 	o.Success = &v
@@ -105,15 +96,6 @@ func (o *ListHealth200ResponseAllOfHealthDatabase) GetConnectionListOk() ([]map[
 		return nil, false
 	}
 	return o.ConnectionList, true
-}
-
-// IsSetConnectionList returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthDatabase) IsSetConnectionList() bool {
-	if o != nil && !IsNil(o.ConnectionList) {
-		return true
-	}
-
-	return false
 }
 
 // SetConnectionList gets a reference to the given []map[string]interface{} and assigns it to the ConnectionList field.
@@ -139,15 +121,6 @@ func (o *ListHealth200ResponseAllOfHealthDatabase) GetBusyConnectionsOk() ([]*st
 	return o.BusyConnections, true
 }
 
-// IsSetBusyConnections returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthDatabase) IsSetBusyConnections() bool {
-	if o != nil && !IsNil(o.BusyConnections) {
-		return true
-	}
-
-	return false
-}
-
 // SetBusyConnections gets a reference to the given []*string and assigns it to the BusyConnections field.
 func (o *ListHealth200ResponseAllOfHealthDatabase) SetBusyConnections(v []*string) {
 	o.BusyConnections = v
@@ -169,15 +142,6 @@ func (o *ListHealth200ResponseAllOfHealthDatabase) GetMaxConnectionsOk() (*int64
 		return nil, false
 	}
 	return o.MaxConnections, true
-}
-
-// IsSetMaxConnections returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthDatabase) IsSetMaxConnections() bool {
-	if o != nil && !IsNil(o.MaxConnections) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxConnections gets a reference to the given int64 and assigns it to the MaxConnections field.
@@ -203,15 +167,6 @@ func (o *ListHealth200ResponseAllOfHealthDatabase) GetMaxUsedConnectionsOk() (*i
 	return o.MaxUsedConnections, true
 }
 
-// IsSetMaxUsedConnections returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthDatabase) IsSetMaxUsedConnections() bool {
-	if o != nil && !IsNil(o.MaxUsedConnections) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxUsedConnections gets a reference to the given int64 and assigns it to the MaxUsedConnections field.
 func (o *ListHealth200ResponseAllOfHealthDatabase) SetMaxUsedConnections(v int64) {
 	o.MaxUsedConnections = &v
@@ -235,15 +190,6 @@ func (o *ListHealth200ResponseAllOfHealthDatabase) GetUsedConnectionsOk() (*int6
 	return o.UsedConnections, true
 }
 
-// IsSetUsedConnections returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthDatabase) IsSetUsedConnections() bool {
-	if o != nil && !IsNil(o.UsedConnections) {
-		return true
-	}
-
-	return false
-}
-
 // SetUsedConnections gets a reference to the given int64 and assigns it to the UsedConnections field.
 func (o *ListHealth200ResponseAllOfHealthDatabase) SetUsedConnections(v int64) {
 	o.UsedConnections = &v
@@ -265,15 +211,6 @@ func (o *ListHealth200ResponseAllOfHealthDatabase) GetAbortedConnectionsOk() (*i
 		return nil, false
 	}
 	return o.AbortedConnections, true
-}
-
-// IsSetAbortedConnections returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthDatabase) IsSetAbortedConnections() bool {
-	if o != nil && !IsNil(o.AbortedConnections) {
-		return true
-	}
-
-	return false
 }
 
 // SetAbortedConnections gets a reference to the given int64 and assigns it to the AbortedConnections field.
@@ -300,28 +237,9 @@ func (o *ListHealth200ResponseAllOfHealthDatabase) GetInnodbStatusOk() (*string,
 	return o.InnodbStatus.Get(), o.InnodbStatus.IsSet()
 }
 
-// IsSetInnodbStatus returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthDatabase) IsSetInnodbStatus() bool {
-	if o != nil && o.InnodbStatus.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbStatus gets a reference to the given NullableString and assigns it to the InnodbStatus field.
 func (o *ListHealth200ResponseAllOfHealthDatabase) SetInnodbStatus(v string) {
 	o.InnodbStatus.Set(&v)
-}
-
-// SetInnodbStatusNil sets the value for InnodbStatus to be an explicit nil
-func (o *ListHealth200ResponseAllOfHealthDatabase) SetInnodbStatusNil() {
-	o.InnodbStatus.Set(nil)
-}
-
-// UnsetInnodbStatus ensures that no value is present for InnodbStatus, not even an explicit nil
-func (o *ListHealth200ResponseAllOfHealthDatabase) UnsetInnodbStatus() {
-	o.InnodbStatus.Unset()
 }
 
 // GetStats returns the Stats field value if set, zero value otherwise.
@@ -340,15 +258,6 @@ func (o *ListHealth200ResponseAllOfHealthDatabase) GetStatsOk() (*ListHealth200R
 		return nil, false
 	}
 	return o.Stats, true
-}
-
-// IsSetStats returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthDatabase) IsSetStats() bool {
-	if o != nil && !IsNil(o.Stats) {
-		return true
-	}
-
-	return false
 }
 
 // SetStats gets a reference to the given ListHealth200ResponseAllOfHealthDatabaseStats and assigns it to the Stats field.
@@ -374,15 +283,6 @@ func (o *ListHealth200ResponseAllOfHealthDatabase) GetScansOk() (*ListHealth200R
 	return o.Scans, true
 }
 
-// IsSetScans returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthDatabase) IsSetScans() bool {
-	if o != nil && !IsNil(o.Scans) {
-		return true
-	}
-
-	return false
-}
-
 // SetScans gets a reference to the given ListHealth200ResponseAllOfHealthDatabaseScans and assigns it to the Scans field.
 func (o *ListHealth200ResponseAllOfHealthDatabase) SetScans(v ListHealth200ResponseAllOfHealthDatabaseScans) {
 	o.Scans = &v
@@ -404,15 +304,6 @@ func (o *ListHealth200ResponseAllOfHealthDatabase) GetSlowQueriesOk() ([]ListHea
 		return nil, false
 	}
 	return o.SlowQueries, true
-}
-
-// IsSetSlowQueries returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthDatabase) IsSetSlowQueries() bool {
-	if o != nil && !IsNil(o.SlowQueries) {
-		return true
-	}
-
-	return false
 }
 
 // SetSlowQueries gets a reference to the given []ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner and assigns it to the SlowQueries field.
@@ -438,15 +329,6 @@ func (o *ListHealth200ResponseAllOfHealthDatabase) GetInnodbStatsOk() (*ListHeal
 	return o.InnodbStats, true
 }
 
-// IsSetInnodbStats returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthDatabase) IsSetInnodbStats() bool {
-	if o != nil && !IsNil(o.InnodbStats) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbStats gets a reference to the given ListHealth200ResponseAllOfHealthDatabaseInnodbStats and assigns it to the InnodbStats field.
 func (o *ListHealth200ResponseAllOfHealthDatabase) SetInnodbStats(v ListHealth200ResponseAllOfHealthDatabaseInnodbStats) {
 	o.InnodbStats = &v
@@ -470,15 +352,6 @@ func (o *ListHealth200ResponseAllOfHealthDatabase) GetScanPercentOk() (*float32,
 	return o.ScanPercent, true
 }
 
-// IsSetScanPercent returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthDatabase) IsSetScanPercent() bool {
-	if o != nil && !IsNil(o.ScanPercent) {
-		return true
-	}
-
-	return false
-}
-
 // SetScanPercent gets a reference to the given float32 and assigns it to the ScanPercent field.
 func (o *ListHealth200ResponseAllOfHealthDatabase) SetScanPercent(v float32) {
 	o.ScanPercent = &v
@@ -500,15 +373,6 @@ func (o *ListHealth200ResponseAllOfHealthDatabase) GetStatusOk() (*string, bool)
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthDatabase) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.

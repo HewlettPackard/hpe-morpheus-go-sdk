@@ -61,15 +61,6 @@ func (o *UpdateSpecTemplateRequest) GetSpecTemplateOk() (*UpdateSpecTemplateRequ
 	return o.SpecTemplate, true
 }
 
-// IsSetSpecTemplate returns a boolean if a field has been set.
-func (o *UpdateSpecTemplateRequest) IsSetSpecTemplate() bool {
-	if o != nil && !IsNil(o.SpecTemplate) {
-		return true
-	}
-
-	return false
-}
-
 // SetSpecTemplate gets a reference to the given UpdateSpecTemplateRequestSpecTemplate and assigns it to the SpecTemplate field.
 func (o *UpdateSpecTemplateRequest) SetSpecTemplate(v UpdateSpecTemplateRequestSpecTemplate) {
 	o.SpecTemplate = &v

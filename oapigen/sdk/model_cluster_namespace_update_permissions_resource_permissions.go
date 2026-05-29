@@ -68,15 +68,6 @@ func (o *ClusterNamespaceUpdatePermissionsResourcePermissions) GetAllOk() (*bool
 	return o.All, true
 }
 
-// IsSetAll returns a boolean if a field has been set.
-func (o *ClusterNamespaceUpdatePermissionsResourcePermissions) IsSetAll() bool {
-	if o != nil && !IsNil(o.All) {
-		return true
-	}
-
-	return false
-}
-
 // SetAll gets a reference to the given bool and assigns it to the All field.
 func (o *ClusterNamespaceUpdatePermissionsResourcePermissions) SetAll(v bool) {
 	o.All = &v
@@ -98,15 +89,6 @@ func (o *ClusterNamespaceUpdatePermissionsResourcePermissions) GetSitesOk() ([]C
 		return nil, false
 	}
 	return o.Sites, true
-}
-
-// IsSetSites returns a boolean if a field has been set.
-func (o *ClusterNamespaceUpdatePermissionsResourcePermissions) IsSetSites() bool {
-	if o != nil && !IsNil(o.Sites) {
-		return true
-	}
-
-	return false
 }
 
 // SetSites gets a reference to the given []ClusterNamespaceUpdatePermissionsResourcePermissionsSitesInner and assigns it to the Sites field.
@@ -132,15 +114,6 @@ func (o *ClusterNamespaceUpdatePermissionsResourcePermissions) GetAllPlansOk() (
 	return o.AllPlans, true
 }
 
-// IsSetAllPlans returns a boolean if a field has been set.
-func (o *ClusterNamespaceUpdatePermissionsResourcePermissions) IsSetAllPlans() bool {
-	if o != nil && !IsNil(o.AllPlans) {
-		return true
-	}
-
-	return false
-}
-
 // SetAllPlans gets a reference to the given bool and assigns it to the AllPlans field.
 func (o *ClusterNamespaceUpdatePermissionsResourcePermissions) SetAllPlans(v bool) {
 	o.AllPlans = &v
@@ -162,15 +135,6 @@ func (o *ClusterNamespaceUpdatePermissionsResourcePermissions) GetPlansOk() ([]C
 		return nil, false
 	}
 	return o.Plans, true
-}
-
-// IsSetPlans returns a boolean if a field has been set.
-func (o *ClusterNamespaceUpdatePermissionsResourcePermissions) IsSetPlans() bool {
-	if o != nil && !IsNil(o.Plans) {
-		return true
-	}
-
-	return false
 }
 
 // SetPlans gets a reference to the given []ClusterNamespaceUpdatePermissionsResourcePermissionsPlansInner and assigns it to the Plans field.

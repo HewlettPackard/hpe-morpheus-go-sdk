@@ -62,15 +62,6 @@ func (o *AddCertificate200ResponseAllOfCertificateType) GetIdOk() (*int64, bool)
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *AddCertificate200ResponseAllOfCertificateType) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *AddCertificate200ResponseAllOfCertificateType) SetId(v int64) {
 	o.Id = &v
@@ -92,15 +83,6 @@ func (o *AddCertificate200ResponseAllOfCertificateType) GetCodeOk() (*string, bo
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *AddCertificate200ResponseAllOfCertificateType) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.

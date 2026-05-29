@@ -66,15 +66,6 @@ func (o *GetNetworkFirewallRuleGroup200ResponseRuleGroup) GetIdOk() (*int64, boo
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetNetworkFirewallRuleGroup200ResponseRuleGroup) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetNetworkFirewallRuleGroup200ResponseRuleGroup) SetId(v int64) {
 	o.Id = &v
@@ -96,15 +87,6 @@ func (o *GetNetworkFirewallRuleGroup200ResponseRuleGroup) GetNameOk() (*string, 
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *GetNetworkFirewallRuleGroup200ResponseRuleGroup) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -131,28 +113,9 @@ func (o *GetNetworkFirewallRuleGroup200ResponseRuleGroup) GetDescriptionOk() (*s
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *GetNetworkFirewallRuleGroup200ResponseRuleGroup) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *GetNetworkFirewallRuleGroup200ResponseRuleGroup) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *GetNetworkFirewallRuleGroup200ResponseRuleGroup) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *GetNetworkFirewallRuleGroup200ResponseRuleGroup) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetPriority returns the Priority field value if set, zero value otherwise.
@@ -171,15 +134,6 @@ func (o *GetNetworkFirewallRuleGroup200ResponseRuleGroup) GetPriorityOk() (*int6
 		return nil, false
 	}
 	return o.Priority, true
-}
-
-// IsSetPriority returns a boolean if a field has been set.
-func (o *GetNetworkFirewallRuleGroup200ResponseRuleGroup) IsSetPriority() bool {
-	if o != nil && !IsNil(o.Priority) {
-		return true
-	}
-
-	return false
 }
 
 // SetPriority gets a reference to the given int64 and assigns it to the Priority field.
@@ -205,15 +159,6 @@ func (o *GetNetworkFirewallRuleGroup200ResponseRuleGroup) GetGroupLayerOk() (*st
 	return o.GroupLayer, true
 }
 
-// IsSetGroupLayer returns a boolean if a field has been set.
-func (o *GetNetworkFirewallRuleGroup200ResponseRuleGroup) IsSetGroupLayer() bool {
-	if o != nil && !IsNil(o.GroupLayer) {
-		return true
-	}
-
-	return false
-}
-
 // SetGroupLayer gets a reference to the given string and assigns it to the GroupLayer field.
 func (o *GetNetworkFirewallRuleGroup200ResponseRuleGroup) SetGroupLayer(v string) {
 	o.GroupLayer = &v
@@ -235,15 +180,6 @@ func (o *GetNetworkFirewallRuleGroup200ResponseRuleGroup) GetRulesOk() ([]GetNet
 		return nil, false
 	}
 	return o.Rules, true
-}
-
-// IsSetRules returns a boolean if a field has been set.
-func (o *GetNetworkFirewallRuleGroup200ResponseRuleGroup) IsSetRules() bool {
-	if o != nil && !IsNil(o.Rules) {
-		return true
-	}
-
-	return false
 }
 
 // SetRules gets a reference to the given []GetNetworkFirewallRuleGroup200ResponseRuleGroupRulesInner and assigns it to the Rules field.

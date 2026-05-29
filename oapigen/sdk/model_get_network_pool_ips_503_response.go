@@ -61,15 +61,6 @@ func (o *GetNetworkPoolIps503Response) GetMsgOk() (*string, bool) {
 	return o.Msg, true
 }
 
-// IsSetMsg returns a boolean if a field has been set.
-func (o *GetNetworkPoolIps503Response) IsSetMsg() bool {
-	if o != nil && !IsNil(o.Msg) {
-		return true
-	}
-
-	return false
-}
-
 // SetMsg gets a reference to the given string and assigns it to the Msg field.
 func (o *GetNetworkPoolIps503Response) SetMsg(v string) {
 	o.Msg = &v

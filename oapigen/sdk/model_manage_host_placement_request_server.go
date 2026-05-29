@@ -63,15 +63,6 @@ func (o *ManageHostPlacementRequestServer) GetPlacementStrategyOk() (*string, bo
 	return o.PlacementStrategy, true
 }
 
-// IsSetPlacementStrategy returns a boolean if a field has been set.
-func (o *ManageHostPlacementRequestServer) IsSetPlacementStrategy() bool {
-	if o != nil && !IsNil(o.PlacementStrategy) {
-		return true
-	}
-
-	return false
-}
-
 // SetPlacementStrategy gets a reference to the given string and assigns it to the PlacementStrategy field.
 func (o *ManageHostPlacementRequestServer) SetPlacementStrategy(v string) {
 	o.PlacementStrategy = &v
@@ -93,15 +84,6 @@ func (o *ManageHostPlacementRequestServer) GetPreferredParentServerOk() (*Manage
 		return nil, false
 	}
 	return o.PreferredParentServer, true
-}
-
-// IsSetPreferredParentServer returns a boolean if a field has been set.
-func (o *ManageHostPlacementRequestServer) IsSetPreferredParentServer() bool {
-	if o != nil && !IsNil(o.PreferredParentServer) {
-		return true
-	}
-
-	return false
 }
 
 // SetPreferredParentServer gets a reference to the given ManageHostPlacementRequestServerPreferredParentServer and assigns it to the PreferredParentServer field.

@@ -68,15 +68,6 @@ func (o *AddCloudResourcePoolRequestResourcePoolConfigAnyOf) GetCidrBlockOk() (*
 	return o.CidrBlock, true
 }
 
-// IsSetCidrBlock returns a boolean if a field has been set.
-func (o *AddCloudResourcePoolRequestResourcePoolConfigAnyOf) IsSetCidrBlock() bool {
-	if o != nil && !IsNil(o.CidrBlock) {
-		return true
-	}
-
-	return false
-}
-
 // SetCidrBlock gets a reference to the given string and assigns it to the CidrBlock field.
 func (o *AddCloudResourcePoolRequestResourcePoolConfigAnyOf) SetCidrBlock(v string) {
 	o.CidrBlock = &v
@@ -98,15 +89,6 @@ func (o *AddCloudResourcePoolRequestResourcePoolConfigAnyOf) GetTenancyOk() (*st
 		return nil, false
 	}
 	return o.Tenancy, true
-}
-
-// IsSetTenancy returns a boolean if a field has been set.
-func (o *AddCloudResourcePoolRequestResourcePoolConfigAnyOf) IsSetTenancy() bool {
-	if o != nil && !IsNil(o.Tenancy) {
-		return true
-	}
-
-	return false
 }
 
 // SetTenancy gets a reference to the given string and assigns it to the Tenancy field.

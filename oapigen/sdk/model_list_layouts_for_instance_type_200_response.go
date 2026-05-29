@@ -62,15 +62,6 @@ func (o *ListLayoutsForInstanceType200Response) GetInstanceTypeLayoutsOk() ([]Li
 	return o.InstanceTypeLayouts, true
 }
 
-// IsSetInstanceTypeLayouts returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200Response) IsSetInstanceTypeLayouts() bool {
-	if o != nil && !IsNil(o.InstanceTypeLayouts) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstanceTypeLayouts gets a reference to the given []ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInner and assigns it to the InstanceTypeLayouts field.
 func (o *ListLayoutsForInstanceType200Response) SetInstanceTypeLayouts(v []ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInner) {
 	o.InstanceTypeLayouts = v
@@ -92,15 +83,6 @@ func (o *ListLayoutsForInstanceType200Response) GetMetaOk() (*ListApprovals200Re
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

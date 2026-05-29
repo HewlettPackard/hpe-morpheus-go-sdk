@@ -64,15 +64,6 @@ func (o *GetCheckApps200Response) GetMonitorAppOk() (*GetCheckApps200ResponseMon
 	return o.MonitorApp, true
 }
 
-// IsSetMonitorApp returns a boolean if a field has been set.
-func (o *GetCheckApps200Response) IsSetMonitorApp() bool {
-	if o != nil && !IsNil(o.MonitorApp) {
-		return true
-	}
-
-	return false
-}
-
 // SetMonitorApp gets a reference to the given GetCheckApps200ResponseMonitorApp and assigns it to the MonitorApp field.
 func (o *GetCheckApps200Response) SetMonitorApp(v GetCheckApps200ResponseMonitorApp) {
 	o.MonitorApp = &v
@@ -94,15 +85,6 @@ func (o *GetCheckApps200Response) GetCheckGroupsOk() ([]GetCheckApps200ResponseC
 		return nil, false
 	}
 	return o.CheckGroups, true
-}
-
-// IsSetCheckGroups returns a boolean if a field has been set.
-func (o *GetCheckApps200Response) IsSetCheckGroups() bool {
-	if o != nil && !IsNil(o.CheckGroups) {
-		return true
-	}
-
-	return false
 }
 
 // SetCheckGroups gets a reference to the given []GetCheckApps200ResponseCheckGroupsInner and assigns it to the CheckGroups field.
@@ -128,15 +110,6 @@ func (o *GetCheckApps200Response) GetChecksOk() ([]GetCheckApps200ResponseChecks
 	return o.Checks, true
 }
 
-// IsSetChecks returns a boolean if a field has been set.
-func (o *GetCheckApps200Response) IsSetChecks() bool {
-	if o != nil && !IsNil(o.Checks) {
-		return true
-	}
-
-	return false
-}
-
 // SetChecks gets a reference to the given []GetCheckApps200ResponseChecksInner and assigns it to the Checks field.
 func (o *GetCheckApps200Response) SetChecks(v []GetCheckApps200ResponseChecksInner) {
 	o.Checks = v
@@ -158,15 +131,6 @@ func (o *GetCheckApps200Response) GetOpenIncidentsOk() ([]GetCheckApps200Respons
 		return nil, false
 	}
 	return o.OpenIncidents, true
-}
-
-// IsSetOpenIncidents returns a boolean if a field has been set.
-func (o *GetCheckApps200Response) IsSetOpenIncidents() bool {
-	if o != nil && !IsNil(o.OpenIncidents) {
-		return true
-	}
-
-	return false
 }
 
 // SetOpenIncidents gets a reference to the given []GetCheckApps200ResponseOpenIncidentsInner and assigns it to the OpenIncidents field.

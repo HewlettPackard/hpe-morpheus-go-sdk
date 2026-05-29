@@ -83,15 +83,6 @@ func (o *InstanceContainer3) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *InstanceContainer3) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *InstanceContainer3) SetId(v int64) {
 	o.Id = &v
@@ -113,15 +104,6 @@ func (o *InstanceContainer3) GetUuidOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Uuid, true
-}
-
-// IsSetUuid returns a boolean if a field has been set.
-func (o *InstanceContainer3) IsSetUuid() bool {
-	if o != nil && !IsNil(o.Uuid) {
-		return true
-	}
-
-	return false
 }
 
 // SetUuid gets a reference to the given string and assigns it to the Uuid field.
@@ -147,15 +129,6 @@ func (o *InstanceContainer3) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *InstanceContainer3) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *InstanceContainer3) SetName(v string) {
 	o.Name = &v
@@ -177,15 +150,6 @@ func (o *InstanceContainer3) GetIpOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Ip, true
-}
-
-// IsSetIp returns a boolean if a field has been set.
-func (o *InstanceContainer3) IsSetIp() bool {
-	if o != nil && !IsNil(o.Ip) {
-		return true
-	}
-
-	return false
 }
 
 // SetIp gets a reference to the given string and assigns it to the Ip field.
@@ -211,15 +175,6 @@ func (o *InstanceContainer3) GetInternalIpOk() (*string, bool) {
 	return o.InternalIp, true
 }
 
-// IsSetInternalIp returns a boolean if a field has been set.
-func (o *InstanceContainer3) IsSetInternalIp() bool {
-	if o != nil && !IsNil(o.InternalIp) {
-		return true
-	}
-
-	return false
-}
-
 // SetInternalIp gets a reference to the given string and assigns it to the InternalIp field.
 func (o *InstanceContainer3) SetInternalIp(v string) {
 	o.InternalIp = &v
@@ -241,15 +196,6 @@ func (o *InstanceContainer3) GetInternalHostnameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InternalHostname, true
-}
-
-// IsSetInternalHostname returns a boolean if a field has been set.
-func (o *InstanceContainer3) IsSetInternalHostname() bool {
-	if o != nil && !IsNil(o.InternalHostname) {
-		return true
-	}
-
-	return false
 }
 
 // SetInternalHostname gets a reference to the given string and assigns it to the InternalHostname field.
@@ -275,15 +221,6 @@ func (o *InstanceContainer3) GetExternalHostnameOk() (*string, bool) {
 	return o.ExternalHostname, true
 }
 
-// IsSetExternalHostname returns a boolean if a field has been set.
-func (o *InstanceContainer3) IsSetExternalHostname() bool {
-	if o != nil && !IsNil(o.ExternalHostname) {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalHostname gets a reference to the given string and assigns it to the ExternalHostname field.
 func (o *InstanceContainer3) SetExternalHostname(v string) {
 	o.ExternalHostname = &v
@@ -305,15 +242,6 @@ func (o *InstanceContainer3) GetExternalDomainOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ExternalDomain, true
-}
-
-// IsSetExternalDomain returns a boolean if a field has been set.
-func (o *InstanceContainer3) IsSetExternalDomain() bool {
-	if o != nil && !IsNil(o.ExternalDomain) {
-		return true
-	}
-
-	return false
 }
 
 // SetExternalDomain gets a reference to the given string and assigns it to the ExternalDomain field.
@@ -339,15 +267,6 @@ func (o *InstanceContainer3) GetExternalFqdnOk() (*string, bool) {
 	return o.ExternalFqdn, true
 }
 
-// IsSetExternalFqdn returns a boolean if a field has been set.
-func (o *InstanceContainer3) IsSetExternalFqdn() bool {
-	if o != nil && !IsNil(o.ExternalFqdn) {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalFqdn gets a reference to the given string and assigns it to the ExternalFqdn field.
 func (o *InstanceContainer3) SetExternalFqdn(v string) {
 	o.ExternalFqdn = &v
@@ -369,15 +288,6 @@ func (o *InstanceContainer3) GetAccountIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.AccountId, true
-}
-
-// IsSetAccountId returns a boolean if a field has been set.
-func (o *InstanceContainer3) IsSetAccountId() bool {
-	if o != nil && !IsNil(o.AccountId) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccountId gets a reference to the given int64 and assigns it to the AccountId field.
@@ -403,15 +313,6 @@ func (o *InstanceContainer3) GetInstanceOk() (*InstanceContainer3Instance, bool)
 	return o.Instance, true
 }
 
-// IsSetInstance returns a boolean if a field has been set.
-func (o *InstanceContainer3) IsSetInstance() bool {
-	if o != nil && !IsNil(o.Instance) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstance gets a reference to the given InstanceContainer3Instance and assigns it to the Instance field.
 func (o *InstanceContainer3) SetInstance(v InstanceContainer3Instance) {
 	o.Instance = &v
@@ -433,15 +334,6 @@ func (o *InstanceContainer3) GetContainerTypeOk() (*InstanceContainer3ContainerT
 		return nil, false
 	}
 	return o.ContainerType, true
-}
-
-// IsSetContainerType returns a boolean if a field has been set.
-func (o *InstanceContainer3) IsSetContainerType() bool {
-	if o != nil && !IsNil(o.ContainerType) {
-		return true
-	}
-
-	return false
 }
 
 // SetContainerType gets a reference to the given InstanceContainer3ContainerType and assigns it to the ContainerType field.
@@ -467,15 +359,6 @@ func (o *InstanceContainer3) GetContainerTypeSetOk() (*InstanceContainer3Contain
 	return o.ContainerTypeSet, true
 }
 
-// IsSetContainerTypeSet returns a boolean if a field has been set.
-func (o *InstanceContainer3) IsSetContainerTypeSet() bool {
-	if o != nil && !IsNil(o.ContainerTypeSet) {
-		return true
-	}
-
-	return false
-}
-
 // SetContainerTypeSet gets a reference to the given InstanceContainer3ContainerTypeSet and assigns it to the ContainerTypeSet field.
 func (o *InstanceContainer3) SetContainerTypeSet(v InstanceContainer3ContainerTypeSet) {
 	o.ContainerTypeSet = &v
@@ -497,15 +380,6 @@ func (o *InstanceContainer3) GetServerOk() (*InstanceContainerServer3, bool) {
 		return nil, false
 	}
 	return o.Server, true
-}
-
-// IsSetServer returns a boolean if a field has been set.
-func (o *InstanceContainer3) IsSetServer() bool {
-	if o != nil && !IsNil(o.Server) {
-		return true
-	}
-
-	return false
 }
 
 // SetServer gets a reference to the given InstanceContainerServer3 and assigns it to the Server field.
@@ -531,15 +405,6 @@ func (o *InstanceContainer3) GetCloudOk() (*InstanceContainer3Cloud, bool) {
 	return o.Cloud, true
 }
 
-// IsSetCloud returns a boolean if a field has been set.
-func (o *InstanceContainer3) IsSetCloud() bool {
-	if o != nil && !IsNil(o.Cloud) {
-		return true
-	}
-
-	return false
-}
-
 // SetCloud gets a reference to the given InstanceContainer3Cloud and assigns it to the Cloud field.
 func (o *InstanceContainer3) SetCloud(v InstanceContainer3Cloud) {
 	o.Cloud = &v
@@ -561,15 +426,6 @@ func (o *InstanceContainer3) GetPortsOk() ([]InstanceContainer1PortsInner, bool)
 		return nil, false
 	}
 	return o.Ports, true
-}
-
-// IsSetPorts returns a boolean if a field has been set.
-func (o *InstanceContainer3) IsSetPorts() bool {
-	if o != nil && !IsNil(o.Ports) {
-		return true
-	}
-
-	return false
 }
 
 // SetPorts gets a reference to the given []InstanceContainer1PortsInner and assigns it to the Ports field.
@@ -595,15 +451,6 @@ func (o *InstanceContainer3) GetPlanOk() (*InstanceContainer3Plan, bool) {
 	return o.Plan, true
 }
 
-// IsSetPlan returns a boolean if a field has been set.
-func (o *InstanceContainer3) IsSetPlan() bool {
-	if o != nil && !IsNil(o.Plan) {
-		return true
-	}
-
-	return false
-}
-
 // SetPlan gets a reference to the given InstanceContainer3Plan and assigns it to the Plan field.
 func (o *InstanceContainer3) SetPlan(v InstanceContainer3Plan) {
 	o.Plan = &v
@@ -625,15 +472,6 @@ func (o *InstanceContainer3) GetDateCreatedOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.DateCreated, true
-}
-
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *InstanceContainer3) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
@@ -659,15 +497,6 @@ func (o *InstanceContainer3) GetLastUpdatedOk() (*time.Time, bool) {
 	return o.LastUpdated, true
 }
 
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *InstanceContainer3) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
-}
-
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
 func (o *InstanceContainer3) SetLastUpdated(v time.Time) {
 	o.LastUpdated = &v
@@ -689,15 +518,6 @@ func (o *InstanceContainer3) GetHostnameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Hostname, true
-}
-
-// IsSetHostname returns a boolean if a field has been set.
-func (o *InstanceContainer3) IsSetHostname() bool {
-	if o != nil && !IsNil(o.Hostname) {
-		return true
-	}
-
-	return false
 }
 
 // SetHostname gets a reference to the given string and assigns it to the Hostname field.
@@ -723,15 +543,6 @@ func (o *InstanceContainer3) GetVolumeCreatedOk() (*bool, bool) {
 	return o.VolumeCreated, true
 }
 
-// IsSetVolumeCreated returns a boolean if a field has been set.
-func (o *InstanceContainer3) IsSetVolumeCreated() bool {
-	if o != nil && !IsNil(o.VolumeCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetVolumeCreated gets a reference to the given bool and assigns it to the VolumeCreated field.
 func (o *InstanceContainer3) SetVolumeCreated(v bool) {
 	o.VolumeCreated = &v
@@ -753,15 +564,6 @@ func (o *InstanceContainer3) GetContainerCreatedOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.ContainerCreated, true
-}
-
-// IsSetContainerCreated returns a boolean if a field has been set.
-func (o *InstanceContainer3) IsSetContainerCreated() bool {
-	if o != nil && !IsNil(o.ContainerCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetContainerCreated gets a reference to the given bool and assigns it to the ContainerCreated field.

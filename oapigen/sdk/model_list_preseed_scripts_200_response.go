@@ -63,15 +63,6 @@ func (o *ListPreseedScripts200Response) GetPreseedScriptsOk() ([]ListPreseedScri
 	return o.PreseedScripts, true
 }
 
-// IsSetPreseedScripts returns a boolean if a field has been set.
-func (o *ListPreseedScripts200Response) IsSetPreseedScripts() bool {
-	if o != nil && !IsNil(o.PreseedScripts) {
-		return true
-	}
-
-	return false
-}
-
 // SetPreseedScripts gets a reference to the given []ListPreseedScripts200ResponseAllOfPreseedScriptsInner and assigns it to the PreseedScripts field.
 func (o *ListPreseedScripts200Response) SetPreseedScripts(v []ListPreseedScripts200ResponseAllOfPreseedScriptsInner) {
 	o.PreseedScripts = v
@@ -95,15 +86,6 @@ func (o *ListPreseedScripts200Response) GetPreseedScriptCountOk() (*int64, bool)
 	return o.PreseedScriptCount, true
 }
 
-// IsSetPreseedScriptCount returns a boolean if a field has been set.
-func (o *ListPreseedScripts200Response) IsSetPreseedScriptCount() bool {
-	if o != nil && !IsNil(o.PreseedScriptCount) {
-		return true
-	}
-
-	return false
-}
-
 // SetPreseedScriptCount gets a reference to the given int64 and assigns it to the PreseedScriptCount field.
 func (o *ListPreseedScripts200Response) SetPreseedScriptCount(v int64) {
 	o.PreseedScriptCount = &v
@@ -125,15 +107,6 @@ func (o *ListPreseedScripts200Response) GetMetaOk() (*ListApprovals200ResponseAl
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListPreseedScripts200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

@@ -119,28 +119,9 @@ func (o *CreateOsTypeImage) GetProvisionTypeOk() (*int64, bool) {
 	return o.ProvisionType.Get(), o.ProvisionType.IsSet()
 }
 
-// IsSetProvisionType returns a boolean if a field has been set.
-func (o *CreateOsTypeImage) IsSetProvisionType() bool {
-	if o != nil && o.ProvisionType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetProvisionType gets a reference to the given NullableInt64 and assigns it to the ProvisionType field.
 func (o *CreateOsTypeImage) SetProvisionType(v int64) {
 	o.ProvisionType.Set(&v)
-}
-
-// SetProvisionTypeNil sets the value for ProvisionType to be an explicit nil
-func (o *CreateOsTypeImage) SetProvisionTypeNil() {
-	o.ProvisionType.Set(nil)
-}
-
-// UnsetProvisionType ensures that no value is present for ProvisionType, not even an explicit nil
-func (o *CreateOsTypeImage) UnsetProvisionType() {
-	o.ProvisionType.Unset()
 }
 
 // GetZone returns the Zone field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -162,28 +143,9 @@ func (o *CreateOsTypeImage) GetZoneOk() (*int64, bool) {
 	return o.Zone.Get(), o.Zone.IsSet()
 }
 
-// IsSetZone returns a boolean if a field has been set.
-func (o *CreateOsTypeImage) IsSetZone() bool {
-	if o != nil && o.Zone.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetZone gets a reference to the given NullableInt64 and assigns it to the Zone field.
 func (o *CreateOsTypeImage) SetZone(v int64) {
 	o.Zone.Set(&v)
-}
-
-// SetZoneNil sets the value for Zone to be an explicit nil
-func (o *CreateOsTypeImage) SetZoneNil() {
-	o.Zone.Set(nil)
-}
-
-// UnsetZone ensures that no value is present for Zone, not even an explicit nil
-func (o *CreateOsTypeImage) UnsetZone() {
-	o.Zone.Unset()
 }
 
 func (o CreateOsTypeImage) MarshalJSON() ([]byte, error) {

@@ -98,15 +98,6 @@ func (o *UserSourceCreateSaml) GetUrlOk() (*string, bool) {
 	return o.Url, true
 }
 
-// IsSetUrl returns a boolean if a field has been set.
-func (o *UserSourceCreateSaml) IsSetUrl() bool {
-	if o != nil && !IsNil(o.Url) {
-		return true
-	}
-
-	return false
-}
-
 // SetUrl gets a reference to the given string and assigns it to the Url field.
 func (o *UserSourceCreateSaml) SetUrl(v string) {
 	o.Url = &v
@@ -128,15 +119,6 @@ func (o *UserSourceCreateSaml) GetDoNotIncludeSAMLRequestOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.DoNotIncludeSAMLRequest, true
-}
-
-// IsSetDoNotIncludeSAMLRequest returns a boolean if a field has been set.
-func (o *UserSourceCreateSaml) IsSetDoNotIncludeSAMLRequest() bool {
-	if o != nil && !IsNil(o.DoNotIncludeSAMLRequest) {
-		return true
-	}
-
-	return false
 }
 
 // SetDoNotIncludeSAMLRequest gets a reference to the given bool and assigns it to the DoNotIncludeSAMLRequest field.
@@ -162,15 +144,6 @@ func (o *UserSourceCreateSaml) GetLogoutUrlOk() (*string, bool) {
 	return o.LogoutUrl, true
 }
 
-// IsSetLogoutUrl returns a boolean if a field has been set.
-func (o *UserSourceCreateSaml) IsSetLogoutUrl() bool {
-	if o != nil && !IsNil(o.LogoutUrl) {
-		return true
-	}
-
-	return false
-}
-
 // SetLogoutUrl gets a reference to the given string and assigns it to the LogoutUrl field.
 func (o *UserSourceCreateSaml) SetLogoutUrl(v string) {
 	o.LogoutUrl = &v
@@ -192,15 +165,6 @@ func (o *UserSourceCreateSaml) GetSAMLSignatureModeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SAMLSignatureMode, true
-}
-
-// IsSetSAMLSignatureMode returns a boolean if a field has been set.
-func (o *UserSourceCreateSaml) IsSetSAMLSignatureMode() bool {
-	if o != nil && !IsNil(o.SAMLSignatureMode) {
-		return true
-	}
-
-	return false
 }
 
 // SetSAMLSignatureMode gets a reference to the given string and assigns it to the SAMLSignatureMode field.
@@ -226,15 +190,6 @@ func (o *UserSourceCreateSaml) GetRequest509CertificateOk() (*string, bool) {
 	return o.Request509Certificate, true
 }
 
-// IsSetRequest509Certificate returns a boolean if a field has been set.
-func (o *UserSourceCreateSaml) IsSetRequest509Certificate() bool {
-	if o != nil && !IsNil(o.Request509Certificate) {
-		return true
-	}
-
-	return false
-}
-
 // SetRequest509Certificate gets a reference to the given string and assigns it to the Request509Certificate field.
 func (o *UserSourceCreateSaml) SetRequest509Certificate(v string) {
 	o.Request509Certificate = &v
@@ -256,15 +211,6 @@ func (o *UserSourceCreateSaml) GetRequestPrivateKeyOk() (*string, bool) {
 		return nil, false
 	}
 	return o.RequestPrivateKey, true
-}
-
-// IsSetRequestPrivateKey returns a boolean if a field has been set.
-func (o *UserSourceCreateSaml) IsSetRequestPrivateKey() bool {
-	if o != nil && !IsNil(o.RequestPrivateKey) {
-		return true
-	}
-
-	return false
 }
 
 // SetRequestPrivateKey gets a reference to the given string and assigns it to the RequestPrivateKey field.
@@ -290,15 +236,6 @@ func (o *UserSourceCreateSaml) GetDoNotValidateSignatureOk() (*bool, bool) {
 	return o.DoNotValidateSignature, true
 }
 
-// IsSetDoNotValidateSignature returns a boolean if a field has been set.
-func (o *UserSourceCreateSaml) IsSetDoNotValidateSignature() bool {
-	if o != nil && !IsNil(o.DoNotValidateSignature) {
-		return true
-	}
-
-	return false
-}
-
 // SetDoNotValidateSignature gets a reference to the given bool and assigns it to the DoNotValidateSignature field.
 func (o *UserSourceCreateSaml) SetDoNotValidateSignature(v bool) {
 	o.DoNotValidateSignature = &v
@@ -320,15 +257,6 @@ func (o *UserSourceCreateSaml) GetPublicKeyOk() (*string, bool) {
 		return nil, false
 	}
 	return o.PublicKey, true
-}
-
-// IsSetPublicKey returns a boolean if a field has been set.
-func (o *UserSourceCreateSaml) IsSetPublicKey() bool {
-	if o != nil && !IsNil(o.PublicKey) {
-		return true
-	}
-
-	return false
 }
 
 // SetPublicKey gets a reference to the given string and assigns it to the PublicKey field.
@@ -354,15 +282,6 @@ func (o *UserSourceCreateSaml) GetPrivateKeyOk() (*string, bool) {
 	return o.PrivateKey, true
 }
 
-// IsSetPrivateKey returns a boolean if a field has been set.
-func (o *UserSourceCreateSaml) IsSetPrivateKey() bool {
-	if o != nil && !IsNil(o.PrivateKey) {
-		return true
-	}
-
-	return false
-}
-
 // SetPrivateKey gets a reference to the given string and assigns it to the PrivateKey field.
 func (o *UserSourceCreateSaml) SetPrivateKey(v string) {
 	o.PrivateKey = &v
@@ -384,15 +303,6 @@ func (o *UserSourceCreateSaml) GetGivenNameAttributeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.GivenNameAttribute, true
-}
-
-// IsSetGivenNameAttribute returns a boolean if a field has been set.
-func (o *UserSourceCreateSaml) IsSetGivenNameAttribute() bool {
-	if o != nil && !IsNil(o.GivenNameAttribute) {
-		return true
-	}
-
-	return false
 }
 
 // SetGivenNameAttribute gets a reference to the given string and assigns it to the GivenNameAttribute field.
@@ -418,15 +328,6 @@ func (o *UserSourceCreateSaml) GetSurnameAttributeOk() (*string, bool) {
 	return o.SurnameAttribute, true
 }
 
-// IsSetSurnameAttribute returns a boolean if a field has been set.
-func (o *UserSourceCreateSaml) IsSetSurnameAttribute() bool {
-	if o != nil && !IsNil(o.SurnameAttribute) {
-		return true
-	}
-
-	return false
-}
-
 // SetSurnameAttribute gets a reference to the given string and assigns it to the SurnameAttribute field.
 func (o *UserSourceCreateSaml) SetSurnameAttribute(v string) {
 	o.SurnameAttribute = &v
@@ -450,15 +351,6 @@ func (o *UserSourceCreateSaml) GetRoleAttributeNameOk() (*string, bool) {
 	return o.RoleAttributeName, true
 }
 
-// IsSetRoleAttributeName returns a boolean if a field has been set.
-func (o *UserSourceCreateSaml) IsSetRoleAttributeName() bool {
-	if o != nil && !IsNil(o.RoleAttributeName) {
-		return true
-	}
-
-	return false
-}
-
 // SetRoleAttributeName gets a reference to the given string and assigns it to the RoleAttributeName field.
 func (o *UserSourceCreateSaml) SetRoleAttributeName(v string) {
 	o.RoleAttributeName = &v
@@ -480,15 +372,6 @@ func (o *UserSourceCreateSaml) GetRequiredAttributeValueOk() (*string, bool) {
 		return nil, false
 	}
 	return o.RequiredAttributeValue, true
-}
-
-// IsSetRequiredAttributeValue returns a boolean if a field has been set.
-func (o *UserSourceCreateSaml) IsSetRequiredAttributeValue() bool {
-	if o != nil && !IsNil(o.RequiredAttributeValue) {
-		return true
-	}
-
-	return false
 }
 
 // SetRequiredAttributeValue gets a reference to the given string and assigns it to the RequiredAttributeValue field.

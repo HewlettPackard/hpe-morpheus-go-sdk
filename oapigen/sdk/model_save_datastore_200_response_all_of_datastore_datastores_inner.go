@@ -64,15 +64,6 @@ func (o *SaveDatastore200ResponseAllOfDatastoreDatastoresInner) GetIdOk() (*int3
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *SaveDatastore200ResponseAllOfDatastoreDatastoresInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int32 and assigns it to the Id field.
 func (o *SaveDatastore200ResponseAllOfDatastoreDatastoresInner) SetId(v int32) {
 	o.Id = &v
@@ -94,15 +85,6 @@ func (o *SaveDatastore200ResponseAllOfDatastoreDatastoresInner) GetNameOk() (*st
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *SaveDatastore200ResponseAllOfDatastoreDatastoresInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.

@@ -144,15 +144,6 @@ func (o *NetworkPoolServerCreatePhpIpam) GetEnabledOk() (*bool, bool) {
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *NetworkPoolServerCreatePhpIpam) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *NetworkPoolServerCreatePhpIpam) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -203,28 +194,9 @@ func (o *NetworkPoolServerCreatePhpIpam) GetServiceUsernameOk() (*string, bool) 
 	return o.ServiceUsername.Get(), o.ServiceUsername.IsSet()
 }
 
-// IsSetServiceUsername returns a boolean if a field has been set.
-func (o *NetworkPoolServerCreatePhpIpam) IsSetServiceUsername() bool {
-	if o != nil && o.ServiceUsername.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceUsername gets a reference to the given NullableString and assigns it to the ServiceUsername field.
 func (o *NetworkPoolServerCreatePhpIpam) SetServiceUsername(v string) {
 	o.ServiceUsername.Set(&v)
-}
-
-// SetServiceUsernameNil sets the value for ServiceUsername to be an explicit nil
-func (o *NetworkPoolServerCreatePhpIpam) SetServiceUsernameNil() {
-	o.ServiceUsername.Set(nil)
-}
-
-// UnsetServiceUsername ensures that no value is present for ServiceUsername, not even an explicit nil
-func (o *NetworkPoolServerCreatePhpIpam) UnsetServiceUsername() {
-	o.ServiceUsername.Unset()
 }
 
 // GetServicePassword returns the ServicePassword field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -246,28 +218,9 @@ func (o *NetworkPoolServerCreatePhpIpam) GetServicePasswordOk() (*string, bool) 
 	return o.ServicePassword.Get(), o.ServicePassword.IsSet()
 }
 
-// IsSetServicePassword returns a boolean if a field has been set.
-func (o *NetworkPoolServerCreatePhpIpam) IsSetServicePassword() bool {
-	if o != nil && o.ServicePassword.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServicePassword gets a reference to the given NullableString and assigns it to the ServicePassword field.
 func (o *NetworkPoolServerCreatePhpIpam) SetServicePassword(v string) {
 	o.ServicePassword.Set(&v)
-}
-
-// SetServicePasswordNil sets the value for ServicePassword to be an explicit nil
-func (o *NetworkPoolServerCreatePhpIpam) SetServicePasswordNil() {
-	o.ServicePassword.Set(nil)
-}
-
-// UnsetServicePassword ensures that no value is present for ServicePassword, not even an explicit nil
-func (o *NetworkPoolServerCreatePhpIpam) UnsetServicePassword() {
-	o.ServicePassword.Unset()
 }
 
 // GetServiceThrottleRate returns the ServiceThrottleRate field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -289,28 +242,9 @@ func (o *NetworkPoolServerCreatePhpIpam) GetServiceThrottleRateOk() (*int64, boo
 	return o.ServiceThrottleRate.Get(), o.ServiceThrottleRate.IsSet()
 }
 
-// IsSetServiceThrottleRate returns a boolean if a field has been set.
-func (o *NetworkPoolServerCreatePhpIpam) IsSetServiceThrottleRate() bool {
-	if o != nil && o.ServiceThrottleRate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceThrottleRate gets a reference to the given NullableInt64 and assigns it to the ServiceThrottleRate field.
 func (o *NetworkPoolServerCreatePhpIpam) SetServiceThrottleRate(v int64) {
 	o.ServiceThrottleRate.Set(&v)
-}
-
-// SetServiceThrottleRateNil sets the value for ServiceThrottleRate to be an explicit nil
-func (o *NetworkPoolServerCreatePhpIpam) SetServiceThrottleRateNil() {
-	o.ServiceThrottleRate.Set(nil)
-}
-
-// UnsetServiceThrottleRate ensures that no value is present for ServiceThrottleRate, not even an explicit nil
-func (o *NetworkPoolServerCreatePhpIpam) UnsetServiceThrottleRate() {
-	o.ServiceThrottleRate.Unset()
 }
 
 // GetIgnoreSsl returns the IgnoreSsl field value if set, zero value otherwise.
@@ -329,15 +263,6 @@ func (o *NetworkPoolServerCreatePhpIpam) GetIgnoreSslOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.IgnoreSsl, true
-}
-
-// IsSetIgnoreSsl returns a boolean if a field has been set.
-func (o *NetworkPoolServerCreatePhpIpam) IsSetIgnoreSsl() bool {
-	if o != nil && !IsNil(o.IgnoreSsl) {
-		return true
-	}
-
-	return false
 }
 
 // SetIgnoreSsl gets a reference to the given bool and assigns it to the IgnoreSsl field.
@@ -364,28 +289,9 @@ func (o *NetworkPoolServerCreatePhpIpam) GetNetworkFilterOk() (*string, bool) {
 	return o.NetworkFilter.Get(), o.NetworkFilter.IsSet()
 }
 
-// IsSetNetworkFilter returns a boolean if a field has been set.
-func (o *NetworkPoolServerCreatePhpIpam) IsSetNetworkFilter() bool {
-	if o != nil && o.NetworkFilter.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkFilter gets a reference to the given NullableString and assigns it to the NetworkFilter field.
 func (o *NetworkPoolServerCreatePhpIpam) SetNetworkFilter(v string) {
 	o.NetworkFilter.Set(&v)
-}
-
-// SetNetworkFilterNil sets the value for NetworkFilter to be an explicit nil
-func (o *NetworkPoolServerCreatePhpIpam) SetNetworkFilterNil() {
-	o.NetworkFilter.Set(nil)
-}
-
-// UnsetNetworkFilter ensures that no value is present for NetworkFilter, not even an explicit nil
-func (o *NetworkPoolServerCreatePhpIpam) UnsetNetworkFilter() {
-	o.NetworkFilter.Unset()
 }
 
 // GetConfig returns the Config field value
@@ -428,15 +334,6 @@ func (o *NetworkPoolServerCreatePhpIpam) GetCredentialOk() (*NetworkPoolServerCr
 		return nil, false
 	}
 	return o.Credential, true
-}
-
-// IsSetCredential returns a boolean if a field has been set.
-func (o *NetworkPoolServerCreatePhpIpam) IsSetCredential() bool {
-	if o != nil && !IsNil(o.Credential) {
-		return true
-	}
-
-	return false
 }
 
 // SetCredential gets a reference to the given NetworkPoolServerCreatePhpIpamCredential and assigns it to the Credential field.

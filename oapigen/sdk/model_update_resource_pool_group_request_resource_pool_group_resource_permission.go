@@ -68,15 +68,6 @@ func (o *UpdateResourcePoolGroupRequestResourcePoolGroupResourcePermission) GetA
 	return o.All, true
 }
 
-// IsSetAll returns a boolean if a field has been set.
-func (o *UpdateResourcePoolGroupRequestResourcePoolGroupResourcePermission) IsSetAll() bool {
-	if o != nil && !IsNil(o.All) {
-		return true
-	}
-
-	return false
-}
-
 // SetAll gets a reference to the given bool and assigns it to the All field.
 func (o *UpdateResourcePoolGroupRequestResourcePoolGroupResourcePermission) SetAll(v bool) {
 	o.All = &v
@@ -98,15 +89,6 @@ func (o *UpdateResourcePoolGroupRequestResourcePoolGroupResourcePermission) GetS
 		return nil, false
 	}
 	return o.Sites, true
-}
-
-// IsSetSites returns a boolean if a field has been set.
-func (o *UpdateResourcePoolGroupRequestResourcePoolGroupResourcePermission) IsSetSites() bool {
-	if o != nil && !IsNil(o.Sites) {
-		return true
-	}
-
-	return false
 }
 
 // SetSites gets a reference to the given []UpdateResourcePoolGroupRequestResourcePoolGroupResourcePermissionSitesInner and assigns it to the Sites field.

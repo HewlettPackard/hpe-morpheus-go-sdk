@@ -61,15 +61,6 @@ func (o *ListNetworkRouterTypes200Response) GetNetworkRouterTypesOk() ([]ListNet
 	return o.NetworkRouterTypes, true
 }
 
-// IsSetNetworkRouterTypes returns a boolean if a field has been set.
-func (o *ListNetworkRouterTypes200Response) IsSetNetworkRouterTypes() bool {
-	if o != nil && !IsNil(o.NetworkRouterTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkRouterTypes gets a reference to the given []ListNetworkRouterTypes200ResponseNetworkRouterTypesInner and assigns it to the NetworkRouterTypes field.
 func (o *ListNetworkRouterTypes200Response) SetNetworkRouterTypes(v []ListNetworkRouterTypes200ResponseNetworkRouterTypesInner) {
 	o.NetworkRouterTypes = v

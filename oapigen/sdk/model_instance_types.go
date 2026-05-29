@@ -78,15 +78,6 @@ func (o *InstanceTypes) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *InstanceTypes) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *InstanceTypes) SetId(v int64) {
 	o.Id = &v
@@ -110,15 +101,6 @@ func (o *InstanceTypes) GetAccountOk() (*InstanceTypesAccount, bool) {
 	return o.Account, true
 }
 
-// IsSetAccount returns a boolean if a field has been set.
-func (o *InstanceTypes) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccount gets a reference to the given InstanceTypesAccount and assigns it to the Account field.
 func (o *InstanceTypes) SetAccount(v InstanceTypesAccount) {
 	o.Account = &v
@@ -140,15 +122,6 @@ func (o *InstanceTypes) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *InstanceTypes) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -175,15 +148,6 @@ func (o *InstanceTypes) GetLabelsOk() ([]string, bool) {
 	return o.Labels, true
 }
 
-// IsSetLabels returns a boolean if a field has been set.
-func (o *InstanceTypes) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
-}
-
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
 func (o *InstanceTypes) SetLabels(v []string) {
 	o.Labels = v
@@ -205,15 +169,6 @@ func (o *InstanceTypes) GetCodeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *InstanceTypes) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -240,28 +195,9 @@ func (o *InstanceTypes) GetDescriptionOk() (*string, bool) {
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *InstanceTypes) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *InstanceTypes) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *InstanceTypes) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *InstanceTypes) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetProvisionTypeCode returns the ProvisionTypeCode field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -283,28 +219,9 @@ func (o *InstanceTypes) GetProvisionTypeCodeOk() (*string, bool) {
 	return o.ProvisionTypeCode.Get(), o.ProvisionTypeCode.IsSet()
 }
 
-// IsSetProvisionTypeCode returns a boolean if a field has been set.
-func (o *InstanceTypes) IsSetProvisionTypeCode() bool {
-	if o != nil && o.ProvisionTypeCode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetProvisionTypeCode gets a reference to the given NullableString and assigns it to the ProvisionTypeCode field.
 func (o *InstanceTypes) SetProvisionTypeCode(v string) {
 	o.ProvisionTypeCode.Set(&v)
-}
-
-// SetProvisionTypeCodeNil sets the value for ProvisionTypeCode to be an explicit nil
-func (o *InstanceTypes) SetProvisionTypeCodeNil() {
-	o.ProvisionTypeCode.Set(nil)
-}
-
-// UnsetProvisionTypeCode ensures that no value is present for ProvisionTypeCode, not even an explicit nil
-func (o *InstanceTypes) UnsetProvisionTypeCode() {
-	o.ProvisionTypeCode.Unset()
 }
 
 // GetCategory returns the Category field value if set, zero value otherwise.
@@ -323,15 +240,6 @@ func (o *InstanceTypes) GetCategoryOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Category, true
-}
-
-// IsSetCategory returns a boolean if a field has been set.
-func (o *InstanceTypes) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
-		return true
-	}
-
-	return false
 }
 
 // SetCategory gets a reference to the given string and assigns it to the Category field.
@@ -357,15 +265,6 @@ func (o *InstanceTypes) GetActiveOk() (*bool, bool) {
 	return o.Active, true
 }
 
-// IsSetActive returns a boolean if a field has been set.
-func (o *InstanceTypes) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
-}
-
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *InstanceTypes) SetActive(v bool) {
 	o.Active = &v
@@ -387,15 +286,6 @@ func (o *InstanceTypes) GetEnvironmentPrefixOk() (*string, bool) {
 		return nil, false
 	}
 	return o.EnvironmentPrefix, true
-}
-
-// IsSetEnvironmentPrefix returns a boolean if a field has been set.
-func (o *InstanceTypes) IsSetEnvironmentPrefix() bool {
-	if o != nil && !IsNil(o.EnvironmentPrefix) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnvironmentPrefix gets a reference to the given string and assigns it to the EnvironmentPrefix field.
@@ -421,15 +311,6 @@ func (o *InstanceTypes) GetVisibilityOk() (*string, bool) {
 	return o.Visibility, true
 }
 
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *InstanceTypes) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
-}
-
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
 func (o *InstanceTypes) SetVisibility(v string) {
 	o.Visibility = &v
@@ -451,15 +332,6 @@ func (o *InstanceTypes) GetFeaturedOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Featured, true
-}
-
-// IsSetFeatured returns a boolean if a field has been set.
-func (o *InstanceTypes) IsSetFeatured() bool {
-	if o != nil && !IsNil(o.Featured) {
-		return true
-	}
-
-	return false
 }
 
 // SetFeatured gets a reference to the given bool and assigns it to the Featured field.
@@ -485,15 +357,6 @@ func (o *InstanceTypes) GetVersionsOk() ([]string, bool) {
 	return o.Versions, true
 }
 
-// IsSetVersions returns a boolean if a field has been set.
-func (o *InstanceTypes) IsSetVersions() bool {
-	if o != nil && !IsNil(o.Versions) {
-		return true
-	}
-
-	return false
-}
-
 // SetVersions gets a reference to the given []string and assigns it to the Versions field.
 func (o *InstanceTypes) SetVersions(v []string) {
 	o.Versions = v
@@ -515,15 +378,6 @@ func (o *InstanceTypes) GetInstanceTypeLayoutsOk() ([]InstanceTypesInstanceTypeL
 		return nil, false
 	}
 	return o.InstanceTypeLayouts, true
-}
-
-// IsSetInstanceTypeLayouts returns a boolean if a field has been set.
-func (o *InstanceTypes) IsSetInstanceTypeLayouts() bool {
-	if o != nil && !IsNil(o.InstanceTypeLayouts) {
-		return true
-	}
-
-	return false
 }
 
 // SetInstanceTypeLayouts gets a reference to the given []InstanceTypesInstanceTypeLayoutsInner and assigns it to the InstanceTypeLayouts field.
@@ -550,28 +404,9 @@ func (o *InstanceTypes) GetImagePathOk() (*string, bool) {
 	return o.ImagePath.Get(), o.ImagePath.IsSet()
 }
 
-// IsSetImagePath returns a boolean if a field has been set.
-func (o *InstanceTypes) IsSetImagePath() bool {
-	if o != nil && o.ImagePath.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetImagePath gets a reference to the given NullableString and assigns it to the ImagePath field.
 func (o *InstanceTypes) SetImagePath(v string) {
 	o.ImagePath.Set(&v)
-}
-
-// SetImagePathNil sets the value for ImagePath to be an explicit nil
-func (o *InstanceTypes) SetImagePathNil() {
-	o.ImagePath.Set(nil)
-}
-
-// UnsetImagePath ensures that no value is present for ImagePath, not even an explicit nil
-func (o *InstanceTypes) UnsetImagePath() {
-	o.ImagePath.Unset()
 }
 
 // GetDarkImagePath returns the DarkImagePath field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -593,28 +428,9 @@ func (o *InstanceTypes) GetDarkImagePathOk() (*string, bool) {
 	return o.DarkImagePath.Get(), o.DarkImagePath.IsSet()
 }
 
-// IsSetDarkImagePath returns a boolean if a field has been set.
-func (o *InstanceTypes) IsSetDarkImagePath() bool {
-	if o != nil && o.DarkImagePath.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDarkImagePath gets a reference to the given NullableString and assigns it to the DarkImagePath field.
 func (o *InstanceTypes) SetDarkImagePath(v string) {
 	o.DarkImagePath.Set(&v)
-}
-
-// SetDarkImagePathNil sets the value for DarkImagePath to be an explicit nil
-func (o *InstanceTypes) SetDarkImagePathNil() {
-	o.DarkImagePath.Set(nil)
-}
-
-// UnsetDarkImagePath ensures that no value is present for DarkImagePath, not even an explicit nil
-func (o *InstanceTypes) UnsetDarkImagePath() {
-	o.DarkImagePath.Unset()
 }
 
 func (o InstanceTypes) MarshalJSON() ([]byte, error) {

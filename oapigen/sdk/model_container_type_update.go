@@ -91,15 +91,6 @@ func (o *ContainerTypeUpdate) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ContainerTypeUpdate) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ContainerTypeUpdate) SetName(v string) {
 	o.Name = &v
@@ -121,15 +112,6 @@ func (o *ContainerTypeUpdate) GetLabelsOk() ([]string, bool) {
 		return nil, false
 	}
 	return o.Labels, true
-}
-
-// IsSetLabels returns a boolean if a field has been set.
-func (o *ContainerTypeUpdate) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
 }
 
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
@@ -155,15 +137,6 @@ func (o *ContainerTypeUpdate) GetShortNameOk() (*string, bool) {
 	return o.ShortName, true
 }
 
-// IsSetShortName returns a boolean if a field has been set.
-func (o *ContainerTypeUpdate) IsSetShortName() bool {
-	if o != nil && !IsNil(o.ShortName) {
-		return true
-	}
-
-	return false
-}
-
 // SetShortName gets a reference to the given string and assigns it to the ShortName field.
 func (o *ContainerTypeUpdate) SetShortName(v string) {
 	o.ShortName = &v
@@ -185,15 +158,6 @@ func (o *ContainerTypeUpdate) GetDescriptionOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ContainerTypeUpdate) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -219,15 +183,6 @@ func (o *ContainerTypeUpdate) GetContainerVersionOk() (*string, bool) {
 	return o.ContainerVersion, true
 }
 
-// IsSetContainerVersion returns a boolean if a field has been set.
-func (o *ContainerTypeUpdate) IsSetContainerVersion() bool {
-	if o != nil && !IsNil(o.ContainerVersion) {
-		return true
-	}
-
-	return false
-}
-
 // SetContainerVersion gets a reference to the given string and assigns it to the ContainerVersion field.
 func (o *ContainerTypeUpdate) SetContainerVersion(v string) {
 	o.ContainerVersion = &v
@@ -249,15 +204,6 @@ func (o *ContainerTypeUpdate) GetProvisionTypeCodeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ProvisionTypeCode, true
-}
-
-// IsSetProvisionTypeCode returns a boolean if a field has been set.
-func (o *ContainerTypeUpdate) IsSetProvisionTypeCode() bool {
-	if o != nil && !IsNil(o.ProvisionTypeCode) {
-		return true
-	}
-
-	return false
 }
 
 // SetProvisionTypeCode gets a reference to the given string and assigns it to the ProvisionTypeCode field.
@@ -283,15 +229,6 @@ func (o *ContainerTypeUpdate) GetScriptsOk() ([]int64, bool) {
 	return o.Scripts, true
 }
 
-// IsSetScripts returns a boolean if a field has been set.
-func (o *ContainerTypeUpdate) IsSetScripts() bool {
-	if o != nil && !IsNil(o.Scripts) {
-		return true
-	}
-
-	return false
-}
-
 // SetScripts gets a reference to the given []int64 and assigns it to the Scripts field.
 func (o *ContainerTypeUpdate) SetScripts(v []int64) {
 	o.Scripts = v
@@ -313,15 +250,6 @@ func (o *ContainerTypeUpdate) GetTemplatesOk() ([]int64, bool) {
 		return nil, false
 	}
 	return o.Templates, true
-}
-
-// IsSetTemplates returns a boolean if a field has been set.
-func (o *ContainerTypeUpdate) IsSetTemplates() bool {
-	if o != nil && !IsNil(o.Templates) {
-		return true
-	}
-
-	return false
 }
 
 // SetTemplates gets a reference to the given []int64 and assigns it to the Templates field.
@@ -347,15 +275,6 @@ func (o *ContainerTypeUpdate) GetVirtualImageIdOk() (*int64, bool) {
 	return o.VirtualImageId, true
 }
 
-// IsSetVirtualImageId returns a boolean if a field has been set.
-func (o *ContainerTypeUpdate) IsSetVirtualImageId() bool {
-	if o != nil && !IsNil(o.VirtualImageId) {
-		return true
-	}
-
-	return false
-}
-
 // SetVirtualImageId gets a reference to the given int64 and assigns it to the VirtualImageId field.
 func (o *ContainerTypeUpdate) SetVirtualImageId(v int64) {
 	o.VirtualImageId = &v
@@ -377,15 +296,6 @@ func (o *ContainerTypeUpdate) GetOsTypeIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.OsTypeId, true
-}
-
-// IsSetOsTypeId returns a boolean if a field has been set.
-func (o *ContainerTypeUpdate) IsSetOsTypeId() bool {
-	if o != nil && !IsNil(o.OsTypeId) {
-		return true
-	}
-
-	return false
 }
 
 // SetOsTypeId gets a reference to the given int64 and assigns it to the OsTypeId field.
@@ -411,15 +321,6 @@ func (o *ContainerTypeUpdate) GetStatTypeCodeOk() (*string, bool) {
 	return o.StatTypeCode, true
 }
 
-// IsSetStatTypeCode returns a boolean if a field has been set.
-func (o *ContainerTypeUpdate) IsSetStatTypeCode() bool {
-	if o != nil && !IsNil(o.StatTypeCode) {
-		return true
-	}
-
-	return false
-}
-
 // SetStatTypeCode gets a reference to the given string and assigns it to the StatTypeCode field.
 func (o *ContainerTypeUpdate) SetStatTypeCode(v string) {
 	o.StatTypeCode = &v
@@ -441,15 +342,6 @@ func (o *ContainerTypeUpdate) GetLogTypeCodeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.LogTypeCode, true
-}
-
-// IsSetLogTypeCode returns a boolean if a field has been set.
-func (o *ContainerTypeUpdate) IsSetLogTypeCode() bool {
-	if o != nil && !IsNil(o.LogTypeCode) {
-		return true
-	}
-
-	return false
 }
 
 // SetLogTypeCode gets a reference to the given string and assigns it to the LogTypeCode field.
@@ -475,15 +367,6 @@ func (o *ContainerTypeUpdate) GetServerTypeOk() (*string, bool) {
 	return o.ServerType, true
 }
 
-// IsSetServerType returns a boolean if a field has been set.
-func (o *ContainerTypeUpdate) IsSetServerType() bool {
-	if o != nil && !IsNil(o.ServerType) {
-		return true
-	}
-
-	return false
-}
-
 // SetServerType gets a reference to the given string and assigns it to the ServerType field.
 func (o *ContainerTypeUpdate) SetServerType(v string) {
 	o.ServerType = &v
@@ -505,15 +388,6 @@ func (o *ContainerTypeUpdate) GetContainerPortsOk() ([]ContainerTypeUpdateContai
 		return nil, false
 	}
 	return o.ContainerPorts, true
-}
-
-// IsSetContainerPorts returns a boolean if a field has been set.
-func (o *ContainerTypeUpdate) IsSetContainerPorts() bool {
-	if o != nil && !IsNil(o.ContainerPorts) {
-		return true
-	}
-
-	return false
 }
 
 // SetContainerPorts gets a reference to the given []ContainerTypeUpdateContainerPortsInner and assigns it to the ContainerPorts field.
@@ -539,15 +413,6 @@ func (o *ContainerTypeUpdate) GetEnvironmentVariablesOk() ([]ContainerTypeUpdate
 	return o.EnvironmentVariables, true
 }
 
-// IsSetEnvironmentVariables returns a boolean if a field has been set.
-func (o *ContainerTypeUpdate) IsSetEnvironmentVariables() bool {
-	if o != nil && !IsNil(o.EnvironmentVariables) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnvironmentVariables gets a reference to the given []ContainerTypeUpdateEnvironmentVariablesInner and assigns it to the EnvironmentVariables field.
 func (o *ContainerTypeUpdate) SetEnvironmentVariables(v []ContainerTypeUpdateEnvironmentVariablesInner) {
 	o.EnvironmentVariables = v
@@ -569,15 +434,6 @@ func (o *ContainerTypeUpdate) GetConfigOk() (map[string]interface{}, bool) {
 		return map[string]interface{}{}, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *ContainerTypeUpdate) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.

@@ -61,15 +61,6 @@ func (o *AddClusterRequest) GetClusterOk() (*AddClusterRequestCluster, bool) {
 	return o.Cluster, true
 }
 
-// IsSetCluster returns a boolean if a field has been set.
-func (o *AddClusterRequest) IsSetCluster() bool {
-	if o != nil && !IsNil(o.Cluster) {
-		return true
-	}
-
-	return false
-}
-
 // SetCluster gets a reference to the given AddClusterRequestCluster and assigns it to the Cluster field.
 func (o *AddClusterRequest) SetCluster(v AddClusterRequestCluster) {
 	o.Cluster = &v

@@ -61,15 +61,6 @@ func (o *GetCatalogItem200Response) GetItemOk() (*GetCatalogItem200ResponseItem,
 	return o.Item, true
 }
 
-// IsSetItem returns a boolean if a field has been set.
-func (o *GetCatalogItem200Response) IsSetItem() bool {
-	if o != nil && !IsNil(o.Item) {
-		return true
-	}
-
-	return false
-}
-
 // SetItem gets a reference to the given GetCatalogItem200ResponseItem and assigns it to the Item field.
 func (o *GetCatalogItem200Response) SetItem(v GetCatalogItem200ResponseItem) {
 	o.Item = &v

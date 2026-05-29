@@ -66,15 +66,6 @@ func (o *UpdateInvoicesRequestInvoice) GetTagsOk() ([]map[string]interface{}, bo
 	return o.Tags, true
 }
 
-// IsSetTags returns a boolean if a field has been set.
-func (o *UpdateInvoicesRequestInvoice) IsSetTags() bool {
-	if o != nil && !IsNil(o.Tags) {
-		return true
-	}
-
-	return false
-}
-
 // SetTags gets a reference to the given []map[string]interface{} and assigns it to the Tags field.
 func (o *UpdateInvoicesRequestInvoice) SetTags(v []map[string]interface{}) {
 	o.Tags = v
@@ -98,15 +89,6 @@ func (o *UpdateInvoicesRequestInvoice) GetAddTagsOk() ([]map[string]interface{},
 	return o.AddTags, true
 }
 
-// IsSetAddTags returns a boolean if a field has been set.
-func (o *UpdateInvoicesRequestInvoice) IsSetAddTags() bool {
-	if o != nil && !IsNil(o.AddTags) {
-		return true
-	}
-
-	return false
-}
-
 // SetAddTags gets a reference to the given []map[string]interface{} and assigns it to the AddTags field.
 func (o *UpdateInvoicesRequestInvoice) SetAddTags(v []map[string]interface{}) {
 	o.AddTags = v
@@ -128,15 +110,6 @@ func (o *UpdateInvoicesRequestInvoice) GetRemoveTagsOk() ([]map[string]interface
 		return nil, false
 	}
 	return o.RemoveTags, true
-}
-
-// IsSetRemoveTags returns a boolean if a field has been set.
-func (o *UpdateInvoicesRequestInvoice) IsSetRemoveTags() bool {
-	if o != nil && !IsNil(o.RemoveTags) {
-		return true
-	}
-
-	return false
 }
 
 // SetRemoveTags gets a reference to the given []map[string]interface{} and assigns it to the RemoveTags field.

@@ -61,15 +61,6 @@ func (o *GetTasks200Response) GetTaskOk() (*GetTasks200ResponseAllOfTask, bool) 
 	return o.Task, true
 }
 
-// IsSetTask returns a boolean if a field has been set.
-func (o *GetTasks200Response) IsSetTask() bool {
-	if o != nil && !IsNil(o.Task) {
-		return true
-	}
-
-	return false
-}
-
 // SetTask gets a reference to the given GetTasks200ResponseAllOfTask and assigns it to the Task field.
 func (o *GetTasks200Response) SetTask(v GetTasks200ResponseAllOfTask) {
 	o.Task = &v

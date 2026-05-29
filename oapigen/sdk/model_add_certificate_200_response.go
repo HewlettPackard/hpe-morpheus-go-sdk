@@ -62,15 +62,6 @@ func (o *AddCertificate200Response) GetCertificateOk() (*AddCertificate200Respon
 	return o.Certificate, true
 }
 
-// IsSetCertificate returns a boolean if a field has been set.
-func (o *AddCertificate200Response) IsSetCertificate() bool {
-	if o != nil && !IsNil(o.Certificate) {
-		return true
-	}
-
-	return false
-}
-
 // SetCertificate gets a reference to the given AddCertificate200ResponseAllOfCertificate and assigns it to the Certificate field.
 func (o *AddCertificate200Response) SetCertificate(v AddCertificate200ResponseAllOfCertificate) {
 	o.Certificate = &v
@@ -92,15 +83,6 @@ func (o *AddCertificate200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *AddCertificate200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

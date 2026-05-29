@@ -61,15 +61,6 @@ func (o *GetOptionListItems200Response) GetListItemsOk() ([]GetOptionListItems20
 	return o.ListItems, true
 }
 
-// IsSetListItems returns a boolean if a field has been set.
-func (o *GetOptionListItems200Response) IsSetListItems() bool {
-	if o != nil && !IsNil(o.ListItems) {
-		return true
-	}
-
-	return false
-}
-
 // SetListItems gets a reference to the given []GetOptionListItems200ResponseListItemsInner and assigns it to the ListItems field.
 func (o *GetOptionListItems200Response) SetListItems(v []GetOptionListItems200ResponseListItemsInner) {
 	o.ListItems = v

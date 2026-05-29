@@ -93,15 +93,6 @@ func (o *TestLicenseRequest) GetInstallActionOk() (*string, bool) {
 	return o.InstallAction, true
 }
 
-// IsSetInstallAction returns a boolean if a field has been set.
-func (o *TestLicenseRequest) IsSetInstallAction() bool {
-	if o != nil && !IsNil(o.InstallAction) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstallAction gets a reference to the given string and assigns it to the InstallAction field.
 func (o *TestLicenseRequest) SetInstallAction(v string) {
 	o.InstallAction = &v

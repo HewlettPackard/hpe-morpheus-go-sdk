@@ -61,15 +61,6 @@ func (o *AddDeploymentsRequest) GetDeploymentOk() (*AddDeploymentsRequestDeploym
 	return o.Deployment, true
 }
 
-// IsSetDeployment returns a boolean if a field has been set.
-func (o *AddDeploymentsRequest) IsSetDeployment() bool {
-	if o != nil && !IsNil(o.Deployment) {
-		return true
-	}
-
-	return false
-}
-
 // SetDeployment gets a reference to the given AddDeploymentsRequestDeployment and assigns it to the Deployment field.
 func (o *AddDeploymentsRequest) SetDeployment(v AddDeploymentsRequestDeployment) {
 	o.Deployment = &v

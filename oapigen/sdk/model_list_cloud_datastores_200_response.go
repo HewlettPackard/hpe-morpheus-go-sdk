@@ -62,15 +62,6 @@ func (o *ListCloudDatastores200Response) GetDatastoresOk() ([]ListCloudDatastore
 	return o.Datastores, true
 }
 
-// IsSetDatastores returns a boolean if a field has been set.
-func (o *ListCloudDatastores200Response) IsSetDatastores() bool {
-	if o != nil && !IsNil(o.Datastores) {
-		return true
-	}
-
-	return false
-}
-
 // SetDatastores gets a reference to the given []ListCloudDatastores200ResponseAllOfDatastoresInner and assigns it to the Datastores field.
 func (o *ListCloudDatastores200Response) SetDatastores(v []ListCloudDatastores200ResponseAllOfDatastoresInner) {
 	o.Datastores = v
@@ -92,15 +83,6 @@ func (o *ListCloudDatastores200Response) GetMetaOk() (*ListApprovals200ResponseA
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListCloudDatastores200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

@@ -61,15 +61,6 @@ func (o *GetNetworkDomain200Response) GetNetworkDomainOk() (*GetNetworkDomain200
 	return o.NetworkDomain, true
 }
 
-// IsSetNetworkDomain returns a boolean if a field has been set.
-func (o *GetNetworkDomain200Response) IsSetNetworkDomain() bool {
-	if o != nil && !IsNil(o.NetworkDomain) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkDomain gets a reference to the given GetNetworkDomain200ResponseNetworkDomain and assigns it to the NetworkDomain field.
 func (o *GetNetworkDomain200Response) SetNetworkDomain(v GetNetworkDomain200ResponseNetworkDomain) {
 	o.NetworkDomain = &v

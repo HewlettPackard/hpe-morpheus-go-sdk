@@ -74,15 +74,6 @@ func (o *ClusterDeployments) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ClusterDeployments) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ClusterDeployments) SetId(v int64) {
 	o.Id = &v
@@ -106,15 +97,6 @@ func (o *ClusterDeployments) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ClusterDeployments) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ClusterDeployments) SetName(v string) {
 	o.Name = &v
@@ -136,15 +118,6 @@ func (o *ClusterDeployments) GetCodeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *ClusterDeployments) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -171,28 +144,9 @@ func (o *ClusterDeployments) GetDescriptionOk() (*string, bool) {
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ClusterDeployments) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ClusterDeployments) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *ClusterDeployments) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *ClusterDeployments) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetCategory returns the Category field value if set, zero value otherwise.
@@ -211,15 +165,6 @@ func (o *ClusterDeployments) GetCategoryOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Category, true
-}
-
-// IsSetCategory returns a boolean if a field has been set.
-func (o *ClusterDeployments) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
-		return true
-	}
-
-	return false
 }
 
 // SetCategory gets a reference to the given string and assigns it to the Category field.
@@ -245,15 +190,6 @@ func (o *ClusterDeployments) GetResourceLevelOk() (*string, bool) {
 	return o.ResourceLevel, true
 }
 
-// IsSetResourceLevel returns a boolean if a field has been set.
-func (o *ClusterDeployments) IsSetResourceLevel() bool {
-	if o != nil && !IsNil(o.ResourceLevel) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourceLevel gets a reference to the given string and assigns it to the ResourceLevel field.
 func (o *ClusterDeployments) SetResourceLevel(v string) {
 	o.ResourceLevel = &v
@@ -275,15 +211,6 @@ func (o *ClusterDeployments) GetResourceTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ResourceType, true
-}
-
-// IsSetResourceType returns a boolean if a field has been set.
-func (o *ClusterDeployments) IsSetResourceType() bool {
-	if o != nil && !IsNil(o.ResourceType) {
-		return true
-	}
-
-	return false
 }
 
 // SetResourceType gets a reference to the given string and assigns it to the ResourceType field.
@@ -309,15 +236,6 @@ func (o *ClusterDeployments) GetManagedOk() (*bool, bool) {
 	return o.Managed, true
 }
 
-// IsSetManaged returns a boolean if a field has been set.
-func (o *ClusterDeployments) IsSetManaged() bool {
-	if o != nil && !IsNil(o.Managed) {
-		return true
-	}
-
-	return false
-}
-
 // SetManaged gets a reference to the given bool and assigns it to the Managed field.
 func (o *ClusterDeployments) SetManaged(v bool) {
 	o.Managed = &v
@@ -339,15 +257,6 @@ func (o *ClusterDeployments) GetStatusOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *ClusterDeployments) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -373,15 +282,6 @@ func (o *ClusterDeployments) GetLastUpdatedOk() (*time.Time, bool) {
 	return o.LastUpdated, true
 }
 
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *ClusterDeployments) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
-}
-
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
 func (o *ClusterDeployments) SetLastUpdated(v time.Time) {
 	o.LastUpdated = &v
@@ -403,15 +303,6 @@ func (o *ClusterDeployments) GetOwnerOk() (*ClusterDeploymentsOwner, bool) {
 		return nil, false
 	}
 	return o.Owner, true
-}
-
-// IsSetOwner returns a boolean if a field has been set.
-func (o *ClusterDeployments) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
-		return true
-	}
-
-	return false
 }
 
 // SetOwner gets a reference to the given ClusterDeploymentsOwner and assigns it to the Owner field.
@@ -437,15 +328,6 @@ func (o *ClusterDeployments) GetTotalCpuUsageOk() (*int64, bool) {
 	return o.TotalCpuUsage, true
 }
 
-// IsSetTotalCpuUsage returns a boolean if a field has been set.
-func (o *ClusterDeployments) IsSetTotalCpuUsage() bool {
-	if o != nil && !IsNil(o.TotalCpuUsage) {
-		return true
-	}
-
-	return false
-}
-
 // SetTotalCpuUsage gets a reference to the given int64 and assigns it to the TotalCpuUsage field.
 func (o *ClusterDeployments) SetTotalCpuUsage(v int64) {
 	o.TotalCpuUsage = &v
@@ -467,15 +349,6 @@ func (o *ClusterDeployments) GetStatsOk() (map[string]interface{}, bool) {
 		return map[string]interface{}{}, false
 	}
 	return o.Stats, true
-}
-
-// IsSetStats returns a boolean if a field has been set.
-func (o *ClusterDeployments) IsSetStats() bool {
-	if o != nil && !IsNil(o.Stats) {
-		return true
-	}
-
-	return false
 }
 
 // SetStats gets a reference to the given map[string]interface{} and assigns it to the Stats field.

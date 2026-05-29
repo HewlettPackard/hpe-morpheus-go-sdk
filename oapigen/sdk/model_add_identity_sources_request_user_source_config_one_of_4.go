@@ -70,15 +70,6 @@ func (o *AddIdentitySourcesRequestUserSourceConfigOneOf4) GetSubdomainOk() (*str
 	return o.Subdomain, true
 }
 
-// IsSetSubdomain returns a boolean if a field has been set.
-func (o *AddIdentitySourcesRequestUserSourceConfigOneOf4) IsSetSubdomain() bool {
-	if o != nil && !IsNil(o.Subdomain) {
-		return true
-	}
-
-	return false
-}
-
 // SetSubdomain gets a reference to the given string and assigns it to the Subdomain field.
 func (o *AddIdentitySourcesRequestUserSourceConfigOneOf4) SetSubdomain(v string) {
 	o.Subdomain = &v
@@ -100,15 +91,6 @@ func (o *AddIdentitySourcesRequestUserSourceConfigOneOf4) GetRegionOk() (*string
 		return nil, false
 	}
 	return o.Region, true
-}
-
-// IsSetRegion returns a boolean if a field has been set.
-func (o *AddIdentitySourcesRequestUserSourceConfigOneOf4) IsSetRegion() bool {
-	if o != nil && !IsNil(o.Region) {
-		return true
-	}
-
-	return false
 }
 
 // SetRegion gets a reference to the given string and assigns it to the Region field.
@@ -134,15 +116,6 @@ func (o *AddIdentitySourcesRequestUserSourceConfigOneOf4) GetClientSecretOk() (*
 	return o.ClientSecret, true
 }
 
-// IsSetClientSecret returns a boolean if a field has been set.
-func (o *AddIdentitySourcesRequestUserSourceConfigOneOf4) IsSetClientSecret() bool {
-	if o != nil && !IsNil(o.ClientSecret) {
-		return true
-	}
-
-	return false
-}
-
 // SetClientSecret gets a reference to the given string and assigns it to the ClientSecret field.
 func (o *AddIdentitySourcesRequestUserSourceConfigOneOf4) SetClientSecret(v string) {
 	o.ClientSecret = &v
@@ -166,15 +139,6 @@ func (o *AddIdentitySourcesRequestUserSourceConfigOneOf4) GetClientIdOk() (*stri
 	return o.ClientId, true
 }
 
-// IsSetClientId returns a boolean if a field has been set.
-func (o *AddIdentitySourcesRequestUserSourceConfigOneOf4) IsSetClientId() bool {
-	if o != nil && !IsNil(o.ClientId) {
-		return true
-	}
-
-	return false
-}
-
 // SetClientId gets a reference to the given string and assigns it to the ClientId field.
 func (o *AddIdentitySourcesRequestUserSourceConfigOneOf4) SetClientId(v string) {
 	o.ClientId = &v
@@ -196,15 +160,6 @@ func (o *AddIdentitySourcesRequestUserSourceConfigOneOf4) GetRequiredRoleOk() (*
 		return nil, false
 	}
 	return o.RequiredRole, true
-}
-
-// IsSetRequiredRole returns a boolean if a field has been set.
-func (o *AddIdentitySourcesRequestUserSourceConfigOneOf4) IsSetRequiredRole() bool {
-	if o != nil && !IsNil(o.RequiredRole) {
-		return true
-	}
-
-	return false
 }
 
 // SetRequiredRole gets a reference to the given string and assigns it to the RequiredRole field.

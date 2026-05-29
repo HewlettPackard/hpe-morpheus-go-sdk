@@ -73,15 +73,6 @@ func (o *UpdatePriceSetsRequestPriceSet) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdatePriceSetsRequestPriceSet) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *UpdatePriceSetsRequestPriceSet) SetName(v string) {
 	o.Name = &v
@@ -103,15 +94,6 @@ func (o *UpdatePriceSetsRequestPriceSet) GetCodeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *UpdatePriceSetsRequestPriceSet) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -137,15 +119,6 @@ func (o *UpdatePriceSetsRequestPriceSet) GetRegionCodeOk() (*string, bool) {
 	return o.RegionCode, true
 }
 
-// IsSetRegionCode returns a boolean if a field has been set.
-func (o *UpdatePriceSetsRequestPriceSet) IsSetRegionCode() bool {
-	if o != nil && !IsNil(o.RegionCode) {
-		return true
-	}
-
-	return false
-}
-
 // SetRegionCode gets a reference to the given string and assigns it to the RegionCode field.
 func (o *UpdatePriceSetsRequestPriceSet) SetRegionCode(v string) {
 	o.RegionCode = &v
@@ -167,15 +140,6 @@ func (o *UpdatePriceSetsRequestPriceSet) GetZoneOk() (*UpdatePriceSetsRequestPri
 		return nil, false
 	}
 	return o.Zone, true
-}
-
-// IsSetZone returns a boolean if a field has been set.
-func (o *UpdatePriceSetsRequestPriceSet) IsSetZone() bool {
-	if o != nil && !IsNil(o.Zone) {
-		return true
-	}
-
-	return false
 }
 
 // SetZone gets a reference to the given UpdatePriceSetsRequestPriceSetZone and assigns it to the Zone field.
@@ -201,15 +165,6 @@ func (o *UpdatePriceSetsRequestPriceSet) GetZonePoolOk() (*UpdatePriceSetsReques
 	return o.ZonePool, true
 }
 
-// IsSetZonePool returns a boolean if a field has been set.
-func (o *UpdatePriceSetsRequestPriceSet) IsSetZonePool() bool {
-	if o != nil && !IsNil(o.ZonePool) {
-		return true
-	}
-
-	return false
-}
-
 // SetZonePool gets a reference to the given UpdatePriceSetsRequestPriceSetZonePool and assigns it to the ZonePool field.
 func (o *UpdatePriceSetsRequestPriceSet) SetZonePool(v UpdatePriceSetsRequestPriceSetZonePool) {
 	o.ZonePool = &v
@@ -231,15 +186,6 @@ func (o *UpdatePriceSetsRequestPriceSet) GetPriceUnitOk() (*string, bool) {
 		return nil, false
 	}
 	return o.PriceUnit, true
-}
-
-// IsSetPriceUnit returns a boolean if a field has been set.
-func (o *UpdatePriceSetsRequestPriceSet) IsSetPriceUnit() bool {
-	if o != nil && !IsNil(o.PriceUnit) {
-		return true
-	}
-
-	return false
 }
 
 // SetPriceUnit gets a reference to the given string and assigns it to the PriceUnit field.
@@ -265,15 +211,6 @@ func (o *UpdatePriceSetsRequestPriceSet) GetTypeOk() (*string, bool) {
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *UpdatePriceSetsRequestPriceSet) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given string and assigns it to the Type field.
 func (o *UpdatePriceSetsRequestPriceSet) SetType(v string) {
 	o.Type = &v
@@ -295,15 +232,6 @@ func (o *UpdatePriceSetsRequestPriceSet) GetPricesOk() ([]int64, bool) {
 		return nil, false
 	}
 	return o.Prices, true
-}
-
-// IsSetPrices returns a boolean if a field has been set.
-func (o *UpdatePriceSetsRequestPriceSet) IsSetPrices() bool {
-	if o != nil && !IsNil(o.Prices) {
-		return true
-	}
-
-	return false
 }
 
 // SetPrices gets a reference to the given []int64 and assigns it to the Prices field.

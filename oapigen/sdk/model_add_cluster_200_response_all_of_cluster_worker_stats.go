@@ -68,15 +68,6 @@ func (o *AddCluster200ResponseAllOfClusterWorkerStats) GetUsedStorageOk() (*int6
 	return o.UsedStorage, true
 }
 
-// IsSetUsedStorage returns a boolean if a field has been set.
-func (o *AddCluster200ResponseAllOfClusterWorkerStats) IsSetUsedStorage() bool {
-	if o != nil && !IsNil(o.UsedStorage) {
-		return true
-	}
-
-	return false
-}
-
 // SetUsedStorage gets a reference to the given int64 and assigns it to the UsedStorage field.
 func (o *AddCluster200ResponseAllOfClusterWorkerStats) SetUsedStorage(v int64) {
 	o.UsedStorage = &v
@@ -98,15 +89,6 @@ func (o *AddCluster200ResponseAllOfClusterWorkerStats) GetMaxStorageOk() (*int64
 		return nil, false
 	}
 	return o.MaxStorage, true
-}
-
-// IsSetMaxStorage returns a boolean if a field has been set.
-func (o *AddCluster200ResponseAllOfClusterWorkerStats) IsSetMaxStorage() bool {
-	if o != nil && !IsNil(o.MaxStorage) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxStorage gets a reference to the given int64 and assigns it to the MaxStorage field.
@@ -132,15 +114,6 @@ func (o *AddCluster200ResponseAllOfClusterWorkerStats) GetUsedMemoryOk() (*int64
 	return o.UsedMemory, true
 }
 
-// IsSetUsedMemory returns a boolean if a field has been set.
-func (o *AddCluster200ResponseAllOfClusterWorkerStats) IsSetUsedMemory() bool {
-	if o != nil && !IsNil(o.UsedMemory) {
-		return true
-	}
-
-	return false
-}
-
 // SetUsedMemory gets a reference to the given int64 and assigns it to the UsedMemory field.
 func (o *AddCluster200ResponseAllOfClusterWorkerStats) SetUsedMemory(v int64) {
 	o.UsedMemory = &v
@@ -162,15 +135,6 @@ func (o *AddCluster200ResponseAllOfClusterWorkerStats) GetMaxMemoryOk() (*int64,
 		return nil, false
 	}
 	return o.MaxMemory, true
-}
-
-// IsSetMaxMemory returns a boolean if a field has been set.
-func (o *AddCluster200ResponseAllOfClusterWorkerStats) IsSetMaxMemory() bool {
-	if o != nil && !IsNil(o.MaxMemory) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxMemory gets a reference to the given int64 and assigns it to the MaxMemory field.
@@ -196,15 +160,6 @@ func (o *AddCluster200ResponseAllOfClusterWorkerStats) GetUsedCpuOk() (*int64, b
 	return o.UsedCpu, true
 }
 
-// IsSetUsedCpu returns a boolean if a field has been set.
-func (o *AddCluster200ResponseAllOfClusterWorkerStats) IsSetUsedCpu() bool {
-	if o != nil && !IsNil(o.UsedCpu) {
-		return true
-	}
-
-	return false
-}
-
 // SetUsedCpu gets a reference to the given int64 and assigns it to the UsedCpu field.
 func (o *AddCluster200ResponseAllOfClusterWorkerStats) SetUsedCpu(v int64) {
 	o.UsedCpu = &v
@@ -226,15 +181,6 @@ func (o *AddCluster200ResponseAllOfClusterWorkerStats) GetCpuUsageOk() (*float32
 		return nil, false
 	}
 	return o.CpuUsage, true
-}
-
-// IsSetCpuUsage returns a boolean if a field has been set.
-func (o *AddCluster200ResponseAllOfClusterWorkerStats) IsSetCpuUsage() bool {
-	if o != nil && !IsNil(o.CpuUsage) {
-		return true
-	}
-
-	return false
 }
 
 // SetCpuUsage gets a reference to the given float32 and assigns it to the CpuUsage field.
@@ -260,15 +206,6 @@ func (o *AddCluster200ResponseAllOfClusterWorkerStats) GetCpuUsagePeakOk() (*flo
 	return o.CpuUsagePeak, true
 }
 
-// IsSetCpuUsagePeak returns a boolean if a field has been set.
-func (o *AddCluster200ResponseAllOfClusterWorkerStats) IsSetCpuUsagePeak() bool {
-	if o != nil && !IsNil(o.CpuUsagePeak) {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuUsagePeak gets a reference to the given float32 and assigns it to the CpuUsagePeak field.
 func (o *AddCluster200ResponseAllOfClusterWorkerStats) SetCpuUsagePeak(v float32) {
 	o.CpuUsagePeak = &v
@@ -290,15 +227,6 @@ func (o *AddCluster200ResponseAllOfClusterWorkerStats) GetCpuUsageAvgOk() (*floa
 		return nil, false
 	}
 	return o.CpuUsageAvg, true
-}
-
-// IsSetCpuUsageAvg returns a boolean if a field has been set.
-func (o *AddCluster200ResponseAllOfClusterWorkerStats) IsSetCpuUsageAvg() bool {
-	if o != nil && !IsNil(o.CpuUsageAvg) {
-		return true
-	}
-
-	return false
 }
 
 // SetCpuUsageAvg gets a reference to the given float32 and assigns it to the CpuUsageAvg field.

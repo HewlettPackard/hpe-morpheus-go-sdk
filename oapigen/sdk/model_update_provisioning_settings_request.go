@@ -61,15 +61,6 @@ func (o *UpdateProvisioningSettingsRequest) GetProvisioningSettingsOk() (*Update
 	return o.ProvisioningSettings, true
 }
 
-// IsSetProvisioningSettings returns a boolean if a field has been set.
-func (o *UpdateProvisioningSettingsRequest) IsSetProvisioningSettings() bool {
-	if o != nil && !IsNil(o.ProvisioningSettings) {
-		return true
-	}
-
-	return false
-}
-
 // SetProvisioningSettings gets a reference to the given UpdateProvisioningSettingsRequestProvisioningSettings and assigns it to the ProvisioningSettings field.
 func (o *UpdateProvisioningSettingsRequest) SetProvisioningSettings(v UpdateProvisioningSettingsRequestProvisioningSettings) {
 	o.ProvisioningSettings = &v

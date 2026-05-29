@@ -90,15 +90,6 @@ func (o *Backup) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *Backup) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *Backup) SetId(v int64) {
 	o.Id = &v
@@ -120,15 +111,6 @@ func (o *Backup) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *Backup) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -154,15 +136,6 @@ func (o *Backup) GetLocationTypeOk() (*string, bool) {
 	return o.LocationType, true
 }
 
-// IsSetLocationType returns a boolean if a field has been set.
-func (o *Backup) IsSetLocationType() bool {
-	if o != nil && !IsNil(o.LocationType) {
-		return true
-	}
-
-	return false
-}
-
 // SetLocationType gets a reference to the given string and assigns it to the LocationType field.
 func (o *Backup) SetLocationType(v string) {
 	o.LocationType = &v
@@ -184,15 +157,6 @@ func (o *Backup) GetInstanceOk() (*AddBackups200ResponseAllOfBackupInstance, boo
 		return nil, false
 	}
 	return o.Instance, true
-}
-
-// IsSetInstance returns a boolean if a field has been set.
-func (o *Backup) IsSetInstance() bool {
-	if o != nil && !IsNil(o.Instance) {
-		return true
-	}
-
-	return false
 }
 
 // SetInstance gets a reference to the given AddBackups200ResponseAllOfBackupInstance and assigns it to the Instance field.
@@ -219,28 +183,9 @@ func (o *Backup) GetContainerIdOk() (*int64, bool) {
 	return o.ContainerId.Get(), o.ContainerId.IsSet()
 }
 
-// IsSetContainerId returns a boolean if a field has been set.
-func (o *Backup) IsSetContainerId() bool {
-	if o != nil && o.ContainerId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetContainerId gets a reference to the given NullableInt64 and assigns it to the ContainerId field.
 func (o *Backup) SetContainerId(v int64) {
 	o.ContainerId.Set(&v)
-}
-
-// SetContainerIdNil sets the value for ContainerId to be an explicit nil
-func (o *Backup) SetContainerIdNil() {
-	o.ContainerId.Set(nil)
-}
-
-// UnsetContainerId ensures that no value is present for ContainerId, not even an explicit nil
-func (o *Backup) UnsetContainerId() {
-	o.ContainerId.Unset()
 }
 
 // GetJob returns the Job field value if set, zero value otherwise.
@@ -259,15 +204,6 @@ func (o *Backup) GetJobOk() (*AddBackups200ResponseAllOfBackupJob, bool) {
 		return nil, false
 	}
 	return o.Job, true
-}
-
-// IsSetJob returns a boolean if a field has been set.
-func (o *Backup) IsSetJob() bool {
-	if o != nil && !IsNil(o.Job) {
-		return true
-	}
-
-	return false
 }
 
 // SetJob gets a reference to the given AddBackups200ResponseAllOfBackupJob and assigns it to the Job field.
@@ -291,15 +227,6 @@ func (o *Backup) GetScheduleOk() (*AddBackups200ResponseAllOfBackupSchedule, boo
 		return nil, false
 	}
 	return o.Schedule, true
-}
-
-// IsSetSchedule returns a boolean if a field has been set.
-func (o *Backup) IsSetSchedule() bool {
-	if o != nil && !IsNil(o.Schedule) {
-		return true
-	}
-
-	return false
 }
 
 // SetSchedule gets a reference to the given AddBackups200ResponseAllOfBackupSchedule and assigns it to the Schedule field.
@@ -326,28 +253,9 @@ func (o *Backup) GetRetentionCountOk() (*int64, bool) {
 	return o.RetentionCount.Get(), o.RetentionCount.IsSet()
 }
 
-// IsSetRetentionCount returns a boolean if a field has been set.
-func (o *Backup) IsSetRetentionCount() bool {
-	if o != nil && o.RetentionCount.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRetentionCount gets a reference to the given NullableInt64 and assigns it to the RetentionCount field.
 func (o *Backup) SetRetentionCount(v int64) {
 	o.RetentionCount.Set(&v)
-}
-
-// SetRetentionCountNil sets the value for RetentionCount to be an explicit nil
-func (o *Backup) SetRetentionCountNil() {
-	o.RetentionCount.Set(nil)
-}
-
-// UnsetRetentionCount ensures that no value is present for RetentionCount, not even an explicit nil
-func (o *Backup) UnsetRetentionCount() {
-	o.RetentionCount.Unset()
 }
 
 // GetBackupType returns the BackupType field value if set, zero value otherwise.
@@ -366,15 +274,6 @@ func (o *Backup) GetBackupTypeOk() (*AddBackups200ResponseAllOfBackupBackupType,
 		return nil, false
 	}
 	return o.BackupType, true
-}
-
-// IsSetBackupType returns a boolean if a field has been set.
-func (o *Backup) IsSetBackupType() bool {
-	if o != nil && !IsNil(o.BackupType) {
-		return true
-	}
-
-	return false
 }
 
 // SetBackupType gets a reference to the given AddBackups200ResponseAllOfBackupBackupType and assigns it to the BackupType field.
@@ -400,15 +299,6 @@ func (o *Backup) GetStorageProviderOk() (*AddBackups200ResponseAllOfBackupStorag
 	return o.StorageProvider, true
 }
 
-// IsSetStorageProvider returns a boolean if a field has been set.
-func (o *Backup) IsSetStorageProvider() bool {
-	if o != nil && !IsNil(o.StorageProvider) {
-		return true
-	}
-
-	return false
-}
-
 // SetStorageProvider gets a reference to the given AddBackups200ResponseAllOfBackupStorageProvider and assigns it to the StorageProvider field.
 func (o *Backup) SetStorageProvider(v AddBackups200ResponseAllOfBackupStorageProvider) {
 	o.StorageProvider = &v
@@ -432,15 +322,6 @@ func (o *Backup) GetBackupProviderOk() (*AddBackups200ResponseAllOfBackupBackupP
 	return o.BackupProvider, true
 }
 
-// IsSetBackupProvider returns a boolean if a field has been set.
-func (o *Backup) IsSetBackupProvider() bool {
-	if o != nil && !IsNil(o.BackupProvider) {
-		return true
-	}
-
-	return false
-}
-
 // SetBackupProvider gets a reference to the given AddBackups200ResponseAllOfBackupBackupProvider and assigns it to the BackupProvider field.
 func (o *Backup) SetBackupProvider(v AddBackups200ResponseAllOfBackupBackupProvider) {
 	o.BackupProvider = &v
@@ -462,15 +343,6 @@ func (o *Backup) GetBackupRespositoryOk() (*AddBackups200ResponseAllOfBackupBack
 		return nil, false
 	}
 	return o.BackupRespository, true
-}
-
-// IsSetBackupRespository returns a boolean if a field has been set.
-func (o *Backup) IsSetBackupRespository() bool {
-	if o != nil && !IsNil(o.BackupRespository) {
-		return true
-	}
-
-	return false
 }
 
 // SetBackupRespository gets a reference to the given AddBackups200ResponseAllOfBackupBackupRespository and assigns it to the BackupRespository field.
@@ -497,28 +369,9 @@ func (o *Backup) GetCronExpressionOk() (*string, bool) {
 	return o.CronExpression.Get(), o.CronExpression.IsSet()
 }
 
-// IsSetCronExpression returns a boolean if a field has been set.
-func (o *Backup) IsSetCronExpression() bool {
-	if o != nil && o.CronExpression.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCronExpression gets a reference to the given NullableString and assigns it to the CronExpression field.
 func (o *Backup) SetCronExpression(v string) {
 	o.CronExpression.Set(&v)
-}
-
-// SetCronExpressionNil sets the value for CronExpression to be an explicit nil
-func (o *Backup) SetCronExpressionNil() {
-	o.CronExpression.Set(nil)
-}
-
-// UnsetCronExpression ensures that no value is present for CronExpression, not even an explicit nil
-func (o *Backup) UnsetCronExpression() {
-	o.CronExpression.Unset()
 }
 
 // GetNextFire returns the NextFire field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -540,28 +393,9 @@ func (o *Backup) GetNextFireOk() (*time.Time, bool) {
 	return o.NextFire.Get(), o.NextFire.IsSet()
 }
 
-// IsSetNextFire returns a boolean if a field has been set.
-func (o *Backup) IsSetNextFire() bool {
-	if o != nil && o.NextFire.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNextFire gets a reference to the given NullableTime and assigns it to the NextFire field.
 func (o *Backup) SetNextFire(v time.Time) {
 	o.NextFire.Set(&v)
-}
-
-// SetNextFireNil sets the value for NextFire to be an explicit nil
-func (o *Backup) SetNextFireNil() {
-	o.NextFire.Set(nil)
-}
-
-// UnsetNextFire ensures that no value is present for NextFire, not even an explicit nil
-func (o *Backup) UnsetNextFire() {
-	o.NextFire.Unset()
 }
 
 // GetLastStatus returns the LastStatus field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -583,28 +417,9 @@ func (o *Backup) GetLastStatusOk() (*string, bool) {
 	return o.LastStatus.Get(), o.LastStatus.IsSet()
 }
 
-// IsSetLastStatus returns a boolean if a field has been set.
-func (o *Backup) IsSetLastStatus() bool {
-	if o != nil && o.LastStatus.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastStatus gets a reference to the given NullableString and assigns it to the LastStatus field.
 func (o *Backup) SetLastStatus(v string) {
 	o.LastStatus.Set(&v)
-}
-
-// SetLastStatusNil sets the value for LastStatus to be an explicit nil
-func (o *Backup) SetLastStatusNil() {
-	o.LastStatus.Set(nil)
-}
-
-// UnsetLastStatus ensures that no value is present for LastStatus, not even an explicit nil
-func (o *Backup) UnsetLastStatus() {
-	o.LastStatus.Unset()
 }
 
 // GetLastResult returns the LastResult field value if set, zero value otherwise.
@@ -623,15 +438,6 @@ func (o *Backup) GetLastResultOk() (*AddBackups200ResponseAllOfBackupLastResult,
 		return nil, false
 	}
 	return o.LastResult, true
-}
-
-// IsSetLastResult returns a boolean if a field has been set.
-func (o *Backup) IsSetLastResult() bool {
-	if o != nil && !IsNil(o.LastResult) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastResult gets a reference to the given AddBackups200ResponseAllOfBackupLastResult and assigns it to the LastResult field.
@@ -657,15 +463,6 @@ func (o *Backup) GetStatsOk() (*AddBackups200ResponseAllOfBackupStats, bool) {
 	return o.Stats, true
 }
 
-// IsSetStats returns a boolean if a field has been set.
-func (o *Backup) IsSetStats() bool {
-	if o != nil && !IsNil(o.Stats) {
-		return true
-	}
-
-	return false
-}
-
 // SetStats gets a reference to the given AddBackups200ResponseAllOfBackupStats and assigns it to the Stats field.
 func (o *Backup) SetStats(v AddBackups200ResponseAllOfBackupStats) {
 	o.Stats = &v
@@ -687,15 +484,6 @@ func (o *Backup) GetEnabledOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *Backup) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -721,15 +509,6 @@ func (o *Backup) GetDateCreatedOk() (*time.Time, bool) {
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *Backup) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *Backup) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -751,15 +530,6 @@ func (o *Backup) GetLastUpdatedOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *Backup) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.

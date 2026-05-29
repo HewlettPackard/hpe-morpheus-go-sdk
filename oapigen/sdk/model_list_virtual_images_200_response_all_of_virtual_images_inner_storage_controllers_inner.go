@@ -70,15 +70,6 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersIn
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner) SetId(v int64) {
 	o.Id = &v
@@ -100,15 +91,6 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersIn
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -134,15 +116,6 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersIn
 	return o.Active, true
 }
 
-// IsSetActive returns a boolean if a field has been set.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
-}
-
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner) SetActive(v bool) {
 	o.Active = &v
@@ -164,15 +137,6 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersIn
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInnerType and assigns it to the Type field.
@@ -198,15 +162,6 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersIn
 	return o.BusNumber, true
 }
 
-// IsSetBusNumber returns a boolean if a field has been set.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner) IsSetBusNumber() bool {
-	if o != nil && !IsNil(o.BusNumber) {
-		return true
-	}
-
-	return false
-}
-
 // SetBusNumber gets a reference to the given int64 and assigns it to the BusNumber field.
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner) SetBusNumber(v int64) {
 	o.BusNumber = &v
@@ -228,15 +183,6 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersIn
 		return nil, false
 	}
 	return o.MaxDevices, true
-}
-
-// IsSetMaxDevices returns a boolean if a field has been set.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner) IsSetMaxDevices() bool {
-	if o != nil && !IsNil(o.MaxDevices) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxDevices gets a reference to the given int64 and assigns it to the MaxDevices field.
@@ -262,15 +208,6 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersIn
 	return o.Removable, true
 }
 
-// IsSetRemovable returns a boolean if a field has been set.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner) IsSetRemovable() bool {
-	if o != nil && !IsNil(o.Removable) {
-		return true
-	}
-
-	return false
-}
-
 // SetRemovable gets a reference to the given bool and assigns it to the Removable field.
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner) SetRemovable(v bool) {
 	o.Removable = &v
@@ -292,15 +229,6 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersIn
 		return nil, false
 	}
 	return o.Editable, true
-}
-
-// IsSetEditable returns a boolean if a field has been set.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner) IsSetEditable() bool {
-	if o != nil && !IsNil(o.Editable) {
-		return true
-	}
-
-	return false
 }
 
 // SetEditable gets a reference to the given bool and assigns it to the Editable field.
@@ -326,15 +254,6 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersIn
 	return o.ReservedUnitNumber, true
 }
 
-// IsSetReservedUnitNumber returns a boolean if a field has been set.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner) IsSetReservedUnitNumber() bool {
-	if o != nil && !IsNil(o.ReservedUnitNumber) {
-		return true
-	}
-
-	return false
-}
-
 // SetReservedUnitNumber gets a reference to the given int64 and assigns it to the ReservedUnitNumber field.
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner) SetReservedUnitNumber(v int64) {
 	o.ReservedUnitNumber = &v
@@ -356,15 +275,6 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersIn
 		return nil, false
 	}
 	return o.Category, true
-}
-
-// IsSetCategory returns a boolean if a field has been set.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
-		return true
-	}
-
-	return false
 }
 
 // SetCategory gets a reference to the given string and assigns it to the Category field.

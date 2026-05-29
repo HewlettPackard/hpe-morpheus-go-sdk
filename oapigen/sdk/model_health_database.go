@@ -74,15 +74,6 @@ func (o *HealthDatabase) GetSuccessOk() (*bool, bool) {
 	return o.Success, true
 }
 
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *HealthDatabase) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
-}
-
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.
 func (o *HealthDatabase) SetSuccess(v bool) {
 	o.Success = &v
@@ -105,15 +96,6 @@ func (o *HealthDatabase) GetConnectionListOk() ([]map[string]interface{}, bool) 
 		return nil, false
 	}
 	return o.ConnectionList, true
-}
-
-// IsSetConnectionList returns a boolean if a field has been set.
-func (o *HealthDatabase) IsSetConnectionList() bool {
-	if o != nil && !IsNil(o.ConnectionList) {
-		return true
-	}
-
-	return false
 }
 
 // SetConnectionList gets a reference to the given []map[string]interface{} and assigns it to the ConnectionList field.
@@ -139,15 +121,6 @@ func (o *HealthDatabase) GetBusyConnectionsOk() ([]*string, bool) {
 	return o.BusyConnections, true
 }
 
-// IsSetBusyConnections returns a boolean if a field has been set.
-func (o *HealthDatabase) IsSetBusyConnections() bool {
-	if o != nil && !IsNil(o.BusyConnections) {
-		return true
-	}
-
-	return false
-}
-
 // SetBusyConnections gets a reference to the given []*string and assigns it to the BusyConnections field.
 func (o *HealthDatabase) SetBusyConnections(v []*string) {
 	o.BusyConnections = v
@@ -169,15 +142,6 @@ func (o *HealthDatabase) GetMaxConnectionsOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.MaxConnections, true
-}
-
-// IsSetMaxConnections returns a boolean if a field has been set.
-func (o *HealthDatabase) IsSetMaxConnections() bool {
-	if o != nil && !IsNil(o.MaxConnections) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxConnections gets a reference to the given int64 and assigns it to the MaxConnections field.
@@ -203,15 +167,6 @@ func (o *HealthDatabase) GetMaxUsedConnectionsOk() (*int64, bool) {
 	return o.MaxUsedConnections, true
 }
 
-// IsSetMaxUsedConnections returns a boolean if a field has been set.
-func (o *HealthDatabase) IsSetMaxUsedConnections() bool {
-	if o != nil && !IsNil(o.MaxUsedConnections) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxUsedConnections gets a reference to the given int64 and assigns it to the MaxUsedConnections field.
 func (o *HealthDatabase) SetMaxUsedConnections(v int64) {
 	o.MaxUsedConnections = &v
@@ -235,15 +190,6 @@ func (o *HealthDatabase) GetUsedConnectionsOk() (*int64, bool) {
 	return o.UsedConnections, true
 }
 
-// IsSetUsedConnections returns a boolean if a field has been set.
-func (o *HealthDatabase) IsSetUsedConnections() bool {
-	if o != nil && !IsNil(o.UsedConnections) {
-		return true
-	}
-
-	return false
-}
-
 // SetUsedConnections gets a reference to the given int64 and assigns it to the UsedConnections field.
 func (o *HealthDatabase) SetUsedConnections(v int64) {
 	o.UsedConnections = &v
@@ -265,15 +211,6 @@ func (o *HealthDatabase) GetAbortedConnectionsOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.AbortedConnections, true
-}
-
-// IsSetAbortedConnections returns a boolean if a field has been set.
-func (o *HealthDatabase) IsSetAbortedConnections() bool {
-	if o != nil && !IsNil(o.AbortedConnections) {
-		return true
-	}
-
-	return false
 }
 
 // SetAbortedConnections gets a reference to the given int64 and assigns it to the AbortedConnections field.
@@ -300,28 +237,9 @@ func (o *HealthDatabase) GetInnodbStatusOk() (*string, bool) {
 	return o.InnodbStatus.Get(), o.InnodbStatus.IsSet()
 }
 
-// IsSetInnodbStatus returns a boolean if a field has been set.
-func (o *HealthDatabase) IsSetInnodbStatus() bool {
-	if o != nil && o.InnodbStatus.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbStatus gets a reference to the given NullableString and assigns it to the InnodbStatus field.
 func (o *HealthDatabase) SetInnodbStatus(v string) {
 	o.InnodbStatus.Set(&v)
-}
-
-// SetInnodbStatusNil sets the value for InnodbStatus to be an explicit nil
-func (o *HealthDatabase) SetInnodbStatusNil() {
-	o.InnodbStatus.Set(nil)
-}
-
-// UnsetInnodbStatus ensures that no value is present for InnodbStatus, not even an explicit nil
-func (o *HealthDatabase) UnsetInnodbStatus() {
-	o.InnodbStatus.Unset()
 }
 
 // GetStats returns the Stats field value if set, zero value otherwise.
@@ -340,15 +258,6 @@ func (o *HealthDatabase) GetStatsOk() (*HealthDatabaseStats, bool) {
 		return nil, false
 	}
 	return o.Stats, true
-}
-
-// IsSetStats returns a boolean if a field has been set.
-func (o *HealthDatabase) IsSetStats() bool {
-	if o != nil && !IsNil(o.Stats) {
-		return true
-	}
-
-	return false
 }
 
 // SetStats gets a reference to the given HealthDatabaseStats and assigns it to the Stats field.
@@ -374,15 +283,6 @@ func (o *HealthDatabase) GetScansOk() (*HealthDatabaseScans, bool) {
 	return o.Scans, true
 }
 
-// IsSetScans returns a boolean if a field has been set.
-func (o *HealthDatabase) IsSetScans() bool {
-	if o != nil && !IsNil(o.Scans) {
-		return true
-	}
-
-	return false
-}
-
 // SetScans gets a reference to the given HealthDatabaseScans and assigns it to the Scans field.
 func (o *HealthDatabase) SetScans(v HealthDatabaseScans) {
 	o.Scans = &v
@@ -404,15 +304,6 @@ func (o *HealthDatabase) GetSlowQueriesOk() ([]HealthDatabaseSlowQueriesInner, b
 		return nil, false
 	}
 	return o.SlowQueries, true
-}
-
-// IsSetSlowQueries returns a boolean if a field has been set.
-func (o *HealthDatabase) IsSetSlowQueries() bool {
-	if o != nil && !IsNil(o.SlowQueries) {
-		return true
-	}
-
-	return false
 }
 
 // SetSlowQueries gets a reference to the given []HealthDatabaseSlowQueriesInner and assigns it to the SlowQueries field.
@@ -438,15 +329,6 @@ func (o *HealthDatabase) GetInnodbStatsOk() (*HealthDatabaseInnodbStats, bool) {
 	return o.InnodbStats, true
 }
 
-// IsSetInnodbStats returns a boolean if a field has been set.
-func (o *HealthDatabase) IsSetInnodbStats() bool {
-	if o != nil && !IsNil(o.InnodbStats) {
-		return true
-	}
-
-	return false
-}
-
 // SetInnodbStats gets a reference to the given HealthDatabaseInnodbStats and assigns it to the InnodbStats field.
 func (o *HealthDatabase) SetInnodbStats(v HealthDatabaseInnodbStats) {
 	o.InnodbStats = &v
@@ -470,15 +352,6 @@ func (o *HealthDatabase) GetScanPercentOk() (*float32, bool) {
 	return o.ScanPercent, true
 }
 
-// IsSetScanPercent returns a boolean if a field has been set.
-func (o *HealthDatabase) IsSetScanPercent() bool {
-	if o != nil && !IsNil(o.ScanPercent) {
-		return true
-	}
-
-	return false
-}
-
 // SetScanPercent gets a reference to the given float32 and assigns it to the ScanPercent field.
 func (o *HealthDatabase) SetScanPercent(v float32) {
 	o.ScanPercent = &v
@@ -500,15 +373,6 @@ func (o *HealthDatabase) GetStatusOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *HealthDatabase) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.

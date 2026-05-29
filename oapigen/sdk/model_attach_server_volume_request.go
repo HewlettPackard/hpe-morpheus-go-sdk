@@ -88,15 +88,6 @@ func (o *AttachServerVolumeRequest) GetRootVolumeOk() (*bool, bool) {
 	return o.RootVolume, true
 }
 
-// IsSetRootVolume returns a boolean if a field has been set.
-func (o *AttachServerVolumeRequest) IsSetRootVolume() bool {
-	if o != nil && !IsNil(o.RootVolume) {
-		return true
-	}
-
-	return false
-}
-
 // SetRootVolume gets a reference to the given bool and assigns it to the RootVolume field.
 func (o *AttachServerVolumeRequest) SetRootVolume(v bool) {
 	o.RootVolume = &v

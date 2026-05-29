@@ -107,15 +107,6 @@ func (o *AddSecurityPackagesRequestSecurityPackage) GetLabelsOk() ([]string, boo
 	return o.Labels, true
 }
 
-// IsSetLabels returns a boolean if a field has been set.
-func (o *AddSecurityPackagesRequestSecurityPackage) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
-}
-
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
 func (o *AddSecurityPackagesRequestSecurityPackage) SetLabels(v []string) {
 	o.Labels = v
@@ -139,15 +130,6 @@ func (o *AddSecurityPackagesRequestSecurityPackage) GetTypeOk() (*string, bool) 
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *AddSecurityPackagesRequestSecurityPackage) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given string and assigns it to the Type field.
 func (o *AddSecurityPackagesRequestSecurityPackage) SetType(v string) {
 	o.Type = &v
@@ -169,15 +151,6 @@ func (o *AddSecurityPackagesRequestSecurityPackage) GetDescriptionOk() (*string,
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *AddSecurityPackagesRequestSecurityPackage) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -225,15 +198,6 @@ func (o *AddSecurityPackagesRequestSecurityPackage) GetEnabledOk() (*bool, bool)
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *AddSecurityPackagesRequestSecurityPackage) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.

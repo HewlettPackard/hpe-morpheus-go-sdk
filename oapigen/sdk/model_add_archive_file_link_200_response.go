@@ -62,15 +62,6 @@ func (o *AddArchiveFileLink200Response) GetSuccessOk() (*bool, bool) {
 	return o.Success, true
 }
 
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *AddArchiveFileLink200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
-}
-
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.
 func (o *AddArchiveFileLink200Response) SetSuccess(v bool) {
 	o.Success = &v
@@ -92,15 +83,6 @@ func (o *AddArchiveFileLink200Response) GetSecretAccessKeyOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SecretAccessKey, true
-}
-
-// IsSetSecretAccessKey returns a boolean if a field has been set.
-func (o *AddArchiveFileLink200Response) IsSetSecretAccessKey() bool {
-	if o != nil && !IsNil(o.SecretAccessKey) {
-		return true
-	}
-
-	return false
 }
 
 // SetSecretAccessKey gets a reference to the given string and assigns it to the SecretAccessKey field.

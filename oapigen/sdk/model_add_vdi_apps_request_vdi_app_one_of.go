@@ -94,15 +94,6 @@ func (o *AddVDIAppsRequestVdiAppOneOf) GetDescriptionOk() (*string, bool) {
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *AddVDIAppsRequestVdiAppOneOf) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *AddVDIAppsRequestVdiAppOneOf) SetDescription(v string) {
 	o.Description = &v
@@ -126,15 +117,6 @@ func (o *AddVDIAppsRequestVdiAppOneOf) GetIconPathOk() (**os.File, bool) {
 	return o.IconPath, true
 }
 
-// IsSetIconPath returns a boolean if a field has been set.
-func (o *AddVDIAppsRequestVdiAppOneOf) IsSetIconPath() bool {
-	if o != nil && !IsNil(o.IconPath) {
-		return true
-	}
-
-	return false
-}
-
 // SetIconPath gets a reference to the given *os.File and assigns it to the IconPath field.
 func (o *AddVDIAppsRequestVdiAppOneOf) SetIconPath(v *os.File) {
 	o.IconPath = &v
@@ -156,15 +138,6 @@ func (o *AddVDIAppsRequestVdiAppOneOf) GetLaunchPrefixOk() (*string, bool) {
 		return nil, false
 	}
 	return o.LaunchPrefix, true
-}
-
-// IsSetLaunchPrefix returns a boolean if a field has been set.
-func (o *AddVDIAppsRequestVdiAppOneOf) IsSetLaunchPrefix() bool {
-	if o != nil && !IsNil(o.LaunchPrefix) {
-		return true
-	}
-
-	return false
 }
 
 // SetLaunchPrefix gets a reference to the given string and assigns it to the LaunchPrefix field.

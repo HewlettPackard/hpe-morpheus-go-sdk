@@ -65,15 +65,6 @@ func (o *GetIdentitySources200ResponseUserSourceAnyOf3Config) GetUrlOk() (*strin
 	return o.Url, true
 }
 
-// IsSetUrl returns a boolean if a field has been set.
-func (o *GetIdentitySources200ResponseUserSourceAnyOf3Config) IsSetUrl() bool {
-	if o != nil && !IsNil(o.Url) {
-		return true
-	}
-
-	return false
-}
-
 // SetUrl gets a reference to the given string and assigns it to the Url field.
 func (o *GetIdentitySources200ResponseUserSourceAnyOf3Config) SetUrl(v string) {
 	o.Url = &v
@@ -95,15 +86,6 @@ func (o *GetIdentitySources200ResponseUserSourceAnyOf3Config) GetAdministratorAP
 		return nil, false
 	}
 	return o.AdministratorAPIToken, true
-}
-
-// IsSetAdministratorAPIToken returns a boolean if a field has been set.
-func (o *GetIdentitySources200ResponseUserSourceAnyOf3Config) IsSetAdministratorAPIToken() bool {
-	if o != nil && !IsNil(o.AdministratorAPIToken) {
-		return true
-	}
-
-	return false
 }
 
 // SetAdministratorAPIToken gets a reference to the given string and assigns it to the AdministratorAPIToken field.
@@ -129,15 +111,6 @@ func (o *GetIdentitySources200ResponseUserSourceAnyOf3Config) GetRequiredGroupOk
 	return o.RequiredGroup, true
 }
 
-// IsSetRequiredGroup returns a boolean if a field has been set.
-func (o *GetIdentitySources200ResponseUserSourceAnyOf3Config) IsSetRequiredGroup() bool {
-	if o != nil && !IsNil(o.RequiredGroup) {
-		return true
-	}
-
-	return false
-}
-
 // SetRequiredGroup gets a reference to the given string and assigns it to the RequiredGroup field.
 func (o *GetIdentitySources200ResponseUserSourceAnyOf3Config) SetRequiredGroup(v string) {
 	o.RequiredGroup = &v
@@ -161,15 +134,6 @@ func (o *GetIdentitySources200ResponseUserSourceAnyOf3Config) GetRequiredGroupId
 	return o.RequiredGroupId, true
 }
 
-// IsSetRequiredGroupId returns a boolean if a field has been set.
-func (o *GetIdentitySources200ResponseUserSourceAnyOf3Config) IsSetRequiredGroupId() bool {
-	if o != nil && !IsNil(o.RequiredGroupId) {
-		return true
-	}
-
-	return false
-}
-
 // SetRequiredGroupId gets a reference to the given string and assigns it to the RequiredGroupId field.
 func (o *GetIdentitySources200ResponseUserSourceAnyOf3Config) SetRequiredGroupId(v string) {
 	o.RequiredGroupId = &v
@@ -191,15 +155,6 @@ func (o *GetIdentitySources200ResponseUserSourceAnyOf3Config) GetAdministratorAP
 		return nil, false
 	}
 	return o.AdministratorAPITokenHash, true
-}
-
-// IsSetAdministratorAPITokenHash returns a boolean if a field has been set.
-func (o *GetIdentitySources200ResponseUserSourceAnyOf3Config) IsSetAdministratorAPITokenHash() bool {
-	if o != nil && !IsNil(o.AdministratorAPITokenHash) {
-		return true
-	}
-
-	return false
 }
 
 // SetAdministratorAPITokenHash gets a reference to the given string and assigns it to the AdministratorAPITokenHash field.

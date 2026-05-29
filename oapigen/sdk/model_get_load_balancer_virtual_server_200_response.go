@@ -61,15 +61,6 @@ func (o *GetLoadBalancerVirtualServer200Response) GetLoadBalancerInstanceOk() (*
 	return o.LoadBalancerInstance, true
 }
 
-// IsSetLoadBalancerInstance returns a boolean if a field has been set.
-func (o *GetLoadBalancerVirtualServer200Response) IsSetLoadBalancerInstance() bool {
-	if o != nil && !IsNil(o.LoadBalancerInstance) {
-		return true
-	}
-
-	return false
-}
-
 // SetLoadBalancerInstance gets a reference to the given GetLoadBalancerVirtualServer200ResponseLoadBalancerInstance and assigns it to the LoadBalancerInstance field.
 func (o *GetLoadBalancerVirtualServer200Response) SetLoadBalancerInstance(v GetLoadBalancerVirtualServer200ResponseLoadBalancerInstance) {
 	o.LoadBalancerInstance = &v

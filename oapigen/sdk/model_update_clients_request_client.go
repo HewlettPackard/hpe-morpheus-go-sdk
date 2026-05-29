@@ -65,15 +65,6 @@ func (o *UpdateClientsRequestClient) GetClientIdOk() (*string, bool) {
 	return o.ClientId, true
 }
 
-// IsSetClientId returns a boolean if a field has been set.
-func (o *UpdateClientsRequestClient) IsSetClientId() bool {
-	if o != nil && !IsNil(o.ClientId) {
-		return true
-	}
-
-	return false
-}
-
 // SetClientId gets a reference to the given string and assigns it to the ClientId field.
 func (o *UpdateClientsRequestClient) SetClientId(v string) {
 	o.ClientId = &v
@@ -95,15 +86,6 @@ func (o *UpdateClientsRequestClient) GetAccessTokenValiditySecondsOk() (*int64, 
 		return nil, false
 	}
 	return o.AccessTokenValiditySeconds, true
-}
-
-// IsSetAccessTokenValiditySeconds returns a boolean if a field has been set.
-func (o *UpdateClientsRequestClient) IsSetAccessTokenValiditySeconds() bool {
-	if o != nil && !IsNil(o.AccessTokenValiditySeconds) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccessTokenValiditySeconds gets a reference to the given int64 and assigns it to the AccessTokenValiditySeconds field.
@@ -129,15 +111,6 @@ func (o *UpdateClientsRequestClient) GetRefreshTokenValiditySecondsOk() (*int64,
 	return o.RefreshTokenValiditySeconds, true
 }
 
-// IsSetRefreshTokenValiditySeconds returns a boolean if a field has been set.
-func (o *UpdateClientsRequestClient) IsSetRefreshTokenValiditySeconds() bool {
-	if o != nil && !IsNil(o.RefreshTokenValiditySeconds) {
-		return true
-	}
-
-	return false
-}
-
 // SetRefreshTokenValiditySeconds gets a reference to the given int64 and assigns it to the RefreshTokenValiditySeconds field.
 func (o *UpdateClientsRequestClient) SetRefreshTokenValiditySeconds(v int64) {
 	o.RefreshTokenValiditySeconds = &v
@@ -159,15 +132,6 @@ func (o *UpdateClientsRequestClient) GetRedirectUrisOk() ([]string, bool) {
 		return nil, false
 	}
 	return o.RedirectUris, true
-}
-
-// IsSetRedirectUris returns a boolean if a field has been set.
-func (o *UpdateClientsRequestClient) IsSetRedirectUris() bool {
-	if o != nil && !IsNil(o.RedirectUris) {
-		return true
-	}
-
-	return false
 }
 
 // SetRedirectUris gets a reference to the given []string and assigns it to the RedirectUris field.

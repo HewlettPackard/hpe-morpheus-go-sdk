@@ -61,15 +61,6 @@ func (o *GetClusterLayout200Response) GetLayoutOk() (*GetClusterLayout200Respons
 	return o.Layout, true
 }
 
-// IsSetLayout returns a boolean if a field has been set.
-func (o *GetClusterLayout200Response) IsSetLayout() bool {
-	if o != nil && !IsNil(o.Layout) {
-		return true
-	}
-
-	return false
-}
-
 // SetLayout gets a reference to the given GetClusterLayout200ResponseLayout and assigns it to the Layout field.
 func (o *GetClusterLayout200Response) SetLayout(v GetClusterLayout200ResponseLayout) {
 	o.Layout = &v

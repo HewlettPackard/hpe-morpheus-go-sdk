@@ -62,15 +62,6 @@ func (o *ListScripts200Response) GetContainerScriptsOk() ([]ListScripts200Respon
 	return o.ContainerScripts, true
 }
 
-// IsSetContainerScripts returns a boolean if a field has been set.
-func (o *ListScripts200Response) IsSetContainerScripts() bool {
-	if o != nil && !IsNil(o.ContainerScripts) {
-		return true
-	}
-
-	return false
-}
-
 // SetContainerScripts gets a reference to the given []ListScripts200ResponseAllOfContainerScriptsInner and assigns it to the ContainerScripts field.
 func (o *ListScripts200Response) SetContainerScripts(v []ListScripts200ResponseAllOfContainerScriptsInner) {
 	o.ContainerScripts = v
@@ -92,15 +83,6 @@ func (o *ListScripts200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListScripts200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

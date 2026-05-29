@@ -62,15 +62,6 @@ func (o *AddDeploymentVersion200Response) GetVersionOk() (*AddDeploymentVersion2
 	return o.Version, true
 }
 
-// IsSetVersion returns a boolean if a field has been set.
-func (o *AddDeploymentVersion200Response) IsSetVersion() bool {
-	if o != nil && !IsNil(o.Version) {
-		return true
-	}
-
-	return false
-}
-
 // SetVersion gets a reference to the given AddDeploymentVersion200ResponseAllOfVersion and assigns it to the Version field.
 func (o *AddDeploymentVersion200Response) SetVersion(v AddDeploymentVersion200ResponseAllOfVersion) {
 	o.Version = &v
@@ -92,15 +83,6 @@ func (o *AddDeploymentVersion200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *AddDeploymentVersion200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

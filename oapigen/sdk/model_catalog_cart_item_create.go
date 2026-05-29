@@ -61,15 +61,6 @@ func (o *CatalogCartItemCreate) GetItemOk() (*CatalogCartItemCreateItem, bool) {
 	return o.Item, true
 }
 
-// IsSetItem returns a boolean if a field has been set.
-func (o *CatalogCartItemCreate) IsSetItem() bool {
-	if o != nil && !IsNil(o.Item) {
-		return true
-	}
-
-	return false
-}
-
 // SetItem gets a reference to the given CatalogCartItemCreateItem and assigns it to the Item field.
 func (o *CatalogCartItemCreate) SetItem(v CatalogCartItemCreateItem) {
 	o.Item = &v

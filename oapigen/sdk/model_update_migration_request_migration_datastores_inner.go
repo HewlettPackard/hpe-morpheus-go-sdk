@@ -62,15 +62,6 @@ func (o *UpdateMigrationRequestMigrationDatastoresInner) GetSourceDatastoreOk() 
 	return o.SourceDatastore, true
 }
 
-// IsSetSourceDatastore returns a boolean if a field has been set.
-func (o *UpdateMigrationRequestMigrationDatastoresInner) IsSetSourceDatastore() bool {
-	if o != nil && !IsNil(o.SourceDatastore) {
-		return true
-	}
-
-	return false
-}
-
 // SetSourceDatastore gets a reference to the given UpdateMigrationRequestMigrationDatastoresInnerSourceDatastore and assigns it to the SourceDatastore field.
 func (o *UpdateMigrationRequestMigrationDatastoresInner) SetSourceDatastore(v UpdateMigrationRequestMigrationDatastoresInnerSourceDatastore) {
 	o.SourceDatastore = &v
@@ -92,15 +83,6 @@ func (o *UpdateMigrationRequestMigrationDatastoresInner) GetDestinationDatastore
 		return nil, false
 	}
 	return o.DestinationDatastore, true
-}
-
-// IsSetDestinationDatastore returns a boolean if a field has been set.
-func (o *UpdateMigrationRequestMigrationDatastoresInner) IsSetDestinationDatastore() bool {
-	if o != nil && !IsNil(o.DestinationDatastore) {
-		return true
-	}
-
-	return false
 }
 
 // SetDestinationDatastore gets a reference to the given UpdateMigrationRequestMigrationDatastoresInnerDestinationDatastore and assigns it to the DestinationDatastore field.

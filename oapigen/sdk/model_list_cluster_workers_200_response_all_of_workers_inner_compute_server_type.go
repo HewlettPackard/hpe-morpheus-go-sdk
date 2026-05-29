@@ -65,15 +65,6 @@ func (o *ListClusterWorkers200ResponseAllOfWorkersInnerComputeServerType) GetIdO
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListClusterWorkers200ResponseAllOfWorkersInnerComputeServerType) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListClusterWorkers200ResponseAllOfWorkersInnerComputeServerType) SetId(v int64) {
 	o.Id = &v
@@ -95,15 +86,6 @@ func (o *ListClusterWorkers200ResponseAllOfWorkersInnerComputeServerType) GetCod
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *ListClusterWorkers200ResponseAllOfWorkersInnerComputeServerType) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -129,15 +111,6 @@ func (o *ListClusterWorkers200ResponseAllOfWorkersInnerComputeServerType) GetNam
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ListClusterWorkers200ResponseAllOfWorkersInnerComputeServerType) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ListClusterWorkers200ResponseAllOfWorkersInnerComputeServerType) SetName(v string) {
 	o.Name = &v
@@ -161,15 +134,6 @@ func (o *ListClusterWorkers200ResponseAllOfWorkersInnerComputeServerType) GetMan
 	return o.Managed, true
 }
 
-// IsSetManaged returns a boolean if a field has been set.
-func (o *ListClusterWorkers200ResponseAllOfWorkersInnerComputeServerType) IsSetManaged() bool {
-	if o != nil && !IsNil(o.Managed) {
-		return true
-	}
-
-	return false
-}
-
 // SetManaged gets a reference to the given bool and assigns it to the Managed field.
 func (o *ListClusterWorkers200ResponseAllOfWorkersInnerComputeServerType) SetManaged(v bool) {
 	o.Managed = &v
@@ -191,15 +155,6 @@ func (o *ListClusterWorkers200ResponseAllOfWorkersInnerComputeServerType) GetExt
 		return nil, false
 	}
 	return o.ExternalDelete, true
-}
-
-// IsSetExternalDelete returns a boolean if a field has been set.
-func (o *ListClusterWorkers200ResponseAllOfWorkersInnerComputeServerType) IsSetExternalDelete() bool {
-	if o != nil && !IsNil(o.ExternalDelete) {
-		return true
-	}
-
-	return false
 }
 
 // SetExternalDelete gets a reference to the given bool and assigns it to the ExternalDelete field.

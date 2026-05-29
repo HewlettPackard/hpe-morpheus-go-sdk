@@ -82,15 +82,6 @@ func (o *ClusterPackageUpdate) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ClusterPackageUpdate) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ClusterPackageUpdate) SetName(v string) {
 	o.Name = &v
@@ -115,28 +106,9 @@ func (o *ClusterPackageUpdate) GetDescriptionOk() (*string, bool) {
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ClusterPackageUpdate) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ClusterPackageUpdate) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *ClusterPackageUpdate) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *ClusterPackageUpdate) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetCode returns the Code field value if set, zero value otherwise.
@@ -155,15 +127,6 @@ func (o *ClusterPackageUpdate) GetCodeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *ClusterPackageUpdate) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -189,15 +152,6 @@ func (o *ClusterPackageUpdate) GetPackageVersionOk() (*string, bool) {
 	return o.PackageVersion, true
 }
 
-// IsSetPackageVersion returns a boolean if a field has been set.
-func (o *ClusterPackageUpdate) IsSetPackageVersion() bool {
-	if o != nil && !IsNil(o.PackageVersion) {
-		return true
-	}
-
-	return false
-}
-
 // SetPackageVersion gets a reference to the given string and assigns it to the PackageVersion field.
 func (o *ClusterPackageUpdate) SetPackageVersion(v string) {
 	o.PackageVersion = &v
@@ -219,15 +173,6 @@ func (o *ClusterPackageUpdate) GetPackageTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.PackageType, true
-}
-
-// IsSetPackageType returns a boolean if a field has been set.
-func (o *ClusterPackageUpdate) IsSetPackageType() bool {
-	if o != nil && !IsNil(o.PackageType) {
-		return true
-	}
-
-	return false
 }
 
 // SetPackageType gets a reference to the given string and assigns it to the PackageType field.
@@ -253,15 +198,6 @@ func (o *ClusterPackageUpdate) GetTypeOk() (*string, bool) {
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *ClusterPackageUpdate) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given string and assigns it to the Type field.
 func (o *ClusterPackageUpdate) SetType(v string) {
 	o.Type = &v
@@ -283,15 +219,6 @@ func (o *ClusterPackageUpdate) GetEnabledOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *ClusterPackageUpdate) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -317,15 +244,6 @@ func (o *ClusterPackageUpdate) GetIconPathOk() (*string, bool) {
 	return o.IconPath, true
 }
 
-// IsSetIconPath returns a boolean if a field has been set.
-func (o *ClusterPackageUpdate) IsSetIconPath() bool {
-	if o != nil && !IsNil(o.IconPath) {
-		return true
-	}
-
-	return false
-}
-
 // SetIconPath gets a reference to the given string and assigns it to the IconPath field.
 func (o *ClusterPackageUpdate) SetIconPath(v string) {
 	o.IconPath = &v
@@ -347,15 +265,6 @@ func (o *ClusterPackageUpdate) GetSpecTemplatesOk() ([]ClusterPackageUpdateSpecT
 		return nil, false
 	}
 	return o.SpecTemplates, true
-}
-
-// IsSetSpecTemplates returns a boolean if a field has been set.
-func (o *ClusterPackageUpdate) IsSetSpecTemplates() bool {
-	if o != nil && !IsNil(o.SpecTemplates) {
-		return true
-	}
-
-	return false
 }
 
 // SetSpecTemplates gets a reference to the given []ClusterPackageUpdateSpecTemplatesInner and assigns it to the SpecTemplates field.

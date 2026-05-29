@@ -65,15 +65,6 @@ func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf
 	return o.OrganizationId, true
 }
 
-// IsSetOrganizationId returns a boolean if a field has been set.
-func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config) IsSetOrganizationId() bool {
-	if o != nil && !IsNil(o.OrganizationId) {
-		return true
-	}
-
-	return false
-}
-
 // SetOrganizationId gets a reference to the given string and assigns it to the OrganizationId field.
 func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config) SetOrganizationId(v string) {
 	o.OrganizationId = &v
@@ -95,15 +86,6 @@ func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf
 		return nil, false
 	}
 	return o.BindingUsername, true
-}
-
-// IsSetBindingUsername returns a boolean if a field has been set.
-func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config) IsSetBindingUsername() bool {
-	if o != nil && !IsNil(o.BindingUsername) {
-		return true
-	}
-
-	return false
 }
 
 // SetBindingUsername gets a reference to the given string and assigns it to the BindingUsername field.
@@ -129,15 +111,6 @@ func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf
 	return o.BindingPassword, true
 }
 
-// IsSetBindingPassword returns a boolean if a field has been set.
-func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config) IsSetBindingPassword() bool {
-	if o != nil && !IsNil(o.BindingPassword) {
-		return true
-	}
-
-	return false
-}
-
 // SetBindingPassword gets a reference to the given string and assigns it to the BindingPassword field.
 func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config) SetBindingPassword(v string) {
 	o.BindingPassword = &v
@@ -161,15 +134,6 @@ func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf
 	return o.RequiredRole, true
 }
 
-// IsSetRequiredRole returns a boolean if a field has been set.
-func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config) IsSetRequiredRole() bool {
-	if o != nil && !IsNil(o.RequiredRole) {
-		return true
-	}
-
-	return false
-}
-
 // SetRequiredRole gets a reference to the given string and assigns it to the RequiredRole field.
 func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config) SetRequiredRole(v string) {
 	o.RequiredRole = &v
@@ -191,15 +155,6 @@ func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf
 		return nil, false
 	}
 	return o.BindingPasswordHash, true
-}
-
-// IsSetBindingPasswordHash returns a boolean if a field has been set.
-func (o *ListTenantSubtenantIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config) IsSetBindingPasswordHash() bool {
-	if o != nil && !IsNil(o.BindingPasswordHash) {
-		return true
-	}
-
-	return false
 }
 
 // SetBindingPasswordHash gets a reference to the given string and assigns it to the BindingPasswordHash field.

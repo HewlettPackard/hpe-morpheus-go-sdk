@@ -87,15 +87,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetGuidances200ResponseDiscoveryAnyOf1) SetId(v int64) {
 	o.Id = &v
@@ -117,15 +108,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1) GetDateCreatedOk() (*time.Time,
 		return nil, false
 	}
 	return o.DateCreated, true
-}
-
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
@@ -151,15 +133,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1) GetLastUpdatedOk() (*time.Time,
 	return o.LastUpdated, true
 }
 
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
-}
-
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
 func (o *GetGuidances200ResponseDiscoveryAnyOf1) SetLastUpdated(v time.Time) {
 	o.LastUpdated = &v
@@ -181,15 +154,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1) GetActionCategoryOk() (*string,
 		return nil, false
 	}
 	return o.ActionCategory, true
-}
-
-// IsSetActionCategory returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1) IsSetActionCategory() bool {
-	if o != nil && !IsNil(o.ActionCategory) {
-		return true
-	}
-
-	return false
 }
 
 // SetActionCategory gets a reference to the given string and assigns it to the ActionCategory field.
@@ -215,15 +179,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1) GetActionMessageOk() (*string, 
 	return o.ActionMessage, true
 }
 
-// IsSetActionMessage returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1) IsSetActionMessage() bool {
-	if o != nil && !IsNil(o.ActionMessage) {
-		return true
-	}
-
-	return false
-}
-
 // SetActionMessage gets a reference to the given string and assigns it to the ActionMessage field.
 func (o *GetGuidances200ResponseDiscoveryAnyOf1) SetActionMessage(v string) {
 	o.ActionMessage = &v
@@ -245,15 +200,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1) GetActionTitleOk() (*string, bo
 		return nil, false
 	}
 	return o.ActionTitle, true
-}
-
-// IsSetActionTitle returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1) IsSetActionTitle() bool {
-	if o != nil && !IsNil(o.ActionTitle) {
-		return true
-	}
-
-	return false
 }
 
 // SetActionTitle gets a reference to the given string and assigns it to the ActionTitle field.
@@ -279,15 +225,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1) GetActionTypeOk() (*string, boo
 	return o.ActionType, true
 }
 
-// IsSetActionType returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1) IsSetActionType() bool {
-	if o != nil && !IsNil(o.ActionType) {
-		return true
-	}
-
-	return false
-}
-
 // SetActionType gets a reference to the given string and assigns it to the ActionType field.
 func (o *GetGuidances200ResponseDiscoveryAnyOf1) SetActionType(v string) {
 	o.ActionType = &v
@@ -311,15 +248,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1) GetActionValueOk() (*string, bo
 	return o.ActionValue, true
 }
 
-// IsSetActionValue returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1) IsSetActionValue() bool {
-	if o != nil && !IsNil(o.ActionValue) {
-		return true
-	}
-
-	return false
-}
-
 // SetActionValue gets a reference to the given string and assigns it to the ActionValue field.
 func (o *GetGuidances200ResponseDiscoveryAnyOf1) SetActionValue(v string) {
 	o.ActionValue = &v
@@ -341,15 +269,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1) GetActionValueTypeOk() (*string
 		return nil, false
 	}
 	return o.ActionValueType, true
-}
-
-// IsSetActionValueType returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1) IsSetActionValueType() bool {
-	if o != nil && !IsNil(o.ActionValueType) {
-		return true
-	}
-
-	return false
 }
 
 // SetActionValueType gets a reference to the given string and assigns it to the ActionValueType field.
@@ -376,28 +295,9 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1) GetActionPlanIdOk() (*string, b
 	return o.ActionPlanId.Get(), o.ActionPlanId.IsSet()
 }
 
-// IsSetActionPlanId returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1) IsSetActionPlanId() bool {
-	if o != nil && o.ActionPlanId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetActionPlanId gets a reference to the given NullableString and assigns it to the ActionPlanId field.
 func (o *GetGuidances200ResponseDiscoveryAnyOf1) SetActionPlanId(v string) {
 	o.ActionPlanId.Set(&v)
-}
-
-// SetActionPlanIdNil sets the value for ActionPlanId to be an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOf1) SetActionPlanIdNil() {
-	o.ActionPlanId.Set(nil)
-}
-
-// UnsetActionPlanId ensures that no value is present for ActionPlanId, not even an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOf1) UnsetActionPlanId() {
-	o.ActionPlanId.Unset()
 }
 
 // GetStatusMessage returns the StatusMessage field value if set, zero value otherwise.
@@ -416,15 +316,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1) GetStatusMessageOk() (*string, 
 		return nil, false
 	}
 	return o.StatusMessage, true
-}
-
-// IsSetStatusMessage returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1) IsSetStatusMessage() bool {
-	if o != nil && !IsNil(o.StatusMessage) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatusMessage gets a reference to the given string and assigns it to the StatusMessage field.
@@ -448,15 +339,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1) GetAccountIdOk() (*int64, bool)
 		return nil, false
 	}
 	return o.AccountId, true
-}
-
-// IsSetAccountId returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1) IsSetAccountId() bool {
-	if o != nil && !IsNil(o.AccountId) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccountId gets a reference to the given int64 and assigns it to the AccountId field.
@@ -483,28 +365,9 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1) GetUserIdOk() (*string, bool) {
 	return o.UserId.Get(), o.UserId.IsSet()
 }
 
-// IsSetUserId returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1) IsSetUserId() bool {
-	if o != nil && o.UserId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUserId gets a reference to the given NullableString and assigns it to the UserId field.
 func (o *GetGuidances200ResponseDiscoveryAnyOf1) SetUserId(v string) {
 	o.UserId.Set(&v)
-}
-
-// SetUserIdNil sets the value for UserId to be an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOf1) SetUserIdNil() {
-	o.UserId.Set(nil)
-}
-
-// UnsetUserId ensures that no value is present for UserId, not even an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOf1) UnsetUserId() {
-	o.UserId.Unset()
 }
 
 // GetSiteId returns the SiteId field value if set, zero value otherwise.
@@ -523,15 +386,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1) GetSiteIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.SiteId, true
-}
-
-// IsSetSiteId returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1) IsSetSiteId() bool {
-	if o != nil && !IsNil(o.SiteId) {
-		return true
-	}
-
-	return false
 }
 
 // SetSiteId gets a reference to the given int64 and assigns it to the SiteId field.
@@ -557,15 +411,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1) GetZoneOk() (*GetGuidances200Re
 	return o.Zone, true
 }
 
-// IsSetZone returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1) IsSetZone() bool {
-	if o != nil && !IsNil(o.Zone) {
-		return true
-	}
-
-	return false
-}
-
 // SetZone gets a reference to the given GetGuidances200ResponseDiscoveryAnyOf1Zone and assigns it to the Zone field.
 func (o *GetGuidances200ResponseDiscoveryAnyOf1) SetZone(v GetGuidances200ResponseDiscoveryAnyOf1Zone) {
 	o.Zone = &v
@@ -587,15 +432,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1) GetStateOk() (*string, bool) {
 		return nil, false
 	}
 	return o.State, true
-}
-
-// IsSetState returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1) IsSetState() bool {
-	if o != nil && !IsNil(o.State) {
-		return true
-	}
-
-	return false
 }
 
 // SetState gets a reference to the given string and assigns it to the State field.
@@ -622,28 +458,9 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1) GetStateMessageOk() (*string, b
 	return o.StateMessage.Get(), o.StateMessage.IsSet()
 }
 
-// IsSetStateMessage returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1) IsSetStateMessage() bool {
-	if o != nil && o.StateMessage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStateMessage gets a reference to the given NullableString and assigns it to the StateMessage field.
 func (o *GetGuidances200ResponseDiscoveryAnyOf1) SetStateMessage(v string) {
 	o.StateMessage.Set(&v)
-}
-
-// SetStateMessageNil sets the value for StateMessage to be an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOf1) SetStateMessageNil() {
-	o.StateMessage.Set(nil)
-}
-
-// UnsetStateMessage ensures that no value is present for StateMessage, not even an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOf1) UnsetStateMessage() {
-	o.StateMessage.Unset()
 }
 
 // GetSeverity returns the Severity field value if set, zero value otherwise.
@@ -662,15 +479,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1) GetSeverityOk() (*string, bool)
 		return nil, false
 	}
 	return o.Severity, true
-}
-
-// IsSetSeverity returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1) IsSetSeverity() bool {
-	if o != nil && !IsNil(o.Severity) {
-		return true
-	}
-
-	return false
 }
 
 // SetSeverity gets a reference to the given string and assigns it to the Severity field.
@@ -694,15 +502,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1) GetResolvedOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Resolved, true
-}
-
-// IsSetResolved returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1) IsSetResolved() bool {
-	if o != nil && !IsNil(o.Resolved) {
-		return true
-	}
-
-	return false
 }
 
 // SetResolved gets a reference to the given bool and assigns it to the Resolved field.
@@ -729,28 +528,9 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1) GetResolvedMessageOk() (*string
 	return o.ResolvedMessage.Get(), o.ResolvedMessage.IsSet()
 }
 
-// IsSetResolvedMessage returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1) IsSetResolvedMessage() bool {
-	if o != nil && o.ResolvedMessage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetResolvedMessage gets a reference to the given NullableString and assigns it to the ResolvedMessage field.
 func (o *GetGuidances200ResponseDiscoveryAnyOf1) SetResolvedMessage(v string) {
 	o.ResolvedMessage.Set(&v)
-}
-
-// SetResolvedMessageNil sets the value for ResolvedMessage to be an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOf1) SetResolvedMessageNil() {
-	o.ResolvedMessage.Set(nil)
-}
-
-// UnsetResolvedMessage ensures that no value is present for ResolvedMessage, not even an explicit nil
-func (o *GetGuidances200ResponseDiscoveryAnyOf1) UnsetResolvedMessage() {
-	o.ResolvedMessage.Unset()
 }
 
 // GetRefType returns the RefType field value if set, zero value otherwise.
@@ -769,15 +549,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1) GetRefTypeOk() (*string, bool) 
 		return nil, false
 	}
 	return o.RefType, true
-}
-
-// IsSetRefType returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1) IsSetRefType() bool {
-	if o != nil && !IsNil(o.RefType) {
-		return true
-	}
-
-	return false
 }
 
 // SetRefType gets a reference to the given string and assigns it to the RefType field.
@@ -803,15 +574,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1) GetRefIdOk() (*int64, bool) {
 	return o.RefId, true
 }
 
-// IsSetRefId returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1) IsSetRefId() bool {
-	if o != nil && !IsNil(o.RefId) {
-		return true
-	}
-
-	return false
-}
-
 // SetRefId gets a reference to the given int64 and assigns it to the RefId field.
 func (o *GetGuidances200ResponseDiscoveryAnyOf1) SetRefId(v int64) {
 	o.RefId = &v
@@ -833,15 +595,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1) GetRefNameOk() (*string, bool) 
 		return nil, false
 	}
 	return o.RefName, true
-}
-
-// IsSetRefName returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1) IsSetRefName() bool {
-	if o != nil && !IsNil(o.RefName) {
-		return true
-	}
-
-	return false
 }
 
 // SetRefName gets a reference to the given string and assigns it to the RefName field.
@@ -867,15 +620,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1) GetTypeOk() (*GetGuidances200Re
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given GetGuidances200ResponseDiscoveryAnyOf1Type and assigns it to the Type field.
 func (o *GetGuidances200ResponseDiscoveryAnyOf1) SetType(v GetGuidances200ResponseDiscoveryAnyOf1Type) {
 	o.Type = &v
@@ -899,15 +643,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1) GetSavingsOk() (*GetGuidances20
 	return o.Savings, true
 }
 
-// IsSetSavings returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1) IsSetSavings() bool {
-	if o != nil && !IsNil(o.Savings) {
-		return true
-	}
-
-	return false
-}
-
 // SetSavings gets a reference to the given GetGuidances200ResponseDiscoveryAnyOf1Savings and assigns it to the Savings field.
 func (o *GetGuidances200ResponseDiscoveryAnyOf1) SetSavings(v GetGuidances200ResponseDiscoveryAnyOf1Savings) {
 	o.Savings = &v
@@ -929,15 +664,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOf1) GetConfigOk() (*GetGuidances200
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOf1) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given GetGuidances200ResponseDiscoveryAnyOf1Config and assigns it to the Config field.

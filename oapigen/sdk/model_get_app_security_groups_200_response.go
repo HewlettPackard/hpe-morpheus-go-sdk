@@ -63,15 +63,6 @@ func (o *GetAppSecurityGroups200Response) GetSecurityGroupsOk() ([]GetAppSecurit
 	return o.SecurityGroups, true
 }
 
-// IsSetSecurityGroups returns a boolean if a field has been set.
-func (o *GetAppSecurityGroups200Response) IsSetSecurityGroups() bool {
-	if o != nil && !IsNil(o.SecurityGroups) {
-		return true
-	}
-
-	return false
-}
-
 // SetSecurityGroups gets a reference to the given []GetAppSecurityGroups200ResponseAllOfSecurityGroupsInner and assigns it to the SecurityGroups field.
 func (o *GetAppSecurityGroups200Response) SetSecurityGroups(v []GetAppSecurityGroups200ResponseAllOfSecurityGroupsInner) {
 	o.SecurityGroups = v
@@ -95,15 +86,6 @@ func (o *GetAppSecurityGroups200Response) GetFirewallEnabledOk() (*bool, bool) {
 	return o.FirewallEnabled, true
 }
 
-// IsSetFirewallEnabled returns a boolean if a field has been set.
-func (o *GetAppSecurityGroups200Response) IsSetFirewallEnabled() bool {
-	if o != nil && !IsNil(o.FirewallEnabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetFirewallEnabled gets a reference to the given bool and assigns it to the FirewallEnabled field.
 func (o *GetAppSecurityGroups200Response) SetFirewallEnabled(v bool) {
 	o.FirewallEnabled = &v
@@ -125,15 +107,6 @@ func (o *GetAppSecurityGroups200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *GetAppSecurityGroups200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

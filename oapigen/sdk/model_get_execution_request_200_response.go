@@ -61,15 +61,6 @@ func (o *GetExecutionRequest200Response) GetExecutionRequestOk() (*GetExecutionR
 	return o.ExecutionRequest, true
 }
 
-// IsSetExecutionRequest returns a boolean if a field has been set.
-func (o *GetExecutionRequest200Response) IsSetExecutionRequest() bool {
-	if o != nil && !IsNil(o.ExecutionRequest) {
-		return true
-	}
-
-	return false
-}
-
 // SetExecutionRequest gets a reference to the given GetExecutionRequest200ResponseAllOfExecutionRequest and assigns it to the ExecutionRequest field.
 func (o *GetExecutionRequest200Response) SetExecutionRequest(v GetExecutionRequest200ResponseAllOfExecutionRequest) {
 	o.ExecutionRequest = &v

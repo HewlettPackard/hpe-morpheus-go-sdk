@@ -95,28 +95,9 @@ func (o *HVMInstanceConfiguration1) GetNoAgentOk() (*bool, bool) {
 	return o.NoAgent.Get(), o.NoAgent.IsSet()
 }
 
-// IsSetNoAgent returns a boolean if a field has been set.
-func (o *HVMInstanceConfiguration1) IsSetNoAgent() bool {
-	if o != nil && o.NoAgent.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNoAgent gets a reference to the given NullableBool and assigns it to the NoAgent field.
 func (o *HVMInstanceConfiguration1) SetNoAgent(v bool) {
 	o.NoAgent.Set(&v)
-}
-
-// SetNoAgentNil sets the value for NoAgent to be an explicit nil
-func (o *HVMInstanceConfiguration1) SetNoAgentNil() {
-	o.NoAgent.Set(nil)
-}
-
-// UnsetNoAgent ensures that no value is present for NoAgent, not even an explicit nil
-func (o *HVMInstanceConfiguration1) UnsetNoAgent() {
-	o.NoAgent.Unset()
 }
 
 // GetResourcePoolId returns the ResourcePoolId field value if set, zero value otherwise.
@@ -135,15 +116,6 @@ func (o *HVMInstanceConfiguration1) GetResourcePoolIdOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ResourcePoolId, true
-}
-
-// IsSetResourcePoolId returns a boolean if a field has been set.
-func (o *HVMInstanceConfiguration1) IsSetResourcePoolId() bool {
-	if o != nil && !IsNil(o.ResourcePoolId) {
-		return true
-	}
-
-	return false
 }
 
 // SetResourcePoolId gets a reference to the given string and assigns it to the ResourcePoolId field.
@@ -167,15 +139,6 @@ func (o *HVMInstanceConfiguration1) GetNestedVirtualizationOk() (*string, bool) 
 		return nil, false
 	}
 	return o.NestedVirtualization, true
-}
-
-// IsSetNestedVirtualization returns a boolean if a field has been set.
-func (o *HVMInstanceConfiguration1) IsSetNestedVirtualization() bool {
-	if o != nil && !IsNil(o.NestedVirtualization) {
-		return true
-	}
-
-	return false
 }
 
 // SetNestedVirtualization gets a reference to the given string and assigns it to the NestedVirtualization field.
@@ -202,28 +165,9 @@ func (o *HVMInstanceConfiguration1) GetCreateUserOk() (*bool, bool) {
 	return o.CreateUser.Get(), o.CreateUser.IsSet()
 }
 
-// IsSetCreateUser returns a boolean if a field has been set.
-func (o *HVMInstanceConfiguration1) IsSetCreateUser() bool {
-	if o != nil && o.CreateUser.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCreateUser gets a reference to the given NullableBool and assigns it to the CreateUser field.
 func (o *HVMInstanceConfiguration1) SetCreateUser(v bool) {
 	o.CreateUser.Set(&v)
-}
-
-// SetCreateUserNil sets the value for CreateUser to be an explicit nil
-func (o *HVMInstanceConfiguration1) SetCreateUserNil() {
-	o.CreateUser.Set(nil)
-}
-
-// UnsetCreateUser ensures that no value is present for CreateUser, not even an explicit nil
-func (o *HVMInstanceConfiguration1) UnsetCreateUser() {
-	o.CreateUser.Unset()
 }
 
 // GetPoolProviderType returns the PoolProviderType field value if set, zero value otherwise.
@@ -242,15 +186,6 @@ func (o *HVMInstanceConfiguration1) GetPoolProviderTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.PoolProviderType, true
-}
-
-// IsSetPoolProviderType returns a boolean if a field has been set.
-func (o *HVMInstanceConfiguration1) IsSetPoolProviderType() bool {
-	if o != nil && !IsNil(o.PoolProviderType) {
-		return true
-	}
-
-	return false
 }
 
 // SetPoolProviderType gets a reference to the given string and assigns it to the PoolProviderType field.
@@ -276,15 +211,6 @@ func (o *HVMInstanceConfiguration1) GetKvmHostIdOk() (*int64, bool) {
 	return o.KvmHostId, true
 }
 
-// IsSetKvmHostId returns a boolean if a field has been set.
-func (o *HVMInstanceConfiguration1) IsSetKvmHostId() bool {
-	if o != nil && !IsNil(o.KvmHostId) {
-		return true
-	}
-
-	return false
-}
-
 // SetKvmHostId gets a reference to the given int64 and assigns it to the KvmHostId field.
 func (o *HVMInstanceConfiguration1) SetKvmHostId(v int64) {
 	o.KvmHostId = &v
@@ -306,15 +232,6 @@ func (o *HVMInstanceConfiguration1) GetProvisionPoweredOffOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.ProvisionPoweredOff, true
-}
-
-// IsSetProvisionPoweredOff returns a boolean if a field has been set.
-func (o *HVMInstanceConfiguration1) IsSetProvisionPoweredOff() bool {
-	if o != nil && !IsNil(o.ProvisionPoweredOff) {
-		return true
-	}
-
-	return false
 }
 
 // SetProvisionPoweredOff gets a reference to the given bool and assigns it to the ProvisionPoweredOff field.

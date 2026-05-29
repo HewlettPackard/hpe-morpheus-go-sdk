@@ -62,15 +62,6 @@ func (o *BlueprintCreateSuccessConfigOneOf5Config) GetSpecsOk() ([]BlueprintCrea
 	return o.Specs, true
 }
 
-// IsSetSpecs returns a boolean if a field has been set.
-func (o *BlueprintCreateSuccessConfigOneOf5Config) IsSetSpecs() bool {
-	if o != nil && !IsNil(o.Specs) {
-		return true
-	}
-
-	return false
-}
-
 // SetSpecs gets a reference to the given []BlueprintCreateSuccessConfigOneOf5ConfigSpecsInner and assigns it to the Specs field.
 func (o *BlueprintCreateSuccessConfigOneOf5Config) SetSpecs(v []BlueprintCreateSuccessConfigOneOf5ConfigSpecsInner) {
 	o.Specs = v

@@ -61,15 +61,6 @@ func (o *GetNetworkFloatingIp200Response) GetNetworkFloatingIpOk() (*GetNetworkF
 	return o.NetworkFloatingIp, true
 }
 
-// IsSetNetworkFloatingIp returns a boolean if a field has been set.
-func (o *GetNetworkFloatingIp200Response) IsSetNetworkFloatingIp() bool {
-	if o != nil && !IsNil(o.NetworkFloatingIp) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkFloatingIp gets a reference to the given GetNetworkFloatingIp200ResponseNetworkFloatingIp and assigns it to the NetworkFloatingIp field.
 func (o *GetNetworkFloatingIp200Response) SetNetworkFloatingIp(v GetNetworkFloatingIp200ResponseNetworkFloatingIp) {
 	o.NetworkFloatingIp = &v

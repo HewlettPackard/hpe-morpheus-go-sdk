@@ -106,15 +106,6 @@ func (o *PolicyCreate) GetDescriptionOk() (*string, bool) {
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *PolicyCreate) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *PolicyCreate) SetDescription(v string) {
 	o.Description = &v
@@ -186,15 +177,6 @@ func (o *PolicyCreate) GetEnabledOk() (*bool, bool) {
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *PolicyCreate) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *PolicyCreate) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -219,28 +201,9 @@ func (o *PolicyCreate) GetRefTypeOk() (*string, bool) {
 	return o.RefType.Get(), o.RefType.IsSet()
 }
 
-// IsSetRefType returns a boolean if a field has been set.
-func (o *PolicyCreate) IsSetRefType() bool {
-	if o != nil && o.RefType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRefType gets a reference to the given NullableString and assigns it to the RefType field.
 func (o *PolicyCreate) SetRefType(v string) {
 	o.RefType.Set(&v)
-}
-
-// SetRefTypeNil sets the value for RefType to be an explicit nil
-func (o *PolicyCreate) SetRefTypeNil() {
-	o.RefType.Set(nil)
-}
-
-// UnsetRefType ensures that no value is present for RefType, not even an explicit nil
-func (o *PolicyCreate) UnsetRefType() {
-	o.RefType.Unset()
 }
 
 // GetRefId returns the RefId field value if set, zero value otherwise.
@@ -259,15 +222,6 @@ func (o *PolicyCreate) GetRefIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.RefId, true
-}
-
-// IsSetRefId returns a boolean if a field has been set.
-func (o *PolicyCreate) IsSetRefId() bool {
-	if o != nil && !IsNil(o.RefId) {
-		return true
-	}
-
-	return false
 }
 
 // SetRefId gets a reference to the given int64 and assigns it to the RefId field.
@@ -293,15 +247,6 @@ func (o *PolicyCreate) GetAccountsOk() ([]int64, bool) {
 	return o.Accounts, true
 }
 
-// IsSetAccounts returns a boolean if a field has been set.
-func (o *PolicyCreate) IsSetAccounts() bool {
-	if o != nil && !IsNil(o.Accounts) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccounts gets a reference to the given []int64 and assigns it to the Accounts field.
 func (o *PolicyCreate) SetAccounts(v []int64) {
 	o.Accounts = v
@@ -323,15 +268,6 @@ func (o *PolicyCreate) GetEachUserOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.EachUser, true
-}
-
-// IsSetEachUser returns a boolean if a field has been set.
-func (o *PolicyCreate) IsSetEachUser() bool {
-	if o != nil && !IsNil(o.EachUser) {
-		return true
-	}
-
-	return false
 }
 
 // SetEachUser gets a reference to the given bool and assigns it to the EachUser field.

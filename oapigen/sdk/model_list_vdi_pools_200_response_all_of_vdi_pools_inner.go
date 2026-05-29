@@ -97,15 +97,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetId(v int64) {
 	o.Id = &v
@@ -127,15 +118,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetNameOk() (*string, bool) 
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -162,28 +144,9 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetDescriptionOk() (*string,
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetMinIdle returns the MinIdle field value if set, zero value otherwise.
@@ -202,15 +165,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetMinIdleOk() (*int64, bool
 		return nil, false
 	}
 	return o.MinIdle, true
-}
-
-// IsSetMinIdle returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetMinIdle() bool {
-	if o != nil && !IsNil(o.MinIdle) {
-		return true
-	}
-
-	return false
 }
 
 // SetMinIdle gets a reference to the given int64 and assigns it to the MinIdle field.
@@ -236,15 +190,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetMaxIdleOk() (*int64, bool
 	return o.MaxIdle, true
 }
 
-// IsSetMaxIdle returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetMaxIdle() bool {
-	if o != nil && !IsNil(o.MaxIdle) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxIdle gets a reference to the given int64 and assigns it to the MaxIdle field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetMaxIdle(v int64) {
 	o.MaxIdle = &v
@@ -266,15 +211,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetInitialPoolSizeOk() (*int
 		return nil, false
 	}
 	return o.InitialPoolSize, true
-}
-
-// IsSetInitialPoolSize returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetInitialPoolSize() bool {
-	if o != nil && !IsNil(o.InitialPoolSize) {
-		return true
-	}
-
-	return false
 }
 
 // SetInitialPoolSize gets a reference to the given int64 and assigns it to the InitialPoolSize field.
@@ -300,15 +236,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetMaxPoolSizeOk() (*int64, 
 	return o.MaxPoolSize, true
 }
 
-// IsSetMaxPoolSize returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetMaxPoolSize() bool {
-	if o != nil && !IsNil(o.MaxPoolSize) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxPoolSize gets a reference to the given int64 and assigns it to the MaxPoolSize field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetMaxPoolSize(v int64) {
 	o.MaxPoolSize = &v
@@ -330,15 +257,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetAllocationTimeoutMinutesO
 		return nil, false
 	}
 	return o.AllocationTimeoutMinutes, true
-}
-
-// IsSetAllocationTimeoutMinutes returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetAllocationTimeoutMinutes() bool {
-	if o != nil && !IsNil(o.AllocationTimeoutMinutes) {
-		return true
-	}
-
-	return false
 }
 
 // SetAllocationTimeoutMinutes gets a reference to the given int64 and assigns it to the AllocationTimeoutMinutes field.
@@ -365,28 +283,9 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetPersistentUserOk() (*bool
 	return o.PersistentUser.Get(), o.PersistentUser.IsSet()
 }
 
-// IsSetPersistentUser returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetPersistentUser() bool {
-	if o != nil && o.PersistentUser.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPersistentUser gets a reference to the given NullableBool and assigns it to the PersistentUser field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetPersistentUser(v bool) {
 	o.PersistentUser.Set(&v)
-}
-
-// SetPersistentUserNil sets the value for PersistentUser to be an explicit nil
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetPersistentUserNil() {
-	o.PersistentUser.Set(nil)
-}
-
-// UnsetPersistentUser ensures that no value is present for PersistentUser, not even an explicit nil
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) UnsetPersistentUser() {
-	o.PersistentUser.Unset()
 }
 
 // GetRecyclable returns the Recyclable field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -408,28 +307,9 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetRecyclableOk() (*bool, bo
 	return o.Recyclable.Get(), o.Recyclable.IsSet()
 }
 
-// IsSetRecyclable returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetRecyclable() bool {
-	if o != nil && o.Recyclable.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRecyclable gets a reference to the given NullableBool and assigns it to the Recyclable field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetRecyclable(v bool) {
 	o.Recyclable.Set(&v)
-}
-
-// SetRecyclableNil sets the value for Recyclable to be an explicit nil
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetRecyclableNil() {
-	o.Recyclable.Set(nil)
-}
-
-// UnsetRecyclable ensures that no value is present for Recyclable, not even an explicit nil
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) UnsetRecyclable() {
-	o.Recyclable.Unset()
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
@@ -448,15 +328,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetEnabledOk() (*bool, bool)
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -480,15 +351,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetAutoCreateLocalUserOnRese
 		return nil, false
 	}
 	return o.AutoCreateLocalUserOnReservation, true
-}
-
-// IsSetAutoCreateLocalUserOnReservation returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetAutoCreateLocalUserOnReservation() bool {
-	if o != nil && !IsNil(o.AutoCreateLocalUserOnReservation) {
-		return true
-	}
-
-	return false
 }
 
 // SetAutoCreateLocalUserOnReservation gets a reference to the given bool and assigns it to the AutoCreateLocalUserOnReservation field.
@@ -515,28 +377,9 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetAllowHypervisorConsoleOk(
 	return o.AllowHypervisorConsole.Get(), o.AllowHypervisorConsole.IsSet()
 }
 
-// IsSetAllowHypervisorConsole returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetAllowHypervisorConsole() bool {
-	if o != nil && o.AllowHypervisorConsole.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAllowHypervisorConsole gets a reference to the given NullableBool and assigns it to the AllowHypervisorConsole field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetAllowHypervisorConsole(v bool) {
 	o.AllowHypervisorConsole.Set(&v)
-}
-
-// SetAllowHypervisorConsoleNil sets the value for AllowHypervisorConsole to be an explicit nil
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetAllowHypervisorConsoleNil() {
-	o.AllowHypervisorConsole.Set(nil)
-}
-
-// UnsetAllowHypervisorConsole ensures that no value is present for AllowHypervisorConsole, not even an explicit nil
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) UnsetAllowHypervisorConsole() {
-	o.AllowHypervisorConsole.Unset()
 }
 
 // GetAllowCopy returns the AllowCopy field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -558,28 +401,9 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetAllowCopyOk() (*bool, boo
 	return o.AllowCopy.Get(), o.AllowCopy.IsSet()
 }
 
-// IsSetAllowCopy returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetAllowCopy() bool {
-	if o != nil && o.AllowCopy.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAllowCopy gets a reference to the given NullableBool and assigns it to the AllowCopy field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetAllowCopy(v bool) {
 	o.AllowCopy.Set(&v)
-}
-
-// SetAllowCopyNil sets the value for AllowCopy to be an explicit nil
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetAllowCopyNil() {
-	o.AllowCopy.Set(nil)
-}
-
-// UnsetAllowCopy ensures that no value is present for AllowCopy, not even an explicit nil
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) UnsetAllowCopy() {
-	o.AllowCopy.Unset()
 }
 
 // GetAllowPrinter returns the AllowPrinter field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -601,28 +425,9 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetAllowPrinterOk() (*bool, 
 	return o.AllowPrinter.Get(), o.AllowPrinter.IsSet()
 }
 
-// IsSetAllowPrinter returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetAllowPrinter() bool {
-	if o != nil && o.AllowPrinter.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAllowPrinter gets a reference to the given NullableBool and assigns it to the AllowPrinter field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetAllowPrinter(v bool) {
 	o.AllowPrinter.Set(&v)
-}
-
-// SetAllowPrinterNil sets the value for AllowPrinter to be an explicit nil
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetAllowPrinterNil() {
-	o.AllowPrinter.Set(nil)
-}
-
-// UnsetAllowPrinter ensures that no value is present for AllowPrinter, not even an explicit nil
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) UnsetAllowPrinter() {
-	o.AllowPrinter.Unset()
 }
 
 // GetAllowFileshare returns the AllowFileshare field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -644,28 +449,9 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetAllowFileshareOk() (*bool
 	return o.AllowFileshare.Get(), o.AllowFileshare.IsSet()
 }
 
-// IsSetAllowFileshare returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetAllowFileshare() bool {
-	if o != nil && o.AllowFileshare.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAllowFileshare gets a reference to the given NullableBool and assigns it to the AllowFileshare field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetAllowFileshare(v bool) {
 	o.AllowFileshare.Set(&v)
-}
-
-// SetAllowFileshareNil sets the value for AllowFileshare to be an explicit nil
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetAllowFileshareNil() {
-	o.AllowFileshare.Set(nil)
-}
-
-// UnsetAllowFileshare ensures that no value is present for AllowFileshare, not even an explicit nil
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) UnsetAllowFileshare() {
-	o.AllowFileshare.Unset()
 }
 
 // GetGuestConsoleJumpHost returns the GuestConsoleJumpHost field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -687,28 +473,9 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetGuestConsoleJumpHostOk() 
 	return o.GuestConsoleJumpHost.Get(), o.GuestConsoleJumpHost.IsSet()
 }
 
-// IsSetGuestConsoleJumpHost returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetGuestConsoleJumpHost() bool {
-	if o != nil && o.GuestConsoleJumpHost.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetGuestConsoleJumpHost gets a reference to the given NullableString and assigns it to the GuestConsoleJumpHost field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetGuestConsoleJumpHost(v string) {
 	o.GuestConsoleJumpHost.Set(&v)
-}
-
-// SetGuestConsoleJumpHostNil sets the value for GuestConsoleJumpHost to be an explicit nil
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetGuestConsoleJumpHostNil() {
-	o.GuestConsoleJumpHost.Set(nil)
-}
-
-// UnsetGuestConsoleJumpHost ensures that no value is present for GuestConsoleJumpHost, not even an explicit nil
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) UnsetGuestConsoleJumpHost() {
-	o.GuestConsoleJumpHost.Unset()
 }
 
 // GetGuestConsoleJumpPort returns the GuestConsoleJumpPort field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -730,28 +497,9 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetGuestConsoleJumpPortOk() 
 	return o.GuestConsoleJumpPort.Get(), o.GuestConsoleJumpPort.IsSet()
 }
 
-// IsSetGuestConsoleJumpPort returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetGuestConsoleJumpPort() bool {
-	if o != nil && o.GuestConsoleJumpPort.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetGuestConsoleJumpPort gets a reference to the given NullableString and assigns it to the GuestConsoleJumpPort field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetGuestConsoleJumpPort(v string) {
 	o.GuestConsoleJumpPort.Set(&v)
-}
-
-// SetGuestConsoleJumpPortNil sets the value for GuestConsoleJumpPort to be an explicit nil
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetGuestConsoleJumpPortNil() {
-	o.GuestConsoleJumpPort.Set(nil)
-}
-
-// UnsetGuestConsoleJumpPort ensures that no value is present for GuestConsoleJumpPort, not even an explicit nil
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) UnsetGuestConsoleJumpPort() {
-	o.GuestConsoleJumpPort.Unset()
 }
 
 // GetGuestConsoleJumpUsername returns the GuestConsoleJumpUsername field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -773,28 +521,9 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetGuestConsoleJumpUsernameO
 	return o.GuestConsoleJumpUsername.Get(), o.GuestConsoleJumpUsername.IsSet()
 }
 
-// IsSetGuestConsoleJumpUsername returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetGuestConsoleJumpUsername() bool {
-	if o != nil && o.GuestConsoleJumpUsername.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetGuestConsoleJumpUsername gets a reference to the given NullableString and assigns it to the GuestConsoleJumpUsername field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetGuestConsoleJumpUsername(v string) {
 	o.GuestConsoleJumpUsername.Set(&v)
-}
-
-// SetGuestConsoleJumpUsernameNil sets the value for GuestConsoleJumpUsername to be an explicit nil
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetGuestConsoleJumpUsernameNil() {
-	o.GuestConsoleJumpUsername.Set(nil)
-}
-
-// UnsetGuestConsoleJumpUsername ensures that no value is present for GuestConsoleJumpUsername, not even an explicit nil
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) UnsetGuestConsoleJumpUsername() {
-	o.GuestConsoleJumpUsername.Unset()
 }
 
 // GetGuestConsoleJumpPassword returns the GuestConsoleJumpPassword field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -816,28 +545,9 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetGuestConsoleJumpPasswordO
 	return o.GuestConsoleJumpPassword.Get(), o.GuestConsoleJumpPassword.IsSet()
 }
 
-// IsSetGuestConsoleJumpPassword returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetGuestConsoleJumpPassword() bool {
-	if o != nil && o.GuestConsoleJumpPassword.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetGuestConsoleJumpPassword gets a reference to the given NullableString and assigns it to the GuestConsoleJumpPassword field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetGuestConsoleJumpPassword(v string) {
 	o.GuestConsoleJumpPassword.Set(&v)
-}
-
-// SetGuestConsoleJumpPasswordNil sets the value for GuestConsoleJumpPassword to be an explicit nil
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetGuestConsoleJumpPasswordNil() {
-	o.GuestConsoleJumpPassword.Set(nil)
-}
-
-// UnsetGuestConsoleJumpPassword ensures that no value is present for GuestConsoleJumpPassword, not even an explicit nil
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) UnsetGuestConsoleJumpPassword() {
-	o.GuestConsoleJumpPassword.Unset()
 }
 
 // GetGuestConsoleJumpKeypair returns the GuestConsoleJumpKeypair field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -859,28 +569,9 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetGuestConsoleJumpKeypairOk
 	return o.GuestConsoleJumpKeypair.Get(), o.GuestConsoleJumpKeypair.IsSet()
 }
 
-// IsSetGuestConsoleJumpKeypair returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetGuestConsoleJumpKeypair() bool {
-	if o != nil && o.GuestConsoleJumpKeypair.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetGuestConsoleJumpKeypair gets a reference to the given NullableString and assigns it to the GuestConsoleJumpKeypair field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetGuestConsoleJumpKeypair(v string) {
 	o.GuestConsoleJumpKeypair.Set(&v)
-}
-
-// SetGuestConsoleJumpKeypairNil sets the value for GuestConsoleJumpKeypair to be an explicit nil
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetGuestConsoleJumpKeypairNil() {
-	o.GuestConsoleJumpKeypair.Set(nil)
-}
-
-// UnsetGuestConsoleJumpKeypair ensures that no value is present for GuestConsoleJumpKeypair, not even an explicit nil
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) UnsetGuestConsoleJumpKeypair() {
-	o.GuestConsoleJumpKeypair.Unset()
 }
 
 // GetGateway returns the Gateway field value if set, zero value otherwise.
@@ -899,15 +590,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetGatewayOk() (*ListVDIPool
 		return nil, false
 	}
 	return o.Gateway, true
-}
-
-// IsSetGateway returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetGateway() bool {
-	if o != nil && !IsNil(o.Gateway) {
-		return true
-	}
-
-	return false
 }
 
 // SetGateway gets a reference to the given ListVDIPools200ResponseAllOfVdiPoolsInnerGateway and assigns it to the Gateway field.
@@ -933,15 +615,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetIconPathOk() (*string, bo
 	return o.IconPath, true
 }
 
-// IsSetIconPath returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetIconPath() bool {
-	if o != nil && !IsNil(o.IconPath) {
-		return true
-	}
-
-	return false
-}
-
 // SetIconPath gets a reference to the given string and assigns it to the IconPath field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetIconPath(v string) {
 	o.IconPath = &v
@@ -963,15 +636,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetLogoOk() (*string, bool) 
 		return nil, false
 	}
 	return o.Logo, true
-}
-
-// IsSetLogo returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetLogo() bool {
-	if o != nil && !IsNil(o.Logo) {
-		return true
-	}
-
-	return false
 }
 
 // SetLogo gets a reference to the given string and assigns it to the Logo field.
@@ -997,15 +661,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetAppsOk() ([]ListVDIPools2
 	return o.Apps, true
 }
 
-// IsSetApps returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetApps() bool {
-	if o != nil && !IsNil(o.Apps) {
-		return true
-	}
-
-	return false
-}
-
 // SetApps gets a reference to the given []ListVDIPools200ResponseAllOfVdiPoolsInnerAppsInner and assigns it to the Apps field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetApps(v []ListVDIPools200ResponseAllOfVdiPoolsInnerAppsInner) {
 	o.Apps = v
@@ -1027,15 +682,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetOwnerOk() (*ListVDIPools2
 		return nil, false
 	}
 	return o.Owner, true
-}
-
-// IsSetOwner returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
-		return true
-	}
-
-	return false
 }
 
 // SetOwner gets a reference to the given ListVDIPools200ResponseAllOfVdiPoolsInnerOwner and assigns it to the Owner field.
@@ -1061,15 +707,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetConfigOk() (*ListVDIPools
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given ListVDIPools200ResponseAllOfVdiPoolsInnerConfig and assigns it to the Config field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetConfig(v ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) {
 	o.Config = &v
@@ -1091,15 +728,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetGroupOk() (*ListVDIPools2
 		return nil, false
 	}
 	return o.Group, true
-}
-
-// IsSetGroup returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetGroup() bool {
-	if o != nil && !IsNil(o.Group) {
-		return true
-	}
-
-	return false
 }
 
 // SetGroup gets a reference to the given ListVDIPools200ResponseAllOfVdiPoolsInnerGroup and assigns it to the Group field.
@@ -1125,15 +753,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetCloudOk() (*ListVDIPools2
 	return o.Cloud, true
 }
 
-// IsSetCloud returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetCloud() bool {
-	if o != nil && !IsNil(o.Cloud) {
-		return true
-	}
-
-	return false
-}
-
 // SetCloud gets a reference to the given ListVDIPools200ResponseAllOfVdiPoolsInnerCloud and assigns it to the Cloud field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetCloud(v ListVDIPools200ResponseAllOfVdiPoolsInnerCloud) {
 	o.Cloud = &v
@@ -1155,15 +774,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetUsedCountOk() (*int64, bo
 		return nil, false
 	}
 	return o.UsedCount, true
-}
-
-// IsSetUsedCount returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetUsedCount() bool {
-	if o != nil && !IsNil(o.UsedCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetUsedCount gets a reference to the given int64 and assigns it to the UsedCount field.
@@ -1189,15 +799,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetReservedCountOk() (*int64
 	return o.ReservedCount, true
 }
 
-// IsSetReservedCount returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetReservedCount() bool {
-	if o != nil && !IsNil(o.ReservedCount) {
-		return true
-	}
-
-	return false
-}
-
 // SetReservedCount gets a reference to the given int64 and assigns it to the ReservedCount field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetReservedCount(v int64) {
 	o.ReservedCount = &v
@@ -1219,15 +820,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetPreparingCountOk() (*int6
 		return nil, false
 	}
 	return o.PreparingCount, true
-}
-
-// IsSetPreparingCount returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetPreparingCount() bool {
-	if o != nil && !IsNil(o.PreparingCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetPreparingCount gets a reference to the given int64 and assigns it to the PreparingCount field.
@@ -1253,15 +845,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetIdleCountOk() (*int64, bo
 	return o.IdleCount, true
 }
 
-// IsSetIdleCount returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetIdleCount() bool {
-	if o != nil && !IsNil(o.IdleCount) {
-		return true
-	}
-
-	return false
-}
-
 // SetIdleCount gets a reference to the given int64 and assigns it to the IdleCount field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetIdleCount(v int64) {
 	o.IdleCount = &v
@@ -1283,15 +866,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetStatusOk() (*string, bool
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -1317,15 +891,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetDateCreatedOk() (*time.Ti
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -1347,15 +912,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) GetLastUpdatedOk() (*time.Ti
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.

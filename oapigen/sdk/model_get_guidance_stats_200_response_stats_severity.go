@@ -64,15 +64,6 @@ func (o *GetGuidanceStats200ResponseStatsSeverity) GetLowOk() (*int64, bool) {
 	return o.Low, true
 }
 
-// IsSetLow returns a boolean if a field has been set.
-func (o *GetGuidanceStats200ResponseStatsSeverity) IsSetLow() bool {
-	if o != nil && !IsNil(o.Low) {
-		return true
-	}
-
-	return false
-}
-
 // SetLow gets a reference to the given int64 and assigns it to the Low field.
 func (o *GetGuidanceStats200ResponseStatsSeverity) SetLow(v int64) {
 	o.Low = &v
@@ -94,15 +85,6 @@ func (o *GetGuidanceStats200ResponseStatsSeverity) GetInfoOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.Info, true
-}
-
-// IsSetInfo returns a boolean if a field has been set.
-func (o *GetGuidanceStats200ResponseStatsSeverity) IsSetInfo() bool {
-	if o != nil && !IsNil(o.Info) {
-		return true
-	}
-
-	return false
 }
 
 // SetInfo gets a reference to the given int64 and assigns it to the Info field.
@@ -128,15 +110,6 @@ func (o *GetGuidanceStats200ResponseStatsSeverity) GetWarningOk() (*int64, bool)
 	return o.Warning, true
 }
 
-// IsSetWarning returns a boolean if a field has been set.
-func (o *GetGuidanceStats200ResponseStatsSeverity) IsSetWarning() bool {
-	if o != nil && !IsNil(o.Warning) {
-		return true
-	}
-
-	return false
-}
-
 // SetWarning gets a reference to the given int64 and assigns it to the Warning field.
 func (o *GetGuidanceStats200ResponseStatsSeverity) SetWarning(v int64) {
 	o.Warning = &v
@@ -158,15 +131,6 @@ func (o *GetGuidanceStats200ResponseStatsSeverity) GetCriticalOk() (*int64, bool
 		return nil, false
 	}
 	return o.Critical, true
-}
-
-// IsSetCritical returns a boolean if a field has been set.
-func (o *GetGuidanceStats200ResponseStatsSeverity) IsSetCritical() bool {
-	if o != nil && !IsNil(o.Critical) {
-		return true
-	}
-
-	return false
 }
 
 // SetCritical gets a reference to the given int64 and assigns it to the Critical field.

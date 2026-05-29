@@ -63,15 +63,6 @@ func (o *AddCatalogOrder200ResponseAllOfOrderItemsInnerType) GetIdOk() (*int64, 
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *AddCatalogOrder200ResponseAllOfOrderItemsInnerType) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *AddCatalogOrder200ResponseAllOfOrderItemsInnerType) SetId(v int64) {
 	o.Id = &v
@@ -95,15 +86,6 @@ func (o *AddCatalogOrder200ResponseAllOfOrderItemsInnerType) GetNameOk() (*strin
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *AddCatalogOrder200ResponseAllOfOrderItemsInnerType) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *AddCatalogOrder200ResponseAllOfOrderItemsInnerType) SetName(v string) {
 	o.Name = &v
@@ -125,15 +107,6 @@ func (o *AddCatalogOrder200ResponseAllOfOrderItemsInnerType) GetTypeOk() (*strin
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *AddCatalogOrder200ResponseAllOfOrderItemsInnerType) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.

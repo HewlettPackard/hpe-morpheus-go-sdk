@@ -157,15 +157,6 @@ func (o *AddStorageBucketsRequestStorageBucket) GetStorageServerOk() (*int64, bo
 	return o.StorageServer, true
 }
 
-// IsSetStorageServer returns a boolean if a field has been set.
-func (o *AddStorageBucketsRequestStorageBucket) IsSetStorageServer() bool {
-	if o != nil && !IsNil(o.StorageServer) {
-		return true
-	}
-
-	return false
-}
-
 // SetStorageServer gets a reference to the given int64 and assigns it to the StorageServer field.
 func (o *AddStorageBucketsRequestStorageBucket) SetStorageServer(v int64) {
 	o.StorageServer = &v
@@ -187,15 +178,6 @@ func (o *AddStorageBucketsRequestStorageBucket) GetDefaultBackupTargetOk() (*boo
 		return nil, false
 	}
 	return o.DefaultBackupTarget, true
-}
-
-// IsSetDefaultBackupTarget returns a boolean if a field has been set.
-func (o *AddStorageBucketsRequestStorageBucket) IsSetDefaultBackupTarget() bool {
-	if o != nil && !IsNil(o.DefaultBackupTarget) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultBackupTarget gets a reference to the given bool and assigns it to the DefaultBackupTarget field.
@@ -221,15 +203,6 @@ func (o *AddStorageBucketsRequestStorageBucket) GetCopyToStoreOk() (*bool, bool)
 	return o.CopyToStore, true
 }
 
-// IsSetCopyToStore returns a boolean if a field has been set.
-func (o *AddStorageBucketsRequestStorageBucket) IsSetCopyToStore() bool {
-	if o != nil && !IsNil(o.CopyToStore) {
-		return true
-	}
-
-	return false
-}
-
 // SetCopyToStore gets a reference to the given bool and assigns it to the CopyToStore field.
 func (o *AddStorageBucketsRequestStorageBucket) SetCopyToStore(v bool) {
 	o.CopyToStore = &v
@@ -251,15 +224,6 @@ func (o *AddStorageBucketsRequestStorageBucket) GetDefaultDeploymentTargetOk() (
 		return nil, false
 	}
 	return o.DefaultDeploymentTarget, true
-}
-
-// IsSetDefaultDeploymentTarget returns a boolean if a field has been set.
-func (o *AddStorageBucketsRequestStorageBucket) IsSetDefaultDeploymentTarget() bool {
-	if o != nil && !IsNil(o.DefaultDeploymentTarget) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultDeploymentTarget gets a reference to the given bool and assigns it to the DefaultDeploymentTarget field.
@@ -285,15 +249,6 @@ func (o *AddStorageBucketsRequestStorageBucket) GetDefaultVirtualImageTargetOk()
 	return o.DefaultVirtualImageTarget, true
 }
 
-// IsSetDefaultVirtualImageTarget returns a boolean if a field has been set.
-func (o *AddStorageBucketsRequestStorageBucket) IsSetDefaultVirtualImageTarget() bool {
-	if o != nil && !IsNil(o.DefaultVirtualImageTarget) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultVirtualImageTarget gets a reference to the given bool and assigns it to the DefaultVirtualImageTarget field.
 func (o *AddStorageBucketsRequestStorageBucket) SetDefaultVirtualImageTarget(v bool) {
 	o.DefaultVirtualImageTarget = &v
@@ -315,15 +270,6 @@ func (o *AddStorageBucketsRequestStorageBucket) GetRetentionPolicyTypeOk() (*str
 		return nil, false
 	}
 	return o.RetentionPolicyType, true
-}
-
-// IsSetRetentionPolicyType returns a boolean if a field has been set.
-func (o *AddStorageBucketsRequestStorageBucket) IsSetRetentionPolicyType() bool {
-	if o != nil && !IsNil(o.RetentionPolicyType) {
-		return true
-	}
-
-	return false
 }
 
 // SetRetentionPolicyType gets a reference to the given string and assigns it to the RetentionPolicyType field.
@@ -349,15 +295,6 @@ func (o *AddStorageBucketsRequestStorageBucket) GetRetentionPolicyDaysOk() (*int
 	return o.RetentionPolicyDays, true
 }
 
-// IsSetRetentionPolicyDays returns a boolean if a field has been set.
-func (o *AddStorageBucketsRequestStorageBucket) IsSetRetentionPolicyDays() bool {
-	if o != nil && !IsNil(o.RetentionPolicyDays) {
-		return true
-	}
-
-	return false
-}
-
 // SetRetentionPolicyDays gets a reference to the given int64 and assigns it to the RetentionPolicyDays field.
 func (o *AddStorageBucketsRequestStorageBucket) SetRetentionPolicyDays(v int64) {
 	o.RetentionPolicyDays = &v
@@ -379,15 +316,6 @@ func (o *AddStorageBucketsRequestStorageBucket) GetRetentionProviderOk() (*strin
 		return nil, false
 	}
 	return o.RetentionProvider, true
-}
-
-// IsSetRetentionProvider returns a boolean if a field has been set.
-func (o *AddStorageBucketsRequestStorageBucket) IsSetRetentionProvider() bool {
-	if o != nil && !IsNil(o.RetentionProvider) {
-		return true
-	}
-
-	return false
 }
 
 // SetRetentionProvider gets a reference to the given string and assigns it to the RetentionProvider field.
@@ -435,15 +363,6 @@ func (o *AddStorageBucketsRequestStorageBucket) GetCreateBucketOk() (*bool, bool
 		return nil, false
 	}
 	return o.CreateBucket, true
-}
-
-// IsSetCreateBucket returns a boolean if a field has been set.
-func (o *AddStorageBucketsRequestStorageBucket) IsSetCreateBucket() bool {
-	if o != nil && !IsNil(o.CreateBucket) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreateBucket gets a reference to the given bool and assigns it to the CreateBucket field.

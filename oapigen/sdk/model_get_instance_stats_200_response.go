@@ -63,15 +63,6 @@ func (o *GetInstanceStats200Response) GetInstanceStatsOk() (*GetInstanceStats200
 	return o.InstanceStats, true
 }
 
-// IsSetInstanceStats returns a boolean if a field has been set.
-func (o *GetInstanceStats200Response) IsSetInstanceStats() bool {
-	if o != nil && !IsNil(o.InstanceStats) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstanceStats gets a reference to the given GetInstanceStats200ResponseInstanceStats and assigns it to the InstanceStats field.
 func (o *GetInstanceStats200Response) SetInstanceStats(v GetInstanceStats200ResponseInstanceStats) {
 	o.InstanceStats = &v
@@ -93,15 +84,6 @@ func (o *GetInstanceStats200Response) GetZoneIdsOk() ([]int64, bool) {
 		return nil, false
 	}
 	return o.ZoneIds, true
-}
-
-// IsSetZoneIds returns a boolean if a field has been set.
-func (o *GetInstanceStats200Response) IsSetZoneIds() bool {
-	if o != nil && !IsNil(o.ZoneIds) {
-		return true
-	}
-
-	return false
 }
 
 // SetZoneIds gets a reference to the given []int64 and assigns it to the ZoneIds field.

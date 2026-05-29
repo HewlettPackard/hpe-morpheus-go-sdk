@@ -61,15 +61,6 @@ func (o *GetWikiCategories200Response) GetCategoriesOk() ([]GetWikiCategories200
 	return o.Categories, true
 }
 
-// IsSetCategories returns a boolean if a field has been set.
-func (o *GetWikiCategories200Response) IsSetCategories() bool {
-	if o != nil && !IsNil(o.Categories) {
-		return true
-	}
-
-	return false
-}
-
 // SetCategories gets a reference to the given []GetWikiCategories200ResponseCategoriesInner and assigns it to the Categories field.
 func (o *GetWikiCategories200Response) SetCategories(v []GetWikiCategories200ResponseCategoriesInner) {
 	o.Categories = v

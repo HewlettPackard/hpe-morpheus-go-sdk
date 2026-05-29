@@ -63,15 +63,6 @@ func (o *ListClusterJobs200Response) GetJobsOk() ([]ListClusterJobs200ResponseAl
 	return o.Jobs, true
 }
 
-// IsSetJobs returns a boolean if a field has been set.
-func (o *ListClusterJobs200Response) IsSetJobs() bool {
-	if o != nil && !IsNil(o.Jobs) {
-		return true
-	}
-
-	return false
-}
-
 // SetJobs gets a reference to the given []ListClusterJobs200ResponseAllOfJobsInner and assigns it to the Jobs field.
 func (o *ListClusterJobs200Response) SetJobs(v []ListClusterJobs200ResponseAllOfJobsInner) {
 	o.Jobs = v
@@ -95,15 +86,6 @@ func (o *ListClusterJobs200Response) GetStatsOk() (map[string]interface{}, bool)
 	return o.Stats, true
 }
 
-// IsSetStats returns a boolean if a field has been set.
-func (o *ListClusterJobs200Response) IsSetStats() bool {
-	if o != nil && !IsNil(o.Stats) {
-		return true
-	}
-
-	return false
-}
-
 // SetStats gets a reference to the given map[string]interface{} and assigns it to the Stats field.
 func (o *ListClusterJobs200Response) SetStats(v map[string]interface{}) {
 	o.Stats = v
@@ -125,15 +107,6 @@ func (o *ListClusterJobs200Response) GetMetaOk() (*ListApprovals200ResponseAllOf
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListClusterJobs200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

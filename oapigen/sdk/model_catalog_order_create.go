@@ -61,15 +61,6 @@ func (o *CatalogOrderCreate) GetItemsOk() ([]CatalogOrderCreateItemsInner, bool)
 	return o.Items, true
 }
 
-// IsSetItems returns a boolean if a field has been set.
-func (o *CatalogOrderCreate) IsSetItems() bool {
-	if o != nil && !IsNil(o.Items) {
-		return true
-	}
-
-	return false
-}
-
 // SetItems gets a reference to the given []CatalogOrderCreateItemsInner and assigns it to the Items field.
 func (o *CatalogOrderCreate) SetItems(v []CatalogOrderCreateItemsInner) {
 	o.Items = v

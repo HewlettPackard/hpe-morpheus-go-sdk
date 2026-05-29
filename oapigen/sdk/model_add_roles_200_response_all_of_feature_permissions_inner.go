@@ -65,15 +65,6 @@ func (o *AddRoles200ResponseAllOfFeaturePermissionsInner) GetIdOk() (*int64, boo
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *AddRoles200ResponseAllOfFeaturePermissionsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *AddRoles200ResponseAllOfFeaturePermissionsInner) SetId(v int64) {
 	o.Id = &v
@@ -95,15 +86,6 @@ func (o *AddRoles200ResponseAllOfFeaturePermissionsInner) GetCodeOk() (*string, 
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *AddRoles200ResponseAllOfFeaturePermissionsInner) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -129,15 +111,6 @@ func (o *AddRoles200ResponseAllOfFeaturePermissionsInner) GetNameOk() (*string, 
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *AddRoles200ResponseAllOfFeaturePermissionsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *AddRoles200ResponseAllOfFeaturePermissionsInner) SetName(v string) {
 	o.Name = &v
@@ -161,15 +134,6 @@ func (o *AddRoles200ResponseAllOfFeaturePermissionsInner) GetAccessOk() (*string
 	return o.Access, true
 }
 
-// IsSetAccess returns a boolean if a field has been set.
-func (o *AddRoles200ResponseAllOfFeaturePermissionsInner) IsSetAccess() bool {
-	if o != nil && !IsNil(o.Access) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccess gets a reference to the given string and assigns it to the Access field.
 func (o *AddRoles200ResponseAllOfFeaturePermissionsInner) SetAccess(v string) {
 	o.Access = &v
@@ -191,15 +155,6 @@ func (o *AddRoles200ResponseAllOfFeaturePermissionsInner) GetSubCategoryOk() (*s
 		return nil, false
 	}
 	return o.SubCategory, true
-}
-
-// IsSetSubCategory returns a boolean if a field has been set.
-func (o *AddRoles200ResponseAllOfFeaturePermissionsInner) IsSetSubCategory() bool {
-	if o != nil && !IsNil(o.SubCategory) {
-		return true
-	}
-
-	return false
 }
 
 // SetSubCategory gets a reference to the given string and assigns it to the SubCategory field.

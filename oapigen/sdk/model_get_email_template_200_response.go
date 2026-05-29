@@ -62,15 +62,6 @@ func (o *GetEmailTemplate200Response) GetEmailTemplateOk() (*AddEmailTemplate200
 	return o.EmailTemplate, true
 }
 
-// IsSetEmailTemplate returns a boolean if a field has been set.
-func (o *GetEmailTemplate200Response) IsSetEmailTemplate() bool {
-	if o != nil && !IsNil(o.EmailTemplate) {
-		return true
-	}
-
-	return false
-}
-
 // SetEmailTemplate gets a reference to the given AddEmailTemplate200ResponseEmailTemplate and assigns it to the EmailTemplate field.
 func (o *GetEmailTemplate200Response) SetEmailTemplate(v AddEmailTemplate200ResponseEmailTemplate) {
 	o.EmailTemplate = &v
@@ -92,15 +83,6 @@ func (o *GetEmailTemplate200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *GetEmailTemplate200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

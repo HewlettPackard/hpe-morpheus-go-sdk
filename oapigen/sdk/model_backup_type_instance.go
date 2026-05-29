@@ -230,15 +230,6 @@ func (o *BackupTypeInstance) GetJobIdOk() (*int64, bool) {
 	return o.JobId, true
 }
 
-// IsSetJobId returns a boolean if a field has been set.
-func (o *BackupTypeInstance) IsSetJobId() bool {
-	if o != nil && !IsNil(o.JobId) {
-		return true
-	}
-
-	return false
-}
-
 // SetJobId gets a reference to the given int64 and assigns it to the JobId field.
 func (o *BackupTypeInstance) SetJobId(v int64) {
 	o.JobId = &v
@@ -260,15 +251,6 @@ func (o *BackupTypeInstance) GetJobNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.JobName, true
-}
-
-// IsSetJobName returns a boolean if a field has been set.
-func (o *BackupTypeInstance) IsSetJobName() bool {
-	if o != nil && !IsNil(o.JobName) {
-		return true
-	}
-
-	return false
 }
 
 // SetJobName gets a reference to the given string and assigns it to the JobName field.
@@ -294,15 +276,6 @@ func (o *BackupTypeInstance) GetJobScheduleOk() (*int64, bool) {
 	return o.JobSchedule, true
 }
 
-// IsSetJobSchedule returns a boolean if a field has been set.
-func (o *BackupTypeInstance) IsSetJobSchedule() bool {
-	if o != nil && !IsNil(o.JobSchedule) {
-		return true
-	}
-
-	return false
-}
-
 // SetJobSchedule gets a reference to the given int64 and assigns it to the JobSchedule field.
 func (o *BackupTypeInstance) SetJobSchedule(v int64) {
 	o.JobSchedule = &v
@@ -326,15 +299,6 @@ func (o *BackupTypeInstance) GetRetentionCountOk() (*int64, bool) {
 	return o.RetentionCount, true
 }
 
-// IsSetRetentionCount returns a boolean if a field has been set.
-func (o *BackupTypeInstance) IsSetRetentionCount() bool {
-	if o != nil && !IsNil(o.RetentionCount) {
-		return true
-	}
-
-	return false
-}
-
 // SetRetentionCount gets a reference to the given int64 and assigns it to the RetentionCount field.
 func (o *BackupTypeInstance) SetRetentionCount(v int64) {
 	o.RetentionCount = &v
@@ -356,15 +320,6 @@ func (o *BackupTypeInstance) GetBackupJobOk() (*BackupTypeInstanceBackupJob, boo
 		return nil, false
 	}
 	return o.BackupJob, true
-}
-
-// IsSetBackupJob returns a boolean if a field has been set.
-func (o *BackupTypeInstance) IsSetBackupJob() bool {
-	if o != nil && !IsNil(o.BackupJob) {
-		return true
-	}
-
-	return false
 }
 
 // SetBackupJob gets a reference to the given BackupTypeInstanceBackupJob and assigns it to the BackupJob field.

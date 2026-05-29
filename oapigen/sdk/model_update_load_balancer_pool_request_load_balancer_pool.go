@@ -70,15 +70,6 @@ func (o *UpdateLoadBalancerPoolRequestLoadBalancerPool) GetNameOk() (*string, bo
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerPoolRequestLoadBalancerPool) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *UpdateLoadBalancerPoolRequestLoadBalancerPool) SetName(v string) {
 	o.Name = &v
@@ -100,15 +91,6 @@ func (o *UpdateLoadBalancerPoolRequestLoadBalancerPool) GetDescriptionOk() (*str
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerPoolRequestLoadBalancerPool) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -134,15 +116,6 @@ func (o *UpdateLoadBalancerPoolRequestLoadBalancerPool) GetVipBalanceOk() (*stri
 	return o.VipBalance, true
 }
 
-// IsSetVipBalance returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerPoolRequestLoadBalancerPool) IsSetVipBalance() bool {
-	if o != nil && !IsNil(o.VipBalance) {
-		return true
-	}
-
-	return false
-}
-
 // SetVipBalance gets a reference to the given string and assigns it to the VipBalance field.
 func (o *UpdateLoadBalancerPoolRequestLoadBalancerPool) SetVipBalance(v string) {
 	o.VipBalance = &v
@@ -166,15 +139,6 @@ func (o *UpdateLoadBalancerPoolRequestLoadBalancerPool) GetMinActiveOk() (*int64
 	return o.MinActive, true
 }
 
-// IsSetMinActive returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerPoolRequestLoadBalancerPool) IsSetMinActive() bool {
-	if o != nil && !IsNil(o.MinActive) {
-		return true
-	}
-
-	return false
-}
-
 // SetMinActive gets a reference to the given int64 and assigns it to the MinActive field.
 func (o *UpdateLoadBalancerPoolRequestLoadBalancerPool) SetMinActive(v int64) {
 	o.MinActive = &v
@@ -196,15 +160,6 @@ func (o *UpdateLoadBalancerPoolRequestLoadBalancerPool) GetConfigOk() (map[strin
 		return map[string]interface{}{}, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerPoolRequestLoadBalancerPool) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.

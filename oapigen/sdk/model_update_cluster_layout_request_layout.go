@@ -100,15 +100,6 @@ func (o *UpdateClusterLayoutRequestLayout) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateClusterLayoutRequestLayout) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *UpdateClusterLayoutRequestLayout) SetName(v string) {
 	o.Name = &v
@@ -133,28 +124,9 @@ func (o *UpdateClusterLayoutRequestLayout) GetDescriptionOk() (*string, bool) {
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *UpdateClusterLayoutRequestLayout) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *UpdateClusterLayoutRequestLayout) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *UpdateClusterLayoutRequestLayout) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *UpdateClusterLayoutRequestLayout) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetLabels returns the Labels field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -174,15 +146,6 @@ func (o *UpdateClusterLayoutRequestLayout) GetLabelsOk() ([]string, bool) {
 		return nil, false
 	}
 	return o.Labels, true
-}
-
-// IsSetLabels returns a boolean if a field has been set.
-func (o *UpdateClusterLayoutRequestLayout) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
 }
 
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
@@ -208,15 +171,6 @@ func (o *UpdateClusterLayoutRequestLayout) GetComputeVersionOk() (*string, bool)
 	return o.ComputeVersion, true
 }
 
-// IsSetComputeVersion returns a boolean if a field has been set.
-func (o *UpdateClusterLayoutRequestLayout) IsSetComputeVersion() bool {
-	if o != nil && !IsNil(o.ComputeVersion) {
-		return true
-	}
-
-	return false
-}
-
 // SetComputeVersion gets a reference to the given string and assigns it to the ComputeVersion field.
 func (o *UpdateClusterLayoutRequestLayout) SetComputeVersion(v string) {
 	o.ComputeVersion = &v
@@ -238,15 +192,6 @@ func (o *UpdateClusterLayoutRequestLayout) GetCreatableOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Creatable, true
-}
-
-// IsSetCreatable returns a boolean if a field has been set.
-func (o *UpdateClusterLayoutRequestLayout) IsSetCreatable() bool {
-	if o != nil && !IsNil(o.Creatable) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreatable gets a reference to the given bool and assigns it to the Creatable field.
@@ -272,15 +217,6 @@ func (o *UpdateClusterLayoutRequestLayout) GetHasAutoScaleOk() (*bool, bool) {
 	return o.HasAutoScale, true
 }
 
-// IsSetHasAutoScale returns a boolean if a field has been set.
-func (o *UpdateClusterLayoutRequestLayout) IsSetHasAutoScale() bool {
-	if o != nil && !IsNil(o.HasAutoScale) {
-		return true
-	}
-
-	return false
-}
-
 // SetHasAutoScale gets a reference to the given bool and assigns it to the HasAutoScale field.
 func (o *UpdateClusterLayoutRequestLayout) SetHasAutoScale(v bool) {
 	o.HasAutoScale = &v
@@ -302,15 +238,6 @@ func (o *UpdateClusterLayoutRequestLayout) GetInstallContainerRuntimeOk() (*bool
 		return nil, false
 	}
 	return o.InstallContainerRuntime, true
-}
-
-// IsSetInstallContainerRuntime returns a boolean if a field has been set.
-func (o *UpdateClusterLayoutRequestLayout) IsSetInstallContainerRuntime() bool {
-	if o != nil && !IsNil(o.InstallContainerRuntime) {
-		return true
-	}
-
-	return false
 }
 
 // SetInstallContainerRuntime gets a reference to the given bool and assigns it to the InstallContainerRuntime field.
@@ -336,15 +263,6 @@ func (o *UpdateClusterLayoutRequestLayout) GetMemoryRequirementOk() (*int64, boo
 	return o.MemoryRequirement, true
 }
 
-// IsSetMemoryRequirement returns a boolean if a field has been set.
-func (o *UpdateClusterLayoutRequestLayout) IsSetMemoryRequirement() bool {
-	if o != nil && !IsNil(o.MemoryRequirement) {
-		return true
-	}
-
-	return false
-}
-
 // SetMemoryRequirement gets a reference to the given int64 and assigns it to the MemoryRequirement field.
 func (o *UpdateClusterLayoutRequestLayout) SetMemoryRequirement(v int64) {
 	o.MemoryRequirement = &v
@@ -366,15 +284,6 @@ func (o *UpdateClusterLayoutRequestLayout) GetGroupTypeOk() (*UpdateClusterLayou
 		return nil, false
 	}
 	return o.GroupType, true
-}
-
-// IsSetGroupType returns a boolean if a field has been set.
-func (o *UpdateClusterLayoutRequestLayout) IsSetGroupType() bool {
-	if o != nil && !IsNil(o.GroupType) {
-		return true
-	}
-
-	return false
 }
 
 // SetGroupType gets a reference to the given UpdateClusterLayoutRequestLayoutGroupType and assigns it to the GroupType field.
@@ -400,15 +309,6 @@ func (o *UpdateClusterLayoutRequestLayout) GetProvisionTypeOk() (*UpdateClusterL
 	return o.ProvisionType, true
 }
 
-// IsSetProvisionType returns a boolean if a field has been set.
-func (o *UpdateClusterLayoutRequestLayout) IsSetProvisionType() bool {
-	if o != nil && !IsNil(o.ProvisionType) {
-		return true
-	}
-
-	return false
-}
-
 // SetProvisionType gets a reference to the given UpdateClusterLayoutRequestLayoutProvisionType and assigns it to the ProvisionType field.
 func (o *UpdateClusterLayoutRequestLayout) SetProvisionType(v UpdateClusterLayoutRequestLayoutProvisionType) {
 	o.ProvisionType = &v
@@ -430,15 +330,6 @@ func (o *UpdateClusterLayoutRequestLayout) GetOptionTypesOk() ([]UpdateClusterLa
 		return nil, false
 	}
 	return o.OptionTypes, true
-}
-
-// IsSetOptionTypes returns a boolean if a field has been set.
-func (o *UpdateClusterLayoutRequestLayout) IsSetOptionTypes() bool {
-	if o != nil && !IsNil(o.OptionTypes) {
-		return true
-	}
-
-	return false
 }
 
 // SetOptionTypes gets a reference to the given []UpdateClusterLayoutRequestLayoutOptionTypesInner and assigns it to the OptionTypes field.
@@ -464,15 +355,6 @@ func (o *UpdateClusterLayoutRequestLayout) GetTaskSetsOk() ([]UpdateClusterLayou
 	return o.TaskSets, true
 }
 
-// IsSetTaskSets returns a boolean if a field has been set.
-func (o *UpdateClusterLayoutRequestLayout) IsSetTaskSets() bool {
-	if o != nil && !IsNil(o.TaskSets) {
-		return true
-	}
-
-	return false
-}
-
 // SetTaskSets gets a reference to the given []UpdateClusterLayoutRequestLayoutTaskSetsInner and assigns it to the TaskSets field.
 func (o *UpdateClusterLayoutRequestLayout) SetTaskSets(v []UpdateClusterLayoutRequestLayoutTaskSetsInner) {
 	o.TaskSets = v
@@ -494,15 +376,6 @@ func (o *UpdateClusterLayoutRequestLayout) GetEnvironmentVariablesOk() ([]Update
 		return nil, false
 	}
 	return o.EnvironmentVariables, true
-}
-
-// IsSetEnvironmentVariables returns a boolean if a field has been set.
-func (o *UpdateClusterLayoutRequestLayout) IsSetEnvironmentVariables() bool {
-	if o != nil && !IsNil(o.EnvironmentVariables) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnvironmentVariables gets a reference to the given []UpdateClusterLayoutRequestLayoutEnvironmentVariablesInner and assigns it to the EnvironmentVariables field.
@@ -528,15 +401,6 @@ func (o *UpdateClusterLayoutRequestLayout) GetMastersOk() ([]UpdateClusterLayout
 	return o.Masters, true
 }
 
-// IsSetMasters returns a boolean if a field has been set.
-func (o *UpdateClusterLayoutRequestLayout) IsSetMasters() bool {
-	if o != nil && !IsNil(o.Masters) {
-		return true
-	}
-
-	return false
-}
-
 // SetMasters gets a reference to the given []UpdateClusterLayoutRequestLayoutMastersInner and assigns it to the Masters field.
 func (o *UpdateClusterLayoutRequestLayout) SetMasters(v []UpdateClusterLayoutRequestLayoutMastersInner) {
 	o.Masters = v
@@ -558,15 +422,6 @@ func (o *UpdateClusterLayoutRequestLayout) GetWorkersOk() ([]UpdateClusterLayout
 		return nil, false
 	}
 	return o.Workers, true
-}
-
-// IsSetWorkers returns a boolean if a field has been set.
-func (o *UpdateClusterLayoutRequestLayout) IsSetWorkers() bool {
-	if o != nil && !IsNil(o.Workers) {
-		return true
-	}
-
-	return false
 }
 
 // SetWorkers gets a reference to the given []UpdateClusterLayoutRequestLayoutWorkersInner and assigns it to the Workers field.

@@ -82,15 +82,6 @@ func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) GetIdOk() (*int64, bo
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) SetId(v int64) {
 	o.Id = &v
@@ -112,15 +103,6 @@ func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) GetCodeOk() (*string,
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -146,15 +128,6 @@ func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) GetNameOk() (*string,
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) SetName(v string) {
 	o.Name = &v
@@ -176,15 +149,6 @@ func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) GetDescriptionOk() (*
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -210,15 +174,6 @@ func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) GetNodeTypeOk() (*str
 	return o.NodeType, true
 }
 
-// IsSetNodeType returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) IsSetNodeType() bool {
-	if o != nil && !IsNil(o.NodeType) {
-		return true
-	}
-
-	return false
-}
-
 // SetNodeType gets a reference to the given string and assigns it to the NodeType field.
 func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) SetNodeType(v string) {
 	o.NodeType = &v
@@ -240,15 +195,6 @@ func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) GetPlatformOk() (*str
 		return nil, false
 	}
 	return o.Platform, true
-}
-
-// IsSetPlatform returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) IsSetPlatform() bool {
-	if o != nil && !IsNil(o.Platform) {
-		return true
-	}
-
-	return false
 }
 
 // SetPlatform gets a reference to the given string and assigns it to the Platform field.
@@ -274,15 +220,6 @@ func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) GetEnabledOk() (*bool
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -304,15 +241,6 @@ func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) GetSelectableOk() (*b
 		return nil, false
 	}
 	return o.Selectable, true
-}
-
-// IsSetSelectable returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) IsSetSelectable() bool {
-	if o != nil && !IsNil(o.Selectable) {
-		return true
-	}
-
-	return false
 }
 
 // SetSelectable gets a reference to the given bool and assigns it to the Selectable field.
@@ -338,15 +266,6 @@ func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) GetExternalDeleteOk()
 	return o.ExternalDelete, true
 }
 
-// IsSetExternalDelete returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) IsSetExternalDelete() bool {
-	if o != nil && !IsNil(o.ExternalDelete) {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalDelete gets a reference to the given bool and assigns it to the ExternalDelete field.
 func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) SetExternalDelete(v bool) {
 	o.ExternalDelete = &v
@@ -368,15 +287,6 @@ func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) GetManagedOk() (*bool
 		return nil, false
 	}
 	return o.Managed, true
-}
-
-// IsSetManaged returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) IsSetManaged() bool {
-	if o != nil && !IsNil(o.Managed) {
-		return true
-	}
-
-	return false
 }
 
 // SetManaged gets a reference to the given bool and assigns it to the Managed field.
@@ -402,15 +312,6 @@ func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) GetControlPowerOk() (
 	return o.ControlPower, true
 }
 
-// IsSetControlPower returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) IsSetControlPower() bool {
-	if o != nil && !IsNil(o.ControlPower) {
-		return true
-	}
-
-	return false
-}
-
 // SetControlPower gets a reference to the given bool and assigns it to the ControlPower field.
 func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) SetControlPower(v bool) {
 	o.ControlPower = &v
@@ -432,15 +333,6 @@ func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) GetControlSuspendOk()
 		return nil, false
 	}
 	return o.ControlSuspend, true
-}
-
-// IsSetControlSuspend returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) IsSetControlSuspend() bool {
-	if o != nil && !IsNil(o.ControlSuspend) {
-		return true
-	}
-
-	return false
 }
 
 // SetControlSuspend gets a reference to the given bool and assigns it to the ControlSuspend field.
@@ -466,15 +358,6 @@ func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) GetCreatableOk() (*bo
 	return o.Creatable, true
 }
 
-// IsSetCreatable returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) IsSetCreatable() bool {
-	if o != nil && !IsNil(o.Creatable) {
-		return true
-	}
-
-	return false
-}
-
 // SetCreatable gets a reference to the given bool and assigns it to the Creatable field.
 func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) SetCreatable(v bool) {
 	o.Creatable = &v
@@ -496,15 +379,6 @@ func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) GetHasAgentOk() (*boo
 		return nil, false
 	}
 	return o.HasAgent, true
-}
-
-// IsSetHasAgent returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) IsSetHasAgent() bool {
-	if o != nil && !IsNil(o.HasAgent) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasAgent gets a reference to the given bool and assigns it to the HasAgent field.
@@ -530,15 +404,6 @@ func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) GetVmHypervisorOk() (
 	return o.VmHypervisor, true
 }
 
-// IsSetVmHypervisor returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) IsSetVmHypervisor() bool {
-	if o != nil && !IsNil(o.VmHypervisor) {
-		return true
-	}
-
-	return false
-}
-
 // SetVmHypervisor gets a reference to the given bool and assigns it to the VmHypervisor field.
 func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) SetVmHypervisor(v bool) {
 	o.VmHypervisor = &v
@@ -560,15 +425,6 @@ func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) GetContainerHyperviso
 		return nil, false
 	}
 	return o.ContainerHypervisor, true
-}
-
-// IsSetContainerHypervisor returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) IsSetContainerHypervisor() bool {
-	if o != nil && !IsNil(o.ContainerHypervisor) {
-		return true
-	}
-
-	return false
 }
 
 // SetContainerHypervisor gets a reference to the given bool and assigns it to the ContainerHypervisor field.
@@ -594,15 +450,6 @@ func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) GetBareMetalHostOk() 
 	return o.BareMetalHost, true
 }
 
-// IsSetBareMetalHost returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) IsSetBareMetalHost() bool {
-	if o != nil && !IsNil(o.BareMetalHost) {
-		return true
-	}
-
-	return false
-}
-
 // SetBareMetalHost gets a reference to the given bool and assigns it to the BareMetalHost field.
 func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) SetBareMetalHost(v bool) {
 	o.BareMetalHost = &v
@@ -624,15 +471,6 @@ func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) GetGuestVmOk() (*bool
 		return nil, false
 	}
 	return o.GuestVm, true
-}
-
-// IsSetGuestVm returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) IsSetGuestVm() bool {
-	if o != nil && !IsNil(o.GuestVm) {
-		return true
-	}
-
-	return false
 }
 
 // SetGuestVm gets a reference to the given bool and assigns it to the GuestVm field.
@@ -658,15 +496,6 @@ func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) GetHasAutomationOk() 
 	return o.HasAutomation, true
 }
 
-// IsSetHasAutomation returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) IsSetHasAutomation() bool {
-	if o != nil && !IsNil(o.HasAutomation) {
-		return true
-	}
-
-	return false
-}
-
 // SetHasAutomation gets a reference to the given bool and assigns it to the HasAutomation field.
 func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) SetHasAutomation(v bool) {
 	o.HasAutomation = &v
@@ -688,15 +517,6 @@ func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) GetProvisionTypeOk() 
 		return nil, false
 	}
 	return o.ProvisionType, true
-}
-
-// IsSetProvisionType returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) IsSetProvisionType() bool {
-	if o != nil && !IsNil(o.ProvisionType) {
-		return true
-	}
-
-	return false
 }
 
 // SetProvisionType gets a reference to the given GetCloudTypes200ResponseZoneTypeServerTypesInnerProvisionType and assigns it to the ProvisionType field.
@@ -722,15 +542,6 @@ func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) GetOptionTypesOk() ([
 	return o.OptionTypes, true
 }
 
-// IsSetOptionTypes returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) IsSetOptionTypes() bool {
-	if o != nil && !IsNil(o.OptionTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetOptionTypes gets a reference to the given []GetCloudTypes200ResponseZoneTypeServerTypesInnerOptionTypesInner and assigns it to the OptionTypes field.
 func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) SetOptionTypes(v []GetCloudTypes200ResponseZoneTypeServerTypesInnerOptionTypesInner) {
 	o.OptionTypes = v
@@ -752,15 +563,6 @@ func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) GetDisplayOrderOk() (
 		return nil, false
 	}
 	return o.DisplayOrder, true
-}
-
-// IsSetDisplayOrder returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeServerTypesInner) IsSetDisplayOrder() bool {
-	if o != nil && !IsNil(o.DisplayOrder) {
-		return true
-	}
-
-	return false
 }
 
 // SetDisplayOrder gets a reference to the given int64 and assigns it to the DisplayOrder field.

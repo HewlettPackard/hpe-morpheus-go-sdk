@@ -63,15 +63,6 @@ func (o *ListArchiveBuckets200Response) GetArchiveBucketsOk() ([]ListArchiveBuck
 	return o.ArchiveBuckets, true
 }
 
-// IsSetArchiveBuckets returns a boolean if a field has been set.
-func (o *ListArchiveBuckets200Response) IsSetArchiveBuckets() bool {
-	if o != nil && !IsNil(o.ArchiveBuckets) {
-		return true
-	}
-
-	return false
-}
-
 // SetArchiveBuckets gets a reference to the given []ListArchiveBuckets200ResponseAllOfArchiveBucketsInner and assigns it to the ArchiveBuckets field.
 func (o *ListArchiveBuckets200Response) SetArchiveBuckets(v []ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) {
 	o.ArchiveBuckets = v
@@ -95,15 +86,6 @@ func (o *ListArchiveBuckets200Response) GetArchiveBucketCountOk() (*int64, bool)
 	return o.ArchiveBucketCount, true
 }
 
-// IsSetArchiveBucketCount returns a boolean if a field has been set.
-func (o *ListArchiveBuckets200Response) IsSetArchiveBucketCount() bool {
-	if o != nil && !IsNil(o.ArchiveBucketCount) {
-		return true
-	}
-
-	return false
-}
-
 // SetArchiveBucketCount gets a reference to the given int64 and assigns it to the ArchiveBucketCount field.
 func (o *ListArchiveBuckets200Response) SetArchiveBucketCount(v int64) {
 	o.ArchiveBucketCount = &v
@@ -125,15 +107,6 @@ func (o *ListArchiveBuckets200Response) GetMetaOk() (*ListApprovals200ResponseAl
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListArchiveBuckets200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

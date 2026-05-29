@@ -62,15 +62,6 @@ func (o *RestartClusterDeployment200Response) GetSuccessOk() (*bool, bool) {
 	return o.Success, true
 }
 
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *RestartClusterDeployment200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
-}
-
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.
 func (o *RestartClusterDeployment200Response) SetSuccess(v bool) {
 	o.Success = &v
@@ -93,15 +84,6 @@ func (o *RestartClusterDeployment200Response) GetErrorsOk() (map[string]interfac
 		return map[string]interface{}{}, false
 	}
 	return o.Errors, true
-}
-
-// IsSetErrors returns a boolean if a field has been set.
-func (o *RestartClusterDeployment200Response) IsSetErrors() bool {
-	if o != nil && !IsNil(o.Errors) {
-		return true
-	}
-
-	return false
 }
 
 // SetErrors gets a reference to the given map[string]interface{} and assigns it to the Errors field.

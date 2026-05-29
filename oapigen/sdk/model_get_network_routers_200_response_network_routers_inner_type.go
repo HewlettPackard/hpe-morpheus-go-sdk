@@ -73,15 +73,6 @@ func (o *GetNetworkRouters200ResponseNetworkRoutersInnerType) GetIdOk() (*int64,
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetNetworkRouters200ResponseNetworkRoutersInnerType) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetNetworkRouters200ResponseNetworkRoutersInnerType) SetId(v int64) {
 	o.Id = &v
@@ -103,15 +94,6 @@ func (o *GetNetworkRouters200ResponseNetworkRoutersInnerType) GetCodeOk() (*stri
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *GetNetworkRouters200ResponseNetworkRoutersInnerType) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -137,15 +119,6 @@ func (o *GetNetworkRouters200ResponseNetworkRoutersInnerType) GetNameOk() (*stri
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *GetNetworkRouters200ResponseNetworkRoutersInnerType) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *GetNetworkRouters200ResponseNetworkRoutersInnerType) SetName(v string) {
 	o.Name = &v
@@ -167,15 +140,6 @@ func (o *GetNetworkRouters200ResponseNetworkRoutersInnerType) GetDescriptionOk()
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *GetNetworkRouters200ResponseNetworkRoutersInnerType) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -201,15 +165,6 @@ func (o *GetNetworkRouters200ResponseNetworkRoutersInnerType) GetEnabledOk() (*b
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *GetNetworkRouters200ResponseNetworkRoutersInnerType) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *GetNetworkRouters200ResponseNetworkRoutersInnerType) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -231,15 +186,6 @@ func (o *GetNetworkRouters200ResponseNetworkRoutersInnerType) GetCreatableOk() (
 		return nil, false
 	}
 	return o.Creatable, true
-}
-
-// IsSetCreatable returns a boolean if a field has been set.
-func (o *GetNetworkRouters200ResponseNetworkRoutersInnerType) IsSetCreatable() bool {
-	if o != nil && !IsNil(o.Creatable) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreatable gets a reference to the given bool and assigns it to the Creatable field.
@@ -265,15 +211,6 @@ func (o *GetNetworkRouters200ResponseNetworkRoutersInnerType) GetSelectableOk() 
 	return o.Selectable, true
 }
 
-// IsSetSelectable returns a boolean if a field has been set.
-func (o *GetNetworkRouters200ResponseNetworkRoutersInnerType) IsSetSelectable() bool {
-	if o != nil && !IsNil(o.Selectable) {
-		return true
-	}
-
-	return false
-}
-
 // SetSelectable gets a reference to the given bool and assigns it to the Selectable field.
 func (o *GetNetworkRouters200ResponseNetworkRoutersInnerType) SetSelectable(v bool) {
 	o.Selectable = &v
@@ -295,15 +232,6 @@ func (o *GetNetworkRouters200ResponseNetworkRoutersInnerType) GetHasFirewallOk()
 		return nil, false
 	}
 	return o.HasFirewall, true
-}
-
-// IsSetHasFirewall returns a boolean if a field has been set.
-func (o *GetNetworkRouters200ResponseNetworkRoutersInnerType) IsSetHasFirewall() bool {
-	if o != nil && !IsNil(o.HasFirewall) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasFirewall gets a reference to the given bool and assigns it to the HasFirewall field.
@@ -329,15 +257,6 @@ func (o *GetNetworkRouters200ResponseNetworkRoutersInnerType) GetHasDhcpOk() (*b
 	return o.HasDhcp, true
 }
 
-// IsSetHasDhcp returns a boolean if a field has been set.
-func (o *GetNetworkRouters200ResponseNetworkRoutersInnerType) IsSetHasDhcp() bool {
-	if o != nil && !IsNil(o.HasDhcp) {
-		return true
-	}
-
-	return false
-}
-
 // SetHasDhcp gets a reference to the given bool and assigns it to the HasDhcp field.
 func (o *GetNetworkRouters200ResponseNetworkRoutersInnerType) SetHasDhcp(v bool) {
 	o.HasDhcp = &v
@@ -359,15 +278,6 @@ func (o *GetNetworkRouters200ResponseNetworkRoutersInnerType) GetHasRoutingOk() 
 		return nil, false
 	}
 	return o.HasRouting, true
-}
-
-// IsSetHasRouting returns a boolean if a field has been set.
-func (o *GetNetworkRouters200ResponseNetworkRoutersInnerType) IsSetHasRouting() bool {
-	if o != nil && !IsNil(o.HasRouting) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasRouting gets a reference to the given bool and assigns it to the HasRouting field.
@@ -393,15 +303,6 @@ func (o *GetNetworkRouters200ResponseNetworkRoutersInnerType) GetHasNetworkServe
 	return o.HasNetworkServer, true
 }
 
-// IsSetHasNetworkServer returns a boolean if a field has been set.
-func (o *GetNetworkRouters200ResponseNetworkRoutersInnerType) IsSetHasNetworkServer() bool {
-	if o != nil && !IsNil(o.HasNetworkServer) {
-		return true
-	}
-
-	return false
-}
-
 // SetHasNetworkServer gets a reference to the given bool and assigns it to the HasNetworkServer field.
 func (o *GetNetworkRouters200ResponseNetworkRoutersInnerType) SetHasNetworkServer(v bool) {
 	o.HasNetworkServer = &v
@@ -425,15 +326,6 @@ func (o *GetNetworkRouters200ResponseNetworkRoutersInnerType) GetOptionTypesOk()
 	return o.OptionTypes, true
 }
 
-// IsSetOptionTypes returns a boolean if a field has been set.
-func (o *GetNetworkRouters200ResponseNetworkRoutersInnerType) IsSetOptionTypes() bool {
-	if o != nil && !IsNil(o.OptionTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetOptionTypes gets a reference to the given []map[string]interface{} and assigns it to the OptionTypes field.
 func (o *GetNetworkRouters200ResponseNetworkRoutersInnerType) SetOptionTypes(v []map[string]interface{}) {
 	o.OptionTypes = v
@@ -455,15 +347,6 @@ func (o *GetNetworkRouters200ResponseNetworkRoutersInnerType) GetRuleOptionTypes
 		return nil, false
 	}
 	return o.RuleOptionTypes, true
-}
-
-// IsSetRuleOptionTypes returns a boolean if a field has been set.
-func (o *GetNetworkRouters200ResponseNetworkRoutersInnerType) IsSetRuleOptionTypes() bool {
-	if o != nil && !IsNil(o.RuleOptionTypes) {
-		return true
-	}
-
-	return false
 }
 
 // SetRuleOptionTypes gets a reference to the given []map[string]interface{} and assigns it to the RuleOptionTypes field.

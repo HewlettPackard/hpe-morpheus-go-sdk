@@ -61,15 +61,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerPermi
 	return o.ResourcePermissions, true
 }
 
-// IsSetResourcePermissions returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerPermissions) IsSetResourcePermissions() bool {
-	if o != nil && !IsNil(o.ResourcePermissions) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourcePermissions gets a reference to the given ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerPermissionsResourcePermissions and assigns it to the ResourcePermissions field.
 func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerPermissions) SetResourcePermissions(v ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerPermissionsResourcePermissions) {
 	o.ResourcePermissions = &v

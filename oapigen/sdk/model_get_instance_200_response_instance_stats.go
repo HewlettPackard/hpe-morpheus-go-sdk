@@ -68,15 +68,6 @@ func (o *GetInstance200ResponseInstanceStats) GetUsedStorageOk() (*int64, bool) 
 	return o.UsedStorage, true
 }
 
-// IsSetUsedStorage returns a boolean if a field has been set.
-func (o *GetInstance200ResponseInstanceStats) IsSetUsedStorage() bool {
-	if o != nil && !IsNil(o.UsedStorage) {
-		return true
-	}
-
-	return false
-}
-
 // SetUsedStorage gets a reference to the given int64 and assigns it to the UsedStorage field.
 func (o *GetInstance200ResponseInstanceStats) SetUsedStorage(v int64) {
 	o.UsedStorage = &v
@@ -98,15 +89,6 @@ func (o *GetInstance200ResponseInstanceStats) GetMaxStorageOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.MaxStorage, true
-}
-
-// IsSetMaxStorage returns a boolean if a field has been set.
-func (o *GetInstance200ResponseInstanceStats) IsSetMaxStorage() bool {
-	if o != nil && !IsNil(o.MaxStorage) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxStorage gets a reference to the given int64 and assigns it to the MaxStorage field.
@@ -132,15 +114,6 @@ func (o *GetInstance200ResponseInstanceStats) GetUsedMemoryOk() (*int64, bool) {
 	return o.UsedMemory, true
 }
 
-// IsSetUsedMemory returns a boolean if a field has been set.
-func (o *GetInstance200ResponseInstanceStats) IsSetUsedMemory() bool {
-	if o != nil && !IsNil(o.UsedMemory) {
-		return true
-	}
-
-	return false
-}
-
 // SetUsedMemory gets a reference to the given int64 and assigns it to the UsedMemory field.
 func (o *GetInstance200ResponseInstanceStats) SetUsedMemory(v int64) {
 	o.UsedMemory = &v
@@ -162,15 +135,6 @@ func (o *GetInstance200ResponseInstanceStats) GetMaxMemoryOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.MaxMemory, true
-}
-
-// IsSetMaxMemory returns a boolean if a field has been set.
-func (o *GetInstance200ResponseInstanceStats) IsSetMaxMemory() bool {
-	if o != nil && !IsNil(o.MaxMemory) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxMemory gets a reference to the given int64 and assigns it to the MaxMemory field.
@@ -196,15 +160,6 @@ func (o *GetInstance200ResponseInstanceStats) GetUsedCpuOk() (*float32, bool) {
 	return o.UsedCpu, true
 }
 
-// IsSetUsedCpu returns a boolean if a field has been set.
-func (o *GetInstance200ResponseInstanceStats) IsSetUsedCpu() bool {
-	if o != nil && !IsNil(o.UsedCpu) {
-		return true
-	}
-
-	return false
-}
-
 // SetUsedCpu gets a reference to the given float32 and assigns it to the UsedCpu field.
 func (o *GetInstance200ResponseInstanceStats) SetUsedCpu(v float32) {
 	o.UsedCpu = &v
@@ -226,15 +181,6 @@ func (o *GetInstance200ResponseInstanceStats) GetCpuUsageOk() (*float32, bool) {
 		return nil, false
 	}
 	return o.CpuUsage, true
-}
-
-// IsSetCpuUsage returns a boolean if a field has been set.
-func (o *GetInstance200ResponseInstanceStats) IsSetCpuUsage() bool {
-	if o != nil && !IsNil(o.CpuUsage) {
-		return true
-	}
-
-	return false
 }
 
 // SetCpuUsage gets a reference to the given float32 and assigns it to the CpuUsage field.
@@ -260,15 +206,6 @@ func (o *GetInstance200ResponseInstanceStats) GetCpuUsagePeakOk() (*float32, boo
 	return o.CpuUsagePeak, true
 }
 
-// IsSetCpuUsagePeak returns a boolean if a field has been set.
-func (o *GetInstance200ResponseInstanceStats) IsSetCpuUsagePeak() bool {
-	if o != nil && !IsNil(o.CpuUsagePeak) {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuUsagePeak gets a reference to the given float32 and assigns it to the CpuUsagePeak field.
 func (o *GetInstance200ResponseInstanceStats) SetCpuUsagePeak(v float32) {
 	o.CpuUsagePeak = &v
@@ -290,15 +227,6 @@ func (o *GetInstance200ResponseInstanceStats) GetCpuUsageAvgOk() (*float32, bool
 		return nil, false
 	}
 	return o.CpuUsageAvg, true
-}
-
-// IsSetCpuUsageAvg returns a boolean if a field has been set.
-func (o *GetInstance200ResponseInstanceStats) IsSetCpuUsageAvg() bool {
-	if o != nil && !IsNil(o.CpuUsageAvg) {
-		return true
-	}
-
-	return false
 }
 
 // SetCpuUsageAvg gets a reference to the given float32 and assigns it to the CpuUsageAvg field.

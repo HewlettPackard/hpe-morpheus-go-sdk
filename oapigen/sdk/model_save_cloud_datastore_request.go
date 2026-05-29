@@ -61,15 +61,6 @@ func (o *SaveCloudDatastoreRequest) GetDatastoreOk() (*SaveCloudDatastoreRequest
 	return o.Datastore, true
 }
 
-// IsSetDatastore returns a boolean if a field has been set.
-func (o *SaveCloudDatastoreRequest) IsSetDatastore() bool {
-	if o != nil && !IsNil(o.Datastore) {
-		return true
-	}
-
-	return false
-}
-
 // SetDatastore gets a reference to the given SaveCloudDatastoreRequestDatastore and assigns it to the Datastore field.
 func (o *SaveCloudDatastoreRequest) SetDatastore(v SaveCloudDatastoreRequestDatastore) {
 	o.Datastore = &v

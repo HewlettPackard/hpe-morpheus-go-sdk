@@ -61,15 +61,6 @@ func (o *GetUserPermissions200Response) GetAccessOk() (*GetUserPermissions200Res
 	return o.Access, true
 }
 
-// IsSetAccess returns a boolean if a field has been set.
-func (o *GetUserPermissions200Response) IsSetAccess() bool {
-	if o != nil && !IsNil(o.Access) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccess gets a reference to the given GetUserPermissions200ResponseAccess and assigns it to the Access field.
 func (o *GetUserPermissions200Response) SetAccess(v GetUserPermissions200ResponseAccess) {
 	o.Access = &v

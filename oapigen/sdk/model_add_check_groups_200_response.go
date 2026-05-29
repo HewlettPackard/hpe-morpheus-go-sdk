@@ -62,15 +62,6 @@ func (o *AddCheckGroups200Response) GetCheckGroupOk() (*AddCheckGroups200Respons
 	return o.CheckGroup, true
 }
 
-// IsSetCheckGroup returns a boolean if a field has been set.
-func (o *AddCheckGroups200Response) IsSetCheckGroup() bool {
-	if o != nil && !IsNil(o.CheckGroup) {
-		return true
-	}
-
-	return false
-}
-
 // SetCheckGroup gets a reference to the given AddCheckGroups200ResponseAllOfCheckGroup and assigns it to the CheckGroup field.
 func (o *AddCheckGroups200Response) SetCheckGroup(v AddCheckGroups200ResponseAllOfCheckGroup) {
 	o.CheckGroup = &v
@@ -92,15 +83,6 @@ func (o *AddCheckGroups200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *AddCheckGroups200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

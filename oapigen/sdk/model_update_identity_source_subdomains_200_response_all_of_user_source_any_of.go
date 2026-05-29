@@ -81,15 +81,6 @@ func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) GetIdOk(
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) SetId(v int64) {
 	o.Id = &v
@@ -111,15 +102,6 @@ func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) GetNameO
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -145,15 +127,6 @@ func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) GetDescr
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) SetDescription(v string) {
 	o.Description = &v
@@ -175,15 +148,6 @@ func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) GetCodeO
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -209,15 +173,6 @@ func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) GetTypeO
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given string and assigns it to the Type field.
 func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) SetType(v string) {
 	o.Type = &v
@@ -239,15 +194,6 @@ func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) GetActiv
 		return nil, false
 	}
 	return o.Active, true
-}
-
-// IsSetActive returns a boolean if a field has been set.
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
 }
 
 // SetActive gets a reference to the given bool and assigns it to the Active field.
@@ -273,15 +219,6 @@ func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) GetDelet
 	return o.Deleted, true
 }
 
-// IsSetDeleted returns a boolean if a field has been set.
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) IsSetDeleted() bool {
-	if o != nil && !IsNil(o.Deleted) {
-		return true
-	}
-
-	return false
-}
-
 // SetDeleted gets a reference to the given bool and assigns it to the Deleted field.
 func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) SetDeleted(v bool) {
 	o.Deleted = &v
@@ -303,15 +240,6 @@ func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) GetAutoS
 		return nil, false
 	}
 	return o.AutoSyncOnLogin, true
-}
-
-// IsSetAutoSyncOnLogin returns a boolean if a field has been set.
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) IsSetAutoSyncOnLogin() bool {
-	if o != nil && !IsNil(o.AutoSyncOnLogin) {
-		return true
-	}
-
-	return false
 }
 
 // SetAutoSyncOnLogin gets a reference to the given bool and assigns it to the AutoSyncOnLogin field.
@@ -337,15 +265,6 @@ func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) GetExter
 	return o.ExternalLogin, true
 }
 
-// IsSetExternalLogin returns a boolean if a field has been set.
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) IsSetExternalLogin() bool {
-	if o != nil && !IsNil(o.ExternalLogin) {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalLogin gets a reference to the given bool and assigns it to the ExternalLogin field.
 func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) SetExternalLogin(v bool) {
 	o.ExternalLogin = &v
@@ -367,15 +286,6 @@ func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) GetAllow
 		return nil, false
 	}
 	return o.AllowCustomMappings, true
-}
-
-// IsSetAllowCustomMappings returns a boolean if a field has been set.
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) IsSetAllowCustomMappings() bool {
-	if o != nil && !IsNil(o.AllowCustomMappings) {
-		return true
-	}
-
-	return false
 }
 
 // SetAllowCustomMappings gets a reference to the given bool and assigns it to the AllowCustomMappings field.
@@ -401,15 +311,6 @@ func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) GetManua
 	return o.ManualRoleAssignment, true
 }
 
-// IsSetManualRoleAssignment returns a boolean if a field has been set.
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) IsSetManualRoleAssignment() bool {
-	if o != nil && !IsNil(o.ManualRoleAssignment) {
-		return true
-	}
-
-	return false
-}
-
 // SetManualRoleAssignment gets a reference to the given bool and assigns it to the ManualRoleAssignment field.
 func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) SetManualRoleAssignment(v bool) {
 	o.ManualRoleAssignment = &v
@@ -431,15 +332,6 @@ func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) GetAccou
 		return nil, false
 	}
 	return o.Account, true
-}
-
-// IsSetAccount returns a boolean if a field has been set.
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccount gets a reference to the given UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOfAccount and assigns it to the Account field.
@@ -465,15 +357,6 @@ func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) GetDefau
 	return o.DefaultAccountRole, true
 }
 
-// IsSetDefaultAccountRole returns a boolean if a field has been set.
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) IsSetDefaultAccountRole() bool {
-	if o != nil && !IsNil(o.DefaultAccountRole) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultAccountRole gets a reference to the given UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOfDefaultAccountRole and assigns it to the DefaultAccountRole field.
 func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) SetDefaultAccountRole(v UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOfDefaultAccountRole) {
 	o.DefaultAccountRole = &v
@@ -495,15 +378,6 @@ func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) GetConfi
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOfConfig and assigns it to the Config field.
@@ -529,15 +403,6 @@ func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) GetRoleM
 	return o.RoleMappings, true
 }
 
-// IsSetRoleMappings returns a boolean if a field has been set.
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) IsSetRoleMappings() bool {
-	if o != nil && !IsNil(o.RoleMappings) {
-		return true
-	}
-
-	return false
-}
-
 // SetRoleMappings gets a reference to the given []UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOfRoleMappingsInner and assigns it to the RoleMappings field.
 func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) SetRoleMappings(v []UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOfRoleMappingsInner) {
 	o.RoleMappings = v
@@ -559,15 +424,6 @@ func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) GetSubdo
 		return nil, false
 	}
 	return o.Subdomain, true
-}
-
-// IsSetSubdomain returns a boolean if a field has been set.
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) IsSetSubdomain() bool {
-	if o != nil && !IsNil(o.Subdomain) {
-		return true
-	}
-
-	return false
 }
 
 // SetSubdomain gets a reference to the given string and assigns it to the Subdomain field.
@@ -593,15 +449,6 @@ func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) GetLogin
 	return o.LoginURL, true
 }
 
-// IsSetLoginURL returns a boolean if a field has been set.
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) IsSetLoginURL() bool {
-	if o != nil && !IsNil(o.LoginURL) {
-		return true
-	}
-
-	return false
-}
-
 // SetLoginURL gets a reference to the given string and assigns it to the LoginURL field.
 func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) SetLoginURL(v string) {
 	o.LoginURL = &v
@@ -623,15 +470,6 @@ func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) GetProvi
 		return map[string]interface{}{}, false
 	}
 	return o.ProviderSettings, true
-}
-
-// IsSetProviderSettings returns a boolean if a field has been set.
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) IsSetProviderSettings() bool {
-	if o != nil && !IsNil(o.ProviderSettings) {
-		return true
-	}
-
-	return false
 }
 
 // SetProviderSettings gets a reference to the given map[string]interface{} and assigns it to the ProviderSettings field.
@@ -657,15 +495,6 @@ func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) GetDateC
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -687,15 +516,6 @@ func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) GetLastU
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.

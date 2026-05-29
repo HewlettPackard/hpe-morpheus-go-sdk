@@ -70,15 +70,6 @@ func (o *CatalogTypesInner) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *CatalogTypesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *CatalogTypesInner) SetId(v int64) {
 	o.Id = &v
@@ -100,15 +91,6 @@ func (o *CatalogTypesInner) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *CatalogTypesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -135,28 +117,9 @@ func (o *CatalogTypesInner) GetDescriptionOk() (*string, bool) {
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *CatalogTypesInner) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *CatalogTypesInner) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *CatalogTypesInner) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *CatalogTypesInner) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
@@ -175,15 +138,6 @@ func (o *CatalogTypesInner) GetTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *CatalogTypesInner) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.
@@ -209,15 +163,6 @@ func (o *CatalogTypesInner) GetContextOk() (*string, bool) {
 	return o.Context, true
 }
 
-// IsSetContext returns a boolean if a field has been set.
-func (o *CatalogTypesInner) IsSetContext() bool {
-	if o != nil && !IsNil(o.Context) {
-		return true
-	}
-
-	return false
-}
-
 // SetContext gets a reference to the given string and assigns it to the Context field.
 func (o *CatalogTypesInner) SetContext(v string) {
 	o.Context = &v
@@ -239,15 +184,6 @@ func (o *CatalogTypesInner) GetFeaturedOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Featured, true
-}
-
-// IsSetFeatured returns a boolean if a field has been set.
-func (o *CatalogTypesInner) IsSetFeatured() bool {
-	if o != nil && !IsNil(o.Featured) {
-		return true
-	}
-
-	return false
 }
 
 // SetFeatured gets a reference to the given bool and assigns it to the Featured field.
@@ -273,15 +209,6 @@ func (o *CatalogTypesInner) GetAllowQuantityOk() (*bool, bool) {
 	return o.AllowQuantity, true
 }
 
-// IsSetAllowQuantity returns a boolean if a field has been set.
-func (o *CatalogTypesInner) IsSetAllowQuantity() bool {
-	if o != nil && !IsNil(o.AllowQuantity) {
-		return true
-	}
-
-	return false
-}
-
 // SetAllowQuantity gets a reference to the given bool and assigns it to the AllowQuantity field.
 func (o *CatalogTypesInner) SetAllowQuantity(v bool) {
 	o.AllowQuantity = &v
@@ -303,15 +230,6 @@ func (o *CatalogTypesInner) GetImagePathOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ImagePath, true
-}
-
-// IsSetImagePath returns a boolean if a field has been set.
-func (o *CatalogTypesInner) IsSetImagePath() bool {
-	if o != nil && !IsNil(o.ImagePath) {
-		return true
-	}
-
-	return false
 }
 
 // SetImagePath gets a reference to the given string and assigns it to the ImagePath field.
@@ -337,15 +255,6 @@ func (o *CatalogTypesInner) GetDarkImagePathOk() (*string, bool) {
 	return o.DarkImagePath, true
 }
 
-// IsSetDarkImagePath returns a boolean if a field has been set.
-func (o *CatalogTypesInner) IsSetDarkImagePath() bool {
-	if o != nil && !IsNil(o.DarkImagePath) {
-		return true
-	}
-
-	return false
-}
-
 // SetDarkImagePath gets a reference to the given string and assigns it to the DarkImagePath field.
 func (o *CatalogTypesInner) SetDarkImagePath(v string) {
 	o.DarkImagePath = &v
@@ -367,15 +276,6 @@ func (o *CatalogTypesInner) GetFormTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.FormType, true
-}
-
-// IsSetFormType returns a boolean if a field has been set.
-func (o *CatalogTypesInner) IsSetFormType() bool {
-	if o != nil && !IsNil(o.FormType) {
-		return true
-	}
-
-	return false
 }
 
 // SetFormType gets a reference to the given string and assigns it to the FormType field.

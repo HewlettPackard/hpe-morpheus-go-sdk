@@ -70,15 +70,6 @@ func (o *GetApprovalsItem200ResponseApprovalItemDetailsInner) GetCategoryOk() (*
 	return o.Category, true
 }
 
-// IsSetCategory returns a boolean if a field has been set.
-func (o *GetApprovalsItem200ResponseApprovalItemDetailsInner) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
-		return true
-	}
-
-	return false
-}
-
 // SetCategory gets a reference to the given string and assigns it to the Category field.
 func (o *GetApprovalsItem200ResponseApprovalItemDetailsInner) SetCategory(v string) {
 	o.Category = &v
@@ -102,15 +93,6 @@ func (o *GetApprovalsItem200ResponseApprovalItemDetailsInner) GetTypeOk() (*stri
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *GetApprovalsItem200ResponseApprovalItemDetailsInner) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given string and assigns it to the Type field.
 func (o *GetApprovalsItem200ResponseApprovalItemDetailsInner) SetType(v string) {
 	o.Type = &v
@@ -132,15 +114,6 @@ func (o *GetApprovalsItem200ResponseApprovalItemDetailsInner) GetNameOk() (*stri
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *GetApprovalsItem200ResponseApprovalItemDetailsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -167,28 +140,9 @@ func (o *GetApprovalsItem200ResponseApprovalItemDetailsInner) GetFromValueOk() (
 	return o.FromValue.Get(), o.FromValue.IsSet()
 }
 
-// IsSetFromValue returns a boolean if a field has been set.
-func (o *GetApprovalsItem200ResponseApprovalItemDetailsInner) IsSetFromValue() bool {
-	if o != nil && o.FromValue.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFromValue gets a reference to the given NullableString and assigns it to the FromValue field.
 func (o *GetApprovalsItem200ResponseApprovalItemDetailsInner) SetFromValue(v string) {
 	o.FromValue.Set(&v)
-}
-
-// SetFromValueNil sets the value for FromValue to be an explicit nil
-func (o *GetApprovalsItem200ResponseApprovalItemDetailsInner) SetFromValueNil() {
-	o.FromValue.Set(nil)
-}
-
-// UnsetFromValue ensures that no value is present for FromValue, not even an explicit nil
-func (o *GetApprovalsItem200ResponseApprovalItemDetailsInner) UnsetFromValue() {
-	o.FromValue.Unset()
 }
 
 // GetToValue returns the ToValue field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -210,28 +164,9 @@ func (o *GetApprovalsItem200ResponseApprovalItemDetailsInner) GetToValueOk() (*s
 	return o.ToValue.Get(), o.ToValue.IsSet()
 }
 
-// IsSetToValue returns a boolean if a field has been set.
-func (o *GetApprovalsItem200ResponseApprovalItemDetailsInner) IsSetToValue() bool {
-	if o != nil && o.ToValue.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetToValue gets a reference to the given NullableString and assigns it to the ToValue field.
 func (o *GetApprovalsItem200ResponseApprovalItemDetailsInner) SetToValue(v string) {
 	o.ToValue.Set(&v)
-}
-
-// SetToValueNil sets the value for ToValue to be an explicit nil
-func (o *GetApprovalsItem200ResponseApprovalItemDetailsInner) SetToValueNil() {
-	o.ToValue.Set(nil)
-}
-
-// UnsetToValue ensures that no value is present for ToValue, not even an explicit nil
-func (o *GetApprovalsItem200ResponseApprovalItemDetailsInner) UnsetToValue() {
-	o.ToValue.Unset()
 }
 
 func (o GetApprovalsItem200ResponseApprovalItemDetailsInner) MarshalJSON() ([]byte, error) {

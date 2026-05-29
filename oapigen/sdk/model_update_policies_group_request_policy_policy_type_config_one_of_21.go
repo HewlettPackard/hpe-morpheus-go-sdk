@@ -66,15 +66,6 @@ func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf21) GetMotdTitleOk
 	return o.MotdTitle, true
 }
 
-// IsSetMotdTitle returns a boolean if a field has been set.
-func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf21) IsSetMotdTitle() bool {
-	if o != nil && !IsNil(o.MotdTitle) {
-		return true
-	}
-
-	return false
-}
-
 // SetMotdTitle gets a reference to the given string and assigns it to the MotdTitle field.
 func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf21) SetMotdTitle(v string) {
 	o.MotdTitle = &v
@@ -96,15 +87,6 @@ func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf21) GetMotdOk() (*
 		return nil, false
 	}
 	return o.Motd, true
-}
-
-// IsSetMotd returns a boolean if a field has been set.
-func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf21) IsSetMotd() bool {
-	if o != nil && !IsNil(o.Motd) {
-		return true
-	}
-
-	return false
 }
 
 // SetMotd gets a reference to the given UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf21Motd and assigns it to the Motd field.
@@ -130,15 +112,6 @@ func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf21) GetMotdMessage
 	return o.MotdMessage, true
 }
 
-// IsSetMotdMessage returns a boolean if a field has been set.
-func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf21) IsSetMotdMessage() bool {
-	if o != nil && !IsNil(o.MotdMessage) {
-		return true
-	}
-
-	return false
-}
-
 // SetMotdMessage gets a reference to the given string and assigns it to the MotdMessage field.
 func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf21) SetMotdMessage(v string) {
 	o.MotdMessage = &v
@@ -160,15 +133,6 @@ func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf21) GetMotdTypeOk(
 		return nil, false
 	}
 	return o.MotdType, true
-}
-
-// IsSetMotdType returns a boolean if a field has been set.
-func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf21) IsSetMotdType() bool {
-	if o != nil && !IsNil(o.MotdType) {
-		return true
-	}
-
-	return false
 }
 
 // SetMotdType gets a reference to the given string and assigns it to the MotdType field.
@@ -195,28 +159,9 @@ func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf21) GetMotdFullPag
 	return o.MotdFullPage.Get(), o.MotdFullPage.IsSet()
 }
 
-// IsSetMotdFullPage returns a boolean if a field has been set.
-func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf21) IsSetMotdFullPage() bool {
-	if o != nil && o.MotdFullPage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMotdFullPage gets a reference to the given NullableBool and assigns it to the MotdFullPage field.
 func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf21) SetMotdFullPage(v bool) {
 	o.MotdFullPage.Set(&v)
-}
-
-// SetMotdFullPageNil sets the value for MotdFullPage to be an explicit nil
-func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf21) SetMotdFullPageNil() {
-	o.MotdFullPage.Set(nil)
-}
-
-// UnsetMotdFullPage ensures that no value is present for MotdFullPage, not even an explicit nil
-func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf21) UnsetMotdFullPage() {
-	o.MotdFullPage.Unset()
 }
 
 // GetMotdDate returns the MotdDate field value if set, zero value otherwise.
@@ -235,15 +180,6 @@ func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf21) GetMotdDateOk(
 		return nil, false
 	}
 	return o.MotdDate, true
-}
-
-// IsSetMotdDate returns a boolean if a field has been set.
-func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf21) IsSetMotdDate() bool {
-	if o != nil && !IsNil(o.MotdDate) {
-		return true
-	}
-
-	return false
 }
 
 // SetMotdDate gets a reference to the given string and assigns it to the MotdDate field.

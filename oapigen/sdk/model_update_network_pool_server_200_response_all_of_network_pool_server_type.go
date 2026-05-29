@@ -63,15 +63,6 @@ func (o *UpdateNetworkPoolServer200ResponseAllOfNetworkPoolServerType) GetIdOk()
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *UpdateNetworkPoolServer200ResponseAllOfNetworkPoolServerType) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *UpdateNetworkPoolServer200ResponseAllOfNetworkPoolServerType) SetId(v int64) {
 	o.Id = &v
@@ -95,15 +86,6 @@ func (o *UpdateNetworkPoolServer200ResponseAllOfNetworkPoolServerType) GetNameOk
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateNetworkPoolServer200ResponseAllOfNetworkPoolServerType) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *UpdateNetworkPoolServer200ResponseAllOfNetworkPoolServerType) SetName(v string) {
 	o.Name = &v
@@ -125,15 +107,6 @@ func (o *UpdateNetworkPoolServer200ResponseAllOfNetworkPoolServerType) GetCodeOk
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *UpdateNetworkPoolServer200ResponseAllOfNetworkPoolServerType) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.

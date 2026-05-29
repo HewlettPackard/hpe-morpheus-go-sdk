@@ -70,15 +70,6 @@ func (o *ActivityActivityInner) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ActivityActivityInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given string and assigns it to the Id field.
 func (o *ActivityActivityInner) SetId(v string) {
 	o.Id = &v
@@ -100,15 +91,6 @@ func (o *ActivityActivityInner) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *ActivityActivityInner) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.
@@ -134,15 +116,6 @@ func (o *ActivityActivityInner) GetActivityTypeOk() (*string, bool) {
 	return o.ActivityType, true
 }
 
-// IsSetActivityType returns a boolean if a field has been set.
-func (o *ActivityActivityInner) IsSetActivityType() bool {
-	if o != nil && !IsNil(o.ActivityType) {
-		return true
-	}
-
-	return false
-}
-
 // SetActivityType gets a reference to the given string and assigns it to the ActivityType field.
 func (o *ActivityActivityInner) SetActivityType(v string) {
 	o.ActivityType = &v
@@ -164,15 +137,6 @@ func (o *ActivityActivityInner) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ActivityActivityInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -198,15 +162,6 @@ func (o *ActivityActivityInner) GetMessageOk() (*string, bool) {
 	return o.Message, true
 }
 
-// IsSetMessage returns a boolean if a field has been set.
-func (o *ActivityActivityInner) IsSetMessage() bool {
-	if o != nil && !IsNil(o.Message) {
-		return true
-	}
-
-	return false
-}
-
 // SetMessage gets a reference to the given string and assigns it to the Message field.
 func (o *ActivityActivityInner) SetMessage(v string) {
 	o.Message = &v
@@ -228,15 +183,6 @@ func (o *ActivityActivityInner) GetObjectTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ObjectType, true
-}
-
-// IsSetObjectType returns a boolean if a field has been set.
-func (o *ActivityActivityInner) IsSetObjectType() bool {
-	if o != nil && !IsNil(o.ObjectType) {
-		return true
-	}
-
-	return false
 }
 
 // SetObjectType gets a reference to the given string and assigns it to the ObjectType field.
@@ -262,15 +208,6 @@ func (o *ActivityActivityInner) GetObjectIdOk() (*int64, bool) {
 	return o.ObjectId, true
 }
 
-// IsSetObjectId returns a boolean if a field has been set.
-func (o *ActivityActivityInner) IsSetObjectId() bool {
-	if o != nil && !IsNil(o.ObjectId) {
-		return true
-	}
-
-	return false
-}
-
 // SetObjectId gets a reference to the given int64 and assigns it to the ObjectId field.
 func (o *ActivityActivityInner) SetObjectId(v int64) {
 	o.ObjectId = &v
@@ -294,15 +231,6 @@ func (o *ActivityActivityInner) GetUserOk() (*ActivityActivityInnerUser, bool) {
 	return o.User, true
 }
 
-// IsSetUser returns a boolean if a field has been set.
-func (o *ActivityActivityInner) IsSetUser() bool {
-	if o != nil && !IsNil(o.User) {
-		return true
-	}
-
-	return false
-}
-
 // SetUser gets a reference to the given ActivityActivityInnerUser and assigns it to the User field.
 func (o *ActivityActivityInner) SetUser(v ActivityActivityInnerUser) {
 	o.User = &v
@@ -324,15 +252,6 @@ func (o *ActivityActivityInner) GetTsOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.Ts, true
-}
-
-// IsSetTs returns a boolean if a field has been set.
-func (o *ActivityActivityInner) IsSetTs() bool {
-	if o != nil && !IsNil(o.Ts) {
-		return true
-	}
-
-	return false
 }
 
 // SetTs gets a reference to the given time.Time and assigns it to the Ts field.

@@ -62,15 +62,6 @@ func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf29) GetCreateUserT
 	return o.CreateUserType, true
 }
 
-// IsSetCreateUserType returns a boolean if a field has been set.
-func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf29) IsSetCreateUserType() bool {
-	if o != nil && !IsNil(o.CreateUserType) {
-		return true
-	}
-
-	return false
-}
-
 // SetCreateUserType gets a reference to the given string and assigns it to the CreateUserType field.
 func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf29) SetCreateUserType(v string) {
 	o.CreateUserType = &v
@@ -92,15 +83,6 @@ func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf29) GetCreateUserO
 		return nil, false
 	}
 	return o.CreateUser, true
-}
-
-// IsSetCreateUser returns a boolean if a field has been set.
-func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf29) IsSetCreateUser() bool {
-	if o != nil && !IsNil(o.CreateUser) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreateUser gets a reference to the given bool and assigns it to the CreateUser field.

@@ -61,15 +61,6 @@ func (o *GetClusterAffinityGroup200Response) GetAffinityGroupOk() (*GetClusterAf
 	return o.AffinityGroup, true
 }
 
-// IsSetAffinityGroup returns a boolean if a field has been set.
-func (o *GetClusterAffinityGroup200Response) IsSetAffinityGroup() bool {
-	if o != nil && !IsNil(o.AffinityGroup) {
-		return true
-	}
-
-	return false
-}
-
 // SetAffinityGroup gets a reference to the given GetClusterAffinityGroup200ResponseAffinityGroup and assigns it to the AffinityGroup field.
 func (o *GetClusterAffinityGroup200Response) SetAffinityGroup(v GetClusterAffinityGroup200ResponseAffinityGroup) {
 	o.AffinityGroup = &v

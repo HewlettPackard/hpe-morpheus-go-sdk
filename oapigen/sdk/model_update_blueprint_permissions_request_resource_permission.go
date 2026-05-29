@@ -66,15 +66,6 @@ func (o *UpdateBlueprintPermissionsRequestResourcePermission) GetAllOk() (*bool,
 	return o.All, true
 }
 
-// IsSetAll returns a boolean if a field has been set.
-func (o *UpdateBlueprintPermissionsRequestResourcePermission) IsSetAll() bool {
-	if o != nil && !IsNil(o.All) {
-		return true
-	}
-
-	return false
-}
-
 // SetAll gets a reference to the given bool and assigns it to the All field.
 func (o *UpdateBlueprintPermissionsRequestResourcePermission) SetAll(v bool) {
 	o.All = &v
@@ -98,15 +89,6 @@ func (o *UpdateBlueprintPermissionsRequestResourcePermission) GetSitesOk() ([]Up
 	return o.Sites, true
 }
 
-// IsSetSites returns a boolean if a field has been set.
-func (o *UpdateBlueprintPermissionsRequestResourcePermission) IsSetSites() bool {
-	if o != nil && !IsNil(o.Sites) {
-		return true
-	}
-
-	return false
-}
-
 // SetSites gets a reference to the given []UpdateBlueprintPermissionsRequestResourcePermissionSitesInner and assigns it to the Sites field.
 func (o *UpdateBlueprintPermissionsRequestResourcePermission) SetSites(v []UpdateBlueprintPermissionsRequestResourcePermissionSitesInner) {
 	o.Sites = v
@@ -128,15 +110,6 @@ func (o *UpdateBlueprintPermissionsRequestResourcePermission) GetOwnerIdOk() (*i
 		return nil, false
 	}
 	return o.OwnerId, true
-}
-
-// IsSetOwnerId returns a boolean if a field has been set.
-func (o *UpdateBlueprintPermissionsRequestResourcePermission) IsSetOwnerId() bool {
-	if o != nil && !IsNil(o.OwnerId) {
-		return true
-	}
-
-	return false
 }
 
 // SetOwnerId gets a reference to the given int64 and assigns it to the OwnerId field.

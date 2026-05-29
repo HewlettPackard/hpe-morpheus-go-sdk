@@ -64,15 +64,6 @@ func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig) GetClusterPro
 	return o.ClusterProfileBindings, true
 }
 
-// IsSetClusterProfileBindings returns a boolean if a field has been set.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig) IsSetClusterProfileBindings() bool {
-	if o != nil && !IsNil(o.ClusterProfileBindings) {
-		return true
-	}
-
-	return false
-}
-
 // SetClusterProfileBindings gets a reference to the given string and assigns it to the ClusterProfileBindings field.
 func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig) SetClusterProfileBindings(v string) {
 	o.ClusterProfileBindings = &v
@@ -94,15 +85,6 @@ func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig) GetMembersOk(
 		return nil, false
 	}
 	return o.Members, true
-}
-
-// IsSetMembers returns a boolean if a field has been set.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig) IsSetMembers() bool {
-	if o != nil && !IsNil(o.Members) {
-		return true
-	}
-
-	return false
 }
 
 // SetMembers gets a reference to the given int32 and assigns it to the Members field.
@@ -128,15 +110,6 @@ func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig) GetDeployment
 	return o.DeploymentType, true
 }
 
-// IsSetDeploymentType returns a boolean if a field has been set.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig) IsSetDeploymentType() bool {
-	if o != nil && !IsNil(o.DeploymentType) {
-		return true
-	}
-
-	return false
-}
-
 // SetDeploymentType gets a reference to the given string and assigns it to the DeploymentType field.
 func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig) SetDeploymentType(v string) {
 	o.DeploymentType = &v
@@ -158,15 +131,6 @@ func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig) GetMemberNode
 		return nil, false
 	}
 	return o.MemberNodeType, true
-}
-
-// IsSetMemberNodeType returns a boolean if a field has been set.
-func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig) IsSetMemberNodeType() bool {
-	if o != nil && !IsNil(o.MemberNodeType) {
-		return true
-	}
-
-	return false
 }
 
 // SetMemberNodeType gets a reference to the given string and assigns it to the MemberNodeType field.

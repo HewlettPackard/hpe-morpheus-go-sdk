@@ -89,15 +89,6 @@ func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInne
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) SetId(v int64) {
 	o.Id = &v
@@ -119,15 +110,6 @@ func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInne
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -154,28 +136,9 @@ func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInne
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetCode returns the Code field value if set, zero value otherwise.
@@ -194,15 +157,6 @@ func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInne
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -228,15 +182,6 @@ func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInne
 	return o.FieldName, true
 }
 
-// IsSetFieldName returns a boolean if a field has been set.
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) IsSetFieldName() bool {
-	if o != nil && !IsNil(o.FieldName) {
-		return true
-	}
-
-	return false
-}
-
 // SetFieldName gets a reference to the given string and assigns it to the FieldName field.
 func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) SetFieldName(v string) {
 	o.FieldName = &v
@@ -260,15 +205,6 @@ func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInne
 	return o.FieldLabel, true
 }
 
-// IsSetFieldLabel returns a boolean if a field has been set.
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) IsSetFieldLabel() bool {
-	if o != nil && !IsNil(o.FieldLabel) {
-		return true
-	}
-
-	return false
-}
-
 // SetFieldLabel gets a reference to the given string and assigns it to the FieldLabel field.
 func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) SetFieldLabel(v string) {
 	o.FieldLabel = &v
@@ -290,15 +226,6 @@ func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInne
 		return nil, false
 	}
 	return o.FieldContext, true
-}
-
-// IsSetFieldContext returns a boolean if a field has been set.
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) IsSetFieldContext() bool {
-	if o != nil && !IsNil(o.FieldContext) {
-		return true
-	}
-
-	return false
 }
 
 // SetFieldContext gets a reference to the given string and assigns it to the FieldContext field.
@@ -325,28 +252,9 @@ func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInne
 	return o.FieldGroup.Get(), o.FieldGroup.IsSet()
 }
 
-// IsSetFieldGroup returns a boolean if a field has been set.
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) IsSetFieldGroup() bool {
-	if o != nil && o.FieldGroup.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFieldGroup gets a reference to the given NullableString and assigns it to the FieldGroup field.
 func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) SetFieldGroup(v string) {
 	o.FieldGroup.Set(&v)
-}
-
-// SetFieldGroupNil sets the value for FieldGroup to be an explicit nil
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) SetFieldGroupNil() {
-	o.FieldGroup.Set(nil)
-}
-
-// UnsetFieldGroup ensures that no value is present for FieldGroup, not even an explicit nil
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) UnsetFieldGroup() {
-	o.FieldGroup.Unset()
 }
 
 // GetFieldClass returns the FieldClass field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -368,28 +276,9 @@ func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInne
 	return o.FieldClass.Get(), o.FieldClass.IsSet()
 }
 
-// IsSetFieldClass returns a boolean if a field has been set.
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) IsSetFieldClass() bool {
-	if o != nil && o.FieldClass.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFieldClass gets a reference to the given NullableString and assigns it to the FieldClass field.
 func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) SetFieldClass(v string) {
 	o.FieldClass.Set(&v)
-}
-
-// SetFieldClassNil sets the value for FieldClass to be an explicit nil
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) SetFieldClassNil() {
-	o.FieldClass.Set(nil)
-}
-
-// UnsetFieldClass ensures that no value is present for FieldClass, not even an explicit nil
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) UnsetFieldClass() {
-	o.FieldClass.Unset()
 }
 
 // GetFieldAddOn returns the FieldAddOn field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -411,28 +300,9 @@ func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInne
 	return o.FieldAddOn.Get(), o.FieldAddOn.IsSet()
 }
 
-// IsSetFieldAddOn returns a boolean if a field has been set.
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) IsSetFieldAddOn() bool {
-	if o != nil && o.FieldAddOn.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFieldAddOn gets a reference to the given NullableString and assigns it to the FieldAddOn field.
 func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) SetFieldAddOn(v string) {
 	o.FieldAddOn.Set(&v)
-}
-
-// SetFieldAddOnNil sets the value for FieldAddOn to be an explicit nil
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) SetFieldAddOnNil() {
-	o.FieldAddOn.Set(nil)
-}
-
-// UnsetFieldAddOn ensures that no value is present for FieldAddOn, not even an explicit nil
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) UnsetFieldAddOn() {
-	o.FieldAddOn.Unset()
 }
 
 // GetFieldComponent returns the FieldComponent field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -454,28 +324,9 @@ func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInne
 	return o.FieldComponent.Get(), o.FieldComponent.IsSet()
 }
 
-// IsSetFieldComponent returns a boolean if a field has been set.
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) IsSetFieldComponent() bool {
-	if o != nil && o.FieldComponent.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFieldComponent gets a reference to the given NullableString and assigns it to the FieldComponent field.
 func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) SetFieldComponent(v string) {
 	o.FieldComponent.Set(&v)
-}
-
-// SetFieldComponentNil sets the value for FieldComponent to be an explicit nil
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) SetFieldComponentNil() {
-	o.FieldComponent.Set(nil)
-}
-
-// UnsetFieldComponent ensures that no value is present for FieldComponent, not even an explicit nil
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) UnsetFieldComponent() {
-	o.FieldComponent.Unset()
 }
 
 // GetFieldInput returns the FieldInput field value if set, zero value otherwise.
@@ -494,15 +345,6 @@ func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInne
 		return nil, false
 	}
 	return o.FieldInput, true
-}
-
-// IsSetFieldInput returns a boolean if a field has been set.
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) IsSetFieldInput() bool {
-	if o != nil && !IsNil(o.FieldInput) {
-		return true
-	}
-
-	return false
 }
 
 // SetFieldInput gets a reference to the given string and assigns it to the FieldInput field.
@@ -529,28 +371,9 @@ func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInne
 	return o.PlaceHolder.Get(), o.PlaceHolder.IsSet()
 }
 
-// IsSetPlaceHolder returns a boolean if a field has been set.
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) IsSetPlaceHolder() bool {
-	if o != nil && o.PlaceHolder.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPlaceHolder gets a reference to the given NullableString and assigns it to the PlaceHolder field.
 func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) SetPlaceHolder(v string) {
 	o.PlaceHolder.Set(&v)
-}
-
-// SetPlaceHolderNil sets the value for PlaceHolder to be an explicit nil
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) SetPlaceHolderNil() {
-	o.PlaceHolder.Set(nil)
-}
-
-// UnsetPlaceHolder ensures that no value is present for PlaceHolder, not even an explicit nil
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) UnsetPlaceHolder() {
-	o.PlaceHolder.Unset()
 }
 
 // GetHelpBlock returns the HelpBlock field value if set, zero value otherwise.
@@ -569,15 +392,6 @@ func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInne
 		return nil, false
 	}
 	return o.HelpBlock, true
-}
-
-// IsSetHelpBlock returns a boolean if a field has been set.
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) IsSetHelpBlock() bool {
-	if o != nil && !IsNil(o.HelpBlock) {
-		return true
-	}
-
-	return false
 }
 
 // SetHelpBlock gets a reference to the given string and assigns it to the HelpBlock field.
@@ -604,28 +418,9 @@ func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInne
 	return o.DefaultValue.Get(), o.DefaultValue.IsSet()
 }
 
-// IsSetDefaultValue returns a boolean if a field has been set.
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) IsSetDefaultValue() bool {
-	if o != nil && o.DefaultValue.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultValue gets a reference to the given NullableString and assigns it to the DefaultValue field.
 func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) SetDefaultValue(v string) {
 	o.DefaultValue.Set(&v)
-}
-
-// SetDefaultValueNil sets the value for DefaultValue to be an explicit nil
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) SetDefaultValueNil() {
-	o.DefaultValue.Set(nil)
-}
-
-// UnsetDefaultValue ensures that no value is present for DefaultValue, not even an explicit nil
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) UnsetDefaultValue() {
-	o.DefaultValue.Unset()
 }
 
 // GetOptionSource returns the OptionSource field value if set, zero value otherwise.
@@ -644,15 +439,6 @@ func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInne
 		return nil, false
 	}
 	return o.OptionSource, true
-}
-
-// IsSetOptionSource returns a boolean if a field has been set.
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) IsSetOptionSource() bool {
-	if o != nil && !IsNil(o.OptionSource) {
-		return true
-	}
-
-	return false
 }
 
 // SetOptionSource gets a reference to the given string and assigns it to the OptionSource field.
@@ -679,28 +465,9 @@ func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInne
 	return o.OptionList.Get(), o.OptionList.IsSet()
 }
 
-// IsSetOptionList returns a boolean if a field has been set.
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) IsSetOptionList() bool {
-	if o != nil && o.OptionList.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetOptionList gets a reference to the given NullableString and assigns it to the OptionList field.
 func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) SetOptionList(v string) {
 	o.OptionList.Set(&v)
-}
-
-// SetOptionListNil sets the value for OptionList to be an explicit nil
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) SetOptionListNil() {
-	o.OptionList.Set(nil)
-}
-
-// UnsetOptionList ensures that no value is present for OptionList, not even an explicit nil
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) UnsetOptionList() {
-	o.OptionList.Unset()
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
@@ -719,15 +486,6 @@ func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInne
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.
@@ -753,15 +511,6 @@ func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInne
 	return o.Advanced, true
 }
 
-// IsSetAdvanced returns a boolean if a field has been set.
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) IsSetAdvanced() bool {
-	if o != nil && !IsNil(o.Advanced) {
-		return true
-	}
-
-	return false
-}
-
 // SetAdvanced gets a reference to the given bool and assigns it to the Advanced field.
 func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) SetAdvanced(v bool) {
 	o.Advanced = &v
@@ -783,15 +532,6 @@ func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInne
 		return nil, false
 	}
 	return o.Required, true
-}
-
-// IsSetRequired returns a boolean if a field has been set.
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) IsSetRequired() bool {
-	if o != nil && !IsNil(o.Required) {
-		return true
-	}
-
-	return false
 }
 
 // SetRequired gets a reference to the given bool and assigns it to the Required field.
@@ -817,15 +557,6 @@ func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInne
 	return o.Editable, true
 }
 
-// IsSetEditable returns a boolean if a field has been set.
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) IsSetEditable() bool {
-	if o != nil && !IsNil(o.Editable) {
-		return true
-	}
-
-	return false
-}
-
 // SetEditable gets a reference to the given bool and assigns it to the Editable field.
 func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) SetEditable(v bool) {
 	o.Editable = &v
@@ -847,15 +578,6 @@ func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInne
 		return nil, false
 	}
 	return o.Creatable, true
-}
-
-// IsSetCreatable returns a boolean if a field has been set.
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) IsSetCreatable() bool {
-	if o != nil && !IsNil(o.Creatable) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreatable gets a reference to the given bool and assigns it to the Creatable field.
@@ -881,15 +603,6 @@ func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInne
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
 func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) SetConfig(v map[string]interface{}) {
 	o.Config = v
@@ -911,15 +624,6 @@ func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInne
 		return nil, false
 	}
 	return o.DisplayOrder, true
-}
-
-// IsSetDisplayOrder returns a boolean if a field has been set.
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) IsSetDisplayOrder() bool {
-	if o != nil && !IsNil(o.DisplayOrder) {
-		return true
-	}
-
-	return false
 }
 
 // SetDisplayOrder gets a reference to the given int64 and assigns it to the DisplayOrder field.
@@ -946,28 +650,9 @@ func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInne
 	return o.WrapperClass.Get(), o.WrapperClass.IsSet()
 }
 
-// IsSetWrapperClass returns a boolean if a field has been set.
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) IsSetWrapperClass() bool {
-	if o != nil && o.WrapperClass.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetWrapperClass gets a reference to the given NullableString and assigns it to the WrapperClass field.
 func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) SetWrapperClass(v string) {
 	o.WrapperClass.Set(&v)
-}
-
-// SetWrapperClassNil sets the value for WrapperClass to be an explicit nil
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) SetWrapperClassNil() {
-	o.WrapperClass.Set(nil)
-}
-
-// UnsetWrapperClass ensures that no value is present for WrapperClass, not even an explicit nil
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) UnsetWrapperClass() {
-	o.WrapperClass.Unset()
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
@@ -986,15 +671,6 @@ func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInne
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -1020,15 +696,6 @@ func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInne
 	return o.NoBlank, true
 }
 
-// IsSetNoBlank returns a boolean if a field has been set.
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) IsSetNoBlank() bool {
-	if o != nil && !IsNil(o.NoBlank) {
-		return true
-	}
-
-	return false
-}
-
 // SetNoBlank gets a reference to the given bool and assigns it to the NoBlank field.
 func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) SetNoBlank(v bool) {
 	o.NoBlank = &v
@@ -1052,15 +719,6 @@ func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInne
 	return o.DependsOnCode, true
 }
 
-// IsSetDependsOnCode returns a boolean if a field has been set.
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) IsSetDependsOnCode() bool {
-	if o != nil && !IsNil(o.DependsOnCode) {
-		return true
-	}
-
-	return false
-}
-
 // SetDependsOnCode gets a reference to the given string and assigns it to the DependsOnCode field.
 func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) SetDependsOnCode(v string) {
 	o.DependsOnCode = &v
@@ -1082,15 +740,6 @@ func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInne
 		return nil, false
 	}
 	return o.ContextualDefault, true
-}
-
-// IsSetContextualDefault returns a boolean if a field has been set.
-func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) IsSetContextualDefault() bool {
-	if o != nil && !IsNil(o.ContextualDefault) {
-		return true
-	}
-
-	return false
 }
 
 // SetContextualDefault gets a reference to the given bool and assigns it to the ContextualDefault field.

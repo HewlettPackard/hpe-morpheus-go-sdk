@@ -108,15 +108,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) SetId(v int64) {
 	o.Id = &v
@@ -138,15 +129,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -173,28 +155,9 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetCode returns the Code field value if set, zero value otherwise.
@@ -213,15 +176,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -247,15 +201,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 	return o.AclEnabled, true
 }
 
-// IsSetAclEnabled returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetAclEnabled() bool {
-	if o != nil && !IsNil(o.AclEnabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetAclEnabled gets a reference to the given bool and assigns it to the AclEnabled field.
 func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) SetAclEnabled(v bool) {
 	o.AclEnabled = &v
@@ -277,15 +222,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 		return nil, false
 	}
 	return o.MultiTenant, true
-}
-
-// IsSetMultiTenant returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetMultiTenant() bool {
-	if o != nil && !IsNil(o.MultiTenant) {
-		return true
-	}
-
-	return false
 }
 
 // SetMultiTenant gets a reference to the given bool and assigns it to the MultiTenant field.
@@ -311,15 +247,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 	return o.Managed, true
 }
 
-// IsSetManaged returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetManaged() bool {
-	if o != nil && !IsNil(o.Managed) {
-		return true
-	}
-
-	return false
-}
-
 // SetManaged gets a reference to the given bool and assigns it to the Managed field.
 func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) SetManaged(v bool) {
 	o.Managed = &v
@@ -341,15 +268,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 		return nil, false
 	}
 	return o.HostNetwork, true
-}
-
-// IsSetHostNetwork returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetHostNetwork() bool {
-	if o != nil && !IsNil(o.HostNetwork) {
-		return true
-	}
-
-	return false
 }
 
 // SetHostNetwork gets a reference to the given bool and assigns it to the HostNetwork field.
@@ -375,15 +293,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 	return o.CustomSupported, true
 }
 
-// IsSetCustomSupported returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetCustomSupported() bool {
-	if o != nil && !IsNil(o.CustomSupported) {
-		return true
-	}
-
-	return false
-}
-
 // SetCustomSupported gets a reference to the given bool and assigns it to the CustomSupported field.
 func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) SetCustomSupported(v bool) {
 	o.CustomSupported = &v
@@ -407,15 +316,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 	return o.MapPorts, true
 }
 
-// IsSetMapPorts returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetMapPorts() bool {
-	if o != nil && !IsNil(o.MapPorts) {
-		return true
-	}
-
-	return false
-}
-
 // SetMapPorts gets a reference to the given bool and assigns it to the MapPorts field.
 func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) SetMapPorts(v bool) {
 	o.MapPorts = &v
@@ -437,15 +337,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 		return nil, false
 	}
 	return o.ExportServer, true
-}
-
-// IsSetExportServer returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetExportServer() bool {
-	if o != nil && !IsNil(o.ExportServer) {
-		return true
-	}
-
-	return false
 }
 
 // SetExportServer gets a reference to the given bool and assigns it to the ExportServer field.
@@ -472,28 +363,9 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 	return o.ViewSet.Get(), o.ViewSet.IsSet()
 }
 
-// IsSetViewSet returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetViewSet() bool {
-	if o != nil && o.ViewSet.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetViewSet gets a reference to the given NullableString and assigns it to the ViewSet field.
 func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) SetViewSet(v string) {
 	o.ViewSet.Set(&v)
-}
-
-// SetViewSetNil sets the value for ViewSet to be an explicit nil
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) SetViewSetNil() {
-	o.ViewSet.Set(nil)
-}
-
-// UnsetViewSet ensures that no value is present for ViewSet, not even an explicit nil
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) UnsetViewSet() {
-	o.ViewSet.Unset()
 }
 
 // GetServerType returns the ServerType field value if set, zero value otherwise.
@@ -512,15 +384,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 		return nil, false
 	}
 	return o.ServerType, true
-}
-
-// IsSetServerType returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetServerType() bool {
-	if o != nil && !IsNil(o.ServerType) {
-		return true
-	}
-
-	return false
 }
 
 // SetServerType gets a reference to the given string and assigns it to the ServerType field.
@@ -546,15 +409,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 	return o.HostType, true
 }
 
-// IsSetHostType returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetHostType() bool {
-	if o != nil && !IsNil(o.HostType) {
-		return true
-	}
-
-	return false
-}
-
 // SetHostType gets a reference to the given string and assigns it to the HostType field.
 func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) SetHostType(v string) {
 	o.HostType = &v
@@ -576,15 +430,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 		return nil, false
 	}
 	return o.AddVolumes, true
-}
-
-// IsSetAddVolumes returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetAddVolumes() bool {
-	if o != nil && !IsNil(o.AddVolumes) {
-		return true
-	}
-
-	return false
 }
 
 // SetAddVolumes gets a reference to the given bool and assigns it to the AddVolumes field.
@@ -610,15 +455,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 	return o.HasVolumes, true
 }
 
-// IsSetHasVolumes returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetHasVolumes() bool {
-	if o != nil && !IsNil(o.HasVolumes) {
-		return true
-	}
-
-	return false
-}
-
 // SetHasVolumes gets a reference to the given bool and assigns it to the HasVolumes field.
 func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) SetHasVolumes(v bool) {
 	o.HasVolumes = &v
@@ -640,15 +476,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 		return nil, false
 	}
 	return o.HasDatastore, true
-}
-
-// IsSetHasDatastore returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetHasDatastore() bool {
-	if o != nil && !IsNil(o.HasDatastore) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasDatastore gets a reference to the given bool and assigns it to the HasDatastore field.
@@ -674,15 +501,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 	return o.HasNetworks, true
 }
 
-// IsSetHasNetworks returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetHasNetworks() bool {
-	if o != nil && !IsNil(o.HasNetworks) {
-		return true
-	}
-
-	return false
-}
-
 // SetHasNetworks gets a reference to the given bool and assigns it to the HasNetworks field.
 func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) SetHasNetworks(v bool) {
 	o.HasNetworks = &v
@@ -704,15 +522,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 		return nil, false
 	}
 	return o.MaxNetworks, true
-}
-
-// IsSetMaxNetworks returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetMaxNetworks() bool {
-	if o != nil && !IsNil(o.MaxNetworks) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxNetworks gets a reference to the given int64 and assigns it to the MaxNetworks field.
@@ -738,15 +547,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 	return o.CustomizeVolume, true
 }
 
-// IsSetCustomizeVolume returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetCustomizeVolume() bool {
-	if o != nil && !IsNil(o.CustomizeVolume) {
-		return true
-	}
-
-	return false
-}
-
 // SetCustomizeVolume gets a reference to the given bool and assigns it to the CustomizeVolume field.
 func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) SetCustomizeVolume(v bool) {
 	o.CustomizeVolume = &v
@@ -768,15 +568,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 		return nil, false
 	}
 	return o.RootDiskCustomizable, true
-}
-
-// IsSetRootDiskCustomizable returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetRootDiskCustomizable() bool {
-	if o != nil && !IsNil(o.RootDiskCustomizable) {
-		return true
-	}
-
-	return false
 }
 
 // SetRootDiskCustomizable gets a reference to the given bool and assigns it to the RootDiskCustomizable field.
@@ -802,15 +593,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 	return o.RootDiskSizeKnown, true
 }
 
-// IsSetRootDiskSizeKnown returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetRootDiskSizeKnown() bool {
-	if o != nil && !IsNil(o.RootDiskSizeKnown) {
-		return true
-	}
-
-	return false
-}
-
 // SetRootDiskSizeKnown gets a reference to the given bool and assigns it to the RootDiskSizeKnown field.
 func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) SetRootDiskSizeKnown(v bool) {
 	o.RootDiskSizeKnown = &v
@@ -832,15 +614,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 		return nil, false
 	}
 	return o.RootDiskResizable, true
-}
-
-// IsSetRootDiskResizable returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetRootDiskResizable() bool {
-	if o != nil && !IsNil(o.RootDiskResizable) {
-		return true
-	}
-
-	return false
 }
 
 // SetRootDiskResizable gets a reference to the given bool and assigns it to the RootDiskResizable field.
@@ -866,15 +639,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 	return o.LvmSupported, true
 }
 
-// IsSetLvmSupported returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetLvmSupported() bool {
-	if o != nil && !IsNil(o.LvmSupported) {
-		return true
-	}
-
-	return false
-}
-
 // SetLvmSupported gets a reference to the given bool and assigns it to the LvmSupported field.
 func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) SetLvmSupported(v bool) {
 	o.LvmSupported = &v
@@ -898,15 +662,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 	return o.HostDiskMode, true
 }
 
-// IsSetHostDiskMode returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetHostDiskMode() bool {
-	if o != nil && !IsNil(o.HostDiskMode) {
-		return true
-	}
-
-	return false
-}
-
 // SetHostDiskMode gets a reference to the given string and assigns it to the HostDiskMode field.
 func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) SetHostDiskMode(v string) {
 	o.HostDiskMode = &v
@@ -928,15 +683,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 		return nil, false
 	}
 	return o.MinDisk, true
-}
-
-// IsSetMinDisk returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetMinDisk() bool {
-	if o != nil && !IsNil(o.MinDisk) {
-		return true
-	}
-
-	return false
 }
 
 // SetMinDisk gets a reference to the given int64 and assigns it to the MinDisk field.
@@ -963,28 +709,9 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 	return o.MaxDisk.Get(), o.MaxDisk.IsSet()
 }
 
-// IsSetMaxDisk returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetMaxDisk() bool {
-	if o != nil && o.MaxDisk.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxDisk gets a reference to the given NullableString and assigns it to the MaxDisk field.
 func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) SetMaxDisk(v string) {
 	o.MaxDisk.Set(&v)
-}
-
-// SetMaxDiskNil sets the value for MaxDisk to be an explicit nil
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) SetMaxDiskNil() {
-	o.MaxDisk.Set(nil)
-}
-
-// UnsetMaxDisk ensures that no value is present for MaxDisk, not even an explicit nil
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) UnsetMaxDisk() {
-	o.MaxDisk.Unset()
 }
 
 // GetResizeCopiesVolumes returns the ResizeCopiesVolumes field value if set, zero value otherwise.
@@ -1003,15 +730,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 		return nil, false
 	}
 	return o.ResizeCopiesVolumes, true
-}
-
-// IsSetResizeCopiesVolumes returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetResizeCopiesVolumes() bool {
-	if o != nil && !IsNil(o.ResizeCopiesVolumes) {
-		return true
-	}
-
-	return false
 }
 
 // SetResizeCopiesVolumes gets a reference to the given bool and assigns it to the ResizeCopiesVolumes field.
@@ -1037,15 +755,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 	return o.SupportsAutoDatastore, true
 }
 
-// IsSetSupportsAutoDatastore returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetSupportsAutoDatastore() bool {
-	if o != nil && !IsNil(o.SupportsAutoDatastore) {
-		return true
-	}
-
-	return false
-}
-
 // SetSupportsAutoDatastore gets a reference to the given bool and assigns it to the SupportsAutoDatastore field.
 func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) SetSupportsAutoDatastore(v bool) {
 	o.SupportsAutoDatastore = &v
@@ -1067,15 +776,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 		return nil, false
 	}
 	return o.HasZonePools, true
-}
-
-// IsSetHasZonePools returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetHasZonePools() bool {
-	if o != nil && !IsNil(o.HasZonePools) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasZonePools gets a reference to the given bool and assigns it to the HasZonePools field.
@@ -1101,15 +801,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 	return o.HasSecurityGroups, true
 }
 
-// IsSetHasSecurityGroups returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetHasSecurityGroups() bool {
-	if o != nil && !IsNil(o.HasSecurityGroups) {
-		return true
-	}
-
-	return false
-}
-
 // SetHasSecurityGroups gets a reference to the given bool and assigns it to the HasSecurityGroups field.
 func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) SetHasSecurityGroups(v bool) {
 	o.HasSecurityGroups = &v
@@ -1131,15 +822,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 		return nil, false
 	}
 	return o.HasParameters, true
-}
-
-// IsSetHasParameters returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetHasParameters() bool {
-	if o != nil && !IsNil(o.HasParameters) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasParameters gets a reference to the given bool and assigns it to the HasParameters field.
@@ -1166,28 +848,9 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 	return o.CanEnforceTags.Get(), o.CanEnforceTags.IsSet()
 }
 
-// IsSetCanEnforceTags returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetCanEnforceTags() bool {
-	if o != nil && o.CanEnforceTags.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCanEnforceTags gets a reference to the given NullableBool and assigns it to the CanEnforceTags field.
 func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) SetCanEnforceTags(v bool) {
 	o.CanEnforceTags.Set(&v)
-}
-
-// SetCanEnforceTagsNil sets the value for CanEnforceTags to be an explicit nil
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) SetCanEnforceTagsNil() {
-	o.CanEnforceTags.Set(nil)
-}
-
-// UnsetCanEnforceTags ensures that no value is present for CanEnforceTags, not even an explicit nil
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) UnsetCanEnforceTags() {
-	o.CanEnforceTags.Unset()
 }
 
 // GetDisableRootDatastore returns the DisableRootDatastore field value if set, zero value otherwise.
@@ -1206,15 +869,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 		return nil, false
 	}
 	return o.DisableRootDatastore, true
-}
-
-// IsSetDisableRootDatastore returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetDisableRootDatastore() bool {
-	if o != nil && !IsNil(o.DisableRootDatastore) {
-		return true
-	}
-
-	return false
 }
 
 // SetDisableRootDatastore gets a reference to the given bool and assigns it to the DisableRootDatastore field.
@@ -1240,15 +894,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 	return o.HasSnapshots, true
 }
 
-// IsSetHasSnapshots returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetHasSnapshots() bool {
-	if o != nil && !IsNil(o.HasSnapshots) {
-		return true
-	}
-
-	return false
-}
-
 // SetHasSnapshots gets a reference to the given bool and assigns it to the HasSnapshots field.
 func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) SetHasSnapshots(v bool) {
 	o.HasSnapshots = &v
@@ -1270,15 +915,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 		return nil, false
 	}
 	return o.HasMemorySnapshots, true
-}
-
-// IsSetHasMemorySnapshots returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetHasMemorySnapshots() bool {
-	if o != nil && !IsNil(o.HasMemorySnapshots) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasMemorySnapshots gets a reference to the given bool and assigns it to the HasMemorySnapshots field.
@@ -1304,15 +940,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 	return o.HasSpecTemplates, true
 }
 
-// IsSetHasSpecTemplates returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetHasSpecTemplates() bool {
-	if o != nil && !IsNil(o.HasSpecTemplates) {
-		return true
-	}
-
-	return false
-}
-
 // SetHasSpecTemplates gets a reference to the given bool and assigns it to the HasSpecTemplates field.
 func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) SetHasSpecTemplates(v bool) {
 	o.HasSpecTemplates = &v
@@ -1334,15 +961,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 		return nil, false
 	}
 	return o.HasPreview, true
-}
-
-// IsSetHasPreview returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetHasPreview() bool {
-	if o != nil && !IsNil(o.HasPreview) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasPreview gets a reference to the given bool and assigns it to the HasPreview field.
@@ -1368,15 +986,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 	return o.ZonePoolRequired, true
 }
 
-// IsSetZonePoolRequired returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetZonePoolRequired() bool {
-	if o != nil && !IsNil(o.ZonePoolRequired) {
-		return true
-	}
-
-	return false
-}
-
 // SetZonePoolRequired gets a reference to the given bool and assigns it to the ZonePoolRequired field.
 func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) SetZonePoolRequired(v bool) {
 	o.ZonePoolRequired = &v
@@ -1398,15 +1007,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 		return nil, false
 	}
 	return o.PlanRequiresPool, true
-}
-
-// IsSetPlanRequiresPool returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetPlanRequiresPool() bool {
-	if o != nil && !IsNil(o.PlanRequiresPool) {
-		return true
-	}
-
-	return false
 }
 
 // SetPlanRequiresPool gets a reference to the given bool and assigns it to the PlanRequiresPool field.
@@ -1433,28 +1033,9 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 	return o.HasFolders.Get(), o.HasFolders.IsSet()
 }
 
-// IsSetHasFolders returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetHasFolders() bool {
-	if o != nil && o.HasFolders.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetHasFolders gets a reference to the given NullableBool and assigns it to the HasFolders field.
 func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) SetHasFolders(v bool) {
 	o.HasFolders.Set(&v)
-}
-
-// SetHasFoldersNil sets the value for HasFolders to be an explicit nil
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) SetHasFoldersNil() {
-	o.HasFolders.Set(nil)
-}
-
-// UnsetHasFolders ensures that no value is present for HasFolders, not even an explicit nil
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) UnsetHasFolders() {
-	o.HasFolders.Unset()
 }
 
 // GetOptionTypes returns the OptionTypes field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1474,15 +1055,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 		return nil, false
 	}
 	return o.OptionTypes, true
-}
-
-// IsSetOptionTypes returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetOptionTypes() bool {
-	if o != nil && !IsNil(o.OptionTypes) {
-		return true
-	}
-
-	return false
 }
 
 // SetOptionTypes gets a reference to the given []ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeOptionTypesInner and assigns it to the OptionTypes field.
@@ -1509,15 +1081,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 	return o.CustomOptionTypes, true
 }
 
-// IsSetCustomOptionTypes returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetCustomOptionTypes() bool {
-	if o != nil && !IsNil(o.CustomOptionTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetCustomOptionTypes gets a reference to the given []ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeCustomOptionTypesInner and assigns it to the CustomOptionTypes field.
 func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) SetCustomOptionTypes(v []ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeCustomOptionTypesInner) {
 	o.CustomOptionTypes = v
@@ -1540,15 +1103,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 		return nil, false
 	}
 	return o.NetworkTypes, true
-}
-
-// IsSetNetworkTypes returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetNetworkTypes() bool {
-	if o != nil && !IsNil(o.NetworkTypes) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkTypes gets a reference to the given []ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner and assigns it to the NetworkTypes field.
@@ -1575,15 +1129,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 	return o.StorageTypes, true
 }
 
-// IsSetStorageTypes returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetStorageTypes() bool {
-	if o != nil && !IsNil(o.StorageTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetStorageTypes gets a reference to the given []ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner and assigns it to the StorageTypes field.
 func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) SetStorageTypes(v []ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner) {
 	o.StorageTypes = v
@@ -1606,15 +1151,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 		return nil, false
 	}
 	return o.RootStorageTypes, true
-}
-
-// IsSetRootStorageTypes returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetRootStorageTypes() bool {
-	if o != nil && !IsNil(o.RootStorageTypes) {
-		return true
-	}
-
-	return false
 }
 
 // SetRootStorageTypes gets a reference to the given []ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeRootStorageTypesInner and assigns it to the RootStorageTypes field.
@@ -1641,15 +1177,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 	return o.ControllerTypes, true
 }
 
-// IsSetControllerTypes returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetControllerTypes() bool {
-	if o != nil && !IsNil(o.ControllerTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetControllerTypes gets a reference to the given []ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeControllerTypesInner and assigns it to the ControllerTypes field.
 func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) SetControllerTypes(v []ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeControllerTypesInner) {
 	o.ControllerTypes = v
@@ -1672,15 +1199,6 @@ func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvi
 		return nil, false
 	}
 	return o.StorageProfiles, true
-}
-
-// IsSetStorageProfiles returns a boolean if a field has been set.
-func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionType) IsSetStorageProfiles() bool {
-	if o != nil && !IsNil(o.StorageProfiles) {
-		return true
-	}
-
-	return false
 }
 
 // SetStorageProfiles gets a reference to the given []ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeStorageProfilesInner and assigns it to the StorageProfiles field.

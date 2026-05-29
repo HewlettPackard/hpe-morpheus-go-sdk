@@ -62,15 +62,6 @@ func (o *ListClusterNetworkEndpoints200Response) GetEndpointsOk() ([]ListCluster
 	return o.Endpoints, true
 }
 
-// IsSetEndpoints returns a boolean if a field has been set.
-func (o *ListClusterNetworkEndpoints200Response) IsSetEndpoints() bool {
-	if o != nil && !IsNil(o.Endpoints) {
-		return true
-	}
-
-	return false
-}
-
 // SetEndpoints gets a reference to the given []ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner and assigns it to the Endpoints field.
 func (o *ListClusterNetworkEndpoints200Response) SetEndpoints(v []ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner) {
 	o.Endpoints = v
@@ -92,15 +83,6 @@ func (o *ListClusterNetworkEndpoints200Response) GetMetaOk() (*ListApprovals200R
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListClusterNetworkEndpoints200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

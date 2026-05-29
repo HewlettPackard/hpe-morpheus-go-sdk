@@ -61,15 +61,6 @@ func (o *GetServicePlans200Response) GetServicePlanOk() (*GetServicePlans200Resp
 	return o.ServicePlan, true
 }
 
-// IsSetServicePlan returns a boolean if a field has been set.
-func (o *GetServicePlans200Response) IsSetServicePlan() bool {
-	if o != nil && !IsNil(o.ServicePlan) {
-		return true
-	}
-
-	return false
-}
-
 // SetServicePlan gets a reference to the given GetServicePlans200ResponseServicePlan and assigns it to the ServicePlan field.
 func (o *GetServicePlans200Response) SetServicePlan(v GetServicePlans200ResponseServicePlan) {
 	o.ServicePlan = &v

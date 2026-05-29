@@ -70,15 +70,6 @@ func (o *SystemUninitializedCreateComponentsInner) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *SystemUninitializedCreateComponentsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *SystemUninitializedCreateComponentsInner) SetId(v int64) {
 	o.Id = &v
@@ -100,15 +91,6 @@ func (o *SystemUninitializedCreateComponentsInner) GetTypeCodeOk() (*string, boo
 		return nil, false
 	}
 	return o.TypeCode, true
-}
-
-// IsSetTypeCode returns a boolean if a field has been set.
-func (o *SystemUninitializedCreateComponentsInner) IsSetTypeCode() bool {
-	if o != nil && !IsNil(o.TypeCode) {
-		return true
-	}
-
-	return false
 }
 
 // SetTypeCode gets a reference to the given string and assigns it to the TypeCode field.
@@ -134,15 +116,6 @@ func (o *SystemUninitializedCreateComponentsInner) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *SystemUninitializedCreateComponentsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *SystemUninitializedCreateComponentsInner) SetName(v string) {
 	o.Name = &v
@@ -166,15 +139,6 @@ func (o *SystemUninitializedCreateComponentsInner) GetExternalIdOk() (*string, b
 	return o.ExternalId, true
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *SystemUninitializedCreateComponentsInner) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
 func (o *SystemUninitializedCreateComponentsInner) SetExternalId(v string) {
 	o.ExternalId = &v
@@ -196,15 +160,6 @@ func (o *SystemUninitializedCreateComponentsInner) GetConfigOk() (map[string]int
 		return map[string]interface{}{}, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *SystemUninitializedCreateComponentsInner) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.

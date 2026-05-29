@@ -62,15 +62,6 @@ func (o *UpdateExecuteSchedules200Response) GetScheduleOk() (*UpdateExecuteSched
 	return o.Schedule, true
 }
 
-// IsSetSchedule returns a boolean if a field has been set.
-func (o *UpdateExecuteSchedules200Response) IsSetSchedule() bool {
-	if o != nil && !IsNil(o.Schedule) {
-		return true
-	}
-
-	return false
-}
-
 // SetSchedule gets a reference to the given UpdateExecuteSchedules200ResponseAllOfSchedule and assigns it to the Schedule field.
 func (o *UpdateExecuteSchedules200Response) SetSchedule(v UpdateExecuteSchedules200ResponseAllOfSchedule) {
 	o.Schedule = &v
@@ -92,15 +83,6 @@ func (o *UpdateExecuteSchedules200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *UpdateExecuteSchedules200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

@@ -62,15 +62,6 @@ func (o *ListLoadBalancerMonitors200Response) GetLoadBalancerMonitorsOk() ([]Lis
 	return o.LoadBalancerMonitors, true
 }
 
-// IsSetLoadBalancerMonitors returns a boolean if a field has been set.
-func (o *ListLoadBalancerMonitors200Response) IsSetLoadBalancerMonitors() bool {
-	if o != nil && !IsNil(o.LoadBalancerMonitors) {
-		return true
-	}
-
-	return false
-}
-
 // SetLoadBalancerMonitors gets a reference to the given []ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner and assigns it to the LoadBalancerMonitors field.
 func (o *ListLoadBalancerMonitors200Response) SetLoadBalancerMonitors(v []ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) {
 	o.LoadBalancerMonitors = v
@@ -92,15 +83,6 @@ func (o *ListLoadBalancerMonitors200Response) GetMetaOk() (*ListApprovals200Resp
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListLoadBalancerMonitors200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

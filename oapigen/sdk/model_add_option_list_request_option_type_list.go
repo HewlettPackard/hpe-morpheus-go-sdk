@@ -138,28 +138,9 @@ func (o *AddOptionListRequestOptionTypeList) GetDescriptionOk() (*string, bool) 
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *AddOptionListRequestOptionTypeList) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *AddOptionListRequestOptionTypeList) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *AddOptionListRequestOptionTypeList) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *AddOptionListRequestOptionTypeList) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetLabels returns the Labels field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -179,15 +160,6 @@ func (o *AddOptionListRequestOptionTypeList) GetLabelsOk() ([]string, bool) {
 		return nil, false
 	}
 	return o.Labels, true
-}
-
-// IsSetLabels returns a boolean if a field has been set.
-func (o *AddOptionListRequestOptionTypeList) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
 }
 
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
@@ -213,15 +185,6 @@ func (o *AddOptionListRequestOptionTypeList) GetTypeOk() (*string, bool) {
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *AddOptionListRequestOptionTypeList) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given string and assigns it to the Type field.
 func (o *AddOptionListRequestOptionTypeList) SetType(v string) {
 	o.Type = &v
@@ -243,15 +206,6 @@ func (o *AddOptionListRequestOptionTypeList) GetSourceUrlOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SourceUrl, true
-}
-
-// IsSetSourceUrl returns a boolean if a field has been set.
-func (o *AddOptionListRequestOptionTypeList) IsSetSourceUrl() bool {
-	if o != nil && !IsNil(o.SourceUrl) {
-		return true
-	}
-
-	return false
 }
 
 // SetSourceUrl gets a reference to the given string and assigns it to the SourceUrl field.
@@ -277,15 +231,6 @@ func (o *AddOptionListRequestOptionTypeList) GetVisibilityOk() (*string, bool) {
 	return o.Visibility, true
 }
 
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *AddOptionListRequestOptionTypeList) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
-}
-
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
 func (o *AddOptionListRequestOptionTypeList) SetVisibility(v string) {
 	o.Visibility = &v
@@ -307,15 +252,6 @@ func (o *AddOptionListRequestOptionTypeList) GetSourceMethodOk() (*string, bool)
 		return nil, false
 	}
 	return o.SourceMethod, true
-}
-
-// IsSetSourceMethod returns a boolean if a field has been set.
-func (o *AddOptionListRequestOptionTypeList) IsSetSourceMethod() bool {
-	if o != nil && !IsNil(o.SourceMethod) {
-		return true
-	}
-
-	return false
 }
 
 // SetSourceMethod gets a reference to the given string and assigns it to the SourceMethod field.
@@ -342,28 +278,9 @@ func (o *AddOptionListRequestOptionTypeList) GetApiTypeOk() (*string, bool) {
 	return o.ApiType.Get(), o.ApiType.IsSet()
 }
 
-// IsSetApiType returns a boolean if a field has been set.
-func (o *AddOptionListRequestOptionTypeList) IsSetApiType() bool {
-	if o != nil && o.ApiType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetApiType gets a reference to the given NullableString and assigns it to the ApiType field.
 func (o *AddOptionListRequestOptionTypeList) SetApiType(v string) {
 	o.ApiType.Set(&v)
-}
-
-// SetApiTypeNil sets the value for ApiType to be an explicit nil
-func (o *AddOptionListRequestOptionTypeList) SetApiTypeNil() {
-	o.ApiType.Set(nil)
-}
-
-// UnsetApiType ensures that no value is present for ApiType, not even an explicit nil
-func (o *AddOptionListRequestOptionTypeList) UnsetApiType() {
-	o.ApiType.Unset()
 }
 
 // GetIgnoreSSLErrors returns the IgnoreSSLErrors field value if set, zero value otherwise.
@@ -382,15 +299,6 @@ func (o *AddOptionListRequestOptionTypeList) GetIgnoreSSLErrorsOk() (*bool, bool
 		return nil, false
 	}
 	return o.IgnoreSSLErrors, true
-}
-
-// IsSetIgnoreSSLErrors returns a boolean if a field has been set.
-func (o *AddOptionListRequestOptionTypeList) IsSetIgnoreSSLErrors() bool {
-	if o != nil && !IsNil(o.IgnoreSSLErrors) {
-		return true
-	}
-
-	return false
 }
 
 // SetIgnoreSSLErrors gets a reference to the given bool and assigns it to the IgnoreSSLErrors field.
@@ -416,15 +324,6 @@ func (o *AddOptionListRequestOptionTypeList) GetRealTimeOk() (*bool, bool) {
 	return o.RealTime, true
 }
 
-// IsSetRealTime returns a boolean if a field has been set.
-func (o *AddOptionListRequestOptionTypeList) IsSetRealTime() bool {
-	if o != nil && !IsNil(o.RealTime) {
-		return true
-	}
-
-	return false
-}
-
 // SetRealTime gets a reference to the given bool and assigns it to the RealTime field.
 func (o *AddOptionListRequestOptionTypeList) SetRealTime(v bool) {
 	o.RealTime = &v
@@ -446,15 +345,6 @@ func (o *AddOptionListRequestOptionTypeList) GetCredentialOk() (*AddOptionListRe
 		return nil, false
 	}
 	return o.Credential, true
-}
-
-// IsSetCredential returns a boolean if a field has been set.
-func (o *AddOptionListRequestOptionTypeList) IsSetCredential() bool {
-	if o != nil && !IsNil(o.Credential) {
-		return true
-	}
-
-	return false
 }
 
 // SetCredential gets a reference to the given AddOptionListRequestOptionTypeListCredential and assigns it to the Credential field.
@@ -481,28 +371,9 @@ func (o *AddOptionListRequestOptionTypeList) GetServiceUsernameOk() (*string, bo
 	return o.ServiceUsername.Get(), o.ServiceUsername.IsSet()
 }
 
-// IsSetServiceUsername returns a boolean if a field has been set.
-func (o *AddOptionListRequestOptionTypeList) IsSetServiceUsername() bool {
-	if o != nil && o.ServiceUsername.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceUsername gets a reference to the given NullableString and assigns it to the ServiceUsername field.
 func (o *AddOptionListRequestOptionTypeList) SetServiceUsername(v string) {
 	o.ServiceUsername.Set(&v)
-}
-
-// SetServiceUsernameNil sets the value for ServiceUsername to be an explicit nil
-func (o *AddOptionListRequestOptionTypeList) SetServiceUsernameNil() {
-	o.ServiceUsername.Set(nil)
-}
-
-// UnsetServiceUsername ensures that no value is present for ServiceUsername, not even an explicit nil
-func (o *AddOptionListRequestOptionTypeList) UnsetServiceUsername() {
-	o.ServiceUsername.Unset()
 }
 
 // GetServicePassword returns the ServicePassword field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -524,28 +395,9 @@ func (o *AddOptionListRequestOptionTypeList) GetServicePasswordOk() (*string, bo
 	return o.ServicePassword.Get(), o.ServicePassword.IsSet()
 }
 
-// IsSetServicePassword returns a boolean if a field has been set.
-func (o *AddOptionListRequestOptionTypeList) IsSetServicePassword() bool {
-	if o != nil && o.ServicePassword.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServicePassword gets a reference to the given NullableString and assigns it to the ServicePassword field.
 func (o *AddOptionListRequestOptionTypeList) SetServicePassword(v string) {
 	o.ServicePassword.Set(&v)
-}
-
-// SetServicePasswordNil sets the value for ServicePassword to be an explicit nil
-func (o *AddOptionListRequestOptionTypeList) SetServicePasswordNil() {
-	o.ServicePassword.Set(nil)
-}
-
-// UnsetServicePassword ensures that no value is present for ServicePassword, not even an explicit nil
-func (o *AddOptionListRequestOptionTypeList) UnsetServicePassword() {
-	o.ServicePassword.Unset()
 }
 
 // GetInitialDataset returns the InitialDataset field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -567,28 +419,9 @@ func (o *AddOptionListRequestOptionTypeList) GetInitialDatasetOk() (*string, boo
 	return o.InitialDataset.Get(), o.InitialDataset.IsSet()
 }
 
-// IsSetInitialDataset returns a boolean if a field has been set.
-func (o *AddOptionListRequestOptionTypeList) IsSetInitialDataset() bool {
-	if o != nil && o.InitialDataset.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInitialDataset gets a reference to the given NullableString and assigns it to the InitialDataset field.
 func (o *AddOptionListRequestOptionTypeList) SetInitialDataset(v string) {
 	o.InitialDataset.Set(&v)
-}
-
-// SetInitialDatasetNil sets the value for InitialDataset to be an explicit nil
-func (o *AddOptionListRequestOptionTypeList) SetInitialDatasetNil() {
-	o.InitialDataset.Set(nil)
-}
-
-// UnsetInitialDataset ensures that no value is present for InitialDataset, not even an explicit nil
-func (o *AddOptionListRequestOptionTypeList) UnsetInitialDataset() {
-	o.InitialDataset.Unset()
 }
 
 // GetTranslationScript returns the TranslationScript field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -610,28 +443,9 @@ func (o *AddOptionListRequestOptionTypeList) GetTranslationScriptOk() (*string, 
 	return o.TranslationScript.Get(), o.TranslationScript.IsSet()
 }
 
-// IsSetTranslationScript returns a boolean if a field has been set.
-func (o *AddOptionListRequestOptionTypeList) IsSetTranslationScript() bool {
-	if o != nil && o.TranslationScript.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetTranslationScript gets a reference to the given NullableString and assigns it to the TranslationScript field.
 func (o *AddOptionListRequestOptionTypeList) SetTranslationScript(v string) {
 	o.TranslationScript.Set(&v)
-}
-
-// SetTranslationScriptNil sets the value for TranslationScript to be an explicit nil
-func (o *AddOptionListRequestOptionTypeList) SetTranslationScriptNil() {
-	o.TranslationScript.Set(nil)
-}
-
-// UnsetTranslationScript ensures that no value is present for TranslationScript, not even an explicit nil
-func (o *AddOptionListRequestOptionTypeList) UnsetTranslationScript() {
-	o.TranslationScript.Unset()
 }
 
 // GetRequestScript returns the RequestScript field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -653,28 +467,9 @@ func (o *AddOptionListRequestOptionTypeList) GetRequestScriptOk() (*string, bool
 	return o.RequestScript.Get(), o.RequestScript.IsSet()
 }
 
-// IsSetRequestScript returns a boolean if a field has been set.
-func (o *AddOptionListRequestOptionTypeList) IsSetRequestScript() bool {
-	if o != nil && o.RequestScript.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRequestScript gets a reference to the given NullableString and assigns it to the RequestScript field.
 func (o *AddOptionListRequestOptionTypeList) SetRequestScript(v string) {
 	o.RequestScript.Set(&v)
-}
-
-// SetRequestScriptNil sets the value for RequestScript to be an explicit nil
-func (o *AddOptionListRequestOptionTypeList) SetRequestScriptNil() {
-	o.RequestScript.Set(nil)
-}
-
-// UnsetRequestScript ensures that no value is present for RequestScript, not even an explicit nil
-func (o *AddOptionListRequestOptionTypeList) UnsetRequestScript() {
-	o.RequestScript.Unset()
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
@@ -693,15 +488,6 @@ func (o *AddOptionListRequestOptionTypeList) GetConfigOk() (*AddOptionListReques
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *AddOptionListRequestOptionTypeList) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given AddOptionListRequestOptionTypeListConfig and assigns it to the Config field.

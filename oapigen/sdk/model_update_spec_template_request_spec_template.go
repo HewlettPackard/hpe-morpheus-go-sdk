@@ -67,15 +67,6 @@ func (o *UpdateSpecTemplateRequestSpecTemplate) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateSpecTemplateRequestSpecTemplate) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *UpdateSpecTemplateRequestSpecTemplate) SetName(v string) {
 	o.Name = &v
@@ -98,15 +89,6 @@ func (o *UpdateSpecTemplateRequestSpecTemplate) GetLabelsOk() ([]string, bool) {
 		return nil, false
 	}
 	return o.Labels, true
-}
-
-// IsSetLabels returns a boolean if a field has been set.
-func (o *UpdateSpecTemplateRequestSpecTemplate) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
 }
 
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
@@ -132,15 +114,6 @@ func (o *UpdateSpecTemplateRequestSpecTemplate) GetTypeOk() (*UpdateSpecTemplate
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *UpdateSpecTemplateRequestSpecTemplate) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given UpdateSpecTemplateRequestSpecTemplateType and assigns it to the Type field.
 func (o *UpdateSpecTemplateRequestSpecTemplate) SetType(v UpdateSpecTemplateRequestSpecTemplateType) {
 	o.Type = &v
@@ -164,15 +137,6 @@ func (o *UpdateSpecTemplateRequestSpecTemplate) GetFileOk() (*UpdateSpecTemplate
 	return o.File, true
 }
 
-// IsSetFile returns a boolean if a field has been set.
-func (o *UpdateSpecTemplateRequestSpecTemplate) IsSetFile() bool {
-	if o != nil && !IsNil(o.File) {
-		return true
-	}
-
-	return false
-}
-
 // SetFile gets a reference to the given UpdateSpecTemplateRequestSpecTemplateFile and assigns it to the File field.
 func (o *UpdateSpecTemplateRequestSpecTemplate) SetFile(v UpdateSpecTemplateRequestSpecTemplateFile) {
 	o.File = &v
@@ -194,15 +158,6 @@ func (o *UpdateSpecTemplateRequestSpecTemplate) GetConfigOk() (*UpdateSpecTempla
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *UpdateSpecTemplateRequestSpecTemplate) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given UpdateSpecTemplateRequestSpecTemplateConfig and assigns it to the Config field.

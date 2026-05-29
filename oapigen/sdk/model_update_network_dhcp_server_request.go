@@ -61,15 +61,6 @@ func (o *UpdateNetworkDhcpServerRequest) GetNetworkDhcpServerOk() (map[string]in
 	return o.NetworkDhcpServer, true
 }
 
-// IsSetNetworkDhcpServer returns a boolean if a field has been set.
-func (o *UpdateNetworkDhcpServerRequest) IsSetNetworkDhcpServer() bool {
-	if o != nil && !IsNil(o.NetworkDhcpServer) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkDhcpServer gets a reference to the given map[string]interface{} and assigns it to the NetworkDhcpServer field.
 func (o *UpdateNetworkDhcpServerRequest) SetNetworkDhcpServer(v map[string]interface{}) {
 	o.NetworkDhcpServer = v

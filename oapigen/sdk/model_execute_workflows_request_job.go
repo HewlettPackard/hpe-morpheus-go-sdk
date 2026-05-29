@@ -76,15 +76,6 @@ func (o *ExecuteWorkflowsRequestJob) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ExecuteWorkflowsRequestJob) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ExecuteWorkflowsRequestJob) SetName(v string) {
 	o.Name = &v
@@ -106,15 +97,6 @@ func (o *ExecuteWorkflowsRequestJob) GetTargetTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.TargetType, true
-}
-
-// IsSetTargetType returns a boolean if a field has been set.
-func (o *ExecuteWorkflowsRequestJob) IsSetTargetType() bool {
-	if o != nil && !IsNil(o.TargetType) {
-		return true
-	}
-
-	return false
 }
 
 // SetTargetType gets a reference to the given string and assigns it to the TargetType field.
@@ -140,15 +122,6 @@ func (o *ExecuteWorkflowsRequestJob) GetInstancesOk() ([]int64, bool) {
 	return o.Instances, true
 }
 
-// IsSetInstances returns a boolean if a field has been set.
-func (o *ExecuteWorkflowsRequestJob) IsSetInstances() bool {
-	if o != nil && !IsNil(o.Instances) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstances gets a reference to the given []int64 and assigns it to the Instances field.
 func (o *ExecuteWorkflowsRequestJob) SetInstances(v []int64) {
 	o.Instances = v
@@ -170,15 +143,6 @@ func (o *ExecuteWorkflowsRequestJob) GetServersOk() ([]int64, bool) {
 		return nil, false
 	}
 	return o.Servers, true
-}
-
-// IsSetServers returns a boolean if a field has been set.
-func (o *ExecuteWorkflowsRequestJob) IsSetServers() bool {
-	if o != nil && !IsNil(o.Servers) {
-		return true
-	}
-
-	return false
 }
 
 // SetServers gets a reference to the given []int64 and assigns it to the Servers field.
@@ -204,15 +168,6 @@ func (o *ExecuteWorkflowsRequestJob) GetInstanceLabelOk() (*string, bool) {
 	return o.InstanceLabel, true
 }
 
-// IsSetInstanceLabel returns a boolean if a field has been set.
-func (o *ExecuteWorkflowsRequestJob) IsSetInstanceLabel() bool {
-	if o != nil && !IsNil(o.InstanceLabel) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstanceLabel gets a reference to the given string and assigns it to the InstanceLabel field.
 func (o *ExecuteWorkflowsRequestJob) SetInstanceLabel(v string) {
 	o.InstanceLabel = &v
@@ -234,15 +189,6 @@ func (o *ExecuteWorkflowsRequestJob) GetServerLabelOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ServerLabel, true
-}
-
-// IsSetServerLabel returns a boolean if a field has been set.
-func (o *ExecuteWorkflowsRequestJob) IsSetServerLabel() bool {
-	if o != nil && !IsNil(o.ServerLabel) {
-		return true
-	}
-
-	return false
 }
 
 // SetServerLabel gets a reference to the given string and assigns it to the ServerLabel field.
@@ -268,15 +214,6 @@ func (o *ExecuteWorkflowsRequestJob) GetCustomOptionsOk() (map[string]interface{
 	return o.CustomOptions, true
 }
 
-// IsSetCustomOptions returns a boolean if a field has been set.
-func (o *ExecuteWorkflowsRequestJob) IsSetCustomOptions() bool {
-	if o != nil && !IsNil(o.CustomOptions) {
-		return true
-	}
-
-	return false
-}
-
 // SetCustomOptions gets a reference to the given map[string]interface{} and assigns it to the CustomOptions field.
 func (o *ExecuteWorkflowsRequestJob) SetCustomOptions(v map[string]interface{}) {
 	o.CustomOptions = v
@@ -298,15 +235,6 @@ func (o *ExecuteWorkflowsRequestJob) GetCustomConfigOk() (*string, bool) {
 		return nil, false
 	}
 	return o.CustomConfig, true
-}
-
-// IsSetCustomConfig returns a boolean if a field has been set.
-func (o *ExecuteWorkflowsRequestJob) IsSetCustomConfig() bool {
-	if o != nil && !IsNil(o.CustomConfig) {
-		return true
-	}
-
-	return false
 }
 
 // SetCustomConfig gets a reference to the given string and assigns it to the CustomConfig field.

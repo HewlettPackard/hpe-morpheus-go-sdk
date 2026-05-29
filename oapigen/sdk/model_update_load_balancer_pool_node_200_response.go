@@ -63,15 +63,6 @@ func (o *UpdateLoadBalancerPoolNode200Response) GetLoadBalancerNodeOk() (*Update
 	return o.LoadBalancerNode, true
 }
 
-// IsSetLoadBalancerNode returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerPoolNode200Response) IsSetLoadBalancerNode() bool {
-	if o != nil && !IsNil(o.LoadBalancerNode) {
-		return true
-	}
-
-	return false
-}
-
 // SetLoadBalancerNode gets a reference to the given UpdateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode and assigns it to the LoadBalancerNode field.
 func (o *UpdateLoadBalancerPoolNode200Response) SetLoadBalancerNode(v UpdateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) {
 	o.LoadBalancerNode = &v
@@ -93,15 +84,6 @@ func (o *UpdateLoadBalancerPoolNode200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerPoolNode200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.
@@ -128,28 +110,9 @@ func (o *UpdateLoadBalancerPoolNode200Response) GetMsgOk() (*string, bool) {
 	return o.Msg.Get(), o.Msg.IsSet()
 }
 
-// IsSetMsg returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerPoolNode200Response) IsSetMsg() bool {
-	if o != nil && o.Msg.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMsg gets a reference to the given NullableString and assigns it to the Msg field.
 func (o *UpdateLoadBalancerPoolNode200Response) SetMsg(v string) {
 	o.Msg.Set(&v)
-}
-
-// SetMsgNil sets the value for Msg to be an explicit nil
-func (o *UpdateLoadBalancerPoolNode200Response) SetMsgNil() {
-	o.Msg.Set(nil)
-}
-
-// UnsetMsg ensures that no value is present for Msg, not even an explicit nil
-func (o *UpdateLoadBalancerPoolNode200Response) UnsetMsg() {
-	o.Msg.Unset()
 }
 
 func (o UpdateLoadBalancerPoolNode200Response) MarshalJSON() ([]byte, error) {

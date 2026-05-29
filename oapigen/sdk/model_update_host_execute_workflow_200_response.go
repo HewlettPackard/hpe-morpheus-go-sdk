@@ -63,15 +63,6 @@ func (o *UpdateHostExecuteWorkflow200Response) GetSuccessOk() (*bool, bool) {
 	return o.Success, true
 }
 
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *UpdateHostExecuteWorkflow200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
-}
-
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.
 func (o *UpdateHostExecuteWorkflow200Response) SetSuccess(v bool) {
 	o.Success = &v
@@ -93,15 +84,6 @@ func (o *UpdateHostExecuteWorkflow200Response) GetProcessIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.ProcessId, true
-}
-
-// IsSetProcessId returns a boolean if a field has been set.
-func (o *UpdateHostExecuteWorkflow200Response) IsSetProcessId() bool {
-	if o != nil && !IsNil(o.ProcessId) {
-		return true
-	}
-
-	return false
 }
 
 // SetProcessId gets a reference to the given int64 and assigns it to the ProcessId field.

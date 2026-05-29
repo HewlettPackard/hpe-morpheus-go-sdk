@@ -63,15 +63,6 @@ func (o *AppStateInput) GetVariablesOk() ([]AppStateInputVariablesInner, bool) {
 	return o.Variables, true
 }
 
-// IsSetVariables returns a boolean if a field has been set.
-func (o *AppStateInput) IsSetVariables() bool {
-	if o != nil && !IsNil(o.Variables) {
-		return true
-	}
-
-	return false
-}
-
 // SetVariables gets a reference to the given []AppStateInputVariablesInner and assigns it to the Variables field.
 func (o *AppStateInput) SetVariables(v []AppStateInputVariablesInner) {
 	o.Variables = v
@@ -95,15 +86,6 @@ func (o *AppStateInput) GetProvidersOk() ([]AppStateInputProvidersInner, bool) {
 	return o.Providers, true
 }
 
-// IsSetProviders returns a boolean if a field has been set.
-func (o *AppStateInput) IsSetProviders() bool {
-	if o != nil && !IsNil(o.Providers) {
-		return true
-	}
-
-	return false
-}
-
 // SetProviders gets a reference to the given []AppStateInputProvidersInner and assigns it to the Providers field.
 func (o *AppStateInput) SetProviders(v []AppStateInputProvidersInner) {
 	o.Providers = v
@@ -125,15 +107,6 @@ func (o *AppStateInput) GetDataOk() ([]AppStateInputDataInner, bool) {
 		return nil, false
 	}
 	return o.Data, true
-}
-
-// IsSetData returns a boolean if a field has been set.
-func (o *AppStateInput) IsSetData() bool {
-	if o != nil && !IsNil(o.Data) {
-		return true
-	}
-
-	return false
 }
 
 // SetData gets a reference to the given []AppStateInputDataInner and assigns it to the Data field.

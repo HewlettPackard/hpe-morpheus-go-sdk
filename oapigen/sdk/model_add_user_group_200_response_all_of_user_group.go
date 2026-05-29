@@ -72,15 +72,6 @@ func (o *AddUserGroup200ResponseAllOfUserGroup) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *AddUserGroup200ResponseAllOfUserGroup) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *AddUserGroup200ResponseAllOfUserGroup) SetId(v int64) {
 	o.Id = &v
@@ -104,15 +95,6 @@ func (o *AddUserGroup200ResponseAllOfUserGroup) GetAccountIdOk() (*int64, bool) 
 	return o.AccountId, true
 }
 
-// IsSetAccountId returns a boolean if a field has been set.
-func (o *AddUserGroup200ResponseAllOfUserGroup) IsSetAccountId() bool {
-	if o != nil && !IsNil(o.AccountId) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccountId gets a reference to the given int64 and assigns it to the AccountId field.
 func (o *AddUserGroup200ResponseAllOfUserGroup) SetAccountId(v int64) {
 	o.AccountId = &v
@@ -134,15 +116,6 @@ func (o *AddUserGroup200ResponseAllOfUserGroup) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *AddUserGroup200ResponseAllOfUserGroup) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -169,28 +142,9 @@ func (o *AddUserGroup200ResponseAllOfUserGroup) GetDescriptionOk() (*string, boo
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *AddUserGroup200ResponseAllOfUserGroup) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *AddUserGroup200ResponseAllOfUserGroup) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *AddUserGroup200ResponseAllOfUserGroup) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *AddUserGroup200ResponseAllOfUserGroup) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
@@ -209,15 +163,6 @@ func (o *AddUserGroup200ResponseAllOfUserGroup) GetEnabledOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *AddUserGroup200ResponseAllOfUserGroup) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -241,15 +186,6 @@ func (o *AddUserGroup200ResponseAllOfUserGroup) GetSudoUserOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.SudoUser, true
-}
-
-// IsSetSudoUser returns a boolean if a field has been set.
-func (o *AddUserGroup200ResponseAllOfUserGroup) IsSetSudoUser() bool {
-	if o != nil && !IsNil(o.SudoUser) {
-		return true
-	}
-
-	return false
 }
 
 // SetSudoUser gets a reference to the given bool and assigns it to the SudoUser field.
@@ -276,28 +212,9 @@ func (o *AddUserGroup200ResponseAllOfUserGroup) GetServerGroupOk() (*string, boo
 	return o.ServerGroup.Get(), o.ServerGroup.IsSet()
 }
 
-// IsSetServerGroup returns a boolean if a field has been set.
-func (o *AddUserGroup200ResponseAllOfUserGroup) IsSetServerGroup() bool {
-	if o != nil && o.ServerGroup.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServerGroup gets a reference to the given NullableString and assigns it to the ServerGroup field.
 func (o *AddUserGroup200ResponseAllOfUserGroup) SetServerGroup(v string) {
 	o.ServerGroup.Set(&v)
-}
-
-// SetServerGroupNil sets the value for ServerGroup to be an explicit nil
-func (o *AddUserGroup200ResponseAllOfUserGroup) SetServerGroupNil() {
-	o.ServerGroup.Set(nil)
-}
-
-// UnsetServerGroup ensures that no value is present for ServerGroup, not even an explicit nil
-func (o *AddUserGroup200ResponseAllOfUserGroup) UnsetServerGroup() {
-	o.ServerGroup.Unset()
 }
 
 // GetUsers returns the Users field value if set, zero value otherwise.
@@ -316,15 +233,6 @@ func (o *AddUserGroup200ResponseAllOfUserGroup) GetUsersOk() ([]AddUserGroup200R
 		return nil, false
 	}
 	return o.Users, true
-}
-
-// IsSetUsers returns a boolean if a field has been set.
-func (o *AddUserGroup200ResponseAllOfUserGroup) IsSetUsers() bool {
-	if o != nil && !IsNil(o.Users) {
-		return true
-	}
-
-	return false
 }
 
 // SetUsers gets a reference to the given []AddUserGroup200ResponseAllOfUserGroupUsersInner and assigns it to the Users field.
@@ -350,15 +258,6 @@ func (o *AddUserGroup200ResponseAllOfUserGroup) GetAccountOk() (*AddUserGroup200
 	return o.Account, true
 }
 
-// IsSetAccount returns a boolean if a field has been set.
-func (o *AddUserGroup200ResponseAllOfUserGroup) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccount gets a reference to the given AddUserGroup200ResponseAllOfUserGroupAccount and assigns it to the Account field.
 func (o *AddUserGroup200ResponseAllOfUserGroup) SetAccount(v AddUserGroup200ResponseAllOfUserGroupAccount) {
 	o.Account = &v
@@ -382,15 +281,6 @@ func (o *AddUserGroup200ResponseAllOfUserGroup) GetDateCreatedOk() (*time.Time, 
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *AddUserGroup200ResponseAllOfUserGroup) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *AddUserGroup200ResponseAllOfUserGroup) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -412,15 +302,6 @@ func (o *AddUserGroup200ResponseAllOfUserGroup) GetLastUpdatedOk() (*time.Time, 
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *AddUserGroup200ResponseAllOfUserGroup) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.

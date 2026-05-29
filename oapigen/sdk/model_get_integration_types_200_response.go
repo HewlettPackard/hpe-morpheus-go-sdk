@@ -61,15 +61,6 @@ func (o *GetIntegrationTypes200Response) GetIntegrationTypeOk() (*GetIntegration
 	return o.IntegrationType, true
 }
 
-// IsSetIntegrationType returns a boolean if a field has been set.
-func (o *GetIntegrationTypes200Response) IsSetIntegrationType() bool {
-	if o != nil && !IsNil(o.IntegrationType) {
-		return true
-	}
-
-	return false
-}
-
 // SetIntegrationType gets a reference to the given GetIntegrationTypes200ResponseIntegrationType and assigns it to the IntegrationType field.
 func (o *GetIntegrationTypes200Response) SetIntegrationType(v GetIntegrationTypes200ResponseIntegrationType) {
 	o.IntegrationType = &v

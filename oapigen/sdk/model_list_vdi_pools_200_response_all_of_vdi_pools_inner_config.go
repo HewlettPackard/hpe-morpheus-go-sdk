@@ -84,15 +84,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetGroupOk() (*ListVDI
 	return o.Group, true
 }
 
-// IsSetGroup returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) IsSetGroup() bool {
-	if o != nil && !IsNil(o.Group) {
-		return true
-	}
-
-	return false
-}
-
 // SetGroup gets a reference to the given ListVDIPools200ResponseAllOfVdiPoolsInnerConfigGroup and assigns it to the Group field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) SetGroup(v ListVDIPools200ResponseAllOfVdiPoolsInnerConfigGroup) {
 	o.Group = &v
@@ -117,28 +108,9 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetCloudOk() (*ListVDI
 	return o.Cloud.Get(), o.Cloud.IsSet()
 }
 
-// IsSetCloud returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) IsSetCloud() bool {
-	if o != nil && o.Cloud.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCloud gets a reference to the given NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigCloud and assigns it to the Cloud field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) SetCloud(v ListVDIPools200ResponseAllOfVdiPoolsInnerConfigCloud) {
 	o.Cloud.Set(&v)
-}
-
-// SetCloudNil sets the value for Cloud to be an explicit nil
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) SetCloudNil() {
-	o.Cloud.Set(nil)
-}
-
-// UnsetCloud ensures that no value is present for Cloud, not even an explicit nil
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) UnsetCloud() {
-	o.Cloud.Unset()
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
@@ -157,15 +129,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetTypeOk() (*string, 
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.
@@ -191,15 +154,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetInstanceOk() (*List
 	return o.Instance, true
 }
 
-// IsSetInstance returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) IsSetInstance() bool {
-	if o != nil && !IsNil(o.Instance) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstance gets a reference to the given ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance and assigns it to the Instance field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) SetInstance(v ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) {
 	o.Instance = &v
@@ -221,15 +175,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetNameOk() (*string, 
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -255,15 +200,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetEnvironmentOk() (*s
 	return o.Environment, true
 }
 
-// IsSetEnvironment returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) IsSetEnvironment() bool {
-	if o != nil && !IsNil(o.Environment) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnvironment gets a reference to the given string and assigns it to the Environment field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) SetEnvironment(v string) {
 	o.Environment = &v
@@ -285,15 +221,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetConfigOk() (*ListVD
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig and assigns it to the Config field.
@@ -319,15 +246,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetVolumesOk() ([]List
 	return o.Volumes, true
 }
 
-// IsSetVolumes returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) IsSetVolumes() bool {
-	if o != nil && !IsNil(o.Volumes) {
-		return true
-	}
-
-	return false
-}
-
 // SetVolumes gets a reference to the given []ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesInner and assigns it to the Volumes field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) SetVolumes(v []ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesInner) {
 	o.Volumes = v
@@ -351,15 +269,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetHostNameOk() (*stri
 	return o.HostName, true
 }
 
-// IsSetHostName returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) IsSetHostName() bool {
-	if o != nil && !IsNil(o.HostName) {
-		return true
-	}
-
-	return false
-}
-
 // SetHostName gets a reference to the given string and assigns it to the HostName field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) SetHostName(v string) {
 	o.HostName = &v
@@ -381,15 +290,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetLayoutOk() (*ListVD
 		return nil, false
 	}
 	return o.Layout, true
-}
-
-// IsSetLayout returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) IsSetLayout() bool {
-	if o != nil && !IsNil(o.Layout) {
-		return true
-	}
-
-	return false
 }
 
 // SetLayout gets a reference to the given ListVDIPools200ResponseAllOfVdiPoolsInnerConfigLayout and assigns it to the Layout field.
@@ -416,15 +316,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetStorageControllersO
 	return o.StorageControllers, true
 }
 
-// IsSetStorageControllers returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) IsSetStorageControllers() bool {
-	if o != nil && !IsNil(o.StorageControllers) {
-		return true
-	}
-
-	return false
-}
-
 // SetStorageControllers gets a reference to the given []ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner and assigns it to the StorageControllers field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) SetStorageControllers(v []ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) {
 	o.StorageControllers = v
@@ -446,15 +337,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetPlanOk() (*ListVDIP
 		return nil, false
 	}
 	return o.Plan, true
-}
-
-// IsSetPlan returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) IsSetPlan() bool {
-	if o != nil && !IsNil(o.Plan) {
-		return true
-	}
-
-	return false
 }
 
 // SetPlan gets a reference to the given ListVDIPools200ResponseAllOfVdiPoolsInnerConfigPlan and assigns it to the Plan field.
@@ -480,15 +362,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetVersionOk() (*strin
 	return o.Version, true
 }
 
-// IsSetVersion returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) IsSetVersion() bool {
-	if o != nil && !IsNil(o.Version) {
-		return true
-	}
-
-	return false
-}
-
 // SetVersion gets a reference to the given string and assigns it to the Version field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) SetVersion(v string) {
 	o.Version = &v
@@ -510,15 +383,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetNetworkInterfacesOk
 		return nil, false
 	}
 	return o.NetworkInterfaces, true
-}
-
-// IsSetNetworkInterfaces returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) IsSetNetworkInterfaces() bool {
-	if o != nil && !IsNil(o.NetworkInterfaces) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkInterfaces gets a reference to the given []ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner and assigns it to the NetworkInterfaces field.
@@ -544,15 +408,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetExecutionIdOk() (*s
 	return o.ExecutionId, true
 }
 
-// IsSetExecutionId returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) IsSetExecutionId() bool {
-	if o != nil && !IsNil(o.ExecutionId) {
-		return true
-	}
-
-	return false
-}
-
 // SetExecutionId gets a reference to the given string and assigns it to the ExecutionId field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) SetExecutionId(v string) {
 	o.ExecutionId = &v
@@ -574,15 +429,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetBackupOk() (*ListVD
 		return nil, false
 	}
 	return o.Backup, true
-}
-
-// IsSetBackup returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) IsSetBackup() bool {
-	if o != nil && !IsNil(o.Backup) {
-		return true
-	}
-
-	return false
 }
 
 // SetBackup gets a reference to the given ListVDIPools200ResponseAllOfVdiPoolsInnerConfigBackup and assigns it to the Backup field.
@@ -609,15 +455,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetLoadBalancerOk() ([
 	return o.LoadBalancer, true
 }
 
-// IsSetLoadBalancer returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) IsSetLoadBalancer() bool {
-	if o != nil && !IsNil(o.LoadBalancer) {
-		return true
-	}
-
-	return false
-}
-
 // SetLoadBalancer gets a reference to the given []map[string]interface{} and assigns it to the LoadBalancer field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) SetLoadBalancer(v []map[string]interface{}) {
 	o.LoadBalancer = v
@@ -639,15 +476,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetHideLockOk() (*bool
 		return nil, false
 	}
 	return o.HideLock, true
-}
-
-// IsSetHideLock returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) IsSetHideLock() bool {
-	if o != nil && !IsNil(o.HideLock) {
-		return true
-	}
-
-	return false
 }
 
 // SetHideLock gets a reference to the given bool and assigns it to the HideLock field.
@@ -673,15 +501,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetHasNetworksOk() (*b
 	return o.HasNetworks, true
 }
 
-// IsSetHasNetworks returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) IsSetHasNetworks() bool {
-	if o != nil && !IsNil(o.HasNetworks) {
-		return true
-	}
-
-	return false
-}
-
 // SetHasNetworks gets a reference to the given bool and assigns it to the HasNetworks field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) SetHasNetworks(v bool) {
 	o.HasNetworks = &v
@@ -703,15 +522,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetDisplayNetworksOk()
 		return nil, false
 	}
 	return o.DisplayNetworks, true
-}
-
-// IsSetDisplayNetworks returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) IsSetDisplayNetworks() bool {
-	if o != nil && !IsNil(o.DisplayNetworks) {
-		return true
-	}
-
-	return false
 }
 
 // SetDisplayNetworks gets a reference to the given []ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner and assigns it to the DisplayNetworks field.
@@ -737,15 +547,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetCopiesOk() (*int64,
 	return o.Copies, true
 }
 
-// IsSetCopies returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) IsSetCopies() bool {
-	if o != nil && !IsNil(o.Copies) {
-		return true
-	}
-
-	return false
-}
-
 // SetCopies gets a reference to the given int64 and assigns it to the Copies field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) SetCopies(v int64) {
 	o.Copies = &v
@@ -767,15 +568,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetShowScaleOk() (*boo
 		return nil, false
 	}
 	return o.ShowScale, true
-}
-
-// IsSetShowScale returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) IsSetShowScale() bool {
-	if o != nil && !IsNil(o.ShowScale) {
-		return true
-	}
-
-	return false
 }
 
 // SetShowScale gets a reference to the given bool and assigns it to the ShowScale field.
@@ -801,15 +593,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetHasPreviewOk() (*bo
 	return o.HasPreview, true
 }
 
-// IsSetHasPreview returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) IsSetHasPreview() bool {
-	if o != nil && !IsNil(o.HasPreview) {
-		return true
-	}
-
-	return false
-}
-
 // SetHasPreview gets a reference to the given bool and assigns it to the HasPreview field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) SetHasPreview(v bool) {
 	o.HasPreview = &v
@@ -831,15 +614,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetVolumesDisplayOk() 
 		return nil, false
 	}
 	return o.VolumesDisplay, true
-}
-
-// IsSetVolumesDisplay returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) IsSetVolumesDisplay() bool {
-	if o != nil && !IsNil(o.VolumesDisplay) {
-		return true
-	}
-
-	return false
 }
 
 // SetVolumesDisplay gets a reference to the given []ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner and assigns it to the VolumesDisplay field.

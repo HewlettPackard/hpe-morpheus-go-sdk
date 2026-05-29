@@ -62,15 +62,6 @@ func (o *GetInstanceContainers200ResponseAllOfContainersInnerCloud) GetIdOk() (*
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetInstanceContainers200ResponseAllOfContainersInnerCloud) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int32 and assigns it to the Id field.
 func (o *GetInstanceContainers200ResponseAllOfContainersInnerCloud) SetId(v int32) {
 	o.Id = &v
@@ -92,15 +83,6 @@ func (o *GetInstanceContainers200ResponseAllOfContainersInnerCloud) GetNameOk() 
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *GetInstanceContainers200ResponseAllOfContainersInnerCloud) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.

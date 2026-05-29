@@ -63,15 +63,6 @@ func (o *GetOptionList200ResponseOptionTypesInnerConfigSourceHeadersInner) GetNa
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *GetOptionList200ResponseOptionTypesInnerConfigSourceHeadersInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *GetOptionList200ResponseOptionTypesInnerConfigSourceHeadersInner) SetName(v string) {
 	o.Name = &v
@@ -95,15 +86,6 @@ func (o *GetOptionList200ResponseOptionTypesInnerConfigSourceHeadersInner) GetVa
 	return o.Value, true
 }
 
-// IsSetValue returns a boolean if a field has been set.
-func (o *GetOptionList200ResponseOptionTypesInnerConfigSourceHeadersInner) IsSetValue() bool {
-	if o != nil && !IsNil(o.Value) {
-		return true
-	}
-
-	return false
-}
-
 // SetValue gets a reference to the given string and assigns it to the Value field.
 func (o *GetOptionList200ResponseOptionTypesInnerConfigSourceHeadersInner) SetValue(v string) {
 	o.Value = &v
@@ -125,15 +107,6 @@ func (o *GetOptionList200ResponseOptionTypesInnerConfigSourceHeadersInner) GetMa
 		return nil, false
 	}
 	return o.Masked, true
-}
-
-// IsSetMasked returns a boolean if a field has been set.
-func (o *GetOptionList200ResponseOptionTypesInnerConfigSourceHeadersInner) IsSetMasked() bool {
-	if o != nil && !IsNil(o.Masked) {
-		return true
-	}
-
-	return false
 }
 
 // SetMasked gets a reference to the given string and assigns it to the Masked field.

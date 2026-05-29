@@ -70,15 +70,6 @@ func (o *UpdateApp200ResponseAppStats) GetUsedMemoryOk() (*int64, bool) {
 	return o.UsedMemory, true
 }
 
-// IsSetUsedMemory returns a boolean if a field has been set.
-func (o *UpdateApp200ResponseAppStats) IsSetUsedMemory() bool {
-	if o != nil && !IsNil(o.UsedMemory) {
-		return true
-	}
-
-	return false
-}
-
 // SetUsedMemory gets a reference to the given int64 and assigns it to the UsedMemory field.
 func (o *UpdateApp200ResponseAppStats) SetUsedMemory(v int64) {
 	o.UsedMemory = &v
@@ -100,15 +91,6 @@ func (o *UpdateApp200ResponseAppStats) GetMaxMemoryOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.MaxMemory, true
-}
-
-// IsSetMaxMemory returns a boolean if a field has been set.
-func (o *UpdateApp200ResponseAppStats) IsSetMaxMemory() bool {
-	if o != nil && !IsNil(o.MaxMemory) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxMemory gets a reference to the given int64 and assigns it to the MaxMemory field.
@@ -134,15 +116,6 @@ func (o *UpdateApp200ResponseAppStats) GetUsedStorageOk() (*int64, bool) {
 	return o.UsedStorage, true
 }
 
-// IsSetUsedStorage returns a boolean if a field has been set.
-func (o *UpdateApp200ResponseAppStats) IsSetUsedStorage() bool {
-	if o != nil && !IsNil(o.UsedStorage) {
-		return true
-	}
-
-	return false
-}
-
 // SetUsedStorage gets a reference to the given int64 and assigns it to the UsedStorage field.
 func (o *UpdateApp200ResponseAppStats) SetUsedStorage(v int64) {
 	o.UsedStorage = &v
@@ -164,15 +137,6 @@ func (o *UpdateApp200ResponseAppStats) GetMaxStorageOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.MaxStorage, true
-}
-
-// IsSetMaxStorage returns a boolean if a field has been set.
-func (o *UpdateApp200ResponseAppStats) IsSetMaxStorage() bool {
-	if o != nil && !IsNil(o.MaxStorage) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxStorage gets a reference to the given int64 and assigns it to the MaxStorage field.
@@ -198,15 +162,6 @@ func (o *UpdateApp200ResponseAppStats) GetRunningOk() (*int64, bool) {
 	return o.Running, true
 }
 
-// IsSetRunning returns a boolean if a field has been set.
-func (o *UpdateApp200ResponseAppStats) IsSetRunning() bool {
-	if o != nil && !IsNil(o.Running) {
-		return true
-	}
-
-	return false
-}
-
 // SetRunning gets a reference to the given int64 and assigns it to the Running field.
 func (o *UpdateApp200ResponseAppStats) SetRunning(v int64) {
 	o.Running = &v
@@ -228,15 +183,6 @@ func (o *UpdateApp200ResponseAppStats) GetTotalOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.Total, true
-}
-
-// IsSetTotal returns a boolean if a field has been set.
-func (o *UpdateApp200ResponseAppStats) IsSetTotal() bool {
-	if o != nil && !IsNil(o.Total) {
-		return true
-	}
-
-	return false
 }
 
 // SetTotal gets a reference to the given int64 and assigns it to the Total field.
@@ -262,15 +208,6 @@ func (o *UpdateApp200ResponseAppStats) GetCpuUsageOk() (*float32, bool) {
 	return o.CpuUsage, true
 }
 
-// IsSetCpuUsage returns a boolean if a field has been set.
-func (o *UpdateApp200ResponseAppStats) IsSetCpuUsage() bool {
-	if o != nil && !IsNil(o.CpuUsage) {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuUsage gets a reference to the given float32 and assigns it to the CpuUsage field.
 func (o *UpdateApp200ResponseAppStats) SetCpuUsage(v float32) {
 	o.CpuUsage = &v
@@ -292,15 +229,6 @@ func (o *UpdateApp200ResponseAppStats) GetInstanceCountOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.InstanceCount, true
-}
-
-// IsSetInstanceCount returns a boolean if a field has been set.
-func (o *UpdateApp200ResponseAppStats) IsSetInstanceCount() bool {
-	if o != nil && !IsNil(o.InstanceCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetInstanceCount gets a reference to the given int64 and assigns it to the InstanceCount field.
@@ -326,15 +254,6 @@ func (o *UpdateApp200ResponseAppStats) GetInstanceDayCountOk() ([]int64, bool) {
 	return o.InstanceDayCount, true
 }
 
-// IsSetInstanceDayCount returns a boolean if a field has been set.
-func (o *UpdateApp200ResponseAppStats) IsSetInstanceDayCount() bool {
-	if o != nil && !IsNil(o.InstanceDayCount) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstanceDayCount gets a reference to the given []int64 and assigns it to the InstanceDayCount field.
 func (o *UpdateApp200ResponseAppStats) SetInstanceDayCount(v []int64) {
 	o.InstanceDayCount = v
@@ -356,15 +275,6 @@ func (o *UpdateApp200ResponseAppStats) GetInstanceDayCountTotalOk() (*int64, boo
 		return nil, false
 	}
 	return o.InstanceDayCountTotal, true
-}
-
-// IsSetInstanceDayCountTotal returns a boolean if a field has been set.
-func (o *UpdateApp200ResponseAppStats) IsSetInstanceDayCountTotal() bool {
-	if o != nil && !IsNil(o.InstanceDayCountTotal) {
-		return true
-	}
-
-	return false
 }
 
 // SetInstanceDayCountTotal gets a reference to the given int64 and assigns it to the InstanceDayCountTotal field.

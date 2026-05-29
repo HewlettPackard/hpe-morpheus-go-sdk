@@ -62,15 +62,6 @@ func (o *ListFileTemplates200Response) GetContainerTemplatesOk() ([]ListFileTemp
 	return o.ContainerTemplates, true
 }
 
-// IsSetContainerTemplates returns a boolean if a field has been set.
-func (o *ListFileTemplates200Response) IsSetContainerTemplates() bool {
-	if o != nil && !IsNil(o.ContainerTemplates) {
-		return true
-	}
-
-	return false
-}
-
 // SetContainerTemplates gets a reference to the given []ListFileTemplates200ResponseAllOfContainerTemplatesInner and assigns it to the ContainerTemplates field.
 func (o *ListFileTemplates200Response) SetContainerTemplates(v []ListFileTemplates200ResponseAllOfContainerTemplatesInner) {
 	o.ContainerTemplates = v
@@ -92,15 +83,6 @@ func (o *ListFileTemplates200Response) GetMetaOk() (*ListApprovals200ResponseAll
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListFileTemplates200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

@@ -62,15 +62,6 @@ func (o *AddBaremetalHostRequestServerComputeServerTypeAnyOf1) GetIdOk() (*int32
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *AddBaremetalHostRequestServerComputeServerTypeAnyOf1) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int32 and assigns it to the Id field.
 func (o *AddBaremetalHostRequestServerComputeServerTypeAnyOf1) SetId(v int32) {
 	o.Id = &v

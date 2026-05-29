@@ -68,15 +68,6 @@ func (o *ListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner) GetIdOk(
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner) SetId(v int64) {
 	o.Id = &v
@@ -98,15 +89,6 @@ func (o *ListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner) GetAccou
 		return nil, false
 	}
 	return o.AccountId, true
-}
-
-// IsSetAccountId returns a boolean if a field has been set.
-func (o *ListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner) IsSetAccountId() bool {
-	if o != nil && !IsNil(o.AccountId) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccountId gets a reference to the given int64 and assigns it to the AccountId field.
@@ -132,15 +114,6 @@ func (o *ListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner) GetNameO
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner) SetName(v string) {
 	o.Name = &v
@@ -162,15 +135,6 @@ func (o *ListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner) GetDescr
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.

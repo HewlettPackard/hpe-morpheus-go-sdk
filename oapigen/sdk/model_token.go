@@ -78,15 +78,6 @@ func (o *Token) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *Token) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *Token) SetId(v int64) {
 	o.Id = &v
@@ -111,28 +102,9 @@ func (o *Token) GetNameOk() (*string, bool) {
 	return o.Name.Get(), o.Name.IsSet()
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *Token) IsSetName() bool {
-	if o != nil && o.Name.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given NullableString and assigns it to the Name field.
 func (o *Token) SetName(v string) {
 	o.Name.Set(&v)
-}
-
-// SetNameNil sets the value for Name to be an explicit nil
-func (o *Token) SetNameNil() {
-	o.Name.Set(nil)
-}
-
-// UnsetName ensures that no value is present for Name, not even an explicit nil
-func (o *Token) UnsetName() {
-	o.Name.Unset()
 }
 
 // GetClientId returns the ClientId field value if set, zero value otherwise.
@@ -151,15 +123,6 @@ func (o *Token) GetClientIdOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ClientId, true
-}
-
-// IsSetClientId returns a boolean if a field has been set.
-func (o *Token) IsSetClientId() bool {
-	if o != nil && !IsNil(o.ClientId) {
-		return true
-	}
-
-	return false
 }
 
 // SetClientId gets a reference to the given string and assigns it to the ClientId field.
@@ -183,15 +146,6 @@ func (o *Token) GetUsernameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Username, true
-}
-
-// IsSetUsername returns a boolean if a field has been set.
-func (o *Token) IsSetUsername() bool {
-	if o != nil && !IsNil(o.Username) {
-		return true
-	}
-
-	return false
 }
 
 // SetUsername gets a reference to the given string and assigns it to the Username field.
@@ -218,28 +172,9 @@ func (o *Token) GetExpirationOk() (*time.Time, bool) {
 	return o.Expiration.Get(), o.Expiration.IsSet()
 }
 
-// IsSetExpiration returns a boolean if a field has been set.
-func (o *Token) IsSetExpiration() bool {
-	if o != nil && o.Expiration.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExpiration gets a reference to the given NullableTime and assigns it to the Expiration field.
 func (o *Token) SetExpiration(v time.Time) {
 	o.Expiration.Set(&v)
-}
-
-// SetExpirationNil sets the value for Expiration to be an explicit nil
-func (o *Token) SetExpirationNil() {
-	o.Expiration.Set(nil)
-}
-
-// UnsetExpiration ensures that no value is present for Expiration, not even an explicit nil
-func (o *Token) UnsetExpiration() {
-	o.Expiration.Unset()
 }
 
 // GetTokenType returns the TokenType field value if set, zero value otherwise.
@@ -258,15 +193,6 @@ func (o *Token) GetTokenTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.TokenType, true
-}
-
-// IsSetTokenType returns a boolean if a field has been set.
-func (o *Token) IsSetTokenType() bool {
-	if o != nil && !IsNil(o.TokenType) {
-		return true
-	}
-
-	return false
 }
 
 // SetTokenType gets a reference to the given string and assigns it to the TokenType field.
@@ -292,15 +218,6 @@ func (o *Token) GetScopeOk() (*string, bool) {
 	return o.Scope, true
 }
 
-// IsSetScope returns a boolean if a field has been set.
-func (o *Token) IsSetScope() bool {
-	if o != nil && !IsNil(o.Scope) {
-		return true
-	}
-
-	return false
-}
-
 // SetScope gets a reference to the given string and assigns it to the Scope field.
 func (o *Token) SetScope(v string) {
 	o.Scope = &v
@@ -324,15 +241,6 @@ func (o *Token) GetMaskedAccessTokenOk() (*string, bool) {
 	return o.MaskedAccessToken, true
 }
 
-// IsSetMaskedAccessToken returns a boolean if a field has been set.
-func (o *Token) IsSetMaskedAccessToken() bool {
-	if o != nil && !IsNil(o.MaskedAccessToken) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaskedAccessToken gets a reference to the given string and assigns it to the MaskedAccessToken field.
 func (o *Token) SetMaskedAccessToken(v string) {
 	o.MaskedAccessToken = &v
@@ -354,15 +262,6 @@ func (o *Token) GetMaskedRefreshTokenOk() (*string, bool) {
 		return nil, false
 	}
 	return o.MaskedRefreshToken, true
-}
-
-// IsSetMaskedRefreshToken returns a boolean if a field has been set.
-func (o *Token) IsSetMaskedRefreshToken() bool {
-	if o != nil && !IsNil(o.MaskedRefreshToken) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaskedRefreshToken gets a reference to the given string and assigns it to the MaskedRefreshToken field.
@@ -389,28 +288,9 @@ func (o *Token) GetDateCreatedOk() (*time.Time, bool) {
 	return o.DateCreated.Get(), o.DateCreated.IsSet()
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *Token) IsSetDateCreated() bool {
-	if o != nil && o.DateCreated.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given NullableTime and assigns it to the DateCreated field.
 func (o *Token) SetDateCreated(v time.Time) {
 	o.DateCreated.Set(&v)
-}
-
-// SetDateCreatedNil sets the value for DateCreated to be an explicit nil
-func (o *Token) SetDateCreatedNil() {
-	o.DateCreated.Set(nil)
-}
-
-// UnsetDateCreated ensures that no value is present for DateCreated, not even an explicit nil
-func (o *Token) UnsetDateCreated() {
-	o.DateCreated.Unset()
 }
 
 func (o Token) MarshalJSON() ([]byte, error) {

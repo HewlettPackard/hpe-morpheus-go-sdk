@@ -61,15 +61,6 @@ func (o *GetClouds200Response) GetZoneOk() (*GetClouds200ResponseZone, bool) {
 	return o.Zone, true
 }
 
-// IsSetZone returns a boolean if a field has been set.
-func (o *GetClouds200Response) IsSetZone() bool {
-	if o != nil && !IsNil(o.Zone) {
-		return true
-	}
-
-	return false
-}
-
 // SetZone gets a reference to the given GetClouds200ResponseZone and assigns it to the Zone field.
 func (o *GetClouds200Response) SetZone(v GetClouds200ResponseZone) {
 	o.Zone = &v

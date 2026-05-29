@@ -68,15 +68,6 @@ func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerResourcePermiss
 	return o.DefaultStore, true
 }
 
-// IsSetDefaultStore returns a boolean if a field has been set.
-func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerResourcePermission) IsSetDefaultStore() bool {
-	if o != nil && !IsNil(o.DefaultStore) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultStore gets a reference to the given bool and assigns it to the DefaultStore field.
 func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerResourcePermission) SetDefaultStore(v bool) {
 	o.DefaultStore = &v
@@ -98,15 +89,6 @@ func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerResourcePermiss
 		return nil, false
 	}
 	return o.DefaultTarget, true
-}
-
-// IsSetDefaultTarget returns a boolean if a field has been set.
-func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerResourcePermission) IsSetDefaultTarget() bool {
-	if o != nil && !IsNil(o.DefaultTarget) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultTarget gets a reference to the given bool and assigns it to the DefaultTarget field.
@@ -132,15 +114,6 @@ func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerResourcePermiss
 	return o.CanManage, true
 }
 
-// IsSetCanManage returns a boolean if a field has been set.
-func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerResourcePermission) IsSetCanManage() bool {
-	if o != nil && !IsNil(o.CanManage) {
-		return true
-	}
-
-	return false
-}
-
 // SetCanManage gets a reference to the given bool and assigns it to the CanManage field.
 func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerResourcePermission) SetCanManage(v bool) {
 	o.CanManage = &v
@@ -164,15 +137,6 @@ func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerResourcePermiss
 	return o.All, true
 }
 
-// IsSetAll returns a boolean if a field has been set.
-func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerResourcePermission) IsSetAll() bool {
-	if o != nil && !IsNil(o.All) {
-		return true
-	}
-
-	return false
-}
-
 // SetAll gets a reference to the given bool and assigns it to the All field.
 func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerResourcePermission) SetAll(v bool) {
 	o.All = &v
@@ -194,15 +158,6 @@ func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerResourcePermiss
 		return nil, false
 	}
 	return o.Account, true
-}
-
-// IsSetAccount returns a boolean if a field has been set.
-func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerResourcePermission) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccount gets a reference to the given ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsAccount and assigns it to the Account field.
@@ -229,15 +184,6 @@ func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerResourcePermiss
 	return o.Sites, true
 }
 
-// IsSetSites returns a boolean if a field has been set.
-func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerResourcePermission) IsSetSites() bool {
-	if o != nil && !IsNil(o.Sites) {
-		return true
-	}
-
-	return false
-}
-
 // SetSites gets a reference to the given []ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsSitesInner and assigns it to the Sites field.
 func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerResourcePermission) SetSites(v []ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsSitesInner) {
 	o.Sites = v
@@ -259,15 +205,6 @@ func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerResourcePermiss
 		return nil, false
 	}
 	return o.AllPlans, true
-}
-
-// IsSetAllPlans returns a boolean if a field has been set.
-func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerResourcePermission) IsSetAllPlans() bool {
-	if o != nil && !IsNil(o.AllPlans) {
-		return true
-	}
-
-	return false
 }
 
 // SetAllPlans gets a reference to the given bool and assigns it to the AllPlans field.
@@ -292,15 +229,6 @@ func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerResourcePermiss
 		return nil, false
 	}
 	return o.Plans, true
-}
-
-// IsSetPlans returns a boolean if a field has been set.
-func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerResourcePermission) IsSetPlans() bool {
-	if o != nil && !IsNil(o.Plans) {
-		return true
-	}
-
-	return false
 }
 
 // SetPlans gets a reference to the given []ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsPlansInner and assigns it to the Plans field.

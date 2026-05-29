@@ -62,15 +62,6 @@ func (o *ListBudgets200Response) GetBudgetsOk() ([]ListBudgets200ResponseAllOfBu
 	return o.Budgets, true
 }
 
-// IsSetBudgets returns a boolean if a field has been set.
-func (o *ListBudgets200Response) IsSetBudgets() bool {
-	if o != nil && !IsNil(o.Budgets) {
-		return true
-	}
-
-	return false
-}
-
 // SetBudgets gets a reference to the given []ListBudgets200ResponseAllOfBudgetsInner and assigns it to the Budgets field.
 func (o *ListBudgets200Response) SetBudgets(v []ListBudgets200ResponseAllOfBudgetsInner) {
 	o.Budgets = v
@@ -92,15 +83,6 @@ func (o *ListBudgets200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListBudgets200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

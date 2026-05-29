@@ -71,15 +71,6 @@ func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) GetIdOk() (*int64, b
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) SetId(v int64) {
 	o.Id = &v
@@ -104,28 +95,9 @@ func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) GetAccountOk() (*Lis
 	return o.Account.Get(), o.Account.IsSet()
 }
 
-// IsSetAccount returns a boolean if a field has been set.
-func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) IsSetAccount() bool {
-	if o != nil && o.Account.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAccount gets a reference to the given NullableListEnvironments200ResponseAllOfEnvironmentsInnerAccount and assigns it to the Account field.
 func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) SetAccount(v ListEnvironments200ResponseAllOfEnvironmentsInnerAccount) {
 	o.Account.Set(&v)
-}
-
-// SetAccountNil sets the value for Account to be an explicit nil
-func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) SetAccountNil() {
-	o.Account.Set(nil)
-}
-
-// UnsetAccount ensures that no value is present for Account, not even an explicit nil
-func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) UnsetAccount() {
-	o.Account.Unset()
 }
 
 // GetCode returns the Code field value if set, zero value otherwise.
@@ -144,15 +116,6 @@ func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) GetCodeOk() (*string
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -178,15 +141,6 @@ func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) GetNameOk() (*string
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) SetName(v string) {
 	o.Name = &v
@@ -208,15 +162,6 @@ func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) GetDescriptionOk() (
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -242,15 +187,6 @@ func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) GetVisibilityOk() (*
 	return o.Visibility, true
 }
 
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
-}
-
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
 func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) SetVisibility(v string) {
 	o.Visibility = &v
@@ -272,15 +208,6 @@ func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) GetActiveOk() (*bool
 		return nil, false
 	}
 	return o.Active, true
-}
-
-// IsSetActive returns a boolean if a field has been set.
-func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
 }
 
 // SetActive gets a reference to the given bool and assigns it to the Active field.
@@ -306,15 +233,6 @@ func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) GetSortOrderOk() (*i
 	return o.SortOrder, true
 }
 
-// IsSetSortOrder returns a boolean if a field has been set.
-func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) IsSetSortOrder() bool {
-	if o != nil && !IsNil(o.SortOrder) {
-		return true
-	}
-
-	return false
-}
-
 // SetSortOrder gets a reference to the given int64 and assigns it to the SortOrder field.
 func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) SetSortOrder(v int64) {
 	o.SortOrder = &v
@@ -338,15 +256,6 @@ func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) GetDateCreatedOk() (
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -368,15 +277,6 @@ func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) GetLastUpdatedOk() (
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.

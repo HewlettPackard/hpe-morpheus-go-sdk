@@ -69,15 +69,6 @@ func (o *ListHealth200ResponseAllOfHealthThreads) GetSuccessOk() (*bool, bool) {
 	return o.Success, true
 }
 
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthThreads) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
-}
-
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.
 func (o *ListHealth200ResponseAllOfHealthThreads) SetSuccess(v bool) {
 	o.Success = &v
@@ -102,15 +93,6 @@ func (o *ListHealth200ResponseAllOfHealthThreads) GetThreadListOk() ([]map[strin
 	return o.ThreadList, true
 }
 
-// IsSetThreadList returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthThreads) IsSetThreadList() bool {
-	if o != nil && !IsNil(o.ThreadList) {
-		return true
-	}
-
-	return false
-}
-
 // SetThreadList gets a reference to the given []map[string]interface{} and assigns it to the ThreadList field.
 func (o *ListHealth200ResponseAllOfHealthThreads) SetThreadList(v []map[string]interface{}) {
 	o.ThreadList = v
@@ -132,15 +114,6 @@ func (o *ListHealth200ResponseAllOfHealthThreads) GetBusyThreadsOk() ([]ListHeal
 		return nil, false
 	}
 	return o.BusyThreads, true
-}
-
-// IsSetBusyThreads returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthThreads) IsSetBusyThreads() bool {
-	if o != nil && !IsNil(o.BusyThreads) {
-		return true
-	}
-
-	return false
 }
 
 // SetBusyThreads gets a reference to the given []ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner and assigns it to the BusyThreads field.
@@ -167,15 +140,6 @@ func (o *ListHealth200ResponseAllOfHealthThreads) GetBlockedThreadsOk() ([]map[s
 	return o.BlockedThreads, true
 }
 
-// IsSetBlockedThreads returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthThreads) IsSetBlockedThreads() bool {
-	if o != nil && !IsNil(o.BlockedThreads) {
-		return true
-	}
-
-	return false
-}
-
 // SetBlockedThreads gets a reference to the given []map[string]interface{} and assigns it to the BlockedThreads field.
 func (o *ListHealth200ResponseAllOfHealthThreads) SetBlockedThreads(v []map[string]interface{}) {
 	o.BlockedThreads = v
@@ -198,15 +162,6 @@ func (o *ListHealth200ResponseAllOfHealthThreads) GetRunningThreadsOk() ([]map[s
 		return nil, false
 	}
 	return o.RunningThreads, true
-}
-
-// IsSetRunningThreads returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthThreads) IsSetRunningThreads() bool {
-	if o != nil && !IsNil(o.RunningThreads) {
-		return true
-	}
-
-	return false
 }
 
 // SetRunningThreads gets a reference to the given []map[string]interface{} and assigns it to the RunningThreads field.
@@ -232,15 +187,6 @@ func (o *ListHealth200ResponseAllOfHealthThreads) GetTotalCpuTimeOk() (*int64, b
 	return o.TotalCpuTime, true
 }
 
-// IsSetTotalCpuTime returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthThreads) IsSetTotalCpuTime() bool {
-	if o != nil && !IsNil(o.TotalCpuTime) {
-		return true
-	}
-
-	return false
-}
-
 // SetTotalCpuTime gets a reference to the given int64 and assigns it to the TotalCpuTime field.
 func (o *ListHealth200ResponseAllOfHealthThreads) SetTotalCpuTime(v int64) {
 	o.TotalCpuTime = &v
@@ -262,15 +208,6 @@ func (o *ListHealth200ResponseAllOfHealthThreads) GetTotalThreadsOk() (*int64, b
 		return nil, false
 	}
 	return o.TotalThreads, true
-}
-
-// IsSetTotalThreads returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthThreads) IsSetTotalThreads() bool {
-	if o != nil && !IsNil(o.TotalThreads) {
-		return true
-	}
-
-	return false
 }
 
 // SetTotalThreads gets a reference to the given int64 and assigns it to the TotalThreads field.
@@ -296,15 +233,6 @@ func (o *ListHealth200ResponseAllOfHealthThreads) GetRunningWebThreadsOk() (*int
 	return o.RunningWebThreads, true
 }
 
-// IsSetRunningWebThreads returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthThreads) IsSetRunningWebThreads() bool {
-	if o != nil && !IsNil(o.RunningWebThreads) {
-		return true
-	}
-
-	return false
-}
-
 // SetRunningWebThreads gets a reference to the given int64 and assigns it to the RunningWebThreads field.
 func (o *ListHealth200ResponseAllOfHealthThreads) SetRunningWebThreads(v int64) {
 	o.RunningWebThreads = &v
@@ -326,15 +254,6 @@ func (o *ListHealth200ResponseAllOfHealthThreads) GetStatusOk() (*string, bool) 
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthThreads) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.

@@ -66,15 +66,6 @@ func (o *UpdateHostAssignTenantRequest) GetMoveAssociatedInstancesOk() (*bool, b
 	return o.MoveAssociatedInstances, true
 }
 
-// IsSetMoveAssociatedInstances returns a boolean if a field has been set.
-func (o *UpdateHostAssignTenantRequest) IsSetMoveAssociatedInstances() bool {
-	if o != nil && !IsNil(o.MoveAssociatedInstances) {
-		return true
-	}
-
-	return false
-}
-
 // SetMoveAssociatedInstances gets a reference to the given bool and assigns it to the MoveAssociatedInstances field.
 func (o *UpdateHostAssignTenantRequest) SetMoveAssociatedInstances(v bool) {
 	o.MoveAssociatedInstances = &v

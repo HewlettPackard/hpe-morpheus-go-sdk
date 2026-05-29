@@ -61,15 +61,6 @@ func (o *ListLogSettings200Response) GetLogSettingsOk() (*ListLogSettings200Resp
 	return o.LogSettings, true
 }
 
-// IsSetLogSettings returns a boolean if a field has been set.
-func (o *ListLogSettings200Response) IsSetLogSettings() bool {
-	if o != nil && !IsNil(o.LogSettings) {
-		return true
-	}
-
-	return false
-}
-
 // SetLogSettings gets a reference to the given ListLogSettings200ResponseLogSettings and assigns it to the LogSettings field.
 func (o *ListLogSettings200Response) SetLogSettings(v ListLogSettings200ResponseLogSettings) {
 	o.LogSettings = &v

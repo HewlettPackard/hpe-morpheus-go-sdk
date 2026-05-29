@@ -62,15 +62,6 @@ func (o *ListSecurityScans200Response) GetSecurityScansOk() ([]ListSecurityScans
 	return o.SecurityScans, true
 }
 
-// IsSetSecurityScans returns a boolean if a field has been set.
-func (o *ListSecurityScans200Response) IsSetSecurityScans() bool {
-	if o != nil && !IsNil(o.SecurityScans) {
-		return true
-	}
-
-	return false
-}
-
 // SetSecurityScans gets a reference to the given []ListSecurityScans200ResponseAllOfSecurityScansInner and assigns it to the SecurityScans field.
 func (o *ListSecurityScans200Response) SetSecurityScans(v []ListSecurityScans200ResponseAllOfSecurityScansInner) {
 	o.SecurityScans = v
@@ -92,15 +83,6 @@ func (o *ListSecurityScans200Response) GetMetaOk() (*ListApprovals200ResponseAll
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListSecurityScans200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

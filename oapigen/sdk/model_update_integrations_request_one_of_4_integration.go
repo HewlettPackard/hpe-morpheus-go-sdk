@@ -122,15 +122,6 @@ func (o *UpdateIntegrationsRequestOneOf4Integration) GetServiceUrlOk() (*string,
 	return o.ServiceUrl, true
 }
 
-// IsSetServiceUrl returns a boolean if a field has been set.
-func (o *UpdateIntegrationsRequestOneOf4Integration) IsSetServiceUrl() bool {
-	if o != nil && !IsNil(o.ServiceUrl) {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceUrl gets a reference to the given string and assigns it to the ServiceUrl field.
 func (o *UpdateIntegrationsRequestOneOf4Integration) SetServiceUrl(v string) {
 	o.ServiceUrl = &v
@@ -152,15 +143,6 @@ func (o *UpdateIntegrationsRequestOneOf4Integration) GetServiceUsernameOk() (*st
 		return nil, false
 	}
 	return o.ServiceUsername, true
-}
-
-// IsSetServiceUsername returns a boolean if a field has been set.
-func (o *UpdateIntegrationsRequestOneOf4Integration) IsSetServiceUsername() bool {
-	if o != nil && !IsNil(o.ServiceUsername) {
-		return true
-	}
-
-	return false
 }
 
 // SetServiceUsername gets a reference to the given string and assigns it to the ServiceUsername field.
@@ -186,15 +168,6 @@ func (o *UpdateIntegrationsRequestOneOf4Integration) GetServicePasswordOk() (*st
 	return o.ServicePassword, true
 }
 
-// IsSetServicePassword returns a boolean if a field has been set.
-func (o *UpdateIntegrationsRequestOneOf4Integration) IsSetServicePassword() bool {
-	if o != nil && !IsNil(o.ServicePassword) {
-		return true
-	}
-
-	return false
-}
-
 // SetServicePassword gets a reference to the given string and assigns it to the ServicePassword field.
 func (o *UpdateIntegrationsRequestOneOf4Integration) SetServicePassword(v string) {
 	o.ServicePassword = &v
@@ -216,15 +189,6 @@ func (o *UpdateIntegrationsRequestOneOf4Integration) GetServiceTokenOk() (*strin
 		return nil, false
 	}
 	return o.ServiceToken, true
-}
-
-// IsSetServiceToken returns a boolean if a field has been set.
-func (o *UpdateIntegrationsRequestOneOf4Integration) IsSetServiceToken() bool {
-	if o != nil && !IsNil(o.ServiceToken) {
-		return true
-	}
-
-	return false
 }
 
 // SetServiceToken gets a reference to the given string and assigns it to the ServiceToken field.

@@ -63,15 +63,6 @@ func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVol
 	return o.Size, true
 }
 
-// IsSetSize returns a boolean if a field has been set.
-func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner) IsSetSize() bool {
-	if o != nil && !IsNil(o.Size) {
-		return true
-	}
-
-	return false
-}
-
 // SetSize gets a reference to the given int64 and assigns it to the Size field.
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner) SetSize(v int64) {
 	o.Size = &v
@@ -93,15 +84,6 @@ func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVol
 		return nil, false
 	}
 	return o.TypeCode, true
-}
-
-// IsSetTypeCode returns a boolean if a field has been set.
-func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner) IsSetTypeCode() bool {
-	if o != nil && !IsNil(o.TypeCode) {
-		return true
-	}
-
-	return false
 }
 
 // SetTypeCode gets a reference to the given string and assigns it to the TypeCode field.
@@ -128,28 +110,9 @@ func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVol
 	return o.Datastore.Get(), o.Datastore.IsSet()
 }
 
-// IsSetDatastore returns a boolean if a field has been set.
-func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner) IsSetDatastore() bool {
-	if o != nil && o.Datastore.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDatastore gets a reference to the given NullableString and assigns it to the Datastore field.
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner) SetDatastore(v string) {
 	o.Datastore.Set(&v)
-}
-
-// SetDatastoreNil sets the value for Datastore to be an explicit nil
-func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner) SetDatastoreNil() {
-	o.Datastore.Set(nil)
-}
-
-// UnsetDatastore ensures that no value is present for Datastore, not even an explicit nil
-func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner) UnsetDatastore() {
-	o.Datastore.Unset()
 }
 
 func (o ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner) MarshalJSON() ([]byte, error) {

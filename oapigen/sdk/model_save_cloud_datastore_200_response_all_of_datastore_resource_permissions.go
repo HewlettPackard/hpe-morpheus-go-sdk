@@ -71,15 +71,6 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) GetAllG
 	return o.AllGroups, true
 }
 
-// IsSetAllGroups returns a boolean if a field has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) IsSetAllGroups() bool {
-	if o != nil && !IsNil(o.AllGroups) {
-		return true
-	}
-
-	return false
-}
-
 // SetAllGroups gets a reference to the given bool and assigns it to the AllGroups field.
 func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) SetAllGroups(v bool) {
 	o.AllGroups = &v
@@ -101,15 +92,6 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) GetDefa
 		return nil, false
 	}
 	return o.DefaultStore, true
-}
-
-// IsSetDefaultStore returns a boolean if a field has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) IsSetDefaultStore() bool {
-	if o != nil && !IsNil(o.DefaultStore) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultStore gets a reference to the given bool and assigns it to the DefaultStore field.
@@ -135,15 +117,6 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) GetAllP
 	return o.AllPlans, true
 }
 
-// IsSetAllPlans returns a boolean if a field has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) IsSetAllPlans() bool {
-	if o != nil && !IsNil(o.AllPlans) {
-		return true
-	}
-
-	return false
-}
-
 // SetAllPlans gets a reference to the given bool and assigns it to the AllPlans field.
 func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) SetAllPlans(v bool) {
 	o.AllPlans = &v
@@ -165,15 +138,6 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) GetDefa
 		return nil, false
 	}
 	return o.DefaultTarget, true
-}
-
-// IsSetDefaultTarget returns a boolean if a field has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) IsSetDefaultTarget() bool {
-	if o != nil && !IsNil(o.DefaultTarget) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultTarget gets a reference to the given bool and assigns it to the DefaultTarget field.
@@ -199,15 +163,6 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) GetMorp
 	return o.MorpheusResourceType, true
 }
 
-// IsSetMorpheusResourceType returns a boolean if a field has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) IsSetMorpheusResourceType() bool {
-	if o != nil && !IsNil(o.MorpheusResourceType) {
-		return true
-	}
-
-	return false
-}
-
 // SetMorpheusResourceType gets a reference to the given string and assigns it to the MorpheusResourceType field.
 func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) SetMorpheusResourceType(v string) {
 	o.MorpheusResourceType = &v
@@ -229,15 +184,6 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) GetMorp
 		return nil, false
 	}
 	return o.MorpheusResourceId, true
-}
-
-// IsSetMorpheusResourceId returns a boolean if a field has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) IsSetMorpheusResourceId() bool {
-	if o != nil && !IsNil(o.MorpheusResourceId) {
-		return true
-	}
-
-	return false
 }
 
 // SetMorpheusResourceId gets a reference to the given int64 and assigns it to the MorpheusResourceId field.
@@ -263,15 +209,6 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) GetCanM
 	return o.CanManage, true
 }
 
-// IsSetCanManage returns a boolean if a field has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) IsSetCanManage() bool {
-	if o != nil && !IsNil(o.CanManage) {
-		return true
-	}
-
-	return false
-}
-
 // SetCanManage gets a reference to the given bool and assigns it to the CanManage field.
 func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) SetCanManage(v bool) {
 	o.CanManage = &v
@@ -293,15 +230,6 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) GetAllO
 		return nil, false
 	}
 	return o.All, true
-}
-
-// IsSetAll returns a boolean if a field has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) IsSetAll() bool {
-	if o != nil && !IsNil(o.All) {
-		return true
-	}
-
-	return false
 }
 
 // SetAll gets a reference to the given bool and assigns it to the All field.
@@ -327,15 +255,6 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) GetAcco
 	return o.Account, true
 }
 
-// IsSetAccount returns a boolean if a field has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccount gets a reference to the given SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissionsAccount and assigns it to the Account field.
 func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) SetAccount(v SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissionsAccount) {
 	o.Account = &v
@@ -359,15 +278,6 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) GetSite
 	return o.Sites, true
 }
 
-// IsSetSites returns a boolean if a field has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) IsSetSites() bool {
-	if o != nil && !IsNil(o.Sites) {
-		return true
-	}
-
-	return false
-}
-
 // SetSites gets a reference to the given []SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissionsSitesInner and assigns it to the Sites field.
 func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) SetSites(v []SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissionsSitesInner) {
 	o.Sites = v
@@ -389,15 +299,6 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) GetPlan
 		return nil, false
 	}
 	return o.Plans, true
-}
-
-// IsSetPlans returns a boolean if a field has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) IsSetPlans() bool {
-	if o != nil && !IsNil(o.Plans) {
-		return true
-	}
-
-	return false
 }
 
 // SetPlans gets a reference to the given []SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissionsPlansInner and assigns it to the Plans field.

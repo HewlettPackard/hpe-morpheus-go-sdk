@@ -66,15 +66,6 @@ func (o *AddBlueprint200Response) GetBlueprintOk() (*AddBlueprint200ResponseAllO
 	return o.Blueprint, true
 }
 
-// IsSetBlueprint returns a boolean if a field has been set.
-func (o *AddBlueprint200Response) IsSetBlueprint() bool {
-	if o != nil && !IsNil(o.Blueprint) {
-		return true
-	}
-
-	return false
-}
-
 // SetBlueprint gets a reference to the given AddBlueprint200ResponseAllOfBlueprint and assigns it to the Blueprint field.
 func (o *AddBlueprint200Response) SetBlueprint(v AddBlueprint200ResponseAllOfBlueprint) {
 	o.Blueprint = &v
@@ -99,28 +90,9 @@ func (o *AddBlueprint200Response) GetMsgOk() (*string, bool) {
 	return o.Msg.Get(), o.Msg.IsSet()
 }
 
-// IsSetMsg returns a boolean if a field has been set.
-func (o *AddBlueprint200Response) IsSetMsg() bool {
-	if o != nil && o.Msg.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMsg gets a reference to the given NullableString and assigns it to the Msg field.
 func (o *AddBlueprint200Response) SetMsg(v string) {
 	o.Msg.Set(&v)
-}
-
-// SetMsgNil sets the value for Msg to be an explicit nil
-func (o *AddBlueprint200Response) SetMsgNil() {
-	o.Msg.Set(nil)
-}
-
-// UnsetMsg ensures that no value is present for Msg, not even an explicit nil
-func (o *AddBlueprint200Response) UnsetMsg() {
-	o.Msg.Unset()
 }
 
 // GetErrors returns the Errors field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -142,28 +114,9 @@ func (o *AddBlueprint200Response) GetErrorsOk() (*string, bool) {
 	return o.Errors.Get(), o.Errors.IsSet()
 }
 
-// IsSetErrors returns a boolean if a field has been set.
-func (o *AddBlueprint200Response) IsSetErrors() bool {
-	if o != nil && o.Errors.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetErrors gets a reference to the given NullableString and assigns it to the Errors field.
 func (o *AddBlueprint200Response) SetErrors(v string) {
 	o.Errors.Set(&v)
-}
-
-// SetErrorsNil sets the value for Errors to be an explicit nil
-func (o *AddBlueprint200Response) SetErrorsNil() {
-	o.Errors.Set(nil)
-}
-
-// UnsetErrors ensures that no value is present for Errors, not even an explicit nil
-func (o *AddBlueprint200Response) UnsetErrors() {
-	o.Errors.Unset()
 }
 
 // GetErrorCode returns the ErrorCode field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -185,28 +138,9 @@ func (o *AddBlueprint200Response) GetErrorCodeOk() (*string, bool) {
 	return o.ErrorCode.Get(), o.ErrorCode.IsSet()
 }
 
-// IsSetErrorCode returns a boolean if a field has been set.
-func (o *AddBlueprint200Response) IsSetErrorCode() bool {
-	if o != nil && o.ErrorCode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetErrorCode gets a reference to the given NullableString and assigns it to the ErrorCode field.
 func (o *AddBlueprint200Response) SetErrorCode(v string) {
 	o.ErrorCode.Set(&v)
-}
-
-// SetErrorCodeNil sets the value for ErrorCode to be an explicit nil
-func (o *AddBlueprint200Response) SetErrorCodeNil() {
-	o.ErrorCode.Set(nil)
-}
-
-// UnsetErrorCode ensures that no value is present for ErrorCode, not even an explicit nil
-func (o *AddBlueprint200Response) UnsetErrorCode() {
-	o.ErrorCode.Unset()
 }
 
 // GetInProgress returns the InProgress field value if set, zero value otherwise.
@@ -225,15 +159,6 @@ func (o *AddBlueprint200Response) GetInProgressOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.InProgress, true
-}
-
-// IsSetInProgress returns a boolean if a field has been set.
-func (o *AddBlueprint200Response) IsSetInProgress() bool {
-	if o != nil && !IsNil(o.InProgress) {
-		return true
-	}
-
-	return false
 }
 
 // SetInProgress gets a reference to the given bool and assigns it to the InProgress field.
@@ -257,15 +182,6 @@ func (o *AddBlueprint200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *AddBlueprint200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

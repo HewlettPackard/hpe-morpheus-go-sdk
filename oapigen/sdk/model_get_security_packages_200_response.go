@@ -61,15 +61,6 @@ func (o *GetSecurityPackages200Response) GetSecurityPackageOk() (*GetSecurityPac
 	return o.SecurityPackage, true
 }
 
-// IsSetSecurityPackage returns a boolean if a field has been set.
-func (o *GetSecurityPackages200Response) IsSetSecurityPackage() bool {
-	if o != nil && !IsNil(o.SecurityPackage) {
-		return true
-	}
-
-	return false
-}
-
 // SetSecurityPackage gets a reference to the given GetSecurityPackages200ResponseAllOfSecurityPackage and assigns it to the SecurityPackage field.
 func (o *GetSecurityPackages200Response) SetSecurityPackage(v GetSecurityPackages200ResponseAllOfSecurityPackage) {
 	o.SecurityPackage = &v

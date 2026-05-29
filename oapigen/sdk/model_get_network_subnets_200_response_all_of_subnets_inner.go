@@ -98,15 +98,6 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetIdOk() (*int64, bool)
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetId(v int64) {
 	o.Id = &v
@@ -131,28 +122,9 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetCodeOk() (*string, bo
 	return o.Code.Get(), o.Code.IsSet()
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetCode() bool {
-	if o != nil && o.Code.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetCode(v string) {
 	o.Code.Set(&v)
-}
-
-// SetCodeNil sets the value for Code to be an explicit nil
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetCodeNil() {
-	o.Code.Set(nil)
-}
-
-// UnsetCode ensures that no value is present for Code, not even an explicit nil
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) UnsetCode() {
-	o.Code.Unset()
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -171,15 +143,6 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetNameOk() (*string, bo
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -206,15 +169,6 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetLabelsOk() ([]string,
 	return o.Labels, true
 }
 
-// IsSetLabels returns a boolean if a field has been set.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
-}
-
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetLabels(v []string) {
 	o.Labels = v
@@ -236,15 +190,6 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetActiveOk() (*bool, bo
 		return nil, false
 	}
 	return o.Active, true
-}
-
-// IsSetActive returns a boolean if a field has been set.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
 }
 
 // SetActive gets a reference to the given bool and assigns it to the Active field.
@@ -271,28 +216,9 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetDescriptionOk() (*str
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetExternalId returns the ExternalId field value if set, zero value otherwise.
@@ -311,15 +237,6 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetExternalIdOk() (*stri
 		return nil, false
 	}
 	return o.ExternalId, true
-}
-
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
-		return true
-	}
-
-	return false
 }
 
 // SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
@@ -346,28 +263,9 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetUniqueIdOk() (*string
 	return o.UniqueId.Get(), o.UniqueId.IsSet()
 }
 
-// IsSetUniqueId returns a boolean if a field has been set.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetUniqueId() bool {
-	if o != nil && o.UniqueId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUniqueId gets a reference to the given NullableString and assigns it to the UniqueId field.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetUniqueId(v string) {
 	o.UniqueId.Set(&v)
-}
-
-// SetUniqueIdNil sets the value for UniqueId to be an explicit nil
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetUniqueIdNil() {
-	o.UniqueId.Set(nil)
-}
-
-// UnsetUniqueId ensures that no value is present for UniqueId, not even an explicit nil
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) UnsetUniqueId() {
-	o.UniqueId.Unset()
 }
 
 // GetAddressPrefix returns the AddressPrefix field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -389,28 +287,9 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetAddressPrefixOk() (*s
 	return o.AddressPrefix.Get(), o.AddressPrefix.IsSet()
 }
 
-// IsSetAddressPrefix returns a boolean if a field has been set.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetAddressPrefix() bool {
-	if o != nil && o.AddressPrefix.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAddressPrefix gets a reference to the given NullableString and assigns it to the AddressPrefix field.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetAddressPrefix(v string) {
 	o.AddressPrefix.Set(&v)
-}
-
-// SetAddressPrefixNil sets the value for AddressPrefix to be an explicit nil
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetAddressPrefixNil() {
-	o.AddressPrefix.Set(nil)
-}
-
-// UnsetAddressPrefix ensures that no value is present for AddressPrefix, not even an explicit nil
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) UnsetAddressPrefix() {
-	o.AddressPrefix.Unset()
 }
 
 // GetCidr returns the Cidr field value if set, zero value otherwise.
@@ -429,15 +308,6 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetCidrOk() (*string, bo
 		return nil, false
 	}
 	return o.Cidr, true
-}
-
-// IsSetCidr returns a boolean if a field has been set.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetCidr() bool {
-	if o != nil && !IsNil(o.Cidr) {
-		return true
-	}
-
-	return false
 }
 
 // SetCidr gets a reference to the given string and assigns it to the Cidr field.
@@ -464,28 +334,9 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetGatewayOk() (*string,
 	return o.Gateway.Get(), o.Gateway.IsSet()
 }
 
-// IsSetGateway returns a boolean if a field has been set.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetGateway() bool {
-	if o != nil && o.Gateway.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetGateway gets a reference to the given NullableString and assigns it to the Gateway field.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetGateway(v string) {
 	o.Gateway.Set(&v)
-}
-
-// SetGatewayNil sets the value for Gateway to be an explicit nil
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetGatewayNil() {
-	o.Gateway.Set(nil)
-}
-
-// UnsetGateway ensures that no value is present for Gateway, not even an explicit nil
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) UnsetGateway() {
-	o.Gateway.Unset()
 }
 
 // GetNetmask returns the Netmask field value if set, zero value otherwise.
@@ -504,15 +355,6 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetNetmaskOk() (*string,
 		return nil, false
 	}
 	return o.Netmask, true
-}
-
-// IsSetNetmask returns a boolean if a field has been set.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetNetmask() bool {
-	if o != nil && !IsNil(o.Netmask) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetmask gets a reference to the given string and assigns it to the Netmask field.
@@ -536,15 +378,6 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetSubnetAddressOk() (*s
 		return nil, false
 	}
 	return o.SubnetAddress, true
-}
-
-// IsSetSubnetAddress returns a boolean if a field has been set.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetSubnetAddress() bool {
-	if o != nil && !IsNil(o.SubnetAddress) {
-		return true
-	}
-
-	return false
 }
 
 // SetSubnetAddress gets a reference to the given string and assigns it to the SubnetAddress field.
@@ -571,28 +404,9 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetTftpServerOk() (*stri
 	return o.TftpServer.Get(), o.TftpServer.IsSet()
 }
 
-// IsSetTftpServer returns a boolean if a field has been set.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetTftpServer() bool {
-	if o != nil && o.TftpServer.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetTftpServer gets a reference to the given NullableString and assigns it to the TftpServer field.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetTftpServer(v string) {
 	o.TftpServer.Set(&v)
-}
-
-// SetTftpServerNil sets the value for TftpServer to be an explicit nil
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetTftpServerNil() {
-	o.TftpServer.Set(nil)
-}
-
-// UnsetTftpServer ensures that no value is present for TftpServer, not even an explicit nil
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) UnsetTftpServer() {
-	o.TftpServer.Unset()
 }
 
 // GetBootFile returns the BootFile field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -614,28 +428,9 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetBootFileOk() (*string
 	return o.BootFile.Get(), o.BootFile.IsSet()
 }
 
-// IsSetBootFile returns a boolean if a field has been set.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetBootFile() bool {
-	if o != nil && o.BootFile.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetBootFile gets a reference to the given NullableString and assigns it to the BootFile field.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetBootFile(v string) {
 	o.BootFile.Set(&v)
-}
-
-// SetBootFileNil sets the value for BootFile to be an explicit nil
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetBootFileNil() {
-	o.BootFile.Set(nil)
-}
-
-// UnsetBootFile ensures that no value is present for BootFile, not even an explicit nil
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) UnsetBootFile() {
-	o.BootFile.Unset()
 }
 
 // GetPool returns the Pool field value if set, zero value otherwise.
@@ -654,15 +449,6 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetPoolOk() (*GetNetwork
 		return nil, false
 	}
 	return o.Pool, true
-}
-
-// IsSetPool returns a boolean if a field has been set.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetPool() bool {
-	if o != nil && !IsNil(o.Pool) {
-		return true
-	}
-
-	return false
 }
 
 // SetPool gets a reference to the given GetNetworkSubnets200ResponseAllOfSubnetsInnerPool and assigns it to the Pool field.
@@ -688,15 +474,6 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetDhcpServerOk() (*bool
 	return o.DhcpServer, true
 }
 
-// IsSetDhcpServer returns a boolean if a field has been set.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetDhcpServer() bool {
-	if o != nil && !IsNil(o.DhcpServer) {
-		return true
-	}
-
-	return false
-}
-
 // SetDhcpServer gets a reference to the given bool and assigns it to the DhcpServer field.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetDhcpServer(v bool) {
 	o.DhcpServer = &v
@@ -718,15 +495,6 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetHasFloatingIpsOk() (*
 		return nil, false
 	}
 	return o.HasFloatingIps, true
-}
-
-// IsSetHasFloatingIps returns a boolean if a field has been set.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetHasFloatingIps() bool {
-	if o != nil && !IsNil(o.HasFloatingIps) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasFloatingIps gets a reference to the given bool and assigns it to the HasFloatingIps field.
@@ -753,28 +521,9 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetDhcpIpOk() (*string, 
 	return o.DhcpIp.Get(), o.DhcpIp.IsSet()
 }
 
-// IsSetDhcpIp returns a boolean if a field has been set.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetDhcpIp() bool {
-	if o != nil && o.DhcpIp.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDhcpIp gets a reference to the given NullableString and assigns it to the DhcpIp field.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetDhcpIp(v string) {
 	o.DhcpIp.Set(&v)
-}
-
-// SetDhcpIpNil sets the value for DhcpIp to be an explicit nil
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetDhcpIpNil() {
-	o.DhcpIp.Set(nil)
-}
-
-// UnsetDhcpIp ensures that no value is present for DhcpIp, not even an explicit nil
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) UnsetDhcpIp() {
-	o.DhcpIp.Unset()
 }
 
 // GetDnsPrimary returns the DnsPrimary field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -796,28 +545,9 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetDnsPrimaryOk() (*stri
 	return o.DnsPrimary.Get(), o.DnsPrimary.IsSet()
 }
 
-// IsSetDnsPrimary returns a boolean if a field has been set.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetDnsPrimary() bool {
-	if o != nil && o.DnsPrimary.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDnsPrimary gets a reference to the given NullableString and assigns it to the DnsPrimary field.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetDnsPrimary(v string) {
 	o.DnsPrimary.Set(&v)
-}
-
-// SetDnsPrimaryNil sets the value for DnsPrimary to be an explicit nil
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetDnsPrimaryNil() {
-	o.DnsPrimary.Set(nil)
-}
-
-// UnsetDnsPrimary ensures that no value is present for DnsPrimary, not even an explicit nil
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) UnsetDnsPrimary() {
-	o.DnsPrimary.Unset()
 }
 
 // GetDnsSecondary returns the DnsSecondary field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -839,28 +569,9 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetDnsSecondaryOk() (*st
 	return o.DnsSecondary.Get(), o.DnsSecondary.IsSet()
 }
 
-// IsSetDnsSecondary returns a boolean if a field has been set.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetDnsSecondary() bool {
-	if o != nil && o.DnsSecondary.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDnsSecondary gets a reference to the given NullableString and assigns it to the DnsSecondary field.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetDnsSecondary(v string) {
 	o.DnsSecondary.Set(&v)
-}
-
-// SetDnsSecondaryNil sets the value for DnsSecondary to be an explicit nil
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetDnsSecondaryNil() {
-	o.DnsSecondary.Set(nil)
-}
-
-// UnsetDnsSecondary ensures that no value is present for DnsSecondary, not even an explicit nil
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) UnsetDnsSecondary() {
-	o.DnsSecondary.Unset()
 }
 
 // GetDhcpStart returns the DhcpStart field value if set, zero value otherwise.
@@ -879,15 +590,6 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetDhcpStartOk() (*strin
 		return nil, false
 	}
 	return o.DhcpStart, true
-}
-
-// IsSetDhcpStart returns a boolean if a field has been set.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetDhcpStart() bool {
-	if o != nil && !IsNil(o.DhcpStart) {
-		return true
-	}
-
-	return false
 }
 
 // SetDhcpStart gets a reference to the given string and assigns it to the DhcpStart field.
@@ -911,15 +613,6 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetDhcpEndOk() (*string,
 		return nil, false
 	}
 	return o.DhcpEnd, true
-}
-
-// IsSetDhcpEnd returns a boolean if a field has been set.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetDhcpEnd() bool {
-	if o != nil && !IsNil(o.DhcpEnd) {
-		return true
-	}
-
-	return false
 }
 
 // SetDhcpEnd gets a reference to the given string and assigns it to the DhcpEnd field.
@@ -946,28 +639,9 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetDhcpRangeOk() (*strin
 	return o.DhcpRange.Get(), o.DhcpRange.IsSet()
 }
 
-// IsSetDhcpRange returns a boolean if a field has been set.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetDhcpRange() bool {
-	if o != nil && o.DhcpRange.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDhcpRange gets a reference to the given NullableString and assigns it to the DhcpRange field.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetDhcpRange(v string) {
 	o.DhcpRange.Set(&v)
-}
-
-// SetDhcpRangeNil sets the value for DhcpRange to be an explicit nil
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetDhcpRangeNil() {
-	o.DhcpRange.Set(nil)
-}
-
-// UnsetDhcpRange ensures that no value is present for DhcpRange, not even an explicit nil
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) UnsetDhcpRange() {
-	o.DhcpRange.Unset()
 }
 
 // GetNetworkProxy returns the NetworkProxy field value if set, zero value otherwise.
@@ -986,15 +660,6 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetNetworkProxyOk() (*Ge
 		return nil, false
 	}
 	return o.NetworkProxy, true
-}
-
-// IsSetNetworkProxy returns a boolean if a field has been set.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetNetworkProxy() bool {
-	if o != nil && !IsNil(o.NetworkProxy) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkProxy gets a reference to the given GetNetworkSubnets200ResponseAllOfSubnetsInnerNetworkProxy and assigns it to the NetworkProxy field.
@@ -1018,15 +683,6 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetNetworkDomainOk() (*G
 		return nil, false
 	}
 	return o.NetworkDomain, true
-}
-
-// IsSetNetworkDomain returns a boolean if a field has been set.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetNetworkDomain() bool {
-	if o != nil && !IsNil(o.NetworkDomain) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkDomain gets a reference to the given GetNetworkSubnets200ResponseAllOfSubnetsInnerNetworkDomain and assigns it to the NetworkDomain field.
@@ -1053,28 +709,9 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetSearchDomainsOk() (*s
 	return o.SearchDomains.Get(), o.SearchDomains.IsSet()
 }
 
-// IsSetSearchDomains returns a boolean if a field has been set.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetSearchDomains() bool {
-	if o != nil && o.SearchDomains.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSearchDomains gets a reference to the given NullableString and assigns it to the SearchDomains field.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetSearchDomains(v string) {
 	o.SearchDomains.Set(&v)
-}
-
-// SetSearchDomainsNil sets the value for SearchDomains to be an explicit nil
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetSearchDomainsNil() {
-	o.SearchDomains.Set(nil)
-}
-
-// UnsetSearchDomains ensures that no value is present for SearchDomains, not even an explicit nil
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) UnsetSearchDomains() {
-	o.SearchDomains.Unset()
 }
 
 // GetDefaultNetwork returns the DefaultNetwork field value if set, zero value otherwise.
@@ -1093,15 +730,6 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetDefaultNetworkOk() (*
 		return nil, false
 	}
 	return o.DefaultNetwork, true
-}
-
-// IsSetDefaultNetwork returns a boolean if a field has been set.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetDefaultNetwork() bool {
-	if o != nil && !IsNil(o.DefaultNetwork) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultNetwork gets a reference to the given bool and assigns it to the DefaultNetwork field.
@@ -1127,15 +755,6 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetAssignPublicIpOk() (*
 	return o.AssignPublicIp, true
 }
 
-// IsSetAssignPublicIp returns a boolean if a field has been set.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetAssignPublicIp() bool {
-	if o != nil && !IsNil(o.AssignPublicIp) {
-		return true
-	}
-
-	return false
-}
-
 // SetAssignPublicIp gets a reference to the given bool and assigns it to the AssignPublicIp field.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetAssignPublicIp(v bool) {
 	o.AssignPublicIp = &v
@@ -1159,15 +778,6 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetVisibilityOk() (*stri
 	return o.Visibility, true
 }
 
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
-}
-
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetVisibility(v string) {
 	o.Visibility = &v
@@ -1189,15 +799,6 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetStatusOk() (*GetNetwo
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given GetNetworkSubnets200ResponseAllOfSubnetsInnerStatus and assigns it to the Status field.
@@ -1224,28 +825,9 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetNetworkOk() (*GetNetw
 	return o.Network.Get(), o.Network.IsSet()
 }
 
-// IsSetNetwork returns a boolean if a field has been set.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetNetwork() bool {
-	if o != nil && o.Network.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNetwork gets a reference to the given NullableGetNetworkSubnets200ResponseAllOfSubnetsInnerNetwork and assigns it to the Network field.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetNetwork(v GetNetworkSubnets200ResponseAllOfSubnetsInnerNetwork) {
 	o.Network.Set(&v)
-}
-
-// SetNetworkNil sets the value for Network to be an explicit nil
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetNetworkNil() {
-	o.Network.Set(nil)
-}
-
-// UnsetNetwork ensures that no value is present for Network, not even an explicit nil
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) UnsetNetwork() {
-	o.Network.Unset()
 }
 
 // GetZone returns the Zone field value if set, zero value otherwise.
@@ -1264,15 +846,6 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetZoneOk() (*GetNetwork
 		return nil, false
 	}
 	return o.Zone, true
-}
-
-// IsSetZone returns a boolean if a field has been set.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetZone() bool {
-	if o != nil && !IsNil(o.Zone) {
-		return true
-	}
-
-	return false
 }
 
 // SetZone gets a reference to the given GetNetworkSubnets200ResponseAllOfSubnetsInnerZone and assigns it to the Zone field.
@@ -1296,15 +869,6 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetTypeOk() (*GetNetwork
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given GetNetworkSubnets200ResponseAllOfSubnetsInnerType and assigns it to the Type field.
@@ -1331,28 +895,9 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetAccountOk() (*GetNetw
 	return o.Account.Get(), o.Account.IsSet()
 }
 
-// IsSetAccount returns a boolean if a field has been set.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetAccount() bool {
-	if o != nil && o.Account.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAccount gets a reference to the given NullableGetNetworkSubnets200ResponseAllOfSubnetsInnerAccount and assigns it to the Account field.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetAccount(v GetNetworkSubnets200ResponseAllOfSubnetsInnerAccount) {
 	o.Account.Set(&v)
-}
-
-// SetAccountNil sets the value for Account to be an explicit nil
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetAccountNil() {
-	o.Account.Set(nil)
-}
-
-// UnsetAccount ensures that no value is present for Account, not even an explicit nil
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) UnsetAccount() {
-	o.Account.Unset()
 }
 
 // GetSecurityGroups returns the SecurityGroups field value if set, zero value otherwise.
@@ -1371,15 +916,6 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetSecurityGroupsOk() ([
 		return nil, false
 	}
 	return o.SecurityGroups, true
-}
-
-// IsSetSecurityGroups returns a boolean if a field has been set.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetSecurityGroups() bool {
-	if o != nil && !IsNil(o.SecurityGroups) {
-		return true
-	}
-
-	return false
 }
 
 // SetSecurityGroups gets a reference to the given []map[string]interface{} and assigns it to the SecurityGroups field.
@@ -1405,15 +941,6 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetTenantsOk() ([]GetNet
 	return o.Tenants, true
 }
 
-// IsSetTenants returns a boolean if a field has been set.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetTenants() bool {
-	if o != nil && !IsNil(o.Tenants) {
-		return true
-	}
-
-	return false
-}
-
 // SetTenants gets a reference to the given []GetNetworkSubnets200ResponseAllOfSubnetsInnerTenantsInner and assigns it to the Tenants field.
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetTenants(v []GetNetworkSubnets200ResponseAllOfSubnetsInnerTenantsInner) {
 	o.Tenants = v
@@ -1435,15 +962,6 @@ func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetResourcePermissionOk(
 		return nil, false
 	}
 	return o.ResourcePermission, true
-}
-
-// IsSetResourcePermission returns a boolean if a field has been set.
-func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) IsSetResourcePermission() bool {
-	if o != nil && !IsNil(o.ResourcePermission) {
-		return true
-	}
-
-	return false
 }
 
 // SetResourcePermission gets a reference to the given GetNetworkSubnets200ResponseAllOfSubnetsInnerResourcePermission and assigns it to the ResourcePermission field.

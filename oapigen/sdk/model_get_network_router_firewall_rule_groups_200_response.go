@@ -62,15 +62,6 @@ func (o *GetNetworkRouterFirewallRuleGroups200Response) GetRuleGroupsOk() (*inte
 	return &o.RuleGroups, true
 }
 
-// IsSetRuleGroups returns a boolean if a field has been set.
-func (o *GetNetworkRouterFirewallRuleGroups200Response) IsSetRuleGroups() bool {
-	if o != nil && !IsNil(o.RuleGroups) {
-		return true
-	}
-
-	return false
-}
-
 // SetRuleGroups gets a reference to the given interface{} and assigns it to the RuleGroups field.
 func (o *GetNetworkRouterFirewallRuleGroups200Response) SetRuleGroups(v interface{}) {
 	o.RuleGroups = v

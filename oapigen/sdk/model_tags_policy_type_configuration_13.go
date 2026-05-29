@@ -89,15 +89,6 @@ func (o *TagsPolicyTypeConfiguration13) GetKeyOk() (*string, bool) {
 	return o.Key, true
 }
 
-// IsSetKey returns a boolean if a field has been set.
-func (o *TagsPolicyTypeConfiguration13) IsSetKey() bool {
-	if o != nil && !IsNil(o.Key) {
-		return true
-	}
-
-	return false
-}
-
 // SetKey gets a reference to the given string and assigns it to the Key field.
 func (o *TagsPolicyTypeConfiguration13) SetKey(v string) {
 	o.Key = &v
@@ -121,15 +112,6 @@ func (o *TagsPolicyTypeConfiguration13) GetValueListIdOk() (*string, bool) {
 	return o.ValueListId, true
 }
 
-// IsSetValueListId returns a boolean if a field has been set.
-func (o *TagsPolicyTypeConfiguration13) IsSetValueListId() bool {
-	if o != nil && !IsNil(o.ValueListId) {
-		return true
-	}
-
-	return false
-}
-
 // SetValueListId gets a reference to the given string and assigns it to the ValueListId field.
 func (o *TagsPolicyTypeConfiguration13) SetValueListId(v string) {
 	o.ValueListId = &v
@@ -151,15 +133,6 @@ func (o *TagsPolicyTypeConfiguration13) GetValueOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Value, true
-}
-
-// IsSetValue returns a boolean if a field has been set.
-func (o *TagsPolicyTypeConfiguration13) IsSetValue() bool {
-	if o != nil && !IsNil(o.Value) {
-		return true
-	}
-
-	return false
 }
 
 // SetValue gets a reference to the given string and assigns it to the Value field.

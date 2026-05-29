@@ -61,15 +61,6 @@ func (o *GetClients200Response) GetClientOk() (*GetClients200ResponseAllOfClient
 	return o.Client, true
 }
 
-// IsSetClient returns a boolean if a field has been set.
-func (o *GetClients200Response) IsSetClient() bool {
-	if o != nil && !IsNil(o.Client) {
-		return true
-	}
-
-	return false
-}
-
 // SetClient gets a reference to the given GetClients200ResponseAllOfClient and assigns it to the Client field.
 func (o *GetClients200Response) SetClient(v GetClients200ResponseAllOfClient) {
 	o.Client = &v

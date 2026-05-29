@@ -67,15 +67,6 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesI
 	return o.IpMode, true
 }
 
-// IsSetIpMode returns a boolean if a field has been set.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner) IsSetIpMode() bool {
-	if o != nil && !IsNil(o.IpMode) {
-		return true
-	}
-
-	return false
-}
-
 // SetIpMode gets a reference to the given string and assigns it to the IpMode field.
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner) SetIpMode(v string) {
 	o.IpMode = &v
@@ -97,15 +88,6 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesI
 		return nil, false
 	}
 	return o.PrimaryInterface, true
-}
-
-// IsSetPrimaryInterface returns a boolean if a field has been set.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner) IsSetPrimaryInterface() bool {
-	if o != nil && !IsNil(o.PrimaryInterface) {
-		return true
-	}
-
-	return false
 }
 
 // SetPrimaryInterface gets a reference to the given bool and assigns it to the PrimaryInterface field.
@@ -131,15 +113,6 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesI
 	return o.ShowNetworkPoolLabel, true
 }
 
-// IsSetShowNetworkPoolLabel returns a boolean if a field has been set.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner) IsSetShowNetworkPoolLabel() bool {
-	if o != nil && !IsNil(o.ShowNetworkPoolLabel) {
-		return true
-	}
-
-	return false
-}
-
 // SetShowNetworkPoolLabel gets a reference to the given bool and assigns it to the ShowNetworkPoolLabel field.
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner) SetShowNetworkPoolLabel(v bool) {
 	o.ShowNetworkPoolLabel = &v
@@ -161,15 +134,6 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesI
 		return nil, false
 	}
 	return o.ShowNetworkDhcpLabel, true
-}
-
-// IsSetShowNetworkDhcpLabel returns a boolean if a field has been set.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner) IsSetShowNetworkDhcpLabel() bool {
-	if o != nil && !IsNil(o.ShowNetworkDhcpLabel) {
-		return true
-	}
-
-	return false
 }
 
 // SetShowNetworkDhcpLabel gets a reference to the given bool and assigns it to the ShowNetworkDhcpLabel field.
@@ -195,15 +159,6 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesI
 	return o.Network, true
 }
 
-// IsSetNetwork returns a boolean if a field has been set.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner) IsSetNetwork() bool {
-	if o != nil && !IsNil(o.Network) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetwork gets a reference to the given ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork and assigns it to the Network field.
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner) SetNetwork(v ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) {
 	o.Network = &v
@@ -227,15 +182,6 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesI
 	return o.NetworkInterfaceTypeId, true
 }
 
-// IsSetNetworkInterfaceTypeId returns a boolean if a field has been set.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner) IsSetNetworkInterfaceTypeId() bool {
-	if o != nil && !IsNil(o.NetworkInterfaceTypeId) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkInterfaceTypeId gets a reference to the given int64 and assigns it to the NetworkInterfaceTypeId field.
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner) SetNetworkInterfaceTypeId(v int64) {
 	o.NetworkInterfaceTypeId = &v
@@ -257,15 +203,6 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesI
 		return nil, false
 	}
 	return o.NetworkInterfaceTypeIdName, true
-}
-
-// IsSetNetworkInterfaceTypeIdName returns a boolean if a field has been set.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner) IsSetNetworkInterfaceTypeIdName() bool {
-	if o != nil && !IsNil(o.NetworkInterfaceTypeIdName) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkInterfaceTypeIdName gets a reference to the given string and assigns it to the NetworkInterfaceTypeIdName field.

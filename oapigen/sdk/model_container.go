@@ -103,15 +103,6 @@ func (o *Container) GetIdOk() (*int32, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *Container) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int32 and assigns it to the Id field.
 func (o *Container) SetId(v int32) {
 	o.Id = &v
@@ -133,15 +124,6 @@ func (o *Container) GetUuidOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Uuid, true
-}
-
-// IsSetUuid returns a boolean if a field has been set.
-func (o *Container) IsSetUuid() bool {
-	if o != nil && !IsNil(o.Uuid) {
-		return true
-	}
-
-	return false
 }
 
 // SetUuid gets a reference to the given string and assigns it to the Uuid field.
@@ -167,15 +149,6 @@ func (o *Container) GetAccountIdOk() (*int32, bool) {
 	return o.AccountId, true
 }
 
-// IsSetAccountId returns a boolean if a field has been set.
-func (o *Container) IsSetAccountId() bool {
-	if o != nil && !IsNil(o.AccountId) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccountId gets a reference to the given int32 and assigns it to the AccountId field.
 func (o *Container) SetAccountId(v int32) {
 	o.AccountId = &v
@@ -197,15 +170,6 @@ func (o *Container) GetInstanceOk() (*GetInstanceContainers200ResponseAllOfConta
 		return nil, false
 	}
 	return o.Instance, true
-}
-
-// IsSetInstance returns a boolean if a field has been set.
-func (o *Container) IsSetInstance() bool {
-	if o != nil && !IsNil(o.Instance) {
-		return true
-	}
-
-	return false
 }
 
 // SetInstance gets a reference to the given GetInstanceContainers200ResponseAllOfContainersInnerInstance and assigns it to the Instance field.
@@ -231,15 +195,6 @@ func (o *Container) GetContainerTypeOk() (*GetInstanceContainers200ResponseAllOf
 	return o.ContainerType, true
 }
 
-// IsSetContainerType returns a boolean if a field has been set.
-func (o *Container) IsSetContainerType() bool {
-	if o != nil && !IsNil(o.ContainerType) {
-		return true
-	}
-
-	return false
-}
-
 // SetContainerType gets a reference to the given GetInstanceContainers200ResponseAllOfContainersInnerContainerType and assigns it to the ContainerType field.
 func (o *Container) SetContainerType(v GetInstanceContainers200ResponseAllOfContainersInnerContainerType) {
 	o.ContainerType = &v
@@ -261,15 +216,6 @@ func (o *Container) GetContainerTypeSetOk() (*GetInstanceContainers200ResponseAl
 		return nil, false
 	}
 	return o.ContainerTypeSet, true
-}
-
-// IsSetContainerTypeSet returns a boolean if a field has been set.
-func (o *Container) IsSetContainerTypeSet() bool {
-	if o != nil && !IsNil(o.ContainerTypeSet) {
-		return true
-	}
-
-	return false
 }
 
 // SetContainerTypeSet gets a reference to the given GetInstanceContainers200ResponseAllOfContainersInnerContainerTypeSet and assigns it to the ContainerTypeSet field.
@@ -295,15 +241,6 @@ func (o *Container) GetServerOk() (*GetInstanceContainers200ResponseAllOfContain
 	return o.Server, true
 }
 
-// IsSetServer returns a boolean if a field has been set.
-func (o *Container) IsSetServer() bool {
-	if o != nil && !IsNil(o.Server) {
-		return true
-	}
-
-	return false
-}
-
 // SetServer gets a reference to the given GetInstanceContainers200ResponseAllOfContainersInnerServer and assigns it to the Server field.
 func (o *Container) SetServer(v GetInstanceContainers200ResponseAllOfContainersInnerServer) {
 	o.Server = &v
@@ -325,15 +262,6 @@ func (o *Container) GetCloudOk() (*GetInstanceContainers200ResponseAllOfContaine
 		return nil, false
 	}
 	return o.Cloud, true
-}
-
-// IsSetCloud returns a boolean if a field has been set.
-func (o *Container) IsSetCloud() bool {
-	if o != nil && !IsNil(o.Cloud) {
-		return true
-	}
-
-	return false
 }
 
 // SetCloud gets a reference to the given GetInstanceContainers200ResponseAllOfContainersInnerCloud and assigns it to the Cloud field.
@@ -359,15 +287,6 @@ func (o *Container) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *Container) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *Container) SetName(v string) {
 	o.Name = &v
@@ -389,15 +308,6 @@ func (o *Container) GetIpOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Ip, true
-}
-
-// IsSetIp returns a boolean if a field has been set.
-func (o *Container) IsSetIp() bool {
-	if o != nil && !IsNil(o.Ip) {
-		return true
-	}
-
-	return false
 }
 
 // SetIp gets a reference to the given string and assigns it to the Ip field.
@@ -423,15 +333,6 @@ func (o *Container) GetInternalIpOk() (*string, bool) {
 	return o.InternalIp, true
 }
 
-// IsSetInternalIp returns a boolean if a field has been set.
-func (o *Container) IsSetInternalIp() bool {
-	if o != nil && !IsNil(o.InternalIp) {
-		return true
-	}
-
-	return false
-}
-
 // SetInternalIp gets a reference to the given string and assigns it to the InternalIp field.
 func (o *Container) SetInternalIp(v string) {
 	o.InternalIp = &v
@@ -453,15 +354,6 @@ func (o *Container) GetInternalHostnameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InternalHostname, true
-}
-
-// IsSetInternalHostname returns a boolean if a field has been set.
-func (o *Container) IsSetInternalHostname() bool {
-	if o != nil && !IsNil(o.InternalHostname) {
-		return true
-	}
-
-	return false
 }
 
 // SetInternalHostname gets a reference to the given string and assigns it to the InternalHostname field.
@@ -487,15 +379,6 @@ func (o *Container) GetExternalHostnameOk() (*string, bool) {
 	return o.ExternalHostname, true
 }
 
-// IsSetExternalHostname returns a boolean if a field has been set.
-func (o *Container) IsSetExternalHostname() bool {
-	if o != nil && !IsNil(o.ExternalHostname) {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalHostname gets a reference to the given string and assigns it to the ExternalHostname field.
 func (o *Container) SetExternalHostname(v string) {
 	o.ExternalHostname = &v
@@ -519,15 +402,6 @@ func (o *Container) GetExternalDomainOk() (*string, bool) {
 	return o.ExternalDomain, true
 }
 
-// IsSetExternalDomain returns a boolean if a field has been set.
-func (o *Container) IsSetExternalDomain() bool {
-	if o != nil && !IsNil(o.ExternalDomain) {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalDomain gets a reference to the given string and assigns it to the ExternalDomain field.
 func (o *Container) SetExternalDomain(v string) {
 	o.ExternalDomain = &v
@@ -549,15 +423,6 @@ func (o *Container) GetExternalFqdnOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ExternalFqdn, true
-}
-
-// IsSetExternalFqdn returns a boolean if a field has been set.
-func (o *Container) IsSetExternalFqdn() bool {
-	if o != nil && !IsNil(o.ExternalFqdn) {
-		return true
-	}
-
-	return false
 }
 
 // SetExternalFqdn gets a reference to the given string and assigns it to the ExternalFqdn field.
@@ -584,15 +449,6 @@ func (o *Container) GetPortsOk() ([]GetInstanceContainers200ResponseAllOfContain
 	return o.Ports, true
 }
 
-// IsSetPorts returns a boolean if a field has been set.
-func (o *Container) IsSetPorts() bool {
-	if o != nil && !IsNil(o.Ports) {
-		return true
-	}
-
-	return false
-}
-
 // SetPorts gets a reference to the given []GetInstanceContainers200ResponseAllOfContainersInnerPortsInner and assigns it to the Ports field.
 func (o *Container) SetPorts(v []GetInstanceContainers200ResponseAllOfContainersInnerPortsInner) {
 	o.Ports = v
@@ -614,15 +470,6 @@ func (o *Container) GetPlanOk() (*GetInstanceContainers200ResponseAllOfContainer
 		return nil, false
 	}
 	return o.Plan, true
-}
-
-// IsSetPlan returns a boolean if a field has been set.
-func (o *Container) IsSetPlan() bool {
-	if o != nil && !IsNil(o.Plan) {
-		return true
-	}
-
-	return false
 }
 
 // SetPlan gets a reference to the given GetInstanceContainers200ResponseAllOfContainersInnerPlan and assigns it to the Plan field.
@@ -648,15 +495,6 @@ func (o *Container) GetDateCreatedOk() (*time.Time, bool) {
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *Container) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *Container) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -678,15 +516,6 @@ func (o *Container) GetLastUpdatedOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *Container) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
@@ -712,15 +541,6 @@ func (o *Container) GetStatsEnabledOk() (*bool, bool) {
 	return o.StatsEnabled, true
 }
 
-// IsSetStatsEnabled returns a boolean if a field has been set.
-func (o *Container) IsSetStatsEnabled() bool {
-	if o != nil && !IsNil(o.StatsEnabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetStatsEnabled gets a reference to the given bool and assigns it to the StatsEnabled field.
 func (o *Container) SetStatsEnabled(v bool) {
 	o.StatsEnabled = &v
@@ -744,15 +564,6 @@ func (o *Container) GetStatusOk() (*string, bool) {
 	return o.Status, true
 }
 
-// IsSetStatus returns a boolean if a field has been set.
-func (o *Container) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
-}
-
 // SetStatus gets a reference to the given string and assigns it to the Status field.
 func (o *Container) SetStatus(v string) {
 	o.Status = &v
@@ -774,15 +585,6 @@ func (o *Container) GetUserStatusOk() (*string, bool) {
 		return nil, false
 	}
 	return o.UserStatus, true
-}
-
-// IsSetUserStatus returns a boolean if a field has been set.
-func (o *Container) IsSetUserStatus() bool {
-	if o != nil && !IsNil(o.UserStatus) {
-		return true
-	}
-
-	return false
 }
 
 // SetUserStatus gets a reference to the given string and assigns it to the UserStatus field.
@@ -809,28 +611,9 @@ func (o *Container) GetEnvironmentPrefixOk() (*string, bool) {
 	return o.EnvironmentPrefix.Get(), o.EnvironmentPrefix.IsSet()
 }
 
-// IsSetEnvironmentPrefix returns a boolean if a field has been set.
-func (o *Container) IsSetEnvironmentPrefix() bool {
-	if o != nil && o.EnvironmentPrefix.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetEnvironmentPrefix gets a reference to the given NullableString and assigns it to the EnvironmentPrefix field.
 func (o *Container) SetEnvironmentPrefix(v string) {
 	o.EnvironmentPrefix.Set(&v)
-}
-
-// SetEnvironmentPrefixNil sets the value for EnvironmentPrefix to be an explicit nil
-func (o *Container) SetEnvironmentPrefixNil() {
-	o.EnvironmentPrefix.Set(nil)
-}
-
-// UnsetEnvironmentPrefix ensures that no value is present for EnvironmentPrefix, not even an explicit nil
-func (o *Container) UnsetEnvironmentPrefix() {
-	o.EnvironmentPrefix.Unset()
 }
 
 // GetStats returns the Stats field value if set, zero value otherwise.
@@ -849,15 +632,6 @@ func (o *Container) GetStatsOk() (*GetInstanceContainers200ResponseAllOfContaine
 		return nil, false
 	}
 	return o.Stats, true
-}
-
-// IsSetStats returns a boolean if a field has been set.
-func (o *Container) IsSetStats() bool {
-	if o != nil && !IsNil(o.Stats) {
-		return true
-	}
-
-	return false
 }
 
 // SetStats gets a reference to the given GetInstanceContainers200ResponseAllOfContainersInnerStats and assigns it to the Stats field.
@@ -881,15 +655,6 @@ func (o *Container) GetRuntimeInfoOk() (map[string]interface{}, bool) {
 		return map[string]interface{}{}, false
 	}
 	return o.RuntimeInfo, true
-}
-
-// IsSetRuntimeInfo returns a boolean if a field has been set.
-func (o *Container) IsSetRuntimeInfo() bool {
-	if o != nil && !IsNil(o.RuntimeInfo) {
-		return true
-	}
-
-	return false
 }
 
 // SetRuntimeInfo gets a reference to the given map[string]interface{} and assigns it to the RuntimeInfo field.
@@ -916,28 +681,9 @@ func (o *Container) GetContainerVersionOk() (*string, bool) {
 	return o.ContainerVersion.Get(), o.ContainerVersion.IsSet()
 }
 
-// IsSetContainerVersion returns a boolean if a field has been set.
-func (o *Container) IsSetContainerVersion() bool {
-	if o != nil && o.ContainerVersion.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetContainerVersion gets a reference to the given NullableString and assigns it to the ContainerVersion field.
 func (o *Container) SetContainerVersion(v string) {
 	o.ContainerVersion.Set(&v)
-}
-
-// SetContainerVersionNil sets the value for ContainerVersion to be an explicit nil
-func (o *Container) SetContainerVersionNil() {
-	o.ContainerVersion.Set(nil)
-}
-
-// UnsetContainerVersion ensures that no value is present for ContainerVersion, not even an explicit nil
-func (o *Container) UnsetContainerVersion() {
-	o.ContainerVersion.Unset()
 }
 
 // GetRepositoryImage returns the RepositoryImage field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -959,28 +705,9 @@ func (o *Container) GetRepositoryImageOk() (*string, bool) {
 	return o.RepositoryImage.Get(), o.RepositoryImage.IsSet()
 }
 
-// IsSetRepositoryImage returns a boolean if a field has been set.
-func (o *Container) IsSetRepositoryImage() bool {
-	if o != nil && o.RepositoryImage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRepositoryImage gets a reference to the given NullableString and assigns it to the RepositoryImage field.
 func (o *Container) SetRepositoryImage(v string) {
 	o.RepositoryImage.Set(&v)
-}
-
-// SetRepositoryImageNil sets the value for RepositoryImage to be an explicit nil
-func (o *Container) SetRepositoryImageNil() {
-	o.RepositoryImage.Set(nil)
-}
-
-// UnsetRepositoryImage ensures that no value is present for RepositoryImage, not even an explicit nil
-func (o *Container) UnsetRepositoryImage() {
-	o.RepositoryImage.Unset()
 }
 
 // GetPlanCategory returns the PlanCategory field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1002,28 +729,9 @@ func (o *Container) GetPlanCategoryOk() (*string, bool) {
 	return o.PlanCategory.Get(), o.PlanCategory.IsSet()
 }
 
-// IsSetPlanCategory returns a boolean if a field has been set.
-func (o *Container) IsSetPlanCategory() bool {
-	if o != nil && o.PlanCategory.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPlanCategory gets a reference to the given NullableString and assigns it to the PlanCategory field.
 func (o *Container) SetPlanCategory(v string) {
 	o.PlanCategory.Set(&v)
-}
-
-// SetPlanCategoryNil sets the value for PlanCategory to be an explicit nil
-func (o *Container) SetPlanCategoryNil() {
-	o.PlanCategory.Set(nil)
-}
-
-// UnsetPlanCategory ensures that no value is present for PlanCategory, not even an explicit nil
-func (o *Container) UnsetPlanCategory() {
-	o.PlanCategory.Unset()
 }
 
 // GetHostname returns the Hostname field value if set, zero value otherwise.
@@ -1042,15 +750,6 @@ func (o *Container) GetHostnameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Hostname, true
-}
-
-// IsSetHostname returns a boolean if a field has been set.
-func (o *Container) IsSetHostname() bool {
-	if o != nil && !IsNil(o.Hostname) {
-		return true
-	}
-
-	return false
 }
 
 // SetHostname gets a reference to the given string and assigns it to the Hostname field.
@@ -1077,28 +776,9 @@ func (o *Container) GetDomainNameOk() (*string, bool) {
 	return o.DomainName.Get(), o.DomainName.IsSet()
 }
 
-// IsSetDomainName returns a boolean if a field has been set.
-func (o *Container) IsSetDomainName() bool {
-	if o != nil && o.DomainName.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDomainName gets a reference to the given NullableString and assigns it to the DomainName field.
 func (o *Container) SetDomainName(v string) {
 	o.DomainName.Set(&v)
-}
-
-// SetDomainNameNil sets the value for DomainName to be an explicit nil
-func (o *Container) SetDomainNameNil() {
-	o.DomainName.Set(nil)
-}
-
-// UnsetDomainName ensures that no value is present for DomainName, not even an explicit nil
-func (o *Container) UnsetDomainName() {
-	o.DomainName.Unset()
 }
 
 // GetVolumeCreated returns the VolumeCreated field value if set, zero value otherwise.
@@ -1117,15 +797,6 @@ func (o *Container) GetVolumeCreatedOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.VolumeCreated, true
-}
-
-// IsSetVolumeCreated returns a boolean if a field has been set.
-func (o *Container) IsSetVolumeCreated() bool {
-	if o != nil && !IsNil(o.VolumeCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetVolumeCreated gets a reference to the given bool and assigns it to the VolumeCreated field.
@@ -1151,15 +822,6 @@ func (o *Container) GetContainerCreatedOk() (*bool, bool) {
 	return o.ContainerCreated, true
 }
 
-// IsSetContainerCreated returns a boolean if a field has been set.
-func (o *Container) IsSetContainerCreated() bool {
-	if o != nil && !IsNil(o.ContainerCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetContainerCreated gets a reference to the given bool and assigns it to the ContainerCreated field.
 func (o *Container) SetContainerCreated(v bool) {
 	o.ContainerCreated = &v
@@ -1181,15 +843,6 @@ func (o *Container) GetMaxStorageOk() (*int32, bool) {
 		return nil, false
 	}
 	return o.MaxStorage, true
-}
-
-// IsSetMaxStorage returns a boolean if a field has been set.
-func (o *Container) IsSetMaxStorage() bool {
-	if o != nil && !IsNil(o.MaxStorage) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxStorage gets a reference to the given int32 and assigns it to the MaxStorage field.
@@ -1215,15 +868,6 @@ func (o *Container) GetMaxMemoryOk() (*int32, bool) {
 	return o.MaxMemory, true
 }
 
-// IsSetMaxMemory returns a boolean if a field has been set.
-func (o *Container) IsSetMaxMemory() bool {
-	if o != nil && !IsNil(o.MaxMemory) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxMemory gets a reference to the given int32 and assigns it to the MaxMemory field.
 func (o *Container) SetMaxMemory(v int32) {
 	o.MaxMemory = &v
@@ -1245,15 +889,6 @@ func (o *Container) GetMaxCoresOk() (*int32, bool) {
 		return nil, false
 	}
 	return o.MaxCores, true
-}
-
-// IsSetMaxCores returns a boolean if a field has been set.
-func (o *Container) IsSetMaxCores() bool {
-	if o != nil && !IsNil(o.MaxCores) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxCores gets a reference to the given int32 and assigns it to the MaxCores field.
@@ -1280,28 +915,9 @@ func (o *Container) GetMaxCpuOk() (*int32, bool) {
 	return o.MaxCpu.Get(), o.MaxCpu.IsSet()
 }
 
-// IsSetMaxCpu returns a boolean if a field has been set.
-func (o *Container) IsSetMaxCpu() bool {
-	if o != nil && o.MaxCpu.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxCpu gets a reference to the given NullableInt32 and assigns it to the MaxCpu field.
 func (o *Container) SetMaxCpu(v int32) {
 	o.MaxCpu.Set(&v)
-}
-
-// SetMaxCpuNil sets the value for MaxCpu to be an explicit nil
-func (o *Container) SetMaxCpuNil() {
-	o.MaxCpu.Set(nil)
-}
-
-// UnsetMaxCpu ensures that no value is present for MaxCpu, not even an explicit nil
-func (o *Container) UnsetMaxCpu() {
-	o.MaxCpu.Unset()
 }
 
 // GetAvailableActions returns the AvailableActions field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1321,15 +937,6 @@ func (o *Container) GetAvailableActionsOk() ([]map[string]interface{}, bool) {
 		return nil, false
 	}
 	return o.AvailableActions, true
-}
-
-// IsSetAvailableActions returns a boolean if a field has been set.
-func (o *Container) IsSetAvailableActions() bool {
-	if o != nil && !IsNil(o.AvailableActions) {
-		return true
-	}
-
-	return false
 }
 
 // SetAvailableActions gets a reference to the given []map[string]interface{} and assigns it to the AvailableActions field.
@@ -1356,28 +963,9 @@ func (o *Container) GetConfigGroupOk() (*string, bool) {
 	return o.ConfigGroup.Get(), o.ConfigGroup.IsSet()
 }
 
-// IsSetConfigGroup returns a boolean if a field has been set.
-func (o *Container) IsSetConfigGroup() bool {
-	if o != nil && o.ConfigGroup.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetConfigGroup gets a reference to the given NullableString and assigns it to the ConfigGroup field.
 func (o *Container) SetConfigGroup(v string) {
 	o.ConfigGroup.Set(&v)
-}
-
-// SetConfigGroupNil sets the value for ConfigGroup to be an explicit nil
-func (o *Container) SetConfigGroupNil() {
-	o.ConfigGroup.Set(nil)
-}
-
-// UnsetConfigGroup ensures that no value is present for ConfigGroup, not even an explicit nil
-func (o *Container) UnsetConfigGroup() {
-	o.ConfigGroup.Unset()
 }
 
 // GetConfigId returns the ConfigId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1399,28 +987,9 @@ func (o *Container) GetConfigIdOk() (*string, bool) {
 	return o.ConfigId.Get(), o.ConfigId.IsSet()
 }
 
-// IsSetConfigId returns a boolean if a field has been set.
-func (o *Container) IsSetConfigId() bool {
-	if o != nil && o.ConfigId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetConfigId gets a reference to the given NullableString and assigns it to the ConfigId field.
 func (o *Container) SetConfigId(v string) {
 	o.ConfigId.Set(&v)
-}
-
-// SetConfigIdNil sets the value for ConfigId to be an explicit nil
-func (o *Container) SetConfigIdNil() {
-	o.ConfigId.Set(nil)
-}
-
-// UnsetConfigId ensures that no value is present for ConfigId, not even an explicit nil
-func (o *Container) UnsetConfigId() {
-	o.ConfigId.Unset()
 }
 
 // GetConfigRole returns the ConfigRole field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1442,28 +1011,9 @@ func (o *Container) GetConfigRoleOk() (*string, bool) {
 	return o.ConfigRole.Get(), o.ConfigRole.IsSet()
 }
 
-// IsSetConfigRole returns a boolean if a field has been set.
-func (o *Container) IsSetConfigRole() bool {
-	if o != nil && o.ConfigRole.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetConfigRole gets a reference to the given NullableString and assigns it to the ConfigRole field.
 func (o *Container) SetConfigRole(v string) {
 	o.ConfigRole.Set(&v)
-}
-
-// SetConfigRoleNil sets the value for ConfigRole to be an explicit nil
-func (o *Container) SetConfigRoleNil() {
-	o.ConfigRole.Set(nil)
-}
-
-// UnsetConfigRole ensures that no value is present for ConfigRole, not even an explicit nil
-func (o *Container) UnsetConfigRole() {
-	o.ConfigRole.Unset()
 }
 
 // GetHourlyCost returns the HourlyCost field value if set, zero value otherwise.
@@ -1482,15 +1032,6 @@ func (o *Container) GetHourlyCostOk() (*float64, bool) {
 		return nil, false
 	}
 	return o.HourlyCost, true
-}
-
-// IsSetHourlyCost returns a boolean if a field has been set.
-func (o *Container) IsSetHourlyCost() bool {
-	if o != nil && !IsNil(o.HourlyCost) {
-		return true
-	}
-
-	return false
 }
 
 // SetHourlyCost gets a reference to the given float64 and assigns it to the HourlyCost field.
@@ -1514,15 +1055,6 @@ func (o *Container) GetHourlyPriceOk() (*float64, bool) {
 		return nil, false
 	}
 	return o.HourlyPrice, true
-}
-
-// IsSetHourlyPrice returns a boolean if a field has been set.
-func (o *Container) IsSetHourlyPrice() bool {
-	if o != nil && !IsNil(o.HourlyPrice) {
-		return true
-	}
-
-	return false
 }
 
 // SetHourlyPrice gets a reference to the given float64 and assigns it to the HourlyPrice field.

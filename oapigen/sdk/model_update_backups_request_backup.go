@@ -66,15 +66,6 @@ func (o *UpdateBackupsRequestBackup) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateBackupsRequestBackup) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *UpdateBackupsRequestBackup) SetName(v string) {
 	o.Name = &v
@@ -98,15 +89,6 @@ func (o *UpdateBackupsRequestBackup) GetJobIdOk() (*int64, bool) {
 	return o.JobId, true
 }
 
-// IsSetJobId returns a boolean if a field has been set.
-func (o *UpdateBackupsRequestBackup) IsSetJobId() bool {
-	if o != nil && !IsNil(o.JobId) {
-		return true
-	}
-
-	return false
-}
-
 // SetJobId gets a reference to the given int64 and assigns it to the JobId field.
 func (o *UpdateBackupsRequestBackup) SetJobId(v int64) {
 	o.JobId = &v
@@ -128,15 +110,6 @@ func (o *UpdateBackupsRequestBackup) GetEnabledOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *UpdateBackupsRequestBackup) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.

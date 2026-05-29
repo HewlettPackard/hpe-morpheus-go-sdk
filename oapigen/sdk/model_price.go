@@ -81,15 +81,6 @@ func (o *Price) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *Price) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *Price) SetId(v int64) {
 	o.Id = &v
@@ -111,15 +102,6 @@ func (o *Price) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *Price) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -145,15 +127,6 @@ func (o *Price) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *Price) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *Price) SetCode(v string) {
 	o.Code = &v
@@ -175,15 +148,6 @@ func (o *Price) GetActiveOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Active, true
-}
-
-// IsSetActive returns a boolean if a field has been set.
-func (o *Price) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
 }
 
 // SetActive gets a reference to the given bool and assigns it to the Active field.
@@ -209,15 +173,6 @@ func (o *Price) GetPriceTypeOk() (*string, bool) {
 	return o.PriceType, true
 }
 
-// IsSetPriceType returns a boolean if a field has been set.
-func (o *Price) IsSetPriceType() bool {
-	if o != nil && !IsNil(o.PriceType) {
-		return true
-	}
-
-	return false
-}
-
 // SetPriceType gets a reference to the given string and assigns it to the PriceType field.
 func (o *Price) SetPriceType(v string) {
 	o.PriceType = &v
@@ -239,15 +194,6 @@ func (o *Price) GetPriceUnitOk() (*string, bool) {
 		return nil, false
 	}
 	return o.PriceUnit, true
-}
-
-// IsSetPriceUnit returns a boolean if a field has been set.
-func (o *Price) IsSetPriceUnit() bool {
-	if o != nil && !IsNil(o.PriceUnit) {
-		return true
-	}
-
-	return false
 }
 
 // SetPriceUnit gets a reference to the given string and assigns it to the PriceUnit field.
@@ -274,28 +220,9 @@ func (o *Price) GetAdditionalPriceUnitOk() (*string, bool) {
 	return o.AdditionalPriceUnit.Get(), o.AdditionalPriceUnit.IsSet()
 }
 
-// IsSetAdditionalPriceUnit returns a boolean if a field has been set.
-func (o *Price) IsSetAdditionalPriceUnit() bool {
-	if o != nil && o.AdditionalPriceUnit.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAdditionalPriceUnit gets a reference to the given NullableString and assigns it to the AdditionalPriceUnit field.
 func (o *Price) SetAdditionalPriceUnit(v string) {
 	o.AdditionalPriceUnit.Set(&v)
-}
-
-// SetAdditionalPriceUnitNil sets the value for AdditionalPriceUnit to be an explicit nil
-func (o *Price) SetAdditionalPriceUnitNil() {
-	o.AdditionalPriceUnit.Set(nil)
-}
-
-// UnsetAdditionalPriceUnit ensures that no value is present for AdditionalPriceUnit, not even an explicit nil
-func (o *Price) UnsetAdditionalPriceUnit() {
-	o.AdditionalPriceUnit.Unset()
 }
 
 // GetPrice returns the Price field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -317,28 +244,9 @@ func (o *Price) GetPriceOk() (*float32, bool) {
 	return o.Price.Get(), o.Price.IsSet()
 }
 
-// IsSetPrice returns a boolean if a field has been set.
-func (o *Price) IsSetPrice() bool {
-	if o != nil && o.Price.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPrice gets a reference to the given NullableFloat32 and assigns it to the Price field.
 func (o *Price) SetPrice(v float32) {
 	o.Price.Set(&v)
-}
-
-// SetPriceNil sets the value for Price to be an explicit nil
-func (o *Price) SetPriceNil() {
-	o.Price.Set(nil)
-}
-
-// UnsetPrice ensures that no value is present for Price, not even an explicit nil
-func (o *Price) UnsetPrice() {
-	o.Price.Unset()
 }
 
 // GetCustomPrice returns the CustomPrice field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -360,28 +268,9 @@ func (o *Price) GetCustomPriceOk() (*float32, bool) {
 	return o.CustomPrice.Get(), o.CustomPrice.IsSet()
 }
 
-// IsSetCustomPrice returns a boolean if a field has been set.
-func (o *Price) IsSetCustomPrice() bool {
-	if o != nil && o.CustomPrice.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCustomPrice gets a reference to the given NullableFloat32 and assigns it to the CustomPrice field.
 func (o *Price) SetCustomPrice(v float32) {
 	o.CustomPrice.Set(&v)
-}
-
-// SetCustomPriceNil sets the value for CustomPrice to be an explicit nil
-func (o *Price) SetCustomPriceNil() {
-	o.CustomPrice.Set(nil)
-}
-
-// UnsetCustomPrice ensures that no value is present for CustomPrice, not even an explicit nil
-func (o *Price) UnsetCustomPrice() {
-	o.CustomPrice.Unset()
 }
 
 // GetMarkupType returns the MarkupType field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -403,28 +292,9 @@ func (o *Price) GetMarkupTypeOk() (*string, bool) {
 	return o.MarkupType.Get(), o.MarkupType.IsSet()
 }
 
-// IsSetMarkupType returns a boolean if a field has been set.
-func (o *Price) IsSetMarkupType() bool {
-	if o != nil && o.MarkupType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMarkupType gets a reference to the given NullableString and assigns it to the MarkupType field.
 func (o *Price) SetMarkupType(v string) {
 	o.MarkupType.Set(&v)
-}
-
-// SetMarkupTypeNil sets the value for MarkupType to be an explicit nil
-func (o *Price) SetMarkupTypeNil() {
-	o.MarkupType.Set(nil)
-}
-
-// UnsetMarkupType ensures that no value is present for MarkupType, not even an explicit nil
-func (o *Price) UnsetMarkupType() {
-	o.MarkupType.Unset()
 }
 
 // GetMarkup returns the Markup field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -446,28 +316,9 @@ func (o *Price) GetMarkupOk() (*float32, bool) {
 	return o.Markup.Get(), o.Markup.IsSet()
 }
 
-// IsSetMarkup returns a boolean if a field has been set.
-func (o *Price) IsSetMarkup() bool {
-	if o != nil && o.Markup.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMarkup gets a reference to the given NullableFloat32 and assigns it to the Markup field.
 func (o *Price) SetMarkup(v float32) {
 	o.Markup.Set(&v)
-}
-
-// SetMarkupNil sets the value for Markup to be an explicit nil
-func (o *Price) SetMarkupNil() {
-	o.Markup.Set(nil)
-}
-
-// UnsetMarkup ensures that no value is present for Markup, not even an explicit nil
-func (o *Price) UnsetMarkup() {
-	o.Markup.Unset()
 }
 
 // GetMarkupPercent returns the MarkupPercent field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -489,28 +340,9 @@ func (o *Price) GetMarkupPercentOk() (*float32, bool) {
 	return o.MarkupPercent.Get(), o.MarkupPercent.IsSet()
 }
 
-// IsSetMarkupPercent returns a boolean if a field has been set.
-func (o *Price) IsSetMarkupPercent() bool {
-	if o != nil && o.MarkupPercent.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMarkupPercent gets a reference to the given NullableFloat32 and assigns it to the MarkupPercent field.
 func (o *Price) SetMarkupPercent(v float32) {
 	o.MarkupPercent.Set(&v)
-}
-
-// SetMarkupPercentNil sets the value for MarkupPercent to be an explicit nil
-func (o *Price) SetMarkupPercentNil() {
-	o.MarkupPercent.Set(nil)
-}
-
-// UnsetMarkupPercent ensures that no value is present for MarkupPercent, not even an explicit nil
-func (o *Price) UnsetMarkupPercent() {
-	o.MarkupPercent.Unset()
 }
 
 // GetCost returns the Cost field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -532,28 +364,9 @@ func (o *Price) GetCostOk() (*float32, bool) {
 	return o.Cost.Get(), o.Cost.IsSet()
 }
 
-// IsSetCost returns a boolean if a field has been set.
-func (o *Price) IsSetCost() bool {
-	if o != nil && o.Cost.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCost gets a reference to the given NullableFloat32 and assigns it to the Cost field.
 func (o *Price) SetCost(v float32) {
 	o.Cost.Set(&v)
-}
-
-// SetCostNil sets the value for Cost to be an explicit nil
-func (o *Price) SetCostNil() {
-	o.Cost.Set(nil)
-}
-
-// UnsetCost ensures that no value is present for Cost, not even an explicit nil
-func (o *Price) UnsetCost() {
-	o.Cost.Unset()
 }
 
 // GetCurrency returns the Currency field value if set, zero value otherwise.
@@ -572,15 +385,6 @@ func (o *Price) GetCurrencyOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Currency, true
-}
-
-// IsSetCurrency returns a boolean if a field has been set.
-func (o *Price) IsSetCurrency() bool {
-	if o != nil && !IsNil(o.Currency) {
-		return true
-	}
-
-	return false
 }
 
 // SetCurrency gets a reference to the given string and assigns it to the Currency field.
@@ -604,15 +408,6 @@ func (o *Price) GetIncurChargesOk() (*string, bool) {
 		return nil, false
 	}
 	return o.IncurCharges, true
-}
-
-// IsSetIncurCharges returns a boolean if a field has been set.
-func (o *Price) IsSetIncurCharges() bool {
-	if o != nil && !IsNil(o.IncurCharges) {
-		return true
-	}
-
-	return false
 }
 
 // SetIncurCharges gets a reference to the given string and assigns it to the IncurCharges field.
@@ -639,28 +434,9 @@ func (o *Price) GetPlatformOk() (*string, bool) {
 	return o.Platform.Get(), o.Platform.IsSet()
 }
 
-// IsSetPlatform returns a boolean if a field has been set.
-func (o *Price) IsSetPlatform() bool {
-	if o != nil && o.Platform.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPlatform gets a reference to the given NullableString and assigns it to the Platform field.
 func (o *Price) SetPlatform(v string) {
 	o.Platform.Set(&v)
-}
-
-// SetPlatformNil sets the value for Platform to be an explicit nil
-func (o *Price) SetPlatformNil() {
-	o.Platform.Set(nil)
-}
-
-// UnsetPlatform ensures that no value is present for Platform, not even an explicit nil
-func (o *Price) UnsetPlatform() {
-	o.Platform.Unset()
 }
 
 // GetSoftware returns the Software field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -682,28 +458,9 @@ func (o *Price) GetSoftwareOk() (*string, bool) {
 	return o.Software.Get(), o.Software.IsSet()
 }
 
-// IsSetSoftware returns a boolean if a field has been set.
-func (o *Price) IsSetSoftware() bool {
-	if o != nil && o.Software.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSoftware gets a reference to the given NullableString and assigns it to the Software field.
 func (o *Price) SetSoftware(v string) {
 	o.Software.Set(&v)
-}
-
-// SetSoftwareNil sets the value for Software to be an explicit nil
-func (o *Price) SetSoftwareNil() {
-	o.Software.Set(nil)
-}
-
-// UnsetSoftware ensures that no value is present for Software, not even an explicit nil
-func (o *Price) UnsetSoftware() {
-	o.Software.Unset()
 }
 
 // GetVolumeType returns the VolumeType field value if set, zero value otherwise.
@@ -722,15 +479,6 @@ func (o *Price) GetVolumeTypeOk() (*AddPrices200ResponseAllOfPriceVolumeType, bo
 		return nil, false
 	}
 	return o.VolumeType, true
-}
-
-// IsSetVolumeType returns a boolean if a field has been set.
-func (o *Price) IsSetVolumeType() bool {
-	if o != nil && !IsNil(o.VolumeType) {
-		return true
-	}
-
-	return false
 }
 
 // SetVolumeType gets a reference to the given AddPrices200ResponseAllOfPriceVolumeType and assigns it to the VolumeType field.
@@ -754,15 +502,6 @@ func (o *Price) GetDatastoreOk() (*AddPrices200ResponseAllOfPriceDatastore, bool
 		return nil, false
 	}
 	return o.Datastore, true
-}
-
-// IsSetDatastore returns a boolean if a field has been set.
-func (o *Price) IsSetDatastore() bool {
-	if o != nil && !IsNil(o.Datastore) {
-		return true
-	}
-
-	return false
 }
 
 // SetDatastore gets a reference to the given AddPrices200ResponseAllOfPriceDatastore and assigns it to the Datastore field.
@@ -789,28 +528,9 @@ func (o *Price) GetCrossCloudApplyOk() (*bool, bool) {
 	return o.CrossCloudApply.Get(), o.CrossCloudApply.IsSet()
 }
 
-// IsSetCrossCloudApply returns a boolean if a field has been set.
-func (o *Price) IsSetCrossCloudApply() bool {
-	if o != nil && o.CrossCloudApply.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCrossCloudApply gets a reference to the given NullableBool and assigns it to the CrossCloudApply field.
 func (o *Price) SetCrossCloudApply(v bool) {
 	o.CrossCloudApply.Set(&v)
-}
-
-// SetCrossCloudApplyNil sets the value for CrossCloudApply to be an explicit nil
-func (o *Price) SetCrossCloudApplyNil() {
-	o.CrossCloudApply.Set(nil)
-}
-
-// UnsetCrossCloudApply ensures that no value is present for CrossCloudApply, not even an explicit nil
-func (o *Price) UnsetCrossCloudApply() {
-	o.CrossCloudApply.Unset()
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -832,28 +552,9 @@ func (o *Price) GetAccountOk() (*string, bool) {
 	return o.Account.Get(), o.Account.IsSet()
 }
 
-// IsSetAccount returns a boolean if a field has been set.
-func (o *Price) IsSetAccount() bool {
-	if o != nil && o.Account.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAccount gets a reference to the given NullableString and assigns it to the Account field.
 func (o *Price) SetAccount(v string) {
 	o.Account.Set(&v)
-}
-
-// SetAccountNil sets the value for Account to be an explicit nil
-func (o *Price) SetAccountNil() {
-	o.Account.Set(nil)
-}
-
-// UnsetAccount ensures that no value is present for Account, not even an explicit nil
-func (o *Price) UnsetAccount() {
-	o.Account.Unset()
 }
 
 func (o Price) MarshalJSON() ([]byte, error) {

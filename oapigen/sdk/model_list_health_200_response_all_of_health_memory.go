@@ -74,15 +74,6 @@ func (o *ListHealth200ResponseAllOfHealthMemory) GetSuccessOk() (*bool, bool) {
 	return o.Success, true
 }
 
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthMemory) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
-}
-
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.
 func (o *ListHealth200ResponseAllOfHealthMemory) SetSuccess(v bool) {
 	o.Success = &v
@@ -104,15 +95,6 @@ func (o *ListHealth200ResponseAllOfHealthMemory) GetMaxMemoryOk() (*int64, bool)
 		return nil, false
 	}
 	return o.MaxMemory, true
-}
-
-// IsSetMaxMemory returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthMemory) IsSetMaxMemory() bool {
-	if o != nil && !IsNil(o.MaxMemory) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxMemory gets a reference to the given int64 and assigns it to the MaxMemory field.
@@ -138,15 +120,6 @@ func (o *ListHealth200ResponseAllOfHealthMemory) GetTotalMemoryOk() (*int64, boo
 	return o.TotalMemory, true
 }
 
-// IsSetTotalMemory returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthMemory) IsSetTotalMemory() bool {
-	if o != nil && !IsNil(o.TotalMemory) {
-		return true
-	}
-
-	return false
-}
-
 // SetTotalMemory gets a reference to the given int64 and assigns it to the TotalMemory field.
 func (o *ListHealth200ResponseAllOfHealthMemory) SetTotalMemory(v int64) {
 	o.TotalMemory = &v
@@ -168,15 +141,6 @@ func (o *ListHealth200ResponseAllOfHealthMemory) GetFreeMemoryOk() (*int64, bool
 		return nil, false
 	}
 	return o.FreeMemory, true
-}
-
-// IsSetFreeMemory returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthMemory) IsSetFreeMemory() bool {
-	if o != nil && !IsNil(o.FreeMemory) {
-		return true
-	}
-
-	return false
 }
 
 // SetFreeMemory gets a reference to the given int64 and assigns it to the FreeMemory field.
@@ -202,15 +166,6 @@ func (o *ListHealth200ResponseAllOfHealthMemory) GetUsedMemoryOk() (*int64, bool
 	return o.UsedMemory, true
 }
 
-// IsSetUsedMemory returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthMemory) IsSetUsedMemory() bool {
-	if o != nil && !IsNil(o.UsedMemory) {
-		return true
-	}
-
-	return false
-}
-
 // SetUsedMemory gets a reference to the given int64 and assigns it to the UsedMemory field.
 func (o *ListHealth200ResponseAllOfHealthMemory) SetUsedMemory(v int64) {
 	o.UsedMemory = &v
@@ -232,15 +187,6 @@ func (o *ListHealth200ResponseAllOfHealthMemory) GetSystemMemoryOk() (*int64, bo
 		return nil, false
 	}
 	return o.SystemMemory, true
-}
-
-// IsSetSystemMemory returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthMemory) IsSetSystemMemory() bool {
-	if o != nil && !IsNil(o.SystemMemory) {
-		return true
-	}
-
-	return false
 }
 
 // SetSystemMemory gets a reference to the given int64 and assigns it to the SystemMemory field.
@@ -266,15 +212,6 @@ func (o *ListHealth200ResponseAllOfHealthMemory) GetCommittedMemoryOk() (*int64,
 	return o.CommittedMemory, true
 }
 
-// IsSetCommittedMemory returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthMemory) IsSetCommittedMemory() bool {
-	if o != nil && !IsNil(o.CommittedMemory) {
-		return true
-	}
-
-	return false
-}
-
 // SetCommittedMemory gets a reference to the given int64 and assigns it to the CommittedMemory field.
 func (o *ListHealth200ResponseAllOfHealthMemory) SetCommittedMemory(v int64) {
 	o.CommittedMemory = &v
@@ -296,15 +233,6 @@ func (o *ListHealth200ResponseAllOfHealthMemory) GetSystemFreeMemoryOk() (*int64
 		return nil, false
 	}
 	return o.SystemFreeMemory, true
-}
-
-// IsSetSystemFreeMemory returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthMemory) IsSetSystemFreeMemory() bool {
-	if o != nil && !IsNil(o.SystemFreeMemory) {
-		return true
-	}
-
-	return false
 }
 
 // SetSystemFreeMemory gets a reference to the given int64 and assigns it to the SystemFreeMemory field.
@@ -330,15 +258,6 @@ func (o *ListHealth200ResponseAllOfHealthMemory) GetSystemSwapOk() (*int64, bool
 	return o.SystemSwap, true
 }
 
-// IsSetSystemSwap returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthMemory) IsSetSystemSwap() bool {
-	if o != nil && !IsNil(o.SystemSwap) {
-		return true
-	}
-
-	return false
-}
-
 // SetSystemSwap gets a reference to the given int64 and assigns it to the SystemSwap field.
 func (o *ListHealth200ResponseAllOfHealthMemory) SetSystemSwap(v int64) {
 	o.SystemSwap = &v
@@ -360,15 +279,6 @@ func (o *ListHealth200ResponseAllOfHealthMemory) GetSystemFreeSwapOk() (*int64, 
 		return nil, false
 	}
 	return o.SystemFreeSwap, true
-}
-
-// IsSetSystemFreeSwap returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthMemory) IsSetSystemFreeSwap() bool {
-	if o != nil && !IsNil(o.SystemFreeSwap) {
-		return true
-	}
-
-	return false
 }
 
 // SetSystemFreeSwap gets a reference to the given int64 and assigns it to the SystemFreeSwap field.
@@ -394,15 +304,6 @@ func (o *ListHealth200ResponseAllOfHealthMemory) GetSwapPercentOk() (*int64, boo
 	return o.SwapPercent, true
 }
 
-// IsSetSwapPercent returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthMemory) IsSetSwapPercent() bool {
-	if o != nil && !IsNil(o.SwapPercent) {
-		return true
-	}
-
-	return false
-}
-
 // SetSwapPercent gets a reference to the given int64 and assigns it to the SwapPercent field.
 func (o *ListHealth200ResponseAllOfHealthMemory) SetSwapPercent(v int64) {
 	o.SwapPercent = &v
@@ -424,15 +325,6 @@ func (o *ListHealth200ResponseAllOfHealthMemory) GetMemoryPercentOk() (*float32,
 		return nil, false
 	}
 	return o.MemoryPercent, true
-}
-
-// IsSetMemoryPercent returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthMemory) IsSetMemoryPercent() bool {
-	if o != nil && !IsNil(o.MemoryPercent) {
-		return true
-	}
-
-	return false
 }
 
 // SetMemoryPercent gets a reference to the given float32 and assigns it to the MemoryPercent field.
@@ -458,15 +350,6 @@ func (o *ListHealth200ResponseAllOfHealthMemory) GetSystemMemoryPercentOk() (*fl
 	return o.SystemMemoryPercent, true
 }
 
-// IsSetSystemMemoryPercent returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthMemory) IsSetSystemMemoryPercent() bool {
-	if o != nil && !IsNil(o.SystemMemoryPercent) {
-		return true
-	}
-
-	return false
-}
-
 // SetSystemMemoryPercent gets a reference to the given float32 and assigns it to the SystemMemoryPercent field.
 func (o *ListHealth200ResponseAllOfHealthMemory) SetSystemMemoryPercent(v float32) {
 	o.SystemMemoryPercent = &v
@@ -488,15 +371,6 @@ func (o *ListHealth200ResponseAllOfHealthMemory) GetStatusOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthMemory) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.

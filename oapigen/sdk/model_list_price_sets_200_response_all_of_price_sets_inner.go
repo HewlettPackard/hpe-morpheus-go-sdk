@@ -72,15 +72,6 @@ func (o *ListPriceSets200ResponseAllOfPriceSetsInner) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListPriceSets200ResponseAllOfPriceSetsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListPriceSets200ResponseAllOfPriceSetsInner) SetId(v int64) {
 	o.Id = &v
@@ -102,15 +93,6 @@ func (o *ListPriceSets200ResponseAllOfPriceSetsInner) GetNameOk() (*string, bool
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListPriceSets200ResponseAllOfPriceSetsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -136,15 +118,6 @@ func (o *ListPriceSets200ResponseAllOfPriceSetsInner) GetCodeOk() (*string, bool
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *ListPriceSets200ResponseAllOfPriceSetsInner) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *ListPriceSets200ResponseAllOfPriceSetsInner) SetCode(v string) {
 	o.Code = &v
@@ -166,15 +139,6 @@ func (o *ListPriceSets200ResponseAllOfPriceSetsInner) GetActiveOk() (*bool, bool
 		return nil, false
 	}
 	return o.Active, true
-}
-
-// IsSetActive returns a boolean if a field has been set.
-func (o *ListPriceSets200ResponseAllOfPriceSetsInner) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
 }
 
 // SetActive gets a reference to the given bool and assigns it to the Active field.
@@ -200,15 +164,6 @@ func (o *ListPriceSets200ResponseAllOfPriceSetsInner) GetPriceUnitOk() (*string,
 	return o.PriceUnit, true
 }
 
-// IsSetPriceUnit returns a boolean if a field has been set.
-func (o *ListPriceSets200ResponseAllOfPriceSetsInner) IsSetPriceUnit() bool {
-	if o != nil && !IsNil(o.PriceUnit) {
-		return true
-	}
-
-	return false
-}
-
 // SetPriceUnit gets a reference to the given string and assigns it to the PriceUnit field.
 func (o *ListPriceSets200ResponseAllOfPriceSetsInner) SetPriceUnit(v string) {
 	o.PriceUnit = &v
@@ -230,15 +185,6 @@ func (o *ListPriceSets200ResponseAllOfPriceSetsInner) GetTypeOk() (*string, bool
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *ListPriceSets200ResponseAllOfPriceSetsInner) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.
@@ -264,15 +210,6 @@ func (o *ListPriceSets200ResponseAllOfPriceSetsInner) GetRegionCodeOk() (*string
 	return o.RegionCode, true
 }
 
-// IsSetRegionCode returns a boolean if a field has been set.
-func (o *ListPriceSets200ResponseAllOfPriceSetsInner) IsSetRegionCode() bool {
-	if o != nil && !IsNil(o.RegionCode) {
-		return true
-	}
-
-	return false
-}
-
 // SetRegionCode gets a reference to the given string and assigns it to the RegionCode field.
 func (o *ListPriceSets200ResponseAllOfPriceSetsInner) SetRegionCode(v string) {
 	o.RegionCode = &v
@@ -294,15 +231,6 @@ func (o *ListPriceSets200ResponseAllOfPriceSetsInner) GetSystemCreatedOk() (*boo
 		return nil, false
 	}
 	return o.SystemCreated, true
-}
-
-// IsSetSystemCreated returns a boolean if a field has been set.
-func (o *ListPriceSets200ResponseAllOfPriceSetsInner) IsSetSystemCreated() bool {
-	if o != nil && !IsNil(o.SystemCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetSystemCreated gets a reference to the given bool and assigns it to the SystemCreated field.
@@ -329,28 +257,9 @@ func (o *ListPriceSets200ResponseAllOfPriceSetsInner) GetZoneOk() (*string, bool
 	return o.Zone.Get(), o.Zone.IsSet()
 }
 
-// IsSetZone returns a boolean if a field has been set.
-func (o *ListPriceSets200ResponseAllOfPriceSetsInner) IsSetZone() bool {
-	if o != nil && o.Zone.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetZone gets a reference to the given NullableString and assigns it to the Zone field.
 func (o *ListPriceSets200ResponseAllOfPriceSetsInner) SetZone(v string) {
 	o.Zone.Set(&v)
-}
-
-// SetZoneNil sets the value for Zone to be an explicit nil
-func (o *ListPriceSets200ResponseAllOfPriceSetsInner) SetZoneNil() {
-	o.Zone.Set(nil)
-}
-
-// UnsetZone ensures that no value is present for Zone, not even an explicit nil
-func (o *ListPriceSets200ResponseAllOfPriceSetsInner) UnsetZone() {
-	o.Zone.Unset()
 }
 
 // GetZonePool returns the ZonePool field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -372,28 +281,9 @@ func (o *ListPriceSets200ResponseAllOfPriceSetsInner) GetZonePoolOk() (*string, 
 	return o.ZonePool.Get(), o.ZonePool.IsSet()
 }
 
-// IsSetZonePool returns a boolean if a field has been set.
-func (o *ListPriceSets200ResponseAllOfPriceSetsInner) IsSetZonePool() bool {
-	if o != nil && o.ZonePool.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetZonePool gets a reference to the given NullableString and assigns it to the ZonePool field.
 func (o *ListPriceSets200ResponseAllOfPriceSetsInner) SetZonePool(v string) {
 	o.ZonePool.Set(&v)
-}
-
-// SetZonePoolNil sets the value for ZonePool to be an explicit nil
-func (o *ListPriceSets200ResponseAllOfPriceSetsInner) SetZonePoolNil() {
-	o.ZonePool.Set(nil)
-}
-
-// UnsetZonePool ensures that no value is present for ZonePool, not even an explicit nil
-func (o *ListPriceSets200ResponseAllOfPriceSetsInner) UnsetZonePool() {
-	o.ZonePool.Unset()
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -415,28 +305,9 @@ func (o *ListPriceSets200ResponseAllOfPriceSetsInner) GetAccountOk() (*string, b
 	return o.Account.Get(), o.Account.IsSet()
 }
 
-// IsSetAccount returns a boolean if a field has been set.
-func (o *ListPriceSets200ResponseAllOfPriceSetsInner) IsSetAccount() bool {
-	if o != nil && o.Account.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAccount gets a reference to the given NullableString and assigns it to the Account field.
 func (o *ListPriceSets200ResponseAllOfPriceSetsInner) SetAccount(v string) {
 	o.Account.Set(&v)
-}
-
-// SetAccountNil sets the value for Account to be an explicit nil
-func (o *ListPriceSets200ResponseAllOfPriceSetsInner) SetAccountNil() {
-	o.Account.Set(nil)
-}
-
-// UnsetAccount ensures that no value is present for Account, not even an explicit nil
-func (o *ListPriceSets200ResponseAllOfPriceSetsInner) UnsetAccount() {
-	o.Account.Unset()
 }
 
 // GetPrices returns the Prices field value if set, zero value otherwise.
@@ -455,15 +326,6 @@ func (o *ListPriceSets200ResponseAllOfPriceSetsInner) GetPricesOk() ([]ListPrice
 		return nil, false
 	}
 	return o.Prices, true
-}
-
-// IsSetPrices returns a boolean if a field has been set.
-func (o *ListPriceSets200ResponseAllOfPriceSetsInner) IsSetPrices() bool {
-	if o != nil && !IsNil(o.Prices) {
-		return true
-	}
-
-	return false
 }
 
 // SetPrices gets a reference to the given []ListPriceSets200ResponseAllOfPriceSetsInnerPricesInner and assigns it to the Prices field.

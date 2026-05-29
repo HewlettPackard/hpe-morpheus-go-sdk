@@ -64,15 +64,6 @@ func (o *GetBillingAccount200ResponseAllOfBillingInfoZonesInnerLoadBalancers) Ge
 	return o.Price, true
 }
 
-// IsSetPrice returns a boolean if a field has been set.
-func (o *GetBillingAccount200ResponseAllOfBillingInfoZonesInnerLoadBalancers) IsSetPrice() bool {
-	if o != nil && !IsNil(o.Price) {
-		return true
-	}
-
-	return false
-}
-
 // SetPrice gets a reference to the given float32 and assigns it to the Price field.
 func (o *GetBillingAccount200ResponseAllOfBillingInfoZonesInnerLoadBalancers) SetPrice(v float32) {
 	o.Price = &v
@@ -94,15 +85,6 @@ func (o *GetBillingAccount200ResponseAllOfBillingInfoZonesInnerLoadBalancers) Ge
 		return nil, false
 	}
 	return o.Cost, true
-}
-
-// IsSetCost returns a boolean if a field has been set.
-func (o *GetBillingAccount200ResponseAllOfBillingInfoZonesInnerLoadBalancers) IsSetCost() bool {
-	if o != nil && !IsNil(o.Cost) {
-		return true
-	}
-
-	return false
 }
 
 // SetCost gets a reference to the given float32 and assigns it to the Cost field.
@@ -128,15 +110,6 @@ func (o *GetBillingAccount200ResponseAllOfBillingInfoZonesInnerLoadBalancers) Ge
 	return o.LoadBalancers, true
 }
 
-// IsSetLoadBalancers returns a boolean if a field has been set.
-func (o *GetBillingAccount200ResponseAllOfBillingInfoZonesInnerLoadBalancers) IsSetLoadBalancers() bool {
-	if o != nil && !IsNil(o.LoadBalancers) {
-		return true
-	}
-
-	return false
-}
-
 // SetLoadBalancers gets a reference to the given []map[string]interface{} and assigns it to the LoadBalancers field.
 func (o *GetBillingAccount200ResponseAllOfBillingInfoZonesInnerLoadBalancers) SetLoadBalancers(v []map[string]interface{}) {
 	o.LoadBalancers = v
@@ -158,15 +131,6 @@ func (o *GetBillingAccount200ResponseAllOfBillingInfoZonesInnerLoadBalancers) Ge
 		return nil, false
 	}
 	return o.Count, true
-}
-
-// IsSetCount returns a boolean if a field has been set.
-func (o *GetBillingAccount200ResponseAllOfBillingInfoZonesInnerLoadBalancers) IsSetCount() bool {
-	if o != nil && !IsNil(o.Count) {
-		return true
-	}
-
-	return false
 }
 
 // SetCount gets a reference to the given int64 and assigns it to the Count field.

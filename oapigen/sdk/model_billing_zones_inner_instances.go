@@ -64,15 +64,6 @@ func (o *BillingZonesInnerInstances) GetPriceOk() (*float32, bool) {
 	return o.Price, true
 }
 
-// IsSetPrice returns a boolean if a field has been set.
-func (o *BillingZonesInnerInstances) IsSetPrice() bool {
-	if o != nil && !IsNil(o.Price) {
-		return true
-	}
-
-	return false
-}
-
 // SetPrice gets a reference to the given float32 and assigns it to the Price field.
 func (o *BillingZonesInnerInstances) SetPrice(v float32) {
 	o.Price = &v
@@ -94,15 +85,6 @@ func (o *BillingZonesInnerInstances) GetCostOk() (*float32, bool) {
 		return nil, false
 	}
 	return o.Cost, true
-}
-
-// IsSetCost returns a boolean if a field has been set.
-func (o *BillingZonesInnerInstances) IsSetCost() bool {
-	if o != nil && !IsNil(o.Cost) {
-		return true
-	}
-
-	return false
 }
 
 // SetCost gets a reference to the given float32 and assigns it to the Cost field.
@@ -128,15 +110,6 @@ func (o *BillingZonesInnerInstances) GetInstancesOk() ([]map[string]interface{},
 	return o.Instances, true
 }
 
-// IsSetInstances returns a boolean if a field has been set.
-func (o *BillingZonesInnerInstances) IsSetInstances() bool {
-	if o != nil && !IsNil(o.Instances) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstances gets a reference to the given []map[string]interface{} and assigns it to the Instances field.
 func (o *BillingZonesInnerInstances) SetInstances(v []map[string]interface{}) {
 	o.Instances = v
@@ -158,15 +131,6 @@ func (o *BillingZonesInnerInstances) GetCountOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.Count, true
-}
-
-// IsSetCount returns a boolean if a field has been set.
-func (o *BillingZonesInnerInstances) IsSetCount() bool {
-	if o != nil && !IsNil(o.Count) {
-		return true
-	}
-
-	return false
 }
 
 // SetCount gets a reference to the given int64 and assigns it to the Count field.

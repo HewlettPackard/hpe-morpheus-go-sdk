@@ -61,15 +61,6 @@ func (o *TenantsAvailableRoles) GetRolesOk() ([]TenantsAvailableRolesRolesInner,
 	return o.Roles, true
 }
 
-// IsSetRoles returns a boolean if a field has been set.
-func (o *TenantsAvailableRoles) IsSetRoles() bool {
-	if o != nil && !IsNil(o.Roles) {
-		return true
-	}
-
-	return false
-}
-
 // SetRoles gets a reference to the given []TenantsAvailableRolesRolesInner and assigns it to the Roles field.
 func (o *TenantsAvailableRoles) SetRoles(v []TenantsAvailableRolesRolesInner) {
 	o.Roles = v

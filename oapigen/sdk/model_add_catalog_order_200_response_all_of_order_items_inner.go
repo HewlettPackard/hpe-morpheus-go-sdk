@@ -71,15 +71,6 @@ func (o *AddCatalogOrder200ResponseAllOfOrderItemsInner) GetIdOk() (*int64, bool
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *AddCatalogOrder200ResponseAllOfOrderItemsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *AddCatalogOrder200ResponseAllOfOrderItemsInner) SetId(v int64) {
 	o.Id = &v
@@ -101,15 +92,6 @@ func (o *AddCatalogOrder200ResponseAllOfOrderItemsInner) GetTypeOk() (*AddCatalo
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *AddCatalogOrder200ResponseAllOfOrderItemsInner) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given AddCatalogOrder200ResponseAllOfOrderItemsInnerType and assigns it to the Type field.
@@ -135,15 +117,6 @@ func (o *AddCatalogOrder200ResponseAllOfOrderItemsInner) GetQuantityOk() (*int64
 	return o.Quantity, true
 }
 
-// IsSetQuantity returns a boolean if a field has been set.
-func (o *AddCatalogOrder200ResponseAllOfOrderItemsInner) IsSetQuantity() bool {
-	if o != nil && !IsNil(o.Quantity) {
-		return true
-	}
-
-	return false
-}
-
 // SetQuantity gets a reference to the given int64 and assigns it to the Quantity field.
 func (o *AddCatalogOrder200ResponseAllOfOrderItemsInner) SetQuantity(v int64) {
 	o.Quantity = &v
@@ -165,15 +138,6 @@ func (o *AddCatalogOrder200ResponseAllOfOrderItemsInner) GetPriceOk() (*float32,
 		return nil, false
 	}
 	return o.Price, true
-}
-
-// IsSetPrice returns a boolean if a field has been set.
-func (o *AddCatalogOrder200ResponseAllOfOrderItemsInner) IsSetPrice() bool {
-	if o != nil && !IsNil(o.Price) {
-		return true
-	}
-
-	return false
 }
 
 // SetPrice gets a reference to the given float32 and assigns it to the Price field.
@@ -199,15 +163,6 @@ func (o *AddCatalogOrder200ResponseAllOfOrderItemsInner) GetCurrencyOk() (*strin
 	return o.Currency, true
 }
 
-// IsSetCurrency returns a boolean if a field has been set.
-func (o *AddCatalogOrder200ResponseAllOfOrderItemsInner) IsSetCurrency() bool {
-	if o != nil && !IsNil(o.Currency) {
-		return true
-	}
-
-	return false
-}
-
 // SetCurrency gets a reference to the given string and assigns it to the Currency field.
 func (o *AddCatalogOrder200ResponseAllOfOrderItemsInner) SetCurrency(v string) {
 	o.Currency = &v
@@ -229,15 +184,6 @@ func (o *AddCatalogOrder200ResponseAllOfOrderItemsInner) GetUnitOk() (*string, b
 		return nil, false
 	}
 	return o.Unit, true
-}
-
-// IsSetUnit returns a boolean if a field has been set.
-func (o *AddCatalogOrder200ResponseAllOfOrderItemsInner) IsSetUnit() bool {
-	if o != nil && !IsNil(o.Unit) {
-		return true
-	}
-
-	return false
 }
 
 // SetUnit gets a reference to the given string and assigns it to the Unit field.
@@ -263,15 +209,6 @@ func (o *AddCatalogOrder200ResponseAllOfOrderItemsInner) GetValidOk() (*bool, bo
 	return o.Valid, true
 }
 
-// IsSetValid returns a boolean if a field has been set.
-func (o *AddCatalogOrder200ResponseAllOfOrderItemsInner) IsSetValid() bool {
-	if o != nil && !IsNil(o.Valid) {
-		return true
-	}
-
-	return false
-}
-
 // SetValid gets a reference to the given bool and assigns it to the Valid field.
 func (o *AddCatalogOrder200ResponseAllOfOrderItemsInner) SetValid(v bool) {
 	o.Valid = &v
@@ -293,15 +230,6 @@ func (o *AddCatalogOrder200ResponseAllOfOrderItemsInner) GetStatusOk() (*string,
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *AddCatalogOrder200ResponseAllOfOrderItemsInner) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -327,15 +255,6 @@ func (o *AddCatalogOrder200ResponseAllOfOrderItemsInner) GetDateCreatedOk() (*ti
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *AddCatalogOrder200ResponseAllOfOrderItemsInner) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *AddCatalogOrder200ResponseAllOfOrderItemsInner) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -357,15 +276,6 @@ func (o *AddCatalogOrder200ResponseAllOfOrderItemsInner) GetLastUpdatedOk() (*ti
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *AddCatalogOrder200ResponseAllOfOrderItemsInner) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.

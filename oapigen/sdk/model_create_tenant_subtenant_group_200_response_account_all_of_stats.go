@@ -62,15 +62,6 @@ func (o *CreateTenantSubtenantGroup200ResponseAccountAllOfStats) GetInstanceCoun
 	return o.InstanceCounts, true
 }
 
-// IsSetInstanceCounts returns a boolean if a field has been set.
-func (o *CreateTenantSubtenantGroup200ResponseAccountAllOfStats) IsSetInstanceCounts() bool {
-	if o != nil && !IsNil(o.InstanceCounts) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstanceCounts gets a reference to the given CreateTenantSubtenantGroup200ResponseAccountAllOfStatsInstanceCounts and assigns it to the InstanceCounts field.
 func (o *CreateTenantSubtenantGroup200ResponseAccountAllOfStats) SetInstanceCounts(v CreateTenantSubtenantGroup200ResponseAccountAllOfStatsInstanceCounts) {
 	o.InstanceCounts = &v
@@ -92,15 +83,6 @@ func (o *CreateTenantSubtenantGroup200ResponseAccountAllOfStats) GetServerCounts
 		return nil, false
 	}
 	return o.ServerCounts, true
-}
-
-// IsSetServerCounts returns a boolean if a field has been set.
-func (o *CreateTenantSubtenantGroup200ResponseAccountAllOfStats) IsSetServerCounts() bool {
-	if o != nil && !IsNil(o.ServerCounts) {
-		return true
-	}
-
-	return false
 }
 
 // SetServerCounts gets a reference to the given CreateTenantSubtenantGroup200ResponseAccountAllOfStatsServerCounts and assigns it to the ServerCounts field.

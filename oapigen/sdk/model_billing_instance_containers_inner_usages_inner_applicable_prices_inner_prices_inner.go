@@ -66,15 +66,6 @@ func (o *BillingInstanceContainersInnerUsagesInnerApplicablePricesInnerPricesInn
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *BillingInstanceContainersInnerUsagesInnerApplicablePricesInnerPricesInner) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given string and assigns it to the Type field.
 func (o *BillingInstanceContainersInnerUsagesInnerApplicablePricesInnerPricesInner) SetType(v string) {
 	o.Type = &v
@@ -96,15 +87,6 @@ func (o *BillingInstanceContainersInnerUsagesInnerApplicablePricesInnerPricesInn
 		return nil, false
 	}
 	return o.PricePerUnit, true
-}
-
-// IsSetPricePerUnit returns a boolean if a field has been set.
-func (o *BillingInstanceContainersInnerUsagesInnerApplicablePricesInnerPricesInner) IsSetPricePerUnit() bool {
-	if o != nil && !IsNil(o.PricePerUnit) {
-		return true
-	}
-
-	return false
 }
 
 // SetPricePerUnit gets a reference to the given float32 and assigns it to the PricePerUnit field.
@@ -130,15 +112,6 @@ func (o *BillingInstanceContainersInnerUsagesInnerApplicablePricesInnerPricesInn
 	return o.CostPerUnit, true
 }
 
-// IsSetCostPerUnit returns a boolean if a field has been set.
-func (o *BillingInstanceContainersInnerUsagesInnerApplicablePricesInnerPricesInner) IsSetCostPerUnit() bool {
-	if o != nil && !IsNil(o.CostPerUnit) {
-		return true
-	}
-
-	return false
-}
-
 // SetCostPerUnit gets a reference to the given float32 and assigns it to the CostPerUnit field.
 func (o *BillingInstanceContainersInnerUsagesInnerApplicablePricesInnerPricesInner) SetCostPerUnit(v float32) {
 	o.CostPerUnit = &v
@@ -162,15 +135,6 @@ func (o *BillingInstanceContainersInnerUsagesInnerApplicablePricesInnerPricesInn
 	return o.Cost, true
 }
 
-// IsSetCost returns a boolean if a field has been set.
-func (o *BillingInstanceContainersInnerUsagesInnerApplicablePricesInnerPricesInner) IsSetCost() bool {
-	if o != nil && !IsNil(o.Cost) {
-		return true
-	}
-
-	return false
-}
-
 // SetCost gets a reference to the given float32 and assigns it to the Cost field.
 func (o *BillingInstanceContainersInnerUsagesInnerApplicablePricesInnerPricesInner) SetCost(v float32) {
 	o.Cost = &v
@@ -192,15 +156,6 @@ func (o *BillingInstanceContainersInnerUsagesInnerApplicablePricesInnerPricesInn
 		return nil, false
 	}
 	return o.Price, true
-}
-
-// IsSetPrice returns a boolean if a field has been set.
-func (o *BillingInstanceContainersInnerUsagesInnerApplicablePricesInnerPricesInner) IsSetPrice() bool {
-	if o != nil && !IsNil(o.Price) {
-		return true
-	}
-
-	return false
 }
 
 // SetPrice gets a reference to the given float32 and assigns it to the Price field.
@@ -227,28 +182,9 @@ func (o *BillingInstanceContainersInnerUsagesInnerApplicablePricesInnerPricesInn
 	return o.Quantity.Get(), o.Quantity.IsSet()
 }
 
-// IsSetQuantity returns a boolean if a field has been set.
-func (o *BillingInstanceContainersInnerUsagesInnerApplicablePricesInnerPricesInner) IsSetQuantity() bool {
-	if o != nil && o.Quantity.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetQuantity gets a reference to the given NullableInt64 and assigns it to the Quantity field.
 func (o *BillingInstanceContainersInnerUsagesInnerApplicablePricesInnerPricesInner) SetQuantity(v int64) {
 	o.Quantity.Set(&v)
-}
-
-// SetQuantityNil sets the value for Quantity to be an explicit nil
-func (o *BillingInstanceContainersInnerUsagesInnerApplicablePricesInnerPricesInner) SetQuantityNil() {
-	o.Quantity.Set(nil)
-}
-
-// UnsetQuantity ensures that no value is present for Quantity, not even an explicit nil
-func (o *BillingInstanceContainersInnerUsagesInnerApplicablePricesInnerPricesInner) UnsetQuantity() {
-	o.Quantity.Unset()
 }
 
 func (o BillingInstanceContainersInnerUsagesInnerApplicablePricesInnerPricesInner) MarshalJSON() ([]byte, error) {

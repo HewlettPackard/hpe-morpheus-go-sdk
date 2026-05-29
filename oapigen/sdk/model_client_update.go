@@ -65,15 +65,6 @@ func (o *ClientUpdate) GetClientIdOk() (*string, bool) {
 	return o.ClientId, true
 }
 
-// IsSetClientId returns a boolean if a field has been set.
-func (o *ClientUpdate) IsSetClientId() bool {
-	if o != nil && !IsNil(o.ClientId) {
-		return true
-	}
-
-	return false
-}
-
 // SetClientId gets a reference to the given string and assigns it to the ClientId field.
 func (o *ClientUpdate) SetClientId(v string) {
 	o.ClientId = &v
@@ -95,15 +86,6 @@ func (o *ClientUpdate) GetAccessTokenValiditySecondsOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.AccessTokenValiditySeconds, true
-}
-
-// IsSetAccessTokenValiditySeconds returns a boolean if a field has been set.
-func (o *ClientUpdate) IsSetAccessTokenValiditySeconds() bool {
-	if o != nil && !IsNil(o.AccessTokenValiditySeconds) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccessTokenValiditySeconds gets a reference to the given int64 and assigns it to the AccessTokenValiditySeconds field.
@@ -129,15 +111,6 @@ func (o *ClientUpdate) GetRefreshTokenValiditySecondsOk() (*int64, bool) {
 	return o.RefreshTokenValiditySeconds, true
 }
 
-// IsSetRefreshTokenValiditySeconds returns a boolean if a field has been set.
-func (o *ClientUpdate) IsSetRefreshTokenValiditySeconds() bool {
-	if o != nil && !IsNil(o.RefreshTokenValiditySeconds) {
-		return true
-	}
-
-	return false
-}
-
 // SetRefreshTokenValiditySeconds gets a reference to the given int64 and assigns it to the RefreshTokenValiditySeconds field.
 func (o *ClientUpdate) SetRefreshTokenValiditySeconds(v int64) {
 	o.RefreshTokenValiditySeconds = &v
@@ -159,15 +132,6 @@ func (o *ClientUpdate) GetRedirectUrisOk() ([]string, bool) {
 		return nil, false
 	}
 	return o.RedirectUris, true
-}
-
-// IsSetRedirectUris returns a boolean if a field has been set.
-func (o *ClientUpdate) IsSetRedirectUris() bool {
-	if o != nil && !IsNil(o.RedirectUris) {
-		return true
-	}
-
-	return false
 }
 
 // SetRedirectUris gets a reference to the given []string and assigns it to the RedirectUris field.

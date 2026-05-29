@@ -64,15 +64,6 @@ func (o *ListInstances200ResponseAllOfInstancesInnerInstancePrice) GetPriceOk() 
 	return o.Price, true
 }
 
-// IsSetPrice returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerInstancePrice) IsSetPrice() bool {
-	if o != nil && !IsNil(o.Price) {
-		return true
-	}
-
-	return false
-}
-
 // SetPrice gets a reference to the given float32 and assigns it to the Price field.
 func (o *ListInstances200ResponseAllOfInstancesInnerInstancePrice) SetPrice(v float32) {
 	o.Price = &v
@@ -94,15 +85,6 @@ func (o *ListInstances200ResponseAllOfInstancesInnerInstancePrice) GetCostOk() (
 		return nil, false
 	}
 	return o.Cost, true
-}
-
-// IsSetCost returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerInstancePrice) IsSetCost() bool {
-	if o != nil && !IsNil(o.Cost) {
-		return true
-	}
-
-	return false
 }
 
 // SetCost gets a reference to the given float32 and assigns it to the Cost field.
@@ -129,28 +111,9 @@ func (o *ListInstances200ResponseAllOfInstancesInnerInstancePrice) GetCurrencyOk
 	return o.Currency.Get(), o.Currency.IsSet()
 }
 
-// IsSetCurrency returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerInstancePrice) IsSetCurrency() bool {
-	if o != nil && o.Currency.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCurrency gets a reference to the given NullableString and assigns it to the Currency field.
 func (o *ListInstances200ResponseAllOfInstancesInnerInstancePrice) SetCurrency(v string) {
 	o.Currency.Set(&v)
-}
-
-// SetCurrencyNil sets the value for Currency to be an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInnerInstancePrice) SetCurrencyNil() {
-	o.Currency.Set(nil)
-}
-
-// UnsetCurrency ensures that no value is present for Currency, not even an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInnerInstancePrice) UnsetCurrency() {
-	o.Currency.Unset()
 }
 
 // GetUnit returns the Unit field value if set, zero value otherwise.
@@ -169,15 +132,6 @@ func (o *ListInstances200ResponseAllOfInstancesInnerInstancePrice) GetUnitOk() (
 		return nil, false
 	}
 	return o.Unit, true
-}
-
-// IsSetUnit returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerInstancePrice) IsSetUnit() bool {
-	if o != nil && !IsNil(o.Unit) {
-		return true
-	}
-
-	return false
 }
 
 // SetUnit gets a reference to the given string and assigns it to the Unit field.

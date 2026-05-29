@@ -173,15 +173,6 @@ func (o *CheckSocketConfig) GetCheckUserOk() (*string, bool) {
 	return o.CheckUser, true
 }
 
-// IsSetCheckUser returns a boolean if a field has been set.
-func (o *CheckSocketConfig) IsSetCheckUser() bool {
-	if o != nil && !IsNil(o.CheckUser) {
-		return true
-	}
-
-	return false
-}
-
 // SetCheckUser gets a reference to the given string and assigns it to the CheckUser field.
 func (o *CheckSocketConfig) SetCheckUser(v string) {
 	o.CheckUser = &v
@@ -203,15 +194,6 @@ func (o *CheckSocketConfig) GetTextCheckOnOk() (*string, bool) {
 		return nil, false
 	}
 	return o.TextCheckOn, true
-}
-
-// IsSetTextCheckOn returns a boolean if a field has been set.
-func (o *CheckSocketConfig) IsSetTextCheckOn() bool {
-	if o != nil && !IsNil(o.TextCheckOn) {
-		return true
-	}
-
-	return false
 }
 
 // SetTextCheckOn gets a reference to the given string and assigns it to the TextCheckOn field.
@@ -237,15 +219,6 @@ func (o *CheckSocketConfig) GetCheckPasswordOk() (*string, bool) {
 	return o.CheckPassword, true
 }
 
-// IsSetCheckPassword returns a boolean if a field has been set.
-func (o *CheckSocketConfig) IsSetCheckPassword() bool {
-	if o != nil && !IsNil(o.CheckPassword) {
-		return true
-	}
-
-	return false
-}
-
 // SetCheckPassword gets a reference to the given string and assigns it to the CheckPassword field.
 func (o *CheckSocketConfig) SetCheckPassword(v string) {
 	o.CheckPassword = &v
@@ -269,15 +242,6 @@ func (o *CheckSocketConfig) GetWebTextMatchOk() (*string, bool) {
 	return o.WebTextMatch, true
 }
 
-// IsSetWebTextMatch returns a boolean if a field has been set.
-func (o *CheckSocketConfig) IsSetWebTextMatch() bool {
-	if o != nil && !IsNil(o.WebTextMatch) {
-		return true
-	}
-
-	return false
-}
-
 // SetWebTextMatch gets a reference to the given string and assigns it to the WebTextMatch field.
 func (o *CheckSocketConfig) SetWebTextMatch(v string) {
 	o.WebTextMatch = &v
@@ -299,15 +263,6 @@ func (o *CheckSocketConfig) GetCheckPasswordHashOk() (*string, bool) {
 		return nil, false
 	}
 	return o.CheckPasswordHash, true
-}
-
-// IsSetCheckPasswordHash returns a boolean if a field has been set.
-func (o *CheckSocketConfig) IsSetCheckPasswordHash() bool {
-	if o != nil && !IsNil(o.CheckPasswordHash) {
-		return true
-	}
-
-	return false
 }
 
 // SetCheckPasswordHash gets a reference to the given string and assigns it to the CheckPasswordHash field.

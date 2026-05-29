@@ -71,15 +71,6 @@ func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) GetIdOk
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) SetId(v int64) {
 	o.Id = &v
@@ -103,15 +94,6 @@ func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) GetCate
 	return o.Category, true
 }
 
-// IsSetCategory returns a boolean if a field has been set.
-func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
-		return true
-	}
-
-	return false
-}
-
 // SetCategory gets a reference to the given string and assigns it to the Category field.
 func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) SetCategory(v string) {
 	o.Category = &v
@@ -133,15 +115,6 @@ func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) GetType
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.
@@ -168,28 +141,9 @@ func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) GetMemb
 	return o.MemberName.Get(), o.MemberName.IsSet()
 }
 
-// IsSetMemberName returns a boolean if a field has been set.
-func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) IsSetMemberName() bool {
-	if o != nil && o.MemberName.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMemberName gets a reference to the given NullableString and assigns it to the MemberName field.
 func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) SetMemberName(v string) {
 	o.MemberName.Set(&v)
-}
-
-// SetMemberNameNil sets the value for MemberName to be an explicit nil
-func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) SetMemberNameNil() {
-	o.MemberName.Set(nil)
-}
-
-// UnsetMemberName ensures that no value is present for MemberName, not even an explicit nil
-func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) UnsetMemberName() {
-	o.MemberName.Unset()
 }
 
 // GetMemberType returns the MemberType field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -211,28 +165,9 @@ func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) GetMemb
 	return o.MemberType.Get(), o.MemberType.IsSet()
 }
 
-// IsSetMemberType returns a boolean if a field has been set.
-func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) IsSetMemberType() bool {
-	if o != nil && o.MemberType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMemberType gets a reference to the given NullableString and assigns it to the MemberType field.
 func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) SetMemberType(v string) {
 	o.MemberType.Set(&v)
-}
-
-// SetMemberTypeNil sets the value for MemberType to be an explicit nil
-func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) SetMemberTypeNil() {
-	o.MemberType.Set(nil)
-}
-
-// UnsetMemberType ensures that no value is present for MemberType, not even an explicit nil
-func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) UnsetMemberType() {
-	o.MemberType.Unset()
 }
 
 // GetMemberValue returns the MemberValue field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -254,28 +189,9 @@ func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) GetMemb
 	return o.MemberValue.Get(), o.MemberValue.IsSet()
 }
 
-// IsSetMemberValue returns a boolean if a field has been set.
-func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) IsSetMemberValue() bool {
-	if o != nil && o.MemberValue.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMemberValue gets a reference to the given NullableString and assigns it to the MemberValue field.
 func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) SetMemberValue(v string) {
 	o.MemberValue.Set(&v)
-}
-
-// SetMemberValueNil sets the value for MemberValue to be an explicit nil
-func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) SetMemberValueNil() {
-	o.MemberValue.Set(nil)
-}
-
-// UnsetMemberValue ensures that no value is present for MemberValue, not even an explicit nil
-func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) UnsetMemberValue() {
-	o.MemberValue.Unset()
 }
 
 // GetMemberExpression returns the MemberExpression field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -297,28 +213,9 @@ func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) GetMemb
 	return o.MemberExpression.Get(), o.MemberExpression.IsSet()
 }
 
-// IsSetMemberExpression returns a boolean if a field has been set.
-func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) IsSetMemberExpression() bool {
-	if o != nil && o.MemberExpression.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMemberExpression gets a reference to the given NullableString and assigns it to the MemberExpression field.
 func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) SetMemberExpression(v string) {
 	o.MemberExpression.Set(&v)
-}
-
-// SetMemberExpressionNil sets the value for MemberExpression to be an explicit nil
-func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) SetMemberExpressionNil() {
-	o.MemberExpression.Set(nil)
-}
-
-// UnsetMemberExpression ensures that no value is present for MemberExpression, not even an explicit nil
-func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) UnsetMemberExpression() {
-	o.MemberExpression.Unset()
 }
 
 // GetDisplayOrder returns the DisplayOrder field value if set, zero value otherwise.
@@ -337,15 +234,6 @@ func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) GetDisp
 		return nil, false
 	}
 	return o.DisplayOrder, true
-}
-
-// IsSetDisplayOrder returns a boolean if a field has been set.
-func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) IsSetDisplayOrder() bool {
-	if o != nil && !IsNil(o.DisplayOrder) {
-		return true
-	}
-
-	return false
 }
 
 // SetDisplayOrder gets a reference to the given int64 and assigns it to the DisplayOrder field.
@@ -372,28 +260,9 @@ func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) GetInte
 	return o.InternalId.Get(), o.InternalId.IsSet()
 }
 
-// IsSetInternalId returns a boolean if a field has been set.
-func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) IsSetInternalId() bool {
-	if o != nil && o.InternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInternalId gets a reference to the given NullableString and assigns it to the InternalId field.
 func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) SetInternalId(v string) {
 	o.InternalId.Set(&v)
-}
-
-// SetInternalIdNil sets the value for InternalId to be an explicit nil
-func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) SetInternalIdNil() {
-	o.InternalId.Set(nil)
-}
-
-// UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
-func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) UnsetInternalId() {
-	o.InternalId.Unset()
 }
 
 // GetExternalId returns the ExternalId field value if set, zero value otherwise.
@@ -412,15 +281,6 @@ func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) GetExte
 		return nil, false
 	}
 	return o.ExternalId, true
-}
-
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
-		return true
-	}
-
-	return false
 }
 
 // SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
@@ -444,15 +304,6 @@ func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) GetMemb
 		return nil, false
 	}
 	return o.Members, true
-}
-
-// IsSetMembers returns a boolean if a field has been set.
-func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner) IsSetMembers() bool {
-	if o != nil && !IsNil(o.Members) {
-		return true
-	}
-
-	return false
 }
 
 // SetMembers gets a reference to the given []map[string]interface{} and assigns it to the Members field.

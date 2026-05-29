@@ -66,15 +66,6 @@ func (o *PolicyGroupCreatePolicyTypeConfigOneOf12) GetMaxCoresOk() (*string, boo
 	return o.MaxCores, true
 }
 
-// IsSetMaxCores returns a boolean if a field has been set.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf12) IsSetMaxCores() bool {
-	if o != nil && !IsNil(o.MaxCores) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxCores gets a reference to the given string and assigns it to the MaxCores field.
 func (o *PolicyGroupCreatePolicyTypeConfigOneOf12) SetMaxCores(v string) {
 	o.MaxCores = &v
@@ -96,15 +87,6 @@ func (o *PolicyGroupCreatePolicyTypeConfigOneOf12) GetExcludeContainersOk() (*st
 		return nil, false
 	}
 	return o.ExcludeContainers, true
-}
-
-// IsSetExcludeContainers returns a boolean if a field has been set.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf12) IsSetExcludeContainers() bool {
-	if o != nil && !IsNil(o.ExcludeContainers) {
-		return true
-	}
-
-	return false
 }
 
 // SetExcludeContainers gets a reference to the given string and assigns it to the ExcludeContainers field.

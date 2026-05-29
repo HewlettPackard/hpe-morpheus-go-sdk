@@ -198,15 +198,6 @@ func (o *SqlCheckAllOfConfig) GetDbPasswordHashOk() (*string, bool) {
 	return o.DbPasswordHash, true
 }
 
-// IsSetDbPasswordHash returns a boolean if a field has been set.
-func (o *SqlCheckAllOfConfig) IsSetDbPasswordHash() bool {
-	if o != nil && !IsNil(o.DbPasswordHash) {
-		return true
-	}
-
-	return false
-}
-
 // SetDbPasswordHash gets a reference to the given string and assigns it to the DbPasswordHash field.
 func (o *SqlCheckAllOfConfig) SetDbPasswordHash(v string) {
 	o.DbPasswordHash = &v
@@ -278,15 +269,6 @@ func (o *SqlCheckAllOfConfig) GetCheckOperatorOk() (*string, bool) {
 	return o.CheckOperator, true
 }
 
-// IsSetCheckOperator returns a boolean if a field has been set.
-func (o *SqlCheckAllOfConfig) IsSetCheckOperator() bool {
-	if o != nil && !IsNil(o.CheckOperator) {
-		return true
-	}
-
-	return false
-}
-
 // SetCheckOperator gets a reference to the given string and assigns it to the CheckOperator field.
 func (o *SqlCheckAllOfConfig) SetCheckOperator(v string) {
 	o.CheckOperator = &v
@@ -308,15 +290,6 @@ func (o *SqlCheckAllOfConfig) GetCheckResultOk() (*float32, bool) {
 		return nil, false
 	}
 	return o.CheckResult, true
-}
-
-// IsSetCheckResult returns a boolean if a field has been set.
-func (o *SqlCheckAllOfConfig) IsSetCheckResult() bool {
-	if o != nil && !IsNil(o.CheckResult) {
-		return true
-	}
-
-	return false
 }
 
 // SetCheckResult gets a reference to the given float32 and assigns it to the CheckResult field.
@@ -342,15 +315,6 @@ func (o *SqlCheckAllOfConfig) GetCheckUserOk() (*string, bool) {
 	return o.CheckUser, true
 }
 
-// IsSetCheckUser returns a boolean if a field has been set.
-func (o *SqlCheckAllOfConfig) IsSetCheckUser() bool {
-	if o != nil && !IsNil(o.CheckUser) {
-		return true
-	}
-
-	return false
-}
-
 // SetCheckUser gets a reference to the given string and assigns it to the CheckUser field.
 func (o *SqlCheckAllOfConfig) SetCheckUser(v string) {
 	o.CheckUser = &v
@@ -372,15 +336,6 @@ func (o *SqlCheckAllOfConfig) GetTextCheckOnOk() (*string, bool) {
 		return nil, false
 	}
 	return o.TextCheckOn, true
-}
-
-// IsSetTextCheckOn returns a boolean if a field has been set.
-func (o *SqlCheckAllOfConfig) IsSetTextCheckOn() bool {
-	if o != nil && !IsNil(o.TextCheckOn) {
-		return true
-	}
-
-	return false
 }
 
 // SetTextCheckOn gets a reference to the given string and assigns it to the TextCheckOn field.
@@ -406,15 +361,6 @@ func (o *SqlCheckAllOfConfig) GetCheckPasswordOk() (*string, bool) {
 	return o.CheckPassword, true
 }
 
-// IsSetCheckPassword returns a boolean if a field has been set.
-func (o *SqlCheckAllOfConfig) IsSetCheckPassword() bool {
-	if o != nil && !IsNil(o.CheckPassword) {
-		return true
-	}
-
-	return false
-}
-
 // SetCheckPassword gets a reference to the given string and assigns it to the CheckPassword field.
 func (o *SqlCheckAllOfConfig) SetCheckPassword(v string) {
 	o.CheckPassword = &v
@@ -436,15 +382,6 @@ func (o *SqlCheckAllOfConfig) GetWebTextMatchOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WebTextMatch, true
-}
-
-// IsSetWebTextMatch returns a boolean if a field has been set.
-func (o *SqlCheckAllOfConfig) IsSetWebTextMatch() bool {
-	if o != nil && !IsNil(o.WebTextMatch) {
-		return true
-	}
-
-	return false
 }
 
 // SetWebTextMatch gets a reference to the given string and assigns it to the WebTextMatch field.
@@ -470,15 +407,6 @@ func (o *SqlCheckAllOfConfig) GetCheckPasswordHashOk() (*string, bool) {
 	return o.CheckPasswordHash, true
 }
 
-// IsSetCheckPasswordHash returns a boolean if a field has been set.
-func (o *SqlCheckAllOfConfig) IsSetCheckPasswordHash() bool {
-	if o != nil && !IsNil(o.CheckPasswordHash) {
-		return true
-	}
-
-	return false
-}
-
 // SetCheckPasswordHash gets a reference to the given string and assigns it to the CheckPasswordHash field.
 func (o *SqlCheckAllOfConfig) SetCheckPasswordHash(v string) {
 	o.CheckPasswordHash = &v
@@ -500,15 +428,6 @@ func (o *SqlCheckAllOfConfig) GetTunnelOnOk() (*string, bool) {
 		return nil, false
 	}
 	return o.TunnelOn, true
-}
-
-// IsSetTunnelOn returns a boolean if a field has been set.
-func (o *SqlCheckAllOfConfig) IsSetTunnelOn() bool {
-	if o != nil && !IsNil(o.TunnelOn) {
-		return true
-	}
-
-	return false
 }
 
 // SetTunnelOn gets a reference to the given string and assigns it to the TunnelOn field.
@@ -534,15 +453,6 @@ func (o *SqlCheckAllOfConfig) GetSshHostOk() (*string, bool) {
 	return o.SshHost, true
 }
 
-// IsSetSshHost returns a boolean if a field has been set.
-func (o *SqlCheckAllOfConfig) IsSetSshHost() bool {
-	if o != nil && !IsNil(o.SshHost) {
-		return true
-	}
-
-	return false
-}
-
 // SetSshHost gets a reference to the given string and assigns it to the SshHost field.
 func (o *SqlCheckAllOfConfig) SetSshHost(v string) {
 	o.SshHost = &v
@@ -564,15 +474,6 @@ func (o *SqlCheckAllOfConfig) GetSshPortOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.SshPort, true
-}
-
-// IsSetSshPort returns a boolean if a field has been set.
-func (o *SqlCheckAllOfConfig) IsSetSshPort() bool {
-	if o != nil && !IsNil(o.SshPort) {
-		return true
-	}
-
-	return false
 }
 
 // SetSshPort gets a reference to the given int64 and assigns it to the SshPort field.
@@ -598,15 +499,6 @@ func (o *SqlCheckAllOfConfig) GetSshUserOk() (*string, bool) {
 	return o.SshUser, true
 }
 
-// IsSetSshUser returns a boolean if a field has been set.
-func (o *SqlCheckAllOfConfig) IsSetSshUser() bool {
-	if o != nil && !IsNil(o.SshUser) {
-		return true
-	}
-
-	return false
-}
-
 // SetSshUser gets a reference to the given string and assigns it to the SshUser field.
 func (o *SqlCheckAllOfConfig) SetSshUser(v string) {
 	o.SshUser = &v
@@ -628,15 +520,6 @@ func (o *SqlCheckAllOfConfig) GetSshPasswordOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SshPassword, true
-}
-
-// IsSetSshPassword returns a boolean if a field has been set.
-func (o *SqlCheckAllOfConfig) IsSetSshPassword() bool {
-	if o != nil && !IsNil(o.SshPassword) {
-		return true
-	}
-
-	return false
 }
 
 // SetSshPassword gets a reference to the given string and assigns it to the SshPassword field.

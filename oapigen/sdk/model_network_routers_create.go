@@ -145,15 +145,6 @@ func (o *NetworkRoutersCreate) GetEnabledOk() (*bool, bool) {
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *NetworkRoutersCreate) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *NetworkRoutersCreate) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -175,15 +166,6 @@ func (o *NetworkRoutersCreate) GetEnableBgpOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.EnableBgp, true
-}
-
-// IsSetEnableBgp returns a boolean if a field has been set.
-func (o *NetworkRoutersCreate) IsSetEnableBgp() bool {
-	if o != nil && !IsNil(o.EnableBgp) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnableBgp gets a reference to the given bool and assigns it to the EnableBgp field.
@@ -209,15 +191,6 @@ func (o *NetworkRoutersCreate) GetZoneOk() (*NetworkRoutersCreateZone, bool) {
 	return o.Zone, true
 }
 
-// IsSetZone returns a boolean if a field has been set.
-func (o *NetworkRoutersCreate) IsSetZone() bool {
-	if o != nil && !IsNil(o.Zone) {
-		return true
-	}
-
-	return false
-}
-
 // SetZone gets a reference to the given NetworkRoutersCreateZone and assigns it to the Zone field.
 func (o *NetworkRoutersCreate) SetZone(v NetworkRoutersCreateZone) {
 	o.Zone = &v
@@ -241,15 +214,6 @@ func (o *NetworkRoutersCreate) GetNetworkServerOk() (*NetworkRoutersCreateNetwor
 	return o.NetworkServer, true
 }
 
-// IsSetNetworkServer returns a boolean if a field has been set.
-func (o *NetworkRoutersCreate) IsSetNetworkServer() bool {
-	if o != nil && !IsNil(o.NetworkServer) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkServer gets a reference to the given NetworkRoutersCreateNetworkServer and assigns it to the NetworkServer field.
 func (o *NetworkRoutersCreate) SetNetworkServer(v NetworkRoutersCreateNetworkServer) {
 	o.NetworkServer = &v
@@ -271,15 +235,6 @@ func (o *NetworkRoutersCreate) GetConfigOk() (*NetworkRoutersCreateConfig, bool)
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *NetworkRoutersCreate) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given NetworkRoutersCreateConfig and assigns it to the Config field.

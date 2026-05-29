@@ -68,15 +68,6 @@ func (o *InfobloxNetworkPoolServerUpdateConfig) GetInventoryExistingOk() (*strin
 	return o.InventoryExisting, true
 }
 
-// IsSetInventoryExisting returns a boolean if a field has been set.
-func (o *InfobloxNetworkPoolServerUpdateConfig) IsSetInventoryExisting() bool {
-	if o != nil && !IsNil(o.InventoryExisting) {
-		return true
-	}
-
-	return false
-}
-
 // SetInventoryExisting gets a reference to the given string and assigns it to the InventoryExisting field.
 func (o *InfobloxNetworkPoolServerUpdateConfig) SetInventoryExisting(v string) {
 	o.InventoryExisting = &v
@@ -101,28 +92,9 @@ func (o *InfobloxNetworkPoolServerUpdateConfig) GetExtraAttributesOk() (*string,
 	return o.ExtraAttributes.Get(), o.ExtraAttributes.IsSet()
 }
 
-// IsSetExtraAttributes returns a boolean if a field has been set.
-func (o *InfobloxNetworkPoolServerUpdateConfig) IsSetExtraAttributes() bool {
-	if o != nil && o.ExtraAttributes.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExtraAttributes gets a reference to the given NullableString and assigns it to the ExtraAttributes field.
 func (o *InfobloxNetworkPoolServerUpdateConfig) SetExtraAttributes(v string) {
 	o.ExtraAttributes.Set(&v)
-}
-
-// SetExtraAttributesNil sets the value for ExtraAttributes to be an explicit nil
-func (o *InfobloxNetworkPoolServerUpdateConfig) SetExtraAttributesNil() {
-	o.ExtraAttributes.Set(nil)
-}
-
-// UnsetExtraAttributes ensures that no value is present for ExtraAttributes, not even an explicit nil
-func (o *InfobloxNetworkPoolServerUpdateConfig) UnsetExtraAttributes() {
-	o.ExtraAttributes.Unset()
 }
 
 func (o InfobloxNetworkPoolServerUpdateConfig) MarshalJSON() ([]byte, error) {

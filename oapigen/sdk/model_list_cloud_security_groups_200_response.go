@@ -63,15 +63,6 @@ func (o *ListCloudSecurityGroups200Response) GetSuccessOk() (*bool, bool) {
 	return o.Success, true
 }
 
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *ListCloudSecurityGroups200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
-}
-
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.
 func (o *ListCloudSecurityGroups200Response) SetSuccess(v bool) {
 	o.Success = &v
@@ -95,15 +86,6 @@ func (o *ListCloudSecurityGroups200Response) GetFirewallEnabledOk() (*bool, bool
 	return o.FirewallEnabled, true
 }
 
-// IsSetFirewallEnabled returns a boolean if a field has been set.
-func (o *ListCloudSecurityGroups200Response) IsSetFirewallEnabled() bool {
-	if o != nil && !IsNil(o.FirewallEnabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetFirewallEnabled gets a reference to the given bool and assigns it to the FirewallEnabled field.
 func (o *ListCloudSecurityGroups200Response) SetFirewallEnabled(v bool) {
 	o.FirewallEnabled = &v
@@ -125,15 +107,6 @@ func (o *ListCloudSecurityGroups200Response) GetSecurityGroupsOk() ([]ListCloudS
 		return nil, false
 	}
 	return o.SecurityGroups, true
-}
-
-// IsSetSecurityGroups returns a boolean if a field has been set.
-func (o *ListCloudSecurityGroups200Response) IsSetSecurityGroups() bool {
-	if o != nil && !IsNil(o.SecurityGroups) {
-		return true
-	}
-
-	return false
 }
 
 // SetSecurityGroups gets a reference to the given []ListCloudSecurityGroups200ResponseAllOfSecurityGroupsInner and assigns it to the SecurityGroups field.

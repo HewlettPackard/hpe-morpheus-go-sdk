@@ -64,15 +64,6 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2Worker) GetNetworkOk() (
 	return o.Network, true
 }
 
-// IsSetNetwork returns a boolean if a field has been set.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2Worker) IsSetNetwork() bool {
-	if o != nil && !IsNil(o.Network) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetwork gets a reference to the given AddClusterRequestClusterServerConfigAnyOfOneOf2WorkerNetwork and assigns it to the Network field.
 func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2Worker) SetNetwork(v AddClusterRequestClusterServerConfigAnyOfOneOf2WorkerNetwork) {
 	o.Network = &v
@@ -94,15 +85,6 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2Worker) GetSecurityGroup
 		return nil, false
 	}
 	return o.SecurityGroup, true
-}
-
-// IsSetSecurityGroup returns a boolean if a field has been set.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2Worker) IsSetSecurityGroup() bool {
-	if o != nil && !IsNil(o.SecurityGroup) {
-		return true
-	}
-
-	return false
 }
 
 // SetSecurityGroup gets a reference to the given AddClusterRequestClusterServerConfigAnyOfOneOf2WorkerSecurityGroup and assigns it to the SecurityGroup field.
@@ -128,15 +110,6 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2Worker) GetPlanOk() (*Ad
 	return o.Plan, true
 }
 
-// IsSetPlan returns a boolean if a field has been set.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2Worker) IsSetPlan() bool {
-	if o != nil && !IsNil(o.Plan) {
-		return true
-	}
-
-	return false
-}
-
 // SetPlan gets a reference to the given AddClusterRequestClusterServerConfigAnyOfOneOf2WorkerPlan and assigns it to the Plan field.
 func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2Worker) SetPlan(v AddClusterRequestClusterServerConfigAnyOfOneOf2WorkerPlan) {
 	o.Plan = &v
@@ -158,15 +131,6 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2Worker) GetRoleOk() (*Ad
 		return nil, false
 	}
 	return o.Role, true
-}
-
-// IsSetRole returns a boolean if a field has been set.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2Worker) IsSetRole() bool {
-	if o != nil && !IsNil(o.Role) {
-		return true
-	}
-
-	return false
 }
 
 // SetRole gets a reference to the given AddClusterRequestClusterServerConfigAnyOfOneOf2WorkerRole and assigns it to the Role field.

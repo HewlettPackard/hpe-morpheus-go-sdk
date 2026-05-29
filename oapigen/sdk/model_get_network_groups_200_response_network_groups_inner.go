@@ -68,15 +68,6 @@ func (o *GetNetworkGroups200ResponseNetworkGroupsInner) GetIdOk() (*int64, bool)
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetNetworkGroups200ResponseNetworkGroupsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetNetworkGroups200ResponseNetworkGroupsInner) SetId(v int64) {
 	o.Id = &v
@@ -98,15 +89,6 @@ func (o *GetNetworkGroups200ResponseNetworkGroupsInner) GetNameOk() (*string, bo
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *GetNetworkGroups200ResponseNetworkGroupsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -132,15 +114,6 @@ func (o *GetNetworkGroups200ResponseNetworkGroupsInner) GetDescriptionOk() (*str
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *GetNetworkGroups200ResponseNetworkGroupsInner) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *GetNetworkGroups200ResponseNetworkGroupsInner) SetDescription(v string) {
 	o.Description = &v
@@ -162,15 +135,6 @@ func (o *GetNetworkGroups200ResponseNetworkGroupsInner) GetVisibilityOk() (*stri
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *GetNetworkGroups200ResponseNetworkGroupsInner) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -196,15 +160,6 @@ func (o *GetNetworkGroups200ResponseNetworkGroupsInner) GetActiveOk() (*bool, bo
 	return o.Active, true
 }
 
-// IsSetActive returns a boolean if a field has been set.
-func (o *GetNetworkGroups200ResponseNetworkGroupsInner) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
-}
-
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *GetNetworkGroups200ResponseNetworkGroupsInner) SetActive(v bool) {
 	o.Active = &v
@@ -226,15 +181,6 @@ func (o *GetNetworkGroups200ResponseNetworkGroupsInner) GetNetworksOk() ([]int64
 		return nil, false
 	}
 	return o.Networks, true
-}
-
-// IsSetNetworks returns a boolean if a field has been set.
-func (o *GetNetworkGroups200ResponseNetworkGroupsInner) IsSetNetworks() bool {
-	if o != nil && !IsNil(o.Networks) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworks gets a reference to the given []int64 and assigns it to the Networks field.
@@ -260,15 +206,6 @@ func (o *GetNetworkGroups200ResponseNetworkGroupsInner) GetSubnetsOk() ([]map[st
 	return o.Subnets, true
 }
 
-// IsSetSubnets returns a boolean if a field has been set.
-func (o *GetNetworkGroups200ResponseNetworkGroupsInner) IsSetSubnets() bool {
-	if o != nil && !IsNil(o.Subnets) {
-		return true
-	}
-
-	return false
-}
-
 // SetSubnets gets a reference to the given []map[string]interface{} and assigns it to the Subnets field.
 func (o *GetNetworkGroups200ResponseNetworkGroupsInner) SetSubnets(v []map[string]interface{}) {
 	o.Subnets = v
@@ -290,15 +227,6 @@ func (o *GetNetworkGroups200ResponseNetworkGroupsInner) GetTenantsOk() ([]GetNet
 		return nil, false
 	}
 	return o.Tenants, true
-}
-
-// IsSetTenants returns a boolean if a field has been set.
-func (o *GetNetworkGroups200ResponseNetworkGroupsInner) IsSetTenants() bool {
-	if o != nil && !IsNil(o.Tenants) {
-		return true
-	}
-
-	return false
 }
 
 // SetTenants gets a reference to the given []GetNetworkGroups200ResponseNetworkGroupsInnerTenantsInner and assigns it to the Tenants field.

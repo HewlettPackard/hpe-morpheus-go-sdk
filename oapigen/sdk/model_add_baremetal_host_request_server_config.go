@@ -67,15 +67,6 @@ func (o *AddBaremetalHostRequestServerConfig) GetIloIpAddressOk() (*string, bool
 	return o.IloIpAddress, true
 }
 
-// IsSetIloIpAddress returns a boolean if a field has been set.
-func (o *AddBaremetalHostRequestServerConfig) IsSetIloIpAddress() bool {
-	if o != nil && !IsNil(o.IloIpAddress) {
-		return true
-	}
-
-	return false
-}
-
 // SetIloIpAddress gets a reference to the given string and assigns it to the IloIpAddress field.
 func (o *AddBaremetalHostRequestServerConfig) SetIloIpAddress(v string) {
 	o.IloIpAddress = &v
@@ -97,15 +88,6 @@ func (o *AddBaremetalHostRequestServerConfig) GetIloUsernameOk() (*string, bool)
 		return nil, false
 	}
 	return o.IloUsername, true
-}
-
-// IsSetIloUsername returns a boolean if a field has been set.
-func (o *AddBaremetalHostRequestServerConfig) IsSetIloUsername() bool {
-	if o != nil && !IsNil(o.IloUsername) {
-		return true
-	}
-
-	return false
 }
 
 // SetIloUsername gets a reference to the given string and assigns it to the IloUsername field.
@@ -131,15 +113,6 @@ func (o *AddBaremetalHostRequestServerConfig) GetIloPasswordOk() (*string, bool)
 	return o.IloPassword, true
 }
 
-// IsSetIloPassword returns a boolean if a field has been set.
-func (o *AddBaremetalHostRequestServerConfig) IsSetIloPassword() bool {
-	if o != nil && !IsNil(o.IloPassword) {
-		return true
-	}
-
-	return false
-}
-
 // SetIloPassword gets a reference to the given string and assigns it to the IloPassword field.
 func (o *AddBaremetalHostRequestServerConfig) SetIloPassword(v string) {
 	o.IloPassword = &v
@@ -161,15 +134,6 @@ func (o *AddBaremetalHostRequestServerConfig) GetMacAddressOk() (*string, bool) 
 		return nil, false
 	}
 	return o.MacAddress, true
-}
-
-// IsSetMacAddress returns a boolean if a field has been set.
-func (o *AddBaremetalHostRequestServerConfig) IsSetMacAddress() bool {
-	if o != nil && !IsNil(o.MacAddress) {
-		return true
-	}
-
-	return false
 }
 
 // SetMacAddress gets a reference to the given string and assigns it to the MacAddress field.
@@ -195,15 +159,6 @@ func (o *AddBaremetalHostRequestServerConfig) GetResourcePoolIdOk() (*int32, boo
 	return o.ResourcePoolId, true
 }
 
-// IsSetResourcePoolId returns a boolean if a field has been set.
-func (o *AddBaremetalHostRequestServerConfig) IsSetResourcePoolId() bool {
-	if o != nil && !IsNil(o.ResourcePoolId) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourcePoolId gets a reference to the given int32 and assigns it to the ResourcePoolId field.
 func (o *AddBaremetalHostRequestServerConfig) SetResourcePoolId(v int32) {
 	o.ResourcePoolId = &v
@@ -225,15 +180,6 @@ func (o *AddBaremetalHostRequestServerConfig) GetPreProvisionedOk() (*bool, bool
 		return nil, false
 	}
 	return o.PreProvisioned, true
-}
-
-// IsSetPreProvisioned returns a boolean if a field has been set.
-func (o *AddBaremetalHostRequestServerConfig) IsSetPreProvisioned() bool {
-	if o != nil && !IsNil(o.PreProvisioned) {
-		return true
-	}
-
-	return false
 }
 
 // SetPreProvisioned gets a reference to the given bool and assigns it to the PreProvisioned field.

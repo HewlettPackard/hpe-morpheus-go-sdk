@@ -62,28 +62,9 @@ func (o *ListInstances200ResponseAllOfInstancesInnerConfigInstanceType) GetCodeO
 	return o.Code.Get(), o.Code.IsSet()
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerConfigInstanceType) IsSetCode() bool {
-	if o != nil && o.Code.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *ListInstances200ResponseAllOfInstancesInnerConfigInstanceType) SetCode(v string) {
 	o.Code.Set(&v)
-}
-
-// SetCodeNil sets the value for Code to be an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInnerConfigInstanceType) SetCodeNil() {
-	o.Code.Set(nil)
-}
-
-// UnsetCode ensures that no value is present for Code, not even an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInnerConfigInstanceType) UnsetCode() {
-	o.Code.Unset()
 }
 
 func (o ListInstances200ResponseAllOfInstancesInnerConfigInstanceType) MarshalJSON() ([]byte, error) {

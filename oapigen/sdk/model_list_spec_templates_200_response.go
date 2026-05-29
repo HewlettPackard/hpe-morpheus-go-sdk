@@ -62,15 +62,6 @@ func (o *ListSpecTemplates200Response) GetSpecTemplatesOk() ([]ListSpecTemplates
 	return o.SpecTemplates, true
 }
 
-// IsSetSpecTemplates returns a boolean if a field has been set.
-func (o *ListSpecTemplates200Response) IsSetSpecTemplates() bool {
-	if o != nil && !IsNil(o.SpecTemplates) {
-		return true
-	}
-
-	return false
-}
-
 // SetSpecTemplates gets a reference to the given []ListSpecTemplates200ResponseAllOfSpecTemplatesInner and assigns it to the SpecTemplates field.
 func (o *ListSpecTemplates200Response) SetSpecTemplates(v []ListSpecTemplates200ResponseAllOfSpecTemplatesInner) {
 	o.SpecTemplates = v
@@ -92,15 +83,6 @@ func (o *ListSpecTemplates200Response) GetMetaOk() (*ListApprovals200ResponseAll
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListSpecTemplates200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

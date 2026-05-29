@@ -63,15 +63,6 @@ func (o *WhitelabelSettingsSupportMenuLinksInner) GetUrlOk() (*string, bool) {
 	return o.Url, true
 }
 
-// IsSetUrl returns a boolean if a field has been set.
-func (o *WhitelabelSettingsSupportMenuLinksInner) IsSetUrl() bool {
-	if o != nil && !IsNil(o.Url) {
-		return true
-	}
-
-	return false
-}
-
 // SetUrl gets a reference to the given string and assigns it to the Url field.
 func (o *WhitelabelSettingsSupportMenuLinksInner) SetUrl(v string) {
 	o.Url = &v
@@ -95,15 +86,6 @@ func (o *WhitelabelSettingsSupportMenuLinksInner) GetLabelOk() (*string, bool) {
 	return o.Label, true
 }
 
-// IsSetLabel returns a boolean if a field has been set.
-func (o *WhitelabelSettingsSupportMenuLinksInner) IsSetLabel() bool {
-	if o != nil && !IsNil(o.Label) {
-		return true
-	}
-
-	return false
-}
-
 // SetLabel gets a reference to the given string and assigns it to the Label field.
 func (o *WhitelabelSettingsSupportMenuLinksInner) SetLabel(v string) {
 	o.Label = &v
@@ -125,15 +107,6 @@ func (o *WhitelabelSettingsSupportMenuLinksInner) GetLabelCodeOk() (*string, boo
 		return nil, false
 	}
 	return o.LabelCode, true
-}
-
-// IsSetLabelCode returns a boolean if a field has been set.
-func (o *WhitelabelSettingsSupportMenuLinksInner) IsSetLabelCode() bool {
-	if o != nil && !IsNil(o.LabelCode) {
-		return true
-	}
-
-	return false
 }
 
 // SetLabelCode gets a reference to the given string and assigns it to the LabelCode field.

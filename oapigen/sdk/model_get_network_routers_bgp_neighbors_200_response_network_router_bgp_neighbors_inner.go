@@ -90,15 +90,6 @@ func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner)
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetId(v int64) {
 	o.Id = &v
@@ -120,15 +111,6 @@ func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner)
 		return nil, false
 	}
 	return o.IpAddress, true
-}
-
-// IsSetIpAddress returns a boolean if a field has been set.
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) IsSetIpAddress() bool {
-	if o != nil && !IsNil(o.IpAddress) {
-		return true
-	}
-
-	return false
 }
 
 // SetIpAddress gets a reference to the given string and assigns it to the IpAddress field.
@@ -155,28 +137,9 @@ func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner)
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetForwardingAddress returns the ForwardingAddress field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -198,28 +161,9 @@ func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner)
 	return o.ForwardingAddress.Get(), o.ForwardingAddress.IsSet()
 }
 
-// IsSetForwardingAddress returns a boolean if a field has been set.
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) IsSetForwardingAddress() bool {
-	if o != nil && o.ForwardingAddress.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetForwardingAddress gets a reference to the given NullableString and assigns it to the ForwardingAddress field.
 func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetForwardingAddress(v string) {
 	o.ForwardingAddress.Set(&v)
-}
-
-// SetForwardingAddressNil sets the value for ForwardingAddress to be an explicit nil
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetForwardingAddressNil() {
-	o.ForwardingAddress.Set(nil)
-}
-
-// UnsetForwardingAddress ensures that no value is present for ForwardingAddress, not even an explicit nil
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) UnsetForwardingAddress() {
-	o.ForwardingAddress.Unset()
 }
 
 // GetProtocolAddress returns the ProtocolAddress field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -241,28 +185,9 @@ func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner)
 	return o.ProtocolAddress.Get(), o.ProtocolAddress.IsSet()
 }
 
-// IsSetProtocolAddress returns a boolean if a field has been set.
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) IsSetProtocolAddress() bool {
-	if o != nil && o.ProtocolAddress.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetProtocolAddress gets a reference to the given NullableString and assigns it to the ProtocolAddress field.
 func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetProtocolAddress(v string) {
 	o.ProtocolAddress.Set(&v)
-}
-
-// SetProtocolAddressNil sets the value for ProtocolAddress to be an explicit nil
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetProtocolAddressNil() {
-	o.ProtocolAddress.Set(nil)
-}
-
-// UnsetProtocolAddress ensures that no value is present for ProtocolAddress, not even an explicit nil
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) UnsetProtocolAddress() {
-	o.ProtocolAddress.Unset()
 }
 
 // GetRemoteAs returns the RemoteAs field value if set, zero value otherwise.
@@ -281,15 +206,6 @@ func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner)
 		return nil, false
 	}
 	return o.RemoteAs, true
-}
-
-// IsSetRemoteAs returns a boolean if a field has been set.
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) IsSetRemoteAs() bool {
-	if o != nil && !IsNil(o.RemoteAs) {
-		return true
-	}
-
-	return false
 }
 
 // SetRemoteAs gets a reference to the given string and assigns it to the RemoteAs field.
@@ -315,15 +231,6 @@ func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner)
 	return o.Weight, true
 }
 
-// IsSetWeight returns a boolean if a field has been set.
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) IsSetWeight() bool {
-	if o != nil && !IsNil(o.Weight) {
-		return true
-	}
-
-	return false
-}
-
 // SetWeight gets a reference to the given int64 and assigns it to the Weight field.
 func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetWeight(v int64) {
 	o.Weight = &v
@@ -347,15 +254,6 @@ func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner)
 	return o.KeepAlive, true
 }
 
-// IsSetKeepAlive returns a boolean if a field has been set.
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) IsSetKeepAlive() bool {
-	if o != nil && !IsNil(o.KeepAlive) {
-		return true
-	}
-
-	return false
-}
-
 // SetKeepAlive gets a reference to the given int64 and assigns it to the KeepAlive field.
 func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetKeepAlive(v int64) {
 	o.KeepAlive = &v
@@ -377,15 +275,6 @@ func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner)
 		return nil, false
 	}
 	return o.HoldDown, true
-}
-
-// IsSetHoldDown returns a boolean if a field has been set.
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) IsSetHoldDown() bool {
-	if o != nil && !IsNil(o.HoldDown) {
-		return true
-	}
-
-	return false
 }
 
 // SetHoldDown gets a reference to the given int64 and assigns it to the HoldDown field.
@@ -412,28 +301,9 @@ func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner)
 	return o.Password.Get(), o.Password.IsSet()
 }
 
-// IsSetPassword returns a boolean if a field has been set.
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) IsSetPassword() bool {
-	if o != nil && o.Password.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPassword gets a reference to the given NullableString and assigns it to the Password field.
 func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetPassword(v string) {
 	o.Password.Set(&v)
-}
-
-// SetPasswordNil sets the value for Password to be an explicit nil
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetPasswordNil() {
-	o.Password.Set(nil)
-}
-
-// UnsetPassword ensures that no value is present for Password, not even an explicit nil
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) UnsetPassword() {
-	o.Password.Unset()
 }
 
 // GetPasswordHash returns the PasswordHash field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -455,28 +325,9 @@ func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner)
 	return o.PasswordHash.Get(), o.PasswordHash.IsSet()
 }
 
-// IsSetPasswordHash returns a boolean if a field has been set.
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) IsSetPasswordHash() bool {
-	if o != nil && o.PasswordHash.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPasswordHash gets a reference to the given NullableString and assigns it to the PasswordHash field.
 func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetPasswordHash(v string) {
 	o.PasswordHash.Set(&v)
-}
-
-// SetPasswordHashNil sets the value for PasswordHash to be an explicit nil
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetPasswordHashNil() {
-	o.PasswordHash.Set(nil)
-}
-
-// UnsetPasswordHash ensures that no value is present for PasswordHash, not even an explicit nil
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) UnsetPasswordHash() {
-	o.PasswordHash.Unset()
 }
 
 // GetRouteFilteringType returns the RouteFilteringType field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -498,28 +349,9 @@ func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner)
 	return o.RouteFilteringType.Get(), o.RouteFilteringType.IsSet()
 }
 
-// IsSetRouteFilteringType returns a boolean if a field has been set.
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) IsSetRouteFilteringType() bool {
-	if o != nil && o.RouteFilteringType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRouteFilteringType gets a reference to the given NullableString and assigns it to the RouteFilteringType field.
 func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetRouteFilteringType(v string) {
 	o.RouteFilteringType.Set(&v)
-}
-
-// SetRouteFilteringTypeNil sets the value for RouteFilteringType to be an explicit nil
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetRouteFilteringTypeNil() {
-	o.RouteFilteringType.Set(nil)
-}
-
-// UnsetRouteFilteringType ensures that no value is present for RouteFilteringType, not even an explicit nil
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) UnsetRouteFilteringType() {
-	o.RouteFilteringType.Unset()
 }
 
 // GetRouteFilteringIn returns the RouteFilteringIn field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -541,28 +373,9 @@ func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner)
 	return o.RouteFilteringIn.Get(), o.RouteFilteringIn.IsSet()
 }
 
-// IsSetRouteFilteringIn returns a boolean if a field has been set.
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) IsSetRouteFilteringIn() bool {
-	if o != nil && o.RouteFilteringIn.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRouteFilteringIn gets a reference to the given NullableString and assigns it to the RouteFilteringIn field.
 func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetRouteFilteringIn(v string) {
 	o.RouteFilteringIn.Set(&v)
-}
-
-// SetRouteFilteringInNil sets the value for RouteFilteringIn to be an explicit nil
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetRouteFilteringInNil() {
-	o.RouteFilteringIn.Set(nil)
-}
-
-// UnsetRouteFilteringIn ensures that no value is present for RouteFilteringIn, not even an explicit nil
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) UnsetRouteFilteringIn() {
-	o.RouteFilteringIn.Unset()
 }
 
 // GetRouteFilteringOut returns the RouteFilteringOut field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -584,28 +397,9 @@ func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner)
 	return o.RouteFilteringOut.Get(), o.RouteFilteringOut.IsSet()
 }
 
-// IsSetRouteFilteringOut returns a boolean if a field has been set.
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) IsSetRouteFilteringOut() bool {
-	if o != nil && o.RouteFilteringOut.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRouteFilteringOut gets a reference to the given NullableString and assigns it to the RouteFilteringOut field.
 func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetRouteFilteringOut(v string) {
 	o.RouteFilteringOut.Set(&v)
-}
-
-// SetRouteFilteringOutNil sets the value for RouteFilteringOut to be an explicit nil
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetRouteFilteringOutNil() {
-	o.RouteFilteringOut.Set(nil)
-}
-
-// UnsetRouteFilteringOut ensures that no value is present for RouteFilteringOut, not even an explicit nil
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) UnsetRouteFilteringOut() {
-	o.RouteFilteringOut.Unset()
 }
 
 // GetBfdEnabled returns the BfdEnabled field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -627,28 +421,9 @@ func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner)
 	return o.BfdEnabled.Get(), o.BfdEnabled.IsSet()
 }
 
-// IsSetBfdEnabled returns a boolean if a field has been set.
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) IsSetBfdEnabled() bool {
-	if o != nil && o.BfdEnabled.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetBfdEnabled gets a reference to the given NullableBool and assigns it to the BfdEnabled field.
 func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetBfdEnabled(v bool) {
 	o.BfdEnabled.Set(&v)
-}
-
-// SetBfdEnabledNil sets the value for BfdEnabled to be an explicit nil
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetBfdEnabledNil() {
-	o.BfdEnabled.Set(nil)
-}
-
-// UnsetBfdEnabled ensures that no value is present for BfdEnabled, not even an explicit nil
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) UnsetBfdEnabled() {
-	o.BfdEnabled.Unset()
 }
 
 // GetBfdInterval returns the BfdInterval field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -670,28 +445,9 @@ func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner)
 	return o.BfdInterval.Get(), o.BfdInterval.IsSet()
 }
 
-// IsSetBfdInterval returns a boolean if a field has been set.
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) IsSetBfdInterval() bool {
-	if o != nil && o.BfdInterval.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetBfdInterval gets a reference to the given NullableInt64 and assigns it to the BfdInterval field.
 func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetBfdInterval(v int64) {
 	o.BfdInterval.Set(&v)
-}
-
-// SetBfdIntervalNil sets the value for BfdInterval to be an explicit nil
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetBfdIntervalNil() {
-	o.BfdInterval.Set(nil)
-}
-
-// UnsetBfdInterval ensures that no value is present for BfdInterval, not even an explicit nil
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) UnsetBfdInterval() {
-	o.BfdInterval.Unset()
 }
 
 // GetBfdMultiple returns the BfdMultiple field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -713,28 +469,9 @@ func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner)
 	return o.BfdMultiple.Get(), o.BfdMultiple.IsSet()
 }
 
-// IsSetBfdMultiple returns a boolean if a field has been set.
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) IsSetBfdMultiple() bool {
-	if o != nil && o.BfdMultiple.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetBfdMultiple gets a reference to the given NullableInt64 and assigns it to the BfdMultiple field.
 func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetBfdMultiple(v int64) {
 	o.BfdMultiple.Set(&v)
-}
-
-// SetBfdMultipleNil sets the value for BfdMultiple to be an explicit nil
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetBfdMultipleNil() {
-	o.BfdMultiple.Set(nil)
-}
-
-// UnsetBfdMultiple ensures that no value is present for BfdMultiple, not even an explicit nil
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) UnsetBfdMultiple() {
-	o.BfdMultiple.Unset()
 }
 
 // GetAllowAsIn returns the AllowAsIn field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -756,28 +493,9 @@ func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner)
 	return o.AllowAsIn.Get(), o.AllowAsIn.IsSet()
 }
 
-// IsSetAllowAsIn returns a boolean if a field has been set.
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) IsSetAllowAsIn() bool {
-	if o != nil && o.AllowAsIn.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAllowAsIn gets a reference to the given NullableBool and assigns it to the AllowAsIn field.
 func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetAllowAsIn(v bool) {
 	o.AllowAsIn.Set(&v)
-}
-
-// SetAllowAsInNil sets the value for AllowAsIn to be an explicit nil
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetAllowAsInNil() {
-	o.AllowAsIn.Set(nil)
-}
-
-// UnsetAllowAsIn ensures that no value is present for AllowAsIn, not even an explicit nil
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) UnsetAllowAsIn() {
-	o.AllowAsIn.Unset()
 }
 
 // GetHopLimit returns the HopLimit field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -799,28 +517,9 @@ func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner)
 	return o.HopLimit.Get(), o.HopLimit.IsSet()
 }
 
-// IsSetHopLimit returns a boolean if a field has been set.
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) IsSetHopLimit() bool {
-	if o != nil && o.HopLimit.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetHopLimit gets a reference to the given NullableInt64 and assigns it to the HopLimit field.
 func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetHopLimit(v int64) {
 	o.HopLimit.Set(&v)
-}
-
-// SetHopLimitNil sets the value for HopLimit to be an explicit nil
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetHopLimitNil() {
-	o.HopLimit.Set(nil)
-}
-
-// UnsetHopLimit ensures that no value is present for HopLimit, not even an explicit nil
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) UnsetHopLimit() {
-	o.HopLimit.Unset()
 }
 
 // GetRestartMode returns the RestartMode field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -842,28 +541,9 @@ func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner)
 	return o.RestartMode.Get(), o.RestartMode.IsSet()
 }
 
-// IsSetRestartMode returns a boolean if a field has been set.
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) IsSetRestartMode() bool {
-	if o != nil && o.RestartMode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRestartMode gets a reference to the given NullableString and assigns it to the RestartMode field.
 func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetRestartMode(v string) {
 	o.RestartMode.Set(&v)
-}
-
-// SetRestartModeNil sets the value for RestartMode to be an explicit nil
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetRestartModeNil() {
-	o.RestartMode.Set(nil)
-}
-
-// UnsetRestartMode ensures that no value is present for RestartMode, not even an explicit nil
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) UnsetRestartMode() {
-	o.RestartMode.Unset()
 }
 
 // GetProviderId returns the ProviderId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -885,28 +565,9 @@ func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner)
 	return o.ProviderId.Get(), o.ProviderId.IsSet()
 }
 
-// IsSetProviderId returns a boolean if a field has been set.
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) IsSetProviderId() bool {
-	if o != nil && o.ProviderId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetProviderId gets a reference to the given NullableString and assigns it to the ProviderId field.
 func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetProviderId(v string) {
 	o.ProviderId.Set(&v)
-}
-
-// SetProviderIdNil sets the value for ProviderId to be an explicit nil
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetProviderIdNil() {
-	o.ProviderId.Set(nil)
-}
-
-// UnsetProviderId ensures that no value is present for ProviderId, not even an explicit nil
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) UnsetProviderId() {
-	o.ProviderId.Unset()
 }
 
 // GetSyncSource returns the SyncSource field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -928,28 +589,9 @@ func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner)
 	return o.SyncSource.Get(), o.SyncSource.IsSet()
 }
 
-// IsSetSyncSource returns a boolean if a field has been set.
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) IsSetSyncSource() bool {
-	if o != nil && o.SyncSource.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSyncSource gets a reference to the given NullableString and assigns it to the SyncSource field.
 func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetSyncSource(v string) {
 	o.SyncSource.Set(&v)
-}
-
-// SetSyncSourceNil sets the value for SyncSource to be an explicit nil
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetSyncSourceNil() {
-	o.SyncSource.Set(nil)
-}
-
-// UnsetSyncSource ensures that no value is present for SyncSource, not even an explicit nil
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) UnsetSyncSource() {
-	o.SyncSource.Unset()
 }
 
 // GetInternalId returns the InternalId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -971,28 +613,9 @@ func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner)
 	return o.InternalId.Get(), o.InternalId.IsSet()
 }
 
-// IsSetInternalId returns a boolean if a field has been set.
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) IsSetInternalId() bool {
-	if o != nil && o.InternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInternalId gets a reference to the given NullableString and assigns it to the InternalId field.
 func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetInternalId(v string) {
 	o.InternalId.Set(&v)
-}
-
-// SetInternalIdNil sets the value for InternalId to be an explicit nil
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetInternalIdNil() {
-	o.InternalId.Set(nil)
-}
-
-// UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) UnsetInternalId() {
-	o.InternalId.Unset()
 }
 
 // GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1014,28 +637,9 @@ func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner)
 	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) IsSetExternalId() bool {
-	if o != nil && o.ExternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetExternalId(v string) {
 	o.ExternalId.Set(&v)
-}
-
-// SetExternalIdNil sets the value for ExternalId to be an explicit nil
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetExternalIdNil() {
-	o.ExternalId.Set(nil)
-}
-
-// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) UnsetExternalId() {
-	o.ExternalId.Unset()
 }
 
 // GetRefType returns the RefType field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1057,28 +661,9 @@ func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner)
 	return o.RefType.Get(), o.RefType.IsSet()
 }
 
-// IsSetRefType returns a boolean if a field has been set.
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) IsSetRefType() bool {
-	if o != nil && o.RefType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRefType gets a reference to the given NullableString and assigns it to the RefType field.
 func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetRefType(v string) {
 	o.RefType.Set(&v)
-}
-
-// SetRefTypeNil sets the value for RefType to be an explicit nil
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetRefTypeNil() {
-	o.RefType.Set(nil)
-}
-
-// UnsetRefType ensures that no value is present for RefType, not even an explicit nil
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) UnsetRefType() {
-	o.RefType.Unset()
 }
 
 // GetRefId returns the RefId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1100,28 +685,9 @@ func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner)
 	return o.RefId.Get(), o.RefId.IsSet()
 }
 
-// IsSetRefId returns a boolean if a field has been set.
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) IsSetRefId() bool {
-	if o != nil && o.RefId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRefId gets a reference to the given NullableInt64 and assigns it to the RefId field.
 func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetRefId(v int64) {
 	o.RefId.Set(&v)
-}
-
-// SetRefIdNil sets the value for RefId to be an explicit nil
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetRefIdNil() {
-	o.RefId.Set(nil)
-}
-
-// UnsetRefId ensures that no value is present for RefId, not even an explicit nil
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) UnsetRefId() {
-	o.RefId.Unset()
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
@@ -1140,15 +706,6 @@ func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner)
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInnerConfig and assigns it to the Config field.
@@ -1174,15 +731,6 @@ func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner)
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -1204,15 +752,6 @@ func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner)
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.

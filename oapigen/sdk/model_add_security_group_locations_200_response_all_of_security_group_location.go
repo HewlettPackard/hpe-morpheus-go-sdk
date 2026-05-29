@@ -70,15 +70,6 @@ func (o *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) GetIdOk
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) SetId(v int64) {
 	o.Id = &v
@@ -100,15 +91,6 @@ func (o *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) GetName
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -135,28 +117,9 @@ func (o *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) GetDesc
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetExternalId returns the ExternalId field value if set, zero value otherwise.
@@ -175,15 +138,6 @@ func (o *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) GetExte
 		return nil, false
 	}
 	return o.ExternalId, true
-}
-
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
-		return true
-	}
-
-	return false
 }
 
 // SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
@@ -210,28 +164,9 @@ func (o *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) GetIacI
 	return o.IacId.Get(), o.IacId.IsSet()
 }
 
-// IsSetIacId returns a boolean if a field has been set.
-func (o *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) IsSetIacId() bool {
-	if o != nil && o.IacId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetIacId gets a reference to the given NullableString and assigns it to the IacId field.
 func (o *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) SetIacId(v string) {
 	o.IacId.Set(&v)
-}
-
-// SetIacIdNil sets the value for IacId to be an explicit nil
-func (o *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) SetIacIdNil() {
-	o.IacId.Set(nil)
-}
-
-// UnsetIacId ensures that no value is present for IacId, not even an explicit nil
-func (o *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) UnsetIacId() {
-	o.IacId.Unset()
 }
 
 // GetZone returns the Zone field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -253,28 +188,9 @@ func (o *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) GetZone
 	return o.Zone.Get(), o.Zone.IsSet()
 }
 
-// IsSetZone returns a boolean if a field has been set.
-func (o *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) IsSetZone() bool {
-	if o != nil && o.Zone.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetZone gets a reference to the given NullableAddSecurityGroupLocations200ResponseAllOfSecurityGroupLocationZone and assigns it to the Zone field.
 func (o *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) SetZone(v AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocationZone) {
 	o.Zone.Set(&v)
-}
-
-// SetZoneNil sets the value for Zone to be an explicit nil
-func (o *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) SetZoneNil() {
-	o.Zone.Set(nil)
-}
-
-// UnsetZone ensures that no value is present for Zone, not even an explicit nil
-func (o *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) UnsetZone() {
-	o.Zone.Unset()
 }
 
 // GetZonePool returns the ZonePool field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -296,28 +212,9 @@ func (o *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) GetZone
 	return o.ZonePool.Get(), o.ZonePool.IsSet()
 }
 
-// IsSetZonePool returns a boolean if a field has been set.
-func (o *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) IsSetZonePool() bool {
-	if o != nil && o.ZonePool.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetZonePool gets a reference to the given NullableAddSecurityGroupLocations200ResponseAllOfSecurityGroupLocationZonePool and assigns it to the ZonePool field.
 func (o *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) SetZonePool(v AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocationZonePool) {
 	o.ZonePool.Set(&v)
-}
-
-// SetZonePoolNil sets the value for ZonePool to be an explicit nil
-func (o *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) SetZonePoolNil() {
-	o.ZonePool.Set(nil)
-}
-
-// UnsetZonePool ensures that no value is present for ZonePool, not even an explicit nil
-func (o *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) UnsetZonePool() {
-	o.ZonePool.Unset()
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -336,15 +233,6 @@ func (o *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) GetStat
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -371,28 +259,9 @@ func (o *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) GetPrio
 	return o.Priority.Get(), o.Priority.IsSet()
 }
 
-// IsSetPriority returns a boolean if a field has been set.
-func (o *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) IsSetPriority() bool {
-	if o != nil && o.Priority.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPriority gets a reference to the given NullableString and assigns it to the Priority field.
 func (o *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) SetPriority(v string) {
 	o.Priority.Set(&v)
-}
-
-// SetPriorityNil sets the value for Priority to be an explicit nil
-func (o *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) SetPriorityNil() {
-	o.Priority.Set(nil)
-}
-
-// UnsetPriority ensures that no value is present for Priority, not even an explicit nil
-func (o *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) UnsetPriority() {
-	o.Priority.Unset()
 }
 
 // GetGroupLayer returns the GroupLayer field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -414,28 +283,9 @@ func (o *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) GetGrou
 	return o.GroupLayer.Get(), o.GroupLayer.IsSet()
 }
 
-// IsSetGroupLayer returns a boolean if a field has been set.
-func (o *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) IsSetGroupLayer() bool {
-	if o != nil && o.GroupLayer.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetGroupLayer gets a reference to the given NullableString and assigns it to the GroupLayer field.
 func (o *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) SetGroupLayer(v string) {
 	o.GroupLayer.Set(&v)
-}
-
-// SetGroupLayerNil sets the value for GroupLayer to be an explicit nil
-func (o *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) SetGroupLayerNil() {
-	o.GroupLayer.Set(nil)
-}
-
-// UnsetGroupLayer ensures that no value is present for GroupLayer, not even an explicit nil
-func (o *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) UnsetGroupLayer() {
-	o.GroupLayer.Unset()
 }
 
 func (o AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) MarshalJSON() ([]byte, error) {

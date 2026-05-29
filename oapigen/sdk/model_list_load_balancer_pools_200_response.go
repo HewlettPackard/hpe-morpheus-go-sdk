@@ -62,15 +62,6 @@ func (o *ListLoadBalancerPools200Response) GetLoadBalancerPoolsOk() ([]ListLoadB
 	return o.LoadBalancerPools, true
 }
 
-// IsSetLoadBalancerPools returns a boolean if a field has been set.
-func (o *ListLoadBalancerPools200Response) IsSetLoadBalancerPools() bool {
-	if o != nil && !IsNil(o.LoadBalancerPools) {
-		return true
-	}
-
-	return false
-}
-
 // SetLoadBalancerPools gets a reference to the given []ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner and assigns it to the LoadBalancerPools field.
 func (o *ListLoadBalancerPools200Response) SetLoadBalancerPools(v []ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) {
 	o.LoadBalancerPools = v
@@ -92,15 +83,6 @@ func (o *ListLoadBalancerPools200Response) GetMetaOk() (*ListApprovals200Respons
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListLoadBalancerPools200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

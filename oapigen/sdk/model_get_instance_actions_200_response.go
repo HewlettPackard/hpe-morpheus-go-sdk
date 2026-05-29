@@ -62,15 +62,6 @@ func (o *GetInstanceActions200Response) GetInstanceIdsOk() ([]int64, bool) {
 	return o.InstanceIds, true
 }
 
-// IsSetInstanceIds returns a boolean if a field has been set.
-func (o *GetInstanceActions200Response) IsSetInstanceIds() bool {
-	if o != nil && !IsNil(o.InstanceIds) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstanceIds gets a reference to the given []int64 and assigns it to the InstanceIds field.
 func (o *GetInstanceActions200Response) SetInstanceIds(v []int64) {
 	o.InstanceIds = v
@@ -92,15 +83,6 @@ func (o *GetInstanceActions200Response) GetActionsOk() ([]GetInstanceActions200R
 		return nil, false
 	}
 	return o.Actions, true
-}
-
-// IsSetActions returns a boolean if a field has been set.
-func (o *GetInstanceActions200Response) IsSetActions() bool {
-	if o != nil && !IsNil(o.Actions) {
-		return true
-	}
-
-	return false
 }
 
 // SetActions gets a reference to the given []GetInstanceActions200ResponseActionsInner and assigns it to the Actions field.

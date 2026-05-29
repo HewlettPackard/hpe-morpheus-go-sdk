@@ -68,15 +68,6 @@ func (o *InstanceSnapshotsSnapshotsInnerSnapshotFilesInner) GetIdOk() (*int32, b
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *InstanceSnapshotsSnapshotsInnerSnapshotFilesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int32 and assigns it to the Id field.
 func (o *InstanceSnapshotsSnapshotsInnerSnapshotFilesInner) SetId(v int32) {
 	o.Id = &v
@@ -98,15 +89,6 @@ func (o *InstanceSnapshotsSnapshotsInnerSnapshotFilesInner) GetNameOk() (*string
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *InstanceSnapshotsSnapshotsInnerSnapshotFilesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -132,15 +114,6 @@ func (o *InstanceSnapshotsSnapshotsInnerSnapshotFilesInner) GetTypeOk() (*string
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *InstanceSnapshotsSnapshotsInnerSnapshotFilesInner) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given string and assigns it to the Type field.
 func (o *InstanceSnapshotsSnapshotsInnerSnapshotFilesInner) SetType(v string) {
 	o.Type = &v
@@ -162,15 +135,6 @@ func (o *InstanceSnapshotsSnapshotsInnerSnapshotFilesInner) GetExternalIdOk() (*
 		return nil, false
 	}
 	return o.ExternalId, true
-}
-
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *InstanceSnapshotsSnapshotsInnerSnapshotFilesInner) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
-		return true
-	}
-
-	return false
 }
 
 // SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
@@ -196,15 +160,6 @@ func (o *InstanceSnapshotsSnapshotsInnerSnapshotFilesInner) GetPathOk() (*string
 	return o.Path, true
 }
 
-// IsSetPath returns a boolean if a field has been set.
-func (o *InstanceSnapshotsSnapshotsInnerSnapshotFilesInner) IsSetPath() bool {
-	if o != nil && !IsNil(o.Path) {
-		return true
-	}
-
-	return false
-}
-
 // SetPath gets a reference to the given string and assigns it to the Path field.
 func (o *InstanceSnapshotsSnapshotsInnerSnapshotFilesInner) SetPath(v string) {
 	o.Path = &v
@@ -226,15 +181,6 @@ func (o *InstanceSnapshotsSnapshotsInnerSnapshotFilesInner) GetExportPathOk() (*
 		return nil, false
 	}
 	return o.ExportPath, true
-}
-
-// IsSetExportPath returns a boolean if a field has been set.
-func (o *InstanceSnapshotsSnapshotsInnerSnapshotFilesInner) IsSetExportPath() bool {
-	if o != nil && !IsNil(o.ExportPath) {
-		return true
-	}
-
-	return false
 }
 
 // SetExportPath gets a reference to the given string and assigns it to the ExportPath field.
@@ -260,15 +206,6 @@ func (o *InstanceSnapshotsSnapshotsInnerSnapshotFilesInner) GetVolumeOk() (*Inst
 	return o.Volume, true
 }
 
-// IsSetVolume returns a boolean if a field has been set.
-func (o *InstanceSnapshotsSnapshotsInnerSnapshotFilesInner) IsSetVolume() bool {
-	if o != nil && !IsNil(o.Volume) {
-		return true
-	}
-
-	return false
-}
-
 // SetVolume gets a reference to the given InstanceSnapshotsSnapshotsInnerSnapshotFilesInnerVolume and assigns it to the Volume field.
 func (o *InstanceSnapshotsSnapshotsInnerSnapshotFilesInner) SetVolume(v InstanceSnapshotsSnapshotsInnerSnapshotFilesInnerVolume) {
 	o.Volume = &v
@@ -290,15 +227,6 @@ func (o *InstanceSnapshotsSnapshotsInnerSnapshotFilesInner) GetDiskIndexOk() (*i
 		return nil, false
 	}
 	return o.DiskIndex, true
-}
-
-// IsSetDiskIndex returns a boolean if a field has been set.
-func (o *InstanceSnapshotsSnapshotsInnerSnapshotFilesInner) IsSetDiskIndex() bool {
-	if o != nil && !IsNil(o.DiskIndex) {
-		return true
-	}
-
-	return false
 }
 
 // SetDiskIndex gets a reference to the given int32 and assigns it to the DiskIndex field.

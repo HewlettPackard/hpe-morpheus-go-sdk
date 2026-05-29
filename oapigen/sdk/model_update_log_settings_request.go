@@ -61,15 +61,6 @@ func (o *UpdateLogSettingsRequest) GetLogSettingsOk() (*UpdateLogSettingsRequest
 	return o.LogSettings, true
 }
 
-// IsSetLogSettings returns a boolean if a field has been set.
-func (o *UpdateLogSettingsRequest) IsSetLogSettings() bool {
-	if o != nil && !IsNil(o.LogSettings) {
-		return true
-	}
-
-	return false
-}
-
 // SetLogSettings gets a reference to the given UpdateLogSettingsRequestLogSettings and assigns it to the LogSettings field.
 func (o *UpdateLogSettingsRequest) SetLogSettings(v UpdateLogSettingsRequestLogSettings) {
 	o.LogSettings = &v

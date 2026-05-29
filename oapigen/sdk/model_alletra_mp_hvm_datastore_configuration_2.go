@@ -65,15 +65,6 @@ func (o *AlletraMPHVMDatastoreConfiguration2) GetEnableransomwareOk() (*string, 
 	return o.Enableransomware, true
 }
 
-// IsSetEnableransomware returns a boolean if a field has been set.
-func (o *AlletraMPHVMDatastoreConfiguration2) IsSetEnableransomware() bool {
-	if o != nil && !IsNil(o.Enableransomware) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnableransomware gets a reference to the given string and assigns it to the Enableransomware field.
 func (o *AlletraMPHVMDatastoreConfiguration2) SetEnableransomware(v string) {
 	o.Enableransomware = &v

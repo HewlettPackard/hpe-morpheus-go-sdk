@@ -61,15 +61,6 @@ func (o *SpecTemplateCreateConfig) GetCloudformationOk() (*SpecTemplateCreateCon
 	return o.Cloudformation, true
 }
 
-// IsSetCloudformation returns a boolean if a field has been set.
-func (o *SpecTemplateCreateConfig) IsSetCloudformation() bool {
-	if o != nil && !IsNil(o.Cloudformation) {
-		return true
-	}
-
-	return false
-}
-
 // SetCloudformation gets a reference to the given SpecTemplateCreateConfigCloudformation and assigns it to the Cloudformation field.
 func (o *SpecTemplateCreateConfig) SetCloudformation(v SpecTemplateCreateConfigCloudformation) {
 	o.Cloudformation = &v

@@ -66,15 +66,6 @@ func (o *UpdateHostResize200ResponseAllOfServerInstance) GetIdOk() (*int64, bool
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerInstance) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *UpdateHostResize200ResponseAllOfServerInstance) SetId(v int64) {
 	o.Id = &v
@@ -96,15 +87,6 @@ func (o *UpdateHostResize200ResponseAllOfServerInstance) GetNameOk() (*string, b
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerInstance) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -130,15 +112,6 @@ func (o *UpdateHostResize200ResponseAllOfServerInstance) GetDisplayNameOk() (*st
 	return o.DisplayName, true
 }
 
-// IsSetDisplayName returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerInstance) IsSetDisplayName() bool {
-	if o != nil && !IsNil(o.DisplayName) {
-		return true
-	}
-
-	return false
-}
-
 // SetDisplayName gets a reference to the given string and assigns it to the DisplayName field.
 func (o *UpdateHostResize200ResponseAllOfServerInstance) SetDisplayName(v string) {
 	o.DisplayName = &v
@@ -160,15 +133,6 @@ func (o *UpdateHostResize200ResponseAllOfServerInstance) GetIsVpcSelectableOk() 
 		return nil, false
 	}
 	return o.IsVpcSelectable, true
-}
-
-// IsSetIsVpcSelectable returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerInstance) IsSetIsVpcSelectable() bool {
-	if o != nil && !IsNil(o.IsVpcSelectable) {
-		return true
-	}
-
-	return false
 }
 
 // SetIsVpcSelectable gets a reference to the given bool and assigns it to the IsVpcSelectable field.
@@ -194,15 +158,6 @@ func (o *UpdateHostResize200ResponseAllOfServerInstance) GetAccountIdOk() (*int6
 	return o.AccountId, true
 }
 
-// IsSetAccountId returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerInstance) IsSetAccountId() bool {
-	if o != nil && !IsNil(o.AccountId) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccountId gets a reference to the given int64 and assigns it to the AccountId field.
 func (o *UpdateHostResize200ResponseAllOfServerInstance) SetAccountId(v int64) {
 	o.AccountId = &v
@@ -224,15 +179,6 @@ func (o *UpdateHostResize200ResponseAllOfServerInstance) GetAccountNameOk() (*st
 		return nil, false
 	}
 	return o.AccountName, true
-}
-
-// IsSetAccountName returns a boolean if a field has been set.
-func (o *UpdateHostResize200ResponseAllOfServerInstance) IsSetAccountName() bool {
-	if o != nil && !IsNil(o.AccountName) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccountName gets a reference to the given string and assigns it to the AccountName field.

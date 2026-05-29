@@ -62,15 +62,6 @@ func (o *RunReports200Response) GetReportResultOk() (*RunReports200ResponseAllOf
 	return o.ReportResult, true
 }
 
-// IsSetReportResult returns a boolean if a field has been set.
-func (o *RunReports200Response) IsSetReportResult() bool {
-	if o != nil && !IsNil(o.ReportResult) {
-		return true
-	}
-
-	return false
-}
-
 // SetReportResult gets a reference to the given RunReports200ResponseAllOfReportResult and assigns it to the ReportResult field.
 func (o *RunReports200Response) SetReportResult(v RunReports200ResponseAllOfReportResult) {
 	o.ReportResult = &v
@@ -92,15 +83,6 @@ func (o *RunReports200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *RunReports200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

@@ -62,15 +62,6 @@ func (o *ListDeploymentVersions200Response) GetVersionsOk() ([]ListDeploymentVer
 	return o.Versions, true
 }
 
-// IsSetVersions returns a boolean if a field has been set.
-func (o *ListDeploymentVersions200Response) IsSetVersions() bool {
-	if o != nil && !IsNil(o.Versions) {
-		return true
-	}
-
-	return false
-}
-
 // SetVersions gets a reference to the given []ListDeploymentVersions200ResponseAllOfVersionsInner and assigns it to the Versions field.
 func (o *ListDeploymentVersions200Response) SetVersions(v []ListDeploymentVersions200ResponseAllOfVersionsInner) {
 	o.Versions = v
@@ -92,15 +83,6 @@ func (o *ListDeploymentVersions200Response) GetMetaOk() (*ListApprovals200Respon
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListDeploymentVersions200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

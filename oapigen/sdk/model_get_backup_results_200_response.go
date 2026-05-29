@@ -61,15 +61,6 @@ func (o *GetBackupResults200Response) GetResultOk() (*GetBackupResults200Respons
 	return o.Result, true
 }
 
-// IsSetResult returns a boolean if a field has been set.
-func (o *GetBackupResults200Response) IsSetResult() bool {
-	if o != nil && !IsNil(o.Result) {
-		return true
-	}
-
-	return false
-}
-
 // SetResult gets a reference to the given GetBackupResults200ResponseResult and assigns it to the Result field.
 func (o *GetBackupResults200Response) SetResult(v GetBackupResults200ResponseResult) {
 	o.Result = &v

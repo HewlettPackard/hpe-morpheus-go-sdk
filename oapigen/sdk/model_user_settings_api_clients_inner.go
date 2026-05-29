@@ -61,15 +61,6 @@ func (o *UserSettingsApiClientsInner) GetClientIdOk() (*string, bool) {
 	return o.ClientId, true
 }
 
-// IsSetClientId returns a boolean if a field has been set.
-func (o *UserSettingsApiClientsInner) IsSetClientId() bool {
-	if o != nil && !IsNil(o.ClientId) {
-		return true
-	}
-
-	return false
-}
-
 // SetClientId gets a reference to the given string and assigns it to the ClientId field.
 func (o *UserSettingsApiClientsInner) SetClientId(v string) {
 	o.ClientId = &v

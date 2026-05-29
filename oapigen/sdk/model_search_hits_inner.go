@@ -71,15 +71,6 @@ func (o *SearchHitsInner) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *SearchHitsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given string and assigns it to the Id field.
 func (o *SearchHitsInner) SetId(v string) {
 	o.Id = &v
@@ -103,15 +94,6 @@ func (o *SearchHitsInner) GetUuidOk() (*string, bool) {
 	return o.Uuid, true
 }
 
-// IsSetUuid returns a boolean if a field has been set.
-func (o *SearchHitsInner) IsSetUuid() bool {
-	if o != nil && !IsNil(o.Uuid) {
-		return true
-	}
-
-	return false
-}
-
 // SetUuid gets a reference to the given string and assigns it to the Uuid field.
 func (o *SearchHitsInner) SetUuid(v string) {
 	o.Uuid = &v
@@ -133,15 +115,6 @@ func (o *SearchHitsInner) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *SearchHitsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -168,28 +141,9 @@ func (o *SearchHitsInner) GetDescriptionOk() (*string, bool) {
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *SearchHitsInner) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *SearchHitsInner) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *SearchHitsInner) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *SearchHitsInner) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
@@ -208,15 +162,6 @@ func (o *SearchHitsInner) GetTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *SearchHitsInner) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.
@@ -243,28 +188,9 @@ func (o *SearchHitsInner) GetDateCreatedOk() (*time.Time, bool) {
 	return o.DateCreated.Get(), o.DateCreated.IsSet()
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *SearchHitsInner) IsSetDateCreated() bool {
-	if o != nil && o.DateCreated.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given NullableTime and assigns it to the DateCreated field.
 func (o *SearchHitsInner) SetDateCreated(v time.Time) {
 	o.DateCreated.Set(&v)
-}
-
-// SetDateCreatedNil sets the value for DateCreated to be an explicit nil
-func (o *SearchHitsInner) SetDateCreatedNil() {
-	o.DateCreated.Set(nil)
-}
-
-// UnsetDateCreated ensures that no value is present for DateCreated, not even an explicit nil
-func (o *SearchHitsInner) UnsetDateCreated() {
-	o.DateCreated.Unset()
 }
 
 // GetScore returns the Score field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -286,28 +212,9 @@ func (o *SearchHitsInner) GetScoreOk() (*float32, bool) {
 	return o.Score.Get(), o.Score.IsSet()
 }
 
-// IsSetScore returns a boolean if a field has been set.
-func (o *SearchHitsInner) IsSetScore() bool {
-	if o != nil && o.Score.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetScore gets a reference to the given NullableFloat32 and assigns it to the Score field.
 func (o *SearchHitsInner) SetScore(v float32) {
 	o.Score.Set(&v)
-}
-
-// SetScoreNil sets the value for Score to be an explicit nil
-func (o *SearchHitsInner) SetScoreNil() {
-	o.Score.Set(nil)
-}
-
-// UnsetScore ensures that no value is present for Score, not even an explicit nil
-func (o *SearchHitsInner) UnsetScore() {
-	o.Score.Unset()
 }
 
 func (o SearchHitsInner) MarshalJSON() ([]byte, error) {

@@ -74,15 +74,6 @@ func (o *InstanceContainer1PortsInner) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *InstanceContainer1PortsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *InstanceContainer1PortsInner) SetId(v int64) {
 	o.Id = &v
@@ -104,15 +95,6 @@ func (o *InstanceContainer1PortsInner) GetExternalOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.External, true
-}
-
-// IsSetExternal returns a boolean if a field has been set.
-func (o *InstanceContainer1PortsInner) IsSetExternal() bool {
-	if o != nil && !IsNil(o.External) {
-		return true
-	}
-
-	return false
 }
 
 // SetExternal gets a reference to the given int64 and assigns it to the External field.
@@ -138,15 +120,6 @@ func (o *InstanceContainer1PortsInner) GetInternalOk() (*int64, bool) {
 	return o.Internal, true
 }
 
-// IsSetInternal returns a boolean if a field has been set.
-func (o *InstanceContainer1PortsInner) IsSetInternal() bool {
-	if o != nil && !IsNil(o.Internal) {
-		return true
-	}
-
-	return false
-}
-
 // SetInternal gets a reference to the given int64 and assigns it to the Internal field.
 func (o *InstanceContainer1PortsInner) SetInternal(v int64) {
 	o.Internal = &v
@@ -168,15 +141,6 @@ func (o *InstanceContainer1PortsInner) GetDisplayNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.DisplayName, true
-}
-
-// IsSetDisplayName returns a boolean if a field has been set.
-func (o *InstanceContainer1PortsInner) IsSetDisplayName() bool {
-	if o != nil && !IsNil(o.DisplayName) {
-		return true
-	}
-
-	return false
 }
 
 // SetDisplayName gets a reference to the given string and assigns it to the DisplayName field.
@@ -202,15 +166,6 @@ func (o *InstanceContainer1PortsInner) GetPrimaryPortOk() (*bool, bool) {
 	return o.PrimaryPort, true
 }
 
-// IsSetPrimaryPort returns a boolean if a field has been set.
-func (o *InstanceContainer1PortsInner) IsSetPrimaryPort() bool {
-	if o != nil && !IsNil(o.PrimaryPort) {
-		return true
-	}
-
-	return false
-}
-
 // SetPrimaryPort gets a reference to the given bool and assigns it to the PrimaryPort field.
 func (o *InstanceContainer1PortsInner) SetPrimaryPort(v bool) {
 	o.PrimaryPort = &v
@@ -232,15 +187,6 @@ func (o *InstanceContainer1PortsInner) GetExportOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Export, true
-}
-
-// IsSetExport returns a boolean if a field has been set.
-func (o *InstanceContainer1PortsInner) IsSetExport() bool {
-	if o != nil && !IsNil(o.Export) {
-		return true
-	}
-
-	return false
 }
 
 // SetExport gets a reference to the given bool and assigns it to the Export field.
@@ -266,15 +212,6 @@ func (o *InstanceContainer1PortsInner) GetVisibleOk() (*bool, bool) {
 	return o.Visible, true
 }
 
-// IsSetVisible returns a boolean if a field has been set.
-func (o *InstanceContainer1PortsInner) IsSetVisible() bool {
-	if o != nil && !IsNil(o.Visible) {
-		return true
-	}
-
-	return false
-}
-
 // SetVisible gets a reference to the given bool and assigns it to the Visible field.
 func (o *InstanceContainer1PortsInner) SetVisible(v bool) {
 	o.Visible = &v
@@ -296,15 +233,6 @@ func (o *InstanceContainer1PortsInner) GetExportNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ExportName, true
-}
-
-// IsSetExportName returns a boolean if a field has been set.
-func (o *InstanceContainer1PortsInner) IsSetExportName() bool {
-	if o != nil && !IsNil(o.ExportName) {
-		return true
-	}
-
-	return false
 }
 
 // SetExportName gets a reference to the given string and assigns it to the ExportName field.
@@ -330,15 +258,6 @@ func (o *InstanceContainer1PortsInner) GetLoadBalanceProtocolOk() (*string, bool
 	return o.LoadBalanceProtocol, true
 }
 
-// IsSetLoadBalanceProtocol returns a boolean if a field has been set.
-func (o *InstanceContainer1PortsInner) IsSetLoadBalanceProtocol() bool {
-	if o != nil && !IsNil(o.LoadBalanceProtocol) {
-		return true
-	}
-
-	return false
-}
-
 // SetLoadBalanceProtocol gets a reference to the given string and assigns it to the LoadBalanceProtocol field.
 func (o *InstanceContainer1PortsInner) SetLoadBalanceProtocol(v string) {
 	o.LoadBalanceProtocol = &v
@@ -360,15 +279,6 @@ func (o *InstanceContainer1PortsInner) GetLoadBalanceOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.LoadBalance, true
-}
-
-// IsSetLoadBalance returns a boolean if a field has been set.
-func (o *InstanceContainer1PortsInner) IsSetLoadBalance() bool {
-	if o != nil && !IsNil(o.LoadBalance) {
-		return true
-	}
-
-	return false
 }
 
 // SetLoadBalance gets a reference to the given bool and assigns it to the LoadBalance field.
@@ -394,15 +304,6 @@ func (o *InstanceContainer1PortsInner) GetProtocolOk() (*string, bool) {
 	return o.Protocol, true
 }
 
-// IsSetProtocol returns a boolean if a field has been set.
-func (o *InstanceContainer1PortsInner) IsSetProtocol() bool {
-	if o != nil && !IsNil(o.Protocol) {
-		return true
-	}
-
-	return false
-}
-
 // SetProtocol gets a reference to the given string and assigns it to the Protocol field.
 func (o *InstanceContainer1PortsInner) SetProtocol(v string) {
 	o.Protocol = &v
@@ -424,15 +325,6 @@ func (o *InstanceContainer1PortsInner) GetLinkOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Link, true
-}
-
-// IsSetLink returns a boolean if a field has been set.
-func (o *InstanceContainer1PortsInner) IsSetLink() bool {
-	if o != nil && !IsNil(o.Link) {
-		return true
-	}
-
-	return false
 }
 
 // SetLink gets a reference to the given bool and assigns it to the Link field.
@@ -458,15 +350,6 @@ func (o *InstanceContainer1PortsInner) GetExternalIpOk() (*string, bool) {
 	return o.ExternalIp, true
 }
 
-// IsSetExternalIp returns a boolean if a field has been set.
-func (o *InstanceContainer1PortsInner) IsSetExternalIp() bool {
-	if o != nil && !IsNil(o.ExternalIp) {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalIp gets a reference to the given string and assigns it to the ExternalIp field.
 func (o *InstanceContainer1PortsInner) SetExternalIp(v string) {
 	o.ExternalIp = &v
@@ -488,15 +371,6 @@ func (o *InstanceContainer1PortsInner) GetInternalIpOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InternalIp, true
-}
-
-// IsSetInternalIp returns a boolean if a field has been set.
-func (o *InstanceContainer1PortsInner) IsSetInternalIp() bool {
-	if o != nil && !IsNil(o.InternalIp) {
-		return true
-	}
-
-	return false
 }
 
 // SetInternalIp gets a reference to the given string and assigns it to the InternalIp field.

@@ -128,15 +128,6 @@ func (o *WebGetConfig5) GetIgnoreSSLOk() (*bool, bool) {
 	return o.IgnoreSSL, true
 }
 
-// IsSetIgnoreSSL returns a boolean if a field has been set.
-func (o *WebGetConfig5) IsSetIgnoreSSL() bool {
-	if o != nil && !IsNil(o.IgnoreSSL) {
-		return true
-	}
-
-	return false
-}
-
 // SetIgnoreSSL gets a reference to the given bool and assigns it to the IgnoreSSL field.
 func (o *WebGetConfig5) SetIgnoreSSL(v bool) {
 	o.IgnoreSSL = &v
@@ -158,15 +149,6 @@ func (o *WebGetConfig5) GetCheckUserOk() (*string, bool) {
 		return nil, false
 	}
 	return o.CheckUser, true
-}
-
-// IsSetCheckUser returns a boolean if a field has been set.
-func (o *WebGetConfig5) IsSetCheckUser() bool {
-	if o != nil && !IsNil(o.CheckUser) {
-		return true
-	}
-
-	return false
 }
 
 // SetCheckUser gets a reference to the given string and assigns it to the CheckUser field.
@@ -192,15 +174,6 @@ func (o *WebGetConfig5) GetCheckPasswordOk() (*string, bool) {
 	return o.CheckPassword, true
 }
 
-// IsSetCheckPassword returns a boolean if a field has been set.
-func (o *WebGetConfig5) IsSetCheckPassword() bool {
-	if o != nil && !IsNil(o.CheckPassword) {
-		return true
-	}
-
-	return false
-}
-
 // SetCheckPassword gets a reference to the given string and assigns it to the CheckPassword field.
 func (o *WebGetConfig5) SetCheckPassword(v string) {
 	o.CheckPassword = &v
@@ -224,15 +197,6 @@ func (o *WebGetConfig5) GetTextCheckOnOk() (*string, bool) {
 	return o.TextCheckOn, true
 }
 
-// IsSetTextCheckOn returns a boolean if a field has been set.
-func (o *WebGetConfig5) IsSetTextCheckOn() bool {
-	if o != nil && !IsNil(o.TextCheckOn) {
-		return true
-	}
-
-	return false
-}
-
 // SetTextCheckOn gets a reference to the given string and assigns it to the TextCheckOn field.
 func (o *WebGetConfig5) SetTextCheckOn(v string) {
 	o.TextCheckOn = &v
@@ -254,15 +218,6 @@ func (o *WebGetConfig5) GetWebTextMatchOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WebTextMatch, true
-}
-
-// IsSetWebTextMatch returns a boolean if a field has been set.
-func (o *WebGetConfig5) IsSetWebTextMatch() bool {
-	if o != nil && !IsNil(o.WebTextMatch) {
-		return true
-	}
-
-	return false
 }
 
 // SetWebTextMatch gets a reference to the given string and assigns it to the WebTextMatch field.

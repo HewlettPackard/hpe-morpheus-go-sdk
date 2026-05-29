@@ -79,15 +79,6 @@ func (o *IntegrationvRO) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *IntegrationvRO) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *IntegrationvRO) SetId(v int64) {
 	o.Id = &v
@@ -109,15 +100,6 @@ func (o *IntegrationvRO) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *IntegrationvRO) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -143,15 +125,6 @@ func (o *IntegrationvRO) GetEnabledOk() (*bool, bool) {
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *IntegrationvRO) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *IntegrationvRO) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -173,15 +146,6 @@ func (o *IntegrationvRO) GetTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *IntegrationvRO) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.
@@ -207,15 +171,6 @@ func (o *IntegrationvRO) GetIntegrationTypeOk() (*AddIntegrations200ResponseAllO
 	return o.IntegrationType, true
 }
 
-// IsSetIntegrationType returns a boolean if a field has been set.
-func (o *IntegrationvRO) IsSetIntegrationType() bool {
-	if o != nil && !IsNil(o.IntegrationType) {
-		return true
-	}
-
-	return false
-}
-
 // SetIntegrationType gets a reference to the given AddIntegrations200ResponseAllOfIntegrationOneOf16IntegrationType and assigns it to the IntegrationType field.
 func (o *IntegrationvRO) SetIntegrationType(v AddIntegrations200ResponseAllOfIntegrationOneOf16IntegrationType) {
 	o.IntegrationType = &v
@@ -237,15 +192,6 @@ func (o *IntegrationvRO) GetUrlOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Url, true
-}
-
-// IsSetUrl returns a boolean if a field has been set.
-func (o *IntegrationvRO) IsSetUrl() bool {
-	if o != nil && !IsNil(o.Url) {
-		return true
-	}
-
-	return false
 }
 
 // SetUrl gets a reference to the given string and assigns it to the Url field.
@@ -271,15 +217,6 @@ func (o *IntegrationvRO) GetTokenOk() (*string, bool) {
 	return o.Token, true
 }
 
-// IsSetToken returns a boolean if a field has been set.
-func (o *IntegrationvRO) IsSetToken() bool {
-	if o != nil && !IsNil(o.Token) {
-		return true
-	}
-
-	return false
-}
-
 // SetToken gets a reference to the given string and assigns it to the Token field.
 func (o *IntegrationvRO) SetToken(v string) {
 	o.Token = &v
@@ -301,15 +238,6 @@ func (o *IntegrationvRO) GetTokenHashOk() (*string, bool) {
 		return nil, false
 	}
 	return o.TokenHash, true
-}
-
-// IsSetTokenHash returns a boolean if a field has been set.
-func (o *IntegrationvRO) IsSetTokenHash() bool {
-	if o != nil && !IsNil(o.TokenHash) {
-		return true
-	}
-
-	return false
 }
 
 // SetTokenHash gets a reference to the given string and assigns it to the TokenHash field.
@@ -335,15 +263,6 @@ func (o *IntegrationvRO) GetAuthTypeOk() (*string, bool) {
 	return o.AuthType, true
 }
 
-// IsSetAuthType returns a boolean if a field has been set.
-func (o *IntegrationvRO) IsSetAuthType() bool {
-	if o != nil && !IsNil(o.AuthType) {
-		return true
-	}
-
-	return false
-}
-
 // SetAuthType gets a reference to the given string and assigns it to the AuthType field.
 func (o *IntegrationvRO) SetAuthType(v string) {
 	o.AuthType = &v
@@ -367,15 +286,6 @@ func (o *IntegrationvRO) GetAuthIdOk() (*string, bool) {
 	return o.AuthId, true
 }
 
-// IsSetAuthId returns a boolean if a field has been set.
-func (o *IntegrationvRO) IsSetAuthId() bool {
-	if o != nil && !IsNil(o.AuthId) {
-		return true
-	}
-
-	return false
-}
-
 // SetAuthId gets a reference to the given string and assigns it to the AuthId field.
 func (o *IntegrationvRO) SetAuthId(v string) {
 	o.AuthId = &v
@@ -397,15 +307,6 @@ func (o *IntegrationvRO) GetIsPluginOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.IsPlugin, true
-}
-
-// IsSetIsPlugin returns a boolean if a field has been set.
-func (o *IntegrationvRO) IsSetIsPlugin() bool {
-	if o != nil && !IsNil(o.IsPlugin) {
-		return true
-	}
-
-	return false
 }
 
 // SetIsPlugin gets a reference to the given bool and assigns it to the IsPlugin field.
@@ -432,15 +333,6 @@ func (o *IntegrationvRO) GetConfigOk() (map[string]interface{}, bool) {
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *IntegrationvRO) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
 func (o *IntegrationvRO) SetConfig(v map[string]interface{}) {
 	o.Config = v
@@ -464,15 +356,6 @@ func (o *IntegrationvRO) GetStatusOk() (*string, bool) {
 	return o.Status, true
 }
 
-// IsSetStatus returns a boolean if a field has been set.
-func (o *IntegrationvRO) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
-}
-
 // SetStatus gets a reference to the given string and assigns it to the Status field.
 func (o *IntegrationvRO) SetStatus(v string) {
 	o.Status = &v
@@ -494,15 +377,6 @@ func (o *IntegrationvRO) GetStatusDateOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.StatusDate, true
-}
-
-// IsSetStatusDate returns a boolean if a field has been set.
-func (o *IntegrationvRO) IsSetStatusDate() bool {
-	if o != nil && !IsNil(o.StatusDate) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatusDate gets a reference to the given time.Time and assigns it to the StatusDate field.
@@ -529,28 +403,9 @@ func (o *IntegrationvRO) GetStatusMessageOk() (*string, bool) {
 	return o.StatusMessage.Get(), o.StatusMessage.IsSet()
 }
 
-// IsSetStatusMessage returns a boolean if a field has been set.
-func (o *IntegrationvRO) IsSetStatusMessage() bool {
-	if o != nil && o.StatusMessage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusMessage gets a reference to the given NullableString and assigns it to the StatusMessage field.
 func (o *IntegrationvRO) SetStatusMessage(v string) {
 	o.StatusMessage.Set(&v)
-}
-
-// SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
-func (o *IntegrationvRO) SetStatusMessageNil() {
-	o.StatusMessage.Set(nil)
-}
-
-// UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
-func (o *IntegrationvRO) UnsetStatusMessage() {
-	o.StatusMessage.Unset()
 }
 
 // GetLastSync returns the LastSync field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -572,28 +427,9 @@ func (o *IntegrationvRO) GetLastSyncOk() (*string, bool) {
 	return o.LastSync.Get(), o.LastSync.IsSet()
 }
 
-// IsSetLastSync returns a boolean if a field has been set.
-func (o *IntegrationvRO) IsSetLastSync() bool {
-	if o != nil && o.LastSync.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastSync gets a reference to the given NullableString and assigns it to the LastSync field.
 func (o *IntegrationvRO) SetLastSync(v string) {
 	o.LastSync.Set(&v)
-}
-
-// SetLastSyncNil sets the value for LastSync to be an explicit nil
-func (o *IntegrationvRO) SetLastSyncNil() {
-	o.LastSync.Set(nil)
-}
-
-// UnsetLastSync ensures that no value is present for LastSync, not even an explicit nil
-func (o *IntegrationvRO) UnsetLastSync() {
-	o.LastSync.Unset()
 }
 
 // GetLastSyncDuration returns the LastSyncDuration field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -615,28 +451,9 @@ func (o *IntegrationvRO) GetLastSyncDurationOk() (*string, bool) {
 	return o.LastSyncDuration.Get(), o.LastSyncDuration.IsSet()
 }
 
-// IsSetLastSyncDuration returns a boolean if a field has been set.
-func (o *IntegrationvRO) IsSetLastSyncDuration() bool {
-	if o != nil && o.LastSyncDuration.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastSyncDuration gets a reference to the given NullableString and assigns it to the LastSyncDuration field.
 func (o *IntegrationvRO) SetLastSyncDuration(v string) {
 	o.LastSyncDuration.Set(&v)
-}
-
-// SetLastSyncDurationNil sets the value for LastSyncDuration to be an explicit nil
-func (o *IntegrationvRO) SetLastSyncDurationNil() {
-	o.LastSyncDuration.Set(nil)
-}
-
-// UnsetLastSyncDuration ensures that no value is present for LastSyncDuration, not even an explicit nil
-func (o *IntegrationvRO) UnsetLastSyncDuration() {
-	o.LastSyncDuration.Unset()
 }
 
 // GetCredential returns the Credential field value if set, zero value otherwise.
@@ -655,15 +472,6 @@ func (o *IntegrationvRO) GetCredentialOk() (*AddIntegrations200ResponseAllOfInte
 		return nil, false
 	}
 	return o.Credential, true
-}
-
-// IsSetCredential returns a boolean if a field has been set.
-func (o *IntegrationvRO) IsSetCredential() bool {
-	if o != nil && !IsNil(o.Credential) {
-		return true
-	}
-
-	return false
 }
 
 // SetCredential gets a reference to the given AddIntegrations200ResponseAllOfIntegrationOneOf16Credential and assigns it to the Credential field.

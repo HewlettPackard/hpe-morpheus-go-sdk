@@ -62,15 +62,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfResourceOwner) GetIdOk() (*int64, 
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfResourceOwner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetGuidances200ResponseDiscoveryAnyOfResourceOwner) SetId(v int64) {
 	o.Id = &v
@@ -92,15 +83,6 @@ func (o *GetGuidances200ResponseDiscoveryAnyOfResourceOwner) GetUsernameOk() (*s
 		return nil, false
 	}
 	return o.Username, true
-}
-
-// IsSetUsername returns a boolean if a field has been set.
-func (o *GetGuidances200ResponseDiscoveryAnyOfResourceOwner) IsSetUsername() bool {
-	if o != nil && !IsNil(o.Username) {
-		return true
-	}
-
-	return false
 }
 
 // SetUsername gets a reference to the given string and assigns it to the Username field.

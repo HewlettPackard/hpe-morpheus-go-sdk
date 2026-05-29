@@ -133,15 +133,6 @@ func (o *ElasticCheckAllOfConfig) GetCheckUserOk() (*string, bool) {
 	return o.CheckUser, true
 }
 
-// IsSetCheckUser returns a boolean if a field has been set.
-func (o *ElasticCheckAllOfConfig) IsSetCheckUser() bool {
-	if o != nil && !IsNil(o.CheckUser) {
-		return true
-	}
-
-	return false
-}
-
 // SetCheckUser gets a reference to the given string and assigns it to the CheckUser field.
 func (o *ElasticCheckAllOfConfig) SetCheckUser(v string) {
 	o.CheckUser = &v
@@ -163,15 +154,6 @@ func (o *ElasticCheckAllOfConfig) GetTextCheckOnOk() (*string, bool) {
 		return nil, false
 	}
 	return o.TextCheckOn, true
-}
-
-// IsSetTextCheckOn returns a boolean if a field has been set.
-func (o *ElasticCheckAllOfConfig) IsSetTextCheckOn() bool {
-	if o != nil && !IsNil(o.TextCheckOn) {
-		return true
-	}
-
-	return false
 }
 
 // SetTextCheckOn gets a reference to the given string and assigns it to the TextCheckOn field.
@@ -197,15 +179,6 @@ func (o *ElasticCheckAllOfConfig) GetCheckPasswordOk() (*string, bool) {
 	return o.CheckPassword, true
 }
 
-// IsSetCheckPassword returns a boolean if a field has been set.
-func (o *ElasticCheckAllOfConfig) IsSetCheckPassword() bool {
-	if o != nil && !IsNil(o.CheckPassword) {
-		return true
-	}
-
-	return false
-}
-
 // SetCheckPassword gets a reference to the given string and assigns it to the CheckPassword field.
 func (o *ElasticCheckAllOfConfig) SetCheckPassword(v string) {
 	o.CheckPassword = &v
@@ -227,15 +200,6 @@ func (o *ElasticCheckAllOfConfig) GetWebTextMatchOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WebTextMatch, true
-}
-
-// IsSetWebTextMatch returns a boolean if a field has been set.
-func (o *ElasticCheckAllOfConfig) IsSetWebTextMatch() bool {
-	if o != nil && !IsNil(o.WebTextMatch) {
-		return true
-	}
-
-	return false
 }
 
 // SetWebTextMatch gets a reference to the given string and assigns it to the WebTextMatch field.
@@ -261,15 +225,6 @@ func (o *ElasticCheckAllOfConfig) GetCheckPasswordHashOk() (*string, bool) {
 	return o.CheckPasswordHash, true
 }
 
-// IsSetCheckPasswordHash returns a boolean if a field has been set.
-func (o *ElasticCheckAllOfConfig) IsSetCheckPasswordHash() bool {
-	if o != nil && !IsNil(o.CheckPasswordHash) {
-		return true
-	}
-
-	return false
-}
-
 // SetCheckPasswordHash gets a reference to the given string and assigns it to the CheckPasswordHash field.
 func (o *ElasticCheckAllOfConfig) SetCheckPasswordHash(v string) {
 	o.CheckPasswordHash = &v
@@ -291,15 +246,6 @@ func (o *ElasticCheckAllOfConfig) GetTunnelOnOk() (*string, bool) {
 		return nil, false
 	}
 	return o.TunnelOn, true
-}
-
-// IsSetTunnelOn returns a boolean if a field has been set.
-func (o *ElasticCheckAllOfConfig) IsSetTunnelOn() bool {
-	if o != nil && !IsNil(o.TunnelOn) {
-		return true
-	}
-
-	return false
 }
 
 // SetTunnelOn gets a reference to the given string and assigns it to the TunnelOn field.
@@ -325,15 +271,6 @@ func (o *ElasticCheckAllOfConfig) GetSshHostOk() (*string, bool) {
 	return o.SshHost, true
 }
 
-// IsSetSshHost returns a boolean if a field has been set.
-func (o *ElasticCheckAllOfConfig) IsSetSshHost() bool {
-	if o != nil && !IsNil(o.SshHost) {
-		return true
-	}
-
-	return false
-}
-
 // SetSshHost gets a reference to the given string and assigns it to the SshHost field.
 func (o *ElasticCheckAllOfConfig) SetSshHost(v string) {
 	o.SshHost = &v
@@ -355,15 +292,6 @@ func (o *ElasticCheckAllOfConfig) GetSshPortOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.SshPort, true
-}
-
-// IsSetSshPort returns a boolean if a field has been set.
-func (o *ElasticCheckAllOfConfig) IsSetSshPort() bool {
-	if o != nil && !IsNil(o.SshPort) {
-		return true
-	}
-
-	return false
 }
 
 // SetSshPort gets a reference to the given int64 and assigns it to the SshPort field.
@@ -389,15 +317,6 @@ func (o *ElasticCheckAllOfConfig) GetSshUserOk() (*string, bool) {
 	return o.SshUser, true
 }
 
-// IsSetSshUser returns a boolean if a field has been set.
-func (o *ElasticCheckAllOfConfig) IsSetSshUser() bool {
-	if o != nil && !IsNil(o.SshUser) {
-		return true
-	}
-
-	return false
-}
-
 // SetSshUser gets a reference to the given string and assigns it to the SshUser field.
 func (o *ElasticCheckAllOfConfig) SetSshUser(v string) {
 	o.SshUser = &v
@@ -419,15 +338,6 @@ func (o *ElasticCheckAllOfConfig) GetSshPasswordOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SshPassword, true
-}
-
-// IsSetSshPassword returns a boolean if a field has been set.
-func (o *ElasticCheckAllOfConfig) IsSetSshPassword() bool {
-	if o != nil && !IsNil(o.SshPassword) {
-		return true
-	}
-
-	return false
 }
 
 // SetSshPassword gets a reference to the given string and assigns it to the SshPassword field.

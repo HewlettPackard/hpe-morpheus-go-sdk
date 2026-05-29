@@ -61,15 +61,6 @@ func (o *InitializeSystemRequest) GetSystemOk() (*InitializeSystemRequestSystem,
 	return o.System, true
 }
 
-// IsSetSystem returns a boolean if a field has been set.
-func (o *InitializeSystemRequest) IsSetSystem() bool {
-	if o != nil && !IsNil(o.System) {
-		return true
-	}
-
-	return false
-}
-
 // SetSystem gets a reference to the given InitializeSystemRequestSystem and assigns it to the System field.
 func (o *InitializeSystemRequest) SetSystem(v InitializeSystemRequestSystem) {
 	o.System = &v

@@ -93,15 +93,6 @@ func (o *NetworkInterfaceUpdateSuccessServer) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServer) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *NetworkInterfaceUpdateSuccessServer) SetId(v int64) {
 	o.Id = &v
@@ -123,15 +114,6 @@ func (o *NetworkInterfaceUpdateSuccessServer) GetExternalIdOk() (*string, bool) 
 		return nil, false
 	}
 	return o.ExternalId, true
-}
-
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServer) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
-		return true
-	}
-
-	return false
 }
 
 // SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
@@ -157,15 +139,6 @@ func (o *NetworkInterfaceUpdateSuccessServer) GetAccountIdOk() (*int64, bool) {
 	return o.AccountId, true
 }
 
-// IsSetAccountId returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServer) IsSetAccountId() bool {
-	if o != nil && !IsNil(o.AccountId) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccountId gets a reference to the given int64 and assigns it to the AccountId field.
 func (o *NetworkInterfaceUpdateSuccessServer) SetAccountId(v int64) {
 	o.AccountId = &v
@@ -187,15 +160,6 @@ func (o *NetworkInterfaceUpdateSuccessServer) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServer) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -221,15 +185,6 @@ func (o *NetworkInterfaceUpdateSuccessServer) GetDisplayNameOk() (*string, bool)
 	return o.DisplayName, true
 }
 
-// IsSetDisplayName returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServer) IsSetDisplayName() bool {
-	if o != nil && !IsNil(o.DisplayName) {
-		return true
-	}
-
-	return false
-}
-
 // SetDisplayName gets a reference to the given string and assigns it to the DisplayName field.
 func (o *NetworkInterfaceUpdateSuccessServer) SetDisplayName(v string) {
 	o.DisplayName = &v
@@ -251,15 +206,6 @@ func (o *NetworkInterfaceUpdateSuccessServer) GetVisibilityOk() (*string, bool) 
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServer) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -286,28 +232,9 @@ func (o *NetworkInterfaceUpdateSuccessServer) GetDescriptionOk() (*string, bool)
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServer) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *NetworkInterfaceUpdateSuccessServer) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServer) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServer) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetZoneId returns the ZoneId field value if set, zero value otherwise.
@@ -326,15 +253,6 @@ func (o *NetworkInterfaceUpdateSuccessServer) GetZoneIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.ZoneId, true
-}
-
-// IsSetZoneId returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServer) IsSetZoneId() bool {
-	if o != nil && !IsNil(o.ZoneId) {
-		return true
-	}
-
-	return false
 }
 
 // SetZoneId gets a reference to the given int64 and assigns it to the ZoneId field.
@@ -360,15 +278,6 @@ func (o *NetworkInterfaceUpdateSuccessServer) GetSiteIdOk() (*int64, bool) {
 	return o.SiteId, true
 }
 
-// IsSetSiteId returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServer) IsSetSiteId() bool {
-	if o != nil && !IsNil(o.SiteId) {
-		return true
-	}
-
-	return false
-}
-
 // SetSiteId gets a reference to the given int64 and assigns it to the SiteId field.
 func (o *NetworkInterfaceUpdateSuccessServer) SetSiteId(v int64) {
 	o.SiteId = &v
@@ -390,15 +299,6 @@ func (o *NetworkInterfaceUpdateSuccessServer) GetSshHostOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SshHost, true
-}
-
-// IsSetSshHost returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServer) IsSetSshHost() bool {
-	if o != nil && !IsNil(o.SshHost) {
-		return true
-	}
-
-	return false
 }
 
 // SetSshHost gets a reference to the given string and assigns it to the SshHost field.
@@ -424,15 +324,6 @@ func (o *NetworkInterfaceUpdateSuccessServer) GetSshPortOk() (*int64, bool) {
 	return o.SshPort, true
 }
 
-// IsSetSshPort returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServer) IsSetSshPort() bool {
-	if o != nil && !IsNil(o.SshPort) {
-		return true
-	}
-
-	return false
-}
-
 // SetSshPort gets a reference to the given int64 and assigns it to the SshPort field.
 func (o *NetworkInterfaceUpdateSuccessServer) SetSshPort(v int64) {
 	o.SshPort = &v
@@ -456,15 +347,6 @@ func (o *NetworkInterfaceUpdateSuccessServer) GetExternalIpOk() (*string, bool) 
 	return o.ExternalIp, true
 }
 
-// IsSetExternalIp returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServer) IsSetExternalIp() bool {
-	if o != nil && !IsNil(o.ExternalIp) {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalIp gets a reference to the given string and assigns it to the ExternalIp field.
 func (o *NetworkInterfaceUpdateSuccessServer) SetExternalIp(v string) {
 	o.ExternalIp = &v
@@ -486,15 +368,6 @@ func (o *NetworkInterfaceUpdateSuccessServer) GetInternalIpOk() (*string, bool) 
 		return nil, false
 	}
 	return o.InternalIp, true
-}
-
-// IsSetInternalIp returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServer) IsSetInternalIp() bool {
-	if o != nil && !IsNil(o.InternalIp) {
-		return true
-	}
-
-	return false
 }
 
 // SetInternalIp gets a reference to the given string and assigns it to the InternalIp field.
@@ -521,28 +394,9 @@ func (o *NetworkInterfaceUpdateSuccessServer) GetVolumeIdOk() (*string, bool) {
 	return o.VolumeId.Get(), o.VolumeId.IsSet()
 }
 
-// IsSetVolumeId returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServer) IsSetVolumeId() bool {
-	if o != nil && o.VolumeId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetVolumeId gets a reference to the given NullableString and assigns it to the VolumeId field.
 func (o *NetworkInterfaceUpdateSuccessServer) SetVolumeId(v string) {
 	o.VolumeId.Set(&v)
-}
-
-// SetVolumeIdNil sets the value for VolumeId to be an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServer) SetVolumeIdNil() {
-	o.VolumeId.Set(nil)
-}
-
-// UnsetVolumeId ensures that no value is present for VolumeId, not even an explicit nil
-func (o *NetworkInterfaceUpdateSuccessServer) UnsetVolumeId() {
-	o.VolumeId.Unset()
 }
 
 // GetPlatform returns the Platform field value if set, zero value otherwise.
@@ -561,15 +415,6 @@ func (o *NetworkInterfaceUpdateSuccessServer) GetPlatformOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Platform, true
-}
-
-// IsSetPlatform returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServer) IsSetPlatform() bool {
-	if o != nil && !IsNil(o.Platform) {
-		return true
-	}
-
-	return false
 }
 
 // SetPlatform gets a reference to the given string and assigns it to the Platform field.
@@ -595,15 +440,6 @@ func (o *NetworkInterfaceUpdateSuccessServer) GetPlatformVersionOk() (*string, b
 	return o.PlatformVersion, true
 }
 
-// IsSetPlatformVersion returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServer) IsSetPlatformVersion() bool {
-	if o != nil && !IsNil(o.PlatformVersion) {
-		return true
-	}
-
-	return false
-}
-
 // SetPlatformVersion gets a reference to the given string and assigns it to the PlatformVersion field.
 func (o *NetworkInterfaceUpdateSuccessServer) SetPlatformVersion(v string) {
 	o.PlatformVersion = &v
@@ -625,15 +461,6 @@ func (o *NetworkInterfaceUpdateSuccessServer) GetSshUsernameOk() (*string, bool)
 		return nil, false
 	}
 	return o.SshUsername, true
-}
-
-// IsSetSshUsername returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServer) IsSetSshUsername() bool {
-	if o != nil && !IsNil(o.SshUsername) {
-		return true
-	}
-
-	return false
 }
 
 // SetSshUsername gets a reference to the given string and assigns it to the SshUsername field.
@@ -659,15 +486,6 @@ func (o *NetworkInterfaceUpdateSuccessServer) GetSshPasswordOk() (*string, bool)
 	return o.SshPassword, true
 }
 
-// IsSetSshPassword returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServer) IsSetSshPassword() bool {
-	if o != nil && !IsNil(o.SshPassword) {
-		return true
-	}
-
-	return false
-}
-
 // SetSshPassword gets a reference to the given string and assigns it to the SshPassword field.
 func (o *NetworkInterfaceUpdateSuccessServer) SetSshPassword(v string) {
 	o.SshPassword = &v
@@ -689,15 +507,6 @@ func (o *NetworkInterfaceUpdateSuccessServer) GetOsDeviceOk() (*string, bool) {
 		return nil, false
 	}
 	return o.OsDevice, true
-}
-
-// IsSetOsDevice returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServer) IsSetOsDevice() bool {
-	if o != nil && !IsNil(o.OsDevice) {
-		return true
-	}
-
-	return false
 }
 
 // SetOsDevice gets a reference to the given string and assigns it to the OsDevice field.
@@ -723,15 +532,6 @@ func (o *NetworkInterfaceUpdateSuccessServer) GetDataDeviceOk() (*string, bool) 
 	return o.DataDevice, true
 }
 
-// IsSetDataDevice returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServer) IsSetDataDevice() bool {
-	if o != nil && !IsNil(o.DataDevice) {
-		return true
-	}
-
-	return false
-}
-
 // SetDataDevice gets a reference to the given string and assigns it to the DataDevice field.
 func (o *NetworkInterfaceUpdateSuccessServer) SetDataDevice(v string) {
 	o.DataDevice = &v
@@ -753,15 +553,6 @@ func (o *NetworkInterfaceUpdateSuccessServer) GetLvmEnabledOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.LvmEnabled, true
-}
-
-// IsSetLvmEnabled returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServer) IsSetLvmEnabled() bool {
-	if o != nil && !IsNil(o.LvmEnabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetLvmEnabled gets a reference to the given bool and assigns it to the LvmEnabled field.
@@ -787,15 +578,6 @@ func (o *NetworkInterfaceUpdateSuccessServer) GetApiKeyOk() (*string, bool) {
 	return o.ApiKey, true
 }
 
-// IsSetApiKey returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServer) IsSetApiKey() bool {
-	if o != nil && !IsNil(o.ApiKey) {
-		return true
-	}
-
-	return false
-}
-
 // SetApiKey gets a reference to the given string and assigns it to the ApiKey field.
 func (o *NetworkInterfaceUpdateSuccessServer) SetApiKey(v string) {
 	o.ApiKey = &v
@@ -817,15 +599,6 @@ func (o *NetworkInterfaceUpdateSuccessServer) GetSoftwareRaidOk() (*bool, bool) 
 		return nil, false
 	}
 	return o.SoftwareRaid, true
-}
-
-// IsSetSoftwareRaid returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServer) IsSetSoftwareRaid() bool {
-	if o != nil && !IsNil(o.SoftwareRaid) {
-		return true
-	}
-
-	return false
 }
 
 // SetSoftwareRaid gets a reference to the given bool and assigns it to the SoftwareRaid field.
@@ -851,15 +624,6 @@ func (o *NetworkInterfaceUpdateSuccessServer) GetConfigOk() (*string, bool) {
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServer) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given string and assigns it to the Config field.
 func (o *NetworkInterfaceUpdateSuccessServer) SetConfig(v string) {
 	o.Config = &v
@@ -881,15 +645,6 @@ func (o *NetworkInterfaceUpdateSuccessServer) GetCapacityInfoOk() (*NetworkInter
 		return nil, false
 	}
 	return o.CapacityInfo, true
-}
-
-// IsSetCapacityInfo returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServer) IsSetCapacityInfo() bool {
-	if o != nil && !IsNil(o.CapacityInfo) {
-		return true
-	}
-
-	return false
 }
 
 // SetCapacityInfo gets a reference to the given NetworkInterfaceUpdateSuccessServerCapacityInfo and assigns it to the CapacityInfo field.
@@ -915,15 +670,6 @@ func (o *NetworkInterfaceUpdateSuccessServer) GetDateCreatedOk() (*time.Time, bo
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServer) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *NetworkInterfaceUpdateSuccessServer) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -945,15 +691,6 @@ func (o *NetworkInterfaceUpdateSuccessServer) GetLastUpdatedOk() (*time.Time, bo
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServer) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
@@ -979,15 +716,6 @@ func (o *NetworkInterfaceUpdateSuccessServer) GetLastStatsOk() (*string, bool) {
 	return o.LastStats, true
 }
 
-// IsSetLastStats returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServer) IsSetLastStats() bool {
-	if o != nil && !IsNil(o.LastStats) {
-		return true
-	}
-
-	return false
-}
-
 // SetLastStats gets a reference to the given string and assigns it to the LastStats field.
 func (o *NetworkInterfaceUpdateSuccessServer) SetLastStats(v string) {
 	o.LastStats = &v
@@ -1009,15 +737,6 @@ func (o *NetworkInterfaceUpdateSuccessServer) GetStatusOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServer) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -1043,15 +762,6 @@ func (o *NetworkInterfaceUpdateSuccessServer) GetComputeServerTypeOk() (*Network
 	return o.ComputeServerType, true
 }
 
-// IsSetComputeServerType returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServer) IsSetComputeServerType() bool {
-	if o != nil && !IsNil(o.ComputeServerType) {
-		return true
-	}
-
-	return false
-}
-
 // SetComputeServerType gets a reference to the given NetworkInterfaceUpdateSuccessServerComputeServerType and assigns it to the ComputeServerType field.
 func (o *NetworkInterfaceUpdateSuccessServer) SetComputeServerType(v NetworkInterfaceUpdateSuccessServerComputeServerType) {
 	o.ComputeServerType = &v
@@ -1075,15 +785,6 @@ func (o *NetworkInterfaceUpdateSuccessServer) GetInterfacesOk() ([]NetworkInterf
 	return o.Interfaces, true
 }
 
-// IsSetInterfaces returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServer) IsSetInterfaces() bool {
-	if o != nil && !IsNil(o.Interfaces) {
-		return true
-	}
-
-	return false
-}
-
 // SetInterfaces gets a reference to the given []NetworkInterfaceUpdateSuccessServerInterfacesInner and assigns it to the Interfaces field.
 func (o *NetworkInterfaceUpdateSuccessServer) SetInterfaces(v []NetworkInterfaceUpdateSuccessServerInterfacesInner) {
 	o.Interfaces = v
@@ -1105,15 +806,6 @@ func (o *NetworkInterfaceUpdateSuccessServer) GetZoneOk() (*NetworkInterfaceUpda
 		return nil, false
 	}
 	return o.Zone, true
-}
-
-// IsSetZone returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccessServer) IsSetZone() bool {
-	if o != nil && !IsNil(o.Zone) {
-		return true
-	}
-
-	return false
 }
 
 // SetZone gets a reference to the given NetworkInterfaceUpdateSuccessServerZone and assigns it to the Zone field.

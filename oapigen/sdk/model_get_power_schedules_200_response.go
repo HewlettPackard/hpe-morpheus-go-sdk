@@ -64,15 +64,6 @@ func (o *GetPowerSchedules200Response) GetInstancesOk() ([]GetPowerSchedules200R
 	return o.Instances, true
 }
 
-// IsSetInstances returns a boolean if a field has been set.
-func (o *GetPowerSchedules200Response) IsSetInstances() bool {
-	if o != nil && !IsNil(o.Instances) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstances gets a reference to the given []GetPowerSchedules200ResponseAllOfInstancesInner and assigns it to the Instances field.
 func (o *GetPowerSchedules200Response) SetInstances(v []GetPowerSchedules200ResponseAllOfInstancesInner) {
 	o.Instances = v
@@ -97,15 +88,6 @@ func (o *GetPowerSchedules200Response) GetServersOk() ([]GetPowerSchedules200Res
 	return o.Servers, true
 }
 
-// IsSetServers returns a boolean if a field has been set.
-func (o *GetPowerSchedules200Response) IsSetServers() bool {
-	if o != nil && !IsNil(o.Servers) {
-		return true
-	}
-
-	return false
-}
-
 // SetServers gets a reference to the given []GetPowerSchedules200ResponseAllOfServersInner and assigns it to the Servers field.
 func (o *GetPowerSchedules200Response) SetServers(v []GetPowerSchedules200ResponseAllOfServersInner) {
 	o.Servers = v
@@ -127,15 +109,6 @@ func (o *GetPowerSchedules200Response) GetScheduleOk() (*GetPowerSchedules200Res
 		return nil, false
 	}
 	return o.Schedule, true
-}
-
-// IsSetSchedule returns a boolean if a field has been set.
-func (o *GetPowerSchedules200Response) IsSetSchedule() bool {
-	if o != nil && !IsNil(o.Schedule) {
-		return true
-	}
-
-	return false
 }
 
 // SetSchedule gets a reference to the given GetPowerSchedules200ResponseAllOfSchedule and assigns it to the Schedule field.

@@ -64,15 +64,6 @@ func (o *CatalogOrderCreateSuccess) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *CatalogOrderCreateSuccess) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *CatalogOrderCreateSuccess) SetId(v int64) {
 	o.Id = &v
@@ -97,28 +88,9 @@ func (o *CatalogOrderCreateSuccess) GetNameOk() (*string, bool) {
 	return o.Name.Get(), o.Name.IsSet()
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *CatalogOrderCreateSuccess) IsSetName() bool {
-	if o != nil && o.Name.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given NullableString and assigns it to the Name field.
 func (o *CatalogOrderCreateSuccess) SetName(v string) {
 	o.Name.Set(&v)
-}
-
-// SetNameNil sets the value for Name to be an explicit nil
-func (o *CatalogOrderCreateSuccess) SetNameNil() {
-	o.Name.Set(nil)
-}
-
-// UnsetName ensures that no value is present for Name, not even an explicit nil
-func (o *CatalogOrderCreateSuccess) UnsetName() {
-	o.Name.Unset()
 }
 
 // GetItems returns the Items field value if set, zero value otherwise.
@@ -137,15 +109,6 @@ func (o *CatalogOrderCreateSuccess) GetItemsOk() ([]CatalogOrderCreateSuccessIte
 		return nil, false
 	}
 	return o.Items, true
-}
-
-// IsSetItems returns a boolean if a field has been set.
-func (o *CatalogOrderCreateSuccess) IsSetItems() bool {
-	if o != nil && !IsNil(o.Items) {
-		return true
-	}
-
-	return false
 }
 
 // SetItems gets a reference to the given []CatalogOrderCreateSuccessItemsInner and assigns it to the Items field.
@@ -169,15 +132,6 @@ func (o *CatalogOrderCreateSuccess) GetStatsOk() (*CatalogOrderCreateSuccessStat
 		return nil, false
 	}
 	return o.Stats, true
-}
-
-// IsSetStats returns a boolean if a field has been set.
-func (o *CatalogOrderCreateSuccess) IsSetStats() bool {
-	if o != nil && !IsNil(o.Stats) {
-		return true
-	}
-
-	return false
 }
 
 // SetStats gets a reference to the given CatalogOrderCreateSuccessStats and assigns it to the Stats field.

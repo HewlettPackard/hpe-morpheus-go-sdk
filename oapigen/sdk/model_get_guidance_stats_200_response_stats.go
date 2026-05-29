@@ -64,15 +64,6 @@ func (o *GetGuidanceStats200ResponseStats) GetTotalOk() (*int64, bool) {
 	return o.Total, true
 }
 
-// IsSetTotal returns a boolean if a field has been set.
-func (o *GetGuidanceStats200ResponseStats) IsSetTotal() bool {
-	if o != nil && !IsNil(o.Total) {
-		return true
-	}
-
-	return false
-}
-
 // SetTotal gets a reference to the given int64 and assigns it to the Total field.
 func (o *GetGuidanceStats200ResponseStats) SetTotal(v int64) {
 	o.Total = &v
@@ -94,15 +85,6 @@ func (o *GetGuidanceStats200ResponseStats) GetSavingsOk() (*GetGuidanceStats200R
 		return nil, false
 	}
 	return o.Savings, true
-}
-
-// IsSetSavings returns a boolean if a field has been set.
-func (o *GetGuidanceStats200ResponseStats) IsSetSavings() bool {
-	if o != nil && !IsNil(o.Savings) {
-		return true
-	}
-
-	return false
 }
 
 // SetSavings gets a reference to the given GetGuidanceStats200ResponseStatsSavings and assigns it to the Savings field.
@@ -128,15 +110,6 @@ func (o *GetGuidanceStats200ResponseStats) GetSeverityOk() (*GetGuidanceStats200
 	return o.Severity, true
 }
 
-// IsSetSeverity returns a boolean if a field has been set.
-func (o *GetGuidanceStats200ResponseStats) IsSetSeverity() bool {
-	if o != nil && !IsNil(o.Severity) {
-		return true
-	}
-
-	return false
-}
-
 // SetSeverity gets a reference to the given GetGuidanceStats200ResponseStatsSeverity and assigns it to the Severity field.
 func (o *GetGuidanceStats200ResponseStats) SetSeverity(v GetGuidanceStats200ResponseStatsSeverity) {
 	o.Severity = &v
@@ -158,15 +131,6 @@ func (o *GetGuidanceStats200ResponseStats) GetTypeOk() (*GetGuidanceStats200Resp
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *GetGuidanceStats200ResponseStats) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given GetGuidanceStats200ResponseStatsType and assigns it to the Type field.

@@ -85,15 +85,6 @@ func (o *UpdateCredentials200ResponseAllOfCredential) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *UpdateCredentials200ResponseAllOfCredential) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *UpdateCredentials200ResponseAllOfCredential) SetId(v int64) {
 	o.Id = &v
@@ -117,15 +108,6 @@ func (o *UpdateCredentials200ResponseAllOfCredential) GetNameOk() (*string, bool
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateCredentials200ResponseAllOfCredential) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *UpdateCredentials200ResponseAllOfCredential) SetName(v string) {
 	o.Name = &v
@@ -147,15 +129,6 @@ func (o *UpdateCredentials200ResponseAllOfCredential) GetTypeOk() (*UpdateCreden
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *UpdateCredentials200ResponseAllOfCredential) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given UpdateCredentials200ResponseAllOfCredentialType and assigns it to the Type field.
@@ -182,28 +155,9 @@ func (o *UpdateCredentials200ResponseAllOfCredential) GetIntegrationOk() (*strin
 	return o.Integration.Get(), o.Integration.IsSet()
 }
 
-// IsSetIntegration returns a boolean if a field has been set.
-func (o *UpdateCredentials200ResponseAllOfCredential) IsSetIntegration() bool {
-	if o != nil && o.Integration.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetIntegration gets a reference to the given NullableString and assigns it to the Integration field.
 func (o *UpdateCredentials200ResponseAllOfCredential) SetIntegration(v string) {
 	o.Integration.Set(&v)
-}
-
-// SetIntegrationNil sets the value for Integration to be an explicit nil
-func (o *UpdateCredentials200ResponseAllOfCredential) SetIntegrationNil() {
-	o.Integration.Set(nil)
-}
-
-// UnsetIntegration ensures that no value is present for Integration, not even an explicit nil
-func (o *UpdateCredentials200ResponseAllOfCredential) UnsetIntegration() {
-	o.Integration.Unset()
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -225,28 +179,9 @@ func (o *UpdateCredentials200ResponseAllOfCredential) GetDescriptionOk() (*strin
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *UpdateCredentials200ResponseAllOfCredential) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *UpdateCredentials200ResponseAllOfCredential) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *UpdateCredentials200ResponseAllOfCredential) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *UpdateCredentials200ResponseAllOfCredential) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetUsername returns the Username field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -268,28 +203,9 @@ func (o *UpdateCredentials200ResponseAllOfCredential) GetUsernameOk() (*string, 
 	return o.Username.Get(), o.Username.IsSet()
 }
 
-// IsSetUsername returns a boolean if a field has been set.
-func (o *UpdateCredentials200ResponseAllOfCredential) IsSetUsername() bool {
-	if o != nil && o.Username.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUsername gets a reference to the given NullableString and assigns it to the Username field.
 func (o *UpdateCredentials200ResponseAllOfCredential) SetUsername(v string) {
 	o.Username.Set(&v)
-}
-
-// SetUsernameNil sets the value for Username to be an explicit nil
-func (o *UpdateCredentials200ResponseAllOfCredential) SetUsernameNil() {
-	o.Username.Set(nil)
-}
-
-// UnsetUsername ensures that no value is present for Username, not even an explicit nil
-func (o *UpdateCredentials200ResponseAllOfCredential) UnsetUsername() {
-	o.Username.Unset()
 }
 
 // GetPassword returns the Password field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -311,28 +227,9 @@ func (o *UpdateCredentials200ResponseAllOfCredential) GetPasswordOk() (*string, 
 	return o.Password.Get(), o.Password.IsSet()
 }
 
-// IsSetPassword returns a boolean if a field has been set.
-func (o *UpdateCredentials200ResponseAllOfCredential) IsSetPassword() bool {
-	if o != nil && o.Password.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPassword gets a reference to the given NullableString and assigns it to the Password field.
 func (o *UpdateCredentials200ResponseAllOfCredential) SetPassword(v string) {
 	o.Password.Set(&v)
-}
-
-// SetPasswordNil sets the value for Password to be an explicit nil
-func (o *UpdateCredentials200ResponseAllOfCredential) SetPasswordNil() {
-	o.Password.Set(nil)
-}
-
-// UnsetPassword ensures that no value is present for Password, not even an explicit nil
-func (o *UpdateCredentials200ResponseAllOfCredential) UnsetPassword() {
-	o.Password.Unset()
 }
 
 // GetPasswordHash returns the PasswordHash field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -354,28 +251,9 @@ func (o *UpdateCredentials200ResponseAllOfCredential) GetPasswordHashOk() (*stri
 	return o.PasswordHash.Get(), o.PasswordHash.IsSet()
 }
 
-// IsSetPasswordHash returns a boolean if a field has been set.
-func (o *UpdateCredentials200ResponseAllOfCredential) IsSetPasswordHash() bool {
-	if o != nil && o.PasswordHash.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPasswordHash gets a reference to the given NullableString and assigns it to the PasswordHash field.
 func (o *UpdateCredentials200ResponseAllOfCredential) SetPasswordHash(v string) {
 	o.PasswordHash.Set(&v)
-}
-
-// SetPasswordHashNil sets the value for PasswordHash to be an explicit nil
-func (o *UpdateCredentials200ResponseAllOfCredential) SetPasswordHashNil() {
-	o.PasswordHash.Set(nil)
-}
-
-// UnsetPasswordHash ensures that no value is present for PasswordHash, not even an explicit nil
-func (o *UpdateCredentials200ResponseAllOfCredential) UnsetPasswordHash() {
-	o.PasswordHash.Unset()
 }
 
 // GetAuthKey returns the AuthKey field value if set, zero value otherwise.
@@ -394,15 +272,6 @@ func (o *UpdateCredentials200ResponseAllOfCredential) GetAuthKeyOk() (*UpdateCre
 		return nil, false
 	}
 	return o.AuthKey, true
-}
-
-// IsSetAuthKey returns a boolean if a field has been set.
-func (o *UpdateCredentials200ResponseAllOfCredential) IsSetAuthKey() bool {
-	if o != nil && !IsNil(o.AuthKey) {
-		return true
-	}
-
-	return false
 }
 
 // SetAuthKey gets a reference to the given UpdateCredentials200ResponseAllOfCredentialAuthKey and assigns it to the AuthKey field.
@@ -429,28 +298,9 @@ func (o *UpdateCredentials200ResponseAllOfCredential) GetAuthPathOk() (*string, 
 	return o.AuthPath.Get(), o.AuthPath.IsSet()
 }
 
-// IsSetAuthPath returns a boolean if a field has been set.
-func (o *UpdateCredentials200ResponseAllOfCredential) IsSetAuthPath() bool {
-	if o != nil && o.AuthPath.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAuthPath gets a reference to the given NullableString and assigns it to the AuthPath field.
 func (o *UpdateCredentials200ResponseAllOfCredential) SetAuthPath(v string) {
 	o.AuthPath.Set(&v)
-}
-
-// SetAuthPathNil sets the value for AuthPath to be an explicit nil
-func (o *UpdateCredentials200ResponseAllOfCredential) SetAuthPathNil() {
-	o.AuthPath.Set(nil)
-}
-
-// UnsetAuthPath ensures that no value is present for AuthPath, not even an explicit nil
-func (o *UpdateCredentials200ResponseAllOfCredential) UnsetAuthPath() {
-	o.AuthPath.Unset()
 }
 
 // GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -472,28 +322,9 @@ func (o *UpdateCredentials200ResponseAllOfCredential) GetExternalIdOk() (*string
 	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *UpdateCredentials200ResponseAllOfCredential) IsSetExternalId() bool {
-	if o != nil && o.ExternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *UpdateCredentials200ResponseAllOfCredential) SetExternalId(v string) {
 	o.ExternalId.Set(&v)
-}
-
-// SetExternalIdNil sets the value for ExternalId to be an explicit nil
-func (o *UpdateCredentials200ResponseAllOfCredential) SetExternalIdNil() {
-	o.ExternalId.Set(nil)
-}
-
-// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-func (o *UpdateCredentials200ResponseAllOfCredential) UnsetExternalId() {
-	o.ExternalId.Unset()
 }
 
 // GetRefType returns the RefType field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -515,28 +346,9 @@ func (o *UpdateCredentials200ResponseAllOfCredential) GetRefTypeOk() (*string, b
 	return o.RefType.Get(), o.RefType.IsSet()
 }
 
-// IsSetRefType returns a boolean if a field has been set.
-func (o *UpdateCredentials200ResponseAllOfCredential) IsSetRefType() bool {
-	if o != nil && o.RefType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRefType gets a reference to the given NullableString and assigns it to the RefType field.
 func (o *UpdateCredentials200ResponseAllOfCredential) SetRefType(v string) {
 	o.RefType.Set(&v)
-}
-
-// SetRefTypeNil sets the value for RefType to be an explicit nil
-func (o *UpdateCredentials200ResponseAllOfCredential) SetRefTypeNil() {
-	o.RefType.Set(nil)
-}
-
-// UnsetRefType ensures that no value is present for RefType, not even an explicit nil
-func (o *UpdateCredentials200ResponseAllOfCredential) UnsetRefType() {
-	o.RefType.Unset()
 }
 
 // GetRefId returns the RefId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -558,28 +370,9 @@ func (o *UpdateCredentials200ResponseAllOfCredential) GetRefIdOk() (*string, boo
 	return o.RefId.Get(), o.RefId.IsSet()
 }
 
-// IsSetRefId returns a boolean if a field has been set.
-func (o *UpdateCredentials200ResponseAllOfCredential) IsSetRefId() bool {
-	if o != nil && o.RefId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRefId gets a reference to the given NullableString and assigns it to the RefId field.
 func (o *UpdateCredentials200ResponseAllOfCredential) SetRefId(v string) {
 	o.RefId.Set(&v)
-}
-
-// SetRefIdNil sets the value for RefId to be an explicit nil
-func (o *UpdateCredentials200ResponseAllOfCredential) SetRefIdNil() {
-	o.RefId.Set(nil)
-}
-
-// UnsetRefId ensures that no value is present for RefId, not even an explicit nil
-func (o *UpdateCredentials200ResponseAllOfCredential) UnsetRefId() {
-	o.RefId.Unset()
 }
 
 // GetCategory returns the Category field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -601,28 +394,9 @@ func (o *UpdateCredentials200ResponseAllOfCredential) GetCategoryOk() (*string, 
 	return o.Category.Get(), o.Category.IsSet()
 }
 
-// IsSetCategory returns a boolean if a field has been set.
-func (o *UpdateCredentials200ResponseAllOfCredential) IsSetCategory() bool {
-	if o != nil && o.Category.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCategory gets a reference to the given NullableString and assigns it to the Category field.
 func (o *UpdateCredentials200ResponseAllOfCredential) SetCategory(v string) {
 	o.Category.Set(&v)
-}
-
-// SetCategoryNil sets the value for Category to be an explicit nil
-func (o *UpdateCredentials200ResponseAllOfCredential) SetCategoryNil() {
-	o.Category.Set(nil)
-}
-
-// UnsetCategory ensures that no value is present for Category, not even an explicit nil
-func (o *UpdateCredentials200ResponseAllOfCredential) UnsetCategory() {
-	o.Category.Unset()
 }
 
 // GetScope returns the Scope field value if set, zero value otherwise.
@@ -641,15 +415,6 @@ func (o *UpdateCredentials200ResponseAllOfCredential) GetScopeOk() (*string, boo
 		return nil, false
 	}
 	return o.Scope, true
-}
-
-// IsSetScope returns a boolean if a field has been set.
-func (o *UpdateCredentials200ResponseAllOfCredential) IsSetScope() bool {
-	if o != nil && !IsNil(o.Scope) {
-		return true
-	}
-
-	return false
 }
 
 // SetScope gets a reference to the given string and assigns it to the Scope field.
@@ -673,15 +438,6 @@ func (o *UpdateCredentials200ResponseAllOfCredential) GetStatusOk() (*string, bo
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *UpdateCredentials200ResponseAllOfCredential) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -708,28 +464,9 @@ func (o *UpdateCredentials200ResponseAllOfCredential) GetStatusMessageOk() (*str
 	return o.StatusMessage.Get(), o.StatusMessage.IsSet()
 }
 
-// IsSetStatusMessage returns a boolean if a field has been set.
-func (o *UpdateCredentials200ResponseAllOfCredential) IsSetStatusMessage() bool {
-	if o != nil && o.StatusMessage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusMessage gets a reference to the given NullableString and assigns it to the StatusMessage field.
 func (o *UpdateCredentials200ResponseAllOfCredential) SetStatusMessage(v string) {
 	o.StatusMessage.Set(&v)
-}
-
-// SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
-func (o *UpdateCredentials200ResponseAllOfCredential) SetStatusMessageNil() {
-	o.StatusMessage.Set(nil)
-}
-
-// UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
-func (o *UpdateCredentials200ResponseAllOfCredential) UnsetStatusMessage() {
-	o.StatusMessage.Unset()
 }
 
 // GetStatusDate returns the StatusDate field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -751,28 +488,9 @@ func (o *UpdateCredentials200ResponseAllOfCredential) GetStatusDateOk() (*time.T
 	return o.StatusDate.Get(), o.StatusDate.IsSet()
 }
 
-// IsSetStatusDate returns a boolean if a field has been set.
-func (o *UpdateCredentials200ResponseAllOfCredential) IsSetStatusDate() bool {
-	if o != nil && o.StatusDate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusDate gets a reference to the given NullableTime and assigns it to the StatusDate field.
 func (o *UpdateCredentials200ResponseAllOfCredential) SetStatusDate(v time.Time) {
 	o.StatusDate.Set(&v)
-}
-
-// SetStatusDateNil sets the value for StatusDate to be an explicit nil
-func (o *UpdateCredentials200ResponseAllOfCredential) SetStatusDateNil() {
-	o.StatusDate.Set(nil)
-}
-
-// UnsetStatusDate ensures that no value is present for StatusDate, not even an explicit nil
-func (o *UpdateCredentials200ResponseAllOfCredential) UnsetStatusDate() {
-	o.StatusDate.Unset()
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
@@ -791,15 +509,6 @@ func (o *UpdateCredentials200ResponseAllOfCredential) GetEnabledOk() (*bool, boo
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *UpdateCredentials200ResponseAllOfCredential) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -826,28 +535,9 @@ func (o *UpdateCredentials200ResponseAllOfCredential) GetAccountOk() (*UpdateCre
 	return o.Account.Get(), o.Account.IsSet()
 }
 
-// IsSetAccount returns a boolean if a field has been set.
-func (o *UpdateCredentials200ResponseAllOfCredential) IsSetAccount() bool {
-	if o != nil && o.Account.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAccount gets a reference to the given NullableUpdateCredentials200ResponseAllOfCredentialAccount and assigns it to the Account field.
 func (o *UpdateCredentials200ResponseAllOfCredential) SetAccount(v UpdateCredentials200ResponseAllOfCredentialAccount) {
 	o.Account.Set(&v)
-}
-
-// SetAccountNil sets the value for Account to be an explicit nil
-func (o *UpdateCredentials200ResponseAllOfCredential) SetAccountNil() {
-	o.Account.Set(nil)
-}
-
-// UnsetAccount ensures that no value is present for Account, not even an explicit nil
-func (o *UpdateCredentials200ResponseAllOfCredential) UnsetAccount() {
-	o.Account.Unset()
 }
 
 // GetUser returns the User field value if set, zero value otherwise.
@@ -866,15 +556,6 @@ func (o *UpdateCredentials200ResponseAllOfCredential) GetUserOk() (*UpdateCreden
 		return nil, false
 	}
 	return o.User, true
-}
-
-// IsSetUser returns a boolean if a field has been set.
-func (o *UpdateCredentials200ResponseAllOfCredential) IsSetUser() bool {
-	if o != nil && !IsNil(o.User) {
-		return true
-	}
-
-	return false
 }
 
 // SetUser gets a reference to the given UpdateCredentials200ResponseAllOfCredentialUser and assigns it to the User field.
@@ -900,15 +581,6 @@ func (o *UpdateCredentials200ResponseAllOfCredential) GetDateCreatedOk() (*time.
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *UpdateCredentials200ResponseAllOfCredential) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *UpdateCredentials200ResponseAllOfCredential) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -932,15 +604,6 @@ func (o *UpdateCredentials200ResponseAllOfCredential) GetLastUpdatedOk() (*time.
 	return o.LastUpdated, true
 }
 
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *UpdateCredentials200ResponseAllOfCredential) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
-}
-
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
 func (o *UpdateCredentials200ResponseAllOfCredential) SetLastUpdated(v time.Time) {
 	o.LastUpdated = &v
@@ -962,15 +625,6 @@ func (o *UpdateCredentials200ResponseAllOfCredential) GetConfigOk() (*UpdateCred
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *UpdateCredentials200ResponseAllOfCredential) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given UpdateCredentials200ResponseAllOfCredentialConfig and assigns it to the Config field.

@@ -67,15 +67,6 @@ func (o *ControllerType) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ControllerType) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ControllerType) SetId(v int64) {
 	o.Id = &v
@@ -97,15 +88,6 @@ func (o *ControllerType) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ControllerType) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -131,15 +113,6 @@ func (o *ControllerType) GetDisplayOrderOk() (*int64, bool) {
 	return o.DisplayOrder, true
 }
 
-// IsSetDisplayOrder returns a boolean if a field has been set.
-func (o *ControllerType) IsSetDisplayOrder() bool {
-	if o != nil && !IsNil(o.DisplayOrder) {
-		return true
-	}
-
-	return false
-}
-
 // SetDisplayOrder gets a reference to the given int64 and assigns it to the DisplayOrder field.
 func (o *ControllerType) SetDisplayOrder(v int64) {
 	o.DisplayOrder = &v
@@ -161,15 +134,6 @@ func (o *ControllerType) GetCategoryOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Category, true
-}
-
-// IsSetCategory returns a boolean if a field has been set.
-func (o *ControllerType) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
-		return true
-	}
-
-	return false
 }
 
 // SetCategory gets a reference to the given string and assigns it to the Category field.
@@ -195,15 +159,6 @@ func (o *ControllerType) GetEnabledOk() (*bool, bool) {
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *ControllerType) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *ControllerType) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -227,15 +182,6 @@ func (o *ControllerType) GetCreatableOk() (*bool, bool) {
 	return o.Creatable, true
 }
 
-// IsSetCreatable returns a boolean if a field has been set.
-func (o *ControllerType) IsSetCreatable() bool {
-	if o != nil && !IsNil(o.Creatable) {
-		return true
-	}
-
-	return false
-}
-
 // SetCreatable gets a reference to the given bool and assigns it to the Creatable field.
 func (o *ControllerType) SetCreatable(v bool) {
 	o.Creatable = &v
@@ -257,15 +203,6 @@ func (o *ControllerType) GetMaxDevicesOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.MaxDevices, true
-}
-
-// IsSetMaxDevices returns a boolean if a field has been set.
-func (o *ControllerType) IsSetMaxDevices() bool {
-	if o != nil && !IsNil(o.MaxDevices) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxDevices gets a reference to the given int64 and assigns it to the MaxDevices field.

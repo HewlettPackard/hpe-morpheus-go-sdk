@@ -87,15 +87,6 @@ func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetIdOk() (*in
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetId(v int64) {
 	o.Id = &v
@@ -120,28 +111,9 @@ func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetRefTypeOk()
 	return o.RefType.Get(), o.RefType.IsSet()
 }
 
-// IsSetRefType returns a boolean if a field has been set.
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) IsSetRefType() bool {
-	if o != nil && o.RefType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRefType gets a reference to the given NullableString and assigns it to the RefType field.
 func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetRefType(v string) {
 	o.RefType.Set(&v)
-}
-
-// SetRefTypeNil sets the value for RefType to be an explicit nil
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetRefTypeNil() {
-	o.RefType.Set(nil)
-}
-
-// UnsetRefType ensures that no value is present for RefType, not even an explicit nil
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) UnsetRefType() {
-	o.RefType.Unset()
 }
 
 // GetRefId returns the RefId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -163,28 +135,9 @@ func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetRefIdOk() (
 	return o.RefId.Get(), o.RefId.IsSet()
 }
 
-// IsSetRefId returns a boolean if a field has been set.
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) IsSetRefId() bool {
-	if o != nil && o.RefId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRefId gets a reference to the given NullableString and assigns it to the RefId field.
 func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetRefId(v string) {
 	o.RefId.Set(&v)
-}
-
-// SetRefIdNil sets the value for RefId to be an explicit nil
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetRefIdNil() {
-	o.RefId.Set(nil)
-}
-
-// UnsetRefId ensures that no value is present for RefId, not even an explicit nil
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) UnsetRefId() {
-	o.RefId.Unset()
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -203,15 +156,6 @@ func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetNameOk() (*
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -238,28 +182,9 @@ func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetInternalIdO
 	return o.InternalId.Get(), o.InternalId.IsSet()
 }
 
-// IsSetInternalId returns a boolean if a field has been set.
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) IsSetInternalId() bool {
-	if o != nil && o.InternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInternalId gets a reference to the given NullableString and assigns it to the InternalId field.
 func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetInternalId(v string) {
 	o.InternalId.Set(&v)
-}
-
-// SetInternalIdNil sets the value for InternalId to be an explicit nil
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetInternalIdNil() {
-	o.InternalId.Set(nil)
-}
-
-// UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) UnsetInternalId() {
-	o.InternalId.Unset()
 }
 
 // GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -281,28 +206,9 @@ func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetExternalIdO
 	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) IsSetExternalId() bool {
-	if o != nil && o.ExternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetExternalId(v string) {
 	o.ExternalId.Set(&v)
-}
-
-// SetExternalIdNil sets the value for ExternalId to be an explicit nil
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetExternalIdNil() {
-	o.ExternalId.Set(nil)
-}
-
-// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) UnsetExternalId() {
-	o.ExternalId.Unset()
 }
 
 // GetUniqueId returns the UniqueId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -324,28 +230,9 @@ func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetUniqueIdOk(
 	return o.UniqueId.Get(), o.UniqueId.IsSet()
 }
 
-// IsSetUniqueId returns a boolean if a field has been set.
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) IsSetUniqueId() bool {
-	if o != nil && o.UniqueId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUniqueId gets a reference to the given NullableString and assigns it to the UniqueId field.
 func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetUniqueId(v string) {
 	o.UniqueId.Set(&v)
-}
-
-// SetUniqueIdNil sets the value for UniqueId to be an explicit nil
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetUniqueIdNil() {
-	o.UniqueId.Set(nil)
-}
-
-// UnsetUniqueId ensures that no value is present for UniqueId, not even an explicit nil
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) UnsetUniqueId() {
-	o.UniqueId.Unset()
 }
 
 // GetPublicIpAddress returns the PublicIpAddress field value if set, zero value otherwise.
@@ -364,15 +251,6 @@ func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetPublicIpAdd
 		return nil, false
 	}
 	return o.PublicIpAddress, true
-}
-
-// IsSetPublicIpAddress returns a boolean if a field has been set.
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) IsSetPublicIpAddress() bool {
-	if o != nil && !IsNil(o.PublicIpAddress) {
-		return true
-	}
-
-	return false
 }
 
 // SetPublicIpAddress gets a reference to the given string and assigns it to the PublicIpAddress field.
@@ -399,28 +277,9 @@ func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetPublicIpv6A
 	return o.PublicIpv6Address.Get(), o.PublicIpv6Address.IsSet()
 }
 
-// IsSetPublicIpv6Address returns a boolean if a field has been set.
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) IsSetPublicIpv6Address() bool {
-	if o != nil && o.PublicIpv6Address.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPublicIpv6Address gets a reference to the given NullableString and assigns it to the PublicIpv6Address field.
 func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetPublicIpv6Address(v string) {
 	o.PublicIpv6Address.Set(&v)
-}
-
-// SetPublicIpv6AddressNil sets the value for PublicIpv6Address to be an explicit nil
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetPublicIpv6AddressNil() {
-	o.PublicIpv6Address.Set(nil)
-}
-
-// UnsetPublicIpv6Address ensures that no value is present for PublicIpv6Address, not even an explicit nil
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) UnsetPublicIpv6Address() {
-	o.PublicIpv6Address.Unset()
 }
 
 // GetIpAddress returns the IpAddress field value if set, zero value otherwise.
@@ -439,15 +298,6 @@ func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetIpAddressOk
 		return nil, false
 	}
 	return o.IpAddress, true
-}
-
-// IsSetIpAddress returns a boolean if a field has been set.
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) IsSetIpAddress() bool {
-	if o != nil && !IsNil(o.IpAddress) {
-		return true
-	}
-
-	return false
 }
 
 // SetIpAddress gets a reference to the given string and assigns it to the IpAddress field.
@@ -474,28 +324,9 @@ func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetIpv6Address
 	return o.Ipv6Address.Get(), o.Ipv6Address.IsSet()
 }
 
-// IsSetIpv6Address returns a boolean if a field has been set.
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) IsSetIpv6Address() bool {
-	if o != nil && o.Ipv6Address.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetIpv6Address gets a reference to the given NullableString and assigns it to the Ipv6Address field.
 func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetIpv6Address(v string) {
 	o.Ipv6Address.Set(&v)
-}
-
-// SetIpv6AddressNil sets the value for Ipv6Address to be an explicit nil
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetIpv6AddressNil() {
-	o.Ipv6Address.Set(nil)
-}
-
-// UnsetIpv6Address ensures that no value is present for Ipv6Address, not even an explicit nil
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) UnsetIpv6Address() {
-	o.Ipv6Address.Unset()
 }
 
 // GetIpSubnet returns the IpSubnet field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -517,28 +348,9 @@ func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetIpSubnetOk(
 	return o.IpSubnet.Get(), o.IpSubnet.IsSet()
 }
 
-// IsSetIpSubnet returns a boolean if a field has been set.
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) IsSetIpSubnet() bool {
-	if o != nil && o.IpSubnet.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetIpSubnet gets a reference to the given NullableString and assigns it to the IpSubnet field.
 func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetIpSubnet(v string) {
 	o.IpSubnet.Set(&v)
-}
-
-// SetIpSubnetNil sets the value for IpSubnet to be an explicit nil
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetIpSubnetNil() {
-	o.IpSubnet.Set(nil)
-}
-
-// UnsetIpSubnet ensures that no value is present for IpSubnet, not even an explicit nil
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) UnsetIpSubnet() {
-	o.IpSubnet.Unset()
 }
 
 // GetIpv6Subnet returns the Ipv6Subnet field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -560,28 +372,9 @@ func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetIpv6SubnetO
 	return o.Ipv6Subnet.Get(), o.Ipv6Subnet.IsSet()
 }
 
-// IsSetIpv6Subnet returns a boolean if a field has been set.
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) IsSetIpv6Subnet() bool {
-	if o != nil && o.Ipv6Subnet.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetIpv6Subnet gets a reference to the given NullableString and assigns it to the Ipv6Subnet field.
 func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetIpv6Subnet(v string) {
 	o.Ipv6Subnet.Set(&v)
-}
-
-// SetIpv6SubnetNil sets the value for Ipv6Subnet to be an explicit nil
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetIpv6SubnetNil() {
-	o.Ipv6Subnet.Set(nil)
-}
-
-// UnsetIpv6Subnet ensures that no value is present for Ipv6Subnet, not even an explicit nil
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) UnsetIpv6Subnet() {
-	o.Ipv6Subnet.Unset()
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -603,28 +396,9 @@ func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetDescription
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetDhcp returns the Dhcp field value if set, zero value otherwise.
@@ -643,15 +417,6 @@ func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetDhcpOk() (*
 		return nil, false
 	}
 	return o.Dhcp, true
-}
-
-// IsSetDhcp returns a boolean if a field has been set.
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) IsSetDhcp() bool {
-	if o != nil && !IsNil(o.Dhcp) {
-		return true
-	}
-
-	return false
 }
 
 // SetDhcp gets a reference to the given bool and assigns it to the Dhcp field.
@@ -677,15 +442,6 @@ func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetActiveOk() 
 	return o.Active, true
 }
 
-// IsSetActive returns a boolean if a field has been set.
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
-}
-
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetActive(v bool) {
 	o.Active = &v
@@ -709,15 +465,6 @@ func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetPoolAssigne
 	return o.PoolAssigned, true
 }
 
-// IsSetPoolAssigned returns a boolean if a field has been set.
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) IsSetPoolAssigned() bool {
-	if o != nil && !IsNil(o.PoolAssigned) {
-		return true
-	}
-
-	return false
-}
-
 // SetPoolAssigned gets a reference to the given bool and assigns it to the PoolAssigned field.
 func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetPoolAssigned(v bool) {
 	o.PoolAssigned = &v
@@ -739,15 +486,6 @@ func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetPrimaryInte
 		return nil, false
 	}
 	return o.PrimaryInterface, true
-}
-
-// IsSetPrimaryInterface returns a boolean if a field has been set.
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) IsSetPrimaryInterface() bool {
-	if o != nil && !IsNil(o.PrimaryInterface) {
-		return true
-	}
-
-	return false
 }
 
 // SetPrimaryInterface gets a reference to the given bool and assigns it to the PrimaryInterface field.
@@ -774,28 +512,9 @@ func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetNetworkOk()
 	return o.Network.Get(), o.Network.IsSet()
 }
 
-// IsSetNetwork returns a boolean if a field has been set.
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) IsSetNetwork() bool {
-	if o != nil && o.Network.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNetwork gets a reference to the given NullableGetClusterMasters200ResponseMastersInnerInterfacesInnerNetwork and assigns it to the Network field.
 func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetNetwork(v GetClusterMasters200ResponseMastersInnerInterfacesInnerNetwork) {
 	o.Network.Set(&v)
-}
-
-// SetNetworkNil sets the value for Network to be an explicit nil
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetNetworkNil() {
-	o.Network.Set(nil)
-}
-
-// UnsetNetwork ensures that no value is present for Network, not even an explicit nil
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) UnsetNetwork() {
-	o.Network.Unset()
 }
 
 // GetSubnet returns the Subnet field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -817,28 +536,9 @@ func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetSubnetOk() 
 	return o.Subnet.Get(), o.Subnet.IsSet()
 }
 
-// IsSetSubnet returns a boolean if a field has been set.
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) IsSetSubnet() bool {
-	if o != nil && o.Subnet.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSubnet gets a reference to the given NullableString and assigns it to the Subnet field.
 func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetSubnet(v string) {
 	o.Subnet.Set(&v)
-}
-
-// SetSubnetNil sets the value for Subnet to be an explicit nil
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetSubnetNil() {
-	o.Subnet.Set(nil)
-}
-
-// UnsetSubnet ensures that no value is present for Subnet, not even an explicit nil
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) UnsetSubnet() {
-	o.Subnet.Unset()
 }
 
 // GetNetworkGroup returns the NetworkGroup field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -860,28 +560,9 @@ func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetNetworkGrou
 	return o.NetworkGroup.Get(), o.NetworkGroup.IsSet()
 }
 
-// IsSetNetworkGroup returns a boolean if a field has been set.
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) IsSetNetworkGroup() bool {
-	if o != nil && o.NetworkGroup.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkGroup gets a reference to the given NullableString and assigns it to the NetworkGroup field.
 func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetNetworkGroup(v string) {
 	o.NetworkGroup.Set(&v)
-}
-
-// SetNetworkGroupNil sets the value for NetworkGroup to be an explicit nil
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetNetworkGroupNil() {
-	o.NetworkGroup.Set(nil)
-}
-
-// UnsetNetworkGroup ensures that no value is present for NetworkGroup, not even an explicit nil
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) UnsetNetworkGroup() {
-	o.NetworkGroup.Unset()
 }
 
 // GetNetworkPosition returns the NetworkPosition field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -903,28 +584,9 @@ func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetNetworkPosi
 	return o.NetworkPosition.Get(), o.NetworkPosition.IsSet()
 }
 
-// IsSetNetworkPosition returns a boolean if a field has been set.
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) IsSetNetworkPosition() bool {
-	if o != nil && o.NetworkPosition.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkPosition gets a reference to the given NullableString and assigns it to the NetworkPosition field.
 func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetNetworkPosition(v string) {
 	o.NetworkPosition.Set(&v)
-}
-
-// SetNetworkPositionNil sets the value for NetworkPosition to be an explicit nil
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetNetworkPositionNil() {
-	o.NetworkPosition.Set(nil)
-}
-
-// UnsetNetworkPosition ensures that no value is present for NetworkPosition, not even an explicit nil
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) UnsetNetworkPosition() {
-	o.NetworkPosition.Unset()
 }
 
 // GetNetworkPool returns the NetworkPool field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -946,28 +608,9 @@ func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetNetworkPool
 	return o.NetworkPool.Get(), o.NetworkPool.IsSet()
 }
 
-// IsSetNetworkPool returns a boolean if a field has been set.
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) IsSetNetworkPool() bool {
-	if o != nil && o.NetworkPool.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkPool gets a reference to the given NullableString and assigns it to the NetworkPool field.
 func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetNetworkPool(v string) {
 	o.NetworkPool.Set(&v)
-}
-
-// SetNetworkPoolNil sets the value for NetworkPool to be an explicit nil
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetNetworkPoolNil() {
-	o.NetworkPool.Set(nil)
-}
-
-// UnsetNetworkPool ensures that no value is present for NetworkPool, not even an explicit nil
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) UnsetNetworkPool() {
-	o.NetworkPool.Unset()
 }
 
 // GetNetworkDomain returns the NetworkDomain field value if set, zero value otherwise.
@@ -986,15 +629,6 @@ func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetNetworkDoma
 		return nil, false
 	}
 	return o.NetworkDomain, true
-}
-
-// IsSetNetworkDomain returns a boolean if a field has been set.
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) IsSetNetworkDomain() bool {
-	if o != nil && !IsNil(o.NetworkDomain) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkDomain gets a reference to the given GetClusterMasters200ResponseMastersInnerInterfacesInnerNetworkDomain and assigns it to the NetworkDomain field.
@@ -1021,28 +655,9 @@ func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetTypeOk() (*
 	return o.Type.Get(), o.Type.IsSet()
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) IsSetType() bool {
-	if o != nil && o.Type.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given NullableString and assigns it to the Type field.
 func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetType(v string) {
 	o.Type.Set(&v)
-}
-
-// SetTypeNil sets the value for Type to be an explicit nil
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetTypeNil() {
-	o.Type.Set(nil)
-}
-
-// UnsetType ensures that no value is present for Type, not even an explicit nil
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) UnsetType() {
-	o.Type.Unset()
 }
 
 // GetIpMode returns the IpMode field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1064,28 +679,9 @@ func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetIpModeOk() 
 	return o.IpMode.Get(), o.IpMode.IsSet()
 }
 
-// IsSetIpMode returns a boolean if a field has been set.
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) IsSetIpMode() bool {
-	if o != nil && o.IpMode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetIpMode gets a reference to the given NullableString and assigns it to the IpMode field.
 func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetIpMode(v string) {
 	o.IpMode.Set(&v)
-}
-
-// SetIpModeNil sets the value for IpMode to be an explicit nil
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetIpModeNil() {
-	o.IpMode.Set(nil)
-}
-
-// UnsetIpMode ensures that no value is present for IpMode, not even an explicit nil
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) UnsetIpMode() {
-	o.IpMode.Unset()
 }
 
 // GetMacAddress returns the MacAddress field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1107,28 +703,9 @@ func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetMacAddressO
 	return o.MacAddress.Get(), o.MacAddress.IsSet()
 }
 
-// IsSetMacAddress returns a boolean if a field has been set.
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) IsSetMacAddress() bool {
-	if o != nil && o.MacAddress.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMacAddress gets a reference to the given NullableString and assigns it to the MacAddress field.
 func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetMacAddress(v string) {
 	o.MacAddress.Set(&v)
-}
-
-// SetMacAddressNil sets the value for MacAddress to be an explicit nil
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetMacAddressNil() {
-	o.MacAddress.Set(nil)
-}
-
-// UnsetMacAddress ensures that no value is present for MacAddress, not even an explicit nil
-func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) UnsetMacAddress() {
-	o.MacAddress.Unset()
 }
 
 func (o GetClusterMasters200ResponseMastersInnerInterfacesInner) MarshalJSON() ([]byte, error) {

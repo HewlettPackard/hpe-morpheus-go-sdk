@@ -66,15 +66,6 @@ func (o *ListBillingZone200ResponseAllOfBillingInfo) GetPriceOk() (*float32, boo
 	return o.Price, true
 }
 
-// IsSetPrice returns a boolean if a field has been set.
-func (o *ListBillingZone200ResponseAllOfBillingInfo) IsSetPrice() bool {
-	if o != nil && !IsNil(o.Price) {
-		return true
-	}
-
-	return false
-}
-
 // SetPrice gets a reference to the given float32 and assigns it to the Price field.
 func (o *ListBillingZone200ResponseAllOfBillingInfo) SetPrice(v float32) {
 	o.Price = &v
@@ -96,15 +87,6 @@ func (o *ListBillingZone200ResponseAllOfBillingInfo) GetCostOk() (*float32, bool
 		return nil, false
 	}
 	return o.Cost, true
-}
-
-// IsSetCost returns a boolean if a field has been set.
-func (o *ListBillingZone200ResponseAllOfBillingInfo) IsSetCost() bool {
-	if o != nil && !IsNil(o.Cost) {
-		return true
-	}
-
-	return false
 }
 
 // SetCost gets a reference to the given float32 and assigns it to the Cost field.
@@ -130,15 +112,6 @@ func (o *ListBillingZone200ResponseAllOfBillingInfo) GetStartDateOk() (*time.Tim
 	return o.StartDate, true
 }
 
-// IsSetStartDate returns a boolean if a field has been set.
-func (o *ListBillingZone200ResponseAllOfBillingInfo) IsSetStartDate() bool {
-	if o != nil && !IsNil(o.StartDate) {
-		return true
-	}
-
-	return false
-}
-
 // SetStartDate gets a reference to the given time.Time and assigns it to the StartDate field.
 func (o *ListBillingZone200ResponseAllOfBillingInfo) SetStartDate(v time.Time) {
 	o.StartDate = &v
@@ -162,15 +135,6 @@ func (o *ListBillingZone200ResponseAllOfBillingInfo) GetEndDateOk() (*time.Time,
 	return o.EndDate, true
 }
 
-// IsSetEndDate returns a boolean if a field has been set.
-func (o *ListBillingZone200ResponseAllOfBillingInfo) IsSetEndDate() bool {
-	if o != nil && !IsNil(o.EndDate) {
-		return true
-	}
-
-	return false
-}
-
 // SetEndDate gets a reference to the given time.Time and assigns it to the EndDate field.
 func (o *ListBillingZone200ResponseAllOfBillingInfo) SetEndDate(v time.Time) {
 	o.EndDate = &v
@@ -192,15 +156,6 @@ func (o *ListBillingZone200ResponseAllOfBillingInfo) GetZonesOk() ([]ListBilling
 		return nil, false
 	}
 	return o.Zones, true
-}
-
-// IsSetZones returns a boolean if a field has been set.
-func (o *ListBillingZone200ResponseAllOfBillingInfo) IsSetZones() bool {
-	if o != nil && !IsNil(o.Zones) {
-		return true
-	}
-
-	return false
 }
 
 // SetZones gets a reference to the given []ListBillingZone200ResponseAllOfBillingInfoZonesInner and assigns it to the Zones field.

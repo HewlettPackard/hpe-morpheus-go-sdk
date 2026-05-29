@@ -125,15 +125,6 @@ func (o *AddInstanceRequest) GetZoneIdOk() (*int64, bool) {
 	return o.ZoneId, true
 }
 
-// IsSetZoneId returns a boolean if a field has been set.
-func (o *AddInstanceRequest) IsSetZoneId() bool {
-	if o != nil && !IsNil(o.ZoneId) {
-		return true
-	}
-
-	return false
-}
-
 // SetZoneId gets a reference to the given int64 and assigns it to the ZoneId field.
 func (o *AddInstanceRequest) SetZoneId(v int64) {
 	o.ZoneId = &v
@@ -155,15 +146,6 @@ func (o *AddInstanceRequest) GetEvarsOk() ([]AddInstanceRequestEvarsInner, bool)
 		return nil, false
 	}
 	return o.Evars, true
-}
-
-// IsSetEvars returns a boolean if a field has been set.
-func (o *AddInstanceRequest) IsSetEvars() bool {
-	if o != nil && !IsNil(o.Evars) {
-		return true
-	}
-
-	return false
 }
 
 // SetEvars gets a reference to the given []AddInstanceRequestEvarsInner and assigns it to the Evars field.
@@ -189,15 +171,6 @@ func (o *AddInstanceRequest) GetCopiesOk() (*int64, bool) {
 	return o.Copies, true
 }
 
-// IsSetCopies returns a boolean if a field has been set.
-func (o *AddInstanceRequest) IsSetCopies() bool {
-	if o != nil && !IsNil(o.Copies) {
-		return true
-	}
-
-	return false
-}
-
 // SetCopies gets a reference to the given int64 and assigns it to the Copies field.
 func (o *AddInstanceRequest) SetCopies(v int64) {
 	o.Copies = &v
@@ -221,15 +194,6 @@ func (o *AddInstanceRequest) GetLayoutSizeOk() (*int64, bool) {
 	return o.LayoutSize, true
 }
 
-// IsSetLayoutSize returns a boolean if a field has been set.
-func (o *AddInstanceRequest) IsSetLayoutSize() bool {
-	if o != nil && !IsNil(o.LayoutSize) {
-		return true
-	}
-
-	return false
-}
-
 // SetLayoutSize gets a reference to the given int64 and assigns it to the LayoutSize field.
 func (o *AddInstanceRequest) SetLayoutSize(v int64) {
 	o.LayoutSize = &v
@@ -251,15 +215,6 @@ func (o *AddInstanceRequest) GetServicePlanOptionsOk() (*AddInstanceRequestServi
 		return nil, false
 	}
 	return o.ServicePlanOptions, true
-}
-
-// IsSetServicePlanOptions returns a boolean if a field has been set.
-func (o *AddInstanceRequest) IsSetServicePlanOptions() bool {
-	if o != nil && !IsNil(o.ServicePlanOptions) {
-		return true
-	}
-
-	return false
 }
 
 // SetServicePlanOptions gets a reference to the given AddInstanceRequestServicePlanOptions and assigns it to the ServicePlanOptions field.
@@ -286,15 +241,6 @@ func (o *AddInstanceRequest) GetSecurityGroupsOk() ([]AddInstanceRequestSecurity
 	return o.SecurityGroups, true
 }
 
-// IsSetSecurityGroups returns a boolean if a field has been set.
-func (o *AddInstanceRequest) IsSetSecurityGroups() bool {
-	if o != nil && !IsNil(o.SecurityGroups) {
-		return true
-	}
-
-	return false
-}
-
 // SetSecurityGroups gets a reference to the given []AddInstanceRequestSecurityGroupsInner and assigns it to the SecurityGroups field.
 func (o *AddInstanceRequest) SetSecurityGroups(v []AddInstanceRequestSecurityGroupsInner) {
 	o.SecurityGroups = v
@@ -318,15 +264,6 @@ func (o *AddInstanceRequest) GetVolumesOk() ([]AddInstanceRequestVolumesInner, b
 	return o.Volumes, true
 }
 
-// IsSetVolumes returns a boolean if a field has been set.
-func (o *AddInstanceRequest) IsSetVolumes() bool {
-	if o != nil && !IsNil(o.Volumes) {
-		return true
-	}
-
-	return false
-}
-
 // SetVolumes gets a reference to the given []AddInstanceRequestVolumesInner and assigns it to the Volumes field.
 func (o *AddInstanceRequest) SetVolumes(v []AddInstanceRequestVolumesInner) {
 	o.Volumes = v
@@ -348,15 +285,6 @@ func (o *AddInstanceRequest) GetNetworkInterfacesOk() ([]InstancesNetworkInterfa
 		return nil, false
 	}
 	return o.NetworkInterfaces, true
-}
-
-// IsSetNetworkInterfaces returns a boolean if a field has been set.
-func (o *AddInstanceRequest) IsSetNetworkInterfaces() bool {
-	if o != nil && !IsNil(o.NetworkInterfaces) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkInterfaces gets a reference to the given []InstancesNetworkInterfaces2 and assigns it to the NetworkInterfaces field.
@@ -406,15 +334,6 @@ func (o *AddInstanceRequest) GetLabelsOk() ([]string, bool) {
 	return o.Labels, true
 }
 
-// IsSetLabels returns a boolean if a field has been set.
-func (o *AddInstanceRequest) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
-}
-
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
 func (o *AddInstanceRequest) SetLabels(v []string) {
 	o.Labels = v
@@ -436,15 +355,6 @@ func (o *AddInstanceRequest) GetTagsOk() ([]AddInstanceRequestTagsInner, bool) {
 		return nil, false
 	}
 	return o.Tags, true
-}
-
-// IsSetTags returns a boolean if a field has been set.
-func (o *AddInstanceRequest) IsSetTags() bool {
-	if o != nil && !IsNil(o.Tags) {
-		return true
-	}
-
-	return false
 }
 
 // SetTags gets a reference to the given []AddInstanceRequestTagsInner and assigns it to the Tags field.
@@ -470,15 +380,6 @@ func (o *AddInstanceRequest) GetMetadataOk() ([]AddInstanceRequestMetadataInner,
 	return o.Metadata, true
 }
 
-// IsSetMetadata returns a boolean if a field has been set.
-func (o *AddInstanceRequest) IsSetMetadata() bool {
-	if o != nil && !IsNil(o.Metadata) {
-		return true
-	}
-
-	return false
-}
-
 // SetMetadata gets a reference to the given []AddInstanceRequestMetadataInner and assigns it to the Metadata field.
 func (o *AddInstanceRequest) SetMetadata(v []AddInstanceRequestMetadataInner) {
 	o.Metadata = v
@@ -500,15 +401,6 @@ func (o *AddInstanceRequest) GetPortsOk() ([]AddInstanceRequestPortsInner, bool)
 		return nil, false
 	}
 	return o.Ports, true
-}
-
-// IsSetPorts returns a boolean if a field has been set.
-func (o *AddInstanceRequest) IsSetPorts() bool {
-	if o != nil && !IsNil(o.Ports) {
-		return true
-	}
-
-	return false
 }
 
 // SetPorts gets a reference to the given []AddInstanceRequestPortsInner and assigns it to the Ports field.
@@ -534,15 +426,6 @@ func (o *AddInstanceRequest) GetTaskSetIdOk() (*int64, bool) {
 	return o.TaskSetId, true
 }
 
-// IsSetTaskSetId returns a boolean if a field has been set.
-func (o *AddInstanceRequest) IsSetTaskSetId() bool {
-	if o != nil && !IsNil(o.TaskSetId) {
-		return true
-	}
-
-	return false
-}
-
 // SetTaskSetId gets a reference to the given int64 and assigns it to the TaskSetId field.
 func (o *AddInstanceRequest) SetTaskSetId(v int64) {
 	o.TaskSetId = &v
@@ -566,15 +449,6 @@ func (o *AddInstanceRequest) GetTaskSetNameOk() (*string, bool) {
 	return o.TaskSetName, true
 }
 
-// IsSetTaskSetName returns a boolean if a field has been set.
-func (o *AddInstanceRequest) IsSetTaskSetName() bool {
-	if o != nil && !IsNil(o.TaskSetName) {
-		return true
-	}
-
-	return false
-}
-
 // SetTaskSetName gets a reference to the given string and assigns it to the TaskSetName field.
 func (o *AddInstanceRequest) SetTaskSetName(v string) {
 	o.TaskSetName = &v
@@ -596,15 +470,6 @@ func (o *AddInstanceRequest) GetServerUUIDsOk() ([]string, bool) {
 		return nil, false
 	}
 	return o.ServerUUIDs, true
-}
-
-// IsSetServerUUIDs returns a boolean if a field has been set.
-func (o *AddInstanceRequest) IsSetServerUUIDs() bool {
-	if o != nil && !IsNil(o.ServerUUIDs) {
-		return true
-	}
-
-	return false
 }
 
 // SetServerUUIDs gets a reference to the given []string and assigns it to the ServerUUIDs field.

@@ -62,15 +62,6 @@ func (o *ListInputs200Response) GetOptionTypesOk() ([]ListInputs200ResponseAllOf
 	return o.OptionTypes, true
 }
 
-// IsSetOptionTypes returns a boolean if a field has been set.
-func (o *ListInputs200Response) IsSetOptionTypes() bool {
-	if o != nil && !IsNil(o.OptionTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetOptionTypes gets a reference to the given []ListInputs200ResponseAllOfOptionTypesInner and assigns it to the OptionTypes field.
 func (o *ListInputs200Response) SetOptionTypes(v []ListInputs200ResponseAllOfOptionTypesInner) {
 	o.OptionTypes = v
@@ -92,15 +83,6 @@ func (o *ListInputs200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta,
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListInputs200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

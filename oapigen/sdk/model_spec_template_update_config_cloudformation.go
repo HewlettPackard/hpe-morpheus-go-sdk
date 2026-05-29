@@ -63,15 +63,6 @@ func (o *SpecTemplateUpdateConfigCloudformation) GetIAMOk() (*SpecTemplateUpdate
 	return o.IAM, true
 }
 
-// IsSetIAM returns a boolean if a field has been set.
-func (o *SpecTemplateUpdateConfigCloudformation) IsSetIAM() bool {
-	if o != nil && !IsNil(o.IAM) {
-		return true
-	}
-
-	return false
-}
-
 // SetIAM gets a reference to the given SpecTemplateUpdateConfigCloudformationIAM and assigns it to the IAM field.
 func (o *SpecTemplateUpdateConfigCloudformation) SetIAM(v SpecTemplateUpdateConfigCloudformationIAM) {
 	o.IAM = &v
@@ -95,15 +86,6 @@ func (o *SpecTemplateUpdateConfigCloudformation) GetCAPABILITY_NAMED_IAMOk() (*S
 	return o.CAPABILITY_NAMED_IAM, true
 }
 
-// IsSetCAPABILITY_NAMED_IAM returns a boolean if a field has been set.
-func (o *SpecTemplateUpdateConfigCloudformation) IsSetCAPABILITY_NAMED_IAM() bool {
-	if o != nil && !IsNil(o.CAPABILITY_NAMED_IAM) {
-		return true
-	}
-
-	return false
-}
-
 // SetCAPABILITY_NAMED_IAM gets a reference to the given SpecTemplateUpdateConfigCloudformationCAPABILITYNAMEDIAM and assigns it to the CAPABILITY_NAMED_IAM field.
 func (o *SpecTemplateUpdateConfigCloudformation) SetCAPABILITY_NAMED_IAM(v SpecTemplateUpdateConfigCloudformationCAPABILITYNAMEDIAM) {
 	o.CAPABILITY_NAMED_IAM = &v
@@ -125,15 +107,6 @@ func (o *SpecTemplateUpdateConfigCloudformation) GetCAPABILITY_AUTO_EXPANDOk() (
 		return nil, false
 	}
 	return o.CAPABILITY_AUTO_EXPAND, true
-}
-
-// IsSetCAPABILITY_AUTO_EXPAND returns a boolean if a field has been set.
-func (o *SpecTemplateUpdateConfigCloudformation) IsSetCAPABILITY_AUTO_EXPAND() bool {
-	if o != nil && !IsNil(o.CAPABILITY_AUTO_EXPAND) {
-		return true
-	}
-
-	return false
 }
 
 // SetCAPABILITY_AUTO_EXPAND gets a reference to the given SpecTemplateUpdateConfigCloudformationCAPABILITYAUTOEXPAND and assigns it to the CAPABILITY_AUTO_EXPAND field.

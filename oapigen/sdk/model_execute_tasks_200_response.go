@@ -63,15 +63,6 @@ func (o *ExecuteTasks200Response) GetJobOk() (*ExecuteTasks200ResponseAllOfJob, 
 	return o.Job, true
 }
 
-// IsSetJob returns a boolean if a field has been set.
-func (o *ExecuteTasks200Response) IsSetJob() bool {
-	if o != nil && !IsNil(o.Job) {
-		return true
-	}
-
-	return false
-}
-
 // SetJob gets a reference to the given ExecuteTasks200ResponseAllOfJob and assigns it to the Job field.
 func (o *ExecuteTasks200Response) SetJob(v ExecuteTasks200ResponseAllOfJob) {
 	o.Job = &v
@@ -95,15 +86,6 @@ func (o *ExecuteTasks200Response) GetJobExecutionOk() (*ExecuteTasks200ResponseA
 	return o.JobExecution, true
 }
 
-// IsSetJobExecution returns a boolean if a field has been set.
-func (o *ExecuteTasks200Response) IsSetJobExecution() bool {
-	if o != nil && !IsNil(o.JobExecution) {
-		return true
-	}
-
-	return false
-}
-
 // SetJobExecution gets a reference to the given ExecuteTasks200ResponseAllOfJobExecution and assigns it to the JobExecution field.
 func (o *ExecuteTasks200Response) SetJobExecution(v ExecuteTasks200ResponseAllOfJobExecution) {
 	o.JobExecution = &v
@@ -125,15 +107,6 @@ func (o *ExecuteTasks200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *ExecuteTasks200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

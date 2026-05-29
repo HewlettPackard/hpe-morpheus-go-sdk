@@ -148,15 +148,6 @@ func (o *SNMPCheck1AllOfConfig) GetOidOk() (*string, bool) {
 	return o.Oid, true
 }
 
-// IsSetOid returns a boolean if a field has been set.
-func (o *SNMPCheck1AllOfConfig) IsSetOid() bool {
-	if o != nil && !IsNil(o.Oid) {
-		return true
-	}
-
-	return false
-}
-
 // SetOid gets a reference to the given string and assigns it to the Oid field.
 func (o *SNMPCheck1AllOfConfig) SetOid(v string) {
 	o.Oid = &v
@@ -178,15 +169,6 @@ func (o *SNMPCheck1AllOfConfig) GetCheckOperatorOk() (*string, bool) {
 		return nil, false
 	}
 	return o.CheckOperator, true
-}
-
-// IsSetCheckOperator returns a boolean if a field has been set.
-func (o *SNMPCheck1AllOfConfig) IsSetCheckOperator() bool {
-	if o != nil && !IsNil(o.CheckOperator) {
-		return true
-	}
-
-	return false
 }
 
 // SetCheckOperator gets a reference to the given string and assigns it to the CheckOperator field.
@@ -212,15 +194,6 @@ func (o *SNMPCheck1AllOfConfig) GetCheckResponseOk() (*string, bool) {
 	return o.CheckResponse, true
 }
 
-// IsSetCheckResponse returns a boolean if a field has been set.
-func (o *SNMPCheck1AllOfConfig) IsSetCheckResponse() bool {
-	if o != nil && !IsNil(o.CheckResponse) {
-		return true
-	}
-
-	return false
-}
-
 // SetCheckResponse gets a reference to the given string and assigns it to the CheckResponse field.
 func (o *SNMPCheck1AllOfConfig) SetCheckResponse(v string) {
 	o.CheckResponse = &v
@@ -242,15 +215,6 @@ func (o *SNMPCheck1AllOfConfig) GetVersionOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Version, true
-}
-
-// IsSetVersion returns a boolean if a field has been set.
-func (o *SNMPCheck1AllOfConfig) IsSetVersion() bool {
-	if o != nil && !IsNil(o.Version) {
-		return true
-	}
-
-	return false
 }
 
 // SetVersion gets a reference to the given string and assigns it to the Version field.
@@ -276,15 +240,6 @@ func (o *SNMPCheck1AllOfConfig) GetCommunityOk() (*string, bool) {
 	return o.Community, true
 }
 
-// IsSetCommunity returns a boolean if a field has been set.
-func (o *SNMPCheck1AllOfConfig) IsSetCommunity() bool {
-	if o != nil && !IsNil(o.Community) {
-		return true
-	}
-
-	return false
-}
-
 // SetCommunity gets a reference to the given string and assigns it to the Community field.
 func (o *SNMPCheck1AllOfConfig) SetCommunity(v string) {
 	o.Community = &v
@@ -306,15 +261,6 @@ func (o *SNMPCheck1AllOfConfig) GetUsernameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Username, true
-}
-
-// IsSetUsername returns a boolean if a field has been set.
-func (o *SNMPCheck1AllOfConfig) IsSetUsername() bool {
-	if o != nil && !IsNil(o.Username) {
-		return true
-	}
-
-	return false
 }
 
 // SetUsername gets a reference to the given string and assigns it to the Username field.
@@ -340,15 +286,6 @@ func (o *SNMPCheck1AllOfConfig) GetSecurityLevelOk() (*string, bool) {
 	return o.SecurityLevel, true
 }
 
-// IsSetSecurityLevel returns a boolean if a field has been set.
-func (o *SNMPCheck1AllOfConfig) IsSetSecurityLevel() bool {
-	if o != nil && !IsNil(o.SecurityLevel) {
-		return true
-	}
-
-	return false
-}
-
 // SetSecurityLevel gets a reference to the given string and assigns it to the SecurityLevel field.
 func (o *SNMPCheck1AllOfConfig) SetSecurityLevel(v string) {
 	o.SecurityLevel = &v
@@ -370,15 +307,6 @@ func (o *SNMPCheck1AllOfConfig) GetAuthOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Auth, true
-}
-
-// IsSetAuth returns a boolean if a field has been set.
-func (o *SNMPCheck1AllOfConfig) IsSetAuth() bool {
-	if o != nil && !IsNil(o.Auth) {
-		return true
-	}
-
-	return false
 }
 
 // SetAuth gets a reference to the given string and assigns it to the Auth field.
@@ -404,15 +332,6 @@ func (o *SNMPCheck1AllOfConfig) GetAuthpasswordOk() (*string, bool) {
 	return o.Authpassword, true
 }
 
-// IsSetAuthpassword returns a boolean if a field has been set.
-func (o *SNMPCheck1AllOfConfig) IsSetAuthpassword() bool {
-	if o != nil && !IsNil(o.Authpassword) {
-		return true
-	}
-
-	return false
-}
-
 // SetAuthpassword gets a reference to the given string and assigns it to the Authpassword field.
 func (o *SNMPCheck1AllOfConfig) SetAuthpassword(v string) {
 	o.Authpassword = &v
@@ -434,15 +353,6 @@ func (o *SNMPCheck1AllOfConfig) GetPrivOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Priv, true
-}
-
-// IsSetPriv returns a boolean if a field has been set.
-func (o *SNMPCheck1AllOfConfig) IsSetPriv() bool {
-	if o != nil && !IsNil(o.Priv) {
-		return true
-	}
-
-	return false
 }
 
 // SetPriv gets a reference to the given string and assigns it to the Priv field.
@@ -468,15 +378,6 @@ func (o *SNMPCheck1AllOfConfig) GetPrivpasswordOk() (*string, bool) {
 	return o.Privpassword, true
 }
 
-// IsSetPrivpassword returns a boolean if a field has been set.
-func (o *SNMPCheck1AllOfConfig) IsSetPrivpassword() bool {
-	if o != nil && !IsNil(o.Privpassword) {
-		return true
-	}
-
-	return false
-}
-
 // SetPrivpassword gets a reference to the given string and assigns it to the Privpassword field.
 func (o *SNMPCheck1AllOfConfig) SetPrivpassword(v string) {
 	o.Privpassword = &v
@@ -498,15 +399,6 @@ func (o *SNMPCheck1AllOfConfig) GetTunnelOnOk() (*string, bool) {
 		return nil, false
 	}
 	return o.TunnelOn, true
-}
-
-// IsSetTunnelOn returns a boolean if a field has been set.
-func (o *SNMPCheck1AllOfConfig) IsSetTunnelOn() bool {
-	if o != nil && !IsNil(o.TunnelOn) {
-		return true
-	}
-
-	return false
 }
 
 // SetTunnelOn gets a reference to the given string and assigns it to the TunnelOn field.
@@ -532,15 +424,6 @@ func (o *SNMPCheck1AllOfConfig) GetSshHostOk() (*string, bool) {
 	return o.SshHost, true
 }
 
-// IsSetSshHost returns a boolean if a field has been set.
-func (o *SNMPCheck1AllOfConfig) IsSetSshHost() bool {
-	if o != nil && !IsNil(o.SshHost) {
-		return true
-	}
-
-	return false
-}
-
 // SetSshHost gets a reference to the given string and assigns it to the SshHost field.
 func (o *SNMPCheck1AllOfConfig) SetSshHost(v string) {
 	o.SshHost = &v
@@ -562,15 +445,6 @@ func (o *SNMPCheck1AllOfConfig) GetSshPortOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.SshPort, true
-}
-
-// IsSetSshPort returns a boolean if a field has been set.
-func (o *SNMPCheck1AllOfConfig) IsSetSshPort() bool {
-	if o != nil && !IsNil(o.SshPort) {
-		return true
-	}
-
-	return false
 }
 
 // SetSshPort gets a reference to the given int64 and assigns it to the SshPort field.
@@ -596,15 +470,6 @@ func (o *SNMPCheck1AllOfConfig) GetSshUserOk() (*string, bool) {
 	return o.SshUser, true
 }
 
-// IsSetSshUser returns a boolean if a field has been set.
-func (o *SNMPCheck1AllOfConfig) IsSetSshUser() bool {
-	if o != nil && !IsNil(o.SshUser) {
-		return true
-	}
-
-	return false
-}
-
 // SetSshUser gets a reference to the given string and assigns it to the SshUser field.
 func (o *SNMPCheck1AllOfConfig) SetSshUser(v string) {
 	o.SshUser = &v
@@ -626,15 +491,6 @@ func (o *SNMPCheck1AllOfConfig) GetSshPasswordOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SshPassword, true
-}
-
-// IsSetSshPassword returns a boolean if a field has been set.
-func (o *SNMPCheck1AllOfConfig) IsSetSshPassword() bool {
-	if o != nil && !IsNil(o.SshPassword) {
-		return true
-	}
-
-	return false
 }
 
 // SetSshPassword gets a reference to the given string and assigns it to the SshPassword field.

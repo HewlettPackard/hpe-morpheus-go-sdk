@@ -61,15 +61,6 @@ func (o *UpdateMigration200Response) GetMigrationOk() (*GetMigration200ResponseM
 	return o.Migration, true
 }
 
-// IsSetMigration returns a boolean if a field has been set.
-func (o *UpdateMigration200Response) IsSetMigration() bool {
-	if o != nil && !IsNil(o.Migration) {
-		return true
-	}
-
-	return false
-}
-
 // SetMigration gets a reference to the given GetMigration200ResponseMigration and assigns it to the Migration field.
 func (o *UpdateMigration200Response) SetMigration(v GetMigration200ResponseMigration) {
 	o.Migration = &v

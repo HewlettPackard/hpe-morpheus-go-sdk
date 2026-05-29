@@ -61,15 +61,6 @@ func (o *GetFileTemplate200Response) GetContainerTemplateOk() (*GetFileTemplate2
 	return o.ContainerTemplate, true
 }
 
-// IsSetContainerTemplate returns a boolean if a field has been set.
-func (o *GetFileTemplate200Response) IsSetContainerTemplate() bool {
-	if o != nil && !IsNil(o.ContainerTemplate) {
-		return true
-	}
-
-	return false
-}
-
 // SetContainerTemplate gets a reference to the given GetFileTemplate200ResponseContainerTemplate and assigns it to the ContainerTemplate field.
 func (o *GetFileTemplate200Response) SetContainerTemplate(v GetFileTemplate200ResponseContainerTemplate) {
 	o.ContainerTemplate = &v

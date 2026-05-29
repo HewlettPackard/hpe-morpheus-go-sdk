@@ -62,15 +62,6 @@ func (o *UpdateNetworkPoolServer200Response) GetSuccessOk() (*bool, bool) {
 	return o.Success, true
 }
 
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *UpdateNetworkPoolServer200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
-}
-
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.
 func (o *UpdateNetworkPoolServer200Response) SetSuccess(v bool) {
 	o.Success = &v
@@ -92,15 +83,6 @@ func (o *UpdateNetworkPoolServer200Response) GetNetworkPoolServerOk() (*UpdateNe
 		return nil, false
 	}
 	return o.NetworkPoolServer, true
-}
-
-// IsSetNetworkPoolServer returns a boolean if a field has been set.
-func (o *UpdateNetworkPoolServer200Response) IsSetNetworkPoolServer() bool {
-	if o != nil && !IsNil(o.NetworkPoolServer) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkPoolServer gets a reference to the given UpdateNetworkPoolServer200ResponseAllOfNetworkPoolServer and assigns it to the NetworkPoolServer field.

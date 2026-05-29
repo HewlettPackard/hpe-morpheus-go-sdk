@@ -70,15 +70,6 @@ func (o *UpdateCloudDatastoresRequestDatastore) GetActiveOk() (*bool, bool) {
 	return o.Active, true
 }
 
-// IsSetActive returns a boolean if a field has been set.
-func (o *UpdateCloudDatastoresRequestDatastore) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
-}
-
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *UpdateCloudDatastoresRequestDatastore) SetActive(v bool) {
 	o.Active = &v
@@ -100,15 +91,6 @@ func (o *UpdateCloudDatastoresRequestDatastore) GetVisibilityOk() (*string, bool
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *UpdateCloudDatastoresRequestDatastore) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -134,15 +116,6 @@ func (o *UpdateCloudDatastoresRequestDatastore) GetTenantPermissionsOk() (*Updat
 	return o.TenantPermissions, true
 }
 
-// IsSetTenantPermissions returns a boolean if a field has been set.
-func (o *UpdateCloudDatastoresRequestDatastore) IsSetTenantPermissions() bool {
-	if o != nil && !IsNil(o.TenantPermissions) {
-		return true
-	}
-
-	return false
-}
-
 // SetTenantPermissions gets a reference to the given UpdateCloudDatastoresRequestDatastoreTenantPermissions and assigns it to the TenantPermissions field.
 func (o *UpdateCloudDatastoresRequestDatastore) SetTenantPermissions(v UpdateCloudDatastoresRequestDatastoreTenantPermissions) {
 	o.TenantPermissions = &v
@@ -164,15 +137,6 @@ func (o *UpdateCloudDatastoresRequestDatastore) GetResourcePermissionsOk() (*Upd
 		return nil, false
 	}
 	return o.ResourcePermissions, true
-}
-
-// IsSetResourcePermissions returns a boolean if a field has been set.
-func (o *UpdateCloudDatastoresRequestDatastore) IsSetResourcePermissions() bool {
-	if o != nil && !IsNil(o.ResourcePermissions) {
-		return true
-	}
-
-	return false
 }
 
 // SetResourcePermissions gets a reference to the given UpdateCloudDatastoresRequestDatastoreResourcePermissions and assigns it to the ResourcePermissions field.

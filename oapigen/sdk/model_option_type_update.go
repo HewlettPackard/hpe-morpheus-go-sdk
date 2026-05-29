@@ -101,15 +101,6 @@ func (o *OptionTypeUpdate) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *OptionTypeUpdate) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *OptionTypeUpdate) SetName(v string) {
 	o.Name = &v
@@ -134,28 +125,9 @@ func (o *OptionTypeUpdate) GetDescriptionOk() (*string, bool) {
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *OptionTypeUpdate) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *OptionTypeUpdate) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *OptionTypeUpdate) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *OptionTypeUpdate) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetLabels returns the Labels field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -175,15 +147,6 @@ func (o *OptionTypeUpdate) GetLabelsOk() ([]string, bool) {
 		return nil, false
 	}
 	return o.Labels, true
-}
-
-// IsSetLabels returns a boolean if a field has been set.
-func (o *OptionTypeUpdate) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
 }
 
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
@@ -209,15 +172,6 @@ func (o *OptionTypeUpdate) GetFieldNameOk() (*string, bool) {
 	return o.FieldName, true
 }
 
-// IsSetFieldName returns a boolean if a field has been set.
-func (o *OptionTypeUpdate) IsSetFieldName() bool {
-	if o != nil && !IsNil(o.FieldName) {
-		return true
-	}
-
-	return false
-}
-
 // SetFieldName gets a reference to the given string and assigns it to the FieldName field.
 func (o *OptionTypeUpdate) SetFieldName(v string) {
 	o.FieldName = &v
@@ -239,15 +193,6 @@ func (o *OptionTypeUpdate) GetTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *OptionTypeUpdate) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.
@@ -273,15 +218,6 @@ func (o *OptionTypeUpdate) GetFieldLabelOk() (*string, bool) {
 	return o.FieldLabel, true
 }
 
-// IsSetFieldLabel returns a boolean if a field has been set.
-func (o *OptionTypeUpdate) IsSetFieldLabel() bool {
-	if o != nil && !IsNil(o.FieldLabel) {
-		return true
-	}
-
-	return false
-}
-
 // SetFieldLabel gets a reference to the given string and assigns it to the FieldLabel field.
 func (o *OptionTypeUpdate) SetFieldLabel(v string) {
 	o.FieldLabel = &v
@@ -303,15 +239,6 @@ func (o *OptionTypeUpdate) GetPlaceHolderOk() (*string, bool) {
 		return nil, false
 	}
 	return o.PlaceHolder, true
-}
-
-// IsSetPlaceHolder returns a boolean if a field has been set.
-func (o *OptionTypeUpdate) IsSetPlaceHolder() bool {
-	if o != nil && !IsNil(o.PlaceHolder) {
-		return true
-	}
-
-	return false
 }
 
 // SetPlaceHolder gets a reference to the given string and assigns it to the PlaceHolder field.
@@ -337,15 +264,6 @@ func (o *OptionTypeUpdate) GetVerifyPatternOk() (*string, bool) {
 	return o.VerifyPattern, true
 }
 
-// IsSetVerifyPattern returns a boolean if a field has been set.
-func (o *OptionTypeUpdate) IsSetVerifyPattern() bool {
-	if o != nil && !IsNil(o.VerifyPattern) {
-		return true
-	}
-
-	return false
-}
-
 // SetVerifyPattern gets a reference to the given string and assigns it to the VerifyPattern field.
 func (o *OptionTypeUpdate) SetVerifyPattern(v string) {
 	o.VerifyPattern = &v
@@ -367,15 +285,6 @@ func (o *OptionTypeUpdate) GetDefaultValueOk() (*string, bool) {
 		return nil, false
 	}
 	return o.DefaultValue, true
-}
-
-// IsSetDefaultValue returns a boolean if a field has been set.
-func (o *OptionTypeUpdate) IsSetDefaultValue() bool {
-	if o != nil && !IsNil(o.DefaultValue) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultValue gets a reference to the given string and assigns it to the DefaultValue field.
@@ -401,15 +310,6 @@ func (o *OptionTypeUpdate) GetRequiredOk() (*bool, bool) {
 	return o.Required, true
 }
 
-// IsSetRequired returns a boolean if a field has been set.
-func (o *OptionTypeUpdate) IsSetRequired() bool {
-	if o != nil && !IsNil(o.Required) {
-		return true
-	}
-
-	return false
-}
-
 // SetRequired gets a reference to the given bool and assigns it to the Required field.
 func (o *OptionTypeUpdate) SetRequired(v bool) {
 	o.Required = &v
@@ -431,15 +331,6 @@ func (o *OptionTypeUpdate) GetExportMetaOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.ExportMeta, true
-}
-
-// IsSetExportMeta returns a boolean if a field has been set.
-func (o *OptionTypeUpdate) IsSetExportMeta() bool {
-	if o != nil && !IsNil(o.ExportMeta) {
-		return true
-	}
-
-	return false
 }
 
 // SetExportMeta gets a reference to the given bool and assigns it to the ExportMeta field.
@@ -465,15 +356,6 @@ func (o *OptionTypeUpdate) GetEditableOk() (*bool, bool) {
 	return o.Editable, true
 }
 
-// IsSetEditable returns a boolean if a field has been set.
-func (o *OptionTypeUpdate) IsSetEditable() bool {
-	if o != nil && !IsNil(o.Editable) {
-		return true
-	}
-
-	return false
-}
-
 // SetEditable gets a reference to the given bool and assigns it to the Editable field.
 func (o *OptionTypeUpdate) SetEditable(v bool) {
 	o.Editable = &v
@@ -495,15 +377,6 @@ func (o *OptionTypeUpdate) GetOptionListOk() (*OptionTypeUpdateOptionList, bool)
 		return nil, false
 	}
 	return o.OptionList, true
-}
-
-// IsSetOptionList returns a boolean if a field has been set.
-func (o *OptionTypeUpdate) IsSetOptionList() bool {
-	if o != nil && !IsNil(o.OptionList) {
-		return true
-	}
-
-	return false
 }
 
 // SetOptionList gets a reference to the given OptionTypeUpdateOptionList and assigns it to the OptionList field.

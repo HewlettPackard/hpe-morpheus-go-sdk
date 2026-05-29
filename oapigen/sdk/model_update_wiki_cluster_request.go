@@ -61,15 +61,6 @@ func (o *UpdateWikiClusterRequest) GetPageOk() (*UpdateWikiClusterRequestPage, b
 	return o.Page, true
 }
 
-// IsSetPage returns a boolean if a field has been set.
-func (o *UpdateWikiClusterRequest) IsSetPage() bool {
-	if o != nil && !IsNil(o.Page) {
-		return true
-	}
-
-	return false
-}
-
 // SetPage gets a reference to the given UpdateWikiClusterRequestPage and assigns it to the Page field.
 func (o *UpdateWikiClusterRequest) SetPage(v UpdateWikiClusterRequestPage) {
 	o.Page = &v

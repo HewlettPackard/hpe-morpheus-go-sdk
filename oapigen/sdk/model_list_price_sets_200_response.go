@@ -62,15 +62,6 @@ func (o *ListPriceSets200Response) GetPriceSetsOk() ([]ListPriceSets200ResponseA
 	return o.PriceSets, true
 }
 
-// IsSetPriceSets returns a boolean if a field has been set.
-func (o *ListPriceSets200Response) IsSetPriceSets() bool {
-	if o != nil && !IsNil(o.PriceSets) {
-		return true
-	}
-
-	return false
-}
-
 // SetPriceSets gets a reference to the given []ListPriceSets200ResponseAllOfPriceSetsInner and assigns it to the PriceSets field.
 func (o *ListPriceSets200Response) SetPriceSets(v []ListPriceSets200ResponseAllOfPriceSetsInner) {
 	o.PriceSets = v
@@ -92,15 +83,6 @@ func (o *ListPriceSets200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMe
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListPriceSets200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

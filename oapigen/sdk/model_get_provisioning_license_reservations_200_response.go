@@ -61,15 +61,6 @@ func (o *GetProvisioningLicenseReservations200Response) GetLicensesOk() ([]GetPr
 	return o.Licenses, true
 }
 
-// IsSetLicenses returns a boolean if a field has been set.
-func (o *GetProvisioningLicenseReservations200Response) IsSetLicenses() bool {
-	if o != nil && !IsNil(o.Licenses) {
-		return true
-	}
-
-	return false
-}
-
 // SetLicenses gets a reference to the given []GetProvisioningLicenseReservations200ResponseLicensesInner and assigns it to the Licenses field.
 func (o *GetProvisioningLicenseReservations200Response) SetLicenses(v []GetProvisioningLicenseReservations200ResponseLicensesInner) {
 	o.Licenses = v

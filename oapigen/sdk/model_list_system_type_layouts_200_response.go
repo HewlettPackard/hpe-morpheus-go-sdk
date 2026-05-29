@@ -61,15 +61,6 @@ func (o *ListSystemTypeLayouts200Response) GetSystemTypeLayoutsOk() ([]ListSyste
 	return o.SystemTypeLayouts, true
 }
 
-// IsSetSystemTypeLayouts returns a boolean if a field has been set.
-func (o *ListSystemTypeLayouts200Response) IsSetSystemTypeLayouts() bool {
-	if o != nil && !IsNil(o.SystemTypeLayouts) {
-		return true
-	}
-
-	return false
-}
-
 // SetSystemTypeLayouts gets a reference to the given []ListSystemTypeLayouts200ResponseSystemTypeLayoutsInner and assigns it to the SystemTypeLayouts field.
 func (o *ListSystemTypeLayouts200Response) SetSystemTypeLayouts(v []ListSystemTypeLayouts200ResponseSystemTypeLayoutsInner) {
 	o.SystemTypeLayouts = v

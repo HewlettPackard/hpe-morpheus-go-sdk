@@ -141,15 +141,6 @@ func (o *NetworkPoolServerCreateSolarWinds) GetEnabledOk() (*bool, bool) {
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *NetworkPoolServerCreateSolarWinds) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *NetworkPoolServerCreateSolarWinds) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -200,28 +191,9 @@ func (o *NetworkPoolServerCreateSolarWinds) GetServiceUsernameOk() (*string, boo
 	return o.ServiceUsername.Get(), o.ServiceUsername.IsSet()
 }
 
-// IsSetServiceUsername returns a boolean if a field has been set.
-func (o *NetworkPoolServerCreateSolarWinds) IsSetServiceUsername() bool {
-	if o != nil && o.ServiceUsername.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceUsername gets a reference to the given NullableString and assigns it to the ServiceUsername field.
 func (o *NetworkPoolServerCreateSolarWinds) SetServiceUsername(v string) {
 	o.ServiceUsername.Set(&v)
-}
-
-// SetServiceUsernameNil sets the value for ServiceUsername to be an explicit nil
-func (o *NetworkPoolServerCreateSolarWinds) SetServiceUsernameNil() {
-	o.ServiceUsername.Set(nil)
-}
-
-// UnsetServiceUsername ensures that no value is present for ServiceUsername, not even an explicit nil
-func (o *NetworkPoolServerCreateSolarWinds) UnsetServiceUsername() {
-	o.ServiceUsername.Unset()
 }
 
 // GetServicePassword returns the ServicePassword field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -243,28 +215,9 @@ func (o *NetworkPoolServerCreateSolarWinds) GetServicePasswordOk() (*string, boo
 	return o.ServicePassword.Get(), o.ServicePassword.IsSet()
 }
 
-// IsSetServicePassword returns a boolean if a field has been set.
-func (o *NetworkPoolServerCreateSolarWinds) IsSetServicePassword() bool {
-	if o != nil && o.ServicePassword.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServicePassword gets a reference to the given NullableString and assigns it to the ServicePassword field.
 func (o *NetworkPoolServerCreateSolarWinds) SetServicePassword(v string) {
 	o.ServicePassword.Set(&v)
-}
-
-// SetServicePasswordNil sets the value for ServicePassword to be an explicit nil
-func (o *NetworkPoolServerCreateSolarWinds) SetServicePasswordNil() {
-	o.ServicePassword.Set(nil)
-}
-
-// UnsetServicePassword ensures that no value is present for ServicePassword, not even an explicit nil
-func (o *NetworkPoolServerCreateSolarWinds) UnsetServicePassword() {
-	o.ServicePassword.Unset()
 }
 
 // GetServiceThrottleRate returns the ServiceThrottleRate field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -286,28 +239,9 @@ func (o *NetworkPoolServerCreateSolarWinds) GetServiceThrottleRateOk() (*int64, 
 	return o.ServiceThrottleRate.Get(), o.ServiceThrottleRate.IsSet()
 }
 
-// IsSetServiceThrottleRate returns a boolean if a field has been set.
-func (o *NetworkPoolServerCreateSolarWinds) IsSetServiceThrottleRate() bool {
-	if o != nil && o.ServiceThrottleRate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceThrottleRate gets a reference to the given NullableInt64 and assigns it to the ServiceThrottleRate field.
 func (o *NetworkPoolServerCreateSolarWinds) SetServiceThrottleRate(v int64) {
 	o.ServiceThrottleRate.Set(&v)
-}
-
-// SetServiceThrottleRateNil sets the value for ServiceThrottleRate to be an explicit nil
-func (o *NetworkPoolServerCreateSolarWinds) SetServiceThrottleRateNil() {
-	o.ServiceThrottleRate.Set(nil)
-}
-
-// UnsetServiceThrottleRate ensures that no value is present for ServiceThrottleRate, not even an explicit nil
-func (o *NetworkPoolServerCreateSolarWinds) UnsetServiceThrottleRate() {
-	o.ServiceThrottleRate.Unset()
 }
 
 // GetIgnoreSsl returns the IgnoreSsl field value if set, zero value otherwise.
@@ -326,15 +260,6 @@ func (o *NetworkPoolServerCreateSolarWinds) GetIgnoreSslOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.IgnoreSsl, true
-}
-
-// IsSetIgnoreSsl returns a boolean if a field has been set.
-func (o *NetworkPoolServerCreateSolarWinds) IsSetIgnoreSsl() bool {
-	if o != nil && !IsNil(o.IgnoreSsl) {
-		return true
-	}
-
-	return false
 }
 
 // SetIgnoreSsl gets a reference to the given bool and assigns it to the IgnoreSsl field.
@@ -360,15 +285,6 @@ func (o *NetworkPoolServerCreateSolarWinds) GetConfigOk() (*NetworkPoolServerCre
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *NetworkPoolServerCreateSolarWinds) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given NetworkPoolServerCreateSolarWindsConfig and assigns it to the Config field.
 func (o *NetworkPoolServerCreateSolarWinds) SetConfig(v NetworkPoolServerCreateSolarWindsConfig) {
 	o.Config = &v
@@ -390,15 +306,6 @@ func (o *NetworkPoolServerCreateSolarWinds) GetCredentialOk() (*NetworkPoolServe
 		return nil, false
 	}
 	return o.Credential, true
-}
-
-// IsSetCredential returns a boolean if a field has been set.
-func (o *NetworkPoolServerCreateSolarWinds) IsSetCredential() bool {
-	if o != nil && !IsNil(o.Credential) {
-		return true
-	}
-
-	return false
 }
 
 // SetCredential gets a reference to the given NetworkPoolServerCreateSolarWindsCredential and assigns it to the Credential field.

@@ -71,15 +71,6 @@ func (o *Log) GetSortOk() (*LogSort, bool) {
 	return o.Sort, true
 }
 
-// IsSetSort returns a boolean if a field has been set.
-func (o *Log) IsSetSort() bool {
-	if o != nil && !IsNil(o.Sort) {
-		return true
-	}
-
-	return false
-}
-
 // SetSort gets a reference to the given LogSort and assigns it to the Sort field.
 func (o *Log) SetSort(v LogSort) {
 	o.Sort = &v
@@ -101,15 +92,6 @@ func (o *Log) GetOffsetOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.Offset, true
-}
-
-// IsSetOffset returns a boolean if a field has been set.
-func (o *Log) IsSetOffset() bool {
-	if o != nil && !IsNil(o.Offset) {
-		return true
-	}
-
-	return false
 }
 
 // SetOffset gets a reference to the given int64 and assigns it to the Offset field.
@@ -135,15 +117,6 @@ func (o *Log) GetStartOk() (*time.Time, bool) {
 	return o.Start, true
 }
 
-// IsSetStart returns a boolean if a field has been set.
-func (o *Log) IsSetStart() bool {
-	if o != nil && !IsNil(o.Start) {
-		return true
-	}
-
-	return false
-}
-
 // SetStart gets a reference to the given time.Time and assigns it to the Start field.
 func (o *Log) SetStart(v time.Time) {
 	o.Start = &v
@@ -165,15 +138,6 @@ func (o *Log) GetEndOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.End, true
-}
-
-// IsSetEnd returns a boolean if a field has been set.
-func (o *Log) IsSetEnd() bool {
-	if o != nil && !IsNil(o.End) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnd gets a reference to the given time.Time and assigns it to the End field.
@@ -199,15 +163,6 @@ func (o *Log) GetDataOk() ([]LogDataInner, bool) {
 	return o.Data, true
 }
 
-// IsSetData returns a boolean if a field has been set.
-func (o *Log) IsSetData() bool {
-	if o != nil && !IsNil(o.Data) {
-		return true
-	}
-
-	return false
-}
-
 // SetData gets a reference to the given []LogDataInner and assigns it to the Data field.
 func (o *Log) SetData(v []LogDataInner) {
 	o.Data = v
@@ -229,15 +184,6 @@ func (o *Log) GetMaxOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.Max, true
-}
-
-// IsSetMax returns a boolean if a field has been set.
-func (o *Log) IsSetMax() bool {
-	if o != nil && !IsNil(o.Max) {
-		return true
-	}
-
-	return false
 }
 
 // SetMax gets a reference to the given int64 and assigns it to the Max field.
@@ -263,15 +209,6 @@ func (o *Log) GetGrandTotalOk() (*int64, bool) {
 	return o.GrandTotal, true
 }
 
-// IsSetGrandTotal returns a boolean if a field has been set.
-func (o *Log) IsSetGrandTotal() bool {
-	if o != nil && !IsNil(o.GrandTotal) {
-		return true
-	}
-
-	return false
-}
-
 // SetGrandTotal gets a reference to the given int64 and assigns it to the GrandTotal field.
 func (o *Log) SetGrandTotal(v int64) {
 	o.GrandTotal = &v
@@ -293,15 +230,6 @@ func (o *Log) GetTotalOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.Total, true
-}
-
-// IsSetTotal returns a boolean if a field has been set.
-func (o *Log) IsSetTotal() bool {
-	if o != nil && !IsNil(o.Total) {
-		return true
-	}
-
-	return false
 }
 
 // SetTotal gets a reference to the given int64 and assigns it to the Total field.
@@ -327,15 +255,6 @@ func (o *Log) GetSuccessOk() (*bool, bool) {
 	return o.Success, true
 }
 
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *Log) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
-}
-
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.
 func (o *Log) SetSuccess(v bool) {
 	o.Success = &v
@@ -357,15 +276,6 @@ func (o *Log) GetCountOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.Count, true
-}
-
-// IsSetCount returns a boolean if a field has been set.
-func (o *Log) IsSetCount() bool {
-	if o != nil && !IsNil(o.Count) {
-		return true
-	}
-
-	return false
 }
 
 // SetCount gets a reference to the given int64 and assigns it to the Count field.

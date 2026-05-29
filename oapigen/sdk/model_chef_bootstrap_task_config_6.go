@@ -76,28 +76,9 @@ func (o *ChefBootstrapTaskConfig6) GetChefDataKeyOk() (*string, bool) {
 	return o.ChefDataKey.Get(), o.ChefDataKey.IsSet()
 }
 
-// IsSetChefDataKey returns a boolean if a field has been set.
-func (o *ChefBootstrapTaskConfig6) IsSetChefDataKey() bool {
-	if o != nil && o.ChefDataKey.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetChefDataKey gets a reference to the given NullableString and assigns it to the ChefDataKey field.
 func (o *ChefBootstrapTaskConfig6) SetChefDataKey(v string) {
 	o.ChefDataKey.Set(&v)
-}
-
-// SetChefDataKeyNil sets the value for ChefDataKey to be an explicit nil
-func (o *ChefBootstrapTaskConfig6) SetChefDataKeyNil() {
-	o.ChefDataKey.Set(nil)
-}
-
-// UnsetChefDataKey ensures that no value is present for ChefDataKey, not even an explicit nil
-func (o *ChefBootstrapTaskConfig6) UnsetChefDataKey() {
-	o.ChefDataKey.Unset()
 }
 
 // GetChefDataKeyHash returns the ChefDataKeyHash field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -119,28 +100,9 @@ func (o *ChefBootstrapTaskConfig6) GetChefDataKeyHashOk() (*string, bool) {
 	return o.ChefDataKeyHash.Get(), o.ChefDataKeyHash.IsSet()
 }
 
-// IsSetChefDataKeyHash returns a boolean if a field has been set.
-func (o *ChefBootstrapTaskConfig6) IsSetChefDataKeyHash() bool {
-	if o != nil && o.ChefDataKeyHash.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetChefDataKeyHash gets a reference to the given NullableString and assigns it to the ChefDataKeyHash field.
 func (o *ChefBootstrapTaskConfig6) SetChefDataKeyHash(v string) {
 	o.ChefDataKeyHash.Set(&v)
-}
-
-// SetChefDataKeyHashNil sets the value for ChefDataKeyHash to be an explicit nil
-func (o *ChefBootstrapTaskConfig6) SetChefDataKeyHashNil() {
-	o.ChefDataKeyHash.Set(nil)
-}
-
-// UnsetChefDataKeyHash ensures that no value is present for ChefDataKeyHash, not even an explicit nil
-func (o *ChefBootstrapTaskConfig6) UnsetChefDataKeyHash() {
-	o.ChefDataKeyHash.Unset()
 }
 
 // GetChefRunList returns the ChefRunList field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -162,28 +124,9 @@ func (o *ChefBootstrapTaskConfig6) GetChefRunListOk() (*string, bool) {
 	return o.ChefRunList.Get(), o.ChefRunList.IsSet()
 }
 
-// IsSetChefRunList returns a boolean if a field has been set.
-func (o *ChefBootstrapTaskConfig6) IsSetChefRunList() bool {
-	if o != nil && o.ChefRunList.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetChefRunList gets a reference to the given NullableString and assigns it to the ChefRunList field.
 func (o *ChefBootstrapTaskConfig6) SetChefRunList(v string) {
 	o.ChefRunList.Set(&v)
-}
-
-// SetChefRunListNil sets the value for ChefRunList to be an explicit nil
-func (o *ChefBootstrapTaskConfig6) SetChefRunListNil() {
-	o.ChefRunList.Set(nil)
-}
-
-// UnsetChefRunList ensures that no value is present for ChefRunList, not even an explicit nil
-func (o *ChefBootstrapTaskConfig6) UnsetChefRunList() {
-	o.ChefRunList.Unset()
 }
 
 // GetLocalScriptGitRef returns the LocalScriptGitRef field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -205,28 +148,9 @@ func (o *ChefBootstrapTaskConfig6) GetLocalScriptGitRefOk() (*string, bool) {
 	return o.LocalScriptGitRef.Get(), o.LocalScriptGitRef.IsSet()
 }
 
-// IsSetLocalScriptGitRef returns a boolean if a field has been set.
-func (o *ChefBootstrapTaskConfig6) IsSetLocalScriptGitRef() bool {
-	if o != nil && o.LocalScriptGitRef.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLocalScriptGitRef gets a reference to the given NullableString and assigns it to the LocalScriptGitRef field.
 func (o *ChefBootstrapTaskConfig6) SetLocalScriptGitRef(v string) {
 	o.LocalScriptGitRef.Set(&v)
-}
-
-// SetLocalScriptGitRefNil sets the value for LocalScriptGitRef to be an explicit nil
-func (o *ChefBootstrapTaskConfig6) SetLocalScriptGitRefNil() {
-	o.LocalScriptGitRef.Set(nil)
-}
-
-// UnsetLocalScriptGitRef ensures that no value is present for LocalScriptGitRef, not even an explicit nil
-func (o *ChefBootstrapTaskConfig6) UnsetLocalScriptGitRef() {
-	o.LocalScriptGitRef.Unset()
 }
 
 // GetChefDataKeyPath returns the ChefDataKeyPath field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -248,28 +172,9 @@ func (o *ChefBootstrapTaskConfig6) GetChefDataKeyPathOk() (*string, bool) {
 	return o.ChefDataKeyPath.Get(), o.ChefDataKeyPath.IsSet()
 }
 
-// IsSetChefDataKeyPath returns a boolean if a field has been set.
-func (o *ChefBootstrapTaskConfig6) IsSetChefDataKeyPath() bool {
-	if o != nil && o.ChefDataKeyPath.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetChefDataKeyPath gets a reference to the given NullableString and assigns it to the ChefDataKeyPath field.
 func (o *ChefBootstrapTaskConfig6) SetChefDataKeyPath(v string) {
 	o.ChefDataKeyPath.Set(&v)
-}
-
-// SetChefDataKeyPathNil sets the value for ChefDataKeyPath to be an explicit nil
-func (o *ChefBootstrapTaskConfig6) SetChefDataKeyPathNil() {
-	o.ChefDataKeyPath.Set(nil)
-}
-
-// UnsetChefDataKeyPath ensures that no value is present for ChefDataKeyPath, not even an explicit nil
-func (o *ChefBootstrapTaskConfig6) UnsetChefDataKeyPath() {
-	o.ChefDataKeyPath.Unset()
 }
 
 // GetLocalScriptGitId returns the LocalScriptGitId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -291,28 +196,9 @@ func (o *ChefBootstrapTaskConfig6) GetLocalScriptGitIdOk() (*string, bool) {
 	return o.LocalScriptGitId.Get(), o.LocalScriptGitId.IsSet()
 }
 
-// IsSetLocalScriptGitId returns a boolean if a field has been set.
-func (o *ChefBootstrapTaskConfig6) IsSetLocalScriptGitId() bool {
-	if o != nil && o.LocalScriptGitId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLocalScriptGitId gets a reference to the given NullableString and assigns it to the LocalScriptGitId field.
 func (o *ChefBootstrapTaskConfig6) SetLocalScriptGitId(v string) {
 	o.LocalScriptGitId.Set(&v)
-}
-
-// SetLocalScriptGitIdNil sets the value for LocalScriptGitId to be an explicit nil
-func (o *ChefBootstrapTaskConfig6) SetLocalScriptGitIdNil() {
-	o.LocalScriptGitId.Set(nil)
-}
-
-// UnsetLocalScriptGitId ensures that no value is present for LocalScriptGitId, not even an explicit nil
-func (o *ChefBootstrapTaskConfig6) UnsetLocalScriptGitId() {
-	o.LocalScriptGitId.Unset()
 }
 
 // GetPort returns the Port field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -334,28 +220,9 @@ func (o *ChefBootstrapTaskConfig6) GetPortOk() (*string, bool) {
 	return o.Port.Get(), o.Port.IsSet()
 }
 
-// IsSetPort returns a boolean if a field has been set.
-func (o *ChefBootstrapTaskConfig6) IsSetPort() bool {
-	if o != nil && o.Port.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPort gets a reference to the given NullableString and assigns it to the Port field.
 func (o *ChefBootstrapTaskConfig6) SetPort(v string) {
 	o.Port.Set(&v)
-}
-
-// SetPortNil sets the value for Port to be an explicit nil
-func (o *ChefBootstrapTaskConfig6) SetPortNil() {
-	o.Port.Set(nil)
-}
-
-// UnsetPort ensures that no value is present for Port, not even an explicit nil
-func (o *ChefBootstrapTaskConfig6) UnsetPort() {
-	o.Port.Unset()
 }
 
 // GetChefEnv returns the ChefEnv field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -377,28 +244,9 @@ func (o *ChefBootstrapTaskConfig6) GetChefEnvOk() (*string, bool) {
 	return o.ChefEnv.Get(), o.ChefEnv.IsSet()
 }
 
-// IsSetChefEnv returns a boolean if a field has been set.
-func (o *ChefBootstrapTaskConfig6) IsSetChefEnv() bool {
-	if o != nil && o.ChefEnv.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetChefEnv gets a reference to the given NullableString and assigns it to the ChefEnv field.
 func (o *ChefBootstrapTaskConfig6) SetChefEnv(v string) {
 	o.ChefEnv.Set(&v)
-}
-
-// SetChefEnvNil sets the value for ChefEnv to be an explicit nil
-func (o *ChefBootstrapTaskConfig6) SetChefEnvNil() {
-	o.ChefEnv.Set(nil)
-}
-
-// UnsetChefEnv ensures that no value is present for ChefEnv, not even an explicit nil
-func (o *ChefBootstrapTaskConfig6) UnsetChefEnv() {
-	o.ChefEnv.Unset()
 }
 
 // GetChefNodeName returns the ChefNodeName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -420,28 +268,9 @@ func (o *ChefBootstrapTaskConfig6) GetChefNodeNameOk() (*string, bool) {
 	return o.ChefNodeName.Get(), o.ChefNodeName.IsSet()
 }
 
-// IsSetChefNodeName returns a boolean if a field has been set.
-func (o *ChefBootstrapTaskConfig6) IsSetChefNodeName() bool {
-	if o != nil && o.ChefNodeName.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetChefNodeName gets a reference to the given NullableString and assigns it to the ChefNodeName field.
 func (o *ChefBootstrapTaskConfig6) SetChefNodeName(v string) {
 	o.ChefNodeName.Set(&v)
-}
-
-// SetChefNodeNameNil sets the value for ChefNodeName to be an explicit nil
-func (o *ChefBootstrapTaskConfig6) SetChefNodeNameNil() {
-	o.ChefNodeName.Set(nil)
-}
-
-// UnsetChefNodeName ensures that no value is present for ChefNodeName, not even an explicit nil
-func (o *ChefBootstrapTaskConfig6) UnsetChefNodeName() {
-	o.ChefNodeName.Unset()
 }
 
 // GetHost returns the Host field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -463,28 +292,9 @@ func (o *ChefBootstrapTaskConfig6) GetHostOk() (*string, bool) {
 	return o.Host.Get(), o.Host.IsSet()
 }
 
-// IsSetHost returns a boolean if a field has been set.
-func (o *ChefBootstrapTaskConfig6) IsSetHost() bool {
-	if o != nil && o.Host.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetHost gets a reference to the given NullableString and assigns it to the Host field.
 func (o *ChefBootstrapTaskConfig6) SetHost(v string) {
 	o.Host.Set(&v)
-}
-
-// SetHostNil sets the value for Host to be an explicit nil
-func (o *ChefBootstrapTaskConfig6) SetHostNil() {
-	o.Host.Set(nil)
-}
-
-// UnsetHost ensures that no value is present for Host, not even an explicit nil
-func (o *ChefBootstrapTaskConfig6) UnsetHost() {
-	o.Host.Unset()
 }
 
 // GetSshKey returns the SshKey field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -506,28 +316,9 @@ func (o *ChefBootstrapTaskConfig6) GetSshKeyOk() (*string, bool) {
 	return o.SshKey.Get(), o.SshKey.IsSet()
 }
 
-// IsSetSshKey returns a boolean if a field has been set.
-func (o *ChefBootstrapTaskConfig6) IsSetSshKey() bool {
-	if o != nil && o.SshKey.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSshKey gets a reference to the given NullableString and assigns it to the SshKey field.
 func (o *ChefBootstrapTaskConfig6) SetSshKey(v string) {
 	o.SshKey.Set(&v)
-}
-
-// SetSshKeyNil sets the value for SshKey to be an explicit nil
-func (o *ChefBootstrapTaskConfig6) SetSshKeyNil() {
-	o.SshKey.Set(nil)
-}
-
-// UnsetSshKey ensures that no value is present for SshKey, not even an explicit nil
-func (o *ChefBootstrapTaskConfig6) UnsetSshKey() {
-	o.SshKey.Unset()
 }
 
 // GetUsername returns the Username field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -549,28 +340,9 @@ func (o *ChefBootstrapTaskConfig6) GetUsernameOk() (*string, bool) {
 	return o.Username.Get(), o.Username.IsSet()
 }
 
-// IsSetUsername returns a boolean if a field has been set.
-func (o *ChefBootstrapTaskConfig6) IsSetUsername() bool {
-	if o != nil && o.Username.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUsername gets a reference to the given NullableString and assigns it to the Username field.
 func (o *ChefBootstrapTaskConfig6) SetUsername(v string) {
 	o.Username.Set(&v)
-}
-
-// SetUsernameNil sets the value for Username to be an explicit nil
-func (o *ChefBootstrapTaskConfig6) SetUsernameNil() {
-	o.Username.Set(nil)
-}
-
-// UnsetUsername ensures that no value is present for Username, not even an explicit nil
-func (o *ChefBootstrapTaskConfig6) UnsetUsername() {
-	o.Username.Unset()
 }
 
 // GetPassword returns the Password field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -592,28 +364,9 @@ func (o *ChefBootstrapTaskConfig6) GetPasswordOk() (*string, bool) {
 	return o.Password.Get(), o.Password.IsSet()
 }
 
-// IsSetPassword returns a boolean if a field has been set.
-func (o *ChefBootstrapTaskConfig6) IsSetPassword() bool {
-	if o != nil && o.Password.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPassword gets a reference to the given NullableString and assigns it to the Password field.
 func (o *ChefBootstrapTaskConfig6) SetPassword(v string) {
 	o.Password.Set(&v)
-}
-
-// SetPasswordNil sets the value for Password to be an explicit nil
-func (o *ChefBootstrapTaskConfig6) SetPasswordNil() {
-	o.Password.Set(nil)
-}
-
-// UnsetPassword ensures that no value is present for Password, not even an explicit nil
-func (o *ChefBootstrapTaskConfig6) UnsetPassword() {
-	o.Password.Unset()
 }
 
 // GetPasswordHash returns the PasswordHash field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -635,28 +388,9 @@ func (o *ChefBootstrapTaskConfig6) GetPasswordHashOk() (*string, bool) {
 	return o.PasswordHash.Get(), o.PasswordHash.IsSet()
 }
 
-// IsSetPasswordHash returns a boolean if a field has been set.
-func (o *ChefBootstrapTaskConfig6) IsSetPasswordHash() bool {
-	if o != nil && o.PasswordHash.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPasswordHash gets a reference to the given NullableString and assigns it to the PasswordHash field.
 func (o *ChefBootstrapTaskConfig6) SetPasswordHash(v string) {
 	o.PasswordHash.Set(&v)
-}
-
-// SetPasswordHashNil sets the value for PasswordHash to be an explicit nil
-func (o *ChefBootstrapTaskConfig6) SetPasswordHashNil() {
-	o.PasswordHash.Set(nil)
-}
-
-// UnsetPasswordHash ensures that no value is present for PasswordHash, not even an explicit nil
-func (o *ChefBootstrapTaskConfig6) UnsetPasswordHash() {
-	o.PasswordHash.Unset()
 }
 
 // GetChefAttributes returns the ChefAttributes field value if set, zero value otherwise.
@@ -675,15 +409,6 @@ func (o *ChefBootstrapTaskConfig6) GetChefAttributesOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ChefAttributes, true
-}
-
-// IsSetChefAttributes returns a boolean if a field has been set.
-func (o *ChefBootstrapTaskConfig6) IsSetChefAttributes() bool {
-	if o != nil && !IsNil(o.ChefAttributes) {
-		return true
-	}
-
-	return false
 }
 
 // SetChefAttributes gets a reference to the given string and assigns it to the ChefAttributes field.

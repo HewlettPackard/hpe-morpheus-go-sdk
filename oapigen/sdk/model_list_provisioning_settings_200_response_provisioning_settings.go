@@ -74,15 +74,6 @@ func (o *ListProvisioningSettings200ResponseProvisioningSettings) GetAllowZoneSe
 	return o.AllowZoneSelection, true
 }
 
-// IsSetAllowZoneSelection returns a boolean if a field has been set.
-func (o *ListProvisioningSettings200ResponseProvisioningSettings) IsSetAllowZoneSelection() bool {
-	if o != nil && !IsNil(o.AllowZoneSelection) {
-		return true
-	}
-
-	return false
-}
-
 // SetAllowZoneSelection gets a reference to the given bool and assigns it to the AllowZoneSelection field.
 func (o *ListProvisioningSettings200ResponseProvisioningSettings) SetAllowZoneSelection(v bool) {
 	o.AllowZoneSelection = &v
@@ -104,15 +95,6 @@ func (o *ListProvisioningSettings200ResponseProvisioningSettings) GetAllowServer
 		return nil, false
 	}
 	return o.AllowServerSelection, true
-}
-
-// IsSetAllowServerSelection returns a boolean if a field has been set.
-func (o *ListProvisioningSettings200ResponseProvisioningSettings) IsSetAllowServerSelection() bool {
-	if o != nil && !IsNil(o.AllowServerSelection) {
-		return true
-	}
-
-	return false
 }
 
 // SetAllowServerSelection gets a reference to the given bool and assigns it to the AllowServerSelection field.
@@ -138,15 +120,6 @@ func (o *ListProvisioningSettings200ResponseProvisioningSettings) GetRequireEnvi
 	return o.RequireEnvironments, true
 }
 
-// IsSetRequireEnvironments returns a boolean if a field has been set.
-func (o *ListProvisioningSettings200ResponseProvisioningSettings) IsSetRequireEnvironments() bool {
-	if o != nil && !IsNil(o.RequireEnvironments) {
-		return true
-	}
-
-	return false
-}
-
 // SetRequireEnvironments gets a reference to the given bool and assigns it to the RequireEnvironments field.
 func (o *ListProvisioningSettings200ResponseProvisioningSettings) SetRequireEnvironments(v bool) {
 	o.RequireEnvironments = &v
@@ -168,15 +141,6 @@ func (o *ListProvisioningSettings200ResponseProvisioningSettings) GetShowPricing
 		return nil, false
 	}
 	return o.ShowPricing, true
-}
-
-// IsSetShowPricing returns a boolean if a field has been set.
-func (o *ListProvisioningSettings200ResponseProvisioningSettings) IsSetShowPricing() bool {
-	if o != nil && !IsNil(o.ShowPricing) {
-		return true
-	}
-
-	return false
 }
 
 // SetShowPricing gets a reference to the given bool and assigns it to the ShowPricing field.
@@ -202,15 +166,6 @@ func (o *ListProvisioningSettings200ResponseProvisioningSettings) GetHideDatasto
 	return o.HideDatastoreStats, true
 }
 
-// IsSetHideDatastoreStats returns a boolean if a field has been set.
-func (o *ListProvisioningSettings200ResponseProvisioningSettings) IsSetHideDatastoreStats() bool {
-	if o != nil && !IsNil(o.HideDatastoreStats) {
-		return true
-	}
-
-	return false
-}
-
 // SetHideDatastoreStats gets a reference to the given bool and assigns it to the HideDatastoreStats field.
 func (o *ListProvisioningSettings200ResponseProvisioningSettings) SetHideDatastoreStats(v bool) {
 	o.HideDatastoreStats = &v
@@ -232,15 +187,6 @@ func (o *ListProvisioningSettings200ResponseProvisioningSettings) GetCrossTenant
 		return nil, false
 	}
 	return o.CrossTenantNamingPolicies, true
-}
-
-// IsSetCrossTenantNamingPolicies returns a boolean if a field has been set.
-func (o *ListProvisioningSettings200ResponseProvisioningSettings) IsSetCrossTenantNamingPolicies() bool {
-	if o != nil && !IsNil(o.CrossTenantNamingPolicies) {
-		return true
-	}
-
-	return false
 }
 
 // SetCrossTenantNamingPolicies gets a reference to the given bool and assigns it to the CrossTenantNamingPolicies field.
@@ -266,15 +212,6 @@ func (o *ListProvisioningSettings200ResponseProvisioningSettings) GetReuseSequen
 	return o.ReuseSequence, true
 }
 
-// IsSetReuseSequence returns a boolean if a field has been set.
-func (o *ListProvisioningSettings200ResponseProvisioningSettings) IsSetReuseSequence() bool {
-	if o != nil && !IsNil(o.ReuseSequence) {
-		return true
-	}
-
-	return false
-}
-
 // SetReuseSequence gets a reference to the given bool and assigns it to the ReuseSequence field.
 func (o *ListProvisioningSettings200ResponseProvisioningSettings) SetReuseSequence(v bool) {
 	o.ReuseSequence = &v
@@ -298,15 +235,6 @@ func (o *ListProvisioningSettings200ResponseProvisioningSettings) GetCloudInitUs
 	return o.CloudInitUsername, true
 }
 
-// IsSetCloudInitUsername returns a boolean if a field has been set.
-func (o *ListProvisioningSettings200ResponseProvisioningSettings) IsSetCloudInitUsername() bool {
-	if o != nil && !IsNil(o.CloudInitUsername) {
-		return true
-	}
-
-	return false
-}
-
 // SetCloudInitUsername gets a reference to the given string and assigns it to the CloudInitUsername field.
 func (o *ListProvisioningSettings200ResponseProvisioningSettings) SetCloudInitUsername(v string) {
 	o.CloudInitUsername = &v
@@ -328,15 +256,6 @@ func (o *ListProvisioningSettings200ResponseProvisioningSettings) GetCloudInitPa
 		return nil, false
 	}
 	return o.CloudInitPassword, true
-}
-
-// IsSetCloudInitPassword returns a boolean if a field has been set.
-func (o *ListProvisioningSettings200ResponseProvisioningSettings) IsSetCloudInitPassword() bool {
-	if o != nil && !IsNil(o.CloudInitPassword) {
-		return true
-	}
-
-	return false
 }
 
 // SetCloudInitPassword gets a reference to the given string and assigns it to the CloudInitPassword field.
@@ -363,28 +282,9 @@ func (o *ListProvisioningSettings200ResponseProvisioningSettings) GetCloudInitKe
 	return o.CloudInitKeyPair.Get(), o.CloudInitKeyPair.IsSet()
 }
 
-// IsSetCloudInitKeyPair returns a boolean if a field has been set.
-func (o *ListProvisioningSettings200ResponseProvisioningSettings) IsSetCloudInitKeyPair() bool {
-	if o != nil && o.CloudInitKeyPair.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCloudInitKeyPair gets a reference to the given NullableListProvisioningSettings200ResponseProvisioningSettingsCloudInitKeyPair and assigns it to the CloudInitKeyPair field.
 func (o *ListProvisioningSettings200ResponseProvisioningSettings) SetCloudInitKeyPair(v ListProvisioningSettings200ResponseProvisioningSettingsCloudInitKeyPair) {
 	o.CloudInitKeyPair.Set(&v)
-}
-
-// SetCloudInitKeyPairNil sets the value for CloudInitKeyPair to be an explicit nil
-func (o *ListProvisioningSettings200ResponseProvisioningSettings) SetCloudInitKeyPairNil() {
-	o.CloudInitKeyPair.Set(nil)
-}
-
-// UnsetCloudInitKeyPair ensures that no value is present for CloudInitKeyPair, not even an explicit nil
-func (o *ListProvisioningSettings200ResponseProvisioningSettings) UnsetCloudInitKeyPair() {
-	o.CloudInitKeyPair.Unset()
 }
 
 // GetWindowsPassword returns the WindowsPassword field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -406,28 +306,9 @@ func (o *ListProvisioningSettings200ResponseProvisioningSettings) GetWindowsPass
 	return o.WindowsPassword.Get(), o.WindowsPassword.IsSet()
 }
 
-// IsSetWindowsPassword returns a boolean if a field has been set.
-func (o *ListProvisioningSettings200ResponseProvisioningSettings) IsSetWindowsPassword() bool {
-	if o != nil && o.WindowsPassword.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetWindowsPassword gets a reference to the given NullableString and assigns it to the WindowsPassword field.
 func (o *ListProvisioningSettings200ResponseProvisioningSettings) SetWindowsPassword(v string) {
 	o.WindowsPassword.Set(&v)
-}
-
-// SetWindowsPasswordNil sets the value for WindowsPassword to be an explicit nil
-func (o *ListProvisioningSettings200ResponseProvisioningSettings) SetWindowsPasswordNil() {
-	o.WindowsPassword.Set(nil)
-}
-
-// UnsetWindowsPassword ensures that no value is present for WindowsPassword, not even an explicit nil
-func (o *ListProvisioningSettings200ResponseProvisioningSettings) UnsetWindowsPassword() {
-	o.WindowsPassword.Unset()
 }
 
 // GetPxeRootPassword returns the PxeRootPassword field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -449,28 +330,9 @@ func (o *ListProvisioningSettings200ResponseProvisioningSettings) GetPxeRootPass
 	return o.PxeRootPassword.Get(), o.PxeRootPassword.IsSet()
 }
 
-// IsSetPxeRootPassword returns a boolean if a field has been set.
-func (o *ListProvisioningSettings200ResponseProvisioningSettings) IsSetPxeRootPassword() bool {
-	if o != nil && o.PxeRootPassword.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPxeRootPassword gets a reference to the given NullableString and assigns it to the PxeRootPassword field.
 func (o *ListProvisioningSettings200ResponseProvisioningSettings) SetPxeRootPassword(v string) {
 	o.PxeRootPassword.Set(&v)
-}
-
-// SetPxeRootPasswordNil sets the value for PxeRootPassword to be an explicit nil
-func (o *ListProvisioningSettings200ResponseProvisioningSettings) SetPxeRootPasswordNil() {
-	o.PxeRootPassword.Set(nil)
-}
-
-// UnsetPxeRootPassword ensures that no value is present for PxeRootPassword, not even an explicit nil
-func (o *ListProvisioningSettings200ResponseProvisioningSettings) UnsetPxeRootPassword() {
-	o.PxeRootPassword.Unset()
 }
 
 // GetDefaultTemplateType returns the DefaultTemplateType field value if set, zero value otherwise.
@@ -489,15 +351,6 @@ func (o *ListProvisioningSettings200ResponseProvisioningSettings) GetDefaultTemp
 		return nil, false
 	}
 	return o.DefaultTemplateType, true
-}
-
-// IsSetDefaultTemplateType returns a boolean if a field has been set.
-func (o *ListProvisioningSettings200ResponseProvisioningSettings) IsSetDefaultTemplateType() bool {
-	if o != nil && !IsNil(o.DefaultTemplateType) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultTemplateType gets a reference to the given ListProvisioningSettings200ResponseProvisioningSettingsDefaultTemplateType and assigns it to the DefaultTemplateType field.
@@ -524,28 +377,9 @@ func (o *ListProvisioningSettings200ResponseProvisioningSettings) GetDeployStora
 	return o.DeployStorageProvider.Get(), o.DeployStorageProvider.IsSet()
 }
 
-// IsSetDeployStorageProvider returns a boolean if a field has been set.
-func (o *ListProvisioningSettings200ResponseProvisioningSettings) IsSetDeployStorageProvider() bool {
-	if o != nil && o.DeployStorageProvider.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDeployStorageProvider gets a reference to the given NullableListProvisioningSettings200ResponseProvisioningSettingsDeployStorageProvider and assigns it to the DeployStorageProvider field.
 func (o *ListProvisioningSettings200ResponseProvisioningSettings) SetDeployStorageProvider(v ListProvisioningSettings200ResponseProvisioningSettingsDeployStorageProvider) {
 	o.DeployStorageProvider.Set(&v)
-}
-
-// SetDeployStorageProviderNil sets the value for DeployStorageProvider to be an explicit nil
-func (o *ListProvisioningSettings200ResponseProvisioningSettings) SetDeployStorageProviderNil() {
-	o.DeployStorageProvider.Set(nil)
-}
-
-// UnsetDeployStorageProvider ensures that no value is present for DeployStorageProvider, not even an explicit nil
-func (o *ListProvisioningSettings200ResponseProvisioningSettings) UnsetDeployStorageProvider() {
-	o.DeployStorageProvider.Unset()
 }
 
 func (o ListProvisioningSettings200ResponseProvisioningSettings) MarshalJSON() ([]byte, error) {

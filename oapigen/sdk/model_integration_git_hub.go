@@ -78,15 +78,6 @@ func (o *IntegrationGitHub) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *IntegrationGitHub) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *IntegrationGitHub) SetId(v int64) {
 	o.Id = &v
@@ -108,15 +99,6 @@ func (o *IntegrationGitHub) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *IntegrationGitHub) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -142,15 +124,6 @@ func (o *IntegrationGitHub) GetEnabledOk() (*bool, bool) {
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *IntegrationGitHub) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *IntegrationGitHub) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -172,15 +145,6 @@ func (o *IntegrationGitHub) GetTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *IntegrationGitHub) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.
@@ -206,15 +170,6 @@ func (o *IntegrationGitHub) GetIntegrationTypeOk() (*AddIntegrations200ResponseA
 	return o.IntegrationType, true
 }
 
-// IsSetIntegrationType returns a boolean if a field has been set.
-func (o *IntegrationGitHub) IsSetIntegrationType() bool {
-	if o != nil && !IsNil(o.IntegrationType) {
-		return true
-	}
-
-	return false
-}
-
 // SetIntegrationType gets a reference to the given AddIntegrations200ResponseAllOfIntegrationOneOf8IntegrationType and assigns it to the IntegrationType field.
 func (o *IntegrationGitHub) SetIntegrationType(v AddIntegrations200ResponseAllOfIntegrationOneOf8IntegrationType) {
 	o.IntegrationType = &v
@@ -236,15 +191,6 @@ func (o *IntegrationGitHub) GetUsernameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Username, true
-}
-
-// IsSetUsername returns a boolean if a field has been set.
-func (o *IntegrationGitHub) IsSetUsername() bool {
-	if o != nil && !IsNil(o.Username) {
-		return true
-	}
-
-	return false
 }
 
 // SetUsername gets a reference to the given string and assigns it to the Username field.
@@ -270,15 +216,6 @@ func (o *IntegrationGitHub) GetTokenOk() (*string, bool) {
 	return o.Token, true
 }
 
-// IsSetToken returns a boolean if a field has been set.
-func (o *IntegrationGitHub) IsSetToken() bool {
-	if o != nil && !IsNil(o.Token) {
-		return true
-	}
-
-	return false
-}
-
 // SetToken gets a reference to the given string and assigns it to the Token field.
 func (o *IntegrationGitHub) SetToken(v string) {
 	o.Token = &v
@@ -300,15 +237,6 @@ func (o *IntegrationGitHub) GetTokenHashOk() (*string, bool) {
 		return nil, false
 	}
 	return o.TokenHash, true
-}
-
-// IsSetTokenHash returns a boolean if a field has been set.
-func (o *IntegrationGitHub) IsSetTokenHash() bool {
-	if o != nil && !IsNil(o.TokenHash) {
-		return true
-	}
-
-	return false
 }
 
 // SetTokenHash gets a reference to the given string and assigns it to the TokenHash field.
@@ -334,15 +262,6 @@ func (o *IntegrationGitHub) GetServiceKeyOk() (*AddIntegrations200ResponseAllOfI
 	return o.ServiceKey, true
 }
 
-// IsSetServiceKey returns a boolean if a field has been set.
-func (o *IntegrationGitHub) IsSetServiceKey() bool {
-	if o != nil && !IsNil(o.ServiceKey) {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceKey gets a reference to the given AddIntegrations200ResponseAllOfIntegrationOneOf8ServiceKey and assigns it to the ServiceKey field.
 func (o *IntegrationGitHub) SetServiceKey(v AddIntegrations200ResponseAllOfIntegrationOneOf8ServiceKey) {
 	o.ServiceKey = &v
@@ -364,15 +283,6 @@ func (o *IntegrationGitHub) GetIsPluginOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.IsPlugin, true
-}
-
-// IsSetIsPlugin returns a boolean if a field has been set.
-func (o *IntegrationGitHub) IsSetIsPlugin() bool {
-	if o != nil && !IsNil(o.IsPlugin) {
-		return true
-	}
-
-	return false
 }
 
 // SetIsPlugin gets a reference to the given bool and assigns it to the IsPlugin field.
@@ -398,15 +308,6 @@ func (o *IntegrationGitHub) GetConfigOk() (*AddIntegrations200ResponseAllOfInteg
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *IntegrationGitHub) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given AddIntegrations200ResponseAllOfIntegrationOneOf8Config and assigns it to the Config field.
 func (o *IntegrationGitHub) SetConfig(v AddIntegrations200ResponseAllOfIntegrationOneOf8Config) {
 	o.Config = &v
@@ -430,15 +331,6 @@ func (o *IntegrationGitHub) GetStatusOk() (*string, bool) {
 	return o.Status, true
 }
 
-// IsSetStatus returns a boolean if a field has been set.
-func (o *IntegrationGitHub) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
-}
-
 // SetStatus gets a reference to the given string and assigns it to the Status field.
 func (o *IntegrationGitHub) SetStatus(v string) {
 	o.Status = &v
@@ -460,15 +352,6 @@ func (o *IntegrationGitHub) GetStatusDateOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.StatusDate, true
-}
-
-// IsSetStatusDate returns a boolean if a field has been set.
-func (o *IntegrationGitHub) IsSetStatusDate() bool {
-	if o != nil && !IsNil(o.StatusDate) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatusDate gets a reference to the given time.Time and assigns it to the StatusDate field.
@@ -495,28 +378,9 @@ func (o *IntegrationGitHub) GetStatusMessageOk() (*string, bool) {
 	return o.StatusMessage.Get(), o.StatusMessage.IsSet()
 }
 
-// IsSetStatusMessage returns a boolean if a field has been set.
-func (o *IntegrationGitHub) IsSetStatusMessage() bool {
-	if o != nil && o.StatusMessage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusMessage gets a reference to the given NullableString and assigns it to the StatusMessage field.
 func (o *IntegrationGitHub) SetStatusMessage(v string) {
 	o.StatusMessage.Set(&v)
-}
-
-// SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
-func (o *IntegrationGitHub) SetStatusMessageNil() {
-	o.StatusMessage.Set(nil)
-}
-
-// UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
-func (o *IntegrationGitHub) UnsetStatusMessage() {
-	o.StatusMessage.Unset()
 }
 
 // GetLastSync returns the LastSync field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -538,28 +402,9 @@ func (o *IntegrationGitHub) GetLastSyncOk() (*string, bool) {
 	return o.LastSync.Get(), o.LastSync.IsSet()
 }
 
-// IsSetLastSync returns a boolean if a field has been set.
-func (o *IntegrationGitHub) IsSetLastSync() bool {
-	if o != nil && o.LastSync.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastSync gets a reference to the given NullableString and assigns it to the LastSync field.
 func (o *IntegrationGitHub) SetLastSync(v string) {
 	o.LastSync.Set(&v)
-}
-
-// SetLastSyncNil sets the value for LastSync to be an explicit nil
-func (o *IntegrationGitHub) SetLastSyncNil() {
-	o.LastSync.Set(nil)
-}
-
-// UnsetLastSync ensures that no value is present for LastSync, not even an explicit nil
-func (o *IntegrationGitHub) UnsetLastSync() {
-	o.LastSync.Unset()
 }
 
 // GetLastSyncDuration returns the LastSyncDuration field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -581,28 +426,9 @@ func (o *IntegrationGitHub) GetLastSyncDurationOk() (*string, bool) {
 	return o.LastSyncDuration.Get(), o.LastSyncDuration.IsSet()
 }
 
-// IsSetLastSyncDuration returns a boolean if a field has been set.
-func (o *IntegrationGitHub) IsSetLastSyncDuration() bool {
-	if o != nil && o.LastSyncDuration.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastSyncDuration gets a reference to the given NullableString and assigns it to the LastSyncDuration field.
 func (o *IntegrationGitHub) SetLastSyncDuration(v string) {
 	o.LastSyncDuration.Set(&v)
-}
-
-// SetLastSyncDurationNil sets the value for LastSyncDuration to be an explicit nil
-func (o *IntegrationGitHub) SetLastSyncDurationNil() {
-	o.LastSyncDuration.Set(nil)
-}
-
-// UnsetLastSyncDuration ensures that no value is present for LastSyncDuration, not even an explicit nil
-func (o *IntegrationGitHub) UnsetLastSyncDuration() {
-	o.LastSyncDuration.Unset()
 }
 
 // GetCredential returns the Credential field value if set, zero value otherwise.
@@ -621,15 +447,6 @@ func (o *IntegrationGitHub) GetCredentialOk() (*AddIntegrations200ResponseAllOfI
 		return nil, false
 	}
 	return o.Credential, true
-}
-
-// IsSetCredential returns a boolean if a field has been set.
-func (o *IntegrationGitHub) IsSetCredential() bool {
-	if o != nil && !IsNil(o.Credential) {
-		return true
-	}
-
-	return false
 }
 
 // SetCredential gets a reference to the given AddIntegrations200ResponseAllOfIntegrationOneOf8Credential and assigns it to the Credential field.

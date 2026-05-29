@@ -63,15 +63,6 @@ func (o *ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsPlansInn
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsPlansInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsPlansInner) SetId(v int64) {
 	o.Id = &v
@@ -95,15 +86,6 @@ func (o *ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsPlansInn
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsPlansInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsPlansInner) SetName(v string) {
 	o.Name = &v
@@ -125,15 +107,6 @@ func (o *ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsPlansInn
 		return nil, false
 	}
 	return o.Default, true
-}
-
-// IsSetDefault returns a boolean if a field has been set.
-func (o *ListCloudFolders200ResponseAllOfFoldersInnerResourcePermissionsPlansInner) IsSetDefault() bool {
-	if o != nil && !IsNil(o.Default) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefault gets a reference to the given bool and assigns it to the Default field.

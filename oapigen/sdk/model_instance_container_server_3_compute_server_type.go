@@ -67,28 +67,9 @@ func (o *InstanceContainerServer3ComputeServerType) GetIdOk() (*int64, bool) {
 	return o.Id.Get(), o.Id.IsSet()
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *InstanceContainerServer3ComputeServerType) IsSetId() bool {
-	if o != nil && o.Id.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given NullableInt64 and assigns it to the Id field.
 func (o *InstanceContainerServer3ComputeServerType) SetId(v int64) {
 	o.Id.Set(&v)
-}
-
-// SetIdNil sets the value for Id to be an explicit nil
-func (o *InstanceContainerServer3ComputeServerType) SetIdNil() {
-	o.Id.Set(nil)
-}
-
-// UnsetId ensures that no value is present for Id, not even an explicit nil
-func (o *InstanceContainerServer3ComputeServerType) UnsetId() {
-	o.Id.Unset()
 }
 
 // GetCode returns the Code field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -110,28 +91,9 @@ func (o *InstanceContainerServer3ComputeServerType) GetCodeOk() (*string, bool) 
 	return o.Code.Get(), o.Code.IsSet()
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *InstanceContainerServer3ComputeServerType) IsSetCode() bool {
-	if o != nil && o.Code.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *InstanceContainerServer3ComputeServerType) SetCode(v string) {
 	o.Code.Set(&v)
-}
-
-// SetCodeNil sets the value for Code to be an explicit nil
-func (o *InstanceContainerServer3ComputeServerType) SetCodeNil() {
-	o.Code.Set(nil)
-}
-
-// UnsetCode ensures that no value is present for Code, not even an explicit nil
-func (o *InstanceContainerServer3ComputeServerType) UnsetCode() {
-	o.Code.Unset()
 }
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -153,28 +115,9 @@ func (o *InstanceContainerServer3ComputeServerType) GetNameOk() (*string, bool) 
 	return o.Name.Get(), o.Name.IsSet()
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *InstanceContainerServer3ComputeServerType) IsSetName() bool {
-	if o != nil && o.Name.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given NullableString and assigns it to the Name field.
 func (o *InstanceContainerServer3ComputeServerType) SetName(v string) {
 	o.Name.Set(&v)
-}
-
-// SetNameNil sets the value for Name to be an explicit nil
-func (o *InstanceContainerServer3ComputeServerType) SetNameNil() {
-	o.Name.Set(nil)
-}
-
-// UnsetName ensures that no value is present for Name, not even an explicit nil
-func (o *InstanceContainerServer3ComputeServerType) UnsetName() {
-	o.Name.Unset()
 }
 
 // GetManaged returns the Managed field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -196,28 +139,9 @@ func (o *InstanceContainerServer3ComputeServerType) GetManagedOk() (*bool, bool)
 	return o.Managed.Get(), o.Managed.IsSet()
 }
 
-// IsSetManaged returns a boolean if a field has been set.
-func (o *InstanceContainerServer3ComputeServerType) IsSetManaged() bool {
-	if o != nil && o.Managed.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetManaged gets a reference to the given NullableBool and assigns it to the Managed field.
 func (o *InstanceContainerServer3ComputeServerType) SetManaged(v bool) {
 	o.Managed.Set(&v)
-}
-
-// SetManagedNil sets the value for Managed to be an explicit nil
-func (o *InstanceContainerServer3ComputeServerType) SetManagedNil() {
-	o.Managed.Set(nil)
-}
-
-// UnsetManaged ensures that no value is present for Managed, not even an explicit nil
-func (o *InstanceContainerServer3ComputeServerType) UnsetManaged() {
-	o.Managed.Unset()
 }
 
 // GetExternalDelete returns the ExternalDelete field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -239,28 +163,9 @@ func (o *InstanceContainerServer3ComputeServerType) GetExternalDeleteOk() (*bool
 	return o.ExternalDelete.Get(), o.ExternalDelete.IsSet()
 }
 
-// IsSetExternalDelete returns a boolean if a field has been set.
-func (o *InstanceContainerServer3ComputeServerType) IsSetExternalDelete() bool {
-	if o != nil && o.ExternalDelete.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalDelete gets a reference to the given NullableBool and assigns it to the ExternalDelete field.
 func (o *InstanceContainerServer3ComputeServerType) SetExternalDelete(v bool) {
 	o.ExternalDelete.Set(&v)
-}
-
-// SetExternalDeleteNil sets the value for ExternalDelete to be an explicit nil
-func (o *InstanceContainerServer3ComputeServerType) SetExternalDeleteNil() {
-	o.ExternalDelete.Set(nil)
-}
-
-// UnsetExternalDelete ensures that no value is present for ExternalDelete, not even an explicit nil
-func (o *InstanceContainerServer3ComputeServerType) UnsetExternalDelete() {
-	o.ExternalDelete.Unset()
 }
 
 // GetFormat returns the Format field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -282,28 +187,9 @@ func (o *InstanceContainerServer3ComputeServerType) GetFormatOk() (*string, bool
 	return o.Format.Get(), o.Format.IsSet()
 }
 
-// IsSetFormat returns a boolean if a field has been set.
-func (o *InstanceContainerServer3ComputeServerType) IsSetFormat() bool {
-	if o != nil && o.Format.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFormat gets a reference to the given NullableString and assigns it to the Format field.
 func (o *InstanceContainerServer3ComputeServerType) SetFormat(v string) {
 	o.Format.Set(&v)
-}
-
-// SetFormatNil sets the value for Format to be an explicit nil
-func (o *InstanceContainerServer3ComputeServerType) SetFormatNil() {
-	o.Format.Set(nil)
-}
-
-// UnsetFormat ensures that no value is present for Format, not even an explicit nil
-func (o *InstanceContainerServer3ComputeServerType) UnsetFormat() {
-	o.Format.Unset()
 }
 
 func (o InstanceContainerServer3ComputeServerType) MarshalJSON() ([]byte, error) {

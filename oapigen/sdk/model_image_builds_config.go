@@ -67,15 +67,6 @@ func (o *ImageBuildsConfig) GetInstanceOk() (*ImageBuildsConfigInstance, bool) {
 	return o.Instance, true
 }
 
-// IsSetInstance returns a boolean if a field has been set.
-func (o *ImageBuildsConfig) IsSetInstance() bool {
-	if o != nil && !IsNil(o.Instance) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstance gets a reference to the given ImageBuildsConfigInstance and assigns it to the Instance field.
 func (o *ImageBuildsConfig) SetInstance(v ImageBuildsConfigInstance) {
 	o.Instance = &v
@@ -97,15 +88,6 @@ func (o *ImageBuildsConfig) GetNetworkInterfacesOk() ([]ImageBuildsConfigNetwork
 		return nil, false
 	}
 	return o.NetworkInterfaces, true
-}
-
-// IsSetNetworkInterfaces returns a boolean if a field has been set.
-func (o *ImageBuildsConfig) IsSetNetworkInterfaces() bool {
-	if o != nil && !IsNil(o.NetworkInterfaces) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkInterfaces gets a reference to the given []ImageBuildsConfigNetworkInterfacesInner and assigns it to the NetworkInterfaces field.
@@ -131,15 +113,6 @@ func (o *ImageBuildsConfig) GetVolumesOk() ([]ImageBuildsConfigVolumesInner, boo
 	return o.Volumes, true
 }
 
-// IsSetVolumes returns a boolean if a field has been set.
-func (o *ImageBuildsConfig) IsSetVolumes() bool {
-	if o != nil && !IsNil(o.Volumes) {
-		return true
-	}
-
-	return false
-}
-
 // SetVolumes gets a reference to the given []ImageBuildsConfigVolumesInner and assigns it to the Volumes field.
 func (o *ImageBuildsConfig) SetVolumes(v []ImageBuildsConfigVolumesInner) {
 	o.Volumes = v
@@ -161,15 +134,6 @@ func (o *ImageBuildsConfig) GetStorageControllersOk() ([]map[string]interface{},
 		return nil, false
 	}
 	return o.StorageControllers, true
-}
-
-// IsSetStorageControllers returns a boolean if a field has been set.
-func (o *ImageBuildsConfig) IsSetStorageControllers() bool {
-	if o != nil && !IsNil(o.StorageControllers) {
-		return true
-	}
-
-	return false
 }
 
 // SetStorageControllers gets a reference to the given []map[string]interface{} and assigns it to the StorageControllers field.
@@ -195,15 +159,6 @@ func (o *ImageBuildsConfig) GetZoneIdOk() (*int64, bool) {
 	return o.ZoneId, true
 }
 
-// IsSetZoneId returns a boolean if a field has been set.
-func (o *ImageBuildsConfig) IsSetZoneId() bool {
-	if o != nil && !IsNil(o.ZoneId) {
-		return true
-	}
-
-	return false
-}
-
 // SetZoneId gets a reference to the given int64 and assigns it to the ZoneId field.
 func (o *ImageBuildsConfig) SetZoneId(v int64) {
 	o.ZoneId = &v
@@ -227,15 +182,6 @@ func (o *ImageBuildsConfig) GetConfigOk() (*ImageBuildsConfigConfig, bool) {
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *ImageBuildsConfig) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given ImageBuildsConfigConfig and assigns it to the Config field.
 func (o *ImageBuildsConfig) SetConfig(v ImageBuildsConfigConfig) {
 	o.Config = &v
@@ -257,15 +203,6 @@ func (o *ImageBuildsConfig) GetPlanOk() (*ImageBuildsConfigPlan, bool) {
 		return nil, false
 	}
 	return o.Plan, true
-}
-
-// IsSetPlan returns a boolean if a field has been set.
-func (o *ImageBuildsConfig) IsSetPlan() bool {
-	if o != nil && !IsNil(o.Plan) {
-		return true
-	}
-
-	return false
 }
 
 // SetPlan gets a reference to the given ImageBuildsConfigPlan and assigns it to the Plan field.

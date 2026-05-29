@@ -82,15 +82,6 @@ func (o *ListClusterJobs200ResponseAllOfJobsInner) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListClusterJobs200ResponseAllOfJobsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListClusterJobs200ResponseAllOfJobsInner) SetId(v int64) {
 	o.Id = &v
@@ -112,15 +103,6 @@ func (o *ListClusterJobs200ResponseAllOfJobsInner) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListClusterJobs200ResponseAllOfJobsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -146,15 +128,6 @@ func (o *ListClusterJobs200ResponseAllOfJobsInner) GetLabelsOk() ([]string, bool
 	return o.Labels, true
 }
 
-// IsSetLabels returns a boolean if a field has been set.
-func (o *ListClusterJobs200ResponseAllOfJobsInner) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
-}
-
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
 func (o *ListClusterJobs200ResponseAllOfJobsInner) SetLabels(v []string) {
 	o.Labels = v
@@ -176,15 +149,6 @@ func (o *ListClusterJobs200ResponseAllOfJobsInner) GetTypeOk() (*ListClusterJobs
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *ListClusterJobs200ResponseAllOfJobsInner) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given ListClusterJobs200ResponseAllOfJobsInnerType and assigns it to the Type field.
@@ -211,28 +175,9 @@ func (o *ListClusterJobs200ResponseAllOfJobsInner) GetJobSummaryOk() (*string, b
 	return o.JobSummary.Get(), o.JobSummary.IsSet()
 }
 
-// IsSetJobSummary returns a boolean if a field has been set.
-func (o *ListClusterJobs200ResponseAllOfJobsInner) IsSetJobSummary() bool {
-	if o != nil && o.JobSummary.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetJobSummary gets a reference to the given NullableString and assigns it to the JobSummary field.
 func (o *ListClusterJobs200ResponseAllOfJobsInner) SetJobSummary(v string) {
 	o.JobSummary.Set(&v)
-}
-
-// SetJobSummaryNil sets the value for JobSummary to be an explicit nil
-func (o *ListClusterJobs200ResponseAllOfJobsInner) SetJobSummaryNil() {
-	o.JobSummary.Set(nil)
-}
-
-// UnsetJobSummary ensures that no value is present for JobSummary, not even an explicit nil
-func (o *ListClusterJobs200ResponseAllOfJobsInner) UnsetJobSummary() {
-	o.JobSummary.Unset()
 }
 
 // GetScheduleMode returns the ScheduleMode field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -254,28 +199,9 @@ func (o *ListClusterJobs200ResponseAllOfJobsInner) GetScheduleModeOk() (*string,
 	return o.ScheduleMode.Get(), o.ScheduleMode.IsSet()
 }
 
-// IsSetScheduleMode returns a boolean if a field has been set.
-func (o *ListClusterJobs200ResponseAllOfJobsInner) IsSetScheduleMode() bool {
-	if o != nil && o.ScheduleMode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetScheduleMode gets a reference to the given NullableString and assigns it to the ScheduleMode field.
 func (o *ListClusterJobs200ResponseAllOfJobsInner) SetScheduleMode(v string) {
 	o.ScheduleMode.Set(&v)
-}
-
-// SetScheduleModeNil sets the value for ScheduleMode to be an explicit nil
-func (o *ListClusterJobs200ResponseAllOfJobsInner) SetScheduleModeNil() {
-	o.ScheduleMode.Set(nil)
-}
-
-// UnsetScheduleMode ensures that no value is present for ScheduleMode, not even an explicit nil
-func (o *ListClusterJobs200ResponseAllOfJobsInner) UnsetScheduleMode() {
-	o.ScheduleMode.Unset()
 }
 
 // GetDateTime returns the DateTime field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -297,28 +223,9 @@ func (o *ListClusterJobs200ResponseAllOfJobsInner) GetDateTimeOk() (*time.Time, 
 	return o.DateTime.Get(), o.DateTime.IsSet()
 }
 
-// IsSetDateTime returns a boolean if a field has been set.
-func (o *ListClusterJobs200ResponseAllOfJobsInner) IsSetDateTime() bool {
-	if o != nil && o.DateTime.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDateTime gets a reference to the given NullableTime and assigns it to the DateTime field.
 func (o *ListClusterJobs200ResponseAllOfJobsInner) SetDateTime(v time.Time) {
 	o.DateTime.Set(&v)
-}
-
-// SetDateTimeNil sets the value for DateTime to be an explicit nil
-func (o *ListClusterJobs200ResponseAllOfJobsInner) SetDateTimeNil() {
-	o.DateTime.Set(nil)
-}
-
-// UnsetDateTime ensures that no value is present for DateTime, not even an explicit nil
-func (o *ListClusterJobs200ResponseAllOfJobsInner) UnsetDateTime() {
-	o.DateTime.Unset()
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -340,28 +247,9 @@ func (o *ListClusterJobs200ResponseAllOfJobsInner) GetStatusOk() (*string, bool)
 	return o.Status.Get(), o.Status.IsSet()
 }
 
-// IsSetStatus returns a boolean if a field has been set.
-func (o *ListClusterJobs200ResponseAllOfJobsInner) IsSetStatus() bool {
-	if o != nil && o.Status.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatus gets a reference to the given NullableString and assigns it to the Status field.
 func (o *ListClusterJobs200ResponseAllOfJobsInner) SetStatus(v string) {
 	o.Status.Set(&v)
-}
-
-// SetStatusNil sets the value for Status to be an explicit nil
-func (o *ListClusterJobs200ResponseAllOfJobsInner) SetStatusNil() {
-	o.Status.Set(nil)
-}
-
-// UnsetStatus ensures that no value is present for Status, not even an explicit nil
-func (o *ListClusterJobs200ResponseAllOfJobsInner) UnsetStatus() {
-	o.Status.Unset()
 }
 
 // GetNamespace returns the Namespace field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -383,28 +271,9 @@ func (o *ListClusterJobs200ResponseAllOfJobsInner) GetNamespaceOk() (*string, bo
 	return o.Namespace.Get(), o.Namespace.IsSet()
 }
 
-// IsSetNamespace returns a boolean if a field has been set.
-func (o *ListClusterJobs200ResponseAllOfJobsInner) IsSetNamespace() bool {
-	if o != nil && o.Namespace.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNamespace gets a reference to the given NullableString and assigns it to the Namespace field.
 func (o *ListClusterJobs200ResponseAllOfJobsInner) SetNamespace(v string) {
 	o.Namespace.Set(&v)
-}
-
-// SetNamespaceNil sets the value for Namespace to be an explicit nil
-func (o *ListClusterJobs200ResponseAllOfJobsInner) SetNamespaceNil() {
-	o.Namespace.Set(nil)
-}
-
-// UnsetNamespace ensures that no value is present for Namespace, not even an explicit nil
-func (o *ListClusterJobs200ResponseAllOfJobsInner) UnsetNamespace() {
-	o.Namespace.Unset()
 }
 
 // GetCategory returns the Category field value if set, zero value otherwise.
@@ -423,15 +292,6 @@ func (o *ListClusterJobs200ResponseAllOfJobsInner) GetCategoryOk() (*string, boo
 		return nil, false
 	}
 	return o.Category, true
-}
-
-// IsSetCategory returns a boolean if a field has been set.
-func (o *ListClusterJobs200ResponseAllOfJobsInner) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
-		return true
-	}
-
-	return false
 }
 
 // SetCategory gets a reference to the given string and assigns it to the Category field.
@@ -458,28 +318,9 @@ func (o *ListClusterJobs200ResponseAllOfJobsInner) GetDescriptionOk() (*string, 
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ListClusterJobs200ResponseAllOfJobsInner) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListClusterJobs200ResponseAllOfJobsInner) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *ListClusterJobs200ResponseAllOfJobsInner) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *ListClusterJobs200ResponseAllOfJobsInner) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
@@ -498,15 +339,6 @@ func (o *ListClusterJobs200ResponseAllOfJobsInner) GetEnabledOk() (*bool, bool) 
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *ListClusterJobs200ResponseAllOfJobsInner) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -532,15 +364,6 @@ func (o *ListClusterJobs200ResponseAllOfJobsInner) GetDateCreatedOk() (*time.Tim
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *ListClusterJobs200ResponseAllOfJobsInner) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *ListClusterJobs200ResponseAllOfJobsInner) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -562,15 +385,6 @@ func (o *ListClusterJobs200ResponseAllOfJobsInner) GetLastUpdatedOk() (*time.Tim
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *ListClusterJobs200ResponseAllOfJobsInner) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
@@ -597,28 +411,9 @@ func (o *ListClusterJobs200ResponseAllOfJobsInner) GetLastRunOk() (*time.Time, b
 	return o.LastRun.Get(), o.LastRun.IsSet()
 }
 
-// IsSetLastRun returns a boolean if a field has been set.
-func (o *ListClusterJobs200ResponseAllOfJobsInner) IsSetLastRun() bool {
-	if o != nil && o.LastRun.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastRun gets a reference to the given NullableTime and assigns it to the LastRun field.
 func (o *ListClusterJobs200ResponseAllOfJobsInner) SetLastRun(v time.Time) {
 	o.LastRun.Set(&v)
-}
-
-// SetLastRunNil sets the value for LastRun to be an explicit nil
-func (o *ListClusterJobs200ResponseAllOfJobsInner) SetLastRunNil() {
-	o.LastRun.Set(nil)
-}
-
-// UnsetLastRun ensures that no value is present for LastRun, not even an explicit nil
-func (o *ListClusterJobs200ResponseAllOfJobsInner) UnsetLastRun() {
-	o.LastRun.Unset()
 }
 
 // GetLastResult returns the LastResult field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -640,28 +435,9 @@ func (o *ListClusterJobs200ResponseAllOfJobsInner) GetLastResultOk() (*string, b
 	return o.LastResult.Get(), o.LastResult.IsSet()
 }
 
-// IsSetLastResult returns a boolean if a field has been set.
-func (o *ListClusterJobs200ResponseAllOfJobsInner) IsSetLastResult() bool {
-	if o != nil && o.LastResult.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastResult gets a reference to the given NullableString and assigns it to the LastResult field.
 func (o *ListClusterJobs200ResponseAllOfJobsInner) SetLastResult(v string) {
 	o.LastResult.Set(&v)
-}
-
-// SetLastResultNil sets the value for LastResult to be an explicit nil
-func (o *ListClusterJobs200ResponseAllOfJobsInner) SetLastResultNil() {
-	o.LastResult.Set(nil)
-}
-
-// UnsetLastResult ensures that no value is present for LastResult, not even an explicit nil
-func (o *ListClusterJobs200ResponseAllOfJobsInner) UnsetLastResult() {
-	o.LastResult.Unset()
 }
 
 // GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
@@ -680,15 +456,6 @@ func (o *ListClusterJobs200ResponseAllOfJobsInner) GetCreatedByOk() (*ListCluste
 		return nil, false
 	}
 	return o.CreatedBy, true
-}
-
-// IsSetCreatedBy returns a boolean if a field has been set.
-func (o *ListClusterJobs200ResponseAllOfJobsInner) IsSetCreatedBy() bool {
-	if o != nil && !IsNil(o.CreatedBy) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreatedBy gets a reference to the given ListClusterJobs200ResponseAllOfJobsInnerCreatedBy and assigns it to the CreatedBy field.
@@ -715,28 +482,9 @@ func (o *ListClusterJobs200ResponseAllOfJobsInner) GetTargetTypeOk() (*string, b
 	return o.TargetType.Get(), o.TargetType.IsSet()
 }
 
-// IsSetTargetType returns a boolean if a field has been set.
-func (o *ListClusterJobs200ResponseAllOfJobsInner) IsSetTargetType() bool {
-	if o != nil && o.TargetType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetTargetType gets a reference to the given NullableString and assigns it to the TargetType field.
 func (o *ListClusterJobs200ResponseAllOfJobsInner) SetTargetType(v string) {
 	o.TargetType.Set(&v)
-}
-
-// SetTargetTypeNil sets the value for TargetType to be an explicit nil
-func (o *ListClusterJobs200ResponseAllOfJobsInner) SetTargetTypeNil() {
-	o.TargetType.Set(nil)
-}
-
-// UnsetTargetType ensures that no value is present for TargetType, not even an explicit nil
-func (o *ListClusterJobs200ResponseAllOfJobsInner) UnsetTargetType() {
-	o.TargetType.Unset()
 }
 
 // GetTargets returns the Targets field value if set, zero value otherwise.
@@ -755,15 +503,6 @@ func (o *ListClusterJobs200ResponseAllOfJobsInner) GetTargetsOk() ([]map[string]
 		return nil, false
 	}
 	return o.Targets, true
-}
-
-// IsSetTargets returns a boolean if a field has been set.
-func (o *ListClusterJobs200ResponseAllOfJobsInner) IsSetTargets() bool {
-	if o != nil && !IsNil(o.Targets) {
-		return true
-	}
-
-	return false
 }
 
 // SetTargets gets a reference to the given []map[string]interface{} and assigns it to the Targets field.
@@ -790,15 +529,6 @@ func (o *ListClusterJobs200ResponseAllOfJobsInner) GetCustomConfigOk() (map[stri
 	return o.CustomConfig, true
 }
 
-// IsSetCustomConfig returns a boolean if a field has been set.
-func (o *ListClusterJobs200ResponseAllOfJobsInner) IsSetCustomConfig() bool {
-	if o != nil && !IsNil(o.CustomConfig) {
-		return true
-	}
-
-	return false
-}
-
 // SetCustomConfig gets a reference to the given map[string]interface{} and assigns it to the CustomConfig field.
 func (o *ListClusterJobs200ResponseAllOfJobsInner) SetCustomConfig(v map[string]interface{}) {
 	o.CustomConfig = v
@@ -821,15 +551,6 @@ func (o *ListClusterJobs200ResponseAllOfJobsInner) GetCustomOptionsOk() (map[str
 		return map[string]interface{}{}, false
 	}
 	return o.CustomOptions, true
-}
-
-// IsSetCustomOptions returns a boolean if a field has been set.
-func (o *ListClusterJobs200ResponseAllOfJobsInner) IsSetCustomOptions() bool {
-	if o != nil && !IsNil(o.CustomOptions) {
-		return true
-	}
-
-	return false
 }
 
 // SetCustomOptions gets a reference to the given map[string]interface{} and assigns it to the CustomOptions field.

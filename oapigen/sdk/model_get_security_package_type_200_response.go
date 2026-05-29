@@ -61,15 +61,6 @@ func (o *GetSecurityPackageType200Response) GetSecurityPackageTypeOk() (*GetSecu
 	return o.SecurityPackageType, true
 }
 
-// IsSetSecurityPackageType returns a boolean if a field has been set.
-func (o *GetSecurityPackageType200Response) IsSetSecurityPackageType() bool {
-	if o != nil && !IsNil(o.SecurityPackageType) {
-		return true
-	}
-
-	return false
-}
-
 // SetSecurityPackageType gets a reference to the given GetSecurityPackageType200ResponseSecurityPackageType and assigns it to the SecurityPackageType field.
 func (o *GetSecurityPackageType200Response) SetSecurityPackageType(v GetSecurityPackageType200ResponseSecurityPackageType) {
 	o.SecurityPackageType = &v

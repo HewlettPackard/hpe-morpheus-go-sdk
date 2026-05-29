@@ -113,15 +113,6 @@ func (o *TaskJobPayload) GetLabelsOk() ([]string, bool) {
 	return o.Labels, true
 }
 
-// IsSetLabels returns a boolean if a field has been set.
-func (o *TaskJobPayload) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
-}
-
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
 func (o *TaskJobPayload) SetLabels(v []string) {
 	o.Labels = v
@@ -143,15 +134,6 @@ func (o *TaskJobPayload) GetEnabledOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *TaskJobPayload) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -226,15 +208,6 @@ func (o *TaskJobPayload) GetTargetsOk() ([]TaskJobPayloadTargetsInner, bool) {
 	return o.Targets, true
 }
 
-// IsSetTargets returns a boolean if a field has been set.
-func (o *TaskJobPayload) IsSetTargets() bool {
-	if o != nil && !IsNil(o.Targets) {
-		return true
-	}
-
-	return false
-}
-
 // SetTargets gets a reference to the given []TaskJobPayloadTargetsInner and assigns it to the Targets field.
 func (o *TaskJobPayload) SetTargets(v []TaskJobPayloadTargetsInner) {
 	o.Targets = v
@@ -282,15 +255,6 @@ func (o *TaskJobPayload) GetCustomOptionsOk() (map[string]interface{}, bool) {
 	return o.CustomOptions, true
 }
 
-// IsSetCustomOptions returns a boolean if a field has been set.
-func (o *TaskJobPayload) IsSetCustomOptions() bool {
-	if o != nil && !IsNil(o.CustomOptions) {
-		return true
-	}
-
-	return false
-}
-
 // SetCustomOptions gets a reference to the given map[string]interface{} and assigns it to the CustomOptions field.
 func (o *TaskJobPayload) SetCustomOptions(v map[string]interface{}) {
 	o.CustomOptions = v
@@ -312,15 +276,6 @@ func (o *TaskJobPayload) GetCustomConfigOk() (*string, bool) {
 		return nil, false
 	}
 	return o.CustomConfig, true
-}
-
-// IsSetCustomConfig returns a boolean if a field has been set.
-func (o *TaskJobPayload) IsSetCustomConfig() bool {
-	if o != nil && !IsNil(o.CustomConfig) {
-		return true
-	}
-
-	return false
 }
 
 // SetCustomConfig gets a reference to the given string and assigns it to the CustomConfig field.
@@ -346,15 +301,6 @@ func (o *TaskJobPayload) GetDateTimeOk() (*time.Time, bool) {
 	return o.DateTime, true
 }
 
-// IsSetDateTime returns a boolean if a field has been set.
-func (o *TaskJobPayload) IsSetDateTime() bool {
-	if o != nil && !IsNil(o.DateTime) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateTime gets a reference to the given time.Time and assigns it to the DateTime field.
 func (o *TaskJobPayload) SetDateTime(v time.Time) {
 	o.DateTime = &v
@@ -376,15 +322,6 @@ func (o *TaskJobPayload) GetRunOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Run, true
-}
-
-// IsSetRun returns a boolean if a field has been set.
-func (o *TaskJobPayload) IsSetRun() bool {
-	if o != nil && !IsNil(o.Run) {
-		return true
-	}
-
-	return false
 }
 
 // SetRun gets a reference to the given bool and assigns it to the Run field.

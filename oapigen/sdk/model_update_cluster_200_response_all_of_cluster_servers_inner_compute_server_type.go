@@ -63,15 +63,6 @@ func (o *UpdateCluster200ResponseAllOfClusterServersInnerComputeServerType) GetI
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *UpdateCluster200ResponseAllOfClusterServersInnerComputeServerType) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *UpdateCluster200ResponseAllOfClusterServersInnerComputeServerType) SetId(v int64) {
 	o.Id = &v
@@ -95,15 +86,6 @@ func (o *UpdateCluster200ResponseAllOfClusterServersInnerComputeServerType) GetC
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *UpdateCluster200ResponseAllOfClusterServersInnerComputeServerType) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *UpdateCluster200ResponseAllOfClusterServersInnerComputeServerType) SetCode(v string) {
 	o.Code = &v
@@ -125,15 +107,6 @@ func (o *UpdateCluster200ResponseAllOfClusterServersInnerComputeServerType) GetN
 		return nil, false
 	}
 	return o.NodeType, true
-}
-
-// IsSetNodeType returns a boolean if a field has been set.
-func (o *UpdateCluster200ResponseAllOfClusterServersInnerComputeServerType) IsSetNodeType() bool {
-	if o != nil && !IsNil(o.NodeType) {
-		return true
-	}
-
-	return false
 }
 
 // SetNodeType gets a reference to the given string and assigns it to the NodeType field.

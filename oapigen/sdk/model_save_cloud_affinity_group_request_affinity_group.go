@@ -78,15 +78,6 @@ func (o *SaveCloudAffinityGroupRequestAffinityGroup) GetNameOk() (*string, bool)
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *SaveCloudAffinityGroupRequestAffinityGroup) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *SaveCloudAffinityGroupRequestAffinityGroup) SetName(v string) {
 	o.Name = &v
@@ -108,15 +99,6 @@ func (o *SaveCloudAffinityGroupRequestAffinityGroup) GetAffinityTypeOk() (*strin
 		return nil, false
 	}
 	return o.AffinityType, true
-}
-
-// IsSetAffinityType returns a boolean if a field has been set.
-func (o *SaveCloudAffinityGroupRequestAffinityGroup) IsSetAffinityType() bool {
-	if o != nil && !IsNil(o.AffinityType) {
-		return true
-	}
-
-	return false
 }
 
 // SetAffinityType gets a reference to the given string and assigns it to the AffinityType field.
@@ -142,15 +124,6 @@ func (o *SaveCloudAffinityGroupRequestAffinityGroup) GetActiveOk() (*bool, bool)
 	return o.Active, true
 }
 
-// IsSetActive returns a boolean if a field has been set.
-func (o *SaveCloudAffinityGroupRequestAffinityGroup) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
-}
-
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *SaveCloudAffinityGroupRequestAffinityGroup) SetActive(v bool) {
 	o.Active = &v
@@ -172,15 +145,6 @@ func (o *SaveCloudAffinityGroupRequestAffinityGroup) GetPoolOk() (*SaveCloudAffi
 		return nil, false
 	}
 	return o.Pool, true
-}
-
-// IsSetPool returns a boolean if a field has been set.
-func (o *SaveCloudAffinityGroupRequestAffinityGroup) IsSetPool() bool {
-	if o != nil && !IsNil(o.Pool) {
-		return true
-	}
-
-	return false
 }
 
 // SetPool gets a reference to the given SaveCloudAffinityGroupRequestAffinityGroupPool and assigns it to the Pool field.
@@ -206,15 +170,6 @@ func (o *SaveCloudAffinityGroupRequestAffinityGroup) GetServersOk() ([]int32, bo
 	return o.Servers, true
 }
 
-// IsSetServers returns a boolean if a field has been set.
-func (o *SaveCloudAffinityGroupRequestAffinityGroup) IsSetServers() bool {
-	if o != nil && !IsNil(o.Servers) {
-		return true
-	}
-
-	return false
-}
-
 // SetServers gets a reference to the given []int32 and assigns it to the Servers field.
 func (o *SaveCloudAffinityGroupRequestAffinityGroup) SetServers(v []int32) {
 	o.Servers = v
@@ -236,15 +191,6 @@ func (o *SaveCloudAffinityGroupRequestAffinityGroup) GetVisibilityOk() (*string,
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *SaveCloudAffinityGroupRequestAffinityGroup) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -270,15 +216,6 @@ func (o *SaveCloudAffinityGroupRequestAffinityGroup) GetTenantsOk() ([]SaveCloud
 	return o.Tenants, true
 }
 
-// IsSetTenants returns a boolean if a field has been set.
-func (o *SaveCloudAffinityGroupRequestAffinityGroup) IsSetTenants() bool {
-	if o != nil && !IsNil(o.Tenants) {
-		return true
-	}
-
-	return false
-}
-
 // SetTenants gets a reference to the given []SaveCloudAffinityGroupRequestAffinityGroupTenantsInner and assigns it to the Tenants field.
 func (o *SaveCloudAffinityGroupRequestAffinityGroup) SetTenants(v []SaveCloudAffinityGroupRequestAffinityGroupTenantsInner) {
 	o.Tenants = v
@@ -300,15 +237,6 @@ func (o *SaveCloudAffinityGroupRequestAffinityGroup) GetResourcePermissionsOk() 
 		return nil, false
 	}
 	return o.ResourcePermissions, true
-}
-
-// IsSetResourcePermissions returns a boolean if a field has been set.
-func (o *SaveCloudAffinityGroupRequestAffinityGroup) IsSetResourcePermissions() bool {
-	if o != nil && !IsNil(o.ResourcePermissions) {
-		return true
-	}
-
-	return false
 }
 
 // SetResourcePermissions gets a reference to the given SaveCloudAffinityGroupRequestAffinityGroupResourcePermissions and assigns it to the ResourcePermissions field.

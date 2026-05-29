@@ -71,15 +71,6 @@ func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) GetAllGroupsOk()
 	return o.AllGroups, true
 }
 
-// IsSetAllGroups returns a boolean if a field has been set.
-func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) IsSetAllGroups() bool {
-	if o != nil && !IsNil(o.AllGroups) {
-		return true
-	}
-
-	return false
-}
-
 // SetAllGroups gets a reference to the given bool and assigns it to the AllGroups field.
 func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) SetAllGroups(v bool) {
 	o.AllGroups = &v
@@ -101,15 +92,6 @@ func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) GetDefaultStoreO
 		return nil, false
 	}
 	return o.DefaultStore, true
-}
-
-// IsSetDefaultStore returns a boolean if a field has been set.
-func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) IsSetDefaultStore() bool {
-	if o != nil && !IsNil(o.DefaultStore) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultStore gets a reference to the given bool and assigns it to the DefaultStore field.
@@ -135,15 +117,6 @@ func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) GetAllPlansOk() 
 	return o.AllPlans, true
 }
 
-// IsSetAllPlans returns a boolean if a field has been set.
-func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) IsSetAllPlans() bool {
-	if o != nil && !IsNil(o.AllPlans) {
-		return true
-	}
-
-	return false
-}
-
 // SetAllPlans gets a reference to the given bool and assigns it to the AllPlans field.
 func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) SetAllPlans(v bool) {
 	o.AllPlans = &v
@@ -165,15 +138,6 @@ func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) GetDefaultTarget
 		return nil, false
 	}
 	return o.DefaultTarget, true
-}
-
-// IsSetDefaultTarget returns a boolean if a field has been set.
-func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) IsSetDefaultTarget() bool {
-	if o != nil && !IsNil(o.DefaultTarget) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultTarget gets a reference to the given bool and assigns it to the DefaultTarget field.
@@ -199,15 +163,6 @@ func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) GetMorpheusResou
 	return o.MorpheusResourceType, true
 }
 
-// IsSetMorpheusResourceType returns a boolean if a field has been set.
-func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) IsSetMorpheusResourceType() bool {
-	if o != nil && !IsNil(o.MorpheusResourceType) {
-		return true
-	}
-
-	return false
-}
-
 // SetMorpheusResourceType gets a reference to the given string and assigns it to the MorpheusResourceType field.
 func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) SetMorpheusResourceType(v string) {
 	o.MorpheusResourceType = &v
@@ -229,15 +184,6 @@ func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) GetMorpheusResou
 		return nil, false
 	}
 	return o.MorpheusResourceId, true
-}
-
-// IsSetMorpheusResourceId returns a boolean if a field has been set.
-func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) IsSetMorpheusResourceId() bool {
-	if o != nil && !IsNil(o.MorpheusResourceId) {
-		return true
-	}
-
-	return false
 }
 
 // SetMorpheusResourceId gets a reference to the given int64 and assigns it to the MorpheusResourceId field.
@@ -263,15 +209,6 @@ func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) GetCanManageOk()
 	return o.CanManage, true
 }
 
-// IsSetCanManage returns a boolean if a field has been set.
-func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) IsSetCanManage() bool {
-	if o != nil && !IsNil(o.CanManage) {
-		return true
-	}
-
-	return false
-}
-
 // SetCanManage gets a reference to the given bool and assigns it to the CanManage field.
 func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) SetCanManage(v bool) {
 	o.CanManage = &v
@@ -295,15 +232,6 @@ func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) GetAllOk() (*boo
 	return o.All, true
 }
 
-// IsSetAll returns a boolean if a field has been set.
-func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) IsSetAll() bool {
-	if o != nil && !IsNil(o.All) {
-		return true
-	}
-
-	return false
-}
-
 // SetAll gets a reference to the given bool and assigns it to the All field.
 func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) SetAll(v bool) {
 	o.All = &v
@@ -325,15 +253,6 @@ func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) GetAccountOk() (
 		return nil, false
 	}
 	return o.Account, true
-}
-
-// IsSetAccount returns a boolean if a field has been set.
-func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccount gets a reference to the given SaveCloudDatastoreRequestDatastoreResourcePermissionsAccount and assigns it to the Account field.
@@ -360,15 +279,6 @@ func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) GetSitesOk() ([]
 	return o.Sites, true
 }
 
-// IsSetSites returns a boolean if a field has been set.
-func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) IsSetSites() bool {
-	if o != nil && !IsNil(o.Sites) {
-		return true
-	}
-
-	return false
-}
-
 // SetSites gets a reference to the given []map[string]interface{} and assigns it to the Sites field.
 func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) SetSites(v []map[string]interface{}) {
 	o.Sites = v
@@ -391,15 +301,6 @@ func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) GetPlansOk() ([]
 		return nil, false
 	}
 	return o.Plans, true
-}
-
-// IsSetPlans returns a boolean if a field has been set.
-func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) IsSetPlans() bool {
-	if o != nil && !IsNil(o.Plans) {
-		return true
-	}
-
-	return false
 }
 
 // SetPlans gets a reference to the given []map[string]interface{} and assigns it to the Plans field.

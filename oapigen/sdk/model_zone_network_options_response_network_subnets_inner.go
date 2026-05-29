@@ -66,15 +66,6 @@ func (o *ZoneNetworkOptionsResponseNetworkSubnetsInner) GetIdOk() (*string, bool
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ZoneNetworkOptionsResponseNetworkSubnetsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given string and assigns it to the Id field.
 func (o *ZoneNetworkOptionsResponseNetworkSubnetsInner) SetId(v string) {
 	o.Id = &v
@@ -96,15 +87,6 @@ func (o *ZoneNetworkOptionsResponseNetworkSubnetsInner) GetNameOk() (*string, bo
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ZoneNetworkOptionsResponseNetworkSubnetsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -130,15 +112,6 @@ func (o *ZoneNetworkOptionsResponseNetworkSubnetsInner) GetCodeOk() (*string, bo
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *ZoneNetworkOptionsResponseNetworkSubnetsInner) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *ZoneNetworkOptionsResponseNetworkSubnetsInner) SetCode(v string) {
 	o.Code = &v
@@ -160,15 +133,6 @@ func (o *ZoneNetworkOptionsResponseNetworkSubnetsInner) GetActiveOk() (*bool, bo
 		return nil, false
 	}
 	return o.Active, true
-}
-
-// IsSetActive returns a boolean if a field has been set.
-func (o *ZoneNetworkOptionsResponseNetworkSubnetsInner) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
 }
 
 // SetActive gets a reference to the given bool and assigns it to the Active field.
@@ -194,15 +158,6 @@ func (o *ZoneNetworkOptionsResponseNetworkSubnetsInner) GetDhcpServerOk() (*bool
 	return o.DhcpServer, true
 }
 
-// IsSetDhcpServer returns a boolean if a field has been set.
-func (o *ZoneNetworkOptionsResponseNetworkSubnetsInner) IsSetDhcpServer() bool {
-	if o != nil && !IsNil(o.DhcpServer) {
-		return true
-	}
-
-	return false
-}
-
 // SetDhcpServer gets a reference to the given bool and assigns it to the DhcpServer field.
 func (o *ZoneNetworkOptionsResponseNetworkSubnetsInner) SetDhcpServer(v bool) {
 	o.DhcpServer = &v
@@ -224,15 +179,6 @@ func (o *ZoneNetworkOptionsResponseNetworkSubnetsInner) GetAllowStaticOverrideOk
 		return nil, false
 	}
 	return o.AllowStaticOverride, true
-}
-
-// IsSetAllowStaticOverride returns a boolean if a field has been set.
-func (o *ZoneNetworkOptionsResponseNetworkSubnetsInner) IsSetAllowStaticOverride() bool {
-	if o != nil && !IsNil(o.AllowStaticOverride) {
-		return true
-	}
-
-	return false
 }
 
 // SetAllowStaticOverride gets a reference to the given bool and assigns it to the AllowStaticOverride field.

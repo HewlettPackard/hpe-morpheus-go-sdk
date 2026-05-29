@@ -64,15 +64,6 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Type) GetIdOk() (*in
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Type) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Type) SetId(v int64) {
 	o.Id = &v
@@ -94,15 +85,6 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Type) GetNameOk() (*
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Type) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -128,15 +110,6 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Type) GetCodeOk() (*
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Type) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Type) SetCode(v string) {
 	o.Code = &v
@@ -158,15 +131,6 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Type) GetTitleOk() (
 		return nil, false
 	}
 	return o.Title, true
-}
-
-// IsSetTitle returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Type) IsSetTitle() bool {
-	if o != nil && !IsNil(o.Title) {
-		return true
-	}
-
-	return false
 }
 
 // SetTitle gets a reference to the given string and assigns it to the Title field.

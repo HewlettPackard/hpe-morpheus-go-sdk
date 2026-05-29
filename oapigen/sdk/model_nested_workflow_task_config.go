@@ -89,15 +89,6 @@ func (o *NestedWorkflowTaskConfig) GetOperationalWorkflowNameOk() (*string, bool
 	return o.OperationalWorkflowName, true
 }
 
-// IsSetOperationalWorkflowName returns a boolean if a field has been set.
-func (o *NestedWorkflowTaskConfig) IsSetOperationalWorkflowName() bool {
-	if o != nil && !IsNil(o.OperationalWorkflowName) {
-		return true
-	}
-
-	return false
-}
-
 // SetOperationalWorkflowName gets a reference to the given string and assigns it to the OperationalWorkflowName field.
 func (o *NestedWorkflowTaskConfig) SetOperationalWorkflowName(v string) {
 	o.OperationalWorkflowName = &v

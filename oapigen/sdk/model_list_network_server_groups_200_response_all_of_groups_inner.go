@@ -72,15 +72,6 @@ func (o *ListNetworkServerGroups200ResponseAllOfGroupsInner) GetIdOk() (*int64, 
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListNetworkServerGroups200ResponseAllOfGroupsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListNetworkServerGroups200ResponseAllOfGroupsInner) SetId(v int64) {
 	o.Id = &v
@@ -102,15 +93,6 @@ func (o *ListNetworkServerGroups200ResponseAllOfGroupsInner) GetNameOk() (*strin
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListNetworkServerGroups200ResponseAllOfGroupsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -137,28 +119,9 @@ func (o *ListNetworkServerGroups200ResponseAllOfGroupsInner) GetDescriptionOk() 
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ListNetworkServerGroups200ResponseAllOfGroupsInner) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListNetworkServerGroups200ResponseAllOfGroupsInner) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *ListNetworkServerGroups200ResponseAllOfGroupsInner) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *ListNetworkServerGroups200ResponseAllOfGroupsInner) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetInternalId returns the InternalId field value if set, zero value otherwise.
@@ -177,15 +140,6 @@ func (o *ListNetworkServerGroups200ResponseAllOfGroupsInner) GetInternalIdOk() (
 		return nil, false
 	}
 	return o.InternalId, true
-}
-
-// IsSetInternalId returns a boolean if a field has been set.
-func (o *ListNetworkServerGroups200ResponseAllOfGroupsInner) IsSetInternalId() bool {
-	if o != nil && !IsNil(o.InternalId) {
-		return true
-	}
-
-	return false
 }
 
 // SetInternalId gets a reference to the given string and assigns it to the InternalId field.
@@ -211,15 +165,6 @@ func (o *ListNetworkServerGroups200ResponseAllOfGroupsInner) GetExternalIdOk() (
 	return o.ExternalId, true
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *ListNetworkServerGroups200ResponseAllOfGroupsInner) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
 func (o *ListNetworkServerGroups200ResponseAllOfGroupsInner) SetExternalId(v string) {
 	o.ExternalId = &v
@@ -241,15 +186,6 @@ func (o *ListNetworkServerGroups200ResponseAllOfGroupsInner) GetVisibilityOk() (
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *ListNetworkServerGroups200ResponseAllOfGroupsInner) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -275,15 +211,6 @@ func (o *ListNetworkServerGroups200ResponseAllOfGroupsInner) GetAccountOk() (*Li
 	return o.Account, true
 }
 
-// IsSetAccount returns a boolean if a field has been set.
-func (o *ListNetworkServerGroups200ResponseAllOfGroupsInner) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccount gets a reference to the given ListNetworkServerGroups200ResponseAllOfGroupsInnerAccount and assigns it to the Account field.
 func (o *ListNetworkServerGroups200ResponseAllOfGroupsInner) SetAccount(v ListNetworkServerGroups200ResponseAllOfGroupsInnerAccount) {
 	o.Account = &v
@@ -305,15 +232,6 @@ func (o *ListNetworkServerGroups200ResponseAllOfGroupsInner) GetOwnerOk() (*List
 		return nil, false
 	}
 	return o.Owner, true
-}
-
-// IsSetOwner returns a boolean if a field has been set.
-func (o *ListNetworkServerGroups200ResponseAllOfGroupsInner) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
-		return true
-	}
-
-	return false
 }
 
 // SetOwner gets a reference to the given ListNetworkServerGroups200ResponseAllOfGroupsInnerOwner and assigns it to the Owner field.
@@ -339,15 +257,6 @@ func (o *ListNetworkServerGroups200ResponseAllOfGroupsInner) GetNetworkServerOk(
 	return o.NetworkServer, true
 }
 
-// IsSetNetworkServer returns a boolean if a field has been set.
-func (o *ListNetworkServerGroups200ResponseAllOfGroupsInner) IsSetNetworkServer() bool {
-	if o != nil && !IsNil(o.NetworkServer) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkServer gets a reference to the given ListNetworkServerGroups200ResponseAllOfGroupsInnerNetworkServer and assigns it to the NetworkServer field.
 func (o *ListNetworkServerGroups200ResponseAllOfGroupsInner) SetNetworkServer(v ListNetworkServerGroups200ResponseAllOfGroupsInnerNetworkServer) {
 	o.NetworkServer = &v
@@ -369,15 +278,6 @@ func (o *ListNetworkServerGroups200ResponseAllOfGroupsInner) GetPermissionsOk() 
 		return nil, false
 	}
 	return o.Permissions, true
-}
-
-// IsSetPermissions returns a boolean if a field has been set.
-func (o *ListNetworkServerGroups200ResponseAllOfGroupsInner) IsSetPermissions() bool {
-	if o != nil && !IsNil(o.Permissions) {
-		return true
-	}
-
-	return false
 }
 
 // SetPermissions gets a reference to the given ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions and assigns it to the Permissions field.
@@ -403,15 +303,6 @@ func (o *ListNetworkServerGroups200ResponseAllOfGroupsInner) GetTagsOk() ([]List
 	return o.Tags, true
 }
 
-// IsSetTags returns a boolean if a field has been set.
-func (o *ListNetworkServerGroups200ResponseAllOfGroupsInner) IsSetTags() bool {
-	if o != nil && !IsNil(o.Tags) {
-		return true
-	}
-
-	return false
-}
-
 // SetTags gets a reference to the given []ListNetworkServerGroups200ResponseAllOfGroupsInnerTagsInner and assigns it to the Tags field.
 func (o *ListNetworkServerGroups200ResponseAllOfGroupsInner) SetTags(v []ListNetworkServerGroups200ResponseAllOfGroupsInnerTagsInner) {
 	o.Tags = v
@@ -433,15 +324,6 @@ func (o *ListNetworkServerGroups200ResponseAllOfGroupsInner) GetMembersOk() ([]L
 		return nil, false
 	}
 	return o.Members, true
-}
-
-// IsSetMembers returns a boolean if a field has been set.
-func (o *ListNetworkServerGroups200ResponseAllOfGroupsInner) IsSetMembers() bool {
-	if o != nil && !IsNil(o.Members) {
-		return true
-	}
-
-	return false
 }
 
 // SetMembers gets a reference to the given []ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner and assigns it to the Members field.

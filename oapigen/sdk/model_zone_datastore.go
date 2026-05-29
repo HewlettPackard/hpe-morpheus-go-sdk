@@ -70,15 +70,6 @@ func (o *ZoneDatastore) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ZoneDatastore) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ZoneDatastore) SetId(v int64) {
 	o.Id = &v
@@ -100,15 +91,6 @@ func (o *ZoneDatastore) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ZoneDatastore) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -134,15 +116,6 @@ func (o *ZoneDatastore) GetZoneOk() (*GetCloudDatastores200ResponseAllOfDatastor
 	return o.Zone, true
 }
 
-// IsSetZone returns a boolean if a field has been set.
-func (o *ZoneDatastore) IsSetZone() bool {
-	if o != nil && !IsNil(o.Zone) {
-		return true
-	}
-
-	return false
-}
-
 // SetZone gets a reference to the given GetCloudDatastores200ResponseAllOfDatastoreZone and assigns it to the Zone field.
 func (o *ZoneDatastore) SetZone(v GetCloudDatastores200ResponseAllOfDatastoreZone) {
 	o.Zone = &v
@@ -164,15 +137,6 @@ func (o *ZoneDatastore) GetTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *ZoneDatastore) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.
@@ -198,15 +162,6 @@ func (o *ZoneDatastore) GetFreeSpaceOk() (*int64, bool) {
 	return o.FreeSpace, true
 }
 
-// IsSetFreeSpace returns a boolean if a field has been set.
-func (o *ZoneDatastore) IsSetFreeSpace() bool {
-	if o != nil && !IsNil(o.FreeSpace) {
-		return true
-	}
-
-	return false
-}
-
 // SetFreeSpace gets a reference to the given int64 and assigns it to the FreeSpace field.
 func (o *ZoneDatastore) SetFreeSpace(v int64) {
 	o.FreeSpace = &v
@@ -228,15 +183,6 @@ func (o *ZoneDatastore) GetOnlineOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Online, true
-}
-
-// IsSetOnline returns a boolean if a field has been set.
-func (o *ZoneDatastore) IsSetOnline() bool {
-	if o != nil && !IsNil(o.Online) {
-		return true
-	}
-
-	return false
 }
 
 // SetOnline gets a reference to the given bool and assigns it to the Online field.
@@ -262,15 +208,6 @@ func (o *ZoneDatastore) GetActiveOk() (*bool, bool) {
 	return o.Active, true
 }
 
-// IsSetActive returns a boolean if a field has been set.
-func (o *ZoneDatastore) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
-}
-
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *ZoneDatastore) SetActive(v bool) {
 	o.Active = &v
@@ -292,15 +229,6 @@ func (o *ZoneDatastore) GetVisibilityOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *ZoneDatastore) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -327,15 +255,6 @@ func (o *ZoneDatastore) GetTenantsOk() ([]GetCloudDatastores200ResponseAllOfData
 	return o.Tenants, true
 }
 
-// IsSetTenants returns a boolean if a field has been set.
-func (o *ZoneDatastore) IsSetTenants() bool {
-	if o != nil && !IsNil(o.Tenants) {
-		return true
-	}
-
-	return false
-}
-
 // SetTenants gets a reference to the given []GetCloudDatastores200ResponseAllOfDatastoreTenantsInner and assigns it to the Tenants field.
 func (o *ZoneDatastore) SetTenants(v []GetCloudDatastores200ResponseAllOfDatastoreTenantsInner) {
 	o.Tenants = v
@@ -357,15 +276,6 @@ func (o *ZoneDatastore) GetResourcePermissionOk() (*GetCloudDatastores200Respons
 		return nil, false
 	}
 	return o.ResourcePermission, true
-}
-
-// IsSetResourcePermission returns a boolean if a field has been set.
-func (o *ZoneDatastore) IsSetResourcePermission() bool {
-	if o != nil && !IsNil(o.ResourcePermission) {
-		return true
-	}
-
-	return false
 }
 
 // SetResourcePermission gets a reference to the given GetCloudDatastores200ResponseAllOfDatastoreResourcePermission and assigns it to the ResourcePermission field.

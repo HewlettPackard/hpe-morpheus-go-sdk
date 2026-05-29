@@ -62,15 +62,6 @@ func (o *GetInstanceHistory200Response) GetProcessesOk() ([]GetInstanceHistory20
 	return o.Processes, true
 }
 
-// IsSetProcesses returns a boolean if a field has been set.
-func (o *GetInstanceHistory200Response) IsSetProcesses() bool {
-	if o != nil && !IsNil(o.Processes) {
-		return true
-	}
-
-	return false
-}
-
 // SetProcesses gets a reference to the given []GetInstanceHistory200ResponseAllOfProcessesInner and assigns it to the Processes field.
 func (o *GetInstanceHistory200Response) SetProcesses(v []GetInstanceHistory200ResponseAllOfProcessesInner) {
 	o.Processes = v
@@ -92,15 +83,6 @@ func (o *GetInstanceHistory200Response) GetMetaOk() (*GetInstanceHistory200Respo
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *GetInstanceHistory200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given GetInstanceHistory200ResponseAllOfMeta and assigns it to the Meta field.

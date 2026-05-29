@@ -61,15 +61,6 @@ func (o *CreateNetworkPoolRequest) GetNetworkPoolOk() (*CreateNetworkPoolRequest
 	return o.NetworkPool, true
 }
 
-// IsSetNetworkPool returns a boolean if a field has been set.
-func (o *CreateNetworkPoolRequest) IsSetNetworkPool() bool {
-	if o != nil && !IsNil(o.NetworkPool) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkPool gets a reference to the given CreateNetworkPoolRequestNetworkPool and assigns it to the NetworkPool field.
 func (o *CreateNetworkPoolRequest) SetNetworkPool(v CreateNetworkPoolRequestNetworkPool) {
 	o.NetworkPool = &v

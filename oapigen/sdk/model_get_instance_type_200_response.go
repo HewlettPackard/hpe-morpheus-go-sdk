@@ -61,15 +61,6 @@ func (o *GetInstanceType200Response) GetInstanceTypeOk() (*GetInstanceType200Res
 	return o.InstanceType, true
 }
 
-// IsSetInstanceType returns a boolean if a field has been set.
-func (o *GetInstanceType200Response) IsSetInstanceType() bool {
-	if o != nil && !IsNil(o.InstanceType) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstanceType gets a reference to the given GetInstanceType200ResponseInstanceType and assigns it to the InstanceType field.
 func (o *GetInstanceType200Response) SetInstanceType(v GetInstanceType200ResponseInstanceType) {
 	o.InstanceType = &v

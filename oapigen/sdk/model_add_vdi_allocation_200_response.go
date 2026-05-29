@@ -62,15 +62,6 @@ func (o *AddVdiAllocation200Response) GetDesktopOk() (*AddVdiAllocation200Respon
 	return o.Desktop, true
 }
 
-// IsSetDesktop returns a boolean if a field has been set.
-func (o *AddVdiAllocation200Response) IsSetDesktop() bool {
-	if o != nil && !IsNil(o.Desktop) {
-		return true
-	}
-
-	return false
-}
-
 // SetDesktop gets a reference to the given AddVdiAllocation200ResponseAllOfDesktop and assigns it to the Desktop field.
 func (o *AddVdiAllocation200Response) SetDesktop(v AddVdiAllocation200ResponseAllOfDesktop) {
 	o.Desktop = &v
@@ -92,15 +83,6 @@ func (o *AddVdiAllocation200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *AddVdiAllocation200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

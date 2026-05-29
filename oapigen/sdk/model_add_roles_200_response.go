@@ -85,15 +85,6 @@ func (o *AddRoles200Response) GetRoleOk() (*AddRoles200ResponseAllOfRole, bool) 
 	return o.Role, true
 }
 
-// IsSetRole returns a boolean if a field has been set.
-func (o *AddRoles200Response) IsSetRole() bool {
-	if o != nil && !IsNil(o.Role) {
-		return true
-	}
-
-	return false
-}
-
 // SetRole gets a reference to the given AddRoles200ResponseAllOfRole and assigns it to the Role field.
 func (o *AddRoles200Response) SetRole(v AddRoles200ResponseAllOfRole) {
 	o.Role = &v
@@ -115,15 +106,6 @@ func (o *AddRoles200Response) GetFeaturePermissionsOk() ([]AddRoles200ResponseAl
 		return nil, false
 	}
 	return o.FeaturePermissions, true
-}
-
-// IsSetFeaturePermissions returns a boolean if a field has been set.
-func (o *AddRoles200Response) IsSetFeaturePermissions() bool {
-	if o != nil && !IsNil(o.FeaturePermissions) {
-		return true
-	}
-
-	return false
 }
 
 // SetFeaturePermissions gets a reference to the given []AddRoles200ResponseAllOfFeaturePermissionsInner and assigns it to the FeaturePermissions field.
@@ -149,15 +131,6 @@ func (o *AddRoles200Response) GetGlobalSiteAccessOk() (*string, bool) {
 	return o.GlobalSiteAccess, true
 }
 
-// IsSetGlobalSiteAccess returns a boolean if a field has been set.
-func (o *AddRoles200Response) IsSetGlobalSiteAccess() bool {
-	if o != nil && !IsNil(o.GlobalSiteAccess) {
-		return true
-	}
-
-	return false
-}
-
 // SetGlobalSiteAccess gets a reference to the given string and assigns it to the GlobalSiteAccess field.
 func (o *AddRoles200Response) SetGlobalSiteAccess(v string) {
 	o.GlobalSiteAccess = &v
@@ -179,15 +152,6 @@ func (o *AddRoles200Response) GetSitesOk() ([]AddRoles200ResponseAllOfSitesInner
 		return nil, false
 	}
 	return o.Sites, true
-}
-
-// IsSetSites returns a boolean if a field has been set.
-func (o *AddRoles200Response) IsSetSites() bool {
-	if o != nil && !IsNil(o.Sites) {
-		return true
-	}
-
-	return false
 }
 
 // SetSites gets a reference to the given []AddRoles200ResponseAllOfSitesInner and assigns it to the Sites field.
@@ -213,15 +177,6 @@ func (o *AddRoles200Response) GetGlobalZoneAccessOk() (*string, bool) {
 	return o.GlobalZoneAccess, true
 }
 
-// IsSetGlobalZoneAccess returns a boolean if a field has been set.
-func (o *AddRoles200Response) IsSetGlobalZoneAccess() bool {
-	if o != nil && !IsNil(o.GlobalZoneAccess) {
-		return true
-	}
-
-	return false
-}
-
 // SetGlobalZoneAccess gets a reference to the given string and assigns it to the GlobalZoneAccess field.
 func (o *AddRoles200Response) SetGlobalZoneAccess(v string) {
 	o.GlobalZoneAccess = &v
@@ -243,15 +198,6 @@ func (o *AddRoles200Response) GetZonesOk() ([]AddRoles200ResponseAllOfZonesInner
 		return nil, false
 	}
 	return o.Zones, true
-}
-
-// IsSetZones returns a boolean if a field has been set.
-func (o *AddRoles200Response) IsSetZones() bool {
-	if o != nil && !IsNil(o.Zones) {
-		return true
-	}
-
-	return false
 }
 
 // SetZones gets a reference to the given []AddRoles200ResponseAllOfZonesInner and assigns it to the Zones field.
@@ -277,15 +223,6 @@ func (o *AddRoles200Response) GetGlobalInstanceTypeAccessOk() (*string, bool) {
 	return o.GlobalInstanceTypeAccess, true
 }
 
-// IsSetGlobalInstanceTypeAccess returns a boolean if a field has been set.
-func (o *AddRoles200Response) IsSetGlobalInstanceTypeAccess() bool {
-	if o != nil && !IsNil(o.GlobalInstanceTypeAccess) {
-		return true
-	}
-
-	return false
-}
-
 // SetGlobalInstanceTypeAccess gets a reference to the given string and assigns it to the GlobalInstanceTypeAccess field.
 func (o *AddRoles200Response) SetGlobalInstanceTypeAccess(v string) {
 	o.GlobalInstanceTypeAccess = &v
@@ -307,15 +244,6 @@ func (o *AddRoles200Response) GetInstanceTypePermissionsOk() ([]AddRoles200Respo
 		return nil, false
 	}
 	return o.InstanceTypePermissions, true
-}
-
-// IsSetInstanceTypePermissions returns a boolean if a field has been set.
-func (o *AddRoles200Response) IsSetInstanceTypePermissions() bool {
-	if o != nil && !IsNil(o.InstanceTypePermissions) {
-		return true
-	}
-
-	return false
 }
 
 // SetInstanceTypePermissions gets a reference to the given []AddRoles200ResponseAllOfInstanceTypePermissionsInner and assigns it to the InstanceTypePermissions field.
@@ -341,15 +269,6 @@ func (o *AddRoles200Response) GetGlobalAppTemplateAccessOk() (*string, bool) {
 	return o.GlobalAppTemplateAccess, true
 }
 
-// IsSetGlobalAppTemplateAccess returns a boolean if a field has been set.
-func (o *AddRoles200Response) IsSetGlobalAppTemplateAccess() bool {
-	if o != nil && !IsNil(o.GlobalAppTemplateAccess) {
-		return true
-	}
-
-	return false
-}
-
 // SetGlobalAppTemplateAccess gets a reference to the given string and assigns it to the GlobalAppTemplateAccess field.
 func (o *AddRoles200Response) SetGlobalAppTemplateAccess(v string) {
 	o.GlobalAppTemplateAccess = &v
@@ -371,15 +290,6 @@ func (o *AddRoles200Response) GetAppTemplatePermissionsOk() ([]AddRoles200Respon
 		return nil, false
 	}
 	return o.AppTemplatePermissions, true
-}
-
-// IsSetAppTemplatePermissions returns a boolean if a field has been set.
-func (o *AddRoles200Response) IsSetAppTemplatePermissions() bool {
-	if o != nil && !IsNil(o.AppTemplatePermissions) {
-		return true
-	}
-
-	return false
 }
 
 // SetAppTemplatePermissions gets a reference to the given []AddRoles200ResponseAllOfAppTemplatePermissionsInner and assigns it to the AppTemplatePermissions field.
@@ -405,15 +315,6 @@ func (o *AddRoles200Response) GetGlobalCatalogItemTypeAccessOk() (*string, bool)
 	return o.GlobalCatalogItemTypeAccess, true
 }
 
-// IsSetGlobalCatalogItemTypeAccess returns a boolean if a field has been set.
-func (o *AddRoles200Response) IsSetGlobalCatalogItemTypeAccess() bool {
-	if o != nil && !IsNil(o.GlobalCatalogItemTypeAccess) {
-		return true
-	}
-
-	return false
-}
-
 // SetGlobalCatalogItemTypeAccess gets a reference to the given string and assigns it to the GlobalCatalogItemTypeAccess field.
 func (o *AddRoles200Response) SetGlobalCatalogItemTypeAccess(v string) {
 	o.GlobalCatalogItemTypeAccess = &v
@@ -435,15 +336,6 @@ func (o *AddRoles200Response) GetCatalogItemTypePermissionsOk() ([]AddRoles200Re
 		return nil, false
 	}
 	return o.CatalogItemTypePermissions, true
-}
-
-// IsSetCatalogItemTypePermissions returns a boolean if a field has been set.
-func (o *AddRoles200Response) IsSetCatalogItemTypePermissions() bool {
-	if o != nil && !IsNil(o.CatalogItemTypePermissions) {
-		return true
-	}
-
-	return false
 }
 
 // SetCatalogItemTypePermissions gets a reference to the given []AddRoles200ResponseAllOfCatalogItemTypePermissionsInner and assigns it to the CatalogItemTypePermissions field.
@@ -469,15 +361,6 @@ func (o *AddRoles200Response) GetGlobalPersonaAccessOk() (*string, bool) {
 	return o.GlobalPersonaAccess, true
 }
 
-// IsSetGlobalPersonaAccess returns a boolean if a field has been set.
-func (o *AddRoles200Response) IsSetGlobalPersonaAccess() bool {
-	if o != nil && !IsNil(o.GlobalPersonaAccess) {
-		return true
-	}
-
-	return false
-}
-
 // SetGlobalPersonaAccess gets a reference to the given string and assigns it to the GlobalPersonaAccess field.
 func (o *AddRoles200Response) SetGlobalPersonaAccess(v string) {
 	o.GlobalPersonaAccess = &v
@@ -499,15 +382,6 @@ func (o *AddRoles200Response) GetPersonaPermissionsOk() ([]AddRoles200ResponseAl
 		return nil, false
 	}
 	return o.PersonaPermissions, true
-}
-
-// IsSetPersonaPermissions returns a boolean if a field has been set.
-func (o *AddRoles200Response) IsSetPersonaPermissions() bool {
-	if o != nil && !IsNil(o.PersonaPermissions) {
-		return true
-	}
-
-	return false
 }
 
 // SetPersonaPermissions gets a reference to the given []AddRoles200ResponseAllOfPersonaPermissionsInner and assigns it to the PersonaPermissions field.
@@ -533,15 +407,6 @@ func (o *AddRoles200Response) GetGlobalVdiPoolAccessOk() (*string, bool) {
 	return o.GlobalVdiPoolAccess, true
 }
 
-// IsSetGlobalVdiPoolAccess returns a boolean if a field has been set.
-func (o *AddRoles200Response) IsSetGlobalVdiPoolAccess() bool {
-	if o != nil && !IsNil(o.GlobalVdiPoolAccess) {
-		return true
-	}
-
-	return false
-}
-
 // SetGlobalVdiPoolAccess gets a reference to the given string and assigns it to the GlobalVdiPoolAccess field.
 func (o *AddRoles200Response) SetGlobalVdiPoolAccess(v string) {
 	o.GlobalVdiPoolAccess = &v
@@ -563,15 +428,6 @@ func (o *AddRoles200Response) GetVdiPoolPermissionsOk() ([]AddRoles200ResponseAl
 		return nil, false
 	}
 	return o.VdiPoolPermissions, true
-}
-
-// IsSetVdiPoolPermissions returns a boolean if a field has been set.
-func (o *AddRoles200Response) IsSetVdiPoolPermissions() bool {
-	if o != nil && !IsNil(o.VdiPoolPermissions) {
-		return true
-	}
-
-	return false
 }
 
 // SetVdiPoolPermissions gets a reference to the given []AddRoles200ResponseAllOfVdiPoolPermissionsInner and assigns it to the VdiPoolPermissions field.
@@ -597,15 +453,6 @@ func (o *AddRoles200Response) GetGlobalReportTypeAccessOk() (*string, bool) {
 	return o.GlobalReportTypeAccess, true
 }
 
-// IsSetGlobalReportTypeAccess returns a boolean if a field has been set.
-func (o *AddRoles200Response) IsSetGlobalReportTypeAccess() bool {
-	if o != nil && !IsNil(o.GlobalReportTypeAccess) {
-		return true
-	}
-
-	return false
-}
-
 // SetGlobalReportTypeAccess gets a reference to the given string and assigns it to the GlobalReportTypeAccess field.
 func (o *AddRoles200Response) SetGlobalReportTypeAccess(v string) {
 	o.GlobalReportTypeAccess = &v
@@ -627,15 +474,6 @@ func (o *AddRoles200Response) GetReportTypePermissionsOk() ([]AddRoles200Respons
 		return nil, false
 	}
 	return o.ReportTypePermissions, true
-}
-
-// IsSetReportTypePermissions returns a boolean if a field has been set.
-func (o *AddRoles200Response) IsSetReportTypePermissions() bool {
-	if o != nil && !IsNil(o.ReportTypePermissions) {
-		return true
-	}
-
-	return false
 }
 
 // SetReportTypePermissions gets a reference to the given []AddRoles200ResponseAllOfReportTypePermissionsInner and assigns it to the ReportTypePermissions field.
@@ -661,15 +499,6 @@ func (o *AddRoles200Response) GetGlobalTaskAccessOk() (*string, bool) {
 	return o.GlobalTaskAccess, true
 }
 
-// IsSetGlobalTaskAccess returns a boolean if a field has been set.
-func (o *AddRoles200Response) IsSetGlobalTaskAccess() bool {
-	if o != nil && !IsNil(o.GlobalTaskAccess) {
-		return true
-	}
-
-	return false
-}
-
 // SetGlobalTaskAccess gets a reference to the given string and assigns it to the GlobalTaskAccess field.
 func (o *AddRoles200Response) SetGlobalTaskAccess(v string) {
 	o.GlobalTaskAccess = &v
@@ -691,15 +520,6 @@ func (o *AddRoles200Response) GetTaskPermissionsOk() ([]AddRoles200ResponseAllOf
 		return nil, false
 	}
 	return o.TaskPermissions, true
-}
-
-// IsSetTaskPermissions returns a boolean if a field has been set.
-func (o *AddRoles200Response) IsSetTaskPermissions() bool {
-	if o != nil && !IsNil(o.TaskPermissions) {
-		return true
-	}
-
-	return false
 }
 
 // SetTaskPermissions gets a reference to the given []AddRoles200ResponseAllOfTaskPermissionsInner and assigns it to the TaskPermissions field.
@@ -725,15 +545,6 @@ func (o *AddRoles200Response) GetGlobalTaskSetAccessOk() (*string, bool) {
 	return o.GlobalTaskSetAccess, true
 }
 
-// IsSetGlobalTaskSetAccess returns a boolean if a field has been set.
-func (o *AddRoles200Response) IsSetGlobalTaskSetAccess() bool {
-	if o != nil && !IsNil(o.GlobalTaskSetAccess) {
-		return true
-	}
-
-	return false
-}
-
 // SetGlobalTaskSetAccess gets a reference to the given string and assigns it to the GlobalTaskSetAccess field.
 func (o *AddRoles200Response) SetGlobalTaskSetAccess(v string) {
 	o.GlobalTaskSetAccess = &v
@@ -755,15 +566,6 @@ func (o *AddRoles200Response) GetTaskSetPermissionsOk() ([]AddRoles200ResponseAl
 		return nil, false
 	}
 	return o.TaskSetPermissions, true
-}
-
-// IsSetTaskSetPermissions returns a boolean if a field has been set.
-func (o *AddRoles200Response) IsSetTaskSetPermissions() bool {
-	if o != nil && !IsNil(o.TaskSetPermissions) {
-		return true
-	}
-
-	return false
 }
 
 // SetTaskSetPermissions gets a reference to the given []AddRoles200ResponseAllOfTaskSetPermissionsInner and assigns it to the TaskSetPermissions field.
@@ -789,15 +591,6 @@ func (o *AddRoles200Response) GetGlobalClusterTypeAccessOk() (*string, bool) {
 	return o.GlobalClusterTypeAccess, true
 }
 
-// IsSetGlobalClusterTypeAccess returns a boolean if a field has been set.
-func (o *AddRoles200Response) IsSetGlobalClusterTypeAccess() bool {
-	if o != nil && !IsNil(o.GlobalClusterTypeAccess) {
-		return true
-	}
-
-	return false
-}
-
 // SetGlobalClusterTypeAccess gets a reference to the given string and assigns it to the GlobalClusterTypeAccess field.
 func (o *AddRoles200Response) SetGlobalClusterTypeAccess(v string) {
 	o.GlobalClusterTypeAccess = &v
@@ -821,15 +614,6 @@ func (o *AddRoles200Response) GetClusterTypePermissionsOk() ([]AddRoles200Respon
 	return o.ClusterTypePermissions, true
 }
 
-// IsSetClusterTypePermissions returns a boolean if a field has been set.
-func (o *AddRoles200Response) IsSetClusterTypePermissions() bool {
-	if o != nil && !IsNil(o.ClusterTypePermissions) {
-		return true
-	}
-
-	return false
-}
-
 // SetClusterTypePermissions gets a reference to the given []AddRoles200ResponseAllOfClusterTypePermissionsInner and assigns it to the ClusterTypePermissions field.
 func (o *AddRoles200Response) SetClusterTypePermissions(v []AddRoles200ResponseAllOfClusterTypePermissionsInner) {
 	o.ClusterTypePermissions = v
@@ -851,15 +635,6 @@ func (o *AddRoles200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *AddRoles200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

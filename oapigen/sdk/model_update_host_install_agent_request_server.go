@@ -65,15 +65,6 @@ func (o *UpdateHostInstallAgentRequestServer) GetSshUsernameOk() (*string, bool)
 	return o.SshUsername, true
 }
 
-// IsSetSshUsername returns a boolean if a field has been set.
-func (o *UpdateHostInstallAgentRequestServer) IsSetSshUsername() bool {
-	if o != nil && !IsNil(o.SshUsername) {
-		return true
-	}
-
-	return false
-}
-
 // SetSshUsername gets a reference to the given string and assigns it to the SshUsername field.
 func (o *UpdateHostInstallAgentRequestServer) SetSshUsername(v string) {
 	o.SshUsername = &v
@@ -97,15 +88,6 @@ func (o *UpdateHostInstallAgentRequestServer) GetSshPasswordOk() (*string, bool)
 	return o.SshPassword, true
 }
 
-// IsSetSshPassword returns a boolean if a field has been set.
-func (o *UpdateHostInstallAgentRequestServer) IsSetSshPassword() bool {
-	if o != nil && !IsNil(o.SshPassword) {
-		return true
-	}
-
-	return false
-}
-
 // SetSshPassword gets a reference to the given string and assigns it to the SshPassword field.
 func (o *UpdateHostInstallAgentRequestServer) SetSshPassword(v string) {
 	o.SshPassword = &v
@@ -127,15 +109,6 @@ func (o *UpdateHostInstallAgentRequestServer) GetServerOsOk() (*UpdateHostInstal
 		return nil, false
 	}
 	return o.ServerOs, true
-}
-
-// IsSetServerOs returns a boolean if a field has been set.
-func (o *UpdateHostInstallAgentRequestServer) IsSetServerOs() bool {
-	if o != nil && !IsNil(o.ServerOs) {
-		return true
-	}
-
-	return false
 }
 
 // SetServerOs gets a reference to the given UpdateHostInstallAgentRequestServerServerOs and assigns it to the ServerOs field.

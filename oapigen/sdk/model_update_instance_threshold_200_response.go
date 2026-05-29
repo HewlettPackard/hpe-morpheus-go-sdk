@@ -63,15 +63,6 @@ func (o *UpdateInstanceThreshold200Response) GetInstanceThresholdOk() (*UpdateIn
 	return o.InstanceThreshold, true
 }
 
-// IsSetInstanceThreshold returns a boolean if a field has been set.
-func (o *UpdateInstanceThreshold200Response) IsSetInstanceThreshold() bool {
-	if o != nil && !IsNil(o.InstanceThreshold) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstanceThreshold gets a reference to the given UpdateInstanceThreshold200ResponseAllOfInstanceThreshold and assigns it to the InstanceThreshold field.
 func (o *UpdateInstanceThreshold200Response) SetInstanceThreshold(v UpdateInstanceThreshold200ResponseAllOfInstanceThreshold) {
 	o.InstanceThreshold = &v
@@ -95,15 +86,6 @@ func (o *UpdateInstanceThreshold200Response) GetInstanceSchedulesOk() ([]UpdateI
 	return o.InstanceSchedules, true
 }
 
-// IsSetInstanceSchedules returns a boolean if a field has been set.
-func (o *UpdateInstanceThreshold200Response) IsSetInstanceSchedules() bool {
-	if o != nil && !IsNil(o.InstanceSchedules) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstanceSchedules gets a reference to the given []UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInner and assigns it to the InstanceSchedules field.
 func (o *UpdateInstanceThreshold200Response) SetInstanceSchedules(v []UpdateInstanceThreshold200ResponseAllOfInstanceSchedulesInner) {
 	o.InstanceSchedules = v
@@ -125,15 +107,6 @@ func (o *UpdateInstanceThreshold200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *UpdateInstanceThreshold200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

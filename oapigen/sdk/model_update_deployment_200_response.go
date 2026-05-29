@@ -62,15 +62,6 @@ func (o *UpdateDeployment200Response) GetDeploymentOk() (*UpdateDeployment200Res
 	return o.Deployment, true
 }
 
-// IsSetDeployment returns a boolean if a field has been set.
-func (o *UpdateDeployment200Response) IsSetDeployment() bool {
-	if o != nil && !IsNil(o.Deployment) {
-		return true
-	}
-
-	return false
-}
-
 // SetDeployment gets a reference to the given UpdateDeployment200ResponseAllOfDeployment and assigns it to the Deployment field.
 func (o *UpdateDeployment200Response) SetDeployment(v UpdateDeployment200ResponseAllOfDeployment) {
 	o.Deployment = &v
@@ -92,15 +83,6 @@ func (o *UpdateDeployment200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *UpdateDeployment200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

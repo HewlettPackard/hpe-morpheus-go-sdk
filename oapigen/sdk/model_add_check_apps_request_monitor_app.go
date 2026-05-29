@@ -109,15 +109,6 @@ func (o *AddCheckAppsRequestMonitorApp) GetDescriptionOk() (*string, bool) {
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *AddCheckAppsRequestMonitorApp) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *AddCheckAppsRequestMonitorApp) SetDescription(v string) {
 	o.Description = &v
@@ -139,15 +130,6 @@ func (o *AddCheckAppsRequestMonitorApp) GetInUptimeOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.InUptime, true
-}
-
-// IsSetInUptime returns a boolean if a field has been set.
-func (o *AddCheckAppsRequestMonitorApp) IsSetInUptime() bool {
-	if o != nil && !IsNil(o.InUptime) {
-		return true
-	}
-
-	return false
 }
 
 // SetInUptime gets a reference to the given bool and assigns it to the InUptime field.
@@ -173,15 +155,6 @@ func (o *AddCheckAppsRequestMonitorApp) GetSeverityOk() (*string, bool) {
 	return o.Severity, true
 }
 
-// IsSetSeverity returns a boolean if a field has been set.
-func (o *AddCheckAppsRequestMonitorApp) IsSetSeverity() bool {
-	if o != nil && !IsNil(o.Severity) {
-		return true
-	}
-
-	return false
-}
-
 // SetSeverity gets a reference to the given string and assigns it to the Severity field.
 func (o *AddCheckAppsRequestMonitorApp) SetSeverity(v string) {
 	o.Severity = &v
@@ -203,15 +176,6 @@ func (o *AddCheckAppsRequestMonitorApp) GetActiveOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Active, true
-}
-
-// IsSetActive returns a boolean if a field has been set.
-func (o *AddCheckAppsRequestMonitorApp) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
 }
 
 // SetActive gets a reference to the given bool and assigns it to the Active field.
@@ -237,15 +201,6 @@ func (o *AddCheckAppsRequestMonitorApp) GetChecksOk() ([]int32, bool) {
 	return o.Checks, true
 }
 
-// IsSetChecks returns a boolean if a field has been set.
-func (o *AddCheckAppsRequestMonitorApp) IsSetChecks() bool {
-	if o != nil && !IsNil(o.Checks) {
-		return true
-	}
-
-	return false
-}
-
 // SetChecks gets a reference to the given []int32 and assigns it to the Checks field.
 func (o *AddCheckAppsRequestMonitorApp) SetChecks(v []int32) {
 	o.Checks = v
@@ -267,15 +222,6 @@ func (o *AddCheckAppsRequestMonitorApp) GetCheckGroupsOk() ([]int32, bool) {
 		return nil, false
 	}
 	return o.CheckGroups, true
-}
-
-// IsSetCheckGroups returns a boolean if a field has been set.
-func (o *AddCheckAppsRequestMonitorApp) IsSetCheckGroups() bool {
-	if o != nil && !IsNil(o.CheckGroups) {
-		return true
-	}
-
-	return false
 }
 
 // SetCheckGroups gets a reference to the given []int32 and assigns it to the CheckGroups field.

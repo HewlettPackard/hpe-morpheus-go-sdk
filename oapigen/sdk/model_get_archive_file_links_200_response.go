@@ -61,15 +61,6 @@ func (o *GetArchiveFileLinks200Response) GetArchiveFileLinksOk() ([]GetArchiveFi
 	return o.ArchiveFileLinks, true
 }
 
-// IsSetArchiveFileLinks returns a boolean if a field has been set.
-func (o *GetArchiveFileLinks200Response) IsSetArchiveFileLinks() bool {
-	if o != nil && !IsNil(o.ArchiveFileLinks) {
-		return true
-	}
-
-	return false
-}
-
 // SetArchiveFileLinks gets a reference to the given []GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner and assigns it to the ArchiveFileLinks field.
 func (o *GetArchiveFileLinks200Response) SetArchiveFileLinks(v []GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) {
 	o.ArchiveFileLinks = v

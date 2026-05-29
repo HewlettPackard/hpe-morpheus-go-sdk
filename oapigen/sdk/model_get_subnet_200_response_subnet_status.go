@@ -61,15 +61,6 @@ func (o *GetSubnet200ResponseSubnetStatus) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *GetSubnet200ResponseSubnetStatus) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *GetSubnet200ResponseSubnetStatus) SetName(v string) {
 	o.Name = &v

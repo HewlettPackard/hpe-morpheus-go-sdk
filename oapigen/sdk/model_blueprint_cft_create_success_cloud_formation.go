@@ -97,15 +97,6 @@ func (o *BlueprintCFTCreateSuccessCloudFormation) GetJsonOk() (*string, bool) {
 	return o.Json, true
 }
 
-// IsSetJson returns a boolean if a field has been set.
-func (o *BlueprintCFTCreateSuccessCloudFormation) IsSetJson() bool {
-	if o != nil && !IsNil(o.Json) {
-		return true
-	}
-
-	return false
-}
-
 // SetJson gets a reference to the given string and assigns it to the Json field.
 func (o *BlueprintCFTCreateSuccessCloudFormation) SetJson(v string) {
 	o.Json = &v
@@ -127,15 +118,6 @@ func (o *BlueprintCFTCreateSuccessCloudFormation) GetYamlOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Yaml, true
-}
-
-// IsSetYaml returns a boolean if a field has been set.
-func (o *BlueprintCFTCreateSuccessCloudFormation) IsSetYaml() bool {
-	if o != nil && !IsNil(o.Yaml) {
-		return true
-	}
-
-	return false
 }
 
 // SetYaml gets a reference to the given string and assigns it to the Yaml field.
@@ -161,15 +143,6 @@ func (o *BlueprintCFTCreateSuccessCloudFormation) GetGitOk() (*BlueprintCFTCreat
 	return o.Git, true
 }
 
-// IsSetGit returns a boolean if a field has been set.
-func (o *BlueprintCFTCreateSuccessCloudFormation) IsSetGit() bool {
-	if o != nil && !IsNil(o.Git) {
-		return true
-	}
-
-	return false
-}
-
 // SetGit gets a reference to the given BlueprintCFTCreateSuccessCloudFormationGit and assigns it to the Git field.
 func (o *BlueprintCFTCreateSuccessCloudFormation) SetGit(v BlueprintCFTCreateSuccessCloudFormationGit) {
 	o.Git = &v
@@ -191,15 +164,6 @@ func (o *BlueprintCFTCreateSuccessCloudFormation) GetIAMOk() (*BlueprintCFTCreat
 		return nil, false
 	}
 	return o.IAM, true
-}
-
-// IsSetIAM returns a boolean if a field has been set.
-func (o *BlueprintCFTCreateSuccessCloudFormation) IsSetIAM() bool {
-	if o != nil && !IsNil(o.IAM) {
-		return true
-	}
-
-	return false
 }
 
 // SetIAM gets a reference to the given BlueprintCFTCreateSuccessCloudFormationIAM and assigns it to the IAM field.
@@ -225,15 +189,6 @@ func (o *BlueprintCFTCreateSuccessCloudFormation) GetCAPABILITY_NAMED_IAMOk() (*
 	return o.CAPABILITY_NAMED_IAM, true
 }
 
-// IsSetCAPABILITY_NAMED_IAM returns a boolean if a field has been set.
-func (o *BlueprintCFTCreateSuccessCloudFormation) IsSetCAPABILITY_NAMED_IAM() bool {
-	if o != nil && !IsNil(o.CAPABILITY_NAMED_IAM) {
-		return true
-	}
-
-	return false
-}
-
 // SetCAPABILITY_NAMED_IAM gets a reference to the given BlueprintCFTCreateSuccessCloudFormationCAPABILITYNAMEDIAM and assigns it to the CAPABILITY_NAMED_IAM field.
 func (o *BlueprintCFTCreateSuccessCloudFormation) SetCAPABILITY_NAMED_IAM(v BlueprintCFTCreateSuccessCloudFormationCAPABILITYNAMEDIAM) {
 	o.CAPABILITY_NAMED_IAM = &v
@@ -255,15 +210,6 @@ func (o *BlueprintCFTCreateSuccessCloudFormation) GetCAPABILITY_AUTO_EXPANDOk() 
 		return nil, false
 	}
 	return o.CAPABILITY_AUTO_EXPAND, true
-}
-
-// IsSetCAPABILITY_AUTO_EXPAND returns a boolean if a field has been set.
-func (o *BlueprintCFTCreateSuccessCloudFormation) IsSetCAPABILITY_AUTO_EXPAND() bool {
-	if o != nil && !IsNil(o.CAPABILITY_AUTO_EXPAND) {
-		return true
-	}
-
-	return false
 }
 
 // SetCAPABILITY_AUTO_EXPAND gets a reference to the given BlueprintCFTCreateSuccessCloudFormationCAPABILITYAUTOEXPAND and assigns it to the CAPABILITY_AUTO_EXPAND field.
@@ -289,15 +235,6 @@ func (o *BlueprintCFTCreateSuccessCloudFormation) GetInstallAgentOk() (*Blueprin
 	return o.InstallAgent, true
 }
 
-// IsSetInstallAgent returns a boolean if a field has been set.
-func (o *BlueprintCFTCreateSuccessCloudFormation) IsSetInstallAgent() bool {
-	if o != nil && !IsNil(o.InstallAgent) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstallAgent gets a reference to the given BlueprintCFTCreateSuccessCloudFormationInstallAgent and assigns it to the InstallAgent field.
 func (o *BlueprintCFTCreateSuccessCloudFormation) SetInstallAgent(v BlueprintCFTCreateSuccessCloudFormationInstallAgent) {
 	o.InstallAgent = &v
@@ -319,15 +256,6 @@ func (o *BlueprintCFTCreateSuccessCloudFormation) GetCloudInitEnabledOk() (*Blue
 		return nil, false
 	}
 	return o.CloudInitEnabled, true
-}
-
-// IsSetCloudInitEnabled returns a boolean if a field has been set.
-func (o *BlueprintCFTCreateSuccessCloudFormation) IsSetCloudInitEnabled() bool {
-	if o != nil && !IsNil(o.CloudInitEnabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetCloudInitEnabled gets a reference to the given BlueprintCFTCreateSuccessCloudFormationCloudInitEnabled and assigns it to the CloudInitEnabled field.

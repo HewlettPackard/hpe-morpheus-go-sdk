@@ -61,15 +61,6 @@ func (o *GetCloudDatastores200Response) GetDatastoreOk() (*GetCloudDatastores200
 	return o.Datastore, true
 }
 
-// IsSetDatastore returns a boolean if a field has been set.
-func (o *GetCloudDatastores200Response) IsSetDatastore() bool {
-	if o != nil && !IsNil(o.Datastore) {
-		return true
-	}
-
-	return false
-}
-
 // SetDatastore gets a reference to the given GetCloudDatastores200ResponseAllOfDatastore and assigns it to the Datastore field.
 func (o *GetCloudDatastores200Response) SetDatastore(v GetCloudDatastores200ResponseAllOfDatastore) {
 	o.Datastore = &v

@@ -68,15 +68,6 @@ func (o *ListUsers200Response) GetUsersOk() ([]ListUsers200ResponseAllOfUsersInn
 	return o.Users, true
 }
 
-// IsSetUsers returns a boolean if a field has been set.
-func (o *ListUsers200Response) IsSetUsers() bool {
-	if o != nil && !IsNil(o.Users) {
-		return true
-	}
-
-	return false
-}
-
 // SetUsers gets a reference to the given []ListUsers200ResponseAllOfUsersInner and assigns it to the Users field.
 func (o *ListUsers200Response) SetUsers(v []ListUsers200ResponseAllOfUsersInner) {
 	o.Users = v
@@ -100,15 +91,6 @@ func (o *ListUsers200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, 
 	return o.Meta, true
 }
 
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListUsers200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
-}
-
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.
 func (o *ListUsers200Response) SetMeta(v ListApprovals200ResponseAllOfMeta) {
 	o.Meta = &v
@@ -130,15 +112,6 @@ func (o *ListUsers200Response) GetGlobalOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Global, true
-}
-
-// IsSetGlobal returns a boolean if a field has been set.
-func (o *ListUsers200Response) IsSetGlobal() bool {
-	if o != nil && !IsNil(o.Global) {
-		return true
-	}
-
-	return false
 }
 
 // SetGlobal gets a reference to the given bool and assigns it to the Global field.

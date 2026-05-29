@@ -62,15 +62,6 @@ func (o *InstanceUpdate) GetInstanceOk() (*InstanceUpdateInstance, bool) {
 	return o.Instance, true
 }
 
-// IsSetInstance returns a boolean if a field has been set.
-func (o *InstanceUpdate) IsSetInstance() bool {
-	if o != nil && !IsNil(o.Instance) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstance gets a reference to the given InstanceUpdateInstance and assigns it to the Instance field.
 func (o *InstanceUpdate) SetInstance(v InstanceUpdateInstance) {
 	o.Instance = &v
@@ -92,15 +83,6 @@ func (o *InstanceUpdate) GetConfigOk() (*InstanceUpdateConfig, bool) {
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *InstanceUpdate) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given InstanceUpdateConfig and assigns it to the Config field.

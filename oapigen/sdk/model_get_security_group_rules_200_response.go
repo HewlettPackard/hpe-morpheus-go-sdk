@@ -61,15 +61,6 @@ func (o *GetSecurityGroupRules200Response) GetRuleOk() (*GetSecurityGroupRules20
 	return o.Rule, true
 }
 
-// IsSetRule returns a boolean if a field has been set.
-func (o *GetSecurityGroupRules200Response) IsSetRule() bool {
-	if o != nil && !IsNil(o.Rule) {
-		return true
-	}
-
-	return false
-}
-
 // SetRule gets a reference to the given GetSecurityGroupRules200ResponseRule and assigns it to the Rule field.
 func (o *GetSecurityGroupRules200Response) SetRule(v GetSecurityGroupRules200ResponseRule) {
 	o.Rule = &v

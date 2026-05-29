@@ -64,15 +64,6 @@ func (o *MessageOfTheDayPolicyTypeConfigurationMotd) GetTitleOk() (*string, bool
 	return o.Title, true
 }
 
-// IsSetTitle returns a boolean if a field has been set.
-func (o *MessageOfTheDayPolicyTypeConfigurationMotd) IsSetTitle() bool {
-	if o != nil && !IsNil(o.Title) {
-		return true
-	}
-
-	return false
-}
-
 // SetTitle gets a reference to the given string and assigns it to the Title field.
 func (o *MessageOfTheDayPolicyTypeConfigurationMotd) SetTitle(v string) {
 	o.Title = &v
@@ -94,15 +85,6 @@ func (o *MessageOfTheDayPolicyTypeConfigurationMotd) GetMessageOk() (*string, bo
 		return nil, false
 	}
 	return o.Message, true
-}
-
-// IsSetMessage returns a boolean if a field has been set.
-func (o *MessageOfTheDayPolicyTypeConfigurationMotd) IsSetMessage() bool {
-	if o != nil && !IsNil(o.Message) {
-		return true
-	}
-
-	return false
 }
 
 // SetMessage gets a reference to the given string and assigns it to the Message field.
@@ -128,15 +110,6 @@ func (o *MessageOfTheDayPolicyTypeConfigurationMotd) GetTypeOk() (*string, bool)
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *MessageOfTheDayPolicyTypeConfigurationMotd) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given string and assigns it to the Type field.
 func (o *MessageOfTheDayPolicyTypeConfigurationMotd) SetType(v string) {
 	o.Type = &v
@@ -158,15 +131,6 @@ func (o *MessageOfTheDayPolicyTypeConfigurationMotd) GetFullPageOk() (*MessageOf
 		return nil, false
 	}
 	return o.FullPage, true
-}
-
-// IsSetFullPage returns a boolean if a field has been set.
-func (o *MessageOfTheDayPolicyTypeConfigurationMotd) IsSetFullPage() bool {
-	if o != nil && !IsNil(o.FullPage) {
-		return true
-	}
-
-	return false
 }
 
 // SetFullPage gets a reference to the given MessageOfTheDayPolicyTypeConfigurationMotdFullPage and assigns it to the FullPage field.

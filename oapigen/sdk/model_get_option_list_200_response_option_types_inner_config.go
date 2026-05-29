@@ -61,15 +61,6 @@ func (o *GetOptionList200ResponseOptionTypesInnerConfig) GetSourceHeadersOk() ([
 	return o.SourceHeaders, true
 }
 
-// IsSetSourceHeaders returns a boolean if a field has been set.
-func (o *GetOptionList200ResponseOptionTypesInnerConfig) IsSetSourceHeaders() bool {
-	if o != nil && !IsNil(o.SourceHeaders) {
-		return true
-	}
-
-	return false
-}
-
 // SetSourceHeaders gets a reference to the given []GetOptionList200ResponseOptionTypesInnerConfigSourceHeadersInner and assigns it to the SourceHeaders field.
 func (o *GetOptionList200ResponseOptionTypesInnerConfig) SetSourceHeaders(v []GetOptionList200ResponseOptionTypesInnerConfigSourceHeadersInner) {
 	o.SourceHeaders = v

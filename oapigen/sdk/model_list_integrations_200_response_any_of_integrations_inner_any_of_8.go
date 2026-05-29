@@ -78,15 +78,6 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) GetIdOk() (*in
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) SetId(v int64) {
 	o.Id = &v
@@ -108,15 +99,6 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) GetNameOk() (*
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -142,15 +124,6 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) GetEnabledOk()
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -172,15 +145,6 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) GetTypeOk() (*
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.
@@ -206,15 +170,6 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) GetIntegration
 	return o.IntegrationType, true
 }
 
-// IsSetIntegrationType returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) IsSetIntegrationType() bool {
-	if o != nil && !IsNil(o.IntegrationType) {
-		return true
-	}
-
-	return false
-}
-
 // SetIntegrationType gets a reference to the given ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8IntegrationType and assigns it to the IntegrationType field.
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) SetIntegrationType(v ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8IntegrationType) {
 	o.IntegrationType = &v
@@ -236,15 +191,6 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) GetUsernameOk(
 		return nil, false
 	}
 	return o.Username, true
-}
-
-// IsSetUsername returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) IsSetUsername() bool {
-	if o != nil && !IsNil(o.Username) {
-		return true
-	}
-
-	return false
 }
 
 // SetUsername gets a reference to the given string and assigns it to the Username field.
@@ -270,15 +216,6 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) GetTokenOk() (
 	return o.Token, true
 }
 
-// IsSetToken returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) IsSetToken() bool {
-	if o != nil && !IsNil(o.Token) {
-		return true
-	}
-
-	return false
-}
-
 // SetToken gets a reference to the given string and assigns it to the Token field.
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) SetToken(v string) {
 	o.Token = &v
@@ -300,15 +237,6 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) GetTokenHashOk
 		return nil, false
 	}
 	return o.TokenHash, true
-}
-
-// IsSetTokenHash returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) IsSetTokenHash() bool {
-	if o != nil && !IsNil(o.TokenHash) {
-		return true
-	}
-
-	return false
 }
 
 // SetTokenHash gets a reference to the given string and assigns it to the TokenHash field.
@@ -335,28 +263,9 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) GetServiceKeyO
 	return o.ServiceKey.Get(), o.ServiceKey.IsSet()
 }
 
-// IsSetServiceKey returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) IsSetServiceKey() bool {
-	if o != nil && o.ServiceKey.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceKey gets a reference to the given NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8ServiceKey and assigns it to the ServiceKey field.
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) SetServiceKey(v ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8ServiceKey) {
 	o.ServiceKey.Set(&v)
-}
-
-// SetServiceKeyNil sets the value for ServiceKey to be an explicit nil
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) SetServiceKeyNil() {
-	o.ServiceKey.Set(nil)
-}
-
-// UnsetServiceKey ensures that no value is present for ServiceKey, not even an explicit nil
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) UnsetServiceKey() {
-	o.ServiceKey.Unset()
 }
 
 // GetIsPlugin returns the IsPlugin field value if set, zero value otherwise.
@@ -375,15 +284,6 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) GetIsPluginOk(
 		return nil, false
 	}
 	return o.IsPlugin, true
-}
-
-// IsSetIsPlugin returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) IsSetIsPlugin() bool {
-	if o != nil && !IsNil(o.IsPlugin) {
-		return true
-	}
-
-	return false
 }
 
 // SetIsPlugin gets a reference to the given bool and assigns it to the IsPlugin field.
@@ -409,15 +309,6 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) GetConfigOk() 
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8Config and assigns it to the Config field.
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) SetConfig(v ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8Config) {
 	o.Config = &v
@@ -441,15 +332,6 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) GetStatusOk() 
 	return o.Status, true
 }
 
-// IsSetStatus returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
-}
-
 // SetStatus gets a reference to the given string and assigns it to the Status field.
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) SetStatus(v string) {
 	o.Status = &v
@@ -471,15 +353,6 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) GetStatusDateO
 		return nil, false
 	}
 	return o.StatusDate, true
-}
-
-// IsSetStatusDate returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) IsSetStatusDate() bool {
-	if o != nil && !IsNil(o.StatusDate) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatusDate gets a reference to the given time.Time and assigns it to the StatusDate field.
@@ -506,28 +379,9 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) GetStatusMessa
 	return o.StatusMessage.Get(), o.StatusMessage.IsSet()
 }
 
-// IsSetStatusMessage returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) IsSetStatusMessage() bool {
-	if o != nil && o.StatusMessage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusMessage gets a reference to the given NullableString and assigns it to the StatusMessage field.
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) SetStatusMessage(v string) {
 	o.StatusMessage.Set(&v)
-}
-
-// SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) SetStatusMessageNil() {
-	o.StatusMessage.Set(nil)
-}
-
-// UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) UnsetStatusMessage() {
-	o.StatusMessage.Unset()
 }
 
 // GetLastSync returns the LastSync field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -549,28 +403,9 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) GetLastSyncOk(
 	return o.LastSync.Get(), o.LastSync.IsSet()
 }
 
-// IsSetLastSync returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) IsSetLastSync() bool {
-	if o != nil && o.LastSync.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastSync gets a reference to the given NullableString and assigns it to the LastSync field.
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) SetLastSync(v string) {
 	o.LastSync.Set(&v)
-}
-
-// SetLastSyncNil sets the value for LastSync to be an explicit nil
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) SetLastSyncNil() {
-	o.LastSync.Set(nil)
-}
-
-// UnsetLastSync ensures that no value is present for LastSync, not even an explicit nil
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) UnsetLastSync() {
-	o.LastSync.Unset()
 }
 
 // GetLastSyncDuration returns the LastSyncDuration field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -592,28 +427,9 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) GetLastSyncDur
 	return o.LastSyncDuration.Get(), o.LastSyncDuration.IsSet()
 }
 
-// IsSetLastSyncDuration returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) IsSetLastSyncDuration() bool {
-	if o != nil && o.LastSyncDuration.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastSyncDuration gets a reference to the given NullableString and assigns it to the LastSyncDuration field.
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) SetLastSyncDuration(v string) {
 	o.LastSyncDuration.Set(&v)
-}
-
-// SetLastSyncDurationNil sets the value for LastSyncDuration to be an explicit nil
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) SetLastSyncDurationNil() {
-	o.LastSyncDuration.Set(nil)
-}
-
-// UnsetLastSyncDuration ensures that no value is present for LastSyncDuration, not even an explicit nil
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) UnsetLastSyncDuration() {
-	o.LastSyncDuration.Unset()
 }
 
 // GetCredential returns the Credential field value if set, zero value otherwise.
@@ -632,15 +448,6 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) GetCredentialO
 		return nil, false
 	}
 	return o.Credential, true
-}
-
-// IsSetCredential returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) IsSetCredential() bool {
-	if o != nil && !IsNil(o.Credential) {
-		return true
-	}
-
-	return false
 }
 
 // SetCredential gets a reference to the given ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8Credential and assigns it to the Credential field.

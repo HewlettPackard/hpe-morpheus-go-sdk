@@ -65,15 +65,6 @@ func (o *Contact) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *Contact) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *Contact) SetId(v int64) {
 	o.Id = &v
@@ -95,15 +86,6 @@ func (o *Contact) GetEmailAddressOk() (*string, bool) {
 		return nil, false
 	}
 	return o.EmailAddress, true
-}
-
-// IsSetEmailAddress returns a boolean if a field has been set.
-func (o *Contact) IsSetEmailAddress() bool {
-	if o != nil && !IsNil(o.EmailAddress) {
-		return true
-	}
-
-	return false
 }
 
 // SetEmailAddress gets a reference to the given string and assigns it to the EmailAddress field.
@@ -129,15 +111,6 @@ func (o *Contact) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *Contact) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *Contact) SetName(v string) {
 	o.Name = &v
@@ -159,15 +132,6 @@ func (o *Contact) GetSmsAddressOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SmsAddress, true
-}
-
-// IsSetSmsAddress returns a boolean if a field has been set.
-func (o *Contact) IsSetSmsAddress() bool {
-	if o != nil && !IsNil(o.SmsAddress) {
-		return true
-	}
-
-	return false
 }
 
 // SetSmsAddress gets a reference to the given string and assigns it to the SmsAddress field.
@@ -194,28 +158,9 @@ func (o *Contact) GetSlackHookOk() (*string, bool) {
 	return o.SlackHook.Get(), o.SlackHook.IsSet()
 }
 
-// IsSetSlackHook returns a boolean if a field has been set.
-func (o *Contact) IsSetSlackHook() bool {
-	if o != nil && o.SlackHook.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSlackHook gets a reference to the given NullableString and assigns it to the SlackHook field.
 func (o *Contact) SetSlackHook(v string) {
 	o.SlackHook.Set(&v)
-}
-
-// SetSlackHookNil sets the value for SlackHook to be an explicit nil
-func (o *Contact) SetSlackHookNil() {
-	o.SlackHook.Set(nil)
-}
-
-// UnsetSlackHook ensures that no value is present for SlackHook, not even an explicit nil
-func (o *Contact) UnsetSlackHook() {
-	o.SlackHook.Unset()
 }
 
 func (o Contact) MarshalJSON() ([]byte, error) {

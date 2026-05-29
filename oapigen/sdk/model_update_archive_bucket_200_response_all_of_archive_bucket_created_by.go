@@ -61,15 +61,6 @@ func (o *UpdateArchiveBucket200ResponseAllOfArchiveBucketCreatedBy) GetUsernameO
 	return o.Username, true
 }
 
-// IsSetUsername returns a boolean if a field has been set.
-func (o *UpdateArchiveBucket200ResponseAllOfArchiveBucketCreatedBy) IsSetUsername() bool {
-	if o != nil && !IsNil(o.Username) {
-		return true
-	}
-
-	return false
-}
-
 // SetUsername gets a reference to the given string and assigns it to the Username field.
 func (o *UpdateArchiveBucket200ResponseAllOfArchiveBucketCreatedBy) SetUsername(v string) {
 	o.Username = &v

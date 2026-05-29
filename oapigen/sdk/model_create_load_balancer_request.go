@@ -61,15 +61,6 @@ func (o *CreateLoadBalancerRequest) GetLoadBalancerOk() (*CreateLoadBalancerRequ
 	return o.LoadBalancer, true
 }
 
-// IsSetLoadBalancer returns a boolean if a field has been set.
-func (o *CreateLoadBalancerRequest) IsSetLoadBalancer() bool {
-	if o != nil && !IsNil(o.LoadBalancer) {
-		return true
-	}
-
-	return false
-}
-
 // SetLoadBalancer gets a reference to the given CreateLoadBalancerRequestLoadBalancer and assigns it to the LoadBalancer field.
 func (o *CreateLoadBalancerRequest) SetLoadBalancer(v CreateLoadBalancerRequestLoadBalancer) {
 	o.LoadBalancer = &v

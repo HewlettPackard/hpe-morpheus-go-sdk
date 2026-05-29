@@ -73,15 +73,6 @@ func (o *CreateNetworkServerGroupRequestGroup) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *CreateNetworkServerGroupRequestGroup) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *CreateNetworkServerGroupRequestGroup) SetId(v int64) {
 	o.Id = &v
@@ -129,15 +120,6 @@ func (o *CreateNetworkServerGroupRequestGroup) GetDescriptionOk() (*string, bool
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *CreateNetworkServerGroupRequestGroup) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *CreateNetworkServerGroupRequestGroup) SetDescription(v string) {
 	o.Description = &v
@@ -159,15 +141,6 @@ func (o *CreateNetworkServerGroupRequestGroup) GetInternalIdOk() (*string, bool)
 		return nil, false
 	}
 	return o.InternalId, true
-}
-
-// IsSetInternalId returns a boolean if a field has been set.
-func (o *CreateNetworkServerGroupRequestGroup) IsSetInternalId() bool {
-	if o != nil && !IsNil(o.InternalId) {
-		return true
-	}
-
-	return false
 }
 
 // SetInternalId gets a reference to the given string and assigns it to the InternalId field.
@@ -193,15 +166,6 @@ func (o *CreateNetworkServerGroupRequestGroup) GetExternalIdOk() (*string, bool)
 	return o.ExternalId, true
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *CreateNetworkServerGroupRequestGroup) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
 func (o *CreateNetworkServerGroupRequestGroup) SetExternalId(v string) {
 	o.ExternalId = &v
@@ -223,15 +187,6 @@ func (o *CreateNetworkServerGroupRequestGroup) GetVisibilityOk() (*string, bool)
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *CreateNetworkServerGroupRequestGroup) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -257,15 +212,6 @@ func (o *CreateNetworkServerGroupRequestGroup) GetAccountOk() (*CreateNetworkSer
 	return o.Account, true
 }
 
-// IsSetAccount returns a boolean if a field has been set.
-func (o *CreateNetworkServerGroupRequestGroup) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccount gets a reference to the given CreateNetworkServerGroupRequestGroupAccount and assigns it to the Account field.
 func (o *CreateNetworkServerGroupRequestGroup) SetAccount(v CreateNetworkServerGroupRequestGroupAccount) {
 	o.Account = &v
@@ -287,15 +233,6 @@ func (o *CreateNetworkServerGroupRequestGroup) GetOwnerOk() (*CreateNetworkServe
 		return nil, false
 	}
 	return o.Owner, true
-}
-
-// IsSetOwner returns a boolean if a field has been set.
-func (o *CreateNetworkServerGroupRequestGroup) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
-		return true
-	}
-
-	return false
 }
 
 // SetOwner gets a reference to the given CreateNetworkServerGroupRequestGroupOwner and assigns it to the Owner field.
@@ -321,15 +258,6 @@ func (o *CreateNetworkServerGroupRequestGroup) GetNetworkServerOk() (*CreateNetw
 	return o.NetworkServer, true
 }
 
-// IsSetNetworkServer returns a boolean if a field has been set.
-func (o *CreateNetworkServerGroupRequestGroup) IsSetNetworkServer() bool {
-	if o != nil && !IsNil(o.NetworkServer) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkServer gets a reference to the given CreateNetworkServerGroupRequestGroupNetworkServer and assigns it to the NetworkServer field.
 func (o *CreateNetworkServerGroupRequestGroup) SetNetworkServer(v CreateNetworkServerGroupRequestGroupNetworkServer) {
 	o.NetworkServer = &v
@@ -351,15 +279,6 @@ func (o *CreateNetworkServerGroupRequestGroup) GetPermissionsOk() (*CreateNetwor
 		return nil, false
 	}
 	return o.Permissions, true
-}
-
-// IsSetPermissions returns a boolean if a field has been set.
-func (o *CreateNetworkServerGroupRequestGroup) IsSetPermissions() bool {
-	if o != nil && !IsNil(o.Permissions) {
-		return true
-	}
-
-	return false
 }
 
 // SetPermissions gets a reference to the given CreateNetworkServerGroupRequestGroupPermissions and assigns it to the Permissions field.
@@ -385,15 +304,6 @@ func (o *CreateNetworkServerGroupRequestGroup) GetTagsOk() ([]CreateNetworkServe
 	return o.Tags, true
 }
 
-// IsSetTags returns a boolean if a field has been set.
-func (o *CreateNetworkServerGroupRequestGroup) IsSetTags() bool {
-	if o != nil && !IsNil(o.Tags) {
-		return true
-	}
-
-	return false
-}
-
 // SetTags gets a reference to the given []CreateNetworkServerGroupRequestGroupTagsInner and assigns it to the Tags field.
 func (o *CreateNetworkServerGroupRequestGroup) SetTags(v []CreateNetworkServerGroupRequestGroupTagsInner) {
 	o.Tags = v
@@ -415,15 +325,6 @@ func (o *CreateNetworkServerGroupRequestGroup) GetMembersOk() ([]CreateNetworkSe
 		return nil, false
 	}
 	return o.Members, true
-}
-
-// IsSetMembers returns a boolean if a field has been set.
-func (o *CreateNetworkServerGroupRequestGroup) IsSetMembers() bool {
-	if o != nil && !IsNil(o.Members) {
-		return true
-	}
-
-	return false
 }
 
 // SetMembers gets a reference to the given []CreateNetworkServerGroupRequestGroupMembersInner and assigns it to the Members field.

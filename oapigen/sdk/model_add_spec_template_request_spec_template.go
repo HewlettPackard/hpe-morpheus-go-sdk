@@ -95,15 +95,6 @@ func (o *AddSpecTemplateRequestSpecTemplate) GetLabelsOk() ([]string, bool) {
 	return o.Labels, true
 }
 
-// IsSetLabels returns a boolean if a field has been set.
-func (o *AddSpecTemplateRequestSpecTemplate) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
-}
-
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
 func (o *AddSpecTemplateRequestSpecTemplate) SetLabels(v []string) {
 	o.Labels = v
@@ -173,15 +164,6 @@ func (o *AddSpecTemplateRequestSpecTemplate) GetConfigOk() (*AddSpecTemplateRequ
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *AddSpecTemplateRequestSpecTemplate) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given AddSpecTemplateRequestSpecTemplateConfig and assigns it to the Config field.

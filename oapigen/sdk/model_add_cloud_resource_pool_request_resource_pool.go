@@ -123,15 +123,6 @@ func (o *AddCloudResourcePoolRequestResourcePool) GetDefaultPoolOk() (*bool, boo
 	return o.DefaultPool, true
 }
 
-// IsSetDefaultPool returns a boolean if a field has been set.
-func (o *AddCloudResourcePoolRequestResourcePool) IsSetDefaultPool() bool {
-	if o != nil && !IsNil(o.DefaultPool) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultPool gets a reference to the given bool and assigns it to the DefaultPool field.
 func (o *AddCloudResourcePoolRequestResourcePool) SetDefaultPool(v bool) {
 	o.DefaultPool = &v
@@ -153,15 +144,6 @@ func (o *AddCloudResourcePoolRequestResourcePool) GetDefaultImageOk() (*bool, bo
 		return nil, false
 	}
 	return o.DefaultImage, true
-}
-
-// IsSetDefaultImage returns a boolean if a field has been set.
-func (o *AddCloudResourcePoolRequestResourcePool) IsSetDefaultImage() bool {
-	if o != nil && !IsNil(o.DefaultImage) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultImage gets a reference to the given bool and assigns it to the DefaultImage field.
@@ -187,15 +169,6 @@ func (o *AddCloudResourcePoolRequestResourcePool) GetActiveOk() (*bool, bool) {
 	return o.Active, true
 }
 
-// IsSetActive returns a boolean if a field has been set.
-func (o *AddCloudResourcePoolRequestResourcePool) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
-}
-
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *AddCloudResourcePoolRequestResourcePool) SetActive(v bool) {
 	o.Active = &v
@@ -217,15 +190,6 @@ func (o *AddCloudResourcePoolRequestResourcePool) GetVisibilityOk() (*string, bo
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *AddCloudResourcePoolRequestResourcePool) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -251,15 +215,6 @@ func (o *AddCloudResourcePoolRequestResourcePool) GetDisplayNameOk() (*string, b
 	return o.DisplayName, true
 }
 
-// IsSetDisplayName returns a boolean if a field has been set.
-func (o *AddCloudResourcePoolRequestResourcePool) IsSetDisplayName() bool {
-	if o != nil && !IsNil(o.DisplayName) {
-		return true
-	}
-
-	return false
-}
-
 // SetDisplayName gets a reference to the given string and assigns it to the DisplayName field.
 func (o *AddCloudResourcePoolRequestResourcePool) SetDisplayName(v string) {
 	o.DisplayName = &v
@@ -281,15 +236,6 @@ func (o *AddCloudResourcePoolRequestResourcePool) GetInventoryOk() (*bool, bool)
 		return nil, false
 	}
 	return o.Inventory, true
-}
-
-// IsSetInventory returns a boolean if a field has been set.
-func (o *AddCloudResourcePoolRequestResourcePool) IsSetInventory() bool {
-	if o != nil && !IsNil(o.Inventory) {
-		return true
-	}
-
-	return false
 }
 
 // SetInventory gets a reference to the given bool and assigns it to the Inventory field.
@@ -339,15 +285,6 @@ func (o *AddCloudResourcePoolRequestResourcePool) GetTenantPermissionsOk() (*Add
 	return o.TenantPermissions, true
 }
 
-// IsSetTenantPermissions returns a boolean if a field has been set.
-func (o *AddCloudResourcePoolRequestResourcePool) IsSetTenantPermissions() bool {
-	if o != nil && !IsNil(o.TenantPermissions) {
-		return true
-	}
-
-	return false
-}
-
 // SetTenantPermissions gets a reference to the given AddCloudResourcePoolRequestResourcePoolTenantPermissions and assigns it to the TenantPermissions field.
 func (o *AddCloudResourcePoolRequestResourcePool) SetTenantPermissions(v AddCloudResourcePoolRequestResourcePoolTenantPermissions) {
 	o.TenantPermissions = &v
@@ -369,15 +306,6 @@ func (o *AddCloudResourcePoolRequestResourcePool) GetResourcePermissionsOk() (*A
 		return nil, false
 	}
 	return o.ResourcePermissions, true
-}
-
-// IsSetResourcePermissions returns a boolean if a field has been set.
-func (o *AddCloudResourcePoolRequestResourcePool) IsSetResourcePermissions() bool {
-	if o != nil && !IsNil(o.ResourcePermissions) {
-		return true
-	}
-
-	return false
 }
 
 // SetResourcePermissions gets a reference to the given AddCloudResourcePoolRequestResourcePoolResourcePermissions and assigns it to the ResourcePermissions field.

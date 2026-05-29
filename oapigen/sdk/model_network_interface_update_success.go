@@ -64,15 +64,6 @@ func (o *NetworkInterfaceUpdateSuccess) GetNetworkInterfaceOk() (*NetworkInterfa
 	return o.NetworkInterface, true
 }
 
-// IsSetNetworkInterface returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccess) IsSetNetworkInterface() bool {
-	if o != nil && !IsNil(o.NetworkInterface) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkInterface gets a reference to the given NetworkInterfaceUpdateSuccessNetworkInterface and assigns it to the NetworkInterface field.
 func (o *NetworkInterfaceUpdateSuccess) SetNetworkInterface(v NetworkInterfaceUpdateSuccessNetworkInterface) {
 	o.NetworkInterface = &v
@@ -94,15 +85,6 @@ func (o *NetworkInterfaceUpdateSuccess) GetInterfaceTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InterfaceType, true
-}
-
-// IsSetInterfaceType returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccess) IsSetInterfaceType() bool {
-	if o != nil && !IsNil(o.InterfaceType) {
-		return true
-	}
-
-	return false
 }
 
 // SetInterfaceType gets a reference to the given string and assigns it to the InterfaceType field.
@@ -128,15 +110,6 @@ func (o *NetworkInterfaceUpdateSuccess) GetNetIdOk() (*int64, bool) {
 	return o.NetId, true
 }
 
-// IsSetNetId returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccess) IsSetNetId() bool {
-	if o != nil && !IsNil(o.NetId) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetId gets a reference to the given int64 and assigns it to the NetId field.
 func (o *NetworkInterfaceUpdateSuccess) SetNetId(v int64) {
 	o.NetId = &v
@@ -158,15 +131,6 @@ func (o *NetworkInterfaceUpdateSuccess) GetServerOk() (*NetworkInterfaceUpdateSu
 		return nil, false
 	}
 	return o.Server, true
-}
-
-// IsSetServer returns a boolean if a field has been set.
-func (o *NetworkInterfaceUpdateSuccess) IsSetServer() bool {
-	if o != nil && !IsNil(o.Server) {
-		return true
-	}
-
-	return false
 }
 
 // SetServer gets a reference to the given NetworkInterfaceUpdateSuccessServer and assigns it to the Server field.

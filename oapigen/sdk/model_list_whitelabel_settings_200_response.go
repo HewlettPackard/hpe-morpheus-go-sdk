@@ -61,15 +61,6 @@ func (o *ListWhitelabelSettings200Response) GetWhitelabelSettingsOk() (*ListWhit
 	return o.WhitelabelSettings, true
 }
 
-// IsSetWhitelabelSettings returns a boolean if a field has been set.
-func (o *ListWhitelabelSettings200Response) IsSetWhitelabelSettings() bool {
-	if o != nil && !IsNil(o.WhitelabelSettings) {
-		return true
-	}
-
-	return false
-}
-
 // SetWhitelabelSettings gets a reference to the given ListWhitelabelSettings200ResponseWhitelabelSettings and assigns it to the WhitelabelSettings field.
 func (o *ListWhitelabelSettings200Response) SetWhitelabelSettings(v ListWhitelabelSettings200ResponseWhitelabelSettings) {
 	o.WhitelabelSettings = &v

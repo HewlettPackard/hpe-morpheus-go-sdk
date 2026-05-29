@@ -62,15 +62,6 @@ func (o *UpdateStorageBucketsRequestStorageBucketConfigOneOf3) GetBasePathOk() (
 	return o.BasePath, true
 }
 
-// IsSetBasePath returns a boolean if a field has been set.
-func (o *UpdateStorageBucketsRequestStorageBucketConfigOneOf3) IsSetBasePath() bool {
-	if o != nil && !IsNil(o.BasePath) {
-		return true
-	}
-
-	return false
-}
-
 // SetBasePath gets a reference to the given string and assigns it to the BasePath field.
 func (o *UpdateStorageBucketsRequestStorageBucketConfigOneOf3) SetBasePath(v string) {
 	o.BasePath = &v

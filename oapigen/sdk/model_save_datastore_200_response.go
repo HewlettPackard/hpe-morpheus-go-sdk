@@ -63,15 +63,6 @@ func (o *SaveDatastore200Response) GetDatastoreOk() (*SaveDatastore200ResponseAl
 	return o.Datastore, true
 }
 
-// IsSetDatastore returns a boolean if a field has been set.
-func (o *SaveDatastore200Response) IsSetDatastore() bool {
-	if o != nil && !IsNil(o.Datastore) {
-		return true
-	}
-
-	return false
-}
-
 // SetDatastore gets a reference to the given SaveDatastore200ResponseAllOfDatastore and assigns it to the Datastore field.
 func (o *SaveDatastore200Response) SetDatastore(v SaveDatastore200ResponseAllOfDatastore) {
 	o.Datastore = &v
@@ -95,15 +86,6 @@ func (o *SaveDatastore200Response) GetSuccessOk() (*bool, bool) {
 	return o.Success, true
 }
 
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *SaveDatastore200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
-}
-
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.
 func (o *SaveDatastore200Response) SetSuccess(v bool) {
 	o.Success = &v
@@ -125,15 +107,6 @@ func (o *SaveDatastore200Response) GetExecutionIdOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ExecutionId, true
-}
-
-// IsSetExecutionId returns a boolean if a field has been set.
-func (o *SaveDatastore200Response) IsSetExecutionId() bool {
-	if o != nil && !IsNil(o.ExecutionId) {
-		return true
-	}
-
-	return false
 }
 
 // SetExecutionId gets a reference to the given string and assigns it to the ExecutionId field.

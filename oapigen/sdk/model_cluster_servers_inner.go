@@ -64,15 +64,6 @@ func (o *ClusterServersInner) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ClusterServersInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ClusterServersInner) SetId(v int64) {
 	o.Id = &v
@@ -94,15 +85,6 @@ func (o *ClusterServersInner) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ClusterServersInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -128,15 +110,6 @@ func (o *ClusterServersInner) GetTypeSetOk() (*ClusterServersInnerTypeSet, bool)
 	return o.TypeSet, true
 }
 
-// IsSetTypeSet returns a boolean if a field has been set.
-func (o *ClusterServersInner) IsSetTypeSet() bool {
-	if o != nil && !IsNil(o.TypeSet) {
-		return true
-	}
-
-	return false
-}
-
 // SetTypeSet gets a reference to the given ClusterServersInnerTypeSet and assigns it to the TypeSet field.
 func (o *ClusterServersInner) SetTypeSet(v ClusterServersInnerTypeSet) {
 	o.TypeSet = &v
@@ -158,15 +131,6 @@ func (o *ClusterServersInner) GetComputeServerTypeOk() (*ClusterServersInnerComp
 		return nil, false
 	}
 	return o.ComputeServerType, true
-}
-
-// IsSetComputeServerType returns a boolean if a field has been set.
-func (o *ClusterServersInner) IsSetComputeServerType() bool {
-	if o != nil && !IsNil(o.ComputeServerType) {
-		return true
-	}
-
-	return false
 }
 
 // SetComputeServerType gets a reference to the given ClusterServersInnerComputeServerType and assigns it to the ComputeServerType field.

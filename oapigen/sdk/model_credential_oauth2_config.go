@@ -129,15 +129,6 @@ func (o *CredentialOauth2Config) GetDescriptionOk() (*string, bool) {
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *CredentialOauth2Config) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *CredentialOauth2Config) SetDescription(v string) {
 	o.Description = &v
@@ -159,15 +150,6 @@ func (o *CredentialOauth2Config) GetEnabledOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *CredentialOauth2Config) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -193,15 +175,6 @@ func (o *CredentialOauth2Config) GetIntegrationOk() (*UpdateCredentialsRequestCr
 	return o.Integration, true
 }
 
-// IsSetIntegration returns a boolean if a field has been set.
-func (o *CredentialOauth2Config) IsSetIntegration() bool {
-	if o != nil && !IsNil(o.Integration) {
-		return true
-	}
-
-	return false
-}
-
 // SetIntegration gets a reference to the given UpdateCredentialsRequestCredentialOneOf8Integration and assigns it to the Integration field.
 func (o *CredentialOauth2Config) SetIntegration(v UpdateCredentialsRequestCredentialOneOf8Integration) {
 	o.Integration = &v
@@ -225,15 +198,6 @@ func (o *CredentialOauth2Config) GetUsernameOk() (*string, bool) {
 	return o.Username, true
 }
 
-// IsSetUsername returns a boolean if a field has been set.
-func (o *CredentialOauth2Config) IsSetUsername() bool {
-	if o != nil && !IsNil(o.Username) {
-		return true
-	}
-
-	return false
-}
-
 // SetUsername gets a reference to the given string and assigns it to the Username field.
 func (o *CredentialOauth2Config) SetUsername(v string) {
 	o.Username = &v
@@ -255,15 +219,6 @@ func (o *CredentialOauth2Config) GetPasswordOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Password, true
-}
-
-// IsSetPassword returns a boolean if a field has been set.
-func (o *CredentialOauth2Config) IsSetPassword() bool {
-	if o != nil && !IsNil(o.Password) {
-		return true
-	}
-
-	return false
 }
 
 // SetPassword gets a reference to the given string and assigns it to the Password field.

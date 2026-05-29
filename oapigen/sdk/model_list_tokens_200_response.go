@@ -62,15 +62,6 @@ func (o *ListTokens200Response) GetTokensOk() ([]ListTokens200ResponseAllOfToken
 	return o.Tokens, true
 }
 
-// IsSetTokens returns a boolean if a field has been set.
-func (o *ListTokens200Response) IsSetTokens() bool {
-	if o != nil && !IsNil(o.Tokens) {
-		return true
-	}
-
-	return false
-}
-
 // SetTokens gets a reference to the given []ListTokens200ResponseAllOfTokensInner and assigns it to the Tokens field.
 func (o *ListTokens200Response) SetTokens(v []ListTokens200ResponseAllOfTokensInner) {
 	o.Tokens = v
@@ -92,15 +83,6 @@ func (o *ListTokens200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta,
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListTokens200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

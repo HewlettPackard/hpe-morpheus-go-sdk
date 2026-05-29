@@ -64,15 +64,6 @@ func (o *AddSecurityGroupsRequestSecurityGroupTenantPermissions) GetAccountsOk()
 	return o.Accounts, true
 }
 
-// IsSetAccounts returns a boolean if a field has been set.
-func (o *AddSecurityGroupsRequestSecurityGroupTenantPermissions) IsSetAccounts() bool {
-	if o != nil && !IsNil(o.Accounts) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccounts gets a reference to the given []int64 and assigns it to the Accounts field.
 func (o *AddSecurityGroupsRequestSecurityGroupTenantPermissions) SetAccounts(v []int64) {
 	o.Accounts = v
@@ -94,15 +85,6 @@ func (o *AddSecurityGroupsRequestSecurityGroupTenantPermissions) GetCanManageAcc
 		return nil, false
 	}
 	return o.CanManageAccounts, true
-}
-
-// IsSetCanManageAccounts returns a boolean if a field has been set.
-func (o *AddSecurityGroupsRequestSecurityGroupTenantPermissions) IsSetCanManageAccounts() bool {
-	if o != nil && !IsNil(o.CanManageAccounts) {
-		return true
-	}
-
-	return false
 }
 
 // SetCanManageAccounts gets a reference to the given []int64 and assigns it to the CanManageAccounts field.

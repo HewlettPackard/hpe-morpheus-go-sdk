@@ -62,15 +62,6 @@ func (o *ProvisioningLicenseReservations) GetResourceIdOk() (*int64, bool) {
 	return o.ResourceId, true
 }
 
-// IsSetResourceId returns a boolean if a field has been set.
-func (o *ProvisioningLicenseReservations) IsSetResourceId() bool {
-	if o != nil && !IsNil(o.ResourceId) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourceId gets a reference to the given int64 and assigns it to the ResourceId field.
 func (o *ProvisioningLicenseReservations) SetResourceId(v int64) {
 	o.ResourceId = &v
@@ -92,15 +83,6 @@ func (o *ProvisioningLicenseReservations) GetResourceTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ResourceType, true
-}
-
-// IsSetResourceType returns a boolean if a field has been set.
-func (o *ProvisioningLicenseReservations) IsSetResourceType() bool {
-	if o != nil && !IsNil(o.ResourceType) {
-		return true
-	}
-
-	return false
 }
 
 // SetResourceType gets a reference to the given string and assigns it to the ResourceType field.

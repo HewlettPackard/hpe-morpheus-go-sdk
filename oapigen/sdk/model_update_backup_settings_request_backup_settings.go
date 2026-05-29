@@ -76,15 +76,6 @@ func (o *UpdateBackupSettingsRequestBackupSettings) GetBackupsEnabledOk() (*bool
 	return o.BackupsEnabled, true
 }
 
-// IsSetBackupsEnabled returns a boolean if a field has been set.
-func (o *UpdateBackupSettingsRequestBackupSettings) IsSetBackupsEnabled() bool {
-	if o != nil && !IsNil(o.BackupsEnabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetBackupsEnabled gets a reference to the given bool and assigns it to the BackupsEnabled field.
 func (o *UpdateBackupSettingsRequestBackupSettings) SetBackupsEnabled(v bool) {
 	o.BackupsEnabled = &v
@@ -106,15 +97,6 @@ func (o *UpdateBackupSettingsRequestBackupSettings) GetRetentionCountOk() (*int6
 		return nil, false
 	}
 	return o.RetentionCount, true
-}
-
-// IsSetRetentionCount returns a boolean if a field has been set.
-func (o *UpdateBackupSettingsRequestBackupSettings) IsSetRetentionCount() bool {
-	if o != nil && !IsNil(o.RetentionCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetRetentionCount gets a reference to the given int64 and assigns it to the RetentionCount field.
@@ -140,15 +122,6 @@ func (o *UpdateBackupSettingsRequestBackupSettings) GetCreateBackupsOk() (*bool,
 	return o.CreateBackups, true
 }
 
-// IsSetCreateBackups returns a boolean if a field has been set.
-func (o *UpdateBackupSettingsRequestBackupSettings) IsSetCreateBackups() bool {
-	if o != nil && !IsNil(o.CreateBackups) {
-		return true
-	}
-
-	return false
-}
-
 // SetCreateBackups gets a reference to the given bool and assigns it to the CreateBackups field.
 func (o *UpdateBackupSettingsRequestBackupSettings) SetCreateBackups(v bool) {
 	o.CreateBackups = &v
@@ -170,15 +143,6 @@ func (o *UpdateBackupSettingsRequestBackupSettings) GetBackupApplianceOk() (*boo
 		return nil, false
 	}
 	return o.BackupAppliance, true
-}
-
-// IsSetBackupAppliance returns a boolean if a field has been set.
-func (o *UpdateBackupSettingsRequestBackupSettings) IsSetBackupAppliance() bool {
-	if o != nil && !IsNil(o.BackupAppliance) {
-		return true
-	}
-
-	return false
 }
 
 // SetBackupAppliance gets a reference to the given bool and assigns it to the BackupAppliance field.
@@ -204,15 +168,6 @@ func (o *UpdateBackupSettingsRequestBackupSettings) GetUpdateExistingOk() (*bool
 	return o.UpdateExisting, true
 }
 
-// IsSetUpdateExisting returns a boolean if a field has been set.
-func (o *UpdateBackupSettingsRequestBackupSettings) IsSetUpdateExisting() bool {
-	if o != nil && !IsNil(o.UpdateExisting) {
-		return true
-	}
-
-	return false
-}
-
 // SetUpdateExisting gets a reference to the given bool and assigns it to the UpdateExisting field.
 func (o *UpdateBackupSettingsRequestBackupSettings) SetUpdateExisting(v bool) {
 	o.UpdateExisting = &v
@@ -234,15 +189,6 @@ func (o *UpdateBackupSettingsRequestBackupSettings) GetDefaultScheduleOk() (*Upd
 		return nil, false
 	}
 	return o.DefaultSchedule, true
-}
-
-// IsSetDefaultSchedule returns a boolean if a field has been set.
-func (o *UpdateBackupSettingsRequestBackupSettings) IsSetDefaultSchedule() bool {
-	if o != nil && !IsNil(o.DefaultSchedule) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultSchedule gets a reference to the given UpdateBackupSettingsRequestBackupSettingsDefaultSchedule and assigns it to the DefaultSchedule field.
@@ -268,15 +214,6 @@ func (o *UpdateBackupSettingsRequestBackupSettings) GetClearDefaultScheduleOk() 
 	return o.ClearDefaultSchedule, true
 }
 
-// IsSetClearDefaultSchedule returns a boolean if a field has been set.
-func (o *UpdateBackupSettingsRequestBackupSettings) IsSetClearDefaultSchedule() bool {
-	if o != nil && !IsNil(o.ClearDefaultSchedule) {
-		return true
-	}
-
-	return false
-}
-
 // SetClearDefaultSchedule gets a reference to the given bool and assigns it to the ClearDefaultSchedule field.
 func (o *UpdateBackupSettingsRequestBackupSettings) SetClearDefaultSchedule(v bool) {
 	o.ClearDefaultSchedule = &v
@@ -300,15 +237,6 @@ func (o *UpdateBackupSettingsRequestBackupSettings) GetDefaultStorageBucketOk() 
 	return o.DefaultStorageBucket, true
 }
 
-// IsSetDefaultStorageBucket returns a boolean if a field has been set.
-func (o *UpdateBackupSettingsRequestBackupSettings) IsSetDefaultStorageBucket() bool {
-	if o != nil && !IsNil(o.DefaultStorageBucket) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultStorageBucket gets a reference to the given UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket and assigns it to the DefaultStorageBucket field.
 func (o *UpdateBackupSettingsRequestBackupSettings) SetDefaultStorageBucket(v UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket) {
 	o.DefaultStorageBucket = &v
@@ -330,15 +258,6 @@ func (o *UpdateBackupSettingsRequestBackupSettings) GetClearDefaultStorageBucket
 		return nil, false
 	}
 	return o.ClearDefaultStorageBucket, true
-}
-
-// IsSetClearDefaultStorageBucket returns a boolean if a field has been set.
-func (o *UpdateBackupSettingsRequestBackupSettings) IsSetClearDefaultStorageBucket() bool {
-	if o != nil && !IsNil(o.ClearDefaultStorageBucket) {
-		return true
-	}
-
-	return false
 }
 
 // SetClearDefaultStorageBucket gets a reference to the given bool and assigns it to the ClearDefaultStorageBucket field.

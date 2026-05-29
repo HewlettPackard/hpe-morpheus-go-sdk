@@ -61,15 +61,6 @@ func (o *UpdateVDIApps200ResponseAnyOf1) GetSuccessOk() (*bool, bool) {
 	return o.Success, true
 }
 
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *UpdateVDIApps200ResponseAnyOf1) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
-}
-
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.
 func (o *UpdateVDIApps200ResponseAnyOf1) SetSuccess(v bool) {
 	o.Success = &v

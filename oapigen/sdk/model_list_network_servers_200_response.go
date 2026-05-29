@@ -62,15 +62,6 @@ func (o *ListNetworkServers200Response) GetNetworkServersOk() ([]ListNetworkServ
 	return o.NetworkServers, true
 }
 
-// IsSetNetworkServers returns a boolean if a field has been set.
-func (o *ListNetworkServers200Response) IsSetNetworkServers() bool {
-	if o != nil && !IsNil(o.NetworkServers) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkServers gets a reference to the given []ListNetworkServers200ResponseAllOfNetworkServersInner and assigns it to the NetworkServers field.
 func (o *ListNetworkServers200Response) SetNetworkServers(v []ListNetworkServers200ResponseAllOfNetworkServersInner) {
 	o.NetworkServers = v
@@ -92,15 +83,6 @@ func (o *ListNetworkServers200Response) GetMetaOk() (*ListApprovals200ResponseAl
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListNetworkServers200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

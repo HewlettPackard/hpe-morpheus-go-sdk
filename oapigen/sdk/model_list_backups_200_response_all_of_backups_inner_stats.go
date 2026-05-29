@@ -76,15 +76,6 @@ func (o *ListBackups200ResponseAllOfBackupsInnerStats) GetTotalSizeOk() (*int64,
 	return o.TotalSize, true
 }
 
-// IsSetTotalSize returns a boolean if a field has been set.
-func (o *ListBackups200ResponseAllOfBackupsInnerStats) IsSetTotalSize() bool {
-	if o != nil && !IsNil(o.TotalSize) {
-		return true
-	}
-
-	return false
-}
-
 // SetTotalSize gets a reference to the given int64 and assigns it to the TotalSize field.
 func (o *ListBackups200ResponseAllOfBackupsInnerStats) SetTotalSize(v int64) {
 	o.TotalSize = &v
@@ -106,15 +97,6 @@ func (o *ListBackups200ResponseAllOfBackupsInnerStats) GetAvgSizeOk() (*int64, b
 		return nil, false
 	}
 	return o.AvgSize, true
-}
-
-// IsSetAvgSize returns a boolean if a field has been set.
-func (o *ListBackups200ResponseAllOfBackupsInnerStats) IsSetAvgSize() bool {
-	if o != nil && !IsNil(o.AvgSize) {
-		return true
-	}
-
-	return false
 }
 
 // SetAvgSize gets a reference to the given int64 and assigns it to the AvgSize field.
@@ -140,15 +122,6 @@ func (o *ListBackups200ResponseAllOfBackupsInnerStats) GetTotalCompletedOk() (*i
 	return o.TotalCompleted, true
 }
 
-// IsSetTotalCompleted returns a boolean if a field has been set.
-func (o *ListBackups200ResponseAllOfBackupsInnerStats) IsSetTotalCompleted() bool {
-	if o != nil && !IsNil(o.TotalCompleted) {
-		return true
-	}
-
-	return false
-}
-
 // SetTotalCompleted gets a reference to the given int64 and assigns it to the TotalCompleted field.
 func (o *ListBackups200ResponseAllOfBackupsInnerStats) SetTotalCompleted(v int64) {
 	o.TotalCompleted = &v
@@ -170,15 +143,6 @@ func (o *ListBackups200ResponseAllOfBackupsInnerStats) GetSuccessOk() (*int64, b
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *ListBackups200ResponseAllOfBackupsInnerStats) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given int64 and assigns it to the Success field.
@@ -204,15 +168,6 @@ func (o *ListBackups200ResponseAllOfBackupsInnerStats) GetFailedOk() (*int64, bo
 	return o.Failed, true
 }
 
-// IsSetFailed returns a boolean if a field has been set.
-func (o *ListBackups200ResponseAllOfBackupsInnerStats) IsSetFailed() bool {
-	if o != nil && !IsNil(o.Failed) {
-		return true
-	}
-
-	return false
-}
-
 // SetFailed gets a reference to the given int64 and assigns it to the Failed field.
 func (o *ListBackups200ResponseAllOfBackupsInnerStats) SetFailed(v int64) {
 	o.Failed = &v
@@ -234,15 +189,6 @@ func (o *ListBackups200ResponseAllOfBackupsInnerStats) GetSuccessRateOk() (*floa
 		return nil, false
 	}
 	return o.SuccessRate, true
-}
-
-// IsSetSuccessRate returns a boolean if a field has been set.
-func (o *ListBackups200ResponseAllOfBackupsInnerStats) IsSetSuccessRate() bool {
-	if o != nil && !IsNil(o.SuccessRate) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccessRate gets a reference to the given float64 and assigns it to the SuccessRate field.
@@ -268,15 +214,6 @@ func (o *ListBackups200ResponseAllOfBackupsInnerStats) GetFailRateOk() (*float64
 	return o.FailRate, true
 }
 
-// IsSetFailRate returns a boolean if a field has been set.
-func (o *ListBackups200ResponseAllOfBackupsInnerStats) IsSetFailRate() bool {
-	if o != nil && !IsNil(o.FailRate) {
-		return true
-	}
-
-	return false
-}
-
 // SetFailRate gets a reference to the given float64 and assigns it to the FailRate field.
 func (o *ListBackups200ResponseAllOfBackupsInnerStats) SetFailRate(v float64) {
 	o.FailRate = &v
@@ -298,15 +235,6 @@ func (o *ListBackups200ResponseAllOfBackupsInnerStats) GetLastFiveResultsOk() ([
 		return nil, false
 	}
 	return o.LastFiveResults, true
-}
-
-// IsSetLastFiveResults returns a boolean if a field has been set.
-func (o *ListBackups200ResponseAllOfBackupsInnerStats) IsSetLastFiveResults() bool {
-	if o != nil && !IsNil(o.LastFiveResults) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastFiveResults gets a reference to the given []string and assigns it to the LastFiveResults field.

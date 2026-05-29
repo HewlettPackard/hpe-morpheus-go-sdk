@@ -64,15 +64,6 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesI
 	return o.IdName, true
 }
 
-// IsSetIdName returns a boolean if a field has been set.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) IsSetIdName() bool {
-	if o != nil && !IsNil(o.IdName) {
-		return true
-	}
-
-	return false
-}
-
 // SetIdName gets a reference to the given string and assigns it to the IdName field.
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) SetIdName(v string) {
 	o.IdName = &v
@@ -97,28 +88,9 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesI
 	return o.Pool.Get(), o.Pool.IsSet()
 }
 
-// IsSetPool returns a boolean if a field has been set.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) IsSetPool() bool {
-	if o != nil && o.Pool.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPool gets a reference to the given NullableListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetworkPool and assigns it to the Pool field.
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) SetPool(v ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetworkPool) {
 	o.Pool.Set(&v)
-}
-
-// SetPoolNil sets the value for Pool to be an explicit nil
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) SetPoolNil() {
-	o.Pool.Set(nil)
-}
-
-// UnsetPool ensures that no value is present for Pool, not even an explicit nil
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) UnsetPool() {
-	o.Pool.Unset()
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -137,15 +109,6 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesI
 		return nil, false
 	}
 	return o.Id, true
-}
-
-// IsSetId returns a boolean if a field has been set.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
 }
 
 // SetId gets a reference to the given string and assigns it to the Id field.
@@ -169,15 +132,6 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesI
 		return nil, false
 	}
 	return o.HasPool, true
-}
-
-// IsSetHasPool returns a boolean if a field has been set.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) IsSetHasPool() bool {
-	if o != nil && !IsNil(o.HasPool) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasPool gets a reference to the given bool and assigns it to the HasPool field.

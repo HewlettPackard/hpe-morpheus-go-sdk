@@ -77,15 +77,6 @@ func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) GetIdOk() 
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) SetId(v int64) {
 	o.Id = &v
@@ -109,15 +100,6 @@ func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) GetAccount
 	return o.AccountId, true
 }
 
-// IsSetAccountId returns a boolean if a field has been set.
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) IsSetAccountId() bool {
-	if o != nil && !IsNil(o.AccountId) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccountId gets a reference to the given int64 and assigns it to the AccountId field.
 func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) SetAccountId(v int64) {
 	o.AccountId = &v
@@ -139,15 +121,6 @@ func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) GetNameOk(
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -174,28 +147,9 @@ func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) GetCodeOk(
 	return o.Code.Get(), o.Code.IsSet()
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) IsSetCode() bool {
-	if o != nil && o.Code.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) SetCode(v string) {
 	o.Code.Set(&v)
-}
-
-// SetCodeNil sets the value for Code to be an explicit nil
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) SetCodeNil() {
-	o.Code.Set(nil)
-}
-
-// UnsetCode ensures that no value is present for Code, not even an explicit nil
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) UnsetCode() {
-	o.Code.Unset()
 }
 
 // GetTaskType returns the TaskType field value if set, zero value otherwise.
@@ -214,15 +168,6 @@ func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) GetTaskTyp
 		return nil, false
 	}
 	return o.TaskType, true
-}
-
-// IsSetTaskType returns a boolean if a field has been set.
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) IsSetTaskType() bool {
-	if o != nil && !IsNil(o.TaskType) {
-		return true
-	}
-
-	return false
 }
 
 // SetTaskType gets a reference to the given UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskType and assigns it to the TaskType field.
@@ -249,15 +194,6 @@ func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) GetLabelsO
 	return o.Labels, true
 }
 
-// IsSetLabels returns a boolean if a field has been set.
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
-}
-
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
 func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) SetLabels(v []string) {
 	o.Labels = v
@@ -281,15 +217,6 @@ func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) GetTaskOpt
 	return o.TaskOptions, true
 }
 
-// IsSetTaskOptions returns a boolean if a field has been set.
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) IsSetTaskOptions() bool {
-	if o != nil && !IsNil(o.TaskOptions) {
-		return true
-	}
-
-	return false
-}
-
 // SetTaskOptions gets a reference to the given UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions and assigns it to the TaskOptions field.
 func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) SetTaskOptions(v UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskTaskOptions) {
 	o.TaskOptions = &v
@@ -311,15 +238,6 @@ func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) GetFileOk(
 		return nil, false
 	}
 	return o.File, true
-}
-
-// IsSetFile returns a boolean if a field has been set.
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) IsSetFile() bool {
-	if o != nil && !IsNil(o.File) {
-		return true
-	}
-
-	return false
 }
 
 // SetFile gets a reference to the given UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTaskFile and assigns it to the File field.
@@ -346,28 +264,9 @@ func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) GetResultT
 	return o.ResultType.Get(), o.ResultType.IsSet()
 }
 
-// IsSetResultType returns a boolean if a field has been set.
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) IsSetResultType() bool {
-	if o != nil && o.ResultType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetResultType gets a reference to the given NullableString and assigns it to the ResultType field.
 func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) SetResultType(v string) {
 	o.ResultType.Set(&v)
-}
-
-// SetResultTypeNil sets the value for ResultType to be an explicit nil
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) SetResultTypeNil() {
-	o.ResultType.Set(nil)
-}
-
-// UnsetResultType ensures that no value is present for ResultType, not even an explicit nil
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) UnsetResultType() {
-	o.ResultType.Unset()
 }
 
 // GetExecuteTarget returns the ExecuteTarget field value if set, zero value otherwise.
@@ -386,15 +285,6 @@ func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) GetExecute
 		return nil, false
 	}
 	return o.ExecuteTarget, true
-}
-
-// IsSetExecuteTarget returns a boolean if a field has been set.
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) IsSetExecuteTarget() bool {
-	if o != nil && !IsNil(o.ExecuteTarget) {
-		return true
-	}
-
-	return false
 }
 
 // SetExecuteTarget gets a reference to the given string and assigns it to the ExecuteTarget field.
@@ -420,15 +310,6 @@ func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) GetRetryab
 	return o.Retryable, true
 }
 
-// IsSetRetryable returns a boolean if a field has been set.
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) IsSetRetryable() bool {
-	if o != nil && !IsNil(o.Retryable) {
-		return true
-	}
-
-	return false
-}
-
 // SetRetryable gets a reference to the given bool and assigns it to the Retryable field.
 func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) SetRetryable(v bool) {
 	o.Retryable = &v
@@ -450,15 +331,6 @@ func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) GetRetryCo
 		return nil, false
 	}
 	return o.RetryCount, true
-}
-
-// IsSetRetryCount returns a boolean if a field has been set.
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) IsSetRetryCount() bool {
-	if o != nil && !IsNil(o.RetryCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetRetryCount gets a reference to the given int64 and assigns it to the RetryCount field.
@@ -484,15 +356,6 @@ func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) GetRetryDe
 	return o.RetryDelaySeconds, true
 }
 
-// IsSetRetryDelaySeconds returns a boolean if a field has been set.
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) IsSetRetryDelaySeconds() bool {
-	if o != nil && !IsNil(o.RetryDelaySeconds) {
-		return true
-	}
-
-	return false
-}
-
 // SetRetryDelaySeconds gets a reference to the given int64 and assigns it to the RetryDelaySeconds field.
 func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) SetRetryDelaySeconds(v int64) {
 	o.RetryDelaySeconds = &v
@@ -514,15 +377,6 @@ func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) GetAllowCu
 		return nil, false
 	}
 	return o.AllowCustomConfig, true
-}
-
-// IsSetAllowCustomConfig returns a boolean if a field has been set.
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) IsSetAllowCustomConfig() bool {
-	if o != nil && !IsNil(o.AllowCustomConfig) {
-		return true
-	}
-
-	return false
 }
 
 // SetAllowCustomConfig gets a reference to the given bool and assigns it to the AllowCustomConfig field.
@@ -548,15 +402,6 @@ func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) GetDateCre
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -578,15 +423,6 @@ func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) GetLastUpd
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.

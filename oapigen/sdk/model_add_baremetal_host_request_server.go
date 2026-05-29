@@ -68,15 +68,6 @@ func (o *AddBaremetalHostRequestServer) GetCloudOk() (*AddBaremetalHostRequestSe
 	return o.Cloud, true
 }
 
-// IsSetCloud returns a boolean if a field has been set.
-func (o *AddBaremetalHostRequestServer) IsSetCloud() bool {
-	if o != nil && !IsNil(o.Cloud) {
-		return true
-	}
-
-	return false
-}
-
 // SetCloud gets a reference to the given AddBaremetalHostRequestServerCloud and assigns it to the Cloud field.
 func (o *AddBaremetalHostRequestServer) SetCloud(v AddBaremetalHostRequestServerCloud) {
 	o.Cloud = &v
@@ -98,15 +89,6 @@ func (o *AddBaremetalHostRequestServer) GetComputeServerTypeOk() (*AddBaremetalH
 		return nil, false
 	}
 	return o.ComputeServerType, true
-}
-
-// IsSetComputeServerType returns a boolean if a field has been set.
-func (o *AddBaremetalHostRequestServer) IsSetComputeServerType() bool {
-	if o != nil && !IsNil(o.ComputeServerType) {
-		return true
-	}
-
-	return false
 }
 
 // SetComputeServerType gets a reference to the given AddBaremetalHostRequestServerComputeServerType and assigns it to the ComputeServerType field.
@@ -132,15 +114,6 @@ func (o *AddBaremetalHostRequestServer) GetDescriptionOk() (*string, bool) {
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *AddBaremetalHostRequestServer) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *AddBaremetalHostRequestServer) SetDescription(v string) {
 	o.Description = &v
@@ -162,15 +135,6 @@ func (o *AddBaremetalHostRequestServer) GetGroupOk() (*AddBaremetalHostRequestSe
 		return nil, false
 	}
 	return o.Group, true
-}
-
-// IsSetGroup returns a boolean if a field has been set.
-func (o *AddBaremetalHostRequestServer) IsSetGroup() bool {
-	if o != nil && !IsNil(o.Group) {
-		return true
-	}
-
-	return false
 }
 
 // SetGroup gets a reference to the given AddBaremetalHostRequestServerGroup and assigns it to the Group field.
@@ -196,15 +160,6 @@ func (o *AddBaremetalHostRequestServer) GetLabelsOk() ([]string, bool) {
 	return o.Labels, true
 }
 
-// IsSetLabels returns a boolean if a field has been set.
-func (o *AddBaremetalHostRequestServer) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
-}
-
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
 func (o *AddBaremetalHostRequestServer) SetLabels(v []string) {
 	o.Labels = v
@@ -226,15 +181,6 @@ func (o *AddBaremetalHostRequestServer) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *AddBaremetalHostRequestServer) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -260,15 +206,6 @@ func (o *AddBaremetalHostRequestServer) GetVisibilityOk() (*string, bool) {
 	return o.Visibility, true
 }
 
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *AddBaremetalHostRequestServer) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
-}
-
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
 func (o *AddBaremetalHostRequestServer) SetVisibility(v string) {
 	o.Visibility = &v
@@ -290,15 +227,6 @@ func (o *AddBaremetalHostRequestServer) GetConfigOk() (*AddBaremetalHostRequestS
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *AddBaremetalHostRequestServer) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given AddBaremetalHostRequestServerConfig and assigns it to the Config field.

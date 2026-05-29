@@ -74,15 +74,6 @@ func (o *StorageVolumeType) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *StorageVolumeType) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *StorageVolumeType) SetId(v int64) {
 	o.Id = &v
@@ -104,15 +95,6 @@ func (o *StorageVolumeType) GetCodeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *StorageVolumeType) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -138,15 +120,6 @@ func (o *StorageVolumeType) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *StorageVolumeType) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *StorageVolumeType) SetName(v string) {
 	o.Name = &v
@@ -168,15 +141,6 @@ func (o *StorageVolumeType) GetDescriptionOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *StorageVolumeType) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -202,15 +166,6 @@ func (o *StorageVolumeType) GetDisplayOrderOk() (*int64, bool) {
 	return o.DisplayOrder, true
 }
 
-// IsSetDisplayOrder returns a boolean if a field has been set.
-func (o *StorageVolumeType) IsSetDisplayOrder() bool {
-	if o != nil && !IsNil(o.DisplayOrder) {
-		return true
-	}
-
-	return false
-}
-
 // SetDisplayOrder gets a reference to the given int64 and assigns it to the DisplayOrder field.
 func (o *StorageVolumeType) SetDisplayOrder(v int64) {
 	o.DisplayOrder = &v
@@ -232,15 +187,6 @@ func (o *StorageVolumeType) GetDefaultTypeOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.DefaultType, true
-}
-
-// IsSetDefaultType returns a boolean if a field has been set.
-func (o *StorageVolumeType) IsSetDefaultType() bool {
-	if o != nil && !IsNil(o.DefaultType) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultType gets a reference to the given bool and assigns it to the DefaultType field.
@@ -266,15 +212,6 @@ func (o *StorageVolumeType) GetCustomLabelOk() (*bool, bool) {
 	return o.CustomLabel, true
 }
 
-// IsSetCustomLabel returns a boolean if a field has been set.
-func (o *StorageVolumeType) IsSetCustomLabel() bool {
-	if o != nil && !IsNil(o.CustomLabel) {
-		return true
-	}
-
-	return false
-}
-
 // SetCustomLabel gets a reference to the given bool and assigns it to the CustomLabel field.
 func (o *StorageVolumeType) SetCustomLabel(v bool) {
 	o.CustomLabel = &v
@@ -296,15 +233,6 @@ func (o *StorageVolumeType) GetCustomSizeOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.CustomSize, true
-}
-
-// IsSetCustomSize returns a boolean if a field has been set.
-func (o *StorageVolumeType) IsSetCustomSize() bool {
-	if o != nil && !IsNil(o.CustomSize) {
-		return true
-	}
-
-	return false
 }
 
 // SetCustomSize gets a reference to the given bool and assigns it to the CustomSize field.
@@ -331,28 +259,9 @@ func (o *StorageVolumeType) GetCustomSizeOptionsOk() (*string, bool) {
 	return o.CustomSizeOptions.Get(), o.CustomSizeOptions.IsSet()
 }
 
-// IsSetCustomSizeOptions returns a boolean if a field has been set.
-func (o *StorageVolumeType) IsSetCustomSizeOptions() bool {
-	if o != nil && o.CustomSizeOptions.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCustomSizeOptions gets a reference to the given NullableString and assigns it to the CustomSizeOptions field.
 func (o *StorageVolumeType) SetCustomSizeOptions(v string) {
 	o.CustomSizeOptions.Set(&v)
-}
-
-// SetCustomSizeOptionsNil sets the value for CustomSizeOptions to be an explicit nil
-func (o *StorageVolumeType) SetCustomSizeOptionsNil() {
-	o.CustomSizeOptions.Set(nil)
-}
-
-// UnsetCustomSizeOptions ensures that no value is present for CustomSizeOptions, not even an explicit nil
-func (o *StorageVolumeType) UnsetCustomSizeOptions() {
-	o.CustomSizeOptions.Unset()
 }
 
 // GetConfigurableIOPS returns the ConfigurableIOPS field value if set, zero value otherwise.
@@ -371,15 +280,6 @@ func (o *StorageVolumeType) GetConfigurableIOPSOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.ConfigurableIOPS, true
-}
-
-// IsSetConfigurableIOPS returns a boolean if a field has been set.
-func (o *StorageVolumeType) IsSetConfigurableIOPS() bool {
-	if o != nil && !IsNil(o.ConfigurableIOPS) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfigurableIOPS gets a reference to the given bool and assigns it to the ConfigurableIOPS field.
@@ -405,15 +305,6 @@ func (o *StorageVolumeType) GetHasDatastoreOk() (*bool, bool) {
 	return o.HasDatastore, true
 }
 
-// IsSetHasDatastore returns a boolean if a field has been set.
-func (o *StorageVolumeType) IsSetHasDatastore() bool {
-	if o != nil && !IsNil(o.HasDatastore) {
-		return true
-	}
-
-	return false
-}
-
 // SetHasDatastore gets a reference to the given bool and assigns it to the HasDatastore field.
 func (o *StorageVolumeType) SetHasDatastore(v bool) {
 	o.HasDatastore = &v
@@ -435,15 +326,6 @@ func (o *StorageVolumeType) GetCategoryOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Category, true
-}
-
-// IsSetCategory returns a boolean if a field has been set.
-func (o *StorageVolumeType) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
-		return true
-	}
-
-	return false
 }
 
 // SetCategory gets a reference to the given string and assigns it to the Category field.
@@ -469,15 +351,6 @@ func (o *StorageVolumeType) GetEnabledOk() (*bool, bool) {
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *StorageVolumeType) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *StorageVolumeType) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -500,15 +373,6 @@ func (o *StorageVolumeType) GetOptionTypesOk() ([]GetStorageVolumeTypes200Respon
 		return nil, false
 	}
 	return o.OptionTypes, true
-}
-
-// IsSetOptionTypes returns a boolean if a field has been set.
-func (o *StorageVolumeType) IsSetOptionTypes() bool {
-	if o != nil && !IsNil(o.OptionTypes) {
-		return true
-	}
-
-	return false
 }
 
 // SetOptionTypes gets a reference to the given []GetStorageVolumeTypes200ResponseStorageVolumeTypeOptionTypesInner and assigns it to the OptionTypes field.

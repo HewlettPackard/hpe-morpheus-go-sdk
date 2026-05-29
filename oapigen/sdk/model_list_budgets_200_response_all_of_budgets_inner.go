@@ -93,15 +93,6 @@ func (o *ListBudgets200ResponseAllOfBudgetsInner) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListBudgets200ResponseAllOfBudgetsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListBudgets200ResponseAllOfBudgetsInner) SetId(v int64) {
 	o.Id = &v
@@ -123,15 +114,6 @@ func (o *ListBudgets200ResponseAllOfBudgetsInner) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListBudgets200ResponseAllOfBudgetsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -158,28 +140,9 @@ func (o *ListBudgets200ResponseAllOfBudgetsInner) GetDescriptionOk() (*string, b
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ListBudgets200ResponseAllOfBudgetsInner) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListBudgets200ResponseAllOfBudgetsInner) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *ListBudgets200ResponseAllOfBudgetsInner) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *ListBudgets200ResponseAllOfBudgetsInner) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -201,28 +164,9 @@ func (o *ListBudgets200ResponseAllOfBudgetsInner) GetAccountOk() (*ListBudgets20
 	return o.Account.Get(), o.Account.IsSet()
 }
 
-// IsSetAccount returns a boolean if a field has been set.
-func (o *ListBudgets200ResponseAllOfBudgetsInner) IsSetAccount() bool {
-	if o != nil && o.Account.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAccount gets a reference to the given NullableListBudgets200ResponseAllOfBudgetsInnerAccount and assigns it to the Account field.
 func (o *ListBudgets200ResponseAllOfBudgetsInner) SetAccount(v ListBudgets200ResponseAllOfBudgetsInnerAccount) {
 	o.Account.Set(&v)
-}
-
-// SetAccountNil sets the value for Account to be an explicit nil
-func (o *ListBudgets200ResponseAllOfBudgetsInner) SetAccountNil() {
-	o.Account.Set(nil)
-}
-
-// UnsetAccount ensures that no value is present for Account, not even an explicit nil
-func (o *ListBudgets200ResponseAllOfBudgetsInner) UnsetAccount() {
-	o.Account.Unset()
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
@@ -241,15 +185,6 @@ func (o *ListBudgets200ResponseAllOfBudgetsInner) GetEnabledOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *ListBudgets200ResponseAllOfBudgetsInner) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -275,15 +210,6 @@ func (o *ListBudgets200ResponseAllOfBudgetsInner) GetRefScopeOk() (*string, bool
 	return o.RefScope, true
 }
 
-// IsSetRefScope returns a boolean if a field has been set.
-func (o *ListBudgets200ResponseAllOfBudgetsInner) IsSetRefScope() bool {
-	if o != nil && !IsNil(o.RefScope) {
-		return true
-	}
-
-	return false
-}
-
 // SetRefScope gets a reference to the given string and assigns it to the RefScope field.
 func (o *ListBudgets200ResponseAllOfBudgetsInner) SetRefScope(v string) {
 	o.RefScope = &v
@@ -305,15 +231,6 @@ func (o *ListBudgets200ResponseAllOfBudgetsInner) GetRefTypeOk() (*string, bool)
 		return nil, false
 	}
 	return o.RefType, true
-}
-
-// IsSetRefType returns a boolean if a field has been set.
-func (o *ListBudgets200ResponseAllOfBudgetsInner) IsSetRefType() bool {
-	if o != nil && !IsNil(o.RefType) {
-		return true
-	}
-
-	return false
 }
 
 // SetRefType gets a reference to the given string and assigns it to the RefType field.
@@ -339,15 +256,6 @@ func (o *ListBudgets200ResponseAllOfBudgetsInner) GetRefIdOk() (*int64, bool) {
 	return o.RefId, true
 }
 
-// IsSetRefId returns a boolean if a field has been set.
-func (o *ListBudgets200ResponseAllOfBudgetsInner) IsSetRefId() bool {
-	if o != nil && !IsNil(o.RefId) {
-		return true
-	}
-
-	return false
-}
-
 // SetRefId gets a reference to the given int64 and assigns it to the RefId field.
 func (o *ListBudgets200ResponseAllOfBudgetsInner) SetRefId(v int64) {
 	o.RefId = &v
@@ -369,15 +277,6 @@ func (o *ListBudgets200ResponseAllOfBudgetsInner) GetRefNameOk() (*string, bool)
 		return nil, false
 	}
 	return o.RefName, true
-}
-
-// IsSetRefName returns a boolean if a field has been set.
-func (o *ListBudgets200ResponseAllOfBudgetsInner) IsSetRefName() bool {
-	if o != nil && !IsNil(o.RefName) {
-		return true
-	}
-
-	return false
 }
 
 // SetRefName gets a reference to the given string and assigns it to the RefName field.
@@ -403,15 +302,6 @@ func (o *ListBudgets200ResponseAllOfBudgetsInner) GetPeriodOk() (*string, bool) 
 	return o.Period, true
 }
 
-// IsSetPeriod returns a boolean if a field has been set.
-func (o *ListBudgets200ResponseAllOfBudgetsInner) IsSetPeriod() bool {
-	if o != nil && !IsNil(o.Period) {
-		return true
-	}
-
-	return false
-}
-
 // SetPeriod gets a reference to the given string and assigns it to the Period field.
 func (o *ListBudgets200ResponseAllOfBudgetsInner) SetPeriod(v string) {
 	o.Period = &v
@@ -433,15 +323,6 @@ func (o *ListBudgets200ResponseAllOfBudgetsInner) GetYearOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Year, true
-}
-
-// IsSetYear returns a boolean if a field has been set.
-func (o *ListBudgets200ResponseAllOfBudgetsInner) IsSetYear() bool {
-	if o != nil && !IsNil(o.Year) {
-		return true
-	}
-
-	return false
 }
 
 // SetYear gets a reference to the given string and assigns it to the Year field.
@@ -467,15 +348,6 @@ func (o *ListBudgets200ResponseAllOfBudgetsInner) GetResourceTypeOk() (*string, 
 	return o.ResourceType, true
 }
 
-// IsSetResourceType returns a boolean if a field has been set.
-func (o *ListBudgets200ResponseAllOfBudgetsInner) IsSetResourceType() bool {
-	if o != nil && !IsNil(o.ResourceType) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourceType gets a reference to the given string and assigns it to the ResourceType field.
 func (o *ListBudgets200ResponseAllOfBudgetsInner) SetResourceType(v string) {
 	o.ResourceType = &v
@@ -497,15 +369,6 @@ func (o *ListBudgets200ResponseAllOfBudgetsInner) GetTimezoneOk() (*string, bool
 		return nil, false
 	}
 	return o.Timezone, true
-}
-
-// IsSetTimezone returns a boolean if a field has been set.
-func (o *ListBudgets200ResponseAllOfBudgetsInner) IsSetTimezone() bool {
-	if o != nil && !IsNil(o.Timezone) {
-		return true
-	}
-
-	return false
 }
 
 // SetTimezone gets a reference to the given string and assigns it to the Timezone field.
@@ -531,15 +394,6 @@ func (o *ListBudgets200ResponseAllOfBudgetsInner) GetStartDateOk() (*time.Time, 
 	return o.StartDate, true
 }
 
-// IsSetStartDate returns a boolean if a field has been set.
-func (o *ListBudgets200ResponseAllOfBudgetsInner) IsSetStartDate() bool {
-	if o != nil && !IsNil(o.StartDate) {
-		return true
-	}
-
-	return false
-}
-
 // SetStartDate gets a reference to the given time.Time and assigns it to the StartDate field.
 func (o *ListBudgets200ResponseAllOfBudgetsInner) SetStartDate(v time.Time) {
 	o.StartDate = &v
@@ -561,15 +415,6 @@ func (o *ListBudgets200ResponseAllOfBudgetsInner) GetEndDateOk() (*time.Time, bo
 		return nil, false
 	}
 	return o.EndDate, true
-}
-
-// IsSetEndDate returns a boolean if a field has been set.
-func (o *ListBudgets200ResponseAllOfBudgetsInner) IsSetEndDate() bool {
-	if o != nil && !IsNil(o.EndDate) {
-		return true
-	}
-
-	return false
 }
 
 // SetEndDate gets a reference to the given time.Time and assigns it to the EndDate field.
@@ -595,15 +440,6 @@ func (o *ListBudgets200ResponseAllOfBudgetsInner) GetIntervalOk() (*string, bool
 	return o.Interval, true
 }
 
-// IsSetInterval returns a boolean if a field has been set.
-func (o *ListBudgets200ResponseAllOfBudgetsInner) IsSetInterval() bool {
-	if o != nil && !IsNil(o.Interval) {
-		return true
-	}
-
-	return false
-}
-
 // SetInterval gets a reference to the given string and assigns it to the Interval field.
 func (o *ListBudgets200ResponseAllOfBudgetsInner) SetInterval(v string) {
 	o.Interval = &v
@@ -625,15 +461,6 @@ func (o *ListBudgets200ResponseAllOfBudgetsInner) GetCostsOk() ([]int64, bool) {
 		return nil, false
 	}
 	return o.Costs, true
-}
-
-// IsSetCosts returns a boolean if a field has been set.
-func (o *ListBudgets200ResponseAllOfBudgetsInner) IsSetCosts() bool {
-	if o != nil && !IsNil(o.Costs) {
-		return true
-	}
-
-	return false
 }
 
 // SetCosts gets a reference to the given []int64 and assigns it to the Costs field.
@@ -659,15 +486,6 @@ func (o *ListBudgets200ResponseAllOfBudgetsInner) GetIsFiscalOk() (*bool, bool) 
 	return o.IsFiscal, true
 }
 
-// IsSetIsFiscal returns a boolean if a field has been set.
-func (o *ListBudgets200ResponseAllOfBudgetsInner) IsSetIsFiscal() bool {
-	if o != nil && !IsNil(o.IsFiscal) {
-		return true
-	}
-
-	return false
-}
-
 // SetIsFiscal gets a reference to the given bool and assigns it to the IsFiscal field.
 func (o *ListBudgets200ResponseAllOfBudgetsInner) SetIsFiscal(v bool) {
 	o.IsFiscal = &v
@@ -689,15 +507,6 @@ func (o *ListBudgets200ResponseAllOfBudgetsInner) GetAverageCostOk() (*int64, bo
 		return nil, false
 	}
 	return o.AverageCost, true
-}
-
-// IsSetAverageCost returns a boolean if a field has been set.
-func (o *ListBudgets200ResponseAllOfBudgetsInner) IsSetAverageCost() bool {
-	if o != nil && !IsNil(o.AverageCost) {
-		return true
-	}
-
-	return false
 }
 
 // SetAverageCost gets a reference to the given int64 and assigns it to the AverageCost field.
@@ -723,15 +532,6 @@ func (o *ListBudgets200ResponseAllOfBudgetsInner) GetTotalCostOk() (*int64, bool
 	return o.TotalCost, true
 }
 
-// IsSetTotalCost returns a boolean if a field has been set.
-func (o *ListBudgets200ResponseAllOfBudgetsInner) IsSetTotalCost() bool {
-	if o != nil && !IsNil(o.TotalCost) {
-		return true
-	}
-
-	return false
-}
-
 // SetTotalCost gets a reference to the given int64 and assigns it to the TotalCost field.
 func (o *ListBudgets200ResponseAllOfBudgetsInner) SetTotalCost(v int64) {
 	o.TotalCost = &v
@@ -755,15 +555,6 @@ func (o *ListBudgets200ResponseAllOfBudgetsInner) GetCurrencyOk() (*string, bool
 	return o.Currency, true
 }
 
-// IsSetCurrency returns a boolean if a field has been set.
-func (o *ListBudgets200ResponseAllOfBudgetsInner) IsSetCurrency() bool {
-	if o != nil && !IsNil(o.Currency) {
-		return true
-	}
-
-	return false
-}
-
 // SetCurrency gets a reference to the given string and assigns it to the Currency field.
 func (o *ListBudgets200ResponseAllOfBudgetsInner) SetCurrency(v string) {
 	o.Currency = &v
@@ -785,15 +576,6 @@ func (o *ListBudgets200ResponseAllOfBudgetsInner) GetRolloverOk() (*bool, bool) 
 		return nil, false
 	}
 	return o.Rollover, true
-}
-
-// IsSetRollover returns a boolean if a field has been set.
-func (o *ListBudgets200ResponseAllOfBudgetsInner) IsSetRollover() bool {
-	if o != nil && !IsNil(o.Rollover) {
-		return true
-	}
-
-	return false
 }
 
 // SetRollover gets a reference to the given bool and assigns it to the Rollover field.
@@ -820,28 +602,9 @@ func (o *ListBudgets200ResponseAllOfBudgetsInner) GetWarningLimitOk() (*string, 
 	return o.WarningLimit.Get(), o.WarningLimit.IsSet()
 }
 
-// IsSetWarningLimit returns a boolean if a field has been set.
-func (o *ListBudgets200ResponseAllOfBudgetsInner) IsSetWarningLimit() bool {
-	if o != nil && o.WarningLimit.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetWarningLimit gets a reference to the given NullableString and assigns it to the WarningLimit field.
 func (o *ListBudgets200ResponseAllOfBudgetsInner) SetWarningLimit(v string) {
 	o.WarningLimit.Set(&v)
-}
-
-// SetWarningLimitNil sets the value for WarningLimit to be an explicit nil
-func (o *ListBudgets200ResponseAllOfBudgetsInner) SetWarningLimitNil() {
-	o.WarningLimit.Set(nil)
-}
-
-// UnsetWarningLimit ensures that no value is present for WarningLimit, not even an explicit nil
-func (o *ListBudgets200ResponseAllOfBudgetsInner) UnsetWarningLimit() {
-	o.WarningLimit.Unset()
 }
 
 // GetOverLimit returns the OverLimit field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -863,28 +626,9 @@ func (o *ListBudgets200ResponseAllOfBudgetsInner) GetOverLimitOk() (*string, boo
 	return o.OverLimit.Get(), o.OverLimit.IsSet()
 }
 
-// IsSetOverLimit returns a boolean if a field has been set.
-func (o *ListBudgets200ResponseAllOfBudgetsInner) IsSetOverLimit() bool {
-	if o != nil && o.OverLimit.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetOverLimit gets a reference to the given NullableString and assigns it to the OverLimit field.
 func (o *ListBudgets200ResponseAllOfBudgetsInner) SetOverLimit(v string) {
 	o.OverLimit.Set(&v)
-}
-
-// SetOverLimitNil sets the value for OverLimit to be an explicit nil
-func (o *ListBudgets200ResponseAllOfBudgetsInner) SetOverLimitNil() {
-	o.OverLimit.Set(nil)
-}
-
-// UnsetOverLimit ensures that no value is present for OverLimit, not even an explicit nil
-func (o *ListBudgets200ResponseAllOfBudgetsInner) UnsetOverLimit() {
-	o.OverLimit.Unset()
 }
 
 // GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -906,28 +650,9 @@ func (o *ListBudgets200ResponseAllOfBudgetsInner) GetExternalIdOk() (*string, bo
 	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *ListBudgets200ResponseAllOfBudgetsInner) IsSetExternalId() bool {
-	if o != nil && o.ExternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *ListBudgets200ResponseAllOfBudgetsInner) SetExternalId(v string) {
 	o.ExternalId.Set(&v)
-}
-
-// SetExternalIdNil sets the value for ExternalId to be an explicit nil
-func (o *ListBudgets200ResponseAllOfBudgetsInner) SetExternalIdNil() {
-	o.ExternalId.Set(nil)
-}
-
-// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-func (o *ListBudgets200ResponseAllOfBudgetsInner) UnsetExternalId() {
-	o.ExternalId.Unset()
 }
 
 // GetInternalId returns the InternalId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -949,28 +674,9 @@ func (o *ListBudgets200ResponseAllOfBudgetsInner) GetInternalIdOk() (*string, bo
 	return o.InternalId.Get(), o.InternalId.IsSet()
 }
 
-// IsSetInternalId returns a boolean if a field has been set.
-func (o *ListBudgets200ResponseAllOfBudgetsInner) IsSetInternalId() bool {
-	if o != nil && o.InternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInternalId gets a reference to the given NullableString and assigns it to the InternalId field.
 func (o *ListBudgets200ResponseAllOfBudgetsInner) SetInternalId(v string) {
 	o.InternalId.Set(&v)
-}
-
-// SetInternalIdNil sets the value for InternalId to be an explicit nil
-func (o *ListBudgets200ResponseAllOfBudgetsInner) SetInternalIdNil() {
-	o.InternalId.Set(nil)
-}
-
-// UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
-func (o *ListBudgets200ResponseAllOfBudgetsInner) UnsetInternalId() {
-	o.InternalId.Unset()
 }
 
 // GetCreatedById returns the CreatedById field value if set, zero value otherwise.
@@ -989,15 +695,6 @@ func (o *ListBudgets200ResponseAllOfBudgetsInner) GetCreatedByIdOk() (*int64, bo
 		return nil, false
 	}
 	return o.CreatedById, true
-}
-
-// IsSetCreatedById returns a boolean if a field has been set.
-func (o *ListBudgets200ResponseAllOfBudgetsInner) IsSetCreatedById() bool {
-	if o != nil && !IsNil(o.CreatedById) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreatedById gets a reference to the given int64 and assigns it to the CreatedById field.
@@ -1021,15 +718,6 @@ func (o *ListBudgets200ResponseAllOfBudgetsInner) GetCreatedByNameOk() (*string,
 		return nil, false
 	}
 	return o.CreatedByName, true
-}
-
-// IsSetCreatedByName returns a boolean if a field has been set.
-func (o *ListBudgets200ResponseAllOfBudgetsInner) IsSetCreatedByName() bool {
-	if o != nil && !IsNil(o.CreatedByName) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreatedByName gets a reference to the given string and assigns it to the CreatedByName field.
@@ -1056,28 +744,9 @@ func (o *ListBudgets200ResponseAllOfBudgetsInner) GetUpdatedByIdOk() (*string, b
 	return o.UpdatedById.Get(), o.UpdatedById.IsSet()
 }
 
-// IsSetUpdatedById returns a boolean if a field has been set.
-func (o *ListBudgets200ResponseAllOfBudgetsInner) IsSetUpdatedById() bool {
-	if o != nil && o.UpdatedById.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUpdatedById gets a reference to the given NullableString and assigns it to the UpdatedById field.
 func (o *ListBudgets200ResponseAllOfBudgetsInner) SetUpdatedById(v string) {
 	o.UpdatedById.Set(&v)
-}
-
-// SetUpdatedByIdNil sets the value for UpdatedById to be an explicit nil
-func (o *ListBudgets200ResponseAllOfBudgetsInner) SetUpdatedByIdNil() {
-	o.UpdatedById.Set(nil)
-}
-
-// UnsetUpdatedById ensures that no value is present for UpdatedById, not even an explicit nil
-func (o *ListBudgets200ResponseAllOfBudgetsInner) UnsetUpdatedById() {
-	o.UpdatedById.Unset()
 }
 
 // GetUpdatedByName returns the UpdatedByName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1099,28 +768,9 @@ func (o *ListBudgets200ResponseAllOfBudgetsInner) GetUpdatedByNameOk() (*string,
 	return o.UpdatedByName.Get(), o.UpdatedByName.IsSet()
 }
 
-// IsSetUpdatedByName returns a boolean if a field has been set.
-func (o *ListBudgets200ResponseAllOfBudgetsInner) IsSetUpdatedByName() bool {
-	if o != nil && o.UpdatedByName.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUpdatedByName gets a reference to the given NullableString and assigns it to the UpdatedByName field.
 func (o *ListBudgets200ResponseAllOfBudgetsInner) SetUpdatedByName(v string) {
 	o.UpdatedByName.Set(&v)
-}
-
-// SetUpdatedByNameNil sets the value for UpdatedByName to be an explicit nil
-func (o *ListBudgets200ResponseAllOfBudgetsInner) SetUpdatedByNameNil() {
-	o.UpdatedByName.Set(nil)
-}
-
-// UnsetUpdatedByName ensures that no value is present for UpdatedByName, not even an explicit nil
-func (o *ListBudgets200ResponseAllOfBudgetsInner) UnsetUpdatedByName() {
-	o.UpdatedByName.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -1139,15 +789,6 @@ func (o *ListBudgets200ResponseAllOfBudgetsInner) GetDateCreatedOk() (*time.Time
 		return nil, false
 	}
 	return o.DateCreated, true
-}
-
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *ListBudgets200ResponseAllOfBudgetsInner) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
@@ -1171,15 +812,6 @@ func (o *ListBudgets200ResponseAllOfBudgetsInner) GetLastUpdatedOk() (*time.Time
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *ListBudgets200ResponseAllOfBudgetsInner) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.

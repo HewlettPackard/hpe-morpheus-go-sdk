@@ -122,15 +122,6 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetIdOk() (*int6
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetId(v int64) {
 	o.Id = &v
@@ -152,15 +143,6 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetNameOk() (*st
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -187,28 +169,9 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetDescriptionOk
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetController returns the Controller field value if set, zero value otherwise.
@@ -227,15 +190,6 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetControllerOk(
 		return nil, false
 	}
 	return o.Controller, true
-}
-
-// IsSetController returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetController() bool {
-	if o != nil && !IsNil(o.Controller) {
-		return true
-	}
-
-	return false
 }
 
 // SetController gets a reference to the given ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInnerController and assigns it to the Controller field.
@@ -262,28 +216,9 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetControllerIdO
 	return o.ControllerId.Get(), o.ControllerId.IsSet()
 }
 
-// IsSetControllerId returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetControllerId() bool {
-	if o != nil && o.ControllerId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetControllerId gets a reference to the given NullableInt64 and assigns it to the ControllerId field.
 func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetControllerId(v int64) {
 	o.ControllerId.Set(&v)
-}
-
-// SetControllerIdNil sets the value for ControllerId to be an explicit nil
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetControllerIdNil() {
-	o.ControllerId.Set(nil)
-}
-
-// UnsetControllerId ensures that no value is present for ControllerId, not even an explicit nil
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) UnsetControllerId() {
-	o.ControllerId.Unset()
 }
 
 // GetControllerMountPoint returns the ControllerMountPoint field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -305,28 +240,9 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetControllerMou
 	return o.ControllerMountPoint.Get(), o.ControllerMountPoint.IsSet()
 }
 
-// IsSetControllerMountPoint returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetControllerMountPoint() bool {
-	if o != nil && o.ControllerMountPoint.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetControllerMountPoint gets a reference to the given NullableString and assigns it to the ControllerMountPoint field.
 func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetControllerMountPoint(v string) {
 	o.ControllerMountPoint.Set(&v)
-}
-
-// SetControllerMountPointNil sets the value for ControllerMountPoint to be an explicit nil
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetControllerMountPointNil() {
-	o.ControllerMountPoint.Set(nil)
-}
-
-// UnsetControllerMountPoint ensures that no value is present for ControllerMountPoint, not even an explicit nil
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) UnsetControllerMountPoint() {
-	o.ControllerMountPoint.Unset()
 }
 
 // GetResizeable returns the Resizeable field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -348,28 +264,9 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetResizeableOk(
 	return o.Resizeable.Get(), o.Resizeable.IsSet()
 }
 
-// IsSetResizeable returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetResizeable() bool {
-	if o != nil && o.Resizeable.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetResizeable gets a reference to the given NullableBool and assigns it to the Resizeable field.
 func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetResizeable(v bool) {
 	o.Resizeable.Set(&v)
-}
-
-// SetResizeableNil sets the value for Resizeable to be an explicit nil
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetResizeableNil() {
-	o.Resizeable.Set(nil)
-}
-
-// UnsetResizeable ensures that no value is present for Resizeable, not even an explicit nil
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) UnsetResizeable() {
-	o.Resizeable.Unset()
 }
 
 // GetRootVolume returns the RootVolume field value if set, zero value otherwise.
@@ -388,15 +285,6 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetRootVolumeOk(
 		return nil, false
 	}
 	return o.RootVolume, true
-}
-
-// IsSetRootVolume returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetRootVolume() bool {
-	if o != nil && !IsNil(o.RootVolume) {
-		return true
-	}
-
-	return false
 }
 
 // SetRootVolume gets a reference to the given bool and assigns it to the RootVolume field.
@@ -423,28 +311,9 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetUnitNumberOk(
 	return o.UnitNumber.Get(), o.UnitNumber.IsSet()
 }
 
-// IsSetUnitNumber returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetUnitNumber() bool {
-	if o != nil && o.UnitNumber.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUnitNumber gets a reference to the given NullableString and assigns it to the UnitNumber field.
 func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetUnitNumber(v string) {
 	o.UnitNumber.Set(&v)
-}
-
-// SetUnitNumberNil sets the value for UnitNumber to be an explicit nil
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetUnitNumberNil() {
-	o.UnitNumber.Set(nil)
-}
-
-// UnsetUnitNumber ensures that no value is present for UnitNumber, not even an explicit nil
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) UnsetUnitNumber() {
-	o.UnitNumber.Unset()
 }
 
 // GetDeviceName returns the DeviceName field value if set, zero value otherwise.
@@ -463,15 +332,6 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetDeviceNameOk(
 		return nil, false
 	}
 	return o.DeviceName, true
-}
-
-// IsSetDeviceName returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetDeviceName() bool {
-	if o != nil && !IsNil(o.DeviceName) {
-		return true
-	}
-
-	return false
 }
 
 // SetDeviceName gets a reference to the given string and assigns it to the DeviceName field.
@@ -497,15 +357,6 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetDeviceDisplay
 	return o.DeviceDisplayName, true
 }
 
-// IsSetDeviceDisplayName returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetDeviceDisplayName() bool {
-	if o != nil && !IsNil(o.DeviceDisplayName) {
-		return true
-	}
-
-	return false
-}
-
 // SetDeviceDisplayName gets a reference to the given string and assigns it to the DeviceDisplayName field.
 func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetDeviceDisplayName(v string) {
 	o.DeviceDisplayName = &v
@@ -527,15 +378,6 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetVolumeNameOk(
 		return nil, false
 	}
 	return o.VolumeName, true
-}
-
-// IsSetVolumeName returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetVolumeName() bool {
-	if o != nil && !IsNil(o.VolumeName) {
-		return true
-	}
-
-	return false
 }
 
 // SetVolumeName gets a reference to the given string and assigns it to the VolumeName field.
@@ -561,15 +403,6 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetVolumePathOk(
 	return o.VolumePath, true
 }
 
-// IsSetVolumePath returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetVolumePath() bool {
-	if o != nil && !IsNil(o.VolumePath) {
-		return true
-	}
-
-	return false
-}
-
 // SetVolumePath gets a reference to the given string and assigns it to the VolumePath field.
 func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetVolumePath(v string) {
 	o.VolumePath = &v
@@ -591,15 +424,6 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetVolumeTypeOk(
 		return nil, false
 	}
 	return o.VolumeType, true
-}
-
-// IsSetVolumeType returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetVolumeType() bool {
-	if o != nil && !IsNil(o.VolumeType) {
-		return true
-	}
-
-	return false
 }
 
 // SetVolumeType gets a reference to the given string and assigns it to the VolumeType field.
@@ -625,15 +449,6 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetRefTypeOk() (
 	return o.RefType, true
 }
 
-// IsSetRefType returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetRefType() bool {
-	if o != nil && !IsNil(o.RefType) {
-		return true
-	}
-
-	return false
-}
-
 // SetRefType gets a reference to the given string and assigns it to the RefType field.
 func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetRefType(v string) {
 	o.RefType = &v
@@ -655,15 +470,6 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetRefIdOk() (*i
 		return nil, false
 	}
 	return o.RefId, true
-}
-
-// IsSetRefId returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetRefId() bool {
-	if o != nil && !IsNil(o.RefId) {
-		return true
-	}
-
-	return false
 }
 
 // SetRefId gets a reference to the given int64 and assigns it to the RefId field.
@@ -689,15 +495,6 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetDiskModeOk() 
 	return o.DiskMode, true
 }
 
-// IsSetDiskMode returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetDiskMode() bool {
-	if o != nil && !IsNil(o.DiskMode) {
-		return true
-	}
-
-	return false
-}
-
 // SetDiskMode gets a reference to the given string and assigns it to the DiskMode field.
 func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetDiskMode(v string) {
 	o.DiskMode = &v
@@ -719,15 +516,6 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetDiskTypeOk() 
 		return nil, false
 	}
 	return o.DiskType, true
-}
-
-// IsSetDiskType returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetDiskType() bool {
-	if o != nil && !IsNil(o.DiskType) {
-		return true
-	}
-
-	return false
 }
 
 // SetDiskType gets a reference to the given string and assigns it to the DiskType field.
@@ -753,15 +541,6 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetTypeOk() (*Li
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInnerType and assigns it to the Type field.
 func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetType(v ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInnerType) {
 	o.Type = &v
@@ -783,15 +562,6 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetTypeIdOk() (*
 		return nil, false
 	}
 	return o.TypeId, true
-}
-
-// IsSetTypeId returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetTypeId() bool {
-	if o != nil && !IsNil(o.TypeId) {
-		return true
-	}
-
-	return false
 }
 
 // SetTypeId gets a reference to the given int64 and assigns it to the TypeId field.
@@ -817,15 +587,6 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetCategoryOk() 
 	return o.Category, true
 }
 
-// IsSetCategory returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
-		return true
-	}
-
-	return false
-}
-
 // SetCategory gets a reference to the given string and assigns it to the Category field.
 func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetCategory(v string) {
 	o.Category = &v
@@ -847,15 +608,6 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetStatusOk() (*
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -882,28 +634,9 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetStatusMessage
 	return o.StatusMessage.Get(), o.StatusMessage.IsSet()
 }
 
-// IsSetStatusMessage returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetStatusMessage() bool {
-	if o != nil && o.StatusMessage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusMessage gets a reference to the given NullableString and assigns it to the StatusMessage field.
 func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetStatusMessage(v string) {
 	o.StatusMessage.Set(&v)
-}
-
-// SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetStatusMessageNil() {
-	o.StatusMessage.Set(nil)
-}
-
-// UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) UnsetStatusMessage() {
-	o.StatusMessage.Unset()
 }
 
 // GetConfigurableIOPS returns the ConfigurableIOPS field value if set, zero value otherwise.
@@ -922,15 +655,6 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetConfigurableI
 		return nil, false
 	}
 	return o.ConfigurableIOPS, true
-}
-
-// IsSetConfigurableIOPS returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetConfigurableIOPS() bool {
-	if o != nil && !IsNil(o.ConfigurableIOPS) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfigurableIOPS gets a reference to the given bool and assigns it to the ConfigurableIOPS field.
@@ -956,15 +680,6 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetMaxStorageOk(
 	return o.MaxStorage, true
 }
 
-// IsSetMaxStorage returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetMaxStorage() bool {
-	if o != nil && !IsNil(o.MaxStorage) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxStorage gets a reference to the given int64 and assigns it to the MaxStorage field.
 func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetMaxStorage(v int64) {
 	o.MaxStorage = &v
@@ -988,15 +703,6 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetUsedStorageOk
 	return o.UsedStorage, true
 }
 
-// IsSetUsedStorage returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetUsedStorage() bool {
-	if o != nil && !IsNil(o.UsedStorage) {
-		return true
-	}
-
-	return false
-}
-
 // SetUsedStorage gets a reference to the given int64 and assigns it to the UsedStorage field.
 func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetUsedStorage(v int64) {
 	o.UsedStorage = &v
@@ -1018,15 +724,6 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetDisplayOrderO
 		return nil, false
 	}
 	return o.DisplayOrder, true
-}
-
-// IsSetDisplayOrder returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetDisplayOrder() bool {
-	if o != nil && !IsNil(o.DisplayOrder) {
-		return true
-	}
-
-	return false
 }
 
 // SetDisplayOrder gets a reference to the given int64 and assigns it to the DisplayOrder field.
@@ -1053,28 +750,9 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetMaxIOPSOk() (
 	return o.MaxIOPS.Get(), o.MaxIOPS.IsSet()
 }
 
-// IsSetMaxIOPS returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetMaxIOPS() bool {
-	if o != nil && o.MaxIOPS.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxIOPS gets a reference to the given NullableString and assigns it to the MaxIOPS field.
 func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetMaxIOPS(v string) {
 	o.MaxIOPS.Set(&v)
-}
-
-// SetMaxIOPSNil sets the value for MaxIOPS to be an explicit nil
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetMaxIOPSNil() {
-	o.MaxIOPS.Set(nil)
-}
-
-// UnsetMaxIOPS ensures that no value is present for MaxIOPS, not even an explicit nil
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) UnsetMaxIOPS() {
-	o.MaxIOPS.Unset()
 }
 
 // GetUuid returns the Uuid field value if set, zero value otherwise.
@@ -1093,15 +771,6 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetUuidOk() (*st
 		return nil, false
 	}
 	return o.Uuid, true
-}
-
-// IsSetUuid returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetUuid() bool {
-	if o != nil && !IsNil(o.Uuid) {
-		return true
-	}
-
-	return false
 }
 
 // SetUuid gets a reference to the given string and assigns it to the Uuid field.
@@ -1127,15 +796,6 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetActiveOk() (*
 	return o.Active, true
 }
 
-// IsSetActive returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
-}
-
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetActive(v bool) {
 	o.Active = &v
@@ -1157,15 +817,6 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetReadOnlyOk() 
 		return nil, false
 	}
 	return o.ReadOnly, true
-}
-
-// IsSetReadOnly returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetReadOnly() bool {
-	if o != nil && !IsNil(o.ReadOnly) {
-		return true
-	}
-
-	return false
 }
 
 // SetReadOnly gets a reference to the given bool and assigns it to the ReadOnly field.
@@ -1191,15 +842,6 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetRemovableOk()
 	return o.Removable, true
 }
 
-// IsSetRemovable returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetRemovable() bool {
-	if o != nil && !IsNil(o.Removable) {
-		return true
-	}
-
-	return false
-}
-
 // SetRemovable gets a reference to the given bool and assigns it to the Removable field.
 func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetRemovable(v bool) {
 	o.Removable = &v
@@ -1221,15 +863,6 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetPoolNameOk() 
 		return nil, false
 	}
 	return o.PoolName, true
-}
-
-// IsSetPoolName returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetPoolName() bool {
-	if o != nil && !IsNil(o.PoolName) {
-		return true
-	}
-
-	return false
 }
 
 // SetPoolName gets a reference to the given string and assigns it to the PoolName field.
@@ -1255,15 +888,6 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetZoneOk() (*Li
 	return o.Zone, true
 }
 
-// IsSetZone returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetZone() bool {
-	if o != nil && !IsNil(o.Zone) {
-		return true
-	}
-
-	return false
-}
-
 // SetZone gets a reference to the given ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInnerZone and assigns it to the Zone field.
 func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetZone(v ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInnerZone) {
 	o.Zone = &v
@@ -1287,15 +911,6 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetZoneIdOk() (*
 	return o.ZoneId, true
 }
 
-// IsSetZoneId returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetZoneId() bool {
-	if o != nil && !IsNil(o.ZoneId) {
-		return true
-	}
-
-	return false
-}
-
 // SetZoneId gets a reference to the given int64 and assigns it to the ZoneId field.
 func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetZoneId(v int64) {
 	o.ZoneId = &v
@@ -1317,15 +932,6 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetDatastoreOk()
 		return nil, false
 	}
 	return o.Datastore, true
-}
-
-// IsSetDatastore returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetDatastore() bool {
-	if o != nil && !IsNil(o.Datastore) {
-		return true
-	}
-
-	return false
 }
 
 // SetDatastore gets a reference to the given ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInnerDatastore and assigns it to the Datastore field.
@@ -1352,28 +958,9 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetDatastoreIdOk
 	return o.DatastoreId.Get(), o.DatastoreId.IsSet()
 }
 
-// IsSetDatastoreId returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetDatastoreId() bool {
-	if o != nil && o.DatastoreId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDatastoreId gets a reference to the given NullableInt64 and assigns it to the DatastoreId field.
 func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetDatastoreId(v int64) {
 	o.DatastoreId.Set(&v)
-}
-
-// SetDatastoreIdNil sets the value for DatastoreId to be an explicit nil
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetDatastoreIdNil() {
-	o.DatastoreId.Set(nil)
-}
-
-// UnsetDatastoreId ensures that no value is present for DatastoreId, not even an explicit nil
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) UnsetDatastoreId() {
-	o.DatastoreId.Unset()
 }
 
 // GetDatastoreOption returns the DatastoreOption field value if set, zero value otherwise.
@@ -1392,15 +979,6 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetDatastoreOpti
 		return nil, false
 	}
 	return o.DatastoreOption, true
-}
-
-// IsSetDatastoreOption returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetDatastoreOption() bool {
-	if o != nil && !IsNil(o.DatastoreOption) {
-		return true
-	}
-
-	return false
 }
 
 // SetDatastoreOption gets a reference to the given string and assigns it to the DatastoreOption field.
@@ -1427,28 +1005,9 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetStorageGroupO
 	return o.StorageGroup.Get(), o.StorageGroup.IsSet()
 }
 
-// IsSetStorageGroup returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetStorageGroup() bool {
-	if o != nil && o.StorageGroup.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStorageGroup gets a reference to the given NullableString and assigns it to the StorageGroup field.
 func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetStorageGroup(v string) {
 	o.StorageGroup.Set(&v)
-}
-
-// SetStorageGroupNil sets the value for StorageGroup to be an explicit nil
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetStorageGroupNil() {
-	o.StorageGroup.Set(nil)
-}
-
-// UnsetStorageGroup ensures that no value is present for StorageGroup, not even an explicit nil
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) UnsetStorageGroup() {
-	o.StorageGroup.Unset()
 }
 
 // GetNamespace returns the Namespace field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1470,28 +1029,9 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetNamespaceOk()
 	return o.Namespace.Get(), o.Namespace.IsSet()
 }
 
-// IsSetNamespace returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetNamespace() bool {
-	if o != nil && o.Namespace.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNamespace gets a reference to the given NullableString and assigns it to the Namespace field.
 func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetNamespace(v string) {
 	o.Namespace.Set(&v)
-}
-
-// SetNamespaceNil sets the value for Namespace to be an explicit nil
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetNamespaceNil() {
-	o.Namespace.Set(nil)
-}
-
-// UnsetNamespace ensures that no value is present for Namespace, not even an explicit nil
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) UnsetNamespace() {
-	o.Namespace.Unset()
 }
 
 // GetStorageServer returns the StorageServer field value if set, zero value otherwise.
@@ -1510,15 +1050,6 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetStorageServer
 		return map[string]interface{}{}, false
 	}
 	return o.StorageServer, true
-}
-
-// IsSetStorageServer returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetStorageServer() bool {
-	if o != nil && !IsNil(o.StorageServer) {
-		return true
-	}
-
-	return false
 }
 
 // SetStorageServer gets a reference to the given map[string]interface{} and assigns it to the StorageServer field.
@@ -1542,15 +1073,6 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetSourceOk() (*
 		return nil, false
 	}
 	return o.Source, true
-}
-
-// IsSetSource returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetSource() bool {
-	if o != nil && !IsNil(o.Source) {
-		return true
-	}
-
-	return false
 }
 
 // SetSource gets a reference to the given string and assigns it to the Source field.
@@ -1577,28 +1099,9 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetUniqueIdOk() 
 	return o.UniqueId.Get(), o.UniqueId.IsSet()
 }
 
-// IsSetUniqueId returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetUniqueId() bool {
-	if o != nil && o.UniqueId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUniqueId gets a reference to the given NullableString and assigns it to the UniqueId field.
 func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetUniqueId(v string) {
 	o.UniqueId.Set(&v)
-}
-
-// SetUniqueIdNil sets the value for UniqueId to be an explicit nil
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetUniqueIdNil() {
-	o.UniqueId.Set(nil)
-}
-
-// UnsetUniqueId ensures that no value is present for UniqueId, not even an explicit nil
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) UnsetUniqueId() {
-	o.UniqueId.Unset()
 }
 
 // GetInternalId returns the InternalId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1620,28 +1123,9 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetInternalIdOk(
 	return o.InternalId.Get(), o.InternalId.IsSet()
 }
 
-// IsSetInternalId returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetInternalId() bool {
-	if o != nil && o.InternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInternalId gets a reference to the given NullableString and assigns it to the InternalId field.
 func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetInternalId(v string) {
 	o.InternalId.Set(&v)
-}
-
-// SetInternalIdNil sets the value for InternalId to be an explicit nil
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetInternalIdNil() {
-	o.InternalId.Set(nil)
-}
-
-// UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) UnsetInternalId() {
-	o.InternalId.Unset()
 }
 
 // GetExternalId returns the ExternalId field value if set, zero value otherwise.
@@ -1660,15 +1144,6 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetExternalIdOk(
 		return nil, false
 	}
 	return o.ExternalId, true
-}
-
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
-		return true
-	}
-
-	return false
 }
 
 // SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
@@ -1695,28 +1170,9 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetProvisionType
 	return o.ProvisionType.Get(), o.ProvisionType.IsSet()
 }
 
-// IsSetProvisionType returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetProvisionType() bool {
-	if o != nil && o.ProvisionType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetProvisionType gets a reference to the given NullableString and assigns it to the ProvisionType field.
 func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetProvisionType(v string) {
 	o.ProvisionType.Set(&v)
-}
-
-// SetProvisionTypeNil sets the value for ProvisionType to be an explicit nil
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetProvisionTypeNil() {
-	o.ProvisionType.Set(nil)
-}
-
-// UnsetProvisionType ensures that no value is present for ProvisionType, not even an explicit nil
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) UnsetProvisionType() {
-	o.ProvisionType.Unset()
 }
 
 // GetCopyType returns the CopyType field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1738,28 +1194,9 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetCopyTypeOk() 
 	return o.CopyType.Get(), o.CopyType.IsSet()
 }
 
-// IsSetCopyType returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetCopyType() bool {
-	if o != nil && o.CopyType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCopyType gets a reference to the given NullableString and assigns it to the CopyType field.
 func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetCopyType(v string) {
 	o.CopyType.Set(&v)
-}
-
-// SetCopyTypeNil sets the value for CopyType to be an explicit nil
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetCopyTypeNil() {
-	o.CopyType.Set(nil)
-}
-
-// UnsetCopyType ensures that no value is present for CopyType, not even an explicit nil
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) UnsetCopyType() {
-	o.CopyType.Unset()
 }
 
 // GetFiberWwn returns the FiberWwn field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1781,28 +1218,9 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetFiberWwnOk() 
 	return o.FiberWwn.Get(), o.FiberWwn.IsSet()
 }
 
-// IsSetFiberWwn returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetFiberWwn() bool {
-	if o != nil && o.FiberWwn.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFiberWwn gets a reference to the given NullableString and assigns it to the FiberWwn field.
 func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetFiberWwn(v string) {
 	o.FiberWwn.Set(&v)
-}
-
-// SetFiberWwnNil sets the value for FiberWwn to be an explicit nil
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetFiberWwnNil() {
-	o.FiberWwn.Set(nil)
-}
-
-// UnsetFiberWwn ensures that no value is present for FiberWwn, not even an explicit nil
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) UnsetFiberWwn() {
-	o.FiberWwn.Unset()
 }
 
 // GetFileName returns the FileName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1824,28 +1242,9 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetFileNameOk() 
 	return o.FileName.Get(), o.FileName.IsSet()
 }
 
-// IsSetFileName returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetFileName() bool {
-	if o != nil && o.FileName.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFileName gets a reference to the given NullableString and assigns it to the FileName field.
 func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetFileName(v string) {
 	o.FileName.Set(&v)
-}
-
-// SetFileNameNil sets the value for FileName to be an explicit nil
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetFileNameNil() {
-	o.FileName.Set(nil)
-}
-
-// UnsetFileName ensures that no value is present for FileName, not even an explicit nil
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) UnsetFileName() {
-	o.FileName.Unset()
 }
 
 // GetClaimName returns the ClaimName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1867,28 +1266,9 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetClaimNameOk()
 	return o.ClaimName.Get(), o.ClaimName.IsSet()
 }
 
-// IsSetClaimName returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetClaimName() bool {
-	if o != nil && o.ClaimName.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetClaimName gets a reference to the given NullableString and assigns it to the ClaimName field.
 func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetClaimName(v string) {
 	o.ClaimName.Set(&v)
-}
-
-// SetClaimNameNil sets the value for ClaimName to be an explicit nil
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetClaimNameNil() {
-	o.ClaimName.Set(nil)
-}
-
-// UnsetClaimName ensures that no value is present for ClaimName, not even an explicit nil
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) UnsetClaimName() {
-	o.ClaimName.Unset()
 }
 
 // GetSharePath returns the SharePath field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1910,28 +1290,9 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetSharePathOk()
 	return o.SharePath.Get(), o.SharePath.IsSet()
 }
 
-// IsSetSharePath returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetSharePath() bool {
-	if o != nil && o.SharePath.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSharePath gets a reference to the given NullableString and assigns it to the SharePath field.
 func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetSharePath(v string) {
 	o.SharePath.Set(&v)
-}
-
-// SetSharePathNil sets the value for SharePath to be an explicit nil
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetSharePathNil() {
-	o.SharePath.Set(nil)
-}
-
-// UnsetSharePath ensures that no value is present for SharePath, not even an explicit nil
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) UnsetSharePath() {
-	o.SharePath.Unset()
 }
 
 // GetSourceId returns the SourceId field value if set, zero value otherwise.
@@ -1950,15 +1311,6 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetSourceIdOk() 
 		return nil, false
 	}
 	return o.SourceId, true
-}
-
-// IsSetSourceId returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetSourceId() bool {
-	if o != nil && !IsNil(o.SourceId) {
-		return true
-	}
-
-	return false
 }
 
 // SetSourceId gets a reference to the given string and assigns it to the SourceId field.
@@ -1984,15 +1336,6 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetSourceImageOk
 	return o.SourceImage, true
 }
 
-// IsSetSourceImage returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetSourceImage() bool {
-	if o != nil && !IsNil(o.SourceImage) {
-		return true
-	}
-
-	return false
-}
-
 // SetSourceImage gets a reference to the given string and assigns it to the SourceImage field.
 func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetSourceImage(v string) {
 	o.SourceImage = &v
@@ -2014,15 +1357,6 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetImageTypeOk()
 		return nil, false
 	}
 	return o.ImageType, true
-}
-
-// IsSetImageType returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetImageType() bool {
-	if o != nil && !IsNil(o.ImageType) {
-		return true
-	}
-
-	return false
 }
 
 // SetImageType gets a reference to the given string and assigns it to the ImageType field.
@@ -2048,15 +1382,6 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetOnlineOk() (*
 	return o.Online, true
 }
 
-// IsSetOnline returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetOnline() bool {
-	if o != nil && !IsNil(o.Online) {
-		return true
-	}
-
-	return false
-}
-
 // SetOnline gets a reference to the given bool and assigns it to the Online field.
 func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetOnline(v bool) {
 	o.Online = &v
@@ -2078,15 +1403,6 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetRawDataOk() (
 		return nil, false
 	}
 	return o.RawData, true
-}
-
-// IsSetRawData returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetRawData() bool {
-	if o != nil && !IsNil(o.RawData) {
-		return true
-	}
-
-	return false
 }
 
 // SetRawData gets a reference to the given string and assigns it to the RawData field.
@@ -2112,15 +1428,6 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetCreateForMult
 	return o.CreateForMultiAttach, true
 }
 
-// IsSetCreateForMultiAttach returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetCreateForMultiAttach() bool {
-	if o != nil && !IsNil(o.CreateForMultiAttach) {
-		return true
-	}
-
-	return false
-}
-
 // SetCreateForMultiAttach gets a reference to the given bool and assigns it to the CreateForMultiAttach field.
 func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetCreateForMultiAttach(v bool) {
 	o.CreateForMultiAttach = &v
@@ -2142,15 +1449,6 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetIsMultiAttach
 		return nil, false
 	}
 	return o.IsMultiAttach, true
-}
-
-// IsSetIsMultiAttach returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetIsMultiAttach() bool {
-	if o != nil && !IsNil(o.IsMultiAttach) {
-		return true
-	}
-
-	return false
 }
 
 // SetIsMultiAttach gets a reference to the given bool and assigns it to the IsMultiAttach field.
@@ -2177,28 +1475,9 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetStorageProfil
 	return o.StorageProfile.Get(), o.StorageProfile.IsSet()
 }
 
-// IsSetStorageProfile returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetStorageProfile() bool {
-	if o != nil && o.StorageProfile.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStorageProfile gets a reference to the given NullableString and assigns it to the StorageProfile field.
 func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetStorageProfile(v string) {
 	o.StorageProfile.Set(&v)
-}
-
-// SetStorageProfileNil sets the value for StorageProfile to be an explicit nil
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) SetStorageProfileNil() {
-	o.StorageProfile.Set(nil)
-}
-
-// UnsetStorageProfile ensures that no value is present for StorageProfile, not even an explicit nil
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) UnsetStorageProfile() {
-	o.StorageProfile.Unset()
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
@@ -2217,15 +1496,6 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetAccountOk() (
 		return nil, false
 	}
 	return o.Account, true
-}
-
-// IsSetAccount returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccount gets a reference to the given ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInnerAccount and assigns it to the Account field.
@@ -2249,15 +1519,6 @@ func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) GetOwnerOk() (*L
 		return nil, false
 	}
 	return o.Owner, true
-}
-
-// IsSetOwner returns a boolean if a field has been set.
-func (o *ListStorageVolumes200ResponseAllOfStorageVolumesInner) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
-		return true
-	}
-
-	return false
 }
 
 // SetOwner gets a reference to the given ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInnerOwner and assigns it to the Owner field.

@@ -62,15 +62,6 @@ func (o *InstanceServicePlanDatastores) GetClusterOk() ([]InstanceServicePlanDat
 	return o.Cluster, true
 }
 
-// IsSetCluster returns a boolean if a field has been set.
-func (o *InstanceServicePlanDatastores) IsSetCluster() bool {
-	if o != nil && !IsNil(o.Cluster) {
-		return true
-	}
-
-	return false
-}
-
 // SetCluster gets a reference to the given []InstanceServicePlanDatastoresClusterInner and assigns it to the Cluster field.
 func (o *InstanceServicePlanDatastores) SetCluster(v []InstanceServicePlanDatastoresClusterInner) {
 	o.Cluster = v
@@ -92,15 +83,6 @@ func (o *InstanceServicePlanDatastores) GetStoreOk() ([]InstanceServicePlanDatas
 		return nil, false
 	}
 	return o.Store, true
-}
-
-// IsSetStore returns a boolean if a field has been set.
-func (o *InstanceServicePlanDatastores) IsSetStore() bool {
-	if o != nil && !IsNil(o.Store) {
-		return true
-	}
-
-	return false
 }
 
 // SetStore gets a reference to the given []InstanceServicePlanDatastoresStoreInner and assigns it to the Store field.

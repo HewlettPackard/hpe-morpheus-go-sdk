@@ -62,15 +62,6 @@ func (o *AddPrices200Response) GetPriceOk() (*AddPrices200ResponseAllOfPrice, bo
 	return o.Price, true
 }
 
-// IsSetPrice returns a boolean if a field has been set.
-func (o *AddPrices200Response) IsSetPrice() bool {
-	if o != nil && !IsNil(o.Price) {
-		return true
-	}
-
-	return false
-}
-
 // SetPrice gets a reference to the given AddPrices200ResponseAllOfPrice and assigns it to the Price field.
 func (o *AddPrices200Response) SetPrice(v AddPrices200ResponseAllOfPrice) {
 	o.Price = &v
@@ -92,15 +83,6 @@ func (o *AddPrices200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *AddPrices200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

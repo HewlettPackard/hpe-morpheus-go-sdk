@@ -78,15 +78,6 @@ func (o *AddIdentitySourcesRequestUserSourceConfigOneOf2) GetUrlOk() (*string, b
 	return o.Url, true
 }
 
-// IsSetUrl returns a boolean if a field has been set.
-func (o *AddIdentitySourcesRequestUserSourceConfigOneOf2) IsSetUrl() bool {
-	if o != nil && !IsNil(o.Url) {
-		return true
-	}
-
-	return false
-}
-
 // SetUrl gets a reference to the given string and assigns it to the Url field.
 func (o *AddIdentitySourcesRequestUserSourceConfigOneOf2) SetUrl(v string) {
 	o.Url = &v
@@ -108,15 +99,6 @@ func (o *AddIdentitySourcesRequestUserSourceConfigOneOf2) GetDomainOk() (*string
 		return nil, false
 	}
 	return o.Domain, true
-}
-
-// IsSetDomain returns a boolean if a field has been set.
-func (o *AddIdentitySourcesRequestUserSourceConfigOneOf2) IsSetDomain() bool {
-	if o != nil && !IsNil(o.Domain) {
-		return true
-	}
-
-	return false
 }
 
 // SetDomain gets a reference to the given string and assigns it to the Domain field.
@@ -142,15 +124,6 @@ func (o *AddIdentitySourcesRequestUserSourceConfigOneOf2) GetUseSSLOk() (*string
 	return o.UseSSL, true
 }
 
-// IsSetUseSSL returns a boolean if a field has been set.
-func (o *AddIdentitySourcesRequestUserSourceConfigOneOf2) IsSetUseSSL() bool {
-	if o != nil && !IsNil(o.UseSSL) {
-		return true
-	}
-
-	return false
-}
-
 // SetUseSSL gets a reference to the given string and assigns it to the UseSSL field.
 func (o *AddIdentitySourcesRequestUserSourceConfigOneOf2) SetUseSSL(v string) {
 	o.UseSSL = &v
@@ -172,15 +145,6 @@ func (o *AddIdentitySourcesRequestUserSourceConfigOneOf2) GetBindingUsernameOk()
 		return nil, false
 	}
 	return o.BindingUsername, true
-}
-
-// IsSetBindingUsername returns a boolean if a field has been set.
-func (o *AddIdentitySourcesRequestUserSourceConfigOneOf2) IsSetBindingUsername() bool {
-	if o != nil && !IsNil(o.BindingUsername) {
-		return true
-	}
-
-	return false
 }
 
 // SetBindingUsername gets a reference to the given string and assigns it to the BindingUsername field.
@@ -206,15 +170,6 @@ func (o *AddIdentitySourcesRequestUserSourceConfigOneOf2) GetBindingPasswordOk()
 	return o.BindingPassword, true
 }
 
-// IsSetBindingPassword returns a boolean if a field has been set.
-func (o *AddIdentitySourcesRequestUserSourceConfigOneOf2) IsSetBindingPassword() bool {
-	if o != nil && !IsNil(o.BindingPassword) {
-		return true
-	}
-
-	return false
-}
-
 // SetBindingPassword gets a reference to the given string and assigns it to the BindingPassword field.
 func (o *AddIdentitySourcesRequestUserSourceConfigOneOf2) SetBindingPassword(v string) {
 	o.BindingPassword = &v
@@ -238,15 +193,6 @@ func (o *AddIdentitySourcesRequestUserSourceConfigOneOf2) GetRequiredGroupOk() (
 	return o.RequiredGroup, true
 }
 
-// IsSetRequiredGroup returns a boolean if a field has been set.
-func (o *AddIdentitySourcesRequestUserSourceConfigOneOf2) IsSetRequiredGroup() bool {
-	if o != nil && !IsNil(o.RequiredGroup) {
-		return true
-	}
-
-	return false
-}
-
 // SetRequiredGroup gets a reference to the given string and assigns it to the RequiredGroup field.
 func (o *AddIdentitySourcesRequestUserSourceConfigOneOf2) SetRequiredGroup(v string) {
 	o.RequiredGroup = &v
@@ -268,15 +214,6 @@ func (o *AddIdentitySourcesRequestUserSourceConfigOneOf2) GetSearchMemberGroupsO
 		return nil, false
 	}
 	return o.SearchMemberGroups, true
-}
-
-// IsSetSearchMemberGroups returns a boolean if a field has been set.
-func (o *AddIdentitySourcesRequestUserSourceConfigOneOf2) IsSetSearchMemberGroups() bool {
-	if o != nil && !IsNil(o.SearchMemberGroups) {
-		return true
-	}
-
-	return false
 }
 
 // SetSearchMemberGroups gets a reference to the given bool and assigns it to the SearchMemberGroups field.

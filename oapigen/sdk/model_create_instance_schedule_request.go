@@ -61,15 +61,6 @@ func (o *CreateInstanceScheduleRequest) GetInstanceScheduleOk() (*CreateInstance
 	return o.InstanceSchedule, true
 }
 
-// IsSetInstanceSchedule returns a boolean if a field has been set.
-func (o *CreateInstanceScheduleRequest) IsSetInstanceSchedule() bool {
-	if o != nil && !IsNil(o.InstanceSchedule) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstanceSchedule gets a reference to the given CreateInstanceScheduleRequestInstanceSchedule and assigns it to the InstanceSchedule field.
 func (o *CreateInstanceScheduleRequest) SetInstanceSchedule(v CreateInstanceScheduleRequestInstanceSchedule) {
 	o.InstanceSchedule = &v

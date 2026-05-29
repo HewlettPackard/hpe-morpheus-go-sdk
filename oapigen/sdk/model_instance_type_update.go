@@ -92,15 +92,6 @@ func (o *InstanceTypeUpdate) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *InstanceTypeUpdate) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *InstanceTypeUpdate) SetName(v string) {
 	o.Name = &v
@@ -122,15 +113,6 @@ func (o *InstanceTypeUpdate) GetDescriptionOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *InstanceTypeUpdate) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -157,15 +139,6 @@ func (o *InstanceTypeUpdate) GetLabelsOk() ([]string, bool) {
 	return o.Labels, true
 }
 
-// IsSetLabels returns a boolean if a field has been set.
-func (o *InstanceTypeUpdate) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
-}
-
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
 func (o *InstanceTypeUpdate) SetLabels(v []string) {
 	o.Labels = v
@@ -187,15 +160,6 @@ func (o *InstanceTypeUpdate) GetCodeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *InstanceTypeUpdate) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -221,15 +185,6 @@ func (o *InstanceTypeUpdate) GetCategoryOk() (*string, bool) {
 	return o.Category, true
 }
 
-// IsSetCategory returns a boolean if a field has been set.
-func (o *InstanceTypeUpdate) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
-		return true
-	}
-
-	return false
-}
-
 // SetCategory gets a reference to the given string and assigns it to the Category field.
 func (o *InstanceTypeUpdate) SetCategory(v string) {
 	o.Category = &v
@@ -251,15 +206,6 @@ func (o *InstanceTypeUpdate) GetVisibilityOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *InstanceTypeUpdate) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -285,15 +231,6 @@ func (o *InstanceTypeUpdate) GetFeaturedOk() (*bool, bool) {
 	return o.Featured, true
 }
 
-// IsSetFeatured returns a boolean if a field has been set.
-func (o *InstanceTypeUpdate) IsSetFeatured() bool {
-	if o != nil && !IsNil(o.Featured) {
-		return true
-	}
-
-	return false
-}
-
 // SetFeatured gets a reference to the given bool and assigns it to the Featured field.
 func (o *InstanceTypeUpdate) SetFeatured(v bool) {
 	o.Featured = &v
@@ -315,15 +252,6 @@ func (o *InstanceTypeUpdate) GetHasSettingsOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.HasSettings, true
-}
-
-// IsSetHasSettings returns a boolean if a field has been set.
-func (o *InstanceTypeUpdate) IsSetHasSettings() bool {
-	if o != nil && !IsNil(o.HasSettings) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasSettings gets a reference to the given bool and assigns it to the HasSettings field.
@@ -349,15 +277,6 @@ func (o *InstanceTypeUpdate) GetHasAutoScaleOk() (*bool, bool) {
 	return o.HasAutoScale, true
 }
 
-// IsSetHasAutoScale returns a boolean if a field has been set.
-func (o *InstanceTypeUpdate) IsSetHasAutoScale() bool {
-	if o != nil && !IsNil(o.HasAutoScale) {
-		return true
-	}
-
-	return false
-}
-
 // SetHasAutoScale gets a reference to the given bool and assigns it to the HasAutoScale field.
 func (o *InstanceTypeUpdate) SetHasAutoScale(v bool) {
 	o.HasAutoScale = &v
@@ -379,15 +298,6 @@ func (o *InstanceTypeUpdate) GetHasDeploymentOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.HasDeployment, true
-}
-
-// IsSetHasDeployment returns a boolean if a field has been set.
-func (o *InstanceTypeUpdate) IsSetHasDeployment() bool {
-	if o != nil && !IsNil(o.HasDeployment) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasDeployment gets a reference to the given bool and assigns it to the HasDeployment field.
@@ -413,15 +323,6 @@ func (o *InstanceTypeUpdate) GetEnvironmentPrefixOk() (*string, bool) {
 	return o.EnvironmentPrefix, true
 }
 
-// IsSetEnvironmentPrefix returns a boolean if a field has been set.
-func (o *InstanceTypeUpdate) IsSetEnvironmentPrefix() bool {
-	if o != nil && !IsNil(o.EnvironmentPrefix) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnvironmentPrefix gets a reference to the given string and assigns it to the EnvironmentPrefix field.
 func (o *InstanceTypeUpdate) SetEnvironmentPrefix(v string) {
 	o.EnvironmentPrefix = &v
@@ -443,15 +344,6 @@ func (o *InstanceTypeUpdate) GetEnvironmentVariablesOk() ([]InstanceTypeUpdateEn
 		return nil, false
 	}
 	return o.EnvironmentVariables, true
-}
-
-// IsSetEnvironmentVariables returns a boolean if a field has been set.
-func (o *InstanceTypeUpdate) IsSetEnvironmentVariables() bool {
-	if o != nil && !IsNil(o.EnvironmentVariables) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnvironmentVariables gets a reference to the given []InstanceTypeUpdateEnvironmentVariablesInner and assigns it to the EnvironmentVariables field.
@@ -477,15 +369,6 @@ func (o *InstanceTypeUpdate) GetPriceSetsOk() ([]InstanceTypeUpdatePriceSetsInne
 	return o.PriceSets, true
 }
 
-// IsSetPriceSets returns a boolean if a field has been set.
-func (o *InstanceTypeUpdate) IsSetPriceSets() bool {
-	if o != nil && !IsNil(o.PriceSets) {
-		return true
-	}
-
-	return false
-}
-
 // SetPriceSets gets a reference to the given []InstanceTypeUpdatePriceSetsInner and assigns it to the PriceSets field.
 func (o *InstanceTypeUpdate) SetPriceSets(v []InstanceTypeUpdatePriceSetsInner) {
 	o.PriceSets = v
@@ -507,15 +390,6 @@ func (o *InstanceTypeUpdate) GetOptionTypesOk() ([]int64, bool) {
 		return nil, false
 	}
 	return o.OptionTypes, true
-}
-
-// IsSetOptionTypes returns a boolean if a field has been set.
-func (o *InstanceTypeUpdate) IsSetOptionTypes() bool {
-	if o != nil && !IsNil(o.OptionTypes) {
-		return true
-	}
-
-	return false
 }
 
 // SetOptionTypes gets a reference to the given []int64 and assigns it to the OptionTypes field.

@@ -63,15 +63,6 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) GetIdOk() (*int
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) SetId(v int64) {
 	o.Id = &v
@@ -93,15 +84,6 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) GetNameOk() (*s
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -128,28 +110,9 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) GetZoneTypeOk()
 	return o.ZoneType.Get(), o.ZoneType.IsSet()
 }
 
-// IsSetZoneType returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) IsSetZoneType() bool {
-	if o != nil && o.ZoneType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetZoneType gets a reference to the given NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZoneZoneType and assigns it to the ZoneType field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) SetZoneType(v ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZoneZoneType) {
 	o.ZoneType.Set(&v)
-}
-
-// SetZoneTypeNil sets the value for ZoneType to be an explicit nil
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) SetZoneTypeNil() {
-	o.ZoneType.Set(nil)
-}
-
-// UnsetZoneType ensures that no value is present for ZoneType, not even an explicit nil
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) UnsetZoneType() {
-	o.ZoneType.Unset()
 }
 
 func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) MarshalJSON() ([]byte, error) {

@@ -117,28 +117,9 @@ func (o *CheckSNMP) GetDescriptionOk() (*string, bool) {
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *CheckSNMP) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *CheckSNMP) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *CheckSNMP) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *CheckSNMP) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetCheckInterval returns the CheckInterval field value if set, zero value otherwise.
@@ -157,15 +138,6 @@ func (o *CheckSNMP) GetCheckIntervalOk() (*int32, bool) {
 		return nil, false
 	}
 	return o.CheckInterval, true
-}
-
-// IsSetCheckInterval returns a boolean if a field has been set.
-func (o *CheckSNMP) IsSetCheckInterval() bool {
-	if o != nil && !IsNil(o.CheckInterval) {
-		return true
-	}
-
-	return false
 }
 
 // SetCheckInterval gets a reference to the given int32 and assigns it to the CheckInterval field.
@@ -191,15 +163,6 @@ func (o *CheckSNMP) GetInUptimeOk() (*bool, bool) {
 	return o.InUptime, true
 }
 
-// IsSetInUptime returns a boolean if a field has been set.
-func (o *CheckSNMP) IsSetInUptime() bool {
-	if o != nil && !IsNil(o.InUptime) {
-		return true
-	}
-
-	return false
-}
-
 // SetInUptime gets a reference to the given bool and assigns it to the InUptime field.
 func (o *CheckSNMP) SetInUptime(v bool) {
 	o.InUptime = &v
@@ -221,15 +184,6 @@ func (o *CheckSNMP) GetActiveOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Active, true
-}
-
-// IsSetActive returns a boolean if a field has been set.
-func (o *CheckSNMP) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
 }
 
 // SetActive gets a reference to the given bool and assigns it to the Active field.
@@ -255,15 +209,6 @@ func (o *CheckSNMP) GetSeverityOk() (*string, bool) {
 	return o.Severity, true
 }
 
-// IsSetSeverity returns a boolean if a field has been set.
-func (o *CheckSNMP) IsSetSeverity() bool {
-	if o != nil && !IsNil(o.Severity) {
-		return true
-	}
-
-	return false
-}
-
 // SetSeverity gets a reference to the given string and assigns it to the Severity field.
 func (o *CheckSNMP) SetSeverity(v string) {
 	o.Severity = &v
@@ -287,15 +232,6 @@ func (o *CheckSNMP) GetCheckTypeOk() (*SNMPCheck1AllOfCheckType, bool) {
 	return o.CheckType, true
 }
 
-// IsSetCheckType returns a boolean if a field has been set.
-func (o *CheckSNMP) IsSetCheckType() bool {
-	if o != nil && !IsNil(o.CheckType) {
-		return true
-	}
-
-	return false
-}
-
 // SetCheckType gets a reference to the given SNMPCheck1AllOfCheckType and assigns it to the CheckType field.
 func (o *CheckSNMP) SetCheckType(v SNMPCheck1AllOfCheckType) {
 	o.CheckType = &v
@@ -317,15 +253,6 @@ func (o *CheckSNMP) GetConfigOk() (*SNMPCheck1AllOfConfig, bool) {
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *CheckSNMP) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given SNMPCheck1AllOfConfig and assigns it to the Config field.

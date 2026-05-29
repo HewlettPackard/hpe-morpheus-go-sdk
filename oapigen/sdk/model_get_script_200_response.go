@@ -61,15 +61,6 @@ func (o *GetScript200Response) GetContainerScriptOk() (*GetScript200ResponseCont
 	return o.ContainerScript, true
 }
 
-// IsSetContainerScript returns a boolean if a field has been set.
-func (o *GetScript200Response) IsSetContainerScript() bool {
-	if o != nil && !IsNil(o.ContainerScript) {
-		return true
-	}
-
-	return false
-}
-
 // SetContainerScript gets a reference to the given GetScript200ResponseContainerScript and assigns it to the ContainerScript field.
 func (o *GetScript200Response) SetContainerScript(v GetScript200ResponseContainerScript) {
 	o.ContainerScript = &v

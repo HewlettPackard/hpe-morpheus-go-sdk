@@ -62,15 +62,6 @@ func (o *ExecuteWorkflows200ResponseAllOfJobExecution) GetIdOk() (*int64, bool) 
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ExecuteWorkflows200ResponseAllOfJobExecution) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ExecuteWorkflows200ResponseAllOfJobExecution) SetId(v int64) {
 	o.Id = &v
@@ -95,28 +86,9 @@ func (o *ExecuteWorkflows200ResponseAllOfJobExecution) GetProcessIdOk() (*string
 	return o.ProcessId.Get(), o.ProcessId.IsSet()
 }
 
-// IsSetProcessId returns a boolean if a field has been set.
-func (o *ExecuteWorkflows200ResponseAllOfJobExecution) IsSetProcessId() bool {
-	if o != nil && o.ProcessId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetProcessId gets a reference to the given NullableString and assigns it to the ProcessId field.
 func (o *ExecuteWorkflows200ResponseAllOfJobExecution) SetProcessId(v string) {
 	o.ProcessId.Set(&v)
-}
-
-// SetProcessIdNil sets the value for ProcessId to be an explicit nil
-func (o *ExecuteWorkflows200ResponseAllOfJobExecution) SetProcessIdNil() {
-	o.ProcessId.Set(nil)
-}
-
-// UnsetProcessId ensures that no value is present for ProcessId, not even an explicit nil
-func (o *ExecuteWorkflows200ResponseAllOfJobExecution) UnsetProcessId() {
-	o.ProcessId.Unset()
 }
 
 func (o ExecuteWorkflows200ResponseAllOfJobExecution) MarshalJSON() ([]byte, error) {

@@ -68,15 +68,6 @@ func (o *AddClusterLayoutsRequestLayoutMastersInner) GetNodeCountOk() (*int64, b
 	return o.NodeCount, true
 }
 
-// IsSetNodeCount returns a boolean if a field has been set.
-func (o *AddClusterLayoutsRequestLayoutMastersInner) IsSetNodeCount() bool {
-	if o != nil && !IsNil(o.NodeCount) {
-		return true
-	}
-
-	return false
-}
-
 // SetNodeCount gets a reference to the given int64 and assigns it to the NodeCount field.
 func (o *AddClusterLayoutsRequestLayoutMastersInner) SetNodeCount(v int64) {
 	o.NodeCount = &v

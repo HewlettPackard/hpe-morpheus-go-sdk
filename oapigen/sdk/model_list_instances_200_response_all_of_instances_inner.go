@@ -143,15 +143,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetId(v int64) {
 	o.Id = &v
@@ -175,15 +166,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetUuidOk() (*string, bool
 	return o.Uuid, true
 }
 
-// IsSetUuid returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetUuid() bool {
-	if o != nil && !IsNil(o.Uuid) {
-		return true
-	}
-
-	return false
-}
-
 // SetUuid gets a reference to the given string and assigns it to the Uuid field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetUuid(v string) {
 	o.Uuid = &v
@@ -205,15 +187,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetAccountIdOk() (*int64, 
 		return nil, false
 	}
 	return o.AccountId, true
-}
-
-// IsSetAccountId returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetAccountId() bool {
-	if o != nil && !IsNil(o.AccountId) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccountId gets a reference to the given int64 and assigns it to the AccountId field.
@@ -240,28 +213,9 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetTenantOk() (*ListInstan
 	return o.Tenant.Get(), o.Tenant.IsSet()
 }
 
-// IsSetTenant returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetTenant() bool {
-	if o != nil && o.Tenant.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetTenant gets a reference to the given NullableListInstances200ResponseAllOfInstancesInnerTenant and assigns it to the Tenant field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetTenant(v ListInstances200ResponseAllOfInstancesInnerTenant) {
 	o.Tenant.Set(&v)
-}
-
-// SetTenantNil sets the value for Tenant to be an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInner) SetTenantNil() {
-	o.Tenant.Set(nil)
-}
-
-// UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInner) UnsetTenant() {
-	o.Tenant.Unset()
 }
 
 // GetInstanceType returns the InstanceType field value if set, zero value otherwise.
@@ -280,15 +234,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetInstanceTypeOk() (*List
 		return nil, false
 	}
 	return o.InstanceType, true
-}
-
-// IsSetInstanceType returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetInstanceType() bool {
-	if o != nil && !IsNil(o.InstanceType) {
-		return true
-	}
-
-	return false
 }
 
 // SetInstanceType gets a reference to the given ListInstances200ResponseAllOfInstancesInnerInstanceType and assigns it to the InstanceType field.
@@ -315,28 +260,9 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetGroupOk() (*ListInstanc
 	return o.Group.Get(), o.Group.IsSet()
 }
 
-// IsSetGroup returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetGroup() bool {
-	if o != nil && o.Group.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetGroup gets a reference to the given NullableListInstances200ResponseAllOfInstancesInnerGroup and assigns it to the Group field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetGroup(v ListInstances200ResponseAllOfInstancesInnerGroup) {
 	o.Group.Set(&v)
-}
-
-// SetGroupNil sets the value for Group to be an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInner) SetGroupNil() {
-	o.Group.Set(nil)
-}
-
-// UnsetGroup ensures that no value is present for Group, not even an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInner) UnsetGroup() {
-	o.Group.Unset()
 }
 
 // GetCloud returns the Cloud field value if set, zero value otherwise.
@@ -355,15 +281,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetCloudOk() (*ListInstanc
 		return nil, false
 	}
 	return o.Cloud, true
-}
-
-// IsSetCloud returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetCloud() bool {
-	if o != nil && !IsNil(o.Cloud) {
-		return true
-	}
-
-	return false
 }
 
 // SetCloud gets a reference to the given ListInstances200ResponseAllOfInstancesInnerCloud and assigns it to the Cloud field.
@@ -389,15 +306,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetClusterOk() (*ListInsta
 	return o.Cluster, true
 }
 
-// IsSetCluster returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetCluster() bool {
-	if o != nil && !IsNil(o.Cluster) {
-		return true
-	}
-
-	return false
-}
-
 // SetCluster gets a reference to the given ListInstances200ResponseAllOfInstancesInnerCluster and assigns it to the Cluster field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetCluster(v ListInstances200ResponseAllOfInstancesInnerCluster) {
 	o.Cluster = &v
@@ -419,15 +327,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetContainersOk() ([]int64
 		return nil, false
 	}
 	return o.Containers, true
-}
-
-// IsSetContainers returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetContainers() bool {
-	if o != nil && !IsNil(o.Containers) {
-		return true
-	}
-
-	return false
 }
 
 // SetContainers gets a reference to the given []int64 and assigns it to the Containers field.
@@ -453,15 +352,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetServersOk() ([]int64, b
 	return o.Servers, true
 }
 
-// IsSetServers returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetServers() bool {
-	if o != nil && !IsNil(o.Servers) {
-		return true
-	}
-
-	return false
-}
-
 // SetServers gets a reference to the given []int64 and assigns it to the Servers field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetServers(v []int64) {
 	o.Servers = v
@@ -483,15 +373,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetConnectionInfoOk() ([]L
 		return nil, false
 	}
 	return o.ConnectionInfo, true
-}
-
-// IsSetConnectionInfo returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetConnectionInfo() bool {
-	if o != nil && !IsNil(o.ConnectionInfo) {
-		return true
-	}
-
-	return false
 }
 
 // SetConnectionInfo gets a reference to the given []ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner and assigns it to the ConnectionInfo field.
@@ -517,15 +398,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetLayoutOk() (*ListInstan
 	return o.Layout, true
 }
 
-// IsSetLayout returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetLayout() bool {
-	if o != nil && !IsNil(o.Layout) {
-		return true
-	}
-
-	return false
-}
-
 // SetLayout gets a reference to the given ListInstances200ResponseAllOfInstancesInnerLayout and assigns it to the Layout field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetLayout(v ListInstances200ResponseAllOfInstancesInnerLayout) {
 	o.Layout = &v
@@ -547,15 +419,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetPlanOk() (*ListInstance
 		return nil, false
 	}
 	return o.Plan, true
-}
-
-// IsSetPlan returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetPlan() bool {
-	if o != nil && !IsNil(o.Plan) {
-		return true
-	}
-
-	return false
 }
 
 // SetPlan gets a reference to the given ListInstances200ResponseAllOfInstancesInnerPlan and assigns it to the Plan field.
@@ -581,15 +444,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetNameOk() (*string, bool
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetName(v string) {
 	o.Name = &v
@@ -611,15 +465,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetDisplayNameOk() (*strin
 		return nil, false
 	}
 	return o.DisplayName, true
-}
-
-// IsSetDisplayName returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetDisplayName() bool {
-	if o != nil && !IsNil(o.DisplayName) {
-		return true
-	}
-
-	return false
 }
 
 // SetDisplayName gets a reference to the given string and assigns it to the DisplayName field.
@@ -646,28 +491,9 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetDescriptionOk() (*strin
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInner) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInner) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetEnvironment returns the Environment field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -689,28 +515,9 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetEnvironmentOk() (*strin
 	return o.Environment.Get(), o.Environment.IsSet()
 }
 
-// IsSetEnvironment returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetEnvironment() bool {
-	if o != nil && o.Environment.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetEnvironment gets a reference to the given NullableString and assigns it to the Environment field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetEnvironment(v string) {
 	o.Environment.Set(&v)
-}
-
-// SetEnvironmentNil sets the value for Environment to be an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInner) SetEnvironmentNil() {
-	o.Environment.Set(nil)
-}
-
-// UnsetEnvironment ensures that no value is present for Environment, not even an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInner) UnsetEnvironment() {
-	o.Environment.Unset()
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
@@ -729,15 +536,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetConfigOk() (*ListInstan
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given ListInstances200ResponseAllOfInstancesInnerConfig and assigns it to the Config field.
@@ -764,28 +562,9 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetConfigGroupOk() (*strin
 	return o.ConfigGroup.Get(), o.ConfigGroup.IsSet()
 }
 
-// IsSetConfigGroup returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetConfigGroup() bool {
-	if o != nil && o.ConfigGroup.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetConfigGroup gets a reference to the given NullableString and assigns it to the ConfigGroup field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetConfigGroup(v string) {
 	o.ConfigGroup.Set(&v)
-}
-
-// SetConfigGroupNil sets the value for ConfigGroup to be an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInner) SetConfigGroupNil() {
-	o.ConfigGroup.Set(nil)
-}
-
-// UnsetConfigGroup ensures that no value is present for ConfigGroup, not even an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInner) UnsetConfigGroup() {
-	o.ConfigGroup.Unset()
 }
 
 // GetConfigId returns the ConfigId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -807,28 +586,9 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetConfigIdOk() (*string, 
 	return o.ConfigId.Get(), o.ConfigId.IsSet()
 }
 
-// IsSetConfigId returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetConfigId() bool {
-	if o != nil && o.ConfigId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetConfigId gets a reference to the given NullableString and assigns it to the ConfigId field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetConfigId(v string) {
 	o.ConfigId.Set(&v)
-}
-
-// SetConfigIdNil sets the value for ConfigId to be an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInner) SetConfigIdNil() {
-	o.ConfigId.Set(nil)
-}
-
-// UnsetConfigId ensures that no value is present for ConfigId, not even an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInner) UnsetConfigId() {
-	o.ConfigId.Unset()
 }
 
 // GetConfigRole returns the ConfigRole field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -850,28 +610,9 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetConfigRoleOk() (*string
 	return o.ConfigRole.Get(), o.ConfigRole.IsSet()
 }
 
-// IsSetConfigRole returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetConfigRole() bool {
-	if o != nil && o.ConfigRole.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetConfigRole gets a reference to the given NullableString and assigns it to the ConfigRole field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetConfigRole(v string) {
 	o.ConfigRole.Set(&v)
-}
-
-// SetConfigRoleNil sets the value for ConfigRole to be an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInner) SetConfigRoleNil() {
-	o.ConfigRole.Set(nil)
-}
-
-// UnsetConfigRole ensures that no value is present for ConfigRole, not even an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInner) UnsetConfigRole() {
-	o.ConfigRole.Unset()
 }
 
 // GetVolumes returns the Volumes field value if set, zero value otherwise.
@@ -890,15 +631,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetVolumesOk() ([]ListInst
 		return nil, false
 	}
 	return o.Volumes, true
-}
-
-// IsSetVolumes returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetVolumes() bool {
-	if o != nil && !IsNil(o.Volumes) {
-		return true
-	}
-
-	return false
 }
 
 // SetVolumes gets a reference to the given []ListInstances200ResponseAllOfInstancesInnerVolumesInner and assigns it to the Volumes field.
@@ -924,15 +656,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetControllersOk() ([]List
 	return o.Controllers, true
 }
 
-// IsSetControllers returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetControllers() bool {
-	if o != nil && !IsNil(o.Controllers) {
-		return true
-	}
-
-	return false
-}
-
 // SetControllers gets a reference to the given []ListInstances200ResponseAllOfInstancesInnerControllersInner and assigns it to the Controllers field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetControllers(v []ListInstances200ResponseAllOfInstancesInnerControllersInner) {
 	o.Controllers = v
@@ -954,15 +677,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetInterfacesOk() ([]ListI
 		return nil, false
 	}
 	return o.Interfaces, true
-}
-
-// IsSetInterfaces returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetInterfaces() bool {
-	if o != nil && !IsNil(o.Interfaces) {
-		return true
-	}
-
-	return false
 }
 
 // SetInterfaces gets a reference to the given []ListInstances200ResponseAllOfInstancesInnerInterfacesInner and assigns it to the Interfaces field.
@@ -988,15 +702,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetCustomOptionsOk() (map[
 	return o.CustomOptions, true
 }
 
-// IsSetCustomOptions returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetCustomOptions() bool {
-	if o != nil && !IsNil(o.CustomOptions) {
-		return true
-	}
-
-	return false
-}
-
 // SetCustomOptions gets a reference to the given map[string]interface{} and assigns it to the CustomOptions field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetCustomOptions(v map[string]interface{}) {
 	o.CustomOptions = v
@@ -1018,15 +723,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetInstanceVersionOk() (*s
 		return nil, false
 	}
 	return o.InstanceVersion, true
-}
-
-// IsSetInstanceVersion returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetInstanceVersion() bool {
-	if o != nil && !IsNil(o.InstanceVersion) {
-		return true
-	}
-
-	return false
 }
 
 // SetInstanceVersion gets a reference to the given string and assigns it to the InstanceVersion field.
@@ -1053,15 +749,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetLabelsOk() ([]string, b
 	return o.Labels, true
 }
 
-// IsSetLabels returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
-}
-
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetLabels(v []string) {
 	o.Labels = v
@@ -1083,15 +770,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetTagsOk() ([]ListInstanc
 		return nil, false
 	}
 	return o.Tags, true
-}
-
-// IsSetTags returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetTags() bool {
-	if o != nil && !IsNil(o.Tags) {
-		return true
-	}
-
-	return false
 }
 
 // SetTags gets a reference to the given []ListInstances200ResponseAllOfInstancesInnerTagsInner and assigns it to the Tags field.
@@ -1117,15 +795,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetEvarsOk() ([]ListInstan
 	return o.Evars, true
 }
 
-// IsSetEvars returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetEvars() bool {
-	if o != nil && !IsNil(o.Evars) {
-		return true
-	}
-
-	return false
-}
-
 // SetEvars gets a reference to the given []ListInstances200ResponseAllOfInstancesInnerEvarsInner and assigns it to the Evars field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetEvars(v []ListInstances200ResponseAllOfInstancesInnerEvarsInner) {
 	o.Evars = v
@@ -1147,15 +816,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetMaxMemoryOk() (*int64, 
 		return nil, false
 	}
 	return o.MaxMemory, true
-}
-
-// IsSetMaxMemory returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetMaxMemory() bool {
-	if o != nil && !IsNil(o.MaxMemory) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxMemory gets a reference to the given int64 and assigns it to the MaxMemory field.
@@ -1181,15 +841,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetMaxStorageOk() (*int64,
 	return o.MaxStorage, true
 }
 
-// IsSetMaxStorage returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetMaxStorage() bool {
-	if o != nil && !IsNil(o.MaxStorage) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxStorage gets a reference to the given int64 and assigns it to the MaxStorage field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetMaxStorage(v int64) {
 	o.MaxStorage = &v
@@ -1211,15 +862,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetMaxCoresOk() (*int64, b
 		return nil, false
 	}
 	return o.MaxCores, true
-}
-
-// IsSetMaxCores returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetMaxCores() bool {
-	if o != nil && !IsNil(o.MaxCores) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxCores gets a reference to the given int64 and assigns it to the MaxCores field.
@@ -1246,28 +888,9 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetCoresPerSocketOk() (*in
 	return o.CoresPerSocket.Get(), o.CoresPerSocket.IsSet()
 }
 
-// IsSetCoresPerSocket returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetCoresPerSocket() bool {
-	if o != nil && o.CoresPerSocket.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCoresPerSocket gets a reference to the given NullableInt64 and assigns it to the CoresPerSocket field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetCoresPerSocket(v int64) {
 	o.CoresPerSocket.Set(&v)
-}
-
-// SetCoresPerSocketNil sets the value for CoresPerSocket to be an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInner) SetCoresPerSocketNil() {
-	o.CoresPerSocket.Set(nil)
-}
-
-// UnsetCoresPerSocket ensures that no value is present for CoresPerSocket, not even an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInner) UnsetCoresPerSocket() {
-	o.CoresPerSocket.Unset()
 }
 
 // GetMaxCpu returns the MaxCpu field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1289,28 +912,9 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetMaxCpuOk() (*int64, boo
 	return o.MaxCpu.Get(), o.MaxCpu.IsSet()
 }
 
-// IsSetMaxCpu returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetMaxCpu() bool {
-	if o != nil && o.MaxCpu.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxCpu gets a reference to the given NullableInt64 and assigns it to the MaxCpu field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetMaxCpu(v int64) {
 	o.MaxCpu.Set(&v)
-}
-
-// SetMaxCpuNil sets the value for MaxCpu to be an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInner) SetMaxCpuNil() {
-	o.MaxCpu.Set(nil)
-}
-
-// UnsetMaxCpu ensures that no value is present for MaxCpu, not even an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInner) UnsetMaxCpu() {
-	o.MaxCpu.Unset()
 }
 
 // GetHourlyCost returns the HourlyCost field value if set, zero value otherwise.
@@ -1329,15 +933,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetHourlyCostOk() (*float3
 		return nil, false
 	}
 	return o.HourlyCost, true
-}
-
-// IsSetHourlyCost returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetHourlyCost() bool {
-	if o != nil && !IsNil(o.HourlyCost) {
-		return true
-	}
-
-	return false
 }
 
 // SetHourlyCost gets a reference to the given float32 and assigns it to the HourlyCost field.
@@ -1363,15 +958,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetHourlyPriceOk() (*float
 	return o.HourlyPrice, true
 }
 
-// IsSetHourlyPrice returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetHourlyPrice() bool {
-	if o != nil && !IsNil(o.HourlyPrice) {
-		return true
-	}
-
-	return false
-}
-
 // SetHourlyPrice gets a reference to the given float32 and assigns it to the HourlyPrice field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetHourlyPrice(v float32) {
 	o.HourlyPrice = &v
@@ -1393,15 +979,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetInstancePriceOk() (*Lis
 		return nil, false
 	}
 	return o.InstancePrice, true
-}
-
-// IsSetInstancePrice returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetInstancePrice() bool {
-	if o != nil && !IsNil(o.InstancePrice) {
-		return true
-	}
-
-	return false
 }
 
 // SetInstancePrice gets a reference to the given ListInstances200ResponseAllOfInstancesInnerInstancePrice and assigns it to the InstancePrice field.
@@ -1427,15 +1004,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetDateCreatedOk() (*time.
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -1459,15 +1027,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetLastUpdatedOk() (*time.
 	return o.LastUpdated, true
 }
 
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
-}
-
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetLastUpdated(v time.Time) {
 	o.LastUpdated = &v
@@ -1489,15 +1048,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetHostNameOk() (*string, 
 		return nil, false
 	}
 	return o.HostName, true
-}
-
-// IsSetHostName returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetHostName() bool {
-	if o != nil && !IsNil(o.HostName) {
-		return true
-	}
-
-	return false
 }
 
 // SetHostName gets a reference to the given string and assigns it to the HostName field.
@@ -1524,28 +1074,9 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetDomainNameOk() (*string
 	return o.DomainName.Get(), o.DomainName.IsSet()
 }
 
-// IsSetDomainName returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetDomainName() bool {
-	if o != nil && o.DomainName.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDomainName gets a reference to the given NullableString and assigns it to the DomainName field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetDomainName(v string) {
 	o.DomainName.Set(&v)
-}
-
-// SetDomainNameNil sets the value for DomainName to be an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInner) SetDomainNameNil() {
-	o.DomainName.Set(nil)
-}
-
-// UnsetDomainName ensures that no value is present for DomainName, not even an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInner) UnsetDomainName() {
-	o.DomainName.Unset()
 }
 
 // GetEnvironmentPrefix returns the EnvironmentPrefix field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1567,28 +1098,9 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetEnvironmentPrefixOk() (
 	return o.EnvironmentPrefix.Get(), o.EnvironmentPrefix.IsSet()
 }
 
-// IsSetEnvironmentPrefix returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetEnvironmentPrefix() bool {
-	if o != nil && o.EnvironmentPrefix.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetEnvironmentPrefix gets a reference to the given NullableString and assigns it to the EnvironmentPrefix field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetEnvironmentPrefix(v string) {
 	o.EnvironmentPrefix.Set(&v)
-}
-
-// SetEnvironmentPrefixNil sets the value for EnvironmentPrefix to be an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInner) SetEnvironmentPrefixNil() {
-	o.EnvironmentPrefix.Set(nil)
-}
-
-// UnsetEnvironmentPrefix ensures that no value is present for EnvironmentPrefix, not even an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInner) UnsetEnvironmentPrefix() {
-	o.EnvironmentPrefix.Unset()
 }
 
 // GetFirewallEnabled returns the FirewallEnabled field value if set, zero value otherwise.
@@ -1607,15 +1119,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetFirewallEnabledOk() (*b
 		return nil, false
 	}
 	return o.FirewallEnabled, true
-}
-
-// IsSetFirewallEnabled returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetFirewallEnabled() bool {
-	if o != nil && !IsNil(o.FirewallEnabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetFirewallEnabled gets a reference to the given bool and assigns it to the FirewallEnabled field.
@@ -1641,15 +1144,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetNetworkLevelOk() (*stri
 	return o.NetworkLevel, true
 }
 
-// IsSetNetworkLevel returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetNetworkLevel() bool {
-	if o != nil && !IsNil(o.NetworkLevel) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkLevel gets a reference to the given string and assigns it to the NetworkLevel field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetNetworkLevel(v string) {
 	o.NetworkLevel = &v
@@ -1671,15 +1165,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetAutoScaleOk() (*bool, b
 		return nil, false
 	}
 	return o.AutoScale, true
-}
-
-// IsSetAutoScale returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetAutoScale() bool {
-	if o != nil && !IsNil(o.AutoScale) {
-		return true
-	}
-
-	return false
 }
 
 // SetAutoScale gets a reference to the given bool and assigns it to the AutoScale field.
@@ -1706,28 +1191,9 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetInstanceContextOk() (*s
 	return o.InstanceContext.Get(), o.InstanceContext.IsSet()
 }
 
-// IsSetInstanceContext returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetInstanceContext() bool {
-	if o != nil && o.InstanceContext.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInstanceContext gets a reference to the given NullableString and assigns it to the InstanceContext field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetInstanceContext(v string) {
 	o.InstanceContext.Set(&v)
-}
-
-// SetInstanceContextNil sets the value for InstanceContext to be an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInner) SetInstanceContextNil() {
-	o.InstanceContext.Set(nil)
-}
-
-// UnsetInstanceContext ensures that no value is present for InstanceContext, not even an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInner) UnsetInstanceContext() {
-	o.InstanceContext.Unset()
 }
 
 // GetCurrentDeployId returns the CurrentDeployId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1749,28 +1215,9 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetCurrentDeployIdOk() (*s
 	return o.CurrentDeployId.Get(), o.CurrentDeployId.IsSet()
 }
 
-// IsSetCurrentDeployId returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetCurrentDeployId() bool {
-	if o != nil && o.CurrentDeployId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCurrentDeployId gets a reference to the given NullableString and assigns it to the CurrentDeployId field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetCurrentDeployId(v string) {
 	o.CurrentDeployId.Set(&v)
-}
-
-// SetCurrentDeployIdNil sets the value for CurrentDeployId to be an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInner) SetCurrentDeployIdNil() {
-	o.CurrentDeployId.Set(nil)
-}
-
-// UnsetCurrentDeployId ensures that no value is present for CurrentDeployId, not even an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInner) UnsetCurrentDeployId() {
-	o.CurrentDeployId.Unset()
 }
 
 // GetLocked returns the Locked field value if set, zero value otherwise.
@@ -1789,15 +1236,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetLockedOk() (*bool, bool
 		return nil, false
 	}
 	return o.Locked, true
-}
-
-// IsSetLocked returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetLocked() bool {
-	if o != nil && !IsNil(o.Locked) {
-		return true
-	}
-
-	return false
 }
 
 // SetLocked gets a reference to the given bool and assigns it to the Locked field.
@@ -1821,15 +1259,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetStatusOk() (*string, bo
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -1856,28 +1285,9 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetStatusMessageOk() (*str
 	return o.StatusMessage.Get(), o.StatusMessage.IsSet()
 }
 
-// IsSetStatusMessage returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetStatusMessage() bool {
-	if o != nil && o.StatusMessage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusMessage gets a reference to the given NullableString and assigns it to the StatusMessage field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetStatusMessage(v string) {
 	o.StatusMessage.Set(&v)
-}
-
-// SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInner) SetStatusMessageNil() {
-	o.StatusMessage.Set(nil)
-}
-
-// UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInner) UnsetStatusMessage() {
-	o.StatusMessage.Unset()
 }
 
 // GetErrorMessage returns the ErrorMessage field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1899,28 +1309,9 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetErrorMessageOk() (*stri
 	return o.ErrorMessage.Get(), o.ErrorMessage.IsSet()
 }
 
-// IsSetErrorMessage returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetErrorMessage() bool {
-	if o != nil && o.ErrorMessage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetErrorMessage gets a reference to the given NullableString and assigns it to the ErrorMessage field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetErrorMessage(v string) {
 	o.ErrorMessage.Set(&v)
-}
-
-// SetErrorMessageNil sets the value for ErrorMessage to be an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInner) SetErrorMessageNil() {
-	o.ErrorMessage.Set(nil)
-}
-
-// UnsetErrorMessage ensures that no value is present for ErrorMessage, not even an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInner) UnsetErrorMessage() {
-	o.ErrorMessage.Unset()
 }
 
 // GetStatusDate returns the StatusDate field value if set, zero value otherwise.
@@ -1939,15 +1330,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetStatusDateOk() (*time.T
 		return nil, false
 	}
 	return o.StatusDate, true
-}
-
-// IsSetStatusDate returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetStatusDate() bool {
-	if o != nil && !IsNil(o.StatusDate) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatusDate gets a reference to the given time.Time and assigns it to the StatusDate field.
@@ -1974,28 +1356,9 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetStatusPercentOk() (*str
 	return o.StatusPercent.Get(), o.StatusPercent.IsSet()
 }
 
-// IsSetStatusPercent returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetStatusPercent() bool {
-	if o != nil && o.StatusPercent.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusPercent gets a reference to the given NullableString and assigns it to the StatusPercent field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetStatusPercent(v string) {
 	o.StatusPercent.Set(&v)
-}
-
-// SetStatusPercentNil sets the value for StatusPercent to be an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInner) SetStatusPercentNil() {
-	o.StatusPercent.Set(nil)
-}
-
-// UnsetStatusPercent ensures that no value is present for StatusPercent, not even an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInner) UnsetStatusPercent() {
-	o.StatusPercent.Unset()
 }
 
 // GetStatusEta returns the StatusEta field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -2017,28 +1380,9 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetStatusEtaOk() (*string,
 	return o.StatusEta.Get(), o.StatusEta.IsSet()
 }
 
-// IsSetStatusEta returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetStatusEta() bool {
-	if o != nil && o.StatusEta.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusEta gets a reference to the given NullableString and assigns it to the StatusEta field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetStatusEta(v string) {
 	o.StatusEta.Set(&v)
-}
-
-// SetStatusEtaNil sets the value for StatusEta to be an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInner) SetStatusEtaNil() {
-	o.StatusEta.Set(nil)
-}
-
-// UnsetStatusEta ensures that no value is present for StatusEta, not even an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInner) UnsetStatusEta() {
-	o.StatusEta.Unset()
 }
 
 // GetUserStatus returns the UserStatus field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -2060,28 +1404,9 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetUserStatusOk() (*string
 	return o.UserStatus.Get(), o.UserStatus.IsSet()
 }
 
-// IsSetUserStatus returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetUserStatus() bool {
-	if o != nil && o.UserStatus.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUserStatus gets a reference to the given NullableString and assigns it to the UserStatus field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetUserStatus(v string) {
 	o.UserStatus.Set(&v)
-}
-
-// SetUserStatusNil sets the value for UserStatus to be an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInner) SetUserStatusNil() {
-	o.UserStatus.Set(nil)
-}
-
-// UnsetUserStatus ensures that no value is present for UserStatus, not even an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInner) UnsetUserStatus() {
-	o.UserStatus.Unset()
 }
 
 // GetExpireDays returns the ExpireDays field value if set, zero value otherwise.
@@ -2100,15 +1425,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetExpireDaysOk() (*int64,
 		return nil, false
 	}
 	return o.ExpireDays, true
-}
-
-// IsSetExpireDays returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetExpireDays() bool {
-	if o != nil && !IsNil(o.ExpireDays) {
-		return true
-	}
-
-	return false
 }
 
 // SetExpireDays gets a reference to the given int64 and assigns it to the ExpireDays field.
@@ -2134,15 +1450,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetRenewDaysOk() (*int64, 
 	return o.RenewDays, true
 }
 
-// IsSetRenewDays returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetRenewDays() bool {
-	if o != nil && !IsNil(o.RenewDays) {
-		return true
-	}
-
-	return false
-}
-
 // SetRenewDays gets a reference to the given int64 and assigns it to the RenewDays field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetRenewDays(v int64) {
 	o.RenewDays = &v
@@ -2164,15 +1471,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetExpireCountOk() (*int64
 		return nil, false
 	}
 	return o.ExpireCount, true
-}
-
-// IsSetExpireCount returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetExpireCount() bool {
-	if o != nil && !IsNil(o.ExpireCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetExpireCount gets a reference to the given int64 and assigns it to the ExpireCount field.
@@ -2198,15 +1496,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetExpireDateOk() (*time.T
 	return o.ExpireDate, true
 }
 
-// IsSetExpireDate returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetExpireDate() bool {
-	if o != nil && !IsNil(o.ExpireDate) {
-		return true
-	}
-
-	return false
-}
-
 // SetExpireDate gets a reference to the given time.Time and assigns it to the ExpireDate field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetExpireDate(v time.Time) {
 	o.ExpireDate = &v
@@ -2228,15 +1517,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetExpireWarningDateOk() (
 		return nil, false
 	}
 	return o.ExpireWarningDate, true
-}
-
-// IsSetExpireWarningDate returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetExpireWarningDate() bool {
-	if o != nil && !IsNil(o.ExpireWarningDate) {
-		return true
-	}
-
-	return false
 }
 
 // SetExpireWarningDate gets a reference to the given time.Time and assigns it to the ExpireWarningDate field.
@@ -2262,15 +1542,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetExpireWarningSentOk() (
 	return o.ExpireWarningSent, true
 }
 
-// IsSetExpireWarningSent returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetExpireWarningSent() bool {
-	if o != nil && !IsNil(o.ExpireWarningSent) {
-		return true
-	}
-
-	return false
-}
-
 // SetExpireWarningSent gets a reference to the given bool and assigns it to the ExpireWarningSent field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetExpireWarningSent(v bool) {
 	o.ExpireWarningSent = &v
@@ -2292,15 +1563,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetShutdownDaysOk() (*int6
 		return nil, false
 	}
 	return o.ShutdownDays, true
-}
-
-// IsSetShutdownDays returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetShutdownDays() bool {
-	if o != nil && !IsNil(o.ShutdownDays) {
-		return true
-	}
-
-	return false
 }
 
 // SetShutdownDays gets a reference to the given int64 and assigns it to the ShutdownDays field.
@@ -2326,15 +1588,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetShutdownRenewDaysOk() (
 	return o.ShutdownRenewDays, true
 }
 
-// IsSetShutdownRenewDays returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetShutdownRenewDays() bool {
-	if o != nil && !IsNil(o.ShutdownRenewDays) {
-		return true
-	}
-
-	return false
-}
-
 // SetShutdownRenewDays gets a reference to the given int64 and assigns it to the ShutdownRenewDays field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetShutdownRenewDays(v int64) {
 	o.ShutdownRenewDays = &v
@@ -2356,15 +1609,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetShutdownCountOk() (*int
 		return nil, false
 	}
 	return o.ShutdownCount, true
-}
-
-// IsSetShutdownCount returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetShutdownCount() bool {
-	if o != nil && !IsNil(o.ShutdownCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetShutdownCount gets a reference to the given int64 and assigns it to the ShutdownCount field.
@@ -2390,15 +1634,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetShutdownDateOk() (*time
 	return o.ShutdownDate, true
 }
 
-// IsSetShutdownDate returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetShutdownDate() bool {
-	if o != nil && !IsNil(o.ShutdownDate) {
-		return true
-	}
-
-	return false
-}
-
 // SetShutdownDate gets a reference to the given time.Time and assigns it to the ShutdownDate field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetShutdownDate(v time.Time) {
 	o.ShutdownDate = &v
@@ -2422,15 +1657,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetShutdownWarningDateOk()
 	return o.ShutdownWarningDate, true
 }
 
-// IsSetShutdownWarningDate returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetShutdownWarningDate() bool {
-	if o != nil && !IsNil(o.ShutdownWarningDate) {
-		return true
-	}
-
-	return false
-}
-
 // SetShutdownWarningDate gets a reference to the given time.Time and assigns it to the ShutdownWarningDate field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetShutdownWarningDate(v time.Time) {
 	o.ShutdownWarningDate = &v
@@ -2452,15 +1678,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetShutdownWarningSentOk()
 		return nil, false
 	}
 	return o.ShutdownWarningSent, true
-}
-
-// IsSetShutdownWarningSent returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetShutdownWarningSent() bool {
-	if o != nil && !IsNil(o.ShutdownWarningSent) {
-		return true
-	}
-
-	return false
 }
 
 // SetShutdownWarningSent gets a reference to the given bool and assigns it to the ShutdownWarningSent field.
@@ -2487,28 +1704,9 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetRemovalDateOk() (*time.
 	return o.RemovalDate.Get(), o.RemovalDate.IsSet()
 }
 
-// IsSetRemovalDate returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetRemovalDate() bool {
-	if o != nil && o.RemovalDate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRemovalDate gets a reference to the given NullableTime and assigns it to the RemovalDate field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetRemovalDate(v time.Time) {
 	o.RemovalDate.Set(&v)
-}
-
-// SetRemovalDateNil sets the value for RemovalDate to be an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInner) SetRemovalDateNil() {
-	o.RemovalDate.Set(nil)
-}
-
-// UnsetRemovalDate ensures that no value is present for RemovalDate, not even an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInner) UnsetRemovalDate() {
-	o.RemovalDate.Unset()
 }
 
 // GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
@@ -2527,15 +1725,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetCreatedByOk() (*ListIns
 		return nil, false
 	}
 	return o.CreatedBy, true
-}
-
-// IsSetCreatedBy returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetCreatedBy() bool {
-	if o != nil && !IsNil(o.CreatedBy) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreatedBy gets a reference to the given ListInstances200ResponseAllOfInstancesInnerCreatedBy and assigns it to the CreatedBy field.
@@ -2559,15 +1748,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetOwnerOk() (*ListInstanc
 		return nil, false
 	}
 	return o.Owner, true
-}
-
-// IsSetOwner returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
-		return true
-	}
-
-	return false
 }
 
 // SetOwner gets a reference to the given ListInstances200ResponseAllOfInstancesInnerOwner and assigns it to the Owner field.
@@ -2594,28 +1774,9 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetNotesOk() (*string, boo
 	return o.Notes.Get(), o.Notes.IsSet()
 }
 
-// IsSetNotes returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetNotes() bool {
-	if o != nil && o.Notes.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNotes gets a reference to the given NullableString and assigns it to the Notes field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetNotes(v string) {
 	o.Notes.Set(&v)
-}
-
-// SetNotesNil sets the value for Notes to be an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInner) SetNotesNil() {
-	o.Notes.Set(nil)
-}
-
-// UnsetNotes ensures that no value is present for Notes, not even an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInner) UnsetNotes() {
-	o.Notes.Unset()
 }
 
 // GetStats returns the Stats field value if set, zero value otherwise.
@@ -2634,15 +1795,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetStatsOk() (*ListInstanc
 		return nil, false
 	}
 	return o.Stats, true
-}
-
-// IsSetStats returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetStats() bool {
-	if o != nil && !IsNil(o.Stats) {
-		return true
-	}
-
-	return false
 }
 
 // SetStats gets a reference to the given ListInstances200ResponseAllOfInstancesInnerStats and assigns it to the Stats field.
@@ -2669,28 +1821,9 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetPowerScheduleOk() (*str
 	return o.PowerSchedule.Get(), o.PowerSchedule.IsSet()
 }
 
-// IsSetPowerSchedule returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetPowerSchedule() bool {
-	if o != nil && o.PowerSchedule.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPowerSchedule gets a reference to the given NullableString and assigns it to the PowerSchedule field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetPowerSchedule(v string) {
 	o.PowerSchedule.Set(&v)
-}
-
-// SetPowerScheduleNil sets the value for PowerSchedule to be an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInner) SetPowerScheduleNil() {
-	o.PowerSchedule.Set(nil)
-}
-
-// UnsetPowerSchedule ensures that no value is present for PowerSchedule, not even an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInner) UnsetPowerSchedule() {
-	o.PowerSchedule.Unset()
 }
 
 // GetIsScalable returns the IsScalable field value if set, zero value otherwise.
@@ -2709,15 +1842,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetIsScalableOk() (*bool, 
 		return nil, false
 	}
 	return o.IsScalable, true
-}
-
-// IsSetIsScalable returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetIsScalable() bool {
-	if o != nil && !IsNil(o.IsScalable) {
-		return true
-	}
-
-	return false
 }
 
 // SetIsScalable gets a reference to the given bool and assigns it to the IsScalable field.
@@ -2744,15 +1868,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetInstanceThresholdOk() (
 	return o.InstanceThreshold, true
 }
 
-// IsSetInstanceThreshold returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetInstanceThreshold() bool {
-	if o != nil && !IsNil(o.InstanceThreshold) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstanceThreshold gets a reference to the given map[string]interface{} and assigns it to the InstanceThreshold field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetInstanceThreshold(v map[string]interface{}) {
 	o.InstanceThreshold = v
@@ -2774,15 +1889,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetIsBusyOk() (*bool, bool
 		return nil, false
 	}
 	return o.IsBusy, true
-}
-
-// IsSetIsBusy returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetIsBusy() bool {
-	if o != nil && !IsNil(o.IsBusy) {
-		return true
-	}
-
-	return false
 }
 
 // SetIsBusy gets a reference to the given bool and assigns it to the IsBusy field.
@@ -2809,15 +1915,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetAppsOk() ([]map[string]
 	return o.Apps, true
 }
 
-// IsSetApps returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetApps() bool {
-	if o != nil && !IsNil(o.Apps) {
-		return true
-	}
-
-	return false
-}
-
 // SetApps gets a reference to the given []map[string]interface{} and assigns it to the Apps field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetApps(v []map[string]interface{}) {
 	o.Apps = v
@@ -2840,15 +1937,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetCurrentLoadBalancerInst
 		return nil, false
 	}
 	return o.CurrentLoadBalancerInstances, true
-}
-
-// IsSetCurrentLoadBalancerInstances returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetCurrentLoadBalancerInstances() bool {
-	if o != nil && !IsNil(o.CurrentLoadBalancerInstances) {
-		return true
-	}
-
-	return false
 }
 
 // SetCurrentLoadBalancerInstances gets a reference to the given []map[string]interface{} and assigns it to the CurrentLoadBalancerInstances field.
@@ -2874,15 +1962,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetCurrentLoadBalancerCont
 	return o.CurrentLoadBalancerContainersIn, true
 }
 
-// IsSetCurrentLoadBalancerContainersIn returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetCurrentLoadBalancerContainersIn() bool {
-	if o != nil && !IsNil(o.CurrentLoadBalancerContainersIn) {
-		return true
-	}
-
-	return false
-}
-
 // SetCurrentLoadBalancerContainersIn gets a reference to the given int32 and assigns it to the CurrentLoadBalancerContainersIn field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetCurrentLoadBalancerContainersIn(v int32) {
 	o.CurrentLoadBalancerContainersIn = &v
@@ -2904,15 +1983,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetCurrentLoadBalancerCont
 		return nil, false
 	}
 	return o.CurrentLoadBalancerContainersOut, true
-}
-
-// IsSetCurrentLoadBalancerContainersOut returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetCurrentLoadBalancerContainersOut() bool {
-	if o != nil && !IsNil(o.CurrentLoadBalancerContainersOut) {
-		return true
-	}
-
-	return false
 }
 
 // SetCurrentLoadBalancerContainersOut gets a reference to the given int32 and assigns it to the CurrentLoadBalancerContainersOut field.
@@ -2938,15 +2008,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetLastDeployOk() (*map[st
 	return o.LastDeploy, true
 }
 
-// IsSetLastDeploy returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetLastDeploy() bool {
-	if o != nil && !IsNil(o.LastDeploy) {
-		return true
-	}
-
-	return false
-}
-
 // SetLastDeploy gets a reference to the given map[string]interface{} and assigns it to the LastDeploy field.
 func (o *ListInstances200ResponseAllOfInstancesInner) SetLastDeploy(v map[string]interface{}) {
 	o.LastDeploy = &v
@@ -2968,15 +2029,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetContainerDetailsOk() ([
 		return nil, false
 	}
 	return o.ContainerDetails, true
-}
-
-// IsSetContainerDetails returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) IsSetContainerDetails() bool {
-	if o != nil && !IsNil(o.ContainerDetails) {
-		return true
-	}
-
-	return false
 }
 
 // SetContainerDetails gets a reference to the given []InstanceContainer and assigns it to the ContainerDetails field.

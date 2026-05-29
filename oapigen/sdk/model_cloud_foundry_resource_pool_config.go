@@ -66,15 +66,6 @@ func (o *CloudFoundryResourcePoolConfig) GetManagersOk() ([]string, bool) {
 	return o.Managers, true
 }
 
-// IsSetManagers returns a boolean if a field has been set.
-func (o *CloudFoundryResourcePoolConfig) IsSetManagers() bool {
-	if o != nil && !IsNil(o.Managers) {
-		return true
-	}
-
-	return false
-}
-
 // SetManagers gets a reference to the given []string and assigns it to the Managers field.
 func (o *CloudFoundryResourcePoolConfig) SetManagers(v []string) {
 	o.Managers = v
@@ -98,15 +89,6 @@ func (o *CloudFoundryResourcePoolConfig) GetDevelopersOk() ([]string, bool) {
 	return o.Developers, true
 }
 
-// IsSetDevelopers returns a boolean if a field has been set.
-func (o *CloudFoundryResourcePoolConfig) IsSetDevelopers() bool {
-	if o != nil && !IsNil(o.Developers) {
-		return true
-	}
-
-	return false
-}
-
 // SetDevelopers gets a reference to the given []string and assigns it to the Developers field.
 func (o *CloudFoundryResourcePoolConfig) SetDevelopers(v []string) {
 	o.Developers = v
@@ -128,15 +110,6 @@ func (o *CloudFoundryResourcePoolConfig) GetAuditorsOk() ([]string, bool) {
 		return nil, false
 	}
 	return o.Auditors, true
-}
-
-// IsSetAuditors returns a boolean if a field has been set.
-func (o *CloudFoundryResourcePoolConfig) IsSetAuditors() bool {
-	if o != nil && !IsNil(o.Auditors) {
-		return true
-	}
-
-	return false
 }
 
 // SetAuditors gets a reference to the given []string and assigns it to the Auditors field.

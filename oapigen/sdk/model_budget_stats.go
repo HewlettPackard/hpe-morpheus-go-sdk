@@ -64,15 +64,6 @@ func (o *BudgetStats) GetCurrencyOk() (*string, bool) {
 	return o.Currency, true
 }
 
-// IsSetCurrency returns a boolean if a field has been set.
-func (o *BudgetStats) IsSetCurrency() bool {
-	if o != nil && !IsNil(o.Currency) {
-		return true
-	}
-
-	return false
-}
-
 // SetCurrency gets a reference to the given string and assigns it to the Currency field.
 func (o *BudgetStats) SetCurrency(v string) {
 	o.Currency = &v
@@ -94,15 +85,6 @@ func (o *BudgetStats) GetConversionRateOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.ConversionRate, true
-}
-
-// IsSetConversionRate returns a boolean if a field has been set.
-func (o *BudgetStats) IsSetConversionRate() bool {
-	if o != nil && !IsNil(o.ConversionRate) {
-		return true
-	}
-
-	return false
 }
 
 // SetConversionRate gets a reference to the given int64 and assigns it to the ConversionRate field.
@@ -128,15 +110,6 @@ func (o *BudgetStats) GetIntervalsOk() ([]BudgetStatsIntervalsInner, bool) {
 	return o.Intervals, true
 }
 
-// IsSetIntervals returns a boolean if a field has been set.
-func (o *BudgetStats) IsSetIntervals() bool {
-	if o != nil && !IsNil(o.Intervals) {
-		return true
-	}
-
-	return false
-}
-
 // SetIntervals gets a reference to the given []BudgetStatsIntervalsInner and assigns it to the Intervals field.
 func (o *BudgetStats) SetIntervals(v []BudgetStatsIntervalsInner) {
 	o.Intervals = v
@@ -158,15 +131,6 @@ func (o *BudgetStats) GetCurrentOk() (*BudgetStatsCurrent, bool) {
 		return nil, false
 	}
 	return o.Current, true
-}
-
-// IsSetCurrent returns a boolean if a field has been set.
-func (o *BudgetStats) IsSetCurrent() bool {
-	if o != nil && !IsNil(o.Current) {
-		return true
-	}
-
-	return false
 }
 
 // SetCurrent gets a reference to the given BudgetStatsCurrent and assigns it to the Current field.

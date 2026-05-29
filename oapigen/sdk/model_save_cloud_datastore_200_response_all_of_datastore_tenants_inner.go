@@ -64,15 +64,6 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastoreTenantsInner) GetIdOk() (*in
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastoreTenantsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *SaveCloudDatastore200ResponseAllOfDatastoreTenantsInner) SetId(v int64) {
 	o.Id = &v
@@ -94,15 +85,6 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastoreTenantsInner) GetNameOk() (*
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastoreTenantsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -128,15 +110,6 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastoreTenantsInner) GetDefaultStor
 	return o.DefaultStore, true
 }
 
-// IsSetDefaultStore returns a boolean if a field has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastoreTenantsInner) IsSetDefaultStore() bool {
-	if o != nil && !IsNil(o.DefaultStore) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultStore gets a reference to the given bool and assigns it to the DefaultStore field.
 func (o *SaveCloudDatastore200ResponseAllOfDatastoreTenantsInner) SetDefaultStore(v bool) {
 	o.DefaultStore = &v
@@ -158,15 +131,6 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastoreTenantsInner) GetDefaultTarg
 		return nil, false
 	}
 	return o.DefaultTarget, true
-}
-
-// IsSetDefaultTarget returns a boolean if a field has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastoreTenantsInner) IsSetDefaultTarget() bool {
-	if o != nil && !IsNil(o.DefaultTarget) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultTarget gets a reference to the given bool and assigns it to the DefaultTarget field.

@@ -64,15 +64,6 @@ func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInner) GetIdOk() (*in
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInner) SetId(v int64) {
 	o.Id = &v
@@ -94,15 +85,6 @@ func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInner) GetTaskPhaseOk
 		return nil, false
 	}
 	return o.TaskPhase, true
-}
-
-// IsSetTaskPhase returns a boolean if a field has been set.
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInner) IsSetTaskPhase() bool {
-	if o != nil && !IsNil(o.TaskPhase) {
-		return true
-	}
-
-	return false
 }
 
 // SetTaskPhase gets a reference to the given string and assigns it to the TaskPhase field.
@@ -128,15 +110,6 @@ func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInner) GetTaskOrderOk
 	return o.TaskOrder, true
 }
 
-// IsSetTaskOrder returns a boolean if a field has been set.
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInner) IsSetTaskOrder() bool {
-	if o != nil && !IsNil(o.TaskOrder) {
-		return true
-	}
-
-	return false
-}
-
 // SetTaskOrder gets a reference to the given int64 and assigns it to the TaskOrder field.
 func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInner) SetTaskOrder(v int64) {
 	o.TaskOrder = &v
@@ -158,15 +131,6 @@ func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInner) GetTaskOk() (*
 		return nil, false
 	}
 	return o.Task, true
-}
-
-// IsSetTask returns a boolean if a field has been set.
-func (o *UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInner) IsSetTask() bool {
-	if o != nil && !IsNil(o.Task) {
-		return true
-	}
-
-	return false
 }
 
 // SetTask gets a reference to the given UpdateWorkflows200ResponseAllOfTaskSetTaskSetTasksInnerTask and assigns it to the Task field.

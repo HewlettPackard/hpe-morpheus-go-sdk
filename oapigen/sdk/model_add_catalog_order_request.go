@@ -61,15 +61,6 @@ func (o *AddCatalogOrderRequest) GetOrderOk() (*AddCatalogOrderRequestOrder, boo
 	return o.Order, true
 }
 
-// IsSetOrder returns a boolean if a field has been set.
-func (o *AddCatalogOrderRequest) IsSetOrder() bool {
-	if o != nil && !IsNil(o.Order) {
-		return true
-	}
-
-	return false
-}
-
 // SetOrder gets a reference to the given AddCatalogOrderRequestOrder and assigns it to the Order field.
 func (o *AddCatalogOrderRequest) SetOrder(v AddCatalogOrderRequestOrder) {
 	o.Order = &v

@@ -62,15 +62,6 @@ func (o *ListPoliciesGroup200ResponseAllOfPoliciesInnerUser) GetIdOk() (*int64, 
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListPoliciesGroup200ResponseAllOfPoliciesInnerUser) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListPoliciesGroup200ResponseAllOfPoliciesInnerUser) SetId(v int64) {
 	o.Id = &v
@@ -92,15 +83,6 @@ func (o *ListPoliciesGroup200ResponseAllOfPoliciesInnerUser) GetUsernameOk() (*s
 		return nil, false
 	}
 	return o.Username, true
-}
-
-// IsSetUsername returns a boolean if a field has been set.
-func (o *ListPoliciesGroup200ResponseAllOfPoliciesInnerUser) IsSetUsername() bool {
-	if o != nil && !IsNil(o.Username) {
-		return true
-	}
-
-	return false
 }
 
 // SetUsername gets a reference to the given string and assigns it to the Username field.

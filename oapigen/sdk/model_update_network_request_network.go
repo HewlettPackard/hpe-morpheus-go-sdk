@@ -107,15 +107,6 @@ func (o *UpdateNetworkRequestNetwork) GetDisplayNameOk() (*string, bool) {
 	return o.DisplayName, true
 }
 
-// IsSetDisplayName returns a boolean if a field has been set.
-func (o *UpdateNetworkRequestNetwork) IsSetDisplayName() bool {
-	if o != nil && !IsNil(o.DisplayName) {
-		return true
-	}
-
-	return false
-}
-
 // SetDisplayName gets a reference to the given string and assigns it to the DisplayName field.
 func (o *UpdateNetworkRequestNetwork) SetDisplayName(v string) {
 	o.DisplayName = &v
@@ -138,15 +129,6 @@ func (o *UpdateNetworkRequestNetwork) GetLabelsOk() ([]string, bool) {
 		return nil, false
 	}
 	return o.Labels, true
-}
-
-// IsSetLabels returns a boolean if a field has been set.
-func (o *UpdateNetworkRequestNetwork) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
 }
 
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
@@ -173,28 +155,9 @@ func (o *UpdateNetworkRequestNetwork) GetDescriptionOk() (*string, bool) {
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *UpdateNetworkRequestNetwork) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *UpdateNetworkRequestNetwork) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *UpdateNetworkRequestNetwork) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *UpdateNetworkRequestNetwork) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetCidr returns the Cidr field value if set, zero value otherwise.
@@ -213,15 +176,6 @@ func (o *UpdateNetworkRequestNetwork) GetCidrOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Cidr, true
-}
-
-// IsSetCidr returns a boolean if a field has been set.
-func (o *UpdateNetworkRequestNetwork) IsSetCidr() bool {
-	if o != nil && !IsNil(o.Cidr) {
-		return true
-	}
-
-	return false
 }
 
 // SetCidr gets a reference to the given string and assigns it to the Cidr field.
@@ -247,15 +201,6 @@ func (o *UpdateNetworkRequestNetwork) GetGatewayOk() (*string, bool) {
 	return o.Gateway, true
 }
 
-// IsSetGateway returns a boolean if a field has been set.
-func (o *UpdateNetworkRequestNetwork) IsSetGateway() bool {
-	if o != nil && !IsNil(o.Gateway) {
-		return true
-	}
-
-	return false
-}
-
 // SetGateway gets a reference to the given string and assigns it to the Gateway field.
 func (o *UpdateNetworkRequestNetwork) SetGateway(v string) {
 	o.Gateway = &v
@@ -277,15 +222,6 @@ func (o *UpdateNetworkRequestNetwork) GetDnsPrimaryOk() (*string, bool) {
 		return nil, false
 	}
 	return o.DnsPrimary, true
-}
-
-// IsSetDnsPrimary returns a boolean if a field has been set.
-func (o *UpdateNetworkRequestNetwork) IsSetDnsPrimary() bool {
-	if o != nil && !IsNil(o.DnsPrimary) {
-		return true
-	}
-
-	return false
 }
 
 // SetDnsPrimary gets a reference to the given string and assigns it to the DnsPrimary field.
@@ -311,15 +247,6 @@ func (o *UpdateNetworkRequestNetwork) GetDnsSecondaryOk() (*string, bool) {
 	return o.DnsSecondary, true
 }
 
-// IsSetDnsSecondary returns a boolean if a field has been set.
-func (o *UpdateNetworkRequestNetwork) IsSetDnsSecondary() bool {
-	if o != nil && !IsNil(o.DnsSecondary) {
-		return true
-	}
-
-	return false
-}
-
 // SetDnsSecondary gets a reference to the given string and assigns it to the DnsSecondary field.
 func (o *UpdateNetworkRequestNetwork) SetDnsSecondary(v string) {
 	o.DnsSecondary = &v
@@ -343,15 +270,6 @@ func (o *UpdateNetworkRequestNetwork) GetVlanIdOk() (*int64, bool) {
 	return o.VlanId, true
 }
 
-// IsSetVlanId returns a boolean if a field has been set.
-func (o *UpdateNetworkRequestNetwork) IsSetVlanId() bool {
-	if o != nil && !IsNil(o.VlanId) {
-		return true
-	}
-
-	return false
-}
-
 // SetVlanId gets a reference to the given int64 and assigns it to the VlanId field.
 func (o *UpdateNetworkRequestNetwork) SetVlanId(v int64) {
 	o.VlanId = &v
@@ -373,15 +291,6 @@ func (o *UpdateNetworkRequestNetwork) GetSwitchIdOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SwitchId, true
-}
-
-// IsSetSwitchId returns a boolean if a field has been set.
-func (o *UpdateNetworkRequestNetwork) IsSetSwitchId() bool {
-	if o != nil && !IsNil(o.SwitchId) {
-		return true
-	}
-
-	return false
 }
 
 // SetSwitchId gets a reference to the given string and assigns it to the SwitchId field.
@@ -408,28 +317,9 @@ func (o *UpdateNetworkRequestNetwork) GetPoolOk() (*int64, bool) {
 	return o.Pool.Get(), o.Pool.IsSet()
 }
 
-// IsSetPool returns a boolean if a field has been set.
-func (o *UpdateNetworkRequestNetwork) IsSetPool() bool {
-	if o != nil && o.Pool.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPool gets a reference to the given NullableInt64 and assigns it to the Pool field.
 func (o *UpdateNetworkRequestNetwork) SetPool(v int64) {
 	o.Pool.Set(&v)
-}
-
-// SetPoolNil sets the value for Pool to be an explicit nil
-func (o *UpdateNetworkRequestNetwork) SetPoolNil() {
-	o.Pool.Set(nil)
-}
-
-// UnsetPool ensures that no value is present for Pool, not even an explicit nil
-func (o *UpdateNetworkRequestNetwork) UnsetPool() {
-	o.Pool.Unset()
 }
 
 // GetZonePool returns the ZonePool field value if set, zero value otherwise.
@@ -448,15 +338,6 @@ func (o *UpdateNetworkRequestNetwork) GetZonePoolOk() (*UpdateNetworkRequestNetw
 		return nil, false
 	}
 	return o.ZonePool, true
-}
-
-// IsSetZonePool returns a boolean if a field has been set.
-func (o *UpdateNetworkRequestNetwork) IsSetZonePool() bool {
-	if o != nil && !IsNil(o.ZonePool) {
-		return true
-	}
-
-	return false
 }
 
 // SetZonePool gets a reference to the given UpdateNetworkRequestNetworkZonePool and assigns it to the ZonePool field.
@@ -482,15 +363,6 @@ func (o *UpdateNetworkRequestNetwork) GetAllowStaticOverrideOk() (*bool, bool) {
 	return o.AllowStaticOverride, true
 }
 
-// IsSetAllowStaticOverride returns a boolean if a field has been set.
-func (o *UpdateNetworkRequestNetwork) IsSetAllowStaticOverride() bool {
-	if o != nil && !IsNil(o.AllowStaticOverride) {
-		return true
-	}
-
-	return false
-}
-
 // SetAllowStaticOverride gets a reference to the given bool and assigns it to the AllowStaticOverride field.
 func (o *UpdateNetworkRequestNetwork) SetAllowStaticOverride(v bool) {
 	o.AllowStaticOverride = &v
@@ -512,15 +384,6 @@ func (o *UpdateNetworkRequestNetwork) GetAssignPublicIpOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.AssignPublicIp, true
-}
-
-// IsSetAssignPublicIp returns a boolean if a field has been set.
-func (o *UpdateNetworkRequestNetwork) IsSetAssignPublicIp() bool {
-	if o != nil && !IsNil(o.AssignPublicIp) {
-		return true
-	}
-
-	return false
 }
 
 // SetAssignPublicIp gets a reference to the given bool and assigns it to the AssignPublicIp field.
@@ -546,15 +409,6 @@ func (o *UpdateNetworkRequestNetwork) GetActiveOk() (*bool, bool) {
 	return o.Active, true
 }
 
-// IsSetActive returns a boolean if a field has been set.
-func (o *UpdateNetworkRequestNetwork) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
-}
-
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *UpdateNetworkRequestNetwork) SetActive(v bool) {
 	o.Active = &v
@@ -576,15 +430,6 @@ func (o *UpdateNetworkRequestNetwork) GetDhcpServerOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.DhcpServer, true
-}
-
-// IsSetDhcpServer returns a boolean if a field has been set.
-func (o *UpdateNetworkRequestNetwork) IsSetDhcpServer() bool {
-	if o != nil && !IsNil(o.DhcpServer) {
-		return true
-	}
-
-	return false
 }
 
 // SetDhcpServer gets a reference to the given bool and assigns it to the DhcpServer field.
@@ -610,15 +455,6 @@ func (o *UpdateNetworkRequestNetwork) GetNetworkDomainOk() (*UpdateNetworkReques
 	return o.NetworkDomain, true
 }
 
-// IsSetNetworkDomain returns a boolean if a field has been set.
-func (o *UpdateNetworkRequestNetwork) IsSetNetworkDomain() bool {
-	if o != nil && !IsNil(o.NetworkDomain) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkDomain gets a reference to the given UpdateNetworkRequestNetworkNetworkDomain and assigns it to the NetworkDomain field.
 func (o *UpdateNetworkRequestNetwork) SetNetworkDomain(v UpdateNetworkRequestNetworkNetworkDomain) {
 	o.NetworkDomain = &v
@@ -640,15 +476,6 @@ func (o *UpdateNetworkRequestNetwork) GetSearchDomainsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SearchDomains, true
-}
-
-// IsSetSearchDomains returns a boolean if a field has been set.
-func (o *UpdateNetworkRequestNetwork) IsSetSearchDomains() bool {
-	if o != nil && !IsNil(o.SearchDomains) {
-		return true
-	}
-
-	return false
 }
 
 // SetSearchDomains gets a reference to the given string and assigns it to the SearchDomains field.
@@ -674,15 +501,6 @@ func (o *UpdateNetworkRequestNetwork) GetNetworkProxyOk() (*UpdateNetworkRequest
 	return o.NetworkProxy, true
 }
 
-// IsSetNetworkProxy returns a boolean if a field has been set.
-func (o *UpdateNetworkRequestNetwork) IsSetNetworkProxy() bool {
-	if o != nil && !IsNil(o.NetworkProxy) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkProxy gets a reference to the given UpdateNetworkRequestNetworkNetworkProxy and assigns it to the NetworkProxy field.
 func (o *UpdateNetworkRequestNetwork) SetNetworkProxy(v UpdateNetworkRequestNetworkNetworkProxy) {
 	o.NetworkProxy = &v
@@ -704,15 +522,6 @@ func (o *UpdateNetworkRequestNetwork) GetApplianceUrlProxyBypassOk() (*bool, boo
 		return nil, false
 	}
 	return o.ApplianceUrlProxyBypass, true
-}
-
-// IsSetApplianceUrlProxyBypass returns a boolean if a field has been set.
-func (o *UpdateNetworkRequestNetwork) IsSetApplianceUrlProxyBypass() bool {
-	if o != nil && !IsNil(o.ApplianceUrlProxyBypass) {
-		return true
-	}
-
-	return false
 }
 
 // SetApplianceUrlProxyBypass gets a reference to the given bool and assigns it to the ApplianceUrlProxyBypass field.
@@ -739,28 +548,9 @@ func (o *UpdateNetworkRequestNetwork) GetNoProxyOk() (*string, bool) {
 	return o.NoProxy.Get(), o.NoProxy.IsSet()
 }
 
-// IsSetNoProxy returns a boolean if a field has been set.
-func (o *UpdateNetworkRequestNetwork) IsSetNoProxy() bool {
-	if o != nil && o.NoProxy.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNoProxy gets a reference to the given NullableString and assigns it to the NoProxy field.
 func (o *UpdateNetworkRequestNetwork) SetNoProxy(v string) {
 	o.NoProxy.Set(&v)
-}
-
-// SetNoProxyNil sets the value for NoProxy to be an explicit nil
-func (o *UpdateNetworkRequestNetwork) SetNoProxyNil() {
-	o.NoProxy.Set(nil)
-}
-
-// UnsetNoProxy ensures that no value is present for NoProxy, not even an explicit nil
-func (o *UpdateNetworkRequestNetwork) UnsetNoProxy() {
-	o.NoProxy.Unset()
 }
 
 // GetVisibility returns the Visibility field value if set, zero value otherwise.
@@ -779,15 +569,6 @@ func (o *UpdateNetworkRequestNetwork) GetVisibilityOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *UpdateNetworkRequestNetwork) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -813,15 +594,6 @@ func (o *UpdateNetworkRequestNetwork) GetConfigOk() (map[string]interface{}, boo
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *UpdateNetworkRequestNetwork) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
 func (o *UpdateNetworkRequestNetwork) SetConfig(v map[string]interface{}) {
 	o.Config = v
@@ -845,15 +617,6 @@ func (o *UpdateNetworkRequestNetwork) GetTenantsOk() ([]UpdateNetworkRequestNetw
 	return o.Tenants, true
 }
 
-// IsSetTenants returns a boolean if a field has been set.
-func (o *UpdateNetworkRequestNetwork) IsSetTenants() bool {
-	if o != nil && !IsNil(o.Tenants) {
-		return true
-	}
-
-	return false
-}
-
 // SetTenants gets a reference to the given []UpdateNetworkRequestNetworkTenantsInner and assigns it to the Tenants field.
 func (o *UpdateNetworkRequestNetwork) SetTenants(v []UpdateNetworkRequestNetworkTenantsInner) {
 	o.Tenants = v
@@ -875,15 +638,6 @@ func (o *UpdateNetworkRequestNetwork) GetResourcePermissionsOk() (*UpdateNetwork
 		return nil, false
 	}
 	return o.ResourcePermissions, true
-}
-
-// IsSetResourcePermissions returns a boolean if a field has been set.
-func (o *UpdateNetworkRequestNetwork) IsSetResourcePermissions() bool {
-	if o != nil && !IsNil(o.ResourcePermissions) {
-		return true
-	}
-
-	return false
 }
 
 // SetResourcePermissions gets a reference to the given UpdateNetworkRequestNetworkResourcePermissions and assigns it to the ResourcePermissions field.

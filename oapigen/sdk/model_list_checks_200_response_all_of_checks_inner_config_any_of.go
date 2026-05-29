@@ -93,28 +93,9 @@ func (o *ListChecks200ResponseAllOfChecksInnerConfigAnyOf) GetExternalIdOk() (*s
 	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *ListChecks200ResponseAllOfChecksInnerConfigAnyOf) IsSetExternalId() bool {
-	if o != nil && o.ExternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *ListChecks200ResponseAllOfChecksInnerConfigAnyOf) SetExternalId(v string) {
 	o.ExternalId.Set(&v)
-}
-
-// SetExternalIdNil sets the value for ExternalId to be an explicit nil
-func (o *ListChecks200ResponseAllOfChecksInnerConfigAnyOf) SetExternalIdNil() {
-	o.ExternalId.Set(nil)
-}
-
-// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-func (o *ListChecks200ResponseAllOfChecksInnerConfigAnyOf) UnsetExternalId() {
-	o.ExternalId.Unset()
 }
 
 // GetCheckUser returns the CheckUser field value if set, zero value otherwise.
@@ -133,15 +114,6 @@ func (o *ListChecks200ResponseAllOfChecksInnerConfigAnyOf) GetCheckUserOk() (*st
 		return nil, false
 	}
 	return o.CheckUser, true
-}
-
-// IsSetCheckUser returns a boolean if a field has been set.
-func (o *ListChecks200ResponseAllOfChecksInnerConfigAnyOf) IsSetCheckUser() bool {
-	if o != nil && !IsNil(o.CheckUser) {
-		return true
-	}
-
-	return false
 }
 
 // SetCheckUser gets a reference to the given string and assigns it to the CheckUser field.
@@ -167,15 +139,6 @@ func (o *ListChecks200ResponseAllOfChecksInnerConfigAnyOf) GetTextCheckOnOk() (*
 	return o.TextCheckOn, true
 }
 
-// IsSetTextCheckOn returns a boolean if a field has been set.
-func (o *ListChecks200ResponseAllOfChecksInnerConfigAnyOf) IsSetTextCheckOn() bool {
-	if o != nil && !IsNil(o.TextCheckOn) {
-		return true
-	}
-
-	return false
-}
-
 // SetTextCheckOn gets a reference to the given string and assigns it to the TextCheckOn field.
 func (o *ListChecks200ResponseAllOfChecksInnerConfigAnyOf) SetTextCheckOn(v string) {
 	o.TextCheckOn = &v
@@ -197,15 +160,6 @@ func (o *ListChecks200ResponseAllOfChecksInnerConfigAnyOf) GetCheckPasswordOk() 
 		return nil, false
 	}
 	return o.CheckPassword, true
-}
-
-// IsSetCheckPassword returns a boolean if a field has been set.
-func (o *ListChecks200ResponseAllOfChecksInnerConfigAnyOf) IsSetCheckPassword() bool {
-	if o != nil && !IsNil(o.CheckPassword) {
-		return true
-	}
-
-	return false
 }
 
 // SetCheckPassword gets a reference to the given string and assigns it to the CheckPassword field.
@@ -231,15 +185,6 @@ func (o *ListChecks200ResponseAllOfChecksInnerConfigAnyOf) GetWebTextMatchOk() (
 	return o.WebTextMatch, true
 }
 
-// IsSetWebTextMatch returns a boolean if a field has been set.
-func (o *ListChecks200ResponseAllOfChecksInnerConfigAnyOf) IsSetWebTextMatch() bool {
-	if o != nil && !IsNil(o.WebTextMatch) {
-		return true
-	}
-
-	return false
-}
-
 // SetWebTextMatch gets a reference to the given string and assigns it to the WebTextMatch field.
 func (o *ListChecks200ResponseAllOfChecksInnerConfigAnyOf) SetWebTextMatch(v string) {
 	o.WebTextMatch = &v
@@ -261,15 +206,6 @@ func (o *ListChecks200ResponseAllOfChecksInnerConfigAnyOf) GetCheckPasswordHashO
 		return nil, false
 	}
 	return o.CheckPasswordHash, true
-}
-
-// IsSetCheckPasswordHash returns a boolean if a field has been set.
-func (o *ListChecks200ResponseAllOfChecksInnerConfigAnyOf) IsSetCheckPasswordHash() bool {
-	if o != nil && !IsNil(o.CheckPasswordHash) {
-		return true
-	}
-
-	return false
 }
 
 // SetCheckPasswordHash gets a reference to the given string and assigns it to the CheckPasswordHash field.

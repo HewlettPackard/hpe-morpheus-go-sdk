@@ -79,15 +79,6 @@ func (o *ClusterAffinityGroupCreate) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ClusterAffinityGroupCreate) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ClusterAffinityGroupCreate) SetId(v int64) {
 	o.Id = &v
@@ -109,15 +100,6 @@ func (o *ClusterAffinityGroupCreate) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ClusterAffinityGroupCreate) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -143,15 +125,6 @@ func (o *ClusterAffinityGroupCreate) GetAffinityTypeOk() (*string, bool) {
 	return o.AffinityType, true
 }
 
-// IsSetAffinityType returns a boolean if a field has been set.
-func (o *ClusterAffinityGroupCreate) IsSetAffinityType() bool {
-	if o != nil && !IsNil(o.AffinityType) {
-		return true
-	}
-
-	return false
-}
-
 // SetAffinityType gets a reference to the given string and assigns it to the AffinityType field.
 func (o *ClusterAffinityGroupCreate) SetAffinityType(v string) {
 	o.AffinityType = &v
@@ -173,15 +146,6 @@ func (o *ClusterAffinityGroupCreate) GetActiveOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Active, true
-}
-
-// IsSetActive returns a boolean if a field has been set.
-func (o *ClusterAffinityGroupCreate) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
 }
 
 // SetActive gets a reference to the given bool and assigns it to the Active field.
@@ -207,15 +171,6 @@ func (o *ClusterAffinityGroupCreate) GetPoolOk() (*ClusterAffinityGroupCreatePoo
 	return o.Pool, true
 }
 
-// IsSetPool returns a boolean if a field has been set.
-func (o *ClusterAffinityGroupCreate) IsSetPool() bool {
-	if o != nil && !IsNil(o.Pool) {
-		return true
-	}
-
-	return false
-}
-
 // SetPool gets a reference to the given ClusterAffinityGroupCreatePool and assigns it to the Pool field.
 func (o *ClusterAffinityGroupCreate) SetPool(v ClusterAffinityGroupCreatePool) {
 	o.Pool = &v
@@ -237,15 +192,6 @@ func (o *ClusterAffinityGroupCreate) GetServersOk() ([]int32, bool) {
 		return nil, false
 	}
 	return o.Servers, true
-}
-
-// IsSetServers returns a boolean if a field has been set.
-func (o *ClusterAffinityGroupCreate) IsSetServers() bool {
-	if o != nil && !IsNil(o.Servers) {
-		return true
-	}
-
-	return false
 }
 
 // SetServers gets a reference to the given []int32 and assigns it to the Servers field.
@@ -271,15 +217,6 @@ func (o *ClusterAffinityGroupCreate) GetVisibilityOk() (*string, bool) {
 	return o.Visibility, true
 }
 
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *ClusterAffinityGroupCreate) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
-}
-
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
 func (o *ClusterAffinityGroupCreate) SetVisibility(v string) {
 	o.Visibility = &v
@@ -303,15 +240,6 @@ func (o *ClusterAffinityGroupCreate) GetTenantsOk() ([]ClusterAffinityGroupCreat
 	return o.Tenants, true
 }
 
-// IsSetTenants returns a boolean if a field has been set.
-func (o *ClusterAffinityGroupCreate) IsSetTenants() bool {
-	if o != nil && !IsNil(o.Tenants) {
-		return true
-	}
-
-	return false
-}
-
 // SetTenants gets a reference to the given []ClusterAffinityGroupCreateTenantsInner and assigns it to the Tenants field.
 func (o *ClusterAffinityGroupCreate) SetTenants(v []ClusterAffinityGroupCreateTenantsInner) {
 	o.Tenants = v
@@ -333,15 +261,6 @@ func (o *ClusterAffinityGroupCreate) GetResourcePermissionsOk() (*ClusterAffinit
 		return nil, false
 	}
 	return o.ResourcePermissions, true
-}
-
-// IsSetResourcePermissions returns a boolean if a field has been set.
-func (o *ClusterAffinityGroupCreate) IsSetResourcePermissions() bool {
-	if o != nil && !IsNil(o.ResourcePermissions) {
-		return true
-	}
-
-	return false
 }
 
 // SetResourcePermissions gets a reference to the given ClusterAffinityGroupCreateResourcePermissions and assigns it to the ResourcePermissions field.

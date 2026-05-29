@@ -64,15 +64,6 @@ func (o *ClusterDatastoresLocationsInner) GetRefTypeOk() (*string, bool) {
 	return o.RefType, true
 }
 
-// IsSetRefType returns a boolean if a field has been set.
-func (o *ClusterDatastoresLocationsInner) IsSetRefType() bool {
-	if o != nil && !IsNil(o.RefType) {
-		return true
-	}
-
-	return false
-}
-
 // SetRefType gets a reference to the given string and assigns it to the RefType field.
 func (o *ClusterDatastoresLocationsInner) SetRefType(v string) {
 	o.RefType = &v
@@ -94,15 +85,6 @@ func (o *ClusterDatastoresLocationsInner) GetRefIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.RefId, true
-}
-
-// IsSetRefId returns a boolean if a field has been set.
-func (o *ClusterDatastoresLocationsInner) IsSetRefId() bool {
-	if o != nil && !IsNil(o.RefId) {
-		return true
-	}
-
-	return false
 }
 
 // SetRefId gets a reference to the given int64 and assigns it to the RefId field.
@@ -128,15 +110,6 @@ func (o *ClusterDatastoresLocationsInner) GetStatusOk() (*string, bool) {
 	return o.Status, true
 }
 
-// IsSetStatus returns a boolean if a field has been set.
-func (o *ClusterDatastoresLocationsInner) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
-}
-
 // SetStatus gets a reference to the given string and assigns it to the Status field.
 func (o *ClusterDatastoresLocationsInner) SetStatus(v string) {
 	o.Status = &v
@@ -158,15 +131,6 @@ func (o *ClusterDatastoresLocationsInner) GetStatusMessageOk() (*string, bool) {
 		return nil, false
 	}
 	return o.StatusMessage, true
-}
-
-// IsSetStatusMessage returns a boolean if a field has been set.
-func (o *ClusterDatastoresLocationsInner) IsSetStatusMessage() bool {
-	if o != nil && !IsNil(o.StatusMessage) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatusMessage gets a reference to the given string and assigns it to the StatusMessage field.

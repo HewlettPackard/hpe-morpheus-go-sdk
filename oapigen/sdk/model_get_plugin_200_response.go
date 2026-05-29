@@ -61,15 +61,6 @@ func (o *GetPlugin200Response) GetPluginOk() (*GetPlugin200ResponseAllOfPlugin, 
 	return o.Plugin, true
 }
 
-// IsSetPlugin returns a boolean if a field has been set.
-func (o *GetPlugin200Response) IsSetPlugin() bool {
-	if o != nil && !IsNil(o.Plugin) {
-		return true
-	}
-
-	return false
-}
-
 // SetPlugin gets a reference to the given GetPlugin200ResponseAllOfPlugin and assigns it to the Plugin field.
 func (o *GetPlugin200Response) SetPlugin(v GetPlugin200ResponseAllOfPlugin) {
 	o.Plugin = &v

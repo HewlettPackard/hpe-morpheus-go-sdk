@@ -136,15 +136,6 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetId(v int64) {
 	o.Id = &v
@@ -166,15 +157,6 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetNameOk() (*string, bool
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -201,28 +183,9 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetDescriptionOk() (*strin
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetLabels returns the Labels field value if set, zero value otherwise.
@@ -241,15 +204,6 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetLabelsOk() ([]string, b
 		return nil, false
 	}
 	return o.Labels, true
-}
-
-// IsSetLabels returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
 }
 
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
@@ -275,15 +229,6 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetOwnerIdOk() (*int64, bo
 	return o.OwnerId, true
 }
 
-// IsSetOwnerId returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetOwnerId() bool {
-	if o != nil && !IsNil(o.OwnerId) {
-		return true
-	}
-
-	return false
-}
-
 // SetOwnerId gets a reference to the given int64 and assigns it to the OwnerId field.
 func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetOwnerId(v int64) {
 	o.OwnerId = &v
@@ -305,15 +250,6 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetTenantOk() (*AddVirtual
 		return nil, false
 	}
 	return o.Tenant, true
-}
-
-// IsSetTenant returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetTenant() bool {
-	if o != nil && !IsNil(o.Tenant) {
-		return true
-	}
-
-	return false
 }
 
 // SetTenant gets a reference to the given AddVirtualImage200ResponseAllOfVirtualImageTenant and assigns it to the Tenant field.
@@ -339,15 +275,6 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetImageTypeOk() (*string,
 	return o.ImageType, true
 }
 
-// IsSetImageType returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetImageType() bool {
-	if o != nil && !IsNil(o.ImageType) {
-		return true
-	}
-
-	return false
-}
-
 // SetImageType gets a reference to the given string and assigns it to the ImageType field.
 func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetImageType(v string) {
 	o.ImageType = &v
@@ -369,15 +296,6 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetUserUploadedOk() (*bool
 		return nil, false
 	}
 	return o.UserUploaded, true
-}
-
-// IsSetUserUploaded returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetUserUploaded() bool {
-	if o != nil && !IsNil(o.UserUploaded) {
-		return true
-	}
-
-	return false
 }
 
 // SetUserUploaded gets a reference to the given bool and assigns it to the UserUploaded field.
@@ -403,15 +321,6 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetUserDefinedOk() (*bool,
 	return o.UserDefined, true
 }
 
-// IsSetUserDefined returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetUserDefined() bool {
-	if o != nil && !IsNil(o.UserDefined) {
-		return true
-	}
-
-	return false
-}
-
 // SetUserDefined gets a reference to the given bool and assigns it to the UserDefined field.
 func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetUserDefined(v bool) {
 	o.UserDefined = &v
@@ -435,15 +344,6 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetSystemImageOk() (*bool,
 	return o.SystemImage, true
 }
 
-// IsSetSystemImage returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetSystemImage() bool {
-	if o != nil && !IsNil(o.SystemImage) {
-		return true
-	}
-
-	return false
-}
-
 // SetSystemImage gets a reference to the given bool and assigns it to the SystemImage field.
 func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetSystemImage(v bool) {
 	o.SystemImage = &v
@@ -465,15 +365,6 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetIsCloudInitOk() (*bool,
 		return nil, false
 	}
 	return o.IsCloudInit, true
-}
-
-// IsSetIsCloudInit returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetIsCloudInit() bool {
-	if o != nil && !IsNil(o.IsCloudInit) {
-		return true
-	}
-
-	return false
 }
 
 // SetIsCloudInit gets a reference to the given bool and assigns it to the IsCloudInit field.
@@ -500,28 +391,9 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetSshUsernameOk() (*strin
 	return o.SshUsername.Get(), o.SshUsername.IsSet()
 }
 
-// IsSetSshUsername returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetSshUsername() bool {
-	if o != nil && o.SshUsername.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSshUsername gets a reference to the given NullableString and assigns it to the SshUsername field.
 func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetSshUsername(v string) {
 	o.SshUsername.Set(&v)
-}
-
-// SetSshUsernameNil sets the value for SshUsername to be an explicit nil
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetSshUsernameNil() {
-	o.SshUsername.Set(nil)
-}
-
-// UnsetSshUsername ensures that no value is present for SshUsername, not even an explicit nil
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) UnsetSshUsername() {
-	o.SshUsername.Unset()
 }
 
 // GetSshPassword returns the SshPassword field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -543,28 +415,9 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetSshPasswordOk() (*strin
 	return o.SshPassword.Get(), o.SshPassword.IsSet()
 }
 
-// IsSetSshPassword returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetSshPassword() bool {
-	if o != nil && o.SshPassword.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSshPassword gets a reference to the given NullableString and assigns it to the SshPassword field.
 func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetSshPassword(v string) {
 	o.SshPassword.Set(&v)
-}
-
-// SetSshPasswordNil sets the value for SshPassword to be an explicit nil
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetSshPasswordNil() {
-	o.SshPassword.Set(nil)
-}
-
-// UnsetSshPassword ensures that no value is present for SshPassword, not even an explicit nil
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) UnsetSshPassword() {
-	o.SshPassword.Unset()
 }
 
 // GetSshPasswordHash returns the SshPasswordHash field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -586,28 +439,9 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetSshPasswordHashOk() (*s
 	return o.SshPasswordHash.Get(), o.SshPasswordHash.IsSet()
 }
 
-// IsSetSshPasswordHash returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetSshPasswordHash() bool {
-	if o != nil && o.SshPasswordHash.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSshPasswordHash gets a reference to the given NullableString and assigns it to the SshPasswordHash field.
 func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetSshPasswordHash(v string) {
 	o.SshPasswordHash.Set(&v)
-}
-
-// SetSshPasswordHashNil sets the value for SshPasswordHash to be an explicit nil
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetSshPasswordHashNil() {
-	o.SshPasswordHash.Set(nil)
-}
-
-// UnsetSshPasswordHash ensures that no value is present for SshPasswordHash, not even an explicit nil
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) UnsetSshPasswordHash() {
-	o.SshPasswordHash.Unset()
 }
 
 // GetSshKey returns the SshKey field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -629,28 +463,9 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetSshKeyOk() (*string, bo
 	return o.SshKey.Get(), o.SshKey.IsSet()
 }
 
-// IsSetSshKey returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetSshKey() bool {
-	if o != nil && o.SshKey.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSshKey gets a reference to the given NullableString and assigns it to the SshKey field.
 func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetSshKey(v string) {
 	o.SshKey.Set(&v)
-}
-
-// SetSshKeyNil sets the value for SshKey to be an explicit nil
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetSshKeyNil() {
-	o.SshKey.Set(nil)
-}
-
-// UnsetSshKey ensures that no value is present for SshKey, not even an explicit nil
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) UnsetSshKey() {
-	o.SshKey.Unset()
 }
 
 // GetOsType returns the OsType field value if set, zero value otherwise.
@@ -669,15 +484,6 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetOsTypeOk() (*AddVirtual
 		return nil, false
 	}
 	return o.OsType, true
-}
-
-// IsSetOsType returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetOsType() bool {
-	if o != nil && !IsNil(o.OsType) {
-		return true
-	}
-
-	return false
 }
 
 // SetOsType gets a reference to the given AddVirtualImage200ResponseAllOfVirtualImageOsType and assigns it to the OsType field.
@@ -704,28 +510,9 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetMinRamOk() (*int64, boo
 	return o.MinRam.Get(), o.MinRam.IsSet()
 }
 
-// IsSetMinRam returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetMinRam() bool {
-	if o != nil && o.MinRam.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMinRam gets a reference to the given NullableInt64 and assigns it to the MinRam field.
 func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetMinRam(v int64) {
 	o.MinRam.Set(&v)
-}
-
-// SetMinRamNil sets the value for MinRam to be an explicit nil
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetMinRamNil() {
-	o.MinRam.Set(nil)
-}
-
-// UnsetMinRam ensures that no value is present for MinRam, not even an explicit nil
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) UnsetMinRam() {
-	o.MinRam.Unset()
 }
 
 // GetMinRamGB returns the MinRamGB field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -747,28 +534,9 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetMinRamGBOk() (*float64,
 	return o.MinRamGB.Get(), o.MinRamGB.IsSet()
 }
 
-// IsSetMinRamGB returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetMinRamGB() bool {
-	if o != nil && o.MinRamGB.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMinRamGB gets a reference to the given NullableFloat64 and assigns it to the MinRamGB field.
 func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetMinRamGB(v float64) {
 	o.MinRamGB.Set(&v)
-}
-
-// SetMinRamGBNil sets the value for MinRamGB to be an explicit nil
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetMinRamGBNil() {
-	o.MinRamGB.Set(nil)
-}
-
-// UnsetMinRamGB ensures that no value is present for MinRamGB, not even an explicit nil
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) UnsetMinRamGB() {
-	o.MinRamGB.Unset()
 }
 
 // GetMinDisk returns the MinDisk field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -790,28 +558,9 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetMinDiskOk() (*int64, bo
 	return o.MinDisk.Get(), o.MinDisk.IsSet()
 }
 
-// IsSetMinDisk returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetMinDisk() bool {
-	if o != nil && o.MinDisk.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMinDisk gets a reference to the given NullableInt64 and assigns it to the MinDisk field.
 func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetMinDisk(v int64) {
 	o.MinDisk.Set(&v)
-}
-
-// SetMinDiskNil sets the value for MinDisk to be an explicit nil
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetMinDiskNil() {
-	o.MinDisk.Set(nil)
-}
-
-// UnsetMinDisk ensures that no value is present for MinDisk, not even an explicit nil
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) UnsetMinDisk() {
-	o.MinDisk.Unset()
 }
 
 // GetMinDiskGB returns the MinDiskGB field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -833,28 +582,9 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetMinDiskGBOk() (*string,
 	return o.MinDiskGB.Get(), o.MinDiskGB.IsSet()
 }
 
-// IsSetMinDiskGB returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetMinDiskGB() bool {
-	if o != nil && o.MinDiskGB.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMinDiskGB gets a reference to the given NullableString and assigns it to the MinDiskGB field.
 func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetMinDiskGB(v string) {
 	o.MinDiskGB.Set(&v)
-}
-
-// SetMinDiskGBNil sets the value for MinDiskGB to be an explicit nil
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetMinDiskGBNil() {
-	o.MinDiskGB.Set(nil)
-}
-
-// UnsetMinDiskGB ensures that no value is present for MinDiskGB, not even an explicit nil
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) UnsetMinDiskGB() {
-	o.MinDiskGB.Unset()
 }
 
 // GetRawSize returns the RawSize field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -876,28 +606,9 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetRawSizeOk() (*int64, bo
 	return o.RawSize.Get(), o.RawSize.IsSet()
 }
 
-// IsSetRawSize returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetRawSize() bool {
-	if o != nil && o.RawSize.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRawSize gets a reference to the given NullableInt64 and assigns it to the RawSize field.
 func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetRawSize(v int64) {
 	o.RawSize.Set(&v)
-}
-
-// SetRawSizeNil sets the value for RawSize to be an explicit nil
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetRawSizeNil() {
-	o.RawSize.Set(nil)
-}
-
-// UnsetRawSize ensures that no value is present for RawSize, not even an explicit nil
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) UnsetRawSize() {
-	o.RawSize.Unset()
 }
 
 // GetRawSizeGB returns the RawSizeGB field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -919,28 +630,9 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetRawSizeGBOk() (*float32
 	return o.RawSizeGB.Get(), o.RawSizeGB.IsSet()
 }
 
-// IsSetRawSizeGB returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetRawSizeGB() bool {
-	if o != nil && o.RawSizeGB.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRawSizeGB gets a reference to the given NullableFloat32 and assigns it to the RawSizeGB field.
 func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetRawSizeGB(v float32) {
 	o.RawSizeGB.Set(&v)
-}
-
-// SetRawSizeGBNil sets the value for RawSizeGB to be an explicit nil
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetRawSizeGBNil() {
-	o.RawSizeGB.Set(nil)
-}
-
-// UnsetRawSizeGB ensures that no value is present for RawSizeGB, not even an explicit nil
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) UnsetRawSizeGB() {
-	o.RawSizeGB.Unset()
 }
 
 // GetTrialVersion returns the TrialVersion field value if set, zero value otherwise.
@@ -959,15 +651,6 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetTrialVersionOk() (*bool
 		return nil, false
 	}
 	return o.TrialVersion, true
-}
-
-// IsSetTrialVersion returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetTrialVersion() bool {
-	if o != nil && !IsNil(o.TrialVersion) {
-		return true
-	}
-
-	return false
 }
 
 // SetTrialVersion gets a reference to the given bool and assigns it to the TrialVersion field.
@@ -991,15 +674,6 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetVirtioSupportedOk() (*b
 		return nil, false
 	}
 	return o.VirtioSupported, true
-}
-
-// IsSetVirtioSupported returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetVirtioSupported() bool {
-	if o != nil && !IsNil(o.VirtioSupported) {
-		return true
-	}
-
-	return false
 }
 
 // SetVirtioSupported gets a reference to the given bool and assigns it to the VirtioSupported field.
@@ -1026,28 +700,9 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetUefiOk() (*bool, bool) 
 	return o.Uefi.Get(), o.Uefi.IsSet()
 }
 
-// IsSetUefi returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetUefi() bool {
-	if o != nil && o.Uefi.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUefi gets a reference to the given NullableBool and assigns it to the Uefi field.
 func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetUefi(v bool) {
 	o.Uefi.Set(&v)
-}
-
-// SetUefiNil sets the value for Uefi to be an explicit nil
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetUefiNil() {
-	o.Uefi.Set(nil)
-}
-
-// UnsetUefi ensures that no value is present for Uefi, not even an explicit nil
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) UnsetUefi() {
-	o.Uefi.Unset()
 }
 
 // GetIsAutoJoinDomain returns the IsAutoJoinDomain field value if set, zero value otherwise.
@@ -1066,15 +721,6 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetIsAutoJoinDomainOk() (*
 		return nil, false
 	}
 	return o.IsAutoJoinDomain, true
-}
-
-// IsSetIsAutoJoinDomain returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetIsAutoJoinDomain() bool {
-	if o != nil && !IsNil(o.IsAutoJoinDomain) {
-		return true
-	}
-
-	return false
 }
 
 // SetIsAutoJoinDomain gets a reference to the given bool and assigns it to the IsAutoJoinDomain field.
@@ -1100,15 +746,6 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetVmToolsInstalledOk() (*
 	return o.VmToolsInstalled, true
 }
 
-// IsSetVmToolsInstalled returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetVmToolsInstalled() bool {
-	if o != nil && !IsNil(o.VmToolsInstalled) {
-		return true
-	}
-
-	return false
-}
-
 // SetVmToolsInstalled gets a reference to the given bool and assigns it to the VmToolsInstalled field.
 func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetVmToolsInstalled(v bool) {
 	o.VmToolsInstalled = &v
@@ -1130,15 +767,6 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetInstallAgentOk() (*bool
 		return nil, false
 	}
 	return o.InstallAgent, true
-}
-
-// IsSetInstallAgent returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetInstallAgent() bool {
-	if o != nil && !IsNil(o.InstallAgent) {
-		return true
-	}
-
-	return false
 }
 
 // SetInstallAgent gets a reference to the given bool and assigns it to the InstallAgent field.
@@ -1164,15 +792,6 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetIsForceCustomizationOk(
 	return o.IsForceCustomization, true
 }
 
-// IsSetIsForceCustomization returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetIsForceCustomization() bool {
-	if o != nil && !IsNil(o.IsForceCustomization) {
-		return true
-	}
-
-	return false
-}
-
 // SetIsForceCustomization gets a reference to the given bool and assigns it to the IsForceCustomization field.
 func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetIsForceCustomization(v bool) {
 	o.IsForceCustomization = &v
@@ -1196,15 +815,6 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetIsSysprepOk() (*bool, b
 	return o.IsSysprep, true
 }
 
-// IsSetIsSysprep returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetIsSysprep() bool {
-	if o != nil && !IsNil(o.IsSysprep) {
-		return true
-	}
-
-	return false
-}
-
 // SetIsSysprep gets a reference to the given bool and assigns it to the IsSysprep field.
 func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetIsSysprep(v bool) {
 	o.IsSysprep = &v
@@ -1226,15 +836,6 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetFipsEnabledOk() (*bool,
 		return nil, false
 	}
 	return o.FipsEnabled, true
-}
-
-// IsSetFipsEnabled returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetFipsEnabled() bool {
-	if o != nil && !IsNil(o.FipsEnabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetFipsEnabled gets a reference to the given bool and assigns it to the FipsEnabled field.
@@ -1261,28 +862,9 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetUserDataOk() (*string, 
 	return o.UserData.Get(), o.UserData.IsSet()
 }
 
-// IsSetUserData returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetUserData() bool {
-	if o != nil && o.UserData.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUserData gets a reference to the given NullableString and assigns it to the UserData field.
 func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetUserData(v string) {
 	o.UserData.Set(&v)
-}
-
-// SetUserDataNil sets the value for UserData to be an explicit nil
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetUserDataNil() {
-	o.UserData.Set(nil)
-}
-
-// UnsetUserData ensures that no value is present for UserData, not even an explicit nil
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) UnsetUserData() {
-	o.UserData.Unset()
 }
 
 // GetConsoleKeymap returns the ConsoleKeymap field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1304,28 +886,9 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetConsoleKeymapOk() (*str
 	return o.ConsoleKeymap.Get(), o.ConsoleKeymap.IsSet()
 }
 
-// IsSetConsoleKeymap returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetConsoleKeymap() bool {
-	if o != nil && o.ConsoleKeymap.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetConsoleKeymap gets a reference to the given NullableString and assigns it to the ConsoleKeymap field.
 func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetConsoleKeymap(v string) {
 	o.ConsoleKeymap.Set(&v)
-}
-
-// SetConsoleKeymapNil sets the value for ConsoleKeymap to be an explicit nil
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetConsoleKeymapNil() {
-	o.ConsoleKeymap.Set(nil)
-}
-
-// UnsetConsoleKeymap ensures that no value is present for ConsoleKeymap, not even an explicit nil
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) UnsetConsoleKeymap() {
-	o.ConsoleKeymap.Unset()
 }
 
 // GetStorageProvider returns the StorageProvider field value if set, zero value otherwise.
@@ -1344,15 +907,6 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetStorageProviderOk() (*A
 		return nil, false
 	}
 	return o.StorageProvider, true
-}
-
-// IsSetStorageProvider returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetStorageProvider() bool {
-	if o != nil && !IsNil(o.StorageProvider) {
-		return true
-	}
-
-	return false
 }
 
 // SetStorageProvider gets a reference to the given AddVirtualImage200ResponseAllOfVirtualImageStorageProvider and assigns it to the StorageProvider field.
@@ -1379,28 +933,9 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetExternalIdOk() (*string
 	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetExternalId() bool {
-	if o != nil && o.ExternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetExternalId(v string) {
 	o.ExternalId.Set(&v)
-}
-
-// SetExternalIdNil sets the value for ExternalId to be an explicit nil
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetExternalIdNil() {
-	o.ExternalId.Set(nil)
-}
-
-// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) UnsetExternalId() {
-	o.ExternalId.Unset()
 }
 
 // GetVisibility returns the Visibility field value if set, zero value otherwise.
@@ -1419,15 +954,6 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetVisibilityOk() (*string
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -1453,15 +979,6 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetAccountsOk() ([]AddVirt
 	return o.Accounts, true
 }
 
-// IsSetAccounts returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetAccounts() bool {
-	if o != nil && !IsNil(o.Accounts) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccounts gets a reference to the given []AddVirtualImage200ResponseAllOfVirtualImageAccountsInner and assigns it to the Accounts field.
 func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetAccounts(v []AddVirtualImage200ResponseAllOfVirtualImageAccountsInner) {
 	o.Accounts = v
@@ -1483,15 +1000,6 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetConfigOk() (*AddVirtual
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given AddVirtualImage200ResponseAllOfVirtualImageConfig and assigns it to the Config field.
@@ -1517,15 +1025,6 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetVolumesOk() ([]map[stri
 	return o.Volumes, true
 }
 
-// IsSetVolumes returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetVolumes() bool {
-	if o != nil && !IsNil(o.Volumes) {
-		return true
-	}
-
-	return false
-}
-
 // SetVolumes gets a reference to the given []map[string]interface{} and assigns it to the Volumes field.
 func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetVolumes(v []map[string]interface{}) {
 	o.Volumes = v
@@ -1547,15 +1046,6 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetStorageControllersOk() 
 		return nil, false
 	}
 	return o.StorageControllers, true
-}
-
-// IsSetStorageControllers returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetStorageControllers() bool {
-	if o != nil && !IsNil(o.StorageControllers) {
-		return true
-	}
-
-	return false
 }
 
 // SetStorageControllers gets a reference to the given []AddVirtualImage200ResponseAllOfVirtualImageStorageControllersInner and assigns it to the StorageControllers field.
@@ -1581,15 +1071,6 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetNetworkInterfacesOk() (
 	return o.NetworkInterfaces, true
 }
 
-// IsSetNetworkInterfaces returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetNetworkInterfaces() bool {
-	if o != nil && !IsNil(o.NetworkInterfaces) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkInterfaces gets a reference to the given []map[string]interface{} and assigns it to the NetworkInterfaces field.
 func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetNetworkInterfaces(v []map[string]interface{}) {
 	o.NetworkInterfaces = v
@@ -1611,15 +1092,6 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetTagsOk() ([]AddVirtualI
 		return nil, false
 	}
 	return o.Tags, true
-}
-
-// IsSetTags returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetTags() bool {
-	if o != nil && !IsNil(o.Tags) {
-		return true
-	}
-
-	return false
 }
 
 // SetTags gets a reference to the given []AddVirtualImage200ResponseAllOfVirtualImageTagsInner and assigns it to the Tags field.
@@ -1645,15 +1117,6 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetLocationsOk() ([]AddVir
 	return o.Locations, true
 }
 
-// IsSetLocations returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetLocations() bool {
-	if o != nil && !IsNil(o.Locations) {
-		return true
-	}
-
-	return false
-}
-
 // SetLocations gets a reference to the given []AddVirtualImage200ResponseAllOfVirtualImageLocationsInner and assigns it to the Locations field.
 func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetLocations(v []AddVirtualImage200ResponseAllOfVirtualImageLocationsInner) {
 	o.Locations = v
@@ -1675,15 +1138,6 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetDateCreatedOk() (*time.
 		return nil, false
 	}
 	return o.DateCreated, true
-}
-
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
@@ -1709,15 +1163,6 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetLastUpdatedOk() (*time.
 	return o.LastUpdated, true
 }
 
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
-}
-
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
 func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetLastUpdated(v time.Time) {
 	o.LastUpdated = &v
@@ -1739,15 +1184,6 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetStatusOk() (*string, bo
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.

@@ -62,15 +62,6 @@ func (o *ListStorageVolumes200Response) GetStorageVolumesOk() ([]ListStorageVolu
 	return o.StorageVolumes, true
 }
 
-// IsSetStorageVolumes returns a boolean if a field has been set.
-func (o *ListStorageVolumes200Response) IsSetStorageVolumes() bool {
-	if o != nil && !IsNil(o.StorageVolumes) {
-		return true
-	}
-
-	return false
-}
-
 // SetStorageVolumes gets a reference to the given []ListStorageVolumes200ResponseAllOfStorageVolumesInner and assigns it to the StorageVolumes field.
 func (o *ListStorageVolumes200Response) SetStorageVolumes(v []ListStorageVolumes200ResponseAllOfStorageVolumesInner) {
 	o.StorageVolumes = v
@@ -92,15 +83,6 @@ func (o *ListStorageVolumes200Response) GetMetaOk() (*ListApprovals200ResponseAl
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListStorageVolumes200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

@@ -69,15 +69,6 @@ func (o *UpdateNetworkRouterRequestNetworkRouter) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateNetworkRouterRequestNetworkRouter) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *UpdateNetworkRouterRequestNetworkRouter) SetName(v string) {
 	o.Name = &v
@@ -99,15 +90,6 @@ func (o *UpdateNetworkRouterRequestNetworkRouter) GetTypeOk() (*UpdateNetworkRou
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *UpdateNetworkRouterRequestNetworkRouter) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given UpdateNetworkRouterRequestNetworkRouterType and assigns it to the Type field.
@@ -133,15 +115,6 @@ func (o *UpdateNetworkRouterRequestNetworkRouter) GetSiteOk() (*UpdateNetworkRou
 	return o.Site, true
 }
 
-// IsSetSite returns a boolean if a field has been set.
-func (o *UpdateNetworkRouterRequestNetworkRouter) IsSetSite() bool {
-	if o != nil && !IsNil(o.Site) {
-		return true
-	}
-
-	return false
-}
-
 // SetSite gets a reference to the given UpdateNetworkRouterRequestNetworkRouterSite and assigns it to the Site field.
 func (o *UpdateNetworkRouterRequestNetworkRouter) SetSite(v UpdateNetworkRouterRequestNetworkRouterSite) {
 	o.Site = &v
@@ -163,15 +136,6 @@ func (o *UpdateNetworkRouterRequestNetworkRouter) GetEnabledOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *UpdateNetworkRouterRequestNetworkRouter) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -197,15 +161,6 @@ func (o *UpdateNetworkRouterRequestNetworkRouter) GetZoneOk() (*UpdateNetworkRou
 	return o.Zone, true
 }
 
-// IsSetZone returns a boolean if a field has been set.
-func (o *UpdateNetworkRouterRequestNetworkRouter) IsSetZone() bool {
-	if o != nil && !IsNil(o.Zone) {
-		return true
-	}
-
-	return false
-}
-
 // SetZone gets a reference to the given UpdateNetworkRouterRequestNetworkRouterZone and assigns it to the Zone field.
 func (o *UpdateNetworkRouterRequestNetworkRouter) SetZone(v UpdateNetworkRouterRequestNetworkRouterZone) {
 	o.Zone = &v
@@ -229,15 +184,6 @@ func (o *UpdateNetworkRouterRequestNetworkRouter) GetNetworkServerOk() (*UpdateN
 	return o.NetworkServer, true
 }
 
-// IsSetNetworkServer returns a boolean if a field has been set.
-func (o *UpdateNetworkRouterRequestNetworkRouter) IsSetNetworkServer() bool {
-	if o != nil && !IsNil(o.NetworkServer) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkServer gets a reference to the given UpdateNetworkRouterRequestNetworkRouterNetworkServer and assigns it to the NetworkServer field.
 func (o *UpdateNetworkRouterRequestNetworkRouter) SetNetworkServer(v UpdateNetworkRouterRequestNetworkRouterNetworkServer) {
 	o.NetworkServer = &v
@@ -259,15 +205,6 @@ func (o *UpdateNetworkRouterRequestNetworkRouter) GetConfigOk() (map[string]inte
 		return map[string]interface{}{}, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *UpdateNetworkRouterRequestNetworkRouter) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.

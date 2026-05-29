@@ -74,15 +74,6 @@ func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) GetIdOk() (*int64,
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) SetId(v int64) {
 	o.Id = &v
@@ -104,15 +95,6 @@ func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) GetNameOk() (*stri
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -139,28 +121,9 @@ func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) GetProcessOk() (*s
 	return o.Process.Get(), o.Process.IsSet()
 }
 
-// IsSetProcess returns a boolean if a field has been set.
-func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) IsSetProcess() bool {
-	if o != nil && o.Process.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetProcess gets a reference to the given NullableString and assigns it to the Process field.
 func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) SetProcess(v string) {
 	o.Process.Set(&v)
-}
-
-// SetProcessNil sets the value for Process to be an explicit nil
-func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) SetProcessNil() {
-	o.Process.Set(nil)
-}
-
-// UnsetProcess ensures that no value is present for Process, not even an explicit nil
-func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) UnsetProcess() {
-	o.Process.Unset()
 }
 
 // GetJob returns the Job field value if set, zero value otherwise.
@@ -179,15 +142,6 @@ func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) GetJobOk() (*ListJ
 		return nil, false
 	}
 	return o.Job, true
-}
-
-// IsSetJob returns a boolean if a field has been set.
-func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) IsSetJob() bool {
-	if o != nil && !IsNil(o.Job) {
-		return true
-	}
-
-	return false
 }
 
 // SetJob gets a reference to the given ListJobExecutions200ResponseAllOfJobExecutionsInnerJob and assigns it to the Job field.
@@ -214,28 +168,9 @@ func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) GetDescriptionOk()
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -254,15 +189,6 @@ func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) GetDateCreatedOk()
 		return nil, false
 	}
 	return o.DateCreated, true
-}
-
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
@@ -288,15 +214,6 @@ func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) GetStartDateOk() (
 	return o.StartDate, true
 }
 
-// IsSetStartDate returns a boolean if a field has been set.
-func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) IsSetStartDate() bool {
-	if o != nil && !IsNil(o.StartDate) {
-		return true
-	}
-
-	return false
-}
-
 // SetStartDate gets a reference to the given time.Time and assigns it to the StartDate field.
 func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) SetStartDate(v time.Time) {
 	o.StartDate = &v
@@ -320,15 +237,6 @@ func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) GetEndDateOk() (*t
 	return o.EndDate, true
 }
 
-// IsSetEndDate returns a boolean if a field has been set.
-func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) IsSetEndDate() bool {
-	if o != nil && !IsNil(o.EndDate) {
-		return true
-	}
-
-	return false
-}
-
 // SetEndDate gets a reference to the given time.Time and assigns it to the EndDate field.
 func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) SetEndDate(v time.Time) {
 	o.EndDate = &v
@@ -350,15 +258,6 @@ func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) GetDurationOk() (*
 		return nil, false
 	}
 	return o.Duration, true
-}
-
-// IsSetDuration returns a boolean if a field has been set.
-func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) IsSetDuration() bool {
-	if o != nil && !IsNil(o.Duration) {
-		return true
-	}
-
-	return false
 }
 
 // SetDuration gets a reference to the given int64 and assigns it to the Duration field.
@@ -385,28 +284,9 @@ func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) GetResultDataOk() 
 	return o.ResultData.Get(), o.ResultData.IsSet()
 }
 
-// IsSetResultData returns a boolean if a field has been set.
-func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) IsSetResultData() bool {
-	if o != nil && o.ResultData.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetResultData gets a reference to the given NullableString and assigns it to the ResultData field.
 func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) SetResultData(v string) {
 	o.ResultData.Set(&v)
-}
-
-// SetResultDataNil sets the value for ResultData to be an explicit nil
-func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) SetResultDataNil() {
-	o.ResultData.Set(nil)
-}
-
-// UnsetResultData ensures that no value is present for ResultData, not even an explicit nil
-func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) UnsetResultData() {
-	o.ResultData.Unset()
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -425,15 +305,6 @@ func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) GetStatusOk() (*st
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -460,28 +331,9 @@ func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) GetStatusMessageOk
 	return o.StatusMessage.Get(), o.StatusMessage.IsSet()
 }
 
-// IsSetStatusMessage returns a boolean if a field has been set.
-func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) IsSetStatusMessage() bool {
-	if o != nil && o.StatusMessage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusMessage gets a reference to the given NullableString and assigns it to the StatusMessage field.
 func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) SetStatusMessage(v string) {
 	o.StatusMessage.Set(&v)
-}
-
-// SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
-func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) SetStatusMessageNil() {
-	o.StatusMessage.Set(nil)
-}
-
-// UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
-func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) UnsetStatusMessage() {
-	o.StatusMessage.Unset()
 }
 
 // GetCreatedBy returns the CreatedBy field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -503,28 +355,9 @@ func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) GetCreatedByOk() (
 	return o.CreatedBy.Get(), o.CreatedBy.IsSet()
 }
 
-// IsSetCreatedBy returns a boolean if a field has been set.
-func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) IsSetCreatedBy() bool {
-	if o != nil && o.CreatedBy.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCreatedBy gets a reference to the given NullableString and assigns it to the CreatedBy field.
 func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) SetCreatedBy(v string) {
 	o.CreatedBy.Set(&v)
-}
-
-// SetCreatedByNil sets the value for CreatedBy to be an explicit nil
-func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) SetCreatedByNil() {
-	o.CreatedBy.Set(nil)
-}
-
-// UnsetCreatedBy ensures that no value is present for CreatedBy, not even an explicit nil
-func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) UnsetCreatedBy() {
-	o.CreatedBy.Unset()
 }
 
 func (o ListJobExecutions200ResponseAllOfJobExecutionsInner) MarshalJSON() ([]byte, error) {

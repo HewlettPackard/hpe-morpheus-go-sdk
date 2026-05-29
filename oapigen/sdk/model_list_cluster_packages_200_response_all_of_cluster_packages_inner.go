@@ -74,15 +74,6 @@ func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) GetIdOk() (*in
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) SetId(v int64) {
 	o.Id = &v
@@ -104,15 +95,6 @@ func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) GetNameOk() (*
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -139,28 +121,9 @@ func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) GetDescription
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -182,28 +145,9 @@ func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) GetAccountOk()
 	return o.Account.Get(), o.Account.IsSet()
 }
 
-// IsSetAccount returns a boolean if a field has been set.
-func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) IsSetAccount() bool {
-	if o != nil && o.Account.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAccount gets a reference to the given NullableInt64 and assigns it to the Account field.
 func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) SetAccount(v int64) {
 	o.Account.Set(&v)
-}
-
-// SetAccountNil sets the value for Account to be an explicit nil
-func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) SetAccountNil() {
-	o.Account.Set(nil)
-}
-
-// UnsetAccount ensures that no value is present for Account, not even an explicit nil
-func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) UnsetAccount() {
-	o.Account.Unset()
 }
 
 // GetCode returns the Code field value if set, zero value otherwise.
@@ -222,15 +166,6 @@ func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) GetCodeOk() (*
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -256,15 +191,6 @@ func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) GetRepeatInsta
 	return o.RepeatInstall, true
 }
 
-// IsSetRepeatInstall returns a boolean if a field has been set.
-func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) IsSetRepeatInstall() bool {
-	if o != nil && !IsNil(o.RepeatInstall) {
-		return true
-	}
-
-	return false
-}
-
 // SetRepeatInstall gets a reference to the given bool and assigns it to the RepeatInstall field.
 func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) SetRepeatInstall(v bool) {
 	o.RepeatInstall = &v
@@ -286,15 +212,6 @@ func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) GetTypeOk() (*
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.
@@ -320,15 +237,6 @@ func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) GetPackageType
 	return o.PackageType, true
 }
 
-// IsSetPackageType returns a boolean if a field has been set.
-func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) IsSetPackageType() bool {
-	if o != nil && !IsNil(o.PackageType) {
-		return true
-	}
-
-	return false
-}
-
 // SetPackageType gets a reference to the given string and assigns it to the PackageType field.
 func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) SetPackageType(v string) {
 	o.PackageType = &v
@@ -352,15 +260,6 @@ func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) GetPackageVers
 	return o.PackageVersion, true
 }
 
-// IsSetPackageVersion returns a boolean if a field has been set.
-func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) IsSetPackageVersion() bool {
-	if o != nil && !IsNil(o.PackageVersion) {
-		return true
-	}
-
-	return false
-}
-
 // SetPackageVersion gets a reference to the given string and assigns it to the PackageVersion field.
 func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) SetPackageVersion(v string) {
 	o.PackageVersion = &v
@@ -382,15 +281,6 @@ func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) GetEnabledOk()
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -417,28 +307,9 @@ func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) GetIconPathOk(
 	return o.IconPath.Get(), o.IconPath.IsSet()
 }
 
-// IsSetIconPath returns a boolean if a field has been set.
-func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) IsSetIconPath() bool {
-	if o != nil && o.IconPath.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetIconPath gets a reference to the given NullableString and assigns it to the IconPath field.
 func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) SetIconPath(v string) {
 	o.IconPath.Set(&v)
-}
-
-// SetIconPathNil sets the value for IconPath to be an explicit nil
-func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) SetIconPathNil() {
-	o.IconPath.Set(nil)
-}
-
-// UnsetIconPath ensures that no value is present for IconPath, not even an explicit nil
-func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) UnsetIconPath() {
-	o.IconPath.Unset()
 }
 
 // GetImagePath returns the ImagePath field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -460,28 +331,9 @@ func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) GetImagePathOk
 	return o.ImagePath.Get(), o.ImagePath.IsSet()
 }
 
-// IsSetImagePath returns a boolean if a field has been set.
-func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) IsSetImagePath() bool {
-	if o != nil && o.ImagePath.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetImagePath gets a reference to the given NullableString and assigns it to the ImagePath field.
 func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) SetImagePath(v string) {
 	o.ImagePath.Set(&v)
-}
-
-// SetImagePathNil sets the value for ImagePath to be an explicit nil
-func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) SetImagePathNil() {
-	o.ImagePath.Set(nil)
-}
-
-// UnsetImagePath ensures that no value is present for ImagePath, not even an explicit nil
-func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) UnsetImagePath() {
-	o.ImagePath.Unset()
 }
 
 // GetDarkImagePath returns the DarkImagePath field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -503,28 +355,9 @@ func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) GetDarkImagePa
 	return o.DarkImagePath.Get(), o.DarkImagePath.IsSet()
 }
 
-// IsSetDarkImagePath returns a boolean if a field has been set.
-func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) IsSetDarkImagePath() bool {
-	if o != nil && o.DarkImagePath.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDarkImagePath gets a reference to the given NullableString and assigns it to the DarkImagePath field.
 func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) SetDarkImagePath(v string) {
 	o.DarkImagePath.Set(&v)
-}
-
-// SetDarkImagePathNil sets the value for DarkImagePath to be an explicit nil
-func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) SetDarkImagePathNil() {
-	o.DarkImagePath.Set(nil)
-}
-
-// UnsetDarkImagePath ensures that no value is present for DarkImagePath, not even an explicit nil
-func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) UnsetDarkImagePath() {
-	o.DarkImagePath.Unset()
 }
 
 // GetSpecTemplates returns the SpecTemplates field value if set, zero value otherwise.
@@ -543,15 +376,6 @@ func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) GetSpecTemplat
 		return nil, false
 	}
 	return o.SpecTemplates, true
-}
-
-// IsSetSpecTemplates returns a boolean if a field has been set.
-func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) IsSetSpecTemplates() bool {
-	if o != nil && !IsNil(o.SpecTemplates) {
-		return true
-	}
-
-	return false
 }
 
 // SetSpecTemplates gets a reference to the given []ListClusterPackages200ResponseAllOfClusterPackagesInnerSpecTemplatesInner and assigns it to the SpecTemplates field.

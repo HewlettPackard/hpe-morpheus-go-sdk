@@ -62,15 +62,6 @@ func (o *UpdatePlugin200Response) GetPluginOk() (*UpdatePlugin200ResponseAllOfPl
 	return o.Plugin, true
 }
 
-// IsSetPlugin returns a boolean if a field has been set.
-func (o *UpdatePlugin200Response) IsSetPlugin() bool {
-	if o != nil && !IsNil(o.Plugin) {
-		return true
-	}
-
-	return false
-}
-
 // SetPlugin gets a reference to the given UpdatePlugin200ResponseAllOfPlugin and assigns it to the Plugin field.
 func (o *UpdatePlugin200Response) SetPlugin(v UpdatePlugin200ResponseAllOfPlugin) {
 	o.Plugin = &v
@@ -92,15 +83,6 @@ func (o *UpdatePlugin200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *UpdatePlugin200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

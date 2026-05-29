@@ -64,15 +64,6 @@ func (o *ListLogSettings200ResponseLogSettings) GetEnabledOk() (*bool, bool) {
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *ListLogSettings200ResponseLogSettings) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *ListLogSettings200ResponseLogSettings) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -94,15 +85,6 @@ func (o *ListLogSettings200ResponseLogSettings) GetRetentionDaysOk() (*string, b
 		return nil, false
 	}
 	return o.RetentionDays, true
-}
-
-// IsSetRetentionDays returns a boolean if a field has been set.
-func (o *ListLogSettings200ResponseLogSettings) IsSetRetentionDays() bool {
-	if o != nil && !IsNil(o.RetentionDays) {
-		return true
-	}
-
-	return false
 }
 
 // SetRetentionDays gets a reference to the given string and assigns it to the RetentionDays field.
@@ -129,15 +111,6 @@ func (o *ListLogSettings200ResponseLogSettings) GetSyslogRulesOk() ([]map[string
 	return o.SyslogRules, true
 }
 
-// IsSetSyslogRules returns a boolean if a field has been set.
-func (o *ListLogSettings200ResponseLogSettings) IsSetSyslogRules() bool {
-	if o != nil && !IsNil(o.SyslogRules) {
-		return true
-	}
-
-	return false
-}
-
 // SetSyslogRules gets a reference to the given []map[string]interface{} and assigns it to the SyslogRules field.
 func (o *ListLogSettings200ResponseLogSettings) SetSyslogRules(v []map[string]interface{}) {
 	o.SyslogRules = v
@@ -160,15 +133,6 @@ func (o *ListLogSettings200ResponseLogSettings) GetIntegrationsOk() ([]map[strin
 		return nil, false
 	}
 	return o.Integrations, true
-}
-
-// IsSetIntegrations returns a boolean if a field has been set.
-func (o *ListLogSettings200ResponseLogSettings) IsSetIntegrations() bool {
-	if o != nil && !IsNil(o.Integrations) {
-		return true
-	}
-
-	return false
 }
 
 // SetIntegrations gets a reference to the given []map[string]interface{} and assigns it to the Integrations field.

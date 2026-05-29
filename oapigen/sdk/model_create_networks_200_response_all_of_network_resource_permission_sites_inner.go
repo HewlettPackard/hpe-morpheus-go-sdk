@@ -62,15 +62,6 @@ func (o *CreateNetworks200ResponseAllOfNetworkResourcePermissionSitesInner) GetI
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *CreateNetworks200ResponseAllOfNetworkResourcePermissionSitesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *CreateNetworks200ResponseAllOfNetworkResourcePermissionSitesInner) SetId(v int64) {
 	o.Id = &v
@@ -95,28 +86,9 @@ func (o *CreateNetworks200ResponseAllOfNetworkResourcePermissionSitesInner) GetN
 	return o.Name.Get(), o.Name.IsSet()
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *CreateNetworks200ResponseAllOfNetworkResourcePermissionSitesInner) IsSetName() bool {
-	if o != nil && o.Name.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given NullableString and assigns it to the Name field.
 func (o *CreateNetworks200ResponseAllOfNetworkResourcePermissionSitesInner) SetName(v string) {
 	o.Name.Set(&v)
-}
-
-// SetNameNil sets the value for Name to be an explicit nil
-func (o *CreateNetworks200ResponseAllOfNetworkResourcePermissionSitesInner) SetNameNil() {
-	o.Name.Set(nil)
-}
-
-// UnsetName ensures that no value is present for Name, not even an explicit nil
-func (o *CreateNetworks200ResponseAllOfNetworkResourcePermissionSitesInner) UnsetName() {
-	o.Name.Unset()
 }
 
 func (o CreateNetworks200ResponseAllOfNetworkResourcePermissionSitesInner) MarshalJSON() ([]byte, error) {

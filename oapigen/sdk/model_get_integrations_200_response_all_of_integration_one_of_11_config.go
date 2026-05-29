@@ -65,15 +65,6 @@ func (o *GetIntegrations200ResponseAllOfIntegrationOneOf11Config) GetPuppetMaste
 	return o.PuppetMaster, true
 }
 
-// IsSetPuppetMaster returns a boolean if a field has been set.
-func (o *GetIntegrations200ResponseAllOfIntegrationOneOf11Config) IsSetPuppetMaster() bool {
-	if o != nil && !IsNil(o.PuppetMaster) {
-		return true
-	}
-
-	return false
-}
-
 // SetPuppetMaster gets a reference to the given string and assigns it to the PuppetMaster field.
 func (o *GetIntegrations200ResponseAllOfIntegrationOneOf11Config) SetPuppetMaster(v string) {
 	o.PuppetMaster = &v
@@ -95,15 +86,6 @@ func (o *GetIntegrations200ResponseAllOfIntegrationOneOf11Config) GetPuppetFireN
 		return nil, false
 	}
 	return o.PuppetFireNow, true
-}
-
-// IsSetPuppetFireNow returns a boolean if a field has been set.
-func (o *GetIntegrations200ResponseAllOfIntegrationOneOf11Config) IsSetPuppetFireNow() bool {
-	if o != nil && !IsNil(o.PuppetFireNow) {
-		return true
-	}
-
-	return false
 }
 
 // SetPuppetFireNow gets a reference to the given string and assigns it to the PuppetFireNow field.
@@ -129,15 +111,6 @@ func (o *GetIntegrations200ResponseAllOfIntegrationOneOf11Config) GetPuppetSshUs
 	return o.PuppetSshUser, true
 }
 
-// IsSetPuppetSshUser returns a boolean if a field has been set.
-func (o *GetIntegrations200ResponseAllOfIntegrationOneOf11Config) IsSetPuppetSshUser() bool {
-	if o != nil && !IsNil(o.PuppetSshUser) {
-		return true
-	}
-
-	return false
-}
-
 // SetPuppetSshUser gets a reference to the given string and assigns it to the PuppetSshUser field.
 func (o *GetIntegrations200ResponseAllOfIntegrationOneOf11Config) SetPuppetSshUser(v string) {
 	o.PuppetSshUser = &v
@@ -161,15 +134,6 @@ func (o *GetIntegrations200ResponseAllOfIntegrationOneOf11Config) GetPuppetSshPa
 	return o.PuppetSshPassword, true
 }
 
-// IsSetPuppetSshPassword returns a boolean if a field has been set.
-func (o *GetIntegrations200ResponseAllOfIntegrationOneOf11Config) IsSetPuppetSshPassword() bool {
-	if o != nil && !IsNil(o.PuppetSshPassword) {
-		return true
-	}
-
-	return false
-}
-
 // SetPuppetSshPassword gets a reference to the given string and assigns it to the PuppetSshPassword field.
 func (o *GetIntegrations200ResponseAllOfIntegrationOneOf11Config) SetPuppetSshPassword(v string) {
 	o.PuppetSshPassword = &v
@@ -191,15 +155,6 @@ func (o *GetIntegrations200ResponseAllOfIntegrationOneOf11Config) GetPuppetSshPa
 		return nil, false
 	}
 	return o.PuppetSshPasswordHash, true
-}
-
-// IsSetPuppetSshPasswordHash returns a boolean if a field has been set.
-func (o *GetIntegrations200ResponseAllOfIntegrationOneOf11Config) IsSetPuppetSshPasswordHash() bool {
-	if o != nil && !IsNil(o.PuppetSshPasswordHash) {
-		return true
-	}
-
-	return false
 }
 
 // SetPuppetSshPasswordHash gets a reference to the given string and assigns it to the PuppetSshPasswordHash field.

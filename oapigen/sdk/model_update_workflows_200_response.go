@@ -62,15 +62,6 @@ func (o *UpdateWorkflows200Response) GetTaskSetOk() (*UpdateWorkflows200Response
 	return o.TaskSet, true
 }
 
-// IsSetTaskSet returns a boolean if a field has been set.
-func (o *UpdateWorkflows200Response) IsSetTaskSet() bool {
-	if o != nil && !IsNil(o.TaskSet) {
-		return true
-	}
-
-	return false
-}
-
 // SetTaskSet gets a reference to the given UpdateWorkflows200ResponseAllOfTaskSet and assigns it to the TaskSet field.
 func (o *UpdateWorkflows200Response) SetTaskSet(v UpdateWorkflows200ResponseAllOfTaskSet) {
 	o.TaskSet = &v
@@ -92,15 +83,6 @@ func (o *UpdateWorkflows200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *UpdateWorkflows200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

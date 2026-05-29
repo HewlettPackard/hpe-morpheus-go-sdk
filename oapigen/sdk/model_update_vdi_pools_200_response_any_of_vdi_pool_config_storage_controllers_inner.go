@@ -73,15 +73,6 @@ func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigStorageControllersInner) Get
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigStorageControllersInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigStorageControllersInner) SetId(v int64) {
 	o.Id = &v
@@ -103,15 +94,6 @@ func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigStorageControllersInner) Get
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigStorageControllersInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -138,28 +120,9 @@ func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigStorageControllersInner) Get
 	return o.Active.Get(), o.Active.IsSet()
 }
 
-// IsSetActive returns a boolean if a field has been set.
-func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigStorageControllersInner) IsSetActive() bool {
-	if o != nil && o.Active.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetActive gets a reference to the given NullableBool and assigns it to the Active field.
 func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigStorageControllersInner) SetActive(v bool) {
 	o.Active.Set(&v)
-}
-
-// SetActiveNil sets the value for Active to be an explicit nil
-func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigStorageControllersInner) SetActiveNil() {
-	o.Active.Set(nil)
-}
-
-// UnsetActive ensures that no value is present for Active, not even an explicit nil
-func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigStorageControllersInner) UnsetActive() {
-	o.Active.Unset()
 }
 
 // GetTypeId returns the TypeId field value if set, zero value otherwise.
@@ -178,15 +141,6 @@ func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigStorageControllersInner) Get
 		return nil, false
 	}
 	return o.TypeId, true
-}
-
-// IsSetTypeId returns a boolean if a field has been set.
-func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigStorageControllersInner) IsSetTypeId() bool {
-	if o != nil && !IsNil(o.TypeId) {
-		return true
-	}
-
-	return false
 }
 
 // SetTypeId gets a reference to the given int64 and assigns it to the TypeId field.
@@ -212,15 +166,6 @@ func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigStorageControllersInner) Get
 	return o.TypeName, true
 }
 
-// IsSetTypeName returns a boolean if a field has been set.
-func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigStorageControllersInner) IsSetTypeName() bool {
-	if o != nil && !IsNil(o.TypeName) {
-		return true
-	}
-
-	return false
-}
-
 // SetTypeName gets a reference to the given string and assigns it to the TypeName field.
 func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigStorageControllersInner) SetTypeName(v string) {
 	o.TypeName = &v
@@ -242,15 +187,6 @@ func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigStorageControllersInner) Get
 		return nil, false
 	}
 	return o.UnitNumber, true
-}
-
-// IsSetUnitNumber returns a boolean if a field has been set.
-func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigStorageControllersInner) IsSetUnitNumber() bool {
-	if o != nil && !IsNil(o.UnitNumber) {
-		return true
-	}
-
-	return false
 }
 
 // SetUnitNumber gets a reference to the given string and assigns it to the UnitNumber field.
@@ -276,15 +212,6 @@ func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigStorageControllersInner) Get
 	return o.BusNumber, true
 }
 
-// IsSetBusNumber returns a boolean if a field has been set.
-func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigStorageControllersInner) IsSetBusNumber() bool {
-	if o != nil && !IsNil(o.BusNumber) {
-		return true
-	}
-
-	return false
-}
-
 // SetBusNumber gets a reference to the given string and assigns it to the BusNumber field.
 func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigStorageControllersInner) SetBusNumber(v string) {
 	o.BusNumber = &v
@@ -306,15 +233,6 @@ func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigStorageControllersInner) Get
 		return nil, false
 	}
 	return o.MaxDevices, true
-}
-
-// IsSetMaxDevices returns a boolean if a field has been set.
-func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigStorageControllersInner) IsSetMaxDevices() bool {
-	if o != nil && !IsNil(o.MaxDevices) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxDevices gets a reference to the given float32 and assigns it to the MaxDevices field.
@@ -341,28 +259,9 @@ func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigStorageControllersInner) Get
 	return o.Removable.Get(), o.Removable.IsSet()
 }
 
-// IsSetRemovable returns a boolean if a field has been set.
-func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigStorageControllersInner) IsSetRemovable() bool {
-	if o != nil && o.Removable.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRemovable gets a reference to the given NullableBool and assigns it to the Removable field.
 func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigStorageControllersInner) SetRemovable(v bool) {
 	o.Removable.Set(&v)
-}
-
-// SetRemovableNil sets the value for Removable to be an explicit nil
-func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigStorageControllersInner) SetRemovableNil() {
-	o.Removable.Set(nil)
-}
-
-// UnsetRemovable ensures that no value is present for Removable, not even an explicit nil
-func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigStorageControllersInner) UnsetRemovable() {
-	o.Removable.Unset()
 }
 
 // GetEditable returns the Editable field value if set, zero value otherwise.
@@ -381,15 +280,6 @@ func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigStorageControllersInner) Get
 		return nil, false
 	}
 	return o.Editable, true
-}
-
-// IsSetEditable returns a boolean if a field has been set.
-func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigStorageControllersInner) IsSetEditable() bool {
-	if o != nil && !IsNil(o.Editable) {
-		return true
-	}
-
-	return false
 }
 
 // SetEditable gets a reference to the given bool and assigns it to the Editable field.
@@ -415,15 +305,6 @@ func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigStorageControllersInner) Get
 	return o.ReservedUnitNumber, true
 }
 
-// IsSetReservedUnitNumber returns a boolean if a field has been set.
-func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigStorageControllersInner) IsSetReservedUnitNumber() bool {
-	if o != nil && !IsNil(o.ReservedUnitNumber) {
-		return true
-	}
-
-	return false
-}
-
 // SetReservedUnitNumber gets a reference to the given float32 and assigns it to the ReservedUnitNumber field.
 func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigStorageControllersInner) SetReservedUnitNumber(v float32) {
 	o.ReservedUnitNumber = &v
@@ -447,15 +328,6 @@ func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigStorageControllersInner) Get
 	return o.Category, true
 }
 
-// IsSetCategory returns a boolean if a field has been set.
-func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigStorageControllersInner) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
-		return true
-	}
-
-	return false
-}
-
 // SetCategory gets a reference to the given string and assigns it to the Category field.
 func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigStorageControllersInner) SetCategory(v string) {
 	o.Category = &v
@@ -477,15 +349,6 @@ func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigStorageControllersInner) Get
 		return nil, false
 	}
 	return o.DisplayOrder, true
-}
-
-// IsSetDisplayOrder returns a boolean if a field has been set.
-func (o *UpdateVDIPools200ResponseAnyOfVdiPoolConfigStorageControllersInner) IsSetDisplayOrder() bool {
-	if o != nil && !IsNil(o.DisplayOrder) {
-		return true
-	}
-
-	return false
 }
 
 // SetDisplayOrder gets a reference to the given float32 and assigns it to the DisplayOrder field.

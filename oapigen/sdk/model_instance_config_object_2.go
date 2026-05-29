@@ -248,15 +248,6 @@ func (o *InstanceConfigObject2) GetHostNameOk() (*string, bool) {
 	return o.HostName, true
 }
 
-// IsSetHostName returns a boolean if a field has been set.
-func (o *InstanceConfigObject2) IsSetHostName() bool {
-	if o != nil && !IsNil(o.HostName) {
-		return true
-	}
-
-	return false
-}
-
 // SetHostName gets a reference to the given string and assigns it to the HostName field.
 func (o *InstanceConfigObject2) SetHostName(v string) {
 	o.HostName = &v
@@ -278,15 +269,6 @@ func (o *InstanceConfigObject2) GetEnvironmentOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Environment, true
-}
-
-// IsSetEnvironment returns a boolean if a field has been set.
-func (o *InstanceConfigObject2) IsSetEnvironment() bool {
-	if o != nil && !IsNil(o.Environment) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnvironment gets a reference to the given string and assigns it to the Environment field.
@@ -360,15 +342,6 @@ func (o *InstanceConfigObject2) GetVersionOk() (*string, bool) {
 	return o.Version, true
 }
 
-// IsSetVersion returns a boolean if a field has been set.
-func (o *InstanceConfigObject2) IsSetVersion() bool {
-	if o != nil && !IsNil(o.Version) {
-		return true
-	}
-
-	return false
-}
-
 // SetVersion gets a reference to the given string and assigns it to the Version field.
 func (o *InstanceConfigObject2) SetVersion(v string) {
 	o.Version = &v
@@ -392,15 +365,6 @@ func (o *InstanceConfigObject2) GetEvarsOk() ([]InstanceConfigObject2EvarsInner,
 	return o.Evars, true
 }
 
-// IsSetEvars returns a boolean if a field has been set.
-func (o *InstanceConfigObject2) IsSetEvars() bool {
-	if o != nil && !IsNil(o.Evars) {
-		return true
-	}
-
-	return false
-}
-
 // SetEvars gets a reference to the given []InstanceConfigObject2EvarsInner and assigns it to the Evars field.
 func (o *InstanceConfigObject2) SetEvars(v []InstanceConfigObject2EvarsInner) {
 	o.Evars = v
@@ -422,15 +386,6 @@ func (o *InstanceConfigObject2) GetServicePlanOptionsOk() (*InstanceConfigObject
 		return nil, false
 	}
 	return o.ServicePlanOptions, true
-}
-
-// IsSetServicePlanOptions returns a boolean if a field has been set.
-func (o *InstanceConfigObject2) IsSetServicePlanOptions() bool {
-	if o != nil && !IsNil(o.ServicePlanOptions) {
-		return true
-	}
-
-	return false
 }
 
 // SetServicePlanOptions gets a reference to the given InstanceConfigObject2ServicePlanOptions and assigns it to the ServicePlanOptions field.
@@ -457,15 +412,6 @@ func (o *InstanceConfigObject2) GetSecurityGroupsOk() ([]InstanceConfigObject2Se
 	return o.SecurityGroups, true
 }
 
-// IsSetSecurityGroups returns a boolean if a field has been set.
-func (o *InstanceConfigObject2) IsSetSecurityGroups() bool {
-	if o != nil && !IsNil(o.SecurityGroups) {
-		return true
-	}
-
-	return false
-}
-
 // SetSecurityGroups gets a reference to the given []InstanceConfigObject2SecurityGroupsInner and assigns it to the SecurityGroups field.
 func (o *InstanceConfigObject2) SetSecurityGroups(v []InstanceConfigObject2SecurityGroupsInner) {
 	o.SecurityGroups = v
@@ -487,15 +433,6 @@ func (o *InstanceConfigObject2) GetNetworkInterfacesOk() ([]InstancesNetworkInte
 		return nil, false
 	}
 	return o.NetworkInterfaces, true
-}
-
-// IsSetNetworkInterfaces returns a boolean if a field has been set.
-func (o *InstanceConfigObject2) IsSetNetworkInterfaces() bool {
-	if o != nil && !IsNil(o.NetworkInterfaces) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkInterfaces gets a reference to the given []InstancesNetworkInterfaces5 and assigns it to the NetworkInterfaces field.
@@ -521,15 +458,6 @@ func (o *InstanceConfigObject2) GetLabelsOk() ([]string, bool) {
 	return o.Labels, true
 }
 
-// IsSetLabels returns a boolean if a field has been set.
-func (o *InstanceConfigObject2) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
-}
-
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
 func (o *InstanceConfigObject2) SetLabels(v []string) {
 	o.Labels = v
@@ -551,15 +479,6 @@ func (o *InstanceConfigObject2) GetTagsOk() ([]InstanceConfigObject2TagsInner, b
 		return nil, false
 	}
 	return o.Tags, true
-}
-
-// IsSetTags returns a boolean if a field has been set.
-func (o *InstanceConfigObject2) IsSetTags() bool {
-	if o != nil && !IsNil(o.Tags) {
-		return true
-	}
-
-	return false
 }
 
 // SetTags gets a reference to the given []InstanceConfigObject2TagsInner and assigns it to the Tags field.
@@ -585,15 +504,6 @@ func (o *InstanceConfigObject2) GetMetadataOk() ([]InstanceConfigObject2Metadata
 	return o.Metadata, true
 }
 
-// IsSetMetadata returns a boolean if a field has been set.
-func (o *InstanceConfigObject2) IsSetMetadata() bool {
-	if o != nil && !IsNil(o.Metadata) {
-		return true
-	}
-
-	return false
-}
-
 // SetMetadata gets a reference to the given []InstanceConfigObject2MetadataInner and assigns it to the Metadata field.
 func (o *InstanceConfigObject2) SetMetadata(v []InstanceConfigObject2MetadataInner) {
 	o.Metadata = v
@@ -615,15 +525,6 @@ func (o *InstanceConfigObject2) GetPortsOk() ([]InstanceConfigObject2PortsInner,
 		return nil, false
 	}
 	return o.Ports, true
-}
-
-// IsSetPorts returns a boolean if a field has been set.
-func (o *InstanceConfigObject2) IsSetPorts() bool {
-	if o != nil && !IsNil(o.Ports) {
-		return true
-	}
-
-	return false
 }
 
 // SetPorts gets a reference to the given []InstanceConfigObject2PortsInner and assigns it to the Ports field.
@@ -649,15 +550,6 @@ func (o *InstanceConfigObject2) GetTaskSetIdOk() (*int64, bool) {
 	return o.TaskSetId, true
 }
 
-// IsSetTaskSetId returns a boolean if a field has been set.
-func (o *InstanceConfigObject2) IsSetTaskSetId() bool {
-	if o != nil && !IsNil(o.TaskSetId) {
-		return true
-	}
-
-	return false
-}
-
 // SetTaskSetId gets a reference to the given int64 and assigns it to the TaskSetId field.
 func (o *InstanceConfigObject2) SetTaskSetId(v int64) {
 	o.TaskSetId = &v
@@ -679,15 +571,6 @@ func (o *InstanceConfigObject2) GetTaskSetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.TaskSetName, true
-}
-
-// IsSetTaskSetName returns a boolean if a field has been set.
-func (o *InstanceConfigObject2) IsSetTaskSetName() bool {
-	if o != nil && !IsNil(o.TaskSetName) {
-		return true
-	}
-
-	return false
 }
 
 // SetTaskSetName gets a reference to the given string and assigns it to the TaskSetName field.

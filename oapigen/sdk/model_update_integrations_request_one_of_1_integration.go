@@ -134,15 +134,6 @@ func (o *UpdateIntegrationsRequestOneOf1Integration) GetEnabledOk() (*bool, bool
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *UpdateIntegrationsRequestOneOf1Integration) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *UpdateIntegrationsRequestOneOf1Integration) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -164,15 +155,6 @@ func (o *UpdateIntegrationsRequestOneOf1Integration) GetRefreshOk() (*bool, bool
 		return nil, false
 	}
 	return o.Refresh, true
-}
-
-// IsSetRefresh returns a boolean if a field has been set.
-func (o *UpdateIntegrationsRequestOneOf1Integration) IsSetRefresh() bool {
-	if o != nil && !IsNil(o.Refresh) {
-		return true
-	}
-
-	return false
 }
 
 // SetRefresh gets a reference to the given bool and assigns it to the Refresh field.
@@ -222,15 +204,6 @@ func (o *UpdateIntegrationsRequestOneOf1Integration) GetServiceUsernameOk() (*st
 	return o.ServiceUsername, true
 }
 
-// IsSetServiceUsername returns a boolean if a field has been set.
-func (o *UpdateIntegrationsRequestOneOf1Integration) IsSetServiceUsername() bool {
-	if o != nil && !IsNil(o.ServiceUsername) {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceUsername gets a reference to the given string and assigns it to the ServiceUsername field.
 func (o *UpdateIntegrationsRequestOneOf1Integration) SetServiceUsername(v string) {
 	o.ServiceUsername = &v
@@ -252,15 +225,6 @@ func (o *UpdateIntegrationsRequestOneOf1Integration) GetServicePasswordOk() (*st
 		return nil, false
 	}
 	return o.ServicePassword, true
-}
-
-// IsSetServicePassword returns a boolean if a field has been set.
-func (o *UpdateIntegrationsRequestOneOf1Integration) IsSetServicePassword() bool {
-	if o != nil && !IsNil(o.ServicePassword) {
-		return true
-	}
-
-	return false
 }
 
 // SetServicePassword gets a reference to the given string and assigns it to the ServicePassword field.
@@ -286,15 +250,6 @@ func (o *UpdateIntegrationsRequestOneOf1Integration) GetServiceTokenOk() (*strin
 	return o.ServiceToken, true
 }
 
-// IsSetServiceToken returns a boolean if a field has been set.
-func (o *UpdateIntegrationsRequestOneOf1Integration) IsSetServiceToken() bool {
-	if o != nil && !IsNil(o.ServiceToken) {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceToken gets a reference to the given string and assigns it to the ServiceToken field.
 func (o *UpdateIntegrationsRequestOneOf1Integration) SetServiceToken(v string) {
 	o.ServiceToken = &v
@@ -318,15 +273,6 @@ func (o *UpdateIntegrationsRequestOneOf1Integration) GetServiceKeyOk() (*int64, 
 	return o.ServiceKey, true
 }
 
-// IsSetServiceKey returns a boolean if a field has been set.
-func (o *UpdateIntegrationsRequestOneOf1Integration) IsSetServiceKey() bool {
-	if o != nil && !IsNil(o.ServiceKey) {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceKey gets a reference to the given int64 and assigns it to the ServiceKey field.
 func (o *UpdateIntegrationsRequestOneOf1Integration) SetServiceKey(v int64) {
 	o.ServiceKey = &v
@@ -348,15 +294,6 @@ func (o *UpdateIntegrationsRequestOneOf1Integration) GetConfigOk() (*UpdateInteg
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *UpdateIntegrationsRequestOneOf1Integration) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given UpdateIntegrationsRequestOneOf1IntegrationConfig and assigns it to the Config field.

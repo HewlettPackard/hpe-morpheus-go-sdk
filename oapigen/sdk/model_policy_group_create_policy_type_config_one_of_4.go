@@ -63,15 +63,6 @@ func (o *PolicyGroupCreatePolicyTypeConfigOneOf4) GetServerNamingTypeOk() (*stri
 	return o.ServerNamingType, true
 }
 
-// IsSetServerNamingType returns a boolean if a field has been set.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf4) IsSetServerNamingType() bool {
-	if o != nil && !IsNil(o.ServerNamingType) {
-		return true
-	}
-
-	return false
-}
-
 // SetServerNamingType gets a reference to the given string and assigns it to the ServerNamingType field.
 func (o *PolicyGroupCreatePolicyTypeConfigOneOf4) SetServerNamingType(v string) {
 	o.ServerNamingType = &v
@@ -95,15 +86,6 @@ func (o *PolicyGroupCreatePolicyTypeConfigOneOf4) GetServerNamingPatternOk() (*s
 	return o.ServerNamingPattern, true
 }
 
-// IsSetServerNamingPattern returns a boolean if a field has been set.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf4) IsSetServerNamingPattern() bool {
-	if o != nil && !IsNil(o.ServerNamingPattern) {
-		return true
-	}
-
-	return false
-}
-
 // SetServerNamingPattern gets a reference to the given string and assigns it to the ServerNamingPattern field.
 func (o *PolicyGroupCreatePolicyTypeConfigOneOf4) SetServerNamingPattern(v string) {
 	o.ServerNamingPattern = &v
@@ -125,15 +107,6 @@ func (o *PolicyGroupCreatePolicyTypeConfigOneOf4) GetServerNamingConflictOk() (*
 		return nil, false
 	}
 	return o.ServerNamingConflict, true
-}
-
-// IsSetServerNamingConflict returns a boolean if a field has been set.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf4) IsSetServerNamingConflict() bool {
-	if o != nil && !IsNil(o.ServerNamingConflict) {
-		return true
-	}
-
-	return false
 }
 
 // SetServerNamingConflict gets a reference to the given bool and assigns it to the ServerNamingConflict field.

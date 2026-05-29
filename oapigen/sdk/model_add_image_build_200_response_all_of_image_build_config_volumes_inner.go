@@ -67,15 +67,6 @@ func (o *AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner) GetIdOk() (*
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner) SetId(v int64) {
 	o.Id = &v
@@ -97,15 +88,6 @@ func (o *AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner) GetSizeOk() 
 		return nil, false
 	}
 	return o.Size, true
-}
-
-// IsSetSize returns a boolean if a field has been set.
-func (o *AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner) IsSetSize() bool {
-	if o != nil && !IsNil(o.Size) {
-		return true
-	}
-
-	return false
 }
 
 // SetSize gets a reference to the given int64 and assigns it to the Size field.
@@ -132,28 +114,9 @@ func (o *AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner) GetMaxIOPSOk
 	return o.MaxIOPS.Get(), o.MaxIOPS.IsSet()
 }
 
-// IsSetMaxIOPS returns a boolean if a field has been set.
-func (o *AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner) IsSetMaxIOPS() bool {
-	if o != nil && o.MaxIOPS.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxIOPS gets a reference to the given NullableString and assigns it to the MaxIOPS field.
 func (o *AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner) SetMaxIOPS(v string) {
 	o.MaxIOPS.Set(&v)
-}
-
-// SetMaxIOPSNil sets the value for MaxIOPS to be an explicit nil
-func (o *AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner) SetMaxIOPSNil() {
-	o.MaxIOPS.Set(nil)
-}
-
-// UnsetMaxIOPS ensures that no value is present for MaxIOPS, not even an explicit nil
-func (o *AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner) UnsetMaxIOPS() {
-	o.MaxIOPS.Unset()
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -172,15 +135,6 @@ func (o *AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner) GetNameOk() 
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -206,15 +160,6 @@ func (o *AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner) GetRootVolum
 	return o.RootVolume, true
 }
 
-// IsSetRootVolume returns a boolean if a field has been set.
-func (o *AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner) IsSetRootVolume() bool {
-	if o != nil && !IsNil(o.RootVolume) {
-		return true
-	}
-
-	return false
-}
-
 // SetRootVolume gets a reference to the given bool and assigns it to the RootVolume field.
 func (o *AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner) SetRootVolume(v bool) {
 	o.RootVolume = &v
@@ -238,15 +183,6 @@ func (o *AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner) GetStorageTy
 	return o.StorageType, true
 }
 
-// IsSetStorageType returns a boolean if a field has been set.
-func (o *AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner) IsSetStorageType() bool {
-	if o != nil && !IsNil(o.StorageType) {
-		return true
-	}
-
-	return false
-}
-
 // SetStorageType gets a reference to the given int64 and assigns it to the StorageType field.
 func (o *AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner) SetStorageType(v int64) {
 	o.StorageType = &v
@@ -268,15 +204,6 @@ func (o *AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner) GetDatastore
 		return nil, false
 	}
 	return o.DatastoreId, true
-}
-
-// IsSetDatastoreId returns a boolean if a field has been set.
-func (o *AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner) IsSetDatastoreId() bool {
-	if o != nil && !IsNil(o.DatastoreId) {
-		return true
-	}
-
-	return false
 }
 
 // SetDatastoreId gets a reference to the given string and assigns it to the DatastoreId field.

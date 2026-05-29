@@ -61,15 +61,6 @@ func (o *GetVirtualImage200Response) GetVirtualImageOk() (*GetVirtualImage200Res
 	return o.VirtualImage, true
 }
 
-// IsSetVirtualImage returns a boolean if a field has been set.
-func (o *GetVirtualImage200Response) IsSetVirtualImage() bool {
-	if o != nil && !IsNil(o.VirtualImage) {
-		return true
-	}
-
-	return false
-}
-
 // SetVirtualImage gets a reference to the given GetVirtualImage200ResponseVirtualImage and assigns it to the VirtualImage field.
 func (o *GetVirtualImage200Response) SetVirtualImage(v GetVirtualImage200ResponseVirtualImage) {
 	o.VirtualImage = &v

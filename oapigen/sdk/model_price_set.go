@@ -72,15 +72,6 @@ func (o *PriceSet) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *PriceSet) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *PriceSet) SetId(v int64) {
 	o.Id = &v
@@ -102,15 +93,6 @@ func (o *PriceSet) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *PriceSet) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -136,15 +118,6 @@ func (o *PriceSet) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *PriceSet) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *PriceSet) SetCode(v string) {
 	o.Code = &v
@@ -166,15 +139,6 @@ func (o *PriceSet) GetActiveOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Active, true
-}
-
-// IsSetActive returns a boolean if a field has been set.
-func (o *PriceSet) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
 }
 
 // SetActive gets a reference to the given bool and assigns it to the Active field.
@@ -200,15 +164,6 @@ func (o *PriceSet) GetPriceUnitOk() (*string, bool) {
 	return o.PriceUnit, true
 }
 
-// IsSetPriceUnit returns a boolean if a field has been set.
-func (o *PriceSet) IsSetPriceUnit() bool {
-	if o != nil && !IsNil(o.PriceUnit) {
-		return true
-	}
-
-	return false
-}
-
 // SetPriceUnit gets a reference to the given string and assigns it to the PriceUnit field.
 func (o *PriceSet) SetPriceUnit(v string) {
 	o.PriceUnit = &v
@@ -230,15 +185,6 @@ func (o *PriceSet) GetTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *PriceSet) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.
@@ -264,15 +210,6 @@ func (o *PriceSet) GetRegionCodeOk() (*string, bool) {
 	return o.RegionCode, true
 }
 
-// IsSetRegionCode returns a boolean if a field has been set.
-func (o *PriceSet) IsSetRegionCode() bool {
-	if o != nil && !IsNil(o.RegionCode) {
-		return true
-	}
-
-	return false
-}
-
 // SetRegionCode gets a reference to the given string and assigns it to the RegionCode field.
 func (o *PriceSet) SetRegionCode(v string) {
 	o.RegionCode = &v
@@ -294,15 +231,6 @@ func (o *PriceSet) GetSystemCreatedOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.SystemCreated, true
-}
-
-// IsSetSystemCreated returns a boolean if a field has been set.
-func (o *PriceSet) IsSetSystemCreated() bool {
-	if o != nil && !IsNil(o.SystemCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetSystemCreated gets a reference to the given bool and assigns it to the SystemCreated field.
@@ -329,28 +257,9 @@ func (o *PriceSet) GetZoneOk() (*string, bool) {
 	return o.Zone.Get(), o.Zone.IsSet()
 }
 
-// IsSetZone returns a boolean if a field has been set.
-func (o *PriceSet) IsSetZone() bool {
-	if o != nil && o.Zone.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetZone gets a reference to the given NullableString and assigns it to the Zone field.
 func (o *PriceSet) SetZone(v string) {
 	o.Zone.Set(&v)
-}
-
-// SetZoneNil sets the value for Zone to be an explicit nil
-func (o *PriceSet) SetZoneNil() {
-	o.Zone.Set(nil)
-}
-
-// UnsetZone ensures that no value is present for Zone, not even an explicit nil
-func (o *PriceSet) UnsetZone() {
-	o.Zone.Unset()
 }
 
 // GetZonePool returns the ZonePool field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -372,28 +281,9 @@ func (o *PriceSet) GetZonePoolOk() (*string, bool) {
 	return o.ZonePool.Get(), o.ZonePool.IsSet()
 }
 
-// IsSetZonePool returns a boolean if a field has been set.
-func (o *PriceSet) IsSetZonePool() bool {
-	if o != nil && o.ZonePool.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetZonePool gets a reference to the given NullableString and assigns it to the ZonePool field.
 func (o *PriceSet) SetZonePool(v string) {
 	o.ZonePool.Set(&v)
-}
-
-// SetZonePoolNil sets the value for ZonePool to be an explicit nil
-func (o *PriceSet) SetZonePoolNil() {
-	o.ZonePool.Set(nil)
-}
-
-// UnsetZonePool ensures that no value is present for ZonePool, not even an explicit nil
-func (o *PriceSet) UnsetZonePool() {
-	o.ZonePool.Unset()
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -415,28 +305,9 @@ func (o *PriceSet) GetAccountOk() (*string, bool) {
 	return o.Account.Get(), o.Account.IsSet()
 }
 
-// IsSetAccount returns a boolean if a field has been set.
-func (o *PriceSet) IsSetAccount() bool {
-	if o != nil && o.Account.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAccount gets a reference to the given NullableString and assigns it to the Account field.
 func (o *PriceSet) SetAccount(v string) {
 	o.Account.Set(&v)
-}
-
-// SetAccountNil sets the value for Account to be an explicit nil
-func (o *PriceSet) SetAccountNil() {
-	o.Account.Set(nil)
-}
-
-// UnsetAccount ensures that no value is present for Account, not even an explicit nil
-func (o *PriceSet) UnsetAccount() {
-	o.Account.Unset()
 }
 
 // GetPrices returns the Prices field value if set, zero value otherwise.
@@ -455,15 +326,6 @@ func (o *PriceSet) GetPricesOk() ([]AddPriceSets200ResponseAllOfBudgetPricesInne
 		return nil, false
 	}
 	return o.Prices, true
-}
-
-// IsSetPrices returns a boolean if a field has been set.
-func (o *PriceSet) IsSetPrices() bool {
-	if o != nil && !IsNil(o.Prices) {
-		return true
-	}
-
-	return false
 }
 
 // SetPrices gets a reference to the given []AddPriceSets200ResponseAllOfBudgetPricesInner and assigns it to the Prices field.

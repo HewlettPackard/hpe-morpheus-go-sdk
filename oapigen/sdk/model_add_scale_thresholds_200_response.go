@@ -62,15 +62,6 @@ func (o *AddScaleThresholds200Response) GetScaleThresholdOk() (*AddScaleThreshol
 	return o.ScaleThreshold, true
 }
 
-// IsSetScaleThreshold returns a boolean if a field has been set.
-func (o *AddScaleThresholds200Response) IsSetScaleThreshold() bool {
-	if o != nil && !IsNil(o.ScaleThreshold) {
-		return true
-	}
-
-	return false
-}
-
 // SetScaleThreshold gets a reference to the given AddScaleThresholds200ResponseAllOfScaleThreshold and assigns it to the ScaleThreshold field.
 func (o *AddScaleThresholds200Response) SetScaleThreshold(v AddScaleThresholds200ResponseAllOfScaleThreshold) {
 	o.ScaleThreshold = &v
@@ -92,15 +83,6 @@ func (o *AddScaleThresholds200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *AddScaleThresholds200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

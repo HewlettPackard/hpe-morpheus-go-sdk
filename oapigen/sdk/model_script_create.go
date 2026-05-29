@@ -116,15 +116,6 @@ func (o *ScriptCreate) GetLabelsOk() ([]string, bool) {
 	return o.Labels, true
 }
 
-// IsSetLabels returns a boolean if a field has been set.
-func (o *ScriptCreate) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
-}
-
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
 func (o *ScriptCreate) SetLabels(v []string) {
 	o.Labels = v
@@ -146,15 +137,6 @@ func (o *ScriptCreate) GetCategoryOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Category, true
-}
-
-// IsSetCategory returns a boolean if a field has been set.
-func (o *ScriptCreate) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
-		return true
-	}
-
-	return false
 }
 
 // SetCategory gets a reference to the given string and assigns it to the Category field.
@@ -180,15 +162,6 @@ func (o *ScriptCreate) GetScriptVersionOk() (*string, bool) {
 	return o.ScriptVersion, true
 }
 
-// IsSetScriptVersion returns a boolean if a field has been set.
-func (o *ScriptCreate) IsSetScriptVersion() bool {
-	if o != nil && !IsNil(o.ScriptVersion) {
-		return true
-	}
-
-	return false
-}
-
 // SetScriptVersion gets a reference to the given string and assigns it to the ScriptVersion field.
 func (o *ScriptCreate) SetScriptVersion(v string) {
 	o.ScriptVersion = &v
@@ -210,15 +183,6 @@ func (o *ScriptCreate) GetScriptPhaseOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ScriptPhase, true
-}
-
-// IsSetScriptPhase returns a boolean if a field has been set.
-func (o *ScriptCreate) IsSetScriptPhase() bool {
-	if o != nil && !IsNil(o.ScriptPhase) {
-		return true
-	}
-
-	return false
 }
 
 // SetScriptPhase gets a reference to the given string and assigns it to the ScriptPhase field.
@@ -244,15 +208,6 @@ func (o *ScriptCreate) GetScriptTypeOk() (*string, bool) {
 	return o.ScriptType, true
 }
 
-// IsSetScriptType returns a boolean if a field has been set.
-func (o *ScriptCreate) IsSetScriptType() bool {
-	if o != nil && !IsNil(o.ScriptType) {
-		return true
-	}
-
-	return false
-}
-
 // SetScriptType gets a reference to the given string and assigns it to the ScriptType field.
 func (o *ScriptCreate) SetScriptType(v string) {
 	o.ScriptType = &v
@@ -274,15 +229,6 @@ func (o *ScriptCreate) GetScriptOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Script, true
-}
-
-// IsSetScript returns a boolean if a field has been set.
-func (o *ScriptCreate) IsSetScript() bool {
-	if o != nil && !IsNil(o.Script) {
-		return true
-	}
-
-	return false
 }
 
 // SetScript gets a reference to the given string and assigns it to the Script field.
@@ -308,15 +254,6 @@ func (o *ScriptCreate) GetRunAsUserOk() (*string, bool) {
 	return o.RunAsUser, true
 }
 
-// IsSetRunAsUser returns a boolean if a field has been set.
-func (o *ScriptCreate) IsSetRunAsUser() bool {
-	if o != nil && !IsNil(o.RunAsUser) {
-		return true
-	}
-
-	return false
-}
-
 // SetRunAsUser gets a reference to the given string and assigns it to the RunAsUser field.
 func (o *ScriptCreate) SetRunAsUser(v string) {
 	o.RunAsUser = &v
@@ -338,15 +275,6 @@ func (o *ScriptCreate) GetSudoUserOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.SudoUser, true
-}
-
-// IsSetSudoUser returns a boolean if a field has been set.
-func (o *ScriptCreate) IsSetSudoUser() bool {
-	if o != nil && !IsNil(o.SudoUser) {
-		return true
-	}
-
-	return false
 }
 
 // SetSudoUser gets a reference to the given bool and assigns it to the SudoUser field.

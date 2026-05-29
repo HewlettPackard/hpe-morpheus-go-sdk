@@ -61,15 +61,6 @@ func (o *UpdateServicePlans200ResponseAllOfServicePlanPermissionsTenantPermissio
 	return o.Accounts, true
 }
 
-// IsSetAccounts returns a boolean if a field has been set.
-func (o *UpdateServicePlans200ResponseAllOfServicePlanPermissionsTenantPermissions) IsSetAccounts() bool {
-	if o != nil && !IsNil(o.Accounts) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccounts gets a reference to the given []int64 and assigns it to the Accounts field.
 func (o *UpdateServicePlans200ResponseAllOfServicePlanPermissionsTenantPermissions) SetAccounts(v []int64) {
 	o.Accounts = v

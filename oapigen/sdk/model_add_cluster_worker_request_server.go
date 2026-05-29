@@ -132,15 +132,6 @@ func (o *AddClusterWorkerRequestServer) GetServerTypeOk() (*AddClusterWorkerRequ
 	return o.ServerType, true
 }
 
-// IsSetServerType returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServer) IsSetServerType() bool {
-	if o != nil && !IsNil(o.ServerType) {
-		return true
-	}
-
-	return false
-}
-
 // SetServerType gets a reference to the given AddClusterWorkerRequestServerServerType and assigns it to the ServerType field.
 func (o *AddClusterWorkerRequestServer) SetServerType(v AddClusterWorkerRequestServerServerType) {
 	o.ServerType = &v
@@ -212,15 +203,6 @@ func (o *AddClusterWorkerRequestServer) GetServicePlanOptionsOk() (*AddClusterWo
 	return o.ServicePlanOptions, true
 }
 
-// IsSetServicePlanOptions returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServer) IsSetServicePlanOptions() bool {
-	if o != nil && !IsNil(o.ServicePlanOptions) {
-		return true
-	}
-
-	return false
-}
-
 // SetServicePlanOptions gets a reference to the given AddClusterWorkerRequestServerServicePlanOptions and assigns it to the ServicePlanOptions field.
 func (o *AddClusterWorkerRequestServer) SetServicePlanOptions(v AddClusterWorkerRequestServerServicePlanOptions) {
 	o.ServicePlanOptions = &v
@@ -242,15 +224,6 @@ func (o *AddClusterWorkerRequestServer) GetVolumesOk() ([]AddClusterWorkerReques
 		return nil, false
 	}
 	return o.Volumes, true
-}
-
-// IsSetVolumes returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServer) IsSetVolumes() bool {
-	if o != nil && !IsNil(o.Volumes) {
-		return true
-	}
-
-	return false
 }
 
 // SetVolumes gets a reference to the given []AddClusterWorkerRequestServerVolumesInner and assigns it to the Volumes field.
@@ -276,15 +249,6 @@ func (o *AddClusterWorkerRequestServer) GetNetworkOk() (*AddClusterWorkerRequest
 	return o.Network, true
 }
 
-// IsSetNetwork returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServer) IsSetNetwork() bool {
-	if o != nil && !IsNil(o.Network) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetwork gets a reference to the given AddClusterWorkerRequestServerNetwork and assigns it to the Network field.
 func (o *AddClusterWorkerRequestServer) SetNetwork(v AddClusterWorkerRequestServerNetwork) {
 	o.Network = &v
@@ -306,15 +270,6 @@ func (o *AddClusterWorkerRequestServer) GetNetworkInterfacesOk() ([]AddClusterWo
 		return nil, false
 	}
 	return o.NetworkInterfaces, true
-}
-
-// IsSetNetworkInterfaces returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServer) IsSetNetworkInterfaces() bool {
-	if o != nil && !IsNil(o.NetworkInterfaces) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkInterfaces gets a reference to the given []AddClusterWorkerRequestServerNetworkInterfacesInner and assigns it to the NetworkInterfaces field.
@@ -340,15 +295,6 @@ func (o *AddClusterWorkerRequestServer) GetSecurityGroupsOk() ([]string, bool) {
 	return o.SecurityGroups, true
 }
 
-// IsSetSecurityGroups returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServer) IsSetSecurityGroups() bool {
-	if o != nil && !IsNil(o.SecurityGroups) {
-		return true
-	}
-
-	return false
-}
-
 // SetSecurityGroups gets a reference to the given []string and assigns it to the SecurityGroups field.
 func (o *AddClusterWorkerRequestServer) SetSecurityGroups(v []string) {
 	o.SecurityGroups = v
@@ -372,15 +318,6 @@ func (o *AddClusterWorkerRequestServer) GetVisibilityOk() (*string, bool) {
 	return o.Visibility, true
 }
 
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServer) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
-}
-
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
 func (o *AddClusterWorkerRequestServer) SetVisibility(v string) {
 	o.Visibility = &v
@@ -402,15 +339,6 @@ func (o *AddClusterWorkerRequestServer) GetUserGroupOk() (*AddClusterWorkerReque
 		return nil, false
 	}
 	return o.UserGroup, true
-}
-
-// IsSetUserGroup returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServer) IsSetUserGroup() bool {
-	if o != nil && !IsNil(o.UserGroup) {
-		return true
-	}
-
-	return false
 }
 
 // SetUserGroup gets a reference to the given AddClusterWorkerRequestServerUserGroup and assigns it to the UserGroup field.
@@ -437,28 +365,9 @@ func (o *AddClusterWorkerRequestServer) GetNetworkDomainOk() (*string, bool) {
 	return o.NetworkDomain.Get(), o.NetworkDomain.IsSet()
 }
 
-// IsSetNetworkDomain returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServer) IsSetNetworkDomain() bool {
-	if o != nil && o.NetworkDomain.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkDomain gets a reference to the given NullableString and assigns it to the NetworkDomain field.
 func (o *AddClusterWorkerRequestServer) SetNetworkDomain(v string) {
 	o.NetworkDomain.Set(&v)
-}
-
-// SetNetworkDomainNil sets the value for NetworkDomain to be an explicit nil
-func (o *AddClusterWorkerRequestServer) SetNetworkDomainNil() {
-	o.NetworkDomain.Set(nil)
-}
-
-// UnsetNetworkDomain ensures that no value is present for NetworkDomain, not even an explicit nil
-func (o *AddClusterWorkerRequestServer) UnsetNetworkDomain() {
-	o.NetworkDomain.Unset()
 }
 
 // GetHostname returns the Hostname field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -480,28 +389,9 @@ func (o *AddClusterWorkerRequestServer) GetHostnameOk() (*string, bool) {
 	return o.Hostname.Get(), o.Hostname.IsSet()
 }
 
-// IsSetHostname returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServer) IsSetHostname() bool {
-	if o != nil && o.Hostname.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetHostname gets a reference to the given NullableString and assigns it to the Hostname field.
 func (o *AddClusterWorkerRequestServer) SetHostname(v string) {
 	o.Hostname.Set(&v)
-}
-
-// SetHostnameNil sets the value for Hostname to be an explicit nil
-func (o *AddClusterWorkerRequestServer) SetHostnameNil() {
-	o.Hostname.Set(nil)
-}
-
-// UnsetHostname ensures that no value is present for Hostname, not even an explicit nil
-func (o *AddClusterWorkerRequestServer) UnsetHostname() {
-	o.Hostname.Unset()
 }
 
 // GetNodeCount returns the NodeCount field value if set, zero value otherwise.
@@ -520,15 +410,6 @@ func (o *AddClusterWorkerRequestServer) GetNodeCountOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.NodeCount, true
-}
-
-// IsSetNodeCount returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServer) IsSetNodeCount() bool {
-	if o != nil && !IsNil(o.NodeCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetNodeCount gets a reference to the given int64 and assigns it to the NodeCount field.
@@ -554,15 +435,6 @@ func (o *AddClusterWorkerRequestServer) GetTagsOk() ([]AddClusterWorkerRequestSe
 	return o.Tags, true
 }
 
-// IsSetTags returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServer) IsSetTags() bool {
-	if o != nil && !IsNil(o.Tags) {
-		return true
-	}
-
-	return false
-}
-
 // SetTags gets a reference to the given []AddClusterWorkerRequestServerTagsInner and assigns it to the Tags field.
 func (o *AddClusterWorkerRequestServer) SetTags(v []AddClusterWorkerRequestServerTagsInner) {
 	o.Tags = v
@@ -584,15 +456,6 @@ func (o *AddClusterWorkerRequestServer) GetLabelsOk() ([]string, bool) {
 		return nil, false
 	}
 	return o.Labels, true
-}
-
-// IsSetLabels returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServer) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
 }
 
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
@@ -618,15 +481,6 @@ func (o *AddClusterWorkerRequestServer) GetSshHostsOk() ([]AddClusterWorkerReque
 	return o.SshHosts, true
 }
 
-// IsSetSshHosts returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServer) IsSetSshHosts() bool {
-	if o != nil && !IsNil(o.SshHosts) {
-		return true
-	}
-
-	return false
-}
-
 // SetSshHosts gets a reference to the given []AddClusterWorkerRequestServerSshHostsInner and assigns it to the SshHosts field.
 func (o *AddClusterWorkerRequestServer) SetSshHosts(v []AddClusterWorkerRequestServerSshHostsInner) {
 	o.SshHosts = v
@@ -648,15 +502,6 @@ func (o *AddClusterWorkerRequestServer) GetSshMasterHostsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SshMasterHosts, true
-}
-
-// IsSetSshMasterHosts returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServer) IsSetSshMasterHosts() bool {
-	if o != nil && !IsNil(o.SshMasterHosts) {
-		return true
-	}
-
-	return false
 }
 
 // SetSshMasterHosts gets a reference to the given string and assigns it to the SshMasterHosts field.
@@ -682,15 +527,6 @@ func (o *AddClusterWorkerRequestServer) GetSshWorkerHostsOk() (*string, bool) {
 	return o.SshWorkerHosts, true
 }
 
-// IsSetSshWorkerHosts returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServer) IsSetSshWorkerHosts() bool {
-	if o != nil && !IsNil(o.SshWorkerHosts) {
-		return true
-	}
-
-	return false
-}
-
 // SetSshWorkerHosts gets a reference to the given string and assigns it to the SshWorkerHosts field.
 func (o *AddClusterWorkerRequestServer) SetSshWorkerHosts(v string) {
 	o.SshWorkerHosts = &v
@@ -714,15 +550,6 @@ func (o *AddClusterWorkerRequestServer) GetSshPortOk() (*int64, bool) {
 	return o.SshPort, true
 }
 
-// IsSetSshPort returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServer) IsSetSshPort() bool {
-	if o != nil && !IsNil(o.SshPort) {
-		return true
-	}
-
-	return false
-}
-
 // SetSshPort gets a reference to the given int64 and assigns it to the SshPort field.
 func (o *AddClusterWorkerRequestServer) SetSshPort(v int64) {
 	o.SshPort = &v
@@ -744,15 +571,6 @@ func (o *AddClusterWorkerRequestServer) GetSshUsernameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SshUsername, true
-}
-
-// IsSetSshUsername returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServer) IsSetSshUsername() bool {
-	if o != nil && !IsNil(o.SshUsername) {
-		return true
-	}
-
-	return false
 }
 
 // SetSshUsername gets a reference to the given string and assigns it to the SshUsername field.
@@ -779,28 +597,9 @@ func (o *AddClusterWorkerRequestServer) GetSshPasswordOk() (*string, bool) {
 	return o.SshPassword.Get(), o.SshPassword.IsSet()
 }
 
-// IsSetSshPassword returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServer) IsSetSshPassword() bool {
-	if o != nil && o.SshPassword.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSshPassword gets a reference to the given NullableString and assigns it to the SshPassword field.
 func (o *AddClusterWorkerRequestServer) SetSshPassword(v string) {
 	o.SshPassword.Set(&v)
-}
-
-// SetSshPasswordNil sets the value for SshPassword to be an explicit nil
-func (o *AddClusterWorkerRequestServer) SetSshPasswordNil() {
-	o.SshPassword.Set(nil)
-}
-
-// UnsetSshPassword ensures that no value is present for SshPassword, not even an explicit nil
-func (o *AddClusterWorkerRequestServer) UnsetSshPassword() {
-	o.SshPassword.Unset()
 }
 
 // GetSshKeyPair returns the SshKeyPair field value if set, zero value otherwise.
@@ -819,15 +618,6 @@ func (o *AddClusterWorkerRequestServer) GetSshKeyPairOk() (*AddClusterWorkerRequ
 		return nil, false
 	}
 	return o.SshKeyPair, true
-}
-
-// IsSetSshKeyPair returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServer) IsSetSshKeyPair() bool {
-	if o != nil && !IsNil(o.SshKeyPair) {
-		return true
-	}
-
-	return false
 }
 
 // SetSshKeyPair gets a reference to the given AddClusterWorkerRequestServerSshKeyPair and assigns it to the SshKeyPair field.
@@ -853,15 +643,6 @@ func (o *AddClusterWorkerRequestServer) GetDataDeviceOk() (*string, bool) {
 	return o.DataDevice, true
 }
 
-// IsSetDataDevice returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServer) IsSetDataDevice() bool {
-	if o != nil && !IsNil(o.DataDevice) {
-		return true
-	}
-
-	return false
-}
-
 // SetDataDevice gets a reference to the given string and assigns it to the DataDevice field.
 func (o *AddClusterWorkerRequestServer) SetDataDevice(v string) {
 	o.DataDevice = &v
@@ -883,15 +664,6 @@ func (o *AddClusterWorkerRequestServer) GetLvmEnabledOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.LvmEnabled, true
-}
-
-// IsSetLvmEnabled returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServer) IsSetLvmEnabled() bool {
-	if o != nil && !IsNil(o.LvmEnabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetLvmEnabled gets a reference to the given bool and assigns it to the LvmEnabled field.

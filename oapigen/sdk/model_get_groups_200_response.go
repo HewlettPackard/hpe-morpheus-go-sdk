@@ -61,15 +61,6 @@ func (o *GetGroups200Response) GetGroupOk() (*GetGroups200ResponseGroup, bool) {
 	return o.Group, true
 }
 
-// IsSetGroup returns a boolean if a field has been set.
-func (o *GetGroups200Response) IsSetGroup() bool {
-	if o != nil && !IsNil(o.Group) {
-		return true
-	}
-
-	return false
-}
-
 // SetGroup gets a reference to the given GetGroups200ResponseGroup and assigns it to the Group field.
 func (o *GetGroups200Response) SetGroup(v GetGroups200ResponseGroup) {
 	o.Group = &v

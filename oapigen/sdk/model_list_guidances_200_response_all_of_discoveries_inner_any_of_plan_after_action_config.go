@@ -63,15 +63,6 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionConfig
 	return o.StorageSizeType, true
 }
 
-// IsSetStorageSizeType returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionConfig) IsSetStorageSizeType() bool {
-	if o != nil && !IsNil(o.StorageSizeType) {
-		return true
-	}
-
-	return false
-}
-
 // SetStorageSizeType gets a reference to the given string and assigns it to the StorageSizeType field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionConfig) SetStorageSizeType(v string) {
 	o.StorageSizeType = &v
@@ -95,15 +86,6 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionConfig
 	return o.MemorySizeType, true
 }
 
-// IsSetMemorySizeType returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionConfig) IsSetMemorySizeType() bool {
-	if o != nil && !IsNil(o.MemorySizeType) {
-		return true
-	}
-
-	return false
-}
-
 // SetMemorySizeType gets a reference to the given string and assigns it to the MemorySizeType field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionConfig) SetMemorySizeType(v string) {
 	o.MemorySizeType = &v
@@ -125,15 +107,6 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionConfig
 		return nil, false
 	}
 	return o.Ranges, true
-}
-
-// IsSetRanges returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionConfig) IsSetRanges() bool {
-	if o != nil && !IsNil(o.Ranges) {
-		return true
-	}
-
-	return false
 }
 
 // SetRanges gets a reference to the given ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActionConfigRanges and assigns it to the Ranges field.

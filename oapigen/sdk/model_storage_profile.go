@@ -64,15 +64,6 @@ func (o *StorageProfile) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *StorageProfile) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *StorageProfile) SetName(v string) {
 	o.Name = &v
@@ -94,15 +85,6 @@ func (o *StorageProfile) GetCodeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *StorageProfile) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -128,15 +110,6 @@ func (o *StorageProfile) GetDisplayOrderOk() (*int64, bool) {
 	return o.DisplayOrder, true
 }
 
-// IsSetDisplayOrder returns a boolean if a field has been set.
-func (o *StorageProfile) IsSetDisplayOrder() bool {
-	if o != nil && !IsNil(o.DisplayOrder) {
-		return true
-	}
-
-	return false
-}
-
 // SetDisplayOrder gets a reference to the given int64 and assigns it to the DisplayOrder field.
 func (o *StorageProfile) SetDisplayOrder(v int64) {
 	o.DisplayOrder = &v
@@ -158,15 +131,6 @@ func (o *StorageProfile) GetIsDefaultOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.IsDefault, true
-}
-
-// IsSetIsDefault returns a boolean if a field has been set.
-func (o *StorageProfile) IsSetIsDefault() bool {
-	if o != nil && !IsNil(o.IsDefault) {
-		return true
-	}
-
-	return false
 }
 
 // SetIsDefault gets a reference to the given bool and assigns it to the IsDefault field.

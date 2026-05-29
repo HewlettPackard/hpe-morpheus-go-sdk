@@ -76,15 +76,6 @@ func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) GetIdOk() (*in
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int32 and assigns it to the Id field.
 func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) SetId(v int32) {
 	o.Id = &v
@@ -106,15 +97,6 @@ func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) GetAccountOk()
 		return nil, false
 	}
 	return o.Account, true
-}
-
-// IsSetAccount returns a boolean if a field has been set.
-func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccount gets a reference to the given InstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount and assigns it to the Account field.
@@ -140,15 +122,6 @@ func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) GetNameOk() (*
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) SetName(v string) {
 	o.Name = &v
@@ -170,15 +143,6 @@ func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) GetLabelsOk() 
 		return nil, false
 	}
 	return o.Labels, true
-}
-
-// IsSetLabels returns a boolean if a field has been set.
-func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
 }
 
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
@@ -204,15 +168,6 @@ func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) GetShortNameOk
 	return o.ShortName, true
 }
 
-// IsSetShortName returns a boolean if a field has been set.
-func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) IsSetShortName() bool {
-	if o != nil && !IsNil(o.ShortName) {
-		return true
-	}
-
-	return false
-}
-
 // SetShortName gets a reference to the given string and assigns it to the ShortName field.
 func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) SetShortName(v string) {
 	o.ShortName = &v
@@ -234,15 +189,6 @@ func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) GetCodeOk() (*
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -268,15 +214,6 @@ func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) GetContainerVe
 	return o.ContainerVersion, true
 }
 
-// IsSetContainerVersion returns a boolean if a field has been set.
-func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) IsSetContainerVersion() bool {
-	if o != nil && !IsNil(o.ContainerVersion) {
-		return true
-	}
-
-	return false
-}
-
 // SetContainerVersion gets a reference to the given string and assigns it to the ContainerVersion field.
 func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) SetContainerVersion(v string) {
 	o.ContainerVersion = &v
@@ -298,15 +235,6 @@ func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) GetProvisionTy
 		return nil, false
 	}
 	return o.ProvisionType, true
-}
-
-// IsSetProvisionType returns a boolean if a field has been set.
-func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) IsSetProvisionType() bool {
-	if o != nil && !IsNil(o.ProvisionType) {
-		return true
-	}
-
-	return false
 }
 
 // SetProvisionType gets a reference to the given InstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerProvisionType and assigns it to the ProvisionType field.
@@ -332,15 +260,6 @@ func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) GetVirtualImag
 	return o.VirtualImage, true
 }
 
-// IsSetVirtualImage returns a boolean if a field has been set.
-func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) IsSetVirtualImage() bool {
-	if o != nil && !IsNil(o.VirtualImage) {
-		return true
-	}
-
-	return false
-}
-
 // SetVirtualImage gets a reference to the given InstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerVirtualImage and assigns it to the VirtualImage field.
 func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) SetVirtualImage(v InstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerVirtualImage) {
 	o.VirtualImage = &v
@@ -362,15 +281,6 @@ func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) GetOsTypeOk() 
 		return nil, false
 	}
 	return o.OsType, true
-}
-
-// IsSetOsType returns a boolean if a field has been set.
-func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) IsSetOsType() bool {
-	if o != nil && !IsNil(o.OsType) {
-		return true
-	}
-
-	return false
 }
 
 // SetOsType gets a reference to the given InstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerOsType and assigns it to the OsType field.
@@ -397,28 +307,9 @@ func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) GetCategoryOk(
 	return o.Category.Get(), o.Category.IsSet()
 }
 
-// IsSetCategory returns a boolean if a field has been set.
-func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) IsSetCategory() bool {
-	if o != nil && o.Category.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCategory gets a reference to the given NullableString and assigns it to the Category field.
 func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) SetCategory(v string) {
 	o.Category.Set(&v)
-}
-
-// SetCategoryNil sets the value for Category to be an explicit nil
-func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) SetCategoryNil() {
-	o.Category.Set(nil)
-}
-
-// UnsetCategory ensures that no value is present for Category, not even an explicit nil
-func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) UnsetCategory() {
-	o.Category.Unset()
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -438,15 +329,6 @@ func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) GetConfigOk() 
 		return map[string]interface{}{}, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
@@ -473,15 +355,6 @@ func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) GetContainerPo
 	return o.ContainerPorts, true
 }
 
-// IsSetContainerPorts returns a boolean if a field has been set.
-func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) IsSetContainerPorts() bool {
-	if o != nil && !IsNil(o.ContainerPorts) {
-		return true
-	}
-
-	return false
-}
-
 // SetContainerPorts gets a reference to the given []InstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner and assigns it to the ContainerPorts field.
 func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) SetContainerPorts(v []InstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner) {
 	o.ContainerPorts = v
@@ -504,15 +377,6 @@ func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) GetContainerSc
 		return nil, false
 	}
 	return o.ContainerScripts, true
-}
-
-// IsSetContainerScripts returns a boolean if a field has been set.
-func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) IsSetContainerScripts() bool {
-	if o != nil && !IsNil(o.ContainerScripts) {
-		return true
-	}
-
-	return false
 }
 
 // SetContainerScripts gets a reference to the given []map[string]interface{} and assigns it to the ContainerScripts field.
@@ -539,15 +403,6 @@ func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) GetContainerTe
 	return o.ContainerTemplates, true
 }
 
-// IsSetContainerTemplates returns a boolean if a field has been set.
-func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) IsSetContainerTemplates() bool {
-	if o != nil && !IsNil(o.ContainerTemplates) {
-		return true
-	}
-
-	return false
-}
-
 // SetContainerTemplates gets a reference to the given []map[string]interface{} and assigns it to the ContainerTemplates field.
 func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) SetContainerTemplates(v []map[string]interface{}) {
 	o.ContainerTemplates = v
@@ -570,15 +425,6 @@ func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) GetEnvironment
 		return nil, false
 	}
 	return o.EnvironmentVariables, true
-}
-
-// IsSetEnvironmentVariables returns a boolean if a field has been set.
-func (o *InstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) IsSetEnvironmentVariables() bool {
-	if o != nil && !IsNil(o.EnvironmentVariables) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnvironmentVariables gets a reference to the given []map[string]interface{} and assigns it to the EnvironmentVariables field.

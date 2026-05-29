@@ -62,15 +62,6 @@ func (o *ClusterPermissions) GetResourcePoolOk() (*ClusterPermissionsResourcePoo
 	return o.ResourcePool, true
 }
 
-// IsSetResourcePool returns a boolean if a field has been set.
-func (o *ClusterPermissions) IsSetResourcePool() bool {
-	if o != nil && !IsNil(o.ResourcePool) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourcePool gets a reference to the given ClusterPermissionsResourcePool and assigns it to the ResourcePool field.
 func (o *ClusterPermissions) SetResourcePool(v ClusterPermissionsResourcePool) {
 	o.ResourcePool = &v
@@ -92,15 +83,6 @@ func (o *ClusterPermissions) GetResourcePermissionsOk() (*ClusterPermissionsReso
 		return nil, false
 	}
 	return o.ResourcePermissions, true
-}
-
-// IsSetResourcePermissions returns a boolean if a field has been set.
-func (o *ClusterPermissions) IsSetResourcePermissions() bool {
-	if o != nil && !IsNil(o.ResourcePermissions) {
-		return true
-	}
-
-	return false
 }
 
 // SetResourcePermissions gets a reference to the given ClusterPermissionsResourcePermissions and assigns it to the ResourcePermissions field.

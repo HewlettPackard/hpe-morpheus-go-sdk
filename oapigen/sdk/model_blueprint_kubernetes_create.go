@@ -97,15 +97,6 @@ func (o *BlueprintKubernetesCreate) GetImageOk() (*string, bool) {
 	return o.Image, true
 }
 
-// IsSetImage returns a boolean if a field has been set.
-func (o *BlueprintKubernetesCreate) IsSetImage() bool {
-	if o != nil && !IsNil(o.Image) {
-		return true
-	}
-
-	return false
-}
-
 // SetImage gets a reference to the given string and assigns it to the Image field.
 func (o *BlueprintKubernetesCreate) SetImage(v string) {
 	o.Image = &v
@@ -154,15 +145,6 @@ func (o *BlueprintKubernetesCreate) GetLabelsOk() ([]string, bool) {
 	return o.Labels, true
 }
 
-// IsSetLabels returns a boolean if a field has been set.
-func (o *BlueprintKubernetesCreate) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
-}
-
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
 func (o *BlueprintKubernetesCreate) SetLabels(v []string) {
 	o.Labels = v
@@ -208,15 +190,6 @@ func (o *BlueprintKubernetesCreate) GetConfigOk() (*BlueprintKubernetesCreateCon
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *BlueprintKubernetesCreate) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given BlueprintKubernetesCreateConfig and assigns it to the Config field.

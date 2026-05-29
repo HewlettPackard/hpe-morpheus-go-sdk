@@ -101,15 +101,6 @@ func (o *UpdateClusterLayoutRequestLayoutEnvironmentVariablesInner) GetValueOk()
 	return o.Value, true
 }
 
-// IsSetValue returns a boolean if a field has been set.
-func (o *UpdateClusterLayoutRequestLayoutEnvironmentVariablesInner) IsSetValue() bool {
-	if o != nil && !IsNil(o.Value) {
-		return true
-	}
-
-	return false
-}
-
 // SetValue gets a reference to the given string and assigns it to the Value field.
 func (o *UpdateClusterLayoutRequestLayoutEnvironmentVariablesInner) SetValue(v string) {
 	o.Value = &v
@@ -133,15 +124,6 @@ func (o *UpdateClusterLayoutRequestLayoutEnvironmentVariablesInner) GetMaskedOk(
 	return o.Masked, true
 }
 
-// IsSetMasked returns a boolean if a field has been set.
-func (o *UpdateClusterLayoutRequestLayoutEnvironmentVariablesInner) IsSetMasked() bool {
-	if o != nil && !IsNil(o.Masked) {
-		return true
-	}
-
-	return false
-}
-
 // SetMasked gets a reference to the given bool and assigns it to the Masked field.
 func (o *UpdateClusterLayoutRequestLayoutEnvironmentVariablesInner) SetMasked(v bool) {
 	o.Masked = &v
@@ -163,15 +145,6 @@ func (o *UpdateClusterLayoutRequestLayoutEnvironmentVariablesInner) GetExportOk(
 		return nil, false
 	}
 	return o.Export, true
-}
-
-// IsSetExport returns a boolean if a field has been set.
-func (o *UpdateClusterLayoutRequestLayoutEnvironmentVariablesInner) IsSetExport() bool {
-	if o != nil && !IsNil(o.Export) {
-		return true
-	}
-
-	return false
 }
 
 // SetExport gets a reference to the given bool and assigns it to the Export field.

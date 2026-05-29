@@ -80,15 +80,6 @@ func (o *Issue) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *Issue) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *Issue) SetId(v int64) {
 	o.Id = &v
@@ -110,15 +101,6 @@ func (o *Issue) GetAttachmentTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.AttachmentType, true
-}
-
-// IsSetAttachmentType returns a boolean if a field has been set.
-func (o *Issue) IsSetAttachmentType() bool {
-	if o != nil && !IsNil(o.AttachmentType) {
-		return true
-	}
-
-	return false
 }
 
 // SetAttachmentType gets a reference to the given string and assigns it to the AttachmentType field.
@@ -145,28 +127,9 @@ func (o *Issue) GetAppOk() (*string, bool) {
 	return o.App.Get(), o.App.IsSet()
 }
 
-// IsSetApp returns a boolean if a field has been set.
-func (o *Issue) IsSetApp() bool {
-	if o != nil && o.App.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetApp gets a reference to the given NullableString and assigns it to the App field.
 func (o *Issue) SetApp(v string) {
 	o.App.Set(&v)
-}
-
-// SetAppNil sets the value for App to be an explicit nil
-func (o *Issue) SetAppNil() {
-	o.App.Set(nil)
-}
-
-// UnsetApp ensures that no value is present for App, not even an explicit nil
-func (o *Issue) UnsetApp() {
-	o.App.Unset()
 }
 
 // GetAvailable returns the Available field value if set, zero value otherwise.
@@ -185,15 +148,6 @@ func (o *Issue) GetAvailableOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Available, true
-}
-
-// IsSetAvailable returns a boolean if a field has been set.
-func (o *Issue) IsSetAvailable() bool {
-	if o != nil && !IsNil(o.Available) {
-		return true
-	}
-
-	return false
 }
 
 // SetAvailable gets a reference to the given bool and assigns it to the Available field.
@@ -220,28 +174,9 @@ func (o *Issue) GetCheckOk() (*string, bool) {
 	return o.Check.Get(), o.Check.IsSet()
 }
 
-// IsSetCheck returns a boolean if a field has been set.
-func (o *Issue) IsSetCheck() bool {
-	if o != nil && o.Check.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCheck gets a reference to the given NullableString and assigns it to the Check field.
 func (o *Issue) SetCheck(v string) {
 	o.Check.Set(&v)
-}
-
-// SetCheckNil sets the value for Check to be an explicit nil
-func (o *Issue) SetCheckNil() {
-	o.Check.Set(nil)
-}
-
-// UnsetCheck ensures that no value is present for Check, not even an explicit nil
-func (o *Issue) UnsetCheck() {
-	o.Check.Unset()
 }
 
 // GetCheckGroup returns the CheckGroup field value if set, zero value otherwise.
@@ -260,15 +195,6 @@ func (o *Issue) GetCheckGroupOk() (*IssueCheckGroup, bool) {
 		return nil, false
 	}
 	return o.CheckGroup, true
-}
-
-// IsSetCheckGroup returns a boolean if a field has been set.
-func (o *Issue) IsSetCheckGroup() bool {
-	if o != nil && !IsNil(o.CheckGroup) {
-		return true
-	}
-
-	return false
 }
 
 // SetCheckGroup gets a reference to the given IssueCheckGroup and assigns it to the CheckGroup field.
@@ -295,28 +221,9 @@ func (o *Issue) GetCheckStatusOk() (*string, bool) {
 	return o.CheckStatus.Get(), o.CheckStatus.IsSet()
 }
 
-// IsSetCheckStatus returns a boolean if a field has been set.
-func (o *Issue) IsSetCheckStatus() bool {
-	if o != nil && o.CheckStatus.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCheckStatus gets a reference to the given NullableString and assigns it to the CheckStatus field.
 func (o *Issue) SetCheckStatus(v string) {
 	o.CheckStatus.Set(&v)
-}
-
-// SetCheckStatusNil sets the value for CheckStatus to be an explicit nil
-func (o *Issue) SetCheckStatusNil() {
-	o.CheckStatus.Set(nil)
-}
-
-// UnsetCheckStatus ensures that no value is present for CheckStatus, not even an explicit nil
-func (o *Issue) UnsetCheckStatus() {
-	o.CheckStatus.Unset()
 }
 
 // GetEndDate returns the EndDate field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -338,28 +245,9 @@ func (o *Issue) GetEndDateOk() (*time.Time, bool) {
 	return o.EndDate.Get(), o.EndDate.IsSet()
 }
 
-// IsSetEndDate returns a boolean if a field has been set.
-func (o *Issue) IsSetEndDate() bool {
-	if o != nil && o.EndDate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetEndDate gets a reference to the given NullableTime and assigns it to the EndDate field.
 func (o *Issue) SetEndDate(v time.Time) {
 	o.EndDate.Set(&v)
-}
-
-// SetEndDateNil sets the value for EndDate to be an explicit nil
-func (o *Issue) SetEndDateNil() {
-	o.EndDate.Set(nil)
-}
-
-// UnsetEndDate ensures that no value is present for EndDate, not even an explicit nil
-func (o *Issue) UnsetEndDate() {
-	o.EndDate.Unset()
 }
 
 // GetHealth returns the Health field value if set, zero value otherwise.
@@ -378,15 +266,6 @@ func (o *Issue) GetHealthOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.Health, true
-}
-
-// IsSetHealth returns a boolean if a field has been set.
-func (o *Issue) IsSetHealth() bool {
-	if o != nil && !IsNil(o.Health) {
-		return true
-	}
-
-	return false
 }
 
 // SetHealth gets a reference to the given int64 and assigns it to the Health field.
@@ -412,15 +291,6 @@ func (o *Issue) GetInUptimeOk() (*bool, bool) {
 	return o.InUptime, true
 }
 
-// IsSetInUptime returns a boolean if a field has been set.
-func (o *Issue) IsSetInUptime() bool {
-	if o != nil && !IsNil(o.InUptime) {
-		return true
-	}
-
-	return false
-}
-
 // SetInUptime gets a reference to the given bool and assigns it to the InUptime field.
 func (o *Issue) SetInUptime(v bool) {
 	o.InUptime = &v
@@ -442,15 +312,6 @@ func (o *Issue) GetIncidentOk() (*IssueIncident, bool) {
 		return nil, false
 	}
 	return o.Incident, true
-}
-
-// IsSetIncident returns a boolean if a field has been set.
-func (o *Issue) IsSetIncident() bool {
-	if o != nil && !IsNil(o.Incident) {
-		return true
-	}
-
-	return false
 }
 
 // SetIncident gets a reference to the given IssueIncident and assigns it to the Incident field.
@@ -477,28 +338,9 @@ func (o *Issue) GetLastCheckTimeOk() (*time.Time, bool) {
 	return o.LastCheckTime.Get(), o.LastCheckTime.IsSet()
 }
 
-// IsSetLastCheckTime returns a boolean if a field has been set.
-func (o *Issue) IsSetLastCheckTime() bool {
-	if o != nil && o.LastCheckTime.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastCheckTime gets a reference to the given NullableTime and assigns it to the LastCheckTime field.
 func (o *Issue) SetLastCheckTime(v time.Time) {
 	o.LastCheckTime.Set(&v)
-}
-
-// SetLastCheckTimeNil sets the value for LastCheckTime to be an explicit nil
-func (o *Issue) SetLastCheckTimeNil() {
-	o.LastCheckTime.Set(nil)
-}
-
-// UnsetLastCheckTime ensures that no value is present for LastCheckTime, not even an explicit nil
-func (o *Issue) UnsetLastCheckTime() {
-	o.LastCheckTime.Unset()
 }
 
 // GetLastError returns the LastError field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -520,28 +362,9 @@ func (o *Issue) GetLastErrorOk() (*string, bool) {
 	return o.LastError.Get(), o.LastError.IsSet()
 }
 
-// IsSetLastError returns a boolean if a field has been set.
-func (o *Issue) IsSetLastError() bool {
-	if o != nil && o.LastError.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastError gets a reference to the given NullableString and assigns it to the LastError field.
 func (o *Issue) SetLastError(v string) {
 	o.LastError.Set(&v)
-}
-
-// SetLastErrorNil sets the value for LastError to be an explicit nil
-func (o *Issue) SetLastErrorNil() {
-	o.LastError.Set(nil)
-}
-
-// UnsetLastError ensures that no value is present for LastError, not even an explicit nil
-func (o *Issue) UnsetLastError() {
-	o.LastError.Unset()
 }
 
 // GetLastMessage returns the LastMessage field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -563,28 +386,9 @@ func (o *Issue) GetLastMessageOk() (*string, bool) {
 	return o.LastMessage.Get(), o.LastMessage.IsSet()
 }
 
-// IsSetLastMessage returns a boolean if a field has been set.
-func (o *Issue) IsSetLastMessage() bool {
-	if o != nil && o.LastMessage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastMessage gets a reference to the given NullableString and assigns it to the LastMessage field.
 func (o *Issue) SetLastMessage(v string) {
 	o.LastMessage.Set(&v)
-}
-
-// SetLastMessageNil sets the value for LastMessage to be an explicit nil
-func (o *Issue) SetLastMessageNil() {
-	o.LastMessage.Set(nil)
-}
-
-// UnsetLastMessage ensures that no value is present for LastMessage, not even an explicit nil
-func (o *Issue) UnsetLastMessage() {
-	o.LastMessage.Unset()
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -603,15 +407,6 @@ func (o *Issue) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *Issue) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -637,15 +432,6 @@ func (o *Issue) GetSeverityOk() (*string, bool) {
 	return o.Severity, true
 }
 
-// IsSetSeverity returns a boolean if a field has been set.
-func (o *Issue) IsSetSeverity() bool {
-	if o != nil && !IsNil(o.Severity) {
-		return true
-	}
-
-	return false
-}
-
 // SetSeverity gets a reference to the given string and assigns it to the Severity field.
 func (o *Issue) SetSeverity(v string) {
 	o.Severity = &v
@@ -667,15 +453,6 @@ func (o *Issue) GetSeverityIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.SeverityId, true
-}
-
-// IsSetSeverityId returns a boolean if a field has been set.
-func (o *Issue) IsSetSeverityId() bool {
-	if o != nil && !IsNil(o.SeverityId) {
-		return true
-	}
-
-	return false
 }
 
 // SetSeverityId gets a reference to the given int64 and assigns it to the SeverityId field.
@@ -701,15 +478,6 @@ func (o *Issue) GetStartDateOk() (*time.Time, bool) {
 	return o.StartDate, true
 }
 
-// IsSetStartDate returns a boolean if a field has been set.
-func (o *Issue) IsSetStartDate() bool {
-	if o != nil && !IsNil(o.StartDate) {
-		return true
-	}
-
-	return false
-}
-
 // SetStartDate gets a reference to the given time.Time and assigns it to the StartDate field.
 func (o *Issue) SetStartDate(v time.Time) {
 	o.StartDate = &v
@@ -731,15 +499,6 @@ func (o *Issue) GetStatusOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *Issue) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.

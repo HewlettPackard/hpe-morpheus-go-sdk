@@ -113,15 +113,6 @@ func (o *SetupRequest) GetApplianceUrlOk() (*string, bool) {
 	return o.ApplianceUrl, true
 }
 
-// IsSetApplianceUrl returns a boolean if a field has been set.
-func (o *SetupRequest) IsSetApplianceUrl() bool {
-	if o != nil && !IsNil(o.ApplianceUrl) {
-		return true
-	}
-
-	return false
-}
-
 // SetApplianceUrl gets a reference to the given string and assigns it to the ApplianceUrl field.
 func (o *SetupRequest) SetApplianceUrl(v string) {
 	o.ApplianceUrl = &v
@@ -169,15 +160,6 @@ func (o *SetupRequest) GetFirstNameOk() (*string, bool) {
 	return o.FirstName, true
 }
 
-// IsSetFirstName returns a boolean if a field has been set.
-func (o *SetupRequest) IsSetFirstName() bool {
-	if o != nil && !IsNil(o.FirstName) {
-		return true
-	}
-
-	return false
-}
-
 // SetFirstName gets a reference to the given string and assigns it to the FirstName field.
 func (o *SetupRequest) SetFirstName(v string) {
 	o.FirstName = &v
@@ -199,15 +181,6 @@ func (o *SetupRequest) GetLastNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.LastName, true
-}
-
-// IsSetLastName returns a boolean if a field has been set.
-func (o *SetupRequest) IsSetLastName() bool {
-	if o != nil && !IsNil(o.LastName) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastName gets a reference to the given string and assigns it to the LastName field.
@@ -305,15 +278,6 @@ func (o *SetupRequest) GetLicenseKeyOk() (*string, bool) {
 	return o.LicenseKey, true
 }
 
-// IsSetLicenseKey returns a boolean if a field has been set.
-func (o *SetupRequest) IsSetLicenseKey() bool {
-	if o != nil && !IsNil(o.LicenseKey) {
-		return true
-	}
-
-	return false
-}
-
 // SetLicenseKey gets a reference to the given string and assigns it to the LicenseKey field.
 func (o *SetupRequest) SetLicenseKey(v string) {
 	o.LicenseKey = &v
@@ -335,15 +299,6 @@ func (o *SetupRequest) GetLogsOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Logs, true
-}
-
-// IsSetLogs returns a boolean if a field has been set.
-func (o *SetupRequest) IsSetLogs() bool {
-	if o != nil && !IsNil(o.Logs) {
-		return true
-	}
-
-	return false
 }
 
 // SetLogs gets a reference to the given bool and assigns it to the Logs field.
@@ -369,15 +324,6 @@ func (o *SetupRequest) GetMonitoringOk() (*bool, bool) {
 	return o.Monitoring, true
 }
 
-// IsSetMonitoring returns a boolean if a field has been set.
-func (o *SetupRequest) IsSetMonitoring() bool {
-	if o != nil && !IsNil(o.Monitoring) {
-		return true
-	}
-
-	return false
-}
-
 // SetMonitoring gets a reference to the given bool and assigns it to the Monitoring field.
 func (o *SetupRequest) SetMonitoring(v bool) {
 	o.Monitoring = &v
@@ -399,15 +345,6 @@ func (o *SetupRequest) GetBackupsOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Backups, true
-}
-
-// IsSetBackups returns a boolean if a field has been set.
-func (o *SetupRequest) IsSetBackups() bool {
-	if o != nil && !IsNil(o.Backups) {
-		return true
-	}
-
-	return false
 }
 
 // SetBackups gets a reference to the given bool and assigns it to the Backups field.

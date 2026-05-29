@@ -62,15 +62,6 @@ func (o *ListHostTypes200Response) GetServerTypesOk() ([]ListHostTypes200Respons
 	return o.ServerTypes, true
 }
 
-// IsSetServerTypes returns a boolean if a field has been set.
-func (o *ListHostTypes200Response) IsSetServerTypes() bool {
-	if o != nil && !IsNil(o.ServerTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetServerTypes gets a reference to the given []ListHostTypes200ResponseAllOfServerTypesInner and assigns it to the ServerTypes field.
 func (o *ListHostTypes200Response) SetServerTypes(v []ListHostTypes200ResponseAllOfServerTypesInner) {
 	o.ServerTypes = v
@@ -92,15 +83,6 @@ func (o *ListHostTypes200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMe
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListHostTypes200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

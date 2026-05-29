@@ -63,15 +63,6 @@ func (o *ListApps200Response) GetAppsOk() ([]ListApps200ResponseAllOfAppsInner, 
 	return o.Apps, true
 }
 
-// IsSetApps returns a boolean if a field has been set.
-func (o *ListApps200Response) IsSetApps() bool {
-	if o != nil && !IsNil(o.Apps) {
-		return true
-	}
-
-	return false
-}
-
 // SetApps gets a reference to the given []ListApps200ResponseAllOfAppsInner and assigns it to the Apps field.
 func (o *ListApps200Response) SetApps(v []ListApps200ResponseAllOfAppsInner) {
 	o.Apps = v
@@ -95,15 +86,6 @@ func (o *ListApps200Response) GetStatsOk() (*ListApps200ResponseAllOfStats, bool
 	return o.Stats, true
 }
 
-// IsSetStats returns a boolean if a field has been set.
-func (o *ListApps200Response) IsSetStats() bool {
-	if o != nil && !IsNil(o.Stats) {
-		return true
-	}
-
-	return false
-}
-
 // SetStats gets a reference to the given ListApps200ResponseAllOfStats and assigns it to the Stats field.
 func (o *ListApps200Response) SetStats(v ListApps200ResponseAllOfStats) {
 	o.Stats = &v
@@ -125,15 +107,6 @@ func (o *ListApps200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, b
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListApps200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

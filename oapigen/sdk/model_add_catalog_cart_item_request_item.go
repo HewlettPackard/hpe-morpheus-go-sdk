@@ -69,15 +69,6 @@ func (o *AddCatalogCartItemRequestItem) GetTypeOk() (*AddCatalogCartItemRequestI
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *AddCatalogCartItemRequestItem) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given AddCatalogCartItemRequestItemType and assigns it to the Type field.
 func (o *AddCatalogCartItemRequestItem) SetType(v AddCatalogCartItemRequestItemType) {
 	o.Type = &v
@@ -99,15 +90,6 @@ func (o *AddCatalogCartItemRequestItem) GetQuantityOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.Quantity, true
-}
-
-// IsSetQuantity returns a boolean if a field has been set.
-func (o *AddCatalogCartItemRequestItem) IsSetQuantity() bool {
-	if o != nil && !IsNil(o.Quantity) {
-		return true
-	}
-
-	return false
 }
 
 // SetQuantity gets a reference to the given int64 and assigns it to the Quantity field.
@@ -133,15 +115,6 @@ func (o *AddCatalogCartItemRequestItem) GetConfigOk() (map[string]interface{}, b
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *AddCatalogCartItemRequestItem) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
 func (o *AddCatalogCartItemRequestItem) SetConfig(v map[string]interface{}) {
 	o.Config = v
@@ -165,15 +138,6 @@ func (o *AddCatalogCartItemRequestItem) GetContextOk() (*string, bool) {
 	return o.Context, true
 }
 
-// IsSetContext returns a boolean if a field has been set.
-func (o *AddCatalogCartItemRequestItem) IsSetContext() bool {
-	if o != nil && !IsNil(o.Context) {
-		return true
-	}
-
-	return false
-}
-
 // SetContext gets a reference to the given string and assigns it to the Context field.
 func (o *AddCatalogCartItemRequestItem) SetContext(v string) {
 	o.Context = &v
@@ -195,15 +159,6 @@ func (o *AddCatalogCartItemRequestItem) GetTargetOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.Target, true
-}
-
-// IsSetTarget returns a boolean if a field has been set.
-func (o *AddCatalogCartItemRequestItem) IsSetTarget() bool {
-	if o != nil && !IsNil(o.Target) {
-		return true
-	}
-
-	return false
 }
 
 // SetTarget gets a reference to the given int64 and assigns it to the Target field.

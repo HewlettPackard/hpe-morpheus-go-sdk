@@ -94,28 +94,9 @@ func (o *UpdateNetworkTransportZoneRequestNetworkScope) GetDescriptionOk() (*str
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *UpdateNetworkTransportZoneRequestNetworkScope) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *UpdateNetworkTransportZoneRequestNetworkScope) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *UpdateNetworkTransportZoneRequestNetworkScope) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *UpdateNetworkTransportZoneRequestNetworkScope) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetVisibility returns the Visibility field value if set, zero value otherwise.
@@ -134,15 +115,6 @@ func (o *UpdateNetworkTransportZoneRequestNetworkScope) GetVisibilityOk() (*stri
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *UpdateNetworkTransportZoneRequestNetworkScope) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -166,15 +138,6 @@ func (o *UpdateNetworkTransportZoneRequestNetworkScope) GetTenantsOk() ([]Update
 		return nil, false
 	}
 	return o.Tenants, true
-}
-
-// IsSetTenants returns a boolean if a field has been set.
-func (o *UpdateNetworkTransportZoneRequestNetworkScope) IsSetTenants() bool {
-	if o != nil && !IsNil(o.Tenants) {
-		return true
-	}
-
-	return false
 }
 
 // SetTenants gets a reference to the given []UpdateNetworkTransportZoneRequestNetworkScopeTenantsInner and assigns it to the Tenants field.

@@ -65,15 +65,6 @@ func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) GetEnabledOk() (*bool
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -98,28 +89,9 @@ func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) GetVersionOk() (*stri
 	return o.Version.Get(), o.Version.IsSet()
 }
 
-// IsSetVersion returns a boolean if a field has been set.
-func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) IsSetVersion() bool {
-	if o != nil && o.Version.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetVersion gets a reference to the given NullableString and assigns it to the Version field.
 func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) SetVersion(v string) {
 	o.Version.Set(&v)
-}
-
-// SetVersionNil sets the value for Version to be an explicit nil
-func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) SetVersionNil() {
-	o.Version.Set(nil)
-}
-
-// UnsetVersion ensures that no value is present for Version, not even an explicit nil
-func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) UnsetVersion() {
-	o.Version.Unset()
 }
 
 // GetDefaultPolicy returns the DefaultPolicy field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -141,28 +113,9 @@ func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) GetDefaultPolicyOk() 
 	return o.DefaultPolicy.Get(), o.DefaultPolicy.IsSet()
 }
 
-// IsSetDefaultPolicy returns a boolean if a field has been set.
-func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) IsSetDefaultPolicy() bool {
-	if o != nil && o.DefaultPolicy.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultPolicy gets a reference to the given NullableString and assigns it to the DefaultPolicy field.
 func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) SetDefaultPolicy(v string) {
 	o.DefaultPolicy.Set(&v)
-}
-
-// SetDefaultPolicyNil sets the value for DefaultPolicy to be an explicit nil
-func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) SetDefaultPolicyNil() {
-	o.DefaultPolicy.Set(nil)
-}
-
-// UnsetDefaultPolicy ensures that no value is present for DefaultPolicy, not even an explicit nil
-func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) UnsetDefaultPolicy() {
-	o.DefaultPolicy.Unset()
 }
 
 // GetGlobal returns the Global field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -184,28 +137,9 @@ func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) GetGlobalOk() (*strin
 	return o.Global.Get(), o.Global.IsSet()
 }
 
-// IsSetGlobal returns a boolean if a field has been set.
-func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) IsSetGlobal() bool {
-	if o != nil && o.Global.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetGlobal gets a reference to the given NullableString and assigns it to the Global field.
 func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) SetGlobal(v string) {
 	o.Global.Set(&v)
-}
-
-// SetGlobalNil sets the value for Global to be an explicit nil
-func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) SetGlobalNil() {
-	o.Global.Set(nil)
-}
-
-// UnsetGlobal ensures that no value is present for Global, not even an explicit nil
-func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) UnsetGlobal() {
-	o.Global.Unset()
 }
 
 // GetRuleGroups returns the RuleGroups field value if set, zero value otherwise.
@@ -224,15 +158,6 @@ func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) GetRuleGroupsOk() ([]
 		return nil, false
 	}
 	return o.RuleGroups, true
-}
-
-// IsSetRuleGroups returns a boolean if a field has been set.
-func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) IsSetRuleGroups() bool {
-	if o != nil && !IsNil(o.RuleGroups) {
-		return true
-	}
-
-	return false
 }
 
 // SetRuleGroups gets a reference to the given []GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInner and assigns it to the RuleGroups field.

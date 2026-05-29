@@ -76,15 +76,6 @@ func (o *AddAppsRequest) GetTemplateIdOk() (*int64, bool) {
 	return o.TemplateId, true
 }
 
-// IsSetTemplateId returns a boolean if a field has been set.
-func (o *AddAppsRequest) IsSetTemplateId() bool {
-	if o != nil && !IsNil(o.TemplateId) {
-		return true
-	}
-
-	return false
-}
-
 // SetTemplateId gets a reference to the given int64 and assigns it to the TemplateId field.
 func (o *AddAppsRequest) SetTemplateId(v int64) {
 	o.TemplateId = &v
@@ -156,15 +147,6 @@ func (o *AddAppsRequest) GetDescriptionOk() (*string, bool) {
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *AddAppsRequest) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *AddAppsRequest) SetDescription(v string) {
 	o.Description = &v
@@ -187,15 +169,6 @@ func (o *AddAppsRequest) GetLabelsOk() ([]string, bool) {
 		return nil, false
 	}
 	return o.Labels, true
-}
-
-// IsSetLabels returns a boolean if a field has been set.
-func (o *AddAppsRequest) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
 }
 
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
@@ -221,15 +194,6 @@ func (o *AddAppsRequest) GetGroupOk() (*AddAppsRequestGroup, bool) {
 	return o.Group, true
 }
 
-// IsSetGroup returns a boolean if a field has been set.
-func (o *AddAppsRequest) IsSetGroup() bool {
-	if o != nil && !IsNil(o.Group) {
-		return true
-	}
-
-	return false
-}
-
 // SetGroup gets a reference to the given AddAppsRequestGroup and assigns it to the Group field.
 func (o *AddAppsRequest) SetGroup(v AddAppsRequestGroup) {
 	o.Group = &v
@@ -251,15 +215,6 @@ func (o *AddAppsRequest) GetDefaultCloudOk() (*AddAppsRequestDefaultCloud, bool)
 		return nil, false
 	}
 	return o.DefaultCloud, true
-}
-
-// IsSetDefaultCloud returns a boolean if a field has been set.
-func (o *AddAppsRequest) IsSetDefaultCloud() bool {
-	if o != nil && !IsNil(o.DefaultCloud) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultCloud gets a reference to the given AddAppsRequestDefaultCloud and assigns it to the DefaultCloud field.
@@ -285,15 +240,6 @@ func (o *AddAppsRequest) GetEnvironmentOk() (*string, bool) {
 	return o.Environment, true
 }
 
-// IsSetEnvironment returns a boolean if a field has been set.
-func (o *AddAppsRequest) IsSetEnvironment() bool {
-	if o != nil && !IsNil(o.Environment) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnvironment gets a reference to the given string and assigns it to the Environment field.
 func (o *AddAppsRequest) SetEnvironment(v string) {
 	o.Environment = &v
@@ -315,15 +261,6 @@ func (o *AddAppsRequest) GetTiersOk() (map[string]interface{}, bool) {
 		return map[string]interface{}{}, false
 	}
 	return o.Tiers, true
-}
-
-// IsSetTiers returns a boolean if a field has been set.
-func (o *AddAppsRequest) IsSetTiers() bool {
-	if o != nil && !IsNil(o.Tiers) {
-		return true
-	}
-
-	return false
 }
 
 // SetTiers gets a reference to the given map[string]interface{} and assigns it to the Tiers field.

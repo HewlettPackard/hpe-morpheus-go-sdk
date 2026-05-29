@@ -62,15 +62,6 @@ func (o *ListClusterWorkers200Response) GetWorkersOk() ([]ListClusterWorkers200R
 	return o.Workers, true
 }
 
-// IsSetWorkers returns a boolean if a field has been set.
-func (o *ListClusterWorkers200Response) IsSetWorkers() bool {
-	if o != nil && !IsNil(o.Workers) {
-		return true
-	}
-
-	return false
-}
-
 // SetWorkers gets a reference to the given []ListClusterWorkers200ResponseAllOfWorkersInner and assigns it to the Workers field.
 func (o *ListClusterWorkers200Response) SetWorkers(v []ListClusterWorkers200ResponseAllOfWorkersInner) {
 	o.Workers = v
@@ -92,15 +83,6 @@ func (o *ListClusterWorkers200Response) GetMetaOk() (*ListApprovals200ResponseAl
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListClusterWorkers200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

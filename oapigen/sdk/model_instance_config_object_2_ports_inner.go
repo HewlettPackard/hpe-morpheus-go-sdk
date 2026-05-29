@@ -66,15 +66,6 @@ func (o *InstanceConfigObject2PortsInner) GetPortOk() (*int64, bool) {
 	return o.Port, true
 }
 
-// IsSetPort returns a boolean if a field has been set.
-func (o *InstanceConfigObject2PortsInner) IsSetPort() bool {
-	if o != nil && !IsNil(o.Port) {
-		return true
-	}
-
-	return false
-}
-
 // SetPort gets a reference to the given int64 and assigns it to the Port field.
 func (o *InstanceConfigObject2PortsInner) SetPort(v int64) {
 	o.Port = &v
@@ -96,15 +87,6 @@ func (o *InstanceConfigObject2PortsInner) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *InstanceConfigObject2PortsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -131,28 +113,9 @@ func (o *InstanceConfigObject2PortsInner) GetLbOk() (*string, bool) {
 	return o.Lb.Get(), o.Lb.IsSet()
 }
 
-// IsSetLb returns a boolean if a field has been set.
-func (o *InstanceConfigObject2PortsInner) IsSetLb() bool {
-	if o != nil && o.Lb.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLb gets a reference to the given NullableString and assigns it to the Lb field.
 func (o *InstanceConfigObject2PortsInner) SetLb(v string) {
 	o.Lb.Set(&v)
-}
-
-// SetLbNil sets the value for Lb to be an explicit nil
-func (o *InstanceConfigObject2PortsInner) SetLbNil() {
-	o.Lb.Set(nil)
-}
-
-// UnsetLb ensures that no value is present for Lb, not even an explicit nil
-func (o *InstanceConfigObject2PortsInner) UnsetLb() {
-	o.Lb.Unset()
 }
 
 func (o InstanceConfigObject2PortsInner) MarshalJSON() ([]byte, error) {

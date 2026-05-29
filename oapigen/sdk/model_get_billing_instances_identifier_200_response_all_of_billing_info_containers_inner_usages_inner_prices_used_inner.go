@@ -64,15 +64,6 @@ func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInnerPricesUsedInner) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given string and assigns it to the Type field.
 func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInnerPricesUsedInner) SetType(v string) {
 	o.Type = &v
@@ -94,15 +85,6 @@ func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner
 		return nil, false
 	}
 	return o.PricePerUnit, true
-}
-
-// IsSetPricePerUnit returns a boolean if a field has been set.
-func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInnerPricesUsedInner) IsSetPricePerUnit() bool {
-	if o != nil && !IsNil(o.PricePerUnit) {
-		return true
-	}
-
-	return false
 }
 
 // SetPricePerUnit gets a reference to the given float32 and assigns it to the PricePerUnit field.
@@ -128,15 +110,6 @@ func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner
 	return o.CostPerUnit, true
 }
 
-// IsSetCostPerUnit returns a boolean if a field has been set.
-func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInnerPricesUsedInner) IsSetCostPerUnit() bool {
-	if o != nil && !IsNil(o.CostPerUnit) {
-		return true
-	}
-
-	return false
-}
-
 // SetCostPerUnit gets a reference to the given float32 and assigns it to the CostPerUnit field.
 func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInnerPricesUsedInner) SetCostPerUnit(v float32) {
 	o.CostPerUnit = &v
@@ -158,15 +131,6 @@ func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner
 		return nil, false
 	}
 	return o.Quantity, true
-}
-
-// IsSetQuantity returns a boolean if a field has been set.
-func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInnerPricesUsedInner) IsSetQuantity() bool {
-	if o != nil && !IsNil(o.Quantity) {
-		return true
-	}
-
-	return false
 }
 
 // SetQuantity gets a reference to the given int64 and assigns it to the Quantity field.

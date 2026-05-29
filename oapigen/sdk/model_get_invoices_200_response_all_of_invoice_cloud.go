@@ -63,15 +63,6 @@ func (o *GetInvoices200ResponseAllOfInvoiceCloud) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetInvoices200ResponseAllOfInvoiceCloud) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetInvoices200ResponseAllOfInvoiceCloud) SetId(v int64) {
 	o.Id = &v
@@ -95,15 +86,6 @@ func (o *GetInvoices200ResponseAllOfInvoiceCloud) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *GetInvoices200ResponseAllOfInvoiceCloud) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *GetInvoices200ResponseAllOfInvoiceCloud) SetName(v string) {
 	o.Name = &v
@@ -125,15 +107,6 @@ func (o *GetInvoices200ResponseAllOfInvoiceCloud) GetUuidOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Uuid, true
-}
-
-// IsSetUuid returns a boolean if a field has been set.
-func (o *GetInvoices200ResponseAllOfInvoiceCloud) IsSetUuid() bool {
-	if o != nil && !IsNil(o.Uuid) {
-		return true
-	}
-
-	return false
 }
 
 // SetUuid gets a reference to the given string and assigns it to the Uuid field.

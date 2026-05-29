@@ -84,15 +84,6 @@ func (o *AddIncident200ResponseAllOfIncident) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncident) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *AddIncident200ResponseAllOfIncident) SetId(v int64) {
 	o.Id = &v
@@ -114,15 +105,6 @@ func (o *AddIncident200ResponseAllOfIncident) GetAccountOk() (*AddIncident200Res
 		return nil, false
 	}
 	return o.Account, true
-}
-
-// IsSetAccount returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncident) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccount gets a reference to the given AddIncident200ResponseAllOfIncidentAccount and assigns it to the Account field.
@@ -149,28 +131,9 @@ func (o *AddIncident200ResponseAllOfIncident) GetAppOk() (*string, bool) {
 	return o.App.Get(), o.App.IsSet()
 }
 
-// IsSetApp returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncident) IsSetApp() bool {
-	if o != nil && o.App.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetApp gets a reference to the given NullableString and assigns it to the App field.
 func (o *AddIncident200ResponseAllOfIncident) SetApp(v string) {
 	o.App.Set(&v)
-}
-
-// SetAppNil sets the value for App to be an explicit nil
-func (o *AddIncident200ResponseAllOfIncident) SetAppNil() {
-	o.App.Set(nil)
-}
-
-// UnsetApp ensures that no value is present for App, not even an explicit nil
-func (o *AddIncident200ResponseAllOfIncident) UnsetApp() {
-	o.App.Unset()
 }
 
 // GetAutoClose returns the AutoClose field value if set, zero value otherwise.
@@ -189,15 +152,6 @@ func (o *AddIncident200ResponseAllOfIncident) GetAutoCloseOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.AutoClose, true
-}
-
-// IsSetAutoClose returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncident) IsSetAutoClose() bool {
-	if o != nil && !IsNil(o.AutoClose) {
-		return true
-	}
-
-	return false
 }
 
 // SetAutoClose gets a reference to the given bool and assigns it to the AutoClose field.
@@ -223,15 +177,6 @@ func (o *AddIncident200ResponseAllOfIncident) GetChannelIdOk() (*string, bool) {
 	return o.ChannelId, true
 }
 
-// IsSetChannelId returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncident) IsSetChannelId() bool {
-	if o != nil && !IsNil(o.ChannelId) {
-		return true
-	}
-
-	return false
-}
-
 // SetChannelId gets a reference to the given string and assigns it to the ChannelId field.
 func (o *AddIncident200ResponseAllOfIncident) SetChannelId(v string) {
 	o.ChannelId = &v
@@ -255,15 +200,6 @@ func (o *AddIncident200ResponseAllOfIncident) GetCheckGroupsOk() ([]AddIncident2
 	return o.CheckGroups, true
 }
 
-// IsSetCheckGroups returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncident) IsSetCheckGroups() bool {
-	if o != nil && !IsNil(o.CheckGroups) {
-		return true
-	}
-
-	return false
-}
-
 // SetCheckGroups gets a reference to the given []AddIncident200ResponseAllOfIncidentCheckGroupsInner and assigns it to the CheckGroups field.
 func (o *AddIncident200ResponseAllOfIncident) SetCheckGroups(v []AddIncident200ResponseAllOfIncidentCheckGroupsInner) {
 	o.CheckGroups = v
@@ -285,15 +221,6 @@ func (o *AddIncident200ResponseAllOfIncident) GetChecksOk() ([]AddIncident200Res
 		return nil, false
 	}
 	return o.Checks, true
-}
-
-// IsSetChecks returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncident) IsSetChecks() bool {
-	if o != nil && !IsNil(o.Checks) {
-		return true
-	}
-
-	return false
 }
 
 // SetChecks gets a reference to the given []AddIncident200ResponseAllOfIncidentChecksInner and assigns it to the Checks field.
@@ -320,28 +247,9 @@ func (o *AddIncident200ResponseAllOfIncident) GetCommentOk() (*string, bool) {
 	return o.Comment.Get(), o.Comment.IsSet()
 }
 
-// IsSetComment returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncident) IsSetComment() bool {
-	if o != nil && o.Comment.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetComment gets a reference to the given NullableString and assigns it to the Comment field.
 func (o *AddIncident200ResponseAllOfIncident) SetComment(v string) {
 	o.Comment.Set(&v)
-}
-
-// SetCommentNil sets the value for Comment to be an explicit nil
-func (o *AddIncident200ResponseAllOfIncident) SetCommentNil() {
-	o.Comment.Set(nil)
-}
-
-// UnsetComment ensures that no value is present for Comment, not even an explicit nil
-func (o *AddIncident200ResponseAllOfIncident) UnsetComment() {
-	o.Comment.Unset()
 }
 
 // GetDisplayName returns the DisplayName field value if set, zero value otherwise.
@@ -360,15 +268,6 @@ func (o *AddIncident200ResponseAllOfIncident) GetDisplayNameOk() (*string, bool)
 		return nil, false
 	}
 	return o.DisplayName, true
-}
-
-// IsSetDisplayName returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncident) IsSetDisplayName() bool {
-	if o != nil && !IsNil(o.DisplayName) {
-		return true
-	}
-
-	return false
 }
 
 // SetDisplayName gets a reference to the given string and assigns it to the DisplayName field.
@@ -395,28 +294,9 @@ func (o *AddIncident200ResponseAllOfIncident) GetDurationOk() (*string, bool) {
 	return o.Duration.Get(), o.Duration.IsSet()
 }
 
-// IsSetDuration returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncident) IsSetDuration() bool {
-	if o != nil && o.Duration.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDuration gets a reference to the given NullableString and assigns it to the Duration field.
 func (o *AddIncident200ResponseAllOfIncident) SetDuration(v string) {
 	o.Duration.Set(&v)
-}
-
-// SetDurationNil sets the value for Duration to be an explicit nil
-func (o *AddIncident200ResponseAllOfIncident) SetDurationNil() {
-	o.Duration.Set(nil)
-}
-
-// UnsetDuration ensures that no value is present for Duration, not even an explicit nil
-func (o *AddIncident200ResponseAllOfIncident) UnsetDuration() {
-	o.Duration.Unset()
 }
 
 // GetEndDate returns the EndDate field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -438,28 +318,9 @@ func (o *AddIncident200ResponseAllOfIncident) GetEndDateOk() (*time.Time, bool) 
 	return o.EndDate.Get(), o.EndDate.IsSet()
 }
 
-// IsSetEndDate returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncident) IsSetEndDate() bool {
-	if o != nil && o.EndDate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetEndDate gets a reference to the given NullableTime and assigns it to the EndDate field.
 func (o *AddIncident200ResponseAllOfIncident) SetEndDate(v time.Time) {
 	o.EndDate.Set(&v)
-}
-
-// SetEndDateNil sets the value for EndDate to be an explicit nil
-func (o *AddIncident200ResponseAllOfIncident) SetEndDateNil() {
-	o.EndDate.Set(nil)
-}
-
-// UnsetEndDate ensures that no value is present for EndDate, not even an explicit nil
-func (o *AddIncident200ResponseAllOfIncident) UnsetEndDate() {
-	o.EndDate.Unset()
 }
 
 // GetInUptime returns the InUptime field value if set, zero value otherwise.
@@ -478,15 +339,6 @@ func (o *AddIncident200ResponseAllOfIncident) GetInUptimeOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.InUptime, true
-}
-
-// IsSetInUptime returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncident) IsSetInUptime() bool {
-	if o != nil && !IsNil(o.InUptime) {
-		return true
-	}
-
-	return false
 }
 
 // SetInUptime gets a reference to the given bool and assigns it to the InUptime field.
@@ -512,15 +364,6 @@ func (o *AddIncident200ResponseAllOfIncident) GetMutedOk() (*bool, bool) {
 	return o.Muted, true
 }
 
-// IsSetMuted returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncident) IsSetMuted() bool {
-	if o != nil && !IsNil(o.Muted) {
-		return true
-	}
-
-	return false
-}
-
 // SetMuted gets a reference to the given bool and assigns it to the Muted field.
 func (o *AddIncident200ResponseAllOfIncident) SetMuted(v bool) {
 	o.Muted = &v
@@ -544,15 +387,6 @@ func (o *AddIncident200ResponseAllOfIncident) GetLastCheckTimeOk() (*time.Time, 
 	return o.LastCheckTime, true
 }
 
-// IsSetLastCheckTime returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncident) IsSetLastCheckTime() bool {
-	if o != nil && !IsNil(o.LastCheckTime) {
-		return true
-	}
-
-	return false
-}
-
 // SetLastCheckTime gets a reference to the given time.Time and assigns it to the LastCheckTime field.
 func (o *AddIncident200ResponseAllOfIncident) SetLastCheckTime(v time.Time) {
 	o.LastCheckTime = &v
@@ -574,15 +408,6 @@ func (o *AddIncident200ResponseAllOfIncident) GetLastErrorOk() (*string, bool) {
 		return nil, false
 	}
 	return o.LastError, true
-}
-
-// IsSetLastError returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncident) IsSetLastError() bool {
-	if o != nil && !IsNil(o.LastError) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastError gets a reference to the given string and assigns it to the LastError field.
@@ -609,28 +434,9 @@ func (o *AddIncident200ResponseAllOfIncident) GetLastMessageOk() (*string, bool)
 	return o.LastMessage.Get(), o.LastMessage.IsSet()
 }
 
-// IsSetLastMessage returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncident) IsSetLastMessage() bool {
-	if o != nil && o.LastMessage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastMessage gets a reference to the given NullableString and assigns it to the LastMessage field.
 func (o *AddIncident200ResponseAllOfIncident) SetLastMessage(v string) {
 	o.LastMessage.Set(&v)
-}
-
-// SetLastMessageNil sets the value for LastMessage to be an explicit nil
-func (o *AddIncident200ResponseAllOfIncident) SetLastMessageNil() {
-	o.LastMessage.Set(nil)
-}
-
-// UnsetLastMessage ensures that no value is present for LastMessage, not even an explicit nil
-func (o *AddIncident200ResponseAllOfIncident) UnsetLastMessage() {
-	o.LastMessage.Unset()
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -649,15 +455,6 @@ func (o *AddIncident200ResponseAllOfIncident) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncident) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -684,28 +481,9 @@ func (o *AddIncident200ResponseAllOfIncident) GetResolutionOk() (*string, bool) 
 	return o.Resolution.Get(), o.Resolution.IsSet()
 }
 
-// IsSetResolution returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncident) IsSetResolution() bool {
-	if o != nil && o.Resolution.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetResolution gets a reference to the given NullableString and assigns it to the Resolution field.
 func (o *AddIncident200ResponseAllOfIncident) SetResolution(v string) {
 	o.Resolution.Set(&v)
-}
-
-// SetResolutionNil sets the value for Resolution to be an explicit nil
-func (o *AddIncident200ResponseAllOfIncident) SetResolutionNil() {
-	o.Resolution.Set(nil)
-}
-
-// UnsetResolution ensures that no value is present for Resolution, not even an explicit nil
-func (o *AddIncident200ResponseAllOfIncident) UnsetResolution() {
-	o.Resolution.Unset()
 }
 
 // GetSeverity returns the Severity field value if set, zero value otherwise.
@@ -724,15 +502,6 @@ func (o *AddIncident200ResponseAllOfIncident) GetSeverityOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Severity, true
-}
-
-// IsSetSeverity returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncident) IsSetSeverity() bool {
-	if o != nil && !IsNil(o.Severity) {
-		return true
-	}
-
-	return false
 }
 
 // SetSeverity gets a reference to the given string and assigns it to the Severity field.
@@ -758,15 +527,6 @@ func (o *AddIncident200ResponseAllOfIncident) GetSeverityIdOk() (*int64, bool) {
 	return o.SeverityId, true
 }
 
-// IsSetSeverityId returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncident) IsSetSeverityId() bool {
-	if o != nil && !IsNil(o.SeverityId) {
-		return true
-	}
-
-	return false
-}
-
 // SetSeverityId gets a reference to the given int64 and assigns it to the SeverityId field.
 func (o *AddIncident200ResponseAllOfIncident) SetSeverityId(v int64) {
 	o.SeverityId = &v
@@ -788,15 +548,6 @@ func (o *AddIncident200ResponseAllOfIncident) GetStartDateOk() (*time.Time, bool
 		return nil, false
 	}
 	return o.StartDate, true
-}
-
-// IsSetStartDate returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncident) IsSetStartDate() bool {
-	if o != nil && !IsNil(o.StartDate) {
-		return true
-	}
-
-	return false
 }
 
 // SetStartDate gets a reference to the given time.Time and assigns it to the StartDate field.
@@ -822,15 +573,6 @@ func (o *AddIncident200ResponseAllOfIncident) GetStatusOk() (*string, bool) {
 	return o.Status, true
 }
 
-// IsSetStatus returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncident) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
-}
-
 // SetStatus gets a reference to the given string and assigns it to the Status field.
 func (o *AddIncident200ResponseAllOfIncident) SetStatus(v string) {
 	o.Status = &v
@@ -852,15 +594,6 @@ func (o *AddIncident200ResponseAllOfIncident) GetVisibilityOk() (*string, bool) 
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *AddIncident200ResponseAllOfIncident) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.

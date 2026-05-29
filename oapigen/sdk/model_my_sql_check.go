@@ -116,28 +116,9 @@ func (o *MySqlCheck) GetDescriptionOk() (*string, bool) {
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *MySqlCheck) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *MySqlCheck) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *MySqlCheck) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *MySqlCheck) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetCheckInterval returns the CheckInterval field value if set, zero value otherwise.
@@ -156,15 +137,6 @@ func (o *MySqlCheck) GetCheckIntervalOk() (*int32, bool) {
 		return nil, false
 	}
 	return o.CheckInterval, true
-}
-
-// IsSetCheckInterval returns a boolean if a field has been set.
-func (o *MySqlCheck) IsSetCheckInterval() bool {
-	if o != nil && !IsNil(o.CheckInterval) {
-		return true
-	}
-
-	return false
 }
 
 // SetCheckInterval gets a reference to the given int32 and assigns it to the CheckInterval field.
@@ -190,15 +162,6 @@ func (o *MySqlCheck) GetInUptimeOk() (*bool, bool) {
 	return o.InUptime, true
 }
 
-// IsSetInUptime returns a boolean if a field has been set.
-func (o *MySqlCheck) IsSetInUptime() bool {
-	if o != nil && !IsNil(o.InUptime) {
-		return true
-	}
-
-	return false
-}
-
 // SetInUptime gets a reference to the given bool and assigns it to the InUptime field.
 func (o *MySqlCheck) SetInUptime(v bool) {
 	o.InUptime = &v
@@ -220,15 +183,6 @@ func (o *MySqlCheck) GetActiveOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Active, true
-}
-
-// IsSetActive returns a boolean if a field has been set.
-func (o *MySqlCheck) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
 }
 
 // SetActive gets a reference to the given bool and assigns it to the Active field.
@@ -254,15 +208,6 @@ func (o *MySqlCheck) GetSeverityOk() (*string, bool) {
 	return o.Severity, true
 }
 
-// IsSetSeverity returns a boolean if a field has been set.
-func (o *MySqlCheck) IsSetSeverity() bool {
-	if o != nil && !IsNil(o.Severity) {
-		return true
-	}
-
-	return false
-}
-
 // SetSeverity gets a reference to the given string and assigns it to the Severity field.
 func (o *MySqlCheck) SetSeverity(v string) {
 	o.Severity = &v
@@ -286,15 +231,6 @@ func (o *MySqlCheck) GetCheckTypeOk() (*MySqlCheckAllOfCheckType, bool) {
 	return o.CheckType, true
 }
 
-// IsSetCheckType returns a boolean if a field has been set.
-func (o *MySqlCheck) IsSetCheckType() bool {
-	if o != nil && !IsNil(o.CheckType) {
-		return true
-	}
-
-	return false
-}
-
 // SetCheckType gets a reference to the given MySqlCheckAllOfCheckType and assigns it to the CheckType field.
 func (o *MySqlCheck) SetCheckType(v MySqlCheckAllOfCheckType) {
 	o.CheckType = &v
@@ -316,15 +252,6 @@ func (o *MySqlCheck) GetConfigOk() (*MySqlCheckAllOfConfig, bool) {
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *MySqlCheck) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given MySqlCheckAllOfConfig and assigns it to the Config field.

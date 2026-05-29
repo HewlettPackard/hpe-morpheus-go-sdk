@@ -70,15 +70,6 @@ func (o *ListCatalogTypes200ResponseAllOfCatalogItemTypesInner) GetIdOk() (*int6
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListCatalogTypes200ResponseAllOfCatalogItemTypesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListCatalogTypes200ResponseAllOfCatalogItemTypesInner) SetId(v int64) {
 	o.Id = &v
@@ -100,15 +91,6 @@ func (o *ListCatalogTypes200ResponseAllOfCatalogItemTypesInner) GetNameOk() (*st
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListCatalogTypes200ResponseAllOfCatalogItemTypesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -135,28 +117,9 @@ func (o *ListCatalogTypes200ResponseAllOfCatalogItemTypesInner) GetDescriptionOk
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ListCatalogTypes200ResponseAllOfCatalogItemTypesInner) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListCatalogTypes200ResponseAllOfCatalogItemTypesInner) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *ListCatalogTypes200ResponseAllOfCatalogItemTypesInner) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *ListCatalogTypes200ResponseAllOfCatalogItemTypesInner) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
@@ -175,15 +138,6 @@ func (o *ListCatalogTypes200ResponseAllOfCatalogItemTypesInner) GetTypeOk() (*st
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *ListCatalogTypes200ResponseAllOfCatalogItemTypesInner) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.
@@ -209,15 +163,6 @@ func (o *ListCatalogTypes200ResponseAllOfCatalogItemTypesInner) GetContextOk() (
 	return o.Context, true
 }
 
-// IsSetContext returns a boolean if a field has been set.
-func (o *ListCatalogTypes200ResponseAllOfCatalogItemTypesInner) IsSetContext() bool {
-	if o != nil && !IsNil(o.Context) {
-		return true
-	}
-
-	return false
-}
-
 // SetContext gets a reference to the given string and assigns it to the Context field.
 func (o *ListCatalogTypes200ResponseAllOfCatalogItemTypesInner) SetContext(v string) {
 	o.Context = &v
@@ -239,15 +184,6 @@ func (o *ListCatalogTypes200ResponseAllOfCatalogItemTypesInner) GetFeaturedOk() 
 		return nil, false
 	}
 	return o.Featured, true
-}
-
-// IsSetFeatured returns a boolean if a field has been set.
-func (o *ListCatalogTypes200ResponseAllOfCatalogItemTypesInner) IsSetFeatured() bool {
-	if o != nil && !IsNil(o.Featured) {
-		return true
-	}
-
-	return false
 }
 
 // SetFeatured gets a reference to the given bool and assigns it to the Featured field.
@@ -273,15 +209,6 @@ func (o *ListCatalogTypes200ResponseAllOfCatalogItemTypesInner) GetAllowQuantity
 	return o.AllowQuantity, true
 }
 
-// IsSetAllowQuantity returns a boolean if a field has been set.
-func (o *ListCatalogTypes200ResponseAllOfCatalogItemTypesInner) IsSetAllowQuantity() bool {
-	if o != nil && !IsNil(o.AllowQuantity) {
-		return true
-	}
-
-	return false
-}
-
 // SetAllowQuantity gets a reference to the given bool and assigns it to the AllowQuantity field.
 func (o *ListCatalogTypes200ResponseAllOfCatalogItemTypesInner) SetAllowQuantity(v bool) {
 	o.AllowQuantity = &v
@@ -303,15 +230,6 @@ func (o *ListCatalogTypes200ResponseAllOfCatalogItemTypesInner) GetImagePathOk()
 		return nil, false
 	}
 	return o.ImagePath, true
-}
-
-// IsSetImagePath returns a boolean if a field has been set.
-func (o *ListCatalogTypes200ResponseAllOfCatalogItemTypesInner) IsSetImagePath() bool {
-	if o != nil && !IsNil(o.ImagePath) {
-		return true
-	}
-
-	return false
 }
 
 // SetImagePath gets a reference to the given string and assigns it to the ImagePath field.
@@ -337,15 +255,6 @@ func (o *ListCatalogTypes200ResponseAllOfCatalogItemTypesInner) GetDarkImagePath
 	return o.DarkImagePath, true
 }
 
-// IsSetDarkImagePath returns a boolean if a field has been set.
-func (o *ListCatalogTypes200ResponseAllOfCatalogItemTypesInner) IsSetDarkImagePath() bool {
-	if o != nil && !IsNil(o.DarkImagePath) {
-		return true
-	}
-
-	return false
-}
-
 // SetDarkImagePath gets a reference to the given string and assigns it to the DarkImagePath field.
 func (o *ListCatalogTypes200ResponseAllOfCatalogItemTypesInner) SetDarkImagePath(v string) {
 	o.DarkImagePath = &v
@@ -367,15 +276,6 @@ func (o *ListCatalogTypes200ResponseAllOfCatalogItemTypesInner) GetFormTypeOk() 
 		return nil, false
 	}
 	return o.FormType, true
-}
-
-// IsSetFormType returns a boolean if a field has been set.
-func (o *ListCatalogTypes200ResponseAllOfCatalogItemTypesInner) IsSetFormType() bool {
-	if o != nil && !IsNil(o.FormType) {
-		return true
-	}
-
-	return false
 }
 
 // SetFormType gets a reference to the given string and assigns it to the FormType field.

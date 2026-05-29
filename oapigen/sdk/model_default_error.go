@@ -61,15 +61,6 @@ func (o *DefaultError) GetMsgOk() (*string, bool) {
 	return o.Msg, true
 }
 
-// IsSetMsg returns a boolean if a field has been set.
-func (o *DefaultError) IsSetMsg() bool {
-	if o != nil && !IsNil(o.Msg) {
-		return true
-	}
-
-	return false
-}
-
 // SetMsg gets a reference to the given string and assigns it to the Msg field.
 func (o *DefaultError) SetMsg(v string) {
 	o.Msg = &v

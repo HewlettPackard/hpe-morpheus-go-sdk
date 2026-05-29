@@ -76,15 +76,6 @@ func (o *UpdateCloudFoldersRequestFolderResourcePermissions) GetAllOk() (*bool, 
 	return o.All, true
 }
 
-// IsSetAll returns a boolean if a field has been set.
-func (o *UpdateCloudFoldersRequestFolderResourcePermissions) IsSetAll() bool {
-	if o != nil && !IsNil(o.All) {
-		return true
-	}
-
-	return false
-}
-
 // SetAll gets a reference to the given bool and assigns it to the All field.
 func (o *UpdateCloudFoldersRequestFolderResourcePermissions) SetAll(v bool) {
 	o.All = &v
@@ -106,15 +97,6 @@ func (o *UpdateCloudFoldersRequestFolderResourcePermissions) GetSitesOk() ([]Upd
 		return nil, false
 	}
 	return o.Sites, true
-}
-
-// IsSetSites returns a boolean if a field has been set.
-func (o *UpdateCloudFoldersRequestFolderResourcePermissions) IsSetSites() bool {
-	if o != nil && !IsNil(o.Sites) {
-		return true
-	}
-
-	return false
 }
 
 // SetSites gets a reference to the given []UpdateCloudFoldersRequestFolderResourcePermissionsSitesInner and assigns it to the Sites field.
@@ -140,15 +122,6 @@ func (o *UpdateCloudFoldersRequestFolderResourcePermissions) GetAllPlansOk() (*b
 	return o.AllPlans, true
 }
 
-// IsSetAllPlans returns a boolean if a field has been set.
-func (o *UpdateCloudFoldersRequestFolderResourcePermissions) IsSetAllPlans() bool {
-	if o != nil && !IsNil(o.AllPlans) {
-		return true
-	}
-
-	return false
-}
-
 // SetAllPlans gets a reference to the given bool and assigns it to the AllPlans field.
 func (o *UpdateCloudFoldersRequestFolderResourcePermissions) SetAllPlans(v bool) {
 	o.AllPlans = &v
@@ -170,15 +143,6 @@ func (o *UpdateCloudFoldersRequestFolderResourcePermissions) GetPlansOk() ([]Upd
 		return nil, false
 	}
 	return o.Plans, true
-}
-
-// IsSetPlans returns a boolean if a field has been set.
-func (o *UpdateCloudFoldersRequestFolderResourcePermissions) IsSetPlans() bool {
-	if o != nil && !IsNil(o.Plans) {
-		return true
-	}
-
-	return false
 }
 
 // SetPlans gets a reference to the given []UpdateCloudFoldersRequestFolderResourcePermissionsPlansInner and assigns it to the Plans field.

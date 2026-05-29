@@ -170,15 +170,6 @@ func (o *ApplianceSettingsUpdate) GetApplianceUrlOk() (*string, bool) {
 	return o.ApplianceUrl, true
 }
 
-// IsSetApplianceUrl returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetApplianceUrl() bool {
-	if o != nil && !IsNil(o.ApplianceUrl) {
-		return true
-	}
-
-	return false
-}
-
 // SetApplianceUrl gets a reference to the given string and assigns it to the ApplianceUrl field.
 func (o *ApplianceSettingsUpdate) SetApplianceUrl(v string) {
 	o.ApplianceUrl = &v
@@ -203,28 +194,9 @@ func (o *ApplianceSettingsUpdate) GetInternalApplianceUrlOk() (*string, bool) {
 	return o.InternalApplianceUrl.Get(), o.InternalApplianceUrl.IsSet()
 }
 
-// IsSetInternalApplianceUrl returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetInternalApplianceUrl() bool {
-	if o != nil && o.InternalApplianceUrl.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInternalApplianceUrl gets a reference to the given NullableString and assigns it to the InternalApplianceUrl field.
 func (o *ApplianceSettingsUpdate) SetInternalApplianceUrl(v string) {
 	o.InternalApplianceUrl.Set(&v)
-}
-
-// SetInternalApplianceUrlNil sets the value for InternalApplianceUrl to be an explicit nil
-func (o *ApplianceSettingsUpdate) SetInternalApplianceUrlNil() {
-	o.InternalApplianceUrl.Set(nil)
-}
-
-// UnsetInternalApplianceUrl ensures that no value is present for InternalApplianceUrl, not even an explicit nil
-func (o *ApplianceSettingsUpdate) UnsetInternalApplianceUrl() {
-	o.InternalApplianceUrl.Unset()
 }
 
 // GetCorsAllowed returns the CorsAllowed field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -246,28 +218,9 @@ func (o *ApplianceSettingsUpdate) GetCorsAllowedOk() (*string, bool) {
 	return o.CorsAllowed.Get(), o.CorsAllowed.IsSet()
 }
 
-// IsSetCorsAllowed returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetCorsAllowed() bool {
-	if o != nil && o.CorsAllowed.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCorsAllowed gets a reference to the given NullableString and assigns it to the CorsAllowed field.
 func (o *ApplianceSettingsUpdate) SetCorsAllowed(v string) {
 	o.CorsAllowed.Set(&v)
-}
-
-// SetCorsAllowedNil sets the value for CorsAllowed to be an explicit nil
-func (o *ApplianceSettingsUpdate) SetCorsAllowedNil() {
-	o.CorsAllowed.Set(nil)
-}
-
-// UnsetCorsAllowed ensures that no value is present for CorsAllowed, not even an explicit nil
-func (o *ApplianceSettingsUpdate) UnsetCorsAllowed() {
-	o.CorsAllowed.Unset()
 }
 
 // GetRegistrationEnabled returns the RegistrationEnabled field value if set, zero value otherwise.
@@ -286,15 +239,6 @@ func (o *ApplianceSettingsUpdate) GetRegistrationEnabledOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.RegistrationEnabled, true
-}
-
-// IsSetRegistrationEnabled returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetRegistrationEnabled() bool {
-	if o != nil && !IsNil(o.RegistrationEnabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetRegistrationEnabled gets a reference to the given bool and assigns it to the RegistrationEnabled field.
@@ -320,15 +264,6 @@ func (o *ApplianceSettingsUpdate) GetDefaultRoleIdOk() (*int64, bool) {
 	return o.DefaultRoleId, true
 }
 
-// IsSetDefaultRoleId returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetDefaultRoleId() bool {
-	if o != nil && !IsNil(o.DefaultRoleId) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultRoleId gets a reference to the given int64 and assigns it to the DefaultRoleId field.
 func (o *ApplianceSettingsUpdate) SetDefaultRoleId(v int64) {
 	o.DefaultRoleId = &v
@@ -350,15 +285,6 @@ func (o *ApplianceSettingsUpdate) GetDefaultUserRoleIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.DefaultUserRoleId, true
-}
-
-// IsSetDefaultUserRoleId returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetDefaultUserRoleId() bool {
-	if o != nil && !IsNil(o.DefaultUserRoleId) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultUserRoleId gets a reference to the given int64 and assigns it to the DefaultUserRoleId field.
@@ -384,15 +310,6 @@ func (o *ApplianceSettingsUpdate) GetDockerPrivilegedModeOk() (*bool, bool) {
 	return o.DockerPrivilegedMode, true
 }
 
-// IsSetDockerPrivilegedMode returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetDockerPrivilegedMode() bool {
-	if o != nil && !IsNil(o.DockerPrivilegedMode) {
-		return true
-	}
-
-	return false
-}
-
 // SetDockerPrivilegedMode gets a reference to the given bool and assigns it to the DockerPrivilegedMode field.
 func (o *ApplianceSettingsUpdate) SetDockerPrivilegedMode(v bool) {
 	o.DockerPrivilegedMode = &v
@@ -414,15 +331,6 @@ func (o *ApplianceSettingsUpdate) GetPasswordMinLengthOk() (*string, bool) {
 		return nil, false
 	}
 	return o.PasswordMinLength, true
-}
-
-// IsSetPasswordMinLength returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetPasswordMinLength() bool {
-	if o != nil && !IsNil(o.PasswordMinLength) {
-		return true
-	}
-
-	return false
 }
 
 // SetPasswordMinLength gets a reference to the given string and assigns it to the PasswordMinLength field.
@@ -448,15 +356,6 @@ func (o *ApplianceSettingsUpdate) GetPasswordMinUpperCaseOk() (*string, bool) {
 	return o.PasswordMinUpperCase, true
 }
 
-// IsSetPasswordMinUpperCase returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetPasswordMinUpperCase() bool {
-	if o != nil && !IsNil(o.PasswordMinUpperCase) {
-		return true
-	}
-
-	return false
-}
-
 // SetPasswordMinUpperCase gets a reference to the given string and assigns it to the PasswordMinUpperCase field.
 func (o *ApplianceSettingsUpdate) SetPasswordMinUpperCase(v string) {
 	o.PasswordMinUpperCase = &v
@@ -478,15 +377,6 @@ func (o *ApplianceSettingsUpdate) GetPasswordMinNumbersOk() (*string, bool) {
 		return nil, false
 	}
 	return o.PasswordMinNumbers, true
-}
-
-// IsSetPasswordMinNumbers returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetPasswordMinNumbers() bool {
-	if o != nil && !IsNil(o.PasswordMinNumbers) {
-		return true
-	}
-
-	return false
 }
 
 // SetPasswordMinNumbers gets a reference to the given string and assigns it to the PasswordMinNumbers field.
@@ -512,15 +402,6 @@ func (o *ApplianceSettingsUpdate) GetPasswordMinSymbolsOk() (*string, bool) {
 	return o.PasswordMinSymbols, true
 }
 
-// IsSetPasswordMinSymbols returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetPasswordMinSymbols() bool {
-	if o != nil && !IsNil(o.PasswordMinSymbols) {
-		return true
-	}
-
-	return false
-}
-
 // SetPasswordMinSymbols gets a reference to the given string and assigns it to the PasswordMinSymbols field.
 func (o *ApplianceSettingsUpdate) SetPasswordMinSymbols(v string) {
 	o.PasswordMinSymbols = &v
@@ -542,15 +423,6 @@ func (o *ApplianceSettingsUpdate) GetUserBrowserSessionTimeoutOk() (*string, boo
 		return nil, false
 	}
 	return o.UserBrowserSessionTimeout, true
-}
-
-// IsSetUserBrowserSessionTimeout returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetUserBrowserSessionTimeout() bool {
-	if o != nil && !IsNil(o.UserBrowserSessionTimeout) {
-		return true
-	}
-
-	return false
 }
 
 // SetUserBrowserSessionTimeout gets a reference to the given string and assigns it to the UserBrowserSessionTimeout field.
@@ -576,15 +448,6 @@ func (o *ApplianceSettingsUpdate) GetUserBrowserSessionWarningOk() (*string, boo
 	return o.UserBrowserSessionWarning, true
 }
 
-// IsSetUserBrowserSessionWarning returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetUserBrowserSessionWarning() bool {
-	if o != nil && !IsNil(o.UserBrowserSessionWarning) {
-		return true
-	}
-
-	return false
-}
-
 // SetUserBrowserSessionWarning gets a reference to the given string and assigns it to the UserBrowserSessionWarning field.
 func (o *ApplianceSettingsUpdate) SetUserBrowserSessionWarning(v string) {
 	o.UserBrowserSessionWarning = &v
@@ -606,15 +469,6 @@ func (o *ApplianceSettingsUpdate) GetExpirePwdDaysOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.ExpirePwdDays, true
-}
-
-// IsSetExpirePwdDays returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetExpirePwdDays() bool {
-	if o != nil && !IsNil(o.ExpirePwdDays) {
-		return true
-	}
-
-	return false
 }
 
 // SetExpirePwdDays gets a reference to the given int64 and assigns it to the ExpirePwdDays field.
@@ -640,15 +494,6 @@ func (o *ApplianceSettingsUpdate) GetDisableAfterAttemptsOk() (*int64, bool) {
 	return o.DisableAfterAttempts, true
 }
 
-// IsSetDisableAfterAttempts returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetDisableAfterAttempts() bool {
-	if o != nil && !IsNil(o.DisableAfterAttempts) {
-		return true
-	}
-
-	return false
-}
-
 // SetDisableAfterAttempts gets a reference to the given int64 and assigns it to the DisableAfterAttempts field.
 func (o *ApplianceSettingsUpdate) SetDisableAfterAttempts(v int64) {
 	o.DisableAfterAttempts = &v
@@ -670,15 +515,6 @@ func (o *ApplianceSettingsUpdate) GetDisableAfterDaysInactiveOk() (*int64, bool)
 		return nil, false
 	}
 	return o.DisableAfterDaysInactive, true
-}
-
-// IsSetDisableAfterDaysInactive returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetDisableAfterDaysInactive() bool {
-	if o != nil && !IsNil(o.DisableAfterDaysInactive) {
-		return true
-	}
-
-	return false
 }
 
 // SetDisableAfterDaysInactive gets a reference to the given int64 and assigns it to the DisableAfterDaysInactive field.
@@ -704,15 +540,6 @@ func (o *ApplianceSettingsUpdate) GetWarnUserDaysBeforeOk() (*int64, bool) {
 	return o.WarnUserDaysBefore, true
 }
 
-// IsSetWarnUserDaysBefore returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetWarnUserDaysBefore() bool {
-	if o != nil && !IsNil(o.WarnUserDaysBefore) {
-		return true
-	}
-
-	return false
-}
-
 // SetWarnUserDaysBefore gets a reference to the given int64 and assigns it to the WarnUserDaysBefore field.
 func (o *ApplianceSettingsUpdate) SetWarnUserDaysBefore(v int64) {
 	o.WarnUserDaysBefore = &v
@@ -734,15 +561,6 @@ func (o *ApplianceSettingsUpdate) GetSmtpMailFromOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SmtpMailFrom, true
-}
-
-// IsSetSmtpMailFrom returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetSmtpMailFrom() bool {
-	if o != nil && !IsNil(o.SmtpMailFrom) {
-		return true
-	}
-
-	return false
 }
 
 // SetSmtpMailFrom gets a reference to the given string and assigns it to the SmtpMailFrom field.
@@ -768,15 +586,6 @@ func (o *ApplianceSettingsUpdate) GetSmtpServerOk() (*string, bool) {
 	return o.SmtpServer, true
 }
 
-// IsSetSmtpServer returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetSmtpServer() bool {
-	if o != nil && !IsNil(o.SmtpServer) {
-		return true
-	}
-
-	return false
-}
-
 // SetSmtpServer gets a reference to the given string and assigns it to the SmtpServer field.
 func (o *ApplianceSettingsUpdate) SetSmtpServer(v string) {
 	o.SmtpServer = &v
@@ -798,15 +607,6 @@ func (o *ApplianceSettingsUpdate) GetSmtpPortOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.SmtpPort, true
-}
-
-// IsSetSmtpPort returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetSmtpPort() bool {
-	if o != nil && !IsNil(o.SmtpPort) {
-		return true
-	}
-
-	return false
 }
 
 // SetSmtpPort gets a reference to the given int64 and assigns it to the SmtpPort field.
@@ -832,15 +632,6 @@ func (o *ApplianceSettingsUpdate) GetSmtpSSLOk() (*bool, bool) {
 	return o.SmtpSSL, true
 }
 
-// IsSetSmtpSSL returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetSmtpSSL() bool {
-	if o != nil && !IsNil(o.SmtpSSL) {
-		return true
-	}
-
-	return false
-}
-
 // SetSmtpSSL gets a reference to the given bool and assigns it to the SmtpSSL field.
 func (o *ApplianceSettingsUpdate) SetSmtpSSL(v bool) {
 	o.SmtpSSL = &v
@@ -862,15 +653,6 @@ func (o *ApplianceSettingsUpdate) GetSmtpTLSOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.SmtpTLS, true
-}
-
-// IsSetSmtpTLS returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetSmtpTLS() bool {
-	if o != nil && !IsNil(o.SmtpTLS) {
-		return true
-	}
-
-	return false
 }
 
 // SetSmtpTLS gets a reference to the given bool and assigns it to the SmtpTLS field.
@@ -896,15 +678,6 @@ func (o *ApplianceSettingsUpdate) GetSmtpUserOk() (*string, bool) {
 	return o.SmtpUser, true
 }
 
-// IsSetSmtpUser returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetSmtpUser() bool {
-	if o != nil && !IsNil(o.SmtpUser) {
-		return true
-	}
-
-	return false
-}
-
 // SetSmtpUser gets a reference to the given string and assigns it to the SmtpUser field.
 func (o *ApplianceSettingsUpdate) SetSmtpUser(v string) {
 	o.SmtpUser = &v
@@ -926,15 +699,6 @@ func (o *ApplianceSettingsUpdate) GetSmtpPasswordOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SmtpPassword, true
-}
-
-// IsSetSmtpPassword returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetSmtpPassword() bool {
-	if o != nil && !IsNil(o.SmtpPassword) {
-		return true
-	}
-
-	return false
 }
 
 // SetSmtpPassword gets a reference to the given string and assigns it to the SmtpPassword field.
@@ -961,28 +725,9 @@ func (o *ApplianceSettingsUpdate) GetProxyHostOk() (*string, bool) {
 	return o.ProxyHost.Get(), o.ProxyHost.IsSet()
 }
 
-// IsSetProxyHost returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetProxyHost() bool {
-	if o != nil && o.ProxyHost.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetProxyHost gets a reference to the given NullableString and assigns it to the ProxyHost field.
 func (o *ApplianceSettingsUpdate) SetProxyHost(v string) {
 	o.ProxyHost.Set(&v)
-}
-
-// SetProxyHostNil sets the value for ProxyHost to be an explicit nil
-func (o *ApplianceSettingsUpdate) SetProxyHostNil() {
-	o.ProxyHost.Set(nil)
-}
-
-// UnsetProxyHost ensures that no value is present for ProxyHost, not even an explicit nil
-func (o *ApplianceSettingsUpdate) UnsetProxyHost() {
-	o.ProxyHost.Unset()
 }
 
 // GetProxyPort returns the ProxyPort field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1004,28 +749,9 @@ func (o *ApplianceSettingsUpdate) GetProxyPortOk() (*string, bool) {
 	return o.ProxyPort.Get(), o.ProxyPort.IsSet()
 }
 
-// IsSetProxyPort returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetProxyPort() bool {
-	if o != nil && o.ProxyPort.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetProxyPort gets a reference to the given NullableString and assigns it to the ProxyPort field.
 func (o *ApplianceSettingsUpdate) SetProxyPort(v string) {
 	o.ProxyPort.Set(&v)
-}
-
-// SetProxyPortNil sets the value for ProxyPort to be an explicit nil
-func (o *ApplianceSettingsUpdate) SetProxyPortNil() {
-	o.ProxyPort.Set(nil)
-}
-
-// UnsetProxyPort ensures that no value is present for ProxyPort, not even an explicit nil
-func (o *ApplianceSettingsUpdate) UnsetProxyPort() {
-	o.ProxyPort.Unset()
 }
 
 // GetProxyUser returns the ProxyUser field value if set, zero value otherwise.
@@ -1044,15 +770,6 @@ func (o *ApplianceSettingsUpdate) GetProxyUserOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ProxyUser, true
-}
-
-// IsSetProxyUser returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetProxyUser() bool {
-	if o != nil && !IsNil(o.ProxyUser) {
-		return true
-	}
-
-	return false
 }
 
 // SetProxyUser gets a reference to the given string and assigns it to the ProxyUser field.
@@ -1076,15 +793,6 @@ func (o *ApplianceSettingsUpdate) GetProxyPasswordOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ProxyPassword, true
-}
-
-// IsSetProxyPassword returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetProxyPassword() bool {
-	if o != nil && !IsNil(o.ProxyPassword) {
-		return true
-	}
-
-	return false
 }
 
 // SetProxyPassword gets a reference to the given string and assigns it to the ProxyPassword field.
@@ -1111,28 +819,9 @@ func (o *ApplianceSettingsUpdate) GetProxyDomainOk() (*string, bool) {
 	return o.ProxyDomain.Get(), o.ProxyDomain.IsSet()
 }
 
-// IsSetProxyDomain returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetProxyDomain() bool {
-	if o != nil && o.ProxyDomain.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetProxyDomain gets a reference to the given NullableString and assigns it to the ProxyDomain field.
 func (o *ApplianceSettingsUpdate) SetProxyDomain(v string) {
 	o.ProxyDomain.Set(&v)
-}
-
-// SetProxyDomainNil sets the value for ProxyDomain to be an explicit nil
-func (o *ApplianceSettingsUpdate) SetProxyDomainNil() {
-	o.ProxyDomain.Set(nil)
-}
-
-// UnsetProxyDomain ensures that no value is present for ProxyDomain, not even an explicit nil
-func (o *ApplianceSettingsUpdate) UnsetProxyDomain() {
-	o.ProxyDomain.Unset()
 }
 
 // GetProxyWorkstation returns the ProxyWorkstation field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1154,28 +843,9 @@ func (o *ApplianceSettingsUpdate) GetProxyWorkstationOk() (*string, bool) {
 	return o.ProxyWorkstation.Get(), o.ProxyWorkstation.IsSet()
 }
 
-// IsSetProxyWorkstation returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetProxyWorkstation() bool {
-	if o != nil && o.ProxyWorkstation.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetProxyWorkstation gets a reference to the given NullableString and assigns it to the ProxyWorkstation field.
 func (o *ApplianceSettingsUpdate) SetProxyWorkstation(v string) {
 	o.ProxyWorkstation.Set(&v)
-}
-
-// SetProxyWorkstationNil sets the value for ProxyWorkstation to be an explicit nil
-func (o *ApplianceSettingsUpdate) SetProxyWorkstationNil() {
-	o.ProxyWorkstation.Set(nil)
-}
-
-// UnsetProxyWorkstation ensures that no value is present for ProxyWorkstation, not even an explicit nil
-func (o *ApplianceSettingsUpdate) UnsetProxyWorkstation() {
-	o.ProxyWorkstation.Unset()
 }
 
 // GetCurrencyProvider returns the CurrencyProvider field value if set, zero value otherwise.
@@ -1194,15 +864,6 @@ func (o *ApplianceSettingsUpdate) GetCurrencyProviderOk() (*string, bool) {
 		return nil, false
 	}
 	return o.CurrencyProvider, true
-}
-
-// IsSetCurrencyProvider returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetCurrencyProvider() bool {
-	if o != nil && !IsNil(o.CurrencyProvider) {
-		return true
-	}
-
-	return false
 }
 
 // SetCurrencyProvider gets a reference to the given string and assigns it to the CurrencyProvider field.
@@ -1229,28 +890,9 @@ func (o *ApplianceSettingsUpdate) GetCurrencyKeyOk() (*string, bool) {
 	return o.CurrencyKey.Get(), o.CurrencyKey.IsSet()
 }
 
-// IsSetCurrencyKey returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetCurrencyKey() bool {
-	if o != nil && o.CurrencyKey.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCurrencyKey gets a reference to the given NullableString and assigns it to the CurrencyKey field.
 func (o *ApplianceSettingsUpdate) SetCurrencyKey(v string) {
 	o.CurrencyKey.Set(&v)
-}
-
-// SetCurrencyKeyNil sets the value for CurrencyKey to be an explicit nil
-func (o *ApplianceSettingsUpdate) SetCurrencyKeyNil() {
-	o.CurrencyKey.Set(nil)
-}
-
-// UnsetCurrencyKey ensures that no value is present for CurrencyKey, not even an explicit nil
-func (o *ApplianceSettingsUpdate) UnsetCurrencyKey() {
-	o.CurrencyKey.Unset()
 }
 
 // GetEnableAllZoneTypes returns the EnableAllZoneTypes field value if set, zero value otherwise.
@@ -1269,15 +911,6 @@ func (o *ApplianceSettingsUpdate) GetEnableAllZoneTypesOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.EnableAllZoneTypes, true
-}
-
-// IsSetEnableAllZoneTypes returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetEnableAllZoneTypes() bool {
-	if o != nil && !IsNil(o.EnableAllZoneTypes) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnableAllZoneTypes gets a reference to the given bool and assigns it to the EnableAllZoneTypes field.
@@ -1303,15 +936,6 @@ func (o *ApplianceSettingsUpdate) GetEnableZoneTypesOk() ([]int64, bool) {
 	return o.EnableZoneTypes, true
 }
 
-// IsSetEnableZoneTypes returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetEnableZoneTypes() bool {
-	if o != nil && !IsNil(o.EnableZoneTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnableZoneTypes gets a reference to the given []int64 and assigns it to the EnableZoneTypes field.
 func (o *ApplianceSettingsUpdate) SetEnableZoneTypes(v []int64) {
 	o.EnableZoneTypes = v
@@ -1333,15 +957,6 @@ func (o *ApplianceSettingsUpdate) GetDisableZoneTypesOk() ([]int64, bool) {
 		return nil, false
 	}
 	return o.DisableZoneTypes, true
-}
-
-// IsSetDisableZoneTypes returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetDisableZoneTypes() bool {
-	if o != nil && !IsNil(o.DisableZoneTypes) {
-		return true
-	}
-
-	return false
 }
 
 // SetDisableZoneTypes gets a reference to the given []int64 and assigns it to the DisableZoneTypes field.
@@ -1367,15 +982,6 @@ func (o *ApplianceSettingsUpdate) GetDisableAllZoneTypesOk() (*bool, bool) {
 	return o.DisableAllZoneTypes, true
 }
 
-// IsSetDisableAllZoneTypes returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetDisableAllZoneTypes() bool {
-	if o != nil && !IsNil(o.DisableAllZoneTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetDisableAllZoneTypes gets a reference to the given bool and assigns it to the DisableAllZoneTypes field.
 func (o *ApplianceSettingsUpdate) SetDisableAllZoneTypes(v bool) {
 	o.DisableAllZoneTypes = &v
@@ -1397,15 +1003,6 @@ func (o *ApplianceSettingsUpdate) GetTwilioAccountSidOk() (*string, bool) {
 		return nil, false
 	}
 	return o.TwilioAccountSid, true
-}
-
-// IsSetTwilioAccountSid returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetTwilioAccountSid() bool {
-	if o != nil && !IsNil(o.TwilioAccountSid) {
-		return true
-	}
-
-	return false
 }
 
 // SetTwilioAccountSid gets a reference to the given string and assigns it to the TwilioAccountSid field.
@@ -1431,15 +1028,6 @@ func (o *ApplianceSettingsUpdate) GetTwilioSmsFromOk() (*string, bool) {
 	return o.TwilioSmsFrom, true
 }
 
-// IsSetTwilioSmsFrom returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetTwilioSmsFrom() bool {
-	if o != nil && !IsNil(o.TwilioSmsFrom) {
-		return true
-	}
-
-	return false
-}
-
 // SetTwilioSmsFrom gets a reference to the given string and assigns it to the TwilioSmsFrom field.
 func (o *ApplianceSettingsUpdate) SetTwilioSmsFrom(v string) {
 	o.TwilioSmsFrom = &v
@@ -1461,15 +1049,6 @@ func (o *ApplianceSettingsUpdate) GetTwilioAuthTokenOk() (*string, bool) {
 		return nil, false
 	}
 	return o.TwilioAuthToken, true
-}
-
-// IsSetTwilioAuthToken returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetTwilioAuthToken() bool {
-	if o != nil && !IsNil(o.TwilioAuthToken) {
-		return true
-	}
-
-	return false
 }
 
 // SetTwilioAuthToken gets a reference to the given string and assigns it to the TwilioAuthToken field.
@@ -1495,15 +1074,6 @@ func (o *ApplianceSettingsUpdate) GetCloudSyncIntervalSecondsOk() (*int64, bool)
 	return o.CloudSyncIntervalSeconds, true
 }
 
-// IsSetCloudSyncIntervalSeconds returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetCloudSyncIntervalSeconds() bool {
-	if o != nil && !IsNil(o.CloudSyncIntervalSeconds) {
-		return true
-	}
-
-	return false
-}
-
 // SetCloudSyncIntervalSeconds gets a reference to the given int64 and assigns it to the CloudSyncIntervalSeconds field.
 func (o *ApplianceSettingsUpdate) SetCloudSyncIntervalSeconds(v int64) {
 	o.CloudSyncIntervalSeconds = &v
@@ -1525,15 +1095,6 @@ func (o *ApplianceSettingsUpdate) GetClusterSyncIntervalSecondsOk() (*int64, boo
 		return nil, false
 	}
 	return o.ClusterSyncIntervalSeconds, true
-}
-
-// IsSetClusterSyncIntervalSeconds returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetClusterSyncIntervalSeconds() bool {
-	if o != nil && !IsNil(o.ClusterSyncIntervalSeconds) {
-		return true
-	}
-
-	return false
 }
 
 // SetClusterSyncIntervalSeconds gets a reference to the given int64 and assigns it to the ClusterSyncIntervalSeconds field.
@@ -1559,15 +1120,6 @@ func (o *ApplianceSettingsUpdate) GetUsageRetainmentPeriodOk() (*int64, bool) {
 	return o.UsageRetainmentPeriod, true
 }
 
-// IsSetUsageRetainmentPeriod returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetUsageRetainmentPeriod() bool {
-	if o != nil && !IsNil(o.UsageRetainmentPeriod) {
-		return true
-	}
-
-	return false
-}
-
 // SetUsageRetainmentPeriod gets a reference to the given int64 and assigns it to the UsageRetainmentPeriod field.
 func (o *ApplianceSettingsUpdate) SetUsageRetainmentPeriod(v int64) {
 	o.UsageRetainmentPeriod = &v
@@ -1589,15 +1141,6 @@ func (o *ApplianceSettingsUpdate) GetInvoiceRetainmentPeriodOk() (*int64, bool) 
 		return nil, false
 	}
 	return o.InvoiceRetainmentPeriod, true
-}
-
-// IsSetInvoiceRetainmentPeriod returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetInvoiceRetainmentPeriod() bool {
-	if o != nil && !IsNil(o.InvoiceRetainmentPeriod) {
-		return true
-	}
-
-	return false
 }
 
 // SetInvoiceRetainmentPeriod gets a reference to the given int64 and assigns it to the InvoiceRetainmentPeriod field.
@@ -1623,15 +1166,6 @@ func (o *ApplianceSettingsUpdate) GetIncidentRetainmentPeriodOk() (*int64, bool)
 	return o.IncidentRetainmentPeriod, true
 }
 
-// IsSetIncidentRetainmentPeriod returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetIncidentRetainmentPeriod() bool {
-	if o != nil && !IsNil(o.IncidentRetainmentPeriod) {
-		return true
-	}
-
-	return false
-}
-
 // SetIncidentRetainmentPeriod gets a reference to the given int64 and assigns it to the IncidentRetainmentPeriod field.
 func (o *ApplianceSettingsUpdate) SetIncidentRetainmentPeriod(v int64) {
 	o.IncidentRetainmentPeriod = &v
@@ -1653,15 +1187,6 @@ func (o *ApplianceSettingsUpdate) GetStatsRetainmentPeriodOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.StatsRetainmentPeriod, true
-}
-
-// IsSetStatsRetainmentPeriod returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetStatsRetainmentPeriod() bool {
-	if o != nil && !IsNil(o.StatsRetainmentPeriod) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatsRetainmentPeriod gets a reference to the given int64 and assigns it to the StatsRetainmentPeriod field.
@@ -1687,15 +1212,6 @@ func (o *ApplianceSettingsUpdate) GetReportsRetainmentPeriodOk() (*int64, bool) 
 	return o.ReportsRetainmentPeriod, true
 }
 
-// IsSetReportsRetainmentPeriod returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetReportsRetainmentPeriod() bool {
-	if o != nil && !IsNil(o.ReportsRetainmentPeriod) {
-		return true
-	}
-
-	return false
-}
-
 // SetReportsRetainmentPeriod gets a reference to the given int64 and assigns it to the ReportsRetainmentPeriod field.
 func (o *ApplianceSettingsUpdate) SetReportsRetainmentPeriod(v int64) {
 	o.ReportsRetainmentPeriod = &v
@@ -1717,15 +1233,6 @@ func (o *ApplianceSettingsUpdate) GetHttpBlacklistHostsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.HttpBlacklistHosts, true
-}
-
-// IsSetHttpBlacklistHosts returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetHttpBlacklistHosts() bool {
-	if o != nil && !IsNil(o.HttpBlacklistHosts) {
-		return true
-	}
-
-	return false
 }
 
 // SetHttpBlacklistHosts gets a reference to the given string and assigns it to the HttpBlacklistHosts field.
@@ -1751,15 +1258,6 @@ func (o *ApplianceSettingsUpdate) GetHttpApprovelistHostsOk() (*string, bool) {
 	return o.HttpApprovelistHosts, true
 }
 
-// IsSetHttpApprovelistHosts returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetHttpApprovelistHosts() bool {
-	if o != nil && !IsNil(o.HttpApprovelistHosts) {
-		return true
-	}
-
-	return false
-}
-
 // SetHttpApprovelistHosts gets a reference to the given string and assigns it to the HttpApprovelistHosts field.
 func (o *ApplianceSettingsUpdate) SetHttpApprovelistHosts(v string) {
 	o.HttpApprovelistHosts = &v
@@ -1781,15 +1279,6 @@ func (o *ApplianceSettingsUpdate) GetNoAgentOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.NoAgent, true
-}
-
-// IsSetNoAgent returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetNoAgent() bool {
-	if o != nil && !IsNil(o.NoAgent) {
-		return true
-	}
-
-	return false
 }
 
 // SetNoAgent gets a reference to the given bool and assigns it to the NoAgent field.
@@ -1815,15 +1304,6 @@ func (o *ApplianceSettingsUpdate) GetAgentSSLVerifyOk() (*bool, bool) {
 	return o.AgentSSLVerify, true
 }
 
-// IsSetAgentSSLVerify returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetAgentSSLVerify() bool {
-	if o != nil && !IsNil(o.AgentSSLVerify) {
-		return true
-	}
-
-	return false
-}
-
 // SetAgentSSLVerify gets a reference to the given bool and assigns it to the AgentSSLVerify field.
 func (o *ApplianceSettingsUpdate) SetAgentSSLVerify(v bool) {
 	o.AgentSSLVerify = &v
@@ -1845,15 +1325,6 @@ func (o *ApplianceSettingsUpdate) GetDisableSSHPasswordAuthOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.DisableSSHPasswordAuth, true
-}
-
-// IsSetDisableSSHPasswordAuth returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetDisableSSHPasswordAuth() bool {
-	if o != nil && !IsNil(o.DisableSSHPasswordAuth) {
-		return true
-	}
-
-	return false
 }
 
 // SetDisableSSHPasswordAuth gets a reference to the given bool and assigns it to the DisableSSHPasswordAuth field.
@@ -1879,15 +1350,6 @@ func (o *ApplianceSettingsUpdate) GetDefaultLocaleOk() (*string, bool) {
 	return o.DefaultLocale, true
 }
 
-// IsSetDefaultLocale returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetDefaultLocale() bool {
-	if o != nil && !IsNil(o.DefaultLocale) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultLocale gets a reference to the given string and assigns it to the DefaultLocale field.
 func (o *ApplianceSettingsUpdate) SetDefaultLocale(v string) {
 	o.DefaultLocale = &v
@@ -1909,15 +1371,6 @@ func (o *ApplianceSettingsUpdate) GetDefaultVdiGatewayOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.DefaultVdiGateway, true
-}
-
-// IsSetDefaultVdiGateway returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetDefaultVdiGateway() bool {
-	if o != nil && !IsNil(o.DefaultVdiGateway) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultVdiGateway gets a reference to the given int64 and assigns it to the DefaultVdiGateway field.
@@ -1943,15 +1396,6 @@ func (o *ApplianceSettingsUpdate) GetMaxOptionListSizeOk() (*int64, bool) {
 	return o.MaxOptionListSize, true
 }
 
-// IsSetMaxOptionListSize returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetMaxOptionListSize() bool {
-	if o != nil && !IsNil(o.MaxOptionListSize) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxOptionListSize gets a reference to the given int64 and assigns it to the MaxOptionListSize field.
 func (o *ApplianceSettingsUpdate) SetMaxOptionListSize(v int64) {
 	o.MaxOptionListSize = &v
@@ -1973,15 +1417,6 @@ func (o *ApplianceSettingsUpdate) GetExchangeUrlOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ExchangeUrl, true
-}
-
-// IsSetExchangeUrl returns a boolean if a field has been set.
-func (o *ApplianceSettingsUpdate) IsSetExchangeUrl() bool {
-	if o != nil && !IsNil(o.ExchangeUrl) {
-		return true
-	}
-
-	return false
 }
 
 // SetExchangeUrl gets a reference to the given string and assigns it to the ExchangeUrl field.

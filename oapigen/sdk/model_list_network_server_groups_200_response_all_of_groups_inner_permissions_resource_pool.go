@@ -63,15 +63,6 @@ func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePo
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePool) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePool) SetId(v int64) {
 	o.Id = &v
@@ -95,15 +86,6 @@ func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePo
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePool) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePool) SetName(v string) {
 	o.Name = &v
@@ -125,15 +107,6 @@ func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePo
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissionsResourcePool) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.

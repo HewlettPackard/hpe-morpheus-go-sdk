@@ -64,15 +64,6 @@ func (o *ClusterServerCreateConfigEKSWorker) GetNetworkOk() (*ClusterServerCreat
 	return o.Network, true
 }
 
-// IsSetNetwork returns a boolean if a field has been set.
-func (o *ClusterServerCreateConfigEKSWorker) IsSetNetwork() bool {
-	if o != nil && !IsNil(o.Network) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetwork gets a reference to the given ClusterServerCreateConfigEKSWorkerNetwork and assigns it to the Network field.
 func (o *ClusterServerCreateConfigEKSWorker) SetNetwork(v ClusterServerCreateConfigEKSWorkerNetwork) {
 	o.Network = &v
@@ -94,15 +85,6 @@ func (o *ClusterServerCreateConfigEKSWorker) GetSecurityGroupOk() (*ClusterServe
 		return nil, false
 	}
 	return o.SecurityGroup, true
-}
-
-// IsSetSecurityGroup returns a boolean if a field has been set.
-func (o *ClusterServerCreateConfigEKSWorker) IsSetSecurityGroup() bool {
-	if o != nil && !IsNil(o.SecurityGroup) {
-		return true
-	}
-
-	return false
 }
 
 // SetSecurityGroup gets a reference to the given ClusterServerCreateConfigEKSWorkerSecurityGroup and assigns it to the SecurityGroup field.
@@ -128,15 +110,6 @@ func (o *ClusterServerCreateConfigEKSWorker) GetPlanOk() (*ClusterServerCreateCo
 	return o.Plan, true
 }
 
-// IsSetPlan returns a boolean if a field has been set.
-func (o *ClusterServerCreateConfigEKSWorker) IsSetPlan() bool {
-	if o != nil && !IsNil(o.Plan) {
-		return true
-	}
-
-	return false
-}
-
 // SetPlan gets a reference to the given ClusterServerCreateConfigEKSWorkerPlan and assigns it to the Plan field.
 func (o *ClusterServerCreateConfigEKSWorker) SetPlan(v ClusterServerCreateConfigEKSWorkerPlan) {
 	o.Plan = &v
@@ -158,15 +131,6 @@ func (o *ClusterServerCreateConfigEKSWorker) GetRoleOk() (*ClusterServerCreateCo
 		return nil, false
 	}
 	return o.Role, true
-}
-
-// IsSetRole returns a boolean if a field has been set.
-func (o *ClusterServerCreateConfigEKSWorker) IsSetRole() bool {
-	if o != nil && !IsNil(o.Role) {
-		return true
-	}
-
-	return false
 }
 
 // SetRole gets a reference to the given ClusterServerCreateConfigEKSWorkerRole and assigns it to the Role field.

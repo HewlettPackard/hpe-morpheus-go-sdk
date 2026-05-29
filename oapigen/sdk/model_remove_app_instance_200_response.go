@@ -61,15 +61,6 @@ func (o *RemoveAppInstance200Response) GetAppOk() (*UpdateApp200ResponseApp, boo
 	return o.App, true
 }
 
-// IsSetApp returns a boolean if a field has been set.
-func (o *RemoveAppInstance200Response) IsSetApp() bool {
-	if o != nil && !IsNil(o.App) {
-		return true
-	}
-
-	return false
-}
-
 // SetApp gets a reference to the given UpdateApp200ResponseApp and assigns it to the App field.
 func (o *RemoveAppInstance200Response) SetApp(v UpdateApp200ResponseApp) {
 	o.App = &v

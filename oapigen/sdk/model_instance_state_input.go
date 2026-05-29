@@ -63,15 +63,6 @@ func (o *InstanceStateInput) GetVariablesOk() ([]map[string]interface{}, bool) {
 	return o.Variables, true
 }
 
-// IsSetVariables returns a boolean if a field has been set.
-func (o *InstanceStateInput) IsSetVariables() bool {
-	if o != nil && !IsNil(o.Variables) {
-		return true
-	}
-
-	return false
-}
-
 // SetVariables gets a reference to the given []map[string]interface{} and assigns it to the Variables field.
 func (o *InstanceStateInput) SetVariables(v []map[string]interface{}) {
 	o.Variables = v
@@ -95,15 +86,6 @@ func (o *InstanceStateInput) GetProvidersOk() ([]map[string]interface{}, bool) {
 	return o.Providers, true
 }
 
-// IsSetProviders returns a boolean if a field has been set.
-func (o *InstanceStateInput) IsSetProviders() bool {
-	if o != nil && !IsNil(o.Providers) {
-		return true
-	}
-
-	return false
-}
-
 // SetProviders gets a reference to the given []map[string]interface{} and assigns it to the Providers field.
 func (o *InstanceStateInput) SetProviders(v []map[string]interface{}) {
 	o.Providers = v
@@ -125,15 +107,6 @@ func (o *InstanceStateInput) GetDataOk() ([]map[string]interface{}, bool) {
 		return nil, false
 	}
 	return o.Data, true
-}
-
-// IsSetData returns a boolean if a field has been set.
-func (o *InstanceStateInput) IsSetData() bool {
-	if o != nil && !IsNil(o.Data) {
-		return true
-	}
-
-	return false
 }
 
 // SetData gets a reference to the given []map[string]interface{} and assigns it to the Data field.

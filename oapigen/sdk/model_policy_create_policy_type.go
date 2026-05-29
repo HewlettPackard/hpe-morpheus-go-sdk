@@ -62,15 +62,6 @@ func (o *PolicyCreatePolicyType) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *PolicyCreatePolicyType) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *PolicyCreatePolicyType) SetCode(v string) {
 	o.Code = &v

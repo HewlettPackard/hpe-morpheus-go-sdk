@@ -79,15 +79,6 @@ func (o *GetNetworkTransportZone200ResponseNetworkScope) GetIdOk() (*int64, bool
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetNetworkTransportZone200ResponseNetworkScope) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetNetworkTransportZone200ResponseNetworkScope) SetId(v int64) {
 	o.Id = &v
@@ -109,15 +100,6 @@ func (o *GetNetworkTransportZone200ResponseNetworkScope) GetInternalIdOk() (*str
 		return nil, false
 	}
 	return o.InternalId, true
-}
-
-// IsSetInternalId returns a boolean if a field has been set.
-func (o *GetNetworkTransportZone200ResponseNetworkScope) IsSetInternalId() bool {
-	if o != nil && !IsNil(o.InternalId) {
-		return true
-	}
-
-	return false
 }
 
 // SetInternalId gets a reference to the given string and assigns it to the InternalId field.
@@ -143,15 +125,6 @@ func (o *GetNetworkTransportZone200ResponseNetworkScope) GetVisibilityOk() (*str
 	return o.Visibility, true
 }
 
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *GetNetworkTransportZone200ResponseNetworkScope) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
-}
-
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
 func (o *GetNetworkTransportZone200ResponseNetworkScope) SetVisibility(v string) {
 	o.Visibility = &v
@@ -173,15 +146,6 @@ func (o *GetNetworkTransportZone200ResponseNetworkScope) GetDateCreatedOk() (*ti
 		return nil, false
 	}
 	return o.DateCreated, true
-}
-
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *GetNetworkTransportZone200ResponseNetworkScope) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
@@ -207,15 +171,6 @@ func (o *GetNetworkTransportZone200ResponseNetworkScope) GetProviderIdOk() (*str
 	return o.ProviderId, true
 }
 
-// IsSetProviderId returns a boolean if a field has been set.
-func (o *GetNetworkTransportZone200ResponseNetworkScope) IsSetProviderId() bool {
-	if o != nil && !IsNil(o.ProviderId) {
-		return true
-	}
-
-	return false
-}
-
 // SetProviderId gets a reference to the given string and assigns it to the ProviderId field.
 func (o *GetNetworkTransportZone200ResponseNetworkScope) SetProviderId(v string) {
 	o.ProviderId = &v
@@ -237,15 +192,6 @@ func (o *GetNetworkTransportZone200ResponseNetworkScope) GetLastUpdatedOk() (*ti
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *GetNetworkTransportZone200ResponseNetworkScope) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
@@ -271,15 +217,6 @@ func (o *GetNetworkTransportZone200ResponseNetworkScope) GetActiveOk() (*bool, b
 	return o.Active, true
 }
 
-// IsSetActive returns a boolean if a field has been set.
-func (o *GetNetworkTransportZone200ResponseNetworkScope) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
-}
-
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *GetNetworkTransportZone200ResponseNetworkScope) SetActive(v bool) {
 	o.Active = &v
@@ -301,15 +238,6 @@ func (o *GetNetworkTransportZone200ResponseNetworkScope) GetStreamTypeOk() (*str
 		return nil, false
 	}
 	return o.StreamType, true
-}
-
-// IsSetStreamType returns a boolean if a field has been set.
-func (o *GetNetworkTransportZone200ResponseNetworkScope) IsSetStreamType() bool {
-	if o != nil && !IsNil(o.StreamType) {
-		return true
-	}
-
-	return false
 }
 
 // SetStreamType gets a reference to the given string and assigns it to the StreamType field.
@@ -335,15 +263,6 @@ func (o *GetNetworkTransportZone200ResponseNetworkScope) GetDisplayNameOk() (*st
 	return o.DisplayName, true
 }
 
-// IsSetDisplayName returns a boolean if a field has been set.
-func (o *GetNetworkTransportZone200ResponseNetworkScope) IsSetDisplayName() bool {
-	if o != nil && !IsNil(o.DisplayName) {
-		return true
-	}
-
-	return false
-}
-
 // SetDisplayName gets a reference to the given string and assigns it to the DisplayName field.
 func (o *GetNetworkTransportZone200ResponseNetworkScope) SetDisplayName(v string) {
 	o.DisplayName = &v
@@ -365,15 +284,6 @@ func (o *GetNetworkTransportZone200ResponseNetworkScope) GetNameOk() (*string, b
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *GetNetworkTransportZone200ResponseNetworkScope) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -399,15 +309,6 @@ func (o *GetNetworkTransportZone200ResponseNetworkScope) GetStatusOk() (*string,
 	return o.Status, true
 }
 
-// IsSetStatus returns a boolean if a field has been set.
-func (o *GetNetworkTransportZone200ResponseNetworkScope) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
-}
-
 // SetStatus gets a reference to the given string and assigns it to the Status field.
 func (o *GetNetworkTransportZone200ResponseNetworkScope) SetStatus(v string) {
 	o.Status = &v
@@ -429,15 +330,6 @@ func (o *GetNetworkTransportZone200ResponseNetworkScope) GetEnabledOk() (*bool, 
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *GetNetworkTransportZone200ResponseNetworkScope) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -463,15 +355,6 @@ func (o *GetNetworkTransportZone200ResponseNetworkScope) GetExternalIdOk() (*str
 	return o.ExternalId, true
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *GetNetworkTransportZone200ResponseNetworkScope) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
 func (o *GetNetworkTransportZone200ResponseNetworkScope) SetExternalId(v string) {
 	o.ExternalId = &v
@@ -493,15 +376,6 @@ func (o *GetNetworkTransportZone200ResponseNetworkScope) GetConfigOk() (*GetNetw
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *GetNetworkTransportZone200ResponseNetworkScope) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given GetNetworkTransportZone200ResponseNetworkScopeConfig and assigns it to the Config field.
@@ -527,15 +401,6 @@ func (o *GetNetworkTransportZone200ResponseNetworkScope) GetOwnerOk() (*GetNetwo
 	return o.Owner, true
 }
 
-// IsSetOwner returns a boolean if a field has been set.
-func (o *GetNetworkTransportZone200ResponseNetworkScope) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
-		return true
-	}
-
-	return false
-}
-
 // SetOwner gets a reference to the given GetNetworkTransportZone200ResponseNetworkScopeOwner and assigns it to the Owner field.
 func (o *GetNetworkTransportZone200ResponseNetworkScope) SetOwner(v GetNetworkTransportZone200ResponseNetworkScopeOwner) {
 	o.Owner = &v
@@ -557,15 +422,6 @@ func (o *GetNetworkTransportZone200ResponseNetworkScope) GetNetworkServerOk() (*
 		return nil, false
 	}
 	return o.NetworkServer, true
-}
-
-// IsSetNetworkServer returns a boolean if a field has been set.
-func (o *GetNetworkTransportZone200ResponseNetworkScope) IsSetNetworkServer() bool {
-	if o != nil && !IsNil(o.NetworkServer) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkServer gets a reference to the given GetNetworkTransportZone200ResponseNetworkScopeNetworkServer and assigns it to the NetworkServer field.
@@ -591,15 +447,6 @@ func (o *GetNetworkTransportZone200ResponseNetworkScope) GetZoneOk() (*GetNetwor
 	return o.Zone, true
 }
 
-// IsSetZone returns a boolean if a field has been set.
-func (o *GetNetworkTransportZone200ResponseNetworkScope) IsSetZone() bool {
-	if o != nil && !IsNil(o.Zone) {
-		return true
-	}
-
-	return false
-}
-
 // SetZone gets a reference to the given GetNetworkTransportZone200ResponseNetworkScopeZone and assigns it to the Zone field.
 func (o *GetNetworkTransportZone200ResponseNetworkScope) SetZone(v GetNetworkTransportZone200ResponseNetworkScopeZone) {
 	o.Zone = &v
@@ -621,15 +468,6 @@ func (o *GetNetworkTransportZone200ResponseNetworkScope) GetTenantsOk() ([]GetNe
 		return nil, false
 	}
 	return o.Tenants, true
-}
-
-// IsSetTenants returns a boolean if a field has been set.
-func (o *GetNetworkTransportZone200ResponseNetworkScope) IsSetTenants() bool {
-	if o != nil && !IsNil(o.Tenants) {
-		return true
-	}
-
-	return false
 }
 
 // SetTenants gets a reference to the given []GetNetworkTransportZone200ResponseNetworkScopeTenantsInner and assigns it to the Tenants field.

@@ -62,15 +62,6 @@ func (o *AddStorageServers200Response) GetStorageServerOk() (*AddStorageServers2
 	return o.StorageServer, true
 }
 
-// IsSetStorageServer returns a boolean if a field has been set.
-func (o *AddStorageServers200Response) IsSetStorageServer() bool {
-	if o != nil && !IsNil(o.StorageServer) {
-		return true
-	}
-
-	return false
-}
-
 // SetStorageServer gets a reference to the given AddStorageServers200ResponseAllOfStorageServer and assigns it to the StorageServer field.
 func (o *AddStorageServers200Response) SetStorageServer(v AddStorageServers200ResponseAllOfStorageServer) {
 	o.StorageServer = &v
@@ -92,15 +83,6 @@ func (o *AddStorageServers200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *AddStorageServers200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

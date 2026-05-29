@@ -61,15 +61,6 @@ func (o *UpdateHostManagedRequestServerConfig) GetCustomOptionsOk() (*UpdateHost
 	return o.CustomOptions, true
 }
 
-// IsSetCustomOptions returns a boolean if a field has been set.
-func (o *UpdateHostManagedRequestServerConfig) IsSetCustomOptions() bool {
-	if o != nil && !IsNil(o.CustomOptions) {
-		return true
-	}
-
-	return false
-}
-
 // SetCustomOptions gets a reference to the given UpdateHostManagedRequestServerConfigCustomOptions and assigns it to the CustomOptions field.
 func (o *UpdateHostManagedRequestServerConfig) SetCustomOptions(v UpdateHostManagedRequestServerConfigCustomOptions) {
 	o.CustomOptions = &v

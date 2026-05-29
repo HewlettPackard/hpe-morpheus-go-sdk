@@ -95,15 +95,6 @@ func (o *InstanceConfig) GetCreateUserOk() (*bool, bool) {
 	return o.CreateUser, true
 }
 
-// IsSetCreateUser returns a boolean if a field has been set.
-func (o *InstanceConfig) IsSetCreateUser() bool {
-	if o != nil && !IsNil(o.CreateUser) {
-		return true
-	}
-
-	return false
-}
-
 // SetCreateUser gets a reference to the given bool and assigns it to the CreateUser field.
 func (o *InstanceConfig) SetCreateUser(v bool) {
 	o.CreateUser = &v
@@ -125,15 +116,6 @@ func (o *InstanceConfig) GetIsEC2Ok() (*string, bool) {
 		return nil, false
 	}
 	return o.IsEC2, true
-}
-
-// IsSetIsEC2 returns a boolean if a field has been set.
-func (o *InstanceConfig) IsSetIsEC2() bool {
-	if o != nil && !IsNil(o.IsEC2) {
-		return true
-	}
-
-	return false
 }
 
 // SetIsEC2 gets a reference to the given string and assigns it to the IsEC2 field.
@@ -159,15 +141,6 @@ func (o *InstanceConfig) GetIsVpcSelectableOk() (*bool, bool) {
 	return o.IsVpcSelectable, true
 }
 
-// IsSetIsVpcSelectable returns a boolean if a field has been set.
-func (o *InstanceConfig) IsSetIsVpcSelectable() bool {
-	if o != nil && !IsNil(o.IsVpcSelectable) {
-		return true
-	}
-
-	return false
-}
-
 // SetIsVpcSelectable gets a reference to the given bool and assigns it to the IsVpcSelectable field.
 func (o *InstanceConfig) SetIsVpcSelectable(v bool) {
 	o.IsVpcSelectable = &v
@@ -191,15 +164,6 @@ func (o *InstanceConfig) GetNoAgentOk() (*InstanceConfigNoAgent, bool) {
 	return o.NoAgent, true
 }
 
-// IsSetNoAgent returns a boolean if a field has been set.
-func (o *InstanceConfig) IsSetNoAgent() bool {
-	if o != nil && !IsNil(o.NoAgent) {
-		return true
-	}
-
-	return false
-}
-
 // SetNoAgent gets a reference to the given InstanceConfigNoAgent and assigns it to the NoAgent field.
 func (o *InstanceConfig) SetNoAgent(v InstanceConfigNoAgent) {
 	o.NoAgent = &v
@@ -221,15 +185,6 @@ func (o *InstanceConfig) GetSecurityGroupsOk() ([]AddInstance200ResponseAllOfOne
 		return nil, false
 	}
 	return o.SecurityGroups, true
-}
-
-// IsSetSecurityGroups returns a boolean if a field has been set.
-func (o *InstanceConfig) IsSetSecurityGroups() bool {
-	if o != nil && !IsNil(o.SecurityGroups) {
-		return true
-	}
-
-	return false
 }
 
 // SetSecurityGroups gets a reference to the given []AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner and assigns it to the SecurityGroups field.
@@ -256,28 +211,9 @@ func (o *InstanceConfig) GetKvmHostIdOk() (*int64, bool) {
 	return o.KvmHostId.Get(), o.KvmHostId.IsSet()
 }
 
-// IsSetKvmHostId returns a boolean if a field has been set.
-func (o *InstanceConfig) IsSetKvmHostId() bool {
-	if o != nil && o.KvmHostId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetKvmHostId gets a reference to the given NullableInt64 and assigns it to the KvmHostId field.
 func (o *InstanceConfig) SetKvmHostId(v int64) {
 	o.KvmHostId.Set(&v)
-}
-
-// SetKvmHostIdNil sets the value for KvmHostId to be an explicit nil
-func (o *InstanceConfig) SetKvmHostIdNil() {
-	o.KvmHostId.Set(nil)
-}
-
-// UnsetKvmHostId ensures that no value is present for KvmHostId, not even an explicit nil
-func (o *InstanceConfig) UnsetKvmHostId() {
-	o.KvmHostId.Unset()
 }
 
 // GetSmbiosAssetTag returns the SmbiosAssetTag field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -299,28 +235,9 @@ func (o *InstanceConfig) GetSmbiosAssetTagOk() (*string, bool) {
 	return o.SmbiosAssetTag.Get(), o.SmbiosAssetTag.IsSet()
 }
 
-// IsSetSmbiosAssetTag returns a boolean if a field has been set.
-func (o *InstanceConfig) IsSetSmbiosAssetTag() bool {
-	if o != nil && o.SmbiosAssetTag.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSmbiosAssetTag gets a reference to the given NullableString and assigns it to the SmbiosAssetTag field.
 func (o *InstanceConfig) SetSmbiosAssetTag(v string) {
 	o.SmbiosAssetTag.Set(&v)
-}
-
-// SetSmbiosAssetTagNil sets the value for SmbiosAssetTag to be an explicit nil
-func (o *InstanceConfig) SetSmbiosAssetTagNil() {
-	o.SmbiosAssetTag.Set(nil)
-}
-
-// UnsetSmbiosAssetTag ensures that no value is present for SmbiosAssetTag, not even an explicit nil
-func (o *InstanceConfig) UnsetSmbiosAssetTag() {
-	o.SmbiosAssetTag.Unset()
 }
 
 // GetNestedVirtualization returns the NestedVirtualization field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -342,28 +259,9 @@ func (o *InstanceConfig) GetNestedVirtualizationOk() (*string, bool) {
 	return o.NestedVirtualization.Get(), o.NestedVirtualization.IsSet()
 }
 
-// IsSetNestedVirtualization returns a boolean if a field has been set.
-func (o *InstanceConfig) IsSetNestedVirtualization() bool {
-	if o != nil && o.NestedVirtualization.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNestedVirtualization gets a reference to the given NullableString and assigns it to the NestedVirtualization field.
 func (o *InstanceConfig) SetNestedVirtualization(v string) {
 	o.NestedVirtualization.Set(&v)
-}
-
-// SetNestedVirtualizationNil sets the value for NestedVirtualization to be an explicit nil
-func (o *InstanceConfig) SetNestedVirtualizationNil() {
-	o.NestedVirtualization.Set(nil)
-}
-
-// UnsetNestedVirtualization ensures that no value is present for NestedVirtualization, not even an explicit nil
-func (o *InstanceConfig) UnsetNestedVirtualization() {
-	o.NestedVirtualization.Unset()
 }
 
 // GetVmwareFolderId returns the VmwareFolderId field value if set, zero value otherwise.
@@ -382,15 +280,6 @@ func (o *InstanceConfig) GetVmwareFolderIdOk() (*string, bool) {
 		return nil, false
 	}
 	return o.VmwareFolderId, true
-}
-
-// IsSetVmwareFolderId returns a boolean if a field has been set.
-func (o *InstanceConfig) IsSetVmwareFolderId() bool {
-	if o != nil && !IsNil(o.VmwareFolderId) {
-		return true
-	}
-
-	return false
 }
 
 // SetVmwareFolderId gets a reference to the given string and assigns it to the VmwareFolderId field.
@@ -416,15 +305,6 @@ func (o *InstanceConfig) GetCustomOptionsOk() (map[string]interface{}, bool) {
 	return o.CustomOptions, true
 }
 
-// IsSetCustomOptions returns a boolean if a field has been set.
-func (o *InstanceConfig) IsSetCustomOptions() bool {
-	if o != nil && !IsNil(o.CustomOptions) {
-		return true
-	}
-
-	return false
-}
-
 // SetCustomOptions gets a reference to the given map[string]interface{} and assigns it to the CustomOptions field.
 func (o *InstanceConfig) SetCustomOptions(v map[string]interface{}) {
 	o.CustomOptions = v
@@ -446,15 +326,6 @@ func (o *InstanceConfig) GetResourcePoolIdOk() (*InstanceConfigResourcePoolId, b
 		return nil, false
 	}
 	return o.ResourcePoolId, true
-}
-
-// IsSetResourcePoolId returns a boolean if a field has been set.
-func (o *InstanceConfig) IsSetResourcePoolId() bool {
-	if o != nil && !IsNil(o.ResourcePoolId) {
-		return true
-	}
-
-	return false
 }
 
 // SetResourcePoolId gets a reference to the given InstanceConfigResourcePoolId and assigns it to the ResourcePoolId field.
@@ -481,28 +352,9 @@ func (o *InstanceConfig) GetPoolProviderTypeOk() (*string, bool) {
 	return o.PoolProviderType.Get(), o.PoolProviderType.IsSet()
 }
 
-// IsSetPoolProviderType returns a boolean if a field has been set.
-func (o *InstanceConfig) IsSetPoolProviderType() bool {
-	if o != nil && o.PoolProviderType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPoolProviderType gets a reference to the given NullableString and assigns it to the PoolProviderType field.
 func (o *InstanceConfig) SetPoolProviderType(v string) {
 	o.PoolProviderType.Set(&v)
-}
-
-// SetPoolProviderTypeNil sets the value for PoolProviderType to be an explicit nil
-func (o *InstanceConfig) SetPoolProviderTypeNil() {
-	o.PoolProviderType.Set(nil)
-}
-
-// UnsetPoolProviderType ensures that no value is present for PoolProviderType, not even an explicit nil
-func (o *InstanceConfig) UnsetPoolProviderType() {
-	o.PoolProviderType.Unset()
 }
 
 // GetUserGroup returns the UserGroup field value if set, zero value otherwise.
@@ -521,15 +373,6 @@ func (o *InstanceConfig) GetUserGroupOk() (*InstanceConfigUserGroup, bool) {
 		return nil, false
 	}
 	return o.UserGroup, true
-}
-
-// IsSetUserGroup returns a boolean if a field has been set.
-func (o *InstanceConfig) IsSetUserGroup() bool {
-	if o != nil && !IsNil(o.UserGroup) {
-		return true
-	}
-
-	return false
 }
 
 // SetUserGroup gets a reference to the given InstanceConfigUserGroup and assigns it to the UserGroup field.
@@ -555,15 +398,6 @@ func (o *InstanceConfig) GetExpireDaysOk() (*string, bool) {
 	return o.ExpireDays, true
 }
 
-// IsSetExpireDays returns a boolean if a field has been set.
-func (o *InstanceConfig) IsSetExpireDays() bool {
-	if o != nil && !IsNil(o.ExpireDays) {
-		return true
-	}
-
-	return false
-}
-
 // SetExpireDays gets a reference to the given string and assigns it to the ExpireDays field.
 func (o *InstanceConfig) SetExpireDays(v string) {
 	o.ExpireDays = &v
@@ -585,15 +419,6 @@ func (o *InstanceConfig) GetShutdownDaysOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ShutdownDays, true
-}
-
-// IsSetShutdownDays returns a boolean if a field has been set.
-func (o *InstanceConfig) IsSetShutdownDays() bool {
-	if o != nil && !IsNil(o.ShutdownDays) {
-		return true
-	}
-
-	return false
 }
 
 // SetShutdownDays gets a reference to the given string and assigns it to the ShutdownDays field.
@@ -619,15 +444,6 @@ func (o *InstanceConfig) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *InstanceConfig) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *InstanceConfig) SetName(v string) {
 	o.Name = &v
@@ -649,15 +465,6 @@ func (o *InstanceConfig) GetHostNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.HostName, true
-}
-
-// IsSetHostName returns a boolean if a field has been set.
-func (o *InstanceConfig) IsSetHostName() bool {
-	if o != nil && !IsNil(o.HostName) {
-		return true
-	}
-
-	return false
 }
 
 // SetHostName gets a reference to the given string and assigns it to the HostName field.
@@ -683,15 +490,6 @@ func (o *InstanceConfig) GetInstanceTypeOk() (*InstanceConfigInstanceType, bool)
 	return o.InstanceType, true
 }
 
-// IsSetInstanceType returns a boolean if a field has been set.
-func (o *InstanceConfig) IsSetInstanceType() bool {
-	if o != nil && !IsNil(o.InstanceType) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstanceType gets a reference to the given InstanceConfigInstanceType and assigns it to the InstanceType field.
 func (o *InstanceConfig) SetInstanceType(v InstanceConfigInstanceType) {
 	o.InstanceType = &v
@@ -713,15 +511,6 @@ func (o *InstanceConfig) GetSiteOk() (*InstanceConfigSite, bool) {
 		return nil, false
 	}
 	return o.Site, true
-}
-
-// IsSetSite returns a boolean if a field has been set.
-func (o *InstanceConfig) IsSetSite() bool {
-	if o != nil && !IsNil(o.Site) {
-		return true
-	}
-
-	return false
 }
 
 // SetSite gets a reference to the given InstanceConfigSite and assigns it to the Site field.
@@ -748,28 +537,9 @@ func (o *InstanceConfig) GetEnvironmentPrefixOk() (*string, bool) {
 	return o.EnvironmentPrefix.Get(), o.EnvironmentPrefix.IsSet()
 }
 
-// IsSetEnvironmentPrefix returns a boolean if a field has been set.
-func (o *InstanceConfig) IsSetEnvironmentPrefix() bool {
-	if o != nil && o.EnvironmentPrefix.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetEnvironmentPrefix gets a reference to the given NullableString and assigns it to the EnvironmentPrefix field.
 func (o *InstanceConfig) SetEnvironmentPrefix(v string) {
 	o.EnvironmentPrefix.Set(&v)
-}
-
-// SetEnvironmentPrefixNil sets the value for EnvironmentPrefix to be an explicit nil
-func (o *InstanceConfig) SetEnvironmentPrefixNil() {
-	o.EnvironmentPrefix.Set(nil)
-}
-
-// UnsetEnvironmentPrefix ensures that no value is present for EnvironmentPrefix, not even an explicit nil
-func (o *InstanceConfig) UnsetEnvironmentPrefix() {
-	o.EnvironmentPrefix.Unset()
 }
 
 // GetLayout returns the Layout field value if set, zero value otherwise.
@@ -788,15 +558,6 @@ func (o *InstanceConfig) GetLayoutOk() (*InstanceConfigLayout, bool) {
 		return nil, false
 	}
 	return o.Layout, true
-}
-
-// IsSetLayout returns a boolean if a field has been set.
-func (o *InstanceConfig) IsSetLayout() bool {
-	if o != nil && !IsNil(o.Layout) {
-		return true
-	}
-
-	return false
 }
 
 // SetLayout gets a reference to the given InstanceConfigLayout and assigns it to the Layout field.
@@ -820,15 +581,6 @@ func (o *InstanceConfig) GetTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *InstanceConfig) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.
@@ -855,28 +607,9 @@ func (o *InstanceConfig) GetKmsKeyIdOk() (*string, bool) {
 	return o.KmsKeyId.Get(), o.KmsKeyId.IsSet()
 }
 
-// IsSetKmsKeyId returns a boolean if a field has been set.
-func (o *InstanceConfig) IsSetKmsKeyId() bool {
-	if o != nil && o.KmsKeyId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetKmsKeyId gets a reference to the given NullableString and assigns it to the KmsKeyId field.
 func (o *InstanceConfig) SetKmsKeyId(v string) {
 	o.KmsKeyId.Set(&v)
-}
-
-// SetKmsKeyIdNil sets the value for KmsKeyId to be an explicit nil
-func (o *InstanceConfig) SetKmsKeyIdNil() {
-	o.KmsKeyId.Set(nil)
-}
-
-// UnsetKmsKeyId ensures that no value is present for KmsKeyId, not even an explicit nil
-func (o *InstanceConfig) UnsetKmsKeyId() {
-	o.KmsKeyId.Unset()
 }
 
 // GetInstanceProfile returns the InstanceProfile field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -898,28 +631,9 @@ func (o *InstanceConfig) GetInstanceProfileOk() (*string, bool) {
 	return o.InstanceProfile.Get(), o.InstanceProfile.IsSet()
 }
 
-// IsSetInstanceProfile returns a boolean if a field has been set.
-func (o *InstanceConfig) IsSetInstanceProfile() bool {
-	if o != nil && o.InstanceProfile.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInstanceProfile gets a reference to the given NullableString and assigns it to the InstanceProfile field.
 func (o *InstanceConfig) SetInstanceProfile(v string) {
 	o.InstanceProfile.Set(&v)
-}
-
-// SetInstanceProfileNil sets the value for InstanceProfile to be an explicit nil
-func (o *InstanceConfig) SetInstanceProfileNil() {
-	o.InstanceProfile.Set(nil)
-}
-
-// UnsetInstanceProfile ensures that no value is present for InstanceProfile, not even an explicit nil
-func (o *InstanceConfig) UnsetInstanceProfile() {
-	o.InstanceProfile.Unset()
 }
 
 // GetAvailabilityId returns the AvailabilityId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -941,28 +655,9 @@ func (o *InstanceConfig) GetAvailabilityIdOk() (*string, bool) {
 	return o.AvailabilityId.Get(), o.AvailabilityId.IsSet()
 }
 
-// IsSetAvailabilityId returns a boolean if a field has been set.
-func (o *InstanceConfig) IsSetAvailabilityId() bool {
-	if o != nil && o.AvailabilityId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAvailabilityId gets a reference to the given NullableString and assigns it to the AvailabilityId field.
 func (o *InstanceConfig) SetAvailabilityId(v string) {
 	o.AvailabilityId.Set(&v)
-}
-
-// SetAvailabilityIdNil sets the value for AvailabilityId to be an explicit nil
-func (o *InstanceConfig) SetAvailabilityIdNil() {
-	o.AvailabilityId.Set(nil)
-}
-
-// UnsetAvailabilityId ensures that no value is present for AvailabilityId, not even an explicit nil
-func (o *InstanceConfig) UnsetAvailabilityId() {
-	o.AvailabilityId.Unset()
 }
 
 // GetPublicIpType returns the PublicIpType field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -984,28 +679,9 @@ func (o *InstanceConfig) GetPublicIpTypeOk() (*string, bool) {
 	return o.PublicIpType.Get(), o.PublicIpType.IsSet()
 }
 
-// IsSetPublicIpType returns a boolean if a field has been set.
-func (o *InstanceConfig) IsSetPublicIpType() bool {
-	if o != nil && o.PublicIpType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPublicIpType gets a reference to the given NullableString and assigns it to the PublicIpType field.
 func (o *InstanceConfig) SetPublicIpType(v string) {
 	o.PublicIpType.Set(&v)
-}
-
-// SetPublicIpTypeNil sets the value for PublicIpType to be an explicit nil
-func (o *InstanceConfig) SetPublicIpTypeNil() {
-	o.PublicIpType.Set(nil)
-}
-
-// UnsetPublicIpType ensures that no value is present for PublicIpType, not even an explicit nil
-func (o *InstanceConfig) UnsetPublicIpType() {
-	o.PublicIpType.Unset()
 }
 
 // GetInstanceContext returns the InstanceContext field value if set, zero value otherwise.
@@ -1024,15 +700,6 @@ func (o *InstanceConfig) GetInstanceContextOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InstanceContext, true
-}
-
-// IsSetInstanceContext returns a boolean if a field has been set.
-func (o *InstanceConfig) IsSetInstanceContext() bool {
-	if o != nil && !IsNil(o.InstanceContext) {
-		return true
-	}
-
-	return false
 }
 
 // SetInstanceContext gets a reference to the given string and assigns it to the InstanceContext field.
@@ -1058,15 +725,6 @@ func (o *InstanceConfig) GetMemoryDisplayOk() (*string, bool) {
 	return o.MemoryDisplay, true
 }
 
-// IsSetMemoryDisplay returns a boolean if a field has been set.
-func (o *InstanceConfig) IsSetMemoryDisplay() bool {
-	if o != nil && !IsNil(o.MemoryDisplay) {
-		return true
-	}
-
-	return false
-}
-
 // SetMemoryDisplay gets a reference to the given string and assigns it to the MemoryDisplay field.
 func (o *InstanceConfig) SetMemoryDisplay(v string) {
 	o.MemoryDisplay = &v
@@ -1088,15 +746,6 @@ func (o *InstanceConfig) GetExposeOk() ([]int64, bool) {
 		return nil, false
 	}
 	return o.Expose, true
-}
-
-// IsSetExpose returns a boolean if a field has been set.
-func (o *InstanceConfig) IsSetExpose() bool {
-	if o != nil && !IsNil(o.Expose) {
-		return true
-	}
-
-	return false
 }
 
 // SetExpose gets a reference to the given []int64 and assigns it to the Expose field.
@@ -1122,15 +771,6 @@ func (o *InstanceConfig) GetCreateBackupOk() (*bool, bool) {
 	return o.CreateBackup, true
 }
 
-// IsSetCreateBackup returns a boolean if a field has been set.
-func (o *InstanceConfig) IsSetCreateBackup() bool {
-	if o != nil && !IsNil(o.CreateBackup) {
-		return true
-	}
-
-	return false
-}
-
 // SetCreateBackup gets a reference to the given bool and assigns it to the CreateBackup field.
 func (o *InstanceConfig) SetCreateBackup(v bool) {
 	o.CreateBackup = &v
@@ -1152,15 +792,6 @@ func (o *InstanceConfig) GetBackupOk() (*InstanceConfigBackup, bool) {
 		return nil, false
 	}
 	return o.Backup, true
-}
-
-// IsSetBackup returns a boolean if a field has been set.
-func (o *InstanceConfig) IsSetBackup() bool {
-	if o != nil && !IsNil(o.Backup) {
-		return true
-	}
-
-	return false
 }
 
 // SetBackup gets a reference to the given InstanceConfigBackup and assigns it to the Backup field.
@@ -1186,15 +817,6 @@ func (o *InstanceConfig) GetReplicationGroupOk() (*InstanceConfigReplicationGrou
 	return o.ReplicationGroup, true
 }
 
-// IsSetReplicationGroup returns a boolean if a field has been set.
-func (o *InstanceConfig) IsSetReplicationGroup() bool {
-	if o != nil && !IsNil(o.ReplicationGroup) {
-		return true
-	}
-
-	return false
-}
-
 // SetReplicationGroup gets a reference to the given InstanceConfigReplicationGroup and assigns it to the ReplicationGroup field.
 func (o *InstanceConfig) SetReplicationGroup(v InstanceConfigReplicationGroup) {
 	o.ReplicationGroup = &v
@@ -1216,15 +838,6 @@ func (o *InstanceConfig) GetLayoutSizeOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.LayoutSize, true
-}
-
-// IsSetLayoutSize returns a boolean if a field has been set.
-func (o *InstanceConfig) IsSetLayoutSize() bool {
-	if o != nil && !IsNil(o.LayoutSize) {
-		return true
-	}
-
-	return false
 }
 
 // SetLayoutSize gets a reference to the given int64 and assigns it to the LayoutSize field.
@@ -1251,15 +864,6 @@ func (o *InstanceConfig) GetLbInstancesOk() ([]map[string]interface{}, bool) {
 	return o.LbInstances, true
 }
 
-// IsSetLbInstances returns a boolean if a field has been set.
-func (o *InstanceConfig) IsSetLbInstances() bool {
-	if o != nil && !IsNil(o.LbInstances) {
-		return true
-	}
-
-	return false
-}
-
 // SetLbInstances gets a reference to the given []map[string]interface{} and assigns it to the LbInstances field.
 func (o *InstanceConfig) SetLbInstances(v []map[string]interface{}) {
 	o.LbInstances = v
@@ -1281,15 +885,6 @@ func (o *InstanceConfig) GetNetworkDomainOk() (*InstanceConfigNetworkDomain, boo
 		return nil, false
 	}
 	return o.NetworkDomain, true
-}
-
-// IsSetNetworkDomain returns a boolean if a field has been set.
-func (o *InstanceConfig) IsSetNetworkDomain() bool {
-	if o != nil && !IsNil(o.NetworkDomain) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkDomain gets a reference to the given InstanceConfigNetworkDomain and assigns it to the NetworkDomain field.

@@ -67,15 +67,6 @@ func (o *SpecTemplateUpdate) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *SpecTemplateUpdate) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *SpecTemplateUpdate) SetName(v string) {
 	o.Name = &v
@@ -98,15 +89,6 @@ func (o *SpecTemplateUpdate) GetLabelsOk() ([]string, bool) {
 		return nil, false
 	}
 	return o.Labels, true
-}
-
-// IsSetLabels returns a boolean if a field has been set.
-func (o *SpecTemplateUpdate) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
 }
 
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
@@ -132,15 +114,6 @@ func (o *SpecTemplateUpdate) GetTypeOk() (*SpecTemplateUpdateType, bool) {
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *SpecTemplateUpdate) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given SpecTemplateUpdateType and assigns it to the Type field.
 func (o *SpecTemplateUpdate) SetType(v SpecTemplateUpdateType) {
 	o.Type = &v
@@ -164,15 +137,6 @@ func (o *SpecTemplateUpdate) GetFileOk() (*SpecTemplateUpdateFile, bool) {
 	return o.File, true
 }
 
-// IsSetFile returns a boolean if a field has been set.
-func (o *SpecTemplateUpdate) IsSetFile() bool {
-	if o != nil && !IsNil(o.File) {
-		return true
-	}
-
-	return false
-}
-
 // SetFile gets a reference to the given SpecTemplateUpdateFile and assigns it to the File field.
 func (o *SpecTemplateUpdate) SetFile(v SpecTemplateUpdateFile) {
 	o.File = &v
@@ -194,15 +158,6 @@ func (o *SpecTemplateUpdate) GetConfigOk() (*SpecTemplateUpdateConfig, bool) {
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *SpecTemplateUpdate) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given SpecTemplateUpdateConfig and assigns it to the Config field.

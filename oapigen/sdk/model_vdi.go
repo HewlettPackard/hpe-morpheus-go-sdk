@@ -67,15 +67,6 @@ func (o *Vdi) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *Vdi) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *Vdi) SetId(v int64) {
 	o.Id = &v
@@ -99,15 +90,6 @@ func (o *Vdi) GetLogoOk() (*string, bool) {
 	return o.Logo, true
 }
 
-// IsSetLogo returns a boolean if a field has been set.
-func (o *Vdi) IsSetLogo() bool {
-	if o != nil && !IsNil(o.Logo) {
-		return true
-	}
-
-	return false
-}
-
 // SetLogo gets a reference to the given string and assigns it to the Logo field.
 func (o *Vdi) SetLogo(v string) {
 	o.Logo = &v
@@ -129,15 +111,6 @@ func (o *Vdi) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *Vdi) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -164,28 +137,9 @@ func (o *Vdi) GetDescriptionOk() (*string, bool) {
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *Vdi) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *Vdi) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *Vdi) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *Vdi) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -204,15 +158,6 @@ func (o *Vdi) GetStatusOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *Vdi) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -238,15 +183,6 @@ func (o *Vdi) GetAllocationStatusOk() (*string, bool) {
 	return o.AllocationStatus, true
 }
 
-// IsSetAllocationStatus returns a boolean if a field has been set.
-func (o *Vdi) IsSetAllocationStatus() bool {
-	if o != nil && !IsNil(o.AllocationStatus) {
-		return true
-	}
-
-	return false
-}
-
 // SetAllocationStatus gets a reference to the given string and assigns it to the AllocationStatus field.
 func (o *Vdi) SetAllocationStatus(v string) {
 	o.AllocationStatus = &v
@@ -268,15 +204,6 @@ func (o *Vdi) GetAllocationOk() (*GetVdi200ResponseDesktopAllocation, bool) {
 		return nil, false
 	}
 	return o.Allocation, true
-}
-
-// IsSetAllocation returns a boolean if a field has been set.
-func (o *Vdi) IsSetAllocation() bool {
-	if o != nil && !IsNil(o.Allocation) {
-		return true
-	}
-
-	return false
 }
 
 // SetAllocation gets a reference to the given GetVdi200ResponseDesktopAllocation and assigns it to the Allocation field.

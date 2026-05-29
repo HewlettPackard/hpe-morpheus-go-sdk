@@ -71,28 +71,9 @@ func (o *BillingInstance) GetInstanceIdOk() (*int64, bool) {
 	return o.InstanceId.Get(), o.InstanceId.IsSet()
 }
 
-// IsSetInstanceId returns a boolean if a field has been set.
-func (o *BillingInstance) IsSetInstanceId() bool {
-	if o != nil && o.InstanceId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInstanceId gets a reference to the given NullableInt64 and assigns it to the InstanceId field.
 func (o *BillingInstance) SetInstanceId(v int64) {
 	o.InstanceId.Set(&v)
-}
-
-// SetInstanceIdNil sets the value for InstanceId to be an explicit nil
-func (o *BillingInstance) SetInstanceIdNil() {
-	o.InstanceId.Set(nil)
-}
-
-// UnsetInstanceId ensures that no value is present for InstanceId, not even an explicit nil
-func (o *BillingInstance) UnsetInstanceId() {
-	o.InstanceId.Unset()
 }
 
 // GetInstanceUUID returns the InstanceUUID field value if set, zero value otherwise.
@@ -111,15 +92,6 @@ func (o *BillingInstance) GetInstanceUUIDOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InstanceUUID, true
-}
-
-// IsSetInstanceUUID returns a boolean if a field has been set.
-func (o *BillingInstance) IsSetInstanceUUID() bool {
-	if o != nil && !IsNil(o.InstanceUUID) {
-		return true
-	}
-
-	return false
 }
 
 // SetInstanceUUID gets a reference to the given string and assigns it to the InstanceUUID field.
@@ -145,15 +117,6 @@ func (o *BillingInstance) GetStartDateOk() (*time.Time, bool) {
 	return o.StartDate, true
 }
 
-// IsSetStartDate returns a boolean if a field has been set.
-func (o *BillingInstance) IsSetStartDate() bool {
-	if o != nil && !IsNil(o.StartDate) {
-		return true
-	}
-
-	return false
-}
-
 // SetStartDate gets a reference to the given time.Time and assigns it to the StartDate field.
 func (o *BillingInstance) SetStartDate(v time.Time) {
 	o.StartDate = &v
@@ -175,15 +138,6 @@ func (o *BillingInstance) GetEndDateOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.EndDate, true
-}
-
-// IsSetEndDate returns a boolean if a field has been set.
-func (o *BillingInstance) IsSetEndDate() bool {
-	if o != nil && !IsNil(o.EndDate) {
-		return true
-	}
-
-	return false
 }
 
 // SetEndDate gets a reference to the given time.Time and assigns it to the EndDate field.
@@ -209,15 +163,6 @@ func (o *BillingInstance) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *BillingInstance) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *BillingInstance) SetName(v string) {
 	o.Name = &v
@@ -239,15 +184,6 @@ func (o *BillingInstance) GetPriceOk() (*float32, bool) {
 		return nil, false
 	}
 	return o.Price, true
-}
-
-// IsSetPrice returns a boolean if a field has been set.
-func (o *BillingInstance) IsSetPrice() bool {
-	if o != nil && !IsNil(o.Price) {
-		return true
-	}
-
-	return false
 }
 
 // SetPrice gets a reference to the given float32 and assigns it to the Price field.
@@ -273,15 +209,6 @@ func (o *BillingInstance) GetCostOk() (*float32, bool) {
 	return o.Cost, true
 }
 
-// IsSetCost returns a boolean if a field has been set.
-func (o *BillingInstance) IsSetCost() bool {
-	if o != nil && !IsNil(o.Cost) {
-		return true
-	}
-
-	return false
-}
-
 // SetCost gets a reference to the given float32 and assigns it to the Cost field.
 func (o *BillingInstance) SetCost(v float32) {
 	o.Cost = &v
@@ -305,15 +232,6 @@ func (o *BillingInstance) GetCurrencyOk() (*string, bool) {
 	return o.Currency, true
 }
 
-// IsSetCurrency returns a boolean if a field has been set.
-func (o *BillingInstance) IsSetCurrency() bool {
-	if o != nil && !IsNil(o.Currency) {
-		return true
-	}
-
-	return false
-}
-
 // SetCurrency gets a reference to the given string and assigns it to the Currency field.
 func (o *BillingInstance) SetCurrency(v string) {
 	o.Currency = &v
@@ -335,15 +253,6 @@ func (o *BillingInstance) GetContainersOk() ([]BillingInstanceContainersInner, b
 		return nil, false
 	}
 	return o.Containers, true
-}
-
-// IsSetContainers returns a boolean if a field has been set.
-func (o *BillingInstance) IsSetContainers() bool {
-	if o != nil && !IsNil(o.Containers) {
-		return true
-	}
-
-	return false
 }
 
 // SetContainers gets a reference to the given []BillingInstanceContainersInner and assigns it to the Containers field.

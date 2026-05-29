@@ -62,15 +62,6 @@ func (o *GetHost200Response) GetServerOk() (*GetHost200ResponseServer, bool) {
 	return o.Server, true
 }
 
-// IsSetServer returns a boolean if a field has been set.
-func (o *GetHost200Response) IsSetServer() bool {
-	if o != nil && !IsNil(o.Server) {
-		return true
-	}
-
-	return false
-}
-
 // SetServer gets a reference to the given GetHost200ResponseServer and assigns it to the Server field.
 func (o *GetHost200Response) SetServer(v GetHost200ResponseServer) {
 	o.Server = &v
@@ -92,15 +83,6 @@ func (o *GetHost200Response) GetStatsOk() (map[string]interface{}, bool) {
 		return map[string]interface{}{}, false
 	}
 	return o.Stats, true
-}
-
-// IsSetStats returns a boolean if a field has been set.
-func (o *GetHost200Response) IsSetStats() bool {
-	if o != nil && !IsNil(o.Stats) {
-		return true
-	}
-
-	return false
 }
 
 // SetStats gets a reference to the given map[string]interface{} and assigns it to the Stats field.

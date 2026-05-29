@@ -67,15 +67,6 @@ func (o *ListHealth200ResponseAllOfHealthCpu) GetSuccessOk() (*bool, bool) {
 	return o.Success, true
 }
 
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthCpu) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
-}
-
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.
 func (o *ListHealth200ResponseAllOfHealthCpu) SetSuccess(v bool) {
 	o.Success = &v
@@ -97,15 +88,6 @@ func (o *ListHealth200ResponseAllOfHealthCpu) GetCpuLoadOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.CpuLoad, true
-}
-
-// IsSetCpuLoad returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthCpu) IsSetCpuLoad() bool {
-	if o != nil && !IsNil(o.CpuLoad) {
-		return true
-	}
-
-	return false
 }
 
 // SetCpuLoad gets a reference to the given int64 and assigns it to the CpuLoad field.
@@ -131,15 +113,6 @@ func (o *ListHealth200ResponseAllOfHealthCpu) GetCpuTotalLoadOk() (*int64, bool)
 	return o.CpuTotalLoad, true
 }
 
-// IsSetCpuTotalLoad returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthCpu) IsSetCpuTotalLoad() bool {
-	if o != nil && !IsNil(o.CpuTotalLoad) {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuTotalLoad gets a reference to the given int64 and assigns it to the CpuTotalLoad field.
 func (o *ListHealth200ResponseAllOfHealthCpu) SetCpuTotalLoad(v int64) {
 	o.CpuTotalLoad = &v
@@ -161,15 +134,6 @@ func (o *ListHealth200ResponseAllOfHealthCpu) GetProcessorCountOk() (*int64, boo
 		return nil, false
 	}
 	return o.ProcessorCount, true
-}
-
-// IsSetProcessorCount returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthCpu) IsSetProcessorCount() bool {
-	if o != nil && !IsNil(o.ProcessorCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetProcessorCount gets a reference to the given int64 and assigns it to the ProcessorCount field.
@@ -195,15 +159,6 @@ func (o *ListHealth200ResponseAllOfHealthCpu) GetProcessTimeOk() (*int64, bool) 
 	return o.ProcessTime, true
 }
 
-// IsSetProcessTime returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthCpu) IsSetProcessTime() bool {
-	if o != nil && !IsNil(o.ProcessTime) {
-		return true
-	}
-
-	return false
-}
-
 // SetProcessTime gets a reference to the given int64 and assigns it to the ProcessTime field.
 func (o *ListHealth200ResponseAllOfHealthCpu) SetProcessTime(v int64) {
 	o.ProcessTime = &v
@@ -227,15 +182,6 @@ func (o *ListHealth200ResponseAllOfHealthCpu) GetSystemLoadOk() (*float32, bool)
 	return o.SystemLoad, true
 }
 
-// IsSetSystemLoad returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthCpu) IsSetSystemLoad() bool {
-	if o != nil && !IsNil(o.SystemLoad) {
-		return true
-	}
-
-	return false
-}
-
 // SetSystemLoad gets a reference to the given float32 and assigns it to the SystemLoad field.
 func (o *ListHealth200ResponseAllOfHealthCpu) SetSystemLoad(v float32) {
 	o.SystemLoad = &v
@@ -257,15 +203,6 @@ func (o *ListHealth200ResponseAllOfHealthCpu) GetStatusOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthCpu) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.

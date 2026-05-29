@@ -61,15 +61,6 @@ func (o *FileShareStorageQuotaPolicyTypeConfiguration) GetMaxStorageOk() (*strin
 	return o.MaxStorage, true
 }
 
-// IsSetMaxStorage returns a boolean if a field has been set.
-func (o *FileShareStorageQuotaPolicyTypeConfiguration) IsSetMaxStorage() bool {
-	if o != nil && !IsNil(o.MaxStorage) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxStorage gets a reference to the given string and assigns it to the MaxStorage field.
 func (o *FileShareStorageQuotaPolicyTypeConfiguration) SetMaxStorage(v string) {
 	o.MaxStorage = &v

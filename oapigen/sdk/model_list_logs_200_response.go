@@ -72,15 +72,6 @@ func (o *ListLogs200Response) GetSortOk() (*ListLogs200ResponseAllOfSort, bool) 
 	return o.Sort, true
 }
 
-// IsSetSort returns a boolean if a field has been set.
-func (o *ListLogs200Response) IsSetSort() bool {
-	if o != nil && !IsNil(o.Sort) {
-		return true
-	}
-
-	return false
-}
-
 // SetSort gets a reference to the given ListLogs200ResponseAllOfSort and assigns it to the Sort field.
 func (o *ListLogs200Response) SetSort(v ListLogs200ResponseAllOfSort) {
 	o.Sort = &v
@@ -102,15 +93,6 @@ func (o *ListLogs200Response) GetOffsetOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.Offset, true
-}
-
-// IsSetOffset returns a boolean if a field has been set.
-func (o *ListLogs200Response) IsSetOffset() bool {
-	if o != nil && !IsNil(o.Offset) {
-		return true
-	}
-
-	return false
 }
 
 // SetOffset gets a reference to the given int64 and assigns it to the Offset field.
@@ -136,15 +118,6 @@ func (o *ListLogs200Response) GetStartOk() (*time.Time, bool) {
 	return o.Start, true
 }
 
-// IsSetStart returns a boolean if a field has been set.
-func (o *ListLogs200Response) IsSetStart() bool {
-	if o != nil && !IsNil(o.Start) {
-		return true
-	}
-
-	return false
-}
-
 // SetStart gets a reference to the given time.Time and assigns it to the Start field.
 func (o *ListLogs200Response) SetStart(v time.Time) {
 	o.Start = &v
@@ -166,15 +139,6 @@ func (o *ListLogs200Response) GetEndOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.End, true
-}
-
-// IsSetEnd returns a boolean if a field has been set.
-func (o *ListLogs200Response) IsSetEnd() bool {
-	if o != nil && !IsNil(o.End) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnd gets a reference to the given time.Time and assigns it to the End field.
@@ -200,15 +164,6 @@ func (o *ListLogs200Response) GetDataOk() ([]ListLogs200ResponseAllOfDataInner, 
 	return o.Data, true
 }
 
-// IsSetData returns a boolean if a field has been set.
-func (o *ListLogs200Response) IsSetData() bool {
-	if o != nil && !IsNil(o.Data) {
-		return true
-	}
-
-	return false
-}
-
 // SetData gets a reference to the given []ListLogs200ResponseAllOfDataInner and assigns it to the Data field.
 func (o *ListLogs200Response) SetData(v []ListLogs200ResponseAllOfDataInner) {
 	o.Data = v
@@ -230,15 +185,6 @@ func (o *ListLogs200Response) GetMaxOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.Max, true
-}
-
-// IsSetMax returns a boolean if a field has been set.
-func (o *ListLogs200Response) IsSetMax() bool {
-	if o != nil && !IsNil(o.Max) {
-		return true
-	}
-
-	return false
 }
 
 // SetMax gets a reference to the given int64 and assigns it to the Max field.
@@ -264,15 +210,6 @@ func (o *ListLogs200Response) GetGrandTotalOk() (*int64, bool) {
 	return o.GrandTotal, true
 }
 
-// IsSetGrandTotal returns a boolean if a field has been set.
-func (o *ListLogs200Response) IsSetGrandTotal() bool {
-	if o != nil && !IsNil(o.GrandTotal) {
-		return true
-	}
-
-	return false
-}
-
 // SetGrandTotal gets a reference to the given int64 and assigns it to the GrandTotal field.
 func (o *ListLogs200Response) SetGrandTotal(v int64) {
 	o.GrandTotal = &v
@@ -294,15 +231,6 @@ func (o *ListLogs200Response) GetTotalOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.Total, true
-}
-
-// IsSetTotal returns a boolean if a field has been set.
-func (o *ListLogs200Response) IsSetTotal() bool {
-	if o != nil && !IsNil(o.Total) {
-		return true
-	}
-
-	return false
 }
 
 // SetTotal gets a reference to the given int64 and assigns it to the Total field.
@@ -328,15 +256,6 @@ func (o *ListLogs200Response) GetSuccessOk() (*bool, bool) {
 	return o.Success, true
 }
 
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *ListLogs200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
-}
-
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.
 func (o *ListLogs200Response) SetSuccess(v bool) {
 	o.Success = &v
@@ -360,15 +279,6 @@ func (o *ListLogs200Response) GetCountOk() (*int64, bool) {
 	return o.Count, true
 }
 
-// IsSetCount returns a boolean if a field has been set.
-func (o *ListLogs200Response) IsSetCount() bool {
-	if o != nil && !IsNil(o.Count) {
-		return true
-	}
-
-	return false
-}
-
 // SetCount gets a reference to the given int64 and assigns it to the Count field.
 func (o *ListLogs200Response) SetCount(v int64) {
 	o.Count = &v
@@ -390,15 +300,6 @@ func (o *ListLogs200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, b
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListLogs200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

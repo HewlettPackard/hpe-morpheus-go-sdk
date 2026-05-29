@@ -63,15 +63,6 @@ func (o *ListVdi200ResponseAllOfDesktopsInnerAllocationInstance) GetIdOk() (*int
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListVdi200ResponseAllOfDesktopsInnerAllocationInstance) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListVdi200ResponseAllOfDesktopsInnerAllocationInstance) SetId(v int64) {
 	o.Id = &v
@@ -95,15 +86,6 @@ func (o *ListVdi200ResponseAllOfDesktopsInnerAllocationInstance) GetNameOk() (*s
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ListVdi200ResponseAllOfDesktopsInnerAllocationInstance) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ListVdi200ResponseAllOfDesktopsInnerAllocationInstance) SetName(v string) {
 	o.Name = &v
@@ -125,15 +107,6 @@ func (o *ListVdi200ResponseAllOfDesktopsInnerAllocationInstance) GetStatusOk() (
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *ListVdi200ResponseAllOfDesktopsInnerAllocationInstance) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.

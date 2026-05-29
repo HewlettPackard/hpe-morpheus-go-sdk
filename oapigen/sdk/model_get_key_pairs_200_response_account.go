@@ -72,15 +72,6 @@ func (o *GetKeyPairs200ResponseAccount) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetKeyPairs200ResponseAccount) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetKeyPairs200ResponseAccount) SetId(v int64) {
 	o.Id = &v
@@ -104,15 +95,6 @@ func (o *GetKeyPairs200ResponseAccount) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *GetKeyPairs200ResponseAccount) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *GetKeyPairs200ResponseAccount) SetName(v string) {
 	o.Name = &v
@@ -134,15 +116,6 @@ func (o *GetKeyPairs200ResponseAccount) GetAccountIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.AccountId, true
-}
-
-// IsSetAccountId returns a boolean if a field has been set.
-func (o *GetKeyPairs200ResponseAccount) IsSetAccountId() bool {
-	if o != nil && !IsNil(o.AccountId) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccountId gets a reference to the given int64 and assigns it to the AccountId field.
@@ -169,28 +142,9 @@ func (o *GetKeyPairs200ResponseAccount) GetPublicKeyOk() (*string, bool) {
 	return o.PublicKey.Get(), o.PublicKey.IsSet()
 }
 
-// IsSetPublicKey returns a boolean if a field has been set.
-func (o *GetKeyPairs200ResponseAccount) IsSetPublicKey() bool {
-	if o != nil && o.PublicKey.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPublicKey gets a reference to the given NullableString and assigns it to the PublicKey field.
 func (o *GetKeyPairs200ResponseAccount) SetPublicKey(v string) {
 	o.PublicKey.Set(&v)
-}
-
-// SetPublicKeyNil sets the value for PublicKey to be an explicit nil
-func (o *GetKeyPairs200ResponseAccount) SetPublicKeyNil() {
-	o.PublicKey.Set(nil)
-}
-
-// UnsetPublicKey ensures that no value is present for PublicKey, not even an explicit nil
-func (o *GetKeyPairs200ResponseAccount) UnsetPublicKey() {
-	o.PublicKey.Unset()
 }
 
 // GetHasPrivateKey returns the HasPrivateKey field value if set, zero value otherwise.
@@ -209,15 +163,6 @@ func (o *GetKeyPairs200ResponseAccount) GetHasPrivateKeyOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.HasPrivateKey, true
-}
-
-// IsSetHasPrivateKey returns a boolean if a field has been set.
-func (o *GetKeyPairs200ResponseAccount) IsSetHasPrivateKey() bool {
-	if o != nil && !IsNil(o.HasPrivateKey) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasPrivateKey gets a reference to the given bool and assigns it to the HasPrivateKey field.
@@ -244,28 +189,9 @@ func (o *GetKeyPairs200ResponseAccount) GetPrivateKeyHashOk() (*string, bool) {
 	return o.PrivateKeyHash.Get(), o.PrivateKeyHash.IsSet()
 }
 
-// IsSetPrivateKeyHash returns a boolean if a field has been set.
-func (o *GetKeyPairs200ResponseAccount) IsSetPrivateKeyHash() bool {
-	if o != nil && o.PrivateKeyHash.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPrivateKeyHash gets a reference to the given NullableString and assigns it to the PrivateKeyHash field.
 func (o *GetKeyPairs200ResponseAccount) SetPrivateKeyHash(v string) {
 	o.PrivateKeyHash.Set(&v)
-}
-
-// SetPrivateKeyHashNil sets the value for PrivateKeyHash to be an explicit nil
-func (o *GetKeyPairs200ResponseAccount) SetPrivateKeyHashNil() {
-	o.PrivateKeyHash.Set(nil)
-}
-
-// UnsetPrivateKeyHash ensures that no value is present for PrivateKeyHash, not even an explicit nil
-func (o *GetKeyPairs200ResponseAccount) UnsetPrivateKeyHash() {
-	o.PrivateKeyHash.Unset()
 }
 
 // GetPrivateKey returns the PrivateKey field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -287,28 +213,9 @@ func (o *GetKeyPairs200ResponseAccount) GetPrivateKeyOk() (*string, bool) {
 	return o.PrivateKey.Get(), o.PrivateKey.IsSet()
 }
 
-// IsSetPrivateKey returns a boolean if a field has been set.
-func (o *GetKeyPairs200ResponseAccount) IsSetPrivateKey() bool {
-	if o != nil && o.PrivateKey.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPrivateKey gets a reference to the given NullableString and assigns it to the PrivateKey field.
 func (o *GetKeyPairs200ResponseAccount) SetPrivateKey(v string) {
 	o.PrivateKey.Set(&v)
-}
-
-// SetPrivateKeyNil sets the value for PrivateKey to be an explicit nil
-func (o *GetKeyPairs200ResponseAccount) SetPrivateKeyNil() {
-	o.PrivateKey.Set(nil)
-}
-
-// UnsetPrivateKey ensures that no value is present for PrivateKey, not even an explicit nil
-func (o *GetKeyPairs200ResponseAccount) UnsetPrivateKey() {
-	o.PrivateKey.Unset()
 }
 
 // GetFingerprint returns the Fingerprint field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -330,28 +237,9 @@ func (o *GetKeyPairs200ResponseAccount) GetFingerprintOk() (*string, bool) {
 	return o.Fingerprint.Get(), o.Fingerprint.IsSet()
 }
 
-// IsSetFingerprint returns a boolean if a field has been set.
-func (o *GetKeyPairs200ResponseAccount) IsSetFingerprint() bool {
-	if o != nil && o.Fingerprint.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFingerprint gets a reference to the given NullableString and assigns it to the Fingerprint field.
 func (o *GetKeyPairs200ResponseAccount) SetFingerprint(v string) {
 	o.Fingerprint.Set(&v)
-}
-
-// SetFingerprintNil sets the value for Fingerprint to be an explicit nil
-func (o *GetKeyPairs200ResponseAccount) SetFingerprintNil() {
-	o.Fingerprint.Set(nil)
-}
-
-// UnsetFingerprint ensures that no value is present for Fingerprint, not even an explicit nil
-func (o *GetKeyPairs200ResponseAccount) UnsetFingerprint() {
-	o.Fingerprint.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -370,15 +258,6 @@ func (o *GetKeyPairs200ResponseAccount) GetDateCreatedOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.DateCreated, true
-}
-
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *GetKeyPairs200ResponseAccount) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
@@ -402,15 +281,6 @@ func (o *GetKeyPairs200ResponseAccount) GetLastUpdatedOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *GetKeyPairs200ResponseAccount) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.

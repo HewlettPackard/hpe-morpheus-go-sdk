@@ -96,15 +96,6 @@ func (o *UpdateTasksRequestTaskFile) GetContentOk() (*string, bool) {
 	return o.Content, true
 }
 
-// IsSetContent returns a boolean if a field has been set.
-func (o *UpdateTasksRequestTaskFile) IsSetContent() bool {
-	if o != nil && !IsNil(o.Content) {
-		return true
-	}
-
-	return false
-}
-
 // SetContent gets a reference to the given string and assigns it to the Content field.
 func (o *UpdateTasksRequestTaskFile) SetContent(v string) {
 	o.Content = &v
@@ -126,15 +117,6 @@ func (o *UpdateTasksRequestTaskFile) GetContentPathOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ContentPath, true
-}
-
-// IsSetContentPath returns a boolean if a field has been set.
-func (o *UpdateTasksRequestTaskFile) IsSetContentPath() bool {
-	if o != nil && !IsNil(o.ContentPath) {
-		return true
-	}
-
-	return false
 }
 
 // SetContentPath gets a reference to the given string and assigns it to the ContentPath field.
@@ -160,15 +142,6 @@ func (o *UpdateTasksRequestTaskFile) GetContentRefOk() (*string, bool) {
 	return o.ContentRef, true
 }
 
-// IsSetContentRef returns a boolean if a field has been set.
-func (o *UpdateTasksRequestTaskFile) IsSetContentRef() bool {
-	if o != nil && !IsNil(o.ContentRef) {
-		return true
-	}
-
-	return false
-}
-
 // SetContentRef gets a reference to the given string and assigns it to the ContentRef field.
 func (o *UpdateTasksRequestTaskFile) SetContentRef(v string) {
 	o.ContentRef = &v
@@ -190,15 +163,6 @@ func (o *UpdateTasksRequestTaskFile) GetRepositoryOk() (*UpdateTasksRequestTaskF
 		return nil, false
 	}
 	return o.Repository, true
-}
-
-// IsSetRepository returns a boolean if a field has been set.
-func (o *UpdateTasksRequestTaskFile) IsSetRepository() bool {
-	if o != nil && !IsNil(o.Repository) {
-		return true
-	}
-
-	return false
 }
 
 // SetRepository gets a reference to the given UpdateTasksRequestTaskFileRepository and assigns it to the Repository field.

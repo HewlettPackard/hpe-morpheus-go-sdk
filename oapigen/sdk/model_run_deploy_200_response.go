@@ -61,15 +61,6 @@ func (o *RunDeploy200Response) GetAppDeployOk() (*RunDeploy200ResponseAppDeploy,
 	return o.AppDeploy, true
 }
 
-// IsSetAppDeploy returns a boolean if a field has been set.
-func (o *RunDeploy200Response) IsSetAppDeploy() bool {
-	if o != nil && !IsNil(o.AppDeploy) {
-		return true
-	}
-
-	return false
-}
-
 // SetAppDeploy gets a reference to the given RunDeploy200ResponseAppDeploy and assigns it to the AppDeploy field.
 func (o *RunDeploy200Response) SetAppDeploy(v RunDeploy200ResponseAppDeploy) {
 	o.AppDeploy = &v

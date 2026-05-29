@@ -61,15 +61,6 @@ func (o *UpdateInstanceTypeRequest) GetInstanceTypeOk() (*UpdateInstanceTypeRequ
 	return o.InstanceType, true
 }
 
-// IsSetInstanceType returns a boolean if a field has been set.
-func (o *UpdateInstanceTypeRequest) IsSetInstanceType() bool {
-	if o != nil && !IsNil(o.InstanceType) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstanceType gets a reference to the given UpdateInstanceTypeRequestInstanceType and assigns it to the InstanceType field.
 func (o *UpdateInstanceTypeRequest) SetInstanceType(v UpdateInstanceTypeRequestInstanceType) {
 	o.InstanceType = &v

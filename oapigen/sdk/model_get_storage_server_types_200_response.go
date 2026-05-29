@@ -61,15 +61,6 @@ func (o *GetStorageServerTypes200Response) GetStorageServerTypeOk() (*GetStorage
 	return o.StorageServerType, true
 }
 
-// IsSetStorageServerType returns a boolean if a field has been set.
-func (o *GetStorageServerTypes200Response) IsSetStorageServerType() bool {
-	if o != nil && !IsNil(o.StorageServerType) {
-		return true
-	}
-
-	return false
-}
-
 // SetStorageServerType gets a reference to the given GetStorageServerTypes200ResponseStorageServerType and assigns it to the StorageServerType field.
 func (o *GetStorageServerTypes200Response) SetStorageServerType(v GetStorageServerTypes200ResponseStorageServerType) {
 	o.StorageServerType = &v

@@ -61,15 +61,6 @@ func (o *GetClusterNamespace200Response) GetNamespaceOk() (*GetClusterNamespace2
 	return o.Namespace, true
 }
 
-// IsSetNamespace returns a boolean if a field has been set.
-func (o *GetClusterNamespace200Response) IsSetNamespace() bool {
-	if o != nil && !IsNil(o.Namespace) {
-		return true
-	}
-
-	return false
-}
-
 // SetNamespace gets a reference to the given GetClusterNamespace200ResponseNamespace and assigns it to the Namespace field.
 func (o *GetClusterNamespace200Response) SetNamespace(v GetClusterNamespace200ResponseNamespace) {
 	o.Namespace = &v

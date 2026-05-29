@@ -66,15 +66,6 @@ func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) GetIdOk() (
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given ListInstances200ResponseAllOfInstancesInnerInterfacesInnerId and assigns it to the Id field.
 func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) SetId(v ListInstances200ResponseAllOfInstancesInnerInterfacesInnerId) {
 	o.Id = &v
@@ -96,15 +87,6 @@ func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) GetNetworkO
 		return nil, false
 	}
 	return o.Network, true
-}
-
-// IsSetNetwork returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) IsSetNetwork() bool {
-	if o != nil && !IsNil(o.Network) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetwork gets a reference to the given ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork and assigns it to the Network field.
@@ -131,28 +113,9 @@ func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) GetIpAddres
 	return o.IpAddress.Get(), o.IpAddress.IsSet()
 }
 
-// IsSetIpAddress returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) IsSetIpAddress() bool {
-	if o != nil && o.IpAddress.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetIpAddress gets a reference to the given NullableString and assigns it to the IpAddress field.
 func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) SetIpAddress(v string) {
 	o.IpAddress.Set(&v)
-}
-
-// SetIpAddressNil sets the value for IpAddress to be an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) SetIpAddressNil() {
-	o.IpAddress.Set(nil)
-}
-
-// UnsetIpAddress ensures that no value is present for IpAddress, not even an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) UnsetIpAddress() {
-	o.IpAddress.Unset()
 }
 
 // GetNetworkInterfaceTypeId returns the NetworkInterfaceTypeId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -174,28 +137,9 @@ func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) GetNetworkI
 	return o.NetworkInterfaceTypeId.Get(), o.NetworkInterfaceTypeId.IsSet()
 }
 
-// IsSetNetworkInterfaceTypeId returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) IsSetNetworkInterfaceTypeId() bool {
-	if o != nil && o.NetworkInterfaceTypeId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkInterfaceTypeId gets a reference to the given NullableInt64 and assigns it to the NetworkInterfaceTypeId field.
 func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) SetNetworkInterfaceTypeId(v int64) {
 	o.NetworkInterfaceTypeId.Set(&v)
-}
-
-// SetNetworkInterfaceTypeIdNil sets the value for NetworkInterfaceTypeId to be an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) SetNetworkInterfaceTypeIdNil() {
-	o.NetworkInterfaceTypeId.Set(nil)
-}
-
-// UnsetNetworkInterfaceTypeId ensures that no value is present for NetworkInterfaceTypeId, not even an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) UnsetNetworkInterfaceTypeId() {
-	o.NetworkInterfaceTypeId.Unset()
 }
 
 // GetIpMode returns the IpMode field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -217,28 +161,9 @@ func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) GetIpModeOk
 	return o.IpMode.Get(), o.IpMode.IsSet()
 }
 
-// IsSetIpMode returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) IsSetIpMode() bool {
-	if o != nil && o.IpMode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetIpMode gets a reference to the given NullableString and assigns it to the IpMode field.
 func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) SetIpMode(v string) {
 	o.IpMode.Set(&v)
-}
-
-// SetIpModeNil sets the value for IpMode to be an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) SetIpModeNil() {
-	o.IpMode.Set(nil)
-}
-
-// UnsetIpMode ensures that no value is present for IpMode, not even an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) UnsetIpMode() {
-	o.IpMode.Unset()
 }
 
 // GetNetworkInterfaces returns the NetworkInterfaces field value if set, zero value otherwise.
@@ -257,15 +182,6 @@ func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) GetNetworkI
 		return nil, false
 	}
 	return o.NetworkInterfaces, true
-}
-
-// IsSetNetworkInterfaces returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) IsSetNetworkInterfaces() bool {
-	if o != nil && !IsNil(o.NetworkInterfaces) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkInterfaces gets a reference to the given []InstanceInterfacesNetworkInterfacesInner and assigns it to the NetworkInterfaces field.

@@ -120,15 +120,6 @@ func (o *UpdateBlueprintRequestOneOf4) GetLabelsOk() ([]string, bool) {
 	return o.Labels, true
 }
 
-// IsSetLabels returns a boolean if a field has been set.
-func (o *UpdateBlueprintRequestOneOf4) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
-}
-
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
 func (o *UpdateBlueprintRequestOneOf4) SetLabels(v []string) {
 	o.Labels = v

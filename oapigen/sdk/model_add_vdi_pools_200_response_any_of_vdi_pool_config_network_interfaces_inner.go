@@ -65,15 +65,6 @@ func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInner) GetPrim
 	return o.PrimaryInterface, true
 }
 
-// IsSetPrimaryInterface returns a boolean if a field has been set.
-func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInner) IsSetPrimaryInterface() bool {
-	if o != nil && !IsNil(o.PrimaryInterface) {
-		return true
-	}
-
-	return false
-}
-
 // SetPrimaryInterface gets a reference to the given bool and assigns it to the PrimaryInterface field.
 func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInner) SetPrimaryInterface(v bool) {
 	o.PrimaryInterface = &v
@@ -95,15 +86,6 @@ func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInner) GetNetw
 		return nil, false
 	}
 	return o.Network, true
-}
-
-// IsSetNetwork returns a boolean if a field has been set.
-func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInner) IsSetNetwork() bool {
-	if o != nil && !IsNil(o.Network) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetwork gets a reference to the given AddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInnerNetwork and assigns it to the Network field.
@@ -129,15 +111,6 @@ func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInner) GetIpMo
 	return o.IpMode, true
 }
 
-// IsSetIpMode returns a boolean if a field has been set.
-func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInner) IsSetIpMode() bool {
-	if o != nil && !IsNil(o.IpMode) {
-		return true
-	}
-
-	return false
-}
-
 // SetIpMode gets a reference to the given string and assigns it to the IpMode field.
 func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInner) SetIpMode(v string) {
 	o.IpMode = &v
@@ -161,15 +134,6 @@ func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInner) GetShow
 	return o.ShowNetworkPoolLabel, true
 }
 
-// IsSetShowNetworkPoolLabel returns a boolean if a field has been set.
-func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInner) IsSetShowNetworkPoolLabel() bool {
-	if o != nil && !IsNil(o.ShowNetworkPoolLabel) {
-		return true
-	}
-
-	return false
-}
-
 // SetShowNetworkPoolLabel gets a reference to the given bool and assigns it to the ShowNetworkPoolLabel field.
 func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInner) SetShowNetworkPoolLabel(v bool) {
 	o.ShowNetworkPoolLabel = &v
@@ -191,15 +155,6 @@ func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInner) GetShow
 		return nil, false
 	}
 	return o.ShowNetworkDhcpLabel, true
-}
-
-// IsSetShowNetworkDhcpLabel returns a boolean if a field has been set.
-func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigNetworkInterfacesInner) IsSetShowNetworkDhcpLabel() bool {
-	if o != nil && !IsNil(o.ShowNetworkDhcpLabel) {
-		return true
-	}
-
-	return false
 }
 
 // SetShowNetworkDhcpLabel gets a reference to the given bool and assigns it to the ShowNetworkDhcpLabel field.

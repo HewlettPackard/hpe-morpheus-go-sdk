@@ -73,28 +73,9 @@ func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) GetMinStorag
 	return o.MinStorage.Get(), o.MinStorage.IsSet()
 }
 
-// IsSetMinStorage returns a boolean if a field has been set.
-func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) IsSetMinStorage() bool {
-	if o != nil && o.MinStorage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMinStorage gets a reference to the given NullableInt64 and assigns it to the MinStorage field.
 func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) SetMinStorage(v int64) {
 	o.MinStorage.Set(&v)
-}
-
-// SetMinStorageNil sets the value for MinStorage to be an explicit nil
-func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) SetMinStorageNil() {
-	o.MinStorage.Set(nil)
-}
-
-// UnsetMinStorage ensures that no value is present for MinStorage, not even an explicit nil
-func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) UnsetMinStorage() {
-	o.MinStorage.Unset()
 }
 
 // GetMaxStorage returns the MaxStorage field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -116,28 +97,9 @@ func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) GetMaxStorag
 	return o.MaxStorage.Get(), o.MaxStorage.IsSet()
 }
 
-// IsSetMaxStorage returns a boolean if a field has been set.
-func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) IsSetMaxStorage() bool {
-	if o != nil && o.MaxStorage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxStorage gets a reference to the given NullableInt64 and assigns it to the MaxStorage field.
 func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) SetMaxStorage(v int64) {
 	o.MaxStorage.Set(&v)
-}
-
-// SetMaxStorageNil sets the value for MaxStorage to be an explicit nil
-func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) SetMaxStorageNil() {
-	o.MaxStorage.Set(nil)
-}
-
-// UnsetMaxStorage ensures that no value is present for MaxStorage, not even an explicit nil
-func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) UnsetMaxStorage() {
-	o.MaxStorage.Unset()
 }
 
 // GetMinPerDiskSize returns the MinPerDiskSize field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -159,28 +121,9 @@ func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) GetMinPerDis
 	return o.MinPerDiskSize.Get(), o.MinPerDiskSize.IsSet()
 }
 
-// IsSetMinPerDiskSize returns a boolean if a field has been set.
-func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) IsSetMinPerDiskSize() bool {
-	if o != nil && o.MinPerDiskSize.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMinPerDiskSize gets a reference to the given NullableInt64 and assigns it to the MinPerDiskSize field.
 func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) SetMinPerDiskSize(v int64) {
 	o.MinPerDiskSize.Set(&v)
-}
-
-// SetMinPerDiskSizeNil sets the value for MinPerDiskSize to be an explicit nil
-func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) SetMinPerDiskSizeNil() {
-	o.MinPerDiskSize.Set(nil)
-}
-
-// UnsetMinPerDiskSize ensures that no value is present for MinPerDiskSize, not even an explicit nil
-func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) UnsetMinPerDiskSize() {
-	o.MinPerDiskSize.Unset()
 }
 
 // GetMaxPerDiskSize returns the MaxPerDiskSize field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -202,28 +145,9 @@ func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) GetMaxPerDis
 	return o.MaxPerDiskSize.Get(), o.MaxPerDiskSize.IsSet()
 }
 
-// IsSetMaxPerDiskSize returns a boolean if a field has been set.
-func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) IsSetMaxPerDiskSize() bool {
-	if o != nil && o.MaxPerDiskSize.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxPerDiskSize gets a reference to the given NullableInt64 and assigns it to the MaxPerDiskSize field.
 func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) SetMaxPerDiskSize(v int64) {
 	o.MaxPerDiskSize.Set(&v)
-}
-
-// SetMaxPerDiskSizeNil sets the value for MaxPerDiskSize to be an explicit nil
-func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) SetMaxPerDiskSizeNil() {
-	o.MaxPerDiskSize.Set(nil)
-}
-
-// UnsetMaxPerDiskSize ensures that no value is present for MaxPerDiskSize, not even an explicit nil
-func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) UnsetMaxPerDiskSize() {
-	o.MaxPerDiskSize.Unset()
 }
 
 // GetMinMemory returns the MinMemory field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -245,28 +169,9 @@ func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) GetMinMemory
 	return o.MinMemory.Get(), o.MinMemory.IsSet()
 }
 
-// IsSetMinMemory returns a boolean if a field has been set.
-func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) IsSetMinMemory() bool {
-	if o != nil && o.MinMemory.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMinMemory gets a reference to the given NullableInt64 and assigns it to the MinMemory field.
 func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) SetMinMemory(v int64) {
 	o.MinMemory.Set(&v)
-}
-
-// SetMinMemoryNil sets the value for MinMemory to be an explicit nil
-func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) SetMinMemoryNil() {
-	o.MinMemory.Set(nil)
-}
-
-// UnsetMinMemory ensures that no value is present for MinMemory, not even an explicit nil
-func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) UnsetMinMemory() {
-	o.MinMemory.Unset()
 }
 
 // GetMaxMemory returns the MaxMemory field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -288,28 +193,9 @@ func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) GetMaxMemory
 	return o.MaxMemory.Get(), o.MaxMemory.IsSet()
 }
 
-// IsSetMaxMemory returns a boolean if a field has been set.
-func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) IsSetMaxMemory() bool {
-	if o != nil && o.MaxMemory.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxMemory gets a reference to the given NullableInt64 and assigns it to the MaxMemory field.
 func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) SetMaxMemory(v int64) {
 	o.MaxMemory.Set(&v)
-}
-
-// SetMaxMemoryNil sets the value for MaxMemory to be an explicit nil
-func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) SetMaxMemoryNil() {
-	o.MaxMemory.Set(nil)
-}
-
-// UnsetMaxMemory ensures that no value is present for MaxMemory, not even an explicit nil
-func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) UnsetMaxMemory() {
-	o.MaxMemory.Unset()
 }
 
 // GetMinCores returns the MinCores field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -331,28 +217,9 @@ func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) GetMinCoresO
 	return o.MinCores.Get(), o.MinCores.IsSet()
 }
 
-// IsSetMinCores returns a boolean if a field has been set.
-func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) IsSetMinCores() bool {
-	if o != nil && o.MinCores.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMinCores gets a reference to the given NullableInt64 and assigns it to the MinCores field.
 func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) SetMinCores(v int64) {
 	o.MinCores.Set(&v)
-}
-
-// SetMinCoresNil sets the value for MinCores to be an explicit nil
-func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) SetMinCoresNil() {
-	o.MinCores.Set(nil)
-}
-
-// UnsetMinCores ensures that no value is present for MinCores, not even an explicit nil
-func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) UnsetMinCores() {
-	o.MinCores.Unset()
 }
 
 // GetMaxCores returns the MaxCores field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -374,28 +241,9 @@ func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) GetMaxCoresO
 	return o.MaxCores.Get(), o.MaxCores.IsSet()
 }
 
-// IsSetMaxCores returns a boolean if a field has been set.
-func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) IsSetMaxCores() bool {
-	if o != nil && o.MaxCores.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxCores gets a reference to the given NullableInt64 and assigns it to the MaxCores field.
 func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) SetMaxCores(v int64) {
 	o.MaxCores.Set(&v)
-}
-
-// SetMaxCoresNil sets the value for MaxCores to be an explicit nil
-func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) SetMaxCoresNil() {
-	o.MaxCores.Set(nil)
-}
-
-// UnsetMaxCores ensures that no value is present for MaxCores, not even an explicit nil
-func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) UnsetMaxCores() {
-	o.MaxCores.Unset()
 }
 
 // GetMinSockets returns the MinSockets field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -417,28 +265,9 @@ func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) GetMinSocket
 	return o.MinSockets.Get(), o.MinSockets.IsSet()
 }
 
-// IsSetMinSockets returns a boolean if a field has been set.
-func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) IsSetMinSockets() bool {
-	if o != nil && o.MinSockets.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMinSockets gets a reference to the given NullableInt64 and assigns it to the MinSockets field.
 func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) SetMinSockets(v int64) {
 	o.MinSockets.Set(&v)
-}
-
-// SetMinSocketsNil sets the value for MinSockets to be an explicit nil
-func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) SetMinSocketsNil() {
-	o.MinSockets.Set(nil)
-}
-
-// UnsetMinSockets ensures that no value is present for MinSockets, not even an explicit nil
-func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) UnsetMinSockets() {
-	o.MinSockets.Unset()
 }
 
 // GetMaxSockets returns the MaxSockets field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -460,28 +289,9 @@ func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) GetMaxSocket
 	return o.MaxSockets.Get(), o.MaxSockets.IsSet()
 }
 
-// IsSetMaxSockets returns a boolean if a field has been set.
-func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) IsSetMaxSockets() bool {
-	if o != nil && o.MaxSockets.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxSockets gets a reference to the given NullableInt64 and assigns it to the MaxSockets field.
 func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) SetMaxSockets(v int64) {
 	o.MaxSockets.Set(&v)
-}
-
-// SetMaxSocketsNil sets the value for MaxSockets to be an explicit nil
-func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) SetMaxSocketsNil() {
-	o.MaxSockets.Set(nil)
-}
-
-// UnsetMaxSockets ensures that no value is present for MaxSockets, not even an explicit nil
-func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) UnsetMaxSockets() {
-	o.MaxSockets.Unset()
 }
 
 // GetMinCoresPerSocket returns the MinCoresPerSocket field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -503,28 +313,9 @@ func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) GetMinCoresP
 	return o.MinCoresPerSocket.Get(), o.MinCoresPerSocket.IsSet()
 }
 
-// IsSetMinCoresPerSocket returns a boolean if a field has been set.
-func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) IsSetMinCoresPerSocket() bool {
-	if o != nil && o.MinCoresPerSocket.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMinCoresPerSocket gets a reference to the given NullableInt64 and assigns it to the MinCoresPerSocket field.
 func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) SetMinCoresPerSocket(v int64) {
 	o.MinCoresPerSocket.Set(&v)
-}
-
-// SetMinCoresPerSocketNil sets the value for MinCoresPerSocket to be an explicit nil
-func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) SetMinCoresPerSocketNil() {
-	o.MinCoresPerSocket.Set(nil)
-}
-
-// UnsetMinCoresPerSocket ensures that no value is present for MinCoresPerSocket, not even an explicit nil
-func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) UnsetMinCoresPerSocket() {
-	o.MinCoresPerSocket.Unset()
 }
 
 // GetMaxCoresPerSocket returns the MaxCoresPerSocket field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -546,28 +337,9 @@ func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) GetMaxCoresP
 	return o.MaxCoresPerSocket.Get(), o.MaxCoresPerSocket.IsSet()
 }
 
-// IsSetMaxCoresPerSocket returns a boolean if a field has been set.
-func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) IsSetMaxCoresPerSocket() bool {
-	if o != nil && o.MaxCoresPerSocket.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxCoresPerSocket gets a reference to the given NullableInt64 and assigns it to the MaxCoresPerSocket field.
 func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) SetMaxCoresPerSocket(v int64) {
 	o.MaxCoresPerSocket.Set(&v)
-}
-
-// SetMaxCoresPerSocketNil sets the value for MaxCoresPerSocket to be an explicit nil
-func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) SetMaxCoresPerSocketNil() {
-	o.MaxCoresPerSocket.Set(nil)
-}
-
-// UnsetMaxCoresPerSocket ensures that no value is present for MaxCoresPerSocket, not even an explicit nil
-func (o *UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) UnsetMaxCoresPerSocket() {
-	o.MaxCoresPerSocket.Unset()
 }
 
 func (o UpdateServicePlans200ResponseAllOfServicePlanConfigRanges) MarshalJSON() ([]byte, error) {

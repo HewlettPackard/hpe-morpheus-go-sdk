@@ -83,15 +83,6 @@ func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) GetIdOk() (*int32, bool
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int32 and assigns it to the Id field.
 func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) SetId(v int32) {
 	o.Id = &v
@@ -113,15 +104,6 @@ func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) GetNameOk() (*string, b
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -147,15 +129,6 @@ func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) GetDescriptionOk() (*st
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) SetDescription(v string) {
 	o.Description = &v
@@ -179,15 +152,6 @@ func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) GetEnabledOk() (*bool, 
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -209,15 +173,6 @@ func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) GetSourceNetworkOk() (*
 		return nil, false
 	}
 	return o.SourceNetwork, true
-}
-
-// IsSetSourceNetwork returns a boolean if a field has been set.
-func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) IsSetSourceNetwork() bool {
-	if o != nil && !IsNil(o.SourceNetwork) {
-		return true
-	}
-
-	return false
 }
 
 // SetSourceNetwork gets a reference to the given string and assigns it to the SourceNetwork field.
@@ -244,28 +199,9 @@ func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) GetDestinationNetworkOk
 	return o.DestinationNetwork.Get(), o.DestinationNetwork.IsSet()
 }
 
-// IsSetDestinationNetwork returns a boolean if a field has been set.
-func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) IsSetDestinationNetwork() bool {
-	if o != nil && o.DestinationNetwork.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDestinationNetwork gets a reference to the given NullableString and assigns it to the DestinationNetwork field.
 func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) SetDestinationNetwork(v string) {
 	o.DestinationNetwork.Set(&v)
-}
-
-// SetDestinationNetworkNil sets the value for DestinationNetwork to be an explicit nil
-func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) SetDestinationNetworkNil() {
-	o.DestinationNetwork.Set(nil)
-}
-
-// UnsetDestinationNetwork ensures that no value is present for DestinationNetwork, not even an explicit nil
-func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) UnsetDestinationNetwork() {
-	o.DestinationNetwork.Unset()
 }
 
 // GetTranslatedNetwork returns the TranslatedNetwork field value if set, zero value otherwise.
@@ -284,15 +220,6 @@ func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) GetTranslatedNetworkOk(
 		return nil, false
 	}
 	return o.TranslatedNetwork, true
-}
-
-// IsSetTranslatedNetwork returns a boolean if a field has been set.
-func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) IsSetTranslatedNetwork() bool {
-	if o != nil && !IsNil(o.TranslatedNetwork) {
-		return true
-	}
-
-	return false
 }
 
 // SetTranslatedNetwork gets a reference to the given string and assigns it to the TranslatedNetwork field.
@@ -319,28 +246,9 @@ func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) GetSourcePortsOk() (*st
 	return o.SourcePorts.Get(), o.SourcePorts.IsSet()
 }
 
-// IsSetSourcePorts returns a boolean if a field has been set.
-func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) IsSetSourcePorts() bool {
-	if o != nil && o.SourcePorts.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSourcePorts gets a reference to the given NullableString and assigns it to the SourcePorts field.
 func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) SetSourcePorts(v string) {
 	o.SourcePorts.Set(&v)
-}
-
-// SetSourcePortsNil sets the value for SourcePorts to be an explicit nil
-func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) SetSourcePortsNil() {
-	o.SourcePorts.Set(nil)
-}
-
-// UnsetSourcePorts ensures that no value is present for SourcePorts, not even an explicit nil
-func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) UnsetSourcePorts() {
-	o.SourcePorts.Unset()
 }
 
 // GetDestinationPorts returns the DestinationPorts field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -362,28 +270,9 @@ func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) GetDestinationPortsOk()
 	return o.DestinationPorts.Get(), o.DestinationPorts.IsSet()
 }
 
-// IsSetDestinationPorts returns a boolean if a field has been set.
-func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) IsSetDestinationPorts() bool {
-	if o != nil && o.DestinationPorts.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDestinationPorts gets a reference to the given NullableString and assigns it to the DestinationPorts field.
 func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) SetDestinationPorts(v string) {
 	o.DestinationPorts.Set(&v)
-}
-
-// SetDestinationPortsNil sets the value for DestinationPorts to be an explicit nil
-func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) SetDestinationPortsNil() {
-	o.DestinationPorts.Set(nil)
-}
-
-// UnsetDestinationPorts ensures that no value is present for DestinationPorts, not even an explicit nil
-func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) UnsetDestinationPorts() {
-	o.DestinationPorts.Unset()
 }
 
 // GetTranslatedPorts returns the TranslatedPorts field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -405,28 +294,9 @@ func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) GetTranslatedPortsOk() 
 	return o.TranslatedPorts.Get(), o.TranslatedPorts.IsSet()
 }
 
-// IsSetTranslatedPorts returns a boolean if a field has been set.
-func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) IsSetTranslatedPorts() bool {
-	if o != nil && o.TranslatedPorts.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetTranslatedPorts gets a reference to the given NullableString and assigns it to the TranslatedPorts field.
 func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) SetTranslatedPorts(v string) {
 	o.TranslatedPorts.Set(&v)
-}
-
-// SetTranslatedPortsNil sets the value for TranslatedPorts to be an explicit nil
-func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) SetTranslatedPortsNil() {
-	o.TranslatedPorts.Set(nil)
-}
-
-// UnsetTranslatedPorts ensures that no value is present for TranslatedPorts, not even an explicit nil
-func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) UnsetTranslatedPorts() {
-	o.TranslatedPorts.Unset()
 }
 
 // GetPriority returns the Priority field value if set, zero value otherwise.
@@ -445,15 +315,6 @@ func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) GetPriorityOk() (*int32
 		return nil, false
 	}
 	return o.Priority, true
-}
-
-// IsSetPriority returns a boolean if a field has been set.
-func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) IsSetPriority() bool {
-	if o != nil && !IsNil(o.Priority) {
-		return true
-	}
-
-	return false
 }
 
 // SetPriority gets a reference to the given int32 and assigns it to the Priority field.
@@ -480,28 +341,9 @@ func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) GetProtocolOk() (*strin
 	return o.Protocol.Get(), o.Protocol.IsSet()
 }
 
-// IsSetProtocol returns a boolean if a field has been set.
-func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) IsSetProtocol() bool {
-	if o != nil && o.Protocol.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetProtocol gets a reference to the given NullableString and assigns it to the Protocol field.
 func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) SetProtocol(v string) {
 	o.Protocol.Set(&v)
-}
-
-// SetProtocolNil sets the value for Protocol to be an explicit nil
-func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) SetProtocolNil() {
-	o.Protocol.Set(nil)
-}
-
-// UnsetProtocol ensures that no value is present for Protocol, not even an explicit nil
-func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) UnsetProtocol() {
-	o.Protocol.Unset()
 }
 
 // GetMatchIpv6DestinationPrefix returns the MatchIpv6DestinationPrefix field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -523,28 +365,9 @@ func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) GetMatchIpv6Destination
 	return o.MatchIpv6DestinationPrefix.Get(), o.MatchIpv6DestinationPrefix.IsSet()
 }
 
-// IsSetMatchIpv6DestinationPrefix returns a boolean if a field has been set.
-func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) IsSetMatchIpv6DestinationPrefix() bool {
-	if o != nil && o.MatchIpv6DestinationPrefix.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMatchIpv6DestinationPrefix gets a reference to the given NullableString and assigns it to the MatchIpv6DestinationPrefix field.
 func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) SetMatchIpv6DestinationPrefix(v string) {
 	o.MatchIpv6DestinationPrefix.Set(&v)
-}
-
-// SetMatchIpv6DestinationPrefixNil sets the value for MatchIpv6DestinationPrefix to be an explicit nil
-func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) SetMatchIpv6DestinationPrefixNil() {
-	o.MatchIpv6DestinationPrefix.Set(nil)
-}
-
-// UnsetMatchIpv6DestinationPrefix ensures that no value is present for MatchIpv6DestinationPrefix, not even an explicit nil
-func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) UnsetMatchIpv6DestinationPrefix() {
-	o.MatchIpv6DestinationPrefix.Unset()
 }
 
 // GetTranslatedIpv4SourcePrefix returns the TranslatedIpv4SourcePrefix field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -566,28 +389,9 @@ func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) GetTranslatedIpv4Source
 	return o.TranslatedIpv4SourcePrefix.Get(), o.TranslatedIpv4SourcePrefix.IsSet()
 }
 
-// IsSetTranslatedIpv4SourcePrefix returns a boolean if a field has been set.
-func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) IsSetTranslatedIpv4SourcePrefix() bool {
-	if o != nil && o.TranslatedIpv4SourcePrefix.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetTranslatedIpv4SourcePrefix gets a reference to the given NullableString and assigns it to the TranslatedIpv4SourcePrefix field.
 func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) SetTranslatedIpv4SourcePrefix(v string) {
 	o.TranslatedIpv4SourcePrefix.Set(&v)
-}
-
-// SetTranslatedIpv4SourcePrefixNil sets the value for TranslatedIpv4SourcePrefix to be an explicit nil
-func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) SetTranslatedIpv4SourcePrefixNil() {
-	o.TranslatedIpv4SourcePrefix.Set(nil)
-}
-
-// UnsetTranslatedIpv4SourcePrefix ensures that no value is present for TranslatedIpv4SourcePrefix, not even an explicit nil
-func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) UnsetTranslatedIpv4SourcePrefix() {
-	o.TranslatedIpv4SourcePrefix.Unset()
 }
 
 // GetRefType returns the RefType field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -609,28 +413,9 @@ func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) GetRefTypeOk() (*string
 	return o.RefType.Get(), o.RefType.IsSet()
 }
 
-// IsSetRefType returns a boolean if a field has been set.
-func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) IsSetRefType() bool {
-	if o != nil && o.RefType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRefType gets a reference to the given NullableString and assigns it to the RefType field.
 func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) SetRefType(v string) {
 	o.RefType.Set(&v)
-}
-
-// SetRefTypeNil sets the value for RefType to be an explicit nil
-func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) SetRefTypeNil() {
-	o.RefType.Set(nil)
-}
-
-// UnsetRefType ensures that no value is present for RefType, not even an explicit nil
-func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) UnsetRefType() {
-	o.RefType.Unset()
 }
 
 // GetRefId returns the RefId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -652,28 +437,9 @@ func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) GetRefIdOk() (*string, 
 	return o.RefId.Get(), o.RefId.IsSet()
 }
 
-// IsSetRefId returns a boolean if a field has been set.
-func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) IsSetRefId() bool {
-	if o != nil && o.RefId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRefId gets a reference to the given NullableString and assigns it to the RefId field.
 func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) SetRefId(v string) {
 	o.RefId.Set(&v)
-}
-
-// SetRefIdNil sets the value for RefId to be an explicit nil
-func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) SetRefIdNil() {
-	o.RefId.Set(nil)
-}
-
-// UnsetRefId ensures that no value is present for RefId, not even an explicit nil
-func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) UnsetRefId() {
-	o.RefId.Unset()
 }
 
 // GetSyncSource returns the SyncSource field value if set, zero value otherwise.
@@ -692,15 +458,6 @@ func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) GetSyncSourceOk() (*str
 		return nil, false
 	}
 	return o.SyncSource, true
-}
-
-// IsSetSyncSource returns a boolean if a field has been set.
-func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) IsSetSyncSource() bool {
-	if o != nil && !IsNil(o.SyncSource) {
-		return true
-	}
-
-	return false
 }
 
 // SetSyncSource gets a reference to the given string and assigns it to the SyncSource field.
@@ -727,28 +484,9 @@ func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) GetInternalIdOk() (*str
 	return o.InternalId.Get(), o.InternalId.IsSet()
 }
 
-// IsSetInternalId returns a boolean if a field has been set.
-func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) IsSetInternalId() bool {
-	if o != nil && o.InternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInternalId gets a reference to the given NullableString and assigns it to the InternalId field.
 func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) SetInternalId(v string) {
 	o.InternalId.Set(&v)
-}
-
-// SetInternalIdNil sets the value for InternalId to be an explicit nil
-func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) SetInternalIdNil() {
-	o.InternalId.Set(nil)
-}
-
-// UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
-func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) UnsetInternalId() {
-	o.InternalId.Unset()
 }
 
 // GetExternalId returns the ExternalId field value if set, zero value otherwise.
@@ -767,15 +505,6 @@ func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) GetExternalIdOk() (*str
 		return nil, false
 	}
 	return o.ExternalId, true
-}
-
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
-		return true
-	}
-
-	return false
 }
 
 // SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
@@ -801,15 +530,6 @@ func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) GetProviderIdOk() (*str
 	return o.ProviderId, true
 }
 
-// IsSetProviderId returns a boolean if a field has been set.
-func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) IsSetProviderId() bool {
-	if o != nil && !IsNil(o.ProviderId) {
-		return true
-	}
-
-	return false
-}
-
 // SetProviderId gets a reference to the given string and assigns it to the ProviderId field.
 func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) SetProviderId(v string) {
 	o.ProviderId = &v
@@ -833,15 +553,6 @@ func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) GetDateCreatedOk() (*ti
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -863,15 +574,6 @@ func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) GetLastUpdatedOk() (*ti
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *GetNetworkRouterNat200ResponseNetworkRouterNAT) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.

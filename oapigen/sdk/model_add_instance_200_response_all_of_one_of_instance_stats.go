@@ -68,15 +68,6 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceStats) GetUsedStorageOk() (*int
 	return o.UsedStorage, true
 }
 
-// IsSetUsedStorage returns a boolean if a field has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceStats) IsSetUsedStorage() bool {
-	if o != nil && !IsNil(o.UsedStorage) {
-		return true
-	}
-
-	return false
-}
-
 // SetUsedStorage gets a reference to the given int64 and assigns it to the UsedStorage field.
 func (o *AddInstance200ResponseAllOfOneOfInstanceStats) SetUsedStorage(v int64) {
 	o.UsedStorage = &v
@@ -98,15 +89,6 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceStats) GetMaxStorageOk() (*int6
 		return nil, false
 	}
 	return o.MaxStorage, true
-}
-
-// IsSetMaxStorage returns a boolean if a field has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceStats) IsSetMaxStorage() bool {
-	if o != nil && !IsNil(o.MaxStorage) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxStorage gets a reference to the given int64 and assigns it to the MaxStorage field.
@@ -132,15 +114,6 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceStats) GetUsedMemoryOk() (*int6
 	return o.UsedMemory, true
 }
 
-// IsSetUsedMemory returns a boolean if a field has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceStats) IsSetUsedMemory() bool {
-	if o != nil && !IsNil(o.UsedMemory) {
-		return true
-	}
-
-	return false
-}
-
 // SetUsedMemory gets a reference to the given int64 and assigns it to the UsedMemory field.
 func (o *AddInstance200ResponseAllOfOneOfInstanceStats) SetUsedMemory(v int64) {
 	o.UsedMemory = &v
@@ -162,15 +135,6 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceStats) GetMaxMemoryOk() (*int64
 		return nil, false
 	}
 	return o.MaxMemory, true
-}
-
-// IsSetMaxMemory returns a boolean if a field has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceStats) IsSetMaxMemory() bool {
-	if o != nil && !IsNil(o.MaxMemory) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxMemory gets a reference to the given int64 and assigns it to the MaxMemory field.
@@ -196,15 +160,6 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceStats) GetUsedCpuOk() (*float32
 	return o.UsedCpu, true
 }
 
-// IsSetUsedCpu returns a boolean if a field has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceStats) IsSetUsedCpu() bool {
-	if o != nil && !IsNil(o.UsedCpu) {
-		return true
-	}
-
-	return false
-}
-
 // SetUsedCpu gets a reference to the given float32 and assigns it to the UsedCpu field.
 func (o *AddInstance200ResponseAllOfOneOfInstanceStats) SetUsedCpu(v float32) {
 	o.UsedCpu = &v
@@ -226,15 +181,6 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceStats) GetCpuUsageOk() (*float3
 		return nil, false
 	}
 	return o.CpuUsage, true
-}
-
-// IsSetCpuUsage returns a boolean if a field has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceStats) IsSetCpuUsage() bool {
-	if o != nil && !IsNil(o.CpuUsage) {
-		return true
-	}
-
-	return false
 }
 
 // SetCpuUsage gets a reference to the given float32 and assigns it to the CpuUsage field.
@@ -260,15 +206,6 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceStats) GetCpuUsagePeakOk() (*fl
 	return o.CpuUsagePeak, true
 }
 
-// IsSetCpuUsagePeak returns a boolean if a field has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceStats) IsSetCpuUsagePeak() bool {
-	if o != nil && !IsNil(o.CpuUsagePeak) {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuUsagePeak gets a reference to the given float32 and assigns it to the CpuUsagePeak field.
 func (o *AddInstance200ResponseAllOfOneOfInstanceStats) SetCpuUsagePeak(v float32) {
 	o.CpuUsagePeak = &v
@@ -290,15 +227,6 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceStats) GetCpuUsageAvgOk() (*flo
 		return nil, false
 	}
 	return o.CpuUsageAvg, true
-}
-
-// IsSetCpuUsageAvg returns a boolean if a field has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceStats) IsSetCpuUsageAvg() bool {
-	if o != nil && !IsNil(o.CpuUsageAvg) {
-		return true
-	}
-
-	return false
 }
 
 // SetCpuUsageAvg gets a reference to the given float32 and assigns it to the CpuUsageAvg field.

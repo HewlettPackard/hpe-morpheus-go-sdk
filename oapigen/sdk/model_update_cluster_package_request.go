@@ -61,15 +61,6 @@ func (o *UpdateClusterPackageRequest) GetClusterPackageOk() (*UpdateClusterPacka
 	return o.ClusterPackage, true
 }
 
-// IsSetClusterPackage returns a boolean if a field has been set.
-func (o *UpdateClusterPackageRequest) IsSetClusterPackage() bool {
-	if o != nil && !IsNil(o.ClusterPackage) {
-		return true
-	}
-
-	return false
-}
-
 // SetClusterPackage gets a reference to the given UpdateClusterPackageRequestClusterPackage and assigns it to the ClusterPackage field.
 func (o *UpdateClusterPackageRequest) SetClusterPackage(v UpdateClusterPackageRequestClusterPackage) {
 	o.ClusterPackage = &v

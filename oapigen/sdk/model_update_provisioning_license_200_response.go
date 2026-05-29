@@ -62,15 +62,6 @@ func (o *UpdateProvisioningLicense200Response) GetSuccessOk() (*bool, bool) {
 	return o.Success, true
 }
 
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *UpdateProvisioningLicense200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
-}
-
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.
 func (o *UpdateProvisioningLicense200Response) SetSuccess(v bool) {
 	o.Success = &v
@@ -92,15 +83,6 @@ func (o *UpdateProvisioningLicense200Response) GetLicenseOk() (*UpdateProvisioni
 		return nil, false
 	}
 	return o.License, true
-}
-
-// IsSetLicense returns a boolean if a field has been set.
-func (o *UpdateProvisioningLicense200Response) IsSetLicense() bool {
-	if o != nil && !IsNil(o.License) {
-		return true
-	}
-
-	return false
 }
 
 // SetLicense gets a reference to the given UpdateProvisioningLicense200ResponseAllOfLicense and assigns it to the License field.

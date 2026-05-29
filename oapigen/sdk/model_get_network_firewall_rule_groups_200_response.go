@@ -62,15 +62,6 @@ func (o *GetNetworkFirewallRuleGroups200Response) GetRuleGroupsOk() ([]GetNetwor
 	return o.RuleGroups, true
 }
 
-// IsSetRuleGroups returns a boolean if a field has been set.
-func (o *GetNetworkFirewallRuleGroups200Response) IsSetRuleGroups() bool {
-	if o != nil && !IsNil(o.RuleGroups) {
-		return true
-	}
-
-	return false
-}
-
 // SetRuleGroups gets a reference to the given []GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInner and assigns it to the RuleGroups field.
 func (o *GetNetworkFirewallRuleGroups200Response) SetRuleGroups(v []GetNetworkFirewallRuleGroups200ResponseAllOfRuleGroupsInner) {
 	o.RuleGroups = v
@@ -92,15 +83,6 @@ func (o *GetNetworkFirewallRuleGroups200Response) GetMetaOk() (*ListApprovals200
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *GetNetworkFirewallRuleGroups200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

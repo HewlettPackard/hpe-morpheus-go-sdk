@@ -61,15 +61,6 @@ func (o *PolicyCloudCreatePolicyTypeConfigOneOf11) GetMaxContainersOk() (*string
 	return o.MaxContainers, true
 }
 
-// IsSetMaxContainers returns a boolean if a field has been set.
-func (o *PolicyCloudCreatePolicyTypeConfigOneOf11) IsSetMaxContainers() bool {
-	if o != nil && !IsNil(o.MaxContainers) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxContainers gets a reference to the given string and assigns it to the MaxContainers field.
 func (o *PolicyCloudCreatePolicyTypeConfigOneOf11) SetMaxContainers(v string) {
 	o.MaxContainers = &v

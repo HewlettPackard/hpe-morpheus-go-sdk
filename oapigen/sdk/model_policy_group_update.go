@@ -65,15 +65,6 @@ func (o *PolicyGroupUpdate) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *PolicyGroupUpdate) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *PolicyGroupUpdate) SetName(v string) {
 	o.Name = &v
@@ -97,15 +88,6 @@ func (o *PolicyGroupUpdate) GetDescriptionOk() (*string, bool) {
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *PolicyGroupUpdate) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *PolicyGroupUpdate) SetDescription(v string) {
 	o.Description = &v
@@ -127,15 +109,6 @@ func (o *PolicyGroupUpdate) GetPolicyTypeOk() (*PolicyGroupUpdatePolicyType, boo
 		return nil, false
 	}
 	return o.PolicyType, true
-}
-
-// IsSetPolicyType returns a boolean if a field has been set.
-func (o *PolicyGroupUpdate) IsSetPolicyType() bool {
-	if o != nil && !IsNil(o.PolicyType) {
-		return true
-	}
-
-	return false
 }
 
 // SetPolicyType gets a reference to the given PolicyGroupUpdatePolicyType and assigns it to the PolicyType field.

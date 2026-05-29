@@ -63,15 +63,6 @@ func (o *GetNetworkPoolIp200Response) GetNetworkPoolIpsOk() (*interface{}, bool)
 	return &o.NetworkPoolIps, true
 }
 
-// IsSetNetworkPoolIps returns a boolean if a field has been set.
-func (o *GetNetworkPoolIp200Response) IsSetNetworkPoolIps() bool {
-	if o != nil && !IsNil(o.NetworkPoolIps) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkPoolIps gets a reference to the given interface{} and assigns it to the NetworkPoolIps field.
 func (o *GetNetworkPoolIp200Response) SetNetworkPoolIps(v interface{}) {
 	o.NetworkPoolIps = v
@@ -93,15 +84,6 @@ func (o *GetNetworkPoolIp200Response) GetMetaOk() (*GetNetworkPoolIp200ResponseA
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *GetNetworkPoolIp200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given GetNetworkPoolIp200ResponseAllOfMeta and assigns it to the Meta field.

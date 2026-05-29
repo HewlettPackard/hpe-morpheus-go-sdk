@@ -63,15 +63,6 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInn
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInnerType) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInnerType) SetId(v int64) {
 	o.Id = &v
@@ -95,15 +86,6 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInn
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInnerType) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInnerType) SetCode(v string) {
 	o.Code = &v
@@ -125,15 +107,6 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInn
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInnerType) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.

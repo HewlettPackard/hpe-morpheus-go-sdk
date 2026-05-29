@@ -73,15 +73,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) GetUrlO
 	return o.Url, true
 }
 
-// IsSetUrl returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) IsSetUrl() bool {
-	if o != nil && !IsNil(o.Url) {
-		return true
-	}
-
-	return false
-}
-
 // SetUrl gets a reference to the given string and assigns it to the Url field.
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) SetUrl(v string) {
 	o.Url = &v
@@ -103,15 +94,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) GetBind
 		return nil, false
 	}
 	return o.BindingUsername, true
-}
-
-// IsSetBindingUsername returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) IsSetBindingUsername() bool {
-	if o != nil && !IsNil(o.BindingUsername) {
-		return true
-	}
-
-	return false
 }
 
 // SetBindingUsername gets a reference to the given string and assigns it to the BindingUsername field.
@@ -137,15 +119,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) GetBind
 	return o.BindingPassword, true
 }
 
-// IsSetBindingPassword returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) IsSetBindingPassword() bool {
-	if o != nil && !IsNil(o.BindingPassword) {
-		return true
-	}
-
-	return false
-}
-
 // SetBindingPassword gets a reference to the given string and assigns it to the BindingPassword field.
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) SetBindingPassword(v string) {
 	o.BindingPassword = &v
@@ -167,15 +140,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) GetUser
 		return nil, false
 	}
 	return o.UserFqnExpression, true
-}
-
-// IsSetUserFqnExpression returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) IsSetUserFqnExpression() bool {
-	if o != nil && !IsNil(o.UserFqnExpression) {
-		return true
-	}
-
-	return false
 }
 
 // SetUserFqnExpression gets a reference to the given string and assigns it to the UserFqnExpression field.
@@ -201,15 +165,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) GetRequ
 	return o.RequiredRoleFqn, true
 }
 
-// IsSetRequiredRoleFqn returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) IsSetRequiredRoleFqn() bool {
-	if o != nil && !IsNil(o.RequiredRoleFqn) {
-		return true
-	}
-
-	return false
-}
-
 // SetRequiredRoleFqn gets a reference to the given string and assigns it to the RequiredRoleFqn field.
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) SetRequiredRoleFqn(v string) {
 	o.RequiredRoleFqn = &v
@@ -231,15 +186,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) GetUser
 		return nil, false
 	}
 	return o.UsernameAttribute, true
-}
-
-// IsSetUsernameAttribute returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) IsSetUsernameAttribute() bool {
-	if o != nil && !IsNil(o.UsernameAttribute) {
-		return true
-	}
-
-	return false
 }
 
 // SetUsernameAttribute gets a reference to the given string and assigns it to the UsernameAttribute field.
@@ -265,15 +211,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) GetComm
 	return o.CommonNameAttribute, true
 }
 
-// IsSetCommonNameAttribute returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) IsSetCommonNameAttribute() bool {
-	if o != nil && !IsNil(o.CommonNameAttribute) {
-		return true
-	}
-
-	return false
-}
-
 // SetCommonNameAttribute gets a reference to the given string and assigns it to the CommonNameAttribute field.
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) SetCommonNameAttribute(v string) {
 	o.CommonNameAttribute = &v
@@ -295,15 +232,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) GetFirs
 		return nil, false
 	}
 	return o.FirstNameAttribute, true
-}
-
-// IsSetFirstNameAttribute returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) IsSetFirstNameAttribute() bool {
-	if o != nil && !IsNil(o.FirstNameAttribute) {
-		return true
-	}
-
-	return false
 }
 
 // SetFirstNameAttribute gets a reference to the given string and assigns it to the FirstNameAttribute field.
@@ -329,15 +257,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) GetLast
 	return o.LastNameAttribute, true
 }
 
-// IsSetLastNameAttribute returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) IsSetLastNameAttribute() bool {
-	if o != nil && !IsNil(o.LastNameAttribute) {
-		return true
-	}
-
-	return false
-}
-
 // SetLastNameAttribute gets a reference to the given string and assigns it to the LastNameAttribute field.
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) SetLastNameAttribute(v string) {
 	o.LastNameAttribute = &v
@@ -359,15 +278,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) GetEmai
 		return nil, false
 	}
 	return o.EmailAttribute, true
-}
-
-// IsSetEmailAttribute returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) IsSetEmailAttribute() bool {
-	if o != nil && !IsNil(o.EmailAttribute) {
-		return true
-	}
-
-	return false
 }
 
 // SetEmailAttribute gets a reference to the given string and assigns it to the EmailAttribute field.
@@ -393,15 +303,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) GetUniq
 	return o.UniqueMemberAttribute, true
 }
 
-// IsSetUniqueMemberAttribute returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) IsSetUniqueMemberAttribute() bool {
-	if o != nil && !IsNil(o.UniqueMemberAttribute) {
-		return true
-	}
-
-	return false
-}
-
 // SetUniqueMemberAttribute gets a reference to the given string and assigns it to the UniqueMemberAttribute field.
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) SetUniqueMemberAttribute(v string) {
 	o.UniqueMemberAttribute = &v
@@ -425,15 +326,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) GetMemb
 	return o.MemberOfAttribute, true
 }
 
-// IsSetMemberOfAttribute returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) IsSetMemberOfAttribute() bool {
-	if o != nil && !IsNil(o.MemberOfAttribute) {
-		return true
-	}
-
-	return false
-}
-
 // SetMemberOfAttribute gets a reference to the given string and assigns it to the MemberOfAttribute field.
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) SetMemberOfAttribute(v string) {
 	o.MemberOfAttribute = &v
@@ -455,15 +347,6 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) GetBind
 		return nil, false
 	}
 	return o.BindingPasswordHash, true
-}
-
-// IsSetBindingPasswordHash returns a boolean if a field has been set.
-func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) IsSetBindingPasswordHash() bool {
-	if o != nil && !IsNil(o.BindingPasswordHash) {
-		return true
-	}
-
-	return false
 }
 
 // SetBindingPasswordHash gets a reference to the given string and assigns it to the BindingPasswordHash field.

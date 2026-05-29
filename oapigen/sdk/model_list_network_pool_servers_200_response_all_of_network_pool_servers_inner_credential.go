@@ -64,28 +64,9 @@ func (o *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential
 	return o.Id.Get(), o.Id.IsSet()
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential) IsSetId() bool {
-	if o != nil && o.Id.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given NullableInt64 and assigns it to the Id field.
 func (o *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential) SetId(v int64) {
 	o.Id.Set(&v)
-}
-
-// SetIdNil sets the value for Id to be an explicit nil
-func (o *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential) SetIdNil() {
-	o.Id.Set(nil)
-}
-
-// UnsetId ensures that no value is present for Id, not even an explicit nil
-func (o *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential) UnsetId() {
-	o.Id.Unset()
 }
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -107,28 +88,9 @@ func (o *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential
 	return o.Name.Get(), o.Name.IsSet()
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential) IsSetName() bool {
-	if o != nil && o.Name.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given NullableString and assigns it to the Name field.
 func (o *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential) SetName(v string) {
 	o.Name.Set(&v)
-}
-
-// SetNameNil sets the value for Name to be an explicit nil
-func (o *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential) SetNameNil() {
-	o.Name.Set(nil)
-}
-
-// UnsetName ensures that no value is present for Name, not even an explicit nil
-func (o *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential) UnsetName() {
-	o.Name.Unset()
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
@@ -147,15 +109,6 @@ func (o *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.

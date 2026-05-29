@@ -129,15 +129,6 @@ func (o *CredentialUsernamePasswordConfig) GetDescriptionOk() (*string, bool) {
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *CredentialUsernamePasswordConfig) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *CredentialUsernamePasswordConfig) SetDescription(v string) {
 	o.Description = &v
@@ -161,15 +152,6 @@ func (o *CredentialUsernamePasswordConfig) GetEnabledOk() (*bool, bool) {
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *CredentialUsernamePasswordConfig) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *CredentialUsernamePasswordConfig) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -191,15 +173,6 @@ func (o *CredentialUsernamePasswordConfig) GetIntegrationOk() (*CredentialUserna
 		return nil, false
 	}
 	return o.Integration, true
-}
-
-// IsSetIntegration returns a boolean if a field has been set.
-func (o *CredentialUsernamePasswordConfig) IsSetIntegration() bool {
-	if o != nil && !IsNil(o.Integration) {
-		return true
-	}
-
-	return false
 }
 
 // SetIntegration gets a reference to the given CredentialUsernamePasswordConfigIntegration and assigns it to the Integration field.

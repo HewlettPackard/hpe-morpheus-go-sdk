@@ -63,15 +63,6 @@ func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerConfig
 	return o.Monitor, true
 }
 
-// IsSetMonitor returns a boolean if a field has been set.
-func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerConfig) IsSetMonitor() bool {
-	if o != nil && !IsNil(o.Monitor) {
-		return true
-	}
-
-	return false
-}
-
 // SetMonitor gets a reference to the given ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerConfigMonitor and assigns it to the Monitor field.
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerConfig) SetMonitor(v ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerConfigMonitor) {
 	o.Monitor = &v
@@ -96,28 +87,9 @@ func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerConfig
 	return o.MonitorConfig.Get(), o.MonitorConfig.IsSet()
 }
 
-// IsSetMonitorConfig returns a boolean if a field has been set.
-func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerConfig) IsSetMonitorConfig() bool {
-	if o != nil && o.MonitorConfig.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMonitorConfig gets a reference to the given NullableString and assigns it to the MonitorConfig field.
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerConfig) SetMonitorConfig(v string) {
 	o.MonitorConfig.Set(&v)
-}
-
-// SetMonitorConfigNil sets the value for MonitorConfig to be an explicit nil
-func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerConfig) SetMonitorConfigNil() {
-	o.MonitorConfig.Set(nil)
-}
-
-// UnsetMonitorConfig ensures that no value is present for MonitorConfig, not even an explicit nil
-func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerConfig) UnsetMonitorConfig() {
-	o.MonitorConfig.Unset()
 }
 
 func (o ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerConfig) MarshalJSON() ([]byte, error) {

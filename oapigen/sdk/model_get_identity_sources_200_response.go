@@ -61,15 +61,6 @@ func (o *GetIdentitySources200Response) GetUserSourceOk() (*GetIdentitySources20
 	return o.UserSource, true
 }
 
-// IsSetUserSource returns a boolean if a field has been set.
-func (o *GetIdentitySources200Response) IsSetUserSource() bool {
-	if o != nil && !IsNil(o.UserSource) {
-		return true
-	}
-
-	return false
-}
-
 // SetUserSource gets a reference to the given GetIdentitySources200ResponseUserSource and assigns it to the UserSource field.
 func (o *GetIdentitySources200Response) SetUserSource(v GetIdentitySources200ResponseUserSource) {
 	o.UserSource = &v

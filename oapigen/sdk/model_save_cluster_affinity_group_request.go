@@ -61,15 +61,6 @@ func (o *SaveClusterAffinityGroupRequest) GetAffinityGroupOk() (*SaveClusterAffi
 	return o.AffinityGroup, true
 }
 
-// IsSetAffinityGroup returns a boolean if a field has been set.
-func (o *SaveClusterAffinityGroupRequest) IsSetAffinityGroup() bool {
-	if o != nil && !IsNil(o.AffinityGroup) {
-		return true
-	}
-
-	return false
-}
-
 // SetAffinityGroup gets a reference to the given SaveClusterAffinityGroupRequestAffinityGroup and assigns it to the AffinityGroup field.
 func (o *SaveClusterAffinityGroupRequest) SetAffinityGroup(v SaveClusterAffinityGroupRequestAffinityGroup) {
 	o.AffinityGroup = &v

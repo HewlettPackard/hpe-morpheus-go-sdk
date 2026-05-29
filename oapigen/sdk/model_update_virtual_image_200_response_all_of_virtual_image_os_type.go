@@ -70,15 +70,6 @@ func (o *UpdateVirtualImage200ResponseAllOfVirtualImageOsType) GetIdOk() (*int64
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *UpdateVirtualImage200ResponseAllOfVirtualImageOsType) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *UpdateVirtualImage200ResponseAllOfVirtualImageOsType) SetId(v int64) {
 	o.Id = &v
@@ -102,15 +93,6 @@ func (o *UpdateVirtualImage200ResponseAllOfVirtualImageOsType) GetCodeOk() (*str
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *UpdateVirtualImage200ResponseAllOfVirtualImageOsType) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *UpdateVirtualImage200ResponseAllOfVirtualImageOsType) SetCode(v string) {
 	o.Code = &v
@@ -132,15 +114,6 @@ func (o *UpdateVirtualImage200ResponseAllOfVirtualImageOsType) GetNameOk() (*str
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateVirtualImage200ResponseAllOfVirtualImageOsType) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -167,28 +140,9 @@ func (o *UpdateVirtualImage200ResponseAllOfVirtualImageOsType) GetDescriptionOk(
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *UpdateVirtualImage200ResponseAllOfVirtualImageOsType) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *UpdateVirtualImage200ResponseAllOfVirtualImageOsType) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *UpdateVirtualImage200ResponseAllOfVirtualImageOsType) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *UpdateVirtualImage200ResponseAllOfVirtualImageOsType) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetVendor returns the Vendor field value if set, zero value otherwise.
@@ -207,15 +161,6 @@ func (o *UpdateVirtualImage200ResponseAllOfVirtualImageOsType) GetVendorOk() (*s
 		return nil, false
 	}
 	return o.Vendor, true
-}
-
-// IsSetVendor returns a boolean if a field has been set.
-func (o *UpdateVirtualImage200ResponseAllOfVirtualImageOsType) IsSetVendor() bool {
-	if o != nil && !IsNil(o.Vendor) {
-		return true
-	}
-
-	return false
 }
 
 // SetVendor gets a reference to the given string and assigns it to the Vendor field.
@@ -241,15 +186,6 @@ func (o *UpdateVirtualImage200ResponseAllOfVirtualImageOsType) GetCategoryOk() (
 	return o.Category, true
 }
 
-// IsSetCategory returns a boolean if a field has been set.
-func (o *UpdateVirtualImage200ResponseAllOfVirtualImageOsType) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
-		return true
-	}
-
-	return false
-}
-
 // SetCategory gets a reference to the given string and assigns it to the Category field.
 func (o *UpdateVirtualImage200ResponseAllOfVirtualImageOsType) SetCategory(v string) {
 	o.Category = &v
@@ -271,15 +207,6 @@ func (o *UpdateVirtualImage200ResponseAllOfVirtualImageOsType) GetOsFamilyOk() (
 		return nil, false
 	}
 	return o.OsFamily, true
-}
-
-// IsSetOsFamily returns a boolean if a field has been set.
-func (o *UpdateVirtualImage200ResponseAllOfVirtualImageOsType) IsSetOsFamily() bool {
-	if o != nil && !IsNil(o.OsFamily) {
-		return true
-	}
-
-	return false
 }
 
 // SetOsFamily gets a reference to the given string and assigns it to the OsFamily field.
@@ -305,15 +232,6 @@ func (o *UpdateVirtualImage200ResponseAllOfVirtualImageOsType) GetOsVersionOk() 
 	return o.OsVersion, true
 }
 
-// IsSetOsVersion returns a boolean if a field has been set.
-func (o *UpdateVirtualImage200ResponseAllOfVirtualImageOsType) IsSetOsVersion() bool {
-	if o != nil && !IsNil(o.OsVersion) {
-		return true
-	}
-
-	return false
-}
-
 // SetOsVersion gets a reference to the given string and assigns it to the OsVersion field.
 func (o *UpdateVirtualImage200ResponseAllOfVirtualImageOsType) SetOsVersion(v string) {
 	o.OsVersion = &v
@@ -337,15 +255,6 @@ func (o *UpdateVirtualImage200ResponseAllOfVirtualImageOsType) GetBitCountOk() (
 	return o.BitCount, true
 }
 
-// IsSetBitCount returns a boolean if a field has been set.
-func (o *UpdateVirtualImage200ResponseAllOfVirtualImageOsType) IsSetBitCount() bool {
-	if o != nil && !IsNil(o.BitCount) {
-		return true
-	}
-
-	return false
-}
-
 // SetBitCount gets a reference to the given int64 and assigns it to the BitCount field.
 func (o *UpdateVirtualImage200ResponseAllOfVirtualImageOsType) SetBitCount(v int64) {
 	o.BitCount = &v
@@ -367,15 +276,6 @@ func (o *UpdateVirtualImage200ResponseAllOfVirtualImageOsType) GetPlatformOk() (
 		return nil, false
 	}
 	return o.Platform, true
-}
-
-// IsSetPlatform returns a boolean if a field has been set.
-func (o *UpdateVirtualImage200ResponseAllOfVirtualImageOsType) IsSetPlatform() bool {
-	if o != nil && !IsNil(o.Platform) {
-		return true
-	}
-
-	return false
 }
 
 // SetPlatform gets a reference to the given string and assigns it to the Platform field.

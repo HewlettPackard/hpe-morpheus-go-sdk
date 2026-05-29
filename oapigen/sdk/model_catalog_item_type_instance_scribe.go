@@ -248,15 +248,6 @@ func (o *CatalogItemTypeInstanceScribe) GetHostNameOk() (*string, bool) {
 	return o.HostName, true
 }
 
-// IsSetHostName returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceScribe) IsSetHostName() bool {
-	if o != nil && !IsNil(o.HostName) {
-		return true
-	}
-
-	return false
-}
-
 // SetHostName gets a reference to the given string and assigns it to the HostName field.
 func (o *CatalogItemTypeInstanceScribe) SetHostName(v string) {
 	o.HostName = &v
@@ -278,15 +269,6 @@ func (o *CatalogItemTypeInstanceScribe) GetEnvironmentOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Environment, true
-}
-
-// IsSetEnvironment returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceScribe) IsSetEnvironment() bool {
-	if o != nil && !IsNil(o.Environment) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnvironment gets a reference to the given string and assigns it to the Environment field.
@@ -360,15 +342,6 @@ func (o *CatalogItemTypeInstanceScribe) GetVersionOk() (*string, bool) {
 	return o.Version, true
 }
 
-// IsSetVersion returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceScribe) IsSetVersion() bool {
-	if o != nil && !IsNil(o.Version) {
-		return true
-	}
-
-	return false
-}
-
 // SetVersion gets a reference to the given string and assigns it to the Version field.
 func (o *CatalogItemTypeInstanceScribe) SetVersion(v string) {
 	o.Version = &v
@@ -392,15 +365,6 @@ func (o *CatalogItemTypeInstanceScribe) GetEvarsOk() ([]InstanceConfigObject1Eva
 	return o.Evars, true
 }
 
-// IsSetEvars returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceScribe) IsSetEvars() bool {
-	if o != nil && !IsNil(o.Evars) {
-		return true
-	}
-
-	return false
-}
-
 // SetEvars gets a reference to the given []InstanceConfigObject1EvarsInner and assigns it to the Evars field.
 func (o *CatalogItemTypeInstanceScribe) SetEvars(v []InstanceConfigObject1EvarsInner) {
 	o.Evars = v
@@ -422,15 +386,6 @@ func (o *CatalogItemTypeInstanceScribe) GetServicePlanOptionsOk() (*InstanceConf
 		return nil, false
 	}
 	return o.ServicePlanOptions, true
-}
-
-// IsSetServicePlanOptions returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceScribe) IsSetServicePlanOptions() bool {
-	if o != nil && !IsNil(o.ServicePlanOptions) {
-		return true
-	}
-
-	return false
 }
 
 // SetServicePlanOptions gets a reference to the given InstanceConfigObject1ServicePlanOptions and assigns it to the ServicePlanOptions field.
@@ -457,15 +412,6 @@ func (o *CatalogItemTypeInstanceScribe) GetSecurityGroupsOk() ([]InstanceConfigO
 	return o.SecurityGroups, true
 }
 
-// IsSetSecurityGroups returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceScribe) IsSetSecurityGroups() bool {
-	if o != nil && !IsNil(o.SecurityGroups) {
-		return true
-	}
-
-	return false
-}
-
 // SetSecurityGroups gets a reference to the given []InstanceConfigObject1SecurityGroupsInner and assigns it to the SecurityGroups field.
 func (o *CatalogItemTypeInstanceScribe) SetSecurityGroups(v []InstanceConfigObject1SecurityGroupsInner) {
 	o.SecurityGroups = v
@@ -487,15 +433,6 @@ func (o *CatalogItemTypeInstanceScribe) GetNetworkInterfacesOk() ([]InstancesNet
 		return nil, false
 	}
 	return o.NetworkInterfaces, true
-}
-
-// IsSetNetworkInterfaces returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceScribe) IsSetNetworkInterfaces() bool {
-	if o != nil && !IsNil(o.NetworkInterfaces) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkInterfaces gets a reference to the given []InstancesNetworkInterfaces1 and assigns it to the NetworkInterfaces field.
@@ -521,15 +458,6 @@ func (o *CatalogItemTypeInstanceScribe) GetLabelsOk() ([]string, bool) {
 	return o.Labels, true
 }
 
-// IsSetLabels returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceScribe) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
-}
-
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
 func (o *CatalogItemTypeInstanceScribe) SetLabels(v []string) {
 	o.Labels = v
@@ -551,15 +479,6 @@ func (o *CatalogItemTypeInstanceScribe) GetTagsOk() ([]InstanceConfigObject1Tags
 		return nil, false
 	}
 	return o.Tags, true
-}
-
-// IsSetTags returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceScribe) IsSetTags() bool {
-	if o != nil && !IsNil(o.Tags) {
-		return true
-	}
-
-	return false
 }
 
 // SetTags gets a reference to the given []InstanceConfigObject1TagsInner and assigns it to the Tags field.
@@ -585,15 +504,6 @@ func (o *CatalogItemTypeInstanceScribe) GetMetadataOk() ([]InstanceConfigObject1
 	return o.Metadata, true
 }
 
-// IsSetMetadata returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceScribe) IsSetMetadata() bool {
-	if o != nil && !IsNil(o.Metadata) {
-		return true
-	}
-
-	return false
-}
-
 // SetMetadata gets a reference to the given []InstanceConfigObject1MetadataInner and assigns it to the Metadata field.
 func (o *CatalogItemTypeInstanceScribe) SetMetadata(v []InstanceConfigObject1MetadataInner) {
 	o.Metadata = v
@@ -615,15 +525,6 @@ func (o *CatalogItemTypeInstanceScribe) GetPortsOk() ([]InstanceConfigObject1Por
 		return nil, false
 	}
 	return o.Ports, true
-}
-
-// IsSetPorts returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceScribe) IsSetPorts() bool {
-	if o != nil && !IsNil(o.Ports) {
-		return true
-	}
-
-	return false
 }
 
 // SetPorts gets a reference to the given []InstanceConfigObject1PortsInner and assigns it to the Ports field.
@@ -649,15 +550,6 @@ func (o *CatalogItemTypeInstanceScribe) GetTaskSetIdOk() (*int64, bool) {
 	return o.TaskSetId, true
 }
 
-// IsSetTaskSetId returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceScribe) IsSetTaskSetId() bool {
-	if o != nil && !IsNil(o.TaskSetId) {
-		return true
-	}
-
-	return false
-}
-
 // SetTaskSetId gets a reference to the given int64 and assigns it to the TaskSetId field.
 func (o *CatalogItemTypeInstanceScribe) SetTaskSetId(v int64) {
 	o.TaskSetId = &v
@@ -679,15 +571,6 @@ func (o *CatalogItemTypeInstanceScribe) GetTaskSetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.TaskSetName, true
-}
-
-// IsSetTaskSetName returns a boolean if a field has been set.
-func (o *CatalogItemTypeInstanceScribe) IsSetTaskSetName() bool {
-	if o != nil && !IsNil(o.TaskSetName) {
-		return true
-	}
-
-	return false
 }
 
 // SetTaskSetName gets a reference to the given string and assigns it to the TaskSetName field.

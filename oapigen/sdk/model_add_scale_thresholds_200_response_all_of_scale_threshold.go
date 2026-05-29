@@ -80,15 +80,6 @@ func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) GetIdOk() (*int64, bo
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) SetId(v int64) {
 	o.Id = &v
@@ -110,15 +101,6 @@ func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) GetNameOk() (*string,
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -144,15 +126,6 @@ func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) GetTypeOk() (*string,
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given string and assigns it to the Type field.
 func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) SetType(v string) {
 	o.Type = &v
@@ -174,15 +147,6 @@ func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) GetAutoUpOk() (*bool,
 		return nil, false
 	}
 	return o.AutoUp, true
-}
-
-// IsSetAutoUp returns a boolean if a field has been set.
-func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) IsSetAutoUp() bool {
-	if o != nil && !IsNil(o.AutoUp) {
-		return true
-	}
-
-	return false
 }
 
 // SetAutoUp gets a reference to the given bool and assigns it to the AutoUp field.
@@ -208,15 +172,6 @@ func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) GetAutoDownOk() (*boo
 	return o.AutoDown, true
 }
 
-// IsSetAutoDown returns a boolean if a field has been set.
-func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) IsSetAutoDown() bool {
-	if o != nil && !IsNil(o.AutoDown) {
-		return true
-	}
-
-	return false
-}
-
 // SetAutoDown gets a reference to the given bool and assigns it to the AutoDown field.
 func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) SetAutoDown(v bool) {
 	o.AutoDown = &v
@@ -238,15 +193,6 @@ func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) GetMinCountOk() (*int
 		return nil, false
 	}
 	return o.MinCount, true
-}
-
-// IsSetMinCount returns a boolean if a field has been set.
-func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) IsSetMinCount() bool {
-	if o != nil && !IsNil(o.MinCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetMinCount gets a reference to the given int64 and assigns it to the MinCount field.
@@ -272,15 +218,6 @@ func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) GetMaxCountOk() (*int
 	return o.MaxCount, true
 }
 
-// IsSetMaxCount returns a boolean if a field has been set.
-func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) IsSetMaxCount() bool {
-	if o != nil && !IsNil(o.MaxCount) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxCount gets a reference to the given int64 and assigns it to the MaxCount field.
 func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) SetMaxCount(v int64) {
 	o.MaxCount = &v
@@ -302,15 +239,6 @@ func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) GetScaleIncrementOk()
 		return nil, false
 	}
 	return o.ScaleIncrement, true
-}
-
-// IsSetScaleIncrement returns a boolean if a field has been set.
-func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) IsSetScaleIncrement() bool {
-	if o != nil && !IsNil(o.ScaleIncrement) {
-		return true
-	}
-
-	return false
 }
 
 // SetScaleIncrement gets a reference to the given int64 and assigns it to the ScaleIncrement field.
@@ -336,15 +264,6 @@ func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) GetCpuEnabledOk() (*b
 	return o.CpuEnabled, true
 }
 
-// IsSetCpuEnabled returns a boolean if a field has been set.
-func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) IsSetCpuEnabled() bool {
-	if o != nil && !IsNil(o.CpuEnabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuEnabled gets a reference to the given bool and assigns it to the CpuEnabled field.
 func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) SetCpuEnabled(v bool) {
 	o.CpuEnabled = &v
@@ -366,15 +285,6 @@ func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) GetMinCpuOk() (*int64
 		return nil, false
 	}
 	return o.MinCpu, true
-}
-
-// IsSetMinCpu returns a boolean if a field has been set.
-func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) IsSetMinCpu() bool {
-	if o != nil && !IsNil(o.MinCpu) {
-		return true
-	}
-
-	return false
 }
 
 // SetMinCpu gets a reference to the given int64 and assigns it to the MinCpu field.
@@ -400,15 +310,6 @@ func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) GetMaxCpuOk() (*int64
 	return o.MaxCpu, true
 }
 
-// IsSetMaxCpu returns a boolean if a field has been set.
-func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) IsSetMaxCpu() bool {
-	if o != nil && !IsNil(o.MaxCpu) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxCpu gets a reference to the given int64 and assigns it to the MaxCpu field.
 func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) SetMaxCpu(v int64) {
 	o.MaxCpu = &v
@@ -430,15 +331,6 @@ func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) GetMemoryEnabledOk() 
 		return nil, false
 	}
 	return o.MemoryEnabled, true
-}
-
-// IsSetMemoryEnabled returns a boolean if a field has been set.
-func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) IsSetMemoryEnabled() bool {
-	if o != nil && !IsNil(o.MemoryEnabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetMemoryEnabled gets a reference to the given bool and assigns it to the MemoryEnabled field.
@@ -464,15 +356,6 @@ func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) GetMinMemoryOk() (*in
 	return o.MinMemory, true
 }
 
-// IsSetMinMemory returns a boolean if a field has been set.
-func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) IsSetMinMemory() bool {
-	if o != nil && !IsNil(o.MinMemory) {
-		return true
-	}
-
-	return false
-}
-
 // SetMinMemory gets a reference to the given int64 and assigns it to the MinMemory field.
 func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) SetMinMemory(v int64) {
 	o.MinMemory = &v
@@ -494,15 +377,6 @@ func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) GetMaxMemoryOk() (*in
 		return nil, false
 	}
 	return o.MaxMemory, true
-}
-
-// IsSetMaxMemory returns a boolean if a field has been set.
-func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) IsSetMaxMemory() bool {
-	if o != nil && !IsNil(o.MaxMemory) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxMemory gets a reference to the given int64 and assigns it to the MaxMemory field.
@@ -528,15 +402,6 @@ func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) GetDiskEnabledOk() (*
 	return o.DiskEnabled, true
 }
 
-// IsSetDiskEnabled returns a boolean if a field has been set.
-func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) IsSetDiskEnabled() bool {
-	if o != nil && !IsNil(o.DiskEnabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetDiskEnabled gets a reference to the given bool and assigns it to the DiskEnabled field.
 func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) SetDiskEnabled(v bool) {
 	o.DiskEnabled = &v
@@ -558,15 +423,6 @@ func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) GetMinDiskOk() (*int6
 		return nil, false
 	}
 	return o.MinDisk, true
-}
-
-// IsSetMinDisk returns a boolean if a field has been set.
-func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) IsSetMinDisk() bool {
-	if o != nil && !IsNil(o.MinDisk) {
-		return true
-	}
-
-	return false
 }
 
 // SetMinDisk gets a reference to the given int64 and assigns it to the MinDisk field.
@@ -592,15 +448,6 @@ func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) GetMaxDiskOk() (*int6
 	return o.MaxDisk, true
 }
 
-// IsSetMaxDisk returns a boolean if a field has been set.
-func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) IsSetMaxDisk() bool {
-	if o != nil && !IsNil(o.MaxDisk) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxDisk gets a reference to the given int64 and assigns it to the MaxDisk field.
 func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) SetMaxDisk(v int64) {
 	o.MaxDisk = &v
@@ -624,15 +471,6 @@ func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) GetDateCreatedOk() (*
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -654,15 +492,6 @@ func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) GetLastUpdatedOk() (*
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *AddScaleThresholds200ResponseAllOfScaleThreshold) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.

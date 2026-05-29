@@ -61,15 +61,6 @@ func (o *ListSystems200Response) GetSystemsOk() ([]ListSystems200ResponseSystems
 	return o.Systems, true
 }
 
-// IsSetSystems returns a boolean if a field has been set.
-func (o *ListSystems200Response) IsSetSystems() bool {
-	if o != nil && !IsNil(o.Systems) {
-		return true
-	}
-
-	return false
-}
-
 // SetSystems gets a reference to the given []ListSystems200ResponseSystemsInner and assigns it to the Systems field.
 func (o *ListSystems200Response) SetSystems(v []ListSystems200ResponseSystemsInner) {
 	o.Systems = v

@@ -87,15 +87,6 @@ func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) GetIdOk()
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) SetId(v int64) {
 	o.Id = &v
@@ -117,15 +108,6 @@ func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) GetLoadBa
 		return nil, false
 	}
 	return o.LoadBalancer, true
-}
-
-// IsSetLoadBalancer returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) IsSetLoadBalancer() bool {
-	if o != nil && !IsNil(o.LoadBalancer) {
-		return true
-	}
-
-	return false
 }
 
 // SetLoadBalancer gets a reference to the given UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfileLoadBalancer and assigns it to the LoadBalancer field.
@@ -151,15 +133,6 @@ func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) GetNameOk
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) SetName(v string) {
 	o.Name = &v
@@ -181,15 +154,6 @@ func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) GetCatego
 		return nil, false
 	}
 	return o.Category, true
-}
-
-// IsSetCategory returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
-		return true
-	}
-
-	return false
 }
 
 // SetCategory gets a reference to the given string and assigns it to the Category field.
@@ -215,15 +179,6 @@ func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) GetServic
 	return o.ServiceType, true
 }
 
-// IsSetServiceType returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) IsSetServiceType() bool {
-	if o != nil && !IsNil(o.ServiceType) {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceType gets a reference to the given string and assigns it to the ServiceType field.
 func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) SetServiceType(v string) {
 	o.ServiceType = &v
@@ -245,15 +200,6 @@ func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) GetServic
 		return nil, false
 	}
 	return o.ServiceTypeDisplay, true
-}
-
-// IsSetServiceTypeDisplay returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) IsSetServiceTypeDisplay() bool {
-	if o != nil && !IsNil(o.ServiceTypeDisplay) {
-		return true
-	}
-
-	return false
 }
 
 // SetServiceTypeDisplay gets a reference to the given string and assigns it to the ServiceTypeDisplay field.
@@ -279,15 +225,6 @@ func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) GetVisibi
 	return o.Visibility, true
 }
 
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
-}
-
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
 func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) SetVisibility(v string) {
 	o.Visibility = &v
@@ -309,15 +246,6 @@ func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) GetDescri
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -343,15 +271,6 @@ func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) GetIntern
 	return o.InternalId, true
 }
 
-// IsSetInternalId returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) IsSetInternalId() bool {
-	if o != nil && !IsNil(o.InternalId) {
-		return true
-	}
-
-	return false
-}
-
 // SetInternalId gets a reference to the given string and assigns it to the InternalId field.
 func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) SetInternalId(v string) {
 	o.InternalId = &v
@@ -373,15 +292,6 @@ func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) GetExtern
 		return nil, false
 	}
 	return o.ExternalId, true
-}
-
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
-		return true
-	}
-
-	return false
 }
 
 // SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
@@ -408,28 +318,9 @@ func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) GetProxyT
 	return o.ProxyType.Get(), o.ProxyType.IsSet()
 }
 
-// IsSetProxyType returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) IsSetProxyType() bool {
-	if o != nil && o.ProxyType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetProxyType gets a reference to the given NullableString and assigns it to the ProxyType field.
 func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) SetProxyType(v string) {
 	o.ProxyType.Set(&v)
-}
-
-// SetProxyTypeNil sets the value for ProxyType to be an explicit nil
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) SetProxyTypeNil() {
-	o.ProxyType.Set(nil)
-}
-
-// UnsetProxyType ensures that no value is present for ProxyType, not even an explicit nil
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) UnsetProxyType() {
-	o.ProxyType.Unset()
 }
 
 // GetRedirectRewrite returns the RedirectRewrite field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -451,28 +342,9 @@ func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) GetRedire
 	return o.RedirectRewrite.Get(), o.RedirectRewrite.IsSet()
 }
 
-// IsSetRedirectRewrite returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) IsSetRedirectRewrite() bool {
-	if o != nil && o.RedirectRewrite.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRedirectRewrite gets a reference to the given NullableString and assigns it to the RedirectRewrite field.
 func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) SetRedirectRewrite(v string) {
 	o.RedirectRewrite.Set(&v)
-}
-
-// SetRedirectRewriteNil sets the value for RedirectRewrite to be an explicit nil
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) SetRedirectRewriteNil() {
-	o.RedirectRewrite.Set(nil)
-}
-
-// UnsetRedirectRewrite ensures that no value is present for RedirectRewrite, not even an explicit nil
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) UnsetRedirectRewrite() {
-	o.RedirectRewrite.Unset()
 }
 
 // GetPersistenceType returns the PersistenceType field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -494,28 +366,9 @@ func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) GetPersis
 	return o.PersistenceType.Get(), o.PersistenceType.IsSet()
 }
 
-// IsSetPersistenceType returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) IsSetPersistenceType() bool {
-	if o != nil && o.PersistenceType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPersistenceType gets a reference to the given NullableString and assigns it to the PersistenceType field.
 func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) SetPersistenceType(v string) {
 	o.PersistenceType.Set(&v)
-}
-
-// SetPersistenceTypeNil sets the value for PersistenceType to be an explicit nil
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) SetPersistenceTypeNil() {
-	o.PersistenceType.Set(nil)
-}
-
-// UnsetPersistenceType ensures that no value is present for PersistenceType, not even an explicit nil
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) UnsetPersistenceType() {
-	o.PersistenceType.Unset()
 }
 
 // GetSslEnabled returns the SslEnabled field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -537,28 +390,9 @@ func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) GetSslEna
 	return o.SslEnabled.Get(), o.SslEnabled.IsSet()
 }
 
-// IsSetSslEnabled returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) IsSetSslEnabled() bool {
-	if o != nil && o.SslEnabled.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSslEnabled gets a reference to the given NullableString and assigns it to the SslEnabled field.
 func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) SetSslEnabled(v string) {
 	o.SslEnabled.Set(&v)
-}
-
-// SetSslEnabledNil sets the value for SslEnabled to be an explicit nil
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) SetSslEnabledNil() {
-	o.SslEnabled.Set(nil)
-}
-
-// UnsetSslEnabled ensures that no value is present for SslEnabled, not even an explicit nil
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) UnsetSslEnabled() {
-	o.SslEnabled.Unset()
 }
 
 // GetSslCert returns the SslCert field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -580,28 +414,9 @@ func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) GetSslCer
 	return o.SslCert.Get(), o.SslCert.IsSet()
 }
 
-// IsSetSslCert returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) IsSetSslCert() bool {
-	if o != nil && o.SslCert.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSslCert gets a reference to the given NullableString and assigns it to the SslCert field.
 func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) SetSslCert(v string) {
 	o.SslCert.Set(&v)
-}
-
-// SetSslCertNil sets the value for SslCert to be an explicit nil
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) SetSslCertNil() {
-	o.SslCert.Set(nil)
-}
-
-// UnsetSslCert ensures that no value is present for SslCert, not even an explicit nil
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) UnsetSslCert() {
-	o.SslCert.Unset()
 }
 
 // GetAccountCertificate returns the AccountCertificate field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -623,28 +438,9 @@ func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) GetAccoun
 	return o.AccountCertificate.Get(), o.AccountCertificate.IsSet()
 }
 
-// IsSetAccountCertificate returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) IsSetAccountCertificate() bool {
-	if o != nil && o.AccountCertificate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAccountCertificate gets a reference to the given NullableString and assigns it to the AccountCertificate field.
 func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) SetAccountCertificate(v string) {
 	o.AccountCertificate.Set(&v)
-}
-
-// SetAccountCertificateNil sets the value for AccountCertificate to be an explicit nil
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) SetAccountCertificateNil() {
-	o.AccountCertificate.Set(nil)
-}
-
-// UnsetAccountCertificate ensures that no value is present for AccountCertificate, not even an explicit nil
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) UnsetAccountCertificate() {
-	o.AccountCertificate.Unset()
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
@@ -663,15 +459,6 @@ func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) GetEnable
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -698,28 +485,9 @@ func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) GetRedire
 	return o.RedirectUrl.Get(), o.RedirectUrl.IsSet()
 }
 
-// IsSetRedirectUrl returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) IsSetRedirectUrl() bool {
-	if o != nil && o.RedirectUrl.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRedirectUrl gets a reference to the given NullableString and assigns it to the RedirectUrl field.
 func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) SetRedirectUrl(v string) {
 	o.RedirectUrl.Set(&v)
-}
-
-// SetRedirectUrlNil sets the value for RedirectUrl to be an explicit nil
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) SetRedirectUrlNil() {
-	o.RedirectUrl.Set(nil)
-}
-
-// UnsetRedirectUrl ensures that no value is present for RedirectUrl, not even an explicit nil
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) UnsetRedirectUrl() {
-	o.RedirectUrl.Unset()
 }
 
 // GetInsertXforwardedFor returns the InsertXforwardedFor field value if set, zero value otherwise.
@@ -738,15 +506,6 @@ func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) GetInsert
 		return nil, false
 	}
 	return o.InsertXforwardedFor, true
-}
-
-// IsSetInsertXforwardedFor returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) IsSetInsertXforwardedFor() bool {
-	if o != nil && !IsNil(o.InsertXforwardedFor) {
-		return true
-	}
-
-	return false
 }
 
 // SetInsertXforwardedFor gets a reference to the given bool and assigns it to the InsertXforwardedFor field.
@@ -773,28 +532,9 @@ func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) GetPersis
 	return o.PersistenceCookieName.Get(), o.PersistenceCookieName.IsSet()
 }
 
-// IsSetPersistenceCookieName returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) IsSetPersistenceCookieName() bool {
-	if o != nil && o.PersistenceCookieName.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPersistenceCookieName gets a reference to the given NullableString and assigns it to the PersistenceCookieName field.
 func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) SetPersistenceCookieName(v string) {
 	o.PersistenceCookieName.Set(&v)
-}
-
-// SetPersistenceCookieNameNil sets the value for PersistenceCookieName to be an explicit nil
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) SetPersistenceCookieNameNil() {
-	o.PersistenceCookieName.Set(nil)
-}
-
-// UnsetPersistenceCookieName ensures that no value is present for PersistenceCookieName, not even an explicit nil
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) UnsetPersistenceCookieName() {
-	o.PersistenceCookieName.Unset()
 }
 
 // GetPersistenceExpiresIn returns the PersistenceExpiresIn field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -816,28 +556,9 @@ func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) GetPersis
 	return o.PersistenceExpiresIn.Get(), o.PersistenceExpiresIn.IsSet()
 }
 
-// IsSetPersistenceExpiresIn returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) IsSetPersistenceExpiresIn() bool {
-	if o != nil && o.PersistenceExpiresIn.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPersistenceExpiresIn gets a reference to the given NullableString and assigns it to the PersistenceExpiresIn field.
 func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) SetPersistenceExpiresIn(v string) {
 	o.PersistenceExpiresIn.Set(&v)
-}
-
-// SetPersistenceExpiresInNil sets the value for PersistenceExpiresIn to be an explicit nil
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) SetPersistenceExpiresInNil() {
-	o.PersistenceExpiresIn.Set(nil)
-}
-
-// UnsetPersistenceExpiresIn ensures that no value is present for PersistenceExpiresIn, not even an explicit nil
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) UnsetPersistenceExpiresIn() {
-	o.PersistenceExpiresIn.Unset()
 }
 
 // GetEditable returns the Editable field value if set, zero value otherwise.
@@ -856,15 +577,6 @@ func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) GetEditab
 		return nil, false
 	}
 	return o.Editable, true
-}
-
-// IsSetEditable returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) IsSetEditable() bool {
-	if o != nil && !IsNil(o.Editable) {
-		return true
-	}
-
-	return false
 }
 
 // SetEditable gets a reference to the given bool and assigns it to the Editable field.
@@ -888,15 +600,6 @@ func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) GetConfig
 		return map[string]interface{}{}, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
@@ -923,28 +626,9 @@ func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) GetCreate
 	return o.CreatedBy.Get(), o.CreatedBy.IsSet()
 }
 
-// IsSetCreatedBy returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) IsSetCreatedBy() bool {
-	if o != nil && o.CreatedBy.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCreatedBy gets a reference to the given NullableString and assigns it to the CreatedBy field.
 func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) SetCreatedBy(v string) {
 	o.CreatedBy.Set(&v)
-}
-
-// SetCreatedByNil sets the value for CreatedBy to be an explicit nil
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) SetCreatedByNil() {
-	o.CreatedBy.Set(nil)
-}
-
-// UnsetCreatedBy ensures that no value is present for CreatedBy, not even an explicit nil
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) UnsetCreatedBy() {
-	o.CreatedBy.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -963,15 +647,6 @@ func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) GetDateCr
 		return nil, false
 	}
 	return o.DateCreated, true
-}
-
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
@@ -995,15 +670,6 @@ func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) GetLastUp
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerProfile200ResponseAllOfLoadBalancerProfile) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.

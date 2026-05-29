@@ -91,15 +91,6 @@ func (o *MaxCoresPolicyTypeConfiguration9) GetExcludeContainersOk() (*string, bo
 	return o.ExcludeContainers, true
 }
 
-// IsSetExcludeContainers returns a boolean if a field has been set.
-func (o *MaxCoresPolicyTypeConfiguration9) IsSetExcludeContainers() bool {
-	if o != nil && !IsNil(o.ExcludeContainers) {
-		return true
-	}
-
-	return false
-}
-
 // SetExcludeContainers gets a reference to the given string and assigns it to the ExcludeContainers field.
 func (o *MaxCoresPolicyTypeConfiguration9) SetExcludeContainers(v string) {
 	o.ExcludeContainers = &v

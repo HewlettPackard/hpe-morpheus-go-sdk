@@ -62,15 +62,6 @@ func (o *UpdateRoleCatalogItemTypeAccess200Response) GetAccessOk() (*string, boo
 	return o.Access, true
 }
 
-// IsSetAccess returns a boolean if a field has been set.
-func (o *UpdateRoleCatalogItemTypeAccess200Response) IsSetAccess() bool {
-	if o != nil && !IsNil(o.Access) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccess gets a reference to the given string and assigns it to the Access field.
 func (o *UpdateRoleCatalogItemTypeAccess200Response) SetAccess(v string) {
 	o.Access = &v
@@ -92,15 +83,6 @@ func (o *UpdateRoleCatalogItemTypeAccess200Response) GetSuccessOk() (*bool, bool
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *UpdateRoleCatalogItemTypeAccess200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

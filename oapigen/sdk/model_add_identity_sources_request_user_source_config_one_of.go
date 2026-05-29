@@ -68,15 +68,6 @@ func (o *AddIdentitySourcesRequestUserSourceConfigOneOf) GetUrlOk() (*string, bo
 	return o.Url, true
 }
 
-// IsSetUrl returns a boolean if a field has been set.
-func (o *AddIdentitySourcesRequestUserSourceConfigOneOf) IsSetUrl() bool {
-	if o != nil && !IsNil(o.Url) {
-		return true
-	}
-
-	return false
-}
-
 // SetUrl gets a reference to the given string and assigns it to the Url field.
 func (o *AddIdentitySourcesRequestUserSourceConfigOneOf) SetUrl(v string) {
 	o.Url = &v
@@ -98,15 +89,6 @@ func (o *AddIdentitySourcesRequestUserSourceConfigOneOf) GetBindingUsernameOk() 
 		return nil, false
 	}
 	return o.BindingUsername, true
-}
-
-// IsSetBindingUsername returns a boolean if a field has been set.
-func (o *AddIdentitySourcesRequestUserSourceConfigOneOf) IsSetBindingUsername() bool {
-	if o != nil && !IsNil(o.BindingUsername) {
-		return true
-	}
-
-	return false
 }
 
 // SetBindingUsername gets a reference to the given string and assigns it to the BindingUsername field.
@@ -132,15 +114,6 @@ func (o *AddIdentitySourcesRequestUserSourceConfigOneOf) GetBindingPasswordOk() 
 	return o.BindingPassword, true
 }
 
-// IsSetBindingPassword returns a boolean if a field has been set.
-func (o *AddIdentitySourcesRequestUserSourceConfigOneOf) IsSetBindingPassword() bool {
-	if o != nil && !IsNil(o.BindingPassword) {
-		return true
-	}
-
-	return false
-}
-
 // SetBindingPassword gets a reference to the given string and assigns it to the BindingPassword field.
 func (o *AddIdentitySourcesRequestUserSourceConfigOneOf) SetBindingPassword(v string) {
 	o.BindingPassword = &v
@@ -162,15 +135,6 @@ func (o *AddIdentitySourcesRequestUserSourceConfigOneOf) GetRequiredGroupOk() (*
 		return nil, false
 	}
 	return o.RequiredGroup, true
-}
-
-// IsSetRequiredGroup returns a boolean if a field has been set.
-func (o *AddIdentitySourcesRequestUserSourceConfigOneOf) IsSetRequiredGroup() bool {
-	if o != nil && !IsNil(o.RequiredGroup) {
-		return true
-	}
-
-	return false
 }
 
 // SetRequiredGroup gets a reference to the given string and assigns it to the RequiredGroup field.

@@ -62,15 +62,6 @@ func (o *UpdateCluster200Response) GetClusterOk() (*UpdateCluster200ResponseAllO
 	return o.Cluster, true
 }
 
-// IsSetCluster returns a boolean if a field has been set.
-func (o *UpdateCluster200Response) IsSetCluster() bool {
-	if o != nil && !IsNil(o.Cluster) {
-		return true
-	}
-
-	return false
-}
-
 // SetCluster gets a reference to the given UpdateCluster200ResponseAllOfCluster and assigns it to the Cluster field.
 func (o *UpdateCluster200Response) SetCluster(v UpdateCluster200ResponseAllOfCluster) {
 	o.Cluster = &v
@@ -92,15 +83,6 @@ func (o *UpdateCluster200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *UpdateCluster200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

@@ -96,15 +96,6 @@ func (o *AddSpecTemplateRequestSpecTemplateFile) GetContentOk() (*string, bool) 
 	return o.Content, true
 }
 
-// IsSetContent returns a boolean if a field has been set.
-func (o *AddSpecTemplateRequestSpecTemplateFile) IsSetContent() bool {
-	if o != nil && !IsNil(o.Content) {
-		return true
-	}
-
-	return false
-}
-
 // SetContent gets a reference to the given string and assigns it to the Content field.
 func (o *AddSpecTemplateRequestSpecTemplateFile) SetContent(v string) {
 	o.Content = &v
@@ -126,15 +117,6 @@ func (o *AddSpecTemplateRequestSpecTemplateFile) GetContentPathOk() (*string, bo
 		return nil, false
 	}
 	return o.ContentPath, true
-}
-
-// IsSetContentPath returns a boolean if a field has been set.
-func (o *AddSpecTemplateRequestSpecTemplateFile) IsSetContentPath() bool {
-	if o != nil && !IsNil(o.ContentPath) {
-		return true
-	}
-
-	return false
 }
 
 // SetContentPath gets a reference to the given string and assigns it to the ContentPath field.
@@ -160,15 +142,6 @@ func (o *AddSpecTemplateRequestSpecTemplateFile) GetContentRefOk() (*string, boo
 	return o.ContentRef, true
 }
 
-// IsSetContentRef returns a boolean if a field has been set.
-func (o *AddSpecTemplateRequestSpecTemplateFile) IsSetContentRef() bool {
-	if o != nil && !IsNil(o.ContentRef) {
-		return true
-	}
-
-	return false
-}
-
 // SetContentRef gets a reference to the given string and assigns it to the ContentRef field.
 func (o *AddSpecTemplateRequestSpecTemplateFile) SetContentRef(v string) {
 	o.ContentRef = &v
@@ -190,15 +163,6 @@ func (o *AddSpecTemplateRequestSpecTemplateFile) GetRepositoryOk() (*AddSpecTemp
 		return nil, false
 	}
 	return o.Repository, true
-}
-
-// IsSetRepository returns a boolean if a field has been set.
-func (o *AddSpecTemplateRequestSpecTemplateFile) IsSetRepository() bool {
-	if o != nil && !IsNil(o.Repository) {
-		return true
-	}
-
-	return false
 }
 
 // SetRepository gets a reference to the given AddSpecTemplateRequestSpecTemplateFileRepository and assigns it to the Repository field.

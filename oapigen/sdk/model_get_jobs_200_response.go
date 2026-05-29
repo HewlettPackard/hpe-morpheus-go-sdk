@@ -61,15 +61,6 @@ func (o *GetJobs200Response) GetJobOk() (*GetJobs200ResponseAllOfJob, bool) {
 	return o.Job, true
 }
 
-// IsSetJob returns a boolean if a field has been set.
-func (o *GetJobs200Response) IsSetJob() bool {
-	if o != nil && !IsNil(o.Job) {
-		return true
-	}
-
-	return false
-}
-
 // SetJob gets a reference to the given GetJobs200ResponseAllOfJob and assigns it to the Job field.
 func (o *GetJobs200Response) SetJob(v GetJobs200ResponseAllOfJob) {
 	o.Job = &v

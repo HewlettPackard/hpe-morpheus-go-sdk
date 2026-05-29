@@ -71,15 +71,6 @@ func (o *UpdateHostManagedRequest) GetServerOk() (*UpdateHostManagedRequestServe
 	return o.Server, true
 }
 
-// IsSetServer returns a boolean if a field has been set.
-func (o *UpdateHostManagedRequest) IsSetServer() bool {
-	if o != nil && !IsNil(o.Server) {
-		return true
-	}
-
-	return false
-}
-
 // SetServer gets a reference to the given UpdateHostManagedRequestServer and assigns it to the Server field.
 func (o *UpdateHostManagedRequest) SetServer(v UpdateHostManagedRequestServer) {
 	o.Server = &v
@@ -101,15 +92,6 @@ func (o *UpdateHostManagedRequest) GetInstallAgentOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.InstallAgent, true
-}
-
-// IsSetInstallAgent returns a boolean if a field has been set.
-func (o *UpdateHostManagedRequest) IsSetInstallAgent() bool {
-	if o != nil && !IsNil(o.InstallAgent) {
-		return true
-	}
-
-	return false
 }
 
 // SetInstallAgent gets a reference to the given bool and assigns it to the InstallAgent field.
@@ -135,15 +117,6 @@ func (o *UpdateHostManagedRequest) GetInstanceTypeIdOk() (*int64, bool) {
 	return o.InstanceTypeId, true
 }
 
-// IsSetInstanceTypeId returns a boolean if a field has been set.
-func (o *UpdateHostManagedRequest) IsSetInstanceTypeId() bool {
-	if o != nil && !IsNil(o.InstanceTypeId) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstanceTypeId gets a reference to the given int64 and assigns it to the InstanceTypeId field.
 func (o *UpdateHostManagedRequest) SetInstanceTypeId(v int64) {
 	o.InstanceTypeId = &v
@@ -165,15 +138,6 @@ func (o *UpdateHostManagedRequest) GetLayoutOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.Layout, true
-}
-
-// IsSetLayout returns a boolean if a field has been set.
-func (o *UpdateHostManagedRequest) IsSetLayout() bool {
-	if o != nil && !IsNil(o.Layout) {
-		return true
-	}
-
-	return false
 }
 
 // SetLayout gets a reference to the given int64 and assigns it to the Layout field.

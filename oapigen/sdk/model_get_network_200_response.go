@@ -61,15 +61,6 @@ func (o *GetNetwork200Response) GetNetworkOk() (*GetNetwork200ResponseNetwork, b
 	return o.Network, true
 }
 
-// IsSetNetwork returns a boolean if a field has been set.
-func (o *GetNetwork200Response) IsSetNetwork() bool {
-	if o != nil && !IsNil(o.Network) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetwork gets a reference to the given GetNetwork200ResponseNetwork and assigns it to the Network field.
 func (o *GetNetwork200Response) SetNetwork(v GetNetwork200ResponseNetwork) {
 	o.Network = &v

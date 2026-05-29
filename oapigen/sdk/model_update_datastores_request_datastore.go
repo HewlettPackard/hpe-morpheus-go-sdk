@@ -72,15 +72,6 @@ func (o *UpdateDatastoresRequestDatastore) GetActiveOk() (*bool, bool) {
 	return o.Active, true
 }
 
-// IsSetActive returns a boolean if a field has been set.
-func (o *UpdateDatastoresRequestDatastore) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
-}
-
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *UpdateDatastoresRequestDatastore) SetActive(v bool) {
 	o.Active = &v
@@ -102,15 +93,6 @@ func (o *UpdateDatastoresRequestDatastore) GetHeartbeatTargetOk() (*bool, bool) 
 		return nil, false
 	}
 	return o.HeartbeatTarget, true
-}
-
-// IsSetHeartbeatTarget returns a boolean if a field has been set.
-func (o *UpdateDatastoresRequestDatastore) IsSetHeartbeatTarget() bool {
-	if o != nil && !IsNil(o.HeartbeatTarget) {
-		return true
-	}
-
-	return false
 }
 
 // SetHeartbeatTarget gets a reference to the given bool and assigns it to the HeartbeatTarget field.
@@ -136,15 +118,6 @@ func (o *UpdateDatastoresRequestDatastore) GetVisibilityOk() (*string, bool) {
 	return o.Visibility, true
 }
 
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *UpdateDatastoresRequestDatastore) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
-}
-
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
 func (o *UpdateDatastoresRequestDatastore) SetVisibility(v string) {
 	o.Visibility = &v
@@ -168,15 +141,6 @@ func (o *UpdateDatastoresRequestDatastore) GetTenantPermissionsOk() (*UpdateData
 	return o.TenantPermissions, true
 }
 
-// IsSetTenantPermissions returns a boolean if a field has been set.
-func (o *UpdateDatastoresRequestDatastore) IsSetTenantPermissions() bool {
-	if o != nil && !IsNil(o.TenantPermissions) {
-		return true
-	}
-
-	return false
-}
-
 // SetTenantPermissions gets a reference to the given UpdateDatastoresRequestDatastoreTenantPermissions and assigns it to the TenantPermissions field.
 func (o *UpdateDatastoresRequestDatastore) SetTenantPermissions(v UpdateDatastoresRequestDatastoreTenantPermissions) {
 	o.TenantPermissions = &v
@@ -198,15 +162,6 @@ func (o *UpdateDatastoresRequestDatastore) GetResourcePermissionsOk() (*UpdateDa
 		return nil, false
 	}
 	return o.ResourcePermissions, true
-}
-
-// IsSetResourcePermissions returns a boolean if a field has been set.
-func (o *UpdateDatastoresRequestDatastore) IsSetResourcePermissions() bool {
-	if o != nil && !IsNil(o.ResourcePermissions) {
-		return true
-	}
-
-	return false
 }
 
 // SetResourcePermissions gets a reference to the given UpdateDatastoresRequestDatastoreResourcePermissions and assigns it to the ResourcePermissions field.

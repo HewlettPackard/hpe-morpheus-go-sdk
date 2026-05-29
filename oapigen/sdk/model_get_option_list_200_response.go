@@ -61,15 +61,6 @@ func (o *GetOptionList200Response) GetOptionTypesOk() ([]GetOptionList200Respons
 	return o.OptionTypes, true
 }
 
-// IsSetOptionTypes returns a boolean if a field has been set.
-func (o *GetOptionList200Response) IsSetOptionTypes() bool {
-	if o != nil && !IsNil(o.OptionTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetOptionTypes gets a reference to the given []GetOptionList200ResponseOptionTypesInner and assigns it to the OptionTypes field.
 func (o *GetOptionList200Response) SetOptionTypes(v []GetOptionList200ResponseOptionTypesInner) {
 	o.OptionTypes = v

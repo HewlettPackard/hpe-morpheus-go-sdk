@@ -131,15 +131,6 @@ func (o *CredentialUsernamePasswordKeypairConfig) GetDescriptionOk() (*string, b
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *CredentialUsernamePasswordKeypairConfig) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *CredentialUsernamePasswordKeypairConfig) SetDescription(v string) {
 	o.Description = &v
@@ -163,15 +154,6 @@ func (o *CredentialUsernamePasswordKeypairConfig) GetEnabledOk() (*bool, bool) {
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *CredentialUsernamePasswordKeypairConfig) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *CredentialUsernamePasswordKeypairConfig) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -193,15 +175,6 @@ func (o *CredentialUsernamePasswordKeypairConfig) GetIntegrationOk() (*UpdateCre
 		return nil, false
 	}
 	return o.Integration, true
-}
-
-// IsSetIntegration returns a boolean if a field has been set.
-func (o *CredentialUsernamePasswordKeypairConfig) IsSetIntegration() bool {
-	if o != nil && !IsNil(o.Integration) {
-		return true
-	}
-
-	return false
 }
 
 // SetIntegration gets a reference to the given UpdateCredentialsRequestCredentialOneOf7Integration and assigns it to the Integration field.

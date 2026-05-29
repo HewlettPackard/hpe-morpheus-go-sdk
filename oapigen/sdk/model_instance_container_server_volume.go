@@ -85,15 +85,6 @@ func (o *InstanceContainerServerVolume) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *InstanceContainerServerVolume) SetId(v int64) {
 	o.Id = &v
@@ -115,15 +106,6 @@ func (o *InstanceContainerServerVolume) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -150,28 +132,9 @@ func (o *InstanceContainerServerVolume) GetControllerIdOk() (*int64, bool) {
 	return o.ControllerId.Get(), o.ControllerId.IsSet()
 }
 
-// IsSetControllerId returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume) IsSetControllerId() bool {
-	if o != nil && o.ControllerId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetControllerId gets a reference to the given NullableInt64 and assigns it to the ControllerId field.
 func (o *InstanceContainerServerVolume) SetControllerId(v int64) {
 	o.ControllerId.Set(&v)
-}
-
-// SetControllerIdNil sets the value for ControllerId to be an explicit nil
-func (o *InstanceContainerServerVolume) SetControllerIdNil() {
-	o.ControllerId.Set(nil)
-}
-
-// UnsetControllerId ensures that no value is present for ControllerId, not even an explicit nil
-func (o *InstanceContainerServerVolume) UnsetControllerId() {
-	o.ControllerId.Unset()
 }
 
 // GetControllerMountPoint returns the ControllerMountPoint field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -193,28 +156,9 @@ func (o *InstanceContainerServerVolume) GetControllerMountPointOk() (*string, bo
 	return o.ControllerMountPoint.Get(), o.ControllerMountPoint.IsSet()
 }
 
-// IsSetControllerMountPoint returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume) IsSetControllerMountPoint() bool {
-	if o != nil && o.ControllerMountPoint.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetControllerMountPoint gets a reference to the given NullableString and assigns it to the ControllerMountPoint field.
 func (o *InstanceContainerServerVolume) SetControllerMountPoint(v string) {
 	o.ControllerMountPoint.Set(&v)
-}
-
-// SetControllerMountPointNil sets the value for ControllerMountPoint to be an explicit nil
-func (o *InstanceContainerServerVolume) SetControllerMountPointNil() {
-	o.ControllerMountPoint.Set(nil)
-}
-
-// UnsetControllerMountPoint ensures that no value is present for ControllerMountPoint, not even an explicit nil
-func (o *InstanceContainerServerVolume) UnsetControllerMountPoint() {
-	o.ControllerMountPoint.Unset()
 }
 
 // GetResizeable returns the Resizeable field value if set, zero value otherwise.
@@ -233,15 +177,6 @@ func (o *InstanceContainerServerVolume) GetResizeableOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Resizeable, true
-}
-
-// IsSetResizeable returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume) IsSetResizeable() bool {
-	if o != nil && !IsNil(o.Resizeable) {
-		return true
-	}
-
-	return false
 }
 
 // SetResizeable gets a reference to the given bool and assigns it to the Resizeable field.
@@ -267,15 +202,6 @@ func (o *InstanceContainerServerVolume) GetRootVolumeOk() (*bool, bool) {
 	return o.RootVolume, true
 }
 
-// IsSetRootVolume returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume) IsSetRootVolume() bool {
-	if o != nil && !IsNil(o.RootVolume) {
-		return true
-	}
-
-	return false
-}
-
 // SetRootVolume gets a reference to the given bool and assigns it to the RootVolume field.
 func (o *InstanceContainerServerVolume) SetRootVolume(v bool) {
 	o.RootVolume = &v
@@ -299,15 +225,6 @@ func (o *InstanceContainerServerVolume) GetDeviceNameOk() (*string, bool) {
 	return o.DeviceName, true
 }
 
-// IsSetDeviceName returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume) IsSetDeviceName() bool {
-	if o != nil && !IsNil(o.DeviceName) {
-		return true
-	}
-
-	return false
-}
-
 // SetDeviceName gets a reference to the given string and assigns it to the DeviceName field.
 func (o *InstanceContainerServerVolume) SetDeviceName(v string) {
 	o.DeviceName = &v
@@ -329,15 +246,6 @@ func (o *InstanceContainerServerVolume) GetDeviceDisplayNameOk() (*string, bool)
 		return nil, false
 	}
 	return o.DeviceDisplayName, true
-}
-
-// IsSetDeviceDisplayName returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume) IsSetDeviceDisplayName() bool {
-	if o != nil && !IsNil(o.DeviceDisplayName) {
-		return true
-	}
-
-	return false
 }
 
 // SetDeviceDisplayName gets a reference to the given string and assigns it to the DeviceDisplayName field.
@@ -364,28 +272,9 @@ func (o *InstanceContainerServerVolume) GetDiskModeOk() (*string, bool) {
 	return o.DiskMode.Get(), o.DiskMode.IsSet()
 }
 
-// IsSetDiskMode returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume) IsSetDiskMode() bool {
-	if o != nil && o.DiskMode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDiskMode gets a reference to the given NullableString and assigns it to the DiskMode field.
 func (o *InstanceContainerServerVolume) SetDiskMode(v string) {
 	o.DiskMode.Set(&v)
-}
-
-// SetDiskModeNil sets the value for DiskMode to be an explicit nil
-func (o *InstanceContainerServerVolume) SetDiskModeNil() {
-	o.DiskMode.Set(nil)
-}
-
-// UnsetDiskMode ensures that no value is present for DiskMode, not even an explicit nil
-func (o *InstanceContainerServerVolume) UnsetDiskMode() {
-	o.DiskMode.Unset()
 }
 
 // GetDiskType returns the DiskType field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -407,28 +296,9 @@ func (o *InstanceContainerServerVolume) GetDiskTypeOk() (*string, bool) {
 	return o.DiskType.Get(), o.DiskType.IsSet()
 }
 
-// IsSetDiskType returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume) IsSetDiskType() bool {
-	if o != nil && o.DiskType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDiskType gets a reference to the given NullableString and assigns it to the DiskType field.
 func (o *InstanceContainerServerVolume) SetDiskType(v string) {
 	o.DiskType.Set(&v)
-}
-
-// SetDiskTypeNil sets the value for DiskType to be an explicit nil
-func (o *InstanceContainerServerVolume) SetDiskTypeNil() {
-	o.DiskType.Set(nil)
-}
-
-// UnsetDiskType ensures that no value is present for DiskType, not even an explicit nil
-func (o *InstanceContainerServerVolume) UnsetDiskType() {
-	o.DiskType.Unset()
 }
 
 // GetCategory returns the Category field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -450,28 +320,9 @@ func (o *InstanceContainerServerVolume) GetCategoryOk() (*string, bool) {
 	return o.Category.Get(), o.Category.IsSet()
 }
 
-// IsSetCategory returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume) IsSetCategory() bool {
-	if o != nil && o.Category.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCategory gets a reference to the given NullableString and assigns it to the Category field.
 func (o *InstanceContainerServerVolume) SetCategory(v string) {
 	o.Category.Set(&v)
-}
-
-// SetCategoryNil sets the value for Category to be an explicit nil
-func (o *InstanceContainerServerVolume) SetCategoryNil() {
-	o.Category.Set(nil)
-}
-
-// UnsetCategory ensures that no value is present for Category, not even an explicit nil
-func (o *InstanceContainerServerVolume) UnsetCategory() {
-	o.Category.Unset()
 }
 
 // GetStorageServer returns the StorageServer field value if set, zero value otherwise.
@@ -490,15 +341,6 @@ func (o *InstanceContainerServerVolume) GetStorageServerOk() (*InstanceContainer
 		return nil, false
 	}
 	return o.StorageServer, true
-}
-
-// IsSetStorageServer returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume) IsSetStorageServer() bool {
-	if o != nil && !IsNil(o.StorageServer) {
-		return true
-	}
-
-	return false
 }
 
 // SetStorageServer gets a reference to the given InstanceContainerServerVolumeStorageServer and assigns it to the StorageServer field.
@@ -525,28 +367,9 @@ func (o *InstanceContainerServerVolume) GetZoneIdOk() (*int64, bool) {
 	return o.ZoneId.Get(), o.ZoneId.IsSet()
 }
 
-// IsSetZoneId returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume) IsSetZoneId() bool {
-	if o != nil && o.ZoneId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetZoneId gets a reference to the given NullableInt64 and assigns it to the ZoneId field.
 func (o *InstanceContainerServerVolume) SetZoneId(v int64) {
 	o.ZoneId.Set(&v)
-}
-
-// SetZoneIdNil sets the value for ZoneId to be an explicit nil
-func (o *InstanceContainerServerVolume) SetZoneIdNil() {
-	o.ZoneId.Set(nil)
-}
-
-// UnsetZoneId ensures that no value is present for ZoneId, not even an explicit nil
-func (o *InstanceContainerServerVolume) UnsetZoneId() {
-	o.ZoneId.Unset()
 }
 
 // GetZone returns the Zone field value if set, zero value otherwise.
@@ -565,15 +388,6 @@ func (o *InstanceContainerServerVolume) GetZoneOk() (*InstanceContainerServerVol
 		return nil, false
 	}
 	return o.Zone, true
-}
-
-// IsSetZone returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume) IsSetZone() bool {
-	if o != nil && !IsNil(o.Zone) {
-		return true
-	}
-
-	return false
 }
 
 // SetZone gets a reference to the given InstanceContainerServerVolumeZone and assigns it to the Zone field.
@@ -597,15 +411,6 @@ func (o *InstanceContainerServerVolume) GetDatastoreOk() (*InstanceContainerServ
 		return nil, false
 	}
 	return o.Datastore, true
-}
-
-// IsSetDatastore returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume) IsSetDatastore() bool {
-	if o != nil && !IsNil(o.Datastore) {
-		return true
-	}
-
-	return false
 }
 
 // SetDatastore gets a reference to the given InstanceContainerServerVolumeDatastore and assigns it to the Datastore field.
@@ -632,28 +437,9 @@ func (o *InstanceContainerServerVolume) GetUnitNumberOk() (*string, bool) {
 	return o.UnitNumber.Get(), o.UnitNumber.IsSet()
 }
 
-// IsSetUnitNumber returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume) IsSetUnitNumber() bool {
-	if o != nil && o.UnitNumber.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUnitNumber gets a reference to the given NullableString and assigns it to the UnitNumber field.
 func (o *InstanceContainerServerVolume) SetUnitNumber(v string) {
 	o.UnitNumber.Set(&v)
-}
-
-// SetUnitNumberNil sets the value for UnitNumber to be an explicit nil
-func (o *InstanceContainerServerVolume) SetUnitNumberNil() {
-	o.UnitNumber.Set(nil)
-}
-
-// UnsetUnitNumber ensures that no value is present for UnitNumber, not even an explicit nil
-func (o *InstanceContainerServerVolume) UnsetUnitNumber() {
-	o.UnitNumber.Unset()
 }
 
 // GetTypeId returns the TypeId field value if set, zero value otherwise.
@@ -672,15 +458,6 @@ func (o *InstanceContainerServerVolume) GetTypeIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.TypeId, true
-}
-
-// IsSetTypeId returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume) IsSetTypeId() bool {
-	if o != nil && !IsNil(o.TypeId) {
-		return true
-	}
-
-	return false
 }
 
 // SetTypeId gets a reference to the given int64 and assigns it to the TypeId field.
@@ -704,15 +481,6 @@ func (o *InstanceContainerServerVolume) GetConfigurableIOPSOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.ConfigurableIOPS, true
-}
-
-// IsSetConfigurableIOPS returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume) IsSetConfigurableIOPS() bool {
-	if o != nil && !IsNil(o.ConfigurableIOPS) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfigurableIOPS gets a reference to the given bool and assigns it to the ConfigurableIOPS field.
@@ -739,28 +507,9 @@ func (o *InstanceContainerServerVolume) GetDatastoreIdOk() (*int64, bool) {
 	return o.DatastoreId.Get(), o.DatastoreId.IsSet()
 }
 
-// IsSetDatastoreId returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume) IsSetDatastoreId() bool {
-	if o != nil && o.DatastoreId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDatastoreId gets a reference to the given NullableInt64 and assigns it to the DatastoreId field.
 func (o *InstanceContainerServerVolume) SetDatastoreId(v int64) {
 	o.DatastoreId.Set(&v)
-}
-
-// SetDatastoreIdNil sets the value for DatastoreId to be an explicit nil
-func (o *InstanceContainerServerVolume) SetDatastoreIdNil() {
-	o.DatastoreId.Set(nil)
-}
-
-// UnsetDatastoreId ensures that no value is present for DatastoreId, not even an explicit nil
-func (o *InstanceContainerServerVolume) UnsetDatastoreId() {
-	o.DatastoreId.Unset()
 }
 
 // GetMaxStorage returns the MaxStorage field value if set, zero value otherwise.
@@ -779,15 +528,6 @@ func (o *InstanceContainerServerVolume) GetMaxStorageOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.MaxStorage, true
-}
-
-// IsSetMaxStorage returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume) IsSetMaxStorage() bool {
-	if o != nil && !IsNil(o.MaxStorage) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxStorage gets a reference to the given int64 and assigns it to the MaxStorage field.
@@ -814,28 +554,9 @@ func (o *InstanceContainerServerVolume) GetMaxIOPSOk() (*string, bool) {
 	return o.MaxIOPS.Get(), o.MaxIOPS.IsSet()
 }
 
-// IsSetMaxIOPS returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume) IsSetMaxIOPS() bool {
-	if o != nil && o.MaxIOPS.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxIOPS gets a reference to the given NullableString and assigns it to the MaxIOPS field.
 func (o *InstanceContainerServerVolume) SetMaxIOPS(v string) {
 	o.MaxIOPS.Set(&v)
-}
-
-// SetMaxIOPSNil sets the value for MaxIOPS to be an explicit nil
-func (o *InstanceContainerServerVolume) SetMaxIOPSNil() {
-	o.MaxIOPS.Set(nil)
-}
-
-// UnsetMaxIOPS ensures that no value is present for MaxIOPS, not even an explicit nil
-func (o *InstanceContainerServerVolume) UnsetMaxIOPS() {
-	o.MaxIOPS.Unset()
 }
 
 // GetUuid returns the Uuid field value if set, zero value otherwise.
@@ -854,15 +575,6 @@ func (o *InstanceContainerServerVolume) GetUuidOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Uuid, true
-}
-
-// IsSetUuid returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume) IsSetUuid() bool {
-	if o != nil && !IsNil(o.Uuid) {
-		return true
-	}
-
-	return false
 }
 
 // SetUuid gets a reference to the given string and assigns it to the Uuid field.
@@ -886,15 +598,6 @@ func (o *InstanceContainerServerVolume) GetUniqueIdOk() (*string, bool) {
 		return nil, false
 	}
 	return o.UniqueId, true
-}
-
-// IsSetUniqueId returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume) IsSetUniqueId() bool {
-	if o != nil && !IsNil(o.UniqueId) {
-		return true
-	}
-
-	return false
 }
 
 // SetUniqueId gets a reference to the given string and assigns it to the UniqueId field.
@@ -921,28 +624,9 @@ func (o *InstanceContainerServerVolume) GetExternalIdOk() (*string, bool) {
 	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume) IsSetExternalId() bool {
-	if o != nil && o.ExternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *InstanceContainerServerVolume) SetExternalId(v string) {
 	o.ExternalId.Set(&v)
-}
-
-// SetExternalIdNil sets the value for ExternalId to be an explicit nil
-func (o *InstanceContainerServerVolume) SetExternalIdNil() {
-	o.ExternalId.Set(nil)
-}
-
-// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-func (o *InstanceContainerServerVolume) UnsetExternalId() {
-	o.ExternalId.Unset()
 }
 
 // GetInternalId returns the InternalId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -964,28 +648,9 @@ func (o *InstanceContainerServerVolume) GetInternalIdOk() (*string, bool) {
 	return o.InternalId.Get(), o.InternalId.IsSet()
 }
 
-// IsSetInternalId returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume) IsSetInternalId() bool {
-	if o != nil && o.InternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInternalId gets a reference to the given NullableString and assigns it to the InternalId field.
 func (o *InstanceContainerServerVolume) SetInternalId(v string) {
 	o.InternalId.Set(&v)
-}
-
-// SetInternalIdNil sets the value for InternalId to be an explicit nil
-func (o *InstanceContainerServerVolume) SetInternalIdNil() {
-	o.InternalId.Set(nil)
-}
-
-// UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
-func (o *InstanceContainerServerVolume) UnsetInternalId() {
-	o.InternalId.Unset()
 }
 
 func (o InstanceContainerServerVolume) MarshalJSON() ([]byte, error) {

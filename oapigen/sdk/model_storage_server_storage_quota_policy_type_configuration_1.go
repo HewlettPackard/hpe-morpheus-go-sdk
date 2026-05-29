@@ -62,15 +62,6 @@ func (o *StorageServerStorageQuotaPolicyTypeConfiguration1) GetStorageServerIdOk
 	return o.StorageServerId, true
 }
 
-// IsSetStorageServerId returns a boolean if a field has been set.
-func (o *StorageServerStorageQuotaPolicyTypeConfiguration1) IsSetStorageServerId() bool {
-	if o != nil && !IsNil(o.StorageServerId) {
-		return true
-	}
-
-	return false
-}
-
 // SetStorageServerId gets a reference to the given string and assigns it to the StorageServerId field.
 func (o *StorageServerStorageQuotaPolicyTypeConfiguration1) SetStorageServerId(v string) {
 	o.StorageServerId = &v
@@ -92,15 +83,6 @@ func (o *StorageServerStorageQuotaPolicyTypeConfiguration1) GetMaxStorageOk() (*
 		return nil, false
 	}
 	return o.MaxStorage, true
-}
-
-// IsSetMaxStorage returns a boolean if a field has been set.
-func (o *StorageServerStorageQuotaPolicyTypeConfiguration1) IsSetMaxStorage() bool {
-	if o != nil && !IsNil(o.MaxStorage) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxStorage gets a reference to the given string and assigns it to the MaxStorage field.

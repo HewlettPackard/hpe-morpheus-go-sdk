@@ -72,15 +72,6 @@ func (o *KeyPair) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *KeyPair) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *KeyPair) SetId(v int64) {
 	o.Id = &v
@@ -104,15 +95,6 @@ func (o *KeyPair) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *KeyPair) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *KeyPair) SetName(v string) {
 	o.Name = &v
@@ -134,15 +116,6 @@ func (o *KeyPair) GetAccountIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.AccountId, true
-}
-
-// IsSetAccountId returns a boolean if a field has been set.
-func (o *KeyPair) IsSetAccountId() bool {
-	if o != nil && !IsNil(o.AccountId) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccountId gets a reference to the given int64 and assigns it to the AccountId field.
@@ -169,28 +142,9 @@ func (o *KeyPair) GetPublicKeyOk() (*string, bool) {
 	return o.PublicKey.Get(), o.PublicKey.IsSet()
 }
 
-// IsSetPublicKey returns a boolean if a field has been set.
-func (o *KeyPair) IsSetPublicKey() bool {
-	if o != nil && o.PublicKey.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPublicKey gets a reference to the given NullableString and assigns it to the PublicKey field.
 func (o *KeyPair) SetPublicKey(v string) {
 	o.PublicKey.Set(&v)
-}
-
-// SetPublicKeyNil sets the value for PublicKey to be an explicit nil
-func (o *KeyPair) SetPublicKeyNil() {
-	o.PublicKey.Set(nil)
-}
-
-// UnsetPublicKey ensures that no value is present for PublicKey, not even an explicit nil
-func (o *KeyPair) UnsetPublicKey() {
-	o.PublicKey.Unset()
 }
 
 // GetHasPrivateKey returns the HasPrivateKey field value if set, zero value otherwise.
@@ -209,15 +163,6 @@ func (o *KeyPair) GetHasPrivateKeyOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.HasPrivateKey, true
-}
-
-// IsSetHasPrivateKey returns a boolean if a field has been set.
-func (o *KeyPair) IsSetHasPrivateKey() bool {
-	if o != nil && !IsNil(o.HasPrivateKey) {
-		return true
-	}
-
-	return false
 }
 
 // SetHasPrivateKey gets a reference to the given bool and assigns it to the HasPrivateKey field.
@@ -244,28 +189,9 @@ func (o *KeyPair) GetPrivateKeyHashOk() (*string, bool) {
 	return o.PrivateKeyHash.Get(), o.PrivateKeyHash.IsSet()
 }
 
-// IsSetPrivateKeyHash returns a boolean if a field has been set.
-func (o *KeyPair) IsSetPrivateKeyHash() bool {
-	if o != nil && o.PrivateKeyHash.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPrivateKeyHash gets a reference to the given NullableString and assigns it to the PrivateKeyHash field.
 func (o *KeyPair) SetPrivateKeyHash(v string) {
 	o.PrivateKeyHash.Set(&v)
-}
-
-// SetPrivateKeyHashNil sets the value for PrivateKeyHash to be an explicit nil
-func (o *KeyPair) SetPrivateKeyHashNil() {
-	o.PrivateKeyHash.Set(nil)
-}
-
-// UnsetPrivateKeyHash ensures that no value is present for PrivateKeyHash, not even an explicit nil
-func (o *KeyPair) UnsetPrivateKeyHash() {
-	o.PrivateKeyHash.Unset()
 }
 
 // GetPrivateKey returns the PrivateKey field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -287,28 +213,9 @@ func (o *KeyPair) GetPrivateKeyOk() (*string, bool) {
 	return o.PrivateKey.Get(), o.PrivateKey.IsSet()
 }
 
-// IsSetPrivateKey returns a boolean if a field has been set.
-func (o *KeyPair) IsSetPrivateKey() bool {
-	if o != nil && o.PrivateKey.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPrivateKey gets a reference to the given NullableString and assigns it to the PrivateKey field.
 func (o *KeyPair) SetPrivateKey(v string) {
 	o.PrivateKey.Set(&v)
-}
-
-// SetPrivateKeyNil sets the value for PrivateKey to be an explicit nil
-func (o *KeyPair) SetPrivateKeyNil() {
-	o.PrivateKey.Set(nil)
-}
-
-// UnsetPrivateKey ensures that no value is present for PrivateKey, not even an explicit nil
-func (o *KeyPair) UnsetPrivateKey() {
-	o.PrivateKey.Unset()
 }
 
 // GetFingerprint returns the Fingerprint field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -330,28 +237,9 @@ func (o *KeyPair) GetFingerprintOk() (*string, bool) {
 	return o.Fingerprint.Get(), o.Fingerprint.IsSet()
 }
 
-// IsSetFingerprint returns a boolean if a field has been set.
-func (o *KeyPair) IsSetFingerprint() bool {
-	if o != nil && o.Fingerprint.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFingerprint gets a reference to the given NullableString and assigns it to the Fingerprint field.
 func (o *KeyPair) SetFingerprint(v string) {
 	o.Fingerprint.Set(&v)
-}
-
-// SetFingerprintNil sets the value for Fingerprint to be an explicit nil
-func (o *KeyPair) SetFingerprintNil() {
-	o.Fingerprint.Set(nil)
-}
-
-// UnsetFingerprint ensures that no value is present for Fingerprint, not even an explicit nil
-func (o *KeyPair) UnsetFingerprint() {
-	o.Fingerprint.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -370,15 +258,6 @@ func (o *KeyPair) GetDateCreatedOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.DateCreated, true
-}
-
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *KeyPair) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
@@ -402,15 +281,6 @@ func (o *KeyPair) GetLastUpdatedOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *KeyPair) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.

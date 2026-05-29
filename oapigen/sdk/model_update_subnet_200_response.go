@@ -61,15 +61,6 @@ func (o *UpdateSubnet200Response) GetSubnetOk() (*GetSubnet200ResponseSubnet, bo
 	return o.Subnet, true
 }
 
-// IsSetSubnet returns a boolean if a field has been set.
-func (o *UpdateSubnet200Response) IsSetSubnet() bool {
-	if o != nil && !IsNil(o.Subnet) {
-		return true
-	}
-
-	return false
-}
-
 // SetSubnet gets a reference to the given GetSubnet200ResponseSubnet and assigns it to the Subnet field.
 func (o *UpdateSubnet200Response) SetSubnet(v GetSubnet200ResponseSubnet) {
 	o.Subnet = &v

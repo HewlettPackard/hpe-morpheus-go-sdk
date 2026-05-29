@@ -63,15 +63,6 @@ func (o *UpdateWikiClusterRequestPage) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateWikiClusterRequestPage) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *UpdateWikiClusterRequestPage) SetName(v string) {
 	o.Name = &v
@@ -95,15 +86,6 @@ func (o *UpdateWikiClusterRequestPage) GetCategoryOk() (*string, bool) {
 	return o.Category, true
 }
 
-// IsSetCategory returns a boolean if a field has been set.
-func (o *UpdateWikiClusterRequestPage) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
-		return true
-	}
-
-	return false
-}
-
 // SetCategory gets a reference to the given string and assigns it to the Category field.
 func (o *UpdateWikiClusterRequestPage) SetCategory(v string) {
 	o.Category = &v
@@ -125,15 +107,6 @@ func (o *UpdateWikiClusterRequestPage) GetContentOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Content, true
-}
-
-// IsSetContent returns a boolean if a field has been set.
-func (o *UpdateWikiClusterRequestPage) IsSetContent() bool {
-	if o != nil && !IsNil(o.Content) {
-		return true
-	}
-
-	return false
 }
 
 // SetContent gets a reference to the given string and assigns it to the Content field.

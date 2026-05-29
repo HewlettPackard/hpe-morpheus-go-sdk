@@ -71,15 +71,6 @@ func (o *CreateNetworkProxy200ResponseNetworkProxy) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *CreateNetworkProxy200ResponseNetworkProxy) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *CreateNetworkProxy200ResponseNetworkProxy) SetId(v int64) {
 	o.Id = &v
@@ -101,15 +92,6 @@ func (o *CreateNetworkProxy200ResponseNetworkProxy) GetNameOk() (*string, bool) 
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *CreateNetworkProxy200ResponseNetworkProxy) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -135,15 +117,6 @@ func (o *CreateNetworkProxy200ResponseNetworkProxy) GetProxyHostOk() (*string, b
 	return o.ProxyHost, true
 }
 
-// IsSetProxyHost returns a boolean if a field has been set.
-func (o *CreateNetworkProxy200ResponseNetworkProxy) IsSetProxyHost() bool {
-	if o != nil && !IsNil(o.ProxyHost) {
-		return true
-	}
-
-	return false
-}
-
 // SetProxyHost gets a reference to the given string and assigns it to the ProxyHost field.
 func (o *CreateNetworkProxy200ResponseNetworkProxy) SetProxyHost(v string) {
 	o.ProxyHost = &v
@@ -165,15 +138,6 @@ func (o *CreateNetworkProxy200ResponseNetworkProxy) GetProxyPortOk() (*int64, bo
 		return nil, false
 	}
 	return o.ProxyPort, true
-}
-
-// IsSetProxyPort returns a boolean if a field has been set.
-func (o *CreateNetworkProxy200ResponseNetworkProxy) IsSetProxyPort() bool {
-	if o != nil && !IsNil(o.ProxyPort) {
-		return true
-	}
-
-	return false
 }
 
 // SetProxyPort gets a reference to the given int64 and assigns it to the ProxyPort field.
@@ -200,28 +164,9 @@ func (o *CreateNetworkProxy200ResponseNetworkProxy) GetProxyUserOk() (*string, b
 	return o.ProxyUser.Get(), o.ProxyUser.IsSet()
 }
 
-// IsSetProxyUser returns a boolean if a field has been set.
-func (o *CreateNetworkProxy200ResponseNetworkProxy) IsSetProxyUser() bool {
-	if o != nil && o.ProxyUser.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetProxyUser gets a reference to the given NullableString and assigns it to the ProxyUser field.
 func (o *CreateNetworkProxy200ResponseNetworkProxy) SetProxyUser(v string) {
 	o.ProxyUser.Set(&v)
-}
-
-// SetProxyUserNil sets the value for ProxyUser to be an explicit nil
-func (o *CreateNetworkProxy200ResponseNetworkProxy) SetProxyUserNil() {
-	o.ProxyUser.Set(nil)
-}
-
-// UnsetProxyUser ensures that no value is present for ProxyUser, not even an explicit nil
-func (o *CreateNetworkProxy200ResponseNetworkProxy) UnsetProxyUser() {
-	o.ProxyUser.Unset()
 }
 
 // GetProxyPassword returns the ProxyPassword field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -243,28 +188,9 @@ func (o *CreateNetworkProxy200ResponseNetworkProxy) GetProxyPasswordOk() (*strin
 	return o.ProxyPassword.Get(), o.ProxyPassword.IsSet()
 }
 
-// IsSetProxyPassword returns a boolean if a field has been set.
-func (o *CreateNetworkProxy200ResponseNetworkProxy) IsSetProxyPassword() bool {
-	if o != nil && o.ProxyPassword.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetProxyPassword gets a reference to the given NullableString and assigns it to the ProxyPassword field.
 func (o *CreateNetworkProxy200ResponseNetworkProxy) SetProxyPassword(v string) {
 	o.ProxyPassword.Set(&v)
-}
-
-// SetProxyPasswordNil sets the value for ProxyPassword to be an explicit nil
-func (o *CreateNetworkProxy200ResponseNetworkProxy) SetProxyPasswordNil() {
-	o.ProxyPassword.Set(nil)
-}
-
-// UnsetProxyPassword ensures that no value is present for ProxyPassword, not even an explicit nil
-func (o *CreateNetworkProxy200ResponseNetworkProxy) UnsetProxyPassword() {
-	o.ProxyPassword.Unset()
 }
 
 // GetProxyDomain returns the ProxyDomain field value if set, zero value otherwise.
@@ -283,15 +209,6 @@ func (o *CreateNetworkProxy200ResponseNetworkProxy) GetProxyDomainOk() (*string,
 		return nil, false
 	}
 	return o.ProxyDomain, true
-}
-
-// IsSetProxyDomain returns a boolean if a field has been set.
-func (o *CreateNetworkProxy200ResponseNetworkProxy) IsSetProxyDomain() bool {
-	if o != nil && !IsNil(o.ProxyDomain) {
-		return true
-	}
-
-	return false
 }
 
 // SetProxyDomain gets a reference to the given string and assigns it to the ProxyDomain field.
@@ -318,28 +235,9 @@ func (o *CreateNetworkProxy200ResponseNetworkProxy) GetProxyWorkstationOk() (*st
 	return o.ProxyWorkstation.Get(), o.ProxyWorkstation.IsSet()
 }
 
-// IsSetProxyWorkstation returns a boolean if a field has been set.
-func (o *CreateNetworkProxy200ResponseNetworkProxy) IsSetProxyWorkstation() bool {
-	if o != nil && o.ProxyWorkstation.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetProxyWorkstation gets a reference to the given NullableString and assigns it to the ProxyWorkstation field.
 func (o *CreateNetworkProxy200ResponseNetworkProxy) SetProxyWorkstation(v string) {
 	o.ProxyWorkstation.Set(&v)
-}
-
-// SetProxyWorkstationNil sets the value for ProxyWorkstation to be an explicit nil
-func (o *CreateNetworkProxy200ResponseNetworkProxy) SetProxyWorkstationNil() {
-	o.ProxyWorkstation.Set(nil)
-}
-
-// UnsetProxyWorkstation ensures that no value is present for ProxyWorkstation, not even an explicit nil
-func (o *CreateNetworkProxy200ResponseNetworkProxy) UnsetProxyWorkstation() {
-	o.ProxyWorkstation.Unset()
 }
 
 // GetVisibility returns the Visibility field value if set, zero value otherwise.
@@ -358,15 +256,6 @@ func (o *CreateNetworkProxy200ResponseNetworkProxy) GetVisibilityOk() (*string, 
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *CreateNetworkProxy200ResponseNetworkProxy) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -392,15 +281,6 @@ func (o *CreateNetworkProxy200ResponseNetworkProxy) GetAccountOk() (*CreateNetwo
 	return o.Account, true
 }
 
-// IsSetAccount returns a boolean if a field has been set.
-func (o *CreateNetworkProxy200ResponseNetworkProxy) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccount gets a reference to the given CreateNetworkProxy200ResponseNetworkProxyAccount and assigns it to the Account field.
 func (o *CreateNetworkProxy200ResponseNetworkProxy) SetAccount(v CreateNetworkProxy200ResponseNetworkProxyAccount) {
 	o.Account = &v
@@ -422,15 +302,6 @@ func (o *CreateNetworkProxy200ResponseNetworkProxy) GetOwnerOk() (*CreateNetwork
 		return nil, false
 	}
 	return o.Owner, true
-}
-
-// IsSetOwner returns a boolean if a field has been set.
-func (o *CreateNetworkProxy200ResponseNetworkProxy) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
-		return true
-	}
-
-	return false
 }
 
 // SetOwner gets a reference to the given CreateNetworkProxy200ResponseNetworkProxyOwner and assigns it to the Owner field.

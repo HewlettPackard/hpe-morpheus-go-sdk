@@ -71,15 +71,6 @@ func (o *GetClusterDatastore200ResponseDatastoreResourcePermissions) GetAllGroup
 	return o.AllGroups, true
 }
 
-// IsSetAllGroups returns a boolean if a field has been set.
-func (o *GetClusterDatastore200ResponseDatastoreResourcePermissions) IsSetAllGroups() bool {
-	if o != nil && !IsNil(o.AllGroups) {
-		return true
-	}
-
-	return false
-}
-
 // SetAllGroups gets a reference to the given bool and assigns it to the AllGroups field.
 func (o *GetClusterDatastore200ResponseDatastoreResourcePermissions) SetAllGroups(v bool) {
 	o.AllGroups = &v
@@ -101,15 +92,6 @@ func (o *GetClusterDatastore200ResponseDatastoreResourcePermissions) GetDefaultS
 		return nil, false
 	}
 	return o.DefaultStore, true
-}
-
-// IsSetDefaultStore returns a boolean if a field has been set.
-func (o *GetClusterDatastore200ResponseDatastoreResourcePermissions) IsSetDefaultStore() bool {
-	if o != nil && !IsNil(o.DefaultStore) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultStore gets a reference to the given bool and assigns it to the DefaultStore field.
@@ -135,15 +117,6 @@ func (o *GetClusterDatastore200ResponseDatastoreResourcePermissions) GetAllPlans
 	return o.AllPlans, true
 }
 
-// IsSetAllPlans returns a boolean if a field has been set.
-func (o *GetClusterDatastore200ResponseDatastoreResourcePermissions) IsSetAllPlans() bool {
-	if o != nil && !IsNil(o.AllPlans) {
-		return true
-	}
-
-	return false
-}
-
 // SetAllPlans gets a reference to the given bool and assigns it to the AllPlans field.
 func (o *GetClusterDatastore200ResponseDatastoreResourcePermissions) SetAllPlans(v bool) {
 	o.AllPlans = &v
@@ -165,15 +138,6 @@ func (o *GetClusterDatastore200ResponseDatastoreResourcePermissions) GetDefaultT
 		return nil, false
 	}
 	return o.DefaultTarget, true
-}
-
-// IsSetDefaultTarget returns a boolean if a field has been set.
-func (o *GetClusterDatastore200ResponseDatastoreResourcePermissions) IsSetDefaultTarget() bool {
-	if o != nil && !IsNil(o.DefaultTarget) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultTarget gets a reference to the given bool and assigns it to the DefaultTarget field.
@@ -199,15 +163,6 @@ func (o *GetClusterDatastore200ResponseDatastoreResourcePermissions) GetMorpheus
 	return o.MorpheusResourceType, true
 }
 
-// IsSetMorpheusResourceType returns a boolean if a field has been set.
-func (o *GetClusterDatastore200ResponseDatastoreResourcePermissions) IsSetMorpheusResourceType() bool {
-	if o != nil && !IsNil(o.MorpheusResourceType) {
-		return true
-	}
-
-	return false
-}
-
 // SetMorpheusResourceType gets a reference to the given string and assigns it to the MorpheusResourceType field.
 func (o *GetClusterDatastore200ResponseDatastoreResourcePermissions) SetMorpheusResourceType(v string) {
 	o.MorpheusResourceType = &v
@@ -229,15 +184,6 @@ func (o *GetClusterDatastore200ResponseDatastoreResourcePermissions) GetMorpheus
 		return nil, false
 	}
 	return o.MorpheusResourceId, true
-}
-
-// IsSetMorpheusResourceId returns a boolean if a field has been set.
-func (o *GetClusterDatastore200ResponseDatastoreResourcePermissions) IsSetMorpheusResourceId() bool {
-	if o != nil && !IsNil(o.MorpheusResourceId) {
-		return true
-	}
-
-	return false
 }
 
 // SetMorpheusResourceId gets a reference to the given int64 and assigns it to the MorpheusResourceId field.
@@ -263,15 +209,6 @@ func (o *GetClusterDatastore200ResponseDatastoreResourcePermissions) GetCanManag
 	return o.CanManage, true
 }
 
-// IsSetCanManage returns a boolean if a field has been set.
-func (o *GetClusterDatastore200ResponseDatastoreResourcePermissions) IsSetCanManage() bool {
-	if o != nil && !IsNil(o.CanManage) {
-		return true
-	}
-
-	return false
-}
-
 // SetCanManage gets a reference to the given bool and assigns it to the CanManage field.
 func (o *GetClusterDatastore200ResponseDatastoreResourcePermissions) SetCanManage(v bool) {
 	o.CanManage = &v
@@ -293,15 +230,6 @@ func (o *GetClusterDatastore200ResponseDatastoreResourcePermissions) GetAllOk() 
 		return nil, false
 	}
 	return o.All, true
-}
-
-// IsSetAll returns a boolean if a field has been set.
-func (o *GetClusterDatastore200ResponseDatastoreResourcePermissions) IsSetAll() bool {
-	if o != nil && !IsNil(o.All) {
-		return true
-	}
-
-	return false
 }
 
 // SetAll gets a reference to the given bool and assigns it to the All field.
@@ -327,15 +255,6 @@ func (o *GetClusterDatastore200ResponseDatastoreResourcePermissions) GetAccountO
 	return o.Account, true
 }
 
-// IsSetAccount returns a boolean if a field has been set.
-func (o *GetClusterDatastore200ResponseDatastoreResourcePermissions) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccount gets a reference to the given GetClusterDatastore200ResponseDatastoreResourcePermissionsAccount and assigns it to the Account field.
 func (o *GetClusterDatastore200ResponseDatastoreResourcePermissions) SetAccount(v GetClusterDatastore200ResponseDatastoreResourcePermissionsAccount) {
 	o.Account = &v
@@ -359,15 +278,6 @@ func (o *GetClusterDatastore200ResponseDatastoreResourcePermissions) GetSitesOk(
 	return o.Sites, true
 }
 
-// IsSetSites returns a boolean if a field has been set.
-func (o *GetClusterDatastore200ResponseDatastoreResourcePermissions) IsSetSites() bool {
-	if o != nil && !IsNil(o.Sites) {
-		return true
-	}
-
-	return false
-}
-
 // SetSites gets a reference to the given []GetClusterDatastore200ResponseDatastoreResourcePermissionsSitesInner and assigns it to the Sites field.
 func (o *GetClusterDatastore200ResponseDatastoreResourcePermissions) SetSites(v []GetClusterDatastore200ResponseDatastoreResourcePermissionsSitesInner) {
 	o.Sites = v
@@ -389,15 +299,6 @@ func (o *GetClusterDatastore200ResponseDatastoreResourcePermissions) GetPlansOk(
 		return nil, false
 	}
 	return o.Plans, true
-}
-
-// IsSetPlans returns a boolean if a field has been set.
-func (o *GetClusterDatastore200ResponseDatastoreResourcePermissions) IsSetPlans() bool {
-	if o != nil && !IsNil(o.Plans) {
-		return true
-	}
-
-	return false
 }
 
 // SetPlans gets a reference to the given []GetClusterDatastore200ResponseDatastoreResourcePermissionsPlansInner and assigns it to the Plans field.

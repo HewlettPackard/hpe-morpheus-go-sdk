@@ -62,15 +62,6 @@ func (o *CreateNetworkDhcpRelayRequestNetworkDhcpRelay) GetNameOk() (*string, bo
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *CreateNetworkDhcpRelayRequestNetworkDhcpRelay) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *CreateNetworkDhcpRelayRequestNetworkDhcpRelay) SetName(v string) {
 	o.Name = &v
@@ -92,15 +83,6 @@ func (o *CreateNetworkDhcpRelayRequestNetworkDhcpRelay) GetServerIpAddressesOk()
 		return nil, false
 	}
 	return o.ServerIpAddresses, true
-}
-
-// IsSetServerIpAddresses returns a boolean if a field has been set.
-func (o *CreateNetworkDhcpRelayRequestNetworkDhcpRelay) IsSetServerIpAddresses() bool {
-	if o != nil && !IsNil(o.ServerIpAddresses) {
-		return true
-	}
-
-	return false
 }
 
 // SetServerIpAddresses gets a reference to the given []string and assigns it to the ServerIpAddresses field.

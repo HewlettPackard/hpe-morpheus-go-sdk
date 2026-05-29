@@ -68,15 +68,6 @@ func (o *UpdateLoadBalancerProfileRequestLoadBalancerProfile) GetNameOk() (*stri
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerProfileRequestLoadBalancerProfile) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *UpdateLoadBalancerProfileRequestLoadBalancerProfile) SetName(v string) {
 	o.Name = &v
@@ -98,15 +89,6 @@ func (o *UpdateLoadBalancerProfileRequestLoadBalancerProfile) GetDescriptionOk()
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerProfileRequestLoadBalancerProfile) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -132,15 +114,6 @@ func (o *UpdateLoadBalancerProfileRequestLoadBalancerProfile) GetServiceTypeOk()
 	return o.ServiceType, true
 }
 
-// IsSetServiceType returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerProfileRequestLoadBalancerProfile) IsSetServiceType() bool {
-	if o != nil && !IsNil(o.ServiceType) {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceType gets a reference to the given string and assigns it to the ServiceType field.
 func (o *UpdateLoadBalancerProfileRequestLoadBalancerProfile) SetServiceType(v string) {
 	o.ServiceType = &v
@@ -162,15 +135,6 @@ func (o *UpdateLoadBalancerProfileRequestLoadBalancerProfile) GetConfigOk() (map
 		return map[string]interface{}{}, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *UpdateLoadBalancerProfileRequestLoadBalancerProfile) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.

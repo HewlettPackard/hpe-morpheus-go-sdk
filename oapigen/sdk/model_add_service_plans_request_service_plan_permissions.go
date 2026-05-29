@@ -62,15 +62,6 @@ func (o *AddServicePlansRequestServicePlanPermissions) GetTenantPermissionsOk() 
 	return o.TenantPermissions, true
 }
 
-// IsSetTenantPermissions returns a boolean if a field has been set.
-func (o *AddServicePlansRequestServicePlanPermissions) IsSetTenantPermissions() bool {
-	if o != nil && !IsNil(o.TenantPermissions) {
-		return true
-	}
-
-	return false
-}
-
 // SetTenantPermissions gets a reference to the given AddServicePlansRequestServicePlanPermissionsTenantPermissions and assigns it to the TenantPermissions field.
 func (o *AddServicePlansRequestServicePlanPermissions) SetTenantPermissions(v AddServicePlansRequestServicePlanPermissionsTenantPermissions) {
 	o.TenantPermissions = &v
@@ -92,15 +83,6 @@ func (o *AddServicePlansRequestServicePlanPermissions) GetResourcePermissionsOk(
 		return nil, false
 	}
 	return o.ResourcePermissions, true
-}
-
-// IsSetResourcePermissions returns a boolean if a field has been set.
-func (o *AddServicePlansRequestServicePlanPermissions) IsSetResourcePermissions() bool {
-	if o != nil && !IsNil(o.ResourcePermissions) {
-		return true
-	}
-
-	return false
 }
 
 // SetResourcePermissions gets a reference to the given AddServicePlansRequestServicePlanPermissionsResourcePermissions and assigns it to the ResourcePermissions field.

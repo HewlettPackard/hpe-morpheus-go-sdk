@@ -61,15 +61,6 @@ func (o *GetContainer200Response) GetContainerOk() (*GetContainer200ResponseCont
 	return o.Container, true
 }
 
-// IsSetContainer returns a boolean if a field has been set.
-func (o *GetContainer200Response) IsSetContainer() bool {
-	if o != nil && !IsNil(o.Container) {
-		return true
-	}
-
-	return false
-}
-
 // SetContainer gets a reference to the given GetContainer200ResponseContainer and assigns it to the Container field.
 func (o *GetContainer200Response) SetContainer(v GetContainer200ResponseContainer) {
 	o.Container = &v

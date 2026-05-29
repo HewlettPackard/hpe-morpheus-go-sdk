@@ -61,15 +61,6 @@ func (o *GetIntegrationInventory200Response) GetInventoryOk() (*GetIntegrationIn
 	return o.Inventory, true
 }
 
-// IsSetInventory returns a boolean if a field has been set.
-func (o *GetIntegrationInventory200Response) IsSetInventory() bool {
-	if o != nil && !IsNil(o.Inventory) {
-		return true
-	}
-
-	return false
-}
-
 // SetInventory gets a reference to the given GetIntegrationInventory200ResponseInventory and assigns it to the Inventory field.
 func (o *GetIntegrationInventory200Response) SetInventory(v GetIntegrationInventory200ResponseInventory) {
 	o.Inventory = &v

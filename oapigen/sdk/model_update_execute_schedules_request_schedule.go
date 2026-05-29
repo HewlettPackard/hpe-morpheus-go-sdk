@@ -84,15 +84,6 @@ func (o *UpdateExecuteSchedulesRequestSchedule) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateExecuteSchedulesRequestSchedule) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *UpdateExecuteSchedulesRequestSchedule) SetName(v string) {
 	o.Name = &v
@@ -114,15 +105,6 @@ func (o *UpdateExecuteSchedulesRequestSchedule) GetDescriptionOk() (*string, boo
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *UpdateExecuteSchedulesRequestSchedule) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -148,15 +130,6 @@ func (o *UpdateExecuteSchedulesRequestSchedule) GetScheduleTypeOk() (*string, bo
 	return o.ScheduleType, true
 }
 
-// IsSetScheduleType returns a boolean if a field has been set.
-func (o *UpdateExecuteSchedulesRequestSchedule) IsSetScheduleType() bool {
-	if o != nil && !IsNil(o.ScheduleType) {
-		return true
-	}
-
-	return false
-}
-
 // SetScheduleType gets a reference to the given string and assigns it to the ScheduleType field.
 func (o *UpdateExecuteSchedulesRequestSchedule) SetScheduleType(v string) {
 	o.ScheduleType = &v
@@ -178,15 +151,6 @@ func (o *UpdateExecuteSchedulesRequestSchedule) GetScheduleTimezoneOk() (*string
 		return nil, false
 	}
 	return o.ScheduleTimezone, true
-}
-
-// IsSetScheduleTimezone returns a boolean if a field has been set.
-func (o *UpdateExecuteSchedulesRequestSchedule) IsSetScheduleTimezone() bool {
-	if o != nil && !IsNil(o.ScheduleTimezone) {
-		return true
-	}
-
-	return false
 }
 
 // SetScheduleTimezone gets a reference to the given string and assigns it to the ScheduleTimezone field.
@@ -212,15 +176,6 @@ func (o *UpdateExecuteSchedulesRequestSchedule) GetCronOk() (*string, bool) {
 	return o.Cron, true
 }
 
-// IsSetCron returns a boolean if a field has been set.
-func (o *UpdateExecuteSchedulesRequestSchedule) IsSetCron() bool {
-	if o != nil && !IsNil(o.Cron) {
-		return true
-	}
-
-	return false
-}
-
 // SetCron gets a reference to the given string and assigns it to the Cron field.
 func (o *UpdateExecuteSchedulesRequestSchedule) SetCron(v string) {
 	o.Cron = &v
@@ -242,15 +197,6 @@ func (o *UpdateExecuteSchedulesRequestSchedule) GetEnabledOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *UpdateExecuteSchedulesRequestSchedule) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.

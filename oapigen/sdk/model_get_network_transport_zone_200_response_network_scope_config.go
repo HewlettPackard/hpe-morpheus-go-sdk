@@ -62,15 +62,6 @@ func (o *GetNetworkTransportZone200ResponseNetworkScopeConfig) GetNvdsNameOk() (
 	return o.NvdsName, true
 }
 
-// IsSetNvdsName returns a boolean if a field has been set.
-func (o *GetNetworkTransportZone200ResponseNetworkScopeConfig) IsSetNvdsName() bool {
-	if o != nil && !IsNil(o.NvdsName) {
-		return true
-	}
-
-	return false
-}
-
 // SetNvdsName gets a reference to the given string and assigns it to the NvdsName field.
 func (o *GetNetworkTransportZone200ResponseNetworkScopeConfig) SetNvdsName(v string) {
 	o.NvdsName = &v
@@ -92,15 +83,6 @@ func (o *GetNetworkTransportZone200ResponseNetworkScopeConfig) GetHostMembership
 		return nil, false
 	}
 	return o.HostMembershipCriteria, true
-}
-
-// IsSetHostMembershipCriteria returns a boolean if a field has been set.
-func (o *GetNetworkTransportZone200ResponseNetworkScopeConfig) IsSetHostMembershipCriteria() bool {
-	if o != nil && !IsNil(o.HostMembershipCriteria) {
-		return true
-	}
-
-	return false
 }
 
 // SetHostMembershipCriteria gets a reference to the given string and assigns it to the HostMembershipCriteria field.

@@ -63,15 +63,6 @@ func (o *ClusterServerCreateConfigEKSController) GetRoleOk() (*ClusterServerCrea
 	return o.Role, true
 }
 
-// IsSetRole returns a boolean if a field has been set.
-func (o *ClusterServerCreateConfigEKSController) IsSetRole() bool {
-	if o != nil && !IsNil(o.Role) {
-		return true
-	}
-
-	return false
-}
-
 // SetRole gets a reference to the given ClusterServerCreateConfigEKSControllerRole and assigns it to the Role field.
 func (o *ClusterServerCreateConfigEKSController) SetRole(v ClusterServerCreateConfigEKSControllerRole) {
 	o.Role = &v
@@ -95,15 +86,6 @@ func (o *ClusterServerCreateConfigEKSController) GetNetworkOk() (*ClusterServerC
 	return o.Network, true
 }
 
-// IsSetNetwork returns a boolean if a field has been set.
-func (o *ClusterServerCreateConfigEKSController) IsSetNetwork() bool {
-	if o != nil && !IsNil(o.Network) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetwork gets a reference to the given ClusterServerCreateConfigEKSControllerNetwork and assigns it to the Network field.
 func (o *ClusterServerCreateConfigEKSController) SetNetwork(v ClusterServerCreateConfigEKSControllerNetwork) {
 	o.Network = &v
@@ -125,15 +107,6 @@ func (o *ClusterServerCreateConfigEKSController) GetSecurityGroupOk() (*ClusterS
 		return nil, false
 	}
 	return o.SecurityGroup, true
-}
-
-// IsSetSecurityGroup returns a boolean if a field has been set.
-func (o *ClusterServerCreateConfigEKSController) IsSetSecurityGroup() bool {
-	if o != nil && !IsNil(o.SecurityGroup) {
-		return true
-	}
-
-	return false
 }
 
 // SetSecurityGroup gets a reference to the given ClusterServerCreateConfigEKSControllerSecurityGroup and assigns it to the SecurityGroup field.

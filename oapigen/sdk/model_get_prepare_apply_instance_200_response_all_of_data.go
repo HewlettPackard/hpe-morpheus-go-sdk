@@ -61,15 +61,6 @@ func (o *GetPrepareApplyInstance200ResponseAllOfData) GetTemplateParameterOk() (
 	return o.TemplateParameter, true
 }
 
-// IsSetTemplateParameter returns a boolean if a field has been set.
-func (o *GetPrepareApplyInstance200ResponseAllOfData) IsSetTemplateParameter() bool {
-	if o != nil && !IsNil(o.TemplateParameter) {
-		return true
-	}
-
-	return false
-}
-
 // SetTemplateParameter gets a reference to the given map[string]interface{} and assigns it to the TemplateParameter field.
 func (o *GetPrepareApplyInstance200ResponseAllOfData) SetTemplateParameter(v map[string]interface{}) {
 	o.TemplateParameter = v

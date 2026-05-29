@@ -61,15 +61,6 @@ func (o *GetNetworkRouter200ResponseNetworkRouterPermissionsTenantPermissions) G
 	return o.Accounts, true
 }
 
-// IsSetAccounts returns a boolean if a field has been set.
-func (o *GetNetworkRouter200ResponseNetworkRouterPermissionsTenantPermissions) IsSetAccounts() bool {
-	if o != nil && !IsNil(o.Accounts) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccounts gets a reference to the given []int64 and assigns it to the Accounts field.
 func (o *GetNetworkRouter200ResponseNetworkRouterPermissionsTenantPermissions) SetAccounts(v []int64) {
 	o.Accounts = v

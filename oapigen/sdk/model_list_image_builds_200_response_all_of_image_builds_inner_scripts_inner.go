@@ -64,15 +64,6 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner) GetIdOk() 
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner) SetId(v int64) {
 	o.Id = &v
@@ -94,15 +85,6 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner) GetNameOk(
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -128,15 +110,6 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner) GetTypeOk(
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given string and assigns it to the Type field.
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner) SetType(v string) {
 	o.Type = &v
@@ -158,15 +131,6 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner) GetPhaseOk
 		return nil, false
 	}
 	return o.Phase, true
-}
-
-// IsSetPhase returns a boolean if a field has been set.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner) IsSetPhase() bool {
-	if o != nil && !IsNil(o.Phase) {
-		return true
-	}
-
-	return false
 }
 
 // SetPhase gets a reference to the given string and assigns it to the Phase field.

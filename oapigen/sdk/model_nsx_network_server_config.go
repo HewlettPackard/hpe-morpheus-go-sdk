@@ -63,28 +63,9 @@ func (o *NSXNetworkServerConfig) GetProjectOk() (*string, bool) {
 	return o.Project.Get(), o.Project.IsSet()
 }
 
-// IsSetProject returns a boolean if a field has been set.
-func (o *NSXNetworkServerConfig) IsSetProject() bool {
-	if o != nil && o.Project.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetProject gets a reference to the given NullableString and assigns it to the Project field.
 func (o *NSXNetworkServerConfig) SetProject(v string) {
 	o.Project.Set(&v)
-}
-
-// SetProjectNil sets the value for Project to be an explicit nil
-func (o *NSXNetworkServerConfig) SetProjectNil() {
-	o.Project.Set(nil)
-}
-
-// UnsetProject ensures that no value is present for Project, not even an explicit nil
-func (o *NSXNetworkServerConfig) UnsetProject() {
-	o.Project.Unset()
 }
 
 func (o NSXNetworkServerConfig) MarshalJSON() ([]byte, error) {

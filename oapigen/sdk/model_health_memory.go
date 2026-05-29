@@ -74,15 +74,6 @@ func (o *HealthMemory) GetSuccessOk() (*bool, bool) {
 	return o.Success, true
 }
 
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *HealthMemory) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
-}
-
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.
 func (o *HealthMemory) SetSuccess(v bool) {
 	o.Success = &v
@@ -104,15 +95,6 @@ func (o *HealthMemory) GetMaxMemoryOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.MaxMemory, true
-}
-
-// IsSetMaxMemory returns a boolean if a field has been set.
-func (o *HealthMemory) IsSetMaxMemory() bool {
-	if o != nil && !IsNil(o.MaxMemory) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxMemory gets a reference to the given int64 and assigns it to the MaxMemory field.
@@ -138,15 +120,6 @@ func (o *HealthMemory) GetTotalMemoryOk() (*int64, bool) {
 	return o.TotalMemory, true
 }
 
-// IsSetTotalMemory returns a boolean if a field has been set.
-func (o *HealthMemory) IsSetTotalMemory() bool {
-	if o != nil && !IsNil(o.TotalMemory) {
-		return true
-	}
-
-	return false
-}
-
 // SetTotalMemory gets a reference to the given int64 and assigns it to the TotalMemory field.
 func (o *HealthMemory) SetTotalMemory(v int64) {
 	o.TotalMemory = &v
@@ -168,15 +141,6 @@ func (o *HealthMemory) GetFreeMemoryOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.FreeMemory, true
-}
-
-// IsSetFreeMemory returns a boolean if a field has been set.
-func (o *HealthMemory) IsSetFreeMemory() bool {
-	if o != nil && !IsNil(o.FreeMemory) {
-		return true
-	}
-
-	return false
 }
 
 // SetFreeMemory gets a reference to the given int64 and assigns it to the FreeMemory field.
@@ -202,15 +166,6 @@ func (o *HealthMemory) GetUsedMemoryOk() (*int64, bool) {
 	return o.UsedMemory, true
 }
 
-// IsSetUsedMemory returns a boolean if a field has been set.
-func (o *HealthMemory) IsSetUsedMemory() bool {
-	if o != nil && !IsNil(o.UsedMemory) {
-		return true
-	}
-
-	return false
-}
-
 // SetUsedMemory gets a reference to the given int64 and assigns it to the UsedMemory field.
 func (o *HealthMemory) SetUsedMemory(v int64) {
 	o.UsedMemory = &v
@@ -232,15 +187,6 @@ func (o *HealthMemory) GetSystemMemoryOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.SystemMemory, true
-}
-
-// IsSetSystemMemory returns a boolean if a field has been set.
-func (o *HealthMemory) IsSetSystemMemory() bool {
-	if o != nil && !IsNil(o.SystemMemory) {
-		return true
-	}
-
-	return false
 }
 
 // SetSystemMemory gets a reference to the given int64 and assigns it to the SystemMemory field.
@@ -266,15 +212,6 @@ func (o *HealthMemory) GetCommittedMemoryOk() (*int64, bool) {
 	return o.CommittedMemory, true
 }
 
-// IsSetCommittedMemory returns a boolean if a field has been set.
-func (o *HealthMemory) IsSetCommittedMemory() bool {
-	if o != nil && !IsNil(o.CommittedMemory) {
-		return true
-	}
-
-	return false
-}
-
 // SetCommittedMemory gets a reference to the given int64 and assigns it to the CommittedMemory field.
 func (o *HealthMemory) SetCommittedMemory(v int64) {
 	o.CommittedMemory = &v
@@ -296,15 +233,6 @@ func (o *HealthMemory) GetSystemFreeMemoryOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.SystemFreeMemory, true
-}
-
-// IsSetSystemFreeMemory returns a boolean if a field has been set.
-func (o *HealthMemory) IsSetSystemFreeMemory() bool {
-	if o != nil && !IsNil(o.SystemFreeMemory) {
-		return true
-	}
-
-	return false
 }
 
 // SetSystemFreeMemory gets a reference to the given int64 and assigns it to the SystemFreeMemory field.
@@ -330,15 +258,6 @@ func (o *HealthMemory) GetSystemSwapOk() (*int64, bool) {
 	return o.SystemSwap, true
 }
 
-// IsSetSystemSwap returns a boolean if a field has been set.
-func (o *HealthMemory) IsSetSystemSwap() bool {
-	if o != nil && !IsNil(o.SystemSwap) {
-		return true
-	}
-
-	return false
-}
-
 // SetSystemSwap gets a reference to the given int64 and assigns it to the SystemSwap field.
 func (o *HealthMemory) SetSystemSwap(v int64) {
 	o.SystemSwap = &v
@@ -360,15 +279,6 @@ func (o *HealthMemory) GetSystemFreeSwapOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.SystemFreeSwap, true
-}
-
-// IsSetSystemFreeSwap returns a boolean if a field has been set.
-func (o *HealthMemory) IsSetSystemFreeSwap() bool {
-	if o != nil && !IsNil(o.SystemFreeSwap) {
-		return true
-	}
-
-	return false
 }
 
 // SetSystemFreeSwap gets a reference to the given int64 and assigns it to the SystemFreeSwap field.
@@ -394,15 +304,6 @@ func (o *HealthMemory) GetSwapPercentOk() (*int64, bool) {
 	return o.SwapPercent, true
 }
 
-// IsSetSwapPercent returns a boolean if a field has been set.
-func (o *HealthMemory) IsSetSwapPercent() bool {
-	if o != nil && !IsNil(o.SwapPercent) {
-		return true
-	}
-
-	return false
-}
-
 // SetSwapPercent gets a reference to the given int64 and assigns it to the SwapPercent field.
 func (o *HealthMemory) SetSwapPercent(v int64) {
 	o.SwapPercent = &v
@@ -424,15 +325,6 @@ func (o *HealthMemory) GetMemoryPercentOk() (*float32, bool) {
 		return nil, false
 	}
 	return o.MemoryPercent, true
-}
-
-// IsSetMemoryPercent returns a boolean if a field has been set.
-func (o *HealthMemory) IsSetMemoryPercent() bool {
-	if o != nil && !IsNil(o.MemoryPercent) {
-		return true
-	}
-
-	return false
 }
 
 // SetMemoryPercent gets a reference to the given float32 and assigns it to the MemoryPercent field.
@@ -458,15 +350,6 @@ func (o *HealthMemory) GetSystemMemoryPercentOk() (*float32, bool) {
 	return o.SystemMemoryPercent, true
 }
 
-// IsSetSystemMemoryPercent returns a boolean if a field has been set.
-func (o *HealthMemory) IsSetSystemMemoryPercent() bool {
-	if o != nil && !IsNil(o.SystemMemoryPercent) {
-		return true
-	}
-
-	return false
-}
-
 // SetSystemMemoryPercent gets a reference to the given float32 and assigns it to the SystemMemoryPercent field.
 func (o *HealthMemory) SetSystemMemoryPercent(v float32) {
 	o.SystemMemoryPercent = &v
@@ -488,15 +371,6 @@ func (o *HealthMemory) GetStatusOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *HealthMemory) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.

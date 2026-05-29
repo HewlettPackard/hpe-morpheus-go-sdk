@@ -69,15 +69,6 @@ func (o *CheckType) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *CheckType) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *CheckType) SetId(v int64) {
 	o.Id = &v
@@ -99,15 +90,6 @@ func (o *CheckType) GetCodeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *CheckType) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -133,15 +115,6 @@ func (o *CheckType) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *CheckType) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *CheckType) SetName(v string) {
 	o.Name = &v
@@ -163,15 +136,6 @@ func (o *CheckType) GetDefaultIntervalOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.DefaultInterval, true
-}
-
-// IsSetDefaultInterval returns a boolean if a field has been set.
-func (o *CheckType) IsSetDefaultInterval() bool {
-	if o != nil && !IsNil(o.DefaultInterval) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultInterval gets a reference to the given int64 and assigns it to the DefaultInterval field.
@@ -197,15 +161,6 @@ func (o *CheckType) GetMetricNameOk() (*string, bool) {
 	return o.MetricName, true
 }
 
-// IsSetMetricName returns a boolean if a field has been set.
-func (o *CheckType) IsSetMetricName() bool {
-	if o != nil && !IsNil(o.MetricName) {
-		return true
-	}
-
-	return false
-}
-
 // SetMetricName gets a reference to the given string and assigns it to the MetricName field.
 func (o *CheckType) SetMetricName(v string) {
 	o.MetricName = &v
@@ -227,15 +182,6 @@ func (o *CheckType) GetInUptimeOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.InUptime, true
-}
-
-// IsSetInUptime returns a boolean if a field has been set.
-func (o *CheckType) IsSetInUptime() bool {
-	if o != nil && !IsNil(o.InUptime) {
-		return true
-	}
-
-	return false
 }
 
 // SetInUptime gets a reference to the given bool and assigns it to the InUptime field.
@@ -261,15 +207,6 @@ func (o *CheckType) GetCreateIncidentOk() (*bool, bool) {
 	return o.CreateIncident, true
 }
 
-// IsSetCreateIncident returns a boolean if a field has been set.
-func (o *CheckType) IsSetCreateIncident() bool {
-	if o != nil && !IsNil(o.CreateIncident) {
-		return true
-	}
-
-	return false
-}
-
 // SetCreateIncident gets a reference to the given bool and assigns it to the CreateIncident field.
 func (o *CheckType) SetCreateIncident(v bool) {
 	o.CreateIncident = &v
@@ -293,15 +230,6 @@ func (o *CheckType) GetPushOnlyOk() (*bool, bool) {
 	return o.PushOnly, true
 }
 
-// IsSetPushOnly returns a boolean if a field has been set.
-func (o *CheckType) IsSetPushOnly() bool {
-	if o != nil && !IsNil(o.PushOnly) {
-		return true
-	}
-
-	return false
-}
-
 // SetPushOnly gets a reference to the given bool and assigns it to the PushOnly field.
 func (o *CheckType) SetPushOnly(v bool) {
 	o.PushOnly = &v
@@ -323,15 +251,6 @@ func (o *CheckType) GetTunnelSupportedOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.TunnelSupported, true
-}
-
-// IsSetTunnelSupported returns a boolean if a field has been set.
-func (o *CheckType) IsSetTunnelSupported() bool {
-	if o != nil && !IsNil(o.TunnelSupported) {
-		return true
-	}
-
-	return false
 }
 
 // SetTunnelSupported gets a reference to the given bool and assigns it to the TunnelSupported field.

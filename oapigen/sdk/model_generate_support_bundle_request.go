@@ -70,15 +70,6 @@ func (o *GenerateSupportBundleRequest) GetStorageProviderIdOk() (*int64, bool) {
 	return o.StorageProviderId, true
 }
 
-// IsSetStorageProviderId returns a boolean if a field has been set.
-func (o *GenerateSupportBundleRequest) IsSetStorageProviderId() bool {
-	if o != nil && !IsNil(o.StorageProviderId) {
-		return true
-	}
-
-	return false
-}
-
 // SetStorageProviderId gets a reference to the given int64 and assigns it to the StorageProviderId field.
 func (o *GenerateSupportBundleRequest) SetStorageProviderId(v int64) {
 	o.StorageProviderId = &v
@@ -126,15 +117,6 @@ func (o *GenerateSupportBundleRequest) GetEndDateOk() (*time.Time, bool) {
 	return o.EndDate, true
 }
 
-// IsSetEndDate returns a boolean if a field has been set.
-func (o *GenerateSupportBundleRequest) IsSetEndDate() bool {
-	if o != nil && !IsNil(o.EndDate) {
-		return true
-	}
-
-	return false
-}
-
 // SetEndDate gets a reference to the given time.Time and assigns it to the EndDate field.
 func (o *GenerateSupportBundleRequest) SetEndDate(v time.Time) {
 	o.EndDate = &v
@@ -156,15 +138,6 @@ func (o *GenerateSupportBundleRequest) GetContentsOk() ([]GenerateSupportBundleR
 		return nil, false
 	}
 	return o.Contents, true
-}
-
-// IsSetContents returns a boolean if a field has been set.
-func (o *GenerateSupportBundleRequest) IsSetContents() bool {
-	if o != nil && !IsNil(o.Contents) {
-		return true
-	}
-
-	return false
 }
 
 // SetContents gets a reference to the given []GenerateSupportBundleRequestContentsInner and assigns it to the Contents field.

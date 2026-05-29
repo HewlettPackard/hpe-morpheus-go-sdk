@@ -62,15 +62,6 @@ func (o *GetNetworkDhcpServers200Response) GetNetworkDhcpServersOk() ([]GetNetwo
 	return o.NetworkDhcpServers, true
 }
 
-// IsSetNetworkDhcpServers returns a boolean if a field has been set.
-func (o *GetNetworkDhcpServers200Response) IsSetNetworkDhcpServers() bool {
-	if o != nil && !IsNil(o.NetworkDhcpServers) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkDhcpServers gets a reference to the given []GetNetworkDhcpServers200ResponseAllOfNetworkDhcpServersInner and assigns it to the NetworkDhcpServers field.
 func (o *GetNetworkDhcpServers200Response) SetNetworkDhcpServers(v []GetNetworkDhcpServers200ResponseAllOfNetworkDhcpServersInner) {
 	o.NetworkDhcpServers = v
@@ -92,15 +83,6 @@ func (o *GetNetworkDhcpServers200Response) GetMetaOk() (*ListApprovals200Respons
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *GetNetworkDhcpServers200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

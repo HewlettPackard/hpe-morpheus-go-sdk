@@ -62,15 +62,6 @@ func (o *PermissionsTenantPermissions) GetAccountsOk() ([]int64, bool) {
 	return o.Accounts, true
 }
 
-// IsSetAccounts returns a boolean if a field has been set.
-func (o *PermissionsTenantPermissions) IsSetAccounts() bool {
-	if o != nil && !IsNil(o.Accounts) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccounts gets a reference to the given []int64 and assigns it to the Accounts field.
 func (o *PermissionsTenantPermissions) SetAccounts(v []int64) {
 	o.Accounts = v

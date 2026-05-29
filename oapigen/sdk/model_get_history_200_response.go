@@ -61,15 +61,6 @@ func (o *GetHistory200Response) GetProcessOk() (*GetHistory200ResponseProcess, b
 	return o.Process, true
 }
 
-// IsSetProcess returns a boolean if a field has been set.
-func (o *GetHistory200Response) IsSetProcess() bool {
-	if o != nil && !IsNil(o.Process) {
-		return true
-	}
-
-	return false
-}
-
 // SetProcess gets a reference to the given GetHistory200ResponseProcess and assigns it to the Process field.
 func (o *GetHistory200Response) SetProcess(v GetHistory200ResponseProcess) {
 	o.Process = &v

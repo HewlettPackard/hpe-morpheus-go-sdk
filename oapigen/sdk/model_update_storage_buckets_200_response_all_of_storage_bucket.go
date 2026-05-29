@@ -76,15 +76,6 @@ func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) GetIdOk() (*int64, b
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) SetId(v int64) {
 	o.Id = &v
@@ -106,15 +97,6 @@ func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) GetNameOk() (*string
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -140,15 +122,6 @@ func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) GetActiveOk() (*bool
 	return o.Active, true
 }
 
-// IsSetActive returns a boolean if a field has been set.
-func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
-}
-
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) SetActive(v bool) {
 	o.Active = &v
@@ -170,15 +143,6 @@ func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) GetAccountIdOk() (*i
 		return nil, false
 	}
 	return o.AccountId, true
-}
-
-// IsSetAccountId returns a boolean if a field has been set.
-func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) IsSetAccountId() bool {
-	if o != nil && !IsNil(o.AccountId) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccountId gets a reference to the given int64 and assigns it to the AccountId field.
@@ -204,15 +168,6 @@ func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) GetProviderTypeOk() 
 	return o.ProviderType, true
 }
 
-// IsSetProviderType returns a boolean if a field has been set.
-func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) IsSetProviderType() bool {
-	if o != nil && !IsNil(o.ProviderType) {
-		return true
-	}
-
-	return false
-}
-
 // SetProviderType gets a reference to the given string and assigns it to the ProviderType field.
 func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) SetProviderType(v string) {
 	o.ProviderType = &v
@@ -234,15 +189,6 @@ func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) GetStorageServerOk()
 		return nil, false
 	}
 	return o.StorageServer, true
-}
-
-// IsSetStorageServer returns a boolean if a field has been set.
-func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) IsSetStorageServer() bool {
-	if o != nil && !IsNil(o.StorageServer) {
-		return true
-	}
-
-	return false
 }
 
 // SetStorageServer gets a reference to the given UpdateStorageBuckets200ResponseAllOfStorageBucketStorageServer and assigns it to the StorageServer field.
@@ -268,15 +214,6 @@ func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) GetConfigOk() (*Upda
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given UpdateStorageBuckets200ResponseAllOfStorageBucketConfig and assigns it to the Config field.
 func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) SetConfig(v UpdateStorageBuckets200ResponseAllOfStorageBucketConfig) {
 	o.Config = &v
@@ -298,15 +235,6 @@ func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) GetBucketNameOk() (*
 		return nil, false
 	}
 	return o.BucketName, true
-}
-
-// IsSetBucketName returns a boolean if a field has been set.
-func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) IsSetBucketName() bool {
-	if o != nil && !IsNil(o.BucketName) {
-		return true
-	}
-
-	return false
 }
 
 // SetBucketName gets a reference to the given string and assigns it to the BucketName field.
@@ -332,15 +260,6 @@ func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) GetReadOnlyOk() (*bo
 	return o.ReadOnly, true
 }
 
-// IsSetReadOnly returns a boolean if a field has been set.
-func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) IsSetReadOnly() bool {
-	if o != nil && !IsNil(o.ReadOnly) {
-		return true
-	}
-
-	return false
-}
-
 // SetReadOnly gets a reference to the given bool and assigns it to the ReadOnly field.
 func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) SetReadOnly(v bool) {
 	o.ReadOnly = &v
@@ -362,15 +281,6 @@ func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) GetDefaultBackupTarg
 		return nil, false
 	}
 	return o.DefaultBackupTarget, true
-}
-
-// IsSetDefaultBackupTarget returns a boolean if a field has been set.
-func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) IsSetDefaultBackupTarget() bool {
-	if o != nil && !IsNil(o.DefaultBackupTarget) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultBackupTarget gets a reference to the given bool and assigns it to the DefaultBackupTarget field.
@@ -396,15 +306,6 @@ func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) GetDefaultDeployment
 	return o.DefaultDeploymentTarget, true
 }
 
-// IsSetDefaultDeploymentTarget returns a boolean if a field has been set.
-func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) IsSetDefaultDeploymentTarget() bool {
-	if o != nil && !IsNil(o.DefaultDeploymentTarget) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultDeploymentTarget gets a reference to the given bool and assigns it to the DefaultDeploymentTarget field.
 func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) SetDefaultDeploymentTarget(v bool) {
 	o.DefaultDeploymentTarget = &v
@@ -428,15 +329,6 @@ func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) GetDefaultVirtualIma
 	return o.DefaultVirtualImageTarget, true
 }
 
-// IsSetDefaultVirtualImageTarget returns a boolean if a field has been set.
-func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) IsSetDefaultVirtualImageTarget() bool {
-	if o != nil && !IsNil(o.DefaultVirtualImageTarget) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultVirtualImageTarget gets a reference to the given bool and assigns it to the DefaultVirtualImageTarget field.
 func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) SetDefaultVirtualImageTarget(v bool) {
 	o.DefaultVirtualImageTarget = &v
@@ -458,15 +350,6 @@ func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) GetCopyToStoreOk() (
 		return nil, false
 	}
 	return o.CopyToStore, true
-}
-
-// IsSetCopyToStore returns a boolean if a field has been set.
-func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) IsSetCopyToStore() bool {
-	if o != nil && !IsNil(o.CopyToStore) {
-		return true
-	}
-
-	return false
 }
 
 // SetCopyToStore gets a reference to the given bool and assigns it to the CopyToStore field.
@@ -493,28 +376,9 @@ func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) GetRetentionPolicyTy
 	return o.RetentionPolicyType.Get(), o.RetentionPolicyType.IsSet()
 }
 
-// IsSetRetentionPolicyType returns a boolean if a field has been set.
-func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) IsSetRetentionPolicyType() bool {
-	if o != nil && o.RetentionPolicyType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRetentionPolicyType gets a reference to the given NullableString and assigns it to the RetentionPolicyType field.
 func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) SetRetentionPolicyType(v string) {
 	o.RetentionPolicyType.Set(&v)
-}
-
-// SetRetentionPolicyTypeNil sets the value for RetentionPolicyType to be an explicit nil
-func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) SetRetentionPolicyTypeNil() {
-	o.RetentionPolicyType.Set(nil)
-}
-
-// UnsetRetentionPolicyType ensures that no value is present for RetentionPolicyType, not even an explicit nil
-func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) UnsetRetentionPolicyType() {
-	o.RetentionPolicyType.Unset()
 }
 
 // GetRetentionPolicyDays returns the RetentionPolicyDays field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -536,28 +400,9 @@ func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) GetRetentionPolicyDa
 	return o.RetentionPolicyDays.Get(), o.RetentionPolicyDays.IsSet()
 }
 
-// IsSetRetentionPolicyDays returns a boolean if a field has been set.
-func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) IsSetRetentionPolicyDays() bool {
-	if o != nil && o.RetentionPolicyDays.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRetentionPolicyDays gets a reference to the given NullableString and assigns it to the RetentionPolicyDays field.
 func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) SetRetentionPolicyDays(v string) {
 	o.RetentionPolicyDays.Set(&v)
-}
-
-// SetRetentionPolicyDaysNil sets the value for RetentionPolicyDays to be an explicit nil
-func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) SetRetentionPolicyDaysNil() {
-	o.RetentionPolicyDays.Set(nil)
-}
-
-// UnsetRetentionPolicyDays ensures that no value is present for RetentionPolicyDays, not even an explicit nil
-func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) UnsetRetentionPolicyDays() {
-	o.RetentionPolicyDays.Unset()
 }
 
 // GetRetentionProvider returns the RetentionProvider field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -579,28 +424,9 @@ func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) GetRetentionProvider
 	return o.RetentionProvider.Get(), o.RetentionProvider.IsSet()
 }
 
-// IsSetRetentionProvider returns a boolean if a field has been set.
-func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) IsSetRetentionProvider() bool {
-	if o != nil && o.RetentionProvider.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRetentionProvider gets a reference to the given NullableString and assigns it to the RetentionProvider field.
 func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) SetRetentionProvider(v string) {
 	o.RetentionProvider.Set(&v)
-}
-
-// SetRetentionProviderNil sets the value for RetentionProvider to be an explicit nil
-func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) SetRetentionProviderNil() {
-	o.RetentionProvider.Set(nil)
-}
-
-// UnsetRetentionProvider ensures that no value is present for RetentionProvider, not even an explicit nil
-func (o *UpdateStorageBuckets200ResponseAllOfStorageBucket) UnsetRetentionProvider() {
-	o.RetentionProvider.Unset()
 }
 
 func (o UpdateStorageBuckets200ResponseAllOfStorageBucket) MarshalJSON() ([]byte, error) {

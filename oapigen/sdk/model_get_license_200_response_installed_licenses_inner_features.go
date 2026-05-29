@@ -112,15 +112,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetDashboardOk() (
 	return o.Dashboard, true
 }
 
-// IsSetDashboard returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetDashboard() bool {
-	if o != nil && !IsNil(o.Dashboard) {
-		return true
-	}
-
-	return false
-}
-
 // SetDashboard gets a reference to the given bool and assigns it to the Dashboard field.
 func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) SetDashboard(v bool) {
 	o.Dashboard = &v
@@ -142,15 +133,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetGuidanceOk() (*
 		return nil, false
 	}
 	return o.Guidance, true
-}
-
-// IsSetGuidance returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetGuidance() bool {
-	if o != nil && !IsNil(o.Guidance) {
-		return true
-	}
-
-	return false
 }
 
 // SetGuidance gets a reference to the given bool and assigns it to the Guidance field.
@@ -176,15 +158,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetDiscoveryOk() (
 	return o.Discovery, true
 }
 
-// IsSetDiscovery returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetDiscovery() bool {
-	if o != nil && !IsNil(o.Discovery) {
-		return true
-	}
-
-	return false
-}
-
 // SetDiscovery gets a reference to the given bool and assigns it to the Discovery field.
 func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) SetDiscovery(v bool) {
 	o.Discovery = &v
@@ -206,15 +179,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetAnalyticsOk() (
 		return nil, false
 	}
 	return o.Analytics, true
-}
-
-// IsSetAnalytics returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetAnalytics() bool {
-	if o != nil && !IsNil(o.Analytics) {
-		return true
-	}
-
-	return false
 }
 
 // SetAnalytics gets a reference to the given bool and assigns it to the Analytics field.
@@ -240,15 +204,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetSchedulingOk() 
 	return o.Scheduling, true
 }
 
-// IsSetScheduling returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetScheduling() bool {
-	if o != nil && !IsNil(o.Scheduling) {
-		return true
-	}
-
-	return false
-}
-
 // SetScheduling gets a reference to the given bool and assigns it to the Scheduling field.
 func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) SetScheduling(v bool) {
 	o.Scheduling = &v
@@ -270,15 +225,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetApprovalsOk() (
 		return nil, false
 	}
 	return o.Approvals, true
-}
-
-// IsSetApprovals returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetApprovals() bool {
-	if o != nil && !IsNil(o.Approvals) {
-		return true
-	}
-
-	return false
 }
 
 // SetApprovals gets a reference to the given bool and assigns it to the Approvals field.
@@ -304,15 +250,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetUsageOk() (*boo
 	return o.Usage, true
 }
 
-// IsSetUsage returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetUsage() bool {
-	if o != nil && !IsNil(o.Usage) {
-		return true
-	}
-
-	return false
-}
-
 // SetUsage gets a reference to the given bool and assigns it to the Usage field.
 func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) SetUsage(v bool) {
 	o.Usage = &v
@@ -334,15 +271,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetActivityOk() (*
 		return nil, false
 	}
 	return o.Activity, true
-}
-
-// IsSetActivity returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetActivity() bool {
-	if o != nil && !IsNil(o.Activity) {
-		return true
-	}
-
-	return false
 }
 
 // SetActivity gets a reference to the given bool and assigns it to the Activity field.
@@ -368,15 +296,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetInstancesOk() (
 	return o.Instances, true
 }
 
-// IsSetInstances returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetInstances() bool {
-	if o != nil && !IsNil(o.Instances) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstances gets a reference to the given bool and assigns it to the Instances field.
 func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) SetInstances(v bool) {
 	o.Instances = &v
@@ -398,15 +317,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetAppsOk() (*bool
 		return nil, false
 	}
 	return o.Apps, true
-}
-
-// IsSetApps returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetApps() bool {
-	if o != nil && !IsNil(o.Apps) {
-		return true
-	}
-
-	return false
 }
 
 // SetApps gets a reference to the given bool and assigns it to the Apps field.
@@ -432,15 +342,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetTemplatesOk() (
 	return o.Templates, true
 }
 
-// IsSetTemplates returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetTemplates() bool {
-	if o != nil && !IsNil(o.Templates) {
-		return true
-	}
-
-	return false
-}
-
 // SetTemplates gets a reference to the given bool and assigns it to the Templates field.
 func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) SetTemplates(v bool) {
 	o.Templates = &v
@@ -462,15 +363,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetAutomationOk() 
 		return nil, false
 	}
 	return o.Automation, true
-}
-
-// IsSetAutomation returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetAutomation() bool {
-	if o != nil && !IsNil(o.Automation) {
-		return true
-	}
-
-	return false
 }
 
 // SetAutomation gets a reference to the given bool and assigns it to the Automation field.
@@ -496,15 +388,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetVirtualImagesOk
 	return o.VirtualImages, true
 }
 
-// IsSetVirtualImages returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetVirtualImages() bool {
-	if o != nil && !IsNil(o.VirtualImages) {
-		return true
-	}
-
-	return false
-}
-
 // SetVirtualImages gets a reference to the given bool and assigns it to the VirtualImages field.
 func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) SetVirtualImages(v bool) {
 	o.VirtualImages = &v
@@ -526,15 +409,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetLibraryOk() (*b
 		return nil, false
 	}
 	return o.Library, true
-}
-
-// IsSetLibrary returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetLibrary() bool {
-	if o != nil && !IsNil(o.Library) {
-		return true
-	}
-
-	return false
 }
 
 // SetLibrary gets a reference to the given bool and assigns it to the Library field.
@@ -560,15 +434,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetMigrationsOk() 
 	return o.Migrations, true
 }
 
-// IsSetMigrations returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetMigrations() bool {
-	if o != nil && !IsNil(o.Migrations) {
-		return true
-	}
-
-	return false
-}
-
 // SetMigrations gets a reference to the given bool and assigns it to the Migrations field.
 func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) SetMigrations(v bool) {
 	o.Migrations = &v
@@ -590,15 +455,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetDeploymentsOk()
 		return nil, false
 	}
 	return o.Deployments, true
-}
-
-// IsSetDeployments returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetDeployments() bool {
-	if o != nil && !IsNil(o.Deployments) {
-		return true
-	}
-
-	return false
 }
 
 // SetDeployments gets a reference to the given bool and assigns it to the Deployments field.
@@ -624,15 +480,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetGroupsOk() (*bo
 	return o.Groups, true
 }
 
-// IsSetGroups returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetGroups() bool {
-	if o != nil && !IsNil(o.Groups) {
-		return true
-	}
-
-	return false
-}
-
 // SetGroups gets a reference to the given bool and assigns it to the Groups field.
 func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) SetGroups(v bool) {
 	o.Groups = &v
@@ -654,15 +501,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetCloudsOk() (*bo
 		return nil, false
 	}
 	return o.Clouds, true
-}
-
-// IsSetClouds returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetClouds() bool {
-	if o != nil && !IsNil(o.Clouds) {
-		return true
-	}
-
-	return false
 }
 
 // SetClouds gets a reference to the given bool and assigns it to the Clouds field.
@@ -688,15 +526,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetHostsOk() (*boo
 	return o.Hosts, true
 }
 
-// IsSetHosts returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetHosts() bool {
-	if o != nil && !IsNil(o.Hosts) {
-		return true
-	}
-
-	return false
-}
-
 // SetHosts gets a reference to the given bool and assigns it to the Hosts field.
 func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) SetHosts(v bool) {
 	o.Hosts = &v
@@ -718,15 +547,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetNetworkOk() (*b
 		return nil, false
 	}
 	return o.Network, true
-}
-
-// IsSetNetwork returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetNetwork() bool {
-	if o != nil && !IsNil(o.Network) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetwork gets a reference to the given bool and assigns it to the Network field.
@@ -752,15 +572,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetLoadBalancersOk
 	return o.LoadBalancers, true
 }
 
-// IsSetLoadBalancers returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetLoadBalancers() bool {
-	if o != nil && !IsNil(o.LoadBalancers) {
-		return true
-	}
-
-	return false
-}
-
 // SetLoadBalancers gets a reference to the given bool and assigns it to the LoadBalancers field.
 func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) SetLoadBalancers(v bool) {
 	o.LoadBalancers = &v
@@ -782,15 +593,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetStorageOk() (*b
 		return nil, false
 	}
 	return o.Storage, true
-}
-
-// IsSetStorage returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetStorage() bool {
-	if o != nil && !IsNil(o.Storage) {
-		return true
-	}
-
-	return false
 }
 
 // SetStorage gets a reference to the given bool and assigns it to the Storage field.
@@ -816,15 +618,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetKeyPairsOk() (*
 	return o.KeyPairs, true
 }
 
-// IsSetKeyPairs returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetKeyPairs() bool {
-	if o != nil && !IsNil(o.KeyPairs) {
-		return true
-	}
-
-	return false
-}
-
 // SetKeyPairs gets a reference to the given bool and assigns it to the KeyPairs field.
 func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) SetKeyPairs(v bool) {
 	o.KeyPairs = &v
@@ -846,15 +639,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetSslCertificates
 		return nil, false
 	}
 	return o.SslCertificates, true
-}
-
-// IsSetSslCertificates returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetSslCertificates() bool {
-	if o != nil && !IsNil(o.SslCertificates) {
-		return true
-	}
-
-	return false
 }
 
 // SetSslCertificates gets a reference to the given bool and assigns it to the SslCertificates field.
@@ -880,15 +664,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetBootOk() (*bool
 	return o.Boot, true
 }
 
-// IsSetBoot returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetBoot() bool {
-	if o != nil && !IsNil(o.Boot) {
-		return true
-	}
-
-	return false
-}
-
 // SetBoot gets a reference to the given bool and assigns it to the Boot field.
 func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) SetBoot(v bool) {
 	o.Boot = &v
@@ -910,15 +685,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetBackupsOk() (*b
 		return nil, false
 	}
 	return o.Backups, true
-}
-
-// IsSetBackups returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetBackups() bool {
-	if o != nil && !IsNil(o.Backups) {
-		return true
-	}
-
-	return false
 }
 
 // SetBackups gets a reference to the given bool and assigns it to the Backups field.
@@ -944,15 +710,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetCypherOk() (*bo
 	return o.Cypher, true
 }
 
-// IsSetCypher returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetCypher() bool {
-	if o != nil && !IsNil(o.Cypher) {
-		return true
-	}
-
-	return false
-}
-
 // SetCypher gets a reference to the given bool and assigns it to the Cypher field.
 func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) SetCypher(v bool) {
 	o.Cypher = &v
@@ -974,15 +731,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetArchivesOk() (*
 		return nil, false
 	}
 	return o.Archives, true
-}
-
-// IsSetArchives returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetArchives() bool {
-	if o != nil && !IsNil(o.Archives) {
-		return true
-	}
-
-	return false
 }
 
 // SetArchives gets a reference to the given bool and assigns it to the Archives field.
@@ -1008,15 +756,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetImageBuilderOk(
 	return o.ImageBuilder, true
 }
 
-// IsSetImageBuilder returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetImageBuilder() bool {
-	if o != nil && !IsNil(o.ImageBuilder) {
-		return true
-	}
-
-	return false
-}
-
 // SetImageBuilder gets a reference to the given bool and assigns it to the ImageBuilder field.
 func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) SetImageBuilder(v bool) {
 	o.ImageBuilder = &v
@@ -1038,15 +777,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetTenantsOk() (*b
 		return nil, false
 	}
 	return o.Tenants, true
-}
-
-// IsSetTenants returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetTenants() bool {
-	if o != nil && !IsNil(o.Tenants) {
-		return true
-	}
-
-	return false
 }
 
 // SetTenants gets a reference to the given bool and assigns it to the Tenants field.
@@ -1072,15 +802,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetPlansOk() (*boo
 	return o.Plans, true
 }
 
-// IsSetPlans returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetPlans() bool {
-	if o != nil && !IsNil(o.Plans) {
-		return true
-	}
-
-	return false
-}
-
 // SetPlans gets a reference to the given bool and assigns it to the Plans field.
 func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) SetPlans(v bool) {
 	o.Plans = &v
@@ -1102,15 +823,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetPricingOk() (*b
 		return nil, false
 	}
 	return o.Pricing, true
-}
-
-// IsSetPricing returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetPricing() bool {
-	if o != nil && !IsNil(o.Pricing) {
-		return true
-	}
-
-	return false
 }
 
 // SetPricing gets a reference to the given bool and assigns it to the Pricing field.
@@ -1136,15 +848,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetUsersOk() (*boo
 	return o.Users, true
 }
 
-// IsSetUsers returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetUsers() bool {
-	if o != nil && !IsNil(o.Users) {
-		return true
-	}
-
-	return false
-}
-
 // SetUsers gets a reference to the given bool and assigns it to the Users field.
 func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) SetUsers(v bool) {
 	o.Users = &v
@@ -1166,15 +869,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetUserGroupsOk() 
 		return nil, false
 	}
 	return o.UserGroups, true
-}
-
-// IsSetUserGroups returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetUserGroups() bool {
-	if o != nil && !IsNil(o.UserGroups) {
-		return true
-	}
-
-	return false
 }
 
 // SetUserGroups gets a reference to the given bool and assigns it to the UserGroups field.
@@ -1200,15 +894,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetMonitoringOk() 
 	return o.Monitoring, true
 }
 
-// IsSetMonitoring returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetMonitoring() bool {
-	if o != nil && !IsNil(o.Monitoring) {
-		return true
-	}
-
-	return false
-}
-
 // SetMonitoring gets a reference to the given bool and assigns it to the Monitoring field.
 func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) SetMonitoring(v bool) {
 	o.Monitoring = &v
@@ -1230,15 +915,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetLoggingOk() (*b
 		return nil, false
 	}
 	return o.Logging, true
-}
-
-// IsSetLogging returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetLogging() bool {
-	if o != nil && !IsNil(o.Logging) {
-		return true
-	}
-
-	return false
 }
 
 // SetLogging gets a reference to the given bool and assigns it to the Logging field.
@@ -1264,15 +940,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetMonitoringServi
 	return o.MonitoringServices, true
 }
 
-// IsSetMonitoringServices returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetMonitoringServices() bool {
-	if o != nil && !IsNil(o.MonitoringServices) {
-		return true
-	}
-
-	return false
-}
-
 // SetMonitoringServices gets a reference to the given bool and assigns it to the MonitoringServices field.
 func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) SetMonitoringServices(v bool) {
 	o.MonitoringServices = &v
@@ -1294,15 +961,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetLoggingServices
 		return nil, false
 	}
 	return o.LoggingServices, true
-}
-
-// IsSetLoggingServices returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetLoggingServices() bool {
-	if o != nil && !IsNil(o.LoggingServices) {
-		return true
-	}
-
-	return false
 }
 
 // SetLoggingServices gets a reference to the given bool and assigns it to the LoggingServices field.
@@ -1328,15 +986,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetBackupServicesO
 	return o.BackupServices, true
 }
 
-// IsSetBackupServices returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetBackupServices() bool {
-	if o != nil && !IsNil(o.BackupServices) {
-		return true
-	}
-
-	return false
-}
-
 // SetBackupServices gets a reference to the given bool and assigns it to the BackupServices field.
 func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) SetBackupServices(v bool) {
 	o.BackupServices = &v
@@ -1358,15 +1007,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetDnsServicesOk()
 		return nil, false
 	}
 	return o.DnsServices, true
-}
-
-// IsSetDnsServices returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetDnsServices() bool {
-	if o != nil && !IsNil(o.DnsServices) {
-		return true
-	}
-
-	return false
 }
 
 // SetDnsServices gets a reference to the given bool and assigns it to the DnsServices field.
@@ -1392,15 +1032,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetCodeServiceOk()
 	return o.CodeService, true
 }
 
-// IsSetCodeService returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetCodeService() bool {
-	if o != nil && !IsNil(o.CodeService) {
-		return true
-	}
-
-	return false
-}
-
 // SetCodeService gets a reference to the given bool and assigns it to the CodeService field.
 func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) SetCodeService(v bool) {
 	o.CodeService = &v
@@ -1422,15 +1053,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetBuildServicesOk
 		return nil, false
 	}
 	return o.BuildServices, true
-}
-
-// IsSetBuildServices returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetBuildServices() bool {
-	if o != nil && !IsNil(o.BuildServices) {
-		return true
-	}
-
-	return false
 }
 
 // SetBuildServices gets a reference to the given bool and assigns it to the BuildServices field.
@@ -1456,15 +1078,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetLoadBalancerSer
 	return o.LoadBalancerServices, true
 }
 
-// IsSetLoadBalancerServices returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetLoadBalancerServices() bool {
-	if o != nil && !IsNil(o.LoadBalancerServices) {
-		return true
-	}
-
-	return false
-}
-
 // SetLoadBalancerServices gets a reference to the given bool and assigns it to the LoadBalancerServices field.
 func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) SetLoadBalancerServices(v bool) {
 	o.LoadBalancerServices = &v
@@ -1486,15 +1099,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetIpamServicesOk(
 		return nil, false
 	}
 	return o.IpamServices, true
-}
-
-// IsSetIpamServices returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetIpamServices() bool {
-	if o != nil && !IsNil(o.IpamServices) {
-		return true
-	}
-
-	return false
 }
 
 // SetIpamServices gets a reference to the given bool and assigns it to the IpamServices field.
@@ -1520,15 +1124,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetApprovalService
 	return o.ApprovalServices, true
 }
 
-// IsSetApprovalServices returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetApprovalServices() bool {
-	if o != nil && !IsNil(o.ApprovalServices) {
-		return true
-	}
-
-	return false
-}
-
 // SetApprovalServices gets a reference to the given bool and assigns it to the ApprovalServices field.
 func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) SetApprovalServices(v bool) {
 	o.ApprovalServices = &v
@@ -1550,15 +1145,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetCmdbServicesOk(
 		return nil, false
 	}
 	return o.CmdbServices, true
-}
-
-// IsSetCmdbServices returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetCmdbServices() bool {
-	if o != nil && !IsNil(o.CmdbServices) {
-		return true
-	}
-
-	return false
 }
 
 // SetCmdbServices gets a reference to the given bool and assigns it to the CmdbServices field.
@@ -1584,15 +1170,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetDeploymentServi
 	return o.DeploymentServices, true
 }
 
-// IsSetDeploymentServices returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetDeploymentServices() bool {
-	if o != nil && !IsNil(o.DeploymentServices) {
-		return true
-	}
-
-	return false
-}
-
 // SetDeploymentServices gets a reference to the given bool and assigns it to the DeploymentServices field.
 func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) SetDeploymentServices(v bool) {
 	o.DeploymentServices = &v
@@ -1614,15 +1191,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetAutomationServi
 		return nil, false
 	}
 	return o.AutomationServices, true
-}
-
-// IsSetAutomationServices returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetAutomationServices() bool {
-	if o != nil && !IsNil(o.AutomationServices) {
-		return true
-	}
-
-	return false
 }
 
 // SetAutomationServices gets a reference to the given bool and assigns it to the AutomationServices field.
@@ -1648,15 +1216,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetServiceDiscover
 	return o.ServiceDiscoveryServices, true
 }
 
-// IsSetServiceDiscoveryServices returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetServiceDiscoveryServices() bool {
-	if o != nil && !IsNil(o.ServiceDiscoveryServices) {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceDiscoveryServices gets a reference to the given bool and assigns it to the ServiceDiscoveryServices field.
 func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) SetServiceDiscoveryServices(v bool) {
 	o.ServiceDiscoveryServices = &v
@@ -1678,15 +1237,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetIdentityService
 		return nil, false
 	}
 	return o.IdentityServices, true
-}
-
-// IsSetIdentityServices returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetIdentityServices() bool {
-	if o != nil && !IsNil(o.IdentityServices) {
-		return true
-	}
-
-	return false
 }
 
 // SetIdentityServices gets a reference to the given bool and assigns it to the IdentityServices field.
@@ -1712,15 +1262,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetTrustServicesOk
 	return o.TrustServices, true
 }
 
-// IsSetTrustServices returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetTrustServices() bool {
-	if o != nil && !IsNil(o.TrustServices) {
-		return true
-	}
-
-	return false
-}
-
 // SetTrustServices gets a reference to the given bool and assigns it to the TrustServices field.
 func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) SetTrustServices(v bool) {
 	o.TrustServices = &v
@@ -1742,15 +1283,6 @@ func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) GetSecurityService
 		return nil, false
 	}
 	return o.SecurityServices, true
-}
-
-// IsSetSecurityServices returns a boolean if a field has been set.
-func (o *GetLicense200ResponseInstalledLicensesInnerFeatures) IsSetSecurityServices() bool {
-	if o != nil && !IsNil(o.SecurityServices) {
-		return true
-	}
-
-	return false
 }
 
 // SetSecurityServices gets a reference to the given bool and assigns it to the SecurityServices field.

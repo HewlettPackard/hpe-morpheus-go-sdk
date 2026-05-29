@@ -74,15 +74,6 @@ func (o *IntegrationSNOWConfigIntegrationConfig) GetServiceNowCustomCmdbMappingO
 	return o.ServiceNowCustomCmdbMapping, true
 }
 
-// IsSetServiceNowCustomCmdbMapping returns a boolean if a field has been set.
-func (o *IntegrationSNOWConfigIntegrationConfig) IsSetServiceNowCustomCmdbMapping() bool {
-	if o != nil && !IsNil(o.ServiceNowCustomCmdbMapping) {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceNowCustomCmdbMapping gets a reference to the given []map[string]interface{} and assigns it to the ServiceNowCustomCmdbMapping field.
 func (o *IntegrationSNOWConfigIntegrationConfig) SetServiceNowCustomCmdbMapping(v []map[string]interface{}) {
 	o.ServiceNowCustomCmdbMapping = v
@@ -104,15 +95,6 @@ func (o *IntegrationSNOWConfigIntegrationConfig) GetServiceNowCmdbClassMappingOk
 		return nil, false
 	}
 	return o.ServiceNowCmdbClassMapping, true
-}
-
-// IsSetServiceNowCmdbClassMapping returns a boolean if a field has been set.
-func (o *IntegrationSNOWConfigIntegrationConfig) IsSetServiceNowCmdbClassMapping() bool {
-	if o != nil && !IsNil(o.ServiceNowCmdbClassMapping) {
-		return true
-	}
-
-	return false
 }
 
 // SetServiceNowCmdbClassMapping gets a reference to the given []map[string]interface{} and assigns it to the ServiceNowCmdbClassMapping field.
@@ -138,15 +120,6 @@ func (o *IntegrationSNOWConfigIntegrationConfig) GetServiceNowCMDBBusinessObject
 	return o.ServiceNowCMDBBusinessObject, true
 }
 
-// IsSetServiceNowCMDBBusinessObject returns a boolean if a field has been set.
-func (o *IntegrationSNOWConfigIntegrationConfig) IsSetServiceNowCMDBBusinessObject() bool {
-	if o != nil && !IsNil(o.ServiceNowCMDBBusinessObject) {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceNowCMDBBusinessObject gets a reference to the given []map[string]interface{} and assigns it to the ServiceNowCMDBBusinessObject field.
 func (o *IntegrationSNOWConfigIntegrationConfig) SetServiceNowCMDBBusinessObject(v []map[string]interface{}) {
 	o.ServiceNowCMDBBusinessObject = v
@@ -170,15 +143,6 @@ func (o *IntegrationSNOWConfigIntegrationConfig) GetIgnoreCertErrorsOk() (*bool,
 	return o.IgnoreCertErrors, true
 }
 
-// IsSetIgnoreCertErrors returns a boolean if a field has been set.
-func (o *IntegrationSNOWConfigIntegrationConfig) IsSetIgnoreCertErrors() bool {
-	if o != nil && !IsNil(o.IgnoreCertErrors) {
-		return true
-	}
-
-	return false
-}
-
 // SetIgnoreCertErrors gets a reference to the given bool and assigns it to the IgnoreCertErrors field.
 func (o *IntegrationSNOWConfigIntegrationConfig) SetIgnoreCertErrors(v bool) {
 	o.IgnoreCertErrors = &v
@@ -200,15 +164,6 @@ func (o *IntegrationSNOWConfigIntegrationConfig) GetCmdbModeOk() (*string, bool)
 		return nil, false
 	}
 	return o.CmdbMode, true
-}
-
-// IsSetCmdbMode returns a boolean if a field has been set.
-func (o *IntegrationSNOWConfigIntegrationConfig) IsSetCmdbMode() bool {
-	if o != nil && !IsNil(o.CmdbMode) {
-		return true
-	}
-
-	return false
 }
 
 // SetCmdbMode gets a reference to the given string and assigns it to the CmdbMode field.

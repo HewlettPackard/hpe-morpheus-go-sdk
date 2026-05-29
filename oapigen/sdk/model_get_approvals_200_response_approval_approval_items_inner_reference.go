@@ -64,15 +64,6 @@ func (o *GetApprovals200ResponseApprovalApprovalItemsInnerReference) GetIdOk() (
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetApprovals200ResponseApprovalApprovalItemsInnerReference) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetApprovals200ResponseApprovalApprovalItemsInnerReference) SetId(v int64) {
 	o.Id = &v
@@ -94,15 +85,6 @@ func (o *GetApprovals200ResponseApprovalApprovalItemsInnerReference) GetTypeOk()
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *GetApprovals200ResponseApprovalApprovalItemsInnerReference) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.
@@ -128,15 +110,6 @@ func (o *GetApprovals200ResponseApprovalApprovalItemsInnerReference) GetNameOk()
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *GetApprovals200ResponseApprovalApprovalItemsInnerReference) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *GetApprovals200ResponseApprovalApprovalItemsInnerReference) SetName(v string) {
 	o.Name = &v
@@ -158,15 +131,6 @@ func (o *GetApprovals200ResponseApprovalApprovalItemsInnerReference) GetDisplayN
 		return nil, false
 	}
 	return o.DisplayName, true
-}
-
-// IsSetDisplayName returns a boolean if a field has been set.
-func (o *GetApprovals200ResponseApprovalApprovalItemsInnerReference) IsSetDisplayName() bool {
-	if o != nil && !IsNil(o.DisplayName) {
-		return true
-	}
-
-	return false
 }
 
 // SetDisplayName gets a reference to the given string and assigns it to the DisplayName field.

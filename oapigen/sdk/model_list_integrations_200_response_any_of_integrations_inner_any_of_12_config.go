@@ -63,15 +63,6 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12Config) GetAppr
 	return o.ApprovalUser, true
 }
 
-// IsSetApprovalUser returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12Config) IsSetApprovalUser() bool {
-	if o != nil && !IsNil(o.ApprovalUser) {
-		return true
-	}
-
-	return false
-}
-
 // SetApprovalUser gets a reference to the given string and assigns it to the ApprovalUser field.
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12Config) SetApprovalUser(v string) {
 	o.ApprovalUser = &v
@@ -93,15 +84,6 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12Config) GetComp
 		return nil, false
 	}
 	return o.Company, true
-}
-
-// IsSetCompany returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12Config) IsSetCompany() bool {
-	if o != nil && !IsNil(o.Company) {
-		return true
-	}
-
-	return false
 }
 
 // SetCompany gets a reference to the given string and assigns it to the Company field.
@@ -128,28 +110,9 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12Config) GetReme
 	return o.RemedyIgnoreSSLErrors.Get(), o.RemedyIgnoreSSLErrors.IsSet()
 }
 
-// IsSetRemedyIgnoreSSLErrors returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12Config) IsSetRemedyIgnoreSSLErrors() bool {
-	if o != nil && o.RemedyIgnoreSSLErrors.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRemedyIgnoreSSLErrors gets a reference to the given NullableString and assigns it to the RemedyIgnoreSSLErrors field.
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12Config) SetRemedyIgnoreSSLErrors(v string) {
 	o.RemedyIgnoreSSLErrors.Set(&v)
-}
-
-// SetRemedyIgnoreSSLErrorsNil sets the value for RemedyIgnoreSSLErrors to be an explicit nil
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12Config) SetRemedyIgnoreSSLErrorsNil() {
-	o.RemedyIgnoreSSLErrors.Set(nil)
-}
-
-// UnsetRemedyIgnoreSSLErrors ensures that no value is present for RemedyIgnoreSSLErrors, not even an explicit nil
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12Config) UnsetRemedyIgnoreSSLErrors() {
-	o.RemedyIgnoreSSLErrors.Unset()
 }
 
 func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12Config) MarshalJSON() ([]byte, error) {

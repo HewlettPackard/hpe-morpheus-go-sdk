@@ -73,15 +73,6 @@ func (o *GetWikiApp200ResponsePage) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetWikiApp200ResponsePage) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetWikiApp200ResponsePage) SetId(v int64) {
 	o.Id = &v
@@ -103,15 +94,6 @@ func (o *GetWikiApp200ResponsePage) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *GetWikiApp200ResponsePage) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -137,15 +119,6 @@ func (o *GetWikiApp200ResponsePage) GetUrlNameOk() (*string, bool) {
 	return o.UrlName, true
 }
 
-// IsSetUrlName returns a boolean if a field has been set.
-func (o *GetWikiApp200ResponsePage) IsSetUrlName() bool {
-	if o != nil && !IsNil(o.UrlName) {
-		return true
-	}
-
-	return false
-}
-
 // SetUrlName gets a reference to the given string and assigns it to the UrlName field.
 func (o *GetWikiApp200ResponsePage) SetUrlName(v string) {
 	o.UrlName = &v
@@ -167,15 +140,6 @@ func (o *GetWikiApp200ResponsePage) GetCategoryOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Category, true
-}
-
-// IsSetCategory returns a boolean if a field has been set.
-func (o *GetWikiApp200ResponsePage) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
-		return true
-	}
-
-	return false
 }
 
 // SetCategory gets a reference to the given string and assigns it to the Category field.
@@ -202,28 +166,9 @@ func (o *GetWikiApp200ResponsePage) GetRefIdOk() (*string, bool) {
 	return o.RefId.Get(), o.RefId.IsSet()
 }
 
-// IsSetRefId returns a boolean if a field has been set.
-func (o *GetWikiApp200ResponsePage) IsSetRefId() bool {
-	if o != nil && o.RefId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRefId gets a reference to the given NullableString and assigns it to the RefId field.
 func (o *GetWikiApp200ResponsePage) SetRefId(v string) {
 	o.RefId.Set(&v)
-}
-
-// SetRefIdNil sets the value for RefId to be an explicit nil
-func (o *GetWikiApp200ResponsePage) SetRefIdNil() {
-	o.RefId.Set(nil)
-}
-
-// UnsetRefId ensures that no value is present for RefId, not even an explicit nil
-func (o *GetWikiApp200ResponsePage) UnsetRefId() {
-	o.RefId.Unset()
 }
 
 // GetRefType returns the RefType field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -245,28 +190,9 @@ func (o *GetWikiApp200ResponsePage) GetRefTypeOk() (*string, bool) {
 	return o.RefType.Get(), o.RefType.IsSet()
 }
 
-// IsSetRefType returns a boolean if a field has been set.
-func (o *GetWikiApp200ResponsePage) IsSetRefType() bool {
-	if o != nil && o.RefType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRefType gets a reference to the given NullableString and assigns it to the RefType field.
 func (o *GetWikiApp200ResponsePage) SetRefType(v string) {
 	o.RefType.Set(&v)
-}
-
-// SetRefTypeNil sets the value for RefType to be an explicit nil
-func (o *GetWikiApp200ResponsePage) SetRefTypeNil() {
-	o.RefType.Set(nil)
-}
-
-// UnsetRefType ensures that no value is present for RefType, not even an explicit nil
-func (o *GetWikiApp200ResponsePage) UnsetRefType() {
-	o.RefType.Unset()
 }
 
 // GetFormat returns the Format field value if set, zero value otherwise.
@@ -285,15 +211,6 @@ func (o *GetWikiApp200ResponsePage) GetFormatOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Format, true
-}
-
-// IsSetFormat returns a boolean if a field has been set.
-func (o *GetWikiApp200ResponsePage) IsSetFormat() bool {
-	if o != nil && !IsNil(o.Format) {
-		return true
-	}
-
-	return false
 }
 
 // SetFormat gets a reference to the given string and assigns it to the Format field.
@@ -319,15 +236,6 @@ func (o *GetWikiApp200ResponsePage) GetContentOk() (*string, bool) {
 	return o.Content, true
 }
 
-// IsSetContent returns a boolean if a field has been set.
-func (o *GetWikiApp200ResponsePage) IsSetContent() bool {
-	if o != nil && !IsNil(o.Content) {
-		return true
-	}
-
-	return false
-}
-
 // SetContent gets a reference to the given string and assigns it to the Content field.
 func (o *GetWikiApp200ResponsePage) SetContent(v string) {
 	o.Content = &v
@@ -349,15 +257,6 @@ func (o *GetWikiApp200ResponsePage) GetCreatedByOk() (*GetWikiApp200ResponsePage
 		return nil, false
 	}
 	return o.CreatedBy, true
-}
-
-// IsSetCreatedBy returns a boolean if a field has been set.
-func (o *GetWikiApp200ResponsePage) IsSetCreatedBy() bool {
-	if o != nil && !IsNil(o.CreatedBy) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreatedBy gets a reference to the given GetWikiApp200ResponsePageCreatedBy and assigns it to the CreatedBy field.
@@ -383,15 +282,6 @@ func (o *GetWikiApp200ResponsePage) GetUpdatedByOk() (*GetWikiApp200ResponsePage
 	return o.UpdatedBy, true
 }
 
-// IsSetUpdatedBy returns a boolean if a field has been set.
-func (o *GetWikiApp200ResponsePage) IsSetUpdatedBy() bool {
-	if o != nil && !IsNil(o.UpdatedBy) {
-		return true
-	}
-
-	return false
-}
-
 // SetUpdatedBy gets a reference to the given GetWikiApp200ResponsePageUpdatedBy and assigns it to the UpdatedBy field.
 func (o *GetWikiApp200ResponsePage) SetUpdatedBy(v GetWikiApp200ResponsePageUpdatedBy) {
 	o.UpdatedBy = &v
@@ -415,15 +305,6 @@ func (o *GetWikiApp200ResponsePage) GetDateCreatedOk() (*time.Time, bool) {
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *GetWikiApp200ResponsePage) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *GetWikiApp200ResponsePage) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -445,15 +326,6 @@ func (o *GetWikiApp200ResponsePage) GetLastUpdatedOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *GetWikiApp200ResponsePage) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.

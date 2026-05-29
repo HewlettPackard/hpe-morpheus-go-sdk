@@ -64,15 +64,6 @@ func (o *NetworkRouterBgpNeighborConfigNsxvCreate) GetRouterIdOk() (*string, boo
 	return o.RouterId, true
 }
 
-// IsSetRouterId returns a boolean if a field has been set.
-func (o *NetworkRouterBgpNeighborConfigNsxvCreate) IsSetRouterId() bool {
-	if o != nil && !IsNil(o.RouterId) {
-		return true
-	}
-
-	return false
-}
-
 // SetRouterId gets a reference to the given string and assigns it to the RouterId field.
 func (o *NetworkRouterBgpNeighborConfigNsxvCreate) SetRouterId(v string) {
 	o.RouterId = &v
@@ -94,15 +85,6 @@ func (o *NetworkRouterBgpNeighborConfigNsxvCreate) GetInterfaceOk() (*string, bo
 		return nil, false
 	}
 	return o.Interface, true
-}
-
-// IsSetInterface returns a boolean if a field has been set.
-func (o *NetworkRouterBgpNeighborConfigNsxvCreate) IsSetInterface() bool {
-	if o != nil && !IsNil(o.Interface) {
-		return true
-	}
-
-	return false
 }
 
 // SetInterface gets a reference to the given string and assigns it to the Interface field.

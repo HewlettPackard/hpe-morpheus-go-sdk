@@ -62,15 +62,6 @@ func (o *ListClusterDeployments200Response) GetDeploymentsOk() ([]ListClusterDep
 	return o.Deployments, true
 }
 
-// IsSetDeployments returns a boolean if a field has been set.
-func (o *ListClusterDeployments200Response) IsSetDeployments() bool {
-	if o != nil && !IsNil(o.Deployments) {
-		return true
-	}
-
-	return false
-}
-
 // SetDeployments gets a reference to the given []ListClusterDeployments200ResponseAllOfDeploymentsInner and assigns it to the Deployments field.
 func (o *ListClusterDeployments200Response) SetDeployments(v []ListClusterDeployments200ResponseAllOfDeploymentsInner) {
 	o.Deployments = v
@@ -92,15 +83,6 @@ func (o *ListClusterDeployments200Response) GetMetaOk() (*ListApprovals200Respon
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListClusterDeployments200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

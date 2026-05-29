@@ -102,15 +102,6 @@ func (o *MigrationCreate) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *MigrationCreate) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *MigrationCreate) SetName(v string) {
 	o.Name = &v
@@ -132,15 +123,6 @@ func (o *MigrationCreate) GetSkippedPrechecksOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.SkippedPrechecks, true
-}
-
-// IsSetSkippedPrechecks returns a boolean if a field has been set.
-func (o *MigrationCreate) IsSetSkippedPrechecks() bool {
-	if o != nil && !IsNil(o.SkippedPrechecks) {
-		return true
-	}
-
-	return false
 }
 
 // SetSkippedPrechecks gets a reference to the given bool and assigns it to the SkippedPrechecks field.
@@ -166,15 +148,6 @@ func (o *MigrationCreate) GetInstallGuestToolsOk() (*bool, bool) {
 	return o.InstallGuestTools, true
 }
 
-// IsSetInstallGuestTools returns a boolean if a field has been set.
-func (o *MigrationCreate) IsSetInstallGuestTools() bool {
-	if o != nil && !IsNil(o.InstallGuestTools) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstallGuestTools gets a reference to the given bool and assigns it to the InstallGuestTools field.
 func (o *MigrationCreate) SetInstallGuestTools(v bool) {
 	o.InstallGuestTools = &v
@@ -196,15 +169,6 @@ func (o *MigrationCreate) GetReInitializeServerOnMigrationOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.ReInitializeServerOnMigration, true
-}
-
-// IsSetReInitializeServerOnMigration returns a boolean if a field has been set.
-func (o *MigrationCreate) IsSetReInitializeServerOnMigration() bool {
-	if o != nil && !IsNil(o.ReInitializeServerOnMigration) {
-		return true
-	}
-
-	return false
 }
 
 // SetReInitializeServerOnMigration gets a reference to the given bool and assigns it to the ReInitializeServerOnMigration field.
@@ -231,28 +195,9 @@ func (o *MigrationCreate) GetLinuxUsernameOk() (*string, bool) {
 	return o.LinuxUsername.Get(), o.LinuxUsername.IsSet()
 }
 
-// IsSetLinuxUsername returns a boolean if a field has been set.
-func (o *MigrationCreate) IsSetLinuxUsername() bool {
-	if o != nil && o.LinuxUsername.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLinuxUsername gets a reference to the given NullableString and assigns it to the LinuxUsername field.
 func (o *MigrationCreate) SetLinuxUsername(v string) {
 	o.LinuxUsername.Set(&v)
-}
-
-// SetLinuxUsernameNil sets the value for LinuxUsername to be an explicit nil
-func (o *MigrationCreate) SetLinuxUsernameNil() {
-	o.LinuxUsername.Set(nil)
-}
-
-// UnsetLinuxUsername ensures that no value is present for LinuxUsername, not even an explicit nil
-func (o *MigrationCreate) UnsetLinuxUsername() {
-	o.LinuxUsername.Unset()
 }
 
 // GetLinuxPassword returns the LinuxPassword field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -274,28 +219,9 @@ func (o *MigrationCreate) GetLinuxPasswordOk() (*string, bool) {
 	return o.LinuxPassword.Get(), o.LinuxPassword.IsSet()
 }
 
-// IsSetLinuxPassword returns a boolean if a field has been set.
-func (o *MigrationCreate) IsSetLinuxPassword() bool {
-	if o != nil && o.LinuxPassword.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLinuxPassword gets a reference to the given NullableString and assigns it to the LinuxPassword field.
 func (o *MigrationCreate) SetLinuxPassword(v string) {
 	o.LinuxPassword.Set(&v)
-}
-
-// SetLinuxPasswordNil sets the value for LinuxPassword to be an explicit nil
-func (o *MigrationCreate) SetLinuxPasswordNil() {
-	o.LinuxPassword.Set(nil)
-}
-
-// UnsetLinuxPassword ensures that no value is present for LinuxPassword, not even an explicit nil
-func (o *MigrationCreate) UnsetLinuxPassword() {
-	o.LinuxPassword.Unset()
 }
 
 // GetLinuxKeyPair returns the LinuxKeyPair field value if set, zero value otherwise.
@@ -314,15 +240,6 @@ func (o *MigrationCreate) GetLinuxKeyPairOk() (*MigrationCreateLinuxKeyPair, boo
 		return nil, false
 	}
 	return o.LinuxKeyPair, true
-}
-
-// IsSetLinuxKeyPair returns a boolean if a field has been set.
-func (o *MigrationCreate) IsSetLinuxKeyPair() bool {
-	if o != nil && !IsNil(o.LinuxKeyPair) {
-		return true
-	}
-
-	return false
 }
 
 // SetLinuxKeyPair gets a reference to the given MigrationCreateLinuxKeyPair and assigns it to the LinuxKeyPair field.
@@ -349,28 +266,9 @@ func (o *MigrationCreate) GetWindowsUsernameOk() (*string, bool) {
 	return o.WindowsUsername.Get(), o.WindowsUsername.IsSet()
 }
 
-// IsSetWindowsUsername returns a boolean if a field has been set.
-func (o *MigrationCreate) IsSetWindowsUsername() bool {
-	if o != nil && o.WindowsUsername.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetWindowsUsername gets a reference to the given NullableString and assigns it to the WindowsUsername field.
 func (o *MigrationCreate) SetWindowsUsername(v string) {
 	o.WindowsUsername.Set(&v)
-}
-
-// SetWindowsUsernameNil sets the value for WindowsUsername to be an explicit nil
-func (o *MigrationCreate) SetWindowsUsernameNil() {
-	o.WindowsUsername.Set(nil)
-}
-
-// UnsetWindowsUsername ensures that no value is present for WindowsUsername, not even an explicit nil
-func (o *MigrationCreate) UnsetWindowsUsername() {
-	o.WindowsUsername.Unset()
 }
 
 // GetWindowsPassword returns the WindowsPassword field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -392,28 +290,9 @@ func (o *MigrationCreate) GetWindowsPasswordOk() (*string, bool) {
 	return o.WindowsPassword.Get(), o.WindowsPassword.IsSet()
 }
 
-// IsSetWindowsPassword returns a boolean if a field has been set.
-func (o *MigrationCreate) IsSetWindowsPassword() bool {
-	if o != nil && o.WindowsPassword.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetWindowsPassword gets a reference to the given NullableString and assigns it to the WindowsPassword field.
 func (o *MigrationCreate) SetWindowsPassword(v string) {
 	o.WindowsPassword.Set(&v)
-}
-
-// SetWindowsPasswordNil sets the value for WindowsPassword to be an explicit nil
-func (o *MigrationCreate) SetWindowsPasswordNil() {
-	o.WindowsPassword.Set(nil)
-}
-
-// UnsetWindowsPassword ensures that no value is present for WindowsPassword, not even an explicit nil
-func (o *MigrationCreate) UnsetWindowsPassword() {
-	o.WindowsPassword.Unset()
 }
 
 // GetSourceCloudId returns the SourceCloudId field value if set, zero value otherwise.
@@ -432,15 +311,6 @@ func (o *MigrationCreate) GetSourceCloudIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.SourceCloudId, true
-}
-
-// IsSetSourceCloudId returns a boolean if a field has been set.
-func (o *MigrationCreate) IsSetSourceCloudId() bool {
-	if o != nil && !IsNil(o.SourceCloudId) {
-		return true
-	}
-
-	return false
 }
 
 // SetSourceCloudId gets a reference to the given int64 and assigns it to the SourceCloudId field.
@@ -466,15 +336,6 @@ func (o *MigrationCreate) GetTargetCloudIdOk() (*int64, bool) {
 	return o.TargetCloudId, true
 }
 
-// IsSetTargetCloudId returns a boolean if a field has been set.
-func (o *MigrationCreate) IsSetTargetCloudId() bool {
-	if o != nil && !IsNil(o.TargetCloudId) {
-		return true
-	}
-
-	return false
-}
-
 // SetTargetCloudId gets a reference to the given int64 and assigns it to the TargetCloudId field.
 func (o *MigrationCreate) SetTargetCloudId(v int64) {
 	o.TargetCloudId = &v
@@ -496,15 +357,6 @@ func (o *MigrationCreate) GetTargetGroupIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.TargetGroupId, true
-}
-
-// IsSetTargetGroupId returns a boolean if a field has been set.
-func (o *MigrationCreate) IsSetTargetGroupId() bool {
-	if o != nil && !IsNil(o.TargetGroupId) {
-		return true
-	}
-
-	return false
 }
 
 // SetTargetGroupId gets a reference to the given int64 and assigns it to the TargetGroupId field.
@@ -530,15 +382,6 @@ func (o *MigrationCreate) GetTargetPoolIdOk() (*MigrationCreateTargetPoolId, boo
 	return o.TargetPoolId, true
 }
 
-// IsSetTargetPoolId returns a boolean if a field has been set.
-func (o *MigrationCreate) IsSetTargetPoolId() bool {
-	if o != nil && !IsNil(o.TargetPoolId) {
-		return true
-	}
-
-	return false
-}
-
 // SetTargetPoolId gets a reference to the given MigrationCreateTargetPoolId and assigns it to the TargetPoolId field.
 func (o *MigrationCreate) SetTargetPoolId(v MigrationCreateTargetPoolId) {
 	o.TargetPoolId = &v
@@ -560,15 +403,6 @@ func (o *MigrationCreate) GetSourceServerIdsOk() ([]int64, bool) {
 		return nil, false
 	}
 	return o.SourceServerIds, true
-}
-
-// IsSetSourceServerIds returns a boolean if a field has been set.
-func (o *MigrationCreate) IsSetSourceServerIds() bool {
-	if o != nil && !IsNil(o.SourceServerIds) {
-		return true
-	}
-
-	return false
 }
 
 // SetSourceServerIds gets a reference to the given []int64 and assigns it to the SourceServerIds field.
@@ -594,15 +428,6 @@ func (o *MigrationCreate) GetDatastoresOk() ([]MigrationCreateDatastoresInner, b
 	return o.Datastores, true
 }
 
-// IsSetDatastores returns a boolean if a field has been set.
-func (o *MigrationCreate) IsSetDatastores() bool {
-	if o != nil && !IsNil(o.Datastores) {
-		return true
-	}
-
-	return false
-}
-
 // SetDatastores gets a reference to the given []MigrationCreateDatastoresInner and assigns it to the Datastores field.
 func (o *MigrationCreate) SetDatastores(v []MigrationCreateDatastoresInner) {
 	o.Datastores = v
@@ -624,15 +449,6 @@ func (o *MigrationCreate) GetNetworksOk() ([]MigrationCreateNetworksInner, bool)
 		return nil, false
 	}
 	return o.Networks, true
-}
-
-// IsSetNetworks returns a boolean if a field has been set.
-func (o *MigrationCreate) IsSetNetworks() bool {
-	if o != nil && !IsNil(o.Networks) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworks gets a reference to the given []MigrationCreateNetworksInner and assigns it to the Networks field.

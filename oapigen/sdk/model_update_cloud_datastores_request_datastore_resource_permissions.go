@@ -76,15 +76,6 @@ func (o *UpdateCloudDatastoresRequestDatastoreResourcePermissions) GetAllOk() (*
 	return o.All, true
 }
 
-// IsSetAll returns a boolean if a field has been set.
-func (o *UpdateCloudDatastoresRequestDatastoreResourcePermissions) IsSetAll() bool {
-	if o != nil && !IsNil(o.All) {
-		return true
-	}
-
-	return false
-}
-
 // SetAll gets a reference to the given bool and assigns it to the All field.
 func (o *UpdateCloudDatastoresRequestDatastoreResourcePermissions) SetAll(v bool) {
 	o.All = &v
@@ -106,15 +97,6 @@ func (o *UpdateCloudDatastoresRequestDatastoreResourcePermissions) GetSitesOk() 
 		return nil, false
 	}
 	return o.Sites, true
-}
-
-// IsSetSites returns a boolean if a field has been set.
-func (o *UpdateCloudDatastoresRequestDatastoreResourcePermissions) IsSetSites() bool {
-	if o != nil && !IsNil(o.Sites) {
-		return true
-	}
-
-	return false
 }
 
 // SetSites gets a reference to the given []UpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner and assigns it to the Sites field.
@@ -140,15 +122,6 @@ func (o *UpdateCloudDatastoresRequestDatastoreResourcePermissions) GetAllPlansOk
 	return o.AllPlans, true
 }
 
-// IsSetAllPlans returns a boolean if a field has been set.
-func (o *UpdateCloudDatastoresRequestDatastoreResourcePermissions) IsSetAllPlans() bool {
-	if o != nil && !IsNil(o.AllPlans) {
-		return true
-	}
-
-	return false
-}
-
 // SetAllPlans gets a reference to the given bool and assigns it to the AllPlans field.
 func (o *UpdateCloudDatastoresRequestDatastoreResourcePermissions) SetAllPlans(v bool) {
 	o.AllPlans = &v
@@ -170,15 +143,6 @@ func (o *UpdateCloudDatastoresRequestDatastoreResourcePermissions) GetPlansOk() 
 		return nil, false
 	}
 	return o.Plans, true
-}
-
-// IsSetPlans returns a boolean if a field has been set.
-func (o *UpdateCloudDatastoresRequestDatastoreResourcePermissions) IsSetPlans() bool {
-	if o != nil && !IsNil(o.Plans) {
-		return true
-	}
-
-	return false
 }
 
 // SetPlans gets a reference to the given []UpdateCloudDatastoresRequestDatastoreResourcePermissionsPlansInner and assigns it to the Plans field.

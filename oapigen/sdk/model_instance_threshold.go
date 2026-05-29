@@ -85,15 +85,6 @@ func (o *InstanceThreshold) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *InstanceThreshold) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *InstanceThreshold) SetId(v int64) {
 	o.Id = &v
@@ -115,15 +106,6 @@ func (o *InstanceThreshold) GetAutoUpOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.AutoUp, true
-}
-
-// IsSetAutoUp returns a boolean if a field has been set.
-func (o *InstanceThreshold) IsSetAutoUp() bool {
-	if o != nil && !IsNil(o.AutoUp) {
-		return true
-	}
-
-	return false
 }
 
 // SetAutoUp gets a reference to the given bool and assigns it to the AutoUp field.
@@ -149,15 +131,6 @@ func (o *InstanceThreshold) GetAutoDownOk() (*bool, bool) {
 	return o.AutoDown, true
 }
 
-// IsSetAutoDown returns a boolean if a field has been set.
-func (o *InstanceThreshold) IsSetAutoDown() bool {
-	if o != nil && !IsNil(o.AutoDown) {
-		return true
-	}
-
-	return false
-}
-
 // SetAutoDown gets a reference to the given bool and assigns it to the AutoDown field.
 func (o *InstanceThreshold) SetAutoDown(v bool) {
 	o.AutoDown = &v
@@ -179,15 +152,6 @@ func (o *InstanceThreshold) GetMinCountOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.MinCount, true
-}
-
-// IsSetMinCount returns a boolean if a field has been set.
-func (o *InstanceThreshold) IsSetMinCount() bool {
-	if o != nil && !IsNil(o.MinCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetMinCount gets a reference to the given int64 and assigns it to the MinCount field.
@@ -213,15 +177,6 @@ func (o *InstanceThreshold) GetMaxCountOk() (*int64, bool) {
 	return o.MaxCount, true
 }
 
-// IsSetMaxCount returns a boolean if a field has been set.
-func (o *InstanceThreshold) IsSetMaxCount() bool {
-	if o != nil && !IsNil(o.MaxCount) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxCount gets a reference to the given int64 and assigns it to the MaxCount field.
 func (o *InstanceThreshold) SetMaxCount(v int64) {
 	o.MaxCount = &v
@@ -243,15 +198,6 @@ func (o *InstanceThreshold) GetScaleIncrementOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.ScaleIncrement, true
-}
-
-// IsSetScaleIncrement returns a boolean if a field has been set.
-func (o *InstanceThreshold) IsSetScaleIncrement() bool {
-	if o != nil && !IsNil(o.ScaleIncrement) {
-		return true
-	}
-
-	return false
 }
 
 // SetScaleIncrement gets a reference to the given int64 and assigns it to the ScaleIncrement field.
@@ -277,15 +223,6 @@ func (o *InstanceThreshold) GetCpuEnabledOk() (*bool, bool) {
 	return o.CpuEnabled, true
 }
 
-// IsSetCpuEnabled returns a boolean if a field has been set.
-func (o *InstanceThreshold) IsSetCpuEnabled() bool {
-	if o != nil && !IsNil(o.CpuEnabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuEnabled gets a reference to the given bool and assigns it to the CpuEnabled field.
 func (o *InstanceThreshold) SetCpuEnabled(v bool) {
 	o.CpuEnabled = &v
@@ -307,15 +244,6 @@ func (o *InstanceThreshold) GetMinCpuOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.MinCpu, true
-}
-
-// IsSetMinCpu returns a boolean if a field has been set.
-func (o *InstanceThreshold) IsSetMinCpu() bool {
-	if o != nil && !IsNil(o.MinCpu) {
-		return true
-	}
-
-	return false
 }
 
 // SetMinCpu gets a reference to the given int64 and assigns it to the MinCpu field.
@@ -341,15 +269,6 @@ func (o *InstanceThreshold) GetMaxCpuOk() (*int64, bool) {
 	return o.MaxCpu, true
 }
 
-// IsSetMaxCpu returns a boolean if a field has been set.
-func (o *InstanceThreshold) IsSetMaxCpu() bool {
-	if o != nil && !IsNil(o.MaxCpu) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxCpu gets a reference to the given int64 and assigns it to the MaxCpu field.
 func (o *InstanceThreshold) SetMaxCpu(v int64) {
 	o.MaxCpu = &v
@@ -371,15 +290,6 @@ func (o *InstanceThreshold) GetMemoryEnabledOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.MemoryEnabled, true
-}
-
-// IsSetMemoryEnabled returns a boolean if a field has been set.
-func (o *InstanceThreshold) IsSetMemoryEnabled() bool {
-	if o != nil && !IsNil(o.MemoryEnabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetMemoryEnabled gets a reference to the given bool and assigns it to the MemoryEnabled field.
@@ -405,15 +315,6 @@ func (o *InstanceThreshold) GetMinMemoryOk() (*int64, bool) {
 	return o.MinMemory, true
 }
 
-// IsSetMinMemory returns a boolean if a field has been set.
-func (o *InstanceThreshold) IsSetMinMemory() bool {
-	if o != nil && !IsNil(o.MinMemory) {
-		return true
-	}
-
-	return false
-}
-
 // SetMinMemory gets a reference to the given int64 and assigns it to the MinMemory field.
 func (o *InstanceThreshold) SetMinMemory(v int64) {
 	o.MinMemory = &v
@@ -435,15 +336,6 @@ func (o *InstanceThreshold) GetMaxMemoryOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.MaxMemory, true
-}
-
-// IsSetMaxMemory returns a boolean if a field has been set.
-func (o *InstanceThreshold) IsSetMaxMemory() bool {
-	if o != nil && !IsNil(o.MaxMemory) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxMemory gets a reference to the given int64 and assigns it to the MaxMemory field.
@@ -469,15 +361,6 @@ func (o *InstanceThreshold) GetDiskEnabledOk() (*bool, bool) {
 	return o.DiskEnabled, true
 }
 
-// IsSetDiskEnabled returns a boolean if a field has been set.
-func (o *InstanceThreshold) IsSetDiskEnabled() bool {
-	if o != nil && !IsNil(o.DiskEnabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetDiskEnabled gets a reference to the given bool and assigns it to the DiskEnabled field.
 func (o *InstanceThreshold) SetDiskEnabled(v bool) {
 	o.DiskEnabled = &v
@@ -501,15 +384,6 @@ func (o *InstanceThreshold) GetMinDiskOk() (*int64, bool) {
 	return o.MinDisk, true
 }
 
-// IsSetMinDisk returns a boolean if a field has been set.
-func (o *InstanceThreshold) IsSetMinDisk() bool {
-	if o != nil && !IsNil(o.MinDisk) {
-		return true
-	}
-
-	return false
-}
-
 // SetMinDisk gets a reference to the given int64 and assigns it to the MinDisk field.
 func (o *InstanceThreshold) SetMinDisk(v int64) {
 	o.MinDisk = &v
@@ -531,15 +405,6 @@ func (o *InstanceThreshold) GetMaxDiskOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.MaxDisk, true
-}
-
-// IsSetMaxDisk returns a boolean if a field has been set.
-func (o *InstanceThreshold) IsSetMaxDisk() bool {
-	if o != nil && !IsNil(o.MaxDisk) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxDisk gets a reference to the given int64 and assigns it to the MaxDisk field.
@@ -566,28 +431,9 @@ func (o *InstanceThreshold) GetMinNetworkOk() (*string, bool) {
 	return o.MinNetwork.Get(), o.MinNetwork.IsSet()
 }
 
-// IsSetMinNetwork returns a boolean if a field has been set.
-func (o *InstanceThreshold) IsSetMinNetwork() bool {
-	if o != nil && o.MinNetwork.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMinNetwork gets a reference to the given NullableString and assigns it to the MinNetwork field.
 func (o *InstanceThreshold) SetMinNetwork(v string) {
 	o.MinNetwork.Set(&v)
-}
-
-// SetMinNetworkNil sets the value for MinNetwork to be an explicit nil
-func (o *InstanceThreshold) SetMinNetworkNil() {
-	o.MinNetwork.Set(nil)
-}
-
-// UnsetMinNetwork ensures that no value is present for MinNetwork, not even an explicit nil
-func (o *InstanceThreshold) UnsetMinNetwork() {
-	o.MinNetwork.Unset()
 }
 
 // GetNetworkEnabled returns the NetworkEnabled field value if set, zero value otherwise.
@@ -606,15 +452,6 @@ func (o *InstanceThreshold) GetNetworkEnabledOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.NetworkEnabled, true
-}
-
-// IsSetNetworkEnabled returns a boolean if a field has been set.
-func (o *InstanceThreshold) IsSetNetworkEnabled() bool {
-	if o != nil && !IsNil(o.NetworkEnabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkEnabled gets a reference to the given bool and assigns it to the NetworkEnabled field.
@@ -638,15 +475,6 @@ func (o *InstanceThreshold) GetIopsEnabledOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.IopsEnabled, true
-}
-
-// IsSetIopsEnabled returns a boolean if a field has been set.
-func (o *InstanceThreshold) IsSetIopsEnabled() bool {
-	if o != nil && !IsNil(o.IopsEnabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetIopsEnabled gets a reference to the given bool and assigns it to the IopsEnabled field.
@@ -673,28 +501,9 @@ func (o *InstanceThreshold) GetMinIopsOk() (*string, bool) {
 	return o.MinIops.Get(), o.MinIops.IsSet()
 }
 
-// IsSetMinIops returns a boolean if a field has been set.
-func (o *InstanceThreshold) IsSetMinIops() bool {
-	if o != nil && o.MinIops.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMinIops gets a reference to the given NullableString and assigns it to the MinIops field.
 func (o *InstanceThreshold) SetMinIops(v string) {
 	o.MinIops.Set(&v)
-}
-
-// SetMinIopsNil sets the value for MinIops to be an explicit nil
-func (o *InstanceThreshold) SetMinIopsNil() {
-	o.MinIops.Set(nil)
-}
-
-// UnsetMinIops ensures that no value is present for MinIops, not even an explicit nil
-func (o *InstanceThreshold) UnsetMinIops() {
-	o.MinIops.Unset()
 }
 
 // GetMaxIops returns the MaxIops field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -716,28 +525,9 @@ func (o *InstanceThreshold) GetMaxIopsOk() (*string, bool) {
 	return o.MaxIops.Get(), o.MaxIops.IsSet()
 }
 
-// IsSetMaxIops returns a boolean if a field has been set.
-func (o *InstanceThreshold) IsSetMaxIops() bool {
-	if o != nil && o.MaxIops.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxIops gets a reference to the given NullableString and assigns it to the MaxIops field.
 func (o *InstanceThreshold) SetMaxIops(v string) {
 	o.MaxIops.Set(&v)
-}
-
-// SetMaxIopsNil sets the value for MaxIops to be an explicit nil
-func (o *InstanceThreshold) SetMaxIopsNil() {
-	o.MaxIops.Set(nil)
-}
-
-// UnsetMaxIops ensures that no value is present for MaxIops, not even an explicit nil
-func (o *InstanceThreshold) UnsetMaxIops() {
-	o.MaxIops.Unset()
 }
 
 // GetComment returns the Comment field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -759,28 +549,9 @@ func (o *InstanceThreshold) GetCommentOk() (*string, bool) {
 	return o.Comment.Get(), o.Comment.IsSet()
 }
 
-// IsSetComment returns a boolean if a field has been set.
-func (o *InstanceThreshold) IsSetComment() bool {
-	if o != nil && o.Comment.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetComment gets a reference to the given NullableString and assigns it to the Comment field.
 func (o *InstanceThreshold) SetComment(v string) {
 	o.Comment.Set(&v)
-}
-
-// SetCommentNil sets the value for Comment to be an explicit nil
-func (o *InstanceThreshold) SetCommentNil() {
-	o.Comment.Set(nil)
-}
-
-// UnsetComment ensures that no value is present for Comment, not even an explicit nil
-func (o *InstanceThreshold) UnsetComment() {
-	o.Comment.Unset()
 }
 
 // GetZoneId returns the ZoneId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -802,28 +573,9 @@ func (o *InstanceThreshold) GetZoneIdOk() (*int64, bool) {
 	return o.ZoneId.Get(), o.ZoneId.IsSet()
 }
 
-// IsSetZoneId returns a boolean if a field has been set.
-func (o *InstanceThreshold) IsSetZoneId() bool {
-	if o != nil && o.ZoneId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetZoneId gets a reference to the given NullableInt64 and assigns it to the ZoneId field.
 func (o *InstanceThreshold) SetZoneId(v int64) {
 	o.ZoneId.Set(&v)
-}
-
-// SetZoneIdNil sets the value for ZoneId to be an explicit nil
-func (o *InstanceThreshold) SetZoneIdNil() {
-	o.ZoneId.Set(nil)
-}
-
-// UnsetZoneId ensures that no value is present for ZoneId, not even an explicit nil
-func (o *InstanceThreshold) UnsetZoneId() {
-	o.ZoneId.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -842,15 +594,6 @@ func (o *InstanceThreshold) GetDateCreatedOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.DateCreated, true
-}
-
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *InstanceThreshold) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
@@ -874,15 +617,6 @@ func (o *InstanceThreshold) GetLastUpdatedOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *InstanceThreshold) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.

@@ -61,15 +61,6 @@ func (o *UpdateClusterNamespaceRequestNamespacePermissions) GetResourcePermissio
 	return o.ResourcePermissions, true
 }
 
-// IsSetResourcePermissions returns a boolean if a field has been set.
-func (o *UpdateClusterNamespaceRequestNamespacePermissions) IsSetResourcePermissions() bool {
-	if o != nil && !IsNil(o.ResourcePermissions) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourcePermissions gets a reference to the given UpdateClusterNamespaceRequestNamespacePermissionsResourcePermissions and assigns it to the ResourcePermissions field.
 func (o *UpdateClusterNamespaceRequestNamespacePermissions) SetResourcePermissions(v UpdateClusterNamespaceRequestNamespacePermissionsResourcePermissions) {
 	o.ResourcePermissions = &v

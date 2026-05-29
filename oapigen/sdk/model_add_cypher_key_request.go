@@ -63,15 +63,6 @@ func (o *AddCypherKeyRequest) GetTtlOk() (*AddCypherKeyRequestTtl, bool) {
 	return o.Ttl, true
 }
 
-// IsSetTtl returns a boolean if a field has been set.
-func (o *AddCypherKeyRequest) IsSetTtl() bool {
-	if o != nil && !IsNil(o.Ttl) {
-		return true
-	}
-
-	return false
-}
-
 // SetTtl gets a reference to the given AddCypherKeyRequestTtl and assigns it to the Ttl field.
 func (o *AddCypherKeyRequest) SetTtl(v AddCypherKeyRequestTtl) {
 	o.Ttl = &v
@@ -93,15 +84,6 @@ func (o *AddCypherKeyRequest) GetValueOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Value, true
-}
-
-// IsSetValue returns a boolean if a field has been set.
-func (o *AddCypherKeyRequest) IsSetValue() bool {
-	if o != nil && !IsNil(o.Value) {
-		return true
-	}
-
-	return false
 }
 
 // SetValue gets a reference to the given string and assigns it to the Value field.

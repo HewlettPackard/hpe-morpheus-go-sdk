@@ -63,15 +63,6 @@ func (o *GetInstanceContainers200ResponseAllOfContainersInnerContainerTypeSet) G
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetInstanceContainers200ResponseAllOfContainersInnerContainerTypeSet) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int32 and assigns it to the Id field.
 func (o *GetInstanceContainers200ResponseAllOfContainersInnerContainerTypeSet) SetId(v int32) {
 	o.Id = &v
@@ -95,15 +86,6 @@ func (o *GetInstanceContainers200ResponseAllOfContainersInnerContainerTypeSet) G
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *GetInstanceContainers200ResponseAllOfContainersInnerContainerTypeSet) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *GetInstanceContainers200ResponseAllOfContainersInnerContainerTypeSet) SetCode(v string) {
 	o.Code = &v
@@ -125,15 +107,6 @@ func (o *GetInstanceContainers200ResponseAllOfContainersInnerContainerTypeSet) G
 		return nil, false
 	}
 	return o.Category, true
-}
-
-// IsSetCategory returns a boolean if a field has been set.
-func (o *GetInstanceContainers200ResponseAllOfContainersInnerContainerTypeSet) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
-		return true
-	}
-
-	return false
 }
 
 // SetCategory gets a reference to the given string and assigns it to the Category field.

@@ -64,15 +64,6 @@ func (o *AddRoles200ResponseAllOfTaskSetPermissionsInner) GetIdOk() (*int64, boo
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *AddRoles200ResponseAllOfTaskSetPermissionsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *AddRoles200ResponseAllOfTaskSetPermissionsInner) SetId(v int64) {
 	o.Id = &v
@@ -97,28 +88,9 @@ func (o *AddRoles200ResponseAllOfTaskSetPermissionsInner) GetCodeOk() (*string, 
 	return o.Code.Get(), o.Code.IsSet()
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *AddRoles200ResponseAllOfTaskSetPermissionsInner) IsSetCode() bool {
-	if o != nil && o.Code.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *AddRoles200ResponseAllOfTaskSetPermissionsInner) SetCode(v string) {
 	o.Code.Set(&v)
-}
-
-// SetCodeNil sets the value for Code to be an explicit nil
-func (o *AddRoles200ResponseAllOfTaskSetPermissionsInner) SetCodeNil() {
-	o.Code.Set(nil)
-}
-
-// UnsetCode ensures that no value is present for Code, not even an explicit nil
-func (o *AddRoles200ResponseAllOfTaskSetPermissionsInner) UnsetCode() {
-	o.Code.Unset()
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -137,15 +109,6 @@ func (o *AddRoles200ResponseAllOfTaskSetPermissionsInner) GetNameOk() (*string, 
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *AddRoles200ResponseAllOfTaskSetPermissionsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -169,15 +132,6 @@ func (o *AddRoles200ResponseAllOfTaskSetPermissionsInner) GetAccessOk() (*string
 		return nil, false
 	}
 	return o.Access, true
-}
-
-// IsSetAccess returns a boolean if a field has been set.
-func (o *AddRoles200ResponseAllOfTaskSetPermissionsInner) IsSetAccess() bool {
-	if o != nil && !IsNil(o.Access) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccess gets a reference to the given string and assigns it to the Access field.

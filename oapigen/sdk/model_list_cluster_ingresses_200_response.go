@@ -62,15 +62,6 @@ func (o *ListClusterIngresses200Response) GetIngressesOk() ([]ListClusterIngress
 	return o.Ingresses, true
 }
 
-// IsSetIngresses returns a boolean if a field has been set.
-func (o *ListClusterIngresses200Response) IsSetIngresses() bool {
-	if o != nil && !IsNil(o.Ingresses) {
-		return true
-	}
-
-	return false
-}
-
 // SetIngresses gets a reference to the given []ListClusterIngresses200ResponseAllOfIngressesInner and assigns it to the Ingresses field.
 func (o *ListClusterIngresses200Response) SetIngresses(v []ListClusterIngresses200ResponseAllOfIngressesInner) {
 	o.Ingresses = v
@@ -92,15 +83,6 @@ func (o *ListClusterIngresses200Response) GetMetaOk() (*ListApprovals200Response
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListClusterIngresses200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

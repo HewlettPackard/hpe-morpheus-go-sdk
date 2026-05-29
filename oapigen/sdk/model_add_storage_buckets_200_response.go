@@ -62,15 +62,6 @@ func (o *AddStorageBuckets200Response) GetStorageBucketOk() (*AddStorageBuckets2
 	return o.StorageBucket, true
 }
 
-// IsSetStorageBucket returns a boolean if a field has been set.
-func (o *AddStorageBuckets200Response) IsSetStorageBucket() bool {
-	if o != nil && !IsNil(o.StorageBucket) {
-		return true
-	}
-
-	return false
-}
-
 // SetStorageBucket gets a reference to the given AddStorageBuckets200ResponseAllOfStorageBucket and assigns it to the StorageBucket field.
 func (o *AddStorageBuckets200Response) SetStorageBucket(v AddStorageBuckets200ResponseAllOfStorageBucket) {
 	o.StorageBucket = &v
@@ -92,15 +83,6 @@ func (o *AddStorageBuckets200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *AddStorageBuckets200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

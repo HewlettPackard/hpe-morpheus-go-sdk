@@ -95,15 +95,6 @@ func (o *CreateNetworkRouterFirewallRuleRequestRule) GetEnabledOk() (*bool, bool
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *CreateNetworkRouterFirewallRuleRequestRule) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *CreateNetworkRouterFirewallRuleRequestRule) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -125,15 +116,6 @@ func (o *CreateNetworkRouterFirewallRuleRequestRule) GetPriorityOk() (*int64, bo
 		return nil, false
 	}
 	return o.Priority, true
-}
-
-// IsSetPriority returns a boolean if a field has been set.
-func (o *CreateNetworkRouterFirewallRuleRequestRule) IsSetPriority() bool {
-	if o != nil && !IsNil(o.Priority) {
-		return true
-	}
-
-	return false
 }
 
 // SetPriority gets a reference to the given int64 and assigns it to the Priority field.

@@ -115,28 +115,9 @@ func (o *PushCheck) GetDescriptionOk() (*string, bool) {
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *PushCheck) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *PushCheck) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *PushCheck) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *PushCheck) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetCheckInterval returns the CheckInterval field value if set, zero value otherwise.
@@ -155,15 +136,6 @@ func (o *PushCheck) GetCheckIntervalOk() (*int32, bool) {
 		return nil, false
 	}
 	return o.CheckInterval, true
-}
-
-// IsSetCheckInterval returns a boolean if a field has been set.
-func (o *PushCheck) IsSetCheckInterval() bool {
-	if o != nil && !IsNil(o.CheckInterval) {
-		return true
-	}
-
-	return false
 }
 
 // SetCheckInterval gets a reference to the given int32 and assigns it to the CheckInterval field.
@@ -189,15 +161,6 @@ func (o *PushCheck) GetInUptimeOk() (*bool, bool) {
 	return o.InUptime, true
 }
 
-// IsSetInUptime returns a boolean if a field has been set.
-func (o *PushCheck) IsSetInUptime() bool {
-	if o != nil && !IsNil(o.InUptime) {
-		return true
-	}
-
-	return false
-}
-
 // SetInUptime gets a reference to the given bool and assigns it to the InUptime field.
 func (o *PushCheck) SetInUptime(v bool) {
 	o.InUptime = &v
@@ -219,15 +182,6 @@ func (o *PushCheck) GetActiveOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Active, true
-}
-
-// IsSetActive returns a boolean if a field has been set.
-func (o *PushCheck) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
 }
 
 // SetActive gets a reference to the given bool and assigns it to the Active field.
@@ -253,15 +207,6 @@ func (o *PushCheck) GetSeverityOk() (*string, bool) {
 	return o.Severity, true
 }
 
-// IsSetSeverity returns a boolean if a field has been set.
-func (o *PushCheck) IsSetSeverity() bool {
-	if o != nil && !IsNil(o.Severity) {
-		return true
-	}
-
-	return false
-}
-
 // SetSeverity gets a reference to the given string and assigns it to the Severity field.
 func (o *PushCheck) SetSeverity(v string) {
 	o.Severity = &v
@@ -283,15 +228,6 @@ func (o *PushCheck) GetCheckTypeOk() (*PushCheckAllOfCheckType, bool) {
 		return nil, false
 	}
 	return o.CheckType, true
-}
-
-// IsSetCheckType returns a boolean if a field has been set.
-func (o *PushCheck) IsSetCheckType() bool {
-	if o != nil && !IsNil(o.CheckType) {
-		return true
-	}
-
-	return false
 }
 
 // SetCheckType gets a reference to the given PushCheckAllOfCheckType and assigns it to the CheckType field.

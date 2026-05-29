@@ -62,15 +62,6 @@ func (o *ListIntegrationInventory200Response) GetInventoryOk() ([]ListIntegratio
 	return o.Inventory, true
 }
 
-// IsSetInventory returns a boolean if a field has been set.
-func (o *ListIntegrationInventory200Response) IsSetInventory() bool {
-	if o != nil && !IsNil(o.Inventory) {
-		return true
-	}
-
-	return false
-}
-
 // SetInventory gets a reference to the given []ListIntegrationInventory200ResponseAllOfInventoryInner and assigns it to the Inventory field.
 func (o *ListIntegrationInventory200Response) SetInventory(v []ListIntegrationInventory200ResponseAllOfInventoryInner) {
 	o.Inventory = v
@@ -92,15 +83,6 @@ func (o *ListIntegrationInventory200Response) GetMetaOk() (*ListApprovals200Resp
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListIntegrationInventory200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

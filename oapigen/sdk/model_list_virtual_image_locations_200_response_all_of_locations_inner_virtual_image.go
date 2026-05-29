@@ -64,15 +64,6 @@ func (o *ListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage) Ge
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage) SetId(v int64) {
 	o.Id = &v
@@ -94,15 +85,6 @@ func (o *ListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage) Ge
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *ListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -128,15 +110,6 @@ func (o *ListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage) Ge
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage) SetName(v string) {
 	o.Name = &v
@@ -158,15 +131,6 @@ func (o *ListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage) Ge
 		return nil, false
 	}
 	return o.ImageType, true
-}
-
-// IsSetImageType returns a boolean if a field has been set.
-func (o *ListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage) IsSetImageType() bool {
-	if o != nil && !IsNil(o.ImageType) {
-		return true
-	}
-
-	return false
 }
 
 // SetImageType gets a reference to the given string and assigns it to the ImageType field.

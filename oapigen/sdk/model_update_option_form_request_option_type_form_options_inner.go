@@ -141,15 +141,6 @@ func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) GetIdOk() (*int64, b
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) SetId(v int64) {
 	o.Id = &v
@@ -173,15 +164,6 @@ func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) GetCodeOk() (*string
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) SetCode(v string) {
 	o.Code = &v
@@ -203,15 +185,6 @@ func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) GetNameOk() (*string
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -238,28 +211,9 @@ func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) GetDescriptionOk() (
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetFieldName returns the FieldName field value
@@ -302,15 +256,6 @@ func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) GetTypeOk() (*string
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.
@@ -361,28 +306,9 @@ func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) GetFieldCodeOk() (*s
 	return o.FieldCode.Get(), o.FieldCode.IsSet()
 }
 
-// IsSetFieldCode returns a boolean if a field has been set.
-func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) IsSetFieldCode() bool {
-	if o != nil && o.FieldCode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFieldCode gets a reference to the given NullableString and assigns it to the FieldCode field.
 func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) SetFieldCode(v string) {
 	o.FieldCode.Set(&v)
-}
-
-// SetFieldCodeNil sets the value for FieldCode to be an explicit nil
-func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) SetFieldCodeNil() {
-	o.FieldCode.Set(nil)
-}
-
-// UnsetFieldCode ensures that no value is present for FieldCode, not even an explicit nil
-func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) UnsetFieldCode() {
-	o.FieldCode.Unset()
 }
 
 // GetPlaceHolder returns the PlaceHolder field value if set, zero value otherwise.
@@ -401,15 +327,6 @@ func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) GetPlaceHolderOk() (
 		return nil, false
 	}
 	return o.PlaceHolder, true
-}
-
-// IsSetPlaceHolder returns a boolean if a field has been set.
-func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) IsSetPlaceHolder() bool {
-	if o != nil && !IsNil(o.PlaceHolder) {
-		return true
-	}
-
-	return false
 }
 
 // SetPlaceHolder gets a reference to the given string and assigns it to the PlaceHolder field.
@@ -436,28 +353,9 @@ func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) GetHelpBlockOk() (*s
 	return o.HelpBlock.Get(), o.HelpBlock.IsSet()
 }
 
-// IsSetHelpBlock returns a boolean if a field has been set.
-func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) IsSetHelpBlock() bool {
-	if o != nil && o.HelpBlock.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetHelpBlock gets a reference to the given NullableString and assigns it to the HelpBlock field.
 func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) SetHelpBlock(v string) {
 	o.HelpBlock.Set(&v)
-}
-
-// SetHelpBlockNil sets the value for HelpBlock to be an explicit nil
-func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) SetHelpBlockNil() {
-	o.HelpBlock.Set(nil)
-}
-
-// UnsetHelpBlock ensures that no value is present for HelpBlock, not even an explicit nil
-func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) UnsetHelpBlock() {
-	o.HelpBlock.Unset()
 }
 
 // GetHelpBlockFieldCode returns the HelpBlockFieldCode field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -479,28 +377,9 @@ func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) GetHelpBlockFieldCod
 	return o.HelpBlockFieldCode.Get(), o.HelpBlockFieldCode.IsSet()
 }
 
-// IsSetHelpBlockFieldCode returns a boolean if a field has been set.
-func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) IsSetHelpBlockFieldCode() bool {
-	if o != nil && o.HelpBlockFieldCode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetHelpBlockFieldCode gets a reference to the given NullableString and assigns it to the HelpBlockFieldCode field.
 func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) SetHelpBlockFieldCode(v string) {
 	o.HelpBlockFieldCode.Set(&v)
-}
-
-// SetHelpBlockFieldCodeNil sets the value for HelpBlockFieldCode to be an explicit nil
-func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) SetHelpBlockFieldCodeNil() {
-	o.HelpBlockFieldCode.Set(nil)
-}
-
-// UnsetHelpBlockFieldCode ensures that no value is present for HelpBlockFieldCode, not even an explicit nil
-func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) UnsetHelpBlockFieldCode() {
-	o.HelpBlockFieldCode.Unset()
 }
 
 // GetDefaultValue returns the DefaultValue field value if set, zero value otherwise.
@@ -519,15 +398,6 @@ func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) GetDefaultValueOk() 
 		return nil, false
 	}
 	return o.DefaultValue, true
-}
-
-// IsSetDefaultValue returns a boolean if a field has been set.
-func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) IsSetDefaultValue() bool {
-	if o != nil && !IsNil(o.DefaultValue) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultValue gets a reference to the given string and assigns it to the DefaultValue field.
@@ -553,15 +423,6 @@ func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) GetRequiredOk() (*bo
 	return o.Required, true
 }
 
-// IsSetRequired returns a boolean if a field has been set.
-func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) IsSetRequired() bool {
-	if o != nil && !IsNil(o.Required) {
-		return true
-	}
-
-	return false
-}
-
 // SetRequired gets a reference to the given bool and assigns it to the Required field.
 func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) SetRequired(v bool) {
 	o.Required = &v
@@ -583,15 +444,6 @@ func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) GetExportMetaOk() (*
 		return nil, false
 	}
 	return o.ExportMeta, true
-}
-
-// IsSetExportMeta returns a boolean if a field has been set.
-func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) IsSetExportMeta() bool {
-	if o != nil && !IsNil(o.ExportMeta) {
-		return true
-	}
-
-	return false
 }
 
 // SetExportMeta gets a reference to the given bool and assigns it to the ExportMeta field.
@@ -617,15 +469,6 @@ func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) GetEditableOk() (*bo
 	return o.Editable, true
 }
 
-// IsSetEditable returns a boolean if a field has been set.
-func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) IsSetEditable() bool {
-	if o != nil && !IsNil(o.Editable) {
-		return true
-	}
-
-	return false
-}
-
 // SetEditable gets a reference to the given bool and assigns it to the Editable field.
 func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) SetEditable(v bool) {
 	o.Editable = &v
@@ -647,15 +490,6 @@ func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) GetOptionListOk() (*
 		return nil, false
 	}
 	return o.OptionList, true
-}
-
-// IsSetOptionList returns a boolean if a field has been set.
-func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) IsSetOptionList() bool {
-	if o != nil && !IsNil(o.OptionList) {
-		return true
-	}
-
-	return false
 }
 
 // SetOptionList gets a reference to the given UpdateOptionFormRequestOptionTypeFormOptionsInnerOptionList and assigns it to the OptionList field.
@@ -681,15 +515,6 @@ func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) GetDisplayValueOnDet
 	return o.DisplayValueOnDetails, true
 }
 
-// IsSetDisplayValueOnDetails returns a boolean if a field has been set.
-func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) IsSetDisplayValueOnDetails() bool {
-	if o != nil && !IsNil(o.DisplayValueOnDetails) {
-		return true
-	}
-
-	return false
-}
-
 // SetDisplayValueOnDetails gets a reference to the given bool and assigns it to the DisplayValueOnDetails field.
 func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) SetDisplayValueOnDetails(v bool) {
 	o.DisplayValueOnDetails = &v
@@ -711,15 +536,6 @@ func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) GetIsLockedOk() (*bo
 		return nil, false
 	}
 	return o.IsLocked, true
-}
-
-// IsSetIsLocked returns a boolean if a field has been set.
-func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) IsSetIsLocked() bool {
-	if o != nil && !IsNil(o.IsLocked) {
-		return true
-	}
-
-	return false
 }
 
 // SetIsLocked gets a reference to the given bool and assigns it to the IsLocked field.
@@ -745,15 +561,6 @@ func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) GetIsHiddenOk() (*bo
 	return o.IsHidden, true
 }
 
-// IsSetIsHidden returns a boolean if a field has been set.
-func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) IsSetIsHidden() bool {
-	if o != nil && !IsNil(o.IsHidden) {
-		return true
-	}
-
-	return false
-}
-
 // SetIsHidden gets a reference to the given bool and assigns it to the IsHidden field.
 func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) SetIsHidden(v bool) {
 	o.IsHidden = &v
@@ -775,15 +582,6 @@ func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) GetExcludeFromSearch
 		return nil, false
 	}
 	return o.ExcludeFromSearch, true
-}
-
-// IsSetExcludeFromSearch returns a boolean if a field has been set.
-func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) IsSetExcludeFromSearch() bool {
-	if o != nil && !IsNil(o.ExcludeFromSearch) {
-		return true
-	}
-
-	return false
 }
 
 // SetExcludeFromSearch gets a reference to the given bool and assigns it to the ExcludeFromSearch field.
@@ -810,28 +608,9 @@ func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) GetDependsOnCodeOk()
 	return o.DependsOnCode.Get(), o.DependsOnCode.IsSet()
 }
 
-// IsSetDependsOnCode returns a boolean if a field has been set.
-func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) IsSetDependsOnCode() bool {
-	if o != nil && o.DependsOnCode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDependsOnCode gets a reference to the given NullableString and assigns it to the DependsOnCode field.
 func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) SetDependsOnCode(v string) {
 	o.DependsOnCode.Set(&v)
-}
-
-// SetDependsOnCodeNil sets the value for DependsOnCode to be an explicit nil
-func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) SetDependsOnCodeNil() {
-	o.DependsOnCode.Set(nil)
-}
-
-// UnsetDependsOnCode ensures that no value is present for DependsOnCode, not even an explicit nil
-func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) UnsetDependsOnCode() {
-	o.DependsOnCode.Unset()
 }
 
 // GetVisibleOnCode returns the VisibleOnCode field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -853,28 +632,9 @@ func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) GetVisibleOnCodeOk()
 	return o.VisibleOnCode.Get(), o.VisibleOnCode.IsSet()
 }
 
-// IsSetVisibleOnCode returns a boolean if a field has been set.
-func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) IsSetVisibleOnCode() bool {
-	if o != nil && o.VisibleOnCode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetVisibleOnCode gets a reference to the given NullableString and assigns it to the VisibleOnCode field.
 func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) SetVisibleOnCode(v string) {
 	o.VisibleOnCode.Set(&v)
-}
-
-// SetVisibleOnCodeNil sets the value for VisibleOnCode to be an explicit nil
-func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) SetVisibleOnCodeNil() {
-	o.VisibleOnCode.Set(nil)
-}
-
-// UnsetVisibleOnCode ensures that no value is present for VisibleOnCode, not even an explicit nil
-func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) UnsetVisibleOnCode() {
-	o.VisibleOnCode.Unset()
 }
 
 // GetVerifyPattern returns the VerifyPattern field value if set, zero value otherwise.
@@ -893,15 +653,6 @@ func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) GetVerifyPatternOk()
 		return nil, false
 	}
 	return o.VerifyPattern, true
-}
-
-// IsSetVerifyPattern returns a boolean if a field has been set.
-func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) IsSetVerifyPattern() bool {
-	if o != nil && !IsNil(o.VerifyPattern) {
-		return true
-	}
-
-	return false
 }
 
 // SetVerifyPattern gets a reference to the given string and assigns it to the VerifyPattern field.
@@ -928,28 +679,9 @@ func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) GetRequireOnCodeOk()
 	return o.RequireOnCode.Get(), o.RequireOnCode.IsSet()
 }
 
-// IsSetRequireOnCode returns a boolean if a field has been set.
-func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) IsSetRequireOnCode() bool {
-	if o != nil && o.RequireOnCode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRequireOnCode gets a reference to the given NullableString and assigns it to the RequireOnCode field.
 func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) SetRequireOnCode(v string) {
 	o.RequireOnCode.Set(&v)
-}
-
-// SetRequireOnCodeNil sets the value for RequireOnCode to be an explicit nil
-func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) SetRequireOnCodeNil() {
-	o.RequireOnCode.Set(nil)
-}
-
-// UnsetRequireOnCode ensures that no value is present for RequireOnCode, not even an explicit nil
-func (o *UpdateOptionFormRequestOptionTypeFormOptionsInner) UnsetRequireOnCode() {
-	o.RequireOnCode.Unset()
 }
 
 func (o UpdateOptionFormRequestOptionTypeFormOptionsInner) MarshalJSON() ([]byte, error) {

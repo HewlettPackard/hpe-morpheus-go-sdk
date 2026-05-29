@@ -69,15 +69,6 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf5) GetResourcePoolIdOk() 
 	return o.ResourcePoolId, true
 }
 
-// IsSetResourcePoolId returns a boolean if a field has been set.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf5) IsSetResourcePoolId() bool {
-	if o != nil && !IsNil(o.ResourcePoolId) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourcePoolId gets a reference to the given int64 and assigns it to the ResourcePoolId field.
 func (o *AddClusterRequestClusterServerConfigAnyOfOneOf5) SetResourcePoolId(v int64) {
 	o.ResourcePoolId = &v
@@ -99,15 +90,6 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf5) GetPodCidrOk() (*strin
 		return nil, false
 	}
 	return o.PodCidr, true
-}
-
-// IsSetPodCidr returns a boolean if a field has been set.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf5) IsSetPodCidr() bool {
-	if o != nil && !IsNil(o.PodCidr) {
-		return true
-	}
-
-	return false
 }
 
 // SetPodCidr gets a reference to the given string and assigns it to the PodCidr field.
@@ -133,15 +115,6 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf5) GetServiceCidrOk() (*s
 	return o.ServiceCidr, true
 }
 
-// IsSetServiceCidr returns a boolean if a field has been set.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf5) IsSetServiceCidr() bool {
-	if o != nil && !IsNil(o.ServiceCidr) {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceCidr gets a reference to the given string and assigns it to the ServiceCidr field.
 func (o *AddClusterRequestClusterServerConfigAnyOfOneOf5) SetServiceCidr(v string) {
 	o.ServiceCidr = &v
@@ -165,15 +138,6 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf5) GetNodeCountOk() (*int
 	return o.NodeCount, true
 }
 
-// IsSetNodeCount returns a boolean if a field has been set.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf5) IsSetNodeCount() bool {
-	if o != nil && !IsNil(o.NodeCount) {
-		return true
-	}
-
-	return false
-}
-
 // SetNodeCount gets a reference to the given int64 and assigns it to the NodeCount field.
 func (o *AddClusterRequestClusterServerConfigAnyOfOneOf5) SetNodeCount(v int64) {
 	o.NodeCount = &v
@@ -195,15 +159,6 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf5) GetCreateUserOk() (*bo
 		return nil, false
 	}
 	return o.CreateUser, true
-}
-
-// IsSetCreateUser returns a boolean if a field has been set.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf5) IsSetCreateUser() bool {
-	if o != nil && !IsNil(o.CreateUser) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreateUser gets a reference to the given bool and assigns it to the CreateUser field.
@@ -230,28 +185,9 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf5) GetDefaultRepoAccountO
 	return o.DefaultRepoAccount.Get(), o.DefaultRepoAccount.IsSet()
 }
 
-// IsSetDefaultRepoAccount returns a boolean if a field has been set.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf5) IsSetDefaultRepoAccount() bool {
-	if o != nil && o.DefaultRepoAccount.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultRepoAccount gets a reference to the given NullableInt64 and assigns it to the DefaultRepoAccount field.
 func (o *AddClusterRequestClusterServerConfigAnyOfOneOf5) SetDefaultRepoAccount(v int64) {
 	o.DefaultRepoAccount.Set(&v)
-}
-
-// SetDefaultRepoAccountNil sets the value for DefaultRepoAccount to be an explicit nil
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf5) SetDefaultRepoAccountNil() {
-	o.DefaultRepoAccount.Set(nil)
-}
-
-// UnsetDefaultRepoAccount ensures that no value is present for DefaultRepoAccount, not even an explicit nil
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf5) UnsetDefaultRepoAccount() {
-	o.DefaultRepoAccount.Unset()
 }
 
 // GetImageServer returns the ImageServer field value if set, zero value otherwise.
@@ -270,15 +206,6 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf5) GetImageServerOk() (*s
 		return nil, false
 	}
 	return o.ImageServer, true
-}
-
-// IsSetImageServer returns a boolean if a field has been set.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf5) IsSetImageServer() bool {
-	if o != nil && !IsNil(o.ImageServer) {
-		return true
-	}
-
-	return false
 }
 
 // SetImageServer gets a reference to the given string and assigns it to the ImageServer field.

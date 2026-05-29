@@ -62,15 +62,6 @@ func (o *AddClusterWorkerRequestServerTagsInner) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServerTagsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *AddClusterWorkerRequestServerTagsInner) SetName(v string) {
 	o.Name = &v
@@ -92,15 +83,6 @@ func (o *AddClusterWorkerRequestServerTagsInner) GetValueOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Value, true
-}
-
-// IsSetValue returns a boolean if a field has been set.
-func (o *AddClusterWorkerRequestServerTagsInner) IsSetValue() bool {
-	if o != nil && !IsNil(o.Value) {
-		return true
-	}
-
-	return false
 }
 
 // SetValue gets a reference to the given string and assigns it to the Value field.

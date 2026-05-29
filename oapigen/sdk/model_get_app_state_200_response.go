@@ -69,15 +69,6 @@ func (o *GetAppState200Response) GetWorkloadsOk() ([]GetAppState200ResponseAllOf
 	return o.Workloads, true
 }
 
-// IsSetWorkloads returns a boolean if a field has been set.
-func (o *GetAppState200Response) IsSetWorkloads() bool {
-	if o != nil && !IsNil(o.Workloads) {
-		return true
-	}
-
-	return false
-}
-
 // SetWorkloads gets a reference to the given []GetAppState200ResponseAllOfWorkloadsInner and assigns it to the Workloads field.
 func (o *GetAppState200Response) SetWorkloads(v []GetAppState200ResponseAllOfWorkloadsInner) {
 	o.Workloads = v
@@ -99,15 +90,6 @@ func (o *GetAppState200Response) GetIacDriftOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.IacDrift, true
-}
-
-// IsSetIacDrift returns a boolean if a field has been set.
-func (o *GetAppState200Response) IsSetIacDrift() bool {
-	if o != nil && !IsNil(o.IacDrift) {
-		return true
-	}
-
-	return false
 }
 
 // SetIacDrift gets a reference to the given bool and assigns it to the IacDrift field.
@@ -133,15 +115,6 @@ func (o *GetAppState200Response) GetPlanResourcesOk() ([]map[string]interface{},
 	return o.PlanResources, true
 }
 
-// IsSetPlanResources returns a boolean if a field has been set.
-func (o *GetAppState200Response) IsSetPlanResources() bool {
-	if o != nil && !IsNil(o.PlanResources) {
-		return true
-	}
-
-	return false
-}
-
 // SetPlanResources gets a reference to the given []map[string]interface{} and assigns it to the PlanResources field.
 func (o *GetAppState200Response) SetPlanResources(v []map[string]interface{}) {
 	o.PlanResources = v
@@ -163,15 +136,6 @@ func (o *GetAppState200Response) GetSpecsOk() ([]GetAppState200ResponseAllOfSpec
 		return nil, false
 	}
 	return o.Specs, true
-}
-
-// IsSetSpecs returns a boolean if a field has been set.
-func (o *GetAppState200Response) IsSetSpecs() bool {
-	if o != nil && !IsNil(o.Specs) {
-		return true
-	}
-
-	return false
 }
 
 // SetSpecs gets a reference to the given []GetAppState200ResponseAllOfSpecsInner and assigns it to the Specs field.
@@ -197,15 +161,6 @@ func (o *GetAppState200Response) GetStateDataOk() (*string, bool) {
 	return o.StateData, true
 }
 
-// IsSetStateData returns a boolean if a field has been set.
-func (o *GetAppState200Response) IsSetStateData() bool {
-	if o != nil && !IsNil(o.StateData) {
-		return true
-	}
-
-	return false
-}
-
 // SetStateData gets a reference to the given string and assigns it to the StateData field.
 func (o *GetAppState200Response) SetStateData(v string) {
 	o.StateData = &v
@@ -227,15 +182,6 @@ func (o *GetAppState200Response) GetPlanDataOk() (*string, bool) {
 		return nil, false
 	}
 	return o.PlanData, true
-}
-
-// IsSetPlanData returns a boolean if a field has been set.
-func (o *GetAppState200Response) IsSetPlanData() bool {
-	if o != nil && !IsNil(o.PlanData) {
-		return true
-	}
-
-	return false
 }
 
 // SetPlanData gets a reference to the given string and assigns it to the PlanData field.
@@ -261,15 +207,6 @@ func (o *GetAppState200Response) GetInputOk() (*GetAppState200ResponseAllOfInput
 	return o.Input, true
 }
 
-// IsSetInput returns a boolean if a field has been set.
-func (o *GetAppState200Response) IsSetInput() bool {
-	if o != nil && !IsNil(o.Input) {
-		return true
-	}
-
-	return false
-}
-
 // SetInput gets a reference to the given GetAppState200ResponseAllOfInput and assigns it to the Input field.
 func (o *GetAppState200Response) SetInput(v GetAppState200ResponseAllOfInput) {
 	o.Input = &v
@@ -293,15 +230,6 @@ func (o *GetAppState200Response) GetOutputOk() (*GetAppState200ResponseAllOfOutp
 	return o.Output, true
 }
 
-// IsSetOutput returns a boolean if a field has been set.
-func (o *GetAppState200Response) IsSetOutput() bool {
-	if o != nil && !IsNil(o.Output) {
-		return true
-	}
-
-	return false
-}
-
 // SetOutput gets a reference to the given GetAppState200ResponseAllOfOutput and assigns it to the Output field.
 func (o *GetAppState200Response) SetOutput(v GetAppState200ResponseAllOfOutput) {
 	o.Output = &v
@@ -323,15 +251,6 @@ func (o *GetAppState200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *GetAppState200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

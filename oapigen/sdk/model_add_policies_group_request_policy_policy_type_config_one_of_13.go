@@ -61,15 +61,6 @@ func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf13) GetMaxHostsOk() (
 	return o.MaxHosts, true
 }
 
-// IsSetMaxHosts returns a boolean if a field has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf13) IsSetMaxHosts() bool {
-	if o != nil && !IsNil(o.MaxHosts) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxHosts gets a reference to the given string and assigns it to the MaxHosts field.
 func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf13) SetMaxHosts(v string) {
 	o.MaxHosts = &v

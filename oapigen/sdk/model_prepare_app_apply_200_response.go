@@ -62,15 +62,6 @@ func (o *PrepareAppApply200Response) GetDataOk() (*PrepareAppApply200ResponseAll
 	return o.Data, true
 }
 
-// IsSetData returns a boolean if a field has been set.
-func (o *PrepareAppApply200Response) IsSetData() bool {
-	if o != nil && !IsNil(o.Data) {
-		return true
-	}
-
-	return false
-}
-
 // SetData gets a reference to the given PrepareAppApply200ResponseAllOfData and assigns it to the Data field.
 func (o *PrepareAppApply200Response) SetData(v PrepareAppApply200ResponseAllOfData) {
 	o.Data = &v
@@ -92,15 +83,6 @@ func (o *PrepareAppApply200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *PrepareAppApply200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

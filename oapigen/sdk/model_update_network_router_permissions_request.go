@@ -61,15 +61,6 @@ func (o *UpdateNetworkRouterPermissionsRequest) GetPermissionsOk() (*UpdateNetwo
 	return o.Permissions, true
 }
 
-// IsSetPermissions returns a boolean if a field has been set.
-func (o *UpdateNetworkRouterPermissionsRequest) IsSetPermissions() bool {
-	if o != nil && !IsNil(o.Permissions) {
-		return true
-	}
-
-	return false
-}
-
 // SetPermissions gets a reference to the given UpdateNetworkRouterPermissionsRequestPermissions and assigns it to the Permissions field.
 func (o *UpdateNetworkRouterPermissionsRequest) SetPermissions(v UpdateNetworkRouterPermissionsRequestPermissions) {
 	o.Permissions = &v

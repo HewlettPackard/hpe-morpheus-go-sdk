@@ -63,15 +63,6 @@ func (o *UpdateMuteAllCheckGroups200Response) GetSuccessOk() (*bool, bool) {
 	return o.Success, true
 }
 
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *UpdateMuteAllCheckGroups200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
-}
-
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.
 func (o *UpdateMuteAllCheckGroups200Response) SetSuccess(v bool) {
 	o.Success = &v
@@ -95,15 +86,6 @@ func (o *UpdateMuteAllCheckGroups200Response) GetMutedOk() (*bool, bool) {
 	return o.Muted, true
 }
 
-// IsSetMuted returns a boolean if a field has been set.
-func (o *UpdateMuteAllCheckGroups200Response) IsSetMuted() bool {
-	if o != nil && !IsNil(o.Muted) {
-		return true
-	}
-
-	return false
-}
-
 // SetMuted gets a reference to the given bool and assigns it to the Muted field.
 func (o *UpdateMuteAllCheckGroups200Response) SetMuted(v bool) {
 	o.Muted = &v
@@ -125,15 +107,6 @@ func (o *UpdateMuteAllCheckGroups200Response) GetUpdatedOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.Updated, true
-}
-
-// IsSetUpdated returns a boolean if a field has been set.
-func (o *UpdateMuteAllCheckGroups200Response) IsSetUpdated() bool {
-	if o != nil && !IsNil(o.Updated) {
-		return true
-	}
-
-	return false
 }
 
 // SetUpdated gets a reference to the given int64 and assigns it to the Updated field.

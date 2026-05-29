@@ -61,15 +61,6 @@ func (o *GetReports200Response) GetReportResultOk() (*GetReports200ResponseRepor
 	return o.ReportResult, true
 }
 
-// IsSetReportResult returns a boolean if a field has been set.
-func (o *GetReports200Response) IsSetReportResult() bool {
-	if o != nil && !IsNil(o.ReportResult) {
-		return true
-	}
-
-	return false
-}
-
 // SetReportResult gets a reference to the given GetReports200ResponseReportResult and assigns it to the ReportResult field.
 func (o *GetReports200Response) SetReportResult(v GetReports200ResponseReportResult) {
 	o.ReportResult = &v

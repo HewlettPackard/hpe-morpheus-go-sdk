@@ -100,28 +100,9 @@ func (o *CloudsConfigVMware) GetApplianceUrlOk() (*string, bool) {
 	return o.ApplianceUrl.Get(), o.ApplianceUrl.IsSet()
 }
 
-// IsSetApplianceUrl returns a boolean if a field has been set.
-func (o *CloudsConfigVMware) IsSetApplianceUrl() bool {
-	if o != nil && o.ApplianceUrl.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetApplianceUrl gets a reference to the given NullableString and assigns it to the ApplianceUrl field.
 func (o *CloudsConfigVMware) SetApplianceUrl(v string) {
 	o.ApplianceUrl.Set(&v)
-}
-
-// SetApplianceUrlNil sets the value for ApplianceUrl to be an explicit nil
-func (o *CloudsConfigVMware) SetApplianceUrlNil() {
-	o.ApplianceUrl.Set(nil)
-}
-
-// UnsetApplianceUrl ensures that no value is present for ApplianceUrl, not even an explicit nil
-func (o *CloudsConfigVMware) UnsetApplianceUrl() {
-	o.ApplianceUrl.Unset()
 }
 
 // GetDatacenterName returns the DatacenterName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -143,28 +124,9 @@ func (o *CloudsConfigVMware) GetDatacenterNameOk() (*string, bool) {
 	return o.DatacenterName.Get(), o.DatacenterName.IsSet()
 }
 
-// IsSetDatacenterName returns a boolean if a field has been set.
-func (o *CloudsConfigVMware) IsSetDatacenterName() bool {
-	if o != nil && o.DatacenterName.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDatacenterName gets a reference to the given NullableString and assigns it to the DatacenterName field.
 func (o *CloudsConfigVMware) SetDatacenterName(v string) {
 	o.DatacenterName.Set(&v)
-}
-
-// SetDatacenterNameNil sets the value for DatacenterName to be an explicit nil
-func (o *CloudsConfigVMware) SetDatacenterNameNil() {
-	o.DatacenterName.Set(nil)
-}
-
-// UnsetDatacenterName ensures that no value is present for DatacenterName, not even an explicit nil
-func (o *CloudsConfigVMware) UnsetDatacenterName() {
-	o.DatacenterName.Unset()
 }
 
 // GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -186,28 +148,9 @@ func (o *CloudsConfigVMware) GetExternalIdOk() (*string, bool) {
 	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *CloudsConfigVMware) IsSetExternalId() bool {
-	if o != nil && o.ExternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *CloudsConfigVMware) SetExternalId(v string) {
 	o.ExternalId.Set(&v)
-}
-
-// SetExternalIdNil sets the value for ExternalId to be an explicit nil
-func (o *CloudsConfigVMware) SetExternalIdNil() {
-	o.ExternalId.Set(nil)
-}
-
-// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-func (o *CloudsConfigVMware) UnsetExternalId() {
-	o.ExternalId.Unset()
 }
 
 // GetInventoryLevel returns the InventoryLevel field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -229,28 +172,9 @@ func (o *CloudsConfigVMware) GetInventoryLevelOk() (*string, bool) {
 	return o.InventoryLevel.Get(), o.InventoryLevel.IsSet()
 }
 
-// IsSetInventoryLevel returns a boolean if a field has been set.
-func (o *CloudsConfigVMware) IsSetInventoryLevel() bool {
-	if o != nil && o.InventoryLevel.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInventoryLevel gets a reference to the given NullableString and assigns it to the InventoryLevel field.
 func (o *CloudsConfigVMware) SetInventoryLevel(v string) {
 	o.InventoryLevel.Set(&v)
-}
-
-// SetInventoryLevelNil sets the value for InventoryLevel to be an explicit nil
-func (o *CloudsConfigVMware) SetInventoryLevelNil() {
-	o.InventoryLevel.Set(nil)
-}
-
-// UnsetInventoryLevel ensures that no value is present for InventoryLevel, not even an explicit nil
-func (o *CloudsConfigVMware) UnsetInventoryLevel() {
-	o.InventoryLevel.Unset()
 }
 
 // GetConsoleKeymap returns the ConsoleKeymap field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -272,28 +196,9 @@ func (o *CloudsConfigVMware) GetConsoleKeymapOk() (*string, bool) {
 	return o.ConsoleKeymap.Get(), o.ConsoleKeymap.IsSet()
 }
 
-// IsSetConsoleKeymap returns a boolean if a field has been set.
-func (o *CloudsConfigVMware) IsSetConsoleKeymap() bool {
-	if o != nil && o.ConsoleKeymap.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetConsoleKeymap gets a reference to the given NullableString and assigns it to the ConsoleKeymap field.
 func (o *CloudsConfigVMware) SetConsoleKeymap(v string) {
 	o.ConsoleKeymap.Set(&v)
-}
-
-// SetConsoleKeymapNil sets the value for ConsoleKeymap to be an explicit nil
-func (o *CloudsConfigVMware) SetConsoleKeymapNil() {
-	o.ConsoleKeymap.Set(nil)
-}
-
-// UnsetConsoleKeymap ensures that no value is present for ConsoleKeymap, not even an explicit nil
-func (o *CloudsConfigVMware) UnsetConsoleKeymap() {
-	o.ConsoleKeymap.Unset()
 }
 
 // GetApiUrl returns the ApiUrl field value if set, zero value otherwise.
@@ -312,15 +217,6 @@ func (o *CloudsConfigVMware) GetApiUrlOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ApiUrl, true
-}
-
-// IsSetApiUrl returns a boolean if a field has been set.
-func (o *CloudsConfigVMware) IsSetApiUrl() bool {
-	if o != nil && !IsNil(o.ApiUrl) {
-		return true
-	}
-
-	return false
 }
 
 // SetApiUrl gets a reference to the given string and assigns it to the ApiUrl field.
@@ -347,28 +243,9 @@ func (o *CloudsConfigVMware) GetApiVersionOk() (*string, bool) {
 	return o.ApiVersion.Get(), o.ApiVersion.IsSet()
 }
 
-// IsSetApiVersion returns a boolean if a field has been set.
-func (o *CloudsConfigVMware) IsSetApiVersion() bool {
-	if o != nil && o.ApiVersion.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetApiVersion gets a reference to the given NullableString and assigns it to the ApiVersion field.
 func (o *CloudsConfigVMware) SetApiVersion(v string) {
 	o.ApiVersion.Set(&v)
-}
-
-// SetApiVersionNil sets the value for ApiVersion to be an explicit nil
-func (o *CloudsConfigVMware) SetApiVersionNil() {
-	o.ApiVersion.Set(nil)
-}
-
-// UnsetApiVersion ensures that no value is present for ApiVersion, not even an explicit nil
-func (o *CloudsConfigVMware) UnsetApiVersion() {
-	o.ApiVersion.Unset()
 }
 
 // GetBackupMode returns the BackupMode field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -390,28 +267,9 @@ func (o *CloudsConfigVMware) GetBackupModeOk() (*string, bool) {
 	return o.BackupMode.Get(), o.BackupMode.IsSet()
 }
 
-// IsSetBackupMode returns a boolean if a field has been set.
-func (o *CloudsConfigVMware) IsSetBackupMode() bool {
-	if o != nil && o.BackupMode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetBackupMode gets a reference to the given NullableString and assigns it to the BackupMode field.
 func (o *CloudsConfigVMware) SetBackupMode(v string) {
 	o.BackupMode.Set(&v)
-}
-
-// SetBackupModeNil sets the value for BackupMode to be an explicit nil
-func (o *CloudsConfigVMware) SetBackupModeNil() {
-	o.BackupMode.Set(nil)
-}
-
-// UnsetBackupMode ensures that no value is present for BackupMode, not even an explicit nil
-func (o *CloudsConfigVMware) UnsetBackupMode() {
-	o.BackupMode.Unset()
 }
 
 // GetCertificateProvider returns the CertificateProvider field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -433,28 +291,9 @@ func (o *CloudsConfigVMware) GetCertificateProviderOk() (*string, bool) {
 	return o.CertificateProvider.Get(), o.CertificateProvider.IsSet()
 }
 
-// IsSetCertificateProvider returns a boolean if a field has been set.
-func (o *CloudsConfigVMware) IsSetCertificateProvider() bool {
-	if o != nil && o.CertificateProvider.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCertificateProvider gets a reference to the given NullableString and assigns it to the CertificateProvider field.
 func (o *CloudsConfigVMware) SetCertificateProvider(v string) {
 	o.CertificateProvider.Set(&v)
-}
-
-// SetCertificateProviderNil sets the value for CertificateProvider to be an explicit nil
-func (o *CloudsConfigVMware) SetCertificateProviderNil() {
-	o.CertificateProvider.Set(nil)
-}
-
-// UnsetCertificateProvider ensures that no value is present for CertificateProvider, not even an explicit nil
-func (o *CloudsConfigVMware) UnsetCertificateProvider() {
-	o.CertificateProvider.Unset()
 }
 
 // GetCluster returns the Cluster field value if set, zero value otherwise.
@@ -473,15 +312,6 @@ func (o *CloudsConfigVMware) GetClusterOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Cluster, true
-}
-
-// IsSetCluster returns a boolean if a field has been set.
-func (o *CloudsConfigVMware) IsSetCluster() bool {
-	if o != nil && !IsNil(o.Cluster) {
-		return true
-	}
-
-	return false
 }
 
 // SetCluster gets a reference to the given string and assigns it to the Cluster field.
@@ -505,15 +335,6 @@ func (o *CloudsConfigVMware) GetClusterRefOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ClusterRef, true
-}
-
-// IsSetClusterRef returns a boolean if a field has been set.
-func (o *CloudsConfigVMware) IsSetClusterRef() bool {
-	if o != nil && !IsNil(o.ClusterRef) {
-		return true
-	}
-
-	return false
 }
 
 // SetClusterRef gets a reference to the given string and assigns it to the ClusterRef field.
@@ -540,28 +361,9 @@ func (o *CloudsConfigVMware) GetConfigCmIdOk() (*string, bool) {
 	return o.ConfigCmId.Get(), o.ConfigCmId.IsSet()
 }
 
-// IsSetConfigCmId returns a boolean if a field has been set.
-func (o *CloudsConfigVMware) IsSetConfigCmId() bool {
-	if o != nil && o.ConfigCmId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetConfigCmId gets a reference to the given NullableString and assigns it to the ConfigCmId field.
 func (o *CloudsConfigVMware) SetConfigCmId(v string) {
 	o.ConfigCmId.Set(&v)
-}
-
-// SetConfigCmIdNil sets the value for ConfigCmId to be an explicit nil
-func (o *CloudsConfigVMware) SetConfigCmIdNil() {
-	o.ConfigCmId.Set(nil)
-}
-
-// UnsetConfigCmId ensures that no value is present for ConfigCmId, not even an explicit nil
-func (o *CloudsConfigVMware) UnsetConfigCmId() {
-	o.ConfigCmId.Unset()
 }
 
 // GetConfigCmdbDiscovery returns the ConfigCmdbDiscovery field value if set, zero value otherwise.
@@ -580,15 +382,6 @@ func (o *CloudsConfigVMware) GetConfigCmdbDiscoveryOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.ConfigCmdbDiscovery, true
-}
-
-// IsSetConfigCmdbDiscovery returns a boolean if a field has been set.
-func (o *CloudsConfigVMware) IsSetConfigCmdbDiscovery() bool {
-	if o != nil && !IsNil(o.ConfigCmdbDiscovery) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfigCmdbDiscovery gets a reference to the given bool and assigns it to the ConfigCmdbDiscovery field.
@@ -615,28 +408,9 @@ func (o *CloudsConfigVMware) GetConfigCmdbIdOk() (*string, bool) {
 	return o.ConfigCmdbId.Get(), o.ConfigCmdbId.IsSet()
 }
 
-// IsSetConfigCmdbId returns a boolean if a field has been set.
-func (o *CloudsConfigVMware) IsSetConfigCmdbId() bool {
-	if o != nil && o.ConfigCmdbId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetConfigCmdbId gets a reference to the given NullableString and assigns it to the ConfigCmdbId field.
 func (o *CloudsConfigVMware) SetConfigCmdbId(v string) {
 	o.ConfigCmdbId.Set(&v)
-}
-
-// SetConfigCmdbIdNil sets the value for ConfigCmdbId to be an explicit nil
-func (o *CloudsConfigVMware) SetConfigCmdbIdNil() {
-	o.ConfigCmdbId.Set(nil)
-}
-
-// UnsetConfigCmdbId ensures that no value is present for ConfigCmdbId, not even an explicit nil
-func (o *CloudsConfigVMware) UnsetConfigCmdbId() {
-	o.ConfigCmdbId.Unset()
 }
 
 // GetConfigManagementId returns the ConfigManagementId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -658,28 +432,9 @@ func (o *CloudsConfigVMware) GetConfigManagementIdOk() (*string, bool) {
 	return o.ConfigManagementId.Get(), o.ConfigManagementId.IsSet()
 }
 
-// IsSetConfigManagementId returns a boolean if a field has been set.
-func (o *CloudsConfigVMware) IsSetConfigManagementId() bool {
-	if o != nil && o.ConfigManagementId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetConfigManagementId gets a reference to the given NullableString and assigns it to the ConfigManagementId field.
 func (o *CloudsConfigVMware) SetConfigManagementId(v string) {
 	o.ConfigManagementId.Set(&v)
-}
-
-// SetConfigManagementIdNil sets the value for ConfigManagementId to be an explicit nil
-func (o *CloudsConfigVMware) SetConfigManagementIdNil() {
-	o.ConfigManagementId.Set(nil)
-}
-
-// UnsetConfigManagementId ensures that no value is present for ConfigManagementId, not even an explicit nil
-func (o *CloudsConfigVMware) UnsetConfigManagementId() {
-	o.ConfigManagementId.Unset()
 }
 
 // GetDatacenter returns the Datacenter field value if set, zero value otherwise.
@@ -698,15 +453,6 @@ func (o *CloudsConfigVMware) GetDatacenterOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Datacenter, true
-}
-
-// IsSetDatacenter returns a boolean if a field has been set.
-func (o *CloudsConfigVMware) IsSetDatacenter() bool {
-	if o != nil && !IsNil(o.Datacenter) {
-		return true
-	}
-
-	return false
 }
 
 // SetDatacenter gets a reference to the given string and assigns it to the Datacenter field.
@@ -733,28 +479,9 @@ func (o *CloudsConfigVMware) GetDatacenterIdOk() (*string, bool) {
 	return o.DatacenterId.Get(), o.DatacenterId.IsSet()
 }
 
-// IsSetDatacenterId returns a boolean if a field has been set.
-func (o *CloudsConfigVMware) IsSetDatacenterId() bool {
-	if o != nil && o.DatacenterId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDatacenterId gets a reference to the given NullableString and assigns it to the DatacenterId field.
 func (o *CloudsConfigVMware) SetDatacenterId(v string) {
 	o.DatacenterId.Set(&v)
-}
-
-// SetDatacenterIdNil sets the value for DatacenterId to be an explicit nil
-func (o *CloudsConfigVMware) SetDatacenterIdNil() {
-	o.DatacenterId.Set(nil)
-}
-
-// UnsetDatacenterId ensures that no value is present for DatacenterId, not even an explicit nil
-func (o *CloudsConfigVMware) UnsetDatacenterId() {
-	o.DatacenterId.Unset()
 }
 
 // GetDiskStorageType returns the DiskStorageType field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -776,28 +503,9 @@ func (o *CloudsConfigVMware) GetDiskStorageTypeOk() (*string, bool) {
 	return o.DiskStorageType.Get(), o.DiskStorageType.IsSet()
 }
 
-// IsSetDiskStorageType returns a boolean if a field has been set.
-func (o *CloudsConfigVMware) IsSetDiskStorageType() bool {
-	if o != nil && o.DiskStorageType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDiskStorageType gets a reference to the given NullableString and assigns it to the DiskStorageType field.
 func (o *CloudsConfigVMware) SetDiskStorageType(v string) {
 	o.DiskStorageType.Set(&v)
-}
-
-// SetDiskStorageTypeNil sets the value for DiskStorageType to be an explicit nil
-func (o *CloudsConfigVMware) SetDiskStorageTypeNil() {
-	o.DiskStorageType.Set(nil)
-}
-
-// UnsetDiskStorageType ensures that no value is present for DiskStorageType, not even an explicit nil
-func (o *CloudsConfigVMware) UnsetDiskStorageType() {
-	o.DiskStorageType.Unset()
 }
 
 // GetDistributedWorkerId returns the DistributedWorkerId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -819,28 +527,9 @@ func (o *CloudsConfigVMware) GetDistributedWorkerIdOk() (*string, bool) {
 	return o.DistributedWorkerId.Get(), o.DistributedWorkerId.IsSet()
 }
 
-// IsSetDistributedWorkerId returns a boolean if a field has been set.
-func (o *CloudsConfigVMware) IsSetDistributedWorkerId() bool {
-	if o != nil && o.DistributedWorkerId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDistributedWorkerId gets a reference to the given NullableString and assigns it to the DistributedWorkerId field.
 func (o *CloudsConfigVMware) SetDistributedWorkerId(v string) {
 	o.DistributedWorkerId.Set(&v)
-}
-
-// SetDistributedWorkerIdNil sets the value for DistributedWorkerId to be an explicit nil
-func (o *CloudsConfigVMware) SetDistributedWorkerIdNil() {
-	o.DistributedWorkerId.Set(nil)
-}
-
-// UnsetDistributedWorkerId ensures that no value is present for DistributedWorkerId, not even an explicit nil
-func (o *CloudsConfigVMware) UnsetDistributedWorkerId() {
-	o.DistributedWorkerId.Unset()
 }
 
 // GetDnsIntegrationId returns the DnsIntegrationId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -862,28 +551,9 @@ func (o *CloudsConfigVMware) GetDnsIntegrationIdOk() (*string, bool) {
 	return o.DnsIntegrationId.Get(), o.DnsIntegrationId.IsSet()
 }
 
-// IsSetDnsIntegrationId returns a boolean if a field has been set.
-func (o *CloudsConfigVMware) IsSetDnsIntegrationId() bool {
-	if o != nil && o.DnsIntegrationId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDnsIntegrationId gets a reference to the given NullableString and assigns it to the DnsIntegrationId field.
 func (o *CloudsConfigVMware) SetDnsIntegrationId(v string) {
 	o.DnsIntegrationId.Set(&v)
-}
-
-// SetDnsIntegrationIdNil sets the value for DnsIntegrationId to be an explicit nil
-func (o *CloudsConfigVMware) SetDnsIntegrationIdNil() {
-	o.DnsIntegrationId.Set(nil)
-}
-
-// UnsetDnsIntegrationId ensures that no value is present for DnsIntegrationId, not even an explicit nil
-func (o *CloudsConfigVMware) UnsetDnsIntegrationId() {
-	o.DnsIntegrationId.Unset()
 }
 
 // GetEnableDiskTypeSelection returns the EnableDiskTypeSelection field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -905,28 +575,9 @@ func (o *CloudsConfigVMware) GetEnableDiskTypeSelectionOk() (*string, bool) {
 	return o.EnableDiskTypeSelection.Get(), o.EnableDiskTypeSelection.IsSet()
 }
 
-// IsSetEnableDiskTypeSelection returns a boolean if a field has been set.
-func (o *CloudsConfigVMware) IsSetEnableDiskTypeSelection() bool {
-	if o != nil && o.EnableDiskTypeSelection.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetEnableDiskTypeSelection gets a reference to the given NullableString and assigns it to the EnableDiskTypeSelection field.
 func (o *CloudsConfigVMware) SetEnableDiskTypeSelection(v string) {
 	o.EnableDiskTypeSelection.Set(&v)
-}
-
-// SetEnableDiskTypeSelectionNil sets the value for EnableDiskTypeSelection to be an explicit nil
-func (o *CloudsConfigVMware) SetEnableDiskTypeSelectionNil() {
-	o.EnableDiskTypeSelection.Set(nil)
-}
-
-// UnsetEnableDiskTypeSelection ensures that no value is present for EnableDiskTypeSelection, not even an explicit nil
-func (o *CloudsConfigVMware) UnsetEnableDiskTypeSelection() {
-	o.EnableDiskTypeSelection.Unset()
 }
 
 // GetEnableNetworkTypeSelection returns the EnableNetworkTypeSelection field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -948,28 +599,9 @@ func (o *CloudsConfigVMware) GetEnableNetworkTypeSelectionOk() (*string, bool) {
 	return o.EnableNetworkTypeSelection.Get(), o.EnableNetworkTypeSelection.IsSet()
 }
 
-// IsSetEnableNetworkTypeSelection returns a boolean if a field has been set.
-func (o *CloudsConfigVMware) IsSetEnableNetworkTypeSelection() bool {
-	if o != nil && o.EnableNetworkTypeSelection.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetEnableNetworkTypeSelection gets a reference to the given NullableString and assigns it to the EnableNetworkTypeSelection field.
 func (o *CloudsConfigVMware) SetEnableNetworkTypeSelection(v string) {
 	o.EnableNetworkTypeSelection.Set(&v)
-}
-
-// SetEnableNetworkTypeSelectionNil sets the value for EnableNetworkTypeSelection to be an explicit nil
-func (o *CloudsConfigVMware) SetEnableNetworkTypeSelectionNil() {
-	o.EnableNetworkTypeSelection.Set(nil)
-}
-
-// UnsetEnableNetworkTypeSelection ensures that no value is present for EnableNetworkTypeSelection, not even an explicit nil
-func (o *CloudsConfigVMware) UnsetEnableNetworkTypeSelection() {
-	o.EnableNetworkTypeSelection.Unset()
 }
 
 // GetEnableStorageTypeSelection returns the EnableStorageTypeSelection field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -991,28 +623,9 @@ func (o *CloudsConfigVMware) GetEnableStorageTypeSelectionOk() (*string, bool) {
 	return o.EnableStorageTypeSelection.Get(), o.EnableStorageTypeSelection.IsSet()
 }
 
-// IsSetEnableStorageTypeSelection returns a boolean if a field has been set.
-func (o *CloudsConfigVMware) IsSetEnableStorageTypeSelection() bool {
-	if o != nil && o.EnableStorageTypeSelection.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetEnableStorageTypeSelection gets a reference to the given NullableString and assigns it to the EnableStorageTypeSelection field.
 func (o *CloudsConfigVMware) SetEnableStorageTypeSelection(v string) {
 	o.EnableStorageTypeSelection.Set(&v)
-}
-
-// SetEnableStorageTypeSelectionNil sets the value for EnableStorageTypeSelection to be an explicit nil
-func (o *CloudsConfigVMware) SetEnableStorageTypeSelectionNil() {
-	o.EnableStorageTypeSelection.Set(nil)
-}
-
-// UnsetEnableStorageTypeSelection ensures that no value is present for EnableStorageTypeSelection, not even an explicit nil
-func (o *CloudsConfigVMware) UnsetEnableStorageTypeSelection() {
-	o.EnableStorageTypeSelection.Unset()
 }
 
 // GetEnableVnc returns the EnableVnc field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1034,28 +647,9 @@ func (o *CloudsConfigVMware) GetEnableVncOk() (*string, bool) {
 	return o.EnableVnc.Get(), o.EnableVnc.IsSet()
 }
 
-// IsSetEnableVnc returns a boolean if a field has been set.
-func (o *CloudsConfigVMware) IsSetEnableVnc() bool {
-	if o != nil && o.EnableVnc.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetEnableVnc gets a reference to the given NullableString and assigns it to the EnableVnc field.
 func (o *CloudsConfigVMware) SetEnableVnc(v string) {
 	o.EnableVnc.Set(&v)
-}
-
-// SetEnableVncNil sets the value for EnableVnc to be an explicit nil
-func (o *CloudsConfigVMware) SetEnableVncNil() {
-	o.EnableVnc.Set(nil)
-}
-
-// UnsetEnableVnc ensures that no value is present for EnableVnc, not even an explicit nil
-func (o *CloudsConfigVMware) UnsetEnableVnc() {
-	o.EnableVnc.Unset()
 }
 
 // GetHideHostSelection returns the HideHostSelection field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1077,28 +671,9 @@ func (o *CloudsConfigVMware) GetHideHostSelectionOk() (*string, bool) {
 	return o.HideHostSelection.Get(), o.HideHostSelection.IsSet()
 }
 
-// IsSetHideHostSelection returns a boolean if a field has been set.
-func (o *CloudsConfigVMware) IsSetHideHostSelection() bool {
-	if o != nil && o.HideHostSelection.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetHideHostSelection gets a reference to the given NullableString and assigns it to the HideHostSelection field.
 func (o *CloudsConfigVMware) SetHideHostSelection(v string) {
 	o.HideHostSelection.Set(&v)
-}
-
-// SetHideHostSelectionNil sets the value for HideHostSelection to be an explicit nil
-func (o *CloudsConfigVMware) SetHideHostSelectionNil() {
-	o.HideHostSelection.Set(nil)
-}
-
-// UnsetHideHostSelection ensures that no value is present for HideHostSelection, not even an explicit nil
-func (o *CloudsConfigVMware) UnsetHideHostSelection() {
-	o.HideHostSelection.Unset()
 }
 
 // GetImportExisting returns the ImportExisting field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1120,28 +695,9 @@ func (o *CloudsConfigVMware) GetImportExistingOk() (*string, bool) {
 	return o.ImportExisting.Get(), o.ImportExisting.IsSet()
 }
 
-// IsSetImportExisting returns a boolean if a field has been set.
-func (o *CloudsConfigVMware) IsSetImportExisting() bool {
-	if o != nil && o.ImportExisting.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetImportExisting gets a reference to the given NullableString and assigns it to the ImportExisting field.
 func (o *CloudsConfigVMware) SetImportExisting(v string) {
 	o.ImportExisting.Set(&v)
-}
-
-// SetImportExistingNil sets the value for ImportExisting to be an explicit nil
-func (o *CloudsConfigVMware) SetImportExistingNil() {
-	o.ImportExisting.Set(nil)
-}
-
-// UnsetImportExisting ensures that no value is present for ImportExisting, not even an explicit nil
-func (o *CloudsConfigVMware) UnsetImportExisting() {
-	o.ImportExisting.Unset()
 }
 
 // GetKubeUrl returns the KubeUrl field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1163,28 +719,9 @@ func (o *CloudsConfigVMware) GetKubeUrlOk() (*string, bool) {
 	return o.KubeUrl.Get(), o.KubeUrl.IsSet()
 }
 
-// IsSetKubeUrl returns a boolean if a field has been set.
-func (o *CloudsConfigVMware) IsSetKubeUrl() bool {
-	if o != nil && o.KubeUrl.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetKubeUrl gets a reference to the given NullableString and assigns it to the KubeUrl field.
 func (o *CloudsConfigVMware) SetKubeUrl(v string) {
 	o.KubeUrl.Set(&v)
-}
-
-// SetKubeUrlNil sets the value for KubeUrl to be an explicit nil
-func (o *CloudsConfigVMware) SetKubeUrlNil() {
-	o.KubeUrl.Set(nil)
-}
-
-// UnsetKubeUrl ensures that no value is present for KubeUrl, not even an explicit nil
-func (o *CloudsConfigVMware) UnsetKubeUrl() {
-	o.KubeUrl.Unset()
 }
 
 // GetNetworkServer returns the NetworkServer field value if set, zero value otherwise.
@@ -1203,15 +740,6 @@ func (o *CloudsConfigVMware) GetNetworkServerOk() (*AddClouds200ResponseAllOfZon
 		return nil, false
 	}
 	return o.NetworkServer, true
-}
-
-// IsSetNetworkServer returns a boolean if a field has been set.
-func (o *CloudsConfigVMware) IsSetNetworkServer() bool {
-	if o != nil && !IsNil(o.NetworkServer) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkServer gets a reference to the given AddClouds200ResponseAllOfZoneConfigAnyOf1NetworkServer and assigns it to the NetworkServer field.
@@ -1235,15 +763,6 @@ func (o *CloudsConfigVMware) GetNetworkServerIdOk() (*string, bool) {
 		return nil, false
 	}
 	return o.NetworkServerId, true
-}
-
-// IsSetNetworkServerId returns a boolean if a field has been set.
-func (o *CloudsConfigVMware) IsSetNetworkServerId() bool {
-	if o != nil && !IsNil(o.NetworkServerId) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkServerId gets a reference to the given string and assigns it to the NetworkServerId field.
@@ -1270,28 +789,9 @@ func (o *CloudsConfigVMware) GetPasswordOk() (*string, bool) {
 	return o.Password.Get(), o.Password.IsSet()
 }
 
-// IsSetPassword returns a boolean if a field has been set.
-func (o *CloudsConfigVMware) IsSetPassword() bool {
-	if o != nil && o.Password.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPassword gets a reference to the given NullableString and assigns it to the Password field.
 func (o *CloudsConfigVMware) SetPassword(v string) {
 	o.Password.Set(&v)
-}
-
-// SetPasswordNil sets the value for Password to be an explicit nil
-func (o *CloudsConfigVMware) SetPasswordNil() {
-	o.Password.Set(nil)
-}
-
-// UnsetPassword ensures that no value is present for Password, not even an explicit nil
-func (o *CloudsConfigVMware) UnsetPassword() {
-	o.Password.Unset()
 }
 
 // GetPasswordHash returns the PasswordHash field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1313,28 +813,9 @@ func (o *CloudsConfigVMware) GetPasswordHashOk() (*string, bool) {
 	return o.PasswordHash.Get(), o.PasswordHash.IsSet()
 }
 
-// IsSetPasswordHash returns a boolean if a field has been set.
-func (o *CloudsConfigVMware) IsSetPasswordHash() bool {
-	if o != nil && o.PasswordHash.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPasswordHash gets a reference to the given NullableString and assigns it to the PasswordHash field.
 func (o *CloudsConfigVMware) SetPasswordHash(v string) {
 	o.PasswordHash.Set(&v)
-}
-
-// SetPasswordHashNil sets the value for PasswordHash to be an explicit nil
-func (o *CloudsConfigVMware) SetPasswordHashNil() {
-	o.PasswordHash.Set(nil)
-}
-
-// UnsetPasswordHash ensures that no value is present for PasswordHash, not even an explicit nil
-func (o *CloudsConfigVMware) UnsetPasswordHash() {
-	o.PasswordHash.Unset()
 }
 
 // GetReplicationMode returns the ReplicationMode field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1356,28 +837,9 @@ func (o *CloudsConfigVMware) GetReplicationModeOk() (*string, bool) {
 	return o.ReplicationMode.Get(), o.ReplicationMode.IsSet()
 }
 
-// IsSetReplicationMode returns a boolean if a field has been set.
-func (o *CloudsConfigVMware) IsSetReplicationMode() bool {
-	if o != nil && o.ReplicationMode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetReplicationMode gets a reference to the given NullableString and assigns it to the ReplicationMode field.
 func (o *CloudsConfigVMware) SetReplicationMode(v string) {
 	o.ReplicationMode.Set(&v)
-}
-
-// SetReplicationModeNil sets the value for ReplicationMode to be an explicit nil
-func (o *CloudsConfigVMware) SetReplicationModeNil() {
-	o.ReplicationMode.Set(nil)
-}
-
-// UnsetReplicationMode ensures that no value is present for ReplicationMode, not even an explicit nil
-func (o *CloudsConfigVMware) UnsetReplicationMode() {
-	o.ReplicationMode.Unset()
 }
 
 // GetResourcePool returns the ResourcePool field value if set, zero value otherwise.
@@ -1396,15 +858,6 @@ func (o *CloudsConfigVMware) GetResourcePoolOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ResourcePool, true
-}
-
-// IsSetResourcePool returns a boolean if a field has been set.
-func (o *CloudsConfigVMware) IsSetResourcePool() bool {
-	if o != nil && !IsNil(o.ResourcePool) {
-		return true
-	}
-
-	return false
 }
 
 // SetResourcePool gets a reference to the given string and assigns it to the ResourcePool field.
@@ -1430,15 +883,6 @@ func (o *CloudsConfigVMware) GetResourcePoolIdOk() (*string, bool) {
 	return o.ResourcePoolId, true
 }
 
-// IsSetResourcePoolId returns a boolean if a field has been set.
-func (o *CloudsConfigVMware) IsSetResourcePoolId() bool {
-	if o != nil && !IsNil(o.ResourcePoolId) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourcePoolId gets a reference to the given string and assigns it to the ResourcePoolId field.
 func (o *CloudsConfigVMware) SetResourcePoolId(v string) {
 	o.ResourcePoolId = &v
@@ -1462,15 +906,6 @@ func (o *CloudsConfigVMware) GetRpcModeOk() (*string, bool) {
 	return o.RpcMode, true
 }
 
-// IsSetRpcMode returns a boolean if a field has been set.
-func (o *CloudsConfigVMware) IsSetRpcMode() bool {
-	if o != nil && !IsNil(o.RpcMode) {
-		return true
-	}
-
-	return false
-}
-
 // SetRpcMode gets a reference to the given string and assigns it to the RpcMode field.
 func (o *CloudsConfigVMware) SetRpcMode(v string) {
 	o.RpcMode = &v
@@ -1492,15 +927,6 @@ func (o *CloudsConfigVMware) GetSecurityModeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SecurityMode, true
-}
-
-// IsSetSecurityMode returns a boolean if a field has been set.
-func (o *CloudsConfigVMware) IsSetSecurityMode() bool {
-	if o != nil && !IsNil(o.SecurityMode) {
-		return true
-	}
-
-	return false
 }
 
 // SetSecurityMode gets a reference to the given string and assigns it to the SecurityMode field.
@@ -1527,28 +953,9 @@ func (o *CloudsConfigVMware) GetSecurityServerOk() (*string, bool) {
 	return o.SecurityServer.Get(), o.SecurityServer.IsSet()
 }
 
-// IsSetSecurityServer returns a boolean if a field has been set.
-func (o *CloudsConfigVMware) IsSetSecurityServer() bool {
-	if o != nil && o.SecurityServer.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSecurityServer gets a reference to the given NullableString and assigns it to the SecurityServer field.
 func (o *CloudsConfigVMware) SetSecurityServer(v string) {
 	o.SecurityServer.Set(&v)
-}
-
-// SetSecurityServerNil sets the value for SecurityServer to be an explicit nil
-func (o *CloudsConfigVMware) SetSecurityServerNil() {
-	o.SecurityServer.Set(nil)
-}
-
-// UnsetSecurityServer ensures that no value is present for SecurityServer, not even an explicit nil
-func (o *CloudsConfigVMware) UnsetSecurityServer() {
-	o.SecurityServer.Unset()
 }
 
 // GetServiceRegistryId returns the ServiceRegistryId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1570,28 +977,9 @@ func (o *CloudsConfigVMware) GetServiceRegistryIdOk() (*string, bool) {
 	return o.ServiceRegistryId.Get(), o.ServiceRegistryId.IsSet()
 }
 
-// IsSetServiceRegistryId returns a boolean if a field has been set.
-func (o *CloudsConfigVMware) IsSetServiceRegistryId() bool {
-	if o != nil && o.ServiceRegistryId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceRegistryId gets a reference to the given NullableString and assigns it to the ServiceRegistryId field.
 func (o *CloudsConfigVMware) SetServiceRegistryId(v string) {
 	o.ServiceRegistryId.Set(&v)
-}
-
-// SetServiceRegistryIdNil sets the value for ServiceRegistryId to be an explicit nil
-func (o *CloudsConfigVMware) SetServiceRegistryIdNil() {
-	o.ServiceRegistryId.Set(nil)
-}
-
-// UnsetServiceRegistryId ensures that no value is present for ServiceRegistryId, not even an explicit nil
-func (o *CloudsConfigVMware) UnsetServiceRegistryId() {
-	o.ServiceRegistryId.Unset()
 }
 
 // GetUsername returns the Username field value if set, zero value otherwise.
@@ -1610,15 +998,6 @@ func (o *CloudsConfigVMware) GetUsernameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Username, true
-}
-
-// IsSetUsername returns a boolean if a field has been set.
-func (o *CloudsConfigVMware) IsSetUsername() bool {
-	if o != nil && !IsNil(o.Username) {
-		return true
-	}
-
-	return false
 }
 
 // SetUsername gets a reference to the given string and assigns it to the Username field.

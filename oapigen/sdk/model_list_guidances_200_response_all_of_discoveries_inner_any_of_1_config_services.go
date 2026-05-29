@@ -61,15 +61,6 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServices) GetA
 	return o.AzureVms, true
 }
 
-// IsSetAzureVms returns a boolean if a field has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServices) IsSetAzureVms() bool {
-	if o != nil && !IsNil(o.AzureVms) {
-		return true
-	}
-
-	return false
-}
-
 // SetAzureVms gets a reference to the given ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVms and assigns it to the AzureVms field.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServices) SetAzureVms(v ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVms) {
 	o.AzureVms = &v

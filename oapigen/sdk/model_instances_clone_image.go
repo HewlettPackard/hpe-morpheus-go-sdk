@@ -68,15 +68,6 @@ func (o *InstancesCloneImage) GetTemplateNameOk() (*string, bool) {
 	return o.TemplateName, true
 }
 
-// IsSetTemplateName returns a boolean if a field has been set.
-func (o *InstancesCloneImage) IsSetTemplateName() bool {
-	if o != nil && !IsNil(o.TemplateName) {
-		return true
-	}
-
-	return false
-}
-
 // SetTemplateName gets a reference to the given string and assigns it to the TemplateName field.
 func (o *InstancesCloneImage) SetTemplateName(v string) {
 	o.TemplateName = &v
@@ -98,15 +89,6 @@ func (o *InstancesCloneImage) GetZoneFolderOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ZoneFolder, true
-}
-
-// IsSetZoneFolder returns a boolean if a field has been set.
-func (o *InstancesCloneImage) IsSetZoneFolder() bool {
-	if o != nil && !IsNil(o.ZoneFolder) {
-		return true
-	}
-
-	return false
 }
 
 // SetZoneFolder gets a reference to the given string and assigns it to the ZoneFolder field.

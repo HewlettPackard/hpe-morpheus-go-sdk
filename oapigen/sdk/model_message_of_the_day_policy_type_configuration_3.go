@@ -68,28 +68,9 @@ func (o *MessageOfTheDayPolicyTypeConfiguration3) GetMotdTitleOk() (*string, boo
 	return o.MotdTitle.Get(), o.MotdTitle.IsSet()
 }
 
-// IsSetMotdTitle returns a boolean if a field has been set.
-func (o *MessageOfTheDayPolicyTypeConfiguration3) IsSetMotdTitle() bool {
-	if o != nil && o.MotdTitle.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMotdTitle gets a reference to the given NullableString and assigns it to the MotdTitle field.
 func (o *MessageOfTheDayPolicyTypeConfiguration3) SetMotdTitle(v string) {
 	o.MotdTitle.Set(&v)
-}
-
-// SetMotdTitleNil sets the value for MotdTitle to be an explicit nil
-func (o *MessageOfTheDayPolicyTypeConfiguration3) SetMotdTitleNil() {
-	o.MotdTitle.Set(nil)
-}
-
-// UnsetMotdTitle ensures that no value is present for MotdTitle, not even an explicit nil
-func (o *MessageOfTheDayPolicyTypeConfiguration3) UnsetMotdTitle() {
-	o.MotdTitle.Unset()
 }
 
 // GetMotd returns the Motd field value
@@ -134,15 +115,6 @@ func (o *MessageOfTheDayPolicyTypeConfiguration3) GetMotdMessageOk() (*string, b
 	return o.MotdMessage, true
 }
 
-// IsSetMotdMessage returns a boolean if a field has been set.
-func (o *MessageOfTheDayPolicyTypeConfiguration3) IsSetMotdMessage() bool {
-	if o != nil && !IsNil(o.MotdMessage) {
-		return true
-	}
-
-	return false
-}
-
 // SetMotdMessage gets a reference to the given string and assigns it to the MotdMessage field.
 func (o *MessageOfTheDayPolicyTypeConfiguration3) SetMotdMessage(v string) {
 	o.MotdMessage = &v
@@ -164,15 +136,6 @@ func (o *MessageOfTheDayPolicyTypeConfiguration3) GetMotdTypeOk() (*string, bool
 		return nil, false
 	}
 	return o.MotdType, true
-}
-
-// IsSetMotdType returns a boolean if a field has been set.
-func (o *MessageOfTheDayPolicyTypeConfiguration3) IsSetMotdType() bool {
-	if o != nil && !IsNil(o.MotdType) {
-		return true
-	}
-
-	return false
 }
 
 // SetMotdType gets a reference to the given string and assigns it to the MotdType field.
@@ -198,15 +161,6 @@ func (o *MessageOfTheDayPolicyTypeConfiguration3) GetMotdFullPageOk() (*MessageO
 	return o.MotdFullPage, true
 }
 
-// IsSetMotdFullPage returns a boolean if a field has been set.
-func (o *MessageOfTheDayPolicyTypeConfiguration3) IsSetMotdFullPage() bool {
-	if o != nil && !IsNil(o.MotdFullPage) {
-		return true
-	}
-
-	return false
-}
-
 // SetMotdFullPage gets a reference to the given MessageOfTheDayPolicyTypeConfiguration3MotdFullPage and assigns it to the MotdFullPage field.
 func (o *MessageOfTheDayPolicyTypeConfiguration3) SetMotdFullPage(v MessageOfTheDayPolicyTypeConfiguration3MotdFullPage) {
 	o.MotdFullPage = &v
@@ -228,15 +182,6 @@ func (o *MessageOfTheDayPolicyTypeConfiguration3) GetMotdDateOk() (*string, bool
 		return nil, false
 	}
 	return o.MotdDate, true
-}
-
-// IsSetMotdDate returns a boolean if a field has been set.
-func (o *MessageOfTheDayPolicyTypeConfiguration3) IsSetMotdDate() bool {
-	if o != nil && !IsNil(o.MotdDate) {
-		return true
-	}
-
-	return false
 }
 
 // SetMotdDate gets a reference to the given string and assigns it to the MotdDate field.

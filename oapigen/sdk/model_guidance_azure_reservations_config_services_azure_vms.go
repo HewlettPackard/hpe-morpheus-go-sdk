@@ -63,15 +63,6 @@ func (o *GuidanceAzureReservationsConfigServicesAzureVms) GetCodeOk() (*string, 
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *GuidanceAzureReservationsConfigServicesAzureVms) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *GuidanceAzureReservationsConfigServicesAzureVms) SetCode(v string) {
 	o.Code = &v
@@ -95,15 +86,6 @@ func (o *GuidanceAzureReservationsConfigServicesAzureVms) GetNameOk() (*string, 
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *GuidanceAzureReservationsConfigServicesAzureVms) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *GuidanceAzureReservationsConfigServicesAzureVms) SetName(v string) {
 	o.Name = &v
@@ -125,15 +107,6 @@ func (o *GuidanceAzureReservationsConfigServicesAzureVms) GetPaymentOptionsOk() 
 		return map[string]GuidanceAzureReservationsConfigServicesAzureVmsPaymentOptionsValue{}, false
 	}
 	return o.PaymentOptions, true
-}
-
-// IsSetPaymentOptions returns a boolean if a field has been set.
-func (o *GuidanceAzureReservationsConfigServicesAzureVms) IsSetPaymentOptions() bool {
-	if o != nil && !IsNil(o.PaymentOptions) {
-		return true
-	}
-
-	return false
 }
 
 // SetPaymentOptions gets a reference to the given map[string]GuidanceAzureReservationsConfigServicesAzureVmsPaymentOptionsValue and assigns it to the PaymentOptions field.

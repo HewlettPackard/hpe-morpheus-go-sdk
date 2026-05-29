@@ -64,15 +64,6 @@ func (o *GetSubnet200ResponseSubnetResourcePermission) GetAllOk() (*bool, bool) 
 	return o.All, true
 }
 
-// IsSetAll returns a boolean if a field has been set.
-func (o *GetSubnet200ResponseSubnetResourcePermission) IsSetAll() bool {
-	if o != nil && !IsNil(o.All) {
-		return true
-	}
-
-	return false
-}
-
 // SetAll gets a reference to the given bool and assigns it to the All field.
 func (o *GetSubnet200ResponseSubnetResourcePermission) SetAll(v bool) {
 	o.All = &v
@@ -94,15 +85,6 @@ func (o *GetSubnet200ResponseSubnetResourcePermission) GetSitesOk() ([]map[strin
 		return nil, false
 	}
 	return o.Sites, true
-}
-
-// IsSetSites returns a boolean if a field has been set.
-func (o *GetSubnet200ResponseSubnetResourcePermission) IsSetSites() bool {
-	if o != nil && !IsNil(o.Sites) {
-		return true
-	}
-
-	return false
 }
 
 // SetSites gets a reference to the given []map[string]interface{} and assigns it to the Sites field.
@@ -128,15 +110,6 @@ func (o *GetSubnet200ResponseSubnetResourcePermission) GetAllPlansOk() (*bool, b
 	return o.AllPlans, true
 }
 
-// IsSetAllPlans returns a boolean if a field has been set.
-func (o *GetSubnet200ResponseSubnetResourcePermission) IsSetAllPlans() bool {
-	if o != nil && !IsNil(o.AllPlans) {
-		return true
-	}
-
-	return false
-}
-
 // SetAllPlans gets a reference to the given bool and assigns it to the AllPlans field.
 func (o *GetSubnet200ResponseSubnetResourcePermission) SetAllPlans(v bool) {
 	o.AllPlans = &v
@@ -158,15 +131,6 @@ func (o *GetSubnet200ResponseSubnetResourcePermission) GetPlansOk() ([]map[strin
 		return nil, false
 	}
 	return o.Plans, true
-}
-
-// IsSetPlans returns a boolean if a field has been set.
-func (o *GetSubnet200ResponseSubnetResourcePermission) IsSetPlans() bool {
-	if o != nil && !IsNil(o.Plans) {
-		return true
-	}
-
-	return false
 }
 
 // SetPlans gets a reference to the given []map[string]interface{} and assigns it to the Plans field.

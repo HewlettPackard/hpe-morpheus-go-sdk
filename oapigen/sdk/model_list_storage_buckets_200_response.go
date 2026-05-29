@@ -62,15 +62,6 @@ func (o *ListStorageBuckets200Response) GetStorageBucketsOk() ([]ListStorageBuck
 	return o.StorageBuckets, true
 }
 
-// IsSetStorageBuckets returns a boolean if a field has been set.
-func (o *ListStorageBuckets200Response) IsSetStorageBuckets() bool {
-	if o != nil && !IsNil(o.StorageBuckets) {
-		return true
-	}
-
-	return false
-}
-
 // SetStorageBuckets gets a reference to the given []ListStorageBuckets200ResponseAllOfStorageBucketsInner and assigns it to the StorageBuckets field.
 func (o *ListStorageBuckets200Response) SetStorageBuckets(v []ListStorageBuckets200ResponseAllOfStorageBucketsInner) {
 	o.StorageBuckets = v
@@ -92,15 +83,6 @@ func (o *ListStorageBuckets200Response) GetMetaOk() (*ListApprovals200ResponseAl
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListStorageBuckets200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

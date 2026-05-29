@@ -62,15 +62,6 @@ func (o *ListTenants200ResponseAllOfAccountsInnerStats) GetInstanceCountOk() (*i
 	return o.InstanceCount, true
 }
 
-// IsSetInstanceCount returns a boolean if a field has been set.
-func (o *ListTenants200ResponseAllOfAccountsInnerStats) IsSetInstanceCount() bool {
-	if o != nil && !IsNil(o.InstanceCount) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstanceCount gets a reference to the given int64 and assigns it to the InstanceCount field.
 func (o *ListTenants200ResponseAllOfAccountsInnerStats) SetInstanceCount(v int64) {
 	o.InstanceCount = &v
@@ -92,15 +83,6 @@ func (o *ListTenants200ResponseAllOfAccountsInnerStats) GetUserCountOk() (*int64
 		return nil, false
 	}
 	return o.UserCount, true
-}
-
-// IsSetUserCount returns a boolean if a field has been set.
-func (o *ListTenants200ResponseAllOfAccountsInnerStats) IsSetUserCount() bool {
-	if o != nil && !IsNil(o.UserCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetUserCount gets a reference to the given int64 and assigns it to the UserCount field.

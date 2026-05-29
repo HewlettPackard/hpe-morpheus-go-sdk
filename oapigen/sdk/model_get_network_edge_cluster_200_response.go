@@ -61,15 +61,6 @@ func (o *GetNetworkEdgeCluster200Response) GetNetworkEdgeClusterOk() (*GetNetwor
 	return o.NetworkEdgeCluster, true
 }
 
-// IsSetNetworkEdgeCluster returns a boolean if a field has been set.
-func (o *GetNetworkEdgeCluster200Response) IsSetNetworkEdgeCluster() bool {
-	if o != nil && !IsNil(o.NetworkEdgeCluster) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkEdgeCluster gets a reference to the given GetNetworkEdgeCluster200ResponseNetworkEdgeCluster and assigns it to the NetworkEdgeCluster field.
 func (o *GetNetworkEdgeCluster200Response) SetNetworkEdgeCluster(v GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) {
 	o.NetworkEdgeCluster = &v

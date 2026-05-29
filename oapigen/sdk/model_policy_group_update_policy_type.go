@@ -77,15 +77,6 @@ func (o *PolicyGroupUpdatePolicyType) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *PolicyGroupUpdatePolicyType) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *PolicyGroupUpdatePolicyType) SetCode(v string) {
 	o.Code = &v
@@ -107,15 +98,6 @@ func (o *PolicyGroupUpdatePolicyType) GetConfigOk() (*PolicyGroupUpdatePolicyTyp
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *PolicyGroupUpdatePolicyType) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given PolicyGroupUpdatePolicyTypeConfig and assigns it to the Config field.
@@ -141,15 +123,6 @@ func (o *PolicyGroupUpdatePolicyType) GetEnabledOk() (*bool, bool) {
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *PolicyGroupUpdatePolicyType) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *PolicyGroupUpdatePolicyType) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -171,15 +144,6 @@ func (o *PolicyGroupUpdatePolicyType) GetRefTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.RefType, true
-}
-
-// IsSetRefType returns a boolean if a field has been set.
-func (o *PolicyGroupUpdatePolicyType) IsSetRefType() bool {
-	if o != nil && !IsNil(o.RefType) {
-		return true
-	}
-
-	return false
 }
 
 // SetRefType gets a reference to the given string and assigns it to the RefType field.
@@ -205,15 +169,6 @@ func (o *PolicyGroupUpdatePolicyType) GetRefIdOk() (*int64, bool) {
 	return o.RefId, true
 }
 
-// IsSetRefId returns a boolean if a field has been set.
-func (o *PolicyGroupUpdatePolicyType) IsSetRefId() bool {
-	if o != nil && !IsNil(o.RefId) {
-		return true
-	}
-
-	return false
-}
-
 // SetRefId gets a reference to the given int64 and assigns it to the RefId field.
 func (o *PolicyGroupUpdatePolicyType) SetRefId(v int64) {
 	o.RefId = &v
@@ -237,15 +192,6 @@ func (o *PolicyGroupUpdatePolicyType) GetAccountsOk() ([]int64, bool) {
 	return o.Accounts, true
 }
 
-// IsSetAccounts returns a boolean if a field has been set.
-func (o *PolicyGroupUpdatePolicyType) IsSetAccounts() bool {
-	if o != nil && !IsNil(o.Accounts) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccounts gets a reference to the given []int64 and assigns it to the Accounts field.
 func (o *PolicyGroupUpdatePolicyType) SetAccounts(v []int64) {
 	o.Accounts = v
@@ -267,15 +213,6 @@ func (o *PolicyGroupUpdatePolicyType) GetEachUserOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.EachUser, true
-}
-
-// IsSetEachUser returns a boolean if a field has been set.
-func (o *PolicyGroupUpdatePolicyType) IsSetEachUser() bool {
-	if o != nil && !IsNil(o.EachUser) {
-		return true
-	}
-
-	return false
 }
 
 // SetEachUser gets a reference to the given bool and assigns it to the EachUser field.

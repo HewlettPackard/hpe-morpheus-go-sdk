@@ -61,15 +61,6 @@ func (o *CreateNetworkServerRequest) GetNetworkServerOk() (*NSXNetworkServer, bo
 	return o.NetworkServer, true
 }
 
-// IsSetNetworkServer returns a boolean if a field has been set.
-func (o *CreateNetworkServerRequest) IsSetNetworkServer() bool {
-	if o != nil && !IsNil(o.NetworkServer) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkServer gets a reference to the given NSXNetworkServer and assigns it to the NetworkServer field.
 func (o *CreateNetworkServerRequest) SetNetworkServer(v NSXNetworkServer) {
 	o.NetworkServer = &v

@@ -107,15 +107,6 @@ func (o *AddWorkflowsRequestTaskSet) GetDescriptionOk() (*string, bool) {
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *AddWorkflowsRequestTaskSet) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *AddWorkflowsRequestTaskSet) SetDescription(v string) {
 	o.Description = &v
@@ -137,15 +128,6 @@ func (o *AddWorkflowsRequestTaskSet) GetLabelsOk() ([]string, bool) {
 		return nil, false
 	}
 	return o.Labels, true
-}
-
-// IsSetLabels returns a boolean if a field has been set.
-func (o *AddWorkflowsRequestTaskSet) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
 }
 
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
@@ -171,15 +153,6 @@ func (o *AddWorkflowsRequestTaskSet) GetTypeOk() (*string, bool) {
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *AddWorkflowsRequestTaskSet) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given string and assigns it to the Type field.
 func (o *AddWorkflowsRequestTaskSet) SetType(v string) {
 	o.Type = &v
@@ -201,15 +174,6 @@ func (o *AddWorkflowsRequestTaskSet) GetVisibilityOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *AddWorkflowsRequestTaskSet) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -235,15 +199,6 @@ func (o *AddWorkflowsRequestTaskSet) GetOptionTypesOk() ([]int64, bool) {
 	return o.OptionTypes, true
 }
 
-// IsSetOptionTypes returns a boolean if a field has been set.
-func (o *AddWorkflowsRequestTaskSet) IsSetOptionTypes() bool {
-	if o != nil && !IsNil(o.OptionTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetOptionTypes gets a reference to the given []int64 and assigns it to the OptionTypes field.
 func (o *AddWorkflowsRequestTaskSet) SetOptionTypes(v []int64) {
 	o.OptionTypes = v
@@ -265,15 +220,6 @@ func (o *AddWorkflowsRequestTaskSet) GetTasksOk() ([]AddWorkflowsRequestTaskSetT
 		return nil, false
 	}
 	return o.Tasks, true
-}
-
-// IsSetTasks returns a boolean if a field has been set.
-func (o *AddWorkflowsRequestTaskSet) IsSetTasks() bool {
-	if o != nil && !IsNil(o.Tasks) {
-		return true
-	}
-
-	return false
 }
 
 // SetTasks gets a reference to the given []AddWorkflowsRequestTaskSetTasksInner and assigns it to the Tasks field.

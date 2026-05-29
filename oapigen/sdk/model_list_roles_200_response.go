@@ -62,15 +62,6 @@ func (o *ListRoles200Response) GetRolesOk() ([]ListRoles200ResponseAllOfRolesInn
 	return o.Roles, true
 }
 
-// IsSetRoles returns a boolean if a field has been set.
-func (o *ListRoles200Response) IsSetRoles() bool {
-	if o != nil && !IsNil(o.Roles) {
-		return true
-	}
-
-	return false
-}
-
 // SetRoles gets a reference to the given []ListRoles200ResponseAllOfRolesInner and assigns it to the Roles field.
 func (o *ListRoles200Response) SetRoles(v []ListRoles200ResponseAllOfRolesInner) {
 	o.Roles = v
@@ -92,15 +83,6 @@ func (o *ListRoles200Response) GetMetaOk() (*ListApprovals200ResponseAllOfMeta, 
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListRoles200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

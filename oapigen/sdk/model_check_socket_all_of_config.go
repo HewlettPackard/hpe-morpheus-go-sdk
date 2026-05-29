@@ -187,15 +187,6 @@ func (o *CheckSocketAllOfConfig) GetCheckUserOk() (*string, bool) {
 	return o.CheckUser, true
 }
 
-// IsSetCheckUser returns a boolean if a field has been set.
-func (o *CheckSocketAllOfConfig) IsSetCheckUser() bool {
-	if o != nil && !IsNil(o.CheckUser) {
-		return true
-	}
-
-	return false
-}
-
 // SetCheckUser gets a reference to the given string and assigns it to the CheckUser field.
 func (o *CheckSocketAllOfConfig) SetCheckUser(v string) {
 	o.CheckUser = &v
@@ -217,15 +208,6 @@ func (o *CheckSocketAllOfConfig) GetTextCheckOnOk() (*string, bool) {
 		return nil, false
 	}
 	return o.TextCheckOn, true
-}
-
-// IsSetTextCheckOn returns a boolean if a field has been set.
-func (o *CheckSocketAllOfConfig) IsSetTextCheckOn() bool {
-	if o != nil && !IsNil(o.TextCheckOn) {
-		return true
-	}
-
-	return false
 }
 
 // SetTextCheckOn gets a reference to the given string and assigns it to the TextCheckOn field.
@@ -251,15 +233,6 @@ func (o *CheckSocketAllOfConfig) GetCheckPasswordOk() (*string, bool) {
 	return o.CheckPassword, true
 }
 
-// IsSetCheckPassword returns a boolean if a field has been set.
-func (o *CheckSocketAllOfConfig) IsSetCheckPassword() bool {
-	if o != nil && !IsNil(o.CheckPassword) {
-		return true
-	}
-
-	return false
-}
-
 // SetCheckPassword gets a reference to the given string and assigns it to the CheckPassword field.
 func (o *CheckSocketAllOfConfig) SetCheckPassword(v string) {
 	o.CheckPassword = &v
@@ -281,15 +254,6 @@ func (o *CheckSocketAllOfConfig) GetWebTextMatchOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WebTextMatch, true
-}
-
-// IsSetWebTextMatch returns a boolean if a field has been set.
-func (o *CheckSocketAllOfConfig) IsSetWebTextMatch() bool {
-	if o != nil && !IsNil(o.WebTextMatch) {
-		return true
-	}
-
-	return false
 }
 
 // SetWebTextMatch gets a reference to the given string and assigns it to the WebTextMatch field.
@@ -315,15 +279,6 @@ func (o *CheckSocketAllOfConfig) GetCheckPasswordHashOk() (*string, bool) {
 	return o.CheckPasswordHash, true
 }
 
-// IsSetCheckPasswordHash returns a boolean if a field has been set.
-func (o *CheckSocketAllOfConfig) IsSetCheckPasswordHash() bool {
-	if o != nil && !IsNil(o.CheckPasswordHash) {
-		return true
-	}
-
-	return false
-}
-
 // SetCheckPasswordHash gets a reference to the given string and assigns it to the CheckPasswordHash field.
 func (o *CheckSocketAllOfConfig) SetCheckPasswordHash(v string) {
 	o.CheckPasswordHash = &v
@@ -345,15 +300,6 @@ func (o *CheckSocketAllOfConfig) GetTunnelOnOk() (*string, bool) {
 		return nil, false
 	}
 	return o.TunnelOn, true
-}
-
-// IsSetTunnelOn returns a boolean if a field has been set.
-func (o *CheckSocketAllOfConfig) IsSetTunnelOn() bool {
-	if o != nil && !IsNil(o.TunnelOn) {
-		return true
-	}
-
-	return false
 }
 
 // SetTunnelOn gets a reference to the given string and assigns it to the TunnelOn field.
@@ -379,15 +325,6 @@ func (o *CheckSocketAllOfConfig) GetSshHostOk() (*string, bool) {
 	return o.SshHost, true
 }
 
-// IsSetSshHost returns a boolean if a field has been set.
-func (o *CheckSocketAllOfConfig) IsSetSshHost() bool {
-	if o != nil && !IsNil(o.SshHost) {
-		return true
-	}
-
-	return false
-}
-
 // SetSshHost gets a reference to the given string and assigns it to the SshHost field.
 func (o *CheckSocketAllOfConfig) SetSshHost(v string) {
 	o.SshHost = &v
@@ -409,15 +346,6 @@ func (o *CheckSocketAllOfConfig) GetSshPortOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.SshPort, true
-}
-
-// IsSetSshPort returns a boolean if a field has been set.
-func (o *CheckSocketAllOfConfig) IsSetSshPort() bool {
-	if o != nil && !IsNil(o.SshPort) {
-		return true
-	}
-
-	return false
 }
 
 // SetSshPort gets a reference to the given int64 and assigns it to the SshPort field.
@@ -443,15 +371,6 @@ func (o *CheckSocketAllOfConfig) GetSshUserOk() (*string, bool) {
 	return o.SshUser, true
 }
 
-// IsSetSshUser returns a boolean if a field has been set.
-func (o *CheckSocketAllOfConfig) IsSetSshUser() bool {
-	if o != nil && !IsNil(o.SshUser) {
-		return true
-	}
-
-	return false
-}
-
 // SetSshUser gets a reference to the given string and assigns it to the SshUser field.
 func (o *CheckSocketAllOfConfig) SetSshUser(v string) {
 	o.SshUser = &v
@@ -473,15 +392,6 @@ func (o *CheckSocketAllOfConfig) GetSshPasswordOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SshPassword, true
-}
-
-// IsSetSshPassword returns a boolean if a field has been set.
-func (o *CheckSocketAllOfConfig) IsSetSshPassword() bool {
-	if o != nil && !IsNil(o.SshPassword) {
-		return true
-	}
-
-	return false
 }
 
 // SetSshPassword gets a reference to the given string and assigns it to the SshPassword field.

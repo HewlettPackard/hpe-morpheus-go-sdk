@@ -61,15 +61,6 @@ func (o *GetIntegrationObjects200Response) GetObjectOk() (*GetIntegrationObjects
 	return o.Object, true
 }
 
-// IsSetObject returns a boolean if a field has been set.
-func (o *GetIntegrationObjects200Response) IsSetObject() bool {
-	if o != nil && !IsNil(o.Object) {
-		return true
-	}
-
-	return false
-}
-
 // SetObject gets a reference to the given GetIntegrationObjects200ResponseObject and assigns it to the Object field.
 func (o *GetIntegrationObjects200Response) SetObject(v GetIntegrationObjects200ResponseObject) {
 	o.Object = &v

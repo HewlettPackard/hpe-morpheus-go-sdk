@@ -63,15 +63,6 @@ func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf2RoleMappi
 	return o.SourceRoleName, true
 }
 
-// IsSetSourceRoleName returns a boolean if a field has been set.
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf2RoleMappingsInner) IsSetSourceRoleName() bool {
-	if o != nil && !IsNil(o.SourceRoleName) {
-		return true
-	}
-
-	return false
-}
-
 // SetSourceRoleName gets a reference to the given string and assigns it to the SourceRoleName field.
 func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf2RoleMappingsInner) SetSourceRoleName(v string) {
 	o.SourceRoleName = &v
@@ -95,15 +86,6 @@ func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf2RoleMappi
 	return o.SourceRoleFqn, true
 }
 
-// IsSetSourceRoleFqn returns a boolean if a field has been set.
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf2RoleMappingsInner) IsSetSourceRoleFqn() bool {
-	if o != nil && !IsNil(o.SourceRoleFqn) {
-		return true
-	}
-
-	return false
-}
-
 // SetSourceRoleFqn gets a reference to the given string and assigns it to the SourceRoleFqn field.
 func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf2RoleMappingsInner) SetSourceRoleFqn(v string) {
 	o.SourceRoleFqn = &v
@@ -125,15 +107,6 @@ func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf2RoleMappi
 		return nil, false
 	}
 	return o.MappedRole, true
-}
-
-// IsSetMappedRole returns a boolean if a field has been set.
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf2RoleMappingsInner) IsSetMappedRole() bool {
-	if o != nil && !IsNil(o.MappedRole) {
-		return true
-	}
-
-	return false
 }
 
 // SetMappedRole gets a reference to the given UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf2RoleMappingsInnerMappedRole and assigns it to the MappedRole field.

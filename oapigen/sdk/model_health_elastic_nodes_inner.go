@@ -70,15 +70,6 @@ func (o *HealthElasticNodesInner) GetIpOk() (*string, bool) {
 	return o.Ip, true
 }
 
-// IsSetIp returns a boolean if a field has been set.
-func (o *HealthElasticNodesInner) IsSetIp() bool {
-	if o != nil && !IsNil(o.Ip) {
-		return true
-	}
-
-	return false
-}
-
 // SetIp gets a reference to the given string and assigns it to the Ip field.
 func (o *HealthElasticNodesInner) SetIp(v string) {
 	o.Ip = &v
@@ -100,15 +91,6 @@ func (o *HealthElasticNodesInner) GetHeapPercentOk() (*string, bool) {
 		return nil, false
 	}
 	return o.HeapPercent, true
-}
-
-// IsSetHeapPercent returns a boolean if a field has been set.
-func (o *HealthElasticNodesInner) IsSetHeapPercent() bool {
-	if o != nil && !IsNil(o.HeapPercent) {
-		return true
-	}
-
-	return false
 }
 
 // SetHeapPercent gets a reference to the given string and assigns it to the HeapPercent field.
@@ -134,15 +116,6 @@ func (o *HealthElasticNodesInner) GetRamPercentOk() (*string, bool) {
 	return o.RamPercent, true
 }
 
-// IsSetRamPercent returns a boolean if a field has been set.
-func (o *HealthElasticNodesInner) IsSetRamPercent() bool {
-	if o != nil && !IsNil(o.RamPercent) {
-		return true
-	}
-
-	return false
-}
-
 // SetRamPercent gets a reference to the given string and assigns it to the RamPercent field.
 func (o *HealthElasticNodesInner) SetRamPercent(v string) {
 	o.RamPercent = &v
@@ -164,15 +137,6 @@ func (o *HealthElasticNodesInner) GetCpuCountOk() (*string, bool) {
 		return nil, false
 	}
 	return o.CpuCount, true
-}
-
-// IsSetCpuCount returns a boolean if a field has been set.
-func (o *HealthElasticNodesInner) IsSetCpuCount() bool {
-	if o != nil && !IsNil(o.CpuCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetCpuCount gets a reference to the given string and assigns it to the CpuCount field.
@@ -198,15 +162,6 @@ func (o *HealthElasticNodesInner) GetLoadOneOk() (*string, bool) {
 	return o.LoadOne, true
 }
 
-// IsSetLoadOne returns a boolean if a field has been set.
-func (o *HealthElasticNodesInner) IsSetLoadOne() bool {
-	if o != nil && !IsNil(o.LoadOne) {
-		return true
-	}
-
-	return false
-}
-
 // SetLoadOne gets a reference to the given string and assigns it to the LoadOne field.
 func (o *HealthElasticNodesInner) SetLoadOne(v string) {
 	o.LoadOne = &v
@@ -228,15 +183,6 @@ func (o *HealthElasticNodesInner) GetLoadFiveOk() (*string, bool) {
 		return nil, false
 	}
 	return o.LoadFive, true
-}
-
-// IsSetLoadFive returns a boolean if a field has been set.
-func (o *HealthElasticNodesInner) IsSetLoadFive() bool {
-	if o != nil && !IsNil(o.LoadFive) {
-		return true
-	}
-
-	return false
 }
 
 // SetLoadFive gets a reference to the given string and assigns it to the LoadFive field.
@@ -262,15 +208,6 @@ func (o *HealthElasticNodesInner) GetLoadFifteenOk() (*string, bool) {
 	return o.LoadFifteen, true
 }
 
-// IsSetLoadFifteen returns a boolean if a field has been set.
-func (o *HealthElasticNodesInner) IsSetLoadFifteen() bool {
-	if o != nil && !IsNil(o.LoadFifteen) {
-		return true
-	}
-
-	return false
-}
-
 // SetLoadFifteen gets a reference to the given string and assigns it to the LoadFifteen field.
 func (o *HealthElasticNodesInner) SetLoadFifteen(v string) {
 	o.LoadFifteen = &v
@@ -292,15 +229,6 @@ func (o *HealthElasticNodesInner) GetRoleOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Role, true
-}
-
-// IsSetRole returns a boolean if a field has been set.
-func (o *HealthElasticNodesInner) IsSetRole() bool {
-	if o != nil && !IsNil(o.Role) {
-		return true
-	}
-
-	return false
 }
 
 // SetRole gets a reference to the given string and assigns it to the Role field.
@@ -326,15 +254,6 @@ func (o *HealthElasticNodesInner) GetMasterOk() (*string, bool) {
 	return o.Master, true
 }
 
-// IsSetMaster returns a boolean if a field has been set.
-func (o *HealthElasticNodesInner) IsSetMaster() bool {
-	if o != nil && !IsNil(o.Master) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaster gets a reference to the given string and assigns it to the Master field.
 func (o *HealthElasticNodesInner) SetMaster(v string) {
 	o.Master = &v
@@ -356,15 +275,6 @@ func (o *HealthElasticNodesInner) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *HealthElasticNodesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.

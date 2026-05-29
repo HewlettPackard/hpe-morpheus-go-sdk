@@ -61,15 +61,6 @@ func (o *GetClusterHistoryEventDetail200Response) GetProcessEventOk() (*GetClust
 	return o.ProcessEvent, true
 }
 
-// IsSetProcessEvent returns a boolean if a field has been set.
-func (o *GetClusterHistoryEventDetail200Response) IsSetProcessEvent() bool {
-	if o != nil && !IsNil(o.ProcessEvent) {
-		return true
-	}
-
-	return false
-}
-
 // SetProcessEvent gets a reference to the given GetClusterHistoryEventDetail200ResponseProcessEvent and assigns it to the ProcessEvent field.
 func (o *GetClusterHistoryEventDetail200Response) SetProcessEvent(v GetClusterHistoryEventDetail200ResponseProcessEvent) {
 	o.ProcessEvent = &v

@@ -85,15 +85,6 @@ func (o *InstanceContainerServerVolume1) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume1) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *InstanceContainerServerVolume1) SetId(v int64) {
 	o.Id = &v
@@ -115,15 +106,6 @@ func (o *InstanceContainerServerVolume1) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume1) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -149,15 +131,6 @@ func (o *InstanceContainerServerVolume1) GetControllerIdOk() (*int64, bool) {
 	return o.ControllerId, true
 }
 
-// IsSetControllerId returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume1) IsSetControllerId() bool {
-	if o != nil && !IsNil(o.ControllerId) {
-		return true
-	}
-
-	return false
-}
-
 // SetControllerId gets a reference to the given int64 and assigns it to the ControllerId field.
 func (o *InstanceContainerServerVolume1) SetControllerId(v int64) {
 	o.ControllerId = &v
@@ -179,15 +152,6 @@ func (o *InstanceContainerServerVolume1) GetControllerMountPointOk() (*string, b
 		return nil, false
 	}
 	return o.ControllerMountPoint, true
-}
-
-// IsSetControllerMountPoint returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume1) IsSetControllerMountPoint() bool {
-	if o != nil && !IsNil(o.ControllerMountPoint) {
-		return true
-	}
-
-	return false
 }
 
 // SetControllerMountPoint gets a reference to the given string and assigns it to the ControllerMountPoint field.
@@ -213,15 +177,6 @@ func (o *InstanceContainerServerVolume1) GetResizeableOk() (*bool, bool) {
 	return o.Resizeable, true
 }
 
-// IsSetResizeable returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume1) IsSetResizeable() bool {
-	if o != nil && !IsNil(o.Resizeable) {
-		return true
-	}
-
-	return false
-}
-
 // SetResizeable gets a reference to the given bool and assigns it to the Resizeable field.
 func (o *InstanceContainerServerVolume1) SetResizeable(v bool) {
 	o.Resizeable = &v
@@ -243,15 +198,6 @@ func (o *InstanceContainerServerVolume1) GetRootVolumeOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.RootVolume, true
-}
-
-// IsSetRootVolume returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume1) IsSetRootVolume() bool {
-	if o != nil && !IsNil(o.RootVolume) {
-		return true
-	}
-
-	return false
 }
 
 // SetRootVolume gets a reference to the given bool and assigns it to the RootVolume field.
@@ -277,15 +223,6 @@ func (o *InstanceContainerServerVolume1) GetDeviceNameOk() (*string, bool) {
 	return o.DeviceName, true
 }
 
-// IsSetDeviceName returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume1) IsSetDeviceName() bool {
-	if o != nil && !IsNil(o.DeviceName) {
-		return true
-	}
-
-	return false
-}
-
 // SetDeviceName gets a reference to the given string and assigns it to the DeviceName field.
 func (o *InstanceContainerServerVolume1) SetDeviceName(v string) {
 	o.DeviceName = &v
@@ -307,15 +244,6 @@ func (o *InstanceContainerServerVolume1) GetDeviceDisplayNameOk() (*string, bool
 		return nil, false
 	}
 	return o.DeviceDisplayName, true
-}
-
-// IsSetDeviceDisplayName returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume1) IsSetDeviceDisplayName() bool {
-	if o != nil && !IsNil(o.DeviceDisplayName) {
-		return true
-	}
-
-	return false
 }
 
 // SetDeviceDisplayName gets a reference to the given string and assigns it to the DeviceDisplayName field.
@@ -341,15 +269,6 @@ func (o *InstanceContainerServerVolume1) GetDiskModeOk() (*string, bool) {
 	return o.DiskMode, true
 }
 
-// IsSetDiskMode returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume1) IsSetDiskMode() bool {
-	if o != nil && !IsNil(o.DiskMode) {
-		return true
-	}
-
-	return false
-}
-
 // SetDiskMode gets a reference to the given string and assigns it to the DiskMode field.
 func (o *InstanceContainerServerVolume1) SetDiskMode(v string) {
 	o.DiskMode = &v
@@ -371,15 +290,6 @@ func (o *InstanceContainerServerVolume1) GetDiskTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.DiskType, true
-}
-
-// IsSetDiskType returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume1) IsSetDiskType() bool {
-	if o != nil && !IsNil(o.DiskType) {
-		return true
-	}
-
-	return false
 }
 
 // SetDiskType gets a reference to the given string and assigns it to the DiskType field.
@@ -405,15 +315,6 @@ func (o *InstanceContainerServerVolume1) GetCategoryOk() (*string, bool) {
 	return o.Category, true
 }
 
-// IsSetCategory returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume1) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
-		return true
-	}
-
-	return false
-}
-
 // SetCategory gets a reference to the given string and assigns it to the Category field.
 func (o *InstanceContainerServerVolume1) SetCategory(v string) {
 	o.Category = &v
@@ -435,15 +336,6 @@ func (o *InstanceContainerServerVolume1) GetStorageServerOk() (*InstanceContaine
 		return nil, false
 	}
 	return o.StorageServer, true
-}
-
-// IsSetStorageServer returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume1) IsSetStorageServer() bool {
-	if o != nil && !IsNil(o.StorageServer) {
-		return true
-	}
-
-	return false
 }
 
 // SetStorageServer gets a reference to the given InstanceContainerServerVolumeStorageServer1 and assigns it to the StorageServer field.
@@ -469,15 +361,6 @@ func (o *InstanceContainerServerVolume1) GetZoneIdOk() (*int64, bool) {
 	return o.ZoneId, true
 }
 
-// IsSetZoneId returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume1) IsSetZoneId() bool {
-	if o != nil && !IsNil(o.ZoneId) {
-		return true
-	}
-
-	return false
-}
-
 // SetZoneId gets a reference to the given int64 and assigns it to the ZoneId field.
 func (o *InstanceContainerServerVolume1) SetZoneId(v int64) {
 	o.ZoneId = &v
@@ -499,15 +382,6 @@ func (o *InstanceContainerServerVolume1) GetZoneOk() (*InstanceContainerServerVo
 		return nil, false
 	}
 	return o.Zone, true
-}
-
-// IsSetZone returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume1) IsSetZone() bool {
-	if o != nil && !IsNil(o.Zone) {
-		return true
-	}
-
-	return false
 }
 
 // SetZone gets a reference to the given InstanceContainerServerVolumeZone1 and assigns it to the Zone field.
@@ -533,15 +407,6 @@ func (o *InstanceContainerServerVolume1) GetDatastoreOk() (*InstanceContainerSer
 	return o.Datastore, true
 }
 
-// IsSetDatastore returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume1) IsSetDatastore() bool {
-	if o != nil && !IsNil(o.Datastore) {
-		return true
-	}
-
-	return false
-}
-
 // SetDatastore gets a reference to the given InstanceContainerServerVolumeDatastore1 and assigns it to the Datastore field.
 func (o *InstanceContainerServerVolume1) SetDatastore(v InstanceContainerServerVolumeDatastore1) {
 	o.Datastore = &v
@@ -563,15 +428,6 @@ func (o *InstanceContainerServerVolume1) GetUnitNumberOk() (*string, bool) {
 		return nil, false
 	}
 	return o.UnitNumber, true
-}
-
-// IsSetUnitNumber returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume1) IsSetUnitNumber() bool {
-	if o != nil && !IsNil(o.UnitNumber) {
-		return true
-	}
-
-	return false
 }
 
 // SetUnitNumber gets a reference to the given string and assigns it to the UnitNumber field.
@@ -597,15 +453,6 @@ func (o *InstanceContainerServerVolume1) GetTypeIdOk() (*int64, bool) {
 	return o.TypeId, true
 }
 
-// IsSetTypeId returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume1) IsSetTypeId() bool {
-	if o != nil && !IsNil(o.TypeId) {
-		return true
-	}
-
-	return false
-}
-
 // SetTypeId gets a reference to the given int64 and assigns it to the TypeId field.
 func (o *InstanceContainerServerVolume1) SetTypeId(v int64) {
 	o.TypeId = &v
@@ -627,15 +474,6 @@ func (o *InstanceContainerServerVolume1) GetConfigurableIOPSOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.ConfigurableIOPS, true
-}
-
-// IsSetConfigurableIOPS returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume1) IsSetConfigurableIOPS() bool {
-	if o != nil && !IsNil(o.ConfigurableIOPS) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfigurableIOPS gets a reference to the given bool and assigns it to the ConfigurableIOPS field.
@@ -661,15 +499,6 @@ func (o *InstanceContainerServerVolume1) GetDatastoreIdOk() (*int64, bool) {
 	return o.DatastoreId, true
 }
 
-// IsSetDatastoreId returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume1) IsSetDatastoreId() bool {
-	if o != nil && !IsNil(o.DatastoreId) {
-		return true
-	}
-
-	return false
-}
-
 // SetDatastoreId gets a reference to the given int64 and assigns it to the DatastoreId field.
 func (o *InstanceContainerServerVolume1) SetDatastoreId(v int64) {
 	o.DatastoreId = &v
@@ -691,15 +520,6 @@ func (o *InstanceContainerServerVolume1) GetMaxStorageOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.MaxStorage, true
-}
-
-// IsSetMaxStorage returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume1) IsSetMaxStorage() bool {
-	if o != nil && !IsNil(o.MaxStorage) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxStorage gets a reference to the given int64 and assigns it to the MaxStorage field.
@@ -725,15 +545,6 @@ func (o *InstanceContainerServerVolume1) GetMaxIOPSOk() (*string, bool) {
 	return o.MaxIOPS, true
 }
 
-// IsSetMaxIOPS returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume1) IsSetMaxIOPS() bool {
-	if o != nil && !IsNil(o.MaxIOPS) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxIOPS gets a reference to the given string and assigns it to the MaxIOPS field.
 func (o *InstanceContainerServerVolume1) SetMaxIOPS(v string) {
 	o.MaxIOPS = &v
@@ -755,15 +566,6 @@ func (o *InstanceContainerServerVolume1) GetUuidOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Uuid, true
-}
-
-// IsSetUuid returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume1) IsSetUuid() bool {
-	if o != nil && !IsNil(o.Uuid) {
-		return true
-	}
-
-	return false
 }
 
 // SetUuid gets a reference to the given string and assigns it to the Uuid field.
@@ -789,15 +591,6 @@ func (o *InstanceContainerServerVolume1) GetUniqueIdOk() (*string, bool) {
 	return o.UniqueId, true
 }
 
-// IsSetUniqueId returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume1) IsSetUniqueId() bool {
-	if o != nil && !IsNil(o.UniqueId) {
-		return true
-	}
-
-	return false
-}
-
 // SetUniqueId gets a reference to the given string and assigns it to the UniqueId field.
 func (o *InstanceContainerServerVolume1) SetUniqueId(v string) {
 	o.UniqueId = &v
@@ -821,15 +614,6 @@ func (o *InstanceContainerServerVolume1) GetExternalIdOk() (*string, bool) {
 	return o.ExternalId, true
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume1) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
 func (o *InstanceContainerServerVolume1) SetExternalId(v string) {
 	o.ExternalId = &v
@@ -851,15 +635,6 @@ func (o *InstanceContainerServerVolume1) GetInternalIdOk() (*string, bool) {
 		return nil, false
 	}
 	return o.InternalId, true
-}
-
-// IsSetInternalId returns a boolean if a field has been set.
-func (o *InstanceContainerServerVolume1) IsSetInternalId() bool {
-	if o != nil && !IsNil(o.InternalId) {
-		return true
-	}
-
-	return false
 }
 
 // SetInternalId gets a reference to the given string and assigns it to the InternalId field.

@@ -62,15 +62,6 @@ func (o *AddKeyPairs200Response) GetAccountOk() (*AddKeyPairs200ResponseAllOfAcc
 	return o.Account, true
 }
 
-// IsSetAccount returns a boolean if a field has been set.
-func (o *AddKeyPairs200Response) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccount gets a reference to the given AddKeyPairs200ResponseAllOfAccount and assigns it to the Account field.
 func (o *AddKeyPairs200Response) SetAccount(v AddKeyPairs200ResponseAllOfAccount) {
 	o.Account = &v
@@ -92,15 +83,6 @@ func (o *AddKeyPairs200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *AddKeyPairs200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

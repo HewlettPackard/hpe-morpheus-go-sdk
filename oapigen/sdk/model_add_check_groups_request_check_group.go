@@ -114,15 +114,6 @@ func (o *AddCheckGroupsRequestCheckGroup) GetDescriptionOk() (*string, bool) {
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *AddCheckGroupsRequestCheckGroup) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *AddCheckGroupsRequestCheckGroup) SetDescription(v string) {
 	o.Description = &v
@@ -144,15 +135,6 @@ func (o *AddCheckGroupsRequestCheckGroup) GetMinHappyOk() (*int32, bool) {
 		return nil, false
 	}
 	return o.MinHappy, true
-}
-
-// IsSetMinHappy returns a boolean if a field has been set.
-func (o *AddCheckGroupsRequestCheckGroup) IsSetMinHappy() bool {
-	if o != nil && !IsNil(o.MinHappy) {
-		return true
-	}
-
-	return false
 }
 
 // SetMinHappy gets a reference to the given int32 and assigns it to the MinHappy field.
@@ -178,15 +160,6 @@ func (o *AddCheckGroupsRequestCheckGroup) GetInUptimeOk() (*bool, bool) {
 	return o.InUptime, true
 }
 
-// IsSetInUptime returns a boolean if a field has been set.
-func (o *AddCheckGroupsRequestCheckGroup) IsSetInUptime() bool {
-	if o != nil && !IsNil(o.InUptime) {
-		return true
-	}
-
-	return false
-}
-
 // SetInUptime gets a reference to the given bool and assigns it to the InUptime field.
 func (o *AddCheckGroupsRequestCheckGroup) SetInUptime(v bool) {
 	o.InUptime = &v
@@ -208,15 +181,6 @@ func (o *AddCheckGroupsRequestCheckGroup) GetSeverityOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Severity, true
-}
-
-// IsSetSeverity returns a boolean if a field has been set.
-func (o *AddCheckGroupsRequestCheckGroup) IsSetSeverity() bool {
-	if o != nil && !IsNil(o.Severity) {
-		return true
-	}
-
-	return false
 }
 
 // SetSeverity gets a reference to the given string and assigns it to the Severity field.
@@ -242,15 +206,6 @@ func (o *AddCheckGroupsRequestCheckGroup) GetActiveOk() (*bool, bool) {
 	return o.Active, true
 }
 
-// IsSetActive returns a boolean if a field has been set.
-func (o *AddCheckGroupsRequestCheckGroup) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
-}
-
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *AddCheckGroupsRequestCheckGroup) SetActive(v bool) {
 	o.Active = &v
@@ -272,15 +227,6 @@ func (o *AddCheckGroupsRequestCheckGroup) GetChecksOk() ([]int32, bool) {
 		return nil, false
 	}
 	return o.Checks, true
-}
-
-// IsSetChecks returns a boolean if a field has been set.
-func (o *AddCheckGroupsRequestCheckGroup) IsSetChecks() bool {
-	if o != nil && !IsNil(o.Checks) {
-		return true
-	}
-
-	return false
 }
 
 // SetChecks gets a reference to the given []int32 and assigns it to the Checks field.

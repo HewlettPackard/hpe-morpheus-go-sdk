@@ -62,15 +62,6 @@ func (o *ListCloudTypes200Response) GetZoneTypesOk() ([]ListCloudTypes200Respons
 	return o.ZoneTypes, true
 }
 
-// IsSetZoneTypes returns a boolean if a field has been set.
-func (o *ListCloudTypes200Response) IsSetZoneTypes() bool {
-	if o != nil && !IsNil(o.ZoneTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetZoneTypes gets a reference to the given []ListCloudTypes200ResponseAllOfZoneTypesInner and assigns it to the ZoneTypes field.
 func (o *ListCloudTypes200Response) SetZoneTypes(v []ListCloudTypes200ResponseAllOfZoneTypesInner) {
 	o.ZoneTypes = v
@@ -92,15 +83,6 @@ func (o *ListCloudTypes200Response) GetMetaOk() (*ListApprovals200ResponseAllOfM
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListCloudTypes200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

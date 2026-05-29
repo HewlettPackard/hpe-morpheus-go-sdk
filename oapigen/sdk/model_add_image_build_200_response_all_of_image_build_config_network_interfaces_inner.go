@@ -62,15 +62,6 @@ func (o *AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner) Ge
 	return o.PrimaryInterface, true
 }
 
-// IsSetPrimaryInterface returns a boolean if a field has been set.
-func (o *AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner) IsSetPrimaryInterface() bool {
-	if o != nil && !IsNil(o.PrimaryInterface) {
-		return true
-	}
-
-	return false
-}
-
 // SetPrimaryInterface gets a reference to the given bool and assigns it to the PrimaryInterface field.
 func (o *AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner) SetPrimaryInterface(v bool) {
 	o.PrimaryInterface = &v
@@ -92,15 +83,6 @@ func (o *AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner) Ge
 		return nil, false
 	}
 	return o.Network, true
-}
-
-// IsSetNetwork returns a boolean if a field has been set.
-func (o *AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner) IsSetNetwork() bool {
-	if o != nil && !IsNil(o.Network) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetwork gets a reference to the given AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInnerNetwork and assigns it to the Network field.

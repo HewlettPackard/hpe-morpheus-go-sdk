@@ -132,15 +132,6 @@ func (o *AddIntegrationsRequestOneOf2Integration) GetEnabledOk() (*bool, bool) {
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *AddIntegrationsRequestOneOf2Integration) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *AddIntegrationsRequestOneOf2Integration) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -162,15 +153,6 @@ func (o *AddIntegrationsRequestOneOf2Integration) GetRefreshOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Refresh, true
-}
-
-// IsSetRefresh returns a boolean if a field has been set.
-func (o *AddIntegrationsRequestOneOf2Integration) IsSetRefresh() bool {
-	if o != nil && !IsNil(o.Refresh) {
-		return true
-	}
-
-	return false
 }
 
 // SetRefresh gets a reference to the given bool and assigns it to the Refresh field.
@@ -266,15 +248,6 @@ func (o *AddIntegrationsRequestOneOf2Integration) GetConfigOk() (*AddIntegration
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *AddIntegrationsRequestOneOf2Integration) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given AddIntegrationsRequestOneOf2IntegrationConfig and assigns it to the Config field.

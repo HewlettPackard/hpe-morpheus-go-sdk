@@ -61,15 +61,6 @@ func (o *UpdateClusterDatastoreRequest) GetDatastoreOk() (*UpdateClusterDatastor
 	return o.Datastore, true
 }
 
-// IsSetDatastore returns a boolean if a field has been set.
-func (o *UpdateClusterDatastoreRequest) IsSetDatastore() bool {
-	if o != nil && !IsNil(o.Datastore) {
-		return true
-	}
-
-	return false
-}
-
 // SetDatastore gets a reference to the given UpdateClusterDatastoreRequestDatastore and assigns it to the Datastore field.
 func (o *UpdateClusterDatastoreRequest) SetDatastore(v UpdateClusterDatastoreRequestDatastore) {
 	o.Datastore = &v

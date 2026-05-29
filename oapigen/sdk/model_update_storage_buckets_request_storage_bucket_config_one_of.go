@@ -68,15 +68,6 @@ func (o *UpdateStorageBucketsRequestStorageBucketConfigOneOf) GetAccessKeyOk() (
 	return o.AccessKey, true
 }
 
-// IsSetAccessKey returns a boolean if a field has been set.
-func (o *UpdateStorageBucketsRequestStorageBucketConfigOneOf) IsSetAccessKey() bool {
-	if o != nil && !IsNil(o.AccessKey) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccessKey gets a reference to the given string and assigns it to the AccessKey field.
 func (o *UpdateStorageBucketsRequestStorageBucketConfigOneOf) SetAccessKey(v string) {
 	o.AccessKey = &v
@@ -98,15 +89,6 @@ func (o *UpdateStorageBucketsRequestStorageBucketConfigOneOf) GetSecretKeyOk() (
 		return nil, false
 	}
 	return o.SecretKey, true
-}
-
-// IsSetSecretKey returns a boolean if a field has been set.
-func (o *UpdateStorageBucketsRequestStorageBucketConfigOneOf) IsSetSecretKey() bool {
-	if o != nil && !IsNil(o.SecretKey) {
-		return true
-	}
-
-	return false
 }
 
 // SetSecretKey gets a reference to the given string and assigns it to the SecretKey field.
@@ -132,15 +114,6 @@ func (o *UpdateStorageBucketsRequestStorageBucketConfigOneOf) GetRegionOk() (*st
 	return o.Region, true
 }
 
-// IsSetRegion returns a boolean if a field has been set.
-func (o *UpdateStorageBucketsRequestStorageBucketConfigOneOf) IsSetRegion() bool {
-	if o != nil && !IsNil(o.Region) {
-		return true
-	}
-
-	return false
-}
-
 // SetRegion gets a reference to the given string and assigns it to the Region field.
 func (o *UpdateStorageBucketsRequestStorageBucketConfigOneOf) SetRegion(v string) {
 	o.Region = &v
@@ -162,15 +135,6 @@ func (o *UpdateStorageBucketsRequestStorageBucketConfigOneOf) GetEndpointOk() (*
 		return nil, false
 	}
 	return o.Endpoint, true
-}
-
-// IsSetEndpoint returns a boolean if a field has been set.
-func (o *UpdateStorageBucketsRequestStorageBucketConfigOneOf) IsSetEndpoint() bool {
-	if o != nil && !IsNil(o.Endpoint) {
-		return true
-	}
-
-	return false
 }
 
 // SetEndpoint gets a reference to the given string and assigns it to the Endpoint field.

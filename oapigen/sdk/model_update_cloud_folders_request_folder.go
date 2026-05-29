@@ -80,15 +80,6 @@ func (o *UpdateCloudFoldersRequestFolder) GetDefaultFolderOk() (*bool, bool) {
 	return o.DefaultFolder, true
 }
 
-// IsSetDefaultFolder returns a boolean if a field has been set.
-func (o *UpdateCloudFoldersRequestFolder) IsSetDefaultFolder() bool {
-	if o != nil && !IsNil(o.DefaultFolder) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultFolder gets a reference to the given bool and assigns it to the DefaultFolder field.
 func (o *UpdateCloudFoldersRequestFolder) SetDefaultFolder(v bool) {
 	o.DefaultFolder = &v
@@ -110,15 +101,6 @@ func (o *UpdateCloudFoldersRequestFolder) GetDefaultImageOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.DefaultImage, true
-}
-
-// IsSetDefaultImage returns a boolean if a field has been set.
-func (o *UpdateCloudFoldersRequestFolder) IsSetDefaultImage() bool {
-	if o != nil && !IsNil(o.DefaultImage) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultImage gets a reference to the given bool and assigns it to the DefaultImage field.
@@ -144,15 +126,6 @@ func (o *UpdateCloudFoldersRequestFolder) GetActiveOk() (*bool, bool) {
 	return o.Active, true
 }
 
-// IsSetActive returns a boolean if a field has been set.
-func (o *UpdateCloudFoldersRequestFolder) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
-}
-
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *UpdateCloudFoldersRequestFolder) SetActive(v bool) {
 	o.Active = &v
@@ -174,15 +147,6 @@ func (o *UpdateCloudFoldersRequestFolder) GetVisibilityOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *UpdateCloudFoldersRequestFolder) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -208,15 +172,6 @@ func (o *UpdateCloudFoldersRequestFolder) GetTenantPermissionsOk() (*UpdateCloud
 	return o.TenantPermissions, true
 }
 
-// IsSetTenantPermissions returns a boolean if a field has been set.
-func (o *UpdateCloudFoldersRequestFolder) IsSetTenantPermissions() bool {
-	if o != nil && !IsNil(o.TenantPermissions) {
-		return true
-	}
-
-	return false
-}
-
 // SetTenantPermissions gets a reference to the given UpdateCloudFoldersRequestFolderTenantPermissions and assigns it to the TenantPermissions field.
 func (o *UpdateCloudFoldersRequestFolder) SetTenantPermissions(v UpdateCloudFoldersRequestFolderTenantPermissions) {
 	o.TenantPermissions = &v
@@ -238,15 +193,6 @@ func (o *UpdateCloudFoldersRequestFolder) GetResourcePermissionsOk() (*UpdateClo
 		return nil, false
 	}
 	return o.ResourcePermissions, true
-}
-
-// IsSetResourcePermissions returns a boolean if a field has been set.
-func (o *UpdateCloudFoldersRequestFolder) IsSetResourcePermissions() bool {
-	if o != nil && !IsNil(o.ResourcePermissions) {
-		return true
-	}
-
-	return false
 }
 
 // SetResourcePermissions gets a reference to the given UpdateCloudFoldersRequestFolderResourcePermissions and assigns it to the ResourcePermissions field.

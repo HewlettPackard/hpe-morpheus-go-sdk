@@ -68,15 +68,6 @@ func (o *ZoneNetworkOptionsResponse) GetNetworksOk() ([]ZoneNetworkOptionsRespon
 	return o.Networks, true
 }
 
-// IsSetNetworks returns a boolean if a field has been set.
-func (o *ZoneNetworkOptionsResponse) IsSetNetworks() bool {
-	if o != nil && !IsNil(o.Networks) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworks gets a reference to the given []ZoneNetworkOptionsResponseNetworksInner and assigns it to the Networks field.
 func (o *ZoneNetworkOptionsResponse) SetNetworks(v []ZoneNetworkOptionsResponseNetworksInner) {
 	o.Networks = v
@@ -98,15 +89,6 @@ func (o *ZoneNetworkOptionsResponse) GetNetworkGroupsOk() ([]ZoneNetworkOptionsR
 		return nil, false
 	}
 	return o.NetworkGroups, true
-}
-
-// IsSetNetworkGroups returns a boolean if a field has been set.
-func (o *ZoneNetworkOptionsResponse) IsSetNetworkGroups() bool {
-	if o != nil && !IsNil(o.NetworkGroups) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkGroups gets a reference to the given []ZoneNetworkOptionsResponseNetworkGroupsInner and assigns it to the NetworkGroups field.
@@ -132,15 +114,6 @@ func (o *ZoneNetworkOptionsResponse) GetNetworkTypesOk() ([]ZoneNetworkOptionsRe
 	return o.NetworkTypes, true
 }
 
-// IsSetNetworkTypes returns a boolean if a field has been set.
-func (o *ZoneNetworkOptionsResponse) IsSetNetworkTypes() bool {
-	if o != nil && !IsNil(o.NetworkTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkTypes gets a reference to the given []ZoneNetworkOptionsResponseNetworkTypesInner and assigns it to the NetworkTypes field.
 func (o *ZoneNetworkOptionsResponse) SetNetworkTypes(v []ZoneNetworkOptionsResponseNetworkTypesInner) {
 	o.NetworkTypes = v
@@ -162,15 +135,6 @@ func (o *ZoneNetworkOptionsResponse) GetNetworkSubnetsOk() ([]ZoneNetworkOptions
 		return nil, false
 	}
 	return o.NetworkSubnets, true
-}
-
-// IsSetNetworkSubnets returns a boolean if a field has been set.
-func (o *ZoneNetworkOptionsResponse) IsSetNetworkSubnets() bool {
-	if o != nil && !IsNil(o.NetworkSubnets) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkSubnets gets a reference to the given []ZoneNetworkOptionsResponseNetworkSubnetsInner and assigns it to the NetworkSubnets field.
@@ -197,28 +161,9 @@ func (o *ZoneNetworkOptionsResponse) GetHasNetworksOk() (*bool, bool) {
 	return o.HasNetworks.Get(), o.HasNetworks.IsSet()
 }
 
-// IsSetHasNetworks returns a boolean if a field has been set.
-func (o *ZoneNetworkOptionsResponse) IsSetHasNetworks() bool {
-	if o != nil && o.HasNetworks.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetHasNetworks gets a reference to the given NullableBool and assigns it to the HasNetworks field.
 func (o *ZoneNetworkOptionsResponse) SetHasNetworks(v bool) {
 	o.HasNetworks.Set(&v)
-}
-
-// SetHasNetworksNil sets the value for HasNetworks to be an explicit nil
-func (o *ZoneNetworkOptionsResponse) SetHasNetworksNil() {
-	o.HasNetworks.Set(nil)
-}
-
-// UnsetHasNetworks ensures that no value is present for HasNetworks, not even an explicit nil
-func (o *ZoneNetworkOptionsResponse) UnsetHasNetworks() {
-	o.HasNetworks.Unset()
 }
 
 // GetMaxNetworks returns the MaxNetworks field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -240,28 +185,9 @@ func (o *ZoneNetworkOptionsResponse) GetMaxNetworksOk() (*int64, bool) {
 	return o.MaxNetworks.Get(), o.MaxNetworks.IsSet()
 }
 
-// IsSetMaxNetworks returns a boolean if a field has been set.
-func (o *ZoneNetworkOptionsResponse) IsSetMaxNetworks() bool {
-	if o != nil && o.MaxNetworks.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxNetworks gets a reference to the given NullableInt64 and assigns it to the MaxNetworks field.
 func (o *ZoneNetworkOptionsResponse) SetMaxNetworks(v int64) {
 	o.MaxNetworks.Set(&v)
-}
-
-// SetMaxNetworksNil sets the value for MaxNetworks to be an explicit nil
-func (o *ZoneNetworkOptionsResponse) SetMaxNetworksNil() {
-	o.MaxNetworks.Set(nil)
-}
-
-// UnsetMaxNetworks ensures that no value is present for MaxNetworks, not even an explicit nil
-func (o *ZoneNetworkOptionsResponse) UnsetMaxNetworks() {
-	o.MaxNetworks.Unset()
 }
 
 // GetEnableNetworkTypeSelection returns the EnableNetworkTypeSelection field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -283,28 +209,9 @@ func (o *ZoneNetworkOptionsResponse) GetEnableNetworkTypeSelectionOk() (*string,
 	return o.EnableNetworkTypeSelection.Get(), o.EnableNetworkTypeSelection.IsSet()
 }
 
-// IsSetEnableNetworkTypeSelection returns a boolean if a field has been set.
-func (o *ZoneNetworkOptionsResponse) IsSetEnableNetworkTypeSelection() bool {
-	if o != nil && o.EnableNetworkTypeSelection.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetEnableNetworkTypeSelection gets a reference to the given NullableString and assigns it to the EnableNetworkTypeSelection field.
 func (o *ZoneNetworkOptionsResponse) SetEnableNetworkTypeSelection(v string) {
 	o.EnableNetworkTypeSelection.Set(&v)
-}
-
-// SetEnableNetworkTypeSelectionNil sets the value for EnableNetworkTypeSelection to be an explicit nil
-func (o *ZoneNetworkOptionsResponse) SetEnableNetworkTypeSelectionNil() {
-	o.EnableNetworkTypeSelection.Set(nil)
-}
-
-// UnsetEnableNetworkTypeSelection ensures that no value is present for EnableNetworkTypeSelection, not even an explicit nil
-func (o *ZoneNetworkOptionsResponse) UnsetEnableNetworkTypeSelection() {
-	o.EnableNetworkTypeSelection.Unset()
 }
 
 // GetSupportsNetworkSelection returns the SupportsNetworkSelection field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -326,28 +233,9 @@ func (o *ZoneNetworkOptionsResponse) GetSupportsNetworkSelectionOk() (*bool, boo
 	return o.SupportsNetworkSelection.Get(), o.SupportsNetworkSelection.IsSet()
 }
 
-// IsSetSupportsNetworkSelection returns a boolean if a field has been set.
-func (o *ZoneNetworkOptionsResponse) IsSetSupportsNetworkSelection() bool {
-	if o != nil && o.SupportsNetworkSelection.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSupportsNetworkSelection gets a reference to the given NullableBool and assigns it to the SupportsNetworkSelection field.
 func (o *ZoneNetworkOptionsResponse) SetSupportsNetworkSelection(v bool) {
 	o.SupportsNetworkSelection.Set(&v)
-}
-
-// SetSupportsNetworkSelectionNil sets the value for SupportsNetworkSelection to be an explicit nil
-func (o *ZoneNetworkOptionsResponse) SetSupportsNetworkSelectionNil() {
-	o.SupportsNetworkSelection.Set(nil)
-}
-
-// UnsetSupportsNetworkSelection ensures that no value is present for SupportsNetworkSelection, not even an explicit nil
-func (o *ZoneNetworkOptionsResponse) UnsetSupportsNetworkSelection() {
-	o.SupportsNetworkSelection.Unset()
 }
 
 func (o ZoneNetworkOptionsResponse) MarshalJSON() ([]byte, error) {

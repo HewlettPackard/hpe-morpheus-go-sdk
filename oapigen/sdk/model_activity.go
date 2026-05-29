@@ -61,15 +61,6 @@ func (o *Activity) GetActivityOk() ([]ActivityActivityInner, bool) {
 	return o.Activity, true
 }
 
-// IsSetActivity returns a boolean if a field has been set.
-func (o *Activity) IsSetActivity() bool {
-	if o != nil && !IsNil(o.Activity) {
-		return true
-	}
-
-	return false
-}
-
 // SetActivity gets a reference to the given []ActivityActivityInner and assigns it to the Activity field.
 func (o *Activity) SetActivity(v []ActivityActivityInner) {
 	o.Activity = v

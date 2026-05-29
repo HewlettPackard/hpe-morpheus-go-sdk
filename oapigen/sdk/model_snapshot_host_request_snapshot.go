@@ -80,15 +80,6 @@ func (o *SnapshotHostRequestSnapshot) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *SnapshotHostRequestSnapshot) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *SnapshotHostRequestSnapshot) SetName(v string) {
 	o.Name = &v
@@ -110,15 +101,6 @@ func (o *SnapshotHostRequestSnapshot) GetDescriptionOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *SnapshotHostRequestSnapshot) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -144,15 +126,6 @@ func (o *SnapshotHostRequestSnapshot) GetMemorySnapshotOk() (*bool, bool) {
 	return o.MemorySnapshot, true
 }
 
-// IsSetMemorySnapshot returns a boolean if a field has been set.
-func (o *SnapshotHostRequestSnapshot) IsSetMemorySnapshot() bool {
-	if o != nil && !IsNil(o.MemorySnapshot) {
-		return true
-	}
-
-	return false
-}
-
 // SetMemorySnapshot gets a reference to the given bool and assigns it to the MemorySnapshot field.
 func (o *SnapshotHostRequestSnapshot) SetMemorySnapshot(v bool) {
 	o.MemorySnapshot = &v
@@ -174,15 +147,6 @@ func (o *SnapshotHostRequestSnapshot) GetForExportOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.ForExport, true
-}
-
-// IsSetForExport returns a boolean if a field has been set.
-func (o *SnapshotHostRequestSnapshot) IsSetForExport() bool {
-	if o != nil && !IsNil(o.ForExport) {
-		return true
-	}
-
-	return false
 }
 
 // SetForExport gets a reference to the given bool and assigns it to the ForExport field.

@@ -61,15 +61,6 @@ func (o *UpdateArchiveBucketRequest) GetArchiveBucketOk() (*UpdateArchiveBucketR
 	return o.ArchiveBucket, true
 }
 
-// IsSetArchiveBucket returns a boolean if a field has been set.
-func (o *UpdateArchiveBucketRequest) IsSetArchiveBucket() bool {
-	if o != nil && !IsNil(o.ArchiveBucket) {
-		return true
-	}
-
-	return false
-}
-
 // SetArchiveBucket gets a reference to the given UpdateArchiveBucketRequestArchiveBucket and assigns it to the ArchiveBucket field.
 func (o *UpdateArchiveBucketRequest) SetArchiveBucket(v UpdateArchiveBucketRequestArchiveBucket) {
 	o.ArchiveBucket = &v

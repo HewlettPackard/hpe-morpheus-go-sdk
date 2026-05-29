@@ -65,15 +65,6 @@ func (o *GetInstance200ResponseInstanceInstanceType) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetInstance200ResponseInstanceInstanceType) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetInstance200ResponseInstanceInstanceType) SetId(v int64) {
 	o.Id = &v
@@ -95,15 +86,6 @@ func (o *GetInstance200ResponseInstanceInstanceType) GetCodeOk() (*string, bool)
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *GetInstance200ResponseInstanceInstanceType) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -129,15 +111,6 @@ func (o *GetInstance200ResponseInstanceInstanceType) GetCategoryOk() (*string, b
 	return o.Category, true
 }
 
-// IsSetCategory returns a boolean if a field has been set.
-func (o *GetInstance200ResponseInstanceInstanceType) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
-		return true
-	}
-
-	return false
-}
-
 // SetCategory gets a reference to the given string and assigns it to the Category field.
 func (o *GetInstance200ResponseInstanceInstanceType) SetCategory(v string) {
 	o.Category = &v
@@ -161,15 +134,6 @@ func (o *GetInstance200ResponseInstanceInstanceType) GetNameOk() (*string, bool)
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *GetInstance200ResponseInstanceInstanceType) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *GetInstance200ResponseInstanceInstanceType) SetName(v string) {
 	o.Name = &v
@@ -191,15 +155,6 @@ func (o *GetInstance200ResponseInstanceInstanceType) GetImageOk() (*string, bool
 		return nil, false
 	}
 	return o.Image, true
-}
-
-// IsSetImage returns a boolean if a field has been set.
-func (o *GetInstance200ResponseInstanceInstanceType) IsSetImage() bool {
-	if o != nil && !IsNil(o.Image) {
-		return true
-	}
-
-	return false
 }
 
 // SetImage gets a reference to the given string and assigns it to the Image field.

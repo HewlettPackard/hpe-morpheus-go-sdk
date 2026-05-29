@@ -68,15 +68,6 @@ func (o *UpdateStorageBucketsRequestStorageBucketConfigOneOf5) GetUsernameOk() (
 	return o.Username, true
 }
 
-// IsSetUsername returns a boolean if a field has been set.
-func (o *UpdateStorageBucketsRequestStorageBucketConfigOneOf5) IsSetUsername() bool {
-	if o != nil && !IsNil(o.Username) {
-		return true
-	}
-
-	return false
-}
-
 // SetUsername gets a reference to the given string and assigns it to the Username field.
 func (o *UpdateStorageBucketsRequestStorageBucketConfigOneOf5) SetUsername(v string) {
 	o.Username = &v
@@ -98,15 +89,6 @@ func (o *UpdateStorageBucketsRequestStorageBucketConfigOneOf5) GetApiKeyOk() (*s
 		return nil, false
 	}
 	return o.ApiKey, true
-}
-
-// IsSetApiKey returns a boolean if a field has been set.
-func (o *UpdateStorageBucketsRequestStorageBucketConfigOneOf5) IsSetApiKey() bool {
-	if o != nil && !IsNil(o.ApiKey) {
-		return true
-	}
-
-	return false
 }
 
 // SetApiKey gets a reference to the given string and assigns it to the ApiKey field.
@@ -132,15 +114,6 @@ func (o *UpdateStorageBucketsRequestStorageBucketConfigOneOf5) GetRegionOk() (*s
 	return o.Region, true
 }
 
-// IsSetRegion returns a boolean if a field has been set.
-func (o *UpdateStorageBucketsRequestStorageBucketConfigOneOf5) IsSetRegion() bool {
-	if o != nil && !IsNil(o.Region) {
-		return true
-	}
-
-	return false
-}
-
 // SetRegion gets a reference to the given string and assigns it to the Region field.
 func (o *UpdateStorageBucketsRequestStorageBucketConfigOneOf5) SetRegion(v string) {
 	o.Region = &v
@@ -162,15 +135,6 @@ func (o *UpdateStorageBucketsRequestStorageBucketConfigOneOf5) GetIdentityUrlOk(
 		return nil, false
 	}
 	return o.IdentityUrl, true
-}
-
-// IsSetIdentityUrl returns a boolean if a field has been set.
-func (o *UpdateStorageBucketsRequestStorageBucketConfigOneOf5) IsSetIdentityUrl() bool {
-	if o != nil && !IsNil(o.IdentityUrl) {
-		return true
-	}
-
-	return false
 }
 
 // SetIdentityUrl gets a reference to the given string and assigns it to the IdentityUrl field.

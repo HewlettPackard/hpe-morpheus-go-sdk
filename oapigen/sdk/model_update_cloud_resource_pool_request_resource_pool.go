@@ -74,15 +74,6 @@ func (o *UpdateCloudResourcePoolRequestResourcePool) GetActiveOk() (*bool, bool)
 	return o.Active, true
 }
 
-// IsSetActive returns a boolean if a field has been set.
-func (o *UpdateCloudResourcePoolRequestResourcePool) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
-}
-
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *UpdateCloudResourcePoolRequestResourcePool) SetActive(v bool) {
 	o.Active = &v
@@ -104,15 +95,6 @@ func (o *UpdateCloudResourcePoolRequestResourcePool) GetVisibilityOk() (*string,
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *UpdateCloudResourcePoolRequestResourcePool) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -138,15 +120,6 @@ func (o *UpdateCloudResourcePoolRequestResourcePool) GetDisplayNameOk() (*string
 	return o.DisplayName, true
 }
 
-// IsSetDisplayName returns a boolean if a field has been set.
-func (o *UpdateCloudResourcePoolRequestResourcePool) IsSetDisplayName() bool {
-	if o != nil && !IsNil(o.DisplayName) {
-		return true
-	}
-
-	return false
-}
-
 // SetDisplayName gets a reference to the given string and assigns it to the DisplayName field.
 func (o *UpdateCloudResourcePoolRequestResourcePool) SetDisplayName(v string) {
 	o.DisplayName = &v
@@ -168,15 +141,6 @@ func (o *UpdateCloudResourcePoolRequestResourcePool) GetInventoryOk() (*bool, bo
 		return nil, false
 	}
 	return o.Inventory, true
-}
-
-// IsSetInventory returns a boolean if a field has been set.
-func (o *UpdateCloudResourcePoolRequestResourcePool) IsSetInventory() bool {
-	if o != nil && !IsNil(o.Inventory) {
-		return true
-	}
-
-	return false
 }
 
 // SetInventory gets a reference to the given bool and assigns it to the Inventory field.
@@ -202,15 +166,6 @@ func (o *UpdateCloudResourcePoolRequestResourcePool) GetTenantPermissionsOk() (*
 	return o.TenantPermissions, true
 }
 
-// IsSetTenantPermissions returns a boolean if a field has been set.
-func (o *UpdateCloudResourcePoolRequestResourcePool) IsSetTenantPermissions() bool {
-	if o != nil && !IsNil(o.TenantPermissions) {
-		return true
-	}
-
-	return false
-}
-
 // SetTenantPermissions gets a reference to the given UpdateCloudResourcePoolRequestResourcePoolTenantPermissions and assigns it to the TenantPermissions field.
 func (o *UpdateCloudResourcePoolRequestResourcePool) SetTenantPermissions(v UpdateCloudResourcePoolRequestResourcePoolTenantPermissions) {
 	o.TenantPermissions = &v
@@ -232,15 +187,6 @@ func (o *UpdateCloudResourcePoolRequestResourcePool) GetResourcePermissionsOk() 
 		return nil, false
 	}
 	return o.ResourcePermissions, true
-}
-
-// IsSetResourcePermissions returns a boolean if a field has been set.
-func (o *UpdateCloudResourcePoolRequestResourcePool) IsSetResourcePermissions() bool {
-	if o != nil && !IsNil(o.ResourcePermissions) {
-		return true
-	}
-
-	return false
 }
 
 // SetResourcePermissions gets a reference to the given UpdateCloudResourcePoolRequestResourcePoolResourcePermissions and assigns it to the ResourcePermissions field.

@@ -80,28 +80,9 @@ func (o *UpdateUserRequestUser) GetFirstNameOk() (*string, bool) {
 	return o.FirstName.Get(), o.FirstName.IsSet()
 }
 
-// IsSetFirstName returns a boolean if a field has been set.
-func (o *UpdateUserRequestUser) IsSetFirstName() bool {
-	if o != nil && o.FirstName.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFirstName gets a reference to the given NullableString and assigns it to the FirstName field.
 func (o *UpdateUserRequestUser) SetFirstName(v string) {
 	o.FirstName.Set(&v)
-}
-
-// SetFirstNameNil sets the value for FirstName to be an explicit nil
-func (o *UpdateUserRequestUser) SetFirstNameNil() {
-	o.FirstName.Set(nil)
-}
-
-// UnsetFirstName ensures that no value is present for FirstName, not even an explicit nil
-func (o *UpdateUserRequestUser) UnsetFirstName() {
-	o.FirstName.Unset()
 }
 
 // GetLastName returns the LastName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -123,28 +104,9 @@ func (o *UpdateUserRequestUser) GetLastNameOk() (*string, bool) {
 	return o.LastName.Get(), o.LastName.IsSet()
 }
 
-// IsSetLastName returns a boolean if a field has been set.
-func (o *UpdateUserRequestUser) IsSetLastName() bool {
-	if o != nil && o.LastName.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastName gets a reference to the given NullableString and assigns it to the LastName field.
 func (o *UpdateUserRequestUser) SetLastName(v string) {
 	o.LastName.Set(&v)
-}
-
-// SetLastNameNil sets the value for LastName to be an explicit nil
-func (o *UpdateUserRequestUser) SetLastNameNil() {
-	o.LastName.Set(nil)
-}
-
-// UnsetLastName ensures that no value is present for LastName, not even an explicit nil
-func (o *UpdateUserRequestUser) UnsetLastName() {
-	o.LastName.Unset()
 }
 
 // GetUsername returns the Username field value if set, zero value otherwise.
@@ -163,15 +125,6 @@ func (o *UpdateUserRequestUser) GetUsernameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Username, true
-}
-
-// IsSetUsername returns a boolean if a field has been set.
-func (o *UpdateUserRequestUser) IsSetUsername() bool {
-	if o != nil && !IsNil(o.Username) {
-		return true
-	}
-
-	return false
 }
 
 // SetUsername gets a reference to the given string and assigns it to the Username field.
@@ -198,28 +151,9 @@ func (o *UpdateUserRequestUser) GetLinuxUsernameOk() (*string, bool) {
 	return o.LinuxUsername.Get(), o.LinuxUsername.IsSet()
 }
 
-// IsSetLinuxUsername returns a boolean if a field has been set.
-func (o *UpdateUserRequestUser) IsSetLinuxUsername() bool {
-	if o != nil && o.LinuxUsername.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLinuxUsername gets a reference to the given NullableString and assigns it to the LinuxUsername field.
 func (o *UpdateUserRequestUser) SetLinuxUsername(v string) {
 	o.LinuxUsername.Set(&v)
-}
-
-// SetLinuxUsernameNil sets the value for LinuxUsername to be an explicit nil
-func (o *UpdateUserRequestUser) SetLinuxUsernameNil() {
-	o.LinuxUsername.Set(nil)
-}
-
-// UnsetLinuxUsername ensures that no value is present for LinuxUsername, not even an explicit nil
-func (o *UpdateUserRequestUser) UnsetLinuxUsername() {
-	o.LinuxUsername.Unset()
 }
 
 // GetLinuxPassword returns the LinuxPassword field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -241,28 +175,9 @@ func (o *UpdateUserRequestUser) GetLinuxPasswordOk() (*string, bool) {
 	return o.LinuxPassword.Get(), o.LinuxPassword.IsSet()
 }
 
-// IsSetLinuxPassword returns a boolean if a field has been set.
-func (o *UpdateUserRequestUser) IsSetLinuxPassword() bool {
-	if o != nil && o.LinuxPassword.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLinuxPassword gets a reference to the given NullableString and assigns it to the LinuxPassword field.
 func (o *UpdateUserRequestUser) SetLinuxPassword(v string) {
 	o.LinuxPassword.Set(&v)
-}
-
-// SetLinuxPasswordNil sets the value for LinuxPassword to be an explicit nil
-func (o *UpdateUserRequestUser) SetLinuxPasswordNil() {
-	o.LinuxPassword.Set(nil)
-}
-
-// UnsetLinuxPassword ensures that no value is present for LinuxPassword, not even an explicit nil
-func (o *UpdateUserRequestUser) UnsetLinuxPassword() {
-	o.LinuxPassword.Unset()
 }
 
 // GetLinuxKeyPairId returns the LinuxKeyPairId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -284,28 +199,9 @@ func (o *UpdateUserRequestUser) GetLinuxKeyPairIdOk() (*int64, bool) {
 	return o.LinuxKeyPairId.Get(), o.LinuxKeyPairId.IsSet()
 }
 
-// IsSetLinuxKeyPairId returns a boolean if a field has been set.
-func (o *UpdateUserRequestUser) IsSetLinuxKeyPairId() bool {
-	if o != nil && o.LinuxKeyPairId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLinuxKeyPairId gets a reference to the given NullableInt64 and assigns it to the LinuxKeyPairId field.
 func (o *UpdateUserRequestUser) SetLinuxKeyPairId(v int64) {
 	o.LinuxKeyPairId.Set(&v)
-}
-
-// SetLinuxKeyPairIdNil sets the value for LinuxKeyPairId to be an explicit nil
-func (o *UpdateUserRequestUser) SetLinuxKeyPairIdNil() {
-	o.LinuxKeyPairId.Set(nil)
-}
-
-// UnsetLinuxKeyPairId ensures that no value is present for LinuxKeyPairId, not even an explicit nil
-func (o *UpdateUserRequestUser) UnsetLinuxKeyPairId() {
-	o.LinuxKeyPairId.Unset()
 }
 
 // GetWindowsUsername returns the WindowsUsername field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -327,28 +223,9 @@ func (o *UpdateUserRequestUser) GetWindowsUsernameOk() (*string, bool) {
 	return o.WindowsUsername.Get(), o.WindowsUsername.IsSet()
 }
 
-// IsSetWindowsUsername returns a boolean if a field has been set.
-func (o *UpdateUserRequestUser) IsSetWindowsUsername() bool {
-	if o != nil && o.WindowsUsername.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetWindowsUsername gets a reference to the given NullableString and assigns it to the WindowsUsername field.
 func (o *UpdateUserRequestUser) SetWindowsUsername(v string) {
 	o.WindowsUsername.Set(&v)
-}
-
-// SetWindowsUsernameNil sets the value for WindowsUsername to be an explicit nil
-func (o *UpdateUserRequestUser) SetWindowsUsernameNil() {
-	o.WindowsUsername.Set(nil)
-}
-
-// UnsetWindowsUsername ensures that no value is present for WindowsUsername, not even an explicit nil
-func (o *UpdateUserRequestUser) UnsetWindowsUsername() {
-	o.WindowsUsername.Unset()
 }
 
 // GetWindowsPassword returns the WindowsPassword field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -370,28 +247,9 @@ func (o *UpdateUserRequestUser) GetWindowsPasswordOk() (*string, bool) {
 	return o.WindowsPassword.Get(), o.WindowsPassword.IsSet()
 }
 
-// IsSetWindowsPassword returns a boolean if a field has been set.
-func (o *UpdateUserRequestUser) IsSetWindowsPassword() bool {
-	if o != nil && o.WindowsPassword.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetWindowsPassword gets a reference to the given NullableString and assigns it to the WindowsPassword field.
 func (o *UpdateUserRequestUser) SetWindowsPassword(v string) {
 	o.WindowsPassword.Set(&v)
-}
-
-// SetWindowsPasswordNil sets the value for WindowsPassword to be an explicit nil
-func (o *UpdateUserRequestUser) SetWindowsPasswordNil() {
-	o.WindowsPassword.Set(nil)
-}
-
-// UnsetWindowsPassword ensures that no value is present for WindowsPassword, not even an explicit nil
-func (o *UpdateUserRequestUser) UnsetWindowsPassword() {
-	o.WindowsPassword.Unset()
 }
 
 // GetEmail returns the Email field value if set, zero value otherwise.
@@ -410,15 +268,6 @@ func (o *UpdateUserRequestUser) GetEmailOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Email, true
-}
-
-// IsSetEmail returns a boolean if a field has been set.
-func (o *UpdateUserRequestUser) IsSetEmail() bool {
-	if o != nil && !IsNil(o.Email) {
-		return true
-	}
-
-	return false
 }
 
 // SetEmail gets a reference to the given string and assigns it to the Email field.
@@ -444,15 +293,6 @@ func (o *UpdateUserRequestUser) GetPasswordOk() (*string, bool) {
 	return o.Password, true
 }
 
-// IsSetPassword returns a boolean if a field has been set.
-func (o *UpdateUserRequestUser) IsSetPassword() bool {
-	if o != nil && !IsNil(o.Password) {
-		return true
-	}
-
-	return false
-}
-
 // SetPassword gets a reference to the given string and assigns it to the Password field.
 func (o *UpdateUserRequestUser) SetPassword(v string) {
 	o.Password = &v
@@ -476,15 +316,6 @@ func (o *UpdateUserRequestUser) GetRolesOk() ([]UpdateUserRequestUserRolesInner,
 	return o.Roles, true
 }
 
-// IsSetRoles returns a boolean if a field has been set.
-func (o *UpdateUserRequestUser) IsSetRoles() bool {
-	if o != nil && !IsNil(o.Roles) {
-		return true
-	}
-
-	return false
-}
-
 // SetRoles gets a reference to the given []UpdateUserRequestUserRolesInner and assigns it to the Roles field.
 func (o *UpdateUserRequestUser) SetRoles(v []UpdateUserRequestUserRolesInner) {
 	o.Roles = v
@@ -506,15 +337,6 @@ func (o *UpdateUserRequestUser) GetReceiveNotificationsOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.ReceiveNotifications, true
-}
-
-// IsSetReceiveNotifications returns a boolean if a field has been set.
-func (o *UpdateUserRequestUser) IsSetReceiveNotifications() bool {
-	if o != nil && !IsNil(o.ReceiveNotifications) {
-		return true
-	}
-
-	return false
 }
 
 // SetReceiveNotifications gets a reference to the given bool and assigns it to the ReceiveNotifications field.

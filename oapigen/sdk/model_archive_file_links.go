@@ -70,15 +70,6 @@ func (o *ArchiveFileLinks) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ArchiveFileLinks) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ArchiveFileLinks) SetId(v int64) {
 	o.Id = &v
@@ -100,15 +91,6 @@ func (o *ArchiveFileLinks) GetSecretAccessKeyOk() (*string, bool) {
 		return nil, false
 	}
 	return o.SecretAccessKey, true
-}
-
-// IsSetSecretAccessKey returns a boolean if a field has been set.
-func (o *ArchiveFileLinks) IsSetSecretAccessKey() bool {
-	if o != nil && !IsNil(o.SecretAccessKey) {
-		return true
-	}
-
-	return false
 }
 
 // SetSecretAccessKey gets a reference to the given string and assigns it to the SecretAccessKey field.
@@ -134,15 +116,6 @@ func (o *ArchiveFileLinks) GetArchiveFileOk() (*ArchiveFileLinksArchiveFile, boo
 	return o.ArchiveFile, true
 }
 
-// IsSetArchiveFile returns a boolean if a field has been set.
-func (o *ArchiveFileLinks) IsSetArchiveFile() bool {
-	if o != nil && !IsNil(o.ArchiveFile) {
-		return true
-	}
-
-	return false
-}
-
 // SetArchiveFile gets a reference to the given ArchiveFileLinksArchiveFile and assigns it to the ArchiveFile field.
 func (o *ArchiveFileLinks) SetArchiveFile(v ArchiveFileLinksArchiveFile) {
 	o.ArchiveFile = &v
@@ -164,15 +137,6 @@ func (o *ArchiveFileLinks) GetCreatedByOk() (*ArchiveFileLinksCreatedBy, bool) {
 		return nil, false
 	}
 	return o.CreatedBy, true
-}
-
-// IsSetCreatedBy returns a boolean if a field has been set.
-func (o *ArchiveFileLinks) IsSetCreatedBy() bool {
-	if o != nil && !IsNil(o.CreatedBy) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreatedBy gets a reference to the given ArchiveFileLinksCreatedBy and assigns it to the CreatedBy field.
@@ -198,15 +162,6 @@ func (o *ArchiveFileLinks) GetDateCreatedOk() (*time.Time, bool) {
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *ArchiveFileLinks) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *ArchiveFileLinks) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -228,15 +183,6 @@ func (o *ArchiveFileLinks) GetLastUpdatedOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *ArchiveFileLinks) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
@@ -263,28 +209,9 @@ func (o *ArchiveFileLinks) GetLastAccessDateOk() (*time.Time, bool) {
 	return o.LastAccessDate.Get(), o.LastAccessDate.IsSet()
 }
 
-// IsSetLastAccessDate returns a boolean if a field has been set.
-func (o *ArchiveFileLinks) IsSetLastAccessDate() bool {
-	if o != nil && o.LastAccessDate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastAccessDate gets a reference to the given NullableTime and assigns it to the LastAccessDate field.
 func (o *ArchiveFileLinks) SetLastAccessDate(v time.Time) {
 	o.LastAccessDate.Set(&v)
-}
-
-// SetLastAccessDateNil sets the value for LastAccessDate to be an explicit nil
-func (o *ArchiveFileLinks) SetLastAccessDateNil() {
-	o.LastAccessDate.Set(nil)
-}
-
-// UnsetLastAccessDate ensures that no value is present for LastAccessDate, not even an explicit nil
-func (o *ArchiveFileLinks) UnsetLastAccessDate() {
-	o.LastAccessDate.Unset()
 }
 
 // GetExpirationDate returns the ExpirationDate field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -306,28 +233,9 @@ func (o *ArchiveFileLinks) GetExpirationDateOk() (*time.Time, bool) {
 	return o.ExpirationDate.Get(), o.ExpirationDate.IsSet()
 }
 
-// IsSetExpirationDate returns a boolean if a field has been set.
-func (o *ArchiveFileLinks) IsSetExpirationDate() bool {
-	if o != nil && o.ExpirationDate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExpirationDate gets a reference to the given NullableTime and assigns it to the ExpirationDate field.
 func (o *ArchiveFileLinks) SetExpirationDate(v time.Time) {
 	o.ExpirationDate.Set(&v)
-}
-
-// SetExpirationDateNil sets the value for ExpirationDate to be an explicit nil
-func (o *ArchiveFileLinks) SetExpirationDateNil() {
-	o.ExpirationDate.Set(nil)
-}
-
-// UnsetExpirationDate ensures that no value is present for ExpirationDate, not even an explicit nil
-func (o *ArchiveFileLinks) UnsetExpirationDate() {
-	o.ExpirationDate.Unset()
 }
 
 // GetDownloadCount returns the DownloadCount field value if set, zero value otherwise.
@@ -346,15 +254,6 @@ func (o *ArchiveFileLinks) GetDownloadCountOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.DownloadCount, true
-}
-
-// IsSetDownloadCount returns a boolean if a field has been set.
-func (o *ArchiveFileLinks) IsSetDownloadCount() bool {
-	if o != nil && !IsNil(o.DownloadCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetDownloadCount gets a reference to the given int64 and assigns it to the DownloadCount field.

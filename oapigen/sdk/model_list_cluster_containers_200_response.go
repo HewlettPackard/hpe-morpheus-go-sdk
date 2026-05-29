@@ -62,15 +62,6 @@ func (o *ListClusterContainers200Response) GetContainersOk() ([]ListClusterConta
 	return o.Containers, true
 }
 
-// IsSetContainers returns a boolean if a field has been set.
-func (o *ListClusterContainers200Response) IsSetContainers() bool {
-	if o != nil && !IsNil(o.Containers) {
-		return true
-	}
-
-	return false
-}
-
 // SetContainers gets a reference to the given []ListClusterContainers200ResponseAllOfContainersInner and assigns it to the Containers field.
 func (o *ListClusterContainers200Response) SetContainers(v []ListClusterContainers200ResponseAllOfContainersInner) {
 	o.Containers = v
@@ -92,15 +83,6 @@ func (o *ListClusterContainers200Response) GetMetaOk() (*ListApprovals200Respons
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListClusterContainers200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

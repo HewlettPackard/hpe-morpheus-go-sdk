@@ -63,15 +63,6 @@ func (o *GuidanceVmwareSizingPlanBeforeActionConfig) GetStorageSizeTypeOk() (*st
 	return o.StorageSizeType, true
 }
 
-// IsSetStorageSizeType returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingPlanBeforeActionConfig) IsSetStorageSizeType() bool {
-	if o != nil && !IsNil(o.StorageSizeType) {
-		return true
-	}
-
-	return false
-}
-
 // SetStorageSizeType gets a reference to the given string and assigns it to the StorageSizeType field.
 func (o *GuidanceVmwareSizingPlanBeforeActionConfig) SetStorageSizeType(v string) {
 	o.StorageSizeType = &v
@@ -95,15 +86,6 @@ func (o *GuidanceVmwareSizingPlanBeforeActionConfig) GetMemorySizeTypeOk() (*str
 	return o.MemorySizeType, true
 }
 
-// IsSetMemorySizeType returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingPlanBeforeActionConfig) IsSetMemorySizeType() bool {
-	if o != nil && !IsNil(o.MemorySizeType) {
-		return true
-	}
-
-	return false
-}
-
 // SetMemorySizeType gets a reference to the given string and assigns it to the MemorySizeType field.
 func (o *GuidanceVmwareSizingPlanBeforeActionConfig) SetMemorySizeType(v string) {
 	o.MemorySizeType = &v
@@ -125,15 +107,6 @@ func (o *GuidanceVmwareSizingPlanBeforeActionConfig) GetRangesOk() (*GuidanceVmw
 		return nil, false
 	}
 	return o.Ranges, true
-}
-
-// IsSetRanges returns a boolean if a field has been set.
-func (o *GuidanceVmwareSizingPlanBeforeActionConfig) IsSetRanges() bool {
-	if o != nil && !IsNil(o.Ranges) {
-		return true
-	}
-
-	return false
 }
 
 // SetRanges gets a reference to the given GuidanceVmwareSizingPlanBeforeActionConfigRanges and assigns it to the Ranges field.

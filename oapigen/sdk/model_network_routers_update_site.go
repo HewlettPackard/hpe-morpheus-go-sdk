@@ -61,15 +61,6 @@ func (o *NetworkRoutersUpdateSite) GetIdOk() (*NetworkRoutersUpdateSiteId, bool)
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *NetworkRoutersUpdateSite) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given NetworkRoutersUpdateSiteId and assigns it to the Id field.
 func (o *NetworkRoutersUpdateSite) SetId(v NetworkRoutersUpdateSiteId) {
 	o.Id = &v

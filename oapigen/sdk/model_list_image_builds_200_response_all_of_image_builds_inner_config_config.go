@@ -63,15 +63,6 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigConfig) GetTemplat
 	return o.Template, true
 }
 
-// IsSetTemplate returns a boolean if a field has been set.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigConfig) IsSetTemplate() bool {
-	if o != nil && !IsNil(o.Template) {
-		return true
-	}
-
-	return false
-}
-
 // SetTemplate gets a reference to the given int64 and assigns it to the Template field.
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigConfig) SetTemplate(v int64) {
 	o.Template = &v
@@ -95,15 +86,6 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigConfig) GetResourc
 	return o.ResourcePoolId, true
 }
 
-// IsSetResourcePoolId returns a boolean if a field has been set.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigConfig) IsSetResourcePoolId() bool {
-	if o != nil && !IsNil(o.ResourcePoolId) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourcePoolId gets a reference to the given int64 and assigns it to the ResourcePoolId field.
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigConfig) SetResourcePoolId(v int64) {
 	o.ResourcePoolId = &v
@@ -125,15 +107,6 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigConfig) GetExposeO
 		return nil, false
 	}
 	return o.Expose, true
-}
-
-// IsSetExpose returns a boolean if a field has been set.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigConfig) IsSetExpose() bool {
-	if o != nil && !IsNil(o.Expose) {
-		return true
-	}
-
-	return false
 }
 
 // SetExpose gets a reference to the given int64 and assigns it to the Expose field.

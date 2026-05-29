@@ -89,15 +89,6 @@ func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) GetIdOk() (
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) SetId(v int64) {
 	o.Id = &v
@@ -121,15 +112,6 @@ func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) GetNameOk()
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) SetName(v string) {
 	o.Name = &v
@@ -151,15 +133,6 @@ func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) GetVisibili
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -186,28 +159,9 @@ func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) GetDescript
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetIpAddress returns the IpAddress field value if set, zero value otherwise.
@@ -226,15 +180,6 @@ func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) GetIpAddres
 		return nil, false
 	}
 	return o.IpAddress, true
-}
-
-// IsSetIpAddress returns a boolean if a field has been set.
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) IsSetIpAddress() bool {
-	if o != nil && !IsNil(o.IpAddress) {
-		return true
-	}
-
-	return false
 }
 
 // SetIpAddress gets a reference to the given string and assigns it to the IpAddress field.
@@ -258,15 +203,6 @@ func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) GetPortOk()
 		return nil, false
 	}
 	return o.Port, true
-}
-
-// IsSetPort returns a boolean if a field has been set.
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) IsSetPort() bool {
-	if o != nil && !IsNil(o.Port) {
-		return true
-	}
-
-	return false
 }
 
 // SetPort gets a reference to the given int64 and assigns it to the Port field.
@@ -293,28 +229,9 @@ func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) GetPortType
 	return o.PortType.Get(), o.PortType.IsSet()
 }
 
-// IsSetPortType returns a boolean if a field has been set.
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) IsSetPortType() bool {
-	if o != nil && o.PortType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPortType gets a reference to the given NullableString and assigns it to the PortType field.
 func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) SetPortType(v string) {
 	o.PortType.Set(&v)
-}
-
-// SetPortTypeNil sets the value for PortType to be an explicit nil
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) SetPortTypeNil() {
-	o.PortType.Set(nil)
-}
-
-// UnsetPortType ensures that no value is present for PortType, not even an explicit nil
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) UnsetPortType() {
-	o.PortType.Unset()
 }
 
 // GetMonitorPort returns the MonitorPort field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -336,28 +253,9 @@ func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) GetMonitorP
 	return o.MonitorPort.Get(), o.MonitorPort.IsSet()
 }
 
-// IsSetMonitorPort returns a boolean if a field has been set.
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) IsSetMonitorPort() bool {
-	if o != nil && o.MonitorPort.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMonitorPort gets a reference to the given NullableString and assigns it to the MonitorPort field.
 func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) SetMonitorPort(v string) {
 	o.MonitorPort.Set(&v)
-}
-
-// SetMonitorPortNil sets the value for MonitorPort to be an explicit nil
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) SetMonitorPortNil() {
-	o.MonitorPort.Set(nil)
-}
-
-// UnsetMonitorPort ensures that no value is present for MonitorPort, not even an explicit nil
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) UnsetMonitorPort() {
-	o.MonitorPort.Unset()
 }
 
 // GetWeight returns the Weight field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -379,28 +277,9 @@ func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) GetWeightOk
 	return o.Weight.Get(), o.Weight.IsSet()
 }
 
-// IsSetWeight returns a boolean if a field has been set.
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) IsSetWeight() bool {
-	if o != nil && o.Weight.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetWeight gets a reference to the given NullableInt64 and assigns it to the Weight field.
 func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) SetWeight(v int64) {
 	o.Weight.Set(&v)
-}
-
-// SetWeightNil sets the value for Weight to be an explicit nil
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) SetWeightNil() {
-	o.Weight.Set(nil)
-}
-
-// UnsetWeight ensures that no value is present for Weight, not even an explicit nil
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) UnsetWeight() {
-	o.Weight.Unset()
 }
 
 // GetNodeState returns the NodeState field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -422,28 +301,9 @@ func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) GetNodeStat
 	return o.NodeState.Get(), o.NodeState.IsSet()
 }
 
-// IsSetNodeState returns a boolean if a field has been set.
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) IsSetNodeState() bool {
-	if o != nil && o.NodeState.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNodeState gets a reference to the given NullableString and assigns it to the NodeState field.
 func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) SetNodeState(v string) {
 	o.NodeState.Set(&v)
-}
-
-// SetNodeStateNil sets the value for NodeState to be an explicit nil
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) SetNodeStateNil() {
-	o.NodeState.Set(nil)
-}
-
-// UnsetNodeState ensures that no value is present for NodeState, not even an explicit nil
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) UnsetNodeState() {
-	o.NodeState.Unset()
 }
 
 // GetInternalId returns the InternalId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -465,28 +325,9 @@ func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) GetInternal
 	return o.InternalId.Get(), o.InternalId.IsSet()
 }
 
-// IsSetInternalId returns a boolean if a field has been set.
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) IsSetInternalId() bool {
-	if o != nil && o.InternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInternalId gets a reference to the given NullableString and assigns it to the InternalId field.
 func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) SetInternalId(v string) {
 	o.InternalId.Set(&v)
-}
-
-// SetInternalIdNil sets the value for InternalId to be an explicit nil
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) SetInternalIdNil() {
-	o.InternalId.Set(nil)
-}
-
-// UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) UnsetInternalId() {
-	o.InternalId.Unset()
 }
 
 // GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -508,28 +349,9 @@ func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) GetExternal
 	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) IsSetExternalId() bool {
-	if o != nil && o.ExternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) SetExternalId(v string) {
 	o.ExternalId.Set(&v)
-}
-
-// SetExternalIdNil sets the value for ExternalId to be an explicit nil
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) SetExternalIdNil() {
-	o.ExternalId.Set(nil)
-}
-
-// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) UnsetExternalId() {
-	o.ExternalId.Unset()
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
@@ -548,15 +370,6 @@ func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) GetEnabledO
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -580,15 +393,6 @@ func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) GetStatusOk
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -615,28 +419,9 @@ func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) GetStatusMe
 	return o.StatusMessage.Get(), o.StatusMessage.IsSet()
 }
 
-// IsSetStatusMessage returns a boolean if a field has been set.
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) IsSetStatusMessage() bool {
-	if o != nil && o.StatusMessage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusMessage gets a reference to the given NullableString and assigns it to the StatusMessage field.
 func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) SetStatusMessage(v string) {
 	o.StatusMessage.Set(&v)
-}
-
-// SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) SetStatusMessageNil() {
-	o.StatusMessage.Set(nil)
-}
-
-// UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) UnsetStatusMessage() {
-	o.StatusMessage.Unset()
 }
 
 // GetStatusDate returns the StatusDate field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -658,28 +443,9 @@ func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) GetStatusDa
 	return o.StatusDate.Get(), o.StatusDate.IsSet()
 }
 
-// IsSetStatusDate returns a boolean if a field has been set.
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) IsSetStatusDate() bool {
-	if o != nil && o.StatusDate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusDate gets a reference to the given NullableTime and assigns it to the StatusDate field.
 func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) SetStatusDate(v time.Time) {
 	o.StatusDate.Set(&v)
-}
-
-// SetStatusDateNil sets the value for StatusDate to be an explicit nil
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) SetStatusDateNil() {
-	o.StatusDate.Set(nil)
-}
-
-// UnsetStatusDate ensures that no value is present for StatusDate, not even an explicit nil
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) UnsetStatusDate() {
-	o.StatusDate.Unset()
 }
 
 // GetServer returns the Server field value if set, zero value otherwise.
@@ -698,15 +464,6 @@ func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) GetServerOk
 		return nil, false
 	}
 	return o.Server, true
-}
-
-// IsSetServer returns a boolean if a field has been set.
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) IsSetServer() bool {
-	if o != nil && !IsNil(o.Server) {
-		return true
-	}
-
-	return false
 }
 
 // SetServer gets a reference to the given CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNodeServer and assigns it to the Server field.
@@ -733,28 +490,9 @@ func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) GetInstance
 	return o.InstanceId.Get(), o.InstanceId.IsSet()
 }
 
-// IsSetInstanceId returns a boolean if a field has been set.
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) IsSetInstanceId() bool {
-	if o != nil && o.InstanceId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInstanceId gets a reference to the given NullableInt64 and assigns it to the InstanceId field.
 func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) SetInstanceId(v int64) {
 	o.InstanceId.Set(&v)
-}
-
-// SetInstanceIdNil sets the value for InstanceId to be an explicit nil
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) SetInstanceIdNil() {
-	o.InstanceId.Set(nil)
-}
-
-// UnsetInstanceId ensures that no value is present for InstanceId, not even an explicit nil
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) UnsetInstanceId() {
-	o.InstanceId.Unset()
 }
 
 // GetContainerId returns the ContainerId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -776,28 +514,9 @@ func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) GetContaine
 	return o.ContainerId.Get(), o.ContainerId.IsSet()
 }
 
-// IsSetContainerId returns a boolean if a field has been set.
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) IsSetContainerId() bool {
-	if o != nil && o.ContainerId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetContainerId gets a reference to the given NullableInt64 and assigns it to the ContainerId field.
 func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) SetContainerId(v int64) {
 	o.ContainerId.Set(&v)
-}
-
-// SetContainerIdNil sets the value for ContainerId to be an explicit nil
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) SetContainerIdNil() {
-	o.ContainerId.Set(nil)
-}
-
-// UnsetContainerId ensures that no value is present for ContainerId, not even an explicit nil
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) UnsetContainerId() {
-	o.ContainerId.Unset()
 }
 
 // GetNodeSource returns the NodeSource field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -819,28 +538,9 @@ func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) GetNodeSour
 	return o.NodeSource.Get(), o.NodeSource.IsSet()
 }
 
-// IsSetNodeSource returns a boolean if a field has been set.
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) IsSetNodeSource() bool {
-	if o != nil && o.NodeSource.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNodeSource gets a reference to the given NullableString and assigns it to the NodeSource field.
 func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) SetNodeSource(v string) {
 	o.NodeSource.Set(&v)
-}
-
-// SetNodeSourceNil sets the value for NodeSource to be an explicit nil
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) SetNodeSourceNil() {
-	o.NodeSource.Set(nil)
-}
-
-// UnsetNodeSource ensures that no value is present for NodeSource, not even an explicit nil
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) UnsetNodeSource() {
-	o.NodeSource.Unset()
 }
 
 // GetMonitor returns the Monitor field value if set, zero value otherwise.
@@ -859,15 +559,6 @@ func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) GetMonitorO
 		return nil, false
 	}
 	return o.Monitor, true
-}
-
-// IsSetMonitor returns a boolean if a field has been set.
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) IsSetMonitor() bool {
-	if o != nil && !IsNil(o.Monitor) {
-		return true
-	}
-
-	return false
 }
 
 // SetMonitor gets a reference to the given CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNodeMonitor and assigns it to the Monitor field.
@@ -894,28 +585,9 @@ func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) GetMaxConne
 	return o.MaxConnections.Get(), o.MaxConnections.IsSet()
 }
 
-// IsSetMaxConnections returns a boolean if a field has been set.
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) IsSetMaxConnections() bool {
-	if o != nil && o.MaxConnections.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxConnections gets a reference to the given NullableInt64 and assigns it to the MaxConnections field.
 func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) SetMaxConnections(v int64) {
 	o.MaxConnections.Set(&v)
-}
-
-// SetMaxConnectionsNil sets the value for MaxConnections to be an explicit nil
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) SetMaxConnectionsNil() {
-	o.MaxConnections.Set(nil)
-}
-
-// UnsetMaxConnections ensures that no value is present for MaxConnections, not even an explicit nil
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) UnsetMaxConnections() {
-	o.MaxConnections.Unset()
 }
 
 // GetExternalRefType returns the ExternalRefType field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -937,28 +609,9 @@ func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) GetExternal
 	return o.ExternalRefType.Get(), o.ExternalRefType.IsSet()
 }
 
-// IsSetExternalRefType returns a boolean if a field has been set.
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) IsSetExternalRefType() bool {
-	if o != nil && o.ExternalRefType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalRefType gets a reference to the given NullableString and assigns it to the ExternalRefType field.
 func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) SetExternalRefType(v string) {
 	o.ExternalRefType.Set(&v)
-}
-
-// SetExternalRefTypeNil sets the value for ExternalRefType to be an explicit nil
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) SetExternalRefTypeNil() {
-	o.ExternalRefType.Set(nil)
-}
-
-// UnsetExternalRefType ensures that no value is present for ExternalRefType, not even an explicit nil
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) UnsetExternalRefType() {
-	o.ExternalRefType.Unset()
 }
 
 // GetExternalRefId returns the ExternalRefId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -980,28 +633,9 @@ func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) GetExternal
 	return o.ExternalRefId.Get(), o.ExternalRefId.IsSet()
 }
 
-// IsSetExternalRefId returns a boolean if a field has been set.
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) IsSetExternalRefId() bool {
-	if o != nil && o.ExternalRefId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalRefId gets a reference to the given NullableString and assigns it to the ExternalRefId field.
 func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) SetExternalRefId(v string) {
 	o.ExternalRefId.Set(&v)
-}
-
-// SetExternalRefIdNil sets the value for ExternalRefId to be an explicit nil
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) SetExternalRefIdNil() {
-	o.ExternalRefId.Set(nil)
-}
-
-// UnsetExternalRefId ensures that no value is present for ExternalRefId, not even an explicit nil
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) UnsetExternalRefId() {
-	o.ExternalRefId.Unset()
 }
 
 // GetExternalRefName returns the ExternalRefName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1023,28 +657,9 @@ func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) GetExternal
 	return o.ExternalRefName.Get(), o.ExternalRefName.IsSet()
 }
 
-// IsSetExternalRefName returns a boolean if a field has been set.
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) IsSetExternalRefName() bool {
-	if o != nil && o.ExternalRefName.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalRefName gets a reference to the given NullableString and assigns it to the ExternalRefName field.
 func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) SetExternalRefName(v string) {
 	o.ExternalRefName.Set(&v)
-}
-
-// SetExternalRefNameNil sets the value for ExternalRefName to be an explicit nil
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) SetExternalRefNameNil() {
-	o.ExternalRefName.Set(nil)
-}
-
-// UnsetExternalRefName ensures that no value is present for ExternalRefName, not even an explicit nil
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) UnsetExternalRefName() {
-	o.ExternalRefName.Unset()
 }
 
 // GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
@@ -1063,15 +678,6 @@ func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) GetCreatedB
 		return nil, false
 	}
 	return o.CreatedBy, true
-}
-
-// IsSetCreatedBy returns a boolean if a field has been set.
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) IsSetCreatedBy() bool {
-	if o != nil && !IsNil(o.CreatedBy) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreatedBy gets a reference to the given CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNodeCreatedBy and assigns it to the CreatedBy field.
@@ -1097,15 +703,6 @@ func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) GetDateCrea
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -1127,15 +724,6 @@ func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) GetLastUpda
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *CreateLoadBalancerPoolNode200ResponseAllOfLoadBalancerNode) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.

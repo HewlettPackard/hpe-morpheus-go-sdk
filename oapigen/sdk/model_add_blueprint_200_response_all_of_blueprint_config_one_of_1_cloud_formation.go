@@ -97,15 +97,6 @@ func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) GetJso
 	return o.Json, true
 }
 
-// IsSetJson returns a boolean if a field has been set.
-func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) IsSetJson() bool {
-	if o != nil && !IsNil(o.Json) {
-		return true
-	}
-
-	return false
-}
-
 // SetJson gets a reference to the given string and assigns it to the Json field.
 func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) SetJson(v string) {
 	o.Json = &v
@@ -127,15 +118,6 @@ func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) GetYam
 		return nil, false
 	}
 	return o.Yaml, true
-}
-
-// IsSetYaml returns a boolean if a field has been set.
-func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) IsSetYaml() bool {
-	if o != nil && !IsNil(o.Yaml) {
-		return true
-	}
-
-	return false
 }
 
 // SetYaml gets a reference to the given string and assigns it to the Yaml field.
@@ -161,15 +143,6 @@ func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) GetGit
 	return o.Git, true
 }
 
-// IsSetGit returns a boolean if a field has been set.
-func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) IsSetGit() bool {
-	if o != nil && !IsNil(o.Git) {
-		return true
-	}
-
-	return false
-}
-
 // SetGit gets a reference to the given AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationGit and assigns it to the Git field.
 func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) SetGit(v AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationGit) {
 	o.Git = &v
@@ -191,15 +164,6 @@ func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) GetIAM
 		return nil, false
 	}
 	return o.IAM, true
-}
-
-// IsSetIAM returns a boolean if a field has been set.
-func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) IsSetIAM() bool {
-	if o != nil && !IsNil(o.IAM) {
-		return true
-	}
-
-	return false
 }
 
 // SetIAM gets a reference to the given AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationIAM and assigns it to the IAM field.
@@ -225,15 +189,6 @@ func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) GetCAP
 	return o.CAPABILITY_NAMED_IAM, true
 }
 
-// IsSetCAPABILITY_NAMED_IAM returns a boolean if a field has been set.
-func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) IsSetCAPABILITY_NAMED_IAM() bool {
-	if o != nil && !IsNil(o.CAPABILITY_NAMED_IAM) {
-		return true
-	}
-
-	return false
-}
-
 // SetCAPABILITY_NAMED_IAM gets a reference to the given AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCAPABILITYNAMEDIAM and assigns it to the CAPABILITY_NAMED_IAM field.
 func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) SetCAPABILITY_NAMED_IAM(v AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCAPABILITYNAMEDIAM) {
 	o.CAPABILITY_NAMED_IAM = &v
@@ -255,15 +210,6 @@ func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) GetCAP
 		return nil, false
 	}
 	return o.CAPABILITY_AUTO_EXPAND, true
-}
-
-// IsSetCAPABILITY_AUTO_EXPAND returns a boolean if a field has been set.
-func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) IsSetCAPABILITY_AUTO_EXPAND() bool {
-	if o != nil && !IsNil(o.CAPABILITY_AUTO_EXPAND) {
-		return true
-	}
-
-	return false
 }
 
 // SetCAPABILITY_AUTO_EXPAND gets a reference to the given AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCAPABILITYAUTOEXPAND and assigns it to the CAPABILITY_AUTO_EXPAND field.
@@ -289,15 +235,6 @@ func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) GetIns
 	return o.InstallAgent, true
 }
 
-// IsSetInstallAgent returns a boolean if a field has been set.
-func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) IsSetInstallAgent() bool {
-	if o != nil && !IsNil(o.InstallAgent) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstallAgent gets a reference to the given AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationInstallAgent and assigns it to the InstallAgent field.
 func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) SetInstallAgent(v AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationInstallAgent) {
 	o.InstallAgent = &v
@@ -319,15 +256,6 @@ func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) GetClo
 		return nil, false
 	}
 	return o.CloudInitEnabled, true
-}
-
-// IsSetCloudInitEnabled returns a boolean if a field has been set.
-func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) IsSetCloudInitEnabled() bool {
-	if o != nil && !IsNil(o.CloudInitEnabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetCloudInitEnabled gets a reference to the given AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCloudInitEnabled and assigns it to the CloudInitEnabled field.

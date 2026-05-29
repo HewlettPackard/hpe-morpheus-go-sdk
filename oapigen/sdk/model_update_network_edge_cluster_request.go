@@ -61,15 +61,6 @@ func (o *UpdateNetworkEdgeClusterRequest) GetNetworkEdgeClusterOk() (map[string]
 	return o.NetworkEdgeCluster, true
 }
 
-// IsSetNetworkEdgeCluster returns a boolean if a field has been set.
-func (o *UpdateNetworkEdgeClusterRequest) IsSetNetworkEdgeCluster() bool {
-	if o != nil && !IsNil(o.NetworkEdgeCluster) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkEdgeCluster gets a reference to the given map[string]interface{} and assigns it to the NetworkEdgeCluster field.
 func (o *UpdateNetworkEdgeClusterRequest) SetNetworkEdgeCluster(v map[string]interface{}) {
 	o.NetworkEdgeCluster = v

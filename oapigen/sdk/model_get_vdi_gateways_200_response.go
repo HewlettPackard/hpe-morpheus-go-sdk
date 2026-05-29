@@ -61,15 +61,6 @@ func (o *GetVDIGateways200Response) GetVdiGatewayOk() (*GetVDIGateways200Respons
 	return o.VdiGateway, true
 }
 
-// IsSetVdiGateway returns a boolean if a field has been set.
-func (o *GetVDIGateways200Response) IsSetVdiGateway() bool {
-	if o != nil && !IsNil(o.VdiGateway) {
-		return true
-	}
-
-	return false
-}
-
 // SetVdiGateway gets a reference to the given GetVDIGateways200ResponseVdiGateway and assigns it to the VdiGateway field.
 func (o *GetVDIGateways200Response) SetVdiGateway(v GetVDIGateways200ResponseVdiGateway) {
 	o.VdiGateway = &v

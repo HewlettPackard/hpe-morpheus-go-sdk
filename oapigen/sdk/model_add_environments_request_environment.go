@@ -128,15 +128,6 @@ func (o *AddEnvironmentsRequestEnvironment) GetDescriptionOk() (*string, bool) {
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *AddEnvironmentsRequestEnvironment) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *AddEnvironmentsRequestEnvironment) SetDescription(v string) {
 	o.Description = &v
@@ -160,15 +151,6 @@ func (o *AddEnvironmentsRequestEnvironment) GetVisibilityOk() (*string, bool) {
 	return o.Visibility, true
 }
 
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *AddEnvironmentsRequestEnvironment) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
-}
-
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
 func (o *AddEnvironmentsRequestEnvironment) SetVisibility(v string) {
 	o.Visibility = &v
@@ -190,15 +172,6 @@ func (o *AddEnvironmentsRequestEnvironment) GetSortOrderOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.SortOrder, true
-}
-
-// IsSetSortOrder returns a boolean if a field has been set.
-func (o *AddEnvironmentsRequestEnvironment) IsSetSortOrder() bool {
-	if o != nil && !IsNil(o.SortOrder) {
-		return true
-	}
-
-	return false
 }
 
 // SetSortOrder gets a reference to the given int64 and assigns it to the SortOrder field.

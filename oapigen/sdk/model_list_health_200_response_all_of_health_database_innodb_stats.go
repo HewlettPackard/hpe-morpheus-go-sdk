@@ -72,15 +72,6 @@ func (o *ListHealth200ResponseAllOfHealthDatabaseInnodbStats) GetLargeMemoryOk()
 	return o.LargeMemory, true
 }
 
-// IsSetLargeMemory returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthDatabaseInnodbStats) IsSetLargeMemory() bool {
-	if o != nil && !IsNil(o.LargeMemory) {
-		return true
-	}
-
-	return false
-}
-
 // SetLargeMemory gets a reference to the given int64 and assigns it to the LargeMemory field.
 func (o *ListHealth200ResponseAllOfHealthDatabaseInnodbStats) SetLargeMemory(v int64) {
 	o.LargeMemory = &v
@@ -102,15 +93,6 @@ func (o *ListHealth200ResponseAllOfHealthDatabaseInnodbStats) GetDictionaryMemor
 		return nil, false
 	}
 	return o.DictionaryMemory, true
-}
-
-// IsSetDictionaryMemory returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthDatabaseInnodbStats) IsSetDictionaryMemory() bool {
-	if o != nil && !IsNil(o.DictionaryMemory) {
-		return true
-	}
-
-	return false
 }
 
 // SetDictionaryMemory gets a reference to the given int64 and assigns it to the DictionaryMemory field.
@@ -136,15 +118,6 @@ func (o *ListHealth200ResponseAllOfHealthDatabaseInnodbStats) GetBufferPoolSizeO
 	return o.BufferPoolSize, true
 }
 
-// IsSetBufferPoolSize returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthDatabaseInnodbStats) IsSetBufferPoolSize() bool {
-	if o != nil && !IsNil(o.BufferPoolSize) {
-		return true
-	}
-
-	return false
-}
-
 // SetBufferPoolSize gets a reference to the given int64 and assigns it to the BufferPoolSize field.
 func (o *ListHealth200ResponseAllOfHealthDatabaseInnodbStats) SetBufferPoolSize(v int64) {
 	o.BufferPoolSize = &v
@@ -166,15 +139,6 @@ func (o *ListHealth200ResponseAllOfHealthDatabaseInnodbStats) GetFreeBuffersOk()
 		return nil, false
 	}
 	return o.FreeBuffers, true
-}
-
-// IsSetFreeBuffers returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthDatabaseInnodbStats) IsSetFreeBuffers() bool {
-	if o != nil && !IsNil(o.FreeBuffers) {
-		return true
-	}
-
-	return false
 }
 
 // SetFreeBuffers gets a reference to the given int64 and assigns it to the FreeBuffers field.
@@ -200,15 +164,6 @@ func (o *ListHealth200ResponseAllOfHealthDatabaseInnodbStats) GetDatabasePagesOk
 	return o.DatabasePages, true
 }
 
-// IsSetDatabasePages returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthDatabaseInnodbStats) IsSetDatabasePages() bool {
-	if o != nil && !IsNil(o.DatabasePages) {
-		return true
-	}
-
-	return false
-}
-
 // SetDatabasePages gets a reference to the given int64 and assigns it to the DatabasePages field.
 func (o *ListHealth200ResponseAllOfHealthDatabaseInnodbStats) SetDatabasePages(v int64) {
 	o.DatabasePages = &v
@@ -230,15 +185,6 @@ func (o *ListHealth200ResponseAllOfHealthDatabaseInnodbStats) GetOldPagesOk() (*
 		return nil, false
 	}
 	return o.OldPages, true
-}
-
-// IsSetOldPages returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthDatabaseInnodbStats) IsSetOldPages() bool {
-	if o != nil && !IsNil(o.OldPages) {
-		return true
-	}
-
-	return false
 }
 
 // SetOldPages gets a reference to the given int64 and assigns it to the OldPages field.
@@ -264,15 +210,6 @@ func (o *ListHealth200ResponseAllOfHealthDatabaseInnodbStats) GetPendingReadsOk(
 	return o.PendingReads, true
 }
 
-// IsSetPendingReads returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthDatabaseInnodbStats) IsSetPendingReads() bool {
-	if o != nil && !IsNil(o.PendingReads) {
-		return true
-	}
-
-	return false
-}
-
 // SetPendingReads gets a reference to the given int64 and assigns it to the PendingReads field.
 func (o *ListHealth200ResponseAllOfHealthDatabaseInnodbStats) SetPendingReads(v int64) {
 	o.PendingReads = &v
@@ -294,15 +231,6 @@ func (o *ListHealth200ResponseAllOfHealthDatabaseInnodbStats) GetInsertsPerSecon
 		return nil, false
 	}
 	return o.InsertsPerSecond, true
-}
-
-// IsSetInsertsPerSecond returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthDatabaseInnodbStats) IsSetInsertsPerSecond() bool {
-	if o != nil && !IsNil(o.InsertsPerSecond) {
-		return true
-	}
-
-	return false
 }
 
 // SetInsertsPerSecond gets a reference to the given float32 and assigns it to the InsertsPerSecond field.
@@ -328,15 +256,6 @@ func (o *ListHealth200ResponseAllOfHealthDatabaseInnodbStats) GetUpdatesPerSecon
 	return o.UpdatesPerSecond, true
 }
 
-// IsSetUpdatesPerSecond returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthDatabaseInnodbStats) IsSetUpdatesPerSecond() bool {
-	if o != nil && !IsNil(o.UpdatesPerSecond) {
-		return true
-	}
-
-	return false
-}
-
 // SetUpdatesPerSecond gets a reference to the given float32 and assigns it to the UpdatesPerSecond field.
 func (o *ListHealth200ResponseAllOfHealthDatabaseInnodbStats) SetUpdatesPerSecond(v float32) {
 	o.UpdatesPerSecond = &v
@@ -358,15 +277,6 @@ func (o *ListHealth200ResponseAllOfHealthDatabaseInnodbStats) GetDeletesPerSecon
 		return nil, false
 	}
 	return o.DeletesPerSecond, true
-}
-
-// IsSetDeletesPerSecond returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthDatabaseInnodbStats) IsSetDeletesPerSecond() bool {
-	if o != nil && !IsNil(o.DeletesPerSecond) {
-		return true
-	}
-
-	return false
 }
 
 // SetDeletesPerSecond gets a reference to the given float32 and assigns it to the DeletesPerSecond field.
@@ -392,15 +302,6 @@ func (o *ListHealth200ResponseAllOfHealthDatabaseInnodbStats) GetReadsPerSecondO
 	return o.ReadsPerSecond, true
 }
 
-// IsSetReadsPerSecond returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthDatabaseInnodbStats) IsSetReadsPerSecond() bool {
-	if o != nil && !IsNil(o.ReadsPerSecond) {
-		return true
-	}
-
-	return false
-}
-
 // SetReadsPerSecond gets a reference to the given float32 and assigns it to the ReadsPerSecond field.
 func (o *ListHealth200ResponseAllOfHealthDatabaseInnodbStats) SetReadsPerSecond(v float32) {
 	o.ReadsPerSecond = &v
@@ -422,15 +323,6 @@ func (o *ListHealth200ResponseAllOfHealthDatabaseInnodbStats) GetBufferHitRateOk
 		return nil, false
 	}
 	return o.BufferHitRate, true
-}
-
-// IsSetBufferHitRate returns a boolean if a field has been set.
-func (o *ListHealth200ResponseAllOfHealthDatabaseInnodbStats) IsSetBufferHitRate() bool {
-	if o != nil && !IsNil(o.BufferHitRate) {
-		return true
-	}
-
-	return false
 }
 
 // SetBufferHitRate gets a reference to the given int64 and assigns it to the BufferHitRate field.

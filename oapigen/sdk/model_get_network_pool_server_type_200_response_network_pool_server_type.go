@@ -69,15 +69,6 @@ func (o *GetNetworkPoolServerType200ResponseNetworkPoolServerType) GetIdOk() (*i
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetNetworkPoolServerType200ResponseNetworkPoolServerType) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetNetworkPoolServerType200ResponseNetworkPoolServerType) SetId(v int64) {
 	o.Id = &v
@@ -102,28 +93,9 @@ func (o *GetNetworkPoolServerType200ResponseNetworkPoolServerType) GetPoolServic
 	return o.PoolService.Get(), o.PoolService.IsSet()
 }
 
-// IsSetPoolService returns a boolean if a field has been set.
-func (o *GetNetworkPoolServerType200ResponseNetworkPoolServerType) IsSetPoolService() bool {
-	if o != nil && o.PoolService.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPoolService gets a reference to the given NullableString and assigns it to the PoolService field.
 func (o *GetNetworkPoolServerType200ResponseNetworkPoolServerType) SetPoolService(v string) {
 	o.PoolService.Set(&v)
-}
-
-// SetPoolServiceNil sets the value for PoolService to be an explicit nil
-func (o *GetNetworkPoolServerType200ResponseNetworkPoolServerType) SetPoolServiceNil() {
-	o.PoolService.Set(nil)
-}
-
-// UnsetPoolService ensures that no value is present for PoolService, not even an explicit nil
-func (o *GetNetworkPoolServerType200ResponseNetworkPoolServerType) UnsetPoolService() {
-	o.PoolService.Unset()
 }
 
 // GetSelectable returns the Selectable field value if set, zero value otherwise.
@@ -142,15 +114,6 @@ func (o *GetNetworkPoolServerType200ResponseNetworkPoolServerType) GetSelectable
 		return nil, false
 	}
 	return o.Selectable, true
-}
-
-// IsSetSelectable returns a boolean if a field has been set.
-func (o *GetNetworkPoolServerType200ResponseNetworkPoolServerType) IsSetSelectable() bool {
-	if o != nil && !IsNil(o.Selectable) {
-		return true
-	}
-
-	return false
 }
 
 // SetSelectable gets a reference to the given bool and assigns it to the Selectable field.
@@ -174,15 +137,6 @@ func (o *GetNetworkPoolServerType200ResponseNetworkPoolServerType) GetCodeOk() (
 		return nil, false
 	}
 	return o.Code, true
-}
-
-// IsSetCode returns a boolean if a field has been set.
-func (o *GetNetworkPoolServerType200ResponseNetworkPoolServerType) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
@@ -209,28 +163,9 @@ func (o *GetNetworkPoolServerType200ResponseNetworkPoolServerType) GetIntegratio
 	return o.IntegrationCode.Get(), o.IntegrationCode.IsSet()
 }
 
-// IsSetIntegrationCode returns a boolean if a field has been set.
-func (o *GetNetworkPoolServerType200ResponseNetworkPoolServerType) IsSetIntegrationCode() bool {
-	if o != nil && o.IntegrationCode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetIntegrationCode gets a reference to the given NullableString and assigns it to the IntegrationCode field.
 func (o *GetNetworkPoolServerType200ResponseNetworkPoolServerType) SetIntegrationCode(v string) {
 	o.IntegrationCode.Set(&v)
-}
-
-// SetIntegrationCodeNil sets the value for IntegrationCode to be an explicit nil
-func (o *GetNetworkPoolServerType200ResponseNetworkPoolServerType) SetIntegrationCodeNil() {
-	o.IntegrationCode.Set(nil)
-}
-
-// UnsetIntegrationCode ensures that no value is present for IntegrationCode, not even an explicit nil
-func (o *GetNetworkPoolServerType200ResponseNetworkPoolServerType) UnsetIntegrationCode() {
-	o.IntegrationCode.Unset()
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -249,15 +184,6 @@ func (o *GetNetworkPoolServerType200ResponseNetworkPoolServerType) GetNameOk() (
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *GetNetworkPoolServerType200ResponseNetworkPoolServerType) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -281,15 +207,6 @@ func (o *GetNetworkPoolServerType200ResponseNetworkPoolServerType) GetEnabledOk(
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *GetNetworkPoolServerType200ResponseNetworkPoolServerType) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -316,28 +233,9 @@ func (o *GetNetworkPoolServerType200ResponseNetworkPoolServerType) GetDescriptio
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *GetNetworkPoolServerType200ResponseNetworkPoolServerType) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *GetNetworkPoolServerType200ResponseNetworkPoolServerType) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *GetNetworkPoolServerType200ResponseNetworkPoolServerType) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *GetNetworkPoolServerType200ResponseNetworkPoolServerType) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetOptionTypes returns the OptionTypes field value if set, zero value otherwise.
@@ -356,15 +254,6 @@ func (o *GetNetworkPoolServerType200ResponseNetworkPoolServerType) GetOptionType
 		return nil, false
 	}
 	return o.OptionTypes, true
-}
-
-// IsSetOptionTypes returns a boolean if a field has been set.
-func (o *GetNetworkPoolServerType200ResponseNetworkPoolServerType) IsSetOptionTypes() bool {
-	if o != nil && !IsNil(o.OptionTypes) {
-		return true
-	}
-
-	return false
 }
 
 // SetOptionTypes gets a reference to the given []GetNetworkPoolServerType200ResponseNetworkPoolServerTypeOptionTypesInner and assigns it to the OptionTypes field.

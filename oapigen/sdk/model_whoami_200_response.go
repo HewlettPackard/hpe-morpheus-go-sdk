@@ -64,15 +64,6 @@ func (o *Whoami200Response) GetUserOk() (*Whoami200ResponseUser, bool) {
 	return o.User, true
 }
 
-// IsSetUser returns a boolean if a field has been set.
-func (o *Whoami200Response) IsSetUser() bool {
-	if o != nil && !IsNil(o.User) {
-		return true
-	}
-
-	return false
-}
-
 // SetUser gets a reference to the given Whoami200ResponseUser and assigns it to the User field.
 func (o *Whoami200Response) SetUser(v Whoami200ResponseUser) {
 	o.User = &v
@@ -94,15 +85,6 @@ func (o *Whoami200Response) GetIsMasterAccountOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.IsMasterAccount, true
-}
-
-// IsSetIsMasterAccount returns a boolean if a field has been set.
-func (o *Whoami200Response) IsSetIsMasterAccount() bool {
-	if o != nil && !IsNil(o.IsMasterAccount) {
-		return true
-	}
-
-	return false
 }
 
 // SetIsMasterAccount gets a reference to the given bool and assigns it to the IsMasterAccount field.
@@ -128,15 +110,6 @@ func (o *Whoami200Response) GetPermissionsOk() ([]Whoami200ResponsePermissionsIn
 	return o.Permissions, true
 }
 
-// IsSetPermissions returns a boolean if a field has been set.
-func (o *Whoami200Response) IsSetPermissions() bool {
-	if o != nil && !IsNil(o.Permissions) {
-		return true
-	}
-
-	return false
-}
-
 // SetPermissions gets a reference to the given []Whoami200ResponsePermissionsInner and assigns it to the Permissions field.
 func (o *Whoami200Response) SetPermissions(v []Whoami200ResponsePermissionsInner) {
 	o.Permissions = v
@@ -158,15 +131,6 @@ func (o *Whoami200Response) GetApplianceOk() (*Whoami200ResponseAppliance, bool)
 		return nil, false
 	}
 	return o.Appliance, true
-}
-
-// IsSetAppliance returns a boolean if a field has been set.
-func (o *Whoami200Response) IsSetAppliance() bool {
-	if o != nil && !IsNil(o.Appliance) {
-		return true
-	}
-
-	return false
 }
 
 // SetAppliance gets a reference to the given Whoami200ResponseAppliance and assigns it to the Appliance field.

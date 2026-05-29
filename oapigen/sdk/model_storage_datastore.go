@@ -155,28 +155,9 @@ func (o *StorageDatastore) GetCodeOk() (*string, bool) {
 	return o.Code.Get(), o.Code.IsSet()
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *StorageDatastore) IsSetCode() bool {
-	if o != nil && o.Code.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *StorageDatastore) SetCode(v string) {
 	o.Code.Set(&v)
-}
-
-// SetCodeNil sets the value for Code to be an explicit nil
-func (o *StorageDatastore) SetCodeNil() {
-	o.Code.Set(nil)
-}
-
-// UnsetCode ensures that no value is present for Code, not even an explicit nil
-func (o *StorageDatastore) UnsetCode() {
-	o.Code.Unset()
 }
 
 // GetDatastoreType returns the DatastoreType field value
@@ -221,15 +202,6 @@ func (o *StorageDatastore) GetConfigOk() (map[string]interface{}, bool) {
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *StorageDatastore) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
 func (o *StorageDatastore) SetConfig(v map[string]interface{}) {
 	o.Config = v
@@ -251,15 +223,6 @@ func (o *StorageDatastore) GetStorageServerOk() (*StorageDatastoreStorageServer,
 		return nil, false
 	}
 	return o.StorageServer, true
-}
-
-// IsSetStorageServer returns a boolean if a field has been set.
-func (o *StorageDatastore) IsSetStorageServer() bool {
-	if o != nil && !IsNil(o.StorageServer) {
-		return true
-	}
-
-	return false
 }
 
 // SetStorageServer gets a reference to the given StorageDatastoreStorageServer and assigns it to the StorageServer field.
@@ -333,15 +296,6 @@ func (o *StorageDatastore) GetStatusMessageOk() (*string, bool) {
 	return o.StatusMessage, true
 }
 
-// IsSetStatusMessage returns a boolean if a field has been set.
-func (o *StorageDatastore) IsSetStatusMessage() bool {
-	if o != nil && !IsNil(o.StatusMessage) {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusMessage gets a reference to the given string and assigns it to the StatusMessage field.
 func (o *StorageDatastore) SetStatusMessage(v string) {
 	o.StatusMessage = &v
@@ -363,15 +317,6 @@ func (o *StorageDatastore) GetVisibilityOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *StorageDatastore) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -398,28 +343,9 @@ func (o *StorageDatastore) GetStorageSizeOk() (*int64, bool) {
 	return o.StorageSize.Get(), o.StorageSize.IsSet()
 }
 
-// IsSetStorageSize returns a boolean if a field has been set.
-func (o *StorageDatastore) IsSetStorageSize() bool {
-	if o != nil && o.StorageSize.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStorageSize gets a reference to the given NullableInt64 and assigns it to the StorageSize field.
 func (o *StorageDatastore) SetStorageSize(v int64) {
 	o.StorageSize.Set(&v)
-}
-
-// SetStorageSizeNil sets the value for StorageSize to be an explicit nil
-func (o *StorageDatastore) SetStorageSizeNil() {
-	o.StorageSize.Set(nil)
-}
-
-// UnsetStorageSize ensures that no value is present for StorageSize, not even an explicit nil
-func (o *StorageDatastore) UnsetStorageSize() {
-	o.StorageSize.Unset()
 }
 
 // GetFreeSpace returns the FreeSpace field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -441,28 +367,9 @@ func (o *StorageDatastore) GetFreeSpaceOk() (*int64, bool) {
 	return o.FreeSpace.Get(), o.FreeSpace.IsSet()
 }
 
-// IsSetFreeSpace returns a boolean if a field has been set.
-func (o *StorageDatastore) IsSetFreeSpace() bool {
-	if o != nil && o.FreeSpace.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFreeSpace gets a reference to the given NullableInt64 and assigns it to the FreeSpace field.
 func (o *StorageDatastore) SetFreeSpace(v int64) {
 	o.FreeSpace.Set(&v)
-}
-
-// SetFreeSpaceNil sets the value for FreeSpace to be an explicit nil
-func (o *StorageDatastore) SetFreeSpaceNil() {
-	o.FreeSpace.Set(nil)
-}
-
-// UnsetFreeSpace ensures that no value is present for FreeSpace, not even an explicit nil
-func (o *StorageDatastore) UnsetFreeSpace() {
-	o.FreeSpace.Unset()
 }
 
 // GetDrsEnabled returns the DrsEnabled field value if set, zero value otherwise.
@@ -481,15 +388,6 @@ func (o *StorageDatastore) GetDrsEnabledOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.DrsEnabled, true
-}
-
-// IsSetDrsEnabled returns a boolean if a field has been set.
-func (o *StorageDatastore) IsSetDrsEnabled() bool {
-	if o != nil && !IsNil(o.DrsEnabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetDrsEnabled gets a reference to the given bool and assigns it to the DrsEnabled field.
@@ -515,15 +413,6 @@ func (o *StorageDatastore) GetActiveOk() (*bool, bool) {
 	return o.Active, true
 }
 
-// IsSetActive returns a boolean if a field has been set.
-func (o *StorageDatastore) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
-}
-
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *StorageDatastore) SetActive(v bool) {
 	o.Active = &v
@@ -545,15 +434,6 @@ func (o *StorageDatastore) GetAllowWriteOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.AllowWrite, true
-}
-
-// IsSetAllowWrite returns a boolean if a field has been set.
-func (o *StorageDatastore) IsSetAllowWrite() bool {
-	if o != nil && !IsNil(o.AllowWrite) {
-		return true
-	}
-
-	return false
 }
 
 // SetAllowWrite gets a reference to the given bool and assigns it to the AllowWrite field.
@@ -579,15 +459,6 @@ func (o *StorageDatastore) GetDefaultStoreOk() (*bool, bool) {
 	return o.DefaultStore, true
 }
 
-// IsSetDefaultStore returns a boolean if a field has been set.
-func (o *StorageDatastore) IsSetDefaultStore() bool {
-	if o != nil && !IsNil(o.DefaultStore) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultStore gets a reference to the given bool and assigns it to the DefaultStore field.
 func (o *StorageDatastore) SetDefaultStore(v bool) {
 	o.DefaultStore = &v
@@ -609,15 +480,6 @@ func (o *StorageDatastore) GetOnlineOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Online, true
-}
-
-// IsSetOnline returns a boolean if a field has been set.
-func (o *StorageDatastore) IsSetOnline() bool {
-	if o != nil && !IsNil(o.Online) {
-		return true
-	}
-
-	return false
 }
 
 // SetOnline gets a reference to the given bool and assigns it to the Online field.
@@ -643,15 +505,6 @@ func (o *StorageDatastore) GetAllowReadOk() (*bool, bool) {
 	return o.AllowRead, true
 }
 
-// IsSetAllowRead returns a boolean if a field has been set.
-func (o *StorageDatastore) IsSetAllowRead() bool {
-	if o != nil && !IsNil(o.AllowRead) {
-		return true
-	}
-
-	return false
-}
-
 // SetAllowRead gets a reference to the given bool and assigns it to the AllowRead field.
 func (o *StorageDatastore) SetAllowRead(v bool) {
 	o.AllowRead = &v
@@ -673,15 +526,6 @@ func (o *StorageDatastore) GetAllowProvisionOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.AllowProvision, true
-}
-
-// IsSetAllowProvision returns a boolean if a field has been set.
-func (o *StorageDatastore) IsSetAllowProvision() bool {
-	if o != nil && !IsNil(o.AllowProvision) {
-		return true
-	}
-
-	return false
 }
 
 // SetAllowProvision gets a reference to the given bool and assigns it to the AllowProvision field.
@@ -707,15 +551,6 @@ func (o *StorageDatastore) GetHeartBeatTargetOk() (*bool, bool) {
 	return o.HeartBeatTarget, true
 }
 
-// IsSetHeartBeatTarget returns a boolean if a field has been set.
-func (o *StorageDatastore) IsSetHeartBeatTarget() bool {
-	if o != nil && !IsNil(o.HeartBeatTarget) {
-		return true
-	}
-
-	return false
-}
-
 // SetHeartBeatTarget gets a reference to the given bool and assigns it to the HeartBeatTarget field.
 func (o *StorageDatastore) SetHeartBeatTarget(v bool) {
 	o.HeartBeatTarget = &v
@@ -737,15 +572,6 @@ func (o *StorageDatastore) GetRefTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.RefType, true
-}
-
-// IsSetRefType returns a boolean if a field has been set.
-func (o *StorageDatastore) IsSetRefType() bool {
-	if o != nil && !IsNil(o.RefType) {
-		return true
-	}
-
-	return false
 }
 
 // SetRefType gets a reference to the given string and assigns it to the RefType field.
@@ -771,15 +597,6 @@ func (o *StorageDatastore) GetRefIdOk() (*int64, bool) {
 	return o.RefId, true
 }
 
-// IsSetRefId returns a boolean if a field has been set.
-func (o *StorageDatastore) IsSetRefId() bool {
-	if o != nil && !IsNil(o.RefId) {
-		return true
-	}
-
-	return false
-}
-
 // SetRefId gets a reference to the given int64 and assigns it to the RefId field.
 func (o *StorageDatastore) SetRefId(v int64) {
 	o.RefId = &v
@@ -801,15 +618,6 @@ func (o *StorageDatastore) GetExternalIdOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ExternalId, true
-}
-
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *StorageDatastore) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
-		return true
-	}
-
-	return false
 }
 
 // SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
@@ -835,15 +643,6 @@ func (o *StorageDatastore) GetExternalPathOk() (*string, bool) {
 	return o.ExternalPath, true
 }
 
-// IsSetExternalPath returns a boolean if a field has been set.
-func (o *StorageDatastore) IsSetExternalPath() bool {
-	if o != nil && !IsNil(o.ExternalPath) {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalPath gets a reference to the given string and assigns it to the ExternalPath field.
 func (o *StorageDatastore) SetExternalPath(v string) {
 	o.ExternalPath = &v
@@ -865,15 +664,6 @@ func (o *StorageDatastore) GetExternalTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ExternalType, true
-}
-
-// IsSetExternalType returns a boolean if a field has been set.
-func (o *StorageDatastore) IsSetExternalType() bool {
-	if o != nil && !IsNil(o.ExternalType) {
-		return true
-	}
-
-	return false
 }
 
 // SetExternalType gets a reference to the given string and assigns it to the ExternalType field.
@@ -899,15 +689,6 @@ func (o *StorageDatastore) GetZoneOk() (*StorageDatastoreZone, bool) {
 	return o.Zone, true
 }
 
-// IsSetZone returns a boolean if a field has been set.
-func (o *StorageDatastore) IsSetZone() bool {
-	if o != nil && !IsNil(o.Zone) {
-		return true
-	}
-
-	return false
-}
-
 // SetZone gets a reference to the given StorageDatastoreZone and assigns it to the Zone field.
 func (o *StorageDatastore) SetZone(v StorageDatastoreZone) {
 	o.Zone = &v
@@ -929,15 +710,6 @@ func (o *StorageDatastore) GetZonePoolOk() (*StorageDatastoreZonePool, bool) {
 		return nil, false
 	}
 	return o.ZonePool, true
-}
-
-// IsSetZonePool returns a boolean if a field has been set.
-func (o *StorageDatastore) IsSetZonePool() bool {
-	if o != nil && !IsNil(o.ZonePool) {
-		return true
-	}
-
-	return false
 }
 
 // SetZonePool gets a reference to the given StorageDatastoreZonePool and assigns it to the ZonePool field.
@@ -963,15 +735,6 @@ func (o *StorageDatastore) GetOwnerOk() (*StorageDatastoreOwner, bool) {
 	return o.Owner, true
 }
 
-// IsSetOwner returns a boolean if a field has been set.
-func (o *StorageDatastore) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
-		return true
-	}
-
-	return false
-}
-
 // SetOwner gets a reference to the given StorageDatastoreOwner and assigns it to the Owner field.
 func (o *StorageDatastore) SetOwner(v StorageDatastoreOwner) {
 	o.Owner = &v
@@ -995,15 +758,6 @@ func (o *StorageDatastore) GetDatastoresOk() ([]StorageDatastoreDatastoresInner,
 	return o.Datastores, true
 }
 
-// IsSetDatastores returns a boolean if a field has been set.
-func (o *StorageDatastore) IsSetDatastores() bool {
-	if o != nil && !IsNil(o.Datastores) {
-		return true
-	}
-
-	return false
-}
-
 // SetDatastores gets a reference to the given []StorageDatastoreDatastoresInner and assigns it to the Datastores field.
 func (o *StorageDatastore) SetDatastores(v []StorageDatastoreDatastoresInner) {
 	o.Datastores = v
@@ -1025,15 +779,6 @@ func (o *StorageDatastore) GetLocationsOk() ([]StorageDatastoreLocationsInner, b
 		return nil, false
 	}
 	return o.Locations, true
-}
-
-// IsSetLocations returns a boolean if a field has been set.
-func (o *StorageDatastore) IsSetLocations() bool {
-	if o != nil && !IsNil(o.Locations) {
-		return true
-	}
-
-	return false
 }
 
 // SetLocations gets a reference to the given []StorageDatastoreLocationsInner and assigns it to the Locations field.

@@ -62,15 +62,6 @@ func (o *UpdateIdentitySources200Response) GetTaskOk() (*UpdateIdentitySources20
 	return o.Task, true
 }
 
-// IsSetTask returns a boolean if a field has been set.
-func (o *UpdateIdentitySources200Response) IsSetTask() bool {
-	if o != nil && !IsNil(o.Task) {
-		return true
-	}
-
-	return false
-}
-
 // SetTask gets a reference to the given UpdateIdentitySources200ResponseAllOfTask and assigns it to the Task field.
 func (o *UpdateIdentitySources200Response) SetTask(v UpdateIdentitySources200ResponseAllOfTask) {
 	o.Task = &v
@@ -92,15 +83,6 @@ func (o *UpdateIdentitySources200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *UpdateIdentitySources200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

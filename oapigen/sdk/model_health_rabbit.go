@@ -65,15 +65,6 @@ func (o *HealthRabbit) GetSuccessOk() (*bool, bool) {
 	return o.Success, true
 }
 
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *HealthRabbit) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
-}
-
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.
 func (o *HealthRabbit) SetSuccess(v bool) {
 	o.Success = &v
@@ -96,15 +87,6 @@ func (o *HealthRabbit) GetBusyQueuesOk() ([]map[string]interface{}, bool) {
 		return nil, false
 	}
 	return o.BusyQueues, true
-}
-
-// IsSetBusyQueues returns a boolean if a field has been set.
-func (o *HealthRabbit) IsSetBusyQueues() bool {
-	if o != nil && !IsNil(o.BusyQueues) {
-		return true
-	}
-
-	return false
 }
 
 // SetBusyQueues gets a reference to the given []map[string]interface{} and assigns it to the BusyQueues field.
@@ -131,15 +113,6 @@ func (o *HealthRabbit) GetErrorQueuesOk() ([]map[string]interface{}, bool) {
 	return o.ErrorQueues, true
 }
 
-// IsSetErrorQueues returns a boolean if a field has been set.
-func (o *HealthRabbit) IsSetErrorQueues() bool {
-	if o != nil && !IsNil(o.ErrorQueues) {
-		return true
-	}
-
-	return false
-}
-
 // SetErrorQueues gets a reference to the given []map[string]interface{} and assigns it to the ErrorQueues field.
 func (o *HealthRabbit) SetErrorQueues(v []map[string]interface{}) {
 	o.ErrorQueues = v
@@ -163,15 +136,6 @@ func (o *HealthRabbit) GetStatusOk() (*string, bool) {
 	return o.Status, true
 }
 
-// IsSetStatus returns a boolean if a field has been set.
-func (o *HealthRabbit) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
-}
-
 // SetStatus gets a reference to the given string and assigns it to the Status field.
 func (o *HealthRabbit) SetStatus(v string) {
 	o.Status = &v
@@ -193,15 +157,6 @@ func (o *HealthRabbit) GetQueuesOk() ([]HealthRabbitQueuesInner, bool) {
 		return nil, false
 	}
 	return o.Queues, true
-}
-
-// IsSetQueues returns a boolean if a field has been set.
-func (o *HealthRabbit) IsSetQueues() bool {
-	if o != nil && !IsNil(o.Queues) {
-		return true
-	}
-
-	return false
 }
 
 // SetQueues gets a reference to the given []HealthRabbitQueuesInner and assigns it to the Queues field.

@@ -63,15 +63,6 @@ func (o *AddCluster200ResponseAllOfClusterPermissionsResourcePool) GetIdOk() (*i
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *AddCluster200ResponseAllOfClusterPermissionsResourcePool) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *AddCluster200ResponseAllOfClusterPermissionsResourcePool) SetId(v int64) {
 	o.Id = &v
@@ -95,15 +86,6 @@ func (o *AddCluster200ResponseAllOfClusterPermissionsResourcePool) GetNameOk() (
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *AddCluster200ResponseAllOfClusterPermissionsResourcePool) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *AddCluster200ResponseAllOfClusterPermissionsResourcePool) SetName(v string) {
 	o.Name = &v
@@ -125,15 +107,6 @@ func (o *AddCluster200ResponseAllOfClusterPermissionsResourcePool) GetVisibility
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *AddCluster200ResponseAllOfClusterPermissionsResourcePool) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.

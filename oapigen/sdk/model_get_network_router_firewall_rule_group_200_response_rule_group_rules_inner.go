@@ -82,15 +82,6 @@ func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) GetIdO
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) SetId(v int64) {
 	o.Id = &v
@@ -112,15 +103,6 @@ func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) GetNam
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -147,28 +129,9 @@ func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) GetCod
 	return o.Code.Get(), o.Code.IsSet()
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) IsSetCode() bool {
-	if o != nil && o.Code.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) SetCode(v string) {
 	o.Code.Set(&v)
-}
-
-// SetCodeNil sets the value for Code to be an explicit nil
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) SetCodeNil() {
-	o.Code.Set(nil)
-}
-
-// UnsetCode ensures that no value is present for Code, not even an explicit nil
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) UnsetCode() {
-	o.Code.Unset()
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
@@ -187,15 +150,6 @@ func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) GetEna
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -221,15 +175,6 @@ func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) GetGro
 	return o.GroupName, true
 }
 
-// IsSetGroupName returns a boolean if a field has been set.
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) IsSetGroupName() bool {
-	if o != nil && !IsNil(o.GroupName) {
-		return true
-	}
-
-	return false
-}
-
 // SetGroupName gets a reference to the given string and assigns it to the GroupName field.
 func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) SetGroupName(v string) {
 	o.GroupName = &v
@@ -251,15 +196,6 @@ func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) GetDir
 		return nil, false
 	}
 	return o.Direction, true
-}
-
-// IsSetDirection returns a boolean if a field has been set.
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) IsSetDirection() bool {
-	if o != nil && !IsNil(o.Direction) {
-		return true
-	}
-
-	return false
 }
 
 // SetDirection gets a reference to the given string and assigns it to the Direction field.
@@ -285,15 +221,6 @@ func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) GetRul
 	return o.RuleType, true
 }
 
-// IsSetRuleType returns a boolean if a field has been set.
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) IsSetRuleType() bool {
-	if o != nil && !IsNil(o.RuleType) {
-		return true
-	}
-
-	return false
-}
-
 // SetRuleType gets a reference to the given string and assigns it to the RuleType field.
 func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) SetRuleType(v string) {
 	o.RuleType = &v
@@ -315,15 +242,6 @@ func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) GetPol
 		return nil, false
 	}
 	return o.Policy, true
-}
-
-// IsSetPolicy returns a boolean if a field has been set.
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) IsSetPolicy() bool {
-	if o != nil && !IsNil(o.Policy) {
-		return true
-	}
-
-	return false
 }
 
 // SetPolicy gets a reference to the given string and assigns it to the Policy field.
@@ -349,15 +267,6 @@ func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) GetSou
 	return o.Source, true
 }
 
-// IsSetSource returns a boolean if a field has been set.
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) IsSetSource() bool {
-	if o != nil && !IsNil(o.Source) {
-		return true
-	}
-
-	return false
-}
-
 // SetSource gets a reference to the given []string and assigns it to the Source field.
 func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) SetSource(v []string) {
 	o.Source = v
@@ -379,15 +288,6 @@ func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) GetSou
 		return nil, false
 	}
 	return o.SourceType, true
-}
-
-// IsSetSourceType returns a boolean if a field has been set.
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) IsSetSourceType() bool {
-	if o != nil && !IsNil(o.SourceType) {
-		return true
-	}
-
-	return false
 }
 
 // SetSourceType gets a reference to the given string and assigns it to the SourceType field.
@@ -413,15 +313,6 @@ func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) GetDes
 	return o.Destination, true
 }
 
-// IsSetDestination returns a boolean if a field has been set.
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) IsSetDestination() bool {
-	if o != nil && !IsNil(o.Destination) {
-		return true
-	}
-
-	return false
-}
-
 // SetDestination gets a reference to the given []string and assigns it to the Destination field.
 func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) SetDestination(v []string) {
 	o.Destination = v
@@ -445,15 +336,6 @@ func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) GetDes
 	return o.DestinationType, true
 }
 
-// IsSetDestinationType returns a boolean if a field has been set.
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) IsSetDestinationType() bool {
-	if o != nil && !IsNil(o.DestinationType) {
-		return true
-	}
-
-	return false
-}
-
 // SetDestinationType gets a reference to the given string and assigns it to the DestinationType field.
 func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) SetDestinationType(v string) {
 	o.DestinationType = &v
@@ -475,15 +357,6 @@ func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) GetPro
 		return nil, false
 	}
 	return o.Profiles, true
-}
-
-// IsSetProfiles returns a boolean if a field has been set.
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) IsSetProfiles() bool {
-	if o != nil && !IsNil(o.Profiles) {
-		return true
-	}
-
-	return false
 }
 
 // SetProfiles gets a reference to the given []string and assigns it to the Profiles field.
@@ -510,28 +383,9 @@ func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) GetPro
 	return o.Protocol.Get(), o.Protocol.IsSet()
 }
 
-// IsSetProtocol returns a boolean if a field has been set.
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) IsSetProtocol() bool {
-	if o != nil && o.Protocol.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetProtocol gets a reference to the given NullableString and assigns it to the Protocol field.
 func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) SetProtocol(v string) {
 	o.Protocol.Set(&v)
-}
-
-// SetProtocolNil sets the value for Protocol to be an explicit nil
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) SetProtocolNil() {
-	o.Protocol.Set(nil)
-}
-
-// UnsetProtocol ensures that no value is present for Protocol, not even an explicit nil
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) UnsetProtocol() {
-	o.Protocol.Unset()
 }
 
 // GetApplication returns the Application field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -553,28 +407,9 @@ func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) GetApp
 	return o.Application.Get(), o.Application.IsSet()
 }
 
-// IsSetApplication returns a boolean if a field has been set.
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) IsSetApplication() bool {
-	if o != nil && o.Application.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetApplication gets a reference to the given NullableString and assigns it to the Application field.
 func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) SetApplication(v string) {
 	o.Application.Set(&v)
-}
-
-// SetApplicationNil sets the value for Application to be an explicit nil
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) SetApplicationNil() {
-	o.Application.Set(nil)
-}
-
-// UnsetApplication ensures that no value is present for Application, not even an explicit nil
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) UnsetApplication() {
-	o.Application.Unset()
 }
 
 // GetApplicationType returns the ApplicationType field value if set, zero value otherwise.
@@ -593,15 +428,6 @@ func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) GetApp
 		return nil, false
 	}
 	return o.ApplicationType, true
-}
-
-// IsSetApplicationType returns a boolean if a field has been set.
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) IsSetApplicationType() bool {
-	if o != nil && !IsNil(o.ApplicationType) {
-		return true
-	}
-
-	return false
 }
 
 // SetApplicationType gets a reference to the given string and assigns it to the ApplicationType field.
@@ -628,28 +454,9 @@ func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) GetPor
 	return o.PortRange.Get(), o.PortRange.IsSet()
 }
 
-// IsSetPortRange returns a boolean if a field has been set.
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) IsSetPortRange() bool {
-	if o != nil && o.PortRange.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPortRange gets a reference to the given NullableString and assigns it to the PortRange field.
 func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) SetPortRange(v string) {
 	o.PortRange.Set(&v)
-}
-
-// SetPortRangeNil sets the value for PortRange to be an explicit nil
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) SetPortRangeNil() {
-	o.PortRange.Set(nil)
-}
-
-// UnsetPortRange ensures that no value is present for PortRange, not even an explicit nil
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) UnsetPortRange() {
-	o.PortRange.Unset()
 }
 
 // GetSourcePortRange returns the SourcePortRange field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -671,28 +478,9 @@ func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) GetSou
 	return o.SourcePortRange.Get(), o.SourcePortRange.IsSet()
 }
 
-// IsSetSourcePortRange returns a boolean if a field has been set.
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) IsSetSourcePortRange() bool {
-	if o != nil && o.SourcePortRange.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSourcePortRange gets a reference to the given NullableString and assigns it to the SourcePortRange field.
 func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) SetSourcePortRange(v string) {
 	o.SourcePortRange.Set(&v)
-}
-
-// SetSourcePortRangeNil sets the value for SourcePortRange to be an explicit nil
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) SetSourcePortRangeNil() {
-	o.SourcePortRange.Set(nil)
-}
-
-// UnsetSourcePortRange ensures that no value is present for SourcePortRange, not even an explicit nil
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) UnsetSourcePortRange() {
-	o.SourcePortRange.Unset()
 }
 
 // GetDestinationPortRange returns the DestinationPortRange field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -714,28 +502,9 @@ func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) GetDes
 	return o.DestinationPortRange.Get(), o.DestinationPortRange.IsSet()
 }
 
-// IsSetDestinationPortRange returns a boolean if a field has been set.
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) IsSetDestinationPortRange() bool {
-	if o != nil && o.DestinationPortRange.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDestinationPortRange gets a reference to the given NullableString and assigns it to the DestinationPortRange field.
 func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) SetDestinationPortRange(v string) {
 	o.DestinationPortRange.Set(&v)
-}
-
-// SetDestinationPortRangeNil sets the value for DestinationPortRange to be an explicit nil
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) SetDestinationPortRangeNil() {
-	o.DestinationPortRange.Set(nil)
-}
-
-// UnsetDestinationPortRange ensures that no value is present for DestinationPortRange, not even an explicit nil
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) UnsetDestinationPortRange() {
-	o.DestinationPortRange.Unset()
 }
 
 // GetSourceGroup returns the SourceGroup field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -757,28 +526,9 @@ func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) GetSou
 	return o.SourceGroup.Get(), o.SourceGroup.IsSet()
 }
 
-// IsSetSourceGroup returns a boolean if a field has been set.
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) IsSetSourceGroup() bool {
-	if o != nil && o.SourceGroup.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSourceGroup gets a reference to the given NullableString and assigns it to the SourceGroup field.
 func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) SetSourceGroup(v string) {
 	o.SourceGroup.Set(&v)
-}
-
-// SetSourceGroupNil sets the value for SourceGroup to be an explicit nil
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) SetSourceGroupNil() {
-	o.SourceGroup.Set(nil)
-}
-
-// UnsetSourceGroup ensures that no value is present for SourceGroup, not even an explicit nil
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) UnsetSourceGroup() {
-	o.SourceGroup.Unset()
 }
 
 // GetSourceTier returns the SourceTier field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -800,28 +550,9 @@ func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) GetSou
 	return o.SourceTier.Get(), o.SourceTier.IsSet()
 }
 
-// IsSetSourceTier returns a boolean if a field has been set.
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) IsSetSourceTier() bool {
-	if o != nil && o.SourceTier.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSourceTier gets a reference to the given NullableString and assigns it to the SourceTier field.
 func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) SetSourceTier(v string) {
 	o.SourceTier.Set(&v)
-}
-
-// SetSourceTierNil sets the value for SourceTier to be an explicit nil
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) SetSourceTierNil() {
-	o.SourceTier.Set(nil)
-}
-
-// UnsetSourceTier ensures that no value is present for SourceTier, not even an explicit nil
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) UnsetSourceTier() {
-	o.SourceTier.Unset()
 }
 
 // GetApplications returns the Applications field value if set, zero value otherwise.
@@ -840,15 +571,6 @@ func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) GetApp
 		return nil, false
 	}
 	return o.Applications, true
-}
-
-// IsSetApplications returns a boolean if a field has been set.
-func (o *GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInner) IsSetApplications() bool {
-	if o != nil && !IsNil(o.Applications) {
-		return true
-	}
-
-	return false
 }
 
 // SetApplications gets a reference to the given []GetNetworkRouterFirewallRuleGroup200ResponseRuleGroupRulesInnerApplicationsInner and assigns it to the Applications field.

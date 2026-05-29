@@ -61,15 +61,6 @@ func (o *GuidanceAzureReservationsConfigServices) GetAzureVmsOk() (*GuidanceAzur
 	return o.AzureVms, true
 }
 
-// IsSetAzureVms returns a boolean if a field has been set.
-func (o *GuidanceAzureReservationsConfigServices) IsSetAzureVms() bool {
-	if o != nil && !IsNil(o.AzureVms) {
-		return true
-	}
-
-	return false
-}
-
 // SetAzureVms gets a reference to the given GuidanceAzureReservationsConfigServicesAzureVms and assigns it to the AzureVms field.
 func (o *GuidanceAzureReservationsConfigServices) SetAzureVms(v GuidanceAzureReservationsConfigServicesAzureVms) {
 	o.AzureVms = &v

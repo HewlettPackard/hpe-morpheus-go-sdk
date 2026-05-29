@@ -153,15 +153,6 @@ func (o *IntegrationSaltMasterConfigIntegration) GetServiceModeOk() (*string, bo
 	return o.ServiceMode, true
 }
 
-// IsSetServiceMode returns a boolean if a field has been set.
-func (o *IntegrationSaltMasterConfigIntegration) IsSetServiceMode() bool {
-	if o != nil && !IsNil(o.ServiceMode) {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceMode gets a reference to the given string and assigns it to the ServiceMode field.
 func (o *IntegrationSaltMasterConfigIntegration) SetServiceMode(v string) {
 	o.ServiceMode = &v
@@ -209,15 +200,6 @@ func (o *IntegrationSaltMasterConfigIntegration) GetSecondaryOk() (*string, bool
 	return o.Secondary, true
 }
 
-// IsSetSecondary returns a boolean if a field has been set.
-func (o *IntegrationSaltMasterConfigIntegration) IsSetSecondary() bool {
-	if o != nil && !IsNil(o.Secondary) {
-		return true
-	}
-
-	return false
-}
-
 // SetSecondary gets a reference to the given string and assigns it to the Secondary field.
 func (o *IntegrationSaltMasterConfigIntegration) SetSecondary(v string) {
 	o.Secondary = &v
@@ -239,15 +221,6 @@ func (o *IntegrationSaltMasterConfigIntegration) GetServicePortOk() (*int32, boo
 		return nil, false
 	}
 	return o.ServicePort, true
-}
-
-// IsSetServicePort returns a boolean if a field has been set.
-func (o *IntegrationSaltMasterConfigIntegration) IsSetServicePort() bool {
-	if o != nil && !IsNil(o.ServicePort) {
-		return true
-	}
-
-	return false
 }
 
 // SetServicePort gets a reference to the given int32 and assigns it to the ServicePort field.
@@ -297,15 +270,6 @@ func (o *IntegrationSaltMasterConfigIntegration) GetServicePasswordOk() (*string
 	return o.ServicePassword, true
 }
 
-// IsSetServicePassword returns a boolean if a field has been set.
-func (o *IntegrationSaltMasterConfigIntegration) IsSetServicePassword() bool {
-	if o != nil && !IsNil(o.ServicePassword) {
-		return true
-	}
-
-	return false
-}
-
 // SetServicePassword gets a reference to the given string and assigns it to the ServicePassword field.
 func (o *IntegrationSaltMasterConfigIntegration) SetServicePassword(v string) {
 	o.ServicePassword = &v
@@ -327,15 +291,6 @@ func (o *IntegrationSaltMasterConfigIntegration) GetServiceKeyOk() (*string, boo
 		return nil, false
 	}
 	return o.ServiceKey, true
-}
-
-// IsSetServiceKey returns a boolean if a field has been set.
-func (o *IntegrationSaltMasterConfigIntegration) IsSetServiceKey() bool {
-	if o != nil && !IsNil(o.ServiceKey) {
-		return true
-	}
-
-	return false
 }
 
 // SetServiceKey gets a reference to the given string and assigns it to the ServiceKey field.
@@ -361,15 +316,6 @@ func (o *IntegrationSaltMasterConfigIntegration) GetAuthKeyOk() (*string, bool) 
 	return o.AuthKey, true
 }
 
-// IsSetAuthKey returns a boolean if a field has been set.
-func (o *IntegrationSaltMasterConfigIntegration) IsSetAuthKey() bool {
-	if o != nil && !IsNil(o.AuthKey) {
-		return true
-	}
-
-	return false
-}
-
 // SetAuthKey gets a reference to the given string and assigns it to the AuthKey field.
 func (o *IntegrationSaltMasterConfigIntegration) SetAuthKey(v string) {
 	o.AuthKey = &v
@@ -391,15 +337,6 @@ func (o *IntegrationSaltMasterConfigIntegration) GetServicePathOk() (*string, bo
 		return nil, false
 	}
 	return o.ServicePath, true
-}
-
-// IsSetServicePath returns a boolean if a field has been set.
-func (o *IntegrationSaltMasterConfigIntegration) IsSetServicePath() bool {
-	if o != nil && !IsNil(o.ServicePath) {
-		return true
-	}
-
-	return false
 }
 
 // SetServicePath gets a reference to the given string and assigns it to the ServicePath field.
@@ -425,15 +362,6 @@ func (o *IntegrationSaltMasterConfigIntegration) GetServiceVersionOk() (*string,
 	return o.ServiceVersion, true
 }
 
-// IsSetServiceVersion returns a boolean if a field has been set.
-func (o *IntegrationSaltMasterConfigIntegration) IsSetServiceVersion() bool {
-	if o != nil && !IsNil(o.ServiceVersion) {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceVersion gets a reference to the given string and assigns it to the ServiceVersion field.
 func (o *IntegrationSaltMasterConfigIntegration) SetServiceVersion(v string) {
 	o.ServiceVersion = &v
@@ -455,15 +383,6 @@ func (o *IntegrationSaltMasterConfigIntegration) GetServiceWindowsVersionOk() (*
 		return nil, false
 	}
 	return o.ServiceWindowsVersion, true
-}
-
-// IsSetServiceWindowsVersion returns a boolean if a field has been set.
-func (o *IntegrationSaltMasterConfigIntegration) IsSetServiceWindowsVersion() bool {
-	if o != nil && !IsNil(o.ServiceWindowsVersion) {
-		return true
-	}
-
-	return false
 }
 
 // SetServiceWindowsVersion gets a reference to the given string and assigns it to the ServiceWindowsVersion field.
@@ -489,15 +408,6 @@ func (o *IntegrationSaltMasterConfigIntegration) GetRepoUrlOk() (*string, bool) 
 	return o.RepoUrl, true
 }
 
-// IsSetRepoUrl returns a boolean if a field has been set.
-func (o *IntegrationSaltMasterConfigIntegration) IsSetRepoUrl() bool {
-	if o != nil && !IsNil(o.RepoUrl) {
-		return true
-	}
-
-	return false
-}
-
 // SetRepoUrl gets a reference to the given string and assigns it to the RepoUrl field.
 func (o *IntegrationSaltMasterConfigIntegration) SetRepoUrl(v string) {
 	o.RepoUrl = &v
@@ -519,15 +429,6 @@ func (o *IntegrationSaltMasterConfigIntegration) GetServiceConfigOk() (*string, 
 		return nil, false
 	}
 	return o.ServiceConfig, true
-}
-
-// IsSetServiceConfig returns a boolean if a field has been set.
-func (o *IntegrationSaltMasterConfigIntegration) IsSetServiceConfig() bool {
-	if o != nil && !IsNil(o.ServiceConfig) {
-		return true
-	}
-
-	return false
 }
 
 // SetServiceConfig gets a reference to the given string and assigns it to the ServiceConfig field.
@@ -553,15 +454,6 @@ func (o *IntegrationSaltMasterConfigIntegration) GetServiceCommandOk() (*string,
 	return o.ServiceCommand, true
 }
 
-// IsSetServiceCommand returns a boolean if a field has been set.
-func (o *IntegrationSaltMasterConfigIntegration) IsSetServiceCommand() bool {
-	if o != nil && !IsNil(o.ServiceCommand) {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceCommand gets a reference to the given string and assigns it to the ServiceCommand field.
 func (o *IntegrationSaltMasterConfigIntegration) SetServiceCommand(v string) {
 	o.ServiceCommand = &v
@@ -583,15 +475,6 @@ func (o *IntegrationSaltMasterConfigIntegration) GetConfigOk() (*IntegrationSalt
 		return nil, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *IntegrationSaltMasterConfigIntegration) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given IntegrationSaltMasterConfigIntegrationConfig and assigns it to the Config field.

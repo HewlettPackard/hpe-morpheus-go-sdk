@@ -61,15 +61,6 @@ func (o *AddOsTypeImageRequest) GetOsTypeImageOk() (*AddOsTypeImageRequestOsType
 	return o.OsTypeImage, true
 }
 
-// IsSetOsTypeImage returns a boolean if a field has been set.
-func (o *AddOsTypeImageRequest) IsSetOsTypeImage() bool {
-	if o != nil && !IsNil(o.OsTypeImage) {
-		return true
-	}
-
-	return false
-}
-
 // SetOsTypeImage gets a reference to the given AddOsTypeImageRequestOsTypeImage and assigns it to the OsTypeImage field.
 func (o *AddOsTypeImageRequest) SetOsTypeImage(v AddOsTypeImageRequestOsTypeImage) {
 	o.OsTypeImage = &v

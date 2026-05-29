@@ -63,15 +63,6 @@ func (o *InstanceResizeInstance) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *InstanceResizeInstance) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *InstanceResizeInstance) SetId(v int64) {
 	o.Id = &v
@@ -93,15 +84,6 @@ func (o *InstanceResizeInstance) GetPlanOk() (*InstanceResizeInstancePlan, bool)
 		return nil, false
 	}
 	return o.Plan, true
-}
-
-// IsSetPlan returns a boolean if a field has been set.
-func (o *InstanceResizeInstance) IsSetPlan() bool {
-	if o != nil && !IsNil(o.Plan) {
-		return true
-	}
-
-	return false
 }
 
 // SetPlan gets a reference to the given InstanceResizeInstancePlan and assigns it to the Plan field.

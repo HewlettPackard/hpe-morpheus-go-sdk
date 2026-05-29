@@ -62,15 +62,6 @@ func (o *AddArchiveFile200Response) GetArchiveFileOk() (*AddArchiveFile200Respon
 	return o.ArchiveFile, true
 }
 
-// IsSetArchiveFile returns a boolean if a field has been set.
-func (o *AddArchiveFile200Response) IsSetArchiveFile() bool {
-	if o != nil && !IsNil(o.ArchiveFile) {
-		return true
-	}
-
-	return false
-}
-
 // SetArchiveFile gets a reference to the given AddArchiveFile200ResponseAllOfArchiveFile and assigns it to the ArchiveFile field.
 func (o *AddArchiveFile200Response) SetArchiveFile(v AddArchiveFile200ResponseAllOfArchiveFile) {
 	o.ArchiveFile = &v
@@ -92,15 +83,6 @@ func (o *AddArchiveFile200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *AddArchiveFile200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

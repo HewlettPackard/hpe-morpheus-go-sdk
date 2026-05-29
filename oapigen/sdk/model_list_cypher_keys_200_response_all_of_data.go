@@ -61,15 +61,6 @@ func (o *ListCypherKeys200ResponseAllOfData) GetKeysOk() ([]string, bool) {
 	return o.Keys, true
 }
 
-// IsSetKeys returns a boolean if a field has been set.
-func (o *ListCypherKeys200ResponseAllOfData) IsSetKeys() bool {
-	if o != nil && !IsNil(o.Keys) {
-		return true
-	}
-
-	return false
-}
-
 // SetKeys gets a reference to the given []string and assigns it to the Keys field.
 func (o *ListCypherKeys200ResponseAllOfData) SetKeys(v []string) {
 	o.Keys = v

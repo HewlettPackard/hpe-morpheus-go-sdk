@@ -66,15 +66,6 @@ func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) GetIdOk() (*int6
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) SetId(v int64) {
 	o.Id = &v
@@ -99,28 +90,9 @@ func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) GetAccountOk() (
 	return o.Account.Get(), o.Account.IsSet()
 }
 
-// IsSetAccount returns a boolean if a field has been set.
-func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) IsSetAccount() bool {
-	if o != nil && o.Account.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAccount gets a reference to the given NullableListPreseedScripts200ResponseAllOfPreseedScriptsInnerAccount and assigns it to the Account field.
 func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) SetAccount(v ListPreseedScripts200ResponseAllOfPreseedScriptsInnerAccount) {
 	o.Account.Set(&v)
-}
-
-// SetAccountNil sets the value for Account to be an explicit nil
-func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) SetAccountNil() {
-	o.Account.Set(nil)
-}
-
-// UnsetAccount ensures that no value is present for Account, not even an explicit nil
-func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) UnsetAccount() {
-	o.Account.Unset()
 }
 
 // GetFileName returns the FileName field value if set, zero value otherwise.
@@ -139,15 +111,6 @@ func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) GetFileNameOk() 
 		return nil, false
 	}
 	return o.FileName, true
-}
-
-// IsSetFileName returns a boolean if a field has been set.
-func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) IsSetFileName() bool {
-	if o != nil && !IsNil(o.FileName) {
-		return true
-	}
-
-	return false
 }
 
 // SetFileName gets a reference to the given string and assigns it to the FileName field.
@@ -174,28 +137,9 @@ func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) GetDescriptionOk
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetContent returns the Content field value if set, zero value otherwise.
@@ -214,15 +158,6 @@ func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) GetContentOk() (
 		return nil, false
 	}
 	return o.Content, true
-}
-
-// IsSetContent returns a boolean if a field has been set.
-func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) IsSetContent() bool {
-	if o != nil && !IsNil(o.Content) {
-		return true
-	}
-
-	return false
 }
 
 // SetContent gets a reference to the given string and assigns it to the Content field.
@@ -246,15 +181,6 @@ func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) GetCreatedByOk()
 		return nil, false
 	}
 	return o.CreatedBy, true
-}
-
-// IsSetCreatedBy returns a boolean if a field has been set.
-func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) IsSetCreatedBy() bool {
-	if o != nil && !IsNil(o.CreatedBy) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreatedBy gets a reference to the given ListPreseedScripts200ResponseAllOfPreseedScriptsInnerCreatedBy and assigns it to the CreatedBy field.

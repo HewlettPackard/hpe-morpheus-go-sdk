@@ -63,15 +63,6 @@ func (o *GetCluster200ResponseClusterLayout) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetCluster200ResponseClusterLayout) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetCluster200ResponseClusterLayout) SetId(v int64) {
 	o.Id = &v
@@ -95,15 +86,6 @@ func (o *GetCluster200ResponseClusterLayout) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *GetCluster200ResponseClusterLayout) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *GetCluster200ResponseClusterLayout) SetName(v string) {
 	o.Name = &v
@@ -125,15 +107,6 @@ func (o *GetCluster200ResponseClusterLayout) GetProvisionTypeCodeOk() (*string, 
 		return nil, false
 	}
 	return o.ProvisionTypeCode, true
-}
-
-// IsSetProvisionTypeCode returns a boolean if a field has been set.
-func (o *GetCluster200ResponseClusterLayout) IsSetProvisionTypeCode() bool {
-	if o != nil && !IsNil(o.ProvisionTypeCode) {
-		return true
-	}
-
-	return false
 }
 
 // SetProvisionTypeCode gets a reference to the given string and assigns it to the ProvisionTypeCode field.

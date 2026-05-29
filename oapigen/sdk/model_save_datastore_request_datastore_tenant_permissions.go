@@ -61,15 +61,6 @@ func (o *SaveDatastoreRequestDatastoreTenantPermissions) GetAccountsOk() ([]Save
 	return o.Accounts, true
 }
 
-// IsSetAccounts returns a boolean if a field has been set.
-func (o *SaveDatastoreRequestDatastoreTenantPermissions) IsSetAccounts() bool {
-	if o != nil && !IsNil(o.Accounts) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccounts gets a reference to the given []SaveDatastoreRequestDatastoreTenantPermissionsAccountsInner and assigns it to the Accounts field.
 func (o *SaveDatastoreRequestDatastoreTenantPermissions) SetAccounts(v []SaveDatastoreRequestDatastoreTenantPermissionsAccountsInner) {
 	o.Accounts = v

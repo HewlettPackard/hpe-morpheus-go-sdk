@@ -66,15 +66,6 @@ func (o *UserGroupUpdate) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *UserGroupUpdate) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *UserGroupUpdate) SetName(v string) {
 	o.Name = &v
@@ -99,28 +90,9 @@ func (o *UserGroupUpdate) GetDescriptionOk() (*string, bool) {
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *UserGroupUpdate) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *UserGroupUpdate) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *UserGroupUpdate) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *UserGroupUpdate) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetSudoUser returns the SudoUser field value if set, zero value otherwise.
@@ -139,15 +111,6 @@ func (o *UserGroupUpdate) GetSudoUserOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.SudoUser, true
-}
-
-// IsSetSudoUser returns a boolean if a field has been set.
-func (o *UserGroupUpdate) IsSetSudoUser() bool {
-	if o != nil && !IsNil(o.SudoUser) {
-		return true
-	}
-
-	return false
 }
 
 // SetSudoUser gets a reference to the given bool and assigns it to the SudoUser field.
@@ -174,28 +137,9 @@ func (o *UserGroupUpdate) GetServerGroupOk() (*string, bool) {
 	return o.ServerGroup.Get(), o.ServerGroup.IsSet()
 }
 
-// IsSetServerGroup returns a boolean if a field has been set.
-func (o *UserGroupUpdate) IsSetServerGroup() bool {
-	if o != nil && o.ServerGroup.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServerGroup gets a reference to the given NullableString and assigns it to the ServerGroup field.
 func (o *UserGroupUpdate) SetServerGroup(v string) {
 	o.ServerGroup.Set(&v)
-}
-
-// SetServerGroupNil sets the value for ServerGroup to be an explicit nil
-func (o *UserGroupUpdate) SetServerGroupNil() {
-	o.ServerGroup.Set(nil)
-}
-
-// UnsetServerGroup ensures that no value is present for ServerGroup, not even an explicit nil
-func (o *UserGroupUpdate) UnsetServerGroup() {
-	o.ServerGroup.Unset()
 }
 
 // GetUsers returns the Users field value if set, zero value otherwise.
@@ -214,15 +158,6 @@ func (o *UserGroupUpdate) GetUsersOk() ([]int64, bool) {
 		return nil, false
 	}
 	return o.Users, true
-}
-
-// IsSetUsers returns a boolean if a field has been set.
-func (o *UserGroupUpdate) IsSetUsers() bool {
-	if o != nil && !IsNil(o.Users) {
-		return true
-	}
-
-	return false
 }
 
 // SetUsers gets a reference to the given []int64 and assigns it to the Users field.

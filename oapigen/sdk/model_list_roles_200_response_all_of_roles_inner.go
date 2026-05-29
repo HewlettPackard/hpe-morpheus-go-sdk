@@ -80,15 +80,6 @@ func (o *ListRoles200ResponseAllOfRolesInner) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListRoles200ResponseAllOfRolesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListRoles200ResponseAllOfRolesInner) SetId(v int64) {
 	o.Id = &v
@@ -112,15 +103,6 @@ func (o *ListRoles200ResponseAllOfRolesInner) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ListRoles200ResponseAllOfRolesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ListRoles200ResponseAllOfRolesInner) SetName(v string) {
 	o.Name = &v
@@ -142,15 +124,6 @@ func (o *ListRoles200ResponseAllOfRolesInner) GetAuthorityOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Authority, true
-}
-
-// IsSetAuthority returns a boolean if a field has been set.
-func (o *ListRoles200ResponseAllOfRolesInner) IsSetAuthority() bool {
-	if o != nil && !IsNil(o.Authority) {
-		return true
-	}
-
-	return false
 }
 
 // SetAuthority gets a reference to the given string and assigns it to the Authority field.
@@ -177,28 +150,9 @@ func (o *ListRoles200ResponseAllOfRolesInner) GetDescriptionOk() (*string, bool)
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ListRoles200ResponseAllOfRolesInner) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListRoles200ResponseAllOfRolesInner) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *ListRoles200ResponseAllOfRolesInner) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *ListRoles200ResponseAllOfRolesInner) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetLandingUrl returns the LandingUrl field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -220,28 +174,9 @@ func (o *ListRoles200ResponseAllOfRolesInner) GetLandingUrlOk() (*string, bool) 
 	return o.LandingUrl.Get(), o.LandingUrl.IsSet()
 }
 
-// IsSetLandingUrl returns a boolean if a field has been set.
-func (o *ListRoles200ResponseAllOfRolesInner) IsSetLandingUrl() bool {
-	if o != nil && o.LandingUrl.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLandingUrl gets a reference to the given NullableString and assigns it to the LandingUrl field.
 func (o *ListRoles200ResponseAllOfRolesInner) SetLandingUrl(v string) {
 	o.LandingUrl.Set(&v)
-}
-
-// SetLandingUrlNil sets the value for LandingUrl to be an explicit nil
-func (o *ListRoles200ResponseAllOfRolesInner) SetLandingUrlNil() {
-	o.LandingUrl.Set(nil)
-}
-
-// UnsetLandingUrl ensures that no value is present for LandingUrl, not even an explicit nil
-func (o *ListRoles200ResponseAllOfRolesInner) UnsetLandingUrl() {
-	o.LandingUrl.Unset()
 }
 
 // GetScope returns the Scope field value if set, zero value otherwise.
@@ -260,15 +195,6 @@ func (o *ListRoles200ResponseAllOfRolesInner) GetScopeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Scope, true
-}
-
-// IsSetScope returns a boolean if a field has been set.
-func (o *ListRoles200ResponseAllOfRolesInner) IsSetScope() bool {
-	if o != nil && !IsNil(o.Scope) {
-		return true
-	}
-
-	return false
 }
 
 // SetScope gets a reference to the given string and assigns it to the Scope field.
@@ -294,15 +220,6 @@ func (o *ListRoles200ResponseAllOfRolesInner) GetRoleTypeOk() (*string, bool) {
 	return o.RoleType, true
 }
 
-// IsSetRoleType returns a boolean if a field has been set.
-func (o *ListRoles200ResponseAllOfRolesInner) IsSetRoleType() bool {
-	if o != nil && !IsNil(o.RoleType) {
-		return true
-	}
-
-	return false
-}
-
 // SetRoleType gets a reference to the given string and assigns it to the RoleType field.
 func (o *ListRoles200ResponseAllOfRolesInner) SetRoleType(v string) {
 	o.RoleType = &v
@@ -326,15 +243,6 @@ func (o *ListRoles200ResponseAllOfRolesInner) GetMultitenantOk() (*bool, bool) {
 	return o.Multitenant, true
 }
 
-// IsSetMultitenant returns a boolean if a field has been set.
-func (o *ListRoles200ResponseAllOfRolesInner) IsSetMultitenant() bool {
-	if o != nil && !IsNil(o.Multitenant) {
-		return true
-	}
-
-	return false
-}
-
 // SetMultitenant gets a reference to the given bool and assigns it to the Multitenant field.
 func (o *ListRoles200ResponseAllOfRolesInner) SetMultitenant(v bool) {
 	o.Multitenant = &v
@@ -356,15 +264,6 @@ func (o *ListRoles200ResponseAllOfRolesInner) GetMultitenantLockedOk() (*bool, b
 		return nil, false
 	}
 	return o.MultitenantLocked, true
-}
-
-// IsSetMultitenantLocked returns a boolean if a field has been set.
-func (o *ListRoles200ResponseAllOfRolesInner) IsSetMultitenantLocked() bool {
-	if o != nil && !IsNil(o.MultitenantLocked) {
-		return true
-	}
-
-	return false
 }
 
 // SetMultitenantLocked gets a reference to the given bool and assigns it to the MultitenantLocked field.
@@ -391,28 +290,9 @@ func (o *ListRoles200ResponseAllOfRolesInner) GetParentRoleIdOk() (*string, bool
 	return o.ParentRoleId.Get(), o.ParentRoleId.IsSet()
 }
 
-// IsSetParentRoleId returns a boolean if a field has been set.
-func (o *ListRoles200ResponseAllOfRolesInner) IsSetParentRoleId() bool {
-	if o != nil && o.ParentRoleId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetParentRoleId gets a reference to the given NullableString and assigns it to the ParentRoleId field.
 func (o *ListRoles200ResponseAllOfRolesInner) SetParentRoleId(v string) {
 	o.ParentRoleId.Set(&v)
-}
-
-// SetParentRoleIdNil sets the value for ParentRoleId to be an explicit nil
-func (o *ListRoles200ResponseAllOfRolesInner) SetParentRoleIdNil() {
-	o.ParentRoleId.Set(nil)
-}
-
-// UnsetParentRoleId ensures that no value is present for ParentRoleId, not even an explicit nil
-func (o *ListRoles200ResponseAllOfRolesInner) UnsetParentRoleId() {
-	o.ParentRoleId.Unset()
 }
 
 // GetDiverged returns the Diverged field value if set, zero value otherwise.
@@ -431,15 +311,6 @@ func (o *ListRoles200ResponseAllOfRolesInner) GetDivergedOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Diverged, true
-}
-
-// IsSetDiverged returns a boolean if a field has been set.
-func (o *ListRoles200ResponseAllOfRolesInner) IsSetDiverged() bool {
-	if o != nil && !IsNil(o.Diverged) {
-		return true
-	}
-
-	return false
 }
 
 // SetDiverged gets a reference to the given bool and assigns it to the Diverged field.
@@ -463,15 +334,6 @@ func (o *ListRoles200ResponseAllOfRolesInner) GetOwnerIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.OwnerId, true
-}
-
-// IsSetOwnerId returns a boolean if a field has been set.
-func (o *ListRoles200ResponseAllOfRolesInner) IsSetOwnerId() bool {
-	if o != nil && !IsNil(o.OwnerId) {
-		return true
-	}
-
-	return false
 }
 
 // SetOwnerId gets a reference to the given int64 and assigns it to the OwnerId field.
@@ -498,28 +360,9 @@ func (o *ListRoles200ResponseAllOfRolesInner) GetOwnerOk() (*ListRoles200Respons
 	return o.Owner.Get(), o.Owner.IsSet()
 }
 
-// IsSetOwner returns a boolean if a field has been set.
-func (o *ListRoles200ResponseAllOfRolesInner) IsSetOwner() bool {
-	if o != nil && o.Owner.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetOwner gets a reference to the given NullableListRoles200ResponseAllOfRolesInnerOwner and assigns it to the Owner field.
 func (o *ListRoles200ResponseAllOfRolesInner) SetOwner(v ListRoles200ResponseAllOfRolesInnerOwner) {
 	o.Owner.Set(&v)
-}
-
-// SetOwnerNil sets the value for Owner to be an explicit nil
-func (o *ListRoles200ResponseAllOfRolesInner) SetOwnerNil() {
-	o.Owner.Set(nil)
-}
-
-// UnsetOwner ensures that no value is present for Owner, not even an explicit nil
-func (o *ListRoles200ResponseAllOfRolesInner) UnsetOwner() {
-	o.Owner.Unset()
 }
 
 // GetDefaultPersona returns the DefaultPersona field value if set, zero value otherwise.
@@ -538,15 +381,6 @@ func (o *ListRoles200ResponseAllOfRolesInner) GetDefaultPersonaOk() (*ListRoles2
 		return nil, false
 	}
 	return o.DefaultPersona, true
-}
-
-// IsSetDefaultPersona returns a boolean if a field has been set.
-func (o *ListRoles200ResponseAllOfRolesInner) IsSetDefaultPersona() bool {
-	if o != nil && !IsNil(o.DefaultPersona) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultPersona gets a reference to the given ListRoles200ResponseAllOfRolesInnerDefaultPersona and assigns it to the DefaultPersona field.
@@ -572,15 +406,6 @@ func (o *ListRoles200ResponseAllOfRolesInner) GetDateCreatedOk() (*time.Time, bo
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *ListRoles200ResponseAllOfRolesInner) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *ListRoles200ResponseAllOfRolesInner) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -602,15 +427,6 @@ func (o *ListRoles200ResponseAllOfRolesInner) GetLastUpdatedOk() (*time.Time, bo
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *ListRoles200ResponseAllOfRolesInner) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.

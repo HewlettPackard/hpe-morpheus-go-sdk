@@ -76,15 +76,6 @@ func (o *ListGroups200ResponseAllOfGroupsInner) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListGroups200ResponseAllOfGroupsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListGroups200ResponseAllOfGroupsInner) SetId(v int64) {
 	o.Id = &v
@@ -108,15 +99,6 @@ func (o *ListGroups200ResponseAllOfGroupsInner) GetUuidOk() (*string, bool) {
 	return o.Uuid, true
 }
 
-// IsSetUuid returns a boolean if a field has been set.
-func (o *ListGroups200ResponseAllOfGroupsInner) IsSetUuid() bool {
-	if o != nil && !IsNil(o.Uuid) {
-		return true
-	}
-
-	return false
-}
-
 // SetUuid gets a reference to the given string and assigns it to the Uuid field.
 func (o *ListGroups200ResponseAllOfGroupsInner) SetUuid(v string) {
 	o.Uuid = &v
@@ -138,15 +120,6 @@ func (o *ListGroups200ResponseAllOfGroupsInner) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListGroups200ResponseAllOfGroupsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -173,28 +146,9 @@ func (o *ListGroups200ResponseAllOfGroupsInner) GetCodeOk() (*string, bool) {
 	return o.Code.Get(), o.Code.IsSet()
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *ListGroups200ResponseAllOfGroupsInner) IsSetCode() bool {
-	if o != nil && o.Code.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *ListGroups200ResponseAllOfGroupsInner) SetCode(v string) {
 	o.Code.Set(&v)
-}
-
-// SetCodeNil sets the value for Code to be an explicit nil
-func (o *ListGroups200ResponseAllOfGroupsInner) SetCodeNil() {
-	o.Code.Set(nil)
-}
-
-// UnsetCode ensures that no value is present for Code, not even an explicit nil
-func (o *ListGroups200ResponseAllOfGroupsInner) UnsetCode() {
-	o.Code.Unset()
 }
 
 // GetLabels returns the Labels field value if set, zero value otherwise.
@@ -213,15 +167,6 @@ func (o *ListGroups200ResponseAllOfGroupsInner) GetLabelsOk() ([]string, bool) {
 		return nil, false
 	}
 	return o.Labels, true
-}
-
-// IsSetLabels returns a boolean if a field has been set.
-func (o *ListGroups200ResponseAllOfGroupsInner) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
 }
 
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
@@ -248,28 +193,9 @@ func (o *ListGroups200ResponseAllOfGroupsInner) GetLocationOk() (*string, bool) 
 	return o.Location.Get(), o.Location.IsSet()
 }
 
-// IsSetLocation returns a boolean if a field has been set.
-func (o *ListGroups200ResponseAllOfGroupsInner) IsSetLocation() bool {
-	if o != nil && o.Location.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLocation gets a reference to the given NullableString and assigns it to the Location field.
 func (o *ListGroups200ResponseAllOfGroupsInner) SetLocation(v string) {
 	o.Location.Set(&v)
-}
-
-// SetLocationNil sets the value for Location to be an explicit nil
-func (o *ListGroups200ResponseAllOfGroupsInner) SetLocationNil() {
-	o.Location.Set(nil)
-}
-
-// UnsetLocation ensures that no value is present for Location, not even an explicit nil
-func (o *ListGroups200ResponseAllOfGroupsInner) UnsetLocation() {
-	o.Location.Unset()
 }
 
 // GetAccountId returns the AccountId field value if set, zero value otherwise.
@@ -288,15 +214,6 @@ func (o *ListGroups200ResponseAllOfGroupsInner) GetAccountIdOk() (*int64, bool) 
 		return nil, false
 	}
 	return o.AccountId, true
-}
-
-// IsSetAccountId returns a boolean if a field has been set.
-func (o *ListGroups200ResponseAllOfGroupsInner) IsSetAccountId() bool {
-	if o != nil && !IsNil(o.AccountId) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccountId gets a reference to the given int64 and assigns it to the AccountId field.
@@ -323,28 +240,9 @@ func (o *ListGroups200ResponseAllOfGroupsInner) GetAccountOk() (*ListGroups200Re
 	return o.Account.Get(), o.Account.IsSet()
 }
 
-// IsSetAccount returns a boolean if a field has been set.
-func (o *ListGroups200ResponseAllOfGroupsInner) IsSetAccount() bool {
-	if o != nil && o.Account.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAccount gets a reference to the given NullableListGroups200ResponseAllOfGroupsInnerAccount and assigns it to the Account field.
 func (o *ListGroups200ResponseAllOfGroupsInner) SetAccount(v ListGroups200ResponseAllOfGroupsInnerAccount) {
 	o.Account.Set(&v)
-}
-
-// SetAccountNil sets the value for Account to be an explicit nil
-func (o *ListGroups200ResponseAllOfGroupsInner) SetAccountNil() {
-	o.Account.Set(nil)
-}
-
-// UnsetAccount ensures that no value is present for Account, not even an explicit nil
-func (o *ListGroups200ResponseAllOfGroupsInner) UnsetAccount() {
-	o.Account.Unset()
 }
 
 // GetActive returns the Active field value if set, zero value otherwise.
@@ -363,15 +261,6 @@ func (o *ListGroups200ResponseAllOfGroupsInner) GetActiveOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Active, true
-}
-
-// IsSetActive returns a boolean if a field has been set.
-func (o *ListGroups200ResponseAllOfGroupsInner) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
 }
 
 // SetActive gets a reference to the given bool and assigns it to the Active field.
@@ -397,15 +286,6 @@ func (o *ListGroups200ResponseAllOfGroupsInner) GetConfigOk() (*ListGroups200Res
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *ListGroups200ResponseAllOfGroupsInner) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given ListGroups200ResponseAllOfGroupsInnerConfig and assigns it to the Config field.
 func (o *ListGroups200ResponseAllOfGroupsInner) SetConfig(v ListGroups200ResponseAllOfGroupsInnerConfig) {
 	o.Config = &v
@@ -427,15 +307,6 @@ func (o *ListGroups200ResponseAllOfGroupsInner) GetDateCreatedOk() (*time.Time, 
 		return nil, false
 	}
 	return o.DateCreated, true
-}
-
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *ListGroups200ResponseAllOfGroupsInner) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
@@ -461,15 +332,6 @@ func (o *ListGroups200ResponseAllOfGroupsInner) GetLastUpdatedOk() (*time.Time, 
 	return o.LastUpdated, true
 }
 
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *ListGroups200ResponseAllOfGroupsInner) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
-}
-
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
 func (o *ListGroups200ResponseAllOfGroupsInner) SetLastUpdated(v time.Time) {
 	o.LastUpdated = &v
@@ -491,15 +353,6 @@ func (o *ListGroups200ResponseAllOfGroupsInner) GetZonesOk() ([]ListGroups200Res
 		return nil, false
 	}
 	return o.Zones, true
-}
-
-// IsSetZones returns a boolean if a field has been set.
-func (o *ListGroups200ResponseAllOfGroupsInner) IsSetZones() bool {
-	if o != nil && !IsNil(o.Zones) {
-		return true
-	}
-
-	return false
 }
 
 // SetZones gets a reference to the given []ListGroups200ResponseAllOfGroupsInnerZonesInner and assigns it to the Zones field.
@@ -525,15 +378,6 @@ func (o *ListGroups200ResponseAllOfGroupsInner) GetStatsOk() (*ListGroups200Resp
 	return o.Stats, true
 }
 
-// IsSetStats returns a boolean if a field has been set.
-func (o *ListGroups200ResponseAllOfGroupsInner) IsSetStats() bool {
-	if o != nil && !IsNil(o.Stats) {
-		return true
-	}
-
-	return false
-}
-
 // SetStats gets a reference to the given ListGroups200ResponseAllOfGroupsInnerStats and assigns it to the Stats field.
 func (o *ListGroups200ResponseAllOfGroupsInner) SetStats(v ListGroups200ResponseAllOfGroupsInnerStats) {
 	o.Stats = &v
@@ -555,15 +399,6 @@ func (o *ListGroups200ResponseAllOfGroupsInner) GetServerCountOk() (*int64, bool
 		return nil, false
 	}
 	return o.ServerCount, true
-}
-
-// IsSetServerCount returns a boolean if a field has been set.
-func (o *ListGroups200ResponseAllOfGroupsInner) IsSetServerCount() bool {
-	if o != nil && !IsNil(o.ServerCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetServerCount gets a reference to the given int64 and assigns it to the ServerCount field.

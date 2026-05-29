@@ -63,15 +63,6 @@ func (o *UpdateClusterPermissionsRequestPermissions) GetResourcePermissionsOk() 
 	return o.ResourcePermissions, true
 }
 
-// IsSetResourcePermissions returns a boolean if a field has been set.
-func (o *UpdateClusterPermissionsRequestPermissions) IsSetResourcePermissions() bool {
-	if o != nil && !IsNil(o.ResourcePermissions) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourcePermissions gets a reference to the given UpdateClusterPermissionsRequestPermissionsResourcePermissions and assigns it to the ResourcePermissions field.
 func (o *UpdateClusterPermissionsRequestPermissions) SetResourcePermissions(v UpdateClusterPermissionsRequestPermissionsResourcePermissions) {
 	o.ResourcePermissions = &v
@@ -95,15 +86,6 @@ func (o *UpdateClusterPermissionsRequestPermissions) GetResourcePoolOk() (*Updat
 	return o.ResourcePool, true
 }
 
-// IsSetResourcePool returns a boolean if a field has been set.
-func (o *UpdateClusterPermissionsRequestPermissions) IsSetResourcePool() bool {
-	if o != nil && !IsNil(o.ResourcePool) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourcePool gets a reference to the given UpdateClusterPermissionsRequestPermissionsResourcePool and assigns it to the ResourcePool field.
 func (o *UpdateClusterPermissionsRequestPermissions) SetResourcePool(v UpdateClusterPermissionsRequestPermissionsResourcePool) {
 	o.ResourcePool = &v
@@ -125,15 +107,6 @@ func (o *UpdateClusterPermissionsRequestPermissions) GetTenantPermissionsOk() (*
 		return nil, false
 	}
 	return o.TenantPermissions, true
-}
-
-// IsSetTenantPermissions returns a boolean if a field has been set.
-func (o *UpdateClusterPermissionsRequestPermissions) IsSetTenantPermissions() bool {
-	if o != nil && !IsNil(o.TenantPermissions) {
-		return true
-	}
-
-	return false
 }
 
 // SetTenantPermissions gets a reference to the given UpdateClusterPermissionsRequestPermissionsTenantPermissions and assigns it to the TenantPermissions field.

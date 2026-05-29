@@ -66,15 +66,6 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork) GetIdOk
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork) SetId(v int64) {
 	o.Id = &v
@@ -96,15 +87,6 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork) GetGrou
 		return nil, false
 	}
 	return o.Group, true
-}
-
-// IsSetGroup returns a boolean if a field has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork) IsSetGroup() bool {
-	if o != nil && !IsNil(o.Group) {
-		return true
-	}
-
-	return false
 }
 
 // SetGroup gets a reference to the given int64 and assigns it to the Group field.
@@ -130,15 +112,6 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork) GetSubn
 	return o.Subnet, true
 }
 
-// IsSetSubnet returns a boolean if a field has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork) IsSetSubnet() bool {
-	if o != nil && !IsNil(o.Subnet) {
-		return true
-	}
-
-	return false
-}
-
 // SetSubnet gets a reference to the given string and assigns it to the Subnet field.
 func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork) SetSubnet(v string) {
 	o.Subnet = &v
@@ -160,15 +133,6 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork) GetDhcp
 		return nil, false
 	}
 	return o.DhcpServer, true
-}
-
-// IsSetDhcpServer returns a boolean if a field has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork) IsSetDhcpServer() bool {
-	if o != nil && !IsNil(o.DhcpServer) {
-		return true
-	}
-
-	return false
 }
 
 // SetDhcpServer gets a reference to the given bool and assigns it to the DhcpServer field.
@@ -194,15 +158,6 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork) GetName
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork) SetName(v string) {
 	o.Name = &v
@@ -224,15 +179,6 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork) GetPool
 		return nil, false
 	}
 	return o.Pool, true
-}
-
-// IsSetPool returns a boolean if a field has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork) IsSetPool() bool {
-	if o != nil && !IsNil(o.Pool) {
-		return true
-	}
-
-	return false
 }
 
 // SetPool gets a reference to the given AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool and assigns it to the Pool field.

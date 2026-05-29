@@ -63,15 +63,6 @@ func (o *ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) GetIpOk
 	return o.Ip, true
 }
 
-// IsSetIp returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) IsSetIp() bool {
-	if o != nil && !IsNil(o.Ip) {
-		return true
-	}
-
-	return false
-}
-
 // SetIp gets a reference to the given string and assigns it to the Ip field.
 func (o *ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) SetIp(v string) {
 	o.Ip = &v
@@ -96,28 +87,9 @@ func (o *ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) GetPort
 	return o.Port.Get(), o.Port.IsSet()
 }
 
-// IsSetPort returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) IsSetPort() bool {
-	if o != nil && o.Port.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPort gets a reference to the given NullableInt64 and assigns it to the Port field.
 func (o *ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) SetPort(v int64) {
 	o.Port.Set(&v)
-}
-
-// SetPortNil sets the value for Port to be an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) SetPortNil() {
-	o.Port.Set(nil)
-}
-
-// UnsetPort ensures that no value is present for Port, not even an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) UnsetPort() {
-	o.Port.Unset()
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -136,15 +108,6 @@ func (o *ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) GetName
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.

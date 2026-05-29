@@ -63,15 +63,6 @@ func (o *PolicyGroupCreatePolicyTypeConfigOneOf23) GetPowerScheduleTypeOk() (*st
 	return o.PowerScheduleType, true
 }
 
-// IsSetPowerScheduleType returns a boolean if a field has been set.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf23) IsSetPowerScheduleType() bool {
-	if o != nil && !IsNil(o.PowerScheduleType) {
-		return true
-	}
-
-	return false
-}
-
 // SetPowerScheduleType gets a reference to the given string and assigns it to the PowerScheduleType field.
 func (o *PolicyGroupCreatePolicyTypeConfigOneOf23) SetPowerScheduleType(v string) {
 	o.PowerScheduleType = &v
@@ -95,15 +86,6 @@ func (o *PolicyGroupCreatePolicyTypeConfigOneOf23) GetPowerScheduleOk() (*string
 	return o.PowerSchedule, true
 }
 
-// IsSetPowerSchedule returns a boolean if a field has been set.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf23) IsSetPowerSchedule() bool {
-	if o != nil && !IsNil(o.PowerSchedule) {
-		return true
-	}
-
-	return false
-}
-
 // SetPowerSchedule gets a reference to the given string and assigns it to the PowerSchedule field.
 func (o *PolicyGroupCreatePolicyTypeConfigOneOf23) SetPowerSchedule(v string) {
 	o.PowerSchedule = &v
@@ -125,15 +107,6 @@ func (o *PolicyGroupCreatePolicyTypeConfigOneOf23) GetPowerScheduleHideFixedOk()
 		return nil, false
 	}
 	return o.PowerScheduleHideFixed, true
-}
-
-// IsSetPowerScheduleHideFixed returns a boolean if a field has been set.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf23) IsSetPowerScheduleHideFixed() bool {
-	if o != nil && !IsNil(o.PowerScheduleHideFixed) {
-		return true
-	}
-
-	return false
 }
 
 // SetPowerScheduleHideFixed gets a reference to the given bool and assigns it to the PowerScheduleHideFixed field.

@@ -61,15 +61,6 @@ func (o *AddFileTemplateRequest) GetContainerTemplateOk() (*AddFileTemplateReque
 	return o.ContainerTemplate, true
 }
 
-// IsSetContainerTemplate returns a boolean if a field has been set.
-func (o *AddFileTemplateRequest) IsSetContainerTemplate() bool {
-	if o != nil && !IsNil(o.ContainerTemplate) {
-		return true
-	}
-
-	return false
-}
-
 // SetContainerTemplate gets a reference to the given AddFileTemplateRequestContainerTemplate and assigns it to the ContainerTemplate field.
 func (o *AddFileTemplateRequest) SetContainerTemplate(v AddFileTemplateRequestContainerTemplate) {
 	o.ContainerTemplate = &v

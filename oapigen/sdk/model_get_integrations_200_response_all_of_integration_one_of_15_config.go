@@ -74,15 +74,6 @@ func (o *GetIntegrations200ResponseAllOfIntegrationOneOf15Config) GetIncidentAcc
 	return o.IncidentAccess, true
 }
 
-// IsSetIncidentAccess returns a boolean if a field has been set.
-func (o *GetIntegrations200ResponseAllOfIntegrationOneOf15Config) IsSetIncidentAccess() bool {
-	if o != nil && !IsNil(o.IncidentAccess) {
-		return true
-	}
-
-	return false
-}
-
 // SetIncidentAccess gets a reference to the given bool and assigns it to the IncidentAccess field.
 func (o *GetIntegrations200ResponseAllOfIntegrationOneOf15Config) SetIncidentAccess(v bool) {
 	o.IncidentAccess = &v
@@ -104,15 +95,6 @@ func (o *GetIntegrations200ResponseAllOfIntegrationOneOf15Config) GetRequestAcce
 		return nil, false
 	}
 	return o.RequestAccess, true
-}
-
-// IsSetRequestAccess returns a boolean if a field has been set.
-func (o *GetIntegrations200ResponseAllOfIntegrationOneOf15Config) IsSetRequestAccess() bool {
-	if o != nil && !IsNil(o.RequestAccess) {
-		return true
-	}
-
-	return false
 }
 
 // SetRequestAccess gets a reference to the given bool and assigns it to the RequestAccess field.
@@ -138,15 +120,6 @@ func (o *GetIntegrations200ResponseAllOfIntegrationOneOf15Config) GetServiceNowC
 	return o.ServiceNowCMDBBusinessObject, true
 }
 
-// IsSetServiceNowCMDBBusinessObject returns a boolean if a field has been set.
-func (o *GetIntegrations200ResponseAllOfIntegrationOneOf15Config) IsSetServiceNowCMDBBusinessObject() bool {
-	if o != nil && !IsNil(o.ServiceNowCMDBBusinessObject) {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceNowCMDBBusinessObject gets a reference to the given string and assigns it to the ServiceNowCMDBBusinessObject field.
 func (o *GetIntegrations200ResponseAllOfIntegrationOneOf15Config) SetServiceNowCMDBBusinessObject(v string) {
 	o.ServiceNowCMDBBusinessObject = &v
@@ -168,15 +141,6 @@ func (o *GetIntegrations200ResponseAllOfIntegrationOneOf15Config) GetServiceNowC
 		return nil, false
 	}
 	return o.ServiceNowCustomCmdbMapping, true
-}
-
-// IsSetServiceNowCustomCmdbMapping returns a boolean if a field has been set.
-func (o *GetIntegrations200ResponseAllOfIntegrationOneOf15Config) IsSetServiceNowCustomCmdbMapping() bool {
-	if o != nil && !IsNil(o.ServiceNowCustomCmdbMapping) {
-		return true
-	}
-
-	return false
 }
 
 // SetServiceNowCustomCmdbMapping gets a reference to the given string and assigns it to the ServiceNowCustomCmdbMapping field.
@@ -202,15 +166,6 @@ func (o *GetIntegrations200ResponseAllOfIntegrationOneOf15Config) GetServiceNowC
 	return o.ServiceNowCmdbClassMapping, true
 }
 
-// IsSetServiceNowCmdbClassMapping returns a boolean if a field has been set.
-func (o *GetIntegrations200ResponseAllOfIntegrationOneOf15Config) IsSetServiceNowCmdbClassMapping() bool {
-	if o != nil && !IsNil(o.ServiceNowCmdbClassMapping) {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceNowCmdbClassMapping gets a reference to the given []GetIntegrations200ResponseAllOfIntegrationOneOf15ConfigServiceNowCmdbClassMappingInner and assigns it to the ServiceNowCmdbClassMapping field.
 func (o *GetIntegrations200ResponseAllOfIntegrationOneOf15Config) SetServiceNowCmdbClassMapping(v []GetIntegrations200ResponseAllOfIntegrationOneOf15ConfigServiceNowCmdbClassMappingInner) {
 	o.ServiceNowCmdbClassMapping = v
@@ -232,15 +187,6 @@ func (o *GetIntegrations200ResponseAllOfIntegrationOneOf15Config) GetWebServiceI
 		return nil, false
 	}
 	return o.WebServiceImportUrl, true
-}
-
-// IsSetWebServiceImportUrl returns a boolean if a field has been set.
-func (o *GetIntegrations200ResponseAllOfIntegrationOneOf15Config) IsSetWebServiceImportUrl() bool {
-	if o != nil && !IsNil(o.WebServiceImportUrl) {
-		return true
-	}
-
-	return false
 }
 
 // SetWebServiceImportUrl gets a reference to the given string and assigns it to the WebServiceImportUrl field.
@@ -266,15 +212,6 @@ func (o *GetIntegrations200ResponseAllOfIntegrationOneOf15Config) GetWebServiceI
 	return o.WebServiceImportSysId, true
 }
 
-// IsSetWebServiceImportSysId returns a boolean if a field has been set.
-func (o *GetIntegrations200ResponseAllOfIntegrationOneOf15Config) IsSetWebServiceImportSysId() bool {
-	if o != nil && !IsNil(o.WebServiceImportSysId) {
-		return true
-	}
-
-	return false
-}
-
 // SetWebServiceImportSysId gets a reference to the given string and assigns it to the WebServiceImportSysId field.
 func (o *GetIntegrations200ResponseAllOfIntegrationOneOf15Config) SetWebServiceImportSysId(v string) {
 	o.WebServiceImportSysId = &v
@@ -296,15 +233,6 @@ func (o *GetIntegrations200ResponseAllOfIntegrationOneOf15Config) GetWebServiceO
 		return nil, false
 	}
 	return o.WebServiceOperationUrl, true
-}
-
-// IsSetWebServiceOperationUrl returns a boolean if a field has been set.
-func (o *GetIntegrations200ResponseAllOfIntegrationOneOf15Config) IsSetWebServiceOperationUrl() bool {
-	if o != nil && !IsNil(o.WebServiceOperationUrl) {
-		return true
-	}
-
-	return false
 }
 
 // SetWebServiceOperationUrl gets a reference to the given string and assigns it to the WebServiceOperationUrl field.
@@ -330,15 +258,6 @@ func (o *GetIntegrations200ResponseAllOfIntegrationOneOf15Config) GetCmdbModeOk(
 	return o.CmdbMode, true
 }
 
-// IsSetCmdbMode returns a boolean if a field has been set.
-func (o *GetIntegrations200ResponseAllOfIntegrationOneOf15Config) IsSetCmdbMode() bool {
-	if o != nil && !IsNil(o.CmdbMode) {
-		return true
-	}
-
-	return false
-}
-
 // SetCmdbMode gets a reference to the given string and assigns it to the CmdbMode field.
 func (o *GetIntegrations200ResponseAllOfIntegrationOneOf15Config) SetCmdbMode(v string) {
 	o.CmdbMode = &v
@@ -360,15 +279,6 @@ func (o *GetIntegrations200ResponseAllOfIntegrationOneOf15Config) GetPreparedFor
 		return nil, false
 	}
 	return o.PreparedForSync, true
-}
-
-// IsSetPreparedForSync returns a boolean if a field has been set.
-func (o *GetIntegrations200ResponseAllOfIntegrationOneOf15Config) IsSetPreparedForSync() bool {
-	if o != nil && !IsNil(o.PreparedForSync) {
-		return true
-	}
-
-	return false
 }
 
 // SetPreparedForSync gets a reference to the given bool and assigns it to the PreparedForSync field.

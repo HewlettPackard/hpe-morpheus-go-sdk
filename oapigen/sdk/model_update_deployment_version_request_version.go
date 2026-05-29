@@ -69,15 +69,6 @@ func (o *UpdateDeploymentVersionRequestVersion) GetVersionOk() (*string, bool) {
 	return o.Version, true
 }
 
-// IsSetVersion returns a boolean if a field has been set.
-func (o *UpdateDeploymentVersionRequestVersion) IsSetVersion() bool {
-	if o != nil && !IsNil(o.Version) {
-		return true
-	}
-
-	return false
-}
-
 // SetVersion gets a reference to the given string and assigns it to the Version field.
 func (o *UpdateDeploymentVersionRequestVersion) SetVersion(v string) {
 	o.Version = &v
@@ -101,15 +92,6 @@ func (o *UpdateDeploymentVersionRequestVersion) GetUserVersionOk() (*string, boo
 	return o.UserVersion, true
 }
 
-// IsSetUserVersion returns a boolean if a field has been set.
-func (o *UpdateDeploymentVersionRequestVersion) IsSetUserVersion() bool {
-	if o != nil && !IsNil(o.UserVersion) {
-		return true
-	}
-
-	return false
-}
-
 // SetUserVersion gets a reference to the given string and assigns it to the UserVersion field.
 func (o *UpdateDeploymentVersionRequestVersion) SetUserVersion(v string) {
 	o.UserVersion = &v
@@ -131,15 +113,6 @@ func (o *UpdateDeploymentVersionRequestVersion) GetDeployTypeOk() (*string, bool
 		return nil, false
 	}
 	return o.DeployType, true
-}
-
-// IsSetDeployType returns a boolean if a field has been set.
-func (o *UpdateDeploymentVersionRequestVersion) IsSetDeployType() bool {
-	if o != nil && !IsNil(o.DeployType) {
-		return true
-	}
-
-	return false
 }
 
 // SetDeployType gets a reference to the given string and assigns it to the DeployType field.
@@ -166,28 +139,9 @@ func (o *UpdateDeploymentVersionRequestVersion) GetGitUrlOk() (*string, bool) {
 	return o.GitUrl.Get(), o.GitUrl.IsSet()
 }
 
-// IsSetGitUrl returns a boolean if a field has been set.
-func (o *UpdateDeploymentVersionRequestVersion) IsSetGitUrl() bool {
-	if o != nil && o.GitUrl.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetGitUrl gets a reference to the given NullableString and assigns it to the GitUrl field.
 func (o *UpdateDeploymentVersionRequestVersion) SetGitUrl(v string) {
 	o.GitUrl.Set(&v)
-}
-
-// SetGitUrlNil sets the value for GitUrl to be an explicit nil
-func (o *UpdateDeploymentVersionRequestVersion) SetGitUrlNil() {
-	o.GitUrl.Set(nil)
-}
-
-// UnsetGitUrl ensures that no value is present for GitUrl, not even an explicit nil
-func (o *UpdateDeploymentVersionRequestVersion) UnsetGitUrl() {
-	o.GitUrl.Unset()
 }
 
 // GetGitRef returns the GitRef field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -209,28 +163,9 @@ func (o *UpdateDeploymentVersionRequestVersion) GetGitRefOk() (*string, bool) {
 	return o.GitRef.Get(), o.GitRef.IsSet()
 }
 
-// IsSetGitRef returns a boolean if a field has been set.
-func (o *UpdateDeploymentVersionRequestVersion) IsSetGitRef() bool {
-	if o != nil && o.GitRef.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetGitRef gets a reference to the given NullableString and assigns it to the GitRef field.
 func (o *UpdateDeploymentVersionRequestVersion) SetGitRef(v string) {
 	o.GitRef.Set(&v)
-}
-
-// SetGitRefNil sets the value for GitRef to be an explicit nil
-func (o *UpdateDeploymentVersionRequestVersion) SetGitRefNil() {
-	o.GitRef.Set(nil)
-}
-
-// UnsetGitRef ensures that no value is present for GitRef, not even an explicit nil
-func (o *UpdateDeploymentVersionRequestVersion) UnsetGitRef() {
-	o.GitRef.Unset()
 }
 
 // GetFetchUrl returns the FetchUrl field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -252,28 +187,9 @@ func (o *UpdateDeploymentVersionRequestVersion) GetFetchUrlOk() (*string, bool) 
 	return o.FetchUrl.Get(), o.FetchUrl.IsSet()
 }
 
-// IsSetFetchUrl returns a boolean if a field has been set.
-func (o *UpdateDeploymentVersionRequestVersion) IsSetFetchUrl() bool {
-	if o != nil && o.FetchUrl.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFetchUrl gets a reference to the given NullableString and assigns it to the FetchUrl field.
 func (o *UpdateDeploymentVersionRequestVersion) SetFetchUrl(v string) {
 	o.FetchUrl.Set(&v)
-}
-
-// SetFetchUrlNil sets the value for FetchUrl to be an explicit nil
-func (o *UpdateDeploymentVersionRequestVersion) SetFetchUrlNil() {
-	o.FetchUrl.Set(nil)
-}
-
-// UnsetFetchUrl ensures that no value is present for FetchUrl, not even an explicit nil
-func (o *UpdateDeploymentVersionRequestVersion) UnsetFetchUrl() {
-	o.FetchUrl.Unset()
 }
 
 func (o UpdateDeploymentVersionRequestVersion) MarshalJSON() ([]byte, error) {

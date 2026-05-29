@@ -130,15 +130,6 @@ func (o *UpdateInstanceThresholdRequestInstanceThreshold) GetAutoUpOk() (*bool, 
 	return o.AutoUp, true
 }
 
-// IsSetAutoUp returns a boolean if a field has been set.
-func (o *UpdateInstanceThresholdRequestInstanceThreshold) IsSetAutoUp() bool {
-	if o != nil && !IsNil(o.AutoUp) {
-		return true
-	}
-
-	return false
-}
-
 // SetAutoUp gets a reference to the given bool and assigns it to the AutoUp field.
 func (o *UpdateInstanceThresholdRequestInstanceThreshold) SetAutoUp(v bool) {
 	o.AutoUp = &v
@@ -160,15 +151,6 @@ func (o *UpdateInstanceThresholdRequestInstanceThreshold) GetAutoDownOk() (*bool
 		return nil, false
 	}
 	return o.AutoDown, true
-}
-
-// IsSetAutoDown returns a boolean if a field has been set.
-func (o *UpdateInstanceThresholdRequestInstanceThreshold) IsSetAutoDown() bool {
-	if o != nil && !IsNil(o.AutoDown) {
-		return true
-	}
-
-	return false
 }
 
 // SetAutoDown gets a reference to the given bool and assigns it to the AutoDown field.
@@ -194,15 +176,6 @@ func (o *UpdateInstanceThresholdRequestInstanceThreshold) GetMinCountOk() (*int3
 	return o.MinCount, true
 }
 
-// IsSetMinCount returns a boolean if a field has been set.
-func (o *UpdateInstanceThresholdRequestInstanceThreshold) IsSetMinCount() bool {
-	if o != nil && !IsNil(o.MinCount) {
-		return true
-	}
-
-	return false
-}
-
 // SetMinCount gets a reference to the given int32 and assigns it to the MinCount field.
 func (o *UpdateInstanceThresholdRequestInstanceThreshold) SetMinCount(v int32) {
 	o.MinCount = &v
@@ -224,15 +197,6 @@ func (o *UpdateInstanceThresholdRequestInstanceThreshold) GetMaxCountOk() (*int3
 		return nil, false
 	}
 	return o.MaxCount, true
-}
-
-// IsSetMaxCount returns a boolean if a field has been set.
-func (o *UpdateInstanceThresholdRequestInstanceThreshold) IsSetMaxCount() bool {
-	if o != nil && !IsNil(o.MaxCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxCount gets a reference to the given int32 and assigns it to the MaxCount field.
@@ -258,15 +222,6 @@ func (o *UpdateInstanceThresholdRequestInstanceThreshold) GetCpuEnabledOk() (*bo
 	return o.CpuEnabled, true
 }
 
-// IsSetCpuEnabled returns a boolean if a field has been set.
-func (o *UpdateInstanceThresholdRequestInstanceThreshold) IsSetCpuEnabled() bool {
-	if o != nil && !IsNil(o.CpuEnabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetCpuEnabled gets a reference to the given bool and assigns it to the CpuEnabled field.
 func (o *UpdateInstanceThresholdRequestInstanceThreshold) SetCpuEnabled(v bool) {
 	o.CpuEnabled = &v
@@ -288,15 +243,6 @@ func (o *UpdateInstanceThresholdRequestInstanceThreshold) GetMinCpuOk() (*float3
 		return nil, false
 	}
 	return o.MinCpu, true
-}
-
-// IsSetMinCpu returns a boolean if a field has been set.
-func (o *UpdateInstanceThresholdRequestInstanceThreshold) IsSetMinCpu() bool {
-	if o != nil && !IsNil(o.MinCpu) {
-		return true
-	}
-
-	return false
 }
 
 // SetMinCpu gets a reference to the given float32 and assigns it to the MinCpu field.
@@ -322,15 +268,6 @@ func (o *UpdateInstanceThresholdRequestInstanceThreshold) GetMaxCpuOk() (*float3
 	return o.MaxCpu, true
 }
 
-// IsSetMaxCpu returns a boolean if a field has been set.
-func (o *UpdateInstanceThresholdRequestInstanceThreshold) IsSetMaxCpu() bool {
-	if o != nil && !IsNil(o.MaxCpu) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxCpu gets a reference to the given float32 and assigns it to the MaxCpu field.
 func (o *UpdateInstanceThresholdRequestInstanceThreshold) SetMaxCpu(v float32) {
 	o.MaxCpu = &v
@@ -352,15 +289,6 @@ func (o *UpdateInstanceThresholdRequestInstanceThreshold) GetMemoryEnabledOk() (
 		return nil, false
 	}
 	return o.MemoryEnabled, true
-}
-
-// IsSetMemoryEnabled returns a boolean if a field has been set.
-func (o *UpdateInstanceThresholdRequestInstanceThreshold) IsSetMemoryEnabled() bool {
-	if o != nil && !IsNil(o.MemoryEnabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetMemoryEnabled gets a reference to the given bool and assigns it to the MemoryEnabled field.
@@ -386,15 +314,6 @@ func (o *UpdateInstanceThresholdRequestInstanceThreshold) GetMinMemoryOk() (*flo
 	return o.MinMemory, true
 }
 
-// IsSetMinMemory returns a boolean if a field has been set.
-func (o *UpdateInstanceThresholdRequestInstanceThreshold) IsSetMinMemory() bool {
-	if o != nil && !IsNil(o.MinMemory) {
-		return true
-	}
-
-	return false
-}
-
 // SetMinMemory gets a reference to the given float32 and assigns it to the MinMemory field.
 func (o *UpdateInstanceThresholdRequestInstanceThreshold) SetMinMemory(v float32) {
 	o.MinMemory = &v
@@ -416,15 +335,6 @@ func (o *UpdateInstanceThresholdRequestInstanceThreshold) GetMaxMemoryOk() (*flo
 		return nil, false
 	}
 	return o.MaxMemory, true
-}
-
-// IsSetMaxMemory returns a boolean if a field has been set.
-func (o *UpdateInstanceThresholdRequestInstanceThreshold) IsSetMaxMemory() bool {
-	if o != nil && !IsNil(o.MaxMemory) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxMemory gets a reference to the given float32 and assigns it to the MaxMemory field.
@@ -450,15 +360,6 @@ func (o *UpdateInstanceThresholdRequestInstanceThreshold) GetDiskEnabledOk() (*b
 	return o.DiskEnabled, true
 }
 
-// IsSetDiskEnabled returns a boolean if a field has been set.
-func (o *UpdateInstanceThresholdRequestInstanceThreshold) IsSetDiskEnabled() bool {
-	if o != nil && !IsNil(o.DiskEnabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetDiskEnabled gets a reference to the given bool and assigns it to the DiskEnabled field.
 func (o *UpdateInstanceThresholdRequestInstanceThreshold) SetDiskEnabled(v bool) {
 	o.DiskEnabled = &v
@@ -482,15 +383,6 @@ func (o *UpdateInstanceThresholdRequestInstanceThreshold) GetMinDiskOk() (*float
 	return o.MinDisk, true
 }
 
-// IsSetMinDisk returns a boolean if a field has been set.
-func (o *UpdateInstanceThresholdRequestInstanceThreshold) IsSetMinDisk() bool {
-	if o != nil && !IsNil(o.MinDisk) {
-		return true
-	}
-
-	return false
-}
-
 // SetMinDisk gets a reference to the given float32 and assigns it to the MinDisk field.
 func (o *UpdateInstanceThresholdRequestInstanceThreshold) SetMinDisk(v float32) {
 	o.MinDisk = &v
@@ -512,15 +404,6 @@ func (o *UpdateInstanceThresholdRequestInstanceThreshold) GetMaxDiskOk() (*float
 		return nil, false
 	}
 	return o.MaxDisk, true
-}
-
-// IsSetMaxDisk returns a boolean if a field has been set.
-func (o *UpdateInstanceThresholdRequestInstanceThreshold) IsSetMaxDisk() bool {
-	if o != nil && !IsNil(o.MaxDisk) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxDisk gets a reference to the given float32 and assigns it to the MaxDisk field.

@@ -62,15 +62,6 @@ func (o *GetInvoices200Response) GetInvoiceOk() (*GetInvoices200ResponseAllOfInv
 	return o.Invoice, true
 }
 
-// IsSetInvoice returns a boolean if a field has been set.
-func (o *GetInvoices200Response) IsSetInvoice() bool {
-	if o != nil && !IsNil(o.Invoice) {
-		return true
-	}
-
-	return false
-}
-
 // SetInvoice gets a reference to the given GetInvoices200ResponseAllOfInvoice and assigns it to the Invoice field.
 func (o *GetInvoices200Response) SetInvoice(v GetInvoices200ResponseAllOfInvoice) {
 	o.Invoice = &v
@@ -92,15 +83,6 @@ func (o *GetInvoices200Response) GetMasterAccountOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.MasterAccount, true
-}
-
-// IsSetMasterAccount returns a boolean if a field has been set.
-func (o *GetInvoices200Response) IsSetMasterAccount() bool {
-	if o != nil && !IsNil(o.MasterAccount) {
-		return true
-	}
-
-	return false
 }
 
 // SetMasterAccount gets a reference to the given bool and assigns it to the MasterAccount field.

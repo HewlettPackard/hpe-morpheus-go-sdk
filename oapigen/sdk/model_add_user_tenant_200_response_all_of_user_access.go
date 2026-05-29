@@ -71,15 +71,6 @@ func (o *AddUserTenant200ResponseAllOfUserAccess) GetFeaturesOk() ([]AddUserTena
 	return o.Features, true
 }
 
-// IsSetFeatures returns a boolean if a field has been set.
-func (o *AddUserTenant200ResponseAllOfUserAccess) IsSetFeatures() bool {
-	if o != nil && !IsNil(o.Features) {
-		return true
-	}
-
-	return false
-}
-
 // SetFeatures gets a reference to the given []AddUserTenant200ResponseAllOfUserAccessFeaturesInner and assigns it to the Features field.
 func (o *AddUserTenant200ResponseAllOfUserAccess) SetFeatures(v []AddUserTenant200ResponseAllOfUserAccessFeaturesInner) {
 	o.Features = v
@@ -101,15 +92,6 @@ func (o *AddUserTenant200ResponseAllOfUserAccess) GetZonesOk() ([]AddUserTenant2
 		return nil, false
 	}
 	return o.Zones, true
-}
-
-// IsSetZones returns a boolean if a field has been set.
-func (o *AddUserTenant200ResponseAllOfUserAccess) IsSetZones() bool {
-	if o != nil && !IsNil(o.Zones) {
-		return true
-	}
-
-	return false
 }
 
 // SetZones gets a reference to the given []AddUserTenant200ResponseAllOfUserAccessZonesInner and assigns it to the Zones field.
@@ -135,15 +117,6 @@ func (o *AddUserTenant200ResponseAllOfUserAccess) GetSitesOk() ([]AddUserTenant2
 	return o.Sites, true
 }
 
-// IsSetSites returns a boolean if a field has been set.
-func (o *AddUserTenant200ResponseAllOfUserAccess) IsSetSites() bool {
-	if o != nil && !IsNil(o.Sites) {
-		return true
-	}
-
-	return false
-}
-
 // SetSites gets a reference to the given []AddUserTenant200ResponseAllOfUserAccessSitesInner and assigns it to the Sites field.
 func (o *AddUserTenant200ResponseAllOfUserAccess) SetSites(v []AddUserTenant200ResponseAllOfUserAccessSitesInner) {
 	o.Sites = v
@@ -165,15 +138,6 @@ func (o *AddUserTenant200ResponseAllOfUserAccess) GetInstanceTypesOk() ([]AddUse
 		return nil, false
 	}
 	return o.InstanceTypes, true
-}
-
-// IsSetInstanceTypes returns a boolean if a field has been set.
-func (o *AddUserTenant200ResponseAllOfUserAccess) IsSetInstanceTypes() bool {
-	if o != nil && !IsNil(o.InstanceTypes) {
-		return true
-	}
-
-	return false
 }
 
 // SetInstanceTypes gets a reference to the given []AddUserTenant200ResponseAllOfUserAccessInstanceTypesInner and assigns it to the InstanceTypes field.
@@ -199,15 +163,6 @@ func (o *AddUserTenant200ResponseAllOfUserAccess) GetAppTemplatesOk() ([]AddUser
 	return o.AppTemplates, true
 }
 
-// IsSetAppTemplates returns a boolean if a field has been set.
-func (o *AddUserTenant200ResponseAllOfUserAccess) IsSetAppTemplates() bool {
-	if o != nil && !IsNil(o.AppTemplates) {
-		return true
-	}
-
-	return false
-}
-
 // SetAppTemplates gets a reference to the given []AddUserTenant200ResponseAllOfUserAccessAppTemplatesInner and assigns it to the AppTemplates field.
 func (o *AddUserTenant200ResponseAllOfUserAccess) SetAppTemplates(v []AddUserTenant200ResponseAllOfUserAccessAppTemplatesInner) {
 	o.AppTemplates = v
@@ -229,15 +184,6 @@ func (o *AddUserTenant200ResponseAllOfUserAccess) GetCatalogItemTypesOk() ([]Add
 		return nil, false
 	}
 	return o.CatalogItemTypes, true
-}
-
-// IsSetCatalogItemTypes returns a boolean if a field has been set.
-func (o *AddUserTenant200ResponseAllOfUserAccess) IsSetCatalogItemTypes() bool {
-	if o != nil && !IsNil(o.CatalogItemTypes) {
-		return true
-	}
-
-	return false
 }
 
 // SetCatalogItemTypes gets a reference to the given []AddUserTenant200ResponseAllOfUserAccessCatalogItemTypesInner and assigns it to the CatalogItemTypes field.
@@ -263,15 +209,6 @@ func (o *AddUserTenant200ResponseAllOfUserAccess) GetPersonasOk() ([]AddUserTena
 	return o.Personas, true
 }
 
-// IsSetPersonas returns a boolean if a field has been set.
-func (o *AddUserTenant200ResponseAllOfUserAccess) IsSetPersonas() bool {
-	if o != nil && !IsNil(o.Personas) {
-		return true
-	}
-
-	return false
-}
-
 // SetPersonas gets a reference to the given []AddUserTenant200ResponseAllOfUserAccessPersonasInner and assigns it to the Personas field.
 func (o *AddUserTenant200ResponseAllOfUserAccess) SetPersonas(v []AddUserTenant200ResponseAllOfUserAccessPersonasInner) {
 	o.Personas = v
@@ -293,15 +230,6 @@ func (o *AddUserTenant200ResponseAllOfUserAccess) GetVdiPoolsOk() ([]AddUserTena
 		return nil, false
 	}
 	return o.VdiPools, true
-}
-
-// IsSetVdiPools returns a boolean if a field has been set.
-func (o *AddUserTenant200ResponseAllOfUserAccess) IsSetVdiPools() bool {
-	if o != nil && !IsNil(o.VdiPools) {
-		return true
-	}
-
-	return false
 }
 
 // SetVdiPools gets a reference to the given []AddUserTenant200ResponseAllOfUserAccessVdiPoolsInner and assigns it to the VdiPools field.
@@ -327,15 +255,6 @@ func (o *AddUserTenant200ResponseAllOfUserAccess) GetReportTypesOk() ([]AddUserT
 	return o.ReportTypes, true
 }
 
-// IsSetReportTypes returns a boolean if a field has been set.
-func (o *AddUserTenant200ResponseAllOfUserAccess) IsSetReportTypes() bool {
-	if o != nil && !IsNil(o.ReportTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetReportTypes gets a reference to the given []AddUserTenant200ResponseAllOfUserAccessReportTypesInner and assigns it to the ReportTypes field.
 func (o *AddUserTenant200ResponseAllOfUserAccess) SetReportTypes(v []AddUserTenant200ResponseAllOfUserAccessReportTypesInner) {
 	o.ReportTypes = v
@@ -359,15 +278,6 @@ func (o *AddUserTenant200ResponseAllOfUserAccess) GetTasksOk() ([]AddUserTenant2
 	return o.Tasks, true
 }
 
-// IsSetTasks returns a boolean if a field has been set.
-func (o *AddUserTenant200ResponseAllOfUserAccess) IsSetTasks() bool {
-	if o != nil && !IsNil(o.Tasks) {
-		return true
-	}
-
-	return false
-}
-
 // SetTasks gets a reference to the given []AddUserTenant200ResponseAllOfUserAccessTasksInner and assigns it to the Tasks field.
 func (o *AddUserTenant200ResponseAllOfUserAccess) SetTasks(v []AddUserTenant200ResponseAllOfUserAccessTasksInner) {
 	o.Tasks = v
@@ -389,15 +299,6 @@ func (o *AddUserTenant200ResponseAllOfUserAccess) GetTaskSetsOk() ([]AddUserTena
 		return nil, false
 	}
 	return o.TaskSets, true
-}
-
-// IsSetTaskSets returns a boolean if a field has been set.
-func (o *AddUserTenant200ResponseAllOfUserAccess) IsSetTaskSets() bool {
-	if o != nil && !IsNil(o.TaskSets) {
-		return true
-	}
-
-	return false
 }
 
 // SetTaskSets gets a reference to the given []AddUserTenant200ResponseAllOfUserAccessTaskSetsInner and assigns it to the TaskSets field.

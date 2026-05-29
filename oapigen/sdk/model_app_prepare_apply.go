@@ -61,15 +61,6 @@ func (o *AppPrepareApply) GetDataOk() (*AppPrepareApplyData, bool) {
 	return o.Data, true
 }
 
-// IsSetData returns a boolean if a field has been set.
-func (o *AppPrepareApply) IsSetData() bool {
-	if o != nil && !IsNil(o.Data) {
-		return true
-	}
-
-	return false
-}
-
 // SetData gets a reference to the given AppPrepareApplyData and assigns it to the Data field.
 func (o *AppPrepareApply) SetData(v AppPrepareApplyData) {
 	o.Data = &v

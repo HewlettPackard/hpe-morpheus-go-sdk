@@ -61,15 +61,6 @@ func (o *GetPreseedScript200Response) GetPreseedScriptOk() (*GetPreseedScript200
 	return o.PreseedScript, true
 }
 
-// IsSetPreseedScript returns a boolean if a field has been set.
-func (o *GetPreseedScript200Response) IsSetPreseedScript() bool {
-	if o != nil && !IsNil(o.PreseedScript) {
-		return true
-	}
-
-	return false
-}
-
 // SetPreseedScript gets a reference to the given GetPreseedScript200ResponsePreseedScript and assigns it to the PreseedScript field.
 func (o *GetPreseedScript200Response) SetPreseedScript(v GetPreseedScript200ResponsePreseedScript) {
 	o.PreseedScript = &v

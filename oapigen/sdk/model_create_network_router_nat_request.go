@@ -61,15 +61,6 @@ func (o *CreateNetworkRouterNatRequest) GetNetworkRouterNATOk() (*CreateNetworkR
 	return o.NetworkRouterNAT, true
 }
 
-// IsSetNetworkRouterNAT returns a boolean if a field has been set.
-func (o *CreateNetworkRouterNatRequest) IsSetNetworkRouterNAT() bool {
-	if o != nil && !IsNil(o.NetworkRouterNAT) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkRouterNAT gets a reference to the given CreateNetworkRouterNatRequestNetworkRouterNAT and assigns it to the NetworkRouterNAT field.
 func (o *CreateNetworkRouterNatRequest) SetNetworkRouterNAT(v CreateNetworkRouterNatRequestNetworkRouterNAT) {
 	o.NetworkRouterNAT = &v

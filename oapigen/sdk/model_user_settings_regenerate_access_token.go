@@ -61,15 +61,6 @@ func (o *UserSettingsRegenerateAccessToken) GetTokenOk() (*string, bool) {
 	return o.Token, true
 }
 
-// IsSetToken returns a boolean if a field has been set.
-func (o *UserSettingsRegenerateAccessToken) IsSetToken() bool {
-	if o != nil && !IsNil(o.Token) {
-		return true
-	}
-
-	return false
-}
-
 // SetToken gets a reference to the given string and assigns it to the Token field.
 func (o *UserSettingsRegenerateAccessToken) SetToken(v string) {
 	o.Token = &v

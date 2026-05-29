@@ -66,15 +66,6 @@ func (o *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration15) GetMaxStorage
 	return o.MaxStorage, true
 }
 
-// IsSetMaxStorage returns a boolean if a field has been set.
-func (o *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration15) IsSetMaxStorage() bool {
-	if o != nil && !IsNil(o.MaxStorage) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxStorage gets a reference to the given string and assigns it to the MaxStorage field.
 func (o *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration15) SetMaxStorage(v string) {
 	o.MaxStorage = &v
@@ -96,15 +87,6 @@ func (o *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration15) GetExcludeCon
 		return nil, false
 	}
 	return o.ExcludeContainers, true
-}
-
-// IsSetExcludeContainers returns a boolean if a field has been set.
-func (o *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration15) IsSetExcludeContainers() bool {
-	if o != nil && !IsNil(o.ExcludeContainers) {
-		return true
-	}
-
-	return false
 }
 
 // SetExcludeContainers gets a reference to the given string and assigns it to the ExcludeContainers field.

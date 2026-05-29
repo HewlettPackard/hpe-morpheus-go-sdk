@@ -101,15 +101,6 @@ func (o *IntegrationTypeOptionTypeInner) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *IntegrationTypeOptionTypeInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *IntegrationTypeOptionTypeInner) SetId(v int64) {
 	o.Id = &v
@@ -131,15 +122,6 @@ func (o *IntegrationTypeOptionTypeInner) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *IntegrationTypeOptionTypeInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -166,28 +148,9 @@ func (o *IntegrationTypeOptionTypeInner) GetDescriptionOk() (*string, bool) {
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *IntegrationTypeOptionTypeInner) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *IntegrationTypeOptionTypeInner) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *IntegrationTypeOptionTypeInner) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *IntegrationTypeOptionTypeInner) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetLabels returns the Labels field value if set, zero value otherwise.
@@ -206,15 +169,6 @@ func (o *IntegrationTypeOptionTypeInner) GetLabelsOk() ([]map[string]interface{}
 		return nil, false
 	}
 	return o.Labels, true
-}
-
-// IsSetLabels returns a boolean if a field has been set.
-func (o *IntegrationTypeOptionTypeInner) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
 }
 
 // SetLabels gets a reference to the given []map[string]interface{} and assigns it to the Labels field.
@@ -240,15 +194,6 @@ func (o *IntegrationTypeOptionTypeInner) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *IntegrationTypeOptionTypeInner) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *IntegrationTypeOptionTypeInner) SetCode(v string) {
 	o.Code = &v
@@ -270,15 +215,6 @@ func (o *IntegrationTypeOptionTypeInner) GetFieldNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.FieldName, true
-}
-
-// IsSetFieldName returns a boolean if a field has been set.
-func (o *IntegrationTypeOptionTypeInner) IsSetFieldName() bool {
-	if o != nil && !IsNil(o.FieldName) {
-		return true
-	}
-
-	return false
 }
 
 // SetFieldName gets a reference to the given string and assigns it to the FieldName field.
@@ -304,15 +240,6 @@ func (o *IntegrationTypeOptionTypeInner) GetFieldLabelOk() (*string, bool) {
 	return o.FieldLabel, true
 }
 
-// IsSetFieldLabel returns a boolean if a field has been set.
-func (o *IntegrationTypeOptionTypeInner) IsSetFieldLabel() bool {
-	if o != nil && !IsNil(o.FieldLabel) {
-		return true
-	}
-
-	return false
-}
-
 // SetFieldLabel gets a reference to the given string and assigns it to the FieldLabel field.
 func (o *IntegrationTypeOptionTypeInner) SetFieldLabel(v string) {
 	o.FieldLabel = &v
@@ -336,15 +263,6 @@ func (o *IntegrationTypeOptionTypeInner) GetFieldCodeOk() (*string, bool) {
 	return o.FieldCode, true
 }
 
-// IsSetFieldCode returns a boolean if a field has been set.
-func (o *IntegrationTypeOptionTypeInner) IsSetFieldCode() bool {
-	if o != nil && !IsNil(o.FieldCode) {
-		return true
-	}
-
-	return false
-}
-
 // SetFieldCode gets a reference to the given string and assigns it to the FieldCode field.
 func (o *IntegrationTypeOptionTypeInner) SetFieldCode(v string) {
 	o.FieldCode = &v
@@ -366,15 +284,6 @@ func (o *IntegrationTypeOptionTypeInner) GetFieldContextOk() (*string, bool) {
 		return nil, false
 	}
 	return o.FieldContext, true
-}
-
-// IsSetFieldContext returns a boolean if a field has been set.
-func (o *IntegrationTypeOptionTypeInner) IsSetFieldContext() bool {
-	if o != nil && !IsNil(o.FieldContext) {
-		return true
-	}
-
-	return false
 }
 
 // SetFieldContext gets a reference to the given string and assigns it to the FieldContext field.
@@ -401,28 +310,9 @@ func (o *IntegrationTypeOptionTypeInner) GetFieldGroupOk() (*string, bool) {
 	return o.FieldGroup.Get(), o.FieldGroup.IsSet()
 }
 
-// IsSetFieldGroup returns a boolean if a field has been set.
-func (o *IntegrationTypeOptionTypeInner) IsSetFieldGroup() bool {
-	if o != nil && o.FieldGroup.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFieldGroup gets a reference to the given NullableString and assigns it to the FieldGroup field.
 func (o *IntegrationTypeOptionTypeInner) SetFieldGroup(v string) {
 	o.FieldGroup.Set(&v)
-}
-
-// SetFieldGroupNil sets the value for FieldGroup to be an explicit nil
-func (o *IntegrationTypeOptionTypeInner) SetFieldGroupNil() {
-	o.FieldGroup.Set(nil)
-}
-
-// UnsetFieldGroup ensures that no value is present for FieldGroup, not even an explicit nil
-func (o *IntegrationTypeOptionTypeInner) UnsetFieldGroup() {
-	o.FieldGroup.Unset()
 }
 
 // GetFieldClass returns the FieldClass field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -444,28 +334,9 @@ func (o *IntegrationTypeOptionTypeInner) GetFieldClassOk() (*string, bool) {
 	return o.FieldClass.Get(), o.FieldClass.IsSet()
 }
 
-// IsSetFieldClass returns a boolean if a field has been set.
-func (o *IntegrationTypeOptionTypeInner) IsSetFieldClass() bool {
-	if o != nil && o.FieldClass.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFieldClass gets a reference to the given NullableString and assigns it to the FieldClass field.
 func (o *IntegrationTypeOptionTypeInner) SetFieldClass(v string) {
 	o.FieldClass.Set(&v)
-}
-
-// SetFieldClassNil sets the value for FieldClass to be an explicit nil
-func (o *IntegrationTypeOptionTypeInner) SetFieldClassNil() {
-	o.FieldClass.Set(nil)
-}
-
-// UnsetFieldClass ensures that no value is present for FieldClass, not even an explicit nil
-func (o *IntegrationTypeOptionTypeInner) UnsetFieldClass() {
-	o.FieldClass.Unset()
 }
 
 // GetFieldAddOn returns the FieldAddOn field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -487,28 +358,9 @@ func (o *IntegrationTypeOptionTypeInner) GetFieldAddOnOk() (*string, bool) {
 	return o.FieldAddOn.Get(), o.FieldAddOn.IsSet()
 }
 
-// IsSetFieldAddOn returns a boolean if a field has been set.
-func (o *IntegrationTypeOptionTypeInner) IsSetFieldAddOn() bool {
-	if o != nil && o.FieldAddOn.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFieldAddOn gets a reference to the given NullableString and assigns it to the FieldAddOn field.
 func (o *IntegrationTypeOptionTypeInner) SetFieldAddOn(v string) {
 	o.FieldAddOn.Set(&v)
-}
-
-// SetFieldAddOnNil sets the value for FieldAddOn to be an explicit nil
-func (o *IntegrationTypeOptionTypeInner) SetFieldAddOnNil() {
-	o.FieldAddOn.Set(nil)
-}
-
-// UnsetFieldAddOn ensures that no value is present for FieldAddOn, not even an explicit nil
-func (o *IntegrationTypeOptionTypeInner) UnsetFieldAddOn() {
-	o.FieldAddOn.Unset()
 }
 
 // GetFieldComponent returns the FieldComponent field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -530,28 +382,9 @@ func (o *IntegrationTypeOptionTypeInner) GetFieldComponentOk() (*string, bool) {
 	return o.FieldComponent.Get(), o.FieldComponent.IsSet()
 }
 
-// IsSetFieldComponent returns a boolean if a field has been set.
-func (o *IntegrationTypeOptionTypeInner) IsSetFieldComponent() bool {
-	if o != nil && o.FieldComponent.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFieldComponent gets a reference to the given NullableString and assigns it to the FieldComponent field.
 func (o *IntegrationTypeOptionTypeInner) SetFieldComponent(v string) {
 	o.FieldComponent.Set(&v)
-}
-
-// SetFieldComponentNil sets the value for FieldComponent to be an explicit nil
-func (o *IntegrationTypeOptionTypeInner) SetFieldComponentNil() {
-	o.FieldComponent.Set(nil)
-}
-
-// UnsetFieldComponent ensures that no value is present for FieldComponent, not even an explicit nil
-func (o *IntegrationTypeOptionTypeInner) UnsetFieldComponent() {
-	o.FieldComponent.Unset()
 }
 
 // GetFieldInput returns the FieldInput field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -573,28 +406,9 @@ func (o *IntegrationTypeOptionTypeInner) GetFieldInputOk() (*string, bool) {
 	return o.FieldInput.Get(), o.FieldInput.IsSet()
 }
 
-// IsSetFieldInput returns a boolean if a field has been set.
-func (o *IntegrationTypeOptionTypeInner) IsSetFieldInput() bool {
-	if o != nil && o.FieldInput.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFieldInput gets a reference to the given NullableString and assigns it to the FieldInput field.
 func (o *IntegrationTypeOptionTypeInner) SetFieldInput(v string) {
 	o.FieldInput.Set(&v)
-}
-
-// SetFieldInputNil sets the value for FieldInput to be an explicit nil
-func (o *IntegrationTypeOptionTypeInner) SetFieldInputNil() {
-	o.FieldInput.Set(nil)
-}
-
-// UnsetFieldInput ensures that no value is present for FieldInput, not even an explicit nil
-func (o *IntegrationTypeOptionTypeInner) UnsetFieldInput() {
-	o.FieldInput.Unset()
 }
 
 // GetPlaceHolder returns the PlaceHolder field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -616,28 +430,9 @@ func (o *IntegrationTypeOptionTypeInner) GetPlaceHolderOk() (*string, bool) {
 	return o.PlaceHolder.Get(), o.PlaceHolder.IsSet()
 }
 
-// IsSetPlaceHolder returns a boolean if a field has been set.
-func (o *IntegrationTypeOptionTypeInner) IsSetPlaceHolder() bool {
-	if o != nil && o.PlaceHolder.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPlaceHolder gets a reference to the given NullableString and assigns it to the PlaceHolder field.
 func (o *IntegrationTypeOptionTypeInner) SetPlaceHolder(v string) {
 	o.PlaceHolder.Set(&v)
-}
-
-// SetPlaceHolderNil sets the value for PlaceHolder to be an explicit nil
-func (o *IntegrationTypeOptionTypeInner) SetPlaceHolderNil() {
-	o.PlaceHolder.Set(nil)
-}
-
-// UnsetPlaceHolder ensures that no value is present for PlaceHolder, not even an explicit nil
-func (o *IntegrationTypeOptionTypeInner) UnsetPlaceHolder() {
-	o.PlaceHolder.Unset()
 }
 
 // GetVerifyPattern returns the VerifyPattern field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -659,28 +454,9 @@ func (o *IntegrationTypeOptionTypeInner) GetVerifyPatternOk() (*string, bool) {
 	return o.VerifyPattern.Get(), o.VerifyPattern.IsSet()
 }
 
-// IsSetVerifyPattern returns a boolean if a field has been set.
-func (o *IntegrationTypeOptionTypeInner) IsSetVerifyPattern() bool {
-	if o != nil && o.VerifyPattern.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetVerifyPattern gets a reference to the given NullableString and assigns it to the VerifyPattern field.
 func (o *IntegrationTypeOptionTypeInner) SetVerifyPattern(v string) {
 	o.VerifyPattern.Set(&v)
-}
-
-// SetVerifyPatternNil sets the value for VerifyPattern to be an explicit nil
-func (o *IntegrationTypeOptionTypeInner) SetVerifyPatternNil() {
-	o.VerifyPattern.Set(nil)
-}
-
-// UnsetVerifyPattern ensures that no value is present for VerifyPattern, not even an explicit nil
-func (o *IntegrationTypeOptionTypeInner) UnsetVerifyPattern() {
-	o.VerifyPattern.Unset()
 }
 
 // GetHelpBlock returns the HelpBlock field value if set, zero value otherwise.
@@ -699,15 +475,6 @@ func (o *IntegrationTypeOptionTypeInner) GetHelpBlockOk() (*string, bool) {
 		return nil, false
 	}
 	return o.HelpBlock, true
-}
-
-// IsSetHelpBlock returns a boolean if a field has been set.
-func (o *IntegrationTypeOptionTypeInner) IsSetHelpBlock() bool {
-	if o != nil && !IsNil(o.HelpBlock) {
-		return true
-	}
-
-	return false
 }
 
 // SetHelpBlock gets a reference to the given string and assigns it to the HelpBlock field.
@@ -734,28 +501,9 @@ func (o *IntegrationTypeOptionTypeInner) GetHelpBlockFieldCodeOk() (*string, boo
 	return o.HelpBlockFieldCode.Get(), o.HelpBlockFieldCode.IsSet()
 }
 
-// IsSetHelpBlockFieldCode returns a boolean if a field has been set.
-func (o *IntegrationTypeOptionTypeInner) IsSetHelpBlockFieldCode() bool {
-	if o != nil && o.HelpBlockFieldCode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetHelpBlockFieldCode gets a reference to the given NullableString and assigns it to the HelpBlockFieldCode field.
 func (o *IntegrationTypeOptionTypeInner) SetHelpBlockFieldCode(v string) {
 	o.HelpBlockFieldCode.Set(&v)
-}
-
-// SetHelpBlockFieldCodeNil sets the value for HelpBlockFieldCode to be an explicit nil
-func (o *IntegrationTypeOptionTypeInner) SetHelpBlockFieldCodeNil() {
-	o.HelpBlockFieldCode.Set(nil)
-}
-
-// UnsetHelpBlockFieldCode ensures that no value is present for HelpBlockFieldCode, not even an explicit nil
-func (o *IntegrationTypeOptionTypeInner) UnsetHelpBlockFieldCode() {
-	o.HelpBlockFieldCode.Unset()
 }
 
 // GetDefaultValue returns the DefaultValue field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -777,28 +525,9 @@ func (o *IntegrationTypeOptionTypeInner) GetDefaultValueOk() (*string, bool) {
 	return o.DefaultValue.Get(), o.DefaultValue.IsSet()
 }
 
-// IsSetDefaultValue returns a boolean if a field has been set.
-func (o *IntegrationTypeOptionTypeInner) IsSetDefaultValue() bool {
-	if o != nil && o.DefaultValue.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultValue gets a reference to the given NullableString and assigns it to the DefaultValue field.
 func (o *IntegrationTypeOptionTypeInner) SetDefaultValue(v string) {
 	o.DefaultValue.Set(&v)
-}
-
-// SetDefaultValueNil sets the value for DefaultValue to be an explicit nil
-func (o *IntegrationTypeOptionTypeInner) SetDefaultValueNil() {
-	o.DefaultValue.Set(nil)
-}
-
-// UnsetDefaultValue ensures that no value is present for DefaultValue, not even an explicit nil
-func (o *IntegrationTypeOptionTypeInner) UnsetDefaultValue() {
-	o.DefaultValue.Unset()
 }
 
 // GetOptionSource returns the OptionSource field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -820,28 +549,9 @@ func (o *IntegrationTypeOptionTypeInner) GetOptionSourceOk() (*string, bool) {
 	return o.OptionSource.Get(), o.OptionSource.IsSet()
 }
 
-// IsSetOptionSource returns a boolean if a field has been set.
-func (o *IntegrationTypeOptionTypeInner) IsSetOptionSource() bool {
-	if o != nil && o.OptionSource.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetOptionSource gets a reference to the given NullableString and assigns it to the OptionSource field.
 func (o *IntegrationTypeOptionTypeInner) SetOptionSource(v string) {
 	o.OptionSource.Set(&v)
-}
-
-// SetOptionSourceNil sets the value for OptionSource to be an explicit nil
-func (o *IntegrationTypeOptionTypeInner) SetOptionSourceNil() {
-	o.OptionSource.Set(nil)
-}
-
-// UnsetOptionSource ensures that no value is present for OptionSource, not even an explicit nil
-func (o *IntegrationTypeOptionTypeInner) UnsetOptionSource() {
-	o.OptionSource.Unset()
 }
 
 // GetOptionSourceType returns the OptionSourceType field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -863,28 +573,9 @@ func (o *IntegrationTypeOptionTypeInner) GetOptionSourceTypeOk() (*string, bool)
 	return o.OptionSourceType.Get(), o.OptionSourceType.IsSet()
 }
 
-// IsSetOptionSourceType returns a boolean if a field has been set.
-func (o *IntegrationTypeOptionTypeInner) IsSetOptionSourceType() bool {
-	if o != nil && o.OptionSourceType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetOptionSourceType gets a reference to the given NullableString and assigns it to the OptionSourceType field.
 func (o *IntegrationTypeOptionTypeInner) SetOptionSourceType(v string) {
 	o.OptionSourceType.Set(&v)
-}
-
-// SetOptionSourceTypeNil sets the value for OptionSourceType to be an explicit nil
-func (o *IntegrationTypeOptionTypeInner) SetOptionSourceTypeNil() {
-	o.OptionSourceType.Set(nil)
-}
-
-// UnsetOptionSourceType ensures that no value is present for OptionSourceType, not even an explicit nil
-func (o *IntegrationTypeOptionTypeInner) UnsetOptionSourceType() {
-	o.OptionSourceType.Unset()
 }
 
 // GetOptionList returns the OptionList field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -906,28 +597,9 @@ func (o *IntegrationTypeOptionTypeInner) GetOptionListOk() (*string, bool) {
 	return o.OptionList.Get(), o.OptionList.IsSet()
 }
 
-// IsSetOptionList returns a boolean if a field has been set.
-func (o *IntegrationTypeOptionTypeInner) IsSetOptionList() bool {
-	if o != nil && o.OptionList.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetOptionList gets a reference to the given NullableString and assigns it to the OptionList field.
 func (o *IntegrationTypeOptionTypeInner) SetOptionList(v string) {
 	o.OptionList.Set(&v)
-}
-
-// SetOptionListNil sets the value for OptionList to be an explicit nil
-func (o *IntegrationTypeOptionTypeInner) SetOptionListNil() {
-	o.OptionList.Set(nil)
-}
-
-// UnsetOptionList ensures that no value is present for OptionList, not even an explicit nil
-func (o *IntegrationTypeOptionTypeInner) UnsetOptionList() {
-	o.OptionList.Unset()
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
@@ -946,15 +618,6 @@ func (o *IntegrationTypeOptionTypeInner) GetTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *IntegrationTypeOptionTypeInner) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.
@@ -980,15 +643,6 @@ func (o *IntegrationTypeOptionTypeInner) GetAdvancedOk() (*bool, bool) {
 	return o.Advanced, true
 }
 
-// IsSetAdvanced returns a boolean if a field has been set.
-func (o *IntegrationTypeOptionTypeInner) IsSetAdvanced() bool {
-	if o != nil && !IsNil(o.Advanced) {
-		return true
-	}
-
-	return false
-}
-
 // SetAdvanced gets a reference to the given bool and assigns it to the Advanced field.
 func (o *IntegrationTypeOptionTypeInner) SetAdvanced(v bool) {
 	o.Advanced = &v
@@ -1010,15 +664,6 @@ func (o *IntegrationTypeOptionTypeInner) GetRequiredOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Required, true
-}
-
-// IsSetRequired returns a boolean if a field has been set.
-func (o *IntegrationTypeOptionTypeInner) IsSetRequired() bool {
-	if o != nil && !IsNil(o.Required) {
-		return true
-	}
-
-	return false
 }
 
 // SetRequired gets a reference to the given bool and assigns it to the Required field.
@@ -1045,28 +690,9 @@ func (o *IntegrationTypeOptionTypeInner) GetExportMetaOk() (*bool, bool) {
 	return o.ExportMeta.Get(), o.ExportMeta.IsSet()
 }
 
-// IsSetExportMeta returns a boolean if a field has been set.
-func (o *IntegrationTypeOptionTypeInner) IsSetExportMeta() bool {
-	if o != nil && o.ExportMeta.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExportMeta gets a reference to the given NullableBool and assigns it to the ExportMeta field.
 func (o *IntegrationTypeOptionTypeInner) SetExportMeta(v bool) {
 	o.ExportMeta.Set(&v)
-}
-
-// SetExportMetaNil sets the value for ExportMeta to be an explicit nil
-func (o *IntegrationTypeOptionTypeInner) SetExportMetaNil() {
-	o.ExportMeta.Set(nil)
-}
-
-// UnsetExportMeta ensures that no value is present for ExportMeta, not even an explicit nil
-func (o *IntegrationTypeOptionTypeInner) UnsetExportMeta() {
-	o.ExportMeta.Unset()
 }
 
 // GetEditable returns the Editable field value if set, zero value otherwise.
@@ -1085,15 +711,6 @@ func (o *IntegrationTypeOptionTypeInner) GetEditableOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Editable, true
-}
-
-// IsSetEditable returns a boolean if a field has been set.
-func (o *IntegrationTypeOptionTypeInner) IsSetEditable() bool {
-	if o != nil && !IsNil(o.Editable) {
-		return true
-	}
-
-	return false
 }
 
 // SetEditable gets a reference to the given bool and assigns it to the Editable field.
@@ -1119,15 +736,6 @@ func (o *IntegrationTypeOptionTypeInner) GetCreatableOk() (*bool, bool) {
 	return o.Creatable, true
 }
 
-// IsSetCreatable returns a boolean if a field has been set.
-func (o *IntegrationTypeOptionTypeInner) IsSetCreatable() bool {
-	if o != nil && !IsNil(o.Creatable) {
-		return true
-	}
-
-	return false
-}
-
 // SetCreatable gets a reference to the given bool and assigns it to the Creatable field.
 func (o *IntegrationTypeOptionTypeInner) SetCreatable(v bool) {
 	o.Creatable = &v
@@ -1151,15 +759,6 @@ func (o *IntegrationTypeOptionTypeInner) GetConfigOk() (map[string]interface{}, 
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *IntegrationTypeOptionTypeInner) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
 func (o *IntegrationTypeOptionTypeInner) SetConfig(v map[string]interface{}) {
 	o.Config = v
@@ -1181,15 +780,6 @@ func (o *IntegrationTypeOptionTypeInner) GetDisplayOrderOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.DisplayOrder, true
-}
-
-// IsSetDisplayOrder returns a boolean if a field has been set.
-func (o *IntegrationTypeOptionTypeInner) IsSetDisplayOrder() bool {
-	if o != nil && !IsNil(o.DisplayOrder) {
-		return true
-	}
-
-	return false
 }
 
 // SetDisplayOrder gets a reference to the given int64 and assigns it to the DisplayOrder field.
@@ -1216,28 +806,9 @@ func (o *IntegrationTypeOptionTypeInner) GetWrapperClassOk() (*string, bool) {
 	return o.WrapperClass.Get(), o.WrapperClass.IsSet()
 }
 
-// IsSetWrapperClass returns a boolean if a field has been set.
-func (o *IntegrationTypeOptionTypeInner) IsSetWrapperClass() bool {
-	if o != nil && o.WrapperClass.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetWrapperClass gets a reference to the given NullableString and assigns it to the WrapperClass field.
 func (o *IntegrationTypeOptionTypeInner) SetWrapperClass(v string) {
 	o.WrapperClass.Set(&v)
-}
-
-// SetWrapperClassNil sets the value for WrapperClass to be an explicit nil
-func (o *IntegrationTypeOptionTypeInner) SetWrapperClassNil() {
-	o.WrapperClass.Set(nil)
-}
-
-// UnsetWrapperClass ensures that no value is present for WrapperClass, not even an explicit nil
-func (o *IntegrationTypeOptionTypeInner) UnsetWrapperClass() {
-	o.WrapperClass.Unset()
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
@@ -1256,15 +827,6 @@ func (o *IntegrationTypeOptionTypeInner) GetEnabledOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *IntegrationTypeOptionTypeInner) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -1291,28 +853,9 @@ func (o *IntegrationTypeOptionTypeInner) GetNoBlankOk() (*bool, bool) {
 	return o.NoBlank.Get(), o.NoBlank.IsSet()
 }
 
-// IsSetNoBlank returns a boolean if a field has been set.
-func (o *IntegrationTypeOptionTypeInner) IsSetNoBlank() bool {
-	if o != nil && o.NoBlank.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNoBlank gets a reference to the given NullableBool and assigns it to the NoBlank field.
 func (o *IntegrationTypeOptionTypeInner) SetNoBlank(v bool) {
 	o.NoBlank.Set(&v)
-}
-
-// SetNoBlankNil sets the value for NoBlank to be an explicit nil
-func (o *IntegrationTypeOptionTypeInner) SetNoBlankNil() {
-	o.NoBlank.Set(nil)
-}
-
-// UnsetNoBlank ensures that no value is present for NoBlank, not even an explicit nil
-func (o *IntegrationTypeOptionTypeInner) UnsetNoBlank() {
-	o.NoBlank.Unset()
 }
 
 // GetDependsOnCode returns the DependsOnCode field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1334,28 +877,9 @@ func (o *IntegrationTypeOptionTypeInner) GetDependsOnCodeOk() (*bool, bool) {
 	return o.DependsOnCode.Get(), o.DependsOnCode.IsSet()
 }
 
-// IsSetDependsOnCode returns a boolean if a field has been set.
-func (o *IntegrationTypeOptionTypeInner) IsSetDependsOnCode() bool {
-	if o != nil && o.DependsOnCode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDependsOnCode gets a reference to the given NullableBool and assigns it to the DependsOnCode field.
 func (o *IntegrationTypeOptionTypeInner) SetDependsOnCode(v bool) {
 	o.DependsOnCode.Set(&v)
-}
-
-// SetDependsOnCodeNil sets the value for DependsOnCode to be an explicit nil
-func (o *IntegrationTypeOptionTypeInner) SetDependsOnCodeNil() {
-	o.DependsOnCode.Set(nil)
-}
-
-// UnsetDependsOnCode ensures that no value is present for DependsOnCode, not even an explicit nil
-func (o *IntegrationTypeOptionTypeInner) UnsetDependsOnCode() {
-	o.DependsOnCode.Unset()
 }
 
 // GetVisibleOnCode returns the VisibleOnCode field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1377,28 +901,9 @@ func (o *IntegrationTypeOptionTypeInner) GetVisibleOnCodeOk() (*bool, bool) {
 	return o.VisibleOnCode.Get(), o.VisibleOnCode.IsSet()
 }
 
-// IsSetVisibleOnCode returns a boolean if a field has been set.
-func (o *IntegrationTypeOptionTypeInner) IsSetVisibleOnCode() bool {
-	if o != nil && o.VisibleOnCode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetVisibleOnCode gets a reference to the given NullableBool and assigns it to the VisibleOnCode field.
 func (o *IntegrationTypeOptionTypeInner) SetVisibleOnCode(v bool) {
 	o.VisibleOnCode.Set(&v)
-}
-
-// SetVisibleOnCodeNil sets the value for VisibleOnCode to be an explicit nil
-func (o *IntegrationTypeOptionTypeInner) SetVisibleOnCodeNil() {
-	o.VisibleOnCode.Set(nil)
-}
-
-// UnsetVisibleOnCode ensures that no value is present for VisibleOnCode, not even an explicit nil
-func (o *IntegrationTypeOptionTypeInner) UnsetVisibleOnCode() {
-	o.VisibleOnCode.Unset()
 }
 
 // GetRequireOnCode returns the RequireOnCode field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1420,28 +925,9 @@ func (o *IntegrationTypeOptionTypeInner) GetRequireOnCodeOk() (*bool, bool) {
 	return o.RequireOnCode.Get(), o.RequireOnCode.IsSet()
 }
 
-// IsSetRequireOnCode returns a boolean if a field has been set.
-func (o *IntegrationTypeOptionTypeInner) IsSetRequireOnCode() bool {
-	if o != nil && o.RequireOnCode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRequireOnCode gets a reference to the given NullableBool and assigns it to the RequireOnCode field.
 func (o *IntegrationTypeOptionTypeInner) SetRequireOnCode(v bool) {
 	o.RequireOnCode.Set(&v)
-}
-
-// SetRequireOnCodeNil sets the value for RequireOnCode to be an explicit nil
-func (o *IntegrationTypeOptionTypeInner) SetRequireOnCodeNil() {
-	o.RequireOnCode.Set(nil)
-}
-
-// UnsetRequireOnCode ensures that no value is present for RequireOnCode, not even an explicit nil
-func (o *IntegrationTypeOptionTypeInner) UnsetRequireOnCode() {
-	o.RequireOnCode.Unset()
 }
 
 // GetContextualDefault returns the ContextualDefault field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1463,28 +949,9 @@ func (o *IntegrationTypeOptionTypeInner) GetContextualDefaultOk() (*bool, bool) 
 	return o.ContextualDefault.Get(), o.ContextualDefault.IsSet()
 }
 
-// IsSetContextualDefault returns a boolean if a field has been set.
-func (o *IntegrationTypeOptionTypeInner) IsSetContextualDefault() bool {
-	if o != nil && o.ContextualDefault.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetContextualDefault gets a reference to the given NullableBool and assigns it to the ContextualDefault field.
 func (o *IntegrationTypeOptionTypeInner) SetContextualDefault(v bool) {
 	o.ContextualDefault.Set(&v)
-}
-
-// SetContextualDefaultNil sets the value for ContextualDefault to be an explicit nil
-func (o *IntegrationTypeOptionTypeInner) SetContextualDefaultNil() {
-	o.ContextualDefault.Set(nil)
-}
-
-// UnsetContextualDefault ensures that no value is present for ContextualDefault, not even an explicit nil
-func (o *IntegrationTypeOptionTypeInner) UnsetContextualDefault() {
-	o.ContextualDefault.Unset()
 }
 
 // GetDisplayValueOnDetails returns the DisplayValueOnDetails field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1506,28 +973,9 @@ func (o *IntegrationTypeOptionTypeInner) GetDisplayValueOnDetailsOk() (*bool, bo
 	return o.DisplayValueOnDetails.Get(), o.DisplayValueOnDetails.IsSet()
 }
 
-// IsSetDisplayValueOnDetails returns a boolean if a field has been set.
-func (o *IntegrationTypeOptionTypeInner) IsSetDisplayValueOnDetails() bool {
-	if o != nil && o.DisplayValueOnDetails.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDisplayValueOnDetails gets a reference to the given NullableBool and assigns it to the DisplayValueOnDetails field.
 func (o *IntegrationTypeOptionTypeInner) SetDisplayValueOnDetails(v bool) {
 	o.DisplayValueOnDetails.Set(&v)
-}
-
-// SetDisplayValueOnDetailsNil sets the value for DisplayValueOnDetails to be an explicit nil
-func (o *IntegrationTypeOptionTypeInner) SetDisplayValueOnDetailsNil() {
-	o.DisplayValueOnDetails.Set(nil)
-}
-
-// UnsetDisplayValueOnDetails ensures that no value is present for DisplayValueOnDetails, not even an explicit nil
-func (o *IntegrationTypeOptionTypeInner) UnsetDisplayValueOnDetails() {
-	o.DisplayValueOnDetails.Unset()
 }
 
 // GetShowOnCreate returns the ShowOnCreate field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1549,28 +997,9 @@ func (o *IntegrationTypeOptionTypeInner) GetShowOnCreateOk() (*bool, bool) {
 	return o.ShowOnCreate.Get(), o.ShowOnCreate.IsSet()
 }
 
-// IsSetShowOnCreate returns a boolean if a field has been set.
-func (o *IntegrationTypeOptionTypeInner) IsSetShowOnCreate() bool {
-	if o != nil && o.ShowOnCreate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetShowOnCreate gets a reference to the given NullableBool and assigns it to the ShowOnCreate field.
 func (o *IntegrationTypeOptionTypeInner) SetShowOnCreate(v bool) {
 	o.ShowOnCreate.Set(&v)
-}
-
-// SetShowOnCreateNil sets the value for ShowOnCreate to be an explicit nil
-func (o *IntegrationTypeOptionTypeInner) SetShowOnCreateNil() {
-	o.ShowOnCreate.Set(nil)
-}
-
-// UnsetShowOnCreate ensures that no value is present for ShowOnCreate, not even an explicit nil
-func (o *IntegrationTypeOptionTypeInner) UnsetShowOnCreate() {
-	o.ShowOnCreate.Unset()
 }
 
 // GetShowOnEdit returns the ShowOnEdit field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1592,28 +1021,9 @@ func (o *IntegrationTypeOptionTypeInner) GetShowOnEditOk() (*bool, bool) {
 	return o.ShowOnEdit.Get(), o.ShowOnEdit.IsSet()
 }
 
-// IsSetShowOnEdit returns a boolean if a field has been set.
-func (o *IntegrationTypeOptionTypeInner) IsSetShowOnEdit() bool {
-	if o != nil && o.ShowOnEdit.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetShowOnEdit gets a reference to the given NullableBool and assigns it to the ShowOnEdit field.
 func (o *IntegrationTypeOptionTypeInner) SetShowOnEdit(v bool) {
 	o.ShowOnEdit.Set(&v)
-}
-
-// SetShowOnEditNil sets the value for ShowOnEdit to be an explicit nil
-func (o *IntegrationTypeOptionTypeInner) SetShowOnEditNil() {
-	o.ShowOnEdit.Set(nil)
-}
-
-// UnsetShowOnEdit ensures that no value is present for ShowOnEdit, not even an explicit nil
-func (o *IntegrationTypeOptionTypeInner) UnsetShowOnEdit() {
-	o.ShowOnEdit.Unset()
 }
 
 // GetLocalCredential returns the LocalCredential field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1635,28 +1045,9 @@ func (o *IntegrationTypeOptionTypeInner) GetLocalCredentialOk() (*bool, bool) {
 	return o.LocalCredential.Get(), o.LocalCredential.IsSet()
 }
 
-// IsSetLocalCredential returns a boolean if a field has been set.
-func (o *IntegrationTypeOptionTypeInner) IsSetLocalCredential() bool {
-	if o != nil && o.LocalCredential.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLocalCredential gets a reference to the given NullableBool and assigns it to the LocalCredential field.
 func (o *IntegrationTypeOptionTypeInner) SetLocalCredential(v bool) {
 	o.LocalCredential.Set(&v)
-}
-
-// SetLocalCredentialNil sets the value for LocalCredential to be an explicit nil
-func (o *IntegrationTypeOptionTypeInner) SetLocalCredentialNil() {
-	o.LocalCredential.Set(nil)
-}
-
-// UnsetLocalCredential ensures that no value is present for LocalCredential, not even an explicit nil
-func (o *IntegrationTypeOptionTypeInner) UnsetLocalCredential() {
-	o.LocalCredential.Unset()
 }
 
 func (o IntegrationTypeOptionTypeInner) MarshalJSON() ([]byte, error) {

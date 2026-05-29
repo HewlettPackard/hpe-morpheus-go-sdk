@@ -62,15 +62,6 @@ func (o *AddPolicies200Response) GetPolicyOk() (*AddPolicies200ResponseAllOfPoli
 	return o.Policy, true
 }
 
-// IsSetPolicy returns a boolean if a field has been set.
-func (o *AddPolicies200Response) IsSetPolicy() bool {
-	if o != nil && !IsNil(o.Policy) {
-		return true
-	}
-
-	return false
-}
-
 // SetPolicy gets a reference to the given AddPolicies200ResponseAllOfPolicy and assigns it to the Policy field.
 func (o *AddPolicies200Response) SetPolicy(v AddPolicies200ResponseAllOfPolicy) {
 	o.Policy = &v
@@ -92,15 +83,6 @@ func (o *AddPolicies200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *AddPolicies200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

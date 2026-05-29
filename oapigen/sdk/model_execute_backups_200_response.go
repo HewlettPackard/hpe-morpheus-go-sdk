@@ -62,15 +62,6 @@ func (o *ExecuteBackups200Response) GetBackupOk() (*ExecuteBackups200ResponseAll
 	return o.Backup, true
 }
 
-// IsSetBackup returns a boolean if a field has been set.
-func (o *ExecuteBackups200Response) IsSetBackup() bool {
-	if o != nil && !IsNil(o.Backup) {
-		return true
-	}
-
-	return false
-}
-
 // SetBackup gets a reference to the given ExecuteBackups200ResponseAllOfBackup and assigns it to the Backup field.
 func (o *ExecuteBackups200Response) SetBackup(v ExecuteBackups200ResponseAllOfBackup) {
 	o.Backup = &v
@@ -92,15 +83,6 @@ func (o *ExecuteBackups200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *ExecuteBackups200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

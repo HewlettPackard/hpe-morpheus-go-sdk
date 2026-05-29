@@ -74,15 +74,6 @@ func (o *GetContainer200ResponseContainerStats) GetTsOk() (*string, bool) {
 	return o.Ts, true
 }
 
-// IsSetTs returns a boolean if a field has been set.
-func (o *GetContainer200ResponseContainerStats) IsSetTs() bool {
-	if o != nil && !IsNil(o.Ts) {
-		return true
-	}
-
-	return false
-}
-
 // SetTs gets a reference to the given string and assigns it to the Ts field.
 func (o *GetContainer200ResponseContainerStats) SetTs(v string) {
 	o.Ts = &v
@@ -104,15 +95,6 @@ func (o *GetContainer200ResponseContainerStats) GetRunningOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Running, true
-}
-
-// IsSetRunning returns a boolean if a field has been set.
-func (o *GetContainer200ResponseContainerStats) IsSetRunning() bool {
-	if o != nil && !IsNil(o.Running) {
-		return true
-	}
-
-	return false
 }
 
 // SetRunning gets a reference to the given bool and assigns it to the Running field.
@@ -138,15 +120,6 @@ func (o *GetContainer200ResponseContainerStats) GetUserCpuUsageOk() (*float32, b
 	return o.UserCpuUsage, true
 }
 
-// IsSetUserCpuUsage returns a boolean if a field has been set.
-func (o *GetContainer200ResponseContainerStats) IsSetUserCpuUsage() bool {
-	if o != nil && !IsNil(o.UserCpuUsage) {
-		return true
-	}
-
-	return false
-}
-
 // SetUserCpuUsage gets a reference to the given float32 and assigns it to the UserCpuUsage field.
 func (o *GetContainer200ResponseContainerStats) SetUserCpuUsage(v float32) {
 	o.UserCpuUsage = &v
@@ -168,15 +141,6 @@ func (o *GetContainer200ResponseContainerStats) GetSystemCpuUsageOk() (*float32,
 		return nil, false
 	}
 	return o.SystemCpuUsage, true
-}
-
-// IsSetSystemCpuUsage returns a boolean if a field has been set.
-func (o *GetContainer200ResponseContainerStats) IsSetSystemCpuUsage() bool {
-	if o != nil && !IsNil(o.SystemCpuUsage) {
-		return true
-	}
-
-	return false
 }
 
 // SetSystemCpuUsage gets a reference to the given float32 and assigns it to the SystemCpuUsage field.
@@ -202,15 +166,6 @@ func (o *GetContainer200ResponseContainerStats) GetUsedMemoryOk() (*int32, bool)
 	return o.UsedMemory, true
 }
 
-// IsSetUsedMemory returns a boolean if a field has been set.
-func (o *GetContainer200ResponseContainerStats) IsSetUsedMemory() bool {
-	if o != nil && !IsNil(o.UsedMemory) {
-		return true
-	}
-
-	return false
-}
-
 // SetUsedMemory gets a reference to the given int32 and assigns it to the UsedMemory field.
 func (o *GetContainer200ResponseContainerStats) SetUsedMemory(v int32) {
 	o.UsedMemory = &v
@@ -232,15 +187,6 @@ func (o *GetContainer200ResponseContainerStats) GetMaxMemoryOk() (*int32, bool) 
 		return nil, false
 	}
 	return o.MaxMemory, true
-}
-
-// IsSetMaxMemory returns a boolean if a field has been set.
-func (o *GetContainer200ResponseContainerStats) IsSetMaxMemory() bool {
-	if o != nil && !IsNil(o.MaxMemory) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxMemory gets a reference to the given int32 and assigns it to the MaxMemory field.
@@ -266,15 +212,6 @@ func (o *GetContainer200ResponseContainerStats) GetCacheMemoryOk() (*int32, bool
 	return o.CacheMemory, true
 }
 
-// IsSetCacheMemory returns a boolean if a field has been set.
-func (o *GetContainer200ResponseContainerStats) IsSetCacheMemory() bool {
-	if o != nil && !IsNil(o.CacheMemory) {
-		return true
-	}
-
-	return false
-}
-
 // SetCacheMemory gets a reference to the given int32 and assigns it to the CacheMemory field.
 func (o *GetContainer200ResponseContainerStats) SetCacheMemory(v int32) {
 	o.CacheMemory = &v
@@ -296,15 +233,6 @@ func (o *GetContainer200ResponseContainerStats) GetMaxStorageOk() (*int32, bool)
 		return nil, false
 	}
 	return o.MaxStorage, true
-}
-
-// IsSetMaxStorage returns a boolean if a field has been set.
-func (o *GetContainer200ResponseContainerStats) IsSetMaxStorage() bool {
-	if o != nil && !IsNil(o.MaxStorage) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxStorage gets a reference to the given int32 and assigns it to the MaxStorage field.
@@ -330,15 +258,6 @@ func (o *GetContainer200ResponseContainerStats) GetUsedStorageOk() (*int32, bool
 	return o.UsedStorage, true
 }
 
-// IsSetUsedStorage returns a boolean if a field has been set.
-func (o *GetContainer200ResponseContainerStats) IsSetUsedStorage() bool {
-	if o != nil && !IsNil(o.UsedStorage) {
-		return true
-	}
-
-	return false
-}
-
 // SetUsedStorage gets a reference to the given int32 and assigns it to the UsedStorage field.
 func (o *GetContainer200ResponseContainerStats) SetUsedStorage(v int32) {
 	o.UsedStorage = &v
@@ -360,15 +279,6 @@ func (o *GetContainer200ResponseContainerStats) GetReadIOPSOk() (*int32, bool) {
 		return nil, false
 	}
 	return o.ReadIOPS, true
-}
-
-// IsSetReadIOPS returns a boolean if a field has been set.
-func (o *GetContainer200ResponseContainerStats) IsSetReadIOPS() bool {
-	if o != nil && !IsNil(o.ReadIOPS) {
-		return true
-	}
-
-	return false
 }
 
 // SetReadIOPS gets a reference to the given int32 and assigns it to the ReadIOPS field.
@@ -394,15 +304,6 @@ func (o *GetContainer200ResponseContainerStats) GetWriteIOPSOk() (*float32, bool
 	return o.WriteIOPS, true
 }
 
-// IsSetWriteIOPS returns a boolean if a field has been set.
-func (o *GetContainer200ResponseContainerStats) IsSetWriteIOPS() bool {
-	if o != nil && !IsNil(o.WriteIOPS) {
-		return true
-	}
-
-	return false
-}
-
 // SetWriteIOPS gets a reference to the given float32 and assigns it to the WriteIOPS field.
 func (o *GetContainer200ResponseContainerStats) SetWriteIOPS(v float32) {
 	o.WriteIOPS = &v
@@ -424,15 +325,6 @@ func (o *GetContainer200ResponseContainerStats) GetTotalIOPSOk() (*float32, bool
 		return nil, false
 	}
 	return o.TotalIOPS, true
-}
-
-// IsSetTotalIOPS returns a boolean if a field has been set.
-func (o *GetContainer200ResponseContainerStats) IsSetTotalIOPS() bool {
-	if o != nil && !IsNil(o.TotalIOPS) {
-		return true
-	}
-
-	return false
 }
 
 // SetTotalIOPS gets a reference to the given float32 and assigns it to the TotalIOPS field.
@@ -458,15 +350,6 @@ func (o *GetContainer200ResponseContainerStats) GetNetTxUsageOk() (*int32, bool)
 	return o.NetTxUsage, true
 }
 
-// IsSetNetTxUsage returns a boolean if a field has been set.
-func (o *GetContainer200ResponseContainerStats) IsSetNetTxUsage() bool {
-	if o != nil && !IsNil(o.NetTxUsage) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetTxUsage gets a reference to the given int32 and assigns it to the NetTxUsage field.
 func (o *GetContainer200ResponseContainerStats) SetNetTxUsage(v int32) {
 	o.NetTxUsage = &v
@@ -488,15 +371,6 @@ func (o *GetContainer200ResponseContainerStats) GetNetRxUsageOk() (*int32, bool)
 		return nil, false
 	}
 	return o.NetRxUsage, true
-}
-
-// IsSetNetRxUsage returns a boolean if a field has been set.
-func (o *GetContainer200ResponseContainerStats) IsSetNetRxUsage() bool {
-	if o != nil && !IsNil(o.NetRxUsage) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetRxUsage gets a reference to the given int32 and assigns it to the NetRxUsage field.

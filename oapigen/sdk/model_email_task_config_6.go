@@ -72,28 +72,9 @@ func (o *EmailTaskConfig6) GetLocalScriptGitIdOk() (*string, bool) {
 	return o.LocalScriptGitId.Get(), o.LocalScriptGitId.IsSet()
 }
 
-// IsSetLocalScriptGitId returns a boolean if a field has been set.
-func (o *EmailTaskConfig6) IsSetLocalScriptGitId() bool {
-	if o != nil && o.LocalScriptGitId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLocalScriptGitId gets a reference to the given NullableString and assigns it to the LocalScriptGitId field.
 func (o *EmailTaskConfig6) SetLocalScriptGitId(v string) {
 	o.LocalScriptGitId.Set(&v)
-}
-
-// SetLocalScriptGitIdNil sets the value for LocalScriptGitId to be an explicit nil
-func (o *EmailTaskConfig6) SetLocalScriptGitIdNil() {
-	o.LocalScriptGitId.Set(nil)
-}
-
-// UnsetLocalScriptGitId ensures that no value is present for LocalScriptGitId, not even an explicit nil
-func (o *EmailTaskConfig6) UnsetLocalScriptGitId() {
-	o.LocalScriptGitId.Unset()
 }
 
 // GetEmailSkipTemplate returns the EmailSkipTemplate field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -115,28 +96,9 @@ func (o *EmailTaskConfig6) GetEmailSkipTemplateOk() (*string, bool) {
 	return o.EmailSkipTemplate.Get(), o.EmailSkipTemplate.IsSet()
 }
 
-// IsSetEmailSkipTemplate returns a boolean if a field has been set.
-func (o *EmailTaskConfig6) IsSetEmailSkipTemplate() bool {
-	if o != nil && o.EmailSkipTemplate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetEmailSkipTemplate gets a reference to the given NullableString and assigns it to the EmailSkipTemplate field.
 func (o *EmailTaskConfig6) SetEmailSkipTemplate(v string) {
 	o.EmailSkipTemplate.Set(&v)
-}
-
-// SetEmailSkipTemplateNil sets the value for EmailSkipTemplate to be an explicit nil
-func (o *EmailTaskConfig6) SetEmailSkipTemplateNil() {
-	o.EmailSkipTemplate.Set(nil)
-}
-
-// UnsetEmailSkipTemplate ensures that no value is present for EmailSkipTemplate, not even an explicit nil
-func (o *EmailTaskConfig6) UnsetEmailSkipTemplate() {
-	o.EmailSkipTemplate.Unset()
 }
 
 // GetUsername returns the Username field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -158,28 +120,9 @@ func (o *EmailTaskConfig6) GetUsernameOk() (*string, bool) {
 	return o.Username.Get(), o.Username.IsSet()
 }
 
-// IsSetUsername returns a boolean if a field has been set.
-func (o *EmailTaskConfig6) IsSetUsername() bool {
-	if o != nil && o.Username.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUsername gets a reference to the given NullableString and assigns it to the Username field.
 func (o *EmailTaskConfig6) SetUsername(v string) {
 	o.Username.Set(&v)
-}
-
-// SetUsernameNil sets the value for Username to be an explicit nil
-func (o *EmailTaskConfig6) SetUsernameNil() {
-	o.Username.Set(nil)
-}
-
-// UnsetUsername ensures that no value is present for Username, not even an explicit nil
-func (o *EmailTaskConfig6) UnsetUsername() {
-	o.Username.Unset()
 }
 
 // GetEmailSubject returns the EmailSubject field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -201,28 +144,9 @@ func (o *EmailTaskConfig6) GetEmailSubjectOk() (*string, bool) {
 	return o.EmailSubject.Get(), o.EmailSubject.IsSet()
 }
 
-// IsSetEmailSubject returns a boolean if a field has been set.
-func (o *EmailTaskConfig6) IsSetEmailSubject() bool {
-	if o != nil && o.EmailSubject.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetEmailSubject gets a reference to the given NullableString and assigns it to the EmailSubject field.
 func (o *EmailTaskConfig6) SetEmailSubject(v string) {
 	o.EmailSubject.Set(&v)
-}
-
-// SetEmailSubjectNil sets the value for EmailSubject to be an explicit nil
-func (o *EmailTaskConfig6) SetEmailSubjectNil() {
-	o.EmailSubject.Set(nil)
-}
-
-// UnsetEmailSubject ensures that no value is present for EmailSubject, not even an explicit nil
-func (o *EmailTaskConfig6) UnsetEmailSubject() {
-	o.EmailSubject.Unset()
 }
 
 // GetHost returns the Host field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -244,28 +168,9 @@ func (o *EmailTaskConfig6) GetHostOk() (*string, bool) {
 	return o.Host.Get(), o.Host.IsSet()
 }
 
-// IsSetHost returns a boolean if a field has been set.
-func (o *EmailTaskConfig6) IsSetHost() bool {
-	if o != nil && o.Host.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetHost gets a reference to the given NullableString and assigns it to the Host field.
 func (o *EmailTaskConfig6) SetHost(v string) {
 	o.Host.Set(&v)
-}
-
-// SetHostNil sets the value for Host to be an explicit nil
-func (o *EmailTaskConfig6) SetHostNil() {
-	o.Host.Set(nil)
-}
-
-// UnsetHost ensures that no value is present for Host, not even an explicit nil
-func (o *EmailTaskConfig6) UnsetHost() {
-	o.Host.Unset()
 }
 
 // GetPassword returns the Password field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -287,28 +192,9 @@ func (o *EmailTaskConfig6) GetPasswordOk() (*string, bool) {
 	return o.Password.Get(), o.Password.IsSet()
 }
 
-// IsSetPassword returns a boolean if a field has been set.
-func (o *EmailTaskConfig6) IsSetPassword() bool {
-	if o != nil && o.Password.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPassword gets a reference to the given NullableString and assigns it to the Password field.
 func (o *EmailTaskConfig6) SetPassword(v string) {
 	o.Password.Set(&v)
-}
-
-// SetPasswordNil sets the value for Password to be an explicit nil
-func (o *EmailTaskConfig6) SetPasswordNil() {
-	o.Password.Set(nil)
-}
-
-// UnsetPassword ensures that no value is present for Password, not even an explicit nil
-func (o *EmailTaskConfig6) UnsetPassword() {
-	o.Password.Unset()
 }
 
 // GetPasswordHash returns the PasswordHash field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -330,28 +216,9 @@ func (o *EmailTaskConfig6) GetPasswordHashOk() (*string, bool) {
 	return o.PasswordHash.Get(), o.PasswordHash.IsSet()
 }
 
-// IsSetPasswordHash returns a boolean if a field has been set.
-func (o *EmailTaskConfig6) IsSetPasswordHash() bool {
-	if o != nil && o.PasswordHash.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPasswordHash gets a reference to the given NullableString and assigns it to the PasswordHash field.
 func (o *EmailTaskConfig6) SetPasswordHash(v string) {
 	o.PasswordHash.Set(&v)
-}
-
-// SetPasswordHashNil sets the value for PasswordHash to be an explicit nil
-func (o *EmailTaskConfig6) SetPasswordHashNil() {
-	o.PasswordHash.Set(nil)
-}
-
-// UnsetPasswordHash ensures that no value is present for PasswordHash, not even an explicit nil
-func (o *EmailTaskConfig6) UnsetPasswordHash() {
-	o.PasswordHash.Unset()
 }
 
 // GetEmailAddress returns the EmailAddress field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -373,28 +240,9 @@ func (o *EmailTaskConfig6) GetEmailAddressOk() (*string, bool) {
 	return o.EmailAddress.Get(), o.EmailAddress.IsSet()
 }
 
-// IsSetEmailAddress returns a boolean if a field has been set.
-func (o *EmailTaskConfig6) IsSetEmailAddress() bool {
-	if o != nil && o.EmailAddress.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetEmailAddress gets a reference to the given NullableString and assigns it to the EmailAddress field.
 func (o *EmailTaskConfig6) SetEmailAddress(v string) {
 	o.EmailAddress.Set(&v)
-}
-
-// SetEmailAddressNil sets the value for EmailAddress to be an explicit nil
-func (o *EmailTaskConfig6) SetEmailAddressNil() {
-	o.EmailAddress.Set(nil)
-}
-
-// UnsetEmailAddress ensures that no value is present for EmailAddress, not even an explicit nil
-func (o *EmailTaskConfig6) UnsetEmailAddress() {
-	o.EmailAddress.Unset()
 }
 
 // GetPort returns the Port field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -416,28 +264,9 @@ func (o *EmailTaskConfig6) GetPortOk() (*string, bool) {
 	return o.Port.Get(), o.Port.IsSet()
 }
 
-// IsSetPort returns a boolean if a field has been set.
-func (o *EmailTaskConfig6) IsSetPort() bool {
-	if o != nil && o.Port.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPort gets a reference to the given NullableString and assigns it to the Port field.
 func (o *EmailTaskConfig6) SetPort(v string) {
 	o.Port.Set(&v)
-}
-
-// SetPortNil sets the value for Port to be an explicit nil
-func (o *EmailTaskConfig6) SetPortNil() {
-	o.Port.Set(nil)
-}
-
-// UnsetPort ensures that no value is present for Port, not even an explicit nil
-func (o *EmailTaskConfig6) UnsetPort() {
-	o.Port.Unset()
 }
 
 // GetSshKey returns the SshKey field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -459,28 +288,9 @@ func (o *EmailTaskConfig6) GetSshKeyOk() (*string, bool) {
 	return o.SshKey.Get(), o.SshKey.IsSet()
 }
 
-// IsSetSshKey returns a boolean if a field has been set.
-func (o *EmailTaskConfig6) IsSetSshKey() bool {
-	if o != nil && o.SshKey.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSshKey gets a reference to the given NullableString and assigns it to the SshKey field.
 func (o *EmailTaskConfig6) SetSshKey(v string) {
 	o.SshKey.Set(&v)
-}
-
-// SetSshKeyNil sets the value for SshKey to be an explicit nil
-func (o *EmailTaskConfig6) SetSshKeyNil() {
-	o.SshKey.Set(nil)
-}
-
-// UnsetSshKey ensures that no value is present for SshKey, not even an explicit nil
-func (o *EmailTaskConfig6) UnsetSshKey() {
-	o.SshKey.Unset()
 }
 
 // GetLocalScriptGitRef returns the LocalScriptGitRef field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -502,28 +312,9 @@ func (o *EmailTaskConfig6) GetLocalScriptGitRefOk() (*string, bool) {
 	return o.LocalScriptGitRef.Get(), o.LocalScriptGitRef.IsSet()
 }
 
-// IsSetLocalScriptGitRef returns a boolean if a field has been set.
-func (o *EmailTaskConfig6) IsSetLocalScriptGitRef() bool {
-	if o != nil && o.LocalScriptGitRef.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLocalScriptGitRef gets a reference to the given NullableString and assigns it to the LocalScriptGitRef field.
 func (o *EmailTaskConfig6) SetLocalScriptGitRef(v string) {
 	o.LocalScriptGitRef.Set(&v)
-}
-
-// SetLocalScriptGitRefNil sets the value for LocalScriptGitRef to be an explicit nil
-func (o *EmailTaskConfig6) SetLocalScriptGitRefNil() {
-	o.LocalScriptGitRef.Set(nil)
-}
-
-// UnsetLocalScriptGitRef ensures that no value is present for LocalScriptGitRef, not even an explicit nil
-func (o *EmailTaskConfig6) UnsetLocalScriptGitRef() {
-	o.LocalScriptGitRef.Unset()
 }
 
 func (o EmailTaskConfig6) MarshalJSON() ([]byte, error) {

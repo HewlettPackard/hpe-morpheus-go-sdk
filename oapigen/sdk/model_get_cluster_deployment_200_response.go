@@ -61,15 +61,6 @@ func (o *GetClusterDeployment200Response) GetResourceOk() (*GetClusterDeployment
 	return o.Resource, true
 }
 
-// IsSetResource returns a boolean if a field has been set.
-func (o *GetClusterDeployment200Response) IsSetResource() bool {
-	if o != nil && !IsNil(o.Resource) {
-		return true
-	}
-
-	return false
-}
-
 // SetResource gets a reference to the given GetClusterDeployment200ResponseResource and assigns it to the Resource field.
 func (o *GetClusterDeployment200Response) SetResource(v GetClusterDeployment200ResponseResource) {
 	o.Resource = &v

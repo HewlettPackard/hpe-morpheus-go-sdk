@@ -64,15 +64,6 @@ func (o *AddStorageBucketsRequestStorageBucketConfigOneOf4) GetHostOk() (*string
 	return o.Host, true
 }
 
-// IsSetHost returns a boolean if a field has been set.
-func (o *AddStorageBucketsRequestStorageBucketConfigOneOf4) IsSetHost() bool {
-	if o != nil && !IsNil(o.Host) {
-		return true
-	}
-
-	return false
-}
-
 // SetHost gets a reference to the given string and assigns it to the Host field.
 func (o *AddStorageBucketsRequestStorageBucketConfigOneOf4) SetHost(v string) {
 	o.Host = &v
@@ -94,15 +85,6 @@ func (o *AddStorageBucketsRequestStorageBucketConfigOneOf4) GetExportFolderOk() 
 		return nil, false
 	}
 	return o.ExportFolder, true
-}
-
-// IsSetExportFolder returns a boolean if a field has been set.
-func (o *AddStorageBucketsRequestStorageBucketConfigOneOf4) IsSetExportFolder() bool {
-	if o != nil && !IsNil(o.ExportFolder) {
-		return true
-	}
-
-	return false
 }
 
 // SetExportFolder gets a reference to the given string and assigns it to the ExportFolder field.

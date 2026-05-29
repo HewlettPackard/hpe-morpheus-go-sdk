@@ -72,15 +72,6 @@ func (o *AddImageBuild200Response) GetImageBuildOk() (*AddImageBuild200ResponseA
 	return o.ImageBuild, true
 }
 
-// IsSetImageBuild returns a boolean if a field has been set.
-func (o *AddImageBuild200Response) IsSetImageBuild() bool {
-	if o != nil && !IsNil(o.ImageBuild) {
-		return true
-	}
-
-	return false
-}
-
 // SetImageBuild gets a reference to the given AddImageBuild200ResponseAllOfImageBuild and assigns it to the ImageBuild field.
 func (o *AddImageBuild200Response) SetImageBuild(v AddImageBuild200ResponseAllOfImageBuild) {
 	o.ImageBuild = &v
@@ -105,28 +96,9 @@ func (o *AddImageBuild200Response) GetErrorCodeOk() (*string, bool) {
 	return o.ErrorCode.Get(), o.ErrorCode.IsSet()
 }
 
-// IsSetErrorCode returns a boolean if a field has been set.
-func (o *AddImageBuild200Response) IsSetErrorCode() bool {
-	if o != nil && o.ErrorCode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetErrorCode gets a reference to the given NullableString and assigns it to the ErrorCode field.
 func (o *AddImageBuild200Response) SetErrorCode(v string) {
 	o.ErrorCode.Set(&v)
-}
-
-// SetErrorCodeNil sets the value for ErrorCode to be an explicit nil
-func (o *AddImageBuild200Response) SetErrorCodeNil() {
-	o.ErrorCode.Set(nil)
-}
-
-// UnsetErrorCode ensures that no value is present for ErrorCode, not even an explicit nil
-func (o *AddImageBuild200Response) UnsetErrorCode() {
-	o.ErrorCode.Unset()
 }
 
 // GetSuccess returns the Success field value if set, zero value otherwise.
@@ -145,15 +117,6 @@ func (o *AddImageBuild200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *AddImageBuild200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.
@@ -180,28 +143,9 @@ func (o *AddImageBuild200Response) GetMsgOk() (*string, bool) {
 	return o.Msg.Get(), o.Msg.IsSet()
 }
 
-// IsSetMsg returns a boolean if a field has been set.
-func (o *AddImageBuild200Response) IsSetMsg() bool {
-	if o != nil && o.Msg.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMsg gets a reference to the given NullableString and assigns it to the Msg field.
 func (o *AddImageBuild200Response) SetMsg(v string) {
 	o.Msg.Set(&v)
-}
-
-// SetMsgNil sets the value for Msg to be an explicit nil
-func (o *AddImageBuild200Response) SetMsgNil() {
-	o.Msg.Set(nil)
-}
-
-// UnsetMsg ensures that no value is present for Msg, not even an explicit nil
-func (o *AddImageBuild200Response) UnsetMsg() {
-	o.Msg.Unset()
 }
 
 // GetErrors returns the Errors field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -221,15 +165,6 @@ func (o *AddImageBuild200Response) GetErrorsOk() (map[string]interface{}, bool) 
 		return map[string]interface{}{}, false
 	}
 	return o.Errors, true
-}
-
-// IsSetErrors returns a boolean if a field has been set.
-func (o *AddImageBuild200Response) IsSetErrors() bool {
-	if o != nil && !IsNil(o.Errors) {
-		return true
-	}
-
-	return false
 }
 
 // SetErrors gets a reference to the given map[string]interface{} and assigns it to the Errors field.

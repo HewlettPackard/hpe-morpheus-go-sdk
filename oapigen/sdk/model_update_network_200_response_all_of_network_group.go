@@ -64,15 +64,6 @@ func (o *UpdateNetwork200ResponseAllOfNetworkGroup) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetworkGroup) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *UpdateNetwork200ResponseAllOfNetworkGroup) SetId(v int64) {
 	o.Id = &v
@@ -97,28 +88,9 @@ func (o *UpdateNetwork200ResponseAllOfNetworkGroup) GetNameOk() (*string, bool) 
 	return o.Name.Get(), o.Name.IsSet()
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateNetwork200ResponseAllOfNetworkGroup) IsSetName() bool {
-	if o != nil && o.Name.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given NullableString and assigns it to the Name field.
 func (o *UpdateNetwork200ResponseAllOfNetworkGroup) SetName(v string) {
 	o.Name.Set(&v)
-}
-
-// SetNameNil sets the value for Name to be an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetworkGroup) SetNameNil() {
-	o.Name.Set(nil)
-}
-
-// UnsetName ensures that no value is present for Name, not even an explicit nil
-func (o *UpdateNetwork200ResponseAllOfNetworkGroup) UnsetName() {
-	o.Name.Unset()
 }
 
 func (o UpdateNetwork200ResponseAllOfNetworkGroup) MarshalJSON() ([]byte, error) {

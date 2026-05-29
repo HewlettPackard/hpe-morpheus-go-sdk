@@ -63,15 +63,6 @@ func (o *ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInne
 	return o.Url, true
 }
 
-// IsSetUrl returns a boolean if a field has been set.
-func (o *ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner) IsSetUrl() bool {
-	if o != nil && !IsNil(o.Url) {
-		return true
-	}
-
-	return false
-}
-
 // SetUrl gets a reference to the given string and assigns it to the Url field.
 func (o *ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner) SetUrl(v string) {
 	o.Url = &v
@@ -95,15 +86,6 @@ func (o *ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInne
 	return o.Label, true
 }
 
-// IsSetLabel returns a boolean if a field has been set.
-func (o *ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner) IsSetLabel() bool {
-	if o != nil && !IsNil(o.Label) {
-		return true
-	}
-
-	return false
-}
-
 // SetLabel gets a reference to the given string and assigns it to the Label field.
 func (o *ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner) SetLabel(v string) {
 	o.Label = &v
@@ -125,15 +107,6 @@ func (o *ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInne
 		return nil, false
 	}
 	return o.LabelCode, true
-}
-
-// IsSetLabelCode returns a boolean if a field has been set.
-func (o *ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner) IsSetLabelCode() bool {
-	if o != nil && !IsNil(o.LabelCode) {
-		return true
-	}
-
-	return false
 }
 
 // SetLabelCode gets a reference to the given string and assigns it to the LabelCode field.

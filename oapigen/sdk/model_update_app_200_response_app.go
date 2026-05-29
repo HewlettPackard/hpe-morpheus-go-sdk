@@ -84,15 +84,6 @@ func (o *UpdateApp200ResponseApp) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *UpdateApp200ResponseApp) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *UpdateApp200ResponseApp) SetId(v int64) {
 	o.Id = &v
@@ -114,15 +105,6 @@ func (o *UpdateApp200ResponseApp) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateApp200ResponseApp) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -148,15 +130,6 @@ func (o *UpdateApp200ResponseApp) GetDescriptionOk() (*string, bool) {
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *UpdateApp200ResponseApp) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *UpdateApp200ResponseApp) SetDescription(v string) {
 	o.Description = &v
@@ -178,15 +151,6 @@ func (o *UpdateApp200ResponseApp) GetLabelsOk() ([]string, bool) {
 		return nil, false
 	}
 	return o.Labels, true
-}
-
-// IsSetLabels returns a boolean if a field has been set.
-func (o *UpdateApp200ResponseApp) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
 }
 
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
@@ -212,15 +176,6 @@ func (o *UpdateApp200ResponseApp) GetEnvironmentOk() (*string, bool) {
 	return o.Environment, true
 }
 
-// IsSetEnvironment returns a boolean if a field has been set.
-func (o *UpdateApp200ResponseApp) IsSetEnvironment() bool {
-	if o != nil && !IsNil(o.Environment) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnvironment gets a reference to the given string and assigns it to the Environment field.
 func (o *UpdateApp200ResponseApp) SetEnvironment(v string) {
 	o.Environment = &v
@@ -242,15 +197,6 @@ func (o *UpdateApp200ResponseApp) GetAccountIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.AccountId, true
-}
-
-// IsSetAccountId returns a boolean if a field has been set.
-func (o *UpdateApp200ResponseApp) IsSetAccountId() bool {
-	if o != nil && !IsNil(o.AccountId) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccountId gets a reference to the given int64 and assigns it to the AccountId field.
@@ -276,15 +222,6 @@ func (o *UpdateApp200ResponseApp) GetAccountOk() (*UpdateApp200ResponseAppAccoun
 	return o.Account, true
 }
 
-// IsSetAccount returns a boolean if a field has been set.
-func (o *UpdateApp200ResponseApp) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccount gets a reference to the given UpdateApp200ResponseAppAccount and assigns it to the Account field.
 func (o *UpdateApp200ResponseApp) SetAccount(v UpdateApp200ResponseAppAccount) {
 	o.Account = &v
@@ -306,15 +243,6 @@ func (o *UpdateApp200ResponseApp) GetOwnerOk() (*UpdateApp200ResponseAppOwner, b
 		return nil, false
 	}
 	return o.Owner, true
-}
-
-// IsSetOwner returns a boolean if a field has been set.
-func (o *UpdateApp200ResponseApp) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
-		return true
-	}
-
-	return false
 }
 
 // SetOwner gets a reference to the given UpdateApp200ResponseAppOwner and assigns it to the Owner field.
@@ -340,15 +268,6 @@ func (o *UpdateApp200ResponseApp) GetSiteIdOk() (*int64, bool) {
 	return o.SiteId, true
 }
 
-// IsSetSiteId returns a boolean if a field has been set.
-func (o *UpdateApp200ResponseApp) IsSetSiteId() bool {
-	if o != nil && !IsNil(o.SiteId) {
-		return true
-	}
-
-	return false
-}
-
 // SetSiteId gets a reference to the given int64 and assigns it to the SiteId field.
 func (o *UpdateApp200ResponseApp) SetSiteId(v int64) {
 	o.SiteId = &v
@@ -370,15 +289,6 @@ func (o *UpdateApp200ResponseApp) GetGroupOk() (*UpdateApp200ResponseAppGroup, b
 		return nil, false
 	}
 	return o.Group, true
-}
-
-// IsSetGroup returns a boolean if a field has been set.
-func (o *UpdateApp200ResponseApp) IsSetGroup() bool {
-	if o != nil && !IsNil(o.Group) {
-		return true
-	}
-
-	return false
 }
 
 // SetGroup gets a reference to the given UpdateApp200ResponseAppGroup and assigns it to the Group field.
@@ -404,15 +314,6 @@ func (o *UpdateApp200ResponseApp) GetBlueprintOk() (*UpdateApp200ResponseAppBlue
 	return o.Blueprint, true
 }
 
-// IsSetBlueprint returns a boolean if a field has been set.
-func (o *UpdateApp200ResponseApp) IsSetBlueprint() bool {
-	if o != nil && !IsNil(o.Blueprint) {
-		return true
-	}
-
-	return false
-}
-
 // SetBlueprint gets a reference to the given UpdateApp200ResponseAppBlueprint and assigns it to the Blueprint field.
 func (o *UpdateApp200ResponseApp) SetBlueprint(v UpdateApp200ResponseAppBlueprint) {
 	o.Blueprint = &v
@@ -434,15 +335,6 @@ func (o *UpdateApp200ResponseApp) GetTypeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *UpdateApp200ResponseApp) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.
@@ -468,15 +360,6 @@ func (o *UpdateApp200ResponseApp) GetDateCreatedOk() (*time.Time, bool) {
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *UpdateApp200ResponseApp) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *UpdateApp200ResponseApp) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -498,15 +381,6 @@ func (o *UpdateApp200ResponseApp) GetLastUpdatedOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *UpdateApp200ResponseApp) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
@@ -533,28 +407,9 @@ func (o *UpdateApp200ResponseApp) GetRemovalDateOk() (*time.Time, bool) {
 	return o.RemovalDate.Get(), o.RemovalDate.IsSet()
 }
 
-// IsSetRemovalDate returns a boolean if a field has been set.
-func (o *UpdateApp200ResponseApp) IsSetRemovalDate() bool {
-	if o != nil && o.RemovalDate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRemovalDate gets a reference to the given NullableTime and assigns it to the RemovalDate field.
 func (o *UpdateApp200ResponseApp) SetRemovalDate(v time.Time) {
 	o.RemovalDate.Set(&v)
-}
-
-// SetRemovalDateNil sets the value for RemovalDate to be an explicit nil
-func (o *UpdateApp200ResponseApp) SetRemovalDateNil() {
-	o.RemovalDate.Set(nil)
-}
-
-// UnsetRemovalDate ensures that no value is present for RemovalDate, not even an explicit nil
-func (o *UpdateApp200ResponseApp) UnsetRemovalDate() {
-	o.RemovalDate.Unset()
 }
 
 // GetAppContext returns the AppContext field value if set, zero value otherwise.
@@ -573,15 +428,6 @@ func (o *UpdateApp200ResponseApp) GetAppContextOk() (*string, bool) {
 		return nil, false
 	}
 	return o.AppContext, true
-}
-
-// IsSetAppContext returns a boolean if a field has been set.
-func (o *UpdateApp200ResponseApp) IsSetAppContext() bool {
-	if o != nil && !IsNil(o.AppContext) {
-		return true
-	}
-
-	return false
 }
 
 // SetAppContext gets a reference to the given string and assigns it to the AppContext field.
@@ -607,15 +453,6 @@ func (o *UpdateApp200ResponseApp) GetStatusOk() (*string, bool) {
 	return o.Status, true
 }
 
-// IsSetStatus returns a boolean if a field has been set.
-func (o *UpdateApp200ResponseApp) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
-}
-
 // SetStatus gets a reference to the given string and assigns it to the Status field.
 func (o *UpdateApp200ResponseApp) SetStatus(v string) {
 	o.Status = &v
@@ -637,15 +474,6 @@ func (o *UpdateApp200ResponseApp) GetAppStatusOk() (*string, bool) {
 		return nil, false
 	}
 	return o.AppStatus, true
-}
-
-// IsSetAppStatus returns a boolean if a field has been set.
-func (o *UpdateApp200ResponseApp) IsSetAppStatus() bool {
-	if o != nil && !IsNil(o.AppStatus) {
-		return true
-	}
-
-	return false
 }
 
 // SetAppStatus gets a reference to the given string and assigns it to the AppStatus field.
@@ -671,15 +499,6 @@ func (o *UpdateApp200ResponseApp) GetInstanceCountOk() (*int64, bool) {
 	return o.InstanceCount, true
 }
 
-// IsSetInstanceCount returns a boolean if a field has been set.
-func (o *UpdateApp200ResponseApp) IsSetInstanceCount() bool {
-	if o != nil && !IsNil(o.InstanceCount) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstanceCount gets a reference to the given int64 and assigns it to the InstanceCount field.
 func (o *UpdateApp200ResponseApp) SetInstanceCount(v int64) {
 	o.InstanceCount = &v
@@ -701,15 +520,6 @@ func (o *UpdateApp200ResponseApp) GetContainerCountOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.ContainerCount, true
-}
-
-// IsSetContainerCount returns a boolean if a field has been set.
-func (o *UpdateApp200ResponseApp) IsSetContainerCount() bool {
-	if o != nil && !IsNil(o.ContainerCount) {
-		return true
-	}
-
-	return false
 }
 
 // SetContainerCount gets a reference to the given int64 and assigns it to the ContainerCount field.
@@ -735,15 +545,6 @@ func (o *UpdateApp200ResponseApp) GetAppTiersOk() ([]map[string]interface{}, boo
 	return o.AppTiers, true
 }
 
-// IsSetAppTiers returns a boolean if a field has been set.
-func (o *UpdateApp200ResponseApp) IsSetAppTiers() bool {
-	if o != nil && !IsNil(o.AppTiers) {
-		return true
-	}
-
-	return false
-}
-
 // SetAppTiers gets a reference to the given []map[string]interface{} and assigns it to the AppTiers field.
 func (o *UpdateApp200ResponseApp) SetAppTiers(v []map[string]interface{}) {
 	o.AppTiers = v
@@ -767,15 +568,6 @@ func (o *UpdateApp200ResponseApp) GetInstancesOk() ([]UpdateApp200ResponseAppIns
 	return o.Instances, true
 }
 
-// IsSetInstances returns a boolean if a field has been set.
-func (o *UpdateApp200ResponseApp) IsSetInstances() bool {
-	if o != nil && !IsNil(o.Instances) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstances gets a reference to the given []UpdateApp200ResponseAppInstancesInner and assigns it to the Instances field.
 func (o *UpdateApp200ResponseApp) SetInstances(v []UpdateApp200ResponseAppInstancesInner) {
 	o.Instances = v
@@ -797,15 +589,6 @@ func (o *UpdateApp200ResponseApp) GetStatsOk() (*UpdateApp200ResponseAppStats, b
 		return nil, false
 	}
 	return o.Stats, true
-}
-
-// IsSetStats returns a boolean if a field has been set.
-func (o *UpdateApp200ResponseApp) IsSetStats() bool {
-	if o != nil && !IsNil(o.Stats) {
-		return true
-	}
-
-	return false
 }
 
 // SetStats gets a reference to the given UpdateApp200ResponseAppStats and assigns it to the Stats field.

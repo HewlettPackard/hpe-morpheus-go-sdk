@@ -61,15 +61,6 @@ func (o *CreateLoadBalancerMonitorRequest) GetLoadBalancerMonitorOk() (*CreateLo
 	return o.LoadBalancerMonitor, true
 }
 
-// IsSetLoadBalancerMonitor returns a boolean if a field has been set.
-func (o *CreateLoadBalancerMonitorRequest) IsSetLoadBalancerMonitor() bool {
-	if o != nil && !IsNil(o.LoadBalancerMonitor) {
-		return true
-	}
-
-	return false
-}
-
 // SetLoadBalancerMonitor gets a reference to the given CreateLoadBalancerMonitorRequestLoadBalancerMonitor and assigns it to the LoadBalancerMonitor field.
 func (o *CreateLoadBalancerMonitorRequest) SetLoadBalancerMonitor(v CreateLoadBalancerMonitorRequestLoadBalancerMonitor) {
 	o.LoadBalancerMonitor = &v

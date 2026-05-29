@@ -69,15 +69,6 @@ func (o *BudgetStatsIntervalsInner) GetIndexOk() (*int64, bool) {
 	return o.Index, true
 }
 
-// IsSetIndex returns a boolean if a field has been set.
-func (o *BudgetStatsIntervalsInner) IsSetIndex() bool {
-	if o != nil && !IsNil(o.Index) {
-		return true
-	}
-
-	return false
-}
-
 // SetIndex gets a reference to the given int64 and assigns it to the Index field.
 func (o *BudgetStatsIntervalsInner) SetIndex(v int64) {
 	o.Index = &v
@@ -99,15 +90,6 @@ func (o *BudgetStatsIntervalsInner) GetMonthOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Month, true
-}
-
-// IsSetMonth returns a boolean if a field has been set.
-func (o *BudgetStatsIntervalsInner) IsSetMonth() bool {
-	if o != nil && !IsNil(o.Month) {
-		return true
-	}
-
-	return false
 }
 
 // SetMonth gets a reference to the given string and assigns it to the Month field.
@@ -133,15 +115,6 @@ func (o *BudgetStatsIntervalsInner) GetShortNameOk() (*string, bool) {
 	return o.ShortName, true
 }
 
-// IsSetShortName returns a boolean if a field has been set.
-func (o *BudgetStatsIntervalsInner) IsSetShortName() bool {
-	if o != nil && !IsNil(o.ShortName) {
-		return true
-	}
-
-	return false
-}
-
 // SetShortName gets a reference to the given string and assigns it to the ShortName field.
 func (o *BudgetStatsIntervalsInner) SetShortName(v string) {
 	o.ShortName = &v
@@ -163,15 +136,6 @@ func (o *BudgetStatsIntervalsInner) GetChartNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ChartName, true
-}
-
-// IsSetChartName returns a boolean if a field has been set.
-func (o *BudgetStatsIntervalsInner) IsSetChartName() bool {
-	if o != nil && !IsNil(o.ChartName) {
-		return true
-	}
-
-	return false
 }
 
 // SetChartName gets a reference to the given string and assigns it to the ChartName field.
@@ -197,15 +161,6 @@ func (o *BudgetStatsIntervalsInner) GetBudgetOk() (*int64, bool) {
 	return o.Budget, true
 }
 
-// IsSetBudget returns a boolean if a field has been set.
-func (o *BudgetStatsIntervalsInner) IsSetBudget() bool {
-	if o != nil && !IsNil(o.Budget) {
-		return true
-	}
-
-	return false
-}
-
 // SetBudget gets a reference to the given int64 and assigns it to the Budget field.
 func (o *BudgetStatsIntervalsInner) SetBudget(v int64) {
 	o.Budget = &v
@@ -227,15 +182,6 @@ func (o *BudgetStatsIntervalsInner) GetCostOk() (*float32, bool) {
 		return nil, false
 	}
 	return o.Cost, true
-}
-
-// IsSetCost returns a boolean if a field has been set.
-func (o *BudgetStatsIntervalsInner) IsSetCost() bool {
-	if o != nil && !IsNil(o.Cost) {
-		return true
-	}
-
-	return false
 }
 
 // SetCost gets a reference to the given float32 and assigns it to the Cost field.
@@ -261,15 +207,6 @@ func (o *BudgetStatsIntervalsInner) GetStartDateOk() (*time.Time, bool) {
 	return o.StartDate, true
 }
 
-// IsSetStartDate returns a boolean if a field has been set.
-func (o *BudgetStatsIntervalsInner) IsSetStartDate() bool {
-	if o != nil && !IsNil(o.StartDate) {
-		return true
-	}
-
-	return false
-}
-
 // SetStartDate gets a reference to the given time.Time and assigns it to the StartDate field.
 func (o *BudgetStatsIntervalsInner) SetStartDate(v time.Time) {
 	o.StartDate = &v
@@ -291,15 +228,6 @@ func (o *BudgetStatsIntervalsInner) GetEndDateOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.EndDate, true
-}
-
-// IsSetEndDate returns a boolean if a field has been set.
-func (o *BudgetStatsIntervalsInner) IsSetEndDate() bool {
-	if o != nil && !IsNil(o.EndDate) {
-		return true
-	}
-
-	return false
 }
 
 // SetEndDate gets a reference to the given time.Time and assigns it to the EndDate field.

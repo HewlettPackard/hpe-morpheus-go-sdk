@@ -68,15 +68,6 @@ func (o *UpdateIdentitySourcesRequestUserSourceConfigOneOf7) GetEndpointOk() (*s
 	return o.Endpoint, true
 }
 
-// IsSetEndpoint returns a boolean if a field has been set.
-func (o *UpdateIdentitySourcesRequestUserSourceConfigOneOf7) IsSetEndpoint() bool {
-	if o != nil && !IsNil(o.Endpoint) {
-		return true
-	}
-
-	return false
-}
-
 // SetEndpoint gets a reference to the given string and assigns it to the Endpoint field.
 func (o *UpdateIdentitySourcesRequestUserSourceConfigOneOf7) SetEndpoint(v string) {
 	o.Endpoint = &v
@@ -98,15 +89,6 @@ func (o *UpdateIdentitySourcesRequestUserSourceConfigOneOf7) GetApiStyleOk() (*s
 		return nil, false
 	}
 	return o.ApiStyle, true
-}
-
-// IsSetApiStyle returns a boolean if a field has been set.
-func (o *UpdateIdentitySourcesRequestUserSourceConfigOneOf7) IsSetApiStyle() bool {
-	if o != nil && !IsNil(o.ApiStyle) {
-		return true
-	}
-
-	return false
 }
 
 // SetApiStyle gets a reference to the given string and assigns it to the ApiStyle field.
@@ -132,15 +114,6 @@ func (o *UpdateIdentitySourcesRequestUserSourceConfigOneOf7) GetEncryptionAlgoOk
 	return o.EncryptionAlgo, true
 }
 
-// IsSetEncryptionAlgo returns a boolean if a field has been set.
-func (o *UpdateIdentitySourcesRequestUserSourceConfigOneOf7) IsSetEncryptionAlgo() bool {
-	if o != nil && !IsNil(o.EncryptionAlgo) {
-		return true
-	}
-
-	return false
-}
-
 // SetEncryptionAlgo gets a reference to the given string and assigns it to the EncryptionAlgo field.
 func (o *UpdateIdentitySourcesRequestUserSourceConfigOneOf7) SetEncryptionAlgo(v string) {
 	o.EncryptionAlgo = &v
@@ -162,15 +135,6 @@ func (o *UpdateIdentitySourcesRequestUserSourceConfigOneOf7) GetEncryptionKeyOk(
 		return nil, false
 	}
 	return o.EncryptionKey, true
-}
-
-// IsSetEncryptionKey returns a boolean if a field has been set.
-func (o *UpdateIdentitySourcesRequestUserSourceConfigOneOf7) IsSetEncryptionKey() bool {
-	if o != nil && !IsNil(o.EncryptionKey) {
-		return true
-	}
-
-	return false
 }
 
 // SetEncryptionKey gets a reference to the given string and assigns it to the EncryptionKey field.

@@ -61,15 +61,6 @@ func (o *GetApp200Response) GetAppOk() (*GetApp200ResponseApp, bool) {
 	return o.App, true
 }
 
-// IsSetApp returns a boolean if a field has been set.
-func (o *GetApp200Response) IsSetApp() bool {
-	if o != nil && !IsNil(o.App) {
-		return true
-	}
-
-	return false
-}
-
 // SetApp gets a reference to the given GetApp200ResponseApp and assigns it to the App field.
 func (o *GetApp200Response) SetApp(v GetApp200ResponseApp) {
 	o.App = &v

@@ -63,15 +63,6 @@ func (o *AddClusterRequestClusterConfig) GetDynamicPlacementModeOk() (*string, b
 	return o.DynamicPlacementMode, true
 }
 
-// IsSetDynamicPlacementMode returns a boolean if a field has been set.
-func (o *AddClusterRequestClusterConfig) IsSetDynamicPlacementMode() bool {
-	if o != nil && !IsNil(o.DynamicPlacementMode) {
-		return true
-	}
-
-	return false
-}
-
 // SetDynamicPlacementMode gets a reference to the given string and assigns it to the DynamicPlacementMode field.
 func (o *AddClusterRequestClusterConfig) SetDynamicPlacementMode(v string) {
 	o.DynamicPlacementMode = &v
@@ -93,15 +84,6 @@ func (o *AddClusterRequestClusterConfig) GetTemplateParameterOk() (*AddClusterRe
 		return nil, false
 	}
 	return o.TemplateParameter, true
-}
-
-// IsSetTemplateParameter returns a boolean if a field has been set.
-func (o *AddClusterRequestClusterConfig) IsSetTemplateParameter() bool {
-	if o != nil && !IsNil(o.TemplateParameter) {
-		return true
-	}
-
-	return false
 }
 
 // SetTemplateParameter gets a reference to the given AddClusterRequestClusterConfigTemplateParameter and assigns it to the TemplateParameter field.

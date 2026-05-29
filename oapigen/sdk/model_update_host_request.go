@@ -61,15 +61,6 @@ func (o *UpdateHostRequest) GetServerOk() (*UpdateHostRequestServer, bool) {
 	return o.Server, true
 }
 
-// IsSetServer returns a boolean if a field has been set.
-func (o *UpdateHostRequest) IsSetServer() bool {
-	if o != nil && !IsNil(o.Server) {
-		return true
-	}
-
-	return false
-}
-
 // SetServer gets a reference to the given UpdateHostRequestServer and assigns it to the Server field.
 func (o *UpdateHostRequest) SetServer(v UpdateHostRequestServer) {
 	o.Server = &v

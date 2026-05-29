@@ -62,15 +62,6 @@ func (o *SecurityGroupLocationAzureCustomOptions) GetResourceGroupOk() (*string,
 	return o.ResourceGroup, true
 }
 
-// IsSetResourceGroup returns a boolean if a field has been set.
-func (o *SecurityGroupLocationAzureCustomOptions) IsSetResourceGroup() bool {
-	if o != nil && !IsNil(o.ResourceGroup) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourceGroup gets a reference to the given string and assigns it to the ResourceGroup field.
 func (o *SecurityGroupLocationAzureCustomOptions) SetResourceGroup(v string) {
 	o.ResourceGroup = &v

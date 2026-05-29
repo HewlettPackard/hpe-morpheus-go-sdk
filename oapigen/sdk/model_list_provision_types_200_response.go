@@ -62,15 +62,6 @@ func (o *ListProvisionTypes200Response) GetProvisionTypesOk() ([]ListProvisionTy
 	return o.ProvisionTypes, true
 }
 
-// IsSetProvisionTypes returns a boolean if a field has been set.
-func (o *ListProvisionTypes200Response) IsSetProvisionTypes() bool {
-	if o != nil && !IsNil(o.ProvisionTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetProvisionTypes gets a reference to the given []ListProvisionTypes200ResponseAllOfProvisionTypesInner and assigns it to the ProvisionTypes field.
 func (o *ListProvisionTypes200Response) SetProvisionTypes(v []ListProvisionTypes200ResponseAllOfProvisionTypesInner) {
 	o.ProvisionTypes = v
@@ -92,15 +83,6 @@ func (o *ListProvisionTypes200Response) GetMetaOk() (*ListApprovals200ResponseAl
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListProvisionTypes200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

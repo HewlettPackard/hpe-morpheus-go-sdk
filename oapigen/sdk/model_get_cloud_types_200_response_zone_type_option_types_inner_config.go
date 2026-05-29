@@ -61,15 +61,6 @@ func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInnerConfig) GetCredentialTy
 	return o.CredentialTypes, true
 }
 
-// IsSetCredentialTypes returns a boolean if a field has been set.
-func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInnerConfig) IsSetCredentialTypes() bool {
-	if o != nil && !IsNil(o.CredentialTypes) {
-		return true
-	}
-
-	return false
-}
-
 // SetCredentialTypes gets a reference to the given []string and assigns it to the CredentialTypes field.
 func (o *GetCloudTypes200ResponseZoneTypeOptionTypesInnerConfig) SetCredentialTypes(v []string) {
 	o.CredentialTypes = v

@@ -64,15 +64,6 @@ func (o *UpdateHostCloudRequest) GetCloudIdOk() (*int64, bool) {
 	return o.CloudId, true
 }
 
-// IsSetCloudId returns a boolean if a field has been set.
-func (o *UpdateHostCloudRequest) IsSetCloudId() bool {
-	if o != nil && !IsNil(o.CloudId) {
-		return true
-	}
-
-	return false
-}
-
 // SetCloudId gets a reference to the given int64 and assigns it to the CloudId field.
 func (o *UpdateHostCloudRequest) SetCloudId(v int64) {
 	o.CloudId = &v
@@ -94,15 +85,6 @@ func (o *UpdateHostCloudRequest) GetServersOk() ([]UpdateHostCloudRequestServers
 		return nil, false
 	}
 	return o.Servers, true
-}
-
-// IsSetServers returns a boolean if a field has been set.
-func (o *UpdateHostCloudRequest) IsSetServers() bool {
-	if o != nil && !IsNil(o.Servers) {
-		return true
-	}
-
-	return false
 }
 
 // SetServers gets a reference to the given []UpdateHostCloudRequestServersInner and assigns it to the Servers field.

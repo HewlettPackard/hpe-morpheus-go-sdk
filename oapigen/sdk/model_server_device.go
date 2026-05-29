@@ -78,15 +78,6 @@ func (o *ServerDevice) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ServerDevice) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ServerDevice) SetId(v int64) {
 	o.Id = &v
@@ -108,15 +99,6 @@ func (o *ServerDevice) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ServerDevice) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -143,28 +125,9 @@ func (o *ServerDevice) GetRefTypeOk() (*string, bool) {
 	return o.RefType.Get(), o.RefType.IsSet()
 }
 
-// IsSetRefType returns a boolean if a field has been set.
-func (o *ServerDevice) IsSetRefType() bool {
-	if o != nil && o.RefType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRefType gets a reference to the given NullableString and assigns it to the RefType field.
 func (o *ServerDevice) SetRefType(v string) {
 	o.RefType.Set(&v)
-}
-
-// SetRefTypeNil sets the value for RefType to be an explicit nil
-func (o *ServerDevice) SetRefTypeNil() {
-	o.RefType.Set(nil)
-}
-
-// UnsetRefType ensures that no value is present for RefType, not even an explicit nil
-func (o *ServerDevice) UnsetRefType() {
-	o.RefType.Unset()
 }
 
 // GetRefId returns the RefId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -186,28 +149,9 @@ func (o *ServerDevice) GetRefIdOk() (*int64, bool) {
 	return o.RefId.Get(), o.RefId.IsSet()
 }
 
-// IsSetRefId returns a boolean if a field has been set.
-func (o *ServerDevice) IsSetRefId() bool {
-	if o != nil && o.RefId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRefId gets a reference to the given NullableInt64 and assigns it to the RefId field.
 func (o *ServerDevice) SetRefId(v int64) {
 	o.RefId.Set(&v)
-}
-
-// SetRefIdNil sets the value for RefId to be an explicit nil
-func (o *ServerDevice) SetRefIdNil() {
-	o.RefId.Set(nil)
-}
-
-// UnsetRefId ensures that no value is present for RefId, not even an explicit nil
-func (o *ServerDevice) UnsetRefId() {
-	o.RefId.Unset()
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -226,15 +170,6 @@ func (o *ServerDevice) GetStatusOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *ServerDevice) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -261,28 +196,9 @@ func (o *ServerDevice) GetExternalIdOk() (*string, bool) {
 	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *ServerDevice) IsSetExternalId() bool {
-	if o != nil && o.ExternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *ServerDevice) SetExternalId(v string) {
 	o.ExternalId.Set(&v)
-}
-
-// SetExternalIdNil sets the value for ExternalId to be an explicit nil
-func (o *ServerDevice) SetExternalIdNil() {
-	o.ExternalId.Set(nil)
-}
-
-// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-func (o *ServerDevice) UnsetExternalId() {
-	o.ExternalId.Unset()
 }
 
 // GetDomainId returns the DomainId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -304,28 +220,9 @@ func (o *ServerDevice) GetDomainIdOk() (*int32, bool) {
 	return o.DomainId.Get(), o.DomainId.IsSet()
 }
 
-// IsSetDomainId returns a boolean if a field has been set.
-func (o *ServerDevice) IsSetDomainId() bool {
-	if o != nil && o.DomainId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDomainId gets a reference to the given NullableInt32 and assigns it to the DomainId field.
 func (o *ServerDevice) SetDomainId(v int32) {
 	o.DomainId.Set(&v)
-}
-
-// SetDomainIdNil sets the value for DomainId to be an explicit nil
-func (o *ServerDevice) SetDomainIdNil() {
-	o.DomainId.Set(nil)
-}
-
-// UnsetDomainId ensures that no value is present for DomainId, not even an explicit nil
-func (o *ServerDevice) UnsetDomainId() {
-	o.DomainId.Unset()
 }
 
 // GetBus returns the Bus field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -347,28 +244,9 @@ func (o *ServerDevice) GetBusOk() (*int32, bool) {
 	return o.Bus.Get(), o.Bus.IsSet()
 }
 
-// IsSetBus returns a boolean if a field has been set.
-func (o *ServerDevice) IsSetBus() bool {
-	if o != nil && o.Bus.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetBus gets a reference to the given NullableInt32 and assigns it to the Bus field.
 func (o *ServerDevice) SetBus(v int32) {
 	o.Bus.Set(&v)
-}
-
-// SetBusNil sets the value for Bus to be an explicit nil
-func (o *ServerDevice) SetBusNil() {
-	o.Bus.Set(nil)
-}
-
-// UnsetBus ensures that no value is present for Bus, not even an explicit nil
-func (o *ServerDevice) UnsetBus() {
-	o.Bus.Unset()
 }
 
 // GetSlot returns the Slot field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -390,28 +268,9 @@ func (o *ServerDevice) GetSlotOk() (*int32, bool) {
 	return o.Slot.Get(), o.Slot.IsSet()
 }
 
-// IsSetSlot returns a boolean if a field has been set.
-func (o *ServerDevice) IsSetSlot() bool {
-	if o != nil && o.Slot.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSlot gets a reference to the given NullableInt32 and assigns it to the Slot field.
 func (o *ServerDevice) SetSlot(v int32) {
 	o.Slot.Set(&v)
-}
-
-// SetSlotNil sets the value for Slot to be an explicit nil
-func (o *ServerDevice) SetSlotNil() {
-	o.Slot.Set(nil)
-}
-
-// UnsetSlot ensures that no value is present for Slot, not even an explicit nil
-func (o *ServerDevice) UnsetSlot() {
-	o.Slot.Unset()
 }
 
 // GetDevice returns the Device field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -433,28 +292,9 @@ func (o *ServerDevice) GetDeviceOk() (*int32, bool) {
 	return o.Device.Get(), o.Device.IsSet()
 }
 
-// IsSetDevice returns a boolean if a field has been set.
-func (o *ServerDevice) IsSetDevice() bool {
-	if o != nil && o.Device.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDevice gets a reference to the given NullableInt32 and assigns it to the Device field.
 func (o *ServerDevice) SetDevice(v int32) {
 	o.Device.Set(&v)
-}
-
-// SetDeviceNil sets the value for Device to be an explicit nil
-func (o *ServerDevice) SetDeviceNil() {
-	o.Device.Set(nil)
-}
-
-// UnsetDevice ensures that no value is present for Device, not even an explicit nil
-func (o *ServerDevice) UnsetDevice() {
-	o.Device.Unset()
 }
 
 // GetVendorId returns the VendorId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -476,28 +316,9 @@ func (o *ServerDevice) GetVendorIdOk() (*string, bool) {
 	return o.VendorId.Get(), o.VendorId.IsSet()
 }
 
-// IsSetVendorId returns a boolean if a field has been set.
-func (o *ServerDevice) IsSetVendorId() bool {
-	if o != nil && o.VendorId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetVendorId gets a reference to the given NullableString and assigns it to the VendorId field.
 func (o *ServerDevice) SetVendorId(v string) {
 	o.VendorId.Set(&v)
-}
-
-// SetVendorIdNil sets the value for VendorId to be an explicit nil
-func (o *ServerDevice) SetVendorIdNil() {
-	o.VendorId.Set(nil)
-}
-
-// UnsetVendorId ensures that no value is present for VendorId, not even an explicit nil
-func (o *ServerDevice) UnsetVendorId() {
-	o.VendorId.Unset()
 }
 
 // GetProductId returns the ProductId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -519,28 +340,9 @@ func (o *ServerDevice) GetProductIdOk() (*string, bool) {
 	return o.ProductId.Get(), o.ProductId.IsSet()
 }
 
-// IsSetProductId returns a boolean if a field has been set.
-func (o *ServerDevice) IsSetProductId() bool {
-	if o != nil && o.ProductId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetProductId gets a reference to the given NullableString and assigns it to the ProductId field.
 func (o *ServerDevice) SetProductId(v string) {
 	o.ProductId.Set(&v)
-}
-
-// SetProductIdNil sets the value for ProductId to be an explicit nil
-func (o *ServerDevice) SetProductIdNil() {
-	o.ProductId.Set(nil)
-}
-
-// UnsetProductId ensures that no value is present for ProductId, not even an explicit nil
-func (o *ServerDevice) UnsetProductId() {
-	o.ProductId.Unset()
 }
 
 // GetFunctionId returns the FunctionId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -562,28 +364,9 @@ func (o *ServerDevice) GetFunctionIdOk() (*int32, bool) {
 	return o.FunctionId.Get(), o.FunctionId.IsSet()
 }
 
-// IsSetFunctionId returns a boolean if a field has been set.
-func (o *ServerDevice) IsSetFunctionId() bool {
-	if o != nil && o.FunctionId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFunctionId gets a reference to the given NullableInt32 and assigns it to the FunctionId field.
 func (o *ServerDevice) SetFunctionId(v int32) {
 	o.FunctionId.Set(&v)
-}
-
-// SetFunctionIdNil sets the value for FunctionId to be an explicit nil
-func (o *ServerDevice) SetFunctionIdNil() {
-	o.FunctionId.Set(nil)
-}
-
-// UnsetFunctionId ensures that no value is present for FunctionId, not even an explicit nil
-func (o *ServerDevice) UnsetFunctionId() {
-	o.FunctionId.Unset()
 }
 
 // GetUniqueId returns the UniqueId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -605,28 +388,9 @@ func (o *ServerDevice) GetUniqueIdOk() (*string, bool) {
 	return o.UniqueId.Get(), o.UniqueId.IsSet()
 }
 
-// IsSetUniqueId returns a boolean if a field has been set.
-func (o *ServerDevice) IsSetUniqueId() bool {
-	if o != nil && o.UniqueId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUniqueId gets a reference to the given NullableString and assigns it to the UniqueId field.
 func (o *ServerDevice) SetUniqueId(v string) {
 	o.UniqueId.Set(&v)
-}
-
-// SetUniqueIdNil sets the value for UniqueId to be an explicit nil
-func (o *ServerDevice) SetUniqueIdNil() {
-	o.UniqueId.Set(nil)
-}
-
-// UnsetUniqueId ensures that no value is present for UniqueId, not even an explicit nil
-func (o *ServerDevice) UnsetUniqueId() {
-	o.UniqueId.Unset()
 }
 
 // GetIommuGroup returns the IommuGroup field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -648,28 +412,9 @@ func (o *ServerDevice) GetIommuGroupOk() (*int32, bool) {
 	return o.IommuGroup.Get(), o.IommuGroup.IsSet()
 }
 
-// IsSetIommuGroup returns a boolean if a field has been set.
-func (o *ServerDevice) IsSetIommuGroup() bool {
-	if o != nil && o.IommuGroup.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetIommuGroup gets a reference to the given NullableInt32 and assigns it to the IommuGroup field.
 func (o *ServerDevice) SetIommuGroup(v int32) {
 	o.IommuGroup.Set(&v)
-}
-
-// SetIommuGroupNil sets the value for IommuGroup to be an explicit nil
-func (o *ServerDevice) SetIommuGroupNil() {
-	o.IommuGroup.Set(nil)
-}
-
-// UnsetIommuGroup ensures that no value is present for IommuGroup, not even an explicit nil
-func (o *ServerDevice) UnsetIommuGroup() {
-	o.IommuGroup.Unset()
 }
 
 // GetIommuDeviceCount returns the IommuDeviceCount field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -691,28 +436,9 @@ func (o *ServerDevice) GetIommuDeviceCountOk() (*int32, bool) {
 	return o.IommuDeviceCount.Get(), o.IommuDeviceCount.IsSet()
 }
 
-// IsSetIommuDeviceCount returns a boolean if a field has been set.
-func (o *ServerDevice) IsSetIommuDeviceCount() bool {
-	if o != nil && o.IommuDeviceCount.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetIommuDeviceCount gets a reference to the given NullableInt32 and assigns it to the IommuDeviceCount field.
 func (o *ServerDevice) SetIommuDeviceCount(v int32) {
 	o.IommuDeviceCount.Set(&v)
-}
-
-// SetIommuDeviceCountNil sets the value for IommuDeviceCount to be an explicit nil
-func (o *ServerDevice) SetIommuDeviceCountNil() {
-	o.IommuDeviceCount.Set(nil)
-}
-
-// UnsetIommuDeviceCount ensures that no value is present for IommuDeviceCount, not even an explicit nil
-func (o *ServerDevice) UnsetIommuDeviceCount() {
-	o.IommuDeviceCount.Unset()
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
@@ -731,15 +457,6 @@ func (o *ServerDevice) GetTypeOk() (*ServerDeviceType, bool) {
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *ServerDevice) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given ServerDeviceType and assigns it to the Type field.

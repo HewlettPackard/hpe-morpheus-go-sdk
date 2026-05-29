@@ -101,15 +101,6 @@ func (o *AddUninitializedSystemRequestSystem) GetDescriptionOk() (*string, bool)
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *AddUninitializedSystemRequestSystem) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *AddUninitializedSystemRequestSystem) SetDescription(v string) {
 	o.Description = &v
@@ -181,15 +172,6 @@ func (o *AddUninitializedSystemRequestSystem) GetEnabledOk() (*bool, bool) {
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *AddUninitializedSystemRequestSystem) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *AddUninitializedSystemRequestSystem) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -211,15 +193,6 @@ func (o *AddUninitializedSystemRequestSystem) GetExternalIdOk() (*string, bool) 
 		return nil, false
 	}
 	return o.ExternalId, true
-}
-
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *AddUninitializedSystemRequestSystem) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
-		return true
-	}
-
-	return false
 }
 
 // SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
@@ -245,15 +218,6 @@ func (o *AddUninitializedSystemRequestSystem) GetConfigOk() (map[string]interfac
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *AddUninitializedSystemRequestSystem) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
 func (o *AddUninitializedSystemRequestSystem) SetConfig(v map[string]interface{}) {
 	o.Config = v
@@ -275,15 +239,6 @@ func (o *AddUninitializedSystemRequestSystem) GetComponentsOk() ([]AddUninitiali
 		return nil, false
 	}
 	return o.Components, true
-}
-
-// IsSetComponents returns a boolean if a field has been set.
-func (o *AddUninitializedSystemRequestSystem) IsSetComponents() bool {
-	if o != nil && !IsNil(o.Components) {
-		return true
-	}
-
-	return false
 }
 
 // SetComponents gets a reference to the given []AddUninitializedSystemRequestSystemComponentsInner and assigns it to the Components field.

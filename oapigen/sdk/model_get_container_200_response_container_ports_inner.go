@@ -75,15 +75,6 @@ func (o *GetContainer200ResponseContainerPortsInner) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetContainer200ResponseContainerPortsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetContainer200ResponseContainerPortsInner) SetId(v int64) {
 	o.Id = &v
@@ -105,15 +96,6 @@ func (o *GetContainer200ResponseContainerPortsInner) GetIndexOk() (*int64, bool)
 		return nil, false
 	}
 	return o.Index, true
-}
-
-// IsSetIndex returns a boolean if a field has been set.
-func (o *GetContainer200ResponseContainerPortsInner) IsSetIndex() bool {
-	if o != nil && !IsNil(o.Index) {
-		return true
-	}
-
-	return false
 }
 
 // SetIndex gets a reference to the given int64 and assigns it to the Index field.
@@ -139,15 +121,6 @@ func (o *GetContainer200ResponseContainerPortsInner) GetExternalOk() (*int64, bo
 	return o.External, true
 }
 
-// IsSetExternal returns a boolean if a field has been set.
-func (o *GetContainer200ResponseContainerPortsInner) IsSetExternal() bool {
-	if o != nil && !IsNil(o.External) {
-		return true
-	}
-
-	return false
-}
-
 // SetExternal gets a reference to the given int64 and assigns it to the External field.
 func (o *GetContainer200ResponseContainerPortsInner) SetExternal(v int64) {
 	o.External = &v
@@ -169,15 +142,6 @@ func (o *GetContainer200ResponseContainerPortsInner) GetInternalOk() (*int64, bo
 		return nil, false
 	}
 	return o.Internal, true
-}
-
-// IsSetInternal returns a boolean if a field has been set.
-func (o *GetContainer200ResponseContainerPortsInner) IsSetInternal() bool {
-	if o != nil && !IsNil(o.Internal) {
-		return true
-	}
-
-	return false
 }
 
 // SetInternal gets a reference to the given int64 and assigns it to the Internal field.
@@ -203,15 +167,6 @@ func (o *GetContainer200ResponseContainerPortsInner) GetDisplayNameOk() (*string
 	return o.DisplayName, true
 }
 
-// IsSetDisplayName returns a boolean if a field has been set.
-func (o *GetContainer200ResponseContainerPortsInner) IsSetDisplayName() bool {
-	if o != nil && !IsNil(o.DisplayName) {
-		return true
-	}
-
-	return false
-}
-
 // SetDisplayName gets a reference to the given string and assigns it to the DisplayName field.
 func (o *GetContainer200ResponseContainerPortsInner) SetDisplayName(v string) {
 	o.DisplayName = &v
@@ -233,15 +188,6 @@ func (o *GetContainer200ResponseContainerPortsInner) GetPrimaryPortOk() (*bool, 
 		return nil, false
 	}
 	return o.PrimaryPort, true
-}
-
-// IsSetPrimaryPort returns a boolean if a field has been set.
-func (o *GetContainer200ResponseContainerPortsInner) IsSetPrimaryPort() bool {
-	if o != nil && !IsNil(o.PrimaryPort) {
-		return true
-	}
-
-	return false
 }
 
 // SetPrimaryPort gets a reference to the given bool and assigns it to the PrimaryPort field.
@@ -267,15 +213,6 @@ func (o *GetContainer200ResponseContainerPortsInner) GetExportOk() (*bool, bool)
 	return o.Export, true
 }
 
-// IsSetExport returns a boolean if a field has been set.
-func (o *GetContainer200ResponseContainerPortsInner) IsSetExport() bool {
-	if o != nil && !IsNil(o.Export) {
-		return true
-	}
-
-	return false
-}
-
 // SetExport gets a reference to the given bool and assigns it to the Export field.
 func (o *GetContainer200ResponseContainerPortsInner) SetExport(v bool) {
 	o.Export = &v
@@ -297,15 +234,6 @@ func (o *GetContainer200ResponseContainerPortsInner) GetVisibleOk() (*bool, bool
 		return nil, false
 	}
 	return o.Visible, true
-}
-
-// IsSetVisible returns a boolean if a field has been set.
-func (o *GetContainer200ResponseContainerPortsInner) IsSetVisible() bool {
-	if o != nil && !IsNil(o.Visible) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisible gets a reference to the given bool and assigns it to the Visible field.
@@ -331,15 +259,6 @@ func (o *GetContainer200ResponseContainerPortsInner) GetExportNameOk() (*string,
 	return o.ExportName, true
 }
 
-// IsSetExportName returns a boolean if a field has been set.
-func (o *GetContainer200ResponseContainerPortsInner) IsSetExportName() bool {
-	if o != nil && !IsNil(o.ExportName) {
-		return true
-	}
-
-	return false
-}
-
 // SetExportName gets a reference to the given string and assigns it to the ExportName field.
 func (o *GetContainer200ResponseContainerPortsInner) SetExportName(v string) {
 	o.ExportName = &v
@@ -361,15 +280,6 @@ func (o *GetContainer200ResponseContainerPortsInner) GetLoadBalanceProtocolOk() 
 		return nil, false
 	}
 	return o.LoadBalanceProtocol, true
-}
-
-// IsSetLoadBalanceProtocol returns a boolean if a field has been set.
-func (o *GetContainer200ResponseContainerPortsInner) IsSetLoadBalanceProtocol() bool {
-	if o != nil && !IsNil(o.LoadBalanceProtocol) {
-		return true
-	}
-
-	return false
 }
 
 // SetLoadBalanceProtocol gets a reference to the given string and assigns it to the LoadBalanceProtocol field.
@@ -395,15 +305,6 @@ func (o *GetContainer200ResponseContainerPortsInner) GetLoadBalanceOk() (*bool, 
 	return o.LoadBalance, true
 }
 
-// IsSetLoadBalance returns a boolean if a field has been set.
-func (o *GetContainer200ResponseContainerPortsInner) IsSetLoadBalance() bool {
-	if o != nil && !IsNil(o.LoadBalance) {
-		return true
-	}
-
-	return false
-}
-
 // SetLoadBalance gets a reference to the given bool and assigns it to the LoadBalance field.
 func (o *GetContainer200ResponseContainerPortsInner) SetLoadBalance(v bool) {
 	o.LoadBalance = &v
@@ -427,15 +328,6 @@ func (o *GetContainer200ResponseContainerPortsInner) GetProtocolOk() (*string, b
 	return o.Protocol, true
 }
 
-// IsSetProtocol returns a boolean if a field has been set.
-func (o *GetContainer200ResponseContainerPortsInner) IsSetProtocol() bool {
-	if o != nil && !IsNil(o.Protocol) {
-		return true
-	}
-
-	return false
-}
-
 // SetProtocol gets a reference to the given string and assigns it to the Protocol field.
 func (o *GetContainer200ResponseContainerPortsInner) SetProtocol(v string) {
 	o.Protocol = &v
@@ -457,15 +349,6 @@ func (o *GetContainer200ResponseContainerPortsInner) GetLinkOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Link, true
-}
-
-// IsSetLink returns a boolean if a field has been set.
-func (o *GetContainer200ResponseContainerPortsInner) IsSetLink() bool {
-	if o != nil && !IsNil(o.Link) {
-		return true
-	}
-
-	return false
 }
 
 // SetLink gets a reference to the given bool and assigns it to the Link field.
@@ -492,28 +375,9 @@ func (o *GetContainer200ResponseContainerPortsInner) GetExternalIpOk() (*string,
 	return o.ExternalIp.Get(), o.ExternalIp.IsSet()
 }
 
-// IsSetExternalIp returns a boolean if a field has been set.
-func (o *GetContainer200ResponseContainerPortsInner) IsSetExternalIp() bool {
-	if o != nil && o.ExternalIp.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalIp gets a reference to the given NullableString and assigns it to the ExternalIp field.
 func (o *GetContainer200ResponseContainerPortsInner) SetExternalIp(v string) {
 	o.ExternalIp.Set(&v)
-}
-
-// SetExternalIpNil sets the value for ExternalIp to be an explicit nil
-func (o *GetContainer200ResponseContainerPortsInner) SetExternalIpNil() {
-	o.ExternalIp.Set(nil)
-}
-
-// UnsetExternalIp ensures that no value is present for ExternalIp, not even an explicit nil
-func (o *GetContainer200ResponseContainerPortsInner) UnsetExternalIp() {
-	o.ExternalIp.Unset()
 }
 
 // GetInternalIp returns the InternalIp field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -535,28 +399,9 @@ func (o *GetContainer200ResponseContainerPortsInner) GetInternalIpOk() (*string,
 	return o.InternalIp.Get(), o.InternalIp.IsSet()
 }
 
-// IsSetInternalIp returns a boolean if a field has been set.
-func (o *GetContainer200ResponseContainerPortsInner) IsSetInternalIp() bool {
-	if o != nil && o.InternalIp.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInternalIp gets a reference to the given NullableString and assigns it to the InternalIp field.
 func (o *GetContainer200ResponseContainerPortsInner) SetInternalIp(v string) {
 	o.InternalIp.Set(&v)
-}
-
-// SetInternalIpNil sets the value for InternalIp to be an explicit nil
-func (o *GetContainer200ResponseContainerPortsInner) SetInternalIpNil() {
-	o.InternalIp.Set(nil)
-}
-
-// UnsetInternalIp ensures that no value is present for InternalIp, not even an explicit nil
-func (o *GetContainer200ResponseContainerPortsInner) UnsetInternalIp() {
-	o.InternalIp.Unset()
 }
 
 func (o GetContainer200ResponseContainerPortsInner) MarshalJSON() ([]byte, error) {

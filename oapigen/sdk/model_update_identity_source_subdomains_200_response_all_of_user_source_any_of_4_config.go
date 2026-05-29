@@ -67,15 +67,6 @@ func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf4Config) G
 	return o.Subdomain, true
 }
 
-// IsSetSubdomain returns a boolean if a field has been set.
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf4Config) IsSetSubdomain() bool {
-	if o != nil && !IsNil(o.Subdomain) {
-		return true
-	}
-
-	return false
-}
-
 // SetSubdomain gets a reference to the given string and assigns it to the Subdomain field.
 func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf4Config) SetSubdomain(v string) {
 	o.Subdomain = &v
@@ -97,15 +88,6 @@ func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf4Config) G
 		return nil, false
 	}
 	return o.Region, true
-}
-
-// IsSetRegion returns a boolean if a field has been set.
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf4Config) IsSetRegion() bool {
-	if o != nil && !IsNil(o.Region) {
-		return true
-	}
-
-	return false
 }
 
 // SetRegion gets a reference to the given string and assigns it to the Region field.
@@ -131,15 +113,6 @@ func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf4Config) G
 	return o.ClientSecret, true
 }
 
-// IsSetClientSecret returns a boolean if a field has been set.
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf4Config) IsSetClientSecret() bool {
-	if o != nil && !IsNil(o.ClientSecret) {
-		return true
-	}
-
-	return false
-}
-
 // SetClientSecret gets a reference to the given string and assigns it to the ClientSecret field.
 func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf4Config) SetClientSecret(v string) {
 	o.ClientSecret = &v
@@ -161,15 +134,6 @@ func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf4Config) G
 		return nil, false
 	}
 	return o.ClientId, true
-}
-
-// IsSetClientId returns a boolean if a field has been set.
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf4Config) IsSetClientId() bool {
-	if o != nil && !IsNil(o.ClientId) {
-		return true
-	}
-
-	return false
 }
 
 // SetClientId gets a reference to the given string and assigns it to the ClientId field.
@@ -195,15 +159,6 @@ func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf4Config) G
 	return o.RequiredRole, true
 }
 
-// IsSetRequiredRole returns a boolean if a field has been set.
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf4Config) IsSetRequiredRole() bool {
-	if o != nil && !IsNil(o.RequiredRole) {
-		return true
-	}
-
-	return false
-}
-
 // SetRequiredRole gets a reference to the given string and assigns it to the RequiredRole field.
 func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf4Config) SetRequiredRole(v string) {
 	o.RequiredRole = &v
@@ -227,15 +182,6 @@ func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf4Config) G
 	return o.RequiredRoleId, true
 }
 
-// IsSetRequiredRoleId returns a boolean if a field has been set.
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf4Config) IsSetRequiredRoleId() bool {
-	if o != nil && !IsNil(o.RequiredRoleId) {
-		return true
-	}
-
-	return false
-}
-
 // SetRequiredRoleId gets a reference to the given string and assigns it to the RequiredRoleId field.
 func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf4Config) SetRequiredRoleId(v string) {
 	o.RequiredRoleId = &v
@@ -257,15 +203,6 @@ func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf4Config) G
 		return nil, false
 	}
 	return o.ClientSecretHash, true
-}
-
-// IsSetClientSecretHash returns a boolean if a field has been set.
-func (o *UpdateIdentitySourceSubdomains200ResponseAllOfUserSourceAnyOf4Config) IsSetClientSecretHash() bool {
-	if o != nil && !IsNil(o.ClientSecretHash) {
-		return true
-	}
-
-	return false
 }
 
 // SetClientSecretHash gets a reference to the given string and assigns it to the ClientSecretHash field.

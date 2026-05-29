@@ -68,15 +68,6 @@ func (o *AddServicePlansRequestServicePlanPermissionsResourcePermissions) GetAll
 	return o.AllSites, true
 }
 
-// IsSetAllSites returns a boolean if a field has been set.
-func (o *AddServicePlansRequestServicePlanPermissionsResourcePermissions) IsSetAllSites() bool {
-	if o != nil && !IsNil(o.AllSites) {
-		return true
-	}
-
-	return false
-}
-
 // SetAllSites gets a reference to the given bool and assigns it to the AllSites field.
 func (o *AddServicePlansRequestServicePlanPermissionsResourcePermissions) SetAllSites(v bool) {
 	o.AllSites = &v
@@ -98,15 +89,6 @@ func (o *AddServicePlansRequestServicePlanPermissionsResourcePermissions) GetSit
 		return nil, false
 	}
 	return o.Sites, true
-}
-
-// IsSetSites returns a boolean if a field has been set.
-func (o *AddServicePlansRequestServicePlanPermissionsResourcePermissions) IsSetSites() bool {
-	if o != nil && !IsNil(o.Sites) {
-		return true
-	}
-
-	return false
 }
 
 // SetSites gets a reference to the given []AddServicePlansRequestServicePlanPermissionsResourcePermissionsSitesInner and assigns it to the Sites field.

@@ -66,15 +66,6 @@ func (o *ListBackups200ResponseAllOfBackupsInnerBackupType) GetIdOk() (*int64, b
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListBackups200ResponseAllOfBackupsInnerBackupType) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListBackups200ResponseAllOfBackupsInnerBackupType) SetId(v int64) {
 	o.Id = &v
@@ -98,15 +89,6 @@ func (o *ListBackups200ResponseAllOfBackupsInnerBackupType) GetCodeOk() (*string
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *ListBackups200ResponseAllOfBackupsInnerBackupType) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *ListBackups200ResponseAllOfBackupsInnerBackupType) SetCode(v string) {
 	o.Code = &v
@@ -128,15 +110,6 @@ func (o *ListBackups200ResponseAllOfBackupsInnerBackupType) GetNameOk() (*string
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListBackups200ResponseAllOfBackupsInnerBackupType) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.

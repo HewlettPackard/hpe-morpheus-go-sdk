@@ -63,15 +63,6 @@ func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsI
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner) SetId(v int64) {
 	o.Id = &v
@@ -93,15 +84,6 @@ func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsI
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -128,28 +110,9 @@ func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsI
 	return o.ProvisionTypeCode.Get(), o.ProvisionTypeCode.IsSet()
 }
 
-// IsSetProvisionTypeCode returns a boolean if a field has been set.
-func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner) IsSetProvisionTypeCode() bool {
-	if o != nil && o.ProvisionTypeCode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetProvisionTypeCode gets a reference to the given NullableString and assigns it to the ProvisionTypeCode field.
 func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner) SetProvisionTypeCode(v string) {
 	o.ProvisionTypeCode.Set(&v)
-}
-
-// SetProvisionTypeCodeNil sets the value for ProvisionTypeCode to be an explicit nil
-func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner) SetProvisionTypeCodeNil() {
-	o.ProvisionTypeCode.Set(nil)
-}
-
-// UnsetProvisionTypeCode ensures that no value is present for ProvisionTypeCode, not even an explicit nil
-func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner) UnsetProvisionTypeCode() {
-	o.ProvisionTypeCode.Unset()
 }
 
 func (o ListInstanceTypes200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner) MarshalJSON() ([]byte, error) {

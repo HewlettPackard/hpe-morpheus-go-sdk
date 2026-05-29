@@ -78,15 +78,6 @@ func (o *ExecuteExecutionRequest200ResponseExecutionRequest) GetIdOk() (*int64, 
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ExecuteExecutionRequest200ResponseExecutionRequest) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ExecuteExecutionRequest200ResponseExecutionRequest) SetId(v int64) {
 	o.Id = &v
@@ -108,15 +99,6 @@ func (o *ExecuteExecutionRequest200ResponseExecutionRequest) GetUniqueIdOk() (*s
 		return nil, false
 	}
 	return o.UniqueId, true
-}
-
-// IsSetUniqueId returns a boolean if a field has been set.
-func (o *ExecuteExecutionRequest200ResponseExecutionRequest) IsSetUniqueId() bool {
-	if o != nil && !IsNil(o.UniqueId) {
-		return true
-	}
-
-	return false
 }
 
 // SetUniqueId gets a reference to the given string and assigns it to the UniqueId field.
@@ -143,28 +125,9 @@ func (o *ExecuteExecutionRequest200ResponseExecutionRequest) GetContainerIdOk() 
 	return o.ContainerId.Get(), o.ContainerId.IsSet()
 }
 
-// IsSetContainerId returns a boolean if a field has been set.
-func (o *ExecuteExecutionRequest200ResponseExecutionRequest) IsSetContainerId() bool {
-	if o != nil && o.ContainerId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetContainerId gets a reference to the given NullableString and assigns it to the ContainerId field.
 func (o *ExecuteExecutionRequest200ResponseExecutionRequest) SetContainerId(v string) {
 	o.ContainerId.Set(&v)
-}
-
-// SetContainerIdNil sets the value for ContainerId to be an explicit nil
-func (o *ExecuteExecutionRequest200ResponseExecutionRequest) SetContainerIdNil() {
-	o.ContainerId.Set(nil)
-}
-
-// UnsetContainerId ensures that no value is present for ContainerId, not even an explicit nil
-func (o *ExecuteExecutionRequest200ResponseExecutionRequest) UnsetContainerId() {
-	o.ContainerId.Unset()
 }
 
 // GetServerId returns the ServerId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -186,28 +149,9 @@ func (o *ExecuteExecutionRequest200ResponseExecutionRequest) GetServerIdOk() (*s
 	return o.ServerId.Get(), o.ServerId.IsSet()
 }
 
-// IsSetServerId returns a boolean if a field has been set.
-func (o *ExecuteExecutionRequest200ResponseExecutionRequest) IsSetServerId() bool {
-	if o != nil && o.ServerId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServerId gets a reference to the given NullableString and assigns it to the ServerId field.
 func (o *ExecuteExecutionRequest200ResponseExecutionRequest) SetServerId(v string) {
 	o.ServerId.Set(&v)
-}
-
-// SetServerIdNil sets the value for ServerId to be an explicit nil
-func (o *ExecuteExecutionRequest200ResponseExecutionRequest) SetServerIdNil() {
-	o.ServerId.Set(nil)
-}
-
-// UnsetServerId ensures that no value is present for ServerId, not even an explicit nil
-func (o *ExecuteExecutionRequest200ResponseExecutionRequest) UnsetServerId() {
-	o.ServerId.Unset()
 }
 
 // GetInstanceId returns the InstanceId field value if set, zero value otherwise.
@@ -226,15 +170,6 @@ func (o *ExecuteExecutionRequest200ResponseExecutionRequest) GetInstanceIdOk() (
 		return nil, false
 	}
 	return o.InstanceId, true
-}
-
-// IsSetInstanceId returns a boolean if a field has been set.
-func (o *ExecuteExecutionRequest200ResponseExecutionRequest) IsSetInstanceId() bool {
-	if o != nil && !IsNil(o.InstanceId) {
-		return true
-	}
-
-	return false
 }
 
 // SetInstanceId gets a reference to the given int64 and assigns it to the InstanceId field.
@@ -261,28 +196,9 @@ func (o *ExecuteExecutionRequest200ResponseExecutionRequest) GetResourceIdOk() (
 	return o.ResourceId.Get(), o.ResourceId.IsSet()
 }
 
-// IsSetResourceId returns a boolean if a field has been set.
-func (o *ExecuteExecutionRequest200ResponseExecutionRequest) IsSetResourceId() bool {
-	if o != nil && o.ResourceId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetResourceId gets a reference to the given NullableString and assigns it to the ResourceId field.
 func (o *ExecuteExecutionRequest200ResponseExecutionRequest) SetResourceId(v string) {
 	o.ResourceId.Set(&v)
-}
-
-// SetResourceIdNil sets the value for ResourceId to be an explicit nil
-func (o *ExecuteExecutionRequest200ResponseExecutionRequest) SetResourceIdNil() {
-	o.ResourceId.Set(nil)
-}
-
-// UnsetResourceId ensures that no value is present for ResourceId, not even an explicit nil
-func (o *ExecuteExecutionRequest200ResponseExecutionRequest) UnsetResourceId() {
-	o.ResourceId.Unset()
 }
 
 // GetAppId returns the AppId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -304,28 +220,9 @@ func (o *ExecuteExecutionRequest200ResponseExecutionRequest) GetAppIdOk() (*stri
 	return o.AppId.Get(), o.AppId.IsSet()
 }
 
-// IsSetAppId returns a boolean if a field has been set.
-func (o *ExecuteExecutionRequest200ResponseExecutionRequest) IsSetAppId() bool {
-	if o != nil && o.AppId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAppId gets a reference to the given NullableString and assigns it to the AppId field.
 func (o *ExecuteExecutionRequest200ResponseExecutionRequest) SetAppId(v string) {
 	o.AppId.Set(&v)
-}
-
-// SetAppIdNil sets the value for AppId to be an explicit nil
-func (o *ExecuteExecutionRequest200ResponseExecutionRequest) SetAppIdNil() {
-	o.AppId.Set(nil)
-}
-
-// UnsetAppId ensures that no value is present for AppId, not even an explicit nil
-func (o *ExecuteExecutionRequest200ResponseExecutionRequest) UnsetAppId() {
-	o.AppId.Unset()
 }
 
 // GetStdOut returns the StdOut field value if set, zero value otherwise.
@@ -344,15 +241,6 @@ func (o *ExecuteExecutionRequest200ResponseExecutionRequest) GetStdOutOk() (*str
 		return nil, false
 	}
 	return o.StdOut, true
-}
-
-// IsSetStdOut returns a boolean if a field has been set.
-func (o *ExecuteExecutionRequest200ResponseExecutionRequest) IsSetStdOut() bool {
-	if o != nil && !IsNil(o.StdOut) {
-		return true
-	}
-
-	return false
 }
 
 // SetStdOut gets a reference to the given string and assigns it to the StdOut field.
@@ -378,15 +266,6 @@ func (o *ExecuteExecutionRequest200ResponseExecutionRequest) GetStdErrOk() (*str
 	return o.StdErr, true
 }
 
-// IsSetStdErr returns a boolean if a field has been set.
-func (o *ExecuteExecutionRequest200ResponseExecutionRequest) IsSetStdErr() bool {
-	if o != nil && !IsNil(o.StdErr) {
-		return true
-	}
-
-	return false
-}
-
 // SetStdErr gets a reference to the given string and assigns it to the StdErr field.
 func (o *ExecuteExecutionRequest200ResponseExecutionRequest) SetStdErr(v string) {
 	o.StdErr = &v
@@ -408,15 +287,6 @@ func (o *ExecuteExecutionRequest200ResponseExecutionRequest) GetExitCodeOk() (*i
 		return nil, false
 	}
 	return o.ExitCode, true
-}
-
-// IsSetExitCode returns a boolean if a field has been set.
-func (o *ExecuteExecutionRequest200ResponseExecutionRequest) IsSetExitCode() bool {
-	if o != nil && !IsNil(o.ExitCode) {
-		return true
-	}
-
-	return false
 }
 
 // SetExitCode gets a reference to the given int64 and assigns it to the ExitCode field.
@@ -442,15 +312,6 @@ func (o *ExecuteExecutionRequest200ResponseExecutionRequest) GetStatusOk() (*str
 	return o.Status, true
 }
 
-// IsSetStatus returns a boolean if a field has been set.
-func (o *ExecuteExecutionRequest200ResponseExecutionRequest) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
-}
-
 // SetStatus gets a reference to the given string and assigns it to the Status field.
 func (o *ExecuteExecutionRequest200ResponseExecutionRequest) SetStatus(v string) {
 	o.Status = &v
@@ -474,15 +335,6 @@ func (o *ExecuteExecutionRequest200ResponseExecutionRequest) GetExpiresAtOk() (*
 	return o.ExpiresAt, true
 }
 
-// IsSetExpiresAt returns a boolean if a field has been set.
-func (o *ExecuteExecutionRequest200ResponseExecutionRequest) IsSetExpiresAt() bool {
-	if o != nil && !IsNil(o.ExpiresAt) {
-		return true
-	}
-
-	return false
-}
-
 // SetExpiresAt gets a reference to the given time.Time and assigns it to the ExpiresAt field.
 func (o *ExecuteExecutionRequest200ResponseExecutionRequest) SetExpiresAt(v time.Time) {
 	o.ExpiresAt = &v
@@ -504,15 +356,6 @@ func (o *ExecuteExecutionRequest200ResponseExecutionRequest) GetCreatedByIdOk() 
 		return nil, false
 	}
 	return o.CreatedById, true
-}
-
-// IsSetCreatedById returns a boolean if a field has been set.
-func (o *ExecuteExecutionRequest200ResponseExecutionRequest) IsSetCreatedById() bool {
-	if o != nil && !IsNil(o.CreatedById) {
-		return true
-	}
-
-	return false
 }
 
 // SetCreatedById gets a reference to the given int64 and assigns it to the CreatedById field.
@@ -539,28 +382,9 @@ func (o *ExecuteExecutionRequest200ResponseExecutionRequest) GetStatusMessageOk(
 	return o.StatusMessage.Get(), o.StatusMessage.IsSet()
 }
 
-// IsSetStatusMessage returns a boolean if a field has been set.
-func (o *ExecuteExecutionRequest200ResponseExecutionRequest) IsSetStatusMessage() bool {
-	if o != nil && o.StatusMessage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusMessage gets a reference to the given NullableString and assigns it to the StatusMessage field.
 func (o *ExecuteExecutionRequest200ResponseExecutionRequest) SetStatusMessage(v string) {
 	o.StatusMessage.Set(&v)
-}
-
-// SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
-func (o *ExecuteExecutionRequest200ResponseExecutionRequest) SetStatusMessageNil() {
-	o.StatusMessage.Set(nil)
-}
-
-// UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
-func (o *ExecuteExecutionRequest200ResponseExecutionRequest) UnsetStatusMessage() {
-	o.StatusMessage.Unset()
 }
 
 // GetErrorMessage returns the ErrorMessage field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -582,28 +406,9 @@ func (o *ExecuteExecutionRequest200ResponseExecutionRequest) GetErrorMessageOk()
 	return o.ErrorMessage.Get(), o.ErrorMessage.IsSet()
 }
 
-// IsSetErrorMessage returns a boolean if a field has been set.
-func (o *ExecuteExecutionRequest200ResponseExecutionRequest) IsSetErrorMessage() bool {
-	if o != nil && o.ErrorMessage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetErrorMessage gets a reference to the given NullableString and assigns it to the ErrorMessage field.
 func (o *ExecuteExecutionRequest200ResponseExecutionRequest) SetErrorMessage(v string) {
 	o.ErrorMessage.Set(&v)
-}
-
-// SetErrorMessageNil sets the value for ErrorMessage to be an explicit nil
-func (o *ExecuteExecutionRequest200ResponseExecutionRequest) SetErrorMessageNil() {
-	o.ErrorMessage.Set(nil)
-}
-
-// UnsetErrorMessage ensures that no value is present for ErrorMessage, not even an explicit nil
-func (o *ExecuteExecutionRequest200ResponseExecutionRequest) UnsetErrorMessage() {
-	o.ErrorMessage.Unset()
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
@@ -622,15 +427,6 @@ func (o *ExecuteExecutionRequest200ResponseExecutionRequest) GetConfigOk() (map[
 		return map[string]interface{}{}, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *ExecuteExecutionRequest200ResponseExecutionRequest) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
@@ -657,28 +453,9 @@ func (o *ExecuteExecutionRequest200ResponseExecutionRequest) GetRawDataOk() (*st
 	return o.RawData.Get(), o.RawData.IsSet()
 }
 
-// IsSetRawData returns a boolean if a field has been set.
-func (o *ExecuteExecutionRequest200ResponseExecutionRequest) IsSetRawData() bool {
-	if o != nil && o.RawData.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetRawData gets a reference to the given NullableString and assigns it to the RawData field.
 func (o *ExecuteExecutionRequest200ResponseExecutionRequest) SetRawData(v string) {
 	o.RawData.Set(&v)
-}
-
-// SetRawDataNil sets the value for RawData to be an explicit nil
-func (o *ExecuteExecutionRequest200ResponseExecutionRequest) SetRawDataNil() {
-	o.RawData.Set(nil)
-}
-
-// UnsetRawData ensures that no value is present for RawData, not even an explicit nil
-func (o *ExecuteExecutionRequest200ResponseExecutionRequest) UnsetRawData() {
-	o.RawData.Unset()
 }
 
 func (o ExecuteExecutionRequest200ResponseExecutionRequest) MarshalJSON() ([]byte, error) {

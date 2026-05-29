@@ -67,15 +67,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) Get
 	return o.Storage, true
 }
 
-// IsSetStorage returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) IsSetStorage() bool {
-	if o != nil && !IsNil(o.Storage) {
-		return true
-	}
-
-	return false
-}
-
 // SetStorage gets a reference to the given string and assigns it to the Storage field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) SetStorage(v string) {
 	o.Storage = &v
@@ -97,15 +88,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) Get
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -132,28 +114,9 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) Get
 	return o.Controller.Get(), o.Controller.IsSet()
 }
 
-// IsSetController returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) IsSetController() bool {
-	if o != nil && o.Controller.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetController gets a reference to the given NullableString and assigns it to the Controller field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) SetController(v string) {
 	o.Controller.Set(&v)
-}
-
-// SetControllerNil sets the value for Controller to be an explicit nil
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) SetControllerNil() {
-	o.Controller.Set(nil)
-}
-
-// UnsetController ensures that no value is present for Controller, not even an explicit nil
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) UnsetController() {
-	o.Controller.Unset()
 }
 
 // GetDatastore returns the Datastore field value if set, zero value otherwise.
@@ -172,15 +135,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) Get
 		return nil, false
 	}
 	return o.Datastore, true
-}
-
-// IsSetDatastore returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) IsSetDatastore() bool {
-	if o != nil && !IsNil(o.Datastore) {
-		return true
-	}
-
-	return false
 }
 
 // SetDatastore gets a reference to the given string and assigns it to the Datastore field.
@@ -207,28 +161,9 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) Get
 	return o.DisplayOrder.Get(), o.DisplayOrder.IsSet()
 }
 
-// IsSetDisplayOrder returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) IsSetDisplayOrder() bool {
-	if o != nil && o.DisplayOrder.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDisplayOrder gets a reference to the given NullableString and assigns it to the DisplayOrder field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) SetDisplayOrder(v string) {
 	o.DisplayOrder.Set(&v)
-}
-
-// SetDisplayOrderNil sets the value for DisplayOrder to be an explicit nil
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) SetDisplayOrderNil() {
-	o.DisplayOrder.Set(nil)
-}
-
-// UnsetDisplayOrder ensures that no value is present for DisplayOrder, not even an explicit nil
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) UnsetDisplayOrder() {
-	o.DisplayOrder.Unset()
 }
 
 // GetSize returns the Size field value if set, zero value otherwise.
@@ -247,15 +182,6 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) Get
 		return nil, false
 	}
 	return o.Size, true
-}
-
-// IsSetSize returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) IsSetSize() bool {
-	if o != nil && !IsNil(o.Size) {
-		return true
-	}
-
-	return false
 }
 
 // SetSize gets a reference to the given int64 and assigns it to the Size field.
@@ -282,28 +208,9 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) Get
 	return o.MountPoint.Get(), o.MountPoint.IsSet()
 }
 
-// IsSetMountPoint returns a boolean if a field has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) IsSetMountPoint() bool {
-	if o != nil && o.MountPoint.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetMountPoint gets a reference to the given NullableString and assigns it to the MountPoint field.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) SetMountPoint(v string) {
 	o.MountPoint.Set(&v)
-}
-
-// SetMountPointNil sets the value for MountPoint to be an explicit nil
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) SetMountPointNil() {
-	o.MountPoint.Set(nil)
-}
-
-// UnsetMountPoint ensures that no value is present for MountPoint, not even an explicit nil
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) UnsetMountPoint() {
-	o.MountPoint.Unset()
 }
 
 func (o ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) MarshalJSON() ([]byte, error) {

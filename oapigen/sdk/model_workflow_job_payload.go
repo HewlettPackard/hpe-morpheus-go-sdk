@@ -118,15 +118,6 @@ func (o *WorkflowJobPayload) GetLabelsOk() ([]string, bool) {
 	return o.Labels, true
 }
 
-// IsSetLabels returns a boolean if a field has been set.
-func (o *WorkflowJobPayload) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
-}
-
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
 func (o *WorkflowJobPayload) SetLabels(v []string) {
 	o.Labels = v
@@ -150,15 +141,6 @@ func (o *WorkflowJobPayload) GetEnabledOk() (*bool, bool) {
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *WorkflowJobPayload) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *WorkflowJobPayload) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -180,15 +162,6 @@ func (o *WorkflowJobPayload) GetTaskOk() (*WorkflowJobPayloadTask, bool) {
 		return nil, false
 	}
 	return o.Task, true
-}
-
-// IsSetTask returns a boolean if a field has been set.
-func (o *WorkflowJobPayload) IsSetTask() bool {
-	if o != nil && !IsNil(o.Task) {
-		return true
-	}
-
-	return false
 }
 
 // SetTask gets a reference to the given WorkflowJobPayloadTask and assigns it to the Task field.
@@ -263,15 +236,6 @@ func (o *WorkflowJobPayload) GetTargetsOk() ([]WorkflowJobPayloadTargetsInner, b
 	return o.Targets, true
 }
 
-// IsSetTargets returns a boolean if a field has been set.
-func (o *WorkflowJobPayload) IsSetTargets() bool {
-	if o != nil && !IsNil(o.Targets) {
-		return true
-	}
-
-	return false
-}
-
 // SetTargets gets a reference to the given []WorkflowJobPayloadTargetsInner and assigns it to the Targets field.
 func (o *WorkflowJobPayload) SetTargets(v []WorkflowJobPayloadTargetsInner) {
 	o.Targets = v
@@ -295,15 +259,6 @@ func (o *WorkflowJobPayload) GetInstanceLabelOk() (*string, bool) {
 	return o.InstanceLabel, true
 }
 
-// IsSetInstanceLabel returns a boolean if a field has been set.
-func (o *WorkflowJobPayload) IsSetInstanceLabel() bool {
-	if o != nil && !IsNil(o.InstanceLabel) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstanceLabel gets a reference to the given string and assigns it to the InstanceLabel field.
 func (o *WorkflowJobPayload) SetInstanceLabel(v string) {
 	o.InstanceLabel = &v
@@ -325,15 +280,6 @@ func (o *WorkflowJobPayload) GetServerLabelOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ServerLabel, true
-}
-
-// IsSetServerLabel returns a boolean if a field has been set.
-func (o *WorkflowJobPayload) IsSetServerLabel() bool {
-	if o != nil && !IsNil(o.ServerLabel) {
-		return true
-	}
-
-	return false
 }
 
 // SetServerLabel gets a reference to the given string and assigns it to the ServerLabel field.
@@ -383,15 +329,6 @@ func (o *WorkflowJobPayload) GetCustomOptionsOk() (map[string]interface{}, bool)
 	return o.CustomOptions, true
 }
 
-// IsSetCustomOptions returns a boolean if a field has been set.
-func (o *WorkflowJobPayload) IsSetCustomOptions() bool {
-	if o != nil && !IsNil(o.CustomOptions) {
-		return true
-	}
-
-	return false
-}
-
 // SetCustomOptions gets a reference to the given map[string]interface{} and assigns it to the CustomOptions field.
 func (o *WorkflowJobPayload) SetCustomOptions(v map[string]interface{}) {
 	o.CustomOptions = v
@@ -413,15 +350,6 @@ func (o *WorkflowJobPayload) GetCustomConfigOk() (*string, bool) {
 		return nil, false
 	}
 	return o.CustomConfig, true
-}
-
-// IsSetCustomConfig returns a boolean if a field has been set.
-func (o *WorkflowJobPayload) IsSetCustomConfig() bool {
-	if o != nil && !IsNil(o.CustomConfig) {
-		return true
-	}
-
-	return false
 }
 
 // SetCustomConfig gets a reference to the given string and assigns it to the CustomConfig field.
@@ -447,15 +375,6 @@ func (o *WorkflowJobPayload) GetDateTimeOk() (*time.Time, bool) {
 	return o.DateTime, true
 }
 
-// IsSetDateTime returns a boolean if a field has been set.
-func (o *WorkflowJobPayload) IsSetDateTime() bool {
-	if o != nil && !IsNil(o.DateTime) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateTime gets a reference to the given time.Time and assigns it to the DateTime field.
 func (o *WorkflowJobPayload) SetDateTime(v time.Time) {
 	o.DateTime = &v
@@ -477,15 +396,6 @@ func (o *WorkflowJobPayload) GetRunOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Run, true
-}
-
-// IsSetRun returns a boolean if a field has been set.
-func (o *WorkflowJobPayload) IsSetRun() bool {
-	if o != nil && !IsNil(o.Run) {
-		return true
-	}
-
-	return false
 }
 
 // SetRun gets a reference to the given bool and assigns it to the Run field.

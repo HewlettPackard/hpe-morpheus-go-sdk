@@ -64,15 +64,6 @@ func (o *GetNetworkPools200Response) GetNetworkPoolsOk() (*interface{}, bool) {
 	return &o.NetworkPools, true
 }
 
-// IsSetNetworkPools returns a boolean if a field has been set.
-func (o *GetNetworkPools200Response) IsSetNetworkPools() bool {
-	if o != nil && !IsNil(o.NetworkPools) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkPools gets a reference to the given interface{} and assigns it to the NetworkPools field.
 func (o *GetNetworkPools200Response) SetNetworkPools(v interface{}) {
 	o.NetworkPools = v
@@ -96,15 +87,6 @@ func (o *GetNetworkPools200Response) GetNetworkPoolCountOk() (*int64, bool) {
 	return o.NetworkPoolCount, true
 }
 
-// IsSetNetworkPoolCount returns a boolean if a field has been set.
-func (o *GetNetworkPools200Response) IsSetNetworkPoolCount() bool {
-	if o != nil && !IsNil(o.NetworkPoolCount) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkPoolCount gets a reference to the given int64 and assigns it to the NetworkPoolCount field.
 func (o *GetNetworkPools200Response) SetNetworkPoolCount(v int64) {
 	o.NetworkPoolCount = &v
@@ -126,15 +108,6 @@ func (o *GetNetworkPools200Response) GetMetaOk() (*ListApprovals200ResponseAllOf
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *GetNetworkPools200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

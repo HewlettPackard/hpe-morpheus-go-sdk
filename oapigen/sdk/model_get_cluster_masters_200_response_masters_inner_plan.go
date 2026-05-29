@@ -63,15 +63,6 @@ func (o *GetClusterMasters200ResponseMastersInnerPlan) GetIdOk() (*int64, bool) 
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetClusterMasters200ResponseMastersInnerPlan) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetClusterMasters200ResponseMastersInnerPlan) SetId(v int64) {
 	o.Id = &v
@@ -95,15 +86,6 @@ func (o *GetClusterMasters200ResponseMastersInnerPlan) GetCodeOk() (*string, boo
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *GetClusterMasters200ResponseMastersInnerPlan) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *GetClusterMasters200ResponseMastersInnerPlan) SetCode(v string) {
 	o.Code = &v
@@ -125,15 +107,6 @@ func (o *GetClusterMasters200ResponseMastersInnerPlan) GetNameOk() (*string, boo
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *GetClusterMasters200ResponseMastersInnerPlan) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.

@@ -63,15 +63,6 @@ func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfTenantsInner) GetIdOk(
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfTenantsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfTenantsInner) SetId(v int64) {
 	o.Id = &v
@@ -95,15 +86,6 @@ func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfTenantsInner) GetNameO
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfTenantsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfTenantsInner) SetName(v string) {
 	o.Name = &v
@@ -125,15 +107,6 @@ func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfTenantsInner) GetCanMa
 		return nil, false
 	}
 	return o.CanManage, true
-}
-
-// IsSetCanManage returns a boolean if a field has been set.
-func (o *UpdateSecurityGroups200ResponseSecurityGroupAllOfTenantsInner) IsSetCanManage() bool {
-	if o != nil && !IsNil(o.CanManage) {
-		return true
-	}
-
-	return false
 }
 
 // SetCanManage gets a reference to the given bool and assigns it to the CanManage field.

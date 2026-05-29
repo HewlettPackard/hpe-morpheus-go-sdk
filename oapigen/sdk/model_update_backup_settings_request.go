@@ -61,15 +61,6 @@ func (o *UpdateBackupSettingsRequest) GetBackupSettingsOk() (*UpdateBackupSettin
 	return o.BackupSettings, true
 }
 
-// IsSetBackupSettings returns a boolean if a field has been set.
-func (o *UpdateBackupSettingsRequest) IsSetBackupSettings() bool {
-	if o != nil && !IsNil(o.BackupSettings) {
-		return true
-	}
-
-	return false
-}
-
 // SetBackupSettings gets a reference to the given UpdateBackupSettingsRequestBackupSettings and assigns it to the BackupSettings field.
 func (o *UpdateBackupSettingsRequest) SetBackupSettings(v UpdateBackupSettingsRequestBackupSettings) {
 	o.BackupSettings = &v

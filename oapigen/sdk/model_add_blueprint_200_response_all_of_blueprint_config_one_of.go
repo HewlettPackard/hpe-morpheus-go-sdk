@@ -79,15 +79,6 @@ func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf) GetNameOk() (*string,
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf) SetName(v string) {
 	o.Name = &v
@@ -109,15 +100,6 @@ func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf) GetImageOk() (*string
 		return nil, false
 	}
 	return o.Image, true
-}
-
-// IsSetImage returns a boolean if a field has been set.
-func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf) IsSetImage() bool {
-	if o != nil && !IsNil(o.Image) {
-		return true
-	}
-
-	return false
 }
 
 // SetImage gets a reference to the given string and assigns it to the Image field.
@@ -143,15 +125,6 @@ func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf) GetTypeOk() (*string,
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given string and assigns it to the Type field.
 func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf) SetType(v string) {
 	o.Type = &v
@@ -173,15 +146,6 @@ func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf) GetArmOk() (*AddBluep
 		return nil, false
 	}
 	return o.Arm, true
-}
-
-// IsSetArm returns a boolean if a field has been set.
-func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf) IsSetArm() bool {
-	if o != nil && !IsNil(o.Arm) {
-		return true
-	}
-
-	return false
 }
 
 // SetArm gets a reference to the given AddBlueprint200ResponseAllOfBlueprintConfigOneOfArm and assigns it to the Arm field.
@@ -207,15 +171,6 @@ func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf) GetVisibilityOk() (*s
 	return o.Visibility, true
 }
 
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
-}
-
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
 func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf) SetVisibility(v string) {
 	o.Visibility = &v
@@ -237,15 +192,6 @@ func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf) GetResourcePermission
 		return map[string]interface{}{}, false
 	}
 	return o.ResourcePermission, true
-}
-
-// IsSetResourcePermission returns a boolean if a field has been set.
-func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf) IsSetResourcePermission() bool {
-	if o != nil && !IsNil(o.ResourcePermission) {
-		return true
-	}
-
-	return false
 }
 
 // SetResourcePermission gets a reference to the given map[string]interface{} and assigns it to the ResourcePermission field.
@@ -271,15 +217,6 @@ func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf) GetOwnerOk() (map[str
 	return o.Owner, true
 }
 
-// IsSetOwner returns a boolean if a field has been set.
-func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
-		return true
-	}
-
-	return false
-}
-
 // SetOwner gets a reference to the given map[string]interface{} and assigns it to the Owner field.
 func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf) SetOwner(v map[string]interface{}) {
 	o.Owner = v
@@ -301,15 +238,6 @@ func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf) GetTenantOk() (map[st
 		return map[string]interface{}{}, false
 	}
 	return o.Tenant, true
-}
-
-// IsSetTenant returns a boolean if a field has been set.
-func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf) IsSetTenant() bool {
-	if o != nil && !IsNil(o.Tenant) {
-		return true
-	}
-
-	return false
 }
 
 // SetTenant gets a reference to the given map[string]interface{} and assigns it to the Tenant field.

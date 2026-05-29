@@ -74,15 +74,6 @@ func (o *SaveClusterDatastoreRequestDatastore) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *SaveClusterDatastoreRequestDatastore) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *SaveClusterDatastoreRequestDatastore) SetName(v string) {
 	o.Name = &v
@@ -104,15 +95,6 @@ func (o *SaveClusterDatastoreRequestDatastore) GetDatastoreTypeOk() (*SaveCluste
 		return nil, false
 	}
 	return o.DatastoreType, true
-}
-
-// IsSetDatastoreType returns a boolean if a field has been set.
-func (o *SaveClusterDatastoreRequestDatastore) IsSetDatastoreType() bool {
-	if o != nil && !IsNil(o.DatastoreType) {
-		return true
-	}
-
-	return false
 }
 
 // SetDatastoreType gets a reference to the given SaveClusterDatastoreRequestDatastoreDatastoreType and assigns it to the DatastoreType field.
@@ -138,15 +120,6 @@ func (o *SaveClusterDatastoreRequestDatastore) GetStorageServerOk() (*SaveCluste
 	return o.StorageServer, true
 }
 
-// IsSetStorageServer returns a boolean if a field has been set.
-func (o *SaveClusterDatastoreRequestDatastore) IsSetStorageServer() bool {
-	if o != nil && !IsNil(o.StorageServer) {
-		return true
-	}
-
-	return false
-}
-
 // SetStorageServer gets a reference to the given SaveClusterDatastoreRequestDatastoreStorageServer and assigns it to the StorageServer field.
 func (o *SaveClusterDatastoreRequestDatastore) SetStorageServer(v SaveClusterDatastoreRequestDatastoreStorageServer) {
 	o.StorageServer = &v
@@ -168,15 +141,6 @@ func (o *SaveClusterDatastoreRequestDatastore) GetVisibilityOk() (*string, bool)
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *SaveClusterDatastoreRequestDatastore) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -202,15 +166,6 @@ func (o *SaveClusterDatastoreRequestDatastore) GetActiveOk() (*bool, bool) {
 	return o.Active, true
 }
 
-// IsSetActive returns a boolean if a field has been set.
-func (o *SaveClusterDatastoreRequestDatastore) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
-}
-
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *SaveClusterDatastoreRequestDatastore) SetActive(v bool) {
 	o.Active = &v
@@ -232,15 +187,6 @@ func (o *SaveClusterDatastoreRequestDatastore) GetDefaultStoreOk() (*bool, bool)
 		return nil, false
 	}
 	return o.DefaultStore, true
-}
-
-// IsSetDefaultStore returns a boolean if a field has been set.
-func (o *SaveClusterDatastoreRequestDatastore) IsSetDefaultStore() bool {
-	if o != nil && !IsNil(o.DefaultStore) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultStore gets a reference to the given bool and assigns it to the DefaultStore field.
@@ -266,15 +212,6 @@ func (o *SaveClusterDatastoreRequestDatastore) GetConfigOk() (*SaveClusterDatast
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *SaveClusterDatastoreRequestDatastore) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given SaveClusterDatastoreRequestDatastoreConfig and assigns it to the Config field.
 func (o *SaveClusterDatastoreRequestDatastore) SetConfig(v SaveClusterDatastoreRequestDatastoreConfig) {
 	o.Config = &v
@@ -296,15 +233,6 @@ func (o *SaveClusterDatastoreRequestDatastore) GetTenantsOk() ([]SaveClusterData
 		return nil, false
 	}
 	return o.Tenants, true
-}
-
-// IsSetTenants returns a boolean if a field has been set.
-func (o *SaveClusterDatastoreRequestDatastore) IsSetTenants() bool {
-	if o != nil && !IsNil(o.Tenants) {
-		return true
-	}
-
-	return false
 }
 
 // SetTenants gets a reference to the given []SaveClusterDatastoreRequestDatastoreTenantsInner and assigns it to the Tenants field.
@@ -330,15 +258,6 @@ func (o *SaveClusterDatastoreRequestDatastore) GetResourcePermissionsOk() (*Save
 	return o.ResourcePermissions, true
 }
 
-// IsSetResourcePermissions returns a boolean if a field has been set.
-func (o *SaveClusterDatastoreRequestDatastore) IsSetResourcePermissions() bool {
-	if o != nil && !IsNil(o.ResourcePermissions) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourcePermissions gets a reference to the given SaveClusterDatastoreRequestDatastoreResourcePermissions and assigns it to the ResourcePermissions field.
 func (o *SaveClusterDatastoreRequestDatastore) SetResourcePermissions(v SaveClusterDatastoreRequestDatastoreResourcePermissions) {
 	o.ResourcePermissions = &v
@@ -360,15 +279,6 @@ func (o *SaveClusterDatastoreRequestDatastore) GetDatastoresOk() ([]map[string]i
 		return nil, false
 	}
 	return o.Datastores, true
-}
-
-// IsSetDatastores returns a boolean if a field has been set.
-func (o *SaveClusterDatastoreRequestDatastore) IsSetDatastores() bool {
-	if o != nil && !IsNil(o.Datastores) {
-		return true
-	}
-
-	return false
 }
 
 // SetDatastores gets a reference to the given []map[string]interface{} and assigns it to the Datastores field.
@@ -394,15 +304,6 @@ func (o *SaveClusterDatastoreRequestDatastore) GetHeartbeatTargetOk() (*bool, bo
 	return o.HeartbeatTarget, true
 }
 
-// IsSetHeartbeatTarget returns a boolean if a field has been set.
-func (o *SaveClusterDatastoreRequestDatastore) IsSetHeartbeatTarget() bool {
-	if o != nil && !IsNil(o.HeartbeatTarget) {
-		return true
-	}
-
-	return false
-}
-
 // SetHeartbeatTarget gets a reference to the given bool and assigns it to the HeartbeatTarget field.
 func (o *SaveClusterDatastoreRequestDatastore) SetHeartbeatTarget(v bool) {
 	o.HeartbeatTarget = &v
@@ -424,15 +325,6 @@ func (o *SaveClusterDatastoreRequestDatastore) GetSupportsVmSecureMetadataOk() (
 		return nil, false
 	}
 	return o.SupportsVmSecureMetadata, true
-}
-
-// IsSetSupportsVmSecureMetadata returns a boolean if a field has been set.
-func (o *SaveClusterDatastoreRequestDatastore) IsSetSupportsVmSecureMetadata() bool {
-	if o != nil && !IsNil(o.SupportsVmSecureMetadata) {
-		return true
-	}
-
-	return false
 }
 
 // SetSupportsVmSecureMetadata gets a reference to the given bool and assigns it to the SupportsVmSecureMetadata field.

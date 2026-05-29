@@ -61,15 +61,6 @@ func (o *Whoami200ResponseAppliance) GetBuildVersionOk() (*string, bool) {
 	return o.BuildVersion, true
 }
 
-// IsSetBuildVersion returns a boolean if a field has been set.
-func (o *Whoami200ResponseAppliance) IsSetBuildVersion() bool {
-	if o != nil && !IsNil(o.BuildVersion) {
-		return true
-	}
-
-	return false
-}
-
 // SetBuildVersion gets a reference to the given string and assigns it to the BuildVersion field.
 func (o *Whoami200ResponseAppliance) SetBuildVersion(v string) {
 	o.BuildVersion = &v

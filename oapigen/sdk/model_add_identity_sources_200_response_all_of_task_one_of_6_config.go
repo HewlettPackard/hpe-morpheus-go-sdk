@@ -80,15 +80,6 @@ func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) GetUrlOk() (*string
 	return o.Url, true
 }
 
-// IsSetUrl returns a boolean if a field has been set.
-func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) IsSetUrl() bool {
-	if o != nil && !IsNil(o.Url) {
-		return true
-	}
-
-	return false
-}
-
 // SetUrl gets a reference to the given string and assigns it to the Url field.
 func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) SetUrl(v string) {
 	o.Url = &v
@@ -110,15 +101,6 @@ func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) GetLogoutUrlOk() (*
 		return nil, false
 	}
 	return o.LogoutUrl, true
-}
-
-// IsSetLogoutUrl returns a boolean if a field has been set.
-func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) IsSetLogoutUrl() bool {
-	if o != nil && !IsNil(o.LogoutUrl) {
-		return true
-	}
-
-	return false
 }
 
 // SetLogoutUrl gets a reference to the given string and assigns it to the LogoutUrl field.
@@ -144,15 +126,6 @@ func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) GetDoNotIncludeSAML
 	return o.DoNotIncludeSAMLRequest, true
 }
 
-// IsSetDoNotIncludeSAMLRequest returns a boolean if a field has been set.
-func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) IsSetDoNotIncludeSAMLRequest() bool {
-	if o != nil && !IsNil(o.DoNotIncludeSAMLRequest) {
-		return true
-	}
-
-	return false
-}
-
 // SetDoNotIncludeSAMLRequest gets a reference to the given bool and assigns it to the DoNotIncludeSAMLRequest field.
 func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) SetDoNotIncludeSAMLRequest(v bool) {
 	o.DoNotIncludeSAMLRequest = &v
@@ -174,15 +147,6 @@ func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) GetSAMLSignatureMod
 		return nil, false
 	}
 	return o.SAMLSignatureMode, true
-}
-
-// IsSetSAMLSignatureMode returns a boolean if a field has been set.
-func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) IsSetSAMLSignatureMode() bool {
-	if o != nil && !IsNil(o.SAMLSignatureMode) {
-		return true
-	}
-
-	return false
 }
 
 // SetSAMLSignatureMode gets a reference to the given string and assigns it to the SAMLSignatureMode field.
@@ -208,15 +172,6 @@ func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) GetDoNotValidateSig
 	return o.DoNotValidateSignature, true
 }
 
-// IsSetDoNotValidateSignature returns a boolean if a field has been set.
-func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) IsSetDoNotValidateSignature() bool {
-	if o != nil && !IsNil(o.DoNotValidateSignature) {
-		return true
-	}
-
-	return false
-}
-
 // SetDoNotValidateSignature gets a reference to the given bool and assigns it to the DoNotValidateSignature field.
 func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) SetDoNotValidateSignature(v bool) {
 	o.DoNotValidateSignature = &v
@@ -238,15 +193,6 @@ func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) GetDoNotValidateSta
 		return nil, false
 	}
 	return o.DoNotValidateStatusCode, true
-}
-
-// IsSetDoNotValidateStatusCode returns a boolean if a field has been set.
-func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) IsSetDoNotValidateStatusCode() bool {
-	if o != nil && !IsNil(o.DoNotValidateStatusCode) {
-		return true
-	}
-
-	return false
 }
 
 // SetDoNotValidateStatusCode gets a reference to the given bool and assigns it to the DoNotValidateStatusCode field.
@@ -272,15 +218,6 @@ func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) GetDoNotValidateDes
 	return o.DoNotValidateDestination, true
 }
 
-// IsSetDoNotValidateDestination returns a boolean if a field has been set.
-func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) IsSetDoNotValidateDestination() bool {
-	if o != nil && !IsNil(o.DoNotValidateDestination) {
-		return true
-	}
-
-	return false
-}
-
 // SetDoNotValidateDestination gets a reference to the given bool and assigns it to the DoNotValidateDestination field.
 func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) SetDoNotValidateDestination(v bool) {
 	o.DoNotValidateDestination = &v
@@ -302,15 +239,6 @@ func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) GetDoNotValidateIss
 		return nil, false
 	}
 	return o.DoNotValidateIssueInstants, true
-}
-
-// IsSetDoNotValidateIssueInstants returns a boolean if a field has been set.
-func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) IsSetDoNotValidateIssueInstants() bool {
-	if o != nil && !IsNil(o.DoNotValidateIssueInstants) {
-		return true
-	}
-
-	return false
 }
 
 // SetDoNotValidateIssueInstants gets a reference to the given bool and assigns it to the DoNotValidateIssueInstants field.
@@ -336,15 +264,6 @@ func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) GetDoNotValidateAss
 	return o.DoNotValidateAssertions, true
 }
 
-// IsSetDoNotValidateAssertions returns a boolean if a field has been set.
-func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) IsSetDoNotValidateAssertions() bool {
-	if o != nil && !IsNil(o.DoNotValidateAssertions) {
-		return true
-	}
-
-	return false
-}
-
 // SetDoNotValidateAssertions gets a reference to the given bool and assigns it to the DoNotValidateAssertions field.
 func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) SetDoNotValidateAssertions(v bool) {
 	o.DoNotValidateAssertions = &v
@@ -366,15 +285,6 @@ func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) GetGivenNameAttribu
 		return nil, false
 	}
 	return o.GivenNameAttribute, true
-}
-
-// IsSetGivenNameAttribute returns a boolean if a field has been set.
-func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) IsSetGivenNameAttribute() bool {
-	if o != nil && !IsNil(o.GivenNameAttribute) {
-		return true
-	}
-
-	return false
 }
 
 // SetGivenNameAttribute gets a reference to the given string and assigns it to the GivenNameAttribute field.
@@ -400,15 +310,6 @@ func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) GetSurnameAttribute
 	return o.SurnameAttribute, true
 }
 
-// IsSetSurnameAttribute returns a boolean if a field has been set.
-func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) IsSetSurnameAttribute() bool {
-	if o != nil && !IsNil(o.SurnameAttribute) {
-		return true
-	}
-
-	return false
-}
-
 // SetSurnameAttribute gets a reference to the given string and assigns it to the SurnameAttribute field.
 func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) SetSurnameAttribute(v string) {
 	o.SurnameAttribute = &v
@@ -430,15 +331,6 @@ func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) GetEmailAttributeOk
 		return nil, false
 	}
 	return o.EmailAttribute, true
-}
-
-// IsSetEmailAttribute returns a boolean if a field has been set.
-func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) IsSetEmailAttribute() bool {
-	if o != nil && !IsNil(o.EmailAttribute) {
-		return true
-	}
-
-	return false
 }
 
 // SetEmailAttribute gets a reference to the given string and assigns it to the EmailAttribute field.
@@ -464,15 +356,6 @@ func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) GetRequiredAttribut
 	return o.RequiredAttributeValue, true
 }
 
-// IsSetRequiredAttributeValue returns a boolean if a field has been set.
-func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) IsSetRequiredAttributeValue() bool {
-	if o != nil && !IsNil(o.RequiredAttributeValue) {
-		return true
-	}
-
-	return false
-}
-
 // SetRequiredAttributeValue gets a reference to the given string and assigns it to the RequiredAttributeValue field.
 func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) SetRequiredAttributeValue(v string) {
 	o.RequiredAttributeValue = &v
@@ -494,15 +377,6 @@ func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) GetRoleAttributeNam
 		return nil, false
 	}
 	return o.RoleAttributeName, true
-}
-
-// IsSetRoleAttributeName returns a boolean if a field has been set.
-func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) IsSetRoleAttributeName() bool {
-	if o != nil && !IsNil(o.RoleAttributeName) {
-		return true
-	}
-
-	return false
 }
 
 // SetRoleAttributeName gets a reference to the given string and assigns it to the RoleAttributeName field.
@@ -528,15 +402,6 @@ func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) GetAzureTenantIdOk(
 	return o.AzureTenantId, true
 }
 
-// IsSetAzureTenantId returns a boolean if a field has been set.
-func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) IsSetAzureTenantId() bool {
-	if o != nil && !IsNil(o.AzureTenantId) {
-		return true
-	}
-
-	return false
-}
-
 // SetAzureTenantId gets a reference to the given string and assigns it to the AzureTenantId field.
 func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) SetAzureTenantId(v string) {
 	o.AzureTenantId = &v
@@ -558,15 +423,6 @@ func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) GetAzureAppIdOk() (
 		return nil, false
 	}
 	return o.AzureAppId, true
-}
-
-// IsSetAzureAppId returns a boolean if a field has been set.
-func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) IsSetAzureAppId() bool {
-	if o != nil && !IsNil(o.AzureAppId) {
-		return true
-	}
-
-	return false
 }
 
 // SetAzureAppId gets a reference to the given string and assigns it to the AzureAppId field.
@@ -593,28 +449,9 @@ func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) GetAzureAppSecretOk
 	return o.AzureAppSecret.Get(), o.AzureAppSecret.IsSet()
 }
 
-// IsSetAzureAppSecret returns a boolean if a field has been set.
-func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) IsSetAzureAppSecret() bool {
-	if o != nil && o.AzureAppSecret.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAzureAppSecret gets a reference to the given NullableString and assigns it to the AzureAppSecret field.
 func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) SetAzureAppSecret(v string) {
 	o.AzureAppSecret.Set(&v)
-}
-
-// SetAzureAppSecretNil sets the value for AzureAppSecret to be an explicit nil
-func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) SetAzureAppSecretNil() {
-	o.AzureAppSecret.Set(nil)
-}
-
-// UnsetAzureAppSecret ensures that no value is present for AzureAppSecret, not even an explicit nil
-func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) UnsetAzureAppSecret() {
-	o.AzureAppSecret.Unset()
 }
 
 // GetRoleLinkAttributeName returns the RoleLinkAttributeName field value if set, zero value otherwise.
@@ -633,15 +470,6 @@ func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) GetRoleLinkAttribut
 		return nil, false
 	}
 	return o.RoleLinkAttributeName, true
-}
-
-// IsSetRoleLinkAttributeName returns a boolean if a field has been set.
-func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) IsSetRoleLinkAttributeName() bool {
-	if o != nil && !IsNil(o.RoleLinkAttributeName) {
-		return true
-	}
-
-	return false
 }
 
 // SetRoleLinkAttributeName gets a reference to the given string and assigns it to the RoleLinkAttributeName field.
@@ -665,15 +493,6 @@ func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) GetPublicKeyOk() (*
 		return nil, false
 	}
 	return o.PublicKey, true
-}
-
-// IsSetPublicKey returns a boolean if a field has been set.
-func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) IsSetPublicKey() bool {
-	if o != nil && !IsNil(o.PublicKey) {
-		return true
-	}
-
-	return false
 }
 
 // SetPublicKey gets a reference to the given string and assigns it to the PublicKey field.
@@ -700,28 +519,9 @@ func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) GetAzureAppSecretHa
 	return o.AzureAppSecretHash.Get(), o.AzureAppSecretHash.IsSet()
 }
 
-// IsSetAzureAppSecretHash returns a boolean if a field has been set.
-func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) IsSetAzureAppSecretHash() bool {
-	if o != nil && o.AzureAppSecretHash.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAzureAppSecretHash gets a reference to the given NullableString and assigns it to the AzureAppSecretHash field.
 func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) SetAzureAppSecretHash(v string) {
 	o.AzureAppSecretHash.Set(&v)
-}
-
-// SetAzureAppSecretHashNil sets the value for AzureAppSecretHash to be an explicit nil
-func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) SetAzureAppSecretHashNil() {
-	o.AzureAppSecretHash.Set(nil)
-}
-
-// UnsetAzureAppSecretHash ensures that no value is present for AzureAppSecretHash, not even an explicit nil
-func (o *AddIdentitySources200ResponseAllOfTaskOneOf6Config) UnsetAzureAppSecretHash() {
-	o.AzureAppSecretHash.Unset()
 }
 
 func (o AddIdentitySources200ResponseAllOfTaskOneOf6Config) MarshalJSON() ([]byte, error) {

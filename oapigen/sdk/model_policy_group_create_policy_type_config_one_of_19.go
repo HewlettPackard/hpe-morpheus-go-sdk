@@ -61,15 +61,6 @@ func (o *PolicyGroupCreatePolicyTypeConfigOneOf19) GetMaxVirtualServersOk() (*st
 	return o.MaxVirtualServers, true
 }
 
-// IsSetMaxVirtualServers returns a boolean if a field has been set.
-func (o *PolicyGroupCreatePolicyTypeConfigOneOf19) IsSetMaxVirtualServers() bool {
-	if o != nil && !IsNil(o.MaxVirtualServers) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxVirtualServers gets a reference to the given string and assigns it to the MaxVirtualServers field.
 func (o *PolicyGroupCreatePolicyTypeConfigOneOf19) SetMaxVirtualServers(v string) {
 	o.MaxVirtualServers = &v

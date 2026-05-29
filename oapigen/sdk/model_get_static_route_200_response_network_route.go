@@ -78,15 +78,6 @@ func (o *GetStaticRoute200ResponseNetworkRoute) GetIdOk() (*int32, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetStaticRoute200ResponseNetworkRoute) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int32 and assigns it to the Id field.
 func (o *GetStaticRoute200ResponseNetworkRoute) SetId(v int32) {
 	o.Id = &v
@@ -108,15 +99,6 @@ func (o *GetStaticRoute200ResponseNetworkRoute) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *GetStaticRoute200ResponseNetworkRoute) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -143,28 +125,9 @@ func (o *GetStaticRoute200ResponseNetworkRoute) GetCodeOk() (*string, bool) {
 	return o.Code.Get(), o.Code.IsSet()
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *GetStaticRoute200ResponseNetworkRoute) IsSetCode() bool {
-	if o != nil && o.Code.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *GetStaticRoute200ResponseNetworkRoute) SetCode(v string) {
 	o.Code.Set(&v)
-}
-
-// SetCodeNil sets the value for Code to be an explicit nil
-func (o *GetStaticRoute200ResponseNetworkRoute) SetCodeNil() {
-	o.Code.Set(nil)
-}
-
-// UnsetCode ensures that no value is present for Code, not even an explicit nil
-func (o *GetStaticRoute200ResponseNetworkRoute) UnsetCode() {
-	o.Code.Unset()
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -186,28 +149,9 @@ func (o *GetStaticRoute200ResponseNetworkRoute) GetDescriptionOk() (*string, boo
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *GetStaticRoute200ResponseNetworkRoute) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *GetStaticRoute200ResponseNetworkRoute) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *GetStaticRoute200ResponseNetworkRoute) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *GetStaticRoute200ResponseNetworkRoute) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetPriority returns the Priority field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -229,28 +173,9 @@ func (o *GetStaticRoute200ResponseNetworkRoute) GetPriorityOk() (*string, bool) 
 	return o.Priority.Get(), o.Priority.IsSet()
 }
 
-// IsSetPriority returns a boolean if a field has been set.
-func (o *GetStaticRoute200ResponseNetworkRoute) IsSetPriority() bool {
-	if o != nil && o.Priority.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPriority gets a reference to the given NullableString and assigns it to the Priority field.
 func (o *GetStaticRoute200ResponseNetworkRoute) SetPriority(v string) {
 	o.Priority.Set(&v)
-}
-
-// SetPriorityNil sets the value for Priority to be an explicit nil
-func (o *GetStaticRoute200ResponseNetworkRoute) SetPriorityNil() {
-	o.Priority.Set(nil)
-}
-
-// UnsetPriority ensures that no value is present for Priority, not even an explicit nil
-func (o *GetStaticRoute200ResponseNetworkRoute) UnsetPriority() {
-	o.Priority.Unset()
 }
 
 // GetRouteType returns the RouteType field value if set, zero value otherwise.
@@ -269,15 +194,6 @@ func (o *GetStaticRoute200ResponseNetworkRoute) GetRouteTypeOk() (*string, bool)
 		return nil, false
 	}
 	return o.RouteType, true
-}
-
-// IsSetRouteType returns a boolean if a field has been set.
-func (o *GetStaticRoute200ResponseNetworkRoute) IsSetRouteType() bool {
-	if o != nil && !IsNil(o.RouteType) {
-		return true
-	}
-
-	return false
 }
 
 // SetRouteType gets a reference to the given string and assigns it to the RouteType field.
@@ -303,15 +219,6 @@ func (o *GetStaticRoute200ResponseNetworkRoute) GetSourceOk() (*string, bool) {
 	return o.Source, true
 }
 
-// IsSetSource returns a boolean if a field has been set.
-func (o *GetStaticRoute200ResponseNetworkRoute) IsSetSource() bool {
-	if o != nil && !IsNil(o.Source) {
-		return true
-	}
-
-	return false
-}
-
 // SetSource gets a reference to the given string and assigns it to the Source field.
 func (o *GetStaticRoute200ResponseNetworkRoute) SetSource(v string) {
 	o.Source = &v
@@ -333,15 +240,6 @@ func (o *GetStaticRoute200ResponseNetworkRoute) GetSourceTypeOk() (*string, bool
 		return nil, false
 	}
 	return o.SourceType, true
-}
-
-// IsSetSourceType returns a boolean if a field has been set.
-func (o *GetStaticRoute200ResponseNetworkRoute) IsSetSourceType() bool {
-	if o != nil && !IsNil(o.SourceType) {
-		return true
-	}
-
-	return false
 }
 
 // SetSourceType gets a reference to the given string and assigns it to the SourceType field.
@@ -367,15 +265,6 @@ func (o *GetStaticRoute200ResponseNetworkRoute) GetDestinationOk() (*string, boo
 	return o.Destination, true
 }
 
-// IsSetDestination returns a boolean if a field has been set.
-func (o *GetStaticRoute200ResponseNetworkRoute) IsSetDestination() bool {
-	if o != nil && !IsNil(o.Destination) {
-		return true
-	}
-
-	return false
-}
-
 // SetDestination gets a reference to the given string and assigns it to the Destination field.
 func (o *GetStaticRoute200ResponseNetworkRoute) SetDestination(v string) {
 	o.Destination = &v
@@ -399,15 +288,6 @@ func (o *GetStaticRoute200ResponseNetworkRoute) GetDestinationTypeOk() (*string,
 	return o.DestinationType, true
 }
 
-// IsSetDestinationType returns a boolean if a field has been set.
-func (o *GetStaticRoute200ResponseNetworkRoute) IsSetDestinationType() bool {
-	if o != nil && !IsNil(o.DestinationType) {
-		return true
-	}
-
-	return false
-}
-
 // SetDestinationType gets a reference to the given string and assigns it to the DestinationType field.
 func (o *GetStaticRoute200ResponseNetworkRoute) SetDestinationType(v string) {
 	o.DestinationType = &v
@@ -429,15 +309,6 @@ func (o *GetStaticRoute200ResponseNetworkRoute) GetDefaultRouteOk() (*bool, bool
 		return nil, false
 	}
 	return o.DefaultRoute, true
-}
-
-// IsSetDefaultRoute returns a boolean if a field has been set.
-func (o *GetStaticRoute200ResponseNetworkRoute) IsSetDefaultRoute() bool {
-	if o != nil && !IsNil(o.DefaultRoute) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultRoute gets a reference to the given bool and assigns it to the DefaultRoute field.
@@ -464,28 +335,9 @@ func (o *GetStaticRoute200ResponseNetworkRoute) GetNetworkMtuOk() (*string, bool
 	return o.NetworkMtu.Get(), o.NetworkMtu.IsSet()
 }
 
-// IsSetNetworkMtu returns a boolean if a field has been set.
-func (o *GetStaticRoute200ResponseNetworkRoute) IsSetNetworkMtu() bool {
-	if o != nil && o.NetworkMtu.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkMtu gets a reference to the given NullableString and assigns it to the NetworkMtu field.
 func (o *GetStaticRoute200ResponseNetworkRoute) SetNetworkMtu(v string) {
 	o.NetworkMtu.Set(&v)
-}
-
-// SetNetworkMtuNil sets the value for NetworkMtu to be an explicit nil
-func (o *GetStaticRoute200ResponseNetworkRoute) SetNetworkMtuNil() {
-	o.NetworkMtu.Set(nil)
-}
-
-// UnsetNetworkMtu ensures that no value is present for NetworkMtu, not even an explicit nil
-func (o *GetStaticRoute200ResponseNetworkRoute) UnsetNetworkMtu() {
-	o.NetworkMtu.Unset()
 }
 
 // GetExternalInterface returns the ExternalInterface field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -507,28 +359,9 @@ func (o *GetStaticRoute200ResponseNetworkRoute) GetExternalInterfaceOk() (*strin
 	return o.ExternalInterface.Get(), o.ExternalInterface.IsSet()
 }
 
-// IsSetExternalInterface returns a boolean if a field has been set.
-func (o *GetStaticRoute200ResponseNetworkRoute) IsSetExternalInterface() bool {
-	if o != nil && o.ExternalInterface.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalInterface gets a reference to the given NullableString and assigns it to the ExternalInterface field.
 func (o *GetStaticRoute200ResponseNetworkRoute) SetExternalInterface(v string) {
 	o.ExternalInterface.Set(&v)
-}
-
-// SetExternalInterfaceNil sets the value for ExternalInterface to be an explicit nil
-func (o *GetStaticRoute200ResponseNetworkRoute) SetExternalInterfaceNil() {
-	o.ExternalInterface.Set(nil)
-}
-
-// UnsetExternalInterface ensures that no value is present for ExternalInterface, not even an explicit nil
-func (o *GetStaticRoute200ResponseNetworkRoute) UnsetExternalInterface() {
-	o.ExternalInterface.Unset()
 }
 
 // GetInternalId returns the InternalId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -550,28 +383,9 @@ func (o *GetStaticRoute200ResponseNetworkRoute) GetInternalIdOk() (*string, bool
 	return o.InternalId.Get(), o.InternalId.IsSet()
 }
 
-// IsSetInternalId returns a boolean if a field has been set.
-func (o *GetStaticRoute200ResponseNetworkRoute) IsSetInternalId() bool {
-	if o != nil && o.InternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInternalId gets a reference to the given NullableString and assigns it to the InternalId field.
 func (o *GetStaticRoute200ResponseNetworkRoute) SetInternalId(v string) {
 	o.InternalId.Set(&v)
-}
-
-// SetInternalIdNil sets the value for InternalId to be an explicit nil
-func (o *GetStaticRoute200ResponseNetworkRoute) SetInternalIdNil() {
-	o.InternalId.Set(nil)
-}
-
-// UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
-func (o *GetStaticRoute200ResponseNetworkRoute) UnsetInternalId() {
-	o.InternalId.Unset()
 }
 
 // GetUniqueId returns the UniqueId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -593,28 +407,9 @@ func (o *GetStaticRoute200ResponseNetworkRoute) GetUniqueIdOk() (*string, bool) 
 	return o.UniqueId.Get(), o.UniqueId.IsSet()
 }
 
-// IsSetUniqueId returns a boolean if a field has been set.
-func (o *GetStaticRoute200ResponseNetworkRoute) IsSetUniqueId() bool {
-	if o != nil && o.UniqueId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetUniqueId gets a reference to the given NullableString and assigns it to the UniqueId field.
 func (o *GetStaticRoute200ResponseNetworkRoute) SetUniqueId(v string) {
 	o.UniqueId.Set(&v)
-}
-
-// SetUniqueIdNil sets the value for UniqueId to be an explicit nil
-func (o *GetStaticRoute200ResponseNetworkRoute) SetUniqueIdNil() {
-	o.UniqueId.Set(nil)
-}
-
-// UnsetUniqueId ensures that no value is present for UniqueId, not even an explicit nil
-func (o *GetStaticRoute200ResponseNetworkRoute) UnsetUniqueId() {
-	o.UniqueId.Unset()
 }
 
 // GetExternalType returns the ExternalType field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -636,28 +431,9 @@ func (o *GetStaticRoute200ResponseNetworkRoute) GetExternalTypeOk() (*string, bo
 	return o.ExternalType.Get(), o.ExternalType.IsSet()
 }
 
-// IsSetExternalType returns a boolean if a field has been set.
-func (o *GetStaticRoute200ResponseNetworkRoute) IsSetExternalType() bool {
-	if o != nil && o.ExternalType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalType gets a reference to the given NullableString and assigns it to the ExternalType field.
 func (o *GetStaticRoute200ResponseNetworkRoute) SetExternalType(v string) {
 	o.ExternalType.Set(&v)
-}
-
-// SetExternalTypeNil sets the value for ExternalType to be an explicit nil
-func (o *GetStaticRoute200ResponseNetworkRoute) SetExternalTypeNil() {
-	o.ExternalType.Set(nil)
-}
-
-// UnsetExternalType ensures that no value is present for ExternalType, not even an explicit nil
-func (o *GetStaticRoute200ResponseNetworkRoute) UnsetExternalType() {
-	o.ExternalType.Unset()
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
@@ -676,15 +452,6 @@ func (o *GetStaticRoute200ResponseNetworkRoute) GetEnabledOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *GetStaticRoute200ResponseNetworkRoute) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -708,15 +475,6 @@ func (o *GetStaticRoute200ResponseNetworkRoute) GetVisibleOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Visible, true
-}
-
-// IsSetVisible returns a boolean if a field has been set.
-func (o *GetStaticRoute200ResponseNetworkRoute) IsSetVisible() bool {
-	if o != nil && !IsNil(o.Visible) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisible gets a reference to the given bool and assigns it to the Visible field.

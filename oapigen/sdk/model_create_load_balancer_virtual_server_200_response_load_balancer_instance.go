@@ -108,15 +108,6 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetIdOk
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetId(v int64) {
 	o.Id = &v
@@ -138,15 +129,6 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetLoad
 		return nil, false
 	}
 	return o.LoadBalancer, true
-}
-
-// IsSetLoadBalancer returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetLoadBalancer() bool {
-	if o != nil && !IsNil(o.LoadBalancer) {
-		return true
-	}
-
-	return false
 }
 
 // SetLoadBalancer gets a reference to the given CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstanceLoadBalancer and assigns it to the LoadBalancer field.
@@ -173,28 +155,9 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetInst
 	return o.Instance.Get(), o.Instance.IsSet()
 }
 
-// IsSetInstance returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetInstance() bool {
-	if o != nil && o.Instance.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInstance gets a reference to the given NullableString and assigns it to the Instance field.
 func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetInstance(v string) {
 	o.Instance.Set(&v)
-}
-
-// SetInstanceNil sets the value for Instance to be an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetInstanceNil() {
-	o.Instance.Set(nil)
-}
-
-// UnsetInstance ensures that no value is present for Instance, not even an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) UnsetInstance() {
-	o.Instance.Unset()
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
@@ -213,15 +176,6 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetConf
 		return map[string]interface{}{}, false
 	}
 	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
@@ -248,28 +202,9 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetDesc
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetInternalId returns the InternalId field value if set, zero value otherwise.
@@ -288,15 +223,6 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetInte
 		return nil, false
 	}
 	return o.InternalId, true
-}
-
-// IsSetInternalId returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetInternalId() bool {
-	if o != nil && !IsNil(o.InternalId) {
-		return true
-	}
-
-	return false
 }
 
 // SetInternalId gets a reference to the given string and assigns it to the InternalId field.
@@ -322,15 +248,6 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetExte
 	return o.ExternalId, true
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
 func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetExternalId(v string) {
 	o.ExternalId = &v
@@ -352,15 +269,6 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetDate
 		return nil, false
 	}
 	return o.DateCreated, true
-}
-
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
@@ -386,15 +294,6 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetLast
 	return o.LastUpdated, true
 }
 
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
-}
-
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
 func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetLastUpdated(v time.Time) {
 	o.LastUpdated = &v
@@ -418,15 +317,6 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetActi
 	return o.Active, true
 }
 
-// IsSetActive returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
-}
-
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetActive(v bool) {
 	o.Active = &v
@@ -448,15 +338,6 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetStic
 		return nil, false
 	}
 	return o.Sticky, true
-}
-
-// IsSetSticky returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetSticky() bool {
-	if o != nil && !IsNil(o.Sticky) {
-		return true
-	}
-
-	return false
 }
 
 // SetSticky gets a reference to the given bool and assigns it to the Sticky field.
@@ -483,28 +364,9 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetSslE
 	return o.SslEnabled.Get(), o.SslEnabled.IsSet()
 }
 
-// IsSetSslEnabled returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetSslEnabled() bool {
-	if o != nil && o.SslEnabled.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSslEnabled gets a reference to the given NullableString and assigns it to the SslEnabled field.
 func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetSslEnabled(v string) {
 	o.SslEnabled.Set(&v)
-}
-
-// SetSslEnabledNil sets the value for SslEnabled to be an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetSslEnabledNil() {
-	o.SslEnabled.Set(nil)
-}
-
-// UnsetSslEnabled ensures that no value is present for SslEnabled, not even an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) UnsetSslEnabled() {
-	o.SslEnabled.Unset()
 }
 
 // GetExternalAddress returns the ExternalAddress field value if set, zero value otherwise.
@@ -523,15 +385,6 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetExte
 		return nil, false
 	}
 	return o.ExternalAddress, true
-}
-
-// IsSetExternalAddress returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetExternalAddress() bool {
-	if o != nil && !IsNil(o.ExternalAddress) {
-		return true
-	}
-
-	return false
 }
 
 // SetExternalAddress gets a reference to the given bool and assigns it to the ExternalAddress field.
@@ -558,28 +411,9 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetBack
 	return o.BackendPort.Get(), o.BackendPort.IsSet()
 }
 
-// IsSetBackendPort returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetBackendPort() bool {
-	if o != nil && o.BackendPort.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetBackendPort gets a reference to the given NullableString and assigns it to the BackendPort field.
 func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetBackendPort(v string) {
 	o.BackendPort.Set(&v)
-}
-
-// SetBackendPortNil sets the value for BackendPort to be an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetBackendPortNil() {
-	o.BackendPort.Set(nil)
-}
-
-// UnsetBackendPort ensures that no value is present for BackendPort, not even an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) UnsetBackendPort() {
-	o.BackendPort.Unset()
 }
 
 // GetVipType returns the VipType field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -601,28 +435,9 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetVipT
 	return o.VipType.Get(), o.VipType.IsSet()
 }
 
-// IsSetVipType returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetVipType() bool {
-	if o != nil && o.VipType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetVipType gets a reference to the given NullableString and assigns it to the VipType field.
 func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetVipType(v string) {
 	o.VipType.Set(&v)
-}
-
-// SetVipTypeNil sets the value for VipType to be an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetVipTypeNil() {
-	o.VipType.Set(nil)
-}
-
-// UnsetVipType ensures that no value is present for VipType, not even an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) UnsetVipType() {
-	o.VipType.Unset()
 }
 
 // GetVipAddress returns the VipAddress field value if set, zero value otherwise.
@@ -641,15 +456,6 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetVipA
 		return nil, false
 	}
 	return o.VipAddress, true
-}
-
-// IsSetVipAddress returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetVipAddress() bool {
-	if o != nil && !IsNil(o.VipAddress) {
-		return true
-	}
-
-	return false
 }
 
 // SetVipAddress gets a reference to the given string and assigns it to the VipAddress field.
@@ -676,28 +482,9 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetVipH
 	return o.VipHostname.Get(), o.VipHostname.IsSet()
 }
 
-// IsSetVipHostname returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetVipHostname() bool {
-	if o != nil && o.VipHostname.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetVipHostname gets a reference to the given NullableString and assigns it to the VipHostname field.
 func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetVipHostname(v string) {
 	o.VipHostname.Set(&v)
-}
-
-// SetVipHostnameNil sets the value for VipHostname to be an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetVipHostnameNil() {
-	o.VipHostname.Set(nil)
-}
-
-// UnsetVipHostname ensures that no value is present for VipHostname, not even an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) UnsetVipHostname() {
-	o.VipHostname.Unset()
 }
 
 // GetVipProtocol returns the VipProtocol field value if set, zero value otherwise.
@@ -716,15 +503,6 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetVipP
 		return nil, false
 	}
 	return o.VipProtocol, true
-}
-
-// IsSetVipProtocol returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetVipProtocol() bool {
-	if o != nil && !IsNil(o.VipProtocol) {
-		return true
-	}
-
-	return false
 }
 
 // SetVipProtocol gets a reference to the given string and assigns it to the VipProtocol field.
@@ -751,28 +529,9 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetVipS
 	return o.VipScheme.Get(), o.VipScheme.IsSet()
 }
 
-// IsSetVipScheme returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetVipScheme() bool {
-	if o != nil && o.VipScheme.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetVipScheme gets a reference to the given NullableString and assigns it to the VipScheme field.
 func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetVipScheme(v string) {
 	o.VipScheme.Set(&v)
-}
-
-// SetVipSchemeNil sets the value for VipScheme to be an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetVipSchemeNil() {
-	o.VipScheme.Set(nil)
-}
-
-// UnsetVipScheme ensures that no value is present for VipScheme, not even an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) UnsetVipScheme() {
-	o.VipScheme.Unset()
 }
 
 // GetVipMode returns the VipMode field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -794,28 +553,9 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetVipM
 	return o.VipMode.Get(), o.VipMode.IsSet()
 }
 
-// IsSetVipMode returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetVipMode() bool {
-	if o != nil && o.VipMode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetVipMode gets a reference to the given NullableString and assigns it to the VipMode field.
 func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetVipMode(v string) {
 	o.VipMode.Set(&v)
-}
-
-// SetVipModeNil sets the value for VipMode to be an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetVipModeNil() {
-	o.VipMode.Set(nil)
-}
-
-// UnsetVipMode ensures that no value is present for VipMode, not even an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) UnsetVipMode() {
-	o.VipMode.Unset()
 }
 
 // GetVipName returns the VipName field value if set, zero value otherwise.
@@ -834,15 +574,6 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetVipN
 		return nil, false
 	}
 	return o.VipName, true
-}
-
-// IsSetVipName returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetVipName() bool {
-	if o != nil && !IsNil(o.VipName) {
-		return true
-	}
-
-	return false
 }
 
 // SetVipName gets a reference to the given string and assigns it to the VipName field.
@@ -866,15 +597,6 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetVipP
 		return nil, false
 	}
 	return o.VipPort, true
-}
-
-// IsSetVipPort returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetVipPort() bool {
-	if o != nil && !IsNil(o.VipPort) {
-		return true
-	}
-
-	return false
 }
 
 // SetVipPort gets a reference to the given int64 and assigns it to the VipPort field.
@@ -901,15 +623,6 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetVipP
 	return o.VipPool, true
 }
 
-// IsSetVipPool returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetVipPool() bool {
-	if o != nil && !IsNil(o.VipPool) {
-		return true
-	}
-
-	return false
-}
-
 // SetVipPool gets a reference to the given map[string]interface{} and assigns it to the VipPool field.
 func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetVipPool(v map[string]interface{}) {
 	o.VipPool = v
@@ -934,28 +647,9 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetVipS
 	return o.VipSticky.Get(), o.VipSticky.IsSet()
 }
 
-// IsSetVipSticky returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetVipSticky() bool {
-	if o != nil && o.VipSticky.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetVipSticky gets a reference to the given NullableString and assigns it to the VipSticky field.
 func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetVipSticky(v string) {
 	o.VipSticky.Set(&v)
-}
-
-// SetVipStickyNil sets the value for VipSticky to be an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetVipStickyNil() {
-	o.VipSticky.Set(nil)
-}
-
-// UnsetVipSticky ensures that no value is present for VipSticky, not even an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) UnsetVipSticky() {
-	o.VipSticky.Unset()
 }
 
 // GetVipBalance returns the VipBalance field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -977,28 +671,9 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetVipB
 	return o.VipBalance.Get(), o.VipBalance.IsSet()
 }
 
-// IsSetVipBalance returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetVipBalance() bool {
-	if o != nil && o.VipBalance.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetVipBalance gets a reference to the given NullableString and assigns it to the VipBalance field.
 func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetVipBalance(v string) {
 	o.VipBalance.Set(&v)
-}
-
-// SetVipBalanceNil sets the value for VipBalance to be an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetVipBalanceNil() {
-	o.VipBalance.Set(nil)
-}
-
-// UnsetVipBalance ensures that no value is present for VipBalance, not even an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) UnsetVipBalance() {
-	o.VipBalance.Unset()
 }
 
 // GetServicePort returns the ServicePort field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1020,28 +695,9 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetServ
 	return o.ServicePort.Get(), o.ServicePort.IsSet()
 }
 
-// IsSetServicePort returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetServicePort() bool {
-	if o != nil && o.ServicePort.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServicePort gets a reference to the given NullableString and assigns it to the ServicePort field.
 func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetServicePort(v string) {
 	o.ServicePort.Set(&v)
-}
-
-// SetServicePortNil sets the value for ServicePort to be an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetServicePortNil() {
-	o.ServicePort.Set(nil)
-}
-
-// UnsetServicePort ensures that no value is present for ServicePort, not even an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) UnsetServicePort() {
-	o.ServicePort.Unset()
 }
 
 // GetSourceAddress returns the SourceAddress field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1063,28 +719,9 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetSour
 	return o.SourceAddress.Get(), o.SourceAddress.IsSet()
 }
 
-// IsSetSourceAddress returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetSourceAddress() bool {
-	if o != nil && o.SourceAddress.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSourceAddress gets a reference to the given NullableString and assigns it to the SourceAddress field.
 func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetSourceAddress(v string) {
 	o.SourceAddress.Set(&v)
-}
-
-// SetSourceAddressNil sets the value for SourceAddress to be an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetSourceAddressNil() {
-	o.SourceAddress.Set(nil)
-}
-
-// UnsetSourceAddress ensures that no value is present for SourceAddress, not even an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) UnsetSourceAddress() {
-	o.SourceAddress.Unset()
 }
 
 // GetSslCert returns the SslCert field value if set, zero value otherwise.
@@ -1103,15 +740,6 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetSslC
 		return nil, false
 	}
 	return o.SslCert, true
-}
-
-// IsSetSslCert returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetSslCert() bool {
-	if o != nil && !IsNil(o.SslCert) {
-		return true
-	}
-
-	return false
 }
 
 // SetSslCert gets a reference to the given CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstanceSslCert and assigns it to the SslCert field.
@@ -1135,15 +763,6 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetSslS
 		return nil, false
 	}
 	return o.SslServerCert, true
-}
-
-// IsSetSslServerCert returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetSslServerCert() bool {
-	if o != nil && !IsNil(o.SslServerCert) {
-		return true
-	}
-
-	return false
 }
 
 // SetSslServerCert gets a reference to the given CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstanceSslServerCert and assigns it to the SslServerCert field.
@@ -1170,28 +789,9 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetSslM
 	return o.SslMode.Get(), o.SslMode.IsSet()
 }
 
-// IsSetSslMode returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetSslMode() bool {
-	if o != nil && o.SslMode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSslMode gets a reference to the given NullableString and assigns it to the SslMode field.
 func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetSslMode(v string) {
 	o.SslMode.Set(&v)
-}
-
-// SetSslModeNil sets the value for SslMode to be an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetSslModeNil() {
-	o.SslMode.Set(nil)
-}
-
-// UnsetSslMode ensures that no value is present for SslMode, not even an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) UnsetSslMode() {
-	o.SslMode.Unset()
 }
 
 // GetSslRedirectMode returns the SslRedirectMode field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1213,28 +813,9 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetSslR
 	return o.SslRedirectMode.Get(), o.SslRedirectMode.IsSet()
 }
 
-// IsSetSslRedirectMode returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetSslRedirectMode() bool {
-	if o != nil && o.SslRedirectMode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSslRedirectMode gets a reference to the given NullableString and assigns it to the SslRedirectMode field.
 func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetSslRedirectMode(v string) {
 	o.SslRedirectMode.Set(&v)
-}
-
-// SetSslRedirectModeNil sets the value for SslRedirectMode to be an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetSslRedirectModeNil() {
-	o.SslRedirectMode.Set(nil)
-}
-
-// UnsetSslRedirectMode ensures that no value is present for SslRedirectMode, not even an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) UnsetSslRedirectMode() {
-	o.SslRedirectMode.Unset()
 }
 
 // GetVipShared returns the VipShared field value if set, zero value otherwise.
@@ -1253,15 +834,6 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetVipS
 		return nil, false
 	}
 	return o.VipShared, true
-}
-
-// IsSetVipShared returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetVipShared() bool {
-	if o != nil && !IsNil(o.VipShared) {
-		return true
-	}
-
-	return false
 }
 
 // SetVipShared gets a reference to the given bool and assigns it to the VipShared field.
@@ -1288,28 +860,9 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetVipD
 	return o.VipDirectAddress.Get(), o.VipDirectAddress.IsSet()
 }
 
-// IsSetVipDirectAddress returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetVipDirectAddress() bool {
-	if o != nil && o.VipDirectAddress.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetVipDirectAddress gets a reference to the given NullableString and assigns it to the VipDirectAddress field.
 func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetVipDirectAddress(v string) {
 	o.VipDirectAddress.Set(&v)
-}
-
-// SetVipDirectAddressNil sets the value for VipDirectAddress to be an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetVipDirectAddressNil() {
-	o.VipDirectAddress.Set(nil)
-}
-
-// UnsetVipDirectAddress ensures that no value is present for VipDirectAddress, not even an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) UnsetVipDirectAddress() {
-	o.VipDirectAddress.Unset()
 }
 
 // GetServerName returns the ServerName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1331,28 +884,9 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetServ
 	return o.ServerName.Get(), o.ServerName.IsSet()
 }
 
-// IsSetServerName returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetServerName() bool {
-	if o != nil && o.ServerName.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServerName gets a reference to the given NullableString and assigns it to the ServerName field.
 func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetServerName(v string) {
 	o.ServerName.Set(&v)
-}
-
-// SetServerNameNil sets the value for ServerName to be an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetServerNameNil() {
-	o.ServerName.Set(nil)
-}
-
-// UnsetServerName ensures that no value is present for ServerName, not even an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) UnsetServerName() {
-	o.ServerName.Unset()
 }
 
 // GetPoolName returns the PoolName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1374,28 +908,9 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetPool
 	return o.PoolName.Get(), o.PoolName.IsSet()
 }
 
-// IsSetPoolName returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetPoolName() bool {
-	if o != nil && o.PoolName.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPoolName gets a reference to the given NullableString and assigns it to the PoolName field.
 func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetPoolName(v string) {
 	o.PoolName.Set(&v)
-}
-
-// SetPoolNameNil sets the value for PoolName to be an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetPoolNameNil() {
-	o.PoolName.Set(nil)
-}
-
-// UnsetPoolName ensures that no value is present for PoolName, not even an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) UnsetPoolName() {
-	o.PoolName.Unset()
 }
 
 // GetRemoving returns the Removing field value if set, zero value otherwise.
@@ -1414,15 +929,6 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetRemo
 		return nil, false
 	}
 	return o.Removing, true
-}
-
-// IsSetRemoving returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetRemoving() bool {
-	if o != nil && !IsNil(o.Removing) {
-		return true
-	}
-
-	return false
 }
 
 // SetRemoving gets a reference to the given bool and assigns it to the Removing field.
@@ -1448,15 +954,6 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetPool
 	return o.Pool, true
 }
 
-// IsSetPool returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetPool() bool {
-	if o != nil && !IsNil(o.Pool) {
-		return true
-	}
-
-	return false
-}
-
 // SetPool gets a reference to the given CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstancePool and assigns it to the Pool field.
 func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetPool(v CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstancePool) {
 	o.Pool = &v
@@ -1478,15 +975,6 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetVipS
 		return nil, false
 	}
 	return o.VipSource, true
-}
-
-// IsSetVipSource returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetVipSource() bool {
-	if o != nil && !IsNil(o.VipSource) {
-		return true
-	}
-
-	return false
 }
 
 // SetVipSource gets a reference to the given string and assigns it to the VipSource field.
@@ -1513,28 +1001,9 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetExtr
 	return o.ExtraConfig.Get(), o.ExtraConfig.IsSet()
 }
 
-// IsSetExtraConfig returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetExtraConfig() bool {
-	if o != nil && o.ExtraConfig.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExtraConfig gets a reference to the given NullableString and assigns it to the ExtraConfig field.
 func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetExtraConfig(v string) {
 	o.ExtraConfig.Set(&v)
-}
-
-// SetExtraConfigNil sets the value for ExtraConfig to be an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetExtraConfigNil() {
-	o.ExtraConfig.Set(nil)
-}
-
-// UnsetExtraConfig ensures that no value is present for ExtraConfig, not even an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) UnsetExtraConfig() {
-	o.ExtraConfig.Unset()
 }
 
 // GetServiceAccess returns the ServiceAccess field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1556,28 +1025,9 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetServ
 	return o.ServiceAccess.Get(), o.ServiceAccess.IsSet()
 }
 
-// IsSetServiceAccess returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetServiceAccess() bool {
-	if o != nil && o.ServiceAccess.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceAccess gets a reference to the given NullableString and assigns it to the ServiceAccess field.
 func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetServiceAccess(v string) {
 	o.ServiceAccess.Set(&v)
-}
-
-// SetServiceAccessNil sets the value for ServiceAccess to be an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetServiceAccessNil() {
-	o.ServiceAccess.Set(nil)
-}
-
-// UnsetServiceAccess ensures that no value is present for ServiceAccess, not even an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) UnsetServiceAccess() {
-	o.ServiceAccess.Unset()
 }
 
 // GetNetworkId returns the NetworkId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1599,28 +1049,9 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetNetw
 	return o.NetworkId.Get(), o.NetworkId.IsSet()
 }
 
-// IsSetNetworkId returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetNetworkId() bool {
-	if o != nil && o.NetworkId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkId gets a reference to the given NullableString and assigns it to the NetworkId field.
 func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetNetworkId(v string) {
 	o.NetworkId.Set(&v)
-}
-
-// SetNetworkIdNil sets the value for NetworkId to be an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetNetworkIdNil() {
-	o.NetworkId.Set(nil)
-}
-
-// UnsetNetworkId ensures that no value is present for NetworkId, not even an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) UnsetNetworkId() {
-	o.NetworkId.Unset()
 }
 
 // GetSubnetId returns the SubnetId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1642,28 +1073,9 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetSubn
 	return o.SubnetId.Get(), o.SubnetId.IsSet()
 }
 
-// IsSetSubnetId returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetSubnetId() bool {
-	if o != nil && o.SubnetId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSubnetId gets a reference to the given NullableString and assigns it to the SubnetId field.
 func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetSubnetId(v string) {
 	o.SubnetId.Set(&v)
-}
-
-// SetSubnetIdNil sets the value for SubnetId to be an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetSubnetIdNil() {
-	o.SubnetId.Set(nil)
-}
-
-// UnsetSubnetId ensures that no value is present for SubnetId, not even an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) UnsetSubnetId() {
-	o.SubnetId.Unset()
 }
 
 // GetExternalPortId returns the ExternalPortId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1685,28 +1097,9 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetExte
 	return o.ExternalPortId.Get(), o.ExternalPortId.IsSet()
 }
 
-// IsSetExternalPortId returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetExternalPortId() bool {
-	if o != nil && o.ExternalPortId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalPortId gets a reference to the given NullableString and assigns it to the ExternalPortId field.
 func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetExternalPortId(v string) {
 	o.ExternalPortId.Set(&v)
-}
-
-// SetExternalPortIdNil sets the value for ExternalPortId to be an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) SetExternalPortIdNil() {
-	o.ExternalPortId.Set(nil)
-}
-
-// UnsetExternalPortId ensures that no value is present for ExternalPortId, not even an explicit nil
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) UnsetExternalPortId() {
-	o.ExternalPortId.Unset()
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -1725,15 +1118,6 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetStat
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -1757,15 +1141,6 @@ func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) GetVipS
 		return nil, false
 	}
 	return o.VipStatus, true
-}
-
-// IsSetVipStatus returns a boolean if a field has been set.
-func (o *CreateLoadBalancerVirtualServer200ResponseLoadBalancerInstance) IsSetVipStatus() bool {
-	if o != nil && !IsNil(o.VipStatus) {
-		return true
-	}
-
-	return false
 }
 
 // SetVipStatus gets a reference to the given string and assigns it to the VipStatus field.

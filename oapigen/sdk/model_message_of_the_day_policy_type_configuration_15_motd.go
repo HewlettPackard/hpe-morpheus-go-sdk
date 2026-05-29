@@ -64,15 +64,6 @@ func (o *MessageOfTheDayPolicyTypeConfiguration15Motd) GetTitleOk() (*string, bo
 	return o.Title, true
 }
 
-// IsSetTitle returns a boolean if a field has been set.
-func (o *MessageOfTheDayPolicyTypeConfiguration15Motd) IsSetTitle() bool {
-	if o != nil && !IsNil(o.Title) {
-		return true
-	}
-
-	return false
-}
-
 // SetTitle gets a reference to the given string and assigns it to the Title field.
 func (o *MessageOfTheDayPolicyTypeConfiguration15Motd) SetTitle(v string) {
 	o.Title = &v
@@ -96,15 +87,6 @@ func (o *MessageOfTheDayPolicyTypeConfiguration15Motd) GetMessageOk() (*string, 
 	return o.Message, true
 }
 
-// IsSetMessage returns a boolean if a field has been set.
-func (o *MessageOfTheDayPolicyTypeConfiguration15Motd) IsSetMessage() bool {
-	if o != nil && !IsNil(o.Message) {
-		return true
-	}
-
-	return false
-}
-
 // SetMessage gets a reference to the given string and assigns it to the Message field.
 func (o *MessageOfTheDayPolicyTypeConfiguration15Motd) SetMessage(v string) {
 	o.Message = &v
@@ -126,15 +108,6 @@ func (o *MessageOfTheDayPolicyTypeConfiguration15Motd) GetTypeOk() (*string, boo
 		return nil, false
 	}
 	return o.Type, true
-}
-
-// IsSetType returns a boolean if a field has been set.
-func (o *MessageOfTheDayPolicyTypeConfiguration15Motd) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.
@@ -161,28 +134,9 @@ func (o *MessageOfTheDayPolicyTypeConfiguration15Motd) GetFullPageOk() (*bool, b
 	return o.FullPage.Get(), o.FullPage.IsSet()
 }
 
-// IsSetFullPage returns a boolean if a field has been set.
-func (o *MessageOfTheDayPolicyTypeConfiguration15Motd) IsSetFullPage() bool {
-	if o != nil && o.FullPage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetFullPage gets a reference to the given NullableBool and assigns it to the FullPage field.
 func (o *MessageOfTheDayPolicyTypeConfiguration15Motd) SetFullPage(v bool) {
 	o.FullPage.Set(&v)
-}
-
-// SetFullPageNil sets the value for FullPage to be an explicit nil
-func (o *MessageOfTheDayPolicyTypeConfiguration15Motd) SetFullPageNil() {
-	o.FullPage.Set(nil)
-}
-
-// UnsetFullPage ensures that no value is present for FullPage, not even an explicit nil
-func (o *MessageOfTheDayPolicyTypeConfiguration15Motd) UnsetFullPage() {
-	o.FullPage.Unset()
 }
 
 func (o MessageOfTheDayPolicyTypeConfiguration15Motd) MarshalJSON() ([]byte, error) {

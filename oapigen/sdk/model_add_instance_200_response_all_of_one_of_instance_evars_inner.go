@@ -64,15 +64,6 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceEvarsInner) GetNameOk() (*strin
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceEvarsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *AddInstance200ResponseAllOfOneOfInstanceEvarsInner) SetName(v string) {
 	o.Name = &v
@@ -94,15 +85,6 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceEvarsInner) GetValueOk() (*AddI
 		return nil, false
 	}
 	return o.Value, true
-}
-
-// IsSetValue returns a boolean if a field has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceEvarsInner) IsSetValue() bool {
-	if o != nil && !IsNil(o.Value) {
-		return true
-	}
-
-	return false
 }
 
 // SetValue gets a reference to the given AddInstance200ResponseAllOfOneOfInstanceEvarsInnerValue and assigns it to the Value field.
@@ -128,15 +110,6 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceEvarsInner) GetExportOk() (*boo
 	return o.Export, true
 }
 
-// IsSetExport returns a boolean if a field has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceEvarsInner) IsSetExport() bool {
-	if o != nil && !IsNil(o.Export) {
-		return true
-	}
-
-	return false
-}
-
 // SetExport gets a reference to the given bool and assigns it to the Export field.
 func (o *AddInstance200ResponseAllOfOneOfInstanceEvarsInner) SetExport(v bool) {
 	o.Export = &v
@@ -158,15 +131,6 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceEvarsInner) GetMaskedOk() (*boo
 		return nil, false
 	}
 	return o.Masked, true
-}
-
-// IsSetMasked returns a boolean if a field has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceEvarsInner) IsSetMasked() bool {
-	if o != nil && !IsNil(o.Masked) {
-		return true
-	}
-
-	return false
 }
 
 // SetMasked gets a reference to the given bool and assigns it to the Masked field.

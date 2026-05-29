@@ -61,15 +61,6 @@ func (o *UpdateLayoutPermissionsRequestInstanceTypeLayout) GetPermissionsOk() (*
 	return o.Permissions, true
 }
 
-// IsSetPermissions returns a boolean if a field has been set.
-func (o *UpdateLayoutPermissionsRequestInstanceTypeLayout) IsSetPermissions() bool {
-	if o != nil && !IsNil(o.Permissions) {
-		return true
-	}
-
-	return false
-}
-
 // SetPermissions gets a reference to the given UpdateLayoutPermissionsRequestInstanceTypeLayoutPermissions and assigns it to the Permissions field.
 func (o *UpdateLayoutPermissionsRequestInstanceTypeLayout) SetPermissions(v UpdateLayoutPermissionsRequestInstanceTypeLayoutPermissions) {
 	o.Permissions = &v

@@ -95,15 +95,6 @@ func (o *NetworkFirewallRuleGroupCreate) GetDescriptionOk() (*string, bool) {
 	return o.Description, true
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *NetworkFirewallRuleGroupCreate) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *NetworkFirewallRuleGroupCreate) SetDescription(v string) {
 	o.Description = &v
@@ -125,15 +116,6 @@ func (o *NetworkFirewallRuleGroupCreate) GetPriorityOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.Priority, true
-}
-
-// IsSetPriority returns a boolean if a field has been set.
-func (o *NetworkFirewallRuleGroupCreate) IsSetPriority() bool {
-	if o != nil && !IsNil(o.Priority) {
-		return true
-	}
-
-	return false
 }
 
 // SetPriority gets a reference to the given int64 and assigns it to the Priority field.
@@ -181,15 +163,6 @@ func (o *NetworkFirewallRuleGroupCreate) GetGroupLayerOk() (*string, bool) {
 		return nil, false
 	}
 	return o.GroupLayer, true
-}
-
-// IsSetGroupLayer returns a boolean if a field has been set.
-func (o *NetworkFirewallRuleGroupCreate) IsSetGroupLayer() bool {
-	if o != nil && !IsNil(o.GroupLayer) {
-		return true
-	}
-
-	return false
 }
 
 // SetGroupLayer gets a reference to the given string and assigns it to the GroupLayer field.

@@ -63,15 +63,6 @@ func (o *GetVDIPools200ResponseVdiPoolOwner) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetVDIPools200ResponseVdiPoolOwner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetVDIPools200ResponseVdiPoolOwner) SetId(v int64) {
 	o.Id = &v
@@ -95,15 +86,6 @@ func (o *GetVDIPools200ResponseVdiPoolOwner) GetNameOk() (*string, bool) {
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *GetVDIPools200ResponseVdiPoolOwner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *GetVDIPools200ResponseVdiPoolOwner) SetName(v string) {
 	o.Name = &v
@@ -125,15 +107,6 @@ func (o *GetVDIPools200ResponseVdiPoolOwner) GetUsernameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Username, true
-}
-
-// IsSetUsername returns a boolean if a field has been set.
-func (o *GetVDIPools200ResponseVdiPoolOwner) IsSetUsername() bool {
-	if o != nil && !IsNil(o.Username) {
-		return true
-	}
-
-	return false
 }
 
 // SetUsername gets a reference to the given string and assigns it to the Username field.

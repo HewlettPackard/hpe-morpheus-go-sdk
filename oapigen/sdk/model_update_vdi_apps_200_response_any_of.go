@@ -61,15 +61,6 @@ func (o *UpdateVDIApps200ResponseAnyOf) GetVdiAppOk() (*UpdateVDIApps200Response
 	return o.VdiApp, true
 }
 
-// IsSetVdiApp returns a boolean if a field has been set.
-func (o *UpdateVDIApps200ResponseAnyOf) IsSetVdiApp() bool {
-	if o != nil && !IsNil(o.VdiApp) {
-		return true
-	}
-
-	return false
-}
-
 // SetVdiApp gets a reference to the given UpdateVDIApps200ResponseAnyOfVdiApp and assigns it to the VdiApp field.
 func (o *UpdateVDIApps200ResponseAnyOf) SetVdiApp(v UpdateVDIApps200ResponseAnyOfVdiApp) {
 	o.VdiApp = &v

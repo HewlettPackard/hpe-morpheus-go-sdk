@@ -75,15 +75,6 @@ func (o *NetworkFirewallRuleUpdate) GetRuleGroupOk() (*NetworkFirewallRuleUpdate
 	return o.RuleGroup, true
 }
 
-// IsSetRuleGroup returns a boolean if a field has been set.
-func (o *NetworkFirewallRuleUpdate) IsSetRuleGroup() bool {
-	if o != nil && !IsNil(o.RuleGroup) {
-		return true
-	}
-
-	return false
-}
-
 // SetRuleGroup gets a reference to the given NetworkFirewallRuleUpdateRuleGroup and assigns it to the RuleGroup field.
 func (o *NetworkFirewallRuleUpdate) SetRuleGroup(v NetworkFirewallRuleUpdateRuleGroup) {
 	o.RuleGroup = &v
@@ -105,15 +96,6 @@ func (o *NetworkFirewallRuleUpdate) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *NetworkFirewallRuleUpdate) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -140,28 +122,9 @@ func (o *NetworkFirewallRuleUpdate) GetDescriptionOk() (*string, bool) {
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *NetworkFirewallRuleUpdate) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *NetworkFirewallRuleUpdate) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *NetworkFirewallRuleUpdate) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *NetworkFirewallRuleUpdate) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
@@ -180,15 +143,6 @@ func (o *NetworkFirewallRuleUpdate) GetEnabledOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *NetworkFirewallRuleUpdate) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -215,28 +169,9 @@ func (o *NetworkFirewallRuleUpdate) GetPriorityOk() (*int64, bool) {
 	return o.Priority.Get(), o.Priority.IsSet()
 }
 
-// IsSetPriority returns a boolean if a field has been set.
-func (o *NetworkFirewallRuleUpdate) IsSetPriority() bool {
-	if o != nil && o.Priority.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetPriority gets a reference to the given NullableInt64 and assigns it to the Priority field.
 func (o *NetworkFirewallRuleUpdate) SetPriority(v int64) {
 	o.Priority.Set(&v)
-}
-
-// SetPriorityNil sets the value for Priority to be an explicit nil
-func (o *NetworkFirewallRuleUpdate) SetPriorityNil() {
-	o.Priority.Set(nil)
-}
-
-// UnsetPriority ensures that no value is present for Priority, not even an explicit nil
-func (o *NetworkFirewallRuleUpdate) UnsetPriority() {
-	o.Priority.Unset()
 }
 
 // GetDirection returns the Direction field value if set, zero value otherwise.
@@ -255,15 +190,6 @@ func (o *NetworkFirewallRuleUpdate) GetDirectionOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Direction, true
-}
-
-// IsSetDirection returns a boolean if a field has been set.
-func (o *NetworkFirewallRuleUpdate) IsSetDirection() bool {
-	if o != nil && !IsNil(o.Direction) {
-		return true
-	}
-
-	return false
 }
 
 // SetDirection gets a reference to the given string and assigns it to the Direction field.
@@ -289,15 +215,6 @@ func (o *NetworkFirewallRuleUpdate) GetSourcesOk() (*NetworkFirewallRuleUpdateSo
 	return o.Sources, true
 }
 
-// IsSetSources returns a boolean if a field has been set.
-func (o *NetworkFirewallRuleUpdate) IsSetSources() bool {
-	if o != nil && !IsNil(o.Sources) {
-		return true
-	}
-
-	return false
-}
-
 // SetSources gets a reference to the given NetworkFirewallRuleUpdateSources and assigns it to the Sources field.
 func (o *NetworkFirewallRuleUpdate) SetSources(v NetworkFirewallRuleUpdateSources) {
 	o.Sources = &v
@@ -319,15 +236,6 @@ func (o *NetworkFirewallRuleUpdate) GetDestinationsOk() (*NetworkFirewallRuleUpd
 		return nil, false
 	}
 	return o.Destinations, true
-}
-
-// IsSetDestinations returns a boolean if a field has been set.
-func (o *NetworkFirewallRuleUpdate) IsSetDestinations() bool {
-	if o != nil && !IsNil(o.Destinations) {
-		return true
-	}
-
-	return false
 }
 
 // SetDestinations gets a reference to the given NetworkFirewallRuleUpdateDestinations and assigns it to the Destinations field.
@@ -353,15 +261,6 @@ func (o *NetworkFirewallRuleUpdate) GetConfigOk() (*NetworkFirewallRuleUpdateCon
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *NetworkFirewallRuleUpdate) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given NetworkFirewallRuleUpdateConfig and assigns it to the Config field.
 func (o *NetworkFirewallRuleUpdate) SetConfig(v NetworkFirewallRuleUpdateConfig) {
 	o.Config = &v
@@ -385,15 +284,6 @@ func (o *NetworkFirewallRuleUpdate) GetScopesOk() (*NetworkFirewallRuleUpdateSco
 	return o.Scopes, true
 }
 
-// IsSetScopes returns a boolean if a field has been set.
-func (o *NetworkFirewallRuleUpdate) IsSetScopes() bool {
-	if o != nil && !IsNil(o.Scopes) {
-		return true
-	}
-
-	return false
-}
-
 // SetScopes gets a reference to the given NetworkFirewallRuleUpdateScopes and assigns it to the Scopes field.
 func (o *NetworkFirewallRuleUpdate) SetScopes(v NetworkFirewallRuleUpdateScopes) {
 	o.Scopes = &v
@@ -415,15 +305,6 @@ func (o *NetworkFirewallRuleUpdate) GetPolicyOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Policy, true
-}
-
-// IsSetPolicy returns a boolean if a field has been set.
-func (o *NetworkFirewallRuleUpdate) IsSetPolicy() bool {
-	if o != nil && !IsNil(o.Policy) {
-		return true
-	}
-
-	return false
 }
 
 // SetPolicy gets a reference to the given string and assigns it to the Policy field.

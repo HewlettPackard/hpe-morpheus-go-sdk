@@ -62,15 +62,6 @@ func (o *UpdateIntegrationInventoryRequestInventory) GetTenantsOk() ([]UpdateInt
 	return o.Tenants, true
 }
 
-// IsSetTenants returns a boolean if a field has been set.
-func (o *UpdateIntegrationInventoryRequestInventory) IsSetTenants() bool {
-	if o != nil && !IsNil(o.Tenants) {
-		return true
-	}
-
-	return false
-}
-
 // SetTenants gets a reference to the given []UpdateIntegrationInventoryRequestInventoryTenantsInner and assigns it to the Tenants field.
 func (o *UpdateIntegrationInventoryRequestInventory) SetTenants(v []UpdateIntegrationInventoryRequestInventoryTenantsInner) {
 	o.Tenants = v

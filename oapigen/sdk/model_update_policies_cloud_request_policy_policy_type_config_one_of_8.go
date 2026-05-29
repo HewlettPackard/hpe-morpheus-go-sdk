@@ -61,15 +61,6 @@ func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf8) GetMaxStorageOk
 	return o.MaxStorage, true
 }
 
-// IsSetMaxStorage returns a boolean if a field has been set.
-func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf8) IsSetMaxStorage() bool {
-	if o != nil && !IsNil(o.MaxStorage) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxStorage gets a reference to the given string and assigns it to the MaxStorage field.
 func (o *UpdatePoliciesCloudRequestPolicyPolicyTypeConfigOneOf8) SetMaxStorage(v string) {
 	o.MaxStorage = &v

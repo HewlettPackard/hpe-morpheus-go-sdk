@@ -61,15 +61,6 @@ func (o *LogSort) GetTsOk() (*string, bool) {
 	return o.Ts, true
 }
 
-// IsSetTs returns a boolean if a field has been set.
-func (o *LogSort) IsSetTs() bool {
-	if o != nil && !IsNil(o.Ts) {
-		return true
-	}
-
-	return false
-}
-
 // SetTs gets a reference to the given string and assigns it to the Ts field.
 func (o *LogSort) SetTs(v string) {
 	o.Ts = &v

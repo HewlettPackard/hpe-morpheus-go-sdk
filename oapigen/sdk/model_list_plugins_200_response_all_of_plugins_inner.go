@@ -80,15 +80,6 @@ func (o *ListPlugins200ResponseAllOfPluginsInner) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListPlugins200ResponseAllOfPluginsInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListPlugins200ResponseAllOfPluginsInner) SetId(v int64) {
 	o.Id = &v
@@ -110,15 +101,6 @@ func (o *ListPlugins200ResponseAllOfPluginsInner) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListPlugins200ResponseAllOfPluginsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -144,15 +126,6 @@ func (o *ListPlugins200ResponseAllOfPluginsInner) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *ListPlugins200ResponseAllOfPluginsInner) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *ListPlugins200ResponseAllOfPluginsInner) SetCode(v string) {
 	o.Code = &v
@@ -174,15 +147,6 @@ func (o *ListPlugins200ResponseAllOfPluginsInner) GetDescriptionOk() (*string, b
 		return nil, false
 	}
 	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ListPlugins200ResponseAllOfPluginsInner) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
@@ -208,15 +172,6 @@ func (o *ListPlugins200ResponseAllOfPluginsInner) GetVersionOk() (*string, bool)
 	return o.Version, true
 }
 
-// IsSetVersion returns a boolean if a field has been set.
-func (o *ListPlugins200ResponseAllOfPluginsInner) IsSetVersion() bool {
-	if o != nil && !IsNil(o.Version) {
-		return true
-	}
-
-	return false
-}
-
 // SetVersion gets a reference to the given string and assigns it to the Version field.
 func (o *ListPlugins200ResponseAllOfPluginsInner) SetVersion(v string) {
 	o.Version = &v
@@ -238,15 +193,6 @@ func (o *ListPlugins200ResponseAllOfPluginsInner) GetEnabledOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Enabled, true
-}
-
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *ListPlugins200ResponseAllOfPluginsInner) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
 }
 
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
@@ -273,28 +219,9 @@ func (o *ListPlugins200ResponseAllOfPluginsInner) GetAuthorOk() (*string, bool) 
 	return o.Author.Get(), o.Author.IsSet()
 }
 
-// IsSetAuthor returns a boolean if a field has been set.
-func (o *ListPlugins200ResponseAllOfPluginsInner) IsSetAuthor() bool {
-	if o != nil && o.Author.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetAuthor gets a reference to the given NullableString and assigns it to the Author field.
 func (o *ListPlugins200ResponseAllOfPluginsInner) SetAuthor(v string) {
 	o.Author.Set(&v)
-}
-
-// SetAuthorNil sets the value for Author to be an explicit nil
-func (o *ListPlugins200ResponseAllOfPluginsInner) SetAuthorNil() {
-	o.Author.Set(nil)
-}
-
-// UnsetAuthor ensures that no value is present for Author, not even an explicit nil
-func (o *ListPlugins200ResponseAllOfPluginsInner) UnsetAuthor() {
-	o.Author.Unset()
 }
 
 // GetWebsiteUrl returns the WebsiteUrl field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -316,28 +243,9 @@ func (o *ListPlugins200ResponseAllOfPluginsInner) GetWebsiteUrlOk() (*string, bo
 	return o.WebsiteUrl.Get(), o.WebsiteUrl.IsSet()
 }
 
-// IsSetWebsiteUrl returns a boolean if a field has been set.
-func (o *ListPlugins200ResponseAllOfPluginsInner) IsSetWebsiteUrl() bool {
-	if o != nil && o.WebsiteUrl.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetWebsiteUrl gets a reference to the given NullableString and assigns it to the WebsiteUrl field.
 func (o *ListPlugins200ResponseAllOfPluginsInner) SetWebsiteUrl(v string) {
 	o.WebsiteUrl.Set(&v)
-}
-
-// SetWebsiteUrlNil sets the value for WebsiteUrl to be an explicit nil
-func (o *ListPlugins200ResponseAllOfPluginsInner) SetWebsiteUrlNil() {
-	o.WebsiteUrl.Set(nil)
-}
-
-// UnsetWebsiteUrl ensures that no value is present for WebsiteUrl, not even an explicit nil
-func (o *ListPlugins200ResponseAllOfPluginsInner) UnsetWebsiteUrl() {
-	o.WebsiteUrl.Unset()
 }
 
 // GetSourceCodeLocationUrl returns the SourceCodeLocationUrl field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -359,28 +267,9 @@ func (o *ListPlugins200ResponseAllOfPluginsInner) GetSourceCodeLocationUrlOk() (
 	return o.SourceCodeLocationUrl.Get(), o.SourceCodeLocationUrl.IsSet()
 }
 
-// IsSetSourceCodeLocationUrl returns a boolean if a field has been set.
-func (o *ListPlugins200ResponseAllOfPluginsInner) IsSetSourceCodeLocationUrl() bool {
-	if o != nil && o.SourceCodeLocationUrl.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSourceCodeLocationUrl gets a reference to the given NullableString and assigns it to the SourceCodeLocationUrl field.
 func (o *ListPlugins200ResponseAllOfPluginsInner) SetSourceCodeLocationUrl(v string) {
 	o.SourceCodeLocationUrl.Set(&v)
-}
-
-// SetSourceCodeLocationUrlNil sets the value for SourceCodeLocationUrl to be an explicit nil
-func (o *ListPlugins200ResponseAllOfPluginsInner) SetSourceCodeLocationUrlNil() {
-	o.SourceCodeLocationUrl.Set(nil)
-}
-
-// UnsetSourceCodeLocationUrl ensures that no value is present for SourceCodeLocationUrl, not even an explicit nil
-func (o *ListPlugins200ResponseAllOfPluginsInner) UnsetSourceCodeLocationUrl() {
-	o.SourceCodeLocationUrl.Unset()
 }
 
 // GetIssueTrackerUrl returns the IssueTrackerUrl field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -402,28 +291,9 @@ func (o *ListPlugins200ResponseAllOfPluginsInner) GetIssueTrackerUrlOk() (*strin
 	return o.IssueTrackerUrl.Get(), o.IssueTrackerUrl.IsSet()
 }
 
-// IsSetIssueTrackerUrl returns a boolean if a field has been set.
-func (o *ListPlugins200ResponseAllOfPluginsInner) IsSetIssueTrackerUrl() bool {
-	if o != nil && o.IssueTrackerUrl.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetIssueTrackerUrl gets a reference to the given NullableString and assigns it to the IssueTrackerUrl field.
 func (o *ListPlugins200ResponseAllOfPluginsInner) SetIssueTrackerUrl(v string) {
 	o.IssueTrackerUrl.Set(&v)
-}
-
-// SetIssueTrackerUrlNil sets the value for IssueTrackerUrl to be an explicit nil
-func (o *ListPlugins200ResponseAllOfPluginsInner) SetIssueTrackerUrlNil() {
-	o.IssueTrackerUrl.Set(nil)
-}
-
-// UnsetIssueTrackerUrl ensures that no value is present for IssueTrackerUrl, not even an explicit nil
-func (o *ListPlugins200ResponseAllOfPluginsInner) UnsetIssueTrackerUrl() {
-	o.IssueTrackerUrl.Unset()
 }
 
 // GetValid returns the Valid field value if set, zero value otherwise.
@@ -442,15 +312,6 @@ func (o *ListPlugins200ResponseAllOfPluginsInner) GetValidOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Valid, true
-}
-
-// IsSetValid returns a boolean if a field has been set.
-func (o *ListPlugins200ResponseAllOfPluginsInner) IsSetValid() bool {
-	if o != nil && !IsNil(o.Valid) {
-		return true
-	}
-
-	return false
 }
 
 // SetValid gets a reference to the given bool and assigns it to the Valid field.
@@ -476,15 +337,6 @@ func (o *ListPlugins200ResponseAllOfPluginsInner) GetHasValidUpdateOk() (*bool, 
 	return o.HasValidUpdate, true
 }
 
-// IsSetHasValidUpdate returns a boolean if a field has been set.
-func (o *ListPlugins200ResponseAllOfPluginsInner) IsSetHasValidUpdate() bool {
-	if o != nil && !IsNil(o.HasValidUpdate) {
-		return true
-	}
-
-	return false
-}
-
 // SetHasValidUpdate gets a reference to the given bool and assigns it to the HasValidUpdate field.
 func (o *ListPlugins200ResponseAllOfPluginsInner) SetHasValidUpdate(v bool) {
 	o.HasValidUpdate = &v
@@ -506,15 +358,6 @@ func (o *ListPlugins200ResponseAllOfPluginsInner) GetStatusOk() (*string, bool) 
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *ListPlugins200ResponseAllOfPluginsInner) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -541,28 +384,9 @@ func (o *ListPlugins200ResponseAllOfPluginsInner) GetStatusMessageOk() (*string,
 	return o.StatusMessage.Get(), o.StatusMessage.IsSet()
 }
 
-// IsSetStatusMessage returns a boolean if a field has been set.
-func (o *ListPlugins200ResponseAllOfPluginsInner) IsSetStatusMessage() bool {
-	if o != nil && o.StatusMessage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusMessage gets a reference to the given NullableString and assigns it to the StatusMessage field.
 func (o *ListPlugins200ResponseAllOfPluginsInner) SetStatusMessage(v string) {
 	o.StatusMessage.Set(&v)
-}
-
-// SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
-func (o *ListPlugins200ResponseAllOfPluginsInner) SetStatusMessageNil() {
-	o.StatusMessage.Set(nil)
-}
-
-// UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
-func (o *ListPlugins200ResponseAllOfPluginsInner) UnsetStatusMessage() {
-	o.StatusMessage.Unset()
 }
 
 // GetProviders returns the Providers field value if set, zero value otherwise.
@@ -581,15 +405,6 @@ func (o *ListPlugins200ResponseAllOfPluginsInner) GetProvidersOk() ([]ListPlugin
 		return nil, false
 	}
 	return o.Providers, true
-}
-
-// IsSetProviders returns a boolean if a field has been set.
-func (o *ListPlugins200ResponseAllOfPluginsInner) IsSetProviders() bool {
-	if o != nil && !IsNil(o.Providers) {
-		return true
-	}
-
-	return false
 }
 
 // SetProviders gets a reference to the given []ListPlugins200ResponseAllOfPluginsInnerProvidersInner and assigns it to the Providers field.
@@ -615,15 +430,6 @@ func (o *ListPlugins200ResponseAllOfPluginsInner) GetConfigOk() (map[string]inte
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *ListPlugins200ResponseAllOfPluginsInner) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
 func (o *ListPlugins200ResponseAllOfPluginsInner) SetConfig(v map[string]interface{}) {
 	o.Config = v
@@ -645,15 +451,6 @@ func (o *ListPlugins200ResponseAllOfPluginsInner) GetOptionTypesOk() ([]ListPlug
 		return nil, false
 	}
 	return o.OptionTypes, true
-}
-
-// IsSetOptionTypes returns a boolean if a field has been set.
-func (o *ListPlugins200ResponseAllOfPluginsInner) IsSetOptionTypes() bool {
-	if o != nil && !IsNil(o.OptionTypes) {
-		return true
-	}
-
-	return false
 }
 
 // SetOptionTypes gets a reference to the given []ListPlugins200ResponseAllOfPluginsInnerOptionTypesInner and assigns it to the OptionTypes field.
@@ -679,15 +476,6 @@ func (o *ListPlugins200ResponseAllOfPluginsInner) GetDateCreatedOk() (*time.Time
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *ListPlugins200ResponseAllOfPluginsInner) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *ListPlugins200ResponseAllOfPluginsInner) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -709,15 +497,6 @@ func (o *ListPlugins200ResponseAllOfPluginsInner) GetLastUpdatedOk() (*time.Time
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *ListPlugins200ResponseAllOfPluginsInner) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.

@@ -62,15 +62,6 @@ func (o *GetContainerActions200Response) GetContainerIdsOk() ([]int64, bool) {
 	return o.ContainerIds, true
 }
 
-// IsSetContainerIds returns a boolean if a field has been set.
-func (o *GetContainerActions200Response) IsSetContainerIds() bool {
-	if o != nil && !IsNil(o.ContainerIds) {
-		return true
-	}
-
-	return false
-}
-
 // SetContainerIds gets a reference to the given []int64 and assigns it to the ContainerIds field.
 func (o *GetContainerActions200Response) SetContainerIds(v []int64) {
 	o.ContainerIds = v
@@ -92,15 +83,6 @@ func (o *GetContainerActions200Response) GetActionsOk() ([]GetContainerActions20
 		return nil, false
 	}
 	return o.Actions, true
-}
-
-// IsSetActions returns a boolean if a field has been set.
-func (o *GetContainerActions200Response) IsSetActions() bool {
-	if o != nil && !IsNil(o.Actions) {
-		return true
-	}
-
-	return false
 }
 
 // SetActions gets a reference to the given []GetContainerActions200ResponseActionsInner and assigns it to the Actions field.

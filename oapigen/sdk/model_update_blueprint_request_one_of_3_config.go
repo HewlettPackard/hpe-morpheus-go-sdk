@@ -62,15 +62,6 @@ func (o *UpdateBlueprintRequestOneOf3Config) GetSpecsOk() ([]UpdateBlueprintRequ
 	return o.Specs, true
 }
 
-// IsSetSpecs returns a boolean if a field has been set.
-func (o *UpdateBlueprintRequestOneOf3Config) IsSetSpecs() bool {
-	if o != nil && !IsNil(o.Specs) {
-		return true
-	}
-
-	return false
-}
-
 // SetSpecs gets a reference to the given []UpdateBlueprintRequestOneOf3ConfigSpecsInner and assigns it to the Specs field.
 func (o *UpdateBlueprintRequestOneOf3Config) SetSpecs(v []UpdateBlueprintRequestOneOf3ConfigSpecsInner) {
 	o.Specs = v

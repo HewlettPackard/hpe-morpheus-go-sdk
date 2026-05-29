@@ -72,28 +72,9 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) GetInvent
 	return o.Inventory.Get(), o.Inventory.IsSet()
 }
 
-// IsSetInventory returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) IsSetInventory() bool {
-	if o != nil && o.Inventory.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInventory gets a reference to the given NullableString and assigns it to the Inventory field.
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) SetInventory(v string) {
 	o.Inventory.Set(&v)
-}
-
-// SetInventoryNil sets the value for Inventory to be an explicit nil
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) SetInventoryNil() {
-	o.Inventory.Set(nil)
-}
-
-// UnsetInventory ensures that no value is present for Inventory, not even an explicit nil
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) UnsetInventory() {
-	o.Inventory.Unset()
 }
 
 // GetDefaultBranch returns the DefaultBranch field value if set, zero value otherwise.
@@ -112,15 +93,6 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) GetDefaul
 		return nil, false
 	}
 	return o.DefaultBranch, true
-}
-
-// IsSetDefaultBranch returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) IsSetDefaultBranch() bool {
-	if o != nil && !IsNil(o.DefaultBranch) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultBranch gets a reference to the given string and assigns it to the DefaultBranch field.
@@ -147,28 +119,9 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) GetCacheE
 	return o.CacheEnabled.Get(), o.CacheEnabled.IsSet()
 }
 
-// IsSetCacheEnabled returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) IsSetCacheEnabled() bool {
-	if o != nil && o.CacheEnabled.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetCacheEnabled gets a reference to the given NullableString and assigns it to the CacheEnabled field.
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) SetCacheEnabled(v string) {
 	o.CacheEnabled.Set(&v)
-}
-
-// SetCacheEnabledNil sets the value for CacheEnabled to be an explicit nil
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) SetCacheEnabledNil() {
-	o.CacheEnabled.Set(nil)
-}
-
-// UnsetCacheEnabled ensures that no value is present for CacheEnabled, not even an explicit nil
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) UnsetCacheEnabled() {
-	o.CacheEnabled.Unset()
 }
 
 // GetAnsiblePlaybooks returns the AnsiblePlaybooks field value if set, zero value otherwise.
@@ -187,15 +140,6 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) GetAnsibl
 		return nil, false
 	}
 	return o.AnsiblePlaybooks, true
-}
-
-// IsSetAnsiblePlaybooks returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) IsSetAnsiblePlaybooks() bool {
-	if o != nil && !IsNil(o.AnsiblePlaybooks) {
-		return true
-	}
-
-	return false
 }
 
 // SetAnsiblePlaybooks gets a reference to the given string and assigns it to the AnsiblePlaybooks field.
@@ -221,15 +165,6 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) GetAnsibl
 	return o.AnsibleRoles, true
 }
 
-// IsSetAnsibleRoles returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) IsSetAnsibleRoles() bool {
-	if o != nil && !IsNil(o.AnsibleRoles) {
-		return true
-	}
-
-	return false
-}
-
 // SetAnsibleRoles gets a reference to the given string and assigns it to the AnsibleRoles field.
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) SetAnsibleRoles(v string) {
 	o.AnsibleRoles = &v
@@ -251,15 +186,6 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) GetAnsibl
 		return nil, false
 	}
 	return o.AnsibleGroupVars, true
-}
-
-// IsSetAnsibleGroupVars returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) IsSetAnsibleGroupVars() bool {
-	if o != nil && !IsNil(o.AnsibleGroupVars) {
-		return true
-	}
-
-	return false
 }
 
 // SetAnsibleGroupVars gets a reference to the given string and assigns it to the AnsibleGroupVars field.
@@ -285,15 +211,6 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) GetAnsibl
 	return o.AnsibleHostVars, true
 }
 
-// IsSetAnsibleHostVars returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) IsSetAnsibleHostVars() bool {
-	if o != nil && !IsNil(o.AnsibleHostVars) {
-		return true
-	}
-
-	return false
-}
-
 // SetAnsibleHostVars gets a reference to the given string and assigns it to the AnsibleHostVars field.
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) SetAnsibleHostVars(v string) {
 	o.AnsibleHostVars = &v
@@ -315,15 +232,6 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) GetAnsibl
 		return nil, false
 	}
 	return o.AnsibleCommandBus, true
-}
-
-// IsSetAnsibleCommandBus returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) IsSetAnsibleCommandBus() bool {
-	if o != nil && !IsNil(o.AnsibleCommandBus) {
-		return true
-	}
-
-	return false
 }
 
 // SetAnsibleCommandBus gets a reference to the given bool and assigns it to the AnsibleCommandBus field.
@@ -349,15 +257,6 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) GetAnsibl
 	return o.AnsibleVerbose, true
 }
 
-// IsSetAnsibleVerbose returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) IsSetAnsibleVerbose() bool {
-	if o != nil && !IsNil(o.AnsibleVerbose) {
-		return true
-	}
-
-	return false
-}
-
 // SetAnsibleVerbose gets a reference to the given bool and assigns it to the AnsibleVerbose field.
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) SetAnsibleVerbose(v bool) {
 	o.AnsibleVerbose = &v
@@ -381,15 +280,6 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) GetAnsibl
 	return o.AnsibleGalaxyEnabled, true
 }
 
-// IsSetAnsibleGalaxyEnabled returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) IsSetAnsibleGalaxyEnabled() bool {
-	if o != nil && !IsNil(o.AnsibleGalaxyEnabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetAnsibleGalaxyEnabled gets a reference to the given bool and assigns it to the AnsibleGalaxyEnabled field.
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) SetAnsibleGalaxyEnabled(v bool) {
 	o.AnsibleGalaxyEnabled = &v
@@ -411,15 +301,6 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) GetAnsibl
 		return nil, false
 	}
 	return o.AnsibleDefaultBranch, true
-}
-
-// IsSetAnsibleDefaultBranch returns a boolean if a field has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) IsSetAnsibleDefaultBranch() bool {
-	if o != nil && !IsNil(o.AnsibleDefaultBranch) {
-		return true
-	}
-
-	return false
 }
 
 // SetAnsibleDefaultBranch gets a reference to the given string and assigns it to the AnsibleDefaultBranch field.

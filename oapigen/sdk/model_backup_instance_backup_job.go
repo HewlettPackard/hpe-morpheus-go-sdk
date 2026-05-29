@@ -64,15 +64,6 @@ func (o *BackupInstanceBackupJob) GetSyntheticFullEnabledOk() (*bool, bool) {
 	return o.SyntheticFullEnabled, true
 }
 
-// IsSetSyntheticFullEnabled returns a boolean if a field has been set.
-func (o *BackupInstanceBackupJob) IsSetSyntheticFullEnabled() bool {
-	if o != nil && !IsNil(o.SyntheticFullEnabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetSyntheticFullEnabled gets a reference to the given bool and assigns it to the SyntheticFullEnabled field.
 func (o *BackupInstanceBackupJob) SetSyntheticFullEnabled(v bool) {
 	o.SyntheticFullEnabled = &v
@@ -94,15 +85,6 @@ func (o *BackupInstanceBackupJob) GetSyntheticFullScheduleOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.SyntheticFullSchedule, true
-}
-
-// IsSetSyntheticFullSchedule returns a boolean if a field has been set.
-func (o *BackupInstanceBackupJob) IsSetSyntheticFullSchedule() bool {
-	if o != nil && !IsNil(o.SyntheticFullSchedule) {
-		return true
-	}
-
-	return false
 }
 
 // SetSyntheticFullSchedule gets a reference to the given int64 and assigns it to the SyntheticFullSchedule field.

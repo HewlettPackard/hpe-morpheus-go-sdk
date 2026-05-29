@@ -89,15 +89,6 @@ func (o *GFS2DatastoreConfiguration3) GetAllowReformatOk() (*bool, bool) {
 	return o.AllowReformat, true
 }
 
-// IsSetAllowReformat returns a boolean if a field has been set.
-func (o *GFS2DatastoreConfiguration3) IsSetAllowReformat() bool {
-	if o != nil && !IsNil(o.AllowReformat) {
-		return true
-	}
-
-	return false
-}
-
 // SetAllowReformat gets a reference to the given bool and assigns it to the AllowReformat field.
 func (o *GFS2DatastoreConfiguration3) SetAllowReformat(v bool) {
 	o.AllowReformat = &v

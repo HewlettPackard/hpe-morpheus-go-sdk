@@ -62,15 +62,6 @@ func (o *UserSettings) GetUserOk() (*UserSettingsUser, bool) {
 	return o.User, true
 }
 
-// IsSetUser returns a boolean if a field has been set.
-func (o *UserSettings) IsSetUser() bool {
-	if o != nil && !IsNil(o.User) {
-		return true
-	}
-
-	return false
-}
-
 // SetUser gets a reference to the given UserSettingsUser and assigns it to the User field.
 func (o *UserSettings) SetUser(v UserSettingsUser) {
 	o.User = &v
@@ -92,15 +83,6 @@ func (o *UserSettings) GetAccessTokensOk() ([]UserSettingsAccessTokensInner, boo
 		return nil, false
 	}
 	return o.AccessTokens, true
-}
-
-// IsSetAccessTokens returns a boolean if a field has been set.
-func (o *UserSettings) IsSetAccessTokens() bool {
-	if o != nil && !IsNil(o.AccessTokens) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccessTokens gets a reference to the given []UserSettingsAccessTokensInner and assigns it to the AccessTokens field.

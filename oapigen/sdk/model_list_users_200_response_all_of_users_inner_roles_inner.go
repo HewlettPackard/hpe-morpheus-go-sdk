@@ -64,15 +64,6 @@ func (o *ListUsers200ResponseAllOfUsersInnerRolesInner) GetIdOk() (*int64, bool)
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListUsers200ResponseAllOfUsersInnerRolesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListUsers200ResponseAllOfUsersInnerRolesInner) SetId(v int64) {
 	o.Id = &v
@@ -96,15 +87,6 @@ func (o *ListUsers200ResponseAllOfUsersInnerRolesInner) GetNameOk() (*string, bo
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ListUsers200ResponseAllOfUsersInnerRolesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ListUsers200ResponseAllOfUsersInnerRolesInner) SetName(v string) {
 	o.Name = &v
@@ -126,15 +108,6 @@ func (o *ListUsers200ResponseAllOfUsersInnerRolesInner) GetAuthorityOk() (*strin
 		return nil, false
 	}
 	return o.Authority, true
-}
-
-// IsSetAuthority returns a boolean if a field has been set.
-func (o *ListUsers200ResponseAllOfUsersInnerRolesInner) IsSetAuthority() bool {
-	if o != nil && !IsNil(o.Authority) {
-		return true
-	}
-
-	return false
 }
 
 // SetAuthority gets a reference to the given string and assigns it to the Authority field.
@@ -161,28 +134,9 @@ func (o *ListUsers200ResponseAllOfUsersInnerRolesInner) GetDescriptionOk() (*str
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *ListUsers200ResponseAllOfUsersInnerRolesInner) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *ListUsers200ResponseAllOfUsersInnerRolesInner) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *ListUsers200ResponseAllOfUsersInnerRolesInner) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *ListUsers200ResponseAllOfUsersInnerRolesInner) UnsetDescription() {
-	o.Description.Unset()
 }
 
 func (o ListUsers200ResponseAllOfUsersInnerRolesInner) MarshalJSON() ([]byte, error) {

@@ -61,15 +61,6 @@ func (o *GetNetworkRoutersRoutes200Response) GetNetworkRoutesOk() ([]GetNetworkR
 	return o.NetworkRoutes, true
 }
 
-// IsSetNetworkRoutes returns a boolean if a field has been set.
-func (o *GetNetworkRoutersRoutes200Response) IsSetNetworkRoutes() bool {
-	if o != nil && !IsNil(o.NetworkRoutes) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkRoutes gets a reference to the given []GetNetworkRoutersRoutes200ResponseNetworkRoutesInner and assigns it to the NetworkRoutes field.
 func (o *GetNetworkRoutersRoutes200Response) SetNetworkRoutes(v []GetNetworkRoutersRoutes200ResponseNetworkRoutesInner) {
 	o.NetworkRoutes = v

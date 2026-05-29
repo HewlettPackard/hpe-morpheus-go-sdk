@@ -61,15 +61,6 @@ func (o *GetJobs200ResponseAllOfJobAnyOf2CustomOptions) GetCheckTimeOk() (*int64
 	return o.CheckTime, true
 }
 
-// IsSetCheckTime returns a boolean if a field has been set.
-func (o *GetJobs200ResponseAllOfJobAnyOf2CustomOptions) IsSetCheckTime() bool {
-	if o != nil && !IsNil(o.CheckTime) {
-		return true
-	}
-
-	return false
-}
-
 // SetCheckTime gets a reference to the given int64 and assigns it to the CheckTime field.
 func (o *GetJobs200ResponseAllOfJobAnyOf2CustomOptions) SetCheckTime(v int64) {
 	o.CheckTime = &v

@@ -61,15 +61,6 @@ func (o *PolicyGroupUpdatePolicyTypeConfigOneOf16) GetMaxPoolMembersOk() (*strin
 	return o.MaxPoolMembers, true
 }
 
-// IsSetMaxPoolMembers returns a boolean if a field has been set.
-func (o *PolicyGroupUpdatePolicyTypeConfigOneOf16) IsSetMaxPoolMembers() bool {
-	if o != nil && !IsNil(o.MaxPoolMembers) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxPoolMembers gets a reference to the given string and assigns it to the MaxPoolMembers field.
 func (o *PolicyGroupUpdatePolicyTypeConfigOneOf16) SetMaxPoolMembers(v string) {
 	o.MaxPoolMembers = &v

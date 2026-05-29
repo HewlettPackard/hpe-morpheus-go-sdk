@@ -72,15 +72,6 @@ func (o *UserSourceCreateJumpCloud) GetOrganizationIdOk() (*bool, bool) {
 	return o.OrganizationId, true
 }
 
-// IsSetOrganizationId returns a boolean if a field has been set.
-func (o *UserSourceCreateJumpCloud) IsSetOrganizationId() bool {
-	if o != nil && !IsNil(o.OrganizationId) {
-		return true
-	}
-
-	return false
-}
-
 // SetOrganizationId gets a reference to the given bool and assigns it to the OrganizationId field.
 func (o *UserSourceCreateJumpCloud) SetOrganizationId(v bool) {
 	o.OrganizationId = &v
@@ -102,15 +93,6 @@ func (o *UserSourceCreateJumpCloud) GetBindingUsernameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.BindingUsername, true
-}
-
-// IsSetBindingUsername returns a boolean if a field has been set.
-func (o *UserSourceCreateJumpCloud) IsSetBindingUsername() bool {
-	if o != nil && !IsNil(o.BindingUsername) {
-		return true
-	}
-
-	return false
 }
 
 // SetBindingUsername gets a reference to the given string and assigns it to the BindingUsername field.
@@ -136,15 +118,6 @@ func (o *UserSourceCreateJumpCloud) GetBindingPasswordOk() (*string, bool) {
 	return o.BindingPassword, true
 }
 
-// IsSetBindingPassword returns a boolean if a field has been set.
-func (o *UserSourceCreateJumpCloud) IsSetBindingPassword() bool {
-	if o != nil && !IsNil(o.BindingPassword) {
-		return true
-	}
-
-	return false
-}
-
 // SetBindingPassword gets a reference to the given string and assigns it to the BindingPassword field.
 func (o *UserSourceCreateJumpCloud) SetBindingPassword(v string) {
 	o.BindingPassword = &v
@@ -166,15 +139,6 @@ func (o *UserSourceCreateJumpCloud) GetRequiredRoleOk() (*string, bool) {
 		return nil, false
 	}
 	return o.RequiredRole, true
-}
-
-// IsSetRequiredRole returns a boolean if a field has been set.
-func (o *UserSourceCreateJumpCloud) IsSetRequiredRole() bool {
-	if o != nil && !IsNil(o.RequiredRole) {
-		return true
-	}
-
-	return false
 }
 
 // SetRequiredRole gets a reference to the given string and assigns it to the RequiredRole field.

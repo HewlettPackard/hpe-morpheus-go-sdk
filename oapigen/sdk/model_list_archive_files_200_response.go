@@ -65,15 +65,6 @@ func (o *ListArchiveFiles200Response) GetArchiveBucketOk() (*ListArchiveFiles200
 	return o.ArchiveBucket, true
 }
 
-// IsSetArchiveBucket returns a boolean if a field has been set.
-func (o *ListArchiveFiles200Response) IsSetArchiveBucket() bool {
-	if o != nil && !IsNil(o.ArchiveBucket) {
-		return true
-	}
-
-	return false
-}
-
 // SetArchiveBucket gets a reference to the given ListArchiveFiles200ResponseAllOfArchiveBucket and assigns it to the ArchiveBucket field.
 func (o *ListArchiveFiles200Response) SetArchiveBucket(v ListArchiveFiles200ResponseAllOfArchiveBucket) {
 	o.ArchiveBucket = &v
@@ -95,15 +86,6 @@ func (o *ListArchiveFiles200Response) GetIsOwnerOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.IsOwner, true
-}
-
-// IsSetIsOwner returns a boolean if a field has been set.
-func (o *ListArchiveFiles200Response) IsSetIsOwner() bool {
-	if o != nil && !IsNil(o.IsOwner) {
-		return true
-	}
-
-	return false
 }
 
 // SetIsOwner gets a reference to the given bool and assigns it to the IsOwner field.
@@ -130,28 +112,9 @@ func (o *ListArchiveFiles200Response) GetParentDirectoryOk() (*string, bool) {
 	return o.ParentDirectory.Get(), o.ParentDirectory.IsSet()
 }
 
-// IsSetParentDirectory returns a boolean if a field has been set.
-func (o *ListArchiveFiles200Response) IsSetParentDirectory() bool {
-	if o != nil && o.ParentDirectory.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetParentDirectory gets a reference to the given NullableString and assigns it to the ParentDirectory field.
 func (o *ListArchiveFiles200Response) SetParentDirectory(v string) {
 	o.ParentDirectory.Set(&v)
-}
-
-// SetParentDirectoryNil sets the value for ParentDirectory to be an explicit nil
-func (o *ListArchiveFiles200Response) SetParentDirectoryNil() {
-	o.ParentDirectory.Set(nil)
-}
-
-// UnsetParentDirectory ensures that no value is present for ParentDirectory, not even an explicit nil
-func (o *ListArchiveFiles200Response) UnsetParentDirectory() {
-	o.ParentDirectory.Unset()
 }
 
 // GetArchiveFiles returns the ArchiveFiles field value if set, zero value otherwise.
@@ -170,15 +133,6 @@ func (o *ListArchiveFiles200Response) GetArchiveFilesOk() ([]ListArchiveFiles200
 		return nil, false
 	}
 	return o.ArchiveFiles, true
-}
-
-// IsSetArchiveFiles returns a boolean if a field has been set.
-func (o *ListArchiveFiles200Response) IsSetArchiveFiles() bool {
-	if o != nil && !IsNil(o.ArchiveFiles) {
-		return true
-	}
-
-	return false
 }
 
 // SetArchiveFiles gets a reference to the given []ListArchiveFiles200ResponseAllOfArchiveFilesInner and assigns it to the ArchiveFiles field.
@@ -202,15 +156,6 @@ func (o *ListArchiveFiles200Response) GetMetaOk() (*ListApprovals200ResponseAllO
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListArchiveFiles200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

@@ -72,15 +72,6 @@ func (o *GetInstanceDeploys200ResponseAllOfAppDeploysInner) GetIdOk() (*int64, b
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetInstanceDeploys200ResponseAllOfAppDeploysInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetInstanceDeploys200ResponseAllOfAppDeploysInner) SetId(v int64) {
 	o.Id = &v
@@ -102,15 +93,6 @@ func (o *GetInstanceDeploys200ResponseAllOfAppDeploysInner) GetInstanceIdOk() (*
 		return nil, false
 	}
 	return o.InstanceId, true
-}
-
-// IsSetInstanceId returns a boolean if a field has been set.
-func (o *GetInstanceDeploys200ResponseAllOfAppDeploysInner) IsSetInstanceId() bool {
-	if o != nil && !IsNil(o.InstanceId) {
-		return true
-	}
-
-	return false
 }
 
 // SetInstanceId gets a reference to the given int64 and assigns it to the InstanceId field.
@@ -136,15 +118,6 @@ func (o *GetInstanceDeploys200ResponseAllOfAppDeploysInner) GetInstanceOk() (*Ge
 	return o.Instance, true
 }
 
-// IsSetInstance returns a boolean if a field has been set.
-func (o *GetInstanceDeploys200ResponseAllOfAppDeploysInner) IsSetInstance() bool {
-	if o != nil && !IsNil(o.Instance) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstance gets a reference to the given GetInstanceDeploys200ResponseAllOfAppDeploysInnerInstance and assigns it to the Instance field.
 func (o *GetInstanceDeploys200ResponseAllOfAppDeploysInner) SetInstance(v GetInstanceDeploys200ResponseAllOfAppDeploysInnerInstance) {
 	o.Instance = &v
@@ -166,15 +139,6 @@ func (o *GetInstanceDeploys200ResponseAllOfAppDeploysInner) GetDeploymentOk() (*
 		return nil, false
 	}
 	return o.Deployment, true
-}
-
-// IsSetDeployment returns a boolean if a field has been set.
-func (o *GetInstanceDeploys200ResponseAllOfAppDeploysInner) IsSetDeployment() bool {
-	if o != nil && !IsNil(o.Deployment) {
-		return true
-	}
-
-	return false
 }
 
 // SetDeployment gets a reference to the given GetInstanceDeploys200ResponseAllOfAppDeploysInnerDeployment and assigns it to the Deployment field.
@@ -200,15 +164,6 @@ func (o *GetInstanceDeploys200ResponseAllOfAppDeploysInner) GetDeploymentVersion
 	return o.DeploymentVersionId, true
 }
 
-// IsSetDeploymentVersionId returns a boolean if a field has been set.
-func (o *GetInstanceDeploys200ResponseAllOfAppDeploysInner) IsSetDeploymentVersionId() bool {
-	if o != nil && !IsNil(o.DeploymentVersionId) {
-		return true
-	}
-
-	return false
-}
-
 // SetDeploymentVersionId gets a reference to the given int64 and assigns it to the DeploymentVersionId field.
 func (o *GetInstanceDeploys200ResponseAllOfAppDeploysInner) SetDeploymentVersionId(v int64) {
 	o.DeploymentVersionId = &v
@@ -230,15 +185,6 @@ func (o *GetInstanceDeploys200ResponseAllOfAppDeploysInner) GetDeploymentVersion
 		return nil, false
 	}
 	return o.DeploymentVersion, true
-}
-
-// IsSetDeploymentVersion returns a boolean if a field has been set.
-func (o *GetInstanceDeploys200ResponseAllOfAppDeploysInner) IsSetDeploymentVersion() bool {
-	if o != nil && !IsNil(o.DeploymentVersion) {
-		return true
-	}
-
-	return false
 }
 
 // SetDeploymentVersion gets a reference to the given GetInstanceDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion and assigns it to the DeploymentVersion field.
@@ -264,15 +210,6 @@ func (o *GetInstanceDeploys200ResponseAllOfAppDeploysInner) GetConfigOk() (map[s
 	return o.Config, true
 }
 
-// IsSetConfig returns a boolean if a field has been set.
-func (o *GetInstanceDeploys200ResponseAllOfAppDeploysInner) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
 // SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
 func (o *GetInstanceDeploys200ResponseAllOfAppDeploysInner) SetConfig(v map[string]interface{}) {
 	o.Config = v
@@ -294,15 +231,6 @@ func (o *GetInstanceDeploys200ResponseAllOfAppDeploysInner) GetStatusOk() (*stri
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *GetInstanceDeploys200ResponseAllOfAppDeploysInner) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -328,15 +256,6 @@ func (o *GetInstanceDeploys200ResponseAllOfAppDeploysInner) GetDeployDateOk() (*
 	return o.DeployDate, true
 }
 
-// IsSetDeployDate returns a boolean if a field has been set.
-func (o *GetInstanceDeploys200ResponseAllOfAppDeploysInner) IsSetDeployDate() bool {
-	if o != nil && !IsNil(o.DeployDate) {
-		return true
-	}
-
-	return false
-}
-
 // SetDeployDate gets a reference to the given time.Time and assigns it to the DeployDate field.
 func (o *GetInstanceDeploys200ResponseAllOfAppDeploysInner) SetDeployDate(v time.Time) {
 	o.DeployDate = &v
@@ -360,15 +279,6 @@ func (o *GetInstanceDeploys200ResponseAllOfAppDeploysInner) GetDateCreatedOk() (
 	return o.DateCreated, true
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *GetInstanceDeploys200ResponseAllOfAppDeploysInner) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
 func (o *GetInstanceDeploys200ResponseAllOfAppDeploysInner) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
@@ -390,15 +300,6 @@ func (o *GetInstanceDeploys200ResponseAllOfAppDeploysInner) GetLastUpdatedOk() (
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *GetInstanceDeploys200ResponseAllOfAppDeploysInner) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.

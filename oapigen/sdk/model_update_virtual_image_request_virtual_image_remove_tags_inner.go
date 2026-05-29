@@ -87,15 +87,6 @@ func (o *UpdateVirtualImageRequestVirtualImageRemoveTagsInner) GetValueOk() (*st
 	return o.Value, true
 }
 
-// IsSetValue returns a boolean if a field has been set.
-func (o *UpdateVirtualImageRequestVirtualImageRemoveTagsInner) IsSetValue() bool {
-	if o != nil && !IsNil(o.Value) {
-		return true
-	}
-
-	return false
-}
-
 // SetValue gets a reference to the given string and assigns it to the Value field.
 func (o *UpdateVirtualImageRequestVirtualImageRemoveTagsInner) SetValue(v string) {
 	o.Value = &v

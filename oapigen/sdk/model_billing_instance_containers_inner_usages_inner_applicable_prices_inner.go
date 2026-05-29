@@ -68,15 +68,6 @@ func (o *BillingInstanceContainersInnerUsagesInnerApplicablePricesInner) GetStar
 	return o.StartDate, true
 }
 
-// IsSetStartDate returns a boolean if a field has been set.
-func (o *BillingInstanceContainersInnerUsagesInnerApplicablePricesInner) IsSetStartDate() bool {
-	if o != nil && !IsNil(o.StartDate) {
-		return true
-	}
-
-	return false
-}
-
 // SetStartDate gets a reference to the given time.Time and assigns it to the StartDate field.
 func (o *BillingInstanceContainersInnerUsagesInnerApplicablePricesInner) SetStartDate(v time.Time) {
 	o.StartDate = &v
@@ -98,15 +89,6 @@ func (o *BillingInstanceContainersInnerUsagesInnerApplicablePricesInner) GetEndD
 		return nil, false
 	}
 	return o.EndDate, true
-}
-
-// IsSetEndDate returns a boolean if a field has been set.
-func (o *BillingInstanceContainersInnerUsagesInnerApplicablePricesInner) IsSetEndDate() bool {
-	if o != nil && !IsNil(o.EndDate) {
-		return true
-	}
-
-	return false
 }
 
 // SetEndDate gets a reference to the given time.Time and assigns it to the EndDate field.
@@ -132,15 +114,6 @@ func (o *BillingInstanceContainersInnerUsagesInnerApplicablePricesInner) GetNumU
 	return o.NumUnits, true
 }
 
-// IsSetNumUnits returns a boolean if a field has been set.
-func (o *BillingInstanceContainersInnerUsagesInnerApplicablePricesInner) IsSetNumUnits() bool {
-	if o != nil && !IsNil(o.NumUnits) {
-		return true
-	}
-
-	return false
-}
-
 // SetNumUnits gets a reference to the given float32 and assigns it to the NumUnits field.
 func (o *BillingInstanceContainersInnerUsagesInnerApplicablePricesInner) SetNumUnits(v float32) {
 	o.NumUnits = &v
@@ -162,15 +135,6 @@ func (o *BillingInstanceContainersInnerUsagesInnerApplicablePricesInner) GetCost
 		return nil, false
 	}
 	return o.Cost, true
-}
-
-// IsSetCost returns a boolean if a field has been set.
-func (o *BillingInstanceContainersInnerUsagesInnerApplicablePricesInner) IsSetCost() bool {
-	if o != nil && !IsNil(o.Cost) {
-		return true
-	}
-
-	return false
 }
 
 // SetCost gets a reference to the given float32 and assigns it to the Cost field.
@@ -196,15 +160,6 @@ func (o *BillingInstanceContainersInnerUsagesInnerApplicablePricesInner) GetPric
 	return o.Price, true
 }
 
-// IsSetPrice returns a boolean if a field has been set.
-func (o *BillingInstanceContainersInnerUsagesInnerApplicablePricesInner) IsSetPrice() bool {
-	if o != nil && !IsNil(o.Price) {
-		return true
-	}
-
-	return false
-}
-
 // SetPrice gets a reference to the given float32 and assigns it to the Price field.
 func (o *BillingInstanceContainersInnerUsagesInnerApplicablePricesInner) SetPrice(v float32) {
 	o.Price = &v
@@ -228,15 +183,6 @@ func (o *BillingInstanceContainersInnerUsagesInnerApplicablePricesInner) GetCurr
 	return o.Currency, true
 }
 
-// IsSetCurrency returns a boolean if a field has been set.
-func (o *BillingInstanceContainersInnerUsagesInnerApplicablePricesInner) IsSetCurrency() bool {
-	if o != nil && !IsNil(o.Currency) {
-		return true
-	}
-
-	return false
-}
-
 // SetCurrency gets a reference to the given string and assigns it to the Currency field.
 func (o *BillingInstanceContainersInnerUsagesInnerApplicablePricesInner) SetCurrency(v string) {
 	o.Currency = &v
@@ -258,15 +204,6 @@ func (o *BillingInstanceContainersInnerUsagesInnerApplicablePricesInner) GetPric
 		return nil, false
 	}
 	return o.Prices, true
-}
-
-// IsSetPrices returns a boolean if a field has been set.
-func (o *BillingInstanceContainersInnerUsagesInnerApplicablePricesInner) IsSetPrices() bool {
-	if o != nil && !IsNil(o.Prices) {
-		return true
-	}
-
-	return false
 }
 
 // SetPrices gets a reference to the given []BillingInstanceContainersInnerUsagesInnerApplicablePricesInnerPricesInner and assigns it to the Prices field.

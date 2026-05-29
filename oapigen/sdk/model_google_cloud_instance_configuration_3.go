@@ -77,28 +77,9 @@ func (o *GoogleCloudInstanceConfiguration3) GetNoAgentOk() (*bool, bool) {
 	return o.NoAgent.Get(), o.NoAgent.IsSet()
 }
 
-// IsSetNoAgent returns a boolean if a field has been set.
-func (o *GoogleCloudInstanceConfiguration3) IsSetNoAgent() bool {
-	if o != nil && o.NoAgent.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetNoAgent gets a reference to the given NullableBool and assigns it to the NoAgent field.
 func (o *GoogleCloudInstanceConfiguration3) SetNoAgent(v bool) {
 	o.NoAgent.Set(&v)
-}
-
-// SetNoAgentNil sets the value for NoAgent to be an explicit nil
-func (o *GoogleCloudInstanceConfiguration3) SetNoAgentNil() {
-	o.NoAgent.Set(nil)
-}
-
-// UnsetNoAgent ensures that no value is present for NoAgent, not even an explicit nil
-func (o *GoogleCloudInstanceConfiguration3) UnsetNoAgent() {
-	o.NoAgent.Unset()
 }
 
 // GetGoogleZoneId returns the GoogleZoneId field value if set, zero value otherwise.
@@ -117,15 +98,6 @@ func (o *GoogleCloudInstanceConfiguration3) GetGoogleZoneIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.GoogleZoneId, true
-}
-
-// IsSetGoogleZoneId returns a boolean if a field has been set.
-func (o *GoogleCloudInstanceConfiguration3) IsSetGoogleZoneId() bool {
-	if o != nil && !IsNil(o.GoogleZoneId) {
-		return true
-	}
-
-	return false
 }
 
 // SetGoogleZoneId gets a reference to the given int64 and assigns it to the GoogleZoneId field.
@@ -151,15 +123,6 @@ func (o *GoogleCloudInstanceConfiguration3) GetExternalIpTypeOk() (*int64, bool)
 	return o.ExternalIpType, true
 }
 
-// IsSetExternalIpType returns a boolean if a field has been set.
-func (o *GoogleCloudInstanceConfiguration3) IsSetExternalIpType() bool {
-	if o != nil && !IsNil(o.ExternalIpType) {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalIpType gets a reference to the given int64 and assigns it to the ExternalIpType field.
 func (o *GoogleCloudInstanceConfiguration3) SetExternalIpType(v int64) {
 	o.ExternalIpType = &v
@@ -181,15 +144,6 @@ func (o *GoogleCloudInstanceConfiguration3) GetNetworkTagsOk() (*string, bool) {
 		return nil, false
 	}
 	return o.NetworkTags, true
-}
-
-// IsSetNetworkTags returns a boolean if a field has been set.
-func (o *GoogleCloudInstanceConfiguration3) IsSetNetworkTags() bool {
-	if o != nil && !IsNil(o.NetworkTags) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkTags gets a reference to the given string and assigns it to the NetworkTags field.
@@ -215,15 +169,6 @@ func (o *GoogleCloudInstanceConfiguration3) GetServiceAccountOk() (*string, bool
 	return o.ServiceAccount, true
 }
 
-// IsSetServiceAccount returns a boolean if a field has been set.
-func (o *GoogleCloudInstanceConfiguration3) IsSetServiceAccount() bool {
-	if o != nil && !IsNil(o.ServiceAccount) {
-		return true
-	}
-
-	return false
-}
-
 // SetServiceAccount gets a reference to the given string and assigns it to the ServiceAccount field.
 func (o *GoogleCloudInstanceConfiguration3) SetServiceAccount(v string) {
 	o.ServiceAccount = &v
@@ -245,15 +190,6 @@ func (o *GoogleCloudInstanceConfiguration3) GetAccessScopeOk() (*string, bool) {
 		return nil, false
 	}
 	return o.AccessScope, true
-}
-
-// IsSetAccessScope returns a boolean if a field has been set.
-func (o *GoogleCloudInstanceConfiguration3) IsSetAccessScope() bool {
-	if o != nil && !IsNil(o.AccessScope) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccessScope gets a reference to the given string and assigns it to the AccessScope field.

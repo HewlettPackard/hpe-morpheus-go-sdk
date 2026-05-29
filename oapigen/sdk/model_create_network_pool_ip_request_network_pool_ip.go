@@ -68,15 +68,6 @@ func (o *CreateNetworkPoolIpRequestNetworkPoolIp) GetIpAddressOk() (*string, boo
 	return o.IpAddress, true
 }
 
-// IsSetIpAddress returns a boolean if a field has been set.
-func (o *CreateNetworkPoolIpRequestNetworkPoolIp) IsSetIpAddress() bool {
-	if o != nil && !IsNil(o.IpAddress) {
-		return true
-	}
-
-	return false
-}
-
 // SetIpAddress gets a reference to the given string and assigns it to the IpAddress field.
 func (o *CreateNetworkPoolIpRequestNetworkPoolIp) SetIpAddress(v string) {
 	o.IpAddress = &v
@@ -98,15 +89,6 @@ func (o *CreateNetworkPoolIpRequestNetworkPoolIp) GetHostnameOk() (*string, bool
 		return nil, false
 	}
 	return o.Hostname, true
-}
-
-// IsSetHostname returns a boolean if a field has been set.
-func (o *CreateNetworkPoolIpRequestNetworkPoolIp) IsSetHostname() bool {
-	if o != nil && !IsNil(o.Hostname) {
-		return true
-	}
-
-	return false
 }
 
 // SetHostname gets a reference to the given string and assigns it to the Hostname field.
@@ -132,15 +114,6 @@ func (o *CreateNetworkPoolIpRequestNetworkPoolIp) GetRefTypeOk() (*string, bool)
 	return o.RefType, true
 }
 
-// IsSetRefType returns a boolean if a field has been set.
-func (o *CreateNetworkPoolIpRequestNetworkPoolIp) IsSetRefType() bool {
-	if o != nil && !IsNil(o.RefType) {
-		return true
-	}
-
-	return false
-}
-
 // SetRefType gets a reference to the given string and assigns it to the RefType field.
 func (o *CreateNetworkPoolIpRequestNetworkPoolIp) SetRefType(v string) {
 	o.RefType = &v
@@ -162,15 +135,6 @@ func (o *CreateNetworkPoolIpRequestNetworkPoolIp) GetRefIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.RefId, true
-}
-
-// IsSetRefId returns a boolean if a field has been set.
-func (o *CreateNetworkPoolIpRequestNetworkPoolIp) IsSetRefId() bool {
-	if o != nil && !IsNil(o.RefId) {
-		return true
-	}
-
-	return false
 }
 
 // SetRefId gets a reference to the given int64 and assigns it to the RefId field.

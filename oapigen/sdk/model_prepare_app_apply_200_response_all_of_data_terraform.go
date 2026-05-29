@@ -64,15 +64,6 @@ func (o *PrepareAppApply200ResponseAllOfDataTerraform) GetRefreshModeOk() (*stri
 	return o.RefreshMode, true
 }
 
-// IsSetRefreshMode returns a boolean if a field has been set.
-func (o *PrepareAppApply200ResponseAllOfDataTerraform) IsSetRefreshMode() bool {
-	if o != nil && !IsNil(o.RefreshMode) {
-		return true
-	}
-
-	return false
-}
-
 // SetRefreshMode gets a reference to the given string and assigns it to the RefreshMode field.
 func (o *PrepareAppApply200ResponseAllOfDataTerraform) SetRefreshMode(v string) {
 	o.RefreshMode = &v
@@ -94,15 +85,6 @@ func (o *PrepareAppApply200ResponseAllOfDataTerraform) GetBackendTypeOk() (*stri
 		return nil, false
 	}
 	return o.BackendType, true
-}
-
-// IsSetBackendType returns a boolean if a field has been set.
-func (o *PrepareAppApply200ResponseAllOfDataTerraform) IsSetBackendType() bool {
-	if o != nil && !IsNil(o.BackendType) {
-		return true
-	}
-
-	return false
 }
 
 // SetBackendType gets a reference to the given string and assigns it to the BackendType field.
@@ -128,15 +110,6 @@ func (o *PrepareAppApply200ResponseAllOfDataTerraform) GetTimeoutModeOk() (*stri
 	return o.TimeoutMode, true
 }
 
-// IsSetTimeoutMode returns a boolean if a field has been set.
-func (o *PrepareAppApply200ResponseAllOfDataTerraform) IsSetTimeoutMode() bool {
-	if o != nil && !IsNil(o.TimeoutMode) {
-		return true
-	}
-
-	return false
-}
-
 // SetTimeoutMode gets a reference to the given string and assigns it to the TimeoutMode field.
 func (o *PrepareAppApply200ResponseAllOfDataTerraform) SetTimeoutMode(v string) {
 	o.TimeoutMode = &v
@@ -158,15 +131,6 @@ func (o *PrepareAppApply200ResponseAllOfDataTerraform) GetConfigTypeOk() (*strin
 		return nil, false
 	}
 	return o.ConfigType, true
-}
-
-// IsSetConfigType returns a boolean if a field has been set.
-func (o *PrepareAppApply200ResponseAllOfDataTerraform) IsSetConfigType() bool {
-	if o != nil && !IsNil(o.ConfigType) {
-		return true
-	}
-
-	return false
 }
 
 // SetConfigType gets a reference to the given string and assigns it to the ConfigType field.

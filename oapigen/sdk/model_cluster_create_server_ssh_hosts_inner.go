@@ -64,15 +64,6 @@ func (o *ClusterCreateServerSshHostsInner) GetIpOk() (*string, bool) {
 	return o.Ip, true
 }
 
-// IsSetIp returns a boolean if a field has been set.
-func (o *ClusterCreateServerSshHostsInner) IsSetIp() bool {
-	if o != nil && !IsNil(o.Ip) {
-		return true
-	}
-
-	return false
-}
-
 // SetIp gets a reference to the given string and assigns it to the Ip field.
 func (o *ClusterCreateServerSshHostsInner) SetIp(v string) {
 	o.Ip = &v
@@ -94,15 +85,6 @@ func (o *ClusterCreateServerSshHostsInner) GetNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ClusterCreateServerSshHostsInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.

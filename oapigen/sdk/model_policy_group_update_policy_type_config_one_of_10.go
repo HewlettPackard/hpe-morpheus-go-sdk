@@ -63,15 +63,6 @@ func (o *PolicyGroupUpdatePolicyTypeConfigOneOf10) GetNamingTypeOk() (*string, b
 	return o.NamingType, true
 }
 
-// IsSetNamingType returns a boolean if a field has been set.
-func (o *PolicyGroupUpdatePolicyTypeConfigOneOf10) IsSetNamingType() bool {
-	if o != nil && !IsNil(o.NamingType) {
-		return true
-	}
-
-	return false
-}
-
 // SetNamingType gets a reference to the given string and assigns it to the NamingType field.
 func (o *PolicyGroupUpdatePolicyTypeConfigOneOf10) SetNamingType(v string) {
 	o.NamingType = &v
@@ -95,15 +86,6 @@ func (o *PolicyGroupUpdatePolicyTypeConfigOneOf10) GetNamingPatternOk() (*string
 	return o.NamingPattern, true
 }
 
-// IsSetNamingPattern returns a boolean if a field has been set.
-func (o *PolicyGroupUpdatePolicyTypeConfigOneOf10) IsSetNamingPattern() bool {
-	if o != nil && !IsNil(o.NamingPattern) {
-		return true
-	}
-
-	return false
-}
-
 // SetNamingPattern gets a reference to the given string and assigns it to the NamingPattern field.
 func (o *PolicyGroupUpdatePolicyTypeConfigOneOf10) SetNamingPattern(v string) {
 	o.NamingPattern = &v
@@ -125,15 +107,6 @@ func (o *PolicyGroupUpdatePolicyTypeConfigOneOf10) GetNamingConflictOk() (*bool,
 		return nil, false
 	}
 	return o.NamingConflict, true
-}
-
-// IsSetNamingConflict returns a boolean if a field has been set.
-func (o *PolicyGroupUpdatePolicyTypeConfigOneOf10) IsSetNamingConflict() bool {
-	if o != nil && !IsNil(o.NamingConflict) {
-		return true
-	}
-
-	return false
 }
 
 // SetNamingConflict gets a reference to the given bool and assigns it to the NamingConflict field.

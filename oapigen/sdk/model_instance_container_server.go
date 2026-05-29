@@ -98,15 +98,6 @@ func (o *InstanceContainerServer) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *InstanceContainerServer) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *InstanceContainerServer) SetId(v int64) {
 	o.Id = &v
@@ -128,15 +119,6 @@ func (o *InstanceContainerServer) GetUuidOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Uuid, true
-}
-
-// IsSetUuid returns a boolean if a field has been set.
-func (o *InstanceContainerServer) IsSetUuid() bool {
-	if o != nil && !IsNil(o.Uuid) {
-		return true
-	}
-
-	return false
 }
 
 // SetUuid gets a reference to the given string and assigns it to the Uuid field.
@@ -163,28 +145,9 @@ func (o *InstanceContainerServer) GetExternalIdOk() (*string, bool) {
 	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *InstanceContainerServer) IsSetExternalId() bool {
-	if o != nil && o.ExternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
 func (o *InstanceContainerServer) SetExternalId(v string) {
 	o.ExternalId.Set(&v)
-}
-
-// SetExternalIdNil sets the value for ExternalId to be an explicit nil
-func (o *InstanceContainerServer) SetExternalIdNil() {
-	o.ExternalId.Set(nil)
-}
-
-// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-func (o *InstanceContainerServer) UnsetExternalId() {
-	o.ExternalId.Unset()
 }
 
 // GetInternalId returns the InternalId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -206,28 +169,9 @@ func (o *InstanceContainerServer) GetInternalIdOk() (*string, bool) {
 	return o.InternalId.Get(), o.InternalId.IsSet()
 }
 
-// IsSetInternalId returns a boolean if a field has been set.
-func (o *InstanceContainerServer) IsSetInternalId() bool {
-	if o != nil && o.InternalId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInternalId gets a reference to the given NullableString and assigns it to the InternalId field.
 func (o *InstanceContainerServer) SetInternalId(v string) {
 	o.InternalId.Set(&v)
-}
-
-// SetInternalIdNil sets the value for InternalId to be an explicit nil
-func (o *InstanceContainerServer) SetInternalIdNil() {
-	o.InternalId.Set(nil)
-}
-
-// UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
-func (o *InstanceContainerServer) UnsetInternalId() {
-	o.InternalId.Unset()
 }
 
 // GetHostName returns the HostName field value if set, zero value otherwise.
@@ -246,15 +190,6 @@ func (o *InstanceContainerServer) GetHostNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.HostName, true
-}
-
-// IsSetHostName returns a boolean if a field has been set.
-func (o *InstanceContainerServer) IsSetHostName() bool {
-	if o != nil && !IsNil(o.HostName) {
-		return true
-	}
-
-	return false
 }
 
 // SetHostName gets a reference to the given string and assigns it to the HostName field.
@@ -280,15 +215,6 @@ func (o *InstanceContainerServer) GetAccountIdOk() (*int64, bool) {
 	return o.AccountId, true
 }
 
-// IsSetAccountId returns a boolean if a field has been set.
-func (o *InstanceContainerServer) IsSetAccountId() bool {
-	if o != nil && !IsNil(o.AccountId) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccountId gets a reference to the given int64 and assigns it to the AccountId field.
 func (o *InstanceContainerServer) SetAccountId(v int64) {
 	o.AccountId = &v
@@ -310,15 +236,6 @@ func (o *InstanceContainerServer) GetAccountOk() (*InstanceContainerServerAccoun
 		return nil, false
 	}
 	return o.Account, true
-}
-
-// IsSetAccount returns a boolean if a field has been set.
-func (o *InstanceContainerServer) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
 }
 
 // SetAccount gets a reference to the given InstanceContainerServerAccount and assigns it to the Account field.
@@ -344,15 +261,6 @@ func (o *InstanceContainerServer) GetOwnerOk() (*InstanceContainerServerOwner, b
 	return o.Owner, true
 }
 
-// IsSetOwner returns a boolean if a field has been set.
-func (o *InstanceContainerServer) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
-		return true
-	}
-
-	return false
-}
-
 // SetOwner gets a reference to the given InstanceContainerServerOwner and assigns it to the Owner field.
 func (o *InstanceContainerServer) SetOwner(v InstanceContainerServerOwner) {
 	o.Owner = &v
@@ -374,15 +282,6 @@ func (o *InstanceContainerServer) GetZoneOk() (*InstanceContainerServerZone, boo
 		return nil, false
 	}
 	return o.Zone, true
-}
-
-// IsSetZone returns a boolean if a field has been set.
-func (o *InstanceContainerServer) IsSetZone() bool {
-	if o != nil && !IsNil(o.Zone) {
-		return true
-	}
-
-	return false
 }
 
 // SetZone gets a reference to the given InstanceContainerServerZone and assigns it to the Zone field.
@@ -408,15 +307,6 @@ func (o *InstanceContainerServer) GetPlanOk() (*InstanceContainerServerPlan, boo
 	return o.Plan, true
 }
 
-// IsSetPlan returns a boolean if a field has been set.
-func (o *InstanceContainerServer) IsSetPlan() bool {
-	if o != nil && !IsNil(o.Plan) {
-		return true
-	}
-
-	return false
-}
-
 // SetPlan gets a reference to the given InstanceContainerServerPlan and assigns it to the Plan field.
 func (o *InstanceContainerServer) SetPlan(v InstanceContainerServerPlan) {
 	o.Plan = &v
@@ -440,15 +330,6 @@ func (o *InstanceContainerServer) GetComputeServerTypeOk() (*InstanceContainerSe
 	return o.ComputeServerType, true
 }
 
-// IsSetComputeServerType returns a boolean if a field has been set.
-func (o *InstanceContainerServer) IsSetComputeServerType() bool {
-	if o != nil && !IsNil(o.ComputeServerType) {
-		return true
-	}
-
-	return false
-}
-
 // SetComputeServerType gets a reference to the given InstanceContainerServerComputeServerType and assigns it to the ComputeServerType field.
 func (o *InstanceContainerServer) SetComputeServerType(v InstanceContainerServerComputeServerType) {
 	o.ComputeServerType = &v
@@ -470,15 +351,6 @@ func (o *InstanceContainerServer) GetVisibilityOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *InstanceContainerServer) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
@@ -505,28 +377,9 @@ func (o *InstanceContainerServer) GetDescriptionOk() (*string, bool) {
 	return o.Description.Get(), o.Description.IsSet()
 }
 
-// IsSetDescription returns a boolean if a field has been set.
-func (o *InstanceContainerServer) IsSetDescription() bool {
-	if o != nil && o.Description.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *InstanceContainerServer) SetDescription(v string) {
 	o.Description.Set(&v)
-}
-
-// SetDescriptionNil sets the value for Description to be an explicit nil
-func (o *InstanceContainerServer) SetDescriptionNil() {
-	o.Description.Set(nil)
-}
-
-// UnsetDescription ensures that no value is present for Description, not even an explicit nil
-func (o *InstanceContainerServer) UnsetDescription() {
-	o.Description.Unset()
 }
 
 // GetZoneId returns the ZoneId field value if set, zero value otherwise.
@@ -545,15 +398,6 @@ func (o *InstanceContainerServer) GetZoneIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.ZoneId, true
-}
-
-// IsSetZoneId returns a boolean if a field has been set.
-func (o *InstanceContainerServer) IsSetZoneId() bool {
-	if o != nil && !IsNil(o.ZoneId) {
-		return true
-	}
-
-	return false
 }
 
 // SetZoneId gets a reference to the given int64 and assigns it to the ZoneId field.
@@ -579,15 +423,6 @@ func (o *InstanceContainerServer) GetSiteIdOk() (*int64, bool) {
 	return o.SiteId, true
 }
 
-// IsSetSiteId returns a boolean if a field has been set.
-func (o *InstanceContainerServer) IsSetSiteId() bool {
-	if o != nil && !IsNil(o.SiteId) {
-		return true
-	}
-
-	return false
-}
-
 // SetSiteId gets a reference to the given int64 and assigns it to the SiteId field.
 func (o *InstanceContainerServer) SetSiteId(v int64) {
 	o.SiteId = &v
@@ -609,15 +444,6 @@ func (o *InstanceContainerServer) GetResourcePoolIdOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.ResourcePoolId, true
-}
-
-// IsSetResourcePoolId returns a boolean if a field has been set.
-func (o *InstanceContainerServer) IsSetResourcePoolId() bool {
-	if o != nil && !IsNil(o.ResourcePoolId) {
-		return true
-	}
-
-	return false
 }
 
 // SetResourcePoolId gets a reference to the given int64 and assigns it to the ResourcePoolId field.
@@ -644,28 +470,9 @@ func (o *InstanceContainerServer) GetSshHostOk() (*string, bool) {
 	return o.SshHost.Get(), o.SshHost.IsSet()
 }
 
-// IsSetSshHost returns a boolean if a field has been set.
-func (o *InstanceContainerServer) IsSetSshHost() bool {
-	if o != nil && o.SshHost.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetSshHost gets a reference to the given NullableString and assigns it to the SshHost field.
 func (o *InstanceContainerServer) SetSshHost(v string) {
 	o.SshHost.Set(&v)
-}
-
-// SetSshHostNil sets the value for SshHost to be an explicit nil
-func (o *InstanceContainerServer) SetSshHostNil() {
-	o.SshHost.Set(nil)
-}
-
-// UnsetSshHost ensures that no value is present for SshHost, not even an explicit nil
-func (o *InstanceContainerServer) UnsetSshHost() {
-	o.SshHost.Unset()
 }
 
 // GetSshPort returns the SshPort field value if set, zero value otherwise.
@@ -684,15 +491,6 @@ func (o *InstanceContainerServer) GetSshPortOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.SshPort, true
-}
-
-// IsSetSshPort returns a boolean if a field has been set.
-func (o *InstanceContainerServer) IsSetSshPort() bool {
-	if o != nil && !IsNil(o.SshPort) {
-		return true
-	}
-
-	return false
 }
 
 // SetSshPort gets a reference to the given int64 and assigns it to the SshPort field.
@@ -719,28 +517,9 @@ func (o *InstanceContainerServer) GetExternalIpOk() (*string, bool) {
 	return o.ExternalIp.Get(), o.ExternalIp.IsSet()
 }
 
-// IsSetExternalIp returns a boolean if a field has been set.
-func (o *InstanceContainerServer) IsSetExternalIp() bool {
-	if o != nil && o.ExternalIp.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetExternalIp gets a reference to the given NullableString and assigns it to the ExternalIp field.
 func (o *InstanceContainerServer) SetExternalIp(v string) {
 	o.ExternalIp.Set(&v)
-}
-
-// SetExternalIpNil sets the value for ExternalIp to be an explicit nil
-func (o *InstanceContainerServer) SetExternalIpNil() {
-	o.ExternalIp.Set(nil)
-}
-
-// UnsetExternalIp ensures that no value is present for ExternalIp, not even an explicit nil
-func (o *InstanceContainerServer) UnsetExternalIp() {
-	o.ExternalIp.Unset()
 }
 
 // GetInternalIp returns the InternalIp field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -762,28 +541,9 @@ func (o *InstanceContainerServer) GetInternalIpOk() (*string, bool) {
 	return o.InternalIp.Get(), o.InternalIp.IsSet()
 }
 
-// IsSetInternalIp returns a boolean if a field has been set.
-func (o *InstanceContainerServer) IsSetInternalIp() bool {
-	if o != nil && o.InternalIp.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetInternalIp gets a reference to the given NullableString and assigns it to the InternalIp field.
 func (o *InstanceContainerServer) SetInternalIp(v string) {
 	o.InternalIp.Set(&v)
-}
-
-// SetInternalIpNil sets the value for InternalIp to be an explicit nil
-func (o *InstanceContainerServer) SetInternalIpNil() {
-	o.InternalIp.Set(nil)
-}
-
-// UnsetInternalIp ensures that no value is present for InternalIp, not even an explicit nil
-func (o *InstanceContainerServer) UnsetInternalIp() {
-	o.InternalIp.Unset()
 }
 
 // GetPlatform returns the Platform field value if set, zero value otherwise.
@@ -802,15 +562,6 @@ func (o *InstanceContainerServer) GetPlatformOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Platform, true
-}
-
-// IsSetPlatform returns a boolean if a field has been set.
-func (o *InstanceContainerServer) IsSetPlatform() bool {
-	if o != nil && !IsNil(o.Platform) {
-		return true
-	}
-
-	return false
 }
 
 // SetPlatform gets a reference to the given string and assigns it to the Platform field.
@@ -834,15 +585,6 @@ func (o *InstanceContainerServer) GetStatusOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Status, true
-}
-
-// IsSetStatus returns a boolean if a field has been set.
-func (o *InstanceContainerServer) IsSetStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
@@ -869,28 +611,9 @@ func (o *InstanceContainerServer) GetStatusMessageOk() (*string, bool) {
 	return o.StatusMessage.Get(), o.StatusMessage.IsSet()
 }
 
-// IsSetStatusMessage returns a boolean if a field has been set.
-func (o *InstanceContainerServer) IsSetStatusMessage() bool {
-	if o != nil && o.StatusMessage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusMessage gets a reference to the given NullableString and assigns it to the StatusMessage field.
 func (o *InstanceContainerServer) SetStatusMessage(v string) {
 	o.StatusMessage.Set(&v)
-}
-
-// SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
-func (o *InstanceContainerServer) SetStatusMessageNil() {
-	o.StatusMessage.Set(nil)
-}
-
-// UnsetStatusMessage ensures that no value is present for StatusMessage, not even an explicit nil
-func (o *InstanceContainerServer) UnsetStatusMessage() {
-	o.StatusMessage.Unset()
 }
 
 // GetErrorMessage returns the ErrorMessage field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -912,28 +635,9 @@ func (o *InstanceContainerServer) GetErrorMessageOk() (*string, bool) {
 	return o.ErrorMessage.Get(), o.ErrorMessage.IsSet()
 }
 
-// IsSetErrorMessage returns a boolean if a field has been set.
-func (o *InstanceContainerServer) IsSetErrorMessage() bool {
-	if o != nil && o.ErrorMessage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetErrorMessage gets a reference to the given NullableString and assigns it to the ErrorMessage field.
 func (o *InstanceContainerServer) SetErrorMessage(v string) {
 	o.ErrorMessage.Set(&v)
-}
-
-// SetErrorMessageNil sets the value for ErrorMessage to be an explicit nil
-func (o *InstanceContainerServer) SetErrorMessageNil() {
-	o.ErrorMessage.Set(nil)
-}
-
-// UnsetErrorMessage ensures that no value is present for ErrorMessage, not even an explicit nil
-func (o *InstanceContainerServer) UnsetErrorMessage() {
-	o.ErrorMessage.Unset()
 }
 
 // GetStatusDate returns the StatusDate field value if set, zero value otherwise.
@@ -952,15 +656,6 @@ func (o *InstanceContainerServer) GetStatusDateOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.StatusDate, true
-}
-
-// IsSetStatusDate returns a boolean if a field has been set.
-func (o *InstanceContainerServer) IsSetStatusDate() bool {
-	if o != nil && !IsNil(o.StatusDate) {
-		return true
-	}
-
-	return false
 }
 
 // SetStatusDate gets a reference to the given time.Time and assigns it to the StatusDate field.
@@ -987,28 +682,9 @@ func (o *InstanceContainerServer) GetStatusPercentOk() (*int64, bool) {
 	return o.StatusPercent.Get(), o.StatusPercent.IsSet()
 }
 
-// IsSetStatusPercent returns a boolean if a field has been set.
-func (o *InstanceContainerServer) IsSetStatusPercent() bool {
-	if o != nil && o.StatusPercent.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusPercent gets a reference to the given NullableInt64 and assigns it to the StatusPercent field.
 func (o *InstanceContainerServer) SetStatusPercent(v int64) {
 	o.StatusPercent.Set(&v)
-}
-
-// SetStatusPercentNil sets the value for StatusPercent to be an explicit nil
-func (o *InstanceContainerServer) SetStatusPercentNil() {
-	o.StatusPercent.Set(nil)
-}
-
-// UnsetStatusPercent ensures that no value is present for StatusPercent, not even an explicit nil
-func (o *InstanceContainerServer) UnsetStatusPercent() {
-	o.StatusPercent.Unset()
 }
 
 // GetStatusEta returns the StatusEta field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1030,28 +706,9 @@ func (o *InstanceContainerServer) GetStatusEtaOk() (*int64, bool) {
 	return o.StatusEta.Get(), o.StatusEta.IsSet()
 }
 
-// IsSetStatusEta returns a boolean if a field has been set.
-func (o *InstanceContainerServer) IsSetStatusEta() bool {
-	if o != nil && o.StatusEta.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetStatusEta gets a reference to the given NullableInt64 and assigns it to the StatusEta field.
 func (o *InstanceContainerServer) SetStatusEta(v int64) {
 	o.StatusEta.Set(&v)
-}
-
-// SetStatusEtaNil sets the value for StatusEta to be an explicit nil
-func (o *InstanceContainerServer) SetStatusEtaNil() {
-	o.StatusEta.Set(nil)
-}
-
-// UnsetStatusEta ensures that no value is present for StatusEta, not even an explicit nil
-func (o *InstanceContainerServer) UnsetStatusEta() {
-	o.StatusEta.Unset()
 }
 
 // GetPowerState returns the PowerState field value if set, zero value otherwise.
@@ -1070,15 +727,6 @@ func (o *InstanceContainerServer) GetPowerStateOk() (*InstanceContainerServerPow
 		return nil, false
 	}
 	return o.PowerState, true
-}
-
-// IsSetPowerState returns a boolean if a field has been set.
-func (o *InstanceContainerServer) IsSetPowerState() bool {
-	if o != nil && !IsNil(o.PowerState) {
-		return true
-	}
-
-	return false
 }
 
 // SetPowerState gets a reference to the given InstanceContainerServerPowerState and assigns it to the PowerState field.
@@ -1102,15 +750,6 @@ func (o *InstanceContainerServer) GetAgentInstalledOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.AgentInstalled, true
-}
-
-// IsSetAgentInstalled returns a boolean if a field has been set.
-func (o *InstanceContainerServer) IsSetAgentInstalled() bool {
-	if o != nil && !IsNil(o.AgentInstalled) {
-		return true
-	}
-
-	return false
 }
 
 // SetAgentInstalled gets a reference to the given bool and assigns it to the AgentInstalled field.
@@ -1137,28 +776,9 @@ func (o *InstanceContainerServer) GetLastAgentUpdateOk() (*time.Time, bool) {
 	return o.LastAgentUpdate.Get(), o.LastAgentUpdate.IsSet()
 }
 
-// IsSetLastAgentUpdate returns a boolean if a field has been set.
-func (o *InstanceContainerServer) IsSetLastAgentUpdate() bool {
-	if o != nil && o.LastAgentUpdate.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLastAgentUpdate gets a reference to the given NullableTime and assigns it to the LastAgentUpdate field.
 func (o *InstanceContainerServer) SetLastAgentUpdate(v time.Time) {
 	o.LastAgentUpdate.Set(&v)
-}
-
-// SetLastAgentUpdateNil sets the value for LastAgentUpdate to be an explicit nil
-func (o *InstanceContainerServer) SetLastAgentUpdateNil() {
-	o.LastAgentUpdate.Set(nil)
-}
-
-// UnsetLastAgentUpdate ensures that no value is present for LastAgentUpdate, not even an explicit nil
-func (o *InstanceContainerServer) UnsetLastAgentUpdate() {
-	o.LastAgentUpdate.Unset()
 }
 
 // GetMaxCores returns the MaxCores field value if set, zero value otherwise.
@@ -1177,15 +797,6 @@ func (o *InstanceContainerServer) GetMaxCoresOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.MaxCores, true
-}
-
-// IsSetMaxCores returns a boolean if a field has been set.
-func (o *InstanceContainerServer) IsSetMaxCores() bool {
-	if o != nil && !IsNil(o.MaxCores) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxCores gets a reference to the given int64 and assigns it to the MaxCores field.
@@ -1211,15 +822,6 @@ func (o *InstanceContainerServer) GetMaxMemoryOk() (*int64, bool) {
 	return o.MaxMemory, true
 }
 
-// IsSetMaxMemory returns a boolean if a field has been set.
-func (o *InstanceContainerServer) IsSetMaxMemory() bool {
-	if o != nil && !IsNil(o.MaxMemory) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxMemory gets a reference to the given int64 and assigns it to the MaxMemory field.
 func (o *InstanceContainerServer) SetMaxMemory(v int64) {
 	o.MaxMemory = &v
@@ -1241,15 +843,6 @@ func (o *InstanceContainerServer) GetMaxStorageOk() (*int64, bool) {
 		return nil, false
 	}
 	return o.MaxStorage, true
-}
-
-// IsSetMaxStorage returns a boolean if a field has been set.
-func (o *InstanceContainerServer) IsSetMaxStorage() bool {
-	if o != nil && !IsNil(o.MaxStorage) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxStorage gets a reference to the given int64 and assigns it to the MaxStorage field.
@@ -1275,15 +868,6 @@ func (o *InstanceContainerServer) GetSourceImageOk() (*InstanceContainerServerSo
 	return o.SourceImage, true
 }
 
-// IsSetSourceImage returns a boolean if a field has been set.
-func (o *InstanceContainerServer) IsSetSourceImage() bool {
-	if o != nil && !IsNil(o.SourceImage) {
-		return true
-	}
-
-	return false
-}
-
 // SetSourceImage gets a reference to the given InstanceContainerServerSourceImage and assigns it to the SourceImage field.
 func (o *InstanceContainerServer) SetSourceImage(v InstanceContainerServerSourceImage) {
 	o.SourceImage = &v
@@ -1305,15 +889,6 @@ func (o *InstanceContainerServer) GetServerOsOk() (*InstanceContainerServerServe
 		return nil, false
 	}
 	return o.ServerOs, true
-}
-
-// IsSetServerOs returns a boolean if a field has been set.
-func (o *InstanceContainerServer) IsSetServerOs() bool {
-	if o != nil && !IsNil(o.ServerOs) {
-		return true
-	}
-
-	return false
 }
 
 // SetServerOs gets a reference to the given InstanceContainerServerServerOs and assigns it to the ServerOs field.
@@ -1339,15 +914,6 @@ func (o *InstanceContainerServer) GetVolumesOk() ([]InstanceContainerServerVolum
 	return o.Volumes, true
 }
 
-// IsSetVolumes returns a boolean if a field has been set.
-func (o *InstanceContainerServer) IsSetVolumes() bool {
-	if o != nil && !IsNil(o.Volumes) {
-		return true
-	}
-
-	return false
-}
-
 // SetVolumes gets a reference to the given []InstanceContainerServerVolume and assigns it to the Volumes field.
 func (o *InstanceContainerServer) SetVolumes(v []InstanceContainerServerVolume) {
 	o.Volumes = v
@@ -1369,15 +935,6 @@ func (o *InstanceContainerServer) GetInterfacesOk() ([]InstanceContainerServerIn
 		return nil, false
 	}
 	return o.Interfaces, true
-}
-
-// IsSetInterfaces returns a boolean if a field has been set.
-func (o *InstanceContainerServer) IsSetInterfaces() bool {
-	if o != nil && !IsNil(o.Interfaces) {
-		return true
-	}
-
-	return false
 }
 
 // SetInterfaces gets a reference to the given []InstanceContainerServerInterfacesInner and assigns it to the Interfaces field.

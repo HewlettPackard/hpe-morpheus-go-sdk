@@ -62,15 +62,6 @@ func (o *ListClusterPolicies200Response) GetPoliciesOk() ([]ListClusterPolicies2
 	return o.Policies, true
 }
 
-// IsSetPolicies returns a boolean if a field has been set.
-func (o *ListClusterPolicies200Response) IsSetPolicies() bool {
-	if o != nil && !IsNil(o.Policies) {
-		return true
-	}
-
-	return false
-}
-
 // SetPolicies gets a reference to the given []ListClusterPolicies200ResponseAllOfPoliciesInner and assigns it to the Policies field.
 func (o *ListClusterPolicies200Response) SetPolicies(v []ListClusterPolicies200ResponseAllOfPoliciesInner) {
 	o.Policies = v
@@ -92,15 +83,6 @@ func (o *ListClusterPolicies200Response) GetMetaOk() (*ListApprovals200ResponseA
 		return nil, false
 	}
 	return o.Meta, true
-}
-
-// IsSetMeta returns a boolean if a field has been set.
-func (o *ListClusterPolicies200Response) IsSetMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
 }
 
 // SetMeta gets a reference to the given ListApprovals200ResponseAllOfMeta and assigns it to the Meta field.

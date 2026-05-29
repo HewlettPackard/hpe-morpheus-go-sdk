@@ -62,15 +62,6 @@ func (o *InstanceWorkflowTaskSet) GetCustomOptionsOk() (map[string]interface{}, 
 	return o.CustomOptions, true
 }
 
-// IsSetCustomOptions returns a boolean if a field has been set.
-func (o *InstanceWorkflowTaskSet) IsSetCustomOptions() bool {
-	if o != nil && !IsNil(o.CustomOptions) {
-		return true
-	}
-
-	return false
-}
-
 // SetCustomOptions gets a reference to the given map[string]interface{} and assigns it to the CustomOptions field.
 func (o *InstanceWorkflowTaskSet) SetCustomOptions(v map[string]interface{}) {
 	o.CustomOptions = v

@@ -63,15 +63,6 @@ func (o *UpdateHostInstallAgent200Response) GetPublicKeyOk() (*string, bool) {
 	return o.PublicKey, true
 }
 
-// IsSetPublicKey returns a boolean if a field has been set.
-func (o *UpdateHostInstallAgent200Response) IsSetPublicKey() bool {
-	if o != nil && !IsNil(o.PublicKey) {
-		return true
-	}
-
-	return false
-}
-
 // SetPublicKey gets a reference to the given string and assigns it to the PublicKey field.
 func (o *UpdateHostInstallAgent200Response) SetPublicKey(v string) {
 	o.PublicKey = &v
@@ -93,15 +84,6 @@ func (o *UpdateHostInstallAgent200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *UpdateHostInstallAgent200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

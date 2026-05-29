@@ -77,15 +77,6 @@ func (o *ClusterDatastoreUpdate) GetActiveOk() (*bool, bool) {
 	return o.Active, true
 }
 
-// IsSetActive returns a boolean if a field has been set.
-func (o *ClusterDatastoreUpdate) IsSetActive() bool {
-	if o != nil && !IsNil(o.Active) {
-		return true
-	}
-
-	return false
-}
-
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *ClusterDatastoreUpdate) SetActive(v bool) {
 	o.Active = &v
@@ -107,15 +98,6 @@ func (o *ClusterDatastoreUpdate) GetPermissionsOk() (*ClusterDatastoreUpdatePerm
 		return nil, false
 	}
 	return o.Permissions, true
-}
-
-// IsSetPermissions returns a boolean if a field has been set.
-func (o *ClusterDatastoreUpdate) IsSetPermissions() bool {
-	if o != nil && !IsNil(o.Permissions) {
-		return true
-	}
-
-	return false
 }
 
 // SetPermissions gets a reference to the given ClusterDatastoreUpdatePermissions and assigns it to the Permissions field.
@@ -141,15 +123,6 @@ func (o *ClusterDatastoreUpdate) GetVisibilityOk() (*string, bool) {
 	return o.Visibility, true
 }
 
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *ClusterDatastoreUpdate) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
-}
-
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
 func (o *ClusterDatastoreUpdate) SetVisibility(v string) {
 	o.Visibility = &v
@@ -173,15 +146,6 @@ func (o *ClusterDatastoreUpdate) GetHeartbeatTargetOk() (*bool, bool) {
 	return o.HeartbeatTarget, true
 }
 
-// IsSetHeartbeatTarget returns a boolean if a field has been set.
-func (o *ClusterDatastoreUpdate) IsSetHeartbeatTarget() bool {
-	if o != nil && !IsNil(o.HeartbeatTarget) {
-		return true
-	}
-
-	return false
-}
-
 // SetHeartbeatTarget gets a reference to the given bool and assigns it to the HeartbeatTarget field.
 func (o *ClusterDatastoreUpdate) SetHeartbeatTarget(v bool) {
 	o.HeartbeatTarget = &v
@@ -203,15 +167,6 @@ func (o *ClusterDatastoreUpdate) GetSupportsVmSecureMetadataOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.SupportsVmSecureMetadata, true
-}
-
-// IsSetSupportsVmSecureMetadata returns a boolean if a field has been set.
-func (o *ClusterDatastoreUpdate) IsSetSupportsVmSecureMetadata() bool {
-	if o != nil && !IsNil(o.SupportsVmSecureMetadata) {
-		return true
-	}
-
-	return false
 }
 
 // SetSupportsVmSecureMetadata gets a reference to the given bool and assigns it to the SupportsVmSecureMetadata field.

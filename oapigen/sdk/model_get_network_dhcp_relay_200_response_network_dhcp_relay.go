@@ -70,15 +70,6 @@ func (o *GetNetworkDhcpRelay200ResponseNetworkDhcpRelay) GetIdOk() (*int64, bool
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetNetworkDhcpRelay200ResponseNetworkDhcpRelay) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetNetworkDhcpRelay200ResponseNetworkDhcpRelay) SetId(v int64) {
 	o.Id = &v
@@ -100,15 +91,6 @@ func (o *GetNetworkDhcpRelay200ResponseNetworkDhcpRelay) GetDateCreatedOk() (*ti
 		return nil, false
 	}
 	return o.DateCreated, true
-}
-
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *GetNetworkDhcpRelay200ResponseNetworkDhcpRelay) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
 }
 
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
@@ -134,15 +116,6 @@ func (o *GetNetworkDhcpRelay200ResponseNetworkDhcpRelay) GetProviderIdOk() (*str
 	return o.ProviderId, true
 }
 
-// IsSetProviderId returns a boolean if a field has been set.
-func (o *GetNetworkDhcpRelay200ResponseNetworkDhcpRelay) IsSetProviderId() bool {
-	if o != nil && !IsNil(o.ProviderId) {
-		return true
-	}
-
-	return false
-}
-
 // SetProviderId gets a reference to the given string and assigns it to the ProviderId field.
 func (o *GetNetworkDhcpRelay200ResponseNetworkDhcpRelay) SetProviderId(v string) {
 	o.ProviderId = &v
@@ -164,15 +137,6 @@ func (o *GetNetworkDhcpRelay200ResponseNetworkDhcpRelay) GetLastUpdatedOk() (*ti
 		return nil, false
 	}
 	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *GetNetworkDhcpRelay200ResponseNetworkDhcpRelay) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
@@ -198,15 +162,6 @@ func (o *GetNetworkDhcpRelay200ResponseNetworkDhcpRelay) GetNameOk() (*string, b
 	return o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *GetNetworkDhcpRelay200ResponseNetworkDhcpRelay) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *GetNetworkDhcpRelay200ResponseNetworkDhcpRelay) SetName(v string) {
 	o.Name = &v
@@ -228,15 +183,6 @@ func (o *GetNetworkDhcpRelay200ResponseNetworkDhcpRelay) GetExternalIdOk() (*str
 		return nil, false
 	}
 	return o.ExternalId, true
-}
-
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *GetNetworkDhcpRelay200ResponseNetworkDhcpRelay) IsSetExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
-		return true
-	}
-
-	return false
 }
 
 // SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
@@ -262,15 +208,6 @@ func (o *GetNetworkDhcpRelay200ResponseNetworkDhcpRelay) GetServerIpAddressesOk(
 	return o.ServerIpAddresses, true
 }
 
-// IsSetServerIpAddresses returns a boolean if a field has been set.
-func (o *GetNetworkDhcpRelay200ResponseNetworkDhcpRelay) IsSetServerIpAddresses() bool {
-	if o != nil && !IsNil(o.ServerIpAddresses) {
-		return true
-	}
-
-	return false
-}
-
 // SetServerIpAddresses gets a reference to the given []string and assigns it to the ServerIpAddresses field.
 func (o *GetNetworkDhcpRelay200ResponseNetworkDhcpRelay) SetServerIpAddresses(v []string) {
 	o.ServerIpAddresses = v
@@ -294,15 +231,6 @@ func (o *GetNetworkDhcpRelay200ResponseNetworkDhcpRelay) GetOwnerOk() (*GetNetwo
 	return o.Owner, true
 }
 
-// IsSetOwner returns a boolean if a field has been set.
-func (o *GetNetworkDhcpRelay200ResponseNetworkDhcpRelay) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
-		return true
-	}
-
-	return false
-}
-
 // SetOwner gets a reference to the given GetNetworkDhcpRelay200ResponseNetworkDhcpRelayOwner and assigns it to the Owner field.
 func (o *GetNetworkDhcpRelay200ResponseNetworkDhcpRelay) SetOwner(v GetNetworkDhcpRelay200ResponseNetworkDhcpRelayOwner) {
 	o.Owner = &v
@@ -324,15 +252,6 @@ func (o *GetNetworkDhcpRelay200ResponseNetworkDhcpRelay) GetNetworkServerOk() (*
 		return nil, false
 	}
 	return o.NetworkServer, true
-}
-
-// IsSetNetworkServer returns a boolean if a field has been set.
-func (o *GetNetworkDhcpRelay200ResponseNetworkDhcpRelay) IsSetNetworkServer() bool {
-	if o != nil && !IsNil(o.NetworkServer) {
-		return true
-	}
-
-	return false
 }
 
 // SetNetworkServer gets a reference to the given GetNetworkDhcpRelay200ResponseNetworkDhcpRelayNetworkServer and assigns it to the NetworkServer field.

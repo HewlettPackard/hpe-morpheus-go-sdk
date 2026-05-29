@@ -72,15 +72,6 @@ func (o *ListLogs200ResponseAllOfDataInner) GetTypeCodeOk() (*string, bool) {
 	return o.TypeCode, true
 }
 
-// IsSetTypeCode returns a boolean if a field has been set.
-func (o *ListLogs200ResponseAllOfDataInner) IsSetTypeCode() bool {
-	if o != nil && !IsNil(o.TypeCode) {
-		return true
-	}
-
-	return false
-}
-
 // SetTypeCode gets a reference to the given string and assigns it to the TypeCode field.
 func (o *ListLogs200ResponseAllOfDataInner) SetTypeCode(v string) {
 	o.TypeCode = &v
@@ -102,15 +93,6 @@ func (o *ListLogs200ResponseAllOfDataInner) GetMessageOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Message, true
-}
-
-// IsSetMessage returns a boolean if a field has been set.
-func (o *ListLogs200ResponseAllOfDataInner) IsSetMessage() bool {
-	if o != nil && !IsNil(o.Message) {
-		return true
-	}
-
-	return false
 }
 
 // SetMessage gets a reference to the given string and assigns it to the Message field.
@@ -136,15 +118,6 @@ func (o *ListLogs200ResponseAllOfDataInner) GetLevelOk() (*string, bool) {
 	return o.Level, true
 }
 
-// IsSetLevel returns a boolean if a field has been set.
-func (o *ListLogs200ResponseAllOfDataInner) IsSetLevel() bool {
-	if o != nil && !IsNil(o.Level) {
-		return true
-	}
-
-	return false
-}
-
 // SetLevel gets a reference to the given string and assigns it to the Level field.
 func (o *ListLogs200ResponseAllOfDataInner) SetLevel(v string) {
 	o.Level = &v
@@ -166,15 +139,6 @@ func (o *ListLogs200ResponseAllOfDataInner) GetTsOk() (*time.Time, bool) {
 		return nil, false
 	}
 	return o.Ts, true
-}
-
-// IsSetTs returns a boolean if a field has been set.
-func (o *ListLogs200ResponseAllOfDataInner) IsSetTs() bool {
-	if o != nil && !IsNil(o.Ts) {
-		return true
-	}
-
-	return false
 }
 
 // SetTs gets a reference to the given time.Time and assigns it to the Ts field.
@@ -200,15 +164,6 @@ func (o *ListLogs200ResponseAllOfDataInner) GetSourceTypeOk() (*string, bool) {
 	return o.SourceType, true
 }
 
-// IsSetSourceType returns a boolean if a field has been set.
-func (o *ListLogs200ResponseAllOfDataInner) IsSetSourceType() bool {
-	if o != nil && !IsNil(o.SourceType) {
-		return true
-	}
-
-	return false
-}
-
 // SetSourceType gets a reference to the given string and assigns it to the SourceType field.
 func (o *ListLogs200ResponseAllOfDataInner) SetSourceType(v string) {
 	o.SourceType = &v
@@ -230,15 +185,6 @@ func (o *ListLogs200ResponseAllOfDataInner) GetTitleOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Title, true
-}
-
-// IsSetTitle returns a boolean if a field has been set.
-func (o *ListLogs200ResponseAllOfDataInner) IsSetTitle() bool {
-	if o != nil && !IsNil(o.Title) {
-		return true
-	}
-
-	return false
 }
 
 // SetTitle gets a reference to the given string and assigns it to the Title field.
@@ -264,15 +210,6 @@ func (o *ListLogs200ResponseAllOfDataInner) GetLogSignatureOk() (*string, bool) 
 	return o.LogSignature, true
 }
 
-// IsSetLogSignature returns a boolean if a field has been set.
-func (o *ListLogs200ResponseAllOfDataInner) IsSetLogSignature() bool {
-	if o != nil && !IsNil(o.LogSignature) {
-		return true
-	}
-
-	return false
-}
-
 // SetLogSignature gets a reference to the given string and assigns it to the LogSignature field.
 func (o *ListLogs200ResponseAllOfDataInner) SetLogSignature(v string) {
 	o.LogSignature = &v
@@ -294,15 +231,6 @@ func (o *ListLogs200ResponseAllOfDataInner) GetObjectIdOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ObjectId, true
-}
-
-// IsSetObjectId returns a boolean if a field has been set.
-func (o *ListLogs200ResponseAllOfDataInner) IsSetObjectId() bool {
-	if o != nil && !IsNil(o.ObjectId) {
-		return true
-	}
-
-	return false
 }
 
 // SetObjectId gets a reference to the given string and assigns it to the ObjectId field.
@@ -328,15 +256,6 @@ func (o *ListLogs200ResponseAllOfDataInner) GetSeqOk() (*int64, bool) {
 	return o.Seq, true
 }
 
-// IsSetSeq returns a boolean if a field has been set.
-func (o *ListLogs200ResponseAllOfDataInner) IsSetSeq() bool {
-	if o != nil && !IsNil(o.Seq) {
-		return true
-	}
-
-	return false
-}
-
 // SetSeq gets a reference to the given int64 and assigns it to the Seq field.
 func (o *ListLogs200ResponseAllOfDataInner) SetSeq(v int64) {
 	o.Seq = &v
@@ -360,15 +279,6 @@ func (o *ListLogs200ResponseAllOfDataInner) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListLogs200ResponseAllOfDataInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given string and assigns it to the Id field.
 func (o *ListLogs200ResponseAllOfDataInner) SetId(v string) {
 	o.Id = &v
@@ -390,15 +300,6 @@ func (o *ListLogs200ResponseAllOfDataInner) GetSignatureVerifiedOk() (*bool, boo
 		return nil, false
 	}
 	return o.SignatureVerified, true
-}
-
-// IsSetSignatureVerified returns a boolean if a field has been set.
-func (o *ListLogs200ResponseAllOfDataInner) IsSetSignatureVerified() bool {
-	if o != nil && !IsNil(o.SignatureVerified) {
-		return true
-	}
-
-	return false
 }
 
 // SetSignatureVerified gets a reference to the given bool and assigns it to the SignatureVerified field.

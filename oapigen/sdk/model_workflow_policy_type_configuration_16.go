@@ -61,15 +61,6 @@ func (o *WorkflowPolicyTypeConfiguration16) GetWorkflowIdOk() (*string, bool) {
 	return o.WorkflowId, true
 }
 
-// IsSetWorkflowId returns a boolean if a field has been set.
-func (o *WorkflowPolicyTypeConfiguration16) IsSetWorkflowId() bool {
-	if o != nil && !IsNil(o.WorkflowId) {
-		return true
-	}
-
-	return false
-}
-
 // SetWorkflowId gets a reference to the given string and assigns it to the WorkflowId field.
 func (o *WorkflowPolicyTypeConfiguration16) SetWorkflowId(v string) {
 	o.WorkflowId = &v

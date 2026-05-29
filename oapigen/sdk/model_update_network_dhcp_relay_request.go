@@ -61,15 +61,6 @@ func (o *UpdateNetworkDhcpRelayRequest) GetNetworkDhcpRelayOk() (map[string]inte
 	return o.NetworkDhcpRelay, true
 }
 
-// IsSetNetworkDhcpRelay returns a boolean if a field has been set.
-func (o *UpdateNetworkDhcpRelayRequest) IsSetNetworkDhcpRelay() bool {
-	if o != nil && !IsNil(o.NetworkDhcpRelay) {
-		return true
-	}
-
-	return false
-}
-
 // SetNetworkDhcpRelay gets a reference to the given map[string]interface{} and assigns it to the NetworkDhcpRelay field.
 func (o *UpdateNetworkDhcpRelayRequest) SetNetworkDhcpRelay(v map[string]interface{}) {
 	o.NetworkDhcpRelay = v

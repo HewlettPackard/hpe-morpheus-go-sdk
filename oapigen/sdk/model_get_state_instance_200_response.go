@@ -62,15 +62,6 @@ func (o *GetStateInstance200Response) GetInstanceOk() (*GetStateInstance200Respo
 	return o.Instance, true
 }
 
-// IsSetInstance returns a boolean if a field has been set.
-func (o *GetStateInstance200Response) IsSetInstance() bool {
-	if o != nil && !IsNil(o.Instance) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstance gets a reference to the given GetStateInstance200ResponseAllOfInstance and assigns it to the Instance field.
 func (o *GetStateInstance200Response) SetInstance(v GetStateInstance200ResponseAllOfInstance) {
 	o.Instance = &v
@@ -92,15 +83,6 @@ func (o *GetStateInstance200Response) GetSuccessOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *GetStateInstance200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
 }
 
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.

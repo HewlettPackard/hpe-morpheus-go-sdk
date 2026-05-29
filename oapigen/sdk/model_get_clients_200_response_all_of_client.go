@@ -68,15 +68,6 @@ func (o *GetClients200ResponseAllOfClient) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetClients200ResponseAllOfClient) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetClients200ResponseAllOfClient) SetId(v int64) {
 	o.Id = &v
@@ -98,15 +89,6 @@ func (o *GetClients200ResponseAllOfClient) GetClientIdOk() (*string, bool) {
 		return nil, false
 	}
 	return o.ClientId, true
-}
-
-// IsSetClientId returns a boolean if a field has been set.
-func (o *GetClients200ResponseAllOfClient) IsSetClientId() bool {
-	if o != nil && !IsNil(o.ClientId) {
-		return true
-	}
-
-	return false
 }
 
 // SetClientId gets a reference to the given string and assigns it to the ClientId field.
@@ -132,15 +114,6 @@ func (o *GetClients200ResponseAllOfClient) GetAccessTokenValiditySecondsOk() (*i
 	return o.AccessTokenValiditySeconds, true
 }
 
-// IsSetAccessTokenValiditySeconds returns a boolean if a field has been set.
-func (o *GetClients200ResponseAllOfClient) IsSetAccessTokenValiditySeconds() bool {
-	if o != nil && !IsNil(o.AccessTokenValiditySeconds) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccessTokenValiditySeconds gets a reference to the given int64 and assigns it to the AccessTokenValiditySeconds field.
 func (o *GetClients200ResponseAllOfClient) SetAccessTokenValiditySeconds(v int64) {
 	o.AccessTokenValiditySeconds = &v
@@ -162,15 +135,6 @@ func (o *GetClients200ResponseAllOfClient) GetRefreshTokenValiditySecondsOk() (*
 		return nil, false
 	}
 	return o.RefreshTokenValiditySeconds, true
-}
-
-// IsSetRefreshTokenValiditySeconds returns a boolean if a field has been set.
-func (o *GetClients200ResponseAllOfClient) IsSetRefreshTokenValiditySeconds() bool {
-	if o != nil && !IsNil(o.RefreshTokenValiditySeconds) {
-		return true
-	}
-
-	return false
 }
 
 // SetRefreshTokenValiditySeconds gets a reference to the given int64 and assigns it to the RefreshTokenValiditySeconds field.
@@ -196,15 +160,6 @@ func (o *GetClients200ResponseAllOfClient) GetAuthoritiesOk() ([]string, bool) {
 	return o.Authorities, true
 }
 
-// IsSetAuthorities returns a boolean if a field has been set.
-func (o *GetClients200ResponseAllOfClient) IsSetAuthorities() bool {
-	if o != nil && !IsNil(o.Authorities) {
-		return true
-	}
-
-	return false
-}
-
 // SetAuthorities gets a reference to the given []string and assigns it to the Authorities field.
 func (o *GetClients200ResponseAllOfClient) SetAuthorities(v []string) {
 	o.Authorities = v
@@ -226,15 +181,6 @@ func (o *GetClients200ResponseAllOfClient) GetAuthorizedGrantTypesOk() ([]string
 		return nil, false
 	}
 	return o.AuthorizedGrantTypes, true
-}
-
-// IsSetAuthorizedGrantTypes returns a boolean if a field has been set.
-func (o *GetClients200ResponseAllOfClient) IsSetAuthorizedGrantTypes() bool {
-	if o != nil && !IsNil(o.AuthorizedGrantTypes) {
-		return true
-	}
-
-	return false
 }
 
 // SetAuthorizedGrantTypes gets a reference to the given []string and assigns it to the AuthorizedGrantTypes field.
@@ -260,15 +206,6 @@ func (o *GetClients200ResponseAllOfClient) GetScopesOk() ([]string, bool) {
 	return o.Scopes, true
 }
 
-// IsSetScopes returns a boolean if a field has been set.
-func (o *GetClients200ResponseAllOfClient) IsSetScopes() bool {
-	if o != nil && !IsNil(o.Scopes) {
-		return true
-	}
-
-	return false
-}
-
 // SetScopes gets a reference to the given []string and assigns it to the Scopes field.
 func (o *GetClients200ResponseAllOfClient) SetScopes(v []string) {
 	o.Scopes = v
@@ -290,15 +227,6 @@ func (o *GetClients200ResponseAllOfClient) GetRedirectUrisOk() ([]string, bool) 
 		return nil, false
 	}
 	return o.RedirectUris, true
-}
-
-// IsSetRedirectUris returns a boolean if a field has been set.
-func (o *GetClients200ResponseAllOfClient) IsSetRedirectUris() bool {
-	if o != nil && !IsNil(o.RedirectUris) {
-		return true
-	}
-
-	return false
 }
 
 // SetRedirectUris gets a reference to the given []string and assigns it to the RedirectUris field.

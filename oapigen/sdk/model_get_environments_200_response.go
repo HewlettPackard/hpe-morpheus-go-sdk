@@ -61,15 +61,6 @@ func (o *GetEnvironments200Response) GetEnvironmentOk() (*GetEnvironments200Resp
 	return o.Environment, true
 }
 
-// IsSetEnvironment returns a boolean if a field has been set.
-func (o *GetEnvironments200Response) IsSetEnvironment() bool {
-	if o != nil && !IsNil(o.Environment) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnvironment gets a reference to the given GetEnvironments200ResponseEnvironment and assigns it to the Environment field.
 func (o *GetEnvironments200Response) SetEnvironment(v GetEnvironments200ResponseEnvironment) {
 	o.Environment = &v

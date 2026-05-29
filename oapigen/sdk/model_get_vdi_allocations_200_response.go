@@ -61,15 +61,6 @@ func (o *GetVDIAllocations200Response) GetVdiAllocationOk() (*GetVDIAllocations2
 	return o.VdiAllocation, true
 }
 
-// IsSetVdiAllocation returns a boolean if a field has been set.
-func (o *GetVDIAllocations200Response) IsSetVdiAllocation() bool {
-	if o != nil && !IsNil(o.VdiAllocation) {
-		return true
-	}
-
-	return false
-}
-
 // SetVdiAllocation gets a reference to the given GetVDIAllocations200ResponseVdiAllocation and assigns it to the VdiAllocation field.
 func (o *GetVDIAllocations200Response) SetVdiAllocation(v GetVDIAllocations200ResponseVdiAllocation) {
 	o.VdiAllocation = &v

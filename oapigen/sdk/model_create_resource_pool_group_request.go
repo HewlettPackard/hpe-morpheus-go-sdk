@@ -61,15 +61,6 @@ func (o *CreateResourcePoolGroupRequest) GetResourcePoolGroupOk() (*CreateResour
 	return o.ResourcePoolGroup, true
 }
 
-// IsSetResourcePoolGroup returns a boolean if a field has been set.
-func (o *CreateResourcePoolGroupRequest) IsSetResourcePoolGroup() bool {
-	if o != nil && !IsNil(o.ResourcePoolGroup) {
-		return true
-	}
-
-	return false
-}
-
 // SetResourcePoolGroup gets a reference to the given CreateResourcePoolGroupRequestResourcePoolGroup and assigns it to the ResourcePoolGroup field.
 func (o *CreateResourcePoolGroupRequest) SetResourcePoolGroup(v CreateResourcePoolGroupRequestResourcePoolGroup) {
 	o.ResourcePoolGroup = &v

@@ -67,15 +67,6 @@ func (o *ListProvisionTypes200ResponseAllOfProvisionTypesInnerControllerTypesInn
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *ListProvisionTypes200ResponseAllOfProvisionTypesInnerControllerTypesInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *ListProvisionTypes200ResponseAllOfProvisionTypesInnerControllerTypesInner) SetId(v int64) {
 	o.Id = &v
@@ -97,15 +88,6 @@ func (o *ListProvisionTypes200ResponseAllOfProvisionTypesInnerControllerTypesInn
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *ListProvisionTypes200ResponseAllOfProvisionTypesInnerControllerTypesInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -131,15 +113,6 @@ func (o *ListProvisionTypes200ResponseAllOfProvisionTypesInnerControllerTypesInn
 	return o.DisplayOrder, true
 }
 
-// IsSetDisplayOrder returns a boolean if a field has been set.
-func (o *ListProvisionTypes200ResponseAllOfProvisionTypesInnerControllerTypesInner) IsSetDisplayOrder() bool {
-	if o != nil && !IsNil(o.DisplayOrder) {
-		return true
-	}
-
-	return false
-}
-
 // SetDisplayOrder gets a reference to the given int64 and assigns it to the DisplayOrder field.
 func (o *ListProvisionTypes200ResponseAllOfProvisionTypesInnerControllerTypesInner) SetDisplayOrder(v int64) {
 	o.DisplayOrder = &v
@@ -161,15 +134,6 @@ func (o *ListProvisionTypes200ResponseAllOfProvisionTypesInnerControllerTypesInn
 		return nil, false
 	}
 	return o.Category, true
-}
-
-// IsSetCategory returns a boolean if a field has been set.
-func (o *ListProvisionTypes200ResponseAllOfProvisionTypesInnerControllerTypesInner) IsSetCategory() bool {
-	if o != nil && !IsNil(o.Category) {
-		return true
-	}
-
-	return false
 }
 
 // SetCategory gets a reference to the given string and assigns it to the Category field.
@@ -195,15 +159,6 @@ func (o *ListProvisionTypes200ResponseAllOfProvisionTypesInnerControllerTypesInn
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *ListProvisionTypes200ResponseAllOfProvisionTypesInnerControllerTypesInner) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *ListProvisionTypes200ResponseAllOfProvisionTypesInnerControllerTypesInner) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -227,15 +182,6 @@ func (o *ListProvisionTypes200ResponseAllOfProvisionTypesInnerControllerTypesInn
 	return o.Creatable, true
 }
 
-// IsSetCreatable returns a boolean if a field has been set.
-func (o *ListProvisionTypes200ResponseAllOfProvisionTypesInnerControllerTypesInner) IsSetCreatable() bool {
-	if o != nil && !IsNil(o.Creatable) {
-		return true
-	}
-
-	return false
-}
-
 // SetCreatable gets a reference to the given bool and assigns it to the Creatable field.
 func (o *ListProvisionTypes200ResponseAllOfProvisionTypesInnerControllerTypesInner) SetCreatable(v bool) {
 	o.Creatable = &v
@@ -257,15 +203,6 @@ func (o *ListProvisionTypes200ResponseAllOfProvisionTypesInnerControllerTypesInn
 		return nil, false
 	}
 	return o.MaxDevices, true
-}
-
-// IsSetMaxDevices returns a boolean if a field has been set.
-func (o *ListProvisionTypes200ResponseAllOfProvisionTypesInnerControllerTypesInner) IsSetMaxDevices() bool {
-	if o != nil && !IsNil(o.MaxDevices) {
-		return true
-	}
-
-	return false
 }
 
 // SetMaxDevices gets a reference to the given int64 and assigns it to the MaxDevices field.

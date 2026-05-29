@@ -78,15 +78,6 @@ func (o *UserSettingsUser) GetIdOk() (*int64, bool) {
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *UserSettingsUser) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *UserSettingsUser) SetId(v int64) {
 	o.Id = &v
@@ -108,15 +99,6 @@ func (o *UserSettingsUser) GetUsernameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Username, true
-}
-
-// IsSetUsername returns a boolean if a field has been set.
-func (o *UserSettingsUser) IsSetUsername() bool {
-	if o != nil && !IsNil(o.Username) {
-		return true
-	}
-
-	return false
 }
 
 // SetUsername gets a reference to the given string and assigns it to the Username field.
@@ -142,15 +124,6 @@ func (o *UserSettingsUser) GetFirstNameOk() (*string, bool) {
 	return o.FirstName, true
 }
 
-// IsSetFirstName returns a boolean if a field has been set.
-func (o *UserSettingsUser) IsSetFirstName() bool {
-	if o != nil && !IsNil(o.FirstName) {
-		return true
-	}
-
-	return false
-}
-
 // SetFirstName gets a reference to the given string and assigns it to the FirstName field.
 func (o *UserSettingsUser) SetFirstName(v string) {
 	o.FirstName = &v
@@ -172,15 +145,6 @@ func (o *UserSettingsUser) GetLastNameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.LastName, true
-}
-
-// IsSetLastName returns a boolean if a field has been set.
-func (o *UserSettingsUser) IsSetLastName() bool {
-	if o != nil && !IsNil(o.LastName) {
-		return true
-	}
-
-	return false
 }
 
 // SetLastName gets a reference to the given string and assigns it to the LastName field.
@@ -206,15 +170,6 @@ func (o *UserSettingsUser) GetEmailOk() (*string, bool) {
 	return o.Email, true
 }
 
-// IsSetEmail returns a boolean if a field has been set.
-func (o *UserSettingsUser) IsSetEmail() bool {
-	if o != nil && !IsNil(o.Email) {
-		return true
-	}
-
-	return false
-}
-
 // SetEmail gets a reference to the given string and assigns it to the Email field.
 func (o *UserSettingsUser) SetEmail(v string) {
 	o.Email = &v
@@ -238,15 +193,6 @@ func (o *UserSettingsUser) GetLinuxUsernameOk() (*string, bool) {
 	return o.LinuxUsername, true
 }
 
-// IsSetLinuxUsername returns a boolean if a field has been set.
-func (o *UserSettingsUser) IsSetLinuxUsername() bool {
-	if o != nil && !IsNil(o.LinuxUsername) {
-		return true
-	}
-
-	return false
-}
-
 // SetLinuxUsername gets a reference to the given string and assigns it to the LinuxUsername field.
 func (o *UserSettingsUser) SetLinuxUsername(v string) {
 	o.LinuxUsername = &v
@@ -268,15 +214,6 @@ func (o *UserSettingsUser) GetLinuxPasswordOk() (*string, bool) {
 		return nil, false
 	}
 	return o.LinuxPassword, true
-}
-
-// IsSetLinuxPassword returns a boolean if a field has been set.
-func (o *UserSettingsUser) IsSetLinuxPassword() bool {
-	if o != nil && !IsNil(o.LinuxPassword) {
-		return true
-	}
-
-	return false
 }
 
 // SetLinuxPassword gets a reference to the given string and assigns it to the LinuxPassword field.
@@ -303,28 +240,9 @@ func (o *UserSettingsUser) GetLinuxKeyPairIdOk() (*int64, bool) {
 	return o.LinuxKeyPairId.Get(), o.LinuxKeyPairId.IsSet()
 }
 
-// IsSetLinuxKeyPairId returns a boolean if a field has been set.
-func (o *UserSettingsUser) IsSetLinuxKeyPairId() bool {
-	if o != nil && o.LinuxKeyPairId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
 // SetLinuxKeyPairId gets a reference to the given NullableInt64 and assigns it to the LinuxKeyPairId field.
 func (o *UserSettingsUser) SetLinuxKeyPairId(v int64) {
 	o.LinuxKeyPairId.Set(&v)
-}
-
-// SetLinuxKeyPairIdNil sets the value for LinuxKeyPairId to be an explicit nil
-func (o *UserSettingsUser) SetLinuxKeyPairIdNil() {
-	o.LinuxKeyPairId.Set(nil)
-}
-
-// UnsetLinuxKeyPairId ensures that no value is present for LinuxKeyPairId, not even an explicit nil
-func (o *UserSettingsUser) UnsetLinuxKeyPairId() {
-	o.LinuxKeyPairId.Unset()
 }
 
 // GetWindowsUsername returns the WindowsUsername field value if set, zero value otherwise.
@@ -343,15 +261,6 @@ func (o *UserSettingsUser) GetWindowsUsernameOk() (*string, bool) {
 		return nil, false
 	}
 	return o.WindowsUsername, true
-}
-
-// IsSetWindowsUsername returns a boolean if a field has been set.
-func (o *UserSettingsUser) IsSetWindowsUsername() bool {
-	if o != nil && !IsNil(o.WindowsUsername) {
-		return true
-	}
-
-	return false
 }
 
 // SetWindowsUsername gets a reference to the given string and assigns it to the WindowsUsername field.
@@ -377,15 +286,6 @@ func (o *UserSettingsUser) GetWindowsPasswordOk() (*string, bool) {
 	return o.WindowsPassword, true
 }
 
-// IsSetWindowsPassword returns a boolean if a field has been set.
-func (o *UserSettingsUser) IsSetWindowsPassword() bool {
-	if o != nil && !IsNil(o.WindowsPassword) {
-		return true
-	}
-
-	return false
-}
-
 // SetWindowsPassword gets a reference to the given string and assigns it to the WindowsPassword field.
 func (o *UserSettingsUser) SetWindowsPassword(v string) {
 	o.WindowsPassword = &v
@@ -407,15 +307,6 @@ func (o *UserSettingsUser) GetAvatarOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Avatar, true
-}
-
-// IsSetAvatar returns a boolean if a field has been set.
-func (o *UserSettingsUser) IsSetAvatar() bool {
-	if o != nil && !IsNil(o.Avatar) {
-		return true
-	}
-
-	return false
 }
 
 // SetAvatar gets a reference to the given string and assigns it to the Avatar field.
@@ -441,15 +332,6 @@ func (o *UserSettingsUser) GetDesktopBackgroundOk() (*string, bool) {
 	return o.DesktopBackground, true
 }
 
-// IsSetDesktopBackground returns a boolean if a field has been set.
-func (o *UserSettingsUser) IsSetDesktopBackground() bool {
-	if o != nil && !IsNil(o.DesktopBackground) {
-		return true
-	}
-
-	return false
-}
-
 // SetDesktopBackground gets a reference to the given string and assigns it to the DesktopBackground field.
 func (o *UserSettingsUser) SetDesktopBackground(v string) {
 	o.DesktopBackground = &v
@@ -471,15 +353,6 @@ func (o *UserSettingsUser) GetReceiveNotificationsOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.ReceiveNotifications, true
-}
-
-// IsSetReceiveNotifications returns a boolean if a field has been set.
-func (o *UserSettingsUser) IsSetReceiveNotifications() bool {
-	if o != nil && !IsNil(o.ReceiveNotifications) {
-		return true
-	}
-
-	return false
 }
 
 // SetReceiveNotifications gets a reference to the given bool and assigns it to the ReceiveNotifications field.
@@ -505,15 +378,6 @@ func (o *UserSettingsUser) GetDefaultGroupOk() (*UserSettingsUserDefaultGroup, b
 	return o.DefaultGroup, true
 }
 
-// IsSetDefaultGroup returns a boolean if a field has been set.
-func (o *UserSettingsUser) IsSetDefaultGroup() bool {
-	if o != nil && !IsNil(o.DefaultGroup) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultGroup gets a reference to the given UserSettingsUserDefaultGroup and assigns it to the DefaultGroup field.
 func (o *UserSettingsUser) SetDefaultGroup(v UserSettingsUserDefaultGroup) {
 	o.DefaultGroup = &v
@@ -535,15 +399,6 @@ func (o *UserSettingsUser) GetDefaultCloudOk() (*UserSettingsUserDefaultCloud, b
 		return nil, false
 	}
 	return o.DefaultCloud, true
-}
-
-// IsSetDefaultCloud returns a boolean if a field has been set.
-func (o *UserSettingsUser) IsSetDefaultCloud() bool {
-	if o != nil && !IsNil(o.DefaultCloud) {
-		return true
-	}
-
-	return false
 }
 
 // SetDefaultCloud gets a reference to the given UserSettingsUserDefaultCloud and assigns it to the DefaultCloud field.
@@ -569,15 +424,6 @@ func (o *UserSettingsUser) GetDefaultPersonaOk() (*UserSettingsUserDefaultPerson
 	return o.DefaultPersona, true
 }
 
-// IsSetDefaultPersona returns a boolean if a field has been set.
-func (o *UserSettingsUser) IsSetDefaultPersona() bool {
-	if o != nil && !IsNil(o.DefaultPersona) {
-		return true
-	}
-
-	return false
-}
-
 // SetDefaultPersona gets a reference to the given UserSettingsUserDefaultPersona and assigns it to the DefaultPersona field.
 func (o *UserSettingsUser) SetDefaultPersona(v UserSettingsUserDefaultPersona) {
 	o.DefaultPersona = &v
@@ -601,15 +447,6 @@ func (o *UserSettingsUser) GetIsUsing2FAOk() (*bool, bool) {
 	return o.IsUsing2FA, true
 }
 
-// IsSetIsUsing2FA returns a boolean if a field has been set.
-func (o *UserSettingsUser) IsSetIsUsing2FA() bool {
-	if o != nil && !IsNil(o.IsUsing2FA) {
-		return true
-	}
-
-	return false
-}
-
 // SetIsUsing2FA gets a reference to the given bool and assigns it to the IsUsing2FA field.
 func (o *UserSettingsUser) SetIsUsing2FA(v bool) {
 	o.IsUsing2FA = &v
@@ -631,15 +468,6 @@ func (o *UserSettingsUser) GetTenantOk() (*UserSettingsUserTenant, bool) {
 		return nil, false
 	}
 	return o.Tenant, true
-}
-
-// IsSetTenant returns a boolean if a field has been set.
-func (o *UserSettingsUser) IsSetTenant() bool {
-	if o != nil && !IsNil(o.Tenant) {
-		return true
-	}
-
-	return false
 }
 
 // SetTenant gets a reference to the given UserSettingsUserTenant and assigns it to the Tenant field.

@@ -69,15 +69,6 @@ func (o *Setup) GetSuccessOk() (*bool, bool) {
 	return o.Success, true
 }
 
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *Setup) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
-}
-
 // SetSuccess gets a reference to the given bool and assigns it to the Success field.
 func (o *Setup) SetSuccess(v bool) {
 	o.Success = &v
@@ -99,15 +90,6 @@ func (o *Setup) GetBuildVersionOk() (*string, bool) {
 		return nil, false
 	}
 	return o.BuildVersion, true
-}
-
-// IsSetBuildVersion returns a boolean if a field has been set.
-func (o *Setup) IsSetBuildVersion() bool {
-	if o != nil && !IsNil(o.BuildVersion) {
-		return true
-	}
-
-	return false
 }
 
 // SetBuildVersion gets a reference to the given string and assigns it to the BuildVersion field.
@@ -133,15 +115,6 @@ func (o *Setup) GetUuidOk() (*string, bool) {
 	return o.Uuid, true
 }
 
-// IsSetUuid returns a boolean if a field has been set.
-func (o *Setup) IsSetUuid() bool {
-	if o != nil && !IsNil(o.Uuid) {
-		return true
-	}
-
-	return false
-}
-
 // SetUuid gets a reference to the given string and assigns it to the Uuid field.
 func (o *Setup) SetUuid(v string) {
 	o.Uuid = &v
@@ -165,15 +138,6 @@ func (o *Setup) GetApplianceUrlOk() (*string, bool) {
 	return o.ApplianceUrl, true
 }
 
-// IsSetApplianceUrl returns a boolean if a field has been set.
-func (o *Setup) IsSetApplianceUrl() bool {
-	if o != nil && !IsNil(o.ApplianceUrl) {
-		return true
-	}
-
-	return false
-}
-
 // SetApplianceUrl gets a reference to the given string and assigns it to the ApplianceUrl field.
 func (o *Setup) SetApplianceUrl(v string) {
 	o.ApplianceUrl = &v
@@ -195,15 +159,6 @@ func (o *Setup) GetSetupNeededOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.SetupNeeded, true
-}
-
-// IsSetSetupNeeded returns a boolean if a field has been set.
-func (o *Setup) IsSetSetupNeeded() bool {
-	if o != nil && !IsNil(o.SetupNeeded) {
-		return true
-	}
-
-	return false
 }
 
 // SetSetupNeeded gets a reference to the given bool and assigns it to the SetupNeeded field.

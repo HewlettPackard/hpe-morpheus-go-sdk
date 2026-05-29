@@ -62,15 +62,6 @@ func (o *GenericInstanceConfiguration) GetUserDataOk() (*string, bool) {
 	return o.UserData, true
 }
 
-// IsSetUserData returns a boolean if a field has been set.
-func (o *GenericInstanceConfiguration) IsSetUserData() bool {
-	if o != nil && !IsNil(o.UserData) {
-		return true
-	}
-
-	return false
-}
-
 // SetUserData gets a reference to the given string and assigns it to the UserData field.
 func (o *GenericInstanceConfiguration) SetUserData(v string) {
 	o.UserData = &v

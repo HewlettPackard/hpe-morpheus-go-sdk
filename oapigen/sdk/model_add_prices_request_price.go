@@ -146,15 +146,6 @@ func (o *AddPricesRequestPrice) GetAccountOk() (*AddPricesRequestPriceAccount, b
 	return o.Account, true
 }
 
-// IsSetAccount returns a boolean if a field has been set.
-func (o *AddPricesRequestPrice) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
-		return true
-	}
-
-	return false
-}
-
 // SetAccount gets a reference to the given AddPricesRequestPriceAccount and assigns it to the Account field.
 func (o *AddPricesRequestPrice) SetAccount(v AddPricesRequestPriceAccount) {
 	o.Account = &v
@@ -298,15 +289,6 @@ func (o *AddPricesRequestPrice) GetMarkupTypeOk() (*string, bool) {
 	return o.MarkupType, true
 }
 
-// IsSetMarkupType returns a boolean if a field has been set.
-func (o *AddPricesRequestPrice) IsSetMarkupType() bool {
-	if o != nil && !IsNil(o.MarkupType) {
-		return true
-	}
-
-	return false
-}
-
 // SetMarkupType gets a reference to the given string and assigns it to the MarkupType field.
 func (o *AddPricesRequestPrice) SetMarkupType(v string) {
 	o.MarkupType = &v
@@ -328,15 +310,6 @@ func (o *AddPricesRequestPrice) GetMarkupOk() (*float32, bool) {
 		return nil, false
 	}
 	return o.Markup, true
-}
-
-// IsSetMarkup returns a boolean if a field has been set.
-func (o *AddPricesRequestPrice) IsSetMarkup() bool {
-	if o != nil && !IsNil(o.Markup) {
-		return true
-	}
-
-	return false
 }
 
 // SetMarkup gets a reference to the given float32 and assigns it to the Markup field.
@@ -362,15 +335,6 @@ func (o *AddPricesRequestPrice) GetMarkupPercentOk() (*float32, bool) {
 	return o.MarkupPercent, true
 }
 
-// IsSetMarkupPercent returns a boolean if a field has been set.
-func (o *AddPricesRequestPrice) IsSetMarkupPercent() bool {
-	if o != nil && !IsNil(o.MarkupPercent) {
-		return true
-	}
-
-	return false
-}
-
 // SetMarkupPercent gets a reference to the given float32 and assigns it to the MarkupPercent field.
 func (o *AddPricesRequestPrice) SetMarkupPercent(v float32) {
 	o.MarkupPercent = &v
@@ -392,15 +356,6 @@ func (o *AddPricesRequestPrice) GetCustomPriceOk() (*float32, bool) {
 		return nil, false
 	}
 	return o.CustomPrice, true
-}
-
-// IsSetCustomPrice returns a boolean if a field has been set.
-func (o *AddPricesRequestPrice) IsSetCustomPrice() bool {
-	if o != nil && !IsNil(o.CustomPrice) {
-		return true
-	}
-
-	return false
 }
 
 // SetCustomPrice gets a reference to the given float32 and assigns it to the CustomPrice field.
@@ -426,15 +381,6 @@ func (o *AddPricesRequestPrice) GetPlatformOk() (*string, bool) {
 	return o.Platform, true
 }
 
-// IsSetPlatform returns a boolean if a field has been set.
-func (o *AddPricesRequestPrice) IsSetPlatform() bool {
-	if o != nil && !IsNil(o.Platform) {
-		return true
-	}
-
-	return false
-}
-
 // SetPlatform gets a reference to the given string and assigns it to the Platform field.
 func (o *AddPricesRequestPrice) SetPlatform(v string) {
 	o.Platform = &v
@@ -456,15 +402,6 @@ func (o *AddPricesRequestPrice) GetSoftwareOk() (*string, bool) {
 		return nil, false
 	}
 	return o.Software, true
-}
-
-// IsSetSoftware returns a boolean if a field has been set.
-func (o *AddPricesRequestPrice) IsSetSoftware() bool {
-	if o != nil && !IsNil(o.Software) {
-		return true
-	}
-
-	return false
 }
 
 // SetSoftware gets a reference to the given string and assigns it to the Software field.
@@ -490,15 +427,6 @@ func (o *AddPricesRequestPrice) GetVolumeTypeOk() (*AddPricesRequestPriceVolumeT
 	return o.VolumeType, true
 }
 
-// IsSetVolumeType returns a boolean if a field has been set.
-func (o *AddPricesRequestPrice) IsSetVolumeType() bool {
-	if o != nil && !IsNil(o.VolumeType) {
-		return true
-	}
-
-	return false
-}
-
 // SetVolumeType gets a reference to the given AddPricesRequestPriceVolumeType and assigns it to the VolumeType field.
 func (o *AddPricesRequestPrice) SetVolumeType(v AddPricesRequestPriceVolumeType) {
 	o.VolumeType = &v
@@ -522,15 +450,6 @@ func (o *AddPricesRequestPrice) GetDatastoreOk() (*AddPricesRequestPriceDatastor
 	return o.Datastore, true
 }
 
-// IsSetDatastore returns a boolean if a field has been set.
-func (o *AddPricesRequestPrice) IsSetDatastore() bool {
-	if o != nil && !IsNil(o.Datastore) {
-		return true
-	}
-
-	return false
-}
-
 // SetDatastore gets a reference to the given AddPricesRequestPriceDatastore and assigns it to the Datastore field.
 func (o *AddPricesRequestPrice) SetDatastore(v AddPricesRequestPriceDatastore) {
 	o.Datastore = &v
@@ -552,15 +471,6 @@ func (o *AddPricesRequestPrice) GetCrossCloudApplyOk() (*bool, bool) {
 		return nil, false
 	}
 	return o.CrossCloudApply, true
-}
-
-// IsSetCrossCloudApply returns a boolean if a field has been set.
-func (o *AddPricesRequestPrice) IsSetCrossCloudApply() bool {
-	if o != nil && !IsNil(o.CrossCloudApply) {
-		return true
-	}
-
-	return false
 }
 
 // SetCrossCloudApply gets a reference to the given bool and assigns it to the CrossCloudApply field.

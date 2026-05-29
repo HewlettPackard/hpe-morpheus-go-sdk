@@ -73,15 +73,6 @@ func (o *UpdateMonitoringSettingsRequestMonitoringSettingsServiceNow) GetEnabled
 	return o.Enabled, true
 }
 
-// IsSetEnabled returns a boolean if a field has been set.
-func (o *UpdateMonitoringSettingsRequestMonitoringSettingsServiceNow) IsSetEnabled() bool {
-	if o != nil && !IsNil(o.Enabled) {
-		return true
-	}
-
-	return false
-}
-
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *UpdateMonitoringSettingsRequestMonitoringSettingsServiceNow) SetEnabled(v bool) {
 	o.Enabled = &v
@@ -103,15 +94,6 @@ func (o *UpdateMonitoringSettingsRequestMonitoringSettingsServiceNow) GetIntegra
 		return nil, false
 	}
 	return o.Integration, true
-}
-
-// IsSetIntegration returns a boolean if a field has been set.
-func (o *UpdateMonitoringSettingsRequestMonitoringSettingsServiceNow) IsSetIntegration() bool {
-	if o != nil && !IsNil(o.Integration) {
-		return true
-	}
-
-	return false
 }
 
 // SetIntegration gets a reference to the given UpdateMonitoringSettingsRequestMonitoringSettingsServiceNowIntegration and assigns it to the Integration field.
@@ -137,15 +119,6 @@ func (o *UpdateMonitoringSettingsRequestMonitoringSettingsServiceNow) GetNewInci
 	return o.NewIncidentAction, true
 }
 
-// IsSetNewIncidentAction returns a boolean if a field has been set.
-func (o *UpdateMonitoringSettingsRequestMonitoringSettingsServiceNow) IsSetNewIncidentAction() bool {
-	if o != nil && !IsNil(o.NewIncidentAction) {
-		return true
-	}
-
-	return false
-}
-
 // SetNewIncidentAction gets a reference to the given string and assigns it to the NewIncidentAction field.
 func (o *UpdateMonitoringSettingsRequestMonitoringSettingsServiceNow) SetNewIncidentAction(v string) {
 	o.NewIncidentAction = &v
@@ -167,15 +140,6 @@ func (o *UpdateMonitoringSettingsRequestMonitoringSettingsServiceNow) GetCloseIn
 		return nil, false
 	}
 	return o.CloseIncidentAction, true
-}
-
-// IsSetCloseIncidentAction returns a boolean if a field has been set.
-func (o *UpdateMonitoringSettingsRequestMonitoringSettingsServiceNow) IsSetCloseIncidentAction() bool {
-	if o != nil && !IsNil(o.CloseIncidentAction) {
-		return true
-	}
-
-	return false
 }
 
 // SetCloseIncidentAction gets a reference to the given string and assigns it to the CloseIncidentAction field.
@@ -201,15 +165,6 @@ func (o *UpdateMonitoringSettingsRequestMonitoringSettingsServiceNow) GetInfoMap
 	return o.InfoMapping, true
 }
 
-// IsSetInfoMapping returns a boolean if a field has been set.
-func (o *UpdateMonitoringSettingsRequestMonitoringSettingsServiceNow) IsSetInfoMapping() bool {
-	if o != nil && !IsNil(o.InfoMapping) {
-		return true
-	}
-
-	return false
-}
-
 // SetInfoMapping gets a reference to the given string and assigns it to the InfoMapping field.
 func (o *UpdateMonitoringSettingsRequestMonitoringSettingsServiceNow) SetInfoMapping(v string) {
 	o.InfoMapping = &v
@@ -233,15 +188,6 @@ func (o *UpdateMonitoringSettingsRequestMonitoringSettingsServiceNow) GetWarning
 	return o.WarningMapping, true
 }
 
-// IsSetWarningMapping returns a boolean if a field has been set.
-func (o *UpdateMonitoringSettingsRequestMonitoringSettingsServiceNow) IsSetWarningMapping() bool {
-	if o != nil && !IsNil(o.WarningMapping) {
-		return true
-	}
-
-	return false
-}
-
 // SetWarningMapping gets a reference to the given string and assigns it to the WarningMapping field.
 func (o *UpdateMonitoringSettingsRequestMonitoringSettingsServiceNow) SetWarningMapping(v string) {
 	o.WarningMapping = &v
@@ -263,15 +209,6 @@ func (o *UpdateMonitoringSettingsRequestMonitoringSettingsServiceNow) GetCritica
 		return nil, false
 	}
 	return o.CriticalMapping, true
-}
-
-// IsSetCriticalMapping returns a boolean if a field has been set.
-func (o *UpdateMonitoringSettingsRequestMonitoringSettingsServiceNow) IsSetCriticalMapping() bool {
-	if o != nil && !IsNil(o.CriticalMapping) {
-		return true
-	}
-
-	return false
 }
 
 // SetCriticalMapping gets a reference to the given string and assigns it to the CriticalMapping field.

@@ -62,15 +62,6 @@ func (o *GetClusterUpgradeVersions200Response) GetVersionsOk() ([]string, bool) 
 	return o.Versions, true
 }
 
-// IsSetVersions returns a boolean if a field has been set.
-func (o *GetClusterUpgradeVersions200Response) IsSetVersions() bool {
-	if o != nil && !IsNil(o.Versions) {
-		return true
-	}
-
-	return false
-}
-
 // SetVersions gets a reference to the given []string and assigns it to the Versions field.
 func (o *GetClusterUpgradeVersions200Response) SetVersions(v []string) {
 	o.Versions = v
@@ -92,15 +83,6 @@ func (o *GetClusterUpgradeVersions200Response) GetCurrentVersionOk() (*string, b
 		return nil, false
 	}
 	return o.CurrentVersion, true
-}
-
-// IsSetCurrentVersion returns a boolean if a field has been set.
-func (o *GetClusterUpgradeVersions200Response) IsSetCurrentVersion() bool {
-	if o != nil && !IsNil(o.CurrentVersion) {
-		return true
-	}
-
-	return false
 }
 
 // SetCurrentVersion gets a reference to the given string and assigns it to the CurrentVersion field.

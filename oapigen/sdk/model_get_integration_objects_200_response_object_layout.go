@@ -66,15 +66,6 @@ func (o *GetIntegrationObjects200ResponseObjectLayout) GetIdOk() (*int64, bool) 
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *GetIntegrationObjects200ResponseObjectLayout) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *GetIntegrationObjects200ResponseObjectLayout) SetId(v int64) {
 	o.Id = &v
@@ -96,15 +87,6 @@ func (o *GetIntegrationObjects200ResponseObjectLayout) GetNameOk() (*string, boo
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *GetIntegrationObjects200ResponseObjectLayout) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -130,15 +112,6 @@ func (o *GetIntegrationObjects200ResponseObjectLayout) GetCodeOk() (*string, boo
 	return o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *GetIntegrationObjects200ResponseObjectLayout) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
 // SetCode gets a reference to the given string and assigns it to the Code field.
 func (o *GetIntegrationObjects200ResponseObjectLayout) SetCode(v string) {
 	o.Code = &v
@@ -160,15 +133,6 @@ func (o *GetIntegrationObjects200ResponseObjectLayout) GetProvisionTypeOk() (*Ge
 		return nil, false
 	}
 	return o.ProvisionType, true
-}
-
-// IsSetProvisionType returns a boolean if a field has been set.
-func (o *GetIntegrationObjects200ResponseObjectLayout) IsSetProvisionType() bool {
-	if o != nil && !IsNil(o.ProvisionType) {
-		return true
-	}
-
-	return false
 }
 
 // SetProvisionType gets a reference to the given GetIntegrationObjects200ResponseObjectLayoutProvisionType and assigns it to the ProvisionType field.
@@ -194,15 +158,6 @@ func (o *GetIntegrationObjects200ResponseObjectLayout) GetInstanceTypeOk() (*Get
 	return o.InstanceType, true
 }
 
-// IsSetInstanceType returns a boolean if a field has been set.
-func (o *GetIntegrationObjects200ResponseObjectLayout) IsSetInstanceType() bool {
-	if o != nil && !IsNil(o.InstanceType) {
-		return true
-	}
-
-	return false
-}
-
 // SetInstanceType gets a reference to the given GetIntegrationObjects200ResponseObjectLayoutInstanceType and assigns it to the InstanceType field.
 func (o *GetIntegrationObjects200ResponseObjectLayout) SetInstanceType(v GetIntegrationObjects200ResponseObjectLayoutInstanceType) {
 	o.InstanceType = &v
@@ -224,15 +179,6 @@ func (o *GetIntegrationObjects200ResponseObjectLayout) GetInstanceVersionOk() (*
 		return nil, false
 	}
 	return o.InstanceVersion, true
-}
-
-// IsSetInstanceVersion returns a boolean if a field has been set.
-func (o *GetIntegrationObjects200ResponseObjectLayout) IsSetInstanceVersion() bool {
-	if o != nil && !IsNil(o.InstanceVersion) {
-		return true
-	}
-
-	return false
 }
 
 // SetInstanceVersion gets a reference to the given string and assigns it to the InstanceVersion field.

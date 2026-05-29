@@ -61,15 +61,6 @@ func (o *ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup) GetP
 	return o.ProviderMethod, true
 }
 
-// IsSetProviderMethod returns a boolean if a field has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup) IsSetProviderMethod() bool {
-	if o != nil && !IsNil(o.ProviderMethod) {
-		return true
-	}
-
-	return false
-}
-
 // SetProviderMethod gets a reference to the given string and assigns it to the ProviderMethod field.
 func (o *ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup) SetProviderMethod(v string) {
 	o.ProviderMethod = &v

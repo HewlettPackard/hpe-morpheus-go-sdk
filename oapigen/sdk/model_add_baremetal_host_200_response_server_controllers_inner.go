@@ -65,15 +65,6 @@ func (o *AddBaremetalHost200ResponseServerControllersInner) GetIdOk() (*int64, b
 	return o.Id, true
 }
 
-// IsSetId returns a boolean if a field has been set.
-func (o *AddBaremetalHost200ResponseServerControllersInner) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
 // SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *AddBaremetalHost200ResponseServerControllersInner) SetId(v int64) {
 	o.Id = &v
@@ -95,15 +86,6 @@ func (o *AddBaremetalHost200ResponseServerControllersInner) GetNameOk() (*string
 		return nil, false
 	}
 	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *AddBaremetalHost200ResponseServerControllersInner) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
@@ -129,15 +111,6 @@ func (o *AddBaremetalHost200ResponseServerControllersInner) GetTypeOk() (*AddBar
 	return o.Type, true
 }
 
-// IsSetType returns a boolean if a field has been set.
-func (o *AddBaremetalHost200ResponseServerControllersInner) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
 // SetType gets a reference to the given AddBaremetalHost200ResponseServerControllersInnerType and assigns it to the Type field.
 func (o *AddBaremetalHost200ResponseServerControllersInner) SetType(v AddBaremetalHost200ResponseServerControllersInnerType) {
 	o.Type = &v
@@ -161,15 +134,6 @@ func (o *AddBaremetalHost200ResponseServerControllersInner) GetMaxDevicesOk() (*
 	return o.MaxDevices, true
 }
 
-// IsSetMaxDevices returns a boolean if a field has been set.
-func (o *AddBaremetalHost200ResponseServerControllersInner) IsSetMaxDevices() bool {
-	if o != nil && !IsNil(o.MaxDevices) {
-		return true
-	}
-
-	return false
-}
-
 // SetMaxDevices gets a reference to the given int64 and assigns it to the MaxDevices field.
 func (o *AddBaremetalHost200ResponseServerControllersInner) SetMaxDevices(v int64) {
 	o.MaxDevices = &v
@@ -191,15 +155,6 @@ func (o *AddBaremetalHost200ResponseServerControllersInner) GetReservedUnitNumbe
 		return nil, false
 	}
 	return o.ReservedUnitNumber, true
-}
-
-// IsSetReservedUnitNumber returns a boolean if a field has been set.
-func (o *AddBaremetalHost200ResponseServerControllersInner) IsSetReservedUnitNumber() bool {
-	if o != nil && !IsNil(o.ReservedUnitNumber) {
-		return true
-	}
-
-	return false
 }
 
 // SetReservedUnitNumber gets a reference to the given int64 and assigns it to the ReservedUnitNumber field.
